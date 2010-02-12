@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/overlay.dtd">
+
+<prefwindow
+	id="wappalyzer-options"
+	title="&wappalyzer.options;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
+	<prefpane label="&wappalyzer.options;">
+		<preferences>
+			<preference id="wappalyzer-auto-detect"     name="wappalyzer.autoDetect"     type="int" />
+			<preference id="wappalyzer-enable-tracking" name="wappalyzer.enableTracking" type="bool"/>
+			<preference id="wappalyzer-show-app-names"  name="wappalyzer.showAppNames"   type="int" />
+		</preferences>
+
+		<groupbox>
+			<caption label="&wappalyzer.behavior;"/>
+			<grid>
+				<columns>
+					<column/>
+					<column flex="1"/>
+				</columns>
+				<rows>
+					<row>
+						<hbox align="center">
+							<label control="wappalyzer-auto-detect" value="&wappalyzer.detect;:"/>
+						</hbox>
+						<hbox align="center">
+							<menulist preference="wappalyzer-detect" id="refresh-interval">
+								<menupopup>
+									<menuitem label="&wappalyzer.auto;"   value="1"/>
+									<menuitem label="&wappalyzer.manual;" value="0"/>
+								</menupopup>
+							</menulist>
+						</hbox>
+					</row>
+					<row>
+						<hbox align="center">
+							<label control="wappalyzer-show-app-names" value="&wappalyzer.appNames;:"/>
+						</hbox>
+						<hbox align="center">
+							<menulist preference="wappalyzer-show-app-names" id="refresh-interval">
+								<menupopup>
+									<menuitem label="&wappalyzer.always;"  value="1"/>
+									<menuitem label="&wappalyzer.tooltip;" value="2"/>
+									<menuitem label="&wappalyzer.hover;"   value="3"/>
+								</menupopup>
+							</menulist>
+						</hbox>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+
+		<hbox align="center">
+			<checkbox preference="wappalyzer-enable-tracking" id="wappalyzer-option-enable-tracking" label="&wappalyzer.enableTracking;"/>
+		</hbox>
+	</prefpane>
+</prefwindow>
