@@ -14,7 +14,7 @@ wappalyzer =
 	checkUnique:    [],
 	currentTab:     false,
 	prefs:          null,
-	autoDetect:     1,
+	autoDetect:     true,
 	enableTracking: true,
 	newInstall:     false,
 	showAppNames:   3,
@@ -218,7 +218,7 @@ wappalyzer =
 		/(www.)?.+\.vox\.com$/i
 		],
 
- 	init: function() 
+	init: function() 
 	{
 		if ( wappalyzer.isBookmarklet )
 		{
@@ -231,17 +231,17 @@ wappalyzer =
 		wappalyzer.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		wappalyzer.prefs.addObserver('', wappalyzer, false);
 
-		wappalyzer.autoDetect     = wappalyzer.prefs.getIntPref( 'autoDetect');
 		wappalyzer.showAppNames   = wappalyzer.prefs.getIntPref( 'showAppNames');
+		wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
 		wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
 
-		// Show splash page after installation		
+		// Open page after installation		
 		if ( wappalyzer.newInstall )
 		{
-			wappalyzer.addTab(wappalyzer.homeUrl + 'install/success/');
-
 			wappalyzer.prefs.setBoolPref('newInstall', false);
+			
+			gBrowser.addEventListener('load', wappalyzer.installSuccess, false);
 		}
 
 		// Listen for URL changes
@@ -253,7 +253,7 @@ wappalyzer =
 		{
 			appContent.addEventListener('DOMContentLoaded', wappalyzer.onPageLoad, true);
 		}
- 	},
+	},
 
 	observe: function(subject, topic, data)
 	{
@@ -265,7 +265,7 @@ wappalyzer =
 		switch(data)
 		{
 			case 'autoDetect':
-				wappalyzer.autoDetect     = wappalyzer.prefs.getIntPref('autoDetect');
+				wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
 				
 				break;
 			case 'enableTracking':
@@ -279,12 +279,12 @@ wappalyzer =
 		}
 	},
 
- 	onPageLoad: function(event)
+	onPageLoad: function(event)
 	{
 		var doc = event.originalTarget;
 
 		wappalyzer.analyzePage(doc, true, false);
- 	},
+	},
 	
 	onUrlChange: function()
 	{
@@ -297,7 +297,7 @@ wappalyzer =
 	{
 		QueryInterface: function( aIID )
 		{
-			if ( aIID.equals(Components.interfaces.nsIWebProgressListener) ||
+			if ( aIID.equals(Components.interfaces.nsIWebProgressListener)   ||
 			     aIID.equals(Components.interfaces.nsISupportsWeakReference) ||
 			     aIID.equals(Components.interfaces.nsISupports) )
 			{
@@ -318,10 +318,10 @@ wappalyzer =
 			}
 		},
 
-		onStateChange:    function(a, b, c, d) {},
+		onStateChange:    function(a, b, c, d)       {},
 		onProgressChange: function(a, b, c, d, e, f) {},
-		onStatusChange:   function(a, b, c, d) {},
-		onSecurityChange: function(a, b, c) {}
+		onStatusChange:   function(a, b, c, d)       {},
+		onSecurityChange: function(a, b, c)          {}
 	},
 
 	analyzePage: function(doc, doCount, manualDetect)
@@ -478,7 +478,7 @@ wappalyzer =
 			child.setAttribute('label',     detectedApp);
 			child.setAttribute('class',     'menuitem-iconic');
 			child.setAttribute('image',     'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
-			child.setAttribute('oncommand', 'gBrowser.selectedTab = gBrowser.addTab(\'' + wappalyzer.homeUrl + 'detail/?app=' + escape(detectedApp) + '\');');
+			child.setAttribute('oncommand', 'gBrowser.selectedTab = gBrowser.openTab(\'' + wappalyzer.homeUrl + 'detail/?app=' + escape(detectedApp) + '\');');
 
 			e.appendChild(child);
 			*/
@@ -564,7 +564,7 @@ wappalyzer =
 
 					req.close();
 				}
-			}
+			};
 
 			req.send('d=' + encodeURIComponent(report));
 		}
@@ -618,6 +618,13 @@ wappalyzer =
 		}
 	},
 
+	installSuccess: function()
+	{		
+		gBrowser.removeEventListener('load', wappalyzer.installSuccess, false);
+		
+		wappalyzer.openTab(wappalyzer.homeUrl + 'install/success/');
+	},
+
 	openTab: function(url)
 	{
 		gBrowser.selectedTab = gBrowser.addTab(url);
@@ -665,12 +672,12 @@ wappalyzer =
 						'			"><strong>Wappalyzer</strong></div>' +
 						'		<span id="wappalyzer-bookmarklet-apps"><em>No apps detected</em></span>' +
 						'	</div>' +
-						' <span style="float: left;"><a href="http://wappalyzer.com" style="color: #332 !important;">home</a> | <a href="http://twitter.com/ElbertF" style="color: #332 !important;">follow me</a></span>' +
-						'	<span style="float: right;">click to close</span>' +
+						'	<span style="float: left;"><a href="http://wappalyzer.com" style="color: #332 !important;">home</a> | <a href="http://twitter.com/ElbertF" style="color: #332 !important;">follow me</a></span>' +
+						'   <span style="float: right;">click to close</span>' +
 						'</div>'
 						;
 
-					container.onclick = function() { body.removeChild(container) };
+					container.onclick = function() { body.removeChild(container); };
 
 					body.appendChild(container);
 

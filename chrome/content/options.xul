@@ -10,7 +10,7 @@
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
 	<prefpane label="&wappalyzer.options;">
 		<preferences>
-			<preference id="wappalyzer-auto-detect"     name="wappalyzer.autoDetect"     type="int" />
+			<preference id="wappalyzer-auto-detect"     name="wappalyzer.autoDetect"     type="bool"/>
 			<preference id="wappalyzer-enable-tracking" name="wappalyzer.enableTracking" type="bool"/>
 			<preference id="wappalyzer-show-app-names"  name="wappalyzer.showAppNames"   type="int" />
 		</preferences>
@@ -28,10 +28,10 @@
 							<label control="wappalyzer-auto-detect" value="&wappalyzer.detect;:"/>
 						</hbox>
 						<hbox align="center">
-							<menulist preference="wappalyzer-detect" id="refresh-interval">
+							<menulist preference="wappalyzer-auto-detect" id="refresh-interval">
 								<menupopup>
-									<menuitem label="&wappalyzer.auto;"   value="1"/>
-									<menuitem label="&wappalyzer.manual;" value="0"/>
+									<menuitem label="&wappalyzer.auto;"   value="true"/>
+									<menuitem label="&wappalyzer.manual;" value="false"/>
 								</menupopup>
 							</menulist>
 						</hbox>
