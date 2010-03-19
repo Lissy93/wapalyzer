@@ -295,11 +295,11 @@ wappalyzer =
 
 	urlChange:
 	{
-		QueryInterface: function( aIID )
+		QueryInterface: function(iid)
 		{
-			if ( aIID.equals(Components.interfaces.nsIWebProgressListener)   ||
-			     aIID.equals(Components.interfaces.nsISupportsWeakReference) ||
-			     aIID.equals(Components.interfaces.nsISupports) )
+			if ( iid.equals(Components.interfaces.nsIWebProgressListener)   ||
+			     iid.equals(Components.interfaces.nsISupportsWeakReference) ||
+			     iid.equals(Components.interfaces.nsISupports) )
 			{
 				return this;
 			}
@@ -307,14 +307,21 @@ wappalyzer =
 			throw Components.results.NS_NOINTERFACE;
 		},
 
-		onLocationChange: function(aProgress, aRequest, aURI)
+		onLocationChange: function(progress, request, url)
 		{
-			if ( aURI.spec != wappalyzer.prevUrl )
+			if ( !url )
 			{
-				wappalyzer.prevUrl = aURI.spec;
+				wappalyzer.prevUrl = '';
+
+				return;
+			}
+
+			if ( url.spec != wappalyzer.prevUrl )
+			{
+				wappalyzer.prevUrl = url.spec;
 				
-				// A tiny pauze to let the page load, otherwise some elements are displayed incorrectly
-				setTimeout(wappalyzer.onUrlChange(), 50);
+				// A tiny pauze to let the page load, otherwise some elements are displayed incorrectly in FF 3.5
+				setTimeout('wappalyzer.onUrlChange()', 50);
 			}
 		},
 
@@ -357,7 +364,12 @@ wappalyzer =
 			// Scan HTML for patterns
 			var html = doc.getElementsByTagName('html')[0].innerHTML;
 
-			if ( html && html.length < 500000 ) // Skip long pages
+			if ( html.length > 50000 ) // Prevent large documents from slowing things down
+			{
+				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+			}
+			
+			if ( html )
 			{
 				for ( i = 0; i < wappalyzer.app.length; i ++ )
 				{
