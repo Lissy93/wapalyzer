@@ -30,18 +30,10 @@
 				<menuseparator/>
 				<menuitem label="&wappalyzer.feedback;" oncommand="wappalyzer.openTab(wappalyzer.homeUrl + '?redirect=feedback');"/>
 				<menuitem label="&wappalyzer.home;"     oncommand="wappalyzer.openTab(wappalyzer.homeUrl);"/>
-				<!--menuitem id="wappalyzer_domain_details" label="&wappalyzer.domainDetails;" disabled="true" oncommand="
-					var doc = gBrowser.selectedBrowser.contentDocument;
-
-					if ( doc.domain )
-					{
-						gBrowser.selectedTab = wappalyzer.openTab(wappalyzer.homeUrl + 'detail/?domain=' + escape(doc.domain));
-					}
-					"/>
-				<menu label="&wappalyzer.appDetails;" disabled="true">
-					<menupopup id="wappalyze-app-details"/>
+				<menuseparator/>
+				<menu label="&wappalyzer.appStats;" disabled="true">
+					<menupopup id="wappalyzer-app-stats"/>
 				</menu>
-				<menuseparator/-->
 			</menupopup>
 		</statusbarpanel>
 	</statusbar>

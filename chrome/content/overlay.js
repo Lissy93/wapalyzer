@@ -13,6 +13,7 @@ wappalyzer =
 	appsDetected:   0,
 	checkUnique:    [],
 	currentTab:     false,
+	lastHref:       '',
 	prefs:          null,
 	autoDetect:     true,
 	enableTracking: true,
@@ -21,6 +22,7 @@ wappalyzer =
 	history:        [],
 	hitCount:       0,
 	isBookmarklet:  false,
+	req:            false,
 
 	app: [
 		'phpBB',
@@ -110,7 +112,46 @@ wappalyzer =
 		'ClickTale',
 		'Yahoo! Web Analytics',
 		'XOOPS',
-		'Amiro.CMS'
+		'Amiro.CMS',
+		'Blogger',
+		'DataLife Engine',
+		'Nedstat',
+		'Microsoft ASP.NET',
+		'Yandex.Metrika',
+		'Snoobi',
+		'Moogo',
+		'Trac',
+		'MantisBT',
+		'Bugzilla',
+		'Redmine',
+		'2z Project',
+		'Get Satisfaction',
+		'Swiftlet',
+		'YouTube',
+		'Vimeo',
+		'blip.tv',
+		'SWFObject',
+		'Textpattern CMS',
+		'1C-Bitrix',
+		'InstantCMS',
+		'MaxSite CMS',
+		'S.Builder',
+		'openEngine',
+		'SiteEdit',
+		'Kentico CMS',
+		'ShareThis',
+		'chartbeat',
+		'Meebo',
+		'Gravity Insights',
+		'Disqus',
+		'reCAPTCHA',
+		'DotNetNuke',
+		'jQuery UI',
+		'Typekit',
+		'Mint',
+		'cufon',
+		'sIFR',
+		'Mollom'
 		],
 
 	match: [
@@ -118,7 +159,7 @@ wappalyzer =
 		/(<link rel=("|')stylesheet("|') [^>]+wp-content|<meta name=("|')generator("|') [^>]+WordPress)/i,
 		/(<meta name=("|')generator("|') [^>]+MediaWiki|<a[^>]+>Powered by MediaWiki<\/a>)/i,
 		/<meta name=("|')generator("|') [^>]+Joomla/i,
-		/(<script [^>]+drupal\.js|jQuery\.extend\(Drupal\.settings, \{|Drupal\.extend\(\{ settings: \{)/i,
+		/(<script [^>]+drupal\.js|jQuery\.extend\(Drupal\.settings, \{|Drupal\.extend\(\{ settings: \{|<link[^>]+sites\/(default|all)\/themes\/|<style.+sites\/(default|all)\/(themes|modules)\/)/i,
 		/<meta name=("|')copyright("|') [^>]+Kolibri/i,
 		/<meta name=("|')generator("|') [^>]+vBulletin/i,
 		/<script .+\s+var smf_/i,
@@ -136,16 +177,16 @@ wappalyzer =
 		/(<script .+\s+<!--\s+lang\.no_new_posts|<a[^>]* title=("|')Powered By MyBB)/i,
 		/Powered by (<strong>)?<a href=("|')[^>]+fluxbb/i,
 		/<body id=("|')DiscussionsPage("|')/i,
-		/<meta name=("|')generator("|') [^>]+TYPO3/i,
+		/(<meta name=("|')generator("|') [^>]+TYPO3|<(script[^>]* src|link[^>]* href)=[^>]*fileadmin)/i,
 		/Powered by <a href=("|')[^>]+PrestaShop/i,
 		/<meta name=("|')generator("|') [^>]+Zen Cart/i,
 		/<!-- header_eof \/\/-->/i,
-		/Powered by <a href=("|')[^>]+WikkaWiki/i,
+		/(Powered by <a href=("|')[^>]+WikkaWiki|<meta name=("|')generator("|') [^>]+WikkaWiki)/i,
 		/<body onload=("|')window\.defaultStatus='oscss templates';("|')/i,
-		/(document\.write\(unescape\(("|')%3Cscript src=\'("|') \+ gaJsHost \+ ("|')google\-analytics\.com\/ga\.js|<script src=("|')http:\/\/www\.google-analytics\.com\/urchin\.js("|'))/i,
+		/(\.google\-analytics\.com\/ga\.js|<script src=("|')[^"]+google-analytics\.com\/urchin\.js("|'))/i,
 		/<script type=("|')text\/javascript("|') src=("|')http:\/\/cetrk\.com\/pages\/scripts\/[0-9]+\/[0-9]+\.js("|')/,
 		/var p=("|')http("|')\+\(d\.URL\.indexOf\('https:'\)==0\?'s':''\)\+("|'):\/\/stat\.onestat\.com\/stat\.aspx\?tagver/i,
-		/<script src=("|')http:\/\/static\.getclicky\.com\/[0-9]+\.js("|')/i,
+		/<script src=("|')http:\/\/static\.getclicky\.com/i,
 		/<script[^>]* src=("|')http:\/\/edge\.quantserve\.com\/quant\.js("|')>/i,
 		/<script[^>]* src=("|')http:\/\/www\.statcounter\.com\/counter\/counter/i,
 		/<script[^>]* src=("|')http:\/\/www\.w3counter\.com\/tracker\.js("|')>/i,
@@ -155,7 +196,7 @@ wappalyzer =
 		/<script[^>]* src=("|')[^>]*mootools[^>]*\.js("|')/i,
 		/<script[^>]* src=("|')[^>]*prototype\.js("|')/i,
 		/<script[^>]* src=("|')[^>]*MochiKit\.js/i,
-		/Powered by <a href=("|')[^>]+viennacms/i,
+		/powered by <a href=("|')[^>]+viennacms/i,
 		/<meta name=("|')generator("|') [^>]+Movable Type/i,
 		/<iframe src=("|')http:\/\/www\.tumblr\.com/i,
 		/<script[^>]* src=("|')[^>]*google.com\/friendconnect/i,
@@ -177,7 +218,7 @@ wappalyzer =
 		/(<meta name=("|')generator("|') [^>]+xt:Commerce|<div class=("|')copyright("|')>.+<a[^>]+>xt:Commerce)/i,
 		/(<meta name=("|')generator("|') [^>]+BIGACE|Powered by <a href=("|')[^>]+BIGACE|<!--\s+Site is running BIGACE)/i,
 		/<script[^>]* src=("|')[^>]*uc_cart\/uc_cart_block\.js/i,
-		/<!--\s+This website is powered by TYPOlight webCMS/i,
+		/(<!--\s+This website is powered by TYPOlight|<link[^>]+typolight.css)/i,
 		/<div class=("|')posterous/i,
 		/<link[^>]*\/papaya-themes\//i,
 		/<meta name=("|')generator("|') [^>]+eZ Publish/i,
@@ -201,21 +242,62 @@ wappalyzer =
 		/if\(typeof ClickTale(Tag)*==("|')function("|')\)/,
 		/<script[^>]* src=("|')[^>]*http:\/\/d\.yimg\.com\/mi\/ywa\.js/,
 		/<meta name=("|')generator("|') [^>]+XOOPS/i,
-		/<meta name=("|')generator("|') [^>]+Amiro/i
+		/<meta name=("|')generator("|') [^>]+Amiro/i,
+		/<meta content=("|')blogger("|') [^>]+generator/i,
+		/<meta name=("|')generator("|') [^>]+DataLife Engine/i,
+		/sitestat\(("|')http:\/\/nl\.sitestat\.com/,
+		/<input[^>]+name=("|')__VIEWSTATE/,
+		/<script[^>]* src=("|')[^"']+mc\.yandex\.ru\/metrika\/watch\.js("|')/,
+		/<script[^>]* src=("|')[^"']+snoobi\.com\/snoop\.php/,
+		/<script[^>]* src=("|')[^"']+kotisivukone.js/,
+		/(<a id=("|')tracpowered)/i,
+		/<img[^>]+ alt=("|')Powered by Mantis Bugtracker/i,
+		/<[^>]+(id|title|name)=("|')bugzilla/i,
+		/(<meta name=("|')description("|')Redmine("|')|Powered by <a href=("|')[^>]+Redmine)/i,
+		/<meta name=("|')generator("|') [^>]+2z project/i,
+		/var feedback_widget = new GSFN\.feedback_widget\(feedback_widget_options\)/,
+		/(<meta name=("|')generator("|') [^>]+Swiftlet|Powered by <a href=("|')[^>]+Swiftlet)/i,
+		/<(param|embed)[^>]+youtube\.com\/v/i,
+		/<(param|embed)[^>]+vimeo\.com\/moogaloop/i,
+		/<(param|embed)[^>]+blip\.tv\/play/i,
+		/<script[^>]+swfobject\.js/i,
+		/<meta name=("|')generator("|') [^>]+Textpattern/i,
+		/(<link[^>]+components\/bitrix|<script[^>]+1c\-bitrix)/i,
+		/<meta name=("|')generator("|') [^>]+InstantCMS/i,
+		/<meta name=("|')generator("|') [^>]+MaxSite CMS/i,
+		/<meta name=("|')generator("|') [^>]+S\.Builder/i,
+		/<meta[^>]+openEngine/i,
+		/<meta name=("|')generator("|') [^>]+SiteEdit/i,
+		/<meta name=("|')generator("|') [^>]+Kentico CMS/i,
+		/<script[^>]+ src=("|')[^"']+w\.sharethis\.com\//i,
+		/function loadChartbeat\(\) {/i,
+		/(<iframe id=("|')meebo\-iframe("|')|Meebo\('domReady'\))/,
+		/gravityInsightsParams\.site_guid = '/,
+		/(<div[^>]+id=("|')disqus_thread("|')|<script[^>]+disqus_url)/,
+		/(<div[^>]+id=("|')recaptcha_image|<script[^>]+ src=("|')https:\/\/api\-secure\.recaptcha\.net)/,
+		/(<meta name=("|')generator("|') [^>]+DotNetNuke|<!\-\- by DotNetNuke Corporation)/i,
+		/<script[^>]* src=("|')[^>]*jquery\-ui[^>]*\.js/i,
+		/<script[^>]* src=("|')[^>]*use.typekit.com/i,
+		/<script[^>]* src=("|')[^>]*mint\/\?js/i,
+		/(<script[^>]* src=("|')[^>]*cufon\-yui\.js|<script[^>]*>[^<]+Cufon\.now\(\))/i,
+		/<script[^>]* src=("|')[^>]*sifr\.js/i,
+		/(<script[^>]* src=("|')[^>]*mollom\.js|<img[^>]+\/.mollom\/.com)/i
 		],
 
 	appDomain: [
 		'Blogger',
 		'TypePad',
 		'LiveJournal',
-		'Vox'
+		'Vox',
+		'TYPO3'
 		],
 
 	matchDomain: [
 		/(www.)?.+\.blogspot\.com$/i,
 		/(www.)?.+\.typepad\.com$/i,
 		/(www.)?.+\.livejournal\.com$/i,
-		/(www.)?.+\.vox\.com$/i
+		/(www.)?.+\.vox\.com$/i,
+		/\/typo3/i
 		],
 
 	init: function() 
@@ -339,6 +421,13 @@ wappalyzer =
 		{
 			if ( doc.location.href == gBrowser.selectedBrowser.contentDocument.location.href )
 			{
+				if ( wappalyzer.lastHref == doc.location.href )
+				{
+					return;
+				}
+				
+				wappalyzer.lastHref = doc.location.href;
+				
 				wappalyzer.currentTab = true;
 
 				wappalyzer.clearDetectedApps();
@@ -354,9 +443,12 @@ wappalyzer =
 				{
 					var regexDomain = wappalyzer.matchDomain[i];
 
-					if ( regexDomain.test(doc.domain) )
+					if ( typeof(doc.domain) != 'undefined' )
 					{
-						wappalyzer.showApp(wappalyzer.appDomain[i], doc, doCount);
+						if ( regexDomain.test(doc.domain) )
+						{
+							wappalyzer.showApp(wappalyzer.appDomain[i], doc, doCount);
+						}
 					}
 				}
 			}
@@ -471,17 +563,9 @@ wappalyzer =
 				wappalyzer.report(detectedApp, domain);
 			}
 
-			/*
-			// Enable domain details menu item
-			var e = document.getElementById('wappalyzer_domain_details');
-
-			e.setAttribute('label',    'View details about ' + domain);
-			e.setAttribute('class',    'menuitem-iconic');
-			e.setAttribute('image',    'http://' + domain + '/favicon.ico');
-			e.setAttribute('disabled', false);
-
-			// Enable application details menu item
-			var e = document.getElementById('wappalyzer_app_details');
+			/* */
+			// Enable application statistics menu item
+			var e = document.getElementById('wappalyzer-app-stats');
 
 			e.parentNode.setAttribute('disabled', false);
 
@@ -489,11 +573,12 @@ wappalyzer =
 
 			child.setAttribute('label',     detectedApp);
 			child.setAttribute('class',     'menuitem-iconic');
+			child.setAttribute('type',      '');
 			child.setAttribute('image',     'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
-			child.setAttribute('oncommand', 'gBrowser.selectedTab = gBrowser.openTab(\'' + wappalyzer.homeUrl + 'detail/?app=' + escape(detectedApp) + '\');');
+			child.setAttribute('oncommand', 'wappalyzer.openTab(\'' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '\');');
 
 			e.appendChild(child);
-			*/
+			/* */
 
 			wappalyzer.appsDetected ++;
 
@@ -531,7 +616,7 @@ wappalyzer =
 	// You can turn this off in the options dialog
 	// This is used to track the distibution of software, stats are publically available on the site
 	{
-		if ( wappalyzer.enableTracking )
+		if ( wappalyzer.enableTracking && !wappalyzer.req )
 		{
 			var report = '';
 
@@ -553,19 +638,19 @@ wappalyzer =
 			}
 
 			// Make POST request
-			var req = new XMLHttpRequest();
+			wappalyzer.req = new XMLHttpRequest();
 
-			req.open('POST', wappalyzer.homeUrl + 'report/', true);
+			wappalyzer.req.open('POST', wappalyzer.homeUrl + 'report/', true);
 
-			req.channel.loadFlags |= Components.interfaces.nsIRequest.LOAD_BYPASS_CACHE;
+			wappalyzer.req.channel.loadFlags |= Components.interfaces.nsIRequest.LOAD_BYPASS_CACHE;
 
-			req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			wappalyzer.req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-			req.onreadystatechange = function(e)
+			wappalyzer.req.onreadystatechange = function(e)
 			{
-				if ( req.readyState == 4 )
-				{  
-					if ( req.status == 200 )
+				if ( wappalyzer.req.readyState == 4 )
+				{
+					if ( wappalyzer.req.status == 200 )
 					{
 						// Reset
 						report = '';
@@ -574,11 +659,13 @@ wappalyzer =
 						wappalyzer.history  = [];
 					}
 
-					req.close();
+					wappalyzer.req.close();
+
+					wappalyzer.req = false;
 				}
 			};
 
-			req.send('d=' + encodeURIComponent(report));
+			wappalyzer.req.send('d=' + encodeURIComponent(report));
 		}
 	},
 
@@ -603,21 +690,17 @@ wappalyzer =
 
 		panel.setAttribute('tooltiptext', '');
 
-		/*
-		// Disable domain details menu item
-		var e = document.getElementById('wappalyzer_domain_details');
-
-		e.setAttribute('label',    'View domain details');
-		e.setAttribute('disabled', true);
-		e.setAttribute('image',    false);
-
-		// Disable and clear application details menu item
-		e = document.getElementById('wappalyzer_app_details');
+		/* */
+		// Disable and clear application statistics menu item
+		e = document.getElementById('wappalyzer-app-stats');
 
 		e.parentNode.setAttribute('disabled', true);
 		
-		while ( e.childNodes.length > 0 ) e.removeChild(e.childNodes.item(0));
-		*/
+		while ( e.childNodes.length > 0 )
+		{
+			e.removeChild(e.childNodes.item(0));
+		}
+		/* */
 	},
 
 	showLabels: function(show)
