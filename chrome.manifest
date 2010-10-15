@@ -3,3 +3,7 @@ locale  wappalyzer en-US chrome/locale/en-US/
 skin    wappalyzer classic/1.0 chrome/skin/
 
 overlay chrome://browser/content/browser.xul chrome://wappalyzer/content/overlay.xul
+
+override chrome://wappalyzer/content/overlay.xul chrome://wappalyzer/content/mobile/overlay.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+override chrome://wappalyzer/content/options.xul chrome://wappalyzer/content/mobile/options.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+override chrome://wappalyzer/skin/overlay.css    chrome://wappalyzer/skin/mobile/overlay.css    application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
