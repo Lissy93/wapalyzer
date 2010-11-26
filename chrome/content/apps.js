@@ -92,7 +92,7 @@ if ( typeof(wappalyzer) != 'undefined' )
 		'Blogger':               { html: /<meta content=("|')blogger("|') [^>]+generator/i, url: /^(www.)?.+\.blogspot\.com/i },
 		'DataLife Engine':       { html: /<meta name=("|')generator("|') [^>]+DataLife Engine/i },
 		'Nedstat':               { html: /sitestat\(("|')http:\/\/nl\.sitestat\.com/ },
-		'Microsoft ASP.NET':     { html: /<input[^>]+name=("|')__VIEWSTATE/ },
+		'Microsoft ASP.NET':     { html: /<input[^>]+name=("|')__VIEWSTATE/, headers: { 'X-Powered-By': /ASP\.NET/ } },
 		'Yandex.Metrika':        { html: /<script[^>]* src=("|')[^"']+mc\.yandex\.ru\/metrika\/watch\.js("|')/ },
 		'Snoobi':                { html: /<script[^>]* src=("|')[^"']+snoobi\.com\/snoop\.php/ },
 		'Moogo':                 { html: /<script[^>]* src=("|')[^"']+kotisivukone.js/ },
@@ -155,6 +155,16 @@ if ( typeof(wappalyzer) != 'undefined' )
 		'Cotonti':               { html: /<meta name=("|')generator("|') [^>]+Cotonti/i },
 		'Mambo':                 { html: /<meta name=("|')generator("|') [^>]+Mambo/i },
 		'Concrete5':             { html: /<meta name=("|')generator("|') [^>]+concrete5/i },
-		'Webtrends':             { html: /<img[^>]+id=("|')DCSIMG("|')[^>]+webtrends/i }
+		'Webtrends':             { html: /<img[^>]+id=("|')DCSIMG("|')[^>]+webtrends/i },
+		'SiteCatalyst':          { html: /var s_code=s\.t\(\);if\(s_code\)document\.write\(s_code\)/i },
+		'WebsiteBaker':          { html: /<meta name=("|')generator("|') [^>]+WebsiteBaker/i },
+		'nopCommerce':           { html: /(<!\-\-Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)/i },
+		'JTL Shop':              { html: /(<input[^>]+name=('|")JTLSHOP|<a href=('|")jtl\.php)/i },
+		'XenForo':               { html: /(jQuery\.extend\(true, XenForo|Forum software by XenForo&trade;|<!\-\-XF:branding)/ },
+		'TomatoCart':            { html: /<meta name=("|')generator("|') [^>]+TomatoCart/i },
+		'PHP-Nuke':              { html: /(<meta name=("|')generator("|') [^>]+PHP-Nuke|<[^>]+Powered by PHP\-Nuke)/i },
+		'Twilight CMS':          { headers: { 'X-Powered-CMS': /Twilight CMS/ } },
+		'Wolf CMS':              { html: /<a href=("|')[^>]+wolfcms.org.+Wolf CMS.+inside/i },
+		'Burning Board':         { html: /<a href=('|")[^>]+woltlab\.com.+Burning Board/i }
 		};
 }

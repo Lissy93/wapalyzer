@@ -5,7 +5,7 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>wappalyzer@crunchlabz.com</em:id>
-		<em:version>1.9.4</em:version>
+		<em:version>1.10.0</em:version>
 		<em:type>2</em:type>
 
 		<em:targetApplication>
@@ -17,14 +17,18 @@
 			</Description>
 		</em:targetApplication>
 
+		<!--
 		<em:targetApplication>
+		-->
 			<!-- Firefox Mobile -->
+		<!--
 			<Description>
 				<em:id>{a23983c0-fd0e-11dc-95ff-0800200c9a66}</em:id>
 				<em:minVersion>1.1</em:minVersion>
 				<em:maxVersion>4.0b1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
+		-->
 
 		<em:optionsURL>chrome://wappalyzer/content/options.xul</em:optionsURL>
 

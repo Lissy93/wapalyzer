@@ -24,6 +24,7 @@ wappalyzer =
 	prefs:          {},
 	regexDomain:    /^[a-z0-9._\-]+\.[a-z]+/,
 	req:            false,
+	request:        false,
 	showAppNames:   3,
 
 	init: function()
@@ -64,6 +65,8 @@ wappalyzer =
 	},
 
 	log: function(message) {
+		return;
+
 		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
 
 		consoleService.logStringMessage("Wappalyzer: " + message);
@@ -102,18 +105,11 @@ wappalyzer =
 	{
 		wappalyzer.log('onPageLoad');
 
-		/*
-		var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-		                        .getService(Components.interfaces.nsIPromptService);
-
-		var re = prompts.alert(null, 'Wappalyzer', 'Wappalyzer for Firefox Mobile is not yet functional.');
-		*/
-
 		var doc = event.originalTarget;
 
 		wappalyzer.analyzePage(
-			document.location.href,
-			document.documentElement.innerHTML,
+			doc.location.href,
+			doc.documentElement.innerHTML,
 			[],
 			true,
 			false
@@ -137,13 +133,20 @@ wappalyzer =
 	{
 		wappalyzer.log('onUrlChange');
 
+		wappalyzer.clearDetectedApps();
+
 		var doc = wappalyzer.browser.contentDocument;
 
-		doc.request = request;
+		if ( !doc.request )
+		{
+			doc.request = request;
+		}
+
+		wappalyzer.request = doc.request;
 
 		wappalyzer.analyzePage(
 			doc.location.href,
-			doc.documentElement.innerHTML,
+			doc.documentElement ? doc.documentElement.innerHTML : '',
 			[],
 			false,
 			false
@@ -198,8 +201,6 @@ wappalyzer =
 			if ( href == wappalyzer.browser.contentDocument.location.href )
 			{
 				wappalyzer.currentTab = true;
-
-				wappalyzer.clearDetectedApps();
 			}
 		}
 
@@ -244,9 +245,8 @@ wappalyzer =
 							}
 						}
 
-						/*
 						// Scan response header
-						if ( typeof(wappalyzer.apps[appName].headers) != 'undefined' && typeof(doc.request) != 'undefined' )
+						if ( typeof(wappalyzer.apps[appName].headers) != 'undefined' && wappalyzer.request )
 						{
 							for ( var header in wappalyzer.apps[appName].headers )
 							{
@@ -254,9 +254,9 @@ wappalyzer =
 
 								try
 								{
-									if ( regex.test(doc.request.nsIHttpChannel.getResponseHeader(header)) )
+									if ( regex.test(wappalyzer.request.nsIHttpChannel.getResponseHeader(header)) )
 									{
-										wappalyzer.showApp(appName, doc, doCount);
+										wappalyzer.showApp(appName, href, doCount);
 									}
 								}
 								catch(e)
@@ -264,7 +264,6 @@ wappalyzer =
 								}
 							}
 						}
-						*/
 					}
 				}
 			}

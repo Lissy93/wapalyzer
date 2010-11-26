@@ -19,7 +19,7 @@
 			>
 			<image
 				id="wappalyzer-icon"
-				onclick="wappalyzer.analyzePage(gBrowser.selectedBrowser.contentDocument, true, true);"
+				onclick="wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
 				class="wappalyzer-icon"
 				tooltiptext="&wappalyzer.title;"
 				label="&wappalyzer.title;"
