@@ -44,6 +44,10 @@ wappalyzer =
 		wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
 
+		var locationPref = wappalyzer.prefs.getIntPref('location');
+
+		wappalyzer.moveLocation(locationPref);
+
 		// Open page after installation
 		if ( wappalyzer.newInstall )
 		{
@@ -52,10 +56,13 @@ wappalyzer =
 			wappalyzer.browser.addEventListener('load', wappalyzer.installSuccess, false);
 		}
 
-		// Listen messages sent from the content process
-		messageManager.addMessageListener('wappalyzer:onPageLoad', wappalyzer.onContentPageLoad);
+		if ( typeof(messageManager) != 'undefined' )
+		{
+			// Listen messages sent from the content process
+			messageManager.addMessageListener('wappalyzer:onPageLoad', wappalyzer.onContentPageLoad);
 
-		messageManager.loadFrameScript('chrome://wappalyzer/content/content.js', true);
+			messageManager.loadFrameScript('chrome://wappalyzer/content/content.js', true);
+		}
 
 		// Listen for URL changes
 		wappalyzer.browser.addProgressListener(wappalyzer.urlChange, Components.interfaces.nsIWebProgress.NOTIFY_LOCATION);
@@ -65,7 +72,7 @@ wappalyzer =
 	},
 
 	log: function(message) {
-		return;
+		//return;
 
 		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
 
@@ -87,7 +94,7 @@ wappalyzer =
 		switch(data)
 		{
 			case 'autoDetect':
-				wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
+				wappalyzer.autoDetect = wappalyzer.prefs.getBoolPref('autoDetect');
 
 				break;
 			case 'enableTracking':
@@ -95,10 +102,33 @@ wappalyzer =
 
 				break;
 			case 'showAppNames':
-				wappalyzer.showAppNames   = wappalyzer.prefs.getIntPref('showAppNames');
+				wappalyzer.showAppNames = wappalyzer.prefs.getIntPref('showAppNames');
+
+				break;
+			case 'location':
+				var locationPref = wappalyzer.prefs.getIntPref('location');
+
+				wappalyzer.moveLocation(locationPref);
+		}
+	},
+
+	moveLocation: function(locationPref) {
+		wappalyzer.log('moveLocation');
+
+		var containerId = 'urlbar-icons';
+
+		switch ( locationPref )
+		{
+			case 1:
+				containerId = 'wappalyzer-statusbar';
 
 				break;
 		}
+
+		var e         = document.getElementById(containerId);
+		var container = document.getElementById('wappalyzer-container');
+
+		e.appendChild(container);
 	},
 
 	onPageLoad: function(event)
@@ -106,6 +136,11 @@ wappalyzer =
 		wappalyzer.log('onPageLoad');
 
 		var doc = event.originalTarget;
+
+		if ( !doc.request )
+		{
+			wappalyzer.request = false;
+		}
 
 		wappalyzer.analyzePage(
 			doc.location.href,
@@ -144,8 +179,10 @@ wappalyzer =
 
 		wappalyzer.request = doc.request;
 
+		wappalyzer.currentTab = false;
+
 		wappalyzer.analyzePage(
-			doc.location.href,
+			doc.location.href   ? doc.location.href             : '',
 			doc.documentElement ? doc.documentElement.innerHTML : '',
 			[],
 			false,
@@ -169,6 +206,8 @@ wappalyzer =
 
 		onLocationChange: function(progress, request, url)
 		{
+			wappalyzer.log('urlChange.onLocationChange');
+
 			if ( !url )
 			{
 				wappalyzer.prevUrl = '';
@@ -201,6 +240,8 @@ wappalyzer =
 			if ( href == wappalyzer.browser.contentDocument.location.href )
 			{
 				wappalyzer.currentTab = true;
+
+				wappalyzer.clearDetectedApps();
 			}
 		}
 
@@ -315,11 +356,11 @@ wappalyzer =
 					{
 						if ( wappalyzer.showAppNames == 2 )
 						{
-							var urlbar = document.getElementById('wappalyzer-urlbar');
+							var container = document.getElementById('wappalyzer-container');
 
-							var tooltiptext = urlbar.getAttribute('tooltiptext') + '\n' + detectedApp;
+							var tooltiptext = container.getAttribute('tooltiptext') + '\n' + detectedApp;
 
-							urlbar.setAttribute('tooltiptext', tooltiptext);
+							container.setAttribute('tooltiptext', tooltiptext);
 						}
 
 						if ( wappalyzer.showAppNames == 3 )
@@ -494,9 +535,9 @@ wappalyzer =
 		if ( !wappalyzer.isMobile )
 		{
 			// Clear tooltip
-			var urlbar = document.getElementById('wappalyzer-urlbar');
+			var container = document.getElementById('wappalyzer-container');
 
-			urlbar.setAttribute('tooltiptext', wappalyzer.strings.getString('wappalyzer.title') + '\n---');
+			container.setAttribute('tooltiptext', wappalyzer.strings.getString('wappalyzer.title') + '\n---');
 
 			// Disable and clear application statistics menu item
 			e = document.getElementById('wappalyzer-app-stats');

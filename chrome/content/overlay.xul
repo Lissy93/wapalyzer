@@ -11,10 +11,10 @@
 	<stringbundleset id="stringbundleset">
 		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/overlay.properties" />
 	</stringbundleset>
-
-	<hbox id="urlbar-icons"> 
+	
+	<hbox>
 		<hbox
-			id="wappalyzer-urlbar"
+			id="wappalyzer-container"
 			context="wappalyzer-menu"
 			>
 			<image
@@ -40,38 +40,11 @@
 				</menu>
 			</menupopup>
 		</hbox>
-	</hbox>  
+	</hbox>
 
-	<!--
+	<hbox id="urlbar-icons"></hbox>  
+
 	<statusbar id="status-bar">
-		<statusbarpanel
-			id="wappalyzer-panel"
-			label="&wappalyzer.title;"
-			context="wappalyzer-menu"
-			>
-			<image
-				id="wappalyzer-icon"
-				onclick="wappalyzer.analyzePage(gBrowser.selectedBrowser.contentDocument, true, true);"
-			    class="wappalyzer-icon"
-				tooltiptext="&wappalyzer.title;"
-				label="&wappalyzer.title;"
-				src="chrome://wappalyzer/skin/icon16x16.ico"/>
-			
-			<box align="start" id="wappalyzer-detected-apps"/>
-
-			<menupopup id="wappalyzer-menu" position="at_pointer">
-				<menuitem label="&wappalyzer.options;" oncommand="
-					window.openDialog('chrome://wappalyzer/content/options.xul', 'wappalyzer-options', 'chrome, centerscreen, modal');
-					"/>
-				<menuseparator/>
-				<menuitem label="&wappalyzer.feedback;" oncommand="wappalyzer.openTab(wappalyzer.homeUrl + '?redirect=feedback');"/>
-				<menuitem label="&wappalyzer.home;"     oncommand="wappalyzer.openTab(wappalyzer.homeUrl);"/>
-				<menuseparator/>
-				<menu label="&wappalyzer.appStats;" disabled="true">
-					<menupopup id="wappalyzer-app-stats"/>
-				</menu>
-			</menupopup>
-		</statusbarpanel>
-	</statusbar>
-	-->
+		<statusbarpanel id="wappalyzer-statusbar" class="statusbarpanel-iconic"></statusbarpanel>
+	</statusbar>  
 </overlay>
