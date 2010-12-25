@@ -19,9 +19,7 @@
 			>
 			<image
 				id="wappalyzer-icon"
-				onclick="wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
 				class="wappalyzer-icon"
-				tooltiptext="&wappalyzer.title;"
 				label="&wappalyzer.title;"
 				src="chrome://wappalyzer/skin/icon16x16.ico"/>
 			
@@ -32,6 +30,7 @@
 					window.openDialog('chrome://wappalyzer/content/options.xul', 'wappalyzer-options', 'chrome, centerscreen, modal');
 					"/>
 				<menuseparator/>
+				<menuitem label="&wappalyzer.donate;"   oncommand="wappalyzer.openTab(wappalyzer.homeUrl + 'donate');"/>
 				<menuitem label="&wappalyzer.feedback;" oncommand="wappalyzer.openTab(wappalyzer.homeUrl + '?redirect=feedback');"/>
 				<menuitem label="&wappalyzer.home;"     oncommand="wappalyzer.openTab(wappalyzer.homeUrl);"/>
 				<menuseparator/>
@@ -42,9 +41,23 @@
 		</hbox>
 	</hbox>
 
-	<hbox id="urlbar-icons"></hbox>  
+	<hbox
+		id="urlbar-icons"
+		tooltiptext="&wappalyzer.title;"
+		onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
+		onmouseover="wappalyzer.showLabels(true);"
+		onmouseout="wappalyzer.showLabels(false);"
+		/>
 
 	<statusbar id="status-bar">
-		<statusbarpanel id="wappalyzer-statusbar" class="statusbarpanel-iconic"></statusbarpanel>
-	</statusbar>  
+		<statusbarpanel
+			id="wappalyzer-statusbar"
+			class="statusbarpanel-iconic"
+			context="wappalyzer-menu"
+			tooltiptext="&wappalyzer.title;"
+			onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
+			onmouseover="wappalyzer.showLabels(true);"
+			onmouseout="wappalyzer.showLabels(false);"
+			/>
+	</statusbar>
 </overlay>

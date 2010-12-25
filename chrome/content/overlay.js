@@ -11,8 +11,10 @@ wappalyzer =
 	appsDetected:   0,
 	autoDetect:     true,
 	browser:        {},
-	currentTab:     false,
+	cats:           {},
 	checkUnique:    {},
+	currentTab:     false,
+	customApps:     '',
 	enableTracking: true,
 	history:        {},
 	hitCount:       0,
@@ -26,6 +28,7 @@ wappalyzer =
 	req:            false,
 	request:        false,
 	showAppNames:   3,
+	showCats:       [],
 
 	init: function()
 	{
@@ -41,8 +44,14 @@ wappalyzer =
 
 		wappalyzer.showAppNames   = wappalyzer.prefs.getIntPref( 'showAppNames');
 		wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
+		wappalyzer.customApps     = wappalyzer.prefs.getCharPref('customApps');
 		wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
+
+		for ( i = 1; i <= 20; i ++ )
+		{
+			wappalyzer.showCats[i] = wappalyzer.prefs.getBoolPref('cat' + i);
+		}
 
 		var locationPref = wappalyzer.prefs.getIntPref('location');
 
@@ -69,6 +78,8 @@ wappalyzer =
 
 		// Listen for page loads
 		wappalyzer.browser.addEventListener('DOMContentLoaded', wappalyzer.onPageLoad, true);
+
+		wappalyzer.evaluateCustomApps();
 	},
 
 	log: function(message) {
@@ -97,6 +108,10 @@ wappalyzer =
 				wappalyzer.autoDetect = wappalyzer.prefs.getBoolPref('autoDetect');
 
 				break;
+			case 'customApps':
+				wappalyzer.customApps = wappalyzer.prefs.getCharPref('customApps');
+
+				break;
 			case 'enableTracking':
 				wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 
@@ -109,26 +124,153 @@ wappalyzer =
 				var locationPref = wappalyzer.prefs.getIntPref('location');
 
 				wappalyzer.moveLocation(locationPref);
+
+				break;
+			case 'cat1':  wappalyzer.showCats[1]  = wappalyzer.prefs.getIntPref('cat1');  break;
+			case 'cat2':  wappalyzer.showCats[2]  = wappalyzer.prefs.getIntPref('cat2');  break;
+			case 'cat3':  wappalyzer.showCats[3]  = wappalyzer.prefs.getIntPref('cat3');  break;
+			case 'cat4':  wappalyzer.showCats[4]  = wappalyzer.prefs.getIntPref('cat4');  break;
+			case 'cat5':  wappalyzer.showCats[5]  = wappalyzer.prefs.getIntPref('cat5');  break;
+			case 'cat6':  wappalyzer.showCats[6]  = wappalyzer.prefs.getIntPref('cat6');  break;
+			case 'cat7':  wappalyzer.showCats[7]  = wappalyzer.prefs.getIntPref('cat7');  break;
+			case 'cat8':  wappalyzer.showCats[8]  = wappalyzer.prefs.getIntPref('cat8');  break;
+			case 'cat9':  wappalyzer.showCats[9]  = wappalyzer.prefs.getIntPref('cat9');  break;
+			case 'cat10': wappalyzer.showCats[10] = wappalyzer.prefs.getIntPref('cat10'); break;
+			case 'cat11': wappalyzer.showCats[11] = wappalyzer.prefs.getIntPref('cat11'); break;
+			case 'cat12': wappalyzer.showCats[12] = wappalyzer.prefs.getIntPref('cat12'); break;
+			case 'cat13': wappalyzer.showCats[13] = wappalyzer.prefs.getIntPref('cat13'); break;
+			case 'cat14': wappalyzer.showCats[14] = wappalyzer.prefs.getIntPref('cat14'); break;
+			case 'cat15': wappalyzer.showCats[15] = wappalyzer.prefs.getIntPref('cat15'); break;
+			case 'cat16': wappalyzer.showCats[16] = wappalyzer.prefs.getIntPref('cat16'); break;
+			case 'cat17': wappalyzer.showCats[17] = wappalyzer.prefs.getIntPref('cat17'); break;
+			case 'cat18': wappalyzer.showCats[18] = wappalyzer.prefs.getIntPref('cat18'); break;
+			case 'cat19': wappalyzer.showCats[19] = wappalyzer.prefs.getIntPref('cat19'); break;
+			case 'cat20': wappalyzer.showCats[20] = wappalyzer.prefs.getIntPref('cat20'); break;
 		}
 	},
 
 	moveLocation: function(locationPref) {
 		wappalyzer.log('moveLocation');
 
-		var containerId = 'urlbar-icons';
-
 		switch ( locationPref )
 		{
 			case 1:
 				containerId = 'wappalyzer-statusbar';
 
+				// Show status bar panel
+				document.getElementById('wappalyzer-statusbar').style.visibility = '';
+				document.getElementById('wappalyzer-statusbar').style.padding    = '1px';
+
 				break;
+			default:
+				var containerId = 'urlbar-icons';
+
+				// Hide status bar panel
+				document.getElementById('wappalyzer-statusbar').style.visibility = 'hidden';
+				document.getElementById('wappalyzer-statusbar').style.padding    = '0';
 		}
 
 		var e         = document.getElementById(containerId);
 		var container = document.getElementById('wappalyzer-container');
 
 		e.appendChild(container);
+	},
+
+	evaluateCustomApps: function(feedback)
+	{
+		wappalyzer.log('evaluateCustomApps');
+
+		var appsAdded = {};
+
+		if ( wappalyzer.customApps )
+		{
+			try
+			{
+				var customAppsJSON = JSON.parse(wappalyzer.customApps);
+
+				for ( appName in customAppsJSON )
+				{
+					wappalyzer.apps[appName] = {};
+
+					appsAdded[appName] = true;
+
+					// Icon
+					if ( typeof(customAppsJSON[appName].icon) == 'string' )
+					{
+						wappalyzer.apps[appName].icon = customAppsJSON[appName].icon;
+					}
+					else
+					{
+						wappalyzer.apps[appName].icon = 'chrome://wappalyzer/skin/app_icons/_placeholder.ico';
+					}
+
+					// Categories
+					if ( typeof(customAppsJSON[appName].categories) == 'object' )
+					{
+						wappalyzer.apps[appName].cats = {};
+
+						for ( i in customAppsJSON[appName].categories )
+						{
+							wappalyzer.apps[appName].cats[i] = parseInt(customAppsJSON[appName].categories[i]);
+						}
+					}
+
+					// HTML
+					if ( typeof(customAppsJSON[appName].html) == 'string' )
+					{
+						wappalyzer.apps[appName].html = new RegExp(customAppsJSON[appName].html, 'i');
+					}
+
+					// URL
+					if ( typeof(customAppsJSON[appName].url) == 'string' )
+					{
+						wappalyzer.apps[appName].url = new RegExp(customAppsJSON[appName].url, 'i');
+					}
+
+					// Headers
+					if ( typeof(customAppsJSON[appName].headers) == 'object' )
+					{
+						wappalyzer.apps[appName].headers = {};
+
+						for ( headerName in customAppsJSON[appName].headers )
+						{
+							wappalyzer.apps[appName].headers[headerName] = new RegExp(customAppsJSON[appName].headers[headerName], 'i');
+						}
+					}
+				}
+
+				if ( feedback )
+				{
+					var text  = '';
+					var count = 0;
+
+					for ( appName in appsAdded )
+					{
+						text += '\n- ' + appName;
+
+						count ++;
+					}
+
+					alert('Success. Added ' + count + ' application(s): \n' + text);
+				}
+			}
+			catch(e)
+			{
+				wappalyzer.log('JSON error in custom applications');
+
+				if ( feedback )
+				{
+					alert('Error: malformed JSON.');
+				}
+			}
+		}
+		else
+		{
+			if ( feedback )
+			{
+				alert('Nothing to evaluate!');
+			}
+		}
 	},
 
 	onPageLoad: function(event)
@@ -326,92 +468,113 @@ wappalyzer =
 
 		if ( detectedApp && typeof(wappalyzer.checkUnique[detectedApp]) == 'undefined' )
 		{
-			switch ( true )
-			{
-				case wappalyzer.isBookmarklet:
-					var e = document.getElementById('wappalyzer-bookmarklet-apps');
+			var show = false;
 
-					e.innerHTML =
-						( wappalyzer.appsDetected ? e.innerHTML : '' ) +
-						'<a href="' + wappalyzer.homeUrl + 'stats/app/' + escape(wappalyzer.app[i]) + '" style="color: #332;">' +
-						wappalyzer.app[i] +
-						'</a><br/>'
-						;
+			for ( i in wappalyzer.apps[detectedApp].cats )
+			{
+				if ( wappalyzer.showCats[wappalyzer.apps[detectedApp].cats[i]] )
+				{
+					show = true;
 
 					break;
-				case wappalyzer.isMobile:
-				default:
-					// Hide Wappalyzer icon
-					document.getElementById('wappalyzer-icon').style.display = 'none';
+				}
+			}
 
-					// Show app icon and label
-					var e = document.getElementById('wappalyzer-detected-apps');
+			if ( show )
+			{
+				switch ( true )
+				{
+					case wappalyzer.isBookmarklet:
+						var e = document.getElementById('wappalyzer-bookmarklet-apps');
 
-					var child = document.createElement('image');
+						e.innerHTML =
+							( wappalyzer.appsDetected ? e.innerHTML : '' ) +
+							'<a href="' + wappalyzer.homeUrl + 'stats/app/' + escape(wappalyzer.app[i]) + '" style="color: #332;">' +
+							wappalyzer.app[i] +
+							'</a><br/>'
+							;
 
-					child.setAttribute('src',   'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
-					child.setAttribute('class', 'wappalyzer-icon');
+						break;
+					case wappalyzer.isMobile:
+					default:
+						// Hide Wappalyzer icon
+						document.getElementById('wappalyzer-icon').style.display = 'none';
 
-					if ( !wappalyzer.isMobile )
-					{
-						if ( wappalyzer.showAppNames == 2 )
+						// Show app icon and label
+						var e = document.getElementById('wappalyzer-detected-apps');
+
+						var child = document.createElement('image');
+
+						if ( typeof(wappalyzer.apps[detectedApp].icon) == 'string' )
 						{
-							var container = document.getElementById('wappalyzer-container');
-
-							var tooltiptext = container.getAttribute('tooltiptext') + '\n' + detectedApp;
-
-							container.setAttribute('tooltiptext', tooltiptext);
+							child.setAttribute('src', wappalyzer.apps[detectedApp].icon);
+						}
+						else
+						{
+							child.setAttribute('src', 'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
 						}
 
-						if ( wappalyzer.showAppNames == 3 )
+						child.setAttribute('class', 'wappalyzer-icon');
+
+						if ( !wappalyzer.isMobile )
 						{
-							child.setAttribute('onmouseover', 'wappalyzer.showLabels(true)');
-							child.setAttribute('onmouseout',  'wappalyzer.showLabels(false)');
-						}
+							if ( wappalyzer.showAppNames == 2 )
+							{
+								var container = document.getElementById('wappalyzer-container').parentNode;
 
-						if ( wappalyzer.appsDetected )
-						{
-							child.setAttribute('style', 'margin-left: .5em');
-						}
-					}
+								var tooltiptext = container.getAttribute('tooltiptext') + '\n' + detectedApp;
 
-					e.appendChild(child);
+								if ( wappalyzer.apps[detectedApp].cats )
+								{
+									for ( i in wappalyzer.apps[detectedApp].cats )
+									{
+										tooltiptext += '\n    ' + wappalyzer.cats[wappalyzer.apps[detectedApp].cats[i]].name;
+									}
 
-					if ( !wappalyzer.isMobile )
-					{
-						child = document.createElement('label');
+									tooltiptext += '\n';
+								}
 
-						child.setAttribute('value', detectedApp);
-						child.setAttribute('class', 'wappalyzer-app-name');
+								container.setAttribute('tooltiptext', tooltiptext);
+							}
 
-						if ( wappalyzer.showAppNames != 1 )
-						{
-							child.setAttribute('style', 'display: none;');
-						}
-
-						if ( wappalyzer.showAppNames == 3 )
-						{
-							child.setAttribute('onmouseover', 'wappalyzer.showLabels(true)');
-							child.setAttribute('onmouseout',  'wappalyzer.showLabels(false)');
+							if ( wappalyzer.appsDetected )
+							{
+								child.setAttribute('style', 'margin-left: .5em');
+							}
 						}
 
 						e.appendChild(child);
 
-						// Enable application statistics menu item
-						var e = document.getElementById('wappalyzer-app-stats');
+						if ( !wappalyzer.isMobile )
+						{
+							child = document.createElement('label');
 
-						e.parentNode.setAttribute('disabled', false);
+							child.setAttribute('value', detectedApp);
+							child.setAttribute('class', 'wappalyzer-app-name');
 
-						var child = document.createElement('menuitem');
+							if ( wappalyzer.showAppNames != 1 )
+							{
+								child.setAttribute('style', 'display: none;');
+							}
 
-						child.setAttribute('label',     detectedApp);
-						child.setAttribute('class',     'menuitem-iconic');
-						child.setAttribute('type',      '');
-						child.setAttribute('image',     'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
-						child.setAttribute('oncommand', 'wappalyzer.openTab(\'' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '\');');
+							e.appendChild(child);
 
-						e.appendChild(child);
-					}
+							// Enable application statistics menu item
+							var e = document.getElementById('wappalyzer-app-stats');
+
+							e.parentNode.setAttribute('disabled', false);
+
+							var child = document.createElement('menuitem');
+
+							child.setAttribute('label',     detectedApp);
+							child.setAttribute('class',     'menuitem-iconic');
+							child.setAttribute('type',      '');
+							child.setAttribute('image',     'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
+							child.setAttribute('oncommand', 'wappalyzer.openTab(\'' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '\');');
+
+							e.appendChild(child);
+						}
+				}
 			}
 
 			if ( doCount )
@@ -535,9 +698,9 @@ wappalyzer =
 		if ( !wappalyzer.isMobile )
 		{
 			// Clear tooltip
-			var container = document.getElementById('wappalyzer-container');
+			var container = document.getElementById('wappalyzer-container').parentNode;
 
-			container.setAttribute('tooltiptext', wappalyzer.strings.getString('wappalyzer.title') + '\n---');
+			container.setAttribute('tooltiptext', wappalyzer.strings.getString('wappalyzer.title') + ( wappalyzer.showAppNames == 2 ? '\n---' : '' ));
 
 			// Disable and clear application statistics menu item
 			e = document.getElementById('wappalyzer-app-stats');
@@ -553,11 +716,14 @@ wappalyzer =
 
 	showLabels: function(show)
 	{
-		e = document.getElementsByClassName('wappalyzer-app-name');
-
-		for ( i = 0; i < e.length; i ++ )
+		if ( wappalyzer.showAppNames == 3 )
 		{
-			e[i].style.display = show ? 'inline' : 'none';
+			e = document.getElementsByClassName('wappalyzer-app-name');
+
+			for ( i = 0; i < e.length; i ++ )
+			{
+				e[i].style.display = show ? 'inline' : 'none';
+			}
 		}
 	},
 
@@ -575,7 +741,7 @@ wappalyzer =
 
 	bookmarklet: function()
 	{
-		if ( typeof(gBrowser) == 'undefined' && typeof(Browser) == 'undefined' )
+		if ( !wappalyzer.browser )
 		{
 			wappalyzer.isBookmarklet = true;
 

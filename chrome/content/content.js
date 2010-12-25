@@ -9,8 +9,6 @@ wappalyzer =
 		wappalyzer.log('init');
 
 		addEventListener('DOMContentLoaded', wappalyzer.onPageLoad, false);
-
-		//Browser.selectedBrowser.addProgressListener(wappalyzer.urlChange, Components.interfaces.nsIWebProgress.NOTIFY_LOCATION);
 	},
 
 	log: function(message)
