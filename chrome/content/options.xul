@@ -9,6 +9,10 @@
 	id="wappalyzer-options"
 	title="&wappalyzer.options;"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
+
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/evaluate.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/apps.js"/>
+
 	<prefpane label="&wappalyzer.options;">
 		<preferences>
 			<preference id="wappalyzer-location"        name="wappalyzer.location"       type="int"   />
@@ -205,9 +209,22 @@
 					<groupbox>
 						<grid>
 							<columns>
-								<column flex="1"/>
+								<column flex="0"/>
 							</columns>
 							<rows>
+								<row>
+									<hbox align="center">
+										<description>&wappalyzer.customBody;</description>
+									</hbox>
+								</row>
+								<row>
+									<hbox align="center">
+										<!--
+										<label class="text-link" onclick="window.open(wappalyzer.homeUrl + 'custom/', 'helpWindow'); void(0);" value="&wappalyzer.customMoreInfo;"/>
+										-->
+										<label class="text-link" onclick="window.open('http://wappalyzer.com/custom/', 'helpWindow'); void(0);" value="&wappalyzer.customMoreInfo;"/>
+									</hbox>
+								</row>
 								<row>
 									<hbox align="center">
 										<textbox preference="wappalyzer-custom-apps" id="wappalyzer-option-custom-apps" multiline="true" rows="10" cols="60"></textbox>
@@ -215,7 +232,7 @@
 								</row>
 								<row>
 									<hbox align="center">
-										<button label="&wappalyzer.evaluate;" oncommand="opener.wappalyzer.evaluateCustomApps(true);"/>
+										<button label="&wappalyzer.evaluate;" oncommand="wappalyzer.evaluateCustomApps(document.getElementById('wappalyzer-option-custom-apps').value, true);"/>
 									</hbox>
 								</row>
 							</rows>

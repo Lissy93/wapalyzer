@@ -6,16 +6,19 @@
 
 <overlay id="wappalyzer-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/overlay.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/evaluate.js"/>
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/apps.js"/>
 
 	<stringbundleset id="stringbundleset">
-		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/overlay.properties" />
+		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/overlay.properties"/>
 	</stringbundleset>
 	
 	<hbox>
 		<hbox
 			id="wappalyzer-container"
 			context="wappalyzer-menu"
+			onmouseover="wappalyzer.showLabels(true);"
+			onmouseout="wappalyzer.showLabels(false);"
 			>
 			<image
 				id="wappalyzer-icon"
@@ -30,7 +33,7 @@
 					window.openDialog('chrome://wappalyzer/content/options.xul', 'wappalyzer-options', 'chrome, centerscreen, modal');
 					"/>
 				<menuseparator/>
-				<menuitem label="&wappalyzer.donate;"   oncommand="wappalyzer.openTab(wappalyzer.homeUrl + 'donate');"/>
+				<menuitem label="&wappalyzer.donate;"   oncommand="wappalyzer.openTab(wappalyzer.homeUrl + 'donate/');"/>
 				<menuitem label="&wappalyzer.feedback;" oncommand="wappalyzer.openTab(wappalyzer.homeUrl + '?redirect=feedback');"/>
 				<menuitem label="&wappalyzer.home;"     oncommand="wappalyzer.openTab(wappalyzer.homeUrl);"/>
 				<menuseparator/>
@@ -45,8 +48,6 @@
 		id="urlbar-icons"
 		tooltiptext="&wappalyzer.title;"
 		onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
-		onmouseover="wappalyzer.showLabels(true);"
-		onmouseout="wappalyzer.showLabels(false);"
 		/>
 
 	<statusbar id="status-bar">
@@ -56,8 +57,6 @@
 			context="wappalyzer-menu"
 			tooltiptext="&wappalyzer.title;"
 			onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
-			onmouseover="wappalyzer.showLabels(true);"
-			onmouseout="wappalyzer.showLabels(false);"
 			/>
 	</statusbar>
 </overlay>

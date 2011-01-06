@@ -1,9 +1,11 @@
 pref('wappalyzer.autoDetect',     true);
+pref('wappalyzer.debug',          false);
 pref('wappalyzer.location',       0);
 pref('wappalyzer.enableTracking', true);
 pref('wappalyzer.newInstall',     true);
 pref('wappalyzer.showAppNames',   2);
 pref('wappalyzer.customApps',     '');
+pref('wappalyzer.version',        '');
 
 pref('wappalyzer.cat1',           true);
 pref('wappalyzer.cat2',           true);

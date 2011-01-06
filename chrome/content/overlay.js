@@ -10,11 +10,12 @@ wappalyzer =
 	apps:           {},
 	appsDetected:   0,
 	autoDetect:     true,
-	browser:        {},
+	browser:        false,
 	cats:           {},
 	checkUnique:    {},
 	currentTab:     false,
 	customApps:     '',
+	debug:          false,
 	enableTracking: true,
 	history:        {},
 	hitCount:       0,
@@ -29,12 +30,16 @@ wappalyzer =
 	request:        false,
 	showAppNames:   3,
 	showCats:       [],
+	strings:        {},
+	version:        '',
 
 	init: function()
 	{
 		wappalyzer.log('init');
 
 		wappalyzer.browser = typeof(Browser) != 'undefined' ? Browser.selectedBrowser : gBrowser;
+
+		wappalyzer.strings = document.getElementById('wappalyzer-strings');
 
 		// Preferences
 		wappalyzer.prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService).getBranch('wappalyzer.');
@@ -45,8 +50,10 @@ wappalyzer =
 		wappalyzer.showAppNames   = wappalyzer.prefs.getIntPref( 'showAppNames');
 		wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
 		wappalyzer.customApps     = wappalyzer.prefs.getCharPref('customApps');
+		wappalyzer.debug          = wappalyzer.prefs.getBoolPref('debug');
 		wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
+		wappalyzer.version        = wappalyzer.prefs.getCharPref('version');
 
 		for ( i = 1; i <= 20; i ++ )
 		{
@@ -56,6 +63,19 @@ wappalyzer =
 		var locationPref = wappalyzer.prefs.getIntPref('location');
 
 		wappalyzer.moveLocation(locationPref);
+
+		// Open page after upgrade
+		var enabledAddons = gPrefService.getCharPref('extensions.enabledAddons');
+		var version       = enabledAddons.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
+
+		if ( wappalyzer.version != version )
+		{
+			wappalyzer.browser.addEventListener('load', wappalyzer.upgradeSuccess, false);
+
+			wappalyzer.version = version;
+
+			wappalyzer.prefs.setCharPref('version', wappalyzer.version);
+		}
 
 		// Open page after installation
 		if ( wappalyzer.newInstall )
@@ -82,17 +102,14 @@ wappalyzer =
 		wappalyzer.evaluateCustomApps();
 	},
 
-	log: function(message) {
-		//return;
-
-		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
-
-		consoleService.logStringMessage("Wappalyzer: " + message);
-	},
-
-	get strings()
+	log: function(message)
 	{
-		return document.getElementById('wappalyzer-strings');
+		if ( wappalyzer.debug && message )
+		{
+			var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
+
+			consoleService.logStringMessage("Wappalyzer: " + message);
+		}
 	},
 
 	observe: function(subject, topic, data)
@@ -110,6 +127,10 @@ wappalyzer =
 				break;
 			case 'customApps':
 				wappalyzer.customApps = wappalyzer.prefs.getCharPref('customApps');
+
+				break;
+			case 'debug':
+				wappalyzer.debug = wappalyzer.prefs.getBoolPref('debug');
 
 				break;
 			case 'enableTracking':
@@ -149,6 +170,11 @@ wappalyzer =
 		}
 	},
 
+	openTab: function(url)
+	{
+		wappalyzer.browser.selectedTab = wappalyzer.browser.addTab(url);
+	},
+
 	moveLocation: function(locationPref) {
 		wappalyzer.log('moveLocation');
 
@@ -174,103 +200,6 @@ wappalyzer =
 		var container = document.getElementById('wappalyzer-container');
 
 		e.appendChild(container);
-	},
-
-	evaluateCustomApps: function(feedback)
-	{
-		wappalyzer.log('evaluateCustomApps');
-
-		var appsAdded = {};
-
-		if ( wappalyzer.customApps )
-		{
-			try
-			{
-				var customAppsJSON = JSON.parse(wappalyzer.customApps);
-
-				for ( appName in customAppsJSON )
-				{
-					wappalyzer.apps[appName] = {};
-
-					appsAdded[appName] = true;
-
-					// Icon
-					if ( typeof(customAppsJSON[appName].icon) == 'string' )
-					{
-						wappalyzer.apps[appName].icon = customAppsJSON[appName].icon;
-					}
-					else
-					{
-						wappalyzer.apps[appName].icon = 'chrome://wappalyzer/skin/app_icons/_placeholder.ico';
-					}
-
-					// Categories
-					if ( typeof(customAppsJSON[appName].categories) == 'object' )
-					{
-						wappalyzer.apps[appName].cats = {};
-
-						for ( i in customAppsJSON[appName].categories )
-						{
-							wappalyzer.apps[appName].cats[i] = parseInt(customAppsJSON[appName].categories[i]);
-						}
-					}
-
-					// HTML
-					if ( typeof(customAppsJSON[appName].html) == 'string' )
-					{
-						wappalyzer.apps[appName].html = new RegExp(customAppsJSON[appName].html, 'i');
-					}
-
-					// URL
-					if ( typeof(customAppsJSON[appName].url) == 'string' )
-					{
-						wappalyzer.apps[appName].url = new RegExp(customAppsJSON[appName].url, 'i');
-					}
-
-					// Headers
-					if ( typeof(customAppsJSON[appName].headers) == 'object' )
-					{
-						wappalyzer.apps[appName].headers = {};
-
-						for ( headerName in customAppsJSON[appName].headers )
-						{
-							wappalyzer.apps[appName].headers[headerName] = new RegExp(customAppsJSON[appName].headers[headerName], 'i');
-						}
-					}
-				}
-
-				if ( feedback )
-				{
-					var text  = '';
-					var count = 0;
-
-					for ( appName in appsAdded )
-					{
-						text += '\n- ' + appName;
-
-						count ++;
-					}
-
-					alert('Success. Added ' + count + ' application(s): \n' + text);
-				}
-			}
-			catch(e)
-			{
-				wappalyzer.log('JSON error in custom applications');
-
-				if ( feedback )
-				{
-					alert('Error: malformed JSON.');
-				}
-			}
-		}
-		else
-		{
-			if ( feedback )
-			{
-				alert('Nothing to evaluate!');
-			}
-		}
 	},
 
 	onPageLoad: function(event)
@@ -468,15 +397,20 @@ wappalyzer =
 
 		if ( detectedApp && typeof(wappalyzer.checkUnique[detectedApp]) == 'undefined' )
 		{
-			var show = false;
+			var show = true;
 
-			for ( i in wappalyzer.apps[detectedApp].cats )
+			if ( !wappalyzer.isBookmarklet )
 			{
-				if ( wappalyzer.showCats[wappalyzer.apps[detectedApp].cats[i]] )
-				{
-					show = true;
+				var show = false;
 
-					break;
+				for ( i in wappalyzer.apps[detectedApp].cats )
+				{
+					if ( wappalyzer.showCats[wappalyzer.apps[detectedApp].cats[i]] )
+					{
+						show = true;
+
+						break;
+					}
 				}
 			}
 
@@ -487,12 +421,33 @@ wappalyzer =
 					case wappalyzer.isBookmarklet:
 						var e = document.getElementById('wappalyzer-bookmarklet-apps');
 
-						e.innerHTML =
-							( wappalyzer.appsDetected ? e.innerHTML : '' ) +
-							'<a href="' + wappalyzer.homeUrl + 'stats/app/' + escape(wappalyzer.app[i]) + '" style="color: #332;">' +
-							wappalyzer.app[i] +
-							'</a><br/>'
-							;
+						if ( e )
+						{
+							if ( !wappalyzer.appsDetected )
+							{
+								e.innerHTML = '';
+							}
+
+							e.innerHTML +=
+								'<br/>' +
+								'<strong>' +
+									'<a href="' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '" style="color: #332;">' +
+									'<img src="' + wappalyzer.homeUrl + '_view/images/app_icons/' + escape(detectedApp) + '.ico" width="16" height="16" style="margin-right: 6px; vertical-align: middle;"/>' +
+									detectedApp +
+									'</a>' +
+								'</strong>'
+								;
+
+							if ( wappalyzer.apps[detectedApp].cats )
+							{
+								for ( i in wappalyzer.apps[detectedApp].cats )
+								{
+									e.innerHTML += '<br/><span style="margin-left: 22px;">' + wappalyzer.cats[wappalyzer.apps[detectedApp].cats[i]].name + '</span>';
+								}
+
+								e.innerHTML += '<br/>';
+							}
+						}
 
 						break;
 					case wappalyzer.isMobile:
@@ -545,7 +500,7 @@ wappalyzer =
 
 						e.appendChild(child);
 
-						if ( !wappalyzer.isMobile )
+						if ( !wappalyzer.isMobile && typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
 						{
 							child = document.createElement('label');
 
@@ -577,7 +532,7 @@ wappalyzer =
 				}
 			}
 
-			if ( doCount )
+			if ( doCount && typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
 			{
 				wappalyzer.report(detectedApp, href);
 			}
@@ -620,7 +575,7 @@ wappalyzer =
 	sendReport: function()
 	// Anonymously send the name of the detected apps and domains to wappalyzer.com
 	// You can turn this off in the options dialog
-	// This is used to track the distibution of software, stats are publically available on the site
+	// This is used to track the distribution of software, stats are publicly available on the site
 	{
 		wappalyzer.log('sendReport');
 
@@ -734,9 +689,11 @@ wappalyzer =
 		wappalyzer.openTab(wappalyzer.homeUrl + 'install/success/');
 	},
 
-	openTab: function(url)
+	upgradeSuccess: function()
 	{
-		wappalyzer.browser.selectedTab = wappalyzer.browser.addTab(url);
+		wappalyzer.browser.removeEventListener('load', wappalyzer.upgradeSuccess, false);
+
+		wappalyzer.openTab(wappalyzer.homeUrl + 'install/upgraded/');
 	},
 
 	bookmarklet: function()
@@ -757,6 +714,7 @@ wappalyzer =
 						'<div id="wappalyzer-bookmarklet" style="' +
 						'	color: #332;' +
 						'	font: 12px \'Trebuchet MS\';' +
+						'	line-height: 16px;' +
 						'	position: fixed;' +
 						'	text-align: right;' +
 						'	right: 2em;' +
@@ -764,22 +722,23 @@ wappalyzer =
 						'	z-index: 9999999999;' +
 						'	">' +
 						'	<div id="wappalyzer-container" style="' +
+						'		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .4);' +
 						'		-moz-border-radius: 7px;' +
 						'		-webkit-border-radius: 7px;' +
 						'		background: #FAFAFA;' +
 						'		border: 7px solid #332;' +
 						'		margin-bottom: .3em;' +
 						'		min-width: 15em;' +
-						'		padding: 1em 2em;' +
-						'		text-align: center;' +
+						'		padding: 1em 1.5em 1.4em 1.5em;' +
+						'		text-align: left;' +
 						'		">' +
 						'		<div style="' +
-						'			border-bottom: 1px solid #332;' +
+						'			border-bottom: 1px solid #DDC;' +
 						'			font-size: 13px;' +
 						'			padding-bottom: 1em;' +
-						'			margin-bottom: 1em;' +
+						'			text-align: center;' +
 						'			"><strong>Wappalyzer</strong></div>' +
-						'		<span id="wappalyzer-bookmarklet-apps"><em>No apps detected</em></span>' +
+						'		<span id="wappalyzer-bookmarklet-apps"><br/><em>No apps detected</em></span>' +
 						'	</div>' +
 						'	<span style="float: left;"><a href="http://wappalyzer.com" style="color: #332 !important;">home</a> | <a href="http://twitter.com/ElbertF" style="color: #332 !important;">follow me</a></span>' +
 						'   <span style="float: right;">click to close</span>' +
@@ -801,5 +760,3 @@ wappalyzer =
 		}
 	}
 };
-
-wappalyzer.bookmarklet();
