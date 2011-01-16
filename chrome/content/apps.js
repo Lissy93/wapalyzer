@@ -23,7 +23,9 @@ wappalyzer.cats = {
 	17: { name: 'Font script',          plural: 'Font scripts' },
 	18: { name: 'Web framework',        plural: 'Web frameworks' },
 	19: { name: 'Miscellaneous',        plural: 'Miscellaneous' },
-	20: { name: 'Editor',               plural: 'Editors' }
+	20: { name: 'Editor',               plural: 'Editors' },
+	21: { name: 'LMS',                  plural: 'LMS' },
+	22: { name: 'Web server',           plural: 'Web servers' }
 	};
 
 wappalyzer.apps = {
@@ -32,6 +34,7 @@ wappalyzer.apps = {
 	'AddThis':               { cats: { 1:  5 }, html: /<script[^>]* src=("|')[^>]*addthis\.com\/js/ },
 	'Adobe GoLive':          { cats: { 1: 20 }, html: /<meta name=("|')generator("|') [^>]+Adobe GoLive/i },
 	'Amiro.CMS':             { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Amiro/i },
+	'Apache':                { cats: { 1: 22 }, headers: { 'Server': /Apache/i } },
 	'AWStats':               { cats: { 1: 10 }, html: /<meta name=("|')generator("|') [^>]+AWStats/i },
 	'BIGACE':                { cats: { 1:  1 }, html: /(<meta name=("|')generator("|') [^>]+BIGACE|Powered by <a href=("|')[^>]+BIGACE|<!--\s+Site is running BIGACE)/i },
 	'BigDump':               { cats: { 1:  3 }, html: /<!-- <h1>BigDump: Staggered MySQL Dump Importer/ },
@@ -40,6 +43,7 @@ wappalyzer.apps = {
 	'Bugzilla':              { cats: { 1: 13 }, html: /<[^>]+(id|title|name)=("|')bugzilla/i },
 	'Burning Board':         { cats: { 1:  2 }, html: /<a href=('|")[^>]+woltlab\.com.+Burning Board/i },
 	'chartbeat':             { cats: { 1: 10 }, html: /function loadChartbeat\(\) {/i },
+	'Chamilo':               { cats: { 1: 21 }, html: /<meta name=("|')generator("|') [^>]+Chamilo/i, headers: { 'X-Powered-By': /Chamilo/ } },
 	'ClickTale':             { cats: { 1: 10 }, html: /if\(typeof ClickTale(Tag)*==("|')function("|')\)/ },
 	'Clicky':                { cats: { 1: 10 }, html: /<script src=("|')http:\/\/static\.getclicky\.com/i },
 	'CMS Made Simple':       { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+CMS Made Simple/i },
@@ -90,6 +94,7 @@ wappalyzer.apps = {
 	'Koego':                 { cats: { 1: 10 }, html: /<script[^>]* src=("|')http\:\/\/tracking\.koego\.com\/end\/ego\.js("|')/ },
 	'Kolibri CMS':           { cats: { 1:  1 }, html: /<meta name=("|')copyright("|') [^>]+Kolibri/i },
 	'Koobi':                 { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Koobi/i },
+	'lighttpd':              { cats: { 1: 22 }, headers: { 'Server': /lighttpd/i } },
 	'LiveJournal':           { cats: { 1: 11 }, url: /^(www.)?.+\.livejournal\.com/i },
 	'Magento':               { cats: { 1:  6 }, html: /var BLANK_URL = '[^>]+js\/blank\.html'/i },
 	'Mambo':                 { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Mambo/i },
@@ -104,12 +109,14 @@ wappalyzer.apps = {
 	'Modernizr':             { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*modernizr[^>]*\.js/i },
 	'MODx':                  { cats: { 1:  1 }, html: /(<a[^>]+>Powered by MODx<\/a>|var el= \$\('modxhost'\);|<script type=("|')text\/javascript("|')>var MODX_MEDIA_PATH = "media";)/i },
 	'Mollom':                { cats: { 1: 16 }, html: /(<script[^>]* src=("|')[^>]*mollom\.js|<img[^>]+\/.mollom\/.com)/i },
+	'Moodle':                { cats: { 1: 21 }, html: /(var moodleConfigFn = function\(me\)|<img[^>]+moodlelogo)/i },
 	'Moogo':                 { cats: { 1:  1 }, html: /<script[^>]* src=("|')[^"']+kotisivukone.js/ },
 	'MooTools':              { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*mootools[^>]*\.js("|')/i },
 	'Movable Type':          { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Movable Type/i },
 	'MyBB':                  { cats: { 1:  2 }, html: /(<script .+\s+<!--\s+lang\.no_new_posts|<a[^>]* title=("|')Powered By MyBB)/i },
 	'MyBlogLog':             { cats: { 1:  5 }, html: /<script[^>]* src=("|')[^>]*pub\.mybloglog\.com/i },
 	'Nedstat':               { cats: { 1: 10 }, html: /sitestat\(("|')http:\/\/nl\.sitestat\.com/ },
+	'Nginx':                 { cats: { 1: 22 }, headers: { 'Server': /nginx/i } },
 	'nopCommerce':           { cats: { 1:  6 }, html: /(<!\-\-Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)/i },
 	'OneStat':               { cats: { 1: 10 }, html: /var p=("|')http("|')\+\(d\.URL\.indexOf\('https:'\)==0\?'s':''\)\+("|'):\/\/stat\.onestat\.com\/stat\.aspx\?tagver/i },
 	'OpenCart':              { cats: { 1:  6 }, html: /(Powered By <a href=("|')[^>]+OpenCart|route = getURLVar\(("|')route)/i },

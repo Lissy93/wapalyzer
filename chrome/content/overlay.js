@@ -55,7 +55,7 @@ wappalyzer =
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
 		wappalyzer.version        = wappalyzer.prefs.getCharPref('version');
 
-		for ( i = 1; i <= 20; i ++ )
+		for ( i = 1; i <= 22; i ++ )
 		{
 			wappalyzer.showCats[i] = wappalyzer.prefs.getBoolPref('cat' + i);
 		}
@@ -65,16 +65,24 @@ wappalyzer =
 		wappalyzer.moveLocation(locationPref);
 
 		// Open page after upgrade
-		var enabledAddons = gPrefService.getCharPref('extensions.enabledAddons');
-		var version       = enabledAddons.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
-
-		if ( wappalyzer.version != version )
+		try
 		{
-			wappalyzer.browser.addEventListener('load', wappalyzer.upgradeSuccess, false);
+			var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 
-			wappalyzer.version = version;
+			var enabledItems = prefs.getCharPref('extensions.enabledItems');
+			var version       = enabledItems.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
 
-			wappalyzer.prefs.setCharPref('version', wappalyzer.version);
+			if ( wappalyzer.version != version )
+			{
+				wappalyzer.browser.addEventListener('load', wappalyzer.upgradeSuccess, false);
+
+				wappalyzer.version = version;
+
+				wappalyzer.prefs.setCharPref('version', wappalyzer.version);
+			}
+		}
+		catch(e)
+		{
 		}
 
 		// Open page after installation
@@ -167,6 +175,8 @@ wappalyzer =
 			case 'cat18': wappalyzer.showCats[18] = wappalyzer.prefs.getIntPref('cat18'); break;
 			case 'cat19': wappalyzer.showCats[19] = wappalyzer.prefs.getIntPref('cat19'); break;
 			case 'cat20': wappalyzer.showCats[20] = wappalyzer.prefs.getIntPref('cat20'); break;
+			case 'cat20': wappalyzer.showCats[21] = wappalyzer.prefs.getIntPref('cat21'); break;
+			case 'cat20': wappalyzer.showCats[22] = wappalyzer.prefs.getIntPref('cat22'); break;
 		}
 	},
 

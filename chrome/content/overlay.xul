@@ -30,7 +30,7 @@
 
 			<menupopup id="wappalyzer-menu" position="at_pointer">
 				<menuitem label="&wappalyzer.options;" oncommand="
-					window.openDialog('chrome://wappalyzer/content/options.xul', 'wappalyzer-options', 'chrome, centerscreen, modal');
+					window.openDialog('chrome://wappalyzer/content/options.xul', 'wappalyzer-options', 'chrome, dialog, centerscreen');
 					"/>
 				<menuseparator/>
 				<menuitem label="&wappalyzer.donate;"   oncommand="wappalyzer.openTab(wappalyzer.homeUrl + 'donate/');"/>
@@ -57,6 +57,8 @@
 			context="wappalyzer-menu"
 			tooltiptext="&wappalyzer.title;"
 			onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
+			onmouseover="wappalyzer.showLabels(true);"
+			onmouseout="wappalyzer.showLabels(false);"
 			/>
 	</statusbar>
 </overlay>
