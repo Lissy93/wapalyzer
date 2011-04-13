@@ -13,8 +13,6 @@ wappalyzer =
 
 	log: function(message)
 	{
-		return;
-
 		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
 
 		consoleService.logStringMessage("Wappalyzer content.js: " + message);
@@ -22,6 +20,8 @@ wappalyzer =
 
 	onPageLoad: function(e)
 	{
+		wappalyzer.log('onPageLoad');
+
 		sendAsyncMessage('wappalyzer:onPageLoad', {
 			href:    content.document.location.href,
 			html:    content.document.documentElement.innerHTML,

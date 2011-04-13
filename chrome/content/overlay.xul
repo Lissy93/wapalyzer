@@ -17,8 +17,9 @@
 		<hbox
 			id="wappalyzer-container"
 			context="wappalyzer-menu"
-			onmouseover="wappalyzer.showLabels(true);"
-			onmouseout="wappalyzer.showLabels(false);"
+			popup="wappalyzer-apps"
+			onmouseover="wappalyzer.hoverTimeout = setTimeout(function() { document.getElementById('wappalyzer-apps').openPopup(document.getElementById('wappalyzer-container'), 'after_end'); }, 1000);"
+			onmouseout="clearTimeout(wappalyzer.hoverTimeout);"
 			>
 			<image
 				id="wappalyzer-icon"
@@ -28,7 +29,10 @@
 			
 			<box align="start" id="wappalyzer-detected-apps"/>
 
-			<menupopup id="wappalyzer-menu" position="at_pointer">
+			<menupopup id="wappalyzer-apps" position="after_end">
+			</menupopup>
+
+			<menupopup id="wappalyzer-menu">
 				<menuitem label="&wappalyzer.options;" oncommand="
 					window.openDialog('chrome://wappalyzer/content/options.xul', 'wappalyzer-options', 'chrome, dialog, centerscreen');
 					"/>
@@ -36,17 +40,12 @@
 				<menuitem label="&wappalyzer.donate;"   oncommand="wappalyzer.openTab(wappalyzer.homeUrl + 'donate/');"/>
 				<menuitem label="&wappalyzer.feedback;" oncommand="wappalyzer.openTab(wappalyzer.homeUrl + '?redirect=feedback');"/>
 				<menuitem label="&wappalyzer.home;"     oncommand="wappalyzer.openTab(wappalyzer.homeUrl);"/>
-				<menuseparator/>
-				<menu label="&wappalyzer.appStats;" disabled="true">
-					<menupopup id="wappalyzer-app-stats"/>
-				</menu>
 			</menupopup>
 		</hbox>
 	</hbox>
 
 	<hbox
 		id="urlbar-icons"
-		tooltiptext="&wappalyzer.title;"
 		onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
 		/>
 
@@ -55,10 +54,8 @@
 			id="wappalyzer-statusbar"
 			class="statusbarpanel-iconic"
 			context="wappalyzer-menu"
-			tooltiptext="&wappalyzer.title;"
+			popup="wappalyzer-apps"
 			onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
-			onmouseover="wappalyzer.showLabels(true);"
-			onmouseout="wappalyzer.showLabels(false);"
 			/>
 	</statusbar>
 </overlay>

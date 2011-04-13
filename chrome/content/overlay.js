@@ -20,15 +20,14 @@ wappalyzer =
 	history:        {},
 	hitCount:       0,
 	homeUrl:        'http://wappalyzer.com/',
-	isBookmarklet:  false,
-	isMobile:       false,
+	hoverTimeout:   false,
 	newInstall:     false,
 	prevUrl:        '',
 	prefs:          {},
 	regexDomain:    /^[a-z0-9._\-]+\.[a-z]+/,
 	req:            false,
 	request:        false,
-	showAppNames:   3,
+	showNames:      0,
 	showCats:       [],
 	strings:        {},
 	version:        '',
@@ -37,7 +36,7 @@ wappalyzer =
 	{
 		wappalyzer.log('init');
 
-		wappalyzer.browser = typeof(Browser) != 'undefined' ? Browser.selectedBrowser : gBrowser;
+		wappalyzer.browser = gBrowser;
 
 		wappalyzer.strings = document.getElementById('wappalyzer-strings');
 
@@ -47,7 +46,7 @@ wappalyzer =
 		wappalyzer.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		wappalyzer.prefs.addObserver('', wappalyzer, false);
 
-		wappalyzer.showAppNames   = wappalyzer.prefs.getIntPref( 'showAppNames');
+		wappalyzer.showNames      = wappalyzer.prefs.getBoolPref('showNames');
 		wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
 		wappalyzer.customApps     = wappalyzer.prefs.getCharPref('customApps');
 		wappalyzer.debug          = wappalyzer.prefs.getBoolPref('debug');
@@ -55,7 +54,7 @@ wappalyzer =
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
 		wappalyzer.version        = wappalyzer.prefs.getCharPref('version');
 
-		for ( i = 1; i <= 22; i ++ )
+		for ( i = 1; i <= 23; i ++ )
 		{
 			wappalyzer.showCats[i] = wappalyzer.prefs.getBoolPref('cat' + i);
 		}
@@ -70,7 +69,7 @@ wappalyzer =
 			var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 
 			var enabledItems = prefs.getCharPref('extensions.enabledItems');
-			var version       = enabledItems.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
+			var version      = enabledItems.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
 
 			if ( wappalyzer.version != version )
 			{
@@ -145,8 +144,8 @@ wappalyzer =
 				wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 
 				break;
-			case 'showAppNames':
-				wappalyzer.showAppNames = wappalyzer.prefs.getIntPref('showAppNames');
+			case 'showNames':
+				wappalyzer.showNames = wappalyzer.prefs.getBoolPref('showNames');
 
 				break;
 			case 'location':
@@ -175,8 +174,9 @@ wappalyzer =
 			case 'cat18': wappalyzer.showCats[18] = wappalyzer.prefs.getIntPref('cat18'); break;
 			case 'cat19': wappalyzer.showCats[19] = wappalyzer.prefs.getIntPref('cat19'); break;
 			case 'cat20': wappalyzer.showCats[20] = wappalyzer.prefs.getIntPref('cat20'); break;
-			case 'cat20': wappalyzer.showCats[21] = wappalyzer.prefs.getIntPref('cat21'); break;
-			case 'cat20': wappalyzer.showCats[22] = wappalyzer.prefs.getIntPref('cat22'); break;
+			case 'cat21': wappalyzer.showCats[21] = wappalyzer.prefs.getIntPref('cat21'); break;
+			case 'cat22': wappalyzer.showCats[22] = wappalyzer.prefs.getIntPref('cat22'); break;
+			case 'cat23': wappalyzer.showCats[23] = wappalyzer.prefs.getIntPref('cat23'); break;
 		}
 	},
 
@@ -216,16 +216,17 @@ wappalyzer =
 	{
 		wappalyzer.log('onPageLoad');
 
-		var doc = event.originalTarget;
+		var target = event.originalTarget;
 
-		if ( !doc.request )
+		if ( !target.request )
 		{
 			wappalyzer.request = false;
 		}
 
 		wappalyzer.analyzePage(
-			doc.location.href,
-			doc.documentElement.innerHTML,
+			target,
+			target.location.href,
+			target.documentElement.innerHTML,
 			[],
 			true,
 			false
@@ -237,6 +238,7 @@ wappalyzer =
 		wappalyzer.log('onContentPageLoad');
 
 		wappalyzer.analyzePage(
+			null,
 			message.json.href,
 			message.json.html,
 			message.json.headers,
@@ -263,6 +265,7 @@ wappalyzer =
 		wappalyzer.currentTab = false;
 
 		wappalyzer.analyzePage(
+			wappalyzer.browser.contentWindow,
 			doc.location.href   ? doc.location.href             : '',
 			doc.documentElement ? doc.documentElement.innerHTML : '',
 			[],
@@ -310,20 +313,17 @@ wappalyzer =
 		onSecurityChange: function(a, b, c)          {}
 	},
 
-	analyzePage: function(href, html, headers, doCount, manualDetect)
+	analyzePage: function(windowObject, href, html, headers, doCount, manualDetect)
 	{
 		wappalyzer.log('analyzePage');
 
 		wappalyzer.currentTab = false;
 
-		if ( !wappalyzer.isBookmarklet )
+		if ( href == wappalyzer.browser.contentDocument.location.href )
 		{
-			if ( href == wappalyzer.browser.contentDocument.location.href )
-			{
-				wappalyzer.currentTab = true;
+			wappalyzer.currentTab = true;
 
-				wappalyzer.clearDetectedApps();
-			}
+			wappalyzer.clearDetectedApps();
 		}
 
 		if ( typeof(html) == 'undefined' )
@@ -367,7 +367,7 @@ wappalyzer =
 							}
 						}
 
-						// Scan response header
+						// Scan response headers
 						if ( typeof(wappalyzer.apps[appName].headers) != 'undefined' && wappalyzer.request )
 						{
 							for ( var header in wappalyzer.apps[appName].headers )
@@ -398,151 +398,115 @@ wappalyzer =
 	{
 		wappalyzer.log('showApp ' + detectedApp);
 
-		if ( !wappalyzer.currentTab && !wappalyzer.isBookmarklet )
-		{
-			wappalyzer.report(detectedApp, href);
-
-			return;
-		}
+		wappalyzer.report(detectedApp, href);
 
 		if ( detectedApp && typeof(wappalyzer.checkUnique[detectedApp]) == 'undefined' )
 		{
-			var show = true;
+			var show = false;
 
-			if ( !wappalyzer.isBookmarklet )
+			for ( i in wappalyzer.apps[detectedApp].cats )
 			{
-				var show = false;
-
-				for ( i in wappalyzer.apps[detectedApp].cats )
+				if ( wappalyzer.showCats[wappalyzer.apps[detectedApp].cats[i]] )
 				{
-					if ( wappalyzer.showCats[wappalyzer.apps[detectedApp].cats[i]] )
-					{
-						show = true;
+					show = true;
 
-						break;
-					}
+					break;
 				}
 			}
 
 			if ( show )
 			{
-				switch ( true )
+				var e = document.getElementById('wappalyzer-detected-apps');
+
+				if ( wappalyzer.autoDetect )
 				{
-					case wappalyzer.isBookmarklet:
-						var e = document.getElementById('wappalyzer-bookmarklet-apps');
+					// Hide Wappalyzer icon
+					document.getElementById('wappalyzer-icon').style.display = 'none';
 
-						if ( e )
-						{
-							if ( !wappalyzer.appsDetected )
-							{
-								e.innerHTML = '';
-							}
+					// Show app icon and label
+					var child = document.createElement('image');
 
-							e.innerHTML +=
-								'<br/>' +
-								'<strong>' +
-									'<a href="' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '" style="color: #332;">' +
-									'<img src="' + wappalyzer.homeUrl + '_view/images/app_icons/' + escape(detectedApp) + '.ico" width="16" height="16" style="margin-right: 6px; vertical-align: middle;"/>' +
-									detectedApp +
-									'</a>' +
-								'</strong>'
-								;
+					if ( typeof(wappalyzer.apps[detectedApp].icon) == 'string' )
+					{
+						child.setAttribute('src', wappalyzer.apps[detectedApp].icon);
+					}
+					else
+					{
+						child.setAttribute('src', 'chrome://wappalyzer/skin/icons/' + detectedApp + '.ico');
+					}
 
-							if ( wappalyzer.apps[detectedApp].cats )
-							{
-								for ( i in wappalyzer.apps[detectedApp].cats )
-								{
-									e.innerHTML += '<br/><span style="margin-left: 22px;">' + wappalyzer.cats[wappalyzer.apps[detectedApp].cats[i]].name + '</span>';
-								}
+					child.setAttribute('class', 'wappalyzer-icon');
 
-								e.innerHTML += '<br/>';
-							}
-						}
+					if ( wappalyzer.appsDetected )
+					{
+						child.setAttribute('style', 'margin-left: .5em');
+					}
 
-						break;
-					case wappalyzer.isMobile:
-					default:
-						// Hide Wappalyzer icon
-						document.getElementById('wappalyzer-icon').style.display = 'none';
+					e.appendChild(child);
+				}
 
-						// Show app icon and label
-						var e = document.getElementById('wappalyzer-detected-apps');
+				child = document.createElement('label');
 
-						var child = document.createElement('image');
+				child.setAttribute('value', detectedApp);
+				child.setAttribute('class', 'wappalyzer-app-name');
 
-						if ( typeof(wappalyzer.apps[detectedApp].icon) == 'string' )
-						{
-							child.setAttribute('src', wappalyzer.apps[detectedApp].icon);
-						}
-						else
-						{
-							child.setAttribute('src', 'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
-						}
+				if ( !wappalyzer.showNames )
+				{
+					child.setAttribute('style', 'display: none;');
+				}
 
-						child.setAttribute('class', 'wappalyzer-icon');
+				e.appendChild(child);
 
-						if ( !wappalyzer.isMobile )
-						{
-							if ( wappalyzer.showAppNames == 2 )
-							{
-								var container = document.getElementById('wappalyzer-container').parentNode;
+				// Show application in popup
+				var e = document.getElementById('wappalyzer-apps');
 
-								var tooltiptext = container.getAttribute('tooltiptext') + '\n' + detectedApp;
+				if ( !wappalyzer.appsDetected )
+				{
+					// Remove "no apps detected" message
+					document.getElementById('wappalyzer-apps').removeChild(document.getElementById('wappalyzer-no-detected-apps'));
+				}
+				else
+				{
+					var child = document.createElement('menuseparator');
 
-								if ( wappalyzer.apps[detectedApp].cats )
-								{
-									for ( i in wappalyzer.apps[detectedApp].cats )
-									{
-										tooltiptext += '\n    ' + wappalyzer.cats[wappalyzer.apps[detectedApp].cats[i]].name;
-									}
+					e.appendChild(child);
+				}
 
-									tooltiptext += '\n';
-								}
+				var child = document.createElement('menuitem');
 
-								container.setAttribute('tooltiptext', tooltiptext);
-							}
+				child.setAttribute('class',     'menuitem-iconic');
+				child.setAttribute('type',      '');
+				child.setAttribute('oncommand', 'wappalyzer.openTab(\'' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '\');');
 
-							if ( wappalyzer.appsDetected )
-							{
-								child.setAttribute('style', 'margin-left: .5em');
-							}
-						}
+				if ( typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
+				{
+					child.setAttribute('label', detectedApp);
+					child.setAttribute('image', 'chrome://wappalyzer/skin/icons/' + detectedApp + '.ico');
+				}
+				else
+				{
+					child.setAttribute('label',    detectedApp + ' (' + wappalyzer.strings.getString('wappalyzer.custom') + ')');
+					child.setAttribute('disabled', 'true');
+					child.setAttribute('image',    wappalyzer.apps[detectedApp].icon);
+				}
+
+				e.appendChild(child);
+
+				if ( wappalyzer.apps[detectedApp].cats )
+				{
+					for ( i in wappalyzer.apps[detectedApp].cats )
+					{
+						var child = document.createElement('menuitem');
+
+						child.setAttribute('label',    wappalyzer.cats[wappalyzer.apps[detectedApp].cats[i]].name);
+						child.setAttribute('disabled', 'true');
 
 						e.appendChild(child);
-
-						if ( !wappalyzer.isMobile && typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
-						{
-							child = document.createElement('label');
-
-							child.setAttribute('value', detectedApp);
-							child.setAttribute('class', 'wappalyzer-app-name');
-
-							if ( wappalyzer.showAppNames != 1 )
-							{
-								child.setAttribute('style', 'display: none;');
-							}
-
-							e.appendChild(child);
-
-							// Enable application statistics menu item
-							var e = document.getElementById('wappalyzer-app-stats');
-
-							e.parentNode.setAttribute('disabled', false);
-
-							var child = document.createElement('menuitem');
-
-							child.setAttribute('label',     detectedApp);
-							child.setAttribute('class',     'menuitem-iconic');
-							child.setAttribute('type',      '');
-							child.setAttribute('image',     'chrome://wappalyzer/skin/app_icons/' + detectedApp + '.ico');
-							child.setAttribute('oncommand', 'wappalyzer.openTab(\'' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '\');');
-
-							e.appendChild(child);
-						}
+					}
 				}
 			}
 
-			if ( doCount && typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
+			if ( doCount )
 			{
 				wappalyzer.report(detectedApp, href);
 			}
@@ -557,27 +521,30 @@ wappalyzer =
 	{
 		wappalyzer.log('report');
 
-		domain = href.match(/:\/\/(.[^/]+)/)[1];
-
-		if ( wappalyzer.enableTracking && wappalyzer.regexDomain.test(domain) )
+		if ( typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
 		{
-			if ( typeof(wappalyzer.history[domain]) == 'undefined' )
+			var domain = href.match(regex = /:\/\/(.[^/]+)/) ? href.match(regex)[1] : '';
+
+			if ( wappalyzer.enableTracking && wappalyzer.regexDomain.test(domain) )
 			{
-				wappalyzer.history[domain] = [];
-			}
+				if ( typeof(wappalyzer.history[domain]) == 'undefined' )
+				{
+					wappalyzer.history[domain] = [];
+				}
 
-			if ( typeof(wappalyzer.history[domain][detectedApp]) == 'undefined' )
-			{
-				wappalyzer.history[domain][detectedApp] = 0;
-			}
+				if ( typeof(wappalyzer.history[domain][detectedApp]) == 'undefined' )
+				{
+					wappalyzer.history[domain][detectedApp] = 0;
+				}
 
-			wappalyzer.history[domain][detectedApp] ++;
+				wappalyzer.history[domain][detectedApp] ++;
 
-			wappalyzer.hitCount ++;
+				wappalyzer.hitCount ++;
 
-			if ( wappalyzer.hitCount > 100 )
-			{
-				wappalyzer.sendReport();
+				if ( wappalyzer.hitCount > 200 )
+				{
+					wappalyzer.sendReport();
+				}
 			}
 		}
 	},
@@ -660,36 +627,23 @@ wappalyzer =
 			e.removeChild(e.childNodes.item(0));
 		}
 
-		if ( !wappalyzer.isMobile )
+		// Clear application popup
+		e = document.getElementById('wappalyzer-apps');
+
+		while ( e.childNodes.length > 0 )
 		{
-			// Clear tooltip
-			var container = document.getElementById('wappalyzer-container').parentNode;
-
-			container.setAttribute('tooltiptext', wappalyzer.strings.getString('wappalyzer.title') + ( wappalyzer.showAppNames == 2 ? '\n---' : '' ));
-
-			// Disable and clear application statistics menu item
-			e = document.getElementById('wappalyzer-app-stats');
-
-			e.parentNode.setAttribute('disabled', true);
-
-			while ( e.childNodes.length > 0 )
-			{
-				e.removeChild(e.childNodes.item(0));
-			}
+			e.removeChild(e.childNodes.item(0));
 		}
-	},
 
-	showLabels: function(show)
-	{
-		if ( wappalyzer.showAppNames == 3 )
-		{
-			e = document.getElementsByClassName('wappalyzer-app-name');
+		var child = document.createElement('menuitem');
 
-			for ( i = 0; i < e.length; i ++ )
-			{
-				e[i].style.display = show ? 'inline' : 'none';
-			}
-		}
+		child.setAttribute('label',     wappalyzer.strings.getString('wappalyzer.noDetectedApps'));
+		child.setAttribute('id',        'wappalyzer-no-detected-apps');
+		child.setAttribute('class',     'menuitem-iconic');
+		child.setAttribute('disabled', 	'true');
+		child.setAttribute('type',      '');
+
+		e.appendChild(child);
 	},
 
 	installSuccess: function()
@@ -704,69 +658,5 @@ wappalyzer =
 		wappalyzer.browser.removeEventListener('load', wappalyzer.upgradeSuccess, false);
 
 		wappalyzer.openTab(wappalyzer.homeUrl + 'install/upgraded/');
-	},
-
-	bookmarklet: function()
-	{
-		if ( !wappalyzer.browser )
-		{
-			wappalyzer.isBookmarklet = true;
-
-			if ( !document.getElementById('wappalyzer-bookmarklet') )
-			{
-				var body = document.getElementsByTagName('body')[0];
-
-				if ( body )
-				{
-					var container = document.createElement('div');
-
-					container.innerHTML =
-						'<div id="wappalyzer-bookmarklet" style="' +
-						'	color: #332;' +
-						'	font: 12px \'Trebuchet MS\';' +
-						'	line-height: 16px;' +
-						'	position: fixed;' +
-						'	text-align: right;' +
-						'	right: 2em;' +
-						'	top: 2em;' +
-						'	z-index: 9999999999;' +
-						'	">' +
-						'	<div id="wappalyzer-container" style="' +
-						'		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .4);' +
-						'		-moz-border-radius: 7px;' +
-						'		-webkit-border-radius: 7px;' +
-						'		background: #FAFAFA;' +
-						'		border: 7px solid #332;' +
-						'		margin-bottom: .3em;' +
-						'		min-width: 15em;' +
-						'		padding: 1em 1.5em 1.4em 1.5em;' +
-						'		text-align: left;' +
-						'		">' +
-						'		<div style="' +
-						'			border-bottom: 1px solid #DDC;' +
-						'			font-size: 13px;' +
-						'			padding-bottom: 1em;' +
-						'			text-align: center;' +
-						'			"><strong>Wappalyzer</strong></div>' +
-						'		<span id="wappalyzer-bookmarklet-apps"><br/><em>No apps detected</em></span>' +
-						'	</div>' +
-						'	<span style="float: left;"><a href="http://wappalyzer.com" style="color: #332 !important;">home</a> | <a href="http://twitter.com/ElbertF" style="color: #332 !important;">follow me</a></span>' +
-						'   <span style="float: right;">click to close</span>' +
-						'</div>'
-						;
-
-					container.onclick = function() { body.removeChild(container); };
-
-					body.appendChild(container);
-
-					wappalyzer.analyzePage(
-						document.location.href,
-						document.documentElement.innerHTML,
-						[],
-						false
-						);
-				}
-			}
-		}
 	}
 };

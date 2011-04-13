@@ -100,21 +100,25 @@ wappalyzer.evaluateCustomApps = function(customApps, feedback)
 						}
 					}
 
-					text += '\n    Icon [' + ( wappalyzer.apps[appName].icon ? 'Yes' : 'No' ) + ']';
+					text += '\n    Icon [' + ( wappalyzer.apps[appName].icon != 'chrome://wappalyzer/skin/app_icons/_placeholder.ico' ? 'Yes' : 'No' ) + ']';
 
 					text +=
 						'  HTML ['    + ( typeof(wappalyzer.apps[appName].html) == 'object' ? 'Yes' : 'No' ) + ']' +
 						'  URL ['     + ( typeof(wappalyzer.apps[appName].url)  == 'object' ? 'Yes' : 'No' ) + ']'
 						;
 
+					text += '  Headers';
+
 					if ( typeof(wappalyzer.apps[appName].headers) == 'object' )
 					{
-						text += '  Headers';
-
 						for ( header in wappalyzer.apps[appName].headers )
 						{
 							text += ' [' + header + ']';
 						}
+					}
+					else
+					{
+						text += ' [No]';
 					}
 
 					count ++;

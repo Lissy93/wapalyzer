@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 
-<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/overlay.dtd">
+<!--DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/overlay.dtd"-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>wappalyzer@crunchlabz.com</em:id>
-		<em:version>1.12.8</em:version>
+		<em:version>1.13.1</em:version>
 		<em:type>2</em:type>
+		<em:unpack>true</em:unpack>
 
 		<em:targetApplication>
 			<!-- Firefox -->
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-				<em:minVersion>3.5</em:minVersion>
+				<em:minVersion>4.0</em:minVersion>
 				<em:maxVersion>4.0.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
@@ -22,7 +23,6 @@
 		<em:name>Wappalyzer</em:name>
 		<em:description>Wappalyzer is an add-on for Firefox that uncovers the technologies used on websites.</em:description>
 		<em:iconURL>chrome://wappalyzer/skin/icon32x32.png</em:iconURL>
-		<em:author>ElbertF</em:author>
 		<em:creator>ElbertF</em:creator>
 		<em:homepageURL>http://wappalyzer.com</em:homepageURL>
 	</Description>      

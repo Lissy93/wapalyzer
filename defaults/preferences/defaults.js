@@ -3,7 +3,7 @@ pref('wappalyzer.debug',                 false);
 pref('wappalyzer.location',              0);
 pref('wappalyzer.enableTracking',        true);
 pref('wappalyzer.newInstall',            true);
-pref('wappalyzer.showAppNames',          2);
+pref('wappalyzer.showNames',             false);
 pref('wappalyzer.customApps',            '');
 pref('wappalyzer.version',               '');
 
@@ -29,5 +29,6 @@ pref('wappalyzer.cat19',                 true);
 pref('wappalyzer.cat20',                 true);
 pref('wappalyzer.cat21',                 true);
 pref('wappalyzer.cat22',                 true);
+pref('wappalyzer.cat23',                 true);
 
 pref('browser.preferences.instantApply', true);
