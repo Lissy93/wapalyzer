@@ -24,10 +24,11 @@ wappalyzer =
 	newInstall:     false,
 	prevUrl:        '',
 	prefs:          {},
+	regexBlacklist: /(dev\.|\/admin|\.local)/,
 	regexDomain:    /^[a-z0-9._\-]+\.[a-z]+/,
 	req:            false,
 	request:        false,
-	showNames:      0,
+	showApps:       1,
 	showCats:       [],
 	strings:        {},
 	version:        '',
@@ -46,7 +47,7 @@ wappalyzer =
 		wappalyzer.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		wappalyzer.prefs.addObserver('', wappalyzer, false);
 
-		wappalyzer.showNames      = wappalyzer.prefs.getBoolPref('showNames');
+		wappalyzer.showApps       = wappalyzer.prefs.getIntPref('showApps');
 		wappalyzer.autoDetect     = wappalyzer.prefs.getBoolPref('autoDetect');
 		wappalyzer.customApps     = wappalyzer.prefs.getCharPref('customApps');
 		wappalyzer.debug          = wappalyzer.prefs.getBoolPref('debug');
@@ -54,7 +55,7 @@ wappalyzer =
 		wappalyzer.newInstall     = wappalyzer.prefs.getBoolPref('newInstall');
 		wappalyzer.version        = wappalyzer.prefs.getCharPref('version');
 
-		for ( i = 1; i <= 23; i ++ )
+		for ( var i = 1; i <= 23; i ++ )
 		{
 			wappalyzer.showCats[i] = wappalyzer.prefs.getBoolPref('cat' + i);
 		}
@@ -71,7 +72,7 @@ wappalyzer =
 			var enabledItems = prefs.getCharPref('extensions.enabledItems');
 			var version      = enabledItems.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
 
-			if ( wappalyzer.version != version )
+			if ( version && wappalyzer.version != version )
 			{
 				wappalyzer.browser.addEventListener('load', wappalyzer.upgradeSuccess, false);
 
@@ -92,7 +93,7 @@ wappalyzer =
 			wappalyzer.browser.addEventListener('load', wappalyzer.installSuccess, false);
 		}
 
-		if ( typeof(messageManager) != 'undefined' )
+		if ( typeof messageManager != 'undefined' )
 		{
 			// Listen messages sent from the content process
 			messageManager.addMessageListener('wappalyzer:onPageLoad', wappalyzer.onContentPageLoad);
@@ -144,8 +145,8 @@ wappalyzer =
 				wappalyzer.enableTracking = wappalyzer.prefs.getBoolPref('enableTracking');
 
 				break;
-			case 'showNames':
-				wappalyzer.showNames = wappalyzer.prefs.getBoolPref('showNames');
+			case 'showApps':
+				wappalyzer.showApps = wappalyzer.prefs.getIntPref('showApps');
 
 				break;
 			case 'location':
@@ -191,7 +192,7 @@ wappalyzer =
 		switch ( locationPref )
 		{
 			case 1:
-				containerId = 'wappalyzer-statusbar';
+				var containerId = 'wappalyzer-statusbar';
 
 				// Show status bar panel
 				document.getElementById('wappalyzer-statusbar').style.visibility = '';
@@ -224,9 +225,9 @@ wappalyzer =
 		}
 
 		wappalyzer.analyzePage(
-			target,
 			target.location.href,
 			target.documentElement.innerHTML,
+			[],
 			[],
 			true,
 			false
@@ -238,10 +239,10 @@ wappalyzer =
 		wappalyzer.log('onContentPageLoad');
 
 		wappalyzer.analyzePage(
-			null,
 			message.json.href,
 			message.json.html,
 			message.json.headers,
+			message.json.environmentVars,
 			true,
 			false
 			);
@@ -265,9 +266,9 @@ wappalyzer =
 		wappalyzer.currentTab = false;
 
 		wappalyzer.analyzePage(
-			wappalyzer.browser.contentWindow,
 			doc.location.href   ? doc.location.href             : '',
 			doc.documentElement ? doc.documentElement.innerHTML : '',
+			[],
 			[],
 			false,
 			false
@@ -313,7 +314,7 @@ wappalyzer =
 		onSecurityChange: function(a, b, c)          {}
 	},
 
-	analyzePage: function(windowObject, href, html, headers, doCount, manualDetect)
+	analyzePage: function(href, html, headers, environmentVars, doCount, manualDetect)
 	{
 		wappalyzer.log('analyzePage');
 
@@ -326,7 +327,7 @@ wappalyzer =
 			wappalyzer.clearDetectedApps();
 		}
 
-		if ( typeof(html) == 'undefined' )
+		if ( typeof html == 'undefined' )
 		{
 			html = '';
 		}
@@ -341,12 +342,28 @@ wappalyzer =
 
 			if ( html )
 			{
+				// Check cached application names
+				if ( typeof wappalyzer.browser.contentDocument.wappalyzerApps != 'undefined' )
+				{
+					for ( i in wappalyzer.browser.contentDocument.wappalyzerApps )
+					{
+						var appName = wappalyzer.browser.contentDocument.wappalyzerApps[i];
+
+						if ( typeof wappalyzer.checkUnique[appName] == 'undefined' )
+						{
+							wappalyzer.showApp(appName, href, doCount);
+
+							wappalyzer.checkUnique[appName] = true;
+						}
+					}
+				}
+
 				for ( var appName in wappalyzer.apps )
 				{
-					if ( typeof(wappalyzer.checkUnique[appName]) == 'undefined' ) // Don't scan for apps that have already been detected
+					if ( typeof wappalyzer.checkUnique[appName] == 'undefined' ) // Don't scan for apps that have already been detected
 					{
 						// Scan HTML
-						if ( typeof(wappalyzer.apps[appName].html) != 'undefined' )
+						if ( typeof wappalyzer.apps[appName].html != 'undefined' )
 						{
 							var regex = wappalyzer.apps[appName].html;
 
@@ -357,7 +374,7 @@ wappalyzer =
 						}
 
 						// Scan URL
-						if ( href && typeof(wappalyzer.apps[appName].url) != 'undefined' )
+						if ( href && typeof wappalyzer.apps[appName].url != 'undefined' )
 						{
 							var regex = wappalyzer.apps[appName].url;
 
@@ -368,7 +385,7 @@ wappalyzer =
 						}
 
 						// Scan response headers
-						if ( typeof(wappalyzer.apps[appName].headers) != 'undefined' && wappalyzer.request )
+						if ( typeof wappalyzer.apps[appName].headers != 'undefined' && wappalyzer.request )
 						{
 							for ( var header in wappalyzer.apps[appName].headers )
 							{
@@ -377,6 +394,26 @@ wappalyzer =
 								try
 								{
 									if ( regex.test(wappalyzer.request.nsIHttpChannel.getResponseHeader(header)) )
+									{
+										wappalyzer.showApp(appName, href, doCount);
+									}
+								}
+								catch(e)
+								{
+								}
+							}
+						}
+
+						// Scan environment variables
+						if ( environmentVars && typeof wappalyzer.apps[appName].env != 'undefined' )
+						{
+							var regex = wappalyzer.apps[appName].env;
+
+							for ( var i in environmentVars )
+							{
+								try
+								{
+									if ( regex.test(environmentVars[i]) )
 									{
 										wappalyzer.showApp(appName, href, doCount);
 									}
@@ -398,13 +435,21 @@ wappalyzer =
 	{
 		wappalyzer.log('showApp ' + detectedApp);
 
+		// Keep detected application names in memory
+		if ( typeof wappalyzer.browser.contentDocument.wappalyzerApps == 'undefined' )
+		{
+			wappalyzer.browser.contentDocument.wappalyzerApps = [];
+		}
+
+		wappalyzer.browser.contentDocument.wappalyzerApps.push(detectedApp);
+
 		wappalyzer.report(detectedApp, href);
 
-		if ( detectedApp && typeof(wappalyzer.checkUnique[detectedApp]) == 'undefined' )
+		if ( detectedApp && typeof wappalyzer.checkUnique[detectedApp] == 'undefined' )
 		{
 			var show = false;
 
-			for ( i in wappalyzer.apps[detectedApp].cats )
+			for ( var i in wappalyzer.apps[detectedApp].cats )
 			{
 				if ( wappalyzer.showCats[wappalyzer.apps[detectedApp].cats[i]] )
 				{
@@ -420,13 +465,24 @@ wappalyzer =
 
 				if ( wappalyzer.autoDetect )
 				{
-					// Hide Wappalyzer icon
-					document.getElementById('wappalyzer-icon').style.display = 'none';
+					if ( wappalyzer.showApps == 2 )
+					{
+						document.getElementById('wappalyzer-icon').setAttribute('src', 'chrome://wappalyzer/skin/icon16x16_hot.ico');
+
+						document.getElementById('wappalyzer-detected-apps').style.display = 'none';
+					}
+					else
+					{
+						// Hide Wappalyzer icon
+						document.getElementById('wappalyzer-icon').style.display = 'none';
+
+						document.getElementById('wappalyzer-detected-apps').style.display = '';
+					}
 
 					// Show app icon and label
 					var child = document.createElement('image');
 
-					if ( typeof(wappalyzer.apps[detectedApp].icon) == 'string' )
+					if ( typeof wappalyzer.apps[detectedApp].icon == 'string' )
 					{
 						child.setAttribute('src', wappalyzer.apps[detectedApp].icon);
 					}
@@ -445,17 +501,15 @@ wappalyzer =
 					e.appendChild(child);
 				}
 
-				child = document.createElement('label');
-
-				child.setAttribute('value', detectedApp);
-				child.setAttribute('class', 'wappalyzer-app-name');
-
-				if ( !wappalyzer.showNames )
+				if ( wappalyzer.showApps == 0 )
 				{
-					child.setAttribute('style', 'display: none;');
-				}
+					var child = document.createElement('label');
 
-				e.appendChild(child);
+					child.setAttribute('value', detectedApp);
+					child.setAttribute('class', 'wappalyzer-app-name');
+
+					e.appendChild(child);
+				}
 
 				// Show application in popup
 				var e = document.getElementById('wappalyzer-apps');
@@ -478,7 +532,7 @@ wappalyzer =
 				child.setAttribute('type',      '');
 				child.setAttribute('oncommand', 'wappalyzer.openTab(\'' + wappalyzer.homeUrl + 'stats/app/' + escape(detectedApp) + '\');');
 
-				if ( typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
+				if ( typeof wappalyzer.apps[detectedApp].custom == 'undefined' )
 				{
 					child.setAttribute('label', detectedApp);
 					child.setAttribute('image', 'chrome://wappalyzer/skin/icons/' + detectedApp + '.ico');
@@ -494,7 +548,7 @@ wappalyzer =
 
 				if ( wappalyzer.apps[detectedApp].cats )
 				{
-					for ( i in wappalyzer.apps[detectedApp].cats )
+					for ( var i in wappalyzer.apps[detectedApp].cats )
 					{
 						var child = document.createElement('menuitem');
 
@@ -521,18 +575,21 @@ wappalyzer =
 	{
 		wappalyzer.log('report');
 
-		if ( typeof(wappalyzer.apps[detectedApp].custom) == 'undefined' )
+		if ( typeof wappalyzer.apps[detectedApp].custom == 'undefined' )
 		{
-			var domain = href.match(regex = /:\/\/(.[^/]+)/) ? href.match(regex)[1] : '';
+			var
+				regex  = /:\/\/(.[^/]+)/,
+				domain = href.match(regex) ? href.match(regex)[1] : ''
+				;
 
-			if ( wappalyzer.enableTracking && wappalyzer.regexDomain.test(domain) )
+			if ( wappalyzer.enableTracking && wappalyzer.regexDomain.test(domain) && !wappalyzer.regexBlacklist.test(href) )
 			{
-				if ( typeof(wappalyzer.history[domain]) == 'undefined' )
+				if ( typeof wappalyzer.history[domain] == 'undefined' )
 				{
 					wappalyzer.history[domain] = [];
 				}
 
-				if ( typeof(wappalyzer.history[domain][detectedApp]) == 'undefined' )
+				if ( typeof wappalyzer.history[domain][detectedApp] == 'undefined' )
 				{
 					wappalyzer.history[domain][detectedApp] = 0;
 				}
@@ -560,15 +617,13 @@ wappalyzer =
 		{
 			var report = '';
 
-			var i, j;
-
 			if ( wappalyzer.history )
 			{
-				for ( i in wappalyzer.history )
+				for ( var i in wappalyzer.history )
 				{
 					report += '[' + i;
 
-					for ( j in wappalyzer.history[i] )
+					for ( var j in wappalyzer.history[i] )
 					{
 						report += '|' + j + ':' + wappalyzer.history[i][j];
 					}
@@ -617,10 +672,11 @@ wappalyzer =
 		wappalyzer.checkUnique  = [];
 
 		// Show Wappalyzer icon
+		document.getElementById('wappalyzer-icon').setAttribute('src', 'chrome://wappalyzer/skin/icon16x16.ico');
 		document.getElementById('wappalyzer-icon').style.display = '';
 
 		// Clear app icons and labels
-		e = document.getElementById('wappalyzer-detected-apps');
+		var e = document.getElementById('wappalyzer-detected-apps');
 
 		while ( e.childNodes.length > 0 )
 		{
@@ -628,7 +684,7 @@ wappalyzer =
 		}
 
 		// Clear application popup
-		e = document.getElementById('wappalyzer-apps');
+		var e = document.getElementById('wappalyzer-apps');
 
 		while ( e.childNodes.length > 0 )
 		{

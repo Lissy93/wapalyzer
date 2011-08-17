@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/"?>
-<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/overlay.css"?>
+<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/wappalyzer.css"?>
 
-<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/overlay.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/wappalyzer.dtd">
 
 <prefwindow
 	id="wappalyzer-options"
@@ -18,7 +18,7 @@
 			<preference id="wappalyzer-location"        name="wappalyzer.location"       type="int"   />
 			<preference id="wappalyzer-auto-detect"     name="wappalyzer.autoDetect"     type="bool"  />
 			<preference id="wappalyzer-enable-tracking" name="wappalyzer.enableTracking" type="bool"  />
-			<preference id="wappalyzer-show-names"      name="wappalyzer.showNames"      type="bool"  />
+			<preference id="wappalyzer-show-apps"       name="wappalyzer.showApps"       type="int"   />
 			<preference id="wappalyzer-custom-apps"     name="wappalyzer.customApps"     type="string"/>
 			<preference id="wappalyzer-cat1"            name="wappalyzer.cat1"           type="bool"  />
 			<preference id="wappalyzer-cat2"            name="wappalyzer.cat2"           type="bool"  />
@@ -75,26 +75,14 @@
 								</row>
 								<row>
 									<hbox align="center">
-										<label control="wappalyzer-auto-detect" value="&wappalyzer.detect;:"/>
+										<label control="wappalyzer-show-apps" value="&wappalyzer.showApps;:"/>
 									</hbox>
 									<hbox align="center">
-										<menulist preference="wappalyzer-auto-detect" id="wappalyzer-option-auto-detect">
+										<menulist preference="wappalyzer-show-apps" id="wappalyzer-show-apps">
 											<menupopup>
-												<menuitem label="&wappalyzer.auto;"   value="true"/>
-												<menuitem label="&wappalyzer.manual;" value="false"/>
-											</menupopup>
-										</menulist>
-									</hbox>
-								</row>
-								<row>
-									<hbox align="center">
-										<label control="wappalyzer-auto-detect" value="&wappalyzer.showNames;:"/>
-									</hbox>
-									<hbox align="center">
-										<menulist preference="wappalyzer-show-names" id="wappalyzer-show-names">
-											<menupopup>
-												<menuitem label="&wappalyzer.inline;" value="true"/>
-												<menuitem label="&wappalyzer.popup;"  value="false"/>
+												<menuitem label="&wappalyzer.labels;" value="0"/>
+												<menuitem label="&wappalyzer.icons;"  value="1"/>
+												<menuitem label="&wappalyzer.popup;"  value="2"/>
 											</menupopup>
 										</menulist>
 									</hbox>

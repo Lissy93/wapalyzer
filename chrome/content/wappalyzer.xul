@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
-<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/overlay.css"?>
+<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/wappalyzer.css"?>
 
-<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/overlay.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/wappalyzer.dtd">
 
 <overlay id="wappalyzer-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<script type="application/x-javascript" src="chrome://wappalyzer/content/overlay.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/wappalyzer.js"/>
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/evaluate.js"/>
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/apps.js"/>
 
 	<stringbundleset id="stringbundleset">
-		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/overlay.properties"/>
+		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/wappalyzer.properties"/>
 	</stringbundleset>
 	
 	<hbox>
@@ -18,7 +18,7 @@
 			id="wappalyzer-container"
 			context="wappalyzer-menu"
 			popup="wappalyzer-apps"
-			onmouseover="wappalyzer.hoverTimeout = setTimeout(function() { document.getElementById('wappalyzer-apps').openPopup(document.getElementById('wappalyzer-container'), 'after_end'); }, 1000);"
+			onmouseover="wappalyzer.hoverTimeout = setTimeout(function() { document.getElementById('wappalyzer-apps').openPopup(document.getElementById('wappalyzer-container'), 'after_end'); }, 200);"
 			onmouseout="clearTimeout(wappalyzer.hoverTimeout);"
 			>
 			<image
@@ -29,8 +29,7 @@
 			
 			<box align="start" id="wappalyzer-detected-apps"/>
 
-			<menupopup id="wappalyzer-apps" position="after_end">
-			</menupopup>
+			<menupopup id="wappalyzer-apps" position="after_end"></menupopup>
 
 			<menupopup id="wappalyzer-menu">
 				<menuitem label="&wappalyzer.options;" oncommand="
@@ -46,7 +45,6 @@
 
 	<hbox
 		id="urlbar-icons"
-		onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
 		/>
 
 	<statusbar id="status-bar">
@@ -55,7 +53,6 @@
 			class="statusbarpanel-iconic"
 			context="wappalyzer-menu"
 			popup="wappalyzer-apps"
-			onclick="if ( !wappalyzer.autoDetect ) wappalyzer.analyzePage(wappalyzer.browser.contentDocument.location.href, wappalyzer.browser.contentDocument.documentElement.innerHTML, false, true, true);"
 			/>
 	</statusbar>
 </overlay>
