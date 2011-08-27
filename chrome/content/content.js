@@ -1,99 +1,108 @@
-var wappalyzer = {};
+(function() {
+	self = {
+		prevUrl: '',
 
-wappalyzer =
-{
-	prevUrl: '',
+		init: function() {
+			self.log('init');
 
-	init: function()
-	{
-		wappalyzer.log('init');
-
-		addEventListener('DOMContentLoaded', wappalyzer.onPageLoad, false);
-	},
-
-	log: function(message)
-	{
-		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
-
-		consoleService.logStringMessage("Wappalyzer content.js: " + message);
-	},
-
-	onPageLoad: function(e)
-	{
-		wappalyzer.log('onPageLoad');
-
-		sendAsyncMessage('wappalyzer:onPageLoad', {
-			href:            content.document.location.href,
-			html:            content.document.documentElement.innerHTML,
-			headers:         [],
-			environmentVars: wappalyzer.getEnvironmentVars()
-			});
-	},
-
-	onUrlChange: function(request)
-	{
-		wappalyzer.log('onUrlChange');
-	},
-
-	urlChange:
-	{
-		QueryInterface: function(iid)
-		{
-			if ( iid.equals(Components.interfaces.nsIWebProgressListener)   ||
-			     iid.equals(Components.interfaces.nsISupportsWeakReference) ||
-			     iid.equals(Components.interfaces.nsISupports) )
-			{
-				return this;
-			}
-
-			throw Components.results.NS_NOINTERFACE;
+			addEventListener('DOMContentLoaded', self.onPageLoad, false);
 		},
 
-		onLocationChange: function(progress, request, url)
-		{
-			if ( !url )
-			{
-				wappalyzer.prevUrl = '';
+		log: function(message) {
+			var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
 
-				return;
-			}
-
-			if ( url.spec != wappalyzer.prevUrl )
-			{
-				wappalyzer.prevUrl = url.spec;
-
-				wappalyzer.onUrlChange(request);
-			}
+			consoleService.logStringMessage("Wappalyzer content.js: " + message);
 		},
 
-		onStateChange:    function(a, b, c, d)       {},
-		onProgressChange: function(a, b, c, d, e, f) {},
-		onStatusChange:   function(a, b, c, d)       {},
-		onSecurityChange: function(a, b, c)          {}
-	},
+		onPageLoad: function(e) {
+			self.log('onPageLoad');
 
-	getEnvironmentVars: function()
-	{
-		var element = content.document.createElement('wappalyzerData');
+			self.getEnvironmentVars();
+		},
 
-		element.setAttribute('id',    'wappalyzer-data');
-		element.setAttribute('style', 'display: none;');
+		onUrlChange: function(request) {
+			self.log('onUrlChange');
 
-		content.document.documentElement.appendChild(element);
+			self.getEnvironmentVars();
+		},
 
-		var script = content.document.createElement('script');
+		urlChange: {
+			QueryInterface: function(iid) {
+				if ( iid.equals(Components.interfaces.nsIWebProgressListener)   ||
+					 iid.equals(Components.interfaces.nsISupportsWeakReference) ||
+					 iid.equals(Components.interfaces.nsISupports) ) {
+					return this;
+				}
 
-		script.innerHTML = 'for ( i in window ) document.getElementById("wappalyzer-data").innerHTML += i + " ";';
+				throw Components.results.NS_NOINTERFACE;
+			},
 
-		content.document.documentElement.appendChild(script);
+			onLocationChange: function(progress, request, url) {
+				if ( !url ) {
+					self.prevUrl = '';
 
-		var environmentVars = content.document.getElementById('wappalyzer-data').innerHTML.split(' ');
+					return;
+				}
 
-		element.parentNode.removeChild(element);
-		script .parentNode.removeChild(script);
+				if ( url.spec != self.prevUrl ) {
+					self.prevUrl = url.spec;
 
-		return environmentVars;
+					self.onUrlChange(request);
+				}
+			},
+
+			onStateChange:    function(a, b, c, d)       {},
+			onProgressChange: function(a, b, c, d, e, f) {},
+			onStatusChange:   function(a, b, c, d)       {},
+			onSecurityChange: function(a, b, c)          {}
+		},
+
+		getEnvironmentVars: function() {
+			self.log('getEnvironmentVars');
+
+			var environmentVars = '';
+
+			try {
+				var element = content.document.createElement('wappalyzerData');
+
+				element.setAttribute('id', 'wappalyzerData');
+
+				element.addEventListener('wappalyzerEvent', (function(event) {
+					environmentVars = event.target.innerHTML.split(' ');
+
+					self.log('getEnvironmentVars: ' + environmentVars);
+
+					element.parentNode.removeChild(element);
+
+					sendAsyncMessage('wappalyzer:onPageLoad', {
+						href:            content.document.location.href,
+						html:            content.document.documentElement.innerHTML,
+						headers:         [],
+						environmentVars: environmentVars
+						});
+				}), true);
+
+				content.document.documentElement.appendChild(element);
+
+				content.location.href = 'javascript:' +
+					'(function() {' +
+						'try {' +
+							'for ( i in window ) {' +
+								'window.document.getElementById("wappalyzerData").innerHTML += i + " ";' +
+							'}' +
+
+							'var event = document.createEvent("Events");' + 'event.initEvent("wappalyzerEvent", true, false);' +
+
+							'document.getElementById("wappalyzerData").dispatchEvent(event);' +
+						'}' +
+						'catch(e) { }' +
+					'})();';
+			}
+			catch(e) { }
+
+			return environmentVars;
+		}
 	}
-};
 
-wappalyzer.init();
+	self.init();
+})();
