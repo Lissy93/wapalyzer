@@ -1,5 +1,6 @@
 (function() {
 	self = {
+		element: false,
 		prevUrl: '',
 
 		init: function() {
@@ -65,10 +66,31 @@
 			try {
 				var element = content.document.createElement('wappalyzerData');
 
-				element.setAttribute('id', 'wappalyzerData');
+				element.setAttribute('id',    'wappalyzerData');
+				element.setAttribute('style', 'display: none');
+
+				content.document.documentElement.appendChild(element);
+
+				content.location.href = 'javascript:' +
+					'(function() {' +
+						'try {' +
+							'var event = document.createEvent("Events");' +
+
+							'event.initEvent("wappalyzerEvent", true, false);' +
+
+							'var environmentVars = "";' +
+
+							'for ( var i in window ) environmentVars += i + " ";' +
+
+							'document.getElementById("wappalyzerData").appendChild(document.createComment(environmentVars));' +
+
+							'document.getElementById("wappalyzerData").dispatchEvent(event);' +
+						'}' +
+						'catch(e) { }' +
+					'})();';
 
 				element.addEventListener('wappalyzerEvent', (function(event) {
-					environmentVars = event.target.innerHTML.split(' ');
+					environmentVars = event.target.childNodes[0].nodeValue;
 
 					self.log('getEnvironmentVars: ' + environmentVars);
 
@@ -78,25 +100,9 @@
 						href:            content.document.location.href,
 						html:            content.document.documentElement.innerHTML,
 						headers:         [],
-						environmentVars: environmentVars
+						environmentVars: environmentVars.split(' ')
 						});
 				}), true);
-
-				content.document.documentElement.appendChild(element);
-
-				content.location.href = 'javascript:' +
-					'(function() {' +
-						'try {' +
-							'for ( i in window ) {' +
-								'window.document.getElementById("wappalyzerData").innerHTML += i + " ";' +
-							'}' +
-
-							'var event = document.createEvent("Events");' + 'event.initEvent("wappalyzerEvent", true, false);' +
-
-							'document.getElementById("wappalyzerData").dispatchEvent(event);' +
-						'}' +
-						'catch(e) { }' +
-					'})();';
 			}
 			catch(e) { }
 
@@ -105,4 +111,6 @@
 	}
 
 	self.init();
+
+	return app;
 })();

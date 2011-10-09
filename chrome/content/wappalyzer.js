@@ -4,7 +4,6 @@ var wappalyzer = (function() {
 	self = {
 		apps:           {},
 		appsDetected:   0,
-		autoDetect:     true,
 		browser:        false,
 		cats:           {},
 		checkUnique:    {},
@@ -17,6 +16,7 @@ var wappalyzer = (function() {
 		homeUrl:        'http://wappalyzer.com/',
 		hoverTimeout:   false,
 		newInstall:     false,
+		popupOnHover:   true,
 		prevUrl:        '',
 		prefs:          {},
 		regexBlacklist: /(dev\.|\/admin|\.local)/,
@@ -26,6 +26,7 @@ var wappalyzer = (function() {
 		showApps:       1,
 		showCats:       [],
 		strings:        {},
+		twitterUrl:     'https://twitter.com/Wappalyzer',
 		version:        '',
 
 		init: function() {
@@ -42,10 +43,10 @@ var wappalyzer = (function() {
 			self.prefs.addObserver('', wappalyzer, false);
 
 			self.showApps       = self.prefs.getIntPref( 'showApps');
-			self.autoDetect     = self.prefs.getBoolPref('autoDetect');
 			self.customApps     = self.prefs.getCharPref('customApps');
 			self.debug          = self.prefs.getBoolPref('debug');
 			self.enableTracking = self.prefs.getBoolPref('enableTracking');
+			self.popupOnHover   = self.prefs.getBoolPref('popupOnHover');
 			self.newInstall     = self.prefs.getBoolPref('newInstall');
 			self.version        = self.prefs.getCharPref('version');
 
@@ -57,28 +58,28 @@ var wappalyzer = (function() {
 
 			self.moveLocation(locationPref);
 
-			// Open page after upgrade
-			try {
-				var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-
-				var enabledItems = prefs.getCharPref('extensions.enabledAddons');
-				var version      = enabledItems.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
-
-				if ( version && self.version != version ) {
-					self.browser.addEventListener('load', self.upgradeSuccess, false);
-
-					self.version = version;
-
-					self.prefs.setCharPref('version', self.version);
-				}
-			}
-			catch(e) { }
-
 			// Open page after installation
 			if ( self.newInstall ) {
 				self.prefs.setBoolPref('newInstall', false);
 
-				self.browser.addEventListener('load', self.installSuccess, false);
+				gBrowser.addEventListener('DOMContentLoaded', self.installSuccess, false);
+			} else {
+				// Open page after upgrade
+				try {
+					var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+
+					var enabledItems = prefs.getCharPref('extensions.enabledAddons');
+					var version      = enabledItems.replace(/(^.*wappalyzer[^:]+:)([^,]+),.*$/, '$2');
+
+					if ( version && self.version != version ) {
+						gBrowser.addEventListener('DOMContentLoaded', self.upgradeSuccess, false);
+
+						self.version = version;
+
+						self.prefs.setCharPref('version', self.version);
+					}
+				}
+				catch(e) { }
 			}
 
 			// Listen messages sent from the content process
@@ -113,10 +114,6 @@ var wappalyzer = (function() {
 			}
 
 			switch(data) {
-				case 'autoDetect':
-					self.autoDetect = self.prefs.getBoolPref('autoDetect');
-
-					break;
 				case 'customApps':
 					self.customApps = self.prefs.getCharPref('customApps');
 
@@ -127,6 +124,12 @@ var wappalyzer = (function() {
 					break;
 				case 'enableTracking':
 					self.enableTracking = self.prefs.getBoolPref('enableTracking');
+
+					break;
+				case 'popupOnHover':
+					self.popupOnHover = self.prefs.getBoolPref('popupOnHover');
+
+					self.moveLocation();
 
 					break;
 				case 'showApps':
@@ -192,6 +195,16 @@ var wappalyzer = (function() {
 			var e         = document.getElementById(containerId);
 			var container = document.getElementById('wappalyzer-container');
 
+			if ( self.popupOnHover ) {
+				container.addEventListener('mouseover', function() {
+					self.hoverTimeout = setTimeout(function() {
+						document.getElementById('wappalyzer-apps').openPopup(document.getElementById('wappalyzer-container'), 'after_end');
+						}, 200);
+				}, false);
+
+				container.addEventListener('mouseout', function() { clearTimeout(self.hoverTimeout); }, false);
+			}
+
 			e.appendChild(container);
 		},
 
@@ -210,8 +223,7 @@ var wappalyzer = (function() {
 				target.documentElement.innerHTML,
 				[],
 				[],
-				true,
-				false
+				true
 				);
 		},
 
@@ -224,8 +236,7 @@ var wappalyzer = (function() {
 				message.json.html,
 				message.json.headers,
 				message.json.environmentVars,
-				true,
-				false
+				true
 				);
 		},
 
@@ -246,7 +257,6 @@ var wappalyzer = (function() {
 				doc.documentElement ? doc.documentElement.innerHTML : '',
 				[],
 				[],
-				false,
 				false
 				);
 		},
@@ -284,7 +294,7 @@ var wappalyzer = (function() {
 			onSecurityChange: function(a, b, c)          {}
 		},
 
-		analyzePage: function(doc, href, html, headers, environmentVars, doCount, manualDetect) {
+		analyzePage: function(doc, href, html, headers, environmentVars, doCount) {
 			self.log('analyzePage');
 
 			self.currentTab = false;
@@ -303,83 +313,81 @@ var wappalyzer = (function() {
 				html = '';
 			}
 
-			if ( self.autoDetect || ( !self.autoDetect && manualDetect ) ) {
-				// Prevent large documents from slowing things down
-				if ( html.length > 50000 ) {
-					html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-				}
-
-				// Scan URL, domain and response headers for patterns
-				if ( html ) {
-					// Check cached application names
-					if ( doc && typeof doc.detectedApps != 'undefined' ) {
-						for ( i in doc.detectedApps ) {
-							var appName = doc.detectedApps[i];
-
-							if ( typeof self.checkUnique[appName] == 'undefined' ) {
-								self.log('CACHE'); //
-
-								self.showApp(appName, doc, href, doCount);
-
-								self.checkUnique[appName] = true;
-							}
-						}
-					}
-
-					for ( var appName in self.apps ) {
-						// Don't scan for apps that have already been detected
-						if ( typeof self.checkUnique[appName] == 'undefined' ) {
-							// Scan HTML
-							if ( typeof self.apps[appName].html != 'undefined' ) {
-								var regex = self.apps[appName].html;
-
-								if ( regex.test(html) ) {
-									self.showApp(appName, doc, href, doCount);
-								}
-							}
-
-							// Scan URL
-							if ( href && typeof self.apps[appName].url != 'undefined' ) {
-								var regex = self.apps[appName].url;
-
-								if ( regex.test(href) ) {
-									self.showApp(appName, doc, href, doCount);
-								}
-							}
-
-							// Scan response headers
-							if ( typeof self.apps[appName].headers != 'undefined' && self.request ) {
-								for ( var header in self.apps[appName].headers ) {
-									var regex = self.apps[appName].headers[header];
-
-									try {
-										if ( regex.test(self.request.nsIHttpChannel.getResponseHeader(header)) ) {
-											self.showApp(appName, doc, href, doCount);
-										}
-									}
-									catch(e) { }
-								}
-							}
-
-							// Scan environment variables
-							if ( environmentVars && typeof self.apps[appName].env != 'undefined' ) {
-								var regex = self.apps[appName].env;
-
-								for ( var i in environmentVars ) {
-									try {
-										if ( regex.test(environmentVars[i]) ) {
-											self.showApp(appName, doc, href, doCount);
-										}
-									}
-									catch(e) { }
-								}
-							}
-						}
-					}
-				}
-
-				html = ''; // Free memory
+			// Prevent large documents from slowing things down
+			if ( html.length > 50000 ) {
+				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 			}
+
+			// Scan URL, domain and response headers for patterns
+			if ( html || self.request ) {
+				// Check cached application names
+				if ( doc && typeof doc.detectedApps != 'undefined' ) {
+					for ( i in doc.detectedApps ) {
+						var appName = doc.detectedApps[i];
+
+						if ( typeof self.checkUnique[appName] == 'undefined' ) {
+							self.log('CACHE'); //
+
+							self.showApp(appName, doc, href, doCount);
+
+							self.checkUnique[appName] = true;
+						}
+					}
+				}
+
+				for ( var appName in self.apps ) {
+					// Don't scan for apps that have already been detected
+					if ( typeof self.checkUnique[appName] == 'undefined' ) {
+						// Scan HTML
+						if ( html && typeof self.apps[appName].html != 'undefined' ) {
+							var regex = self.apps[appName].html;
+
+							if ( regex.test(html) ) {
+								self.showApp(appName, doc, href, doCount);
+							}
+						}
+
+						// Scan URL
+						if ( href && typeof self.apps[appName].url != 'undefined' ) {
+							var regex = self.apps[appName].url;
+
+							if ( regex.test(href) ) {
+								self.showApp(appName, doc, href, doCount);
+							}
+						}
+
+						// Scan response headers
+						if ( typeof self.apps[appName].headers != 'undefined' && self.request ) {
+							for ( var header in self.apps[appName].headers ) {
+								var regex = self.apps[appName].headers[header];
+
+								try {
+									if ( regex.test(self.request.nsIHttpChannel.getResponseHeader(header)) ) {
+										self.showApp(appName, doc, href, doCount);
+									}
+								}
+								catch(e) { }
+							}
+						}
+
+						// Scan environment variables
+						if ( environmentVars && typeof self.apps[appName].env != 'undefined' ) {
+							var regex = self.apps[appName].env;
+
+							for ( var i in environmentVars ) {
+								try {
+									if ( regex.test(environmentVars[i]) ) {
+										self.showApp(appName, doc, href, doCount);
+									}
+								}
+								catch(e) { }
+							}
+						}
+					}
+				}
+			}
+
+			html = ''; // Free memory
 		},
 
 		showApp: function(detectedApp, doc, href, doCount) {
@@ -410,37 +418,35 @@ var wappalyzer = (function() {
 				if ( show && self.currentTab ) {
 					var e = document.getElementById('wappalyzer-detected-apps');
 
-					if ( self.autoDetect ) {
-						if ( self.showApps == 2 ) {
-							document.getElementById('wappalyzer-icon').setAttribute('src', 'chrome://wappalyzer/skin/icon16x16_hot.ico');
+					if ( self.showApps == 2 ) {
+						document.getElementById('wappalyzer-icon').setAttribute('src', 'chrome://wappalyzer/skin/icon16x16_hot.ico');
 
-							document.getElementById('wappalyzer-detected-apps').style.display = 'none';
-						}
-						else {
-							// Hide Wappalyzer icon
-							document.getElementById('wappalyzer-icon').style.display = 'none';
-
-							document.getElementById('wappalyzer-detected-apps').style.display = '';
-						}
-
-						// Show app icon and label
-						var child = document.createElement('image');
-
-						if ( typeof self.apps[detectedApp].icon == 'string' ) {
-							child.setAttribute('src', self.apps[detectedApp].icon);
-						}
-						else {
-							child.setAttribute('src', 'chrome://wappalyzer/skin/icons/' + detectedApp + '.ico');
-						}
-
-						child.setAttribute('class', 'wappalyzer-icon');
-
-						if ( self.appsDetected ) {
-							child.setAttribute('style', 'margin-left: .5em');
-						}
-
-						e.appendChild(child);
+						document.getElementById('wappalyzer-detected-apps').style.display = 'none';
 					}
+					else {
+						// Hide Wappalyzer icon
+						document.getElementById('wappalyzer-icon').style.display = 'none';
+
+						document.getElementById('wappalyzer-detected-apps').style.display = '';
+					}
+
+					// Show app icon and label
+					var child = document.createElement('image');
+
+					if ( typeof self.apps[detectedApp].icon == 'string' ) {
+						child.setAttribute('src', self.apps[detectedApp].icon);
+					}
+					else {
+						child.setAttribute('src', 'chrome://wappalyzer/skin/icons/' + detectedApp + '.ico');
+					}
+
+					child.setAttribute('class', 'wappalyzer-icon');
+
+					if ( self.appsDetected ) {
+						child.setAttribute('style', 'margin-left: .5em');
+					}
+
+					e.appendChild(child);
 
 					if ( self.showApps == 0 ) {
 						var child = document.createElement('label');
@@ -622,7 +628,7 @@ var wappalyzer = (function() {
 		installSuccess: function() {
 			self.log('installSuccess');
 
-			self.browser.removeEventListener('load', self.installSuccess, false);
+			gBrowser.removeEventListener('DOMContentLoaded', self.installSuccess, false);
 
 			self.openTab(self.homeUrl + 'install/success/');
 		},
@@ -630,7 +636,7 @@ var wappalyzer = (function() {
 		upgradeSuccess: function() {
 			self.log('upgradeSuccess');
 
-			self.browser.removeEventListener('load', self.upgradeSuccess, false);
+			gBrowser.removeEventListener('DOMContentLoaded', self.upgradeSuccess, false);
 
 			self.openTab(self.homeUrl + 'install/upgraded/');
 		}

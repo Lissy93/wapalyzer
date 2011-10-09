@@ -16,9 +16,9 @@
 	<prefpane label="&wappalyzer.options;">
 		<preferences>
 			<preference id="wappalyzer-location"        name="wappalyzer.location"       type="int"   />
-			<preference id="wappalyzer-auto-detect"     name="wappalyzer.autoDetect"     type="bool"  />
 			<preference id="wappalyzer-enable-tracking" name="wappalyzer.enableTracking" type="bool"  />
 			<preference id="wappalyzer-show-apps"       name="wappalyzer.showApps"       type="int"   />
+			<preference id="wappalyzer-popup"           name="wappalyzer.popupOnHover"   type="bool"  />
 			<preference id="wappalyzer-custom-apps"     name="wappalyzer.customApps"     type="string"/>
 			<preference id="wappalyzer-cat1"            name="wappalyzer.cat1"           type="bool"  />
 			<preference id="wappalyzer-cat2"            name="wappalyzer.cat2"           type="bool"  />
@@ -83,6 +83,19 @@
 												<menuitem label="&wappalyzer.labels;" value="0"/>
 												<menuitem label="&wappalyzer.icons;"  value="1"/>
 												<menuitem label="&wappalyzer.popup;"  value="2"/>
+											</menupopup>
+										</menulist>
+									</hbox>
+								</row>
+								<row>
+									<hbox align="center">
+										<label control="wappalyzer-popup" value="&wappalyzer.popupOnHover;:"/>
+									</hbox>
+									<hbox align="center">
+										<menulist preference="wappalyzer-popup" id="wappalyzer-popup">
+											<menupopup>
+												<menuitem label="&wappalyzer.onHover;" value="true" />
+												<menuitem label="&wappalyzer.onClick;" value="false"/>
 											</menupopup>
 										</menulist>
 									</hbox>

@@ -6,6 +6,7 @@ pref('wappalyzer.newInstall',     true);
 pref('wappalyzer.showApps',       1);
 pref('wappalyzer.customApps',     '');
 pref('wappalyzer.version',        '');
+pref('wappalyzer.popupOnHover',   true);
 
 pref('wappalyzer.cat1',           true);
 pref('wappalyzer.cat2',           true);
