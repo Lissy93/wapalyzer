@@ -50,7 +50,7 @@ var wappalyzer = (function() {
 			self.newInstall     = self.prefs.getBoolPref('newInstall');
 			self.version        = self.prefs.getCharPref('version');
 
-			for ( var i = 1; i <= 23; i ++ ) {
+			for ( var i = 1; i <= 24; i ++ ) {
 				self.showCats[i] = self.prefs.getBoolPref('cat' + i);
 			}
 
@@ -165,6 +165,7 @@ var wappalyzer = (function() {
 				case 'cat21': self.showCats[21] = self.prefs.getIntPref('cat21'); break;
 				case 'cat22': self.showCats[22] = self.prefs.getIntPref('cat22'); break;
 				case 'cat23': self.showCats[23] = self.prefs.getIntPref('cat23'); break;
+				case 'cat24': self.showCats[24] = self.prefs.getIntPref('cat24'); break;
 			}
 		},
 

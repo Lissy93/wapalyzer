@@ -24,7 +24,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		22: { name: 'Web server',           plural: 'Web servers' },
 		23: { name: 'Cache tool',           plural: 'Cache tools' },
 		24: { name: 'Rich text editor',     plural: 'Rich text editors' }
-		};
+	};
 
 	wappalyzer.apps = {
 		'1C-Bitrix':             { cats: { 1:  1 }, html: /(<link[^>]+components\/bitrix|<script[^>]+1c\-bitrix)/i },
