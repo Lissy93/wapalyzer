@@ -35,6 +35,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'Amiro.CMS':             { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Amiro/i },
 		'Apache':                { cats: { 1: 22 }, headers: { 'Server': /Apache/i } },
 		'Apache Tomcat':         { cats: { 1: 22 }, headers: { 'Server': /Apache-Coyote/i } },
+		'Atlassian Confluence':  { cats: { 1:  8 }, html: /Powered by <a href=.http:\/\/www\.atlassian\.com\/software\/confluence/i },
 		'AWStats':               { cats: { 1: 10 }, html: /<meta name=("|')generator("|') [^>]+AWStats/i },
 		'Backbone.js':           { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*backbone[^>]*\.js/i, env: /^Backbone$/ },
 		'BIGACE':                { cats: { 1:  1 }, html: /(<meta name=("|')generator("|') [^>]+BIGACE|Powered by <a href=("|')[^>]+BIGACE|<!--\s+Site is running BIGACE)/i },
