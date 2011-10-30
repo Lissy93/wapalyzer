@@ -23,7 +23,8 @@ if ( typeof wappalyzer != 'undefined' ) {
 		21: { name: 'LMS',                  plural: 'LMS' },
 		22: { name: 'Web server',           plural: 'Web servers' },
 		23: { name: 'Cache tool',           plural: 'Cache tools' },
-		24: { name: 'Rich text editor',     plural: 'Rich text editors' }
+		24: { name: 'Rich text editor',     plural: 'Rich text editors' },
+		25: { name: 'Graphics',             plural: 'Graphics' }
 	};
 
 	wappalyzer.apps = {
@@ -64,7 +65,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'CS Cart':               { cats: { 1:  6 }, html: /&nbsp;Powered by (<a href=.http:\/\/www\.cs\-cart\.com|CS\-Cart)/i },
 		'CubeCart':              { cats: { 1:  6 }, html: /Powered by <a href=.http:\/\/www\.cubecart\.com/i },
 		'cufon':                 { cats: { 1: 17 }, html: /(<script[^>]* src=("|')[^>]*cufon\-yui\.js|<script[^>]*>[^<]+Cufon\.now\(\))/i },
-		'd3':                    { cats: { 1: 12 }, html: /<script[^>]*src=[^>]+d3[^>]*\.js/i, env: 'd3' },
+		'd3':                    { cats: { 1: 25 }, html: /<script[^>]*src=[^>]+d3[^>]*\.js/i, env: 'd3' },
 		'Danneo CMS':            { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Danneo/i },
 		'DataLife Engine':       { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+DataLife Engine/i },
 		'DHTMLX':                { cats: { 1: 12 }, html: /<script [^>]+dhtmlxcommon\.js/i },
@@ -156,11 +157,11 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'posterous':             { cats: { 1:  1, 2: 11 }, html: /<div class=("|')posterous/i },
 		'Prestashop':            { cats: { 1:  6 }, html: /(<meta name=("|')generator("|') [^>]+PrestaShop|Powered by <a href=("|')[^>]+PrestaShop)/i },
 		'Prototype':             { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*(prototype|protoaculous)\.js("|')/i, env: /^Prototype$/ },
-		'Protovis':              { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*protovis[^>]*\.js/i, env: /^protovis$/ },
+		'Protovis':              { cats: { 1: 25 }, html: /<script[^>]* src=("|')[^>]*protovis[^>]*\.js/i, env: /^protovis$/ },
 		'punBB':                 { cats: { 1:  2 }, html: /Powered by <a href=("|')[^>]+punbb/i },
 		'Quantcast':             { cats: { 1: 10 }, html: /<script[^>]* src=("|')http:\/\/edge\.quantserve\.com\/quant\.js("|')>/i, env: /^quantserve$/ },
 		'Quick.Cart':            { cats: { 1:  6 }, html: /<a href="[^>]+opensolution\.org\/">Powered by/i },
-		'Raphael':               { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*raphael[^>]*\.js/i, env: /^Raphael$/ },
+		'Raphael':               { cats: { 1: 25 }, html: /<script[^>]* src=("|')[^>]*raphael[^>]*\.js/i, env: /^Raphael$/ },
 		'reCAPTCHA':             { cats: { 1: 16 }, html: /(<div[^>]+id=("|')recaptcha_image|<script[^>]+ src=("|')(api\-secure\.recaptcha\.net|recaptcha_ajax\.js))/ },
 		'Reddit':                { cats: { 1:  2 }, html: /(<script[^>]+>var reddit = {|<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)/i, url: /^(www.)?reddit\.com/ },
 		'Redmine':               { cats: { 1: 13 }, html: /(<meta name=("|')description("|')Redmine("|')|Powered by <a href=("|')[^>]+Redmine)/i },

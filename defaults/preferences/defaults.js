@@ -32,3 +32,4 @@ pref('wappalyzer.cat21',          true);
 pref('wappalyzer.cat22',          true);
 pref('wappalyzer.cat23',          true);
 pref('wappalyzer.cat24',          true);
+pref('wappalyzer.cat25',          true);
