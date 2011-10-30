@@ -68,6 +68,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'Danneo CMS':            { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Danneo/i },
 		'DataLife Engine':       { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+DataLife Engine/i },
 		'DHTMLX':                { cats: { 1: 12 }, html: /<script [^>]+dhtmlxcommon\.js/i },
+		'Digital Goods Store':   { cats: { 1:  6 }, html: /<script[^>]* src=("|')[^>]*dg[^>]*\.js/i, env: /^PAYPAL$/ },
 		'DirectAdmin':           { cats: { 1:  9 }, html: /<a[^>]+>DirectAdmin<\/a> Web Control Panel/i },
 		'Disqus':                { cats: { 1: 15 }, html: /(<div[^>]+id=("|')disqus_thread("|')|<script[^>]+disqus_url)/ },
 		'dojo':                  { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^>]*dojo(\.xd)?\.js/i, env: /^dojo$/ },
