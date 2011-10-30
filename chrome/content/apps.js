@@ -53,6 +53,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'comScore':              { cats: { 1: 10 }, html: /<i{1}frame[^>]* (id=("|')comscore("|')|scr=[^>]+comscore)/ },
 		'Concrete5':             { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+concrete5/i },
 		'Contao':                { cats: { 1:  1 }, html: /(<!--\s+This website is powered by (TYPOlight|Contao)|<link[^>]+(typolight|contao).css)/i },
+		'Contens':               { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+contens/i },
 		'ConversionLab':         { cats: { 1: 10 }, html: /<script[^>]* src=("|')http:\/\/conversionlab\.trackset\.com\/track\/tsend\.js("|')/ },
 		'Coppermine':            { cats: { 1:  7 }, html: /<!--Coppermine Photo Gallery/i },
 		'Cotonti':               { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Cotonti/i },
