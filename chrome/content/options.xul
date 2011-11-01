@@ -12,6 +12,7 @@
 
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/evaluate.js"/>
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/apps.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/options.js"/>
 
 	<prefpane label="&wappalyzer.options;">
 		<preferences>
@@ -20,29 +21,7 @@
 			<preference id="wappalyzer-show-apps"       name="wappalyzer.showApps"       type="int"   />
 			<preference id="wappalyzer-popup"           name="wappalyzer.popupOnHover"   type="bool"  />
 			<preference id="wappalyzer-custom-apps"     name="wappalyzer.customApps"     type="string"/>
-			<preference id="wappalyzer-cat1"            name="wappalyzer.cat1"           type="bool"  />
-			<preference id="wappalyzer-cat2"            name="wappalyzer.cat2"           type="bool"  />
-			<preference id="wappalyzer-cat3"            name="wappalyzer.cat3"           type="bool"  />
-			<preference id="wappalyzer-cat4"            name="wappalyzer.cat4"           type="bool"  />
-			<preference id="wappalyzer-cat5"            name="wappalyzer.cat5"           type="bool"  />
-			<preference id="wappalyzer-cat6"            name="wappalyzer.cat6"           type="bool"  />
-			<preference id="wappalyzer-cat7"            name="wappalyzer.cat7"           type="bool"  />
-			<preference id="wappalyzer-cat8"            name="wappalyzer.cat8"           type="bool"  />
-			<preference id="wappalyzer-cat9"            name="wappalyzer.cat9"           type="bool"  />
-			<preference id="wappalyzer-cat10"           name="wappalyzer.cat10"          type="bool"  />
-			<preference id="wappalyzer-cat11"           name="wappalyzer.cat11"          type="bool"  />
-			<preference id="wappalyzer-cat12"           name="wappalyzer.cat12"          type="bool"  />
-			<preference id="wappalyzer-cat13"           name="wappalyzer.cat13"          type="bool"  />
-			<preference id="wappalyzer-cat14"           name="wappalyzer.cat14"          type="bool"  />
-			<preference id="wappalyzer-cat15"           name="wappalyzer.cat15"          type="bool"  />
-			<preference id="wappalyzer-cat16"           name="wappalyzer.cat16"          type="bool"  />
-			<preference id="wappalyzer-cat17"           name="wappalyzer.cat17"          type="bool"  />
-			<preference id="wappalyzer-cat18"           name="wappalyzer.cat18"          type="bool"  />
-			<preference id="wappalyzer-cat19"           name="wappalyzer.cat19"          type="bool"  />
-			<preference id="wappalyzer-cat20"           name="wappalyzer.cat20"          type="bool"  />
-			<preference id="wappalyzer-cat21"           name="wappalyzer.cat21"          type="bool"  />
-			<preference id="wappalyzer-cat22"           name="wappalyzer.cat22"          type="bool"  />
-			<preference id="wappalyzer-cat23"           name="wappalyzer.cat23"          type="bool"  />
+			<!-- Category preferences are injected by options.js -->
 		</preferences>
 
 		<tabbox>
