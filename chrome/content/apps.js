@@ -24,7 +24,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		22: { name: 'Web server',           plural: 'Web servers' },
 		23: { name: 'Cache tool',           plural: 'Cache tools' },
 		24: { name: 'Rich text editor',     plural: 'Rich text editors' },
-		25: { name: 'Graphics',             plural: 'Graphics' }
+		25: { name: 'Javascript Graphics',  plural: 'Javascript Graphics' }
 	};
 
 	wappalyzer.apps = {
