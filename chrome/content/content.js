@@ -1,5 +1,5 @@
 (function() {
-	self = {
+	var self = {
 		element: false,
 		prevUrl: '',
 
@@ -10,6 +10,8 @@
 		},
 
 		log: function(message) {
+			return; //
+
 			var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
 
 			consoleService.logStringMessage("Wappalyzer content.js: " + message);
@@ -60,6 +62,10 @@
 
 		getEnvironmentVars: function() {
 			self.log('getEnvironmentVars');
+
+			if ( content.document.contentType != 'text/html' ) {
+				return;
+			}
 
 			var environmentVars = '';
 
@@ -112,5 +118,5 @@
 
 	self.init();
 
-	return app;
+	return self;
 })();

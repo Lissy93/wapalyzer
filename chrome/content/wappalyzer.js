@@ -1,7 +1,7 @@
 // Wappalyzer by ElbertF 2009 http://elbertf.com
 
 var wappalyzer = (function() {
-	self = {
+	var self = {
 		apps:           {},
 		appsDetected:   0,
 		browser:        false,
@@ -50,8 +50,14 @@ var wappalyzer = (function() {
 			self.newInstall     = self.prefs.getBoolPref('newInstall');
 			self.version        = self.prefs.getCharPref('version');
 
-			for ( var i = 1; i <= 25; i ++ ) {
-				self.showCats[i] = self.prefs.getBoolPref('cat' + i);
+			var i = 0;
+
+			while ( ++ i ) {
+				try {
+					self.showCats[i] = self.prefs.getBoolPref('cat' + i);
+				} catch (e) {
+					break;
+				}
 			}
 
 			var locationPref = self.prefs.getIntPref('location');
@@ -113,60 +119,41 @@ var wappalyzer = (function() {
 				return;
 			}
 
-			switch(data) {
-				case 'customApps':
+			switch(true) {
+				case data == 'customApps':
 					self.customApps = self.prefs.getCharPref('customApps');
 
 					break;
-				case 'debug':
+				case data == 'debug':
 					self.debug = self.prefs.getBoolPref('debug');
 
 					break;
-				case 'enableTracking':
+				case data == 'enableTracking':
 					self.enableTracking = self.prefs.getBoolPref('enableTracking');
 
 					break;
-				case 'popupOnHover':
+				case data == 'popupOnHover':
 					self.popupOnHover = self.prefs.getBoolPref('popupOnHover');
 
 					self.moveLocation();
 
 					break;
-				case 'showApps':
+				case data == 'showApps':
 					self.showApps = self.prefs.getIntPref('showApps');
 
 					break;
-				case 'location':
+				case data == 'location':
 					var locationPref = self.prefs.getIntPref('location');
 
 					self.moveLocation(locationPref);
 
 					break;
-				case  'cat1': self.showCats[ 1] = self.prefs.getIntPref( 'cat1'); break;
-				case  'cat2': self.showCats[ 2] = self.prefs.getIntPref( 'cat2'); break;
-				case  'cat3': self.showCats[ 3] = self.prefs.getIntPref( 'cat3'); break;
-				case  'cat4': self.showCats[ 4] = self.prefs.getIntPref( 'cat4'); break;
-				case  'cat5': self.showCats[ 5] = self.prefs.getIntPref( 'cat5'); break;
-				case  'cat6': self.showCats[ 6] = self.prefs.getIntPref( 'cat6'); break;
-				case  'cat7': self.showCats[ 7] = self.prefs.getIntPref( 'cat7'); break;
-				case  'cat8': self.showCats[ 8] = self.prefs.getIntPref( 'cat8'); break;
-				case  'cat9': self.showCats[ 9] = self.prefs.getIntPref( 'cat9'); break;
-				case 'cat10': self.showCats[10] = self.prefs.getIntPref('cat10'); break;
-				case 'cat11': self.showCats[11] = self.prefs.getIntPref('cat11'); break;
-				case 'cat12': self.showCats[12] = self.prefs.getIntPref('cat12'); break;
-				case 'cat13': self.showCats[13] = self.prefs.getIntPref('cat13'); break;
-				case 'cat14': self.showCats[14] = self.prefs.getIntPref('cat14'); break;
-				case 'cat15': self.showCats[15] = self.prefs.getIntPref('cat15'); break;
-				case 'cat16': self.showCats[16] = self.prefs.getIntPref('cat16'); break;
-				case 'cat17': self.showCats[17] = self.prefs.getIntPref('cat17'); break;
-				case 'cat18': self.showCats[18] = self.prefs.getIntPref('cat18'); break;
-				case 'cat19': self.showCats[19] = self.prefs.getIntPref('cat19'); break;
-				case 'cat20': self.showCats[20] = self.prefs.getIntPref('cat20'); break;
-				case 'cat21': self.showCats[21] = self.prefs.getIntPref('cat21'); break;
-				case 'cat22': self.showCats[22] = self.prefs.getIntPref('cat22'); break;
-				case 'cat23': self.showCats[23] = self.prefs.getIntPref('cat23'); break;
-				case 'cat24': self.showCats[24] = self.prefs.getIntPref('cat24'); break;
-				case 'cat25': self.showCats[25] = self.prefs.getIntPref('cat25'); break;
+				case data.test(/^cat[0-9]+$/):
+					var cat = data.replace(/^cat([0-9]+)$/, '$1');
+
+					self.showCats[cat] = self.prefs.getIntPref('cat' + cat);
+
+					break;
 			}
 		},
 
