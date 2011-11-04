@@ -11,6 +11,7 @@ var wappalyzer = (function() {
 		customApps:     '',
 		debug:          false,
 		enableTracking: true,
+		githubUrl:      'https://github.com/ElbertF/Wappalyzer',
 		history:        {},
 		hitCount:       0,
 		homeUrl:        'http://wappalyzer.com/',
