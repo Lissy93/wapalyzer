@@ -49,6 +49,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'chartbeat':             { cats: { 1: 10 }, html: /function loadChartbeat\(\) {/i },
 		'Chamilo':               { cats: { 1: 21 }, html: /<meta name=("|')generator("|') [^>]+Chamilo/i, headers: { 'X-Powered-By': /Chamilo/ } },
 		'Cherokee':              { cats: { 1: 22 }, headers: { 'Server': /Cherokee/i } },
+		'ClickHeat':             { cats: { 1: 10 }, html: /<script[^>]*src=[^>]+clickheat[^>]*\.js/i, env: '/^clickHeatBrowser$/' }, 
 		'ClickTale':             { cats: { 1: 10 }, html: /if\(typeof ClickTale(Tag)*==("|')function("|')\)/ },
 		'Clicky':                { cats: { 1: 10 }, html: /<script src=("|')http:\/\/static\.getclicky\.com/i },
 		'CMS Made Simple':       { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+CMS Made Simple/i },
