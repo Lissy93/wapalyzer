@@ -67,7 +67,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'CS Cart':               { cats: { 1:  6 }, html: /&nbsp;Powered by (<a href=.http:\/\/www\.cs\-cart\.com|CS\-Cart)/i },
 		'CubeCart':              { cats: { 1:  6 }, html: /Powered by <a href=.http:\/\/www\.cubecart\.com/i },
 		'cufon':                 { cats: { 1: 17 }, html: /(<script[^>]* src=("|')[^>]*cufon\-yui\.js|<script[^>]*>[^<]+Cufon\.now\(\))/i },
-		'd3':                    { cats: { 1: 25 }, html: /<script[^>]*src=[^>]+d3[^>]*\.js/i, env: '/^d3$/' },
+		'd3':                    { cats: { 1: 25 }, html: /<script[^>]*src=[^>]+d3(\.min)?\.js/i, env: '/^d3$/' },
 		'Danneo CMS':            { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Danneo/i },
 		'DataLife Engine':       { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+DataLife Engine/i },
 		'DHTMLX':                { cats: { 1: 12 }, html: /<script [^>]+dhtmlxcommon\.js/i },
