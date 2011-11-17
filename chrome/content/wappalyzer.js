@@ -330,10 +330,46 @@ var wappalyzer = (function() {
 					if ( typeof self.checkUnique[appName] == 'undefined' ) {
 						// Scan HTML
 						if ( html && typeof self.apps[appName].html != 'undefined' ) {
-							var regex = self.apps[appName].html;
-
-							if ( regex.test(html) ) {
+							if ( self.apps[appName].html.test(html) ) {
 								self.showApp(appName, doc, href, doCount);
+							}
+						}
+
+						// Scan script tags
+						if ( html && typeof self.apps[appName].script != 'undefined' ) {
+							var
+								regex = /<script[^>]+src=("|')([^"']+)\1/ig,
+								match = []
+								;
+
+							while ( match = regex.exec(html) ) {
+								if ( self.apps[appName].script.test(match[2]) ) {
+									self.showApp(appName, doc, href, doCount);
+
+									break;
+								}
+							}
+						}
+
+						// Scan meta tags
+						if ( html && typeof self.apps[appName].meta != 'undefined' ) {
+							var
+								regex = /<meta[^>]+>/ig,
+								match = []
+								;
+
+							while ( match = regex.exec(html) ) {
+								for ( meta in self.apps[appName].meta ) {
+									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
+										var content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
+										if ( self.apps[appName].meta[meta].test(content[2]) ) {
+											self.showApp(appName, doc, href, doCount);
+
+											break;
+										}
+									}
+								}
 							}
 						}
 

@@ -63,7 +63,7 @@
 		getEnvironmentVars: function() {
 			self.log('getEnvironmentVars');
 
-			if ( content.document.contentType != 'text/html' ) {
+			if ( content.document.contentType != 'text/html' || typeof content.document.html == 'undefined' ) {
 				return;
 			}
 
