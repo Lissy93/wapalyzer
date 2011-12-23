@@ -1,0 +1,1 @@
+/home/elbertf/extensions/wappalyzer/wappalyzer.js
