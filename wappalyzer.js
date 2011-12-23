@@ -27,7 +27,7 @@ var wappalyzer = wappalyzer || (function() {
 	 */
 	var w = {
 		// Cache detected applications per URL
-		cache: {},
+		cache: new Array,
 
 		config: {
 			environment: 'dev', // dev | live
@@ -45,7 +45,7 @@ var wappalyzer = wappalyzer || (function() {
 		 */
 		log: function(message, type) {
 			if ( w.config.environment == 'dev' ) {
-				console[type || 'debug']('[wappalyzer] ' + message);
+				console[type || 'debug'](typeof message === 'string' ? '[wappalyzer] ' + message : message);
 
 				return true;
 			}
@@ -80,7 +80,106 @@ var wappalyzer = wappalyzer || (function() {
 		/**
 		 * Analyze the request
 		 */
-		analyze: function() {
+		analyze: function(url, callback) {
+			w.log('w.analyze');
+
+			if ( !w.cache[url] ) {
+				var
+					apps = new Array(),
+					data = callback()
+					;
+
+				if ( data ) {
+					for ( var app in w.apps ) {
+						for ( var type in w.apps[app] ) {
+							if ( apps.indexOf(app) !== -1 ) continue; // Skip if the app has already been detected
+
+							switch ( type ) {
+								case 'url':
+									if ( w.apps[app].url.test(data[type]) ) apps.push(app);
+
+									break;
+								case 'html':
+									if ( w.apps[app].html.test(data[type]) ) apps.push(app);
+
+									break;
+								case 'script':
+									if ( data['html'] == null ) break;
+
+									var
+										regex = /<script[^>]+src=("|')([^"']+)\1/ig,
+										match = []
+										;
+
+									while ( match = regex.exec(data['html']) ) {
+										if ( w.apps[app].script.test(match[2]) ) {
+											apps.push(app);
+
+											break;
+										}
+									}
+
+									break;
+								case 'meta':
+									if ( data['html'] == null ) break;
+
+									var
+										regex = /<meta[^>]+>/ig,
+										match = []
+										;
+
+									while ( match = regex.exec(data['html']) ) {
+										for ( meta in w.apps[app].meta ) {
+											if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
+												var content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
+												if ( w.apps[app].meta[meta].test(content[2]) ) {
+													apps.push(app);
+
+													break;
+												}
+											}
+										}
+									}
+
+									break;
+								case 'headers':
+									for ( var header in w.apps[app].headers ) {
+										if ( data[type][header] != null && w.apps[app].headers[header].test(data[type][header]) ) {
+											apps.push(app);
+
+											break;
+										}
+									}
+
+									break;
+								case 'env':
+									for ( var i in data[type] ) {
+										if ( w.apps[app].env.test(data[type][i]) ) {
+											apps.push(app);
+
+											break;
+										}
+									}
+
+									break;
+							}
+						}
+					}
+				}
+
+				w.log(apps.length + ' apps detected: ' + apps.join(', '));
+
+				w.cache[url] = { hits: 0, apps: apps };
+
+				delete apps, data;
+			} else {
+				w.cache[url].hits ++;
+
+				w.log(w.cache[url].apps.length + ' apps cached (hit ' + w.cache[url].hits + '): ' + w.cache[url].apps.join(', '));
+			}
+
+			adapter('displayApps', { apps: w.cache[url].apps });
 		}
 	};
 
