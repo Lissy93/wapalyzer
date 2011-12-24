@@ -16,20 +16,10 @@
 		 */
 		init: function() {
 			window.document.addEventListener('DOMContentLoaded', function() {
-				w.analyze('http://google.com', function(url) {
-					var
-						html    = '<script src="jquery.js"><meta name="generator" content="WordPress"/>',
-						url     = 'http://foo.blogspot.com',
-						headers = { 'Server': 'Apache' },
-						env     = [ 'Mootools' ]
-						;
-
-					return {
-						html:    html,
-						url:     url,
-						headers: headers,
-						env:     env
-						};
+				w.analyze('google.com', 'http://google.com', {
+					html:    '<script src="jquery.js"><meta name="generator" content="WordPress"/>',
+					headers: { 'Server': 'Apache' },
+					env:     [ 'Mootools' ]
 				});
 			});
 		},

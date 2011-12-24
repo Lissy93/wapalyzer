@@ -104,11 +104,11 @@ var wappalyzer = wappalyzer || (function() {
 							case 'html':
 								if ( data[type] == null ) break;
 
-								if ( w.apps[app].html.test(data[type]) ) apps.push(app);
+								if ( w.apps[app][type].test(data[type]) ) apps.push(app);
 
 								break;
 							case 'script':
-								if ( data[type] == null || data['html'] == null ) break;
+								if ( data['html'] == null ) break;
 
 								var
 									regex = /<script[^>]+src=("|')([^"']+)\1/ig,
@@ -116,7 +116,7 @@ var wappalyzer = wappalyzer || (function() {
 									;
 
 								while ( match = regex.exec(data['html']) ) {
-									if ( w.apps[app].script.test(match[2]) ) {
+									if ( w.apps[app][type].test(match[2]) ) {
 										apps.push(app);
 
 										break;
@@ -125,7 +125,7 @@ var wappalyzer = wappalyzer || (function() {
 
 								break;
 							case 'meta':
-								if ( data[type] == null || data['html'] == null ) break;
+								if ( data['html'] == null ) break;
 
 								var
 									regex = /<meta[^>]+>/ig,
@@ -133,7 +133,7 @@ var wappalyzer = wappalyzer || (function() {
 									;
 
 								while ( match = regex.exec(data['html']) ) {
-									for ( meta in w.apps[app].meta ) {
+									for ( meta in w.apps[app][type] ) {
 										if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
 											var content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
@@ -151,7 +151,7 @@ var wappalyzer = wappalyzer || (function() {
 								if ( data[type] == null ) break;
 
 								for ( var header in w.apps[app].headers ) {
-									if ( data[type][header] != null && w.apps[app].headers[header].test(data[type][header]) ) {
+									if ( data[type][header] != null && w.apps[app][type][header].test(data[type][header]) ) {
 										apps.push(app);
 
 										break;
@@ -163,7 +163,7 @@ var wappalyzer = wappalyzer || (function() {
 								if ( data[type] == null ) break;
 
 								for ( var i in data[type] ) {
-									if ( w.apps[app].env.test(data[type][i]) ) {
+									if ( w.apps[app][type].test(data[type][i]) ) {
 										apps.push(app);
 
 										break;
