@@ -17,7 +17,7 @@ var wappalyzer = wappalyzer || (function() {
 			return;
 		}
 
-		w.log('w.adapter.' + func);
+		if ( func != 'log' ) w.log('w.adapter.' + func);
 
 		return w.adapter[func](args);
 	};
@@ -27,10 +27,13 @@ var wappalyzer = wappalyzer || (function() {
 	 */
 	var w = {
 		// Cache detected applications per URL
-		cache: new Array,
+		history:  new Array,
+		detected: new Array,
 
 		config: {
 			environment: 'dev', // dev | live
+
+			version: false,
 
 			websiteURL: 'http://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
@@ -44,10 +47,10 @@ var wappalyzer = wappalyzer || (function() {
 		 * Log messages to console
 		 */
 		log: function(message, type) {
-			if ( w.config.environment == 'dev' ) {
-				console[type || 'debug'](typeof message === 'string' ? '[wappalyzer] ' + message : message);
+			if ( w.config.environment === 'dev' ) {
+				if ( type == null ) type = 'debug';
 
-				return true;
+				adapter('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
 			}
 		},
 
@@ -80,106 +83,121 @@ var wappalyzer = wappalyzer || (function() {
 		/**
 		 * Analyze the request
 		 */
-		analyze: function(url, callback) {
+		analyze: function(hostname, url, data) {
 			w.log('w.analyze');
 
-			if ( !w.cache[url] ) {
-				var
-					apps = new Array(),
-					data = callback()
-					;
+			var apps = new Array();
 
-				if ( data ) {
-					for ( var app in w.apps ) {
-						for ( var type in w.apps[app] ) {
-							if ( apps.indexOf(app) !== -1 ) continue; // Skip if the app has already been detected
+			if ( w.history [hostname] == null ) w.history [hostname] = new Array();
+			if ( w.detected[url]      == null ) w.detected[url]      = new Array();
 
-							switch ( type ) {
-								case 'url':
-									if ( w.apps[app].url.test(data[type]) ) apps.push(app);
+			if ( data ) {
+				for ( var app in w.apps ) {
+					for ( var type in w.apps[app] ) {
+						if ( w.detected[url].indexOf(app) !== -1 && apps.indexOf(app) !== -1 ) continue; // Skip if the app has already been detected
 
-									break;
-								case 'html':
-									if ( w.apps[app].html.test(data[type]) ) apps.push(app);
+						switch ( type ) {
+							case 'url':
+								if ( w.apps[app].url.test(url) ) apps.push(app);
 
-									break;
-								case 'script':
-									if ( data['html'] == null ) break;
+								break;
+							case 'html':
+								if ( data[type] == null ) break;
 
-									var
-										regex = /<script[^>]+src=("|')([^"']+)\1/ig,
-										match = []
-										;
+								if ( w.apps[app].html.test(data[type]) ) apps.push(app);
 
-									while ( match = regex.exec(data['html']) ) {
-										if ( w.apps[app].script.test(match[2]) ) {
-											apps.push(app);
+								break;
+							case 'script':
+								if ( data[type] == null || data['html'] == null ) break;
 
-											break;
-										}
+								var
+									regex = /<script[^>]+src=("|')([^"']+)\1/ig,
+									match = []
+									;
+
+								while ( match = regex.exec(data['html']) ) {
+									if ( w.apps[app].script.test(match[2]) ) {
+										apps.push(app);
+
+										break;
 									}
+								}
 
-									break;
-								case 'meta':
-									if ( data['html'] == null ) break;
+								break;
+							case 'meta':
+								if ( data[type] == null || data['html'] == null ) break;
 
-									var
-										regex = /<meta[^>]+>/ig,
-										match = []
-										;
+								var
+									regex = /<meta[^>]+>/ig,
+									match = []
+									;
 
-									while ( match = regex.exec(data['html']) ) {
-										for ( meta in w.apps[app].meta ) {
-											if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
-												var content = match.toString().match(/content=("|')([^"']+)("|')/i);
+								while ( match = regex.exec(data['html']) ) {
+									for ( meta in w.apps[app].meta ) {
+										if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
+											var content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-												if ( w.apps[app].meta[meta].test(content[2]) ) {
-													apps.push(app);
+											if ( w.apps[app].meta[meta].test(content[2]) ) {
+												apps.push(app);
 
-													break;
-												}
+												break;
 											}
 										}
 									}
+								}
 
-									break;
-								case 'headers':
-									for ( var header in w.apps[app].headers ) {
-										if ( data[type][header] != null && w.apps[app].headers[header].test(data[type][header]) ) {
-											apps.push(app);
+								break;
+							case 'headers':
+								if ( data[type] == null ) break;
 
-											break;
-										}
+								for ( var header in w.apps[app].headers ) {
+									if ( data[type][header] != null && w.apps[app].headers[header].test(data[type][header]) ) {
+										apps.push(app);
+
+										break;
 									}
+								}
 
-									break;
-								case 'env':
-									for ( var i in data[type] ) {
-										if ( w.apps[app].env.test(data[type][i]) ) {
-											apps.push(app);
+								break;
+							case 'env':
+								if ( data[type] == null ) break;
 
-											break;
-										}
+								for ( var i in data[type] ) {
+									if ( w.apps[app].env.test(data[type][i]) ) {
+										apps.push(app);
+
+										break;
 									}
+								}
 
-									break;
-							}
+								break;
 						}
 					}
 				}
 
 				w.log(apps.length + ' apps detected: ' + apps.join(', '));
 
-				w.cache[url] = { hits: 0, apps: apps };
+				// Keep history of detected apps
+				apps.map(function(app) {
+					// Per hostname
+					var index = w.history.indexOf(app);
+
+					if ( index === -1 ) {
+						w.history[hostname].push({ app: app, hits: 1 });
+					} else {
+						w.history[hostname][index].hits ++;
+					}
+
+					// Per URL
+					var index = w.detected.indexOf(app);
+
+					if ( index === -1 ) w.detected[url].push(app);
+				});
 
 				delete apps, data;
-			} else {
-				w.cache[url].hits ++;
-
-				w.log(w.cache[url].apps.length + ' apps cached (hit ' + w.cache[url].hits + '): ' + w.cache[url].apps.join(', '));
 			}
 
-			adapter('displayApps', { apps: w.cache[url].apps });
+			adapter('displayApps', { url: url, apps: w.detected[url] });
 		}
 	};
 

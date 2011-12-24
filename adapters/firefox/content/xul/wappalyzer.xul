@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/css/wappalyzer.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/wappalyzer.dtd">
+
+<overlay id="wappalyzer-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/wappalyzer.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/apps.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/adapter.js"/>
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/wappalyzer.properties"/>
+	</stringbundleset>
+
+	<hbox id="urlbar-icons">
+		<hbox
+			id="wappalyzer-container"
+			popup="wappalyzer-apps"
+			>
+			<image
+				id="wappalyzer-icon"
+				class="wappalyzer-icon"
+				label="&wappalyzer.name;"
+				src="chrome://wappalyzer/skin/images/icon16x16.ico"/>
+			
+			<box align="start" id="wappalyzer-apps"/>
+
+			<menupopup id="wappalyzer-menu" position="after_end">
+				<menu label="&wappalyzer.name;">
+					<menupopup>
+						<menuitem label="sub" image="chrome://wappalyzer/skin/images/icon16x16_hot.ico"/>
+					</menupopup>
+				</menu>
+
+				<menuitem label="foo"/>
+			</menupopup>
+		</hbox>
+	</hbox>
+</overlay>

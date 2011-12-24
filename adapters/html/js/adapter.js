@@ -5,6 +5,13 @@
 
 	w.adapter = {
 		/**
+		 * Log messages to console
+		 */
+		log: function(args) {
+			if ( console != null ) console[args.type](args.message);
+		},
+
+		/**
 		 * Initialize
 		 */
 		init: function() {
