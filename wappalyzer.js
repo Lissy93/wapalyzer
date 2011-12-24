@@ -74,10 +74,10 @@ var wappalyzer = wappalyzer || (function() {
 			}
 
 			// Initialize adapter
-			adapter('init');
-
-			if ( w.config.firstRun ) adapter('goToURL', { url: w.config.websiteURL + 'install/success'  });
-			if ( w.config.upgraded ) adapter('goToURL', { url: w.config.websiteURL + 'install/upgraded' });
+			adapter('init', function() {
+				if ( w.config.firstRun ) adapter('goToURL', { url: w.config.websiteURL + 'install/success'  });
+				if ( w.config.upgraded ) adapter('goToURL', { url: w.config.websiteURL + 'install/upgraded' });
+			});
 		},
 
 		/**

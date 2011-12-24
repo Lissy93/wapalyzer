@@ -14,18 +14,9 @@
 	</stringbundleset>
 
 	<hbox id="urlbar-icons">
-		<hbox
-			id="wappalyzer-container"
-			popup="wappalyzer-apps"
-			>
-			<image
-				id="wappalyzer-icon"
-				class="wappalyzer-icon"
-				label="&wappalyzer.name;"
-				src="chrome://wappalyzer/skin/images/icon16x16.ico"/>
+		<hbox id="wappalyzer-container" popup="wappalyzer-apps">
+			<image id="wappalyzer-icon" src="chrome://wappalyzer/skin/images/icon16x16.ico" label="&wappalyzer.name;"/>
 			
-			<box align="start" id="wappalyzer-apps"/>
-
 			<menupopup id="wappalyzer-menu" position="after_end">
 				<menu label="&wappalyzer.name;">
 					<menupopup>
