@@ -15,20 +15,25 @@
 
 	<hbox id="urlbar-icons">
 		<hbox id="wappalyzer-container" popup="wappalyzer-menu">
-			<image id="wappalyzer-icon" src="chrome://wappalyzer/skin/images/icon16x16.ico" label="&wappalyzer.name;"/>
-			
 			<menupopup id="wappalyzer-menu" position="after_end">
 				<menu label="&wappalyzer.name;">
 					<menupopup>
-						<menuitem label="&wappalyzer.options;"  oncommand="" image="chrome://wappalyzer/skin/images/options.png"/>
+						<menuitem id="wappalyzer-menu-icons"      label="&wappalyzer.showIcons;" />
+						<menuitem id="wappalyzer-menu-tracking"   label="&wappalyzer.tracking;"  />
+						<menuitem id="wappalyzer-menu-addonbar"   label="&wappalyzer.addonBar;"  />
+						<menuitem id="wappalyzer-menu-categories" label="&wappalyzer.categories;"/> 
 
 						<menuseparator/>
 
-						<menuitem label="&wappalyzer.donate;"   oncommand="wappalyzer.adapter.goToURL({ url: wappalyzer.config.websiteURL + 'donate/'            });" image="chrome://wappalyzer/skin/images/donate.png"/>
-						<menuitem label="&wappalyzer.feedback;" oncommand="wappalyzer.adapter.goToURL({ url: wappalyzer.config.websiteURL + '?redirect=feedback' });" image="chrome://wappalyzer/skin/images/feedback.png"/>
-						<menuitem label="&wappalyzer.github;"   oncommand="wappalyzer.adapter.goToURL({ url: wappalyzer.config.githubURL                         });" image="chrome://wappalyzer/skin/images/github.ico"/>
-						<menuitem label="&wappalyzer.twitter;"  oncommand="wappalyzer.adapter.goToURL({ url: wappalyzer.config.twitterURL                        });" image="chrome://wappalyzer/skin/images/twitter.ico"/>
-						<menuitem label="&wappalyzer.website;"  oncommand="wappalyzer.adapter.goToURL({ url: wappalyzer.config.websiteURL                        });" image="chrome://wappalyzer/skin/images/icon16x16_hot.ico"/>
+						<menuitem id="wappalyzer-menu-donate"     label="&wappalyzer.donate;"  />
+						<menuitem id="wappalyzer-menu-feedback"   label="&wappalyzer.feedback;"/>
+						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;" />
+
+						<menuseparator/>
+
+						<menuitem id="wappalyzer-menu-github"     label="&wappalyzer.github;"  image="chrome://wappalyzer/skin/images/github.ico" />
+						<menuitem id="wappalyzer-menu-twitter"    label="&wappalyzer.twitter;" image="chrome://wappalyzer/skin/images/twitter.ico"/>
+						<menuitem id="wappalyzer-menu-gplus"      label="&wappalyzer.gplus;"   image="chrome://wappalyzer/skin/images/gplus.ico"  />
 					</menupopup>
 				</menu>
 
@@ -36,4 +41,11 @@
 			</menupopup>
 		</hbox>
 	</hbox>
+
+	<statusbar id="status-bar">
+		<statusbarpanel
+			id="wappalyzer-addonbar"
+			popup="wappalyzer-menu"
+			/>
+	</statusbar>
 </overlay>

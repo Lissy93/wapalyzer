@@ -1,103 +1,45 @@
 <?xml version="1.0"?>
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/"?>
-<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/wappalyzer.css"?>
+<?xml-stylesheet type="text/css" href="chrome://wappalyzer/skin/css/wappalyzer.css"?>
 
 <!DOCTYPE overlay SYSTEM "chrome://wappalyzer/locale/wappalyzer.dtd">
 
-<prefwindow
-	id="wappalyzer-options"
-	title="&wappalyzer.options;"
-	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
-
-	<script type="application/x-javascript" src="chrome://wappalyzer/content/evaluate.js"/>
-	<script type="application/x-javascript" src="chrome://wappalyzer/content/apps.js"/>
-	<script type="application/x-javascript" src="chrome://wappalyzer/content/options.js"/>
-
-	<prefpane label="&wappalyzer.options;">
+<prefwindow id="wappalyzer-options" title="&wappalyzer.name; - &wappalyzer.categories;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
+	<prefpane label="&wappalyzer.categories;">
 		<preferences>
-			<preference id="wappalyzer-location"        name="wappalyzer.location"       type="int"   />
-			<preference id="wappalyzer-enable-tracking" name="wappalyzer.enableTracking" type="bool"  />
-			<preference id="wappalyzer-show-apps"       name="wappalyzer.showApps"       type="int"   />
-			<preference id="wappalyzer-popup"           name="wappalyzer.popupOnHover"   type="bool"  />
-			<preference id="wappalyzer-custom-apps"     name="wappalyzer.customApps"     type="string"/>
-			<!-- Category preferences are injected by options.js -->
+			<preference id="wappalyzer-cat1"  name="extensions.wappalyzer.cat1"  type="bool"/>
+			<preference id="wappalyzer-cat2"  name="extensions.wappalyzer.cat2"  type="bool"/>
+			<preference id="wappalyzer-cat3"  name="extensions.wappalyzer.cat3"  type="bool"/>
+			<preference id="wappalyzer-cat4"  name="extensions.wappalyzer.cat4"  type="bool"/>
+			<preference id="wappalyzer-cat5"  name="extensions.wappalyzer.cat5"  type="bool"/>
+			<preference id="wappalyzer-cat6"  name="extensions.wappalyzer.cat6"  type="bool"/>
+			<preference id="wappalyzer-cat7"  name="extensions.wappalyzer.cat7"  type="bool"/>
+			<preference id="wappalyzer-cat8"  name="extensions.wappalyzer.cat8"  type="bool"/>
+			<preference id="wappalyzer-cat9"  name="extensions.wappalyzer.cat9"  type="bool"/>
+			<preference id="wappalyzer-cat10" name="extensions.wappalyzer.cat10" type="bool"/>
+			<preference id="wappalyzer-cat11" name="extensions.wappalyzer.cat11" type="bool"/>
+			<preference id="wappalyzer-cat12" name="extensions.wappalyzer.cat12" type="bool"/>
+			<preference id="wappalyzer-cat13" name="extensions.wappalyzer.cat13" type="bool"/>
+			<preference id="wappalyzer-cat14" name="extensions.wappalyzer.cat14" type="bool"/>
+			<preference id="wappalyzer-cat15" name="extensions.wappalyzer.cat15" type="bool"/>
+			<preference id="wappalyzer-cat16" name="extensions.wappalyzer.cat16" type="bool"/>
+			<preference id="wappalyzer-cat17" name="extensions.wappalyzer.cat17" type="bool"/>
+			<preference id="wappalyzer-cat18" name="extensions.wappalyzer.cat18" type="bool"/>
+			<preference id="wappalyzer-cat19" name="extensions.wappalyzer.cat19" type="bool"/>
+			<preference id="wappalyzer-cat20" name="extensions.wappalyzer.cat20" type="bool"/>
+			<preference id="wappalyzer-cat21" name="extensions.wappalyzer.cat21" type="bool"/>
+			<preference id="wappalyzer-cat22" name="extensions.wappalyzer.cat22" type="bool"/>
+			<preference id="wappalyzer-cat23" name="extensions.wappalyzer.cat23" type="bool"/>
+			<preference id="wappalyzer-cat24" name="extensions.wappalyzer.cat24" type="bool"/>
+			<preference id="wappalyzer-cat25" name="extensions.wappalyzer.cat25" type="bool"/>
 		</preferences>
 
 		<tabbox>
 			<tabs>
-				<tab label="&wappalyzer.general;"   />
 				<tab label="&wappalyzer.categories;"/>
-				<tab label="&wappalyzer.custom;"    />
 			</tabs>
 			<tabpanels>
-				<tabpanel id="tab-general">
-					<groupbox>
-						<grid>
-							<columns>
-								<column/>
-								<column flex="1"/>
-							</columns>
-							<rows>
-								<row>
-									<hbox align="center">
-										<label control="wappalyzer-location" value="&wappalyzer.location;:"/>
-									</hbox>
-									<hbox align="center">
-										<menulist preference="wappalyzer-location" id="wappalyzer-option-location">
-											<menupopup>
-												<menuitem label="&wappalyzer.addressBar;" value="0"/>
-												<menuitem label="&wappalyzer.statusBar;"  value="1"/>
-											</menupopup>
-										</menulist>
-									</hbox>
-								</row>
-								<row>
-									<hbox align="center">
-										<label control="wappalyzer-show-apps" value="&wappalyzer.showApps;:"/>
-									</hbox>
-									<hbox align="center">
-										<menulist preference="wappalyzer-show-apps" id="wappalyzer-show-apps">
-											<menupopup>
-												<menuitem label="&wappalyzer.labels;" value="0"/>
-												<menuitem label="&wappalyzer.icons;"  value="1"/>
-												<menuitem label="&wappalyzer.popup;"  value="2"/>
-											</menupopup>
-										</menulist>
-									</hbox>
-								</row>
-								<row>
-									<hbox align="center">
-										<label control="wappalyzer-popup" value="&wappalyzer.popupOnHover;:"/>
-									</hbox>
-									<hbox align="center">
-										<menulist preference="wappalyzer-popup" id="wappalyzer-popup">
-											<menupopup>
-												<menuitem label="&wappalyzer.onHover;" value="true" />
-												<menuitem label="&wappalyzer.onClick;" value="false"/>
-											</menupopup>
-										</menulist>
-									</hbox>
-								</row>
-							</rows>
-						</grid>
-
-						<separator/>
-
-						<grid>
-							<columns>
-								<column flex="1"/>
-							</columns>
-							<rows>
-								<row>
-									<hbox align="center">
-										<checkbox preference="wappalyzer-enable-tracking" id="wappalyzer-option-enable-tracking" label="&wappalyzer.enableTracking;"/>
-									</hbox>
-								</row>
-							</rows>
-						</grid>
-					</groupbox>
-				</tabpanel>
 				<tabpanel id="tab-categories">
 					<groupbox>
 						<grid>
@@ -191,8 +133,6 @@
 									<hbox align="center">
 										<checkbox preference="wappalyzer-cat23" id="wappalyzer-option-cat23" label="&wappalyzer.cat23;"/>
 									</hbox>
-								</row>
-								<row>
 									<hbox align="center">
 										<checkbox preference="wappalyzer-cat24" id="wappalyzer-option-cat24" label="&wappalyzer.cat24;"/>
 									</hbox>
@@ -200,37 +140,6 @@
 								<row>
 									<hbox align="center">
 										<checkbox preference="wappalyzer-cat25" id="wappalyzer-option-cat25" label="&wappalyzer.cat25;"/>
-									</hbox>
-								</row>
-							</rows>
-						</grid>
-					</groupbox>
-				</tabpanel>
-				<tabpanel id="tab-custom">
-					<groupbox>
-						<grid>
-							<columns>
-								<column flex="0"/>
-							</columns>
-							<rows>
-								<row>
-									<hbox align="center">
-										<description>&wappalyzer.customBody;</description>
-									</hbox>
-								</row>
-								<row>
-									<hbox align="center">
-										<label class="text-link" onclick="window.open('http://wappalyzer.com/custom/', 'helpWindow'); void(0);" value="&wappalyzer.customMoreInfo;"/>
-									</hbox>
-								</row>
-								<row>
-									<hbox align="center">
-										<textbox preference="wappalyzer-custom-apps" id="wappalyzer-option-custom-apps" multiline="true" rows="10" cols="60"></textbox>
-									</hbox>
-								</row>
-								<row>
-									<hbox align="center">
-										<button label="&wappalyzer.evaluate;" oncommand="wappalyzer.evaluateCustomApps(document.getElementById('wappalyzer-option-custom-apps').value, true);"/>
 									</hbox>
 								</row>
 							</rows>
