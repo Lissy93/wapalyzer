@@ -197,7 +197,7 @@ var wappalyzer = wappalyzer || (function() {
 				delete apps, data;
 			}
 
-			adapter('displayApps', { url: url, apps: w.detected[url] });
+			adapter('displayApps');
 		}
 	};
 

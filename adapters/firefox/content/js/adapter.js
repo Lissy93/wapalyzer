@@ -7,7 +7,7 @@
 
 	var w = wappalyzer;
 
-	var $;
+	var $, strings;
 
 	w.adapter = {
 		/**
@@ -28,24 +28,7 @@
 
 				w.log('w.adapter: browser window loaded');
 
-				// Listen for tab events
-				gBrowser.addTabsProgressListener({
-					/*
-					onLocationChange: function(progress, request, location, flags) {
-						w.log('tab location change: ' + location.URI.spec);
-
-						w.adapter('displayApps', { url: location.URI.spec });
-					}
-					*/
-
-					/*
-					onStateChange: function(browser, progress, request, flags, status) {
-						if ( (flag & Components.interfaces.nsIWebProgressListener.STATE_STOP) ) {
-							// Some operations including the DOM parsing here
-						}
-					}
-					*/
-				});
+				strings = document.getElementById('wappalyzer-strings');
 
 				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
 					addon.version = addon.version;
@@ -65,6 +48,28 @@
 					// Load content script
 					messageManager.loadFrameScript('chrome://wappalyzer/content/js/content.js', true);
 
+					gBrowser.addProgressListener({
+						// Listen for location changes
+						onLocationChange: function(progress, request, location, flags) {
+							w.adapter.displayApps();
+						},
+
+						// Get response headers
+						onStateChange: function(progress, request, flags, status) {
+							if ( flags & Components.interfaces.nsIWebProgressListener.STATE_STOP ) {
+								var headers = new Object();
+
+								request.nsIHttpChannel.visitResponseHeaders(function(header, value) {
+									headers[header] = value;
+								});
+
+								w.analyze(progress.currentURI.host, progress.currentURI.spec, { headers: headers });
+							}
+						}
+					});
+
+					gBrowser.tabContainer.addEventListener('TabSelect', w.adapter.displayApps, false);
+
 					callback();
 				});
 			};
@@ -75,17 +80,15 @@
 		/**
 		 * Display apps
 		 */
-		displayApps: function(args) {
-			var browser = gBrowser.getBrowserForTab(gBrowser.selectedTab);
+		displayApps: function() {
+			var url = gBrowser.currentURI.spec;
 
-			url = browser.currentURI.spec;
+			$('#wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
 
-			if ( args.apps ) {
+			if ( w.detected[url] != null && w.detected[url].length ) {
 				$('#wappalyzer-icon').attr('src', 'chrome://wappalyzer/skin/images/icon16x16_hot.ico');
 
-				$('#wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
-
-				args.apps.map(function(app, i) {
+				w.detected[url].map(function(app, i) {
 					var menuSeparator = $('<menuseparator/>');
 
 					$('#wappalyzer-menu').append(menuSeparator);
@@ -119,10 +122,10 @@
 
 				var menuItem = $('<menuitem/>')
 					.attr('disabled', 'true')
-					.label('&wappalyzer.noAppsDetected')
+					.attr('label', strings.getString('wappalyzer.noAppsDetected'))
 					;
 
-				$('#wappalyzer-menu').html(menuItem);
+				$('#wappalyzer-menu').append(menuItem);
 			}
 		},
 
