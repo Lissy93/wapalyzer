@@ -9,9 +9,9 @@
 
 		sandbox.win = content;
 
-		Components.utils.evalInSandbox('var env = new String; for ( i in win.wrappedJSObject ) env += " " + i;', sandbox);
+		Components.utils.evalInSandbox('var env = new Array; for ( i in win.wrappedJSObject ) if ( typeof i === "string" ) env.push(i);', sandbox);
 
-		var env = sandbox.env.split(' ');
+		var env = sandbox.env;
 
 		// HTML
 		var html = content.document.documentElement.innerHTML

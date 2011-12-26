@@ -7,6 +7,8 @@
 
 	var w = wappalyzer;
 
+	var $;
+
 	w.adapter = {
 		/**
 		 * Log messages to console
@@ -45,17 +47,23 @@
 					*/
 				});
 
-				// Listen for messages from content script
-				messageManager.addMessageListener('wappalyzer', content);
+				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
+					addon.version = addon.version;
 
-				// Load content script
-				messageManager.loadFrameScript('chrome://wappalyzer/content/js/content.js', true);
+					// Load jQuery
+					(function () {
+						var window;
 
-				// Get version number
-				Components.utils.import('resource://gre/modules/AddonManager.jsm');
+						Services.scriptloader.loadSubScript(addon.getResourceURI('content/js/lib/jquery.min.js').spec, this);
 
-				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(extension) {
-					w.version = extension.version;
+						$ = jQuery.noConflict(true);
+					})();
+
+					// Listen for messages from content script
+					messageManager.addMessageListener('wappalyzer', content);
+
+					// Load content script
+					messageManager.loadFrameScript('chrome://wappalyzer/content/js/content.js', true);
 
 					callback();
 				});
@@ -71,6 +79,51 @@
 			var browser = gBrowser.getBrowserForTab(gBrowser.selectedTab);
 
 			url = browser.currentURI.spec;
+
+			if ( args.apps ) {
+				$('#wappalyzer-icon').attr('src', 'chrome://wappalyzer/skin/images/icon16x16_hot.ico');
+
+				$('#wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
+
+				args.apps.map(function(app, i) {
+					var menuSeparator = $('<menuseparator/>');
+
+					$('#wappalyzer-menu').append(menuSeparator);
+
+					var menuItem = $('<menuitem/>')
+						.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.ico')
+						.attr('label', app)
+						;
+
+					menuItem.bind('command', function() {
+						w.adapter.goToURL({ url: w.config.websiteURL + 'stats/app/' + escape(app) });
+					});
+
+					$('#wappalyzer-menu').append(menuItem);
+
+					for ( cat in w.apps[app].cats ) {
+						var menuItem = $('<menuitem/>')
+							.attr('disabled', 'true')
+							.attr('label', w.categories[cat].name)
+							;
+
+						$('#wappalyzer-menu').append(menuItem);
+					}
+				});
+			} else {
+				$('#wappalyzer-icon').attr('src', 'chrome://wappalyzer/skin/images/icon16x16.ico');
+
+				var menuSeparator = $('<menuseparator/>');
+
+				$('#wappalyzer-menu').append(menuSeparator);
+
+				var menuItem = $('<menuitem/>')
+					.attr('disabled', 'true')
+					.label('&wappalyzer.noAppsDetected')
+					;
+
+				$('#wappalyzer-menu').html(menuItem);
+			}
 		},
 
 		/**

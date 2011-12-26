@@ -1,1 +1,1 @@
-/home/elbertf/extensions/wappalyzer/apps.js
+../../../../share/js/apps.js

@@ -14,7 +14,7 @@
 	</stringbundleset>
 
 	<hbox id="urlbar-icons">
-		<hbox id="wappalyzer-container" popup="wappalyzer-apps">
+		<hbox id="wappalyzer-container" popup="wappalyzer-menu">
 			<image id="wappalyzer-icon" src="chrome://wappalyzer/skin/images/icon16x16.ico" label="&wappalyzer.name;"/>
 			
 			<menupopup id="wappalyzer-menu" position="after_end">
@@ -24,7 +24,7 @@
 					</menupopup>
 				</menu>
 
-				<menuitem label="foo"/>
+				<menuseparator/>
 			</menupopup>
 		</hbox>
 	</hbox>
