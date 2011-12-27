@@ -72,14 +72,14 @@
 
 						// Get response headers
 						onStateChange: function(progress, request, flags, status) {
-							if ( request.nsIHttpChannel != null && flags & Components.interfaces.nsIWebProgressListener.STATE_STOP ) {
+							if ( request && request.nsIHttpChannel && flags & Components.interfaces.nsIWebProgressListener.STATE_STOP ) {
 								var headers = new Object();
 
 								request.nsIHttpChannel.visitResponseHeaders(function(header, value) {
 									headers[header] = value;
 								});
 
-								w.analyze(progress.currentURI.host, progress.currentURI.spec, { headers: headers });
+								if ( progress.currentURI ) w.analyze(progress.currentURI.host, progress.currentURI.spec, { headers: headers });
 							}
 						}
 					});
@@ -90,7 +90,8 @@
 				});
 			};
 
-			window.addEventListener('load', handler, false);
+			window.addEventListener('load',   handler,         false);
+			window.addEventListener('unload', w.adapter.track, false);
 		},
 
 		/**
@@ -180,7 +181,55 @@
 		 */
 		goToURL: function(args) {
 			gBrowser.selectedTab = gBrowser.addTab(args.url);
-		}
+		},
+
+		/**
+		 * Anonymously track detected applications
+		 */
+		track: function() {
+			if ( prefs.getBoolPref('tracking') ) {
+				var report = '';
+
+				if ( w.history ) {
+					for ( hostname in w.history ) {
+						report += '[' + hostname;
+
+						w.history[hostname].map(function(data) {
+							report += '|' + data.app + ':' + data.hits;
+						});
+
+						report += ']';
+					};
+
+					// Make POST request
+					var request = new XMLHttpRequest();
+
+					request.open('POST', w.config.websiteURL + 'report/', true);
+
+					request.channel.loadFlags |= Components.interfaces.nsIRequest.LOAD_BYPASS_CACHE;
+
+					request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+					request.onreadystatechange = function(e) {
+						if ( request.readyState == 4 ) {
+							if ( request.status == 200 ) {
+								w.history = new Object();
+
+								w.log('w.adapter.track: ' + report);
+							}
+
+							report = '';
+
+							if ( request.close ) request.close();
+
+							request = false;
+						}
+					};
+
+					request.send('d=' + encodeURIComponent(report));
+				}
+			}
+		},
 	};
 
 	/**

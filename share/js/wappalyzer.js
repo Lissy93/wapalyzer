@@ -27,8 +27,8 @@ var wappalyzer = wappalyzer || (function() {
 	 */
 	var w = {
 		// Cache detected applications per URL
-		history:  new Array,
-		detected: new Array,
+		history:  new Object,
+		detected: new Object,
 
 		config: {
 			environment: 'dev', // dev | live
@@ -89,8 +89,8 @@ var wappalyzer = wappalyzer || (function() {
 
 			var apps = new Array();
 
-			if ( w.history [hostname] == null ) w.history [hostname] = new Array();
-			if ( w.detected[url]      == null ) w.detected[url]      = new Array();
+			if ( w.history[hostname] == null ) w.history[hostname] = new Array();
+			if ( w.detected[url]     == null ) w.detected[url]     = new Array();
 
 			if ( data ) {
 				for ( var app in w.apps ) {
@@ -180,17 +180,25 @@ var wappalyzer = wappalyzer || (function() {
 
 				// Keep history of detected apps
 				apps.map(function(app) {
-					// Per hostname
-					var index = w.history.indexOf(app);
+					if ( /^[a-z0-9._\-]+\.[a-z]+/.test(hostname) && !/(dev\.|\/admin|\.local)/.test(url) ) {
+						// Per hostname
+						var index = -1;
 
-					if ( index === -1 ) {
-						w.history[hostname].push({ app: app, hits: 1 });
-					} else {
-						w.history[hostname][index].hits ++;
+						w.history[hostname].map(function(data, i) {
+							if ( data.app == app ) index = i;
+						});
+
+						if ( index === -1 ) {
+							w.history[hostname].push({ app: app, hits: 1 });
+						} else {
+							w.history[hostname][index].hits ++;
+						}
+
+						if ( Object.keys(w.history).length >= 200 ) adapter('track');
 					}
 
 					// Per URL
-					var index = w.detected.indexOf(app);
+					var index = w.detected[url].indexOf(app);
 
 					if ( index === -1 ) w.detected[url].push(app);
 				});
