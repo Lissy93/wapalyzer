@@ -1,5 +1,5 @@
 /**
- * Firefox adapter
+ * Firefox driver
  */
 
 (function() {
@@ -7,9 +7,9 @@
 
 	var w = wappalyzer;
 
-	var $, prefs, strings;
+	var w$, prefs, strings;
 
-	w.adapter = {
+	w.driver = {
 		/**
 		 * Log messages to console
 		 */
@@ -28,7 +28,7 @@
 			var handler = function() {
 				window.removeEventListener('load', handler, false);
 
-				w.log('w.adapter: browser window loaded');
+				w.log('w.driver: browser window loaded');
 
 				strings = document.getElementById('wappalyzer-strings');
 
@@ -37,9 +37,12 @@
 					(function () {
 						var window;
 
-						Services.scriptloader.loadSubScript(addon.getResourceURI('content/js/lib/jquery.min.js').spec, this);
+						Components.classes['@mozilla.org/moz/jssubscript-loader;1']
+							.getService(Components.interfaces.mozIJSSubScriptLoader)
+							.loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js')
+							;
 
-						$ = jQuery.noConflict(true);
+						w$ = jQuery.noConflict(true);
 					})();
 
 					// Preferences
@@ -67,7 +70,7 @@
 					gBrowser.addProgressListener({
 						// Listen for location changes
 						onLocationChange: function(progress, request, location, flags) {
-							w.adapter.displayApps();
+							w.driver.displayApps();
 						},
 
 						// Get response headers
@@ -84,14 +87,14 @@
 						}
 					});
 
-					gBrowser.tabContainer.addEventListener('TabSelect', w.adapter.displayApps, false);
+					gBrowser.tabContainer.addEventListener('TabSelect', w.driver.displayApps, false);
 
 					callback();
 				});
 			};
 
 			window.addEventListener('load',   handler,         false);
-			window.addEventListener('unload', w.adapter.track, false);
+			window.addEventListener('unload', w.driver.track, false);
 		},
 
 		/**
@@ -100,15 +103,15 @@
 		displayApps: function() {
 			var url = gBrowser.currentURI.spec;
 
-			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
+			w$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
-					var image = $('<image/>')
+					var image = w$('<image/>')
 						.attr('src', 'chrome://wappalyzer/skin/images/icon16x16_hot.ico')
 						;
 
-					$('#wappalyzer-container').prepend(image);
+					w$('#wappalyzer-container').prepend(image);
 				}
 
 				w.detected[url].map(function(app, i) {
@@ -124,55 +127,60 @@
 
 					if ( display ) {
 						if ( prefs.getBoolPref('showIcons') ) {
-							var image = $('<image/>')
+							var image = w$('<image/>')
 								.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.ico')
 								;
 
-							$('#wappalyzer-container').prepend(image);
+							w$('#wappalyzer-container').prepend(image);
 						}
 
-						var menuSeparator = $('<menuseparator/>');
+						var menuSeparator = w$('<menuseparator/>');
 
-						$('#wappalyzer-menu').append(menuSeparator);
+						w$('#wappalyzer-menu').append(menuSeparator);
 
-						var menuItem = $('<menuitem/>')
+						var menuItem = w$('<menuitem/>')
+							.attr('class', 'wappalyzer-application')
 							.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.ico')
 							.attr('label', app)
 							;
 
 						menuItem.bind('command', function() {
-							w.adapter.goToURL({ url: w.config.websiteURL + 'stats/app/' + escape(app) });
+							w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') });
 						});
 
-						$('#wappalyzer-menu').append(menuItem);
+						w$('#wappalyzer-menu').append(menuItem);
 
 						for ( cat in w.apps[app].cats ) {
-							var menuItem = $('<menuitem/>')
-								.attr('disabled', 'true')
+							var menuItem = w$('<menuitem/>')
+								.attr('class', 'wappalyzer-category')
 								.attr('label', w.categories[w.apps[app].cats[cat]].name)
 								;
 
-							$('#wappalyzer-menu').append(menuItem);
+							menuItem.bind('command', function() {
+								w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[w.apps[app].cats[cat]].plural.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') });
+							});
+
+							w$('#wappalyzer-menu').append(menuItem);
 						}
 					}
 				});
 			} else {
-				var image = $('<image/>')
+				var image = w$('<image/>')
 					.attr('src', 'chrome://wappalyzer/skin/images/icon16x16.ico')
 					;
 
-				$('#wappalyzer-container').prepend(image);
+				w$('#wappalyzer-container').prepend(image);
 
-				var menuSeparator = $('<menuseparator/>');
+				var menuSeparator = w$('<menuseparator/>');
 
-				$('#wappalyzer-menu').append(menuSeparator);
+				w$('#wappalyzer-menu').append(menuSeparator);
 
-				var menuItem = $('<menuitem/>')
+				var menuItem = w$('<menuitem/>')
 					.attr('disabled', 'true')
 					.attr('label', strings.getString('wappalyzer.noAppsDetected'))
 					;
 
-				$('#wappalyzer-menu').append(menuItem);
+				w$('#wappalyzer-menu').append(menuItem);
 			}
 		},
 
@@ -215,7 +223,7 @@
 							if ( request.status == 200 ) {
 								w.history = new Object();
 
-								w.log('w.adapter.track: ' + report);
+								w.log('w.driver.track: ' + report);
 							}
 
 							report = '';
@@ -247,74 +255,71 @@
 	 * Move container to address or addon bar
 	 */
 	function container() {
-		$('#wappalyzer-container')
+		w$('#wappalyzer-container')
 			.remove()
-			.prependTo(prefs.getBoolPref('addonBar') ? $('#wappalyzer-addonbar') : $('#urlbar-icons'));
+			.prependTo(prefs.getBoolPref('addonBar') ? w$('#wappalyzer-addonbar') : w$('#urlbar-icons'));
 
 		// Menu items
 		var prefix = '#wappalyzer-menu-';
 
-		$(prefix + 'icons')
+		w$(prefix + 'icons')
 			.attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false')
 			.bind('command', function() {
 				prefs.setBoolPref('showIcons', !prefs.getBoolPref('showIcons'));
 
-				$(this).attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false');
+				w$(this).attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false');
 
-				w.adapter.displayApps();
+				w.driver.displayApps();
 			});
 
-		$(prefix + 'tracking'  )
-			.attr('checked', prefs.getBoolPref('tracking') ? 'true' : 'false')
+		w$(prefix + 'preferences'  )
 			.bind('command', function() {
-				prefs.setBoolPref('tracking', !prefs.getBoolPref('tracking'));
-
-				$(this).attr('checked', prefs.getBoolPref('tracking') ? 'true' : 'false');
+				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
 			});
 
-		$(prefix + 'addonbar'  )
+		w$(prefix + 'addonbar'  )
 			.attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false')
 			.bind('command', function() {
 				prefs.setBoolPref('addonBar', !prefs.getBoolPref('addonBar'));
 
-				$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
+				w$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
 
 				container();
 			});
 
-		$(prefix + 'categories')
+		w$(prefix + 'categories')
 			.bind('command', function() {
-				w.adapter.goToURL({ url: 'chrome://wappalyzer/content/xul/categories.xul' })
+				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/categories.xul' })
 			});
 
-		$(prefix + 'donate')
+		w$(prefix + 'donate')
 			.bind('command', function() {
-				w.adapter.goToURL({ url: w.config.websiteURL + 'donate/' })
+				w.driver.goToURL({ url: w.config.websiteURL + 'donate' })
 			});
 
-		$(prefix + 'feedback')
+		w$(prefix + 'feedback')
 			.bind('command', function() {
-				w.adapter.goToURL({ url: w.config.websiteURL + '?redirect=feedback' })
+				w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
 			});
 
-		$(prefix + 'website')
+		w$(prefix + 'website')
 			.bind('command', function() {
-				w.adapter.goToURL({ url: w.config.websiteURL })
+				w.driver.goToURL({ url: w.config.websiteURL })
 			});
 
-		$(prefix + 'github' )
+		w$(prefix + 'github' )
 			.bind('command', function() {
-				w.adapter.goToURL({ url: w.config.githubURL })
+				w.driver.goToURL({ url: w.config.githubURL })
 			});
 
-		$(prefix + 'twitter')
+		w$(prefix + 'twitter')
 			.bind('command', function() {
-				w.adapter.goToURL({ url: w.config.twitterURL})
+				w.driver.goToURL({ url: w.config.twitterURL})
 			});
 
-		$(prefix + 'gplus')
+		w$(prefix + 'gplus')
 			.bind('command', function() {
-				w.adapter.goToURL({ url: w.config.gplusURL })
+				w.driver.goToURL({ url: w.config.gplusURL })
 			});
 	}
 

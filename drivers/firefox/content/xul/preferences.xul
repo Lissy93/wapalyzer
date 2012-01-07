@@ -33,11 +33,14 @@
 			<preference id="wappalyzer-cat23" name="extensions.wappalyzer.cat23" type="bool"/>
 			<preference id="wappalyzer-cat24" name="extensions.wappalyzer.cat24" type="bool"/>
 			<preference id="wappalyzer-cat25" name="extensions.wappalyzer.cat25" type="bool"/>
+
+			<preference id="wappalyzer-tracking" name="extensions.wappalyzer.tracking" type="bool"/>
 		</preferences>
 
 		<tabbox>
 			<tabs>
 				<tab label="&wappalyzer.categories;"/>
+				<tab label="&wappalyzer.tracking;"/>
 			</tabs>
 			<tabpanels>
 				<tabpanel id="tab-categories">
@@ -140,6 +143,22 @@
 								<row>
 									<hbox align="center">
 										<checkbox preference="wappalyzer-cat25" id="wappalyzer-option-cat25" label="&wappalyzer.cat25;"/>
+									</hbox>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+				</tabpanel>
+				<tabpanel id="tab-tracking">
+					<groupbox>
+						<grid>
+							<columns>
+								<column flex="1"/>
+							</columns>
+							<rows>
+								<row>
+									<hbox align="center">
+										<checkbox preference="wappalyzer-tracking" id="wappalyzer-option-tracking" label="&wappalyzer.research;"/>
 									</hbox>
 								</row>
 							</rows>

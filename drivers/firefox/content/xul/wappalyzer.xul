@@ -7,7 +7,7 @@
 <overlay id="wappalyzer-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/wappalyzer.js"/>
 	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/apps.js"/>
-	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/adapter.js"/>
+	<script type="application/x-javascript" src="chrome://wappalyzer/content/js/driver.js"/>
 
 	<stringbundleset id="stringbundleset">
 		<stringbundle id="wappalyzer-strings" src="chrome://wappalyzer/locale/wappalyzer.properties"/>
@@ -18,10 +18,9 @@
 			<menupopup id="wappalyzer-menu" position="after_end">
 				<menu label="&wappalyzer.name;">
 					<menupopup>
-						<menuitem id="wappalyzer-menu-icons"      label="&wappalyzer.showIcons;" />
-						<menuitem id="wappalyzer-menu-tracking"   label="&wappalyzer.tracking;"  />
-						<menuitem id="wappalyzer-menu-addonbar"   label="&wappalyzer.addonBar;"  />
-						<menuitem id="wappalyzer-menu-categories" label="&wappalyzer.categories;"/> 
+						<menuitem id="wappalyzer-menu-icons"       label="&wappalyzer.showIcons;"  />
+						<menuitem id="wappalyzer-menu-addonbar"    label="&wappalyzer.addonBar;"   />
+						<menuitem id="wappalyzer-menu-preferences" label="&wappalyzer.preferences;"/> 
 
 						<menuseparator/>
 

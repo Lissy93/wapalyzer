@@ -5,13 +5,11 @@
 		if ( content.document.contentType != 'text/html' ) return;
 
 		// Environment variables
-		var sandbox = Components.utils.Sandbox(content);
+		var env = new Array;
 
-		sandbox.win = content;
-
-		Components.utils.evalInSandbox('var env = new Array; for ( i in win.wrappedJSObject ) if ( typeof i === "string" ) env.push(i);', sandbox);
-
-		var env = sandbox.env;
+		for ( i in content.wrappedJSObject ) {
+			if ( typeof i === "string" ) env.push(i);
+		}
 
 		// HTML
 		var html = content.document.documentElement.innerHTML

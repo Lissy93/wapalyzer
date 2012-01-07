@@ -3,7 +3,7 @@
 
 	var w = wappalyzer;
 
-	w.adapter = {
+	w.driver = {
 		/**
 		 * Log messages to console
 		 */

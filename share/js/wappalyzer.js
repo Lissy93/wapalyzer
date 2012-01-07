@@ -8,18 +8,18 @@
 
 var wappalyzer = wappalyzer || (function() {
 	/**
-	 * Call adapter functions
+	 * Call driver functions
 	 */
-	var adapter = function(func, args) {
-		if ( typeof w.adapter[func] !== 'function' ) {
-			w.log('not implemented: w.adapter.' + func, 'warn');
+	var driver = function(func, args) {
+		if ( typeof w.driver[func] !== 'function' ) {
+			w.log('not implemented: w.driver.' + func, 'warn');
 
 			return;
 		}
 
-		if ( func != 'log' ) w.log('w.adapter.' + func);
+		if ( func != 'log' ) w.log('w.driver.' + func);
 
-		return w.adapter[func](args);
+		return w.driver[func](args);
 	};
 
 	/**
@@ -51,7 +51,7 @@ var wappalyzer = wappalyzer || (function() {
 			if ( w.config.environment === 'dev' ) {
 				if ( type == null ) type = 'debug';
 
-				adapter('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
+				driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
 			}
 		},
 
@@ -62,8 +62,8 @@ var wappalyzer = wappalyzer || (function() {
 			w.log('w.init');
 
 			// Checks
-			if ( w.adapter == null ) {
-				w.log('no adapter, exiting');
+			if ( w.driver == null ) {
+				w.log('no driver, exiting');
 
 				return;
 			}
@@ -74,10 +74,10 @@ var wappalyzer = wappalyzer || (function() {
 				return;
 			}
 
-			// Initialize adapter
-			adapter('init', function() {
-				if ( w.config.firstRun ) adapter('goToURL', { url: w.config.websiteURL + 'install/success'  });
-				if ( w.config.upgraded ) adapter('goToURL', { url: w.config.websiteURL + 'install/upgraded' });
+			// Initialize driver
+			driver('init', function() {
+				if ( w.config.firstRun ) driver('goToURL', { url: w.config.websiteURL + 'installed' });
+				if ( w.config.upgraded ) driver('goToURL', { url: w.config.websiteURL + 'upgraded'  });
 			});
 		},
 
@@ -138,7 +138,7 @@ var wappalyzer = wappalyzer || (function() {
 										if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
 											var content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-											if ( w.apps[app].meta[meta].test(content[2]) ) {
+											if ( content && w.apps[app].meta[meta].test(content[2]) ) {
 												apps.push(app);
 
 												break;
@@ -153,6 +153,7 @@ var wappalyzer = wappalyzer || (function() {
 
 								for ( var header in w.apps[app].headers ) {
 									if ( data[type][header] != null && w.apps[app][type][header].test(data[type][header]) ) {
+					if ( app == 'PHP' ) alert('x');
 										apps.push(app);
 
 										break;
@@ -194,7 +195,7 @@ var wappalyzer = wappalyzer || (function() {
 							w.history[hostname][index].hits ++;
 						}
 
-						if ( Object.keys(w.history).length >= 200 ) adapter('track');
+						if ( Object.keys(w.history).length >= 200 ) driver('track');
 					}
 
 					// Per URL
@@ -206,7 +207,7 @@ var wappalyzer = wappalyzer || (function() {
 				delete apps, data;
 			}
 
-			adapter('displayApps');
+			driver('displayApps');
 		}
 	};
 
