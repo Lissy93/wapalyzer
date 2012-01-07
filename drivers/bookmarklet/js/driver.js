@@ -21,7 +21,7 @@
 
 			window.document.addEventListener('DOMContentLoaded', function() {
 				w.analyze(top.location.host, top.location.href, {
-					html:    top.document.body.innerHTML,
+					html:    top.document.documentElement.innerHTML,
 					env:     env
 				});
 			});
@@ -33,17 +33,34 @@
 		displayApps: function() {
 			var url = top.location.href;
 
-			document.getElementById('apps').innerHTML = ''; if ( w.detected[url] != null && w.detected[url].length ) {
+			document.getElementById('apps').innerHTML =
+				'<a id="close" href="javascript: top.document.body.removeChild(top.document.getElementById(\'wappalyzer-bookmarklet\')); void(0);">' +
+					'Close' +
+				'</a>'
+				;
+
+			if ( w.detected[url] != null && w.detected[url].length ) {
 				w.detected[url].map(function(app, i) {
-					document.getElementById('apps').innerHTML +=
+					var html =
 						'<div class="app' + ( i == 0 ? ' first' : '' ) + '">' +
-							'<a href="">' +
+							'<a target="_blank" class="application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
 								'<strong>' +
 									'<img src="images/icons/' + app + '.ico" width="16" height="16"/> ' + app +
 								'</strong>' +
-							'</a>' +
-						'</div>'
-						;
+							'</a>'
+							;
+
+					for ( cat in w.apps[app].cats ) {
+						html +=
+							'<a target="_blank" class="category" href="' + w.config.websiteURL + 'categories/' + w.categories[w.apps[app].cats[cat]].plural.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
+								w.categories[w.apps[app].cats[cat]].name +
+							'</a>'
+							;
+					}
+
+					html += '</div>';
+
+					document.getElementById('apps').innerHTML += html;
 				});
 			}
 		},
