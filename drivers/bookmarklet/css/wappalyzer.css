@@ -1,9 +1,9 @@
 body {
-	color: #fff;
+	color: #000;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 	margin: 0;
-	padding: 10px;
+	padding: 10px 0;
 }
 
 #overlay {
@@ -21,6 +21,7 @@ body {
 
 #apps {
 	position: absolute;
+	width: 100%;
 }
 
 	#apps img {
@@ -28,7 +29,7 @@ body {
 	}
 
 	#apps a {
-		color: #fff;
+		color: #000;
 		display: block;
 		text-decoration: none;
 	}
@@ -38,6 +39,10 @@ body {
 	}
 
 	#apps .app {
-		background: #000;
-		padding: 10px;
+		background: #fff;
+		border-radius:         5px;
+		-moz-border-radius:    5px;
+		-webkit-border-radius: 5px;
+		margin: 0 10px 1px 10px;
+		padding: 5px 10px;
 	}

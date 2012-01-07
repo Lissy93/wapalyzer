@@ -38,7 +38,9 @@
 					document.getElementById('apps').innerHTML +=
 						'<div class="app' + ( i == 0 ? ' first' : '' ) + '">' +
 							'<a href="">' +
-								'<img src="images/icons/' + app + '.ico" width="16" height="16"/> ' + app +
+								'<strong>' +
+									'<img src="images/icons/' + app + '.ico" width="16" height="16"/> ' + app +
+								'</strong>' +
 							'</a>' +
 						'</div>'
 						;
