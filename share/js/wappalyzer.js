@@ -153,7 +153,6 @@ var wappalyzer = wappalyzer || (function() {
 
 								for ( var header in w.apps[app].headers ) {
 									if ( data[type][header] != null && w.apps[app][type][header].test(data[type][header]) ) {
-					if ( app == 'PHP' ) alert('x');
 										apps.push(app);
 
 										break;
@@ -199,9 +198,7 @@ var wappalyzer = wappalyzer || (function() {
 					}
 
 					// Per URL
-					var index = w.detected[url].indexOf(app);
-
-					if ( index === -1 ) w.detected[url].push(app);
+					if ( w.detected[url].indexOf(app) === -1 ) w.detected[url].push(app);
 				});
 
 				delete apps, data;
