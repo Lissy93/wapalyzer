@@ -1,0 +1,43 @@
+body {
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 10px;
+}
+
+#overlay {
+	background: #000;
+	border-radius:         10px;
+	-moz-border-radius:    10px;
+	-webkit-border-radius: 10px;
+	left: 0;
+	height: 100%;
+	opacity: .5; filter: alpha(opacity = 50);
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#apps {
+	position: absolute;
+}
+
+	#apps img {
+		vertical-align: middle;
+	}
+
+	#apps a {
+		color: #fff;
+		display: block;
+		text-decoration: none;
+	}
+
+	#apps a:hover {
+		text-decoration: underline;
+	}
+
+	#apps .app {
+		background: #000;
+		padding: 10px;
+	}

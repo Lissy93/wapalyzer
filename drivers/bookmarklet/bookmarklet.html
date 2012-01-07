@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Wappalyzer</title>
+
+		<link rel="icon" type="image/png" href="images/icon.png"/>
+
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+
+		<style type="text/css">
+			body {
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 12px;
+			}
+
+			#apps {
+				line-height: 20px;
+			}
+
+				#apps img {
+					vertical-align: middle;
+				}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:
+			(function() {
+				var iframe = document.createElement('iframe');
+
+				iframe.setAttribute('allowTransparency', 'yes');
+				iframe.setAttribute('frameborder',       'no');
+				iframe.setAttribute('height',            '300');
+				iframe.setAttribute('src',               'index.html');
+				iframe.setAttribute('width',             '250');
+				iframe.setAttribute('style', '
+					position: absolute;
+					right: 20px;
+					top: 20px;
+					');
+
+				document.body.appendChild(iframe);
+			})();
+
+			void(0);
+			">Wappalyzer</a>
+	</body>
+</html>
