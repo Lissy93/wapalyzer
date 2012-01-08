@@ -28,13 +28,17 @@
 	<body>
 		<a href="javascript:
 			(function() {
+				var container = document.createElement('div');
+
+				container.setAttribute('id', 'wappalyzer-container');
+
 				var iframe = document.createElement('iframe');
 
-				iframe.setAttribute('id',                'wappalyzer-bookmarklet');
+				iframe.setAttribute('id',                'wappalyzer');
 				iframe.setAttribute('allowTransparency', 'yes');
 				iframe.setAttribute('frameborder',       'no');
-				iframe.setAttribute('height',            '10');
-				iframe.setAttribute('src',               'http://wappalyzer.com/bookmarklet/2/index.html');
+				/*iframe.setAttribute('src',               'about:blank');*/
+				iframe.setAttribute('height',            '300');
 				iframe.setAttribute('width',             '220');
 				iframe.setAttribute('style', '
 					margin: 0 0 20px 20px;
@@ -43,7 +47,19 @@
 					top: 20px;
 					');
 
-				document.body.appendChild(iframe);
+				container.appendChild(iframe);
+
+				document.body.appendChild(container);
+
+				iframe.body.innerHTML = 'x';
+
+				var script1 = document.createElement('script');
+				var script2 = document.createElement('script');
+				var script3 = document.createElement('script');
+
+				script1.setAttribute('src', 'http://wappalyzer.com/bookmarklet/2/js/wappalyzer.js');
+				script2.setAttribute('src', 'http://wappalyzer.com/bookmarklet/2/js/apps.js');
+				script3.setAttribute('src', 'http://wappalyzer.com/bookmarklet/2/js/driver.js');
 			})();
 
 			void(0);

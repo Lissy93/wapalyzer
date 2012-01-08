@@ -17,7 +17,7 @@
 		init: function() {
 			var env = new Array;
 
-			for ( var i in top ) env.push(i);
+			for ( i in window ) env.push(i);
 
 			window.document.addEventListener('DOMContentLoaded', function() {
 				w.analyze(top.location.host, top.location.href, {
@@ -33,7 +33,11 @@
 		displayApps: function() {
 			var url = top.location.href;
 
-			$('#apps').html('<a id="close" href="javascript: $(\'#wappalyzer-bookmarklet\', top.document.body).remove();">Close</a>');
+			document.getElementById('wappalyzer-iframe').contentDocument.body.innerHTML =
+				'<a id="close" href="javascript: document.removeChild(document.getElementById(\'wappalyzer-container\')); void(0);">' +
+					'Close' +
+				'</a>'
+				;
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				w.detected[url].map(function(app, i) {
@@ -60,9 +64,9 @@
 				html = '<div class="app first" style="text-align: center;"><em>No applications detected</em></div>';
 			}
 
-			$('#apps').append(html);
+			document.getElementById('wappalyzer-iframe').contentDocument.body.innerHTML += html;
 
-			$('#wappalyzer-bookmarklet', top.document.body).height($('#apps').height() + 2);
+			document.getElementById('wappalyzer-iframe').style.height = 300;
 		},
 
 		/**
