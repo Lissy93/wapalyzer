@@ -33,11 +33,7 @@
 		displayApps: function() {
 			var url = top.location.href;
 
-			document.getElementById('apps').innerHTML =
-				'<a id="close" href="javascript: top.document.body.removeChild(top.document.getElementById(\'wappalyzer-bookmarklet\')); void(0);">' +
-					'Close' +
-				'</a>'
-				;
+			$('#apps').html('<a id="close" href="javascript: $(\'#wappalyzer-bookmarklet\', top.document.body).remove();">Close</a>');
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				w.detected[url].map(function(app, i) {
@@ -59,10 +55,14 @@
 					}
 
 					html += '</div>';
-
-					document.getElementById('apps').innerHTML += html;
 				});
+			} else {
+				html = '<div class="app first" style="text-align: center;"><em>No applications detected</em></div>';
 			}
+
+			$('#apps').append(html);
+
+			$('#wappalyzer-bookmarklet', top.document.body).height($('#apps').height() + 2);
 		},
 
 		/**
