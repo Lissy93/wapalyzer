@@ -35,6 +35,7 @@
 			<preference id="wappalyzer-cat25" name="extensions.wappalyzer.cat25" type="bool"/>
 			<preference id="wappalyzer-cat26" name="extensions.wappalyzer.cat26" type="bool"/>
 			<preference id="wappalyzer-cat27" name="extensions.wappalyzer.cat27" type="bool"/>
+			<preference id="wappalyzer-cat28" name="extensions.wappalyzer.cat28" type="bool"/>
 
 			<preference id="wappalyzer-tracking" name="extensions.wappalyzer.tracking" type="bool"/>
 		</preferences>
@@ -151,6 +152,11 @@
 									</hbox>
 									<hbox align="center">
 										<checkbox preference="wappalyzer-cat27" id="wappalyzer-option-cat27" label="&wappalyzer.cat27;"/>
+									</hbox>
+								</row>
+								<row>
+									<hbox align="center">
+										<checkbox preference="wappalyzer-cat28" id="wappalyzer-option-cat28" label="&wappalyzer.cat28;"/>
 									</hbox>
 								</row>
 							</rows>

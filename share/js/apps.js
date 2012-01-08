@@ -30,7 +30,8 @@
 		24: { name: 'Rich Text Editor',     plural: 'Rich Text Editors' },
 		25: { name: 'Javascript Graphics',  plural: 'Javascript Graphics' },
 		26: { name: 'Mobile Framework',     plural: 'Mobile Frameworks' },
-		27: { name: 'Programming Language', plural: 'Programming Languages' }
+		27: { name: 'Programming Language', plural: 'Programming Languages' },
+		28: { name: 'Operating System',     plural: 'Operating Systems' }
 	};
 
 	w.apps = {
@@ -80,6 +81,7 @@
 		'd3':                    { cats: { 1: 25 }, script: /d3(\.min)?\.js/, env: /^d3$/ },
 		'Danneo CMS':            { cats: { 1:  1 }, meta: { 'generator': /Danneo/i } },
 		'DataLife Engine':       { cats: { 1:  1 }, meta: { 'generator': /DataLife Engine/i } },
+		'Debian':                { cats: { 1: 28 }, headers: { 'Server': /Debian/i, 'X-Powered-By': /(Debian|dotdeb)/i } },
 		'DHTMLX':                { cats: { 1: 12 }, script: /dhtmlxcommon\.js/ },
 		'DirectAdmin':           { cats: { 1:  9 }, html: /<a[^>]+>DirectAdmin<\/a> Web Control Panel/i },
 		'Disqus':                { cats: { 1: 15 }, script: /disqus_url/, html: /<div[^>]+id=("|')disqus_thread("|')/ },
@@ -172,7 +174,7 @@
 		'osCSS':                 { cats: { 1:  6 }, html: /<body onload=("|')window\.defaultStatus='oscss templates';("|')/i },
 		'PANSITE':               { cats: { 1:  1 }, meta: { 'generator': /PANSITE/i } },
 		'papaya CMS':            { cats: { 1:  1 }, html: /<link[^>]*\/papaya-themes\//i },
-		'PHP':                   { cats: { 1: 27 }, headers: { 'Server': /php/i, 'X-Powered-By': /php/i }, url: /\.php$/ },
+		'PHP':                   { cats: { 1: 27 }, headers: { 'Server': /php/i, 'X-Powered-By': /php/i, 'Set-Cookie': /PHPSESSID/ }, url: /\.php$/ },
 		'PHP-Fusion':            { cats: { 1:  1 }, html: /Powered by <a href=("|')[^>]+php-fusion/i },
 		'PHP-Nuke':              { cats: { 1:  2 }, meta: { 'generator': /PHP-Nuke/i }, html: /<[^>]+Powered by PHP\-Nuke/i },
 		'phpBB':                 { cats: { 1:  2 }, meta: { 'copyright': /phpBB Group/ }, html: /Powered by (<a href=("|')[^>]+)?phpBB/i },
@@ -196,7 +198,7 @@
 		'Redmine':               { cats: { 1: 13 }, meta: { 'description': /Redmine/i }, html: /Powered by <a href=("|')[^>]+Redmine/i },
 		'Reinvigorate':          { cats: { 1: 10 }, html: /reinvigorate\.track\("/ },
 		'RequireJS':             { cats: { 1: 12 }, script: /require.*\.js/ , env: /^requirejs$/},
-		'Ruby':                  { cats: { 1: 27 }, headers: { 'Server': /(Mongrel|WEBrick|Ruby)/ } },
+		'Ruby':                  { cats: { 1: 27 }, headers: { 'Server': /(Mongrel|WEBrick|Ruby|mod_rails|mod_rack|Phusion Passenger)/i, 'X-Powered-By': /(mod_rails|mod_rack|Phusion Passenger)/i } },
 		'S.Builder':             { cats: { 1:  1 }, meta: { 'generator': /S\.Builder/i } },
 		's9y':                   { cats: { 1:  1 }, meta: { 'generator': /Serendipity/i } },
 		'script.aculo.us':       { cats: { 1: 12 }, script: /(scriptaculous|protoaculous)\.js/, env: /^Scriptaculous$/ },
@@ -230,6 +232,7 @@
 		'TypePad':               { cats: { 1: 11 }, meta: { 'generator': /typepad/i }, url: /^(www.)?.+\.typepad\.com/i },
 		'TYPO3':                 { cats: { 1:  1 }, meta: { 'generator': /TYPO3/i }, html: /(<(script[^>]* src|link[^>]* href)=[^>]*fileadmin|<!--TYPO3SEARCH)/i, url: /\/typo3/i },
 		'Ubercart':              { cats: { 1:  6 }, script: /uc_cart\/uc_cart_block\.js/ },
+		'Ubuntu':                { cats: { 1: 28 }, headers: { 'Server': /Ubuntu/i, 'X-Powered-By': /Ubuntu/i } },
 		'Umbraco':               { cats: { 1:  1 }, meta: { 'generator': /umbraco/i }, headers: { 'X-Umbraco-Version': /.+/ }, html: /powered by <a href=[^>]+umbraco/i },
 		'Underscore.js':         { cats: { 1: 12 }, script: /underscore.*\.js/ },
 		'UserRules':             { cats: { 1: 13 }, html: /var _usrp =/ , env: /^\_usrp$/ },
