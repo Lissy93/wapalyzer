@@ -14,25 +14,25 @@
 	</stringbundleset>
 
 	<hbox id="urlbar-icons">
-		<hbox id="wappalyzer-container" popup="wappalyzer-menu">
+		<hbox id="wappalyzer-container" tooltiptext="&wappalyzer.help;" context="wappalyzer-menu" popup="wappalyzer-menu">
 			<menupopup id="wappalyzer-menu" position="after_end">
 				<menu label="&wappalyzer.name;">
 					<menupopup>
-						<menuitem id="wappalyzer-menu-icons"       label="&wappalyzer.showIcons;"  />
-						<menuitem id="wappalyzer-menu-addonbar"    label="&wappalyzer.addonBar;"   />
-						<menuitem id="wappalyzer-menu-preferences" label="&wappalyzer.preferences;"/> 
+						<menuitem id="wappalyzer-menu-icons"       label="&wappalyzer.showIcons;"   class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-addonbar"    label="&wappalyzer.addonBar;"    class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-preferences" label="&wappalyzer.preferences;" class="menuitem-iconic"/> 
 
 						<menuseparator/>
 
-						<menuitem id="wappalyzer-menu-donate"     label="&wappalyzer.donate;"  />
-						<menuitem id="wappalyzer-menu-feedback"   label="&wappalyzer.feedback;"/>
-						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;" />
+						<menuitem id="wappalyzer-menu-donate"     label="&wappalyzer.donate;"   class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-feedback"   label="&wappalyzer.feedback;" class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;"  class="menuitem-iconic"/>
 
 						<menuseparator/>
 
-						<menuitem id="wappalyzer-menu-github"     label="&wappalyzer.github;"  image="chrome://wappalyzer/skin/images/github.ico" />
-						<menuitem id="wappalyzer-menu-twitter"    label="&wappalyzer.twitter;" image="chrome://wappalyzer/skin/images/twitter.ico"/>
-						<menuitem id="wappalyzer-menu-gplus"      label="&wappalyzer.gplus;"   image="chrome://wappalyzer/skin/images/gplus.ico"  />
+						<menuitem id="wappalyzer-menu-github"     label="&wappalyzer.github;"  image="chrome://wappalyzer/skin/images/github.ico"  class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-twitter"    label="&wappalyzer.twitter;" image="chrome://wappalyzer/skin/images/twitter.ico" class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-gplus"      label="&wappalyzer.gplus;"   image="chrome://wappalyzer/skin/images/gplus.ico"   class="menuitem-iconic"/>
 					</menupopup>
 				</menu>
 

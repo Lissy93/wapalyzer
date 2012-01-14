@@ -139,7 +139,7 @@
 						w$('#wappalyzer-menu').append(menuSeparator);
 
 						var menuItem = w$('<menuitem/>')
-							.attr('class', 'wappalyzer-application')
+							.attr('class', 'wappalyzer-application menuitem-iconic')
 							.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.ico')
 							.attr('label', app)
 							;
