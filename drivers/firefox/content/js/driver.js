@@ -212,7 +212,7 @@
 					// Make POST request
 					var request = new XMLHttpRequest();
 
-					request.open('POST', w.config.websiteURL + 'report/', true);
+					request.open('POST', w.config.websiteURL + '_track.php', true);
 
 					request.channel.loadFlags |= Components.interfaces.nsIRequest.LOAD_BYPASS_CACHE;
 
