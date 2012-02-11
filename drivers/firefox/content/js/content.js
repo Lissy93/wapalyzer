@@ -4,13 +4,6 @@
 	function onLoad() {
 		if ( content.document.contentType != 'text/html' ) return;
 
-		// Environment variables
-		var env = new Array;
-
-		for ( i in content.wrappedJSObject ) {
-			if ( typeof i === "string" ) env.push(i);
-		}
-
 		// HTML
 		var html = content.document.documentElement.innerHTML
 
@@ -19,7 +12,7 @@
 		sendAsyncMessage('wappalyzer', {
 			hostname: content.location.hostname,
 			html:     html,
-			env:      env,
+			env:      Object.keys(content.wrappedJSObject),
 			url:      content.location.href
 			});
 	}
