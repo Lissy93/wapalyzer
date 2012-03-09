@@ -50,7 +50,7 @@
 		'Arc Forum':             { cats: { 1:  2 }, html: /ping\.src = node\.href;/ },
 		'Atlassian Confluence':  { cats: { 1:  8 }, html: /Powered by <a href=.http:\/\/www\.atlassian\.com\/software\/confluence/i },
 		'Atlassian Jira':        { cats: { 1: 13 }, html: /Powered by <a href=.http:\/\/www\.atlassian\.com\/software\/jira/i },
-        'Alloy':                 { cats: { 1: 12 }, env: /^Alloy$/ },
+        'Alloy':                 { cats: { 1: 12 }, env: /^AUI$/ },
 		'AWStats':               { cats: { 1: 10 }, meta: { 'generator': /AWStats/i } },
 		'Banshee':               { cats: { 1:  1, 2: 18 }, html: /Built upon the <a href=("|')[^>]+banshee-php\.org/i },
 		'Backbone.js':           { cats: { 1: 12 }, script: /backbone.*\.js/, env: /^Backbone$/ },
