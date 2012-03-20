@@ -168,7 +168,7 @@
 		'Koobi':                 { cats: { 1:  1 }, meta: { 'generator': /Koobi/i } },
 		'lighttpd':              { cats: { 1: 22 }, headers: { 'Server': /lighttpd/i } },
 		'LiveJournal':           { cats: { 1: 11 }, url: /^(www.)?.+\.livejournal\.com/i },
-		'Liferay':               { cats: { 1: 1  }, env: /^Liferay$/, headers: { 'Liferay-Portal': /Liferay/i } },
+		'Liferay':               { cats: { 1: 1  }, env: /^Liferay$/, headers: { 'Liferay-Portal': /.*/i } },
 		'Lotus Domino':          { cats: { 1: 22 }, headers: { 'Server': /Lotus\-Domino/i } },
 		'Magento':               { cats: { 1:  6 }, script: /\/(js\/mage|skin\/frontend\/(default|enterprise))\//, env: /^(Mage|VarienForm)$/ },
 		'Mambo':                 { cats: { 1:  1 }, meta: { 'generator': /Mambo/i } },
