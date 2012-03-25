@@ -176,6 +176,27 @@ var wappalyzer = wappalyzer || (function() {
 					}
 				}
 
+				// Implied applications
+				for ( i = 0; i < 3; i ++ ) {
+					for ( j in apps ) {
+						if ( w.apps[apps[j]] && w.apps[apps[j]].implies ) {
+							for ( k in w.apps[apps[j]].implies ) {
+								var implied = w.apps[apps[j]].implies[k];
+
+								if ( !w.apps[implied] ) {
+									w.log('Implied application ' + implied + ' does not exist');
+
+									continue;
+								}
+
+								if ( w.detected[url].indexOf(implied) === -1 && apps.indexOf(implied) === -1 ) {
+									apps.push(implied);
+								}
+							}
+						}
+					}
+				}
+
 				w.log(apps.length + ' apps detected: ' + apps.join(', '));
 
 				// Keep history of detected apps
