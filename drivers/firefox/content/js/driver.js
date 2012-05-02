@@ -153,7 +153,7 @@
 						for ( cat in w.apps[app].cats ) {
 							var menuItem = w$('<menuitem/>')
 								.attr('class', 'wappalyzer-category')
-								.attr('label', w.categories[w.apps[app].cats[cat]].name)
+								.attr('label', strings.getString('wappalyzer.cat' + w.apps[app].cats[cat]))
 								;
 
 							menuItem.bind('command', function() {
