@@ -287,11 +287,6 @@
 				container();
 			});
 
-		w$(prefix + 'categories')
-			.bind('command', function() {
-				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/categories.xul' })
-			});
-
 		w$(prefix + 'donate')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.websiteURL + 'donate' })
