@@ -117,8 +117,8 @@
 				w.detected[url].map(function(app, i) {
 					var display = false;
 
-					for ( cat in w.apps[app].cats ) {
-						if ( prefs.getBoolPref('cat' + w.apps[app].cats[cat]) ) {
+					for ( var i in w.apps[app].cats ) {
+						if ( prefs.getBoolPref('cat' + w.apps[app].cats[i]) ) {
 							display = true;
 
 							break;
@@ -150,14 +150,16 @@
 
 						w$('#wappalyzer-menu').append(menuItem);
 
-						for ( cat in w.apps[app].cats ) {
+						for ( var i in w.apps[app].cats ) {
+							var cat = w.apps[app].cats[i];
+
 							var menuItem = w$('<menuitem/>')
 								.attr('class', 'wappalyzer-category')
-								.attr('label', strings.getString('wappalyzer.cat' + w.apps[app].cats[cat]))
+								.attr('label', strings.getString('wappalyzer.cat' + cat))
 								;
 
 							menuItem.bind('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[w.apps[app].cats[cat]].plural.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') });
+								w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
 							});
 
 							w$('#wappalyzer-menu').append(menuItem);
