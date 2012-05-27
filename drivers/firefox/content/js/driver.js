@@ -93,7 +93,7 @@
 				});
 			};
 
-			window.addEventListener('load',   handler,         false);
+			window.addEventListener('load',   handler,        false);
 			window.addEventListener('unload', w.driver.track, false);
 		},
 
@@ -101,7 +101,7 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var url = gBrowser.currentURI.spec;
+			var url = gBrowser.currentURI.spec.split('#')[0];
 
 			w$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
 
