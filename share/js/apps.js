@@ -1,4 +1,6 @@
 (function() {
+	//'use strict';
+
 	if ( wappalyzer == null ) return;
 
 	var w = wappalyzer;
@@ -212,7 +214,6 @@
 		'MooTools':                         { cats: [ 12 ], script: /mootools.*\.js/, env: /^MooTools$/ },
 		'Movable Type':                     { cats: [  1 ], meta: { 'generator': /Movable Type/i } },
 		'Mustache':                         { cats: [ 12 ], env: /^Mustache$/ },
-		'Hiawatha':                         { cats: [ 22 ], headers: { 'Server': /Hiawatha/i } },
 		'MyBB':                             { cats: [  2 ], html: /(<script [^>]+\s+<!--\s+lang\.no_new_posts|<a[^>]* title=("|')Powered By MyBB)/i, env: /^MyBB/ },
 		'MyBlogLog':                        { cats: [  5 ], script: /pub\.mybloglog\.com/i },
 		'Mynetcap':                         { cats: [  1 ], meta: { 'generator': /Mynetcap/i } },
@@ -236,6 +237,7 @@
 		'PANSITE':                          { cats: [  1 ], meta: { 'generator': /PANSITE/i } },
 		'papaya CMS':                       { cats: [  1 ], html: /<link[^>]*\/papaya-themes\//i },
 		'Parse.ly':                         { cats: [ 10 ], env: /^PARSELY$/ },
+		'Percussion':                       { cats: [  1 ], meta: { 'generator': /(Percussion|Rhythmyx)/i }, html: /<[^>]+class="perc-region/ },
 		'Perl':                             { cats: [ 27 ] },
 		'PHP':                              { cats: [ 27 ], headers: { 'Server': /php/i, 'X-Powered-By': /php/i, 'Set-Cookie': /PHPSESSID/ }, url: /\.php$/ },
 		'Phpcms':                           { cats: [  1 ], env: /^phpcms/ },

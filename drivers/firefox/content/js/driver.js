@@ -3,6 +3,8 @@
  */
 
 (function() {
+	//'use strict';
+
 	if ( wappalyzer == null ) return;
 
 	var w = wappalyzer;
@@ -250,7 +252,7 @@
 
 		w.analyze(msg.json.hostname, msg.json.url, { html: msg.json.html, env: msg.json.env });
 
-		delete msg;
+		msg = null;
 	}
 
 	/**

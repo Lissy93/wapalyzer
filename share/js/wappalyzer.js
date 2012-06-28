@@ -7,6 +7,8 @@
  */
 
 var wappalyzer = wappalyzer || (function() {
+	//'use strict';
+
 	/**
 	 * Call driver functions
 	 */
@@ -130,7 +132,8 @@ var wappalyzer = wappalyzer || (function() {
 
 								var
 									regex = /<meta[^>]+>/ig,
-									match = []
+									match = [],
+									meta
 									;
 
 								while ( match = regex.exec(data['html']) ) {
@@ -177,6 +180,8 @@ var wappalyzer = wappalyzer || (function() {
 				}
 
 				// Implied applications
+				var i, j, k;
+
 				for ( i = 0; i < 3; i ++ ) {
 					for ( j in apps ) {
 						if ( w.apps[apps[j]] && w.apps[apps[j]].implies ) {
@@ -222,7 +227,8 @@ var wappalyzer = wappalyzer || (function() {
 					if ( w.detected[url].indexOf(app) === -1 ) w.detected[url].push(app);
 				});
 
-				delete apps, data;
+				apps = null;
+				data = null;
 			}
 
 			driver('displayApps');

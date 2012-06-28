@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 	addEventListener('DOMContentLoaded', onLoad, false);
 
