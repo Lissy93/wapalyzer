@@ -298,6 +298,7 @@
 		'swift.engine':                     { cats: [  1 ], headers: { 'X-Powered-By': /swift\.engine/ } },
 		'Swiftlet':                         { cats: [ 18 ], meta: { 'generator': /Swiftlet/i }, html: /Powered by <a href=("|')[^>]+Swiftlet/i, headers: { 'X-Swiftlet-Cache': /.*/, 'X-Powered-By': /Swiftlet/, 'X-Generator': /Swiftlet/ }, implies: [ 'PHP' ] },
 		'Textpattern CMS':                  { cats: [  1 ], meta: { 'generator': /Textpattern/i } },
+		'three.js':                         { cats: [ 25 ], script: /three.js/, env: /^THREE$/ },
 		'Tiki Wiki CMS Groupware':          { cats: [ 1, 2, 8, 11, 13 ], script: /(\/|_)tiki/, meta: { 'generator': /^Tiki/i } },
 		'Timeplot':                         { cats: [ 25 ], script: /timeplot.*\.js/, env: /^Timeplot$/ },
 		'TinyMCE':                          { cats: [ 24 ], env: /^tinyMCE$/ },
