@@ -51,6 +51,7 @@
 		'AMPcms':                           { cats: [  1 ], headers: { 'X-AMP-Version': /.*/i, 'Set-Cookie': /AMP=/ }, env: /amp_js_init/, implies: [ 'PHP' ] },
 		'AOLserver':                        { cats: [ 22 ], headers: { 'Server': /AOLserver/i } },
 		'Apache':                           { cats: [ 22 ], headers: { 'Server': /(Apache($|[^-])|HTTPD)/i } },
+		'Apache JSPWiki':                   { cats: [  8 ], html: /<html[^>]* xmlns:jspwiki=/i },
 		'Apache Tomcat':                    { cats: [ 22 ], headers: { 'Server': /Apache-Coyote/i } },
 		'Apache Traffic Server':            { cats: [ 22 ], headers: { 'Server': /YTS/i } },
 		'Arc Forum':                        { cats: [  2 ], html: /ping\.src = node\.href;/ },
