@@ -289,6 +289,10 @@
 				w$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
 
 				container();
+
+				if ( prefs.getBoolPref('addonBar') ) {
+					alert(strings.getString('wappalyzer.addonBar'));
+				}
 			});
 
 		w$(prefix + 'donate')
