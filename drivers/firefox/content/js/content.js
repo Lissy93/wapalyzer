@@ -7,7 +7,7 @@
 		if ( content.document.contentType != 'text/html' ) return;
 
 		// HTML
-		var html = content.document.documentElement.innerHTML
+		var html = content.document.documentElement.outerHTML
 
 		if ( html.length > 50000 ) html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 
