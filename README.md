@@ -21,6 +21,25 @@ Contributing
 * Add a 16x16 PNG image to `share/images/icons` matching the application name.
 * Provide the URL to the application's website when submitting a pull request.
 
+Example:
+
+```javascript
+'Application Name': { 
+	cats: [ 1 ], 
+	headers: {
+		'X-Powered-By': /Application Name/,
+		},
+	html: /<link[^>]application-name\.css/i, 
+	url: /.+\.application-name\.com/i
+	meta: {
+		'generator': /Application Name/i
+		},
+	script: /application-name\.js/i,
+	env: /ApplicationName/
+	implies: [ 'PHP' ]
+	},
+```
+
 
 Drivers
 -------
