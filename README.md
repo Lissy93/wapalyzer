@@ -12,10 +12,27 @@ technologies used on websites.  It detects
 [many more](http://wappalyzer.com/applications).
 
 
+Contributing
+------------
+
+**Adding a new application**
+
+* Edit share/apps.js
+* Add a 16x16 PNG image to `share/images/icons` matching the application name.
+* Provide the URL to the application's website when submitting a pull request.
+
+
 Drivers
 -------
 
-Wappalyzer is multi-platform.
+Wappalyzer is multi-platform. The main code lives in the `share/` directory and
+platform specific code in `drivers/`.
+
+The sections below describe how to set up a development environment for the
+various existing drivers.
+
+To keep files synchronised between drivers, run the `links.sh` script (on
+UNIX-like system only.)
 
 
 **Firefox**
@@ -24,7 +41,9 @@ Wappalyzer is multi-platform.
   your [profile folder](http://kb.mozillazine.org/Profile_folder_-_Firefox) 
 	(`.mozilla/firefox/xxxxx.default/extensions/` on Linux) containing the full
 	path to `drivers/firefox`.
+* Restart Firefox
 * Navigate to `about:config` and set `extensions.wappalyzer.debug` to `true`.
+* Ctrl+Shift+J brings up a console for debugging.
 
 
 **Chrome**
@@ -32,9 +51,12 @@ Wappalyzer is multi-platform.
 * Navigate to `about:extensions`
 * Check "Developer mode"
 * Click "Load unpacked extension..."
-*
-Select `drivers/chrome/`
+* Select `drivers/chrome/`
+
 
 **HTML**
+
+The HTML driver serves purely as an example. It's a good starting point if you
+want to port Wappalyzer to a new platform.
 
 * Navigate to `drivers/html/`
