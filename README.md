@@ -60,3 +60,8 @@ The HTML driver serves purely as an example. It's a good starting point if you
 want to port Wappalyzer to a new platform.
 
 * Navigate to `drivers/html/`
+
+
+![Screenshot](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed.png)
+
+*Wappalyzer on Firefox*
