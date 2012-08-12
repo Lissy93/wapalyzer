@@ -62,6 +62,9 @@ want to port Wappalyzer to a new platform.
 * Navigate to `drivers/html/`
 
 
-![Screenshot](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed.png)
+Screenshot
+----------
 
-*Wappalyzer on Firefox*
+Wappalyzer on Firefox:
+
+![Screenshot](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed.png)
