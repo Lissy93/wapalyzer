@@ -1,85 +1,98 @@
 (function() {
-	var self = {
-		debug:   true,
-		element: false,
-		prevUrl: '',
-
+	var c = {
 		init: function() {
-			self.log('init');
+			c.log('init');
 
-			self.onPageLoad();
+			chrome.extension.sendRequest({ id: 'analyze', subject: { html: document.documentElement.innerHTML } });
+
+			c.getEnvironmentVars();
+			c.getResponseHeaders();
 		},
 
 		log: function(message) {
-			if ( self.debug && message ) {
-				console.log("Wappalyzer content.js: " + message);
-			}
-		},
-
-		onPageLoad: function(e) {
-			self.log('onPageLoad');
-
-			if ( document.body ) {
-				self.getEnvironmentVars();
-			}
+			chrome.extension.sendRequest({ id: 'log', message: '[ content.js ] ' + message });
 		},
 
 		getEnvironmentVars: function() {
-			self.log('getEnvironmentVars');
+			c.log('getEnvironmentVars');
 
 			if ( typeof document.documentElement.innerHTML === 'undefined' ) {
 				return;
 			}
 
-			var environmentVars = '';
-
 			try {
-				var element = document.createElement('wappalyzerData');
+				var container = document.createElement('wappalyzerData');
 
-				element.setAttribute('id',    'wappalyzerData');
-				element.setAttribute('style', 'display: none');
+				container.setAttribute('id',    'wappalyzerData');
+				container.setAttribute('style', 'display: none');
 
 				var script = document.createElement('script');
 
 				script.setAttribute('id', 'wappalyzerEnvDetection');
-				script.setAttribute('id', 'text/javascript');
 
-				script.innerHTML = '(function() {' +
+				script.innerHTML =
+					'(function() {' +
 						'try {' +
-							'var event = document.createEvent("Events");' +
+							'var i, environmentVars, event = document.createEvent("Events");' +
 							'event.initEvent("wappalyzerEvent", true, false);' +
-							'var environmentVars = "";' +
-							'for ( var i in window ) { environmentVars += i + " "; }' +
+							'for ( i in window ) { environmentVars += i + " "; }' +
 							'document.getElementById("wappalyzerData").appendChild(document.createComment(environmentVars));' +
 							'document.getElementById("wappalyzerData").dispatchEvent(event);' +
 						'}' +
 						'catch(e) { }' +
 					'})();';
 
-				element.addEventListener('wappalyzerEvent', (function(event) {
-					environmentVars = event.target.childNodes[0].nodeValue;
+				container.addEventListener('wappalyzerEvent', (function(event) {
+					var environmentVars = event.target.childNodes[0].nodeValue;
 
-					self.log('getEnvironmentVars: ' + environmentVars);
-
-					document.documentElement.removeChild(element);
+					document.documentElement.removeChild(container);
 					document.documentElement.removeChild(script);
 
-					chrome.extension.sendRequest({
-						html: document.documentElement.innerHTML,
-						msg: 'analyze',
-						env: environmentVars.split(' ')
-					});
+					c.log('getEnvironmentVars: ' + environmentVars);
+
+					environmentVars = environmentVars.split(' ');
+
+					chrome.extension.sendRequest({ id: 'analyze', subject: { env: environmentVars } });
 				}), true);
 
-				document.documentElement.appendChild(element);
+				document.documentElement.appendChild(container);
 				document.documentElement.appendChild(script);
-			} catch(e) { }
+			} catch(e) {
+				c.log('Error: ' + e);
+			}
+		},
 
-			return environmentVars;
+		getResponseHeaders: function() {
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', window.location, true);
+
+			xhr.onreadystatechange = function() {
+				if ( xhr.readyState === 4 && xhr.status ) {
+					var headers = xhr.getAllResponseHeaders().split("\n");
+
+					if ( headers.length > 0 && headers[0] != '' ) {
+						c.log('responseHeaders: ' + xhr.getAllResponseHeaders());
+
+						var responseHeaders = {};
+
+						headers.forEach(function(line) {
+							if ( line ) {
+								name  = line.substring(0, line.indexOf(': '));
+								value = line.substring(line.indexOf(': ') + 2, line.length - 1);
+
+								responseHeaders[name] = value;
+							}
+						});
+
+						chrome.extension.sendRequest({ id: 'analyze', subject: { headers: responseHeaders } });
+					}
+				}
+			}
+
+			xhr.send();
 		}
 	}
 
-	self.init();
-
-	return self;
+	c.init();
 })();
