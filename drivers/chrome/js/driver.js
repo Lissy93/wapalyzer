@@ -42,6 +42,14 @@
 
 							w.analyze(tab.url, tab.url, request.subject);
 
+							for ( subject in request.subject ) {
+								tabCache[tab.id].analyzed.push(subject);
+							}
+
+							break;
+						case 'fetch_headers':
+							chrome.tabs.executeScript(request.tab.id, { file: 'js/headers.js' });
+
 							break;
 						case 'get_apps':
 							sendResponse({ tabCache: tabCache[request.tab.id] });
@@ -72,10 +80,16 @@
 		displayApps: function() {
 			var count = w.detected[tab.url].length.toString();
 
-			tabCache[tab.id] = {
-				count: count,
-				appsDetected: w.detected[tab.url]
-				};
+			if ( tabCache[tab.id] == null ) {
+				tabCache[tab.id] = {
+					count: 0,
+					appsDetected: [],
+					analyzed: []
+					};
+			}
+
+			tabCache[tab.id].count        = count;
+			tabCache[tab.id].appsDetected = w.detected[tab.url];
 
 			if ( count > 0 ) {
 				chrome.browserAction.setBadgeText({ tabId: tab.id, text: count });

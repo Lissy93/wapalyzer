@@ -4,7 +4,7 @@
 		"32": "images/icon_32.png",
 		"128": "images/icon_128.png"
 	},
-	"version": "0.8",
+	"version": "0.9",
 	"description": "Identifies software on the web",
 	"browser_action": {
 		"default_icon": "images/icon_32.png",
@@ -15,7 +15,7 @@
 	"content_scripts": [{
 		"matches": [ "http://*/*", "https://*/*" ],
 		"js": [ 
-			"js/content.js" 
+			"js/content.js"
 			],
 		"run_at": "document_idle"
 	}],

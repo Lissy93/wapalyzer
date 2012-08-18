@@ -57,3 +57,19 @@ img {
 	font-style: italic;
 	text-align: center;
 }
+
+#analyze-headers {
+	border: 1px solid #eee;
+	border-radius: 3px;
+	cursor: pointer;
+	display: none;
+	line-height: 30px;
+	margin-top: 7px;
+	text-align: center;
+}
+
+	#analyze-headers.pending {
+		background: url('images/pending.gif') center center no-repeat;
+		color: #999;
+		text-indent: -999px;
+	}
