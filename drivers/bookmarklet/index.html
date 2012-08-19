@@ -1,11 +1,86 @@
+<!DOCTYPE html>
+
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/wappalyzer.css"/>
+		<title>Wappalyzer</title>
 
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+
+		<style type="text/css">
+			body {
+				color: #333;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 14px;
+			}
+
+			#bookmarklet {
+				background: #f8f8f8;
+				border: 1px solid #ccc;
+				border-radius: 2px;
+				color: #333;
+				font-weight: bold;
+				display: inline-block;
+				padding: 10px 25px;
+				text-decoration: none;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="overlay"></div>
+		<p>
+			Drag this button to your bookmarks toolbar:
+		</p>
 
-		<div id="apps"></div>
+		<p>
+			<a id="bookmarklet" href="javascript: void(0);">Wappalyzer</a>
+		</p>
+
+		<p>
+			<em>Note: this is a beta version and may stop working at some point. Check back here for a new version if this happens.</em>
+		</p>
+
+		<div id="bookmarklet-code" style="display: none">
+			(function() {
+				var exists = window.document.getElementById('wappalyzer-container');
+
+				if ( exists !== null ) { window.document.body.removeChild(exists); }
+
+				var
+					url       = 'http://wappalyzer.com/bookmarklet/',
+					d         = window.document,
+					container = d.createElement('div'),
+					pending   = d.createElement('div'),
+					style     = d.createElement('link'),
+					script1   = d.createElement('script'),
+					script2   = d.createElement('script'),
+					script3   = d.createElement('script')
+					;
+
+				container.setAttribute('id', 'wappalyzer-container');
+
+				pending  .setAttribute('id', 'wappalyzer-pending');
+				pending  .setAttribute('style', 'background-image: url(' + url + 'images/pending.gif) !important');
+
+				style.setAttribute('rel', 'stylesheet');
+				style.setAttribute('href', url + 'css/wappalyzer.css');
+
+				script1.setAttribute('src', url + 'js/wappalyzer.js');
+				script2.setAttribute('src', url + 'js/apps.js');
+				script3.setAttribute('src', url + 'js/driver.js');
+
+				d.head.appendChild(style);
+
+				container.appendChild(pending);
+
+				container.appendChild(script1);
+				container.appendChild(script2);
+				container.appendChild(script3);
+
+				d.body.appendChild(container);
+			})();
+		</div>
+
+		<script>
+			$('#bookmarklet').attr('href', 'javascript:' + $('#bookmarklet-code').html().replace(/\s+/g, ' '));
+		</script>
 	</body>
 </html>

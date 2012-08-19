@@ -81,7 +81,7 @@ want to port Wappalyzer to a new platform.
 
 **Bookmarklet**
 
-Work in progress.
+Beta version available for testing at [wappalyzer.com/bookmarklet](http://wappalyzer.com/bookmarklet).
 
 
 Screenshot
