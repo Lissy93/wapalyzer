@@ -40,42 +40,55 @@
 
 		<div id="bookmarklet-code" style="display: none">
 			(function() {
-				var exists = window.document.getElementById('wappalyzer-container');
-
-				if ( exists !== null ) { window.document.body.removeChild(exists); }
-
 				var
-					url       = 'http://wappalyzer.com/bookmarklet/',
-					d         = window.document,
-					container = d.createElement('div'),
-					pending   = d.createElement('div'),
-					style     = d.createElement('link'),
-					script1   = d.createElement('script'),
-					script2   = d.createElement('script'),
-					script3   = d.createElement('script')
+					d = document,
+					e = d.getElementById('wappalyzer-container')
 					;
 
-				container.setAttribute('id', 'wappalyzer-container');
+				if ( e !== null ) { d.body.removeChild(e); }
 
-				pending  .setAttribute('id', 'wappalyzer-pending');
-				pending  .setAttribute('style', 'background-image: url(' + url + 'images/pending.gif) !important');
+				var
+					u = 'http://wappalyzer.com/bookmarklet/',
+					t = new Date().getTime(),
+					c = d.createElement('div'),
+					p = d.createElement('div'),
+					l = d.createElement('link'),
+					s = d.createElement('script')
+					;
 
-				style.setAttribute('rel', 'stylesheet');
-				style.setAttribute('href', url + 'css/wappalyzer.css');
+				c.setAttribute('id', 'wappalyzer-container');
 
-				script1.setAttribute('src', url + 'js/wappalyzer.js');
-				script2.setAttribute('src', url + 'js/apps.js');
-				script3.setAttribute('src', url + 'js/driver.js');
+				l.setAttribute('rel', 'stylesheet');
+				l.setAttribute('href', u + 'css/wappalyzer.css');
 
-				d.head.appendChild(style);
+				d.head.appendChild(l);
 
-				container.appendChild(pending);
+				p.setAttribute('id', 'wappalyzer-pending');
+				p.setAttribute('style', 'background-image: url(' + u + 'images/pending.gif) !important');
 
-				container.appendChild(script1);
-				container.appendChild(script2);
-				container.appendChild(script3);
+				c.appendChild(p);
 
-				d.body.appendChild(container);
+				s.setAttribute('src', u + 'js/wappalyzer.js?' + t);
+
+				s.onload = function() {
+					s = d.createElement('script');
+
+					s.setAttribute('src', u + 'js/apps.js?' + t);
+
+					s.onload = function() {
+						s = d.createElement('script');
+
+						s.setAttribute('src', u + 'js/driver.js?' + t);
+
+						c.appendChild(s);
+					};
+
+					c.appendChild(s);
+				};
+
+				c.appendChild(s);
+
+				d.body.appendChild(c);
 			})();
 		</div>
 

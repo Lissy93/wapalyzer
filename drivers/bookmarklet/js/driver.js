@@ -70,10 +70,7 @@
 
 			for ( i in window ) { env.push(i); }
 
-			w.analyze(domain, url, {
-				html: d.documentElement.innerHTML,
-				env:  env
-				});
+			w.analyze(domain, url, { html: d.documentElement.innerHTML, env: env });
 		},
 
 		getResponseHeaders: function() {
@@ -101,9 +98,7 @@
 							}
 						});
 
-						w.analyze(domain, url, {
-							headers: responseHeaders
-							});
+						w.analyze(domain, url, { headers: responseHeaders });
 					}
 				}
 			}
@@ -115,6 +110,8 @@
 		 * Display apps
 		 */
 		displayApps: function() {
+			w.log('func: diplayApps');
+
 			var
 				category,
 				html
@@ -127,7 +124,7 @@
 				'<div id="wappalyzer-apps">'
 				;
 
-			if ( false && w.detected[url] != null && w.detected[url].length ) {
+			if ( w.detected[url] != null && w.detected[url].length ) {
 				w.detected[url].map(function(app, i) {
 					html +=
 						'<div class="wappalyzer-app' + ( !i ? ' wappalyzer-first' : '' ) + '">' +
