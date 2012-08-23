@@ -1,6 +1,10 @@
 div#wappalyzer-container * {
 	background-color: transparent !important;
 	border: none !important;
+	border-left: none !important;
+	border-top: none !important;
+	border-right: none !important;
+	border-bottom: none !important;
 	border-spacing: 0 !important;
 	color: inherit !important;
 	font-size: inherit !important;
@@ -21,7 +25,7 @@ div#wappalyzer-container * {
 	background: #fff !important;
 	border: 1px solid #999;
 	box-shadow: 0 0 10px rgba(0, 0, 0, .2) !important;
-	color: #333 !important;
+	color: #222 !important;
 	font-family: Arial, sans-serif !important;
 	font-size: 14px !important;
 	line-height: 1.5em !important;
@@ -45,7 +49,7 @@ div#wappalyzer-container * {
 	#wappalyzer-container a#wappalyzer-close:active,
 	#wappalyzer-container a#wappalyzer-close:visited {
 		background: #f8f8f8 !important;
-		border-bottom: 1px solid #ddd !important;
+		border-bottom: 1px solid #ccc !important;
 		display: block !important;
 		font-weight: bold !important;
 		line-height: 30px !important;
@@ -58,7 +62,7 @@ div#wappalyzer-container * {
 	}
 
 	#wappalyzer-container #wappalyzer-empty {
-		border-bottom: 1px solid #ddd !important;
+		border-bottom: 1px solid #ccc !important;
 		color: #999 !important;
 		display: block !important;
 		line-height: 30px !important;
@@ -77,7 +81,6 @@ div#wappalyzer-container * {
 		#wappalyzer-container #wappalyzer-apps a:hover,
 		#wappalyzer-container #wappalyzer-apps a:active,
 		#wappalyzer-container #wappalyzer-apps a:visited {
-			color: #000 !important;
 			display: block !important;
 			text-decoration: none !important;
 		}
@@ -108,4 +111,8 @@ div#wappalyzer-container * {
 		#wappalyzer-container #wappalyzer-apps a.wappalyzer-category:active,
 		#wappalyzer-container #wappalyzer-apps a.wappalyzer-category:visited {
 			color: #999 !important;
+		}
+
+		#wappalyzer-container #wappalyzer-apps a.wappalyzer-category:hover {
+			color: #0072B6 !important;
 		}
