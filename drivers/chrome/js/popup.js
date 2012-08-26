@@ -6,18 +6,20 @@ var wappalyzer = {};
 
 		init: function() {
 			chrome.tabs.getSelected(null, function(tab) {
+				$('#analyze-headers').html(chrome.i18n.getMessage('analyzeHeaders'));
+
 				if ( tab.url.match(/https?:\/\//) ) {
-					$('#detected-apps').html('<div class="empty">No applications detected.</div>');
+					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('noAppsDetected') + '</div>');
 
 					$('#analyze-headers').show().click(function() {
 						$(this).addClass('pending');
 
-							chrome.extension.sendRequest({ id: 'fetch_headers', tab: tab });
+						chrome.extension.sendRequest({ id: 'fetch_headers', tab: tab });
 
-							popup.pollHeaders = setInterval(popup.displayApps, 100);
+						popup.pollHeaders = setInterval(popup.displayApps, 100);
 					});
 				} else {
-					$('#detected-apps').html('<div class="empty">Nothing to do here.</div>');
+					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('nothingToDo') + '</div>');
 
 					$('#analyze-headers').hide();
 				}
@@ -32,7 +34,7 @@ var wappalyzer = {};
 					if ( response.tabCache.analyzed.indexOf('headers') > 0 ) {
 						clearTimeout(popup.pollHeaders);
 
-						$('#analyze-headers').removeClass('pending');
+						$('#analyze-headers').hide().removeClass('pending');
 					}
 
 					if ( response.tabCache.count > 0 ) {
@@ -49,7 +51,7 @@ var wappalyzer = {};
 							wappalyzer.apps[appName].cats.map(function(cat) {
 								html +=
 									'<a target="_blank" href="http://wappalyzer.com/categories/' + wappalyzer.categories[cat] + '">' +
-										'<span class="category">' + categoryNames[cat] + '</span>' +
+										'<span class="category">' + chrome.i18n.getMessage('categoryName' + cat) + '</span>' +
 									'</a>';
 							});
 
