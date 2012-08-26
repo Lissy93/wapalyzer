@@ -6,8 +6,6 @@ var wappalyzer = {};
 
 		init: function() {
 			chrome.tabs.getSelected(null, function(tab) {
-				$('#analyze-headers').html(chrome.i18n.getMessage('analyzeHeaders'));
-
 				if ( tab.url.match(/https?:\/\//) ) {
 					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('noAppsDetected') + '</div>');
 
