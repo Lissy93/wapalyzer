@@ -10,7 +10,7 @@ _gaq.push(['_trackPageview']);
 (function() {
 	var ga = document.createElement('script');
 
-	ga.src   = 'https://ssl.google-analytics.com/u/ga_debug.js';
+	ga.src   = 'https://ssl.google-analytics.com/ga.js';
 	ga.async = true;
 
 	var s = document.getElementsByTagName('script')[0];

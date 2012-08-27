@@ -19,7 +19,7 @@ var wappalyzer = wappalyzer || (function() {
 			return;
 		}
 
-		if ( func != 'log' ) w.log('w.driver.' + func);
+		if ( func !== 'log' ) { w.log('w.driver.' + func); }
 
 		return w.driver[func](args);
 	};
@@ -51,7 +51,7 @@ var wappalyzer = wappalyzer || (function() {
 		 */
 		log: function(message, type) {
 			if ( w.config.environment === 'dev' ) {
-				if ( type == null ) type = 'debug';
+				if ( type == null ) { type = 'debug'; }
 
 				driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
 			}
@@ -78,8 +78,17 @@ var wappalyzer = wappalyzer || (function() {
 
 			// Initialize driver
 			driver('init', function() {
-				if ( w.config.firstRun ) driver('goToURL', { url: w.config.websiteURL + 'installed' });
-				if ( w.config.upgraded ) driver('goToURL', { url: w.config.websiteURL + 'upgraded'  });
+				if ( w.config.firstRun ) {
+					driver('goToURL', { url: w.config.websiteURL + 'installed' });
+
+					w.config.firstRun = false;
+				}
+
+				if ( w.config.upgraded ) {
+					driver('goToURL', { url: w.config.websiteURL + 'upgraded'  });
+
+					w.config.upgraded = false;
+				}
 			});
 		},
 
@@ -89,29 +98,29 @@ var wappalyzer = wappalyzer || (function() {
 		analyze: function(hostname, url, data) {
 			w.log('w.analyze');
 
-			var apps = new Array();
+			var app, type, apps = [];
 
-			if ( w.history[hostname] == null ) w.history[hostname] = new Array();
-			if ( w.detected[url]     == null ) w.detected[url]     = new Array();
+			if ( w.history[hostname] == null ) { w.history[hostname] = []; }
+			if ( w.detected[url]     == null ) { w.detected[url]     = []; }
 
 			if ( data ) {
-				for ( var app in w.apps ) {
-					for ( var type in w.apps[app] ) {
-						if ( w.detected[url].indexOf(app) !== -1 || apps.indexOf(app) !== -1 ) continue; // Skip if the app has already been detected
+				for ( app in w.apps ) {
+					for ( type in w.apps[app] ) {
+						if ( w.detected[url].indexOf(app) !== -1 || apps.indexOf(app) !== -1 ) { continue; } // Skip if the app has already been detected
 
 						switch ( type ) {
 							case 'url':
-								if ( w.apps[app].url.test(url) ) apps.push(app);
+								if ( w.apps[app].url.test(url) ) { apps.push(app); }
 
 								break;
 							case 'html':
-								if ( data[type] == null ) break;
+								if ( data[type] == null ) { break; }
 
-								if ( w.apps[app][type].test(data[type]) ) apps.push(app);
+								if ( w.apps[app][type].test(data[type]) ) { apps.push(app); }
 
 								break;
 							case 'script':
-								if ( data['html'] == null ) break;
+								if ( data['html'] == null ) { break; }
 
 								var
 									regex = /<script[^>]+src=("|')([^"']+)\1/ig,
@@ -128,18 +137,19 @@ var wappalyzer = wappalyzer || (function() {
 
 								break;
 							case 'meta':
-								if ( data['html'] == null ) break;
+								if ( data['html'] == null ) { break; }
 
 								var
 									regex = /<meta[^>]+>/ig,
 									match = [],
+									content,
 									meta
 									;
 
 								while ( match = regex.exec(data['html']) ) {
 									for ( meta in w.apps[app][type] ) {
 										if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
-											var content = match.toString().match(/content=("|')([^"']+)("|')/i);
+											content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
 											if ( content && w.apps[app].meta[meta].test(content[2]) ) {
 												apps.push(app);
@@ -152,9 +162,11 @@ var wappalyzer = wappalyzer || (function() {
 
 								break;
 							case 'headers':
-								if ( data[type] == null ) break;
+								if ( data[type] == null ) { break; }
 
-								for ( var header in w.apps[app].headers ) {
+								var header;
+
+								for ( header in w.apps[app].headers ) {
 									if ( data[type][header] != null && w.apps[app][type][header].test(data[type][header]) ) {
 										apps.push(app);
 
@@ -164,9 +176,11 @@ var wappalyzer = wappalyzer || (function() {
 
 								break;
 							case 'env':
-								if ( data[type] == null ) break;
+								if ( data[type] == null ) { break; }
 
-								for ( var i in data[type] ) {
+								var i;
+
+								for ( i in data[type] ) {
 									if ( w.apps[app][type].test(data[type][i]) ) {
 										apps.push(app);
 
@@ -180,13 +194,13 @@ var wappalyzer = wappalyzer || (function() {
 				}
 
 				// Implied applications
-				var i, j, k;
+				var i, j, k, implied;
 
 				for ( i = 0; i < 3; i ++ ) {
 					for ( j in apps ) {
 						if ( w.apps[apps[j]] && w.apps[apps[j]].implies ) {
 							for ( k in w.apps[apps[j]].implies ) {
-								var implied = w.apps[apps[j]].implies[k];
+								implied = w.apps[apps[j]].implies[k];
 
 								if ( !w.apps[implied] ) {
 									w.log('Implied application ' + implied + ' does not exist');
@@ -205,13 +219,17 @@ var wappalyzer = wappalyzer || (function() {
 				w.log(apps.length + ' apps detected: ' + apps.join(', '));
 
 				// Keep history of detected apps
-				apps.map(function(app) {
+				var i, app;
+
+				for ( i in apps ) {
+					app = apps[i];
+
 					if ( /^[a-z0-9._\-]+\.[a-z]+/.test(hostname) && !/(dev\.|\/admin|\.local)/.test(url) ) {
 						// Per hostname
 						var index = -1;
 
 						w.history[hostname].map(function(data, i) {
-							if ( data.app == app ) index = i;
+							if ( data.app === app ) { index = i; }
 						});
 
 						if ( index === -1 ) {
@@ -220,12 +238,12 @@ var wappalyzer = wappalyzer || (function() {
 							w.history[hostname][index].hits ++;
 						}
 
-						if ( Object.keys(w.history).length >= 200 ) driver('track');
+						if ( Object.keys(w.history).length >= 200 ) { driver('track'); }
 					}
 
 					// Per URL
-					if ( w.detected[url].indexOf(app) === -1 ) w.detected[url].push(app);
-				});
+					if ( w.detected[url].indexOf(app) === -1 ) { w.detected[url].push(app); }
+				};
 
 				apps = null;
 				data = null;

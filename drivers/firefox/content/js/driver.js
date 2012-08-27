@@ -199,7 +199,7 @@
 						});
 
 						report += ']';
-					};
+					}
 
 					// Make POST request
 					var request = new XMLHttpRequest();
@@ -213,16 +213,16 @@
 					request.onreadystatechange = function(e) {
 						if ( request.readyState == 4 ) {
 							if ( request.status == 200 ) {
-								w.history = new Object();
+								w.history = [];
 
 								w.log('w.driver.track: ' + report);
 							}
 
 							report = '';
 
-							if ( request.close ) request.close();
+							if ( request.close ) { request.close(); }
 
-							request = false;
+							request = null;
 						}
 					};
 

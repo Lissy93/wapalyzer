@@ -1,8 +1,6 @@
 $(function() {
 	var options = {
-		opts: {
-			tracking: 1
-		},
+		opts: defaults,
 
 		init: function() {
 			options.load();
