@@ -5,12 +5,16 @@ var wappalyzer = {};
 		pollHeaders: null,
 
 		init: function() {
+			$('#options').click(function() {
+				window.open(chrome.extension.getURL('options.html'));
+			});
+
 			chrome.tabs.getSelected(null, function(tab) {
 				if ( tab.url.match(/https?:\/\//) ) {
 					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('noAppsDetected') + '</div>');
 
-					$('#analyze-headers').show().click(function() {
-						$(this).addClass('pending');
+					$('#analyze-headers').removeAttr('disabled').click(function() {
+						$(this).attr('disabled', 'disabled');
 
 						chrome.extension.sendRequest({ id: 'fetch_headers', tab: tab });
 
@@ -19,7 +23,7 @@ var wappalyzer = {};
 				} else {
 					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('nothingToDo') + '</div>');
 
-					$('#analyze-headers').hide();
+					$('#analyze-headers').attr('disabled', 'disabled');
 				}
 			});
 
@@ -32,7 +36,7 @@ var wappalyzer = {};
 					if ( response.tabCache.analyzed.indexOf('headers') > 0 ) {
 						clearTimeout(popup.pollHeaders);
 
-						$('#analyze-headers').hide().removeClass('pending');
+						$('#analyze-headers').removeAttr('disabled');
 					}
 
 					if ( response.tabCache.count > 0 ) {
@@ -65,5 +69,5 @@ var wappalyzer = {};
 		}
 	}
 
-	popup.init();
+	$(function() { popup.init(); });
 })();

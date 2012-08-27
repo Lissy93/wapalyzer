@@ -58,18 +58,35 @@ img {
 	text-align: center;
 }
 
+#buttons {
+	margin-top: 12px;
+	overflow: hidden;
+}
+
+	#buttons button {
+		height: 32px;
+	}
+
 #analyze-headers {
-	border: 1px solid #eee;
-	border-radius: 3px;
-	cursor: pointer;
-	display: none;
-	line-height: 30px;
-	margin-top: 7px;
-	text-align: center;
+	float: left;
+	width: 158px;
 }
 
 	#analyze-headers.pending {
-		background: url('../images/pending.gif') center center no-repeat;
-		color: #999;
+		background-image: url('../images/pending2.gif');
+		background-position: center center;
+		background-repeat: no-repeat;
 		text-indent: -999px;
 	}
+
+#options {
+	background-image: url('../images/options.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	float: right;
+	height: 32px;
+  -webkit-padding-end: 0;
+  -webkit-padding-start: 0;
+	min-width: 32px;
+	width: 32px;
+}

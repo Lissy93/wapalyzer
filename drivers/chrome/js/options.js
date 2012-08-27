@@ -5,6 +5,10 @@ $(function() {
 		init: function() {
 			options.load();
 
+			$('#github'    ).click(function() { window.open(wappalyzer.config.githubURL);  });
+			$('#twitter'   ).click(function() { window.open(wappalyzer.config.twitterURL); });
+			$('#wappalyzer').click(function() { window.open(wappalyzer.config.websiteURL); });
+
 			$('#options-save').click(options.save);
 		},
 
