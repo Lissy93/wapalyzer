@@ -9,17 +9,23 @@ var wappalyzer = {};
 				window.open(chrome.extension.getURL('options.html'));
 			});
 
+			$('#analyze-headers').text(chrome.i18n.getMessage('analyzeHeaders')).removeAttr('disabled');
+
 			chrome.tabs.getSelected(null, function(tab) {
 				if ( tab.url.match(/https?:\/\//) ) {
 					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('noAppsDetected') + '</div>');
 
-					$('#analyze-headers').removeAttr('disabled').click(function() {
+					$('#analyze-headers').click(function() {
 						$(this).attr('disabled', 'disabled');
 
 						chrome.extension.sendRequest({ id: 'fetch_headers', tab: tab });
 
 						popup.pollHeaders = setInterval(popup.displayApps, 100);
 					});
+
+					if ( parseInt(localStorage['autoAnalyzeHeaders']) ) {
+						$('#analyze-headers').click();
+					}
 				} else {
 					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('nothingToDo') + '</div>');
 
@@ -34,9 +40,11 @@ var wappalyzer = {};
 			chrome.tabs.getSelected(null, function(tab) {
 				chrome.extension.sendRequest({ id: 'get_apps', tab: tab }, function(response) {
 					if ( response.tabCache.analyzed.indexOf('headers') > 0 ) {
-						clearTimeout(popup.pollHeaders);
+						if ( popup.pollHeaders != null ) {
+							clearTimeout(popup.pollHeaders);
 
-						$('#analyze-headers').removeAttr('disabled');
+							$('#analyze-headers').text(chrome.i18n.getMessage('analyzeHeadersDone'));
+						}
 					}
 
 					if ( response.tabCache.count > 0 ) {

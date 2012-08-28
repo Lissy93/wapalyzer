@@ -19,13 +19,18 @@ $(function() {
 				}
 			}
 
+			if ( parseInt(options.opts.autoAnalyzeHeaders) ) {
+				$('#option-auto-analyze-headers').attr('checked', 'checked');
+			}
+
 			if ( parseInt(options.opts.tracking) ) {
 				$('#option-tracking').attr('checked', 'checked');
 			}
 		},
 
 		save: function() {
-			options.opts.tracking = $('#option-tracking').is(':checked') ? 1 : 0;
+			options.opts.autoAnalyzeHeaders = $('#option-auto-analyze-headers').is(':checked') ? 1 : 0;
+			options.opts.tracking           = $('#option-tracking'            ).is(':checked') ? 1 : 0;
 
 			for ( option in options.opts ) {
 				localStorage[option] = options.opts[option];
