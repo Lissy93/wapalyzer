@@ -34,7 +34,8 @@
 		26: 'mobile-frameworks',
 		27: 'programming-languages',
 		28: 'operating-systems',
-		29: 'search-engines'
+		29: 'search-engines',
+		30: 'web-mail'
 	};
 
 	w.apps = {
@@ -88,6 +89,7 @@
 		'Commerce Server':                  { cats: [  6 ], headers: { 'COMMERCE-SERVER-SOFTWARE': /.+/ }, implies: [ 'Microsoft ASP.NET', 'IIS', 'Windows Server' ] },
 		'comScore':                         { cats: [ 10 ], html: /<i{1}frame[^>]* (id=("|')comscore("|')|scr=[^>]+comscore)/, env: /^_?COMSCORE$/i },
 		'Concrete5':                        { cats: [  1 ], meta: { 'generator': /concrete5/i }, implies: [ 'PHP' ] },
+		'Connect':                          { cats: [ 18 ], headers: { 'X-Powered-By': /^Connect$/i }, implies: [ 'node.js' ] },
 		'Contao':                           { cats: [  1, 6 ], html: /(<!--\s+This website is powered by (TYPOlight|Contao)|<link[^>]+(typolight|contao).css)/i, implies: [ 'PHP' ] },
 		'Contenido':                        { cats: [  1 ], meta: { 'generator': /Contenido/i }, implies: [ 'PHP' ] },
 		'Contens':                          { cats: [  1 ], meta: { 'generator': /contens/i }, implies: [ 'Java', 'CFML' ] },
@@ -129,6 +131,7 @@
 		//'Ecodoo':                           { cats: [  6 ], script: /addons\/lytebox\/lytebox\.js/ },
 		'EPiServer':                        { cats: [  1 ], meta: { 'generator': /EPiServer/i }, implies: [ 'Microsoft ASP.NET', 'IIS', 'Windows Server' ] },
 		'Exhibit':                          { cats: [ 25 ], script: /exhibit.*\.js/, env: /^Exhibit$/ },
+		'Express':                          { cats: [ 18 ], headers: { 'X-Powered-By': /^Express$/i }, implies: [ 'Connect', 'node.js' ] },
 		'ExpressionEngine':                 { cats: [  1 ], headers: { 'Set-Cookie': /(exp_last_activity|exp_tracker)/ }, implies: [ 'PHP' ] },
 		'ExtJS':                            { cats: [ 12 ], script: /ext\-base\.js/, env: /^Ext$/ },
 		'eZ Publish':                       { cats: [  1, 6 ], meta: { 'generator': /eZ Publish/i }, implies: [ 'PHP' ] },
@@ -194,6 +197,7 @@
 		'Koobi':                            { cats: [  1 ], meta: { 'generator': /Koobi/i } },
 		'LEPTON':                           { cats: [  1 ], meta: { 'generator': /LEPTON/i }, implies: [ 'PHP' ] },
 		'Liferay':                          { cats: [  1 ], env: /^Liferay$/, headers: { 'Liferay-Portal': /.*/i } },
+		'LightMon':                         { cats: [  1 ], meta: { 'generator': /LightMon/i }, headers: { 'X-Powered-By': /LightMon/i }, implies: [ 'PHP' ]  },
 		'lighttpd':                         { cats: [ 22 ], headers: { 'Server': /lighttpd/i } },
 		'LimeSurvey':                       { cats: [ 19 ], headers: { 'generator': /LimeSurvey/i } },
 		'LiveJournal':                      { cats: [ 11 ], url: /^(www.)?.+\.livejournal\.com/i },
@@ -227,6 +231,7 @@
 		'Nedstat':                          { cats: [ 10 ], html: /sitestat\(("|')http:\/\/nl\.sitestat\.com/ },
 		'Netmonitor':                       { cats: [ 10 ], script: /netmonitor\.fi\/nmtracker\.js/, env: /^netmonitor/ },
 		'Nginx':                            { cats: [ 22 ], headers: { 'Server': /nginx/i } },
+		'node.js':                          { cats: [ 27 ], },
 		'NOIX':                             { cats: [ 19 ], html: /<[^>]+(src|href)=[^>]*(\/media\/noix)|<!\-\- NOIX/i },
 		'nopCommerce':                      { cats: [  6 ], html: /(<!\-\-Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)/i },
 		'OneStat':                          { cats: [ 10 ], html: /var p=("|')http("|')\+\(d\.URL\.indexOf\('https:'\)==0\?'s':''\)\+("|'):\/\/stat\.onestat\.com\/stat\.aspx\?tagver/i },
@@ -257,6 +262,7 @@
 		'Piwik':                            { cats: [ 10 ], html: /var piwikTracker = Piwik\.getTracker\(/i, env: /^Piwik$/i },
 		'Plentymarkets':                    { cats: [  6 ], meta: { 'generator': /www\.plentyMarkets\./i } },
 		'Plesk':                            { cats: [  9 ], headers: { 'X-Powered-By-Plesk': /Plesk/i,'X-Powered-By': /PleskLin/i }, script: /common\.js\?plesk/i },
+		'Pligg':                            { cats: [  1 ], meta: { 'generator': /Pligg/i }, html: /<span[^>]+id="xvotes-0/, env: /pligg_/i },
 		'Plone':                            { cats: [  1 ], meta: { 'generator': /Plone/i }, implies: [ 'Python' ] },
 		'Plura':                            { cats: [ 19 ], html: /<iframe src="http:\/\/pluraserver\.com/ },
 		'Posterous':                        { cats: [  1, 11 ], html: /<div class=("|')posterous/i, env: /^Posterous/i },
@@ -271,11 +277,12 @@
 		'Raphael':                          { cats: [ 25 ], script: /raphael.*\.js/, env: /^Raphael$/ },
 		'ReallyCMS':                        { cats: [  1 ], meta: { 'generator': /ReallyCMS/ } },
 		'reCAPTCHA':                        { cats: [ 16 ], script: /(api\-secure\.recaptcha\.net|recaptcha_ajax\.js)/, html: /<div[^>]+id=("|')recaptcha_image/, env: /^Recaptcha$/ },
-		'Red Hat':                          { cats: [ 28 ], headers: { 'Server': /Red Hat/i, 'X-Powered-By': /Red Hat/i } },
+		'Red Hat':                          { cats: [ 28 ], headers: { 'Server': /(Red Hat|rhel[0-9]+)/i, 'X-Powered-By': /Red Hat/i } },
 		'Reddit':                           { cats: [  2 ], html: /(<script[^>]+>var reddit = {|<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)/i, url: /^(www\.)?reddit\.com/, env: /^reddit$/, implies: [ 'Python' ] },
 		'Redmine':                          { cats: [ 13 ], meta: { 'description': /Redmine/i }, html: /Powered by <a href=("|')[^>]+Redmine/i, implies: [ 'Ruby' ] },
 		'Reinvigorate':                     { cats: [ 10 ], html: /reinvigorate\.track\("/ },
-		'RequireJS':                        { cats: [ 12 ], script: /require.*\.js/ , env: /^requirejs$/},
+		'RequireJS':                        { cats: [ 12 ], script: /require.*\.js/, env: /^requirejs$/ },
+		'RoundCube':                        { cats: [ 30 ], html: /<title>RoundCube/, env: /(rcmail|rcube_|roundcube)/i },
 		'Ruby':                             { cats: [ 27 ], headers: { 'Server': /(Mongrel|WEBrick|Ruby|mod_rails|mod_rack|Phusion.Passenger)/i, 'X-Powered-By': /(mod_rails|mod_rack|Phusion.Passenger)/i }, meta: { 'csrf-param': /authenticity_token	/i } },
 		'S.Builder':                        { cats: [  1 ], meta: { 'generator': /S\.Builder/i } },
 		's9y':                              { cats: [  1 ], meta: { 'generator': /Serendipity/i, 'Powered-By': /Serendipity/i } },
@@ -368,6 +375,7 @@
 		'YUI':                              { cats: [ 12 ], script: /\/yui\/|yui\.yahooapis\.com/, env: /^YAHOO$/ },
 		'Zen Cart':                         { cats: [  6 ], meta: { 'generator': /Zen Cart/i } },
 		'Zend':                             { cats: [ 22 ], headers: { 'X-Powered-By': /Zend/ } },
-		'Zepto':                            { cats: [ 12 ], script: /zepto.*.js/, env: /^Zepto$/ }
+		'Zepto':                            { cats: [ 12 ], script: /zepto.*.js/, env: /^Zepto$/ },
+		'Zinnia':                           { cats: [ 11 ], meta: { 'generator': /Zinnia/i }, implies: [ 'Django' ] }
 		};
 })();

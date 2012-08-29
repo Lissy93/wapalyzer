@@ -191,6 +191,7 @@
 			 2, // Message Board
 			 8, // Wiki
 			13, // Issue Tracker
+			30, // Web Mail
 			18, // Web Framework
 			21, // LMS
 			 7, // Photo Gallery
