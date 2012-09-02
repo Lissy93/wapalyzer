@@ -97,36 +97,38 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var url = gBrowser.currentURI.spec.split('#')[0];
+			var
+				i, j, showCat, cat, image, menuSeparator, menuItem, url = gBrowser.currentURI.spec.split('#')[0];
 
-			// Removing immediately causes flickering
-			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').addClass('remove');
+			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').addClass('wappalyzer-remove');
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
-					var image = $('<image/>')
-						.attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png')
-						;
+					image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png');
 
 					$('#wappalyzer-container').prepend(image);
 				}
 
 				w.detected[url].map(function(app, i) {
-					for ( var i in w.apps[app].cats ) {
-						if ( prefs.getBoolPref('cat' + w.apps[app].cats[i]) ) {
+					for ( i in w.apps[app].cats ) {
+						showCat = false;
+
+						try {
+							showCat = prefs.getBoolPref('cat' + w.apps[app].cats[i]);
+						} catch(e) { }
+
+						if ( showCat ) {
 							if ( prefs.getBoolPref('showIcons') ) {
-								var image = $('<image/>')
-									.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
-									;
+								image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png');
 
 								$('#wappalyzer-container').prepend(image);
 							}
 
-							var menuSeparator = $('<menuseparator/>');
+							menuSeparator = $('<menuseparator/>');
 
 							$('#wappalyzer-menu').append(menuSeparator);
 
-							var menuItem = $('<menuitem/>')
+							menuItem = $('<menuitem/>')
 								.attr('class', 'wappalyzer-application menuitem-iconic')
 								.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
 								.attr('label', app)
@@ -138,10 +140,10 @@
 
 							$('#wappalyzer-menu').append(menuItem);
 
-							for ( var i in w.apps[app].cats ) {
-								var cat = w.apps[app].cats[i];
+							for ( j in w.apps[app].cats ) {
+								cat = w.apps[app].cats[i];
 
-								var menuItem = $('<menuitem/>')
+								menuItem = $('<menuitem/>')
 									.attr('class', 'wappalyzer-category')
 									.attr('label', strings.getString('wappalyzer.cat' + cat))
 									;
@@ -158,17 +160,15 @@
 					}
 				});
 			} else {
-				var image = $('<image/>')
-					.attr('src', 'chrome://wappalyzer/skin/images/icon.png')
-					;
+				image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon.png');
 
 				$('#wappalyzer-container').prepend(image);
 
-				var menuSeparator = $('<menuseparator/>');
+				menuSeparator = $('<menuseparator/>');
 
 				$('#wappalyzer-menu').append(menuSeparator);
 
-				var menuItem = $('<menuitem/>')
+				menuItem = $('<menuitem/>')
 					.attr('disabled', 'true')
 					.attr('label', strings.getString('wappalyzer.noAppsDetected'))
 					;
@@ -176,7 +176,7 @@
 				$('#wappalyzer-menu').append(menuItem);
 			}
 
-			$('#wappalyzer-container > .remove, #wappalyzer-menu > .remove, #wappalyzer-menu > .remove').remove();
+			$('.wappalyzer-remove').remove();
 		},
 
 		/**
