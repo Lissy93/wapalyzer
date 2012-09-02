@@ -40,7 +40,6 @@ var wappalyzer = wappalyzer || (function() {
 			websiteURL: 'http://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
 			githubURL:  'https://github.com/ElbertF/Wappalyzer',
-			gplusURL:   'https://plus.google.com/107008529118023432137/posts',
 
 			firstRun: false,
 			upgraded: false

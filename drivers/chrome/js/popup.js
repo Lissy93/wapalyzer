@@ -53,7 +53,7 @@ var wappalyzer = {};
 						response.tabCache.appsDetected.map(function(appName) {
 							html =
 								'<div class="detected-app">' +
-									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w]/g, '') + '">' +
+									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
 										'<span class="label">' + appName + '</span>' +
 									'</a>';
