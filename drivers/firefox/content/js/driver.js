@@ -71,7 +71,7 @@
 
 						// Get response headers
 						onStateChange: function(progress, request, flags, status) {
-							if ( request && request.nsIHttpChannel && request.name == progress.currentURI.spec && request.contentType == 'text/html' && flags & Ci.nsIWebProgressListener.STATE_STOP ) {
+							if ( request && progress.currentURI && request.nsIHttpChannel && request.name == progress.currentURI.spec && request.contentType == 'text/html' && flags & Ci.nsIWebProgressListener.STATE_STOP ) {
 								var headers = new Object();
 
 								request.nsIHttpChannel.visitResponseHeaders(function(header, value) {

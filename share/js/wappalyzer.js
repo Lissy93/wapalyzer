@@ -97,7 +97,7 @@ var wappalyzer = wappalyzer || (function() {
 		analyze: function(hostname, url, data) {
 			w.log('w.analyze');
 
-			var app, type, apps = [];
+			var i, app, type, regex, match, content, meta, header, apps = [];
 
 			if ( w.history[hostname] == null ) { w.history[hostname] = []; }
 			if ( w.detected[url]     == null ) { w.detected[url]     = []; }
@@ -121,10 +121,7 @@ var wappalyzer = wappalyzer || (function() {
 							case 'script':
 								if ( data['html'] == null ) { break; }
 
-								var
-									regex = /<script[^>]+src=("|')([^"']+)\1/ig,
-									match = []
-									;
+								regex = /<script[^>]+src=("|')([^"']+)\1/ig;
 
 								while ( match = regex.exec(data['html']) ) {
 									if ( w.apps[app][type].test(match[2]) ) {
@@ -138,12 +135,7 @@ var wappalyzer = wappalyzer || (function() {
 							case 'meta':
 								if ( data['html'] == null ) { break; }
 
-								var
-									regex = /<meta[^>]+>/ig,
-									match = [],
-									content,
-									meta
-									;
+								regex = /<meta[^>]+>/ig;
 
 								while ( match = regex.exec(data['html']) ) {
 									for ( meta in w.apps[app][type] ) {
@@ -163,8 +155,6 @@ var wappalyzer = wappalyzer || (function() {
 							case 'headers':
 								if ( data[type] == null ) { break; }
 
-								var header;
-
 								for ( header in w.apps[app].headers ) {
 									if ( data[type][header] != null && w.apps[app][type][header].test(data[type][header]) ) {
 										apps.push(app);
@@ -176,8 +166,6 @@ var wappalyzer = wappalyzer || (function() {
 								break;
 							case 'env':
 								if ( data[type] == null ) { break; }
-
-								var i;
 
 								for ( i in data[type] ) {
 									if ( w.apps[app][type].test(data[type][i]) ) {
