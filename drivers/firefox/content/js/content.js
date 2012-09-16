@@ -7,7 +7,12 @@
 		if ( content.document.contentType != 'text/html' ) { return };
 
 		// HTML
-		var html = content.document.documentElement.outerHTML
+		var html = content.document.documentElement.outerHTML;
+
+		// Comments outside HTML
+		//if ( content.document.lastChild.nodeType === 8 ) {
+			//content.alert(content.document.lastChild.nodeValue);
+		//}
 
 		if ( html.length > 50000 ) {
 			html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);

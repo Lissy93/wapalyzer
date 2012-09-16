@@ -813,10 +813,9 @@
 			env: /^Liferay$/,
 			headers: { 'Liferay-Portal': /.*/i }
 		},
-		'LightMon': {
+		'LightMon Engine': {
 			cats: [ 1 ],
-			meta: { 'generator': /LightMon/i },
-			headers: { 'X-Powered-By': /LightMon/i },
+			html: /<!-- Lightmon Engine Copyright Lightmon/i,
 			implies: [ 'PHP' ]
 		},
 		'lighttpd': {
@@ -1102,7 +1101,7 @@
 		},
 		'Plesk': {
 			cats: [ 9 ],
-			headers: { 'X-Powered-By-Plesk': /Plesk/i,'X-Powered-By': /PleskLin/i },
+			headers: { 'X-Powered-By-Plesk': /Plesk/i, 'X-Powered-By': /PleskLin/i },
 			script: /common\.js\?plesk/i
 		},
 		'Pligg': {
@@ -1495,6 +1494,11 @@
 			cats: [ 10 ],
 			script: /w3counter\.com\/tracker\.js/
 		},
+		'W3 Total Cache': {
+			cats: [ 23 ],
+			html: /<!\-\-[^>]+W3 Total Cache/i,
+			implies: [ 'WordPress' ]
+		},
 		'Web Optimizer': {
 			cats: [ 10 ],
 			html: /<title [^>]*lang=("|')wo("|')>/
@@ -1561,6 +1565,11 @@
 			html: /<link rel=("|')stylesheet("|') [^>]+wp-content/i,
 			env: /^wp_username$/,
 			implies: [ 'PHP' ]
+		},
+		'WordPress Super Cache': {
+			cats: [ 23 ],
+			html: /<!\-\-[^>]+WP\-Super\-Cache/i,
+			implies: [ 'WordPress' ]
 		},
 		'Xajax': {
 			cats: [ 12 ],

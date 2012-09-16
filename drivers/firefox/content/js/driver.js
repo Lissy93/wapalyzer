@@ -101,8 +101,7 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var
-				i, j, showCat, cat, image, menuSeparator, menuItem, url = gBrowser.currentURI.spec.split('#')[0];
+			var image, url = gBrowser.currentURI.spec.split('#')[0];
 
 			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').addClass('wappalyzer-remove');
 
@@ -114,6 +113,8 @@
 				}
 
 				w.detected[url].map(function(app, i) {
+					var j, cat, showCat, menuSeparator, menuItem;
+
 					for ( i in w.apps[app].cats ) {
 						showCat = false;
 
@@ -145,7 +146,7 @@
 							$('#wappalyzer-menu').append(menuItem);
 
 							for ( j in w.apps[app].cats ) {
-								cat = w.apps[app].cats[i];
+								var cat = w.apps[app].cats[j];
 
 								menuItem = $('<menuitem/>')
 									.attr('class', 'wappalyzer-category')
