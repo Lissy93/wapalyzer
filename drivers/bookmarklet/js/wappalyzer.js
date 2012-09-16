@@ -205,7 +205,7 @@ var wappalyzer = wappalyzer || (function() {
 				w.log(apps.length + ' apps detected: ' + apps.join(', '));
 
 				// Keep history of detected apps
-				var i, app;
+				var i, app, match;
 
 				for ( i in apps ) {
 					app = apps[i];
@@ -217,7 +217,7 @@ var wappalyzer = wappalyzer || (function() {
 						}
 
 						if ( typeof w.ping.hostnames[hostname] === 'undefined' ) {
-							w.ping.hostnames[hostname] = { applications: {} };
+							w.ping.hostnames[hostname] = { applications: {}, meta: {} };
 						}
 
 						if ( typeof w.ping.hostnames[hostname].applications[app] === 'undefined' ) {
@@ -225,13 +225,24 @@ var wappalyzer = wappalyzer || (function() {
 						}
 
 						w.ping.hostnames[hostname].applications[app] ++;
-
-						if ( Object.keys(w.ping.hostnames).length >= 200 ) { driver('ping'); }
 					}
 
 					// Per URL
 					if ( w.detected[url].indexOf(app) === -1 ) { w.detected[url].push(app); }
-				};
+				}
+
+				// Additional information
+				if ( typeof w.ping.hostnames !== 'undefined' && typeof w.ping.hostnames[hostname] !== 'undefined' ) {
+					if ( data.html != null ) {
+						match = data.html.match(/<html[^>]*[: ]lang="([^"]+)"/);
+
+						if ( match != null && match.length ) {
+							w.ping.hostnames[hostname].meta['language'] = match[1];
+						}
+					}
+				}
+
+				if ( w.ping.hostnames != null && Object.keys(w.ping.hostnames).length >= 200 ) { driver('ping'); }
 
 				apps = null;
 				data = null;

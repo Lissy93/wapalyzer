@@ -3,7 +3,7 @@
 		init: function() {
 			c.log('init');
 
-			chrome.extension.sendRequest({ id: 'analyze', subject: { html: document.documentElement.innerHTML } });
+			chrome.extension.sendRequest({ id: 'analyze', subject: { html: document.documentElement.outerHTML } });
 
 			c.getEnvironmentVars();
 		},
