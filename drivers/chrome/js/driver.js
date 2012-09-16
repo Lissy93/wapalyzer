@@ -138,49 +138,28 @@
 			};
 		},
 
+
 		/**
-		 * Anonymously track detected applications
+		 * Anonymously track detected applications for research purposes
 		 */
-		track: function() {
-			if ( localStorage['tracking'] ) {
-				var i, data, report = '';
+		ping: function() {
+			if ( Object.keys(w.ping.hostnames).length && localStorage['tracking'] ) {
+				// Make POST request
+				var request = new XMLHttpRequest();
 
-				if ( w.history ) {
-					for ( hostname in w.history ) {
-						report += '[' + hostname;
+				request.open('POST', w.config.websiteURL + 'ping/', true);
 
-						w.history[hostname].map(function(data) {
-							report += '|' + data.app + ':' + data.hits;
-						});
+				request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-						report += ']';
-					}
+				request.onreadystatechange = function(e) {
+					if ( request.readyState == 4 ) { w.log('w.driver.ping: status ' + request.status); }
+				};
 
-					// Make POST request
-					var request = new XMLHttpRequest();
+				request.send('json=' + encodeURIComponent(JSON.stringify(w.ping)));
 
-					request.open('POST', w.config.websiteURL + '_track.php', true);
+				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
-					request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-					request.onreadystatechange = function(e) {
-						if ( request.readyState == 4 ) {
-							if ( request.status == 200 ) {
-								w.history = [];
-
-								w.log('w.driver.track: ' + report);
-							}
-
-							report = '';
-
-							if ( request.close ) { request.close(); }
-
-							request = null;
-						}
-					};
-
-					request.send('d=' + encodeURIComponent(report));
-				}
+				w.ping = {};
 			}
 		},
 

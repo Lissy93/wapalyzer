@@ -29,7 +29,7 @@ var wappalyzer = wappalyzer || (function() {
 	 */
 	var w = {
 		// Cache detected applications per URL
-		history:  [],
+		ping:     {},
 		detected: [],
 
 		config: {
@@ -99,8 +99,7 @@ var wappalyzer = wappalyzer || (function() {
 
 			var i, app, type, regex, match, content, meta, header, apps = [];
 
-			if ( w.history[hostname] == null ) { w.history[hostname] = []; }
-			if ( w.detected[url]     == null ) { w.detected[url]     = []; }
+			if ( w.detected[url] == null ) { w.detected[url] = []; }
 
 			if ( data ) {
 				for ( app in w.apps ) {
@@ -211,21 +210,23 @@ var wappalyzer = wappalyzer || (function() {
 				for ( i in apps ) {
 					app = apps[i];
 
+					// Per hostname
 					if ( /^[a-z0-9._\-]+\.[a-z]+/.test(hostname) && !/(dev\.|\/admin|\.local)/.test(url) ) {
-						// Per hostname
-						var index = -1;
-
-						w.history[hostname].map(function(data, i) {
-							if ( data.app === app ) { index = i; }
-						});
-
-						if ( index === -1 ) {
-							w.history[hostname].push({ app: app, hits: 1 });
-						} else {
-							w.history[hostname][index].hits ++;
+						if ( typeof w.ping.hostnames === 'undefined' ) {
+							w.ping.hostnames = {};
 						}
 
-						if ( Object.keys(w.history).length >= 200 ) { driver('track'); }
+						if ( typeof w.ping.hostnames[hostname] === 'undefined' ) {
+							w.ping.hostnames[hostname] = { applications: {} };
+						}
+
+						if ( typeof w.ping.hostnames[hostname].applications[app] === 'undefined' ) {
+							w.ping.hostnames[hostname].applications[app] = 1;
+						}
+
+						w.ping.hostnames[hostname].applications[app] ++;
+
+						if ( Object.keys(w.ping.hostnames).length >= 200 ) { driver('ping'); }
 					}
 
 					// Per URL
