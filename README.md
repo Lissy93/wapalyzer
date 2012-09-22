@@ -86,12 +86,12 @@ want to port Wappalyzer to a new platform.
 
 **PHP**
 
-Work in progress. Installation on Debian Linux:
+Work in progress. Getting started on Debian Linux:
 
 * `# aptitude install php5-dev php-pear libv8-dev`
 * `# pecl install channel://pecl.php.net/v8js-0.1.3`
-* Create `/etc/php5/conf.d/v8js.ini` containing `extension=v8js.so`
-* `# php drivers/php/driver.php`
+* `# echo "extension=v8js.so" > /etc/php5/conf.d/v8js.ini`
+* `$ php drivers/php/driver.php`
 
 
 Screenshot
