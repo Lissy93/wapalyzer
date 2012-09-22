@@ -71,6 +71,11 @@ API limitations.)
 * Select `drivers/chrome/`
 
 
+**Bookmarklet**
+
+Beta version available for testing at [wappalyzer.com/bookmarklet](http://wappalyzer.com/bookmarklet).
+
+
 **HTML**
 
 The HTML driver serves purely as an example. It's a good starting point if you
@@ -79,9 +84,14 @@ want to port Wappalyzer to a new platform.
 * Navigate to `drivers/html/`
 
 
-**Bookmarklet**
+**PHP**
 
-Beta version available for testing at [wappalyzer.com/bookmarklet](http://wappalyzer.com/bookmarklet).
+Work in progress. Installation on Debian Linux:
+
+* `# aptitude install php5-dev php-pear libv8-dev`
+* `# pecl install channel://pecl.php.net/v8js-0.1.3`
+* Create `/etc/php5/conf.d/v8js.ini` containing `extension=v8js.so`
+* `# php drivers/php/driver.php`
 
 
 Screenshot
