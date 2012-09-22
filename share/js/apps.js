@@ -35,7 +35,8 @@
 		27: 'programming-languages',
 		28: 'operating-systems',
 		29: 'search-engines',
-		30: 'web-mail'
+		30: 'web-mail',
+		31: 'cdn'
 	};
 
 	w.apps = {
@@ -255,6 +256,10 @@
 			script: /static\.getclicky\.com/,
 			env: /^clicky$/
 		},
+		'CloudFlare': {
+			cats: [ 31 ],
+			headers: { 'Server': /cloudflare/i }
+		},
 		'CMS Made Simple': {
 			cats: [ 1 ],
 			meta: { 'generator': /CMS Made Simple/i },
@@ -281,7 +286,9 @@
 		},
 		'Concrete5': {
 			cats: [ 1 ],
+			script: /concrete\/js\//,
 			meta: { 'generator': /concrete5/i },
+			env: /CCM_IMAGE_PATH/,
 			implies: [ 'PHP' ]
 		},
 		'Connect': {
@@ -453,7 +460,7 @@
 			cats: [ 1 ],
 			meta: { 'generator': /DotNetNuke/i },
 			html: /<!\-\- by DotNetNuke Corporation/i,
-			env: /^(DDN|DotNetNuke)/i,
+			env: /^DotNetNuke/i,
 			implies: [ 'Microsoft ASP.NET' ]
 		},
 		'Doxygen': {
@@ -595,7 +602,9 @@
 		},
 		'Google Analytics': {
 			cats: [ 10 ],
+			html: /_gaq\.push\(\['_setAccount/,
 			script: /(\.google\-analytics\.com\/ga\.js|google-analytics\.com\/urchin\.js)/,
+			headers: { 'Set-Cookie': /__utma/ },
 			env: /^gaGlobal$/
 		},
 		'Google App Engine': {
@@ -675,6 +684,13 @@
 			cats: [ 22 ],
 			headers: { 'Server': /IIS/i },
 			implies: [ 'Windows Server' ]
+		},
+		'ImpressCMS': {
+			cats: [ 1 ],
+			script: /include\/linkexternal\.js/,
+			meta: { 'generator': /ImpressCMS/ },
+			headers: { 'X-Powered-By': /ImpressCMS/ },
+			implies: [ 'PHP' ]
 		},
 		'ImpressPages': {
 			cats: [ 1 ],
@@ -779,8 +795,10 @@
 			implies: [ 'Joomla' ]
 		},
 		'Kampyle': {
-			cats: [ 10 ],
-			script: /cf\.kampyle\.com\/k_button\.js/
+			cats: [ 10, 13 ],
+			script: /cf\.kampyle\.com\/k_button\.js/,
+			headers: { 'Set-Cookie': /k_visit/ },
+			env: /^k_track$/
 		},
 		'Kentico CMS': {
 			cats: [ 1 ],
@@ -837,6 +855,7 @@
 		'Magento': {
 			cats: [ 6 ],
 			script: /\/(js\/mage|skin\/frontend\/(default|enterprise))\//,
+			headers: { 'Set-Cookie': /frontend=/ },
 			env: /^(Mage|VarienForm)$/,
 			implies: [ 'PHP ']
 		},
@@ -1258,6 +1277,11 @@
 			cats: [ 17 ],
 			script: /sifr\.js/
 		},
+		'SilverStripe': {
+			cats: [ 1 ],
+			meta: { 'generator': /SilverStripe/ },
+			html: /Powered by <a href="[^>]+SilverStripe/i
+		},
 		'Site Meter': {
 			cats: [ 10 ],
 			script: /sitemeter.com\/js\/counter\.js\?site=/
@@ -1594,7 +1618,9 @@
 		},
 		'XOOPS': {
 			cats: [ 1 ],
-			meta: { 'generator': /XOOPS/i }
+			meta: { 'generator': /XOOPS/i },
+			env: /^xoops/g,
+			implies: [ 'PHP' ]
 		},
 		'xtCommerce': {
 			cats: [ 6 ],

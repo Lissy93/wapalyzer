@@ -187,8 +187,9 @@
 			15, // Comment System
 			20, // Editor
 			10, // Analytics
-			17, // Font Script
+			31, // CDN
 			23, // Cache Tool
+			17, // Font Script
 			24, // Rich Text Editor
 			 5, // Widget
 			14, // Video Player

@@ -242,7 +242,7 @@ var wappalyzer = wappalyzer || (function() {
 					}
 				}
 
-				if ( w.ping.hostnames != null && Object.keys(w.ping.hostnames).length >= 100 ) { driver('ping'); }
+				if ( w.ping.hostnames != null && Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }
 
 				apps = null;
 				data = null;
