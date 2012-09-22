@@ -46,6 +46,8 @@
 
 					container();
 
+					bindings();
+
 					// Version check
 					addon.version = addon.version;
 
@@ -231,11 +233,21 @@
 	 * Move container to address or addon bar
 	 */
 	function container() {
-		$('#wappalyzer-container')
-			.remove()
-			.prependTo(prefs.getBoolPref('addonBar') ? $('#wappalyzer-addonbar') : $('#urlbar-icons'))
-			;
+		if ( prefs.getBoolPref('addonBar') ) {
+			$('#wappalyzer-container').prependTo($('#wappalyzer-addonbar'));
 
+			$('#wappalyzer-addonbar').show();
+		} else {
+			$('#wappalyzer-container').prependTo($('#urlbar-icons'));
+
+			$('#wappalyzer-addonbar').hide();
+		}
+	}
+
+	/**
+	 * Bindings
+	 */
+	function bindings() {
 		// Menu items
 		var prefix = '#wappalyzer-menu-';
 
@@ -268,11 +280,6 @@
 				}
 			});
 
-		$(prefix + 'donate')
-			.bind('command', function() {
-				w.driver.goToURL({ url: w.config.websiteURL + 'donate' })
-			});
-
 		$(prefix + 'feedback')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
@@ -291,11 +298,6 @@
 		$(prefix + 'twitter')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.twitterURL})
-			});
-
-		$(prefix + 'gplus')
-			.bind('command', function() {
-				w.driver.goToURL({ url: w.config.gplusURL })
 			});
 	}
 
