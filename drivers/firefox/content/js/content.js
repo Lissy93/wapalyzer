@@ -13,7 +13,7 @@
 		content.document.documentElement.addEventListener('load', function() {
 			sendAsyncMessage('wappalyzer', { env: Object.keys(content.wrappedJSObject) });
 
-			removeEventListener('load', onLoad, false);
+			removeEventListener('load', onLoad, true);
 		}, true);
 
 		// HTML

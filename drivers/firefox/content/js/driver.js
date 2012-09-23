@@ -15,6 +15,8 @@
 		;
 
 	w.driver = {
+		lastDisplayed: null,
+
 		/**
 		 * Log messages to console
 		 */
@@ -105,6 +107,13 @@
 		displayApps: function() {
 			var image, url = gBrowser.currentURI.spec.split('#')[0];
 
+			if ( w.detected[url] != null && w.detected[url].length ) {
+				// No change
+				if ( w.driver.lastDisplayed === JSON.stringify(w.detected[url]) ) { return; }
+			} else {
+				if ( w.driver.lastDisplayed === 'empty' ) { return; }
+			}
+
 			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').addClass('wappalyzer-remove');
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
@@ -166,6 +175,8 @@
 						}
 					}
 				});
+
+				w.driver.lastDisplayed = JSON.stringify(w.detected[url]);
 			} else {
 				image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon.png');
 
@@ -181,6 +192,8 @@
 					;
 
 				$('#wappalyzer-menu').append(menuItem);
+
+				w.driver.lastDisplayed = 'empty';
 			}
 
 			$('.wappalyzer-remove').remove();
