@@ -20,3 +20,6 @@ ln -f share/js/lib/jquery.min.js drivers/html/js/lib
 ln -f share/js/apps.js           drivers/html/js/
 ln -f share/js/wappalyzer.js     drivers/html/js/
 
+ln -f share/js/apps.js           drivers/php/js/
+ln -f share/js/wappalyzer.js     drivers/php/js/
+

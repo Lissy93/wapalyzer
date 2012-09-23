@@ -1,5 +1,5 @@
 (function() {
-	if ( wappalyzer == null ) return;
+	if ( wappalyzer == null ) { return };
 
 	var w = wappalyzer;
 
@@ -8,7 +8,7 @@
 		 * Log messages to console
 		 */
 		log: function(args) {
-			if ( console != null ) console[args.type](args.message);
+			if ( console != null ) { console[args.type](args.message) };
 		},
 
 		/**

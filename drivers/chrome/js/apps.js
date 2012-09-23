@@ -1440,7 +1440,7 @@
 			headers: { 'Set-Cookie': /fe_typo_user/ },
 			meta: { 'generator': /TYPO3/i },
 			html: /(<(script[^>]* src|link[^>]* href)=[^>]*fileadmin|<!--TYPO3SEARCH)/i,
-			url: /\/typo3/i
+			url: /\/typo3\//i
 		},
 		'Ubercart': {
 			cats: [ 6 ],
