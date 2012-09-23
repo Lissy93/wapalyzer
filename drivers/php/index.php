@@ -1,7 +1,7 @@
 <?php
 
-require('DriverException.php');
-require('Driver.php');
+require('WappalyzerException.php');
+require('Wappalyzer.php');
 
 try {
 	if ( php_sapi_name() !== 'cli' ) {
@@ -16,9 +16,9 @@ try {
 		exit(0);
 	}
 
-	$driver = new Driver;
+	$wappalyzer = new Wappalyzer($url);
 
-	$detectedApps = $driver->analyze($url);
+	$detectedApps = $wappalyzer->analyze();
 
 	if ( $detectedApps ) {
 		echo implode("\n", $detectedApps) . "\n";

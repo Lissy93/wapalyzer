@@ -86,25 +86,26 @@ want to port Wappalyzer to a new platform.
 
 **PHP**
 
-Getting the PHP driver up and running on Debian Linux:
+The PHP driver requires the [V8js](http://php.net/manual/en/book.v8js.php) class. Installing V8js 
+using PECL on Debian Linux or Ubuntu should be very straight forward:
 
 * `# aptitude install php5-dev php-pear libv8-dev`
 * `# pecl install channel://pecl.php.net/v8js-0.1.3`
 * `# echo "extension=v8js.so" > /etc/php5/conf.d/v8js.ini`
 
-Runnning it from the command line:
+Runnning Wappalyzer from the command line:
 
-`$ php drivers/php/wappalyzer.php http://wappalyzer.com`
+`$ php drivers/php/index.php wappalyzer.com`
 
-Running it inside a PHP script:
+Running Wappalyzer inside a PHP script:
 
 ```php
-require('DriverException.php');
-require('Driver.php');
+require('WappalyzerException.php');
+require('Wappalyzer.php');
 
-$driver = new Driver;
+$wappalyzer = new Wappaylzer($url);
 
-$detectedApps = $driver->analyze($url);
+$detectedApps = $wappalyzer->analyze();
 ```
 
 

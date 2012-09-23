@@ -1,6 +1,6 @@
 <?php
 
-class Driver
+class Wappalyzer
 {
 	public
 		$debug              = false,
@@ -21,21 +21,23 @@ class Driver
 	/**
 	 * Constructor
 	 */
-	public function __construct()
+	public function __construct($url)
 	{
 		$this->v8 = new V8Js();
+
+		$this->url = $url;
 	}
 
 	/**
 	 * Analyze a website
 	 * @param string $url
 	 */
-	public function analyze($url)
+	public function analyze()
 	{
 		try {
 			$this->load(array('wappalyzer.js', 'apps.js', 'driver.js'));
 
-			$result = $this->curl($url);
+			$result = $this->curl($this->url);
 
 			$json = json_encode(array(
 				'host'    => $this->host,
@@ -51,7 +53,7 @@ class Driver
 				w.driver.init();
 				');
 		} catch ( V8JsException $e ) {
-			throw new DriverException('JavaScript error: ' . $e->getMessage());
+			throw new WappalyzerException('JavaScript error: ' . $e->getMessage());
 		}
 	}
 
@@ -91,13 +93,13 @@ class Driver
 		$response = curl_exec($ch);
 
 		if ( curl_errno($ch) !== 0 ) {
-			throw new DriverException('cURL error: ' . curl_error($ch));
+			throw new WappalyzerException('cURL error: ' . curl_error($ch));
 		}
 
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 		if ( $httpCode != 200 ) {
-			throw new DriverException('cURL request returned HTTP code ' . $httpCode);
+			throw new WappalyzerException('cURL request returned HTTP code ' . $httpCode);
 		}
 
 		$this->url  = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
