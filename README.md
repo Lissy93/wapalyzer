@@ -91,7 +91,21 @@ Getting the PHP driver up and running on Debian Linux:
 * `# aptitude install php5-dev php-pear libv8-dev`
 * `# pecl install channel://pecl.php.net/v8js-0.1.3`
 * `# echo "extension=v8js.so" > /etc/php5/conf.d/v8js.ini`
-* `$ php drivers/php/wappalyzer.php http://wappalyzer.com`
+
+Runnning it from the command line:
+
+`$ php drivers/php/wappalyzer.php http://wappalyzer.com`
+
+Running it inside a PHP script:
+
+```php
+require('DriverException.php');
+require('Driver.php');
+
+$driver = new Driver;
+
+$detectedApps = $driver->analyze($url);
+```
 
 
 Screenshot
