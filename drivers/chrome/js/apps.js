@@ -106,6 +106,8 @@
 			headers: { 'Server': /(Apache($|[^-])|HTTPD)/i } },
 		'Apache JSPWiki': {
 			cats: [ 8 ],
+			url: /wiki\.jsp/,
+			script: /jspwiki/,
 			html: /<html[^>]* xmlns:jspwiki=/i
 		},
 		'Apache Tomcat': {
@@ -902,7 +904,8 @@
 		},
 		'Mixpanel': {
 			cats: [ 10 ],
-			script: /api\.mixpanel\.com\/track/
+			script: /api\.mixpanel\.com\/track/,
+			env: /^Mixpanel/
 		},
 		'MochiKit': {
 			cats: [ 12 ],
@@ -1232,8 +1235,14 @@
 		},
 		'Ruby': {
 			cats: [ 27 ],
-			headers: { 'Server': /(Mongrel|WEBrick|Ruby|mod_rails|mod_rack|Phusion.Passenger)/i, 'X-Powered-By': /(mod_rails|mod_rack|Phusion.Passenger)/i },
-			meta: { 'csrf-param': /authenticity_token	/i }
+			headers: { 'Server': /(Mongrel|WEBrick|Ruby)/i }
+		},
+		'Ruby on Rails': {
+			cats: [ 18 ],
+			script: /\/assets\/application\-[a-z0-9]{32}\/\.js/,
+			meta: { 'csrf-param': /authenticity_token/ },
+			headers: { 'Server': /(mod_rails|mod_rack|Phusion.Passenger)/i, 'X-Powered-By': /(mod_rails|mod_rack|Phusion.Passenger)/i },
+			implies: [ 'Ruby' ]
 		},
 		'S.Builder': {
 			cats: [ 1 ],

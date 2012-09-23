@@ -141,7 +141,7 @@ var wappalyzer = wappalyzer || (function() {
 										if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
 											content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-											if ( content && w.apps[app].meta[meta].test(content[2]) ) {
+											if ( content && content.length == 4 && w.apps[app].meta[meta].test(content[2]) ) {
 												apps.push(app);
 
 												break;

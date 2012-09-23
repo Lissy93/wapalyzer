@@ -1,10 +1,20 @@
 "use strict";
 
 (function() {
-	addEventListener('DOMContentLoaded', onLoad, false);
+	addEventListener('DOMContentLoaded', function() {
+		removeEventListener('DOMContentLoaded', onLoad, false);
+
+		onLoad();
+	}, false);
 
 	function onLoad() {
 		if ( content.document.contentType != 'text/html' ) { return };
+
+		content.document.documentElement.addEventListener('load', function() {
+			sendAsyncMessage('wappalyzer', { env: Object.keys(content.wrappedJSObject) });
+
+			removeEventListener('load', onLoad, false);
+		}, true);
 
 		// HTML
 		var html = content.document.documentElement.outerHTML;
@@ -24,7 +34,5 @@
 			env:      Object.keys(content.wrappedJSObject),
 			url:      content.location.href
 			});
-
-		removeEventListener('DOMContentLoaded', onLoad, false);
 	}
 })();
