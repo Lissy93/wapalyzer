@@ -103,7 +103,7 @@ Running Wappalyzer inside a PHP script:
 require('WappalyzerException.php');
 require('Wappalyzer.php');
 
-$wappalyzer = new Wappaylzer($url);
+$wappalyzer = new Wappalyzer($url);
 
 $detectedApps = $wappalyzer->analyze();
 ```
