@@ -151,7 +151,7 @@
 								;
 
 							menuItem.bind('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w]/g, '') });
+								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') });
 							});
 
 							$('#wappalyzer-menu').append(menuItem);

@@ -1,6 +1,8 @@
 "use strict";
 
 (function() {
+	var lastEnv = null;
+
 	addEventListener('DOMContentLoaded', function() {
 		removeEventListener('DOMContentLoaded', onLoad, false);
 
@@ -8,10 +10,16 @@
 	}, false);
 
 	function onLoad() {
-		if ( content.document.contentType != 'text/html' ) { return };
+		if ( content.document.contentType != 'text/html' ) { return; }
 
 		content.document.documentElement.addEventListener('load', function() {
-			sendAsyncMessage('wappalyzer', { env: Object.keys(content.wrappedJSObject) });
+			var env = Object.keys(content.wrappedJSObject);
+
+			if ( env.join() !== lastEnv ) {
+				lastEnv = env.join();
+
+				sendAsyncMessage('wappalyzer', { env: Object.keys(content.wrappedJSObject) });
+			}
 
 			removeEventListener('load', onLoad, true);
 		}, true);
@@ -31,7 +39,6 @@
 		sendAsyncMessage('wappalyzer', {
 			hostname: content.location.hostname,
 			html:     html,
-			env:      Object.keys(content.wrappedJSObject),
 			url:      content.location.href
 			});
 	}

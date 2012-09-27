@@ -87,7 +87,7 @@ want to port Wappalyzer to a new platform.
 **PHP**
 
 The PHP driver requires the [V8js](http://php.net/manual/en/book.v8js.php) class. Installing V8js 
-using PECL on Debian Linux or Ubuntu should be very straight forward:
+using [PECL](http://pecl.php.net/) on Debian Linux or Ubuntu should be very straight forward:
 
 * `# aptitude install php5-dev php-pear libv8-dev`
 * `# pecl install channel://pecl.php.net/v8js-0.1.3`
