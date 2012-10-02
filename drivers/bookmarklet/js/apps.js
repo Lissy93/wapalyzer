@@ -1526,7 +1526,7 @@
 		},
 		'Volusion': {
 			cats: [ 6 ],
-			html: /\/v\/vspfiles\/.+\/css\/.+\.css/
+			html: /\/v\/vspfiles(\/.)*\/css\/.+\.css/
 		},
 		'Vox': {
 			cats: [ 11 ],
