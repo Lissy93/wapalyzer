@@ -1048,8 +1048,8 @@
 		},
 		'Outbrain': { 
 		    cats:    [ 5 ],
-		    html: 	/var OB_langJS = 'http:\/\/widgets.outbrain.com\/lang_/,
-		    script: /http:\/\/widgets.outbrain.com\/outbrain.js/, 
+		    html: 	/var OB_langJS = 'http\:\/\/widgets\.outbrain\.com\/lang_/,
+		    script: /http\:\/\/widgets\.outbrain\.com\/outbrain\.js/,
 		    env:     /OutbrainPermaLink/
 	    },
 		'OXID eShop': {
