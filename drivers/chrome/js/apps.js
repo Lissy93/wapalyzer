@@ -363,6 +363,11 @@
 			env: /CE2/,
 			script: /cetrk\.com\/pages\/scripts\/[0-9]+\/[0-9]+\.js/
 		},
+		'Cross Pixel': {
+			cats: [ 10 ],
+			env: /^crsspxl$/,
+			script: /http\:\/\/tag\.crsspxl\.com\/s1\.js/i
+		},
 		'CS Cart': {
 			cats: [ 6 ],
 			env: /fn_compare_strings/i,
