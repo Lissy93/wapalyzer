@@ -1163,6 +1163,10 @@
 			cats: [ 19 ],
 			html: /<iframe src="http:\/\/pluraserver\.com/
 		},
+		'Po.st': {
+			cats: [ 5 ],
+			env: /^pwidget_config$/
+		},		
 		'Posterous': {
 			cats: [ 1, 11 ],
 			html: /<div class=("|')posterous/i,
