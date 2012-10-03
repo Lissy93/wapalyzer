@@ -56,6 +56,11 @@
 			cats: [ 1 ],
 			meta: { 'generator': /2z project/i }
 		},
+		'Accessible Portal': { 
+		    cats:    [ 1 ],
+		    meta:    { 'generator': /Accessible Portal/i },
+		    implies: [ 'PHP' ]
+	    },
 		'AddThis': {
 			cats: [ 5 ],
 			script: /addthis\.com\/js/,
