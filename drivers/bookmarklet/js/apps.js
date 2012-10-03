@@ -1393,7 +1393,7 @@
 			html: /Shopsystem von <a href="http:\/\/www\.store-systems\.de"|\.mws_boxTop/
 		},
 		'SublimeVideo': { 
-		    cats:    [ 14, 31 ],
+		    cats:    [ 14 ],
 		    script:  /http\:\/\/cdn\.sublimevideo\.net\/js\/[a-z0-9]+\.js/,
 		    env:     /^sublimevideo$/
 	    },
