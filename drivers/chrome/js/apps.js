@@ -880,6 +880,10 @@
 			cats: [ 1 ],
 			meta: { 'generator': /MaxSite CMS/i }
 		},
+		'MediaElement.js': {
+			cats: [ 14 ],
+			env: /^mejs$/
+		},
 		'MediaWiki': {
 			cats: [ 8 ],
 			meta: { 'generator': /MediaWiki/i },
