@@ -1053,7 +1053,7 @@
 			cats: [ 6 ],
 			html: /<body onload=("|')window\.defaultStatus='oscss templates';("|')/i
 		},
-		'Outbrain': { 
+		'Outbrain': {
 		    cats:    [ 5 ],
 		    html: 	/var OB_langJS = 'http\:\/\/widgets\.outbrain\.com\/lang_/,
 		    script: /http\:\/\/widgets\.outbrain\.com\/outbrain\.js/,
@@ -1193,6 +1193,11 @@
 		'Quick.Cart': {
 			cats: [ 6 ],
 			html: /<a href="[^>]+opensolution\.org\/">Powered by/i
+		},
+		'Rack::Cache': {
+			cats: [ 23 ],
+			headers: { 'X-Rack-Cache': /.+/ },
+			implies: [ 'Ruby' ]
 		},
 		'Raphael': {
 			cats: [ 25 ],
@@ -1374,7 +1379,7 @@
 			cats: [ 6 ],
 			html: /Shopsystem von <a href="http:\/\/www\.store-systems\.de"|\.mws_boxTop/
 		},
-		'SublimeVideo': { 
+		'SublimeVideo': {
 		    cats:    [ 14, 31 ],
 		    script:  /http\:\/\/cdn\.sublimevideo\.net\/js\/[a-z0-9]+\.js/,
 		    env:     /^sublimevideo$/
