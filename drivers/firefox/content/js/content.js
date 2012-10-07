@@ -51,18 +51,11 @@
 		sendAsyncMessage('wappalyzer', {
 			action:   'analyze',
 			hostname: content.location.hostname,
-<<<<<<< HEAD
 			url:      content.location.href,
 			analyze:  {
 				html: html,
 				env:  prefs.analyzeJavaScript ? Object.keys(content.wrappedJSObject) : []
 				}
 			});
-=======
-			html:     html,
-			url:      content.location.href,
-			env: 	  Object.keys(content.wrappedJSObject)
-		});
->>>>>>> d21c37b881b38ba517900c5411a70a1a264b70ec
 	}
 })();
