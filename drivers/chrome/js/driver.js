@@ -96,7 +96,7 @@
 		},
 
 		goToURL: function(args) {
-			window.open(args.url);
+			window.open(args.url + '?utm_source=firefox&utm_medium=extension&utm_campaign=extensions');
 		},
 
 		/**

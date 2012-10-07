@@ -39,12 +39,12 @@
 
 				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
 					// Load jQuery
-					(function () {
-						Cc['@mozilla.org/moz/jssubscript-loader;1'].getService(Ci.mozIJSSubScriptLoader).loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js');
-					})();
+					Cc['@mozilla.org/moz/jssubscript-loader;1'].getService(Ci.mozIJSSubScriptLoader).loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js');
 
 					// Preferences
 					prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.wappalyzer.');
+
+					prefs.addObserver('', w.driver, false);
 
 					container();
 
@@ -75,6 +75,8 @@
 
 						// Get response headers
 						onStateChange: function(progress, request, flags, status) {
+							if ( !prefs.getBoolPref('analyzeHeaders') ) { return; }
+
 							if ( request != null && flags & Ci.nsIWebProgressListener.STATE_STOP ) {
 								if ( request.nsIHttpChannel && request.contentType == 'text/html' ) {
 									if ( progress.currentURI && request.name == progress.currentURI.spec ) {
@@ -99,6 +101,20 @@
 
 			window.addEventListener('load',   handler,        false);
 			window.addEventListener('unload', w.driver.track, false);
+		},
+
+		// Observe preference changes
+		observe: function(subject, topic, data) {
+			if ( topic != 'nsPref:changed' ) { return; }
+
+			switch(data) {
+				case 'addonBar':
+					container();
+
+					break;
+			}
+
+			w.driver.displayApps();
 		},
 
 		/**
@@ -203,7 +219,7 @@
 		 * Go to URL
 		 */
 		goToURL: function(args) {
-			gBrowser.selectedTab = gBrowser.addTab(args.url);
+			gBrowser.selectedTab = gBrowser.addTab(args.url + '?utm_source=firefox&utm_medium=extension&utm_campaign=extensions');
 		},
 
 		/**
@@ -237,7 +253,19 @@
 	function content(msg) {
 		w.log('content.js');
 
-		w.analyze(msg.json.hostname, msg.json.url, { html: msg.json.html, env: msg.json.env });
+		switch ( msg.json.action ) {
+			case 'analyze':
+				w.analyze(msg.json.hostname, msg.json.url, msg.json.analyze);
+
+				break;
+			case 'get prefs':
+				return {
+					analyzeJavaScript: prefs.getBoolPref('analyzeJavaScript'),
+					analyzeOnLoad:     prefs.getBoolPref('analyzeOnLoad')
+					};
+
+				break;
+		}
 
 		msg = null;
 	}
@@ -249,11 +277,11 @@
 		if ( prefs.getBoolPref('addonBar') ) {
 			$('#wappalyzer-container').prependTo($('#wappalyzer-addonbar'));
 
-			$('#wappalyzer-addonbar').show();
+			$('#wappalyzer-addonbar').attr('collapsed', 'false');
 		} else {
 			$('#wappalyzer-container').prependTo($('#urlbar-icons'));
 
-			$('#wappalyzer-addonbar').hide();
+			$('#wappalyzer-addonbar').attr('collapsed', 'true');
 		}
 	}
 
@@ -264,33 +292,9 @@
 		// Menu items
 		var prefix = '#wappalyzer-menu-';
 
-		$(prefix + 'icons')
-			.attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false')
-			.bind('command', function() {
-				prefs.setBoolPref('showIcons', !prefs.getBoolPref('showIcons'));
-
-				$(this).attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false');
-
-				w.driver.displayApps();
-			});
-
 		$(prefix + 'preferences'  )
 			.bind('command', function() {
 				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
-			});
-
-		$(prefix + 'addonbar'  )
-			.attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false')
-			.bind('command', function() {
-				prefs.setBoolPref('addonBar', !prefs.getBoolPref('addonBar'));
-
-				$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
-
-				container();
-
-				if ( prefs.getBoolPref('addonBar') ) {
-					alert(strings.getString('wappalyzer.addonBar'));
-				}
 			});
 
 		$(prefix + 'feedback')

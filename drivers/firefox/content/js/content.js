@@ -1,10 +1,15 @@
 "use strict";
 
 (function() {
-	var lastEnv = null;
+	var
+		lastEnv = null,
+		prefs   = {}
+		;
 
 	addEventListener('DOMContentLoaded', function() {
 		removeEventListener('DOMContentLoaded', onLoad, false);
+
+		prefs = sendSyncMessage('wappalyzer', { action: 'get prefs' })[0];
 
 		onLoad();
 	}, false);
@@ -12,17 +17,24 @@
 	function onLoad() {
 		if ( content.document.contentType != 'text/html' ) { return; }
 
-		content.document.documentElement.addEventListener('load', function() {
-			var env = Object.keys(content.wrappedJSObject);
+		if ( prefs.analyzeOnLoad ) {
+			content.document.documentElement.addEventListener('load', function() {
+				var env = Object.keys(content.wrappedJSObject);
 
-			if ( env.join() !== lastEnv ) {
-				lastEnv = env.join();
+				if ( env.join() !== lastEnv ) {
+					lastEnv = env.join();
 
-				sendAsyncMessage('wappalyzer', { env: Object.keys(content.wrappedJSObject) });
-			}
+					sendAsyncMessage('wappalyzer', {
+						action: 'analyze',
+						analyze: {
+							env: Object.keys(content.wrappedJSObject)
+							}
+						});
+				}
 
-			removeEventListener('load', onLoad, true);
-		}, true);
+				removeEventListener('load', onLoad, true);
+			}, true);
+		}
 
 		// HTML
 		var html = content.document.documentElement.outerHTML;
@@ -37,9 +49,13 @@
 		}
 
 		sendAsyncMessage('wappalyzer', {
+			action:   'analyze',
 			hostname: content.location.hostname,
-			html:     html,
-			url:      content.location.href
+			url:      content.location.href,
+			analyze:  {
+				html: html,
+				env:  prefs.analyzeJavaScript ? Object.keys(content.wrappedJSObject) : []
+				}
 			});
 	}
 })();
