@@ -56,7 +56,7 @@
 			cats: [ 1 ],
 			meta: { 'generator': /2z project/i }
 		},
-		'Accessible Portal': { 
+		'Accessible Portal': {
 		    cats:    [ 1 ],
 		    meta:    { 'generator': /Accessible Portal/i },
 		    implies: [ 'PHP' ]
@@ -1171,7 +1171,7 @@
 		'Po.st': {
 			cats: [ 5 ],
 			env: /^pwidget_config$/
-		},		
+		},
 		'Posterous': {
 			cats: [ 1, 11 ],
 			html: /<div class=("|')posterous/i,
@@ -1397,13 +1397,8 @@
 			cats: [ 6 ],
 			html: /Shopsystem von <a href="http:\/\/www\.store-systems\.de"|\.mws_boxTop/
 		},
-<<<<<<< HEAD
 		'SublimeVideo': {
-		    cats:    [ 14, 31 ],
-=======
-		'SublimeVideo': { 
 		    cats:    [ 14 ],
->>>>>>> d21c37b881b38ba517900c5411a70a1a264b70ec
 		    script:  /http\:\/\/cdn\.sublimevideo\.net\/js\/[a-z0-9]+\.js/,
 		    env:     /^sublimevideo$/
 	    },
