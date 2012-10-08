@@ -1212,7 +1212,7 @@
 			cats: [ 6 ],
 			html: /<a href="[^>]+opensolution\.org\/">Powered by/i
 		},
-		'Rack::Cache': {
+		'RackCache': {
 			cats: [ 23 ],
 			headers: { 'X-Rack-Cache': /.+/ },
 			implies: [ 'Ruby' ]
