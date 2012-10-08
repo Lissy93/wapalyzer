@@ -53,14 +53,14 @@ var wappalyzer = {};
 						response.tabCache.appsDetected.map(function(appName) {
 							html =
 								'<div class="detected-app">' +
-									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '">' +
+									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
 										'<span class="label">' + appName + '</span>' +
 									'</a>';
 
 							wappalyzer.apps[appName].cats.map(function(cat) {
 								html +=
-									'<a target="_blank" href="http://wappalyzer.com/categories/' + wappalyzer.categories[cat] + '">' +
+									'<a target="_blank" href="http://wappalyzer.com/categories/' + wappalyzer.categories[cat] + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions">' +
 										'<span class="category">' + chrome.i18n.getMessage('categoryName' + cat) + '</span>' +
 									'</a>';
 							});

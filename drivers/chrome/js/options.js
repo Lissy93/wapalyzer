@@ -7,7 +7,7 @@ $(function() {
 
 			$('#github'    ).click(function() { window.open(wappalyzer.config.githubURL);  });
 			$('#twitter'   ).click(function() { window.open(wappalyzer.config.twitterURL); });
-			$('#wappalyzer').click(function() { window.open(wappalyzer.config.websiteURL); });
+			$('#wappalyzer').click(function() { window.open(wappalyzer.config.websiteURL + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions'); });
 
 			$('#options-save').click(options.save);
 		},
