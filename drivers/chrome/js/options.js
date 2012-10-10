@@ -23,6 +23,10 @@ $(function() {
 				$('#option-auto-analyze-headers').attr('checked', 'checked');
 			}
 
+			if ( parseInt(options.opts.upgradeMessage) ) {
+				$('#option-upgrade-message').attr('checked', 'checked');
+			}
+
 			if ( parseInt(options.opts.tracking) ) {
 				$('#option-tracking').attr('checked', 'checked');
 			}
@@ -30,6 +34,7 @@ $(function() {
 
 		save: function() {
 			options.opts.autoAnalyzeHeaders = $('#option-auto-analyze-headers').is(':checked') ? 1 : 0;
+			options.opts.upgradeMessage     = $('#option-upgrade-message'     ).is(':checked') ? 1 : 0;
 			options.opts.tracking           = $('#option-tracking'            ).is(':checked') ? 1 : 0;
 
 			for ( option in options.opts ) {

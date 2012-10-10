@@ -34,7 +34,7 @@
 					for ( option in defaults ) {
 						localStorage[option] = defaults[option];
 					}
-				} else if ( version !== localStorage['version'] ) {
+				} else if ( version !== localStorage['version'] && localStorage['upgradeMessage'] ) {
 					w.config.upgraded = true;
 				}
 
