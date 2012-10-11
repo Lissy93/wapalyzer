@@ -109,6 +109,11 @@ $detectedApps = $wappalyzer->analyze();
 ```
 
 
+**Mozilla Jetpack**
+
+Work in progress, experimental. See https://wiki.mozilla.org/Jetpack.
+
+
 Screenshot
 ----------
 
