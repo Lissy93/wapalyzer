@@ -2,12 +2,17 @@
 
 (function() {
 	var
-		lastEnv = null,
-		prefs   = {}
+		data    = {},
+		lastEnv = [],
+		prefs   = null
 		;
 
 	addEventListener('DOMContentLoaded', function() {
 		removeEventListener('DOMContentLoaded', onLoad, false);
+
+		if ( prefs != null || content.document.contentType != 'text/html' ) {
+			return;
+		}
 
 		prefs = sendSyncMessage('wappalyzer', { action: 'get prefs' })[0];
 
@@ -15,20 +20,19 @@
 	}, false);
 
 	function onLoad() {
-		if ( content.document.contentType != 'text/html' ) { return; }
-
-		if ( prefs.analyzeOnLoad ) {
+		if ( prefs.analyzeJavaScript && prefs.analyzeOnLoad ) {
 			content.document.documentElement.addEventListener('load', function() {
 				var env = Object.keys(content.wrappedJSObject);
 
-				if ( env.join() !== lastEnv ) {
-					lastEnv = env.join();
+				// Only analyze new variables
+				data = { env: env.filter(function(i) { return lastEnv.indexOf(i) === -1; }) };
 
+				lastEnv = env;
+
+				if ( data.env.length ) {
 					sendAsyncMessage('wappalyzer', {
 						action: 'analyze',
-						analyze: {
-							env: Object.keys(content.wrappedJSObject)
-							}
+						analyze: data
 						});
 				}
 
@@ -48,14 +52,17 @@
 			html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 		}
 
+		data = { html: html };
+
+		if ( prefs.analyzeJavaScript ) {
+			data.env = Object.keys(content.wrappedJSObject);
+		}
+
 		sendAsyncMessage('wappalyzer', {
 			action:   'analyze',
 			hostname: content.location.hostname,
 			url:      content.location.href,
-			analyze:  {
-				html: html,
-				env:  prefs.analyzeJavaScript ? Object.keys(content.wrappedJSObject) : []
-				}
+			analyze:  data
 			});
 	}
 })();
