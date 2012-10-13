@@ -23,6 +23,22 @@
 
 			chrome.browserAction.setBadgeBackgroundColor({ color: [255, 102, 0, 255] });
 
+			// Load apps.json
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', 'apps.json', true);
+
+			xhr.overrideMimeType('application/json');
+
+			xhr.onload = function() {
+				var json = JSON.parse(xhr.responseText);
+
+				w.categories = json.categories;
+				w.apps       = json.apps;
+			};
+
+			xhr.send(null);
+
 			// Version check
 			try {
 				var version = chrome.app.getDetails().version;
@@ -145,17 +161,17 @@
 		ping: function() {
 			if ( Object.keys(w.ping.hostnames).length && localStorage['tracking'] ) {
 				// Make POST request
-				var request = new XMLHttpRequest();
+				var xhr = new XMLHttpRequest();
 
-				request.open('POST', w.config.websiteURL + 'ping/', true);
+				xhr.open('POST', w.config.websiteURL + 'ping/', true);
 
-				request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-				request.onreadystatechange = function(e) {
+				xhr.onreadystatechange = function(e) {
 					if ( request.readyState == 4 ) { w.log('w.driver.ping: status ' + request.status); }
 				};
 
-				request.send('json=' + encodeURIComponent(JSON.stringify(w.ping)));
+				xhr.send('json=' + encodeURIComponent(JSON.stringify(w.ping)));
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 

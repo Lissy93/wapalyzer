@@ -105,17 +105,24 @@ var wappalyzer = wappalyzer || (function() {
 			if ( data ) {
 				for ( app in w.apps ) {
 					for ( type in w.apps[app] ) {
-						if ( w.detected[url].indexOf(app) !== -1 || apps.indexOf(app) !== -1 ) { continue; } // Skip if the app has already been detected
+						// Skip if the app has already been detected
+						if ( w.detected[url].indexOf(app) !== -1 || apps.indexOf(app) !== -1 ) {
+							continue;
+						}
 
 						switch ( type ) {
 							case 'url':
-								if ( w.apps[app].url.test(url) ) { apps.push(app); }
+								regex = new RegExp(w.apps[app][type], 'i');
+
+								if ( regex.test(url) ) { apps.push(app); }
 
 								break;
 							case 'html':
 								if ( data[type] == null ) { break; }
 
-								if ( w.apps[app][type].test(data[type]) ) { apps.push(app); }
+								regex = new RegExp(w.apps[app][type], 'i');
+
+								if ( regex.test(data[type]) ) { apps.push(app); }
 
 								break;
 							case 'script':
@@ -156,7 +163,9 @@ var wappalyzer = wappalyzer || (function() {
 								if ( data[type] == null ) { break; }
 
 								for ( header in w.apps[app].headers ) {
-									if ( data[type][header] != null && w.apps[app][type][header].test(data[type][header]) ) {
+									regex = new RegExp(w.apps[app][type][header], 'i');
+
+									if ( data[type][header] != null && regex.test(data[type][header]) ) {
 										apps.push(app);
 
 										break;
@@ -167,8 +176,10 @@ var wappalyzer = wappalyzer || (function() {
 							case 'env':
 								if ( data[type] == null ) { break; }
 
+								regex = RegExp(w.apps[app][type], 'i');
+
 								for ( i in data[type] ) {
-									if ( w.apps[app][type].test(data[type][i]) ) {
+									if ( regex.test(data[type][i]) ) {
 										apps.push(app);
 
 										break;

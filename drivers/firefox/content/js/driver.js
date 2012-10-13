@@ -40,12 +40,11 @@
 				// Read apps.json
 				var xhr = Cc['@mozilla.org/xmlextras/xmlhttprequest;1'].createInstance(Ci.nsIXMLHttpRequest);
 
-				//xhr.overrideMimeType('text/plain');
 				xhr.overrideMimeType('application/json');
 
 				xhr.open('GET', 'chrome://wappalyzer/content/apps.json', true);
 
-				xhr.onload = function(e) {
+				xhr.onload = function() {
 					var json = JSON.parse(xhr.responseText);
 
 					w.categories = json.categories;
