@@ -17,22 +17,22 @@ Contributing
 
 **Adding a new application**
 
-* Edit `share/apps.js`
+* Edit `share/apps.json`
 * Add a 16x16 PNG image to `share/images/icons` matching the application name.
 * Provide the URL to the application's website when submitting a pull request.
 
 Example:
 
 ```javascript
-'Application Name': { 
-	cats:    [ 1 ], 
-	headers: { 'X-Powered-By': /Application Name/i },
-	url:     /.+\.application-name\.com/,
-	html:    /<link[^>]application-name\.css/, 
-	meta:    { 'generator': /Application Name/i },
-	script:  /application-name\.js/,
-	env:     /ApplicationName/,
-	implies: [ 'PHP' ]
+"Application Name": { 
+	cats:    [ "1" ], 
+	headers: { "X-Powered-By": "Application Name" },
+	url:     ".+\\.application-name\\.com",
+	html:    "<link[^>]application-name\\.css", 
+	meta:    { "generator": "Application Name" },
+	script:  "application-name\\.js",
+	env:     "ApplicationName",
+	implies: [ "PHP" ]
 	}
 ```
 

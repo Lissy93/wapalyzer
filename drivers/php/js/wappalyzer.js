@@ -28,7 +28,8 @@ var wappalyzer = wappalyzer || (function() {
 	 * Main script
 	 */
 	var w = {
-		// Cache detected applications per URL
+		apps:     null,
+		cats:     null,
 		ping:     {},
 		detected: [],
 
@@ -69,12 +70,6 @@ var wappalyzer = wappalyzer || (function() {
 				return;
 			}
 
-			if ( w.apps == null || w.categories == null ) {
-				w.log('apps.js not loaded, exiting');
-
-				return;
-			}
-
 			// Initialize driver
 			driver('init', function() {
 				if ( w.config.firstRun ) {
@@ -96,6 +91,12 @@ var wappalyzer = wappalyzer || (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			w.log('w.analyze');
+
+			if ( w.apps == null || w.categories == null ) {
+				w.log('apps.json not loaded');
+
+				return;
+			}
 
 			var i, app, type, regex, match, content, meta, header, apps = [];
 

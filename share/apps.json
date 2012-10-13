@@ -1,14 +1,14 @@
 {
 	"categories": {
-		 "1": "cms",
-		 "2": "message-boards",
-		 "3": "database-managers",
-		 "4": "documentation-tools",
-		 "5": "widgets",
-		 "6": "web-shops",
-		 "7": "photo-galleries",
-		 "8": "wikis",
-		 "9": "hosting-panels",
+		"1": "cms",
+		"2": "message-boards",
+		"3": "database-managers",
+		"4": "documentation-tools",
+		"5": "widgets",
+		"6": "web-shops",
+		"7": "photo-galleries",
+		"8": "wikis",
+		"9": "hosting-panels",
 		"10": "analytics",
 		"11": "blogs",
 		"12": "javascript-frameworks",
@@ -50,10 +50,10 @@
 			"meta": { "generator": "2z project" }
 		},
 		"Accessible Portal": {
-		    "cats": [ "1" ],
-		    "meta": { "generator": "Accessible Portal" },
-		    "implies": [ "PHP" ]
-	    },
+			"cats": [ "1" ],
+			"meta": { "generator": "Accessible Portal" },
+			"implies": [ "PHP" ]
+		},
 		"AddThis": {
 			"cats": [ "5" ],
 			"script": "addthis\\.com/js",
@@ -182,7 +182,7 @@
 		"Blogger": {
 			"cats": [ "11" ],
 			"meta": { "generator": "blogger"
-		},
+			},
 			"url": "^(www.)?.+\\.blogspot\\.com"
 		},
 		"BrowserCMS": {
@@ -995,7 +995,7 @@
 			"headers": { "Server": "nginx" }
 		},
 		"node.js": {
-			"cats": [ "27" ],
+			"cats": [ "27" ]
 		},
 		"NOIX": {
 			"cats": [ "19" ],
@@ -1053,11 +1053,11 @@
 			"html": "<body onload=\\\"window\\.defaultStatus='oscss templates';\\\""
 		},
 		"Outbrain": {
-		    "cats": [ "5" ],
-		    "html": "var OB_langJS = 'http://widgets\\.outbrain\\.com/lang_",
-		    "script": "http://widgets\\.outbrain\\.com/outbrain\\.js",
-		    "env": "^OutbrainPermaLink$"
-	    },
+			"cats": [ "5" ],
+			"html": "var OB_langJS = 'http://widgets\\.outbrain\\.com/lang_",
+			"script": "http://widgets\\.outbrain\\.com/outbrain\\.js",
+			"env": "^OutbrainPermaLink$"
+		},
 		"OXID eShop": {
 			"cats": [ "6" ],
 			"html": "<!--.*OXID eShop",
@@ -1382,10 +1382,10 @@
 			"html": "Shopsystem von <a href=\\\"http://www\\.store-systems\\.de\\\"|\\.mws_boxTop"
 		},
 		"SublimeVideo": {
-		    "cats": [ "14" ],
-		    "script": "http://cdn\\.sublimevideo\\.net/js/[a-z0-9]+\\.js",
-		    "env": "^sublimevideo$"
-	    },
+			"cats": [ "14" ],
+			"script": "http://cdn\\.sublimevideo\\.net/js/[a-z0-9]+\\.js",
+			"env": "^sublimevideo$"
+		},
 		"SWFObject": {
 			"cats": [ "19" ],
 			"script": "swfobject.*\\.js",
@@ -1536,7 +1536,7 @@
 		"VIVVO": {
 			"cats": [ "1" ],
 			"headers": { "Set-Cookie": "VivvoSessionId",
-			"env": "^vivvo" }
+				"env": "^vivvo" }
 		},
 		"Volusion": {
 			"cats": [ "6" ],
@@ -1601,7 +1601,7 @@
 		"WikkaWiki": {
 			"cats": [ "8" ],
 			"meta": { "generator": "WikkaWiki"
-		},
+			},
 			"html": "Powered by <a href=\\\"[^>]+WikkaWiki"
 		},
 		"Windows Server": {

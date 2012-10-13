@@ -37,6 +37,23 @@
 
 				strings = document.getElementById('wappalyzer-strings');
 
+				// Read apps.json
+				var xhr = Cc['@mozilla.org/xmlextras/xmlhttprequest;1'].createInstance(Ci.nsIXMLHttpRequest);
+
+				//xhr.overrideMimeType('text/plain');
+				xhr.overrideMimeType('application/json');
+
+				xhr.open('GET', 'chrome://wappalyzer/content/apps.json', true);
+
+				xhr.onload = function(e) {
+					var json = JSON.parse(xhr.responseText);
+
+					w.categories = json.categories;
+					w.apps       = json.apps;
+				};
+
+				xhr.send(null);
+
 				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
 					// Load jQuery
 					Cc['@mozilla.org/moz/jssubscript-loader;1'].getService(Ci.mozIJSSubScriptLoader).loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js');
