@@ -87,7 +87,11 @@
 
 							break;
 						case 'get_apps':
-							sendResponse({ tabCache: tabCache[request.tab.id] });
+							sendResponse({
+								tabCache:   tabCache[request.tab.id],
+								apps:       w.apps,
+								categories: w.categories
+								});
 
 							break;
 					}
@@ -141,7 +145,7 @@
 						appName = w.detected[tab.url][i];
 
 						w.apps[appName].cats.map(function(cat) {
-							if ( cat === match && !found ) {
+							if ( cat == match && !found ) {
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 
 								found = true;
@@ -153,7 +157,6 @@
 				chrome.browserAction.setBadgeText({ tabId: tab.id, text: count });
 			};
 		},
-
 
 		/**
 		 * Anonymously track detected applications for research purposes

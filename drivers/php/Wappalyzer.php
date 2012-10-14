@@ -12,6 +12,8 @@ class Wappalyzer
 
 	protected
 		$v8,
+		$apps,
+		$categories,
 		$host,
 		$url,
 		$html,
@@ -23,9 +25,16 @@ class Wappalyzer
 	 */
 	public function __construct($url)
 	{
+		chdir(dirname(__FILE__));
+
 		$this->v8 = new V8Js();
 
 		$this->url = $url;
+
+		$json = json_decode(file_get_contents('apps.json'));
+
+		$this->apps       = $json->apps;
+		$this->categories = $json->categories;
 	}
 
 	/**
@@ -35,7 +44,7 @@ class Wappalyzer
 	public function analyze()
 	{
 		try {
-			$this->load(array('wappalyzer.js', 'apps.js', 'driver.js'));
+			$this->load(array('wappalyzer.js', 'driver.js'));
 
 			$result = $this->curl($this->url);
 
@@ -47,6 +56,8 @@ class Wappalyzer
 				));
 
 			return $this->v8->executeString('
+				w.apps         = ' . json_encode($this->apps) . ';
+				w.categories   = ' . json_encode($this->categories) . ';
 				w.driver.debug = ' . ( $this->debug ? 'true' : 'false' ) . ';
 				w.driver.data  = ' . $json . ';
 

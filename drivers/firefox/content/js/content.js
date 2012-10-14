@@ -4,37 +4,37 @@
 	var
 		data    = {},
 		lastEnv = [],
-		prefs   = null
+		prefs   = sendSyncMessage('wappalyzer', { action: 'get prefs' })[0]
 		;
 
 	addEventListener('DOMContentLoaded', function() {
 		removeEventListener('DOMContentLoaded', onLoad, false);
 
-		if ( prefs != null || content.document.contentType != 'text/html' ) {
-			return;
-		}
-
-		prefs = sendSyncMessage('wappalyzer', { action: 'get prefs' })[0];
-
 		onLoad();
 	}, false);
 
 	function onLoad() {
+		if ( content.document.contentType != 'text/html' ) {
+			return;
+		}
+
 		if ( prefs.analyzeJavaScript && prefs.analyzeOnLoad ) {
 			content.document.documentElement.addEventListener('load', function() {
-				var env = Object.keys(content.wrappedJSObject);
-
-				// Only analyze new variables
-				data = { env: env.filter(function(i) { return lastEnv.indexOf(i) === -1; }) };
+				var env = Object.keys(content.wrappedJSObject).slice(0, 500);
 
 				lastEnv = env;
 
-				if ( data.env.length ) {
+				// Only analyze new variables
+				env = { env: env.filter(function(i) { return lastEnv.indexOf(i) === -1; }) };
+
+				if ( env.length ) {
 					sendAsyncMessage('wappalyzer', {
 						action: 'analyze',
-						analyze: data
+						analyze: { env: env }
 						});
 				}
+
+				env = null;
 
 				removeEventListener('load', onLoad, true);
 			}, true);
@@ -55,7 +55,9 @@
 		data = { html: html };
 
 		if ( prefs.analyzeJavaScript ) {
-			data.env = Object.keys(content.wrappedJSObject);
+			data.env = Object.keys(content.wrappedJSObject).slice(0, 500);
+
+			lastEnv = data.env;
 		}
 
 		sendAsyncMessage('wappalyzer', {
@@ -64,5 +66,7 @@
 			url:      content.location.href,
 			analyze:  data
 			});
+
+		data = null;
 	}
 })();

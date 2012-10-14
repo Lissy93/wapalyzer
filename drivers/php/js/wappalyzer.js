@@ -105,7 +105,7 @@ var wappalyzer = wappalyzer || (function() {
 			}
 
 			var
-				i, app, type, regex, match, content, meta, header,
+				i, app, type, regex, regexMeta, regexScript, match, content, meta, header,
 				profiler = {
 					regexCount: 0,
 					startTime:  ( new Date ).getTime()
@@ -113,86 +113,88 @@ var wappalyzer = wappalyzer || (function() {
 				apps    = []
 				;
 
+			appLoop:
 			for ( app in w.apps ) {
 				// Skip if the app has already been detected
 				if ( w.detected[url].indexOf(app) !== -1 || apps.indexOf(app) !== -1 ) {
 					continue;
 				}
 
-				next:
-
 				for ( type in w.apps[app] ) {
-					if ( data[type] == null ) {
-						continue;
-					}
-
 					switch ( type ) {
 						case 'url':
-							regex = new RegExp(w.apps[app][type], 'i');
+							regex = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
 
 							profiler.regexCount ++;
 
 							if ( regex.test(url) ) {
 								apps.push(app);
 
-								break next;
+								continue appLoop;
 							}
 
 							break;
 						case 'html':
-							regex = new RegExp(w.apps[app][type], 'i');
+							if ( data[type] == null ) {
+								break;
+							}
+
+							regex = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
 
 							profiler.regexCount ++;
 
 							if ( regex.test(data[type]) ) {
 								apps.push(app);
 
-								break next;
+								continue appLoop;
 							}
 
 							break;
 						case 'script':
-							if ( data['html'] == null ) {
+							if ( data.html == null ) {
 								break;
 							}
 
-							regex = new RegExp(w.apps[app][type], 'i');
+							regex       = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
+							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)\1', 'ig');
 
 							profiler.regexCount ++;
 
-							while ( match = new RegExp('<script[^>]+src=("|\')([^"\']+)\1', 'ig').exec(data['html']) ) {
+							while ( match = regexScript.exec(data.html) ) {
 								profiler.regexCount ++;
 
 								if ( regex.test(match[2]) ) {
 									apps.push(app);
 
-									break next;
+									continue appLoop;
 								}
 							}
 
 							break;
 						case 'meta':
-							if ( data['html'] == null ) {
+							if ( data.html == null ) {
 								break;
 							}
 
 							profiler.regexCount ++;
 
-							while ( match = new RegExp('<meta[^>]+>', 'ig').exec(data['html']) ) {
+							regexMeta = new RegExp('<meta[^>]+>', 'ig');
+
+							while ( match = regexMeta.exec(data.html) ) {
 								for ( meta in w.apps[app][type] ) {
 									profiler.regexCount ++;
 
 									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-										regex = new RegExp(w.apps[app].meta[meta], 'i');
+										regex = new RegExp(w.apps[app].meta[meta].replace('/', '\\\/'), 'i');
 
 										profiler.regexCount ++;
 
 										if ( content && content.length === 4 && regex.test(content[2]) ) {
 											apps.push(app);
 
-											break next;
+											continue appLoop;
 										}
 									}
 								}
@@ -205,14 +207,14 @@ var wappalyzer = wappalyzer || (function() {
 							}
 
 							for ( header in w.apps[app].headers ) {
-								regex = new RegExp(w.apps[app][type][header], 'i');
+								regex = new RegExp(w.apps[app][type][header].replace('/', '\\\/'), 'i');
 
 								profiler.regexCount ++;
 
 								if ( data[type][header] != null && regex.test(data[type][header]) ) {
 									apps.push(app);
 
-									break next;
+									continue appLoop;
 								}
 							}
 
@@ -222,7 +224,7 @@ var wappalyzer = wappalyzer || (function() {
 								break;
 							}
 
-							regex = RegExp(w.apps[app][type], 'i');
+							regex = RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
 
 							for ( i in data[type] ) {
 								profiler.regexCount ++;
@@ -230,7 +232,7 @@ var wappalyzer = wappalyzer || (function() {
 								if ( regex.test(data[type][i]) ) {
 									apps.push(app);
 
-									break next;
+									continue appLoop;
 								}
 							}
 

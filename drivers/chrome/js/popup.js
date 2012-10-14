@@ -1,5 +1,3 @@
-var wappalyzer = {};
-
 (function() {
 	var popup = {
 		pollHeaders: null,
@@ -58,9 +56,9 @@ var wappalyzer = {};
 										'<span class="label">' + appName + '</span>' +
 									'</a>';
 
-							wappalyzer.apps[appName].cats.map(function(cat) {
+							response.apps[appName].cats.map(function(cat) {
 								html +=
-									'<a target="_blank" href="http://wappalyzer.com/categories/' + wappalyzer.categories[cat] + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions">' +
+									'<a target="_blank" href="http://wappalyzer.com/categories/' + response.categories[cat] + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions">' +
 										'<span class="category">' + chrome.i18n.getMessage('categoryName' + cat) + '</span>' +
 									'</a>';
 							});

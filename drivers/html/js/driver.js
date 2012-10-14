@@ -15,6 +15,22 @@
 		 * Initialize
 		 */
 		init: function() {
+			// Load apps.json
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', 'apps.json', true);
+
+			xhr.overrideMimeType('application/json');
+
+			xhr.onload = function() {
+				var json = JSON.parse(xhr.responseText);
+
+				w.categories = json.categories;
+				w.apps       = json.apps;
+			};
+
+			xhr.send(null);
+
 			window.document.addEventListener('DOMContentLoaded', function() {
 				w.analyze('google.com', 'http://google.com', {
 					html:    '<script src="jquery.js"><meta name="generator" content="WordPress"/>',
