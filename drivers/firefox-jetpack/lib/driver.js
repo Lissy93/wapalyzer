@@ -3,10 +3,14 @@
  */
 
 (function() {
-	//'use strict';
+	'use strict';
+
 	var
-		main = require('wappalyzer'),
-		w    = main.wappalyzer
+		{ Cc, Ci } = require('chrome'),
+		tabs       = require('tabs'),
+		self       = require('self'),
+		main       = require('wappalyzer'),
+		w          = main.wappalyzer
 		;
 
 	w.driver = {

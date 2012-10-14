@@ -6,7 +6,7 @@
  * License: GPLv3 http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-var wappalyzer = wappalyzer || (function() {
+var wappalyzer = (function() {
 	//'use strict';
 
 	/**
@@ -317,3 +317,9 @@ var wappalyzer = wappalyzer || (function() {
 
 	return w;
 })();
+
+// CommonJS package
+// See http://wiki.commonjs.org/wiki/CommonJS
+if ( typeof exports === 'object' ) {
+	exports.wappalyzer = wappalyzer;
+}
