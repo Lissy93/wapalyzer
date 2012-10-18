@@ -669,61 +669,61 @@
 			"headers": { "Set-Cookie": "_hybris" },
 			"implies": [ "Java" ]
 		},
-		"BM HTTP Server": {
+		"IBM HTTP Server": {
 			"cats": [ "22" ],
-			"headers": { "Server": "BM_HTTP_Server" }
+			"headers": { "Server": "IBM_HTTP_Server" }
 		},
-		"BM WebSphere Portal": {
+		"IBM WebSphere Portal": {
 			"cats": [ "1" ],
 			"headers": { "BM-Web2-Location": ".*" },
 			"url": "/wps/",
 			"implies": [ "Java" ]
 		},
-		"BM WebSphere Commerce": {
+		"IBM WebSphere Commerce": {
 			"cats": [ "6" ],
 			"url": "/wcs/",
 			"implies": [ "Java" ]
 		},
-		"IS": {
+		"IIS": {
 			"cats": [ "22" ],
-			"headers": { "Server": "IS" },
+			"headers": { "Server": "IIS" },
 			"implies": [ "Windows Server" ]
 		},
-		"mpressCMS": {
+		"ImpressCMS": {
 			"cats": [ "1" ],
-			"script": "nclude/linkexternal\\.js",
-			"meta": { "generator": "mpressCMS" },
-			"headers": { "X-Powered-By": "mpressCMS" },
+			"script": "include/linkexternal\\.js",
+			"meta": { "generator": "ImpressCMS" },
+			"headers": { "X-Powered-By": "ImpressCMS" },
 			"implies": [ "PHP" ]
 		},
-		"mpressPages": {
+		"ImpressPages": {
 			"cats": [ "1" ],
-			"meta": { "generator": "mpressPages" },
+			"meta": { "generator": "impressPages" },
 			"implies": [ "PHP" ]
 		},
-		"ndexhibit": {
+		"Indexhibit": {
 			"cats": [ "1" ],
 			"html": "<(link|a href) [^>]+ndxz-studio",
 			"implies": [ "PHP", "Apache" ]
 		},
-		"nstantCMS": {
+		"InstantCMS": {
 			"cats": [ "1" ],
 			"meta": { "generator": "nstantCMS" }
 		},
-		"ntershop": {
+		"Intershop": {
 			"cats": [ "6" ],
 			"url": "s-bin|INTERSHOP",
 			"script": "s-bin|INTERSHOP"
 		},
-		"PB": {
+		"IPB": {
 			"cats": [ "2" ],
 			"script": "jscripts/ips_",
 			"env": "^IPBoard",
 			"html": "<link[^>]+ipb_[^>]+\\.css"
 		},
-		"Web": {
+		"iWeb": {
 			"cats": [ "20" ],
-			"meta": { "generator": "Web" }
+			"meta": { "generator": "iWeb" }
 		},
 		"Jalios": {
 			"cats": [ "1" ],
@@ -1505,7 +1505,7 @@
 			"headers": { "X-Powered-By": "Vanilla" }
 		},
 		"Varnish": {
-			"cats": [ "22" ],
+			"cats": [ "23" ],
 			"headers": { "X-Varnish": ".+", "X-Varnish-Age": ".+", "X-Varnish-Cache": ".+", "X-Varnish-Action": ".+", "X-Varnish-Hostname": ".+", "Via": "Varnish" }
 		},
 		"vBulletin": {
