@@ -469,6 +469,7 @@
 		"DotNetNuke": {
 			"cats": [ "1" ],
 			"meta": { "generator": "DotNetNuke" },
+			"headers": { "X-Compressed-By": "DotNetNuke-Compression", "Set-Cookie": "DotNetNukeAnonymous=.+" },
 			"html": "<!-- by DotNetNuke Corporation",
 			"env": "^DotNetNuke",
 			"implies": [ "Microsoft ASP.NET" ]
@@ -533,6 +534,7 @@
 		"eZ Publish": {
 			"cats": [ "1", "6" ],
 			"meta": { "generator": "eZ Publish" },
+			"headers": {  "X-Powered-By": "^eZ Publish$" },
 			"implies": [ "PHP" ]
 		},
 		"Fact Finder": {
@@ -1122,6 +1124,11 @@
 		"phpPgAdmin": {
 			"cats": [ "3" ],
 			"html": "(<title>phpPgAdmin</title>|<span class=\\\"appname\\\">phpPgAdmin)"
+		},
+		"phpSQLiteCMS": {
+			"cats": [ "1" ],
+			"meta": { "generator": "^phpSQLiteCMS" },
+			"implies": [ "PHP" ]
 		},
 		"Piwik": {
 			"cats": [ "10" ],
