@@ -510,6 +510,10 @@
 			"script": "e107\\.js",
 			"implies": [ "PHP"]
 		},
+		"EdgeCast": {
+			"cats": [ "31" ],
+			"headers": { "Server": "^ECS " }
+		},
 		"EPiServer": {
 			"cats": [ "1" ],
 			"meta": { "generator": "EPiServer" },
