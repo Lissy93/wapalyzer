@@ -225,6 +225,10 @@
 		"CFML": {
 			"cats": [ "27" ]
 		},
+		"CacheFly": {
+			"cats": [ "31" ],
+			"headers": { "Server": "^CFS ", "X-CF1": ".+", "X-CF2": ".+" }
+		},
 		"Chameleon": {
 			"cats": [ "1" ],
 			"meta": { "generator": "chameleon-cms" },
