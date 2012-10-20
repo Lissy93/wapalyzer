@@ -114,6 +114,23 @@ $detectedApps = $wappalyzer->analyze();
 Work in progress, experimental. See https://wiki.mozilla.org/Jetpack.
 
 
+Unofficial drivers and ports
+----------------------------
+
+**Python**
+
+A Python driver by [@ebradbury](https://github.com/ebradbury).
+
+https://github.com/ebradbury/Wappalyzer/tree/master/drivers/python
+
+
+**Ruby**
+
+A Ruby port by [@skroutz](https://github.com/skroutz).
+
+https://github.com/skroutz/wappalyzer-ruby
+
+
 Screenshot
 ----------
 
