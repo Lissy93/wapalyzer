@@ -1435,7 +1435,9 @@
 		},
 		"TomatoCart": {
 			"cats": [ 6 ],
-			"meta": { "generator": "TomatoCart" }
+			"meta": { "generator": "TomatoCart" },
+			"env": "^AjaxShoppingCart$",
+			"script": "ajax_shopping_cart\\.js"
 		},
 		"Trac": {
 			"cats": [ 13 ],
