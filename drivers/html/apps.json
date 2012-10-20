@@ -255,7 +255,7 @@
 		},
 		"ClickTale": {
 			"cats": [ "10" ],
-			"html": "f\\(typeof ClickTale(Tag)*==\\\"function\\\"\\)",
+			"html": "if\\(typeof ClickTale(Tag)*==\\\"function\\\"\\)",
 			"env": "^ClickTale"
 		},
 		"Clicky": {
@@ -265,7 +265,8 @@
 		},
 		"CloudFlare": {
 			"cats": [ "31" ],
-			"headers": { "Server": "cloudflare" }
+			"headers": { "Server": "cloudflare" },
+			"env": "^CloudFlare$"
 		},
 		"CMS Made Simple": {
 			"cats": [ "1" ],
@@ -491,7 +492,7 @@
 		},
 		"Drupal Commerce": {
 			"cats": [ "6" ],
-			"html": "d=\\\"block[_-]commerce[_-]cart[_-]cart|class=\\\"commerce[_-]product[_-]field",
+			"html": "id=\\\"block[_-]commerce[_-]cart[_-]cart|class=\\\"commerce[_-]product[_-]field",
 			"implies": [ "PHP", "Drupal" ]
 		},
 		"Dynamicweb": {
@@ -533,6 +534,7 @@
 		"eZ Publish": {
 			"cats": [ "1", "6" ],
 			"meta": { "generator": "eZ Publish" },
+			"headers": {  "X-Powered-By": "^eZ Publish$" },
 			"implies": [ "PHP" ]
 		},
 		"Fact Finder": {
@@ -675,7 +677,7 @@
 		},
 		"IBM WebSphere Portal": {
 			"cats": [ "1" ],
-			"headers": { "BM-Web2-Location": ".*" },
+			"headers": { "IBM-Web2-Location": ".*" },
 			"url": "/wps/",
 			"implies": [ "Java" ]
 		},
@@ -698,7 +700,7 @@
 		},
 		"ImpressPages": {
 			"cats": [ "1" ],
-			"meta": { "generator": "impressPages" },
+			"meta": { "generator": "ImpressPages" },
 			"implies": [ "PHP" ]
 		},
 		"Indexhibit": {
@@ -708,12 +710,12 @@
 		},
 		"InstantCMS": {
 			"cats": [ "1" ],
-			"meta": { "generator": "nstantCMS" }
+			"meta": { "generator": "InstantCMS" }
 		},
 		"Intershop": {
 			"cats": [ "6" ],
-			"url": "s-bin|INTERSHOP",
-			"script": "s-bin|INTERSHOP"
+			"url": "is-bin|INTERSHOP",
+			"script": "is-bin|INTERSHOP"
 		},
 		"IPB": {
 			"cats": [ "2" ],
@@ -949,6 +951,8 @@
 		"Moodle": {
 			"cats": [ "21" ],
 			"html": "(var moodleConfigFn = function\\(me\\)|<img[^>]+moodlelogo)",
+			"headers": { "Set-Cookie": "MoodleSession" },
+			"env": "^moodle",
 			"implies": [ "PHP" ]
 		},
 		"Moogo": {
@@ -1511,7 +1515,7 @@
 		"vBulletin": {
 			"cats": [ "2" ],
 			"meta": { "generator": "vBulletin" },
-			"env": "^(vBulletin|vB_)"
+			"env": "^(vBulletin|vB_[^g])"
 		},
 		"viennaCMS": {
 			"cats": [ "1" ],
@@ -1523,7 +1527,7 @@
 		},
 		"Vimeo": {
 			"cats": [ "14" ],
-			"html": "<(param|embed)[^>]+vimeo\\.com/moogaloop"
+			"html": "(<(param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\.vimeo\.com)"
 		},
 		"VirtueMart": {
 			"cats": [ "6" ],
