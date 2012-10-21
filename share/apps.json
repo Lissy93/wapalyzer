@@ -30,7 +30,8 @@
 		"28": "operating-systems",
 		"29": "search-engines",
 		"30": "web-mail",
-		"31": "cdn"
+		"31": "cdn",
+		"32": "repositories",
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -509,6 +510,11 @@
 			"cats": [ "1" ],
 			"meta": { "generator": "EPiServer" },
 			"implies": [ "Microsoft ASP.NET", "IIS", "Windows Server" ]
+		},
+		"EPrints": {
+			"cats": [ "32" ],
+			"meta": { "generator": "EPrints" },
+			"implies": [ "Perl" ]
 		},
 		"Exhibit": {
 			"cats": [ "25" ],
