@@ -12,7 +12,7 @@
 		"10": "analytics",
 		"11": "blogs",
 		"12": "javascript-frameworks",
-		"13": "ssue-trackers",
+		"13": "issue-trackers",
 		"14": "video-players",
 		"15": "comment-systems",
 		"16": "captchas",
@@ -510,6 +510,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "EPiServer" },
 			"implies": [ "Microsoft ASP.NET", "IIS", "Windows Server" ]
+		},
+		"EPrints": {
+			"cats": [ "19" ],
+			"meta": { "generator": "EPrints" },
+			"implies": [ "Perl" ]
 		},
 		"Exhibit": {
 			"cats": [ 25 ],
