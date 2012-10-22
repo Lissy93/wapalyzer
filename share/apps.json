@@ -623,10 +623,6 @@
 			"html": "<link[^>]* href=\\\"http://fonts\\.googleapis\\.com",
 			"env": "^WebFont"
 		},
-		"Google Friend Connect": {
-			"cats": [ 5 ],
-			"script": "google\\.com/friendconnect"
-		},
 		"Google Maps": {
 			"cats": [ 5 ],
 			"script": "(maps\\.google\\.com/maps\\?file=api|maps\\.google\\.com/maps/api/staticmap)"
@@ -1436,8 +1432,7 @@
 		"TomatoCart": {
 			"cats": [ 6 ],
 			"meta": { "generator": "TomatoCart" },
-			"env": "^AjaxShoppingCart$",
-			"script": "ajax_shopping_cart\\.js"
+			"env": "^AjaxShoppingCart$"
 		},
 		"Trac": {
 			"cats": [ 13 ],
