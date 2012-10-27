@@ -206,6 +206,7 @@
 			15, // Comment System
 			20, // Editor
 			10, // Analytics
+			32, // Marketing Automation
 			31, // CDN
 			23, // Cache Tool
 			17, // Font Script

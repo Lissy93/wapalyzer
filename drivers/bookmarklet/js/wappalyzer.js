@@ -92,6 +92,8 @@ var wappalyzer = (function() {
 		analyze: function(hostname, url, data) {
 			w.log('w.analyze');
 
+			url = url.split('#')[0];
+
 			data.url = url;
 
 			if ( w.apps == null || w.categories == null ) {
@@ -156,7 +158,7 @@ var wappalyzer = (function() {
 							}
 
 							regex       = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
-							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)\1', 'ig');
+							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
 
 							profiler.regexCount ++;
 
@@ -266,7 +268,7 @@ var wappalyzer = (function() {
 				}
 			}
 
-			w.log(apps.length + ' apps detected: ' + apps.join(', '));
+			w.log(apps.length + ' apps detected: ' + apps.join(', ') + ' on ' + url);
 
 			// Keep history of detected apps
 			var i, app, match;
