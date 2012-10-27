@@ -103,10 +103,12 @@
 		},
 		"AOLserver": {
 			"cats": [ 22 ],
-			"headers": { "Server": "AOLserver" } },
+			"headers": { "Server": "AOLserver" }
+		},
 		"Apache": {
 			"cats": [ 22 ],
-			"headers": { "Server": "(Apache($|[^-])|HTTPD)" } },
+			"headers": { "Server": "(Apache($|[^-])|HTTPD)" } 
+		},
 		"Apache JSPWiki": {
 			"cats": [ 8 ],
 			"url": "wiki\\.jsp",
@@ -115,10 +117,12 @@
 		},
 		"Apache Tomcat": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Apache-Coyote" } },
+			"headers": { "Server": "Apache-Coyote" } 
+		},
 		"Apache Traffic Server": {
 			"cats": [ 22 ],
-			"headers": { "Server": "YTS" } },
+			"headers": { "Server": "YTS" }
+		},
 		"Arc Forum": {
 			"cats": [ 2 ],
 			"html": "ping\\.src = node\\.href;"
@@ -503,7 +507,7 @@
 		"Drupal Commerce": {
 			"cats": [ 6 ],
 			"html": "id=\\\"block[_-]commerce[_-]cart[_-]cart|class=\\\"commerce[_-]product[_-]field",
-			"implies": [ "PHP", "Drupal" ]
+			"implies": [ "Drupal" ]
 		},
 		"Dynamicweb": {
 			"cats": [ 1, 6, 10 ],
@@ -795,7 +799,8 @@
 			"meta": { "generator": "Joomla" },
 			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill\\\")",
 			"headers": { "X-Content-Encoded-By": "Joomla" },
-			"env": "^(jcomments)$"
+			"env": "^(jcomments)$",
+			"implies": [ "PHP" ]
 		},
 		"jqPlot": {
 			"cats": [ 25 ],
@@ -1158,7 +1163,8 @@
 		},
 		"phpCMS": {
 			"cats": [ 1 ],
-			"env": "^phpcms"
+			"env": "^phpcms",
+			"implies": [ "PHP" ]
 		},
 		"phpDocumentor": {
 			"cats": [ 4 ],
@@ -1167,7 +1173,8 @@
 		},
 		"PHP-Fusion": {
 			"cats": [ 1 ],
-			"html": "Powered by <a href=\\\"[^>]+php-fusion"
+			"html": "Powered by <a href=\\\"[^>]+php-fusion",
+			"implies": [ "PHP" ]
 		},
 		"phpMyAdmin": {
 			"cats": [ 3 ],
@@ -1181,7 +1188,8 @@
 		},
 		"phpPgAdmin": {
 			"cats": [ 3 ],
-			"html": "(<title>phpPgAdmin</title>|<span class=\\\"appname\\\">phpPgAdmin)"
+			"html": "(<title>phpPgAdmin</title>|<span class=\\\"appname\\\">phpPgAdmin)",
+			"implies": [ "PHP" ]
 		},
 		"phpSQLiteCMS": {
 			"cats": [ "1" ],
@@ -1233,7 +1241,8 @@
 		"Prestashop": {
 			"cats": [ 6 ],
 			"meta": { "generator": "PrestaShop" },
-			"html": "Powered by <a href=\\\"[^>]+PrestaShop"
+			"html": "Powered by <a href=\\\"[^>]+PrestaShop",
+			"implies": [ "PHP" ]
 		},
 		"Prototype": {
 			"cats": [ 12 ],
@@ -1247,7 +1256,8 @@
 		},
 		"punBB": {
 			"cats": [ 2 ],
-			"html": "Powered by <a href=\\\"[^>]+punbb"
+			"html": "Powered by <a href=\\\"[^>]+punbb",
+			"implies": [ "PHP" ]
 		},
 		"Python": {
 			"cats": [ 27 ]
@@ -1302,7 +1312,7 @@
 			"cats": [ 13 ],
 			"meta": { "description": "Redmine" },
 			"html": "Powered by <a href=\\\"[^>]+Redmine",
-			"implies": [ "Ruby" ]
+			"implies": [ "Ruby on Rails" ]
 		},
 		"Reinvigorate": {
 			"cats": [ 10 ],
@@ -1316,7 +1326,8 @@
 		"RoundCube": {
 			"cats": [ 30 ],
 			"html": "<title>RoundCube",
-			"env": "(rcmail|rcube_|roundcube)"
+			"env": "(rcmail|rcube_|roundcube)",
+			"implies": [ "PHP" ]
 		},
 		"Ruby": {
 			"cats": [ 27 ],
@@ -1399,7 +1410,8 @@
 		"SMF": {
 			"cats": [ 2 ],
 			"html": "<script [^>]+\\s+var smf_",
-			"env": "^smf_"
+			"env": "^smf_",
+			"implies": [ "PHP" ]
 		},
 		"sNews": {
 			"cats": [ 1 ],
@@ -1444,7 +1456,8 @@
 		"Squiz Matrix": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Squiz Matrix" },
-			"html": "  Running (MySource|Squiz) Matrix", "X-Powered-By": "Squiz Matrix"
+			"html": "  Running (MySource|Squiz) Matrix", "X-Powered-By": "Squiz Matrix",
+			"implies": [ "PHP" ]
 		},
 		"StatCounter": {
 			"cats": [ 10 ],
@@ -1543,11 +1556,13 @@
 			"headers": { "Set-Cookie": "fe_typo_user" },
 			"meta": { "generator": "TYPO3" },
 			"html": "(<(script[^>]* src|link[^>]* href)=[^>]*fileadmin|<!--TYPO3SEARCH)",
-			"url": "/typo3/"
+			"url": "/typo3/",
+			"implies": [ "PHP" ]
 		},
 		"Ubercart": {
 			"cats": [ 6 ],
-			"script": "uc_cart/uc_cart_block\\.js"
+			"script": "uc_cart/uc_cart_block\\.js",
+			"implies": [ "Drupal" ]
 		},
 		"Ubuntu": {
 			"cats": [ 28 ],
@@ -1580,7 +1595,8 @@
 		"Vanilla": {
 			"cats": [ 2 ],
 			"html": "<body id=\\\"(DiscussionsPage|vanilla)",
-			"headers": { "X-Powered-By": "Vanilla" }
+			"headers": { "X-Powered-By": "Vanilla" },
+			"implies": [ "PHP" ]
 		},
 		"Varnish": {
 			"cats": [ 23 ],
@@ -1589,7 +1605,8 @@
 		"vBulletin": {
 			"cats": [ 2 ],
 			"meta": { "generator": "vBulletin" },
-			"env": "^(vBulletin|vB_[^g])"
+			"env": "^(vBulletin|vB_[^g])",
+			"implies": [ "PHP" ]
 		},
 		"viennaCMS": {
 			"cats": [ 1 ],
@@ -1678,8 +1695,7 @@
 		},
 		"WikkaWiki": {
 			"cats": [ 8 ],
-			"meta": { "generator": "WikkaWiki"
-			},
+			"meta": { "generator": "WikkaWiki" },
 			"html": "Powered by <a href=\\\"[^>]+WikkaWiki"
 		},
 		"Windows Server": {
