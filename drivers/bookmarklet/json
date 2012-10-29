@@ -1055,7 +1055,7 @@
 		},
 		"New Relic": {
 			"cats": [ 10 ],
-			"html": "<script[^>]+>var NREUMQ=NREUMQ",
+			"html": "<script[^>]+>(var NREUMQ=NREUMQ|if \\(!NREUMQ\\.f)",
 			"env": "^NREUMQ$"
 		},
 		"Nginx": {
