@@ -13,11 +13,7 @@ class Wappalyzer
 	protected
 		$v8,
 		$apps,
-		$categories,
-		$host,
-		$url,
-		$html,
-		$headers = array()
+		$categories
 		;
 
 	/**
@@ -48,11 +44,14 @@ class Wappalyzer
 
 			$result = $this->curl($this->url);
 
+			//$env = $this->executeScripts($result);
+
 			$json = json_encode(array(
-				'host'    => $this->host,
-				'url'     => $this->url,
-				'html'    => $this->html,
-				'headers' => $this->headers
+				'host'    => $result->host,
+				'url'     => $result->url,
+				'html'    => $result->html,
+				'headers' => $result->headers,
+				//'env'     => $env
 				));
 
 			return $this->v8->executeString('
@@ -89,6 +88,10 @@ class Wappalyzer
 	 */
 	protected function curl($url)
 	{
+		if ( $this->debug ) {
+			echo 'cURL request: ' . $url . "\n";
+		}
+
 		$ch = curl_init($url);
 
 		curl_setopt_array($ch, array(
@@ -113,13 +116,15 @@ class Wappalyzer
 			throw new WappalyzerException('cURL request returned HTTP code ' . $httpCode);
 		}
 
-		$this->url  = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+		$result = new stdClass();
 
-		$this->host = parse_url($url, PHP_URL_HOST);
+		$result->url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+
+		$result->host = parse_url($result->url, PHP_URL_HOST);
 
 		$headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
 
-		$this->html = substr($response, $headerSize);
+		$result->html = substr($response, $headerSize);
 
 		$lines = array_slice(explode("\r\n", trim(substr($response, 0, $headerSize))), 1);
 
@@ -127,7 +132,54 @@ class Wappalyzer
 			if ( strpos(trim($line), ': ') !== false ) {
 				list($key, $value) = explode(': ', $line);
 
-				$this->headers[$key] = $value;
+				$result->headers[$key] = $value;
+			}
+		}
+
+		return $result;
+	}
+
+	/**
+	 *
+	 */
+	protected function executeScripts($page)
+	{
+		preg_match_all('/<script[^>]+src=("|\')(.+?)\1/i', $page->html, $matches);
+
+		if ( $urls = $matches[2] ) {
+			foreach ( $urls as $url ) {
+				if ( !preg_match('/^https?:\/\//', $url) ) {
+					$url = $page->url . '/' . $url;
+				}
+
+				try {
+					$result = $this->curl($url);
+				} catch ( WappalyzerException $e ) {
+					if ( $this->debug ) echo $e->getMessage() . "\n";
+
+					continue;
+				}
+
+				$v8 = new V8Js();
+
+				try {
+					$v8->executeString('
+						var
+							document = {},
+							window   = { document: document }
+							;
+						');
+
+					$v8->executeString($result->html, $url);
+
+					$result = $v8->executeString('Object.keys(window);');
+
+					var_dump($result);
+				} catch ( V8JsException $e ) {
+					if ( $this->debug ) echo "\n", print_r($e->getJsTrace()), "\n\n";
+
+					continue;
+				}
 			}
 		}
 	}
