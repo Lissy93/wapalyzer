@@ -7,7 +7,7 @@
 
 	if ( wappalyzer == null ) return;
 
-	var w = wappalyzer, prefs, strings;
+	var w = wappalyzer, prefs, strings, $;
 
 	const
 		Cc = Components.classes,
@@ -56,6 +56,10 @@
 				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
 					// Load jQuery
 					Cc['@mozilla.org/moz/jssubscript-loader;1'].getService(Ci.mozIJSSubScriptLoader).loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js');
+
+					$ = jQuery;
+
+					jQuery.noConflict(true);
 
 					// Preferences
 					prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.wappalyzer.');
@@ -137,7 +141,7 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var image, url = gBrowser.currentURI.spec.split('#')[0];
+			var menuItem, menuSeparator, image, url = gBrowser.currentURI.spec.split('#')[0];
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				// No change
@@ -146,8 +150,8 @@
 				if ( w.driver.lastDisplayed === 'empty' ) { return; }
 			}
 
-			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').addClass('wappalyzer-remove');
-
+			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').attr('class', 'wappalyzer-remove');
+			
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png');
@@ -156,7 +160,7 @@
 				}
 
 				w.detected[url].map(function(app, i) {
-					var j, cat, showCat, menuSeparator, menuItem;
+					var j, cat, showCat;
 
 					for ( i in w.apps[app].cats ) {
 						showCat = false;
