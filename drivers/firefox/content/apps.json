@@ -669,7 +669,8 @@
 		},
 		"Google Web Toolkit": {
 			"cats": [ 18 ],
-			"env": "^__gwt_"
+			"env": "^__gwt_",
+			"implies": [ "Java" ]
 		},
 		"GoStats": {
 			"cats": [ 10 ],
@@ -749,8 +750,9 @@
 		},
 		"Indexhibit": {
 			"cats": [ 1 ],
+			"meta": { "generator": "Indexhibit" },
 			"html": "<(link|a href) [^>]+ndxz-studio",
-			"implies": [ "PHP", "Apache" ]
+			"implies": [ "PHP", "Apache", "Exhibit" ]
 		},
 		"InstantCMS": {
 			"cats": [ 1 ],
@@ -1296,9 +1298,9 @@
 			"meta": { "generator": "RBS Change" },
 			"implies": [ "PHP" ]
 		},
-		"ReallyCMS": {
+		"RCMS": {
 			"cats": [ 1 ],
-			"meta": { "generator": "ReallyCMS" }
+			"meta": { "generator": "(RCMS|ReallyCMS)" }
 		},
 		"reCAPTCHA": {
 			"cats": [ 16 ],
@@ -1691,7 +1693,8 @@
 		},
 		"WebsiteBaker": {
 			"cats": [ 1 ],
-			"meta": { "generator": "WebsiteBaker" }
+			"meta": { "generator": "WebsiteBaker" },
+			"implies": [ 'PHP' ]
 		},
 		"Webtrekk": {
 			"cats": [ 10 ],
