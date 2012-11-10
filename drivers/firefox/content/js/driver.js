@@ -151,14 +151,14 @@
 			}
 
 			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').attr('class', 'wappalyzer-remove');
-			
+
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					$('<image>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png').prependTo(document.getElementById('wappalyzer-container'));
 				}
 
 				w.detected[url].map(function(app, i) {
-					var j, cat, showCat;
+					var j, cat, showCat, categories = [];
 
 					for ( i in w.apps[app].cats ) {
 						showCat = false;
@@ -168,10 +168,6 @@
 						} catch(e) { }
 
 						if ( showCat ) {
-							if ( prefs.getBoolPref('showIcons') ) {
-								$('<image>').attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png').attr('tooltiptext', app + ' - ' + strings.getString('wappalyzer.cat' + w.apps[app].cats[i])).prependTo(document.getElementById('wappalyzer-container'));
-							}
-							
 							$('<menuseparator>').appendTo(document.getElementById('wappalyzer-menu'));
 
 							$('#wappalyzer-menu')
@@ -185,7 +181,9 @@
 								}));
 
 							for ( j in w.apps[app].cats ) {
-								var cat = w.apps[app].cats[j];
+								cat = w.apps[app].cats[j];
+
+								categories.push(strings.getString('wappalyzer.cat' + cat));
 
 								$('#wappalyzer-menu')
 									.append($('<menuitem>')
@@ -194,6 +192,14 @@
 									.on('command', function() {
 										w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
 									}));
+							}
+
+							if ( prefs.getBoolPref('showIcons') ) {
+								$('<image>')
+									.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
+									.attr('tooltiptext', app + ' - ' + categories.join(', '))
+									.prependTo(document.getElementById('wappalyzer-container'))
+									;
 							}
 
 							break;
@@ -206,7 +212,7 @@
 				$('<image>')
 					.attr('src', 'chrome://wappalyzer/skin/images/icon.png')
 					.prependTo(document.getElementById('wappalyzer-container'));
-				
+
 				$('<menuseparator>').appendTo(document.getElementById('wappalyzer-menu'));
 
 				$('<menuitem>')
@@ -311,7 +317,7 @@
 		document.getElementById(prefix + 'github').onclick = function() {
 				w.driver.goToURL({ url: w.config.githubURL })
 			};
-			
+
 		document.getElementById(prefix + 'twitter').onclick = function() {
 				w.driver.goToURL({ url: w.config.twitterURL })
 			};
