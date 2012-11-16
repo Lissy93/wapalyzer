@@ -185,7 +185,7 @@
 		"Bigware": {
 			"cats": [ 6 ],
 			"html": "Diese <a href=.+bigware\\.de|<a href=.+/main_bigware_\\d+\\.php",
-			"url": "(\\?|&)bigWAdminID=[a-z\v\d]+(&|$)",
+			"url": "(\\?|&)bigWAdminID=[a-z\\d]+(&|$)",
 			"headers": { "Set-Cookie": "bigwareCsid|bigWAdminID" },
 			"implies": [ "PHP" ]
 		},
