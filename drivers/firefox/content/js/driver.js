@@ -150,7 +150,10 @@
 				if ( w.driver.lastDisplayed === 'empty' ) { return; }
 			}
 
-			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').attr('class', 'wappalyzer-remove');
+			// Do not combine these, for some reason it causes the "remove bookmark" button text to disappear
+			$('#wappalyzer-container > image'   ).attr('class', 'wappalyzer-remove');
+			$('#wappalyzer-menu > menuitem'     ).attr('class', 'wappalyzer-remove');
+			$('#wappalyzer-menu > menuseparator').attr('class', 'wappalyzer-remove');
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
@@ -223,7 +226,10 @@
 				w.driver.lastDisplayed = 'empty';
 			}
 
-			$('.wappalyzer-remove').remove();
+			// Do not combine these either, see above
+			$('image.wappalyzer-remove'        ).remove();
+			$('menuitem.wappalyzer-remove'     ).remove();
+			$('menuseparator.wappalyzer-remove').remove();
 		},
 
 		/**
@@ -303,24 +309,24 @@
 		var prefix = 'wappalyzer-menu-';
 
 		document.getElementById(prefix + 'preferences').onclick = function() {
-				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
-			};
+			w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
+		};
 
 		document.getElementById(prefix + 'feedback').onclick = function() {
-				w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
-			};
+			w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
+		};
 
 		document.getElementById(prefix + 'website').onclick = function() {
-				w.driver.goToURL({ url: w.config.websiteURL })
-			};
+			w.driver.goToURL({ url: w.config.websiteURL })
+		};
 
 		document.getElementById(prefix + 'github').onclick = function() {
-				w.driver.goToURL({ url: w.config.githubURL })
-			};
+			w.driver.goToURL({ url: w.config.githubURL })
+		};
 
 		document.getElementById(prefix + 'twitter').onclick = function() {
-				w.driver.goToURL({ url: w.config.twitterURL })
-			};
+			w.driver.goToURL({ url: w.config.twitterURL })
+		};
 	}
 
 	w.init();
