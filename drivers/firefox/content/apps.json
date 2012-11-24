@@ -323,7 +323,7 @@
 			"implies": [ "node.js" ]
 		},
 		"Contao": {
-			"cats": [ 1, 6 ],
+			"cats": [ 1 ],
 			"html": "(<!--\\s+This website is powered by (TYPOlight|Contao)|<link[^>]+(typolight|contao).css)",
 			"implies": [ "PHP" ]
 		},
@@ -1694,7 +1694,7 @@
 		"WebsiteBaker": {
 			"cats": [ 1 ],
 			"meta": { "generator": "WebsiteBaker" },
-			"implies": [ "PHP" ]
+			"implies": [ 'PHP' ]
 		},
 		"Webtrekk": {
 			"cats": [ 10 ],

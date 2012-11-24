@@ -66,7 +66,7 @@ var wappalyzer = (function() {
 			// Checks
 			if ( w.driver == null ) {
 				w.log('no driver, exiting');
-
+G
 				return;
 			}
 
@@ -180,7 +180,7 @@ var wappalyzer = (function() {
 
 							profiler.regexCount ++;
 
-							regexMeta = new RegExp('<meta[^>]+>', 'ig');
+							regexMeta = /<meta[^>]+>/ig;
 
 							while ( match = regexMeta.exec(data.html) ) {
 								for ( meta in w.apps[app][type] ) {
@@ -271,13 +271,13 @@ var wappalyzer = (function() {
 			w.log(apps.length + ' apps detected: ' + apps.join(', ') + ' on ' + url);
 
 			// Keep history of detected apps
-			var i, app, match;
+			var i, app, regex, regexMeta, match;
 
 			for ( i in apps ) {
 				app = apps[i];
 
 				// Per hostname
-				if ( /^[a-z0-9._\-]+\.[a-z]+/.test(hostname) && !/(dev\.|\/admin|\.local)/.test(url) ) {
+				if ( /^[a-z0-9._\-]+\.[a-z]+/.test(hostname) && !/((local|dev|development|stage|staging|test|testing|demo|admin)\.|\/admin|\.local)/.test(url) ) {
 					if ( typeof w.ping.hostnames === 'undefined' ) {
 						w.ping.hostnames = {};
 					}
@@ -300,12 +300,26 @@ var wappalyzer = (function() {
 			// Additional information
 			if ( typeof w.ping.hostnames !== 'undefined' && typeof w.ping.hostnames[hostname] !== 'undefined' ) {
 				if ( data.html != null ) {
-					match = data.html.match(/<html[^>]*[: ]lang="([^"]+)"/);
+					match = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
 
 					if ( match != null && match.length ) {
 						w.ping.hostnames[hostname].meta['language'] = match[1];
 					}
+
+					regexMeta = /<meta[^>]+>/ig;
+
+					while ( match = regexMeta.exec(data.html) ) {
+						if ( !match.length ) { continue; }
+
+						match = match[0].match(/name="(author|copyright|country|description|keywords)"[^>]*content="([^"]+)"/i);
+
+						if ( match && match.length === 3 ) {
+							w.ping.hostnames[hostname].meta[match[1]] = match[2];
+						}
+					}
 				}
+
+				w.log(hostname + ': ' + JSON.stringify(w.ping.hostnames[hostname]));
 			}
 
 			if ( w.ping.hostnames != null && Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }
