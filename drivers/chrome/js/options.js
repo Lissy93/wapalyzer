@@ -1,15 +1,17 @@
-$(function() {
+document.addEventListener('DOMContentLoaded', function() {
+	var d = document;
+
 	var options = {
 		opts: defaults,
 
 		init: function() {
 			options.load();
 
-			$('#github'    ).click(function() { window.open(wappalyzer.config.githubURL);  });
-			$('#twitter'   ).click(function() { window.open(wappalyzer.config.twitterURL); });
-			$('#wappalyzer').click(function() { window.open(wappalyzer.config.websiteURL + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions'); });
+			d.getElementById('github'    ).addEventListener('click', function() { window.open(wappalyzer.config.githubURL);  });
+			d.getElementById('twitter'   ).addEventListener('click', function() { window.open(wappalyzer.config.twitterURL); });
+			d.getElementById('wappalyzer').addEventListener('click', function() { window.open(wappalyzer.config.websiteURL + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions'); });
 
-			$('#options-save').click(options.save);
+			d.getElementById('options-save').addEventListener('click', options.save);
 		},
 
 		load: function() {
@@ -20,29 +22,32 @@ $(function() {
 			}
 
 			if ( parseInt(options.opts.autoAnalyzeHeaders) ) {
-				$('#option-auto-analyze-headers').attr('checked', 'checked');
+				d.getElementById('option-auto-analyze-headers').setAttribute('checked', 'checked');
 			}
 
 			if ( parseInt(options.opts.upgradeMessage) ) {
-				$('#option-upgrade-message').attr('checked', 'checked');
+				d.getElementById('option-upgrade-message').setAttribute('checked', 'checked');
 			}
 
 			if ( parseInt(options.opts.tracking) ) {
-				$('#option-tracking').attr('checked', 'checked');
+				d.getElementById('option-tracking').setAttribute('checked', 'checked');
 			}
 		},
 
 		save: function() {
-			options.opts.autoAnalyzeHeaders = $('#option-auto-analyze-headers').is(':checked') ? 1 : 0;
-			options.opts.upgradeMessage     = $('#option-upgrade-message'     ).is(':checked') ? 1 : 0;
-			options.opts.tracking           = $('#option-tracking'            ).is(':checked') ? 1 : 0;
+			options.opts.autoAnalyzeHeaders = d.getElementById('option-auto-analyze-headers').checked ? 1 : 0;
+			options.opts.upgradeMessage     = d.getElementById('option-upgrade-message'     ).checked ? 1 : 0;
+			options.opts.tracking           = d.getElementById('option-tracking'            ).checked ? 1 : 0;
 
 			for ( option in options.opts ) {
 				localStorage[option] = options.opts[option];
 			}
-			document.getElementById('options-saved').style.display = 'inline';
-			setTimeout(function(){document.getElementById('options-saved').style.display = 'none';},2000);
 
+			d.getElementById('options-saved').style.display = 'inline';
+
+			setTimeout(function(){
+				d.getElementById('options-saved').style.display = 'none';
+			}, 2000);
 		}
 	};
 

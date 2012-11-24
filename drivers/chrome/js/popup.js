@@ -1,20 +1,27 @@
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
+	var
+		d              = document,
+		analyzeHeaders = d.getElementById('analyze-headers'),
+		detectedApps   = d.getElementById('detected-apps')
+		;
+
 	var popup = {
 		pollHeaders: null,
 
 		init: function() {
-			$('#options').click(function() {
-				window.open(chrome.extension.getURL('options.html'));
+			d.getElementById('options').addEventListener('click', function() {
+				open(chrome.extension.getURL('options.html'));
 			});
 
-			$('#analyze-headers').text(chrome.i18n.getMessage('analyzeHeaders')).removeAttr('disabled');
+			analyzeHeaders.innerHTML = chrome.i18n.getMessage('analyzeHeaders');
+			analyzeHeaders.removeAttribute('disabled');
 
 			chrome.tabs.getSelected(null, function(tab) {
 				if ( tab.url.match(/https?:\/\//) ) {
-					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('noAppsDetected') + '</div>');
+					detectedApps.innerHTML = '<div class="empty">' + chrome.i18n.getMessage('noAppsDetected') + '</div>';
 
-					$('#analyze-headers').click(function() {
-						$(this).attr('disabled', 'disabled');
+					analyzeHeaders.addEventListener('click', function() {
+						analyzeHeaders.setAttribute('disabled', 'disabled');
 
 						chrome.extension.sendRequest({ id: 'fetch_headers', tab: tab });
 
@@ -22,12 +29,12 @@
 					});
 
 					if ( parseInt(localStorage['autoAnalyzeHeaders']) ) {
-						$('#analyze-headers').click();
+						analyzeHeaders.click();
 					}
 				} else {
-					$('#detected-apps').html('<div class="empty">' + chrome.i18n.getMessage('nothingToDo') + '</div>');
+					detectedApps.innerHTML = '<div class="empty">' + chrome.i18n.getMessage('nothingToDo') + '</div>';
 
-					$('#analyze-headers').attr('disabled', 'disabled');
+					analyzeHeaders.setAttribute('disabled', 'disabled');
 				}
 			});
 
@@ -41,12 +48,12 @@
 						if ( popup.pollHeaders != null ) {
 							clearTimeout(popup.pollHeaders);
 
-							$('#analyze-headers').text(chrome.i18n.getMessage('analyzeHeadersDone'));
+							analyzeHeaders.innerHTML = chrome.i18n.getMessage('analyzeHeadersDone');
 						}
 					}
 
 					if ( response.tabCache.count > 0 ) {
-						$('#detected-apps').html('');
+						detectedApps.innerHTML = '';
 
 						response.tabCache.appsDetected.map(function(appName) {
 							html =
@@ -67,13 +74,13 @@
 									'</a>' +
 								'</div>';
 
-							$('#detected-apps').append(html);
+							detectedApps.innerHTML = detectedApps.innerHTML + html;
 						});
 					}
 				});
 			});
 		}
-	}
+	};
 
-	$(function() { popup.init(); });
-})();
+	popup.init();
+});
