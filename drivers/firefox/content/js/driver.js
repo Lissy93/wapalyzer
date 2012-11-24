@@ -139,7 +139,7 @@
 				i, j, elements, menuItem, menuSeparator, image,
 				remove    = [],
 				container = d.getElementById('wappalyzer-container'),
-				menu      = d.getElementById('wappalyzer-menu'),
+				menu      = d.getElementById('wappalyzer-applications'),
 				url       = gBrowser.currentURI.spec.split('#')[0]
 				;
 
@@ -315,10 +315,10 @@
 		if ( prefs.getBoolPref('addonBar') ) {
 			d.getElementById('wappalyzer-addonbar').appendChild(d.getElementById('wappalyzer-container'));
 		} else {
-			d.getElementById('urlbar-icons').appendChild(d.getElementById('wappalyzer-container'));
+			d.getElementById('urlbar-icons').insertBefore(d.getElementById('wappalyzer-container'), d.getElementById('urlbar-icons').childNodes[0]);
 		}
 
-		d.getElementById('wappalyzer-addonbar').setAttribute('collapsed', prefs.getBoolPref('addonBar') ? 'true' : 'false');
+		d.getElementById('wappalyzer-addonbar').setAttribute('collapsed', prefs.getBoolPref('addonBar') ? 'false' : 'true');
 	}
 
 	/**
