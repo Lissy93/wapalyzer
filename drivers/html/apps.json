@@ -329,13 +329,8 @@
 			"implies": [ "node.js" ]
 		},
 		"Contao": {
-<<<<<<< HEAD
 			"cats": [ 1 ],
-			"html": "(<!--\\s+This website is powered by (TYPOlight|Contao)|<link[^>]+(typolight|contao).css)",
-=======
-			"cats": [ 1, 6 ],
 			"html": "(<!--.+powered by (TYPOlight|Contao)-->|<link[^>]+(typolight|contao)\\.css)",
->>>>>>> 64745b6d507c0e1ee95f2e8a4a09b6be7448aee5
 			"implies": [ "PHP" ]
 		},
 		"Contenido": {

@@ -7,9 +7,10 @@
 
 	if ( wappalyzer == null ) return;
 
-	var w = wappalyzer, prefs, strings, $;
+	var w = wappalyzer, prefs, strings;
 
 	const
+		d  = document,
 		Cc = Components.classes,
 		Ci = Components.interfaces
 		;
@@ -35,7 +36,7 @@
 
 				w.log('w.driver: browser window loaded');
 
-				strings = document.getElementById('wappalyzer-strings');
+				strings = d.getElementById('wappalyzer-strings');
 
 				// Read apps.json
 				var xhr = Cc['@mozilla.org/xmlextras/xmlhttprequest;1'].createInstance(Ci.nsIXMLHttpRequest);
@@ -54,13 +55,6 @@
 				xhr.send(null);
 
 				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
-					// Load jQuery
-					Cc['@mozilla.org/moz/jssubscript-loader;1'].getService(Ci.mozIJSSubScriptLoader).loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js');
-
-					$ = jQuery;
-
-					jQuery.noConflict(true);
-
 					// Preferences
 					prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.wappalyzer.');
 
@@ -141,7 +135,15 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var menuItem, menuSeparator, image, url = gBrowser.currentURI.spec.split('#')[0];
+			var
+				i, j, elements, menuItem, menuSeparator, image,
+				remove    = [],
+				container = d.getElementById('wappalyzer-container'),
+				menu      = d.getElementById('wappalyzer-menu'),
+				url       = gBrowser.currentURI.spec.split('#')[0]
+				;
+
+			if ( !container ) { return; }
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				// No change
@@ -150,14 +152,25 @@
 				if ( w.driver.lastDisplayed === 'empty' ) { return; }
 			}
 
-			// Do not combine these, for some reason it causes the "remove bookmark" button text to disappear
-			$('#wappalyzer-container > image'   ).attr('class', 'wappalyzer-remove');
-			$('#wappalyzer-menu > menuitem'     ).attr('class', 'wappalyzer-remove');
-			$('#wappalyzer-menu > menuseparator').attr('class', 'wappalyzer-remove');
+			elements = {
+				images:         container.getElementsByTagName('image'),
+				menuItems:      menu     .getElementsByTagName('menuitem'),
+				menuSeparators: menu     .getElementsByTagName('menuseparator')
+				};
+
+			for ( i in elements ) {
+				for ( j = elements[i].length - 1; j >= 0; j -- ) {
+					remove.push(elements[i][j]);
+				}
+			}
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
-					$('<image>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png').prependTo(document.getElementById('wappalyzer-container'));
+					image = d.createElement('image');
+
+					image.setAttribute('src', 'chrome://wappalyzer/skin/images/icon_hot.png');
+
+					container.appendChild(image);
 				}
 
 				w.detected[url].map(function(app, i) {
@@ -171,38 +184,45 @@
 						} catch(e) { }
 
 						if ( showCat ) {
-							$('<menuseparator>').appendTo(document.getElementById('wappalyzer-menu'));
+							menuSeparator = d.createElement('menuseparator');
+							menuItem      = d.createElement('menuitem');
 
-							$('#wappalyzer-menu')
-								.append($('<menuitem>')
-								.attr('class', 'wappalyzer-application menuitem-iconic')
-								.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
-								.attr('label', app)
-								.attr('name', app)
-								.on('command', function() {
-									w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') });
-								}));
+							menuItem.setAttribute('class', 'wappalyzer-application menuitem-iconic');
+							menuItem.setAttribute('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png');
+							menuItem.setAttribute('label', app);
+							menuItem.setAttribute('name',  app);
+
+							menuItem.addEventListener('command', function() {
+								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') });
+							});
+
+							menu.appendChild(menuSeparator);
+							menu.appendChild(menuItem);
 
 							for ( j in w.apps[app].cats ) {
 								cat = w.apps[app].cats[j];
 
 								categories.push(strings.getString('wappalyzer.cat' + cat));
 
-								$('#wappalyzer-menu')
-									.append($('<menuitem>')
-									.attr('class', 'wappalyzer-category')
-									.attr('label', strings.getString('wappalyzer.cat' + cat))
-									.on('command', function() {
-										w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
-									}));
+								menuItem = d.createElement('menuitem');
+
+								menuItem.setAttribute('class', 'wappalyzer-category');
+								menuItem.setAttribute('label', strings.getString('wappalyzer.cat' + cat));
+
+								menuItem.addEventListener('command', function() {
+									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
+								});
+
+								menu.appendChild(menuItem);
 							}
 
 							if ( prefs.getBoolPref('showIcons') ) {
-								$('<image>')
-									.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
-									.attr('tooltiptext', app + ' - ' + categories.join(', '))
-									.prependTo(document.getElementById('wappalyzer-container'))
-									;
+								image = d.createElement('image');
+
+								image.setAttribute('src',         'chrome://wappalyzer/skin/images/icons/' + app + '.png');
+								image.setAttribute('tooltiptext', app + ' - ' + categories.join(', '));
+
+								container.appendChild(image);
 							}
 
 							break;
@@ -212,24 +232,25 @@
 
 				w.driver.lastDisplayed = JSON.stringify(w.detected[url]);
 			} else {
-				$('<image>')
-					.attr('src', 'chrome://wappalyzer/skin/images/icon.png')
-					.prependTo(document.getElementById('wappalyzer-container'));
+				image         = d.createElement('image');
+				menuSeparator = d.createElement('menuseparator');
+				menuItem      = d.createElement('menuitem');
 
-				$('<menuseparator>').appendTo(document.getElementById('wappalyzer-menu'));
+				image.setAttribute('src', 'chrome://wappalyzer/skin/images/icon.png');
 
-				$('<menuitem>')
-					.attr('disabled', 'true')
-					.attr('label', strings.getString('wappalyzer.noAppsDetected'))
-					.appendTo(document.getElementById('wappalyzer-menu'));
+				menuItem.setAttribute('disabled', 'true');
+				menuItem.setAttribute('label',    strings.getString('wappalyzer.noAppsDetected'));
+
+				container.appendChild(image);
+				menu     .appendChild(menuSeparator);
+				menu     .appendChild(menuItem);
 
 				w.driver.lastDisplayed = 'empty';
 			}
 
-			// Do not combine these either, see above
-			$('image.wappalyzer-remove'        ).remove();
-			$('menuitem.wappalyzer-remove'     ).remove();
-			$('menuseparator.wappalyzer-remove').remove();
+			for ( i in remove ) {
+				remove[i].parentNode.removeChild(remove[i]);
+			}
 		},
 
 		/**
@@ -292,13 +313,12 @@
 	 */
 	function container() {
 		if ( prefs.getBoolPref('addonBar') ) {
-			$('#wappalyzer-container').prependTo(document.getElementById('wappalyzer-addonbar'));
-
+			d.getElementById('wappalyzer-addonbar').appendChild(d.getElementById('wappalyzer-container'));
 		} else {
-			$('#wappalyzer-container').prependTo(document.getElementById('urlbar-icons'));
-
-			$('#wappalyzer-addonbar').attr('collapsed', 'true');
+			d.getElementById('urlbar-icons').appendChild(d.getElementById('wappalyzer-container'));
 		}
+
+		d.getElementById('wappalyzer-addonbar').setAttribute('collapsed', prefs.getBoolPref('addonBar') ? 'true' : 'false');
 	}
 
 	/**
@@ -308,23 +328,23 @@
 		// Menu items
 		var prefix = 'wappalyzer-menu-';
 
-		document.getElementById(prefix + 'preferences').onclick = function() {
+		d.getElementById(prefix + 'preferences').onclick = function() {
 			w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
 		};
 
-		document.getElementById(prefix + 'feedback').onclick = function() {
+		d.getElementById(prefix + 'feedback').onclick = function() {
 			w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
 		};
 
-		document.getElementById(prefix + 'website').onclick = function() {
+		d.getElementById(prefix + 'website').onclick = function() {
 			w.driver.goToURL({ url: w.config.websiteURL })
 		};
 
-		document.getElementById(prefix + 'github').onclick = function() {
+		d.getElementById(prefix + 'github').onclick = function() {
 			w.driver.goToURL({ url: w.config.githubURL })
 		};
 
-		document.getElementById(prefix + 'twitter').onclick = function() {
+		d.getElementById(prefix + 'twitter').onclick = function() {
 			w.driver.goToURL({ url: w.config.twitterURL })
 		};
 	}
