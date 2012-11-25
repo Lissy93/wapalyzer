@@ -193,7 +193,7 @@
 							menuItem.setAttribute('name',  app);
 
 							menuItem.addEventListener('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') });
+								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''), medium: 'menu' });
 							});
 
 							menu.appendChild(menuSeparator);
@@ -210,7 +210,7 @@
 								menuItem.setAttribute('label', strings.getString('wappalyzer.cat' + cat));
 
 								menuItem.addEventListener('command', function() {
-									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
+									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat], medium: 'menu' });
 								});
 
 								menu.appendChild(menuItem);
@@ -257,7 +257,9 @@
 		 * Go to URL
 		 */
 		goToURL: function(args) {
-			gBrowser.selectedTab = gBrowser.addTab(args.url + '?utm_source=firefox&utm_medium=extension&utm_campaign=extensions');
+			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?utm_source=firefox&utm_medium=' + args.medium + '&utm_campaign=extensions');
+
+			gBrowser.selectedTab = gBrowser.addTab(url);
 		},
 
 		/**
@@ -333,19 +335,19 @@
 		};
 
 		d.getElementById(prefix + 'feedback').onclick = function() {
-			w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
+			w.driver.goToURL({ url: w.config.websiteURL + 'contact', medium: 'menu' })
 		};
 
 		d.getElementById(prefix + 'website').onclick = function() {
-			w.driver.goToURL({ url: w.config.websiteURL })
+			w.driver.goToURL({ url: w.config.websiteURL, medium: 'menu' })
 		};
 
 		d.getElementById(prefix + 'github').onclick = function() {
-			w.driver.goToURL({ url: w.config.githubURL })
+			w.driver.goToURL({ url: w.config.githubURL, medium: 'menu' })
 		};
 
 		d.getElementById(prefix + 'twitter').onclick = function() {
-			w.driver.goToURL({ url: w.config.twitterURL })
+			w.driver.goToURL({ url: w.config.twitterURL, medium: 'menu' })
 		};
 	}
 

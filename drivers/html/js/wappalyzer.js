@@ -66,20 +66,20 @@ var wappalyzer = (function() {
 			// Checks
 			if ( w.driver == null ) {
 				w.log('no driver, exiting');
-G
+
 				return;
 			}
 
 			// Initialize driver
 			driver('init', function() {
 				if ( w.config.firstRun ) {
-					driver('goToURL', { url: w.config.websiteURL + 'installed' });
+					driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
 
 					w.config.firstRun = false;
 				}
 
 				if ( w.config.upgraded ) {
-					driver('goToURL', { url: w.config.websiteURL + 'upgraded'  });
+					driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
 
 					w.config.upgraded = false;
 				}

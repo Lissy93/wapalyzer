@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			d.getElementById('github'    ).addEventListener('click', function() { window.open(wappalyzer.config.githubURL);  });
 			d.getElementById('twitter'   ).addEventListener('click', function() { window.open(wappalyzer.config.twitterURL); });
-			d.getElementById('wappalyzer').addEventListener('click', function() { window.open(wappalyzer.config.websiteURL + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions'); });
+			d.getElementById('wappalyzer').addEventListener('click', function() { window.open(wappalyzer.config.websiteURL + '?utm_source=chrome&utm_medium=options&utm_campaign=extensions'); });
 
 			d.getElementById('options-save').addEventListener('click', options.save);
 		},

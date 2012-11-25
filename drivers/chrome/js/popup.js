@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		init: function() {
 			d.getElementById('options').addEventListener('click', function() {
-				open(chrome.extension.getURL('options.html'));
+				window.open(chrome.extension.getURL('options.html'));
 			});
 
 			analyzeHeaders.innerHTML = chrome.i18n.getMessage('analyzeHeaders');
@@ -58,14 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
 						response.tabCache.appsDetected.map(function(appName) {
 							html =
 								'<div class="detected-app">' +
-									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions">' +
+									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
 										'<span class="label">' + appName + '</span>' +
 									'</a>';
 
 							response.apps[appName].cats.map(function(cat) {
 								html +=
-									'<a target="_blank" href="http://wappalyzer.com/categories/' + response.categories[cat] + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions">' +
+									'<a target="_blank" href="http://wappalyzer.com/categories/' + response.categories[cat] + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
 										'<span class="category">' + chrome.i18n.getMessage('categoryName' + cat) + '</span>' +
 									'</a>';
 							});

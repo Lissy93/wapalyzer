@@ -116,7 +116,9 @@
 		},
 
 		goToURL: function(args) {
-			window.open(args.url + '?utm_source=chrome&utm_medium=extension&utm_campaign=extensions');
+			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?utm_source=chrome&utm_medium=' + args.medium + '&utm_campaign=extensions');
+
+			window.open(url);
 		},
 
 		/**
