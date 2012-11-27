@@ -94,7 +94,7 @@
 							if ( request != null && flags & Ci.nsIWebProgressListener.STATE_STOP ) {
 								if ( request.nsIHttpChannel && request.contentType == 'text/html' ) {
 									if ( progress.currentURI && request.name == progress.currentURI.spec ) {
-										var headers = new Object();
+										var headers = {};
 
 										request.nsIHttpChannel.visitResponseHeaders(function(header, value) {
 											headers[header] = value;

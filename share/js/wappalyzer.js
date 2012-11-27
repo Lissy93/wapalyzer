@@ -51,7 +51,7 @@ var wappalyzer = (function() {
 		 */
 		log: function(message, type) {
 			if ( w.config.environment === 'dev' ) {
-				if ( type == null ) { type = 'debug'; }
+				if ( typeof type === 'undefined' ) { type = 'debug'; }
 
 				driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
 			}
@@ -64,7 +64,7 @@ var wappalyzer = (function() {
 			w.log('w.init');
 
 			// Checks
-			if ( w.driver == null ) {
+			if ( typeof w.driver === 'undefined' ) {
 				w.log('no driver, exiting');
 
 				return;
@@ -96,13 +96,13 @@ var wappalyzer = (function() {
 
 			data.url = url;
 
-			if ( w.apps == null || w.categories == null ) {
+			if ( typeof w.apps === 'undefined' || typeof w.categories === 'undefined' ) {
 				w.log('apps.json not loaded');
 
 				return;
 			}
 
-			if ( w.detected[url] == null ) {
+			if ( typeof w.detected[url] === 'undefined' ) {
 				w.detected[url] = [];
 			}
 
@@ -110,9 +110,9 @@ var wappalyzer = (function() {
 				i, app, type, regex, regexMeta, regexScript, match, content, meta, header,
 				profiler = {
 					regexCount: 0,
-					startTime:  ( new Date ).getTime()
+					startTime:  new Date().getTime()
 				},
-				apps    = []
+				apps     = []
 				;
 
 			appLoop:
@@ -137,7 +137,7 @@ var wappalyzer = (function() {
 
 							break;
 						case 'html':
-							if ( data[type] == null ) {
+							if ( typeof data[type] !== 'string' || !data.html ) {
 								break;
 							}
 
@@ -153,7 +153,7 @@ var wappalyzer = (function() {
 
 							break;
 						case 'script':
-							if ( data.html == null ) {
+							if ( typeof data.html !== 'string' || !data.html ) {
 								break;
 							}
 
@@ -174,7 +174,7 @@ var wappalyzer = (function() {
 
 							break;
 						case 'meta':
-							if ( data.html == null ) {
+							if ( typeof data.html !== 'string' || !data.html ) {
 								break;
 							}
 
@@ -204,7 +204,7 @@ var wappalyzer = (function() {
 
 							break;
 						case 'headers':
-							if ( data[type] == null ) {
+							if ( typeof data[type] !== 'object' || !data[type] ) {
 								break;
 							}
 
@@ -213,7 +213,7 @@ var wappalyzer = (function() {
 
 								profiler.regexCount ++;
 
-								if ( data[type][header] != null && regex.test(data[type][header]) ) {
+								if ( typeof data[type][header] === 'string' && regex.test(data[type][header]) ) {
 									apps.push(app);
 
 									continue appLoop;
@@ -222,7 +222,7 @@ var wappalyzer = (function() {
 
 							break;
 						case 'env':
-							if ( data[type] == null ) {
+							if ( typeof data[type] !== 'object' || !data[type] ) {
 								break;
 							}
 
@@ -299,10 +299,10 @@ var wappalyzer = (function() {
 
 			// Additional information
 			if ( typeof w.ping.hostnames !== 'undefined' && typeof w.ping.hostnames[hostname] !== 'undefined' ) {
-				if ( data.html != null ) {
+				if ( typeof data.html === 'string' && data.html ) {
 					match = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
 
-					if ( match != null && match.length ) {
+					if ( match.length ) {
 						w.ping.hostnames[hostname].meta['language'] = match[1];
 					}
 
@@ -322,7 +322,7 @@ var wappalyzer = (function() {
 				w.log(hostname + ': ' + JSON.stringify(w.ping.hostnames[hostname]));
 			}
 
-			if ( w.ping.hostnames != null && Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }
+			if ( typeof w.ping.hostnames === 'object' && Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }
 
 			apps = null;
 			data = null;
