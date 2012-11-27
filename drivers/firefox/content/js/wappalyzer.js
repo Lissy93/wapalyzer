@@ -302,7 +302,7 @@ var wappalyzer = (function() {
 				if ( typeof data.html === 'string' && data.html ) {
 					match = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
 
-					if ( match.length ) {
+					if ( match && match.length ) {
 						w.ping.hostnames[hostname].meta['language'] = match[1];
 					}
 
