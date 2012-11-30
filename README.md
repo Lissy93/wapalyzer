@@ -142,6 +142,7 @@ Wappalyzer on Firefox:
 License
 -------
 >Wappalyzer
+>
 >Copyright © 2012  Elbert Alias and Wappalyzer project contributors
 >
 >This program is free software: you can redistribute it and/or modify
