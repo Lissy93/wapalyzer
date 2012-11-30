@@ -20,6 +20,14 @@ w.driver = {
 			headers: w.driver.data.headers
 		});
 
+		/* Return categories
+		w.detected[w.driver.data.url].map(function(app, i) {
+			w.apps[app].cats.map(function(cat) {
+				w.detected[w.driver.data.url][i] += ' ' + w.categories[cat];
+			});
+		});
+		*/
+
 		return w.detected[w.driver.data.url];
 	},
 
