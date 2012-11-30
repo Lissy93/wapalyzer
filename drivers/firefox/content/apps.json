@@ -1582,7 +1582,7 @@
 		"Tumblr": {
 			"cats": [ 11 ],
 			"html": "<iframe src=\\\"[^>]+tumblr\\.com",
-			"url": "^(www.)?[^/]+\\.tumblr\\.com",
+			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/"
 			"headers": { "X-Tumblr-Usec": ".*" }
 		},
 		"Twilight CMS": {
