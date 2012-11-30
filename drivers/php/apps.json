@@ -1582,7 +1582,11 @@
 		"Tumblr": {
 			"cats": [ 11 ],
 			"html": "<iframe src=\\\"[^>]+tumblr\\.com",
+<<<<<<< HEAD
 			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/"
+=======
+			"url": "^(www.)?[^/]+\\.tumblr\\.com",
+>>>>>>> 7cd3684... More strict patterns
 			"headers": { "X-Tumblr-Usec": ".*" }
 		},
 		"Twilight CMS": {
