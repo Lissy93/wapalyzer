@@ -1595,7 +1595,8 @@
 			"cats": [ 18 ],
 			"script": "twitter\\.github\\.com/bootstrap",
 			"html": "<link[^>]+bootstrap[^>]+css",
-			"env": "^Twipsy$"
+			"env": "^Twipsy$",
+			"confidence": { "env": 50 }
 		},
 		"Typekit": {
 			"cats": [ 17 ],

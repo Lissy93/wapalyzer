@@ -1,5 +1,4 @@
-Wappalyzer
-==========
+# Wappalyzer
 
 [Wappalyzer](http://wappalyzer.com/) is a 
 [browser extension](http://wappalyzer.com/download) that uncovers the 
@@ -14,10 +13,9 @@ technologies used on websites.  It detects
 *Licensed under the [GPL](https://github.com/ElbertF/Wappalyzer/blob/master/LICENSE).*
 
 
-Contributing
-------------
+## Contributing
 
-**Adding a new application**
+### Adding a new application
 
 * Edit `share/apps.json` and use a validator like http://jsonformatter.curiousconcept.com/ to verify your modification.
 * Add a 16x16 PNG image to `share/images/icons` matching the application name and compressed with a loss-less tools like http://www.smushit.com/ or optipng http://optipng.sourceforge.net/.
@@ -39,9 +37,27 @@ Example:
 	}
 ```
 
+### JSON fields
 
-Drivers
--------
+#### `_array_ cats`
+
+#### `_object_ headers`
+
+#### `_string_ url`
+
+#### `_string_ html`
+
+#### `_object_ meta`
+
+#### `_string_ script`
+
+#### `_string_ env`
+
+#### `_array_ implies`
+
+#### `_object_ confidence`
+
+## Drivers
 
 Wappalyzer is multi-platform. The main code lives in the `share/` directory and
 platform specific code in `drivers/`. The sections below describe how to set up
@@ -51,7 +67,7 @@ To keep files synchronised between drivers, run the `links.sh` script (UNIX-like
 systems only, Windows users can use `links.cmd`.)
 
 
-**Mozilla Firefox**
+### Mozilla Firefox**
 
 * Place a file called `wappalyzer@crunchlabz.com` in the extensions directory in
   your [profile folder](http://kb.mozillazine.org/Profile_folder_-_Firefox) 
@@ -62,7 +78,7 @@ systems only, Windows users can use `links.cmd`.)
 * Ctrl+Shift+J brings up a console for debugging.
 
 
-**Google Chrome**
+### Google Chrome
 
 The Chrome version needs some love, if anyone wants to pick it up. It's
 currently not as feature-rich as the Firefox add-on (although partially due to 
@@ -74,12 +90,12 @@ API limitations.)
 * Select `drivers/chrome/`
 
 
-**Bookmarklet**
+### Bookmarklet
 
 Beta version available for testing at [wappalyzer.com/bookmarklet](http://wappalyzer.com/bookmarklet).
 
 
-**HTML**
+### HTML
 
 The HTML driver serves purely as an example. It's a good starting point if you
 want to port Wappalyzer to a new platform.
@@ -87,7 +103,7 @@ want to port Wappalyzer to a new platform.
 * Navigate to `drivers/html/`
 
 
-**PHP**
+### PHP
 
 The PHP driver requires the [V8js](http://php.net/manual/en/book.v8js.php) class. Installing V8js 
 using [PECL](http://pecl.php.net/) on Debian Linux or Ubuntu should be very straight forward:
@@ -112,30 +128,28 @@ $detectedApps = $wappalyzer->analyze();
 ```
 
 
-**Mozilla Jetpack**
+### Mozilla Jetpack
 
 Work in progress, experimental. See https://wiki.mozilla.org/Jetpack.
 
 
-Unofficial drivers and ports
-----------------------------
+## Unofficial drivers and ports
 
-**Python**
+### Python
 
 A Python driver by [@ebradbury](https://github.com/ebradbury).
 
 https://github.com/ebradbury/Wappalyzer/tree/master/drivers/python
 
 
-**Ruby**
+### Ruby
 
 A Ruby port by [@skroutz](https://github.com/skroutz).
 
 https://github.com/skroutz/wappalyzer-ruby
 
 
-Screenshot
-----------
+## Screenshot
 
 Wappalyzer on Firefox:
 
