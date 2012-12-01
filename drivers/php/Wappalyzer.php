@@ -54,7 +54,7 @@ class Wappalyzer
 				//'env'     => $env
 				));
 
-			return $this->v8->executeString('
+			$result = $this->v8->executeString('
 				w.apps         = ' . json_encode($this->apps) . ';
 				w.categories   = ' . json_encode($this->categories) . ';
 				w.driver.debug = ' . ( $this->debug ? 'true' : 'false' ) . ';
@@ -62,6 +62,8 @@ class Wappalyzer
 
 				w.driver.init();
 				');
+
+			return json_decode($result);
 		} catch ( V8JsException $e ) {
 			throw new WappalyzerException('JavaScript error: ' . $e->getMessage());
 		}

@@ -15,20 +15,25 @@ w.driver = {
 	 * Initialize
 	 */
 	init: function() {
+		var app, apps = {};
+
 		w.analyze(w.driver.data.host, w.driver.data.url, {
 			html:    w.driver.data.html,
 			headers: w.driver.data.headers
 		});
 
-		/* Return categories
-		w.detected[w.driver.data.url].map(function(app, i) {
-			w.apps[app].cats.map(function(cat) {
-				w.detected[w.driver.data.url][i] += ' ' + w.categories[cat];
-			});
-		});
-		*/
+		for ( app in w.detected[w.driver.data.url] ) {
+			apps[app] = {
+				categories: [],
+				confidence: w.detected[w.driver.data.url][app].total
+				};
 
-		return w.detected[w.driver.data.url];
+			w.apps[app].cats.map(function(cat) {
+				apps[app].categories.push(w.categories[cat]);
+			});
+		};
+
+		return JSON.stringify(apps);
 	},
 
 	/**

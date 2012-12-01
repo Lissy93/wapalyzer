@@ -125,7 +125,7 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var count = w.detected[tab.url].length.toString();
+			var count = Object.keys(w.detected[tab.url]).length.toString();
 
 			if ( tabCache[tab.id] == null ) {
 				tabCache[tab.id] = {
@@ -140,11 +140,11 @@
 
 			if ( count > 0 ) {
 				// Find the main application to display
-				var i, appName, found = false;
+				var i, appName, confidence, found = false;
 
 				w.driver.categoryOrder.map(function(match) {
-					for ( i in w.detected[tab.url] ) {
-						appName = w.detected[tab.url][i];
+					for ( appName in w.detected[tab.url] ) {
+						confidence = w.detected[tab.url][appName].total;
 
 						w.apps[appName].cats.map(function(cat) {
 							if ( cat == match && !found ) {

@@ -1380,8 +1380,9 @@
 			"cats": [ 18 ],
 			"script": "/assets/application-[a-z\\d]{32}/\\.js",
 			"meta": { "csrf-param": "authenticity_token" },
-			"headers": { "Server": "(mod_rails|mod_rack|Phusion\\.Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion\\.Passenger)" },
-			"implies": [ "Ruby" ]
+			"headers": { "Server": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)" },
+			"implies": [ "Ruby" ],
+			"confidence": { "script": 50, "meta": 50, "headers": 50 }
 		},
 		"S.Builder": {
 			"cats": [ 1 ],
@@ -1581,7 +1582,7 @@
 		"Tumblr": {
 			"cats": [ 11 ],
 			"html": "<iframe src=\\\"[^>]+tumblr\\.com",
-			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/"
+			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/",
 			"headers": { "X-Tumblr-Usec": ".*" }
 		},
 		"Twilight CMS": {

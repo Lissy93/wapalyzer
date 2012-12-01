@@ -136,7 +136,7 @@
 		 */
 		displayApps: function() {
 			var
-				i, j, elements, menuItem, menuSeparator, image,
+				i, j, app, confidence, elements, menuItem, menuSeparator, image,
 				remove    = [],
 				container = d.getElementById('wappalyzer-container'),
 				menu      = d.getElementById('wappalyzer-applications'),
@@ -145,7 +145,7 @@
 
 			if ( !container ) { return; }
 
-			if ( w.detected[url] != null && w.detected[url].length ) {
+			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
 				// No change
 				if ( w.driver.lastDisplayed === JSON.stringify(w.detected[url]) ) { return; }
 			} else {
@@ -164,7 +164,7 @@
 				}
 			}
 
-			if ( w.detected[url] != null && w.detected[url].length ) {
+			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					image = d.createElement('image');
 
@@ -173,7 +173,9 @@
 					container.appendChild(image);
 				}
 
-				w.detected[url].map(function(app, i) {
+				for ( app in w.detected[url] ) {
+					confidence = w.detected[url][app].total;
+
 					var j, cat, showCat, categories = [];
 
 					for ( i in w.apps[app].cats ) {
@@ -189,7 +191,7 @@
 
 							menuItem.setAttribute('class', 'wappalyzer-application menuitem-iconic');
 							menuItem.setAttribute('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-							menuItem.setAttribute('label', app);
+							menuItem.setAttribute('label', app + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
 							menuItem.setAttribute('name',  app);
 
 							menuItem.addEventListener('command', function() {
@@ -228,7 +230,7 @@
 							break;
 						}
 					}
-				});
+				}
 
 				w.driver.lastDisplayed = JSON.stringify(w.detected[url]);
 			} else {
