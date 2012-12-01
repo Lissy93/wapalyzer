@@ -140,13 +140,10 @@
 
 			if ( count > 0 ) {
 				// Find the main application to display
-				var i, appName, confidence, found = false;
+				var i, appName, found = false;
 
 				w.driver.categoryOrder.map(function(match) {
 					for ( appName in w.detected[tab.url] ) {
-						confidence = w.detected[tab.url][appName].total;
-
-						w.apps[appName].cats.map(function(cat) {
 							if ( cat == match && !found ) {
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 

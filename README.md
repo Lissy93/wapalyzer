@@ -27,14 +27,15 @@ Example:
 
 ```javascript
 "Application Name": { 
-	cats:    [ "1" ], 
-	headers: { "X-Powered-By": "Application Name" },
-	url:     ".+\\.application-name\\.com",
-	html:    "<link[^>]application-name\\.css", 
-	meta:    { "generator": "Application Name" },
-	script:  "application-name\\.js",
-	env:     "ApplicationName",
-	implies: [ "PHP" ]
+	"cats":      [ 1 ], 
+	"headers":   { "X-Powered-By": "Application Name" },
+	"url":       ".+\\.application-name\\.com",
+	"html":      "<link[^>]application-name\\.css", 
+	"meta":      { "generator": "Application Name" },
+	"script":    "application-name\\.js",
+	"env":       "ApplicationName",
+	"implies":    [ "PHP" ],
+	"confidence": { "html": 50, "script": 50 }
 	}
 ```
 
