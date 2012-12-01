@@ -42,7 +42,7 @@ Example:
 field      | type   | description
 -----------|--------|------------
 cats       | array  | List of category IDs. See [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json).
-confidence | object | 
+confidence | object | Indicates less reliable patterns (possibly causing false positives). The aim is to achieve a combined confidence of 100%.
 env        | string | Global JavaScript variables (e.g. `jQuery`).
 headers    | object | HTTP Response headers (e.g. `X-Powered-By`)
 html       | string | Full response body.
