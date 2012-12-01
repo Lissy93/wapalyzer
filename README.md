@@ -44,9 +44,7 @@ Example:
 
 field      | type   | description
 -----------|--------|------------
-cats       | array  | List of category IDs. See 
-                      [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json)
-											for the complete list.
+cats       | array  | List of category IDs. See [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json) for the complete list.
 confidence | object | Indicates less reliable patterns that may cause false positives. The aim is to achieve a combined confidence of 100%. Defaults to 100% for unspecified fields.
 env        | string | Global JavaScript variables, e.g. `jQuery`.
 headers    | object | HTTP Response headers, e.g. `X-Powered-By`.
@@ -66,7 +64,7 @@ To keep files synchronised between drivers, run `links.sh` (UNIX-like systems)
 or `links.cmd` (Windows).
 
 
-### Mozilla Firefox**
+### Mozilla Firefox
 
 * Place a file called `wappalyzer@crunchlabz.com` in the extensions directory in
   your [profile folder](http://kb.mozillazine.org/Profile_folder_-_Firefox) 
@@ -78,10 +76,6 @@ or `links.cmd` (Windows).
 
 
 ### Google Chrome
-
-The Chrome version needs some love, if anyone wants to pick it up. It's
-currently not as feature-rich as the Firefox add-on (although partially due to 
-API limitations.)
 
 * Navigate to `about:extensions`
 * Check "Developer mode"
