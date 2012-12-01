@@ -12,14 +12,17 @@ technologies used on websites.  It detects
 
 *Licensed under the [GPL](https://github.com/ElbertF/Wappalyzer/blob/master/LICENSE).*
 
-
 ## Contributing
 
 ### Adding a new application
 
-* Edit `share/apps.json` and use a validator like http://jsonformatter.curiousconcept.com/ to verify your modification.
-* Add a 16x16 PNG image to `share/images/icons` matching the application name and compressed with a loss-less tools like http://www.smushit.com/ or optipng http://optipng.sourceforge.net/.
-* Provide the URL to the application's website when submitting a pull request.
+* Edit `share/apps.json` (use a JSON 
+  [validator](http://jsonformatter.curiousconcept.com)).
+* Add a 16x16 PNG image to `share/images/icons` matching the application name 
+  (use [Smush.it](http://www.smushit.com) or 
+	[OptiPNG](http://optipng.sourceforge.net) for compression).
+* Specify one or more categories and provide the URL to the application's 
+  website when submitting a pull request.
 
 Example:
 
@@ -41,15 +44,17 @@ Example:
 
 field      | type   | description
 -----------|--------|------------
-cats       | array  | List of category IDs. See [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json).
-confidence | object | Indicates less reliable patterns (possibly causing false positives). The aim is to achieve a combined confidence of 100%.
-env        | string | Global JavaScript variables (e.g. `jQuery`).
-headers    | object | HTTP Response headers (e.g. `X-Powered-By`)
-html       | string | Full response body.
+cats       | array  | List of category IDs. See 
+                      [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json)
+											for the complete list.
+confidence | object | Indicates less reliable patterns that may cause false positives. The aim is to achieve a combined confidence of 100%. Defaults to 100% for unspecified fields.
+env        | string | Global JavaScript variables, e.g. `jQuery`.
+headers    | object | HTTP Response headers, e.g. `X-Powered-By`.
+html       | string | Full HTML response body.
 implies    | array  | The presence of one application can imply the presence of another, e.g. Drupal means PHP is also in use.
-url        | string | URL of the page (e.g. `wordpress.com`).
-meta       | object | HTML meta tags (e.g. `generator`).
-script     | string | `src` attribute of HTML script tags (e.g. `jquery.js`).
+url        | string | URL of the page, e.g. `http://wordpress.com/index.php`.
+meta       | object | HTML meta tags, e.g. `generator`.
+script     | string | `src` attribute of HTML script tags, e.g. `jquery.js`.
 
 ## Drivers
 
@@ -57,8 +62,8 @@ Wappalyzer is multi-platform. The main code lives in the `share/` directory and
 platform specific code in `drivers/`. The sections below describe how to set up
 a development environment for the various existing drivers.
 
-To keep files synchronised between drivers, run the `links.sh` script (UNIX-like 
-systems only, Windows users can use `links.cmd`.)
+To keep files synchronised between drivers, run `links.sh` (UNIX-like systems)
+or `links.cmd` (Windows).
 
 
 ### Mozilla Firefox**
@@ -86,7 +91,8 @@ API limitations.)
 
 ### Bookmarklet
 
-Beta version available for testing at [wappalyzer.com/bookmarklet](http://wappalyzer.com/bookmarklet).
+Beta version available for testing at 
+[wappalyzer.com/bookmarklet](http://wappalyzer.com/bookmarklet).
 
 
 ### HTML
@@ -99,8 +105,9 @@ want to port Wappalyzer to a new platform.
 
 ### PHP
 
-The PHP driver requires the [V8js](http://php.net/manual/en/book.v8js.php) class. Installing V8js 
-using [PECL](http://pecl.php.net/) on Debian Linux or Ubuntu should be very straight forward:
+The PHP driver requires the [V8js](http://php.net/manual/en/book.v8js.php) 
+class. Installing V8js using [PECL](http://pecl.php.net/) on Debian Linux or 
+Ubuntu should be very straight forward:
 
 * `# aptitude install php5-dev php-pear libv8-dev`
 * `# pecl install channel://pecl.php.net/v8js-0.1.3`
