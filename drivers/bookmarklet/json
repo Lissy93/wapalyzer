@@ -813,7 +813,7 @@
 			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill)",
 			"headers": { "X-Content-Encoded-By": "Joomla" },
 			"env": "^jcomments$",
-			"implies": [ "PHP" ]
+			"implies": [ "PHP" ],
 			"confidence": { "html": 50, "url": 50 }
 		},
 		"jqPlot": {
