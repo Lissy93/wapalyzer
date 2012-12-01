@@ -27,7 +27,7 @@ technologies used on websites.  It detects
 
 ## apps.json
 
-#### Example
+### Example
 
 ```javascript
 "Application Name": { 
@@ -56,9 +56,6 @@ implies    | array  | The presence of one application can imply the presence of 
 url        | string | URL of the page, e.g. `http://wordpress.com/index.php`.
 meta       | object | HTML meta tags, e.g. `generator`.
 script     | string | `src` attribute of HTML script tags, e.g. `jquery.js`.
-
-
-Except `cats`, all fields are optional.
 
 
 ## Drivers
