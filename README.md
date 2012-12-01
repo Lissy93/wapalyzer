@@ -39,23 +39,17 @@ Example:
 
 ### JSON fields
 
-#### `_array_ cats`
-
-#### `_object_ headers`
-
-#### `_string_ url`
-
-#### `_string_ html`
-
-#### `_object_ meta`
-
-#### `_string_ script`
-
-#### `_string_ env`
-
-#### `_array_ implies`
-
-#### `_object_ confidence`
+field      | type   | description
+---------------------------------
+cats       | array  | TODO
+headers    | object | TODO
+url        | string | TODO
+html       | string | TODO
+meta       | object | TODO
+script     | string | TODO
+env        | string | TODO
+implies    | array  | TODO
+confidence | object | TODO
 
 ## Drivers
 
