@@ -24,7 +24,10 @@ technologies used on websites.  It detects
 * Specify one or more categories and provide the URL to the application's 
   website when submitting a pull request.
 
-Example:
+
+## apps.json
+
+#### Example
 
 ```javascript
 "Application Name": { 
@@ -40,10 +43,11 @@ Example:
 	}
 ```
 
+
 ### JSON fields
 
-field      | type   | description
------------|--------|------------
+field      | type   | required | description
+-----------|--------|-----------------------
 cats       | array  | List of category IDs. See [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json) for the complete list.
 confidence | object | Indicates less reliable patterns that may cause false positives. The aim is to achieve a combined confidence of 100%. Defaults to 100% for unspecified fields.
 env        | string | Global JavaScript variables, e.g. `jQuery`.
@@ -53,6 +57,9 @@ implies    | array  | The presence of one application can imply the presence of 
 url        | string | URL of the page, e.g. `http://wordpress.com/index.php`.
 meta       | object | HTML meta tags, e.g. `generator`.
 script     | string | `src` attribute of HTML script tags, e.g. `jquery.js`.
+
+Except `cats`, all fields are optional.
+
 
 ## Drivers
 
