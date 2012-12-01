@@ -40,7 +40,7 @@ Example:
 ### JSON fields
 
 field      | type   | description
----------------------------------
+-----------|--------|------------
 cats       | array  | TODO
 headers    | object | TODO
 url        | string | TODO
