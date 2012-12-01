@@ -25,13 +25,13 @@ Example:
 
 ```javascript
 "Application Name": { 
-	"cats":      [ 1 ], 
-	"headers":   { "X-Powered-By": "Application Name" },
-	"url":       ".+\\.application-name\\.com",
-	"html":      "<link[^>]application-name\\.css", 
-	"meta":      { "generator": "Application Name" },
-	"script":    "application-name\\.js",
-	"env":       "ApplicationName",
+	"cats":       [ 1 ], 
+	"headers":    { "X-Powered-By": "Application Name" },
+	"url":        ".+\\.application-name\\.com",
+	"html":       "<link[^>]application-name\\.css", 
+	"meta":       { "generator": "Application Name" },
+	"script":     "application-name\\.js",
+	"env":        "ApplicationName",
 	"implies":    [ "PHP" ],
 	"confidence": { "html": 50, "script": 50 }
 	}
@@ -41,15 +41,15 @@ Example:
 
 field      | type   | description
 -----------|--------|------------
-cats       | array  | TODO
-headers    | object | TODO
-url        | string | TODO
-html       | string | TODO
-meta       | object | TODO
-script     | string | TODO
-env        | string | TODO
-implies    | array  | TODO
-confidence | object | TODO
+cats       | array  | List of category IDs. See [apps.json](https://github.com/ElbertF/Wappalyzer/blob/master/share/apps.json).
+confidence | object | 
+env        | string | Global JavaScript variables (e.g. `jQuery`).
+headers    | object | HTTP Response headers (e.g. `X-Powered-By`)
+html       | string | Full response body.
+implies    | array  | The presence of one application can imply the presence of another, e.g. Drupal means PHP is also in use.
+url        | string | URL of the page (e.g. `wordpress.com`).
+meta       | object | HTML meta tags (e.g. `generator`).
+script     | string | `src` attribute of HTML script tags (e.g. `jquery.js`).
 
 ## Drivers
 
