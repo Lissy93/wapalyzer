@@ -189,13 +189,14 @@
 							menuSeparator = d.createElement('menuseparator');
 							menuItem      = d.createElement('menuitem');
 
-							menuItem.setAttribute('class', 'wappalyzer-application menuitem-iconic');
-							menuItem.setAttribute('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-							menuItem.setAttribute('label', app + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
-							menuItem.setAttribute('name',  app);
+							menuItem.setAttribute('class',     'wappalyzer-application menuitem-iconic');
+							menuItem.setAttribute('image',     'chrome://wappalyzer/skin/images/icons/' + app + '.png');
+							menuItem.setAttribute('label',     app + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
+							menuItem.setAttribute('name',      app);
+							menuItem.setAttribute('data-url',  w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
 
 							menuItem.addEventListener('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''), medium: 'menu' });
+								w.driver.goToURL({ url: this.getAttribute('data-url'), medium: 'menu' });
 							});
 
 							menu.appendChild(menuSeparator);
@@ -208,11 +209,12 @@
 
 								menuItem = d.createElement('menuitem');
 
-								menuItem.setAttribute('class', 'wappalyzer-category');
-								menuItem.setAttribute('label', strings.getString('wappalyzer.cat' + cat));
+								menuItem.setAttribute('class',    'wappalyzer-category');
+								menuItem.setAttribute('label',    strings.getString('wappalyzer.cat' + cat));
+								menuItem.setAttribute('data-url', w.config.websiteURL + 'categories/' + w.categories[cat]);
 
 								menuItem.addEventListener('command', function() {
-									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat], medium: 'menu' });
+									w.driver.goToURL({ url: this.getAttribute('data-url'), medium: 'menu' });
 								});
 
 								menu.appendChild(menuItem);
