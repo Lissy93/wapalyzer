@@ -28,7 +28,7 @@ var wappalyzer = (function() {
 	 * Main script
 	 */
 	var w = {
-		apps:     null,
+		apps:     {},
 		cats:     null,
 		ping:     { hostnames: {} },
 		detected: {},
@@ -90,6 +90,15 @@ var wappalyzer = (function() {
 		 * Analyze the request
 		 */
 		analyze: function(hostname, url, data) {
+			var
+				i, j, app, confidence, type, regex, regexMeta, regexScript, match, content, meta, header,
+				profiler = {
+					regexCount: 0,
+					startTime:  new Date().getTime()
+				},
+				apps     = []
+				;
+
 			w.log('w.analyze');
 
 			url = url.split('#')[0];
@@ -105,15 +114,6 @@ var wappalyzer = (function() {
 			if ( typeof w.detected[url] === 'undefined' ) {
 				w.detected[url] = {};
 			}
-
-			var
-				i, app, confidence, type, regex, regexMeta, regexScript, match, content, meta, header,
-				profiler = {
-					regexCount: 0,
-					startTime:  new Date().getTime()
-				},
-				apps     = []
-				;
 
 			appLoop:
 			for ( app in w.apps ) {
@@ -134,7 +134,7 @@ var wappalyzer = (function() {
 							profiler.regexCount ++;
 
 							if ( regex.test(url) ) {
-								apps.push({ app: app, confidence: confidence });
+								apps[app] = confidence;
 
 								continue appLoop;
 							}
@@ -150,7 +150,7 @@ var wappalyzer = (function() {
 							profiler.regexCount ++;
 
 							if ( regex.test(data[type]) ) {
-								apps.push({ app: app, confidence: confidence });
+								apps[app] = confidence;
 
 								continue appLoop;
 							}
@@ -170,7 +170,7 @@ var wappalyzer = (function() {
 								profiler.regexCount ++;
 
 								if ( regex.test(match[2]) ) {
-									apps.push({ app: app, confidence: confidence });
+									apps[app] = confidence;
 
 									continue appLoop;
 								}
@@ -198,7 +198,7 @@ var wappalyzer = (function() {
 										profiler.regexCount ++;
 
 										if ( content && content.length === 4 && regex.test(content[2]) ) {
-											apps.push({ app: app, confidence: confidence });
+											apps[app] = confidence;
 
 											continue appLoop;
 										}
@@ -218,7 +218,7 @@ var wappalyzer = (function() {
 								profiler.regexCount ++;
 
 								if ( typeof data[type][header] === 'string' && regex.test(data[type][header]) ) {
-									apps.push({ app: app, confidence: confidence });
+									apps[app] = confidence;
 
 									continue appLoop;
 								}
@@ -236,7 +236,7 @@ var wappalyzer = (function() {
 								profiler.regexCount ++;
 
 								if ( regex.test(data[type][i]) ) {
-									apps.push({ app: app, confidence: confidence });
+									apps[app] = confidence;
 
 									continue appLoop;
 								}
@@ -250,45 +250,39 @@ var wappalyzer = (function() {
 			w.log('Tested ' + profiler.regexCount + ' regular expressions in ' + ( ( ( new Date ).getTime() - profiler.startTime ) / 1000 ) + 's');
 
 			// Implied applications
-			var i, j, k, implied;
-
+			// Run several passes as implied apps may imply other apps
 			for ( i = 0; i < 3; i ++ ) {
-				for ( j in apps ) {
-					app = apps[j].app;
+				for ( app in apps ) {
+					confidence = apps[app];
 
 					if ( w.apps[app] && w.apps[app].implies ) {
-						for ( k in w.apps[app].implies ) {
-							implied = w.apps[app].implies[k];
-
+						w.apps[app].implies.map(function(implied) {
 							if ( !w.apps[implied] ) {
 								w.log('Implied application ' + implied + ' does not exist');
 
-								continue;
+								return;
 							}
 
-							if ( !w.detected[url].hasOwnProperty(implied) && apps.indexOf(implied) === -1 ) {
-								apps.push({ app: implied, confidence: apps[j].confidence });
+							// Apply app confidence to implied app
+							if ( !apps.hasOwnProperty(implied) ) {
+								apps[implied] = {};
 							}
-						}
+
+							for ( type in confidence ) {
+								if ( !apps[implied].hasOwnProperty(type + ' implied by ' + app) ) {
+									apps[implied][type + ' implied by ' + app] = confidence[type];
+								}
+							}
+						});
 					}
 				}
 			}
 
-			w.log(apps.reduce(function(reduced, app) {
-				var i;
-
-				for ( i in app.confidence ) {
-					return app.app + ' (' + app.confidence[i] + '%) ';
-				}
-			}, Object.keys(apps).length + ' apps detected: ') + 'on ' + url);
+			w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + 'on ' + url);
 
 			// Keep history of detected apps
-			var i, app, regex, regexMeta, match;
-
-			for ( i in apps ) {
-				app = apps[i].app;
-
-				confidence = apps[i].confidence;
+			for ( app in apps ) {
+				confidence = apps[app];
 
 				// Per URL
 				if ( !w.detected[url].hasOwnProperty(app)) {
