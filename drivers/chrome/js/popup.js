@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 
 		displayApps: function() {
+			var appName, confidence;
+
 			chrome.tabs.getSelected(null, function(tab) {
 				chrome.extension.sendRequest({ id: 'get_apps', tab: tab }, function(response) {
 					if ( response.tabCache.analyzed.indexOf('headers') > 0 ) {
@@ -55,12 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
 					if ( response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';
 
-						response.tabCache.appsDetected.map(function(appName) {
+						for ( appName in response.tabCache.appsDetected ) {
+							confidence = response.tabCache.appsDetected[appName].total;
+
 							html =
 								'<div class="detected-app">' +
 									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
-										'<span class="label">' + appName + '</span>' +
+										'<span class="label">' + appName + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 
 							response.apps[appName].cats.map(function(cat) {
@@ -75,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 								'</div>';
 
 							detectedApps.innerHTML = detectedApps.innerHTML + html;
-						});
+						}
 					}
 				});
 			});

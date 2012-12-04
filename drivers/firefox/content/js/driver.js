@@ -136,7 +136,7 @@
 		 */
 		displayApps: function() {
 			var
-				i, j, elements, menuItem, menuSeparator, image,
+				i, j, app, confidence, elements, menuItem, menuSeparator, image,
 				remove    = [],
 				container = d.getElementById('wappalyzer-container'),
 				menu      = d.getElementById('wappalyzer-applications'),
@@ -145,7 +145,7 @@
 
 			if ( !container ) { return; }
 
-			if ( w.detected[url] != null && w.detected[url].length ) {
+			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
 				// No change
 				if ( w.driver.lastDisplayed === JSON.stringify(w.detected[url]) ) { return; }
 			} else {
@@ -164,7 +164,7 @@
 				}
 			}
 
-			if ( w.detected[url] != null && w.detected[url].length ) {
+			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					image = d.createElement('image');
 
@@ -173,7 +173,9 @@
 					container.appendChild(image);
 				}
 
-				w.detected[url].map(function(app, i) {
+				for ( app in w.detected[url] ) {
+					confidence = w.detected[url][app].total;
+
 					var j, cat, showCat, categories = [];
 
 					for ( i in w.apps[app].cats ) {
@@ -187,13 +189,14 @@
 							menuSeparator = d.createElement('menuseparator');
 							menuItem      = d.createElement('menuitem');
 
-							menuItem.setAttribute('class', 'wappalyzer-application menuitem-iconic');
-							menuItem.setAttribute('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-							menuItem.setAttribute('label', app);
-							menuItem.setAttribute('name',  app);
+							menuItem.setAttribute('class',     'wappalyzer-application menuitem-iconic');
+							menuItem.setAttribute('image',     'chrome://wappalyzer/skin/images/icons/' + app + '.png');
+							menuItem.setAttribute('label',     app + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
+							menuItem.setAttribute('name',      app);
+							menuItem.setAttribute('data-url',  w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
 
 							menuItem.addEventListener('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''), medium: 'menu' });
+								w.driver.goToURL({ url: this.getAttribute('data-url'), medium: 'menu' });
 							});
 
 							menu.appendChild(menuSeparator);
@@ -206,11 +209,12 @@
 
 								menuItem = d.createElement('menuitem');
 
-								menuItem.setAttribute('class', 'wappalyzer-category');
-								menuItem.setAttribute('label', strings.getString('wappalyzer.cat' + cat));
+								menuItem.setAttribute('class',    'wappalyzer-category');
+								menuItem.setAttribute('label',    strings.getString('wappalyzer.cat' + cat));
+								menuItem.setAttribute('data-url', w.config.websiteURL + 'categories/' + w.categories[cat]);
 
 								menuItem.addEventListener('command', function() {
-									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat], medium: 'menu' });
+									w.driver.goToURL({ url: this.getAttribute('data-url'), medium: 'menu' });
 								});
 
 								menu.appendChild(menuItem);
@@ -228,7 +232,7 @@
 							break;
 						}
 					}
-				});
+				}
 
 				w.driver.lastDisplayed = JSON.stringify(w.detected[url]);
 			} else {

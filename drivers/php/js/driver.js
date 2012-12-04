@@ -15,12 +15,25 @@ w.driver = {
 	 * Initialize
 	 */
 	init: function() {
+		var app, apps = {};
+
 		w.analyze(w.driver.data.host, w.driver.data.url, {
 			html:    w.driver.data.html,
 			headers: w.driver.data.headers
 		});
 
-		return w.detected[w.driver.data.url];
+		for ( app in w.detected[w.driver.data.url] ) {
+			apps[app] = {
+				categories: [],
+				confidence: w.detected[w.driver.data.url][app].total
+				};
+
+			w.apps[app].cats.map(function(cat) {
+				apps[app].categories.push(w.categories[cat]);
+			});
+		};
+
+		return JSON.stringify(apps);
 	},
 
 	/**

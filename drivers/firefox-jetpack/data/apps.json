@@ -813,7 +813,8 @@
 			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill)",
 			"headers": { "X-Content-Encoded-By": "Joomla" },
 			"env": "^jcomments$",
-			"implies": [ "PHP" ]
+			"implies": [ "PHP" ],
+			"confidence": { "html": 50, "url": 50 }
 		},
 		"jqPlot": {
 			"cats": [ 25 ],
@@ -930,7 +931,8 @@
 			"script": "(js/mage|skin/frontend/(default|enterprise))",
 			"headers": { "Set-Cookie": "frontend=" },
 			"env": "^(Mage|VarienForm)$",
-			"implies": [ "PHP" ]
+			"implies": [ "PHP" ],
+			"confidence": { "headers": 50 }
 		},
 		"Mambo": {
 			"cats": [ 1 ],
@@ -1380,8 +1382,9 @@
 			"cats": [ 18 ],
 			"script": "/assets/application-[a-z\\d]{32}/\\.js",
 			"meta": { "csrf-param": "authenticity_token" },
-			"headers": { "Server": "(mod_rails|mod_rack|Phusion\\.Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion\\.Passenger)" },
-			"implies": [ "Ruby" ]
+			"headers": { "Server": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)" },
+			"implies": [ "Ruby" ],
+			"confidence": { "script": 50, "meta": 50, "headers": 50 }
 		},
 		"S.Builder": {
 			"cats": [ 1 ],
@@ -1467,8 +1470,7 @@
 		"Snoobi": {
 			"cats": [ 10 ],
 			"script": "snoobi\\.com/snoop\\.php",
-			"env": "^snoobi$",
-			"implies": [ "Joomla" ]
+			"env": "^snoobi$"
 		},
 		"SOBI 2": {
 			"cats": [ 19 ],
@@ -1582,7 +1584,7 @@
 		"Tumblr": {
 			"cats": [ 11 ],
 			"html": "<iframe src=\\\"[^>]+tumblr\\.com",
-			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/"
+			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/",
 			"headers": { "X-Tumblr-Usec": ".*" }
 		},
 		"Twilight CMS": {
@@ -1593,7 +1595,8 @@
 			"cats": [ 18 ],
 			"script": "twitter\\.github\\.com/bootstrap",
 			"html": "<link[^>]+bootstrap[^>]+css",
-			"env": "^Twipsy$"
+			"env": "^Twipsy$",
+			"confidence": { "env": 50 }
 		},
 		"Typekit": {
 			"cats": [ 17 ],

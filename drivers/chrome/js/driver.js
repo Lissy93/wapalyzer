@@ -125,7 +125,7 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var count = w.detected[tab.url].length.toString();
+			var count = Object.keys(w.detected[tab.url]).length.toString();
 
 			if ( tabCache[tab.id] == null ) {
 				tabCache[tab.id] = {
@@ -143,9 +143,7 @@
 				var i, appName, found = false;
 
 				w.driver.categoryOrder.map(function(match) {
-					for ( i in w.detected[tab.url] ) {
-						appName = w.detected[tab.url][i];
-
+					for ( appName in w.detected[tab.url] ) {
 						w.apps[appName].cats.map(function(cat) {
 							if ( cat == match && !found ) {
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });

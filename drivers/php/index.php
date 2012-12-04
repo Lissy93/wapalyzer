@@ -21,7 +21,9 @@ try {
 	$detectedApps = $wappalyzer->analyze();
 
 	if ( $detectedApps ) {
-		echo implode("\n", $detectedApps) . "\n";
+		foreach ( $detectedApps as $detectedApp => $data ) {
+			echo $detectedApp . ', ' . $data->confidence . '%, ', implode(', ', $data->categories) . "\n";
+		}
 	} else {
 		echo "No applications detected\n";
 	}
