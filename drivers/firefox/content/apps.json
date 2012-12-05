@@ -1339,8 +1339,8 @@
 		},
 		"RBS Change": {
 			"cats": [ 1, 6 ],
-			"html": "<html[^>]+xmlns:change=",
-			"meta": { "generator": "RBS Change" },
+			"html": "<html[^>]*\\s+xmlns:change=",
+			"meta": { "generator": "^RBS Change" },
 			"implies": [ "PHP" ]
 		},
 		"RCMS": {
