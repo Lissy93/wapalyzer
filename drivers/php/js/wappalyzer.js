@@ -25,6 +25,26 @@ var wappalyzer = (function() {
 	};
 
 	/**
+	 * Parse apps.json patterns
+	 */
+	var parse = function(patterns) {
+		var parsed = [];
+
+		// Convert single patterns to an array
+		if ( typeof patterns === 'string' ) {
+			patterns = [ patterns ];
+		}
+
+		patterns.map(function(pattern) {
+			parsed.push({
+				regex: new RegExp(pattern.replace('/', '\\\/'), 'i') // Escape slashes in regular expression
+				});
+		});
+
+		return parsed;
+	};
+
+	/**
 	 * Main script
 	 */
 	var w = {
@@ -91,7 +111,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regex, regexMeta, regexScript, match, content, meta, header,
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header,
 				profiler = {
 					regexCount: 0,
 					startTime:  new Date().getTime()
@@ -115,7 +135,6 @@ var wappalyzer = (function() {
 				w.detected[url] = {};
 			}
 
-			appLoop:
 			for ( app in w.apps ) {
 				// Skip if the app has already been detected
 				if ( w.detected[url].hasOwnProperty(app) || apps.indexOf(app) !== -1 ) {
@@ -129,15 +148,13 @@ var wappalyzer = (function() {
 
 					switch ( type ) {
 						case 'url':
-							regex = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
+							parse(w.apps[app][type]).map(function(pattern) {
+								profiler.regexCount ++;
 
-							profiler.regexCount ++;
-
-							if ( regex.test(url) ) {
-								apps[app] = confidence;
-
-								continue appLoop;
-							}
+								if ( pattern.regex.test(url) ) {
+									apps[app] = confidence;
+								}
+							});
 
 							break;
 						case 'html':
@@ -145,15 +162,13 @@ var wappalyzer = (function() {
 								break;
 							}
 
-							regex = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
+							parse(w.apps[app][type]).map(function(pattern) {
+								profiler.regexCount ++;
 
-							profiler.regexCount ++;
-
-							if ( regex.test(data[type]) ) {
-								apps[app] = confidence;
-
-								continue appLoop;
-							}
+								if ( pattern.regex.test(data[type]) ) {
+									apps[app] = confidence;
+								}
+							});
 
 							break;
 						case 'script':
@@ -161,20 +176,19 @@ var wappalyzer = (function() {
 								break;
 							}
 
-							regex       = new RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
 							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
 
-							profiler.regexCount ++;
-
-							while ( match = regexScript.exec(data.html) ) {
+							parse(w.apps[app][type]).map(function(pattern) {
 								profiler.regexCount ++;
 
-								if ( regex.test(match[2]) ) {
-									apps[app] = confidence;
+								while ( match = regexScript.exec(data.html) ) {
+									profiler.regexCount ++;
 
-									continue appLoop;
+									if ( pattern.regex.test(match[2]) ) {
+										apps[app] = confidence;
+									}
 								}
-							}
+							});
 
 							break;
 						case 'meta':
@@ -193,15 +207,13 @@ var wappalyzer = (function() {
 									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-										regex = new RegExp(w.apps[app].meta[meta].replace('/', '\\\/'), 'i');
+										parse(w.apps[app].meta[meta]).map(function(pattern) {
+											profiler.regexCount ++;
 
-										profiler.regexCount ++;
-
-										if ( content && content.length === 4 && regex.test(content[2]) ) {
-											apps[app] = confidence;
-
-											continue appLoop;
-										}
+											if ( content && content.length === 4 && regex.test(content[2]) ) {
+												apps[app] = confidence;
+											}
+										});
 									}
 								}
 							}
@@ -213,15 +225,13 @@ var wappalyzer = (function() {
 							}
 
 							for ( header in w.apps[app].headers ) {
-								regex = new RegExp(w.apps[app][type][header].replace('/', '\\\/'), 'i');
+								parse(w.apps[app][type][header]).map(function(pattern) {
+									profiler.regexCount ++;
 
-								profiler.regexCount ++;
-
-								if ( typeof data[type][header] === 'string' && regex.test(data[type][header]) ) {
-									apps[app] = confidence;
-
-									continue appLoop;
-								}
+									if ( typeof data[type][header] === 'string' && pattern.regex.test(data[type][header]) ) {
+										apps[app] = confidence;
+									}
+								});
 							}
 
 							break;
@@ -230,17 +240,15 @@ var wappalyzer = (function() {
 								break;
 							}
 
-							regex = RegExp(w.apps[app][type].replace('/', '\\\/'), 'i');
+							parse(w.apps[app][type]).map(function(pattern) {
+								for ( i in data[type] ) {
+									profiler.regexCount ++;
 
-							for ( i in data[type] ) {
-								profiler.regexCount ++;
-
-								if ( regex.test(data[type][i]) ) {
-									apps[app] = confidence;
-
-									continue appLoop;
+									if ( pattern.regex.test(data[type][i]) ) {
+										apps[app] = confidence;
+									}
 								}
-							}
+							});
 
 							break;
 					}
