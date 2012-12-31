@@ -31,7 +31,8 @@
 		"29": "search-engines",
 		"30": "web-mail",
 		"31": "cdn",
-		"32": "marketing-automation"
+		"32": "marketing-automation",
+		"33": "web-server-extension"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -73,7 +74,7 @@
 		},
 		"Adobe GoLive": {
 			"cats": [ 20 ],
-			"meta": { "generator": "Adobe GoLive" }
+			"meta": { "generator": "Adobe GoLive(\\s([\\d\\.]+))?\\;version:\\2" }
 		},
 		"Advanced Web Stats": {
 			"cats": [ 10 ],
@@ -83,6 +84,10 @@
 		"Alloy": {
 			"cats": [ 12 ],
 			"env": "^AUI$"
+		},
+		"Amaya": {
+			"cats": [ 20 ],
+			"meta": { "generator": "Amaya( V?([\\d\\.]+[a-z]))?\\;version:\\2" }
 		},
 		"Ametys": {
 			"cats": [ 1 ],
@@ -112,7 +117,7 @@
 		},
 		"Apache": {
 			"cats": [ 22 ],
-			"headers": { "Server": "(Apache($|[^-])|HTTPD)" }
+			"headers": { "Server": "(Apache($|/([\\d\\.]+)|[^/-])|HTTPD)\\;version:\\3" }
 		},
 		"Apache JSPWiki": {
 			"cats": [ 8 ],
@@ -144,13 +149,17 @@
 		},
 		"Atlassian Confluence": {
 			"cats": [ 8 ],
-			"html": "Powered by <a href=.+atlassian\\.com/software/confluence",
+			"html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence([^>]+>Atlassian Confluence</a> ([\\d\\.]+))?\\;version:\\2",
+			"headers": { "X-Confluence-Request-Time": ".*" },
+			"meta": { "confluence-request-time": ".*" },
 			"implies": [ "Java" ]
 		},
 		"Atlassian Jira": {
 			"cats": [ 13 ],
 			"env": "^jira$",
-			"html": "Powered by <a href=.+atlassian\\.com/software/jira",
+			"script": "/jira/s/",
+			"url": "/secure/Dashboard.jspa",			
+			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA([^v]*v(ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\4",
 			"implies": [ "Java" ]
 		},
 		"AWStats": {
@@ -297,6 +306,11 @@
 			"meta": { "generator": "CMS Made Simple" },
 			"implies": [ "PHP" ]
 		},
+		"CMSimple": {
+			"cats": [ 1 ],
+			"meta": { "generator": "CMSimple( [\\d\\.]+)?\\;version:\\1" },
+			"implies": [ "PHP" ]
+		},
 		"CO2Stats": {
 			"cats": [ 10 ],
 			"html": "src=[^>]+co2stats\\.com/propres\\.php"
@@ -331,7 +345,6 @@
 		"Contao": {
 			"cats": [ 1 ],
 			"html": "(<!--.+powered by (TYPOlight|Contao)-->|<link[^>]+(typolight|contao)\\.css)",
-			"meta": { "generator": "Contao" },
 			"implies": [ "PHP" ]
 		},
 		"Contenido": {
@@ -489,7 +502,8 @@
 		},
 		"DokuWiki": {
 			"cats": [ 8 ],
-			"meta": { "generator": "DokuWiki" },
+			"meta": { "generator": "DokuWiki( Release [\\-\\d]+)?\\;version:\\1" },
+			"headers": { "Set-Cookie": "DokuWiki=" },
 			"implies": [ "PHP" ]
 		},
 		"DotNetNuke": {
@@ -506,13 +520,13 @@
 		},
 		"DreamWeaver": {
 			"cats": [ 20 ],
-			"html": "(<!--[^>]*(InstanceBeginEditable|Dreamweaver[^>]+target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) {)"
+			"html": "(<!--[^>]*(InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) {)\\;version:\\3"
 		},
 		"Drupal": {
 			"cats": [ 1 ],
 			"script": "drupal\\.js",
 			"html": "Drupal(\\.extend)?.+settings|<(link|style)[^>]+sites/(default|all)/(themes|modules)/",
-			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal", "Expires": "19 Nov 1978" },
+			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(\\s([\\d\\.]+))?\\;version:\\2", "Expires": "19 Nov 1978" },			
 			"env": "^Drupal$",
 			"implies": [ "PHP" ]
 		},
@@ -606,7 +620,7 @@
 		},
 		"FrontPage": {
 			"cats": [ 20 ],
-			"meta": { "generator": "Microsoft FrontPage" },
+			"meta": { "generator": "Microsoft FrontPage(\\s([\\d\\.]+))?\\;version:\\2" },
 			"html": "<html[^>]+urn:schemas-microsoft-com:office:office"
 		},
 		"FWP": {
@@ -664,7 +678,7 @@
 		},
 		"Google Maps": {
 			"cats": [ 5 ],
-			"script": "(maps\\.google\\.com/maps\\?file=api|maps\\.google\\.com/maps/api/staticmap)"
+			"script": "(maps\\.google\\.com/maps\\?file=api(&v=([\\d\\.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\3"
 		},
 		"Google Sites": {
 			"cats": [ 1 ],
@@ -740,7 +754,7 @@
 		},
 		"IIS": {
 			"cats": [ 22 ],
-			"headers": { "Server": "IIS" },
+			"headers": { "Server": "IIS\\/?([\\d\\.]+)?\\;version:\\1" },
 			"implies": [ "Windows Server" ]
 		},
 		"ImpressCMS": {
@@ -778,7 +792,12 @@
 		},
 		"iWeb": {
 			"cats": [ 20 ],
-			"meta": { "generator": "^iWeb" }
+			"meta": { "generator": "^iWeb( [\\d\\.]+)?\\;version:\\1" }
+		},
+		"JAlbum": {
+			"cats": [ 7 ],
+			"meta": { "generator": "JAlbum( [\\d\\.]+)?\\;version:\\1" },
+			"implies": [ "Java" ]			
 		},
 		"Jalios": {
 			"cats": [ 1 ],
@@ -792,6 +811,21 @@
 			"cats": [ 25 ],
 			"script": "jit.*\\.js",
 			"env": "^\\$jit$"
+		},
+		"JavaServer Faces": {
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "JSF(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Java" ]			
+		},
+		"JavaServer Pages": {
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "JSP(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Java" ]			
+		},
+		"Java Servlet": {
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "Servlet(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Java" ]			
 		},
 		"Jirafe": {
 			"cats": [ 10, 32 ],
@@ -829,12 +863,13 @@
 		},
 		"jQuery": {
 			"cats": [ 12 ],
-			"script": "jquery.*\\.js",
+			"script": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ], 			
 			"env": "^jQuery$"
 		},
 		"jQuery Mobile": {
 			"cats": [ 26 ],
-			"script": "jquery\\.mobile.*\\.js"
+			"script": "jquery\\.mobile.*\\.js",
+			"implies": [ "jQuery" ]
 		},
 		"jQuery Sparklines": {
 			"cats": [ 25 ],
@@ -876,6 +911,10 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Kentico CMS" }
 		},
+		"KineticJS": {
+			"cats": [ 25 ],
+			"script": "kinetic(-v?([\\d\\.]+))?\\.js\\;version:\\2"
+		},		
 		"KISSmetrics": {
 			"cats": [ 10 ],
 			"env": "^KM_COOKIE_DOMAIN$"
@@ -979,13 +1018,13 @@
 		"Microsoft ASP.NET": {
 			"cats": [ 18 ],
 			"html": "<input[^>]+name=\\\"__VIEWSTATE",
-			"headers": { "X-Powered-By": "ASP\\.NET", "X-AspNet-Version": ".+" },
+			"headers": { "X-Powered-By": "ASP\\.NET", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": [ "IIS", "Windows Server" ]
 		},
 		"Microsoft SharePoint": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Microsoft SharePoint" },
-			"headers": { "MicrosoftSharePointTeamServices": ".*", "X-SharePointHealthScore": ".*", "SPRequestGuid": ".*", "SharePointHealthScore": ".*" }
+			"headers": { "MicrosoftSharePointTeamServices": "(.*)\\;version:\\1", "X-SharePointHealthScore": ".*", "SPRequestGuid": ".*", "SharePointHealthScore": ".*" }
 		},
 		"MiniBB": {
 			"cats": [ 2 ],
@@ -1008,7 +1047,7 @@
 		},
 		"Modernizr": {
 			"cats": [ 12 ],
-			"script": "modernizr.*\\.js",
+			"script": "modernizr(-([\\d\\.]*[\\d]))?.*\\.js\\;version:\\2",
 			"env": "^Modernizr$"
 		},
 		"MODx": {
@@ -1017,10 +1056,40 @@
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": { "X-Powered-By": "^MODx", "Set-Cookie": "SN4[a-f\\d]{12}|utmcct=/applications/modx" },
 			"implies": [ "PHP" ]
+		},		
+		"mod_fastcgi": {
+			"cats": [ 33 ],
+			"headers": { "Server": "mod_fastcgi(/([\\d\\.]+))?\\;version:\\2" },			
+			"implies": [ "Apache" ]		
+		},		
+		"mod_python": {
+			"cats": [ 33 ],
+			"headers": { "Server": "mod_python(/([\\d\\.]+))?\\;version:\\2" },			
+			"implies": [ "Python", "Apache" ]		
 		},
+		"mod_rack": {
+			"cats": [ 33 ],
+			"headers": { "Server": "mod_rack(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_rack(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Ruby", "Apache" ]
+		},
+		"mod_rails": {
+			"cats": [ 33 ],
+			"headers": { "Server": "mod_rails(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_rails(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Ruby on Rails", "Ruby", "Apache" ]
+		},
+		"mod_ssl": {
+			"cats": [ 33 ],
+			"headers": { "Server": "mod_ssl(/([\\d\\.]+))?\\;version:\\2" },			
+			"implies": [ "Apache" ]		
+		},
+		"mod_wsgi": {
+			"cats": [ 33 ],
+			"headers": { "Server": "mod_wsgi(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_wsgi(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Python", "Apache" ]
+		},						
 		"MoinMoin": {
 			"cats": [ 8 ],
-			"script": "moin.+/common/js/common\\.js",
+			"script": "moin(_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\2.\\3.\\4",
 			"env": "^show_switch2gui$",
 			"implies": [ "Python" ]
 		},
@@ -1127,6 +1196,12 @@
 			"cats": [ 1 ],
 			"html": "<meta[^>]+openEngine"
 		},
+		"OpenGrok": {
+			"cats": [ 19 ],
+			"headers": { "Set-Cookie": "OpenGrok" },
+			"meta": { "generator": "OpenGrok( v?([\\d\\.]+))?\\;version:\\2" },			
+			"implies": [ "Java" ]
+		},
 		"OpenGSE": {
 			"cats": [ 22 ],
 			"headers": { "Server": "GSE" },
@@ -1141,6 +1216,10 @@
 			"cats": [ 1 ],
 			"headers": { "X-Powered-By": "OpenNemas" }
 		},
+		"OpenSSL": {
+			"cats": [ 33 ],
+			"headers": { "Server": "OpenSSL(/([\\d\\.]+[a-z]?))?\\;version:\\2" }			
+		},				
 		"OpenText Web Solutions": {
 			"cats": [ 1 ],
 			"html": "<!--[^>]+published by Open Text Web Solutions",
@@ -1149,6 +1228,10 @@
 		"Optimizely": {
 			"cats": [ 10 ],
 			"env": "^optimizely$"
+		},
+		"Oracle Application Server": {
+			"cats": [ 22 ],
+			"headers": { "Server": "Oracle(-| )Application(-| )Server((-| )(\\d+[a-z]?))?\\;version:\\5" }		
 		},
 		"Oracle Recommendations On Demand": {
 			"cats": [ 10 ],
@@ -1196,7 +1279,7 @@
 		},
 		"PHP": {
 			"cats": [ 27 ],
-			"headers": { "Server": "php", "X-Powered-By": "php", "Set-Cookie": "PHPSESSID" },
+			"headers": { "Server": "php/?([\\d\\.]+)?\\;version:\\1", "X-Powered-By": "php/?([\\d\\.]+)?\\;version:\\1", "Set-Cookie": "PHPSESSID" },
 			"url": "\\.php$"
 		},
 		"phpAlbum":	{
@@ -1303,9 +1386,9 @@
 		},
 		"Prototype": {
 			"cats": [ 12 ],
-			"script": "(prototype|protoaculous)\\.js",
+			"script": "(prototype|protoaculous)(-([\\d\\.]*[\\d]))?.*\\.js\\;version:\\3",
 			"env": "^Prototype$"
-		},
+		},		
 		"Protovis": {
 			"cats": [ 25 ],
 			"script": "protovis.*\\.js",
@@ -1317,7 +1400,8 @@
 			"implies": [ "PHP" ]
 		},
 		"Python": {
-			"cats": [ 27 ]
+			"cats": [ 27 ],
+			"headers": { "Server": "(^|\\s)Python(/([\\d\\.]+))?\\;version:\\3" }					
 		},
 		"Quantcast": {
 			"cats": [ 10 ],
@@ -1340,8 +1424,8 @@
 		},
 		"RBS Change": {
 			"cats": [ 1, 6 ],
-			"html": "<html[^>]*\\s+xmlns:change=",
-			"meta": { "generator": "^RBS Change" },
+			"html": "<html[^>]+xmlns:change=",
+			"meta": { "generator": "RBS Change" },
 			"implies": [ "PHP" ]
 		},
 		"RCMS": {
@@ -1356,7 +1440,7 @@
 		},
 		"Red Hat": {
 			"cats": [ 28 ],
-			"headers": { "Server": "(Red Hat|rhel\\d+)", "X-Powered-By": "Red Hat" }
+			"headers": { "Server": "(.*rhel(\\d+)|Red Hat)\\;version:\\2", "X-Powered-By": "Red Hat" }
 		},
 		"Reddit": {
 			"cats": [ 2 ],
@@ -1406,6 +1490,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Serendipity", "Powered-By": "Serendipity" }
 		},
+		"Sarka-SPIP": {
+			"cats": [ 1 ],
+			"meta": { "generator": "(^|\\s)Sarka-SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
+			"headers": { "X-Spip-Cache": ".*" },
+			"implies": [ "SPIP" ]
+		},
 		"script.aculo.us": {
 			"cats": [ 12 ],
 			"script": "(scriptaculous|protoaculous)\\.js",
@@ -1427,12 +1517,6 @@
 			"cats": [ 5 ],
 			"script": "w\\.sharethis\\.com/",
 			"env": "^SHARETHIS$"
-		},
-		"ShinyStat": {
-			"cats": [ 10 ],
-			"env": "^SSsdk$",
-			"html": "<img[^>]*\\s+src=['\"]?https?://www\\.shinystat\\.com/cgi-bin/shinystat\\.cgi\\?[^'\"\\s>]*['\"\\s/>]",
-			"script": "^https?://codice(business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi"
 		},
 		"Shopalize": {
 			"cats": [ 5, 10 ],
@@ -1516,7 +1600,7 @@
 		},
 		"SPIP": {
 			"cats": [ 1 ],
-			"meta": { "generator": "SPIP" },
+			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
 		"SQL Buddy": {
@@ -1547,6 +1631,18 @@
 			"script": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
 			"env": "^sublimevideo$"
 		},
+		"Supersized": {
+			"cats": [ 7, 25 ],			
+			"script": "supersized(\\.([\\d\\.]*[\\d]))?.*\\.js\\;version:\\2"
+		},			
+		"SUSE": {
+			"cats": [ 28 ],
+			"headers": { "Server": "SUSE(/?\\s?-?([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "SUSE(/?\\s?-?([\\d\\.]+))?\\;version:\\2" }
+		},		
+		"Scientific Linux": {
+			"cats": [ 28 ],
+			"headers": { "Server": "Scientific Linux", "X-Powered-By": "Scientific Linux" }
+		},				
 		"SWFObject": {
 			"cats": [ 19 ],
 			"script": "swfobject.*\\.js",
@@ -1800,7 +1896,7 @@
 		},
 		"WordPress": {
 			"cats": [ 1, 11 ],
-			"meta": { "generator": "WordPress" },
+			"meta": { "generator": "WordPress( [\\d\\.]+)?\\;version:\\1" },
 			"html": "<link rel=\\\"stylesheet\\\" [^>]+wp-content",
 			"env": "^wp_username$",
 			"implies": [ "PHP" ]

@@ -28,7 +28,10 @@ var wappalyzer = (function() {
 	 * Parse apps.json patterns
 	 */
 	var parse = function(patterns) {
-		var parsed = [];
+		var
+			attrs,
+			parsed = []
+			;
 
 		// Convert single patterns to an array
 		if ( typeof patterns === 'string' ) {
@@ -36,9 +39,22 @@ var wappalyzer = (function() {
 		}
 
 		patterns.map(function(pattern) {
-			parsed.push({
-				regex: new RegExp(pattern.replace('/', '\\\/'), 'i') // Escape slashes in regular expression
-				});
+			attrs = {};
+
+			pattern.split('\\;').map(function(attr, i) {
+				if ( i ) {
+					// Key value pairs
+					attr = attr.split(':');
+
+					if ( attr.length === 2 ) {
+						attrs[attr[0]] = attr[1];
+					}
+				} else {
+					attrs.regex = new RegExp(attr.replace('/', '\\\/'), 'i'); // Escape slashes in regular expression
+				}
+			});
+
+			parsed.push(attrs);
 		});
 
 		return parsed;
