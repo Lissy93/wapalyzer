@@ -214,6 +214,7 @@
 			 5, // Widget
 			14, // Video Player
 			16, // Captcha
+			33, // Web Server Extensions
 			19  // Miscellaneous
 			]
 	};
