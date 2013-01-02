@@ -174,7 +174,7 @@
 				}
 
 				for ( app in w.detected[url] ) {
-					confidence = w.detected[url][app].total;
+					confidence = w.detected[url][app].confidenceTotal;
 
 					var j, cat, showCat, categories = [];
 

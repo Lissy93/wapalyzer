@@ -843,13 +843,12 @@
 		},
 		"Joomla": {
 			"cats": [ 1 ],
-			"url": "option=com_",
+			"url": "option=com_\\;confidence:50",
 			"meta": { "generator": "Joomla" },
-			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill)",
+			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill)\\;confidence:50",
 			"headers": { "X-Content-Encoded-By": "Joomla" },
 			"env": "^jcomments$",
-			"implies": [ "PHP" ],
-			"confidence": { "html": 50, "url": 50 }
+			"implies": [ "PHP" ]
 		},
 		"jqPlot": {
 			"cats": [ 25 ],
@@ -863,7 +862,7 @@
 		},
 		"jQuery": {
 			"cats": [ 12 ],
-			"script": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ], 			
+			"scripts": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ], 			
 			"env": "^jQuery$"
 		},
 		"jQuery Mobile": {
@@ -980,10 +979,9 @@
 		"Magento": {
 			"cats": [ 6 ],
 			"script": "(js/mage|skin/frontend/(default|enterprise))",
-			"headers": { "Set-Cookie": "frontend=" },
+			"headers": { "Set-Cookie": "frontend=\\;confidence:50" },
 			"env": "^(Mage|VarienForm)$",
-			"implies": [ "PHP" ],
-			"confidence": { "headers": 50 }
+			"implies": [ "PHP" ]
 		},
 		"Mambo": {
 			"cats": [ 1 ],
@@ -1075,7 +1073,7 @@
 		"mod_rails": {
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_rails(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_rails(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "Ruby on Rails", "Ruby", "Apache" ]
+			"implies": [ "Apache" ]
 		},
 		"mod_ssl": {
 			"cats": [ 33 ],
@@ -1476,11 +1474,10 @@
 		},
 		"Ruby on Rails": {
 			"cats": [ 18 ],
-			"script": "/assets/application-[a-z\\d]{32}/\\.js",
-			"meta": { "csrf-param": "authenticity_token" },
-			"headers": { "Server": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)" },
-			"implies": [ "Ruby" ],
-			"confidence": { "script": 50, "meta": 50, "headers": 50 }
+			"script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
+			"meta": { "csrf-param": "authenticity_token\\;confidence:50" },
+			"headers": { "Server": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(mod_rails|mod_rack|Phusion(\\.|_)Passenger)\\;confidence:50" },
+			"implies": [ "Ruby" ]
 		},
 		"S.Builder": {
 			"cats": [ 1 ],
@@ -1710,8 +1707,7 @@
 			"cats": [ 18 ],
 			"script": "twitter\\.github\\.com/bootstrap",
 			"html": "<link[^>]+bootstrap[^>]+css",
-			"env": "^Twipsy$",
-			"confidence": { "env": 50 }
+			"env": "^Twipsy$\\;confidence:50"
 		},
 		"Typekit": {
 			"cats": [ 17 ],

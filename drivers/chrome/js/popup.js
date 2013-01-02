@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						detectedApps.innerHTML = '';
 
 						for ( appName in response.tabCache.appsDetected ) {
-							confidence = response.tabCache.appsDetected[appName].total;
+							confidence = response.tabCache.appsDetected[appName].confidenceTotal;
 
 							html =
 								'<div class="detected-app">' +

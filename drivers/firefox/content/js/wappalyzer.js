@@ -10,6 +10,45 @@ var wappalyzer = (function() {
 	//'use strict';
 
 	/**
+	 * Application class
+	 */
+	var Application = function(detected) {
+		this.confidence      = {};
+		this.confidenceTotal = 0;
+		this.detected        = Boolean(detected);
+		this.versions        = [];
+
+		/**
+		 * Calculate confidence total
+		 */
+		this.getConfidence = function() {
+			var total = 0;
+
+			for ( id in this.confidence ) {
+				total += this.confidence[id];
+			}
+
+			return this.confidenceTotal = Math.min(total, 100);
+		}
+
+		/**
+		 * Resolve version number
+		 */
+		this.getVersion = function() {
+			return null;
+		}
+
+		this.setDetected = function(pattern, type, key) {
+			this.detected = true;
+
+			this.confidence[type + ' ' + ( key ? ' ' + key : '' ) + pattern.regex] = pattern.confidence ? pattern.confidence : 100;
+
+			if ( pattern.version ) {
+			}
+		}
+	}
+
+	/**
 	 * Call driver functions
 	 */
 	var driver = function(func, args) {
@@ -127,19 +166,17 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header,
+				i, j, app, type, regexMeta, regexScript, match, content, meta, header,
 				profiler = {
 					regexCount: 0,
 					startTime:  new Date().getTime()
 				},
-				apps     = []
+				apps     = {}
 				;
 
 			w.log('w.analyze');
 
-			url = url.split('#')[0];
-
-			data.url = url;
+			data.url = url = url.split('#')[0];
 
 			if ( typeof w.apps === 'undefined' || typeof w.categories === 'undefined' ) {
 				w.log('apps.json not loaded');
@@ -152,23 +189,16 @@ var wappalyzer = (function() {
 			}
 
 			for ( app in w.apps ) {
-				// Skip if the app has already been detected
-				if ( w.detected[url].hasOwnProperty(app) || apps.indexOf(app) !== -1 ) {
-					continue;
-				}
+				apps[app] = new Application();
 
 				for ( type in w.apps[app] ) {
-					confidence = {};
-
-					confidence[type] = w.apps[app].hasOwnProperty('confidence') && w.apps[app].confidence.hasOwnProperty(type) ? w.apps[app].confidence[type] : 100;
-
 					switch ( type ) {
 						case 'url':
 							parse(w.apps[app][type]).map(function(pattern) {
 								profiler.regexCount ++;
 
 								if ( pattern.regex.test(url) ) {
-									apps[app] = confidence;
+									apps[app].setDetected(pattern, type);
 								}
 							});
 
@@ -182,7 +212,7 @@ var wappalyzer = (function() {
 								profiler.regexCount ++;
 
 								if ( pattern.regex.test(data[type]) ) {
-									apps[app] = confidence;
+									apps[app].setDetected(pattern, type);
 								}
 							});
 
@@ -201,7 +231,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( pattern.regex.test(match[2]) ) {
-										apps[app] = confidence;
+										apps[app].setDetected(pattern, type);
 									}
 								}
 							});
@@ -226,8 +256,8 @@ var wappalyzer = (function() {
 										parse(w.apps[app].meta[meta]).map(function(pattern) {
 											profiler.regexCount ++;
 
-											if ( content && content.length === 4 && regex.test(content[2]) ) {
-												apps[app] = confidence;
+											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+												apps[app].setDetected(pattern, type, meta);
 											}
 										});
 									}
@@ -245,7 +275,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( typeof data[type][header] === 'string' && pattern.regex.test(data[type][header]) ) {
-										apps[app] = confidence;
+										apps[app].setDetected(pattern, type, header);
 									}
 								});
 							}
@@ -261,7 +291,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( pattern.regex.test(data[type][i]) ) {
-										apps[app] = confidence;
+										apps[app].setDetected(pattern, type);
 									}
 								}
 							});
@@ -273,11 +303,17 @@ var wappalyzer = (function() {
 
 			w.log('Tested ' + profiler.regexCount + ' regular expressions in ' + ( ( ( new Date ).getTime() - profiler.startTime ) / 1000 ) + 's');
 
+			for ( app in apps ) {
+				if ( !apps[app].detected ) {
+					delete apps[app];
+				}
+			}
+
 			// Implied applications
 			// Run several passes as implied apps may imply other apps
 			for ( i = 0; i < 3; i ++ ) {
 				for ( app in apps ) {
-					confidence = apps[app];
+					confidence = apps[app].confidence;
 
 					if ( w.apps[app] && w.apps[app].implies ) {
 						w.apps[app].implies.map(function(implied) {
@@ -289,46 +325,33 @@ var wappalyzer = (function() {
 
 							// Apply app confidence to implied app
 							if ( !apps.hasOwnProperty(implied) ) {
-								apps[implied] = {};
+								apps[implied] = new Application(true);
 							}
 
-							for ( type in confidence ) {
-								if ( !apps[implied].hasOwnProperty(type + ' implied by ' + app) ) {
-									apps[implied][type + ' implied by ' + app] = confidence[type];
-								}
+							for ( id in confidence ) {
+								apps[implied].confidence[id + ' implied by ' + app] = confidence[id];
 							}
 						});
 					}
 				}
 			}
 
-			w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + 'on ' + url);
+			w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url);
 
 			// Keep history of detected apps
 			for ( app in apps ) {
-				confidence = apps[app];
+				confidence = apps[app].confidence;
 
 				// Per URL
 				if ( !w.detected[url].hasOwnProperty(app)) {
-					w.detected[url][app] = {};
+					w.detected[url][app] = new Application();
 				}
 
-				for ( type in confidence ) {
-					w.detected[url][app][type] = confidence[type];
+				for ( id in confidence ) {
+					w.detected[url][app].confidence[id] = confidence[id];
 				}
 
-				// Calculate confidence total
-				w.detected[url][app].total = 0;
-
-				for ( type in w.detected[url][app] ) {
-					if ( type !== 'total' ) {
-						w.detected[url][app].total += w.detected[url][app][type];
-
-						w.detected[url][app].total = Math.min(w.detected[url][app].total, 100);
-					}
-				}
-
-				if ( w.detected[url][app].total >= 100 ) {
+				if ( w.detected[url][app].getConfidence() >= 100 ) {
 					// Per hostname
 					if ( /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/.test(hostname) && !/((local|dev(elopment)?|stag(e|staging)?|test(ing)?|demo(shop)?|admin)\.|\/admin|\.local)/.test(url) ) {
 						if ( !w.ping.hostnames.hasOwnProperty(hostname) ) {
