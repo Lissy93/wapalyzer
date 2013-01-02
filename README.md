@@ -178,7 +178,14 @@ Work in progress, experimental. See https://wiki.mozilla.org/Jetpack.
 
 ### Python
 
-A Python driver by [@ebradbury](https://github.com/ebradbury).
+A Python port by [SebastianLopienski](https://github.com/SebastianLopienski).
+
+https://github.com/SebastianLopienski/WAD
+
+
+### Python
+
+A Python driver by [@ebradbury](https://github.com/ebradbury). Part of a research project at [CERN](http://cern.ch).
 
 https://github.com/ebradbury/Wappalyzer/tree/master/drivers/python
 
