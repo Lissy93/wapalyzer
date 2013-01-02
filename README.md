@@ -197,8 +197,12 @@ A Ruby port by [@skroutz](https://github.com/skroutz).
 https://github.com/skroutz/wappalyzer-ruby
 
 
-## Screenshot
+## Screenshots
 
-Wappalyzer on Firefox:
+Wappalyzer on Mozilla Firefox:
 
-![A screenshot of Wappalyzer on Firefox](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed.png)
+![A screenshot of Wappalyzer on Mozilla Firefox](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed_firefox.png)
+
+Wappalyzer on Google Chrome:
+
+![A screenshot of Wappalyzer on Google Chrome](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed_chrome.png)
