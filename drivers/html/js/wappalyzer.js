@@ -89,7 +89,13 @@ var wappalyzer = (function() {
 						attrs[attr[0]] = attr[1];
 					}
 				} else {
-					attrs.regex = new RegExp(attr.replace('/', '\\\/'), 'i'); // Escape slashes in regular expression
+					try {
+						attrs.regex = new RegExp(attr.replace('/', '\\\/'), 'i'); // Escape slashes in regular expression
+					} catch (e) {
+						attrs.regex = new RegExp();
+
+						w.log(e + ': ' + attr, 'warn');
+					}
 				}
 			});
 

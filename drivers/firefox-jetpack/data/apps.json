@@ -680,6 +680,10 @@
 			"cats": [ 5 ],
 			"script": "(maps\\.google\\.com/maps\\?file=api(&v=([\\d\\.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\3"
 		},
+               "Google PageSpeed": {
+                      "cats": [ 23, 33 ],
+                      "headers": { "X-Mod-Pagespeed": ".*" }
+               },
 		"Google Sites": {
 			"cats": [ 1 ],
 			"url": "sites.google.com"
@@ -1159,7 +1163,7 @@
 		"New Relic": {
 			"cats": [ 10 ],
 			"html": "<script[^>]+>(var NREUMQ=NREUMQ|if \\(!NREUMQ\\.f)",
-			"env": "^NREUMQ$"
+			"env": "^NREUM"
 		},
 		"Nginx": {
 			"cats": [ 22 ],
@@ -1433,7 +1437,7 @@
 		"reCAPTCHA": {
 			"cats": [ 16 ],
 			"script": "(api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
-			"html": "<div[^>]+id=\\\"recaptcha_image",
+			"html": "(<div[^>]+id=\\\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha)",
 			"env": "^Recaptcha$"
 		},
 		"Red Hat": {
@@ -1606,7 +1610,9 @@
 		},
 		"Squarespace": {
 			"cats": [ 1 ],
-			"html": "Squarespace\\.Constants\\.CURRENT_MODULE_ID"
+			"html": "Squarespace\\.Constants\\.CURRENT_MODULE_ID",
+			"headers": { "X-ServedBy": "squarespace" },
+			"env": "^Squarespace"
 		},
 		"Squiz Matrix": {
 			"cats": [ 1 ],
@@ -1705,7 +1711,7 @@
 		},
 		"Twitter Bootstrap": {
 			"cats": [ 18 ],
-			"script": "twitter\\.github\\.com/bootstrap",
+			"script": "(twitter\\.github\\.com/bootstrap|bootstrap(\\.js|\\.min\\.js))",
 			"html": "<link[^>]+bootstrap[^>]+css",
 			"env": "^Twipsy$\\;confidence:50"
 		},
