@@ -990,7 +990,7 @@
     "Locomotive": {
       "cats": [ 1 ],
       "html": "\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/",
-      "implies": [ "Ruby", "Ruby on Rails" ]
+      "implies": [ "Ruby", "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
 			"cats": [ 22 ],
@@ -1130,6 +1130,9 @@
 			"headers": { "Server": "Mongrel" },
 			"implies": [ "Ruby" ]
 		},
+		"MongoDB": {
+			"cats": [ 24 ]
+		},
 		"Moodle": {
 			"cats": [ 21 ],
 			"html": "(var moodleConfigFn = function\\(me\\)|<img[^>]+moodlelogo)",
@@ -1166,6 +1169,9 @@
 		"Mynetcap": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Mynetcap" }
+		},
+		"MySQL": {
+			"cats": [ 24 ]
 		},
 		"Nedstat": {
 			"cats": [ 10 ],
@@ -1331,7 +1337,7 @@
 		"phpMyAdmin": {
 			"cats": [ 3 ],
 			"html": "(var pma_absolute_uri = '|PMA_sendHeaderLocation\\(|<title>phpMyAdmin</title>)",
-			"implies": [ "PHP" ]
+			"implies": [ "PHP", "MySQL" ]
 		},
 		"PHP-Nuke": {
 			"cats": [ 2 ],
