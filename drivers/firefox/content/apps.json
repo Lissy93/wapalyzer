@@ -528,7 +528,7 @@
 		"Drupal": {
 			"cats": [ 1 ],
 			"script": "drupal\\.js",
-			"html": "Drupal(\\.extend)?.+settings|<(link|style)[^>]+sites/(default|all)/(themes|modules)/",
+			"html": "<(link|style)[^>]+sites/(default|all)/(themes|modules)/",
 			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(\\s([\\d\\.]+))?\\;version:\\2", "Expires": "19 Nov 1978" },
 			"env": "^Drupal$",
 			"implies": [ "PHP" ]
@@ -688,13 +688,13 @@
 			"env": "^WebFonts$"
 		},
 		"Google Maps": {
-			"cats": [ 5 ],
+			"cats": [ 35 ],
 			"script": "(maps\\.google\\.com/maps\\?file=api(&v=([\\d\\.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\3"
 		},
-               "Google PageSpeed": {
-                      "cats": [ 23, 33 ],
-                      "headers": { "X-Mod-Pagespeed": ".*" }
-               },
+		"Google PageSpeed": {
+			"cats": [ 23, 33 ],
+			"headers": { "X-Mod-Pagespeed": ".*" }
+		},
 		"Google Sites": {
 			"cats": [ 1 ],
 			"url": "sites.google.com"
@@ -1194,6 +1194,9 @@
 		"node.js": {
 			"cats": [ 27 ]
 		},
+		"Nokia Maps": {
+			"cats": [ 35 ]
+		},
 		"NOIX": {
 			"cats": [ 19 ],
 			"html": "<[^>]+(src|href)=[^>]*(/media/noix)|<!-- NOIX"
@@ -1232,7 +1235,7 @@
 			"implies": [ "Java" ]
 		},
 		"OpenLayers": {
-			"cats": [ 5 ],
+			"cats": [ 35 ],
 			"script": "openlayers",
 			"env": "^OpenLayers$"
 		},
