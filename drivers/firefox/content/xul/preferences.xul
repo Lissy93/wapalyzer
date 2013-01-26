@@ -48,6 +48,7 @@
 			<preference id="wappalyzer-cat31" name="extensions.wappalyzer.cat31" type="bool"/>
 			<preference id="wappalyzer-cat32" name="extensions.wappalyzer.cat32" type="bool"/>
 			<preference id="wappalyzer-cat33" name="extensions.wappalyzer.cat33" type="bool"/>
+			<preference id="wappalyzer-cat34" name="extensions.wappalyzer.cat34" type="bool"/>
 
 			<preference id="wappalyzer-tracking" name="extensions.wappalyzer.tracking" type="bool"/>
 		</preferences>
@@ -95,50 +96,56 @@
 					</columns>
 					<rows>
 						<row>
-							<checkbox preference="wappalyzer-cat1"  label="&wappalyzer.cat1;" />
-							<checkbox preference="wappalyzer-cat2"  label="&wappalyzer.cat2;" />
-							<checkbox preference="wappalyzer-cat3"  label="&wappalyzer.cat3;" />
-							<checkbox preference="wappalyzer-cat4"  label="&wappalyzer.cat4;" />
-							<checkbox preference="wappalyzer-cat5"  label="&wappalyzer.cat5;" />
+							<checkbox preference="wappalyzer-cat31" label="&wappalyzer.cat36;"/><!-- Advertising networks-->
+							<checkbox preference="wappalyzer-cat10" label="&wappalyzer.cat10;"/><!-- Analytics -->
+							<checkbox preference="wappalyzer-cat11" label="&wappalyzer.cat11;"/><!-- Blogs -->
+							<checkbox preference="wappalyzer-cat23" label="&wappalyzer.cat23;"/><!-- Cache tools -->
+							<checkbox preference="wappalyzer-cat16" label="&wappalyzer.cat16;"/><!-- CAPTCHAs -->
 						</row>
 						<row>
-							<checkbox preference="wappalyzer-cat6"  label="&wappalyzer.cat6;" />
-							<checkbox preference="wappalyzer-cat7"  label="&wappalyzer.cat7;" />
-							<checkbox preference="wappalyzer-cat8"  label="&wappalyzer.cat8;" />
-							<checkbox preference="wappalyzer-cat9"  label="&wappalyzer.cat9;" />
-							<checkbox preference="wappalyzer-cat10" label="&wappalyzer.cat10;"/>
+							<checkbox preference="wappalyzer-cat31" label="&wappalyzer.cat31;"/><!-- CDN -->
+							<checkbox preference="wappalyzer-cat1"  label="&wappalyzer.cat1;" /><!-- CMS -->
+							<checkbox preference="wappalyzer-cat15" label="&wappalyzer.cat15;"/><!-- Comment systems -->
+							<checkbox preference="wappalyzer-cat34" label="&wappalyzer.cat34;"/><!-- Database -->
+							<checkbox preference="wappalyzer-cat3"  label="&wappalyzer.cat3;" /><!-- Database managers -->
 						</row>
 						<row>
-							<checkbox preference="wappalyzer-cat11" label="&wappalyzer.cat11;"/>
-							<checkbox preference="wappalyzer-cat12" label="&wappalyzer.cat12;"/>
-							<checkbox preference="wappalyzer-cat13" label="&wappalyzer.cat13;"/>
-							<checkbox preference="wappalyzer-cat14" label="&wappalyzer.cat14;"/>
-							<checkbox preference="wappalyzer-cat15" label="&wappalyzer.cat15;"/>
+							<checkbox preference="wappalyzer-cat4"  label="&wappalyzer.cat4;" /><!-- Documentation tools -->
+							<checkbox preference="wappalyzer-cat20" label="&wappalyzer.cat20;"/><!-- Editors -->
+							<checkbox preference="wappalyzer-cat17" label="&wappalyzer.cat17;"/><!-- Font scripts -->
+							<checkbox preference="wappalyzer-cat9"  label="&wappalyzer.cat9;" /><!-- Hosting panels -->
+							<checkbox preference="wappalyzer-cat13" label="&wappalyzer.cat13;"/><!-- Issue trackers -->
 						</row>
 						<row>
-							<checkbox preference="wappalyzer-cat16" label="&wappalyzer.cat16;"/>
-							<checkbox preference="wappalyzer-cat17" label="&wappalyzer.cat17;"/>
-							<checkbox preference="wappalyzer-cat18" label="&wappalyzer.cat18;"/>
-							<checkbox preference="wappalyzer-cat19" label="&wappalyzer.cat19;"/>
-							<checkbox preference="wappalyzer-cat20" label="&wappalyzer.cat20;"/>
+							<checkbox preference="wappalyzer-cat12" label="&wappalyzer.cat12;"/><!-- JavaScript frameworks -->
+							<checkbox preference="wappalyzer-cat25" label="&wappalyzer.cat25;"/><!-- Javascript graphics -->
+							<checkbox preference="wappalyzer-cat21" label="&wappalyzer.cat21;"/><!-- LMS -->
+							<checkbox preference="wappalyzer-cat35" label="&wappalyzer.cat35;"/><!-- Maps -->
+							<checkbox preference="wappalyzer-cat32" label="&wappalyzer.cat32;"/><!-- Marketing automation -->
 						</row>
 						<row>
-							<checkbox preference="wappalyzer-cat21" label="&wappalyzer.cat21;"/>
-							<checkbox preference="wappalyzer-cat22" label="&wappalyzer.cat22;"/>
-							<checkbox preference="wappalyzer-cat23" label="&wappalyzer.cat23;"/>
-							<checkbox preference="wappalyzer-cat24" label="&wappalyzer.cat24;"/>
-							<checkbox preference="wappalyzer-cat25" label="&wappalyzer.cat25;"/>
+							<checkbox preference="wappalyzer-cat2"  label="&wappalyzer.cat2;" /><!-- Message boards -->
+							<checkbox preference="wappalyzer-cat19" label="&wappalyzer.cat19;"/><!-- Miscellaneous -->
+							<checkbox preference="wappalyzer-cat26" label="&wappalyzer.cat26;"/><!-- Mobile frameworks -->
+							<checkbox preference="wappalyzer-cat28" label="&wappalyzer.cat28;"/><!-- Operating systems -->
+							<checkbox preference="wappalyzer-cat7"  label="&wappalyzer.cat7;" /><!-- Photo galleries -->
 						</row>
 						<row>
-							<checkbox preference="wappalyzer-cat26" label="&wappalyzer.cat26;"/>
-							<checkbox preference="wappalyzer-cat27" label="&wappalyzer.cat27;"/>
-							<checkbox preference="wappalyzer-cat28" label="&wappalyzer.cat28;"/>
-							<checkbox preference="wappalyzer-cat29" label="&wappalyzer.cat29;"/>
-							<checkbox preference="wappalyzer-cat30" label="&wappalyzer.cat30;"/>
+							<checkbox preference="wappalyzer-cat27" label="&wappalyzer.cat27;"/><!-- Programming languages -->
+							<checkbox preference="wappalyzer-cat24" label="&wappalyzer.cat24;"/><!-- Rich text editors -->
+							<checkbox preference="wappalyzer-cat29" label="&wappalyzer.cat29;"/><!-- Search engines -->
+							<checkbox preference="wappalyzer-cat14" label="&wappalyzer.cat14;"/><!-- Video players -->
+							<checkbox preference="wappalyzer-cat18" label="&wappalyzer.cat18;"/><!-- Web frameworks -->
 						</row>
 						<row>
-							<checkbox preference="wappalyzer-cat31" label="&wappalyzer.cat31;"/>
-							<checkbox preference="wappalyzer-cat32" label="&wappalyzer.cat31;"/>
+							<checkbox preference="wappalyzer-cat30" label="&wappalyzer.cat30;"/><!-- Web mail -->
+							<checkbox preference="wappalyzer-cat22" label="&wappalyzer.cat22;"/><!-- Web servers -->
+							<checkbox preference="wappalyzer-cat33" label="&wappalyzer.cat33;"/><!-- Web server extensions -->
+							<checkbox preference="wappalyzer-cat6"  label="&wappalyzer.cat6;" /><!-- Web shops -->
+							<checkbox preference="wappalyzer-cat5"  label="&wappalyzer.cat5;" /><!-- Widgets -->
+						</row>
+						<row>
+							<checkbox preference="wappalyzer-cat8"  label="&wappalyzer.cat8;" /><!-- Wikis -->
 						</row>
 					</rows>
 				</grid>

@@ -32,7 +32,10 @@
 		"30": "web-mail",
 		"31": "cdn",
 		"32": "marketing-automation",
-		"33": "web-server-extension"
+		"33": "web-server-extension",
+		"34": "databases",
+		"35": "maps",
+		"36": "advertizing-networks"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -1712,7 +1715,7 @@
 		"Twitter Bootstrap": {
 			"cats": [ 18 ],
 			"script": "(twitter\\.github\\.com/bootstrap|bootstrap(\\.js|\\.min\\.js))",
-			"html": "<link[^>]+bootstrap[^>]+css",
+			"html": "<link[^>]+bootstrap[^>"]+css",
 			"env": "^Twipsy$\\;confidence:50"
 		},
 		"Typekit": {

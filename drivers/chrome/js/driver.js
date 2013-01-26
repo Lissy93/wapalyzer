@@ -194,6 +194,7 @@
 			21, // LMS
 			 7, // Photo Gallery
 			 3, // Database Manager
+			34, // Database
 			 4, // Documentation Tool
 			 9, // Hosting Panel
 			29, // Search Engine
@@ -211,10 +212,12 @@
 			23, // Cache Tool
 			17, // Font Script
 			24, // Rich Text Editor
+			35, // Map
 			 5, // Widget
 			14, // Video Player
 			16, // Captcha
-			33, // Web Server Extensions
+			33, // Web Server Extension
+			36, // Advertising Network
 			19  // Miscellaneous
 			]
 	};
