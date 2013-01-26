@@ -989,7 +989,7 @@
 		},
     "Locomotive": {
       "cats": [ 1 ],
-      "html": "\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/",
+      "html": "<.*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
       "implies": [ "Ruby", "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
