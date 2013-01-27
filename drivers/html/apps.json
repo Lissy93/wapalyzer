@@ -725,6 +725,10 @@
 			"html": "gravityInsightsParams\\.site_guid = '",
 			"env": "^GravityInsights$"
 		},
+		"G-WAN": {
+			"cats": [ 22 ],
+			"headers": { "Server": "G-WAN" }
+		},
 		"GX WebManager": {
 			"cats": [ 1 ],
 			"meta": { "generator": "GX WebManager" }
@@ -741,6 +745,10 @@
 			"cats": [ 25 ],
 			"script": "highcharts.*\\.js",
 			"env": "^Highcharts$"
+		},
+		"Hogan.js": {
+			"cats": [ 12 ],
+			"env": "^Hogan$"
 		},
 		"Hotaru CMS": {
 			"cats": [ 1 ],
@@ -1885,6 +1893,10 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "WebsiteBaker" },
 			"implies": [ "PHP" ]
+		},
+		"WebsPlanet": {
+			"cats": [ 1 ],
+			"meta": { "generator": "WebsPlanet" }
 		},
 		"Webtrekk": {
 			"cats": [ 10 ],

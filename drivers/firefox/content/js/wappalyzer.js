@@ -12,38 +12,82 @@ var wappalyzer = (function() {
 	/**
 	 * Application class
 	 */
-	var Application = function(detected) {
-		this.confidence      = {};
-		this.confidenceTotal = 0;
-		this.detected        = Boolean(detected);
-		this.versions        = [];
+	var Application = function(app, detected) {
+		var self = this;
+
+		self.app             = app;
+		self.confidence      = {};
+		self.confidenceTotal = 0;
+		self.detected        = Boolean(detected);
+		self.version         = '';
+		self.versions        = [];
 
 		/**
 		 * Calculate confidence total
 		 */
-		this.getConfidence = function() {
+		self.getConfidence = function() {
 			var total = 0;
 
-			for ( id in this.confidence ) {
-				total += this.confidence[id];
+			for ( id in self.confidence ) {
+				total += self.confidence[id];
 			}
 
-			return this.confidenceTotal = Math.min(total, 100);
+			return self.confidenceTotal = Math.min(total, 100);
 		}
 
 		/**
-		 * Resolve version number
+		 * Resolve version number (find the longest version number that contains all shorter detected version numbers)
 		 */
-		this.getVersion = function() {
-			return null;
+		self.getVersion = function() {
+			var next, resolved;
+
+			if ( !self.versions.length ) {
+				return;
+			}
+
+			self.versions.sort(function(a, b) {
+				return a.length > b.length ? 1 : ( a.length < b.length ? -1 : 0 );
+			});
+
+			resolved = self.versions[0];
+
+			for ( i in self.versions ) {
+				next = parseInt(i) + 1;
+
+				if ( next < self.versions.length ) {
+					if ( self.versions[next].indexOf(self.versions[i]) !== -1 ) {
+						resolved = self.versions[next];
+					} else {
+						break;
+					}
+				}
+			}
+
+			return self.version = resolved;
 		}
 
-		this.setDetected = function(pattern, type, key) {
-			this.detected = true;
+		self.setDetected = function(pattern, type, value, key) {
+			self.detected = true;
 
-			this.confidence[type + ' ' + ( key ? ' ' + key : '' ) + pattern.regex] = pattern.confidence ? pattern.confidence : 100;
+			// Set confidence level
+			self.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence ? pattern.confidence : 100;
 
+			// Detect version number
 			if ( pattern.version ) {
+				var
+					version = pattern.version,
+					matches = pattern.regex.exec(value)
+					;
+
+				if ( matches ) {
+					matches.map(function(match, i) {
+						version = version.replace('\\' + i, match);
+					});
+
+					self.versions.push(version);
+
+					self.getVersion();
+				}
 			}
 		}
 	}
@@ -132,7 +176,13 @@ var wappalyzer = (function() {
 		 */
 		log: function(message, type) {
 			if ( w.config.environment === 'dev' ) {
-				if ( typeof type === 'undefined' ) { type = 'debug'; }
+				if ( typeof type === 'undefined' ) {
+					type = 'debug';
+				}
+
+				if ( typeof message === 'object' ) {
+					message = JSON.stringify(message);
+				}
 
 				driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
 			}
@@ -172,7 +222,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, type, regexMeta, regexScript, match, content, meta, header,
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version,
 				profiler = {
 					regexCount: 0,
 					startTime:  new Date().getTime()
@@ -195,7 +245,7 @@ var wappalyzer = (function() {
 			}
 
 			for ( app in w.apps ) {
-				apps[app] = new Application();
+				apps[app] = new Application(app);
 
 				for ( type in w.apps[app] ) {
 					switch ( type ) {
@@ -204,7 +254,7 @@ var wappalyzer = (function() {
 								profiler.regexCount ++;
 
 								if ( pattern.regex.test(url) ) {
-									apps[app].setDetected(pattern, type);
+									apps[app].setDetected(pattern, type, url);
 								}
 							});
 
@@ -218,7 +268,7 @@ var wappalyzer = (function() {
 								profiler.regexCount ++;
 
 								if ( pattern.regex.test(data[type]) ) {
-									apps[app].setDetected(pattern, type);
+									apps[app].setDetected(pattern, type, data[type]);
 								}
 							});
 
@@ -237,7 +287,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( pattern.regex.test(match[2]) ) {
-										apps[app].setDetected(pattern, type);
+										apps[app].setDetected(pattern, type, data[type]);
 									}
 								}
 							});
@@ -263,7 +313,7 @@ var wappalyzer = (function() {
 											profiler.regexCount ++;
 
 											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-												apps[app].setDetected(pattern, type, meta);
+												apps[app].setDetected(pattern, type, content[2], meta);
 											}
 										});
 									}
@@ -281,7 +331,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( typeof data[type][header] === 'string' && pattern.regex.test(data[type][header]) ) {
-										apps[app].setDetected(pattern, type, header);
+										apps[app].setDetected(pattern, type, data[type][header], header);
 									}
 								});
 							}
@@ -297,7 +347,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( pattern.regex.test(data[type][i]) ) {
-										apps[app].setDetected(pattern, type);
+										apps[app].setDetected(pattern, type, data[type][i]);
 									}
 								}
 							});
@@ -331,7 +381,7 @@ var wappalyzer = (function() {
 
 							// Apply app confidence to implied app
 							if ( !apps.hasOwnProperty(implied) ) {
-								apps[implied] = new Application(true);
+								apps[implied] = new Application(implied, true);
 							}
 
 							for ( id in confidence ) {
@@ -349,9 +399,7 @@ var wappalyzer = (function() {
 				confidence = apps[app].confidence;
 
 				// Per URL
-				if ( !w.detected[url].hasOwnProperty(app)) {
-					w.detected[url][app] = new Application();
-				}
+				w.detected[url][app] = apps[app];
 
 				for ( id in confidence ) {
 					w.detected[url][app].confidence[id] = confidence[id];

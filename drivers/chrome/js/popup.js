@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 
 		displayApps: function() {
-			var appName, confidence;
+			var appName, confidence, version;
 
 			chrome.tabs.getSelected(null, function(tab) {
 				chrome.extension.sendRequest({ id: 'get_apps', tab: tab }, function(response) {
@@ -59,12 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 						for ( appName in response.tabCache.appsDetected ) {
 							confidence = response.tabCache.appsDetected[appName].confidenceTotal;
+							version    = response.tabCache.appsDetected[appName].version;
 
 							html =
 								'<div class="detected-app">' +
 									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
-										'<span class="label">' + appName + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
+										'<span class="label">' + appName + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 
 							response.apps[appName].cats.map(function(cat) {

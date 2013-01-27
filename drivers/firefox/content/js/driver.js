@@ -136,7 +136,7 @@
 		 */
 		displayApps: function() {
 			var
-				i, j, app, confidence, elements, menuItem, menuSeparator, image,
+				i, j, app, confidence, elements, menuItem, menuSeparator, image, version,
 				remove    = [],
 				container = d.getElementById('wappalyzer-container'),
 				menu      = d.getElementById('wappalyzer-applications'),
@@ -175,6 +175,7 @@
 
 				for ( app in w.detected[url] ) {
 					confidence = w.detected[url][app].confidenceTotal;
+					version    = w.detected[url][app].version;
 
 					var j, cat, showCat, categories = [];
 
@@ -191,7 +192,7 @@
 
 							menuItem.setAttribute('class',     'wappalyzer-application menuitem-iconic');
 							menuItem.setAttribute('image',     'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-							menuItem.setAttribute('label',     app + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
+							menuItem.setAttribute('label',     app + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
 							menuItem.setAttribute('name',      app);
 							menuItem.setAttribute('data-url',  w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
 
