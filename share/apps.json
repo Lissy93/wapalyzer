@@ -1626,6 +1626,14 @@
 			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
+    "Spree": {
+      "cats": [ 6 ],
+      "html": "<.*\/spree\/products\/[0-9]+\/.*>",
+      "html": "",
+      "html": "<.*Powered by.+spree.*>;confidence:50",
+      "html": "<.*href=\"\/t\/.*>;confidence:50",
+      "implies": [ "Ruby", "Ruby on Rails"]
+    },
 		"SQL Buddy": {
 			"cats": [ 3 ],
 			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\\\"sideMainClick\\(\\\"home\\.php)"
