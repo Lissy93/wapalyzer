@@ -1639,10 +1639,8 @@
 		},
     "Spree": {
       "cats": [ 6 ],
-      "html": "<.*\/spree\/products\/[0-9]+\/.*>",
-      "html": "",
-      "html": "<.*Powered by.+spree.*>;confidence:50",
-      "html": "<.*href=\"\/t\/.*>;confidence:50",
+      "html": "<.+\/spree\/products\/[0-9]+\/.+>",
+      "html": "<.+href=.\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
       "implies": [ "Ruby", "Ruby on Rails"]
     },
 		"SQL Buddy": {
