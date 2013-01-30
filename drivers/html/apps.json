@@ -41,7 +41,7 @@
 		"1C-Bitrix": {
 			"cats": [ 1 ],
 			"headers": { "X-Powered-CMS": "Bitrix Site Manager", "Set-Cookie": "BITRIX_" },
-			"html": "<link[^>]+components/bitrix|(src|href)=\\\"/bitrix/(js|templates)",
+			"html": "<link[^>]+components/bitrix|(src|href)=\"/bitrix/(js|templates)",
 			"script": "1c-bitrix",
 			"implies": "PHP"
 		},
@@ -72,7 +72,7 @@
 		"Adobe CQ5": {
 			"cats": [ 1 ],
 			"url": "/etc/designs/",
-			"html": "<div class=\\\"[^\\\"]*parbase",
+			"html": "<div class=\"[^\"]*parbase",
 			"implies": "Java"
 		},
 		"Adobe GoLive": {
@@ -178,13 +178,13 @@
 		},
 		"Banshee": {
 			"cats": [ 1, 18 ],
-			"html": "Built upon the <a href=\\\"[^>]+banshee-php\\.org",
+			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org",
 			"implies": "PHP"
 		},
 		"BIGACE": {
 			"cats": [ 1 ],
 			"meta": { "generator": "BIGACE" },
-			"html": "Powered by <a href=\\\"[^>]+BIGACE|<!--\\s+Site is running BIGACE",
+			"html": "Powered by <a href=\"[^>]+BIGACE|<!--\\s+Site is running BIGACE",
 			"implies": "PHP"
 		},
 		"Bigcommerce": {
@@ -222,12 +222,12 @@
 		},
 		"Bugzilla": {
 			"cats": [ 13 ],
-			"html": "href=\\\"enter_bug\\.cgi\\\">",
+			"html": "href=\"enter_bug\\.cgi\">",
 			"implies": "Perl"
 		},
 		"Burning Board": {
 			"cats": [ 2 ],
-			"html": "<a href=\\\"[^>]+woltlab\\.com.+Burning Board",
+			"html": "<a href=\"[^>]+woltlab\\.com.+Burning Board",
 			"implies": "PHP"
 		},
 		"Business Catalyst": {
@@ -291,7 +291,7 @@
 		},
 		"ClickTale": {
 			"cats": [ 10 ],
-			"html": "if\\(typeof ClickTale(Tag)*==\\\"function\\\"\\)",
+			"html": "if\\(typeof ClickTale(Tag)*==\"function\"\\)",
 			"env": "^ClickTale"
 		},
 		"Clicky": {
@@ -330,7 +330,7 @@
 		},
 		"comScore": {
 			"cats": [ 10 ],
-			"html": "<i{1}frame[^>]* (id=\\\"comscore\\\"|scr=[^>]+comscore)",
+			"html": "<i{1}frame[^>]* (id=\"comscore\"|scr=[^>]+comscore)",
 			"env": "^_?COMSCORE$"
 		},
 		"Concrete5": {
@@ -477,7 +477,7 @@
 		"Disqus": {
 			"cats": [ 15 ],
 			"script": "disqus_url",
-			"html": "<div[^>]+id=\\\"disqus_thread\\\"",
+			"html": "<div[^>]+id=\"disqus_thread\"",
 			"env": "^DISQUS$"
 		},
 		"Django": {
@@ -499,7 +499,7 @@
 		"Dokeos": {
 			"cats": [ 21 ],
 			"meta": { "generator": "Dokeos" },
-			"html": "Portal <a[^>]+>Dokeos|@import \\\"[^\\\"]+dokeos_blue",
+			"html": "Portal <a[^>]+>Dokeos|@import \"[^\"]+dokeos_blue",
 			"headers": { "X-Powered-By": "Dokeos" },
 			"implies": [ "PHP", "Xajax", "jQuery", "CKEditor" ]
 		},
@@ -535,7 +535,7 @@
 		},
 		"Drupal Commerce": {
 			"cats": [ 6 ],
-			"html": "id=\\\"block[_-]commerce[_-]cart[_-]cart|class=\\\"commerce[_-]product[_-]field",
+			"html": "id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field",
 			"implies": "Drupal"
 		},
 		"Dynamicweb": {
@@ -615,11 +615,11 @@
 		},
 		"FluxBB": {
 			"cats": [ 2 ],
-			"html": "Powered by (<strong>)?<a href=\\\"[^>]+fluxbb"
+			"html": "Powered by (<strong>)?<a href=\"[^>]+fluxbb"
 		},
 		"Flyspray": {
 			"cats": [ 13 ],
-			"html": "(<a[^>]+>Powered by Flyspray|<map id=\\\"projectsearchform|Powered by <a href=[^>]+flyspray\\.org)"
+			"html": "(<a[^>]+>Powered by Flyspray|<map id=\"projectsearchform|Powered by <a href=[^>]+flyspray\\.org)"
 		},
 		"FreeBSD": {
 			"cats": [ 28 ],
@@ -637,11 +637,11 @@
 		"Gallery": {
 			"cats": [ 7 ],
 			"env": "^galleryAuthToken$",
-			"html": "<div id=\\\"gsNavBar\\\" class=\\\"gcBorder1\\\">"
+			"html": "<div id=\"gsNavBar\" class=\"gcBorder1\">"
 		},
 		"Gambio": {
 			"cats": [ 6 ],
-			"html": "<link[^>]* href=\\\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->",
+			"html": "<link[^>]* href=\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->",
 			"implies": "PHP"
 		},
 		"Gauges": {
@@ -868,7 +868,7 @@
 			"cats": [ 1 ],
 			"url": "option=com_\\;confidence:50",
 			"meta": { "generator": "Joomla" },
-			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill)\\;confidence:50",
+			"html": "(<div[^>]+id=\"wrapper_r\"|<[^>]+(feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
 			"headers": { "X-Content-Encoded-By": "Joomla" },
 			"env": "^jcomments$",
 			"implies": "PHP"
@@ -909,11 +909,11 @@
 		},
 		"JTL Shop": {
 			"cats": [ 6 ],
-			"html": "(<input[^>]+name=\\\"JTLSHOP|<a href=\\\"jtl\\.php)"
+			"html": "(<input[^>]+name=\"JTLSHOP|<a href=\"jtl\\.php)"
 		},
 		"K2": {
 			"cats": [ 19 ],
-			"html": "<!-- JoomlaWorks \\\"K2\\\"",
+			"html": "<!-- JoomlaWorks \"K2\"",
 			"env": "^K2RatingURL$",
 			"implies": "Joomla"
 		},
@@ -997,8 +997,8 @@
 		},
     "Locomotive": {
       "cats": [ 1 ],
-      "html": "\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/",
-      "implies": [ "Ruby", "Ruby on Rails", "MongoDB" ]
+      "html": "<link[^>]*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
+      "implies": [ "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
 			"cats": [ 22 ],
@@ -1017,7 +1017,7 @@
 		},
 		"MantisBT": {
 			"cats": [ 13 ],
-			"html": "<img[^>]+ alt=\\\"Powered by Mantis Bugtracker"
+			"html": "<img[^>]+ alt=\"Powered by Mantis Bugtracker"
 		},
 		"Marketo": {
 			"cats": [ 32 ],
@@ -1035,15 +1035,15 @@
 		"MediaWiki": {
 			"cats": [ 8 ],
 			"meta": { "generator": "MediaWiki" },
-			"html": "(<a[^>]+>Powered by MediaWiki</a>|<[^>]+id=\\\"t-specialpages)"
+			"html": "(<a[^>]+>Powered by MediaWiki</a>|<[^>]+id=\"t-specialpages)"
 		},
 		"Meebo": {
 			"cats": [ 5 ],
-			"html": "(<iframe id=\\\"meebo-iframe\\\"|Meebo\\('domReady'\\))"
+			"html": "(<iframe id=\"meebo-iframe\"|Meebo\\('domReady'\\))"
 		},
 		"Microsoft ASP.NET": {
 			"cats": [ 18 ],
-			"html": "<input[^>]+name=\\\"__VIEWSTATE",
+			"html": "<input[^>]+name=\"__VIEWSTATE",
 			"headers": { "X-Powered-By": "ASP\\.NET", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": [ "IIS", "Windows Server" ]
 		},
@@ -1054,7 +1054,7 @@
 		},
 		"MiniBB": {
 			"cats": [ 2 ],
-			"html": "<a href=\\\"[^>]+minibb.+\\s+<!--End of copyright link"
+			"html": "<a href=\"[^>]+minibb.+\\s+<!--End of copyright link"
 		},
 		"Mint": {
 			"cats": [ 10 ],
@@ -1167,7 +1167,7 @@
 		},
 		"MyBB": {
 			"cats": [ 2 ],
-			"html": "<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\\\"Powered By MyBB",
+			"html": "<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB",
 			"env": "^MyBB$"
 		},
 		"MyBlogLog": {
@@ -1183,7 +1183,7 @@
 		},
 		"Nedstat": {
 			"cats": [ 10 ],
-			"html": "sitestat\\(\\\".+nl\\.sitestat\\.com"
+			"html": "sitestat\\(\".+nl\\.sitestat\\.com"
 		},
 		"Netmonitor": {
 			"cats": [ 10 ],
@@ -1224,7 +1224,7 @@
 		},
 		"OpenCart": {
 			"cats": [ 6 ],
-			"html": "index\\.php\\?route=[a-z]+/|Powered By <a href=\\\"[^>]+OpenCart",
+			"html": "index\\.php\\?route=[a-z]+/|Powered By <a href=\"[^>]+OpenCart",
 			"implies": "PHP"
 		},
 		"openEngine": {
@@ -1274,12 +1274,12 @@
 		},
 		"osCommerce": {
 			"cats": [ 6 ],
-			"html": "(<a[^>]*(\\?|&)osCsid|Powered by (<[^]+>)?osCommerce</a>|<[^]+class=\\\"[^>]*infoBoxHeading)",
+			"html": "(<a[^>]*(\\?|&)osCsid|Powered by (<[^]+>)?osCommerce</a>|<[^]+class=\"[^>]*infoBoxHeading)",
 			"headers": { "Set-Cookie": "osCsid=|utmcct=/applications/oscommerce" }
 		},
 		"osCSS": {
 			"cats": [ 6 ],
-			"html": "<body onload=\\\"window\\.defaultStatus='oscss templates';\\\""
+			"html": "<body onload=\"window\\.defaultStatus='oscss templates';\""
 		},
 		"Outbrain": {
 			"cats": [ 5 ],
@@ -1307,7 +1307,7 @@
 		"Percussion": {
 			"cats": [ 1 ],
 			"meta": { "generator": "(Percussion|Rhythmyx)" },
-			"html": "<[^>]+class=\\\"perc-region\\\""
+			"html": "<[^>]+class=\"perc-region\""
 		},
 		"Perl": {
 			"cats": [ 27 ]
@@ -1325,7 +1325,7 @@
 		"phpBB": {
 			"cats": [ 2 ],
 			"meta": { "copyright": "phpBB Group" },
-			"html": "(Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=.copyright|\tphpBB style name|<[^>]+styles/(sub|pro)silver/theme|<img[^>]+i_icon_mini|<table class=\\\"forumline)",
+			"html": "(Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=.copyright|\tphpBB style name|<[^>]+styles/(sub|pro)silver/theme|<img[^>]+i_icon_mini|<table class=\"forumline)",
 			"env": "^(style_cookie_settings|phpbb_)",
 			"headers": { "Set-Cookie": "^phpbb" },
 			"implies": "PHP"
@@ -1342,7 +1342,7 @@
 		},
 		"PHP-Fusion": {
 			"cats": [ 1 ],
-			"html": "Powered by <a href=\\\"[^>]+php-fusion",
+			"html": "Powered by <a href=\"[^>]+php-fusion",
 			"implies": "PHP"
 		},
 		"phpMyAdmin": {
@@ -1357,7 +1357,7 @@
 		},
 		"phpPgAdmin": {
 			"cats": [ 3 ],
-			"html": "(<title>phpPgAdmin</title>|<span class=\\\"appname\\\">phpPgAdmin)",
+			"html": "(<title>phpPgAdmin</title>|<span class=\"appname\">phpPgAdmin)",
 			"implies": "PHP"
 		},
 		"phpSQLiteCMS": {
@@ -1368,7 +1368,7 @@
 		"phpwind": {
 			"cats": [ 1, 2 ],
 			"meta": { "generator": "^phpwind" },
-			"html": "Powered by <a href=\\\".+phpwind\\.net",
+			"html": "Powered by <a href=\".+phpwind\\.net",
 			"implies": "PHP"
 		},
 		"Piwik": {
@@ -1388,7 +1388,7 @@
 		"Pligg": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Pligg" },
-			"html": "<span[^>]+id=\\\"xvotes-0",
+			"html": "<span[^>]+id=\"xvotes-0",
 			"env": "^pligg_"
 		},
 		"Plone": {
@@ -1398,7 +1398,7 @@
 		},
 		"Plura": {
 			"cats": [ 19 ],
-			"html": "<iframe src=\\\"[^>]+pluraserver\\.com"
+			"html": "<iframe src=\"[^>]+pluraserver\\.com"
 		},
 		"Po.st": {
 			"cats": [ 5 ],
@@ -1406,7 +1406,7 @@
 		},
 		"Posterous": {
 			"cats": [ 1, 11 ],
-			"html": "<div class=\\\"posterous",
+			"html": "<div class=\"posterous",
 			"env": "^Posterous"
 		},
 		"Powergap": {
@@ -1416,7 +1416,7 @@
 		"Prestashop": {
 			"cats": [ 6 ],
 			"meta": { "generator": "PrestaShop" },
-			"html": "Powered by <a href=\\\"[^>]+PrestaShop",
+			"html": "Powered by <a href=\"[^>]+PrestaShop",
 			"implies": "PHP"
 		},
 		"Prototype": {
@@ -1431,7 +1431,7 @@
 		},
 		"punBB": {
 			"cats": [ 2 ],
-			"html": "Powered by <a href=\\\"[^>]+punbb",
+			"html": "Powered by <a href=\"[^>]+punbb",
 			"implies": "PHP"
 		},
 		"Python": {
@@ -1445,7 +1445,7 @@
 		},
 		"Quick.Cart": {
 			"cats": [ 6 ],
-			"html": "<a href=\\\"[^>]+opensolution\\.org/\\\">Powered by"
+			"html": "<a href=\"[^>]+opensolution\\.org/\">Powered by"
 		},
 		"RackCache": {
 			"cats": [ 23 ],
@@ -1470,7 +1470,7 @@
 		"reCAPTCHA": {
 			"cats": [ 16 ],
 			"script": "(api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
-			"html": "(<div[^>]+id=\\\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha)",
+			"html": "(<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha)",
 			"env": "^Recaptcha$"
 		},
 		"Red Hat": {
@@ -1487,12 +1487,12 @@
 		"Redmine": {
 			"cats": [ 13 ],
 			"meta": { "description": "Redmine" },
-			"html": "Powered by <a href=\\\"[^>]+Redmine",
+			"html": "Powered by <a href=\"[^>]+Redmine",
 			"implies": "Ruby on Rails"
 		},
 		"Reinvigorate": {
 			"cats": [ 10 ],
-			"html": "reinvigorate\\.track\\(\\\""
+			"html": "reinvigorate\\.track\\(\""
 		},
 		"RequireJS": {
 			"cats": [ 12 ],
@@ -1574,7 +1574,7 @@
 		"SilverStripe": {
 			"cats": [ 1 ],
 			"meta": { "generator": "SilverStripe" },
-			"html": "Powered by <a href=\\\"[^>]+SilverStripe"
+			"html": "Powered by <a href=\"[^>]+SilverStripe"
 		},
 		"Site Meter": {
 			"cats": [ 10 ],
@@ -1610,7 +1610,7 @@
 		},
 		"SOBI 2": {
 			"cats": [ 19 ],
-			"html": "(<!-- start of Sigsiu Online Business Index|<div[^>]* class=\\\"sobi2)",
+			"html": "(<!-- start of Sigsiu Online Business Index|<div[^>]* class=\"sobi2)",
 			"implies": "Joomla"
 		},
 		"SobiPro": {
@@ -1637,9 +1637,15 @@
 			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
+    "Spree": {
+      "cats": [ 6 ],
+      "html": "<img[^>]*\/spree\/products\/[0-9]+\/.+>",
+      "html": "<link[^>]*\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
+      "implies": "Ruby on Rails"
+    },
 		"SQL Buddy": {
 			"cats": [ 3 ],
-			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\\\"sideMainClick\\(\\\"home\\.php)"
+			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)"
 		},
 		"Squarespace": {
 			"cats": [ 1 ],
@@ -1660,12 +1666,17 @@
 		},
 		"Store Systems": {
 			"cats": [ 6 ],
-			"html": "Shopsystem von <a href=[^>]+store-systems\\.de\\\"|\\.mws_boxTop"
+			"html": "Shopsystem von <a href=[^>]+store-systems\\.de\"|\\.mws_boxTop"
 		},
 		"SublimeVideo": {
 			"cats": [ 14 ],
 			"script": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
 			"env": "^sublimevideo$"
+		},
+		"Subrion": {
+			"cats": [ 1 ],
+			"headers": { "X-Powered-CMS": "Subrion CMS" },
+			"implies": "PHP"
 		},
 		"Supersized": {
 			"cats": [ 7, 25 ],
@@ -1691,7 +1702,7 @@
 		"Swiftlet": {
 			"cats": [ 18 ],
 			"meta": { "generator": "Swiftlet" },
-			"html": "Powered by <a href=\\\"[^>]+Swiftlet",
+			"html": "Powered by <a href=\"[^>]+Swiftlet",
 			"headers": { "X-Swiftlet-Cache": ".*", "X-Powered-By": "Swiftlet", "X-Generator": "Swiftlet" },
 			"implies": "PHP"
 		},
@@ -1729,12 +1740,12 @@
 		},
 		"Trac": {
 			"cats": [ 13 ],
-			"html": "<a id=\\\"tracpowered",
+			"html": "<a id=\"tracpowered",
 			"implies": "Python"
 		},
 		"Tumblr": {
 			"cats": [ 11 ],
-			"html": "<iframe src=\\\"[^>]+tumblr\\.com",
+			"html": "<iframe src=\"[^>]+tumblr\\.com",
 			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/",
 			"headers": { "X-Tumblr-Usec": ".*" }
 		},
@@ -1801,7 +1812,7 @@
 		},
 		"Vanilla": {
 			"cats": [ 2 ],
-			"html": "<body id=\\\"(DiscussionsPage|vanilla)",
+			"html": "<body id=\"(DiscussionsPage|vanilla)",
 			"headers": { "X-Powered-By": "Vanilla" },
 			"implies": "PHP"
 		},
@@ -1818,16 +1829,16 @@
 		"VideoJS": {
 			"cats": [ 14 ],
 			"env": "^VideoJS$",
-			"html": "<div[^>]+class=\\\"video-js+\\\">",
+			"html": "<div[^>]+class=\"video-js+\">",
 			"script": "zencdn\\.net/c/video\\.js"
 		},
 		"viennaCMS": {
 			"cats": [ 1 ],
-			"html": "powered by <a href=\\\"[^>]+viennacms"
+			"html": "powered by <a href=\"[^>]+viennacms"
 		},
 		"Vignette": {
 			"cats": [ 1 ],
-			"html": "<[^>]+?=\\\"(vgn-ext|vgnext)"
+			"html": "<[^>]+?=\"(vgn-ext|vgnext)"
 		},
 		"Vimeo": {
 			"cats": [ 14 ],
@@ -1835,7 +1846,7 @@
 		},
 		"VirtueMart": {
 			"cats": [ 6 ],
-			"html": "<div id=\\\"vmMainPage"
+			"html": "<div id=\"vmMainPage"
 		},
 		"VisualPath": {
 			"cats": [ 10 ],
@@ -1871,7 +1882,7 @@
 		},
 		"Web Optimizer": {
 			"cats": [ 10 ],
-			"html": "<title [^>]*lang=\\\"wo\\\">"
+			"html": "<title [^>]*lang=\"wo\">"
 		},
 		"webEdition": {
 			"cats": [ 1 ],
@@ -1904,17 +1915,17 @@
 		},
 		"Webtrends": {
 			"cats": [ 10 ],
-			"html": "<img[^>]+id=\\\"DCSIMG\\\"[^>]+webtrends",
+			"html": "<img[^>]+id=\"DCSIMG\"[^>]+webtrends",
 			"env": "^(WTOptimize|WebTrends)"
 		},
 		"Weebly": {
 			"cats": [ 1 ],
-			"html": "<[^>]+class=\\\"weebly"
+			"html": "<[^>]+class=\"weebly"
 		},
 		"WikkaWiki": {
 			"cats": [ 8 ],
 			"meta": { "generator": "WikkaWiki" },
-			"html": "Powered by <a href=\\\"[^>]+WikkaWiki"
+			"html": "Powered by <a href=\"[^>]+WikkaWiki"
 		},
 		"Windows Server": {
 			"cats": [ 28 ],
@@ -1927,7 +1938,7 @@
 		},
 		"Wolf CMS": {
 			"cats": [ 1 ],
-			"html": "(<a href=\\\"[^>]+wolfcms\\.org.+Wolf CMS.+inside|Thank you for using <a[^>]+>Wolf CMS)"
+			"html": "(<a href=\"[^>]+wolfcms\\.org.+Wolf CMS.+inside|Thank you for using <a[^>]+>Wolf CMS)"
 		},
 		"Woopra": {
 			"cats": [ 10 ],
@@ -1936,7 +1947,7 @@
 		"WordPress": {
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "WordPress( [\\d\\.]+)?\\;version:\\1" },
-			"html": "<link rel=\\\"stylesheet\\\" [^>]+wp-content",
+			"html": "<link rel=\"stylesheet\" [^>]+wp-content",
 			"env": "^wp_username$",
 			"implies": "PHP"
 		},
@@ -1959,7 +1970,7 @@
 		},
 		"XiTi": {
 			"cats": [ 10 ],
-			"html": "(<[^>]+src=\\\"[^>]+xiti\\.com/hit\\.xiti)",
+			"html": "(<[^>]+src=\"[^>]+xiti\\.com/hit\\.xiti)",
 			"env": "^Xt_"
 		},
 		"XMB": {
@@ -1975,7 +1986,7 @@
 		"xtCommerce": {
 			"cats": [ 6 ],
 			"meta": { "generator": "xt:Commerce" },
-			"html": "<div class=\\\"copyright\\\">.+<a[^>]+>xt:Commerce"
+			"html": "<div class=\"copyright\">.+<a[^>]+>xt:Commerce"
 		},
 		"xui": {
 			"cats": [ 26, 12 ],
@@ -1984,7 +1995,7 @@
 		},
 		"YaBB": {
 			"cats": [ 2 ],
-			"html": "Powered by <a href=\\\"[^>]+yabbforum"
+			"html": "Powered by <a href=\"[^>]+yabbforum"
 		},
 		"Yahoo! Web Analytics": {
 			"cats": [ 10 ],
