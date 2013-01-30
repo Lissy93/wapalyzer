@@ -482,7 +482,7 @@
 		},
 		"Django": {
 			"cats": [ 18 ],
-			"html": "powered by <a[^>]+>Django",
+			"html": "powered by <a[^>]+>Django|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-zA-Z0-9]{32}\" type=\"hidden\"></div>",
 			"implies": "Python"
 		},
 		"Django CMS": {
