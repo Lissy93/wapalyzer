@@ -997,8 +997,8 @@
 		},
     "Locomotive": {
       "cats": [ 1 ],
-      "html": "\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/",
-      "implies": [ "Ruby", "Ruby on Rails", "MongoDB" ]
+      "html": "<link[^>]*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
+      "implies": [ "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
 			"cats": [ 22 ],
@@ -1637,6 +1637,12 @@
 			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
+    "Spree": {
+      "cats": [ 6 ],
+      "html": "<img[^>]*\/spree\/products\/[0-9]+\/.+>",
+      "html": "<link[^>]*\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
+      "implies": [ "Ruby on Rails"]
+    },
 		"SQL Buddy": {
 			"cats": [ 3 ],
 			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\\\"sideMainClick\\(\\\"home\\.php)"
@@ -1666,6 +1672,11 @@
 			"cats": [ 14 ],
 			"script": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
 			"env": "^sublimevideo$"
+		},
+		"Subrion": {
+			"cats": [ 1 ],
+			"headers": { "X-Powered-CMS": "Subrion CMS" },
+			"implies": [ "PHP" ]
 		},
 		"Supersized": {
 			"cats": [ 7, 25 ],
