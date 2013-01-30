@@ -81,7 +81,7 @@ var wappalyzer = (function() {
 
 				if ( matches ) {
 					matches.map(function(match, i) {
-						version = version.replace('\\' + i, match);
+						version = version.replace('\\' + i, match ? match : '');
 					});
 
 					self.versions.push(version);
@@ -133,6 +133,8 @@ var wappalyzer = (function() {
 						attrs[attr[0]] = attr[1];
 					}
 				} else {
+					attrs.string = attr;
+
 					try {
 						attrs.regex = new RegExp(attr.replace('/', '\\\/'), 'i'); // Escape slashes in regular expression
 					} catch (e) {
@@ -372,20 +374,27 @@ var wappalyzer = (function() {
 					confidence = apps[app].confidence;
 
 					if ( w.apps[app] && w.apps[app].implies ) {
+						// Cast strings to an array
+						if ( typeof w.apps[app].implies === 'string' ) {
+							w.apps[app].implies = [ w.apps[app].implies ];
+						}
+
 						w.apps[app].implies.map(function(implied) {
-							if ( !w.apps[implied] ) {
-								w.log('Implied application ' + implied + ' does not exist');
+							implied = parse(implied)[0];
+
+							if ( !w.apps[implied.string] ) {
+								w.log('Implied application ' + implied.string + ' does not exist');
 
 								return;
 							}
 
-							// Apply app confidence to implied app
-							if ( !apps.hasOwnProperty(implied) ) {
-								apps[implied] = new Application(implied, true);
+							if ( !apps.hasOwnProperty(implied.string) ) {
+								apps[implied.string] = new Application(implied.string, true);
 							}
 
+							// Apply app confidence to implied app
 							for ( id in confidence ) {
-								apps[implied].confidence[id + ' implied by ' + app] = confidence[id];
+								apps[implied.string].confidence[id + ' implied by ' + app] = confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 );
 							}
 						});
 					}

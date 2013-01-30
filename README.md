@@ -48,14 +48,14 @@ Copy `drivers/chrome/_locales/en`.
 
 ```javascript
 "Application Name": { 
-	"cats":       [ 1 ], 
-	"headers":    { "X-Powered-By": "Application Name" },
-	"url":        ".+\\.application-name\\.com",
-	"html":       "<link[^>]application-name\\.css", 
-	"meta":       { "generator": [ "Application Name", "Alternative Application Name" ] },
-	"script":     "application-name-([0-9.]+)\\.js\\;confidence:100\\;version:\\1",
-	"env":        "ApplicationName",
-	"implies":    [ "PHP" ],
+	"cats":    [ 1 ], 
+	"headers": { "X-Powered-By": "Application Name" },
+	"url":     ".+\\.application-name\\.com",
+	"html":    "<link[^>]application-name\\.css", 
+	"meta":    { "generator": [ "Application Name", "Alternative Application Name" ] },
+	"script":  "application-name-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
+	"env":     "ApplicationName",
+	"implies": "PHP\\;confidence:50",
 	}
 ```
 
@@ -87,6 +87,8 @@ field      | description
 -----------|------------
 confidence | Indicates less reliable patterns that may cause false positives. The aim is to achieve a combined confidence of 100%. Defaults to 100% for unspecified fields.
 version    | Gets the version number from a pattern match using a special syntax.
+
+The confidence field can also be applied to the `implied` field.
 
 
 #### Version syntax
