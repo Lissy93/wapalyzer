@@ -1641,7 +1641,7 @@
       "cats": [ 6 ],
       "html": "<img[^>]*\/spree\/products\/[0-9]+\/.+>",
       "html": "<link[^>]*\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
-      "implies": [ "Ruby on Rails"]
+      "implies": "Ruby on Rails"
     },
 		"SQL Buddy": {
 			"cats": [ 3 ],
@@ -1676,7 +1676,7 @@
 		"Subrion": {
 			"cats": [ 1 ],
 			"headers": { "X-Powered-CMS": "Subrion CMS" },
-			"implies": [ "PHP" ]
+			"implies": "PHP"
 		},
 		"Supersized": {
 			"cats": [ 7, 25 ],
