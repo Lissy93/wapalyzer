@@ -482,7 +482,8 @@
 		},
 		"Django": {
 			"cats": [ 18 ],
-			"html": "powered by <a[^>]+>Django|window.__admin_media_prefix__|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-zA-Z0-9]{32}\" type=\"hidden\"></div>",
+			"html": "powered by <a[^>]+>Django|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z0-9]{32}\" type=\"hidden\"></div>",
+			"env": "__admin_media_prefix__",
 			"implies": "Python"
 		},
 		"Django CMS": {
