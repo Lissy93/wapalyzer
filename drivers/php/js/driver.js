@@ -25,7 +25,8 @@ w.driver = {
 		for ( app in w.detected[w.driver.data.url] ) {
 			apps[app] = {
 				categories: [],
-				confidence: w.detected[w.driver.data.url][app].confidenceTotal
+				confidence: w.detected[w.driver.data.url][app].confidenceTotal,
+				version:    w.detected[w.driver.data.url][app].version
 				};
 
 			w.apps[app].cats.map(function(cat) {

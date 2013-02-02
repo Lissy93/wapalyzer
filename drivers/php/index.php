@@ -22,7 +22,7 @@ try {
 
 	if ( $detectedApps ) {
 		foreach ( $detectedApps as $detectedApp => $data ) {
-			echo $detectedApp . ', ' . $data->confidence . '%, ', implode(', ', $data->categories) . "\n";
+			echo $detectedApp . ', ' . $data->version . ', ', $data->confidence . '%, ', implode(', ', $data->categories) . "\n";
 		}
 	} else {
 		echo "No applications detected\n";

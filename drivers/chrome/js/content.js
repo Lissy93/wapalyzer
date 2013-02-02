@@ -49,7 +49,7 @@
 
 					c.log('getEnvironmentVars: ' + environmentVars);
 
-					environmentVars = environmentVars.split(' ');
+					environmentVars = environmentVars.split(' ').slice(0, 500);
 
 					chrome.extension.sendRequest({ id: 'analyze', subject: { env: environmentVars } });
 				}), true);

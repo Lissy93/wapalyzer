@@ -492,7 +492,7 @@
 		"Django CMS": {
 			"cats": [ 1 ],
 			"script": "media/cms/js/csrf\\.js",
-			"headers": { "Set-Cookie": "django[^\\;]=" },
+			"headers": { "Set-Cookie": "django[^;]=" },
 			"implies": "Django"
 		},
 		"Dojo": {
