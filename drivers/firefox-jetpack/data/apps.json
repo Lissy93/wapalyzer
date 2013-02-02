@@ -66,7 +66,7 @@
 		},
 		"AddThis": {
 			"cats": [ 5 ],
-			"script": "addthis\\.com/js/(\d+)?;version:\\1",
+			"script": "addthis\\.com/js/(\\d+)?;version:\\1",
 			"env": "^addthis"
 		},
 		"Adobe CQ5": {
@@ -101,7 +101,7 @@
 		"Amiro.CMS": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Amiro" },
-			"html": "system_(js\\.php\\?script=|css\\.php\\?styles)[^"]+cv=([\d\.]+)\\;version:\\2",
+			"html": "system_(js\\.php\\?script=|css\\.php\\?styles)[^\"]+cv=([\\d\\.]+)\\;version:\\2",
 			"implies": "PHP"
 		},
 		"AMPcms": {
@@ -116,7 +116,7 @@
 		},
 		"AOLserver": {
 			"cats": [ 22 ],
-			"headers": { "Server": "AOLserver/?([\d\.]+)?\\;version:\\1" }
+			"headers": { "Server": "AOLserver/?([\\d\\.]+)?\\;version:\\1" }
 		},
 		"Apache": {
 			"cats": [ 22 ],
@@ -196,7 +196,7 @@
 		},
 		"BigDump": {
 			"cats": [ 3 ],
-			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\. ([\\d\\.b]+)\\;version:\\1",
+			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d\\.b]+)\\;version:\\1",
 			"implies": "PHP"
 		},
 		"Bigware": {
@@ -449,7 +449,7 @@
 		},
 		"David Webbox": {
 			"cats": [ 22 ],
-			"headers": { "Server": "David-WebBox/([\\d\\.a]+ \(\d+\))\\;version:\\1" }
+			"headers": { "Server": "David-WebBox/([\\d\\.a]+ \\(\\d+\\))\\;version:\\1" }
 		},
 		"Debian": {
 			"cats": [ 28 ],
@@ -1648,8 +1648,8 @@
 		},
     "Spree": {
       "cats": [ 6 ],
-      "html": "<img[^>]*\/spree\/products\/[0-9]+\/.+>",
-      "html": "<link[^>]*\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
+      "html": "<img[^>]*/spree/products/[0-9]+/.+>",
+      "html": "<link[^>]*/assets/store/all-[a-zA-Z0-9]{32}\\.css.+>",
       "implies": "Ruby on Rails"
     },
 		"SQL Buddy": {
