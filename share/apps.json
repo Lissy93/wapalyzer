@@ -763,6 +763,10 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Hotaru CMS" }
 		},
+		"Hubspot": {
+			"cats": [ 32 ],
+			"env": "^(_hsq|hubspot)$"
+		},
 		"Hybris": {
 			"cats": [ 6 ],
 			"html": "(/sys_master/|/hybr/|/_ui/desktop/)",
@@ -1533,6 +1537,10 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Serendipity", "Powered-By": "Serendipity" }
 		},
+		"SAP": {
+			"cats": [ 22 ],
+			"headers": { "Server": "SAP NetWeaver Application Server" }
+		},
 		"Sarka-SPIP": {
 			"cats": [ 1 ],
 			"meta": { "generator": "(^|\\s)Sarka-SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
@@ -2006,9 +2014,16 @@
 			"cats": [ 2 ],
 			"html": "Powered by <a href=\"[^>]+yabbforum"
 		},
+		"Yahoo! Ecommerce": {
+			"cats": [ 6 ],
+			"html": "<link[^>]+store\\.yahoo\\.net",
+			"headers": { "X-XRDS-Location": "/ystore/" },
+			"env": "^YStore$"
+		},
 		"Yahoo! Web Analytics": {
 			"cats": [ 10 ],
-			"script": "d\\.yimg\\.com/mi/ywa\\.js"
+			"script": "d\\.yimg\\.com/mi/ywa\\.js",
+			"env": "^YWA$"
 		},
 		"Yandex.Metrika": {
 			"cats": [ 10 ],
@@ -2020,7 +2035,7 @@
 		},
 		"YUI Doc": {
 			"cats": [ 4 ],
-			"html": "<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf"
+			"html": "(<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf|<body[^>]+class=\"yui3-skin-sam)"
 		},
 		"YUI": {
 			"cats": [ 12 ],
