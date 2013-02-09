@@ -106,7 +106,7 @@
 		},
 		"AMPcms": {
 			"cats": [ 1 ],
-			"headers": { "X-AMP-Version": "([\\d\\.]+)\\;version=\\1", "Set-Cookie": "^AMP=" },
+			"headers": { "X-AMP-Version": "([\\d\\.]+)\\;version:\\1", "Set-Cookie": "^AMP=" },
 			"env": "^amp_js_init$",
 			"implies": "PHP"
 		},
@@ -1006,7 +1006,7 @@
 		},
     "Locomotive": {
       "cats": [ 1 ],
-      "html": "<link[^>]*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
+      "html": "<link[^>]*/sites/[a-zA-Z0-9]{24}/theme/stylesheets/.*>",
       "implies": [ "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
@@ -1015,7 +1015,7 @@
 		},
 		"Magento": {
 			"cats": [ 6 ],
-			"script": "(js/mage|skin/frontend/(default|enterprise))",
+			"script": "(js/mage|skin/frontend/(default|(enterprise)))\\;version:\\3?Enterprise:Community",
 			"headers": { "Set-Cookie": "frontend=\\;confidence:50" },
 			"env": "^(Mage|VarienForm)$",
 			"implies": "PHP"
@@ -1323,7 +1323,7 @@
 		},
 		"PHP": {
 			"cats": [ 27 ],
-			"headers": { "Server": "php/?([\\d\\.]+)?\\;version:\\1", "X-Powered-By": "php/?([\\d\\.]+)?\\;version:\\1", "Set-Cookie": "PHPSESSID" },
+			"headers": { "Server": "php/?([\\d\\.]+)?\\;confidence:50\\;version:\\1", "X-Powered-By": "php/?([\\d\\.]+)?\\;version:\\1", "Set-Cookie": "PHPSESSID" },
 			"url": "\\.php$"
 		},
 		"phpAlbum":	{

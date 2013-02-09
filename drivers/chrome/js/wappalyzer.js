@@ -81,10 +81,20 @@ var wappalyzer = (function() {
 
 				if ( matches ) {
 					matches.map(function(match, i) {
+						// Parse ternary operator
+						var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.+)$').exec(version);
+
+						if ( ternary && ternary.length === 3 ) {
+							version = version.replace(ternary[0], match ? ternary[1] : ternary[2]);
+						}
+
+						// Replace back references
 						version = version.replace('\\' + i, match ? match : '');
 					});
 
-					self.versions.push(version);
+					if ( version ) {
+						self.versions.push(version);
+					}
 
 					self.getVersion();
 				}
@@ -129,8 +139,8 @@ var wappalyzer = (function() {
 					// Key value pairs
 					attr = attr.split(':');
 
-					if ( attr.length === 2 ) {
-						attrs[attr[0]] = attr[1];
+					if ( attr.length > 1 ) {
+						attrs[attr.shift()] = attr.join(':');
 					}
 				} else {
 					attrs.string = attr;
@@ -237,7 +247,7 @@ var wappalyzer = (function() {
 			data.url = url = url.split('#')[0];
 
 			if ( typeof w.apps === 'undefined' || typeof w.categories === 'undefined' ) {
-				w.log('apps.json not loaded');
+				w.log('apps.json not loaded, check for syntax errors');
 
 				return;
 			}
@@ -247,7 +257,7 @@ var wappalyzer = (function() {
 			}
 
 			for ( app in w.apps ) {
-				apps[app] = new Application(app);
+				apps[app] = w.detected[url] && w.detected[url][app] ? w.detected[url][app] : new Application(app);
 
 				for ( type in w.apps[app] ) {
 					switch ( type ) {
@@ -289,7 +299,7 @@ var wappalyzer = (function() {
 									profiler.regexCount ++;
 
 									if ( pattern.regex.test(match[2]) ) {
-										apps[app].setDetected(pattern, type, data[type]);
+										apps[app].setDetected(pattern, type, match[2]);
 									}
 								}
 							});
@@ -383,13 +393,13 @@ var wappalyzer = (function() {
 							implied = parse(implied)[0];
 
 							if ( !w.apps[implied.string] ) {
-								w.log('Implied application ' + implied.string + ' does not exist');
+								w.log('Implied application ' + implied.string + ' does not exist', 'warn');
 
 								return;
 							}
 
 							if ( !apps.hasOwnProperty(implied.string) ) {
-								apps[implied.string] = new Application(implied.string, true);
+								apps[implied.string] = w.detected[url] && w.detected[url][implied.string] ? w.detected[url][implied.string] : new Application(implied.string, true);
 							}
 
 							// Apply app confidence to implied app
@@ -406,6 +416,7 @@ var wappalyzer = (function() {
 			// Keep history of detected apps
 			for ( app in apps ) {
 				confidence = apps[app].confidence;
+				version    = apps[app].version;
 
 				// Per URL
 				w.detected[url][app] = apps[app];
@@ -422,17 +433,19 @@ var wappalyzer = (function() {
 						}
 
 						if ( !w.ping.hostnames[hostname].applications.hasOwnProperty(app) ) {
-							w.ping.hostnames[hostname].applications[app] = 1;
+							w.ping.hostnames[hostname].applications[app] = { hits: 0 };
 						}
 
-						w.ping.hostnames[hostname].applications[app] ++;
+						w.ping.hostnames[hostname].applications[app].hits ++;
+
+						if ( version ) {
+							w.ping.hostnames[hostname].applications[app].version = version;
+						}
 					} else {
 						w.log('Ignoring hostname "' + hostname + '"');
 					}
 				}
 			}
-
-			w.log(JSON.stringify(w.detected));
 
 			// Additional information
 			if ( w.ping.hostnames.hasOwnProperty(hostname) ) {
@@ -456,7 +469,7 @@ var wappalyzer = (function() {
 					}
 				}
 
-				w.log(hostname + ': ' + JSON.stringify(w.ping.hostnames[hostname]));
+				w.log({ hostname: hostname, ping: w.ping.hostnames[hostname] });
 			}
 
 			if ( Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }

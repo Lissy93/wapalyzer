@@ -166,7 +166,7 @@
 				// Make POST request
 				var xhr = new XMLHttpRequest();
 
-				xhr.open('POST', w.config.websiteURL + 'ping/', true);
+				xhr.open('POST', w.config.websiteURL + 'ping/v2/', true);
 
 				xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 

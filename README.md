@@ -74,7 +74,7 @@ script     | string | `src` attribute of HTML script tags, e.g. `jquery.js`.
 
 Except `cats`, all fields are optional.
 
-Except `cats` and `implied` all fields except one or more patterns (either a string or an array of regular expressions).
+Except `cats` and `implied` all fields accept one or more patterns (either a string or an array of regular expressions).
 
 
 ### Patterns
