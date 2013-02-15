@@ -10,7 +10,7 @@ technologies used on websites.  It detects
 [analytics tools](http://wappalyzer.com/categories/analytics) and
 [many more](http://wappalyzer.com/applications).
 
-Please refer to the [wiki](https://github.com/ElbertF/Wappalyzer/wiki) for
+Refer to the [wiki](https://github.com/ElbertF/Wappalyzer/wiki) for
 [screenshots](https://github.com/ElbertF/Wappalyzer/wiki/Screenshots), information on how to 
 [contribute](https://github.com/ElbertF/Wappalyzer/wiki/Contributing) and
 [more](https://github.com/ElbertF/Wappalyzer/wiki/_pages).
