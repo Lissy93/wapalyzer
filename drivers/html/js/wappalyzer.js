@@ -146,7 +146,7 @@ var wappalyzer = (function() {
 					attrs.string = attr;
 
 					try {
-						attrs.regex = new RegExp(attr.replace('/', '\\\/'), 'i'); // Escape slashes in regular expression
+						attrs.regex = new RegExp(attr.replace('/', '\/'), 'i'); // Escape slashes in regular expression
 					} catch (e) {
 						attrs.regex = new RegExp();
 
