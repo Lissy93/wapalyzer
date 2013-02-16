@@ -776,6 +776,11 @@
 			"meta": { "generator": "Hotaru CMS" },
 			"headers": { "Set-Cookie": "hotaru_mobile=" }
 		},
+		"HubSpot": {
+			"cats": [ 32 ],
+			"html": "<!-- Start of Async HubSpot",
+			"env": "^(_hsq|hubspot)$"
+		},
 		"Hybris": {
 			"cats": [ 6 ],
 			"html": "(/sys_master/|/hybr/|/_ui/desktop/)",
