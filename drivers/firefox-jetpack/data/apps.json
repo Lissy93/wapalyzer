@@ -92,6 +92,11 @@
 			"cats": [ 20 ],
 			"meta": { "generator": "Amaya( V?([\\d.]+[a-z]))?\\;version:\\2" }
 		},
+		"amCharts": {
+			"cats": [ 25 ],
+			"script": "amcharts.*\\.js",
+			"env": "^AmCharts$"
+		},
 		"Ametys": {
 			"cats": [ 1 ],
 			"meta": { "generator": "(Ametys|Anyware Technologies)" },
@@ -453,7 +458,7 @@
 		},
 		"Debian": {
 			"cats": [ 28 ],
-			"headers": { "Server": "Debian", "X-Powered-By": "(Debian|dotdeb|etch|lenny|squeeze|wheezy)" }
+			"headers": { "Server": "Debian", "X-Powered-By": "(Debian|dotdeb|(sarge|etch|lenny|queeze|wheezy|jessie))\\;version:\\2" }
 		},
 		"DedeCMS": {
 			"cats": [ 1 ],
@@ -558,9 +563,23 @@
 			"cats": [ 31 ],
 			"headers": { "Server": "^ECS" }
 		},
+		"Eloqua": {
+			"cats": [ 32 ],
+			"script": "elqCfg\\.js",
+			"env": "^elq(SiteID|Load|CurESite)$"
+		},
 		"Embedthis-http": {
 			"cats": [ 22 ],
 			"headers": { "Server": "Embedthis-http(/([\\d.]+))?\\;version:\\2" }
+		},
+		"E-Merchant": {
+			"cats": [ 6 ],
+			"script": "cdn.e-merchant.com"
+		},
+		"Enyo": {
+			"cats": [ 12 ],
+			"script": "enyo\\.js",
+			"env": "^enyo$"
 		},
 		"EPiServer": {
 			"cats": [ 1 ],
@@ -1334,6 +1353,11 @@
 			"cats": [ 1 ],
 			"html": "<link[^>]*/papaya-themes/"
 		},
+		"Pardot": {
+			"cats": [ 32 ],
+			"html": "piProtocol + \"pi\\.pardot\\.com/pi\\.js",
+			"env": "^pi(Tracker|Hostname|Protocol|CId|AId)$"
+		},
 		"Parse.ly": {
 			"cats": [ 10 ],
 			"env": "^PARSELY$"
@@ -1348,7 +1372,7 @@
 		},
 		"PHP": {
 			"cats": [ 27 ],
-			"headers": { "Server": "php/?([\\d.]+)?\\;confidence:50\\;version:\\1", "X-Powered-By": "php/?([\\d.]+)?\\;version:\\1", "Set-Cookie": "PHPSESSID" },
+			"headers": { "Server": "php/?([\\d.]+)?\\;confidence:40\\;version:\\1", "X-Powered-By": "php/?([\\d.]+)?\\;confidence:40\\;version:\\1", "Set-Cookie": "PHPSESSID" },
 			"url": "\\.php$"
 		},
 		"phpAlbum":	{
@@ -1470,7 +1494,7 @@
 		},
 		"Python": {
 			"cats": [ 27 ],
-			"headers": { "Server": "(^|\\s)Python(/([\\d.]+))?\\;version:\\3" }
+			"headers": { "Server": "(^|\\s)Python(/([\\d.]+))?\\;confidence:50\\;version:\\3" }
 		},
 		"Quantcast": {
 			"cats": [ 10 ],
@@ -1526,7 +1550,8 @@
 		},
 		"Reinvigorate": {
 			"cats": [ 10 ],
-			"html": "reinvigorate\\.track\\(\""
+			"html": "reinvigorate\\.track\\(\"",
+			"env": "^reinvigorate$"
 		},
 		"RequireJS": {
 			"cats": [ 12 ],

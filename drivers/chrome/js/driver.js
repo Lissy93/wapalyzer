@@ -125,7 +125,7 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var count = Object.keys(w.detected[tab.url]).length.toString();
+			var count = w.detected[tab.url] ? Object.keys(w.detected[tab.url]).length.toString() : '0';
 
 			if ( tabCache[tab.id] == null ) {
 				tabCache[tab.id] = {
