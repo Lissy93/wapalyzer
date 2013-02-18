@@ -1103,7 +1103,7 @@
 		"Microsoft ASP.NET": {
 			"cats": [ 18 ],
 			"html": "<input[^>]+name=\"__VIEWSTATE",
-			"headers": { "X-Powered-By": "ASP\\.NET", "X-AspNet-Version": "(.+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "ASP\\.NET;\\confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": [ "IIS", "Windows Server" ]
 		},
 		"Microsoft SharePoint": {
@@ -2038,7 +2038,7 @@
 			"cats": [ 2 ],
 			"html": "jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding"
 		},
-		"AT Internet": {
+		"XiTi": {
 			"cats": [ 10 ],
 			"html": "(<[^>]+src=\"[^>]+xiti\\.com/hit\\.xiti)",
 			"env": "^Xt_"
