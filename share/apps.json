@@ -595,6 +595,7 @@
 		},
 		"eSyndiCat": {
 			"cats": [ 1 ],
+			"meta": { "generator": "^eSyndiCat " },
 			"headers": { "X-Drectory-Script": "^eSyndiCat" },
 			"env": "^esyndicat$",
 			"implies": [ "PHP" ]
@@ -1743,6 +1744,7 @@
 		},
 		"Subrion": {
 			"cats": [ 1 ],
+			"meta": { "generator": "^Subrion " },
 			"headers": { "X-Powered-CMS": "Subrion CMS" },
 			"implies": "PHP"
 		},
