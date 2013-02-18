@@ -1041,9 +1041,9 @@
 		},
 		"Livefyre": {
 			"cats": [ 15 ],
-			"html": "var fyre = LF",
-			"script": "livefyre_init\\.js"
-		}
+			"script": "livefyre_init\\.js",
+			"env": "^fyre$"
+		},
 		"LiveJournal": {
 			"cats": [ 11 ],
 			"url": "^(www.)?.+\\.livejournal\\.com"
