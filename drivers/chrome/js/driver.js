@@ -178,7 +178,7 @@
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
-				w.ping = {};
+				w.ping = { hostnames: {} };
 			}
 		},
 
