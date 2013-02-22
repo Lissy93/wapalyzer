@@ -35,7 +35,7 @@
 		"33": "web-server-extensions",
 		"34": "databases",
 		"35": "maps",
-		"36": "advertizing-networks"
+		"36": "advertising-networks"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -210,6 +210,11 @@
 			"url": "(\\?|&)bigWAdminID=[a-z\\d]+(&|$)",
 			"headers": { "Set-Cookie": "bigwareCsid|bigWAdminID" },
 			"implies": "PHP"
+		},
+		"BittAds": {
+			"cats": [ 36 ],
+			"script": "^https://server\\.bittads\\.com/js/bitt\\.js$",
+			"env": "^bitt$"
 		},
 		"Blip.tv": {
 			"cats": [ 14 ],
@@ -415,6 +420,14 @@
 			"env": "^fn_compare_strings$",
 			"html": "&nbsp;Powered by (<a href=[^>]+cs-cart\\.com|CS-Cart)",
 			"implies": "PHP"
+		},
+		"Adobe ColdFusion": {
+			"cats": [ 18 ],
+			"url": "\\.cfm$",
+			"html": "<!-- START headerTags\\.cfm",
+			"script": "/cfajax/",
+			"env": "^_cfEmails$",
+			"implies": "CFML"
 		},
 		"CubeCart": {
 			"cats": [ 6 ],
@@ -642,6 +655,10 @@
 			"html": "<input[^>]+ name=\"ParametricSearch",
 			"implies": [ "Microsoft SharePoint", "Microsoft ASP.NET" ]
 		},
+		"Fedora": {
+			"cats": [ 28 ],
+			"headers": { "Server": "Fedora" }
+		},
 		"FlexCMP": {
 			"cats": [ 1 ],
 			"meta": { "generator": "FlexCMP" },
@@ -822,6 +839,11 @@
 			"url": "/wcs/",
 			"implies": "Java"
 		},
+		"iCongo": {
+			"cats": [ 6 ],
+			"html": "<meta[^>]+\"iCongo",
+			"implies": "Adobe ColdFusion"
+		},
 		"IIS": {
 			"cats": [ 22 ],
 			"headers": { "Server": "IIS(/([\\d.]+))?\\;version:\\2" },
@@ -989,7 +1011,8 @@
 		},
 		"KineticJS": {
 			"cats": [ 25 ],
-			"script": "kinetic(-v?([\\d.]+))?\\.js\\;version:\\2"
+			"script": "kinetic(-v?([\\d.]+))?\\.js\\;version:\\2",
+			"env": "^Kinetic$"
 		},
 		"KISSmetrics": {
 			"cats": [ 10 ],
@@ -1043,6 +1066,10 @@
 		"LimeSurvey": {
 			"cats": [ 19 ],
 			"headers": { "generator": "LimeSurvey" }
+		},
+		"LiteSpeed": {
+			"cats": [ 22 ],
+			"headers": { "Server": "^LiteSpeed$" }
 		},
 		"Livefyre": {
 			"cats": [ 15 ],
@@ -1106,6 +1133,7 @@
 		},
 		"Microsoft ASP.NET": {
 			"cats": [ 18 ],
+			"url": "\\.aspx$",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
 			"headers": { "X-Powered-By": "ASP\\.NET;\\confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": [ "IIS", "Windows Server" ]
@@ -1113,7 +1141,8 @@
 		"Microsoft SharePoint": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Microsoft SharePoint" },
-			"headers": { "MicrosoftSharePointTeamServices": "(.*)\\;version:\\1", "X-SharePointHealthScore": ".*", "SPRequestGuid": ".*", "SharePointHealthScore": ".*" }
+			"headers": { "MicrosoftSharePointTeamServices": "(.*)\\;version:\\1", "X-SharePointHealthScore": ".*", "SPRequestGuid": ".*", "SharePointHealthScore": ".*" },
+			"env": "^_spBodyOnLoadCalled$"
 		},
 		"MiniBB": {
 			"cats": [ 2 ],
@@ -1387,7 +1416,7 @@
 		},
 		"phpAlbum":	{
 			"cats":	[ 7 ],
-			"html":	"<!--phpalbum [\\.\\d\\s]+-->",
+			"html":	"<!--phpalbum [.\\d\\s]+-->",
 			"implies": "PHP"
 		},
 		"phpBB": {
@@ -1629,6 +1658,13 @@
 			"cats": [ 5, 10 ],
 			"env": "^Shopalize$"
 		},
+		"Shopatron": {
+			"cats": [ 6 ],
+			"html": [ "<body class=\"shopatron", "<img[^>]+mediacdn\\.shopatron\\.com\\;confidence:50" ],
+			"script": "mediacdn\\.shopatron\\.com",
+			"meta": { "keywords": "Shopatron" },
+			"env": "^shptUrl$"
+		},
 		"Shopify": {
 			"cats": [ 6 ],
 			"html": "<link[^>]+=cdn\\.shopify\\.com",
@@ -1719,6 +1755,9 @@
 		"SQL Buddy": {
 			"cats": [ 3 ],
 			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)"
+		},
+		"SQLite": {
+			"cats": [ 34 ]
 		},
 		"Squarespace": {
 			"cats": [ 1 ],
@@ -1977,7 +2016,7 @@
 		"WebsiteBaker": {
 			"cats": [ 1 ],
 			"meta": { "generator": "WebsiteBaker" },
-			"implies": "PHP"
+			"implies": [ "PHP", "MySQL" ]
 		},
 		"WebsPlanet": {
 			"cats": [ 1 ],
@@ -2009,6 +2048,12 @@
 			"cats": [ 26, 12 ],
 			"script": "(_base/js/base|wink).*\\.js",
 			"env": "^wink$"
+		},
+		"Wix": {
+			"cats": [ 1 ],
+			"script": "static\\.wix\\.com",
+			"headers": { "X-Wix-Dispatcher-Cache-Hit": ".+", "Set-Cookie": "Domain=\\.wix\\.com" },
+			"env": "^wix(Events|Data|Errors)"
 		},
 		"Wolf CMS": {
 			"cats": [ 1 ],
@@ -2042,9 +2087,13 @@
 			"cats": [ 2 ],
 			"html": "jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding"
 		},
-		"XiTi": {
+		"AT Internet Analyzer": {
 			"cats": [ 10 ],
-			"html": "(<[^>]+src=\"[^>]+xiti\\.com/hit\\.xiti)",
+			"env": "^xtsite$"
+		},
+		"AT Internet XiTi": {
+			"cats": [ 10 ],
+			"script": "xiti\\.com/hit\\.xiti",
 			"env": "^Xt_"
 		},
 		"XMB": {
