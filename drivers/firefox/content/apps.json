@@ -491,7 +491,7 @@
 		"Django": {
 			"cats": [ 18 ],
 			"html": "(powered by <a[^>]+>Django ?([\\d.]+)?|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z0-9]{32}\" type=\"hidden\"></div>)\\;version:\\2",
-			"env": "__admin_media_prefix__",
+			"env": "^__admin_media_prefix__",
 			"implies": "Python"
 		},
 		"Django CMS": {
@@ -849,6 +849,10 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "InstantCMS" },
 			"headers": { "Set-Cookie": "InstantCMS\\[logdate\\]=" }
+		},
+		"IntenseDebate": {
+			"cats": [ 15 ],
+			"script": "intensedebate\\.com"
 		},
 		"Intershop": {
 			"cats": [ 6 ],
@@ -2118,6 +2122,10 @@
 			"script": "zkau/",
 			"html": "<!-- ZK [\\.\\d\\s]+-->",
 			"implies": "Java"
+		},
+		"ZURB Foundation": {
+			"cats": [ 18 ],
+			"html": "<link[^>]+foundation[^>\"]+css"
 		}
 	}
 }
