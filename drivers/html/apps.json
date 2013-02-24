@@ -1243,6 +1243,12 @@
 			"meta": { "generator": "Koobi" },
 			"html": "<!--[^K>-]+Koobi ([a-z\\d.]+)\\;version:\\1"
 		},
+		"Laravel": {
+			"website": "laravel.com",
+			"cats": [ 18 ],
+			"headers": { "Set-Cookie": "laravel_session" },
+			"implies": "PHP"
+		},
 		"LEPTON": {
 			"website": "www.lepton-cms.org",
 			"cats": [ 1 ],
@@ -1915,6 +1921,18 @@
 			"cats": [ 12 ],
 			"script": "require.*\\.js",
 			"env": "^requirejs$"
+		},
+		"Reveal.js": {
+			"website": "lab.hakim.se/reveal-js",
+			"cats": [ 12 ],
+			"script": "reveal(\\.min)?\\.js",
+			"env": "^Reveal$"
+		},
+		"RiteCMS": {
+			"website": "ritecms.com",
+			"cats": [ 1 ],
+			"meta": { "generator": "^RiteCMS(?: ([0-9.ab]+))?\\;version:\\1" },
+			"implies": [ "PHP", "SQLite\\;confidence:50" ]
 		},
 		"RoundCube": {
 			"website": "roundcube.net",
