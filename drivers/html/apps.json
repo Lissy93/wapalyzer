@@ -251,7 +251,7 @@
 			"env": "^bitt$"
 		},
 		"Blip.tv": {
-			"website": "",
+			"website": "blip.tv",
 			"cats": [ 14 ],
 			"html": "<(param|embed|iframe)[^>]+blip\\.tv\/play"
 		},
@@ -315,7 +315,7 @@
 			"headers": { "Server": "^CFS ", "X-CF1": ".+", "X-CF2": ".+" }
 		},
 		"Chameleon": {
-			"website": "",
+			"website": "chameleon-system.de",
 			"cats": [ 1 ],
 			"meta": { "generator": "chameleon-cms" },
 			"implies": [ "Apache", "PHP" ]
@@ -329,7 +329,7 @@
 			"implies": "PHP"
 		},
 		"Chartbeat": {
-			"website": "",
+			"website": "chartbeat.com",
 			"cats": [ 10 ],
 			"html": "function loadChartbeat\\(\\) {",
 			"script": "chartbeat.js"
@@ -515,7 +515,7 @@
 			"implies": "PHP"
 		},
 		"Cufon": {
-			"website": "",
+			"website": "cufon.shoqolate.com",
 			"cats": [ 17 ],
 			"script": "cufon-yui\\.js",
 			"env": "^Cufon$"
@@ -609,7 +609,7 @@
 			"implies": "Django"
 		},
 		"Dojo": {
-			"website": "",
+			"website": "dojotoolkit.org",
 			"cats": [ 12 ],
 			"script": "([\\d.]+)\/dojo\/dojo(\\.xd)?\\.js\\;version:\\1",
 			"env": "^dojo$"
@@ -1281,7 +1281,7 @@
 			"headers": { "Server": "lighttpd(\/([\\d.]+))?\\;version:\\2" }
 		},
 		"LimeSurvey": {
-			"website": "",
+			"website": "limesurvey.org/",
 			"cats": [ 19 ],
 			"headers": { "generator": "LimeSurvey" }
 		},
@@ -1460,7 +1460,7 @@
 			"implies": [ "Python\\;confidence:50", "Apache" ]
 		},
 		"MoinMoin": {
-			"website": "",
+			"website": "moinmo.in",
 			"cats": [ 8 ],
 			"script": "moin(_static(\\d)(\\d)(\\d)|.+)\/common\/js\/common\\.js\\;version:\\2.\\3.\\4",
 			"env": "^show_switch2gui$",
@@ -1743,7 +1743,7 @@
 			"implies": "PHP"
 		},
 		"phpCMS": {
-			"website": "",
+			"website": "phpcms.de",
 			"cats": [ 1 ],
 			"env": "^phpcms",
 			"implies": "PHP"
@@ -1836,7 +1836,7 @@
 			"env": "^pwidget_config$"
 		},
 		"Posterous": {
-			"website": "",
+			"website": "posterous.com",
 			"cats": [ 1, 11
 				],
 			"html": "<div class=\"posterous",
@@ -2124,7 +2124,7 @@
 			"implies": "Joomla"
 		},
 		"SobiPro": {
-			"website": "",
+			"website": "sigsiu.net/sobipro.html",
 			"cats": [ 19 ],
 			"env": "^SobiProUrl$",
 			"html": " <(script|link)[^>].*com_sobipro.*>",
@@ -2397,7 +2397,7 @@
 			"implies": "PHP"
 		},
 		"VideoJS": {
-			"website": "",
+			"website": "videojs.com",
 			"cats": [ 14 ],
 			"env": "^VideoJS$",
 			"html": "<div[^>]+class=\"video-js+\">",
@@ -2527,7 +2527,7 @@
 			"headers": { "Server": "Win32" }
 		},
 		"Wink": {
-			"website": "",
+			"website": "winktoolkit.org",
 			"cats": [ 26, 12 ],
 			"script": "(_base\/js\/base|wink).*\\.js",
 			"env": "^wink$"
@@ -2566,7 +2566,7 @@
 			"implies": "WordPress"
 		},
 		"Xajax": {
-			"website": "",
+			"website": "xajax-project.org",
 			"cats": [ 12 ],
 			"script": "xajax_core.*\\.js"
 		},
@@ -2677,7 +2677,7 @@
 			"implies": "Django"
 		},
 		"ZK": {
-			"website": "",
+			"website": "zkoss.org",
 			"cats": [ 18 ],
 			"script": "zkau\/",
 			"html": "<!-- ZK [\\.\\d\\s]+-->",
