@@ -1112,7 +1112,7 @@
 			"meta": { "generator": "Joomla!( ([\\d.]+))?\\;version:\\2" },
 			"html": "(<div[^>]+id=\"wrapper_r\"|<[^>]+(feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
 			"headers": { "X-Content-Encoded-By": "Joomla! ([\\d.]+)\\;version:\\1" },
-			"env": "^jcomments$",
+			"env": "^(jcomments|Joomla)$",
 			"implies": "PHP"
 		},
 		"jqPlot": {
