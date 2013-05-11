@@ -1129,7 +1129,7 @@
 			"meta": { "generator": "Joomla!(?: ([\\d.]+))?\\;version:\\1" },
 			"html": "(?:<div[^>]+id=\"wrapper_r\"|<[^>]+(?:feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
 			"headers": { "X-Content-Encoded-By": "Joomla! ([\\d.]+)\\;version:\\1" },
-			"env": "^jcomments$",
+			"env": "^(jcomments|Joomla)$",
 			"implies": "PHP"
 		},
 		"jqPlot": {
@@ -1323,7 +1323,7 @@
 		"Magento": {
 			"website": "www.magentocommerce.com",
 			"cats": [ 6 ],
-			"script": "(?:js/mage|skin/frontend/(?:default|(enterprise)))\\;version:\\1?Enterprise:Community",
+			"script": [ "js/mage", "skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community" ],
 			"headers": { "Set-Cookie": "frontend=\\;confidence:50" },
 			"env": "^(?:Mage|VarienForm)$",
 			"implies": "PHP"

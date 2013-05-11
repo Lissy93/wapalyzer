@@ -79,13 +79,20 @@ var wappalyzer = (function() {
 					matches = pattern.regex.exec(value)
 					;
 
+				w.log({ matches: matches, version: version });
+
 				if ( matches ) {
 					matches.map(function(match, i) {
 						// Parse ternary operator
 						var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.+)$').exec(version);
 
 						if ( ternary && ternary.length === 3 ) {
+
+							w.log({ match: match, i: i, ternary: ternary });
+
 							version = version.replace(ternary[0], match ? ternary[1] : ternary[2]);
+
+							w.log({ version: version });
 						}
 
 						// Replace back references
