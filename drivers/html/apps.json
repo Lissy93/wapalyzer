@@ -410,7 +410,7 @@
 			"website": "commerceserver.net",
 			"cats": [ 6 ],
 			"headers": { "COMMERCE-SERVER-SOFTWARE": ".+" },
-			"implies": [ "Microsoft ASP.NET", "IIS", "Windows Server" ]
+			"implies": [ "Microsoft ASP.NET" ]
 		},
 		"comScore": {
 			"website": "comscore.com",
@@ -711,7 +711,7 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "EPiServer" },
 			"headers": { "Set-Cookie": "EPi(?:Trace|Server)[^;]*=" },
-			"implies": [ "Microsoft ASP.NET", "IIS", "Windows Server" ]
+			"implies": [ "Microsoft ASP.NET" ]
 		},
 		"EPrints": {
 			"website": "www.eprints.org",
@@ -1371,7 +1371,7 @@
 			"url": "\\.aspx$",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
 			"headers": { "X-Powered-By": "ASP\\.NET;\\confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
-			"implies": [ "IIS", "Windows Server" ]
+			"implies": [ "IIS\\;confidence:50" ]
 		},
 		"Microsoft SharePoint": {
 			"website": "sharepoint.microsoft.com",
@@ -1486,6 +1486,11 @@
 		"MongoDB": {
 			"website": "www.mongodb.org",
 			"cats": [ 24 ]
+		},
+		"Mono": {
+			"website": "mono-project.com",
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "Mono" }
 		},
 		"Moodle": {
 			"website": "moodle.org",
