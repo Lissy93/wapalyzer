@@ -1,7 +1,7 @@
 { "name": "Wappalyzer",
 	"homepage_url": "http://wappalyzer.com?utm_source=chrome&utm_medium=context&utm_campaign=extensions",
 	"description": "Identifies software on the web",
-	"version": "2.21",
+	"version": "2.22",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -19,6 +19,9 @@
 		"js": [ "js/content.js" ],
 		"run_at": "document_idle"
 	}],
+	"web_accessible_resources": [
+		"js/inject.js"
+	],
 	"options_page": "options.html",
 	"permissions": [ "tabs", "http://*/*", "https://*/*" ],
 	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"

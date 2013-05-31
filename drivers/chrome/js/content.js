@@ -28,18 +28,7 @@
 				var script = document.createElement('script');
 
 				script.setAttribute('id', 'wappalyzerEnvDetection');
-
-				script.innerHTML =
-					'(function() {' +
-						'try {' +
-							'var i, environmentVars, event = document.createEvent("Events");' +
-							'event.initEvent("wappalyzerEvent", true, false);' +
-							'for ( i in window ) { environmentVars += i + " "; }' +
-							'document.getElementById("wappalyzerData").appendChild(document.createComment(environmentVars));' +
-							'document.getElementById("wappalyzerData").dispatchEvent(event);' +
-						'}' +
-						'catch(e) { }' +
-					'})();';
+				script.setAttribute('src', chrome.extension.getURL('js/inject.js'));
 
 				container.addEventListener('wappalyzerEvent', (function(event) {
 					var environmentVars = event.target.childNodes[0].nodeValue;
