@@ -1165,7 +1165,7 @@
 		"jQuery UI": {
 			"website": "jqueryui.com",
 			"cats": [ 12 ],
-			"script": "jqueryui/([\\d.]+)\\.js\\;version:\\1",
+			"script": [ "jquery-ui(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "([\\d.]+)/jquery-ui(\\.min)?\\.js\\;version:\\1", "jquery-ui.*\\.js" ],
 			"implies": "jQuery"
 		},
 		"JS Charts": {
@@ -1987,10 +1987,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "S\\.Builder" }
 		},
-		"s9y": {
+		"Serendipity": {
 			"website": "s9y.org",
-			"cats": [ 1 ],
-			"meta": { "generator": "Serendipity", "Powered-By": "Serendipity v\\.(.+)\\;version:\\1" }
+			"cats": [ 1, 11 ],
+			"meta": { "generator": "Serendipity", "Powered-By": "Serendipity v\\.(.+)\\;version:\\1" },
+			"implies": "PHP"
 		},
 		"SAP": {
 			"website": "sap.com",
