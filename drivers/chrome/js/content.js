@@ -1,9 +1,15 @@
 (function() {
 	var c = {
 		init: function() {
+			var html = document.documentElement.outerHTML;
+
 			c.log('init');
 
-			chrome.extension.sendRequest({ id: 'analyze', subject: { html: document.documentElement.outerHTML } });
+			if ( html.length > 50000 ) {
+				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+			}
+
+			chrome.extension.sendRequest({ id: 'analyze', subject: { html: html } });
 
 			c.getEnvironmentVars();
 		},
@@ -13,6 +19,8 @@
 		},
 
 		getEnvironmentVars: function() {
+			var container, script;
+
 			c.log('getEnvironmentVars');
 
 			if ( typeof document.documentElement.innerHTML === 'undefined' ) {
@@ -20,12 +28,12 @@
 			}
 
 			try {
-				var container = document.createElement('wappalyzerData');
+				container = document.createElement('wappalyzerData');
 
 				container.setAttribute('id',    'wappalyzerData');
 				container.setAttribute('style', 'display: none');
 
-				var script = document.createElement('script');
+				script = document.createElement('script');
 
 				script.setAttribute('id', 'wappalyzerEnvDetection');
 				script.setAttribute('src', chrome.extension.getURL('js/inject.js'));
