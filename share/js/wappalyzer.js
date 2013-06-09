@@ -299,8 +299,6 @@ var wappalyzer = (function() {
 								break;
 							}
 
-							w.log('xxxxxxxxxxxxx'+data.html.length);
-
 							parse(w.apps[app][type]).map(function(pattern) {
 								profiler.checkPoint(app, type, pattern.regex);
 
