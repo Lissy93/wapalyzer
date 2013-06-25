@@ -996,6 +996,11 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "Google Frontend" }
 		},
+		"Google Charts": {
+			"website": "developers.google.com/chart/",
+			"cats": [ 25 ],
+			"env": "^google.visualization$"
+		},
 		"Google Code Prettify": {
 			"website": "code.google.com/p/google-code-prettify",
 			"cats": [ 19 ],
@@ -1054,7 +1059,7 @@
 		"Gravatar": {
 			"website": "gravatar.com",
 			"cats": [ 19 ],
-			"env": "^Gravatar$"
+			"html": "(secure\\.)?gravatar\\.com/avatar/.+"
 		},
 		"Gravity Insights": {
 			"website": "insights.gravity.com",
