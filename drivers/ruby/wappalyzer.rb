@@ -4,6 +4,8 @@ require 'net/http'
 require 'v8'
 require 'json'
 
+Encoding.default_external = Encoding::UTF_8
+
 class Wappalyzer
   def initialize
     @realdir = File.dirname(File.realpath(__FILE__))
@@ -14,7 +16,7 @@ class Wappalyzer
 
   def analyze(url)
     uri, body, headers = URI(url), nil, {}
-    Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+    Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https', :open_timeout => 5) do |http|
       resp = http.get(uri.request_uri)
       resp.canonical_each{|k,v| headers[k] = v}
       body = resp.body.encode('UTF-8', :invalid => :replace, :undef => :replace)

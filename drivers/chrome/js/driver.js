@@ -101,7 +101,7 @@
 				}
 			});
 
-			chrome.tabs.getAllInWindow(null, function(tabs) {
+			chrome.tabs.query({}, function(tabs) {
 				tabs.map(function(tab) {
 					if ( tab.url.match(/^https?:\/\//) ) {
 						chrome.tabs.executeScript(tab.id, { file: 'js/content.js' });
@@ -233,4 +233,4 @@
 	};
 
 	w.init();
-})();
+}());
