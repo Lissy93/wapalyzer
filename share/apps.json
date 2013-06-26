@@ -999,7 +999,7 @@
 		"Google Charts": {
 			"website": "developers.google.com/chart/",
 			"cats": [ 25 ],
-			"env": "^google.visualization$"
+			"env": "^google\\.visualization$"
 		},
 		"Google Code Prettify": {
 			"website": "code.google.com/p/google-code-prettify",
@@ -1059,7 +1059,8 @@
 		"Gravatar": {
 			"website": "gravatar.com",
 			"cats": [ 19 ],
-			"html": "(secure\\.)?gravatar\\.com/avatar/.+"
+			"html": "(secure\\.)?gravatar\\.com/avatar/.+",
+			"env": "^Gravatar$"
 		},
 		"Gravity Insights": {
 			"website": "insights.gravity.com",
@@ -1197,7 +1198,8 @@
 		"Intercom": {
 			"website": "intercom.io",
 			"cats": [ 10 ],
-			"script": "api\\.intercom\\.io/api"
+			"script": "(api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
+			"env": "^Intercom$"
 		},
 		"Intershop": {
 			"website": "intershop.com",
