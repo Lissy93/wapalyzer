@@ -51,6 +51,10 @@
 			<preference id="wappalyzer-cat34" name="extensions.wappalyzer.cat34" type="bool"/>
 			<preference id="wappalyzer-cat35" name="extensions.wappalyzer.cat35" type="bool"/>
 			<preference id="wappalyzer-cat36" name="extensions.wappalyzer.cat36" type="bool"/>
+			<preference id="wappalyzer-cat37" name="extensions.wappalyzer.cat37" type="bool"/>
+			<preference id="wappalyzer-cat38" name="extensions.wappalyzer.cat38" type="bool"/>
+			<preference id="wappalyzer-cat39" name="extensions.wappalyzer.cat39" type="bool"/>
+			<preference id="wappalyzer-cat40" name="extensions.wappalyzer.cat40" type="bool"/>
 
 			<preference id="wappalyzer-tracking" name="extensions.wappalyzer.tracking" type="bool"/>
 		</preferences>
@@ -126,27 +130,31 @@
 							<checkbox preference="wappalyzer-cat32" label="&wappalyzer.cat32;"/><!-- Marketing automation -->
 						</row>
 						<row>
+							<checkbox preference="wappalyzer-cat38" label="&wappalyzer.cat38;"/><!-- Media servers -->
 							<checkbox preference="wappalyzer-cat2"  label="&wappalyzer.cat2;" /><!-- Message boards -->
 							<checkbox preference="wappalyzer-cat19" label="&wappalyzer.cat19;"/><!-- Miscellaneous -->
 							<checkbox preference="wappalyzer-cat26" label="&wappalyzer.cat26;"/><!-- Mobile frameworks -->
+							<checkbox preference="wappalyzer-cat37" label="&wappalyzer.cat37;"/><!-- Network devices -->
+						</row>
+						<row>
 							<checkbox preference="wappalyzer-cat28" label="&wappalyzer.cat28;"/><!-- Operating systems -->
 							<checkbox preference="wappalyzer-cat7"  label="&wappalyzer.cat7;" /><!-- Photo galleries -->
-						</row>
-						<row>
+							<checkbox preference="wappalyzer-cat40" label="&wappalyzer.cat40;"/><!-- Printers -->
 							<checkbox preference="wappalyzer-cat27" label="&wappalyzer.cat27;"/><!-- Programming languages -->
 							<checkbox preference="wappalyzer-cat24" label="&wappalyzer.cat24;"/><!-- Rich text editors -->
-							<checkbox preference="wappalyzer-cat29" label="&wappalyzer.cat29;"/><!-- Search engines -->
-							<checkbox preference="wappalyzer-cat14" label="&wappalyzer.cat14;"/><!-- Video players -->
-							<checkbox preference="wappalyzer-cat18" label="&wappalyzer.cat18;"/><!-- Web frameworks -->
 						</row>
 						<row>
+							<checkbox preference="wappalyzer-cat29" label="&wappalyzer.cat29;"/><!-- Search engines -->
+							<checkbox preference="wappalyzer-cat14" label="&wappalyzer.cat14;"/><!-- Video players -->
+							<checkbox preference="wappalyzer-cat39" label="&wappalyzer.cat39;"/><!-- Web cams-->
+							<checkbox preference="wappalyzer-cat18" label="&wappalyzer.cat18;"/><!-- Web frameworks -->
 							<checkbox preference="wappalyzer-cat30" label="&wappalyzer.cat30;"/><!-- Web mail -->
+						</row>
+						<row>
 							<checkbox preference="wappalyzer-cat22" label="&wappalyzer.cat22;"/><!-- Web servers -->
 							<checkbox preference="wappalyzer-cat33" label="&wappalyzer.cat33;"/><!-- Web server extensions -->
 							<checkbox preference="wappalyzer-cat6"  label="&wappalyzer.cat6;" /><!-- Web shops -->
 							<checkbox preference="wappalyzer-cat5"  label="&wappalyzer.cat5;" /><!-- Widgets -->
-						</row>
-						<row>
 							<checkbox preference="wappalyzer-cat8"  label="&wappalyzer.cat8;" /><!-- Wikis -->
 						</row>
 					</rows>

@@ -43,3 +43,7 @@ pref('extensions.wappalyzer.cat33',             true);
 pref('extensions.wappalyzer.cat34',             true);
 pref('extensions.wappalyzer.cat35',             true);
 pref('extensions.wappalyzer.cat36',             true);
+pref('extensions.wappalyzer.cat37',             true);
+pref('extensions.wappalyzer.cat38',             true);
+pref('extensions.wappalyzer.cat39',             true);
+pref('extensions.wappalyzer.cat40',             true);

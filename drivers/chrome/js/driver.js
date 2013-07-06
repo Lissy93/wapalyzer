@@ -218,6 +218,7 @@
 			20, // Editor
 			10, // Analytics
 			32, // Marketing Automation
+			38, // Media Server
 			31, // CDN
 			23, // Cache Tool
 			17, // Font Script
@@ -227,6 +228,9 @@
 			14, // Video Player
 			16, // Captcha
 			33, // Web Server Extension
+			37, // Network Device
+			39, // Webcam
+			40, // Printer
 			36, // Advertising Network
 			19  // Miscellaneous
 			]
