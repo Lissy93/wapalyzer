@@ -243,7 +243,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, app, confidence, type, match, meta_elems, script_elems, content, meta, header, checkImplies, version,
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version,
 				profiler = new Profiler(),
 				apps     = {}
 				;
@@ -261,11 +261,7 @@ var wappalyzer = (function() {
 			if ( typeof w.detected[url] === 'undefined' ) {
 				w.detected[url] = {};
 			}
-			if ( typeof data.html === 'string' && data.html ) {
-				content = (new DOMParser).parseFromString(data.html, "text/html");
-				meta_elems = content.getElementsByTagName('meta');
-				script_elems = content.getElementsByTagName('script');
-			}
+
 			for ( app in w.apps ) {
 				// Exit loop after one second to prevent CPU hogging
 				// Remaining patterns will not be evaluated
@@ -304,14 +300,17 @@ var wappalyzer = (function() {
 
 							break;
 						case 'script':
-							if ( typeof script_elems !== 'object' || !script_elems ) {
+							if ( typeof data.html !== 'string' || !data.html ) {
 								break;
 							}
 
+							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
+
 							parse(w.apps[app][type]).map(function(pattern) {
-								for ( i in script_elems ) {
-									if ( script_elems[i].src && pattern.regex.test(script_elems[i].src) ) {
-										apps[app].setDetected(pattern, type, script_elems[i].src);
+
+								while ( match = regexScript.exec(data.html) ) {
+									if ( pattern.regex.test(match[2]) ) {
+										apps[app].setDetected(pattern, type, match[2]);
 									}
 								}
 							profiler.checkPoint(app, type, pattern.regex);
@@ -319,19 +318,23 @@ var wappalyzer = (function() {
 
 							break;
 						case 'meta':
-							if ( typeof meta_elems !== 'object' || !meta_elems ) {
+							if ( typeof data.html !== 'string' || !data.html ) {
 								break;
 							}
 
-							for ( i in meta_elems ) {
-								for ( meta in w.apps[app][type] ) {
-									profiler.checkPoint(app, type, pattern.regex);
+							regexMeta = /<meta[^>]+>/ig;
 
-									if (meta_elems[i].name && meta == meta_elems[i].name.toLowerCase() ) {
+							while ( match = regexMeta.exec(data.html) ) {
+								for ( meta in w.apps[app][type] ) {
+									profiler.checkPoint(app, type, regexMeta);
+
+									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
+										content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
 										parse(w.apps[app].meta[meta]).map(function(pattern) {
 
-											if ( pattern.regex.test(meta_elems[i].content) ) {
-												apps[app].setDetected(pattern, type, meta_elems[i].content, meta);
+											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+												apps[app].setDetected(pattern, type, content[2], meta);
 											}
 										profiler.checkPoint(app, type, pattern.regex);
 										});
@@ -467,12 +470,15 @@ var wappalyzer = (function() {
 						w.ping.hostnames[hostname].meta['language'] = match[1];
 					}
 
-					for (var i in meta_elems) {
-						if ( !meta_elems[i].name || !meta_elems[i].content) { continue; }
+					regexMeta = /<meta[^>]+>/ig;
 
-						if (meta_elems[i].name.match(/author|copyright|country|description|keywords/i))
-						{
-							w.ping.hostnames[hostname].meta[meta_elems[i].name] = meta_elems[i].content;
+					while ( match = regexMeta.exec(data.html) ) {
+						if ( !match.length ) { continue; }
+
+						match = match[0].match(/name="(author|copyright|country|description|keywords)"[^>]*content="([^"]+)"/i);
+
+						if ( match && match.length === 3 ) {
+							w.ping.hostnames[hostname].meta[match[1]] = match[2];
 						}
 					}
 				}
