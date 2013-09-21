@@ -3,6 +3,7 @@ var w = wappalyzer;
 w.driver = {
 	debug: false,
 	data: {},
+	timeout: 5000,
 
 	/**
 	 * Log messages to console

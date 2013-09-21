@@ -1,7 +1,7 @@
 /**
  * Wappalyzer v2
  *
- * Created by Elbert F <info@elbertf.com>
+ * Created by Elbert Alias <elbert@alias.io>
  *
  * License: GPLv3 http://www.gnu.org/licenses/gpl-3.0.txt
  */
@@ -130,7 +130,7 @@ var wappalyzer = (function() {
 			this.regexCount++;
 			this.lastTime = new Date().getTime();
 
-			this.timedOut = this.getDuration() > 1000;
+			this.timedOut = this.getDuration() > ( w.driver.timeout || 1000 );
 		},
 
 		getDuration: function() {
@@ -210,7 +210,7 @@ var wappalyzer = (function() {
 			environment: 'dev', // dev | live
 			websiteURL: 'http://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
-			githubURL:  'https://github.com/ElbertF/Wappalyzer',
+			githubURL:  'https://github.com/ElbertF/Wappalyzer'
 		},
 
 		/**
