@@ -220,7 +220,7 @@
 			"headers": { "X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1" },
 			"html": "<[^>]+_DARGS"
 		},
-		"Atlassian Confluence": {
+		"Atlassian Confluence": {c
 			"website": "www.atlassian.com/software/confluence/overview/team-collaboration-software",
 			"cats": [ 8 ],
 			"html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence(?:[^>]+>Atlassian Confluence</a> ([\\d.]+))?\\;version:\\1",
@@ -449,7 +449,7 @@
 		"CloudFlare": {
 			"website": "www.cloudflare.com",
 			"cats": [ 31 ],
-			"headers": { "Server": "cloudflare", "Set-Cookie": "__cfduid=" },
+			"headers": { "Server": "cloudflare" },
 			"env": "^CloudFlare$"
 		},
 		"CMS Made Simple": {
