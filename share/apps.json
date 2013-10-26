@@ -117,10 +117,12 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
-		"Alloy": {
+		"AlloyUI": {
 			"website": "www.alloyui.com",
 			"cats": [ 12 ],
-			"env": "^AUI$"
+			"env": "^AUI$",
+			"script": "^https?://cdn\\.alloyui.com/",
+			"implies": [ "Twitter Bootstrap", "YUI" ]
 		},
 		"Amaya": {
 			"website": "www.w3.org/Amaya",
@@ -1804,7 +1806,7 @@
 		"Nginx": {
 			"website": "nginx.org",
 			"cats": [ 22 ],
-			"headers": { "Server": "nginx" }
+			"headers": { "Server": "nginx(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"node.js": {
 			"website": "nodejs.org",
@@ -1866,8 +1868,9 @@
 			"env": "^OpenLayers$"
 		},
 		"OpenNemas": {
-			"website": "openhost.es/en/opennemas",
+			"website": "www.opennemas.com",
 			"cats": [ 1 ],
+			"meta": { "generator": "OpenNemas(.*)" },
 			"headers": { "X-Powered-By": "OpenNemas" }
 		},
 		"OpenSSL": {
@@ -2035,7 +2038,7 @@
 		"Plentymarkets": {
 			"website": "plentymarkets.eu",
 			"cats": [ 6 ],
-			"meta": { "generator": "^www\\.plentyMarkets" }
+			"meta": { "generator": "plentymarkets" }
 		},
 		"Plesk": {
 			"website": "parallels.com/products/plesk",
@@ -2788,7 +2791,7 @@
 		"Windows Server": {
 			"website": "microsoft.com/windowsserver",
 			"cats": [ 28 ],
-			"headers": { "Server": "Win32" }
+			"headers": { "Server": "Win32|Win64" }
 		},
 		"Wink": {
 			"website": "winktoolkit.org",
@@ -2964,6 +2967,11 @@
 			"html": "<!-- ZK [\\.\\d\\s]+-->",
 			"implies": "Java"
 		},
+		"Zope": {
+			"website": "zope.org",
+			"cats": [ 22 ],
+			"headers": { "Server": "^Zope/" }
+		},
 		"ZURB Foundation": {
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
@@ -2973,6 +2981,11 @@
 			"website": "livestreetcms.com",
 			"cats": [ 1 ],
 			"headers": { "X-Powered-By": "LiveStreet CMS" }
+		},
+		"Ophal": {
+			"website": "ophal.org",
+			"cats": [ 1, 11, 18 ],
+			"headers": { "X-Powered-By": "^Ophal/" }
 		}
 	}
 }
