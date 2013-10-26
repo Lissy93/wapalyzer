@@ -93,7 +93,7 @@
 		"Adobe ColdFusion": {
 			"website": "adobe.com/products/coldfusion-family.html",
 			"cats": [ 18 ],
-			"url": "\\.cfm$",
+			"url": "\\.cfm(?:$|\\?)",
 			"html": "<!-- START headerTags\\.cfm",
 			"script": "/cfajax/",
 			"env": "^_cfEmails$",
@@ -1579,7 +1579,7 @@
 		"Microsoft ASP.NET": {
 			"website": "www.asp.net",
 			"cats": [ 18 ],
-			"url": "\\.aspx$",
+			"url": "\\.aspx(?:$|\\?)",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
 			"headers": { "X-Powered-By": "ASP\\.NET;\\confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": "IIS\\;confidence:50"
@@ -1957,12 +1957,13 @@
 		"Perl": {
 			"website": "perl.org",
 			"cats": [ 27 ]
+			"url": "\\.pl(?:$|\\?)"
 		},
 		"PHP": {
 			"website": "php.net",
 			"cats": [ 27 ],
 			"headers": { "Server": "php/?([\\d.]+)?\\;confidence:40\\;version:\\1", "X-Powered-By": "php/?([\\d.]+)?\\;confidence:40\\;version:\\1", "Set-Cookie": "PHPSESSID" },
-			"url": "\\.php$"
+			"url": "\\.php(?:$|\\?)"
 		},
 		"phpAlbum": {
 			"website": "phpalbum.net",
