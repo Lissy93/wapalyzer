@@ -725,6 +725,12 @@
 			"headers": { "Set-Cookie": "DokuWiki=" },
 			"implies": "PHP"
 		},
+		"Dotclear": {
+			"website": "dotclear.org",
+			"cats": [ 1 ],
+			"meta": { "dc.title": ".*" },
+			"implies": "PHP"
+		},
 		"DotNetNuke": {
 			"website": "dotnetnuke.com",
 			"cats": [ 1 ],
@@ -1956,7 +1962,7 @@
 		},
 		"Perl": {
 			"website": "perl.org",
-			"cats": [ 27 ]
+			"cats": [ 27 ],
 			"url": "\\.pl(?:$|\\?)"
 		},
 		"PHP": {
