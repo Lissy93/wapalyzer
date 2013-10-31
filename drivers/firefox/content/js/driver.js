@@ -100,7 +100,7 @@
 										var headers = {};
 
 										request.nsIHttpChannel.visitResponseHeaders(function(header, value) {
-											headers[header] = value;
+											headers[header.toLowerCase()] = value;
 										});
 
 										w.analyze(progress.currentURI.host, progress.currentURI.spec, { headers: headers });

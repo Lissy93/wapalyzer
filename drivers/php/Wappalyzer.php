@@ -136,7 +136,7 @@ class Wappalyzer
 			if ( strpos(trim($line), ': ') !== false ) {
 				list($key, $value) = explode(': ', $line);
 
-				$result->headers[$key] = $value;
+				$result->headers[strtolower($key)] = $value;
 			}
 		}
 
