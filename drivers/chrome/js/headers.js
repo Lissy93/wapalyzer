@@ -26,7 +26,7 @@
 
 						headers.forEach(function(line) {
 							if ( line ) {
-								name  = line.substring(0, line.indexOf(': '));
+								name  = line.substring(0, line.indexOf(': ')).toLowerCase();
 								value = line.substring(line.indexOf(': ') + 2, line.length - 1);
 
 								responseHeaders[name] = value;

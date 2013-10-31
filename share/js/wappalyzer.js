@@ -351,8 +351,8 @@ var wappalyzer = (function() {
 							for ( header in w.apps[app].headers ) {
 								parse(w.apps[app][type][header]).map(function(pattern) {
 
-									if ( typeof data[type][header] === 'string' && pattern.regex.test(data[type][header]) ) {
-										apps[app].setDetected(pattern, type, data[type][header], header);
+									if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
+										apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
 									}
 									profiler.checkPoint(app, type, pattern.regex);
 								});
