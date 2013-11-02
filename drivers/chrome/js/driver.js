@@ -102,7 +102,7 @@
 			});
 
 			chrome.tabs.query({}, function(tabs) {
-				tabs.map(function(tab) {
+				tabs.forEach(function(tab) {
 					if ( tab.url.match(/^https?:\/\//) ) {
 						chrome.tabs.executeScript(tab.id, { file: 'js/content.js' });
 					}
@@ -152,9 +152,9 @@
 				// Find the main application to display
 				var i, appName, found = false;
 
-				w.driver.categoryOrder.map(function(match) {
+				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[tab.url] ) {
-						w.apps[appName].cats.map(function(cat) {
+						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 

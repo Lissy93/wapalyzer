@@ -78,7 +78,7 @@ var wappalyzer = (function() {
 				w.log({ matches: matches, version: version });
 
 				if ( matches ) {
-					matches.map(function(match, i) {
+					matches.forEach(function(match, i) {
 						// Parse ternary operator
 						var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.+)$').exec(version);
 
@@ -158,10 +158,10 @@ var wappalyzer = (function() {
 			patterns = [ patterns ];
 		}
 
-		patterns.map(function(pattern) {
+		patterns.forEach(function(pattern) {
 			attrs = {};
 
-			pattern.split('\\;').map(function(attr, i) {
+			pattern.split('\\;').forEach(function(attr, i) {
 				if ( i ) {
 					// Key value pairs
 					attr = attr.split(':');
@@ -276,7 +276,7 @@ var wappalyzer = (function() {
 				for ( type in w.apps[app] ) {
 					switch ( type ) {
 						case 'url':
-							parse(w.apps[app][type]).map(function(pattern) {
+							parse(w.apps[app][type]).forEach(function(pattern) {
 
 								if ( pattern.regex.test(url) ) {
 									apps[app].setDetected(pattern, type, url);
@@ -290,7 +290,7 @@ var wappalyzer = (function() {
 								break;
 							}
 
-							parse(w.apps[app][type]).map(function(pattern) {
+							parse(w.apps[app][type]).forEach(function(pattern) {
 
 								if ( pattern.regex.test(data[type]) ) {
 									apps[app].setDetected(pattern, type, data[type]);
@@ -306,7 +306,7 @@ var wappalyzer = (function() {
 
 							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
 
-							parse(w.apps[app][type]).map(function(pattern) {
+							parse(w.apps[app][type]).forEach(function(pattern) {
 
 								while ( match = regexScript.exec(data.html) ) {
 									if ( pattern.regex.test(match[2]) ) {
@@ -331,7 +331,7 @@ var wappalyzer = (function() {
 									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-										parse(w.apps[app].meta[meta]).map(function(pattern) {
+										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
 
 											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
 												apps[app].setDetected(pattern, type, content[2], meta);
@@ -349,7 +349,7 @@ var wappalyzer = (function() {
 							}
 
 							for ( header in w.apps[app].headers ) {
-								parse(w.apps[app][type][header]).map(function(pattern) {
+								parse(w.apps[app][type][header]).forEach(function(pattern) {
 
 									if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
 										apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
@@ -364,7 +364,7 @@ var wappalyzer = (function() {
 								break;
 							}
 
-							parse(w.apps[app][type]).map(function(pattern) {
+							parse(w.apps[app][type]).forEach(function(pattern) {
 								for ( i in data[type] ) {
 
 									if ( pattern.regex.test(data[type][i]) ) {
@@ -402,7 +402,7 @@ var wappalyzer = (function() {
 							w.apps[app].implies = [ w.apps[app].implies ];
 						}
 
-						w.apps[app].implies.map(function(implied) {
+						w.apps[app].implies.forEach(function(implied) {
 							implied = parse(implied)[0];
 
 							if ( !w.apps[implied.string] ) {
