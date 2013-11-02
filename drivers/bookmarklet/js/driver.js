@@ -125,7 +125,7 @@
 				;
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
-				w.detected[url].map(function(app, i) {
+				w.detected[url].forEach(function(app, i) {
 					html +=
 						'<div class="wappalyzer-app' + ( !i ? ' wappalyzer-first' : '' ) + '">' +
 							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +

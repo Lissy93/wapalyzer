@@ -46,7 +46,7 @@
 		displayApps: function() {
 			document.getElementById('apps').innerHTML = '';
 
-			w.detected['http://google.com'].map(function(app) {
+			w.detected['http://google.com'].forEach(function(app) {
 				document.getElementById('apps').innerHTML += '<img src="images/icons/' + app + '.png" width="16" height="16"/> ' + app + '<br/>';
 			});
 		},
