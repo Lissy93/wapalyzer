@@ -30,7 +30,7 @@ w.driver = {
 				version:    w.detected[w.driver.data.url][app].version
 				};
 
-			w.apps[app].cats.map(function(cat) {
+			w.apps[app].cats.forEach(function(cat) {
 				apps[app].categories.push(w.categories[cat]);
 			});
 		};

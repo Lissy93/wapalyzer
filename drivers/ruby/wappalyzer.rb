@@ -18,7 +18,7 @@ class Wappalyzer
     uri, body, headers = URI(url), nil, {}
     Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https', :open_timeout => 5) do |http|
       resp = http.get(uri.request_uri)
-      resp.canonical_each{|k,v| headers[k] = v}
+      resp.each_header{|k,v| headers[k.downcase] = v}
       body = resp.body.encode('UTF-8', :invalid => :replace, :undef => :replace)
     end
 
