@@ -102,8 +102,7 @@
 		"Adobe CQ5": {
 			"website": "adobe.com/products/cq.html",
 			"cats": [ 1 ],
-			"url": "",
-			"html": ["<div class=\"[^\"]*parbase","_jcr_content","/etc/designs/","/etc/clientlibs/"],
+			"html": [ "<div class=\"[^\"]*parbase","_jcr_content","/etc/designs/","/etc/clientlibs/" ],
 			"implies": "Java"
 		},
 		"Adobe GoLive": {
@@ -781,7 +780,7 @@
 		"e107": {
 			"website": "e107.org",
 			"cats": [ 1 ],
-			"script": "e107\\.js",
+			"script": "[^a-z0-9]e107\\.js",
 			"headers": { "Set-Cookie": "e107_tz[^;]+=", "X-Powered-By": "e107" },
 			"implies": "PHP"
 		},
@@ -2041,7 +2040,7 @@
 			"website": "piwik.org",
 			"cats": [ 10 ],
 			"html": "var piwikTracker = Piwik\\.getTracker\\(",
-			"env": "^Piwik$"
+			"env": [ "^Piwik$", "^_paq$" ]
 		},
 		"Plentymarkets": {
 			"website": "plentymarkets.eu",
