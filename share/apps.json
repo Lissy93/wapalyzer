@@ -1908,7 +1908,7 @@
 		"osCommerce": {
 			"website": "www.oscommerce.com",
 			"cats": [ 6 ],
-			"html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^]+>)?osCommerce</a>|<[^]+class=\"[^>]*infoBoxHeading)",
+			"html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^>]+>)?osCommerce</a>|<[^>]+class=\"[^>]*infoBoxHeading)",
 			"headers": { "Set-Cookie": "osCsid=" }
 		},
 		"osCSS": {
@@ -2085,7 +2085,7 @@
 		"Powergap": {
 			"website": "powergap.de",
 			"cats": [ 6 ],
-			"html": "s\\d\\d\\.php\\?shopid=\\1"
+			"html": "(s\\d\\d)\\.php\\?shopid=\\1"
 		},
 		"Prefix-Free": {
 			"website": "http://leaverou.github.io/prefixfree/",
