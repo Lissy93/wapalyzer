@@ -95,7 +95,7 @@ var wappalyzer = (function() {
 						version = version.replace('\\' + i, match ? match : '');
 					});
 
-					if ( version ) {
+					if ( version && this.versions.indexOf(version) < 0 ) {
 						this.versions.push(version);
 					}
 
