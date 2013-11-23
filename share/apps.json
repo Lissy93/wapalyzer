@@ -1010,6 +1010,12 @@
 			"headers": { "Set-Cookie": "__utma" },
 			"env": "^gaGlobal$"
 		},
+		"Google AdSense": {
+			"website": "google.com/adsense",
+			"cats": [ 36 ],
+			"env": [ "^google_ad_" ],
+			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad.ca.doubleclick.net" ]
+		},
 		"Google App Engine": {
 			"website": "code.google.com/appengine",
 			"cats": [ 22 ],
