@@ -158,7 +158,8 @@
 		"AngularJS": {
 			"website": "angularjs.org",
 			"cats": [ 12 ],
-			"env": "^angular$"
+			"env": "^angular$",
+			"script": [ "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+(\\-?rc[.\\d]*)*)/angular(\\.min)?\\.js\\;version:\\1", "angular.*\\.js" ]
 		},
 		"AOLserver": {
 			"website": "aolserver.com",
@@ -1908,7 +1909,7 @@
 		"osCommerce": {
 			"website": "www.oscommerce.com",
 			"cats": [ 6 ],
-			"html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^]+>)?osCommerce</a>|<[^]+class=\"[^>]*infoBoxHeading)",
+			"html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^>]+>)?osCommerce</a>|<[^>]+class=\"[^>]*infoBoxHeading)",
 			"headers": { "Set-Cookie": "osCsid=" }
 		},
 		"osCSS": {
@@ -2085,7 +2086,7 @@
 		"Powergap": {
 			"website": "powergap.de",
 			"cats": [ 6 ],
-			"html": "s\\d\\d\\.php\\?shopid=\\1"
+			"html": "(s\\d\\d)\\.php\\?shopid=\\1"
 		},
 		"Prefix-Free": {
 			"website": "http://leaverou.github.io/prefixfree/",
@@ -2414,7 +2415,7 @@
 		"Spree": {
 			"website": "spreecommerce.com",
 			"cats": [ 6 ],
-			"html": "<link[^>]*/assets/store/all-[a-z0-9]{32}\\.css[^>]+>",
+			"html": "(<link[^>]*/assets/store/all-[a-z0-9]{32}\\.css[^>]+>|<script>\\s*Spree\\.(routes|translations|api_key))",
 			"implies": "Ruby on Rails"
 		},
 		"SQL Buddy": {
