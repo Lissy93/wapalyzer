@@ -501,5 +501,6 @@ var wappalyzer = (function() {
 // CommonJS package
 // See http://wiki.commonjs.org/wiki/CommonJS
 if ( typeof exports === 'object' ) {
+	exports.definitions = require('../apps.json');
 	exports.wappalyzer = wappalyzer;
 }
