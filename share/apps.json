@@ -3026,6 +3026,13 @@
 			"website": "getuikit.com",
 			"cats": [ 18 ],
 			"script": "uikit.*\\.js"
+		},
+		"Web2py": {
+			"website": "http://web2py.com",
+			"cats": [ 18 ],
+			"script": "web2py\\.js",
+			"headers": { "X-Powered-By": "web2py" },
+			"implies": [ "Python" , "jQuery" ]
 		}
 	}
 }
