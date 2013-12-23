@@ -2846,7 +2846,7 @@
 			"website": "wordpress.org",
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "WordPress( [\\d.]+)?\\;version:\\1" },
-			"html": "<link rel=\"stylesheet\" [^>]+wp-content",
+			"html": "<link rel=(?:\"stylesheet\"|'stylesheet') [^>]+(?:wp-content|wp-includes)",
 			"env": "^wp_username$",
 			"implies": "PHP"
 		},
