@@ -3033,6 +3033,11 @@
 			"script": "web2py\\.js",
 			"headers": { "X-Powered-By": "web2py" },
 			"implies": [ "Python" , "jQuery" ]
-		}
+		},
+		"Ghost": {
+			"website": "http://ghost.org",
+			"cats": [ 11 ],
+			"headers": { "X-Ghost-Cache-Status": ".*" }
+ 		}
 	}
 }
