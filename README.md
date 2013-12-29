@@ -16,3 +16,5 @@ Refer to the [wiki](https://github.com/ElbertF/Wappalyzer/wiki) for
 [more](https://github.com/ElbertF/Wappalyzer/wiki/_pages).
 
 *Licensed under the [GPL](https://github.com/ElbertF/Wappalyzer/blob/master/LICENSE).*
+
+![Icon](http://alias.io/images/bitcoin_16x16.png) Donate Bitcoin: 16gb4uGDAjaeRJwKVmKr2EXa8x2fmvT8EQ - *Thanks!*
