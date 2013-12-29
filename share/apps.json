@@ -1483,6 +1483,12 @@
 			"headers": { "X-Lift-Version": "(.+)\\;version:\\1" },
 			"implies": "Scala"
 		},
+		"Lightbox": {
+			"website": "http://lokeshdhakar.com/projects/lightbox2/",
+			"cats": [ 7, 12 ],
+			"script": "lightbox.*\\.js",
+			"html": "<link.+?href=\"[^\"]+lightbox(\\.min)?\\.css"
+		},
 		"LightMon Engine": {
 			"website": "en.lightmon.ru",
 			"cats": [ 1 ],
@@ -2377,6 +2383,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "sNews" }
 		},
+		"Snap.svg": {
+			"website": "snapsvg.io",
+			"cats": [ 12 ],
+			"script": "snap\\.svg(-min)?\\.js",
+			"env": "^Snap$"
+		},
 		"Snoobi": {
 			"website": "www.snoobi.com",
 			"cats": [ 10 ],
@@ -3014,6 +3026,18 @@
 			"website": "getuikit.com",
 			"cats": [ 18 ],
 			"script": "uikit.*\\.js"
-		}
+		},
+		"Web2py": {
+			"website": "http://web2py.com",
+			"cats": [ 18 ],
+			"script": "web2py\\.js",
+			"headers": { "X-Powered-By": "web2py" },
+			"implies": [ "Python" , "jQuery" ]
+		},
+		"Ghost": {
+			"website": "ghost.org",
+			"cats": [ 11 ],
+			"headers": { "X-Ghost-Cache-Status": ".*" }
+ 		}
 	}
 }
