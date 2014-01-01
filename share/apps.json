@@ -608,9 +608,10 @@
 			"env": "^Cufon$"
 		},
 		"d3": {
-			"website": "mbostock.github.com/d3",
+			"website": "d3js.org",
 			"cats": [ 25 ],
-			"script": "d3(?:\\.v2)?(?:\\.min)?\\.js"
+			"script": "d3(?:\\. v[0-9]+)?(?:\\.min)?\\.js",
+			"env": "^d3$"
 		},
 		"Dancer": {
 			"website": "perldancer.org",
