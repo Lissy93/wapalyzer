@@ -403,7 +403,7 @@
 		"Chartbeat": {
 			"website": "chartbeat.com",
 			"cats": [ 10 ],
-			"html": "function loadChartbeat\\(\\) {",
+			"html": "function loadChartbeat\\(\\) \\{",
 			"script": "chartbeat\\.js"
 		},
 		"Cherokee": {
@@ -750,7 +750,7 @@
 		"DreamWeaver": {
 			"website": "www.adobe.com/products/dreamweaver",
 			"cats": [ 20 ],
-			"html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) {)\\;version:\\1"
+			"html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) \\{)\\;version:\\1"
 		},
 		"Drupal": {
 			"website": "drupal.org",
