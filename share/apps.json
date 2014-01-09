@@ -1592,7 +1592,7 @@
 		"Méthode": {
 			"website": "www.eidosmedia.com/solutions",
 			"cats": [ 1 ],
-			"env": "^eidosBase$;\\confidence:99",
+			"env": "^eidosBase$\\;confidence:99",
 			"html": "<!-- Methode uuid: \"[a-f0-9]+\" ?-->",
 			"meta": { "eomportal-instanceid": "[0-9]+", "eomportal-id": "[0-9]+", "eomportal-loid": "[0-9.]+", "eomportal-uuid": "[a-f0-9]+", "eomportal-lastUpdate": ".*" }
 		},
@@ -1601,7 +1601,7 @@
 			"cats": [ 18 ],
 			"url": "\\.aspx(?:$|\\?)",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
-			"headers": { "X-Powered-By": "ASP\\.NET;\\confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": "IIS\\;confidence:50"
 		},
 		"Microsoft SharePoint": {
