@@ -1,3 +1,4 @@
+var json =
 {
 	"categories": {
 		"1": "cms",
@@ -1117,7 +1118,7 @@
 		"Hello Bar": {
 			"cats": [ 5 ],
 			"script": "(hellobar\\.com/hellobar\\.js|new HelloBar)",
-			"html": "/hellobar\\.js" 
+			"html": "/hellobar\\.js"
 		},
 		"Hiawatha": {
 			"website": "hiawatha-webserver.org",
@@ -3081,4 +3082,7 @@
 			"html": "<link[^>]+foundation[^>\"]+css"
 		}
 	}
-}
+};
+
+wappalyzer.apps = json.apps;
+wappalyzer.categories = json.categories;

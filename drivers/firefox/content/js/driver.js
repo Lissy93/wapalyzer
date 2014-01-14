@@ -205,11 +205,11 @@
 							menuSeparator = d.createElement('menuseparator');
 							menuItem      = d.createElement('menuitem');
 
-							menuItem.setAttribute('class',     'wappalyzer-application menuitem-iconic');
-							menuItem.setAttribute('image',     'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-							menuItem.setAttribute('label',     app + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
-							menuItem.setAttribute('name',      app);
-							menuItem.setAttribute('data-url',  w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
+							menuItem.setAttribute('class',    'wappalyzer-application menuitem-iconic');
+							menuItem.setAttribute('image',    'chrome://wappalyzer/skin/images/icons/' + app + '.png');
+							menuItem.setAttribute('label',    app + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ));
+							menuItem.setAttribute('name',     app);
+							menuItem.setAttribute('data-url', w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
 
 							menuItem.addEventListener('command', function() {
 								w.driver.goToURL({ url: this.getAttribute('data-url'), medium: 'menu' });
