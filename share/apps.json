@@ -2165,7 +2165,7 @@
 		"Quick.Cart": {
 			"website": "opensolution.org",
 			"cats": [ 6 ],
-			"meta": { "generator": "Quick\\.Cart( v[\\d.]+)?\\;version:\\1" },
+			"meta": { "generator": "Quick\\.Cart(?: v([\\d.]+))?\\;version:\\1" },
 			"html": "<a href=\"[^>]+opensolution\\.org/\">Powered by"
 		},
 		"RackCache": {

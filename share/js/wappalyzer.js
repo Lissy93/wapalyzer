@@ -333,9 +333,10 @@ var wappalyzer = (function() {
 
 										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
 
-											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-												apps[app].setDetected(pattern, type, content[2], meta);
-											}
+										if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+											apps[app].setDetected(pattern, type, content[2], meta);
+										}
+
 										profiler.checkPoint(app, type, pattern.regex);
 										});
 									}
