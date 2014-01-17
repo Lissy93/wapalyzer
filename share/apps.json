@@ -257,7 +257,7 @@
 			"implies": "PHP"
 		},
 		"basket.js": {
-			"website": "http://addyosmani.github.io/basket.js/",
+			"website": "addyosmani.github.io/basket.js/",
 			"cats": [ 12 ],
 			"script": "basket.*\\.js",
 			"env": "^basket$"
@@ -403,7 +403,7 @@
 		"Chartbeat": {
 			"website": "chartbeat.com",
 			"cats": [ 10 ],
-			"html": "function loadChartbeat\\(\\) {",
+			"html": "function loadChartbeat\\(\\) \\{",
 			"script": "chartbeat\\.js"
 		},
 		"Cherokee": {
@@ -494,7 +494,8 @@
 		"comScore": {
 			"website": "comscore.com",
 			"cats": [ 10 ],
-			"html": "<iframe[^>]* (?:id=\"comscore\"|scr=[^>]+comscore)",
+			"script": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
+			"html": "<iframe[^>]* (?:id=\"comscore\"|scr=[^>]+comscore)|\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
 			"env": "^_?COMSCORE$"
 		},
 		"Concrete5": {
@@ -608,9 +609,10 @@
 			"env": "^Cufon$"
 		},
 		"d3": {
-			"website": "mbostock.github.com/d3",
+			"website": "d3js.org",
 			"cats": [ 25 ],
-			"script": "d3(?:\\.v2)?(?:\\.min)?\\.js"
+			"script": "d3(?:\\. v[0-9]+)?(?:\\.min)?\\.js",
+			"env": "^d3$"
 		},
 		"Dancer": {
 			"website": "perldancer.org",
@@ -749,7 +751,7 @@
 		"DreamWeaver": {
 			"website": "www.adobe.com/products/dreamweaver",
 			"cats": [ 20 ],
-			"html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) {)\\;version:\\1"
+			"html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) \\{)\\;version:\\1"
 		},
 		"Drupal": {
 			"website": "drupal.org",
@@ -1005,8 +1007,8 @@
 		"Google Analytics": {
 			"website": "google.com/analytics",
 			"cats": [ 10 ],
-			"html": "_gaq\\.push\\(\\['_setAccount",
-			"script": "(?:\\.google-analytics\\.com/ga\\.js|google-analytics\\.com/urchin\\.js)",
+			"html": "_gaq\\.push\\(\\['_setAccount|i\\['GoogleAnalyticsObject'\\]|ga\\.async = true",
+			"script": "(?:\\.google-analytics\\.com\/ga\\.js|\/urchin\\.js|\\.google-analytics\\.com\/analytics\\.js)",
 			"headers": { "Set-Cookie": "__utma" },
 			"env": "^gaGlobal$"
 		},
@@ -1107,6 +1109,11 @@
 			"website": "handlebarsjs.com",
 			"cats": [ 12 ],
 			"env": "^Handlebars$"
+		},
+		"Hello Bar": {
+			"cats": [ 5 ],
+			"script": "(hellobar\\.com/hellobar\\.js|new HelloBar)",
+			"html": "/hellobar\\.js" 
 		},
 		"Hiawatha": {
 			"website": "hiawatha-webserver.org",
@@ -1566,6 +1573,12 @@
 			"cats": [ 13 ],
 			"html": "<img[^>]+ alt=\"Powered by Mantis Bugtracker"
 		},
+		"ManyContacts": {
+			"website": "www.manycontacts.com",
+			"cats": [ 5 ],
+			"html": "\/assets\/js\/manycontacts\\.min\\.js",
+			"script": "\/assets\/js\/manycontacts\\.min\\.js"
+		},
 		"Marketo": {
 			"website": "www.marketo.com",
 			"cats": [ 32 ],
@@ -1596,7 +1609,7 @@
 		"Méthode": {
 			"website": "www.eidosmedia.com/solutions",
 			"cats": [ 1 ],
-			"env": "^eidosBase$;\\confidence:99",
+			"env": "^eidosBase$\\;confidence:99",
 			"html": "<!-- Methode uuid: \"[a-f0-9]+\" ?-->",
 			"meta": { "eomportal-instanceid": "[0-9]+", "eomportal-id": "[0-9]+", "eomportal-loid": "[0-9.]+", "eomportal-uuid": "[a-f0-9]+", "eomportal-lastUpdate": ".*" }
 		},
@@ -1605,7 +1618,7 @@
 			"cats": [ 18 ],
 			"url": "\\.aspx(?:$|\\?)",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
-			"headers": { "X-Powered-By": "ASP\\.NET;\\confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": "IIS\\;confidence:50"
 		},
 		"Microsoft SharePoint": {
@@ -1911,6 +1924,7 @@
 		"Optimizely": {
 			"website": "optimizely.com",
 			"cats": [ 10 ],
+			"script": "optimizely\\.com.*\\.js",
 			"env": "^optimizely$"
 		},
 		"Oracle Application Server": {
@@ -2057,6 +2071,7 @@
 		"Piwik": {
 			"website": "piwik.org",
 			"cats": [ 10 ],
+			"script": "piwik\\.js|piwik\\.php",
 			"html": "var piwikTracker = Piwik\\.getTracker\\(",
 			"env": [ "^Piwik$", "^_paq$" ]
 		},
@@ -2364,8 +2379,10 @@
 			"script": "sitemeter\\.com/js/counter\\.js\\?site="
 		},
 		"SiteCatalyst": {
-			"website": "www.omniture.com/en/products/online_analytics/sitecatalyst",
+			"website": "www.omniture.com\/en\/products\/online_analytics\/sitecatalyst",
 			"cats": [ 10 ],
+			"script": "\/s_code.js",
+			"html": "var s_code=s\\.t\\(\\);if\\(s_code\\)document\\.write\\(s_code\\)",
 			"env": "^s_account$"
 		},
 		"SiteEdit": {
@@ -2852,7 +2869,7 @@
 			"website": "wordpress.org",
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "WordPress( [\\d.]+)?\\;version:\\1" },
-			"html": "<link rel=\"stylesheet\" [^>]+wp-content",
+			"html": "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)",
 			"env": "^wp_username$",
 			"implies": "PHP"
 		},
@@ -2945,7 +2962,8 @@
 		"Yandex.Metrika": {
 			"website": "metrika.yandex.com",
 			"cats": [ 10 ],
-			"script": "mc\\.yandex\\.ru/metrika/watch\\.js"
+			"html": "mc\\.yandex\\.ru\/metrika\/watch\\.js|\\b(?:yaParams|yaCounter|yandex_metrika_callbacks)\\b",
+			"script": "mc\\.yandex\\.ru\/metrika\/watch\\.js"
 		},
 		"YouTube": {
 			"website": "www.youtube.com",

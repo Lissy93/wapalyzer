@@ -26,7 +26,7 @@ var wappalyzer = (function() {
 		 * Calculate confidence total
 		 */
 		getConfidence: function() {
-			var total = 0;
+			var total = 0, id;
 
 			for ( id in this.confidence ) {
 				total += this.confidence[id];
@@ -243,7 +243,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version,
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version, id,
 				profiler = new Profiler(),
 				apps     = {}
 				;
