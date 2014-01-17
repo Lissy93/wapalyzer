@@ -1152,6 +1152,11 @@
 			"headers": { "Set-Cookie": "_hybris" },
 			"implies": "Java"
 		},
+		"IBM Coremetrics": {
+			"website": "ibm.com/software/marketing-solutions/coremetrics",
+			"cats": [ 10 ],
+			"script": "cmdatatagutils\\.js"
+		},
 		"IBM HTTP Server": {
 			"website": "ibm.com/software/webservers/httpservers",
 			"cats": [ 22 ],
@@ -2145,6 +2150,7 @@
 		"Quick.Cart": {
 			"website": "opensolution.org",
 			"cats": [ 6 ],
+			"meta": { "generator": "Quick\\.Cart( v[\\d.]+)?\\;version:\\1" },
 			"html": "<a href=\"[^>]+opensolution\\.org/\">Powered by"
 		},
 		"RackCache": {
