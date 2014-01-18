@@ -116,11 +116,14 @@
 			});
 
 			if ( firstRun ) {
-				driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
-					firstRun = false;
-				}
+				w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
+
+				firstRun = false;
+			}
+
 			if ( upgraded ) {
-				driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+				w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+
 				upgraded = false;
 			}
 		},

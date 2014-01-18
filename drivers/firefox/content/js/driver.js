@@ -113,13 +113,15 @@
 					gBrowser.tabContainer.addEventListener('TabSelect', w.driver.displayApps, false);
 
 					if ( firstRun ) {
-						driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
+						w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
 
 						firstRun = false;
 					}
 
 					if ( upgraded ) {
-						driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+						setTimeout(function() {
+							w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+						}, 500);
 
 						upgraded = false;
 					}
