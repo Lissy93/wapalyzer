@@ -730,7 +730,6 @@
 		"Dotclear": {
 			"website": "dotclear.org",
 			"cats": [ 1 ],
-			"meta": { "dc.title": ".*" },
 			"implies": "PHP"
 		},
 		"DotNetNuke": {
@@ -2166,7 +2165,13 @@
 			"website": "opensolution.org",
 			"cats": [ 6 ],
 			"meta": { "generator": "Quick\\.Cart(?: v([\\d.]+))?\\;version:\\1" },
-			"html": "<a href=\"[^>]+opensolution\\.org/\">Powered by"
+			"html": "<a href=\"[^>]+opensolution\\.org/\">(?:Shopping cart by|Sklep internetowy)"
+		},
+		"Quick.CMS": {
+			"website": "opensolution.org",
+			"cats": [ 1 ],
+			"meta": { "generator": "Quick\\.CMS(?: v([\\d.]+))?\\;version:\\1" },
+			"html": "<a href=\"[^>]+opensolution\\.org/\">CMS by"
 		},
 		"RackCache": {
 			"website": "github.com/rtomayko/rack-cache",
