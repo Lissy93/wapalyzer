@@ -2668,7 +2668,7 @@
 			"website": "typo3.com",
 			"cats": [ 1 ],
 			"headers": { "Set-Cookie": "fe_typo_user" },
-			"meta": { "generator": "TYPO3" },
+			"meta": { "generator": "TYPO3\\s?([\\d.]+)?\\;version:\\1" },
 			"html": "(?:<(?:script[^>]* src|link[^>]* href)=[^>]*fileadmin|<!--TYPO3SEARCH)",
 			"url": "/typo3/",
 			"implies": "PHP"
