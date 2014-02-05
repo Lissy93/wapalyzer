@@ -2937,6 +2937,13 @@
 			"cats": [ 38 ],
 			"html": "<title>Wowza Media Server \\d+ ((\\w+ Edition )?\\d+\\.[\\d\\.]+( build\\d+)?)?\\;version:\\1"
 		},
+		"WP Rocket": {
+			"website": "wp-rocket.me",
+			"cats": [ 23 ],
+			"html": "<!--[^>]+WP Rocket",
+			"headers": { "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": "WordPress"
+		},
 		"Xajax": {
 			"website": "xajax-project.org",
 			"cats": [ 12 ],
