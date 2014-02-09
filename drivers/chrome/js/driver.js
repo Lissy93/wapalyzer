@@ -184,7 +184,7 @@
 				xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
 				xhr.onreadystatechange = function(e) {
-					if ( request.readyState == 4 ) { w.log('w.driver.ping: status ' + request.status); }
+					if ( xhr.readyState == 4 ) { w.log('w.driver.ping: status ' + xhr.status); }
 				};
 
 				xhr.send('json=' + encodeURIComponent(JSON.stringify(w.ping)));

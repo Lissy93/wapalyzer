@@ -340,6 +340,9 @@
 			d.getElementById('urlbar-icons').insertBefore(d.getElementById('wappalyzer-container'), d.getElementById('urlbar-icons').childNodes[0]);
 		}
 
+		w.log('xxx');
+		w.log(CustomizableUI.getPlacementOfWidget('wappalyzer-addonbar'));
+
 		d.getElementById('wappalyzer-addonbar').setAttribute('collapsed', prefs.getBoolPref('addonBar') ? 'false' : 'true');
 	}
 

@@ -199,7 +199,7 @@ var wappalyzer = (function() {
 
 		config: {
 			environment: 'dev', // dev | live
-			websiteURL: 'http://wappalyzer.com/',
+			websiteURL: 'https://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
 			githubURL:  'https://github.com/ElbertF/Wappalyzer',
 		},
@@ -502,6 +502,5 @@ var wappalyzer = (function() {
 // CommonJS package
 // See http://wiki.commonjs.org/wiki/CommonJS
 if ( typeof exports === 'object' ) {
-	exports.definitions = require('../apps.json');
 	exports.wappalyzer = wappalyzer;
 }
