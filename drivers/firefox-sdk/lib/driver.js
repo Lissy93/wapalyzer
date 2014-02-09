@@ -2,9 +2,11 @@
 	'use strict';
 
 	var
+		{Cc, Ci} = require('chrome'),
 		main = require('wappalyzer'),
 		w = main.wappalyzer,
 		tabCache = {},
+		headersCache = {},
 		categoryNames = {},
 		data = require('sdk/self').data,
 		tabs = require('sdk/tabs'),
@@ -42,6 +44,10 @@
 			});
 
 			worker.port.on('analyze', function(message) {
+				if ( headersCache[tab.url] !== undefined ) {
+					message.analyze.headers = headersCache[tab.url];
+				}
+
 				w.analyze(message.hostname, message.url, message.analyze);
 			});
 
@@ -83,6 +89,40 @@
 					analyzed: []
 				};
 			}
+
+			var httpRequestObserver = {
+				init: function() {
+					var observerService = Cc['@mozilla.org/observer-service;1'].getService(Ci.nsIObserverService);
+
+					observerService.addObserver(this, 'http-on-examine-response', false);
+				},
+
+				observe: function(subject, topic, data) {
+					if ( topic == 'http-on-examine-response' ) {
+						subject.QueryInterface(Ci.nsIHttpChannel);
+
+						this.onExamineResponse(subject);
+					}
+				},
+
+				onExamineResponse: function (subject) {
+					if ( headersCache.length > 50 ) {
+						headersCache = {};
+					}
+
+					if ( subject.contentType === 'text/html' ) {
+						if ( headersCache[subject.URI.spec] === undefined ) {
+							headersCache[subject.URI.spec] = {};
+						}
+
+						subject.visitResponseHeaders(function(header, value) {
+							headersCache[subject.URI.spec][header.toLowerCase()] = value;
+						});
+					}
+				}
+			};
+
+			httpRequestObserver.init();
 		},
 
 		displayApps: function() {
@@ -118,7 +158,21 @@
 		},
 
 		ping: function() {
-			w.log('ping');
+			var Request = require('sdk/request').Request;
+
+			if ( Object.keys(w.ping.hostnames).length ) {
+				Request({
+					url: w.config.websiteURL + 'ping/v2/',
+					content: { json: encodeURIComponent(JSON.stringify(w.ping)) },
+					onComplete: function (response) {
+						w.log('w.driver.ping: status ' + response.status);
+					}
+				}).post();
+
+				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
+
+				w.ping = { hostnames: {} };
+			}
 		},
 
 		categoryOrder: [ // Used to pick the main application
