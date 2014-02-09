@@ -487,7 +487,7 @@ var wappalyzer = (function() {
 				w.log({ hostname: hostname, ping: w.ping.hostnames[hostname] });
 			}
 
-			if ( Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }
+			if ( Object.keys(w.ping.hostnames).length >= 20 ) { driver('ping'); }
 
 			apps = null;
 			data = null;

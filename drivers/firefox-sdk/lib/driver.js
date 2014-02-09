@@ -10,6 +10,7 @@
 		categoryNames = {},
 		data = require('sdk/self').data,
 		ss = require('sdk/simple-storage'),
+		sp = require("sdk/simple-prefs"),
 		tabs = require('sdk/tabs'),
 		panel = require('sdk/panel').Panel({
 			width: 250,
@@ -22,7 +23,26 @@
 			label: 'Wappalyzer',
 			contentURL: data.url('images/icon32.png'),
 			panel: panel
+		}),
+		initTab;
+
+	initTab = function(tab) {
+		var worker = tab.attach({
+			contentScriptFile: data.url('js/tab.js')
 		});
+
+		worker.port.on('analyze', function(message) {
+			if ( headersCache[tab.url] !== undefined ) {
+				message.analyze.headers = headersCache[tab.url];
+			}
+
+			w.analyze(message.hostname, message.url, message.analyze);
+		});
+
+		worker.port.on('log', function(message) {
+			w.log('[ tab.js ] ' + message);
+		});
+	}
 
 	tabs.on('open', function(tab) {
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
@@ -36,21 +56,7 @@
 		w.driver.displayApps();
 
 		tabs.activeTab.on('ready', function(tab) {
-			var worker = tab.attach({
-				contentScriptFile: data.url('js/tab.js')
-			});
-
-			worker.port.on('analyze', function(message) {
-				if ( headersCache[tab.url] !== undefined ) {
-					message.analyze.headers = headersCache[tab.url];
-				}
-
-				w.analyze(message.hostname, message.url, message.analyze);
-			});
-
-			worker.port.on('log', function(message) {
-				w.log('[ tab.js ] ' + message);
-			});
+			initTab(tab);
 		});
 	});
 
@@ -93,6 +99,8 @@
 
 			for each ( var tab in tabs ) {
 				tabCache[tab.id] = { count: 0, appsDetected: [] };
+
+				initTab(tab);
 			}
 
 			var httpRequestObserver = {
@@ -175,7 +183,7 @@
 		ping: function() {
 			var Request = require('sdk/request').Request;
 
-			if ( Object.keys(w.ping.hostnames).length ) {
+			if ( Object.keys(w.ping.hostnames).length && sp.prefs.tracking ) {
 				Request({
 					url: w.config.websiteURL + 'ping/v2/',
 					content: { json: encodeURIComponent(JSON.stringify(w.ping)) },

@@ -1,12 +1,19 @@
 {
   "name": "wappalyzer",
   "title": "Wappalyzer",
-	"icon": "images/icon48.png",
-	"icon64": "images/icon64.png",
-  "id": "jid1-GkgHgreNo1BZ4g",
+	"icon": "images/icon48_hot.png",
+	"icon64": "images/icon64_hot.png",
+  "id": "ec8030f7-c20a-464f-9b0e-13a3a9e97384",
   "description": "Identifies software on the web",
   "author": "Elbert Alias",
   "license": "GPLv3",
   "version": "3.0.0",
-	"main": "driver"
+	"main": "driver",
+	"preferences": [{
+		"name": "tracking",
+		"title": "Tracking",
+		"description": "Anonymously send reports on detected applications to wappalyzer.com for analysis",
+		"type": "bool",
+		"value": true
+	}]
 }
