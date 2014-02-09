@@ -1,10 +1,14 @@
 (function() {
 	self.port.on('displayApps', function(message) {
-		var detectedApps = document.getElementById('detected-apps');
+		var
+			detectedApps = document.getElementById('detected-apps')
+			empty = document.getElementById('empty');
 
 		detectedApps.innerHTML = '';
 
 		if ( message.tabCache.count > 0 ) {
+			empty.style.display = 'none';
+
 			for ( appName in message.tabCache.appsDetected ) {
 				confidence = message.tabCache.appsDetected[appName].confidenceTotal;
 				version    = message.tabCache.appsDetected[appName].version;
@@ -29,6 +33,8 @@
 
 				detectedApps.innerHTML = detectedApps.innerHTML + html;
 			}
+		} else {
+			empty.style.display = 'block';
 		}
 
 		self.port.emit('resize', document.body.offsetHeight);

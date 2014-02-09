@@ -54,39 +54,8 @@ img {
 	margin: 5px 0 0 24px;
 }
 
-.empty {
+#empty {
 	color: #999;
 	font-style: italic;
 	text-align: center;
-}
-
-#buttons {
-	margin-top: 12px;
-	overflow: hidden;
-}
-
-	#buttons button {
-		height: 32px;
-	}
-
-#analyze-headers {
-	float: left;
-	width: 158px;
-}
-
-	#analyze-headers.pending {
-		background-image: url('../images/pending2.gif');
-		background-position: center center;
-		background-repeat: no-repeat;
-		text-indent: -999px;
-	}
-
-#options {
-	background-image: url('../images/options.png');
-	background-position: center center;
-	background-repeat: no-repeat;
-	float: right;
-	height: 32px;
-	min-width: 32px;
-	width: 32px;
 }

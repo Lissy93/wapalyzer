@@ -9,6 +9,7 @@
 		headersCache = {},
 		categoryNames = {},
 		data = require('sdk/self').data,
+		ss = require('sdk/simple-storage'),
 		tabs = require('sdk/tabs'),
 		panel = require('sdk/panel').Panel({
 			width: 250,
@@ -24,11 +25,7 @@
 		});
 
 	tabs.on('open', function(tab) {
-		tabCache[tab.id] = {
-			count: 0,
-			appsDetected: [],
-			analyzed: []
-		};
+		tabCache[tab.id] = { count: 0, appsDetected: [] };
 	});
 
 	tabs.on('close', function(tab) {
@@ -75,6 +72,18 @@
 		init: function(callback) {
 			var json = JSON.parse(data.load('apps.json'));
 
+			try {
+				var version = require('sdk/self').version;
+
+				if ( !ss.storage.version ) {
+					w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
+				} else if ( version !== ss.storage.version ) {
+					w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+				}
+
+				ss.storage.version = version;
+			} catch(e) { }
+
 			w.apps = json.apps;
 			w.categories = json.categories;
 
@@ -83,11 +92,7 @@
 			}
 
 			for each ( var tab in tabs ) {
-				tabCache[tab.id] = {
-					count: 0,
-					appsDetected: [],
-					analyzed: []
-				};
+				tabCache[tab.id] = { count: 0, appsDetected: [] };
 			}
 
 			var httpRequestObserver = {
@@ -125,10 +130,20 @@
 			httpRequestObserver.init();
 		},
 
+		goToURL: function(args) {
+			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?utm_source=firefox&utm_medium=' + args.medium + '&utm_campaign=extensions');
+
+			tabs.open(url);
+		},
+
 		displayApps: function() {
 			var count = w.detected[tabs.activeTab.url] ? Object.keys(w.detected[tabs.activeTab.url]).length.toString() : '0';
 
 			w.log('display apps');
+
+			if ( tabCache[tabs.activeTab.id] === undefined ) {
+				tabCache[tabs.activeTab.id] = { count: 0, appsDetected: [] };
+			}
 
 			tabCache[tabs.activeTab.id].count = count;
 			tabCache[tabs.activeTab.id].appsDetected = w.detected[tabs.activeTab.url];
