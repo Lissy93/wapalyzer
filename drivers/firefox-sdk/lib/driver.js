@@ -27,26 +27,30 @@
 		initTab;
 
 	initTab = function(tab) {
-		var worker = tab.attach({
-			contentScriptFile: data.url('js/tab.js')
-		});
+		tabCache[tab.id] = { count: 0, appsDetected: [] };
 
-		worker.port.on('analyze', function(message) {
-			if ( headersCache[tab.url] !== undefined ) {
-				message.analyze.headers = headersCache[tab.url];
-			}
+		tab.on('ready', function(tab) {
+			var worker = tab.attach({
+				contentScriptFile: data.url('js/tab.js')
+			});
 
-			w.analyze(message.hostname, message.url, message.analyze);
-		});
+			worker.port.on('analyze', function(message) {
+				var url = message.url.replace(/#.*$/, '');
 
-		worker.port.on('log', function(message) {
-			w.log('[ tab.js ] ' + message);
+				if ( headersCache[url] !== undefined ) {
+					message.analyze.headers = headersCache[url];
+				}
+
+				w.analyze(message.hostname, url, message.analyze);
+			});
+
+			worker.port.on('log', function(message) {
+				w.log('[ tab.js ] ' + message);
+			});
 		});
 	}
 
-	tabs.on('open', function(tab) {
-		tabCache[tab.id] = { count: 0, appsDetected: [] };
-	});
+	tabs.on('open', initTab);
 
 	tabs.on('close', function(tab) {
 		tabCache[tab.id] = null;
@@ -54,10 +58,6 @@
 
 	tabs.on('activate', function(tab) {
 		w.driver.displayApps();
-
-		tabs.activeTab.on('ready', function(tab) {
-			initTab(tab);
-		});
 	});
 
 	panel.port.on('resize', function(height) {
@@ -98,8 +98,6 @@
 			}
 
 			for each ( var tab in tabs ) {
-				tabCache[tab.id] = { count: 0, appsDetected: [] };
-
 				initTab(tab);
 			}
 
@@ -119,17 +117,19 @@
 				},
 
 				onExamineResponse: function (subject) {
+					var uri = subject.URI.spec.replace(/#.*$/, ''); // Remove hash
+
 					if ( headersCache.length > 50 ) {
 						headersCache = {};
 					}
 
 					if ( subject.contentType === 'text/html' ) {
-						if ( headersCache[subject.URI.spec] === undefined ) {
-							headersCache[subject.URI.spec] = {};
+						if ( headersCache[uri] === undefined ) {
+							headersCache[uri] = {};
 						}
 
 						subject.visitResponseHeaders(function(header, value) {
-							headersCache[subject.URI.spec][header.toLowerCase()] = value;
+							headersCache[uri][header.toLowerCase()] = value;
 						});
 					}
 				}
@@ -145,16 +145,18 @@
 		},
 
 		displayApps: function() {
-			var count = w.detected[tabs.activeTab.url] ? Object.keys(w.detected[tabs.activeTab.url]).length.toString() : '0';
+			var
+				url = tabs.activeTab.url.replace(/#.*$/, ''),
+				count = w.detected[url] ? Object.keys(w.detected[url]).length.toString() : '0';
 
 			w.log('display apps');
 
 			if ( tabCache[tabs.activeTab.id] === undefined ) {
-				tabCache[tabs.activeTab.id] = { count: 0, appsDetected: [] };
+				initTab(tabs.activeTab);
 			}
 
 			tabCache[tabs.activeTab.id].count = count;
-			tabCache[tabs.activeTab.id].appsDetected = w.detected[tabs.activeTab.url];
+			tabCache[tabs.activeTab.id].appsDetected = w.detected[url];
 
 			widget.contentURL = data.url('images/icon32.png');
 
@@ -165,7 +167,7 @@
 				widget.contentURL = data.url('images/icon32_hot.png'),
 
 				w.driver.categoryOrder.forEach(function(match) {
-					for ( appName in w.detected[tabs.activeTab.url] ) {
+					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
 								widget.contentURL = data.url('images/icons/' + appName + '.png'),
