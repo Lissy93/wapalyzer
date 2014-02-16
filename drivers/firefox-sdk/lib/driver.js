@@ -5,6 +5,9 @@
 		{Cc, Ci} = require('chrome'),
 		main = require('wappalyzer'),
 		w = main.wappalyzer,
+		mediator = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator),
+		doc = mediator.getMostRecentWindow('navigator:browser').document,
+		urlBar = doc.getElementById('urlbar-icons'),
 		tabCache = {},
 		headersCache = {},
 		categoryNames = {},
@@ -16,7 +19,8 @@
 			width: 250,
 			height: 50,
 			contentURL: data.url('panel.html'),
-			contentScriptFile: data.url('js/panel.js')
+			contentScriptFile: data.url('js/panel.js'),
+			position: { right: 30, top: 30 }
 		}),
 		widget = require('sdk/widget').Widget({
 			id: 'wappalyzer',
@@ -24,7 +28,9 @@
 			contentURL: data.url('images/icon32.png'),
 			panel: panel
 		}),
-		initTab;
+		initTab,
+		addIcon,
+		removeIcons;
 
 	initTab = function(tab) {
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
@@ -48,7 +54,7 @@
 				w.log('[ tab.js ] ' + message);
 			});
 		});
-	}
+	};
 
 	tabs.on('open', initTab);
 
@@ -63,6 +69,57 @@
 	panel.port.on('resize', function(height) {
 		panel.height = height;
 	});
+
+	addIcon = function(url) {
+		var
+			icon = doc.createElement('image'),
+			show = true;
+
+
+		icon.setAttribute('src',    data.url(url));
+		icon.setAttribute('class',  'wappalyzer-icon');
+		icon.setAttribute('width',  '16');
+		icon.setAttribute('height', '16');
+		icon.setAttribute('style',  'cursor: pointer; margin-right: 2px;');
+
+		icon.addEventListener('mouseover', function() {
+			if ( panel.isShowing ) {
+				show = false;
+			}
+		});
+
+		icon.addEventListener('mouseout', function() {
+			show = true;
+		});
+
+		icon.addEventListener('click', function() {
+			if ( show ) {
+				panel.show();
+
+				show = false;
+			} else {
+				panel.hide();
+
+				show = true;
+			}
+		}, false);
+
+		urlBar.appendChild(icon);
+
+		return icon;
+	};
+
+	removeIcons = function() {
+		var icons;
+
+		do {
+			icons = urlBar.getElementsByClassName('wappalyzer-icon');
+
+			if ( icons.length ) {
+				urlBar.removeChild(icons[0]);
+			}
+		} while ( icons.length );
+	};
 
 	w.driver = {
 		/**
@@ -100,6 +157,13 @@
 			for each ( var tab in tabs ) {
 				initTab(tab);
 			}
+
+			sp.on('urlbar', function() {
+				console.log('x');
+				if ( !sp.prefs.urlbar ) {
+					removeIcons();
+				}
+			});
 
 			var httpRequestObserver = {
 				init: function() {
@@ -146,8 +210,8 @@
 
 		displayApps: function() {
 			var
-				url = tabs.activeTab.url.replace(/#.*$/, ''),
-				count = w.detected[url] ? Object.keys(w.detected[url]).length.toString() : '0';
+				url   = tabs.activeTab.url.replace(/#.*$/, ''),
+				count = w.detected[url] ? Object.keys(w.detected[url]).length : 0;
 
 			w.log('display apps');
 
@@ -157,6 +221,19 @@
 
 			tabCache[tabs.activeTab.id].count = count;
 			tabCache[tabs.activeTab.id].appsDetected = w.detected[url];
+
+			if ( sp.prefs.urlbar ) {
+				removeIcons();
+
+				// Add icons
+				if ( count ) {
+					for ( appName in tabCache[tabs.activeTab.id].appsDetected ) {
+						addIcon('images/icons/' + appName + '.png');
+					}
+				} else {
+					addIcon('images/icon32.png');
+				}
+			}
 
 			widget.contentURL = data.url('images/icon32.png');
 
