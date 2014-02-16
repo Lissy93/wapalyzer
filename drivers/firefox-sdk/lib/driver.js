@@ -159,7 +159,6 @@
 			}
 
 			sp.on('urlbar', function() {
-				console.log('x');
 				if ( !sp.prefs.urlbar ) {
 					removeIcons();
 				}

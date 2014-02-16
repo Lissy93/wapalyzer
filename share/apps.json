@@ -116,6 +116,11 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
+		"Akamai": {
+			"website": "akamai.com",
+			"cats": [ 31 ],
+			"headers": { "X-Akamai-Transformed": ".*" }
+		},
 		"AlloyUI": {
 			"website": "www.alloyui.com",
 			"cats": [ 12 ],
@@ -1216,6 +1221,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "ImpressPages CMS ([\\d.]+)\\;version:\\1" },
 			"implies": "PHP"
+		},
+		"Incapsula": {
+			"website": "www.incapsula.com",
+			"cats": [ 31 ],
+			"headers": { "X-CDN": "Incapsula" }
 		},
 		"Indexhibit": {
 			"website": "www.indexhibit.org",
