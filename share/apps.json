@@ -2260,8 +2260,7 @@
 		"Sarka-SPIP": {
 			"website": "sarka-spip.net",
 			"cats": [ 1 ],
-			"meta": { "generator": "^SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1" },
-			"headers": { "X-Spip-Cache": ".*" },
+			"meta": { "generator": "Sarka-SPIP(?:\\s)?\\;version:\\1" },
 			"implies": "SPIP"
 		},
 		"Scala": {
