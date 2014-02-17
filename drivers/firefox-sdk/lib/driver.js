@@ -28,6 +28,8 @@
 
 		if ( !sp.prefs.urlbar ) {
 			createWidget();
+
+			w.driver.displayApps();
 		}
 
 		tab.on('ready', function(tab) {
@@ -193,9 +195,9 @@
 					widget.destroy();
 
 					createPanel();
-
-					w.driver.displayApps();
 				}
+
+				w.driver.displayApps();
 			});
 
 			var httpRequestObserver = {
@@ -249,7 +251,6 @@
 			w.log('display apps');
 
 			if ( tabCache[tabs.activeTab.id] === undefined ) {
-				console.log(tabs);
 				initTab(tabs.activeTab);
 			}
 
@@ -267,15 +268,13 @@
 				} else {
 					addIcon('images/icon32.png');
 				}
-			}
-
-			if ( count > 0 ) {
+			} else if ( count ) {
 				// Find the main application to display
-				var i, appName, found = false;
+				var
+					appName,
+					found = false;
 
-				if ( !sp.prefs.urlbar ) {
-					widget.contentURL = data.url('images/icon32_hot.png');
-				}
+				widget.contentURL = data.url('images/icon32_hot.png');
 
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
@@ -288,7 +287,7 @@
 						});
 					}
 				});
-			};
+			}
 
 			panel.port.emit('displayApps', { tabCache: tabCache[tabs.activeTab.id], apps: w.apps, categories: w.categories, categoryNames: categoryNames });
 		},
