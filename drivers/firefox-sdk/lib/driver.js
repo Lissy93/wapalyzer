@@ -15,25 +15,20 @@
 		ss = require('sdk/simple-storage'),
 		sp = require("sdk/simple-prefs"),
 		tabs = require('sdk/tabs'),
-		panel = require('sdk/panel').Panel({
-			width: 250,
-			height: 50,
-			contentURL: data.url('panel.html'),
-			contentScriptFile: data.url('js/panel.js'),
-			position: { right: 30, top: 30 }
-		}),
-		widget = require('sdk/widget').Widget({
-			id: 'wappalyzer',
-			label: 'Wappalyzer',
-			contentURL: data.url('images/icon32.png'),
-			panel: panel
-		}),
+		panel,
+		widget,
 		initTab,
 		addIcon,
-		removeIcons;
+		removeIcons,
+		createPanel,
+		createWidget;
 
 	initTab = function(tab) {
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
+
+		if ( !sp.prefs.urlbar ) {
+			createWidget();
+		}
 
 		tab.on('ready', function(tab) {
 			var worker = tab.attach({
@@ -64,10 +59,6 @@
 
 	tabs.on('activate', function(tab) {
 		w.driver.displayApps();
-	});
-
-	panel.port.on('resize', function(height) {
-		panel.height = height;
 	});
 
 	addIcon = function(url) {
@@ -121,6 +112,35 @@
 		} while ( icons.length );
 	};
 
+	createPanel = function() {
+		if ( panel ) {
+			panel.destroy();
+		}
+
+		panel = require('sdk/panel').Panel({
+			width: 250,
+			height: 50,
+			contentURL: data.url('panel.html'),
+			contentScriptFile: data.url('js/panel.js'),
+			position: { right: 30, top: 30 }
+		});
+
+		panel.port.on('resize', function(height) {
+			panel.height = height;
+		});
+	}
+
+	createWidget = function() {
+		createPanel();
+
+		widget = require('sdk/widget').Widget({
+			id: 'wappalyzer',
+			label: 'Wappalyzer',
+			contentURL: data.url('images/icon32.png'),
+			panel: panel
+		});
+	}
+
 	w.driver = {
 		/**
 		 * Log messages to console
@@ -134,6 +154,12 @@
 		 */
 		init: function(callback) {
 			var json = JSON.parse(data.load('apps.json'));
+
+			if ( sp.prefs.urlbar ) {
+				createPanel();
+			} else {
+				createWidget();
+			}
 
 			try {
 				var version = require('sdk/self').version;
@@ -161,6 +187,14 @@
 			sp.on('urlbar', function() {
 				if ( !sp.prefs.urlbar ) {
 					removeIcons();
+
+					createWidget();
+				} else {
+					widget.destroy();
+
+					createPanel();
+
+					w.driver.displayApps();
 				}
 			});
 
@@ -215,6 +249,7 @@
 			w.log('display apps');
 
 			if ( tabCache[tabs.activeTab.id] === undefined ) {
+				console.log(tabs);
 				initTab(tabs.activeTab);
 			}
 
@@ -234,13 +269,13 @@
 				}
 			}
 
-			widget.contentURL = data.url('images/icon32.png');
-
 			if ( count > 0 ) {
 				// Find the main application to display
 				var i, appName, found = false;
 
-				widget.contentURL = data.url('images/icon32_hot.png'),
+				if ( !sp.prefs.urlbar ) {
+					widget.contentURL = data.url('images/icon32_hot.png');
+				}
 
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
