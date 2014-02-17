@@ -116,11 +116,14 @@
 			});
 
 			if ( firstRun ) {
-				driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
-					firstRun = false;
-				}
+				w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
+
+				firstRun = false;
+			}
+
 			if ( upgraded ) {
-				driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+				w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+
 				upgraded = false;
 			}
 		},
@@ -181,7 +184,7 @@
 				xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
 				xhr.onreadystatechange = function(e) {
-					if ( request.readyState == 4 ) { w.log('w.driver.ping: status ' + request.status); }
+					if ( xhr.readyState == 4 ) { w.log('w.driver.ping: status ' + xhr.status); }
 				};
 
 				xhr.send('json=' + encodeURIComponent(JSON.stringify(w.ping)));

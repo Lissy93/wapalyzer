@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 							html =
 								'<div class="detected-app">' +
-									'<a target="_blank" href="http://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
+									'<a target="_blank" href="https://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
 										'<span class="label">' + appName + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 
 							response.apps[appName].cats.forEach(function(cat) {
 								html +=
-									'<a target="_blank" href="http://wappalyzer.com/categories/' + response.categories[cat] + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
+									'<a target="_blank" href="https://wappalyzer.com/categories/' + response.categories[cat] + '?utm_source=chrome&utm_medium=popup&utm_campaign=extensions">' +
 										'<span class="category">' + chrome.i18n.getMessage('categoryName' + cat) + '</span>' +
 									'</a>';
 							});

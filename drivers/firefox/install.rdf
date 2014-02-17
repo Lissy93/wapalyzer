@@ -3,7 +3,7 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>wappalyzer@crunchlabz.com</em:id>
-		<em:version>2.7.4</em:version>
+		<em:version>2.7.8</em:version>
 		<em:type>2</em:type>
 		<em:unpack>true</em:unpack>
 
@@ -12,7 +12,7 @@
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>4.0</em:minVersion>
-				<em:maxVersion>25.*</em:maxVersion>
+				<em:maxVersion>28.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 
@@ -21,7 +21,7 @@
 			<Description>
 				<em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
 				<em:minVersion>2.0</em:minVersion>
-				<em:maxVersion>2.24.*</em:maxVersion>
+				<em:maxVersion>2.26.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 
@@ -33,6 +33,6 @@
 		<em:iconURL>chrome://wappalyzer/skin/images/icon32.png</em:iconURL>
 		<em:icon64URL>chrome://wappalyzer/skin/images/icon64.png</em:icon64URL>
 		<em:creator>Elbert Alias</em:creator>
-		<em:homepageURL>http://wappalyzer.com</em:homepageURL>
+		<em:homepageURL>https://wappalyzer.com</em:homepageURL>
 	</Description>
 </RDF>

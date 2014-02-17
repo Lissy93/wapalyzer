@@ -26,7 +26,7 @@ var wappalyzer = (function() {
 		 * Calculate confidence total
 		 */
 		getConfidence: function() {
-			var total = 0;
+			var total = 0, id;
 
 			for ( id in this.confidence ) {
 				total += this.confidence[id];
@@ -199,7 +199,7 @@ var wappalyzer = (function() {
 
 		config: {
 			environment: 'dev', // dev | live
-			websiteURL: 'http://wappalyzer.com/',
+			websiteURL: 'https://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
 			githubURL:  'https://github.com/ElbertF/Wappalyzer',
 		},
@@ -243,7 +243,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version,
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version, id,
 				profiler = new Profiler(),
 				apps     = {}
 				;
@@ -333,9 +333,10 @@ var wappalyzer = (function() {
 
 										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
 
-											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-												apps[app].setDetected(pattern, type, content[2], meta);
-											}
+										if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+											apps[app].setDetected(pattern, type, content[2], meta);
+										}
+
 										profiler.checkPoint(app, type, pattern.regex);
 										});
 									}
@@ -486,7 +487,7 @@ var wappalyzer = (function() {
 				w.log({ hostname: hostname, ping: w.ping.hostnames[hostname] });
 			}
 
-			if ( Object.keys(w.ping.hostnames).length >= 50 ) { driver('ping'); }
+			if ( Object.keys(w.ping.hostnames).length >= 20 ) { driver('ping'); }
 
 			apps = null;
 			data = null;
@@ -501,6 +502,5 @@ var wappalyzer = (function() {
 // CommonJS package
 // See http://wiki.commonjs.org/wiki/CommonJS
 if ( typeof exports === 'object' ) {
-	exports.definitions = require('../apps.json');
 	exports.wappalyzer = wappalyzer;
 }
