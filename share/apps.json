@@ -5,7 +5,7 @@
 		"3": "database-managers",
 		"4": "documentation-tools",
 		"5": "widgets",
-		"6": "web-shops",
+		"6": "ecommerce",
 		"7": "photo-galleries",
 		"8": "wikis",
 		"9": "hosting-panels",
@@ -1219,7 +1219,7 @@
 		"ImpressPages": {
 			"website": "impresspages.org",
 			"cats": [ 1 ],
-			"meta": { "generator": "ImpressPages CMS ([\\d.]+)\\;version:\\1" },
+			"meta": { "generator": "ImpressPages(?: CMS)?( [\\d.]*)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Incapsula": {
@@ -1624,6 +1624,11 @@
 			"website": "mediaelementjs.com",
 			"cats": [ 14 ],
 			"env": "^mejs$"
+		},
+		"MediaTomb": {
+			"website": "mediatomb.cc",
+			"cats": [ 38 ],
+			"headers": { "Server": "MediaTomb(?:/([0-9.]+))?\\;version:\\1" }
 		},
 		"MediaWiki": {
 			"website": "www.mediawiki.org",

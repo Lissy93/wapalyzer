@@ -206,6 +206,7 @@
 			18, // Web Framework
 			21, // LMS
 			 7, // Photo Gallery
+			38, // Media Server
 			 3, // Database Manager
 			34, // Database
 			 4, // Documentation Tool
@@ -221,7 +222,6 @@
 			20, // Editor
 			10, // Analytics
 			32, // Marketing Automation
-			38, // Media Server
 			31, // CDN
 			23, // Cache Tool
 			17, // Font Script
