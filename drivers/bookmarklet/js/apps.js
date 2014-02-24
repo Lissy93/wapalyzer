@@ -2632,7 +2632,7 @@ var json =
 			"cats": [ 11 ],
 			"html": "<iframe src=\"[^>]+tumblr\\.com",
 			"url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
-			"headers": { "X-Tumblr-Usec": ".*" }
+			"headers": { "X-Tumblr-User": ".*" }
 		},
 		"TWiki": {
 			"website": "twiki.org",
