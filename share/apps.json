@@ -929,6 +929,12 @@
 			"html": "<input[^>]+ name=\"ParametricSearch",
 			"implies": [ "Microsoft SharePoint", "Microsoft ASP.NET" ]
 		},
+		"Fat-Free Framework": {
+			"website": "fatfreeframework.com",
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "Fat-Free Framework" },
+			"implies": [ "PHP" ]
+		},
 		"Fedora": {
 			"website": "fedoraproject.org",
 			"cats": [ 28 ],
@@ -2655,7 +2661,7 @@
 			"cats": [ 11 ],
 			"html": "<iframe src=\"[^>]+tumblr\\.com",
 			"url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
-			"headers": { "X-Tumblr-Usec": ".*" }
+			"headers": { "X-Tumblr-User": ".*" }
 		},
 		"TWiki": {
 			"website": "twiki.org",
