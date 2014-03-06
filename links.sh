@@ -1,12 +1,12 @@
 #!/bin/sh
 
-ln -f share/images/icons/*.png    drivers/firefox/skin/images/icons
-ln -f share/apps.json             drivers/firefox/content
-ln -f share/js/wappalyzer.js      drivers/firefox/content/js
+ln -f share/images/icons/*.png    drivers/firefox-xul/skin/images/icons
+ln -f share/apps.json             drivers/firefox-xul/content
+ln -f share/js/wappalyzer.js      drivers/firefox-xul/content/js
 
-ln -f share/images/icons/*.png    drivers/firefox-sdk/data/images/icons
-ln -f share/apps.json             drivers/firefox-sdk/data
-ln -f share/js/wappalyzer.js      drivers/firefox-sdk/lib
+ln -f share/images/icons/*.png    drivers/firefox/data/images/icons
+ln -f share/apps.json             drivers/firefox/data
+ln -f share/js/wappalyzer.js      drivers/firefox/lib
 
 ln -f share/images/icons/*.png    drivers/chrome/images/icons
 ln -f share/apps.json             drivers/chrome

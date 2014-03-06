@@ -53,8 +53,8 @@ cd drivers\chrome&&%zip% a -tzip -mx9 ..\..\wappalyzer-chrome.zip *
 cd..\..
 
 ::Pack Firefox extension
-cd drivers\firefox&&%zip% a -tzip -mx9 ..\..\wappalyzer-firefox.xpi *
-cd..\..
+::cd drivers\firefox&&%zip% a -tzip -mx9 ..\..\wappalyzer-firefox.xpi *
+::cd..\..
 
 
 :end

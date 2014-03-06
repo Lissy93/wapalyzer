@@ -6,8 +6,6 @@
 		main = require('wappalyzer'),
 		w = main.wappalyzer,
 		mediator = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator),
-		doc = mediator.getMostRecentWindow('navigator:browser').document,
-		urlBar = doc.getElementById('urlbar-icons'),
 		tabCache = {},
 		headersCache = {},
 		categoryNames = {},
@@ -21,7 +19,9 @@
 		addIcon,
 		removeIcons,
 		createPanel,
-		createWidget;
+		createWidget,
+		getUrlBar,
+		getDocument;
 
 	initTab = function(tab) {
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
@@ -65,9 +65,8 @@
 
 	addIcon = function(url) {
 		var
-			icon = doc.createElement('image'),
+			icon = getDocument().createElement('image'),
 			show = true;
-
 
 		icon.setAttribute('src',    data.url(url));
 		icon.setAttribute('class',  'wappalyzer-icon');
@@ -97,7 +96,7 @@
 			}
 		}, false);
 
-		urlBar.appendChild(icon);
+		getUrlBar().appendChild(icon);
 
 		return icon;
 	};
@@ -106,10 +105,10 @@
 		var icons;
 
 		do {
-			icons = urlBar.getElementsByClassName('wappalyzer-icon');
+			icons = getUrlBar().getElementsByClassName('wappalyzer-icon');
 
 			if ( icons.length ) {
-				urlBar.removeChild(icons[0]);
+				getUrlBar().removeChild(icons[0]);
 			}
 		} while ( icons.length );
 	};
@@ -143,6 +142,14 @@
 		});
 	}
 
+	getUrlBar = function() {
+		return getDocument().getElementById('urlbar-icons');
+	}
+
+	getDocument = function() {
+		return mediator.getMostRecentWindow('navigator:browser').document;
+	}
+
 	w.driver = {
 		/**
 		 * Log messages to console
@@ -156,6 +163,8 @@
 		 */
 		init: function(callback) {
 			var json = JSON.parse(data.load('apps.json'));
+
+			console.log('xxxx');
 
 			if ( sp.prefs.urlbar ) {
 				createPanel();
