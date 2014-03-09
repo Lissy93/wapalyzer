@@ -64,37 +64,13 @@
 	});
 
 	addIcon = function(url) {
-		var
-			icon = getDocument().createElement('image'),
-			show = true;
+		var icon = getDocument().createElement('image');
 
 		icon.setAttribute('src',    data.url(url));
 		icon.setAttribute('class',  'wappalyzer-icon');
 		icon.setAttribute('width',  '16');
 		icon.setAttribute('height', '16');
-		icon.setAttribute('style',  'cursor: pointer; margin-right: 2px;');
-
-		icon.addEventListener('mouseover', function() {
-			if ( panel.isShowing ) {
-				show = false;
-			}
-		});
-
-		icon.addEventListener('mouseout', function() {
-			show = true;
-		});
-
-		icon.addEventListener('click', function() {
-			if ( show ) {
-				panel.show();
-
-				show = false;
-			} else {
-				panel.hide();
-
-				show = true;
-			}
-		}, false);
+		icon.setAttribute('style',  'margin: 0 1px;');
 
 		getUrlBar().appendChild(icon);
 
@@ -143,7 +119,43 @@
 	}
 
 	getUrlBar = function() {
-		return getDocument().getElementById('urlbar-icons');
+		var
+			urlBar = getDocument().getElementById('wappalyzer-urlbar'),
+			show = true;
+
+		if ( !urlBar ) {
+			urlBar = getDocument().createElement('hbox');
+
+			urlBar.setAttribute('id',          'wappalyzer-urlbar');
+			urlBar.setAttribute('style',       'cursor: pointer; margin: 0 2px;');
+			urlBar.setAttribute('tooltiptext', require('sdk/l10n').get('name'));
+
+			urlBar.addEventListener('mouseover', function() {
+				if ( panel.isShowing ) {
+					show = false;
+				}
+			});
+
+			urlBar.addEventListener('mouseout', function() {
+				show = true;
+			});
+
+			urlBar.addEventListener('click', function() {
+				if ( show ) {
+					panel.show();
+
+					show = false;
+				} else {
+					panel.hide();
+
+					show = true;
+				}
+			}, false);
+
+			getDocument().getElementById('urlbar-icons').appendChild(urlBar);
+		}
+
+		return urlBar;
 	}
 
 	getDocument = function() {
@@ -245,7 +257,7 @@
 		},
 
 		goToURL: function(args) {
-			var url = args.url + ( typeof args.medium === 'undefined' ? '' : '?pk_campaign=chrome&pk_kwd=' + args.medium);
+			var url = args.url + ( typeof args.medium === 'undefined' ? '' : '?pk_campaign=firefox&pk_kwd=' + args.medium);
 
 			tabs.open({ url: url, inBackground: args.background !== undefined && args.background });
 		},
