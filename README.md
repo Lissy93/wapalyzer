@@ -18,7 +18,5 @@ Refer to the [wiki](https://github.com/ElbertF/Wappalyzer/wiki) for
 *Licensed under the [GPL](https://github.com/ElbertF/Wappalyzer/blob/master/LICENSE).*
 
 Donate Bitcoin: 16gb4uGDAjaeRJwKVmKr2EXa8x2fmvT8EQ - *Thanks!*
+
 ![QR Code](https://wappalyzer.com/sites/default/themes/wappalyzer/images/bitcoinqrcode.png)
-
-
-

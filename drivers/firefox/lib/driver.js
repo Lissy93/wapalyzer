@@ -164,8 +164,6 @@
 		init: function(callback) {
 			var json = JSON.parse(data.load('apps.json'));
 
-			console.log('xxxx');
-
 			if ( sp.prefs.urlbar ) {
 				createPanel();
 			} else {
@@ -178,7 +176,7 @@
 				if ( !ss.storage.version ) {
 					w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
 				} else if ( version !== ss.storage.version ) {
-					w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+					w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade', background: true });
 				}
 
 				ss.storage.version = version;
@@ -247,9 +245,9 @@
 		},
 
 		goToURL: function(args) {
-			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?utm_source=firefox&utm_medium=' + args.medium + '&utm_campaign=extensions');
+			var url = args.url + ( typeof args.medium === 'undefined' ? '' : '?pk_campaign=chrome&pk_kwd=' + args.medium);
 
-			tabs.open(url);
+			tabs.open({ url: url, inBackground: args.background !== undefined && args.background });
 		},
 
 		displayApps: function() {

@@ -7,6 +7,10 @@ body {
 	min-width: 200px;
 }
 
+a:focus {
+	outline: 0;
+}
+
 img {
 	display: inline-block;
 	height: 16px;
@@ -58,35 +62,22 @@ img {
 	text-align: center;
 }
 
-#buttons {
+#footer {
+	border-top: 1px solid #ccc;
 	margin-top: 12px;
 	overflow: hidden;
+	padding-top: 6px;
 }
 
-	#buttons button {
-		height: 32px;
-	}
-
-#analyze-headers {
-	float: left;
-	width: 158px;
+#footer a {
+	color: #999;
+	text-decoration: none;
 }
 
-	#analyze-headers.pending {
-		background-image: url('../images/pending2.gif');
-		background-position: center center;
-		background-repeat: no-repeat;
-		text-indent: -999px;
-	}
+#footer a:hover {
+	color: #333;
+}
 
 #options {
-	background-image: url('../images/options.png');
-	background-position: center center;
-	background-repeat: no-repeat;
 	float: right;
-	height: 32px;
-  -webkit-padding-end: 0;
-  -webkit-padding-start: 0;
-	min-width: 32px;
-	width: 32px;
 }

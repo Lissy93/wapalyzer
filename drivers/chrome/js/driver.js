@@ -8,7 +8,9 @@
 	var w = wappalyzer,
 		firstRun = false,
 		upgraded = false,
-		tab, tabCache = {};
+		tab,
+		tabCache = {},
+		headersCache = {};
 
 	w.driver = {
 		/**
@@ -61,6 +63,10 @@
 			} catch(e) { }
 
 			chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+				var
+					hostname,
+					a = document.createElement('a');
+
 				if ( typeof request.id != 'undefined' ) {
 					w.log('request: ' + request.id);
 
@@ -72,17 +78,15 @@
 						case 'analyze':
 							tab = sender.tab;
 
-							var hostname, a = document.createElement('a');
-
 							a.href = tab.url;
 
 							hostname = a.hostname;
 
-							w.analyze(hostname, tab.url, request.subject);
-
-							for ( subject in request.subject ) {
-								tabCache[tab.id].analyzed.push(subject);
+							if ( headersCache[tab.url] !== undefined ) {
+								request.subject.headers = headersCache[tab.url];
 							}
+
+							w.analyze(hostname, tab.url, request.subject);
 
 							break;
 						case 'fetch_headers':
@@ -115,6 +119,35 @@
 				tabCache[tabId] = null;
 			});
 
+			// Live intercept headers using webRequest API
+			chrome.webRequest.onCompleted.addListener(function(details) {
+				var responseHeaders = {};
+
+				if ( details.responseHeaders ) {
+					var uri = details.url.replace(/#.*$/, ''); // Remove hash
+
+					details.responseHeaders.forEach(function(header) {
+						responseHeaders[header.name.toLowerCase()] = header.value || '' + header.binaryValue;
+					});
+
+					if ( headersCache.length > 50 ) {
+						headersCache = {};
+					}
+
+					if ( /text\/html/.test(responseHeaders['content-type']) ) {
+						if ( headersCache[details.url] === undefined ) {
+							headersCache[details.url] = {};
+						}
+
+						for ( var header in responseHeaders ) {
+							headersCache[uri][header] = responseHeaders[header];
+						}
+					}
+
+					w.log(JSON.stringify({ uri: uri, headers: responseHeaders }));
+				}
+			}, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
+
 			if ( firstRun ) {
 				w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
 
@@ -122,16 +155,16 @@
 			}
 
 			if ( upgraded ) {
-				w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+				w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade', background: true });
 
 				upgraded = false;
 			}
 		},
 
 		goToURL: function(args) {
-			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?utm_source=chrome&utm_medium=' + args.medium + '&utm_campaign=extensions');
+			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?pk_campaign=chrome&pk_kwd=' + args.medium);
 
-			window.open(url);
+			chrome.tabs.create({ url: url, active: args.background === undefined || !args.background });
 		},
 
 		/**
@@ -143,8 +176,7 @@
 			if ( tabCache[tab.id] == null ) {
 				tabCache[tab.id] = {
 					count: 0,
-					appsDetected: [],
-					analyzed: []
+					appsDetected: []
 					};
 			}
 
@@ -159,6 +191,7 @@
 					for ( appName in w.detected[tab.url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
+								//chrome.browserAction.setIcon({ tabId: tab.id, '19': 'images/icons/' + appName + '.png' });
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 
 								found = true;
