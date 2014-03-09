@@ -695,6 +695,11 @@
 			"headers": { "Server": "DirectAdmin Daemon v([\\d.]+)\\;version:\\1" },
 			"implies": [ "PHP", "Apache" ]
 		},
+		"Discourse": {
+			"website": "http://www.discourse.org/",
+			"cats": [ 2 ],
+			"env": "Discourse"
+		},
 		"Disqus": {
 			"website": "disqus.com",
 			"cats": [ 15 ],
