@@ -191,7 +191,6 @@
 					for ( appName in w.detected[tab.url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
-								//chrome.browserAction.setIcon({ tabId: tab.id, '19': 'images/icons/' + appName + '.png' });
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 
 								found = true;
