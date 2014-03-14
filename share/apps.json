@@ -2167,10 +2167,10 @@
 			"env": "^pwidget_config$"
 		},
 		"Polymer": {
-			"website": "http://www.polymer-project.org",
+			"website": "polymer-project.org",
 			"cats": [ 12 ],
 			"env": "^Polymer$",
-			"html": "(?:<(?:polymer-)[^>]+|<link[^>]+(?:rel=\"import\")+(?:(.*)/polymer.html\"))",
+			"html": "(?:<(?:polymer-)[^>]+|<link[^>]+(?:rel=\"import\")+(?:(?:.*)/polymer.html\"))",
 			"script": "polymer\\.js"
 		},
 		"Posterous": {
