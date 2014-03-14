@@ -1591,6 +1591,11 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "Lotus-Domino" }
 		},
+		"Lua": {
+			"website": "www.lua.org",
+			"cats": [ 27 ],
+			"headers": { "X-Powered-By": "\\bLua(?: ([\\d.]+))?\\;version:\\1" }
+		},
 		"Magento": {
 			"website": "www.magentocommerce.com",
 			"cats": [ 6 ],
@@ -1971,7 +1976,8 @@
 		"Ophal": {
 			"website": "ophal.org",
 			"cats": [ 1, 11, 18 ],
-			"headers": { "X-Powered-By": "^Ophal/" }
+			"headers": { "X-Powered-By": "^Ophal(?:/([\\d.]+(?:-alpha\\d+)))?\\;version:\\1" },
+			"implies": "Lua"
 		},
 		"Optimizely": {
 			"website": "optimizely.com",
