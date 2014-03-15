@@ -42,6 +42,18 @@
 			27: 'Programming Language',
 			28: 'Operating System',
 			29: 'Search Engine'
+			30: 'Web Mail',
+			31: 'CDN',
+			32: 'Marketing Automation',
+			33: 'Web Server Extensions',
+			34: 'Databases',
+			35: 'Maps',
+			36: 'Advertising Networks',
+			37: 'Network Devices',
+			38: 'Media Servers',
+			39: 'Webcams',
+			40: 'Printers',
+			41: 'Payment Processors'
 			}
 		;
 

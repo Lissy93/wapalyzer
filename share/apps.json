@@ -39,7 +39,8 @@
 		"37": "network-devices",
 		"38": "media-servers",
 		"39": "webcams",
-		"40": "printers"
+		"40": "printers",
+		"41": "payment-processors"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -705,7 +706,7 @@
 			"cats": [ 15 ],
 			"script": "disqus_url",
 			"html": "<div[^>]+id=\"disqus_thread\"",
-			"env": "^DISQUS$"
+			"env": "^DISQUS"
 		},
 		"Django": {
 			"website": "djangoproject.com",
@@ -1041,7 +1042,7 @@
 		"Google AdSense": {
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
-			"env": [ "^google_ad_" ],
+			"env": [ "^google_ad_", "^__google_ad_", "^Goog_AdSense_" ],
 			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad.ca.doubleclick.net" ]
 		},
 		"Google App Engine": {
@@ -1915,6 +1916,11 @@
 			"cats": [ 6 ],
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)"
 		},
+		"Open AdStream": {
+			"website": "xaxis.com",
+			"cats": [ 36 ],
+			"env": "^OAS_AD$"
+		},
 		"Open Web Analytics": {
 			"website": "openwebanalytics.com",
 			"cats": [ 10 ],
@@ -2038,6 +2044,13 @@
 			"website": "parse.ly",
 			"cats": [ 10 ],
 			"env": "^PARSELY$"
+		},
+		"PayPal": {
+			"website": "paypal.com",
+			"cats": [ 41 ],
+			"html": "<input[^>]+_s-xclick",
+			"script": "paypalobjects.com/js",
+			"env": "^PAYPAL$"
 		},
 		"Percussion": {
 			"website": "percussion.com",
@@ -2465,6 +2478,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "SiteEdit" }
 		},
+		"Smart Ad Server": {
+			"website": "smartadserver.com",
+			"cats": [ 36 ],
+			"env": "^SmartAdServer$",
+			"html": "<img[^>]+smartadserver\\.com\\/call"
+		},
 		"Smartstore": {
 			"website": "smartstore.com",
 			"cats": [ 6 ],
@@ -2566,6 +2585,13 @@
 			"website": "store-systems.de",
 			"cats": [ 6 ],
 			"html": "Shopsystem von <a href=[^>]+store-systems\\.de\"|\\.mws_boxTop"
+		},
+		"Stripe": {
+			"website": "stripe.com",
+			"cats": [ 41 ],
+			"html": "<input[^>]+data-stripe",
+			"script": "js.stripe.com",
+			"env": "^Stripe$"
 		},
 		"SublimeVideo": {
 			"website": "sublimevideo.net",

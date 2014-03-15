@@ -252,6 +252,7 @@
 			28, // Operating System
 			15, // Comment System
 			20, // Editor
+			41, // Payment Processor
 			10, // Analytics
 			32, // Marketing Automation
 			31, // CDN
