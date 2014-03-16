@@ -14,7 +14,7 @@ var wappalyzer = (function() {
 	 */
 	var Application = function(app, detected) {
 		this.app             = app;
-		this.confidence      = [];
+		this.confidence      = {};
 		this.confidenceTotal = 0;
 		this.detected        = Boolean(detected);
 		this.version         = '';
@@ -66,7 +66,7 @@ var wappalyzer = (function() {
 			this.detected = true;
 
 			// Set confidence level
-			this.confidence.push(pattern.confidence ? pattern.confidence : 100);
+			this.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence ? pattern.confidence : 100;
 
 			// Detect version number
 			if ( pattern.version ) {
@@ -419,7 +419,7 @@ var wappalyzer = (function() {
 
 							// Apply app confidence to implied app
 							for ( id in confidence ) {
-								apps[implied.string].confidence.push(confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 ));
+								apps[implied.string].confidence[id + ' implied by ' + app] = confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 );
 							}
 						});
 					}
