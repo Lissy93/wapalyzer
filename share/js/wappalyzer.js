@@ -72,8 +72,7 @@ var wappalyzer = (function() {
 			if ( pattern.version ) {
 				var
 					version = pattern.version,
-					matches = pattern.regex.exec(value)
-					;
+					matches = pattern.regex.exec(value);
 
 				w.log({ matches: matches, version: version });
 
@@ -123,8 +122,11 @@ var wappalyzer = (function() {
 				this.slowest.type     = type;
 				this.slowest.regex    = regex;
 			}
+
 			this.regexCount++;
+
 			this.lastTime = new Date().getTime();
+
 			this.timedOut = this.lastTime - this.startTime > 1000;
 		}
 	};
@@ -150,8 +152,7 @@ var wappalyzer = (function() {
 	var parse = function(patterns) {
 		var
 			attrs,
-			parsed = []
-			;
+			parsed = [];
 
 		// Convert single patterns to an array
 		if ( typeof patterns === 'string' ) {
@@ -245,8 +246,7 @@ var wappalyzer = (function() {
 			var
 				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version, id,
 				profiler = new Profiler(),
-				apps     = {}
-				;
+				apps     = {};
 
 			w.log('w.analyze');
 
@@ -277,11 +277,11 @@ var wappalyzer = (function() {
 					switch ( type ) {
 						case 'url':
 							parse(w.apps[app][type]).forEach(function(pattern) {
-
 								if ( pattern.regex.test(url) ) {
 									apps[app].setDetected(pattern, type, url);
 								}
-							profiler.checkPoint(app, type, pattern.regex);
+
+								profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -291,11 +291,11 @@ var wappalyzer = (function() {
 							}
 
 							parse(w.apps[app][type]).forEach(function(pattern) {
-
 								if ( pattern.regex.test(data[type]) ) {
 									apps[app].setDetected(pattern, type, data[type]);
 								}
-							profiler.checkPoint(app, type, pattern.regex);
+
+								profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -307,13 +307,13 @@ var wappalyzer = (function() {
 							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
 
 							parse(w.apps[app][type]).forEach(function(pattern) {
-
 								while ( match = regexScript.exec(data.html) ) {
 									if ( pattern.regex.test(match[2]) ) {
 										apps[app].setDetected(pattern, type, match[2]);
 									}
 								}
-							profiler.checkPoint(app, type, pattern.regex);
+
+								profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -332,12 +332,11 @@ var wappalyzer = (function() {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
 										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
+											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+												apps[app].setDetected(pattern, type, content[2], meta);
+											}
 
-										if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-											apps[app].setDetected(pattern, type, content[2], meta);
-										}
-
-										profiler.checkPoint(app, type, pattern.regex);
+											profiler.checkPoint(app, type, pattern.regex);
 										});
 									}
 								}
@@ -351,10 +350,10 @@ var wappalyzer = (function() {
 
 							for ( header in w.apps[app].headers ) {
 								parse(w.apps[app][type][header]).forEach(function(pattern) {
-
 									if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
 										apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
 									}
+
 									profiler.checkPoint(app, type, pattern.regex);
 								});
 							}
@@ -372,7 +371,8 @@ var wappalyzer = (function() {
 										apps[app].setDetected(pattern, type, data[type][i]);
 									}
 								}
-							profiler.checkPoint(app, type, pattern.regex);
+
+								profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -392,8 +392,10 @@ var wappalyzer = (function() {
 			// Implied applications
 			// Run several passes as implied apps may imply other apps
 			checkImplies = true;
+
 			while ( checkImplies ) {
 				checkImplies = false;
+
 				for ( app in apps ) {
 					confidence = apps[app].confidence;
 
@@ -414,6 +416,7 @@ var wappalyzer = (function() {
 
 							if ( !apps.hasOwnProperty(implied.string) ) {
 								apps[implied.string] = w.detected[url] && w.detected[url][implied.string] ? w.detected[url][implied.string] : new Application(implied.string, true);
+
 								checkImplies = true;
 							}
 
@@ -474,7 +477,9 @@ var wappalyzer = (function() {
 					regexMeta = /<meta[^>]+>/ig;
 
 					while ( match = regexMeta.exec(data.html) ) {
-						if ( !match.length ) { continue; }
+						if ( !match.length ) {
+							continue;
+						}
 
 						match = match[0].match(/name="(author|copyright|country|description|keywords)"[^>]*content="([^"]+)"/i);
 
