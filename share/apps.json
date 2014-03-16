@@ -638,6 +638,13 @@
 			"meta": { "generator": "Danneo CMS ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Apache", "PHP" ]
 		},
+		"Dart": {
+			"website": "dartlang.org",
+			"cats": [ 12 ],
+			"script": "dart(?:\\.min)?\\.js|interop(?:\\.min)?\\.js",
+			"env": "^DartObject$|^DartProxy$",
+			"html": "(?:<script[^>]+(?:src=\"(?:.*\\.dart)\"|type=\"application/dart\"))"
+		},
 		"Darwin": {
 			"website": "opensource.apple.com",
 			"cats": [ 28 ],
