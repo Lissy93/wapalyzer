@@ -1090,7 +1090,7 @@
 		"Google Wallet": {
 			"website": "wallet.google.com",
 			"cats": [ 41 ],
-			"script": [ "checkout.google.com", "wallet.google.com" ]
+			"script": [ "checkout\\.google\\.com", "wallet\\.google\\.com" ]
 		},
 		"Google Web Toolkit": {
 			"website": "developers.google.com/web-toolkit",
@@ -2055,7 +2055,7 @@
 			"website": "paypal.com",
 			"cats": [ 41 ],
 			"html": "<input[^>]+_s-xclick",
-			"script": "paypalobjects.com/js",
+			"script": "paypalobjects\\.com/js",
 			"env": "^PAYPAL$"
 		},
 		"Percussion": {
@@ -2596,7 +2596,7 @@
 			"website": "stripe.com",
 			"cats": [ 41 ],
 			"html": "<input[^>]+data-stripe",
-			"script": "js.stripe.com",
+			"script": "js\\.stripe\\.com",
 			"env": "^Stripe$"
 		},
 		"SublimeVideo": {
