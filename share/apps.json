@@ -2294,6 +2294,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "^(?:RCMS|ReallyCMS)" }
 		},
+		"React": {
+			"website": "facebook.github.io/react",
+			"cats": [ 12 ],
+			"script": [ "react(?:\\-with\\-addons)?(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/react(\\.min)?\\.js\\;version:\\1", "react.*\\.js" ],
+			"env": "^React$"
+		},
 		"reCAPTCHA": {
 			"website": "recaptcha.net",
 			"cats": [ 16 ],
@@ -2885,6 +2891,12 @@
 			"script": "vs350\\.js",
 			"html": "<a[^>]+>Powered By VP-ASP Shopping Cart</a>",
 			"implies": "Microsoft ASP.NET"
+		},
+		"Vue.js": {
+			"website": "vuejs.org",
+			"cats": [ 12 ],
+			"script": [ "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/vue(\\.min)?\\.js\\;version:\\1", "vue.*\\.js" ],
+			"env": "^Vue$"
 		},
 		"W3Counter": {
 			"website": "www.w3counter.com",
