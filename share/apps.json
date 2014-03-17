@@ -212,7 +212,7 @@
 		"ATEN": {
 			"website": "www.aten.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "ATEN HTTP Server(\\(V?([\\d\\.]+)\\))?\\;version:\\2" }
+			"headers": { "Server": "ATEN HTTP Server(?:\\(V?(?:[\\d\\.]+)\\))?\\;version:\\1" }
 		},
 		"ATG Web Commerce": {
 			"website": "oracle.com/us/products/applications/web-commerce/atg",
@@ -795,7 +795,7 @@
 		"eHTTP": {
 			"website": "???",
 			"cats": [ 22 ],
-			"headers": { "Server": "\\beHTTP( v?([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "\\beHTTP(?: v?([\\d\\.]+))?\\;version:\\1" },
 			"implies": [ "HP ProCurve"]
 		},
 		"ELOG": {
@@ -866,7 +866,7 @@
 		"EWS-NIC4": {
 			"website": "dell.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "EWS-NIC4(\\/([\\d\\.a-z]+))?\\;version:\\2" },
+			"headers": { "Server": "EWS-NIC4(?:\\/([\\d\\.a-z]+))?\\;version:\\1" },
 			"implies": "Dell"
 		},
 		"Exhibit": {
@@ -1128,7 +1128,7 @@
 		"Highstock": {
 			"website": "highcharts.com/products/highstock",
 			"cats": [ 25 ],
-			"script": "highstock(\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\2"
+			"script": "highstock(?:\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\1"
 		},
 		"Hogan.js": {
 			"website": "twitter.github.com/hogan.js",
@@ -1297,7 +1297,7 @@
 		"Jetty": {
 			"website": "www.eclipse.org/jetty",
 			"cats": [ 22 ],
-			"headers": { "Server": "Jetty(\\(([\\d\\.]+\\d+))?\\;version:\\2" },
+			"headers": { "Server": "Jetty(?:\\(([\\d\\.]+\\d+))?\\;version:\\1" },
 			"implies": "Java"
 		},
 		"Jirafe": {
@@ -1456,7 +1456,7 @@
 		"LabVIEW": {
 			"website": "ni.com/labview",
 			"cats": [ 22 ],
-			"headers": { "Server": "LabVIEW(/([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "LabVIEW(?:/([\\d\\.]+))?\\;version:\\1" }
 		},
 		"Laravel": {
 			"website": "laravel.com",
@@ -1479,7 +1479,7 @@
 		"libwww-perl-daemon": {
 			"website": "search.cpan.org/~gaas/HTTP-Daemon-6.01/lib/HTTP/Daemon.pm",
 			"cats": [ 22 ],
-			"headers": { "Server": "libwww-perl-daemon(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "libwww-perl-daemon(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": "Perl"
 		},
 		"Liferay": {
@@ -1547,7 +1547,7 @@
 		"Logitech Media Server": {
 			"website": "www.mysqueezebox.com",
 			"cats": [ 22, 38 ],
-			"headers": { "Server": "Logitech Media Server( \\(([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "Logitech Media Server(?: \\(([\\d\\.]+))?\\;version:\\1" }
 		},
 		"Lotus Domino": {
 			"website": "www-01.ibm.com/software/lotus/products/domino",
@@ -1678,7 +1678,7 @@
 		"mod_auth_pam": {
 			"website": "pam.sourceforge.net/mod_auth_pam",
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_auth_pam(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_auth_pam(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": "Apache"
 		},
 		"mod_fastcgi": {
@@ -1690,13 +1690,13 @@
 		"mod_jk": {
 			"website": "tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html",
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_jk(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_jk(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": [ "Apache Tomcat", "Apache" ]
 		},
 		"mod_perl": {
 			"website": "perl.apache.org",
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_perl(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": [ "Perl", "Apache" ]
 		},
 		"mod_python": {
@@ -2534,7 +2534,7 @@
 			"website": "splunk.com",
 			"cats": [ 19 ],
 			"meta": { "author": "Splunk Inc\\;confidence:50" },
-			"html": "<p class=\"footer\">&copy; [-0-9]+ Splunk Inc.( Splunk ([\\d\\.]+( build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\2"
+			"html": "<p class=\"footer\">&copy; [-0-9]+ Splunk Inc.(?: Splunk ([\\d\\.]+( build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1"
 		},
 		"Splunkd": {
 			"website": "splunk.com",
