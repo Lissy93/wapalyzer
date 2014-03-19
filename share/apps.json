@@ -2794,7 +2794,7 @@
 			"website": "umbraco.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "umbraco" },
-			"headers": { "X-Umbraco-Version": ".+" },
+			"headers": { "X-Umbraco-Version": "(.*)\\;version:\\1" },
 			"html": "powered by <a href=[^>]+umbraco",
 			"implies": "Microsoft ASP.NET"
 		},
