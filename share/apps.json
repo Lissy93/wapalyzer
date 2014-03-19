@@ -60,7 +60,7 @@
 		"2z Project": {
 			"website": "2zproject-cms.ru",
 			"cats": [ 1 ],
-			"meta": { "generator": "2z project ([\\d.]+);version:\\1" }
+			"meta": { "generator": "2z project ([\\d.]+)\\;version:\\1" }
 		},
 		"3dCart": {
 			"website": "www.3dcart.com",
@@ -3010,7 +3010,7 @@
 			"env": "woocommerce",
 			"html": "<!-- WooCommerce",
 			"script": "woocommerce",
-			"meta": { "generator": "WooCommerce ([\\d.]+);version:\\1" },
+			"meta": { "generator": "WooCommerce ([\\d.]+)\\;version:\\1" },
 			"implies": [ "WordPress", "PHP" ]
 		},
 		"Woopra": {
