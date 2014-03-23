@@ -3106,6 +3106,13 @@
 			"cats": [ 2 ],
 			"html": "Powered by <a href=\"[^>]+yabbforum"
 		},
+		"Yahoo Advertising": {
+			"website": "http://advertising.yahoo.com",
+			"cats": [ 36 ],
+			"html": [ "<iframe[^>]+adserver\\.yahoo\\.com", "<img[^>]+clicks\\.beap\\.bc\\.yahoo\\.com" ],
+			"env": [ "^adxinserthtml$" ],
+			"script": [ "adinterax.com" ]
+		},
 		"Yahoo! Ecommerce": {
 			"website": "smallbusiness.yahoo.com/ecommerce",
 			"cats": [ 6 ],
