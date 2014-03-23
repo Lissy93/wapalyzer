@@ -60,7 +60,7 @@
 		"2z Project": {
 			"website": "2zproject-cms.ru",
 			"cats": [ 1 ],
-			"meta": { "generator": "2z project ([\\d.]+);version:\\1" }
+			"meta": { "generator": "2z project ([\\d.]+)\\;version:\\1" }
 		},
 		"3dCart": {
 			"website": "www.3dcart.com",
@@ -223,7 +223,7 @@
 		"ATEN": {
 			"website": "www.aten.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "ATEN HTTP Server(\\(V?([\\d\\.]+)\\))?\\;version:\\2" }
+			"headers": { "Server": "ATEN HTTP Server(?:\\(V?(?:[\\d\\.]+)\\))?\\;version:\\1" }
 		},
 		"ATG Web Commerce": {
 			"website": "oracle.com/us/products/applications/web-commerce/atg",
@@ -638,6 +638,13 @@
 			"meta": { "generator": "Danneo CMS ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Apache", "PHP" ]
 		},
+		"Dart": {
+			"website": "dartlang.org",
+			"cats": [ 27 ],
+			"script": "dart(?:\\.min)?\\.js|interop(?:\\.min)?\\.js",
+			"env": "^DartObject$|^DartProxy$",
+			"html": "(?:<script[^>]+(?:src=\"(?:.*\\.dart)\"|type=\"application/dart\"))"
+		},
 		"Darwin": {
 			"website": "opensource.apple.com",
 			"cats": [ 28 ],
@@ -811,7 +818,7 @@
 		"eHTTP": {
 			"website": "???",
 			"cats": [ 22 ],
-			"headers": { "Server": "\\beHTTP( v?([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "\\beHTTP(?: v?([\\d\\.]+))?\\;version:\\1" },
 			"implies": [ "HP ProCurve"]
 		},
 		"ELOG": {
@@ -882,7 +889,7 @@
 		"EWS-NIC4": {
 			"website": "dell.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "EWS-NIC4(\\/([\\d\\.a-z]+))?\\;version:\\2" },
+			"headers": { "Server": "EWS-NIC4(?:\\/([\\d\\.a-z]+))?\\;version:\\1" },
 			"implies": "Dell"
 		},
 		"Exhibit": {
@@ -1162,7 +1169,7 @@
 		"Highstock": {
 			"website": "highcharts.com/products/highstock",
 			"cats": [ 25 ],
-			"script": "highstock(\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\2"
+			"script": "highstock(?:\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\1"
 		},
 		"Hogan.js": {
 			"website": "twitter.github.com/hogan.js",
@@ -1336,7 +1343,7 @@
 		"Jetty": {
 			"website": "www.eclipse.org/jetty",
 			"cats": [ 22 ],
-			"headers": { "Server": "Jetty(\\(([\\d\\.]+\\d+))?\\;version:\\2" },
+			"headers": { "Server": "Jetty(?:\\(([\\d\\.]+\\d+))?\\;version:\\1" },
 			"implies": "Java"
 		},
 		"Jirafe": {
@@ -1495,7 +1502,7 @@
 		"LabVIEW": {
 			"website": "ni.com/labview",
 			"cats": [ 22 ],
-			"headers": { "Server": "LabVIEW(/([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "LabVIEW(?:/([\\d\\.]+))?\\;version:\\1" }
 		},
 		"Laravel": {
 			"website": "laravel.com",
@@ -1518,7 +1525,7 @@
 		"libwww-perl-daemon": {
 			"website": "search.cpan.org/~gaas/HTTP-Daemon-6.01/lib/HTTP/Daemon.pm",
 			"cats": [ 22 ],
-			"headers": { "Server": "libwww-perl-daemon(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "libwww-perl-daemon(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": "Perl"
 		},
 		"Liferay": {
@@ -1591,7 +1598,7 @@
 		"Logitech Media Server": {
 			"website": "www.mysqueezebox.com",
 			"cats": [ 22, 38 ],
-			"headers": { "Server": "Logitech Media Server( \\(([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "Logitech Media Server(?: \\(([\\d\\.]+))?\\;version:\\1" }
 		},
 		"Lotus Domino": {
 			"website": "www-01.ibm.com/software/lotus/products/domino",
@@ -1738,7 +1745,7 @@
 		"mod_auth_pam": {
 			"website": "pam.sourceforge.net/mod_auth_pam",
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_auth_pam(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_auth_pam(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": "Apache"
 		},
 		"mod_fastcgi": {
@@ -1750,13 +1757,13 @@
 		"mod_jk": {
 			"website": "tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html",
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_jk(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_jk(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": [ "Apache Tomcat", "Apache" ]
 		},
 		"mod_perl": {
 			"website": "perl.apache.org",
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_perl(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": [ "Perl", "Apache" ]
 		},
 		"mod_python": {
@@ -2287,6 +2294,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "^(?:RCMS|ReallyCMS)" }
 		},
+		"React": {
+			"website": "facebook.github.io/react",
+			"cats": [ 12 ],
+			"script": [ "react(?:\\-with\\-addons)?(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/react(\\.min)?\\.js\\;version:\\1", "react.*\\.js" ],
+			"env": "^React$"
+		},
 		"reCAPTCHA": {
 			"website": "recaptcha.net",
 			"cats": [ 16 ],
@@ -2636,7 +2649,7 @@
 			"website": "splunk.com",
 			"cats": [ 19 ],
 			"meta": { "author": "Splunk Inc\\;confidence:50" },
-			"html": "<p class=\"footer\">&copy; [-0-9]+ Splunk Inc.( Splunk ([\\d\\.]+( build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\2"
+			"html": "<p class=\"footer\">&copy; [-0-9]+ Splunk Inc.(?: Splunk ([\\d\\.]+( build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1"
 		},
 		"Splunkd": {
 			"website": "splunk.com",
@@ -2781,7 +2794,7 @@
 			"website": "umbraco.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "umbraco" },
-			"headers": { "X-Umbraco-Version": ".+" },
+			"headers": { "X-Umbraco-Version": "(.*)\\;version:\\1" },
 			"html": "powered by <a href=[^>]+umbraco",
 			"implies": "Microsoft ASP.NET"
 		},
@@ -2878,6 +2891,12 @@
 			"script": "vs350\\.js",
 			"html": "<a[^>]+>Powered By VP-ASP Shopping Cart</a>",
 			"implies": "Microsoft ASP.NET"
+		},
+		"Vue.js": {
+			"website": "vuejs.org",
+			"cats": [ 12 ],
+			"script": [ "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/vue(\\.min)?\\.js\\;version:\\1", "vue.*\\.js" ],
+			"env": "^Vue$"
 		},
 		"W3Counter": {
 			"website": "www.w3counter.com",
@@ -2991,7 +3010,7 @@
 			"env": "woocommerce",
 			"html": "<!-- WooCommerce",
 			"script": "woocommerce",
-			"meta": { "generator": "WooCommerce ([\\d.]+);version:\\1" },
+			"meta": { "generator": "WooCommerce ([\\d.]+)\\;version:\\1" },
 			"implies": [ "WordPress", "PHP" ]
 		},
 		"Woopra": {
