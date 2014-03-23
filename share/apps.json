@@ -2376,7 +2376,7 @@
 		"Sarka-SPIP": {
 			"website": "sarka-spip.net",
 			"cats": [ 1 ],
-			"meta": { "generator": "Sarka-SPIP(?:\\s)?\\;version:\\1" },
+			"meta": { "generator": "Sarka-SPIP(?:\\s([\\d.]+))?\\;version:\\1" },
 			"implies": "SPIP"
 		},
 		"Scala": {
