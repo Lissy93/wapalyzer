@@ -209,6 +209,12 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "ATS/?([\\d.]+)?\\;version:\\1" }
 		},
+		"AppNexus": {
+			"website": "appnexus.com",
+			"cats": [ 36 ],
+			"html": "<(?:iframe|img)[^>]+adnxs.net",
+			"script": "adnxs.com"
+		},
 		"Arc Forum": {
 			"website": "arclanguage.org",
 			"cats": [ 2 ],
