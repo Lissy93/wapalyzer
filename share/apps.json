@@ -212,8 +212,8 @@
 		"AppNexus": {
 			"website": "appnexus.com",
 			"cats": [ 36 ],
-			"html": "<(?:iframe|img)[^>]+adnxs.net",
-			"script": "adnxs.com"
+			"html": "<(?:iframe|img)[^>]+adnxs\\.net",
+			"script": "adnxs\\.(?:net|com)"
 		},
 		"Arc Forum": {
 			"website": "arclanguage.org",
@@ -908,7 +908,7 @@
 			"website": "expressjs.com",
 			"cats": [ 18 ],
 			"headers": { "X-Powered-By": "^Express$" },
-			"implies": [ "Connect", "node.js" ]
+			"implies": [ "node.js" ]
 		},
 		"ExpressionEngine": {
 			"website": "expressionengine.com",
@@ -2687,9 +2687,9 @@
 			"meta": { "generator": "Textpattern" }
 		},
 		"three.js": {
-			"website": "mrdoob.github.com/three.js",
+			"website": "threejs.org",
 			"cats": [ 25 ],
-			"script": "three\\.js",
+			"script": "three(?:\\.min)?\\.js",
 			"env": "^THREE$"
 		},
 		"Tiki Wiki CMS Groupware": {
