@@ -4,7 +4,7 @@
 import os
 import sys
 import PyV8
-import urllib
+import requests
 from urlparse import urlparse
 
 try:
@@ -30,7 +30,7 @@ class Wappalyzer(object):
         ctxt = PyV8.JSContext()
         ctxt.enter()
 
-        f1 = open(os.path.join(self.file_dir, '../php/js/wappalyzer.js'))
+        f1 = open(os.path.join(self.file_dir, '../../share/js/wappalyzer.js'))
         f2 = open(os.path.join(self.file_dir, '../php/js/driver.js'))
         ctxt.eval(f1.read())
         ctxt.eval(f2.read())
@@ -38,7 +38,7 @@ class Wappalyzer(object):
         f2.close()
 
         host = urlparse(self.url).hostname
-        html = urllib.urlopen(self.url).read()
+        html = requests.get(self.url).text
 
         data = {'host': host, 'url': self.url, 'html': html, 'headers': {}}
         apps = json.dumps(self.apps)
