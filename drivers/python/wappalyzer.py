@@ -4,7 +4,7 @@
 import os
 import sys
 import PyV8
-import urllib
+import requests
 from urlparse import urlparse
 
 try:
@@ -18,7 +18,7 @@ class Wappalyzer(object):
     def __init__(self, url):
         self.file_dir = os.path.dirname(__file__)
 
-        f = open(os.path.join(self.file_dir, '../../share/apps.json'))
+        f = open(os.path.join(self.file_dir, 'apps.json'))
         data = json.loads(f.read())
         f.close()
 
@@ -30,7 +30,7 @@ class Wappalyzer(object):
         ctxt = PyV8.JSContext()
         ctxt.enter()
 
-        f1 = open(os.path.join(self.file_dir, '../php/js/wappalyzer.js'))
+        f1 = open(os.path.join(self.file_dir, 'js/wappalyzer.js'))
         f2 = open(os.path.join(self.file_dir, '../php/js/driver.js'))
         ctxt.eval(f1.read())
         ctxt.eval(f2.read())
@@ -38,9 +38,11 @@ class Wappalyzer(object):
         f2.close()
 
         host = urlparse(self.url).hostname
-        html = urllib.urlopen(self.url).read()
+        response = requests.get(self.url)
+        html = response.text
+        headers = dict(response.headers)
 
-        data = {'host': host, 'url': self.url, 'html': html, 'headers': {}}
+        data = {'host': host, 'url': self.url, 'html': html, 'headers': headers}
         apps = json.dumps(self.apps)
         categories = json.dumps(self.categories)
         return ctxt.eval("w.apps = %s; w.categories = %s; w.driver.data = %s; w.driver.init();" % (apps, categories, json.dumps(data)))
