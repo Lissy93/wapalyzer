@@ -26,12 +26,6 @@
 	initTab = function(tab) {
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
 
-		if ( !sp.prefs.urlbar ) {
-			createWidget();
-
-			w.driver.displayApps();
-		}
-
 		tab.on('ready', function(tab) {
 			var worker = tab.attach({
 				contentScriptFile: data.url('js/tab.js')
@@ -63,14 +57,18 @@
 		w.driver.displayApps();
 	});
 
-	addIcon = function(url) {
-		var icon = getDocument().createElement('image');
+	addIcon = function(appName) {
+		var
+			icon        = getDocument().createElement('image'),
+			url         = appName !== undefined ? 'images/icons/' + appName + '.png' : 'images/icon32.png',
+			tooltipText = ( appName !== undefined ? appName + ' - ' + require('sdk/l10n').get('clickForDetails') + ' - ' : '' ) + require('sdk/l10n').get('name');
 
-		icon.setAttribute('src',    data.url(url));
-		icon.setAttribute('class',  'wappalyzer-icon');
-		icon.setAttribute('width',  '16');
-		icon.setAttribute('height', '16');
-		icon.setAttribute('style',  'margin: 0 1px;');
+		icon.setAttribute('src',         data.url(url));
+		icon.setAttribute('class',       'wappalyzer-icon');
+		icon.setAttribute('width',       '16');
+		icon.setAttribute('height',      '16');
+		icon.setAttribute('style',       'margin: 0 1px;');
+		icon.setAttribute('tooltiptext', tooltipText);
 
 		getUrlBar().appendChild(icon);
 
@@ -282,30 +280,32 @@
 				// Add icons
 				if ( count ) {
 					for ( appName in tabCache[tabs.activeTab.id].appsDetected ) {
-						addIcon('images/icons/' + appName + '.png');
+						addIcon(appName);
 					}
 				} else {
-					addIcon('images/icon32.png');
+					addIcon();
 				}
-			} else if ( count ) {
-				// Find the main application to display
-				var
-					appName,
-					found = false;
-
+			} else {
 				widget.contentURL = data.url('images/icon32_hot.png');
 
-				w.driver.categoryOrder.forEach(function(match) {
-					for ( appName in w.detected[url] ) {
-						w.apps[appName].cats.forEach(function(cat) {
-							if ( cat == match && !found ) {
-								widget.contentURL = data.url('images/icons/' + appName + '.png'),
+				if ( count ) {
+					// Find the main application to display
+					var
+						appName,
+						found = false;
 
-								found = true;
-							}
-						});
-					}
-				});
+					w.driver.categoryOrder.forEach(function(match) {
+						for ( appName in w.detected[url] ) {
+							w.apps[appName].cats.forEach(function(cat) {
+								if ( cat == match && !found ) {
+									widget.contentURL = data.url('images/icons/' + appName + '.png'),
+
+									found = true;
+								}
+							});
+						}
+					});
+				}
 			}
 
 			panel.port.emit('displayApps', { tabCache: tabCache[tabs.activeTab.id], apps: w.apps, categories: w.categories, categoryNames: categoryNames });
