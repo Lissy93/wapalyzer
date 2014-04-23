@@ -176,7 +176,8 @@
 		"Anchor CMS": {
 			"website": "anchorcms.com",
 			"cats": [ 1, 11 ],
-			"meta": { "generator": "Anchor CMS" }
+			"meta": { "generator": "Anchor CMS" },
+			"implies": [ "PHP", "MySQL" ]
 		},
 		"AngularJS": {
 			"website": "angularjs.org",
@@ -864,7 +865,8 @@
 		"Ember.js": {
 			"website": "emberjs.com",
 			"cats": [ 12 ],
-			"env": "^Ember$"
+			"env": "^Ember$",
+			"implies": "Handlebars"
 		},
 		"Embedthis-http": {
 			"website": "github.com/embedthis/http",
@@ -1185,7 +1187,7 @@
 			"website": "handlebarsjs.com",
 			"cats": [ 12 ],
 			"env": "^Handlebars$",
-			"script": "handlebars(?:\\.runtime)(?:-v[\\d.]+)?\\;version:\\1(?:\\.min)?\\.js)",
+			"script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
 			"html": "<[^>]*type=[^>]text\\/x-handlebars-template"
 		},
 		"HeadJS": {
@@ -1444,7 +1446,8 @@
 		"jqPlot": {
 			"website": "www.jqplot.com",
 			"cats": [ 25 ],
-			"script": "jqplot.*\\.js"
+			"script": "jqplot.*\\.js",
+			"implies": "jQuery"
 		},
 		"jQTouch": {
 			"website": "jqtouch.com",
@@ -1818,7 +1821,7 @@
 		"MochiKit": {
 			"website": "mochikit.com",
 			"cats": [ 12 ],
-			"script": "MochiKit\\.js",
+			"script": "MochiKit(\\.min)?\\.js",
 			"env": "^MochiKit$"
 		},
 		"Modernizr": {
@@ -1905,8 +1908,20 @@
 		"Mollom": {
 			"website": "mollom.com",
 			"cats": [ 16 ],
-			"script": "mollom\\.js",
+			"script": "mollom(\\.min)?\\.js",
 			"html": "<img[^>]+\\.mollom\\.com"
+		},
+		"Moment.js": {
+			"website": "momentjs.com",
+			"cats": [ 12 ],
+			"script": "moment(\\.min)?\\.js",
+			"env": "^moment$"
+		},
+		"Moment Timezone": {
+			"website": "momentjs.com/timezone/",
+			"cats": [ 12 ],
+			"script": "moment-timezone(\\-data)?(\\.min)?\\.js",
+			"implies": "Moment.js"
 		},
 		"Mondo Media": {
 			"website": "mondo-media.de",
@@ -1931,7 +1946,7 @@
 		"Mono.net": {
 			"website": "www.mono.net",
 			"cats": [ 1 ],
-			"script": "monotracker\\.js",
+			"script": "monotracker(\\.min)?\\.js",
 			"env": "_monoTracker",
 			"html": "var u=\\(\\('https:' == d\\.location\\.protocol\\) \\? 'https://resellerstat\\.mono\\.net/mono/' : 'http://resellerstat\\.mono\\.net/mono/'\\);",
 			"implies": "Piwik"
@@ -1947,7 +1962,7 @@
 		"Moogo": {
 			"website": "www.moogo.com",
 			"cats": [ 1 ],
-			"script": "kotisivukone\\.js"
+			"script": "kotisivukone(\\.min)?\\.js"
 		},
 		"MooTools": {
 			"website": "mootools.net",
@@ -1969,13 +1984,15 @@
 		"Mustache": {
 			"website": "mustache.github.com",
 			"cats": [ 12 ],
+			"script": "mustache(\\.min)?\\.js",
 			"env": "^Mustache$"
 		},
 		"MyBB": {
 			"website": "www.mybboard.net",
 			"cats": [ 2 ],
 			"html": "(?:<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB)",
-			"env": "^MyBB$"
+			"env": "^MyBB$",
+			"implies": [ "PHP", "MySQL" ]
 		},
 		"MyBlogLog": {
 			"website": "www.mybloglog.com",
@@ -2250,7 +2267,8 @@
 			"website": "phpnuke.org",
 			"cats": [ 2 ],
 			"meta": { "generator": "PHP-Nuke" },
-			"html": "<[^>]+Powered by PHP-Nuke"
+			"html": "<[^>]+Powered by PHP-Nuke",
+			"implies": "PHP"
 		},
 		"phpPgAdmin": {
 			"website": "phppgadmin.sourceforge.net",
