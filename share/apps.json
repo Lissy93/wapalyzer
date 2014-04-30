@@ -843,7 +843,7 @@
 			"website": "???",
 			"cats": [ 22 ],
 			"headers": { "Server": "\\beHTTP(?: v?([\\d\\.]+))?\\;version:\\1" },
-			"implies": [ "HP ProCurve"]
+			"implies": [ "HP ProCurve" ]
 		},
 		"ELOG": {
 			"website": "midas.psi.ch/elog",
@@ -1073,7 +1073,7 @@
 			"cats": [ 11 ],
 			"meta": { "generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1" },
 			"headers": { "X-Ghost-Cache-Status": ".*" }
- 		},
+		},
 		"GoAhead": {
 			"website": "embedthis.com/products/goahead/index.html",
 			"cats": [ 22 ],
@@ -1412,7 +1412,7 @@
 		},
 		"Jekyll": {
 			"website": "jekyllrb.com",
-			"cats": [ 1, 11],
+			"cats": [ 1, 11 ],
 			"meta": { "generator": "Jekyll(?:v[\\d.]+)?\\;version:\\1" }
 		},
 		"Jetty": {
@@ -1580,7 +1580,7 @@
 			"website": "www.canon.com",
 			"cats": [ 22 ],
 			"headers": { "Server": "KS_HTTP\\/?([\\d\\.]+)?\\;version:\\1" },
-			"implies": [ "Canon"]
+			"implies": [ "Canon" ]
 		},
 		"LabVIEW": {
 			"website": "ni.com/labview",
@@ -2027,7 +2027,7 @@
 		"Nette Framework": {
 			"website": "nette.org",
 			"cats": [ 18 ],
-			"headers": {"X-Powered-By": "Nette Framework"},
+			"headers": { "X-Powered-By": "Nette Framework" },
 			"implies": "PHP"
 		},
 		"New Relic": {
@@ -2265,7 +2265,7 @@
 			"website": "www.phpmyadmin.net",
 			"cats": [ 3 ],
 			"html": "(?:PMA_sendHeaderLocation\\(|<title>phpMyAdmin</title>)",
-			"env":	"pma_absolute_uri",
+			"env": "pma_absolute_uri",
 			"implies": [ "PHP", "MySQL" ]
 		},
 		"PHP-Nuke": {
@@ -2456,7 +2456,7 @@
 			"website": "recaptcha.net",
 			"cats": [ 16 ],
 			"script": "(?:api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
-			"html": "(?:<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha)",
+			"html": "(?:<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha')",
 			"env": "^Recaptcha$"
 		},
 		"Red Hat": {
@@ -3384,7 +3384,7 @@
 		"Zeuscart": {
 			"website": "zeuscart.com",
 			"cats": [ 6 ],
-			"url": "\\?do=prodetail&action=show&prodid=",
+			"url": "\\?do=prodetail&action=show(?:(?:popup)?prod)?&prodid=\\d",
 			"html": "<form name=\"product\" method=\"post\" action=\"[^\"]+\\?do=addtocart&prodid=\\d+\"(?!<\\/form>).+<input type=\"hidden\" name=\"addtocart\" value=\"\\d+\">",
 			"implies": "PHP"
 		},
