@@ -1655,7 +1655,7 @@
 			"cats": [ 15 ],
 			"html": "<[^>]+(?:id|class)=\"livefyre",
 			"script": "livefyre_init\\.js",
-			"env": [ "^fyre$", "^FyreLoader$", "^LF$" ]
+			"env": [ "^fyre$", "^FyreLoader$" ]
 		},
 		"LiveJournal": {
 			"website": "www.livejournal.com",
@@ -3385,7 +3385,7 @@
 			"website": "zeuscart.com",
 			"cats": [ 6 ],
 			"url": "\\?do=prodetail&action=show(?:(?:popup)?prod)?&prodid=\\d",
-			"html": "<form name=\"product\" method=\"post\" action=\"[^\"]+\\?do=addtocart&prodid=\\d+\"(?!<\\/form>).+<input type=\"hidden\" name=\"addtocart\" value=\"\\d+\">",
+			"html": "<form name=\"product\" method=\"post\" action=\"[^\"]+\\?do=addtocart&prodid=\\d+\"(?:(?!<\\/form>).)+<input type=\"hidden\" name=\"addtocart\" value=\"\\d+\">",
 			"implies": "PHP"
 		},
 		"Zinnia": {
