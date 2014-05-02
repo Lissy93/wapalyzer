@@ -116,6 +116,13 @@
 			"cats": [ 20 ],
 			"meta": { "generator": "Adobe GoLive(?:\\s([\\d.]+))?\\;version:\\1" }
 		},
+		"Adobe RoboHelp": {
+			"website": "adobe.com/products/robohelp.html",
+			"cats": [ 4 ],
+			"meta": { "generator": "^Adobe RoboHelp(?: ([\\d]+))?\\;version:\\1" },
+			"script": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
+			"env": "^gbWh(?:Ver|Lang|Msg|Util|Proxy)$"
+		},
 		"AdRiver": {
 			"website": "adriver.ru",
 			"cats": [ 36 ],
