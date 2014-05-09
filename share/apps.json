@@ -516,6 +516,7 @@
 			"website": "codeigniter.com",
 			"cats": [ 18 ],
 			"headers": { "Set-Cookie": "(?:exp_last_activity|exp_tracker|ci_session)" },
+			"html": "<input[^>]+name=\"ci_csrf_token\"\\;version:2+",
 			"implies": "PHP"
 		},
 		"CodeMirror": {
