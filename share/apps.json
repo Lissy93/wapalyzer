@@ -356,6 +356,12 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "Boa\\/?([\\d\\.a-z]+)?\\;version:\\1" }
 		},
+		"Bonfire": {
+			"website": "cibonfire.com",
+			"cats": [ 18 ],
+			"html": [ "Powered by <a[^>]+href=\"https?://(?:www\\.)?cibonfire\\.com[^>]*>Bonfire v([^<]+)\\;version:\\1",
+			"implies": "CodeIgniter"
+		},
 		"Brother": {
 			"website": "www.brother.com",
 			"cats": [ 40 ]
