@@ -11,6 +11,7 @@
 		Tab,
 		Panel,
 		Widget,
+		widget, // Keep track of a global widget instance. A widget per window does not work.
 		UrlBar;
 
 	exports.main = function(options, callbacks) {
@@ -34,24 +35,26 @@
 			self = this,
 			tab;
 
+		w.log('new Window');
+
 		this.window = win;
 		this.tabs   = {};
 		this.urlBar = null;
 		this.widget = null;
 
 		if ( require('sdk/simple-prefs').prefs.urlbar ) {
-			this.urlBar = new UrlBar();
+			this.urlBar = new UrlBar(this.window);
 		} else {
-			this.widget = new Widget();
+			this.widget = widget || ( widget = new Widget() );
 		}
 
 		require('sdk/simple-prefs').on('urlbar', function() {
 			self.destroy();
 
 			if ( require('sdk/simple-prefs').prefs.urlbar ) {
-				self.urlBar = new UrlBar();
+				self.urlBar = new UrlBar(this.window);
 			} else {
-				self.widget = new Widget();
+				self.widget = widget || ( widget = new Widget() );
 			}
 
 			self.displayApps();
@@ -213,7 +216,7 @@
 		this.panel = new Panel();
 
 		this.widget = require('sdk/widget').Widget({
-			id: 'wappalyzer-' + ( new Date() ).getTime() + ( Math.floor( Math.random() * 900 ) + 100 ),
+			id: 'wappalyzer',
 			label: 'Wappalyzer',
 			contentURL: require('sdk/self').data.url('images/icon32.png'),
 			panel: this.panel.get()
@@ -236,7 +239,7 @@
 		this.widget.destroy();
 	};
 
-	UrlBar = function() {
+	UrlBar = function(window) {
 		var self = this;
 
 		this.panel = new Panel();
@@ -245,8 +248,17 @@
 			self.panel.get().show();
 		}
 
+		// Can't get document from sdk/windows. Use active window instead.
+		// This breaks switching between URL bar and widget with multiple windows open
 		this.document = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator)
 			.getMostRecentWindow('navigator:browser').document;
+
+		if ( this.document.getElementById('wappalyzer-urlbar') ) {
+			this.urlBar = this.document.getElementById('wappalyzer-urlbar');
+
+			return;
+		}
+		//
 
 		this.urlBar = this.document.createElement('hbox');
 
