@@ -2721,6 +2721,12 @@
 			"html": " <(?:script|link)[^>].*com_sobipro.*>",
 			"implies": "Joomla"
 		},
+		"Solodev": {
+			"website": "www.solodev.com",
+			"cats": [ 1 ],
+			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
+			"implies": "PHP"
+		},		
 		"SoundManager": {
 			"website": "www.schillmania.com/projects/soundmanager2",
 			"cats": [ 12 ],
