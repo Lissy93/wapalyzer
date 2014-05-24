@@ -222,7 +222,7 @@
 		"Apache Tomcat": {
 			"website": "tomcat.apache.org",
 			"cats": [ 22 ],
-			"headers": { "Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1<: " }
+			"headers": { "Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1<:" }
 		},
 		"Apache Traffic Server": {
 			"website": "trafficserver.apache.org/",
@@ -3429,6 +3429,12 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
+		},
+		"October CMS": {
+			"website": "octobercms.com",
+			"cats": [ 1 ],
+			"headers": { "Set-Cookie": "october_session=" },
+			"implies": "Laravel"
 		}
 	}
 }

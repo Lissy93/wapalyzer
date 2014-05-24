@@ -78,7 +78,7 @@ var wappalyzer = (function() {
 				if ( matches ) {
 					matches.forEach(function(match, i) {
 						// Parse ternary operator
-						var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.+)$').exec(version);
+						var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.*)$').exec(version);
 
 						if ( ternary && ternary.length === 3 ) {
 							w.log({ match: match, i: i, ternary: ternary });
