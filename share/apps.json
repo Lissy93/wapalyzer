@@ -361,6 +361,7 @@
 		"Bonfire": {
 			"website": "cibonfire.com",
 			"cats": [ 18 ],
+			"headers": { "Set-Cookie": "bf_session=" },
 			"html": "Powered by <a[^>]+href=\"https?://(?:www\\.)?cibonfire\\.com[^>]*>Bonfire v([^<]+)\\;version:\\1",
 			"implies": "CodeIgniter"
 		},
@@ -523,7 +524,7 @@
 		"CodeIgniter": {
 			"website": "codeigniter.com",
 			"cats": [ 18 ],
-			"headers": { "Set-Cookie": "(?:exp_last_activity|exp_tracker|ci_session)" },
+			"headers": { "Set-Cookie": "(?:exp_last_activity|exp_tracker|ci_(?:session|(csrf_token)))\\;version:\\1?2+:" },
 			"html": "<input[^>]+name=\"ci_csrf_token\"\\;version:2+",
 			"implies": "PHP"
 		},
