@@ -3449,6 +3449,11 @@
 			"cats": [ 1 ],
 			"headers": { "Set-Cookie": "october_session=" },
 			"implies": "Laravel"
+		},
+		"Pure CSS": {
+			"website": "purecss.io",
+			"cats": [18],
+			html: "<link[^>]+pure[^>\"]+css"
 		}
 	}
 }
