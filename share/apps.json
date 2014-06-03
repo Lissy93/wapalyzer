@@ -381,6 +381,12 @@
 			"html": "href=\"enter_bug\\.cgi\">",
 			"implies": "Perl"
 		},
+		"BugSense": {
+			"website": "bugsense.com",
+			"cats": [ 10 ],
+			"script": "bugsense\\.js",
+			"env": "^BugSense$"
+		},
 		"Burning Board": {
 			"website": "www.woltlab.com",
 			"cats": [ 2 ],
@@ -1000,6 +1006,12 @@
 			"website": "fedoraproject.org",
 			"cats": [ 28 ],
 			"headers": { "Server": "Fedora" }
+		},
+		"Flask": {
+			"website": "flask.pocoo.org/",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "Werkzeug\\/?([\\d\\.]+)?\\;version:\\1" },
+			"implies": "Python"
 		},
 		"FlashCom": {
 			"website": "???",
