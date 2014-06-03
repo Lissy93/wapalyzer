@@ -2419,6 +2419,11 @@
 			"html": "Powered by <a href=\"[^>]+punbb",
 			"implies": "PHP"
 		},
+		"Pure CSS": {
+			"website": "purecss.io",
+			"cats": [18],
+			html: "<link[^>]+pure[^>\"]+css"
+		},
 		"Python": {
 			"website": "python.org",
 			"cats": [ 27 ],
@@ -3449,11 +3454,6 @@
 			"cats": [ 1 ],
 			"headers": { "Set-Cookie": "october_session=" },
 			"implies": "Laravel"
-		},
-		"Pure CSS": {
-			"website": "purecss.io",
-			"cats": [18],
-			html: "<link[^>]+pure[^>\"]+css"
 		}
 	}
 }
