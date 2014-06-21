@@ -1,5 +1,5 @@
 {
-	"categories": {
+	"categories": {dr
 		"1": "cms",
 		"2": "message-boards",
 		"3": "database-managers",
@@ -2132,7 +2132,9 @@
 		"Ophal": {
 			"website": "ophal.org",
 			"cats": [ 1, 11, 18 ],
-			"headers": { "X-Powered-By": "^Ophal(?:/([\\d.]+(?:-alpha\\d+)))?\\;version:\\1" },
+			"meta" : { "generator": "(Ophal \\(ophal.org\\))?(;(version:(.*)+))?" },
+			"script": "ophal\\.js",
+			"headers": { "X-Powered-By": "(Ophal \\(ophal.org\\))?(;(version:(.*)+))?" },
 			"implies": "Lua"
 		},
 		"Optimizely": {
