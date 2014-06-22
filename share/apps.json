@@ -1111,7 +1111,7 @@
 			"env": "^prettyPrint$"
 		},
 		"Google Font API": {
-			"website": "code.google.com/apis/webfonts",
+			"website": "google.com/fonts",
 			"cats": [ 17 ],
 			"script": "googleapis\\.com/.+webfont",
 			"html": "<link[^>]* href=[^>]+fonts\\.(?:googleapis|google)\\.com",
@@ -2017,6 +2017,12 @@
 			"website": "www.nedstat.com",
 			"cats": [ 10 ],
 			"html": "sitestat\\(\".+nl\\.sitestat\\.com"
+		},
+		"Nepso": {
+			"website": "nepso.com",
+			"cats": [ 1 ],
+			"headers": [ "X-Powered-CMS": "Nepso" ],
+			"implies": [ "Python", "Perl", "Java", "PHP" ]
 		},
 		"Netmonitor": {
 			"website": "netmonitor.fi/en",

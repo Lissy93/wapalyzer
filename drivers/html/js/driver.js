@@ -27,28 +27,32 @@
 
 				w.categories = json.categories;
 				w.apps       = json.apps;
+
+				window.document.addEventListener('DOMContentLoaded', function() {
+					w.analyze('google.com', 'http://google.com', {
+						html:    '<script src="jquery.js"><meta name="generator" content="WordPress"/>',
+						headers: { 'Server': 'Apache' },
+						env:     [ 'Mootools' ]
+					});
+				});
 			};
 
 			xhr.send(null);
-
-			window.document.addEventListener('DOMContentLoaded', function() {
-				w.analyze('google.com', 'http://google.com', {
-					html:    '<script src="jquery.js"><meta name="generator" content="WordPress"/>',
-					headers: { 'Server': 'Apache' },
-					env:     [ 'Mootools' ]
-				});
-			});
 		},
 
 		/**
 		 * Display apps
 		 */
 		displayApps: function() {
+			var
+				app,
+				url = Object.keys(w.detected)[0];
+
 			document.getElementById('apps').innerHTML = '';
 
-			w.detected['http://google.com'].forEach(function(app) {
+			for ( app in w.detected[url] ) {
 				document.getElementById('apps').innerHTML += '<img src="images/icons/' + app + '.png" width="16" height="16"/> ' + app + '<br/>';
-			});
+			};
 		},
 
 		/**
