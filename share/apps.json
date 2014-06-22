@@ -2021,7 +2021,7 @@
 		"Nepso": {
 			"website": "nepso.com",
 			"cats": [ 1 ],
-			"headers": [ "X-Powered-CMS": "Nepso" ],
+			"headers": { "X-Powered-CMS": "Nepso" },
 			"implies": [ "Python", "Perl", "Java", "PHP" ]
 		},
 		"Netmonitor": {
@@ -2416,7 +2416,7 @@
 		"Pure CSS": {
 			"website": "purecss.io",
 			"cats": [18],
-			html: "<link[^>]+pure[^>\"]+css"
+			"html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version=\\1"
 		},
 		"Python": {
 			"website": "python.org",
