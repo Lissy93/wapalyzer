@@ -2018,6 +2018,12 @@
 			"cats": [ 10 ],
 			"html": "sitestat\\(\".+nl\\.sitestat\\.com"
 		},
+		"Nepso": {
+			"website": "nepso.com",
+			"cats": [ 1 ],
+			"headers": ["X-Powered-CMS": "Nepso"],
+			"implies": ["Python","Perl","Java", "PHP" ]
+		},
 		"Netmonitor": {
 			"website": "netmonitor.fi/en",
 			"cats": [ 10 ],
