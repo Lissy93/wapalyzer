@@ -2726,6 +2726,13 @@
 			"cats": [ 12 ],
 			"env": "^(?:SoundManager|BaconPlayer)$"
 		},
+		"Solodev": {
+			"website": "www.solodev.com",
+			"cats": [ 1 ],
+			"headers": { "solodev_session": ".*" },
+			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
+			"implies": "PHP"
+		},		
 		"SPDY": {
 			"website": "chromium.org/spdy",
 			"cats": [ 19 ],
