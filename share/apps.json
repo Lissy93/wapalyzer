@@ -3250,6 +3250,12 @@
 			"env": "^wp_username$",
 			"implies": "PHP"
 		},
+		"WordPress.Com": {
+			"website": "wordpress.com",
+			"cats": [ 1, 11 ],
+			"html": "<link[^>]+s\\d+\\.wp\\.com",
+			"implies": "WordPress"
+		},
 		"WordPress Super Cache": {
 			"website": "ocaoimh.ie/wp-super-cache/",
 			"cats": [ 23 ],
