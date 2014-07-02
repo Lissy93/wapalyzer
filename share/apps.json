@@ -2630,7 +2630,7 @@
 		"Shopify": {
 			"website": "shopify.com",
 			"cats": [ 6 ],
-			"html": "<link[^>]+=cdn\\.shopify\\.com",
+			"html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
 			"env": "^Shopify$"
 		},
 		"Shopware": {
