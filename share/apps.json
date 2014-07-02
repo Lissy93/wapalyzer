@@ -628,7 +628,7 @@
 			"website": "www.cs-cart.com",
 			"cats": [ 6 ],
 			"env": "^fn_compare_strings$",
-			"html": "&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)",
+			"html": ["&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)", "(?:\\$|jQuery)\\.runCart\\('\\w'\\)"],
 			"implies": "PHP"
 		},
 		"CubeCart": {
@@ -1836,7 +1836,7 @@
 		"MODx": {
 			"website": "modxcms.com",
 			"cats": [ 1 ],
-			"html": "(?:<a[^>]+>Powered by MODx</a>|<(?:link|script)[^>]+assets/snippets/)",
+			"html": ["<a[^>]+>Powered by MODx</a>", "<(?:link|script)[^>]+assets/(?:templates|components|snippets)/\\;confidence:80"],
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": { "X-Powered-By": "^MODx", "Set-Cookie": "SN4[a-f\\d]{12}" },
 			"implies": "PHP"
