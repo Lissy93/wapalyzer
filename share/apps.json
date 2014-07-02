@@ -2132,9 +2132,9 @@
 		"Ophal": {
 			"website": "ophal.org",
 			"cats": [ 1, 11, 18 ],
-			"meta" : { "generator": "(Ophal \\(ophal.org\\))?(;(version:(.*)+))?" },
+			"meta" : { "generator": "Ophal( ?(.*))? \\(ophal.org\\)\\;version:\\1" },
 			"script": "ophal\\.js",
-			"headers": { "X-Powered-By": "(Ophal \\(ophal.org\\))?(;(version:(.*)+))?" },
+			"headers": { "X-Powered-By": "Ophal( ?(.*))? \\(ophal.org\\)\\;version:\\1" },
 		},
 		"Optimizely": {
 			"website": "optimizely.com",
