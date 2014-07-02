@@ -1225,9 +1225,9 @@
 			"script": "highstock(?:\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\1"
 		},
 		"Hippo": {
-			"website": "onehippo.com",
+			"website": "onehippo.org",
 			"cats": [ 1 ],
-			"html": "(src=[^>]+/binaries/content/gallery/|url[^)]+/binaries/content/gallery/)"
+			"html": "/binaries/([^/]+/)*content/gallery/"
 		},
 		"Hogan.js": {
 			"website": "twitter.github.com/hogan.js",
