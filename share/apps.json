@@ -775,7 +775,8 @@
 			"website": "dotnetnuke.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "DotNetNuke" },
-			"headers": { "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=" },
+            "script":["/js/dnncore\\.js"],
+			"headers": { "DNNOutputCache":".+", "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=" },
 			"html": "<!-- by DotNetNuke Corporation",
 			"env": "^DotNetNuke$",
 			"implies": "Microsoft ASP.NET"
@@ -1202,7 +1203,7 @@
 			"website": "hellobar.com",
 			"cats": [ 5 ],
 			"script": "(hellobar\\.com/hellobar\\.js|new HelloBar)",
-			"html": "/hellobar\\.js" 
+			"html": "/hellobar\\.js"
 		},
 		"Hiawatha": {
 			"website": "hiawatha-webserver.org",
@@ -2729,7 +2730,7 @@
 			"headers": { "solodev_session": ".*" },
 			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
 			"implies": "PHP"
-		},		
+		},
 		"SPDY": {
 			"website": "chromium.org/spdy",
 			"cats": [ 19 ],
