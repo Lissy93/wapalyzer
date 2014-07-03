@@ -2661,8 +2661,8 @@
 		"SIMsite": {
 			"website": "simgroep.nl/internet/portfolio-contentbeheer_41623/",
 			"cats": [ 1 ],
-			"script": "/sim(site|core)/js",
-			"meta": { "SIM.medium": ".*" },
+			"script": "/sim(?:site|core)/js",
+			"meta": { "SIM.medium": ".*" }
 		},
 		"Site Meter": {
 			"website": "www.sitemeter.com",
