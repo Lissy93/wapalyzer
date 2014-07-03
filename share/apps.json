@@ -3029,6 +3029,8 @@
 			"meta": { "generator": "umbraco" },
 			"headers": { "X-Umbraco-Version": "(.*)\\;version:\\1" },
 			"html": "powered by <a href=[^>]+umbraco",
+			"url": "/umbraco/login.aspx(?:$|\\?)",
+			"env": "^(?:UC_(?:IMAGE_SERVICE|ITEM_INFO_SERVICE|SETTINGS)|Umbraco)$",
 			"implies": "Microsoft ASP.NET"
 		},
 		"Underscore.js": {
