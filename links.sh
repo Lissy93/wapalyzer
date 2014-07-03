@@ -25,3 +25,5 @@ ln -f share/js/wappalyzer.js      drivers/php/js
 
 ln -f share/apps.json             drivers/python
 ln -f share/js/wappalyzer.js      drivers/python/js
+
+ln -f share/apps.json             drivers/python_raw

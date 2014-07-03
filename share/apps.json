@@ -628,7 +628,7 @@
 			"website": "www.cs-cart.com",
 			"cats": [ 6 ],
 			"env": "^fn_compare_strings$",
-			"html": "&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)",
+			"html": ["&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)", "(?:\\$|jQuery)\\.runCart\\('\\w'\\)"],
 			"implies": "PHP"
 		},
 		"CubeCart": {
@@ -743,8 +743,6 @@
 		"Django CMS": {
 			"website": "django-cms.org",
 			"cats": [ 1 ],
-			"script": "media/cms/js/csrf\\.js",
-			"headers": { "Set-Cookie": "django[^;]=" },
 			"implies": "Django"
 		},
 		"Dojo": {
@@ -777,7 +775,8 @@
 			"website": "dotnetnuke.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "DotNetNuke" },
-			"headers": { "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=" },
+            "script":["/js/dnncore\\.js"],
+			"headers": { "DNNOutputCache":".+", "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=" },
 			"html": "<!-- by DotNetNuke Corporation",
 			"env": "^DotNetNuke$",
 			"implies": "Microsoft ASP.NET"
@@ -1104,9 +1103,7 @@
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
 			"env": [ "^google_ad_", "^__google_ad_", "^Goog_AdSense_" ],
-			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ],
-			"env": "^google_ad_",
-			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick.net" ]
+			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ]
 		},
 		"Google App Engine": {
 			"website": "code.google.com/appengine",
@@ -1219,7 +1216,7 @@
 			"website": "hellobar.com",
 			"cats": [ 5 ],
 			"script": "(hellobar\\.com/hellobar\\.js|new HelloBar)",
-			"html": "/hellobar\\.js" 
+			"html": "/hellobar\\.js"
 		},
 		"Hiawatha": {
 			"website": "hiawatha-webserver.org",
@@ -1678,6 +1675,7 @@
 		"LiveStreet CMS": {
 			"website": "livestreetcms.com",
 			"cats": [ 1 ],
+            "html":["var LIVESTREET_SECURITY_KEY"],
 			"headers": { "X-Powered-By": "LiveStreet CMS" }
 		},
 		"Lockerz Share": {
@@ -1851,7 +1849,7 @@
 		"MODx": {
 			"website": "modxcms.com",
 			"cats": [ 1 ],
-			"html": "(?:<a[^>]+>Powered by MODx</a>|<(?:link|script)[^>]+assets/snippets/)",
+			"html": ["<a[^>]+>Powered by MODx</a>", "<(?:link|script)[^>]+assets/(?:templates|components|snippets)/\\;confidence:80"],
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": { "X-Powered-By": "^MODx", "Set-Cookie": "SN4[a-f\\d]{12}" },
 			"implies": "PHP"
@@ -2431,7 +2429,7 @@
 		"Pure CSS": {
 			"website": "purecss.io",
 			"cats": [18],
-			"html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version=\\1"
+			"html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1"
 		},
 		"Python": {
 			"website": "python.org",
@@ -2646,7 +2644,7 @@
 		"Shopify": {
 			"website": "shopify.com",
 			"cats": [ 6 ],
-			"html": "<link[^>]+=cdn\\.shopify\\.com",
+			"html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
 			"env": "^Shopify$"
 		},
 		"Shopware": {
@@ -2747,7 +2745,7 @@
 			"headers": { "solodev_session": ".*" },
 			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
 			"implies": "PHP"
-		},		
+		},
 		"SPDY": {
 			"website": "chromium.org/spdy",
 			"cats": [ 19 ],
@@ -3178,6 +3176,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "WEB\\|Publisher" }
 		},
+		"Webs": {
+			"website": "webs.com",
+			"cats": [ 1 ],
+			"headers": {"Server":"Webs.com/?([\\d\\.]+)?\\;version:\\1"}
+		},
 		"Websale": {
 			"website": "websale.de",
 			"cats": [ 6 ],
@@ -3208,7 +3211,7 @@
 		"Weebly": {
 			"website": "www.weebly.com",
 			"cats": [ 1 ],
-			"html": "<[^>]+class=\"weebly"
+			"script":"cdn\\d+\\.editmysite\\.com"
 		},
 		"WikkaWiki": {
 			"website": "wikkawiki.org",
@@ -3230,7 +3233,7 @@
 		"Wix": {
 			"website": "wix.com",
 			"cats": [ 1 ],
-			"script": "static\\.wix\\.com",
+			"script": "static\\.wixstatic\\.com",
 			"headers": { "X-Wix-Dispatcher-Cache-Hit": ".+", "Set-Cookie": "Domain=\\.wix\\.com" },
 			"env": "^wix(?:Events|Data|Errors)"
 		},
@@ -3260,6 +3263,12 @@
 			"html": "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)",
 			"env": "^wp_username$",
 			"implies": "PHP"
+		},
+		"WordPress.Com": {
+			"website": "wordpress.com",
+			"cats": [ 1, 11 ],
+			"html": "<link[^>]+s\\d+\\.wp\\.com",
+			"implies": "WordPress"
 		},
 		"WordPress Super Cache": {
 			"website": "ocaoimh.ie/wp-super-cache/",
