@@ -2150,9 +2150,10 @@
 		"Ophal": {
 			"website": "ophal.org",
 			"cats": [ 1, 11, 18 ],
-			"meta" : { "generator": "Ophal( ?(.*))? \\(ophal.org\\)\\;version:\\1" },
+			"headers": { "X-Powered-By": "Ophal(?: (.*))? \\(ophal.org\\)\\;version:\\1" },
+			"meta" : { "generator": "Ophal(?: (.*))? \\(ophal.org\\)\\;version:\\1" },
 			"script": "ophal\\.js",
-			"headers": { "X-Powered-By": "Ophal( ?(.*))? \\(ophal.org\\)\\;version:\\1" },
+			"implies": "Lua"
 		},
 		"Optimizely": {
 			"website": "optimizely.com",
