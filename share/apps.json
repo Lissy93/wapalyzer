@@ -1017,6 +1017,13 @@
 			"cats": [ 28 ],
 			"headers": { "Server": "FreeBSD(?: ([\\d.]+))?\\;version:\\1" }
 		},
+		"FreeTextBox": {
+			"website": "freetextbox.com",
+			"cats": [ 24 ],
+			"html": "/<!--\\s*\\*\\s*FreeTextBox v\\d+ \\(([.\\d]+)(?:(?:.|\\n)+?<!--\\s*\\*\\s*License Type: (Distribution|Professional)License)?/i\\;version:\\1 \\2",
+			"env": "^FTB_",
+			"implies": "Microsoft ASP.NET"
+		},
 		"FrontPage": {
 			"website": "office.microsoft.com/frontpage",
 			"cats": [ 20 ],
