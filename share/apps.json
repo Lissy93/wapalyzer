@@ -1655,6 +1655,12 @@
 			"cats": [ 19 ],
 			"headers": { "generator": "LimeSurvey" }
 		},
+		"LinkSmart": {
+			"website": "linksmart.com",
+			"cats": [ 36 ],
+			"script": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
+			"env": "^(?:_mb_site_guid$|LS_JSON|LinkSmart(?:_|$))"
+		},
 		"LiteSpeed": {
 			"website": "litespeedtech.com",
 			"cats": [ 22 ],
