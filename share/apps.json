@@ -1615,6 +1615,12 @@
 			"headers": { "Set-Cookie": "laravel_session" },
 			"implies": "PHP"
 		},
+		"Leaflet": {
+			"website": "leafletjs.com",
+			"cats": [ 35 ],
+			"script": "leaflet.*\\.js",
+			"env": "^L$"
+		},
 		"LEPTON": {
 			"website": "www.lepton-cms.org",
 			"cats": [ 1 ],
@@ -2159,6 +2165,13 @@
 			"cats": [ 33 ],
 			"headers": { "Server": "OpenSSL(?:/([\\d.]+[a-z]?))?\\;version:\\1" }
 		},
+		"OpenStreetMap": {
+			"website": "openstreetmap.org",
+			"cats": [ 35 ],
+			"script": "openlayers",
+			"env": "^OpenLayers$"
+		},
+
 		"OpenText Web Solutions": {
 			"website": "websolutions.opentext.com",
 			"cats": [ 1 ],
