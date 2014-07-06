@@ -1341,6 +1341,12 @@
 			"headers": { "Set-cookie": "MAKACSESSION" },
 			"html": "Powered by\\s+(?:CERN )?<a href=\"http://(?:cdsware\\.cern\\.ch/indico/|indico-software\\.org|cern\\.ch/indico)\">(?:CDS )?Indico( [\\d\\.]+)?\\;version:\\1"
 		},
+		"InProces": {
+			"website": "www.brein.nl/oplossing/product/website",
+			"cats": [ 1 ],
+			"script": "brein/inproces/website/websitefuncties\\.js",
+			"html": "<!-- CSS InProces Portaal default -->"
+		},
 		"InstantCMS": {
 			"website": "www.instantcms.ru",
 			"cats": [ 1 ],
