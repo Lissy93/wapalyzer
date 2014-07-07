@@ -552,7 +552,7 @@
 			"website": "contao.org",
 			"cats": [ 1 ],
 			"html": ["<!--[^>]+powered by (?:TYPOlight|Contao)[^>]*-->", "<link[^>]+(?:typolight|contao)\\.css"],
-			"meta": [ "generator": "^Contao Open Source CMS$" ],
+			"meta": { "generator": "^Contao Open Source CMS$" },
 			"implies": "PHP"
 		},
 		"Contenido": {
