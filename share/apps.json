@@ -3005,6 +3005,14 @@
 			"cats": [ 13 ],
 			"env": "^UserVoice$"
 		},
+		"Ushahidi": {
+			"website": "www.ushahidi.com",
+			"cats": [ 1, 35 ],
+			"headers": { "Set-Cookie": "^ushahidi=" },
+			"env": "^Ushahidi$",
+			"script": "/js/ushahidi.js$",
+			"implies": [ "PHP" , "MySQL", "OpenLayers" ]
+		},
 		"Vanilla": {
 			"website": "vanillaforums.org",
 			"cats": [ 2 ],
