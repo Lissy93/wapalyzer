@@ -3056,6 +3056,15 @@
 			"cats": [ 10 ],
 			"script": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js"
 		},
+		"Visual WebGUI": {
+			"website": "www.gizmox.com/products/visual-web-gui/",
+			"cats": [ 18 ],
+			"meta": { "generator": "^Visual WebGUI" },
+			"env": "^VWGEventArgs$",
+			"script": "\\.js\\.wgx$",
+			"url": "\\.wgx$",
+			"implies": "Microsoft ASP.NET"
+		},
 		"VIVVO": {
 			"website": "vivvo.net",
 			"cats": [ 1 ],
@@ -3123,7 +3132,9 @@
 		"WebGUI": {
 			"website": "www.webgui.org",
 			"cats": [ 1 ],
-			"meta": { "generator": "WebGUI" }
+			"meta": { "generator": "^WebGUI ([\\d.]+)\\;version:\\1" },
+			"headers": { "Set-Cookie": "^wgSession=" },
+			"implies": "Perl"
 		},
 		"WebPublisher": {
 			"website": "scannet.dk",
