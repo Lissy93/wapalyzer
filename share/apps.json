@@ -3400,6 +3400,12 @@
 			"env": "^xoops",
 			"implies": "PHP"
 		},
+		"XRegExp": {
+			"website": "xregexp.com",
+			"cats": [ 12 ],
+			"script": [ "xregexp(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/xregexp(\\.min)?\\.js\\;version:\\1", "xregexp.*\\.js" ],
+			"env": "^XRegExp$"
+		},
 		"xtCommerce": {
 			"website": "www.xt-commerce.com",
 			"cats": [ 6 ],
