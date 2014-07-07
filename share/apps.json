@@ -2736,6 +2736,20 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "SiteEdit" }
 		},
+		"Slimbox": {
+			"website": "www.digitalia.be/software/slimbox",
+			"cats": [ 7, 12 ],
+			"html": "<link [^>]*href=\"[^/]*slimbox(?:-rtl)?\\.css",
+			"script": "slimbox\\.js",
+			"implies": "MooTools"
+		},
+		"Slimbox 2": {
+			"website": "www.digitalia.be/software/slimbox2",
+			"cats": [ 7, 12 ],
+			"html": "<link [^>]*href=\"[^/]*slimbox2?:-rtl)?\\.css",
+			"script": "slimbox2\\.js",
+			"implies": "jQuery"
+		},
 		"Smart Ad Server": {
 			"website": "smartadserver.com",
 			"cats": [ 36 ],
