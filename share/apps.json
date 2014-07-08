@@ -2764,7 +2764,7 @@
 		"Slimbox 2": {
 			"website": "www.digitalia.be/software/slimbox2",
 			"cats": [ 7, 12 ],
-			"html": "<link [^>]*href=\"[^/]*slimbox2?:-rtl)?\\.css",
+			"html": "<link [^>]*href=\"[^/]*slimbox2(?:-rtl)?\\.css",
 			"script": "slimbox2\\.js",
 			"implies": "jQuery"
 		},
