@@ -1057,7 +1057,9 @@
 		"Gambio": {
 			"website": "gambio.de",
 			"cats": [ 6 ],
-			"html": "(?:<link[^>]* href=\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->)",
+			"html": "(?:<link[^>]* href=\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->|<!--[\\s=]+Shopsoftware by Gambio GmbH \\(c\\))",
+			"script": "gm_javascript\\.js\\.php",
+			"env": "^gm_session_id$",
 			"implies": "PHP"
 		},
 		"Gauges": {
