@@ -2737,11 +2737,11 @@
 			"script": "sitemeter\\.com/js/counter\\.js\\?site="
 		},
 		"SiteCatalyst": {
-			"website": "www.omniture.com\/en\/products\/online_analytics\/sitecatalyst",
+			"website": "www.adobe.com/solutions/digital-marketing.html",
 			"cats": [ 10 ],
-			"script": "\/s_code\\.js",
+			"script": "/s[_-]code.*\\.js",
 			"html": "var s_code=s\\.t\\(\\);if\\(s_code\\)document\\.write\\(s_code\\)",
-			"env": "^s_account$"
+			"env": "^s_(?:account|objectID|code|INST)$"
 		},
 		"Sitecore": {
 			"website": "sitecore.net",
