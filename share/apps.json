@@ -222,6 +222,12 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "ATS/?([\\d.]+)?\\;version:\\1" }
 		},
+		"Apache Wicket": {
+			"website": "wicket.apache.org",
+			"cats": [ 18 ],
+			"env": "^Wicket",
+			"implies": "Java"
+		},
 		"AppNexus": {
 			"website": "appnexus.com",
 			"cats": [ 36 ],
