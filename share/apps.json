@@ -1990,6 +1990,11 @@
 			"website": "www.mongodb.org",
 			"cats": [ 34 ]
 		},
+		"Monkey HTTP Server": {
+			"website": "monkey-project.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "Monkey/?([\\d.]+)?\\;version:\\1" }
+		},
 		"Mono": {
 			"website": "mono-project.com",
 			"cats": [ 18 ],
