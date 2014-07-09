@@ -2644,7 +2644,7 @@
 		"SDL Tridion": {
 			"website": "www.sdl.com/products/tridion",
 			"cats": [ 1 ],
-			"html": "mfinfo\\.application='Tridion"
+			"html": ["mfinfo\\.application='Tridion", "<img[^>]+_tcm\\d{2,3}-\\d{6}\\."]
 		},
 		"Sencha Touch": {
 			"website": "sencha.com/products/touch",
