@@ -2287,6 +2287,14 @@
 			"script": "widgets\\.outbrain\\.com/outbrain\\.js",
 			"env": "^(?:OutbrainPermaLink|OB_releaseVer)$"
 		},
+		"Outlook Web App": {
+			"cats": [ 30 ],
+			"website": "help.outlook.com",
+			"url": "/owa/auth/log(?:on|off)\\.aspx",
+			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css",
+			"env": "^(?:(?:g_f)?Owa|IsOwaPremiumBrowser)$",
+			"implies": "Microsoft ASP.NET"
+		},
 		"OXID eShop": {
 			"website": "oxid-esales.com",
 			"cats": [ 6 ],
