@@ -3497,6 +3497,14 @@
 			"html": "<title>XAMPP( Version ([\\d\\.]+))?</title>\\;version:\\1\\;confidence:90",
 			"implies": [ "Apache", "MySQL", "PHP", "Perl" ]
 		},
+		"xCharts": {
+			"website": "tenxer.github.io/xcharts/",
+			"cats": [ 25 ],
+			"script": "xcharts\\.js",
+			"html": "<link[^>]* href=\"[^\"]*xcharts(?:\\.min)?\\.css",
+			"env": "^xChart$",
+			"implies": "D3"
+		},
 		"XMB": {
 			"website": "www.xmbforum.com",
 			"cats": [ 2 ],
