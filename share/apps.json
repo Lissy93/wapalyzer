@@ -1275,6 +1275,7 @@
 		"Highcharts": {
 			"website": "highcharts.com",
 			"cats": [ 25 ],
+			"html": "<svg[^>]*><desc>Created with Highcharts ([\\d.]*)\\;version:\\1",
 			"script": "highcharts.*\\.js",
 			"env": "^Highcharts$"
 		},
