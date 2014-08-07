@@ -476,6 +476,8 @@
 			39, // Webcam
 			40, // Printer
 			36, // Advertising Network
+			42, // Tag Managers
+			43, // Paywalls
 			19  // Miscellaneous
 		]
 	};

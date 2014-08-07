@@ -40,7 +40,9 @@
 		"38": "media-servers",
 		"39": "webcams",
 		"40": "printers",
-		"41": "payment-processors"
+		"41": "payment-processors",
+		"42": "tag-managers",
+		"43": "paywalls"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -1198,7 +1200,7 @@
 		},
 		"Google Tag Manager": {
 			"website": "www.google.com/tagmanager",
-			"cats": [ 19 ],
+			"cats": [ 42 ],
 			"html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
 			"env": "^googletag$"
 		},
