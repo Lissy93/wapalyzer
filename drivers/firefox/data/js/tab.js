@@ -2,9 +2,9 @@
 	var lastEnv = [];
 
 	try {
-		if ( document && document.documentElement && document.contentType === 'text/html' ) {
+		if ( document && document.contentType === 'text/html' ) {
 			var
-				html = document.documentElement.outerHTML
+				html = new XMLSerializer().serializeToString(document)
 				env = [];
 
 			self.port.emit('log', 'init');
