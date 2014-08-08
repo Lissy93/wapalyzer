@@ -3499,7 +3499,7 @@
 		"XenForo": {
 			"website": "xenforo.com",
 			"cats": [ 2 ],
-			"html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding)"
+			"html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding|<html[^>]+id=\"XenForo\")"
 		},
 		"AT Internet Analyzer": {
 			"website": "atinternet.com/en",
