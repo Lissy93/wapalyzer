@@ -2450,6 +2450,12 @@
 			"html": "var piwikTracker = Piwik\\.getTracker\\(",
 			"env": [ "^Piwik$", "^_paq$" ]
 		},
+		"Piano Solo":{
+			"website": "www.pianomedia.com/products",
+			"cats": [ 43 ],
+			"env": "^PianoMedia$",
+			"headers": { "Set-Cookie": "pianovisitkey" }
+		},
 		"Plentymarkets": {
 			"website": "plentymarkets.eu",
 			"cats": [ 6 ],
