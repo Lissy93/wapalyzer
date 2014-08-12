@@ -2413,8 +2413,8 @@
 		"phpMyAdmin": {
 			"website": "www.phpmyadmin.net",
 			"cats": [ 3 ],
-			"html": "(?:PMA_sendHeaderLocation\\(|<title>phpMyAdmin</title>)",
-			"env": "pma_absolute_uri",
+			"html": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\()\\;version:\\1",
+			"env": "^pma_absolute_uri$",
 			"implies": [ "PHP", "MySQL" ]
 		},
 		"PHP-Nuke": {
