@@ -2305,7 +2305,7 @@
 			"cats": [ 30 ],
 			"website": "help.outlook.com",
 			"url": "/owa/auth/log(?:on|off)\\.aspx",
-			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css",
+			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css\\;version:\\1",
 			"env": "^(?:(?:g_f)?Owa|IsOwaPremiumBrowser)$",
 			"implies": "Microsoft ASP.NET"
 		},
