@@ -3196,6 +3196,14 @@
 			"cats": [ 18 ],
 			"script": "uikit.*\\.js"
 		},
+		"UltraCart": {
+			"website": "ultracart.com",
+			"cats": [ 6 ],
+			"env": "^ucCatalog",
+			"html": "<form [^>]*action=\"[^\"]*\\/cgi-bin\\/UCEditor\\?(?:[^\"]*&)?merchantId=[^\"]",
+			"script": "cgi-bin\\/UCJavaScript\\?(?:[^\"]*&)?merchantid=.",
+			"url": "/cgi-bin/UCEditor\\?(?:.*&)?merchantid=."
+		},
 		"Umbraco": {
 			"website": "umbraco.com",
 			"cats": [ 1 ],
