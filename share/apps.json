@@ -1295,6 +1295,7 @@
 		"Highstock": {
 			"website": "highcharts.com/products/highstock",
 			"cats": [ 25 ],
+			"html": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)\\;version:\\1",
 			"script": "highstock(?:\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\1"
 		},
 		"Hippo": {
