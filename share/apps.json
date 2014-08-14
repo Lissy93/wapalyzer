@@ -407,6 +407,13 @@
 			"script": "CatalystScripts",
 			"html": "<!-- BC_OBNW -->"
 		},
+		"BuySellAds": {
+			"website": "bittads.com",
+			"cats": [ 36 ],
+			"script": "^https?://s\\d\\.buysellads\\.com/",
+			"html": "<script[^>]*>(?:(?!<\\/script>)(?:.|\\s))+?bsa\\.src\\s*=\\s*[\"'][^'\"]+s\\d\\.buysellads\\.com",
+			"env": "^_bsa"
+		},
 		"Canon": {
 			"website": "www.canon.com",
 			"cats": [ 40 ]
