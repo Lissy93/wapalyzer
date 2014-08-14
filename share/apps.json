@@ -1071,6 +1071,12 @@
 			"cats": [ 17 ],
 			"html": "<link[^>]* href=[^>]+font-awesome(?:\\.min)?\\.css"
 		},
+		"Fortune3": {
+			"website": "fortune3.com",
+			"cats": [ 6 ],
+			"html": "(?:<link [^>]*href=\"[^\\/]*\\/\\/www\\.fortune3\\.com\\/[^\"]*siterate\\/rate\\.css|Powered by <a [^>]*href=\"[^\"]+fortune3\\.com)",
+			"script": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com"
+		},
 		"FreeBSD": {
 			"website": "freebsd.org",
 			"cats": [ 28 ],
