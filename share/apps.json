@@ -2786,10 +2786,11 @@
 			"env": "^SHARETHIS$"
 		},
 		"ShinyStat": {
+			"website": "shinystat.com",
 			"cats": [ 10 ],
 			"env": "^SSsdk$",
 			"html": "<img[^>]*\\s+src=['\"]?https?://www\\.shinystat\\.com/cgi-bin/shinystat\\.cgi\\?[^'\"\\s>]*['\"\\s/>]",
-			"script": "^https?://codice(business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi"
+			"script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi"
 		},
 		"Shopalize": {
 			"website": "shopalize.com",
