@@ -657,6 +657,12 @@
 			"env": "^CE2$",
 			"script": "cetrk\\.com/pages/scripts/\\d+/\\d+\\.js"
 		},
+		"Criteo": {
+			"website": "criteo.com",
+			"cats": [ 36 ],
+			"script": "[^/]*//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+			"env": "^criteo"
+		},
 		"Cross Pixel": {
 			"website": "datadesk.crsspxl.com",
 			"cats": [ 10 ],
