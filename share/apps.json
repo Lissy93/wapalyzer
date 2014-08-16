@@ -1108,6 +1108,12 @@
 			"meta": { "generator": "FWP Shop" },
 			"html": "<!--\\s+FwP Systems"
 		},
+		"Fusion Ads": {
+			"website": "http://fusionads.net/",
+			"cats": [ 36 ],
+			"script": "^[^\/]*//[ac]dn\\.fusionads\\.net/(?:api/([\\d.]+)/)?\\;version:\\1",
+			"env": "^_fusion"
+		},
 		"Gallery": {
 			"website": "gallery.menalto.com",
 			"cats": [ 7 ],
