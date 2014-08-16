@@ -425,6 +425,13 @@
 			"meta": { "application-name": "CakePHP" },
 			"implies": "PHP"
 		},
+		"Carbon Ads": {
+			"website": "carbonads.net",
+			"cats": [ 36 ],
+			"script": "[^\\/]*\\/\\/(?:engine|srv)\\.carbonads\\.com\\/",
+			"html": "<[a-z]+ [^>]*id=\"carbonads-container\"",
+			"env": "^_carbonads"
+		},
 		"Cargo": {
 			"website": "cargocollective.com",
 			"cats": [ 1 ],
