@@ -3329,6 +3329,12 @@
 			"cats": [ 1 ],
 			"html": "powered by <a href=\"[^>]+viennacms"
 		},
+		"VigLink": {
+			"website": "viglink.com",
+			"cats": [ 36 ],
+			"env": "^(?:vglnk(?:$|_)|vl_(?:cB|disable)$)",
+			"script": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)"
+		},
 		"Vignette": {
 			"website": "www.vignette.com",
 			"cats": [ 1 ],
