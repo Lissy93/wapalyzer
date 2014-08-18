@@ -3696,6 +3696,13 @@
 			"meta": { "Author": "ZABBIX SIA\\;confidence:70" },
 			"url": "\\/zabbix\\/\\;confidence:30"
 		},
+		"Zanox": {
+			"website": "zanox.com",
+			"cats": [ 36 ],
+			"html": "<img [^>]+src=\"[^\"]+ad\\.zanox\\.com",
+			"env": "^zanox$",
+			"script": "zanox\\.com/scripts/zanox\\.js$"
+		},
 		"Zen Cart": {
 			"website": "www.zen-cart.com",
 			"cats": [ 6 ],
