@@ -144,7 +144,7 @@
 			"cats": [ 36 ],
 			"env": "^ados(?:Results)?$",
 			"script": "adzerk\\.net/ados\\.js",
-			"html": "<iframe [^>]+src=\"[^\"]+adzerk\\.net",
+			"html": "<iframe [^>]*src=\"[^\"]+adzerk\\.net",
 		},
 		"Akamai": {
 			"website": "akamai.com",
