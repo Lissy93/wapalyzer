@@ -3699,7 +3699,7 @@
 		"Zanox": {
 			"website": "zanox.com",
 			"cats": [ 36 ],
-			"html": "<img [^>]+src=\"[^\"]+ad\\.zanox\\.com",
+			"html": "<img [^>]*src=\"[^\"]+ad\\.zanox\\.com",
 			"env": "^zanox$",
 			"script": "zanox\\.com/scripts/zanox\\.js$"
 		},
