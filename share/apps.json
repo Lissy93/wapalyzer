@@ -3317,6 +3317,13 @@
 			"env": "^(?:vBulletin|vB_[^g])",
 			"implies": "PHP"
 		},
+		"Veoxa": {
+			"website": "veoxa.com",
+			"cats": [ 36 ],
+			"html": "<img [^>]*src=\"[^\"]+tracking\\.veoxa\\.com",
+			"env": "^(?:Veoxa_|VuVeoxaContent)",
+			"script": "tracking\\.veoxa\\.com"
+		},
 		"VideoJS": {
 			"website": "videojs.com",
 			"cats": [ 14 ],
