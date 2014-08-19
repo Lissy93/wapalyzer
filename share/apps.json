@@ -90,9 +90,9 @@
 		"Adcash": {
 			"website": "adcash.com",
 			"cats": [ 36 ],
-			"env": "^ct_(?:siteunder|tag|n(?:SuUrl(?:Opp)?)|Su(?:Loaded|Url))$",
-			"script": "^[^\/]*//(www\\.)?adcash\\.com/(?:script|ad)/",
-			"url": "^https?://(?:www\\.)?adcash\\.com/script/pop_"
+			"env": "^(?:ac_bgclick_URL|ct_(?:siteunder|tag|n(?:SuUrl(?:Opp)?)|Su(?:Loaded|Url)))$",
+			"script": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
+			"url": "^https?://(?:[^\\/]+\\.)?adcash\\.com/script/pop_"
 		},
 		"AddThis": {
 			"website": "www.addthis.com",
