@@ -373,6 +373,12 @@
 			"html": "Powered by <a[^>]+href=\"https?://(?:www\\.)?cibonfire\\.com[^>]*>Bonfire v([^<]+)\\;version:\\1",
 			"implies": "CodeIgniter"
 		},
+		"Bolt": {
+			"website": "bolt.cm",
+			"cats": [ 1 ],
+			"meta": { "generator": "Bolt" },
+			"implies": "PHP"
+		},		
 		"Brother": {
 			"website": "www.brother.com",
 			"cats": [ 40 ]
