@@ -535,8 +535,8 @@
 		"CMS Made Simple": {
 			"website": "cmsmadesimple.org",
 			"cats": [ 1 ],
-			"meta": { "generator": "CMS Made Simple" },
-			"headers": { "Set-Cookie": "^CMSSESSID[\da-f]{8}$" },
+			"headers": { "Set-Cookie": "^CMSSESSID" },
+			"meta": { "generator": "CMS Made Simple" },			
 			"implies": "PHP"
 		},
 		"CMSimple": {
