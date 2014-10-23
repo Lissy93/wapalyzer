@@ -389,6 +389,12 @@
 			"script": "bugsense\\.js",
 			"env": "^BugSense$"
 		},
+		"BugSnag": {
+			"website": "bugsnag.com",
+			"cats": [ 10 ],
+			"script": "bugsnag.*\\.js",
+			"env": "^BugSnag$"
+		},
 		"Bugzilla": {
 			"website": "www.bugzilla.org",
 			"cats": [ 13 ],
