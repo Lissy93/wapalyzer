@@ -139,6 +139,13 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
+		"Adzerk": {
+			"website": "adzerk.com",
+			"cats": [ 36 ],
+			"env": "^ados(?:Results)?$",
+			"script": "adzerk\\.net/ados\\.js",
+			"html": "<iframe [^>]*src=\"[^\"]+adzerk\\.net",
+		},
 		"Akamai": {
 			"website": "akamai.com",
 			"cats": [ 31 ],
