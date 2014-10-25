@@ -354,7 +354,7 @@
 			"website": "www.ozerov.de/bigdump.php",
 			"cats": [ 3 ],
 			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
-			"implies": "PHP"
+			"implies": [ "MySQL", "PHP" ]
 		},
 		"Bigware": {
 			"website": "bigware.de",
