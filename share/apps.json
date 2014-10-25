@@ -303,6 +303,13 @@
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\1",
 			"implies": "Java"
 		},
+		"Avangate": {
+			"website": "avangate.com",
+			"cats": [ 6 ],
+			"env": "^(?:__)?avng8_",
+			"html": "<link[^>]* href=\"^https?://edge\\.avangate\\.net/",
+			"script": "^https?://edge\\.avangate\\.net/"
+		},
 		"AWStats": {
 			"website": "awstats.sourceforge.net",
 			"cats": [ 10 ],
