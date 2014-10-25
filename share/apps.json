@@ -2490,7 +2490,7 @@
 		"phpMyAdmin": {
 			"website": "www.phpmyadmin.net",
 			"cats": [ 3 ],
-			"html": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\()\\;version:\\1",
+			"html": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)\\;version:\\1",
 			"env": "^pma_absolute_uri$",
 			"implies": [ "PHP", "MySQL" ]
 		},
