@@ -152,12 +152,23 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
+		"Advert Stream": {
+			"website": "www.advertstream.com",
+			"cats": [ 36 ],
+			"env": "^advst_is_above_the_fold$",
+			"script": "(?:ad\\.advertstream\\.com|adxcore\\.com)"
+		},
 		"Adzerk": {
 			"website": "adzerk.com",
 			"cats": [ 36 ],
 			"env": "^ados(?:Results)?$",
 			"script": "adzerk\\.net/ados\\.js",
-			"html": "<iframe [^>]*src=\"[^\"]+adzerk\\.net",
+			"html": "<iframe [^>]*src=\"[^\"]+adzerk\\.net"
+		},
+		"Airee": {
+			"website": "xn--80aqc2a.xn--p1ai",
+			"cats": [ 31 ],
+			"headers": { "Server": "Airee" }
 		},
 		"Akamai": {
 			"website": "akamai.com",
@@ -3597,15 +3608,9 @@
 			"website": "wordpress.org",
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "WordPress( [\\d.]+)?\\;version:\\1" },
-			"html": "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)",
+			"html": [ "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)", "<link[^>]+s\\d+\\.wp\\.com" ],
 			"env": "^wp_username$",
 			"implies": "PHP"
-		},
-		"WordPress.Com": {
-			"website": "wordpress.com",
-			"cats": [ 1, 11 ],
-			"html": "<link[^>]+s\\d+\\.wp\\.com",
-			"implies": "WordPress"
 		},
 		"WordPress Super Cache": {
 			"website": "ocaoimh.ie/wp-super-cache/",
