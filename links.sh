@@ -1,9 +1,5 @@
 #!/bin/sh
 
-ln -f share/images/icons/*.png    drivers/firefox-xul/skin/images/icons
-ln -f share/apps.json             drivers/firefox-xul/content
-ln -f share/js/wappalyzer.js      drivers/firefox-xul/content/js
-
 ln -f share/images/icons/*.png    drivers/firefox/data/images/icons
 ln -f share/apps.json             drivers/firefox/data
 ln -f share/js/wappalyzer.js      drivers/firefox/lib

@@ -15,25 +15,6 @@
 :: ln -f for file: if exist FILE_TO_REPLACE_WITH_LINK del FILE_TO_REPLACE_WITH_LINK&&mklink /h FILE_TO_REPLACE_WITH_LINK FILE_TO_LINK_TO
 
 
-::	FIREFOX ADD-ON
-::
-::Sync icons folder
-::ln -f share\images\icons         drivers\firefox-xul\skin\images\icons
-if exist drivers\firefox-xul\skin\images\icons rmdir /q /s drivers\firefox-xul\skin\images\icons
-mklink /j drivers\firefox-xul\skin\images\icons share\images\icons\
-
-::Sync apps JSON
-::ln -f share\apps.json            drivers\firefox-xul\content
-if exist drivers\firefox-xul\content\apps.json del drivers\firefox-xul\content\apps.json
-mklink /h drivers\firefox-xul\content\apps.json share\apps.json
-
-::Sync Wappalyzer.js
-::ln -f share\js\wappalyzer.js     drivers\firefox-xul\content\js
-if exist drivers\firefox-xul\content\js\wappalyzer.js del drivers\firefox-xul\content\js\wappalyzer.js
-mklink /h drivers\firefox-xul\content\js\wappalyzer.js share\js\wappalyzer.js
-
-
-
 ::	FIREFOX SKD
 ::
 ::Sync icons folder
