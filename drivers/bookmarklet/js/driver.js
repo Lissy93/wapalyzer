@@ -12,6 +12,7 @@
 		container     = d.getElementById('wappalyzer-container'),
 		domain        = window.top.location.host,
 		url           = window.top.location.href,
+		hasOwn        = Object.prototype.hasOwnProperty,
 		categoryNames = {
 			 1: 'CMS',
 			 2: 'Message Board',
@@ -41,7 +42,7 @@
 			26: 'Mobile Framework',
 			27: 'Programming Language',
 			28: 'Operating System',
-			29: 'Search Engine'
+			29: 'Search Engine',
 			30: 'Web Mail',
 			31: 'CDN',
 			32: 'Marketing Automation',
@@ -139,6 +140,9 @@
 
 			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
 				for ( app in w.detected[url] ) {
+					if(!hasOwn.call(w.detected[url], app)) {
+						continue;
+					}
 					html +=
 						'<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
 							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
@@ -149,6 +153,9 @@
 							;
 
 					for ( i in w.apps[app].cats ) {
+						if(!hasOwn.call(w.apps[app].cats, i)) {
+							continue;
+						}
 						category = w.apps[app].cats[i];
 
 						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.categories[category] + '">' + categoryNames[category] + '</a>';

@@ -87,6 +87,13 @@
 			"meta": { "generator": "Accessible Portal" },
 			"implies": "PHP"
 		},
+		"Adcash": {
+			"website": "adcash.com",
+			"cats": [ 36 ],
+			"env": "^(?:ac_bgclick_URL|ct_(?:siteunder|tag|n(?:SuUrl(?:Opp)?)|Su(?:Loaded|Url)))$",
+			"script": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
+			"url": "^https?://(?:[^\\/]+\\.)?adcash\\.com/script/pop_"
+		},
 		"AddThis": {
 			"website": "www.addthis.com",
 			"cats": [ 5 ],
@@ -133,11 +140,24 @@
 			"html": "(?:<embed[^>]+(?:src=\"https?://mh\\d?\\.adriver\\.ru/|flashvars=\"[^\"]*(?:http:%3A//(?:ad|mh\\d?)\\.adriver\\.ru/|adriver_banner))|<(?:(?:iframe|img)[^>]+src|a[^>]+href)=\"https?://ad\\.adriver\\.ru/)",
 			"script": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)"
 		},
+		"AdRoll": {
+			"website": "adroll.com",
+			"cats": [ 36 ],
+			"env": "^adroll_",
+			"script": "(?:a|s)\\.adroll\\.com"
+		},
 		"Advanced Web Stats": {
 			"website": "www.advancedwebstats.com",
 			"cats": [ 10 ],
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
+		},
+		"Adzerk": {
+			"website": "adzerk.com",
+			"cats": [ 36 ],
+			"env": "^ados(?:Results)?$",
+			"script": "adzerk\\.net/ados\\.js",
+			"html": "<iframe [^>]*src=\"[^\"]+adzerk\\.net",
 		},
 		"Akamai": {
 			"website": "akamai.com",
@@ -283,6 +303,13 @@
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\1",
 			"implies": "Java"
 		},
+		"Avangate": {
+			"website": "avangate.com",
+			"cats": [ 6 ],
+			"env": "^(?:__)?avng8_",
+			"html": "<link[^>]* href=\"^https?://edge\\.avangate\\.net/",
+			"script": "^https?://edge\\.avangate\\.net/"
+		},
 		"AWStats": {
 			"website": "awstats.sourceforge.net",
 			"cats": [ 10 ],
@@ -334,7 +361,7 @@
 			"website": "www.ozerov.de/bigdump.php",
 			"cats": [ 3 ],
 			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
-			"implies": "PHP"
+			"implies": [ "MySQL", "PHP" ]
 		},
 		"Bigware": {
 			"website": "bigware.de",
@@ -373,6 +400,12 @@
 			"html": "Powered by <a[^>]+href=\"https?://(?:www\\.)?cibonfire\\.com[^>]*>Bonfire v([^<]+)\\;version:\\1",
 			"implies": "CodeIgniter"
 		},
+		"Bolt": {
+			"website": "bolt.cm",
+			"cats": [ 1 ],
+			"meta": { "generator": "Bolt" },
+			"implies": "PHP"
+		},		
 		"Brother": {
 			"website": "www.brother.com",
 			"cats": [ 40 ]
@@ -388,6 +421,12 @@
 			"cats": [ 10 ],
 			"script": "bugsense\\.js",
 			"env": "^BugSense$"
+		},
+		"BugSnag": {
+			"website": "bugsnag.com",
+			"cats": [ 10 ],
+			"script": "bugsnag.*\\.js",
+			"env": "^BugSnag$"
 		},
 		"Bugzilla": {
 			"website": "www.bugzilla.org",
@@ -407,6 +446,13 @@
 			"script": "CatalystScripts",
 			"html": "<!-- BC_OBNW -->"
 		},
+		"BuySellAds": {
+			"website": "buysellads.com",
+			"cats": [ 36 ],
+			"script": "^https?://s\\d\\.buysellads\\.com/",
+			"html": "<script[^>]*>(?:(?!<\\/script>)(?:.|\\s))+?bsa\\.src\\s*=\\s*[\"'][^'\"]+s\\d\\.buysellads\\.com",
+			"env": "^_bsa"
+		},
 		"Canon": {
 			"website": "www.canon.com",
 			"cats": [ 40 ]
@@ -417,6 +463,13 @@
 			"headers": { "Set-Cookie": "cakephp=" },
 			"meta": { "application-name": "CakePHP" },
 			"implies": "PHP"
+		},
+		"Carbon Ads": {
+			"website": "carbonads.net",
+			"cats": [ 36 ],
+			"script": "[^\\/]*\\/\\/(?:engine|srv)\\.carbonads\\.com\\/",
+			"html": "<[a-z]+ [^>]*id=\"carbonads-container\"",
+			"env": "^_carbonads"
 		},
 		"Cargo": {
 			"website": "cargocollective.com",
@@ -521,7 +574,8 @@
 		"CMS Made Simple": {
 			"website": "cmsmadesimple.org",
 			"cats": [ 1 ],
-			"meta": { "generator": "CMS Made Simple" },
+			"headers": { "Set-Cookie": "^CMSSESSID" },
+			"meta": { "generator": "CMS Made Simple" },			
 			"implies": "PHP"
 		},
 		"CMSimple": {
@@ -644,11 +698,23 @@
 			"meta": { "generator": "CPG Dragonfly" },
 			"implies": "PHP"
 		},
+		"Craft CMS": {
+			"website": "buildwithcraft.com",
+			"cats": [ 1 ],
+			"headers": { "Set-Cookie": "CraftSessionId=" },
+			"implies": "PHP"
+		},
 		"Crazy Egg": {
 			"website": "crazyegg.com",
 			"cats": [ 10 ],
 			"env": "^CE2$",
 			"script": "cetrk\\.com/pages/scripts/\\d+/\\d+\\.js"
+		},
+		"Criteo": {
+			"website": "criteo.com",
+			"cats": [ 36 ],
+			"script": "[^/]*//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+			"env": "^criteo"
 		},
 		"Cross Pixel": {
 			"website": "datadesk.crsspxl.com",
@@ -1101,6 +1167,12 @@
 			"meta": { "generator": "FWP Shop" },
 			"html": "<!--\\s+FwP Systems"
 		},
+		"Fusion Ads": {
+			"website": "fusionads.net",
+			"cats": [ 36 ],
+			"script": "^[^\/]*//[ac]dn\\.fusionads\\.net/(?:api/([\\d.]+)/)?\\;version:\\1",
+			"env": "^_fusion"
+		},
 		"Gallery": {
 			"website": "gallery.menalto.com",
 			"cats": [ 7 ],
@@ -1165,7 +1237,7 @@
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
 			"env": [ "^google_ad_", "^__google_ad_", "^Goog_AdSense_" ],
-			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ]
+			"script": [ "googlesyndication\\.com/", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ]
 		},
 		"Google App Engine": {
 			"website": "code.google.com/appengine",
@@ -1509,7 +1581,7 @@
 		"Jekyll": {
 			"website": "jekyllrb.com",
 			"cats": [ 1, 11 ],
-			"meta": { "generator": "Jekyll(?:v[\\d.]+)?\\;version:\\1" }
+			"meta": { "generator": "Jekyll (v[\\d.]+)?\\;version:\\1" }
 		},
 		"Jetty": {
 			"website": "www.eclipse.org/jetty",
@@ -1731,10 +1803,12 @@
 			"html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css"
 		},
 		"LightMon Engine": {
-			"website": "en.lightmon.ru",
+			"website": "lightmon.ru",
 			"cats": [ 1 ],
 			"html": "<!-- Lightmon Engine Copyright Lightmon",
-			"implies": "PHP"
+			"meta": { "generator": "LightMon Engine" },
+			"headers": { "Set-Cookie": "lm_online" },
+			"implies": [ "PHP" ]
 		},
 		"lighttpd": {
 			"website": "www.lighttpd.net",
@@ -2367,6 +2441,11 @@
 			"url": "/web/viewer\\.html?file=[^&]\\.pdf",
 			"env": "^PDFJS$"
 		},
+		"PencilBlue": {
+			"website": "pencilblue.org",
+			"cats": [ 1, 11 ],
+			"headers": { "X-Powered-By": "PencilBlue" }
+		},
 		"Percussion": {
 			"website": "percussion.com",
 			"cats": [ 1 ],
@@ -2430,7 +2509,7 @@
 		"phpMyAdmin": {
 			"website": "www.phpmyadmin.net",
 			"cats": [ 3 ],
-			"html": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\()\\;version:\\1",
+			"html": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)\\;version:\\1",
 			"env": "^pma_absolute_uri$",
 			"implies": [ "PHP", "MySQL" ]
 		},
@@ -2779,10 +2858,11 @@
 			"env": "^SHARETHIS$"
 		},
 		"ShinyStat": {
+			"website": "shinystat.com",
 			"cats": [ 10 ],
 			"env": "^SSsdk$",
 			"html": "<img[^>]*\\s+src=['\"]?https?://www\\.shinystat\\.com/cgi-bin/shinystat\\.cgi\\?[^'\"\\s>]*['\"\\s/>]",
-			"script": "^https?://codice(business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi"
+			"script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi"
 		},
 		"Shopalize": {
 			"website": "shopalize.com",
@@ -2854,6 +2934,17 @@
 			"website": "www.siteedit.ru",
 			"cats": [ 1 ],
 			"meta": { "generator": "SiteEdit" }
+		},
+		"Sivuviidakko": {
+           		 "website": "sivuviidakko.fi",
+           		 "cats": [ 1 ],
+           		 "meta": { "generator": "Sivuviidakko" }
+		},
+		"Sizmek": {
+			"website": "sizmek.com",
+			"cats": [ 36 ],
+			"html": "(?:<a [^>]*href=\"[^/]*//[^/]*serving-sys\\.com/|<img [^>]*src=\"[^/]*//[^/]*serving-sys\\.com/)",
+			"script": "[^/]*//[^/]*serving-sys\\.com/"
 		},
 		"Slimbox": {
 			"website": "www.digitalia.be/software/slimbox",
@@ -3129,6 +3220,12 @@
 			"html": "<a id=\"tracpowered",
 			"implies": "Python"
 		},
+		"TrackJs": {
+			"website": "trackjs.com",
+			"cats": [ 10 ],
+			"script": "\\tracker.js",
+			"env": "^TrackJs$"
+		},
 		"Tumblr": {
 			"website": "www.tumblr.com",
 			"cats": [ 11 ],
@@ -3219,6 +3316,14 @@
 			"cats": [ 18 ],
 			"script": "uikit.*\\.js"
 		},
+		"UltraCart": {
+			"website": "ultracart.com",
+			"cats": [ 6 ],
+			"env": "^ucCatalog",
+			"html": "<form [^>]*action=\"[^\"]*\\/cgi-bin\\/UCEditor\\?(?:[^\"]*&)?merchantId=[^\"]",
+			"script": "cgi-bin\\/UCJavaScript\\?(?:[^\"]*&)?merchantid=.",
+			"url": "/cgi-bin/UCEditor\\?(?:.*&)?merchantid=."
+		},
 		"Umbraco": {
 			"website": "umbraco.com",
 			"cats": [ 1 ],
@@ -3276,6 +3381,13 @@
 			"env": "^(?:vBulletin|vB_[^g])",
 			"implies": "PHP"
 		},
+		"Veoxa": {
+			"website": "veoxa.com",
+			"cats": [ 36 ],
+			"html": "<img [^>]*src=\"[^\"]+tracking\\.veoxa\\.com",
+			"env": "^(?:Veoxa_|VuVeoxaContent)",
+			"script": "tracking\\.veoxa\\.com"
+		},
 		"VideoJS": {
 			"website": "videojs.com",
 			"cats": [ 14 ],
@@ -3287,6 +3399,12 @@
 			"website": "www.viennacms.nl",
 			"cats": [ 1 ],
 			"html": "powered by <a href=\"[^>]+viennacms"
+		},
+		"VigLink": {
+			"website": "viglink.com",
+			"cats": [ 36 ],
+			"env": "^(?:vglnk(?:$|_)|vl_(?:cB|disable)$)",
+			"script": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)"
 		},
 		"Vignette": {
 			"website": "www.vignette.com",
@@ -3654,6 +3772,13 @@
 			"html": "zbxCallPostScripts\\(\\);",
 			"meta": { "Author": "ZABBIX SIA\\;confidence:70" },
 			"url": "\\/zabbix\\/\\;confidence:30"
+		},
+		"Zanox": {
+			"website": "zanox.com",
+			"cats": [ 36 ],
+			"html": "<img [^>]*src=\"[^\"]+ad\\.zanox\\.com",
+			"env": "^zanox$",
+			"script": "zanox\\.com/scripts/zanox\\.js$"
 		},
 		"Zen Cart": {
 			"website": "www.zen-cart.com",
