@@ -140,6 +140,12 @@
 			"html": "(?:<embed[^>]+(?:src=\"https?://mh\\d?\\.adriver\\.ru/|flashvars=\"[^\"]*(?:http:%3A//(?:ad|mh\\d?)\\.adriver\\.ru/|adriver_banner))|<(?:(?:iframe|img)[^>]+src|a[^>]+href)=\"https?://ad\\.adriver\\.ru/)",
 			"script": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)"
 		},
+		"AdRoll": {
+			"website": "adroll.com",
+			"cats": [ 36 ],
+			"env": "^adroll_",
+			"script": "(?:a|s)\\.adroll\\.com"
+		},
 		"Advanced Web Stats": {
 			"website": "www.advancedwebstats.com",
 			"cats": [ 10 ],
