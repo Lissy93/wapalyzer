@@ -422,6 +422,12 @@
 			"script": "bugsense\\.js",
 			"env": "^BugSense$"
 		},
+		"BugSnag": {
+			"website": "bugsnag.com",
+			"cats": [ 10 ],
+			"script": "bugsnag.*\\.js",
+			"env": "^BugSnag$"
+		},
 		"Bugzilla": {
 			"website": "www.bugzilla.org",
 			"cats": [ 13 ],
@@ -3207,6 +3213,12 @@
 			"cats": [ 13 ],
 			"html": "<a id=\"tracpowered",
 			"implies": "Python"
+		},
+		"TrackJs": {
+			"website": "trackjs.com",
+			"cats": [ 10 ],
+			"script": "\\tracker.js",
+			"env": "^TrackJs$"
 		},
 		"Tumblr": {
 			"website": "www.tumblr.com",
