@@ -510,6 +510,12 @@
 			"cats": [ 31 ],
 			"headers": { "Server": "^CFS ", "X-CF1": ".+", "X-CF2": ".+" }
 		},
+		"cgit": {
+			"website": "git.zx2c4.com/cgit/",
+			"cats": [ 19 ],
+			"html": "id='cgit'",
+			"implies": "Perl"
+		},
 		"Chameleon": {
 			"website": "chameleon-system.de",
 			"cats": [ 1 ],
@@ -1226,6 +1232,12 @@
 			"meta": { "generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1" },
 			"headers": { "X-Ghost-Cache-Status": ".*" }
 		},
+		"gitweb": {
+			"website": "git-scm.com",
+			"cats": [ 19 ],
+			"html": "<!-- git web interface version",
+			"implies": "Perl"
+		},
 		"Glyphicons": {
 			"website": "glyphicons.com",
 			"cats": [ 17 ],
@@ -1790,7 +1802,7 @@
 			"html": "<link[^>]+ rel=\"stylesheet/less\""
 		},
 		"libwww-perl-daemon": {
-			"website": "search.cpan.org/~gaas/HTTP-Daemon-6.01/lib/HTTP/Daemon.pm",
+			"website": "metacpan.org/pod/HTTP::Daemon",
 			"cats": [ 22 ],
 			"headers": { "Server": "libwww-perl-daemon(?:/([\\d\\.]+))?\\;version:\\1" },
 			"implies": "Perl"
@@ -3087,6 +3099,12 @@
 			"html": "  Running (?:MySource|Squiz) Matrix",
 			"headers": { "X-Powered-By": "Squiz Matrix" },
 			"implies": "PHP"
+		},
+		"Starlet": {
+			"website": "metacpan.org/pod/Starlet",
+			"cats": [ 22 ],
+			"headers": { "Server": "^Plack::Handler::Starlet" },
+			"implies": "Perl"
 		},
 		"StatCounter": {
 			"website": "www.statcounter.com",
