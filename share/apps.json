@@ -461,7 +461,7 @@
 			"website": "buysellads.com",
 			"cats": [ 36 ],
 			"script": "^https?://s\\d\\.buysellads\\.com/",
-			"html": "<script[^>]*>(?:(?!<\\/script>)(?:.|\\s))+?bsa\\.src\\s*=\\s*[\"'][^'\"]+s\\d\\.buysellads\\.com",
+            "html": "<script[^>]*>[^<]+?bsa.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
 			"env": "^_bsa"
 		},
 		"Canon": {
