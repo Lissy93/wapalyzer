@@ -6,7 +6,7 @@ setup(
     description="Python package for python_raw driver in Wappalyzer bundle",
     author="smant",
     author_email="TBA",
-    url="https://github.com/chorsley/Wappalyzer/tree/master/drivers/python_raw",
+    url="https://github.com/ElbertF/Wappalyzer/tree/master/drivers/python_raw",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
