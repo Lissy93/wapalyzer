@@ -14,6 +14,7 @@ except ImportError:
 
 
 class Application(object):
+
     def __init__(self, app):
         self.app = app
         self.confidence = {}
@@ -21,7 +22,8 @@ class Application(object):
 
     def set_detected(self, pattern, type, value, key=None):
         self.detected = True
-        self.confidence[type + ' ' + (key + ' ' if key else '') + pattern.str] = pattern.confidence
+        self.confidence[
+            type + ' ' + (key + ' ' if key else '') + pattern.str] = pattern.confidence
 
         # todo: detect version
 
@@ -31,6 +33,7 @@ class Application(object):
 
 
 class Wappalyzer(object):
+
     def __init__(self, data=None, datafile_path=None):
         data = data or self.load_data(datafile_path)
         self.categories = data['categories']
@@ -76,18 +79,22 @@ class Wappalyzer(object):
                     if detection_type in ['url', 'html']:
                         for pattern in self.parse_patterns(patterns):
                             if pattern.regex.search(data[detection_type]):
-                                application.set_detected(pattern, detection_type, data[detection_type])
+                                application.set_detected(
+                                    pattern, detection_type, data[detection_type])
                     elif detection_type in ['meta', 'headers']:
                         for hm_name, hm_pattern in patterns.iteritems():
                             for pattern in self.parse_patterns(hm_pattern):
-                                value = data[detection_type].get(hm_name.lower())
+                                value = data[detection_type].get(
+                                    hm_name.lower())
                                 if value and pattern.regex.search(value):
-                                    application.set_detected(pattern, detection_type, value, hm_name)
+                                    application.set_detected(
+                                        pattern, detection_type, value, hm_name)
                     elif detection_type in ['script']:
                         for script in data[detection_type]:
                             for pattern in self.parse_patterns(patterns):
                                 if pattern.regex.search(script):
-                                    application.set_detected(pattern, detection_type, script)
+                                    application.set_detected(
+                                        pattern, detection_type, script)
                     elif detection_type in ['website', 'excludes', 'cats', 'implies', 'env']:
                         pass
                     else:
@@ -101,11 +108,11 @@ class Wappalyzer(object):
         return detected_apps
 
     class Pattern:
+
         def __init__(self, str):
             self.str = str
             self.regex = re.compile(str, re.I)
             self.confidence = 100
-
 
     def parse_patterns(self, patterns):
         if isinstance(patterns, basestring):
