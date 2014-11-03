@@ -2485,6 +2485,12 @@
 			"cats": [ 27 ],
 			"url": "\\.pl(?:$|\\?)"
 		},
+		"Petrojs": {
+			"website": "petrojs.thepetronics.com",
+			"cats": [ 12 ],
+			"script": [ "petrojs(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "(?:/([\\d.]+)/)?petrojs(?:\\.min)?\\.js\\;version:\\1" ],
+			"env": "^petrojs$"
+		},
 		"Phaser": {
 			"website": "phaser.io",
 			"cats": [ 12 ],
