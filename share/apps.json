@@ -1011,6 +1011,12 @@
 			"headers": { "Set-Cookie": "EPi(?:Trace|Server)[^;]*=" },
 			"implies": "Microsoft ASP.NET"
 		},
+		"Epom": {
+			"website": "epom.com",
+			"cats": [ 36 ],
+			"env": "^Epom",
+			"url": "^https?://(?:[^/]+\\.)?ad(?:op)?shost1\\.com/"
+		},
 		"EPrints": {
 			"website": "www.eprints.org",
 			"cats": [ 19 ],
