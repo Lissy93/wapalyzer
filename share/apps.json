@@ -3779,6 +3779,11 @@
 			"script": [ "yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "([\\d.]+)/yepnope(\\.min)?\\.js\\;version:\\1", "yepnope.*\\.js" ],
 			"env": "^yepnope$"
 		},
+		"Yieldlab": {
+			"website": "yieldlab.de",
+			"cats": [ 36 ],
+			"script": "^https?://(?:[^/]+\\.)?yieldlab\\.net/"
+		},
 		"YouTube": {
 			"website": "www.youtube.com",
 			"cats": [ 14 ],
