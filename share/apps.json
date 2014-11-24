@@ -715,10 +715,15 @@
 			"meta": { "generator": "CPG Dragonfly" },
 			"implies": "PHP"
 		},
+        "C++": {
+            "website": "isocpp.org",
+            "cats": [ 27 ]
+        },
         "CppCMS": {
             "website": "cppcms.com",
             "cats": [ 1 ],
-            "headers": { "X-Powered-By": "CppCMS/([\\d.]+)" }
+            "headers": { "X-Powered-By": "CppCMS/([\\d.]+)" },
+            "implies": "C++"
         },
 		"Craft CMS": {
 			"website": "buildwithcraft.com",
