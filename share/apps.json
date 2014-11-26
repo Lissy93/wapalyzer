@@ -1460,9 +1460,9 @@
 		},
 		"Invenio": {
 			"website": "invenio-software.org",
-			"cats": [ 1 ],
+			"cats": [ 19 ],
 			"headers": { "Set-cookie": "INVENIOSESSION" },
-			"html": "Powered by\\s+(?:CERN )?<a (?:class=\"footer\" )?href=\"http://(?:cdsware\\.cern\\.ch(?:/invenio)?|invenio-software\\.org|cern\\.ch/invenio)(?:/)?\">(?:CDS )?Invenio</a>\\s+v([\\d\\.]+)?\\;version:\\1"
+			"html": "(?:Powered by|System)\\s+(?:CERN )?<a (?:class=\"footer\" )?href=\"http://(?:cdsware\\.cern\\.ch(?:/invenio)?|invenio-software\\.org|cern\\.ch/invenio)(?:/)?\">(?:CDS )?Invenio</a>\\s*v?([\\d\\.]+)?\\;version:\\1"
 		},
 		"io4 CMS": {
 			"website": "notenbomer.nl/Producten/Content_management/io4_|_cms",
