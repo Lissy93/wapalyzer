@@ -722,7 +722,7 @@
         "CppCMS": {
             "website": "cppcms.com",
             "cats": [ 1 ],
-            "headers": { "X-Powered-By": "CppCMS/([\\d.]+)" },
+            "headers": { "X-Powered-By": "CppCMS/(?:[\\d.]+)" },
             "implies": "C++"
         },
 		"Craft CMS": {
