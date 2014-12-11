@@ -3076,6 +3076,13 @@
 			"html": " <(?:script|link)[^>].*com_sobipro.*>",
 			"implies": "Joomla"
 		},
+		"Socket.io": {
+			"website": "socket.io",
+			"cats": [ 12 ],
+			"script": "socket.io.*\\.js",
+			"env": "^io$",
+			"implies": "node.js"
+		},
 		"SoundManager": {
 			"website": "www.schillmania.com/projects/soundmanager2",
 			"cats": [ 12 ],
