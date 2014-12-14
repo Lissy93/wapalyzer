@@ -42,7 +42,14 @@
 		"40": "printers",
 		"41": "payment-processors",
 		"42": "tag-managers",
-		"43": "paywalls"
+		"43": "paywalls",
+		"44": "build-ci-systems",
+		"45": "control-systems",
+		"46": "remote-access",
+		"47": "dev-tools",
+		"48": "network-storage",
+		"49": "feed-readers",
+		"50": "document-management-systems"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -131,6 +138,11 @@
 			"cats": [ 20 ],
 			"meta": { "generator": "Adobe GoLive(?:\\s([\\d.]+))?\\;version:\\1" }
 		},
+		"Adobe Muse": {
+			"website": "muse.adobe.com",
+			"cats": [ 20 ],
+			"meta": { "generator": "^Muse(?:$| ?/?(\\d[\\d.]+))\\;version:\\1" }
+		},
 		"Adobe RoboHelp": {
 			"website": "adobe.com/products/robohelp.html",
 			"cats": [ 4 ],
@@ -179,6 +191,11 @@
 			"website": "akamai.com",
 			"cats": [ 31 ],
 			"headers": { "X-Akamai-Transformed": ".*" }
+		},
+		"Allegro RomPager": {
+			"website": "allegrosoft.com/embedded-web-server-s2",
+			"cats": [ 22 ],
+			"headers": { "Server": "Allegro-Software-RomPager(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"AlloyUI": {
 			"website": "www.alloyui.com",
@@ -261,7 +278,7 @@
 		"Apache Tomcat": {
 			"website": "tomcat.apache.org",
 			"cats": [ 22 ],
-			"headers": { "Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:" }
+			"headers": { "Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:", "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1" }
 		},
 		"Apache Traffic Server": {
 			"website": "trafficserver.apache.org/",
@@ -285,6 +302,19 @@
 			"cats": [ 2 ],
 			"html": "ping\\.src = node\\.href;"
 		},
+		"Artifactory Web Server": {
+			"website": "jfrog.com/open-source/#os-arti",
+			"cats": [ 22 ],
+			"headers": { "Server": "Artifactory(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": [ "Artifactory" ]
+		},
+		"Artifactory": {
+			"website": "jfrog.com/open-source/#os-arti",
+			"cats": [ 47 ],
+			"env": "^ArtifactoryUpdates$",
+			"script": [ "wicket/resource/org.artifactory." ],
+			"html": [ "<span class=\"version\">Artifactory(?: Pro)(?: Power Pack)(?: ([\\d.]+))?\\;version:\\1" ]
+		},
 		"AsciiDoc": {
 			"website": "www.methods.co.nz/asciidoc",
 			"cats": [ 1, 20, 27 ],
@@ -294,13 +324,19 @@
 		"ATEN": {
 			"website": "www.aten.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "ATEN HTTP Server(:?\\(V?([\\d\\.]+)\\))?\\;version:\\1" }
+			"headers": { "Server": "ATEN HTTP Server(?:\\(?V?([\\d\\.]+)\\)?)?\\;version:\\1" }
 		},
 		"ATG Web Commerce": {
 			"website": "oracle.com/us/products/applications/web-commerce/atg",
 			"cats": [ 6 ],
 			"headers": { "X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1" },
 			"html": "<[^>]+_DARGS"
+		},
+		"Atlassian Bitbucket": {
+			"website": "www.atlassian.com/software/bitbucket/overview/",
+			"cats": [ 47 ],
+			"meta": { "application-name": "Bitbucket" },
+			"env": "^bitbucket$"
 		},
 		"Atlassian Confluence": {
 			"website": "www.atlassian.com/software/confluence/overview/team-collaboration-software",
@@ -312,12 +348,22 @@
 		},
 		"Atlassian Jira": {
 			"website": "www.atlassian.com/software/jira/overview/",
-			"cats": [ 13 ],
+			"cats": [ 13, 47 ],
+			"meta": { "application-name": "JIRA", "ajs-version-number": "([\\d\\.]+)\\;version:\\1" },
 			"env": "^jira$",
-			"script": "/jira/s/",
-			"url": "/secure/Dashboard\\.jspa",
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\1",
 			"implies": "Java"
+		},
+		"Atlassian Jira Issue Collector": {
+			"website": "www.atlassian.com/software/jira/overview/",
+			"cats": [ 13, 47 ],
+			"script": [ "jira-issue-collector-plugin", "atlassian.jira.collector.plugin" ]
+		},
+		"Atlassian FishEye": {
+			"website": "www.atlassian.com/software/fisheyet/overview/",
+			"cats": [ 47 ],
+			"headers": { "Set-cookie": "FESESSIONID" },
+			"html": "<title>(?:Log in to )?FishEye (?:and Crucible )?([\\d.]+)?</title>\\;version:\\1"
 		},
 		"Avangate": {
 			"website": "avangate.com",
@@ -404,6 +450,11 @@
 			"meta": { "generator": "blogger" },
 			"url": "\\.blogspot\\.com"
 		},
+		"Bluefish": {
+			"website": "sourceforge.net/projects/bluefish",
+			"cats": [ 20 ],
+			"meta": { "generator": "Bluefish(?:\\s([\\d.]+))?\\;version:\\1" }
+		},
 		"Boa": {
 			"website": "www.boa.org",
 			"cats": [ 22 ],
@@ -421,7 +472,7 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Bolt" },
 			"implies": "PHP"
-		},		
+		},
 		"Brother": {
 			"website": "www.brother.com",
 			"cats": [ 40 ]
@@ -473,6 +524,12 @@
 			"website": "www.canon.com",
 			"cats": [ 40 ]
 		},
+		"Canon HTTP Server": {
+			"website": "www.canon.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "CANON HTTP Server(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": [ "Canon" ]
+		},
 		"CakePHP": {
 			"website": "cakephp.org",
 			"cats": [ 18 ],
@@ -500,6 +557,11 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "Catwalk\\/?([\\d\\.]+)?\\;version:\\1" },
 			"implies": "Canon"
+		},
+		"CenteHTTPd": {
+			"website": "cente.jp/cente/app/HTTPdc.html",
+			"cats": [ 22 ],
+			"headers": { "Server": "CenteHTTPd(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"CentOS": {
 			"website": "centos.org",
@@ -805,6 +867,11 @@
 			"meta": { "generator": "DataLife Engine" },
 			"implies": [ "PHP", "Apache" ]
 		},
+		"DAV": {
+			"website": "???",
+			"cats": [ 33 ],
+			"headers": { "Server": "\\bDAV\\b(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"David Webbox": {
 			"website": "www.tobit.com",
 			"cats": [ 22 ],
@@ -820,6 +887,11 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "debut\\/?([\\d\\.]+)?\\;version:\\1" },
 			"implies": "Brother"
+		},
+		"Decorum": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "DECORUM(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"DedeCMS": {
 			"website": "dedecms.com",
@@ -858,9 +930,11 @@
 			"implies": [ "PHP", "Apache" ]
 		},
 		"Discourse": {
-			"website": "www.discourse.org/",
+			"website": "discourse.org",
 			"cats": [ 2 ],
-			"env": "Discourse"
+			"meta": { "generator": "Discourse(?: ?/?([\\d.]+\\d))?\\;version:\\1" },
+			"env": "Discourse",
+			"implies": [ "Ruby on Rails" ]
 		},
 		"Disqus": {
 			"website": "disqus.com",
@@ -940,6 +1014,7 @@
 			"script": "drupal\\.js",
 			"html": "<(?:link|style)[^>]+sites/(?:default|all)/(?:themes|modules)/",
 			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1", "Expires": "19 Nov 1978" },
+			"meta": { "generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1" },
 			"env": "^Drupal$",
 			"implies": "PHP"
 		},
@@ -967,6 +1042,11 @@
 			"script": "[^a-z\\d]e107\\.js",
 			"headers": { "Set-Cookie": "e107_tz[^;]+=", "X-Powered-By": "e107" },
 			"implies": "PHP"
+		},
+		"eDevice SmartStack": {
+			"website": "edevice.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "eDevice SmartStack(?: ?/?([\\d.]+))?\\;version:\\1" }
 		},
 		"EdgeCast": {
 			"website": "www.edgecast.com",
@@ -996,6 +1076,11 @@
 			"cats": [ 32 ],
 			"script": "elqCfg\\.js",
 			"env": "^elq(?:SiteID|Load|CurESite)$"
+		},
+		"EmbedThis Appweb": {
+			"website": "embedthis.com/appweb",
+			"cats": [ 22 ],
+			"headers": { "Server": "Mbedthis-Appweb(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"Ember.js": {
 			"website": "emberjs.com",
@@ -1043,6 +1128,11 @@
 			"website": "www.erlang.org",
 			"cats": [ 27 ],
 			"headers": { "Server": "Erlang( OTP/([\\-\\d\\.ABR]+))?\\;version:\\1" }
+		},
+		"ESERV-10": {
+			"website": "www.violasystems.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "ESERV-10(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"eSyndiCat": {
 			"website": "esyndicat.com",
@@ -1202,7 +1292,7 @@
 		"FrontPage": {
 			"website": "office.microsoft.com/frontpage",
 			"cats": [ 20 ],
-			"meta": { "generator": "Microsoft FrontPage(?:\\s([\\d.]+))?\\;version:\\1" },
+			"meta": { "generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1" },
 			"html": "<html[^>]+urn:schemas-microsoft-com:office:office"
 		},
 		"FWP": {
@@ -1259,11 +1349,33 @@
 			"meta": { "generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1" },
 			"headers": { "X-Ghost-Cache-Status": ".*" }
 		},
+		"git": {
+			"website": "git-scm.com",
+			"cats": [ 47 ],
+			"meta": { "generator": "\\bgit/([\\d.]+\\d)\\;version:\\1" }
+		},
+		"GitBook": {
+			"website": "gitbook.io",
+			"cats": [ 4 ],
+			"meta": { "generator": "GitBook(?:.([\\d.]+))?\\;version:\\1" }
+		},
+		"GitLab": {
+			"website": "about.gitlab.com",
+			"cats": [ 19, 13 ],
+			"headers": { "Set-cookie": "_gitlab_session" }
+		},
 		"gitweb": {
 			"website": "git-scm.com",
-			"cats": [ 19 ],
+			"cats": [ 47 ],
+			"meta": { "generator": "gitweb(?:/([\\d.]+\\d))?\\;version:\\1" },
 			"html": "<!-- git web interface version",
-			"implies": "Perl"
+			"implies": [ "Perl", "git" ]
+		},
+		"GlassFish": {
+			"website": "glassfish.java.net",
+			"cats": [ 22 ],
+			"headers": { "Server": "GlassFish(?: Server)(?: Open Source Edition)(?: ?/?([\\d.]+))?\\;version:\\1" },
+			"implies": [ "Java" ]
 		},
 		"Glyphicons": {
 			"website": "glyphicons.com",
@@ -1314,7 +1426,7 @@
 		"Google Maps": {
 			"website": "maps.google.com",
 			"cats": [ 35 ],
-			"script": "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1"
+			"script": [ "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1", "//maps.googleapis.com/maps/api/js" ]
 		},
 		"Google PageSpeed": {
 			"website": "developers.google.com/speed/pagespeed/mod",
@@ -1341,6 +1453,7 @@
 			"website": "developers.google.com/web-toolkit",
 			"cats": [ 18 ],
 			"env": "^__gwt_",
+			"meta": { "gwt:property": "" },
 			"implies": "Java"
 		},
 		"GoStats": {
@@ -1377,6 +1490,12 @@
 			"meta": { "DC.identifier": "/content\\.jsp\\?objectid=" },
 			"html": "<img[^>]+/dsresource\\?objectid="
 		},
+		"gunicorn": {
+			"website": "gunicorn.org",
+			"cats": [ 22 ],
+			"headers": { "Server": "gunicorn(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": [ "Python" ]
+		},
 		"G-WAN": {
 			"website": "gwan.com",
 			"cats": [ 22 ],
@@ -1394,6 +1513,11 @@
 			"env": "^Handlebars$",
 			"script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
 			"html": "<[^>]*type=[^>]text\\/x-handlebars-template"
+		},
+		"Happy ICS Server": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"HeadJS": {
 			"website": "headjs.com",
@@ -1442,9 +1566,39 @@
 			"meta": { "generator": "Hotaru CMS" },
 			"headers": { "Set-Cookie": "hotaru_mobile=" }
 		},
+		"HP": {
+			"website": "hp.com",
+			"cats": [ 40 ]
+		},
+		"HP ChaiServer": {
+			"website": "hp.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "HP-Chai(?:Server|SOE)(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": [ "HP" ]
+		},
+		"HP Compact Server": {
+			"website": "hp.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "HP_Compact_Server(?:/([\\d.]+))?\\;version:\\1" }
+		},
+		"HP iLO": {
+			"website": "hp.com",
+			"cats": [ 22, 46 ],
+			"headers": { "Server": "HP-iLO-Server(?:/([\\d.]+))?\\;version:\\1" }
+		},
+		"HP System Management": {
+			"website": "hp.com",
+			"cats": [ 46 ],
+			"headers": { "Server": "HP System Management" }
+		},
 		"HP ProCurve": {
 			"website": "hp.com/networking",
 			"cats": [ 37 ]
+		},
+		"HTTP-Server": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "HTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1" }
 		},
 		"HubSpot": {
 			"website": "hubspot.com",
@@ -1468,6 +1622,11 @@
 			"website": "ibm.com/software/webservers/httpservers",
 			"cats": [ 22 ],
 			"headers": { "Server": "IBM_HTTP_Server(?:/([\\d.]+))?\\;version:\\1" }
+		},
+		"IBM Tivoli Storage Manager": {
+			"website": "ibm.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "TSM_HTTP(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"IBM WebSphere Portal": {
 			"website": "ibm.com/software/websphere/portal",
@@ -1526,6 +1685,11 @@
 			"headers": { "Set-cookie": "MAKACSESSION" },
 			"html": "Powered by\\s+(?:CERN )?<a href=\"http://(?:cdsware\\.cern\\.ch/indico/|indico-software\\.org|cern\\.ch/indico)\">(?:CDS )?Indico( [\\d\\.]+)?\\;version:\\1"
 		},
+		"Indy": {
+			"website": "indyproject.org",
+			"cats": [ 22 ],
+			"headers": { "Server": "Indy(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"InProces": {
 			"website": "www.brein.nl/oplossing/product/website",
 			"cats": [ 1 ],
@@ -1537,6 +1701,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "InstantCMS" },
 			"headers": { "Set-Cookie": "InstantCMS\\[logdate\\]=" }
+		},
+		"Intel Active Management Technology": {
+			"website": "intel.com",
+			"cats": [ 22, 46 ],
+			"headers": { "Server": "Intel\\(R\\) Active Management Technology(?: ([\\d.]+))?\\;version:\\1" }
 		},
 		"IntenseDebate": {
 			"website": "intensedebate.com",
@@ -1556,7 +1725,7 @@
 		},
 		"Invenio": {
 			"website": "invenio-software.org",
-			"cats": [ 19 ],
+			"cats": [ 50 ],
 			"headers": { "Set-cookie": "INVENIOSESSION" },
 			"html": "(?:Powered by|System)\\s+(?:CERN )?<a (?:class=\"footer\" )?href=\"http://(?:cdsware\\.cern\\.ch(?:/invenio)?|invenio-software\\.org|cern\\.ch/invenio)(?:/)?\">(?:CDS )?Invenio</a>\\s*v?([\\d\\.]+)?\\;version:\\1"
 		},
@@ -1634,15 +1803,27 @@
 			"implies": "JBoss Application Server",
 			"excludes": "Apache Tomcat"
 		},
+		"JC-HTTPD": {
+			"website": "canon.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "JC-HTTPD(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": [ "Canon" ],
+			"excludes": "Apache"
+		},
 		"Jekyll": {
 			"website": "jekyllrb.com",
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "Jekyll (v[\\d.]+)?\\;version:\\1" }
 		},
+		"Jenkins": {
+			"website": "jenkins-ci.org",
+			"cats": [ 44 ],
+			"headers": { "X-Jenkins": "([\\d\\.]+)\\;version:\\1" }
+		},
 		"Jetty": {
 			"website": "www.eclipse.org/jetty",
 			"cats": [ 22 ],
-			"headers": { "Server": "Jetty(?:\\(([\\d\\.]+\\d+))?\\;version:\\1" },
+			"headers": { "Server": "Jetty(?:\\(([\\d\\.]*\\d+))?\\;version:\\1" },
 			"implies": "Java"
 		},
 		"Jirafe": {
@@ -2031,12 +2212,22 @@
 			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
 			"implies": "IIS\\;confidence:50"
 		},
+		"Microsoft HTTPAPI": {
+			"website": "microsoft.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "Microsoft-HTTPAPI(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"Microsoft SharePoint": {
 			"website": "sharepoint.microsoft.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "Microsoft SharePoint" },
 			"headers": { "MicrosoftSharePointTeamServices": "(.*)\\;version:\\1", "X-SharePointHealthScore": ".*", "SPRequestGuid": ".*", "SharePointHealthScore": ".*" },
 			"env": "^_spBodyOnLoadCalled$"
+		},
+		"mini_httpd": {
+			"website": "acme.com/software/mini_httpd",
+			"cats": [ 22 ],
+			"headers": { "Server": "mini_httpd(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"MiniBB": {
 			"website": "www.minibb.com",
@@ -2078,6 +2269,11 @@
 			"script": "MochiKit(?:\\.min)?\\.js",
 			"env": "^MochiKit$"
 		},
+		"MochiWeb": {
+			"website": "github.com/mochi/mochiweb",
+			"cats": [ 22 ],
+			"headers": { "Server": "MochiWeb(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"Modernizr": {
 			"website": "www.modernizr.com",
 			"cats": [ 12 ],
@@ -2114,7 +2310,7 @@
 			"website": "perl.apache.org",
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1" },
-			"implies": "Apache"
+			"implies": [ "Perl", "Apache" ]
 		},
 		"mod_python": {
 			"website": "www.modpython.org",
@@ -2229,10 +2425,21 @@
 			"script": "mootools.*\\.js",
 			"env": "^MooTools$"
 		},
+		"Motion-httpd": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "Motion-httpd(?:/([\\d.]+))?\\;version:\\1" },
+			"excludes": "Apache"
+		},
 		"Movable Type": {
 			"website": "movabletype.org",
 			"cats": [ 1 ],
 			"meta": { "generator": "Movable Type" }
+		},
+		"Moxa": {
+			"website": "moxa.com",
+			"cats": [ 37 ],
+			"headers": { "Server": "MoxaHttp(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"Mozard Suite": {
 			"website": "mozard.nl",
@@ -2344,6 +2551,13 @@
 			"cats": [ 36 ],
 			"env": "^OAS_AD$"
 		},
+		"Open Journal Systems": {
+			"website": "pkp.sfu.ca/ojs",
+			"cats": [ 50 ],
+			"headers": { "Set-Cookie": "\\bOJSSID\\b" },
+			"meta": { "generator": "Open Journal Systems(?: ([\\d.]+))?\\;version:\\1" },
+			"implies": [ "PHP" ]
+		},
 		"Open Web Analytics": {
 			"website": "openwebanalytics.com",
 			"cats": [ 10 ],
@@ -2419,12 +2633,28 @@
 		"Oracle Application Server": {
 			"website": "www.oracle.com/technetwork/middleware/ias/overview/index.html",
 			"cats": [ 22 ],
-			"headers": { "Server": "Oracle\\bApplication\\bServer(?:\\b(\\d+[a-z]?))?\\;version:\\1" }
+			"headers": { "Server": "Oracle(?:-| )Application(?:-| )Server(?: Containers for J2EE)?(?:(?:-| )(\\d[\\da-z./]+))?\\;version:\\1" }
+		},
+		"Oracle Dynamic Monitoring Service": {
+			"website": "oracle.com",
+			"cats": [ 19 ],
+			"headers": { "x-oracle-dms-ecid": "" }
+		},
+		"Oracle HTTP Server": {
+			"website": "oracle.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "Oracle-HTTP-Server(?:/([\\d.]+))?\\;version:\\1" },
+			"excludes": [ "HTTP-Server" ]
 		},
 		"Oracle Recommendations On Demand": {
 			"website": "www.oracle.com/us/products/applications/commerce/recommendations-on-demand/index.html",
 			"cats": [ 10 ],
 			"script": "atgsvcs.+atgsvcs\\.js"
+		},
+		"Oracle Web Cache": {
+			"website": "oracle.com",
+			"cats": [ 23 ],
+			"headers": { "Server": "Oracle(?:AS)?(?:-| )Web(?:-| )Cache(?:(?:[- /])([\\da-z./]+))?\\;version:\\1" }
 		},
 		"osCommerce": {
 			"website": "www.oscommerce.com",
@@ -2450,6 +2680,12 @@
 			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css\\;version:\\1",
 			"env": "^(?:(?:g_f)?Owa|IsOwaPremiumBrowser)$",
 			"implies": "Microsoft ASP.NET"
+		},
+		"ownCloud": {
+			"website": "owncloud.org",
+			"cats": [ 19 ],
+			"meta": { "apple-itunes-app": "app-id=543672169" },
+			"html": "<a href=\"https://owncloud.com\" target=\"_blank\">ownCloud Inc.</a><br/>Your Cloud, Your Data, Your Way!"
 		},
 		"OXID eShop": {
 			"website": "oxid-esales.com",
@@ -2516,6 +2752,7 @@
 		"Perl": {
 			"website": "perl.org",
 			"cats": [ 27 ],
+			"headers": { "Server": "\\bPerl\\b(?: ?/?v?([\\d.]+))?\\;version:\\1" },
 			"url": "\\.pl(?:$|\\?)"
 		},
 		"Petrojs": {
@@ -2606,6 +2843,7 @@
 			"cats": [ 10 ],
 			"script": "piwik\\.js|piwik\\.php",
 			"html": "var piwikTracker = Piwik\\.getTracker\\(",
+			"meta": { "generator": "Piwik - Open Source Web Analytics", "apple-itunes-app": "app-id=737216887", "google-play-app": "app-id=org.piwik.mobile2" },
 			"env": [ "^Piwik$", "^_paq$" ]
 		},
 		"Piano Solo":{
@@ -2613,6 +2851,11 @@
 			"cats": [ 43 ],
 			"env": "^PianoMedia$",
 			"headers": { "Set-Cookie": "pianovisitkey" }
+		},
+		"Planet": {
+			"website": "planetplanet.org",
+			"cats": [ 49 ],
+			"meta": { "generator": "^Planet(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"Plentymarkets": {
 			"website": "plentymarkets.eu",
@@ -2746,11 +2989,21 @@
 			"headers": { "X-Rack-Cache": ".+" },
 			"implies": "Ruby"
 		},
+		"RAID HTTPServer": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "RAID HTTPServer(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"Raphael": {
 			"website": "raphaeljs.com",
 			"cats": [ 25 ],
 			"script": "raphael.*\\.js",
 			"env": "^Raphael$"
+		},
+		"Rapid Logic": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "Rapid Logic(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"RBS Change": {
 			"website": "www.rbschange.fr",
@@ -2843,13 +3096,18 @@
 			"cats": [ 18 ],
 			"script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
 			"meta": { "csrf-param": "authenticity_token\\;confidence:50" },
-			"headers": { "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50" },
+			"headers": { "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))(?: ?/?([\\d\\.]+))?\\;version:\\1\\;confidence:50" },
 			"implies": "Ruby"
 		},
 		"S.Builder": {
 			"website": "www.sbuilder.ru",
 			"cats": [ 1 ],
 			"meta": { "generator": "S\\.Builder" }
+		},
+		"Saia PCD": {
+			"website": "saia-pcd.com",
+			"cats": [ 45 ],
+			"headers": { "Server": "Saia PCD(?:([/a-zA-Z\\d.]+))?\\;version:\\1" }
 		},
 		"Serendipity": {
 			"website": "s9y.org",
@@ -2871,6 +3129,16 @@
 		"Scala": {
 			"website": "www.scala-lang.org",
 			"cats": [ 27 ]
+		},
+		"Schneider": {
+			"website": "schneider-electric.com",
+			"cats": [ 45 ]
+		},
+		"Schneider Web Server": {
+			"website": "schneider-electric.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "Schneider-WEB(?:/V?([\\d.]+))?\\;version:\\1" },
+			"implies": [ "Schneider" ]
 		},
 		"script.aculo.us": {
 			"website": "script.aculo.us",
@@ -2968,6 +3236,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "SilverStripe" },
 			"html": "Powered by <a href=\"[^>]+SilverStripe"
+		},
+		"SimpleHTTP": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "SimpleHTTP(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"SIMsite": {
 			"website": "simgroep.nl/internet/portfolio-contentbeheer_41623/",
@@ -3106,6 +3379,11 @@
 			"env": "^DOCUMENTATION_OPTIONS$",
 			"implies": "Python"
 		},
+		"SpiderControl iniNet": {
+			"website": "spidercontrol.net/ininet",
+			"cats": [ 45 ],
+			"meta": { "generator": "iniNet SpiderControl" }
+		},
 		"spin.js": {
 			"website": "fgnass.github.io/spin.js/",
 			"cats": [ 12, 25 ],
@@ -3115,7 +3393,7 @@
 		"SPIP": {
 			"website": "www.spip.net",
 			"cats": [ 1 ],
-			"meta": { "generator": "(^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1" },
+			"meta": { "generator": "(?:^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
 		"Spree": {
@@ -3233,6 +3511,18 @@
 			"headers": { "X-Swiftlet-Cache": ".*", "X-Powered-By": "Swiftlet", "X-Generator": "Swiftlet" },
 			"implies": "PHP"
 		},
+		"Synology DiskStation": {
+			"website": "synology.com",
+			"cats": [ 48 ],
+			"meta": { "application-name": "Synology DiskStation" }
+		},
+		"TeamCity": {
+			"website": "jetbrains.com/teamcity",
+			"cats": [ 44 ],
+			"meta": { "application-name": "TeamCity" },
+			"html": [ "http://www.jetbrains.com/teamcity/feedback\\?source=footer&version=([\\d\\.]+)\\;version:\\1", "\\n\\s*<span class=\"versionTag\"><span class=\"vWord\">Version</span> ([\\d\\.]+) \\(build \\d+\\)</span>\\;version:\\1" ],
+			"implies": [ "jQuery", "Prototype" ]
+		},
 		"Textpattern CMS": {
 			"website": "textpattern.com",
 			"cats": [ 1 ],
@@ -3243,6 +3533,11 @@
 			"cats": [ 25 ],
 			"script": "three(?:\\.min)?\\.js",
 			"env": "^THREE$"
+		},
+		"thttpd": {
+			"website": "acme.com/software/thttpd",
+			"cats": [ 22 ],
+			"headers": { "Server": "\\bthttpd(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"TiddlyWiki": {
 			"website": "tiddlywiki.com",
@@ -3290,6 +3585,11 @@
 			"meta": { "generator": "TomatoCart" },
 			"env": "^AjaxShoppingCart$"
 		},
+		"TornadoServer": {
+			"website": "tornadoweb.org",
+			"cats": [ 22 ],
+			"headers": { "Server": "TornadoServer(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"Trac": {
 			"website": "trac.edgewall.org",
 			"cats": [ 13 ],
@@ -3320,6 +3620,11 @@
 			"website": "www.twilightcms.com",
 			"cats": [ 1 ],
 			"headers": { "X-Powered-CMS": "Twilight CMS" }
+		},
+		"TwistedWeb": {
+			"website": "twistedmatrix.com/trac/wiki/TwistedWeb",
+			"cats": [ 22 ],
+			"headers": { "Server": "TwistedWeb(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"TwistPHP": {
 			"website": "twistphp.com",
@@ -3492,6 +3797,12 @@
 			"cats": [ 14 ],
 			"html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)"
 		},
+		"Virata EmWeb": {
+			"website": "???",
+			"cats": [ 22 ],
+			"headers": { "Server": "Virata-EmWeb(?:/(R?[\\d._]+))?\\;version:\\1" },
+			"implies": [ "HP" ]
+		},
 		"VirtueMart": {
 			"website": "virtuemart.net",
 			"cats": [ 6 ],
@@ -3559,6 +3870,7 @@
 			"cats": [ 18 ],
 			"script": "web2py\\.js",
 			"headers": { "X-Powered-By": "web2py" },
+			"meta": { "generator": "^Web2py" },
 			"implies": [ "Python", "jQuery" ]
 		},
 		"Webix": {
@@ -3632,6 +3944,11 @@
 			"meta": { "generator": "WikkaWiki" },
 			"html": "Powered by <a href=\"[^>]+WikkaWiki"
 		},
+		"Windows CE": {
+			"website": "microsoft.com",
+			"cats": [ 28 ],
+			"headers": { "Server": "\\bWinCE\\b" }
+		},
 		"Windows Server": {
 			"website": "microsoft.com/windowsserver",
 			"cats": [ 28 ],
@@ -3642,6 +3959,11 @@
 			"cats": [ 26, 12 ],
 			"script": "(?:_base/js/base|wink).*\\.js",
 			"env": "^wink$"
+		},
+		"Winstone Servlet Container": {
+			"website": "winstone.sourceforge.net",
+			"cats": [ 22 ],
+			"headers": { "Server": "Winstone Servlet (?:Container|Engine) v?([\\d.]+)?\\;version:\\1", "X-Powered-By": "Winstone(?:.([\\d.]+))?\\;version:\\1" }
 		},
 		"Wix": {
 			"website": "wix.com",
@@ -3746,6 +4068,11 @@
 			"env": "^xChart$",
 			"implies": "D3"
 		},
+		"Xitami": {
+			"website": "xitami.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "Xitami(?:/([\\d.]+))?\\;version:\\1" }
+		},
 		"XMB": {
 			"website": "www.xmbforum.com",
 			"cats": [ 2 ],
@@ -3825,6 +4152,12 @@
 			"cats": [ 36 ],
 			"script": "^https?://(?:[^/]+\\.)?yieldlab\\.net/"
 		},
+		"Yii": {
+			"website": "yiiframework.com",
+			"cats": [ 18 ],
+			"html": [ "Powered by <a href=\"http://www.yiiframework.com/\" rel=\"external\">Yii Framework</a>" ],
+			"implies": [ "PHP" ]
+		},
 		"YouTube": {
 			"website": "www.youtube.com",
 			"cats": [ 14 ],
@@ -3863,7 +4196,7 @@
 		"Zend": {
 			"website": "zend.com",
 			"cats": [ 22 ],
-			"headers": { "X-Powered-By": "Zend" }
+			"headers": { "X-Powered-By": "Zend", "Set-Cookie": "ZENDSERVERSESSID" }
 		},
 		"Zepto": {
 			"website": "zeptojs.com",
