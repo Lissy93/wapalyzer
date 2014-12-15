@@ -312,8 +312,8 @@
 			"website": "jfrog.com/open-source/#os-arti",
 			"cats": [ 47 ],
 			"env": "^ArtifactoryUpdates$",
-			"script": [ "wicket/resource/org.artifactory." ],
-			"html": [ "<span class=\"version\">Artifactory(?: Pro)(?: Power Pack)(?: ([\\d.]+))?\\;version:\\1" ]
+			"script": [ "wicket/resource/org\\.artifactory." ],
+			"html": [ "<span class=\"version\">Artifactory(?: Pro)?(?: Power Pack)?(?: ([\\d.]+))?\\;version:\\1" ]
 		},
 		"AsciiDoc": {
 			"website": "www.methods.co.nz/asciidoc",
@@ -357,7 +357,7 @@
 		"Atlassian Jira Issue Collector": {
 			"website": "www.atlassian.com/software/jira/overview/",
 			"cats": [ 13, 47 ],
-			"script": [ "jira-issue-collector-plugin", "atlassian.jira.collector.plugin" ]
+			"script": [ "jira-issue-collector-plugin", "atlassian\\.jira\\.collector\\.plugin" ]
 		},
 		"Atlassian FishEye": {
 			"website": "www.atlassian.com/software/fisheyet/overview/",
@@ -1374,7 +1374,7 @@
 		"GlassFish": {
 			"website": "glassfish.java.net",
 			"cats": [ 22 ],
-			"headers": { "Server": "GlassFish(?: Server)(?: Open Source Edition)(?: ?/?([\\d.]+))?\\;version:\\1" },
+			"headers": { "Server": "GlassFish(?: Server)?(?: Open Source Edition)?(?: ?/?([\\d.]+))?\\;version:\\1" },
 			"implies": [ "Java" ]
 		},
 		"Glyphicons": {
@@ -1598,7 +1598,7 @@
 		"HTTP-Server": {
 			"website": "???",
 			"cats": [ 22 ],
-			"headers": { "Server": "HTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1" }
+			"headers": { "Server": "\\bHTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1" }
 		},
 		"HubSpot": {
 			"website": "hubspot.com",
@@ -2209,7 +2209,7 @@
 			"cats": [ 18 ],
 			"url": "\\.aspx(?:$|\\?)",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
-			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1", "Set-Cookie": "(ASPSESSION|ASP\\.NET_SessionId)" },
 			"implies": "IIS\\;confidence:50"
 		},
 		"Microsoft HTTPAPI": {
@@ -2426,7 +2426,7 @@
 			"env": "^MooTools$"
 		},
 		"Motion-httpd": {
-			"website": "???",
+			"website": "lavrsen.dk/foswiki/bin/view/Motion",
 			"cats": [ 22 ],
 			"headers": { "Server": "Motion-httpd(?:/([\\d.]+))?\\;version:\\1" },
 			"excludes": "Apache"
@@ -2633,7 +2633,7 @@
 		"Oracle Application Server": {
 			"website": "www.oracle.com/technetwork/middleware/ias/overview/index.html",
 			"cats": [ 22 ],
-			"headers": { "Server": "Oracle(?:-| )Application(?:-| )Server(?: Containers for J2EE)?(?:(?:-| )(\\d[\\da-z./]+))?\\;version:\\1" }
+			"headers": { "Server": "Oracle[- ]Application[- ]Server(?: Containers for J2EE)?(?:[- ](\\d[\\da-z./]+))?\\;version:\\1" }
 		},
 		"Oracle Dynamic Monitoring Service": {
 			"website": "oracle.com",
@@ -2654,7 +2654,7 @@
 		"Oracle Web Cache": {
 			"website": "oracle.com",
 			"cats": [ 23 ],
-			"headers": { "Server": "Oracle(?:AS)?(?:-| )Web(?:-| )Cache(?:(?:[- /])([\\da-z./]+))?\\;version:\\1" }
+			"headers": { "Server": "Oracle(?:AS)?[- ]Web[- ]Cache(?:[- /]([\\da-z./]+))?\\;version:\\1" }
 		},
 		"osCommerce": {
 			"website": "www.oscommerce.com",
@@ -2841,9 +2841,10 @@
 		"Piwik": {
 			"website": "piwik.org",
 			"cats": [ 10 ],
+			"headers": { "Set-Cookie": "PIWIK_SESSID=" },
 			"script": "piwik\\.js|piwik\\.php",
 			"html": "var piwikTracker = Piwik\\.getTracker\\(",
-			"meta": { "generator": "Piwik - Open Source Web Analytics", "apple-itunes-app": "app-id=737216887", "google-play-app": "app-id=org.piwik.mobile2" },
+			"meta": { "generator": "Piwik - Open Source Web Analytics", "apple-itunes-app": "app-id=737216887", "google-play-app": "app-id=org\\.piwik\\.mobile2" },
 			"env": [ "^Piwik$", "^_paq$" ]
 		},
 		"Piano Solo":{
@@ -3096,7 +3097,7 @@
 			"cats": [ 18 ],
 			"script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
 			"meta": { "csrf-param": "authenticity_token\\;confidence:50" },
-			"headers": { "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))(?: ?/?([\\d\\.]+))?\\;version:\\1\\;confidence:50" },
+			"headers": { "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?(?: ?/?([\\d\\.]+))?\\;version:\\1\\;confidence:50" },
 			"implies": "Ruby"
 		},
 		"S.Builder": {
@@ -3107,7 +3108,7 @@
 		"Saia PCD": {
 			"website": "saia-pcd.com",
 			"cats": [ 45 ],
-			"headers": { "Server": "Saia PCD(?:([/a-zA-Z\\d.]+))?\\;version:\\1" }
+			"headers": { "Server": "Saia PCD(?:([/a-z\\d.]+))?\\;version:\\1" }
 		},
 		"Serendipity": {
 			"website": "s9y.org",
@@ -3594,6 +3595,7 @@
 			"website": "trac.edgewall.org",
 			"cats": [ 13 ],
 			"html": "<a id=\"tracpowered",
+			"html": [ "<a id=\"tracpowered", "Powered by <a href=\"[^\"]*\"><strong>Trac(?:[ /]([\\d.]+))?\\;version:\\1" ],
 			"implies": "Python"
 		},
 		"TrackJs": {
