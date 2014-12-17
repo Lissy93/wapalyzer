@@ -1,5 +1,5 @@
 (function() {
-	var url, json, app, categories, page;
+	var url;
 
 	try {
 		if ( require('system').args.length > 1 ) {
@@ -17,23 +17,53 @@
 			 * Log messages to console
 			 */
 			log: function(args) {
-				console.log(args.message);
+				//if ( args.type !== 'debug' ) {
+					console.log(args.message);
+				//}
 			},
 
 			/**
 			 * Display apps
 			 */
 			displayApps: function() {
-				var count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length.toString() : '0';
+				var
+					app,
+					apps  = [],
+					cats  = [],
+					count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length : 0;
 
-				console.log(count);
+				if ( count ) {
+					for ( app in wappalyzer.detected[url] ) {
+
+						wappalyzer.apps[app].cats.forEach(function(cat) {
+							cats.push(wappalyzer.categories[cat]);
+						});
+
+						apps.push({
+							application: app,
+							confidence:  wappalyzer.detected[url][app].confidenceTotal,
+							version:     wappalyzer.detected[url][app].version,
+							categories:  cats
+						});
+					}
+
+					console.log(JSON.stringify(apps));
+				}
 			},
 
 			/**
 			 * Initialize
 			 */
 			init: function() {
-				json = JSON.parse(require('fs').read('apps.json'));
+				var
+					page, hostname,
+					headers = {};
+					a       = document.createElement('a'),
+					json    = JSON.parse(require('fs').read('apps.json'));
+
+				a.href = url.replace(/#.*$/, '');
+
+				hostname = a.hostname;
 
 				wappalyzer.apps       = json.apps;
 				wappalyzer.categories = json.categories;
@@ -44,16 +74,24 @@
 					console.log(message);
 				};
 
-				page.open(url, function(status) {
-					var a, hostname;
+				page.onResourceReceived = function(response) {
+					if ( response.url.replace(/\/$/, '') === url.replace(/\/$/, '') ) {
+						if ( response.redirectURL ) {
+							url = response.redirectURL;
 
-					a = document.createElement('a');
+							return;
+						}
 
-					a.href = url.replace(/#.*$/, '');
+						if ( response.bodySize && response.stage === 'start' && response.contentType.indexOf('text/html') !== -1 ) {
+							response.headers.forEach(function(header) {
+								headers[header.name.toLowerCase()] = header.value;
+							});
+						}
+					}
+				};
 
-					hostname = a.hostname;
-
-					wappalyzer.analyze(hostname, url, { html: page.content });
+				page.open(url, function() {
+					wappalyzer.analyze(hostname, url, { html: page.content, headers: headers });
 
 					phantom.exit();
 				});
