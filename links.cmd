@@ -102,3 +102,10 @@ mklink /h drivers\php\apps.json share\apps.json
 ::ln -f share\js\wappalyzer.js     drivers\php\js
 if exist drivers\php\js\wappalyzer.js del drivers\php\js\wappalyzer.js
 mklink /h drivers\php\js\wappalyzer.js share\js\wappalyzer.js
+
+:: PhantomJS driver
+if exist drivers\phantomjs\apps.json del drivers\phantomjs\apps.json
+mklink /h drivers\phantomjs\apps.json share\apps.json
+
+if exist drivers\phantomjs\js\wappalyzer.js del drivers\phantomjs\js\wappalyzer.js
+mklink /h drivers\phantomjs\js\wappalyzer.js share\js\wappalyzer.js
