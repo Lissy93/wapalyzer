@@ -1058,7 +1058,8 @@
 		"Koala Framework": {
 			"website": "koala-framework.org",
 			"cats": [ 1, 18 ],
-			"meta": { "generator": "Koala Web Framework CMS" },
+			"meta": { "generator": "^Koala Web Framework CMS" },
+			"html": "<!--[^>]+This website is powered by Koala Web Framework CMS",
 			"implies": "PHP"
 		},
 		"total.js": {
