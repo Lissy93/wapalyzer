@@ -312,7 +312,7 @@
 			"website": "jfrog.com/open-source/#os-arti",
 			"cats": [ 47 ],
 			"env": "^ArtifactoryUpdates$",
-			"script": [ "wicket/resource/org\\.artifactory." ],
+			"script": [ "wicket/resource/org\\.artifactory\\." ],
 			"html": [ "<span class=\"version\">Artifactory(?: Pro)?(?: Power Pack)?(?: ([\\d.]+))?\\;version:\\1" ]
 		},
 		"AsciiDoc": {
@@ -866,11 +866,6 @@
 			"env": "^dle_root$",
 			"meta": { "generator": "DataLife Engine" },
 			"implies": [ "PHP", "Apache" ]
-		},
-		"DAV": {
-			"website": "???",
-			"cats": [ 33 ],
-			"headers": { "Server": "\\bDAV\\b(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"David Webbox": {
 			"website": "www.tobit.com",
@@ -1518,7 +1513,8 @@
 		"Happy ICS Server": {
 			"website": "???",
 			"cats": [ 22 ],
-			"headers": { "Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1" }
+			"headers": { "Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1" },
+			"implies": "OmniTouch 8660 My Teamwork"
 		},
 		"HeadJS": {
 			"website": "headjs.com",
@@ -1599,7 +1595,7 @@
 		"HTTP-Server": {
 			"website": "???",
 			"cats": [ 22 ],
-			"headers": { "Server": "\\bHTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1" }
+			"headers": { "Server": "(?:^|[^-])\\bHTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1" }
 		},
 		"HubSpot": {
 			"website": "hubspot.com",
@@ -2210,7 +2206,7 @@
 			"cats": [ 18 ],
 			"url": "\\.aspx(?:$|\\?)",
 			"html": "<input[^>]+name=\"__VIEWSTATE",
-			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1", "Set-Cookie": "(ASPSESSION|ASP\\.NET_SessionId)" },
+			"headers": { "X-Powered-By": "ASP\\.NET\\;confidence:50", "X-AspNet-Version": "(.+)\\;version:\\1", "Set-Cookie": "ASPSESSION|ASP\\.NET_SessionId" },
 			"implies": "IIS\\;confidence:50"
 		},
 		"Microsoft HTTPAPI": {
@@ -2293,6 +2289,12 @@
 			"website": "pam.sourceforge.net/mod_auth_pam",
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_auth_pam(?:/([\\d\\.]+))?\\;version:\\1" },
+			"implies": "Apache"
+		},
+		"mod_dav": {
+			"website": "webdav.org/mod_dav",
+			"cats": [ 33 ],
+			"headers": { "Server": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?\\;version:\\1" },
 			"implies": "Apache"
 		},
 		"mod_fastcgi": {
@@ -2547,6 +2549,10 @@
 			"headers": { "Set-Cookie": "october_session=" },
 			"implies": "Laravel"
 		},
+		"OmniTouch 8660 My Teamwork": {
+			"website": "enterprise.alcatel-lucent.com",
+			"cats": [ 19 ]
+		},
 		"Open AdStream": {
 			"website": "xaxis.com",
 			"cats": [ 36 ],
@@ -2644,8 +2650,7 @@
 		"Oracle HTTP Server": {
 			"website": "oracle.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "Oracle-HTTP-Server(?:/([\\d.]+))?\\;version:\\1" },
-			"excludes": [ "HTTP-Server" ]
+			"headers": { "Server": "Oracle-HTTP-Server(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"Oracle Recommendations On Demand": {
 			"website": "www.oracle.com/us/products/applications/commerce/recommendations-on-demand/index.html",
