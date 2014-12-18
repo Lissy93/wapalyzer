@@ -91,7 +91,7 @@
 				page = require('webpage').create();
 
 				page.onConsoleMessage = function(message) {
-					console.log(message);
+					wappalyzer.log(message);
 				};
 
 				page.onResourceReceived = function(response) {
