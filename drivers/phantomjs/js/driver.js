@@ -1,10 +1,24 @@
 (function() {
-	var url;
+	var
+		url,
+		originalUrl,
+		args  = [],
+		debug = false;
 
 	try {
-		if ( require('system').args.length > 1 ) {
-			url = require('system').args[1];
-		} else {
+		require('system').args.forEach(function(arg) {
+			switch ( arg ) {
+				case '-v':
+				case '--verbose':
+					debug = true;
+
+					break;
+				default:
+					url = originalUrl = arg;
+			}
+		});
+
+		if ( !url ) {
 			throw new Error('Usage: phantomjs ' + require('system').args[0] + ' <url>');
 		}
 
@@ -17,9 +31,9 @@
 			 * Log messages to console
 			 */
 			log: function(args) {
-				//if ( args.type !== 'debug' ) {
+				if ( debug || args.type !== 'debug' ) {
 					console.log(args.message);
-				//}
+				}
 			},
 
 			/**
@@ -32,6 +46,8 @@
 					cats  = [],
 					count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length : 0;
 
+				wappalyzer.log('driver.displayApps');
+
 				if ( count ) {
 					for ( app in wappalyzer.detected[url] ) {
 
@@ -40,6 +56,8 @@
 						});
 
 						apps.push({
+							url:         originalUrl,
+							finalUrl:    url,
 							application: app,
 							confidence:  wappalyzer.detected[url][app].confidenceTotal,
 							version:     wappalyzer.detected[url][app].version,
@@ -60,6 +78,8 @@
 					headers = {};
 					a       = document.createElement('a'),
 					json    = JSON.parse(require('fs').read('apps.json'));
+
+				wappalyzer.log('driver.init');
 
 				a.href = url.replace(/#.*$/, '');
 
@@ -82,7 +102,7 @@
 							return;
 						}
 
-						if ( response.bodySize && response.stage === 'start' && response.contentType.indexOf('text/html') !== -1 ) {
+						if ( response.stage === 'end' && response.contentType.indexOf('text/html') !== -1 ) {
 							response.headers.forEach(function(header) {
 								headers[header.name.toLowerCase()] = header.value;
 							});
@@ -90,8 +110,39 @@
 					}
 				};
 
-				page.open(url, function() {
-					wappalyzer.analyze(hostname, url, { html: page.content, headers: headers });
+				page.open(url, function(status) {
+					var html, environmentVars;
+
+					if ( status === 'fail' ) {
+						return;
+					}
+
+					html = page.content;
+
+					if ( html.length > 50000 ) {
+						html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+					}
+
+					// Collect environment variables
+					environmentVars = page.evaluate(function() {
+						var i, environmentVars;
+
+						for ( i in window ) {
+							environmentVars += i + ' ';
+						}
+
+						return environmentVars;
+					});
+
+					wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
+
+					environmentVars = environmentVars.split(' ').slice(0, 500);
+
+					wappalyzer.analyze(hostname, url, {
+						html:    html,
+						headers: headers,
+						env:     environmentVars
+					});
 
 					phantom.exit();
 				});
