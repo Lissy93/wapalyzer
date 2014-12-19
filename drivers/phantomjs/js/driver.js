@@ -93,6 +93,9 @@
 				page.onConsoleMessage = function(message) {
 					wappalyzer.log(message);
 				};
+				page.onError = function(message) {
+					wappalyzer.log('Page error: ' + message);
+				};
 
 				page.onResourceReceived = function(response) {
 					if ( response.url.replace(/\/$/, '') === url.replace(/\/$/, '') ) {
