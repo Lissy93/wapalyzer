@@ -3535,6 +3535,13 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Textpattern" }
 		},
+		"Thelia": {
+			"website": "www.thelia.net",
+			"cats": [ 1, 6 ],
+			"meta": { "generator": "Thelia v([\\d.]+)\\;version:\\1" },
+			"headers": { "Set-Cookie": "thelia_cart=" },
+			"implies": "PHP"
+		},
 		"three.js": {
 			"website": "threejs.org",
 			"cats": [ 25 ],
