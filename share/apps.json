@@ -941,7 +941,7 @@
 		"Django": {
 			"website": "djangoproject.com",
 			"cats": [ 18 ],
-			"html": "(?:powered by <a[^>]+>Django ?([\\d.]+)?|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z\\d]{32}\" type=\"hidden\"></div>)\\;version:\\1",
+			"html": "(?:powered by <a[^>]+>Django ?([\\d.]+)?|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)\\;version:\\1",
 			"env": "^__admin_media_prefix__",
 			"implies": "Python"
 		},
