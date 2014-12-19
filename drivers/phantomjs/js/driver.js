@@ -1,10 +1,24 @@
 (function() {
-	var url, json, app, categories, page;
+	var
+		url,
+		originalUrl,
+		args  = [],
+		debug = false;
 
 	try {
-		if ( require('system').args.length > 1 ) {
-			url = require('system').args[1];
-		} else {
+		require('system').args.forEach(function(arg) {
+			switch ( arg ) {
+				case '-v':
+				case '--verbose':
+					debug = true;
+
+					break;
+				default:
+					url = originalUrl = arg;
+			}
+		});
+
+		if ( !url ) {
 			throw new Error('Usage: phantomjs ' + require('system').args[0] + ' <url>');
 		}
 
@@ -17,23 +31,59 @@
 			 * Log messages to console
 			 */
 			log: function(args) {
-				console.log(args.message);
+				if ( debug || args.type !== 'debug' ) {
+					console.log(args.message);
+				}
 			},
 
 			/**
 			 * Display apps
 			 */
 			displayApps: function() {
-				var count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length.toString() : '0';
+				var
+					app,
+					apps  = [],
+					cats  = [],
+					count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length : 0;
 
-				console.log(count);
+				wappalyzer.log('driver.displayApps');
+
+				if ( count ) {
+					for ( app in wappalyzer.detected[url] ) {
+
+						wappalyzer.apps[app].cats.forEach(function(cat) {
+							cats.push(wappalyzer.categories[cat]);
+						});
+
+						apps.push({
+							url:         originalUrl,
+							finalUrl:    url,
+							application: app,
+							confidence:  wappalyzer.detected[url][app].confidenceTotal,
+							version:     wappalyzer.detected[url][app].version,
+							categories:  cats
+						});
+					}
+
+					console.log(JSON.stringify(apps));
+				}
 			},
 
 			/**
 			 * Initialize
 			 */
 			init: function() {
-				json = JSON.parse(require('fs').read('apps.json'));
+				var
+					page, hostname,
+					headers = {};
+					a       = document.createElement('a'),
+					json    = JSON.parse(require('fs').read('apps.json'));
+
+				wappalyzer.log('driver.init');
+
+				a.href = url.replace(/#.*$/, '');
+
+				hostname = a.hostname;
 
 				wappalyzer.apps       = json.apps;
 				wappalyzer.categories = json.categories;
@@ -41,19 +91,58 @@
 				page = require('webpage').create();
 
 				page.onConsoleMessage = function(message) {
-					console.log(message);
+					wappalyzer.log(message);
+				};
+
+				page.onResourceReceived = function(response) {
+					if ( response.url.replace(/\/$/, '') === url.replace(/\/$/, '') ) {
+						if ( response.redirectURL ) {
+							url = response.redirectURL;
+
+							return;
+						}
+
+						if ( response.stage === 'end' && response.contentType.indexOf('text/html') !== -1 ) {
+							response.headers.forEach(function(header) {
+								headers[header.name.toLowerCase()] = header.value;
+							});
+						}
+					}
 				};
 
 				page.open(url, function(status) {
-					var a, hostname;
+					var html, environmentVars;
 
-					a = document.createElement('a');
+					if ( status === 'fail' ) {
+						return;
+					}
 
-					a.href = url.replace(/#.*$/, '');
+					html = page.content;
 
-					hostname = a.hostname;
+					if ( html.length > 50000 ) {
+						html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+					}
 
-					wappalyzer.analyze(hostname, url, { html: page.content });
+					// Collect environment variables
+					environmentVars = page.evaluate(function() {
+						var i, environmentVars;
+
+						for ( i in window ) {
+							environmentVars += i + ' ';
+						}
+
+						return environmentVars;
+					});
+
+					wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
+
+					environmentVars = environmentVars.split(' ').slice(0, 500);
+
+					wappalyzer.analyze(hostname, url, {
+						html:    html,
+						headers: headers,
+						env:     environmentVars
+					});
 
 					phantom.exit();
 				});
