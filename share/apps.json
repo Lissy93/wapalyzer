@@ -3518,6 +3518,11 @@
 			"headers": { "X-Swiftlet-Cache": "", "X-Powered-By": "Swiftlet", "X-Generator": "Swiftlet" },
 			"implies": "PHP"
 		},
+		"Symfony": {
+			"website": "symfony.com",
+			"cats": [ 18 ],
+			"implies": "PHP"
+		},
 		"Synology DiskStation": {
 			"website": "synology.com",
 			"cats": [ 48 ],
@@ -3540,7 +3545,7 @@
 			"cats": [ 1, 6 ],
 			"meta": { "generator": "Thelia v([\\d.]+)\\;version:\\1" },
 			"headers": { "Set-Cookie": "thelia_cart=" },
-			"implies": "PHP"
+			"implies": [ "PHP", "Symfony" ]
 		},
 		"three.js": {
 			"website": "threejs.org",
