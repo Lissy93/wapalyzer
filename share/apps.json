@@ -3624,6 +3624,12 @@
 			"url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
 			"headers": { "X-Tumblr-User": "" }
 		},
+		"TweenMax": {
+			"website": "greensock.com/tweenmax",
+			"cats": [ 12 ],
+			"env": "^TweenMax$",
+			"script": "TweenMax(?:\\.min)?\\.js"
+		},
 		"TWiki": {
 			"website": "twiki.org",
 			"cats": [ 8 ],
