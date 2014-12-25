@@ -3518,6 +3518,11 @@
 			"headers": { "X-Swiftlet-Cache": "", "X-Powered-By": "Swiftlet", "X-Generator": "Swiftlet" },
 			"implies": "PHP"
 		},
+		"Symfony": {
+			"website": "symfony.com",
+			"cats": [ 18 ],
+			"implies": "PHP"
+		},
 		"Synology DiskStation": {
 			"website": "synology.com",
 			"cats": [ 48 ],
@@ -3540,7 +3545,7 @@
 			"cats": [ 1, 6 ],
 			"meta": { "generator": "Thelia v([\\d.]+)\\;version:\\1" },
 			"headers": { "Set-Cookie": "thelia_cart=" },
-			"implies": "PHP"
+			"implies": [ "PHP", "Symfony" ]
 		},
 		"three.js": {
 			"website": "threejs.org",
@@ -3623,6 +3628,12 @@
 			"html": "<iframe src=\"[^>]+tumblr\\.com",
 			"url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
 			"headers": { "X-Tumblr-User": "" }
+		},
+		"TweenMax": {
+			"website": "greensock.com/tweenmax",
+			"cats": [ 12 ],
+			"env": "^TweenMax$",
+			"script": "TweenMax(?:\\.min)?\\.js"
 		},
 		"TWiki": {
 			"website": "twiki.org",
@@ -3821,7 +3832,8 @@
 		"VirtueMart": {
 			"website": "virtuemart.net",
 			"cats": [ 6 ],
-			"html": "<div id=\"vmMainPage"
+			"html": "<div id=\"vmMainPage",
+			"implies": "Joomla"
 		},
 		"VisualPath": {
 			"website": "www.trackset.com/web-analytics-software/visualpath",
@@ -4247,7 +4259,7 @@
 		"ZURB Foundation": {
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
-			"html": "<link[^>]+foundation[^>\"]+css"
+			"html": [ "<link[^>]+foundation[^>\"]+css", "<div [^>]*class=\"[^\"]*(?:small|medium|large)-\\d{1,2} columns" ]
 		}
 	}
 }
