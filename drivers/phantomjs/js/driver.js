@@ -41,15 +41,15 @@
 			 */
 			displayApps: function() {
 				var
-					app,
+					app, cats,
 					apps  = [],
-					cats  = [],
 					count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length : 0;
 
 				wappalyzer.log('driver.displayApps');
 
 				if ( count ) {
 					for ( app in wappalyzer.detected[url] ) {
+						cats = [];
 
 						wappalyzer.apps[app].cats.forEach(function(cat) {
 							cats.push(wappalyzer.categories[cat]);
