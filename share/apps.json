@@ -517,7 +517,7 @@
 			"website": "buysellads.com",
 			"cats": [ 36 ],
 			"script": "^https?://s\\d\\.buysellads\\.com/",
-            "html": "<script[^>]*>[^<]+?bsa.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
+			"html": "<script[^>]*>[^<]+?bsa.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
 			"env": "^_bsa"
 		},
 		"Canon": {
@@ -782,15 +782,15 @@
 			"meta": { "generator": "CPG Dragonfly" },
 			"implies": "PHP"
 		},
-        	"C++": {
-            		"website": "isocpp.org",
-            		"cats": [ 27 ]
+		"C++": {
+			"website": "isocpp.org",
+			"cats": [ 27 ]
 		},
-        	"CppCMS": {
-            		"website": "cppcms.com",
-            		"cats": [ 1 ],
-            		"headers": { "X-Powered-By": "CppCMS/([\\d.]+)\\;version:\\1" },
-            		"implies": "C++"
+		"CppCMS": {
+			"website": "cppcms.com",
+			"cats": [ 1 ],
+			"headers": { "X-Powered-By": "CppCMS/([\\d.]+)\\;version:\\1" },
+			"implies": "C++"
 		},
 		"Craft CMS": {
 			"website": "buildwithcraft.com",
@@ -1078,11 +1078,11 @@
 			"headers": { "Server": "Mbedthis-Appweb(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"Eleanor CMS": {
-        	"website": "eleanor-cms.ru",
-        	"cats": [ 1 ],
-        	"meta": { "generator": "Eleanor" },
-        	"implies": "PHP"
-    	},
+			"website": "eleanor-cms.ru",
+			"cats": [ 1 ],
+			"meta": { "generator": "Eleanor" },
+			"implies": "PHP"
+		},
 		"Ember.js": {
 			"website": "emberjs.com",
 			"cats": [ 12 ],
@@ -3291,9 +3291,9 @@
 			"meta": { "generator": "SiteEdit" }
 		},
 		"Sivuviidakko": {
-           		 "website": "sivuviidakko.fi",
-           		 "cats": [ 1 ],
-           		 "meta": { "generator": "Sivuviidakko" }
+			"website": "sivuviidakko.fi",
+			"cats": [ 1 ],
+			"meta": { "generator": "Sivuviidakko" }
 		},
 		"Sizmek": {
 			"website": "sizmek.com",
@@ -3541,10 +3541,10 @@
 			"meta": { "application-name": "Synology DiskStation" }
 		},
 		"SyntaxHighlighter": {
-        	"website": "github.com/syntaxhighlighter",
-        	"cats": [ 19 ],
-        	"html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)"
-    	},
+			"website": "github.com/syntaxhighlighter",
+			"cats": [ 19 ],
+			"html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)"
+		},
 		"TeamCity": {
 			"website": "jetbrains.com/teamcity",
 			"cats": [ 44 ],
