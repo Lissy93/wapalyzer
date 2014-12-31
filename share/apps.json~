@@ -620,6 +620,14 @@
 			"script": "scripts\\.chitika\\.net/",
 			"env": "ch_c(?:lient|olor_site_link)"
 		},
+		"Ckan": {
+			"website": "http://ckan.org/",
+			"cats": [ 1 ],
+			"headers": { 
+				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
+                 
+            }
+		},
 		"CKEditor": {
 			"website": "ckeditor.com",
 			"cats": [ 24 ],
@@ -2581,6 +2589,16 @@
 			"cats": [ 6 ],
 			"html": "(?:index\\.php\\?route=[a-z]+/|Powered By <a href=\"[^>]+OpenCart)",
 			"implies": "PHP"
+		},
+		"OpenCms": {
+			"website": "www.opencms.org",
+			"cats": [ 1 ],
+			"html": "<link href=\"/opencms/",
+			"script": "opencms",
+			"headers": {
+				"Server": "OpenCms"
+			},
+			"implies": "Java"
 		},
 		"openEngine": {
 			"website": "openengine.de/html/pages/de/",
