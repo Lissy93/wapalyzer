@@ -659,7 +659,7 @@
 			"website": "cmsmadesimple.org",
 			"cats": [ 1 ],
 			"headers": { "Set-Cookie": "^CMSSESSID" },
-			"meta": { "generator": "CMS Made Simple" },			
+			"meta": { "generator": "CMS Made Simple" },
 			"implies": "PHP"
 		},
 		"CMSimple": {
@@ -2512,6 +2512,11 @@
 			"script": "netmonitor\\.fi/nmtracker\\.js",
 			"env": "^netmonitor$"
 		},
+		"Netsuite": {
+			"website": "netsuite.com",
+			"cats": [ 6 ],
+			"headers": { "Cookie": "NS_VER" }
+		},
 		"Nette Framework": {
 			"website": "nette.org",
 			"cats": [ 18 ],
@@ -3804,6 +3809,11 @@
 			"meta": { "generator": "vBulletin" },
 			"env": "^(?:vBulletin|vB_[^g])",
 			"implies": "PHP"
+		},
+		"Venda": {
+			"website": "venda.com",
+			"cats": [ 6 ],
+			"headers": { "X-venda-hitid": "" }
 		},
 		"Veoxa": {
 			"website": "veoxa.com",
