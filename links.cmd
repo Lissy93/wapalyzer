@@ -109,3 +109,10 @@ mklink /h drivers\phantomjs\apps.json share\apps.json
 
 if exist drivers\phantomjs\js\wappalyzer.js del drivers\phantomjs\js\wappalyzer.js
 mklink /h drivers\phantomjs\js\wappalyzer.js share\js\wappalyzer.js
+
+:: NPM Module
+if exist drivers\npm\apps.json del drivers\npm\apps.json
+mklink /h drivers\npm\apps.json share\apps.json
+
+if exist drivers\npm\wappalyzer.js del drivers\npm\wappalyzer.npm
+mklink /h drivers\npm\wappalyzer.js share\wappalyzer.js
