@@ -2861,6 +2861,11 @@
 			"html": "Powered by <a href=\"[^\"]+phpwind\\.net",
 			"implies": "PHP"
 		},
+		"Phusion Passenger": {
+			"website": "phusionpassenger.com",
+			"cats": [ 22 ],
+			"headers": { "X-Powered-By": "^Phusion Passenger"}
+		},
 		"Piwik": {
 			"website": "piwik.org",
 			"cats": [ 10 ],
