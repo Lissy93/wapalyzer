@@ -3684,7 +3684,7 @@
 			"website": "getbootstrap.com",
 			"cats": [ 18 ],
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
-			"html": "<link.+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
+			"html": ["<link.+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css", "<div [^>]*class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"],
 			"env": "^Twipsy$\\;confidence:50"
 		},
 		"Typekit": {
