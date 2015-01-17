@@ -26,3 +26,7 @@ ln -f share/apps.json             drivers/python_raw
 
 ln -f share/apps.json             drivers/phantomjs
 ln -f share/js/wappalyzer.js      drivers/phantomjs/js
+
+
+ln -f share/apps.json             drivers/npm
+ln -f share/js/wappalyzer.js      drivers/npm
