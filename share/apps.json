@@ -625,9 +625,9 @@
 			"cats": [ 1 ],
 			"headers": { 
 				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
-                "Link": "<http://ckan.org/>; rel=shortlink" 
+                "Link": "<ckan.org/>; rel=shortlink" 
             },
-            "implies": [ "python", "solr", "java", "postgres\\;confidence:80" ]
+            "implies": [ "Python", "Solr", "Java", "PostgreSQL\\;confidence:80" ]
 		},
 		"CKEditor": {
 			"website": "ckeditor.com",
@@ -2124,6 +2124,10 @@
 			"cats": [ 27 ],
 			"headers": { "X-Powered-By": "\\bLua(?: ([\\d.]+))?\\;version:\\1" }
 		},
+		"Lucene": {
+			"website": "lucene.apache.org/core/",
+			"cats": [ 34 ]
+		},
 		"M.R. Inc Webserver": {
 			"website": "mrincworld.com",
 			"cats": [ 22 ],
@@ -2930,6 +2934,10 @@
 			"html": "<div class=\"posterous",
 			"env": "^Posterous"
 		},
+		"PostgreSQL": {
+			"website": "www.postgresql.org/",
+			"cats": [ 34 ]
+		},
 		"Powergap": {
 			"website": "powergap.de",
 			"cats": [ 6 ],
@@ -3393,6 +3401,11 @@
 			"headers": { "solodev_session": "" },
 			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
 			"implies": "PHP"
+		},
+		"Solr": {
+			"website": "lucene.apache.org/solr/",
+			"cats": [ 34 ],
+			"implies": "Lucene"
 		},
 		"SPDY": {
 			"website": "chromium.org/spdy",
