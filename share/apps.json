@@ -620,6 +620,15 @@
 			"script": "scripts\\.chitika\\.net/",
 			"env": "ch_c(?:lient|olor_site_link)"
 		},
+		"Ckan": {
+			"website": "ckan.org/",
+			"cats": [ 1 ],
+			"headers": { 
+				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
+                "Link": "<http://ckan.org/>; rel=shortlink" 
+            },
+            "implies": [ "Python", "Solr", "Java", "PostgreSQL\\;confidence:80" ]
+		},
 		"CKEditor": {
 			"website": "ckeditor.com",
 			"cats": [ 24 ],
@@ -1522,6 +1531,10 @@
 			"headers": { "Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1" },
 			"implies": "OmniTouch 8660 My Teamwork"
 		},
+		"Haskell": {
+			"website": "wiki.haskell.org/Haskell",
+			"cats": [ 27 ]
+		},
 		"HeadJS": {
 			"website": "headjs.com",
 			"cats": [ 12 ],
@@ -2121,6 +2134,10 @@
 			"cats": [ 27 ],
 			"headers": { "X-Powered-By": "\\bLua(?: ([\\d.]+))?\\;version:\\1" }
 		},
+		"Lucene": {
+			"website": "lucene.apache.org/core/",
+			"cats": [ 34 ]
+		},
 		"M.R. Inc Webserver": {
 			"website": "mrincworld.com",
 			"cats": [ 22 ],
@@ -2599,6 +2616,16 @@
 			"html": "(?:index\\.php\\?route=[a-z]+/|Powered By <a href=\"[^>]+OpenCart)",
 			"implies": "PHP"
 		},
+		"OpenCms": {
+			"website": "www.opencms.org",
+			"cats": [ 1 ],
+			"html": "<link href=\"/opencms/",
+			"script": "opencms",
+			"headers": {
+				"Server": "OpenCms"
+			},
+			"implies": "Java"
+		},
 		"openEngine": {
 			"website": "openengine.de/html/pages/de/",
 			"cats": [ 1 ],
@@ -2932,6 +2959,10 @@
 			"cats": [ 1, 11 ],
 			"html": "<div class=\"posterous",
 			"env": "^Posterous"
+		},
+		"PostgreSQL": {
+			"website": "www.postgresql.org/",
+			"cats": [ 34 ]
 		},
 		"Powergap": {
 			"website": "powergap.de",
@@ -3353,6 +3384,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "sNews" }
 		},
+		"Snap": {
+			"website": "snapframework.com",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "Snap/(\\d+(?:\\.\\d+)+)\\;version:\\1" },
+			"implies": "Haskell"
+		},
 		"Snap.svg": {
 			"website": "snapsvg.io",
 			"cats": [ 12 ],
@@ -3396,6 +3433,11 @@
 			"headers": { "solodev_session": "" },
 			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
 			"implies": "PHP"
+		},
+		"Solr": {
+			"website": "lucene.apache.org/solr/",
+			"cats": [ 34 ],
+			"implies": "Lucene"
 		},
 		"SPDY": {
 			"website": "chromium.org/spdy",
@@ -3639,7 +3681,6 @@
 		"Trac": {
 			"website": "trac.edgewall.org",
 			"cats": [ 13 ],
-			"html": "<a id=\"tracpowered",
 			"html": [ "<a id=\"tracpowered", "Powered by <a href=\"[^\"]*\"><strong>Trac(?:[ /]([\\d.]+))?\\;version:\\1" ],
 			"implies": "Python"
 		},
@@ -4054,7 +4095,7 @@
 			"website": "wordpress.org",
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "WordPress( [\\d.]+)?\\;version:\\1" },
-			"html": [ "<link[^>]+wp-(?:content|includes)", "<link[^>]+s\\d+\\.wp\\.com" ],
+			"html": [ "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)", "<link[^>]+s\\d+\\.wp\\.com" ],
 			"env": "^wp_username$",
 			"implies": "PHP"
 		},
@@ -4205,6 +4246,12 @@
 			"cats": [ 12 ],
 			"script": [ "yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "([\\d.]+)/yepnope(\\.min)?\\.js\\;version:\\1", "yepnope.*\\.js" ],
 			"env": "^yepnope$"
+		},
+		"Yesod": {
+			"website": "www.yesodweb.com",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "^Warp/(\\d+(?:\\.\\d+)+)\\;version:\\1" },
+			"implies": "Haskell"
 		},
 		"Yieldlab": {
 			"website": "yieldlab.de",
