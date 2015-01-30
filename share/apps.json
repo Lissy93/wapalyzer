@@ -623,9 +623,9 @@
 		"Ckan": {
 			"website": "ckan.org/",
 			"cats": [ 1 ],
-			"headers": { 
+			"headers": {
 				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
-                "Link": "<http://ckan.org/>; rel=shortlink" 
+                "Link": "<http://ckan.org/>; rel=shortlink"
             },
             "implies": [ "Python", "Solr", "Java", "PostgreSQL\\;confidence:80" ]
 		},
@@ -777,6 +777,12 @@
 			"website": "couchdb.apache.org",
 			"cats": [ 22 ],
 			"headers": { "Server": "CouchDB/([\\d.]+)\\;version:\\1" }
+		},
+		"Cowboy": {
+			"website": "ninenines.eu",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "Cowboy" },
+			"implies": "Erlang"
 		},
 		"cPanel": {
 			"website": "www.cpanel.net",
