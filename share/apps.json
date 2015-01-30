@@ -3171,6 +3171,12 @@
 			"headers": { "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?(?: ?/?([\\d\\.]+))?\\;version:\\1\\;confidence:50" },
 			"implies": "Ruby"
 		},
+		"RxJS" : {
+			"website": "reactive-extensions.github.io/RxJS/",
+			"cats": [ 12 ],
+			"script": "rx(?:\\.\\w+)?(?:\\.compat)?(?:\\.min)?\\.js",
+			"env": "^Rx$"
+		},
 		"S.Builder": {
 			"website": "www.sbuilder.ru",
 			"cats": [ 1 ],
