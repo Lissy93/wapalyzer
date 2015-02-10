@@ -1453,7 +1453,7 @@
 		"Google PageSpeed": {
 			"website": "developers.google.com/speed/pagespeed/mod",
 			"cats": [ 23, 33 ],
-			"headers": { "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1" }
+			"headers": { "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1", "X-Page-Speed": "(.+)\\;version:\\1" }
 		},
 		"Google Sites": {
 			"website": "sites.google.com",
