@@ -3500,6 +3500,14 @@
 			"headers": { "X-ServedBy": "squarespace" },
 			"env": "^Squarespace"
 		},
+		"SquirrelMail": {
+			"website": "squirrelmail.org",
+			"cats": [ 30 ],
+			"html": "<small>SquirrelMail version ([.\\d]+)[^<]*<br \\;version:\\1",
+			"url": "/src/webmail\\.php(?:$|\\?)",
+			"env": "^squirrelmail_loginpage_onload$",
+			"implies": "PHP"
+		},
 		"Squiz Matrix": {
 			"website": "squiz.net",
 			"cats": [ 1 ],
