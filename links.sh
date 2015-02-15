@@ -9,7 +9,6 @@ ln -f share/apps.json             drivers/chrome
 ln -f share/js/wappalyzer.js      drivers/chrome/js
 
 ln -f share/images/icons/*.png    drivers/bookmarklet/images/icons
-ln -f share/apps.json             drivers/bookmarklet/json
 ln -f share/js/wappalyzer.js      drivers/bookmarklet/js
 
 ln -f share/images/icons/*.png    drivers/html/images/icons
@@ -22,7 +21,8 @@ ln -f share/js/wappalyzer.js      drivers/php/js
 ln -f share/apps.json             drivers/python
 ln -f share/js/wappalyzer.js      drivers/python/js
 
-ln -f share/apps.json             drivers/python_raw
-
 ln -f share/apps.json             drivers/phantomjs
 ln -f share/js/wappalyzer.js      drivers/phantomjs/js
+
+ln -f share/apps.json             drivers/ruby
+ln -f share/js/wappalyzer.js      drivers/ruby/js
