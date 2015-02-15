@@ -4054,7 +4054,7 @@
 			"website": "wordpress.org",
 			"cats": [ 1, 11 ],
 			"meta": { "generator": "WordPress( [\\d.]+)?\\;version:\\1" },
-			"html": [ "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)", "<link[^>]+s\\d+\\.wp\\.com" ],
+			"html": [ "<link[^>]+wp-(?:content|includes)", "<link[^>]+s\\d+\\.wp\\.com" ],
 			"env": "^wp_username$",
 			"implies": "PHP"
 		},

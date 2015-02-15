@@ -7,6 +7,8 @@
 				html = new XMLSerializer().serializeToString(document)
 				env = [];
 
+			self.port.emit('log', html);
+
 			self.port.emit('log', 'init');
 
 			if ( html.length > 50000 ) {
