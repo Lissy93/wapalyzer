@@ -60,11 +60,6 @@ mklink /h drivers\chrome\js\wappalyzer.js share\js\wappalyzer.js
 if exist drivers\bookmarklet\images\icons rmdir /q /s drivers\bookmarklet\images\icons
 mklink /j drivers\bookmarklet\images\icons share\images\icons
 
-::Sync apps JSON
-::ln -f share\apps.json            drivers\bookmarklet\json
-if exist drivers\bookmarklet\json del drivers\bookmarklet\json
-mklink /h drivers\bookmarklet\json share\apps.json
-
 ::Sync Wappalyzer.js
 ::ln -f share\js\wappalyzer.js     drivers\bookmarklet\js
 if exist drivers\bookmarklet\js\wappalyzer.js del drivers\bookmarklet\js\wappalyzer.js
@@ -94,14 +89,23 @@ mklink /h drivers\html\js\wappalyzer.js share\js\wappalyzer.js
 ::	PHP DRIVER
 ::
 ::Sync apps JSON
-::ln -f share\apps.json            drivers\php
 if exist drivers\php\apps.json del drivers\php\apps.json
 mklink /h drivers\php\apps.json share\apps.json
 
 ::Sync Wappalyzer.js
-::ln -f share\js\wappalyzer.js     drivers\php\js
 if exist drivers\php\js\wappalyzer.js del drivers\php\js\wappalyzer.js
 mklink /h drivers\php\js\wappalyzer.js share\js\wappalyzer.js
+
+::	Ruby DRIVER
+::
+::Sync apps JSON
+if exist drivers\ruby\apps.json del drivers\ruby\apps.json
+mklink /h drivers\ruby\apps.json share\apps.json
+
+::Sync Wappalyzer.js
+if exist drivers\ruby\js\wappalyzer.js del drivers\ruby\js\wappalyzer.js
+mklink /h drivers\ruby\js\wappalyzer.js share\js\wappalyzer.js
+
 
 :: PhantomJS driver
 if exist drivers\phantomjs\apps.json del drivers\phantomjs\apps.json
