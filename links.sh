@@ -26,3 +26,6 @@ ln -f share/js/wappalyzer.js      drivers/phantomjs/js
 
 ln -f share/apps.json             drivers/ruby
 ln -f share/js/wappalyzer.js      drivers/ruby/js
+
+ln -f share/apps.json             drivers/npm
+ln -f share/js/wappalyzer.js      drivers/npm

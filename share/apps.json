@@ -623,9 +623,9 @@
 		"Ckan": {
 			"website": "ckan.org/",
 			"cats": [ 1 ],
-			"headers": { 
+			"headers": {
 				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
-                "Link": "<http://ckan.org/>; rel=shortlink" 
+                "Link": "<http://ckan.org/>; rel=shortlink"
             },
             "implies": [ "Python", "Solr", "Java", "PostgreSQL\\;confidence:80" ]
 		},
@@ -777,6 +777,12 @@
 			"website": "couchdb.apache.org",
 			"cats": [ 22 ],
 			"headers": { "Server": "CouchDB/([\\d.]+)\\;version:\\1" }
+		},
+		"Cowboy": {
+			"website": "ninenines.eu",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "Cowboy" },
+			"implies": "Erlang"
 		},
 		"cPanel": {
 			"website": "www.cpanel.net",
@@ -1063,6 +1069,11 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "\\beHTTP(?: v?([\\d\\.]+))?\\;version:\\1" },
 			"implies": "HP ProCurve"
+		},
+		"Elm": {
+			"website": "elm-lang.org",
+			"cats": [ 27, 12 ],
+			"env": "^Elm$"
 		},
 		"ELOG": {
 			"website": "midas.psi.ch/elog",
@@ -1442,7 +1453,7 @@
 		"Google PageSpeed": {
 			"website": "developers.google.com/speed/pagespeed/mod",
 			"cats": [ 23, 33 ],
-			"headers": { "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1" }
+			"headers": { "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1", "X-Page-Speed": "(.+)\\;version:\\1" }
 		},
 		"Google Sites": {
 			"website": "sites.google.com",
@@ -3054,6 +3065,11 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "RAID HTTPServer(?:/([\\d.]+))?\\;version:\\1" }
 		},
+		"Ramda": {
+			"website": "ramdajs.com",
+			"cats": [ 12 ],
+			"script": "ramda.*\\.js"
+		},
 		"Raphael": {
 			"website": "raphaeljs.com",
 			"cats": [ 25 ],
@@ -3158,6 +3174,12 @@
 			"meta": { "csrf-param": "authenticity_token\\;confidence:50" },
 			"headers": { "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50", "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?(?: ?/?([\\d\\.]+))?\\;version:\\1\\;confidence:50" },
 			"implies": "Ruby"
+		},
+		"RxJS" : {
+			"website": "reactive-extensions.github.io/RxJS/",
+			"cats": [ 12 ],
+			"script": "rx(?:\\.\\w+)?(?:\\.compat)?(?:\\.min)?\\.js",
+			"env": "^Rx$\\;confidence:20"
 		},
 		"S.Builder": {
 			"website": "www.sbuilder.ru",
@@ -3487,6 +3509,14 @@
 			"cats": [ 1 ],
 			"headers": { "X-ServedBy": "squarespace" },
 			"env": "^Squarespace"
+		},
+		"SquirrelMail": {
+			"website": "squirrelmail.org",
+			"cats": [ 30 ],
+			"html": "<small>SquirrelMail version ([.\\d]+)[^<]*<br \\;version:\\1",
+			"url": "/src/webmail\\.php(?:$|\\?)",
+			"env": "^squirrelmail_loginpage_onload$",
+			"implies": "PHP"
 		},
 		"Squiz Matrix": {
 			"website": "squiz.net",
