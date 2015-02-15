@@ -26,7 +26,7 @@
 		init: function() {
 			w.log('init');
 
-			chrome.browserAction.setBadgeBackgroundColor({ color: [255, 102, 0, 255] });
+			//chrome.browserAction.setBadgeBackgroundColor({ color: [255, 102, 0, 255] });
 
 			// Load apps.json
 			var xhr = new XMLHttpRequest();
@@ -189,7 +189,8 @@
 					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
-								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
+								//chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
+								chrome.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 
 								found = true;
 							}
@@ -197,7 +198,8 @@
 					}
 				});
 
-				chrome.browserAction.setBadgeText({ tabId: tab.id, text: count });
+				//chrome.browserAction.setBadgeText({ tabId: tab.id, text: count });
+				chrome.pageAction.show(tab.id);
 			};
 		},
 
