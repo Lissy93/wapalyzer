@@ -31,7 +31,7 @@ echo "Validating apps.json..."
 
 echo -en "${color_err}"
 
-jsonlint --quiet $path/apps.json
+jsonlint --quiet -V $WAPPALYZER_ROOT/schema.json $path/apps.json
 
 if [ $? -eq 0 ]
 then

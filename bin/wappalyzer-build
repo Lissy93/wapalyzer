@@ -16,6 +16,10 @@ then
 	exit 1
 fi
 
+echo "Prettifying apps.json..."
+
+jsonlint -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
+
 wappalyzer links
 
 # Mozilla Firefox
