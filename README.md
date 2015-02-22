@@ -32,6 +32,7 @@ on your system.
 Clone the Wappalyzer repository and open the newly created directory in a 
 terminal. Run `vagrant up` to start the environment.
 
+Run `vagrant ssh` to access the environment and read usage instructions.
 
 ```shell
 $ git clone https://github.com/ElbertF/Wappalyzer.git wappalyzer
@@ -41,4 +42,5 @@ $ vagrant up
 
 To stop the environment, run `vagrant halt`.
 
-Run `vagrant ssh` to access the environment.
+If a new Docker image becomes available, rebuild the environment with 
+`vagrant destroy -y && vagrant up`.
