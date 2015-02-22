@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ -z $WAPPALYZER_ROOT ]
+then
+	echo "\$WAPPALYZER_ROOT not set"
+
+	exit 1
+fi
+
+wappalyzer links
+
+# Mozilla Firefox
+echo "Building Firefox driver..."
+
+cfx xpi --pkgdir=$WAPPALYZER_ROOT/src/drivers/firefox --output-file=$WAPPALYZER_ROOT/build/wappalyzer_firefox.xpi
+
+# Google Chrome
+echo "Building Chrome driver..."
+
+pushd $WAPPALYZER_ROOT/src/drivers/chrome > /dev/null
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
+
+popd > /dev/null
+
+echo "Done. Builds have been created in $WAPPALYZER_ROOT/build."

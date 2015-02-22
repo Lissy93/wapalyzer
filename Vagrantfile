@@ -15,6 +15,6 @@ Vagrant.configure("2") do |config|
   config.ssh.username         = "wappalyzer"
   config.ssh.private_key_path = "docker/insecure.key"
 
-  config.vm.provision "shell", path: "bin/links"
-  config.vm.provision "shell", inline: "echo Finished"
+  config.vm.provision "shell", inline: "su - wappalyzer -c 'wappalyzer links'"
+  config.vm.provision "shell", inline: "echo Finished. Run \\`vagrant ssh\\` to access the environment."
 end

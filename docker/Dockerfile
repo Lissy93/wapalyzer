@@ -4,7 +4,7 @@ MAINTAINER Elbert Alias <elbert@alias.io>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install packages
-RUN apt-get update && apt-get install -y nodejs npm
+RUN apt-get update && apt-get install -y curl nodejs npm zip
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
@@ -18,10 +18,22 @@ RUN echo 'wappalyzer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 WORKDIR /home/wappalyzer
 
-RUN su wappalyzer -c "mkdir -p synced"
+RUN su wappalyzer -c "mkdir bin synced"
 
-RUN echo "cd /home/wappalyzer/synced" >> .bashrc
-RUN echo "export PATH=$PATH:/home/wappalyzer/synced/bin" >> .bashrc
+RUN echo "export WAPPALYZER_ROOT='/home/wappalyzer/synced'" >> /tmp/profile
+RUN echo "export PATH=$PATH:/home/wappalyzer/bin:\$WAPPALYZER_ROOT/bin" >> /tmp/profile
+
+RUN cat .profile >> /tmp/profile && mv /tmp/profile .profile
+
+RUN echo "cd \$WAPPALYZER_ROOT" >> .bashrc
+RUN echo "wappalyzer" >> .bashrc
+
+
+# Mozilla Add-on SDK
+RUN su wappalyzer -c "\
+	mkdir mozilla && \
+	curl -L https://ftp.mozilla.org/pub/mozilla.org/labs/jetpack/jetpack-sdk-latest.tar.gz | tar xvzC mozilla && \
+	ln -s /home/wappalyzer/mozilla/addon-sdk-*/bin/cfx bin/cfx"
 
 
 # SSH

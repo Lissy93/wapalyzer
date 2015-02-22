@@ -1,0 +1,39 @@
+#!/bin/bash
+
+color_ok='\033[1;32m'
+color_err='\033[0;31m'
+color_none='\033[0m'
+
+path=$1
+
+if [ -z $path ]
+then
+	if [ -z $WAPPALYZER_ROOT ]
+	then
+		echo "-$(basename $0): No path specified"
+
+		exit 1
+	fi
+
+	path=$WAPPALYZER_ROOT
+fi
+
+if [ ! -d $path/src ]
+then
+	echo "-$(basename $0): Incorrect path"
+
+	exit 1
+fi
+
+path="$path/src"
+
+echo -en "${color_err}"
+
+jsonlint --quiet $path/apps.json
+
+if [ $? -eq 0 ]
+then
+	echo -e "${color_ok}No errors found"
+fi
+
+echo -en "${color_none}"

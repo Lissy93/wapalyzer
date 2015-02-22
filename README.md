@@ -21,14 +21,13 @@ Refer to the [wiki](https://github.com/ElbertF/Wappalyzer/wiki) for
 ## Getting Started
 
 This section describes how to set up a development environment. Everything you
-need is contained in a Docker image which is managed by Vagrant.
+need is contained in a [Docker image](https://registry.hub.docker.com/u/wappalyzer/dev/)
+which is managed by Vagrant.
 
 Running this environment optional but recommended as it provides some helpful tools.
 
-First, install Docker and Vagrant on your system.
-
-* Docker ([docker.com](https://www.docker.com/))
-* Vagrant ([vagrantup.com](https://www.vagrantup.com/))
+First, install [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/)
+on your system.
 
 Clone the Wappalyzer repository and open the newly created directory in a 
 terminal. Run `vagrant up` to start the environment.
@@ -42,4 +41,4 @@ $ vagrant up
 
 To stop the environment, run `vagrant halt`.
 
-In order to access the environment, run `vagrant ssh`.
+Run `vagrant ssh` to access the environment.

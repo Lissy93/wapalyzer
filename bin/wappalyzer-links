@@ -1,0 +1,58 @@
+#!/bin/bash
+
+path=$1
+
+if [ -z $path ]
+then
+	if [ -z $WAPPALYZER_ROOT ]
+	then
+		echo "-$(basename $0): No path specified"
+
+		exit 1
+	fi
+
+	path=$WAPPALYZER_ROOT
+fi
+
+if [ ! -d $path/src ]
+then
+	echo "-$(basename $0): Incorrect path"
+
+	exit 1
+fi
+
+path="$path/src"
+
+ln -f $path/wappalyzer.js $path/drivers/firefox/lib
+ln -f $path/apps.json     $path/drivers/firefox/data
+ln -f $path/icons/*.png   $path/drivers/firefox/data/images/icons
+
+ln -f $path/wappalyzer.js $path/drivers/chrome/js
+ln -f $path/apps.json     $path/drivers/chrome
+ln -f $path/icons/*.png   $path/drivers/chrome/images/icons
+
+ln -f $path/wappalyzer.js $path/drivers/bookmarklet/js
+ln -f $path/icons/*.png   $path/drivers/bookmarklet/images/icons
+
+ln -f $path/wappalyzer.js $path/drivers/html/js
+ln -f $path/apps.json     $path/drivers/html
+ln -f $path/icons/*.png   $path/drivers/html/images/icons
+
+ln -f $path/wappalyzer.js $path/drivers/php/js
+ln -f $path/apps.json     $path/drivers/php
+
+ln -f $path/wappalyzer.js $path/drivers/python/js
+ln -f $path/apps.json     $path/drivers/python
+
+ln -f $path/wappalyzer.js $path/drivers/phantomjs/js
+ln -f $path/apps.json     $path/drivers/phantomjs
+
+ln -f $path/wappalyzer.js $path/drivers/ruby/js
+ln -f $path/apps.json     $path/drivers/ruby
+
+ln -f $path/wappalyzer.js $path/drivers/npm
+ln -f $path/apps.json     $path/drivers/npm
+
+echo "Hard links created"
+
+exit 0
