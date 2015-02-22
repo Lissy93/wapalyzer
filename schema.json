@@ -1,0 +1,82 @@
+{
+	"title": "Wappalyzer Schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"categories": {
+			"type": "object",
+			"required": true,
+			"additionalProperties": false,
+			"patternProperties": {
+				"^[0-9]+$": {
+					"type": "string"
+				}
+			}
+		},
+		"apps": {
+			"type": "object",
+			"required": true,
+			"additionalProperties": {
+				"additionalProperties": false,
+				"properties": {
+					"cats": {
+						"type": "array",
+						"items": {
+							"type": "number"
+						},
+						"required": true
+					},
+					"env": {
+						"type": [ "string", "array" ],
+						"items": {
+							"type": "string"
+						}
+					},
+					"headers": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "string"
+						}
+					},
+					"html": {
+						"type": [ "string", "array" ],
+						"items": {
+							"type": "string"
+						}
+					},
+					"excludes": {
+						"type": [ "string", "array" ],
+						"items": {
+							"type": "string"
+						}
+					},
+					"implies": {
+						"type": [ "string", "array" ],
+						"items": {
+							"type": "string"
+						}
+					},
+					"meta": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "string"
+						}
+					},
+					"script": {
+						"type": [ "string", "array" ],
+						"items": {
+							"type": "string"
+						}
+					},
+					"url": {
+						"type": "string"
+					},
+					"website": {
+						"type": "string",
+						"required": true
+					}
+				}
+			}
+		}
+	}
+}

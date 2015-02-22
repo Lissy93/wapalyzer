@@ -1,0 +1,50 @@
+#!/bin/bash
+
+if [ -z $WAPPALYZER_ROOT ]
+then
+	echo "\$WAPPALYZER_ROOT not set"
+
+	exit 1
+fi
+
+wappalyzer validate
+
+if [ $? -ne 0 ]
+then
+	echo "Build aborted"
+
+	exit 1
+fi
+
+echo "Prettifying apps.json..."
+
+jsonlint -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
+
+wappalyzer links
+
+# Mozilla Firefox
+echo "Building Firefox driver..."
+
+cfx xpi --pkgdir=$WAPPALYZER_ROOT/src/drivers/firefox --output-file=$WAPPALYZER_ROOT/build/wappalyzer_firefox.xpi
+
+# Google Chrome
+echo "Building Chrome driver..."
+
+pushd $WAPPALYZER_ROOT/src/drivers/chrome > /dev/null
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
+
+popd > /dev/null
+
+# Bookmarklet
+echo "Building Bookmarklet driver..."
+
+echo "var json =" > /tmp/bookmarklet
+
+cat $WAPPALYZER_ROOT/src/apps.json >> /tmp/bookmarklet
+
+echo -e ";\n\nwappalyzer.apps = json.apps;\nwappalyzer.categories = json.categories;" >> /tmp/bookmarklet
+
+mv /tmp/bookmarklet $WAPPALYZER_ROOT/src/drivers/bookmarklet/js/apps.js
+
+echo "Done. Builds have been created in $WAPPALYZER_ROOT/build."
