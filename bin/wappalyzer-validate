@@ -27,13 +27,19 @@ fi
 
 path="$path/src"
 
+echo "Validating apps.json..."
+
 echo -en "${color_err}"
 
 jsonlint --quiet $path/apps.json
 
 if [ $? -eq 0 ]
 then
-	echo -e "${color_ok}No errors found"
-fi
+	echo -e "${color_ok}Ok${color_none}"
 
-echo -en "${color_none}"
+	exit 0
+else
+	echo -en "${color_none}"
+
+	exit 1
+fi

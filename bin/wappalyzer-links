@@ -23,6 +23,8 @@ fi
 
 path="$path/src"
 
+echo "Creating hard links..."
+
 ln -f $path/wappalyzer.js $path/drivers/firefox/lib
 ln -f $path/apps.json     $path/drivers/firefox/data
 ln -f $path/icons/*.png   $path/drivers/firefox/data/images/icons
@@ -53,6 +55,6 @@ ln -f $path/apps.json     $path/drivers/ruby
 ln -f $path/wappalyzer.js $path/drivers/npm
 ln -f $path/apps.json     $path/drivers/npm
 
-echo "Hard links created"
+echo "Done"
 
 exit 0

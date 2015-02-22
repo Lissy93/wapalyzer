@@ -22,7 +22,7 @@
 			throw new Error('Usage: phantomjs ' + require('system').args[0] + ' <url>');
 		}
 
-		if ( !phantom.injectJs('js/wappalyzer.js') ) {
+		if ( !phantom.injectJs('wappalyzer.js') ) {
 			throw new Error('Unable to open file js/wappalyzer.js');
 		}
 

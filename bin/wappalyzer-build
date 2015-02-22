@@ -7,6 +7,15 @@ then
 	exit 1
 fi
 
+wappalyzer validate
+
+if [ $? -ne 0 ]
+then
+	echo "Build aborted"
+
+	exit 1
+fi
+
 wappalyzer links
 
 # Mozilla Firefox
