@@ -23,4 +23,15 @@ zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
 
 popd > /dev/null
 
+# Bookmarklet
+echo "Building Bookmarklet driver..."
+
+echo "var json =" > /tmp/bookmarklet
+
+cat $WAPPALYZER_ROOT/src/apps.json >> /tmp/bookmarklet
+
+echo -e ";\n\nwappalyzer.apps = json.apps;\nwappalyzer.categories = json.categories;" >> /tmp/bookmarklet
+
+mv /tmp/bookmarklet $WAPPALYZER_ROOT/src/drivers/bookmarklet/js/apps.js
+
 echo "Done. Builds have been created in $WAPPALYZER_ROOT/build."

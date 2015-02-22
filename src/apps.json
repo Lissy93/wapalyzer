@@ -348,7 +348,7 @@
 		},
 		"Atlassian Jira": {
 			"website": "www.atlassian.com/software/jira/overview/",
-			"cats": [ 13, 47 ],
+			"cats": [ 13 ],
 			"meta": { "application-name": "JIRA", "ajs-version-number": "([\\d\\.]+)\\;version:\\1" },
 			"env": "^jira$",
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\1",

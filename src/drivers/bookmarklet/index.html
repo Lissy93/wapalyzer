@@ -10,17 +10,14 @@
 
 		<style type="text/css">
 			body {
-				color: #333;
+				color: #000;
 				font-family: Verdana, Arial, sans-serif;
 				font-size: 14px;
 			}
 
 			#bookmarklet {
-				background: #f8f8f8;
-				border: 1px solid #ccc;
-				border-radius: 2px;
-				color: #333;
-				font-weight: bold;
+				border: 1px solid #333;
+				color: #000;
 				display: inline-block;
 				padding: 10px 25px;
 				text-decoration: none;
@@ -36,18 +33,15 @@
 			<a id="bookmarklet" href="javascript: void(0);">Wappalyzer</a>
 		</p>
 
-		<p>
-			<em>Note: this is a beta version and may stop working at some point. Check back here for a new version if this happens.</em>
-		</p>
-
 		<div id="bookmarklet-code" style="display: none">
 			(function() {
 				var
 					d = document,
-					e = d.getElementById('wappalyzer-container')
-					;
+					e = d.getElementById('wappalyzer-container');
 
-				if ( e !== null ) { d.body.removeChild(e); }
+				if ( e !== null ) {
+					d.body.removeChild(e);
+				}
 
 				var
 					u = 'https://wappalyzer.com/bookmarklet/',
@@ -55,8 +49,7 @@
 					c = d.createElement('div'),
 					p = d.createElement('div'),
 					l = d.createElement('link'),
-					s = d.createElement('script')
-					;
+					s = d.createElement('script');
 
 				c.setAttribute('id', 'wappalyzer-container');
 
