@@ -38,6 +38,7 @@ Run `vagrant ssh` to access the environment and read usage instructions.
 $ git clone https://github.com/ElbertF/Wappalyzer.git wappalyzer
 $ cd wappalyzer
 $ vagrant up
+$ vagrant ssh
 ```
 
 To stop the environment, run `vagrant halt`.
