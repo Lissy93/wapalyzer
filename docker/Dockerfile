@@ -36,6 +36,13 @@ RUN su wappalyzer -c "\
 	ln -s /home/wappalyzer/mozilla/addon-sdk-*/bin/cfx bin/cfx"
 
 
+# PhantomJS
+RUN su wappalyzer -c "\
+	mkdir phantomjs && \
+	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs && \
+	ln -s /home/wappalyzer/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs bin/phantomjs"
+
+
 # SSH
 RUN rm -f /etc/service/sshd/down
 RUN su wappalyzer -c "mkdir .ssh && chmod 700 .ssh"
