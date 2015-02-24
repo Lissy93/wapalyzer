@@ -7013,9 +7013,7 @@
             ],
             "html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
             "script": "owl.carousel.*\\.js",
-            "implies": [
-                "CSS", "jQuery"
-            ],
+            "implies": "jQuery",
             "website": "http://owlgraphic.com/owlcarousel/"
         }
 	},
