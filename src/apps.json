@@ -7005,7 +7005,17 @@
 				"yepnope.*\\.js"
 			],
 			"website": "yepnopejs.com"
-		}
+		},
+        "OWL Carousel": {
+            "cats": [
+                5,
+                7
+            ],
+            "html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
+            "script": "owl.carousel.*\\.js",
+            "implies": "jQuery",
+            "website": "http://owlgraphic.com/owlcarousel/"
+        }
 	},
 	"categories": {
 		"1": "cms",
