@@ -1,4 +1,4 @@
-# Wappalyzer
+# Wappalyzer [![Travis](https://img.shields.io/travis/ElbertF/Wappalyzer.svg?style=flat-square)]()
 
 [Wappalyzer](https://wappalyzer.com/) is a 
 [cross-platform](https://github.com/ElbertF/Wappalyzer/wiki/Drivers) utility that uncovers the 
