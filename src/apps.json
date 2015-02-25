@@ -3740,6 +3740,16 @@
 			},
 			"website": "nginx.org"
 		},
+		"OWL Carousel": {
+			"cats": [
+				5,
+				7
+			],
+			"html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
+			"implies": "jQuery",
+			"script": "owl.carousel.*\\.js",
+			"website": "http://owlgraphic.com/owlcarousel/"
+		},
 		"OXID eShop": {
 			"cats": [
 				6
@@ -5440,7 +5450,7 @@
 			],
 			"env": "^Twipsy$\\;confidence:50",
 			"html": [
-				"<style[^>]*>.*Bootstrap v.* Copyright .* Twitter, Inc\\.\\* Licensed under.*<\/style>",
+				"<style[^>]*>.*Bootstrap v.* Copyright .* Twitter, Inc\\.\\* Licensed under.*<\\/style>",
 				"<link.+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
 				"<div [^>]*class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
 			],
@@ -7005,17 +7015,7 @@
 				"yepnope.*\\.js"
 			],
 			"website": "yepnopejs.com"
-		},
-        "OWL Carousel": {
-            "cats": [
-                5,
-                7
-            ],
-            "html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
-            "script": "owl.carousel.*\\.js",
-            "implies": "jQuery",
-            "website": "http://owlgraphic.com/owlcarousel/"
-        }
+		}
 	},
 	"categories": {
 		"1": "cms",
