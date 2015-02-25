@@ -1,4 +1,4 @@
-# Wappalyzer [![Travis](https://img.shields.io/travis/ElbertF/Wappalyzer.svg?style=flat-square)](https://travis-ci.org/ElbertF/Wappalyzer/)
+# Wappalyzer [![Travis](https://img.shields.io/travis/AliasIO/Wappalyzer.svg?style=flat-square)](https://travis-ci.org/AliasIO/Wappalyzer/)
 
 [Wappalyzer](https://wappalyzer.com/) is a
 [cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the
