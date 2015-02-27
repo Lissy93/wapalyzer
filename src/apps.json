@@ -3092,7 +3092,7 @@
 				"Set-Cookie": "LiSESSIONID=",
 				"Set-Cookie": "LithiumVisitor="
 			},
-			"html": "<a\\s(.(?!</a>))*alt=\"Powered by Lithium\"(.(?!</a>))*.</a>",
+			"html": " <a [^>]+Powered by Lithium",
 			"implies": "PHP",
 			"website": "www.lithium.com"
 		},
