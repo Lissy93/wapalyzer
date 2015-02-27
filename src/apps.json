@@ -2921,6 +2921,28 @@
 			"implies": "PHP",
 			"website": "kohanaframework.org"
 		},
+        "Koken": {
+            "cats": [
+                1
+            ],
+            "env": "^\\$K$",
+            "headers": {
+                "Set-Cookie": "koken_referrer="
+            },
+            "html": [
+                "<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
+                "<!--\\s+KOKEN DEBUGGING"
+            ],
+            "implies": [
+                "PHP",
+                "MySQL"
+            ],
+            "meta": {
+                "generator": "Koken ([\\d.]+);version:\\1"
+            },
+            "script": "koken(?:\\.js\\?([\\d.]+)|/storage);version:\\1",
+            "website": "koken.me"
+        },
 		"Kolibri CMS": {
 			"cats": [
 				1
