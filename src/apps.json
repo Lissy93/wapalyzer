@@ -3085,10 +3085,12 @@
 			"cats": [
 				1
 			],
+            "env": "LITHIUM",
 			"headers": {
-				"Set-Cookie": "LiSESSIONID="
+				"Set-Cookie": "LiSESSIONID=",
+				"Set-Cookie": "LithiumVisitor="
 			},
-			"html": "Powered by Lithium",
+			"html": "<a\\s(.(?!</a>))*alt=\"Powered by Lithium\"(.(?!</a>))*.</a>",
 			"implies": "PHP",
 			"website": "www.lithium.com"
 		},
