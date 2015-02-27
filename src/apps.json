@@ -3085,7 +3085,9 @@
 			"cats": [
 				1
 			],
-			"env": "LITHIUM",
+			"env": [
+				"^LITHIUM$"
+			],
 			"headers": {
 				"Set-Cookie": "LiSESSIONID=",
 				"Set-Cookie": "LithiumVisitor="
