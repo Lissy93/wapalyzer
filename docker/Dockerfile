@@ -11,7 +11,6 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN npm install jsonlint -g
 
-
 # Add user
 RUN useradd -ms /bin/bash wappalyzer && echo "wappalyzer:wappalyzer" | chpasswd
 RUN echo 'wappalyzer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
@@ -28,6 +27,9 @@ RUN cat .profile >> /tmp/profile && mv /tmp/profile .profile
 RUN echo "cd \$WAPPALYZER_ROOT" >> .bashrc
 RUN echo "wappalyzer" >> .bashrc
 
+RUN su wappalyzer -c "\
+	ln -s bin/package.json package.json && \
+	npm install"
 
 # Mozilla Add-on SDK
 RUN su wappalyzer -c "\
