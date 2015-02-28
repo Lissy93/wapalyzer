@@ -31,4 +31,4 @@ jsonlint --quiet -V $WAPPALYZER_ROOT/schema.json $path/apps.json
 
 echo "Validating icons..."
 
-node $WAPPALYZER_ROOT/bin/wappalyzer-validate-icons.js $path/apps.json $path/icons
+wappalyzer validate-icons

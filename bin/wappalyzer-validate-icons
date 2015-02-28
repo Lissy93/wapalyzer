@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var
+	modulesPath = process.env.WAPPALYZER_NODE_PATH !== undefined ? process.env.WAPPALYZER_NODE_PATH + '/node_modules/' : '',
+	fileType    = require(modulesPath + 'file-type'),
+	fs          = require(modulesPath + 'fs-extra'),
+	readChunk   = require(modulesPath + 'read-chunk')
+	json        = require(process.env.WAPPALYZER_ROOT + '/src/apps.json');
+
+Object.keys(json.apps).forEach(function(app) {
+	var path = process.env.WAPPALYZER_ROOT + '/src/icons/' + app + '.png';
+
+	fs.exists(path, function(exists) {
+		var buffer;
+
+		if ( exists ) {
+			buffer = fileType(readChunk.sync(path, 0, 262));
+
+			if ( buffer.mime !== 'image/png' ) {
+				throw new Error('Incorrect mimetype "' + buffer.mime + '": src/icons/' + app + '.png');
+			}
+		} else {
+			throw new Error('Missing file: src/icons/' + app + '.png');
+		}
+	});
+});

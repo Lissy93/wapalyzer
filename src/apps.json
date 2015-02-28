@@ -661,6 +661,14 @@
 			},
 			"website": "www.boa.org"
 		},
+		"Boba.js": {
+			"cats": [
+				12
+			],
+			"implies": "Google Analytics",
+			"script": "boba(\\.min)?\\.js",
+			"website": "http://boba.space150.com/"
+		},
 		"Bolt": {
 			"cats": [
 				1
@@ -1710,6 +1718,15 @@
 			"script": "enyo\\.js",
 			"website": "enyojs.com"
 		},
+		"Epoch": {
+			"cats": [
+				25
+			],
+			"html": "<link.+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
+			"implies": "D3",
+			"script": "epoch(\\.min)?\\.js",
+			"website": "https://fastly.github.io/epoch/"
+		},
 		"Epom": {
 			"cats": [
 				36
@@ -2039,6 +2056,20 @@
 			],
 			"website": "about.gitlab.com"
 		},
+		"GitLab CI": {
+			"cats": [
+				44,
+				47
+			],
+			"implies": [
+				"Ruby",
+				"Ruby on Rails"
+			],
+			"meta": {
+				"description": "GitLab Continuous Integration"
+			},
+			"website": "https://about.gitlab.com/gitlab-ci/"
+		},
 		"GlassFish": {
 			"cats": [
 				22
@@ -2306,6 +2337,14 @@
 				"Server": "(?:^|[^-])\bHTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1"
 			},
 			"website": "???"
+		},
+		"Hammer.js": {
+			"cats": [
+				12
+			],
+			"env": "^Hammer$",
+			"script": "hammer(\\.min)?\\.js",
+			"website": "http://hammerjs.github.io"
 		},
 		"Handlebars": {
 			"cats": [
@@ -2929,28 +2968,28 @@
 			"implies": "PHP",
 			"website": "kohanaframework.org"
 		},
-        "Koken": {
-            "cats": [
-                1
-            ],
-            "env": "^\\$K$",
-            "headers": {
-                "Set-Cookie": "koken_referrer="
-            },
-            "html": [
-                "<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
-                "<!--\\s+KOKEN DEBUGGING"
-            ],
-            "implies": [
-                "PHP",
-                "MySQL"
-            ],
-            "meta": {
-                "generator": "Koken ([\\d.]+);version:\\1"
-            },
-            "script": "koken(?:\\.js\\?([\\d.]+)|/storage);version:\\1",
-            "website": "koken.me"
-        },
+		"Koken": {
+			"cats": [
+				1
+			],
+			"env": "^\\$K$",
+			"headers": {
+				"Set-Cookie": "koken_referrer="
+			},
+			"html": [
+				"<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
+				"<!--\\s+KOKEN DEBUGGING"
+			],
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
+			"meta": {
+				"generator": "Koken ([\\d.]+);version:\\1"
+			},
+			"script": "koken(?:\\.js\\?([\\d.]+)|/storage);version:\\1",
+			"website": "koken.me"
+		},
 		"Kolibri CMS": {
 			"cats": [
 				1
@@ -3025,6 +3064,13 @@
 			},
 			"implies": "PHP",
 			"website": "laravel.com"
+		},
+		"Lazy.js": {
+			"cats": [
+				12
+			],
+			"script": "lazy(\\.browser)?(\\.min)?\\.js",
+			"website": "http://danieltao.com/lazy.js/"
 		},
 		"Leaflet": {
 			"cats": [
@@ -3818,6 +3864,16 @@
 			"env": "^OAS_AD$",
 			"website": "xaxis.com"
 		},
+		"Open Classifieds": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "open-classifieds\\.com",
+				"copyright": "Open Classifieds ?([0-9.]+)?\\;version:\\1"
+			},
+			"website": "http://open-classifieds.com"
+		},
 		"Open Journal Systems": {
 			"cats": [
 				50
@@ -3840,6 +3896,16 @@
 			"env": "^_?owa_",
 			"html": "<!-- (?:Start|End) Open Web Analytics Tracker -->",
 			"website": "openwebanalytics.com"
+		},
+		"Open eShop": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "open-eshop\\.com",
+				"copyright": "Open eShop ?([0-9.]+)?\\;version:\\1"
+			},
+			"website": "http://open-eshop.com/"
 		},
 		"OpenCart": {
 			"cats": [
@@ -4078,6 +4144,13 @@
 			],
 			"env": "^PARSELY$",
 			"website": "parse.ly"
+		},
+		"Paths.js": {
+			"cats": [
+				25
+			],
+			"script": "paths(\\.min)?\\.js",
+			"website": "https://github.com/andreaferretti/paths-js"
 		},
 		"PayPal": {
 			"cats": [
@@ -4507,6 +4580,15 @@
 			"env": "^Reveal$",
 			"script": "reveal(?:\\.min)?\\.js",
 			"website": "lab.hakim.se/reveal-js"
+		},
+		"Rickshaw": {
+			"cats": [
+				25
+			],
+			"env": "^Rickshaw$",
+			"implies": "D3",
+			"script": "rickshaw(\\.min)?\\.js",
+			"website": "http://code.shutterstock.com/rickshaw/"
 		},
 		"RiteCMS": {
 			"cats": [
@@ -5187,6 +5269,15 @@
 			"script": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "buildinternet.com/project/supersized"
 		},
+		"SweetAlert": {
+			"cats": [
+				12
+			],
+			"env": "^swal$",
+			"html": "<link.+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
+			"script": "sweet-alert(\\.min)?\\.js",
+			"website": "http://tristanedwards.me/sweetalert"
+		},
 		"Swiftlet": {
 			"cats": [
 				18
@@ -5486,6 +5577,31 @@
 			],
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
 			"website": "getbootstrap.com"
+		},
+		"Twitter Emoji (Twemoji)": {
+			"cats": [
+				25
+			],
+			"env": "^twemoji$",
+			"script": "twemoji(\\.min)?\\.js",
+			"website": "https://twitter.github.io/twemoji/"
+		},
+		"Twitter Flight": {
+			"cats": [
+				12
+			],
+			"env": "^flight$",
+			"implies": "jQuery",
+			"website": "https://flightjs.github.io/"
+		},
+		"Twitter typeahead.js": {
+			"cats": [
+				12
+			],
+			"env": "^typeahead$",
+			"implies": "jQuery\\;confidence:50",
+			"script": "(typeahead|bloodhound)(\\.jquery|\\.bundle)?(\\.min)?\\.js",
+			"website": "https://twitter.github.io/typeahead.js/"
 		},
 		"TypePad": {
 			"cats": [
@@ -6918,6 +7034,14 @@
 			"script": "(?:scriptaculous|protoaculous)\\.js",
 			"website": "script.aculo.us"
 		},
+		"shine.js": {
+			"cats": [
+				25
+			],
+			"env": "^Shine$",
+			"script": "shine(\\.min)?\\.js",
+			"website": "http://bigspaceship.github.io/shine.js/"
+		},
 		"spin.js": {
 			"cats": [
 				12,
@@ -6995,6 +7119,15 @@
 			"html": "powered by <a href=\"[^>]+viennacms",
 			"website": "www.viennacms.nl"
 		},
+		"vis.js": {
+			"cats": [
+				25
+			],
+			"env": "^vis$",
+			"html": "<link.+?href=\"[^\"]+vis(?:\\.min)?\\.css",
+			"script": "vis(\\.min)?\\.js",
+			"website": "http://visjs.org"
+		},
 		"webEdition": {
 			"cats": [
 				1
@@ -7045,139 +7178,6 @@
 				"yepnope.*\\.js"
 			],
 			"website": "yepnopejs.com"
-		},
-		"Open Classifieds": {
-			"cats": [
-				6
-			],
-			"meta": {
-				"author": "open-classifieds\\.com",
-				"copyright": "Open Classifieds ?([0-9.]+)?\\;version:\\1"
-			},
-			"website": "http://open-classifieds.com"
-		},
-		"Open eShop": {
-			"cats": [
-				6
-			],
-			"meta": {
-				"author": "open-eshop\\.com",
-				"copyright": "Open eShop ?([0-9.]+)?\\;version:\\1"
-			},
-			"website": "http://open-eshop.com/"
-		},
-		"Hammer.js": {
-			"cats": [
-				12
-			],
-			"script": "hammer(\\.min)?\\.js",
-			"env": "^Hammer$",
-			"website": "http://hammerjs.github.io"
-		},
-		"Epoch": {
-			"cats": [
-				25
-			],
-			"script": "epoch(\\.min)?\\.js",
-			"html": "<link.+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
-			"implies": "D3",
-			"website": "https://fastly.github.io/epoch/"
-		},
-		"Boba.js": {
-			"cats": [
-				12
-			],
-			"script": "boba(\\.min)?\\.js",
-			"implies": "Google Analytics",
-			"website": "http://boba.space150.com/"
-		},
-		"Lazy.js": {
-			"cats": [
-				12
-			],
-			"script": "lazy(\\.browser)?(\\.min)?\\.js",
-			"website": "http://danieltao.com/lazy.js/"
-		},
-		"SweetAlert": {
-			"cats": [
-				12
-			],
-			"env": "^swal$",
-			"script": "sweet-alert(\\.min)?\\.js",
-			"html": "<link.+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
-			"website": "http://tristanedwards.me/sweetalert"
-		},
-		"vis.js": {
-			"cats": [
-				25
-			],
-			"env": "^vis$",
-			"script": "vis(\\.min)?\\.js",
-			"html": "<link.+?href=\"[^\"]+vis(?:\\.min)?\\.css",
-			"website": "http://visjs.org"
-		},
-		"shine.js": {
-			"cats": [
-				25
-			],
-			"env": "^Shine$",
-			"script": "shine(\\.min)?\\.js",
-			"website": "http://bigspaceship.github.io/shine.js/"
-		},
-		"Paths.js": {
-			"cats": [
-				25
-			],
-			"script": "paths(\\.min)?\\.js",
-			"website": "https://github.com/andreaferretti/paths-js"
-		},
-		"Twitter Flight": {
-			"cats": [
-				12
-			],
-			"env": "^flight$",
-			"implies": "jQuery",
-			"website": "https://flightjs.github.io/"
-		},
-		"Twitter Emoji (Twemoji)": {
-			"cats": [
-				25
-			],
-			"env": "^twemoji$",
-			"script": "twemoji(\\.min)?\\.js",
-			"website": "https://twitter.github.io/twemoji/"
-		},
-		"Twitter typeahead.js": {
-			"cats": [
-				12
-			],
-			"env": "^typeahead$",
-			"script": "(typeahead|bloodhound)(\\.jquery|\\.bundle)?(\\.min)?\\.js",
-			"implies": "jQuery\\;confidence:50",
-			"website": "https://twitter.github.io/typeahead.js/"
-		},
-		"Rickshaw": {
-			"cats": [
-				25
-			],
-			"env": "^Rickshaw$",
-			"script": "rickshaw(\\.min)?\\.js",
-			"implies": "D3",
-			"website": "http://code.shutterstock.com/rickshaw/"
-		},
-		"GitLab CI": {
-			"cats": [
-				44,
-				47
-			],
-			"meta": {
-				"description": "GitLab Continuous Integration"
-			},
-			"implies": [
-				"Ruby",
-				"Ruby on Rails"
-			],
-			"website": "https://about.gitlab.com/gitlab-ci/"
 		}
 	},
 	"categories": {
