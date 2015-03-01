@@ -3284,7 +3284,7 @@
 			},
 			"html": [
 				"<a[^>]+>Powered by MODx</a>",
-				"<(?:link|script)[^>]+assets/(?:templates|components|snippets)/\\;confidence:80"
+				"<(?:link|script)[^>]+assets/snippets/\\;confidence:20"
 			],
 			"implies": "PHP",
 			"website": "modxcms.com"
@@ -3385,6 +3385,14 @@
 			],
 			"html": "(?:<iframe id=\"meebo-iframe\"|Meebo\\('domReady'\\))",
 			"website": "www.meebo.com"
+		},
+		"Meteor": {
+			"cats": [
+				12
+			],
+			"env": "^Meteor$",
+			"html": "<link[^>]+__meteor-css__",
+			"website": "meteor.com"
 		},
 		"Methode": {
 			"cats": [
