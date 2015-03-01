@@ -187,11 +187,10 @@
 			],
 			"html": [
 				"<div class=\"[^\"]*parbase",
-				"_jcr_content",
-				"/etc/designs/",
-				"/etc/clientlibs/"
+				"<div[^>]+data-component-path=\"[^\"+]jcr:"
 			],
 			"implies": "Java",
+			"script": "/etc/designs/",
 			"website": "adobe.com/products/cq.html"
 		},
 		"Adobe ColdFusion": {
@@ -332,7 +331,6 @@
 			"cats": [
 				1
 			],
-			"html": "system_(?:js\\.php\\?script=|css\\.php\\?styles)[^\"]+cv=([\\d.]+)\\;version:\\1",
 			"implies": "PHP",
 			"meta": {
 				"generator": "Amiro"
@@ -378,14 +376,14 @@
 			"cats": [
 				34
 			],
-			"html": "type=\"text/css\" href=\"/static/hbase\\.css\"",
+			"html": "<style[^>]+static/hbase",
 			"website": "hbase.apache.org"
 		},
 		"Apache Hadoop": {
 			"cats": [
 				34
 			],
-			"html": "type=\"text/css\" href=\"/static/hadoop\\.css\"",
+			"html": "<style[^>]+static/hadoop",
 			"website": "hadoop.apache.org"
 		},
 		"Apache JSPWiki": {
@@ -436,7 +434,7 @@
 			"cats": [
 				2
 			],
-			"html": "ping\\.src = node\\.href;",
+			"html": "ping\\.src = node\\.href;\\s+[^>]+\\s+}\\s+</script>",
 			"website": "arclanguage.org"
 		},
 		"Artifactory": {
@@ -661,6 +659,14 @@
 			},
 			"website": "www.boa.org"
 		},
+		"Boba.js": {
+			"cats": [
+				12
+			],
+			"implies": "Google Analytics",
+			"script": "boba(\\.min)?\\.js",
+			"website": "boba.space150.com"
+		},
 		"Bolt": {
 			"cats": [
 				1
@@ -726,7 +732,7 @@
 			"cats": [
 				2
 			],
-			"html": "<a href=\"[^>]+woltlab\\.com.+Burning Board",
+			"html": "<a href=\"[^>]+woltlab\\.com[^<]+<strong>Burning Board",
 			"implies": "PHP",
 			"website": "www.woltlab.com"
 		},
@@ -816,7 +822,7 @@
 			"env": "^fn_compare_strings$",
 			"html": [
 				"&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)",
-				"(?:\\$|jQuery)\\.runCart\\('\\w'\\)"
+				".cm-noscript[^>]+</style>"
 			],
 			"implies": "PHP",
 			"website": "www.cs-cart.com"
@@ -944,7 +950,7 @@
 			"cats": [
 				10
 			],
-			"html": "function loadChartbeat\\(\\) \\{",
+			"env": "^_sf_(?:endpt|async_config)$",
 			"script": "chartbeat\\.js",
 			"website": "chartbeat.com"
 		},
@@ -1006,7 +1012,6 @@
 				10
 			],
 			"env": "^ClickTale",
-			"html": "if\\(typeof ClickTale\\(Tag\\)*==\\\"function\\\"\\)",
 			"website": "www.clicktale.com"
 		},
 		"Clicky": {
@@ -1278,8 +1283,7 @@
 				1
 			],
 			"html": [
-				"<a href=\"http://www\\.dtg\\.nl/\"[^>]+>Site Powered by DTG",
-				"var u=\\(\\('https:' == d\\.location\\.protocol\\) \\? 'https://resellerstat\\.mono\\.net/dtg/' : 'http://resellerstat\\.mono\\.net/dtg/'\\);"
+				"<a[^>]+Site Powered by DTG"
 			],
 			"implies": "Mono.net",
 			"website": "www.dtg.nl"
@@ -1553,7 +1557,7 @@
 			"cats": [
 				6
 			],
-			"html": "(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+			"html": "<[^]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
 			"implies": "Drupal",
 			"website": "drupalcommerce.org"
 		},
@@ -1709,6 +1713,15 @@
 			"env": "^enyo$",
 			"script": "enyo\\.js",
 			"website": "enyojs.com"
+		},
+		"Epoch": {
+			"cats": [
+				25
+			],
+			"html": "<link[^>]+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
+			"implies": "D3",
+			"script": "epoch(\\.min)?\\.js",
+			"website": "fastly.github.io/epoch"
 		},
 		"Epom": {
 			"cats": [
@@ -2039,6 +2052,20 @@
 			],
 			"website": "about.gitlab.com"
 		},
+		"GitLab CI": {
+			"cats": [
+				44,
+				47
+			],
+			"implies": [
+				"Ruby",
+				"Ruby on Rails"
+			],
+			"meta": {
+				"description": "GitLab Continuous Integration"
+			},
+			"website": "about.gitlab.com/gitlab-ci"
+		},
 		"GlassFish": {
 			"cats": [
 				22
@@ -2098,8 +2125,7 @@
 			"headers": {
 				"Set-Cookie": "__utma"
 			},
-			"html": "_gaq\\.push\\(\\['_setAccount|i\\['GoogleAnalyticsObject'\\]|ga\\.async = true",
-			"script": "^https?://[^\\/]+\\.google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?Universal Analytics:",
+			"script": "^https?://[^\\/]+\\.google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?UA:",
 			"website": "google.com/analytics"
 		},
 		"Google App Engine": {
@@ -2219,7 +2245,7 @@
 				19
 			],
 			"env": "^Gravatar$",
-			"html": "gravatar\\.com/avatar/",
+			"html": "<[^]+gravatar\\.com/avatar/",
 			"website": "gravatar.com"
 		},
 		"Gravity Insights": {
@@ -2307,6 +2333,14 @@
 			},
 			"website": "???"
 		},
+		"Hammer.js": {
+			"cats": [
+				12
+			],
+			"env": "^Hammer$",
+			"script": "hammer(\\.min)?\\.js",
+			"website": "hammerjs.github.io"
+		},
 		"Handlebars": {
 			"cats": [
 				12
@@ -2345,8 +2379,8 @@
 			"cats": [
 				5
 			],
-			"html": "/hellobar\\.js",
-			"script": "(?:hellobar\\.com/hellobar\\.js|new HelloBar)",
+			"env": "^HelloBar$",
+			"script": "hellobar\\.js",
 			"website": "hellobar.com"
 		},
 		"Hiawatha": {
@@ -2420,7 +2454,7 @@
 			"headers": {
 				"Set-Cookie": "_hybris"
 			},
-			"html": "(?:/sys_master/|/hybr/|/_ui/desktop/)",
+			"html": "<[^]+(?:/sys_master/|/hybr/|/_ui/desktop/)",
 			"implies": "Java",
 			"website": "hybris.com"
 		},
@@ -2929,28 +2963,28 @@
 			"implies": "PHP",
 			"website": "kohanaframework.org"
 		},
-        "Koken": {
-            "cats": [
-                1
-            ],
-            "env": "^\\$K$",
-            "headers": {
-                "Set-Cookie": "koken_referrer="
-            },
-            "html": [
-                "<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
-                "<!--\\s+KOKEN DEBUGGING"
-            ],
-            "implies": [
-                "PHP",
-                "MySQL"
-            ],
-            "meta": {
-                "generator": "Koken ([\\d.]+);version:\\1"
-            },
-            "script": "koken(?:\\.js\\?([\\d.]+)|/storage);version:\\1",
-            "website": "koken.me"
-        },
+		"Koken": {
+			"cats": [
+				1
+			],
+			"env": "^\\$K$",
+			"headers": {
+				"Set-Cookie": "koken_referrer="
+			},
+			"html": [
+				"<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
+				"<!--\\s+KOKEN DEBUGGING"
+			],
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
+			"meta": {
+				"generator": "Koken ([\\d.]+);version:\\1"
+			},
+			"script": "koken(?:\\.js\\?([\\d.]+)|/storage);version:\\1",
+			"website": "koken.me"
+		},
 		"Kolibri CMS": {
 			"cats": [
 				1
@@ -3025,6 +3059,13 @@
 			},
 			"implies": "PHP",
 			"website": "laravel.com"
+		},
+		"Lazy.js": {
+			"cats": [
+				12
+			],
+			"script": "lazy(\\.browser)?(\\.min)?\\.js",
+			"website": "danieltao.com/lazy.js"
 		},
 		"Leaflet": {
 			"cats": [
@@ -3122,10 +3163,10 @@
 			"cats": [
 				1
 			],
+			"env": "^LIVESTREET",
 			"headers": {
 				"X-Powered-By": "LiveStreet CMS"
 			},
-			"html": "var LIVESTREET_SECURITY_KEY",
 			"website": "livestreetcms.com"
 		},
 		"Livefyre": {
@@ -3160,7 +3201,7 @@
 			"cats": [
 				1
 			],
-			"html": "<link[^>]*/sites/[a-z\\d]{24}/theme/stylesheets/.*>",
+			"html": "<link[^>]*/sites/[a-z\\d]{24}/theme/stylesheets",
 			"implies": [
 				"Ruby on Rails",
 				"MongoDB"
@@ -3243,7 +3284,7 @@
 			},
 			"html": [
 				"<a[^>]+>Powered by MODx</a>",
-				"<(?:link|script)[^>]+assets/(?:templates|components|snippets)/\\;confidence:80"
+				"<(?:link|script)[^>]+assets/snippets/\\;confidence:20"
 			],
 			"implies": "PHP",
 			"website": "modxcms.com"
@@ -3284,7 +3325,6 @@
 			"cats": [
 				5
 			],
-			"html": "\\/assets\\/js\\/manycontacts\\.min\\.js",
 			"script": "\\/assets\\/js\\/manycontacts\\.min\\.js",
 			"website": "www.manycontacts.com"
 		},
@@ -3346,6 +3386,14 @@
 			"html": "(?:<iframe id=\"meebo-iframe\"|Meebo\\('domReady'\\))",
 			"website": "www.meebo.com"
 		},
+		"Meteor": {
+			"cats": [
+				12
+			],
+			"env": "^Meteor$",
+			"html": "<link[^>]+__meteor-css__",
+			"website": "meteor.com"
+		},
 		"Methode": {
 			"cats": [
 				1
@@ -3404,7 +3452,7 @@
 			"cats": [
 				2
 			],
-			"html": "<a href=\"[^>]+minibb.+\\s+<!--End of copyright link",
+			"html": "<a href=\"[^\"]+minibb[^<]+</a>[^<]+\n<!--End of copyright link",
 			"website": "www.minibb.com"
 		},
 		"MiniServ": {
@@ -3564,8 +3612,7 @@
 			"cats": [
 				1
 			],
-			"env": "_monoTracker",
-			"html": "var u=\\(\\('https:' == d\\.location\\.protocol\\) \\? 'https://resellerstat\\.mono\\.net/mono/' : 'http://resellerstat\\.mono\\.net/mono/'\\);",
+			"env": "^_monoTracker$",
 			"implies": "Piwik",
 			"script": "monotracker(?:\\.min)?\\.js",
 			"website": "www.mono.net"
@@ -3709,7 +3756,7 @@
 			"cats": [
 				10
 			],
-			"html": "sitestat\\(\".+nl\\.sitestat\\.com",
+			"env": "^sitestat$",
 			"website": "www.nedstat.com"
 		},
 		"Nepso": {
@@ -3778,7 +3825,7 @@
 			"html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
 			"implies": "jQuery",
 			"script": "owl.carousel.*\\.js",
-			"website": "http://owlgraphic.com/owlcarousel/"
+			"website": "owlgraphic.com/owlcarousel"
 		},
 		"OXID eShop": {
 			"cats": [
@@ -3808,7 +3855,7 @@
 			"cats": [
 				10
 			],
-			"html": "var p==.+stat\\.onestat\\.com/stat\\.aspx\\?tagver",
+			"env": "^OneStat",
 			"website": "www.onestat.com"
 		},
 		"Open AdStream": {
@@ -3817,6 +3864,16 @@
 			],
 			"env": "^OAS_AD$",
 			"website": "xaxis.com"
+		},
+		"Open Classifieds": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "open-classifieds\\.com",
+				"copyright": "Open Classifieds ?([0-9.]+)?\\;version:\\1"
+			},
+			"website": "open-classifieds.com"
 		},
 		"Open Journal Systems": {
 			"cats": [
@@ -3840,6 +3897,16 @@
 			"env": "^_?owa_",
 			"html": "<!-- (?:Start|End) Open Web Analytics Tracker -->",
 			"website": "openwebanalytics.com"
+		},
+		"Open eShop": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "open-eshop\\.com",
+				"copyright": "Open eShop ?([0-9.]+)?\\;version:\\1"
+			},
+			"website": "open-eshop.com/"
 		},
 		"OpenCart": {
 			"cats": [
@@ -4069,7 +4136,6 @@
 				32
 			],
 			"env": "^pi(?:Tracker|Hostname|Protocol|CId|AId)$",
-			"html": "piProtocol + \"pi\\.pardot\\.com/pi\\.js",
 			"website": "pardot.com"
 		},
 		"Parse.ly": {
@@ -4078,6 +4144,13 @@
 			],
 			"env": "^PARSELY$",
 			"website": "parse.ly"
+		},
+		"Paths.js": {
+			"cats": [
+				25
+			],
+			"script": "paths(\\.min)?\\.js",
+			"website": "github.com/andreaferretti/paths-js"
 		},
 		"PayPal": {
 			"cats": [
@@ -4175,7 +4248,6 @@
 			"headers": {
 				"Set-Cookie": "PIWIK_SESSID="
 			},
-			"html": "var piwikTracker = Piwik\\.getTracker\\(",
 			"meta": {
 				"apple-itunes-app": "app-id=737216887",
 				"generator": "Piwik - Open Source Web Analytics",
@@ -4276,7 +4348,10 @@
 			"cats": [
 				6
 			],
-			"html": "(s\\d\\d)\\.php\\?shopid=\\1",
+			"html": [
+				"<a[^>]+title=\"POWERGAP",
+				"<input type=\"hidden\" name=\"shopid\""
+			],
 			"website": "powergap.de"
 		},
 		"Prefix-Free": {
@@ -4508,6 +4583,15 @@
 			"script": "reveal(?:\\.min)?\\.js",
 			"website": "lab.hakim.se/reveal-js"
 		},
+		"Rickshaw": {
+			"cats": [
+				25
+			],
+			"env": "^Rickshaw$",
+			"implies": "D3",
+			"script": "rickshaw(\\.min)?\\.js",
+			"website": "code.shutterstock.com/rickshaw/"
+		},
 		"RiteCMS": {
 			"cats": [
 				1
@@ -4584,10 +4668,7 @@
 			"cats": [
 				1
 			],
-			"html": [
-				"mfinfo\\.application='Tridion",
-				"<img[^>]+_tcm\\d{2,3}-\\d{6}\\."
-			],
+			"html": "<img[^>]+_tcm\\d{2,3}-\\d{6}\\.",
 			"website": "www.sdl.com/products/tridion"
 		},
 		"SIMsite": {
@@ -4758,7 +4839,7 @@
 			"cats": [
 				6
 			],
-			"html": "http://www\\.getseoshop\\.com",
+			"html": "<a[^>]+title=\"SEOshop",
 			"website": "getseoshop.com"
 		},
 		"Serendipity": {
@@ -4882,7 +4963,6 @@
 				10
 			],
 			"env": "^s_(?:account|objectID|code|INST)$",
-			"html": "var s_code=s\\.t\\(\\);if\\(s_code\\)document\\.write\\(s_code\\)",
 			"script": "/s[_-]code.*\\.js",
 			"website": "www.adobe.com/solutions/digital-marketing.html"
 		},
@@ -4999,7 +5079,6 @@
 				19
 			],
 			"env": "^SobiProUrl$",
-			"html": " <(?:script|link)[^>].*com_sobipro.*>",
 			"implies": "Joomla",
 			"website": "sigsiu.net/sobipro.html"
 		},
@@ -5108,7 +5187,7 @@
 			"headers": {
 				"X-Powered-By": "Squiz Matrix"
 			},
-			"html": "  Running (?:MySource|Squiz) Matrix",
+			"html": "<!--\\s+Running (?:MySource|Squiz) Matrix",
 			"implies": "PHP",
 			"meta": {
 				"generator": "Squiz Matrix"
@@ -5186,6 +5265,15 @@
 			],
 			"script": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "buildinternet.com/project/supersized"
+		},
+		"SweetAlert": {
+			"cats": [
+				12
+			],
+			"env": "^swal$",
+			"html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
+			"script": "sweet-alert(\\.min)?\\.js",
+			"website": "tristanedwards.me/sweetalert"
 		},
 		"Swiftlet": {
 			"cats": [
@@ -5265,7 +5353,7 @@
 				1
 			],
 			"excludes": "TYPO3 CMS",
-			"html": "xmlns:typo3=\\\"http://www\\.typo3\\.org/ns/\\d{4}/Flow/Packages/Neos/Content/",
+			"html": "<html[^>]+xmlns:typo3=\"[^\"]+Flow/Packages/Neos/",
 			"implies": [
 				"PHP",
 				"TYPO3 Flow"
@@ -5284,10 +5372,7 @@
 			"cats": [
 				44
 			],
-			"html": [
-				"http://www.jetbrains.com/teamcity/feedback\\?source=footer&version=([\\d\\.]+)\\;version:\\1",
-				"\n\\s*<span class=\"versionTag\"><span class=\"vWord\">Version</span> ([\\d\\.]+) \\(build \\d+\\)</span>\\;version:\\1"
-			],
+			"html": "<span class=\"versionTag\"><span class=\"vWord\">Version</span> ([\\d\\.]+)\\;version:\\1",
 			"implies": [
 				"jQuery",
 				"Prototype"
@@ -5424,7 +5509,7 @@
 				10
 			],
 			"env": "^TrackJs$",
-			"script": "\tracker.js",
+			"script": "tracker.js",
 			"website": "trackjs.com"
 		},
 		"Tumblr": {
@@ -5480,12 +5565,37 @@
 			],
 			"env": "^Twipsy$\\;confidence:50",
 			"html": [
-				"<style[^>]*>.*Bootstrap v.* Copyright .* Twitter, Inc\\.\\* Licensed under.*<\\/style>",
-				"<link.+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
+				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
+				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
 				"<div [^>]*class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
 			],
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
 			"website": "getbootstrap.com"
+		},
+		"Twitter Emoji (Twemoji)": {
+			"cats": [
+				25
+			],
+			"env": "^twemoji$",
+			"script": "twemoji(\\.min)?\\.js",
+			"website": "twitter.github.io/twemoji/"
+		},
+		"Twitter Flight": {
+			"cats": [
+				12
+			],
+			"env": "^flight$",
+			"implies": "jQuery",
+			"website": "flightjs.github.io/"
+		},
+		"Twitter typeahead.js": {
+			"cats": [
+				12
+			],
+			"env": "^typeahead$",
+			"implies": "jQuery\\;confidence:50",
+			"script": "(typeahead|bloodhound)(\\.jquery|\\.bundle)?(\\.min)?\\.js",
+			"website": "twitter.github.io/typeahead.js"
 		},
 		"TypePad": {
 			"cats": [
@@ -5970,7 +6080,7 @@
 			"cats": [
 				1
 			],
-			"html": "(?:<a href=\"[^>]+wolfcms\\.org.+Wolf CMS.+inside|Thank you for using <a[^>]+>Wolf CMS)",
+			"html": "(?:<a href=\"[^>]+wolfcms\\.org[^>]+>Wolf CMS(?:</a>)? inside|Thank you for using <a[^>]+>Wolf CMS)",
 			"website": "www.wolfcms.org"
 		},
 		"WooCommerce": {
@@ -6194,7 +6304,7 @@
 			"cats": [
 				10
 			],
-			"html": "mc\\.yandex\\.ru\\/metrika\\/watch\\.js|\b(?:yaParams|yaCounter|yandex_metrika_callbacks)\b",
+			"env": "^yandex_metrika",
 			"script": "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
 			"website": "metrika.yandex.com"
 		},
@@ -6258,7 +6368,8 @@
 			"cats": [
 				19
 			],
-			"html": "zbxCallPostScripts\\(\\);",
+			"env": "^zbxCallPostScripts$",
+			"html": "<body[^>]+zbxCallPostScripts",
 			"meta": {
 				"Author": "ZABBIX SIA\\;confidence:70"
 			},
@@ -6359,9 +6470,9 @@
 			"cats": [
 				19
 			],
-			"html": "id='cgit'",
+			"html": "<[^]+id='cgit'",
 			"implies": "Perl",
-			"website": "git.zx2c4.com/cgit/"
+			"website": "git.zx2c4.com/cgit"
 		},
 		"comScore": {
 			"cats": [
@@ -6918,6 +7029,14 @@
 			"script": "(?:scriptaculous|protoaculous)\\.js",
 			"website": "script.aculo.us"
 		},
+		"shine.js": {
+			"cats": [
+				25
+			],
+			"env": "^Shine$",
+			"script": "shine(\\.min)?\\.js",
+			"website": "bigspaceship.github.io/shine.js/"
+		},
 		"spin.js": {
 			"cats": [
 				12,
@@ -6995,6 +7114,15 @@
 			"html": "powered by <a href=\"[^>]+viennacms",
 			"website": "www.viennacms.nl"
 		},
+		"vis.js": {
+			"cats": [
+				25
+			],
+			"env": "^vis$",
+			"html": "<link[^>]+?href=\"[^\"]+vis(?:\\.min)?\\.css",
+			"script": "vis(\\.min)?\\.js",
+			"website": "visjs.org"
+		},
 		"webEdition": {
 			"cats": [
 				1
@@ -7019,7 +7147,7 @@
 			"cats": [
 				6
 			],
-			"html": "<div class=\"copyright\">.+<a[^>]+>xt:Commerce",
+			"html": "<div class=\"copyright\">[^<]+<a[^>]+>xt:Commerce",
 			"meta": {
 				"generator": "xt:Commerce"
 			},
@@ -7045,139 +7173,6 @@
 				"yepnope.*\\.js"
 			],
 			"website": "yepnopejs.com"
-		},
-		"Open Classifieds": {
-			"cats": [
-				6
-			],
-			"meta": {
-				"author": "open-classifieds\\.com",
-				"copyright": "Open Classifieds ?([0-9.]+)?\\;version:\\1"
-			},
-			"website": "http://open-classifieds.com"
-		},
-		"Open eShop": {
-			"cats": [
-				6
-			],
-			"meta": {
-				"author": "open-eshop\\.com",
-				"copyright": "Open eShop ?([0-9.]+)?\\;version:\\1"
-			},
-			"website": "http://open-eshop.com/"
-		},
-		"Hammer.js": {
-			"cats": [
-				12
-			],
-			"script": "hammer(\\.min)?\\.js",
-			"env": "^Hammer$",
-			"website": "http://hammerjs.github.io"
-		},
-		"Epoch": {
-			"cats": [
-				25
-			],
-			"script": "epoch(\\.min)?\\.js",
-			"html": "<link.+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
-			"implies": "D3",
-			"website": "https://fastly.github.io/epoch/"
-		},
-		"Boba.js": {
-			"cats": [
-				12
-			],
-			"script": "boba(\\.min)?\\.js",
-			"implies": "Google Analytics",
-			"website": "http://boba.space150.com/"
-		},
-		"Lazy.js": {
-			"cats": [
-				12
-			],
-			"script": "lazy(\\.browser)?(\\.min)?\\.js",
-			"website": "http://danieltao.com/lazy.js/"
-		},
-		"SweetAlert": {
-			"cats": [
-				12
-			],
-			"env": "^swal$",
-			"script": "sweet-alert(\\.min)?\\.js",
-			"html": "<link.+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
-			"website": "http://tristanedwards.me/sweetalert"
-		},
-		"vis.js": {
-			"cats": [
-				25
-			],
-			"env": "^vis$",
-			"script": "vis(\\.min)?\\.js",
-			"html": "<link.+?href=\"[^\"]+vis(?:\\.min)?\\.css",
-			"website": "http://visjs.org"
-		},
-		"shine.js": {
-			"cats": [
-				25
-			],
-			"env": "^Shine$",
-			"script": "shine(\\.min)?\\.js",
-			"website": "http://bigspaceship.github.io/shine.js/"
-		},
-		"Paths.js": {
-			"cats": [
-				25
-			],
-			"script": "paths(\\.min)?\\.js",
-			"website": "https://github.com/andreaferretti/paths-js"
-		},
-		"Twitter Flight": {
-			"cats": [
-				12
-			],
-			"env": "^flight$",
-			"implies": "jQuery",
-			"website": "https://flightjs.github.io/"
-		},
-		"Twitter Emoji (Twemoji)": {
-			"cats": [
-				25
-			],
-			"env": "^twemoji$",
-			"script": "twemoji(\\.min)?\\.js",
-			"website": "https://twitter.github.io/twemoji/"
-		},
-		"Twitter typeahead.js": {
-			"cats": [
-				12
-			],
-			"env": "^typeahead$",
-			"script": "(typeahead|bloodhound)(\\.jquery|\\.bundle)?(\\.min)?\\.js",
-			"implies": "jQuery\\;confidence:50",
-			"website": "https://twitter.github.io/typeahead.js/"
-		},
-		"Rickshaw": {
-			"cats": [
-				25
-			],
-			"env": "^Rickshaw$",
-			"script": "rickshaw(\\.min)?\\.js",
-			"implies": "D3",
-			"website": "http://code.shutterstock.com/rickshaw/"
-		},
-		"GitLab CI": {
-			"cats": [
-				44,
-				47
-			],
-			"meta": {
-				"description": "GitLab Continuous Integration"
-			},
-			"implies": [
-				"Ruby",
-				"Ruby on Rails"
-			],
-			"website": "https://about.gitlab.com/gitlab-ci/"
 		}
 	},
 	"categories": {
