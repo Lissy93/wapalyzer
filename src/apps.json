@@ -2547,6 +2547,17 @@
 			},
 			"website": "impresspages.org"
 		},
+		"INFOnline": {
+			"cats": [
+				10
+			],
+			"env": [
+				"^szmvars$",
+				"^iam_data$"
+			],
+			"script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
+			"website": "infonline.de"
+		},
 		"InProces": {
 			"cats": [
 				1
