@@ -9,7 +9,7 @@ ENV WAPPALYZER_NODE_PATH /home/wappalyzer/node
 
 
 # Install packages
-RUN apt-get update && apt-get install -y curl nodejs npm zip
+RUN apt-get update && apt-get install -y curl nodejs npm zip libfreetype6 libfontconfig
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
