@@ -58,6 +58,20 @@
 			},
 			"website": "www.3ware.com"
 		},
+		"actionhero.js": {
+			"cats": [
+				1,
+				18,
+				22
+			],
+			"headers": {
+				"X-Powered-By": "actionhero API"
+			},
+			"env": "^actionheroClient$",
+			"script": "actionheroClient\\.js",
+			"implies": "node.js",
+			"website": "www.actionherojs.com"
+		},
 		"AMPcms": {
 			"cats": [
 				1
