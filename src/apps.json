@@ -3177,6 +3177,21 @@
 			},
 			"website": "litespeedtech.com"
 		},
+		"Lithium": {
+			"cats": [
+				1
+			],
+			"env": [
+				"^LITHIUM$"
+			],
+			"headers": {
+				"Set-Cookie": "LiSESSIONID=",
+				"Set-Cookie": "LithiumVisitor="
+			},
+			"html": " <a [^>]+Powered by Lithium",
+			"implies": "PHP",
+			"website": "www.lithium.com"
+		},
 		"LiveJournal": {
 			"cats": [
 				11
