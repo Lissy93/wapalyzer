@@ -906,9 +906,12 @@
 		},
 		"Catberry.js": {
 			"cats": [
-				12, 18
+				12,
+				18
 			],
-			"headers": { "X-Powered-By": "Catberry" },
+			"headers": {
+				"X-Powered-By": "Catberry"
+			},
 			"env": "^catberry$",
 			"implies": "node.js",
 			"website": "catberry.org"
