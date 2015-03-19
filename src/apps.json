@@ -904,6 +904,18 @@
 			"script": "/cargo\\.",
 			"website": "cargocollective.com"
 		},
+		"Catberry.js": {
+			"cats": [
+				12,
+				18
+			],
+			"headers": {
+				"X-Powered-By": "Catberry"
+			},
+			"env": "^catberry$",
+			"implies": "node.js",
+			"website": "catberry.org"
+		},
 		"Catwalk": {
 			"cats": [
 				22
