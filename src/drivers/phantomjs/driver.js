@@ -105,7 +105,7 @@
 							return;
 						}
 
-						if ( response.stage === 'end' && response.contentType.indexOf('text/html') !== -1 ) {
+						if ( response.stage === 'end' && response.status === 200 && response.contentType.indexOf('text/html') !== -1 ) {
 							response.headers.forEach(function(header) {
 								headers[header.name.toLowerCase()] = header.value;
 							});
@@ -116,36 +116,36 @@
 				page.open(url, function(status) {
 					var html, environmentVars;
 
-					if ( status === 'fail' ) {
-						return;
-					}
+					wappalyzer.log('page.open: ' + status);
 
-					html = page.content;
+					if ( status === 'success' ) {
+						html = page.content;
 
-					if ( html.length > 50000 ) {
-						html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-					}
-
-					// Collect environment variables
-					environmentVars = page.evaluate(function() {
-						var i, environmentVars;
-
-						for ( i in window ) {
-							environmentVars += i + ' ';
+						if ( html.length > 50000 ) {
+							html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 						}
 
-						return environmentVars;
-					});
+						// Collect environment variables
+						environmentVars = page.evaluate(function() {
+							var i, environmentVars;
 
-					wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
+							for ( i in window ) {
+								environmentVars += i + ' ';
+							}
 
-					environmentVars = environmentVars.split(' ').slice(0, 500);
+							return environmentVars;
+						});
 
-					wappalyzer.analyze(hostname, url, {
-						html:    html,
-						headers: headers,
-						env:     environmentVars
-					});
+						wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
+
+						environmentVars = environmentVars.split(' ').slice(0, 500);
+
+						wappalyzer.analyze(hostname, url, {
+							html:    html,
+							headers: headers,
+							env:     environmentVars
+						});
+					}
 
 					phantom.exit();
 				});

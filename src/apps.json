@@ -2513,6 +2513,17 @@
 			"implies": "Windows Server",
 			"website": "www.iis.net"
 		},
+		"INFOnline": {
+			"cats": [
+				10
+			],
+			"env": [
+				"^szmvars$",
+				"^iam_data$"
+			],
+			"script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
+			"website": "infonline.de"
+		},
 		"IPB": {
 			"cats": [
 				2
@@ -2546,17 +2557,6 @@
 				"generator": "ImpressPages(?: CMS)?( [\\d.]*)\\;version:\\1"
 			},
 			"website": "impresspages.org"
-		},
-		"INFOnline": {
-			"cats": [
-				10
-			],
-			"env": [
-				"^szmvars$",
-				"^iam_data$"
-			],
-			"script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
-			"website": "infonline.de"
 		},
 		"InProces": {
 			"cats": [
