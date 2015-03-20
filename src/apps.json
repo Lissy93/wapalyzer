@@ -58,6 +58,20 @@
 			},
 			"website": "www.3ware.com"
 		},
+		"actionhero.js": {
+			"cats": [
+				1,
+				18,
+				22
+			],
+			"headers": {
+				"X-Powered-By": "actionhero API"
+			},
+			"env": "^actionheroClient$",
+			"script": "actionheroClient\\.js",
+			"implies": "node.js",
+			"website": "www.actionherojs.com"
+		},
 		"AMPcms": {
 			"cats": [
 				1
@@ -889,6 +903,18 @@
 			},
 			"script": "/cargo\\.",
 			"website": "cargocollective.com"
+		},
+		"Catberry.js": {
+			"cats": [
+				12,
+				18
+			],
+			"headers": {
+				"X-Powered-By": "Catberry"
+			},
+			"env": "^catberry$",
+			"implies": "node.js",
+			"website": "catberry.org"
 		},
 		"Catwalk": {
 			"cats": [
@@ -3163,6 +3189,21 @@
 			},
 			"website": "litespeedtech.com"
 		},
+		"Lithium": {
+			"cats": [
+				1
+			],
+			"env": [
+				"^LITHIUM$"
+			],
+			"headers": {
+				"Set-Cookie": "LiSESSIONID=",
+				"Set-Cookie": "LithiumVisitor="
+			},
+			"html": " <a [^>]+Powered by Lithium",
+			"implies": "PHP",
+			"website": "www.lithium.com"
+		},
 		"LiveJournal": {
 			"cats": [
 				11
@@ -3363,6 +3404,21 @@
 				"generator": "MaxSite CMS"
 			},
 			"website": "max-3000.com"
+		},
+		"Mean.io": {
+			"cats": [
+				12
+			],
+    			"implies": [
+    			      "MongoDB",	
+			      "Express",
+			      "AngularJS",
+			      "node.js"
+			],
+			"headers": {
+				"X-Powered-CMS": "Mean\\.io"
+			},
+			"website": "mean.io"
 		},
 		"MediaElement.js": {
 			"cats": [
