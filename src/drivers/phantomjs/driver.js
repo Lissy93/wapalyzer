@@ -92,11 +92,20 @@
 
 				page = require('webpage').create();
 
+				page.settings.loadImages      = false;
+				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
+				page.settings.resourceTimeout = 3000;
+
 				page.onConsoleMessage = function(message) {
 					wappalyzer.log(message);
 				};
+
 				page.onError = function(message) {
-					wappalyzer.log('Page error: ' + message);
+					throw new Error(message);
+				};
+
+				page.onResourceTimeout = function() {
+					throw new Error('Resource timeout');
 				};
 
 				page.onResourceReceived = function(response) {
@@ -117,8 +126,6 @@
 
 				page.open(url, function(status) {
 					var html, environmentVars;
-
-					wappalyzer.log('page.open: ' + status);
 
 					if ( status === 'success' ) {
 						html = page.content;
@@ -147,9 +154,11 @@
 							headers: headers,
 							env:     environmentVars
 						});
+					} else {
+						wappalyzer.log('Failed to fetch page');
 					}
 
-					phantom.exit();
+					phantom.exit(status === 'success' ? 0 : 1);
 				});
 			}
 		};
@@ -158,6 +167,6 @@
 	} catch ( e ) {
 		console.error(e);
 
-		phantom.exit();
+		phantom.exit(1);
 	}
 })();
