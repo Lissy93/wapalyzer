@@ -44,6 +44,7 @@
 				6
 			],
 			"headers": {
+				"Set-Cookie": "3dvisit",
 				"X-Powered-By": "3DCART"
 			},
 			"script": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
@@ -57,20 +58,6 @@
 				"Server": "3ware\\/?([\\d\\.]+)?\\;version:\\1"
 			},
 			"website": "www.3ware.com"
-		},
-		"actionhero.js": {
-			"cats": [
-				1,
-				18,
-				22
-			],
-			"headers": {
-				"X-Powered-By": "actionhero API"
-			},
-			"env": "^actionheroClient$",
-			"script": "actionheroClient\\.js",
-			"implies": "node.js",
-			"website": "www.actionherojs.com"
 		},
 		"AMPcms": {
 			"cats": [
@@ -909,10 +896,10 @@
 				12,
 				18
 			],
+			"env": "^catberry$",
 			"headers": {
 				"X-Powered-By": "Catberry"
 			},
-			"env": "^catberry$",
 			"implies": "node.js",
 			"website": "catberry.org"
 		},
@@ -3197,7 +3184,6 @@
 				"^LITHIUM$"
 			],
 			"headers": {
-				"Set-Cookie": "LiSESSIONID=",
 				"Set-Cookie": "LithiumVisitor="
 			},
 			"html": " <a [^>]+Powered by Lithium",
@@ -3409,15 +3395,15 @@
 			"cats": [
 				12
 			],
-    			"implies": [
-    			      "MongoDB",	
-			      "Express",
-			      "AngularJS",
-			      "node.js"
-			],
 			"headers": {
 				"X-Powered-CMS": "Mean\\.io"
 			},
+			"implies": [
+				"MongoDB",
+				"Express",
+				"AngularJS",
+				"node.js"
+			],
 			"website": "mean.io"
 		},
 		"MediaElement.js": {
@@ -4658,6 +4644,14 @@
 			"implies": "D3",
 			"script": "rickshaw(\\.min)?\\.js",
 			"website": "code.shutterstock.com/rickshaw/"
+		},
+		"RightJS": {
+			"cats": [
+				12
+			],
+			"env": "^RightJS$",
+			"script": "right\\.js",
+			"website": "rightjs.org"
 		},
 		"RiteCMS": {
 			"cats": [
@@ -6506,6 +6500,20 @@
 				"Server": "^Zope/"
 			},
 			"website": "zope.org"
+		},
+		"actionhero.js": {
+			"cats": [
+				1,
+				18,
+				22
+			],
+			"env": "^actionheroClient$",
+			"headers": {
+				"X-Powered-By": "actionhero API"
+			},
+			"implies": "node.js",
+			"script": "actionheroClient\\.js",
+			"website": "www.actionherojs.com"
 		},
 		"amCharts": {
 			"cats": [

@@ -56,16 +56,18 @@
 						});
 
 						apps.push({
-							url:         originalUrl,
-							finalUrl:    url,
-							application: app,
+							name: app,
 							confidence:  wappalyzer.detected[url][app].confidenceTotal,
 							version:     wappalyzer.detected[url][app].version,
 							categories:  cats
 						});
 					}
 
-					console.log(JSON.stringify(apps));
+					console.log(JSON.stringify({
+						url:          originalUrl,
+						finalUrl:     url,
+						applications: apps
+					}));
 				}
 			},
 
