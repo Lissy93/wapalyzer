@@ -97,11 +97,15 @@
 				};
 
 				page.onError = function(message) {
-					throw new Error(message);
+					wappalyzer.log(message, 'error');
+
+					phantom.exit(1);
 				};
 
 				page.onResourceTimeout = function() {
-					throw new Error('Resource timeout');
+					wappalyzer.log('Resource timeout', 'error');
+
+					phantom.exit(1);
 				};
 
 				page.onResourceReceived = function(response) {
@@ -161,7 +165,7 @@
 
 		wappalyzer.init();
 	} catch ( e ) {
-		console.error(e);
+		wappalyzer.log(e, 'error');
 
 		phantom.exit(1);
 	}
