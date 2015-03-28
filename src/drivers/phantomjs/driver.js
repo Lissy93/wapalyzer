@@ -99,7 +99,7 @@
 				page.onError = function(message) {
 					wappalyzer.log(message, 'error');
 
-					console.log('{}');
+					console.log(JSON.stringify({ applications: [] }));
 
 					phantom.exit(1);
 				};
@@ -107,7 +107,7 @@
 				page.onResourceTimeout = function() {
 					wappalyzer.log('Resource timeout', 'error');
 
-					console.log('{}');
+					console.log(JSON.stringify({ applications: [] }));
 
 					phantom.exit(1);
 				};
@@ -171,7 +171,7 @@
 	} catch ( e ) {
 		wappalyzer.log(e, 'error');
 
-		console.log('{}');
+		console.log(JSON.stringify({ applications: [] }));
 
 		phantom.exit(1);
 	}
