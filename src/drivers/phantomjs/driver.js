@@ -99,11 +99,15 @@
 				page.onError = function(message) {
 					wappalyzer.log(message, 'error');
 
+					console.log('{}');
+
 					phantom.exit(1);
 				};
 
 				page.onResourceTimeout = function() {
 					wappalyzer.log('Resource timeout', 'error');
+
+					console.log('{}');
 
 					phantom.exit(1);
 				};
@@ -166,6 +170,8 @@
 		wappalyzer.init();
 	} catch ( e ) {
 		wappalyzer.log(e, 'error');
+
+		console.log('{}');
 
 		phantom.exit(1);
 	}
