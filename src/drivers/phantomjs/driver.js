@@ -97,6 +97,8 @@
 				};
 
 				page.onError = function(message) {
+
+					wappalyzer.log('x');
 					wappalyzer.log(message, 'error');
 
 					console.log(JSON.stringify({ applications: [] }));
@@ -158,11 +160,15 @@
 							headers: headers,
 							env:     environmentVars
 						});
+
+						phantom.exit(0);
 					} else {
 						wappalyzer.log('Failed to fetch page');
-					}
 
-					phantom.exit(status === 'success' ? 0 : 1);
+						console.log(JSON.stringify({ applications: [] }));
+
+						phantom.exit(1);
+					}
 				});
 			}
 		};
