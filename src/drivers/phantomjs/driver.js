@@ -63,11 +63,7 @@
 						});
 					}
 
-					console.log(JSON.stringify({
-						url:          originalUrl,
-						finalUrl:     url,
-						applications: apps
-					}));
+					console.log(JSON.stringify({ applications: apps }));
 				}
 			},
 
