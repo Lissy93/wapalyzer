@@ -2375,6 +2375,18 @@
 			"script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
 			"website": "handlebarsjs.com"
 		},
+		"hapi.js": {
+			"cats": [
+				18,
+				22
+			],
+			"headers": {
+				"Set-Cookie": "crumb=\\;confidence:50",
+				"Set-Cookie": "Fe26\\.2\\*\\*\\;confidence:50"
+			},
+			"implies": "node.js",
+			"website": "hapijs.com"
+		},
 		"Happy ICS Server": {
 			"cats": [
 				22
