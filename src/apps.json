@@ -562,6 +562,18 @@
 			"script": "backbone.*\\.js",
 			"website": "documentcloud.github.com/backbone"
 		},
+		"Backdrop": {
+			"cats": [
+				1
+			],
+			"env": "^Backdrop$",
+			"excludes": "Drupal",
+			"implies": "PHP",
+			"meta": {
+				"generator": "Backdrop CMS(?: (\\d))?\\;version:\\1"
+			},
+			"website": "backdropcms.org"
+		},
 		"Banshee": {
 			"cats": [
 				1,
@@ -2929,7 +2941,7 @@
 			"meta": {
 				"generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1"
 			},
-			"website": "www.kentico.comhome.aspx"
+			"website": "www.kentico.com"
 		},
 		"KineticJS": {
 			"cats": [
