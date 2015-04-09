@@ -131,8 +131,6 @@
 				page.open(url, function(status) {
 					var html, environmentVars;
 
-					console.log(status);
-
 					if ( status === 'success' ) {
 						html = page.content;
 
