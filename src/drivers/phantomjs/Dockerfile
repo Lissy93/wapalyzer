@@ -26,4 +26,4 @@ RUN wappalyzer/bin/wappalyzer-links wappalyzer
 
 WORKDIR wappalyzer/src/drivers/phantomjs
 
-ENTRYPOINT ["/usr/local/phantomjs/bin/phantomjs", "--load-images=false", "--ignore-ssl-errors=yes", "driver.js"]
+ENTRYPOINT ["/usr/local/phantomjs/bin/phantomjs", "--load-images=false", "--ignore-ssl-errors=yes", "--ssl-protocol=any", "driver.js"]
