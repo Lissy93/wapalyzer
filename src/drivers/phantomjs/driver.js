@@ -2,6 +2,7 @@
 	var
 		url,
 		originalUrl,
+		resourceTimeout = 9000,
 		args  = [],
 		debug = false;
 
@@ -12,6 +13,9 @@
 				case '--verbose':
 					debug = true;
 
+					break;
+				case '--resource-timeout':
+					resourceTimeout = arg;
 					break;
 				default:
 					url = originalUrl = arg;
@@ -90,7 +94,7 @@
 
 				page.settings.loadImages      = false;
 				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
-				page.settings.resourceTimeout = 9000;
+				page.settings.resourceTimeout = resourceTimeout;
 
 				page.onConsoleMessage = function(message) {
 					wappalyzer.log(message);
