@@ -2,11 +2,18 @@
 	var
 		url,
 		originalUrl,
+		scriptDir,
+		scriptPath      = require('fs').absolute(require('system').args[0]),
 		resourceTimeout = 9000,
-		args  = [],
-		debug = false;
+		args            = [],
+		debug           = false;
 
 	try {
+		// Working directory
+		scriptDir = scriptPath.split('/'); scriptDir.pop(); scriptDir = scriptDir.join('/');
+
+		require('fs').changeWorkingDirectory(scriptDir);
+
 		require('system').args.forEach(function(arg) {
 			switch ( arg ) {
 				case '-v':
