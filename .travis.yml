@@ -1,7 +1,7 @@
-﻿sudo: required
-language: node_js
+﻿language: node_js
 node_js:
   - "0.10"
+sudo: required
 before_install:
   - export WAPPALYZER_ROOT=$TRAVIS_BUILD_DIR
   - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
