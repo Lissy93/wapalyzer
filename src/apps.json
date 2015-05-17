@@ -2375,18 +2375,6 @@
 			"script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
 			"website": "handlebarsjs.com"
 		},
-		"hapi.js": {
-			"cats": [
-				18,
-				22
-			],
-			"headers": {
-				"Set-Cookie": "crumb=\\;confidence:50",
-				"Set-Cookie": "Fe26\\.2\\*\\*\\;confidence:50"
-			},
-			"implies": "node.js",
-			"website": "hapijs.com"
-		},
 		"Happy ICS Server": {
 			"cats": [
 				22
@@ -4132,15 +4120,15 @@
 			"website": "oracle.com"
 		},
 		"Orchard CMS": {
-+			"cats": [
-+				1
-+			],
-+			"implies": "Microsoft ASP.NET",
-+			"meta": {
-+				"generator": "Orchard"
-+			},
-+			"website": "orchardproject.net/"
-+		},
+			"cats": [
+				1
+			],
+			"implies": "Microsoft ASP.NET",
+			"meta": {
+				"generator": "Orchard"
+			},
+			"website": "orchardproject.net"
+		},
 		"Outbrain": {
 			"cats": [
 				5
@@ -4693,14 +4681,14 @@
 			"script": "right\\.js",
 			"website": "rightjs.org"
 		},
-        "Riot": {
-            "cats": [
-                12
-            ],
-            "env": "^riot$",
-            "script": "riot(?:\\+compiler)?(:?\\.min)?\\.js",
-            "website": "muut.com/riotjs"
-        },
+		"Riot": {
+			"cats": [
+				12
+			],
+			"env": "^riot$",
+			"script": "riot(?:\\+compiler)?(:?\\.min)?\\.js",
+			"website": "muut.com/riotjs"
+		},
 		"RiteCMS": {
 			"cats": [
 				1
@@ -5784,15 +5772,15 @@
 			"url": "/umbraco/login\\.aspx(?:$|\\?)",
 			"website": "umbraco.com"
 		},
-	    "Unbounce": {
+		"Unbounce": {
 			"cats": [
 				1,
-			  	20
+				20
 			],
 			"headers": {
-			  "X-Unbounce-PageId": ""
+				"X-Unbounce-PageId": ""
 			},
-		  	"website": "unbounce.com"
+			"website": "unbounce.com"
 		},
 		"Underscore.js": {
 			"cats": [
@@ -6729,6 +6717,17 @@
 				"Python"
 			],
 			"website": "gunicorn.org"
+		},
+		"hapi.js": {
+			"cats": [
+				18,
+				22
+			],
+			"headers": {
+				"Set-Cookie": "Fe26\\.2\\*\\*\\;confidence:50"
+			},
+			"implies": "node.js",
+			"website": "hapijs.com"
 		},
 		"iCongo": {
 			"cats": [
