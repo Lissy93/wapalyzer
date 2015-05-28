@@ -1518,23 +1518,30 @@
 			},
 			"website": "www.dokuwiki.org"
 		},
-		"DotNetNuke": {
+		"DNN": {
 			"cats": [
 				1
 			],
 			"env": "^DotNetNuke$",
 			"headers": {
 				"DNNOutputCache": "",
+				"Cookie": "dnn_IsMobile=",
 				"Set-Cookie": "DotNetNukeAnonymous=",
 				"X-Compressed-By": "DotNetNuke"
 			},
-			"html": "<!-- by DotNetNuke Corporation",
+			"html": [
+				"<!-- by DotNetNuke Corporation",
+				"<!-- DNN Platform"
+			],
 			"implies": "Microsoft ASP.NET",
 			"meta": {
 				"generator": "DotNetNuke"
 			},
-			"script": "/js/dnncore\\.js",
-			"website": "dotnetnuke.com"
+			"script": [
+				"/js/dnncore\\.js",
+				"/js/dnn\\.js"
+			],
+			"website": "dnnsoftware.com"
 		},
 		"Dotclear": {
 			"cats": [
