@@ -1303,6 +1303,20 @@
 			"script": "dhtmlxcommon\\.js",
 			"website": "dhtmlx.com"
 		},
+		"Discuz! X": {
+			"cats": [
+				2
+			],
+			"meta": {
+				"generator": "Discuz! X([\\d\\.]+)?\\;version:\\1"
+			},
+			"env": [
+				"^discuz_uid$",
+				"^DISCUZCODE$"
+			],
+			"implies": "PHP",
+			"website": "discuz.com"
+		},
 		"DTG": {
 			"cats": [
 				1
