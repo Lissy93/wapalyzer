@@ -3900,6 +3900,24 @@
 			},
 			"website": "nginx.org"
 		},
+		"Odoo": {
+			"cats": [
+				1,
+				6
+			],
+			"implies": [
+				"Python",
+				"PostgreSQL",
+				"node.js",
+				"Less"
+			],
+			"meta": {
+				"generator": "Odoo"
+			},
+			"script": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
+			"html": "<link[^>]* href=[^>]+/web/css/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
+			"website": "odoo.com"
+		},
 		"OWL Carousel": {
 			"cats": [
 				5,
