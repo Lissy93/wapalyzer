@@ -2441,6 +2441,16 @@
 			"script": "hellobar\\.js",
 			"website": "hellobar.com"
 		},
+		"HHVM": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"X-Powered-By": "HHVM/?([\\d.]+)?\\;version:\\1"
+			},
+			"website": "hhvm.com",
+			"implies": "PHP\\;confidence:50"
+		},
 		"Hiawatha": {
 			"cats": [
 				22
