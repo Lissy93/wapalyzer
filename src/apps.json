@@ -1240,7 +1240,8 @@
 				1
 			],
 			"headers": {
-				"Set-Cookie": "CraftSessionId="
+				"Set-Cookie": "CraftSessionId=",
+				"X-Powered-By": "Craft CMS"
 			},
 			"implies": "PHP",
 			"website": "buildwithcraft.com"
