@@ -5086,11 +5086,11 @@
 			"cats": [
 				6
 			],
-			"implies": "PHP",
+			"implies": [ "PHP", "MySQL", "jQuery" ],
 			"meta": {
 				"application-name": "Shopware"
 			},
-			"script": "shopware\\.js",
+			"script": "(?:(shopware)|/web/cache/[0-9]{10}_.+)\\.js\\;version:\\1?4:5",
 			"website": "shopware.com"
 		},
 		"Silva": {
