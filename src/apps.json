@@ -1604,7 +1604,7 @@
 			"cats": [
 				6
 			],
-			"html": "<[^]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+			"html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
 			"implies": "Drupal",
 			"website": "drupalcommerce.org"
 		},
@@ -2304,7 +2304,7 @@
 				19
 			],
 			"env": "^Gravatar$",
-			"html": "<[^]+gravatar\\.com/avatar/",
+			"html": "<[^>]+gravatar\\.com/avatar/",
 			"website": "gravatar.com"
 		},
 		"Gravity Insights": {
@@ -2523,7 +2523,7 @@
 			"headers": {
 				"Set-Cookie": "_hybris"
 			},
-			"html": "<[^]+(?:/sys_master/|/hybr/|/_ui/desktop/)",
+			"html": "<[^>]+(?:/sys_master/|/hybr/|/_ui/desktop/)",
 			"implies": "Java",
 			"website": "hybris.com"
 		},
@@ -6681,7 +6681,7 @@
 			"cats": [
 				19
 			],
-			"html": "<[^]+id='cgit'",
+			"html": "<[^>]+id='cgit'",
 			"implies": "Perl",
 			"website": "git.zx2c4.com/cgit"
 		},
