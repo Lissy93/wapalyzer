@@ -440,6 +440,7 @@
 			11, // Blog
 			 6, // Web Shop
 			 2, // Message Board
+			51, // Landing Page Builder
 			 8, // Wiki
 			13, // Issue Tracker
 			30, // Web Mail
