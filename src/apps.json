@@ -3438,6 +3438,15 @@
 			"script": "munchkin\\.marketo\\.net/munchkin\\.js",
 			"website": "www.marketo.com"
 		},
+		"Materalize CSS": {
+			"cats": [
+				18
+			],
+			"html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
+			"implies": "jQuery",
+			"script": "materialize(?:\\.min)?\\.js",	
+			"website": "materializecss.com"
+		},
 		"MathJax": {
 			"cats": [
 				25
