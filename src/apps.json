@@ -6109,6 +6109,16 @@
 			"implies": "WordPress",
 			"website": "wp-rocket.me"
 		},
+		"Warp": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "^Warp/(\\d+(?:\\.\\d+)+)?$;version:\\1"
+			},
+			"implies": "Haskell",
+			"website": "www.stackage.org/package/warp"
+		},
 		"Web Optimizer": {
 			"cats": [
 				10
@@ -6521,17 +6531,6 @@
 			"env": "^yandex_metrika",
 			"script": "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
 			"website": "metrika.yandex.com"
-		},
-		"Yesod": {
-			"cats": [
-				18,
-				22
-			],
-			"headers": {
-				"Server": "Warp/\\d+(\\.\\d+)+"
-			},
-			"implies": "Haskell",
-			"website": "www.yesodweb.com"
 		},
 		"Yieldlab": {
 			"cats": [
