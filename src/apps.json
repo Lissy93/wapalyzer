@@ -3454,7 +3454,7 @@
 			],
 			"html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
 			"implies": "jQuery",
-			"script": "materialize(?:\\.min)?\\.js",	
+			"script": "materialize(?:\\.min)?\\.js",
 			"website": "materializecss.com"
 		},
 		"MathJax": {
@@ -4011,6 +4011,13 @@
 			],
 			"env": "^OneStat",
 			"website": "www.onestat.com"
+		},
+		"OneAPM": {
+			"cats": [
+			  10
+			],
+			"env": "^BWEUM",
+			"website": "www.oneapm.com"
 		},
 		"Open AdStream": {
 			"cats": [
