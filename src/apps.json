@@ -3290,7 +3290,7 @@
 				10
 			],
 			"html": [
-				"//counter.yadro.ru/hit(?:;\\S+)?\\?(?:t\\d+\\.\\d+;)?r",
+				"<script[^<>]*>[^]{0,128}?src\\s*=\\s*['\"]//counter\\.yadro\\.ru/hit(?:;\\S+)?\\?(?:t\\d+\\.\\d+;)?r",
 				"<!--LiveInternet counter-->",
 				"<!--/LiveInternet-->",
 				"<a href=\"http://www.liveinternet.ru/click\""
