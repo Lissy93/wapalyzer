@@ -4753,6 +4753,16 @@
 			"script": "require.*\\.js",
 			"website": "requirejs.org"
 		},
+		"Resin": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "^Resin(?:/(\\S*))?;version=\\1"
+			},
+			"implies": "Java",
+			"website": "caucho.com"
+		},
 		"Reveal.js": {
 			"cats": [
 				12
