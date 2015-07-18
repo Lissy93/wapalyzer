@@ -4,7 +4,7 @@
   "description": "NPM Module that uncovers the technologies used on websites",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -t 15000"
+    "test": "NODE_ENV=testing mocha -t 15000"
   },
   "repository": {
     "type": "git",
