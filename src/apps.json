@@ -3285,6 +3285,19 @@
 			"script": "livefyre_init\\.js",
 			"website": "livefyre.com"
 		},
+		"Liveinternet": {
+			"cats": [
+				10
+			],
+			"html": [
+				"<script[^<>]*>[^]{0,128}?src\\s*=\\s*['\"]//counter\\.yadro\\.ru/hit(?:;\\S+)?\\?(?:t\\d+\\.\\d+;)?r",
+				"<!--LiveInternet counter-->",
+				"<!--/LiveInternet-->",
+				"<a href=\"http://www.liveinternet.ru/click\""
+			],
+			"script": "/js/al/common.js\\?[0-9_]+",
+			"website": "liveinternet.ru/rating/"
+		},
 		"Lo-dash": {
 			"cats": [
 				12

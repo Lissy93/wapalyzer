@@ -107,7 +107,7 @@ function runWrappalyer(options, data, cb) {
 	var wappalyzer = null;
 
 	// change depending on the environment
-	if( process.env.NODE_ENV ) {
+	if( process.env.NODE_ENV == 'testing' ) {
 
 		wappalyzer = require('../../wappalyzer').wappalyzer;
 
