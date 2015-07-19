@@ -95,7 +95,8 @@ wappalyzer.detectFromHTML(options,function  (err,apps,appInfo) {
     detected: true,
     excludes: [],
     version: '',
-    versions: [] },
+    versions: [] 
+  },
   'Modernizr': { 
     app: 'Modernizr',
     confidence: { 'script /modernizr(?:-([\d.]*[\d]))?.*\.js/i': 100 },
@@ -103,7 +104,8 @@ wappalyzer.detectFromHTML(options,function  (err,apps,appInfo) {
     detected: true,
     excludes: [],
     version: '2.6.2',
-    versions: [ '2.6.2' ] },
+    versions: [ '2.6.2' ] 
+  },
   'Nginx': { 
     app: 'Nginx',
     confidence: { 'headers Server /nginx(?:/([\d.]+))?/i': 100 },
@@ -111,7 +113,8 @@ wappalyzer.detectFromHTML(options,function  (err,apps,appInfo) {
     detected: true,
     excludes: [],
     version: '',
-    versions: [] },
+    versions: [] 
+  },
   'RequireJS': { 
     app: 'RequireJS',
     confidence: { 'script /require.*\.js/i': 100 },
@@ -119,7 +122,8 @@ wappalyzer.detectFromHTML(options,function  (err,apps,appInfo) {
     detected: true,
     excludes: [],
     version: '',
-    versions: [] },
+    versions: [] 
+  },
   'jQuery': { 
     app: 'jQuery',
     confidence: 
