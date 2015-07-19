@@ -14,8 +14,34 @@ This is npm module for wappalyzer
       debug:false
     }
 
+    // detect from the url directly, library will make a request
     wappalyzer.detectFromUrl(options,function  (err,apps,appInfo) {
-      console.log(err,apps,appInfo);
+
+      // output for the test
+      console.dir(apps);
+      console.dir(appInfo);
+
+    })
+
+    var data = {
+
+      url: options.url,
+      headers: {
+
+        test: 1
+
+      },
+      html: '<p>HTML CONTENT OF PAGE HERE</p>'
+
+    };
+
+    // detect from content you have already
+    wappalyzer.detectFromHTML(options,function  (err,apps,appInfo) {
+
+      // output for the test
+      console.dir(apps);
+      console.log(appInfo);
+
     })
 
 
