@@ -81,7 +81,20 @@ function getHTMLFromUrl(url, cb) {
 }
 
 function getAppsJson(cb) {
-	fs.readFile(path.resolve(__dirname, '../../apps.json'), 'utf8', function(err, data) {
+
+	// depending on evironment select a direction to the path
+	var appsFileStr = path.resolve(__dirname, './apps.json');
+
+	// handle the environment variable if it's there
+	if(process.env.NODE_ENV == 'testing') {
+
+		// set the apps.json to testing stage
+		appsFileStr = path.resolve(__dirname, '../../apps.json');
+
+	}
+
+	// read in the file
+	fs.readFile(appsFileStr, 'utf8', function(err, data) {
 		if (err) throw err;
 		return cb(null, JSON.parse(data));
 	});
