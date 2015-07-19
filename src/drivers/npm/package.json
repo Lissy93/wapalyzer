@@ -1,6 +1,6 @@
 {
   "name": "wappalyzer",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "NPM Module that uncovers the technologies used on websites",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,20 @@
     "url": "https://github.com/AliasIO/Wappalyzer"
   },
   "keywords": [
-    "wappalyzer"
+    "wappalyzer",
+    "detect",
+    "stack",
+    "technologies"
   ],
-  "author": "Pasindu De Silva",
+  "contributors": [
+    { 
+      "name": "Pasindu De Silva"
+    },
+    { 
+      "name": "Johann du Toit"
+    }
+  ],
+  "author": "Elbert Alias",
   "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/AliasIO/Wappalyzer/issues"
