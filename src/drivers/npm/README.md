@@ -135,7 +135,7 @@ wappalyzer.detectFromHTML(options,function  (err,apps,appInfo) {
 ```
 ## Credits
 
-Wappalyzer Author - Elbert Alias
+### Wappalyzer Author - Elbert Alias
 
 [Wappalyzer](https://wappalyzer.com/) is a
 [cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the
@@ -151,6 +151,11 @@ Refer to the [wiki](https://github.com/AliasIO/Wappalyzer/wiki) for
 [screenshots](https://github.com/AliasIO/Wappalyzer/wiki/Screenshots), information on how to
 [contribute](https://github.com/AliasIO/Wappalyzer/wiki/Contributing) and
 [more](https://github.com/AliasIO/Wappalyzer/wiki/_pages).
+
+### NPM Module
+
+* [Pasindu De Silva](https://github.com/pasindud) - Initial version with tests
+* [Johann du Toit](http://johanndutoit.net) from [Passmarked](http://passmarked.com) - Updated to support just passing data and helped publish to NPMJS
 
 ## License
 
