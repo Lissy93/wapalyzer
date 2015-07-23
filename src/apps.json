@@ -5037,6 +5037,17 @@
 			"script": "select2.*\\.js",
 			"website": "select2.github.io"
 		},
+		"Semantic-ui": {
+			"cats": [
+				18
+			],
+			"html": [
+				"(?:<div class=\"ui\\s[^>]+\">)\\;confidence:30",
+				"(?:<link[^>]+semantic(?:\\.css|\\.min\\.css)\">)"
+			],
+			"script": "(semantic(?:\\.js|\\.min\\.js))",
+			"website": "semantic-ui.com"
+		},
 		"Sencha Touch": {
 			"cats": [
 				12,
