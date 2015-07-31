@@ -6141,7 +6141,7 @@
 			"script": [
 				"vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/vue(\\.min)?\\.js\\;version:\\1",
-				"vue.*\\.js;\\confidence:20"
+				"vue.*\\.js\\;confidence:20"
 			],
 			"website": "vuejs.org"
 		},
