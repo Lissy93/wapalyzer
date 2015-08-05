@@ -436,8 +436,11 @@
             6
           ],
           "excludes": "OpenCart",
-          "script": "ar\\.js",
-          "html": "Arastta",
+          "script": "arastta\\.js",
+          "html": "Powered By <a href=\"[^>]+Arastta",
+          "headers": {
+            "Arastta": "([0-9.]+)\\;version:\\1"
+          },
           "implies": "PHP",
           "website": "arastta.org"
         },
