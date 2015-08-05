@@ -17,6 +17,10 @@ jsonlint -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
 
 wappalyzer links
 
+# Npm Module
+mkdir -p $WAPPALYZER_ROOT/build/wappalyzer_npm/
+cp -R $WAPPALYZER_ROOT/src/drivers/npm/* $WAPPALYZER_ROOT/build/wappalyzer_npm/
+
 # Mozilla Firefox
 echo "Building Firefox driver..."
 
