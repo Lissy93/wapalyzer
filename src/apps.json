@@ -6303,8 +6303,8 @@
 				8
 			],
 			"html": [
-				"session_url:\\s*'https://session\\.wikispaces\\.com",
-				"class=\"[^\"]*WikispacesContent\\s+WikispacesBs3[^\"]*\""
+				"<script[^>]*>[^<]*session_url:\\s*'https://session\\.wikispaces\\.com/",
+				"<\\w+[^>]*\\s+class=\"[^\"]*WikispacesContent\\s+WikispacesBs3[^\"]*\""
 			],
 			"website": "www.wikispaces.com"
 		},
