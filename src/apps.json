@@ -4154,6 +4154,19 @@
 			},
 			"website": "www.opennemas.com"
 		},
+		"OpenResty": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "openresty(?:/([\\d.]+))?\\;version:\\1"
+			},
+			"implies": [
+				"Nginx",
+				"Lua"
+			],
+			"website": "openresty.org"
+		},
 		"OpenSSL": {
 			"cats": [
 				33
