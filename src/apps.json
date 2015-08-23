@@ -4263,9 +4263,12 @@
 		},
 		"osTicket": {
 			"cats": [
-				51
+				13
 			],
-			"implies": "PHP",
+			"implies": [
+				"PHP",
+				"MySQL",
+			],
 			"headers": {
 				"Set-Cookie": "OSTSESSID"
 			},
@@ -7581,7 +7584,6 @@
 		"47": "dev-tools",
 		"48": "network-storage",
 		"49": "feed-readers",
-		"50": "document-management-systems",
-		"51": "helpdesks"
+		"50": "document-management-systems"
 	}
 }
