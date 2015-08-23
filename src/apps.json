@@ -264,12 +264,15 @@
 		},
 		"Aegea": {
 			"cats": [
-					11
+				11
 			],
-			"implies": ["PHP", "jQuery"],
 			"headers": {
-					"X-Powered-By": "^E2 Aegea v(\\d+)$\\;version:\\1"
+				"X-Powered-By": "^E2 Aegea v(\\d+)$\\;version:\\1"
 			},
+			"implies": [
+				"PHP",
+				"jQuery"
+			],
 			"website": "blogengine.ru"
 		},
 		"Airee": {
@@ -441,19 +444,19 @@
 			"script": "adnxs\\.(?:net|com)",
 			"website": "appnexus.com"
 		},
-        "Arastta": {
-          "cats": [
-            6
-          ],
-          "excludes": "OpenCart",
-          "script": "arastta\\.js",
-          "html": "Powered By <a href=\"[^>]+Arastta",
-          "headers": {
-            "Arastta": "([0-9.]+)\\;version:\\1"
-          },
-          "implies": "PHP",
-          "website": "arastta.org"
-        },
+		"Arastta": {
+			"cats": [
+				6
+			],
+			"excludes": "OpenCart",
+			"headers": {
+				"Arastta": "([0-9.]+)\\;version:\\1"
+			},
+			"html": "Powered By <a href=\"[^>]+Arastta",
+			"implies": "PHP",
+			"script": "arastta\\.js",
+			"website": "arastta.org"
+		},
 		"Arc Forum": {
 			"cats": [
 				2
@@ -1327,6 +1330,14 @@
 			"script": "dhtmlxcommon\\.js",
 			"website": "dhtmlx.com"
 		},
+		"DM Polopoly": {
+			"cats": [
+				1
+			],
+			"html": "<(?:link [^>]*href|img [^>]*src)=\"/polopoly_fs/",
+			"implies": "Java",
+			"website": "www.atex.com/products/dm-polopoly"
+		},
 		"DNN": {
 			"cats": [
 				1
@@ -1540,14 +1551,6 @@
 			],
 			"implies": "Django",
 			"website": "django-cms.org"
-		},
-		"DM Polopoly": {
-			"cats": [
-				1
-			],
-			"html": "<(?:link [^>]*href|img [^>]*src)=\"/polopoly_fs/",
-			"implies": "Java",
-			"website": "www.atex.com/products/dm-polopoly"
 		},
 		"Dojo": {
 			"cats": [
@@ -1924,10 +1927,12 @@
 			},
 			"website": "fedoraproject.org"
 		},
-                "Firebase": {
-			"website": "firebase.com",
-			"cats": [ 34 ],
-			"script": "firebase.*\\.js"
+		"Firebase": {
+			"cats": [
+				34
+			],
+			"script": "firebase.*\\.js",
+			"website": "firebase.com"
 		},
 		"Fireblade": {
 			"cats": [
@@ -2302,6 +2307,15 @@
 			],
 			"website": "wallet.google.com"
 		},
+		"Google Web Server": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "gws"
+			},
+			"website": "en.wikipedia.org/wiki/Google_Web_Server"
+		},
 		"Google Web Toolkit": {
 			"cats": [
 				18
@@ -2312,15 +2326,6 @@
 				"gwt:property": ""
 			},
 			"website": "developers.google.com/web-toolkit"
-		},
-		"Google Web Server": {
-			"cats": [
-				22
-			],
-			"headers": {
-				"Server": "gws"
-			},
-			"website": "en.wikipedia.org/wiki/Google_Web_Server"
 		},
 		"Graffiti CMS": {
 			"cats": [
@@ -4543,7 +4548,6 @@
 			],
 			"headers": {
 				"X-Powered-By": "PleskLin",
-				"X-Powered-By-Plesk": "PleskWin",
 				"X-Powered-By-Plesk": "Plesk"
 			},
 			"script": "common\\.js\\?plesk",
