@@ -441,6 +441,19 @@
 			"script": "adnxs\\.(?:net|com)",
 			"website": "appnexus.com"
 		},
+        "Arastta": {
+          "cats": [
+            6
+          ],
+          "excludes": "OpenCart",
+          "script": "arastta\\.js",
+          "html": "Powered By <a href=\"[^>]+Arastta",
+          "headers": {
+            "Arastta": "([0-9.]+)\\;version:\\1"
+          },
+          "implies": "PHP",
+          "website": "arastta.org"
+        },
 		"Arc Forum": {
 			"cats": [
 				2
