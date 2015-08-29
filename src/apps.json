@@ -1599,6 +1599,38 @@
 			"implies": "PHP",
 			"website": "dotclear.org"
 		},
+		"DoubleClick Ad Exchange (AdX)": {
+			"cats": [
+				36
+			],
+			"script": [
+				"googlesyndication\\.com/pagead/show_ads\\.js",
+				"tpc\\.googlesyndication\\.com/safeframe",
+				"googlesyndication\\.com.*abg\\.js"
+			],
+			"website": "www.doubleclickbygoogle.com/solutions/digital-marketing/ad-exchange/"
+		},
+		"DoubleClick Campaign Manager (DCM)": {
+			"cats": [
+				36
+			],
+			"script": "2mdn\\.net",
+			"website": "www.doubleclickbygoogle.com/solutions/digital-marketing/campaign-manager/"
+		},
+		"DoubleClick Floodlight": {
+			"cats": [
+				36
+			],
+			"script": "https?://fls.doubleclick.net",
+			"website": "support.google.com/ds/answer/6029713?hl=en"
+		},
+		"DoubleClick for Publishers (DFP)": {
+			"cats": [
+				36
+			],
+			"script": "googletagservices\\.com/tag/js/gpt(_mobile|)\\.js",
+			"website": "www.google.com/dfp"
+		},
 		"Doxygen": {
 			"cats": [
 				4
@@ -2214,7 +2246,8 @@
 			"script": [
 				"googlesyndication\\.com/",
 				"ad\\.ca\\.doubleclick\\.net",
-				"2mdn\\.net"
+				"2mdn\\.net",
+				"ad\\.ca\\.doubleclick\\.net"
 			],
 			"website": "google.com/adsense"
 		},
@@ -4245,6 +4278,16 @@
 			"implies": "Microsoft ASP.NET",
 			"website": "websolutions.opentext.com"
 		},
+		"OpenX": {
+			"cats": [
+				36
+			],
+			"script": [
+				"https?://[^/]*\\.openx\\.net",
+				"https?://[^/]*\\.servedbyopenx\\.com"
+			],
+			"website": "openx.com"
+		},
 		"Ophal": {
 			"cats": [
 				1,
@@ -4674,6 +4717,13 @@
 			"script": "protovis.*\\.js",
 			"website": "mbostock.github.com/protovis"
 		},
+		"PubMatic": {
+			"cats": [
+				36
+			],
+			"script": "https?://[^/]*\\.pubmatic\\.com",
+			"website": "www.pubmatic.com/"
+		},
 		"Pure CSS": {
 			"cats": [
 				18
@@ -4933,6 +4983,13 @@
 			"html": "<title>RoundCube",
 			"implies": "PHP",
 			"website": "roundcube.net"
+		},
+		"Rubicon Project": {
+			"cats": [
+				36
+			],
+			"script": "https?://[^/]*\\.rubiconproject\\.com",
+			"website": "rubiconproject.com/"
 		},
 		"Ruby": {
 			"cats": [
