@@ -2517,6 +2517,14 @@
 			"script": "head\\.(?:core|load)(?:\\.min)?\\.js",
 			"website": "headjs.com"
 		},
+		"Heap": {
+			"cats": [
+				10
+			],
+			"env": "^heap$",
+			"script": "heap-\\d+.js",
+			"website": "heapanalytics.com"
+		},
 		"Hello Bar": {
 			"cats": [
 				5
@@ -5529,6 +5537,14 @@
 			},
 			"website": "squiz.net"
 		},
+		"Stackla": {
+			"cats": [
+				5
+			],
+			"env": "^Stackla$",
+			"script": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
+			"website": "stackla.com/"
+		},
 		"Starlet": {
 			"cats": [
 				22
@@ -5694,7 +5710,7 @@
 				"TYPO3 Flow"
 			],
 			"url": "/neos/",
-			"website": "neos.typo3.org"
+			"website": "neos.io"
 		},
 		"Taiga": {
 			"cats": [
