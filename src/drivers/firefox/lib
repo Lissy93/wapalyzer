@@ -506,9 +506,9 @@ var wappalyzer = (function() {
 						}
 					}
 				}
-
-				//w.log({ hostname: hostname, ping: w.ping.hostnames[hostname] });
 			}
+
+			w.log('hostnames: ' + Object.keys(w.ping.hostnames).length); //
 
 			if ( Object.keys(w.ping.hostnames).length >= 20 ) {
 				driver('ping');

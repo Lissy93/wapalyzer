@@ -44,7 +44,7 @@
 					document.documentElement.removeChild(container);
 					document.documentElement.removeChild(script);
 
-					c.log('getEnvironmentVars: ' + environmentVars);
+					//c.log('getEnvironmentVars: ' + environmentVars);
 
 					environmentVars = environmentVars.split(' ').slice(0, 500);
 

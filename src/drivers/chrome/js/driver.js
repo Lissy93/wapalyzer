@@ -3,14 +3,17 @@
  */
 
 (function() {
-	if ( wappalyzer == null ) { return; }
+	if ( wappalyzer == null ) {
+		return;
+	}
 
 	var w = wappalyzer,
 		firstRun = false,
 		upgraded = false,
 		tab,
 		tabCache = {},
-		headersCache = {};
+		headersCache = {},
+		adCache = [];
 
 	w.driver = {
 		/**
@@ -25,8 +28,6 @@
 		 */
 		init: function() {
 			w.log('init');
-
-			//chrome.browserAction.setBadgeBackgroundColor({ color: [255, 102, 0, 255] });
 
 			// Load apps.json
 			var xhr = new XMLHttpRequest();
@@ -87,6 +88,10 @@
 							}
 
 							w.analyze(hostname, a.href, request.subject);
+
+							break;
+						case 'ad_log':
+							adCache.push(request.subject);
 
 							break;
 						case 'get_apps':
@@ -189,7 +194,6 @@
 					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
-								//chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 								chrome.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });
 
 								found = true;
@@ -198,7 +202,6 @@
 					}
 				});
 
-				//chrome.browserAction.setBadgeText({ tabId: tab.id, text: count });
 				chrome.pageAction.show(tab.id);
 			};
 		},
@@ -208,23 +211,37 @@
 		 */
 		ping: function() {
 			if ( Object.keys(w.ping.hostnames).length && localStorage['tracking'] ) {
-				// Make POST request
-				var xhr = new XMLHttpRequest();
-
-				xhr.open('POST', w.config.websiteURL + 'ping/v2/', true);
-
-				xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-				xhr.onreadystatechange = function(e) {
-					if ( xhr.readyState == 4 ) { w.log('w.driver.ping: status ' + xhr.status); }
-				};
-
-				xhr.send('json=' + encodeURIComponent(JSON.stringify(w.ping)));
+				w.driver.post(w.config.websiteURL + 'ping/v2/', w.ping);
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
 				w.ping = { hostnames: {} };
+
+				w.driver.post('https://ad.wappalyzer.com/log/wp/', adCache);
+
+				w.log('adCache: ' + JSON.stringify(adCache)); //
+
+				adCache = [];
 			}
+		},
+
+		/**
+		 * Make POST request
+		 */
+		post: function(url, data) {
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('POST', url, true);
+
+			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+			xhr.onreadystatechange = function(e) {
+				if ( xhr.readyState == 4 ) {
+					w.log('w.driver.post: status ' + xhr.status + ' (' + url + ')');
+				}
+			};
+
+			xhr.send('json=' + encodeURIComponent(JSON.stringify(data)));
 		},
 
 		categoryOrder: [ // Used to pick the main application
