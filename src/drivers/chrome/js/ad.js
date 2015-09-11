@@ -5,10 +5,11 @@ var exports = {};
 (function(exports) {
 	var utils = {
 		pageMeta: {
-			'url': window.location.href,
-			'referrer': window.document.referrer,
-			'rand': Math.floor(Math.random() * 10e12),
-			'startTime': new Date().getTime()
+			url: window.location.hostname,
+			isHP: window.location.pathname === '/',
+			referrer: window.document.referrer,
+			rand: Math.floor(Math.random() * 10e12),
+			startTime: new Date().getTime()
 		},
 
 		realArray: function(a) {

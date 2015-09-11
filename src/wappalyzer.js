@@ -508,8 +508,6 @@ var wappalyzer = (function() {
 				}
 			}
 
-			w.log('hostnames: ' + Object.keys(w.ping.hostnames).length); //
-
 			if ( Object.keys(w.ping.hostnames).length >= 20 ) {
 				driver('ping');
 			}
