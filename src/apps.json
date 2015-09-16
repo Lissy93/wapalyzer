@@ -4784,6 +4784,22 @@
 			},
 			"website": "???"
 		},
+		"RainLoop": {
+			"cats": [
+				30
+			],
+			"env": "^rainloop",
+			"headers": {
+				"Server": "RainLoop"
+			},
+			"html": [
+				"<meta [^>]*(?:content=\"([^\"]+)[^>]+ id=\"rlAppVersion\"|id=\"rlAppVersion\"[^>]+ content=\"([^\"]+))\\;version:\\1?\\1:\\2",
+				"<link[^>]* href=\"[^\"]*rainloop/v/([^/]+)\\;version:\\1"
+			],
+			"implies": "PHP",
+			"script": "rainloop/v/([^/]+))\\;version:\\1",
+			"website": "rainloop.net"
+		},
 		"RBS Change": {
 			"cats": [
 				1,
