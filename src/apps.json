@@ -4373,6 +4373,19 @@
 			},
 			"website": "orchardproject.net"
 		},
+		"osTicket": {
+			"cats": [
+				13
+			],
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
+			"headers": {
+				"Set-Cookie": "OSTSESSID"
+			},
+			"website": "osticket.com"
+		},
 		"Outbrain": {
 			"cats": [
 				5
