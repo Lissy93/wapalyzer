@@ -3477,6 +3477,12 @@
 			],
 			"website": "lucene.apache.org/core/"
 		},
+		"M.R. Inc BoxyOS": {
+			"cats": [
+				28
+			],
+			"website": "mrincworld.com"
+		},
 		"M.R. Inc Webserver": {
 			"cats": [
 				22
@@ -3484,15 +3490,17 @@
 			"headers": {
 				"Server": "M\\.R\\. Inc Webserver"
 			},
+			"implies": [
+				"M.R. Inc BoxyOS"
+			],
 			"website": "mrincworld.com"
 		},
-		"M.R. Inc Wild CMS": {
+		"M.R. Inc SiteFrame": {
 			"cats": [
-				1,
-				6
+				18
 			],
 			"headers": {
-				"X-Powered-By": "M\\.R\\. Inc Wild CMS"
+				"Powered-By": "M\\.R\\. Inc SiteFrame"
 			},
 			"website": "mrincworld.com"
 		},
