@@ -17,10 +17,18 @@ jsonlint -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
 
 wappalyzer links
 
+# Npm Module
+mkdir -p $WAPPALYZER_ROOT/build/wappalyzer_npm/
+cp -R $WAPPALYZER_ROOT/src/drivers/npm/* $WAPPALYZER_ROOT/build/wappalyzer_npm/
+
 # Mozilla Firefox
 echo "Building Firefox driver..."
 
-cfx xpi --pkgdir=$WAPPALYZER_ROOT/src/drivers/firefox --output-file=$WAPPALYZER_ROOT/build/wappalyzer_firefox.xpi
+pushd $WAPPALYZER_ROOT/src/drivers/firefox > /dev/null
+
+jpm xpi && mv *.xpi $WAPPALYZER_ROOT/build/wappalyzer_firefox.xpi
+
+popd > /dev/null
 
 # Google Chrome
 echo "Building Chrome driver..."

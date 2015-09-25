@@ -10,8 +10,8 @@
 		Window,
 		Tab,
 		Panel,
-		Widget,
-		widget, // Keep track of a global widget instance. A widget per window does not work.
+		Button,
+		button,
 		UrlBar;
 
 	exports.main = function(options, callbacks) {
@@ -40,21 +40,28 @@
 		this.window = win;
 		this.tabs   = {};
 		this.urlBar = null;
-		this.widget = null;
+
+		if ( button ) {
+			button.destroy();
+		}
 
 		if ( require('sdk/simple-prefs').prefs.urlbar ) {
 			this.urlBar = new UrlBar(this.window);
 		} else {
-			this.widget = widget || ( widget = new Widget() );
+			button = new Button();
 		}
 
 		require('sdk/simple-prefs').on('urlbar', function() {
 			self.destroy();
 
+			if ( button ) {
+				button.destroy();
+			}
+
 			if ( require('sdk/simple-prefs').prefs.urlbar ) {
 				self.urlBar = new UrlBar(this.window);
 			} else {
-				self.widget = widget || ( widget = new Widget() );
+				button = new Button();
 			}
 
 			self.displayApps();
@@ -120,8 +127,8 @@
 			this.urlBar.panel.get().port.emit('displayApps', message);
 		}
 
-		if ( this.widget ) {
-			this.widget.setIcon();
+		if ( button ) {
+			button.setIcon();
 
 			if ( count ) {
 				var
@@ -133,7 +140,7 @@
 					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
-								self.widget.setIcon(appName);
+								button.setIcon(appName);
 
 								found = true;
 							}
@@ -142,7 +149,7 @@
 				});
 			}
 
-			this.widget.panel.get().port.emit('displayApps', message);
+			button.panel.get().port.emit('displayApps', message);
 		}
 	};
 
@@ -151,12 +158,6 @@
 			this.urlBar.destroy();
 
 			this.urlBar = null;
-		}
-
-		if ( this.widget ) {
-			this.widget.destroy();
-
-			this.widget = null;
 		}
 	};
 
@@ -190,7 +191,12 @@
 			height: 50,
 			contentURL: require('sdk/self').data.url('panel.html'),
 			contentScriptFile: require('sdk/self').data.url('js/panel.js'),
-			position: { right: 30, top: 30 }
+			position: { right: 30, top: 30 },
+			onHide: function() {
+				if ( button ) {
+					button.get().state('window', { checked: false });
+				}
+			}
 		});
 
 		this.panel.port.on('resize', function(height) {
@@ -212,31 +218,37 @@
 		this.panel.destroy();
 	};
 
-	Widget = function() {
+	Button = function() {
+		var self = this;
+
 		this.panel = new Panel();
 
-		this.widget = require('sdk/widget').Widget({
+		this.button = require('sdk/ui/button/toggle').ToggleButton({
 			id: 'wappalyzer',
 			label: 'Wappalyzer',
-			contentURL: require('sdk/self').data.url('images/icon32.png'),
-			panel: this.panel.get()
+			icon: './images/icon32.png',
+			onChange: function(state) {
+				if ( state.checked ) {
+					self.panel.get().show({ position: self.button });
+				}
+			}
 		});
 	};
 
-	Widget.prototype.setIcon = function(appName) {
-		var url = typeof appName === 'undefined' ? 'images/icon32_hot.png' : 'images/icons/' + appName + '.png';
+	Button.prototype.setIcon = function(appName) {
+		var url = typeof appName === 'undefined' ? './images/icon32.png' : './images/icons/' + appName + '.png';
 
-		this.get().contentURL = require('sdk/self').data.url(url);
+		this.button.icon = url;
 	};
 
-	Widget.prototype.get = function() {
-		return this.widget;
+	Button.prototype.get = function() {
+		return this.button;
 	};
 
-	Widget.prototype.destroy = function() {
+	Button.prototype.destroy = function() {
 		this.panel.destroy();
 
-		this.widget.destroy();
+		this.button.destroy();
 	};
 
 	UrlBar = function(window) {
@@ -249,7 +261,7 @@
 		}
 
 		// Can't get document from sdk/windows. Use active window instead.
-		// This breaks switching between URL bar and widget with multiple windows open
+		// This breaks switching between URL bar and button with multiple windows open
 		this.document = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator)
 			.getMostRecentWindow('navigator:browser').document;
 
@@ -440,6 +452,7 @@
 			11, // Blog
 			 6, // Web Shop
 			 2, // Message Board
+			51, // Landing Page Builder
 			 8, // Wiki
 			13, // Issue Tracker
 			30, // Web Mail

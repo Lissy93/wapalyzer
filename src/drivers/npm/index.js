@@ -4,26 +4,65 @@ var request = require('request');
 var fs = require('fs');
 var path = require('path');
 
-//TODO
-exports.detectFromHTML = function(options) {};
+/**
+* Does the actual detection with information passed
+**/
+exports.detect = function(options, data, cb) {
 
+	// run the wrapper function that will
+	// trigger the actual library to run
+	runWrappalyer(options, data, cb);
+
+};
+
+/**
+* Wraps the detect method, just kept to reuse old method names
+* and not break anything. Although this was just stubbed out.
+**/
+exports.detectFromHTML = function(options, data, cb) {
+
+	// run the detect method
+	exports.detect(options, data, cb);
+
+};
+
+/**
+* Do a actual request for the body & headers, then
+* run through detection
+**/ 
 exports.detectFromUrl = function(options, cb) {
 
-	var url = options.url;
+	// ensure options and url were
+	if(!options || !options.url) {
 
-	if (options.debug) {
-		console.log('Fetching the page');
+		// send back a error ...
+		cb(new Error("\"url\" is a required option to run"
+			+ " wappalyzer and get the page content"))
+
+	} else {
+
+		// local variables to
+		var url = options.url;
+
+		// get the body content from the url
+		getHTMLFromUrl(url, function(err, data) {
+
+			// check for error or if we got no data back
+			if (err || data === null) {
+
+				// handle the error and don't do anything else ..
+				cb(err, null);
+
+			} else {
+
+				// run actual detection
+				exports.detect(options, data, cb);
+
+			}
+		
+		});
+
 	}
-
-	getHTMLFromUrl(url, function(err, data) {
-		if (err || data === null) {
-			cb(err, null);
-		} else {
-			runWrappalyer(options, data, function(err, detected, appInfo) {
-				cb(null, detected, appInfo);
-			});
-		}
-	});
 };
 
 function getHTMLFromUrl(url, cb) {
@@ -42,7 +81,20 @@ function getHTMLFromUrl(url, cb) {
 }
 
 function getAppsJson(cb) {
-	fs.readFile(path.resolve(__dirname, 'apps.json'), 'utf8', function(err, data) {
+
+	// depending on evironment select a direction to the path
+	var appsFileStr = path.resolve(__dirname, './apps.json');
+
+	// handle the environment variable if it's there
+	if(process.env.NODE_ENV == 'testing') {
+
+		// set the apps.json to testing stage
+		appsFileStr = path.resolve(__dirname, '../../apps.json');
+
+	}
+
+	// read in the file
+	fs.readFile(appsFileStr, 'utf8', function(err, data) {
 		if (err) throw err;
 		return cb(null, JSON.parse(data));
 	});
@@ -51,7 +103,20 @@ function getAppsJson(cb) {
 function runWrappalyer(options, data, cb) {
 	var debug = options.debug || false;
 
-	var wappalyzer = require('./wappalyzer').wappalyzer;
+	// according to environment check it
+	var wappalyzer = null;
+
+	// change depending on the environment
+	if( process.env.NODE_ENV == 'testing' ) {
+
+		wappalyzer = require('../../wappalyzer').wappalyzer;
+
+	} else {
+
+		wappalyzer = require('./wappalyzer').wappalyzer;
+
+	}
+
 	getAppsJson(function(err, apps) {
 		var w = wappalyzer;
 		w.driver = {
