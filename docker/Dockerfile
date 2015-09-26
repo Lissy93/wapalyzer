@@ -13,8 +13,6 @@ RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash -
 RUN apt-get install -y nodejs
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-
 
 # Add user
 RUN useradd -ms /bin/bash wappalyzer && usermod -a -G docker_env wappalyzer && echo "wappalyzer:wappalyzer" | chpasswd
