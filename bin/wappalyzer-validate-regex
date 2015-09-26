@@ -27,6 +27,11 @@ for ( app in json.apps ) {
 					attrs = pattern.split('\\;'),
 					regex = '/' + attrs.shift().replace('/', '\/') + '/';
 
+				//Check if the pattern is a valid RegExp
+				//Note: unlike when used in Wappalyzer, the modifier i isn't added here
+				new RegExp(regex);
+
+
 				if ( /^\/(?:\^\$|\.\+|\.\*)\/$/.test(regex) )  {
 					throw new Error('Pattern should be replaced with empty string.\n' + app + ': ' + type + ': ' + pattern);
 				}
