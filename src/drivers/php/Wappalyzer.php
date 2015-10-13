@@ -133,11 +133,11 @@ class Wappalyzer
 		$headers = trim(substr($response, 0, $headerSize));
 		$headers = preg_split('/^\s*$/m', $headers);
 		$headers = end($headers);
-		$lines = array_slice(explode("\r\n", $headers), 1);
+		$lines = array_slice(explode("\n", $headers), 1);
 
 		foreach ( $lines as $line ) {
 			if ( strpos(trim($line), ': ') !== false ) {
-				list($key, $value) = explode(': ', $line);
+				list($key, $value) = explode(': ', trim($line, "\r"));
 
 				$result->headers[strtolower($key)] = $value;
 			}

@@ -586,7 +586,7 @@
 			"env": "^Backbone$",
 			"implies": "Underscore.js",
 			"script": "backbone.*\\.js",
-			"website": "documentcloud.github.com/backbone"
+			"website": "backbonejs.org"
 		},
 		"Backdrop": {
 			"cats": [
@@ -1424,6 +1424,14 @@
 			},
 			"website": "dle-news.ru"
 		},
+		"DataTables": {
+			"cats": [
+			  12
+			],
+			"implies": "jQuery",
+			"script": "dataTables.*\\.js",
+			"website": "datatables.net"
+		},
 		"David Webbox": {
 			"cats": [
 				22
@@ -1639,7 +1647,7 @@
 			"meta": {
 				"generator": "Doxygen ([\\d.]+)\\;version:\\1"
 			},
-			"website": "stack.nl/~dimitri/doxygen"
+			"website": "www.stack.nl/~dimitri/doxygen/"
 		},
 		"DreamWeaver": {
 			"cats": [
@@ -3469,6 +3477,12 @@
 			],
 			"website": "lucene.apache.org/core/"
 		},
+		"M.R. Inc BoxyOS": {
+			"cats": [
+				28
+			],
+			"website": "mrincworld.com"
+		},
 		"M.R. Inc Webserver": {
 			"cats": [
 				22
@@ -3476,15 +3490,17 @@
 			"headers": {
 				"Server": "M\\.R\\. Inc Webserver"
 			},
+			"implies": [
+				"M.R. Inc BoxyOS"
+			],
 			"website": "mrincworld.com"
 		},
-		"M.R. Inc Wild CMS": {
+		"M.R. Inc SiteFrame": {
 			"cats": [
-				1,
-				6
+				18
 			],
 			"headers": {
-				"X-Powered-By": "M\\.R\\. Inc Wild CMS"
+				"Powered-By": "M\\.R\\. Inc SiteFrame"
 			},
 			"website": "mrincworld.com"
 		},
@@ -4365,6 +4381,19 @@
 			},
 			"website": "orchardproject.net"
 		},
+		"osTicket": {
+			"cats": [
+				13
+			],
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
+			"headers": {
+				"Set-Cookie": "OSTSESSID"
+			},
+			"website": "osticket.com"
+		},
 		"Outbrain": {
 			"cats": [
 				5
@@ -4783,6 +4812,22 @@
 				"Server": "RAID HTTPServer(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"website": "???"
+		},
+		"RainLoop": {
+			"cats": [
+				30
+			],
+			"env": "^rainloop",
+			"headers": {
+				"Server": "RainLoop"
+			},
+			"html": [
+				"<meta [^>]*(?:content=\"([^\"]+)[^>]+ id=\"rlAppVersion\"|id=\"rlAppVersion\"[^>]+ content=\"([^\"]+))\\;version:\\1?\\1:\\2",
+				"<link[^>]* href=\"[^\"]*rainloop/v/([^/]+)\\;version:\\1"
+			],
+			"implies": "PHP",
+			"script": "rainloop/v/([^/]+)\\;version:\\1",
+			"website": "rainloop.net"
 		},
 		"RBS Change": {
 			"cats": [
@@ -5600,6 +5645,13 @@
 			],
 			"env": "^Stackla$",
 			"script": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
+			"website": "stackla.com/"
+		},
+		"Stackla Social Hub": {
+			"cats": [
+				1
+			],
+			"env": "^stacklaSocialHub$",
 			"website": "stackla.com/"
 		},
 		"Starlet": {
