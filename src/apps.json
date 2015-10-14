@@ -7633,6 +7633,21 @@
 			},
 			"website": "ucore.io"
 		},
+		"uKnowva": {
+			"cats": [
+				1,2,18,50
+			],
+			"headers": {
+				"X-Content-Encoded-By": "uKnowva ([\\d.]+)\\;version:\\1"
+			},
+			"script": "/media/conv/js/jquery.js",
+			"html": "<a[^>]+>Powered by uKnowva</a>",
+			"implies": "PHP",
+			"meta": {
+				"generator": "uKnowva (?: ([\\d.]+))?\\;version:\\1"
+			},
+			"website": "uknowva.com"
+		},
 		"vBulletin": {
 			"cats": [
 				2
