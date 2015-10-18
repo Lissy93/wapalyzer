@@ -3,30 +3,87 @@
 var exports = {};
 
 (function(exports) {
+
 	var utils = {
-		pageMeta: {
-			url: window.location.hostname,
-			isHP: window.location.pathname === '/',
-			referrer: window.document.referrer,
-			rand: Math.floor(Math.random() * 10e12),
-			startTime: new Date().getTime()
+		getReferrer: function() {
+
+			return this.hashUrl(document.referrer) || null;
+
+		},
+
+		getPageUrl: function() {
+
+			return this.hashUrl(window.location.href) || null;
+
+		},
+
+		hashUrl: function(url) {
+			var a,
+				result;
+
+			if ( !url || url.indexOf('http') !== 0 ) {
+				return null;
+			}
+
+			a = document.createElement('a');
+			a.href = url;
+
+			result = a.protocol + '//' + a.hostname + '/';
+
+			if ( a.pathname !== '/' ) {
+				result += this.hashCode(a.pathname);
+			}
+
+			if ( a.search ) {
+				result += '?' + this.hashCode(a.search);
+			}
+
+			if ( a.hash ) {
+				result += '#' + this.hashCode(a.hash);
+			}
+
+			return result;
+		},
+
+		hashCode: function(str) {
+			var hash = 0,
+				kar,
+				i;
+
+			if ( str.length === 0 ) {
+				return hash;
+			}
+
+			for ( i = 0; i < str.length; i++ ) {
+				kar = str.charCodeAt(i);
+				hash = ((hash << 5) - hash) + kar;
+				hash = hash & hash;
+			}
+
+			return hash + Math.pow(2, 32);
 		},
 
 		realArray: function(a) {
 			return Array.prototype.slice.apply(a);
 		},
 
+		onDocLoaded(doc, callback) {
+			if ( doc.readyState === 'loading' ) {
+				doc.addEventListener('DOMContentLoaded', callback);
+			} else {
+				callback();
+			}
+		},
+
 		SCRIPT_IN_WINDOW_TOP: window === window.top,
-
 		isFriendlyWindow: function(win) {
-			var href;
 
+			var href;
 			try {
 				href = win.location.href;
 			} catch(e) {
 				return false;
 			}
-
 			return true;
 		},
 
@@ -39,68 +96,65 @@ var exports = {};
 		},
 
 		parseQS: function(qs) {
-			if (qs.indexOf('http') === 0) {
+			if ( qs.indexOf('http') === 0 ) {
 				qs = qs.split('?')[1];
 			}
-
 			var i, kvs, key, val;
-
 			var dict = {};
-
 			qs = qs.split('&');
-
 			for ( i = 0; i < qs.length; i++ ) {
 				kvs = qs[i].split('=');
 				key = kvs[0];
 				val = kvs.slice(1).join('=');
-
 				try {
 					dict[key] = window.decodeURIComponent(val);
 				} catch (e) {
-					this.log('URI decode error', kvs);
 
 					continue;
 				}
 			}
 			return dict;
 		},
-
-		makeLog: function(opt_adData, opt_msgNum, opt_pageTags) {
-			var assets = [opt_adData] || [];
-
-			return {
-				doc: this.pageMeta,
-				assets: assets,
-				version: '3',
-				msgNum: opt_msgNum || 0,
-				pageTags: opt_pageTags || []
-			};
-		},
-
-		expBackoff: function(callback, initTimeoutMS, opt_maxTimeoutMS) {
-			var curTimeout = initTimeoutMS;
-
-			var wrapped = function() {
-				callback();
-
-				var nextTimeout = 2 * curTimeout;
-
-				curTimeout = opt_maxTimeoutMS ? Math.min(nextTimeout, opt_maxTimeoutMS) : nextTimeout;
-
-				setTimeout(wrapped, curTimeout);
-			};
-
-			setTimeout(wrapped, curTimeout);
-		},
 	};
 
 	utils.SCRIPT_IN_FRIENDLY_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && utils.isFriendlyWindow(window.parent);
 	utils.SCRIPT_IN_HOSTILE_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && !utils.SCRIPT_IN_FRIENDLY_IFRAME;
+	function LogGenerator() {
+		this.msgNum = 0;
+		this.pageMeta = {
+			'url': utils.getPageUrl(),
+			'isHP': window.location.pathname === '/',
+			'referrer': utils.getReferrer(),
+			'rand': Math.floor(Math.random() * 10e12),
+			'startTime': new Date().getTime()
+		};
+	}
+
+	LogGenerator.prototype = {
+		log: function(event, opt_assets, opt_pageTags) {
+			var result = {
+				doc: this.pageMeta,
+				event: event,
+				assets: opt_assets || [],
+				version: '3',
+				msgNum: this.msgNum,
+				timestamp: new Date().getTime(),
+				pageVis: document.visibilityState,
+				pageFoc: document.hasFocus(),
+				pageTags: opt_pageTags || []
+			};
+			this.msgNum++;
+			return result;
+		}
+	};
+
+	utils.LogGenerator = LogGenerator;
 
 	exports.utils = utils;
 })(exports);
 
 (function(exports) {
+
 	var VALID_AD_SIZES = [
 		[160, 600],
 		[300, 250],
@@ -115,39 +169,38 @@ var exports = {};
 		[970, 90],
 		[970, 250],
 		[970, 400],
-		[970, 415]
-		];
+		[970, 415],
+		[1280, 100]
+	];
 
-	var
-		PX_SIZE_TOL = 10,
-		MIN_WINDOW_PX = 10,
-		MAX_SEARCHES_PER_WINDOW = 10,
-		MAX_SEARCHES_PER_ELEMENT = 2;
+	var PX_SIZE_TOL = 10;
+	var MIN_WINDOW_PX = 10;
+	var MAX_SEARCHES_PER_WINDOW = 10;
+	var MAX_SEARCHES_PER_ELEMENT = 2;
 
-	var SIZE_SET = (function makeSizeSet() {
-		var
-			set = {},
-			i,
-			xfuz,
-			yfuz,
-			size,
-			width,
-			height;
+	function makeSizeSet(validAdSizes, sizeTol) {
+		var set = {};
+		var i;
+		var xfuz;
+		var yfuz;
+		var size;
+		var width;
+		var height;
 
-		for ( i = 0; i < VALID_AD_SIZES.length; i++ ) {
-			for  (xfuz = -PX_SIZE_TOL; xfuz <= PX_SIZE_TOL; xfuz++ ) {
-				for ( yfuz = -PX_SIZE_TOL; yfuz <= PX_SIZE_TOL; yfuz++ ) {
-					size = VALID_AD_SIZES[i];
+		for ( i = 0; i < validAdSizes.length; i++ ) {
+			for ( xfuz = -sizeTol; xfuz <= sizeTol; xfuz++ ) {
+				for ( yfuz = -sizeTol; yfuz <= sizeTol; yfuz++ ) {
+					size = validAdSizes[i];
 					width = size[0] + xfuz;
 					height = size[1] + yfuz;
-					set[width] = set[width] || {};
-					set[width][height] = true;
+					set[width + 'x' + height] = size;
 				}
 			}
 		}
-
 		return set;
-	})();
+	}
+
+	var SIZE_SET = makeSizeSet(VALID_AD_SIZES, PX_SIZE_TOL);
 
 	function elementIsAd(el) {
 		if ( typeof el.searches !== 'number' ) {
@@ -158,31 +211,117 @@ var exports = {};
 			return false;
 		}
 
-		el.searches ++;
+		el.searches += 1;
 
-		var w = el.offsetWidth;
+		var isImgWithoutSrc = el.tagName === 'IMG' && !el.src;
+		var isImgWithoutAnchor = el.tagName === 'IMG' && !(el.parentNode.tagName === 'A' || el.getAttribute('onclick'));
 
-		return SIZE_SET[w] && SIZE_SET[w][el.offsetHeight];
+		return isAdShaped(el) && !isImgWithoutSrc && !isImgWithoutAnchor;
 	}
 
 	function windowMightContainAds(win) {
-		return win.innerWidth >= MIN_WINDOW_PX && win.innerHeight >= MIN_WINDOW_PX;
+		return (win.innerWidth >= MIN_WINDOW_PX &&
+				win.innerHeight >= MIN_WINDOW_PX);
 	}
 
-	function isNewAd(el) {
-		return el.mp_adFound !== true;
+	function isNewAd(el, win) {
+		return !el.mp_adFound && (win === win.top || !win.mp_adFound);
 	}
 
 	function getFriendlyIframes(win) {
 		var iframes = win.document.querySelectorAll('iframe');
-
 		iframes = exports.utils.realArray(iframes);
-
 		var friendlyIframes = iframes.filter(function(ifr) {
 			return exports.utils.isFriendlyWindow(ifr.contentWindow);
 		});
-
 		return friendlyIframes;
+	}
+
+	function isAdShaped(el, opt_win, opt_retMatched) {
+		var rect, width, height, result;
+
+		if ( opt_win ) {
+			width = opt_win.innerWidth;
+			height = opt_win.innerHeight;
+		} else {
+			rect = el.getBoundingClientRect();
+			width = rect.width;
+			height = rect.height;
+		}
+
+		result = SIZE_SET[width + 'x' + height];
+		if ( opt_retMatched ) {
+			return result;
+		} else {
+			return !!result;
+		}
+	}
+
+	function containsLargeIframes(win) {
+		var iframes = win.document.querySelectorAll('iframe');
+		var rect;
+		var i;
+		for ( i = 0; i < iframes.length; i++ ) {
+			rect = iframes[i].getBoundingClientRect();
+			if ( rect.width > 10 || rect.height > 10 ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	var HTML5_SIGNAL_ELEMENTS = 'canvas, button, video, svg, img';
+	function iframeGetHTMLAd(win) {
+		var body = win.document.body,
+			elements, i, el, divs, div, numElements,
+			winSize, elSize;
+
+		if ( !body ) {
+			return null;
+		}
+
+		winSize = isAdShaped(null, win, true);
+		if ( !winSize ) {
+			return null;
+		}
+
+		elements = body.querySelectorAll(HTML5_SIGNAL_ELEMENTS);
+
+		for ( i = 0; i < elements.length; i++ ) {
+			el = elements[i];
+			elSize = isAdShaped(el, null, true);
+			if ( elSize && elSize[0] === winSize[0] && elSize[1] === winSize[1] ) {
+				return el;
+			}
+		}
+
+		numElements = body.querySelectorAll('*').length;
+		if ( numElements < 5 ) {
+			return null;
+		}
+
+		divs = body.querySelectorAll('div');
+
+		for ( i = 0; i < divs.length; i++ ) {
+			div = divs[i];
+			elSize = isAdShaped(div, null, true);
+			if ( elSize && elSize[0] === winSize[0] && elSize[1] === winSize[1] ) {
+				return div;
+			}
+		}
+
+		return null;
+	}
+
+	function mainGetHTMLAd(win) {
+		var styles = win.document.querySelectorAll('div > style, div > link[rel="stylesheet"]'),
+			i, div;
+		for ( i = 0; i < styles.length; i++ ) {
+			div = styles[i].parentNode;
+			if ( isAdShaped(div) ) {
+				return div;
+			}
+		}
 	}
 
 	function findAds(win, opt_ads) {
@@ -195,25 +334,52 @@ var exports = {};
 		}
 
 		var ads = opt_ads || [];
+		var adsFound = 0;
 
 		if ( exports.utils.SCRIPT_IN_WINDOW_TOP || win.searches < MAX_SEARCHES_PER_WINDOW ) {
 			var adCandidates = win.document.querySelectorAll('img, object, embed');
-
 			adCandidates = exports.utils.realArray(adCandidates);
 
 			adCandidates.forEach(function(el) {
-				if (elementIsAd(el) && isNewAd(el)) {
+				if ( elementIsAd(el) && isNewAd(el, win) ) {
 					el.mp_adFound = true;
-
+					el.inIframe = win !== win.top;
+					win.mp_adFound = true;
 					ads.push(el);
+					adsFound += 1;
 				}
 			});
 
-			win.searches ++;
+			var htmlAd, adSizeMeta;
+			if ( win === win.top ) {
+				htmlAd = mainGetHTMLAd(win);
+			} else {
+				if ( adsFound === 0 && !containsLargeIframes(win) ) {
+					htmlAd = iframeGetHTMLAd(win);
+				}
+			}
+
+			if ( htmlAd && isNewAd(htmlAd, win) ) {
+				htmlAd.html5 = true;
+				htmlAd.inIframe = win !== win.top;
+				if ( htmlAd.inIframe ) {
+					adSizeMeta = win.document.querySelectorAll('meta[name="ad.size"]');
+					if ( adSizeMeta.length > 0 ) {
+						htmlAd.adSizeMeta = adSizeMeta[0].content;
+					}
+					if ( win.clickTag ) {
+						htmlAd.winClickTag = win.clickTag;
+					}
+				}
+				htmlAd.mp_adFound = true;
+				win.mp_adFound = true;
+				ads.push(htmlAd);
+			}
+
+			win.searches += 1;
 		}
 
 		var iframes = getFriendlyIframes(win);
-
 		iframes.forEach(function(ifr) {
 			findAds(ifr.contentWindow, ads);
 		});
@@ -222,11 +388,13 @@ var exports = {};
 	}
 
 	exports.adfinder = {
+		SIZE_SET: SIZE_SET,
 		findAds: findAds
 	};
 })(exports);
 
 (function(exports) {
+
 	var parser = {
 		TAGS_WITH_SRC_ATTR: {
 			'IMG': true,
@@ -242,8 +410,10 @@ var exports = {};
 
 			if ( this.TAGS_WITH_SRC_ATTR.hasOwnProperty(el.tagName) ) {
 				url = el.src;
+
 			} else if ( el.tagName === 'OBJECT' ) {
 				url = el.data || (params && params.movie) || null;
+
 			} else if ( el.tagName === 'A' ) {
 				url = el.href;
 			}
@@ -263,22 +433,19 @@ var exports = {};
 			var i, child;
 			var params = {};
 			var children = el.children;
-
 			for ( i = 0; i < children.length; i++ ) {
 				child = children[i];
-
 				if ( child.tagName === 'PARAM' && child.name ) {
+
 					params[child.name.toLowerCase()] = child.value;
 				}
 			}
-
 			return params;
 		},
 
 		getPosition: function(el) {
 			var rect = el.getBoundingClientRect();
 			var win = exports.utils.elementWindow(el);
-
 			return {
 				width: rect.width,
 				height: rect.height,
@@ -293,7 +460,8 @@ var exports = {};
 
 			if ( el.tagName === 'EMBED' ) {
 				flashvars = el.getAttribute('flashvars') || urlQS;
-			} else if (el.tagName === 'OBJECT') {
+
+			} else if ( el.tagName === 'OBJECT' ) {
 				flashvars = params.flashvars || el.getAttribute('flashvars') || urlQS;
 			}
 
@@ -302,19 +470,18 @@ var exports = {};
 
 		findClickThru: function(el, flashvars) {
 			var key;
-
 			if ( el.tagName === 'IMG' && el.parentElement.tagName === 'A' ) {
 				return el.parentElement.href;
 			} else if ( flashvars ) {
 				for ( key in flashvars ) {
 					if ( flashvars.hasOwnProperty(key) ) {
-						if (key.toLowerCase().indexOf('clicktag') === 0) {
+
+						if ( key.toLowerCase().indexOf('clicktag') === 0 ) {
 							return flashvars[key];
 						}
 					}
 				}
 			}
-
 			return null;
 		},
 
@@ -322,6 +489,7 @@ var exports = {};
 			var val = el.getAttribute(name);
 
 			if ( val && val.slice && val.toString ) {
+
 				return val.slice(0, this.MAX_ATTR_LEN).toString();
 			} else {
 				return null;
@@ -329,14 +497,13 @@ var exports = {};
 		},
 
 		putPropIfExists: function(obj, name, val) {
-			if (val) {
+			if ( val ) {
 				obj[name] = val;
 			}
 		},
 
 		putAttrIfExists: function(obj, el, name) {
 			var val = this.getAttr(el, name);
-
 			this.putPropIfExists(obj, name, val);
 		},
 
@@ -355,7 +522,8 @@ var exports = {};
 				children: []
 			};
 
-			if (params) {
+			if ( params ) {
+
 				delete params.flashvars;
 			}
 
@@ -376,6 +544,7 @@ var exports = {};
 })(exports);
 
 (function(exports) {
+
 	var ContextManager = function(adData) {
 		this.adData = adData;
 	};
@@ -385,6 +554,7 @@ var exports = {};
 		ASPECT_RATIO_FOR_LEADERBOARDS: 2,
 
 		isValidContainer: function(el, opt_curWin) {
+
 			var cWidth = el.clientWidth;
 			var cHeight = el.clientHeight;
 
@@ -399,7 +569,7 @@ var exports = {};
 			var similarSizeY = this.withinTol(adHeight, cHeight);
 			var adAspect = adWidth / adHeight;
 
-			return similarWin || el.tagName === 'A' || ( adAspect >= this.ASPECT_RATIO_FOR_LEADERBOARDS && similarSizeY ) || (similarSizeX && similarSizeY);
+			return similarWin || el.tagName === 'A' || (adAspect >= this.ASPECT_RATIO_FOR_LEADERBOARDS && similarSizeY) || (similarSizeX && similarSizeY);
 		},
 
 		withinTol: function(adlen, conlen) {
@@ -412,7 +582,6 @@ var exports = {};
 			if ( !el ) {
 				return;
 			}
-
 			var i;
 			var ifrWin;
 			var adId = this.adData.adId;
@@ -426,14 +595,21 @@ var exports = {};
 
 			if ( elIsAd ) {
 				json.adId = adId;
-				this.adData.element = json;
+				this.adData.element = {};
+
+				var keys = Object.keys(json);
+				for ( i = 0; i < keys.length; i++ ) {
+					var key = keys[i];
+					if ( key !== 'children' && key !== 'contents' ) {
+						this.adData.element[key] = json[key];
+					}
+				}
 			}
 
 			var children = exports.utils.realArray(el.children).filter(function(el) {
 				var param = el.tagName === 'PARAM';
 				var inlineScript = el.tagName === 'SCRIPT' && !(el.src && el.src.indexOf('http') >= 0);
 				var noScript = el.tagName === 'NOSCRIPT';
-
 				return !(param || inlineScript || noScript);
 			});
 
@@ -445,12 +621,13 @@ var exports = {};
 				ifrWin = el.contentWindow;
 
 				if ( adId && el[adId] && el[adId].needsWindow ) {
+
 					json.contents = this.adData.serializedIframeContents;
-
 					el[adId].needsWindow = false;
-
 					delete this.adData.serializedIframeContents;
+
 				} else if ( exports.utils.isFriendlyWindow(ifrWin) ) {
+
 					json.contents = this.serializeElements(ifrWin.document.documentElement);
 				}
 			}
@@ -460,10 +637,6 @@ var exports = {};
 
 		captureHTML: function(containerEl) {
 			this.adData.context = this.serializeElements(containerEl);
-
-			if ( this.adData.html ) {
-				this.adData.html.push(containerEl.outerHTML);
-			}
 		},
 
 		nodeCount: function(el) {
@@ -481,8 +654,7 @@ var exports = {};
 
 			while ( true ) {
 				parentContainer = curContainer.parentElement;
-
-				if (this.isValidContainer(parentContainer)) {
+				if ( this.isValidContainer(parentContainer) ) {
 					curContainer = parentContainer;
 				} else {
 					return curContainer;
@@ -492,7 +664,9 @@ var exports = {};
 	};
 
 	var tagfinder = {
+
 		prepToSend: function(adData) {
+			adData.matchedSize = exports.adfinder.SIZE_SET[adData.width + 'x' + adData.height];
 			delete adData.width;
 			delete adData.height;
 		},
@@ -525,25 +699,24 @@ var exports = {};
 			var curWin = exports.utils.elementWindow(referenceElement);
 			var highestContainer;
 
-			while (true) {
+			while ( true ) {
 				highestContainer = mgr.highestContainer(curWin, referenceElement);
 				mgr.captureHTML(highestContainer);
 
-				if (curWin === window.top) {
+				if ( curWin === window.top ) {
 					break;
 				} else {
 					mgr.adData.serializedIframeContents = mgr.adData.context;
 
-					if (exports.utils.isFriendlyWindow(curWin.parent)) {
+					if ( exports.utils.isFriendlyWindow(curWin.parent) ) {
 						referenceElement = curWin.frameElement;
-						referenceElement[mgr.adData.adId] = { needsWindow: true };
+						referenceElement[mgr.adData.adId] = {needsWindow: true};
 						curWin = curWin.parent;
 					} else {
 						break;
 					}
 				}
 			}
-
 			return {
 				referenceElement:referenceElement,
 				highestContainer: highestContainer
@@ -556,8 +729,7 @@ var exports = {};
 
 (function(exports) {
 	var _onAdFound;
-	var _getFullHTML;
-	var _logsSent = 0;
+	var _logGen = new exports.utils.LogGenerator();
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
@@ -565,23 +737,19 @@ var exports = {};
 	function getPageTags(doc) {
 		var scripts = doc.getElementsByTagName('script');
 		var pageTags = [];
-
 		scripts = exports.utils.realArray(scripts);
-
 		scripts.forEach(function(script) {
-			if (PAGE_TAG_RE.exec(script.src)) {
+			if ( PAGE_TAG_RE.exec(script.src) ) {
 				pageTags.push({'tagName': 'SCRIPT', 'url': script.src});
 			}
 		});
-
 		return pageTags;
 	}
 
 	function messageAllParentFrames(adData) {
+
 		adData.dummyId = true;
-
 		var win = window;
-
 		while ( win !== win.top ) {
 			win = win.parent;
 			win.postMessage(adData, '*');
@@ -590,26 +758,20 @@ var exports = {};
 
 	function appendTagsAndSendToParent(adData, referenceElement) {
 		var results = exports.tagfinder.appendTags(adData, referenceElement);
-
 		if ( exports.utils.SCRIPT_IN_HOSTILE_IFRAME ) {
 			messageAllParentFrames(adData);
+
 		} else if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 			exports.tagfinder.setPositions(adData);
 			exports.tagfinder.prepToSend(adData);
 
-			var html = adData.html;
-
-			delete adData.html;
-
-			adData.curPageUrl = window.location.href;
+			adData.curPageUrl = exports.utils.getPageUrl();
 			_pageTags = _pageTags || getPageTags(document);
-
-			var log = exports.utils.makeLog(adData, _logsSent, _pageTags);
-
+			var log = _logGen.log('ad', [adData], _pageTags);
 			if ( _onAdFound ) {
-				_onAdFound(log, html, results.referenceElement);
-				_logsSent++;
+				_onAdFound(log, results.referenceElement);
 			}
+
 		}
 	}
 
@@ -619,6 +781,7 @@ var exports = {};
 	}
 
 	function extractAds() {
+
 		var ads = exports.adfinder.findAds(window);
 
 		if ( !ads ) {
@@ -626,6 +789,7 @@ var exports = {};
 		}
 
 		ads.forEach(function(ad) {
+
 			var startTime = new Date().getTime();
 			var adId = startTime + '-' + Math.floor(Math.random() * 10e12);
 
@@ -633,9 +797,17 @@ var exports = {};
 				width: ad.offsetWidth,
 				height: ad.offsetHeight,
 				startTime: startTime,
-				html: ( _getFullHTML && [] ) || null,
-				adId: adId
+				adId: adId,
+
+				html5: ad.html5 || false,
+
+				inIframe: ad.inIframe
 			};
+
+			if ( ad.html5 && ad.inIframe ) {
+				adData.adSizeMeta = ad.adSizeMeta || null;
+				adData.winClickTag = ad.winClickTag || null;
+			}
 
 			ad[adId] = { isAd: true };
 
@@ -643,49 +815,92 @@ var exports = {};
 		});
 	}
 
+	function isChildWin(myWin, otherWin) {
+		var parentWin = otherWin.parent;
+		while ( parentWin !== otherWin ) {
+			if ( parentWin === myWin ) {
+				return true;
+			}
+			otherWin = parentWin;
+			parentWin = parentWin.parent;
+		}
+		return false;
+	}
+
+	function iframeFromWindow(win, winToMatch) {
+		var i, ifr, ifrWin,
+			iframes = win.document.querySelectorAll('iframe');
+
+		for ( i = 0; i < iframes.length; i++ ) {
+			ifr = iframes[i];
+			if ( ifr.contentWindow === winToMatch ) {
+				return ifr;
+			}
+		}
+
+		for ( i = 0; i < iframes.length; i++ ) {
+			ifrWin = iframes[i].contentWindow;
+			if ( exports.utils.isFriendlyWindow(ifrWin) ) {
+				ifr = iframeFromWindow(ifrWin, winToMatch);
+				if ( ifr ) {
+					return ifr;
+				}
+			}
+		}
+	}
+
 	function onPostMessage(event) {
-		var adData = event.data;
-		var ifrTag;
+		var adData = event.data,
+			ifrWin = event.source,
+			ifrTag;
 
-		if ( !adData.dummyId ) {
-			return;
+		if ( adData.dummyId ) {
+
+			delete adData.dummyId;
+
+			if ( isChildWin(window, ifrWin) ) {
+				if ( exports.utils.isFriendlyWindow(ifrWin) ) {
+					ifrTag = ifrWin.frameElement;
+				} else {
+					ifrTag = iframeFromWindow(window, ifrWin);
+				}
+
+				if ( ifrTag ) {
+
+					ifrTag[adData.adId] = {needsWindow: true};
+					appendTagsAndSendToParent(adData, ifrTag);
+				}
+			}
 		}
-
-		delete adData.dummyId;
-
-		try {
-			ifrTag = event.source.frameElement;
-		} catch(e) {
-			return false;
-		}
-
-		ifrTag[adData.adId] = {needsWindow: true};
-
-		appendTagsAndSendToParent(adData, ifrTag);
 	}
 
 	exports.coordinator = {
-		init: function(onAdFound, opt_getFullHTML) {
-			if (exports.utils.SCRIPT_IN_FRIENDLY_IFRAME) {
+		init: function(onAdFound, onPage) {
+
+			if ( exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
 				return false;
 			}
 
 			_onAdFound = onAdFound;
-			_getFullHTML = opt_getFullHTML;
 
 			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
-				chrome.runtime.sendMessage({ event: 'new-page', url: window.location.href });
+				var log = _logGen.log('page');
+				onPage(log);
 			}
 
 			window.addEventListener('message', onPostMessage, false);
-
-			if ( document.readyState !== 'loading' ) {
-				extractAdsWrapper();
-			} else {
-				document.addEventListener('DOMContentLoaded', extractAdsWrapper);
+			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
+				window.addEventListener('beforeunload', function(event) {
+					var log = _logGen.log('unload');
+					log.timing = window.performance.timing;
+					onPage(log);
+				});
 			}
+
+			exports.utils.onDocLoaded(document, extractAdsWrapper);
 		}
 	};
+
 })(exports);
 
 (function(exports) {
@@ -693,7 +908,5 @@ var exports = {};
 		chrome.extension.sendRequest({ id: 'ad_log', subject: log });
 	};
 
-	var getFullHTML = false;
-
-	exports.coordinator.init(onAdFound, getFullHTML);
+	exports.coordinator.init(onAdFound, onAdFound);
 })(exports);
