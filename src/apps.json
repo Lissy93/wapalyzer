@@ -1697,6 +1697,13 @@
 			},
 			"website": "www.dynamicweb.dk"
 		},
+		"Dynatrace": {
+			"cats": [
+				10
+			],
+			"script": "dtagent.*\\.js",
+			"website": "dynatrace.com"
+		},
 		"E-Merchant": {
 			"cats": [
 				6
@@ -2724,6 +2731,14 @@
 			"script": "jscripts/ips_",
 			"website": "www.invisionpower.com"
 		},
+		"Immutable.js": {
+			"cats": [
+				12
+			],
+			"env": "^Immutable$",
+			"script": "^immutable\\.(min\\.)?js$",
+			"website": "facebook.github.io/immutable-js/"
+		},
 		"ImpressCMS": {
 			"cats": [
 				1
@@ -3397,8 +3412,7 @@
 			],
 			"env": [
 				"^fyre$",
-				"^FyreLoader$",
-				"^LF$"
+				"^FyreLoader$"
 			],
 			"html": "<[^>]+(?:id|class)=\"livefyre",
 			"script": "livefyre_init\\.js",
@@ -3979,7 +3993,7 @@
 				"PHP",
 				"MySQL"
 			],
-			"website": "www.mybboard.net"
+			"website": "www.mybb.com"
 		},
 		"MyBlogLog": {
 			"cats": [
@@ -5059,6 +5073,13 @@
 			},
 			"script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
 			"website": "rubyonrails.org"
+		},
+		"Ruxit": {
+			"cats": [
+				10
+			],
+			"script": "ruxitagentjs",
+			"website": "ruxit.com"
 		},
 		"RxJS": {
 			"cats": [
@@ -6343,6 +6364,15 @@
 			"url": "\\.vox\\.com",
 			"website": "www.vox.com"
 		},
+		"VTEX Integrated Store": {
+		  	"cats": [
+				6
+			],
+			"headers": {
+				"X-Powered-By": "vtex-integrated-store"
+			},
+			"website": "lojaintegrada.com.br"
+		},
 		"Vue.js": {
 			"cats": [
 				12
@@ -6630,7 +6660,7 @@
 			],
 			"html": "<!--[^>]+WP-Super-Cache",
 			"implies": "WordPress",
-			"website": "ocaoimh.ie/wp-super-cache/"
+			"website": "z9.io/wp-super-cache/"
 		},
 		"Wowza Media Server": {
 			"cats": [
@@ -7633,6 +7663,21 @@
 			},
 			"website": "ucore.io"
 		},
+		"uKnowva": {
+			"cats": [
+				1,2,18,50
+			],
+			"headers": {
+				"X-Content-Encoded-By": "uKnowva ([\\d.]+)\\;version:\\1"
+			},
+			"script": "/media/conv/js/jquery.js",
+			"html": "<a[^>]+>Powered by uKnowva</a>",
+			"implies": "PHP",
+			"meta": {
+				"generator": "uKnowva (?: ([\\d.]+))?\\;version:\\1"
+			},
+			"website": "uknowva.com"
+		},
 		"vBulletin": {
 			"cats": [
 				2
@@ -7686,6 +7731,15 @@
 			"implies": "D3",
 			"script": "xcharts\\.js",
 			"website": "tenxer.github.io/xcharts/"
+		},
+		"XpressEngine": {
+			"cats": [
+				1
+			],
+			"meta": {
+				"generator": "XpressEngine"
+			},
+			"website": "www.xpressengine.com/"
 		},
 		"xtCommerce": {
 			"cats": [
