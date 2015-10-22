@@ -182,18 +182,6 @@
 			"script": "addthis\\.com/js/",
 			"website": "www.addthis.com"
 		},
-		"Adobe CQ5": {
-			"cats": [
-				1
-			],
-			"html": [
-				"<div class=\"[^\"]*parbase",
-				"<div[^>]+data-component-path=\"[^\"+]jcr:"
-			],
-			"implies": "Java",
-			"script": "/etc/designs/",
-			"website": "adobe.com/products/cq.html"
-		},
 		"Adobe ColdFusion": {
 			"cats": [
 				18
@@ -207,6 +195,18 @@
 			"script": "/cfajax/",
 			"url": "\\.cfm(?:$|\\?)",
 			"website": "adobe.com/products/coldfusion-family.html"
+		},
+		"Adobe Experience Manager": {
+			"cats": [
+				1
+			],
+			"html": [
+				"<div class=\"[^\"]*parbase",
+				"<div[^>]+data-component-path=\"[^\"+]jcr:"
+			],
+			"implies": "Java",
+			"script": "/etc/designs/",
+			"website": "www.adobe.com/au/marketing-cloud/enterprise-content-management.html"
 		},
 		"Adobe GoLive": {
 			"cats": [
@@ -1426,7 +1426,7 @@
 		},
 		"DataTables": {
 			"cats": [
-			  12
+				12
 			],
 			"implies": "jQuery",
 			"script": "dataTables.*\\.js",
@@ -1696,6 +1696,13 @@
 				"generator": "Dynamicweb ([\\d.]+)\\;version:\\1"
 			},
 			"website": "www.dynamicweb.dk"
+		},
+		"Dynatrace": {
+			"cats": [
+				10
+			],
+			"script": "dtagent.*\\.js",
+			"website": "dynatrace.com"
 		},
 		"E-Merchant": {
 			"cats": [
@@ -2724,6 +2731,14 @@
 			"script": "jscripts/ips_",
 			"website": "www.invisionpower.com"
 		},
+		"Immutable.js": {
+			"cats": [
+				12
+			],
+			"env": "^Immutable$",
+			"script": "^immutable\\.(?:min\\.)?js$",
+			"website": "facebook.github.io/immutable-js/"
+		},
 		"ImpressCMS": {
 			"cats": [
 				1
@@ -3397,8 +3412,7 @@
 			],
 			"env": [
 				"^fyre$",
-				"^FyreLoader$",
-				"^LF$"
+				"^FyreLoader$"
 			],
 			"html": "<[^>]+(?:id|class)=\"livefyre",
 			"script": "livefyre_init\\.js",
@@ -3483,6 +3497,15 @@
 			],
 			"website": "mrincworld.com"
 		},
+		"M.R. Inc SiteFrame": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"Powered-By": "M\\.R\\. Inc SiteFrame"
+			},
+			"website": "mrincworld.com"
+		},
 		"M.R. Inc Webserver": {
 			"cats": [
 				22
@@ -3493,15 +3516,6 @@
 			"implies": [
 				"M.R. Inc BoxyOS"
 			],
-			"website": "mrincworld.com"
-		},
-		"M.R. Inc SiteFrame": {
-			"cats": [
-				18
-			],
-			"headers": {
-				"Powered-By": "M\\.R\\. Inc SiteFrame"
-			},
 			"website": "mrincworld.com"
 		},
 		"MOBOTIX": {
@@ -3979,7 +3993,7 @@
 				"PHP",
 				"MySQL"
 			],
-			"website": "www.mybboard.net"
+			"website": "www.mybb.com"
 		},
 		"MyBlogLog": {
 			"cats": [
@@ -4380,19 +4394,6 @@
 				"generator": "Orchard"
 			},
 			"website": "orchardproject.net"
-		},
-		"osTicket": {
-			"cats": [
-				13
-			],
-			"implies": [
-				"PHP",
-				"MySQL"
-			],
-			"headers": {
-				"Set-Cookie": "OSTSESSID"
-			},
-			"website": "osticket.com"
 		},
 		"Outbrain": {
 			"cats": [
@@ -4813,22 +4814,6 @@
 			},
 			"website": "???"
 		},
-		"RainLoop": {
-			"cats": [
-				30
-			],
-			"env": "^rainloop",
-			"headers": {
-				"Server": "RainLoop"
-			},
-			"html": [
-				"<meta [^>]*(?:content=\"([^\"]+)[^>]+ id=\"rlAppVersion\"|id=\"rlAppVersion\"[^>]+ content=\"([^\"]+))\\;version:\\1?\\1:\\2",
-				"<link[^>]* href=\"[^\"]*rainloop/v/([^/]+)\\;version:\\1"
-			],
-			"implies": "PHP",
-			"script": "rainloop/v/([^/]+)\\;version:\\1",
-			"website": "rainloop.net"
-		},
 		"RBS Change": {
 			"cats": [
 				1,
@@ -4870,6 +4855,22 @@
 			},
 			"implies": "Ruby",
 			"website": "github.com/rtomayko/rack-cache"
+		},
+		"RainLoop": {
+			"cats": [
+				30
+			],
+			"env": "^rainloop",
+			"headers": {
+				"Server": "RainLoop"
+			},
+			"html": [
+				"<meta [^>]*(?:content=\"([^\"]+)[^>]+ id=\"rlAppVersion\"|id=\"rlAppVersion\"[^>]+ content=\"([^\"]+))\\;version:\\1?\\1:\\2",
+				"<link[^>]* href=\"[^\"]*rainloop/v/([^/]+)\\;version:\\1"
+			],
+			"implies": "PHP",
+			"script": "rainloop/v/([^/]+)\\;version:\\1",
+			"website": "rainloop.net"
 		},
 		"Ramda": {
 			"cats": [
@@ -5059,6 +5060,13 @@
 			},
 			"script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
 			"website": "rubyonrails.org"
+		},
+		"Ruxit": {
+			"cats": [
+				10
+			],
+			"script": "ruxitagentjs",
+			"website": "ruxit.com"
 		},
 		"RxJS": {
 			"cats": [
@@ -6213,6 +6221,15 @@
 			"script": "vs350\\.js",
 			"website": "www.vpasp.com"
 		},
+		"VTEX Integrated Store": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"X-Powered-By": "vtex-integrated-store"
+			},
+			"website": "lojaintegrada.com.br"
+		},
 		"Vanilla": {
 			"cats": [
 				2
@@ -6342,15 +6359,6 @@
 			],
 			"url": "\\.vox\\.com",
 			"website": "www.vox.com"
-		},
-		"VTEX Integrated Store": {
-		  	"cats": [
-				6
-			],
-			"headers": {
-				"X-Powered-By": "vtex-integrated-store"
-			},
-			"website": "lojaintegrada.com.br"
 		},
 		"Vue.js": {
 			"cats": [
@@ -6639,7 +6647,7 @@
 			],
 			"html": "<!--[^>]+WP-Super-Cache",
 			"implies": "WordPress",
-			"website": "ocaoimh.ie/wp-super-cache/"
+			"website": "z9.io/wp-super-cache/"
 		},
 		"Wowza Media Server": {
 			"cats": [
@@ -6744,6 +6752,15 @@
 				"Server": "Xitami(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"website": "xitami.com"
+		},
+		"XpressEngine": {
+			"cats": [
+				1
+			],
+			"meta": {
+				"generator": "XpressEngine"
+			},
+			"website": "www.xpressengine.com/"
 		},
 		"YUI": {
 			"cats": [
@@ -7422,6 +7439,19 @@
 			"html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^>]+>)?osCommerce</a>|<[^>]+class=\"[^>]*infoBoxHeading)",
 			"website": "www.oscommerce.com"
 		},
+		"osTicket": {
+			"cats": [
+				13
+			],
+			"headers": {
+				"Set-Cookie": "OSTSESSID"
+			},
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
+			"website": "osticket.com"
+		},
 		"ownCloud": {
 			"cats": [
 				19
@@ -7641,6 +7671,24 @@
 				"generator": "uCore PHP Framework"
 			},
 			"website": "ucore.io"
+		},
+		"uKnowva": {
+			"cats": [
+				1,
+				2,
+				18,
+				50
+			],
+			"headers": {
+				"X-Content-Encoded-By": "uKnowva ([\\d.]+)\\;version:\\1"
+			},
+			"html": "<a[^>]+>Powered by uKnowva</a>",
+			"implies": "PHP",
+			"meta": {
+				"generator": "uKnowva (?: ([\\d.]+))?\\;version:\\1"
+			},
+			"script": "/media/conv/js/jquery.js",
+			"website": "uknowva.com"
 		},
 		"vBulletin": {
 			"cats": [
