@@ -663,6 +663,15 @@
 			"script": "bittads\\.com/js/bitt\\.js$",
 			"website": "bittads.com"
 		},
+		"Blesta": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"Set-Cookie": "blesta_sid"
+			},
+			"website": "www.blesta.com"
+		},
 		"Blip.tv": {
 			"cats": [
 				14
@@ -1072,6 +1081,13 @@
 			"env": "^clicky$",
 			"script": "static\\.getclicky\\.com",
 			"website": "getclicky.com"
+		},
+		"Clientexec": {
+			"cats": [
+				6
+			],
+			"html": "clientexec\\.[^>]*\\s?=\\s?[^>]*;",
+			"website": "www.clientexec.com"
 		},
 		"CloudFlare": {
 			"cats": [
@@ -6389,6 +6405,15 @@
 			],
 			"script": "w3counter\\.com/tracker\\.js",
 			"website": "www.w3counter.com"
+		},
+		"WHMCS": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"Set-Cookie": "^WHMCS.*"
+			},
+			"website": "www.whmcs.com"
 		},
 		"WP Rocket": {
 			"cats": [
