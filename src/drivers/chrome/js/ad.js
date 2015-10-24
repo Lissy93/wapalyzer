@@ -67,7 +67,7 @@ var exports = {};
 			return Array.prototype.slice.apply(a);
 		},
 
-		onDocLoaded(doc, callback) {
+		onDocLoaded: function(doc, callback) {
 			if ( doc.readyState === 'loading' ) {
 				doc.addEventListener('DOMContentLoaded', callback);
 			} else {

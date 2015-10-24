@@ -196,7 +196,7 @@ var wappalyzer = (function() {
 		apps:     {},
 		cats:     null,
 		ping:     { hostnames: {} },
-        adCache: [],
+		adCache:  [],
 		detected: {},
 
 		config: {
