@@ -4901,6 +4901,7 @@
 				12
 			],
 			"env": "^React$",
+			"html": "<[^>]+data-react",
 			"script": [
 				"react(?:\\-with\\-addons)?(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/react(\\.min)?\\.js\\;version:\\1",
