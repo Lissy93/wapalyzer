@@ -10,7 +10,7 @@ install:
   - sudo apt-get update -y
   - sudo apt-get install -y curl zip sudo -y --force-yes
   - sudo apt-get clean
-  - npm install jsonlint jpm imagemin-cli -g
+  - npm install jsonlint jpm imagemin-cli svgo -g
   - ln -s docker/node/package.json package.json && npm install
   - mkdir phantomjs && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs && ln -s $WAPPALYZER_ROOT/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs bin/phantomjs
 script: wappalyzer build
