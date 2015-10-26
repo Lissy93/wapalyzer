@@ -12,8 +12,7 @@
 		upgraded = false,
 		tab,
 		tabCache = {},
-		headersCache = {},
-		adCache = [];
+		headersCache = {};
 
 	w.driver = {
 		/**
@@ -91,7 +90,7 @@
 
 							break;
 						case 'ad_log':
-							adCache.push(request.subject);
+							w.adCache.push(request.subject);
 
 							break;
 						case 'get_apps':
@@ -217,11 +216,9 @@
 
 				w.ping = { hostnames: {} };
 
-				w.driver.post('https://ad.wappalyzer.com/log/wp/', adCache);
+				w.driver.post('https://ad.wappalyzer.com/log/wp/', w.adCache);
 
-				w.log('adCache: ' + JSON.stringify(adCache)); //
-
-				adCache = [];
+				w.adCache = [];
 			}
 		},
 
