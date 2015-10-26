@@ -19,7 +19,7 @@ echo "Compressing PNG icons..."
 
 imagemin $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons -o 3
 
-echo "Compressing PNG icons..."
+echo "Compressing SVG icons..."
 
 svgo -f $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons
 
