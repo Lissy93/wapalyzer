@@ -15,9 +15,13 @@ echo "Prettifying apps.json..."
 
 jsonlint -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
 
-echo "Compressing icons..."
+echo "Compressing PNG icons..."
 
 imagemin $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons -o 3
+
+echo "Compressing SVG icons..."
+
+svgo -f $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons
 
 wappalyzer links
 
