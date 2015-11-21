@@ -115,16 +115,27 @@
       "website": "www.aten.com",
       "icon": "ATEN.png"
     },
-    "ATG Web Commerce": {
+    "Oracle Commerce": {
       "cats": [
         6
       ],
       "headers": {
         "X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1"
       },
-      "html": "<[^>]+_DARGS",
-      "website": "oracle.com/us/products/applications/web-commerce/atg",
-      "icon": "ATG Web Commerce.png"
+      "html": "<[^>]+_dyncharset",
+      "website": "www.oracle.com/applications/customer-experience/commerce/products/commerce-platform/index.html",
+      "icon": "Oracle Commerce.png"
+    },
+    "Oracle Commerce Cloud": {
+      "cats": [
+        6
+      ],
+      "headers": {
+        "OracleCommerceCloud-Version": ".*\\;version:\\1"
+      },
+      "html": "<[^>]+id=\"oracle-cc\"",
+      "website": "cloud.oracle.com/commerce-cloud",
+      "icon": "Oracle Commerce Cloud.png"
     },
     "AWStats": {
       "cats": [
