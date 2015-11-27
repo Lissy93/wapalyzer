@@ -6541,17 +6541,12 @@
         1,
         6
       ],
-      "headers": {
-        "Set-Cookie": "thelia_cart="
-      },
+      "html": "<(?:link|style|script)[^>]+/assets/frontOffice/",
       "implies": [
         "PHP",
         "Symfony"
       ],
-      "meta": {
-        "generator": "Thelia v([\\d.]+)\\;version:\\1"
-      },
-      "website": "www.thelia.net",
+      "website": "thelia.net",
       "icon": "Thelia.png"
     },
     "TiddlyWiki": {
