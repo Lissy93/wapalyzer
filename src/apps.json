@@ -131,7 +131,7 @@
         6
       ],
       "headers": {
-        "OracleCommerceCloud-Version": ".*\\;version:\\1"
+        "OracleCommerceCloud-Version": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+id=\"oracle-cc\"",
       "website": "cloud.oracle.com/commerce-cloud",
