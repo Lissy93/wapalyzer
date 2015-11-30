@@ -7136,7 +7136,7 @@
         22
       ],
       "headers": {
-        "Server": "^Warp/(\\d+(?:\\.\\d+)+)?$;version:\\1"
+        "Server": "^Warp/(\\d+(?:\\.\\d+)+)?$\\;version:\\1"
       },
       "implies": "Haskell",
       "website": "www.stackage.org/package/warp",
