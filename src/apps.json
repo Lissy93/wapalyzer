@@ -5503,7 +5503,7 @@
         22
       ],
       "headers": {
-        "Server": "^Resin(?:/(\\S*))?\\;version=\\1"
+        "Server": "^Resin(?:/(\\S*))?\\;version:\\1"
       },
       "implies": "Java",
       "website": "caucho.com",
