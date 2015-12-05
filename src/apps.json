@@ -6437,7 +6437,7 @@
         19
       ],
       "env": "^SyntaxHighlighter$",
-      "html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)",
+      "html": "<(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)",
       "website": "github.com/syntaxhighlighter",
       "icon": "SyntaxHighlighter.png"
     },
