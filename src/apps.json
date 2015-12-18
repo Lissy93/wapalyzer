@@ -5980,6 +5980,22 @@
       "website": "shopify.com",
       "icon": "Shopify.png"
     },
+    "Shoptet": {
+      "cats": [
+        6
+      ],
+      "env": "^shoptet$",
+      "html": "<link [^>]*href=\"https?://cdn\\.myshoptet\\.com/",
+      "implies": "PHP",
+      "meta": {
+        "web_author": "^Shoptet"
+      },
+      "script": [
+        "^https?://cdn\\.myshoptet\\.com/"
+      ],
+      "website": "www.shoptet.cz",
+      "icon": "Shoptet.svg"
+    },
     "Shopware": {
       "cats": [
         6
