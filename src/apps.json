@@ -508,9 +508,9 @@
       ],
       "excludes": "OpenCart",
       "headers": {
-        "Arastta": "([0-9.]+)\\;version:\\1"
+        "X-Arastta": ""
       },
-      "html": "Powered By <a href=\"[^>]+Arastta",
+      "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
       "implies": "PHP",
       "script": "arastta\\.js",
       "website": "arastta.org",
