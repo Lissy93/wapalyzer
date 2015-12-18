@@ -197,6 +197,7 @@ var wappalyzer = (function() {
 		cats:     null,
 		ping:     { hostnames: {} },
 		detected: {},
+		adCache: [],
 
 		config: {
 			websiteURL: 'https://wappalyzer.com/',
@@ -508,7 +509,7 @@ var wappalyzer = (function() {
 				}
 			}
 
-			if ( Object.keys(w.ping.hostnames).length >= 20 ) {
+			if ( Object.keys(w.ping.hostnames).length >= 20 || w.adCache.length >= 40) {
 				driver('ping');
 			}
 

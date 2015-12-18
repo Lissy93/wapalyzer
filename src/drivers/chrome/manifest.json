@@ -1,7 +1,7 @@
 { "name": "Wappalyzer",
 	"homepage_url": "https://wappalyzer.com?pk_campaign=chrome&pk_kwd=context",
 	"description": "Identifies software on the web",
-	"version": "2.42",
+	"version": "2.43",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -21,7 +21,7 @@
 			"run_at": "document_idle"
 		}, {
 			"matches": [ "http://*/*", "https://*/*" ],
-			"js": [ "js/ad.js" ],
+			"js": [ "js/iframe.js" ],
 			"run_at": "document_start",
 			"all_frames": true
 		}],
