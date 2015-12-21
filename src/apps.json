@@ -822,6 +822,16 @@
       "website": "cibonfire.com",
       "icon": "Bonfire.png"
     },
+    "Bounce Exchange": {
+      "cats": [
+        32
+      ],
+      "env": "^bouncex$",
+      "html": "<script[^>]*>[^>]+\\.src\\s*=\\s*['\"](?:https?:)?//tag\\.bounceexchange\\.com/",
+      "script": "^https?://tag\\.bounceexchange\\.com/",
+      "website": "www.bounceexchange.com",
+      "icon": "Bounce Exchange.svg"
+    },
     "Brother": {
       "cats": [
         40
