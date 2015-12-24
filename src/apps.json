@@ -115,16 +115,27 @@
       "website": "www.aten.com",
       "icon": "ATEN.png"
     },
-    "ATG Web Commerce": {
+    "Oracle Commerce": {
       "cats": [
         6
       ],
       "headers": {
         "X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1"
       },
-      "html": "<[^>]+_DARGS",
-      "website": "oracle.com/us/products/applications/web-commerce/atg",
-      "icon": "ATG Web Commerce.png"
+      "html": "<[^>]+_dyncharset",
+      "website": "www.oracle.com/applications/customer-experience/commerce/products/commerce-platform/index.html",
+      "icon": "Oracle Commerce.png"
+    },
+    "Oracle Commerce Cloud": {
+      "cats": [
+        6
+      ],
+      "headers": {
+        "OracleCommerceCloud-Version": "(.*)\\;version:\\1"
+      },
+      "html": "<[^>]+id=\"oracle-cc\"",
+      "website": "cloud.oracle.com/commerce-cloud",
+      "icon": "Oracle Commerce Cloud.png"
     },
     "AWStats": {
       "cats": [
@@ -410,7 +421,7 @@
       "env": "^angular$",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+(\\-?rc[.\\d]*)*)/angular(\\.min)?\\.js\\;version:\\1",
+        "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "angular.*\\.js"
       ],
       "website": "angularjs.org",
@@ -497,9 +508,9 @@
       ],
       "excludes": "OpenCart",
       "headers": {
-        "Arastta": "([0-9.]+)\\;version:\\1"
+        "X-Arastta": ""
       },
-      "html": "Powered By <a href=\"[^>]+Arastta",
+      "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
       "implies": "PHP",
       "script": "arastta\\.js",
       "website": "arastta.org",
@@ -595,7 +606,7 @@
         13
       ],
       "env": "^jira$",
-      "html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\1",
+      "html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(?:\\.\\d+)?))?\\;version:\\1",
       "implies": "Java",
       "meta": {
         "ajs-version-number": "([\\d\\.]+)\\;version:\\1",
@@ -784,7 +795,7 @@
         12
       ],
       "implies": "Google Analytics",
-      "script": "boba(\\.min)?\\.js",
+      "script": "boba(?:\\.min)?\\.js",
       "website": "boba.space150.com",
       "icon": "Boba.js.png"
     },
@@ -1011,6 +1022,16 @@
       ],
       "website": "www.canon.com",
       "icon": "Canon HTTP Server.png"
+    },
+    "Captch Me": {
+      "cats": [
+        16,
+        36
+      ],
+      "env": "^Captchme",
+      "script": "^https?://api\\.captchme\\.net/",
+      "website": "captchme.com",
+      "icon": "Captch Me.svg"
     },
     "Carbon Ads": {
       "cats": [
@@ -1819,7 +1840,7 @@
       "cats": [
         36
       ],
-      "script": "googletagservices\\.com/tag/js/gpt(_mobile|)\\.js",
+      "script": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "website": "www.google.com/dfp",
       "icon": "DoubleClick for Publishers (DFP).png"
     },
@@ -2067,7 +2088,7 @@
       ],
       "html": "<link[^>]+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
       "implies": "D3",
-      "script": "epoch(\\.min)?\\.js",
+      "script": "epoch(?:\\.min)?\\.js",
       "website": "fastly.github.io/epoch",
       "icon": "Epoch.png"
     },
@@ -2085,7 +2106,7 @@
         27
       ],
       "headers": {
-        "Server": "Erlang( OTP/([\\-\\d\\.ABR]+))?\\;version:\\1"
+        "Server": "Erlang( OTP/(?:[\\-\\d\\.ABR]+))?\\;version:\\1"
       },
       "website": "www.erlang.org",
       "icon": "Erlang.png"
@@ -2805,7 +2826,7 @@
         12
       ],
       "env": "^Hammer$",
-      "script": "hammer(\\.min)?\\.js",
+      "script": "hammer(?:\\.min)?\\.js",
       "website": "hammerjs.github.io",
       "icon": "Hammer.js.png"
     },
@@ -2909,7 +2930,7 @@
       "env": "^Hogan$",
       "script": [
         "hogan-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "([\\d.]+)/hogan(\\.min)?\\.js\\;version:\\1"
+        "([\\d.]+)/hogan(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "twitter.github.com/hogan.js",
       "icon": "Hogan.js.png"
@@ -3642,7 +3663,7 @@
       "cats": [
         12
       ],
-      "script": "lazy(\\.browser)?(\\.min)?\\.js",
+      "script": "lazy(?:\\.browser)?(?:\\.min)?\\.js",
       "website": "danieltao.com/lazy.js",
       "icon": "Lazy.js.png"
     },
@@ -4008,6 +4029,16 @@
       "website": "mathjax.org",
       "icon": "MathJax.png"
     },
+    "MaxCDN": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "Server": "NetDNA"
+      },
+      "website": "www.maxcdn.com",
+      "icon": "MaxCDN.png"
+    },
     "MaxSite CMS": {
       "cats": [
         1
@@ -4216,7 +4247,7 @@
         1,
         6
       ],
-      "html": "(<script|link)[^>]*mg-(core|plugins|templates)",
+      "html": "(?:<script|link)[^>]*mg-(?:core|plugins|templates)",
       "implies": "PHP",
       "website": "moguta.ru",
       "icon": "Moguta.CMS.png"
@@ -4905,7 +4936,7 @@
       "html": "<\\/div>\\s*<!-- outerContainer -->\\s*<div\\s*id=\"printContainer\"><\\/div>",
       "url": "/web/viewer\\.html?file=[^&]\\.pdf",
       "website": "mozilla.github.io/pdf.js/",
-      "icon": "PDF.js.png"
+      "icon": "PDF.js.svg"
     },
     "PHP": {
       "cats": [
@@ -4971,7 +5002,7 @@
       "cats": [
         25
       ],
-      "script": "paths(\\.min)?\\.js",
+      "script": "paths(?:\\.min)?\\.js",
       "website": "github.com/andreaferretti/paths-js",
       "icon": "Paths.js.png"
     },
@@ -5430,7 +5461,7 @@
       "html": "<[^>]+data-react",
       "script": [
         "react(?:\\-with\\-addons)?(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/react(\\.min)?\\.js\\;version:\\1",
+        "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
         "react.*\\.js"
       ],
       "website": "facebook.github.io/react",
@@ -5492,7 +5523,7 @@
         22
       ],
       "headers": {
-        "Server": "^Resin(?:/(\\S*))?;version=\\1"
+        "Server": "^Resin(?:/(\\S*))?\\;version:\\1"
       },
       "implies": "Java",
       "website": "caucho.com",
@@ -5513,7 +5544,7 @@
       ],
       "env": "^Rickshaw$",
       "implies": "D3",
-      "script": "rickshaw(\\.min)?\\.js",
+      "script": "rickshaw(?:\\.min)?\\.js",
       "website": "code.shutterstock.com/rickshaw/",
       "icon": "Rickshaw.png"
     },
@@ -5531,7 +5562,7 @@
         12
       ],
       "env": "^riot$",
-      "script": "riot(?:\\+compiler)?(:?\\.min)?\\.js",
+      "script": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
       "website": "muut.com/riotjs",
       "icon": "Riot.png"
     },
@@ -5678,6 +5709,16 @@
       "implies": "Joomla",
       "website": "www.sigsiu.net/sobi2.html",
       "icon": "SOBI 2.png"
+    },
+    "Solve Media": {
+      "cats": [
+        16,
+        36
+      ],
+      "env": "^(?:_?ACPuzzle|adcopy-puzzle-image-image$)",
+      "script": "^https?://api\\.solvemedia\\.com/",
+      "website": "solvemedia.com",
+      "icon": "Solve Media.png"
     },
     "SPDY": {
       "cats": [
@@ -5939,6 +5980,22 @@
       "website": "shopify.com",
       "icon": "Shopify.png"
     },
+    "Shoptet": {
+      "cats": [
+        6
+      ],
+      "env": "^shoptet$",
+      "html": "<link [^>]*href=\"https?://cdn\\.myshoptet\\.com/",
+      "implies": "PHP",
+      "meta": {
+        "web_author": "^Shoptet"
+      },
+      "script": [
+        "^https?://cdn\\.myshoptet\\.com/"
+      ],
+      "website": "www.shoptet.cz",
+      "icon": "Shoptet.svg"
+    },
     "Shopware": {
       "cats": [
         6
@@ -6099,7 +6156,7 @@
         22
       ],
       "headers": {
-        "Server": "Snap/\\d+(\\.\\d+)+"
+        "Server": "Snap/([.\\d]+)\\;version:\\1"
       },
       "implies": "Haskell",
       "website": "snapframework.com",
@@ -6193,7 +6250,7 @@
       "cats": [
         19
       ],
-      "html": "<p class=\"footer\">&copy; [-\\d]+ Splunk Inc\\.(?: Splunk ([\\d\\.]+( build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1",
+      "html": "<p class=\"footer\">&copy; [-\\d]+ Splunk Inc\\.(?: Splunk ([\\d\\.]+(?: build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1",
       "meta": {
         "author": "Splunk Inc\\;confidence:50"
       },
@@ -6333,6 +6390,19 @@
       "website": "subrion.com",
       "icon": "Subrion.png"
     },
+    "SumoMe": {
+      "cats": [
+        5,
+        10,
+        32,
+        36,
+        47,
+        51
+      ],
+      "script": "load\\.sumome\\.com",
+      "website": "sumome.com",
+      "icon": "SumoMe.png"
+    },
     "SunOS": {
       "cats": [
         28
@@ -6359,7 +6429,7 @@
       ],
       "env": "^swal$",
       "html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
-      "script": "sweet-alert(\\.min)?\\.js",
+      "script": "sweet-alert(?:\\.min)?\\.js",
       "website": "tristanedwards.me/sweetalert",
       "icon": "SweetAlert.png"
     },
@@ -6402,7 +6472,8 @@
       "cats": [
         19
       ],
-      "html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)",
+      "env": "^SyntaxHighlighter$",
+      "html": "<(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)",
       "website": "github.com/syntaxhighlighter",
       "icon": "SyntaxHighlighter.png"
     },
@@ -6705,7 +6776,7 @@
         25
       ],
       "env": "^twemoji$",
-      "script": "twemoji(\\.min)?\\.js",
+      "script": "twemoji(?:\\.min)?\\.js",
       "website": "twitter.github.io/twemoji/",
       "icon": "Twitter Emoji (Twemoji).png"
     },
@@ -6724,7 +6795,7 @@
       ],
       "env": "^typeahead$",
       "implies": "jQuery\\;confidence:50",
-      "script": "(typeahead|bloodhound)(\\.jquery|\\.bundle)?(\\.min)?\\.js",
+      "script": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
       "website": "twitter.github.io/typeahead.js",
       "icon": "Twitter typeahead.js.png"
     },
@@ -7059,7 +7130,7 @@
       "env": "^Vue$",
       "script": [
         "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/vue(\\.min)?\\.js\\;version:\\1",
+        "/([\\d.]+)/vue(?:\\.min)?\\.js\\;version:\\1",
         "vue.*\\.js\\;confidence:20"
       ],
       "website": "vuejs.org",
@@ -7112,7 +7183,7 @@
         22
       ],
       "headers": {
-        "Server": "^Warp/(\\d+(?:\\.\\d+)+)?$;version:\\1"
+        "Server": "^Warp/(\\d+(?:\\.\\d+)+)?$\\;version:\\1"
       },
       "implies": "Haskell",
       "website": "www.stackage.org/package/warp",
@@ -7384,7 +7455,7 @@
       "cats": [
         38
       ],
-      "html": "<title>Wowza Media Server \\d+ ((\\w+ Edition )?\\d+\\.[\\d\\.]+( build\\d+)?)?\\;version:\\1",
+      "html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
       "website": "www.wowza.com",
       "icon": "Wowza Media Server.png"
     },
@@ -7412,7 +7483,7 @@
       "cats": [
         22
       ],
-      "html": "<title>XAMPP( Version ([\\d\\.]+))?</title>\\;version:\\1\\;confidence:90",
+      "html": "<title>XAMPP(?: Version ([\\d\\.]+))?</title>\\;version:\\1\\;confidence:90",
       "implies": [
         "Apache",
         "MySQL",
@@ -7452,7 +7523,7 @@
       "env": "^XRegExp$",
       "script": [
         "xregexp(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/xregexp(\\.min)?\\.js\\;version:\\1",
+        "/([\\d.]+)/xregexp(?:\\.min)?\\.js\\;version:\\1",
         "xregexp.*\\.js"
       ],
       "website": "xregexp.com",
@@ -7988,7 +8059,7 @@
       "env": "^jQuery$",
       "script": [
         "jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/jquery(\\.min)?\\.js\\;version:\\1",
+        "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js"
       ],
       "website": "jquery.com",
@@ -7999,7 +8070,7 @@
         26
       ],
       "implies": "jQuery",
-      "script": "jquery\\.mobile(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "script": "jquery\\.mobile(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "jquerymobile.com",
       "icon": "jQuery Mobile.png"
     },
@@ -8019,7 +8090,7 @@
       "implies": "jQuery",
       "script": [
         "jquery-ui(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "([\\d.]+)/jquery-ui(\\.min)?\\.js\\;version:\\1",
+        "([\\d.]+)/jquery-ui(?:\\.min)?\\.js\\;version:\\1",
         "jquery-ui.*\\.js"
       ],
       "website": "jqueryui.com",
@@ -8395,6 +8466,17 @@
       "website": "punbb.informer.com",
       "icon": "punBB.png"
     },
+    "PyroCMS": {
+      "cats": [
+        1
+      ],
+      "headers": {
+        "X-Streams-Distribution": "PyroCMS"
+      },
+      "implies": "Laravel",
+      "website": "pyrocms.com",
+      "icon": "PyroCMS.png"
+    },
     "reCAPTCHA": {
       "cats": [
         16
@@ -8437,7 +8519,7 @@
         25
       ],
       "env": "^Shine$",
-      "script": "shine(\\.min)?\\.js",
+      "script": "shine(?:\\.min)?\\.js",
       "website": "bigspaceship.github.io/shine.js/",
       "icon": "shine.js.png"
     },
@@ -8551,7 +8633,7 @@
       ],
       "env": "^vis$",
       "html": "<link[^>]+?href=\"[^\"]+vis(?:\\.min)?\\.css",
-      "script": "vis(\\.min)?\\.js",
+      "script": "vis(?:\\.min)?\\.js",
       "website": "visjs.org",
       "icon": "vis.js.png"
     },
@@ -8613,7 +8695,7 @@
       "env": "^yepnope$",
       "script": [
         "yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "([\\d.]+)/yepnope(\\.min)?\\.js\\;version:\\1",
+        "([\\d.]+)/yepnope(?:\\.min)?\\.js\\;version:\\1",
         "yepnope.*\\.js"
       ],
       "website": "yepnopejs.com",

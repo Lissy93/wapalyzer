@@ -1,5 +1,7 @@
 'use strict';
 
+(function(win) {
+
 var exports = {};
 
 (function(exports) {
@@ -76,6 +78,7 @@ var exports = {};
 		},
 
 		SCRIPT_IN_WINDOW_TOP: window === window.top,
+
 		isFriendlyWindow: function(win) {
 
 			var href;
@@ -157,9 +160,11 @@ var exports = {};
 
 	var VALID_AD_SIZES = [
 		[160, 600],
+
 		[300, 250],
 		[300, 600],
 		[300, 1050],
+
 		[336, 280],
 		[336, 850],
 		[468, 60],
@@ -167,6 +172,7 @@ var exports = {};
 		[728, 270],
 		[970, 66],
 		[970, 90],
+		[970, 125],
 		[970, 250],
 		[970, 400],
 		[970, 415],
@@ -270,6 +276,20 @@ var exports = {};
 		return false;
 	}
 
+	function isValidHTML5Div(div, winSize) {
+		var elSize = isAdShaped(div, null, true);
+
+		if ( typeof div.checks !== 'number' ) {
+			div.checks = 1;
+		} else {
+			div.checks += 1;
+		}
+
+		return (elSize &&
+				elSize[0] === winSize[0] && elSize[1] === winSize[1] &&
+				div.checks > 1);
+	}
+
 	var HTML5_SIGNAL_ELEMENTS = 'canvas, button, video, svg, img';
 	function iframeGetHTMLAd(win) {
 		var body = win.document.body,
@@ -305,7 +325,7 @@ var exports = {};
 		for ( i = 0; i < divs.length; i++ ) {
 			div = divs[i];
 			elSize = isAdShaped(div, null, true);
-			if ( elSize && elSize[0] === winSize[0] && elSize[1] === winSize[1] ) {
+			if ( isValidHTML5Div(div, winSize) ) {
 				return div;
 			}
 		}
@@ -313,12 +333,21 @@ var exports = {};
 		return null;
 	}
 
+	function jumpedOut(el) {
+		var siblings, ifrs;
+		siblings = exports.utils.realArray(el.parentNode.children);
+		ifrs = siblings.filter(function(el) {
+			return el.tagName === 'IFRAME' && el.offsetWidth === 0 && el.offsetHeight === 0;
+		});
+		return ifrs.length > 0;
+	}
+
 	function mainGetHTMLAd(win) {
 		var styles = win.document.querySelectorAll('div > style, div > link[rel="stylesheet"]'),
 			i, div;
 		for ( i = 0; i < styles.length; i++ ) {
 			div = styles[i].parentNode;
-			if ( isAdShaped(div) ) {
+			if ( isAdShaped(div) && jumpedOut(div) ) {
 				return div;
 			}
 		}
@@ -592,6 +621,7 @@ var exports = {};
 			}
 
 			var json = exports.parser.elementToJSON(el, elIsAd);
+			var childJSON;
 
 			if ( elIsAd ) {
 				json.adId = adId;
@@ -614,7 +644,10 @@ var exports = {};
 			});
 
 			for ( i = 0; i < children.length; i++ ) {
-				json.children.push(this.serializeElements(children[i]));
+				childJSON = this.serializeElements(children[i]);
+				if ( childJSON ) {
+					json.children.push(childJSON);
+				}
 			}
 
 			if ( el.tagName === 'IFRAME' ) {
@@ -628,11 +661,18 @@ var exports = {};
 
 				} else if ( exports.utils.isFriendlyWindow(ifrWin) ) {
 
-					json.contents = this.serializeElements(ifrWin.document.documentElement);
+					childJSON = this.serializeElements(ifrWin.document.documentElement);
+					if ( childJSON ) {
+						json.contents = childJSON;
+					}
 				}
 			}
 
-			return json;
+			if ( json.children.length > 0 || json.adId || json.tagName === 'IFRAME' || json.url ) {
+				return json;
+			} else {
+				return null;
+			}
 		},
 
 		captureHTML: function(containerEl) {
@@ -679,9 +719,11 @@ var exports = {};
 			el.left += winPos.left;
 			el.top += winPos.top;
 
-			el.children.forEach(function(child) {
-				this.setPositions(adData, child, winPos);
-			}, this);
+			if ( el.children ) {
+				el.children.forEach(function(child) {
+					this.setPositions(adData, child, winPos);
+				}, this);
+			}
 
 			if ( el.contents ) {
 				ifrPos = {left: el.left, top: el.top};
@@ -703,7 +745,7 @@ var exports = {};
 				highestContainer = mgr.highestContainer(curWin, referenceElement);
 				mgr.captureHTML(highestContainer);
 
-				if ( curWin === window.top ) {
+				if ( curWin === curWin.top ) {
 					break;
 				} else {
 					mgr.adData.serializedIframeContents = mgr.adData.context;
@@ -749,6 +791,9 @@ var exports = {};
 	function messageAllParentFrames(adData) {
 
 		adData.dummyId = true;
+
+		adData = JSON.stringify(adData);
+
 		var win = window;
 		while ( win !== win.top ) {
 			win = win.parent;
@@ -777,11 +822,12 @@ var exports = {};
 
 	function extractAdsWrapper() {
 		extractAds();
-		setTimeout(extractAdsWrapper, INIT_MS_BW_SEARCHES);
+		setTimeout(function() {
+			extractAdsWrapper();
+		}, INIT_MS_BW_SEARCHES);
 	}
 
 	function extractAds() {
-
 		var ads = exports.adfinder.findAds(window);
 
 		if ( !ads ) {
@@ -798,9 +844,7 @@ var exports = {};
 				height: ad.offsetHeight,
 				startTime: startTime,
 				adId: adId,
-
 				html5: ad.html5 || false,
-
 				inIframe: ad.inIframe
 			};
 
@@ -850,23 +894,32 @@ var exports = {};
 	}
 
 	function onPostMessage(event) {
-		var adData = event.data,
+		var adData,
 			ifrWin = event.source,
+
+			myWin = window.document.defaultView,
 			ifrTag;
+
+		try {
+
+			adData = JSON.parse(event.data);
+		} catch(e) {
+
+			return;
+		}
 
 		if ( adData.dummyId ) {
 
 			delete adData.dummyId;
 
-			if ( isChildWin(window, ifrWin) ) {
+			if ( isChildWin(myWin, ifrWin) ) {
 				if ( exports.utils.isFriendlyWindow(ifrWin) ) {
 					ifrTag = ifrWin.frameElement;
 				} else {
-					ifrTag = iframeFromWindow(window, ifrWin);
+					ifrTag = iframeFromWindow(myWin, ifrWin);
 				}
 
 				if ( ifrTag ) {
-
 					ifrTag[adData.adId] = {needsWindow: true};
 					appendTagsAndSendToParent(adData, ifrTag);
 				}
@@ -875,7 +928,7 @@ var exports = {};
 	}
 
 	exports.coordinator = {
-		init: function(onAdFound, onPage) {
+		init: function(onAdFound) {
 
 			if ( exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
 				return false;
@@ -885,7 +938,7 @@ var exports = {};
 
 			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 				var log = _logGen.log('page');
-				onPage(log);
+				onAdFound(log);
 			}
 
 			window.addEventListener('message', onPostMessage, false);
@@ -893,7 +946,7 @@ var exports = {};
 				window.addEventListener('beforeunload', function(event) {
 					var log = _logGen.log('unload');
 					log.timing = window.performance.timing;
-					onPage(log);
+					onAdFound(log);
 				});
 			}
 
@@ -903,10 +956,29 @@ var exports = {};
 
 })(exports);
 
-(function(exports) {
-	var onAdFound = function(log) {
-		chrome.extension.sendRequest({ id: 'ad_log', subject: log });
+if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
+	window.adparser = {
+		init: exports.coordinator.init,
 	};
+} else {
+	exports.coordinator.init(function() {});
+}
 
-	exports.coordinator.init(onAdFound, onAdFound);
-})(exports);
+})(window);
+(function(adparser) {
+	function sendToBackground(event, message) {
+		if ( window.self.port ) {
+			window.self.port.emit(event, message);
+		} else if ( typeof chrome !== 'undefined' ) {
+			chrome.extension.sendRequest(message);
+		}
+	}
+
+	function onAdFound(log) {
+		sendToBackground('ad_log', { id: 'ad_log', subject: log });
+	}
+
+	if ( window === window.top ) {
+		adparser.init(onAdFound);
+	}
+})(window.adparser);
