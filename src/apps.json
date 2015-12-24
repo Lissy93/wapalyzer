@@ -2122,7 +2122,8 @@
     },
     "Express": {
       "cats": [
-        18
+        18,
+        22
       ],
       "headers": {
         "X-Powered-By": "^Express$"
@@ -3504,7 +3505,8 @@
     },
     "Koa": {
       "cats": [
-        18
+        18,
+        22
       ],
       "headers": {
         "X-Powered-By": "^koa$"
@@ -5662,6 +5664,21 @@
       },
       "website": "www.sbuilder.ru",
       "icon": "S.Builder.png"
+    },
+    "Sails.js": {
+      "cats": [
+        18
+      ],
+      "headers": {
+        "Set-Cookie": "^sails\\.sid$",
+        "X-Powered-By": "^Sails$"
+      },
+      "implies": [
+        "node.js",
+        "Express"
+      ],
+      "website": "sailsjs.org",
+      "icon": "Sails.js.svg"
     },
     "SAP": {
       "cats": [
