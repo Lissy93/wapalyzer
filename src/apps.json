@@ -508,7 +508,8 @@
       ],
       "excludes": "OpenCart",
       "headers": {
-        "X-Arastta": ""
+        "Arastta": "(.*)\\;version:\\1",
+        "X-Arastta": "\\;version:1.2.1+"
       },
       "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
       "implies": "PHP",
