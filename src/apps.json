@@ -486,7 +486,8 @@
 			],
 			"excludes": "OpenCart",
 			"headers": {
-				"X-Arastta": ""
+				"Arastta": "(.*)\\;version:\\1",
+				"X-Arastta": "\\;version:1.2.1+"
 			},
 			"html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
 			"icon": "Arastta.png",
@@ -799,6 +800,16 @@
 			"icon": "Bonfire.png",
 			"implies": "CodeIgniter",
 			"website": "cibonfire.com"
+		},
+		"Bounce Exchange": {
+			"cats": [
+				32
+			],
+			"env": "^bouncex$",
+			"html": "<script[^>]*>[^>]+\\.src\\s*=\\s*['\"](?:https?:)?//tag\\.bounceexchange\\.com/",
+			"icon": "Bounce Exchange.svg",
+			"script": "^https?://tag\\.bounceexchange\\.com/",
+			"website": "www.bounceexchange.com"
 		},
 		"Brother": {
 			"cats": [
@@ -2100,7 +2111,8 @@
 		},
 		"Express": {
 			"cats": [
-				18
+				18,
+				22
 			],
 			"headers": {
 				"X-Powered-By": "^Express$"
@@ -3482,7 +3494,8 @@
 		},
 		"Koa": {
 			"cats": [
-				18
+				18,
+				22
 			],
 			"headers": {
 				"X-Powered-By": "^koa$"
@@ -3979,6 +3992,19 @@
 			"script": "\\/assets\\/js\\/manycontacts\\.min\\.js",
 			"website": "www.manycontacts.com"
 		},
+		"Marionette.js": {
+			"cats": [
+				12
+			],
+			"env": "^Marionette$",
+			"icon": "Marionette.js.svg",
+			"implies": [
+				"Underscore.js",
+				"Backbone.js"
+			],
+			"script": "backbone\\.marionette.*\\.js",
+			"website": "marionettejs.com"
+		},
 		"Marketo": {
 			"cats": [
 				32
@@ -4146,6 +4172,16 @@
 				"generator": "Microsoft SharePoint"
 			},
 			"website": "sharepoint.microsoft.com"
+		},
+		"Milligram": {
+			"cats": [
+				18
+			],
+			"html": [
+				"<link[^>]+?href=\"[^\"]+milligram(?:\\.min)?\\.css"
+			],
+			"icon": "Milligram.png",
+			"website": "milligram.github.io"
 		},
 		"MiniBB": {
 			"cats": [
@@ -5789,6 +5825,21 @@
 			"icon": "Saia PCD.png",
 			"website": "saia-pcd.com"
 		},
+		"Sails.js": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"Set-Cookie": "^sails\\.sid$",
+				"X-Powered-By": "^Sails$"
+			},
+			"icon": "Sails.js.svg",
+			"implies": [
+				"node.js",
+				"Express"
+			],
+			"website": "sailsjs.org"
+		},
 		"Sarka-SPIP": {
 			"cats": [
 				1
@@ -6599,18 +6650,13 @@
 				1,
 				6
 			],
-			"headers": {
-				"Set-Cookie": "thelia_cart="
-			},
+			"html": "<(?:link|style|script)[^>]+/assets/frontOffice/",
 			"icon": "Thelia.png",
 			"implies": [
 				"PHP",
 				"Symfony"
 			],
-			"meta": {
-				"generator": "Thelia v([\\d.]+)\\;version:\\1"
-			},
-			"website": "www.thelia.net"
+			"website": "thelia.net"
 		},
 		"TiddlyWiki": {
 			"cats": [
@@ -7853,9 +7899,9 @@
 			"cats": [
 				12
 			],
-			"env": "^basket$",
+			"env": "^basket$\\;confidence:20",
 			"icon": "basket.js.png",
-			"script": "basket.*\\.js",
+			"script": "basket.*\\.js\\;confidence:10",
 			"website": "addyosmani.github.io/basket.js/"
 		},
 		"cPanel": {
