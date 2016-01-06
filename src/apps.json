@@ -872,7 +872,10 @@
         2
       ],
       "html": "<a href=\"[^>]+woltlab\\.com[^<]+<strong>Burning Board",
-      "implies": "PHP",
+      "implies": [
+      	"PHP",
+      	"Woltlab Community Framework"
+      ],
       "website": "www.woltlab.com",
       "icon": "Burning Board.png"
     },
@@ -8655,6 +8658,15 @@
       "env": "^webpackJsonp$",
       "website": "webpack.github.io",
       "icon": "webpack.png"
+    },
+    "Woltlab Community Framework": {
+      "cats": [
+        18
+      ],
+      "script": [],
+      "implies": "PHP",
+      "website": "www.woltlab.com",
+      "icon": "Burning Board.png"
     },
     "xCharts": {
       "cats": [
