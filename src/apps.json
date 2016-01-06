@@ -4013,6 +4013,19 @@
       "website": "www.manycontacts.com",
       "icon": "ManyContacts.png"
     },
+    "Marionette.js": {
+      "cats": [
+        12
+      ],
+      "env": "^Marionette$",
+      "implies": [
+        "Underscore.js",
+        "Backbone.js"
+      ],
+      "script": "backbone\\.marionette.*\\.js",
+      "website": "marionettejs.com",
+      "icon": "Marionette.js.svg"
+    },
     "Marketo": {
       "cats": [
         32
