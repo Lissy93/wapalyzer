@@ -7887,8 +7887,8 @@
       "cats": [
         12
       ],
-      "env": "^basket$",
-      "script": "basket.*\\.js",
+      "env": "^basket$\\;confidence:20",
+      "script": "basket.*\\.js\\;confidence:10",
       "website": "addyosmani.github.io/basket.js/",
       "icon": "basket.js.png"
     },
