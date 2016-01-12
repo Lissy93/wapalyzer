@@ -17,11 +17,11 @@ jsonlint -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
 
 echo "Compressing PNG icons..."
 
-imagemin $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons -o 3
+imagemin $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons -o 7
 
 echo "Compressing SVG icons..."
 
-svgo -f $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons
+svgo -q -f $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons
 
 wappalyzer links
 
