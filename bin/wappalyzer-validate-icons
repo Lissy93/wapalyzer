@@ -31,7 +31,11 @@ for (app in json.apps) {
 			if (exists) {
         if (type === "PNG") {
           var buffer = fileType(readChunk.sync(path, 0, 262));
-          if (buffer.mime !== 'image/png') {
+          if (buffer === null) {
+            var err = new Error('Unknown mimetype or bad file for "' + app + '": src/icons/' + iconPath);
+            throw err;
+          }
+          else if (buffer.mime !== 'image/png') {
             var err = new Error('Incorrect mimetype "' + buffer.mime + '" when expected PNG for app "' + app + '": src/icons/' + iconPath);
             throw err;
           }

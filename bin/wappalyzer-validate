@@ -27,7 +27,7 @@ path="$path/src"
 
 echo "Validating apps.json..."
 
-jsonlint --quiet -V $WAPPALYZER_ROOT/schema.json $path/apps.json
+node $WAPPALYZER_NODE_PATH/node_modules/jsonlint/lib/cli.js --quiet -V $WAPPALYZER_ROOT/schema.json $path/apps.json
 
 echo "Validating regular expressions..."
 
