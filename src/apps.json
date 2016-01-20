@@ -8663,7 +8663,7 @@
       "cats": [
         18
       ],
-      "html": "var WCF_PATH.*",
+      "html": "var WCF_PATH[^>]+",
       "script": "WCF\\..*\\.js",
       "implies": "PHP",
       "website": "www.woltlab.com",
