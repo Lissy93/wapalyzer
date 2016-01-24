@@ -417,6 +417,21 @@
 			],
 			"website": "angularjs.org"
 		},
+		"Angular Material": {
+		  "cats": [
+			18
+		  ],
+		  "env": "^angular$",
+		  "icon": "Angular.svg",
+		  "implies": [
+			"AngularJS"
+		  ],
+		  "script": [
+			"/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
+			"angular-material.*\\.js"
+		  ],
+		  "website": "material.angularjs.org"
+		},
 		"Apache": {
 			"cats": [
 				22
