@@ -6109,6 +6109,7 @@
 			"meta": {
 				"application-name": "Shopware"
 			},
+			"html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1\\;confidence:90",
 			"script": "(?:(shopware)|/web/cache/[0-9]{10}_.+)\\.js\\;version:\\1?4:5",
 			"website": "shopware.com"
 		},
