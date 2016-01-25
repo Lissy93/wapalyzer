@@ -4,9 +4,6 @@
       "cats": [
         6
       ],
-      "headers": {
-        "X-Powered-By": "epages 6"
-      },
       "html": "<a href=\"http://www.strato.de/\" target=\"_blank\">",
       "website": "shop.strato.com",
       "icon": "strato.png"
@@ -15,10 +12,9 @@
       "cats": [
         6
       ],
-      "headers": {
-        "X-Powered-By": "PHP/5.4.45-nmm1"
+      "meta": {
+        "generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www.modified-shop.org"
       },
-      "html": "mod</span><span class=\"cop_grey\">ified eCommerce Shopsoftware &copy",
       "icon": "modified.png",
       "website": "www.modified-shop.org/"
     },
@@ -34,13 +30,13 @@
       "icon": "mietshop.png"
     },
     "EPages": {
+      "headers": {
+        "X-Powered-By": "epages 6"
+      },
       "cats": [
         6
       ],
-      "meta": {
-        "keywords": "srv/epages/eproot/Cartridges"
-      },
-      "script": "ep_base.js",
+      "script": "config\\(\"ep\"",
       "website": "www.epages.com/",
       "icon": "epages.png"
     },
