@@ -8751,6 +8751,16 @@
 			"icon": "webpack.png",
 			"website": "webpack.github.io"
 		},
+		"Woltlab Community Framework": {
+		        "cats": [
+		          18
+		        ],
+		        "html": "var WCF_PATH[^>]+",
+		        "script": "WCF\\..*\\.js",
+		        "implies": "PHP",
+		        "website": "www.woltlab.com",
+		        "icon": "Woltlab Community Framework.png"
+	       },
 		"xCharts": {
 			"cats": [
 				25
