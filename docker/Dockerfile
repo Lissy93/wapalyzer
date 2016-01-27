@@ -32,7 +32,7 @@ RUN su wappalyzer -c "mkdir $WAPPALYZER_NODE_PATH"
 
 ADD node/package.json $WAPPALYZER_NODE_PATH/package.json
 
-RUN npm install jsonlint jpm imagemin-cli svgo -g && su wappalyzer -c "cd $WAPPALYZER_NODE_PATH && npm install"
+RUN su wappalyzer -c "cd $WAPPALYZER_NODE_PATH && npm i"
 
 
 # PhantomJS
