@@ -889,7 +889,10 @@
 			],
 			"html": "<a href=\"[^>]+woltlab\\.com[^<]+<strong>Burning Board",
 			"icon": "Burning Board.png",
-			"implies": "PHP",
+			"implies": [
+				"PHP",
+				"Woltlab Community Framework"
+			],
 			"website": "www.woltlab.com"
 		},
 		"Business Catalyst": {
