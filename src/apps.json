@@ -1,5 +1,68 @@
 {
 	"apps": {
+    "Strato": {
+      "cats": [
+        6
+      ],
+      "html": "<a href=\"http://www.strato.de/\" target=\"_blank\">",
+      "website": "shop.strato.com",
+      "icon": "strato.png"
+    },
+    "Modified": {
+      "cats": [
+        6
+      ],
+      "meta": {
+        "generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www.modified-shop.org"
+      },
+      "icon": "modified.png",
+      "website": "www.modified-shop.org/"
+    },
+    "Mietshop": {
+      "cats": [
+        6
+      ],
+      "meta": {
+        "generator": "Mietshop"
+      },
+      "html": "<a href=\"https://ssl.mietshop.d",
+      "website": "www.mietshop.de/",
+      "icon": "mietshop.png"
+    },
+    "EPages": {
+      "headers": {
+        "X-Powered-By": "epages 6"
+      },
+      "cats": [
+        6
+      ],
+      "html": "<div class=\"BoxContainer\">",
+      "website": "www.epages.com/",
+      "icon": "epages.png"
+    },
+    "AfterBuy": {
+        "cats": [
+          6
+        ],
+        "html": [
+          "<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy. Information and contribution at https://www.afterbuy.de</dd>"
+        ],
+        "icon": "after-buy.png",
+        "script": "shop-static\\.afterbuy\\.de",
+        "website": "www.afterbuy.de"
+      },
+    "Xonic": {
+        "cats": [
+          6
+        ],
+        "html": ["Powered by <a href=\"http://www.xonic-solutions.de/index.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>"],
+        "meta": {
+          "keywords": "xonic-solutions"
+        },
+        "script": "core/jslib/jquery\\.xonic\\.js\\.php",
+        "website": "www.xonic-solutions.de",
+        "icon": "xonic.png"
+      },
 		"1C-Bitrix": {
 			"cats": [
 				1
