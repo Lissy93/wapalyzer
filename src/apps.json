@@ -8682,7 +8682,7 @@
 			"env": "^analytics$",
 			"icon": "Segment.png",
 			"script": "cdn\\.segment\\.com/analytics\\.js",
-			"html": "cdn\\.segment\\.com/analytics\\.js",
+			"html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics.js[\\s\\S]*script>",
 			"website": "segment.com"
 		},
 		"shine.js": {
