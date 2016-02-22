@@ -8901,6 +8901,21 @@
 			"icon": "List.js.png",
 			"script": "^list\\.(?:min\\.)?js$",
 			"website": "www.listjs.com"
+		},
+		"Shopery": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"X-Shopery": ""
+			},
+			"icon": "Shopery.svg",
+			"implies": [
+				"PHP",
+				"Symfony",
+				"Elcodi"
+			],
+			"website": "shopery.com"
 		}
 	},
 	"categories": {
