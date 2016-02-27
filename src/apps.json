@@ -8733,19 +8733,6 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
-		},
-		"yepnope.js": {
-			"cats": [
-				12
-			],
-			"env": "^yepnope$",
-			"icon": "yepnope.js.png",
-			"script": [
-				"yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-				"([\\d.]+)/yepnope(?:\\.min)?\\.js\\;version:\\1",
-				"yepnope.*\\.js"
-			],
-			"website": "yepnopejs.com"
 		}
 	},
 	"categories": {
