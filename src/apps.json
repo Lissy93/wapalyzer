@@ -4533,7 +4533,7 @@
 				1
 			],
 			"icon": "MotoCMS.svg",
-            "script": ".*\\/mt-includes\\/(assets|js)\\/.*\\.js.*",
+            "script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
             "html": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
             "implies": [
               "PHP",
