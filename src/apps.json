@@ -4534,7 +4534,7 @@
 			],
 			"icon": "MotoCMS.svg",
             "script": ".*\\/mt-includes\\/(assets|js)\\/.*\\.js.*",
-            "html": "<link [^>]*href=\".*\\/mt-content\\/.*\\.css",
+            "html": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
             "implies": [
               "PHP",
               "AngularJS",
