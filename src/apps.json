@@ -4528,6 +4528,20 @@
 			"icon": "default.png",
 			"website": "lavrsen.dk/foswiki/bin/view/Motion"
 		},
+		"MotoCMS": {
+			"cats": [
+				1
+			],
+			"icon": "MotoCMS.svg",
+			"script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
+			"html": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
+			"implies": [
+				"PHP",
+				"AngularJS",
+				"jQuery"
+			],
+			"website": "motocms.com"
+		},
 		"Movable Type": {
 			"cats": [
 				1
