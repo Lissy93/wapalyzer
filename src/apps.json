@@ -5447,6 +5447,18 @@
 			"script": "protovis.*\\.js",
 			"website": "mbostock.github.com/protovis"
 		},
+		"Public CMS": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"Set-Cookie": "PUBLICCMS_USER",
+				"X-Powered-PublicCMS": ""
+			},
+			"icon": "Public CMS.png",
+			"implies": "Java",
+			"website": "www.publiccms.com"
+		},
 		"PubMatic": {
 			"cats": [
 				36
@@ -6685,6 +6697,17 @@
 			"html": "<(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)",
 			"icon": "SyntaxHighlighter.png",
 			"website": "github.com/syntaxhighlighter"
+		},
+		"ThinkPHP": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"X-Powered-By": "ThinkPHP"
+			},
+			"implies": "PHP",
+			"icon": "ThinkPHP.png",
+			"website": "www.thinkphp.cn"
 		},
 		"TWiki": {
 			"cats": [
