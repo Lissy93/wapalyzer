@@ -1332,7 +1332,7 @@
 			"headers": {
 				"Server": "cloudflare"
 			},
-			"icon": "CloudFlare.png",
+			"icon": "CloudFlare.svg",
 			"website": "www.cloudflare.com"
 		},
 		"Cloudera": {
@@ -1837,7 +1837,7 @@
 			],
 			"env": "^DISQUS",
 			"html": "<div[^>]+id=\"disqus_thread\"",
-			"icon": "Disqus.png",
+			"icon": "Disqus.svg",
 			"script": "disqus_url",
 			"website": "disqus.com"
 		},
@@ -2570,7 +2570,7 @@
 			"headers": {
 				"Set-cookie": "_gitlab_session"
 			},
-			"icon": "GitLab.png",
+			"icon": "GitLab.svg",
 			"implies": [
 				"Ruby",
 				"Ruby on Rails"
@@ -2640,7 +2640,7 @@
 				"^__google_ad_",
 				"^Goog_AdSense_"
 			],
-			"icon": "Google AdSense.png",
+			"icon": "Google AdSense.svg",
 			"script": [
 				"googlesyndication\\.com/",
 				"ad\\.ca\\.doubleclick\\.net",
@@ -2657,7 +2657,7 @@
 			"headers": {
 				"Set-Cookie": "__utma"
 			},
-			"icon": "Google Analytics.png",
+			"icon": "Google Analytics.svg",
 			"script": "^https?://[^\\/]+\\.google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?UA:",
 			"website": "google.com/analytics"
 		},
@@ -4639,7 +4639,7 @@
 			"cats": [
 				34
 			],
-			"icon": "MySQL.png",
+			"icon": "MySQL.svg",
 			"website": "mysql.com"
 		},
 		"Mynetcap": {
@@ -4740,7 +4740,7 @@
 			"headers": {
 				"Server": "nginx(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Nginx.png",
+			"icon": "Nginx.svg",
 			"website": "nginx.org"
 		},
 		"OWL Carousel": {
@@ -7264,7 +7264,7 @@
 				"X-Varnish-Cache": "",
 				"X-Varnish-Hostname": ""
 			},
-			"icon": "Varnish.png",
+			"icon": "Varnish.svg",
 			"website": "www.varnish-cache.org"
 		},
 		"Venda": {
@@ -7695,7 +7695,7 @@
 				"<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)",
 				"<link[^>]+s\\d+\\.wp\\.com"
 			],
-			"icon": "WordPress.png",
+			"icon": "WordPress.svg",
 			"implies": "PHP",
 			"meta": {
 				"generator": "WordPress( [\\d.]+)?\\;version:\\1"
@@ -8318,7 +8318,7 @@
 				12
 			],
 			"env": "^jQuery$",
-			"icon": "jQuery.png",
+			"icon": "jQuery.svg",
 			"script": [
 				"jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
@@ -8330,7 +8330,7 @@
 			"cats": [
 				26
 			],
-			"icon": "jQuery Mobile.png",
+			"icon": "jQuery Mobile.svg",
 			"implies": "jQuery",
 			"script": "jquery\\.mobile(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
 			"website": "jquerymobile.com"
@@ -8348,7 +8348,7 @@
 			"cats": [
 				12
 			],
-			"icon": "jQuery UI.png",
+			"icon": "jQuery UI.svg",
 			"implies": "jQuery",
 			"script": [
 				"jquery-ui(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -8913,7 +8913,7 @@
 				44
 			],
 			"env": "^webpackJsonp$",
-			"icon": "webpack.png",
+			"icon": "webpack.svg",
 			"website": "webpack.github.io"
 		},
 		"Woltlab Community Framework": {
