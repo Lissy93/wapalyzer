@@ -5445,14 +5445,13 @@
 			"cats": [
 				6
 			],
-			"html":
-			[
-				"Powered by <a\\s+[^>]+>PrestaShop",
-				"<script[^>]+(?:[^<]|<(?!\/script>))*?freeProductTranslation[^>]+(?:<\/script>|]]>)\\;confidence:25",
-				"<script[^>]+(?:[^<]|<(?!\/script>))*?freeProductTranslation[^>]+(?:<\/script>|]]>)\\;confidence:25",
-				"<script[^>]+(?:[^<]|<(?!\/script>))*?priceDisplayMethod[^>]+(?:<\/script>|]]>)\\;confidence:25",
-				"<script[^>]+(?:[^<]|<(?!\/script>))*?priceDisplayPrecision[^>]+(?:<\/script>|]]>)\\;confidence:25"
+			"env": [
+				"^freeProductTranslation$\\;confidence:25",
+				"^freeProductTranslation$\\;confidence:25",
+				"^priceDisplayMethod$\\;confidence:25",
+				"^priceDisplayPrecision$\\;confidence:25"
 			],
+			"html":"Powered by <a\\s+[^>]+>PrestaShop",
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
 			"meta": {
