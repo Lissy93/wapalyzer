@@ -5445,7 +5445,14 @@
 			"cats": [
 				6
 			],
-			"html": "Powered by <a\\s+[^>]+>PrestaShop",
+			"html":
+			[
+				"Powered by <a\\s+[^>]+>PrestaShop",
+				"freeProductTranslation\\;confidence:25",
+				"freeShippingTranslation\\;confidence:25",
+				"priceDisplayMethod\\;confidence:25",
+				"priceDisplayPrecision\\;confidence:25"
+			],
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
 			"meta": {
