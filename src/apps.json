@@ -5448,10 +5448,10 @@
 			"html":
 			[
 				"Powered by <a\\s+[^>]+>PrestaShop",
-				"<script>(?>(?!</?script>).)*(freeProductTranslation)(?>(?!</?script>).)*</script>",
-				"<script>(?>(?!</?script>).)*(freeProductTranslation)(?>(?!</?script>).)*</script>",
-				"<script>(?>(?!</?script>).)*(priceDisplayMethod)(?>(?!</?script>).)*</script>",
-				"<script>(?>(?!</?script>).)*(priceDisplayPrecision)(?>(?!</?script>).)*</script>"
+				"<script>(?:[^<]|<(?!\/script>))*?(freeProductTranslation).*?<\/script>",
+				"<script>(?:[^<]|<(?!\/script>))*?(freeProductTranslation).*?<\/script>",
+				"<script>(?:[^<]|<(?!\/script>))*?(priceDisplayMethod).*?<\/script>",
+				"<script>(?:[^<]|<(?!\/script>))*?(priceDisplayPrecision).*?<\/script>"
 			],
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
