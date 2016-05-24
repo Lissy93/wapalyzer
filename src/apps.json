@@ -4094,17 +4094,21 @@
 		},
 		"Magento": {
 			"cats": [
-				6
+			  6
 			],
-			"env": "^(?:Mage|VarienForm)$",
+			"env": [
+			  "^(?:Mage|VarienForm)$"
+			],
 			"headers": {
-				"Set-Cookie": "frontend=\\;confidence:50"
+			  "Set-Cookie": "frontend=\\;confidence:50"
 			},
+			"html": "<script [^>]*type=\"[^\"]+text/x-magento-init\\;version:\\2",
 			"icon": "Magento.png",
 			"implies": "PHP",
 			"script": [
-				"js/mage",
-				"skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community"
+			  "js/mage",
+			  "skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community",
+			  "static/_requirejs\\;confidence:50\\;version:\\2"
 			],
 			"website": "www.magentocommerce.com"
 		},
