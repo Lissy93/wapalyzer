@@ -24,7 +24,7 @@ This section describes how to set up a development environment. Everything you
 need is contained in a [Docker image](https://registry.hub.docker.com/u/wappalyzer/dev/)
 which is managed by Vagrant.
 
-Running this environment optional but recommended as it provides some helpful tools.
+Running this environment is optional but recommended as it provides some helpful tools.
 
 First, install [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/)
 on your system.
