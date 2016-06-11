@@ -6159,12 +6159,17 @@
 			"icon": "Sentinel Protection Server.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
-		"Seoshop": {
+		"Lightspeed eCom": {
 			"cats": [
 				6
 			],
-			"html": "<a[^>]+title=\"SEOshop",
+			"html": [
+				"<a[^>]+title=\"Lightspeed(.*)back office",
+				"blocks/head.rain",
+				"SEOshop Group B\\.V\\."
+			],
 			"icon": "Seoshop.png",
+			"url": "seoshop.webshopapp.com",
 			"website": "getseoshop.com"
 		},
 		"Serendipity": {
