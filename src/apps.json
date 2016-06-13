@@ -775,6 +775,14 @@
 			"implies": "Python",
 			"website": "docs.python.org/2/library/basehttpserver.html"
 		},
+		"BEM": {
+			"cats": [
+				12
+			],
+			"html": "<[^>]+data-bem",
+			"icon": "BEM.png",
+			"website": "www.en.bem.info"
+		},
 		"BigDump": {
 			"cats": [
 				3
@@ -3092,6 +3100,17 @@
 			"icon": "Hybris.png",
 			"implies": "Java",
 			"website": "hybris.com"
+		},
+		"Hugo": {
+			"cats": [
+				1,
+				11
+			],
+			"icon": "Hugo.png",
+			"meta": {
+				"generator": "Hugo ([\\d.]+)?\\;version:\\1"
+			},
+			"website": "gohugo.io"
 		},
 		"IBM Coremetrics": {
 			"cats": [
@@ -5445,7 +5464,13 @@
 			"cats": [
 				6
 			],
-			"html": "Powered by <a\\s+[^>]+>PrestaShop",
+			"env": [
+				"^freeProductTranslation$\\;confidence:25",
+				"^freeProductTranslation$\\;confidence:25",
+				"^priceDisplayMethod$\\;confidence:25",
+				"^priceDisplayPrecision$\\;confidence:25"
+			],
+			"html":"Powered by <a\\s+[^>]+>PrestaShop",
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
 			"meta": {
@@ -5462,6 +5487,13 @@
 			"icon": "Project Wonderful.png",
 			"script": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
 			"website": "projectwonderful.com"
+		},
+		"Prospector": {
+		    "website": "prospector.io",
+		    "cats":    [ 36 ],
+		    "html":    "<[^>]+data-name=['\"]prospectscript",
+		    "script":  "processprospector\\.js",
+		    "icon": "Prospector.png"
 		},
 		"Prototype": {
 			"cats": [
@@ -6073,7 +6105,7 @@
 			"cats": [
 				12
 			],
-			"icon": "default.png",
+			"icon": "Select2.png",
 			"implies": "jQuery",
 			"script": "select2.*\\.js",
 			"website": "select2.github.io"
@@ -6127,13 +6159,15 @@
 			"icon": "Sentinel Protection Server.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
-		"Seoshop": {
+		"Lightspeed eCom": {
 			"cats": [
 				6
 			],
-			"html": "<a[^>]+title=\"SEOshop",
-			"icon": "Seoshop.png",
-			"website": "getseoshop.com"
+			"html": "<!-- \\[START\\] 'blocks/head.rain' -->",
+			"icon": "Lightspeed.svg",
+			"url": "seoshop.webshopapp.com",
+			"script": "http://assets.webshopapp.com",
+			"website": "www.lightspeedhq.com/products/ecommerce/"
 		},
 		"Serendipity": {
 			"cats": [
@@ -6209,7 +6243,7 @@
 			],
 			"env": "^Shopify$",
 			"html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
-			"icon": "Shopify.png",
+			"icon": "Shopify.svg",
 			"website": "shopify.com"
 		},
 		"Shoptet": {
@@ -7163,7 +7197,7 @@
 			],
 			"icon": "Underscore.js.png",
 			"script": "underscore.*\\.js",
-			"website": "documentcloud.github.com/underscore"
+			"website": "underscorejs.org"
 		},
 		"UserRules": {
 			"cats": [
@@ -8803,6 +8837,20 @@
 			"icon": "swift.engine.png",
 			"website": "mittec.ru/default"
 		},
+		"Sulu": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"X-Generator": "Sulu/?(.+)?$\\;version:\\1"
+			},
+			"icon": "Sulu.svg",
+			"implies": [
+				"PHP",
+				"Symfony"
+			],
+			"website": "sulu.io"
+		},
 		"three.js": {
 			"cats": [
 				25
@@ -8957,19 +9005,6 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
-		},
-		"yepnope.js": {
-			"cats": [
-				12
-			],
-			"env": "^yepnope$",
-			"icon": "yepnope.js.png",
-			"script": [
-				"yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-				"([\\d.]+)/yepnope(?:\\.min)?\\.js\\;version:\\1",
-				"yepnope.*\\.js"
-			],
-			"website": "yepnopejs.com"
 		},
 		"List.js": {
 			"cats": [
