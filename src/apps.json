@@ -1,5 +1,68 @@
 {
-	"apps": {
+  "apps": {
+    "Strato": {
+      "cats": [
+        6
+      ],
+      "html": "<a href=\"http://www.strato.de/\" target=\"_blank\">",
+      "website": "shop.strato.com",
+      "icon": "strato.png"
+    },
+    "Modified": {
+      "cats": [
+        6
+      ],
+      "meta": {
+        "generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www.modified-shop.org"
+      },
+      "icon": "modified.png",
+      "website": "www.modified-shop.org/"
+    },
+    "Mietshop": {
+      "cats": [
+        6
+      ],
+      "meta": {
+        "generator": "Mietshop"
+      },
+      "html": "<a href=\"https://ssl.mietshop.d",
+      "website": "www.mietshop.de/",
+      "icon": "mietshop.png"
+    },
+    "EPages": {
+      "headers": {
+        "X-Powered-By": "epages 6"
+      },
+      "cats": [
+        6
+      ],
+      "html": "<div class=\"BoxContainer\">",
+      "website": "www.epages.com/",
+      "icon": "epages.png"
+    },
+    "AfterBuy": {
+        "cats": [
+          6
+        ],
+        "html": [
+          "<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy. Information and contribution at https://www.afterbuy.de</dd>"
+        ],
+        "icon": "after-buy.png",
+        "script": "shop-static\\.afterbuy\\.de",
+        "website": "www.afterbuy.de"
+      },
+    "Xonic": {
+        "cats": [
+          6
+        ],
+        "html": ["Powered by <a href=\"http://www.xonic-solutions.de/index.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>"],
+        "meta": {
+          "keywords": "xonic-solutions"
+        },
+        "script": "core/jslib/jquery\\.xonic\\.js\\.php",
+        "website": "www.xonic-solutions.de",
+        "icon": "xonic.png"
+      },
 		"1C-Bitrix": {
 			"cats": [
 				1
@@ -65,6 +128,28 @@
 			"icon": "3ware.png",
 			"website": "www.3ware.com"
 		},
+		"a-blog cms": {
+			"cats": [
+				1
+			],
+			"icon": "a-blog cms.png",
+			"implies": "PHP",
+			"meta": {
+				"generator": "a-blog cms"
+			},
+			"website": "www.a-blogcms.jp"
+		},
+               "anchorCache": {
+                             "cats": [
+                                23
+                        ],
+                        "meta": {
+	                        "generator": "anchorCache"
+	                },
+                        "icon": "anchorCache.png",
+                        "implies": "PHP",
+                        "website": "www.anchorcache.eu"
+                },
 		"AMPcms": {
 			"cats": [
 				1
@@ -293,17 +378,6 @@
 			],
 			"website": "blogengine.ru"
 		},
-		"AfterBuy": {
-			"cats": [
-				6
-			],
-			"html": [
-				"<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy. Information and contribution at https://www.afterbuy.de</dd>"
-			],
-			"icon": "after-buy.png",
-			"script": "shop-static\\.afterbuy\\.de",
-			"website": "www.afterbuy.de"
-		},
 		"Airee": {
 			"cats": [
 				31
@@ -403,21 +477,6 @@
 			},
 			"website": "anchorcms.com"
 		},
-		"Angular Material": {
-			"cats": [
-				18
-			],
-			"env": "^angular$",
-			"icon": "Angular.svg",
-			"implies": [
-				"AngularJS"
-			],
-			"script": [
-				"/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
-				"angular-material.*\\.js"
-			],
-			"website": "material.angularjs.org"
-		},
 		"AngularJS": {
 			"cats": [
 				12
@@ -430,6 +489,21 @@
 				"angular.*\\.js"
 			],
 			"website": "angularjs.org"
+		},
+		"Angular Material": {
+		  "cats": [
+			18
+		  ],
+		  "env": "^angular$",
+		  "icon": "Angular.svg",
+		  "implies": [
+			"AngularJS"
+		  ],
+		  "script": [
+			"/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
+			"angular-material.*\\.js"
+		  ],
+		  "website": "material.angularjs.org"
 		},
 		"Apache": {
 			"cats": [
@@ -642,14 +716,6 @@
 			"script": "^https?://edge\\.avangate\\.net/",
 			"website": "avangate.com"
 		},
-		"BEM": {
-			"cats": [
-				12
-			],
-			"html": "<[^>]+data-bem",
-			"icon": "BEM.png",
-			"website": "www.en.bem.info"
-		},
 		"BIGACE": {
 			"cats": [
 				1
@@ -709,6 +775,14 @@
 			"implies": "Python",
 			"website": "docs.python.org/2/library/basehttpserver.html"
 		},
+		"BEM": {
+			"cats": [
+				12
+			],
+			"html": "<[^>]+data-bem",
+			"icon": "BEM.png",
+			"website": "www.en.bem.info"
+		},
 		"BigDump": {
 			"cats": [
 				3
@@ -721,13 +795,13 @@
 			],
 			"website": "www.ozerov.de/bigdump.php"
 		},
-		"BigCommerce": {
+		"Bigcommerce": {
 			"cats": [
 				6
 			],
 			"env": "^compareProducts$",
 			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/v",
-			"icon": "BigCommerce.svg",
+			"icon": "Bigcommerce.png",
 			"script": "cdn\\d+\\.bigcommerce\\.com/v",
 			"url": "mybigcommerce\\.com",
 			"website": "www.bigcommerce.com"
@@ -928,6 +1002,16 @@
 			"icon": "C++.png",
 			"website": "isocpp.org"
 		},
+		"Caddy": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "^Caddy$"
+			},
+			"icon": "caddy.svg",
+			"website": "caddyserver.com"
+		},
 		"CFML": {
 			"cats": [
 				27
@@ -1014,16 +1098,6 @@
 			},
 			"icon": "CacheFly.png",
 			"website": "www.cachefly.com"
-		},
-		"Caddy": {
-			"cats": [
-				22
-			],
-			"headers": {
-				"Server": "^Caddy$"
-			},
-			"icon": "caddy.svg",
-			"website": "caddyserver.com"
 		},
 		"CakePHP": {
 			"cats": [
@@ -1978,17 +2052,6 @@
 			"implies": "ELOG",
 			"website": "midas.psi.ch/elog"
 		},
-		"EPages": {
-			"cats": [
-				6
-			],
-			"headers": {
-				"X-Powered-By": "epages 6"
-			},
-			"html": "<div class=\"BoxContainer\">",
-			"icon": "epages.png",
-			"website": "www.epages.com/"
-		},
 		"EPiServer": {
 			"cats": [
 				1
@@ -2879,17 +2942,6 @@
 			"icon": "default.png",
 			"website": "???"
 		},
-		"HTTP/2": {
-			"cats": [
-				19
-			],
-			"excludes": "SPDY",
-			"headers": {
-				"X-Firefox-Spdy": "h2"
-			},
-			"icon": "default.png",
-			"website": "http2.github.io"
-		},
 		"Hammer.js": {
 			"cats": [
 				12
@@ -3017,6 +3069,17 @@
 			},
 			"website": "hotarucms.org"
 		},
+		"HTTP/2": {
+			"cats": [
+				19
+			],
+			"headers": {
+				"X-Firefox-Spdy": "h2"
+			},
+			"icon": "default.png",
+			"excludes": "SPDY",
+			"website": "http2.github.io"
+		},
 		"HubSpot": {
 			"cats": [
 				32
@@ -3025,17 +3088,6 @@
 			"html": "<!-- Start of Async HubSpot",
 			"icon": "HubSpot.png",
 			"website": "hubspot.com"
-		},
-		"Hugo": {
-			"cats": [
-				1,
-				11
-			],
-			"icon": "Hugo.png",
-			"meta": {
-				"generator": "Hugo ([\\d.]+)?\\;version:\\1"
-			},
-			"website": "gohugo.io"
 		},
 		"Hybris": {
 			"cats": [
@@ -3048,6 +3100,17 @@
 			"icon": "Hybris.png",
 			"implies": "Java",
 			"website": "hybris.com"
+		},
+		"Hugo": {
+			"cats": [
+				1,
+				11
+			],
+			"icon": "Hugo.png",
+			"meta": {
+				"generator": "Hugo ([\\d.]+)?\\;version:\\1"
+			},
+			"website": "gohugo.io"
 		},
 		"IBM Coremetrics": {
 			"cats": [
@@ -3121,6 +3184,15 @@
 			"icon": "INFOnline.png",
 			"script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
 			"website": "infonline.de"
+		},
+		"Ink": {
+			"cats": [
+				18
+			],
+			"html": "<link [^>]*href=\"[^\"]+ink(?:\\.min)?\\.css",
+			"icon": "Ink.png",
+			"script": "ink.*\\.js",
+			"website": "ink.sapo.pt"
 		},
 		"IPB": {
 			"cats": [
@@ -3223,15 +3295,6 @@
 			},
 			"icon": "default.png",
 			"website": "indyproject.org"
-		},
-		"Ink": {
-			"cats": [
-				18
-			],
-			"html": "<link [^>]*href=\"[^\"]+ink(?:\\.min)?\\.css",
-			"icon": "Ink.png",
-			"script": "ink-all(?:\\.min)?.js",
-			"website": "ink.sapo.pt"
 		},
 		"InstantCMS": {
 			"cats": [
@@ -3841,15 +3904,6 @@
 			"script": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
 			"website": "linksmart.com"
 		},
-		"List.js": {
-			"cats": [
-				12
-			],
-			"env": "^List$",
-			"icon": "List.js.png",
-			"script": "^list\\.(?:min\\.)?js$",
-			"website": "www.listjs.com"
-		},
 		"LiteSpeed": {
 			"cats": [
 				22
@@ -4281,17 +4335,6 @@
 			},
 			"website": "sharepoint.microsoft.com"
 		},
-		"Mietshop": {
-			"cats": [
-				6
-			],
-			"html": "<a href=\"https://ssl.mietshop.d",
-			"icon": "mietshop.png",
-			"meta": {
-				"generator": "Mietshop"
-			},
-			"website": "www.mietshop.de/"
-		},
 		"Milligram": {
 			"cats": [
 				18
@@ -4374,16 +4417,6 @@
 			"icon": "Modernizr.png",
 			"script": "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "www.modernizr.com"
-		},
-		"Modified": {
-			"cats": [
-				6
-			],
-			"icon": "modified.png",
-			"meta": {
-				"generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www.modified-shop.org"
-			},
-			"website": "www.modified-shop.org/"
 		},
 		"Moguta.CMS": {
 			"cats": [
@@ -4538,14 +4571,14 @@
 			"cats": [
 				1
 			],
-			"html": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
 			"icon": "MotoCMS.svg",
+			"script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
+			"html": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
 			"implies": [
 				"PHP",
 				"AngularJS",
 				"jQuery"
 			],
-			"script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
 			"website": "motocms.com"
 		},
 		"Movable Type": {
@@ -4728,13 +4761,6 @@
 			},
 			"icon": "Nginx.svg",
 			"website": "nginx.org"
-		},
-		"Node.js": {
-			"cats": [
-				27
-			],
-			"icon": "node.js.png",
-			"website": "nodejs.org"
 		},
 		"OWL Carousel": {
 			"cats": [
@@ -5444,7 +5470,7 @@
 				"^priceDisplayMethod$\\;confidence:25",
 				"^priceDisplayPrecision$\\;confidence:25"
 			],
-			"html": "Powered by <a\\s+[^>]+>PrestaShop",
+			"html":"Powered by <a\\s+[^>]+>PrestaShop",
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
 			"meta": {
@@ -5463,13 +5489,11 @@
 			"website": "projectwonderful.com"
 		},
 		"Prospector": {
-			"cats": [
-				36
-			],
-			"html": "<[^>]+data-name=['\"]prospectscript",
-			"icon": "Prospector.png",
-			"script": "processprospector\\.js",
-			"website": "prospector.io"
+		    "website": "prospector.io",
+		    "cats":    [ 36 ],
+		    "html":    "<[^>]+data-name=['\"]prospectscript",
+		    "script":  "processprospector\\.js",
+		    "icon": "Prospector.png"
 		},
 		"Prototype": {
 			"cats": [
@@ -5489,14 +5513,6 @@
 			"script": "protovis.*\\.js",
 			"website": "mbostock.github.com/protovis"
 		},
-		"PubMatic": {
-			"cats": [
-				36
-			],
-			"icon": "PubMatic.png",
-			"script": "https?://[^/]*\\.pubmatic\\.com",
-			"website": "www.pubmatic.com/"
-		},
 		"Public CMS": {
 			"cats": [
 				1
@@ -5508,6 +5524,14 @@
 			"icon": "Public CMS.png",
 			"implies": "Java",
 			"website": "www.publiccms.com"
+		},
+		"PubMatic": {
+			"cats": [
+				36
+			],
+			"icon": "PubMatic.png",
+			"script": "https?://[^/]*\\.pubmatic\\.com",
+			"website": "www.pubmatic.com/"
 		},
 		"Pure CSS": {
 			"cats": [
@@ -5548,7 +5572,7 @@
 			"website": "www.quantcast.com"
 		},
 		"Question2Answer": {
-			"cats": [
+			"cats" : [
 				15
 			],
 			"html": "<!-- Powered by Question2Answer",
@@ -5948,10 +5972,10 @@
 			"cats": [
 				19
 			],
-			"excludes": "HTTP/2",
 			"headers": {
 				"X-Firefox-Spdy": "\\d\\.\\d"
 			},
+			"excludes": "HTTP/2",
 			"icon": "SPDY.png",
 			"website": "chromium.org/spdy"
 		},
@@ -6076,16 +6100,6 @@
 			},
 			"icon": "Scientific Linux.png",
 			"website": "scientificlinux.org"
-		},
-		"Segment": {
-			"cats": [
-				10
-			],
-			"env": "^analytics$",
-			"html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics.js[\\s\\S]*script>",
-			"icon": "Segment.png",
-			"script": "cdn\\.segment\\.com/analytics\\.js",
-			"website": "segment.com"
 		},
 		"Select2": {
 			"cats": [
@@ -6221,21 +6235,6 @@
 			"script": "mediacdn\\.shopatron\\.com",
 			"website": "ecommerce.shopatron.com"
 		},
-		"Shopery": {
-			"cats": [
-				6
-			],
-			"headers": {
-				"X-Shopery": ""
-			},
-			"icon": "Shopery.svg",
-			"implies": [
-				"PHP",
-				"Symfony",
-				"Elcodi"
-			],
-			"website": "shopery.com"
-		},
 		"Shopify": {
 			"cats": [
 				6
@@ -6265,7 +6264,6 @@
 			"cats": [
 				6
 			],
-			"html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1\\;confidence:90",
 			"icon": "Shopware.png",
 			"implies": [
 				"PHP",
@@ -6275,6 +6273,7 @@
 			"meta": {
 				"application-name": "Shopware"
 			},
+			"html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1\\;confidence:90",
 			"script": "(?:(shopware)|/web/cache/[0-9]{10}_.+)\\.js\\;version:\\1?4:5",
 			"website": "shopware.com"
 		},
@@ -6645,14 +6644,6 @@
 			"icon": "Store Systems.png",
 			"website": "store-systems.de"
 		},
-		"Strato": {
-			"cats": [
-				6
-			],
-			"html": "<a href=\"http://www.strato.de/\" target=\"_blank\">",
-			"icon": "strato.png",
-			"website": "shop.strato.com"
-		},
 		"Stripe": {
 			"cats": [
 				41
@@ -6685,20 +6676,6 @@
 				"generator": "^Subrion "
 			},
 			"website": "subrion.com"
-		},
-		"Sulu": {
-			"cats": [
-				1
-			],
-			"headers": {
-				"X-Generator": "Sulu/?(.+)?$\\;version:\\1"
-			},
-			"icon": "Sulu.svg",
-			"implies": [
-				"PHP",
-				"Symfony"
-			],
-			"website": "sulu.io"
 		},
 		"SumoMe": {
 			"cats": [
@@ -6786,6 +6763,17 @@
 			"html": "<(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)",
 			"icon": "SyntaxHighlighter.png",
 			"website": "github.com/syntaxhighlighter"
+		},
+		"ThinkPHP": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"X-Powered-By": "ThinkPHP"
+			},
+			"implies": "PHP",
+			"icon": "ThinkPHP.png",
+			"website": "www.thinkphp.cn"
 		},
 		"TWiki": {
 			"cats": [
@@ -6905,17 +6893,6 @@
 				"Symfony"
 			],
 			"website": "thelia.net"
-		},
-		"ThinkPHP": {
-			"cats": [
-				18
-			],
-			"headers": {
-				"X-Powered-By": "ThinkPHP"
-			},
-			"icon": "ThinkPHP.png",
-			"implies": "PHP",
-			"website": "www.thinkphp.cn"
 		},
 		"TiddlyWiki": {
 			"cats": [
@@ -7715,16 +7692,6 @@
 			"icon": "Wolf CMS.png",
 			"website": "www.wolfcms.org"
 		},
-		"Woltlab Community Framework": {
-			"cats": [
-				18
-			],
-			"html": "var WCF_PATH[^>]+",
-			"icon": "Woltlab Community Framework.png",
-			"implies": "PHP",
-			"script": "WCF\\..*\\.js",
-			"website": "www.woltlab.com"
-		},
 		"WooCommerce": {
 			"cats": [
 				6
@@ -7890,20 +7857,6 @@
 			},
 			"icon": "Xitami.png",
 			"website": "xitami.com"
-		},
-		"Xonic": {
-			"cats": [
-				6
-			],
-			"html": [
-				"Powered by <a href=\"http://www.xonic-solutions.de/index.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>"
-			],
-			"icon": "xonic.png",
-			"meta": {
-				"keywords": "xonic-solutions"
-			},
-			"script": "core/jslib/jquery\\.xonic\\.js\\.php",
-			"website": "www.xonic-solutions.de"
 		},
 		"XpressEngine": {
 			"cats": [
@@ -8154,17 +8107,6 @@
 			"icon": "Zope.png",
 			"website": "zope.org"
 		},
-		"a-blog cms": {
-			"cats": [
-				1
-			],
-			"icon": "a-blog cms.png",
-			"implies": "PHP",
-			"meta": {
-				"generator": "a-blog cms"
-			},
-			"website": "www.a-blogcms.jp"
-		},
 		"actionhero.js": {
 			"cats": [
 				1,
@@ -8188,17 +8130,6 @@
 			"icon": "amCharts.png",
 			"script": "amcharts.*\\.js",
 			"website": "amcharts.com"
-		},
-		"anchorCache": {
-			"cats": [
-				23
-			],
-			"icon": "anchorCache.png",
-			"implies": "PHP",
-			"meta": {
-				"generator": "anchorCache"
-			},
-			"website": "www.anchorcache.eu"
 		},
 		"basket.js": {
 			"cats": [
@@ -8638,6 +8569,13 @@
 			],
 			"website": "code.google.com/p/modwsgi"
 		},
+		"Node.js": {
+			"cats": [
+				27
+			],
+			"icon": "node.js.png",
+			"website": "nodejs.org"
+		},
 		"nopCommerce": {
 			"cats": [
 				6
@@ -8858,6 +8796,16 @@
 			"script": "(?:scriptaculous|protoaculous)\\.js",
 			"website": "script.aculo.us"
 		},
+		"Segment": {
+			"cats": [
+				10
+			],
+			"env": "^analytics$",
+			"icon": "Segment.png",
+			"script": "cdn\\.segment\\.com/analytics\\.js",
+			"html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics.js[\\s\\S]*script>",
+			"website": "segment.com"
+		},
 		"shine.js": {
 			"cats": [
 				25
@@ -8886,6 +8834,20 @@
 			},
 			"icon": "swift.engine.png",
 			"website": "mittec.ru/default"
+		},
+		"Sulu": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"X-Generator": "Sulu/?(.+)?$\\;version:\\1"
+			},
+			"icon": "Sulu.svg",
+			"implies": [
+				"PHP",
+				"Symfony"
+			],
+			"website": "sulu.io"
 		},
 		"three.js": {
 			"cats": [
@@ -9000,6 +8962,16 @@
 			"icon": "webpack.svg",
 			"website": "webpack.github.io"
 		},
+		"Woltlab Community Framework": {
+		        "cats": [
+		          18
+		        ],
+		        "html": "var WCF_PATH[^>]+",
+		        "script": "WCF\\..*\\.js",
+		        "implies": "PHP",
+		        "website": "www.woltlab.com",
+		        "icon": "Woltlab Community Framework.png"
+	       },
 		"xCharts": {
 			"cats": [
 				25
@@ -9031,6 +9003,30 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
+		},
+		"List.js": {
+			"cats": [
+				12
+			],
+			"env": "^List$",
+			"icon": "List.js.png",
+			"script": "^list\\.(?:min\\.)?js$",
+			"website": "www.listjs.com"
+		},
+		"Shopery": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"X-Shopery": ""
+			},
+			"icon": "Shopery.svg",
+			"implies": [
+				"PHP",
+				"Symfony",
+				"Elcodi"
+			],
+			"website": "shopery.com"
 		}
 	},
 	"categories": {

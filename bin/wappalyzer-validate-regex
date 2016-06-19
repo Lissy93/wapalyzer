@@ -56,7 +56,7 @@ for ( app in json.apps ) {
 
 				//Report error
 				if(amountOfCaptureGroups > amountOfCaptureGroupsNeeded) {
-					throw new Error('The pattern uses more capture groups than needed. Use non-capturing roups where appropriate.\n' + app + ': ' + type + ': ' + pattern);
+					throw new Error('The pattern uses more capture groups than needed. Use non-capturing groups where appropriate.\n' + app + ': ' + type + ': ' + pattern);
 				}else if(amountOfCaptureGroups < amountOfCaptureGroupsNeeded){
 					throw new Error('The version string references more capture groups than there are in the pattern! Remove any incorrect back references from the version string and/or add the missing capture groups to the pattern.\n' + app + ': ' + type + ': ' + pattern);
 				} else if(highestBackReference > amountOfCaptureGroups){
