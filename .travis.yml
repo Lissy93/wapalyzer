@@ -1,14 +1,21 @@
 language: node_js
 node_js:
-  - "4.2.2"
+  - "4"
 sudo: false
 before_install:
-  - export WAPPALYZER_ROOT=$TRAVIS_BUILD_DIR
-  - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
-  - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
-install:
-  - npm install jsonlint jpm imagemin-cli svgo -g
-  - ln -s docker/node/package.json package.json && npm install
-  - mkdir phantomjs && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs && ln -s $WAPPALYZER_ROOT/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs bin/phantomjs
-script: wappalyzer build
+ - export WAPPALYZER_ROOT=$TRAVIS_BUILD_DIR
+ - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
+ - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
+ - ln -s docker/node/package.json package.json
 after_script: ls -l --block-size=kB build
+cache:
+  directories:
+    - node_modules
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8

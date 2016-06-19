@@ -55,7 +55,7 @@
 					for ( option in defaults ) {
 						localStorage[option] = defaults[option];
 					}
-				} else if ( version !== localStorage['version'] && localStorage['upgradeMessage'] ) {
+				} else if ( version !== localStorage['version'] && parseInt(localStorage['upgradeMessage'], 10) ) {
 					upgraded = true;
 				}
 
