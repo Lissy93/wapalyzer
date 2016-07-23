@@ -513,7 +513,7 @@
 			"excludes": "OpenCart",
 			"headers": {
 				"Arastta": "(.*)\\;version:\\1",
-				"X-Arastta": "\\;version:1.2.1+"
+				"X-Arastta": ""
 			},
 			"html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
 			"icon": "Arastta.png",
@@ -5853,6 +5853,18 @@
 			},
 			"website": "www.roadiz.io"
 		},
+	  	"Robin": {
+			"cats": [
+				6
+			],
+			"env": [
+				"_robin_getRobinJs",
+				"robin_settings",
+				"robin_storage_settings"
+			],
+			"icon": "Robin.png",
+			"website": "www.robinhq.com"
+		},
 		"RoundCube": {
 			"cats": [
 				30
@@ -6899,6 +6911,15 @@
 				"application-name": "TeamCity"
 			},
 			"website": "jetbrains.com/teamcity"
+		},
+		"Telescope": {
+			"cats": [
+				1
+			],
+			"website": "telescopeapp.org",
+			"implies": "Meteor",
+			"icon": "Telescope.png",
+			"env": "Telescope"
 		},
 		"Tengine": {
 			"cats": [
