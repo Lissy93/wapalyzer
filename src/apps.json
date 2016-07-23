@@ -2988,7 +2988,7 @@
 			"cats": [
 				1
 			],
-			"html": " <[^>]+/binaries/(?:[^/]+/)*content/gallery/",
+			"html": "<[^>]+/binaries/(?:[^/]+/)*content/gallery/",
 			"icon": "Hippo.png",
 			"website": "onehippo.org"
 		},
@@ -3821,6 +3821,17 @@
 			"icon": "Lightbox.png",
 			"script": "lightbox.*\\.js",
 			"website": "lokeshdhakar.com/projects/lightbox2/"
+		},
+		"Lighty": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"Set-Cookie": "lighty_version"
+			},
+			"icon": "Lighty.png",
+			"implies": "PHP",
+			"website": "gitlab.com/lighty/framework"
 		},
 		"LimeSurvey": {
 			"cats": [
