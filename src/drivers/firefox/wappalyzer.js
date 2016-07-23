@@ -462,7 +462,7 @@ var wappalyzer = (function() {
 					w.detected[url][app].confidence[id] = confidence[id];
 				}
 
-				if ( w.detected[url][app].getConfidence() >= 100 ) {
+				if ( w.detected[url][app].getConfidence() >= 500 ) {
 					// Per hostname
 					if ( /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/.test(hostname) && !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(url) ) {
 						if ( !w.ping.hostnames.hasOwnProperty(hostname) ) {
