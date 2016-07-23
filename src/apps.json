@@ -6159,14 +6159,6 @@
 			"icon": "Sentinel Protection Server.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
-		"Seoshop": {
-			"cats": [
-				6
-			],
-			"html": "<a[^>]+title=\"SEOshop",
-			"icon": "Seoshop.png",
-			"website": "getseoshop.com"
-		},
 		"Serendipity": {
 			"cats": [
 				1,
@@ -8408,6 +8400,16 @@
 			"icon": "libwww-perl-daemon.png",
 			"implies": "Perl",
 			"website": "metacpan.org/pod/HTTP::Daemon"
+		},
+		"Lightspeed eCom": {
+			"cats": [
+			  6
+			],
+			"html": "<!-- \\[START\\] 'blocks/head.rain' -->",
+			"icon": "Lightspeed.svg",
+			"url": "seoshop.webshopapp.com",
+			"script": "http://assets.webshopapp.com",
+			"website": "www.lightspeedhq.com/products/ecommerce/"
 		},
 		"lighttpd": {
 			"cats": [
