@@ -4086,17 +4086,25 @@
 		},
 		"Magento": {
 			"cats": [
-				6
+			  6
 			],
-			"env": "^(?:Mage|VarienForm)$",
+			"env": [
+			  "^(?:Mage|VarienForm)$"
+			],
 			"headers": {
-				"Set-Cookie": "frontend=\\;confidence:50"
+			  "Set-Cookie": "frontend=\\;confidence:50"
 			},
+			"html": [
+				"<script [^>]+data-requiremodule=\"mage/\\;version:2",
+				"<script [^>]+data-requiremodule=\"Magento_\\;version:2"
+			],
 			"icon": "Magento.png",
 			"implies": "PHP",
 			"script": [
-				"js/mage",
-				"skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community"
+			  	"js/mage",
+			  	"skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community",
+				"static/_requirejs\\;confidence:50\\;version:2",
+				"static/frontend\\;confidence:20\\;version:2"
 			],
 			"website": "www.magentocommerce.com"
 		},
@@ -6332,7 +6340,7 @@
 				1
 			],
 			"html": "Powered by <a href=\"[^>]+SilverStripe",
-			"icon": "SilverStripe.png",
+			"icon": "SilverStripe.svg",
 			"meta": {
 				"generator": "SilverStripe"
 			},
