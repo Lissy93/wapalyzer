@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
 	apt-get update && apt-get install -y \
+	bzip2 \
 	libfreetype6 \
 	libfontconfig \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
