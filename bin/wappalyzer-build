@@ -30,6 +30,24 @@ echo "Compressing SVG icons..."
 
 node $WAPPALYZER_NODE_PATH/node_modules/svgo/bin/svgo -q -f $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons
 
+echo "Converting SVG icons to PNG..."
+
+OIFS="$IFS"
+IFS=$'\n'
+
+for svg in $(find $WAPPALYZER_ROOT/src/icons -type f -name "*.svg")
+do
+	echo "  Converting $(basename "$svg")..."
+
+	dest="$WAPPALYZER_ROOT/src/icons/converted/$(basename "$svg").png"
+
+	if [[ ! -f "$dest" ]]; then
+		svg2png "$svg" --width=32 --height=32 --output "$dest" || true
+	fi
+done
+
+IFS="$OIFS"
+
 wappalyzer links
 
 # Npm Module
