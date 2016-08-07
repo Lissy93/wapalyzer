@@ -3858,6 +3858,16 @@
 			"script": "lightbox.*\\.js",
 			"website": "lokeshdhakar.com/projects/lightbox2/"
 		},
+		"Lightspeed eCom": {
+			"cats": [
+				6
+			],
+			"html": "<!-- \\[START\\] 'blocks/head.rain' -->",
+			"icon": "Lightspeed.svg",
+			"script": "http://assets.webshopapp.com",
+			"url": "seoshop.webshopapp.com",
+			"website": "www.lightspeedhq.com/products/ecommerce/"
+		},
 		"Lighty": {
 			"cats": [
 				18
@@ -5583,8 +5593,8 @@
 				1
 			],
 			"headers": {
-				"X-Streams-Distribution": "PyroCMS",
-				"Set-Cookie": "pyrocms"
+				"Set-Cookie": "pyrocms",
+				"X-Streams-Distribution": "PyroCMS"
 			},
 			"icon": "PyroCMS.png",
 			"implies": "Laravel",
@@ -5682,6 +5692,15 @@
 			},
 			"website": "www.rcms.fi"
 		},
+		"RD Station": {
+			"cats": [
+				32
+			],
+			"env": "^RDStation$",
+			"icon": "RD Station.png",
+			"script": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
+			"website": "rdstation.com.br"
+		},
 		"RDoc": {
 			"cats": [
 				4
@@ -5693,15 +5712,6 @@
 			"icon": "RDoc.png",
 			"implies": "Ruby",
 			"website": "github.com/RDoc/RDoc"
-		},
-		"RD Station": {
-			"cats": [
-				32
-			],
-			"env": "^RDStation$",
-			"script": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
-			"icon": "RD Station.png",
-			"website": "rdstation.com.br"
 		},
 		"RackCache": {
 			"cats": [
@@ -8562,16 +8572,6 @@
 			"icon": "libwww-perl-daemon.png",
 			"implies": "Perl",
 			"website": "metacpan.org/pod/HTTP::Daemon"
-		},
-		"Lightspeed eCom": {
-			"cats": [
-			  6
-			],
-			"html": "<!-- \\[START\\] 'blocks/head.rain' -->",
-			"icon": "Lightspeed.svg",
-			"url": "seoshop.webshopapp.com",
-			"script": "http://assets.webshopapp.com",
-			"website": "www.lightspeedhq.com/products/ecommerce/"
 		},
 		"lighttpd": {
 			"cats": [
