@@ -6,7 +6,8 @@
 		scriptPath      = require('fs').absolute(require('system').args[0]),
 		resourceTimeout = 9000,
 		args            = [],
-		debug           = false;
+		debug           = false; // Output debug messages
+		quiet           = false; // Don't output errors
 
 	try {
 		// Working directory
@@ -14,15 +15,28 @@
 
 		require('fs').changeWorkingDirectory(scriptDir);
 
-		require('system').args.forEach(function(arg) {
+		require('system').args.forEach(function(arg, i) {
+			var arr = /^(--[^=]+)=(.+)$/.exec(arg);
+
+			if ( arr && arr.length === 3 ) {
+				arg   = arr[1];
+				value = arr[2];
+			}
+
 			switch ( arg ) {
 				case '-v':
 				case '--verbose':
 					debug = true;
 
 					break;
+				case '-q':
+				case '--quiet':
+					quiet = true;
+
+					break;
 				case '--resource-timeout':
-					resourceTimeout = arg;
+					resourceTimeout = value;
+
 					break;
 				default:
 					url = originalUrl = arg;
@@ -42,8 +56,12 @@
 			 * Log messages to console
 			 */
 			log: function(args) {
-				if ( debug || args.type !== 'debug' ) {
-					console.log(args.message);
+				if ( args.type === 'error' ) {
+					if ( !quiet ) {
+						require('system').stderr.write(args.message + "\n");
+					}
+				} else if ( debug || args.type !== 'debug' ) {
+					require('system').stdout.write(args.message + "\n");
 				}
 			},
 
@@ -68,14 +86,24 @@
 
 						apps.push({
 							name: app,
-							confidence:  wappalyzer.detected[url][app].confidenceTotal,
-							version:     wappalyzer.detected[url][app].version,
-							categories:  cats
+							confidence: wappalyzer.detected[url][app].confidenceTotal,
+							version:    wappalyzer.detected[url][app].version,
+							icon:       wappalyzer.apps[app].icon,
+							categories: cats
 						});
 					}
 
-					console.log(JSON.stringify({ applications: apps }));
+					wappalyzer.driver.sendResponse(apps);
 				}
+			},
+
+			/**
+			 * Send response
+			 */
+			sendResponse: function(apps) {
+				apps = apps || [];
+
+				require('system').stdout.write(JSON.stringify({ url: url, originalUrl: originalUrl, applications: apps }) + "\n");
 			},
 
 			/**
@@ -104,21 +132,21 @@
 				page.settings.resourceTimeout = resourceTimeout;
 
 				page.onConsoleMessage = function(message) {
-					wappalyzer.log(message);
+					require('system').stdout.write(message + "\n");
 				};
 
 				page.onError = function(message) {
-					wappalyzer.log(message);
+					wappalyzer.log(message, 'error');
 
-					console.log(JSON.stringify({ applications: [] }));
+					wappalyzer.driver.sendResponse();
 
 					phantom.exit(1);
 				};
 
 				page.onResourceTimeout = function() {
-					wappalyzer.log('Resource timeout');
+					wappalyzer.log('Resource timeout', 'error');
 
-					console.log(JSON.stringify({ applications: [] }));
+					wappalyzer.driver.sendResponse();
 
 					phantom.exit(1);
 				};
@@ -172,9 +200,9 @@
 
 						phantom.exit(0);
 					} else {
-						wappalyzer.log('Failed to fetch page');
+						wappalyzer.log('Failed to fetch page', 'error');
 
-						console.log(JSON.stringify({ applications: [] }));
+						wappalyzer.driver.sendResponse();
 
 						phantom.exit(1);
 					}
@@ -184,9 +212,9 @@
 
 		wappalyzer.init();
 	} catch ( e ) {
-		wappalyzer.log(e);
+		wappalyzer.log(e, 'error');
 
-		console.log(JSON.stringify({ applications: [] }));
+		wappalyzer.driver.sendResponse();
 
 		phantom.exit(1);
 	}

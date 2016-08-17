@@ -217,7 +217,7 @@ var wappalyzer = (function() {
 				message = JSON.stringify(message);
 			}
 
-			driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
+			driver('log', { message: message, type: type });
 		},
 
 		/**

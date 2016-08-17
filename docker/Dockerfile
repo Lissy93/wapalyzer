@@ -8,8 +8,8 @@ ENV WAPPALYZER_ROOT /home/wappalyzer/synced
 ENV WAPPALYZER_NODE_PATH /home/wappalyzer/node
 
 # Install packages
-RUN apt-get update && apt-get install -y curl zip libfreetype6 libfontconfig
-RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
+RUN apt-get update && apt-get install -y sudo curl bzip2 zip libfreetype6 libfontconfig
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -27,19 +27,21 @@ RUN echo "cd \$WAPPALYZER_ROOT" >> .bashrc
 RUN echo "wappalyzer" >> .bashrc
 
 
+# PhantomJS
+# RUN su wappalyzer -c "\
+# 	mkdir phantomjs && \
+# 	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xvjC phantomjs && \
+# 	ln -s /home/wappalyzer/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs /usr/bin/phantomjs"
+
+
 # Node JS
 RUN su wappalyzer -c "mkdir $WAPPALYZER_NODE_PATH"
 
 ADD node/package.json $WAPPALYZER_NODE_PATH/package.json
 
+RUN npm i -g npm svg2png --prefix=/usr/local
+RUN ln -s -f /usr/local/bin/npm /usr/bin/npm
 RUN su wappalyzer -c "cd $WAPPALYZER_NODE_PATH && npm i"
-
-
-# PhantomJS
-RUN su wappalyzer -c "\
-	mkdir phantomjs && \
-	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs && \
-	ln -s /home/wappalyzer/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs bin/phantomjs"
 
 
 # SSH

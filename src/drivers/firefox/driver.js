@@ -347,7 +347,7 @@
 		 * Log messages to console
 		 */
 		log: function(args) {
-			console.log(args.message);
+			console.log('[wappalyzer ' + args.type + '] ' + args.message);
 		},
 
 		/**

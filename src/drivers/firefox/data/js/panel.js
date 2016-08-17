@@ -1,10 +1,14 @@
 (function() {
 	self.port.on('displayApps', function(message) {
 		var
-			div, a, img, label, name,
+			div, a, img, label, name, slugify,
 			d = document,
 			detectedApps = d.getElementById('detected-apps'),
 			empty = d.getElementById('empty');
+
+		slugify = function(string) {
+			return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
+		};
 
 		while ( detectedApps.firstChild ) {
 			detectedApps.removeChild(detectedApps.firstChild);
@@ -31,7 +35,7 @@
 					a.addEventListener('click', function(e) {
 						e.preventDefault();
 
-						self.port.emit('goToUrl', 'applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
+						self.port.emit('goToUrl', 'applications/' + slugify(appName));
 					});
 				}(appName));
 
@@ -64,7 +68,7 @@
 						a.addEventListener('click', function(e) {
 							e.preventDefault();
 
-							self.port.emit('goToUrl', 'categories/' + message.categories[cat]);
+							self.port.emit('goToUrl', 'categories/' + slugify(message.categories[cat]));
 						});
 					}(appName));
 

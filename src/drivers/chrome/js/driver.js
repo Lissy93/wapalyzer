@@ -19,7 +19,7 @@
 		 * Log messages to console
 		 */
 		log: function(args) {
-			console.log(args.message);
+			console.log('[wappalyzer ' + args.type + '] ' + args.message);
 		},
 
 		/**
@@ -192,8 +192,14 @@
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
+							var icon = w.apps[appName].icon;
+
 							if ( cat == match && !found ) {
-								chrome.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + w.apps[appName].icon });
+								if ( /\.svg$/i.test(icon) ) {
+									icon = 'converted/' + icon + '.png';
+								}
+
+								chrome.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + icon });
 
 								found = true;
 							}
