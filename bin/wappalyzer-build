@@ -48,6 +48,10 @@ done
 
 IFS="$OIFS"
 
+echo "Compressing converted PNG icons..."
+
+node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons/converted $WAPPALYZER_ROOT/src/icons/converted -o 7
+
 wappalyzer links
 
 # Npm Module
