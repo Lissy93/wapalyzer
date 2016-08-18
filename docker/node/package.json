@@ -12,13 +12,14 @@
     "test": "./bin/wappalyzer build"
   },
   "devDependencies": {
-    "file-type": "3.4.*",
-	"is-svg": "1.1.*",
-    "read-chunk": "1.0.*",
+    "file-type": "3.8.*",
+    "is-svg": "2.0.*",
+    "read-chunk": "2.0.*",
     "jsonlint": "*",
     "jpm": "*",
     "imagemin-cli": "*",
-		"phantomjs-prebuilt": "*",
+    "phantomjs-prebuilt": "*",
+    "svg2png": "*",
     "svgo": "*"
   },
   "engines": {
