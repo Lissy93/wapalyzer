@@ -22,13 +22,9 @@ echo "Prettifying apps.json..."
 
 node $WAPPALYZER_NODE_PATH/node_modules/jsonlint/lib/cli.js -ist $'\t' $WAPPALYZER_ROOT/src/apps.json
 
-echo "Compressing PNG icons..."
+echo "Compressing PNG and SVG icons..."
 
-node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons -o 7
-
-echo "Compressing SVG icons..."
-
-node $WAPPALYZER_NODE_PATH/node_modules/svgo/bin/svgo -q -f $WAPPALYZER_ROOT/src/icons $WAPPALYZER_ROOT/src/icons
+node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons/* $WAPPALYZER_ROOT/src/icons
 
 echo "Converting SVG icons to PNG..."
 
@@ -50,7 +46,7 @@ IFS="$OIFS"
 
 echo "Compressing converted PNG icons..."
 
-node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons/converted $WAPPALYZER_ROOT/src/icons/converted -o 7
+node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons/converted/* $WAPPALYZER_ROOT/src/icons/converted
 
 wappalyzer links
 
