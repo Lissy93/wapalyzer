@@ -3932,6 +3932,22 @@
 			"implies": "PHP",
 			"website": "www.lithium.com"
 		},
+		"LiveAgent": {
+			"cats": [
+				52
+			],
+			"env": "^LiveAgent$",
+			"icon": "LiveAgent.png",
+			"website": "www.ladesk.com"
+		},
+		"LiveChat": {
+			"cats": [
+				52
+			],
+			"icon": "LiveChat.png",
+			"script": "cdn\\.livechatinc\\.com/.*tracking\\.js",
+			"website": "livechatinc.com"
+		},
 		"LiveJournal": {
 			"cats": [
 				11
@@ -6947,6 +6963,14 @@
 			],
 			"website": "taiga.io"
 		},
+		"Tawk.to": {
+			"cats": [
+				52
+			],
+			"icon": "TawkTo.png",
+			"script": "//embed\\.tawk\\.to",
+			"website": "tawk.to"
+		},
 		"Tealeaf": {
 			"cats": [
 				10
@@ -7325,6 +7349,17 @@
 			"icon": "Underscore.js.png",
 			"script": "underscore.*\\.js",
 			"website": "underscorejs.org"
+		},
+		"UserLike": {
+			"cats": [
+				52
+			],
+			"icon": "UserLike.svg",
+			"script": [
+				"userlike\\.min\\.js",
+				"userlikelib\\.min\\.js"
+			],
+			"website": "userlike.com"
 		},
 		"UserRules": {
 			"cats": [
@@ -9179,6 +9214,7 @@
 		"48": "Network Storage",
 		"49": "Feed Readers",
 		"50": "Document Management Systems",
-		"51": "Landing Page Builders"
+		"51": "Landing Page Builders",
+		"52": "Live Chat"
 	}
 }
