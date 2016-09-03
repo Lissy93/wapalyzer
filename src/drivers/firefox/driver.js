@@ -448,13 +448,13 @@
 					}).post();
 				};
 
-				post(w.config.websiteURL + 'ping/v2/', w.ping);
+				post('http://ping.wappalyzer.com/ping/v2/', w.ping);
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
 				w.ping = { hostnames: {} };
 
-				post('http://ad.wappalyzer.com/log/wp/', w.adCache);
+				post('https://ad.wappalyzer.com/log/wp/', w.adCache);
 
 				w.adCache = [];
 			}

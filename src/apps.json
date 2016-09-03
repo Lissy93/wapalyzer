@@ -899,6 +899,18 @@
 			},
 			"website": "browsercms.org"
 		},
+		"Bubble": {
+			"cats": [
+				1,
+				3,
+				18,
+				22
+			],
+			"env": "^appquery$",
+			"icon": "bubble.png",
+			"implies": "Node.js",
+			"website": "bubble.is"
+		},
 		"BugSense": {
 			"cats": [
 				10
@@ -4761,6 +4773,34 @@
 			"icon": "Nedstat.png",
 			"website": "www.nedstat.com"
 		},
+		"Neos CMS": {
+			"cats": [
+				1
+			],
+			"excludes": "TYPO3 CMS",
+			"headers": {
+				"X-Flow-Powered": "Neos/?(.+)?$\\;version:\\1"
+			},
+			"icon": "Neos.svg",
+			"implies": [
+				"PHP",
+				"Neos Flow"
+			],
+			"url": "/neos/",
+			"website": "neos.io"
+		},
+		"Neos Flow": {
+			"cats": [
+				18
+			],
+			"excludes": "TYPO3 CMS",
+			"headers": {
+				"X-Flow-Powered": "Flow/?(.+)?$\\;version:\\1"
+			},
+			"icon": "Neos.svg",
+			"implies": "PHP",
+			"website": "flow.neos.io"
+		},
 		"Nepso": {
 			"cats": [
 				1
@@ -6967,34 +7007,6 @@
 			},
 			"url": "/typo3/",
 			"website": "www.typo3.org"
-		},
-		"Neos Flow": {
-			"cats": [
-				18
-			],
-			"excludes": "TYPO3 CMS",
-			"headers": {
-				"X-Flow-Powered": "Flow/?(.+)?$\\;version:\\1"
-			},
-			"icon": "Neos.svg",
-			"implies": "PHP",
-			"website": "flow.neos.io"
-		},
-		"Neos CMS": {
-			"cats": [
-				1
-			],
-			"excludes": "TYPO3 CMS",
-			"headers": {
-				"X-Flow-Powered": "Neos/?(.+)?$\\;version:\\1"
-			},
-			"icon": "Neos.svg",
-			"implies": [
-				"PHP",
-				"Neos Flow"
-			],
-			"url": "/neos/",
-			"website": "neos.io"
 		},
 		"Taiga": {
 			"cats": [
@@ -9214,13 +9226,6 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
-		},
-		"Bubble": { 
-			"website": "bubble.is", 
-			"cats":  [ 1, 3, 18, 22 ], 
-			"env":  "^appquery$",
-			"implies": "Node.js",
-			"icon": "bubble.png"
 		}
 	},
 	"categories": {
