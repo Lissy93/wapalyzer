@@ -3,7 +3,9 @@
 require 'net/http'
 require 'v8'
 require 'json'
+require 'openssl'
 
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 Encoding.default_external = Encoding::UTF_8
 
 class Wappalyzer
