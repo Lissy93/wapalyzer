@@ -39,7 +39,6 @@ RUN su wappalyzer -c "mkdir $WAPPALYZER_NODE_PATH"
 
 ADD node/package.json $WAPPALYZER_NODE_PATH/package.json
 
-RUN npm i -g npm svg2png --prefix=/usr/local
 RUN ln -s -f /usr/local/bin/npm /usr/bin/npm
 RUN su wappalyzer -c "cd $WAPPALYZER_NODE_PATH && npm i"
 
