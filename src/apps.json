@@ -6957,7 +6957,7 @@
 			"url": "/typo3/",
 			"website": "www.typo3.org"
 		},
-		"TYPO3 Flow": {
+		"Neos Flow": {
 			"cats": [
 				18
 			],
@@ -6965,20 +6965,22 @@
 			"headers": {
 				"X-Flow-Powered": "Flow/?(.+)?$\\;version:\\1"
 			},
-			"icon": "TYPO3.svg",
+			"icon": "Neos.svg",
 			"implies": "PHP",
-			"website": "flow.typo3.org"
+			"website": "flow.neos.io"
 		},
-		"TYPO3 Neos": {
+		"Neos CMS": {
 			"cats": [
 				1
 			],
 			"excludes": "TYPO3 CMS",
-			"html": "<html[^>]+xmlns:typo3=\"[^\"]+Flow/Packages/Neos/",
-			"icon": "TYPO3.svg",
+			"headers": {
+				"X-Flow-Powered": "Neos/?(.+)?$\\;version:\\1"
+			},
+			"icon": "Neos.svg",
 			"implies": [
 				"PHP",
-				"TYPO3 Flow"
+				"Neos Flow"
 			],
 			"url": "/neos/",
 			"website": "neos.io"
