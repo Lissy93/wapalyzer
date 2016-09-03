@@ -3,13 +3,15 @@
 require 'net/http'
 require 'v8'
 require 'json'
+require 'openssl'
 
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 Encoding.default_external = Encoding::UTF_8
 
 class Wappalyzer
   def initialize
     @realdir = File.dirname(File.realpath(__FILE__))
-    file = File.join(@realdir, '..', '..', 'share', 'apps.json')
+    file = File.join(@realdir, 'apps.json')
     @json = JSON.parse(IO.read(file))
     @categories, @apps = @json['categories'], @json['apps']
   end

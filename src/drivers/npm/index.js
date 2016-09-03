@@ -29,7 +29,7 @@ exports.detectFromHTML = function(options, data, cb) {
 /**
 * Do a actual request for the body & headers, then
 * run through detection
-**/ 
+**/
 exports.detectFromUrl = function(options, cb) {
 
 	// ensure options and url were
@@ -59,7 +59,7 @@ exports.detectFromUrl = function(options, cb) {
 				exports.detect(options, data, cb);
 
 			}
-		
+
 		});
 
 	}
@@ -71,7 +71,7 @@ function getHTMLFromUrl(url, cb) {
 			var data = {
 				html: body,
 				url: url,
-				headers: response
+				headers: response.headers
 			};
 			cb(null, data);
 		} else {
