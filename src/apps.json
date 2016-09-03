@@ -6432,6 +6432,17 @@
 			"icon": "Sitecore.png",
 			"website": "sitecore.net"
 		},
+		"Sitefinity": {
+			"cats": [
+				1
+			],
+			"icon": "Sitefinity.svg",
+			"implies": "Microsoft ASP.NET",
+			"meta": {
+				"generator": "^Sitefinity (.+)$\\;version:\\1"
+			},
+			"website": "www.sitefinity.com"
+		},
 		"Sivuviidakko": {
 			"cats": [
 				1
