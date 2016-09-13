@@ -9234,7 +9234,7 @@
 			"env": "^ados(?:Results)?$",
 			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
 			"icon": "adnegah.png",
-			"script": "*.adnegah\\.net/*\\.js",
+			"script": "[^a-z]adnegah.*\\.js",
 			"website": "Adnegah.net"
 		}
 	},
