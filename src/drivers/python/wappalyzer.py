@@ -38,7 +38,7 @@ class Wappalyzer(object):
         f2.close()
 
         host = urlparse(self.url).hostname
-        response = requests.get(self.url)
+        response = requests.get(self.url, verify=False)
         html = response.text
         headers = dict(response.headers)
 
