@@ -200,6 +200,16 @@
 			"script": "addtoany\\.com/menu/page\\.js",
 			"website": "www.addtoany.com"
 		},
+		"Adnegah": {
+			"cats": [
+				36
+			],
+			"env": "^ados(?:Results)?$",
+			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
+			"icon": "adnegah.png",
+			"script": "[^a-z]adnegah.*\\.js",
+			"website": "Adnegah.net"
+		},
 		"Adobe ColdFusion": {
 			"cats": [
 				18
@@ -335,7 +345,8 @@
 		},
 		"Akka HTTP": {
 			"cats": [
-				18, 22				
+				18,
+				22
 			],
 			"headers": {
 				"Server": "akka-http(?:/([\\d.]+))?\\;version:\\1"
@@ -2465,8 +2476,10 @@
 				24
 			],
 			"icon": "Froala.svg",
-			"website": "froala.com/wysiwyg-editor",
-			"implies": [ "jQuery" ]
+			"implies": [
+				"jQuery"
+			],
+			"website": "froala.com/wysiwyg-editor"
 		},
 		"FrontPage": {
 			"cats": [
@@ -6042,15 +6055,15 @@
 				11,
 				32
 			],
-			"meta": {
-				"generator": "^Rock v.*"
-			},
+			"icon": "RockRMS.svg",
 			"implies": [
 				"Windows Server",
 				"IIS",
 				"Microsoft ASP.NET"
 			],
-			"icon": "RockRMS.svg",
+			"meta": {
+				"generator": "^Rock v.*"
+			},
 			"website": "www.rockrms.com"
 		},
 		"RoundCube": {
@@ -8535,19 +8548,6 @@
 			"implies": "HP ProCurve",
 			"website": "???"
 		},
-		"enduro.js": {
-			"cats": [
-				1,
-				18,
-				47
-			],
-			"icon": "enduro.js.svg",
-			"implies": "Node.js",
-			"headers": {
-				"X-Powered-By": "^enduro.js$"
-			},
-			"website": "endurojs.com"
-		},
 		"eSyndiCat": {
 			"cats": [
 				1
@@ -8577,6 +8577,19 @@
 				"generator": "eZ Publish"
 			},
 			"website": "ez.no"
+		},
+		"enduro.js": {
+			"cats": [
+				1,
+				18,
+				47
+			],
+			"headers": {
+				"X-Powered-By": "^enduro.js$"
+			},
+			"icon": "enduro.js.svg",
+			"implies": "Node.js",
+			"website": "endurojs.com"
 		},
 		"git": {
 			"cats": [
@@ -9285,16 +9298,6 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
-		},
-		"Adnegah": {
-			"cats": [
-				36
-			],
-			"env": "^ados(?:Results)?$",
-			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
-			"icon": "adnegah.png",
-			"script": "[^a-z]adnegah.*\\.js",
-			"website": "Adnegah.net"
 		}
 	},
 	"categories": {
