@@ -1,5 +1,14 @@
 {
 	"apps": {
+		"1&1": {
+			"cats": [
+				6
+			],
+			"icon": "1and1.svg",
+			"implies": "PHP",
+			"url": "/shop/catalog/browse\\?sessid=",
+			"website": "1and1.com"
+		},
 		"1C-Bitrix": {
 			"cats": [
 				1
@@ -13,15 +22,6 @@
 			"implies": "PHP",
 			"script": "1c-bitrix",
 			"website": "www.1c-bitrix.ru"
-		},
-		"1und1": {
-			"cats": [
-				6
-			],
-			"icon": "1und1.png",
-			"implies": "PHP",
-			"url": "/shop/catalog/browse\\?sessid=",
-			"website": "1und1.de"
 		},
 		"2z Project": {
 			"cats": [
@@ -160,7 +160,7 @@
 				36
 			],
 			"env": "^adroll_",
-			"icon": "AdRoll.png",
+			"icon": "AdRoll.svg",
 			"script": "(?:a|s)\\.adroll\\.com",
 			"website": "adroll.com"
 		},
@@ -169,7 +169,7 @@
 				36
 			],
 			"env": "^(?:ac_bgclick_URL|ct_(?:siteunder|tag|n(?:SuUrl(?:Opp)?)|Su(?:Loaded|Url)))$",
-			"icon": "Adcash.png",
+			"icon": "Adcash.svg",
 			"script": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
 			"url": "^https?://(?:[^\\/]+\\.)?adcash\\.com/script/pop_",
 			"website": "adcash.com"
@@ -187,7 +187,7 @@
 				5
 			],
 			"env": "^addthis",
-			"icon": "AddThis.png",
+			"icon": "AddThis.svg",
 			"script": "addthis\\.com/js/",
 			"website": "www.addthis.com"
 		},
@@ -209,7 +209,7 @@
 				"Cookie": "CFTOKEN="
 			},
 			"html": "<!-- START headerTags\\.cfm",
-			"icon": "Adobe ColdFusion.png",
+			"icon": "Adobe ColdFusion.svg",
 			"implies": "CFML",
 			"script": "/cfajax/",
 			"url": "\\.cfm(?:$|\\?)",
@@ -223,7 +223,7 @@
 				"<div class=\"[^\"]*parbase",
 				"<div[^>]+data-component-path=\"[^\"+]jcr:"
 			],
-			"icon": "Adobe Experience Manager.png",
+			"icon": "Adobe Experience Manager.svg",
 			"implies": "Java",
 			"script": "/etc/designs/",
 			"website": "www.adobe.com/au/marketing-cloud/enterprise-content-management.html"
@@ -242,7 +242,7 @@
 			"cats": [
 				20
 			],
-			"icon": "Adobe Muse.png",
+			"icon": "Adobe Muse.svg",
 			"meta": {
 				"generator": "^Muse(?:$| ?/?(\\d[\\d.]+))\\;version:\\1"
 			},
@@ -253,7 +253,7 @@
 				4
 			],
 			"env": "^gbWh(?:Ver|Lang|Msg|Util|Proxy)$",
-			"icon": "Adobe RoboHelp.png",
+			"icon": "Adobe RoboHelp.svg",
 			"meta": {
 				"generator": "^Adobe RoboHelp(?: ([\\d]+))?\\;version:\\1"
 			},
@@ -348,7 +348,7 @@
 				29
 			],
 			"env": "^AlgoliaSearch$",
-			"icon": "Algolia Realtime Search.png",
+			"icon": "Algolia Realtime Search.svg",
 			"website": "www.algolia.com"
 		},
 		"Allegro RomPager": {
@@ -473,7 +473,7 @@
 				34
 			],
 			"html": "<style[^>]+static/hadoop",
-			"icon": "Apache Hadoop.png",
+			"icon": "Apache Hadoop.svg",
 			"website": "hadoop.apache.org"
 		},
 		"Apache JSPWiki": {
@@ -494,7 +494,7 @@
 				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
 				"X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Apache Tomcat.png",
+			"icon": "Apache Tomcat.svg",
 			"website": "tomcat.apache.org"
 		},
 		"Apache Traffic Server": {
@@ -512,7 +512,7 @@
 				18
 			],
 			"env": "^Wicket",
-			"icon": "Apache Wicket.png",
+			"icon": "Apache Wicket.svg",
 			"implies": "Java",
 			"website": "wicket.apache.org"
 		},
@@ -521,7 +521,7 @@
 				36
 			],
 			"html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
-			"icon": "AppNexus.png",
+			"icon": "AppNexus.svg",
 			"script": "adnxs\\.(?:net|com)",
 			"website": "appnexus.com"
 		},
@@ -535,7 +535,7 @@
 				"X-Arastta": ""
 			},
 			"html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
-			"icon": "Arastta.png",
+			"icon": "Arastta.svg",
 			"implies": "PHP",
 			"script": "arastta\\.js",
 			"website": "arastta.org"
@@ -556,7 +556,7 @@
 			"html": [
 				"<span class=\"version\">Artifactory(?: Pro)?(?: Power Pack)?(?: ([\\d.]+))?\\;version:\\1"
 			],
-			"icon": "Artifactory.png",
+			"icon": "Artifactory.svg",
 			"script": [
 				"wicket/resource/org\\.artifactory\\."
 			],
@@ -569,7 +569,7 @@
 			"headers": {
 				"Server": "Artifactory(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Artifactory Web Server.png",
+			"icon": "Artifactory.svg",
 			"implies": [
 				"Artifactory"
 			],
@@ -620,7 +620,7 @@
 				47
 			],
 			"env": "^bitbucket$",
-			"icon": "Atlassian Bitbucket.png",
+			"icon": "Atlassian Bitbucket.svg",
 			"meta": {
 				"application-name": "Bitbucket"
 			},
@@ -634,7 +634,7 @@
 				"X-Confluence-Request-Time": ""
 			},
 			"html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence(?:[^>]+>Atlassian Confluence</a> ([\\d.]+))?\\;version:\\1",
-			"icon": "Atlassian Confluence.png",
+			"icon": "Atlassian Confluence.svg",
 			"implies": "Java",
 			"meta": {
 				"confluence-request-time": ""
@@ -649,7 +649,7 @@
 				"Set-cookie": "FESESSIONID"
 			},
 			"html": "<title>(?:Log in to )?FishEye (?:and Crucible )?([\\d.]+)?</title>\\;version:\\1",
-			"icon": "Atlassian FishEye.png",
+			"icon": "Atlassian FishEye.svg",
 			"website": "www.atlassian.com/software/fisheye/overview/"
 		},
 		"Atlassian Jira": {
@@ -658,7 +658,7 @@
 			],
 			"env": "^jira$",
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(?:\\.\\d+)?))?\\;version:\\1",
-			"icon": "Atlassian Jira.png",
+			"icon": "Atlassian Jira.svg",
 			"implies": "Java",
 			"meta": {
 				"ajs-version-number": "([\\d\\.]+)\\;version:\\1",
@@ -671,7 +671,7 @@
 				13,
 				47
 			],
-			"icon": "Atlassian Jira Issue Collector.png",
+			"icon": "Atlassian Jira.svg",
 			"script": [
 				"jira-issue-collector-plugin",
 				"atlassian\\.jira\\.collector\\.plugin"
@@ -684,7 +684,7 @@
 			],
 			"env": "^(?:__)?avng8_",
 			"html": "<link[^>]* href=\"^https?://edge\\.avangate\\.net/",
-			"icon": "Avangate.png",
+			"icon": "Avangate.svg",
 			"script": "^https?://edge\\.avangate\\.net/",
 			"website": "avangate.com"
 		},
@@ -8410,7 +8410,7 @@
 			"cats": [
 				1
 			],
-			"icon": "a-blog cms.png",
+			"icon": "a-blog cms.svg",
 			"implies": "PHP",
 			"meta": {
 				"generator": "a-blog cms"
