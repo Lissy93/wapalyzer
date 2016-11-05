@@ -9236,6 +9236,16 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
+		},
+		"Adnegah": {
+			"cats": [
+				36
+			],
+			"env": "^ados(?:Results)?$",
+			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
+			"icon": "adnegah.png",
+			"script": "[^a-z]adnegah.*\\.js",
+			"website": "Adnegah.net"
 		}
 	},
 	"categories": {
