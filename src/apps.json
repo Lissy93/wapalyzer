@@ -3236,6 +3236,14 @@
 			"script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
 			"website": "infonline.de"
 		},
+		"Infusionsoft": {
+			"cats": [
+				32
+			],
+			"icon": "infusionsoft.svg",
+			"html": "<input (?:[^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\"|[^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\") [^>]*\/>\\;version:\\1",
+			"website": "infusionsoft.com"
+		},
 		"IPB": {
 			"cats": [
 				2
