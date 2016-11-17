@@ -4231,6 +4231,24 @@
 			],
 			"website": "www.magentocommerce.com"
 		},
+		"Mailchimp": {
+			"cats": [
+				32
+			],
+			"icon": "mailchimp.svg",
+			"script": [
+				"s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js",
+				"cdn-images.mailchimp.com/[^>]*.css"
+			],
+			"html": [
+				"<form [^>]*data-mailchimp-url",
+				"<form [^>]*id=\"mc-embedded-subscribe-form\"",
+				"<form [^>]*name=\"mc-embedded-subscribe-form\"",
+				"<input [^>]*id=\"mc-email\"\\;confidence:20",
+				"<!-- Begin MailChimp Signup Form -->"
+			]
+
+		},
 		"Mambo": {
 			"cats": [
 				1
