@@ -2876,6 +2876,23 @@
 			"icon": "Gravatar.png",
 			"website": "gravatar.com"
 		},
+		"Gravity Forms": {
+			"cats": [
+				19
+			],
+			"website": "gravityforms.com",
+			"icon": "gravityforms.svg",
+			"html": [
+				"<div class=(?:\"|')[^>]*gform_wrapper",
+				"<div class=(?:\"|')[^>]*gform_body",
+				"<ul [^>]*class=(?:\"|')[^>]*gform_fields",
+				"<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/"
+			],
+			"implies": [
+				"WordPress",
+				"PHP"
+			]
+		},
 		"Gravity Insights": {
 			"cats": [
 				10
