@@ -3241,7 +3241,10 @@
 				32
 			],
 			"icon": "infusionsoft.svg",
-			"html": "<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\/>\\;version:\\1",
+			"html": [
+				"<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\/>\\;version:\\1",
+				"<input [^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\" [^>]*\/>\\;version:\\1"
+			],
 			"website": "infusionsoft.com"
 		},
 		"IPB": {
