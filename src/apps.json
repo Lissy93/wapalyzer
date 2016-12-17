@@ -69,8 +69,13 @@
 			"cats": [
 				10
 			],
+			"html": [
+				"<!-- EBiS contents tag",
+				"<!--EBiS tag",
+				"<!-- Tag EBiS",
+				"<!-- EBiS common tag"
+			],
 			"icon": "ebis.png",
-			"html": ["<!-- EBiS contents tag","<!--EBiS tag","<!-- Tag EBiS","<!-- EBiS common tag"],
 			"website": "www.ebis.ne.jp"
 		},
 		"AMPcms": {
@@ -2058,7 +2063,10 @@
 			],
 			"icon": "ec-cube.png",
 			"implies": "PHP",
-			"script": ["eccube\\.js","win_op\\.js"],
+			"script": [
+				"eccube\\.js",
+				"win_op\\.js"
+			],
 			"website": "www.ec-cube.net"
 		},
 		"ELOG": {
@@ -2897,18 +2905,18 @@
 			"cats": [
 				19
 			],
-			"website": "gravityforms.com",
-			"icon": "gravityforms.svg",
 			"html": [
 				"<div class=(?:\"|')[^>]*gform_wrapper",
 				"<div class=(?:\"|')[^>]*gform_body",
 				"<ul [^>]*class=(?:\"|')[^>]*gform_fields",
 				"<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/"
 			],
+			"icon": "gravityforms.svg",
 			"implies": [
 				"WordPress",
 				"PHP"
-			]
+			],
+			"website": "gravityforms.com"
 		},
 		"Gravity Insights": {
 			"cats": [
@@ -3270,17 +3278,6 @@
 			"script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
 			"website": "infonline.de"
 		},
-		"Infusionsoft": {
-			"cats": [
-				32
-			],
-			"icon": "infusionsoft.svg",
-			"html": [
-				"<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\/>\\;version:\\1",
-				"<input [^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\" [^>]*\/>\\;version:\\1"
-			],
-			"website": "infusionsoft.com"
-		},
 		"IPB": {
 			"cats": [
 				2
@@ -3383,14 +3380,16 @@
 			"icon": "default.png",
 			"website": "indyproject.org"
 		},
-		"Ink": {
+		"Infusionsoft": {
 			"cats": [
-				18
+				32
 			],
-			"html": "<link [^>]*href=\"[^\"]+ink(?:\\.min)?\\.css",
-			"icon": "Ink.png",
-			"script": "ink.*\\.js",
-			"website": "ink.sapo.pt"
+			"html": [
+				"<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\\/>\\;version:\\1",
+				"<input [^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\" [^>]*\\/>\\;version:\\1"
+			],
+			"icon": "infusionsoft.svg",
+			"website": "infusionsoft.com"
 		},
 		"InstantCMS": {
 			"cats": [
@@ -3459,18 +3458,6 @@
 			"html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
 			"icon": "Ionicons.png",
 			"website": "ionicons.com"
-		},
-		"iPresta": {
-		        "cats": [
-				6
-		      	],
-		      	"excludes": "PrestaShop",
-		      	"icon": "iPresta.png",
-		      	"implies": "PHP",      
-			"meta": {
-        			"designer": "iPresta"
-      			},
-			"website": "ipresta.ir"
 		},
 		"JAlbum": {
 			"cats": [
@@ -3727,11 +3714,11 @@
 				6
 			],
 			"env": "^Kamva$",
-			"script": "cdn\\.mykamva\\.ir",
-			"meta":{
+			"icon": "Kamva.svg",
+			"meta": {
 				"generator": "[CK]amva"
 			},
-			"icon": "Kamva.svg",
+			"script": "cdn\\.mykamva\\.ir",
 			"website": "kamva.ir"
 		},
 		"Kendo UI": {
@@ -4306,20 +4293,19 @@
 			"cats": [
 				32
 			],
-			"icon": "mailchimp.svg",
-			"website": "mailchimp.com",
-			"script": [
-				"s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js",
-				"cdn-images.mailchimp.com/[^>]*.css"
-			],
 			"html": [
 				"<form [^>]*data-mailchimp-url",
 				"<form [^>]*id=\"mc-embedded-subscribe-form\"",
 				"<form [^>]*name=\"mc-embedded-subscribe-form\"",
 				"<input [^>]*id=\"mc-email\"\\;confidence:20",
 				"<!-- Begin MailChimp Signup Form -->"
-			]
-
+			],
+			"icon": "mailchimp.svg",
+			"script": [
+				"s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js",
+				"cdn-images.mailchimp.com/[^>]*.css"
+			],
+			"website": "mailchimp.com"
 		},
 		"Mambo": {
 			"cats": [
@@ -8753,6 +8739,18 @@
 				"iCongo": ""
 			},
 			"website": "hybris.com/icongo"
+		},
+		"iPresta": {
+			"cats": [
+				6
+			],
+			"excludes": "PrestaShop",
+			"icon": "iPresta.png",
+			"implies": "PHP",
+			"meta": {
+				"designer": "iPresta"
+			},
+			"website": "ipresta.ir"
 		},
 		"iWeb": {
 			"cats": [
