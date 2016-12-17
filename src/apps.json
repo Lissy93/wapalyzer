@@ -4209,22 +4209,24 @@
 			"url": "control/userimage\\.html\\;confidence:70",
 			"website": "mobotix.com"
 		},
-		"MODx": {
+		"MODX": {
 			"cats": [
 				1
 			],
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": {
-				"Set-Cookie": "SN4[a-f\\d]{12}",
-				"X-Powered-By": "^MODx"
+				"Set-Cookie": "SN5[a-f\\d]{12}",
+				"X-Powered-By": "^MODX"
 			},
 			"html": [
-				"<a[^>]+>Powered by MODx</a>",
-				"<(?:link|script)[^>]+assets/snippets/\\;confidence:20"
+				"<a[^>]+>Powered by MODX</a>",
+				"<(?:link|script)[^>]+assets/snippets/\\;confidence:20",
+				"<form[^>]+id=\"ajaxSearch_form\\;confidence:20",
+				"<input[^>]+id=\"ajaxSearch_input\\;confidence:20"
 			],
-			"icon": "MODx.png",
+			"icon": "MODX.png",
 			"implies": "PHP",
-			"website": "modxcms.com"
+			"website": "modx.com"
 		},
 		"MadAdsMedia": {
 			"cats": [
