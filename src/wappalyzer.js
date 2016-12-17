@@ -351,8 +351,16 @@ var wappalyzer = (function() {
 
 							for ( header in w.apps[app].headers ) {
 								parse(w.apps[app][type][header]).forEach(function(pattern) {
-									if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
-										apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
+									if ( data[type][header.toLowerCase()] instanceof Array ) {
+										data[type][header.toLowerCase()].forEach(function(el) {
+											if ( typeof el === 'string' && pattern.regex.test(el) ) {
+												apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
+											}
+										});
+									} else {
+											if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
+												apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
+											}
 									}
 
 									profiler.checkPoint(app, type, pattern.regex);
