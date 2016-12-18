@@ -28,7 +28,7 @@ $ node index.js https://wappalyzer.com --quiet
 ## Run from a script
 
 ```javascript
-const wappalyzer = require('@wappalyzer/wappalyzer');
+const wappalyzer = require('wappalyzer');
 
 wappalyzer.run(['https://wappalyzer.com', '--quiet'], function(stdout, stderr) {
 	if ( stdout ) {
