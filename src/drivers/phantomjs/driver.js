@@ -163,6 +163,10 @@
 					}
 				};
 
+				page.onResourceError = function(resourceError) {
+					wappalyzer.log(resourceError.errorString, 'error');
+				};
+
 				page.open(url, function(status) {
 					var html, environmentVars;
 
