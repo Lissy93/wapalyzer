@@ -6,9 +6,9 @@ const
 	phantomjs = require('phantomjs-prebuilt');
 
 exports.run = function(args, callback) {
-	args.push.apply(['--web-security=no', '--load-images=false', '--ignore-ssl-errors=yes', '--ssl-protocol=any']);
+	args.unshift.apply(args, ['driver.js', '--web-security=false', '--load-images=false', '--ignore-ssl-errors=yes', '--ssl-protocol=any']);
 
-	var driver = phantomjs.exec('driver.js', args);
+	var driver = phantomjs.exec.apply(this, args);
 
 	driver.stdout.on('data', (data) => {
 		callback(`${data}`, null);
