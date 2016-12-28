@@ -4,6 +4,8 @@ MAINTAINER Elbert Alias <elbert@alias.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV WAPPALYZER_ROOT /usr/local/wappalyzer
+
 RUN sed -i 's/archive\.ubuntu\.com/au.archive.ubuntu.com/g' /etc/apt/sources.list
 
 RUN \
@@ -16,9 +18,9 @@ RUN \
 
 RUN ln -s $(which nodejs) /usr/bin/node
 
-RUN mkdir /usr/local/wappalyzer
+RUN mkdir "$WAPPALYZER_ROOT"
 
-WORKDIR /usr/local/wappalyzer
+WORKDIR "$WAPPALYZER_ROOT"
 
 ADD apps.json .
 ADD driver.js .
