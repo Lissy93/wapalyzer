@@ -5738,7 +5738,10 @@
 				"^priceDisplayMethod$\\;confidence:25",
 				"^priceDisplayPrecision$\\;confidence:25"
 			],
-			"html": "Powered by <a\\s+[^>]+>PrestaShop",
+			"html": [
+				"Powered by <a\\s+[^>]+>PrestaShop",
+				"<!-- /Block permanent links module HEADER -->"
+			],
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
 			"meta": {
