@@ -6076,17 +6076,18 @@
 			"script": "reveal(?:\\.min)?\\.js",
 			"website": "lab.hakim.se/reveal-js"
 		},
-        "Revel": {
-            "cats": [
-                18
-            ],
-            "headers": {
-                "Set-Cookie": "^REVEL_(?:FLASH|SESSION)="
-            },
-            "implies": "Go",
-            "icon": "Revel.png",
-            "website": "revel.github.io"
-        },
+		"Revel": {
+			"cats": [
+				18
+			],
+			"icon": "Revel.png",
+			"headers": {
+				"Set-Cookie": "^REVEL_(?:FLASH|SESSION)="
+			},
+			"implies": "Go",
+			"website": "revel.github.io",
+			"icon": "Revel.png"
+		},
 		"Rickshaw": {
 			"cats": [
 				25
