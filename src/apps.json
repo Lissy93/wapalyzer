@@ -3743,6 +3743,21 @@
 			},
 			"website": "www.kentico.com"
 		},
+		"Kibana": {
+			"cats": [
+				29,
+				25
+			],
+			"html": "<title>Kibana</title>",
+			"url": "kibana#/dashboard/",
+			"implies": "Node.js",
+			"headers": {
+				"kbn-name": "kibana",
+				"kbn-version": "^([\\d.]+)$\\;version:\\1"
+			},
+			"icon": "kibana.svg",
+			"website": "www.elastic.co/products/kibana"
+		},
 		"KineticJS": {
 			"cats": [
 				25
