@@ -5578,6 +5578,22 @@
 			],
 			"website": "petrojs.thepetronics.com"
 		},
+		"Phabricator": {
+			"cats": [
+				13,
+        47
+			],
+      "headers": {
+        "Set-Cookie": "phsid="
+      },
+      "implies": [
+        "PHP"
+      ],
+      "script": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
+			"html": "<[^>]+(?:class|id)=\"phabricator-",
+			"icon": "Phabricator.png",
+			"website": "phacility.com"
+		},
 		"Phaser": {
 			"cats": [
 				12
