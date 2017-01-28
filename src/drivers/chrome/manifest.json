@@ -29,6 +29,6 @@
 		"js/inject.js"
 	],
 	"options_page": "options.html",
-	"permissions": [ "tabs", "webRequest", "http://*/*", "https://*/*" ],
+	"permissions": [ "tabs", "webRequest", "webNavigation", "http://*/*", "https://*/*" ],
 	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
