@@ -2718,6 +2718,24 @@
 			"icon": "GoAhead.png",
 			"website": "embedthis.com/products/goahead/index.html"
 		},
+		"Gogs": {
+			"cats": [
+				47
+			],
+			"headers": {
+				"Set-Cookie": "i_like_gogits="
+			},
+			"meta": {
+				"keywords": "go, git, self-hosted, gogs"
+			},
+			"html": [
+				"<div class=\"ui left\">\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
+				"<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@"
+			],
+			"script": "js/gogs\\.js",
+			"icon": "gogs.png",
+			"website": "gogs.io"
+		},
 		"GoStats": {
 			"cats": [
 				10
