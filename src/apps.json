@@ -78,6 +78,17 @@
 			"icon": "ebis.png",
 			"website": "www.ebis.ne.jp"
 		},
+		"Adminer": {
+			"cats": [
+				3
+			],
+			"html": [
+				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
+				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
+			],
+			"icon": "adminer.png",
+			"website": "www.adminer.org"
+		},
 		"AMPcms": {
 			"cats": [
 				1
