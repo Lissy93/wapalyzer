@@ -78,17 +78,6 @@
 			"icon": "ebis.png",
 			"website": "www.ebis.ne.jp"
 		},
-		"Adminer": {
-			"cats": [
-				3
-			],
-			"html": [
-				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
-				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
-			],
-			"icon": "adminer.png",
-			"website": "www.adminer.org"
-		},
 		"AMPcms": {
 			"cats": [
 				1
@@ -231,6 +220,17 @@
 			"icon": "AddToAny.png",
 			"script": "addtoany\\.com/menu/page\\.js",
 			"website": "www.addtoany.com"
+		},
+		"Adminer": {
+			"cats": [
+				3
+			],
+			"html": [
+				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
+				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
+			],
+			"icon": "adminer.png",
+			"website": "www.adminer.org"
 		},
 		"Adnegah": {
 			"cats": [
@@ -2718,24 +2718,6 @@
 			"icon": "GoAhead.png",
 			"website": "embedthis.com/products/goahead/index.html"
 		},
-		"Gogs": {
-			"cats": [
-				47
-			],
-			"headers": {
-				"Set-Cookie": "i_like_gogits="
-			},
-			"meta": {
-				"keywords": "go, git, self-hosted, gogs"
-			},
-			"html": [
-				"<div class=\"ui left\">\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
-				"<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@"
-			],
-			"script": "js/gogs\\.js",
-			"icon": "gogs.png",
-			"website": "gogs.io"
-		},
 		"GoStats": {
 			"cats": [
 				10
@@ -2743,6 +2725,24 @@
 			"env": "^_go(?:stats|_track)",
 			"icon": "GoStats.png",
 			"website": "gostats.com"
+		},
+		"Gogs": {
+			"cats": [
+				47
+			],
+			"headers": {
+				"Set-Cookie": "i_like_gogits="
+			},
+			"html": [
+				"<div class=\"ui left\">\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
+				"<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@"
+			],
+			"icon": "gogs.png",
+			"meta": {
+				"keywords": "go, git, self-hosted, gogs"
+			},
+			"script": "js/gogs\\.js",
+			"website": "gogs.io"
 		},
 		"Google AdSense": {
 			"cats": [
@@ -3303,17 +3303,6 @@
 			"implies": "Windows Server",
 			"website": "www.iis.net"
 		},
-		"ikiwiki": {
-			"cats": [
-				8
-			],
-			"html": [
-				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"/ikiwiki\\.cgi", 
-				"<a href=\"/ikiwiki\\.cgi\\?do=edit"
-			],
-			"icon": "ikiwiki.png",
-			"website": "ikiwiki.info"
-		},
 		"INFOnline": {
 			"cats": [
 				10
@@ -3797,14 +3786,14 @@
 				29,
 				25
 			],
-			"html": "<title>Kibana</title>",
-			"url": "kibana#/dashboard/",
-			"implies": "Node.js",
 			"headers": {
 				"kbn-name": "kibana",
 				"kbn-version": "^([\\d.]+)$\\;version:\\1"
 			},
+			"html": "<title>Kibana</title>",
 			"icon": "kibana.svg",
+			"implies": "Node.js",
+			"url": "kibana#/dashboard/",
 			"website": "www.elastic.co/products/kibana"
 		},
 		"KineticJS": {
@@ -5030,8 +5019,8 @@
 				6
 			],
 			"env": "^NETO$",
-			"script": "jquery\\.neto.*\\.js",
 			"icon": "Neto.svg",
+			"script": "jquery\\.neto.*\\.js",
 			"website": "www.neto.com.au"
 		},
 		"Netsuite": {
@@ -5614,17 +5603,17 @@
 		"Phabricator": {
 			"cats": [
 				13,
-        47
+				47
 			],
-      "headers": {
-        "Set-Cookie": "phsid="
-      },
-      "implies": [
-        "PHP"
-      ],
-      "script": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
+			"headers": {
+				"Set-Cookie": "phsid="
+			},
 			"html": "<[^>]+(?:class|id)=\"phabricator-",
 			"icon": "Phabricator.png",
+			"implies": [
+				"PHP"
+			],
+			"script": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
 			"website": "phacility.com"
 		},
 		"Phaser": {
@@ -5993,17 +5982,6 @@
 			"icon": "default.png",
 			"website": "???"
 		},
-		"Rakuten DBCore": {
-			"cats": [
-				6
-			],
-			"meta": {
-				"generator": "Rakuten DBCore",
-				"generator:site": "http://ecservice.rakuten.com.br"
-			},
-			"icon": "Rakuten DBCore.png",
-			"website": "ecservice.rakuten.com.br"
-		},
 		"RBS Change": {
 			"cats": [
 				1,
@@ -6075,6 +6053,17 @@
 			"implies": "PHP",
 			"script": "rainloop/v/([^/]+)\\;version:\\1",
 			"website": "rainloop.net"
+		},
+		"Rakuten DBCore": {
+			"cats": [
+				6
+			],
+			"icon": "Rakuten DBCore.png",
+			"meta": {
+				"generator": "Rakuten DBCore",
+				"generator:site": "http://ecservice.rakuten.com.br"
+			},
+			"website": "ecservice.rakuten.com.br"
 		},
 		"Ramda": {
 			"cats": [
@@ -6192,13 +6181,12 @@
 			"cats": [
 				18
 			],
-			"icon": "Revel.png",
 			"headers": {
 				"Set-Cookie": "^REVEL_(?:FLASH|SESSION)="
 			},
+			"icon": "Revel.png",
 			"implies": "Go",
-			"website": "revel.github.io",
-			"icon": "Revel.png"
+			"website": "revel.github.io"
 		},
 		"Rickshaw": {
 			"cats": [
@@ -8605,8 +8593,8 @@
 			"cats": [
 				52
 			],
-			"script": "v2\\.zopim\\.com",
 			"icon": "Zendesk Chat.png",
+			"script": "v2\\.zopim\\.com",
 			"website": "zopim.com"
 		},
 		"Zepto": {
@@ -8708,15 +8696,15 @@
 			"cats": [
 				19
 			],
-			"meta": {
-				"generator": "^cgit v([\\d.a-z-]+)$\\;version:\\1"
-			},
 			"html": [
 				"<[^>]+id='cgit'",
 				"generated by <a href='http://git.zx2c4.com/cgit/about/'>cgit v([\\d.a-z-]+)</a>\\;version:\\1"
 			],
 			"icon": "cgit.png",
 			"implies": "git",
+			"meta": {
+				"generator": "^cgit v([\\d.a-z-]+)$\\;version:\\1"
+			},
 			"website": "git.zx2c4.com/cgit"
 		},
 		"comScore": {
@@ -8909,6 +8897,17 @@
 				"generator": "^iWeb( [\\d.]+)?\\;version:\\1"
 			},
 			"website": "apple.com/ilife/iweb"
+		},
+		"ikiwiki": {
+			"cats": [
+				8
+			],
+			"html": [
+				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"/ikiwiki\\.cgi",
+				"<a href=\"/ikiwiki\\.cgi\\?do=edit"
+			],
+			"icon": "ikiwiki.png",
+			"website": "ikiwiki.info"
 		},
 		"io4 CMS": {
 			"cats": [
