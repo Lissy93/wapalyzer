@@ -9127,6 +9127,22 @@
 			"implies": "PHP",
 			"website": "www.phpdoc.org"
 		},
+		"phpliteadmin": {
+			"cats": [
+				3
+			],
+			"html": [
+				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
+				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www.phpliteadmin.org/) -->",
+				"Powered by <a href='http://www.phpliteadmin\\.org/'"
+			],
+			"icon": "phpliteadmin.png",
+			"implies": [
+				"PHP",
+				"SQLite"
+			],
+			"website": "https://www.phpliteadmin.org/"
+		},
 		"phpMyAdmin": {
 			"cats": [
 				3
