@@ -30,7 +30,7 @@ echo "Creating hard links..."
 ln -f $path/wappalyzer.js $path/drivers/phantomjs
 ln -f $path/apps.json     $path/drivers/phantomjs
 
-ln -f $path/wappalyzer.js   $path/drivers/firefox/lib
+ln -f $path/wappalyzer.js   $path/drivers/firefox
 ln -f $path/apps.json       $path/drivers/firefox/data
 ln -f $path/icons/*.png     $path/drivers/firefox/data/images/icons
 ln -f $path/icons/*.svg     $path/drivers/firefox/data/images/icons
