@@ -125,7 +125,7 @@ var wappalyzer = (function() {
 
 			this.lastTime = new Date().getTime();
 
-			this.timedOut = this.lastTime - this.startTime > 1000;
+			this.timedOut = this.lastTime - this.startTime > w.driver.timeout;
 		}
 	};
 
