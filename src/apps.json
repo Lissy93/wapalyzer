@@ -2645,10 +2645,14 @@
 			"headers": {
 				"Set-cookie": "_gitlab_session"
 			},
+			"meta": {
+				"description": "^GitLab"
+			},
 			"html": [
 				"<meta content=\"GitLab\" property=\"og:site_name\">",
 				"<meta content=\"https?://[^/]+/assets/gitlab_logo-"
 			],
+			"env": "GitLab",
 			"icon": "GitLab.svg",
 			"implies": [
 				"Ruby",
