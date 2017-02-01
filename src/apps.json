@@ -715,9 +715,9 @@
 			],
 			"icon": "Aurelia.svg",
 			"html": [
-				"aurelia-app=[^>]",
-				"data-main=[^>]aurelia-bootstrapper",
-				"au-target-id=[^>]\\d"
+				"<[^>]+aurelia-app=[^>]",
+				"<[^>]+data-main=[^>]aurelia-bootstrapper",
+				"<[^>]+au-target-id=[^>]\\d"
 			],
 			"script": [
 				"aurelia(?:\\.min)?\\.js"
