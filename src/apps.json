@@ -4470,7 +4470,7 @@
 			"cats": [
 				1
 			],
-			"env": "^eidosBase$\\;confidence:99",
+			"env": "^eidosBase$",
 			"html": "<!-- Methode uuid: \"[a-f\\d]+\" ?-->",
 			"icon": "Methode.png",
 			"meta": {
@@ -6590,7 +6590,7 @@
 			"cats": [
 				6
 			],
-			"html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1\\;confidence:90",
+			"html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1",
 			"icon": "Shopware.png",
 			"implies": [
 				"PHP",
@@ -8171,7 +8171,7 @@
 			"cats": [
 				22
 			],
-			"html": "<title>XAMPP(?: Version ([\\d\\.]+))?</title>\\;version:\\1\\;confidence:90",
+			"html": "<title>XAMPP(?: Version ([\\d\\.]+))?</title>\\;version:\\1",
 			"icon": "XAMPP.png",
 			"implies": [
 				"Apache",
