@@ -4389,7 +4389,8 @@
 				31
 			],
 			"headers": {
-				"Server": "NetDNA"
+				"Server": "^NetDNA",
+				"X-CDN-Forward": "^maxcdn$"
 			},
 			"icon": "MaxCDN.png",
 			"website": "www.maxcdn.com"
