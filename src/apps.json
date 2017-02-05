@@ -5034,22 +5034,22 @@
 			"website": "netsuite.com"
 		},
 		"Nette Framework": {
-		  "cats": [
-			18
-		  ],
-		  "headers": {
-			"X-Powered-By": "Nette Framework",
-			"Set-Cookie": "nette-browser="
-		  },
-		  "env": "Nette",
-		  "html": [
-			"<input[^>]+data-nette-rules",
-			"<div[^>]+id=\"snippet--",
-			"<input[^>]+id=\"frm-"
-		  ],
-		  "icon": "Nette Framework.png",
-		  "implies": "PHP",
-		  "website": "nette.org"
+			"cats": [
+			  18
+			],
+			"headers": {
+			  "X-Powered-By": "Nette Framework",
+			  "Set-Cookie": "nette-browser="
+			},
+			"env": "Nette",
+			"html": [
+			  "<input[^>]+data-nette-rules",
+			  "<div[^>]+id=\"snippet-",
+			  "<input[^>]+id=\"frm-"
+			],
+			"icon": "Nette Framework.png",
+			"implies": "PHP",
+			"website": "nette.org"
 		},
 		"New Relic": {
 			"cats": [
