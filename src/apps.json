@@ -5043,9 +5043,9 @@
 		  },
 		  "env": "Nette",
 		  "html": [
-			"<(input|select|textarea)[^>]+data-nette-rules",
-			"<(div|article|main|footer|span|input|title|a)[^>]+id=\"snippet--",
-			"<(form|input|select|label)[^>]+id=\"frm-"
+			"<(input|textarea)[^>]+data-nette-rules",
+			"<[A-z][^>]+id=\"snippet--",
+			"<(form|input)[^>]+id=\"frm-"
 		  ],
 		  "icon": "Nette Framework.png",
 		  "implies": "PHP",
