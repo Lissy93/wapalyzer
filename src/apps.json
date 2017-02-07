@@ -7117,9 +7117,12 @@
 				48
 			],
 			"icon": "Synology DiskStation.png",
+			"html": "<noscript><div class='syno-no-script'",
 			"meta": {
-				"application-name": "Synology DiskStation"
+				"application-name": "Synology DiskStation",
+				"description": "^DiskStation provides a full-featured network attached storage"
 			},
+			"script": "webapi/entry\\.cgi\\?api=SYNO\\.(?:Core|Filestation)\\.Desktop\\.",
 			"website": "synology.com"
 		},
 		"SyntaxHighlighter": {
