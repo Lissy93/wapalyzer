@@ -6236,9 +6236,15 @@
 				11
 			],
 			"icon": "Roadiz CMS.png",
-			"implies": "PHP",
+			"implies": [
+				"PHP",
+				"Symfony"
+			],
 			"meta": {
 				"generator": "^Roadiz ([a-z0-9\\s\\.]+) - \\;version:\\1"
+			},
+			"headers": {
+				"X-Powered-By": "Roadiz CMS"
 			},
 			"website": "www.roadiz.io"
 		},
