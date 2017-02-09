@@ -8698,6 +8698,17 @@
 			},
 			"website": "git-scm.com"
 		},
+		"gitlist": {
+			"cats": [
+				47
+			],
+			"html": "<p>Powered by <a[^>]+>GitList ([\\d.+])\\;version:\\1",
+			"implies": [
+				"PHP",
+				"git"
+			],
+			"website": "gitlist.org"
+		},
 		"gitweb": {
 			"cats": [
 				47
