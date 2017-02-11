@@ -2652,7 +2652,7 @@
 				"<meta content=\"GitLab\" property=\"og:site_name\">",
 				"<meta content=\"https?://[^/]+/assets/gitlab_logo-"
 			],
-			"env": "GitLab",
+			"env": "^GitLab$",
 			"icon": "GitLab.svg",
 			"implies": [
 				"Ruby",
