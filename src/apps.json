@@ -3275,7 +3275,7 @@
 				6
 			],
 			"icon": "IBM.svg",
-			"html": "href=\"(?:\/|.+)webapp\/wcs\/",
+			"html": "href=\"(?:\/|[^>]+)webapp\/wcs\/",
 			"implies": "Java",
 			"url": "/wcs/",
 			"website": "ibm.com/software/genservers/commerceproductline"
