@@ -5865,6 +5865,22 @@
 			"script": "protovis.*\\.js",
 			"website": "mbostock.github.com/protovis"
 		},
+		"Proximis Omnichannel": {
+			"cats": [
+				6,
+				1
+			],
+			"env": "^__change$",
+			"html": "<html[^>]+data-ng-app=\"RbsChangeApp\"",
+			"implies": [
+				"PHP",
+				"AngularJS"
+			],
+			"meta": {
+				"generator": "Proximis Omnichannel"
+			},
+			"website": "www.proximis.com"
+		},
 		"PubMatic": {
 			"cats": [
 				36
