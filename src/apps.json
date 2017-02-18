@@ -4812,7 +4812,10 @@
 			],
 			"env": "^moodle",
 			"headers": {
-				"Set-Cookie": "MoodleSession"
+				"Set-Cookie": "(?:MoodleSession|MOODLEID_)"
+			},
+			"meta": {
+				"keywords": "^moodle"
 			},
 			"html": "<img[^>]+moodlelogo",
 			"icon": "Moodle.png",
