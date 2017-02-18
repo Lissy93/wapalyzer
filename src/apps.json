@@ -8891,8 +8891,9 @@
 			"cats": [
 				47
 			],
-			"html": "<!-- git web interface version",
+			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
 			"icon": "gitweb.png",
+			"script": "static/gitweb.js$",
 			"implies": [
 				"Perl",
 				"git"
