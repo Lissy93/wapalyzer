@@ -7590,7 +7590,7 @@
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
 				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
-				"<div [^>]*class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
+				"<div[^>]+class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
 			],
 			"icon": "Twitter Bootstrap.png",
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
