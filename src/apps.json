@@ -732,6 +732,21 @@
 			],
 			"website": "www.atlassian.com/software/jira/overview/"
 		},
+		"Aurelia": {
+			"cats": [
+				12
+			],
+			"icon": "Aurelia.svg",
+			"html": [
+				"<[^>]+aurelia-app=[^>]",
+				"<[^>]+data-main=[^>]aurelia-bootstrapper",
+				"<[^>]+au-target-id=[^>]\\d"
+			],
+			"script": [
+				"aurelia(?:\\.min)?\\.js"
+			],
+			"website": "aurelia.io"
+		},
 		"Avangate": {
 			"cats": [
 				6
