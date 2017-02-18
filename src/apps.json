@@ -5035,11 +5035,18 @@
 		},
 		"Nette Framework": {
 			"cats": [
-				18
+			  18
 			],
 			"headers": {
-				"X-Powered-By": "Nette Framework"
+			  "X-Powered-By": "Nette Framework",
+			  "Set-Cookie": "nette-browser="
 			},
+			"env": "Nette",
+			"html": [
+			  "<input[^>]+data-nette-rules",
+			  "<div[^>]+id=\"snippet-",
+			  "<input[^>]+id=\"frm-"
+			],
 			"icon": "Nette Framework.png",
 			"implies": "PHP",
 			"website": "nette.org"
