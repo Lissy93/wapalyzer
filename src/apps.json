@@ -534,6 +534,7 @@
 			"html": "<html[^>]* xmlns:jspwiki=",
 			"icon": "Apache JSPWiki.png",
 			"script": "jspwiki",
+			"implies": "Apache Tomcat",
 			"url": "wiki\\.jsp",
 			"website": "jspwiki.org"
 		},
@@ -545,6 +546,7 @@
 				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
 				"X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
 			},
+			"implies": "Java",
 			"icon": "Apache Tomcat.svg",
 			"website": "tomcat.apache.org"
 		},
@@ -661,9 +663,7 @@
 				"Powered by <a href=\"http://www.asymptix.com/\" rel=\"external\">Asymptix PHP Framework</a>"
 			],
 			"icon": "Asymptix PHP Framework.png",
-			"implies": [
-				"PHP"
-			],
+			"implies": "PHP",
 			"website": "github.com/Asymptix/Framework"
 		},
 		"Atlassian Bitbucket": {
@@ -1162,9 +1162,7 @@
 				"Server": "CANON HTTP Server(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Canon HTTP Server.png",
-			"implies": [
-				"Canon"
-			],
+			"implies": "Canon",
 			"website": "www.canon.com"
 		},
 		"Captch Me": {
@@ -1850,9 +1848,7 @@
 			],
 			"env": "Discourse",
 			"icon": "Discourse.png",
-			"implies": [
-				"Ruby on Rails"
-			],
+			"implies": "Ruby on Rails",
 			"meta": {
 				"generator": "Discourse(?: ?/?([\\d.]+\\d))?\\;version:\\1"
 			},
@@ -2469,7 +2465,8 @@
 			],
 			"html": "Powered by (?:<strong>)?<a href=\"[^>]+fluxbb",
 			"icon": "FluxBB.png",
-			"website": "fluxbb.org"
+			"website": "fluxbb.org",
+			"implies": "PHP"
 		},
 		"Flyspray": {
 			"cats": [
@@ -2480,6 +2477,7 @@
 			},
 			"html": "(?:<a[^>]+>Powered by Flyspray|<map id=\"projectsearchform)",
 			"icon": "Flyspray.png",
+			"implies": "PHP",
 			"website": "flyspray.org"
 		},
 		"Font Awesome": {
@@ -2644,6 +2642,7 @@
 			"meta": {
 				"generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1"
 			},
+			"implies": "Node.js",
 			"website": "ghost.org"
 		},
 		"GitBook": {
@@ -2902,6 +2901,7 @@
 				"generator": "Graffiti CMS ([^\"]+)\\;version:\\1"
 			},
 			"script": "/graffiti\\.js",
+			"implies": "Microsoft ASP.NET",
 			"website": "graffiticms.codeplex.com"
 		},
 		"Grandstream": {
@@ -2920,9 +2920,7 @@
 				1
 			],
 			"icon": "Grav.png",
-			"implies": [
-				"PHP"
-			],
+			"implies": "PHP",
 			"meta": {
 				"generator": "GravCMS(?:\\s([\\d.]+))?\\;version:\\1"
 			},
@@ -2948,10 +2946,7 @@
 				"<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/"
 			],
 			"icon": "gravityforms.svg",
-			"implies": [
-				"WordPress",
-				"PHP"
-			],
+			"implies": "WordPress",
 			"website": "gravityforms.com"
 		},
 		"Gravity Insights": {
@@ -2968,6 +2963,7 @@
 			],
 			"html": "<img[^>]+/dsresource\\?objectid=",
 			"icon": "Green Valley CMS.png",
+			"implies": "Apache Tomcat",
 			"meta": {
 				"DC.identifier": "/content\\.jsp\\?objectid="
 			},
@@ -3007,9 +3003,7 @@
 				"Server": "HP-Chai(?:Server|SOE)(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "HP.svg",
-			"implies": [
-				"HP"
-			],
+			"implies": "HP",
 			"website": "hp.com"
 		},
 		"HP Compact Server": {
@@ -3204,6 +3198,7 @@
 				"Set-Cookie": "hotaru_mobile="
 			},
 			"icon": "Hotaru CMS.png",
+			"implies": "PHP",
 			"meta": {
 				"generator": "Hotaru CMS"
 			},
@@ -3317,6 +3312,10 @@
 		"IPB": {
 			"cats": [
 				2
+			],
+			"implies": [
+				"PHP",
+				"MySQL"
 			],
 			"env": "^(?:IPBoard$|ipb_var|ipsSettings)",
 			"html": "<link[^>]+ipb_[^>]+\\.css",
@@ -3435,6 +3434,7 @@
 				"Set-Cookie": "InstantCMS\\[logdate\\]="
 			},
 			"icon": "InstantCMS.png",
+			"implies": "PHP",
 			"meta": {
 				"generator": "InstantCMS"
 			},
@@ -3537,9 +3537,7 @@
 				"Server": "JC-HTTPD(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "JC-HTTPD.png",
-			"implies": [
-				"Canon"
-			],
+			"implies": "Canon",
 			"website": "canon.com"
 		},
 		"JS Charts": {
@@ -3643,6 +3641,7 @@
 				"X-Jenkins": "([\\d\\.]+)\\;version:\\1"
 			},
 			"icon": "Jenkins.png",
+			"implies": "Java",
 			"website": "jenkins-ci.org"
 		},
 		"Jetty": {
@@ -3681,6 +3680,7 @@
 			],
 			"env": "^Jobber$",
 			"icon": "JobberBase.png",
+			"implies": "PHP",
 			"meta": {
 				"generator": "Jobberbase"
 			},
@@ -4035,9 +4035,7 @@
 			},
 			"html": "<!-- Lightmon Engine Copyright Lightmon",
 			"icon": "LightMon Engine.png",
-			"implies": [
-				"PHP"
-			],
+			"implies": "PHP",
 			"meta": {
 				"generator": "LightMon Engine"
 			},
@@ -4168,6 +4166,7 @@
 				"X-Powered-By": "LiveStreet CMS"
 			},
 			"icon": "LiveStreet CMS.png",
+			"implies": "PHP",
 			"website": "livestreetcms.com"
 		},
 		"Livefyre": {
@@ -4236,6 +4235,7 @@
 				"Server": "Lotus-Domino"
 			},
 			"icon": "Lotus Domino.png",
+			"implies": "Java",
 			"website": "www-01.ibm.com/software/lotus/products/domino"
 		},
 		"Lua": {
@@ -4253,6 +4253,7 @@
 				34
 			],
 			"icon": "Lucene.png",
+			"implies": "Java",
 			"website": "lucene.apache.org/core/"
 		},
 		"M.R. Inc BoxyOS": {
@@ -4385,6 +4386,7 @@
 			],
 			"html": "<img[^>]+ alt=\"Powered by Mantis Bugtracker",
 			"icon": "MantisBT.png",
+			"implies": "PHP",
 			"website": "www.mantisbt.org"
 		},
 		"ManyContacts": {
@@ -4452,6 +4454,7 @@
 				1
 			],
 			"icon": "MaxSite CMS.png",
+			"implies": "PHP",
 			"meta": {
 				"generator": "MaxSite CMS"
 			},
@@ -4497,6 +4500,7 @@
 			],
 			"html": "(?:<a[^>]+>Powered by MediaWiki</a>|<[^>]+id=\"t-specialpages)",
 			"icon": "MediaWiki.png",
+			"implies": "PHP",
 			"meta": {
 				"generator": "MediaWiki"
 			},
@@ -4973,10 +4977,7 @@
 				"X-Flow-Powered": "Neos/?(.+)?$\\;version:\\1"
 			},
 			"icon": "Neos.svg",
-			"implies": [
-				"PHP",
-				"Neos Flow"
-			],
+			"implies": "Neos Flow",
 			"url": "/neos/",
 			"website": "neos.io"
 		},
@@ -5000,12 +5001,6 @@
 				"X-Powered-CMS": "Nepso"
 			},
 			"icon": "Nepso.png",
-			"implies": [
-				"Python",
-				"Perl",
-				"Java",
-				"PHP"
-			],
 			"website": "nepso.com"
 		},
 		"Netmonitor": {
@@ -5179,9 +5174,7 @@
 				"Set-Cookie": "\bOJSSID\b"
 			},
 			"icon": "Open Journal Systems.png",
-			"implies": [
-				"PHP"
-			],
+			"implies": "PHP",
 			"meta": {
 				"generator": "Open Journal Systems(?: ([\\d.]+))?\\;version:\\1"
 			},
@@ -5201,6 +5194,7 @@
 				6
 			],
 			"icon": "Open eShop.png",
+			"implies": "PHP",
 			"meta": {
 				"author": "open-eshop\\.com",
 				"copyright": "Open eShop ?([0-9.]+)?\\;version:\\1"
@@ -5554,6 +5548,7 @@
 				"X-Powered-By": "PencilBlue"
 			},
 			"icon": "PencilBlue.png",
+			"implies": "Node.js",
 			"website": "pencilblue.org"
 		},
 		"Penguin": {
@@ -5665,9 +5660,7 @@
 				"X-Powered-By": "pimcore"
 			},
 			"icon": "pimcore.svg",
-			"implies": [
-				"PHP"
-			],
+			"implies": "PHP",
 			"website": "pimcore.org"
 		},
 		"Pinterest": {
@@ -6444,6 +6437,7 @@
 			"cats": [
 				3
 			],
+			"implies": "PHP",
 			"html": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
 			"icon": "SQL Buddy.png",
 			"website": "www.sqlbuddy.com"
@@ -7193,10 +7187,7 @@
 				"X-Generator": "Sulu/?(.+)?$\\;version:\\1"
 			},
 			"icon": "Sulu.svg",
-			"implies": [
-				"PHP",
-				"Symfony"
-			],
+			"implies": "Symfony",
 			"website": "sulu.io"
 		},
 		"SumoMe": {
@@ -7294,6 +7285,7 @@
 			},
 			"html": "<img [^>]*(?:title|alt)=\"This site is powered by the TWiki collaboration platform",
 			"icon": "TWiki.png",
+			"implies": "Perl",
 			"script": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
 			"website": "twiki.org"
 		},
@@ -7380,6 +7372,10 @@
 			"meta": {
 				"generator": "Textpattern"
 			},
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
 			"website": "textpattern.com"
 		},
 		"Thelia": {
@@ -8229,6 +8225,7 @@
 			],
 			"html": "(?:<a href=\"[^>]+wolfcms\\.org[^>]+>Wolf CMS(?:</a>)? inside|Thank you for using <a[^>]+>Wolf CMS)",
 			"icon": "Wolf CMS.png",
+			"implies": "PHP",
 			"website": "www.wolfcms.org"
 		},
 		"Woltlab Community Framework": {
@@ -8248,10 +8245,7 @@
 			"env": "woocommerce",
 			"html": "<!-- WooCommerce",
 			"icon": "WooCommerce.png",
-			"implies": [
-				"WordPress",
-				"PHP"
-			],
+			"implies": "WordPress",
 			"meta": {
 				"generator": "WooCommerce ([\\d.]+)\\;version:\\1"
 			},
@@ -8605,6 +8599,7 @@
 			"env": "^zbxCallPostScripts$",
 			"html": "<body[^>]+zbxCallPostScripts",
 			"icon": "Zabbix.png",
+			"implies": "PHP",
 			"meta": {
 				"Author": "ZABBIX SIA\\;confidence:70"
 			},
@@ -8914,9 +8909,7 @@
 				"Server": "gunicorn(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "gunicorn.png",
-			"implies": [
-				"Python"
-			],
+			"implies": "Python",
 			"website": "gunicorn.org"
 		},
 		"hapi.js": {
@@ -9275,6 +9268,7 @@
 			],
 			"html": "<a href=\"https://owncloud.com\" target=\"_blank\">ownCloud Inc.</a><br/>Your Cloud, Your Data, Your Way!",
 			"icon": "ownCloud.png",
+			"implies": "PHP",
 			"meta": {
 				"apple-itunes-app": "app-id=543672169"
 			},
@@ -9360,7 +9354,7 @@
 			"icon": "phpSQLiteCMS.png",
 			"implies": [
 				"PHP",
-				"SQLite\\;confidence:50"
+				"SQLite"
 			],
 			"meta": {
 				"generator": "^phpSQLiteCMS(?: (.+))?$\\;version:\\1"
