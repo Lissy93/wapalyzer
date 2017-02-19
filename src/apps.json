@@ -7072,7 +7072,7 @@
 			"headers": {
 				"solodev_session": ""
 			},
-			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
+			"html": "<div class=(?:\"|')dynamicDiv(?:\"|') id=(?:\"|')dd\\.\\d\\.\\d(?:\\.\\d)?(?:\"|')>",
 			"icon": "Solodev.png",
 			"implies": "PHP",
 			"website": "www.solodev.com"
