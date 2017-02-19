@@ -5608,6 +5608,11 @@
 			],
 			"env": "^pi(?:Tracker|Hostname|Protocol|CId|AId)$",
 			"icon": "Pardot.png",
+			"headers": {
+				"X-Pardot-LB": "",
+				"X-Pardot-Route": "",
+				"X-Pardot-Rsp": ""
+			},
 			"website": "pardot.com"
 		},
 		"Parse.ly": {
