@@ -329,7 +329,7 @@ var wappalyzer = (function() {
 								for ( meta in w.apps[app][type] ) {
 									profiler.checkPoint(app, type, regexMeta);
 
-									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
+									if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
 										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
