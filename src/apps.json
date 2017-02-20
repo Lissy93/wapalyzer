@@ -2683,6 +2683,23 @@
 			"icon": "Gentoo.png",
 			"website": "www.gentoo.org"
 		},
+		"Gerrit": {
+			"cats": [
+				47
+			],
+			"meta": {
+				"title": "^Gerrit Code Review$"
+			},
+			"env": "^gerrit_",
+			"script": "^gerrit_ui/gerrit_ui",
+			"html": "<(?:div|style) id=\"gerrit_",
+			"implies": [
+				"Java",
+				"git"
+			],
+			"icon": "gerrit.svg",
+			"website": "www.gerritcodereview.com"
+		},
 		"Get Satisfaction": {
 			"cats": [
 				13
