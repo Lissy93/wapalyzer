@@ -232,6 +232,7 @@
 				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
 				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
 			],
+			"implies": "PHP",
 			"icon": "adminer.png",
 			"website": "www.adminer.org"
 		},
@@ -512,9 +513,7 @@
 			],
 			"env": "^ngMaterial$",
 			"icon": "Angular.svg",
-			"implies": [
-				"AngularJS"
-			],
+			"implies": "AngularJS",
 			"script": [
 				"/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
 				"angular-material.*\\.js"
@@ -549,6 +548,7 @@
 				34
 			],
 			"html": "<style[^>]+static/hbase",
+			"implies": "Java",
 			"icon": "Apache HBase.png",
 			"website": "hbase.apache.org"
 		},
@@ -705,6 +705,7 @@
 			],
 			"env": "^bitbucket$",
 			"icon": "Atlassian Bitbucket.svg",
+			"implies": "Python",
 			"meta": {
 				"application-name": "Bitbucket"
 			},
@@ -1182,6 +1183,7 @@
 			"headers": {
 				"Server": "^Caddy$"
 			},
+			"implies": "Go",
 			"icon": "caddy.svg",
 			"website": "caddyserver.com"
 		},
@@ -9414,6 +9416,7 @@
 			],
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)",
 			"icon": "nopCommerce.png",
+			"implies": "Microsoft ASP.NET",
 			"website": "www.nopcommerce.com"
 		},
 		"openEngine": {
@@ -9443,6 +9446,10 @@
 			},
 			"html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^>]+>)?osCommerce</a>|<[^>]+class=\"[^>]*infoBoxHeading)",
 			"icon": "osCommerce.png",
+			"implies": [
+				"PHP",
+				"MySQL"
+			],
 			"website": "www.oscommerce.com"
 		},
 		"osTicket": {
@@ -9477,6 +9484,7 @@
 			],
 			"html": "<link[^>]*/papaya-themes/",
 			"icon": "papaya CMS.png",
+			"implies": "PHP",
 			"website": "papaya-cms.com"
 		},
 		"phpAlbum": {
