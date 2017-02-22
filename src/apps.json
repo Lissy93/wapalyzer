@@ -109,7 +109,7 @@
 				"^xtsite$",
 				"^ATInternet$"
 			],
-			"icon": "AT Internet Analyzer.png",
+			"icon": "AT Internet.png",
 			"website": "atinternet.com/en"
 		},
 		"AT Internet XiTi": {
@@ -117,7 +117,7 @@
 				10
 			],
 			"env": "^Xt_",
-			"icon": "AT Internet XiTi.png",
+			"icon": "AT Internet.png",
 			"script": "xiti\\.com/hit\\.xiti",
 			"website": "atinternet.com/en"
 		},
@@ -232,8 +232,8 @@
 				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
 				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
 			],
-			"implies": "PHP",
 			"icon": "adminer.png",
+			"implies": "PHP",
 			"website": "www.adminer.org"
 		},
 		"Adnegah": {
@@ -448,7 +448,7 @@
 			},
 			"icon": "Amazon-Cloudfront.svg",
 			"website": "aws.amazon.com/cloudfront/"
-    },
+		},
 		"Amazon EC2": {
 			"cats": [
 				22
@@ -459,16 +459,16 @@
 			"icon": "aws-ec2.svg",
 			"website": "aws.amazon.com/ec2/"
 		},
-    "Amazon S3": {
-      "cats": [
-        19
-      ],
-      "headers": {
-        "Server": "AmazonS3"
-      },
-      "icon": "aws-s3.svg",
-      "website": "aws.amazon.com/s3/"
-    },
+		"Amazon S3": {
+			"cats": [
+				19
+			],
+			"headers": {
+				"Server": "AmazonS3"
+			},
+			"icon": "aws-s3.svg",
+			"website": "aws.amazon.com/s3/"
+		},
 		"Ametys": {
 			"cats": [
 				1
@@ -548,8 +548,8 @@
 				34
 			],
 			"html": "<style[^>]+static/hbase",
-			"implies": "Java",
 			"icon": "Apache HBase.png",
+			"implies": "Java",
 			"website": "hbase.apache.org"
 		},
 		"Apache Hadoop": {
@@ -566,8 +566,8 @@
 			],
 			"html": "<html[^>]* xmlns:jspwiki=",
 			"icon": "Apache JSPWiki.png",
-			"script": "jspwiki",
 			"implies": "Apache Tomcat",
+			"script": "jspwiki",
 			"url": "wiki\\.jsp",
 			"website": "jspwiki.org"
 		},
@@ -579,8 +579,8 @@
 				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
 				"X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
 			},
-			"implies": "Java",
 			"icon": "Apache Tomcat.svg",
+			"implies": "Java",
 			"website": "tomcat.apache.org"
 		},
 		"Apache Traffic Server": {
@@ -767,12 +767,12 @@
 			"cats": [
 				12
 			],
-			"icon": "Aurelia.svg",
 			"html": [
 				"<[^>]+aurelia-app=[^>]",
 				"<[^>]+data-main=[^>]aurelia-bootstrapper",
 				"<[^>]+au-target-id=[^>]\\d"
 			],
+			"icon": "Aurelia.svg",
 			"script": [
 				"aurelia(?:\\.min)?\\.js"
 			],
@@ -1183,8 +1183,8 @@
 			"headers": {
 				"Server": "^Caddy$"
 			},
-			"implies": "Go",
 			"icon": "caddy.svg",
+			"implies": "Go",
 			"website": "caddyserver.com"
 		},
 		"CakePHP": {
@@ -2051,10 +2051,10 @@
 			"cats": [
 				1
 			],
-			"html": "<link[^>]* href=\"\/DovetailWRP\/",
+			"html": "<link[^>]* href=\"\\/DovetailWRP\\/",
 			"icon": "DovetailWRP.png",
 			"implies": "ASP.NET",
-			"script": "\/DovetailWRP\/",
+			"script": "\\/DovetailWRP\\/",
 			"website": "www.dovetailinternet.com"
 		},
 		"Doxygen": {
@@ -2538,8 +2538,8 @@
 			],
 			"html": "Powered by (?:<strong>)?<a href=\"[^>]+fluxbb",
 			"icon": "FluxBB.png",
-			"website": "fluxbb.org",
-			"implies": "PHP"
+			"implies": "PHP",
+			"website": "fluxbb.org"
 		},
 		"Flyspray": {
 			"cats": [
@@ -2689,17 +2689,17 @@
 			"cats": [
 				47
 			],
-			"meta": {
-				"title": "^Gerrit Code Review$"
-			},
 			"env": "^gerrit_",
-			"script": "^gerrit_ui/gerrit_ui",
 			"html": "<(?:div|style) id=\"gerrit_",
+			"icon": "gerrit.svg",
 			"implies": [
 				"Java",
 				"git"
 			],
-			"icon": "gerrit.svg",
+			"meta": {
+				"title": "^Gerrit Code Review$"
+			},
+			"script": "^gerrit_ui/gerrit_ui",
 			"website": "www.gerritcodereview.com"
 		},
 		"Get Satisfaction": {
@@ -2729,10 +2729,10 @@
 				"X-Ghost-Cache-Status": ""
 			},
 			"icon": "Ghost.png",
+			"implies": "Node.js",
 			"meta": {
 				"generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1"
 			},
-			"implies": "Node.js",
 			"website": "ghost.org"
 		},
 		"GitBook": {
@@ -2745,39 +2745,27 @@
 			},
 			"website": "gitbook.io"
 		},
-		"Gitiles": {
-			"cats": [
-				47
-			],
-			"implies": [
-				"Java",
-				"git"
-			],
-			"html": "Powered by <a href=\"https://gerrit.googlesource.com/gitiles/\">Gitiles<",
-			"icon": "default.png",
-			"website": "gerrit.googlesource.com/gitiles/"
-		},
 		"GitLab": {
 			"cats": [
 				13,
 				47
 			],
+			"env": "^GitLab$",
 			"headers": {
 				"Set-cookie": "_gitlab_session"
-			},
-			"meta": {
-				"description": "^GitLab"
 			},
 			"html": [
 				"<meta content=\"GitLab\" property=\"og:site_name\">",
 				"<meta content=\"https?://[^/]+/assets/gitlab_logo-"
 			],
-			"env": "^GitLab$",
 			"icon": "GitLab.svg",
 			"implies": [
 				"Ruby",
 				"Ruby on Rails"
 			],
+			"meta": {
+				"description": "^GitLab"
+			},
 			"website": "about.gitlab.com"
 		},
 		"GitLab CI": {
@@ -2799,13 +2787,25 @@
 			"cats": [
 				47
 			],
-			"icon": "default.png",
-			"implies": "PHP",
 			"html": [
 				"<!-- gitphp web interface ([\\d.]+)\\;version:\\1",
 				"<a href=\"http://www.gitphp.org/\" target=\"_blank\">GitPHP by Chris Han"
 			],
+			"icon": "default.png",
+			"implies": "PHP",
 			"website": "gitphp.org"
+		},
+		"Gitiles": {
+			"cats": [
+				47
+			],
+			"html": "Powered by <a href=\"https://gerrit.googlesource.com/gitiles/\">Gitiles<",
+			"icon": "default.png",
+			"implies": [
+				"Java",
+				"git"
+			],
+			"website": "gerrit.googlesource.com/gitiles/"
 		},
 		"GlassFish": {
 			"cats": [
@@ -3019,11 +3019,11 @@
 				"Set-Cookie": "graffitibot[^;]="
 			},
 			"icon": "Graffiti CMS.png",
+			"implies": "Microsoft ASP.NET",
 			"meta": {
 				"generator": "Graffiti CMS ([^\"]+)\\;version:\\1"
 			},
 			"script": "/graffiti\\.js",
-			"implies": "Microsoft ASP.NET",
 			"website": "graffiticms.codeplex.com"
 		},
 		"Grandstream": {
@@ -3390,8 +3390,8 @@
 			"cats": [
 				6
 			],
+			"html": "href=\"(?:\\/|[^>]+)webapp\\/wcs\\/",
 			"icon": "IBM.svg",
-			"html": "href=\"(?:\/|[^>]+)webapp\/wcs\/",
 			"implies": "Java",
 			"url": "/wcs/",
 			"website": "ibm.com/software/genservers/commerceproductline"
@@ -3436,13 +3436,13 @@
 			"cats": [
 				2
 			],
+			"env": "^(?:IPBoard$|ipb_var|ipsSettings)",
+			"html": "<link[^>]+ipb_[^>]+\\.css",
+			"icon": "IPB.png",
 			"implies": [
 				"PHP",
 				"MySQL"
 			],
-			"env": "^(?:IPBoard$|ipb_var|ipsSettings)",
-			"html": "<link[^>]+ipb_[^>]+\\.css",
-			"icon": "IPB.png",
 			"script": "jscripts/ips_",
 			"website": "www.invisionpower.com"
 		},
@@ -3714,6 +3714,15 @@
 			"implies": "Java",
 			"website": "www.oracle.com/technetwork/java/index-jsp-135475.html"
 		},
+		"JavaScript Infovis Toolkit": {
+			"cats": [
+				25
+			],
+			"env": "^\\$jit$",
+			"icon": "JavaScript Infovis Toolkit.png",
+			"script": "jit.*\\.js",
+			"website": "thejit.org"
+		},
 		"JavaServer Faces": {
 			"cats": [
 				18
@@ -3735,15 +3744,6 @@
 			"icon": "Java.png",
 			"implies": "Java",
 			"website": "www.oracle.com/technetwork/java/javaee/jsp/index.html"
-		},
-		"JavaScript Infovis Toolkit": {
-			"cats": [
-				25
-			],
-			"env": "^\\$jit$",
-			"icon": "JavaScript Infovis Toolkit.png",
-			"script": "jit.*\\.js",
-			"website": "thejit.org"
 		},
 		"Jekyll": {
 			"cats": [
@@ -3782,11 +3782,11 @@
 			"cats": [
 				1
 			],
+			"env": "^jimdo_(?:Data|Gen\\d+)$",
 			"headers": {
 				"X-Jimdo-Instance": "",
 				"X-Jimdo-Wid": ""
 			},
-			"env": "^jimdo_(?:Data|Gen\\d+)$",
 			"icon": "jimdo.png",
 			"website": "www.jimdo.com/"
 		},
@@ -3805,11 +3805,11 @@
 				19
 			],
 			"headers": {
-				"x-jive-chrome-wrapped": "",
+				"X-JIVE-USER-ID": "",
+				"X-JSL": "",
 				"X-Jive-Flow-Id": "",
 				"X-Jive-Request-Id": "",
-				"X-JIVE-USER-ID": "",
-				"X-JSL": ""
+				"x-jive-chrome-wrapped": ""
 			},
 			"icon": "Jive.png",
 			"website": "www.jivesoftware.com"
@@ -4669,10 +4669,10 @@
 				6
 			],
 			"html": "<!-- Rendered with Melics CMS V2",
+			"icon": "meliscmsv2.png",
 			"meta": {
 				"powered-by": "^Melis CMS"
 			},
-			"icon": "meliscmsv2.png",
 			"website": "www.melistechnology.com/"
 		},
 		"Meteor": {
@@ -4890,7 +4890,7 @@
 			"cats": [
 				12
 			],
-			"icon": "Moment Timezone.png",
+			"icon": "Moment.js.png",
 			"implies": "Moment.js",
 			"script": "moment-timezone(?:\\-data)?(?:\\.min)?\\.js",
 			"website": "momentjs.com/timezone/"
@@ -4979,12 +4979,12 @@
 			"headers": {
 				"Set-Cookie": "(?:MoodleSession|MOODLEID_)"
 			},
-			"meta": {
-				"keywords": "^moodle"
-			},
 			"html": "<img[^>]+moodlelogo",
 			"icon": "Moodle.png",
 			"implies": "PHP",
+			"meta": {
+				"keywords": "^moodle"
+			},
 			"website": "moodle.org"
 		},
 		"Motion-httpd": {
@@ -5194,17 +5194,17 @@
 		},
 		"Nette Framework": {
 			"cats": [
-			  18
+				18
 			],
-			"headers": {
-			  "X-Powered-By": "Nette Framework",
-			  "Set-Cookie": "nette-browser="
-			},
 			"env": "Nette",
+			"headers": {
+				"Set-Cookie": "nette-browser=",
+				"X-Powered-By": "Nette Framework"
+			},
 			"html": [
-			  "<input[^>]+data-nette-rules",
-			  "<div[^>]+id=\"snippet-",
-			  "<input[^>]+id=\"frm-"
+				"<input[^>]+data-nette-rules",
+				"<div[^>]+id=\"snippet-",
+				"<input[^>]+id=\"frm-"
 			],
 			"icon": "Nette Framework.png",
 			"implies": "PHP",
@@ -5272,11 +5272,11 @@
 				11
 			],
 			"html": "Powered by <a href=\"http://octopress.org\">",
+			"icon": "octopress.png",
 			"implies": "Jekyll",
 			"meta": {
 				"generator": "Octopress"
 			},
-			"icon": "octopress.png",
 			"website": "octopress.org"
 		},
 		"Odoo": {
@@ -5684,12 +5684,12 @@
 				32
 			],
 			"env": "^pi(?:Tracker|Hostname|Protocol|CId|AId)$",
-			"icon": "Pardot.png",
 			"headers": {
 				"X-Pardot-LB": "",
 				"X-Pardot-Route": "",
 				"X-Pardot-Rsp": ""
 			},
+			"icon": "Pardot.png",
 			"website": "pardot.com"
 		},
 		"Parse.ly": {
@@ -5929,9 +5929,9 @@
 			"cats": [
 				25
 			],
+			"env": "Plotly",
 			"icon": "Plotly.png",
 			"implies": "D3",
-			"env": "Plotly",
 			"script": "https?://cdn\\.plot\\.ly/plotly",
 			"website": "plot.ly/javascript/"
 		},
@@ -6444,6 +6444,9 @@
 				1,
 				11
 			],
+			"headers": {
+				"X-Powered-By": "Roadiz CMS"
+			},
 			"icon": "Roadiz CMS.png",
 			"implies": [
 				"PHP",
@@ -6451,9 +6454,6 @@
 			],
 			"meta": {
 				"generator": "^Roadiz ([a-z0-9\\s\\.]+) - \\;version:\\1"
-			},
-			"headers": {
-				"X-Powered-By": "Roadiz CMS"
 			},
 			"website": "www.roadiz.io"
 		},
@@ -6633,9 +6633,9 @@
 			"cats": [
 				3
 			],
-			"implies": "PHP",
 			"html": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
 			"icon": "SQL Buddy.png",
+			"implies": "PHP",
 			"website": "www.sqlbuddy.com"
 		},
 		"SQLite": {
@@ -6722,7 +6722,7 @@
 			"headers": {
 				"Server": "Schneider-WEB(?:/V?([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Schneider Web Server.png",
+			"icon": "Schneider.png",
 			"implies": [
 				"Schneider"
 			],
@@ -6786,7 +6786,7 @@
 			"headers": {
 				"Server": "SentinelKeysServer\\/?([\\d\\.]+)?\\;version:\\1"
 			},
-			"icon": "Sentinel Keys Server.png",
+			"icon": "Sentinel.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms"
 		},
 		"Sentinel License Monitor": {
@@ -6794,7 +6794,7 @@
 				19
 			],
 			"html": "<title>Sentinel (?:Keys )?License Monitor</title>",
-			"icon": "Sentinel License Monitor.png",
+			"icon": "Sentinel.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
 		"Sentinel Protection Server": {
@@ -6804,7 +6804,7 @@
 			"headers": {
 				"Server": "SentinelProtectionServer\\/?([\\d\\.]+)?\\;version:\\1"
 			},
-			"icon": "Sentinel Protection Server.png",
+			"icon": "Sentinel.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
 		"Serendipity": {
@@ -6844,11 +6844,11 @@
 			"cats": [
 				46
 			],
+			"env": "^ShellInABox$",
 			"html": [
 				"<title>Shell In A Box</title>",
 				"must be enabled for ShellInABox</noscript>"
 			],
-			"env": "^ShellInABox$",
 			"icon": "ShellInABox.png",
 			"website": "shellinabox.com"
 		},
@@ -7217,7 +7217,7 @@
 			"headers": {
 				"Server": "Splunkd"
 			},
-			"icon": "Splunkd.png",
+			"icon": "Splunk.png",
 			"website": "splunk.com"
 		},
 		"Spree": {
@@ -7280,7 +7280,7 @@
 				1
 			],
 			"env": "^stacklaSocialHub$",
-			"icon": "Stackla Social Hub.png",
+			"icon": "Stackla.png",
 			"website": "stackla.com/"
 		},
 		"Stamplay": {
@@ -7454,8 +7454,8 @@
 			"cats": [
 				48
 			],
-			"icon": "Synology DiskStation.png",
 			"html": "<noscript><div class='syno-no-script'",
+			"icon": "Synology DiskStation.png",
 			"meta": {
 				"application-name": "Synology DiskStation",
 				"description": "^DiskStation provides a full-featured network attached storage"
@@ -7565,13 +7565,13 @@
 				1
 			],
 			"icon": "Textpattern CMS.png",
-			"meta": {
-				"generator": "Textpattern"
-			},
 			"implies": [
 				"PHP",
 				"MySQL"
 			],
+			"meta": {
+				"generator": "Textpattern"
+			},
 			"website": "textpattern.com"
 		},
 		"Thelia": {
@@ -8411,10 +8411,10 @@
 				"Set-Cookie": "Domain=\\.wix\\.com",
 				"X-Wix-Dispatcher-Cache-Hit": ""
 			},
+			"icon": "Wix.png",
 			"meta": {
 				"X-Wix-Renderer-Server": ""
 			},
-			"icon": "Wix.png",
 			"script": "static\\.wixstatic\\.com",
 			"website": "wix.com"
 		},
@@ -9077,11 +9077,11 @@
 				47
 			],
 			"html": "<p>Powered by <a[^>]+>GitList ([\\d.]+)\\;version:\\1",
+			"icon": "default.png",
 			"implies": [
 				"PHP",
 				"git"
 			],
-			"icon": "default.png",
 			"website": "gitlist.org"
 		},
 		"gitweb": {
@@ -9090,7 +9090,6 @@
 			],
 			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
 			"icon": "gitweb.png",
-			"script": "static/gitweb.js$",
 			"implies": [
 				"Perl",
 				"git"
@@ -9098,6 +9097,7 @@
 			"meta": {
 				"generator": "gitweb(?:/([\\d.]+\\d))?\\;version:\\1"
 			},
+			"script": "static/gitweb.js$",
 			"website": "git-scm.com"
 		},
 		"gunicorn": {
@@ -9127,7 +9127,7 @@
 			"cats": [
 				6
 			],
-			"icon": "iCongo.png",
+			"icon": "Hybris.png",
 			"implies": "Adobe ColdFusion",
 			"meta": {
 				"iCongo": ""
@@ -9362,7 +9362,7 @@
 				"Server": "mod_rack(?:/([\\d.]+))?\\;version:\\1",
 				"X-Powered-By": "mod_rack(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "mod_rack.png",
+			"icon": "Phusion Passenger.png",
 			"implies": [
 				"Ruby on Rails\\;confidence:50",
 				"Apache"
@@ -9377,7 +9377,7 @@
 				"Server": "mod_rails(?:/([\\d.]+))?\\;version:\\1",
 				"X-Powered-By": "mod_rails(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "mod_rails.png",
+			"icon": "Phusion Passenger.png",
 			"implies": [
 				"Ruby on Rails\\;confidence:50",
 				"Apache"
@@ -9530,22 +9530,6 @@
 			"implies": "PHP",
 			"website": "www.phpdoc.org"
 		},
-		"phpliteadmin": {
-			"cats": [
-				3
-			],
-			"html": [
-				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
-				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www.phpliteadmin.org/) -->",
-				"Powered by <a href='http://www.phpliteadmin\\.org/'"
-			],
-			"icon": "phpliteadmin.png",
-			"implies": [
-				"PHP",
-				"SQLite"
-			],
-			"website": "www.phpliteadmin.org/"
-		},
 		"phpMyAdmin": {
 			"cats": [
 				3
@@ -9581,6 +9565,22 @@
 				"generator": "^phpSQLiteCMS(?: (.+))?$\\;version:\\1"
 			},
 			"website": "phpsqlitecms.net"
+		},
+		"phpliteadmin": {
+			"cats": [
+				3
+			],
+			"html": [
+				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
+				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www.phpliteadmin.org/) -->",
+				"Powered by <a href='http://www.phpliteadmin\\.org/'"
+			],
+			"icon": "phpliteadmin.png",
+			"implies": [
+				"PHP",
+				"SQLite"
+			],
+			"website": "www.phpliteadmin.org/"
 		},
 		"phpwind": {
 			"cats": [
