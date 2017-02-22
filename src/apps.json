@@ -2766,11 +2766,13 @@
 				"Set-cookie": "_gitlab_session"
 			},
 			"meta": {
-				"description": "^GitLab"
+				"description": "^GitLab",
+				"og:site_name": "^GitLab$"
 			},
 			"html": [
-				"<meta content=\"GitLab\" property=\"og:site_name\">",
-				"<meta content=\"https?://[^/]+/assets/gitlab_logo-"
+				"<meta content=\"https?://[^/]+/assets/gitlab_logo-",
+				"GitLab</title>",
+				"<header class=\"navbar navbar-fixed-top navbar-gitlab with-horizontal-nav\">"
 			],
 			"env": "^GitLab$",
 			"icon": "GitLab.svg",
