@@ -2774,10 +2774,7 @@
 			],
 			"env": "^GitLab$",
 			"icon": "GitLab.svg",
-			"implies": [
-				"Ruby",
-				"Ruby on Rails"
-			],
+			"implies": "Ruby on Rails",
 			"website": "about.gitlab.com"
 		},
 		"GitLab CI": {
@@ -2786,10 +2783,7 @@
 				47
 			],
 			"icon": "GitLab CI.png",
-			"implies": [
-				"Ruby",
-				"Ruby on Rails"
-			],
+			"implies": "Ruby on Rails",
 			"meta": {
 				"description": "GitLab Continuous Integration"
 			},
