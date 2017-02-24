@@ -489,9 +489,9 @@
 			 4, // Documentation Tool
 			 9, // Hosting Panel
 			29, // Search Engine
-			12, // Javascript Framework
+			12, // JavaScript Framework
 			26, // Mobile Framework
-			25, // Javascript Graphics
+			25, // JavaScript Graphics
 			22, // Web Server
 			27, // Programming Language
 			28, // Operating System
