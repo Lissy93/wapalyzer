@@ -71,7 +71,7 @@
 								name  = line.substring(0, line.indexOf(': '));
 								value = line.substring(line.indexOf(': ') + 2, line.length - 1);
 
-								responseHeaders[name] = value;
+								responseHeaders[name.toLowerCase()] = value;
 							}
 						});
 
@@ -123,7 +123,7 @@
 
 						category = w.categories[w.apps[app].cats[i]];
 
-						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.slugify(category) + '">' + category + '</a>';
+						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.driver.slugify(category) + '">' + category + '</a>';
 					}
 
 					html += '</div>';
@@ -146,7 +146,7 @@
 			window.open(args.url);
 		},
 
-		slugify = function(string) {
+		slugify: function(string) {
 			return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
 		}
 	};
