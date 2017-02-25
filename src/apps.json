@@ -7890,6 +7890,18 @@
 			"url": "/umbraco/login\\.aspx(?:$|\\?)",
 			"website": "umbraco.com"
 		},
+		"UMI.CMS": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"X-Generated-By": "UMI.CMS",
+				"X-CMS-Version": "(.+)\\;confidence:0\\;version:\\1"
+			},
+			"icon": "UMI.CMS.png",
+			"implies": "PHP",
+			"website": "www.umi-cms.ru"
+		},
 		"Unbounce": {
 			"cats": [
 				20,
