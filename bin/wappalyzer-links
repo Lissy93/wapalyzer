@@ -46,10 +46,6 @@ if [ "$(compgen -G "$path/icons/converted/*.png" | head -n1)" ]; then
 	ln -f $path/icons/converted/*.png $path/drivers/chrome/images/icons/converted
 fi
 
-ln -f $path/wappalyzer.js $path/drivers/bookmarklet/js
-ln -f $path/icons/*.png   $path/drivers/bookmarklet/images/icons
-ln -f $path/icons/*.svg   $path/drivers/bookmarklet/images/icons
-
 echo "OK"
 
 exit 0
