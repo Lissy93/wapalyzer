@@ -1424,6 +1424,21 @@
 			"icon": "Cloudera.png",
 			"website": "www.cloudera.com"
 		},
+		"CloudCart": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "CloudCart LLC"
+			},
+			"html": [
+			"<link href=[^>]+cloudcart[^>]*",
+			"<link[^>]+build\\.min\\.css",
+			"[^>]+cloudcart.com[^>]*"
+			],
+			"icon": "cloudcart.svg",
+			"website": "cloudcart.com"
+		},
 		"CodeIgniter": {
 			"cats": [
 				18
