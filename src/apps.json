@@ -8718,7 +8718,7 @@
 			],
 			"html": [
 				"Powered by <a href=\"http://www.yiiframework.com/\" rel=\"external\">Yii Framework</a>",
-				"<input type=\"hidden\" value=\"[a-zA-Z0-9]*\" name=\"YII_CSRF_TOKEN\" \/>",
+				"<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \/>",
 				"<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]"
 			],
 			"icon": "Yii.png",
