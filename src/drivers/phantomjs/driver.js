@@ -88,7 +88,7 @@
 
 						apps.push({
 							name: app,
-							confidence: wappalyzer.detected[url][app].confidenceTotal,
+							confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
 							version:    wappalyzer.detected[url][app].version,
 							icon:       wappalyzer.apps[app].icon,
 							categories: cats
