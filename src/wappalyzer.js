@@ -500,24 +500,10 @@ var wappalyzer = (function() {
 					if ( match && match.length ) {
 						w.ping.hostnames[hostname].meta['language'] = match[1];
 					}
-
-					regexMeta = /<meta[^>]+>/ig;
-
-					while ( match = regexMeta.exec(data.html) ) {
-						if ( !match.length ) {
-							continue;
-						}
-
-						match = match[0].match(/name="(author|copyright|country|description|keywords)"[^>]*content="([^"]+)"/i);
-
-						if ( match && match.length === 3 ) {
-							w.ping.hostnames[hostname].meta[match[1]] = match[2];
-						}
-					}
 				}
 			}
 
-			if ( Object.keys(w.ping.hostnames).length >= 20 || w.adCache.length >= 40 ) {
+			if ( Object.keys(w.ping.hostnames).length >= 50 || w.adCache.length >= 50 ) {
 				driver('ping');
 			}
 
