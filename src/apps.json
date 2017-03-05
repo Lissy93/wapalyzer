@@ -4589,6 +4589,21 @@
 			"script": "mathjax\\.js",
 			"website": "mathjax.org"
 		},
+		"Mattermost": {
+			"cats": [
+				55
+			],
+			"html": "<noscript> To use Mattermost, please enable JavaScript. </noscript>",
+			"implies": [
+				"Go",
+				"React",
+				"PostgreSQL\\;confidence:50",
+				"MySQL\\;confidence:50"
+			],
+			"env": "mm_(?:config|license|user|current_user_id)",
+			"icon": "mattermost.png",
+			"website": "about.mattermost.com"
+		},
 		"MaxCDN": {
 			"cats": [
 				31
