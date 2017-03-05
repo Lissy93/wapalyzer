@@ -218,7 +218,7 @@
 		 */
 		ping: function() {
 			if ( Object.keys(w.ping.hostnames).length && parseInt(localStorage['tracking'], 10) ) {
-				w.driver.post('http://ping.wappalyzer.com/ping/v2/', w.ping);
+				w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
