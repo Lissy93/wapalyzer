@@ -109,7 +109,7 @@
 				"^xtsite$",
 				"^ATInternet$"
 			],
-			"icon": "AT Internet Analyzer.png",
+			"icon": "AT Internet.png",
 			"website": "atinternet.com/en"
 		},
 		"AT Internet XiTi": {
@@ -117,7 +117,7 @@
 				10
 			],
 			"env": "^Xt_",
-			"icon": "AT Internet XiTi.png",
+			"icon": "AT Internet.png",
 			"script": "xiti\\.com/hit\\.xiti",
 			"website": "atinternet.com/en"
 		},
@@ -2290,7 +2290,7 @@
 			"headers": {
 				"Server": "Mbedthis-Appweb(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "EmbedThis Appweb.png",
+			"icon": "Embedthis.png",
 			"website": "embedthis.com/appweb"
 		},
 		"Embedthis-http": {
@@ -2300,7 +2300,7 @@
 			"headers": {
 				"Server": "Embedthis-http(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Embedthis-http.png",
+			"icon": "Embedthis.png",
 			"website": "github.com/embedthis/http"
 		},
 		"Ember.js": {
@@ -4954,7 +4954,7 @@
 			"cats": [
 				12
 			],
-			"icon": "Moment Timezone.png",
+			"icon": "Moment.js.png",
 			"implies": "Moment.js",
 			"script": "moment-timezone(?:\\-data)?(?:\\.min)?\\.js",
 			"website": "momentjs.com/timezone/"
@@ -6786,7 +6786,7 @@
 			"headers": {
 				"Server": "Schneider-WEB(?:/V?([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Schneider Web Server.png",
+			"icon": "Schneider.png",
 			"implies": [
 				"Schneider"
 			],
@@ -6850,7 +6850,7 @@
 			"headers": {
 				"Server": "SentinelKeysServer\\/?([\\d\\.]+)?\\;version:\\1"
 			},
-			"icon": "Sentinel Keys Server.png",
+			"icon": "Sentinel.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms"
 		},
 		"Sentinel License Monitor": {
@@ -6858,7 +6858,7 @@
 				19
 			],
 			"html": "<title>Sentinel (?:Keys )?License Monitor</title>",
-			"icon": "Sentinel License Monitor.png",
+			"icon": "Sentinel.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
 		"Sentinel Protection Server": {
@@ -6868,7 +6868,7 @@
 			"headers": {
 				"Server": "SentinelProtectionServer\\/?([\\d\\.]+)?\\;version:\\1"
 			},
-			"icon": "Sentinel Protection Server.png",
+			"icon": "Sentinel.png",
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/"
 		},
 		"Serendipity": {
@@ -7281,7 +7281,7 @@
 			"headers": {
 				"Server": "Splunkd"
 			},
-			"icon": "Splunkd.png",
+			"icon": "Splunk.png",
 			"website": "splunk.com"
 		},
 		"Spree": {
@@ -7344,7 +7344,7 @@
 				1
 			],
 			"env": "^stacklaSocialHub$",
-			"icon": "Stackla Social Hub.png",
+			"icon": "Stackla.png",
 			"website": "stackla.com/"
 		},
 		"Stamplay": {
@@ -9205,7 +9205,7 @@
 			"cats": [
 				6
 			],
-			"icon": "iCongo.png",
+			"icon": "Hybris.png",
 			"implies": "Adobe ColdFusion",
 			"meta": {
 				"iCongo": ""
@@ -9440,7 +9440,7 @@
 				"Server": "mod_rack(?:/([\\d.]+))?\\;version:\\1",
 				"X-Powered-By": "mod_rack(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "mod_rack.png",
+			"icon": "Phusion Passenger.png",
 			"implies": [
 				"Ruby on Rails\\;confidence:50",
 				"Apache"
@@ -9455,7 +9455,7 @@
 				"Server": "mod_rails(?:/([\\d.]+))?\\;version:\\1",
 				"X-Powered-By": "mod_rails(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "mod_rails.png",
+			"icon": "Phusion Passenger.png",
 			"implies": [
 				"Ruby on Rails\\;confidence:50",
 				"Apache"
