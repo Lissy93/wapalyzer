@@ -232,8 +232,8 @@
 				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
 				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
 			],
-			"implies": "PHP",
 			"icon": "adminer.png",
+			"implies": "PHP",
 			"website": "www.adminer.org"
 		},
 		"Adnegah": {
@@ -448,7 +448,7 @@
 			},
 			"icon": "Amazon-Cloudfront.svg",
 			"website": "aws.amazon.com/cloudfront/"
-    },
+		},
 		"Amazon EC2": {
 			"cats": [
 				22
@@ -459,16 +459,16 @@
 			"icon": "aws-ec2.svg",
 			"website": "aws.amazon.com/ec2/"
 		},
-    "Amazon S3": {
-      "cats": [
-        19
-      ],
-      "headers": {
-        "Server": "AmazonS3"
-      },
-      "icon": "aws-s3.svg",
-      "website": "aws.amazon.com/s3/"
-    },
+		"Amazon S3": {
+			"cats": [
+				19
+			],
+			"headers": {
+				"Server": "AmazonS3"
+			},
+			"icon": "aws-s3.svg",
+			"website": "aws.amazon.com/s3/"
+		},
 		"Ametys": {
 			"cats": [
 				1
@@ -533,8 +533,8 @@
 				34
 			],
 			"html": "<style[^>]+static/hbase",
-			"implies": "Java",
 			"icon": "Apache HBase.png",
+			"implies": "Java",
 			"website": "hbase.apache.org"
 		},
 		"Apache Hadoop": {
@@ -551,8 +551,8 @@
 			],
 			"html": "<html[^>]* xmlns:jspwiki=",
 			"icon": "Apache JSPWiki.png",
-			"script": "jspwiki",
 			"implies": "Apache Tomcat",
+			"script": "jspwiki",
 			"url": "wiki\\.jsp",
 			"website": "jspwiki.org"
 		},
@@ -564,8 +564,8 @@
 				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
 				"X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
 			},
-			"implies": "Java",
 			"icon": "Apache Tomcat.svg",
+			"implies": "Java",
 			"website": "tomcat.apache.org"
 		},
 		"Apache Traffic Server": {
@@ -752,12 +752,12 @@
 			"cats": [
 				12
 			],
-			"icon": "Aurelia.svg",
 			"html": [
 				"<[^>]+aurelia-app=[^>]",
 				"<[^>]+data-main=[^>]aurelia-bootstrapper",
 				"<[^>]+au-target-id=[^>]\\d"
 			],
+			"icon": "Aurelia.svg",
 			"script": [
 				"aurelia(?:\\.min)?\\.js"
 			],
@@ -1168,8 +1168,8 @@
 			"headers": {
 				"Server": "^Caddy$"
 			},
-			"implies": "Go",
 			"icon": "caddy.svg",
+			"implies": "Go",
 			"website": "caddyserver.com"
 		},
 		"CakePHP": {
@@ -1403,6 +1403,17 @@
 			"icon": "Clientexec.png",
 			"website": "www.clientexec.com"
 		},
+		"CloudCart": {
+			"cats": [
+				6
+			],
+			"icon": "cloudcart.svg",
+			"meta": {
+				"author": "^CloudCart LLC$"
+			},
+			"script": "/cloudcart-(?:assets|storage)/",
+			"website": "cloudcart.com"
+		},
 		"CloudFlare": {
 			"cats": [
 				31
@@ -1423,17 +1434,6 @@
 			},
 			"icon": "Cloudera.png",
 			"website": "www.cloudera.com"
-		},
-		"CloudCart": {
-			"cats": [
-				6
-			],
-			"meta": {
-				"author": "^CloudCart LLC$"
-			},
-			"script": "/cloudcart-(?:assets|storage)/",
-			"icon": "cloudcart.svg",
-			"website": "cloudcart.com"
 		},
 		"CodeIgniter": {
 			"cats": [
@@ -2047,10 +2047,10 @@
 			"cats": [
 				1
 			],
-			"html": "<link[^>]* href=\"\/DovetailWRP\/",
+			"html": "<link[^>]* href=\"\\/DovetailWRP\\/",
 			"icon": "DovetailWRP.png",
 			"implies": "ASP.NET",
-			"script": "\/DovetailWRP\/",
+			"script": "\\/DovetailWRP\\/",
 			"website": "www.dovetailinternet.com"
 		},
 		"Doxygen": {
@@ -2543,8 +2543,8 @@
 			],
 			"html": "Powered by (?:<strong>)?<a href=\"[^>]+fluxbb",
 			"icon": "FluxBB.png",
-			"website": "fluxbb.org",
-			"implies": "PHP"
+			"implies": "PHP",
+			"website": "fluxbb.org"
 		},
 		"Flyspray": {
 			"cats": [
@@ -2582,21 +2582,21 @@
 			"cats": [
 				8
 			],
+			"env": "^foswiki$",
 			"headers": {
-				"X-Foswikiuri": "",
+				"Set-Cookie": "^(?:FOSWIKISTRIKEONE|SFOSWIKISID)",
 				"X-Foswikiaction": "",
-				"Set-Cookie": "^(?:FOSWIKISTRIKEONE|SFOSWIKISID)"
-			},
-			"meta": {
-				"foswiki.WIKINAME": "",
-				"foswiki.SERVERTIME": ""
+				"X-Foswikiuri": ""
 			},
 			"html": [
 				"<div class=\"foswiki(?:Copyright|Page|Main)\">"
 			],
-			"env": "^foswiki$",
-			"implies": "Perl",
 			"icon": "foswiki.png",
+			"implies": "Perl",
+			"meta": {
+				"foswiki.SERVERTIME": "",
+				"foswiki.WIKINAME": ""
+			},
 			"website": "foswiki.org"
 		},
 		"FreeBSD": {
@@ -2715,17 +2715,17 @@
 			"cats": [
 				47
 			],
-			"meta": {
-				"title": "^Gerrit Code Review$"
-			},
 			"env": "^gerrit_",
-			"script": "^gerrit_ui/gerrit_ui",
 			"html": "<(?:div|style) id=\"gerrit_",
+			"icon": "gerrit.svg",
 			"implies": [
 				"Java",
 				"git"
 			],
-			"icon": "gerrit.svg",
+			"meta": {
+				"title": "^Gerrit Code Review$"
+			},
+			"script": "^gerrit_ui/gerrit_ui",
 			"website": "www.gerritcodereview.com"
 		},
 		"Get Satisfaction": {
@@ -2755,10 +2755,10 @@
 				"X-Ghost-Cache-Status": ""
 			},
 			"icon": "Ghost.png",
+			"implies": "Node.js",
 			"meta": {
 				"generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1"
 			},
-			"implies": "Node.js",
 			"website": "ghost.org"
 		},
 		"GitBook": {
@@ -2771,38 +2771,26 @@
 			},
 			"website": "gitbook.io"
 		},
-		"Gitiles": {
-			"cats": [
-				47
-			],
-			"implies": [
-				"Java",
-				"git"
-			],
-			"html": "Powered by <a href=\"https://gerrit.googlesource.com/gitiles/\">Gitiles<",
-			"icon": "default.svg",
-			"website": "gerrit.googlesource.com/gitiles/"
-		},
 		"GitLab": {
 			"cats": [
 				13,
 				47
 			],
+			"env": "^GitLab$",
 			"headers": {
 				"Set-cookie": "_gitlab_session"
-			},
-			"meta": {
-				"description": "^GitLab",
-				"og:site_name": "^GitLab$"
 			},
 			"html": [
 				"<meta content=\"https?://[^/]+/assets/gitlab_logo-",
 				"GitLab</title>",
 				"<header class=\"navbar navbar-fixed-top navbar-gitlab with-horizontal-nav\">"
 			],
-			"env": "^GitLab$",
 			"icon": "GitLab.svg",
 			"implies": "Ruby on Rails",
+			"meta": {
+				"description": "^GitLab",
+				"og:site_name": "^GitLab$"
+			},
 			"website": "about.gitlab.com"
 		},
 		"GitLab CI": {
@@ -2821,13 +2809,25 @@
 			"cats": [
 				47
 			],
-			"icon": "default.svg",
-			"implies": "PHP",
 			"html": [
 				"<!-- gitphp web interface ([\\d.]+)\\;version:\\1",
 				"<a href=\"http://www.gitphp.org/\" target=\"_blank\">GitPHP by Chris Han"
 			],
+			"icon": "default.svg",
+			"implies": "PHP",
 			"website": "gitphp.org"
+		},
+		"Gitiles": {
+			"cats": [
+				47
+			],
+			"html": "Powered by <a href=\"https://gerrit.googlesource.com/gitiles/\">Gitiles<",
+			"icon": "default.svg",
+			"implies": [
+				"Java",
+				"git"
+			],
+			"website": "gerrit.googlesource.com/gitiles/"
 		},
 		"GlassFish": {
 			"cats": [
@@ -3041,11 +3041,11 @@
 				"Set-Cookie": "graffitibot[^;]="
 			},
 			"icon": "Graffiti CMS.png",
+			"implies": "Microsoft ASP.NET",
 			"meta": {
 				"generator": "Graffiti CMS ([^\"]+)\\;version:\\1"
 			},
 			"script": "/graffiti\\.js",
-			"implies": "Microsoft ASP.NET",
 			"website": "graffiticms.codeplex.com"
 		},
 		"Grandstream": {
@@ -3225,7 +3225,7 @@
 				4
 			],
 			"html": "<p>Produced by <a href=\"http://www.haskell.org/haddock/\">Haddock</a> version ([0-9.]+)</p>\\;version:\\1",
-			"icon": "default.png",
+			"icon": "default.svg",
 			"script": "haddock-util\\.js",
 			"website": "www.haskell.org/haddock/"
 		},
@@ -3421,8 +3421,8 @@
 			"cats": [
 				6
 			],
+			"html": "href=\"(?:\\/|[^>]+)webapp\\/wcs\\/",
 			"icon": "IBM.svg",
-			"html": "href=\"(?:\/|[^>]+)webapp\/wcs\/",
 			"implies": "Java",
 			"url": "/wcs/",
 			"website": "ibm.com/software/genservers/commerceproductline"
@@ -3467,13 +3467,13 @@
 			"cats": [
 				2
 			],
+			"env": "^(?:IPBoard$|ipb_var|ipsSettings)",
+			"html": "<link[^>]+ipb_[^>]+\\.css",
+			"icon": "IPB.png",
 			"implies": [
 				"PHP",
 				"MySQL"
 			],
-			"env": "^(?:IPBoard$|ipb_var|ipsSettings)",
-			"html": "<link[^>]+ipb_[^>]+\\.css",
-			"icon": "IPB.png",
 			"script": "jscripts/ips_",
 			"website": "www.invisionpower.com"
 		},
@@ -3745,6 +3745,15 @@
 			"implies": "Java",
 			"website": "www.oracle.com/technetwork/java/index-jsp-135475.html"
 		},
+		"JavaScript Infovis Toolkit": {
+			"cats": [
+				25
+			],
+			"env": "^\\$jit$",
+			"icon": "JavaScript Infovis Toolkit.png",
+			"script": "jit.*\\.js",
+			"website": "thejit.org"
+		},
 		"JavaServer Faces": {
 			"cats": [
 				18
@@ -3766,15 +3775,6 @@
 			"icon": "Java.png",
 			"implies": "Java",
 			"website": "www.oracle.com/technetwork/java/javaee/jsp/index.html"
-		},
-		"JavaScript Infovis Toolkit": {
-			"cats": [
-				25
-			],
-			"env": "^\\$jit$",
-			"icon": "JavaScript Infovis Toolkit.png",
-			"script": "jit.*\\.js",
-			"website": "thejit.org"
 		},
 		"Jekyll": {
 			"cats": [
@@ -3813,11 +3813,11 @@
 			"cats": [
 				1
 			],
+			"env": "^jimdo_(?:Data|Gen\\d+)$",
 			"headers": {
 				"X-Jimdo-Instance": "",
 				"X-Jimdo-Wid": ""
 			},
-			"env": "^jimdo_(?:Data|Gen\\d+)$",
 			"icon": "jimdo.png",
 			"website": "www.jimdo.com/"
 		},
@@ -3836,11 +3836,11 @@
 				19
 			],
 			"headers": {
-				"x-jive-chrome-wrapped": "",
+				"X-JIVE-USER-ID": "",
+				"X-JSL": "",
 				"X-Jive-Flow-Id": "",
 				"X-Jive-Request-Id": "",
-				"X-JIVE-USER-ID": "",
-				"X-JSL": ""
+				"x-jive-chrome-wrapped": ""
 			},
 			"icon": "Jive.png",
 			"website": "www.jivesoftware.com"
@@ -4476,6 +4476,14 @@
 			],
 			"website": "mrincworld.com"
 		},
+		"MHonArc": {
+			"cats": [
+				50
+			],
+			"html": "<!-- MHonArc v([0-9.]+) -->\\;version:\\1",
+			"icon": "mhonarc.png",
+			"website": "www.mhonarc.at"
+		},
 		"MOBOTIX": {
 			"cats": [
 				39
@@ -4632,15 +4640,15 @@
 			"cats": [
 				55
 			],
+			"env": "mm_(?:config|license|user|current_user_id)",
 			"html": "<noscript> To use Mattermost, please enable JavaScript. </noscript>",
+			"icon": "mattermost.png",
 			"implies": [
 				"Go",
 				"React",
 				"PostgreSQL\\;confidence:50",
 				"MySQL\\;confidence:50"
 			],
-			"env": "mm_(?:config|license|user|current_user_id)",
-			"icon": "mattermost.png",
 			"website": "about.mattermost.com"
 		},
 		"MaxCDN": {
@@ -4725,10 +4733,10 @@
 				6
 			],
 			"html": "<!-- Rendered with Melics CMS V2",
+			"icon": "meliscmsv2.png",
 			"meta": {
 				"powered-by": "^Melis CMS"
 			},
-			"icon": "meliscmsv2.png",
 			"website": "www.melistechnology.com/"
 		},
 		"Meteor": {
@@ -4755,14 +4763,6 @@
 				"eomportal-uuid": "[a-f\\d]+"
 			},
 			"website": "www.eidosmedia.com/solutions"
-		},
-		"MHonArc": {
-			"cats": [
-				50
-			],
-			"html": "<!-- MHonArc v([0-9.]+) -->\\;version:\\1",
-			"icon": "mhonarc.png",
-			"website": "www.mhonarc.at"
 		},
 		"Microsoft ASP.NET": {
 			"cats": [
@@ -5043,12 +5043,12 @@
 			"headers": {
 				"Set-Cookie": "(?:MoodleSession|MOODLEID_)"
 			},
-			"meta": {
-				"keywords": "^moodle"
-			},
 			"html": "<img[^>]+moodlelogo",
 			"icon": "Moodle.png",
 			"implies": "PHP",
+			"meta": {
+				"keywords": "^moodle"
+			},
 			"website": "moodle.org"
 		},
 		"Motion-httpd": {
@@ -5258,17 +5258,17 @@
 		},
 		"Nette Framework": {
 			"cats": [
-			  18
+				18
 			],
-			"headers": {
-			  "X-Powered-By": "Nette Framework",
-			  "Set-Cookie": "nette-browser="
-			},
 			"env": "Nette",
+			"headers": {
+				"Set-Cookie": "nette-browser=",
+				"X-Powered-By": "Nette Framework"
+			},
 			"html": [
-			  "<input[^>]+data-nette-rules",
-			  "<div[^>]+id=\"snippet-",
-			  "<input[^>]+id=\"frm-"
+				"<input[^>]+data-nette-rules",
+				"<div[^>]+id=\"snippet-",
+				"<input[^>]+id=\"frm-"
 			],
 			"icon": "Nette Framework.png",
 			"implies": "PHP",
@@ -5336,11 +5336,11 @@
 				11
 			],
 			"html": "Powered by <a href=\"http://octopress.org\">",
+			"icon": "octopress.png",
 			"implies": "Jekyll",
 			"meta": {
 				"generator": "Octopress"
 			},
-			"icon": "octopress.png",
 			"website": "octopress.org"
 		},
 		"Odoo": {
@@ -5748,12 +5748,12 @@
 				32
 			],
 			"env": "^pi(?:Tracker|Hostname|Protocol|CId|AId)$",
-			"icon": "Pardot.png",
 			"headers": {
 				"X-Pardot-LB": "",
 				"X-Pardot-Route": "",
 				"X-Pardot-Rsp": ""
 			},
+			"icon": "Pardot.png",
 			"website": "pardot.com"
 		},
 		"Parse.ly": {
@@ -5993,9 +5993,9 @@
 			"cats": [
 				25
 			],
+			"env": "Plotly",
 			"icon": "Plotly.png",
 			"implies": "D3",
-			"env": "Plotly",
 			"script": "https?://cdn\\.plot\\.ly/plotly",
 			"website": "plot.ly/javascript/"
 		},
@@ -6508,6 +6508,9 @@
 				1,
 				11
 			],
+			"headers": {
+				"X-Powered-By": "Roadiz CMS"
+			},
 			"icon": "Roadiz CMS.png",
 			"implies": [
 				"PHP",
@@ -6515,9 +6518,6 @@
 			],
 			"meta": {
 				"generator": "^Roadiz ([a-z0-9\\s\\.]+) - \\;version:\\1"
-			},
-			"headers": {
-				"X-Powered-By": "Roadiz CMS"
 			},
 			"website": "www.roadiz.io"
 		},
@@ -6697,9 +6697,9 @@
 			"cats": [
 				3
 			],
-			"implies": "PHP",
 			"html": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
 			"icon": "SQL Buddy.png",
+			"implies": "PHP",
 			"website": "www.sqlbuddy.com"
 		},
 		"SQLite": {
@@ -6908,11 +6908,11 @@
 			"cats": [
 				46
 			],
+			"env": "^ShellInABox$",
 			"html": [
 				"<title>Shell In A Box</title>",
 				"must be enabled for ShellInABox</noscript>"
 			],
-			"env": "^ShellInABox$",
 			"icon": "ShellInABox.png",
 			"website": "shellinabox.com"
 		},
@@ -7510,9 +7510,9 @@
 			"cats": [
 				29
 			],
-			"script": "swiftype\\.com/embed\\.js$",
-			"icon": "swiftype.png",
 			"env": "Swiftype",
+			"icon": "swiftype.png",
+			"script": "swiftype\\.com/embed\\.js$",
 			"website": "swiftype.com"
 		},
 		"Symfony": {
@@ -7527,8 +7527,8 @@
 			"cats": [
 				48
 			],
-			"icon": "Synology DiskStation.png",
 			"html": "<noscript><div class='syno-no-script'",
+			"icon": "Synology DiskStation.png",
 			"meta": {
 				"application-name": "Synology DiskStation",
 				"description": "^DiskStation provides a full-featured network attached storage"
@@ -7638,13 +7638,13 @@
 				1
 			],
 			"icon": "Textpattern CMS.png",
-			"meta": {
-				"generator": "Textpattern"
-			},
 			"implies": [
 				"PHP",
 				"MySQL"
 			],
+			"meta": {
+				"generator": "Textpattern"
+			},
 			"website": "textpattern.com"
 		},
 		"Thelia": {
@@ -8484,10 +8484,10 @@
 				"Set-Cookie": "Domain=\\.wix\\.com",
 				"X-Wix-Dispatcher-Cache-Hit": ""
 			},
+			"icon": "Wix.png",
 			"meta": {
 				"X-Wix-Renderer-Server": ""
 			},
-			"icon": "Wix.png",
 			"script": "static\\.wixstatic\\.com",
 			"website": "wix.com"
 		},
@@ -8809,7 +8809,7 @@
 			],
 			"html": [
 				"Powered by <a href=\"http://www.yiiframework.com/\" rel=\"external\">Yii Framework</a>",
-				"<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \/>",
+				"<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \\/>",
 				"<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]"
 			],
 			"icon": "Yii.png",
@@ -9155,11 +9155,11 @@
 				47
 			],
 			"html": "<p>Powered by <a[^>]+>GitList ([\\d.]+)\\;version:\\1",
+			"icon": "default.svg",
 			"implies": [
 				"PHP",
 				"git"
 			],
-			"icon": "default.svg",
 			"website": "gitlist.org"
 		},
 		"gitweb": {
@@ -9168,7 +9168,6 @@
 			],
 			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
 			"icon": "gitweb.png",
-			"script": "static/gitweb.js$",
 			"implies": [
 				"Perl",
 				"git"
@@ -9176,6 +9175,7 @@
 			"meta": {
 				"generator": "gitweb(?:/([\\d.]+\\d))?\\;version:\\1"
 			},
+			"script": "static/gitweb.js$",
 			"website": "git-scm.com"
 		},
 		"gunicorn": {
@@ -9608,22 +9608,6 @@
 			"implies": "PHP",
 			"website": "www.phpdoc.org"
 		},
-		"phpliteadmin": {
-			"cats": [
-				3
-			],
-			"html": [
-				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
-				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www.phpliteadmin.org/) -->",
-				"Powered by <a href='http://www.phpliteadmin\\.org/'"
-			],
-			"icon": "phpliteadmin.png",
-			"implies": [
-				"PHP",
-				"SQLite"
-			],
-			"website": "www.phpliteadmin.org/"
-		},
 		"phpMyAdmin": {
 			"cats": [
 				3
@@ -9659,6 +9643,22 @@
 				"generator": "^phpSQLiteCMS(?: (.+))?$\\;version:\\1"
 			},
 			"website": "phpsqlitecms.net"
+		},
+		"phpliteadmin": {
+			"cats": [
+				3
+			],
+			"html": [
+				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
+				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www.phpliteadmin.org/) -->",
+				"Powered by <a href='http://www.phpliteadmin\\.org/'"
+			],
+			"icon": "phpliteadmin.png",
+			"implies": [
+				"PHP",
+				"SQLite"
+			],
+			"website": "www.phpliteadmin.org/"
 		},
 		"phpwind": {
 			"cats": [
