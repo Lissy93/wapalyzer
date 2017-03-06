@@ -13,7 +13,7 @@
 		d             = window.document,
 		container     = d.getElementById('wappalyzer-container'),
 		domain        = window.top.location.host,
-		url           = window.top.location.href,
+		url           = window.top.location.href.replace(/#.*$/, ''),
 		hasOwn        = Object.prototype.hasOwnProperty;
 
 	w.driver = {
