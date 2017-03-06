@@ -6,7 +6,7 @@
 			],
 			"icon": "1and1.svg",
 			"implies": "PHP",
-			"url": "/shop/catalog/browse\\?sessid="
+			"url": "/shop/catalog/browse\\?sessid=",
 			"website": "http://1and1.com"
 		},
 		"1C-Bitrix": {
@@ -1356,8 +1356,8 @@
 				1
 			],
 			"headers": {
-				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
-				"Link": "<http://ckan.org/>; rel=shortlink"
+				"Access-Control-Allow-Headers": "X-CKAN-API-KEY\\;confidence:90",
+				"Link": "<http://ckan.org/>; rel=shortlink\\;confidence:90
 			},
 			"icon": "Ckan.png",
 			"implies": [
@@ -1367,9 +1367,9 @@
 				"PostgreSQL\\;confidence:80"
 			],
 			"meta": {
-				"generator": "ckan [\\d]\\.[\\d]\\.[\\d]"
+				"generator": "ckan.*?(\\d\\.\\d\\.\\d)?\\;version:\\1"
 			},
-			"website": "ckan.org/"
+			"website": "http://ckan.org/"
 		},
 		"ClickHeat": {
 			"cats": [
