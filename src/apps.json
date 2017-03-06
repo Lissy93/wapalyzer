@@ -1200,7 +1200,7 @@
 			"headers": {
 				"Server": "CANON HTTP Server(?:/([\\d.]+))?\\;version:\\1"
 			},
-			"icon": "Canon HTTP Server.png",
+			"icon": "Canon.png",
 			"implies": "Canon",
 			"website": "http://www.canon.com"
 		},
@@ -2167,7 +2167,7 @@
 			"headers": {
 				"Server": "ELOG HTTP( \\d[\\-\\d\\.]+)?\\;version:\\1"
 			},
-			"icon": "ELOG HTTP.png",
+			"icon": "ELOG.png",
 			"implies": "ELOG",
 			"website": "http://midas.psi.ch/elog"
 		},
@@ -3319,7 +3319,7 @@
 				25
 			],
 			"html": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)\\;version:\\1",
-			"icon": "Highstock.png",
+			"icon": "Highcharts.png",
 			"script": "highstock(?:\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\1",
 			"website": "http://highcharts.com/products/highstock"
 		},
@@ -4450,7 +4450,7 @@
 			"cats": [
 				28
 			],
-			"icon": "M.R. Inc BoxyOS.png",
+			"icon": "M.R. Inc.png",
 			"website": "http://mrincworld.com"
 		},
 		"M.R. Inc SiteFrame": {
@@ -4460,7 +4460,7 @@
 			"headers": {
 				"Powered-By": "M\\.R\\. Inc SiteFrame"
 			},
-			"icon": "M.R. Inc SiteFrame.png",
+			"icon": "M.R. Inc.png",
 			"website": "http://mrincworld.com"
 		},
 		"M.R. Inc Webserver": {
@@ -4470,7 +4470,7 @@
 			"headers": {
 				"Server": "M\\.R\\. Inc Webserver"
 			},
-			"icon": "M.R. Inc Webserver.png",
+			"icon": "M.R. Inc.png",
 			"implies": [
 				"M.R. Inc BoxyOS"
 			],
@@ -9167,7 +9167,7 @@
 				47
 			],
 			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
-			"icon": "gitweb.png",
+			"icon": "git.png",
 			"implies": [
 				"Perl",
 				"git"
