@@ -1639,7 +1639,10 @@
 				"X-Powered-By": "Craft CMS"
 			},
 			"icon": "Craft CMS.png",
-			"implies": "PHP",
+			"implies": [
+				"PHP",
+				"Yii"
+			],
 			"website": "http://buildwithcraft.com"
 		},
 		"Crazy Egg": {
