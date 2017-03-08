@@ -2207,6 +2207,23 @@
 			"icon": "ESERV-10.png",
 			"website": "www.violasystems.com"
 		},
+		"Etherpad": {
+			"cats": [
+				24
+			],
+			"headers": {
+				"Server": "^Etherpad"
+			},
+			"env": [
+				"^pad(?:editbar|impexp)$"
+			],
+			"script": [
+				"/ep_etherpad-lite/"
+			],
+			"icon": "etherpad.png",
+			"implies": "Node.js",
+			"website": "etherpad.org"
+		},
 		"EWS-NIC4": {
 			"cats": [
 				22
