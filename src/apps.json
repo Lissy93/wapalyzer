@@ -2995,7 +2995,10 @@
 			"cats": [
 				42
 			],
-			"env": "^googletag$",
+			"env": [
+				"^googletag$",
+				"^google_tag_manager$"
+			],
 			"html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
 			"icon": "Google Tag Manager.png",
 			"website": "http://www.google.com/tagmanager"
