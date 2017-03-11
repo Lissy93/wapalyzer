@@ -66,6 +66,13 @@ pushd $WAPPALYZER_ROOT/src/drivers/chrome > /dev/null
 
 zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
 
+# Google Chrome
+echo "Building WebExtension driver..."
+
+pushd $WAPPALYZER_ROOT/src/drivers/webextension > /dev/null
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.zip .
+
 popd > /dev/null
 
 echo "Done. Builds have been created in $WAPPALYZER_ROOT/build."
