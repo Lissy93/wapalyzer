@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		detectedApps = d.getElementById('detected-apps');
 
 	slugify = function(string) {
-		return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
+		return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
 	};
 
 	popup = {
