@@ -125,7 +125,7 @@ var wappalyzer = (function() {
 
 			this.lastTime = new Date().getTime();
 
-			this.timedOut = this.lastTime - this.startTime > 1000;
+			this.timedOut = this.lastTime - this.startTime > w.driver.timeout;
 		}
 	};
 
@@ -329,7 +329,7 @@ var wappalyzer = (function() {
 								for ( meta in w.apps[app][type] ) {
 									profiler.checkPoint(app, type, regexMeta);
 
-									if ( new RegExp('name=["\']' + meta + '["\']', 'i').test(match) ) {
+									if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
 										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
@@ -351,8 +351,16 @@ var wappalyzer = (function() {
 
 							for ( header in w.apps[app].headers ) {
 								parse(w.apps[app][type][header]).forEach(function(pattern) {
-									if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
-										apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
+									if ( data[type][header.toLowerCase()] instanceof Array ) {
+										data[type][header.toLowerCase()].forEach(function(el) {
+											if ( typeof el === 'string' && pattern.regex.test(el) ) {
+												apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
+											}
+										});
+									} else {
+											if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
+												apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
+											}
 									}
 
 									profiler.checkPoint(app, type, pattern.regex);
@@ -492,24 +500,10 @@ var wappalyzer = (function() {
 					if ( match && match.length ) {
 						w.ping.hostnames[hostname].meta['language'] = match[1];
 					}
-
-					regexMeta = /<meta[^>]+>/ig;
-
-					while ( match = regexMeta.exec(data.html) ) {
-						if ( !match.length ) {
-							continue;
-						}
-
-						match = match[0].match(/name="(author|copyright|country|description|keywords)"[^>]*content="([^"]+)"/i);
-
-						if ( match && match.length === 3 ) {
-							w.ping.hostnames[hostname].meta[match[1]] = match[2];
-						}
-					}
 				}
 			}
 
-			if ( Object.keys(w.ping.hostnames).length >= 20 || w.adCache.length >= 40 ) {
+			if ( Object.keys(w.ping.hostnames).length >= 50 || w.adCache.length >= 50 ) {
 				driver('ping');
 			}
 

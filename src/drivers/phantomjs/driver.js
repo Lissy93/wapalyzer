@@ -52,6 +52,8 @@
 		}
 
 		wappalyzer.driver = {
+			timeout: 1000,
+
 			/**
 			 * Log messages to console
 			 */
@@ -86,7 +88,7 @@
 
 						apps.push({
 							name: app,
-							confidence: wappalyzer.detected[url][app].confidenceTotal,
+							confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
 							version:    wappalyzer.detected[url][app].version,
 							icon:       wappalyzer.apps[app].icon,
 							categories: cats
@@ -131,16 +133,8 @@
 				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
 				page.settings.resourceTimeout = resourceTimeout;
 
-				page.onConsoleMessage = function(message) {
-					require('system').stdout.write(message + "\n");
-				};
-
 				page.onError = function(message) {
 					wappalyzer.log(message, 'error');
-
-					wappalyzer.driver.sendResponse();
-
-					phantom.exit(1);
 				};
 
 				page.onResourceTimeout = function() {
@@ -165,6 +159,10 @@
 							});
 						}
 					}
+				};
+
+				page.onResourceError = function(resourceError) {
+					wappalyzer.log(resourceError.errorString, 'error');
 				};
 
 				page.open(url, function(status) {

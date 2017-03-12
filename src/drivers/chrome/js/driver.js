@@ -15,6 +15,8 @@
 		headersCache = {};
 
 	w.driver = {
+		timeout: 1000,
+
 		/**
 		 * Log messages to console
 		 */
@@ -215,8 +217,8 @@
 		 * Anonymously track detected applications for research purposes
 		 */
 		ping: function() {
-			if ( Object.keys(w.ping.hostnames).length && localStorage['tracking'] ) {
-				w.driver.post(w.config.websiteURL + 'ping/v2/', w.ping);
+			if ( Object.keys(w.ping.hostnames).length && parseInt(localStorage['tracking'], 10) ) {
+				w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
@@ -265,9 +267,9 @@
 			 4, // Documentation Tool
 			 9, // Hosting Panel
 			29, // Search Engine
-			12, // Javascript Framework
+			12, // JavaScript Framework
 			26, // Mobile Framework
-			25, // Javascript Graphics
+			25, // JavaScript Graphics
 			22, // Web Server
 			27, // Programming Language
 			28, // Operating System
