@@ -64,7 +64,7 @@
 				localStorage['version'] = version;
 			} catch(e) { }
 
-			browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+			function newMsg(message, sender, sendResponse) {
 				var
 					hostname,
 					a = document.createElement('a');
@@ -105,7 +105,12 @@
 							break;
 					}
 				}
-			});
+			}
+      if (typeof chrome === "undefined") {
+        browser.runtime.onMessage.addListener(newMsg);
+      } else {
+        chrome.runtime.onMessage.addListener(newMsg);
+      }
 
 			browser.tabs.query({}).then(function(tabs) {
 				tabs.forEach(function(tab) {
