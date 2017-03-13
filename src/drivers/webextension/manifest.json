@@ -36,7 +36,10 @@
 	"web_accessible_resources": [
 		"js/inject.js"
 	],
-	"options_page": "options.html",
+	"options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
 	"permissions": [
 		"tabs",
 		"webRequest",
