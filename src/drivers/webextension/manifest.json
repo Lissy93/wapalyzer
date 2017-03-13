@@ -1,4 +1,6 @@
 { "name": "Wappalyzer",
+  "short_name": "Wappalyzer",
+  "author": "AliasIO",
 	"homepage_url": "https://wappalyzer.com/",
 	"description": "Identify web technologies",
 	"version": "3",
@@ -10,12 +12,15 @@
 		"128": "images/icon_128.png"
 	},
 	"page_action": {
-		"default_icon": "images/icon_32.png",
+		"default_icon": {
+      "32": "images/icon_32.png"
+    },
 		"default_title": "Wappalyzer",
 		"default_popup": "popup.html"
 	},
 	"background": {
-		"page": "background.html"
+		"page": "background.html",
+    "persistent": true
 	},
 	"content_scripts": [ {
 			"matches": [ "http://*/*", "https://*/*" ],
@@ -36,6 +41,7 @@
 	"web_accessible_resources": [
 		"js/inject.js"
 	],
+  "options_page": "options.html",
 	"options_ui": {
     "page": "options.html",
     "open_in_tab": false
