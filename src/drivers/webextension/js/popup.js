@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			var appName, confidence, version;
 
 			browser.tabs.query({ active: true }).then(function(tabs) {
-				browser.runtime.sendMessage({ id: 'get_apps', tab: tabs[0] }, function(response) {
+        function sendGetApps(response) {
 					if ( response.tabCache && response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';
 
@@ -59,7 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
 							detectedApps.innerHTML = detectedApps.innerHTML + html;
 						}
 					}
-				});
+				}
+        if (typeof chrome === "undefined") {
+          browser.runtime.sendMessage({ id: 'get_apps', tab: tabs[0] }, sendGetApps);
+        } else {
+          chrome.runtime.sendMessage({ id: 'get_apps', tab: tabs[0] }, sendGetApps);
+        }
 			});
 		}
 	};
