@@ -10,11 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	popup = {
 		init: function() {
-
-			d.getElementById('options').addEventListener('click', function() {
-				window.open(browser.extension.getURL('options.html'));
-			});
-
 			browser.tabs.query({ active: true }).then(function(tabs) {
 				if ( tabs[0].url.match(/https?:\/\//) ) {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
