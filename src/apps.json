@@ -2218,23 +2218,6 @@
 			"icon": "ESERV-10.png",
 			"website": "http://www.violasystems.com"
 		},
-		"Etherpad": {
-			"cats": [
-				24
-			],
-			"headers": {
-				"Server": "^Etherpad"
-			},
-			"env": [
-				"^pad(?:editbar|impexp)$"
-			],
-			"script": [
-				"/ep_etherpad-lite/"
-			],
-			"icon": "etherpad.png",
-			"implies": "Node.js",
-			"website": "https://etherpad.org"
-		},
 		"EWS-NIC4": {
 			"cats": [
 				22
@@ -2367,6 +2350,23 @@
 			},
 			"icon": "Erlang.png",
 			"website": "http://www.erlang.org"
+		},
+		"Etherpad": {
+			"cats": [
+				24
+			],
+			"env": [
+				"^pad(?:editbar|impexp)$"
+			],
+			"headers": {
+				"Server": "^Etherpad"
+			},
+			"icon": "etherpad.png",
+			"implies": "Node.js",
+			"script": [
+				"/ep_etherpad-lite/"
+			],
+			"website": "https://etherpad.org"
 		},
 		"Exagon Concept": {
 			"cats": [
@@ -2866,6 +2866,13 @@
 			"html": "(?:<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css|<img[^>]* src=[^>]+glyphicons)",
 			"icon": "Glyphicons.png",
 			"website": "http://glyphicons.com"
+		},
+		"Go": {
+			"cats": [
+				27
+			],
+			"icon": "Go.svg",
+			"website": "https://golang.org"
 		},
 		"GoAhead": {
 			"cats": [
