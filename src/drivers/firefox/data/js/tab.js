@@ -4,8 +4,8 @@
 	try {
 		if ( document && document.contentType === 'text/html' ) {
 			var
-				html = new XMLSerializer().serializeToString(document)
-				env = [];
+				html = new XMLSerializer().serializeToString(document),
+				env = []; // TODO: Remove, `env` not used in this scope?
 
 			self.port.emit('log', html);
 

@@ -5,8 +5,8 @@
 		scriptDir,
 		scriptPath      = require('fs').absolute(require('system').args[0]),
 		resourceTimeout = 9000,
-		args            = [],
-		debug           = false; // Output debug messages
+		args            = [],    // TODO: Not used, maybe should be `arg`
+		debug           = false, // Output debug messages
 		quiet           = false; // Don't output errors
 
 	try {

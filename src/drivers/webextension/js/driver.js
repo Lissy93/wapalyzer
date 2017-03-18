@@ -64,52 +64,10 @@
 				localStorage['version'] = version;
 			} catch(e) { }
 
-			function newMsg(message, sender, sendResponse) {
-				var
-					hostname,
-					a = document.createElement('a');
-
-				if ( typeof message.id != 'undefined' ) {
-					w.log('message: ' + message.id);
-
-					switch ( message.id ) {
-						case 'log':
-							w.log(message.message);
-
-							break;
-						case 'analyze':
-							tab = sender.tab;
-
-							a.href = tab.url.replace(/#.*$/, '');
-
-							hostname = a.hostname;
-
-							if ( headersCache[a.href] !== undefined ) {
-								message.subject.headers = headersCache[a.href];
-							}
-
-							w.analyze(hostname, a.href, message.subject);
-
-							break;
-						case 'ad_log':
-							w.adCache.push(message.subject);
-
-							break;
-						case 'get_apps':
-							sendResponse({
-								tabCache:   tabCache[message.tab.id],
-								apps:       w.apps,
-								categories: w.categories
-								});
-
-							break;
-					}
-				}
-			}
-      if (typeof chrome === "undefined") {
-        browser.runtime.onMessage.addListener(newMsg);
+      if ( typeof chrome === 'undefined' ) {
+        browser.runtime.onMessage.addListener(w.driver.onMessage);
       } else {
-        chrome.runtime.onMessage.addListener(newMsg);
+        chrome.runtime.onMessage.addListener(w.driver.onMessage);
       }
 
 			browser.tabs.query({}).then(function(tabs) {
@@ -165,6 +123,49 @@
 				w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade', background: true });
 
 				upgraded = false;
+			}
+		},
+
+		onMessage: function(message, sender, sendResponse) {
+			var
+				hostname,
+				a = document.createElement('a');
+
+			if ( typeof message.id != 'undefined' ) {
+				w.log('message: ' + message.id);
+
+				switch ( message.id ) {
+					case 'log':
+						w.log(message.message);
+
+						break;
+					case 'analyze':
+						tab = sender.tab;
+
+						a.href = tab.url.replace(/#.*$/, '');
+
+						hostname = a.hostname;
+
+						if ( headersCache[a.href] !== undefined ) {
+							message.subject.headers = headersCache[a.href];
+						}
+
+						w.analyze(hostname, a.href, message.subject);
+
+						break;
+					case 'ad_log':
+						w.adCache.push(message.subject);
+
+						break;
+					case 'get_apps':
+						sendResponse({
+							tabCache:   tabCache[message.tab.id],
+							apps:       w.apps,
+							categories: w.categories
+							});
+
+						break;
+				}
 			}
 		},
 

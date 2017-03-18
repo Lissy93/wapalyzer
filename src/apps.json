@@ -2218,23 +2218,6 @@
 			"icon": "ESERV-10.png",
 			"website": "http://www.violasystems.com"
 		},
-		"Etherpad": {
-			"cats": [
-				24
-			],
-			"headers": {
-				"Server": "^Etherpad"
-			},
-			"env": [
-				"^pad(?:editbar|impexp)$"
-			],
-			"script": [
-				"/ep_etherpad-lite/"
-			],
-			"icon": "etherpad.png",
-			"implies": "Node.js",
-			"website": "https://etherpad.org"
-		},
 		"EWS-NIC4": {
 			"cats": [
 				22
@@ -2281,15 +2264,6 @@
 				"generator": "Eleanor"
 			},
 			"website": "http://eleanor-cms.ru"
-		},
-		"Elm": {
-			"cats": [
-				27,
-				12
-			],
-			"env": "^Elm$",
-			"icon": "Elm.png",
-			"website": "http://elm-lang.org"
 		},
 		"Eloqua": {
 			"cats": [
@@ -2367,6 +2341,23 @@
 			},
 			"icon": "Erlang.png",
 			"website": "http://www.erlang.org"
+		},
+		"Etherpad": {
+			"cats": [
+				24
+			],
+			"env": [
+				"^pad(?:editbar|impexp)$"
+			],
+			"headers": {
+				"Server": "^Etherpad"
+			},
+			"icon": "etherpad.png",
+			"implies": "Node.js",
+			"script": [
+				"/ep_etherpad-lite/"
+			],
+			"website": "https://etherpad.org"
 		},
 		"Exagon Concept": {
 			"cats": [
@@ -2866,6 +2857,13 @@
 			"html": "(?:<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css|<img[^>]* src=[^>]+glyphicons)",
 			"icon": "Glyphicons.png",
 			"website": "http://glyphicons.com"
+		},
+		"Go": {
+			"cats": [
+				27
+			],
+			"icon": "Go.svg",
+			"website": "https://golang.org"
 		},
 		"GoAhead": {
 			"cats": [
@@ -4534,6 +4532,9 @@
 			],
 			"icon": "MODX.png",
 			"implies": "PHP",
+			"meta": {
+				"generator": "MODX[^\\d.]*([\\d.]+)?\\;version:\\1"
+			},
 			"website": "http://modx.com"
 		},
 		"MadAdsMedia": {
@@ -4704,8 +4705,7 @@
 			"implies": [
 				"MongoDB",
 				"Express",
-				"AngularJS",
-				"Node.js"
+				"AngularJS"
 			],
 			"website": "http://mean.io"
 		},
@@ -5280,7 +5280,7 @@
 			"cats": [
 				18
 			],
-			"env": "Nette",
+			"env": "^Nette$",
 			"headers": {
 				"Set-Cookie": "nette-browser=",
 				"X-Powered-By": "Nette Framework"
@@ -6768,10 +6768,7 @@
 				"X-Powered-By": "^Sails$"
 			},
 			"icon": "Sails.js.svg",
-			"implies": [
-				"Node.js",
-				"Express"
-			],
+			"implies": "Express",
 			"website": "http://sailsjs.org"
 		},
 		"Sarka-SPIP": {
@@ -7803,6 +7800,18 @@
 			"icon": "TrackJs.png",
 			"script": "tracker.js",
 			"website": "http://trackjs.com"
+		},
+		"Translucide": {
+			"cats": [ 
+				1 
+			], 
+			"implies": [
+				"PHP",
+				"jQuery"
+			], 
+			"icon": "translucide.svg",
+			"script": "lucide\\.init\\.js",
+			"website": "http://www.translucide.net"
 		},
 		"Tumblr": {
 			"cats": [
