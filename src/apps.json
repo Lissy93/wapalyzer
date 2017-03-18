@@ -4532,6 +4532,9 @@
 			],
 			"icon": "MODX.png",
 			"implies": "PHP",
+			"meta": {
+				"generator": "MODX[^\\d.]*([\\d.]+)?\\;version:\\1"
+			},
 			"website": "http://modx.com"
 		},
 		"MadAdsMedia": {
