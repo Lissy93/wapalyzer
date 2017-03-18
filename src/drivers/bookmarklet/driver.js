@@ -9,7 +9,7 @@
 
 	var
 		w             = wappalyzer,
-		debug         = true
+		debug         = true,
 		d             = window.document,
 		container     = d.getElementById('wappalyzer-container'),
 		domain        = window.top.location.host,
