@@ -67,11 +67,21 @@ pushd $WAPPALYZER_ROOT/src/drivers/chrome > /dev/null
 zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
 
 # Google Chrome
-echo "Building WebExtension driver..."
+echo "Building WebExtension drivers..."
 
 pushd $WAPPALYZER_ROOT/src/drivers/webextension > /dev/null
 
-zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.zip .
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.firefox.zip . -x manifest.chrome-opera.json manifest.edge.json
+
+printf "@ manifest.firefox.json\n@=manifest.json\n" | zipnote -w $WAPPALYZER_ROOT/build/wappalyzer_webextension.firefox.zip
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.chrome-opera.zip . -x manifest.firefox.json manifest.edge.json
+
+printf "@ manifest.chrome-opera.json\n@=manifest.json\n" | zipnote -w $WAPPALYZER_ROOT/build/wappalyzer_webextension.chrome-opera.zip
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.edge.zip . -x manifest.chrome-opera.json manifest.firefox.json
+
+printf "@ manifest.edge.json\n@=manifest.json\n" | zipnote -w $WAPPALYZER_ROOT/build/wappalyzer_webextension.edge.zip
 
 popd > /dev/null
 

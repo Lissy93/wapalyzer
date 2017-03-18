@@ -8,12 +8,18 @@
 	"manifest_version": 2,
 	"icons": {
 		"16":  "images/icon_16.png",
+		"19":  "images/icon_19.png",
 		"32":  "images/icon_32.png",
+		"38":  "images/icon_38.png",
 		"128": "images/icon_128.png"
 	},
 	"page_action": {
 		"default_icon": {
-      "32": "images/icon_32.png"
+      "16":  "images/icon_16.png",
+      "19":  "images/icon_19.png",
+      "32":  "images/icon_32.png",
+      "38":  "images/icon_38.png",
+      "128": "images/icon_128.png"
     },
 		"default_title": "Wappalyzer",
 		"default_popup": "popup.html"
@@ -42,10 +48,6 @@
 		"js/inject.js"
 	],
   "options_page": "options.html",
-	"options_ui": {
-    "page": "options.html",
-    "open_in_tab": false
-  },
 	"permissions": [
 		"tabs",
 		"webRequest",
