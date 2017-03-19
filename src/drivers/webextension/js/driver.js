@@ -43,9 +43,11 @@
 				w.categories = json.categories;
 				w.apps       = json.apps;
 
-				w.categories.sort(function(a, b) {
-					return a.priority == b.priority ? 0 : ( a.priority > b.priority ? 1 : -1 );
+				w.driver.categoryOrder = Object.keys(w.categories).sort(function(a, b) {
+					return w.categories[a].priority - w.categories[b].priority;
 				});
+
+				console.log(w.driver.categoryOrder);
 			};
 
 			xhr.send(null);
@@ -199,9 +201,9 @@
 
 			if ( count > 0 ) {
 				// Find the main application to display
-				var appName, match, found = false;
+				var appName, found = false;
 
-				for ( match in w.categories ) {
+				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							var icon = w.apps[appName].icon;
@@ -217,7 +219,7 @@
 							}
 						});
 					}
-				}
+				});
 
 				if ( typeof chrome !== 'undefined' ) {
 					// Browser polyfill doesn't seem to work here
