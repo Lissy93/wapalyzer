@@ -2265,15 +2265,6 @@
 			},
 			"website": "http://eleanor-cms.ru"
 		},
-		"Elm": {
-			"cats": [
-				27,
-				12
-			],
-			"env": "^Elm$",
-			"icon": "Elm.png",
-			"website": "http://elm-lang.org"
-		},
 		"Eloqua": {
 			"cats": [
 				32
@@ -4541,6 +4532,9 @@
 			],
 			"icon": "MODX.png",
 			"implies": "PHP",
+			"meta": {
+				"generator": "MODX[^\\d.]*([\\d.]+)?\\;version:\\1"
+			},
 			"website": "http://modx.com"
 		},
 		"MadAdsMedia": {
@@ -4711,8 +4705,7 @@
 			"implies": [
 				"MongoDB",
 				"Express",
-				"AngularJS",
-				"Node.js"
+				"AngularJS"
 			],
 			"website": "http://mean.io"
 		},
@@ -5287,7 +5280,7 @@
 			"cats": [
 				18
 			],
-			"env": "Nette",
+			"env": "^Nette$",
 			"headers": {
 				"Set-Cookie": "nette-browser=",
 				"X-Powered-By": "Nette Framework"
@@ -5750,7 +5743,7 @@
 		},
 		"PHP-Nuke": {
 			"cats": [
-				2
+				1
 			],
 			"html": "<[^>]+Powered by PHP-Nuke",
 			"icon": "PHP-Nuke.png",
@@ -6775,10 +6768,7 @@
 				"X-Powered-By": "^Sails$"
 			},
 			"icon": "Sails.js.svg",
-			"implies": [
-				"Node.js",
-				"Express"
-			],
+			"implies": "Express",
 			"website": "http://sailsjs.org"
 		},
 		"Sarka-SPIP": {
@@ -7810,6 +7800,18 @@
 			"icon": "TrackJs.png",
 			"script": "tracker.js",
 			"website": "http://trackjs.com"
+		},
+		"Translucide": {
+			"cats": [ 
+				1 
+			], 
+			"implies": [
+				"PHP",
+				"jQuery"
+			], 
+			"icon": "translucide.svg",
+			"script": "lucide\\.init\\.js",
+			"website": "http://www.translucide.net"
 		},
 		"Tumblr": {
 			"cats": [

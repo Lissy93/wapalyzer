@@ -1,7 +1,7 @@
 (function() {
 	self.port.on('displayApps', function(message) {
 		var
-			div, a, img, label, name, slugify,
+			div, a, img, label, name, slugify, confidence, version,
 			d = document,
 			detectedApps = d.getElementById('detected-apps'),
 			empty = d.getElementById('empty');
@@ -52,8 +52,8 @@
 				label.appendChild(name);
 				label.appendChild(d.createTextNode(( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '')));
 
-				a.appendChild(img)
-				a.appendChild(label)
+				a.appendChild(img);
+				a.appendChild(label);
 
 				div.appendChild(a);
 

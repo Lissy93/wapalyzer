@@ -1,6 +1,7 @@
 (function() {
 	try {
-		var i, environmentVars, e = document.createEvent('Events');
+		var i, environmentVars,
+        e = document.createEvent('Events');
 
 		e.initEvent('wappalyzerEvent', true, false);
 

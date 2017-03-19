@@ -112,8 +112,6 @@ var exports = {};
 				try {
 					dict[key] = window.decodeURIComponent(val);
 				} catch (e) {
-
-					continue;
 				}
 			}
 			return dict;
@@ -307,6 +305,7 @@ var exports = {};
 				return div;
 			}
 		}
+		return null;
 	};
 
 	TopSearcher.prototype._jumpedOut = function(el) {
@@ -988,6 +987,7 @@ var exports = {};
 				}
 			}
 		}
+		return null;
 	}
 
 	function onPostMessage(event) {

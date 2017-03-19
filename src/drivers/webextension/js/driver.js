@@ -54,7 +54,7 @@
 					firstRun = true;
 
 					// Set defaults
-					for ( option in defaults ) {
+					for ( var option in defaults ) {
 						localStorage[option] = defaults[option];
 					}
 				} else if ( version !== localStorage['version'] && parseInt(localStorage['upgradeMessage'], 10) ) {
@@ -195,7 +195,7 @@
 
 			if ( count > 0 ) {
 				// Find the main application to display
-				var i, appName, found = false;
+				var appName, found = false;
 
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
