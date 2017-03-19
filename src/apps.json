@@ -8309,6 +8309,22 @@
 			"icon": "WHMCS.png",
 			"website": "http://www.whmcs.com"
 		},
+	         "WPcache": {
+                        "cats": [
+                                "23"
+                        ],
+                        "headers": {
+				 "X-Powered-By": "WPcache(?:/([\\d.]+))?\\;version:\\1"
+		        },
+                        "meta": {
+	                        "generator": "WPcache",
+	                        "keywords": "WPcache"
+	                },
+	                "html": "<!--[^>]+WPcache",
+                        "icon": "WPcache.png",
+                        "implies": "PHP",
+                        "website": "http://wpcache.ru"
+                        },
 		"WP Rocket": {
 			"cats": [
 				"23"
