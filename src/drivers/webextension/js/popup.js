@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 							response.apps[appName].cats.forEach(function(cat) {
 								html +=
-									'<a target="_blank" href="https://wappalyzer.com/categories/' + slugify(response.categories[cat]) + '">' +
+									'<a target="_blank" href="https://wappalyzer.com/categories/' + slugify(response.categories[cat].name) + '">' +
 										'<span class="category"><span class="name">' + browser.i18n.getMessage('categoryName' + cat) + '</span></span>' +
 									'</a>';
 							});
