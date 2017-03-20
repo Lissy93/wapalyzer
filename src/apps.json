@@ -7631,8 +7631,8 @@
 			"env": "^TEALIUMENABLED$",
 			"icon": "Tealium.png",
 			"script": [
-				"//tags\\.tiqcdn\\.com/",
-				"/tealium/utag\\.js"
+				"^//tags\\.tiqcdn\\.com/",
+				"/tealium/utag\\.js$"
 			],
 			"website": "http://tealium.com"
 		},
