@@ -7654,7 +7654,10 @@
 			],
 			"env": "Telescope",
 			"icon": "Telescope.png",
-			"implies": "Meteor",
+			"implies": [
+				"Meteor",
+				"React"
+			],
 			"website": "http://telescopeapp.org"
 		},
 		"Tengine": {
