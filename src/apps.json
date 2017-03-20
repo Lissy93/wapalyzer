@@ -5327,6 +5327,18 @@
 			"icon": "node.js.png",
 			"website": "http://nodejs.org"
 		},
+		"NodeBB": {
+			"cats": [
+				"2"
+			],
+			"headers": {
+				"X-Powered-By": "NodeBB"
+			},
+			"icon": "NodeBB.png",
+			"implies": "Node.js",
+			"script": "^/nodebb\\.min\\.js\\?",
+			"website": "https://nodebb.org"
+		},
 		"OWL Carousel": {
 			"cats": [
 				"5",
