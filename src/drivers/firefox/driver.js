@@ -450,7 +450,7 @@
 					}).post();
 				};
 
-				post('http://ping.wappalyzer.com/ping/v2/', w.ping);
+				post('http://ping.wappalyzer.com/v2/', w.ping);
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 

@@ -80,7 +80,7 @@ for ( app in json.apps ) {
 		}
 	});
 
-	if ( /[a-z]+:\/\//i.test(json.apps[app].website) ) {
-		throw new Error('Do not include the protocol in the website URL\n' + app + ': ' + json.apps[app].website);
+	if ( !/^https?:\/\//i.test(json.apps[app].website) ) {
+		throw new Error('Invalid website URL\n' + app + ': ' + json.apps[app].website);
 	}
 }

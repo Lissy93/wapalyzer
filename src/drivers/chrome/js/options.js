@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 
 		load: function() {
-			for ( option in options.opts ) {
-				if ( value = localStorage[option] ) {
-					options.opts[option] = value;
+			for ( var option in options.opts ) {
+				if ( localStorage[option] ) {
+					options.opts[option] = localStorage[option];
 				}
 			}
 
