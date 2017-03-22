@@ -22,11 +22,27 @@
 
 	var topVideoAssetDomains = [
 		'2mdn.net',
-		'innovid.com',
-		'serving-sys.com',
+		'adap.tv',
+		'adnxs.com',
+		'adsrvr.org',
 		'btrll.com',
+		'celtra.com',
+		'flashtalking.com',
+		'flite.com',
+		'innovid.com',
+		'jivox.com',
+		'mixpo.com',
+		'nytimes.com',
+		'playwire.com',
+		'selectmedia.asia',
+		'serving-sys.com',
+		'solvemedia.com',
+		'spotible.com',
 		'teads.tv',
-		'tubemogul.com'
+		'tribalfusion.com',
+		'tubemogul.com',
+		'videologygroup.com',
+		'washingtonpost.com'
 	];
 
 	if ( !String.prototype.endsWith ) {
@@ -484,6 +500,10 @@
 		var hasVpaidOrVastRequest = tagRequests.some(function(tagRequest) {
 			return isVpaidOrVastRequest(tagRequest);
 		});
+
+		if ( assetRequest.isYoutubeAd ) {
+			return true;
+		}
 		if ( hasVpaidOrVastRequest ) {
 			return true;
 		}

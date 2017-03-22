@@ -24,7 +24,7 @@ node $WAPPALYZER_NODE_PATH/node_modules/jsonlint/lib/cli.js -ist $'\t' $WAPPALYZ
 
 echo "Compressing PNG and SVG icons..."
 
-node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons/* --out-dir $WAPPALYZER_ROOT/src/icons
+node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src/icons/* --out-dir $WAPPALYZER_ROOT/src/icons 2>&1 > /dev/null
 
 echo "Converting SVG icons to PNG..."
 
@@ -37,9 +37,11 @@ do
 
 	dest="$WAPPALYZER_ROOT/src/icons/converted/$(basename "$svg").png"
 
-	if [[ ! -f "$dest" ]]; then
-		node $WAPPALYZER_NODE_PATH/node_modules/svg2png/bin/svg2png-cli "$svg" --width=32 --height=32 --output "$dest" || true
+	if [[ -f "$dest" ]]; then
+		rm "$dest"
 	fi
+
+	#node $WAPPALYZER_NODE_PATH/node_modules/svg2png/bin/svg2png-cli "$svg" --width=32 --height=32 --output "$dest" || true
 done
 
 IFS="$OIFS"
@@ -65,6 +67,17 @@ echo "Building Chrome driver..."
 pushd $WAPPALYZER_ROOT/src/drivers/chrome > /dev/null
 
 zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
+
+# WebExtension
+echo "Building WebExtension driver..."
+
+pushd $WAPPALYZER_ROOT/src/drivers/webextension > /dev/null
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.zip . -x manifest.edge.json
+
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.edge.zip . -x manifest.json
+
+printf "@ manifest.edge.json\n@=manifest.json\n" | zipnote -w $WAPPALYZER_ROOT/build/wappalyzer_webextension.edge.zip
 
 popd > /dev/null
 

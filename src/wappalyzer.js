@@ -242,7 +242,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version, id,
+				i, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version, id,
 				profiler     = new Profiler(),
 				apps         = {},
 				excludes     = [],

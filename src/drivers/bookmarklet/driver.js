@@ -9,11 +9,11 @@
 
 	var
 		w             = wappalyzer,
-		debug         = true
+		debug         = true,
 		d             = window.document,
 		container     = d.getElementById('wappalyzer-container'),
 		domain        = window.top.location.host,
-		url           = window.top.location.href,
+		url           = window.top.location.href.replace(/#.*$/, ''),
 		hasOwn        = Object.prototype.hasOwnProperty;
 
 	w.driver = {
@@ -121,7 +121,7 @@
 							continue;
 						}
 
-						category = w.categories[w.apps[app].cats[i]];
+						category = w.categories[w.apps[app].cats[i]].name;
 
 						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.driver.slugify(category) + '">' + category + '</a>';
 					}

@@ -54,7 +54,7 @@
 					firstRun = true;
 
 					// Set defaults
-					for ( option in defaults ) {
+					for ( var option in defaults ) {
 						localStorage[option] = defaults[option];
 					}
 				} else if ( version !== localStorage['version'] && parseInt(localStorage['upgradeMessage'], 10) ) {
@@ -189,7 +189,7 @@
 
 			if ( count > 0 ) {
 				// Find the main application to display
-				var i, appName, found = false;
+				var appName, found = false;
 
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
@@ -218,7 +218,7 @@
 		 */
 		ping: function() {
 			if ( Object.keys(w.ping.hostnames).length && parseInt(localStorage['tracking'], 10) ) {
-				w.driver.post('http://ping.wappalyzer.com/ping/v2/', w.ping);
+				w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
 
 				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 

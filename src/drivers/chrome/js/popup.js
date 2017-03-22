@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		detectedApps = d.getElementById('detected-apps');
 
 	slugify = function(string) {
-		return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
+		return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
 	};
 
 	popup = {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 							confidence = response.tabCache.appsDetected[appName].confidenceTotal;
 							version    = response.tabCache.appsDetected[appName].version;
 
-							html =
+							var html =
 								'<div class="detected-app">' +
 									'<a target="_blank" href="https://wappalyzer.com/applications/' + slugify(appName) + '?pk_campaign=chrome&pk_kwd=popup">' +
 										'<img src="images/icons/' + response.apps[appName].icon + '"/>' +

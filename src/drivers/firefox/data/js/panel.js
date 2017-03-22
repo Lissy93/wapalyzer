@@ -1,13 +1,13 @@
 (function() {
 	self.port.on('displayApps', function(message) {
 		var
-			div, a, img, label, name, slugify,
+			div, a, img, label, name, slugify, confidence, version,
 			d = document,
 			detectedApps = d.getElementById('detected-apps'),
 			empty = d.getElementById('empty');
 
 		slugify = function(string) {
-			return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
+			return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/g, '');
 		};
 
 		while ( detectedApps.firstChild ) {
@@ -52,8 +52,8 @@
 				label.appendChild(name);
 				label.appendChild(d.createTextNode(( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '')));
 
-				a.appendChild(img)
-				a.appendChild(label)
+				a.appendChild(img);
+				a.appendChild(label);
 
 				div.appendChild(a);
 
