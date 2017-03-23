@@ -2724,7 +2724,10 @@
 				"47"
 			],
 			"env": "^gerrit_",
-			"html": "<(?:div|style) id=\"gerrit_",
+			"html": [
+				">Gerrit Code Review</a>\\s*\"\\s*\\(([0-9.])\\)\\;version:\\1",
+				"<(?:div|style) id=\"gerrit_"
+			],
 			"icon": "gerrit.svg",
 			"implies": [
 				"Java",
