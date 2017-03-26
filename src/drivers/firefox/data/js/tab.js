@@ -1,11 +1,7 @@
 (function() {
-	var lastEnv = [];
-
 	try {
 		if ( document && document.contentType === 'text/html' ) {
-			var
-				html = new XMLSerializer().serializeToString(document),
-				env = []; // TODO: Remove, `env` not used in this scope?
+			var html = new XMLSerializer().serializeToString(document),
 
 			self.port.emit('log', html);
 

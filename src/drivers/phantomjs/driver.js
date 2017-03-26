@@ -83,7 +83,7 @@
 						cats = [];
 
 						wappalyzer.apps[app].cats.forEach(function(cat) {
-							cats.push(wappalyzer.categories[cat]);
+							cats.push(wappalyzer.categories[cat].name);
 						});
 
 						apps.push({

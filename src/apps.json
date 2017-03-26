@@ -2,7 +2,7 @@
 	"apps": {
 		"1&1": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "1and1.svg",
 			"implies": "PHP",
@@ -11,7 +11,7 @@
 		},
 		"1C-Bitrix": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "BITRIX_",
@@ -25,7 +25,7 @@
 		},
 		"2z Project": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "2z Project.png",
 			"meta": {
@@ -35,7 +35,7 @@
 		},
 		"3DM": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<title>3ware 3DM([\\d\\.]+)?\\;version:\\1",
 			"icon": "3DM.png",
@@ -44,8 +44,8 @@
 		},
 		"3dCart": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "3dvisit",
@@ -57,7 +57,7 @@
 		},
 		"3ware": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "3ware\\/?([\\d\\.]+)?\\;version:\\1"
@@ -67,7 +67,7 @@
 		},
 		"AD EBiS": {
 			"cats": [
-				10
+				"10"
 			],
 			"html": [
 				"<!-- EBiS contents tag",
@@ -80,7 +80,7 @@
 		},
 		"AMPcms": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^amp_js_init$",
 			"headers": {
@@ -93,7 +93,7 @@
 		},
 		"AOLserver": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "AOLserver/?([\\d.]+)?\\;version:\\1"
@@ -103,7 +103,7 @@
 		},
 		"AT Internet Analyzer": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": [
 				"^xtsite$",
@@ -114,7 +114,7 @@
 		},
 		"AT Internet XiTi": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^Xt_",
 			"icon": "AT Internet.png",
@@ -123,7 +123,7 @@
 		},
 		"ATEN": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "ATEN HTTP Server(?:\\(?V?([\\d\\.]+)\\)?)?\\;version:\\1"
@@ -133,7 +133,7 @@
 		},
 		"AWStats": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "AWStats.png",
 			"implies": "Perl",
@@ -144,7 +144,7 @@
 		},
 		"Accessible Portal": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Accessible Portal.png",
 			"implies": "PHP",
@@ -155,7 +155,7 @@
 		},
 		"Act-On": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^ActOn$",
 			"icon": "ActOn.png",
@@ -163,7 +163,7 @@
 		},
 		"AdInfinity": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "AdInfinity.png",
 			"script": "adinfinity\\.com\\.au",
@@ -171,7 +171,7 @@
 		},
 		"AdRiver": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^adriver$",
 			"html": "(?:<embed[^>]+(?:src=\"https?://mh\\d?\\.adriver\\.ru/|flashvars=\"[^\"]*(?:http:%3A//(?:ad|mh\\d?)\\.adriver\\.ru/|adriver_banner))|<(?:(?:iframe|img)[^>]+src|a[^>]+href)=\"https?://ad\\.adriver\\.ru/)",
@@ -181,7 +181,7 @@
 		},
 		"AdRoll": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^adroll_",
 			"icon": "AdRoll.svg",
@@ -190,7 +190,7 @@
 		},
 		"Adcash": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^(?:ac_bgclick_URL|ct_(?:siteunder|tag|n(?:SuUrl(?:Opp)?)|Su(?:Loaded|Url)))$",
 			"icon": "Adcash.svg",
@@ -200,7 +200,7 @@
 		},
 		"AddShoppers": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "AddShoppers.png",
 			"script": "cdn\\.shop\\.pe/widget/",
@@ -208,7 +208,7 @@
 		},
 		"AddThis": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^addthis",
 			"icon": "AddThis.svg",
@@ -217,7 +217,7 @@
 		},
 		"AddToAny": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^a2apage_init$",
 			"icon": "AddToAny.png",
@@ -226,7 +226,7 @@
 		},
 		"Adminer": {
 			"cats": [
-				3
+				"3"
 			],
 			"html": [
 				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
@@ -238,7 +238,7 @@
 		},
 		"Adnegah": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^ados(?:Results)?$",
 			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
@@ -248,7 +248,7 @@
 		},
 		"Adobe ColdFusion": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^_cfEmails$",
 			"headers": {
@@ -263,7 +263,7 @@
 		},
 		"Adobe Experience Manager": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": [
 				"<div class=\"[^\"]*parbase",
@@ -276,7 +276,7 @@
 		},
 		"Adobe GoLive": {
 			"cats": [
-				20
+				"20"
 			],
 			"icon": "Adobe GoLive.png",
 			"meta": {
@@ -286,7 +286,7 @@
 		},
 		"Adobe Muse": {
 			"cats": [
-				20
+				"20"
 			],
 			"icon": "Adobe Muse.svg",
 			"meta": {
@@ -296,7 +296,7 @@
 		},
 		"Adobe RoboHelp": {
 			"cats": [
-				4
+				"4"
 			],
 			"env": "^gbWh(?:Ver|Lang|Msg|Util|Proxy)$",
 			"icon": "Adobe RoboHelp.svg",
@@ -308,7 +308,7 @@
 		},
 		"Advanced Web Stats": {
 			"cats": [
-				10
+				"10"
 			],
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"icon": "Advanced Web Stats.png",
@@ -317,7 +317,7 @@
 		},
 		"Advert Stream": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^advst_is_above_the_fold$",
 			"icon": "Advert Stream.png",
@@ -326,7 +326,7 @@
 		},
 		"Adzerk": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^ados(?:Results)?$",
 			"html": "<iframe [^>]*src=\"[^\"]+adzerk\\.net",
@@ -336,7 +336,7 @@
 		},
 		"Aegea": {
 			"cats": [
-				11
+				"11"
 			],
 			"headers": {
 				"X-Powered-By": "^E2 Aegea v(\\d+)$\\;version:\\1"
@@ -350,7 +350,7 @@
 		},
 		"AfterBuy": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": [
 				"<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy. Information and contribution at https://www.afterbuy.de</dd>"
@@ -361,7 +361,7 @@
 		},
 		"Aircall": {
 			"cats": [
-				52
+				"52"
 			],
 			"icon": "aircall.png",
 			"script": "^https?://cdn\\.aircall\\.io/",
@@ -369,7 +369,7 @@
 		},
 		"Airee": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"Server": "Airee"
@@ -379,7 +379,7 @@
 		},
 		"Akamai": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"X-Akamai-Transformed": ""
@@ -389,8 +389,8 @@
 		},
 		"Akka HTTP": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"Server": "akka-http(?:/([\\d.]+))?\\;version:\\1"
@@ -400,7 +400,7 @@
 		},
 		"Algolia Realtime Search": {
 			"cats": [
-				29
+				"29"
 			],
 			"env": "^AlgoliaSearch$",
 			"icon": "Algolia Realtime Search.svg",
@@ -408,7 +408,7 @@
 		},
 		"Allegro RomPager": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Allegro-Software-RomPager(?:/([\\d.]+))?\\;version:\\1"
@@ -418,7 +418,7 @@
 		},
 		"AlloyUI": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^AUI$",
 			"icon": "AlloyUI.png",
@@ -431,7 +431,7 @@
 		},
 		"Amaya": {
 			"cats": [
-				20
+				"20"
 			],
 			"icon": "Amaya.png",
 			"meta": {
@@ -441,7 +441,7 @@
 		},
 		"Amazon Cloudfront": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"X-Amz-Cf-Id": ""
@@ -451,7 +451,7 @@
 		},
 		"Amazon EC2": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "\\(Amazon\\)"
@@ -461,7 +461,7 @@
 		},
 		"Amazon S3": {
 			"cats": [
-				19
+				"19"
 			],
 			"headers": {
 				"Server": "AmazonS3"
@@ -471,7 +471,7 @@
 		},
 		"Ametys": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Ametys.png",
 			"implies": "Java",
@@ -483,7 +483,7 @@
 		},
 		"Amiro.CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Amiro.CMS.png",
 			"implies": "PHP",
@@ -494,7 +494,7 @@
 		},
 		"Angular Material": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^ngMaterial$",
 			"icon": "Angular.svg",
@@ -507,7 +507,7 @@
 		},
 		"AngularJS": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^angular$",
 			"icon": "AngularJS.png",
@@ -520,7 +520,7 @@
 		},
 		"Apache": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\b)HTTPD)\\;version:\\1"
@@ -530,7 +530,7 @@
 		},
 		"Apache HBase": {
 			"cats": [
-				34
+				"34"
 			],
 			"html": "<style[^>]+static/hbase",
 			"icon": "Apache HBase.png",
@@ -539,7 +539,7 @@
 		},
 		"Apache Hadoop": {
 			"cats": [
-				34
+				"34"
 			],
 			"html": "<style[^>]+static/hadoop",
 			"icon": "Apache Hadoop.svg",
@@ -547,7 +547,7 @@
 		},
 		"Apache JSPWiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"html": "<html[^>]* xmlns:jspwiki=",
 			"icon": "Apache JSPWiki.png",
@@ -558,7 +558,7 @@
 		},
 		"Apache Tomcat": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
@@ -570,7 +570,7 @@
 		},
 		"Apache Traffic Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "ATS/?([\\d.]+)?\\;version:\\1"
@@ -580,7 +580,7 @@
 		},
 		"Apache Wicket": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^Wicket",
 			"icon": "Apache Wicket.svg",
@@ -589,7 +589,7 @@
 		},
 		"AppNexus": {
 			"cats": [
-				36
+				"36"
 			],
 			"html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
 			"icon": "AppNexus.svg",
@@ -598,7 +598,7 @@
 		},
 		"Arastta": {
 			"cats": [
-				6
+				"6"
 			],
 			"excludes": "OpenCart",
 			"headers": {
@@ -613,7 +613,7 @@
 		},
 		"Arc Forum": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "ping\\.src = node\\.href;\\s+[^>]+\\s+}\\s+</script>",
 			"icon": "Arc Forum.png",
@@ -621,7 +621,7 @@
 		},
 		"Artifactory": {
 			"cats": [
-				47
+				"47"
 			],
 			"env": "^ArtifactoryUpdates$",
 			"html": [
@@ -635,7 +635,7 @@
 		},
 		"Artifactory Web Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Artifactory(?:/([\\d.]+))?\\;version:\\1"
@@ -648,7 +648,7 @@
 		},
 		"ArvanCloud": {
 			"cats": [
-				31
+				"31"
 			],
 			"env": "^ArvanCloud$",
 			"headers": {
@@ -659,9 +659,9 @@
 		},
 		"AsciiDoc": {
 			"cats": [
-				1,
-				20,
-				27
+				"1",
+				"20",
+				"27"
 			],
 			"env": "^asciidoc$",
 			"icon": "AsciiDoc.png",
@@ -672,7 +672,7 @@
 		},
 		"Asymptix PHP Framework": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "Asymptix PHP Framework(?:.*)"
@@ -686,7 +686,7 @@
 		},
 		"Atlassian Bitbucket": {
 			"cats": [
-				47
+				"47"
 			],
 			"env": "^bitbucket$",
 			"icon": "Atlassian Bitbucket.svg",
@@ -698,7 +698,7 @@
 		},
 		"Atlassian Confluence": {
 			"cats": [
-				8
+				"8"
 			],
 			"headers": {
 				"X-Confluence-Request-Time": ""
@@ -713,7 +713,7 @@
 		},
 		"Atlassian FishEye": {
 			"cats": [
-				47
+				"47"
 			],
 			"headers": {
 				"Set-cookie": "FESESSIONID"
@@ -724,7 +724,7 @@
 		},
 		"Atlassian Jira": {
 			"cats": [
-				13
+				"13"
 			],
 			"env": "^jira$",
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(?:\\.\\d+)?))?\\;version:\\1",
@@ -738,8 +738,8 @@
 		},
 		"Atlassian Jira Issue Collector": {
 			"cats": [
-				13,
-				47
+				"13",
+				"47"
 			],
 			"icon": "Atlassian Jira.svg",
 			"script": [
@@ -750,7 +750,7 @@
 		},
 		"Aurelia": {
 			"cats": [
-				12
+				"12"
 			],
 			"html": [
 				"<[^>]+aurelia-app=[^>]",
@@ -765,7 +765,7 @@
 		},
 		"Avangate": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^(?:__)?avng8_",
 			"html": "<link[^>]* href=\"^https?://edge\\.avangate\\.net/",
@@ -775,7 +775,7 @@
 		},
 		"BEM": {
 			"cats": [
-				12
+				"12"
 			],
 			"html": "<[^>]+data-bem",
 			"icon": "BEM.png",
@@ -783,7 +783,7 @@
 		},
 		"BIGACE": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "(?:Powered by <a href=\"[^>]+BIGACE|<!--\\s+Site is running BIGACE)",
 			"icon": "BIGACE.png",
@@ -795,7 +795,7 @@
 		},
 		"Backbone.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Backbone$",
 			"icon": "Backbone.js.png",
@@ -805,7 +805,7 @@
 		},
 		"Backdrop": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^Backdrop$",
 			"excludes": "Drupal",
@@ -818,8 +818,8 @@
 		},
 		"Banshee": {
 			"cats": [
-				1,
-				18
+				"1",
+				"18"
 			],
 			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
 			"icon": "Banshee.png",
@@ -831,7 +831,7 @@
 		},
 		"BaseHTTP": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "BaseHTTP\\/?([\\d\\.]+)?\\;version:\\1"
@@ -842,7 +842,7 @@
 		},
 		"BigDump": {
 			"cats": [
-				3
+				"3"
 			],
 			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
 			"icon": "default.svg",
@@ -854,7 +854,7 @@
 		},
 		"Bigcommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
 			"icon": "Bigcommerce.png",
@@ -864,7 +864,7 @@
 		},
 		"Bigware": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "(?:bigwareCsid|bigWAdminID)"
@@ -877,7 +877,7 @@
 		},
 		"BittAds": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^bitt$",
 			"icon": "BittAds.png",
@@ -886,7 +886,7 @@
 		},
 		"Blesta": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "blesta_sid"
@@ -896,7 +896,7 @@
 		},
 		"Blip.tv": {
 			"cats": [
-				14
+				"14"
 			],
 			"html": "<(?:param|embed|iframe)[^>]+blip\\.tv/play",
 			"icon": "Blip.tv.png",
@@ -904,7 +904,7 @@
 		},
 		"Blogger": {
 			"cats": [
-				11
+				"11"
 			],
 			"icon": "Blogger.png",
 			"meta": {
@@ -915,7 +915,7 @@
 		},
 		"Bluefish": {
 			"cats": [
-				20
+				"20"
 			],
 			"icon": "Bluefish.png",
 			"meta": {
@@ -925,7 +925,7 @@
 		},
 		"Boa": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Boa\\/?([\\d\\.a-z]+)?\\;version:\\1"
@@ -935,7 +935,7 @@
 		},
 		"Boba.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "default.svg",
 			"implies": "Google Analytics",
@@ -944,7 +944,7 @@
 		},
 		"Bolt": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Bolt.png",
 			"implies": "PHP",
@@ -955,7 +955,7 @@
 		},
 		"Bonfire": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "bf_session="
@@ -967,7 +967,7 @@
 		},
 		"Bounce Exchange": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^bouncex$",
 			"html": "<script[^>]*>[^>]+\\.src\\s*=\\s*['\"](?:https?:)?//tag\\.bounceexchange\\.com/",
@@ -977,7 +977,7 @@
 		},
 		"Brother": {
 			"cats": [
-				40
+				"40"
 			],
 			"html": [
 				"(?:<!--|<BR>)Copyright\\(C\\) [\\d-]+ Brother Industries",
@@ -988,7 +988,7 @@
 		},
 		"BrowserCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "BrowserCMS.png",
 			"implies": "Ruby",
@@ -999,10 +999,10 @@
 		},
 		"Bubble": {
 			"cats": [
-				1,
-				3,
-				18,
-				22
+				"1",
+				"3",
+				"18",
+				"22"
 			],
 			"env": "^appquery$",
 			"icon": "bubble.png",
@@ -1011,7 +1011,7 @@
 		},
 		"BugSense": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^BugSense$",
 			"icon": "BugSense.png",
@@ -1020,7 +1020,7 @@
 		},
 		"BugSnag": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^BugSnag$",
 			"icon": "BugSnag.png",
@@ -1029,7 +1029,7 @@
 		},
 		"Bugzilla": {
 			"cats": [
-				13
+				"13"
 			],
 			"html": "href=\"enter_bug\\.cgi\">",
 			"icon": "Bugzilla.png",
@@ -1038,7 +1038,7 @@
 		},
 		"Burning Board": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "<a href=\"[^>]+woltlab\\.com[^<]+<strong>Burning Board",
 			"icon": "Burning Board.png",
@@ -1050,7 +1050,7 @@
 		},
 		"Business Catalyst": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<!-- BC_OBNW -->",
 			"icon": "Business Catalyst.png",
@@ -1059,7 +1059,7 @@
 		},
 		"BuySellAds": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^_bsa",
 			"html": "<script[^>]*>[^<]+?bsa.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
@@ -1069,21 +1069,21 @@
 		},
 		"C++": {
 			"cats": [
-				27
+				"27"
 			],
 			"icon": "C++.png",
 			"website": "http://isocpp.org"
 		},
 		"CFML": {
 			"cats": [
-				27
+				"27"
 			],
 			"icon": "CFML.png",
 			"website": "http://adobe.com/products/coldfusion-family.html"
 		},
 		"CKEditor": {
 			"cats": [
-				24
+				"24"
 			],
 			"env": "^CKEDITOR$",
 			"icon": "CKEditor.png",
@@ -1091,7 +1091,7 @@
 		},
 		"CMS Made Simple": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "^CMSSESSID"
@@ -1105,7 +1105,7 @@
 		},
 		"CMSimple": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "default.svg",
 			"implies": "PHP",
@@ -1116,7 +1116,7 @@
 		},
 		"CO2Stats": {
 			"cats": [
-				10
+				"10"
 			],
 			"html": "src=[^>]+co2stats\\.com/propres\\.php",
 			"icon": "CO2Stats.png",
@@ -1124,7 +1124,7 @@
 		},
 		"CPG Dragonfly": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "Dragonfly CMS"
@@ -1138,7 +1138,7 @@
 		},
 		"CS Cart": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^fn_compare_strings$",
 			"html": [
@@ -1151,7 +1151,7 @@
 		},
 		"CacheFly": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"Server": "^CFS ",
@@ -1163,7 +1163,7 @@
 		},
 		"Caddy": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^Caddy$"
@@ -1174,7 +1174,7 @@
 		},
 		"CakePHP": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "cakephp="
@@ -1188,14 +1188,14 @@
 		},
 		"Canon": {
 			"cats": [
-				40
+				"40"
 			],
 			"icon": "Canon.png",
 			"website": "http://www.canon.com"
 		},
 		"Canon HTTP Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "CANON HTTP Server(?:/([\\d.]+))?\\;version:\\1"
@@ -1206,8 +1206,8 @@
 		},
 		"Captch Me": {
 			"cats": [
-				16,
-				36
+				"16",
+				"36"
 			],
 			"env": "^Captchme",
 			"icon": "Captch Me.svg",
@@ -1216,7 +1216,7 @@
 		},
 		"Carbon Ads": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^_carbonads",
 			"html": "<[a-z]+ [^>]*id=\"carbonads-container\"",
@@ -1226,7 +1226,7 @@
 		},
 		"Cargo": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<link [^>]+Cargo feed",
 			"icon": "Cargo.png",
@@ -1239,8 +1239,8 @@
 		},
 		"Catberry.js": {
 			"cats": [
-				12,
-				18
+				"12",
+				"18"
 			],
 			"env": "^catberry$",
 			"headers": {
@@ -1252,7 +1252,7 @@
 		},
 		"Catwalk": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Catwalk\\/?([\\d\\.]+)?\\;version:\\1"
@@ -1263,7 +1263,7 @@
 		},
 		"CentOS": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "CentOS",
@@ -1274,7 +1274,7 @@
 		},
 		"CenteHTTPd": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "CenteHTTPd(?:/([\\d.]+))?\\;version:\\1"
@@ -1284,7 +1284,7 @@
 		},
 		"Chameleon": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Chameleon.png",
 			"implies": [
@@ -1298,7 +1298,7 @@
 		},
 		"Chamilo": {
 			"cats": [
-				21
+				"21"
 			],
 			"headers": {
 				"X-Powered-By": "Chamilo ([\\d.]+)\\;version:\\1"
@@ -1313,7 +1313,7 @@
 		},
 		"Chartbeat": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^_sf_(?:endpt|async_config)$",
 			"icon": "Chartbeat.png",
@@ -1322,7 +1322,7 @@
 		},
 		"Cherokee": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Cherokee/([\\d.]+)\\;version:\\1"
@@ -1332,8 +1332,8 @@
 		},
 		"CherryPy": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"Server": "CherryPy\\/?([\\d\\.]+)?\\;version:\\1"
@@ -1344,7 +1344,7 @@
 		},
 		"Chitika": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "ch_c(?:lient|olor_site_link)",
 			"icon": "Chitika.png",
@@ -1353,7 +1353,7 @@
 		},
 		"Ckan": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
@@ -1370,7 +1370,7 @@
 		},
 		"ClickHeat": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^clickHeat",
 			"icon": "ClickHeat.png",
@@ -1380,7 +1380,7 @@
 		},
 		"ClickTale": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^ClickTale",
 			"icon": "ClickTale.png",
@@ -1388,7 +1388,7 @@
 		},
 		"Clicky": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^clicky$",
 			"icon": "Clicky.png",
@@ -1397,7 +1397,7 @@
 		},
 		"Clientexec": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "clientexec\\.[^>]*\\s?=\\s?[^>]*;",
 			"icon": "Clientexec.png",
@@ -1405,7 +1405,7 @@
 		},
 		"CloudCart": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "cloudcart.svg",
 			"meta": {
@@ -1416,7 +1416,7 @@
 		},
 		"CloudFlare": {
 			"cats": [
-				31
+				"31"
 			],
 			"env": "^CloudFlare$",
 			"headers": {
@@ -1427,7 +1427,7 @@
 		},
 		"Cloudera": {
 			"cats": [
-				34
+				"34"
 			],
 			"headers": {
 				"Server": "cloudera"
@@ -1437,7 +1437,7 @@
 		},
 		"CodeIgniter": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "(?:exp_last_activity|exp_tracker|ci_(?:session|(csrf_token)))\\;version:\\1?2+:"
@@ -1449,7 +1449,7 @@
 		},
 		"CodeMirror": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^CodeMirror$",
 			"icon": "CodeMirror.png",
@@ -1457,7 +1457,7 @@
 		},
 		"Comandia": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^Comandia$",
 			"html": "<link[^>]+=['\"]//cdn\\.mycomandia\\.com",
@@ -1466,7 +1466,7 @@
 		},
 		"Commerce Server": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"COMMERCE-SERVER-SOFTWARE": ""
@@ -1477,7 +1477,7 @@
 		},
 		"CompaqHTTPServer": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "CompaqHTTPServer\\/?([\\d\\.]+)?\\;version:\\1"
@@ -1487,7 +1487,7 @@
 		},
 		"Concrete5": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^CCM_IMAGE_PATH$",
 			"icon": "Concrete5.png",
@@ -1500,7 +1500,7 @@
 		},
 		"Connect": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "^Connect$"
@@ -1511,7 +1511,7 @@
 		},
 		"Contao": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": [
 				"<!--[^>]+powered by (?:TYPOlight|Contao)[^>]*-->",
@@ -1526,7 +1526,7 @@
 		},
 		"Contenido": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Contenido.png",
 			"implies": "PHP",
@@ -1537,7 +1537,7 @@
 		},
 		"Contens": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Contens.png",
 			"implies": [
@@ -1551,8 +1551,8 @@
 		},
 		"ContentBox": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"icon": "ContentBox.png",
 			"implies": "Adobe ColdFusion",
@@ -1563,7 +1563,7 @@
 		},
 		"ConversionLab": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "ConversionLab.png",
 			"script": "conversionlab\\.trackset\\.com/track/tsend\\.js",
@@ -1571,7 +1571,7 @@
 		},
 		"Coppermine": {
 			"cats": [
-				7
+				"7"
 			],
 			"html": "<!--Coppermine Photo Gallery ([\\d.]+)\\;version:\\1",
 			"icon": "Coppermine.png",
@@ -1580,7 +1580,7 @@
 		},
 		"Cosmoshop": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Cosmoshop.png",
 			"script": "cosmoshop_functions\\.js",
@@ -1588,7 +1588,7 @@
 		},
 		"Cotonti": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Cotonti.png",
 			"implies": "PHP",
@@ -1599,7 +1599,7 @@
 		},
 		"CouchDB": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "CouchDB/([\\d.]+)\\;version:\\1"
@@ -1609,8 +1609,8 @@
 		},
 		"Cowboy": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"Server": "Cowboy"
@@ -1621,7 +1621,7 @@
 		},
 		"CppCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "CppCMS/([\\d.]+)\\;version:\\1"
@@ -1632,7 +1632,7 @@
 		},
 		"Craft CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "CraftSessionId=",
@@ -1644,7 +1644,7 @@
 		},
 		"Crazy Egg": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^CE2$",
 			"icon": "Crazy Egg.png",
@@ -1653,7 +1653,7 @@
 		},
 		"Criteo": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^criteo",
 			"icon": "Criteo.svg",
@@ -1662,7 +1662,7 @@
 		},
 		"Cross Pixel": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^crsspxl$",
 			"icon": "Cross Pixel.png",
@@ -1671,7 +1671,7 @@
 		},
 		"CubeCart": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "(?:Powered by <a href=[^>]+cubecart\\.com|<p[^>]+>Powered by CubeCart)",
 			"icon": "CubeCart.png",
@@ -1683,7 +1683,7 @@
 		},
 		"Cufon": {
 			"cats": [
-				17
+				"17"
 			],
 			"env": "^Cufon$",
 			"icon": "Cufon.png",
@@ -1692,7 +1692,7 @@
 		},
 		"D3": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^d3$",
 			"icon": "D3.png",
@@ -1701,7 +1701,7 @@
 		},
 		"DHTMLX": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "DHTMLX.png",
 			"script": "dhtmlxcommon\\.js",
@@ -1709,7 +1709,7 @@
 		},
 		"DM Polopoly": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<(?:link [^>]*href|img [^>]*src)=\"/polopoly_fs/",
 			"icon": "DM Polopoly.png",
@@ -1718,7 +1718,7 @@
 		},
 		"DNN": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^DotNetNuke$",
 			"headers": {
@@ -1744,7 +1744,7 @@
 		},
 		"DTG": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": [
 				"<a[^>]+Site Powered by DTG"
@@ -1755,7 +1755,7 @@
 		},
 		"Dancer": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Server": "Perl Dancer ([\\d.]+)\\;version:\\1",
@@ -1767,7 +1767,7 @@
 		},
 		"Danneo CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "CMS Danneo ([\\d.]+)\\;version:\\1"
@@ -1784,7 +1784,7 @@
 		},
 		"Darwin": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Darwin",
@@ -1795,7 +1795,7 @@
 		},
 		"DataLife Engine": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^dle_root$",
 			"icon": "DataLife Engine.png",
@@ -1810,7 +1810,7 @@
 		},
 		"DataTables": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "DataTables.png",
 			"implies": "jQuery",
@@ -1819,7 +1819,7 @@
 		},
 		"David Webbox": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "David-WebBox/([\\d.a]+ \\(\\d+\\))\\;version:\\1"
@@ -1829,7 +1829,7 @@
 		},
 		"Debian": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Debian",
@@ -1840,7 +1840,7 @@
 		},
 		"Decorum": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "DECORUM(?:/([\\d.]+))?\\;version:\\1"
@@ -1850,7 +1850,7 @@
 		},
 		"DedeCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^DedeContainer",
 			"icon": "DedeCMS.png",
@@ -1860,14 +1860,14 @@
 		},
 		"Dell": {
 			"cats": [
-				40
+				"40"
 			],
 			"icon": "Dell.png",
 			"website": "http://dell.com"
 		},
 		"Demandware": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^dwAnalytics$",
 			"headers": {
@@ -1879,7 +1879,7 @@
 		},
 		"Deployd": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^dpd$",
 			"icon": "Deployd.png",
@@ -1888,7 +1888,7 @@
 		},
 		"DirectAdmin": {
 			"cats": [
-				9
+				"9"
 			],
 			"headers": {
 				"Server": "DirectAdmin Daemon v([\\d.]+)\\;version:\\1"
@@ -1903,7 +1903,7 @@
 		},
 		"Discourse": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "Discourse",
 			"icon": "Discourse.png",
@@ -1915,13 +1915,13 @@
 		},
 		"Discuz! X": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": [
 				"^discuz_uid$",
 				"^DISCUZCODE$"
 			],
-			"icon": "Discuz! X.png",
+			"icon": "Discuz X.png",
 			"implies": "PHP",
 			"meta": {
 				"generator": "Discuz! X([\\d\\.]+)?\\;version:\\1"
@@ -1930,7 +1930,7 @@
 		},
 		"Disqus": {
 			"cats": [
-				15
+				"15"
 			],
 			"env": "^DISQUS",
 			"html": "<div[^>]+id=\"disqus_thread\"",
@@ -1940,7 +1940,7 @@
 		},
 		"Django": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^__admin_media_prefix__",
 			"html": "(?:powered by <a[^>]+>Django ?([\\d.]+)?|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)\\;version:\\1",
@@ -1950,7 +1950,7 @@
 		},
 		"Django CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Django CMS.png",
 			"implies": "Django",
@@ -1958,7 +1958,7 @@
 		},
 		"Dojo": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^dojo$",
 			"icon": "Dojo.png",
@@ -1967,7 +1967,7 @@
 		},
 		"Dokeos": {
 			"cats": [
-				21
+				"21"
 			],
 			"headers": {
 				"X-Powered-By": "Dokeos"
@@ -1987,7 +1987,7 @@
 		},
 		"DokuWiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"headers": {
 				"Set-Cookie": "DokuWiki="
@@ -2001,7 +2001,7 @@
 		},
 		"Dotclear": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Dotclear.png",
 			"implies": "PHP",
@@ -2009,7 +2009,7 @@
 		},
 		"DoubleClick Ad Exchange (AdX)": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "DoubleClick.svg",
 			"script": [
@@ -2021,7 +2021,7 @@
 		},
 		"DoubleClick Campaign Manager (DCM)": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "DoubleClick.svg",
 			"script": "2mdn\\.net",
@@ -2029,7 +2029,7 @@
 		},
 		"DoubleClick Floodlight": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "DoubleClick.svg",
 			"script": "https?://fls.doubleclick.net",
@@ -2037,7 +2037,7 @@
 		},
 		"DoubleClick for Publishers (DFP)": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "DoubleClick.svg",
 			"script": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
@@ -2045,17 +2045,17 @@
 		},
 		"DovetailWRP": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<link[^>]* href=\"\\/DovetailWRP\\/",
 			"icon": "DovetailWRP.png",
-			"implies": "ASP.NET",
+			"implies": "Microsoft ASP.NET",
 			"script": "\\/DovetailWRP\\/",
 			"website": "http://www.dovetailinternet.com"
 		},
 		"Doxygen": {
 			"cats": [
-				4
+				"4"
 			],
 			"html": "(?:<!-- Generated by Doxygen ([\\d.]+)|<link[^>]+doxygen\\.css)\\;version:\\1",
 			"icon": "Doxygen.png",
@@ -2066,7 +2066,7 @@
 		},
 		"DreamWeaver": {
 			"cats": [
-				20
+				"20"
 			],
 			"html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) \\{)\\;version:\\1",
 			"icon": "DreamWeaver.png",
@@ -2074,7 +2074,7 @@
 		},
 		"Drupal": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^Drupal$",
 			"headers": {
@@ -2093,7 +2093,7 @@
 		},
 		"Drupal Commerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
 			"icon": "Drupal Commerce.png",
@@ -2102,9 +2102,9 @@
 		},
 		"Dynamicweb": {
 			"cats": [
-				1,
-				6,
-				10
+				"1",
+				"6",
+				"10"
 			],
 			"headers": {
 				"Set-Cookie": "Dynamicweb="
@@ -2118,7 +2118,7 @@
 		},
 		"Dynatrace": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "Dynatrace.png",
 			"script": "dtagent.*\\.js",
@@ -2126,7 +2126,7 @@
 		},
 		"E-Commerce Paraguay": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "eCommercePy.png",
 			"script": "cdn\\.e-commerceparaguay\\.com",
@@ -2134,7 +2134,7 @@
 		},
 		"E-Merchant": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "E-Merchant.png",
 			"script": "cdn\\.e-merchant\\.com",
@@ -2142,7 +2142,7 @@
 		},
 		"EC-CUBE": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "ec-cube.png",
 			"implies": "PHP",
@@ -2154,7 +2154,7 @@
 		},
 		"ELOG": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<title>ELOG Logbook Selection</title>",
 			"icon": "ELOG.png",
@@ -2162,7 +2162,7 @@
 		},
 		"ELOG HTTP": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "ELOG HTTP( \\d[\\-\\d\\.]+)?\\;version:\\1"
@@ -2173,7 +2173,7 @@
 		},
 		"EPages": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"X-Powered-By": "epages 6"
@@ -2184,7 +2184,7 @@
 		},
 		"EPiServer": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "EPi(?:Trace|Server)[^;]*="
@@ -2198,7 +2198,7 @@
 		},
 		"EPrints": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^EPJS_menu_template$",
 			"icon": "EPrints.png",
@@ -2210,7 +2210,7 @@
 		},
 		"ESERV-10": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "ESERV-10(?:/([\\d.]+))?\\;version:\\1"
@@ -2220,7 +2220,7 @@
 		},
 		"EWS-NIC4": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "EWS-NIC4(?:\\/([\\d\\.a-z]+))?\\;version:\\1"
@@ -2231,7 +2231,7 @@
 		},
 		"EdgeCast": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"Server": "^ECD\\s\\(\\S+\\)"
@@ -2242,7 +2242,7 @@
 		},
 		"Elcodi": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"X-Elcodi": ""
@@ -2256,7 +2256,7 @@
 		},
 		"Eleanor CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Eleanor CMS.png",
 			"implies": "PHP",
@@ -2267,7 +2267,7 @@
 		},
 		"Eloqua": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^elq(?:SiteID|Load|CurESite)$",
 			"icon": "Oracle.png",
@@ -2276,7 +2276,7 @@
 		},
 		"EmbedThis Appweb": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Mbedthis-Appweb(?:/([\\d.]+))?\\;version:\\1"
@@ -2286,7 +2286,7 @@
 		},
 		"Embedthis-http": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Embedthis-http(?:/([\\d.]+))?\\;version:\\1"
@@ -2296,7 +2296,7 @@
 		},
 		"Ember.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Ember$",
 			"icon": "Ember.js.png",
@@ -2305,8 +2305,8 @@
 		},
 		"Enyo": {
 			"cats": [
-				12,
-				26
+				"12",
+				"26"
 			],
 			"env": "^enyo$",
 			"icon": "Enyo.png",
@@ -2315,7 +2315,7 @@
 		},
 		"Epoch": {
 			"cats": [
-				25
+				"25"
 			],
 			"html": "<link[^>]+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
 			"icon": "default.svg",
@@ -2325,7 +2325,7 @@
 		},
 		"Epom": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^Epom",
 			"icon": "Epom.png",
@@ -2334,7 +2334,7 @@
 		},
 		"Erlang": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"Server": "Erlang( OTP/(?:[\\-\\d\\.ABR]+))?\\;version:\\1"
@@ -2344,7 +2344,7 @@
 		},
 		"Etherpad": {
 			"cats": [
-				24
+				"24"
 			],
 			"env": [
 				"^pad(?:editbar|impexp)$"
@@ -2361,7 +2361,7 @@
 		},
 		"Exagon Concept": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Server": "Exagon Server"
@@ -2371,7 +2371,7 @@
 		},
 		"Exhibit": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Exhibit$",
 			"icon": "Exhibit.png",
@@ -2380,8 +2380,8 @@
 		},
 		"Express": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"X-Powered-By": "^Express$"
@@ -2392,7 +2392,7 @@
 		},
 		"ExpressionEngine": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "(?:exp_last_activity|exp_tracker)"
@@ -2403,7 +2403,7 @@
 		},
 		"ExtJS": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Ext$",
 			"icon": "ExtJS.png",
@@ -2412,7 +2412,7 @@
 		},
 		"FAST ESP": {
 			"cats": [
-				29
+				"29"
 			],
 			"html": "<form[^>]+id=\"fastsearch\"",
 			"icon": "FAST ESP.png",
@@ -2420,7 +2420,7 @@
 		},
 		"FAST Search for SharePoint": {
 			"cats": [
-				29
+				"29"
 			],
 			"html": "<input[^>]+ name=\"ParametricSearch",
 			"icon": "FAST Search for SharePoint.png",
@@ -2433,7 +2433,7 @@
 		},
 		"FWP": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<!--\\s+FwP Systems",
 			"icon": "FWP.png",
@@ -2444,7 +2444,7 @@
 		},
 		"Facebook": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "Facebook.svg",
 			"script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
@@ -2452,7 +2452,7 @@
 		},
 		"Fact Finder": {
 			"cats": [
-				29
+				"29"
 			],
 			"html": "<!-- Factfinder",
 			"icon": "Fact Finder.png",
@@ -2462,7 +2462,7 @@
 		},
 		"FancyBox": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "FancyBox.png",
 			"implies": "jQuery",
@@ -2471,7 +2471,7 @@
 		},
 		"Fat-Free Framework": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "Fat-Free Framework"
@@ -2482,7 +2482,7 @@
 		},
 		"Fedora": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Fedora"
@@ -2492,7 +2492,7 @@
 		},
 		"Firebase": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "Firebase.png",
 			"script": "firebase.*\\.js",
@@ -2500,7 +2500,7 @@
 		},
 		"Fireblade": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"Server": "fbs"
@@ -2510,7 +2510,7 @@
 		},
 		"FlashCom": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "FlashCom/?([\\d\\.]+)?\\;version:\\1"
@@ -2520,8 +2520,8 @@
 		},
 		"Flask": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"Server": "Werkzeug/?([\\d\\.]+)?\\;version:\\1"
@@ -2532,7 +2532,7 @@
 		},
 		"FlexCMP": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Flex-Lang": "",
@@ -2547,7 +2547,7 @@
 		},
 		"FluxBB": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "Powered by (?:<strong>)?<a href=\"[^>]+fluxbb",
 			"icon": "FluxBB.png",
@@ -2556,7 +2556,7 @@
 		},
 		"Flyspray": {
 			"cats": [
-				13
+				"13"
 			],
 			"headers": {
 				"Set-Cookie": "flyspray_project="
@@ -2568,7 +2568,7 @@
 		},
 		"Font Awesome": {
 			"cats": [
-				17
+				"17"
 			],
 			"html": [
 				"<link[^>]* href=[^>]+font-awesome(?:\\.min)?\\.css",
@@ -2579,7 +2579,7 @@
 		},
 		"Fortune3": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "(?:<link [^>]*href=\"[^\\/]*\\/\\/www\\.fortune3\\.com\\/[^\"]*siterate\\/rate\\.css|Powered by <a [^>]*href=\"[^\"]+fortune3\\.com)",
 			"icon": "Fortune3.png",
@@ -2588,7 +2588,7 @@
 		},
 		"Foswiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"env": "^foswiki$",
 			"headers": {
@@ -2609,7 +2609,7 @@
 		},
 		"FreeBSD": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "FreeBSD(?: ([\\d.]+))?\\;version:\\1"
@@ -2619,7 +2619,7 @@
 		},
 		"FreeTextBox": {
 			"cats": [
-				24
+				"24"
 			],
 			"env": "^FTB_",
 			"html": "/<!--\\s*\\*\\s*FreeTextBox v\\d+ \\(([.\\d]+)(?:(?:.|\n)+?<!--\\s*\\*\\s*License Type: (Distribution|Professional)License)?/i\\;version:\\1 \\2",
@@ -2629,7 +2629,7 @@
 		},
 		"Froala Editor": {
 			"cats": [
-				24
+				"24"
 			],
 			"icon": "Froala.svg",
 			"implies": [
@@ -2639,7 +2639,7 @@
 		},
 		"FrontPage": {
 			"cats": [
-				20
+				"20"
 			],
 			"html": "<html[^>]+urn:schemas-microsoft-com:office:office",
 			"icon": "FrontPage.png",
@@ -2650,7 +2650,7 @@
 		},
 		"Fusion Ads": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^_fusion",
 			"icon": "Fusion Ads.png",
@@ -2659,7 +2659,7 @@
 		},
 		"G-WAN": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "G-WAN"
@@ -2669,7 +2669,7 @@
 		},
 		"GX WebManager": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<!--\\s+Powered by GX",
 			"icon": "GX WebManager.png",
@@ -2680,7 +2680,7 @@
 		},
 		"Gallery": {
 			"cats": [
-				7
+				"7"
 			],
 			"env": "^galleryAuthToken$",
 			"html": "<div id=\"gsNavBar\" class=\"gcBorder1\">",
@@ -2689,7 +2689,7 @@
 		},
 		"Gambio": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^gm_session_id$",
 			"html": "(?:<link[^>]* href=\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->|<!--[\\s=]+Shopsoftware by Gambio GmbH \\(c\\))",
@@ -2700,7 +2700,7 @@
 		},
 		"Gauges": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^_gauges$",
 			"headers": {
@@ -2711,7 +2711,7 @@
 		},
 		"Gentoo": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"X-Powered-By": "gentoo"
@@ -2721,7 +2721,7 @@
 		},
 		"Gerrit": {
 			"cats": [
-				47
+				"47"
 			],
 			"env": "^gerrit_",
 			"html": "<(?:div|style) id=\"gerrit_",
@@ -2738,7 +2738,7 @@
 		},
 		"Get Satisfaction": {
 			"cats": [
-				13
+				"13"
 			],
 			"env": "^GSFN",
 			"icon": "Get Satisfaction.png",
@@ -2746,7 +2746,7 @@
 		},
 		"GetSimple CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "GetSimple CMS.png",
 			"implies": "PHP",
@@ -2757,7 +2757,7 @@
 		},
 		"Ghost": {
 			"cats": [
-				11
+				"11"
 			],
 			"headers": {
 				"X-Ghost-Cache-Status": ""
@@ -2771,7 +2771,7 @@
 		},
 		"GitBook": {
 			"cats": [
-				4
+				"4"
 			],
 			"icon": "GitBook.png",
 			"meta": {
@@ -2781,8 +2781,8 @@
 		},
 		"GitLab": {
 			"cats": [
-				13,
-				47
+				"13",
+				"47"
 			],
 			"env": "^GitLab$",
 			"headers": {
@@ -2803,8 +2803,8 @@
 		},
 		"GitLab CI": {
 			"cats": [
-				44,
-				47
+				"44",
+				"47"
 			],
 			"icon": "GitLab CI.png",
 			"implies": "Ruby on Rails",
@@ -2815,7 +2815,7 @@
 		},
 		"GitPHP": {
 			"cats": [
-				47
+				"47"
 			],
 			"html": [
 				"<!-- gitphp web interface ([\\d.]+)\\;version:\\1",
@@ -2827,7 +2827,7 @@
 		},
 		"Gitiles": {
 			"cats": [
-				47
+				"47"
 			],
 			"html": "Powered by <a href=\"https://gerrit.googlesource.com/gitiles/\">Gitiles<",
 			"icon": "default.svg",
@@ -2839,7 +2839,7 @@
 		},
 		"GlassFish": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "GlassFish(?: Server)?(?: Open Source Edition)?(?: ?/?([\\d.]+))?\\;version:\\1"
@@ -2852,7 +2852,7 @@
 		},
 		"Glyphicons": {
 			"cats": [
-				17
+				"17"
 			],
 			"html": "(?:<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css|<img[^>]* src=[^>]+glyphicons)",
 			"icon": "Glyphicons.png",
@@ -2860,14 +2860,14 @@
 		},
 		"Go": {
 			"cats": [
-				27
+				"27"
 			],
 			"icon": "Go.svg",
 			"website": "https://golang.org"
 		},
 		"GoAhead": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "GoAhead"
@@ -2877,7 +2877,7 @@
 		},
 		"GoStats": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^_go(?:stats|_track)",
 			"icon": "GoStats.png",
@@ -2885,7 +2885,7 @@
 		},
 		"Gogs": {
 			"cats": [
-				47
+				"47"
 			],
 			"headers": {
 				"Set-Cookie": "i_like_gogits="
@@ -2903,7 +2903,7 @@
 		},
 		"Google AdSense": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": [
 				"^google_ad_",
@@ -2921,7 +2921,7 @@
 		},
 		"Google Analytics": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^gaGlobal$",
 			"headers": {
@@ -2933,7 +2933,7 @@
 		},
 		"Google App Engine": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Google Frontend"
@@ -2943,7 +2943,7 @@
 		},
 		"Google Charts": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^__g(?:oogleVisualizationAbstractRendererElementsCount|vizguard)__$",
 			"icon": "Google Charts.png",
@@ -2951,7 +2951,7 @@
 		},
 		"Google Code Prettify": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^prettyPrint$",
 			"icon": "Google Code Prettify.png",
@@ -2959,7 +2959,7 @@
 		},
 		"Google Font API": {
 			"cats": [
-				17
+				"17"
 			],
 			"env": "^WebFonts$",
 			"html": "<link[^>]* href=[^>]+fonts\\.(?:googleapis|google)\\.com",
@@ -2969,7 +2969,7 @@
 		},
 		"Google Maps": {
 			"cats": [
-				35
+				"35"
 			],
 			"icon": "Google Maps.png",
 			"script": [
@@ -2980,8 +2980,8 @@
 		},
 		"Google PageSpeed": {
 			"cats": [
-				23,
-				33
+				"23",
+				"33"
 			],
 			"headers": {
 				"X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1",
@@ -2992,7 +2992,7 @@
 		},
 		"Google Plus": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "Google Plus.svg",
 			"script": "apis\\.google\\.com/js/[a-z]*\\.js",
@@ -3000,7 +3000,7 @@
 		},
 		"Google Sites": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Google Sites.png",
 			"url": "sites\\.google\\.com",
@@ -3008,7 +3008,7 @@
 		},
 		"Google Tag Manager": {
 			"cats": [
-				42
+				"42"
 			],
 			"env": [
 				"^googletag$",
@@ -3020,7 +3020,7 @@
 		},
 		"Google Wallet": {
 			"cats": [
-				41
+				"41"
 			],
 			"icon": "Google Wallet.png",
 			"script": [
@@ -3031,7 +3031,7 @@
 		},
 		"Google Web Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "gws"
@@ -3041,7 +3041,7 @@
 		},
 		"Google Web Toolkit": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^__gwt_",
 			"icon": "Google Web Toolkit.png",
@@ -3053,7 +3053,7 @@
 		},
 		"Graffiti CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "graffitibot[^;]="
@@ -3068,8 +3068,8 @@
 		},
 		"Grandstream": {
 			"cats": [
-				22,
-				39
+				"22",
+				"39"
 			],
 			"headers": {
 				"Server": "Grandstream\\/?([\\d\\.]+)?\\;version:\\1"
@@ -3079,7 +3079,7 @@
 		},
 		"Grav": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Grav.png",
 			"implies": "PHP",
@@ -3090,7 +3090,7 @@
 		},
 		"Gravatar": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^Gravatar$",
 			"html": "<[^>]+gravatar\\.com/avatar/",
@@ -3099,7 +3099,7 @@
 		},
 		"Gravity Forms": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": [
 				"<div class=(?:\"|')[^>]*gform_wrapper",
@@ -3113,7 +3113,7 @@
 		},
 		"Gravity Insights": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^GravityInsights$",
 			"icon": "Gravity Insights.png",
@@ -3121,7 +3121,7 @@
 		},
 		"Green Valley CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<img[^>]+/dsresource\\?objectid=",
 			"icon": "Green Valley CMS.png",
@@ -3133,7 +3133,7 @@
 		},
 		"HERE": {
 			"cats": [
-				35
+				"35"
 			],
 			"icon": "HERE.png",
 			"script": "https?://js\\.cit\\.api\\.here\\.com/se/([\\d.]+)\\/\\;version:\\1",
@@ -3141,7 +3141,7 @@
 		},
 		"HHVM": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"X-Powered-By": "HHVM/?([\\d.]+)?\\;version:\\1"
@@ -3152,14 +3152,14 @@
 		},
 		"HP": {
 			"cats": [
-				40
+				"40"
 			],
 			"icon": "HP.svg",
 			"website": "http://hp.com"
 		},
 		"HP ChaiServer": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "HP-Chai(?:Server|SOE)(?:/([\\d.]+))?\\;version:\\1"
@@ -3170,7 +3170,7 @@
 		},
 		"HP Compact Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "HP_Compact_Server(?:/([\\d.]+))?\\;version:\\1"
@@ -3180,14 +3180,14 @@
 		},
 		"HP ProCurve": {
 			"cats": [
-				37
+				"37"
 			],
 			"icon": "HP.svg",
 			"website": "http://hp.com/networking"
 		},
 		"HP System Management": {
 			"cats": [
-				46
+				"46"
 			],
 			"headers": {
 				"Server": "HP System Management"
@@ -3197,8 +3197,8 @@
 		},
 		"HP iLO": {
 			"cats": [
-				22,
-				46
+				"22",
+				"46"
 			],
 			"headers": {
 				"Server": "HP-iLO-Server(?:/([\\d.]+))?\\;version:\\1"
@@ -3208,7 +3208,7 @@
 		},
 		"HTTP Kit": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^http-kit"
@@ -3219,7 +3219,7 @@
 		},
 		"HTTP-Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "(?:^|[^-])\bHTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1"
@@ -3229,7 +3229,7 @@
 		},
 		"HTTP/2": {
 			"cats": [
-				19
+				"19"
 			],
 			"excludes": "SPDY",
 			"headers": {
@@ -3240,7 +3240,7 @@
 		},
 		"Haddock": {
 			"cats": [
-				4
+				"4"
 			],
 			"html": "<p>Produced by <a href=\"http://www.haskell.org/haddock/\">Haddock</a> version ([0-9.]+)</p>\\;version:\\1",
 			"icon": "default.svg",
@@ -3249,7 +3249,7 @@
 		},
 		"Hammer.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Hammer$",
 			"icon": "Hammer.js.png",
@@ -3258,7 +3258,7 @@
 		},
 		"Handlebars": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Handlebars$",
 			"html": "<[^>]*type=[^>]text\\/x-handlebars-template",
@@ -3268,7 +3268,7 @@
 		},
 		"Happy ICS Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1"
@@ -3279,14 +3279,14 @@
 		},
 		"Haskell": {
 			"cats": [
-				27
+				"27"
 			],
 			"icon": "Haskell.png",
 			"website": "http://wiki.haskell.org/Haskell"
 		},
 		"HeadJS": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^head$\\;confidence:50",
 			"html": "<[^>]*data-headjs-load",
@@ -3296,7 +3296,7 @@
 		},
 		"Heap": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^heap$",
 			"icon": "Heap.png",
@@ -3305,7 +3305,7 @@
 		},
 		"Hello Bar": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^HelloBar$",
 			"icon": "Hello Bar.png",
@@ -3314,7 +3314,7 @@
 		},
 		"Hiawatha": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Hiawatha v([\\d.]+)\\;version:\\1"
@@ -3324,7 +3324,7 @@
 		},
 		"Highcharts": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Highcharts$",
 			"html": "<svg[^>]*><desc>Created with Highcharts ([\\d.]*)\\;version:\\1",
@@ -3334,7 +3334,7 @@
 		},
 		"Highstock": {
 			"cats": [
-				25
+				"25"
 			],
 			"html": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)\\;version:\\1",
 			"icon": "Highcharts.png",
@@ -3343,7 +3343,7 @@
 		},
 		"Hippo": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<[^>]+/binaries/(?:[^/]+/)*content/gallery/",
 			"icon": "Hippo.png",
@@ -3351,7 +3351,7 @@
 		},
 		"Hogan.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Hogan$",
 			"icon": "Hogan.js.png",
@@ -3363,7 +3363,7 @@
 		},
 		"Hotaru CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "hotaru_mobile="
@@ -3377,7 +3377,7 @@
 		},
 		"HubSpot": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^(?:_hsq|hubspot)$",
 			"html": "<!-- Start of Async HubSpot",
@@ -3386,8 +3386,8 @@
 		},
 		"Hugo": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"icon": "Hugo.png",
 			"meta": {
@@ -3397,7 +3397,7 @@
 		},
 		"Hybris": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "_hybris"
@@ -3409,7 +3409,7 @@
 		},
 		"IBM Coremetrics": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "IBM.svg",
 			"script": "cmdatatagutils\\.js",
@@ -3417,7 +3417,7 @@
 		},
 		"IBM HTTP Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "IBM_HTTP_Server(?:/([\\d.]+))?\\;version:\\1"
@@ -3427,7 +3427,7 @@
 		},
 		"IBM Tivoli Storage Manager": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "TSM_HTTP(?:/([\\d.]+))?\\;version:\\1"
@@ -3437,7 +3437,7 @@
 		},
 		"IBM WebSphere Commerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "href=\"(?:\\/|[^>]+)webapp\\/wcs\\/",
 			"icon": "IBM.svg",
@@ -3447,7 +3447,7 @@
 		},
 		"IBM WebSphere Portal": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"IBM-Web2-Location": "",
@@ -3460,7 +3460,7 @@
 		},
 		"IIS": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "IIS(?:/([\\d.]+))?\\;version:\\1"
@@ -3471,7 +3471,7 @@
 		},
 		"INFOnline": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": [
 				"^szmvars$",
@@ -3483,7 +3483,7 @@
 		},
 		"IPB": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "^(?:IPBoard$|ipb_var|ipsSettings)",
 			"html": "<link[^>]+ipb_[^>]+\\.css",
@@ -3497,7 +3497,7 @@
 		},
 		"Immutable.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Immutable$",
 			"icon": "Immutable.js.png",
@@ -3506,7 +3506,7 @@
 		},
 		"ImpressCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "ICMSession[^;]+=",
@@ -3522,7 +3522,7 @@
 		},
 		"ImpressPages": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "ImpressPages.png",
 			"implies": "PHP",
@@ -3533,7 +3533,7 @@
 		},
 		"InProces": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<!-- CSS InProces Portaal default -->",
 			"icon": "InProces.png",
@@ -3542,7 +3542,7 @@
 		},
 		"Incapsula": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"X-CDN": "Incapsula"
@@ -3552,7 +3552,7 @@
 		},
 		"Indexhibit": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<(?:link|a href) [^>]+ndxz-studio",
 			"icon": "default.svg",
@@ -3568,7 +3568,7 @@
 		},
 		"Indico": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-cookie": "MAKACSESSION"
@@ -3579,7 +3579,7 @@
 		},
 		"Indy": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Indy(?:/([\\d.]+))?\\;version:\\1"
@@ -3587,9 +3587,17 @@
 			"icon": "default.svg",
 			"website": "http://indyproject.org"
 		},
+		"InfernoJS": {
+			"cats": [
+				"12"
+			],
+			"env": "^Inferno$",
+			"icon": "InfernoJS.png",
+			"website": "https://infernojs.org/"
+		},
 		"Infusionsoft": {
 			"cats": [
-				32
+				"32"
 			],
 			"html": [
 				"<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\\/>\\;version:\\1",
@@ -3600,7 +3608,7 @@
 		},
 		"InstantCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "InstantCMS\\[logdate\\]="
@@ -3614,8 +3622,8 @@
 		},
 		"Intel Active Management Technology": {
 			"cats": [
-				22,
-				46
+				"22",
+				"46"
 			],
 			"headers": {
 				"Server": "Intel\\(R\\) Active Management Technology(?: ([\\d.]+))?\\;version:\\1"
@@ -3625,7 +3633,7 @@
 		},
 		"IntenseDebate": {
 			"cats": [
-				15
+				"15"
 			],
 			"icon": "IntenseDebate.png",
 			"script": "intensedebate\\.com",
@@ -3633,7 +3641,7 @@
 		},
 		"Intercom": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^Intercom$",
 			"icon": "Intercom.png",
@@ -3642,7 +3650,7 @@
 		},
 		"Intershop": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Intershop.png",
 			"script": "(?:is-bin|INTERSHOP)",
@@ -3650,7 +3658,7 @@
 		},
 		"Invenio": {
 			"cats": [
-				50
+				"50"
 			],
 			"headers": {
 				"Set-cookie": "INVENIOSESSION"
@@ -3661,7 +3669,7 @@
 		},
 		"Ionicons": {
 			"cats": [
-				17
+				"17"
 			],
 			"html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
 			"icon": "Ionicons.png",
@@ -3669,7 +3677,7 @@
 		},
 		"JAlbum": {
 			"cats": [
-				7
+				"7"
 			],
 			"icon": "JAlbum.png",
 			"implies": "Java",
@@ -3680,7 +3688,7 @@
 		},
 		"JBoss Application Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"X-Powered-By": "JBoss(?:-([\\d.]+))?\\;version:\\1"
@@ -3690,7 +3698,7 @@
 		},
 		"JBoss Web": {
 			"cats": [
-				22
+				"22"
 			],
 			"excludes": "Apache Tomcat",
 			"headers": {
@@ -3702,7 +3710,7 @@
 		},
 		"JC-HTTPD": {
 			"cats": [
-				22
+				"22"
 			],
 			"excludes": "Apache",
 			"headers": {
@@ -3714,7 +3722,7 @@
 		},
 		"JS Charts": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^JSChart$",
 			"icon": "JS Charts.png",
@@ -3723,7 +3731,7 @@
 		},
 		"JTL Shop": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "JTLSHOP="
@@ -3734,7 +3742,7 @@
 		},
 		"Jalios": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Jalios.png",
 			"meta": {
@@ -3744,7 +3752,7 @@
 		},
 		"Java": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"Set-Cookie": "JSESSIONID"
@@ -3754,7 +3762,7 @@
 		},
 		"Java Servlet": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "Servlet(?:.([\\d.]+))?\\;version:\\1"
@@ -3765,7 +3773,7 @@
 		},
 		"JavaScript Infovis Toolkit": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^\\$jit$",
 			"icon": "JavaScript Infovis Toolkit.png",
@@ -3774,7 +3782,7 @@
 		},
 		"JavaServer Faces": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "JSF(?:/([\\d.]+))?\\;version:\\1"
@@ -3785,7 +3793,7 @@
 		},
 		"JavaServer Pages": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "JSP(?:/([\\d.]+))?\\;version:\\1"
@@ -3796,8 +3804,8 @@
 		},
 		"Jekyll": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"icon": "Jekyll.png",
 			"meta": {
@@ -3807,7 +3815,7 @@
 		},
 		"Jenkins": {
 			"cats": [
-				44
+				"44"
 			],
 			"headers": {
 				"X-Jenkins": "([\\d\\.]+)\\;version:\\1"
@@ -3818,7 +3826,7 @@
 		},
 		"Jetty": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Jetty(?:\\(([\\d\\.]*\\d+))?\\;version:\\1"
@@ -3829,7 +3837,7 @@
 		},
 		"Jimdo": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^jimdo_(?:Data|Gen\\d+)$",
 			"headers": {
@@ -3841,8 +3849,8 @@
 		},
 		"Jirafe": {
 			"cats": [
-				10,
-				32
+				"10",
+				"32"
 			],
 			"env": "^jirafe$",
 			"icon": "Jirafe.png",
@@ -3851,7 +3859,7 @@
 		},
 		"Jive": {
 			"cats": [
-				19
+				"19"
 			],
 			"headers": {
 				"X-JIVE-USER-ID": "",
@@ -3865,8 +3873,8 @@
 		},
 		"Jo": {
 			"cats": [
-				26,
-				12
+				"26",
+				"12"
 			],
 			"env": "^jo(?:Cache|DOM|Event)$",
 			"icon": "Jo.png",
@@ -3874,7 +3882,7 @@
 		},
 		"JobberBase": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^Jobber$",
 			"icon": "JobberBase.png",
@@ -3886,7 +3894,7 @@
 		},
 		"Joomla": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^(?:jcomments|Joomla)$",
 			"headers": {
@@ -3903,7 +3911,7 @@
 		},
 		"K2": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^K2RatingURL$",
 			"html": "<!--(?: JoomlaWorks \"K2\"| Start K2)",
@@ -3913,7 +3921,7 @@
 		},
 		"KISSmetrics": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^KM_COOKIE_DOMAIN$",
 			"icon": "KISSmetrics.png",
@@ -3921,7 +3929,7 @@
 		},
 		"KS_HTTP": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "KS_HTTP\\/?([\\d\\.]+)?\\;version:\\1"
@@ -3932,8 +3940,8 @@
 		},
 		"Kampyle": {
 			"cats": [
-				10,
-				13
+				"10",
+				"13"
 			],
 			"env": "^k_track$",
 			"headers": {
@@ -3945,7 +3953,7 @@
 		},
 		"Kamva": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^Kamva$",
 			"icon": "Kamva.svg",
@@ -3957,7 +3965,7 @@
 		},
 		"Kendo UI": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^kendo$",
 			"html": "<link[^>]*\\s+href=[^>]*styles/kendo\\.common(?:\\.min)?\\.css[^>]*/>",
@@ -3967,7 +3975,7 @@
 		},
 		"Kentico CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "CMSPreferredCulture="
@@ -3980,7 +3988,7 @@
 		},
 		"KeyCDN": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"Server": "^keycdn-engine$"
@@ -3990,8 +3998,8 @@
 		},
 		"Kibana": {
 			"cats": [
-				29,
-				25
+				"29",
+				"25"
 			],
 			"headers": {
 				"kbn-name": "kibana",
@@ -4005,7 +4013,7 @@
 		},
 		"KineticJS": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Kinetic$",
 			"icon": "KineticJS.png",
@@ -4014,9 +4022,9 @@
 		},
 		"Klarna Checkout": {
 			"cats": [
-				41,
-				6,
-				5
+				"41",
+				"6",
+				"5"
 			],
 			"env": "^_klarnaCheckout$",
 			"icon": "Klarna.svg",
@@ -4024,7 +4032,7 @@
 		},
 		"Knockout.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^ko$",
 			"icon": "Knockout.js.png",
@@ -4032,8 +4040,8 @@
 		},
 		"Koa": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"X-Powered-By": "^koa$"
@@ -4044,8 +4052,8 @@
 		},
 		"Koala Framework": {
 			"cats": [
-				1,
-				18
+				"1",
+				"18"
 			],
 			"html": "<!--[^>]+This website is powered by Koala Web Framework CMS",
 			"icon": "Koala Framework.png",
@@ -4057,7 +4065,7 @@
 		},
 		"Koego": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^ego_domains$",
 			"icon": "Koego.png",
@@ -4066,7 +4074,7 @@
 		},
 		"Kohana": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "kohanasession",
@@ -4078,7 +4086,7 @@
 		},
 		"Koken": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "koken_referrer="
@@ -4100,7 +4108,7 @@
 		},
 		"Kolibri CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "Kolibri"
@@ -4113,7 +4121,7 @@
 		},
 		"Komodo CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Komodo CMS.png",
 			"implies": "PHP",
@@ -4124,7 +4132,7 @@
 		},
 		"Koobi": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<!--[^K>-]+Koobi ([a-z\\d.]+)\\;version:\\1",
 			"icon": "Koobi.png",
@@ -4135,7 +4143,7 @@
 		},
 		"Kooboo CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-KoobooCMS-Version": "(.*)\\;version:\\1"
@@ -4147,7 +4155,7 @@
 		},
 		"Kotisivukone": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Kotisivukone.png",
 			"script": "kotisivukone(?:\\.min)?\\.js",
@@ -4155,7 +4163,7 @@
 		},
 		"LEPTON": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "lep\\d+sessionid="
@@ -4169,7 +4177,7 @@
 		},
 		"LabVIEW": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "LabVIEW(?:/([\\d\\.]+))?\\;version:\\1"
@@ -4179,7 +4187,7 @@
 		},
 		"Laravel": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "laravel_session"
@@ -4190,7 +4198,7 @@
 		},
 		"Lazy.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "default.svg",
 			"script": "lazy(?:\\.browser)?(?:\\.min)?\\.js",
@@ -4198,7 +4206,7 @@
 		},
 		"Leaflet": {
 			"cats": [
-				35
+				"35"
 			],
 			"icon": "Leaflet.png",
 			"script": "leaflet.*\\.js",
@@ -4206,7 +4214,7 @@
 		},
 		"Less": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<link[^>]+ rel=\"stylesheet/less\"",
 			"icon": "Less.png",
@@ -4214,7 +4222,7 @@
 		},
 		"Liferay": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^Liferay$",
 			"headers": {
@@ -4225,7 +4233,7 @@
 		},
 		"Lift": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Lift-Version": "(.+)\\;version:\\1"
@@ -4236,7 +4244,7 @@
 		},
 		"LightMon Engine": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "lm_online"
@@ -4251,8 +4259,8 @@
 		},
 		"Lightbox": {
 			"cats": [
-				7,
-				12
+				"7",
+				"12"
 			],
 			"html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
 			"icon": "Lightbox.png",
@@ -4261,7 +4269,7 @@
 		},
 		"Lightspeed eCom": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<!-- \\[START\\] 'blocks/head.rain' -->",
 			"icon": "Lightspeed.svg",
@@ -4271,7 +4279,7 @@
 		},
 		"Lighty": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "lighty_version"
@@ -4282,7 +4290,7 @@
 		},
 		"LimeSurvey": {
 			"cats": [
-				19
+				"19"
 			],
 			"headers": {
 				"generator": "LimeSurvey"
@@ -4292,7 +4300,7 @@
 		},
 		"LinkSmart": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^(?:_mb_site_guid$|LS_JSON|LinkSmart(?:_|$))",
 			"icon": "LinkSmart.png",
@@ -4301,7 +4309,7 @@
 		},
 		"Linkedin": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "Linkedin.svg",
 			"script": "//platform\\.linkedin\\.com/in\\.js",
@@ -4309,7 +4317,7 @@
 		},
 		"List.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^List$",
 			"icon": "List.js.png",
@@ -4318,7 +4326,7 @@
 		},
 		"LiteSpeed": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^LiteSpeed$"
@@ -4328,7 +4336,7 @@
 		},
 		"Lithium": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": [
 				"^LITHIUM$"
@@ -4343,7 +4351,7 @@
 		},
 		"LiveAgent": {
 			"cats": [
-				52
+				"52"
 			],
 			"env": "^LiveAgent$",
 			"icon": "LiveAgent.png",
@@ -4351,7 +4359,7 @@
 		},
 		"LiveChat": {
 			"cats": [
-				52
+				"52"
 			],
 			"icon": "LiveChat.png",
 			"script": "cdn\\.livechatinc\\.com/.*tracking\\.js",
@@ -4359,7 +4367,7 @@
 		},
 		"LiveJournal": {
 			"cats": [
-				11
+				"11"
 			],
 			"icon": "LiveJournal.png",
 			"url": "\\.livejournal\\.com",
@@ -4367,7 +4375,7 @@
 		},
 		"LiveStreet CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^LIVESTREET",
 			"headers": {
@@ -4379,7 +4387,7 @@
 		},
 		"Livefyre": {
 			"cats": [
-				15
+				"15"
 			],
 			"env": [
 				"^fyre$",
@@ -4392,7 +4400,7 @@
 		},
 		"Liveinternet": {
 			"cats": [
-				10
+				"10"
 			],
 			"html": [
 				"<script[^<>]*>[^]{0,128}?src\\s*=\\s*['\"]//counter\\.yadro\\.ru/hit(?:;\\S+)?\\?(?:t\\d+\\.\\d+;)?r",
@@ -4406,7 +4414,7 @@
 		},
 		"Lo-dash": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "Lo-dash.png",
 			"script": "lodash.*\\.js",
@@ -4414,7 +4422,7 @@
 		},
 		"Locomotive": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<link[^>]*/sites/[a-z\\d]{24}/theme/stylesheets",
 			"icon": "Locomotive.png",
@@ -4426,8 +4434,8 @@
 		},
 		"Logitech Media Server": {
 			"cats": [
-				22,
-				38
+				"22",
+				"38"
 			],
 			"headers": {
 				"Server": "Logitech Media Server(?: \\(([\\d\\.]+))?\\;version:\\1"
@@ -4437,7 +4445,7 @@
 		},
 		"Lotus Domino": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Lotus-Domino"
@@ -4448,7 +4456,7 @@
 		},
 		"Lua": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"X-Powered-By": "\bLua(?: ([\\d.]+))?\\;version:\\1"
@@ -4458,7 +4466,7 @@
 		},
 		"Lucene": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "Lucene.png",
 			"implies": "Java",
@@ -4466,14 +4474,14 @@
 		},
 		"M.R. Inc BoxyOS": {
 			"cats": [
-				28
+				"28"
 			],
 			"icon": "M.R. Inc.png",
 			"website": "http://mrincworld.com"
 		},
 		"M.R. Inc SiteFrame": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Powered-By": "M\\.R\\. Inc SiteFrame"
@@ -4483,7 +4491,7 @@
 		},
 		"M.R. Inc Webserver": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "M\\.R\\. Inc Webserver"
@@ -4496,7 +4504,7 @@
 		},
 		"MHonArc": {
 			"cats": [
-				50
+				"50"
 			],
 			"html": "<!-- MHonArc v([0-9.]+) -->\\;version:\\1",
 			"icon": "mhonarc.png",
@@ -4504,7 +4512,7 @@
 		},
 		"MOBOTIX": {
 			"cats": [
-				39
+				"39"
 			],
 			"icon": "MOBOTIX.png",
 			"meta": {
@@ -4517,7 +4525,7 @@
 		},
 		"MODX": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": {
@@ -4539,7 +4547,7 @@
 		},
 		"MadAdsMedia": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^setM(?:Iframe|RefURL)$",
 			"icon": "MadAdsMedia.png",
@@ -4548,7 +4556,7 @@
 		},
 		"Magento": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": [
 				"^(?:Mage|VarienForm)$"
@@ -4572,7 +4580,7 @@
 		},
 		"Mailchimp": {
 			"cats": [
-				32
+				"32"
 			],
 			"html": [
 				"<form [^>]*data-mailchimp-url",
@@ -4590,7 +4598,7 @@
 		},
 		"Mambo": {
 			"cats": [
-				1
+				"1"
 			],
 			"excludes": "Joomla",
 			"icon": "Mambo.png",
@@ -4601,7 +4609,7 @@
 		},
 		"MantisBT": {
 			"cats": [
-				13
+				"13"
 			],
 			"html": "<img[^>]+ alt=\"Powered by Mantis Bugtracker",
 			"icon": "MantisBT.png",
@@ -4610,7 +4618,7 @@
 		},
 		"ManyContacts": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "ManyContacts.png",
 			"script": "\\/assets\\/js\\/manycontacts\\.min\\.js",
@@ -4618,7 +4626,7 @@
 		},
 		"Marionette.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Marionette$",
 			"icon": "Marionette.js.svg",
@@ -4631,7 +4639,7 @@
 		},
 		"Marketo": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^Munchkin$",
 			"icon": "Marketo.png",
@@ -4640,7 +4648,7 @@
 		},
 		"Materialize CSS": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
 			"icon": "Materialize CSS.png",
@@ -4650,7 +4658,7 @@
 		},
 		"MathJax": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^MathJax$",
 			"icon": "MathJax.png",
@@ -4659,7 +4667,7 @@
 		},
 		"Mattermost": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "mm_(?:config|license|user|current_user_id)",
 			"html": "<noscript> To use Mattermost, please enable JavaScript. </noscript>",
@@ -4674,7 +4682,7 @@
 		},
 		"MaxCDN": {
 			"cats": [
-				31
+				"31"
 			],
 			"headers": {
 				"Server": "^NetDNA",
@@ -4685,7 +4693,7 @@
 		},
 		"MaxSite CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "MaxSite CMS.png",
 			"implies": "PHP",
@@ -4696,7 +4704,7 @@
 		},
 		"Mean.io": {
 			"cats": [
-				12
+				"12"
 			],
 			"headers": {
 				"X-Powered-CMS": "Mean\\.io"
@@ -4711,7 +4719,7 @@
 		},
 		"MediaElement.js": {
 			"cats": [
-				14
+				"14"
 			],
 			"env": "^mejs$",
 			"icon": "MediaElement.js.png",
@@ -4719,7 +4727,7 @@
 		},
 		"MediaTomb": {
 			"cats": [
-				38
+				"38"
 			],
 			"headers": {
 				"Server": "MediaTomb(?:/([\\d.]+))?\\;version:\\1"
@@ -4729,7 +4737,7 @@
 		},
 		"MediaWiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"html": "(?:<a[^>]+>Powered by MediaWiki</a>|<[^>]+id=\"t-specialpages)",
 			"icon": "MediaWiki.png",
@@ -4741,7 +4749,7 @@
 		},
 		"Meebo": {
 			"cats": [
-				5
+				"5"
 			],
 			"html": "(?:<iframe id=\"meebo-iframe\"|Meebo\\('domReady'\\))",
 			"icon": "Meebo.png",
@@ -4749,8 +4757,8 @@
 		},
 		"Melis CMS V2": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"html": "<!-- Rendered with Melics CMS V2",
 			"icon": "meliscmsv2.png",
@@ -4761,7 +4769,7 @@
 		},
 		"Meteor": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Meteor$",
 			"html": "<link[^>]+__meteor-css__",
@@ -4770,7 +4778,7 @@
 		},
 		"Methode": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^eidosBase$",
 			"html": "<!-- Methode uuid: \"[a-f\\d]+\" ?-->",
@@ -4786,7 +4794,7 @@
 		},
 		"Microsoft ASP.NET": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "ASPSESSION|ASP\\.NET_SessionId",
@@ -4801,7 +4809,7 @@
 		},
 		"Microsoft HTTPAPI": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Microsoft-HTTPAPI(?:/([\\d.]+))?\\;version:\\1"
@@ -4811,7 +4819,7 @@
 		},
 		"Microsoft SharePoint": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^_spBodyOnLoadCalled$",
 			"headers": {
@@ -4828,7 +4836,7 @@
 		},
 		"Mietshop": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<a href=\"https://ssl.mietshop.d",
 			"icon": "mietshop.png",
@@ -4839,7 +4847,7 @@
 		},
 		"Milligram": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": [
 				"<link[^>]+?href=\"[^\"]+milligram(?:\\.min)?\\.css"
@@ -4849,7 +4857,7 @@
 		},
 		"MiniBB": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "<a href=\"[^\"]+minibb[^<]+</a>[^<]+\n<!--End of copyright link",
 			"icon": "MiniBB.png",
@@ -4857,7 +4865,7 @@
 		},
 		"MiniServ": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "MiniServ\\/?([\\d\\.]+)?\\;version:\\1"
@@ -4867,7 +4875,7 @@
 		},
 		"Mint": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^Mint$",
 			"icon": "Mint.png",
@@ -4876,7 +4884,7 @@
 		},
 		"Mixpanel": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^Mixpanel$",
 			"icon": "Mixpanel.png",
@@ -4885,7 +4893,7 @@
 		},
 		"Mobify": {
 			"cats": [
-				26
+				"26"
 			],
 			"env": "^Mobify$",
 			"icon": "Mobify.png",
@@ -4894,7 +4902,7 @@
 		},
 		"MochiKit": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^MochiKit$",
 			"icon": "MochiKit.png",
@@ -4903,7 +4911,7 @@
 		},
 		"MochiWeb": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "MochiWeb(?:/([\\d.]+))?\\;version:\\1"
@@ -4913,7 +4921,7 @@
 		},
 		"Modernizr": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Modernizr$",
 			"icon": "Modernizr.png",
@@ -4922,7 +4930,7 @@
 		},
 		"Modified": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "modified.png",
 			"meta": {
@@ -4932,8 +4940,8 @@
 		},
 		"Moguta.CMS": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"html": "(?:<script|link)[^>]*mg-(?:core|plugins|templates)",
 			"icon": "Moguta.CMS.png",
@@ -4942,7 +4950,7 @@
 		},
 		"MoinMoin": {
 			"cats": [
-				8
+				"8"
 			],
 			"env": "^show_switch2gui$",
 			"icon": "MoinMoin.png",
@@ -4952,7 +4960,7 @@
 		},
 		"Mojolicious": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"x-powered-by": "mojolicious"
@@ -4963,7 +4971,7 @@
 		},
 		"Mollom": {
 			"cats": [
-				16
+				"16"
 			],
 			"html": "<img[^>]+\\.mollom\\.com",
 			"icon": "Mollom.png",
@@ -4972,7 +4980,7 @@
 		},
 		"Moment Timezone": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "Moment.js.png",
 			"implies": "Moment.js",
@@ -4981,7 +4989,7 @@
 		},
 		"Moment.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^moment$",
 			"icon": "Moment.js.png",
@@ -4990,7 +4998,7 @@
 		},
 		"Mondo Media": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Mondo Media.png",
 			"meta": {
@@ -5000,14 +5008,14 @@
 		},
 		"MongoDB": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "MongoDB.png",
 			"website": "http://www.mongodb.org"
 		},
 		"Mongrel": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Mongrel"
@@ -5018,7 +5026,7 @@
 		},
 		"Monkey HTTP Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Monkey/?([\\d.]+)?\\;version:\\1"
@@ -5028,7 +5036,7 @@
 		},
 		"Mono": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "Mono"
@@ -5038,7 +5046,7 @@
 		},
 		"Mono.net": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^_monoTracker$",
 			"icon": "Mono.net.png",
@@ -5048,7 +5056,7 @@
 		},
 		"MooTools": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^MooTools$",
 			"icon": "MooTools.png",
@@ -5057,7 +5065,7 @@
 		},
 		"Moodle": {
 			"cats": [
-				21
+				"21"
 			],
 			"env": "^moodle",
 			"headers": {
@@ -5073,7 +5081,7 @@
 		},
 		"Motion-httpd": {
 			"cats": [
-				22
+				"22"
 			],
 			"excludes": "Apache",
 			"headers": {
@@ -5084,7 +5092,7 @@
 		},
 		"MotoCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
 			"icon": "MotoCMS.svg",
@@ -5098,7 +5106,7 @@
 		},
 		"Movable Type": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Movable Type.png",
 			"meta": {
@@ -5108,7 +5116,7 @@
 		},
 		"Moxa": {
 			"cats": [
-				37
+				"37"
 			],
 			"headers": {
 				"Server": "MoxaHttp(?:/([\\d.]+))?\\;version:\\1"
@@ -5118,7 +5126,7 @@
 		},
 		"Mozard Suite": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Mozard Suite.png",
 			"meta": {
@@ -5129,8 +5137,8 @@
 		},
 		"Mura CMS": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"icon": "Mura CMS.png",
 			"implies": "Adobe ColdFusion",
@@ -5141,7 +5149,7 @@
 		},
 		"Mustache": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Mustache$",
 			"icon": "Mustache.png",
@@ -5150,7 +5158,7 @@
 		},
 		"MyBB": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "^MyBB$",
 			"html": "(?:<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB)",
@@ -5163,7 +5171,7 @@
 		},
 		"MyBlogLog": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "MyBlogLog.png",
 			"script": "pub\\.mybloglog\\.com",
@@ -5171,14 +5179,14 @@
 		},
 		"MySQL": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "MySQL.svg",
 			"website": "http://mysql.com"
 		},
 		"Mynetcap": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Mynetcap.png",
 			"meta": {
@@ -5188,7 +5196,7 @@
 		},
 		"NOIX": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "(?:<[^>]+(?:src|href)=[^>]*/media/noix|<!-- NOIX)",
 			"icon": "NOIX.png",
@@ -5196,7 +5204,7 @@
 		},
 		"NVD3": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^nv$",
 			"html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
@@ -5207,7 +5215,7 @@
 		},
 		"Nedstat": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^sitestat$",
 			"icon": "Nedstat.png",
@@ -5215,7 +5223,7 @@
 		},
 		"Neos CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"excludes": "TYPO3 CMS",
 			"headers": {
@@ -5228,7 +5236,7 @@
 		},
 		"Neos Flow": {
 			"cats": [
-				18
+				"18"
 			],
 			"excludes": "TYPO3 CMS",
 			"headers": {
@@ -5240,7 +5248,7 @@
 		},
 		"Nepso": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-CMS": "Nepso"
@@ -5250,7 +5258,7 @@
 		},
 		"Netmonitor": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^netmonitor$",
 			"icon": "Netmonitor.png",
@@ -5259,7 +5267,7 @@
 		},
 		"Neto": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^NETO$",
 			"icon": "Neto.svg",
@@ -5268,7 +5276,7 @@
 		},
 		"Netsuite": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "NS_VER="
@@ -5278,7 +5286,7 @@
 		},
 		"Nette Framework": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^Nette$",
 			"headers": {
@@ -5296,7 +5304,7 @@
 		},
 		"New Relic": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^NREUM",
 			"icon": "New Relic.png",
@@ -5304,7 +5312,7 @@
 		},
 		"Nginx": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "nginx(?:/([\\d.]+))?\\;version:\\1"
@@ -5314,15 +5322,15 @@
 		},
 		"Node.js": {
 			"cats": [
-				27
+				"27"
 			],
 			"icon": "node.js.png",
 			"website": "http://nodejs.org"
 		},
 		"OWL Carousel": {
 			"cats": [
-				5,
-				7
+				"5",
+				"7"
 			],
 			"html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
 			"icon": "OWL Carousel.png",
@@ -5332,7 +5340,7 @@
 		},
 		"OXID eShop": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^ox(?:TopMenu|ModalPopup|LoginBox|InputValidator)",
 			"html": "<!--[^-]*OXID eShop",
@@ -5341,7 +5349,7 @@
 		},
 		"October CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "october_session="
@@ -5352,8 +5360,8 @@
 		},
 		"Octopress": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"html": "Powered by <a href=\"http://octopress.org\">",
 			"icon": "octopress.png",
@@ -5365,8 +5373,8 @@
 		},
 		"Odoo": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"html": "<link[^>]* href=[^>]+/web/css/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
 			"icon": "Odoo.png",
@@ -5384,14 +5392,14 @@
 		},
 		"OmniTouch 8660 My Teamwork": {
 			"cats": [
-				19
+				"19"
 			],
 			"icon": "OmniTouch 8660 My Teamwork.png",
 			"website": "http://enterprise.alcatel-lucent.com"
 		},
 		"OneAPM": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^BWEUM",
 			"icon": "OneAPM.png",
@@ -5399,7 +5407,7 @@
 		},
 		"OneStat": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^OneStat",
 			"icon": "OneStat.png",
@@ -5407,7 +5415,7 @@
 		},
 		"Open AdStream": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^OAS_AD$",
 			"icon": "Open AdStream.png",
@@ -5415,7 +5423,7 @@
 		},
 		"Open Classifieds": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Open Classifieds.png",
 			"meta": {
@@ -5426,7 +5434,7 @@
 		},
 		"Open Journal Systems": {
 			"cats": [
-				50
+				"50"
 			],
 			"headers": {
 				"Set-Cookie": "\bOJSSID\b"
@@ -5440,7 +5448,7 @@
 		},
 		"Open Web Analytics": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^_?owa_",
 			"html": "<!-- (?:Start|End) Open Web Analytics Tracker -->",
@@ -5449,7 +5457,7 @@
 		},
 		"Open eShop": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Open eShop.png",
 			"implies": "PHP",
@@ -5461,7 +5469,7 @@
 		},
 		"OpenCart": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "(?:index\\.php\\?route=[a-z]+/|Powered By <a href=\"[^>]+OpenCart)",
 			"icon": "OpenCart.png",
@@ -5470,7 +5478,7 @@
 		},
 		"OpenCms": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Server": "OpenCms"
@@ -5483,7 +5491,7 @@
 		},
 		"OpenGSE": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "GSE"
@@ -5494,7 +5502,7 @@
 		},
 		"OpenGrok": {
 			"cats": [
-				19
+				"19"
 			],
 			"headers": {
 				"Set-Cookie": "OpenGrok"
@@ -5508,7 +5516,7 @@
 		},
 		"OpenLayers": {
 			"cats": [
-				35
+				"35"
 			],
 			"env": "^OpenLayers$",
 			"icon": "OpenLayers.png",
@@ -5517,7 +5525,7 @@
 		},
 		"OpenNemas": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "OpenNemas"
@@ -5530,7 +5538,7 @@
 		},
 		"OpenResty": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "openresty(?:/([\\d.]+))?\\;version:\\1"
@@ -5544,7 +5552,7 @@
 		},
 		"OpenSSL": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "OpenSSL(?:/([\\d.]+[a-z]?))?\\;version:\\1"
@@ -5554,7 +5562,7 @@
 		},
 		"OpenText Web Solutions": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<!--[^>]+published by Open Text Web Solutions",
 			"icon": "OpenText Web Solutions.png",
@@ -5563,7 +5571,7 @@
 		},
 		"OpenX": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "OpenX.png",
 			"script": [
@@ -5574,9 +5582,9 @@
 		},
 		"Ophal": {
 			"cats": [
-				1,
-				11,
-				18
+				"1",
+				"11",
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "Ophal(?: (.*))? \\(ophal\\.org\\)\\;version:\\1"
@@ -5591,7 +5599,7 @@
 		},
 		"Optimizely": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^optimizely$",
 			"icon": "Optimizely.png",
@@ -5600,7 +5608,7 @@
 		},
 		"Oracle Application Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Oracle[- ]Application[- ]Server(?: Containers for J2EE)?(?:[- ](\\d[\\da-z./]+))?\\;version:\\1"
@@ -5610,7 +5618,7 @@
 		},
 		"Oracle Commerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1"
@@ -5621,7 +5629,7 @@
 		},
 		"Oracle Commerce Cloud": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"OracleCommerceCloud-Version": "(.*)\\;version:\\1"
@@ -5632,7 +5640,7 @@
 		},
 		"Oracle Dynamic Monitoring Service": {
 			"cats": [
-				19
+				"19"
 			],
 			"headers": {
 				"x-oracle-dms-ecid": ""
@@ -5642,7 +5650,7 @@
 		},
 		"Oracle HTTP Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Oracle-HTTP-Server(?:/([\\d.]+))?\\;version:\\1"
@@ -5652,7 +5660,7 @@
 		},
 		"Oracle Recommendations On Demand": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "Oracle.png",
 			"script": "atgsvcs.+atgsvcs\\.js",
@@ -5660,7 +5668,7 @@
 		},
 		"Oracle Web Cache": {
 			"cats": [
-				23
+				"23"
 			],
 			"headers": {
 				"Server": "Oracle(?:AS)?[- ]Web[- ]Cache(?:[- /]([\\da-z./]+))?\\;version:\\1"
@@ -5670,7 +5678,7 @@
 		},
 		"Orchard CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Orchard CMS.png",
 			"implies": "Microsoft ASP.NET",
@@ -5681,7 +5689,7 @@
 		},
 		"Outbrain": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^(?:OutbrainPermaLink|OB_releaseVer)$",
 			"icon": "Outbrain.png",
@@ -5690,7 +5698,7 @@
 		},
 		"Outlook Web App": {
 			"cats": [
-				30
+				"30"
 			],
 			"env": "^IsOwaPremiumBrowser$",
 			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css\\;version:\\1",
@@ -5701,7 +5709,7 @@
 		},
 		"PANSITE": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "PANSITE.png",
 			"meta": {
@@ -5711,7 +5719,7 @@
 		},
 		"PDF.js": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^PDFJS$",
 			"html": "<\\/div>\\s*<!-- outerContainer -->\\s*<div\\s*id=\"printContainer\"><\\/div>",
@@ -5721,7 +5729,7 @@
 		},
 		"PHP": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"Server": "php/?([\\d.]+)?\\;version:\\1",
@@ -5734,7 +5742,7 @@
 		},
 		"PHP-Fusion": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "Powered by <a href=\"[^>]+php-fusion",
 			"icon": "PHP-Fusion.png",
@@ -5743,7 +5751,7 @@
 		},
 		"PHP-Nuke": {
 			"cats": [
-				2
+				"1"
 			],
 			"html": "<[^>]+Powered by PHP-Nuke",
 			"icon": "PHP-Nuke.png",
@@ -5755,7 +5763,7 @@
 		},
 		"Pagekit": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Pagekit.png",
 			"meta": {
@@ -5765,7 +5773,7 @@
 		},
 		"Pardot": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^pi(?:Tracker|Hostname|Protocol|CId|AId)$",
 			"headers": {
@@ -5778,7 +5786,7 @@
 		},
 		"Parse.ly": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^PARSELY$",
 			"icon": "Parse.ly.png",
@@ -5786,7 +5794,7 @@
 		},
 		"Paths.js": {
 			"cats": [
-				25
+				"25"
 			],
 			"icon": "default.svg",
 			"script": "paths(?:\\.min)?\\.js",
@@ -5794,7 +5802,7 @@
 		},
 		"PayPal": {
 			"cats": [
-				41
+				"41"
 			],
 			"env": "^PAYPAL$",
 			"html": "<input[^>]+_s-xclick",
@@ -5804,8 +5812,8 @@
 		},
 		"PencilBlue": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"headers": {
 				"X-Powered-By": "PencilBlue"
@@ -5816,7 +5824,7 @@
 		},
 		"Penguin": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^penguin$",
 			"html": "<link[^>]+?href=\"[^\"]+penguin(?:\\.min)?\\.css",
@@ -5826,7 +5834,7 @@
 		},
 		"Percussion": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<[^>]+class=\"perc-region\"",
 			"icon": "Percussion.png",
@@ -5837,7 +5845,7 @@
 		},
 		"PerfSONAR-PS": {
 			"cats": [
-				19
+				"19"
 			],
 			"headers": {
 				"User-agent": "perfSONAR-PS/?([\\d\\.]+)?\\;version:\\1"
@@ -5847,7 +5855,7 @@
 		},
 		"Perl": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"Server": "\bPerl\b(?: ?/?v?([\\d.]+))?\\;version:\\1"
@@ -5858,7 +5866,7 @@
 		},
 		"Petrojs": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^petrojs$",
 			"icon": "Petrojs.png",
@@ -5870,8 +5878,8 @@
 		},
 		"Phabricator": {
 			"cats": [
-				13,
-				47
+				"13",
+				"47"
 			],
 			"headers": {
 				"Set-Cookie": "phsid="
@@ -5886,7 +5894,7 @@
 		},
 		"Phaser": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "Phaser",
 			"icon": "Phaser.png",
@@ -5894,7 +5902,7 @@
 		},
 		"Phusion Passenger": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"X-Powered-By": "^Phusion Passenger"
@@ -5904,7 +5912,7 @@
 		},
 		"Piano Solo": {
 			"cats": [
-				43
+				"43"
 			],
 			"env": "^PianoMedia$",
 			"headers": {
@@ -5915,9 +5923,9 @@
 		},
 		"Pimcore": {
 			"cats": [
-				1,
-				6,
-				18
+				"1",
+				"6",
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "pimcore"
@@ -5928,7 +5936,7 @@
 		},
 		"Pinterest": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "Pinterest.svg",
 			"script": "//assets\\.pinterest\\.com/js/pinit\\.js",
@@ -5936,7 +5944,7 @@
 		},
 		"Piwik": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": [
 				"^Piwik$",
@@ -5956,7 +5964,7 @@
 		},
 		"Planet": {
 			"cats": [
-				49
+				"49"
 			],
 			"icon": "Planet.png",
 			"meta": {
@@ -5966,7 +5974,7 @@
 		},
 		"Plentymarkets": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Plentymarkets.png",
 			"meta": {
@@ -5976,7 +5984,7 @@
 		},
 		"Plesk": {
 			"cats": [
-				9
+				"9"
 			],
 			"headers": {
 				"X-Powered-By": "PleskLin",
@@ -5988,7 +5996,7 @@
 		},
 		"Pligg": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^pligg_",
 			"html": "<span[^>]+id=\"xvotes-0",
@@ -6000,7 +6008,7 @@
 		},
 		"Plone": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Plone.png",
 			"implies": "Python",
@@ -6011,7 +6019,7 @@
 		},
 		"Plotly": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "Plotly",
 			"icon": "Plotly.png",
@@ -6021,7 +6029,7 @@
 		},
 		"Plura": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<iframe src=\"[^>]+pluraserver\\.com",
 			"icon": "Plura.png",
@@ -6029,7 +6037,7 @@
 		},
 		"Po.st": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^pwidget_config$",
 			"icon": "Po.st.png",
@@ -6037,7 +6045,7 @@
 		},
 		"Polymer": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Polymer$",
 			"html": "(?:<polymer-[^>]+|<link[^>]+rel=\"import\"[^>]+/polymer\\.html\")",
@@ -6047,8 +6055,8 @@
 		},
 		"Posterous": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"env": "^Posterous",
 			"html": "<div class=\"posterous",
@@ -6057,14 +6065,14 @@
 		},
 		"PostgreSQL": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "PostgreSQL.png",
 			"website": "http://www.postgresql.org/"
 		},
 		"Powergap": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": [
 				"<a[^>]+title=\"POWERGAP",
@@ -6075,7 +6083,7 @@
 		},
 		"Prefix-Free": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^PrefixFree$",
 			"icon": "Prefix-Free.png",
@@ -6084,7 +6092,7 @@
 		},
 		"PrestaShop": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": [
 				"^freeProductTranslation$\\;confidence:25",
@@ -6106,7 +6114,7 @@
 		},
 		"Project Wonderful": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^pw_adloader$",
 			"html": "<div[^>]+id=\"pw_adbox_",
@@ -6116,7 +6124,7 @@
 		},
 		"Prospector": {
 			"cats": [
-				36
+				"36"
 			],
 			"html": "<[^>]+data-name=['\"]prospectscript",
 			"icon": "Prospector.png",
@@ -6125,7 +6133,7 @@
 		},
 		"Prototype": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Prototype$",
 			"icon": "Prototype.png",
@@ -6134,7 +6142,7 @@
 		},
 		"Protovis": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^protovis$",
 			"icon": "default.svg",
@@ -6143,8 +6151,8 @@
 		},
 		"Proximis Omnichannel": {
 			"cats": [
-				6,
-				1
+				"6",
+				"1"
 			],
 			"env": "^__change$",
 			"html": "<html[^>]+data-ng-app=\"RbsChangeApp\"",
@@ -6160,7 +6168,7 @@
 		},
 		"PubMatic": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "PubMatic.png",
 			"script": "https?://[^/]*\\.pubmatic\\.com",
@@ -6168,7 +6176,7 @@
 		},
 		"Public CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "PUBLICCMS_USER",
@@ -6180,7 +6188,7 @@
 		},
 		"Pure CSS": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
 			"icon": "Pure CSS.png",
@@ -6188,7 +6196,7 @@
 		},
 		"Pygments": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<link[^>]+pygments.css[\"']",
 			"icon": "pygments.png",
@@ -6196,7 +6204,7 @@
 		},
 		"PyroCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "pyrocms",
@@ -6208,7 +6216,7 @@
 		},
 		"Python": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"Server": "(?:^|\\s)Python(?:/([\\d.]+))?\\;confidence:50\\;version:\\1"
@@ -6218,7 +6226,7 @@
 		},
 		"Quantcast": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^quantserve$",
 			"icon": "Quantcast.png",
@@ -6227,7 +6235,7 @@
 		},
 		"Question2Answer": {
 			"cats": [
-				15
+				"15"
 			],
 			"html": "<!-- Powered by Question2Answer",
 			"icon": "question2answer.png",
@@ -6237,7 +6245,7 @@
 		},
 		"Quick.CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<a href=\"[^>]+opensolution\\.org/\">CMS by",
 			"icon": "Quick.CMS.png",
@@ -6248,7 +6256,7 @@
 		},
 		"Quick.Cart": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<a href=\"[^>]+opensolution\\.org/\">(?:Shopping cart by|Sklep internetowy)",
 			"icon": "Quick.Cart.png",
@@ -6259,7 +6267,7 @@
 		},
 		"Quill": {
 			"cats": [
-				24
+				"24"
 			],
 			"env": "^Quill$",
 			"icon": "Quill.png",
@@ -6267,7 +6275,7 @@
 		},
 		"RAID HTTPServer": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "RAID HTTPServer(?:/([\\d.]+))?\\;version:\\1"
@@ -6277,8 +6285,8 @@
 		},
 		"RBS Change": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"html": "<html[^>]+xmlns:change=",
 			"icon": "RBS Change.png",
@@ -6290,7 +6298,7 @@
 		},
 		"RCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "RCMS.png",
 			"meta": {
@@ -6300,7 +6308,7 @@
 		},
 		"RD Station": {
 			"cats": [
-				32
+				"32"
 			],
 			"env": "^RDStation$",
 			"icon": "RD Station.png",
@@ -6309,7 +6317,7 @@
 		},
 		"RDoc": {
 			"cats": [
-				4
+				"4"
 			],
 			"html": [
 				"<link[^>]+href=\"[^\"]*rdoc-style\\.css",
@@ -6321,7 +6329,7 @@
 		},
 		"RackCache": {
 			"cats": [
-				23
+				"23"
 			],
 			"headers": {
 				"X-Rack-Cache": ""
@@ -6332,7 +6340,7 @@
 		},
 		"RainLoop": {
 			"cats": [
-				30
+				"30"
 			],
 			"env": "^rainloop",
 			"headers": {
@@ -6349,7 +6357,7 @@
 		},
 		"Rakuten DBCore": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Rakuten DBCore.png",
 			"meta": {
@@ -6360,7 +6368,7 @@
 		},
 		"Ramda": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "Ramda.png",
 			"script": "ramda.*\\.js",
@@ -6368,7 +6376,7 @@
 		},
 		"Raphael": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Raphael$",
 			"icon": "Raphael.png",
@@ -6377,7 +6385,7 @@
 		},
 		"Rapid Logic": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Rapid Logic(?:/([\\d.]+))?\\;version:\\1"
@@ -6387,7 +6395,7 @@
 		},
 		"React": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^React$",
 			"html": "<[^>]+data-react",
@@ -6401,7 +6409,7 @@
 		},
 		"Red Hat": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Red Hat",
@@ -6412,7 +6420,7 @@
 		},
 		"Reddit": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "^reddit$",
 			"html": "(?:<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
@@ -6423,7 +6431,7 @@
 		},
 		"Redmine": {
 			"cats": [
-				13
+				"13"
 			],
 			"html": "Powered by <a href=\"[^>]+Redmine",
 			"icon": "Redmine.png",
@@ -6435,7 +6443,7 @@
 		},
 		"Reinvigorate": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^reinvigorate$",
 			"icon": "Reinvigorate.png",
@@ -6443,7 +6451,7 @@
 		},
 		"RequireJS": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^requirejs$",
 			"icon": "RequireJS.png",
@@ -6452,7 +6460,7 @@
 		},
 		"Resin": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^Resin(?:/(\\S*))?\\;version:\\1"
@@ -6463,7 +6471,7 @@
 		},
 		"Reveal.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Reveal$",
 			"icon": "Reveal.js.png",
@@ -6472,7 +6480,7 @@
 		},
 		"Revel": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "^REVEL_(?:FLASH|SESSION)="
@@ -6483,7 +6491,7 @@
 		},
 		"Rickshaw": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Rickshaw$",
 			"icon": "default.svg",
@@ -6493,7 +6501,7 @@
 		},
 		"RightJS": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^RightJS$",
 			"icon": "RightJS.png",
@@ -6502,7 +6510,7 @@
 		},
 		"Riot": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^riot$",
 			"icon": "Riot.png",
@@ -6511,7 +6519,7 @@
 		},
 		"RiteCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "RiteCMS.png",
 			"implies": [
@@ -6525,8 +6533,8 @@
 		},
 		"Roadiz CMS": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"headers": {
 				"X-Powered-By": "Roadiz CMS"
@@ -6543,7 +6551,7 @@
 		},
 		"Robin": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": [
 				"_robin_getRobinJs",
@@ -6555,9 +6563,9 @@
 		},
 		"RockRMS": {
 			"cats": [
-				1,
-				11,
-				32
+				"1",
+				"11",
+				"32"
 			],
 			"icon": "RockRMS.svg",
 			"implies": [
@@ -6572,7 +6580,7 @@
 		},
 		"RoundCube": {
 			"cats": [
-				30
+				"30"
 			],
 			"env": "^(?:rcmail|rcube_|roundcube)",
 			"html": "<title>RoundCube",
@@ -6582,7 +6590,7 @@
 		},
 		"Rubicon Project": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "Rubicon Project.png",
 			"script": "https?://[^/]*\\.rubiconproject\\.com",
@@ -6590,7 +6598,7 @@
 		},
 		"Ruby": {
 			"cats": [
-				27
+				"27"
 			],
 			"headers": {
 				"Server": "(?:Mongrel|WEBrick|Ruby)"
@@ -6600,7 +6608,7 @@
 		},
 		"Ruby on Rails": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50",
@@ -6616,7 +6624,7 @@
 		},
 		"Ruxit": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "Ruxit.png",
 			"script": "ruxitagentjs",
@@ -6624,7 +6632,7 @@
 		},
 		"RxJS": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Rx$\\;confidence:20",
 			"icon": "RxJS.png",
@@ -6633,7 +6641,7 @@
 		},
 		"S.Builder": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "S.Builder.png",
 			"meta": {
@@ -6643,7 +6651,7 @@
 		},
 		"SAP": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "SAP NetWeaver Application Server"
@@ -6653,7 +6661,7 @@
 		},
 		"SDL Tridion": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<img[^>]+_tcm\\d{2,3}-\\d{6}\\.",
 			"icon": "SDL Tridion.png",
@@ -6661,7 +6669,7 @@
 		},
 		"SIMsite": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "SIMsite.png",
 			"meta": {
@@ -6672,7 +6680,7 @@
 		},
 		"SMF": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "^smf_",
 			"icon": "SMF.png",
@@ -6681,7 +6689,7 @@
 		},
 		"SOBI 2": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "(?:<!-- start of Sigsiu Online Business Index|<div[^>]* class=\"sobi2)",
 			"icon": "SOBI 2.png",
@@ -6690,7 +6698,7 @@
 		},
 		"SPDY": {
 			"cats": [
-				19
+				"19"
 			],
 			"excludes": "HTTP/2",
 			"headers": {
@@ -6701,7 +6709,7 @@
 		},
 		"SPIP": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Spip-Cache": ""
@@ -6715,7 +6723,7 @@
 		},
 		"SQL Buddy": {
 			"cats": [
-				3
+				"3"
 			],
 			"html": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
 			"icon": "SQL Buddy.png",
@@ -6724,14 +6732,14 @@
 		},
 		"SQLite": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "SQLite.png",
 			"website": "http://www.sqlite.org"
 		},
 		"SUSE": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "SUSE(?:/?\\s?-?([\\d.]+))?\\;version:\\1",
@@ -6742,7 +6750,7 @@
 		},
 		"SWFObject": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^SWFObject$",
 			"icon": "SWFObject.png",
@@ -6751,7 +6759,7 @@
 		},
 		"Saia PCD": {
 			"cats": [
-				45
+				"45"
 			],
 			"headers": {
 				"Server": "Saia PCD(?:([/a-z\\d.]+))?\\;version:\\1"
@@ -6761,7 +6769,7 @@
 		},
 		"Sails.js": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "^sails\\.sid$",
@@ -6773,7 +6781,7 @@
 		},
 		"Sarka-SPIP": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Sarka-SPIP.png",
 			"implies": "SPIP",
@@ -6784,21 +6792,21 @@
 		},
 		"Scala": {
 			"cats": [
-				27
+				"27"
 			],
 			"icon": "Scala.png",
 			"website": "http://www.scala-lang.org"
 		},
 		"Schneider": {
 			"cats": [
-				45
+				"45"
 			],
 			"icon": "Schneider.png",
 			"website": "http://schneider-electric.com"
 		},
 		"Schneider Web Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Schneider-WEB(?:/V?([\\d.]+))?\\;version:\\1"
@@ -6811,7 +6819,7 @@
 		},
 		"Scientific Linux": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Scientific Linux",
@@ -6822,7 +6830,7 @@
 		},
 		"Segment": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^analytics$",
 			"html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics.js[\\s\\S]*script>",
@@ -6832,7 +6840,7 @@
 		},
 		"Select2": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "default.svg",
 			"implies": "jQuery",
@@ -6841,7 +6849,7 @@
 		},
 		"Semantic-ui": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": [
 				"(?:<div class=\"ui\\s[^>]+\">)\\;confidence:30",
@@ -6853,8 +6861,8 @@
 		},
 		"Sencha Touch": {
 			"cats": [
-				12,
-				26
+				"12",
+				"26"
 			],
 			"icon": "Sencha Touch.png",
 			"script": "sencha-touch.*\\.js",
@@ -6862,7 +6870,7 @@
 		},
 		"Sentinel Keys Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "SentinelKeysServer\\/?([\\d\\.]+)?\\;version:\\1"
@@ -6872,7 +6880,7 @@
 		},
 		"Sentinel License Monitor": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<title>Sentinel (?:Keys )?License Monitor</title>",
 			"icon": "Sentinel.png",
@@ -6880,7 +6888,7 @@
 		},
 		"Sentinel Protection Server": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "SentinelProtectionServer\\/?([\\d\\.]+)?\\;version:\\1"
@@ -6890,8 +6898,8 @@
 		},
 		"Serendipity": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"icon": "Serendipity.png",
 			"implies": "PHP",
@@ -6903,7 +6911,7 @@
 		},
 		"Shadow": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "ShadowFramework"
@@ -6914,7 +6922,7 @@
 		},
 		"ShareThis": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^SHARETHIS$",
 			"icon": "ShareThis.png",
@@ -6923,7 +6931,7 @@
 		},
 		"ShellInABox": {
 			"cats": [
-				46
+				"46"
 			],
 			"env": "^ShellInABox$",
 			"html": [
@@ -6935,7 +6943,7 @@
 		},
 		"ShinyStat": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^SSsdk$",
 			"html": "<img[^>]*\\s+src=['\"]?https?://www\\.shinystat\\.com/cgi-bin/shinystat\\.cgi\\?[^'\"\\s>]*['\"\\s/>]",
@@ -6945,8 +6953,8 @@
 		},
 		"Shopalize": {
 			"cats": [
-				5,
-				10
+				"5",
+				"10"
 			],
 			"env": "^Shopalize$",
 			"icon": "Shopalize.png",
@@ -6954,7 +6962,7 @@
 		},
 		"Shopatron": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^shptUrl$",
 			"html": [
@@ -6970,7 +6978,7 @@
 		},
 		"Shopery": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"X-Shopery": ""
@@ -6985,7 +6993,7 @@
 		},
 		"Shopify": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^Shopify$",
 			"html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
@@ -6994,7 +7002,7 @@
 		},
 		"Shoptet": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^shoptet$",
 			"html": "<link [^>]*href=\"https?://cdn\\.myshoptet\\.com/",
@@ -7010,7 +7018,7 @@
 		},
 		"Shopware": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1",
 			"icon": "Shopware.png",
@@ -7027,7 +7035,7 @@
 		},
 		"Silva": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "SilvaCMS"
@@ -7037,7 +7045,7 @@
 		},
 		"SilverStripe": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "Powered by <a href=\"[^>]+SilverStripe",
 			"icon": "SilverStripe.svg",
@@ -7048,7 +7056,7 @@
 		},
 		"SimpleHTTP": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "SimpleHTTP(?:/([\\d.]+))?\\;version:\\1"
@@ -7058,7 +7066,7 @@
 		},
 		"Site Meter": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "Site Meter.png",
 			"script": "sitemeter\\.com/js/counter\\.js\\?site=",
@@ -7066,7 +7074,7 @@
 		},
 		"SiteCatalyst": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^s_(?:account|objectID|code|INST)$",
 			"icon": "SiteCatalyst.png",
@@ -7075,7 +7083,7 @@
 		},
 		"SiteEdit": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "SiteEdit.png",
 			"meta": {
@@ -7085,7 +7093,7 @@
 		},
 		"Sitecore": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-cookie": "SC_ANALYTICS_GLOBAL_COOKIE"
@@ -7096,7 +7104,7 @@
 		},
 		"Sitefinity": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Sitefinity.svg",
 			"implies": "Microsoft ASP.NET",
@@ -7107,7 +7115,7 @@
 		},
 		"Sivuviidakko": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Sivuviidakko.png",
 			"meta": {
@@ -7117,7 +7125,7 @@
 		},
 		"Sizmek": {
 			"cats": [
-				36
+				"36"
 			],
 			"html": "(?:<a [^>]*href=\"[^/]*//[^/]*serving-sys\\.com/|<img [^>]*src=\"[^/]*//[^/]*serving-sys\\.com/)",
 			"icon": "Sizmek.png",
@@ -7126,8 +7134,8 @@
 		},
 		"Slimbox": {
 			"cats": [
-				7,
-				12
+				"7",
+				"12"
 			],
 			"html": "<link [^>]*href=\"[^/]*slimbox(?:-rtl)?\\.css",
 			"icon": "Slimbox.png",
@@ -7137,8 +7145,8 @@
 		},
 		"Slimbox 2": {
 			"cats": [
-				7,
-				12
+				"7",
+				"12"
 			],
 			"html": "<link [^>]*href=\"[^/]*slimbox2(?:-rtl)?\\.css",
 			"icon": "Slimbox 2.png",
@@ -7148,7 +7156,7 @@
 		},
 		"Smart Ad Server": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^SmartAdServer$",
 			"html": "<img[^>]+smartadserver\\.com\\/call",
@@ -7157,7 +7165,7 @@
 		},
 		"SmartSite": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<[^>]+/smartsite\\.(?:dws|shtml)\\?id=",
 			"icon": "SmartSite.png",
@@ -7168,7 +7176,7 @@
 		},
 		"Smartstore": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Smartstore.png",
 			"script": "smjslib\\.js",
@@ -7176,8 +7184,8 @@
 		},
 		"Snap": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"Server": "Snap/([.\\d]+)\\;version:\\1"
@@ -7188,7 +7196,7 @@
 		},
 		"Snap.svg": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Snap$",
 			"icon": "Snap.svg.png",
@@ -7197,7 +7205,7 @@
 		},
 		"Snoobi": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^snoobi$",
 			"icon": "Snoobi.png",
@@ -7206,7 +7214,7 @@
 		},
 		"SobiPro": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^SobiProUrl$",
 			"icon": "SobiPro.png",
@@ -7215,7 +7223,7 @@
 		},
 		"Socket.io": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^io$",
 			"icon": "Socket.io.png",
@@ -7225,7 +7233,7 @@
 		},
 		"Solodev": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"solodev_session": ""
@@ -7237,7 +7245,7 @@
 		},
 		"Solr": {
 			"cats": [
-				34
+				"34"
 			],
 			"icon": "Solr.png",
 			"implies": "Lucene",
@@ -7245,8 +7253,8 @@
 		},
 		"Solve Media": {
 			"cats": [
-				16,
-				36
+				"16",
+				"36"
 			],
 			"env": "^(?:_?ACPuzzle|adcopy-puzzle-image-image$)",
 			"icon": "Solve Media.png",
@@ -7255,7 +7263,7 @@
 		},
 		"SoundManager": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^(?:SoundManager|BaconPlayer)$",
 			"icon": "SoundManager.png",
@@ -7263,7 +7271,7 @@
 		},
 		"Sphinx": {
 			"cats": [
-				4
+				"4"
 			],
 			"env": "^DOCUMENTATION_OPTIONS$",
 			"icon": "Sphinx.png",
@@ -7272,7 +7280,7 @@
 		},
 		"SpiderControl iniNet": {
 			"cats": [
-				45
+				"45"
 			],
 			"icon": "SpiderControl iniNet.png",
 			"meta": {
@@ -7282,7 +7290,7 @@
 		},
 		"Splunk": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<p class=\"footer\">&copy; [-\\d]+ Splunk Inc\\.(?: Splunk ([\\d\\.]+(?: build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1",
 			"icon": "Splunk.png",
@@ -7293,7 +7301,7 @@
 		},
 		"Splunkd": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Splunkd"
@@ -7303,7 +7311,7 @@
 		},
 		"Spree": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "(?:<link[^>]*/assets/store/all-[a-z\\d]{32}\\.css[^>]+>|<script>\\s*Spree\\.(?:routes|translations|api_key))",
 			"icon": "Spree.png",
@@ -7312,7 +7320,7 @@
 		},
 		"Squarespace": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^Squarespace",
 			"headers": {
@@ -7323,7 +7331,7 @@
 		},
 		"SquirrelMail": {
 			"cats": [
-				30
+				"30"
 			],
 			"env": "^squirrelmail_loginpage_onload$",
 			"html": "<small>SquirrelMail version ([.\\d]+)[^<]*<br \\;version:\\1",
@@ -7334,7 +7342,7 @@
 		},
 		"Squiz Matrix": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "Squiz Matrix"
@@ -7349,7 +7357,7 @@
 		},
 		"Stackla": {
 			"cats": [
-				5
+				"5"
 			],
 			"env": "^Stackla$",
 			"icon": "Stackla.png",
@@ -7358,7 +7366,7 @@
 		},
 		"Stackla Social Hub": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^stacklaSocialHub$",
 			"icon": "Stackla.png",
@@ -7366,8 +7374,8 @@
 		},
 		"Stamplay": {
 			"cats": [
-				34,
-				47
+				"34",
+				"47"
 			],
 			"headers": {
 				"Server": "Stamplay"
@@ -7378,7 +7386,7 @@
 		},
 		"Starlet": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^Plack::Handler::Starlet"
@@ -7389,7 +7397,7 @@
 		},
 		"StatCounter": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "StatCounter.png",
 			"script": "statcounter\\.com/counter/counter",
@@ -7397,7 +7405,7 @@
 		},
 		"Store Systems": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "Shopsystem von <a href=[^>]+store-systems\\.de\"|\\.mws_boxTop",
 			"icon": "Store Systems.png",
@@ -7405,7 +7413,7 @@
 		},
 		"Strapdown.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "strapdown.js.png",
 			"implies": [
@@ -7417,7 +7425,7 @@
 		},
 		"Strato": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<a href=\"http://www.strato.de/\" target=\"_blank\">",
 			"icon": "strato.png",
@@ -7425,7 +7433,7 @@
 		},
 		"Stripe": {
 			"cats": [
-				41
+				"41"
 			],
 			"env": "^Stripe$",
 			"html": "<input[^>]+data-stripe",
@@ -7435,7 +7443,7 @@
 		},
 		"SublimeVideo": {
 			"cats": [
-				14
+				"14"
 			],
 			"env": "^sublimevideo$",
 			"icon": "SublimeVideo.png",
@@ -7444,7 +7452,7 @@
 		},
 		"Subrion": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-CMS": "Subrion CMS"
@@ -7458,7 +7466,7 @@
 		},
 		"Sulu": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Generator": "Sulu/?(.+)?$\\;version:\\1"
@@ -7469,8 +7477,8 @@
 		},
 		"SumoMe": {
 			"cats": [
-				5,
-				32
+				"5",
+				"32"
 			],
 			"icon": "SumoMe.png",
 			"script": "load\\.sumome\\.com",
@@ -7478,7 +7486,7 @@
 		},
 		"SunOS": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "SunOS( [\\d\\.]+)?\\;version:\\1",
@@ -7489,8 +7497,8 @@
 		},
 		"Supersized": {
 			"cats": [
-				7,
-				25
+				"7",
+				"25"
 			],
 			"icon": "Supersized.png",
 			"script": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
@@ -7498,7 +7506,7 @@
 		},
 		"SweetAlert": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^swal$",
 			"html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
@@ -7508,7 +7516,7 @@
 		},
 		"Swiftlet": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Generator": "Swiftlet",
@@ -7525,7 +7533,7 @@
 		},
 		"Swiftype": {
 			"cats": [
-				29
+				"29"
 			],
 			"env": "Swiftype",
 			"icon": "swiftype.png",
@@ -7534,7 +7542,7 @@
 		},
 		"Symfony": {
 			"cats": [
-				18
+				"18"
 			],
 			"icon": "Symfony.png",
 			"implies": "PHP",
@@ -7542,7 +7550,7 @@
 		},
 		"Synology DiskStation": {
 			"cats": [
-				48
+				"48"
 			],
 			"html": "<noscript><div class='syno-no-script'",
 			"icon": "Synology DiskStation.png",
@@ -7555,7 +7563,7 @@
 		},
 		"SyntaxHighlighter": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^SyntaxHighlighter$",
 			"html": "<(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)",
@@ -7564,7 +7572,7 @@
 		},
 		"TWiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"headers": {
 				"Set-cookie": "TWIKISID"
@@ -7577,7 +7585,7 @@
 		},
 		"TYPO3 CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<(?:script[^>]+ src|link[^>]+ href)=[^>]+typo3temp/",
 			"icon": "TYPO3.svg",
@@ -7590,7 +7598,7 @@
 		},
 		"Taiga": {
 			"cats": [
-				13
+				"13"
 			],
 			"env": "^taigaConfig$",
 			"icon": "Taiga.png",
@@ -7602,7 +7610,7 @@
 		},
 		"Tawk.to": {
 			"cats": [
-				52
+				"52"
 			],
 			"icon": "TawkTo.png",
 			"script": "//embed\\.tawk\\.to",
@@ -7610,7 +7618,7 @@
 		},
 		"Tealeaf": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^TeaLeaf$",
 			"icon": "Tealeaf.png",
@@ -7618,7 +7626,7 @@
 		},
 		"Tealium": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^TEALIUMENABLED$",
 			"icon": "Tealium.png",
@@ -7627,7 +7635,7 @@
 		},
 		"TeamCity": {
 			"cats": [
-				44
+				"44"
 			],
 			"html": "<span class=\"versionTag\"><span class=\"vWord\">Version</span> ([\\d\\.]+)\\;version:\\1",
 			"icon": "TeamCity.png",
@@ -7642,7 +7650,7 @@
 		},
 		"Telescope": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "Telescope",
 			"icon": "Telescope.png",
@@ -7651,7 +7659,7 @@
 		},
 		"Tengine": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Tengine"
@@ -7661,7 +7669,7 @@
 		},
 		"Textpattern CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Textpattern CMS.png",
 			"implies": [
@@ -7675,8 +7683,8 @@
 		},
 		"Thelia": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"html": "<(?:link|style|script)[^>]+/assets/frontOffice/",
 			"icon": "Thelia.png",
@@ -7688,7 +7696,7 @@
 		},
 		"ThinkPHP": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "ThinkPHP"
@@ -7699,10 +7707,10 @@
 		},
 		"TiddlyWiki": {
 			"cats": [
-				1,
-				2,
-				4,
-				8
+				"1",
+				"2",
+				"4",
+				"8"
 			],
 			"env": "tiddler",
 			"html": "<[^>]*type=[^>]text\\/vnd\\.tiddlywiki",
@@ -7717,11 +7725,11 @@
 		},
 		"Tiki Wiki CMS Groupware": {
 			"cats": [
-				1,
-				2,
-				8,
-				11,
-				13
+				"1",
+				"2",
+				"8",
+				"11",
+				"13"
 			],
 			"icon": "Tiki Wiki CMS Groupware.png",
 			"meta": {
@@ -7732,7 +7740,7 @@
 		},
 		"Timeplot": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Timeplot$",
 			"icon": "Timeplot.png",
@@ -7741,7 +7749,7 @@
 		},
 		"TinyMCE": {
 			"cats": [
-				24
+				"24"
 			],
 			"env": "^tinyMCE$",
 			"icon": "TinyMCE.png",
@@ -7749,7 +7757,7 @@
 		},
 		"Titan": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": [
 				"^titan$",
@@ -7761,7 +7769,7 @@
 		},
 		"TomatoCart": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^AjaxShoppingCart$",
 			"icon": "TomatoCart.png",
@@ -7772,7 +7780,7 @@
 		},
 		"TornadoServer": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "TornadoServer(?:/([\\d.]+))?\\;version:\\1"
@@ -7782,7 +7790,7 @@
 		},
 		"Trac": {
 			"cats": [
-				13
+				"13"
 			],
 			"html": [
 				"<a id=\"tracpowered",
@@ -7794,7 +7802,7 @@
 		},
 		"TrackJs": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^TrackJs$",
 			"icon": "TrackJs.png",
@@ -7802,20 +7810,20 @@
 			"website": "http://trackjs.com"
 		},
 		"Translucide": {
-			"cats": [ 
-				1 
-			], 
+			"cats": [
+				"1"
+			],
+			"icon": "translucide.svg",
 			"implies": [
 				"PHP",
 				"jQuery"
-			], 
-			"icon": "translucide.svg",
+			],
 			"script": "lucide\\.init\\.js",
 			"website": "http://www.translucide.net"
 		},
 		"Tumblr": {
 			"cats": [
-				11
+				"11"
 			],
 			"headers": {
 				"X-Tumblr-User": ""
@@ -7827,7 +7835,7 @@
 		},
 		"TweenMax": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^TweenMax$",
 			"icon": "TweenMax.png",
@@ -7836,7 +7844,7 @@
 		},
 		"Twilight CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-CMS": "Twilight CMS"
@@ -7846,7 +7854,7 @@
 		},
 		"TwistPHP": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "TwistPHP"
@@ -7857,7 +7865,7 @@
 		},
 		"TwistedWeb": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "TwistedWeb(?:/([\\d.]+))?\\;version:\\1"
@@ -7867,7 +7875,7 @@
 		},
 		"Twitter": {
 			"cats": [
-				5
+				"5"
 			],
 			"icon": "Twitter.svg",
 			"script": "//platform\\.twitter\\.com/widgets\\.js",
@@ -7875,7 +7883,7 @@
 		},
 		"Twitter Bootstrap": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^Twipsy$\\;confidence:50",
 			"html": [
@@ -7889,7 +7897,7 @@
 		},
 		"Twitter Emoji (Twemoji)": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^twemoji$",
 			"icon": "default.svg",
@@ -7898,7 +7906,7 @@
 		},
 		"Twitter Flight": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^flight$",
 			"icon": "Twitter Flight.png",
@@ -7907,7 +7915,7 @@
 		},
 		"Twitter typeahead.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^typeahead$",
 			"icon": "Twitter typeahead.js.png",
@@ -7917,7 +7925,7 @@
 		},
 		"TypePad": {
 			"cats": [
-				11
+				"11"
 			],
 			"icon": "TypePad.png",
 			"meta": {
@@ -7928,7 +7936,7 @@
 		},
 		"Typekit": {
 			"cats": [
-				17
+				"17"
 			],
 			"env": "^Typekit$",
 			"icon": "Typekit.png",
@@ -7937,7 +7945,7 @@
 		},
 		"UIKit": {
 			"cats": [
-				18
+				"18"
 			],
 			"icon": "UIKit.png",
 			"script": "uikit.*\\.js",
@@ -7945,7 +7953,7 @@
 		},
 		"UNIX": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Unix"
@@ -7955,7 +7963,7 @@
 		},
 		"Ubercart": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Ubercart.png",
 			"implies": "Drupal",
@@ -7964,7 +7972,7 @@
 		},
 		"Ubuntu": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Ubuntu",
@@ -7975,7 +7983,7 @@
 		},
 		"UltraCart": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^ucCatalog",
 			"html": "<form [^>]*action=\"[^\"]*\\/cgi-bin\\/UCEditor\\?(?:[^\"]*&)?merchantId=[^\"]",
@@ -7986,7 +7994,7 @@
 		},
 		"Umbraco": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^(?:UC_(?:IMAGE_SERVICE|ITEM_INFO_SERVICE|SETTINGS)|Umbraco)$",
 			"headers": {
@@ -8003,8 +8011,8 @@
 		},
 		"Unbounce": {
 			"cats": [
-				20,
-				51
+				"20",
+				"51"
 			],
 			"headers": {
 				"X-Unbounce-PageId": ""
@@ -8014,7 +8022,7 @@
 		},
 		"Underscore.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "Underscore.js.png",
 			"script": "underscore.*\\.js",
@@ -8022,7 +8030,7 @@
 		},
 		"Usabilla": {
 			"cats": [
-				13
+				"13"
 			],
 			"env": "^usabilla_live$",
 			"icon": "Usabilla.svg",
@@ -8030,7 +8038,7 @@
 		},
 		"UserLike": {
 			"cats": [
-				52
+				"52"
 			],
 			"icon": "UserLike.svg",
 			"script": [
@@ -8041,7 +8049,7 @@
 		},
 		"UserRules": {
 			"cats": [
-				13
+				"13"
 			],
 			"env": "^_usrp$",
 			"icon": "UserRules.png",
@@ -8049,7 +8057,7 @@
 		},
 		"UserVoice": {
 			"cats": [
-				13
+				"13"
 			],
 			"env": "^UserVoice$",
 			"icon": "UserVoice.png",
@@ -8057,8 +8065,8 @@
 		},
 		"Ushahidi": {
 			"cats": [
-				1,
-				35
+				"1",
+				"35"
 			],
 			"env": "^Ushahidi$",
 			"headers": {
@@ -8075,7 +8083,7 @@
 		},
 		"VIVVO": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^vivvo",
 			"headers": {
@@ -8086,7 +8094,7 @@
 		},
 		"VP-ASP": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<a[^>]+>Powered By VP-ASP Shopping Cart</a>",
 			"icon": "VP-ASP.png",
@@ -8096,7 +8104,7 @@
 		},
 		"VTEX Enterprise": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"powered": "vtex"
@@ -8106,7 +8114,7 @@
 		},
 		"VTEX Integrated Store": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"X-Powered-By": "vtex-integrated-store"
@@ -8116,7 +8124,7 @@
 		},
 		"Vanilla": {
 			"cats": [
-				2
+				"2"
 			],
 			"headers": {
 				"X-Powered-By": "Vanilla"
@@ -8128,7 +8136,7 @@
 		},
 		"Varnish": {
 			"cats": [
-				23
+				"23"
 			],
 			"headers": {
 				"Via": ".*Varnish",
@@ -8143,7 +8151,7 @@
 		},
 		"Venda": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"X-venda-hitid": ""
@@ -8153,7 +8161,7 @@
 		},
 		"Veoxa": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^(?:Veoxa_|VuVeoxaContent)",
 			"html": "<img [^>]*src=\"[^\"]+tracking\\.veoxa\\.com",
@@ -8163,7 +8171,7 @@
 		},
 		"VideoJS": {
 			"cats": [
-				14
+				"14"
 			],
 			"env": "^VideoJS$",
 			"html": "<div[^>]+class=\"video-js+\">",
@@ -8173,7 +8181,7 @@
 		},
 		"VigLink": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^(?:vglnk(?:$|_)|vl_(?:cB|disable)$)",
 			"icon": "VigLink.png",
@@ -8182,7 +8190,7 @@
 		},
 		"Vignette": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<[^>]+=\"vgn-?ext",
 			"icon": "Vignette.png",
@@ -8190,7 +8198,7 @@
 		},
 		"Vimeo": {
 			"cats": [
-				14
+				"14"
 			],
 			"html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
 			"icon": "Vimeo.png",
@@ -8198,7 +8206,7 @@
 		},
 		"Virata EmWeb": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Virata-EmWeb(?:/(R?[\\d._]+))?\\;version:\\1"
@@ -8211,7 +8219,7 @@
 		},
 		"VirtueMart": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<div id=\"vmMainPage",
 			"icon": "VirtueMart.png",
@@ -8220,7 +8228,7 @@
 		},
 		"Visual WebGUI": {
 			"cats": [
-				18
+				"18"
 			],
 			"env": "^VWGEventArgs$",
 			"icon": "Visual WebGUI.png",
@@ -8234,7 +8242,7 @@
 		},
 		"VisualPath": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "VisualPath.png",
 			"script": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
@@ -8242,7 +8250,7 @@
 		},
 		"Volusion": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^volusion$",
 			"html": "<link [^>]*href=\"[^\"]*/vspfiles/",
@@ -8252,7 +8260,7 @@
 		},
 		"Vox": {
 			"cats": [
-				11
+				"11"
 			],
 			"icon": "Vox.png",
 			"url": "\\.vox\\.com",
@@ -8260,7 +8268,7 @@
 		},
 		"Vue.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Vue$",
 			"icon": "Vue.js.png",
@@ -8273,7 +8281,7 @@
 		},
 		"W3 Total Cache": {
 			"cats": [
-				23
+				"23"
 			],
 			"headers": {
 				"X-Powered-By": "W3 Total Cache(?:/([\\d.]+))?\\;version:\\1"
@@ -8285,7 +8293,7 @@
 		},
 		"W3Counter": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "W3Counter.png",
 			"script": "w3counter\\.com/tracker\\.js",
@@ -8293,7 +8301,7 @@
 		},
 		"WHMCS": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "^WHMCS.*"
@@ -8303,7 +8311,7 @@
 		},
 		"WP Rocket": {
 			"cats": [
-				23
+				"23"
 			],
 			"headers": {
 				"X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1"
@@ -8315,7 +8323,7 @@
 		},
 		"Warp": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^Warp/(\\d+(?:\\.\\d+)+)?$\\;version:\\1"
@@ -8326,7 +8334,7 @@
 		},
 		"Web Optimizer": {
 			"cats": [
-				10
+				"10"
 			],
 			"html": "<title [^>]*lang=\"wo\">",
 			"icon": "Web Optimizer.png",
@@ -8334,7 +8342,7 @@
 		},
 		"Web2py": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "web2py"
@@ -8352,7 +8360,7 @@
 		},
 		"WebGUI": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "^wgSession="
@@ -8366,7 +8374,7 @@
 		},
 		"WebPublisher": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "WebPublisher.png",
 			"meta": {
@@ -8376,7 +8384,7 @@
 		},
 		"Webix": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^webix$",
 			"icon": "Webix.png",
@@ -8385,7 +8393,7 @@
 		},
 		"Webs": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Server": "Webs\\.com/?([\\d\\.]+)?\\;version:\\1"
@@ -8395,7 +8403,7 @@
 		},
 		"WebsPlanet": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "WebsPlanet.png",
 			"meta": {
@@ -8405,7 +8413,7 @@
 		},
 		"Websale": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Websale.png",
 			"url": "/websale7/",
@@ -8413,7 +8421,7 @@
 		},
 		"WebsiteBaker": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "WebsiteBaker.png",
 			"implies": [
@@ -8427,7 +8435,7 @@
 		},
 		"Webtrekk": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^webtrekk",
 			"icon": "Webtrekk.png",
@@ -8435,7 +8443,7 @@
 		},
 		"Webtrends": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^(?:WTOptimize|WebTrends)",
 			"html": "<img[^>]+id=\"DCSIMG\"[^>]+webtrends",
@@ -8444,7 +8452,7 @@
 		},
 		"Weebly": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "Weebly.png",
 			"script": "cdn\\d+\\.editmysite\\.com",
@@ -8452,7 +8460,7 @@
 		},
 		"Wikispaces": {
 			"cats": [
-				8
+				"8"
 			],
 			"html": [
 				"<script[^>]*>[^<]*session_url:\\s*'https://session\\.wikispaces\\.com/",
@@ -8463,7 +8471,7 @@
 		},
 		"WikkaWiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"html": "Powered by <a href=\"[^>]+WikkaWiki",
 			"icon": "WikkaWiki.png",
@@ -8474,7 +8482,7 @@
 		},
 		"Windows CE": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "\bWinCE\b"
@@ -8484,7 +8492,7 @@
 		},
 		"Windows Server": {
 			"cats": [
-				28
+				"28"
 			],
 			"headers": {
 				"Server": "Win32|Win64"
@@ -8494,8 +8502,8 @@
 		},
 		"Wink": {
 			"cats": [
-				26,
-				12
+				"26",
+				"12"
 			],
 			"env": "^wink$",
 			"icon": "Wink.png",
@@ -8504,7 +8512,7 @@
 		},
 		"Winstone Servlet Container": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Winstone Servlet (?:Container|Engine) v?([\\d.]+)?\\;version:\\1",
@@ -8515,7 +8523,7 @@
 		},
 		"Wix": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^wix(?:Events|Data|Errors)",
 			"headers": {
@@ -8531,7 +8539,7 @@
 		},
 		"Wolf CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "(?:<a href=\"[^>]+wolfcms\\.org[^>]+>Wolf CMS(?:</a>)? inside|Thank you for using <a[^>]+>Wolf CMS)",
 			"icon": "Wolf CMS.png",
@@ -8540,7 +8548,7 @@
 		},
 		"Woltlab Community Framework": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": "var WCF_PATH[^>]+",
 			"icon": "Woltlab Community Framework.png",
@@ -8550,7 +8558,7 @@
 		},
 		"WooCommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "woocommerce",
 			"html": "<!-- WooCommerce",
@@ -8564,7 +8572,7 @@
 		},
 		"Woopra": {
 			"cats": [
-				10
+				"10"
 			],
 			"icon": "Woopra.png",
 			"script": "static\\.woopra\\.com",
@@ -8572,8 +8580,8 @@
 		},
 		"WordPress": {
 			"cats": [
-				1,
-				11
+				"1",
+				"11"
 			],
 			"env": "^wp_username$",
 			"html": [
@@ -8590,7 +8598,7 @@
 		},
 		"WordPress Super Cache": {
 			"cats": [
-				23
+				"23"
 			],
 			"headers": {
 				"WP-Super-Cache": ""
@@ -8602,7 +8610,7 @@
 		},
 		"Wowza Media Server": {
 			"cats": [
-				38
+				"38"
 			],
 			"html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
 			"icon": "Wowza Media Server.png",
@@ -8610,7 +8618,7 @@
 		},
 		"X-Cart": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^(?:xcart_web_dir|xliteConfig)$",
 			"headers": {
@@ -8630,7 +8638,7 @@
 		},
 		"XAMPP": {
 			"cats": [
-				22
+				"22"
 			],
 			"html": "<title>XAMPP(?: Version ([\\d\\.]+))?</title>\\;version:\\1",
 			"icon": "XAMPP.png",
@@ -8647,7 +8655,7 @@
 		},
 		"XMB": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "<!-- Powered by XMB",
 			"icon": "XMB.png",
@@ -8655,7 +8663,7 @@
 		},
 		"XOOPS": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^xoops",
 			"icon": "XOOPS.png",
@@ -8667,7 +8675,7 @@
 		},
 		"XRegExp": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^XRegExp$",
 			"icon": "XRegExp.png",
@@ -8680,7 +8688,7 @@
 		},
 		"Xajax": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "Xajax.png",
 			"script": "xajax_core.*\\.js",
@@ -8688,7 +8696,7 @@
 		},
 		"Xanario": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Xanario.png",
 			"meta": {
@@ -8698,7 +8706,7 @@
 		},
 		"XenForo": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding|<html[^>]+id=\"XenForo\")",
 			"icon": "XenForo.png",
@@ -8706,7 +8714,7 @@
 		},
 		"Xitami": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Xitami(?:/([\\d.]+))?\\;version:\\1"
@@ -8716,7 +8724,7 @@
 		},
 		"Xonic": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": [
 				"Powered by <a href=\"http://www.xonic-solutions.de/index.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>"
@@ -8730,7 +8738,7 @@
 		},
 		"XpressEngine": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "XpressEngine.png",
 			"meta": {
@@ -8740,7 +8748,7 @@
 		},
 		"YUI": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^YAHOO$",
 			"icon": "YUI.png",
@@ -8749,7 +8757,7 @@
 		},
 		"YUI Doc": {
 			"cats": [
-				4
+				"4"
 			],
 			"html": "(?:<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf|<body[^>]+class=\"yui3-skin-sam)",
 			"icon": "yahoo.png",
@@ -8757,7 +8765,7 @@
 		},
 		"YaBB": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "Powered by <a href=\"[^>]+yabbforum",
 			"icon": "YaBB.png",
@@ -8765,7 +8773,7 @@
 		},
 		"Yahoo Advertising": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^adxinserthtml$",
 			"html": [
@@ -8778,7 +8786,7 @@
 		},
 		"Yahoo! Ecommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"env": "^YStore$",
 			"headers": {
@@ -8790,7 +8798,7 @@
 		},
 		"Yahoo! Web Analytics": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^YWA$",
 			"icon": "yahoo.png",
@@ -8799,7 +8807,7 @@
 		},
 		"Yandex.Direct": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": [
 				"^yandex_partner_id$",
@@ -8813,7 +8821,7 @@
 		},
 		"Yandex.Metrika": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^yandex_metrika",
 			"icon": "Yandex.Metrika.png",
@@ -8822,7 +8830,7 @@
 		},
 		"Yaws": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "Yaws(?: ([\\d.]+))?\\;version:\\1"
@@ -8835,7 +8843,7 @@
 		},
 		"Yieldlab": {
 			"cats": [
-				36
+				"36"
 			],
 			"icon": "Yieldlab.png",
 			"script": "^https?://(?:[^/]+\\.)?yieldlab\\.net/",
@@ -8843,7 +8851,7 @@
 		},
 		"Yii": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": [
 				"Powered by <a href=\"http://www.yiiframework.com/\" rel=\"external\">Yii Framework</a>",
@@ -8858,7 +8866,7 @@
 		},
 		"Yoast SEO": {
 			"cats": [
-				32
+				"32"
 			],
 			"html": [
 				"<!-- This site is optimized with the Yoast"
@@ -8868,7 +8876,7 @@
 		},
 		"YouTrack": {
 			"cats": [
-				13
+				"13"
 			],
 			"html": [
 				"no-title=\"YouTrack\">",
@@ -8880,7 +8888,7 @@
 		},
 		"YouTube": {
 			"cats": [
-				14
+				"14"
 			],
 			"html": "<(?:param|embed|iframe)[^>]+youtube(?:-nocookie)?\\.com/(?:v|embed)",
 			"icon": "YouTube.png",
@@ -8888,7 +8896,7 @@
 		},
 		"ZK": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": "<!-- ZK [\\.\\d\\s]+-->",
 			"icon": "ZK.png",
@@ -8898,7 +8906,7 @@
 		},
 		"ZURB Foundation": {
 			"cats": [
-				18
+				"18"
 			],
 			"html": [
 				"<link[^>]+foundation[^>\"]+css",
@@ -8909,7 +8917,7 @@
 		},
 		"Zabbix": {
 			"cats": [
-				19
+				"19"
 			],
 			"env": "^zbxCallPostScripts$",
 			"html": "<body[^>]+zbxCallPostScripts",
@@ -8923,7 +8931,7 @@
 		},
 		"Zanox": {
 			"cats": [
-				36
+				"36"
 			],
 			"env": "^zanox$",
 			"html": "<img [^>]*src=\"[^\"]+ad\\.zanox\\.com",
@@ -8933,7 +8941,7 @@
 		},
 		"Zen Cart": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Zen Cart.png",
 			"meta": {
@@ -8943,7 +8951,7 @@
 		},
 		"Zend": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Set-Cookie": "ZENDSERVERSESSID",
@@ -8954,7 +8962,7 @@
 		},
 		"Zendesk Chat": {
 			"cats": [
-				52
+				"52"
 			],
 			"icon": "Zendesk Chat.png",
 			"script": "v2\\.zopim\\.com",
@@ -8962,7 +8970,7 @@
 		},
 		"Zepto": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Zepto$",
 			"icon": "Zepto.png",
@@ -8971,7 +8979,7 @@
 		},
 		"Zeuscart": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<form name=\"product\" method=\"post\" action=\"[^\"]+\\?do=addtocart&prodid=\\d+\"(?!<\\/form>.)+<input type=\"hidden\" name=\"addtocart\" value=\"\\d+\">",
 			"icon": "Zeuscart.png",
@@ -8981,7 +8989,7 @@
 		},
 		"Zinnia": {
 			"cats": [
-				11
+				"11"
 			],
 			"icon": "Zinnia.png",
 			"implies": "Django",
@@ -8992,7 +9000,7 @@
 		},
 		"Zope": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "^Zope/"
@@ -9002,7 +9010,7 @@
 		},
 		"a-blog cms": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "a-blog cms.svg",
 			"implies": "PHP",
@@ -9013,9 +9021,9 @@
 		},
 		"actionhero.js": {
 			"cats": [
-				1,
-				18,
-				22
+				"1",
+				"18",
+				"22"
 			],
 			"env": "^actionheroClient$",
 			"headers": {
@@ -9028,7 +9036,7 @@
 		},
 		"amCharts": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^AmCharts$",
 			"icon": "amCharts.png",
@@ -9037,7 +9045,7 @@
 		},
 		"basket.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^basket$\\;confidence:20",
 			"icon": "basket.js.png",
@@ -9046,7 +9054,7 @@
 		},
 		"cPanel": {
 			"cats": [
-				9
+				"9"
 			],
 			"headers": {
 				"Server": "cpsrvd/([\\d.]+)\\;version:\\1"
@@ -9057,7 +9065,7 @@
 		},
 		"cgit": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": [
 				"<[^>]+id='cgit'",
@@ -9072,7 +9080,7 @@
 		},
 		"comScore": {
 			"cats": [
-				10
+				"10"
 			],
 			"env": "^_?COMSCORE$",
 			"html": "<iframe[^>]* (?:id=\"comscore\"|scr=[^>]+comscore)|\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
@@ -9082,7 +9090,7 @@
 		},
 		"debut": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "debut\\/?([\\d\\.]+)?\\;version:\\1"
@@ -9093,7 +9101,7 @@
 		},
 		"dwhttpd": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "dwhttpd\\/?([\\d\\.a-z]+)?\\;version:\\1"
@@ -9103,7 +9111,7 @@
 		},
 		"e107": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "e107_tz[^;]+=",
@@ -9116,7 +9124,7 @@
 		},
 		"eDevice SmartStack": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "eDevice SmartStack(?: ?/?([\\d.]+))?\\;version:\\1"
@@ -9126,7 +9134,7 @@
 		},
 		"eHTTP": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "\beHTTP(?: v?([\\d\\.]+))?\\;version:\\1"
@@ -9137,7 +9145,7 @@
 		},
 		"eSyndiCat": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^esyndicat$",
 			"headers": {
@@ -9152,8 +9160,8 @@
 		},
 		"eZ Publish": {
 			"cats": [
-				1,
-				6
+				"1",
+				"6"
 			],
 			"headers": {
 				"X-Powered-By": "^eZ Publish"
@@ -9167,9 +9175,9 @@
 		},
 		"enduro.js": {
 			"cats": [
-				1,
-				18,
-				47
+				"1",
+				"18",
+				"47"
 			],
 			"headers": {
 				"X-Powered-By": "^enduro.js$"
@@ -9180,7 +9188,7 @@
 		},
 		"git": {
 			"cats": [
-				47
+				"47"
 			],
 			"icon": "git.png",
 			"meta": {
@@ -9190,7 +9198,7 @@
 		},
 		"gitlist": {
 			"cats": [
-				47
+				"47"
 			],
 			"html": "<p>Powered by <a[^>]+>GitList ([\\d.]+)\\;version:\\1",
 			"icon": "default.svg",
@@ -9202,7 +9210,7 @@
 		},
 		"gitweb": {
 			"cats": [
-				47
+				"47"
 			],
 			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
 			"icon": "git.png",
@@ -9218,7 +9226,7 @@
 		},
 		"gunicorn": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "gunicorn(?:/([\\d.]+))?\\;version:\\1"
@@ -9229,8 +9237,8 @@
 		},
 		"hapi.js": {
 			"cats": [
-				18,
-				22
+				"18",
+				"22"
 			],
 			"headers": {
 				"Set-Cookie": "Fe26\\.2\\*\\*\\;confidence:50"
@@ -9241,7 +9249,7 @@
 		},
 		"iCongo": {
 			"cats": [
-				6
+				"6"
 			],
 			"icon": "Hybris.png",
 			"implies": "Adobe ColdFusion",
@@ -9252,7 +9260,7 @@
 		},
 		"iPresta": {
 			"cats": [
-				6
+				"6"
 			],
 			"excludes": "PrestaShop",
 			"icon": "iPresta.png",
@@ -9264,7 +9272,7 @@
 		},
 		"iWeb": {
 			"cats": [
-				20
+				"20"
 			],
 			"icon": "iWeb.png",
 			"meta": {
@@ -9274,7 +9282,7 @@
 		},
 		"ikiwiki": {
 			"cats": [
-				8
+				"8"
 			],
 			"html": [
 				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"/ikiwiki\\.cgi",
@@ -9285,7 +9293,7 @@
 		},
 		"io4 CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "io4 CMS.png",
 			"meta": {
@@ -9295,7 +9303,7 @@
 		},
 		"jQTouch": {
 			"cats": [
-				26
+				"26"
 			],
 			"env": "^jQT$",
 			"icon": "jQTouch.png",
@@ -9304,7 +9312,7 @@
 		},
 		"jQuery": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^jQuery$",
 			"icon": "jQuery.svg",
@@ -9317,7 +9325,7 @@
 		},
 		"jQuery Mobile": {
 			"cats": [
-				26
+				"26"
 			],
 			"icon": "jQuery Mobile.svg",
 			"implies": "jQuery",
@@ -9326,7 +9334,7 @@
 		},
 		"jQuery Sparklines": {
 			"cats": [
-				25
+				"25"
 			],
 			"icon": "default.svg",
 			"implies": "jQuery",
@@ -9335,7 +9343,7 @@
 		},
 		"jQuery UI": {
 			"cats": [
-				12
+				"12"
 			],
 			"icon": "jQuery UI.svg",
 			"implies": "jQuery",
@@ -9348,7 +9356,7 @@
 		},
 		"jqPlot": {
 			"cats": [
-				25
+				"25"
 			],
 			"icon": "jqPlot.png",
 			"implies": "jQuery",
@@ -9357,7 +9365,7 @@
 		},
 		"libwww-perl-daemon": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "libwww-perl-daemon(?:/([\\d\\.]+))?\\;version:\\1"
@@ -9368,7 +9376,7 @@
 		},
 		"lighttpd": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "lighttpd(?:/([\\d.]+))?\\;version:\\1"
@@ -9378,7 +9386,7 @@
 		},
 		"math.js": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^mathjs$",
 			"icon": "math.js.png",
@@ -9387,7 +9395,7 @@
 		},
 		"mini_httpd": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "mini_httpd(?:/([\\d.]+))?\\;version:\\1"
@@ -9397,7 +9405,7 @@
 		},
 		"mod_auth_pam": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_auth_pam(?:/([\\d\\.]+))?\\;version:\\1"
@@ -9408,7 +9416,7 @@
 		},
 		"mod_dav": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "\b(?:mod_)?DAV\b(?:/([\\d.]+))?\\;version:\\1"
@@ -9419,7 +9427,7 @@
 		},
 		"mod_fastcgi": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_fastcgi(?:/([\\d.]+))?\\;version:\\1"
@@ -9430,7 +9438,7 @@
 		},
 		"mod_jk": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_jk(?:/([\\d\\.]+))?\\;version:\\1"
@@ -9444,7 +9452,7 @@
 		},
 		"mod_perl": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1"
@@ -9458,7 +9466,7 @@
 		},
 		"mod_python": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_python(?:/([\\d.]+))?\\;version:\\1"
@@ -9472,7 +9480,7 @@
 		},
 		"mod_rack": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_rack(?:/([\\d.]+))?\\;version:\\1",
@@ -9487,7 +9495,7 @@
 		},
 		"mod_rails": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_rails(?:/([\\d.]+))?\\;version:\\1",
@@ -9502,7 +9510,7 @@
 		},
 		"mod_ssl": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_ssl(?:/([\\d.]+))?\\;version:\\1"
@@ -9513,7 +9521,7 @@
 		},
 		"mod_wsgi": {
 			"cats": [
-				33
+				"33"
 			],
 			"headers": {
 				"Server": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1",
@@ -9528,7 +9536,7 @@
 		},
 		"nopCommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)",
 			"icon": "nopCommerce.png",
@@ -9537,7 +9545,7 @@
 		},
 		"openEngine": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "openEngine.png",
 			"meta": {
@@ -9547,7 +9555,7 @@
 		},
 		"osCSS": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<body onload=\"window\\.defaultStatus='oscss templates';\"",
 			"icon": "osCSS.png",
@@ -9555,7 +9563,7 @@
 		},
 		"osCommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"headers": {
 				"Set-Cookie": "osCsid="
@@ -9570,7 +9578,7 @@
 		},
 		"osTicket": {
 			"cats": [
-				13
+				"13"
 			],
 			"headers": {
 				"Set-Cookie": "OSTSESSID"
@@ -9584,7 +9592,7 @@
 		},
 		"ownCloud": {
 			"cats": [
-				19
+				"19"
 			],
 			"html": "<a href=\"https://owncloud.com\" target=\"_blank\">ownCloud Inc.</a><br/>Your Cloud, Your Data, Your Way!",
 			"icon": "ownCloud.png",
@@ -9596,7 +9604,7 @@
 		},
 		"papaya CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "<link[^>]*/papaya-themes/",
 			"icon": "papaya CMS.png",
@@ -9605,7 +9613,7 @@
 		},
 		"phpAlbum": {
 			"cats": [
-				7
+				"7"
 			],
 			"html": "<!--phpalbum ([.\\d\\s]+)-->\\;version:\\1",
 			"icon": "phpAlbum.png",
@@ -9614,7 +9622,7 @@
 		},
 		"phpBB": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "^(?:style_cookie_settings|phpbb_)",
 			"headers": {
@@ -9630,7 +9638,7 @@
 		},
 		"phpCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"env": "^phpcms",
 			"icon": "phpCMS.png",
@@ -9639,7 +9647,7 @@
 		},
 		"phpDocumentor": {
 			"cats": [
-				4
+				"4"
 			],
 			"html": "<!-- Generated by phpDocumentor",
 			"icon": "phpDocumentor.png",
@@ -9648,7 +9656,7 @@
 		},
 		"phpMyAdmin": {
 			"cats": [
-				3
+				"3"
 			],
 			"env": "^pma_absolute_uri$",
 			"html": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)\\;version:\\1",
@@ -9661,7 +9669,7 @@
 		},
 		"phpPgAdmin": {
 			"cats": [
-				3
+				"3"
 			],
 			"html": "(?:<title>phpPgAdmin</title>|<span class=\"appname\">phpPgAdmin)",
 			"icon": "phpPgAdmin.png",
@@ -9670,7 +9678,7 @@
 		},
 		"phpSQLiteCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "phpSQLiteCMS.png",
 			"implies": [
@@ -9684,7 +9692,7 @@
 		},
 		"phpliteadmin": {
 			"cats": [
-				3
+				"3"
 			],
 			"html": [
 				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
@@ -9700,8 +9708,8 @@
 		},
 		"phpwind": {
 			"cats": [
-				1,
-				2
+				"1",
+				"2"
 			],
 			"html": "Powered by <a href=\"[^\"]+phpwind\\.net",
 			"icon": "phpwind.png",
@@ -9713,8 +9721,8 @@
 		},
 		"prettyPhoto": {
 			"cats": [
-				7,
-				12
+				"7",
+				"12"
 			],
 			"env": "pp_(?:alreadyInitialized|descriptions|images|titles)",
 			"html": "(?:<link [^>]*href=\"[^\"]*prettyPhoto(?:\\.min)?\\.css|<a [^>]*rel=\"prettyPhoto)",
@@ -9725,7 +9733,7 @@
 		},
 		"punBB": {
 			"cats": [
-				2
+				"2"
 			],
 			"html": "Powered by <a href=\"[^>]+punbb",
 			"icon": "punBB.png",
@@ -9734,7 +9742,7 @@
 		},
 		"reCAPTCHA": {
 			"cats": [
-				16
+				"16"
 			],
 			"env": "^Recaptcha$",
 			"html": "(?:<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha')",
@@ -9744,7 +9752,7 @@
 		},
 		"sIFR": {
 			"cats": [
-				17
+				"17"
 			],
 			"icon": "sIFR.png",
 			"script": "sifr\\.js",
@@ -9752,7 +9760,7 @@
 		},
 		"sNews": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "sNews.png",
 			"meta": {
@@ -9762,7 +9770,7 @@
 		},
 		"script.aculo.us": {
 			"cats": [
-				12
+				"12"
 			],
 			"env": "^Scriptaculous$",
 			"icon": "script.aculo.us.png",
@@ -9771,7 +9779,7 @@
 		},
 		"shine.js": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^Shine$",
 			"icon": "default.svg",
@@ -9780,8 +9788,8 @@
 		},
 		"spin.js": {
 			"cats": [
-				12,
-				25
+				"12",
+				"25"
 			],
 			"env": "^Spinner$",
 			"icon": "spin.js.png",
@@ -9790,7 +9798,7 @@
 		},
 		"swift.engine": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Powered-By": "swift\\.engine"
@@ -9800,7 +9808,7 @@
 		},
 		"three.js": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^THREE$",
 			"icon": "three.js.png",
@@ -9809,7 +9817,7 @@
 		},
 		"thttpd": {
 			"cats": [
-				22
+				"22"
 			],
 			"headers": {
 				"Server": "\bthttpd(?:/([\\d.]+))?\\;version:\\1"
@@ -9819,7 +9827,7 @@
 		},
 		"total.js": {
 			"cats": [
-				18
+				"18"
 			],
 			"headers": {
 				"X-Powered-By": "^total\\.js"
@@ -9830,8 +9838,8 @@
 		},
 		"uCore": {
 			"cats": [
-				1,
-				18
+				"1",
+				"18"
 			],
 			"headers": {
 				"Set-Cookie": "ucore"
@@ -9845,10 +9853,10 @@
 		},
 		"uKnowva": {
 			"cats": [
-				1,
-				2,
-				18,
-				50
+				"1",
+				"2",
+				"18",
+				"50"
 			],
 			"headers": {
 				"X-Content-Encoded-By": "uKnowva ([\\d.]+)\\;version:\\1"
@@ -9864,7 +9872,7 @@
 		},
 		"vBulletin": {
 			"cats": [
-				2
+				"2"
 			],
 			"env": "^(?:vBulletin|vB_[^g])",
 			"icon": "vBulletin.png",
@@ -9876,7 +9884,7 @@
 		},
 		"viennaCMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"html": "powered by <a href=\"[^>]+viennacms",
 			"icon": "default.svg",
@@ -9884,7 +9892,7 @@
 		},
 		"vis.js": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^vis$",
 			"html": "<link[^>]+?href=\"[^\"]+vis(?:\\.min)?\\.css",
@@ -9894,7 +9902,7 @@
 		},
 		"webEdition": {
 			"cats": [
-				1
+				"1"
 			],
 			"icon": "webEdition.png",
 			"meta": {
@@ -9905,7 +9913,7 @@
 		},
 		"webpack": {
 			"cats": [
-				44
+				"44"
 			],
 			"env": "^webpackJsonp$",
 			"icon": "webpack.svg",
@@ -9913,7 +9921,7 @@
 		},
 		"xCharts": {
 			"cats": [
-				25
+				"25"
 			],
 			"env": "^xChart$",
 			"html": "<link[^>]* href=\"[^\"]*xcharts(?:\\.min)?\\.css",
@@ -9924,7 +9932,7 @@
 		},
 		"xtCommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"html": "<div class=\"copyright\">[^<]+<a[^>]+>xt:Commerce",
 			"icon": "xtCommerce.png",
@@ -9935,8 +9943,8 @@
 		},
 		"xui": {
 			"cats": [
-				26,
-				12
+				"26",
+				"12"
 			],
 			"env": "^xui$",
 			"icon": "xui.png",
@@ -9945,57 +9953,213 @@
 		}
 	},
 	"categories": {
-		"1": "CMS",
-		"2": "Message Boards",
-		"3": "Database Managers",
-		"4": "Documentation Tools",
-		"5": "Widgets",
-		"6": "Ecommerce",
-		"7": "Photo Galleries",
-		"8": "Wikis",
-		"9": "Hosting Panels",
-		"10": "Analytics",
-		"11": "Blogs",
-		"12": "JavaScript Frameworks",
-		"13": "Issue Trackers",
-		"14": "Video Players",
-		"15": "Comment Systems",
-		"16": "Captchas",
-		"17": "Font Scripts",
-		"18": "Web Frameworks",
-		"19": "Miscellaneous",
-		"20": "Editors",
-		"21": "LMS",
-		"22": "Web Servers",
-		"23": "Cache Tools",
-		"24": "Rich Text Editors",
-		"25": "JavaScript Graphics",
-		"26": "Mobile Frameworks",
-		"27": "Programming Languages",
-		"28": "Operating Systems",
-		"29": "Search Engines",
-		"30": "Web Mail",
-		"31": "CDN",
-		"32": "Marketing Automation",
-		"33": "Web Server Extensions",
-		"34": "Databases",
-		"35": "Maps",
-		"36": "Advertising Networks",
-		"37": "Network Devices",
-		"38": "Media Servers",
-		"39": "Webcams",
-		"40": "Printers",
-		"41": "Payment Processors",
-		"42": "Tag Managers",
-		"43": "Paywalls",
-		"44": "Build CI Systems",
-		"45": "Control Systems",
-		"46": "Remote Access",
-		"47": "Dev Tools",
-		"48": "Network Storage",
-		"49": "Feed Readers",
-		"50": "Document Management Systems",
-		"51": "Landing Page Builders",
-		"52": "Live Chat"
+		"1": {
+			"name": "CMS",
+			"priority": "1"
+		},
+		"2": {
+			"name": "Message Boards",
+			"priority": "1"
+		},
+		"3": {
+			"name": "Database Managers",
+			"priority": "9"
+		},
+		"4": {
+			"name": "Documentation Tools",
+			"priority": "9"
+		},
+		"5": {
+			"name": "Widgets",
+			"priority": "9"
+		},
+		"6": {
+			"name": "Ecommerce",
+			"priority": "1"
+		},
+		"7": {
+			"name": "Photo Galleries",
+			"priority": "1"
+		},
+		"8": {
+			"name": "Wikis",
+			"priority": "1"
+		},
+		"9": {
+			"name": "Hosting Panels",
+			"priority": "1"
+		},
+		"10": {
+			"name": "Analytics",
+			"priority": "9"
+		},
+		"11": {
+			"name": "Blogs",
+			"priority": "1"
+		},
+		"12": {
+			"name": "JavaScript Frameworks",
+			"priority": "3"
+		},
+		"13": {
+			"name": "Issue Trackers",
+			"priority": "9"
+		},
+		"14": {
+			"name": "Video Players",
+			"priority": "9"
+		},
+		"15": {
+			"name": "Comment Systems",
+			"priority": "9"
+		},
+		"16": {
+			"name": "Captchas",
+			"priority": "9"
+		},
+		"17": {
+			"name": "Font Scripts",
+			"priority": "9"
+		},
+		"18": {
+			"name": "Web Frameworks",
+			"priority": "2"
+		},
+		"19": {
+			"name": "Miscellaneous",
+			"priority": "9"
+		},
+		"20": {
+			"name": "Editors",
+			"priority": "9"
+		},
+		"21": {
+			"name": "LMS",
+			"priority": "1"
+		},
+		"22": {
+			"name": "Web Servers",
+			"priority": "9"
+		},
+		"23": {
+			"name": "Cache Tools",
+			"priority": "9"
+		},
+		"24": {
+			"name": "Rich Text Editors",
+			"priority": "9"
+		},
+		"25": {
+			"name": "JavaScript Graphics",
+			"priority": "3"
+		},
+		"26": {
+			"name": "Mobile Frameworks",
+			"priority": "3"
+		},
+		"27": {
+			"name": "Programming Languages",
+			"priority": "4"
+		},
+		"28": {
+			"name": "Operating Systems",
+			"priority": "5"
+		},
+		"29": {
+			"name": "Search Engines",
+			"priority": "9"
+		},
+		"30": {
+			"name": "Web Mail",
+			"priority": "9"
+		},
+		"31": {
+			"name": "CDN",
+			"priority": "9"
+		},
+		"32": {
+			"name": "Marketing Automation",
+			"priority": "9"
+		},
+		"33": {
+			"name": "Web Server Extensions",
+			"priority": "9"
+		},
+		"34": {
+			"name": "Databases",
+			"priority": "9"
+		},
+		"35": {
+			"name": "Maps",
+			"priority": "9"
+		},
+		"36": {
+			"name": "Advertising Networks",
+			"priority": "9"
+		},
+		"37": {
+			"name": "Network Devices",
+			"priority": "9"
+		},
+		"38": {
+			"name": "Media Servers",
+			"priority": "1"
+		},
+		"39": {
+			"name": "Webcams",
+			"priority": "9"
+		},
+		"40": {
+			"name": "Printers",
+			"priority": "9"
+		},
+		"41": {
+			"name": "Payment Processors",
+			"priority": "9"
+		},
+		"42": {
+			"name": "Tag Managers",
+			"priority": "9"
+		},
+		"43": {
+			"name": "Paywalls",
+			"priority": "9"
+		},
+		"44": {
+			"name": "Build CI Systems",
+			"priority": "9"
+		},
+		"45": {
+			"name": "Control Systems",
+			"priority": "9"
+		},
+		"46": {
+			"name": "Remote Access",
+			"priority": "9"
+		},
+		"47": {
+			"name": "Dev Tools",
+			"priority": "9"
+		},
+		"48": {
+			"name": "Network Storage",
+			"priority": "9"
+		},
+		"49": {
+			"name": "Feed Readers",
+			"priority": "1"
+		},
+		"50": {
+			"name": "Document Management Systems",
+			"priority": "1"
+		},
+		"51": {
+			"name": "Landing Page Builders",
+			"priority": "2"
+		},
+		"52": {
+			"name": "Live Chat",
+			"priority": "9"
+		}
 	}
 }

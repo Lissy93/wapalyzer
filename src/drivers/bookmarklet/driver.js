@@ -121,7 +121,7 @@
 							continue;
 						}
 
-						category = w.categories[w.apps[app].cats[i]];
+						category = w.categories[w.apps[app].cats[i]].name;
 
 						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.driver.slugify(category) + '">' + category + '</a>';
 					}

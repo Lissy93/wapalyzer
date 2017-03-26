@@ -1,6 +1,7 @@
-{ "name": "Wappalyzer",
+{
+	"name": "Wappalyzer",
   "short_name": "Wappalyzer",
-  "author": "AliasIO",
+  "author": "Elbert Alias",
 	"homepage_url": "https://wappalyzer.com/",
 	"description": "Identify web technologies",
 	"version": "3",
@@ -25,10 +26,11 @@
 		"default_popup": "popup.html"
 	},
 	"background": {
-		"page": "background.html",
-    "persistent": true
+		"page": "background.html"
+
 	},
-	"content_scripts": [ {
+	"content_scripts": [
+		{
 			"matches": [ "http://*/*", "https://*/*" ],
 			"js": [
 				"js/browser-polyfill.js",
@@ -43,10 +45,12 @@
 			],
 			"run_at": "document_start",
 			"all_frames": true
-		} ],
+		}
+	],
 	"web_accessible_resources": [
 		"js/inject.js"
 	],
+  "options_page": "options.html",
 	"options_ui": {
     "page": "options.html",
     "open_in_tab": false

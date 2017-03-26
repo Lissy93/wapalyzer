@@ -42,6 +42,12 @@
 
 				w.categories = json.categories;
 				w.apps       = json.apps;
+
+				w.driver.categoryOrder = Object.keys(w.categories).sort(function(a, b) {
+					return w.categories[a].priority - w.categories[b].priority;
+				});
+
+				console.log(w.driver.categoryOrder);
 			};
 
 			xhr.send(null);
@@ -54,7 +60,7 @@
 					firstRun = true;
 
 					// Set defaults
-					for ( option in defaults ) {
+					for ( var option in defaults ) {
 						localStorage[option] = defaults[option];
 					}
 				} else if ( version !== localStorage['version'] && parseInt(localStorage['upgradeMessage'], 10) ) {
@@ -195,7 +201,7 @@
 
 			if ( count > 0 ) {
 				// Find the main application to display
-				var i, appName, found = false;
+				var appName, found = false;
 
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
@@ -258,54 +264,7 @@
 			};
 
 			xhr.send('json=' + encodeURIComponent(JSON.stringify(data)));
-		},
-
-		categoryOrder: [ // Used to pick the main application
-			 1, // CMS
-			11, // Blog
-			 6, // Web Shop
-			 2, // Message Board
-			51, // Landing Page Builder
-			 8, // Wiki
-			13, // Issue Tracker
-			30, // Web Mail
-			18, // Web Framework
-			21, // LMS
-			 7, // Photo Gallery
-			38, // Media Server
-			 3, // Database Manager
-			34, // Database
-			 4, // Documentation Tool
-			 9, // Hosting Panel
-			29, // Search Engine
-			12, // JavaScript Framework
-			26, // Mobile Framework
-			25, // JavaScript Graphics
-			22, // Web Server
-			27, // Programming Language
-			28, // Operating System
-			15, // Comment System
-			20, // Editor
-			41, // Payment Processor
-			10, // Analytics
-			32, // Marketing Automation
-			31, // CDN
-			23, // Cache Tool
-			17, // Font Script
-			24, // Rich Text Editor
-			35, // Map
-			 5, // Widget
-			14, // Video Player
-			16, // Captcha
-			33, // Web Server Extension
-			37, // Network Device
-			39, // Webcam
-			40, // Printer
-			36, // Advertising Network
-			42, // Tag Managers
-			43, // Paywalls
-			19  // Miscellaneous
-			]
+		}
 	};
 
 	w.init();
