@@ -2725,7 +2725,7 @@
 			],
 			"env": "^gerrit_",
 			"html": [
-				">Gerrit Code Review</a>\\s*\"\\s*\\(([0-9.])\\)\\;version:\\1",
+				">Gerrit Code Review</a>\\s*\"\\s*\\(([0-9.]+)\\)\\;version:\\1",
 				"<(?:div|style) id=\"gerrit_"
 			],
 			"icon": "gerrit.svg",
