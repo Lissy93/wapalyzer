@@ -4774,6 +4774,11 @@
 			"env": "^Meteor$",
 			"html": "<link[^>]+__meteor-css__",
 			"icon": "Meteor.png",
+			"implies": [
+				"MongoDB",
+				"Node.js",
+				"jQuery"
+			],
 			"website": "http://meteor.com"
 		},
 		"Methode": {
