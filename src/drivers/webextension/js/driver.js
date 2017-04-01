@@ -135,7 +135,8 @@
 		onMessage: function(message, sender, sendResponse) {
 			var
 				hostname,
-				a = document.createElement('a');
+				a = document.createElement('a'),
+				response = undefined;
 
 			if ( typeof message.id != 'undefined' ) {
 				w.log('message: ' + message.id);
@@ -164,15 +165,18 @@
 
 						break;
 					case 'get_apps':
-						sendResponse({
+						response = {
 							tabCache:   tabCache[message.tab.id],
 							apps:       w.apps,
 							categories: w.categories
-							});
+						};
 
 						break;
 				}
+
+				sendResponse( response );
 			}
+
 		},
 
 		goToURL: function(args) {
