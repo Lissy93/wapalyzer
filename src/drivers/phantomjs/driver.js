@@ -91,6 +91,7 @@
 							confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
 							version:    wappalyzer.detected[url][app].version,
 							icon:       wappalyzer.apps[app].icon,
+							website:    wappalyzer.apps[app].website,
 							categories: cats
 						});
 					}
