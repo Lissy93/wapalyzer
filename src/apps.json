@@ -2479,7 +2479,7 @@
 			],
 			"icon": "FancyBox.png",
 			"implies": "jQuery",
-			"script": "jquery\\.fancybox\\.pack\\.js$",
+			"script": "jquery\\.fancybox\\.pack\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
 			"website": "http://fancyapps.com/fancybox"
 		},
 		"Fat-Free Framework": {
