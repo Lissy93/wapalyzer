@@ -46,8 +46,6 @@
 				w.driver.categoryOrder = Object.keys(w.categories).sort(function(a, b) {
 					return w.categories[a].priority - w.categories[b].priority;
 				});
-
-				console.log(w.driver.categoryOrder);
 			};
 
 			xhr.send(null);
