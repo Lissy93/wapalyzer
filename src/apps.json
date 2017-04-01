@@ -7633,7 +7633,10 @@
 			],
 			"env": "^TEALIUMENABLED$",
 			"icon": "Tealium.png",
-			"script": "//tags\\.tiqcdn\\.com/",
+			"script": [
+				"^//tags\\.tiqcdn\\.com/",
+				"/tealium/utag\\.js$"
+			],
 			"website": "http://tealium.com"
 		},
 		"TeamCity": {
