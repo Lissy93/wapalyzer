@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		displayApps: function() {
 			var appName, confidence, version;
 
-			browser.tabs.query({ active: true }).then(function(tabs) {
+			browser.tabs.query({ active: true, currentWindow: true }).then(function(tabs) {
         function sendGetApps(response) {
 					if ( response.tabCache && response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';
