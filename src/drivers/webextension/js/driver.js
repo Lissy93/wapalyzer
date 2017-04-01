@@ -54,7 +54,7 @@
 
 			// Version check
 			try {
-				var version = browser.app.getDetails().version;
+				var version = browser.runtime.getManifest().version;
 
 				if ( localStorage['version'] == null ) {
 					firstRun = true;

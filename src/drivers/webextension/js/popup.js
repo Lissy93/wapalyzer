@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	popup = {
 		init: function() {
-			browser.tabs.query({ active: true }).then(function(tabs) {
+			browser.tabs.query({ active: true, windowId: browser.windows.WINDOW_ID_CURRENT }).then(function(tabs) {
 				if ( tabs[0].url.match(/https?:\/\//) ) {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
 				} else {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		displayApps: function() {
 			var appName, confidence, version;
 
-			browser.tabs.query({ active: true }).then(function(tabs) {
+			browser.tabs.query({ active: true, windowId: browser.windows.WINDOW_ID_CURRENT }).then(function(tabs) {
         function sendGetApps(response) {
 					if ( response.tabCache && response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';

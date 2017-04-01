@@ -69,6 +69,7 @@ var exports = {};
 		realArray: function(a) {
 			return Array.prototype.slice.apply(a);
 		},
+
 		onDocLoaded: function(doc, callback) {
 			if ( doc.readyState === 'loading' ) {
 				doc.addEventListener('DOMContentLoaded', callback);
@@ -112,10 +113,42 @@ var exports = {};
 				try {
 					dict[key] = window.decodeURIComponent(val);
 				} catch (e) {
+
+					continue;
 				}
 			}
 			return dict;
 		},
+		sendToBackground: function(message, event, responseMessage, onResponse) {
+			if ( typeof browser !== 'undefined' ) {
+				var response = browser.runtime.sendMessage(message);
+				response.then(onResponse);
+			} else if ( typeof chrome !== 'undefined' ) {
+				chrome.runtime.sendMessage(message, onResponse);
+			} else if ( window.self.port ) {
+				window.self.port.on(responseMessage, onResponse);
+				window.self.port.emit(event, message);
+			}
+		},
+
+		ifTrackingEnabled: function(callback, elseCallback) {
+
+			this.sendToBackground(
+				'is_tracking_enabled',
+				'',
+				'tracking_enabled_response',
+				function(message) {
+					if ( message.tracking_enabled ) {
+
+						callback();
+					} else {
+
+						elseCallback();
+					}
+				}
+			);
+
+		}
 	};
 
 	utils.SCRIPT_IN_FRIENDLY_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && utils.isFriendlyWindow(window.parent);
@@ -135,7 +168,7 @@ var exports = {};
 	LogGenerator.prototype = {
 		log: function(event, opt_assets, opt_pageTags) {
 			var opt_video_assets;
-			if ( event === 'video' ) {
+			if ( event === 'video' || event === 'invalid-video' ) {
 				opt_video_assets = opt_assets || [];
 				opt_assets = [];
 			} else {
@@ -148,7 +181,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: '5dacb94-c',
+				mrev: '9c4d5b3-c',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -305,7 +338,6 @@ var exports = {};
 				return div;
 			}
 		}
-		return null;
 	};
 
 	TopSearcher.prototype._jumpedOut = function(el) {
@@ -858,7 +890,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1484952787-11883-24071-12354-1549';
+	var POST_MSG_ID = '1490888598-28717-31700-14775-21098';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
@@ -924,9 +956,9 @@ var exports = {};
 		if ( exports.utils.SCRIPT_IN_WINDOW_TOP || document.readyState === 'complete' ) {
 			extractAds();
 		}
-		setTimeout(function() {
-			extractAdsWrapper();
-		}, INIT_MS_BW_SEARCHES);
+		setTimeout(
+			function() { extractAdsWrapper(); }, INIT_MS_BW_SEARCHES
+		);
 	}
 
 	function extractAds() {
@@ -987,7 +1019,6 @@ var exports = {};
 				}
 			}
 		}
-		return null;
 	}
 
 	function onPostMessage(event) {
@@ -1008,6 +1039,8 @@ var exports = {};
 		if ( adData.postMessageId === POST_MSG_ID ) {
 
 			delete adData.postMessageId;
+
+			event.stopImmediatePropagation();
 
 			if ( isChildWin(myWin, ifrWin) ) {
 				if ( exports.utils.isFriendlyWindow(ifrWin) ) {
@@ -1053,12 +1086,24 @@ var exports = {};
 					callback(msg);
 				}
 			});
+		} else if ( typeof chrome !== 'undefined' ) {
+			chrome.runtime.onMessage.addListener(function(msg) {
+				if ( msg.event === event ) {
+					callback(msg);
+				}
+			});
 		} else if ( window.self.port ) {
 			window.self.port.on(event, callback);
 		}
 	}
 
 	exports.coordinator = {
+		addPostMessageListener: function() {
+			if ( !exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
+				window.addEventListener('message', onPostMessage, false);
+			}
+		},
+
 		init: function(onAdFound) {
 
 			if ( exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
@@ -1066,8 +1111,6 @@ var exports = {};
 			}
 
 			_onAdFound = onAdFound;
-			window.addEventListener('message', onPostMessage, false);
-
 			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 				var log = _logGen.log('page');
 				onAdFound(log);
@@ -1092,26 +1135,32 @@ var exports = {};
 if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 	window.adparser = {
 		init: exports.coordinator.init,
+		addPostMessageListener: exports.coordinator.addPostMessageListener,
+		ifTrackingEnabled: exports.utils.ifTrackingEnabled,
+		sendToBackground: exports.utils.sendToBackground
 	};
 } else {
-	exports.coordinator.init(function() {});
+	exports.coordinator.addPostMessageListener();
+	exports.utils.ifTrackingEnabled(
+		function() {
+			exports.coordinator.init(function() {});
+		},
+		function() {}
+	);
 }
-
 })(window);
 (function(adparser) {
-	function sendToBackground(event, message) {
-		if ( window.self.port ) {
-			window.self.port.emit(event, message);
-		} else if ( typeof browser !== 'undefined' ) {
-			browser.runtime.sendMessage(message);
-		}
-	}
-
 	function onAdFound(log) {
-		sendToBackground('ad_log', { id: 'ad_log', subject: log });
+		adparser.sendToBackground({ id: 'ad_log', subject: log }, 'ad_log', '', function(){});
 	}
 
-	if ( window === window.top ) {
-		adparser.init(onAdFound);
+	if (  window === window.top  ) {
+		adparser.addPostMessageListener();
+		adparser.ifTrackingEnabled(
+			function() {
+				adparser.init(onAdFound);
+			},
+			function() {}
+		)
 	}
 })(window.adparser);

@@ -1,6 +1,27 @@
 'use strict';
 (function() {
 
+	function isChrome() {
+		return (typeof chrome !== 'undefined' &&
+				window.navigator.userAgent.match(/Chrom(?:e|ium)\/([0-9\.]+)/));
+	}
+
+	var browserProxy;
+	if ( isChrome() ) {
+		browserProxy = chrome;
+	} else {
+		browserProxy = browser;
+	}
+
+	var MIN_FF_MAJOR_VERSION = 51;
+
+	var requiredBrowserApis = [
+		browserProxy.webNavigation,
+		browserProxy.tabs,
+		browserProxy.webRequest,
+		browserProxy.runtime
+	];
+	var areListenersRegistered = false;
 	var secBefore = 2000;
 	var secAfter = 5000;
 	var secBetweenDupAssets = 10e3;
@@ -22,11 +43,27 @@
 
 	var topVideoAssetDomains = [
 		'2mdn.net',
-		'innovid.com',
-		'serving-sys.com',
+		'adap.tv',
+		'adnxs.com',
+		'adsrvr.org',
 		'btrll.com',
+		'celtra.com',
+		'flashtalking.com',
+		'flite.com',
+		'innovid.com',
+		'jivox.com',
+		'mixpo.com',
+		'nytimes.com',
+		'playwire.com',
+		'selectmedia.asia',
+		'serving-sys.com',
+		'solvemedia.com',
+		'spotible.com',
 		'teads.tv',
-		'tubemogul.com'
+		'tribalfusion.com',
+		'tubemogul.com',
+		'videologygroup.com',
+		'washingtonpost.com'
 	];
 
 	if ( !String.prototype.endsWith ) {
@@ -40,6 +77,47 @@
 			var lastIndex = subjectString.indexOf(searchString, position);
 			return lastIndex !== -1 && lastIndex === position;
 		};
+	}
+
+	function getFrame(getFrameDetails, callback) {
+		if ( typeof chrome !== 'undefined' ) {
+			chrome.webNavigation.getFrame(getFrameDetails, callback);
+		} else if ( typeof browser !== 'undefined' ) {
+			var gettingFrame = browser.webNavigation.getFrame(getFrameDetails);
+			gettingFrame.then(callback);
+		}
+	}
+
+	function ifBrowserValid(callback, elseCallback) {
+		if ( isChrome() ) {
+
+			callback();
+		} else if ( typeof browser !== 'undefined' ) {
+			try {
+				var gettingInfo = browser.runtime.getBrowserInfo();
+				gettingInfo.then(function(browserInfo) {
+					var browserVersion = parseInt(browserInfo.version.split('.')[0]);
+
+					if ( browserInfo.name === 'Firefox' &&
+						browserVersion >= MIN_FF_MAJOR_VERSION) {
+						callback();
+					} else {
+						elseCallback();
+					}
+				});
+			} catch (err) {
+
+				elseCallback();
+			}
+		} else {
+			elseCallback();
+		}
+	}
+
+	function isTrackingEnabled() {
+
+		return parseInt(localStorage.tracking, 10);
+
 	}
 
 	function isPixelRequest(request) {
@@ -57,7 +135,7 @@
 	}
 
 	function stripQueryParams(url) {
-		return url.split('?',1)[0];
+		return url.split('?', 1)[0];
 	}
 
 	function parseHostnameFromUrl(url) {
@@ -117,7 +195,18 @@
 			var tabId = details.tabId;
 			this.cleanupCollector(tabId);
 
-			this.collectors[tabId] = new PageNetworkTrafficCollector(tabId);
+			if ( isTrackingEnabled() ) {
+				if ( !areListenersRegistered ) {
+
+					registerListeners();
+				}
+				this.collectors[tabId] = new PageNetworkTrafficCollector(tabId);
+			} else {
+				if ( areListenersRegistered ) {
+
+					unregisterListeners();
+				}
+			}
 		},
 
 		onNavigationCommitted: function(details) {
@@ -160,7 +249,7 @@
 	PageNetworkTrafficCollector.prototype.sendLogMessageToTabConsole = function() {
 		var logMessage = Array.from(arguments).join(' ');
 		var message = {message: logMessage, event: 'console-log-message'};
-		browser.tabs.sendMessage(this.tabId, message);
+		browserProxy.tabs.sendMessage(this.tabId, message);
 	};
 
 	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, isValidAd) {
@@ -179,7 +268,9 @@
 				return parseHostnameFromUrl(request.url);
 			});
 			msg.assets = [{
+
 				url: parseHostnameFromUrl(assetReq.url),
+
 				contentType: assetReq.contentType,
 				size: assetReq.size
 			}];
@@ -188,7 +279,7 @@
 		msg.origUrl = curPageUrl;
 		msg.displayAdFound = this.displayAdFound;
 
-		browser.tabs.sendMessage(this.tabId, msg);
+		browserProxy.tabs.sendMessage(this.tabId, msg);
 	};
 
 	PageNetworkTrafficCollector.prototype.getRedirKey = function(url, frameId) {
@@ -236,7 +327,7 @@
 			frameId: details.frameId
 		};
 		var pageNetworkTrafficController = this;
-		browser.webNavigation.getFrame(getFrameDetails).then(function(frameDetails) {
+		getFrame(getFrameDetails, function(frameDetails) {
 			if ( frameDetails && frameDetails.url ) {
 				pageNetworkTrafficController._onHeadersReceived(details, frameDetails);
 			}
@@ -356,7 +447,7 @@
 			frameId: responseDetails.frameId
 		};
 		var pageNetworkTrafficController = this;
-		browser.webNavigation.getFrame(getFrameDetails).then(function(frameDetails) {
+		getFrame(getFrameDetails, function(frameDetails) {
 			if ( frameDetails && frameDetails.url ) {
 				pageNetworkTrafficController.processResponse(responseDetails, frameDetails);
 			}
@@ -484,6 +575,10 @@
 		var hasVpaidOrVastRequest = tagRequests.some(function(tagRequest) {
 			return isVpaidOrVastRequest(tagRequest);
 		});
+
+		if ( assetRequest.isYoutubeAd ) {
+			return true;
+		}
 		if ( hasVpaidOrVastRequest ) {
 			return true;
 		}
@@ -498,7 +593,7 @@
 		var _this = this,
 			origPageUrl, msgAssetReq;
 		msgAssetReq = this.msgsBeingSent[msgKey];
-		browser.tabs.get(this.tabId, function(tab) {origPageUrl = tab.url;});
+		browserProxy.tabs.get(this.tabId, function(tab) {origPageUrl = tab.url;});
 
 		setTimeout(function() {
 			var rawRequests = [];
@@ -531,54 +626,159 @@
 		}
 	};
 
-	browser.webRequest.onBeforeRequest.addListener(function(details) {
+	function onBeforeRequestListener(details) {
 		globalPageContainer.forwardCall(details, PageNetworkTrafficCollector.prototype.onBeforeRequest);
-	}, {urls: ['http://*/*', 'https://*/*']}, []);
+	}
 
-	browser.webRequest.onSendHeaders.addListener(function(details) {
+	function onSendHeadersListener(details) {
 		globalPageContainer.forwardCall(details, PageNetworkTrafficCollector.prototype.onSendHeaders);
-	}, {urls: ['http://*/*', 'https://*/*']}, ['requestHeaders']);
+	}
 
-	browser.webRequest.onHeadersReceived.addListener(function(details) {
+	function onHeadersReceivedListener(details) {
 		globalPageContainer.forwardCall(details, PageNetworkTrafficCollector.prototype.onHeadersReceived);
-	}, {urls: ['http://*/*', 'https://*/*']}, ['responseHeaders']);
+	}
 
-	browser.webRequest.onBeforeRedirect.addListener(function(details) {
+	function onBeforeRedirectListener(details) {
 		globalPageContainer.forwardCall(details, PageNetworkTrafficCollector.prototype.onBeforeRedirect);
-	}, {urls: ['http://*/*', 'https://*/*']}, []);
+	}
 
-	browser.webRequest.onResponseStarted.addListener(function(details) {
+	function onResponseStartedListener(details) {
 		globalPageContainer.forwardCall(details, PageNetworkTrafficCollector.prototype.onResponseStarted);
-	}, {urls: ['http://*/*', 'https://*/*']}, ['responseHeaders']);
+	}
 
-	browser.webNavigation.onBeforeNavigate.addListener(function(details) {
-		if ( details.frameId === 0 ) {
-			globalPageContainer.onNewNavigation(details);
-		}
-	}, {});
-
-	browser.webNavigation.onCommitted.addListener(function(details) {
+	function onCommittedListener(details) {
 		if ( details.frameId === 0 ) {
 			globalPageContainer.onNavigationCommitted(details);
 		}
-	});
+	}
 
-	browser.webNavigation.onCompleted.addListener(function(details) {
+	function onCompletedListener(details) {
 		if ( details.frameId === 0 ) {
 			globalPageContainer.onNavigationCompleted(details);
 		}
-	});
+	}
 
-	browser.tabs.onRemoved.addListener(function(tabId, closeInfo) {
+	function onRemovedListener(tabId, closeInfo) {
 		globalPageContainer.onTabClose(tabId, closeInfo);
-	});
+	}
 
-	browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+	function onMessageListener(message, sender, sendResponse) {
 		if ( message.event === 'new-ad' && message.data.event === 'ad' ) {
 			var tabId = sender.tab.id;
 			if ( tabId ) {
 				globalPageContainer.onDisplayAdFound(tabId);
 			}
 		}
+	}
+
+	function registerListeners() {
+
+		browserProxy.webRequest.onBeforeRequest.addListener(
+			onBeforeRequestListener,
+			{urls: ['http://*/*', 'https://*/*']},
+			[]
+		);
+
+		browserProxy.webRequest.onSendHeaders.addListener(
+			onSendHeadersListener,
+			{urls: ['http://*/*', 'https://*/*']},
+			['requestHeaders']
+		);
+
+		browserProxy.webRequest.onHeadersReceived.addListener(
+			onHeadersReceivedListener,
+			{urls: ['http://*/*', 'https://*/*']},
+			['responseHeaders']
+		);
+
+		browserProxy.webRequest.onBeforeRedirect.addListener(
+			onBeforeRedirectListener,
+			{urls: ['http://*/*', 'https://*/*']},
+			[]
+		);
+
+		browserProxy.webRequest.onResponseStarted.addListener(
+			onResponseStartedListener,
+			{urls: ['http://*/*', 'https://*/*']},
+			['responseHeaders']
+		);
+
+		browserProxy.webNavigation.onCommitted.addListener(onCommittedListener);
+		browserProxy.webNavigation.onCompleted.addListener(onCompletedListener);
+		browserProxy.tabs.onRemoved.addListener(onRemovedListener);
+		browserProxy.runtime.onMessage.addListener(onMessageListener);
+
+		areListenersRegistered = true;
+	}
+
+	function unregisterListeners() {
+
+		browserProxy.webRequest.onBeforeRequest.removeListener(
+			onBeforeRequestListener
+		);
+
+		browserProxy.webRequest.onSendHeaders.removeListener(
+			onSendHeadersListener
+		);
+
+		browserProxy.webRequest.onHeadersReceived.removeListener(
+			onHeadersReceivedListener
+		);
+
+		browserProxy.webRequest.onBeforeRedirect.removeListener(
+			onBeforeRedirectListener
+		);
+
+		browserProxy.webRequest.onResponseStarted.removeListener(
+			onResponseStartedListener
+		);
+
+		browserProxy.webNavigation.onCommitted.removeListener(onCommittedListener);
+		browserProxy.webNavigation.onCompleted.removeListener(onCompletedListener);
+		browserProxy.tabs.onRemoved.removeListener(onRemovedListener);
+		browserProxy.runtime.onMessage.removeListener(onMessageListener);
+
+		areListenersRegistered = false;
+	}
+
+	function areRequiredBrowserApisAvailable() {
+		return requiredBrowserApis.every(function(api) {
+			return typeof api !== 'undefined';
+		});
+	}
+
+	if ( areRequiredBrowserApisAvailable() ) {
+			ifBrowserValid(
+				function() {
+					browserProxy.webNavigation.onBeforeNavigate.addListener(
+						function(details) {
+							if ( details.frameId === 0 ) {
+								globalPageContainer.onNewNavigation(details);
+							}
+						},
+						{
+							url: [{urlMatches: 'http://*/*'}, {urlMatches: 'https://*/*'}]
+						}
+					);
+				}, function() {
+
+				}
+			);
+	}
+
+	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+		if ( request === 'is_browser_valid' ) {
+			ifBrowserValid(
+				sendResponse({'browser_valid': true}),
+				sendResponse({'browser_valid': false})
+			);
+		}
 	});
+
+	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+		if ( request === 'is_tracking_enabled' ) {
+			sendResponse({'tracking_enabled': isTrackingEnabled()});
+		}
+	});
+
 })();
