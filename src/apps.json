@@ -9836,15 +9836,16 @@
 			},
 			"website": "http://www.vbulletin.com"
 		},
-		"Vibecommerce": {
+		"vibecommerce": {
 			"cats": [
-				6
+				"6"
 			],
 			"excludes": "PrestaShop",
 			"icon": "vibecommerce.png",
 			"implies": "PHP",
 			"meta": {
-				"designer": "Vibecommerce"
+				"generator": "vibecommerce",
+				"designer": "vibecommerce"				
 			},
 			"website": "http://vibecommerce.com.br"
 		},
