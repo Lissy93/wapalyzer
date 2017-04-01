@@ -135,8 +135,8 @@
 		onMessage: function(message, sender, sendResponse) {
 			var
 				hostname,
-				a = document.createElement('a'),
-				response = undefined;
+				response,
+				a = document.createElement('a');
 
 			if ( typeof message.id != 'undefined' ) {
 				w.log('message: ' + message.id);
@@ -174,7 +174,7 @@
 						break;
 				}
 
-				sendResponse( response );
+				sendResponse(response);
 			}
 
 		},
