@@ -4854,6 +4854,11 @@
 			"html": "<link[^>]+__meteor-css__",
 			"implies": "Node.js",
 			"icon": "Meteor.png",
+			"implies": [
+				"MongoDB",
+				"Node.js",
+				"jQuery"
+			],
 			"website": "http://meteor.com"
 		},
 		"Methode": {
