@@ -4774,8 +4774,12 @@
 			"cats": [
 				"12"
 			],
-			"env": "^Meteor$",
+			"env": [
+				"^Meteor$",
+				"^METEOR_VERSION$"
+			],
 			"html": "<link[^>]+__meteor-css__",
+			"implies": "Node.js",
 			"icon": "Meteor.png",
 			"website": "http://meteor.com"
 		},
