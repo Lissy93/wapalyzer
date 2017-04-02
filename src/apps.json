@@ -595,6 +595,7 @@
 				"X-Powered-By": "Salesforce.com ApexPages"
 			},
 			"icon": "ApexPages.png",
+			"implies": "Salesforce",
 			"website": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro.htm"
 		},
 		"Apostrophe CMS": {
@@ -6902,6 +6903,18 @@
 			"implies": "Express",
 			"website": "http://sailsjs.org"
 		},
+		"Salesforce": {
+			"cats": [
+				"53"
+			],
+			"env": "^SFDC(?:App|Cmp|Page|SessionVars)$",
+			"headers": {
+				"Set-Cookie": "com\\.salesforce\\."
+			},
+			"html": "<[^>]+=\"brandQuaternaryFgrs\"",
+			"icon": "Salesforce.svg",
+			"website": "https://www.salesforce.com"
+		},
 		"Sarka-SPIP": {
 			"cats": [
 				"1"
@@ -10328,6 +10341,10 @@
 		},
 		"52": {
 			"name": "Live Chat",
+			"priority": "9"
+		},
+		"53": {
+			"name": "CRM",
 			"priority": "9"
 		}
 	}
