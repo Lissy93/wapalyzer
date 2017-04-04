@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "node"
 sudo: false
+dist: trusty
 before_install:
  - export WAPPALYZER_ROOT=$TRAVIS_BUILD_DIR
  - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
@@ -13,9 +14,3 @@ cache:
     - node_modules
 env:
   - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
