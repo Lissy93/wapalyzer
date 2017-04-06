@@ -9,15 +9,7 @@
 			"url": "/shop/catalog/browse\\?sessid=",
 			"website": "http://1and1.com"
 		},
-		"Typecho": {
-			"cats": [
-				"11"
-			],
-			"icon": "typecho.svg",
-			"implies": "PHP",
-			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
-			"website": "http://typecho.org/"
-		},
+		
 		"1C-Bitrix": {
 			"cats": [
 				"1"
@@ -3196,6 +3188,18 @@
 			},
 			"website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
 		},
+		"Homeland": {
+			"cats": [
+				"1",
+				"2"
+			],
+			"headers": {
+				"Set-Cookie:": "_homeland_"
+			},
+			"icon": "Homeland.png",
+			"implies": "Ruby on Rails",
+			"website": "https://gethomeland.com"
+		},
 		"HERE": {
 			"cats": [
 				"35"
@@ -5452,18 +5456,7 @@
 			"script": "^/nodebb\\.min\\.js\\?",
 			"website": "https://nodebb.org"
 		},
-		"Homeland": {
-			"cats": [
-				"1",
-				"2"
-			],
-			"headers": {
-				"Set-Cookie:": "_homeland_"
-			},
-			"icon": "Homeland.png",
-			"implies": "Ruby on Rails",
-			"website": "https://gethomeland.com"
-		},
+		
 		"OWL Carousel": {
 			"cats": [
 				"5",
@@ -7763,6 +7756,15 @@
 			},
 			"url": "/typo3/",
 			"website": "http://www.typo3.org"
+		},
+		"Typecho": {
+			"cats": [
+				"11"
+			],
+			"icon": "typecho.svg",
+			"implies": "PHP",
+			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
+			"website": "http://typecho.org/"
 		},
 		"Taiga": {
 			"cats": [
