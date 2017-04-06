@@ -3397,6 +3397,16 @@
 			"script": "highcharts.*\\.js",
 			"website": "http://highcharts.com"
 		},
+		"Highlight.js": {
+			"cats": [
+				"19"
+			],
+			"env": "^hljs$",
+			"html": "<link [^>]*href=\"[^\"]+highlight(?:\\.min)?\\.js[^\"]+.css",
+			"icon": "Highlight.js.png",
+			"script": "highlight(?:\\.min)?\\.js",
+			"website": "https://highlightjs.org/"
+		},
 		"Highstock": {
 			"cats": [
 				"25"
@@ -6608,6 +6618,7 @@
 			],
 			"env": "^Reveal$",
 			"icon": "Reveal.js.png",
+			"implies": "Highlight.js",
 			"script": "reveal(?:\\.min)?\\.js",
 			"website": "http://lab.hakim.se/reveal-js"
 		},
