@@ -73,31 +73,28 @@
 			displayApps: function() {
 				var
 					app, cats,
-					apps  = [],
-					count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length : 0;
+					apps  = [];
 
 				wappalyzer.log('driver.displayApps');
 
-				if ( count ) {
-					for ( app in wappalyzer.detected[url] ) {
-						cats = [];
+				for ( app in wappalyzer.detected[url] ) {
+					cats = [];
 
-						wappalyzer.apps[app].cats.forEach(function(cat) {
-							cats.push(wappalyzer.categories[cat].name);
-						});
+					wappalyzer.apps[app].cats.forEach(function(cat) {
+						cats.push(wappalyzer.categories[cat].name);
+					});
 
-						apps.push({
-							name: app,
-							confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
-							version:    wappalyzer.detected[url][app].version,
-							icon:       wappalyzer.apps[app].icon,
-							website:    wappalyzer.apps[app].website,
-							categories: cats
-						});
-					}
-
-					wappalyzer.driver.sendResponse(apps);
+					apps.push({
+						name: app,
+						confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
+						version:    wappalyzer.detected[url][app].version,
+						icon:       wappalyzer.apps[app].icon,
+						website:    wappalyzer.apps[app].website,
+						categories: cats
+					});
 				}
+
+				wappalyzer.driver.sendResponse(apps);
 			},
 
 			/**
