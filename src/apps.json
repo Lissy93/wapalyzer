@@ -1733,7 +1733,7 @@
 			],
 			"env": "^d3$",
 			"icon": "D3.png",
-			"script": "d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
+			"script": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
 			"website": "http://d3js.org"
 		},
 		"DHTMLX": {
@@ -3195,6 +3195,18 @@
 				"DC.identifier": "/content\\.jsp\\?objectid="
 			},
 			"website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
+		},
+		"Homeland": {
+			"cats": [
+				"1",
+				"2"
+			],
+			"headers": {
+				"Set-Cookie:": "_homeland_"
+			},
+			"icon": "Homeland.png",
+			"implies": "Ruby on Rails",
+			"website": "https://gethomeland.com"
 		},
 		"HERE": {
 			"cats": [
@@ -5379,6 +5391,17 @@
 			"icon": "Nepso.png",
 			"website": "http://nepso.com"
 		},
+		"Netlify": {
+			"cats": [
+				"22",
+				"31"
+			],
+			"headers": {
+				"Server": "Netlify"
+			},
+			"icon": "Netlify.svg",
+			"website": "https://www.netlify.com/"
+		},
 		"Netmonitor": {
 			"cats": [
 				"10"
@@ -6253,6 +6276,10 @@
 			"meta": {
 				"generator": "PrestaShop"
 			},
+			"headers": {
+				"Set-Cookie": "^PrestaShop",
+				"Powered-By": "^Prestashop$"
+			},
 			"website": "http://www.prestashop.com"
 		},
 		"Project Wonderful": {
@@ -6619,7 +6646,7 @@
 			"env": "^Reveal$",
 			"icon": "Reveal.js.png",
 			"implies": "Highlight.js",
-			"script": "reveal(?:\\.min)?\\.js",
+			"script": "(?:^|/)reveal(?:\\.min)?\\.js",
 			"website": "http://lab.hakim.se/reveal-js"
 		},
 		"Revel": {
@@ -6972,6 +6999,16 @@
 				"Schneider"
 			],
 			"website": "http://schneider-electric.com"
+		},
+		"Scholica": {
+			"cats": [
+				"21"
+			],
+			"headers": {
+				"X-Scholica-Version": ""
+			},
+			"icon": "Scholica.svg",
+			"website": "http://scholica.com"
 		},
 		"Scientific Linux": {
 			"cats": [
@@ -7762,6 +7799,15 @@
 			},
 			"url": "/typo3/",
 			"website": "http://www.typo3.org"
+		},
+		"Typecho": {
+			"cats": [
+				"11"
+			],
+			"icon": "typecho.svg",
+			"implies": "PHP",
+			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
+			"website": "http://typecho.org/"
 		},
 		"Taiga": {
 			"cats": [
@@ -9959,16 +10005,6 @@
 			"script": "shine(?:\\.min)?\\.js",
 			"website": "http://bigspaceship.github.io/shine.js/"
 		},
-		"spin.js": {
-			"cats": [
-				"12",
-				"25"
-			],
-			"env": "^Spinner$",
-			"icon": "spin.js.png",
-			"script": "spin(?:\\.min)?\\.js",
-			"website": "http://fgnass.github.io/spin.js/"
-		},
 		"swift.engine": {
 			"cats": [
 				"1"
@@ -10075,16 +10111,6 @@
 			"html": "powered by <a href=\"[^>]+viennacms",
 			"icon": "default.svg",
 			"website": "http://www.viennacms.nl"
-		},
-		"vis.js": {
-			"cats": [
-				"25"
-			],
-			"env": "^vis$",
-			"html": "<link[^>]+?href=\"[^\"]+vis(?:\\.min)?\\.css",
-			"icon": "vis.js.png",
-			"script": "vis(?:\\.min)?\\.js",
-			"website": "http://visjs.org"
 		},
 		"webEdition": {
 			"cats": [
