@@ -12,9 +12,9 @@ var
 for (app in json.apps) {
 	(function(app) {
 		var basePath = process.env.WAPPALYZER_ROOT + '/src/icons/';
-    var iconPath = json.apps[app].icon;
+    var iconPath = json.apps[app].icon || 'default.svg';
     var path = basePath + iconPath;
-    
+
     var type;
     if (path.substr(path.length - 4) === '.png') {
       type = "PNG";
@@ -26,7 +26,7 @@ for (app in json.apps) {
       var err = new Error('Icon file extension specified for app "' + app + '" is not ".png" or ".svg": src/icons/' + iconPath);
       throw err;
     }
-    
+
 		fs.exists(path, function(exists) {
 			if (exists) {
         if (type === "PNG") {

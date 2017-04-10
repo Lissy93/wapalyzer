@@ -88,7 +88,7 @@
 						name: app,
 						confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
 						version:    wappalyzer.detected[url][app].version,
-						icon:       wappalyzer.apps[app].icon,
+						icon:       wappalyzer.apps[app].icon || 'default.svg',
 						website:    wappalyzer.apps[app].website,
 						categories: cats
 					});
