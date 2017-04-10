@@ -7,6 +7,18 @@ before_install:
  - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
  - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
  - ln -s docker/node/package.json package.json
+after_success:
+ - sha256sum build/* > build/SHA256SUMS
+ - cat build/SHA256SUMS
+deploy:
+  provider: releases
+  api_key:
+    secure: ""
+  file_glob: true
+  file: build/*
+  skip_cleanup: true
+  on:
+    tags: true
 after_script: ls -l --block-size=kB build
 cache:
   directories:
