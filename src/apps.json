@@ -3178,18 +3178,6 @@
 			},
 			"website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
 		},
-		"Homeland": {
-			"cats": [
-				"1",
-				"2"
-			],
-			"headers": {
-				"Set-Cookie:": "_homeland_"
-			},
-			"icon": "Homeland.png",
-			"implies": "Ruby on Rails",
-			"website": "https://gethomeland.com"
-		},
 		"HERE": {
 			"cats": [
 				"35"
@@ -3415,6 +3403,18 @@
 				"([\\d.]+)/hogan(?:\\.min)?\\.js\\;version:\\1"
 			],
 			"website": "http://twitter.github.com/hogan.js"
+		},
+		"Homeland": {
+			"cats": [
+				"1",
+				"2"
+			],
+			"headers": {
+				"Set-Cookie:": "_homeland_"
+			},
+			"icon": "Homeland.png",
+			"implies": "Ruby on Rails",
+			"website": "https://gethomeland.com"
 		},
 		"Hotaru CMS": {
 			"cats": [
@@ -6226,6 +6226,10 @@
 				"^priceDisplayMethod$\\;confidence:25",
 				"^priceDisplayPrecision$\\;confidence:25"
 			],
+			"headers": {
+				"Powered-By": "^Prestashop$",
+				"Set-Cookie": "^PrestaShop"
+			},
 			"html": [
 				"Powered by <a\\s+[^>]+>PrestaShop",
 				"<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\\s?-->",
@@ -6235,10 +6239,6 @@
 			"implies": "PHP",
 			"meta": {
 				"generator": "PrestaShop"
-			},
-			"headers": {
-				"Set-Cookie": "^PrestaShop",
-				"Powered-By": "^Prestashop$"
 			},
 			"website": "http://www.prestashop.com"
 		},
@@ -7753,15 +7753,6 @@
 			"url": "/typo3/",
 			"website": "http://www.typo3.org"
 		},
-		"Typecho": {
-			"cats": [
-				"11"
-			],
-			"icon": "typecho.svg",
-			"implies": "PHP",
-			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
-			"website": "http://typecho.org/"
-		},
 		"Taiga": {
 			"cats": [
 				"13"
@@ -8104,6 +8095,15 @@
 			},
 			"url": "typepad\\.com",
 			"website": "http://www.typepad.com"
+		},
+		"Typecho": {
+			"cats": [
+				"11"
+			],
+			"icon": "typecho.svg",
+			"implies": "PHP",
+			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
+			"website": "http://typecho.org/"
 		},
 		"Typekit": {
 			"cats": [
