@@ -46,15 +46,13 @@
 				w.driver.categoryOrder = Object.keys(w.categories).sort(function(a, b) {
 					return w.categories[a].priority - w.categories[b].priority;
 				});
-
-				console.log(w.driver.categoryOrder);
 			};
 
 			xhr.send(null);
 
 			// Version check
 			try {
-				var version = browser.app.getDetails().version;
+				var version = browser.runtime.getManifest().version;
 
 				if ( localStorage['version'] == null ) {
 					firstRun = true;
@@ -135,6 +133,7 @@
 		onMessage: function(message, sender, sendResponse) {
 			var
 				hostname,
+				response,
 				a = document.createElement('a');
 
 			if ( typeof message.id != 'undefined' ) {
@@ -164,15 +163,18 @@
 
 						break;
 					case 'get_apps':
-						sendResponse({
+						response = {
 							tabCache:   tabCache[message.tab.id],
 							apps:       w.apps,
 							categories: w.categories
-							});
+						};
 
 						break;
 				}
+
+				sendResponse(response);
 			}
+
 		},
 
 		goToURL: function(args) {

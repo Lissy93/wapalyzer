@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	popup = {
 		init: function() {
-			browser.tabs.query({ active: true }).then(function(tabs) {
+			browser.tabs.query({ active: true, currentWindow: true }).then(function(tabs) {
 				if ( tabs[0].url.match(/https?:\/\//) ) {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
 				} else {
