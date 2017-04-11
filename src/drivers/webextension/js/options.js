@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
 				d.getElementById('option-upgrade-message').setAttribute('checked', 'checked');
 			}
 
+			if ( parseInt(options.opts.changeIcon) ) {
+				d.getElementById('option-change-icon').setAttribute('checked', 'checked');
+			}
+
 			if ( parseInt(options.opts.tracking) ) {
 				d.getElementById('option-tracking').setAttribute('checked', 'checked');
 			}
@@ -36,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			var option;
 
 			options.opts.upgradeMessage = d.getElementById('option-upgrade-message').checked ? 1 : 0;
+			options.opts.changeIcon     = d.getElementById('option-change-icon'    ).checked ? 1 : 0;
 			options.opts.tracking       = d.getElementById('option-tracking'       ).checked ? 1 : 0;
 
 			for ( option in options.opts ) {
