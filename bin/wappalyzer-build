@@ -41,7 +41,7 @@ do
 		rm "$dest"
 	fi
 
-	#node $WAPPALYZER_NODE_PATH/node_modules/svg2png/bin/svg2png-cli "$svg" --width=32 --height=32 --output "$dest" || true
+	node $WAPPALYZER_NODE_PATH/node_modules/svg2png/bin/svg2png-cli "$svg" --width=32 --height=32 --output "$dest" || true
 done
 
 IFS="$OIFS"
@@ -80,6 +80,7 @@ manifest_dir="Wappalyzer/edgeextension/manifest"
 sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
 sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-PUBLISHER-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
 sed -i 's/INSERT-YOUR-PACKAGE-PROPERTIES-PUBLISHERDISPLAYNAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/Version="0.\([^"]\+\)/Version="\1.0/' $manifest_dir/appxmanifest.xml
 
 cp $webextension_dir/images/icon_44.png  $manifest_dir/Assets/Square44x44Logo.png
 cp $webextension_dir/images/icon_150.png $manifest_dir/Assets/Square150x150Logo.png
