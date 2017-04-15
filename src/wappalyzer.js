@@ -1,5 +1,5 @@
 /**
- * Wappalyzer v2
+ * Wappalyzer v4
  *
  * Created by Elbert Alias <elbert@alias.io>
  *

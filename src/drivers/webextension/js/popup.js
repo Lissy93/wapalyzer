@@ -10,13 +10,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	popup = {
 		init: function() {
-			browser.tabs.query({ active: true, currentWindow: true }).then(function(tabs) {
+			var callback = function(tabs) {
 				if ( tabs[0].url.match(/https?:\/\//) ) {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
 				} else {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('nothingToDo') + '</div>';
 				}
-			});
+			};
+
+			try {
+				// Chrome, Firefox
+				browser.tabs.query({ active: true, currentWindow: true }).then(callback);
+			} catch ( e ) {
+				// Edge
+				browser.tabs.query({ active: true, currentWindow: true }, callback);
+			}
 
 			popup.displayApps();
 		},
@@ -24,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		displayApps: function() {
 			var appName, confidence, version;
 
-			browser.tabs.query({ active: true, currentWindow: true }).then(function(tabs) {
+			var callback = function(tabs) {
         function sendGetApps(response) {
 					if ( response.tabCache && response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';
@@ -60,7 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           chrome.runtime.sendMessage({ id: 'get_apps', tab: tabs[0] }, sendGetApps);
         }
-			});
+			};
+
+			try {
+				// Chrome, Firefox
+				browser.tabs.query({ active: true, currentWindow: true }).then(callback);
+			} catch ( e ) {
+				// Edge
+				browser.tabs.query({ active: true, currentWindow: true }, callback);
+			}
 		}
 	};
 

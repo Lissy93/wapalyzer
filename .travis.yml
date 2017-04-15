@@ -7,6 +7,7 @@ before_install:
  - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
  - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
  - ln -s docker/node/package.json package.json
+before_script: npm i -g manifoldjs
 after_success:
  - sha256sum build/* > build/SHA256SUMS
  - cat build/SHA256SUMS

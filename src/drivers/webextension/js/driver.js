@@ -1,5 +1,5 @@
 /**
- * Chrome driver
+ * WebExtension driver
  */
 
 (function() {
@@ -74,13 +74,19 @@
         chrome.runtime.onMessage.addListener(w.driver.onMessage);
       }
 
-			browser.tabs.query({}).then(function(tabs) {
+			var callback = function(tabs) {
 				tabs.forEach(function(tab) {
 					if ( tab.url.match(/^https?:\/\//) ) {
 						browser.tabs.executeScript(tab.id, { file: 'js/content.js' });
 					}
 				})
-			});
+			};
+
+			try {
+				browser.tabs.query({}).then(callback);
+			} catch ( e ) {
+				browser.tabs.query({}, callback);
+			}
 
 			browser.tabs.onRemoved.addListener(function(tabId) {
 				w.log('remove tab');
