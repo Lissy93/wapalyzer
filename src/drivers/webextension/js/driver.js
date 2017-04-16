@@ -214,7 +214,7 @@
 				w.driver.categoryOrder.forEach(function(match) {
 					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
-							var icon = w.apps[appName].icon;
+							var icon = w.apps[appName].icon || 'default.svg';
 
 							if ( cat == match && !found ) {
 								if ( /\.svg$/i.test(icon) ) {

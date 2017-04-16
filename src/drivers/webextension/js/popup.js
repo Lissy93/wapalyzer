@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 							html =
 								'<div class="detected-app">' +
 									'<a target="_blank" href="https://wappalyzer.com/applications/' + slugify(appName) + '">' +
-										'<img src="images/icons/' + response.apps[appName].icon + '"/>' +
+										'<img src="images/icons/' + (response.apps[appName].icon || 'default.svg') + '"/>' +
 										'<span class="label"><span class="name">' + appName + '</span>' + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 
