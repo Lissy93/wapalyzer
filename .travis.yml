@@ -14,11 +14,12 @@ after_success:
 deploy:
   provider: releases
   api_key:
-    secure: ""
+    secure: mco1ycbfGXZEiBywOmM5A50Y1QPFawj4i0gdB9JDkXDvY7N2kPZyCdAeOQOMEJuetGT3HvJuTG0Ll47sithZfPqq6wx/4EeP8YQYYFIyoOlsIGi5MDR1kS5ZOqKDWGe5+x+/rUZbmuMHvgHWNSjPG8mBrp5xWmON6ETkLWfVB0c=
   file_glob: true
   file: build/*
   skip_cleanup: true
   on:
+    repo: AliasIO/Wappalyzer
     tags: true
 after_script: ls -l --block-size=kB build
 cache:
