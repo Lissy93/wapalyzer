@@ -216,14 +216,16 @@
 						w.apps[appName].cats.forEach(function(cat) {
 							var icon = w.apps[appName].icon || 'default.svg';
 
+							if ( !parseInt(localStorage['dynamicIcon'], 10) ) {
+								icon = 'default.svg';
+							}
+
 							if ( cat == match && !found ) {
 								if ( /\.svg$/i.test(icon) ) {
 									icon = 'converted/' + icon + '.png';
 								}
 
-								if (parseInt(localStorage['changeIcon'], 10)) {
-									browser.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + icon });
-								}
+								browser.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + icon });
 
 								found = true;
 							}
