@@ -990,6 +990,19 @@
 			"implies": "CodeIgniter",
 			"website": "http://cibonfire.com"
 		},
+		"Bootstrap Table": {
+			"cats": [
+				"12"
+			],
+			"html": "<link[^>]+href=\"[^>]*bootstrap-table(?:\\.min)?\\.css",
+			"icon": "Bootstrap Table.svg",
+			"implies": [
+				"Bootstrap",
+				"jQuery"
+			],
+			"script": "bootstrap-table(?:\\.min)?\\.js",
+			"website": "http://bootstrap-table.wenzhixin.net.cn/"
+		},
 		"Bounce Exchange": {
 			"cats": [
 				"32"
@@ -8392,6 +8405,18 @@
 			"html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
 			"icon": "Vimeo.png",
 			"website": "http://vimeo.com"
+		},
+
+		"Vinala": {
+			"cats": [
+				"18"
+			],
+			"headers": {
+				"Set-Cookie": "vinala_version"
+			},
+			"icon": "Vinala.png",
+			"implies": "PHP",
+			"website": "https://github.com/vinala/vinala"
 		},
 		"Virata EmWeb": {
 			"cats": [
