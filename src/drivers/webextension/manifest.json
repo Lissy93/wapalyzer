@@ -26,8 +26,8 @@
 		"default_popup": "popup.html"
 	},
 	"background": {
-		"page": "background.html",
-		"persistent": true
+		"page": "background.html"
+
 	},
 	"content_scripts": [
 		{
@@ -43,11 +43,12 @@
 		},
 		{
 			"matches": [
-				"http://*/*",
+				 "http://*/*",
 				"https://*/*"
 			],
 			"js": [
-				"js/browser-polyfill.js"
+				"js/browser-polyfill.js",
+				"js/iframe.js"
 			],
 			"run_at": "document_start",
 			"all_frames": true
@@ -57,6 +58,10 @@
 		"js/inject.js"
 	],
 	"options_page": "options.html",
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	},
 	"permissions": [
 		"tabs",
 		"webRequest",
@@ -64,9 +69,6 @@
 		"http://*/*",
 		"https://*/*"
 	],
-	"content_security_policy": "script-src 'self'; object-src 'self'",
-	"-ms-preload": {
-		"backgroundScript": "js/ms_background_scripts_api_bridge.js",
-		"contentScript": "js/ms_content_scripts_api_bridge.js"
-	}
+	"content_security_policy": "script-src 'self'; object-src 'self'"
 }
+
