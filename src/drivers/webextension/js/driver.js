@@ -221,7 +221,9 @@
 									icon = 'converted/' + icon + '.png';
 								}
 
-								browser.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + icon });
+								if (parseInt(localStorage['changeIcon'], 10)) {
+									browser.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + icon });
+								}
 
 								found = true;
 							}
