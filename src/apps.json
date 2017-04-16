@@ -990,6 +990,19 @@
 			"implies": "CodeIgniter",
 			"website": "http://cibonfire.com"
 		},
+		"Bootstrap Table": {
+			"cats": [
+				"12"
+			],
+			"html": "<link[^>]+href=\"[^>]*bootstrap-table(?:\\.min)?\\.css",
+			"icon": "Bootstrap Table.svg",
+			"implies": [
+				"Bootstrap",
+				"jQuery"
+			],
+			"script": "bootstrap-table(?:\\.min)?\\.js",
+			"website": "http://bootstrap-table.wenzhixin.net.cn/"
+		},
 		"Bounce Exchange": {
 			"cats": [
 				"32"
