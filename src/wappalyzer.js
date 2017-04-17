@@ -385,6 +385,7 @@ var wappalyzer = (function() {
 							});
 
 							break;
+						default:
 					}
 				}
 			}

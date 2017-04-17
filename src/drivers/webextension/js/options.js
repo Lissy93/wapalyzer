@@ -1,4 +1,5 @@
-/** global: localStorage */
+/** global: browser */
+/** global: wappalyzer */
 
 document.addEventListener('DOMContentLoaded', function() {
 	var d = document;
@@ -7,9 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		init: function() {
 			options.load();
 
-			d.querySelector('#github'    ).addEventListener('click', function() { open(wappalyzer.config.githubURL);  });
-			d.querySelector('#twitter'   ).addEventListener('click', function() { open(wappalyzer.config.twitterURL); });
-			d.querySelector('#wappalyzer').addEventListener('click', function() { open(wappalyzer.config.websiteURL); });
+			d.querySelector('#github').addEventListener('click', function() {
+				open(wappalyzer.config.githubURL);
+			});
+
+			d.querySelector('#twitter').addEventListener('click', function() {
+			 	open(wappalyzer.config.twitterURL);
+			});
+
+			d.querySelector('#wappalyzer').addEventListener('click', function() {
+				open(wappalyzer.config.websiteURL);
+			});
 		},
 
 		get: function(name, defaultValue, callback) {

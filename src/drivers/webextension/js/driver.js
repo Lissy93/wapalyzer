@@ -2,6 +2,11 @@
  * WebExtension driver
  */
 
+/** global: browser */
+/** global: chrome */
+/** global: wappalyzer */
+/** global: XMLHttpRequest */
+
 (function() {
 	if ( wappalyzer == null ) {
 		return;

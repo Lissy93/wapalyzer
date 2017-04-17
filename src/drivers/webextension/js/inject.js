@@ -10,5 +10,7 @@
 
 		document.getElementById('wappalyzerData').appendChild(document.createComment(environmentVars));
 		document.getElementById('wappalyzerData').dispatchEvent(e);
-	} catch(e) { }
+	} catch(e) {
+		// Fail quietly
+ 	}
 }());

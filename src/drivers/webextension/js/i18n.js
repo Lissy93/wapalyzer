@@ -1,6 +1,8 @@
+/** global: browser */
+
 document.addEventListener('DOMContentLoaded', function() {
 	var
-		i, value,
+		i, value, attr,
 		nodes = document.getElementsByTagName('*');
 
 	for ( i = 0; i < nodes.length; i ++ ) {

@@ -175,7 +175,7 @@
 				};
 
 				page.open(url, function(status) {
-					var html, environmentVars;
+					var html, environmentVars = '';
 
 					if ( status === 'success' ) {
 						html = page.content;
@@ -186,7 +186,7 @@
 
 						// Collect environment variables
 						environmentVars = page.evaluate(function() {
-							var i, environmentVars;
+							var i, environmentVars = '';
 
 							for ( i in window ) {
 								environmentVars += i + ' ';
