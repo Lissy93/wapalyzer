@@ -350,7 +350,10 @@ var wappalyzer = (function() {
 		},
 
 		resolveImplies: function(apps, url) {
-			var checkImplies = true;
+			var
+				confidence,
+				id,
+				checkImplies = true;
 
 			// Implied applications
 			// Run several passes as implied apps may imply other apps
@@ -395,7 +398,7 @@ var wappalyzer = (function() {
 		 * Cache detected applications
 		 */
 		cacheDetectedApps: function(apps, url) {
-			var app, key, confidence;
+			var app, id, confidence;
 
 			for ( app in apps ) {
 				confidence = apps[app].confidence;
@@ -403,8 +406,8 @@ var wappalyzer = (function() {
 				// Per URL
 				w.detected[url][app] = apps[app];
 
-				for ( key in confidence ) {
-					w.detected[url][app].confidence[key] = confidence[key];
+				for ( id in confidence ) {
+					w.detected[url][app].confidence[id] = confidence[id];
 				}
 			}
 		},
