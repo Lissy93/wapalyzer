@@ -234,7 +234,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				app, confirmMatch, type,
+				app,
 				apps = {};
 
 			w.log('w.analyze');
@@ -259,50 +259,22 @@ var wappalyzer = (function() {
 			for ( app in w.apps ) {
 				apps[app] = w.detected[url] && w.detected[url][app] ? w.detected[url][app] : new Application(app);
 
-				for ( type in w.apps[app] ) {
-					confirmMatch = function(pattern, value, key) {
-						apps[app].setDetected(pattern, type, value, key);
-					}
+				if ( url ) {
+					w.analyzeUrl(apps[app], url);
+				}
 
-					switch ( type ) {
-						case 'url':
-							if ( url ) {
-								w.analyzeUrl(parsePatterns(w.apps[app][type]), url, confirmMatch);
-							}
+				if ( data.html ) {
+					w.analyzeHtml(apps[app], data.html);
+					w.analyzeScript(apps[app], data.html);
+					w.analyzeMeta(apps[app], data.html);
+				}
 
-							break;
-						case 'html':
-							if ( data.html ) {
-								w.analyzeHtml(parsePatterns(w.apps[app][type]), data.html, confirmMatch);
-							}
+				if ( data.headers ) {
+					w.analyzeHeaders(apps[app], data.headers);
+				}
 
-							break;
-						case 'script':
-							if ( data.html ) {
-								w.analyzeScript(parsePatterns(w.apps[app][type]), data.html, confirmMatch);
-							}
-
-							break;
-						case 'meta':
-							if ( data.html ) {
-								w.analyzeMeta(parsePatterns(w.apps[app][type]), data.html, confirmMatch);
-							}
-
-							break;
-						case 'headers':
-							if ( data.hasOwnProperty('headers') && data.headers ) {
-								w.analyzeHeaders(parsePatterns(w.apps[app][type]), data.headers, confirmMatch);
-							}
-
-							break;
-						case 'env':
-							if ( data.hasOwnProperty('env') && data.env ) {
-								w.analyzeEnv(parsePatterns(w.apps[app][type]), data.env, confirmMatch);
-							}
-
-							break;
-						default:
-					}
+				if ( data.env ) {
+					w.analyzeEnv(apps[app], data.env);
 				}
 			}
 
@@ -462,60 +434,75 @@ var wappalyzer = (function() {
 		/**
 		 * Analyze URL
 		 */
-		analyzeUrl: function(patterns, url, confirmMatch) {
-			patterns.forEach(function(pattern) {
-				if ( pattern.regex.test(url) ) {
-					confirmMatch(pattern, url);
-				}
-			});
+		analyzeUrl: function(app, url) {
+			var patterns = parsePatterns(w.apps[app.app].url);
+
+			if ( patterns.length ) {
+				patterns.forEach(function(pattern) {
+					if ( pattern.regex.test(url) ) {
+						app.setDetected(pattern, 'url', url);
+					}
+				});
+			}
 		},
 
 		/**
 		 * Analyze HTML
 		 */
-		analyzeHtml: function(patterns, html, confirmMatch) {
-			patterns.forEach(function(pattern) {
-				if ( pattern.regex.test(html) ) {
-					confirmMatch(pattern, html);
-				}
-			});
+		analyzeHtml: function(app, html) {
+			var patterns = parsePatterns(w.apps[app.app].html);
+
+			if ( patterns.length ) {
+				patterns.forEach(function(pattern) {
+					if ( pattern.regex.test(html) ) {
+						app.setDetected(pattern, 'html', html);
+					}
+				});
+			}
 		},
 
 		/**
 		 * Analyze script tag
 		 */
-		analyzeScript: function(patterns, html, confirmMatch) {
-			var regex = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
+		analyzeScript: function(app, html) {
+			var
+				regex = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig'),
+				patterns = parsePatterns(w.apps[app.app].script);
 
-			patterns.forEach(function(pattern) {
-				var match;
+			if ( patterns.length ) {
+				patterns.forEach(function(pattern) {
+					var match;
 
-				while ( match = regex.exec(html) ) {
-					if ( pattern.regex.test(match[2]) ) {
-						confirmMatch(pattern, match[2]);
+					while ( match = regex.exec(html) ) {
+						if ( pattern.regex.test(match[2]) ) {
+							app.setDetected(pattern, 'script', match[2]);
+						}
 					}
-				}
-			});
+				});
+			}
 		},
 
 		/**
 		 * Analyze meta tag
 		 */
-		analyzeMeta: function(patterns, html, confirmMatch) {
+		analyzeMeta: function(app, html) {
 			var
 				content, match, meta,
-				regex = /<meta[^>]+>/ig;
+				regex = /<meta[^>]+>/ig,
+				patterns = parsePatterns(w.apps[app.app].meta);
 
-			while ( match = regex.exec(html) ) {
-				for ( meta in patterns ) {
-					if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
-						content = match.toString().match(/content=("|')([^"']+)("|')/i);
+			if ( patterns.length ) {
+				while ( match = regex.exec(html) ) {
+					for ( meta in patterns ) {
+						if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
+							content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
-						patterns[meta].forEach(function(pattern) {
-							if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-								confirmMatch(pattern, content[2], meta);
-							}
-						});
+							patterns[meta].forEach(function(pattern) {
+								if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+									app.setDetected(pattern, 'meta', content[2], meta);
+								}
+							});
+						}
 					}
 				}
 			}
@@ -524,33 +511,41 @@ var wappalyzer = (function() {
 		/**
 		 * analyze response headers
 		 */
-		analyzeHeaders: function(patterns, headers, confirmMatch) {
-			var header;
+		analyzeHeaders: function(app, headers) {
+			var
+				header,
+				patterns = parsePatterns(w.apps[app.app].headers);
 
-			for ( header in patterns ) {
-				patterns[header].forEach(function(pattern) {
-					header = header.toLowerCase();
+			if ( patterns.length && headers ) {
+				for ( header in patterns ) {
+					patterns[header].forEach(function(pattern) {
+						header = header.toLowerCase();
 
-					if ( headers.hasOwnProperty(header) && pattern.regex.test(headers[header]) ) {
-						confirmMatch(pattern, headers[header], header);
-					}
-				});
+						if ( headers.hasOwnProperty(header) && pattern.regex.test(headers[header]) ) {
+							app.setDetected(pattern, 'headers', headers[header], header);
+						}
+					});
+				}
 			}
 		},
 
 		/**
 		 * Analyze environment variables
 		 */
-		analyzeEnv: function(patterns, envs, confirmMatch) {
-			var env;
+		analyzeEnv: function(app, envs) {
+			var patterns = parsePatterns(w.apps[app.app].env);
 
-			patterns.forEach(function(pattern) {
-				for ( env in envs ) {
-					if ( pattern.regex.test(envs[env]) ) {
-						confirmMatch(pattern, envs[env]);
+			if ( patterns.length ) {
+				patterns.forEach(function(pattern) {
+					var env;
+
+					for ( env in envs ) {
+						if ( pattern.regex.test(envs[env]) ) {
+							app.setDetected(pattern, 'env', envs[env]);
+						}
 					}
-				}
-			});
+				});
+			}
 		}
 	};
 
