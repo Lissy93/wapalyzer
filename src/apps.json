@@ -1356,8 +1356,8 @@
 				1
 			],
 			"headers": {
-				"Access-Control-Allow-Headers": "X-CKAN-API-KEY\\;confidence:90",
-				"Link": "<http://ckan.org/>; rel=shortlink\\;confidence:90"
+				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
+				"Link": "<http://ckan.org/>; rel=shortlink"
 			},
 			"icon": "Ckan.png",
 			"implies": [
@@ -1367,7 +1367,7 @@
 				"PostgreSQL\\;confidence:80"
 			],
 			"meta": {
-				"generator": "ckan.*?(\\d\\.\\d\\.\\d)?\\;version:\\1"
+				"generator": "^ckan\\s+(\\d{1,}\\.\\d{1,}\\.\\d{1,})$"
 			},
 			"website": "http://ckan.org/"
 		},
