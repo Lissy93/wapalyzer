@@ -22,7 +22,7 @@
 
 		require('fs').changeWorkingDirectory(scriptDir);
 
-		require('system').args.forEach(function(arg, i) {
+		require('system').args.forEach(function(arg) {
 			var
 				value,
 				arr = /^(--[^=]+)=(.+)$/.exec(arg);

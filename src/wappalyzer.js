@@ -508,9 +508,6 @@ var wappalyzer = (function() {
 				driver('ping');
 			}
 
-			apps = null;
-			data = null;
-
 			driver('displayApps');
 		}
 	};

@@ -1,3 +1,6 @@
+/** global: chrome */
+/** global: browser */
+
 document.addEventListener('DOMContentLoaded', function() {
 	var
 		slugify, popup,
@@ -34,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			var callback = function(tabs) {
         function sendGetApps(response) {
+					var html;
+
 					if ( response.tabCache && response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';
 

@@ -148,7 +148,9 @@
 						}
 
 						for ( var header in responseHeaders ) {
-							headersCache[uri][header] = responseHeaders[header];
+							if ( responseHeaders.hasOwnProperty(header) ) {
+								headersCache[uri][header] = responseHeaders[header];
+							}
 						}
 					}
 
@@ -209,6 +211,7 @@
 						};
 
 						break;
+					default:
 				}
 
 				sendResponse(response);
@@ -313,7 +316,7 @@
 
 			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-			xhr.onreadystatechange = function(e) {
+			xhr.onreadystatechange = function() {
 				if ( xhr.readyState == 4 ) {
 					w.log('w.driver.post: status ' + xhr.status + ' (' + url + ')');
 				}
