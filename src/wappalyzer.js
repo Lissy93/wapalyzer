@@ -234,7 +234,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				confirmMatch, confidence, match, type, version,
+				confirmMatch, confidence, id, match, patterns, type, version,
 				apps         = {},
 				excludes     = [],
 				checkImplies = true;
@@ -355,8 +355,6 @@ var wappalyzer = (function() {
 						}
 
 						w.apps[app].implies.forEach(function(implied) {
-							var id;
-
 							implied = parsePatterns(implied)[0];
 
 							if ( !w.apps[implied.string] ) {
