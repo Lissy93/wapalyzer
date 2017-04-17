@@ -234,11 +234,10 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				confirmMatch,
+				confirmMatch, confidence, match, type, version,
 				apps         = {},
 				excludes     = [],
-				checkImplies = true,
-				patterns     = [];
+				checkImplies = true;
 
 			w.log('w.analyze');
 
@@ -356,6 +355,8 @@ var wappalyzer = (function() {
 						}
 
 						w.apps[app].implies.forEach(function(implied) {
+							var id;
+
 							implied = parsePatterns(implied)[0];
 
 							if ( !w.apps[implied.string] ) {
@@ -482,7 +483,7 @@ var wappalyzer = (function() {
 		 */
 		analyzeMeta: function(patterns, html, confirmMatch) {
 			var
-				meta,
+				content, meta,
 				regex = /<meta[^>]+>/ig;
 
 			while ( match = regex.exec(html) ) {
@@ -504,6 +505,8 @@ var wappalyzer = (function() {
 		 * analyze response headers
 		 */
 		analyzeHeaders: function(patterns, headers, confirmMatch) {
+			var header;
+
 			for ( header in patterns ) {
 				patterns[header].forEach(function(pattern) {
 					header = header.toLowerCase();
