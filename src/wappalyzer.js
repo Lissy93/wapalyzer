@@ -102,33 +102,6 @@ var wappalyzer = (function() {
 		}
 	};
 
-	var Profiler = function() {
-		this.regexCount = 0;
-		this.startTime  = new Date().getTime();
-		this.lastTime   = new Date().getTime();
-		this.slowest    = { duration: null, app: '', type: '', pattern: '' };
-		this.timedOut   = false;
-	};
-
-	Profiler.prototype = {
-		checkPoint: function(app, type, regex) {
-			var duration = new Date().getTime() - this.lastTime;
-
-			if ( !this.slowest.duration || duration > this.slowest.duration ) {
-				this.slowest.duration = duration;
-				this.slowest.app      = app;
-				this.slowest.type     = type;
-				this.slowest.regex    = regex;
-			}
-
-			this.regexCount++;
-
-			this.lastTime = new Date().getTime();
-
-			this.timedOut = this.lastTime - this.startTime > w.driver.timeout;
-		}
-	};
-
 	/**
 	 * Call driver functions
 	 */
@@ -149,42 +122,61 @@ var wappalyzer = (function() {
 	/**
 	 * Parse apps.json patterns
 	 */
-	var parse = function(patterns) {
+	var parsePatterns = function(patterns) {
 		var
-			attrs,
-			parsed = [];
+			key,
+			parsed = {};
 
-		// Convert single patterns to an array
-		if ( typeof patterns === 'string' ) {
-			patterns = [ patterns ];
+		// Convert array to object containing array
+		if ( patterns instanceof Array ) {
+			patterns = { main: patterns }
 		}
 
-		patterns.forEach(function(pattern) {
-			attrs = {};
+		// Convert string to object containing array containing string
+		if ( typeof patterns === 'string' ) {
+			patterns = { main: [ patterns ] };
+		}
 
-			pattern.split('\\;').forEach(function(attr, i) {
-				if ( i ) {
-					// Key value pairs
-					attr = attr.split(':');
+		for ( key in patterns ) {
+			parsed[key] = [];
 
-					if ( attr.length > 1 ) {
-						attrs[attr.shift()] = attr.join(':');
+			// Convert string to array containing string
+			if ( typeof patterns[key] === 'string' ) {
+				patterns[key] = [ patterns[key] ];
+			}
+
+			patterns[key].forEach(function(pattern) {
+				var attrs = {};
+
+				pattern.split('\\;').forEach(function(attr, i) {
+					if ( i ) {
+						// Key value pairs
+						attr = attr.split(':');
+
+						if ( attr.length > 1 ) {
+							attrs[attr.shift()] = attr.join(':');
+						}
+					} else {
+						attrs.string = attr;
+
+						try {
+							attrs.regex = new RegExp(attr.replace('/', '\/'), 'i'); // Escape slashes in regular expression
+						} catch (e) {
+							attrs.regex = new RegExp();
+
+							w.log(e + ': ' + attr, 'error');
+						}
 					}
-				} else {
-					attrs.string = attr;
+				});
 
-					try {
-						attrs.regex = new RegExp(attr.replace('/', '\/'), 'i'); // Escape slashes in regular expression
-					} catch (e) {
-						attrs.regex = new RegExp();
-
-						w.log(e + ': ' + attr, 'error');
-					}
-				}
+				parsed[key].push(attrs);
 			});
+		}
 
-			parsed.push(attrs);
-		});
+		// Convert back to array if the original pattern list was an array (or string)
+		if ( parsed.hasOwnProperty('main') ) {
+			parsed = parsed.main;
+		}
 
 		return parsed;
 	};
@@ -242,16 +234,13 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version, id,
-				profiler     = new Profiler(),
+				confirmMatch,
 				apps         = {},
 				excludes     = [],
-				checkImplies = true;
+				checkImplies = true,
+				patterns     = [];
 
 			w.log('w.analyze');
-
-			// Remove hash from URL
-			data.url = url = url.split('#')[0];
 
 			if ( w.apps === undefined || w.categories === undefined ) {
 				w.log('apps.json not loaded, check for syntax errors');
@@ -259,139 +248,72 @@ var wappalyzer = (function() {
 				return;
 			}
 
+			// Remove hash from URL
+			data.url = url = url.split('#')[0];
+
+			if ( typeof data.html !== 'string' ) {
+				data.html = '';
+			}
+
 			if ( w.detected[url] === undefined ) {
 				w.detected[url] = {};
 			}
 
 			for ( app in w.apps ) {
-				// Exit loop after one second to prevent CPU hogging
-				// Remaining patterns will not be evaluated
-				if ( profiler.timedOut ) {
-					w.log('Timeout, exiting loop');
-
-					break;
-				}
-
 				apps[app] = w.detected[url] && w.detected[url][app] ? w.detected[url][app] : new Application(app);
 
 				for ( type in w.apps[app] ) {
+					patterns = parsePatterns(w.apps[app][type]);
+
+					if ( !patterns ) {
+						continue;
+					}
+
+					confirmMatch = function(pattern, value, key) {
+						apps[app].setDetected(pattern, type, value, key);
+					}
+
 					switch ( type ) {
 						case 'url':
-							parse(w.apps[app][type]).forEach(function(pattern) {
-								if ( pattern.regex.test(url) ) {
-									apps[app].setDetected(pattern, type, url);
-								}
-
-								profiler.checkPoint(app, type, pattern.regex);
-							});
+							if ( url ) {
+								w.analyzeUrl(patterns, url, confirmMatch);
+							}
 
 							break;
 						case 'html':
-							if ( typeof data[type] !== 'string' || !data.html ) {
-								break;
+							if ( data.html ) {
+								w.analyzeHtml(patterns, data.html, confirmMatch);
 							}
-
-							parse(w.apps[app][type]).forEach(function(pattern) {
-								if ( pattern.regex.test(data[type]) ) {
-									apps[app].setDetected(pattern, type, data[type]);
-								}
-
-								profiler.checkPoint(app, type, pattern.regex);
-							});
 
 							break;
 						case 'script':
-							if ( typeof data.html !== 'string' || !data.html ) {
-								break;
+							if ( data.html ) {
+								w.analyzeScript(patterns, data.html, confirmMatch);
 							}
-
-							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
-
-							parse(w.apps[app][type]).forEach(function(pattern) {
-								while ( match = regexScript.exec(data.html) ) {
-									if ( pattern.regex.test(match[2]) ) {
-										apps[app].setDetected(pattern, type, match[2]);
-									}
-								}
-
-								profiler.checkPoint(app, type, pattern.regex);
-							});
 
 							break;
 						case 'meta':
-							if ( typeof data.html !== 'string' || !data.html ) {
-								break;
-							}
-
-							regexMeta = /<meta[^>]+>/ig;
-
-							while ( match = regexMeta.exec(data.html) ) {
-								for ( meta in w.apps[app][type] ) {
-									profiler.checkPoint(app, type, regexMeta);
-
-									if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
-										content = match.toString().match(/content=("|')([^"']+)("|')/i);
-
-										parse(w.apps[app].meta[meta]).forEach(function(pattern) {
-											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-												apps[app].setDetected(pattern, type, content[2], meta);
-											}
-
-											profiler.checkPoint(app, type, pattern.regex);
-										});
-									}
-								}
+							if ( data.html ) {
+								w.analyzeMeta(patterns, data.html, confirmMatch);
 							}
 
 							break;
 						case 'headers':
-							if ( typeof data[type] !== 'object' || !data[type] ) {
-								break;
-							}
-
-							for ( header in w.apps[app].headers ) {
-								parse(w.apps[app][type][header]).forEach(function(pattern) {
-									if ( data[type][header.toLowerCase()] instanceof Array ) {
-										data[type][header.toLowerCase()].forEach(function(el) {
-											if ( typeof el === 'string' && pattern.regex.test(el) ) {
-												apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
-											}
-										});
-									} else {
-											if ( typeof data[type][header.toLowerCase()] === 'string' && pattern.regex.test(data[type][header.toLowerCase()]) ) {
-												apps[app].setDetected(pattern, type, data[type][header.toLowerCase()], header);
-											}
-									}
-
-									profiler.checkPoint(app, type, pattern.regex);
-								});
+							if ( data.hasOwnProperty('headers') && data.headers ) {
+								w.analyzeHeaders(patterns, data.headers, confirmMatch);
 							}
 
 							break;
 						case 'env':
-							if ( typeof data[type] !== 'object' || !data[type] ) {
-								break;
+							if ( data.hasOwnProperty('env') && data.env ) {
+								w.analyzeEnv(patterns, data.env, confirmMatch);
 							}
-
-							parse(w.apps[app][type]).forEach(function(pattern) {
-								for ( i in data[type] ) {
-
-									if ( pattern.regex.test(data[type][i]) ) {
-										apps[app].setDetected(pattern, type, data[type][i]);
-									}
-								}
-
-								profiler.checkPoint(app, type, pattern.regex);
-							});
 
 							break;
 						default:
 					}
 				}
 			}
-
-			w.log('[ profiler ] Tested ' + profiler.regexCount + ' regular expressions in ' + ( (new Date().getTime() - profiler.startTime) / 1000 ) + 's');
-			w.log('[ profiler ] Slowest pattern took ' + ( profiler.slowest.duration / 1000 ) + 's: ' + profiler.slowest.app + ' | ' + profiler.slowest.type + ' | ' + profiler.slowest.regex);
 
 			for ( app in apps ) {
 				if ( !apps[app].detected ) {
@@ -434,7 +356,7 @@ var wappalyzer = (function() {
 						}
 
 						w.apps[app].implies.forEach(function(implied) {
-							implied = parse(implied)[0];
+							implied = parsePatterns(implied)[0];
 
 							if ( !w.apps[implied.string] ) {
 								w.log('Implied application ' + implied.string + ' does not exist', 'warn');
@@ -475,11 +397,16 @@ var wappalyzer = (function() {
 					// Per hostname
 					if ( /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/.test(hostname) && !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(url) ) {
 						if ( !w.ping.hostnames.hasOwnProperty(hostname) ) {
-							w.ping.hostnames[hostname] = { applications: {}, meta: {} };
+							w.ping.hostnames[hostname] = {
+								applications: {},
+								meta: {}
+							};
 						}
 
 						if ( !w.ping.hostnames[hostname].applications.hasOwnProperty(app) ) {
-							w.ping.hostnames[hostname].applications[app] = { hits: 0 };
+							w.ping.hostnames[hostname].applications[app] = {
+								hits: 0
+							};
 						}
 
 						w.ping.hostnames[hostname].applications[app].hits ++;
@@ -509,6 +436,98 @@ var wappalyzer = (function() {
 			}
 
 			driver('displayApps');
+		},
+
+		/**
+		 * Analyze URL
+		 */
+		analyzeUrl: function(patterns, url, confirmMatch) {
+			patterns.forEach(function(pattern) {
+				if ( pattern.regex.test(url) ) {
+					confirmMatch(pattern, url);
+				}
+			});
+		},
+
+		/**
+		 * Analyze HTML
+		 */
+		analyzeHtml: function(patterns, html, confirmMatch) {
+			patterns.forEach(function(pattern) {
+				if ( pattern.regex.test(html) ) {
+					confirmMatch(pattern, html);
+				}
+			});
+		},
+
+		/**
+		 * Analyze script tag
+		 */
+		analyzeScript: function(patterns, html, confirmMatch) {
+			var regex = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
+
+			patterns.forEach(function(pattern) {
+				var match;
+
+				while ( match = regex.exec(html) ) {
+					if ( pattern.regex.test(match[2]) ) {
+						confirmMatch(pattern, match[2]);
+					}
+				}
+			});
+		},
+
+		/**
+		 * Analyze meta tag
+		 */
+		analyzeMeta: function(patterns, html, confirmMatch) {
+			var
+				meta,
+				regex = /<meta[^>]+>/ig;
+
+			while ( match = regex.exec(html) ) {
+				for ( meta in patterns ) {
+					if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
+						content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
+						patterns[meta].forEach(function(pattern) {
+							if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
+								confirmMatch(pattern, content[2], meta);
+							}
+						});
+					}
+				}
+			}
+		},
+
+		/**
+		 * analyze response headers
+		 */
+		analyzeHeaders: function(patterns, headers, confirmMatch) {
+			for ( header in patterns ) {
+				patterns[header].forEach(function(pattern) {
+					header = header.toLowerCase();
+
+					if ( headers.hasOwnProperty(header) && pattern.regex.test(headers[header]) ) {
+						confirmMatch(pattern, headers[header], header);
+					}
+				});
+			}
+		},
+
+		/**
+		 * Analyze environment variables
+		 */
+		analyzeEnv: function(patterns, envs, confirmMatch) {
+			var env;
+
+			patterns.forEach(function(pattern) {
+				for ( env in envs ) {
+					if ( pattern.regex.test(envs[env]) ) {
+						confirmMatch(pattern, envs[env]);
+					}
+				}
+			});
 		}
 	};
 
