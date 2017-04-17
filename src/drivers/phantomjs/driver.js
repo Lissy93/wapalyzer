@@ -1,3 +1,10 @@
+/**
+ * PhantomJS driver
+ */
+
+/** global: phantom */
+/** global: wappalyzer */
+
 (function() {
 	var
 		url,
@@ -16,7 +23,9 @@
 		require('fs').changeWorkingDirectory(scriptDir);
 
 		require('system').args.forEach(function(arg, i) {
-			var arr = /^(--[^=]+)=(.+)$/.exec(arg);
+			var
+				value,
+				arr = /^(--[^=]+)=(.+)$/.exec(arg);
 
 			if ( arr && arr.length === 3 ) {
 				arg   = arr[1];
@@ -35,7 +44,9 @@
 
 					break;
 				case '--resource-timeout':
-					resourceTimeout = value;
+					if ( value ) {
+						resourceTimeout = value;
+					}
 
 					break;
 				default:
@@ -112,7 +123,7 @@
 			init: function() {
 				var
 					page, hostname,
-					headers = {};
+					headers = {},
 					a       = document.createElement('a'),
 					json    = JSON.parse(require('fs').read('apps.json'));
 

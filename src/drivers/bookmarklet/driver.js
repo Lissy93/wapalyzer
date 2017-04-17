@@ -1,6 +1,9 @@
 /**
- * Bookmarklet driver
+ * WebExtension driver
  */
+
+/** global: wappalyzer */
+/** global: XMLHttpRequest */
 
 (function() {
 	if ( typeof wappalyzer === 'undefined' ) {

@@ -25,6 +25,26 @@
 		},
 
 		/**
+		 * Get a value from localStorage
+		 */
+		getOption: function(name, defaultValue, callback) {
+			browser.storage.local.get(name).then(function(item) {
+				callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
+			});
+		},
+
+		/**
+		 * Set a value in localStorage
+		 */
+		setOption: function(name, value) {
+			var option = {};
+
+			option[name] = value;
+
+			browser.storage.local.set(option);
+		},
+
+		/**
 		 * Initialize
 		 */
 		init: function() {
@@ -54,19 +74,27 @@
 			try {
 				var version = browser.runtime.getManifest().version;
 
-				if ( localStorage['version'] == null ) {
-					firstRun = true;
-
-					// Set defaults
-					for ( var option in defaults ) {
-						localStorage[option] = defaults[option];
+				w.driver.getOption('version', null, function(previousVersion) {
+					if ( previousVersion === null ) {
+						w.driver.goToURL({
+						 	url: w.config.websiteURL + 'installed'
+						});
+					} else if ( version !== previousVersion ) {
+						w.driver.getOption('upgradeMessage', true, function(upgradeMessage) {
+							if ( upgradeMessage ) {
+								w.driver.goToURL({
+									url: w.config.websiteURL + 'upgraded',
+									background: true
+								});
+							}
+						});
 					}
-				} else if ( version !== localStorage['version'] && parseInt(localStorage['upgradeMessage'], 10) ) {
-					upgraded = true;
-				}
 
-				localStorage['version'] = version;
-			} catch(e) { }
+					w.driver.setOption('version', version);
+				});
+			} catch(e) {
+				// Do nothing
+			}
 
       if ( typeof chrome === 'undefined' ) {
         browser.runtime.onMessage.addListener(w.driver.onMessage);
@@ -183,10 +211,14 @@
 
 		},
 
+		/**
+		 * Open a tab
+		 */
 		goToURL: function(args) {
-			var url = args.url + ( typeof args.medium === 'undefined' ? '' :  '?pk_campaign=chrome&pk_kwd=' + args.medium);
-
-			browser.tabs.create({ url: url, active: args.background === undefined || !args.background });
+			browser.tabs.create({
+				url: args.url,
+				active: args.background === undefined || !args.background
+			});
 		},
 
 		/**
@@ -208,37 +240,42 @@
 			tabCache[tab.id].appsDetected = w.detected[url];
 
 			if ( count > 0 ) {
-				// Find the main application to display
-				var appName, found = false;
+				w.driver.getOption('dynamicIcon', true, function(dynamicIcon) {
+					var appName, found = false;
 
-				w.driver.categoryOrder.forEach(function(match) {
-					for ( appName in w.detected[url] ) {
-						w.apps[appName].cats.forEach(function(cat) {
-							var icon = w.apps[appName].icon || 'default.svg';
+					// Find the main application to display
+					w.driver.categoryOrder.forEach(function(match) {
+						for ( appName in w.detected[url] ) {
+							w.apps[appName].cats.forEach(function(cat) {
+								var icon = w.apps[appName].icon || 'default.svg';
 
-							if ( !parseInt(localStorage['dynamicIcon'], 10) ) {
-								icon = 'default.svg';
-							}
-
-							if ( cat == match && !found ) {
-								if ( /\.svg$/i.test(icon) ) {
-									icon = 'converted/' + icon + '.png';
+								if ( !dynamicIcon ) {
+									icon = 'default.svg';
 								}
 
-								browser.pageAction.setIcon({ tabId: tab.id, path: 'images/icons/' + icon });
+								if ( cat === match && !found ) {
+									if ( /\.svg$/i.test(icon) ) {
+										icon = 'converted/' + icon + '.png';
+									}
 
-								found = true;
-							}
-						});
+									browser.pageAction.setIcon({
+										tabId: tab.id,
+										path: 'images/icons/' + icon
+									});
+
+									found = true;
+								}
+							});
+						}
+					});
+
+					if ( typeof chrome !== 'undefined' ) {
+						// Browser polyfill doesn't seem to work here
+						chrome.pageAction.show(tab.id);
+					} else {
+						browser.pageAction.show(tab.id);
 					}
 				});
-
-				if ( typeof chrome !== 'undefined' ) {
-					// Browser polyfill doesn't seem to work here
-					chrome.pageAction.show(tab.id);
-				} else {
-					browser.pageAction.show(tab.id);
-				}
 			};
 		},
 
@@ -246,17 +283,19 @@
 		 * Anonymously track detected applications for research purposes
 		 */
 		ping: function() {
-			if ( Object.keys(w.ping.hostnames).length && parseInt(localStorage['tracking'], 10) ) {
-				w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
+			w.driver.getOption('tracking', true, function(tracking) {
+				if ( Object.keys(w.ping.hostnames).length && tracking ) {
+					w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
 
-				w.log('w.driver.ping: ' + JSON.stringify(w.ping));
+					w.log('w.driver.ping: ' + JSON.stringify(w.ping));
 
-				w.ping = { hostnames: {} };
+					w.ping = { hostnames: {} };
 
-				w.driver.post('https://ad.wappalyzer.com/log/wp/', w.adCache);
+					w.driver.post('https://ad.wappalyzer.com/log/wp/', w.adCache);
 
-				w.adCache = [];
-			}
+					w.adCache = [];
+				}
+			});
 		},
 
 		/**

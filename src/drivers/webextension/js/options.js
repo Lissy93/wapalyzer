@@ -1,57 +1,61 @@
+/** global: localStorage */
+
 document.addEventListener('DOMContentLoaded', function() {
 	var d = document;
 
 	var options = {
-		opts: defaults,
-
 		init: function() {
 			options.load();
 
-			d.getElementById('github'    ).addEventListener('click', function() { window.open(wappalyzer.config.githubURL);  });
-			d.getElementById('twitter'   ).addEventListener('click', function() { window.open(wappalyzer.config.twitterURL); });
-			d.getElementById('wappalyzer').addEventListener('click', function() { window.open(wappalyzer.config.websiteURL + '?pk_campaign=chrome&pk_kwd=options'); });
+			d.querySelector('#github'    ).addEventListener('click', function() { open(wappalyzer.config.githubURL);  });
+			d.querySelector('#twitter'   ).addEventListener('click', function() { open(wappalyzer.config.twitterURL); });
+			d.querySelector('#wappalyzer').addEventListener('click', function() { open(wappalyzer.config.websiteURL); });
+		},
 
-			d.getElementById('options-save').addEventListener('click', options.save);
+		get: function(name, defaultValue, callback) {
+			browser.storage.local.get(name).then(function(item) {
+				callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
+			});
+		},
+
+		set: function(name, value) {
+			var option = {};
+
+			option[name] = value;
+
+			browser.storage.local.set(option);
 		},
 
 		load: function() {
-			var option, value;
+			options.get('upgradeMessage', true, function(value) {
+				var el = d.querySelector('#option-upgrade-message');
 
-			for ( option in options.opts ) {
-				if ( value = localStorage[option] ) {
-					options.opts[option] = value;
-				}
-			}
+				el.checked = value;
 
-			if ( parseInt(options.opts.upgradeMessage) ) {
-				d.getElementById('option-upgrade-message').setAttribute('checked', 'checked');
-			}
+				el.addEventListener('change', function() {
+					options.set('upgradeMessage', el.checked);
+				});
+			});
 
-			if ( parseInt(options.opts.dynamicIcon) ) {
-				d.getElementById('option-dynamic-icon').setAttribute('checked', 'checked');
-			}
+			options.get('dynamicIcon', true, function(value) {
+				var el = d.querySelector('#option-dynamic-icon');
 
-			if ( parseInt(options.opts.tracking) ) {
-				d.getElementById('option-tracking').setAttribute('checked', 'checked');
-			}
-		},
+				el.checked = value;
 
-		save: function() {
-			var option;
+				el.addEventListener('change', function() {
+					options.set('dynamicIcon', el.checked);
+				});
+			});
 
-			options.opts.upgradeMessage = d.getElementById('option-upgrade-message').checked ? 1 : 0;
-			options.opts.dynamicIcon    = d.getElementById('option-dynamic-icon'   ).checked ? 1 : 0;
-			options.opts.tracking       = d.getElementById('option-tracking'       ).checked ? 1 : 0;
+			options.get('tracking', true, function(value) {
+				var el = d.querySelector('#option-tracking');
 
-			for ( option in options.opts ) {
-				localStorage[option] = options.opts[option];
-			}
+				el.checked = value;
 
-			d.getElementById('options-saved').style.display = 'inline';
-
-			setTimeout(function(){
-				d.getElementById('options-saved').style.display = 'none';
-			}, 2000);
+				el.addEventListener('change', function() {
+					options.set('tracking', el.checked);
+				});
+			});
 		}
 	};
 
