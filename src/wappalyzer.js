@@ -234,10 +234,8 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				confirmMatch, confidence, id, match, patterns, type, version,
-				apps         = {},
-				excludes     = [],
-				checkImplies = true;
+				app, confirmMatch, type,
+				apps = {};
 
 			w.log('w.analyze');
 
@@ -262,12 +260,6 @@ var wappalyzer = (function() {
 				apps[app] = w.detected[url] && w.detected[url][app] ? w.detected[url][app] : new Application(app);
 
 				for ( type in w.apps[app] ) {
-					patterns = parsePatterns(w.apps[app][type]);
-
-					if ( !patterns ) {
-						continue;
-					}
-
 					confirmMatch = function(pattern, value, key) {
 						apps[app].setDetected(pattern, type, value, key);
 					}
@@ -275,37 +267,37 @@ var wappalyzer = (function() {
 					switch ( type ) {
 						case 'url':
 							if ( url ) {
-								w.analyzeUrl(patterns, url, confirmMatch);
+								w.analyzeUrl(parsePatterns(w.apps[app][type]), url, confirmMatch);
 							}
 
 							break;
 						case 'html':
 							if ( data.html ) {
-								w.analyzeHtml(patterns, data.html, confirmMatch);
+								w.analyzeHtml(parsePatterns(w.apps[app][type]), data.html, confirmMatch);
 							}
 
 							break;
 						case 'script':
 							if ( data.html ) {
-								w.analyzeScript(patterns, data.html, confirmMatch);
+								w.analyzeScript(parsePatterns(w.apps[app][type]), data.html, confirmMatch);
 							}
 
 							break;
 						case 'meta':
 							if ( data.html ) {
-								w.analyzeMeta(patterns, data.html, confirmMatch);
+								w.analyzeMeta(parsePatterns(w.apps[app][type]), data.html, confirmMatch);
 							}
 
 							break;
 						case 'headers':
 							if ( data.hasOwnProperty('headers') && data.headers ) {
-								w.analyzeHeaders(patterns, data.headers, confirmMatch);
+								w.analyzeHeaders(parsePatterns(w.apps[app][type]), data.headers, confirmMatch);
 							}
 
 							break;
 						case 'env':
 							if ( data.hasOwnProperty('env') && data.env ) {
-								w.analyzeEnv(patterns, data.env, confirmMatch);
+								w.analyzeEnv(parsePatterns(w.apps[app][type]), data.env, confirmMatch);
 							}
 
 							break;
@@ -320,9 +312,25 @@ var wappalyzer = (function() {
 				}
 			}
 
+			w.resolveExcludes(apps);
+			w.resolveImplies(apps, url);
+
+			w.cacheDetectedApps(apps, url);
+			w.trackDetectedApps(apps, url, hostname, data.html);
+
+			w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url);
+
+			driver('displayApps');
+		},
+
+		resolveExcludes: function(apps) {
+			var
+				app,
+				excludes = [];
+
 			// Exclude app in detected apps only
 			for ( app in apps ) {
-				if (w.apps[app].excludes ) {
+				if ( w.apps[app].excludes ) {
 					if ( typeof w.apps[app].excludes === 'string' ) {
 						w.apps[app].excludes = [ w.apps[app].excludes ];
 					}
@@ -339,6 +347,10 @@ var wappalyzer = (function() {
 					delete apps[app];
 				}
 			}
+		},
+
+		resolveImplies: function(apps, url) {
+			var checkImplies = true;
 
 			// Implied applications
 			// Run several passes as implied apps may imply other apps
@@ -377,23 +389,34 @@ var wappalyzer = (function() {
 					}
 				}
 			}
+		},
 
-			w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url);
+		/**
+		 * Cache detected applications
+		 */
+		cacheDetectedApps: function(apps, url) {
+			var app, key, confidence;
 
-			// Keep history of detected apps
 			for ( app in apps ) {
 				confidence = apps[app].confidence;
-				version    = apps[app].version;
 
 				// Per URL
 				w.detected[url][app] = apps[app];
 
-				for ( id in confidence ) {
-					w.detected[url][app].confidence[id] = confidence[id];
+				for ( key in confidence ) {
+					w.detected[url][app].confidence[key] = confidence[key];
 				}
+			}
+		},
 
+		/**
+		 * Track detected applications
+		 */
+		trackDetectedApps: function(apps, url, hostname, html) {
+			var app, match;
+
+			for ( app in apps ) {
 				if ( w.detected[url][app].getConfidence() >= 100 ) {
-					// Per hostname
 					if ( /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/.test(hostname) && !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(url) ) {
 						if ( !w.ping.hostnames.hasOwnProperty(hostname) ) {
 							w.ping.hostnames[hostname] = {
@@ -410,8 +433,8 @@ var wappalyzer = (function() {
 
 						w.ping.hostnames[hostname].applications[app].hits ++;
 
-						if ( version ) {
-							w.ping.hostnames[hostname].applications[app].version = version;
+						if ( apps[app].version ) {
+							w.ping.hostnames[hostname].applications[app].version = apps[app].version;
 						}
 					} else {
 						w.log('Ignoring hostname "' + hostname + '"');
@@ -421,20 +444,16 @@ var wappalyzer = (function() {
 
 			// Additional information
 			if ( w.ping.hostnames.hasOwnProperty(hostname) ) {
-				if ( typeof data.html === 'string' && data.html ) {
-					match = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+				match = html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
 
-					if ( match && match.length ) {
-						w.ping.hostnames[hostname].meta['language'] = match[1];
-					}
+				if ( match && match.length ) {
+					w.ping.hostnames[hostname].meta['language'] = match[1];
 				}
 			}
 
 			if ( Object.keys(w.ping.hostnames).length >= 50 || w.adCache.length >= 50 ) {
 				driver('ping');
 			}
-
-			driver('displayApps');
 		},
 
 		/**
@@ -481,7 +500,7 @@ var wappalyzer = (function() {
 		 */
 		analyzeMeta: function(patterns, html, confirmMatch) {
 			var
-				content, meta,
+				content, match, meta,
 				regex = /<meta[^>]+>/ig;
 
 			while ( match = regex.exec(html) ) {
