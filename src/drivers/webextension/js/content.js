@@ -1,3 +1,5 @@
+/** global: browser */
+
 (function() {
 	var c = {
 		init: function() {

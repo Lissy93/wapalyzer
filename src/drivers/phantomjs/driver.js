@@ -1,3 +1,10 @@
+/**
+ * PhantomJS driver
+ */
+
+/** global: phantom */
+/** global: wappalyzer */
+
 (function() {
 	var
 		url,
@@ -15,8 +22,10 @@
 
 		require('fs').changeWorkingDirectory(scriptDir);
 
-		require('system').args.forEach(function(arg, i) {
-			var arr = /^(--[^=]+)=(.+)$/.exec(arg);
+		require('system').args.forEach(function(arg) {
+			var
+				value,
+				arr = /^(--[^=]+)=(.+)$/.exec(arg);
 
 			if ( arr && arr.length === 3 ) {
 				arg   = arr[1];
@@ -35,7 +44,9 @@
 
 					break;
 				case '--resource-timeout':
-					resourceTimeout = value;
+					if ( value ) {
+						resourceTimeout = value;
+					}
 
 					break;
 				default:
@@ -73,31 +84,28 @@
 			displayApps: function() {
 				var
 					app, cats,
-					apps  = [],
-					count = wappalyzer.detected[url] ? Object.keys(wappalyzer.detected[url]).length : 0;
+					apps  = [];
 
 				wappalyzer.log('driver.displayApps');
 
-				if ( count ) {
-					for ( app in wappalyzer.detected[url] ) {
-						cats = [];
+				for ( app in wappalyzer.detected[url] ) {
+					cats = [];
 
-						wappalyzer.apps[app].cats.forEach(function(cat) {
-							cats.push(wappalyzer.categories[cat].name);
-						});
+					wappalyzer.apps[app].cats.forEach(function(cat) {
+						cats.push(wappalyzer.categories[cat].name);
+					});
 
-						apps.push({
-							name: app,
-							confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
-							version:    wappalyzer.detected[url][app].version,
-							icon:       wappalyzer.apps[app].icon,
-							website:    wappalyzer.apps[app].website,
-							categories: cats
-						});
-					}
-
-					wappalyzer.driver.sendResponse(apps);
+					apps.push({
+						name: app,
+						confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
+						version:    wappalyzer.detected[url][app].version,
+						icon:       wappalyzer.apps[app].icon || 'default.svg',
+						website:    wappalyzer.apps[app].website,
+						categories: cats
+					});
 				}
+
+				wappalyzer.driver.sendResponse(apps);
 			},
 
 			/**
@@ -115,7 +123,7 @@
 			init: function() {
 				var
 					page, hostname,
-					headers = {};
+					headers = {},
 					a       = document.createElement('a'),
 					json    = JSON.parse(require('fs').read('apps.json'));
 
@@ -167,7 +175,7 @@
 				};
 
 				page.open(url, function(status) {
-					var html, environmentVars;
+					var html, environmentVars = '';
 
 					if ( status === 'success' ) {
 						html = page.content;
@@ -178,7 +186,7 @@
 
 						// Collect environment variables
 						environmentVars = page.evaluate(function() {
-							var i, environmentVars;
+							var i, environmentVars = '';
 
 							for ( i in window ) {
 								environmentVars += i + ' ';
