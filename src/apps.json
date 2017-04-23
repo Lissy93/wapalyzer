@@ -2700,8 +2700,9 @@
 				"24"
 			],
 			"icon": "Froala.svg",
+			"html": "class=\".*(fr-view|fr-box)",
 			"implies": [
-				"jQuery"
+				"jQuery", "Font Awesome"
 			],
 			"website": "http://froala.com/wysiwyg-editor"
 		},
@@ -3065,6 +3066,17 @@
 			"icon": "Google Plus.svg",
 			"script": "apis\\.google\\.com/js/[a-z]*\\.js",
 			"website": "http://plus.google.com"
+		},
+		"Google Search Appliance": {
+			"cats": [
+				"22",
+				"29"
+			],
+			"headers": {
+				"Server": "^Google\\sSearch\\sAppliance$"
+			},
+			"icon": "Google Search Appliance.png",
+			"website": "https://enterprise.google.com/search"
 		},
 		"Google Sites": {
 			"cats": [
@@ -7432,6 +7444,18 @@
 			"icon": "Solve Media.png",
 			"script": "^https?://api\\.solvemedia\\.com/",
 			"website": "http://solvemedia.com"
+		},
+		"SonarQubes": {
+			"cats": [
+				"47"
+			],
+			"env": "^Sonar(?:Measures|Request)$",
+			"meta": {
+				"application-name": "^SonarQubes$"
+			},
+			"html": "<title>SonarQube</title>",
+			"icon": "sonar.png",
+			"website": "https://www.sonarqube.org/"
 		},
 		"SoundManager": {
 			"cats": [
