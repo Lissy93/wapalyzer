@@ -7444,6 +7444,18 @@
 			"script": "^https?://api\\.solvemedia\\.com/",
 			"website": "http://solvemedia.com"
 		},
+		"SonarQubes": {
+			"cats": [
+				"47"
+			],
+			"env": "^Sonar(?:Measures|Request)$",
+			"meta": {
+				"application-name": "^SonarQubes$"
+			},
+			"html": "<title>SonarQube</title>",
+			"icon": "sonar.png",
+			"website": "https://www.sonarqube.org/"
+		},
 		"SoundManager": {
 			"cats": [
 				"12"
