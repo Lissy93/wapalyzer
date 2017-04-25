@@ -2700,7 +2700,7 @@
 				"24"
 			],
 			"icon": "Froala.svg",
-			"html": "class=\".*(fr-view|fr-box)",
+			"html": "<[^>]+class=\"[^\"]+(?:fr-view|fr-box)",
 			"implies": [
 				"jQuery", "Font Awesome"
 			],
