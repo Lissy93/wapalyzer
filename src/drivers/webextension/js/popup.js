@@ -1,3 +1,6 @@
+/** global: chrome */
+/** global: browser */
+
 document.addEventListener('DOMContentLoaded', function() {
 	var
 		slugify, popup,
@@ -10,13 +13,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	popup = {
 		init: function() {
-			browser.tabs.query({ active: true }).then(function(tabs) {
+			var callback = function(tabs) {
 				if ( tabs[0].url.match(/https?:\/\//) ) {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
 				} else {
 					detectedApps.innerHTML = '<div class="empty">' + browser.i18n.getMessage('nothingToDo') + '</div>';
 				}
-			});
+			};
+
+			try {
+				// Chrome, Firefox
+				browser.tabs.query({ active: true, currentWindow: true }).then(callback);
+			} catch ( e ) {
+				// Edge
+				browser.tabs.query({ active: true, currentWindow: true }, callback);
+			}
 
 			popup.displayApps();
 		},
@@ -24,8 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		displayApps: function() {
 			var appName, confidence, version;
 
-			browser.tabs.query({ active: true }).then(function(tabs) {
+			var callback = function(tabs) {
         function sendGetApps(response) {
+					var html;
+
 					if ( response.tabCache && response.tabCache.count > 0 ) {
 						detectedApps.innerHTML = '';
 
@@ -36,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 							html =
 								'<div class="detected-app">' +
 									'<a target="_blank" href="https://wappalyzer.com/applications/' + slugify(appName) + '">' +
-										'<img src="images/icons/' + response.apps[appName].icon + '"/>' +
+										'<img src="images/icons/' + (response.apps[appName].icon || 'default.svg') + '"/>' +
 										'<span class="label"><span class="name">' + appName + '</span>' + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 
@@ -60,7 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           chrome.runtime.sendMessage({ id: 'get_apps', tab: tabs[0] }, sendGetApps);
         }
-			});
+			};
+
+			try {
+				// Chrome, Firefox
+				browser.tabs.query({ active: true, currentWindow: true }).then(callback);
+			} catch ( e ) {
+				// Edge
+				browser.tabs.query({ active: true, currentWindow: true }, callback);
+			}
 		}
 	};
 

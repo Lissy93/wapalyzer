@@ -41,7 +41,7 @@ do
 		rm "$dest"
 	fi
 
-	#node $WAPPALYZER_NODE_PATH/node_modules/svg2png/bin/svg2png-cli "$svg" --width=32 --height=32 --output "$dest" || true
+	node $WAPPALYZER_NODE_PATH/node_modules/svg2png/bin/svg2png-cli "$svg" --width=32 --height=32 --output "$dest" || true
 done
 
 IFS="$OIFS"
@@ -52,32 +52,45 @@ node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src
 
 wappalyzer links
 
-# Mozilla Firefox
-echo "Building Firefox driver..."
-
-pushd $WAPPALYZER_ROOT/src/drivers/firefox > /dev/null
-
-node $WAPPALYZER_NODE_PATH/node_modules/jpm/bin/jpm xpi && mv *.xpi $WAPPALYZER_ROOT/build/wappalyzer_firefox.xpi
-
-popd > /dev/null
-
-# Google Chrome
-echo "Building Chrome driver..."
-
-pushd $WAPPALYZER_ROOT/src/drivers/chrome > /dev/null
-
-zip -qr $WAPPALYZER_ROOT/build/wappalyzer_chrome.zip .
-
 # WebExtension
 echo "Building WebExtension driver..."
 
-pushd $WAPPALYZER_ROOT/src/drivers/webextension > /dev/null
+webextension_dir=$WAPPALYZER_ROOT/src/drivers/webextension
 
-zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.zip . -x manifest.edge.json
+pushd $webextension_dir > /dev/null
 
-zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.edge.zip . -x manifest.json
+zip -qr $WAPPALYZER_ROOT/build/wappalyzer_webextension.zip .
 
-printf "@ manifest.edge.json\n@=manifest.json\n" | zipnote -w $WAPPALYZER_ROOT/build/wappalyzer_webextension.edge.zip
+popd > /dev/null
+
+# Edge
+
+pushd $WAPPALYZER_ROOT/build > /dev/null
+
+mv $webextension_dir/manifest.json $webextension_dir/manifest.webextension.json
+mv $webextension_dir/manifest.edge.json $webextension_dir/manifest.json
+
+manifoldjs -l debug -p edgeextension -f edgeextension -m $webextension_dir/manifest.json
+
+mv $webextension_dir/manifest.json $webextension_dir/manifest.edge.json
+mv $webextension_dir/manifest.webextension.json $webextension_dir/manifest.json
+
+manifest_dir="Wappalyzer/edgeextension/manifest"
+
+sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-PUBLISHER-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/INSERT-YOUR-PACKAGE-PROPERTIES-PUBLISHERDISPLAYNAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/Version="0.\([^"]\+\)/Version="\1.0/' $manifest_dir/appxmanifest.xml
+
+cp $webextension_dir/images/icon_44.png  $manifest_dir/Assets/Square44x44Logo.png
+cp $webextension_dir/images/icon_150.png $manifest_dir/Assets/Square150x150Logo.png
+cp $webextension_dir/images/icon_50.png  $manifest_dir/Assets/StoreLogo.png
+
+manifoldjs -l debug -p edgeextension package $manifest_dir
+
+mv Wappalyzer/edgeextension/package/edgeExtension.appx wappalyzer_edge.appx
+
+rm -rf Wappalyzer
 
 popd > /dev/null
 

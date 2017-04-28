@@ -69,6 +69,7 @@ var exports = {};
 		realArray: function(a) {
 			return Array.prototype.slice.apply(a);
 		},
+
 		onDocLoaded: function(doc, callback) {
 			if ( doc.readyState === 'loading' ) {
 				doc.addEventListener('DOMContentLoaded', callback);
@@ -118,6 +119,36 @@ var exports = {};
 			}
 			return dict;
 		},
+		sendToBackground: function(message, event, responseMessage, onResponse) {
+			if ( typeof browser !== 'undefined' ) {
+				var response = browser.runtime.sendMessage(message);
+				response.then(onResponse);
+			} else if ( typeof chrome !== 'undefined' ) {
+				chrome.runtime.sendMessage(message, onResponse);
+			} else if ( window.self.port ) {
+				window.self.port.on(responseMessage, onResponse);
+				window.self.port.emit(event, message);
+			}
+		},
+
+		ifTrackingEnabled: function(callback, elseCallback) {
+
+			this.sendToBackground(
+				'is_tracking_enabled',
+				'',
+				'tracking_enabled_response',
+				function(message) {
+					if ( message.tracking_enabled ) {
+
+						callback();
+					} else {
+
+						elseCallback();
+					}
+				}
+			);
+
+		}
 	};
 
 	utils.SCRIPT_IN_FRIENDLY_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && utils.isFriendlyWindow(window.parent);
@@ -137,7 +168,7 @@ var exports = {};
 	LogGenerator.prototype = {
 		log: function(event, opt_assets, opt_pageTags) {
 			var opt_video_assets;
-			if ( event === 'video' ) {
+			if ( event === 'video' || event === 'invalid-video' ) {
 				opt_video_assets = opt_assets || [];
 				opt_assets = [];
 			} else {
@@ -150,7 +181,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: '9efbfba-c',
+				mrev: '9c4d5b3-c',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -859,7 +890,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1488911709-15415-26289-19282-15751';
+	var POST_MSG_ID = '1490888598-28717-31700-14775-21098';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
@@ -925,9 +956,9 @@ var exports = {};
 		if ( exports.utils.SCRIPT_IN_WINDOW_TOP || document.readyState === 'complete' ) {
 			extractAds();
 		}
-		setTimeout(function() {
-			extractAdsWrapper();
-		}, INIT_MS_BW_SEARCHES);
+		setTimeout(
+			function() { extractAdsWrapper(); }, INIT_MS_BW_SEARCHES
+		);
 	}
 
 	function extractAds() {
@@ -1049,7 +1080,13 @@ var exports = {};
 	}
 
 	function addBackgroundListener(event, callback) {
-		if ( typeof chrome !== 'undefined' ) {
+		if ( typeof browser !== 'undefined' ) {
+			browser.runtime.onMessage.addListener(function(msg) {
+				if ( msg.event === event ) {
+					callback(msg);
+				}
+			});
+		} else if ( typeof chrome !== 'undefined' ) {
 			chrome.runtime.onMessage.addListener(function(msg) {
 				if ( msg.event === event ) {
 					callback(msg);
@@ -1061,6 +1098,12 @@ var exports = {};
 	}
 
 	exports.coordinator = {
+		addPostMessageListener: function() {
+			if ( !exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
+				window.addEventListener('message', onPostMessage, false);
+			}
+		},
+
 		init: function(onAdFound) {
 
 			if ( exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
@@ -1068,8 +1111,6 @@ var exports = {};
 			}
 
 			_onAdFound = onAdFound;
-			window.addEventListener('message', onPostMessage, false);
-
 			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 				var log = _logGen.log('page');
 				onAdFound(log);
@@ -1094,26 +1135,32 @@ var exports = {};
 if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 	window.adparser = {
 		init: exports.coordinator.init,
+		addPostMessageListener: exports.coordinator.addPostMessageListener,
+		ifTrackingEnabled: exports.utils.ifTrackingEnabled,
+		sendToBackground: exports.utils.sendToBackground
 	};
 } else {
-	exports.coordinator.init(function() {});
+	exports.coordinator.addPostMessageListener();
+	exports.utils.ifTrackingEnabled(
+		function() {
+			exports.coordinator.init(function() {});
+		},
+		function() {}
+	);
 }
-
 })(window);
 (function(adparser) {
-	function sendToBackground(event, message) {
-		if ( window.self.port ) {
-			window.self.port.emit(event, message);
-		} else if ( typeof chrome !== 'undefined' ) {
-			chrome.extension.sendRequest(message);
-		}
-	}
-
 	function onAdFound(log) {
-		sendToBackground('ad_log', { id: 'ad_log', subject: log });
+		adparser.sendToBackground({ id: 'ad_log', subject: log }, 'ad_log', '', function(){});
 	}
 
-	if ( window === window.top ) {
-		adparser.init(onAdFound);
+	if (  window === window.top  ) {
+		adparser.addPostMessageListener();
+		adparser.ifTrackingEnabled(
+			function() {
+				adparser.init(onAdFound);
+			},
+			function() {}
+		)
 	}
 })(window.adparser);
