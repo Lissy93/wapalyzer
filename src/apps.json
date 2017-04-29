@@ -2699,10 +2699,11 @@
 			"cats": [
 				"24"
 			],
-			"icon": "Froala.svg",
 			"html": "<[^>]+class=\"[^\"]*(?:fr-view|fr-box)",
+			"icon": "Froala.svg",
 			"implies": [
-				"jQuery", "Font Awesome"
+				"jQuery",
+				"Font Awesome"
 			],
 			"website": "http://froala.com/wysiwyg-editor"
 		},
@@ -6559,6 +6560,17 @@
 			},
 			"website": "http://example.com"
 		},
+		"Raspbian": {
+			"cats": [
+				"28"
+			],
+			"headers": {
+				"Server": "Raspbian",
+				"X-Powered-By": "Raspbian"
+			},
+			"icon": "Raspbian.svg",
+			"website": "https://www.raspbian.org/"
+		},
 		"React": {
 			"cats": [
 				"12"
@@ -7450,11 +7462,11 @@
 				"47"
 			],
 			"env": "^Sonar(?:Measures|Request)$",
+			"html": "<title>SonarQube</title>",
+			"icon": "sonar.png",
 			"meta": {
 				"application-name": "^SonarQubes$"
 			},
-			"html": "<title>SonarQube</title>",
-			"icon": "sonar.png",
 			"website": "https://www.sonarqube.org/"
 		},
 		"SoundManager": {
@@ -8434,7 +8446,6 @@
 			"icon": "Vimeo.png",
 			"website": "http://vimeo.com"
 		},
-
 		"Vinala": {
 			"cats": [
 				"18"
