@@ -109,7 +109,7 @@ var wappalyzer = (function() {
 	 */
 	var driver = function(func, args) {
 		if ( typeof w.driver[func] !== 'function' ) {
-			w.log('not implemented: w.driver.' + func, 'warn');
+			w.log('not implemented: w.driver.' + func, 'core', 'warn');
 
 			return;
 		}
@@ -154,7 +154,7 @@ var wappalyzer = (function() {
 						} catch (e) {
 							attrs.regex = new RegExp();
 
-							w.log(e + ': ' + attr, 'error');
+							w.log(e + ': ' + attr, 'error', 'core');
 						}
 					}
 				});
@@ -197,8 +197,9 @@ var wappalyzer = (function() {
 		/**
 		 * Log messages to console
 		 */
-		log: function(message, type) {
+		log: function(message, source, type) {
 			driver('log', {
+				source: source || '',
 				message: JSON.stringify(message),
 				type: type || 'debug'
 			});
@@ -208,13 +209,13 @@ var wappalyzer = (function() {
 		 * Initialize
 		 */
 		init: function() {
-			w.log('w.init');
+			w.log('Function call: w.init()', 'core');
 
 			// Initialize driver
 			if ( w.driver !== undefined ) {
 				driver('init');
 			} else {
-				w.log('No driver, exiting');
+				w.log('No driver, exiting', 'core');
 			}
 		},
 
@@ -226,10 +227,10 @@ var wappalyzer = (function() {
 				app,
 				apps = {};
 
-			w.log('w.analyze');
+			w.log('Function call: w.analyze()', 'core');
 
 			if ( w.apps === undefined || w.categories === undefined ) {
-				w.log('apps.json not loaded, check for syntax errors');
+				w.log('apps.json not loaded, check for syntax errors', 'core');
 
 				return;
 			}
@@ -279,7 +280,9 @@ var wappalyzer = (function() {
 			w.cacheDetectedApps(apps, url);
 			w.trackDetectedApps(apps, url, hostname, data.html);
 
-			w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url);
+			if ( Object.keys(apps).length ) {
+				w.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url, 'core');
+			}
 
 			driver('displayApps');
 		},
@@ -292,7 +295,7 @@ var wappalyzer = (function() {
 			// Exclude app in detected apps only
 			for ( app in apps ) {
 				if ( w.apps[app].excludes ) {
-					asArray(w.apps[app]).excludes.forEach(function(excluded) {
+					asArray(w.apps[app].excludes).forEach(function(excluded) {
 						excludes.push(excluded);
 					});
 				}
@@ -325,7 +328,7 @@ var wappalyzer = (function() {
 							implied = parsePatterns(implied)[0];
 
 							if ( !w.apps[implied.string] ) {
-								w.log('Implied application ' + implied.string + ' does not exist', 'warn');
+								w.log('Implied application ' + implied.string + ' does not exist', 'core', 'warn');
 
 								return;
 							}
