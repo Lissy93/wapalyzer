@@ -2358,7 +2358,7 @@
 			],
 			"env": "^enyo$",
 			"icon": "Enyo.png",
-			"script": "\benyo\\.js",
+			"script": "enyo\\.js",
 			"website": "http://enyojs.com"
 		},
 		"Epoch": {
@@ -2515,6 +2515,16 @@
 			"implies": "jQuery",
 			"script": "jquery\\.fancybox\\.pack\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
 			"website": "http://fancyapps.com/fancybox"
+		},
+		"Fastly": {
+			"cats": [
+				"31"
+			],
+			"headers": {
+				"Fastly-Debug-Digest": ""
+			},
+			"icon": "Fastly.svg",
+			"website": "https://www.fastly.com"
 		},
 		"Fat-Free Framework": {
 			"cats": [
@@ -2699,10 +2709,11 @@
 			"cats": [
 				"24"
 			],
-			"icon": "Froala.svg",
 			"html": "<[^>]+class=\"[^\"]*(?:fr-view|fr-box)",
+			"icon": "Froala.svg",
 			"implies": [
-				"jQuery", "Font Awesome"
+				"jQuery",
+				"Font Awesome"
 			],
 			"website": "http://froala.com/wysiwyg-editor"
 		},
@@ -6559,6 +6570,17 @@
 			},
 			"website": "http://example.com"
 		},
+		"Raspbian": {
+			"cats": [
+				"28"
+			],
+			"headers": {
+				"Server": "Raspbian",
+				"X-Powered-By": "Raspbian"
+			},
+			"icon": "Raspbian.svg",
+			"website": "https://www.raspbian.org/"
+		},
 		"React": {
 			"cats": [
 				"12"
@@ -7450,11 +7472,11 @@
 				"47"
 			],
 			"env": "^Sonar(?:Measures|Request)$",
+			"html": "<title>SonarQube</title>",
+			"icon": "sonar.png",
 			"meta": {
 				"application-name": "^SonarQubes$"
 			},
-			"html": "<title>SonarQube</title>",
-			"icon": "sonar.png",
 			"website": "https://www.sonarqube.org/"
 		},
 		"SoundManager": {
@@ -7618,6 +7640,16 @@
 			"icon": "Store Systems.png",
 			"website": "http://store-systems.de"
 		},
+                "Storyblok": {
+			"cats": [
+				"1"
+			],
+			"icon": "storyblok.png",
+			"meta": {
+				"generator": "storyblok"
+			},
+			"website": "https://www.storyblok.com"
+		},
 		"Strapdown.js": {
 			"cats": [
 				"12"
@@ -7719,6 +7751,15 @@
 			"icon": "SweetAlert.png",
 			"script": "sweet-alert(?:\\.min)?\\.js",
 			"website": "http://tristanedwards.me/sweetalert"
+		},
+		"SweetAlert2": {
+			"cats": [
+				"12"
+			],
+			"html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
+			"icon": "SweetAlert2.png",
+			"script": "sweetalert2(?:\\.min)?\\.js",
+			"website": "https://limonte.github.io/sweetalert2"
 		},
 		"Swiftlet": {
 			"cats": [
@@ -8424,7 +8465,6 @@
 			"icon": "Vimeo.png",
 			"website": "http://vimeo.com"
 		},
-
 		"Vinala": {
 			"cats": [
 				"18"
