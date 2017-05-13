@@ -26,7 +26,7 @@
 		 * Log messages to console
 		 */
 		log: function(args) {
-			console.log('[wappalyzer ' + args.type + '] ' + args.message);
+			console.log('[wappalyzer ' + args.type + ']', '[' + args.source + ']', JSON.parse(args.message));
 		},
 
 		/**
@@ -53,7 +53,7 @@
 		 * Initialize
 		 */
 		init: function() {
-			w.log('init');
+			w.log('Function call: w.driver.init()', 'driver');
 
 			// Load apps.json
 			var xhr = new XMLHttpRequest();
@@ -122,8 +122,6 @@
 			}
 
 			browser.tabs.onRemoved.addListener(function(tabId) {
-				w.log('remove tab');
-
 				tabCache[tabId] = null;
 			});
 
@@ -153,8 +151,6 @@
 							}
 						}
 					}
-
-					w.log(JSON.stringify({ uri: uri, headers: responseHeaders }));
 				}
 			}, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
 
@@ -178,11 +174,13 @@
 				a = document.createElement('a');
 
 			if ( typeof message.id != 'undefined' ) {
-				w.log('message: ' + message.id);
+				if ( message.id !== 'log' ) {
+					w.log('Message received from ' + message.source + ': ' + message.id, 'driver');
+				}
 
 				switch ( message.id ) {
 					case 'log':
-						w.log(message.message);
+						w.log(message.message, message.source);
 
 						break;
 					case 'analyze':
@@ -295,8 +293,6 @@
 				if ( Object.keys(w.ping.hostnames).length && tracking ) {
 					w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
 
-					w.log('w.driver.ping: ' + JSON.stringify(w.ping));
-
 					w.ping = { hostnames: {} };
 
 					w.driver.post('https://ad.wappalyzer.com/log/wp/', w.adCache);
@@ -318,7 +314,7 @@
 
 			xhr.onreadystatechange = function() {
 				if ( xhr.readyState == 4 ) {
-					w.log('w.driver.post: status ' + xhr.status + ' (' + url + ')');
+					w.log({ 'POST request': { url: url, status: xhr.status, data: data } }, 'driver');
 				}
 			};
 

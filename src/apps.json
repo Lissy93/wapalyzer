@@ -510,7 +510,7 @@
 				"12"
 			],
 			"env": "^angular$",
-			"icon": "AngularJS.png",
+			"icon": "AngularJS.svg",
 			"script": [
 				"angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
@@ -1910,7 +1910,7 @@
 			"icon": "Dell.png",
 			"website": "http://dell.com"
 		},
-		"Demandware": {
+		"Salesforce Commerce Cloud": {
 			"cats": [
 				"6"
 			],
@@ -1919,7 +1919,7 @@
 				"Server": "Demandware eCommerce Server"
 			},
 			"html": "<[^>]+demandware\\.edgesuite",
-			"icon": "Demandware.png",
+			"icon": "Salesforce.svg",
 			"website": "http://demandware.com"
 		},
 		"Deployd": {
@@ -2358,7 +2358,7 @@
 			],
 			"env": "^enyo$",
 			"icon": "Enyo.png",
-			"script": "\benyo\\.js",
+			"script": "enyo\\.js",
 			"website": "http://enyojs.com"
 		},
 		"Epoch": {
@@ -2515,6 +2515,16 @@
 			"implies": "jQuery",
 			"script": "jquery\\.fancybox\\.pack\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
 			"website": "http://fancyapps.com/fancybox"
+		},
+		"Fastly": {
+			"cats": [
+				"31"
+			],
+			"headers": {
+				"Fastly-Debug-Digest": ""
+			},
+			"icon": "Fastly.svg",
+			"website": "https://www.fastly.com"
 		},
 		"Fat-Free Framework": {
 			"cats": [
@@ -2699,9 +2709,11 @@
 			"cats": [
 				"24"
 			],
+			"html": "<[^>]+class=\"[^\"]*(?:fr-view|fr-box)",
 			"icon": "Froala.svg",
 			"implies": [
-				"jQuery"
+				"jQuery",
+				"Font Awesome"
 			],
 			"website": "http://froala.com/wysiwyg-editor"
 		},
@@ -3066,6 +3078,17 @@
 			"script": "apis\\.google\\.com/js/[a-z]*\\.js",
 			"website": "http://plus.google.com"
 		},
+		"Google Search Appliance": {
+			"cats": [
+				"22",
+				"29"
+			],
+			"headers": {
+				"Server": "^Google\\sSearch\\sAppliance$"
+			},
+			"icon": "Google Search Appliance.png",
+			"website": "https://enterprise.google.com/search"
+		},
 		"Google Sites": {
 			"cats": [
 				"1"
@@ -3118,6 +3141,19 @@
 				"gwt:property": ""
 			},
 			"website": "http://developers.google.com/web-toolkit"
+		},
+		"govCMS": {
+			"cats": [
+				"1"
+			],
+			"meta": {
+				"generator": "Drupal ([\\d]+) \\(http:\\/\\/drupal\\.org\\) \\+ govCMS\\;version:\\1"
+			},
+			"icon": "govCMS.svg",
+			"implies": [
+				"Drupal"
+			],
+			"website": "https://www.govcms.gov.au"
 		},
 		"Graffiti CMS": {
 			"cats": [
@@ -4286,6 +4322,16 @@
 			"icon": "LabVIEW.png",
 			"website": "http://ni.com/labview"
 		},
+		"Shapecss": {
+			"cats":[
+				"18"
+			],
+			"env": "^Shapecss$",
+			"html":"<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
+			"script":"shapecss(?:\\.min)?\\.js",
+			"icon":"Shapecss.svg",
+			"website":"https://shapecss.com"
+		},
 		"Laravel": {
 			"cats": [
 				"18"
@@ -4341,6 +4387,17 @@
 			"icon": "Lift.png",
 			"implies": "Scala",
 			"website": "http://liftweb.net"
+		},
+		"Play": {
+			"cats": [
+				"18"
+			],
+			"headers": {
+				"Set-Cookie": "PLAY_SESSION"
+			},
+			"icon": "Play.svg",
+			"implies": "Scala",
+			"website": "https://www.playframework.com"
 		},
 		"LightMon Engine": {
 			"cats": [
@@ -5482,7 +5539,7 @@
 			"icon": "OWL Carousel.png",
 			"implies": "jQuery",
 			"script": "owl.carousel.*\\.js",
-			"website": "http://owlgraphic.com/owlcarousel"
+			"website": "https://owlcarousel2.github.io/OwlCarousel2/"
 		},
 		"OXID eShop": {
 			"cats": [
@@ -6547,6 +6604,17 @@
 			},
 			"website": "http://example.com"
 		},
+		"Raspbian": {
+			"cats": [
+				"28"
+			],
+			"headers": {
+				"Server": "Raspbian",
+				"X-Powered-By": "Raspbian"
+			},
+			"icon": "Raspbian.svg",
+			"website": "https://www.raspbian.org/"
+		},
 		"React": {
 			"cats": [
 				"12"
@@ -7020,6 +7088,7 @@
 			],
 			"implies": "jQuery",
 			"script": "select2.*\\.js",
+			"icon": "Select2.png",
 			"website": "http://select2.github.io"
 		},
 		"Semantic-ui": {
@@ -7433,6 +7502,23 @@
 			"script": "^https?://api\\.solvemedia\\.com/",
 			"website": "http://solvemedia.com"
 		},
+		"SonarQubes": {
+			"cats": [
+				"47"
+			],
+			"env": "^Sonar(?:Measures|Request)$",
+			"html": [
+				"<link href=\"/css/sonar\\.css?v=([\\d.]+)\\;version:\\1",
+				"<title>SonarQube</title>"
+			],
+			"script": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
+			"icon": "sonar.png",
+			"implies": "Java",
+			"meta": {
+				"application-name": "^SonarQubes$"
+			},
+			"website": "https://www.sonarqube.org/"
+		},
 		"SoundManager": {
 			"cats": [
 				"12"
@@ -7594,6 +7680,16 @@
 			"icon": "Store Systems.png",
 			"website": "http://store-systems.de"
 		},
+                "Storyblok": {
+			"cats": [
+				"1"
+			],
+			"icon": "storyblok.png",
+			"meta": {
+				"generator": "storyblok"
+			},
+			"website": "https://www.storyblok.com"
+		},
 		"Strapdown.js": {
 			"cats": [
 				"12"
@@ -7695,6 +7791,15 @@
 			"icon": "SweetAlert.png",
 			"script": "sweet-alert(?:\\.min)?\\.js",
 			"website": "http://t4t5.github.io/sweetalert/"
+		},
+		"SweetAlert2": {
+			"cats": [
+				"12"
+			],
+			"html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
+			"icon": "SweetAlert2.png",
+			"script": "sweetalert2(?:\\.min)?\\.js",
+			"website": "https://limonte.github.io/sweetalert2"
 		},
 		"Swiftlet": {
 			"cats": [
@@ -8400,7 +8505,6 @@
 			"icon": "Vimeo.png",
 			"website": "http://vimeo.com"
 		},
-
 		"Vinala": {
 			"cats": [
 				"18"
@@ -9996,6 +10100,15 @@
 			"icon": "swift.engine.png",
 			"website": "http://mittec.ru/default"
 		},
+		"WEBXPAY": {
+			"cats": [
+				"6"
+			],
+			"env": "^WEBXPAY$",
+			"html": "Powered by <a href=\"https://www.webxpay.com\">WEBXPAY<",
+			"icon": "WEBXPAY.png",
+			"website": "https://webxpay.com"
+		},
 		"three.js": {
 			"cats": [
 				"25"
@@ -10157,6 +10270,14 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
+		},
+		"Moon": {
+			"cats": [
+				"12"
+			],
+			"icon": "moon.png",
+			"script": "/moon(?:\\.min)?\\.js$",
+			"website": "http://moonjs.ga/"
 		}
 	},
 	"categories": {
