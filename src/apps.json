@@ -7513,6 +7513,7 @@
 			],
 			"script": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
 			"icon": "sonar.png",
+			"implies": "Java",
 			"meta": {
 				"application-name": "^SonarQubes$"
 			},
