@@ -1910,18 +1910,6 @@
 			"icon": "Dell.png",
 			"website": "http://dell.com"
 		},
-		"Salesforce Commerce Cloud": {
-			"cats": [
-				"6"
-			],
-			"env": "^dwAnalytics$",
-			"headers": {
-				"Server": "Demandware eCommerce Server"
-			},
-			"html": "<[^>]+demandware\\.edgesuite",
-			"icon": "Salesforce.svg",
-			"website": "http://demandware.com"
-		},
 		"Deployd": {
 			"cats": [
 				"12"
@@ -3142,19 +3130,6 @@
 			},
 			"website": "http://developers.google.com/web-toolkit"
 		},
-		"govCMS": {
-			"cats": [
-				"1"
-			],
-			"meta": {
-				"generator": "Drupal ([\\d]+) \\(http:\\/\\/drupal\\.org\\) \\+ govCMS\\;version:\\1"
-			},
-			"icon": "govCMS.svg",
-			"implies": [
-				"Drupal"
-			],
-			"website": "https://www.govcms.gov.au"
-		},
 		"Graffiti CMS": {
 			"cats": [
 				"1"
@@ -4322,16 +4297,6 @@
 			"icon": "LabVIEW.png",
 			"website": "http://ni.com/labview"
 		},
-		"Shapecss": {
-			"cats":[
-				"18"
-			],
-			"env": "^Shapecss$",
-			"html":"<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
-			"script":"shapecss(?:\\.min)?\\.js",
-			"icon":"Shapecss.svg",
-			"website":"https://shapecss.com"
-		},
 		"Laravel": {
 			"cats": [
 				"18"
@@ -4387,17 +4352,6 @@
 			"icon": "Lift.png",
 			"implies": "Scala",
 			"website": "http://liftweb.net"
-		},
-		"Play": {
-			"cats": [
-				"18"
-			],
-			"headers": {
-				"Set-Cookie": "PLAY_SESSION"
-			},
-			"icon": "Play.svg",
-			"implies": "Scala",
-			"website": "https://www.playframework.com"
 		},
 		"LightMon Engine": {
 			"cats": [
@@ -5260,6 +5214,14 @@
 				"keywords": "^moodle"
 			},
 			"website": "http://moodle.org"
+		},
+		"Moon": {
+			"cats": [
+				"12"
+			],
+			"icon": "moon.png",
+			"script": "/moon(?:\\.min)?\\.js$",
+			"website": "http://moonjs.ga/"
 		},
 		"Motion-httpd": {
 			"cats": [
@@ -6182,6 +6144,17 @@
 			},
 			"website": "http://planetplanet.org"
 		},
+		"Play": {
+			"cats": [
+				"18"
+			],
+			"headers": {
+				"Set-Cookie": "PLAY_SESSION"
+			},
+			"icon": "Play.svg",
+			"implies": "Scala",
+			"website": "https://www.playframework.com"
+		},
 		"Plentymarkets": {
 			"cats": [
 				"6"
@@ -7013,6 +6986,18 @@
 			"icon": "Salesforce.svg",
 			"website": "https://www.salesforce.com"
 		},
+		"Salesforce Commerce Cloud": {
+			"cats": [
+				"6"
+			],
+			"env": "^dwAnalytics$",
+			"headers": {
+				"Server": "Demandware eCommerce Server"
+			},
+			"html": "<[^>]+demandware\\.edgesuite",
+			"icon": "Salesforce.svg",
+			"website": "http://demandware.com"
+		},
 		"Sarka-SPIP": {
 			"cats": [
 				"1"
@@ -7086,9 +7071,9 @@
 			"cats": [
 				"12"
 			],
+			"icon": "Select2.png",
 			"implies": "jQuery",
 			"script": "select2.*\\.js",
-			"icon": "Select2.png",
 			"website": "http://select2.github.io"
 		},
 		"Semantic-ui": {
@@ -7163,6 +7148,16 @@
 			"icon": "Shadow.png",
 			"implies": "PHP",
 			"website": "http://shadow-technologies.co.uk"
+		},
+		"Shapecss": {
+			"cats": [
+				"18"
+			],
+			"env": "^Shapecss$",
+			"html": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
+			"icon": "Shapecss.svg",
+			"script": "shapecss(?:\\.min)?\\.js",
+			"website": "https://shapecss.com"
 		},
 		"ShareThis": {
 			"cats": [
@@ -7511,12 +7506,12 @@
 				"<link href=\"/css/sonar\\.css?v=([\\d.]+)\\;version:\\1",
 				"<title>SonarQube</title>"
 			],
-			"script": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
 			"icon": "sonar.png",
 			"implies": "Java",
 			"meta": {
 				"application-name": "^SonarQubes$"
 			},
+			"script": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
 			"website": "https://www.sonarqube.org/"
 		},
 		"SoundManager": {
@@ -7680,7 +7675,7 @@
 			"icon": "Store Systems.png",
 			"website": "http://store-systems.de"
 		},
-                "Storyblok": {
+		"Storyblok": {
 			"cats": [
 				"1"
 			],
@@ -8111,7 +8106,6 @@
 				"PHP",
 				"jQuery"
 			],
-			"icon": "translucide.svg",
 			"script": "lucide\\.init(?:\\.min)?\\.js",
 			"website": "http://www.translucide.net"
 		},
@@ -8610,6 +8604,15 @@
 			"icon": "W3Counter.png",
 			"script": "w3counter\\.com/tracker\\.js",
 			"website": "http://www.w3counter.com"
+		},
+		"WEBXPAY": {
+			"cats": [
+				"6"
+			],
+			"env": "^WEBXPAY$",
+			"html": "Powered by <a href=\"https://www.webxpay.com\">WEBXPAY<",
+			"icon": "WEBXPAY.png",
+			"website": "https://webxpay.com"
 		},
 		"WHMCS": {
 			"cats": [
@@ -9532,6 +9535,19 @@
 			"script": "static/gitweb.js$",
 			"website": "http://git-scm.com"
 		},
+		"govCMS": {
+			"cats": [
+				"1"
+			],
+			"icon": "govCMS.svg",
+			"implies": [
+				"Drupal"
+			],
+			"meta": {
+				"generator": "Drupal ([\\d]+) \\(http:\\/\\/drupal\\.org\\) \\+ govCMS\\;version:\\1"
+			},
+			"website": "https://www.govcms.gov.au"
+		},
 		"gunicorn": {
 			"cats": [
 				"22"
@@ -10101,15 +10117,6 @@
 			"icon": "swift.engine.png",
 			"website": "http://mittec.ru/default"
 		},
-		"WEBXPAY": {
-			"cats": [
-				"6"
-			],
-			"env": "^WEBXPAY$",
-			"html": "Powered by <a href=\"https://www.webxpay.com\">WEBXPAY<",
-			"icon": "WEBXPAY.png",
-			"website": "https://webxpay.com"
-		},
 		"three.js": {
 			"cats": [
 				"25"
@@ -10271,14 +10278,6 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
-		},
-		"Moon": {
-			"cats": [
-				"12"
-			],
-			"icon": "moon.png",
-			"script": "/moon(?:\\.min)?\\.js$",
-			"website": "http://moonjs.ga/"
 		}
 	},
 	"categories": {
