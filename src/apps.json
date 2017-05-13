@@ -7507,7 +7507,11 @@
 				"47"
 			],
 			"env": "^Sonar(?:Measures|Request)$",
-			"html": "<title>SonarQube</title>",
+			"html": [
+				"<link href=\"/css/sonar\\.css?v=([\\d.]+)\\;version:\\1",
+				"<title>SonarQube</title>"
+			],
+			"script": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
 			"icon": "sonar.png",
 			"meta": {
 				"application-name": "^SonarQubes$"
