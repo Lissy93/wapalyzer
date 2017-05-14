@@ -7157,7 +7157,7 @@
 			"html": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
 			"icon": "Shapecss.svg",
 			"script": [
-				"shapecss(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"shapecss[-.]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/shapecss(?:\\.min)?\\.js\\;version:\\1",
 				"shapecss.*\\.js"
 			],
