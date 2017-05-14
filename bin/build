@@ -2,6 +2,8 @@
 
 cd "$(dirname $0)/.."
 
+set -eu
+
 ./bin/validate
 
 echo "Prettifying apps.json..."
