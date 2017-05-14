@@ -7156,7 +7156,11 @@
 			"env": "^Shapecss$",
 			"html": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
 			"icon": "Shapecss.svg",
-			"script": "shapecss(?:\\.min)?\\.js",
+			"script": [
+				"shapecss(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"/([\\d.]+)/shapecss(?:\\.min)?\\.js\\;version:\\1",
+				"shapecss.*\\.js"
+			],
 			"website": "https://shapecss.com"
 		},
 		"ShareThis": {
