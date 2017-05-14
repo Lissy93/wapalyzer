@@ -30,6 +30,6 @@ $ ./run links
 
 The	`links` command creates symlinks for files that shared between the various
 drivers (i.e. different platforms). If your file system does not support
-symlinks, you need to manually copy these files (see `bin/links`).
+symlinks, you need to manually copy these files (see [`bin/links`](https://github.com/AliasIO/Wappalyzer/blob/master/bin/links)).
 
 Please run `./run validate` before submitting a pull request.
