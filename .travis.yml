@@ -1,9 +1,15 @@
-sudo: false
-services: docker
+sudo: required
+
+services:
+  - docker
+
 after_success:
- - sha256sum build/* > build/SHA256SUMS
- - cat build/SHA256SUMS
-script: ./run build
+  - sha256sum build/* > build/SHA256SUMS
+  - cat build/SHA256SUMS
+
+script:
+  - ./run build
+
 deploy:
   provider: releases
   api_key:
@@ -14,5 +20,6 @@ deploy:
   on:
     repo: AliasIO/Wappalyzer
     tags: true
+
 env:
   - CXX=g++-4.8
