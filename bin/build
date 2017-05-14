@@ -16,9 +16,12 @@ echo "Converting SVG icons to PNG..."
 
 echo "Compressing PNG icons..."
 
+set +e
+
 optipng -quiet "src/icons/*.png"
 optipng -quiet "src/icons/converted/*.png"
 
+set -e
 
 # WebExtension
 echo "Building WebExtension..."
