@@ -1,6 +1,9 @@
 /**
- * Bookmarklet driver
+ * WebExtension driver
  */
+
+/** global: wappalyzer */
+/** global: XMLHttpRequest */
 
 (function() {
 	if ( typeof wappalyzer === 'undefined' ) {
@@ -9,11 +12,11 @@
 
 	var
 		w             = wappalyzer,
-		debug         = true
+		debug         = true,
 		d             = window.document,
 		container     = d.getElementById('wappalyzer-container'),
 		domain        = window.top.location.host,
-		url           = window.top.location.href,
+		url           = window.top.location.href.replace(/#.*$/, ''),
 		hasOwn        = Object.prototype.hasOwnProperty;
 
 	w.driver = {
@@ -112,7 +115,7 @@
 						'<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
 							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
 								'<strong>' +
-									'<img src="' + w.config.websiteURL + 'images/icons/' + w.apps[app].icon + '" width="16" height="16"/> ' + app +
+									'<img src="' + w.config.websiteURL + 'images/icons/' + (w.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
 								'</strong>' +
 							'</a>';
 
@@ -121,7 +124,7 @@
 							continue;
 						}
 
-						category = w.categories[w.apps[app].cats[i]];
+						category = w.categories[w.apps[app].cats[i]].name;
 
 						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.driver.slugify(category) + '">' + category + '</a>';
 					}
