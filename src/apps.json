@@ -1367,7 +1367,7 @@
 				"PostgreSQL\\;confidence:80"
 			],
 			"meta": {
-				"generator": "^ckan\\s+(\\d{1,}\\.\\d{1,}\\.\\d{1,})$"
+				"generator": "(?:)ckan\s+(\d{1,}\.\d{1,}\.\d{1,})(?:)"
 			},
 			"website": "http://ckan.org/"
 		},
