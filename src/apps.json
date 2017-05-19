@@ -8442,7 +8442,9 @@
 				"Copyright": "^Copyright &copy; \\d{4} OpenLink Software"
 			},
 			"url": "^https?://(?:[^\\/]+\\.)?.*?/sparql\\;confidence:20",
-			"Server": "Virtuoso:*?\\;version:\\1"
+			"headers": {
+				"Server": "^.*Virtuoso\/(\d{2}.\d{2}.\d{4}).*$;version:\\1"
+			}
 		},
 		"Visual WebGUI": {
 			"cats": [
