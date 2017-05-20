@@ -470,7 +470,14 @@ var wappalyzer = (function() {
 				regex = /<meta[^>]+>/ig,
 				patterns = parsePatterns(w.apps[app.app].meta);
 
-			if ( patterns.length ) {
+			w.log('Function call: analyzeMeta');
+
+			if ( app.app === 'CloudCart' ) {
+				w.log('xxx');
+				w.log(patterns);
+			}
+
+			if ( patterns ) {
 				while ( match = regex.exec(html) ) {
 					for ( meta in patterns ) {
 						if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
