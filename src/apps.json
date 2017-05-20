@@ -7156,7 +7156,11 @@
 			"env": "^Shapecss$",
 			"html": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
 			"icon": "Shapecss.svg",
-			"script": "shapecss(?:\\.min)?\\.js",
+			"script": [
+				"shapecss[-.]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"/([\\d.]+)/shapecss(?:\\.min)?\\.js\\;version:\\1",
+				"shapecss.*\\.js"
+			],
 			"website": "https://shapecss.com"
 		},
 		"ShareThis": {
@@ -7791,6 +7795,7 @@
 			"cats": [
 				"12"
 			],
+			"excludes": "SweetAlert",
 			"html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
 			"icon": "SweetAlert2.png",
 			"script": "sweetalert2(?:\\.min)?\\.js",
