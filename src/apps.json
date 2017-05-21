@@ -8442,6 +8442,7 @@
 				"Keywords": "^OpenLink Virtuoso Sparql",
 				"Copyright": "^Copyright &copy; \\d{4} OpenLink Software"
 			},
+			"url": ".*/sparql\\.*",
 			"headers": {
 				"Server": "Virtuoso\\/?(\\d{2}\\.\\d{2}\\.\\d{4})?\\;version:\\1"
 			}
