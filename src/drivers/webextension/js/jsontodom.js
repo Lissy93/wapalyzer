@@ -16,7 +16,7 @@ function jsonToDOM(jsonTemplate, doc, nodes) {
 		// Array of elements?  Parse each one...
 		if (Array.isArray(elemNameOrArray)) {
 			var frag = doc.createDocumentFragment();
-			Array.forEach(arguments, function(thisElem) {
+			Array.prototype.forEach.call(arguments, function(thisElem) {
 				frag.appendChild(tag.apply(null, thisElem));
 			});
 			return frag;
@@ -46,7 +46,7 @@ function jsonToDOM(jsonTemplate, doc, nodes) {
 		}
 
 		// Create and append this element's children
-		var childElems = Array.slice(arguments, 2);
+		var childElems = Array.prototype.slice.call(arguments, 2);
 		childElems.forEach(function(childElem) {
 			if (childElem != null) {
 				elem.appendChild(
