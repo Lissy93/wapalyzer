@@ -9,7 +9,9 @@
 					if ( /complete|interacrive|loaded/.test(document.readyState) ) {
 						popup.displayApps(response)
 					} else {
-						document.addEventListener('DOMContentLoaded', function() { popup.displayApps(response) });
+						document.addEventListener('DOMContentLoaded', function() {
+							popup.displayApps(response)
+						});
 					}
 				});
 			};
@@ -26,45 +28,80 @@
 		displayApps: function(response) {
 			var
 				appName, confidence, version,
-				detectedApps = document.querySelector('#detected-apps');
-				html = '';
+				detectedApps = document.querySelector('#detected-apps'),
+				categories = [],
+				json = [];
 
 			if ( response.tabCache && response.tabCache.count > 0 ) {
 				for ( appName in response.tabCache.appsDetected ) {
 					confidence = response.tabCache.appsDetected[appName].confidenceTotal;
 					version    = response.tabCache.appsDetected[appName].version;
 
-					html +=
-						'<div class="detected-app">' +
-							'<a target="_blank" href="https://wappalyzer.com/applications/' + popup.slugify(appName) + '">' +
-								'<img src="images/icons/' + ( response.apps[appName].icon || 'default.svg' ) + '"/>' +
-								'<span class="label">' +
-									'<span class="name">' + appName + '</span>' +
-									( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) +
-								'</span>' +
-							'</a>';
+					categories = [];
 
 					response.apps[appName].cats.forEach(function(cat) {
-						html +=
-							'<a target="_blank" href="https://wappalyzer.com/categories/' + popup.slugify(response.categories[cat].name) + '">' +
-								'<span class="category"><span class="name">' + browser.i18n.getMessage('categoryName' + cat) + '</span></span>' +
-							'</a>';
+						categories.push(
+							[
+								'a', {
+									target: '_blank',
+									href: 'https://wappalyzer.com/categories/' + popup.slugify(response.categories[cat].name)
+								}, [
+									'span', {
+										class: 'category'
+									}, [
+										'span', {
+											class: 'name'
+										},
+										browser.i18n.getMessage('categoryName' + cat)
+									]
+								]
+							]
+						);
 					});
 
-					html +=
-							'</a>' +
-						'</div>';
+					json.push(
+						[
+							'div', {
+								class: 'detected-app'
+							}, [
+								'a', {
+									target: '_blank',
+									href: 'https://wappalyzer.com/applications/' + popup.slugify(appName)
+								}, [
+									'img', {
+										src: 'images/icons/' + ( response.apps[appName].icon || 'default.svg' )
+									}
+								], [
+									'span', {
+										class: 'label'
+									}, [
+										'span', {
+											class: 'name'
+										},
+									 	appName
+									],
+									( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' )
+								]
+							],
+							categories
+						]
+					);
 				}
 			} else {
-				html = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
+				json = [
+					'div', {
+						class: 'empty'
+					},
+					browser.i18n.getMessage('noAppsDetected')
+				];
 			}
 
-			detectedApps.innerHTML = html;
+			detectedApps.appendChild(jsonToDOM(json, document, {}));
 
 			// Force redraw after popup animation on Mac OS
 			setTimeout(function() {
-				document.body.innerHTML += '<span style="line-height: 1px;"> </span>';
-			}, 600);
+				document.body.appendChild(jsonToDOM([ 'span', { style: 'line-height: 1px;' }], document, {}));
+			}, 800);
 		},
 
 		slugify: function(string) {
