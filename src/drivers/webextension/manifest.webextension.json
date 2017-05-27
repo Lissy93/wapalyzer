@@ -4,7 +4,7 @@
 	"author": "Elbert Alias",
 	"homepage_url": "https://wappalyzer.com/",
 	"description": "Identify web technologies",
-	"version": "4.0.1",
+	"version": "4.1.0",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -26,8 +26,8 @@
 		"default_popup": "popup.html"
 	},
 	"background": {
-		"page": "background.html",
-		"persistent": true
+		"page": "background.html"
+
 	},
 	"content_scripts": [
 		{
@@ -43,7 +43,7 @@
 		},
 		{
 			"matches": [
-				"http://*/*",
+				 "http://*/*",
 				"https://*/*"
 			],
 			"js": [
@@ -58,16 +58,18 @@
 		"js/inject.js"
 	],
 	"options_page": "options.html",
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	},
 	"permissions": [
+		"storage",
 		"tabs",
 		"webRequest",
 		"webNavigation",
 		"http://*/*",
 		"https://*/*"
 	],
-	"content_security_policy": "script-src 'self'; object-src 'self'",
-	"-ms-preload": {
-		"backgroundScript": "js/ms_background_scripts_api_bridge.js",
-		"contentScript": "js/ms_content_scripts_api_bridge.js"
-	}
+	"content_security_policy": "script-src 'self'; object-src 'self'"
 }
+
