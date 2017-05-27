@@ -101,11 +101,7 @@
 				// Do nothing
 			}
 
-      if ( typeof chrome === 'undefined' ) {
-        browser.runtime.onMessage.addListener(w.driver.onMessage);
-      } else {
-        chrome.runtime.onMessage.addListener(w.driver.onMessage);
-      }
+			( chrome || browser ).runtime.onMessage.addListener(w.driver.onMessage);
 
 			var callback = function(tabs) {
 				tabs.forEach(function(tab) {
