@@ -1401,8 +1401,11 @@
 				"Python",
 				"Solr",
 				"Java",
-				"PostgreSQL\\;confidence:80"
+				"PostgreSQL"
 			],
+			"meta": {
+				"generator": ".*ckan.*"
+			},
 			"website": "http://ckan.org/"
 		},
 		"ClickHeat": {
@@ -5356,6 +5359,15 @@
 			"script": "nv\\.d3(?:\\.min)?\\.js",
 			"website": "http://nvd3.org"
 		},
+		"Navegg": {
+			"cats": [
+				"10"
+			],
+			"env": "^nvg[0-9]$",
+			"icon": "Navegg.png",
+			"script": "tag.navdmp.com",
+			"website": "https://www.navegg.com/"
+		},
 		"Nedstat": {
 			"cats": [
 				"10"
@@ -6588,6 +6600,12 @@
 			"icon": "Raspbian.svg",
 			"website": "https://www.raspbian.org/"
 		},
+		"Rdf": {
+			"cats": [
+				"27"
+			],
+			"website": "https://www.w3.org/RDF/"
+		},
 		"React": {
 			"cats": [
 				"12"
@@ -7525,6 +7543,12 @@
 			"env": "^(?:SoundManager|BaconPlayer)$",
 			"icon": "SoundManager.png",
 			"website": "http://www.schillmania.com/projects/soundmanager2"
+		},
+		"Sparql": {
+			"cats": [
+				"27"
+			],
+			"website": "https://www.w3.org/TR/sparql11-overview/"
 		},
 		"Sphinx": {
 			"cats": [
@@ -8536,6 +8560,20 @@
 			"icon": "VirtueMart.png",
 			"implies": "Joomla",
 			"website": "http://virtuemart.net"
+		},
+		"Virtuoso": {
+			"cats": [
+				"34"
+			],
+			"website": "https://virtuoso.openlinksw.com/",
+			"meta": {
+				"Keywords": "^OpenLink Virtuoso Sparql",
+				"Copyright": "^Copyright &copy; \\d{4} OpenLink Software"
+			},
+			"url": ".*/sparql\\.*",
+			"headers": {
+				"Server": "Virtuoso\\/?(\\d{2}\\.\\d{2}\\.\\d{4})?\\;version:\\1"
+			}
 		},
 		"Visual WebGUI": {
 			"cats": [
