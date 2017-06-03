@@ -942,7 +942,7 @@
 			],
 			"icon": "Blogger.png",
 			"meta": {
-				"generator": "blogger"
+				"generator": "^Blogger$"
 			},
 			"url": "\\.blogspot\\.com",
 			"website": "http://www.blogger.com"
@@ -6060,7 +6060,6 @@
 				"Server": "\bPerl\b(?: ?/?v?([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Perl.png",
-			"url": "\\.pl(?:$|\\?)",
 			"website": "http://perl.org"
 		},
 		"Petrojs": {
