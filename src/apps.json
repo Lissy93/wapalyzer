@@ -161,6 +161,21 @@
 			"icon": "ActOn.png",
 			"website": "http://act-on.com"
 		},
+		"Prebid": {
+			"cats": [
+				"36"
+			],
+			"icon": "Prebid.png",
+			"env": [
+				"pbjs",
+				"PREBID_TIMEOUT"
+			],
+			"script": [
+				"/prebid\\.js",
+				"adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
+			],
+			"website": "http://prebid.org"
+		},
 		"AdInfinity": {
 			"cats": [
 				"36"

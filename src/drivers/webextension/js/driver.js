@@ -257,7 +257,7 @@
 
 								if ( cat === match && !found ) {
 									if ( /\.svg$/i.test(icon) ) {
-										icon = 'converted/' + icon + '.png';
+										icon = 'converted/' + icon.replace(/\.svg$/, '.png');
 									}
 
 									browser.pageAction.setIcon({
