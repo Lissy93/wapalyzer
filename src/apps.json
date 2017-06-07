@@ -8227,7 +8227,8 @@
 			"env": "^Twipsy$\\;confidence:50",
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
-				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css"
+				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
+				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
 			"icon": "Twitter Bootstrap.png",
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
