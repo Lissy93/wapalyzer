@@ -4888,7 +4888,7 @@
 			"icon": "MediaWiki.png",
 			"implies": "PHP",
 			"meta": {
-				"generator": "MediaWiki"
+				"generator": "^MediaWiki ?([\\d.]+)$\\;version:\\1"
 			},
 			"website": "http://www.mediawiki.org"
 		},
