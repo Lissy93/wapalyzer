@@ -9694,7 +9694,8 @@
 			"cats": [
 				"6"
 			],
-			"html": "(?:<div id=\"jetshop-branding\">|<script>var JetshopData={|jetshop(?:Api|Image|Checkout)BaseUrl:|sr-jetshop-wp)",
+			"env": "^JetshopData$", 
+			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
 			"icon": "Jetshop.png",
 			"website": "http://jetshop.se"
 		},
