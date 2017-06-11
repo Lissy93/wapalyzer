@@ -828,6 +828,14 @@
 			},
 			"website": "http://bigace.de"
 		},
+		"Bablic": {
+		      "cats": [
+				"3","9"
+			],
+			"website":"https://www.bablic.com/",
+			"env":"^bablic$",
+			"icon":"bablic.png"
+		},
 		"Backbone.js": {
 			"cats": [
 				"12"
@@ -3370,6 +3378,15 @@
 			"implies": "OmniTouch 8660 My Teamwork",
 			"website": "http://example.com"
 		},
+		"Haravan": {
+			"cats": [
+				"6"
+			],
+			"env": "^Haravan$",
+			"icon": "Haravan.png",
+			"script": "haravan.*\\.js",
+			"website": "https://www.haravan.com"
+		},
 		"Haskell": {
 			"cats": [
 				"27"
@@ -4888,7 +4905,7 @@
 			"icon": "MediaWiki.png",
 			"implies": "PHP",
 			"meta": {
-				"generator": "MediaWiki"
+				"generator": "^MediaWiki ?([\\d.]+)$\\;version:\\1"
 			},
 			"website": "http://www.mediawiki.org"
 		},
@@ -8228,7 +8245,7 @@
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
 				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
-				"<div[^>]+class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
+				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
 			"icon": "Twitter Bootstrap.png",
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
@@ -9689,6 +9706,15 @@
 				"generator": "GO[ |]+CMS Enterprise"
 			},
 			"website": "http://notenbomer.nl/Producten/Content_management/io4_|_cms"
+		},
+		"Jetshop": {
+			"cats": [
+				"6"
+			],
+			"env": "^JetshopData$", 
+			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
+			"icon": "Jetshop.png",
+			"website": "http://jetshop.se"
 		},
 		"jQTouch": {
 			"cats": [
