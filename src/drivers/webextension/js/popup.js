@@ -4,15 +4,11 @@
 (function() {
 	var popup = {
 		init: function() {
+			popup.update([ 'p', {}, ' ' ], document, {});
+
 			var callback = function(tabs) {
 				( chrome || browser ).runtime.sendMessage({ id: 'get_apps', tab: tabs[0], source: 'popup.js' }, function(response) {
-					if ( /complete|interacrive|loaded/.test(document.readyState) ) {
-						popup.displayApps(response)
-					} else {
-						document.addEventListener('DOMContentLoaded', function() {
-							popup.displayApps(response)
-						});
-					}
+					popup.update(popup.appsToDomTemplate(response));
 				});
 			};
 
@@ -25,18 +21,36 @@
 			}
 		},
 
-		displayApps: function(response) {
+		update: function(dom) {
+			if ( /complete|interacrive|loaded/.test(document.readyState) ) {
+				popup.replaceDom(dom);
+			} else {
+				document.addEventListener('DOMContentLoaded', function() {
+					popup.replaceDom(dom);
+				});
+			}
+		},
+
+		replaceDom: function(domTemplate) {
+			var body = document.body;
+
+			while ( body.firstChild ) {
+				body.removeChild(body.firstChild);
+			}
+
+			body.append(jsonToDOM(domTemplate, document, {}));
+		},
+
+		appsToDomTemplate: function(response) {
 			var
 				appName, confidence, version,
-				detectedApps = document.querySelector('#detected-apps'),
 				categories = [],
-				json = [];
+				template = [];
 
 			if ( response.tabCache && response.tabCache.count > 0 ) {
 				for ( appName in response.tabCache.appsDetected ) {
 					confidence = response.tabCache.appsDetected[appName].confidenceTotal;
 					version    = response.tabCache.appsDetected[appName].version;
-
 					categories = [];
 
 					response.apps[appName].cats.forEach(function(cat) {
@@ -59,7 +73,7 @@
 						);
 					});
 
-					json.push(
+					template.push(
 						[
 							'div', {
 								class: 'detected-app'
@@ -88,7 +102,7 @@
 					);
 				}
 			} else {
-				json = [
+				template = [
 					'div', {
 						class: 'empty'
 					},
@@ -96,12 +110,7 @@
 				];
 			}
 
-			detectedApps.appendChild(jsonToDOM(json, document, {}));
-
-			// Force redraw after popup animation on Mac OS
-			setTimeout(function() {
-				document.body.appendChild(jsonToDOM([ 'span', { style: 'line-height: 1px;' }], document, {}));
-			}, 800);
+			return template;
 		},
 
 		slugify: function(string) {
