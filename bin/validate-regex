@@ -2,8 +2,7 @@
 
 var
 	app,
-	modulesPath = process.env.WAPPALYZER_NODE_PATH !== undefined ? process.env.WAPPALYZER_NODE_PATH + '/node_modules/' : '',
-	json        = require(process.env.WAPPALYZER_ROOT + '/src/apps.json');
+	json = require('../src/apps.json');
 
 for ( app in json.apps ) {
 	['headers', 'html', 'env', 'meta', 'script'].forEach(function(type) {
