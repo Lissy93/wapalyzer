@@ -6,7 +6,7 @@
 		init: function() {
 			popup.update([ 'p', {}, ' ' ], document, {});
 
-			var callback = function(tabs) {
+			var func = function(tabs) {
 				( chrome || browser ).runtime.sendMessage({ id: 'get_apps', tab: tabs[0], source: 'popup.js' }, function(response) {
 					popup.update(popup.appsToDomTemplate(response));
 				});
@@ -14,15 +14,15 @@
 
 			try {
 				// Chrome, Firefox
-				browser.tabs.query({ active: true, currentWindow: true }).then(callback);
+				browser.tabs.query({ active: true, currentWindow: true }).then(func);
 			} catch ( e ) {
 				// Edge
-				browser.tabs.query({ active: true, currentWindow: true }, callback);
+				browser.tabs.query({ active: true, currentWindow: true }, func);
 			}
 		},
 
 		update: function(dom) {
-			if ( /complete|interacrive|loaded/.test(document.readyState) ) {
+			if ( /complete|interactive|loaded/.test(document.readyState) ) {
 				popup.replaceDom(dom);
 			} else {
 				document.addEventListener('DOMContentLoaded', function() {
@@ -38,7 +38,7 @@
 				body.removeChild(body.firstChild);
 			}
 
-			body.append(jsonToDOM(domTemplate, document, {}));
+			body.appendChild(jsonToDOM(domTemplate, document, {}));
 		},
 
 		appsToDomTemplate: function(response) {

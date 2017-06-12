@@ -33,9 +33,17 @@
 		 * Get a value from localStorage
 		 */
 		getOption: function(name, defaultValue, callback) {
-			browser.storage.local.get(name).then(function(item) {
+			var func = function(item) {
 				callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
-			});
+			};
+
+			try {
+				// Chrome, Firefox
+				browser.storage.local.get(name).then(func);
+			} catch ( e ) {
+				// Edge
+				browser.storage.local.get(name, func);
+			}
 		},
 
 		/**
