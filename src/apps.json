@@ -10004,6 +10004,16 @@
 			],
 			"website": "http://osticket.com"
 		},
+		"otrs": {
+			"cats": [
+				"13"
+			],
+			"html": "<!--\\s+OTRS: Copyright \\d+-\\d+, OTRS AG",
+			"script": "^/otrs-web/js/",
+			"icon": "otrs.png",
+			"implies": "perl",
+			"website": "https://www.otrs.com"
+		},
 		"ownCloud": {
 			"cats": [
 				"19"
