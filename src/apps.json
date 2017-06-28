@@ -6165,6 +6165,13 @@
 			"script": "//assets\\.pinterest\\.com/js/pinit\\.js",
 			"website": "http://pinterest.com"
 		},
+	    "pirobase CMS": {
+			"cats": "1",
+			"html": "[^<]+=\"[^\"]*site\/[.A-Za-z/0-9_-]*\/resourceCached\/[.A-Za-z/0-9_-]*\"[^>]*|[^<]+cbi:\/\/\/cms\/[^>]+",
+			"icon": "pirobaseCMS.svg",
+			"implies": "Java",
+			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
+		},
 		"Piwik": {
 			"cats": [
 				"10"
@@ -9711,7 +9718,7 @@
 			"cats": [
 				"6"
 			],
-			"env": "^JetshopData$", 
+			"env": "^JetshopData$",
 			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
 			"icon": "Jetshop.png",
 			"website": "http://jetshop.se"
