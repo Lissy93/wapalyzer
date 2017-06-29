@@ -6178,7 +6178,7 @@
 		},
 	    "pirobase CMS": {
 			"cats": "1",
-			"html": "[^<]+=\"[^\"]*site\/[.A-Za-z/0-9_-]*\/resourceCached\/[.A-Za-z/0-9_-]*\"[^>]*|[^<]+cbi:\/\/\/cms\/[^>]+",
+			"html": "<[^<]+=\"[^\"]*site/[a-z0-9/._-]*/resourceCached/[a-z0-9/._-]*\"[^>]*>|[^<]+cbi:///cms/[^>]+",
 			"icon": "pirobaseCMS.svg",
 			"implies": "Java",
 			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
