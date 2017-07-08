@@ -203,7 +203,7 @@
 						break;
 					case 'ad_log':
 						w.adCache.push(message.subject);
-
+						w.checkAdCache();
 						break;
 					case 'get_apps':
 						response = {
