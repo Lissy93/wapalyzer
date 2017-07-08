@@ -6419,7 +6419,7 @@
 			],
 			"headers": {
 				"Set-Cookie": "PUBLICCMS_USER",
-				"X-Powered-PublicCMS": ""
+				"X-Powered-PublicCMS": "(.*)\\;version:\\1"
 			},
 			"icon": "Public CMS.png",
 			"implies": "Java",
@@ -9713,7 +9713,7 @@
 			"cats": [
 				"6"
 			],
-			"env": "^JetshopData$", 
+			"env": "^JetshopData$",
 			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
 			"icon": "Jetshop.png",
 			"website": "http://jetshop.se"
