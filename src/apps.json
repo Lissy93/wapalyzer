@@ -656,6 +656,17 @@
 			"icon": "Arc Forum.png",
 			"website": "http://arclanguage.org"
 		},
+		"ArcGIS API for JavaScript":{
+			"cats": [
+				"35"
+			],
+			"script": [
+				"js.arcgis.com",
+				"basemaps.arcgis.com"
+			],
+			"icon": "arcgis_icon.png",
+			"website": "https://developers.arcgis.com/javascript/"
+		},
 		"Artifactory": {
 			"cats": [
 				"47"
@@ -8164,6 +8175,16 @@
 			"icon": "TornadoServer.png",
 			"website": "http://tornadoweb.org"
 		},
+		"TotalCode": {
+			"cats": [
+				"6"
+			],
+			"headers": {
+				"X-Powered-By": "^TotalCode$"
+			},
+			"icon": "TotalCode.png",
+			"website": "http://www.totalcode.com"
+		},
 		"Trac": {
 			"cats": [
 				"13"
@@ -8326,6 +8347,16 @@
 			"icon": "Typekit.png",
 			"script": "use\\.typekit\\.com",
 			"website": "http://typekit.com"
+		},
+		"uCoz": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"Set-Cookie": "uCoz="
+			},
+			"icon": "uCoz.svg",
+			"website": "https://ucoz.ru"
 		},
 		"UIKit": {
 			"cats": [
@@ -10024,6 +10055,16 @@
 				"MySQL"
 			],
 			"website": "http://osticket.com"
+		},
+		"otrs": {
+			"cats": [
+				"13"
+			],
+			"html": "<!--\\s+OTRS: Copyright \\d+-\\d+, OTRS AG",
+			"script": "^/otrs-web/js/",
+			"icon": "otrs.png",
+			"implies": "perl",
+			"website": "https://www.otrs.com"
 		},
 		"ownCloud": {
 			"cats": [
