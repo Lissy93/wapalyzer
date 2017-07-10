@@ -8406,7 +8406,7 @@
 			],
 			"env": "^UserEngage$",
 			"icon": "UserEngage.png",
-			"script": "(?:https:\\/\\/widget\\.userengage\\.com\\/widget\\.js)",
+			"html": "<div[^>]+/id=\"ue_widget\"",
 			"website": "https://userengage.com"
 		},
 		"UserLike": {
