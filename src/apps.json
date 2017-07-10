@@ -254,12 +254,14 @@
 		"Adnegah": {
 			"cats": [
 				"36"
-			],
-			"env": "^ados(?:Results)?$",
+			],  
+			"headers": {
+				"X-Advertising-By": "adnegah.net"
+			},
 			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
 			"icon": "adnegah.png",
-			"script": "[^a-z]adnegah.*\\.js",
-			"website": "http://Adnegah.net"
+			"script": "[^a-z]adnegah.*\\.js$", 
+			"website": "https://Adnegah.net"
 		},
 		"Adobe ColdFusion": {
 			"cats": [
@@ -653,6 +655,17 @@
 			"html": "ping\\.src = node\\.href;\\s+[^>]+\\s+}\\s+</script>",
 			"icon": "Arc Forum.png",
 			"website": "http://arclanguage.org"
+		},
+		"ArcGIS API for JavaScript":{
+			"cats": [
+				"35"
+			],
+			"script": [
+				"js.arcgis.com",
+				"basemaps.arcgis.com"
+			],
+			"icon": "arcgis_icon.png",
+			"website": "https://developers.arcgis.com/javascript/"
 		},
 		"Artifactory": {
 			"cats": [
@@ -6435,7 +6448,7 @@
 			],
 			"headers": {
 				"Set-Cookie": "PUBLICCMS_USER",
-				"X-Powered-PublicCMS": ""
+				"X-Powered-PublicCMS": "(.*)\\;version:\\1"
 			},
 			"icon": "Public CMS.png",
 			"implies": "Java",
@@ -8162,6 +8175,16 @@
 			"icon": "TornadoServer.png",
 			"website": "http://tornadoweb.org"
 		},
+		"TotalCode": {
+			"cats": [
+				"6"
+			],
+			"headers": {
+				"X-Powered-By": "^TotalCode$"
+			},
+			"icon": "TotalCode.png",
+			"website": "http://www.totalcode.com"
+		},
 		"Trac": {
 			"cats": [
 				"13"
@@ -8325,13 +8348,24 @@
 			"script": "use\\.typekit\\.com",
 			"website": "http://typekit.com"
 		},
+		"uCoz": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"Set-Cookie": "uCoz="
+			},
+			"icon": "uCoz.svg",
+			"website": "https://ucoz.ru"
+		},
 		"UIKit": {
 			"cats": [
 				"18"
 			],
 			"icon": "UIKit.png",
+			"html": "<[^>]+class=\"[^\"]*(?:uk-container|uk-section)",
 			"script": "uikit.*\\.js",
-			"website": "http://getuikit.com"
+			"website": "https://getuikit.com"
 		},
 		"UNIX": {
 			"cats": [
@@ -10021,6 +10055,16 @@
 				"MySQL"
 			],
 			"website": "http://osticket.com"
+		},
+		"otrs": {
+			"cats": [
+				"13"
+			],
+			"html": "<!--\\s+OTRS: Copyright \\d+-\\d+, OTRS AG",
+			"script": "^/otrs-web/js/",
+			"icon": "otrs.png",
+			"implies": "perl",
+			"website": "https://www.otrs.com"
 		},
 		"ownCloud": {
 			"cats": [

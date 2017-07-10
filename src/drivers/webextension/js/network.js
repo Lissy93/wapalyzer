@@ -114,9 +114,20 @@
 		}
 	}
 
-	function isTrackingEnabled() {
+	function ifTrackingEnabled(ifCallback, elseCallback) {
 
-		return parseInt(localStorage.tracking, 10);
+		browser.storage.local.get('tracking').then(function(item) {
+
+			if ( item.hasOwnProperty('tracking') ) {
+				if ( item.tracking ) {
+					ifCallback();
+				} else {
+					elseCallback();
+				}
+			} else {
+				ifCallback();
+			}
+		});
 
 	}
 
@@ -195,18 +206,21 @@
 			var tabId = details.tabId;
 			this.cleanupCollector(tabId);
 
-			if ( isTrackingEnabled() ) {
-				if ( !areListenersRegistered ) {
+			ifTrackingEnabled(
+				function() {
+					if ( !areListenersRegistered ) {
 
-					registerListeners();
-				}
-				this.collectors[tabId] = new PageNetworkTrafficCollector(tabId);
-			} else {
-				if ( areListenersRegistered ) {
+						registerListeners();
+					}
+					this.collectors[tabId] = new PageNetworkTrafficCollector(tabId);
+				}.bind(this),
+				function() {
+					if ( areListenersRegistered ) {
 
-					unregisterListeners();
+						unregisterListeners();
+					}
 				}
-			}
+			);
 		},
 
 		onNavigationCommitted: function(details) {
@@ -777,8 +791,16 @@
 
 	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if ( request === 'is_tracking_enabled' ) {
-			sendResponse({'tracking_enabled': isTrackingEnabled()});
+			ifTrackingEnabled(
+				function() {
+					sendResponse({'tracking_enabled': true});
+				},
+				function() {
+					sendResponse({'tracking_enabled': false});
+				}
+			);
 		}
+		return true;
 	});
 
 })();
