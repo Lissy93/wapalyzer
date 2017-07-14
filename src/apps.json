@@ -1646,6 +1646,19 @@
 			},
 			"website": "http://www.gocontentbox.org"
 		},
+		"Contentful": {
+			"cats": [
+				"1"
+			],
+			"html": [
+				"<[^>]+(?:https?:)?\/\/images.contentful.com",
+				"<[^>]+(?:https?:)?\/\/videos.contentful.com",
+				"<[^>]+(?:https?:)?\/\/assets.contentful.com",
+				"<[^>]+(?:https?:)?\/\/downloads.contentful.com"
+			],
+			"icon": "Contentful.svg",
+			"website": "http://www.contentful.com"
+		},
 		"ConversionLab": {
 			"cats": [
 				"10"
