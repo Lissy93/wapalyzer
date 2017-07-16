@@ -1,0 +1,41 @@
+{
+  "name": "extract-zip",
+  "version": "1.5.0",
+  "description": "unzip a zip file into a directory using 100% pure gluten-free organic javascript",
+  "main": "index.js",
+  "bin": {
+    "extract-zip": "cli.js"
+  },
+  "scripts": {
+    "test": "standard && node test/test.js"
+  },
+  "author": "max ogden",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/maxogden/extract-zip.git"
+  },
+  "keywords": [
+    "unzip",
+    "zip",
+    "extract"
+  ],
+  "bugs": {
+    "url": "https://github.com/maxogden/extract-zip/issues"
+  },
+  "homepage": "https://github.com/maxogden/extract-zip",
+  "dependencies": {
+    "concat-stream": "1.5.0",
+    "debug": "0.7.4",
+    "mkdirp": "0.5.0",
+    "yauzl": "2.4.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.2.8",
+    "standard": "^5.2.2",
+    "tape": "^4.2.0"
+  },
+  "directories": {
+    "test": "test"
+  }
+}

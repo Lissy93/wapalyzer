@@ -3,6 +3,20 @@
 cd "$(dirname $0)"
 
 if [[ -f "$1" ]]; then
+  yarn install
+
+  pushd ../src/drivers/webextension
+
+  yarn install
+
+  popd
+
+  pushd ../src/drivers/npm
+
+  yarn install
+
+  popd
+
 	./$1 $@
 else
 	./help

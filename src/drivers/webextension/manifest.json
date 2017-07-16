@@ -36,7 +36,6 @@
 				"https://*/*"
 			],
 			"js": [
-				"js/browser-polyfill.js",
 				"js/content.js"
 			],
 			"run_at": "document_idle"
@@ -47,7 +46,6 @@
 				"https://*/*"
 			],
 			"js": [
-				"js/browser-polyfill.js",
 				"js/iframe.js"
 			],
 			"run_at": "document_start",
