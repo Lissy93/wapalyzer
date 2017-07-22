@@ -1,6 +1,7 @@
 /**
  * WebExtension driver
  */
+              setOption('robotsTxtCache', {});
 
 var tabCache = {};
 var headersCache = {};
@@ -61,7 +62,7 @@ function post(url, body) {
     body
   })
     .then(response => {
-      wappalyzer.log('POST ' + url + ': ', 'driver');
+      wappalyzer.log('POST ' + url + ': ' + response.status, 'driver');
     })
     .catch(error => {
       wappalyzer.log('POST ' + url + ': ' + error, 'driver', 'error');
@@ -130,9 +131,9 @@ browser.webRequest.onCompleted.addListener(request => {
   var responseHeaders = {};
 
   if ( request.responseHeaders ) {
-    var uri = request.url.replace(/#.*$/, ''); // Remove hash
+    var url = wappalyzer.parseUrl(request.url);
 
-    request.responseHeaders.forEach(header => {
+    request.responseHeaders.forEach(function(header) {
       responseHeaders[header.name.toLowerCase()] = header.value || '' + header.binaryValue;
     });
 
@@ -141,12 +142,12 @@ browser.webRequest.onCompleted.addListener(request => {
     }
 
     if ( /text\/html/.test(responseHeaders['content-type']) ) {
-      if ( headersCache[uri] === undefined ) {
-        headersCache[uri] = {};
+      if ( headersCache[url.canonical] === undefined ) {
+        headersCache[url.canonical] = {};
       }
 
       Object.keys(responseHeaders).forEach(header => {
-        headersCache[uri][header] = responseHeaders[header];
+        headersCache[url.canonical][header] = responseHeaders[header];
       });
     }
   }
@@ -167,15 +168,15 @@ browser.webRequest.onCompleted.addListener(request => {
 
         break;
       case 'analyze':
-        var a = document.createElement('a');
+        var url = wappalyzer.parseUrl(sender.tab.url);
 
-        a.href = sender.tab.url.replace(/#.*$/, '');
-
-        if ( headersCache[a.href] !== undefined ) {
-          message.subject.headers = headersCache[a.href];
+        if ( headersCache[url.canonical] !== undefined ) {
+          message.subject.headers = headersCache[url.canonical];
         }
 
-        wappalyzer.analyze(a.hostname, a.href, message.subject, { tab: sender.tab });
+        wappalyzer.analyze(url.hostname, url.canonical, message.subject, {
+          tab: sender.tab
+        });
 
         break;
       case 'ad_log':
@@ -202,7 +203,7 @@ browser.webRequest.onCompleted.addListener(request => {
  */
 wappalyzer.driver.log = (message, source, type) => {
   console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
-}
+};
 
 /**
  * Display apps
@@ -255,7 +256,44 @@ wappalyzer.driver.displayApps = (detected, context) => {
         }
       });
   }
-}
+};
+
+/**
+ * Fetch and cache robots.txt for host
+ */
+wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
+  return new Promise((resolve, reject) => {
+    getOption('robotsTxtCache')
+      .then(robotsTxtCache => {
+        robotsTxtCache = robotsTxtCache || {};
+
+        if ( host in robotsTxtCache ) {
+          resolve(robotsTxtCache[host]);
+        } else {
+          var url = 'http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt';
+
+          fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
+            .then(response => {
+              if ( !response.ok ) {
+                throw 'GET ' + response.url + ' was not ok';
+              }
+
+              return response.text();
+            })
+            .then(robotsTxt => {
+              robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
+
+              setOption('robotsTxtCache', robotsTxtCache);
+
+              resolve(robotsTxtCache[host]);
+
+              var hostname = host.replace(/:[0-9]+$/, '')
+            })
+            .catch(reject);
+        }
+      });
+  });
+};
 
 /**
  * Anonymously track detected applications for research purposes
@@ -268,4 +306,4 @@ wappalyzer.driver.ping = (ping, adCache) => {
         post('https://ad.wappalyzer.com/log/wp/', adCache);
       }
     });
-}
+};

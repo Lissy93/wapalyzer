@@ -37,8 +37,6 @@ wappalyzer.log = (message, source, type) => {
 };
 
 wappalyzer.analyze = (hostname, url, data, context) => {
-  wappalyzer.log('Function call: analyze()', 'core');
-
   var apps = {};
 
   // Remove hash from URL
@@ -74,6 +72,10 @@ wappalyzer.analyze = (hostname, url, data, context) => {
     if ( data.env ) {
       analyzeEnv(app, data.env);
     }
+
+    if ( data.robotsTxt ) {
+      analyzeRobotsTxt(app, data.robotsTxt);
+    }
   })
 
   Object.keys(apps).forEach(appName => {
@@ -102,6 +104,65 @@ wappalyzer.analyze = (hostname, url, data, context) => {
  */
 wappalyzer.cacheDetectedAds = ad => {
   adCache.push(ad);
+}
+
+/**
+ *
+ */
+wappalyzer.robotsTxtAllows = url => {
+  return new Promise((resolve, reject) => {
+    var parsed = wappalyzer.parseUrl(url);
+
+    wappalyzer.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
+      .then(robotsTxt => {
+        robotsTxt.forEach(disallow => {
+          if ( parsed.pathname.search(disallow) === 0 ) {
+            reject();
+          }
+        });
+
+        resolve();
+      });
+  });
+};
+
+/**
+ * Parse a URL
+ */
+wappalyzer.parseUrl = url => {
+  var a = document.createElement('a');
+
+  a.href = url;
+
+  a.canonical = a.protocol + '//' + a.host + a.pathname;
+
+  return a;
+}
+
+/**
+ *
+ */
+wappalyzer.parseRobotsTxt = robotsTxt => {
+  var userAgent;
+  var disallow = [];
+
+  robotsTxt.split('\n').forEach(line => {
+    var matches = /^User-agent:\s*(.+)$/i.exec(line);
+
+    if ( matches ) {
+      userAgent = matches[1].toLowerCase();
+    } else {
+      if ( userAgent === '*' || userAgent === 'wappalyzer' ) {
+        matches = /^Disallow:\s*(.+)$/i.exec(line);
+
+        if ( matches ) {
+          disallow.push(matches[1]);
+        }
+      }
+    }
+  });
+
+  return disallow;
 }
 
 /**
@@ -156,7 +217,7 @@ function parsePatterns(patterns) {
   }
 
   // Convert back to array if the original pattern list was an array (or string)
-  if ( parsed.hasOwnProperty('main') ) {
+  if ( 'main' in parsed ) {
     parsed = parsed.main;
   }
 
@@ -206,7 +267,7 @@ function resolveImplies(apps, url) {
             return;
           }
 
-          if ( !apps.hasOwnProperty(implied.string) ) {
+          if ( !( implied.string in apps ) ) {
             apps[implied.string] = detected[url] && detected[url][implied.string] ? detected[url][implied.string] : new Application(implied.string, true);
 
             checkImplies = true;
@@ -226,8 +287,6 @@ function resolveImplies(apps, url) {
  * Cache detected applications
  */
 function cacheDetectedApps(apps, url) {
-  wappalyzer.log('Function call: cacheDetectedApps()', 'core');
-
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
 
@@ -244,35 +303,39 @@ function cacheDetectedApps(apps, url) {
  * Track detected applications
  */
 function trackDetectedApps(apps, url, hostname, html) {
-  wappalyzer.log('Function call: trackDetectedApps()', 'core');
-
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
 
-    if ( detected[url][appName].getConfidence() >= 100 && validation.hostname.test(hostname) && !validation.hostnameBlacklist.test(url) ) {
-      if ( !hostnameCache.hasOwnProperty(hostname) ) {
-        hostnameCache[hostname] = {
-          applications: {},
-          meta: {}
-        };
-      }
+    if ( detected[url][appName].getConfidence() >= 100 ) {
+      if ( validation.hostname.test(hostname) && !validation.hostnameBlacklist.test(url) ) {
+        wappalyzer.robotsTxtAllows(url)
+          .then(() => {
+            if ( !( hostname in hostnameCache ) ) {
+              hostnameCache[hostname] = {
+                applications: {},
+                meta: {}
+              };
+            }
 
-      if ( !hostnameCache[hostname].applications.hasOwnProperty(appName) ) {
-        hostnameCache[hostname].applications[appName] = {
-          hits: 0
-        };
-      }
+            if ( !( appName in hostnameCache[hostname].applications ) ) {
+              hostnameCache[hostname].applications[appName] = {
+                hits: 0
+              };
+            }
 
-      hostnameCache[hostname].applications[appName].hits ++;
+            hostnameCache[hostname].applications[appName].hits ++;
 
-      if ( apps[appName].version ) {
-        hostnameCache[hostname].applications[appName].version = app.version;
+            if ( apps[appName].version ) {
+              hostnameCache[hostname].applications[appName].version = app.version;
+            }
+          })
+        .catch(() => console.log('Disallowed in robots.txt: ' + url))
       }
     }
   });
 
   // Additional information
-  if ( hostnameCache.hasOwnProperty(hostname) ) {
+  if ( hostname in hostnameCache ) {
     var match = html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
 
     if ( match && match.length ) {
@@ -373,7 +436,7 @@ function analyzeHeaders(app, headers) {
       patterns[header].forEach(pattern => {
         header = header.toLowerCase();
 
-        if ( headers.hasOwnProperty(header) && pattern.regex.test(headers[header]) ) {
+        if ( header in headers && pattern.regex.test(headers[header]) ) {
           addDetected(app, pattern, 'headers', headers[header], header);
         }
       });
@@ -394,6 +457,21 @@ function analyzeEnv(app, envs) {
           addDetected(app, pattern, 'env', envs[env]);
         }
       })
+    });
+  }
+}
+
+/**
+ * Analyze robots.txt
+ */
+function analyzeRobotsTxt(app, robotsTxt) {
+  var patterns = parsePatterns(app.props.robotsTxt);
+
+  if ( patterns.length ) {
+    patterns.forEach(pattern => {
+      if ( pattern.regex.test(robotsTxt) ) {
+        addDetected(app, pattern, 'robotsTxt', robotsTxt);
+      }
     });
   }
 }
