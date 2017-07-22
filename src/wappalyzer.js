@@ -8,17 +8,14 @@
 
 'use strict';
 
-import json from './apps.json';
-import Application from './modules/application.js';
-
 const validation = {
   hostname: /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/,
   hostnameBlacklist: /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/
 };
 
 var wappalyzer = {
-  apps: json.apps,
-  categories: json.categories,
+  apps: {},
+  categories: {},
   driver: {}
 };
 
@@ -79,8 +76,10 @@ wappalyzer.analyze = (hostname, url, data, context) => {
     }
   })
 
-  Object.keys(apps).forEach(app => {
-    if ( !app.detected ) {
+  Object.keys(apps).forEach(appName => {
+    var app = apps[appName];
+
+    if ( !app.detected || !app.getConfidence() ) {
       delete apps[app.name];
     }
   });
@@ -96,6 +95,13 @@ wappalyzer.analyze = (hostname, url, data, context) => {
   }
 
   wappalyzer.driver.displayApps(detected[url], context);
+}
+
+/**
+ * Cache detected ads
+ */
+wappalyzer.cacheDetectedAds = ad => {
+  adCache.push(ad);
 }
 
 /**
@@ -235,13 +241,6 @@ function cacheDetectedApps(apps, url) {
 }
 
 /**
- * Cache detected ads
- */
-function cacheDetectedAds(ad) {
-  adCache.push(ad);
-}
-
-/**
  * Track detected applications
  */
 function trackDetectedApps(apps, url, hostname, html) {
@@ -298,7 +297,7 @@ function analyzeUrl(app, url) {
   if ( patterns.length ) {
     patterns.forEach(pattern => {
       if ( pattern.regex.test(url) ) {
-        app.setDetected(pattern, 'url', url);
+        addDetected(app, pattern, 'url', url);
       }
     });
   }
@@ -313,7 +312,7 @@ function analyzeHtml(app, html) {
   if ( patterns.length ) {
     patterns.forEach(pattern => {
       if ( pattern.regex.test(html) ) {
-        app.setDetected(pattern, 'html', html);
+        addDetected(app, pattern, 'html', html);
       }
     });
   }
@@ -332,7 +331,7 @@ function analyzeScript(app, html) {
 
       while ( ( match = regex.exec(html) ) ) {
         if ( pattern.regex.test(match[2]) ) {
-          app.setDetected(pattern, 'script', match[2]);
+          addDetected(app, pattern, 'script', match[2]);
         }
       }
     });
@@ -355,7 +354,7 @@ function analyzeMeta(app, html) {
 
         patterns[meta].forEach(pattern => {
           if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-            app.setDetected(pattern, 'meta', content[2], meta);
+            addDetected(app, pattern, 'meta', content[2], meta);
           }
         });
       }
@@ -375,7 +374,7 @@ function analyzeHeaders(app, headers) {
         header = header.toLowerCase();
 
         if ( headers.hasOwnProperty(header) && pattern.regex.test(headers[header]) ) {
-          app.setDetected(pattern, 'headers', headers[header], header);
+          addDetected(app, pattern, 'headers', headers[header], header);
         }
       });
     });
@@ -392,11 +391,81 @@ function analyzeEnv(app, envs) {
     patterns.forEach(pattern => {
       Object.keys(envs).forEach(env => {
         if ( pattern.regex.test(envs[env]) ) {
-          app.setDetected(pattern, 'env', envs[env]);
+          addDetected(app, pattern, 'env', envs[env]);
         }
       })
     });
   }
 }
 
-export default wappalyzer;
+/**
+ * Mark application as detected, set confidence and version
+ */
+function addDetected(app, pattern, type, value, key) {
+  app.detected = true;
+
+  // Set confidence level
+  app.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence || 100;
+
+  // Detect version number
+  if ( pattern.version ) {
+    var versions = [];
+    var version  = pattern.version;
+    var matches  = pattern.regex.exec(value);
+
+    if ( matches ) {
+      matches.forEach((match, i) => {
+        // Parse ternary operator
+        var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.*)$').exec(version);
+
+        if ( ternary && ternary.length === 3 ) {
+          version = version.replace(ternary[0], match ? ternary[1] : ternary[2]);
+        }
+
+        // Replace back references
+        version = version.replace(new RegExp('\\\\' + i, 'g'), match || '');
+      });
+
+      if ( version && versions.indexOf(version) === -1 ) {
+        versions.push(version);
+      }
+
+      if ( versions.length ) {
+        // Use the longest detected version number
+        app.version = versions.reduce((a, b) => a.length > b.length ? a : b)[0];
+      }
+    }
+  }
+}
+
+/**
+ * Application class
+ */
+class Application {
+  constructor(name, props, detected) {
+    this.confidence      = {};
+    this.confidenceTotal = 0;
+    this.detected        = Boolean(detected);
+    this.excludes        = [];
+    this.name            = name;
+    this.props           = props;
+    this.version         = '';
+  }
+
+  /**
+   * Calculate confidence total
+   */
+  getConfidence() {
+    var total = 0;
+
+    for ( var id in this.confidence ) {
+      total += this.confidence[id];
+    }
+
+    return this.confidenceTotal = Math.min(total, 100);
+  }
+}
+
+if ( typeof exports === 'object' ) {
+	exports.wappalyzer = wappalyzer;
+}
