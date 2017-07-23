@@ -130,7 +130,7 @@ wappalyzer.robotsTxtAllows = url => {
  * Parse a URL
  */
 wappalyzer.parseUrl = url => {
-  var a = document.createElement('a');
+  var a = wappalyzer.driver.document.createElement('a');
 
   a.href = url;
 
@@ -303,6 +303,10 @@ function cacheDetectedApps(apps, url) {
  * Track detected applications
  */
 function trackDetectedApps(apps, url, hostname, html) {
+  if ( !( wappalyzer.driver.ping instanceof Function ) ) {
+    return;
+  }
+
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
 
@@ -544,6 +548,6 @@ class Application {
   }
 }
 
-if ( typeof exports === 'object' ) {
-	exports.wappalyzer = wappalyzer;
+if ( typeof module === 'object' ) {
+  module.exports = wappalyzer;
 }
