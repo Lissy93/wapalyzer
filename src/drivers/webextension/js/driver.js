@@ -198,6 +198,8 @@ browser.webRequest.onCompleted.addListener(request => {
   }
 });
 
+wappalyzer.driver.document = document;
+
 /**
  * Log messages to console
  */
