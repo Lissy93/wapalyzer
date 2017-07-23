@@ -2,8 +2,6 @@ FROM alpine
 
 MAINTAINER Elbert Alias <elbert@alias.io>
 
-EXPOSE 8080
-
 ENV WAPPALYZER_DIR=/opt/wappalyzer
 
 RUN apk update && apk add --no-cache \
