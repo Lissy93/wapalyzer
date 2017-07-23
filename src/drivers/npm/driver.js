@@ -57,10 +57,6 @@ const driver = {
       const browser = new Browser();
 
       browser.visit(url, error => {
-        if ( error ) {
-          return reject(error);
-        }
-
         wappalyzer.driver.document = browser.document;
 
         const headers = browser.resources['0'].response.headers;
