@@ -51,8 +51,7 @@ function replaceDom(domTemplate) {
 
 function appsToDomTemplate(response) {
   var
-    appName, confidence, version,
-    categories = [],
+    appName, confidence, version, categories,
     template = [];
 
   if ( response.tabCache && Object.keys(response.tabCache.detected).length > 0 ) {

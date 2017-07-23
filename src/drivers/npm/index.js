@@ -16,10 +16,8 @@ wappalyzer.analyze(url)
   .then(json => {
     process.stdout.write(JSON.stringify(json) + '\n')
 
-    process.exit(0);
+    process.exit();
   })
   .catch(error => {
-    process.stderr.write(error + '\n')
-
-    process.exit(1);
+    throw error
   });

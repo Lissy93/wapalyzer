@@ -1,7 +1,9 @@
 /**
  * WebExtension driver
  */
-              setOption('robotsTxtCache', {});
+
+/** global: browser */
+/** global: wappalyzer */
 
 var tabCache = {};
 var headersCache = {};
