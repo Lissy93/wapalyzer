@@ -27,7 +27,6 @@ RUN npm i -g \
 	jsonlint-cli \
 	manifoldjs \
 	svg2png-many \
-	webpack \
 	yarn
 
 RUN mkdir -p $WAPPALYZER_DIR
