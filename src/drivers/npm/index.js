@@ -14,7 +14,7 @@ if ( !url ) {
 
 wappalyzer.analyze(url)
   .then(json => {
-    process.stdout.write(JSON.stringify(json, null, 2) + '\n')
+    process.stdout.write(JSON.stringify(json) + '\n')
 
     process.exit(0);
   })
