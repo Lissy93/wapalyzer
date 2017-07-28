@@ -9856,9 +9856,10 @@
 		},
 		"LiveHelp": {
 			"cats": [
-				"52", "53"
+				"52",
+				"53"
 			],
-			"script": "http[s]{0,1}:\/\/server\.livehelp\.it\/widgetjs\/[0-9]{5}\/[0-9]{1,3}\.js?.*",
+			"script": "http[s]{0,1}:\\/\\/server\\.livehelp\\.it\\/widgetjs\\/[0-9]{5}\\/[0-9]{1,3}\\.js?.*",
 			"icon": "LiveHelp.png",
 			"website": "http://www.livehelp.it"
 		},
