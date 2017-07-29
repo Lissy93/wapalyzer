@@ -131,7 +131,7 @@ var exports = {};
 			}
 		},
 
-		ifTrackingEnabled: function(callback, elseCallback) {
+		askIfTrackingEnabled: function(callback, elseCallback) {
 
 			this.sendToBackground(
 				'is_tracking_enabled',
@@ -181,7 +181,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: 'a80971b-c',
+				mrev: '082d7cb-d',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -890,7 +890,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1498662251-16965-9321-27566-5783';
+	var POST_MSG_ID = '1501281986-4236-27733-5465-12184';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
@@ -1136,12 +1136,12 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 	window.adparser = {
 		init: exports.coordinator.init,
 		addPostMessageListener: exports.coordinator.addPostMessageListener,
-		ifTrackingEnabled: exports.utils.ifTrackingEnabled,
+		askIfTrackingEnabled: exports.utils.askIfTrackingEnabled,
 		sendToBackground: exports.utils.sendToBackground
 	};
 } else {
 	exports.coordinator.addPostMessageListener();
-	exports.utils.ifTrackingEnabled(
+	exports.utils.askIfTrackingEnabled(
 		function() {
 			exports.coordinator.init(function() {});
 		},
@@ -1156,7 +1156,7 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 
 	if (  window === window.top  ) {
 		adparser.addPostMessageListener();
-		adparser.ifTrackingEnabled(
+		adparser.askIfTrackingEnabled(
 			function() {
 				adparser.init(onAdFound);
 			},

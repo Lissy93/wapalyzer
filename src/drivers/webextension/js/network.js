@@ -114,21 +114,33 @@
 		}
 	}
 
-	function ifTrackingEnabled(ifCallback, elseCallback) {
+	function ifTrackingEnabled(url, ifCallback, elseCallback) {
+
+		var fullIfCallback = function() {
+			allowedByRobotsTxt(url, ifCallback, elseCallback);
+		};
 
 		browser.storage.local.get('tracking').then(function(item) {
 
 			if ( item.hasOwnProperty('tracking') ) {
 				if ( item.tracking ) {
-					ifCallback();
+					fullIfCallback();
 				} else {
 					elseCallback();
 				}
 			} else {
-				ifCallback();
+				fullIfCallback();
 			}
 		});
 
+	}
+
+	function allowedByRobotsTxt(url, ifCallback, elseCallback) {
+		if (  ! url.startsWith('chrome://')  ) {
+			wappalyzer.robotsTxtAllows(url).then(ifCallback, elseCallback);
+		} else {
+			elseCallback();
+		}
 	}
 
 	function isPixelRequest(request) {
@@ -207,6 +219,7 @@
 			this.cleanupCollector(tabId);
 
 			ifTrackingEnabled(
+				details.url,
 				function() {
 					if ( !areListenersRegistered ) {
 
@@ -792,12 +805,13 @@
 	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if ( request === 'is_tracking_enabled' ) {
 			ifTrackingEnabled(
+				sender.tab.url,
 				function() {
-					sendResponse({'tracking_enabled': true});
-				},
+					try {sendResponse({'tracking_enabled': true});}
+					catch(err) {} },
 				function() {
-					sendResponse({'tracking_enabled': false});
-				}
+					try {sendResponse({'tracking_enabled': false});}
+					catch(err) {}}
 			);
 		}
 		return true;

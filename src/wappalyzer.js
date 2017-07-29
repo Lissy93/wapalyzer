@@ -116,7 +116,7 @@ wappalyzer.robotsTxtAllows = url => {
     wappalyzer.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
       .then(robotsTxt => {
         robotsTxt.forEach(disallow => {
-          if ( parsed.pathname.search(disallow) === 0 ) {
+          if ( parsed.pathname.indexOf(disallow) === 0 ) {
             reject();
           }
         });

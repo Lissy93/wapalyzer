@@ -279,7 +279,11 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
           fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
             .then(response => {
               if ( !response.ok ) {
-                throw 'GET ' + response.url + ' was not ok';
+                if (response.status === 404) {
+                    return '';
+                } else {
+                    throw 'GET ' + response.url + ' was not ok';
+                }
               }
 
               return response.text();
