@@ -1923,6 +1923,21 @@
 			"icon": "Debian.png",
 			"website": "http://debian.org"
 		},
+    "PHPDebugBar": {
+			"cats": [
+				"47"
+			],
+			"env": [
+				"^phpdebugbar",
+				"^PhpDebugBar",
+			],
+			"script": [
+				"debugbar.*\\.js",
+				"_debugbar/assets/javascript?v=([\\d.]+)"
+			],
+			"icon": "phpdebugbar.png",
+			"website": "http://phpdebugbar.com/"
+		},
 		"Decorum": {
 			"cats": [
 				"22"
