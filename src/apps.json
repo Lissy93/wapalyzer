@@ -2722,6 +2722,14 @@
 			"icon": "FreeBSD.png",
 			"website": "http://freebsd.org"
 		},
+		"Freespee": {
+			"cats": [
+				"10"
+			],
+			"script": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",			
+			"icon": "Freespee.svg",
+			"website": "https://www.freespee.com"
+		},
 		"FreeTextBox": {
 			"cats": [
 				"24"
@@ -3667,6 +3675,7 @@
 			  "X-Imperia-Live-Info": "",
 			  "GENERATOR": "^IMPERIA ([0-9.]{2,})+$\\;version:\\1"
 			},
+			"html": "<imp:live-info sysid=\"[0-9a-f-]+\"(?: node_id=\"[0-9/]*\")? *\/>",
 			"icon": "imperiaCMS.svg",
 			"implies": "Perl",
 		  	"url": "imperia/md/",
@@ -6436,7 +6445,16 @@
 			"meta": {
 				"generator": "Proximis Omnichannel"
 			},
-			"website": "http://www.proximis.com"
+			"website": "https://www.proximis.com"
+		},
+		"Proximis Web to Store": {
+			"cats": [
+				"5",
+				"6"
+			],
+			"icon": "Proximis Omnichannel.png",
+			"script": "widget-commerce(?:\\.min)?\\.js",
+			"website": "https://www.proximis.com"
 		},
 		"PubMatic": {
 			"cats": [
@@ -7101,6 +7119,17 @@
 			},
 			"website": "http://sarka-spip.net"
 		},
+		"Sazito": {
+			"cats": [
+				"6"
+			],
+			"env": "^Sazito$",
+			"icon": "Sazito.svg",
+			"meta": {
+				"generator": "^Sazito"
+			},
+			"website": "http://sazito.com"
+		},
 		"Scala": {
 			"cats": [
 				"27"
@@ -7582,6 +7611,18 @@
 			"icon": "Solr.png",
 			"implies": "Lucene",
 			"website": "http://lucene.apache.org/solr/"
+		},
+		"Solusquare OmniCommerce Cloud": {
+			"cats": [
+				"6"
+			],
+			"headers": {"Set-Cookie": "_solusquare=" },
+			"meta": {
+				"generator": "^Solusquare$"
+			},
+			"icon": "Solusquare.png",
+			"implies": "Adobe ColdFusion",
+			"website": "https://www.solusquare.com"
 		},
 		"Solve Media": {
 			"cats": [
@@ -8354,7 +8395,7 @@
 		},
 		"uCoz": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "uCoz="
@@ -8429,6 +8470,17 @@
 			"url": "/umbraco/login\\.aspx(?:$|\\?)",
 			"website": "http://umbraco.com"
 		},
+		"UMI.CMS": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"X-Generated-By": "UMI.CMS"
+			},
+			"icon": "UMI.CMS.png",
+			"implies": "PHP",
+			"website": "https://www.umi-cms.ru"
+		},
 		"Unbounce": {
 			"cats": [
 				"20",
@@ -8455,6 +8507,15 @@
 			"env": "^usabilla_live$",
 			"icon": "Usabilla.svg",
 			"website": "http://usabilla.com"
+		},
+		"UserEngage": {
+			"cats": [
+				"10"
+			],
+			"env": "^UserEngage$",
+			"icon": "UserEngage.png",
+			"html": "<div[^>]+/id=\"ue_widget\"",
+			"website": "https://userengage.com"
 		},
 		"UserLike": {
 			"cats": [
