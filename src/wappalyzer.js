@@ -514,7 +514,7 @@ function addDetected(app, pattern, type, value, key) {
 
       if ( versions.length ) {
         // Use the longest detected version number
-        app.version = versions.reduce((a, b) => a.length > b.length ? a : b)[0];
+        app.version = versions.reduce((a, b) => a.length > b.length ? a : b);
       }
     }
   }
