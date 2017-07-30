@@ -166,6 +166,18 @@ wappalyzer.parseRobotsTxt = robotsTxt => {
 }
 
 /**
+ *
+ */
+wappalyzer.ping() {
+  if ( Object.keys(hostnameCache).length >= 50 || adCache.length >= 50 ) {
+    wappalyzer.driver.ping(hostnameCache, adCache);
+
+    hostnameCache = {};
+    adCache = [];
+  }
+}
+
+/**
  * Enclose string in array
  */
 function asArray(value) {
@@ -287,6 +299,8 @@ function resolveImplies(apps, url) {
  * Cache detected applications
  */
 function cacheDetectedApps(apps, url) {
+  wappalyzer.driver.ping instanceof Function || return;
+
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
 
@@ -297,15 +311,15 @@ function cacheDetectedApps(apps, url) {
       detected[url][appName].confidence[id] = app.confidence[id];
     });
   })
+
+  wappalyzer.ping();
 }
 
 /**
  * Track detected applications
  */
 function trackDetectedApps(apps, url, hostname, html) {
-  if ( !( wappalyzer.driver.ping instanceof Function ) ) {
-    return;
-  }
+  wappalyzer.driver.ping instanceof Function || return;
 
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
@@ -347,12 +361,7 @@ function trackDetectedApps(apps, url, hostname, html) {
     }
   }
 
-  if ( Object.keys(hostnameCache).length >= 50 || adCache.length >= 50 ) {
-    wappalyzer.driver.ping(hostnameCache, adCache);
-
-    hostnameCache = {};
-    adCache = [];
-  }
+  wappalyzer.ping();
 }
 
 /**

@@ -61,7 +61,7 @@ function openTab(args) {
 function post(url, body) {
   fetch(url, {
     method: 'POST',
-    body
+    body: JSON.stringify(body)
   })
     .then(response => {
       wappalyzer.log('POST ' + url + ': ' + response.status, 'driver');
@@ -306,12 +306,19 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = (ping, adCache) => {
+wappalyzer.driver.ping = (hostnameCache, adCache) => {
   getOption('tracking', true)
     .then(tracking => {
       if ( tracking ) {
-        post('http://ping.wappalyzer.com/v2/', ping);
-        post('https://ad.wappalyzer.com/log/wp/', adCache);
+        if ( Object.keys(hostnameCache).length ) {
+          post('http://ping.wappalyzer.com/v2/', hostnameCache);
+        }
+
+        if ( adCache.length ) {
+          post('https://ad.wappalyzer.com/log/wp/', adCache);
+        }
+
+        setOption('robotsTxtCache', {});
       }
     });
 };
