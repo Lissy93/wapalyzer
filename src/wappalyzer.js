@@ -168,7 +168,7 @@ wappalyzer.parseRobotsTxt = robotsTxt => {
 /**
  *
  */
-wappalyzer.ping() {
+wappalyzer.ping = () => {
   if ( Object.keys(hostnameCache).length >= 50 || adCache.length >= 50 ) {
     wappalyzer.driver.ping(hostnameCache, adCache);
 
@@ -299,7 +299,7 @@ function resolveImplies(apps, url) {
  * Cache detected applications
  */
 function cacheDetectedApps(apps, url) {
-  wappalyzer.driver.ping instanceof Function || return;
+  if (!wappalyzer.driver.ping instanceof Function) return;
 
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
@@ -319,7 +319,7 @@ function cacheDetectedApps(apps, url) {
  * Track detected applications
  */
 function trackDetectedApps(apps, url, hostname, html) {
-  wappalyzer.driver.ping instanceof Function || return;
+  if (!wappalyzer.driver.ping instanceof Function) return;
 
   Object.keys(apps).forEach(appName => {
     var app = apps[appName];
