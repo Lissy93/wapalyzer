@@ -1371,6 +1371,15 @@
 			},
 			"website": "http://www.chamilo.org"
 		},
+		"Chart.js": {
+			"cats": [
+				"25"
+			],
+			"env": "^Chart$\\;confidence:50",
+			"icon": "Chart.js.svg",
+			"script": "Chart(?:\\.bundle)?(?:\\.min)?\\.js\\;confidence:50",
+			"website": "http://www.chartjs.org"
+		},
 		"Chartbeat": {
 			"cats": [
 				"10"
@@ -9711,7 +9720,7 @@
 			"cats": [
 				"6"
 			],
-			"env": "^JetshopData$", 
+			"env": "^JetshopData$",
 			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
 			"icon": "Jetshop.png",
 			"website": "http://jetshop.se"
