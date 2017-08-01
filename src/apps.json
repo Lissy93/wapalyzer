@@ -1650,12 +1650,7 @@
 			"cats": [
 				"1"
 			],
-			"html": [
-				"<[^>]+(?:https?:)?\/\/images.contentful.com",
-				"<[^>]+(?:https?:)?\/\/videos.contentful.com",
-				"<[^>]+(?:https?:)?\/\/assets.contentful.com",
-				"<[^>]+(?:https?:)?\/\/downloads.contentful.com"
-			],
+			"html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.contentful\\.com",
 			"icon": "Contentful.svg",
 			"website": "http://www.contentful.com"
 		},
