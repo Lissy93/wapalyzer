@@ -138,7 +138,7 @@ var exports = {};
 				'',
 				'tracking_enabled_response',
 				function(message) {
-					if ( message.tracking_enabled ) {
+					if ( message && message.tracking_enabled ) {
 
 						callback();
 					} else {

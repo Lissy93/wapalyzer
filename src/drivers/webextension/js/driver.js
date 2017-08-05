@@ -230,13 +230,13 @@ wappalyzer.driver.displayApps = (detected, context) => {
             var app = detected[appName];
 
             app.props.cats.forEach(category => {
-              var icon = app.icon || 'default.svg';
-
-              if ( !dynamicIcon ) {
-                icon = 'default.svg';
-              }
-
               if ( category === match && !found ) {
+                var icon = app.props.icon || 'default.svg';
+
+                if ( !dynamicIcon ) {
+                  icon = 'default.svg';
+                }
+
                 if ( /\.svg$/i.test(icon) ) {
                   icon = 'converted/' + icon.replace(/\.svg$/, '.png');
                 }

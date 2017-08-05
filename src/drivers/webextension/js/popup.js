@@ -1,8 +1,6 @@
 /** global: chrome */
 /** global: browser */
 
-replaceDomWhenReady([ 'p', {}, ' ' ], document, {});
-
 var func = tabs => {
   ( chrome || browser ).runtime.sendMessage({
     id: 'get_apps',
@@ -43,6 +41,16 @@ function replaceDom(domTemplate) {
   body.appendChild(jsonToDOM(domTemplate, document, {}));
 
   var nodes = document.querySelectorAll('[data-i18n]');
+
+  for ( let ms = 200; ms < 500; ms += 50 ) {
+    setTimeout(() => {
+      let div = document.createElement('div');
+
+      div.style.display = 'none';
+
+      body.appendChild(div);
+    }, ms);
+  };
 
   Array.prototype.forEach.call(nodes, node => {
     node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);

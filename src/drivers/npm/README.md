@@ -30,7 +30,7 @@ $ node index.js https://wappalyzer.com
 ```javascript
 const wappalyzer = require('wappalyzer');
 
-wappalyzer('https://wappalyzer.com')
+wappalyzer.analyze('https://wappalyzer.com')
   .then(json => {
     console.log(JSON.stringify(json, null, 2));
   })
