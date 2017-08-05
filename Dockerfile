@@ -4,11 +4,12 @@ MAINTAINER Elbert Alias <elbert@alias.io>
 
 ENV WAPPALYZER_DIR=/opt/wappalyzer
 
-RUN apk add --no-cache \
+RUN apk update && apk add --no-cache \
 	bash \
 	curl \
 	fontconfig \
 	nodejs \
+	nodejs-npm \
 	optipng \
 	zip
 
@@ -23,7 +24,8 @@ RUN apk del \
 RUN npm i -g \
 	jsonlint-cli \
 	manifoldjs \
-	svg2png-many
+	svg2png-many \
+	yarn
 
 RUN mkdir -p $WAPPALYZER_DIR
 

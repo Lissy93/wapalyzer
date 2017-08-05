@@ -114,10 +114,33 @@
 		}
 	}
 
-	function isTrackingEnabled() {
+	function ifTrackingEnabled(url, ifCallback, elseCallback) {
 
-		return parseInt(localStorage.tracking, 10);
+		var fullIfCallback = function() {
+			allowedByRobotsTxt(url, ifCallback, elseCallback);
+		};
 
+		browser.storage.local.get('tracking').then(function(item) {
+
+			if ( item.hasOwnProperty('tracking') ) {
+				if ( item.tracking ) {
+					fullIfCallback();
+				} else {
+					elseCallback();
+				}
+			} else {
+				fullIfCallback();
+			}
+		});
+
+	}
+
+	function allowedByRobotsTxt(url, ifCallback, elseCallback) {
+		if (  ! url.startsWith('chrome://')  ) {
+			wappalyzer.robotsTxtAllows(url).then(ifCallback, elseCallback);
+		} else {
+			elseCallback();
+		}
 	}
 
 	function isPixelRequest(request) {
@@ -195,18 +218,22 @@
 			var tabId = details.tabId;
 			this.cleanupCollector(tabId);
 
-			if ( isTrackingEnabled() ) {
-				if ( !areListenersRegistered ) {
+			ifTrackingEnabled(
+				details.url,
+				function() {
+					if ( !areListenersRegistered ) {
 
-					registerListeners();
-				}
-				this.collectors[tabId] = new PageNetworkTrafficCollector(tabId);
-			} else {
-				if ( areListenersRegistered ) {
+						registerListeners();
+					}
+					this.collectors[tabId] = new PageNetworkTrafficCollector(tabId);
+				}.bind(this),
+				function() {
+					if ( areListenersRegistered ) {
 
-					unregisterListeners();
+						unregisterListeners();
+					}
 				}
-			}
+			);
 		},
 
 		onNavigationCommitted: function(details) {
@@ -777,8 +804,17 @@
 
 	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if ( request === 'is_tracking_enabled' ) {
-			sendResponse({'tracking_enabled': isTrackingEnabled()});
+			ifTrackingEnabled(
+				sender.tab.url,
+				function() {
+					try {sendResponse({'tracking_enabled': true});}
+					catch(err) {} },
+				function() {
+					try {sendResponse({'tracking_enabled': false});}
+					catch(err) {}}
+			);
 		}
+		return true;
 	});
 
 })();

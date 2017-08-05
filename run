@@ -8,12 +8,15 @@ if [[ -z "$(which docker)" ]]; then
 	exit 1
 fi
 
-docker="docker run --rm -v "$(pwd):/opt/wappalyzer" -it wappalyzer/dev"
+cmd="docker run --rm -v "$(pwd):/opt/wappalyzer" -it wappalyzer/dev"
 
-if [[ ! -d "node_modules" ]]; then
-	$docker ./bin/run links
+$cmd yarn install
 
-	$docker npm i
-fi
+pushd src/drivers/webextension
 
-$docker ./bin/run $@
+$cmd yarn install
+
+popd
+
+$cmd ./bin/run links
+$cmd ./bin/run $@
