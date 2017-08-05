@@ -6157,6 +6157,21 @@
 			"env": "Phaser",
 			"icon": "Phaser.png",
 			"website": "http://phaser.io"
+    },
+    "Phenomic": {
+			"cats": [
+        "1",
+        "11"
+			],
+			"html":[
+        "<[^>]+id=\"phenomic(?:root)?\""
+			],
+      "icon": "Phenomic.svg",
+      "implies": [
+				"React"
+      ],
+      "script": "/phenomic.browser.[a-f0-9]+.js",
+			"website": "https://phenomic.io/"
 		},
 		"Phusion Passenger": {
 			"cats": [
