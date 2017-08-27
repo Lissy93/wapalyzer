@@ -300,7 +300,9 @@ class Wappalyzer {
    * Cache detected applications
    */
   cacheDetectedApps(apps, url) {
-    if (!this.driver.ping instanceof Function) return;
+    if ( !( this.driver.ping instanceof Function ) ) {
+      return;
+    }
 
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];
@@ -320,7 +322,9 @@ class Wappalyzer {
    * Track detected applications
    */
   trackDetectedApps(apps, url, hostname, html) {
-    if (!this.driver.ping instanceof Function) return;
+    if ( !( this.driver.ping instanceof Function ) ) {
+      return;
+    }
 
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];

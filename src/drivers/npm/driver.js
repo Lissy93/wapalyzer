@@ -53,8 +53,6 @@ const driver = {
           });
         });
 
-        console.log('resolve ' + url);
-
         resolve(apps);
       };
 
