@@ -8430,6 +8430,10 @@
 			],
 			"icon": "typecho.svg",
 			"implies": "PHP",
+			"env": "^TypechoComment$",
+			"meta": {
+				"generator": "Typecho( [\\d.]+)?\\;version:\\1"
+      },
 			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
 			"website": "http://typecho.org/"
 		},
