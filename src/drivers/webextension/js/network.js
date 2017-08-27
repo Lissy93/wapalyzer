@@ -66,6 +66,7 @@
 		'washingtonpost.com'
 	];
 
+	var robotsTxtAllows = wappalyzer.robotsTxtAllows;
 	if ( !String.prototype.endsWith ) {
 		String.prototype.endsWith = function(searchString, position) {
 			var subjectString = this.toString();
@@ -114,10 +115,10 @@
 		}
 	}
 
-	function ifTrackingEnabled(url, ifCallback, elseCallback) {
+	function ifTrackingEnabled(details, ifCallback, elseCallback) {
 
 		var fullIfCallback = function() {
-			allowedByRobotsTxt(url, ifCallback, elseCallback);
+			allowedByRobotsTxt(details, ifCallback, elseCallback);
 		};
 
 		browser.storage.local.get('tracking').then(function(item) {
@@ -135,9 +136,9 @@
 
 	}
 
-	function allowedByRobotsTxt(url, ifCallback, elseCallback) {
-		if (  ! url.startsWith('chrome://')  ) {
-			wappalyzer.robotsTxtAllows(url).then(ifCallback, elseCallback);
+	function allowedByRobotsTxt(details, ifCallback, elseCallback) {
+		if (  details.url && !details.url.startsWith('chrome://')  ) {
+			robotsTxtAllows(details.url).then(ifCallback, elseCallback);
 		} else {
 			elseCallback();
 		}
@@ -219,7 +220,7 @@
 			this.cleanupCollector(tabId);
 
 			ifTrackingEnabled(
-				details.url,
+				details,
 				function() {
 					if ( !areListenersRegistered ) {
 
@@ -279,18 +280,20 @@
 		browserProxy.tabs.sendMessage(this.tabId, message);
 	};
 
-	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, isValidAd) {
+	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, nonAdTrackingEvent) {
 		var msg = {};
 		msg.assets = [];
+		msg.requests = [];
 		msg.event_data = {};
-		if ( isValidAd ) {
+		if (  !nonAdTrackingEvent  ) {
 			msg.event = 'new-video-ad';
 			msg.requests = reqs;
 			msg.requests.sort(function(reqA, reqB) {return reqA.requestTimestamp - reqB.requestTimestamp;});
 			if ( assetReq ) {
 				msg.assets = [assetReq];
 			}
-		} else {
+		} else if ( nonAdTrackingEvent === 'new-invalid-video-ad' ) {
+			msg.event = nonAdTrackingEvent;
 			msg.requests = reqs.map(function(request) {
 				return parseHostnameFromUrl(request.url);
 			});
@@ -301,7 +304,8 @@
 				contentType: assetReq.contentType,
 				size: assetReq.size
 			}];
-			msg.event = 'new-invalid-video-ad';
+		} else if ( nonAdTrackingEvent === 'robots-txt-no-scraping' ) {
+			msg.event = nonAdTrackingEvent;
 		}
 		msg.origUrl = curPageUrl;
 		msg.displayAdFound = this.displayAdFound;
@@ -805,7 +809,7 @@
 	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if ( request === 'is_tracking_enabled' ) {
 			ifTrackingEnabled(
-				sender.tab.url,
+				sender.tab,
 				function() {
 					try {sendResponse({'tracking_enabled': true});}
 					catch(err) {} },

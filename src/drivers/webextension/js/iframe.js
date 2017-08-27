@@ -181,7 +181,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: '082d7cb-d',
+				mrev: '4d79384-d',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -890,7 +890,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1501281986-4236-27733-5465-12184';
+	var POST_MSG_ID = '1503096304-372-12333-31563-11152';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
@@ -1104,6 +1104,23 @@ var exports = {};
 			}
 		},
 
+		blockedRobotsMsgGen: function(sendFcn, origUrl) {
+
+			if ( origUrl.indexOf('google.com/_/chrome/newtab') === -1 ) {
+				var onBlockedRobotsMessage = function() {
+					var log;
+					log = _logGen.log('invalid-robotstxt', []);
+					log.doc.finalPageUrl = log.doc.url;
+					log.doc.url = exports.utils.normalizeUrl(origUrl);
+
+					sendFcn(log);
+				};
+				return onBlockedRobotsMessage;
+			} else {
+				return function() {};
+			}
+		},
+
 		init: function(onAdFound) {
 
 			if ( exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
@@ -1137,6 +1154,8 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 		init: exports.coordinator.init,
 		addPostMessageListener: exports.coordinator.addPostMessageListener,
 		askIfTrackingEnabled: exports.utils.askIfTrackingEnabled,
+		blockedRobotsMsgGen: exports.coordinator.blockedRobotsMsgGen,
+		inWindowTop: exports.utils.SCRIPT_IN_WINDOW_TOP,
 		sendToBackground: exports.utils.sendToBackground
 	};
 } else {
@@ -1149,18 +1168,18 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 	);
 }
 })(window);
-(function(adparser) {
+(function(adparser, pageUrl) {
 	function onAdFound(log) {
 		adparser.sendToBackground({ id: 'ad_log', subject: log }, 'ad_log', '', function(){});
 	}
 
-	if (  window === window.top  ) {
+	if (  adparser && adparser.inWindowTop  ) {
 		adparser.addPostMessageListener();
 		adparser.askIfTrackingEnabled(
 			function() {
 				adparser.init(onAdFound);
 			},
-			function() {}
+			adparser.blockedRobotsMsgGen(onAdFound, pageUrl)
 		)
 	}
-})(window.adparser);
+})(window.adparser, window.location.href);

@@ -32,25 +32,15 @@ function replaceDomWhenReady(dom) {
 }
 
 function replaceDom(domTemplate) {
-  var body = document.body;
+  var container = document.getElementsByClassName('container')[0];
 
-  while ( body.firstChild ) {
-    body.removeChild(body.firstChild);
+  while ( container.firstChild ) {
+    container.removeChild(container.firstChild);
   }
 
-  body.appendChild(jsonToDOM(domTemplate, document, {}));
+  container.appendChild(jsonToDOM(domTemplate, document, {}));
 
   var nodes = document.querySelectorAll('[data-i18n]');
-
-  for ( let ms = 200; ms < 500; ms += 50 ) {
-    setTimeout(() => {
-      let div = document.createElement('div');
-
-      div.style.display = 'none';
-
-      body.appendChild(div);
-    }, ms);
-  };
 
   Array.prototype.forEach.call(nodes, node => {
     node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
@@ -63,65 +53,87 @@ function appsToDomTemplate(response) {
     template = [];
 
   if ( response.tabCache && Object.keys(response.tabCache.detected).length > 0 ) {
-    for ( appName in response.tabCache.detected ) {
-      confidence = response.tabCache.detected[appName].confidenceTotal;
-      version    = response.tabCache.detected[appName].version;
-      categories = [];
+    const categories = {};
 
+    // Group apps by category
+    for ( appName in response.tabCache.detected ) {
       response.apps[appName].cats.forEach(cat => {
-        categories.push(
+        categories[cat] = categories[cat] || { apps: [] };
+
+        categories[cat].apps[appName] = appName;
+      });
+    }
+
+    for ( cat in categories ) {
+      const apps = [];
+
+      for ( appName in categories[cat].apps ) {
+        confidence = response.tabCache.detected[appName].confidenceTotal;
+        version    = response.tabCache.detected[appName].version;
+
+        apps.push(
           [
             'a', {
-              target: '_blank',
-              href: 'https://wappalyzer.com/categories/' + slugify(response.categories[cat].name)
-            }, [
-              'span', {
-                class: 'category'
-              }, [
-                'span', {
-                  class: 'name'
-                },
-                browser.i18n.getMessage('categoryName' + cat)
-              ]
-            ]
-          ]
-        );
-      });
-
-      template.push(
-        [
-          'div', {
-            class: 'detected-app'
-          }, [
-            'a', {
+              class: 'detected__app',
               target: '_blank',
               href: 'https://wappalyzer.com/applications/' + slugify(appName)
             }, [
               'img', {
+                class: 'detected__app-icon',
                 src: '../images/icons/' + ( response.apps[appName].icon || 'default.svg' )
-              }
+              },
             ], [
               'span', {
-                class: 'label'
-              }, [
-                'span', {
-                  class: 'name'
-                },
-                appName
-              ],
-              ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' )
+                class: 'detected__app-name'
+              },
+              appName + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' )
             ]
-          ],
-          categories
+          ]
+        );
+      }
+
+      template.push(
+        [
+          'div', {
+            class: 'detected__category'
+          }, [
+            'a', {
+              class: 'detected__category-link',
+              target: '_blank',
+              href: 'https://wappalyzer.com/categories/' + slugify(response.categories[cat].name)
+            }, [
+              'span', {
+                class: 'detected__category-name'
+              },
+              browser.i18n.getMessage('categoryName' + cat)
+            ]
+          ], [
+            'div', {
+              class: 'detected__apps'
+            },
+            apps
+          ]
         ]
       );
     }
+
+    template = [
+      'div', {
+        class: 'detected'
+      },
+      template
+    ];
   } else {
     template = [
       'div', {
         class: 'empty'
       },
-      browser.i18n.getMessage('noAppsDetected')
+      [
+        'span', {
+          class: 'empty__text'
+        },
+        browser.i18n.getMessage('noAppsDetected')
+      ],
     ];
   }
 
