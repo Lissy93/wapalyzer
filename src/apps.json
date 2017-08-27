@@ -6741,6 +6741,19 @@
 			"icon": "Raspbian.svg",
 			"website": "https://www.raspbian.org/"
 		},
+		"Rayo": {
+			"cats": [
+				"6"
+			],
+			"env": "^Rayo",
+            "icon": "Rayo.png",
+            "implies": [ "AngularJS", "Microsoft ASP.NET", "Twitter Bootstrap", "jQuery", "Underscore.js", "Moment.js",
+            "Font Awesome", "Google Maps", "Modernizr", "Semantic-ui" ],
+            "meta": {
+				"generator": "^Rayo"
+			},
+			"website": "http://www.rayo.ir"
+		},
 		"Rdf": {
 			"cats": [
 				"27"
