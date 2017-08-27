@@ -3,7 +3,9 @@
  */
 
 /** global: browser */
-/** global: wappalyzer */
+/** global: Wappalyzer */
+
+const wappalyzer = new Wappalyzer();
 
 var tabCache = {};
 var headersCache = {};
@@ -26,7 +28,7 @@ function getOption(name, defaultValue) {
       // Chrome, Firefox
       browser.storage.local.get(name)
         .then(callback)
-        .catch(console.error);
+        .catch(error => wappalyzer.log(error, 'driver', 'error'));
     } catch ( e ) {
       // Edge
       browser.storage.local.get(name, callback);
@@ -123,7 +125,7 @@ var callback = tabs => {
 try {
   browser.tabs.query({})
     .then(callback)
-    .catch(console.error);
+    .catch(error => wappalyzer.log(error, 'driver', 'error'));
 } catch ( e ) {
   browser.tabs.query({}, callback);
 }
@@ -279,10 +281,10 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
           fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
             .then(response => {
               if ( !response.ok ) {
-                if (response.status === 404) {
-                    return '';
+                if ( response.status === 404 ) {
+                  return '';
                 } else {
-                    throw 'GET ' + response.url + ' was not ok';
+                  throw 'GET ' + response.url + ' was not ok';
                 }
               }
 

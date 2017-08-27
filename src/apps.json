@@ -401,7 +401,7 @@
 			"headers": {
 				"X-Akamai-Transformed": ""
 			},
-			"icon": "Akamai.png",
+			"icon": "akamai.svg",
 			"website": "http://akamai.com"
 		},
 		"Akka HTTP": {
@@ -938,6 +938,14 @@
 			"icon": "BittAds.png",
 			"script": "bittads\\.com/js/bitt\\.js$",
 			"website": "http://bittads.com"
+		},
+		"Bizweb":{
+			"cats": [
+				"6"
+			],
+			"env": "^Bizweb$",
+			"icon": "bizweb.png",
+			"website": "https://www.bizweb.vn"
 		},
 		"Blesta": {
 			"cats": [
@@ -5331,7 +5339,7 @@
 			"cats": [
 				"12"
 			],
-			"icon": "moon.png",
+			"icon": "moon.svg",
 			"script": "/moon(?:\\.min)?\\.js$",
 			"website": "http://moonjs.ga/"
 		},
@@ -5585,6 +5593,24 @@
 			"icon": "New Relic.png",
 			"website": "http://newrelic.com"
 		},
+		"Next.js": {
+			"cats": [
+				"18",
+				"22"
+			],
+			"headers": {
+				"x-powered-by": "^Next.js ?([0-9.]+)?\\;version:\\1"
+			},
+			"html": "<[^>]+__next",
+      "env": "^__NEXT_DATA__$",
+      "icon": "zeit.svg",
+			"implies": [
+				"React",
+				"webpack",
+				"Node.js"
+			],
+			"website": "https://zeit.co/next"
+		},
 		"Nginx": {
 			"cats": [
 				"22"
@@ -5613,6 +5639,16 @@
 			"implies": "Node.js",
 			"script": "^/nodebb\\.min\\.js\\?",
 			"website": "https://nodebb.org"
+		},
+		"Now": {
+			"cats": [
+				"22"
+			],
+			"headers": {
+				"server": "now"
+			},
+			"icon": "zeit.svg",
+			"website": "https://zeit.co/now"
 		},
 		"OWL Carousel": {
 			"cats": [
@@ -8430,6 +8466,10 @@
 			],
 			"icon": "typecho.svg",
 			"implies": "PHP",
+			"env": "^TypechoComment$",
+			"meta": {
+				"generator": "Typecho( [\\d.]+)?\\;version:\\1"
+      },
 			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
 			"website": "http://typecho.org/"
 		},
@@ -8521,7 +8561,7 @@
 		},
 		"UMI.CMS": {
 			"cats": [
-				1
+				"1"
 			],
 			"headers": {
 				"X-Generated-By": "UMI.CMS"

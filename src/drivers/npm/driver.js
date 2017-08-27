@@ -1,19 +1,21 @@
 'use strict';
 
-const wappalyzer = require('./wappalyzer');
+const Wappalyzer = require('./wappalyzer');
 const request = require('request');
 const fs = require('fs');
 const Browser = require('zombie');
 
 const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
-wappalyzer.apps = json.apps;
-wappalyzer.categories = json.categories;
-
 const driver = {
   quiet: true,
 
   analyze: url => {
+    const wappalyzer = new Wappalyzer();
+
+    wappalyzer.apps = json.apps;
+    wappalyzer.categories = json.categories;
+
     return new Promise((resolve, reject) => {
       wappalyzer.driver.log = (message, source, type) => {
         if ( type === 'error' ) {
