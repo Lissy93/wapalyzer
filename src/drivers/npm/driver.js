@@ -61,6 +61,10 @@ const driver = {
       browser.visit(url, error => {
         wappalyzer.driver.document = browser.document;
 
+        if (!browser.resources['0'].response){
+            return reject('Response null '+url);
+        }
+        
         const headers = browser.resources['0'].response.headers;
         const vars = Object.getOwnPropertyNames(browser.window);
         const html = browser.html();
