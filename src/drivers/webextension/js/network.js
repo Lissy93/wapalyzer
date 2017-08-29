@@ -66,7 +66,7 @@
 		'washingtonpost.com'
 	];
 
-	var robotsTxtAllows = wappalyzer.robotsTxtAllows;
+	var robotsTxtAllows = wappalyzer.robotsTxtAllows.bind(wappalyzer);
 	if ( !String.prototype.endsWith ) {
 		String.prototype.endsWith = function(searchString, position) {
 			var subjectString = this.toString();
