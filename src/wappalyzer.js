@@ -270,7 +270,7 @@ class Wappalyzer {
       Object.keys(apps).forEach(appName => {
         var app = apps[appName];
 
-        if ( app && app.implies ) {
+        if ( app && app.props.implies ) {
           this.asArray(app.props.implies).forEach(implied => {
             implied = this.parsePatterns(implied)[0];
 
@@ -281,7 +281,7 @@ class Wappalyzer {
             }
 
             if ( !( implied.string in apps ) ) {
-              apps[implied.string] = this.detected[url] && this.detected[url][implied.string] ? this.detected[url][implied.string] : new Application(implied.string, true);
+              apps[implied.string] = this.detected[url] && this.detected[url][implied.string] ? this.detected[url][implied.string] : new Application(implied.string, this.apps[implied.string], true);
 
               checkImplies = true;
             }
