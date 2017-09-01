@@ -10560,7 +10560,16 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
-		}
+		},
+    "Raychat": {
+      "cats": [
+        "52"
+      ],
+      "env": "^Raychat$",
+      "icon": "raychat.svg",
+      "script": "(?:app.raychat.io/scripts/js/)",
+      "website": "https://raychat.io"
+    }
 	},
 	"categories": {
 		"1": {
