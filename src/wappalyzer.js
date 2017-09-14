@@ -116,11 +116,7 @@ class Wappalyzer {
 
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
-          robotsTxt.forEach(disallow => {
-            if ( parsed.pathname.indexOf(disallow) === 0 ) {
-              reject();
-            }
-          });
+          robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());
 
           resolve();
         });
@@ -352,7 +348,7 @@ class Wappalyzer {
                 this.hostnameCache[hostname].applications[appName].version = app.version;
               }
             })
-          .catch(() => console.log('Disallowed in robots.txt: ' + url))
+          .catch(() => this.log('Disallowed in robots.txt: ' + url), 'core')
         }
       }
     });
