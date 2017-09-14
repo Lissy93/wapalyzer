@@ -8,7 +8,7 @@ after_success:
   - cat build/SHA256SUMS
 
 script:
-  - version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/'); ./run build $version
+  - version=$(grep '\"version\":' src/drivers/webextension/manifest.json | sed 's/^.*\"version\": \"\(.*\)\".*$/\1/'); ./run build $version
 
 deploy:
   provider: releases
@@ -22,4 +22,4 @@ deploy:
     tags: true
 
 env:
-  - CXX=g++-4.8
+  - CXX=g++-4.
