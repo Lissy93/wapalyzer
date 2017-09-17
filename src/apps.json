@@ -2571,7 +2571,7 @@
 			],
 			"icon": "FancyBox.png",
 			"implies": "jQuery",
-			"script": "jquery\\.fancybox\\.pack\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
+			"script": "jquery\\.fancybox(\\.pack|\\.min)?\\.js(\\?v=([\\d.]+))?$\\;version:\\3",
 			"website": "http://fancyapps.com/fancybox"
 		},
 		"Fastly": {
