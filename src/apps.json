@@ -2571,7 +2571,7 @@
 			],
 			"icon": "FancyBox.png",
 			"implies": "jQuery",
-			"script": "jquery\\.fancybox\\.pack\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
+			"script": "jquery\\.fancybox(\\.pack|\\.min)?\\.js(\\?v=([\\d.]+))?$\\;version:\\3",
 			"website": "http://fancyapps.com/fancybox"
 		},
 		"Fastly": {
@@ -3100,7 +3100,7 @@
 				"19"
 			],
 			"env": "^prettyPrint$",
-			"icon": "Google Code Prettify.png",
+			"icon": "Google.svg",
 			"website": "http://code.google.com/p/google-code-prettify"
 		},
 		"Google Font API": {
@@ -3193,7 +3193,7 @@
 			"headers": {
 				"Server": "gws"
 			},
-			"icon": "Google Web Server.png",
+			"icon": "Google.svg",
 			"website": "http://en.wikipedia.org/wiki/Google_Web_Server"
 		},
 		"Google Web Toolkit": {
@@ -3652,6 +3652,16 @@
 			"url": "/wps/",
 			"website": "http://ibm.com/software/websphere/portal"
 		},
+		"Ideasoft": {
+			"cats": [
+				"6"
+			],
+			"icon": "Ideasoft.png",
+			"script": [
+				"\\.myideasoft\\.com/"
+			],
+			"website": "https://www.ideasoft.com"
+		},
 		"IIS": {
 			"cats": [
 				"22"
@@ -3925,6 +3935,16 @@
 			"icon": "JC-HTTPD.png",
 			"implies": "Canon",
 			"website": "http://canon.com"
+        },
+        "JET Enterprise": {
+			"cats": [
+				"6"
+			],
+			"headers": {
+				"powered": "jet-enterprise"
+			},
+			"icon": "JET Enterprise.svg",
+			"website": "http://www.jetecommerce.com.br/"
 		},
 		"JS Charts": {
 			"cats": [
@@ -4279,6 +4299,18 @@
 				"generator": "^Koala Web Framework CMS"
 			},
 			"website": "http://koala-framework.org"
+		},
+		"KobiMaster": {
+			"cats": [
+				"6"
+			],
+			"icon": "Kobimaster.png",
+			"implies": "Microsoft ASP.NET",
+			"env": [
+				"^kmPageInfo$",
+				"^kmGetSession$"
+			],
+			"website": "http://www.kobimaster.com.tr/"
 		},
 		"Koego": {
 			"cats": [
@@ -4885,6 +4917,15 @@
 			"script": "munchkin\\.marketo\\.net/munchkin\\.js",
 			"website": "http://www.marketo.com"
 		},
+    "Material Design Lite": {
+      "cats": [
+        "18"
+      ],
+      "html": "<link[^>]* href=\"[^\"]*material(?:\\.[\\w]+-[\\w]+)?(?:\\.min)?\\.css",
+      "icon": "Material Design Lite.png",
+      "script": "material(?:\\.min)?\\.js",
+      "website": "https://getmdl.io"
+    },
 		"Materialize CSS": {
 			"cats": [
 				"18"
@@ -5238,7 +5279,7 @@
 			"cats": [
 				"12"
 			],
-			"icon": "Moment.js.png",
+			"icon": "Moment.js.svg",
 			"implies": "Moment.js",
 			"script": "moment-timezone(?:\\-data)?(?:\\.min)?\\.js",
 			"website": "http://momentjs.com/timezone/"
@@ -5248,7 +5289,7 @@
 				"12"
 			],
 			"env": "^moment$",
-			"icon": "Moment.js.png",
+			"icon": "Moment.js.svg",
 			"script": "moment(?:\\.min)?\\.js",
 			"website": "http://momentjs.com"
 		},
@@ -5492,6 +5533,16 @@
 			"env": "^sitestat$",
 			"icon": "Nedstat.png",
 			"website": "http://www.nedstat.com"
+        },
+        "NEO - Omnichannel Commerce Platform": {
+			"cats": [
+				"6"
+			],
+			"headers": {
+				"powered": "jet-neo"
+			},
+			"icon": "Plataforma NEO.svg",
+			"website": "http://www.jetecommerce.com.br/"
 		},
 		"Neos CMS": {
 			"cats": [
@@ -5826,7 +5877,7 @@
 			"headers": {
 				"Server": "GSE"
 			},
-			"icon": "OpenGSE.png",
+			"icon": "Google.svg",
 			"implies": "Java",
 			"website": "http://code.google.com/p/opengse"
 		},
@@ -7503,6 +7554,16 @@
 			},
 			"website": "http://www.silverstripe.org"
 		},
+		"Simplébo": {
+			"cats": [
+				"1"
+			],
+			"headers": {
+				"X-ServedBy": "simplebo"
+			},
+			"icon": "Simplebo.png",
+			"website": "https://www.simplebo.fr"
+		},
 		"SimpleHTTP": {
 			"cats": [
 				"22"
@@ -8184,6 +8245,16 @@
 			"icon": "Tengine.png",
 			"website": "http://tengine.taobao.org"
 		},
+		"Textalk": {
+			"cats": [
+				"6"
+			],
+			"meta": {
+				"generator": "Textalk Webshop"
+			},
+			"icon": "textalk.png",
+			"website": "https://www.textalk.se"
+		},    
 		"Textpattern CMS": {
 			"cats": [
 				"1"
@@ -8222,6 +8293,26 @@
 			"implies": "PHP",
 			"website": "http://www.thinkphp.cn"
 		},
+		"Ticimax": {
+			"cats": [
+				"6"
+			],
+			"icon": "Ticimax.png",
+			"script": [
+				"cdn\\.ticimax\\.com/"
+			],
+			"website": "https://www.ticimax.com"
+		},
+		"Tictail": {
+			"cats": [
+				"6"
+			],
+			"script": [
+				"https:\\/\\/tictail\\.com"
+			],
+			"icon": "tictail.png",
+			"website": "https://tictail.com"
+		},    
 		"TiddlyWiki": {
 			"cats": [
 				"1",
@@ -8347,6 +8438,16 @@
 			],
 			"script": "lucide\\.init(?:\\.min)?\\.js",
 			"website": "http://www.translucide.net"
+		},
+		"T-Soft": {
+			"cats": [
+				"6"
+			],
+			"icon": "Tsoft.png",
+			"meta": {
+				"copyright": "T-Soft E-Ticaret Sistemleri"
+			},
+			"website": "http://www.tsoft.com.tr/"
 		},
 		"Tumblr": {
 			"cats": [
@@ -9022,6 +9123,16 @@
 			"url": "/websale7/",
 			"website": "http://websale.de"
 		},
+		"WebSite X5": {
+			"cats": [
+				"20"
+			],
+			"meta": {
+				"generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
+			},
+			"icon": "WebSite X5.png",
+			"website": "http://websitex5.com"
+		},
 		"WebsiteBaker": {
 			"cats": [
 				"1"
@@ -9061,6 +9172,16 @@
 			"script": "cdn\\d+\\.editmysite\\.com",
 			"website": "http://www.weebly.com"
 		},
+		"Wikinggruppen": {
+			"cats": [
+				"6"
+			],
+			"html": [
+				"<!-- WIKINGGRUPPEN"
+			],
+			"icon": "wikinggruppen.png",
+			"website": "https://wikinggruppen.se/"
+		},    
 		"Wikispaces": {
 			"cats": [
 				"8"
@@ -9130,12 +9251,9 @@
 			"env": "^wix(?:Events|Data|Errors)",
 			"headers": {
 				"Set-Cookie": "Domain=\\.wix\\.com",
-				"X-Wix-Dispatcher-Cache-Hit": ""
-			},
-			"icon": "Wix.png",
-			"meta": {
 				"X-Wix-Renderer-Server": ""
 			},
+			"icon": "Wix.png",
 			"script": "static\\.wixstatic\\.com",
 			"website": "http://wix.com"
 		},
@@ -10600,7 +10718,16 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
-		}
+		},
+    "Raychat": {
+      "cats": [
+        "52"
+      ],
+      "env": "^Raychat$",
+      "icon": "raychat.svg",
+      "script": "app\\.raychat\\.io/scripts/js",
+      "website": "https://raychat.io"
+    }
 	},
 	"categories": {
 		"1": {
@@ -10653,7 +10780,7 @@
 		},
 		"13": {
 			"name": "Issue Trackers",
-			"priority": "9"
+			"priority": "2"
 		},
 		"14": {
 			"name": "Video Players",
