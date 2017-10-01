@@ -2,7 +2,6 @@ body {
 	background: #fff;
 	font-family: Helvetica, Arial, sans-serif;
   font-size: .8rem;
-  height: 20.8rem;
 	margin: 0;
   overflow: hidden;
   width: 30rem;
@@ -30,7 +29,7 @@ body {
 
 .container {
   height: 15.8rem;
-  overflow: scroll;
+  overflow-y: auto;
   padding: 1rem 1.5rem 0rem 1.5rem;
 }
 

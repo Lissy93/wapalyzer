@@ -116,11 +116,7 @@ class Wappalyzer {
 
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
-          robotsTxt.forEach(disallow => {
-            if ( parsed.pathname.indexOf(disallow) === 0 ) {
-              reject();
-            }
-          });
+          robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());
 
           resolve();
         });
@@ -270,7 +266,7 @@ class Wappalyzer {
       Object.keys(apps).forEach(appName => {
         var app = apps[appName];
 
-        if ( app && app.implies ) {
+        if ( app && app.props.implies ) {
           this.asArray(app.props.implies).forEach(implied => {
             implied = this.parsePatterns(implied)[0];
 
@@ -281,7 +277,7 @@ class Wappalyzer {
             }
 
             if ( !( implied.string in apps ) ) {
-              apps[implied.string] = this.detected[url] && this.detected[url][implied.string] ? this.detected[url][implied.string] : new Application(implied.string, true);
+              apps[implied.string] = this.detected[url] && this.detected[url][implied.string] ? this.detected[url][implied.string] : new Application(implied.string, this.apps[implied.string], true);
 
               checkImplies = true;
             }
@@ -300,10 +296,6 @@ class Wappalyzer {
    * Cache detected applications
    */
   cacheDetectedApps(apps, url) {
-    if ( !( this.driver.ping instanceof Function ) ) {
-      return;
-    }
-
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];
 
@@ -315,7 +307,9 @@ class Wappalyzer {
       });
     })
 
-    this.ping();
+    if ( this.driver.ping instanceof Function ) {
+      this.ping();
+    }
   }
 
   /**
@@ -352,7 +346,7 @@ class Wappalyzer {
                 this.hostnameCache[hostname].applications[appName].version = app.version;
               }
             })
-          .catch(() => console.log('Disallowed in robots.txt: ' + url))
+          .catch(() => this.log('Disallowed in robots.txt: ' + url), 'core')
         }
       }
     });
