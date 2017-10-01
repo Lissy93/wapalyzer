@@ -2594,7 +2594,7 @@
 			],
 			"icon": "FancyBox.png",
 			"implies": "jQuery",
-			"script": "jquery\\.fancybox(\\.pack|\\.min)?\\.js(\\?v=([\\d.]+))?$\\;version:\\3",
+			"script": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
 			"website": "http://fancyapps.com/fancybox"
 		},
 		"Fastly": {
@@ -8307,7 +8307,7 @@
 			},
 			"icon": "textalk.png",
 			"website": "https://www.textalk.se"
-		},    
+		},
 		"Textpattern CMS": {
 			"cats": [
 				"1"
@@ -8365,7 +8365,7 @@
 			],
 			"icon": "tictail.png",
 			"website": "https://tictail.com"
-		},    
+		},
 		"TiddlyWiki": {
 			"cats": [
 				"1",
@@ -9234,7 +9234,7 @@
 			],
 			"icon": "wikinggruppen.png",
 			"website": "https://wikinggruppen.se/"
-		},    
+		},
 		"Wikispaces": {
 			"cats": [
 				"8"
