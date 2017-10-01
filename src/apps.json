@@ -3652,6 +3652,16 @@
 			"url": "/wps/",
 			"website": "http://ibm.com/software/websphere/portal"
 		},
+		"Ideasoft": {
+			"cats": [
+				"6"
+			],
+			"icon": "Ideasoft.png",
+			"script": [
+				"\\.myideasoft\\.com/"
+			],
+			"website": "https://www.ideasoft.com"
+		},
 		"IIS": {
 			"cats": [
 				"22"
@@ -4289,6 +4299,18 @@
 				"generator": "^Koala Web Framework CMS"
 			},
 			"website": "http://koala-framework.org"
+		},
+		"KobiMaster": {
+			"cats": [
+				"6"
+			],
+			"icon": "Kobimaster.png",
+			"implies": "Microsoft ASP.NET",
+			"env": [
+				"^kmPageInfo$",
+				"^kmGetSession$"
+			],
+			"website": "http://www.kobimaster.com.tr/"
 		},
 		"Koego": {
 			"cats": [
@@ -8262,6 +8284,16 @@
 			"implies": "PHP",
 			"website": "http://www.thinkphp.cn"
 		},
+		"Ticimax": {
+			"cats": [
+				"6"
+			],
+			"icon": "Ticimax.png",
+			"script": [
+				"cdn\\.ticimax\\.com/"
+			],
+			"website": "https://www.ticimax.com"
+		},
 		"Tictail": {
 			"cats": [
 				"6"
@@ -8397,6 +8429,16 @@
 			],
 			"script": "lucide\\.init(?:\\.min)?\\.js",
 			"website": "http://www.translucide.net"
+		},
+		"T-Soft": {
+			"cats": [
+				"6"
+			],
+			"icon": "Tsoft.png",
+			"meta": {
+				"copyright": "T-Soft E-Ticaret Sistemleri"
+			},
+			"website": "http://www.tsoft.com.tr/"
 		},
 		"Tumblr": {
 			"cats": [
