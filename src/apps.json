@@ -842,7 +842,7 @@
 			"website": "http://bigace.de"
 		},
 		"Bablic": {
-		      "cats": [
+			"cats": [
 				"3","9"
 			],
 			"website":"https://www.bablic.com/",
@@ -2257,6 +2257,15 @@
 				"win_op\\.js"
 			],
 			"website": "http://www.ec-cube.net"
+		},
+		"ef.js": {
+			"cats": [
+				"12"
+			],
+			"icon": "ef.js.svg",
+			"env": "^ef|efCore$",
+			"script": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
+			"website": "http://ef.js.org"
 		},
 		"ELOG": {
 			"cats": [
@@ -3710,16 +3719,16 @@
 		},
 		"imperia CMS": {
 			"cats": [
-        "1"
-      ],
+				"1"
+			],
 			"meta": {
-			  "X-Imperia-Live-Info": "",
-			  "GENERATOR": "^IMPERIA ([0-9.]{2,})+$\\;version:\\1"
+				"X-Imperia-Live-Info": "",
+				"GENERATOR": "^IMPERIA ([0-9.]{2,})+$\\;version:\\1"
 			},
 			"html": "<imp:live-info sysid=\"[0-9a-f-]+\"(?: node_id=\"[0-9/]*\")? *\/>",
 			"icon": "imperiaCMS.svg",
 			"implies": "Perl",
-		  	"url": "imperia/md/",
+				"url": "imperia/md/",
 			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
 		},
 		"ImpressCMS": {
@@ -5544,6 +5553,15 @@
 			"icon": "Plataforma NEO.svg",
 			"website": "http://www.jetecommerce.com.br/"
 		},
+		"Neonclear": {
+			"cats": [
+				"12"
+			],
+			"icon": "Neonclear.png",
+			"env": "^neon$",
+			"script": "/neonclear(?:\\.min|\\.dev)?\\.js",
+			"website": "http://neon.atm.re"
+		},
 		"Neos CMS": {
 			"cats": [
 				"1"
@@ -6277,20 +6295,20 @@
 			"env": "Phaser",
 			"icon": "Phaser.png",
 			"website": "http://phaser.io"
-    },
-    "Phenomic": {
+		},
+		"Phenomic": {
 			"cats": [
-        "1",
-        "11"
+				"1",
+				"11"
 			],
 			"html":[
-        "<[^>]+id=\"phenomic(?:root)?\""
+				"<[^>]+id=\"phenomic(?:root)?\""
 			],
-      "icon": "Phenomic.svg",
-      "implies": [
+			"icon": "Phenomic.svg",
+			"implies": [
 				"React"
-      ],
-      "script": "/phenomic.browser.[a-f0-9]+.js",
+			],
+			"script": "/phenomic.browser.[a-f0-9]+.js",
 			"website": "https://phenomic.io/"
 		},
 		"Phusion Passenger": {
@@ -6335,10 +6353,10 @@
 			"script": "//assets\\.pinterest\\.com/js/pinit\\.js",
 			"website": "http://pinterest.com"
 		},
-	    "pirobase CMS": {
+			"pirobase CMS": {
 			"cats": [
-        "1"
-      ],
+				"1"
+			],
 			"html": "<[^<]+=\"[^\"]*site/[a-z0-9/._-]*/resourceCached/[a-z0-9/._-]*\"[^>]*>|[^<]+cbi:///cms/[^>]+",
 			"icon": "pirobaseCMS.svg",
 			"implies": "Java",
@@ -8582,7 +8600,7 @@
 			"env": "^TypechoComment$",
 			"meta": {
 				"generator": "Typecho( [\\d.]+)?\\;version:\\1"
-      },
+			},
 			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
 			"website": "http://typecho.org/"
 		},
@@ -10298,14 +10316,14 @@
 				"6"
 			],
 			"headers": {
-  			"Set-Cookie": "Nop\\.customer="
-       },
+				"Set-Cookie": "Nop\\.customer="
+			 },
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)",
 			"icon": "nopCommerce.png",
 			"implies": "Microsoft ASP.NET",
 			"meta": {
-  			"generator": "^nopCommerce$"
-       },
+				"generator": "^nopCommerce$"
+			 },
 			"website": "http://www.nopcommerce.com"
 		},
 		"openEngine": {
