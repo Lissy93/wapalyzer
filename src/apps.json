@@ -2571,7 +2571,7 @@
 			],
 			"icon": "FancyBox.png",
 			"implies": "jQuery",
-			"script": "jquery\\.fancybox\\.pack\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
+			"script": "jquery\\.fancybox(\\.pack|\\.min)?\\.js(\\?v=([\\d.]+))?$\\;version:\\3",
 			"website": "http://fancyapps.com/fancybox"
 		},
 		"Fastly": {
@@ -3935,6 +3935,16 @@
 			"icon": "JC-HTTPD.png",
 			"implies": "Canon",
 			"website": "http://canon.com"
+        },
+        "JET Enterprise": {
+			"cats": [
+				"6"
+			],
+			"headers": {
+				"powered": "jet-enterprise"
+			},
+			"icon": "JET Enterprise.svg",
+			"website": "http://www.jetecommerce.com.br/"
 		},
 		"JS Charts": {
 			"cats": [
@@ -5514,6 +5524,16 @@
 			"env": "^sitestat$",
 			"icon": "Nedstat.png",
 			"website": "http://www.nedstat.com"
+        },
+        "NEO - Omnichannel Commerce Platform": {
+			"cats": [
+				"6"
+			],
+			"headers": {
+				"powered": "jet-neo"
+			},
+			"icon": "Plataforma NEO.svg",
+			"website": "http://www.jetecommerce.com.br/"
 		},
 		"Neos CMS": {
 			"cats": [
@@ -7525,6 +7545,16 @@
 			},
 			"website": "http://www.silverstripe.org"
 		},
+		"Simplébo": {
+			"cats": [
+				"1"
+			],
+			"headers": {
+				"X-ServedBy": "simplebo"
+			},
+			"icon": "Simplebo.png",
+			"website": "https://www.simplebo.fr"
+		},
 		"SimpleHTTP": {
 			"cats": [
 				"22"
@@ -8206,6 +8236,16 @@
 			"icon": "Tengine.png",
 			"website": "http://tengine.taobao.org"
 		},
+		"Textalk": {
+			"cats": [
+				"6"
+			],
+			"meta": {
+				"generator": "Textalk Webshop"
+			},
+			"icon": "textalk.png",
+			"website": "https://www.textalk.se"
+		},    
 		"Textpattern CMS": {
 			"cats": [
 				"1"
@@ -8254,6 +8294,16 @@
 			],
 			"website": "https://www.ticimax.com"
 		},
+		"Tictail": {
+			"cats": [
+				"6"
+			],
+			"script": [
+				"https:\\/\\/tictail\\.com"
+			],
+			"icon": "tictail.png",
+			"website": "https://tictail.com"
+		},    
 		"TiddlyWiki": {
 			"cats": [
 				"1",
@@ -9064,6 +9114,16 @@
 			"url": "/websale7/",
 			"website": "http://websale.de"
 		},
+		"WebSite X5": {
+			"cats": [
+				"20"
+			],
+			"meta": {
+				"generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
+			},
+			"icon": "WebSite X5.png",
+			"website": "http://websitex5.com"
+		},
 		"WebsiteBaker": {
 			"cats": [
 				"1"
@@ -9103,6 +9163,16 @@
 			"script": "cdn\\d+\\.editmysite\\.com",
 			"website": "http://www.weebly.com"
 		},
+		"Wikinggruppen": {
+			"cats": [
+				"6"
+			],
+			"html": [
+				"<!-- WIKINGGRUPPEN"
+			],
+			"icon": "wikinggruppen.png",
+			"website": "https://wikinggruppen.se/"
+		},    
 		"Wikispaces": {
 			"cats": [
 				"8"
@@ -10642,7 +10712,16 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
-		}
+		},
+    "Raychat": {
+      "cats": [
+        "52"
+      ],
+      "env": "^Raychat$",
+      "icon": "raychat.svg",
+      "script": "app\\.raychat\\.io/scripts/js",
+      "website": "https://raychat.io"
+    }
 	},
 	"categories": {
 		"1": {
