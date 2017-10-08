@@ -13,6 +13,6 @@ technologies used on websites. It detects
 *Licensed under the [GPL](https://github.com/AliasIO/Wappalyzer/blob/master/LICENSE).*
 
 
-## Developer Documentation
+## Documentation
 
-Read the [Developer Documentation](https://wappalyzer.com/docs) on how to get started.
+Please read the [developer documentation](https://wappalyzer.com/docs) to get started.
