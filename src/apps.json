@@ -5272,7 +5272,7 @@
 				"1",
 				"6"
 			],
-			"html": "(?:<script|link)[^>]*mg-(?:core|plugins|templates)",
+			"html": "(?:<script|link)[^>]*(?:src=|href=)[\"'][^\"]*mg-(?:core|plugins|templates)",
 			"icon": "Moguta.CMS.png",
 			"implies": "PHP",
 			"website": "http://moguta.ru"
@@ -9333,7 +9333,7 @@
 			"cats": [
 				"6"
 			],
-			"env": "woocommerce",
+			"env": "^woocommerce_params$",
 			"html": "<!-- WooCommerce",
 			"icon": "WooCommerce.png",
 			"implies": "WordPress",
