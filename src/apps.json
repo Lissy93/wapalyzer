@@ -2636,6 +2636,14 @@
 			"icon": "Fedora.png",
 			"website": "http://fedoraproject.org"
 		},
+		"Fingerprintjs": {
+			"cats": [
+				"12"
+			],
+			"env": "^Fingerprint(\\d)?$\\;version:\\1",
+			"script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+			"website": "https://valve.github.io/fingerprintjs2/"
+		},
 		"Firebase": {
 			"cats": [
 				"34"
