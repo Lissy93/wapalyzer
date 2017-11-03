@@ -947,6 +947,17 @@
 			"icon": "bizweb.png",
 			"website": "https://www.bizweb.vn"
 		},
+		"Blade": {
+			"cats": [
+				"18", "22"
+			],
+			"headers": {
+				"X-Powered-By": "blade-([\\w.]+)?\\;version:\\1"
+			},
+			"icon": "Blade.png",
+			"implies": "Java",
+			"website": "https://lets-blade.com"
+		},
 		"Blesta": {
 			"cats": [
 				"6"
