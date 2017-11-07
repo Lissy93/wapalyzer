@@ -30,7 +30,8 @@ $ node index.js https://wappalyzer.com
 ```javascript
 const options = {
   userAgent: 'Wappalyzer',
-  maxWait: 3000
+  maxWait: 3000,
+  debug: false
 };
 
 const wappalyzer = require('wappalyzer')(options);

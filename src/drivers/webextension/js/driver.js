@@ -313,7 +313,7 @@ wappalyzer.driver.ping = (hostnameCache, adCache) => {
     .then(tracking => {
       if ( tracking ) {
         if ( Object.keys(hostnameCache).length ) {
-          post('http://ping.wappalyzer.com/v2/', hostnameCache);
+          post('http://ping.wappalyzer.com/v3/', hostnameCache);
         }
 
         if ( adCache.length ) {

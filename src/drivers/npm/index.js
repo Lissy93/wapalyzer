@@ -2,7 +2,8 @@
 
 const options = {
   userAgent: null,
-  maxWait: 3000
+  maxWait: 3000,
+  debug: false
 };
 
 const args = process.argv.slice(2);

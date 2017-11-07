@@ -11,8 +11,6 @@ const driver = options => {
   const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
   return {
-    quiet: true,
-
     analyze: url => {
       const wappalyzer = new Wappalyzer();
 
@@ -25,7 +23,7 @@ const driver = options => {
             return reject(message);
           }
 
-          if ( !driver.quiet ) {
+          if ( Boolean(options.debug) ) {
             console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
           }
         };
@@ -63,11 +61,12 @@ const driver = options => {
 
         browser.visit(url, error => {
           if ( !browser.resources['0'].response ) {
-            return reject('No response from server');
+            return wappalyzer.log('No response from server', 'driver', 'error');
           }
 
           browser.wait(options.maxWait)
-            .then(() => {
+            .catch(error => wappalyzer.log(error.message, 'browser'))
+            .finally(() => {
               wappalyzer.driver.document = browser.document;
 
               const headers = {};
@@ -86,8 +85,7 @@ const driver = options => {
                 html,
                 env: vars
               });
-            })
-            .catch(error => reject(error));
+            });
         });
       });
     }
