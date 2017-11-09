@@ -10865,7 +10865,22 @@
     	"icon": "Anetwork.png",
    		"script": "static-cdn\\.anetwork\\.ir/",
     	"website": "https://www.anetwork.ir"
-   	}
+   	},
+		"Akaunting": {
+			"cats": [
+				"55"
+			],
+			"html": [
+				"<link[^>]+akaunting-green\\.css",
+				"Powered By Akaunting: <a [^>]*href=\"https?://(?:www\\.)?akaunting\\.com[^>]+>"
+			],
+			"headers": {
+				"X-Akaunting": "^Free Accounting Software$"
+			},
+			"implies": "Laravel",
+			"icon": "akaunting.svg",
+			"website": "https://akaunting.com"
+		}
 	},
 	"categories": {
 		"1": {
@@ -11083,6 +11098,10 @@
     "54": {
       "name": "SEO",
       "priority": "9"
-    }
+    },
+		"55": {
+			"name": "Accounting",
+			"priority": "1"
+		}
 	}
 }
