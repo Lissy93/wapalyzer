@@ -444,6 +444,8 @@
 					if ( videoId ) {
 						request.isYoutubeAd = true;
 						request.isVideo = true;
+						request.rawSrcUrl = frameUrl;
+						request.rawDestUrl = requestUrl;
 						request.url = 'https://www.youtube.com/watch?v=' + this.parseYoutubeVideoIdFromUrl(requestUrl);
 					}
 				} else if ( !this.bannedRequest(request) &&

@@ -41,6 +41,7 @@ body {
 }
 
 .detected__category {
+  page-break-inside: avoid;
   break-inside: avoid-column;
   padding-bottom: 1rem;
 }

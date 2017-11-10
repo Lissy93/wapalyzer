@@ -181,7 +181,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: '88d43ba-c',
+				mrev: 'b084b53-c',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -890,7 +890,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1506716276-29567-8539-3286-4931';
+	var POST_MSG_ID = '1510070508-5767-8848-29475-8984';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
