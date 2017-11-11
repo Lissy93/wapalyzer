@@ -14,8 +14,8 @@
 				"1"
 			],
 			"headers": {
-				"Set-Cookie": "BITRIX_",
-				"X-Powered-CMS": "Bitrix Site Manager"
+				"Set-Cookie": "^BITRIX_",
+				"X-Powered-CMS": "^Bitrix Site Manager"
 			},
 			"html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
 			"icon": "1C-Bitrix.png",
@@ -589,7 +589,7 @@
 				"22"
 			],
 			"headers": {
-				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
+				"Server": "^Apache-Coyote(/1\\.1)?$\\;version:\\1?4.1+:",
 				"X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Apache Tomcat.svg",
@@ -1225,7 +1225,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Powered-By": "Dragonfly CMS"
+				"X-Powered-By": "^Dragonfly CMS"
 			},
 			"icon": "CPG Dragonfly.png",
 			"implies": "PHP",
@@ -1776,7 +1776,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Powered-By": "CppCMS/([\\d.]+)\\;version:\\1"
+				"X-Powered-By": "^CppCMS/([\\d.]+)$\\;version:\\1"
 			},
 			"icon": "CppCMS.png",
 			"implies": "C\\+\\+",
@@ -1787,8 +1787,8 @@
 				"1"
 			],
 			"headers": {
-				"Set-Cookie": "CraftSessionId=",
-				"X-Powered-By": "Craft CMS"
+				"Set-Cookie": "^CraftSessionId=",
+				"X-Powered-By": "^Craft CMS$"
 			},
 			"icon": "Craft CMS.svg",
 			"implies": "Yii",
@@ -2143,12 +2143,12 @@
 				"8"
 			],
 			"headers": {
-				"Set-Cookie": "DokuWiki="
+				"Set-Cookie": "^DokuWiki="
 			},
 			"icon": "DokuWiki.png",
 			"implies": "PHP",
 			"meta": {
-				"generator": "DokuWiki( Release [\\-\\d]+)?\\;version:\\1"
+				"generator": "^DokuWiki( Release [\\-\\d]+)?\\;version:\\1"
 			},
 			"website": "http://www.dokuwiki.org"
 		},
@@ -2648,7 +2648,7 @@
 				"18"
 			],
 			"headers": {
-				"X-Powered-By": "Fat-Free Framework"
+				"X-Powered-By": "^Fat-Free Framework$"
 			},
 			"icon": "Fat-Free Framework.png",
 			"implies": "PHP",
@@ -2722,7 +2722,7 @@
 			"html": "<!--[^>]+FlexCMP[^>v]+v\\. ([\\d.]+)\\;version:\\1",
 			"icon": "FlexCMP.png",
 			"meta": {
-				"generator": "FlexCMP"
+				"generator": "^FlexCMP"
 			},
 			"website": "http://www.flexcmp.com/cms/home"
 		},
@@ -5145,7 +5145,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Powered-By": "Medium"
+				"X-Powered-By": "^Medium$"
 			},
 			"icon": "Medium.svg",
 			"script": "medium\\.com",
@@ -5373,7 +5373,8 @@
 				"18"
 			],
 			"headers": {
-				"x-powered-by": "mojolicious"
+				"x-powered-by": "mojolicious",
+				"server": "^mojolicious"
 			},
 			"icon": "Mojolicious.png",
 			"implies": "Perl",
@@ -5747,7 +5748,7 @@
 			"env": "^Nette$",
 			"headers": {
 				"Set-Cookie": "nette-browser=",
-				"X-Powered-By": "Nette Framework"
+				"X-Powered-By": "^Nette Framework"
 			},
 			"html": [
 				"<input[^>]+data-nette-rules",
@@ -6235,8 +6236,8 @@
 			],
 			"headers": {
 				"Server": "php/?([\\d.]+)?\\;version:\\1",
-				"Set-Cookie": "PHPSESSID",
-				"X-Powered-By": "php/?([\\d.]+)?\\;version:\\1"
+				"Set-Cookie": "^PHPSESSID",
+				"X-Powered-By": "^php/?([\\d.]+)?\\;version:\\1"
 			},
 			"icon": "PHP.svg",
 			"url": "\\.php(?:$|\\?)",
@@ -6454,7 +6455,7 @@
 				"18"
 			],
 			"headers": {
-				"X-Powered-By": "pimcore"
+				"X-Powered-By": "^pimcore$"
 			},
 			"icon": "pimcore.svg",
 			"implies": "PHP",
