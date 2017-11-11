@@ -14,8 +14,8 @@
 				"1"
 			],
 			"headers": {
-				"Set-Cookie": "BITRIX_",
-				"X-Powered-CMS": "Bitrix Site Manager"
+				"Set-Cookie": "^BITRIX_",
+				"X-Powered-CMS": "^Bitrix Site Manager"
 			},
 			"html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
 			"icon": "1C-Bitrix.png",
@@ -589,7 +589,7 @@
 				"22"
 			],
 			"headers": {
-				"Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:",
+				"Server": "^Apache-Coyote(/1\\.1)?$\\;version:\\1?4.1+:",
 				"X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Apache Tomcat.svg",
@@ -1225,7 +1225,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Powered-By": "Dragonfly CMS"
+				"X-Powered-By": "^Dragonfly CMS"
 			},
 			"icon": "CPG Dragonfly.png",
 			"implies": "PHP",
@@ -1776,7 +1776,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Powered-By": "CppCMS/([\\d.]+)\\;version:\\1"
+				"X-Powered-By": "^CppCMS/([\\d.]+)$\\;version:\\1"
 			},
 			"icon": "CppCMS.png",
 			"implies": "C\\+\\+",
@@ -1787,8 +1787,8 @@
 				"1"
 			],
 			"headers": {
-				"Set-Cookie": "CraftSessionId=",
-				"X-Powered-By": "Craft CMS"
+				"Set-Cookie": "^CraftSessionId=",
+				"X-Powered-By": "^Craft CMS$"
 			},
 			"icon": "Craft CMS.svg",
 			"implies": "Yii",
@@ -1820,6 +1820,15 @@
 			"icon": "Cross Pixel.png",
 			"script": "tag\\.crsspxl\\.com/s1\\.js",
 			"website": "http://datadesk.crsspxl.com"
+		},
+    "Crypto-Loot": {
+			"cats": [
+				"19"
+			],
+			"env": "^CryptoLoot$",
+			"script": "^(?:https):?//crypto-loot\\.com/lib/",
+			"icon": "Crypto-Loot.png",
+			"website": "https://crypto-loot.com/"
 		},
 		"CubeCart": {
 			"cats": [
@@ -2143,12 +2152,12 @@
 				"8"
 			],
 			"headers": {
-				"Set-Cookie": "DokuWiki="
+				"Set-Cookie": "^DokuWiki="
 			},
 			"icon": "DokuWiki.png",
 			"implies": "PHP",
 			"meta": {
-				"generator": "DokuWiki( Release [\\-\\d]+)?\\;version:\\1"
+				"generator": "^DokuWiki( Release [\\-\\d]+)?\\;version:\\1"
 			},
 			"website": "http://www.dokuwiki.org"
 		},
@@ -2648,7 +2657,7 @@
 				"18"
 			],
 			"headers": {
-				"X-Powered-By": "Fat-Free Framework"
+				"X-Powered-By": "^Fat-Free Framework$"
 			},
 			"icon": "Fat-Free Framework.png",
 			"implies": "PHP",
@@ -2722,7 +2731,7 @@
 			"html": "<!--[^>]+FlexCMP[^>v]+v\\. ([\\d.]+)\\;version:\\1",
 			"icon": "FlexCMP.png",
 			"meta": {
-				"generator": "FlexCMP"
+				"generator": "^FlexCMP"
 			},
 			"website": "http://www.flexcmp.com/cms/home"
 		},
@@ -2854,10 +2863,10 @@
 			"cats": [
 				"20"
 			],
-			"html": "<html[^>]+urn:schemas-microsoft-com:office:office",
 			"icon": "FrontPage.png",
 			"meta": {
-				"generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
+				"generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1",
+				"ProgId": "^FrontPage\\."
 			},
 			"website": "http://office.microsoft.com/frontpage"
 		},
@@ -4236,6 +4245,15 @@
 			"url": "option=com_",
 			"website": "http://joomla.org"
 		},
+		"JSEcoin": {
+			"cats": [
+				"19"
+			],
+			"env": "^jseMine$",
+			"script": "^(?:https):?//load\\.jsecoin\\.com/server/load/",
+			"icon": "JSEcoin.png",
+			"website": "https://jsecoin.com/"
+		},
 		"K2": {
 			"cats": [
 				"19"
@@ -5145,7 +5163,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Powered-By": "Medium"
+				"X-Powered-By": "^Medium$"
 			},
 			"icon": "Medium.svg",
 			"script": "medium\\.com",
@@ -5229,6 +5247,18 @@
 			"icon": "Microsoft.svg",
 			"website": "http://microsoft.com"
 		},
+		"Microsoft Excel": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Excel.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:excel\"|<!--\\s*(?:START|END) OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD\\s*-->|<div [^>]*x:publishsource=\"?Excel\"?)",
+			"meta": {
+				"generator": "Microsoft Excel( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Excel\\."
+			},
+			"website": "https://office.microsoft.com/excel"
+		},
 		"Microsoft SharePoint": {
 			"cats": [
 				"1"
@@ -5245,6 +5275,18 @@
 				"generator": "Microsoft SharePoint"
 			},
 			"website": "http://sharepoint.microsoft.com"
+		},
+		"Microsoft Word": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Word.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:word\"|<w:WordDocument>|<div [^>]*class=\"?WordSection1[\" >]|<style[^>]*>[^>]*@page WordSection1)",
+			"meta": {
+				"generator": "Microsoft Word( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Word\\."
+			},
+			"website": "https://office.microsoft.com/word"
 		},
 		"Mietshop": {
 			"cats": [
@@ -5373,7 +5415,8 @@
 				"18"
 			],
 			"headers": {
-				"x-powered-by": "mojolicious"
+				"x-powered-by": "mojolicious",
+				"server": "^mojolicious"
 			},
 			"icon": "Mojolicious.png",
 			"implies": "Perl",
@@ -5747,7 +5790,7 @@
 			"env": "^Nette$",
 			"headers": {
 				"Set-Cookie": "nette-browser=",
-				"X-Powered-By": "Nette Framework"
+				"X-Powered-By": "^Nette Framework"
 			},
 			"html": [
 				"<input[^>]+data-nette-rules",
@@ -6235,8 +6278,8 @@
 			],
 			"headers": {
 				"Server": "php/?([\\d.]+)?\\;version:\\1",
-				"Set-Cookie": "PHPSESSID",
-				"X-Powered-By": "php/?([\\d.]+)?\\;version:\\1"
+				"Set-Cookie": "^PHPSESSID",
+				"X-Powered-By": "^php/?([\\d.]+)?\\;version:\\1"
 			},
 			"icon": "PHP.svg",
 			"url": "\\.php(?:$|\\?)",
@@ -6454,7 +6497,7 @@
 				"18"
 			],
 			"headers": {
-				"X-Powered-By": "pimcore"
+				"X-Powered-By": "^pimcore$"
 			},
 			"icon": "pimcore.svg",
 			"implies": "PHP",
@@ -6674,6 +6717,15 @@
 			"icon": "Project Wonderful.png",
 			"script": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
 			"website": "http://projectwonderful.com"
+		},
+		"ProjectPoi": {
+			"cats": [
+				"19"
+			],
+			"env": "^ProjectPoi$",
+			"script": "^(?:https):?//ppoi\\.org/lib/",
+			"icon": "ProjectPoi.png",
+			"website": "https://ppoi.org/"
 		},
 		"Prospector": {
 			"cats": [
