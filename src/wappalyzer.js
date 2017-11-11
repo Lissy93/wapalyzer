@@ -24,7 +24,7 @@ class Wappalyzer {
     this.adCache = [];
 
     this.config = {
-      websiteURL: 'https://wappalyzer.com/',
+      websiteURL: 'https://www.wappalyzer.com/',
       twitterURL: 'https://twitter.com/Wappalyzer',
       githubURL: 'https://github.com/AliasIO/Wappalyzer',
     };
@@ -166,7 +166,7 @@ class Wappalyzer {
    *
    */
   ping() {
-    if ( Object.keys(this.hostnameCache).length >= 50 || this.adCache.length >= 50 ) {
+    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 200 ) {
       this.driver.ping(this.hostnameCache, this.adCache);
 
       this.hostnameCache = {};

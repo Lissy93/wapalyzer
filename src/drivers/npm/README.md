@@ -1,14 +1,14 @@
 # Wappalyzer
 
-[Wappalyzer](https://wappalyzer.com/) is a
+[Wappalyzer](https://www.wappalyzer.com/) is a
 [cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the
 technologies used on websites. It detects
-[content management systems](https://wappalyzer.com/categories/cms),
-[eCommerce platforms](https://wappalyzer.com/categories/ecommerce),
-[web servers](https://wappalyzer.com/categories/web-servers),
-[JavaScript frameworks](https://wappalyzer.com/categories/javascript-frameworks),
-[analytics tools](https://wappalyzer.com/categories/analytics) and
-[many more](https://wappalyzer.com/applications).
+[content management systems](https://www.wappalyzer.com/categories/cms),
+[eCommerce platforms](https://www.wappalyzer.com/categories/ecommerce),
+[web servers](https://www.wappalyzer.com/categories/web-servers),
+[JavaScript frameworks](https://www.wappalyzer.com/categories/javascript-frameworks),
+[analytics tools](https://www.wappalyzer.com/categories/analytics) and
+[many more](https://www.wappalyzer.com/applications).
 
 
 ## Installation
@@ -21,7 +21,7 @@ $ npm i wappalyzer
 ## Run from the command line
 
 ```shell
-$ node index.js https://wappalyzer.com
+$ node index.js https://www.wappalyzer.com
 ```
 
 
@@ -36,7 +36,7 @@ const options = {
 
 const wappalyzer = require('wappalyzer')(options);
 
-wappalyzer.analyze('https://wappalyzer.com')
+wappalyzer.analyze('https://www.wappalyzer.com')
   .then(json => {
     console.log(JSON.stringify(json, null, 2));
   })
