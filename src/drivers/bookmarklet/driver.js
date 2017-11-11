@@ -18,8 +18,8 @@
     console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
   };
 
-  function getEnvironmentVars() {
-    wappalyzer.log('func: getEnvironmentVars');
+  function getPageContent() {
+    wappalyzer.log('func: getPageContent');
 
     var env = [];
 
@@ -27,9 +27,15 @@
       env.push(i);
     }
 
+    var scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(s => s.src)
+      .map(s => s.src);
+
     wappalyzer.analyze(domain, url, {
       html: document.documentElement.innerHTML,
-      env: env
+      env: env,
+      scripts: scripts
     });
   }
 
@@ -56,7 +62,10 @@
               name  = line.substring(0, line.indexOf(': '));
               value = line.substring(line.indexOf(': ') + 2, line.length - 1);
 
-              responseHeaders[name.toLowerCase()] = value;
+              if ( !responseHeaders[name.toLowerCase()] ){
+                responseHeaders[name.toLowerCase()] = []
+              }
+              responseHeaders[name.toLowerCase()].push(value);
             }
           });
 
@@ -139,6 +148,6 @@
     return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
   }
 
-  getEnvironmentVars();
+  getPageContent();
   getResponseHeaders();
 })();
