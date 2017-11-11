@@ -2854,10 +2854,10 @@
 			"cats": [
 				"20"
 			],
-			"html": "<html[^>]+urn:schemas-microsoft-com:office:office",
 			"icon": "FrontPage.png",
 			"meta": {
-				"generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
+				"generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1",
+				"ProgId": "^FrontPage\\."
 			},
 			"website": "http://office.microsoft.com/frontpage"
 		},
@@ -5229,6 +5229,18 @@
 			"icon": "Microsoft.svg",
 			"website": "http://microsoft.com"
 		},
+		"Microsoft Excel": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Excel.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:excel\"|<!--\\s*(?:START|END) OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD\\s*-->|<div [^>]*x:publishsource=\"?Excel\"?)",
+			"meta": {
+				"generator": "Microsoft Excel( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Excel\\."
+			},
+			"website": "https://office.microsoft.com/excel"
+		},
 		"Microsoft SharePoint": {
 			"cats": [
 				"1"
@@ -5245,6 +5257,18 @@
 				"generator": "Microsoft SharePoint"
 			},
 			"website": "http://sharepoint.microsoft.com"
+		},
+		"Microsoft Word": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Word.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:word\"|<w:WordDocument>|<div [^>]*class=\"?WordSection1[\" >]|<style[^>]*>[^>]*@page WordSection1)",
+			"meta": {
+				"generator": "Microsoft Word( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Word\\."
+			},
+			"website": "https://office.microsoft.com/word"
 		},
 		"Mietshop": {
 			"cats": [
