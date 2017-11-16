@@ -38,9 +38,13 @@ const wappalyzer = require('wappalyzer')(options);
 
 wappalyzer.analyze('https://www.wappalyzer.com')
   .then(json => {
-    console.log(JSON.stringify(json, null, 2));
+    process.stdout.write(JSON.stringify(json, null, 2) + '\n')
+
+    process.exit(0);
   })
   .catch(error => {
-    console.error(error);
-  });
+    process.stderr.write(error + '\n')
+
+    process.exit(1);
+});
 ```
