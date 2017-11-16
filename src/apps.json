@@ -6716,6 +6716,15 @@
 			},
 			"website": "http://www.prestashop.com"
 		},
+		"Prism": {
+			"cats": [
+				"19"
+			],
+			"env": "^Prism$",
+			"icon": "Prism.svg",
+			"script": "prism\\.js",
+			"website": "http://prismjs.com"
+		},
 		"Project Wonderful": {
 			"cats": [
 				"36"
@@ -7521,6 +7530,16 @@
 			},
 			"icon": "Scientific Linux.png",
 			"website": "http://scientificlinux.org"
+		},
+		"SeamlessCMS": {
+			"cats": [
+				"1"
+			],
+			"icon": "SeamlessCMS.png",
+			"meta": {
+				"generator": "^Seamless\\.?CMS"
+			},
+			"website": "http://www.seamlesscms.com"
 		},
 		"Segment": {
 			"cats": [
@@ -10227,8 +10246,8 @@
 				"8"
 			],
 			"html": [
-				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"/ikiwiki\\.cgi",
-				"<a href=\"/ikiwiki\\.cgi\\?do="
+				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"[^\"]*/ikiwiki\\.cgi",
+				"<a href=\"/(?:cgi-bin/)?ikiwiki\\.cgi\\?do="
 			],
 			"icon": "ikiwiki.png",
 			"website": "http://ikiwiki.info"

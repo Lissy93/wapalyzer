@@ -60,7 +60,7 @@ const driver = options => {
         const browser = new Browser();
 
         browser.visit(url, error => {
-          if ( !browser.resources['0'].response ) {
+          if ( !browser.resources['0'] || !browser.resources['0'].response ) {
             return wappalyzer.log('No response from server', 'driver', 'error');
           }
 
