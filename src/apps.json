@@ -2322,7 +2322,10 @@
 				"12"
 			],
 			"icon": "ef.js.svg",
-			"env": "^ef|efCore$",
+			"env": [
+				"^ef$\\;confidence:20",
+				"^efCore$"
+			],
 			"script": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
 			"website": "http://ef.js.org"
 		},
@@ -4401,7 +4404,7 @@
 			"cats": [
 				"12"
 			],
-			"env": "^ko$",
+			"env": "^ko$\\;confidence:20",
 			"icon": "Knockout.js.png",
 			"website": "http://knockoutjs.com"
 		},
@@ -7963,7 +7966,7 @@
 			"cats": [
 				"12"
 			],
-			"env": "^io$",
+			"env": "^io$\\;confidence:20",
 			"icon": "Socket.io.png",
 			"implies": "Node.js",
 			"script": "socket.io.*\\.js",
