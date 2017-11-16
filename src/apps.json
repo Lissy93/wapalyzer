@@ -395,8 +395,7 @@
         "X-Powered-By": "Afosto SaaS BV"
       },
       "icon": "Afosto.svg",
-      "implies": "PHP",
-      "website": "https://afosto.com"
+      "website": "http://afosto.com",
     },
 		"Aircall": {
 			"cats": [
@@ -462,7 +461,7 @@
 			"env": "^AUI$",
 			"icon": "AlloyUI.png",
 			"implies": [
-				"Bootstrap",
+				"Twitter Bootstrap",
 				"YUI"
 			],
 			"script": "^https?://cdn\\.alloyui\\.com/",
@@ -1053,20 +1052,6 @@
 			"icon": "Bonfire.png",
 			"implies": "CodeIgniter",
 			"website": "http://cibonfire.com"
-		},
-    "Bootstrap": {
-			"cats": [
-				"18"
-			],
-			"env": "^Twipsy$\\;confidence:50",
-			"html": [
-				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
-				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
-				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
-			],
-			"icon": "Bootstrap.png",
-			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
-			"website": "http://getbootstrap.com"
 		},
 		"Bootstrap Table": {
 			"cats": [
@@ -8242,7 +8227,7 @@
 			],
 			"icon": "strapdown.js.png",
 			"implies": [
-				"Bootstrap",
+				"Twitter Bootstrap",
 				"Google Code Prettify"
 			],
 			"script": "strapdown\\.js",
@@ -8768,6 +8753,20 @@
 			"icon": "Twitter.svg",
 			"script": "//platform\\.twitter\\.com/widgets\\.js",
 			"website": "http://twitter.com"
+		},
+		"Twitter Bootstrap": {
+			"cats": [
+				"18"
+			],
+			"env": "^Twipsy$\\;confidence:50",
+			"html": [
+				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
+				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
+				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
+			],
+			"icon": "Twitter Bootstrap.png",
+			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
+			"website": "http://getbootstrap.com"
 		},
 		"Twitter Emoji (Twemoji)": {
 			"cats": [
