@@ -1951,7 +1951,7 @@
 				"Server": "Darwin",
 				"X-Powered-By": "Darwin"
 			},
-			"icon": "Darwin.png",
+			"icon": "Apple.svg",
 			"website": "http://opensource.apple.com"
 		},
 		"DataLife Engine": {
@@ -2036,7 +2036,7 @@
 			"cats": [
 				"40"
 			],
-			"icon": "Dell.png",
+			"icon": "Dell.svg",
 			"website": "http://dell.com"
 		},
 		"Deployd": {
@@ -4718,7 +4718,7 @@
 			"headers": {
 				"Server": "^LiteSpeed$"
 			},
-			"icon": "LiteSpeed.png",
+			"icon": "LiteSpeed.svg",
 			"website": "http://litespeedtech.com"
 		},
 		"Lithium": {
@@ -5403,7 +5403,7 @@
 				"12"
 			],
 			"env": "^Modernizr$",
-			"icon": "Modernizr.png",
+			"icon": "Modernizr.svg",
 			"script": "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "http://www.modernizr.com"
 		},
@@ -6274,7 +6274,7 @@
 			],
 			"env": "^IsOwaPremiumBrowser$",
 			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css\\;version:\\1",
-			"icon": "Outlook Web App.png",
+			"icon": "Outlook.svg",
 			"implies": "Microsoft ASP.NET",
 			"url": "/owa/auth/log(?:on|off)\\.aspx",
 			"website": "http://help.outlook.com"
@@ -6385,7 +6385,7 @@
 			],
 			"env": "^PAYPAL$",
 			"html": "<input[^>]+_s-xclick",
-			"icon": "PayPal.png",
+			"icon": "PayPal.svg",
 			"script": "paypalobjects\\.com/js",
 			"website": "http://paypal.com"
 		},
@@ -10166,7 +10166,7 @@
 			"cats": [
 				"47"
 			],
-			"icon": "git.png",
+			"icon": "git.svg",
 			"meta": {
 				"generator": "\bgit/([\\d.]+\\d)\\;version:\\1"
 			},
@@ -10188,7 +10188,7 @@
 				"47"
 			],
 			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
-			"icon": "git.png",
+			"icon": "git.svg",
 			"implies": [
 				"Perl",
 				"git"
