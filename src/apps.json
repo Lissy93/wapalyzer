@@ -7738,7 +7738,11 @@
 			"meta": {
 				"application-name": "Shopware"
 			},
-			"script": "(?:(shopware)|/web/cache/[0-9]{10}_.+)\\.js\\;version:\\1?4:5",
+			"script": [
+        "(?:(shopware)|/web/cache/[0-9]{10}_.+)\\.js\\;version:\\1?4:5",
+        "/jquery\.shopware\.min\.js",
+        "/engine/Shopware/"
+      ],
 			"website": "http://shopware.com"
 		},
 		"Silva": {
