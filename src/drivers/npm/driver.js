@@ -55,7 +55,9 @@ const driver = options => {
           resolve(apps);
         };
 
-        const browser = new Browser({userAgent: options.userAgent});
+        const browser = new Browser({
+          userAgent: options.userAgent
+        });
 
         browser.visit(url, error => {
           if ( !browser.resources['0'] || !browser.resources['0'].response ) {
