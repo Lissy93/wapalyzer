@@ -20,8 +20,20 @@ $ npm i wappalyzer
 
 ## Run from the command line
 
-```shell
-$ node index.js https://www.wappalyzer.com
+```
+node index.js [url] [options]
+```
+
+### Options
+
+```
+  --debug=0|1        Output debug messages.
+  --delay=ms         Wait for ms milliseconds between requests.
+  --max-depth=num    Don't analyze pages more than num levels deep.
+  --max-urls=num     Exit when num URLs have been analyzed.
+  --max-wait=ms      Wait no more than ms milliseconds for page resources to load.
+  --recursive=0|1    Follow links on pages (crawler).
+  --user-agent=str   Set the user agent string.
 ```
 
 
@@ -29,18 +41,18 @@ $ node index.js https://www.wappalyzer.com
 
 ```javascript
 const options = {
-  userAgent: 'Wappalyzer',
-  maxWait: 3000,
   debug: false,
-  recursive: true,
+  delay: 500,
   maxDepth: 3,
   maxUrls: 10,
-  delay: 500,
+  maxWait: 3000,
+  recursive: true,
+  userAgent: 'Wappalyzer',
 };
 
-const wappalyzer = require('wappalyzer')(options);
+const wappalyzer = new Wappalyzer('https://www.wappalyzer.com', options);
 
-wappalyzer.analyze('https://www.wappalyzer.com')
+wappalyzer.analyze()
   .then(json => {
     process.stdout.write(JSON.stringify(json, null, 2) + '\n')
 

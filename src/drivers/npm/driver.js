@@ -1,146 +1,161 @@
 'use strict';
 
-const driver = options => {
-  const Wappalyzer = require('./wappalyzer');
-  const request = require('request');
-  const url = require('url');
-  const fs = require('fs');
-  const Browser = require('zombie');
+const Wappalyzer = require('./wappalyzer');
+const request = require('request');
+const url = require('url');
+const fs = require('fs');
+const Browser = require('zombie');
 
-  const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
+const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
-  return {
-    analyze: pageUrl => {
-      const origPageUrl = url.parse(pageUrl);
-      const analyzedPageUrls = [];
-      const apps = [];
+class Driver {
+  constructor(pageUrl, options) {
+    this.options = Object.assign({}, {
+      debug: false,
+      delay: 500,
+      maxDepth: 3,
+      maxUrls: 10,
+      maxWait: 3000,
+      recursive: false,
+      userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
+    }, options || {});
 
-      const wappalyzer = new Wappalyzer();
+    this.origPageUrl = url.parse(pageUrl);
+    this.analyzedPageUrls = [];
+    this.apps = [];
 
-      wappalyzer.apps = json.apps;
-      wappalyzer.categories = json.categories;
+    this.wappalyzer = new Wappalyzer();
 
-      wappalyzer.driver.log = (message, source, type) => {
-        if ( Boolean(options.debug) ) {
-          console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
-        }
-      };
+    this.wappalyzer.apps = json.apps;
+    this.wappalyzer.categories = json.categories;
 
-      wappalyzer.driver.displayApps = detected => {
-        Object.keys(detected).forEach(appName => {
-          const app = detected[appName];
+    this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
+    this.wappalyzer.driver.displayApps = detected => this.displayApps(detected);
+  }
 
-          var categories = [];
+  analyze() {
+    return this.crawl(this.origPageUrl);
+  }
 
-          app.props.cats.forEach(id => {
-            var category = {};
+  log(message, source, type) {
+    if ( Boolean(this.options.debug) ) {
+      console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+    }
+  }
 
-            category[id] = wappalyzer.categories[id].name;
+  displayApps(detected) {
+    Object.keys(detected).forEach(appName => {
+      const app = detected[appName];
 
-            categories.push(category)
-          });
+      var categories = [];
 
-          if ( !apps.some(detectedApp => detectedApp.name === app.name) ) {
-            apps.push({
-              name: app.name,
-              confidence: app.confidenceTotal.toString(),
-              version: app.version,
-              icon: app.props.icon || 'default.svg',
-              website: app.props.website,
-              categories
-            });
-          }
-        });
-      };
+      app.props.cats.forEach(id => {
+        var category = {};
 
-      const browser = new Browser({
-        userAgent: options.userAgent,
-        waitDuration: options.maxWait + 'ms',
+        category[id] = json.categories[id].name;
+
+        categories.push(category)
       });
 
-      const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-      const fetch = (pageUrl, index, depth) => {
-        return new Promise(async (resolve, reject) => {
-          // Return when the URL is a duplicate or maxUrls has been reached
-          if ( analyzedPageUrls.indexOf(pageUrl.href) !== -1 || analyzedPageUrls.length >= options.maxUrls ) {
-            return resolve();
-          }
-
-          analyzedPageUrls.push(pageUrl.href);
-
-          wappalyzer.log('depth: ' + depth + '; delay: ' + ( options.delay * index ) + 'ms; url: ' + pageUrl.href, 'driver');
-
-          // Be nice
-          if ( options.delay ) {
-            await sleep(options.delay * index);
-          }
-
-          browser.visit(pageUrl.href, error => {
-            if ( !browser.resources['0'] || !browser.resources['0'].response ) {
-              wappalyzer.log('No response from server', 'browser', 'error');
-
-              return resolve();
-            }
-
-            browser.wait()
-              .catch(error => wappalyzer.log(error.message, 'browser'))
-              .finally(() => {
-                wappalyzer.driver.document = browser.document;
-
-                const headers = {};
-
-                browser.resources['0'].response.headers._headers.forEach(header => {
-                  if ( !headers[header[0]] ){
-                    headers[header[0]] = [];
-                  }
-
-                  headers[header[0]].push(header[1]);
-                });
-
-                const vars = Object.getOwnPropertyNames(browser.window);
-                const html = browser.html();
-                const scripts = Array.prototype.slice
-                  .apply(browser.document.scripts)
-                  .filter(s => s.src)
-                  .map(s => s.src);
-
-                wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
-                  headers,
-                  html,
-                  env: vars,
-                  scripts
-                });
-
-                resolve(browser);
-              });
-          });
+      if ( !this.apps.some(detectedApp => detectedApp.name === app.name) ) {
+        this.apps.push({
+          name: app.name,
+          confidence: app.confidenceTotal.toString(),
+          version: app.version,
+          icon: app.props.icon || 'default.svg',
+          website: app.props.website,
+          categories
         });
-      };
+      }
+    });
+  }
 
-      const crawl = async (pageUrl, index, depth) => {
-        try {
-          const browser = await fetch(pageUrl, index, depth);
+  fetch(pageUrl, index, depth) {
+    return new Promise(async resolve => {
+      // Return when the URL is a duplicate or maxUrls has been reached
+      if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
+        return resolve();
+      }
 
-          if ( options.recursive && depth < options.maxDepth && browser ) {
-            const links = Array.from(browser.body.getElementsByTagName('a')).filter(link => link.hostname === origPageUrl.hostname);
+      this.analyzedPageUrls.push(pageUrl.href);
 
-            await Promise.all(links.map(async (link, index) => {
-              link.hash = '';
+      this.wappalyzer.log('depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms; url: ' + pageUrl.href, 'driver');
 
-              return crawl(link, index, depth + 1);
-            }));
-          }
+      // Be nice
+      if ( this.options.delay ) {
+        await this.sleep(this.options.delay * index);
+      }
 
-          return Promise.resolve(apps);
-        } catch (error) {
-          return Promise.reject(error);
+      const browser = new Browser({
+        userAgent: this.options.userAgent,
+        waitDuration: this.options.maxWait + 'ms',
+      });
+
+      browser.visit(pageUrl.href, error => {
+        if ( !browser.resources['0'] || !browser.resources['0'].response ) {
+          this.wappalyzer.log('No response from server', 'browser', 'error');
+
+          return resolve();
         }
-      };
 
-      return crawl(origPageUrl, 1, 1);
+        browser.wait()
+          .catch(error => this.wappalyzer.log(error.message, 'browser', 'error'))
+          .finally(() => {
+            const headers = {};
+
+            browser.resources['0'].response.headers._headers.forEach(header => {
+              if ( !headers[header[0]] ){
+                headers[header[0]] = [];
+              }
+
+              headers[header[0]].push(header[1]);
+            });
+
+            const vars = Object.getOwnPropertyNames(browser.window);
+            const html = browser.html();
+            const scripts = Array.prototype.slice
+              .apply(browser.document.scripts)
+              .filter(s => s.src)
+              .map(s => s.src);
+
+            this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
+              headers,
+              html,
+              env: vars,
+              scripts
+            });
+
+            const links = browser.body.getElementsByTagName('a');
+
+            resolve(links);
+          });
+      });
+    });
+  }
+
+  async crawl(pageUrl, index = 1, depth = 1) {
+    try {
+      var links = await this.fetch(pageUrl, index, depth);
+
+      if ( this.options.recursive && depth < this.options.maxDepth && links ) {
+        links = Array.from(links).filter(link => link.hostname === this.origPageUrl.hostname);
+
+        await Promise.all(links.map(async (link, index) => {
+          link.hash = '';
+
+          return this.crawl(link, index + 1, depth + 1);
+        }));
+      }
+
+      return Promise.resolve(this.apps);
+    } catch (error) {
+      return Promise.reject(error);
     }
-  };
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 };
 
-module.exports = driver;
+module.exports = Driver;
