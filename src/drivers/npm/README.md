@@ -31,7 +31,11 @@ $ node index.js https://www.wappalyzer.com
 const options = {
   userAgent: 'Wappalyzer',
   maxWait: 3000,
-  debug: false
+  debug: false,
+  recursive: true,
+  maxDepth: 3,
+  maxUrls: 10,
+  delay: 500,
 };
 
 const wappalyzer = require('wappalyzer')(options);

@@ -1,9 +1,13 @@
 'use strict';
 
 const options = {
-  userAgent: null,
+  userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
   maxWait: 3000,
-  debug: false
+  debug: true,
+  recursive: true,
+  maxDepth: 3,
+  maxUrls: 10,
+  delay: 500,
 };
 
 const args = process.argv.slice(2);
