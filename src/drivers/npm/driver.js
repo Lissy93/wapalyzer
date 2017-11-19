@@ -20,6 +20,13 @@ class Driver {
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
     }, options || {});
 
+    this.options.debug = Boolean(this.options.debug);
+    this.options.recursive = Boolean(this.options.recursive);
+    this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
+    this.options.maxDepth = parseInt(this.options.maxDepth, 10);
+    this.options.maxUrls = parseInt(this.options.maxUrls, 10);
+    this.options.maxWait = parseInt(this.options.maxWait, 10);
+
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
     this.apps = [];
@@ -38,9 +45,7 @@ class Driver {
   }
 
   log(message, source, type) {
-    if ( Boolean(this.options.debug) ) {
-      console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
-    }
+    this.options.debug && console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
   }
 
   displayApps(detected) {
@@ -71,7 +76,7 @@ class Driver {
   }
 
   fetch(pageUrl, index, depth) {
-    return new Promise(async resolve => {
+    return new Promise(resolve => {
       // Return when the URL is a duplicate or maxUrls has been reached
       if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
         return resolve();
@@ -81,80 +86,76 @@ class Driver {
 
       this.wappalyzer.log('depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms; url: ' + pageUrl.href, 'driver');
 
-      // Be nice
-      if ( this.options.delay ) {
-        await this.sleep(this.options.delay * index);
-      }
-
       const browser = new Browser({
         userAgent: this.options.userAgent,
         waitDuration: this.options.maxWait + 'ms',
       });
 
-      browser.visit(pageUrl.href, error => {
-        if ( !browser.resources['0'] || !browser.resources['0'].response ) {
-          this.wappalyzer.log('No response from server', 'browser', 'error');
+      this.sleep(this.options.delay * index)
+        .then(() => {
+          browser.visit(pageUrl.href, error => {
+            if ( !browser.resources['0'] || !browser.resources['0'].response ) {
+              this.wappalyzer.log('No response from server', 'browser', 'error');
 
-          return resolve();
-        }
+              return resolve();
+            }
 
-        browser.wait()
-          .catch(error => this.wappalyzer.log(error.message, 'browser', 'error'))
-          .finally(() => {
-            const headers = {};
+            browser.wait()
+              .catch(error => this.wappalyzer.log(error.message, 'browser', 'error'))
+              .finally(() => {
+                const headers = {};
 
-            browser.resources['0'].response.headers._headers.forEach(header => {
-              if ( !headers[header[0]] ){
-                headers[header[0]] = [];
-              }
+                browser.resources['0'].response.headers._headers.forEach(header => {
+                  if ( !headers[header[0]] ){
+                    headers[header[0]] = [];
+                  }
 
-              headers[header[0]].push(header[1]);
-            });
+                  headers[header[0]].push(header[1]);
+                });
 
-            const vars = Object.getOwnPropertyNames(browser.window);
-            const html = browser.html();
-            const scripts = Array.prototype.slice
-              .apply(browser.document.scripts)
-              .filter(s => s.src)
-              .map(s => s.src);
+                const vars = Object.getOwnPropertyNames(browser.window);
+                const html = browser.html();
+                const scripts = Array.prototype.slice
+                  .apply(browser.document.scripts)
+                  .filter(s => s.src)
+                  .map(s => s.src);
 
-            this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
-              headers,
-              html,
-              env: vars,
-              scripts
-            });
+                this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
+                  headers,
+                  html,
+                  env: vars,
+                  scripts
+                });
 
-            const links = browser.body.getElementsByTagName('a');
+                const links = browser.body.getElementsByTagName('a');
 
-            resolve(links);
+                resolve(links);
+              });
           });
-      });
+        });
     });
   }
 
-  async crawl(pageUrl, index = 1, depth = 1) {
-    try {
-      var links = await this.fetch(pageUrl, index, depth);
+  crawl(pageUrl, index = 1, depth = 1) {
+    return new Promise(resolve => {
+      this.fetch(pageUrl, index, depth)
+        .then(links => {
+          if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
+            links = Array.from(links)
+              .filter(link => link.hostname === this.origPageUrl.hostname)
+              .map(link => { link.hash = ''; return link });
 
-      if ( this.options.recursive && depth < this.options.maxDepth && links ) {
-        links = Array.from(links).filter(link => link.hostname === this.origPageUrl.hostname);
-
-        await Promise.all(links.map(async (link, index) => {
-          link.hash = '';
-
-          return this.crawl(link, index + 1, depth + 1);
-        }));
-      }
-
-      return Promise.resolve(this.apps);
-    } catch (error) {
-      return Promise.reject(error);
-    }
+            return Promise.all(links.map((link, index) => this.crawl(link, index + 1, depth + 1)));
+          } else {
+            return Promise.resolve();
+          }
+        })
+        .then(() => resolve(this.apps));
+    });
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
   }
 };
 
