@@ -119,7 +119,7 @@ class Driver {
                 } catch ( e ) {
                   this.wappalyzer.log(error.message, 'browser', 'error');
 
-                  return resolve();
+                  const html = '';
                 }
 
                 const vars = Object.getOwnPropertyNames(browser.window);
