@@ -1865,7 +1865,7 @@
 			"cats": [
 				"25"
 			],
-			"env": "^d3$",
+			"env": "^d3$\\;confidence:20",
 			"icon": "D3.png",
 			"script": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
 			"website": "http://d3js.org"
@@ -5703,7 +5703,7 @@
 			"cats": [
 				"25"
 			],
-			"env": "^nv$",
+			"env": "^nv$\\;confidence:20",
 			"html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
 			"icon": "NVD3.png",
 			"implies": "D3",
