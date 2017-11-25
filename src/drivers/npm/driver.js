@@ -114,8 +114,15 @@ class Driver {
                   headers[header[0]].push(header[1]);
                 });
 
+                try {
+                  const html = browser.html();
+                } catch ( e ) {
+                  this.wappalyzer.log(error.message, 'browser', 'error');
+
+                  return resolve();
+                }
+
                 const vars = Object.getOwnPropertyNames(browser.window);
-                const html = browser.html();
                 const scripts = Array.prototype.slice
                   .apply(browser.document.scripts)
                   .filter(s => s.src)
