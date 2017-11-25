@@ -267,7 +267,7 @@
 				"36"
 			],
 			"headers": {
-				"X-Advertising-By": "adnegah.net"
+				"X-Advertising-By": "adnegah\\.net"
 			},
 			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
 			"icon": "adnegah.png",
@@ -381,7 +381,7 @@
 				"6"
 			],
 			"html": [
-				"<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy. Information and contribution at https://www.afterbuy.de</dd>"
+				"<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy\\. Information and contribution at https://www\\.afterbuy\\.de</dd>"
 			],
 			"icon": "after-buy.png",
 			"script": "shop-static\\.afterbuy\\.de",
@@ -461,7 +461,7 @@
 			"env": "^AUI$",
 			"icon": "AlloyUI.png",
 			"implies": [
-				"Twitter Bootstrap",
+				"Bootstrap",
 				"YUI"
 			],
 			"script": "^https?://cdn\\.alloyui\\.com/",
@@ -630,7 +630,7 @@
 				"51"
 			],
 			"headers": {
-				"X-Powered-By": "Salesforce.com ApexPages"
+				"X-Powered-By": "Salesforce\\.com ApexPages"
 			},
 			"icon": "ApexPages.png",
 			"implies": "Salesforce",
@@ -682,8 +682,8 @@
 				"35"
 			],
 			"script": [
-				"js.arcgis.com",
-				"basemaps.arcgis.com"
+				"js\\.arcgis\\.com",
+				"basemaps\\.arcgis\\.com"
 			],
 			"icon": "arcgis_icon.png",
 			"website": "https://developers.arcgis.com/javascript/"
@@ -721,7 +721,7 @@
 			],
 			"env": "^ArvanCloud$",
 			"headers": {
-				"AR-PoweredBy": "Arvan Cloud \\(arvancloud.com\\)"
+				"AR-PoweredBy": "Arvan Cloud \\(arvancloud\\.com\\)"
 			},
 			"icon": "ArvanCloud.png",
 			"website": "http://www.ArvanCloud.com"
@@ -1171,7 +1171,7 @@
 				"36"
 			],
 			"env": "^_bsa",
-			"html": "<script[^>]*>[^<]+?bsa.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
+			"html": "<script[^>]*>[^<]+?bsa\\.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
 			"icon": "BuySellAds.png",
 			"script": "^https?://s\\d\\.buysellads\\.com/",
 			"website": "http://buysellads.com"
@@ -1251,7 +1251,7 @@
 			"env": "^fn_compare_strings$",
 			"html": [
 				"&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)",
-				".cm-noscript[^>]+</style>"
+				"\\.cm-noscript[^>]+</style>"
 			],
 			"icon": "CS Cart.png",
 			"implies": "PHP",
@@ -1480,7 +1480,7 @@
 			],
 			"headers": {
 				"Access-Control-Allow-Headers": "X-CKAN-API-KEY",
-				"Link": "<http://ckan.org/>; rel=shortlink"
+				"Link": "<http://ckan\\.org/>; rel=shortlink"
 			},
 			"icon": "Ckan.png",
 			"implies": [
@@ -1605,7 +1605,7 @@
 				"16"
 			],
 			"html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
-			"script":  "https?://authedmine.com/(?:lib/captcha|captcha)",
+			"script":  "https?://authedmine\\.com/(?:lib/captcha|captcha)",
 			"icon": "CoinHive.svg",
 			"website": "https://coinhive.com"
 		},
@@ -1865,7 +1865,7 @@
 			"cats": [
 				"25"
 			],
-			"env": "^d3$",
+			"env": "^d3$\\;confidence:20",
 			"icon": "D3.png",
 			"script": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
 			"website": "http://d3js.org"
@@ -2207,7 +2207,7 @@
 				"36"
 			],
 			"icon": "DoubleClick.svg",
-			"script": "https?://fls.doubleclick.net",
+			"script": "https?://fls\\.doubleclick\\.net",
 			"website": "http://support.google.com/ds/answer/6029713?hl=en"
 		},
 		"DoubleClick for Publishers (DFP)": {
@@ -3071,7 +3071,7 @@
 			],
 			"html": [
 				"<!-- gitphp web interface ([\\d.]+)\\;version:\\1",
-				"<a href=\"http://www.gitphp.org/\" target=\"_blank\">GitPHP by Chris Han"
+				"<a href=\"http://www\\.gitphp\\.org/\" target=\"_blank\">GitPHP by Chris Han"
 			],
 			"implies": "PHP",
 			"website": "http://gitphp.org"
@@ -3080,7 +3080,7 @@
 			"cats": [
 				"47"
 			],
-			"html": "Powered by <a href=\"https://gerrit.googlesource.com/gitiles/\">Gitiles<",
+			"html": "Powered by <a href=\"https://gerrit\\.googlesource\\.com/gitiles/\">Gitiles<",
 			"implies": [
 				"Java",
 				"git"
@@ -3224,7 +3224,7 @@
 			"icon": "Google Maps.png",
 			"script": [
 				"(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
-				"//maps.googleapis.com/maps/api/js"
+				"//maps\\.googleapis\\.com/maps/api/js"
 			],
 			"website": "http://maps.google.com"
 		},
@@ -3501,7 +3501,7 @@
 			"cats": [
 				"4"
 			],
-			"html": "<p>Produced by <a href=\"http://www.haskell.org/haddock/\">Haddock</a> version ([0-9.]+)</p>\\;version:\\1",
+			"html": "<p>Produced by <a href=\"http://www\\.haskell\\.org/haddock/\">Haddock</a> version ([0-9.]+)</p>\\;version:\\1",
 			"script": "haddock-util\\.js",
 			"website": "http://www.haskell.org/haddock/"
 		},
@@ -3566,7 +3566,7 @@
 			],
 			"env": "^heap$",
 			"icon": "Heap.png",
-			"script": "heap-\\d+.js",
+			"script": "heap-\\d+\\.js",
 			"website": "http://heapanalytics.com"
 		},
 		"Hello Bar": {
@@ -4526,7 +4526,7 @@
 				"5"
 			],
 			"icon": "Kontaktify.png",
-			"script": "//(?:www\\.)?kontaktify\\.com/embed.js",
+			"script": "//(?:www\\.)?kontaktify\\.com/embed\\.js",
 			"website": "https://www.kontaktify.com"
 		},
 		"Koobi": {
@@ -4670,7 +4670,7 @@
 			],
 			"html": "<!-- \\[START\\] 'blocks/head.rain' -->",
 			"icon": "Lightspeed.svg",
-			"script": "http://assets.webshopapp.com",
+			"script": "http://assets\\.webshopapp\\.com",
 			"url": "seoshop.webshopapp.com",
 			"website": "http://www.lightspeedhq.com/products/ecommerce/"
 		},
@@ -4811,10 +4811,10 @@
 				"<script[^<>]*>[^]{0,128}?src\\s*=\\s*['\"]//counter\\.yadro\\.ru/hit(?:;\\S+)?\\?(?:t\\d+\\.\\d+;)?r",
 				"<!--LiveInternet counter-->",
 				"<!--/LiveInternet-->",
-				"<a href=\"http://www.liveinternet.ru/click\""
+				"<a href=\"http://www\\.liveinternet\\.ru/click\""
 			],
 			"icon": "Liveinternet.png",
-			"script": "/js/al/common.js\\?[0-9_]+",
+			"script": "/js/al/common\\.js\\?[0-9_]+",
 			"website": "http://liveinternet.ru/rating/"
 		},
 		"Lo-dash": {
@@ -4965,7 +4965,7 @@
 			],
 			"env": "^setM(?:Iframe|RefURL)$",
 			"icon": "MadAdsMedia.png",
-			"script": "^https?://(?:ads-by|pixel)\\.madadsmedia.com/",
+			"script": "^https?://(?:ads-by|pixel)\\.madadsmedia\\.com/",
 			"website": "http://madadsmedia.com"
 		},
 		"Magento": {
@@ -4993,7 +4993,7 @@
 			],
 			"website": "http://www.magentocommerce.com"
 		},
-		"Mailchimp": {
+		"MailChimp": {
 			"cats": [
 				"32"
 			],
@@ -5006,8 +5006,8 @@
 			],
 			"icon": "mailchimp.svg",
 			"script": [
-				"s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js",
-				"cdn-images.mailchimp.com/[^>]*.css"
+				"s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
+				"cdn-images\\.mailchimp\\.com/[^>]*\\.css"
 			],
 			"website": "http://mailchimp.com"
 		},
@@ -5094,7 +5094,7 @@
 				"2"
 			],
 			"env": "mm_(?:config|license|user|current_user_id)",
-			"html": "<noscript> To use Mattermost, please enable JavaScript. </noscript>",
+			"html": "<noscript> To use Mattermost, please enable JavaScript\\. </noscript>",
 			"icon": "mattermost.png",
 			"implies": [
 				"Go",
@@ -5277,7 +5277,7 @@
 				"20"
 			],
 			"icon": "Microsoft PowerPoint.svg",
-			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:powerpoint\"|<link rel=\"?Presentation-XML\"? href=\"?[^\"]+.xml\"?>|<o:PresentationFormat>[^<]+</o:PresentationFormat>[^!]+<o:Slides>\\d+</o:Slides>(?:[^!]+<o:Version>([\\d.]+)</o:Version>)?)\\;version:\\1",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:powerpoint\"|<link rel=\"?Presentation-XML\"? href=\"?[^\"]+\\.xml\"?>|<o:PresentationFormat>[^<]+</o:PresentationFormat>[^!]+<o:Slides>\\d+</o:Slides>(?:[^!]+<o:Version>([\\d.]+)</o:Version>)?)\\;version:\\1",
 			"meta": {
 				"generator": "Microsoft PowerPoint ( [\\d.]+)?\\;version:\\1",
 				"ProgId": "^PowerPoint\\."
@@ -5329,7 +5329,7 @@
 			"cats": [
 				"6"
 			],
-			"html": "<a href=\"https://ssl.mietshop.d",
+			"html": "<a href=\"https://ssl\\.mietshop\\.d",
 			"icon": "mietshop.png",
 			"meta": {
 				"generator": "Mietshop"
@@ -5423,7 +5423,7 @@
 			],
 			"icon": "modified.png",
 			"meta": {
-				"generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www.modified-shop.org"
+				"generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www\\.modified-shop\\.org"
 			},
 			"website": "http://www.modified-shop.org/"
 		},
@@ -5703,7 +5703,7 @@
 			"cats": [
 				"25"
 			],
-			"env": "^nv$",
+			"env": "^nv$\\;confidence:20",
 			"html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
 			"icon": "NVD3.png",
 			"implies": "D3",
@@ -5716,7 +5716,7 @@
 			],
 			"env": "^nvg[0-9]$",
 			"icon": "Navegg.png",
-			"script": "tag.navdmp.com",
+			"script": "tag\\.navdmp\\.com",
 			"website": "https://www.navegg.com/"
 		},
 		"Nedstat": {
@@ -5852,7 +5852,7 @@
 				"22"
 			],
 			"headers": {
-				"x-powered-by": "^Next.js ?([0-9.]+)?\\;version:\\1"
+				"x-powered-by": "^Next\\.js ?([0-9.]+)?\\;version:\\1"
 			},
       "env": "^__NEXT_DATA__$",
       "icon": "zeit.svg",
@@ -5937,7 +5937,7 @@
 				"1",
 				"11"
 			],
-			"html": "Powered by <a href=\"http://octopress.org\">",
+			"html": "Powered by <a href=\"http://octopress\\.org\">",
 			"icon": "octopress.png",
 			"implies": "Jekyll",
 			"meta": {
@@ -6865,7 +6865,7 @@
 			"cats": [
 				"19"
 			],
-			"html": "<link[^>]+pygments.css[\"']",
+			"html": "<link[^>]+pygments\\.css[\"']",
 			"icon": "pygments.png",
 			"website": "http://pygments.org"
 		},
@@ -7028,7 +7028,7 @@
 			"icon": "Rakuten DBCore.png",
 			"meta": {
 				"generator": "Rakuten DBCore",
-				"generator:site": "http://ecservice.rakuten.com.br"
+				"generator:site": "http://ecservice\\.rakuten\\.com\\.br"
 			},
 			"website": "http://ecservice.rakuten.com.br"
 		},
@@ -7495,6 +7495,7 @@
 				"Server": "Demandware eCommerce Server"
 			},
 			"html": "<[^>]+demandware\\.edgesuite",
+			"script": "/demandware\\.static/",
 			"icon": "Salesforce.svg",
 			"website": "http://demandware.com"
 		},
@@ -7583,7 +7584,7 @@
 				"10"
 			],
 			"env": "^analytics$",
-			"html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics.js[\\s\\S]*script>",
+			"html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics\\.js[\\s\\S]*script>",
 			"icon": "Segment.png",
 			"script": "cdn\\.segment\\.com/analytics\\.js",
 			"website": "http://segment.com"
@@ -8003,7 +8004,7 @@
 			"env": "^io$\\;confidence:20",
 			"icon": "Socket.io.png",
 			"implies": "Node.js",
-			"script": "socket.io.*\\.js",
+			"script": "socket\\.io.*\\.js",
 			"website": "http://socket.io"
 		},
 		"Solodev": {
@@ -8258,7 +8259,7 @@
 			],
 			"icon": "strapdown.js.png",
 			"implies": [
-				"Twitter Bootstrap",
+				"Bootstrap",
 				"Google Code Prettify"
 			],
 			"script": "strapdown\\.js",
@@ -8268,7 +8269,7 @@
 			"cats": [
 				"6"
 			],
-			"html": "<a href=\"http://www.strato.de/\" target=\"_blank\">",
+			"html": "<a href=\"http://www\\.strato\\.de/\" target=\"_blank\">",
 			"icon": "strato.png",
 			"website": "http://shop.strato.com"
 		},
@@ -8343,6 +8344,17 @@
 			"icon": "Supersized.png",
 			"script": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "http://buildinternet.com/project/supersized"
+		},
+		"Svbtle": {
+			"cats": [
+				"11"
+			],
+			"icon": "svbtle.png",
+			"meta": {
+				"generator": "^Svbtle\\.com$"
+			},
+			"url": "\\.svbtle\\.com",
+			"website": "https://www.svbtle.com"
 		},
 		"SweetAlert": {
 			"cats": [
@@ -8585,7 +8597,7 @@
 			"cats": [
 				"6"
 			],
-      "html": "<link[^>]*tictail\\.com",
+			"html": "<link[^>]*tictail\\.com",
 			"icon": "tictail.png",
 			"website": "https://tictail.com"
 		},
@@ -8621,6 +8633,15 @@
 			},
 			"script": "(?:/|_)tiki",
 			"website": "http://tiki.org"
+		},
+		"Tilda": {
+			"cats": [
+				"1"
+			],
+			"icon": "tilda.png",
+			"html": "<link[^>]* href=[^>]+tilda(?:cdn|\\.ws|-blocks)",
+			"script": "tilda(?:cdn|\\.ws|-blocks)",
+			"website": "https://tilda.cc"
 		},
 		"Timeplot": {
 			"cats": [
@@ -8700,7 +8721,7 @@
 			],
 			"env": "^TrackJs$",
 			"icon": "TrackJs.png",
-			"script": "tracker.js",
+			"script": "tracker\\.js",
 			"website": "http://trackjs.com"
 		},
 		"Translucide": {
@@ -8785,19 +8806,18 @@
 			"script": "//platform\\.twitter\\.com/widgets\\.js",
 			"website": "http://twitter.com"
 		},
-		"Twitter Bootstrap": {
+		"Bootstrap": {
 			"cats": [
 				"18"
 			],
-			"env": "^Twipsy$\\;confidence:50",
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
 				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
 				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
-			"icon": "Twitter Bootstrap.png",
-			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
-			"website": "http://getbootstrap.com"
+			"icon": "Bootstrap.png",
+			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.min)?\\.js)",
+			"website": "https://getbootstrap.com"
 		},
 		"Twitter Emoji (Twemoji)": {
 			"cats": [
@@ -8941,7 +8961,7 @@
 				"1"
 			],
 			"headers": {
-				"X-Generated-By": "UMI.CMS"
+				"X-Generated-By": "UMI\\.CMS"
 			},
 			"icon": "UMI.CMS.png",
 			"implies": "PHP",
@@ -9127,6 +9147,18 @@
 			"script": "zencdn\\.net/c/video\\.js",
 			"website": "http://videojs.com"
 		},
+		"Vigbo": {
+			"cats": [
+				"1"
+			],
+			"headers": {
+				"Set-Cookie": "_gphw_mode="
+			},
+			"icon": "vigbo.png",
+      "html": "<link[^>]* href=[^>]+(?:\\.vigbo\\.com|\\.gophotoweb\\.com)",
+      "script": "(?:\\.vigbo.com|\\.gophotoweb\\.com)",
+			"website": "https://vigbo.com"
+		},
 		"VigLink": {
 			"cats": [
 				"36"
@@ -9265,7 +9297,7 @@
 				"6"
 			],
 			"env": "^WEBXPAY$",
-			"html": "Powered by <a href=\"https://www.webxpay.com\">WEBXPAY<",
+			"html": "Powered by <a href=\"https://www\\.webxpay\\.com\">WEBXPAY<",
 			"icon": "WEBXPAY.png",
 			"website": "https://webxpay.com"
 		},
@@ -9553,7 +9585,7 @@
 			"meta": {
 				"generator": "WooCommerce ([\\d.]+)\\;version:\\1"
 			},
-			"script": "woocommerce",
+			"script": "woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
 			"website": "http://www.woothemes.com/woocommerce"
 		},
 		"Woopra": {
@@ -9728,7 +9760,7 @@
 				"6"
 			],
 			"html": [
-				"Powered by <a href=\"http://www.xonic-solutions.de/index.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>"
+				"Powered by <a href=\"http://www\\.xonic-solutions\\.de/index\\.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>"
 			],
 			"icon": "xonic.png",
 			"meta": {
@@ -9856,7 +9888,7 @@
 			],
 			"env": "^yii$",
 			"html": [
-				"Powered by <a href=\"http://www.yiiframework.com/\" rel=\"external\">Yii Framework</a>",
+				"Powered by <a href=\"http://www\\.yiiframework\\.com/\" rel=\"external\">Yii Framework</a>",
 				"<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \\/>",
 				"<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]"
 			],
@@ -10072,7 +10104,7 @@
 			],
 			"html": [
 				"<[^>]+id='cgit'",
-				"generated by <a href='http://git.zx2c4.com/cgit/about/'>cgit v([\\d.a-z-]+)</a>\\;version:\\1"
+				"generated by <a href='http://git\\.zx2c4\\.com/cgit/about/'>cgit v([\\d.a-z-]+)</a>\\;version:\\1"
 			],
 			"icon": "cgit.png",
 			"implies": "git",
@@ -10181,7 +10213,7 @@
 				"47"
 			],
 			"headers": {
-				"X-Powered-By": "^enduro.js$"
+				"X-Powered-By": "^enduro\\.js$"
 			},
 			"icon": "enduro.js.svg",
 			"implies": "Node.js",
@@ -10221,7 +10253,7 @@
 			"meta": {
 				"generator": "gitweb(?:/([\\d.]+\\d))?\\;version:\\1"
 			},
-			"script": "static/gitweb.js$",
+			"script": "static/gitweb\\.js$",
 			"website": "http://git-scm.com"
 		},
 		"govCMS": {
@@ -10640,7 +10672,7 @@
 			"cats": [
 				"19"
 			],
-			"html": "<a href=\"https://owncloud.com\" target=\"_blank\">ownCloud Inc.</a><br/>Your Cloud, Your Data, Your Way!",
+			"html": "<a href=\"https://owncloud\\.com\" target=\"_blank\">ownCloud Inc\\.</a><br/>Your Cloud, Your Data, Your Way!",
 			"icon": "ownCloud.png",
 			"implies": "PHP",
 			"meta": {
@@ -10742,8 +10774,8 @@
 			],
 			"html": [
 				"<span id='logo'>phpLiteAdmin</span> <span id='version'>v([0-9.]+)<\\;version:\\1",
-				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www.phpliteadmin.org/) -->",
-				"Powered by <a href='http://www.phpliteadmin\\.org/'"
+				"<!-- Copyright [0-9]+ phpLiteAdmin (?:http://www\\.phpliteadmin\\.org/) -->",
+				"Powered by <a href='http://www\\.phpliteadmin\\.org/'"
 			],
 			"icon": "phpliteadmin.png",
 			"implies": [
@@ -10901,7 +10933,7 @@
 			"meta": {
 				"generator": "uKnowva (?: ([\\d.]+))?\\;version:\\1"
 			},
-			"script": "/media/conv/js/jquery.js",
+			"script": "/media/conv/js/jquery\\.js",
 			"website": "http://uknowva.com"
 		},
 		"vBulletin": {
