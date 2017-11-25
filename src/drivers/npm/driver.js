@@ -87,6 +87,7 @@ class Driver {
       this.wappalyzer.log('depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms; url: ' + pageUrl.href, 'driver');
 
       const browser = new Browser({
+        silent: true,
         userAgent: this.options.userAgent,
         waitDuration: this.options.maxWait + 'ms',
       });
