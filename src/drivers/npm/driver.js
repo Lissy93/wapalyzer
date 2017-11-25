@@ -114,12 +114,12 @@ class Driver {
                   headers[header[0]].push(header[1]);
                 });
 
+                let html = '';
+
                 try {
-                  const html = browser.html();
+                  html = browser.html();
                 } catch ( e ) {
                   this.wappalyzer.log(error.message, 'browser', 'error');
-
-                  const html = '';
                 }
 
                 const vars = Object.getOwnPropertyNames(browser.window);

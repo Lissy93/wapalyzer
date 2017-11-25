@@ -68,7 +68,7 @@ class Wappalyzer {
       if ( data.scripts ) {
         this.analyzeScripts(app, data.scripts);
       }
-      
+
       if ( data.headers ) {
         this.analyzeHeaders(app, data.headers);
       }
@@ -181,13 +181,17 @@ class Wappalyzer {
    * Enclose string in array
    */
   asArray(value) {
-    return typeof value === 'string' ? [ value ] : value;
+    return value instanceof Array ? value : [ value ];
   }
 
   /**
    * Parse apps.json patterns
    */
   parsePatterns(patterns) {
+    if ( !patterns ) {
+      return [];
+    }
+
     var parsed = {};
 
     // Convert string to object containing array containing string
@@ -197,7 +201,7 @@ class Wappalyzer {
       };
     }
 
-    for ( var key in patterns ) {
+    Object.keys(patterns).forEach(key => {
       parsed[key] = [];
 
       this.asArray(patterns[key]).forEach(pattern => {
@@ -226,7 +230,7 @@ class Wappalyzer {
 
         parsed[key].push(attrs);
       });
-    }
+    });
 
     // Convert back to array if the original pattern list was an array (or string)
     if ( 'main' in parsed ) {
