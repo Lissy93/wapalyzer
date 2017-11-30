@@ -76,7 +76,7 @@ function appsToDomTemplate(response) {
             'a', {
               class: 'detected__app',
               target: '_blank',
-              href: 'https://wappalyzer.com/applications/' + slugify(appName)
+              href: 'https://www.wappalyzer.com/applications/' + slugify(appName)
             }, [
               'img', {
                 class: 'detected__app-icon',
@@ -100,7 +100,7 @@ function appsToDomTemplate(response) {
             'a', {
               class: 'detected__category-link',
               target: '_blank',
-              href: 'https://wappalyzer.com/categories/' + slugify(response.categories[cat].name)
+              href: 'https://www.wappalyzer.com/categories/' + slugify(response.categories[cat].name)
             }, [
               'span', {
                 class: 'detected__category-name'

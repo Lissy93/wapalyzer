@@ -24,7 +24,7 @@ class Wappalyzer {
     this.adCache = [];
 
     this.config = {
-      websiteURL: 'https://wappalyzer.com/',
+      websiteURL: 'https://www.wappalyzer.com/',
       twitterURL: 'https://twitter.com/Wappalyzer',
       githubURL: 'https://github.com/AliasIO/Wappalyzer',
     };
@@ -62,8 +62,11 @@ class Wappalyzer {
 
       if ( data.html ) {
         this.analyzeHtml(app, data.html);
-        this.analyzeScript(app, data.html);
         this.analyzeMeta(app, data.html);
+      }
+
+      if ( data.scripts ) {
+        this.analyzeScripts(app, data.scripts);
       }
 
       if ( data.headers ) {
@@ -166,7 +169,7 @@ class Wappalyzer {
    *
    */
   ping() {
-    if ( Object.keys(this.hostnameCache).length >= 50 || this.adCache.length >= 50 ) {
+    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 200 ) {
       this.driver.ping(this.hostnameCache, this.adCache);
 
       this.hostnameCache = {};
@@ -178,13 +181,17 @@ class Wappalyzer {
    * Enclose string in array
    */
   asArray(value) {
-    return typeof value === 'string' ? [ value ] : value;
+    return value instanceof Array ? value : [ value ];
   }
 
   /**
    * Parse apps.json patterns
    */
   parsePatterns(patterns) {
+    if ( !patterns ) {
+      return [];
+    }
+
     var parsed = {};
 
     // Convert string to object containing array containing string
@@ -194,7 +201,7 @@ class Wappalyzer {
       };
     }
 
-    for ( var key in patterns ) {
+    Object.keys(patterns).forEach(key => {
       parsed[key] = [];
 
       this.asArray(patterns[key]).forEach(pattern => {
@@ -223,7 +230,7 @@ class Wappalyzer {
 
         parsed[key].push(attrs);
       });
-    }
+    });
 
     // Convert back to array if the original pattern list was an array (or string)
     if ( 'main' in parsed ) {
@@ -396,19 +403,18 @@ class Wappalyzer {
   /**
    * Analyze script tag
    */
-  analyzeScript(app, html) {
-    var regex = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
+  analyzeScripts(app, scripts) {
     var patterns = this.parsePatterns(app.props.script);
 
     if ( patterns.length ) {
       patterns.forEach(pattern => {
         var match;
 
-        while ( ( match = regex.exec(html) ) ) {
-          if ( pattern.regex.test(match[2]) ) {
-            this.addDetected(app, pattern, 'script', match[2]);
+        scripts.forEach(uri => {
+          if ( pattern.regex.test(uri) ) {
+            this.addDetected(app, pattern, 'script', uri);
           }
-        }
+        });
       });
     }
   }
@@ -444,12 +450,16 @@ class Wappalyzer {
     var patterns = this.parsePatterns(app.props.headers);
 
     if ( headers ) {
-      Object.keys(patterns).forEach(header => {
-        patterns[header].forEach(pattern => {
-          header = header.toLowerCase();
+      Object.keys(patterns).forEach(headerName => {
+        patterns[headerName].forEach(pattern => {
+          headerName = headerName.toLowerCase();
 
-          if ( header in headers && pattern.regex.test(headers[header]) ) {
-            this.addDetected(app, pattern, 'headers', headers[header], header);
+          if ( headerName in headers ) {
+            headers[headerName].forEach(headerValue => {
+              if ( pattern.regex.test(headerValue) ) {
+                this.addDetected(app, pattern, 'headers', headerValue, headerName);
+              }
+            });
           }
         });
       });

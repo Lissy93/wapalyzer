@@ -2,6 +2,7 @@ body {
 	background: #fff;
 	font-family: Helvetica, Arial, sans-serif;
   font-size: .8rem;
+  height: 20.8rem;
 	margin: 0;
   overflow: hidden;
   width: 30rem;
@@ -40,6 +41,7 @@ body {
 }
 
 .detected__category {
+  page-break-inside: avoid;
   break-inside: avoid-column;
   padding-bottom: 1rem;
 }

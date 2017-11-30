@@ -101,7 +101,7 @@ getOption('version')
         .then(upgradeMessage => {
           if ( upgradeMessage ) {
             openTab({
-              url: wappalyzer.config.websiteURL + 'upgraded',
+              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
               background: true
             });
           }
@@ -138,20 +138,23 @@ browser.webRequest.onCompleted.addListener(request => {
     var url = wappalyzer.parseUrl(request.url);
 
     request.responseHeaders.forEach(function(header) {
-      responseHeaders[header.name.toLowerCase()] = header.value || '' + header.binaryValue;
+      if ( !responseHeaders[header.name.toLowerCase()] ) {
+        responseHeaders[header.name.toLowerCase()] = []
+      }
+      responseHeaders[header.name.toLowerCase()].push(header.value || '' + header.binaryValue);
     });
 
     if ( headersCache.length > 50 ) {
       headersCache = {};
     }
 
-    if ( /text\/html/.test(responseHeaders['content-type']) ) {
+    if ( /text\/html/.test(responseHeaders['content-type'][0]) ) {
       if ( headersCache[url.canonical] === undefined ) {
         headersCache[url.canonical] = {};
       }
 
       Object.keys(responseHeaders).forEach(header => {
-        headersCache[url.canonical][header] = responseHeaders[header];
+        headersCache[url.canonical][header] = responseHeaders[header].slice();
       });
     }
   }
@@ -313,7 +316,7 @@ wappalyzer.driver.ping = (hostnameCache, adCache) => {
     .then(tracking => {
       if ( tracking ) {
         if ( Object.keys(hostnameCache).length ) {
-          post('http://ping.wappalyzer.com/v2/', hostnameCache);
+          post('http://ping.wappalyzer.com/v3/', hostnameCache);
         }
 
         if ( adCache.length ) {
