@@ -24,15 +24,9 @@ function getOption(name, defaultValue) {
       resolve(item.hasOwnProperty(name) ? item[name] : defaultValue);
     };
 
-    try {
-      // Chrome, Firefox
-      browser.storage.local.get(name)
-        .then(callback)
-        .catch(error => wappalyzer.log(error, 'driver', 'error'));
-    } catch ( e ) {
-      // Edge
-      browser.storage.local.get(name, callback);
-    }
+    browser.storage.local.get(name)
+      .then(callback)
+      .catch(error => wappalyzer.log(error, 'driver', 'error'));
   });
 }
 
