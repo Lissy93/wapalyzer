@@ -1604,7 +1604,7 @@
 		},
 		"CoinHive": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^CoinHive$",
 			"script": "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
@@ -1614,7 +1614,8 @@
 		},
 		"CoinHive Captcha": {
 			"cats": [
-				"16"
+				"16",
+				"56"
 			],
 			"html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
 			"script": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
@@ -1845,7 +1846,7 @@
 		},
 		"Crypto-Loot": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^CryptoLoot$",
 			"script": "^(?:https):?//crypto-loot\\.com/lib/",
@@ -4272,7 +4273,7 @@
 		},
 		"JSEcoin": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^jseMine$",
 			"script": "^(?:https):?//load\\.jsecoin\\.com/server/load/",
@@ -6787,7 +6788,7 @@
 		},
 		"ProjectPoi": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^ProjectPoi$",
 			"script": "^(?:https):?//ppoi\\.org/lib/",
@@ -11304,6 +11305,10 @@
 		"55": {
 			"name": "Accounting",
 			"priority": "1"
+		},
+		"56": {
+			"name": "Cryptominer",
+			"priority": "8"
 		}
 	}
 }
