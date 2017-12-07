@@ -3396,6 +3396,7 @@
 				"<ul [^>]*class=(?:\"|')[^>]*gform_fields",
 				"<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/"
 			],
+			"script": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
 			"icon": "gravityforms.svg",
 			"implies": "WordPress",
 			"website": "http://gravityforms.com"
