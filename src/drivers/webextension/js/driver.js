@@ -266,38 +266,43 @@ wappalyzer.driver.displayApps = (detected, context) => {
  */
 wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
   return new Promise((resolve, reject) => {
-    getOption('robotsTxtCache')
-      .then(robotsTxtCache => {
-        robotsTxtCache = robotsTxtCache || {};
-
-        if ( host in robotsTxtCache ) {
-          resolve(robotsTxtCache[host]);
-        } else {
-          var url = 'http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt';
-
-          fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
-            .then(response => {
-              if ( !response.ok ) {
-                if ( response.status === 404 ) {
-                  return '';
-                } else {
-                  throw 'GET ' + response.url + ' was not ok';
-                }
-              }
-
-              return response.text();
-            })
-            .then(robotsTxt => {
-              robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
-
-              setOption('robotsTxtCache', robotsTxtCache);
-
-              resolve(robotsTxtCache[host]);
-
-              var hostname = host.replace(/:[0-9]+$/, '')
-            })
-            .catch(reject);
+    getOption('tracking', true)
+      .then(tracking => {
+        if ( !tracking ) {
+          return resolve([]);
         }
+
+        getOption('robotsTxtCache')
+          .then(robotsTxtCache => {
+            robotsTxtCache = robotsTxtCache || {};
+
+            if ( host in robotsTxtCache ) {
+              resolve(robotsTxtCache[host]);
+            } else {
+              const url = 'http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt';
+
+              fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
+                .then(response => {
+                  if ( !response.ok ) {
+                    if ( response.status === 404 ) {
+                      return '';
+                    } else {
+                      throw 'GET ' + response.url + ' was not ok';
+                    }
+                  }
+
+                  return response.text();
+                })
+                .then(robotsTxt => {
+                  robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
+
+                  setOption('robotsTxtCache', robotsTxtCache);
+
+                  resolve(robotsTxtCache[host]);
+                })
+                .catch(reject);
+            }
+          });
       });
   });
 };
