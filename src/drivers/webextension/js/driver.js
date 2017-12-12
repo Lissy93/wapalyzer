@@ -192,6 +192,12 @@ browser.webRequest.onCompleted.addListener(request => {
         };
 
         break;
+      case 'JS_ready':
+        response = {
+          patterns: wappalyzer.parseJS()
+        };
+
+        break;
       default:
     }
 

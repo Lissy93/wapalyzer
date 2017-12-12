@@ -18,6 +18,7 @@ class Wappalyzer {
     this.apps = {};
     this.categories = {};
     this.driver = {};
+    this.parsedJS = {};
 
     this.detected = {};
     this.hostnameCache = {};
@@ -81,6 +82,12 @@ class Wappalyzer {
         this.analyzeRobotsTxt(app, data.robotsTxt);
       }
     })
+
+    if ( data.js ) {
+      Object.keys(data.js).forEach(appName => {
+        this.analyzeJS(this.apps[appname], data.js[appname])
+      });
+    }
 
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];
@@ -242,6 +249,20 @@ class Wappalyzer {
     }
 
     return parsed;
+  }
+
+  /**
+   * Parse JS patterns
+   */
+  parseJS() {
+    if ( this.parsedJS == {} ){
+      Object.keys(this.apps).forEach(appName => {
+        if (apps[appName].props.js){
+          parsedJS[appName] = this.parsePatterns(apps[appName].props.js);
+        }
+      });
+    }
+    return this.parsedJS
   }
 
   resolveExcludes(apps) {
@@ -485,6 +506,21 @@ class Wappalyzer {
         })
       });
     }
+  }
+
+  /**
+   * Analyze JS variables
+   */
+  analyzeJS(app, js) {
+    Object.keys(js).forEach(property => {
+      var content = js[property]["content"];
+      delete js[property]["content"];
+      js[property].forEach(pattern => {
+          if ( pattern.regex.test(content) ) {
+            this.addDetected(app, pattern, 'js', content, property);
+          }
+      });
+    });
   }
 
   /**
