@@ -21,7 +21,8 @@
 			var js = {};
 			Object.keys(properties).forEach(app => {
 				Object.keys(properties[app]).forEach(property => {
-					if(var content = JSdetection(property)){
+					var content = false;
+					if( content = JSdetection(property) ){
 						if ( js[appname]  === undefined ) {
 							js[appname] = {};
 						}
