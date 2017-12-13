@@ -1,42 +1,33 @@
 (function() {
 	try {
-		var i, environmentVars = '', e = document.createEvent('Events');
+		var i, environmentVars = '', eEnv = document.createEvent('Events'), container = document.getElementById('wappalyzerData');
 
-		e.initEvent('wappalyzerEvent', true, false);
+		eEnv.initEvent('wappalyzerEnvEvent', true, false);
 
 		for ( i in window ) {
 			environmentVars += i + ' ';
 		}
+		container.appendChild(document.createComment(environmentVars));
+		container.dispatchEvent(eEnv);
 
-		document.getElementById('wappalyzerData').appendChild(document.createComment(environmentVars));
-		document.getElementById('wappalyzerData').dispatchEvent(e);
-
-		// Handle property match
-		browser.runtime.sendMessage({
-			id: 'JS_ready',
-			subject: { },
-			source: 'inject.js'
-		}, response => {
-			var properties = response.patterns;
+		window.addEventListener('message', (event => {
+			if (event.data.patterns === undefined)
+				return;
+			var properties = event.data.patterns;
 			var js = {};
-			Object.keys(properties).forEach(app => {
-				Object.keys(properties[app]).forEach(property => {
+			Object.keys(properties).forEach(appname => {
+				Object.keys(properties[appname]).forEach(property => {
 					var content = false;
 					if( content = JSdetection(property) ){
-						if ( js[appname]  === undefined ) {
+						if ( js[appname]  === undefined )
 							js[appname] = {};
-						}
-						js[appname][property] = properties[app][property];
+						js[appname][property] = properties[appname][property];
 						js[appname][property]["content"] = content;
 					}
 				});
 			});
-			browser.runtime.sendMessage({
-				id: 'analyze',
-				subject: { js },
-				source: 'inject.js'
-			});
-		});
+			window.postMessage({js: js}, "*");
+		}), false);
 	} catch(e) {
 		// Fail quietly
 	}

@@ -35,7 +35,25 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
     script.setAttribute('id', 'wappalyzerEnvDetection');
     script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
-    container.addEventListener('wappalyzerEvent', (event => {
+    container.addEventListener('wappalyzerEnvEvent', (event => {
+      browser.runtime.sendMessage({
+        id: 'JS_ready',
+        subject: { },
+        source: 'content.js'
+      }, response => {
+        window.postMessage({patterns: response.patterns}, "*");
+      });
+      window.addEventListener('message', (event => {
+        if (event.data.js === undefined)
+          return;
+        var js = event.data.js ;
+        browser.runtime.sendMessage({
+          id: 'analyze',
+          subject: { js },
+          source: 'content.js'
+        });
+      }), true);
+
       var env = event.target.childNodes[0].nodeValue;
 
       document.documentElement.removeChild(container);

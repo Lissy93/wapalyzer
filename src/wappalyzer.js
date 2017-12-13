@@ -18,7 +18,7 @@ class Wappalyzer {
     this.apps = {};
     this.categories = {};
     this.driver = {};
-    this.parsedJS = {};
+    this.parsedJS = undefined;
 
     this.detected = {};
     this.hostnameCache = {};
@@ -85,7 +85,7 @@ class Wappalyzer {
 
     if ( data.js ) {
       Object.keys(data.js).forEach(appName => {
-        this.analyzeJS(this.apps[appname], data.js[appname])
+        this.analyzeJS(apps[appName], data.js[appName]);
       });
     }
 
@@ -255,14 +255,13 @@ class Wappalyzer {
    * Parse JS patterns
    */
   parseJS() {
-    if ( this.parsedJS == {} ){
+    if ( this.parsedJS === undefined){
+      this.parsedJS = {};
       Object.keys(this.apps).forEach(appName => {
-        if (apps[appName].props.js){
-          parsedJS[appName] = this.parsePatterns(apps[appName].props.js);
-        }
+        if (this.apps[appName].js)
+          this.parsedJS[appName] = this.parsePatterns(this.apps[appName].js);
       });
     }
-    return this.parsedJS
   }
 
   resolveExcludes(apps) {
