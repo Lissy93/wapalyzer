@@ -10510,9 +10510,10 @@
 				"52",
 				"53"
 			],
-			"script": "^https?://server\\.livehelp\\.it/widgetjs/[0-9]{5}/[0-9]{1,3}\\.js",
+            "env":"^LH_dataCreazione$",
 			"icon": "LiveHelp.png",
-			"website": "http://www.livehelp.it"
+			"website": "https://www.livehelp.it",
+            "script": "^https?://server\\.livehelp\\.it/widgetjs"
 		},
 		"math.js": {
 			"cats": [
