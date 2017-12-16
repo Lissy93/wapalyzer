@@ -51,6 +51,11 @@ class Wappalyzer {
       this.detected[url] = {};
     }
 
+    // Additional information
+    const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+
+    const language = matches && matches.length ? matches[1] : null;
+
     Object.keys(this.apps).forEach(appName => {
       apps[appName] = this.detected[url] && this.detected[url][appName] ? this.detected[url][appName] : new Application(appName, this.apps[appName]);
 
@@ -94,13 +99,13 @@ class Wappalyzer {
     this.resolveImplies(apps, url);
 
     this.cacheDetectedApps(apps, url);
-    this.trackDetectedApps(apps, url, hostname, data.html);
+    this.trackDetectedApps(apps, url, hostname, language);
 
     if ( Object.keys(apps).length ) {
       this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url, 'core');
     }
 
-    this.driver.displayApps(this.detected[url], context);
+    this.driver.displayApps(this.detected[url], { language }, context);
   }
 
   /**
@@ -326,7 +331,7 @@ class Wappalyzer {
   /**
    * Track detected applications
    */
-  trackDetectedApps(apps, url, hostname, html) {
+  trackDetectedApps(apps, url, hostname, language) {
     if ( !( this.driver.ping instanceof Function ) ) {
       return;
     }
@@ -362,13 +367,8 @@ class Wappalyzer {
       }
     });
 
-    // Additional information
     if ( hostname in this.hostnameCache ) {
-      var match = html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
-
-      if ( match && match.length ) {
-        this.hostnameCache[hostname].meta['language'] = match[1];
-      }
+      this.hostnameCache[hostname].meta['language'] = language;
     }
 
     this.ping();

@@ -211,7 +211,7 @@ wappalyzer.driver.log = (message, source, type) => {
 /**
  * Display apps
  */
-wappalyzer.driver.displayApps = (detected, context) => {
+wappalyzer.driver.displayApps = (detected, meta, context) => {
   var tab = context.tab;
 
   tabCache[tab.id] = tabCache[tab.id] || { detected: [] };

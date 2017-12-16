@@ -31,6 +31,7 @@ class Driver {
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
     this.apps = [];
+    this.meta = {};
 
     this.wappalyzer = new Wappalyzer();
 
@@ -38,7 +39,7 @@ class Driver {
     this.wappalyzer.categories = json.categories;
 
     this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
-    this.wappalyzer.driver.displayApps = detected => this.displayApps(detected);
+    this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
   }
 
   analyze() {
@@ -54,8 +55,10 @@ class Driver {
     this.options.debug && console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
   }
 
-  displayApps(detected) {
+  displayApps(detected, meta) {
     this.timer('displayApps');
+
+    this.meta = meta;
 
     Object.keys(detected).forEach(appName => {
       const app = detected[appName];
@@ -179,7 +182,10 @@ class Driver {
         .then(() => {
           this.timer('done');
 
-          resolve(this.apps)
+          resolve({
+            applications: this.apps,
+            meta: this.meta
+          });
         });
     });
   }
