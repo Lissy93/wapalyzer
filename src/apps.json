@@ -7197,7 +7197,7 @@
 			],
 			"env": "^requirejs$",
 			"icon": "RequireJS.png",
-			"script": "require.*\\.js",
+			"script": "require-?([\\d.]+)(?:\\.min)?\\.js\\;version:\\1",
 			"website": "http://requirejs.org"
 		},
 		"Resin": {
