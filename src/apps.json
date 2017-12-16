@@ -5586,8 +5586,11 @@
 			],
 			"env": "^MooTools$",
 			"icon": "MooTools.png",
-			"script": "mootools.*\\.js",
-			"website": "http://mootools.net"
+			"script": [
+				"/mootools-core-([\\d.]+)\\.js\\;version:\\1",
+				"/mootools.*\\.js"
+			],
+			"website": "https://mootools.net"
 		},
 		"Moodle": {
 			"cats": [
