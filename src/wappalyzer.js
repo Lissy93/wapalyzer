@@ -18,7 +18,7 @@ class Wappalyzer {
     this.apps = {};
     this.categories = {};
     this.driver = {};
-    this.parsedJS = undefined;
+    this.jsPatterns = {};
 
     this.detected = {};
     this.hostnameCache = {};
@@ -85,7 +85,7 @@ class Wappalyzer {
 
     if ( data.js ) {
       Object.keys(data.js).forEach(appName => {
-        this.analyzeJS(apps[appName], data.js[appName]);
+        this.analyzeJs(apps[appName], data.js[appName]);
       });
     }
 
@@ -252,16 +252,14 @@ class Wappalyzer {
   }
 
   /**
-   * Parse JS patterns
+   * Parse JavaScript patterns
    */
-  parseJS() {
-    if ( this.parsedJS === undefined){
-      this.parsedJS = {};
-      Object.keys(this.apps).forEach(appName => {
-        if (this.apps[appName].js)
-          this.parsedJS[appName] = this.parsePatterns(this.apps[appName].js);
-      });
-    }
+  parseJsPatterns() {
+    Object.keys(this.apps).forEach(appName => {
+      if ( this.apps[appName].js ) {
+        this.jsPatterns[appName] = this.parsePatterns(this.apps[appName].js);
+      }
+    });
   }
 
   resolveExcludes(apps) {
@@ -508,16 +506,17 @@ class Wappalyzer {
   }
 
   /**
-   * Analyze JS variables
+   * Analyze JavaScript variables
    */
-  analyzeJS(app, js) {
-    Object.keys(js).forEach(property => {
-      var content = js[property]["content"];
-      delete js[property]["content"];
-      js[property].forEach(pattern => {
-          if ( pattern.regex.test(content) ) {
-            this.addDetected(app, pattern, 'js', content, property);
-          }
+  analyzeJs(app, results) {
+    Object.keys(results).forEach(string => {
+      Object.keys(results[string]).forEach(index => {
+        const pattern = this.jsPatterns[app.name][string][index];
+        const value = results[string][index];
+
+        if ( pattern.regex.test(value) ) {
+          this.addDetected(app, pattern, 'js', value);
+        }
       });
     });
   }
