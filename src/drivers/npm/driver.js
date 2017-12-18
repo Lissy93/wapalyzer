@@ -127,8 +127,6 @@ class Driver {
                 const scripts = this.getScripts(browser);
                 const js      = this.getJs(browser);
 
-                console.log(js);
-
                 this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
                   headers,
                   html,
