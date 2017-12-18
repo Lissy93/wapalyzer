@@ -16,7 +16,7 @@
           js[appName][chain] = {};
 
           patterns[appName][chain].forEach((pattern, index) => {
-            const value = detect(chain);
+            const value = detectJs(chain);
 
             if ( value ) {
               js[appName][chain][index] = value;
@@ -32,7 +32,7 @@
   }
 }());
 
-function detect(chain) {
+function detectJs(chain) {
   const properties = chain.split('.');
 
   const value = properties.reduce((parent, property) => {

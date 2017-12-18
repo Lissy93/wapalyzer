@@ -509,6 +509,9 @@ class Wappalyzer {
    * Analyze JavaScript variables
    */
   analyzeJs(app, results) {
+
+    console.log(app, results);
+
     Object.keys(results).forEach(string => {
       Object.keys(results[string]).forEach(index => {
         const pattern = this.jsPatterns[app.name][string][index];
