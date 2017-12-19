@@ -130,7 +130,7 @@
         "10"
       ],
       "js": {
-        "Xt_": ""
+        "xt_click": ""
       },
       "icon": "AT Internet.png",
       "script": "xiti\\.com/hit\\.xiti",
@@ -218,7 +218,8 @@
         "36"
       ],
       "js": {
-        "adroll_": ""
+        "adroll_adv_id": "",
+        "adroll_pix_id": ""
       },
       "icon": "AdRoll.svg",
       "script": "(?:a|s)\\.adroll\\.com",
@@ -589,7 +590,8 @@
         "12"
       ],
       "js": {
-        "angular": ""
+        "angular": "",
+        "angular.version.full": "(.*)\\;version:\\1"
       },
       "icon": "AngularJS.svg",
       "script": [
@@ -935,7 +937,8 @@
         "12"
       ],
       "js": {
-        "Backbone": ""
+        "Backbone": "",
+        "Backbone.VERSION": "(.*)\\;version:\\1"
       },
       "icon": "Backbone.js.png",
       "implies": "Underscore.js",
@@ -1201,7 +1204,7 @@
         "10"
       ],
       "js": {
-        "BugSense": ""
+        "Bugsense": ""
       },
       "icon": "BugSense.png",
       "script": "bugsense\\.js",
@@ -1212,7 +1215,7 @@
         "10"
       ],
       "js": {
-        "BugSnag": ""
+        "Bugsnag": ""
       },
       "icon": "BugSnag.png",
       "script": "bugsnag.*\\.js",
@@ -1261,7 +1264,10 @@
         "36"
       ],
       "js": {
-        "_bsa": ""
+        "_bsa": "",
+        "_bsap": "",
+        "_bsaPRO": "",
+        "_bsap_serving_callback": ""
       },
       "html": "<script[^>]*>[^<]+?bsa\\.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
       "icon": "BuySellAds.png",
@@ -1287,7 +1293,8 @@
         "24"
       ],
       "js": {
-        "CKEDITOR": ""
+        "CKEDITOR": "",
+        "CKEDITOR.version": "(.*)\\;version:\\1"
       },
       "icon": "CKEditor.png",
       "website": "http://ckeditor.com"
@@ -1451,7 +1458,8 @@
         "18"
       ],
       "js": {
-        "catberry": ""
+        "catberry": "",
+        "catberry.version": "(.*)\\;version:\\1"
       },
       "headers": {
         "X-Powered-By": "Catberry"
@@ -1526,7 +1534,8 @@
         "25"
       ],
       "js": {
-        "Chart": "\\;confidence:50"
+        "Chart": "\\;confidence:50",
+        "chart.ctx.bezierCurveTo": ""
       },
       "icon": "Chart.js.svg",
       "script": [
@@ -1609,7 +1618,7 @@
         "10"
       ],
       "js": {
-        "clickHeat": ""
+        "clickHeatServer": ""
       },
       "icon": "ClickHeat.png",
       "implies": "PHP",
@@ -1621,7 +1630,7 @@
         "10"
       ],
       "js": {
-        "ClickTale": ""
+        "clickTaleStartEventSignal": ""
       },
       "icon": "ClickTale.png",
       "website": "http://www.clicktale.com"
@@ -1707,7 +1716,8 @@
         "19"
       ],
       "js": {
-        "CodeMirror": ""
+        "CodeMirror": "",
+        "CodeMirror.version": "(.*)\\;version:\\1"
       },
       "icon": "CodeMirror.png",
       "website": "http://codemirror.net"
@@ -1949,7 +1959,9 @@
         "36"
       ],
       "js": {
-        "criteo": ""
+        "Criteo": "",
+        "criteo_pubtag": "",
+        "criteo_q": ""
       },
       "icon": "Criteo.svg",
       "script": "[^/]*//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
@@ -1960,7 +1972,7 @@
         "10"
       ],
       "js": {
-        "crsspxl": ""
+        "cp_C4w1ldN2d9PmVrkN": ""
       },
       "icon": "Cross Pixel.png",
       "script": "tag\\.crsspxl\\.com/s1\\.js",
@@ -1971,7 +1983,8 @@
         "56"
       ],
       "js": {
-        "CryptoLoot": ""
+        "CryptoLoot": "",
+        "CRLT.CONFIG.ASMJS_NAME": ""
       },
       "script": "^(?:https):?//crypto-loot\\.com/lib/",
       "icon": "Crypto-Loot.png",
@@ -2005,7 +2018,8 @@
         "25"
       ],
       "js": {
-        "d3": "\\;confidence:20"
+        "d3": "\\;confidence:20",
+        "d3.version": "(.*)\\;version:\\1"
       },
       "icon": "D3.png",
       "script": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
@@ -2033,7 +2047,8 @@
         "1"
       ],
       "js": {
-        "DotNetNuke": ""
+        "DotNetNuke": "",
+        "dnn.apiversion": "(.*)\\;version:\\1"
       },
       "headers": {
         "Cookie": "dnn_IsMobile=",
@@ -2242,6 +2257,7 @@
       ],
       "js": {
         "discuz_uid": "",
+        "discuzVersion": "(.*)\\;version:\\1",
         "DISCUZCODE": ""
       },
       "icon": "Discuz X.png",
@@ -2256,7 +2272,8 @@
         "15"
       ],
       "js": {
-        "DISQUS": ""
+        "DISQUS": "",
+        "disqus_url": ""
       },
       "html": "<div[^>]+id=\"disqus_thread\"",
       "icon": "Disqus.svg",
@@ -2268,6 +2285,7 @@
         "18"
       ],
       "js": {
+        "django": "",
         "__admin_media_prefix__": ""
       },
       "html": "(?:powered by <a[^>]+>Django ?([\\d.]+)?|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)\\;version:\\1",
@@ -2288,7 +2306,8 @@
         "12"
       ],
       "js": {
-        "dojo": ""
+        "dojo": "",
+        "dojo.version.major": "(.*)\\;version:\\1"
       },
       "icon": "Dojo.png",
       "script": "([\\d.]+)/dojo/dojo(?:\\.xd)?\\.js\\;version:\\1",
@@ -2493,6 +2512,7 @@
       "icon": "ef.js.svg",
       "js": {
         "ef": "\\;confidence:20",
+        "ef.version": "(.*)\\;version:\\1",
         "efCore": ""
       },
       "script": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
@@ -2547,6 +2567,7 @@
         "19"
       ],
       "js": {
+        "EPrints": "",
         "EPJS_menu_template": ""
       },
       "icon": "EPrints.png",
@@ -2620,7 +2641,8 @@
       "js": {
         "elqSiteID": "",
         "elqLoad": "",
-        "elqCurESite": ""
+        "elqCurESite": "",
+        "elq_global": ""
       },
       "icon": "Oracle.png",
       "script": "elqCfg\\.js",
@@ -2651,7 +2673,8 @@
         "12"
       ],
       "js": {
-        "Ember": ""
+        "Ember": "",
+        "Ember.VERSION": "(.*)\\;version:\\1"
       },
       "icon": "Ember.js.png",
       "implies": "Handlebars",
@@ -2683,7 +2706,7 @@
         "36"
       ],
       "js": {
-        "Epom": ""
+        "epomCustomParams": ""
       },
       "icon": "Epom.png",
       "url": "^https?://(?:[^/]+\\.)?ad(?:op)?shost1\\.com/",
@@ -2732,7 +2755,8 @@
         "25"
       ],
       "js": {
-        "Exhibit": ""
+        "Exhibit": "",
+        "Exhibit.version": "(.*)\\;version:\\1"
       },
       "icon": "Exhibit.png",
       "script": "exhibit.*\\.js",
@@ -2766,7 +2790,8 @@
         "12"
       ],
       "js": {
-        "Ext": ""
+        "Ext": "",
+        "Ext.versions.extjs.version": "(.*)\\;version:\\1"
       },
       "icon": "ExtJS.png",
       "script": "ext-base\\.js",
@@ -2868,7 +2893,8 @@
         "12"
       ],
       "js": {
-        "Fingerprint": "(\\d)?$\\;version:\\1"
+        "Fingerprint": "(\\d)?$\\;version:\\1",
+        "Fingerprint2": ""
       },
       "script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://valve.github.io/fingerprintjs2/"
