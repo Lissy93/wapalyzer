@@ -593,13 +593,14 @@
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-      "icon": "AngularJS.svg",
+			"html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+			"icon": "Angular.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "angular.*\\.js"
       ],
-      "website": "http://angularjs.org"
+      "website": "http://angular.io"
     },
     "Apache": {
       "cats": [
@@ -838,6 +839,7 @@
       "cats": [
         "47"
       ],
+<<<<<<< HEAD
       "headers": {
         "Set-cookie": "FESESSIONID"
       },
@@ -6252,6 +6254,20 @@
       "icon": "New Relic.png",
       "website": "http://newrelic.com"
     },
+		"NextGEN Gallery": {
+			"cats": [
+				"7"
+			],
+			"icon": "NextGEN Gallery.png",
+			"html": [
+				"<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
+			],
+			"script": "/nextgen-gallery/js/",
+			"implies": [
+				"WordPress"
+			],
+			"website": "https://www.imagely.com/wordpress-gallery-plugin"
+		},
     "Next.js": {
       "cats": [
         "18",
@@ -7344,7 +7360,10 @@
       "cats": [
         "18"
       ],
-      "html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
+			"html": [
+				"<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
+				"<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d"
+			],
       "icon": "Pure CSS.png",
       "website": "http://purecss.io"
     },
@@ -9450,6 +9469,7 @@
       ],
       "html": [
         "<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
+        "<link[^>]+?href=[^\"]/css/([\\d.]+)/bootstrap\\.(?:min\\.)?css\\;version:\\1",
         "<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
         "<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
       ],
@@ -10437,7 +10457,7 @@
       "cats": [
         "2"
       ],
-      "html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+      "html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
       "icon": "XenForo.png",
       "website": "http://xenforo.com"
     },
@@ -11119,7 +11139,7 @@
       "script": [
         "jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-        "jquery.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+        "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],
       "website": "http://jquery.com"
     },
