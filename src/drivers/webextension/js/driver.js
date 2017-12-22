@@ -75,6 +75,8 @@ fetch('../apps.json')
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
 
+    wappalyzer.parseJsPatterns();
+
     categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
   })
   .catch(error => {
@@ -189,6 +191,12 @@ browser.webRequest.onCompleted.addListener(request => {
           tabCache:   tabCache[message.tab.id],
           apps:       wappalyzer.apps,
           categories: wappalyzer.categories
+        };
+
+        break;
+      case 'init_js':
+        response = {
+          patterns: wappalyzer.jsPatterns
         };
 
         break;
