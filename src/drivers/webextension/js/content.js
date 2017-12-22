@@ -41,10 +41,12 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
         subject: {},
         source: 'content.js'
       }, response => {
-        postMessage({
-          id: 'patterns',
-          patterns: response.patterns
-        }, '*');
+        if ( response ) {
+          postMessage({
+            id: 'patterns',
+            patterns: response.patterns
+          }, '*');
+        }
       });
     };
 

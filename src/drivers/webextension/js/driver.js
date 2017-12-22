@@ -75,9 +75,11 @@ fetch('../apps.json')
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
 
+    categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
+
     wappalyzer.parseJsPatterns();
 
-    categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
+    console.log('xxx');
   })
   .catch(error => {
     wappalyzer.log('GET apps.json: ' + error, 'driver', 'error');
