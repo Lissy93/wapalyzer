@@ -9,17 +9,17 @@
       "url": "/shop/catalog/browse\\?sessid=",
       "website": "http://1and1.com"
     },
-		"Google Analytics Enhanced eCommerce": {
-			"cats": [
-				"10"
-			],
-			"js": {
-        "gaplugins.EC"
+    "Google Analytics Enhanced eCommerce": {
+      "cats": [
+        "10"
+      ],
+      "js": {
+        "gaplugins.EC": ""
       },
-			"icon": "Google Analytics.svg",
-			"script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
-			"website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
-		},
+      "icon": "Google Analytics.svg",
+      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
+      "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
+    },
     "1C-Bitrix": {
       "cats": [
         "1"
@@ -604,8 +604,8 @@
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-			"html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
-			"icon": "Angular.svg",
+      "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "icon": "AngularJS.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
@@ -850,7 +850,6 @@
       "cats": [
         "47"
       ],
-<<<<<<< HEAD
       "headers": {
         "Set-cookie": "FESESSIONID"
       },
@@ -1671,9 +1670,6 @@
       "cats": [
         "19"
       ],
-      "js": {
-        "Clipboard": ""
-      },
       "icon": "Clipboard.js.svg",
       "script": "clipboard(?:\\.min)?\\.js",
       "website": "https://clipboardjs.com/"
@@ -3537,17 +3533,17 @@
       "url": "^https?://sites\\.google\\.com",
       "website": "http://sites.google.com"
     },
-		"CNV Platform": {
-			"cats": [
-				"1"
-			],
-			"headers": {
-				"Set-Cookie": "cnv_session"
-			},
-			"icon": "CNV.png",
-			"implies": "laravel",
-			"website": "https://cnv.vn"
-		},
+    "CNV Platform": {
+      "cats": [
+        "1"
+      ],
+      "headers": {
+        "Set-Cookie": "cnv_session"
+      },
+      "icon": "CNV.png",
+      "implies": "laravel",
+      "website": "https://cnv.vn"
+    },
     "Google Tag Manager": {
       "cats": [
         "42"
@@ -3556,10 +3552,10 @@
         "googletag": "",
         "google_tag_manager": ""
       },
-			"html": [
-				"googletagmanager\\.com/ns\\.html[^>]+></iframe>",
-				"<!-- (?:End )?Google Tag Manager -->"
-			],
+      "html": [
+        "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+        "<!-- (?:End )?Google Tag Manager -->"
+      ],
       "icon": "Google Tag Manager.png",
       "website": "http://www.google.com/tagmanager"
     },
@@ -4492,7 +4488,7 @@
       "html": [
         "Powered by <a href=\"https?://jekyllrb\\.com\"[^>]*>Jekyll</",
         "<!-- Created with Jekyll Now -",
-				"<!-- Begin Jekyll SEO tag"
+        "<!-- Begin Jekyll SEO tag"
       ],
       "meta": {
         "generator": "Jekyll (v[\\d.]+)?\\;version:\\1"
@@ -6280,20 +6276,20 @@
       "icon": "New Relic.png",
       "website": "http://newrelic.com"
     },
-		"NextGEN Gallery": {
-			"cats": [
-				"7"
-			],
-			"icon": "NextGEN Gallery.png",
-			"html": [
-				"<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
-			],
-			"script": "/nextgen-gallery/js/",
-			"implies": [
-				"WordPress"
-			],
-			"website": "https://www.imagely.com/wordpress-gallery-plugin"
-		},
+    "NextGEN Gallery": {
+      "cats": [
+        "7"
+      ],
+      "icon": "NextGEN Gallery.png",
+      "html": [
+        "<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
+      ],
+      "script": "/nextgen-gallery/js/",
+      "implies": [
+        "WordPress"
+      ],
+      "website": "https://www.imagely.com/wordpress-gallery-plugin"
+    },
     "Next.js": {
       "cats": [
         "18",
@@ -6628,35 +6624,35 @@
       "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
     },
-		"Minero": {
-			"cats": [
-				"56"
-			],
-			"script": [
+    "Minero": {
+      "cats": [
+        "56"
+      ],
+      "script": [
         "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
-			],
-			"website": "http://minero.cc/"
-		},
-		"Coinhave": {
-			"cats": [
-				"56"
-			],
-			"script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
-			"icon": "coinhave.png",
-			"website": "https://coin-have.com/"
-		},
-		"Revslider":{
-			"cats": [
-				"19"
-			],
-			"icon": "revslider.png",
-			"html": [
-				"<link[^>]* href=[\\'\"][^']+revslider[/\\w-]+\\.css\\?ver=([0-9.]+)[\\'\"]\\;version:\\1"
-			],
-			"script": "/revslider/[/\\w-]+/js",
-			"implies": "WordPress",
-			"website": "https://revolution.themepunch.com/"
-		},
+      ],
+      "website": "http://minero.cc/"
+    },
+    "Coinhave": {
+      "cats": [
+        "56"
+      ],
+      "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
+      "icon": "coinhave.png",
+      "website": "https://coin-have.com/"
+    },
+    "Revslider": {
+      "cats": [
+        "19"
+      ],
+      "icon": "revslider.png",
+      "html": [
+        "<link[^>]* href=[\\'\"][^']+revslider[/\\w-]+\\.css\\?ver=([0-9.]+)[\\'\"]\\;version:\\1"
+      ],
+      "script": "/revslider/[/\\w-]+/js",
+      "implies": "WordPress",
+      "website": "https://revolution.themepunch.com/"
+    },
     "OpenX": {
       "cats": [
         "36"
@@ -7416,10 +7412,10 @@
       "cats": [
         "18"
       ],
-			"html": [
-				"<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
-				"<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d"
-			],
+      "html": [
+        "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
+        "<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d"
+      ],
       "icon": "Pure CSS.png",
       "website": "http://purecss.io"
     },
