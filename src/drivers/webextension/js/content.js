@@ -2,7 +2,7 @@
 
 if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
   try {
-    var html = document.documentElement.outerHTML;
+    var html = new XMLSerializer().serializeToString(document);
 
     if ( html.length > 50000 ) {
       html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
