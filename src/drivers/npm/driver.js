@@ -22,11 +22,12 @@ class Driver {
     }, options || {});
 
     this.options.debug = Boolean(this.options.debug);
-    this.options.recursive = Boolean(this.options.recursive);
     this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
     this.options.maxDepth = parseInt(this.options.maxDepth, 10);
     this.options.maxUrls = parseInt(this.options.maxUrls, 10);
     this.options.maxWait = parseInt(this.options.maxWait, 10);
+    this.options.recursive = Boolean(this.options.recursive);
+    this.options.requestTimeout = parseInt(this.options.requestTimeout, 10);
 
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
@@ -104,7 +105,7 @@ class Driver {
       const browser = new Browser({
         silent: true,
         userAgent: this.options.userAgent,
-        waitDuration: this.options.maxWait + 'ms',
+        waitDuration: this.options.maxWait,
       });
 
       this.sleep(this.options.delay * index)
@@ -120,27 +121,25 @@ class Driver {
               return resolve();
             }
 
-            browser.wait(this.options.maxWait)
-              .catch(error => this.wappalyzer.log(error.message, 'browser', 'error'))
-              .finally(() => {
-                this.timer('browser.wait end');
+            browser.wait(this.options.maxWait, () => {
+              this.timer('browser.wait end');
 
-                const headers = this.getHeaders(browser);
-                const html    = this.getHtml(browser);
-                const scripts = this.getScripts(browser);
-                const js      = this.getJs(browser);
+              const headers = this.getHeaders(browser);
+              const html    = this.getHtml(browser);
+              const scripts = this.getScripts(browser);
+              const js      = this.getJs(browser);
 
-                this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
-                  headers,
-                  html,
-                  js,
-                  scripts
-                });
-
-                const links = browser.body.getElementsByTagName('a');
-
-                resolve(links);
+              this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
+                headers,
+                html,
+                js,
+                scripts
               });
+
+              const links = browser.body.getElementsByTagName('a');
+
+              resolve(links);
+            });
           });
         });
     });
