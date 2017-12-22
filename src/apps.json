@@ -9,6 +9,17 @@
       "url": "/shop/catalog/browse\\?sessid=",
       "website": "http://1and1.com"
     },
+		"Google Analytics Enhanced eCommerce": {
+			"cats": [
+				"10"
+			],
+			"js": {
+        "gaplugins.EC"
+      },
+			"icon": "Google Analytics.svg",
+			"script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
+			"website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
+		},
     "1C-Bitrix": {
       "cats": [
         "1"
@@ -3526,6 +3537,17 @@
       "url": "^https?://sites\\.google\\.com",
       "website": "http://sites.google.com"
     },
+		"CNV Platform": {
+			"cats": [
+				"1"
+			],
+			"headers": {
+				"Set-Cookie": "cnv_session"
+			},
+			"icon": "CNV.png",
+			"implies": "laravel",
+			"website": "https://cnv.vn"
+		},
     "Google Tag Manager": {
       "cats": [
         "42"
@@ -3534,7 +3556,10 @@
         "googletag": "",
         "google_tag_manager": ""
       },
-      "html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+			"html": [
+				"googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+				"<!-- (?:End )?Google Tag Manager -->"
+			],
       "icon": "Google Tag Manager.png",
       "website": "http://www.google.com/tagmanager"
     },
@@ -4466,7 +4491,8 @@
       "icon": "Jekyll.png",
       "html": [
         "Powered by <a href=\"https?://jekyllrb\\.com\"[^>]*>Jekyll</",
-        "<!-- Created with Jekyll Now -"
+        "<!-- Created with Jekyll Now -",
+				"<!-- Begin Jekyll SEO tag"
       ],
       "meta": {
         "generator": "Jekyll (v[\\d.]+)?\\;version:\\1"
@@ -6599,8 +6625,38 @@
       "js": {
         "sap.ui": ""
       },
+      "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
     },
+		"Minero": {
+			"cats": [
+				"56"
+			],
+			"script": [
+        "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
+			],
+			"website": "http://minero.cc/"
+		},
+		"Coinhave": {
+			"cats": [
+				"56"
+			],
+			"script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
+			"icon": "coinhave.png",
+			"website": "https://coin-have.com/"
+		},
+		"Revslider":{
+			"cats": [
+				"19"
+			],
+			"icon": "revslider.png",
+			"html": [
+				"<link[^>]* href=[\\'\"][^']+revslider[/\\w-]+\\.css\\?ver=([0-9.]+)[\\'\"]\\;version:\\1"
+			],
+			"script": "/revslider/[/\\w-]+/js",
+			"implies": "WordPress",
+			"website": "https://revolution.themepunch.com/"
+		},
     "OpenX": {
       "cats": [
         "36"

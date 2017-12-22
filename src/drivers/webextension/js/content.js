@@ -1,4 +1,5 @@
 /** global: browser */
+/** global: XMLSerializer */
 
 if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
   try {
