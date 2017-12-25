@@ -17,7 +17,7 @@
         "gaplugins.EC": ""
       },
       "icon": "Google Analytics.svg",
-      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
+      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec\\.js",
       "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
     },
     "1C-Bitrix": {
@@ -1684,6 +1684,16 @@
       },
       "script": "/cloudcart-(?:assets|storage)/",
       "website": "http://cloudcart.com"
+    },
+    "Cloudcoins": {
+      "cats": [
+        "56"
+      ],
+      "js": {
+		"CLOUDCOINS": ""
+      },
+      "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js",
+      "website": "https://cloudcoins.co"
     },
     "CloudFlare": {
       "cats": [
