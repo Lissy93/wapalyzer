@@ -17,7 +17,7 @@
         "gaplugins.EC": ""
       },
       "icon": "Google Analytics.svg",
-      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
+      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec\\.js",
       "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
     },
     "1C-Bitrix": {
@@ -1694,6 +1694,16 @@
       "script": "/cloudcart-(?:assets|storage)/",
       "website": "http://cloudcart.com"
     },
+    "Cloudcoins": {
+      "cats": [
+        "56"
+      ],
+      "js": {
+		"CLOUDCOINS": ""
+      },
+      "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js",
+      "website": "https://cloudcoins.co"
+    },
     "CloudFlare": {
       "cats": [
         "31"
@@ -1761,6 +1771,25 @@
       "script": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
       "icon": "CoinHive.svg",
       "website": "https://coinhive.com"
+    },
+    "Coinimp": {
+      "cats": [
+        "56"
+      ],
+      "script": "https?://www\\.hashing\\.win/scripts/min\\.js",
+      "icon": "coinimp.png",
+      "website": "https://www.coinimp.com"
+    },
+    "Coinlab": {
+        "cats": [
+          "56"
+        ],
+        "js": {
+          "Coinlab": ""
+        },
+        "script": "https?://coinlab\\.biz/lib/coinlab\\.js\\?id=",
+        "icon": "coinlab.png",
+        "website":"https://coinlab.biz/en"
     },
     "Comandia": {
       "cats": [
@@ -4329,6 +4358,17 @@
       "icon": "Invenio.png",
       "website": "http://invenio-software.org"
     },
+    "Inwemo":{
+      "cats": [
+        "56"
+      ],
+      "js": {
+        "Inwemo": ""
+      },
+      "script": "https?://cdn\\.inwemo\\.com/inwemo\\.min\\.js",
+      "icon": "inwemo.png",
+      "website": "https://inwemo.com/"
+    },
     "Ionicons": {
       "cats": [
         "17"
@@ -5475,7 +5515,7 @@
         "MathJax.version": "(.*)\\;version:\\1"
       },
       "icon": "MathJax.png",
-      "script": "mathjax\\.js",
+      "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
     },
     "Mattermost": {
@@ -5939,6 +5979,14 @@
       },
       "icon": "Monkey HTTP Server.png",
       "website": "http://monkey-project.com"
+    },
+    "Monerominer": {
+      "cats": [
+        "56"
+      ],
+      "script":"<iframe[^>]+src=[\\'\"]https?://monerominer\\.rocks/miner\\.php\\?siteid=",
+      "icon": "monerominer.png",
+      "website": "https://monerominer.rocks/"
     },
     "Mono": {
       "cats": [
@@ -6633,7 +6681,7 @@
       "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
     },
-    "Minero": {
+    "Minero.cc": {
       "cats": [
         "56"
       ],
@@ -6646,7 +6694,7 @@
       "cats": [
         "56"
       ],
-      "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
+      "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
       "icon": "coinhave.png",
       "website": "https://coin-have.com/"
     },
@@ -11829,6 +11877,14 @@
         "generator": "webEdition"
       },
       "website": "http://webedition.de/en"
+    },
+    "Webmine": {
+      "cats": [
+        "56"
+      ],
+      "html": "<iframe[^>]src=[\\'\"]https://webmine\\.cz/miner\\?key=",
+      "icon": "webmine.png",
+      "website": "https://webmine.cz/"
     },
     "webpack": {
       "cats": [
