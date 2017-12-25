@@ -38,18 +38,15 @@ class Wappalyzer {
     this.driver.log(message, source || '', type || 'debug');
   }
 
-  analyze(hostname, url, data, context) {
+  analyze(url, data, context) {
     var apps = {};
-
-    // Remove hash from URL
-    data.url = url = url.split('#')[0];
 
     if ( typeof data.html !== 'string' ) {
       data.html = '';
     }
 
-    if ( this.detected[url] === undefined ) {
-      this.detected[url] = {};
+    if ( this.detected[url.canonical] === undefined ) {
+      this.detected[url.canonical] = {};
     }
 
     // Additional information
@@ -58,13 +55,11 @@ class Wappalyzer {
     const language = matches && matches.length ? matches[1] : null;
 
     Object.keys(this.apps).forEach(appName => {
-      apps[appName] = this.detected[url] && this.detected[url][appName] ? this.detected[url][appName] : new Application(appName, this.apps[appName]);
+      apps[appName] = this.detected[url.canonical] && this.detected[url.canonical][appName] ? this.detected[url.canonical][appName] : new Application(appName, this.apps[appName]);
 
       var app = apps[appName];
 
-      if ( url ) {
-        this.analyzeUrl(app, url);
-      }
+      this.analyzeUrl(app, url);
 
       if ( data.html ) {
         this.analyzeHtml(app, data.html);
@@ -103,16 +98,16 @@ class Wappalyzer {
     });
 
     this.resolveExcludes(apps);
-    this.resolveImplies(apps, url);
+    this.resolveImplies(apps, url.canonical);
 
-    this.cacheDetectedApps(apps, url);
-    this.trackDetectedApps(apps, url, hostname, language);
+    this.cacheDetectedApps(apps, url.canonical);
+    this.trackDetectedApps(apps, url, language);
 
     if ( Object.keys(apps).length ) {
-      this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url, 'core');
+      this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url.canonical, 'core');
     }
 
-    this.driver.displayApps(this.detected[url], { language }, context);
+    this.driver.displayApps(this.detected[url.canonical], { language }, context);
   }
 
   /**
@@ -127,7 +122,7 @@ class Wappalyzer {
    */
   robotsTxtAllows(url) {
     return new Promise((resolve, reject) => {
-      var parsed = this.parseUrl(url);
+      var parsed = this.parseUrl(url.canonical);
 
       if ( parsed.protocol !== 'http:' && parsed.protocol !== 'https:' ) {
         reject();
@@ -185,7 +180,7 @@ class Wappalyzer {
    *
    */
   ping() {
-    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 200 ) {
+    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 50 ) {
       this.driver.ping(this.hostnameCache, this.adCache);
 
       this.hostnameCache = {};
@@ -349,38 +344,36 @@ class Wappalyzer {
   /**
    * Track detected applications
    */
-  trackDetectedApps(apps, url, hostname, language) {
+  trackDetectedApps(apps, url, language) {
     if ( !( this.driver.ping instanceof Function ) ) {
       return;
     }
 
+    const hostname = url.protocol + '//' + url.hostname;
+
     Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
+      const app = apps[appName];
 
-      if ( this.detected[url][appName].getConfidence() >= 100 ) {
-        if ( validation.hostname.test(hostname) && !validation.hostnameBlacklist.test(url) ) {
-          this.robotsTxtAllows(url)
-            .then(() => {
-              if ( !( hostname in this.hostnameCache ) ) {
-                this.hostnameCache[hostname] = {
-                  applications: {},
-                  meta: {}
-                };
-              }
+      if ( this.detected[url.canonical][appName].getConfidence() >= 100 ) {
+        if ( validation.hostname.test(url.hostname) && !validation.hostnameBlacklist.test(url.hostname) ) {
+          if ( !( hostname in this.hostnameCache ) ) {
+            this.hostnameCache[hostname] = {
+              applications: {},
+              meta: {}
+            };
+          }
 
-              if ( !( appName in this.hostnameCache[hostname].applications ) ) {
-                this.hostnameCache[hostname].applications[appName] = {
-                  hits: 0
-                };
-              }
+          if ( !( appName in this.hostnameCache[hostname].applications ) ) {
+            this.hostnameCache[hostname].applications[appName] = {
+              hits: 0
+            };
+          }
 
-              this.hostnameCache[hostname].applications[appName].hits ++;
+          this.hostnameCache[hostname].applications[appName].hits ++;
 
-              if ( apps[appName].version ) {
-                this.hostnameCache[hostname].applications[appName].version = app.version;
-              }
-            })
-          .catch(() => this.log('Disallowed in robots.txt: ' + url), 'core')
+          if ( apps[appName].version ) {
+            this.hostnameCache[hostname].applications[appName].version = app.version;
+          }
         }
       }
     });
@@ -400,8 +393,8 @@ class Wappalyzer {
 
     if ( patterns.length ) {
       patterns.forEach(pattern => {
-        if ( pattern.regex.test(url) ) {
-          this.addDetected(app, pattern, 'url', url);
+        if ( pattern.regex.test(url.canonical) ) {
+          this.addDetected(app, pattern, 'url', url.canonical);
         }
       });
     }

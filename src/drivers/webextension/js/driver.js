@@ -177,7 +177,7 @@ browser.webRequest.onCompleted.addListener(request => {
           message.subject.headers = headersCache[url.canonical];
         }
 
-        wappalyzer.analyze(url.hostname, url.canonical, message.subject, {
+        wappalyzer.analyze(url, message.subject, {
           tab: sender.tab
         });
 
@@ -323,7 +323,7 @@ wappalyzer.driver.ping = (hostnameCache, adCache) => {
     .then(tracking => {
       if ( tracking ) {
         if ( Object.keys(hostnameCache).length ) {
-          post('http://ping.wappalyzer.com/v3/', hostnameCache);
+          post('https://api.wappalyzer.com/ping/v1/', hostnameCache);
         }
 
         if ( adCache.length ) {
