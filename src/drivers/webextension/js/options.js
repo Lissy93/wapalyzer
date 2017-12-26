@@ -1,5 +1,5 @@
 /** global: browser */
-/** global: wappalyzer */
+/** global: Wappalyzer */
 
 const wappalyzer = new Wappalyzer();
 
