@@ -118,13 +118,9 @@ var callback = tabs => {
   })
 };
 
-try {
-  browser.tabs.query({})
-    .then(callback)
-    .catch(error => wappalyzer.log(error, 'driver', 'error'));
-} catch ( e ) {
-  browser.tabs.query({}, callback);
-}
+browser.tabs.query({})
+  .then(callback)
+  .catch(error => wappalyzer.log(error, 'driver', 'error'));
 
 // Capture response headers
 browser.webRequest.onCompleted.addListener(request => {
@@ -248,10 +244,14 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
                   icon = 'converted/' + icon.replace(/\.svg$/, '.png');
                 }
 
-                browser.pageAction.setIcon({
-                  tabId: tab.id,
-                  path: '../images/icons/' + icon
-                });
+                try {
+                	browser.pageAction.setIcon({
+                    tabId: tab.id,
+                    path: '../images/icons/' + icon
+                  });
+                } catch(e) {
+                  // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
+                }
 
                 found = true;
               }
