@@ -8,6 +8,8 @@ const Browser = require('zombie');
 
 const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
+const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
+
 class Driver {
   constructor(pageUrl, options) {
     this.options = Object.assign({}, {
@@ -90,17 +92,15 @@ class Driver {
   }
 
   fetch(pageUrl, index, depth) {
-    this.timer('fetch');
-
     return new Promise(resolve => {
       // Return when the URL is a duplicate or maxUrls has been reached
       if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
         return resolve();
       }
 
-      this.analyzedPageUrls.push(pageUrl.href);
+      this.timer('fetch url: ' + pageUrl.pathname + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms');
 
-      this.wappalyzer.log('depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms; url: ' + pageUrl.href, 'driver');
+      this.analyzedPageUrls.push(pageUrl.href);
 
       const browser = new Browser({
         silent: true,
@@ -110,10 +110,12 @@ class Driver {
 
       this.sleep(this.options.delay * index)
         .then(() => {
-          this.timer('browser.visit start');
+          this.timer('browser.visit start url: ' + pageUrl.pathname);
 
           browser.visit(pageUrl.href, this.options.requestTimeout, error => {
-            this.timer('browser.visit end');
+            this.timer('browser.visit end url: ' + pageUrl.pathname);
+
+            pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
 
             if ( !browser.resources['0'] || !browser.resources['0'].response ) {
               this.wappalyzer.log('No response from server', 'browser', 'error');
@@ -122,9 +124,20 @@ class Driver {
             }
 
             browser.wait(this.options.maxWait, () => {
-              this.timer('browser.wait end');
+              this.timer('browser.wait end url: ' + pageUrl.pathname);
 
               const headers = this.getHeaders(browser);
+
+              const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
+
+              if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
+                this.wappalyzer.log('Skipping ' + pageUrl.pathname + ' of content type ' + contentType, 'driver');
+
+                this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
+
+                return resolve();
+              }
+
               const html    = this.getHtml(browser);
               const scripts = this.getScripts(browser);
               const js      = this.getJs(browser);
@@ -210,14 +223,13 @@ class Driver {
   }
 
   crawl(pageUrl, index = 1, depth = 1) {
-    this.timer('crawl');
-
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
         .then(links => {
           if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
             links = Array.from(links)
               .filter(link => link.hostname === this.origPageUrl.hostname)
+              .filter(link => extensions.test(link.pathname))
               .map(link => { link.hash = ''; return link });
 
             return Promise.all(links.map((link, index) => this.crawl(link, index + 1, depth + 1)));
@@ -226,9 +238,8 @@ class Driver {
           }
         })
         .then(() => {
-          this.timer('done');
-
           resolve({
+            urls: this.analyzedPageUrls,
             applications: this.apps,
             meta: this.meta
           });
