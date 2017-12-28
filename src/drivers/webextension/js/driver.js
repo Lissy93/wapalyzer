@@ -160,7 +160,7 @@ browser.webRequest.onCompleted.addListener(request => {
 ( chrome || browser ).runtime.onMessage.addListener((message, sender, sendResponse) => {
   if ( typeof message.id != 'undefined' ) {
     if ( message.id !== 'log' ) {
-      wappalyzer.log('Message received from ' + message.source + ': ' + message.id, 'driver');
+      wappalyzer.log('Message received' + ( message.source ? ' from ' + message.source : '' ) + ': ' + message.id, 'driver');
     }
 
     var response;

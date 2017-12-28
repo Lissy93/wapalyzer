@@ -129,7 +129,7 @@ class Driver {
               const scripts = this.getScripts(browser);
               const js      = this.getJs(browser);
 
-              this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
+              this.wappalyzer.analyze(pageUrl, {
                 headers,
                 html,
                 js,
