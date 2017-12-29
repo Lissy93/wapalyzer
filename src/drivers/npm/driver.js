@@ -123,7 +123,7 @@ class Driver {
               return resolve();
             }
 
-            if ( !browser.document || !browser.document.documentElement ) {
+            if ( !browser.document || !browser.document.documentElement || !browser.body ) {
               this.wappalyzer.log('No HTML document at ' + pageUrl.href, 'driver', 'error');
 
               return resolve();
