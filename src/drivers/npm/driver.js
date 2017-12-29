@@ -98,7 +98,7 @@ class Driver {
         return resolve();
       }
 
-      this.timer('fetch url: ' + pageUrl.pathname + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms');
+      this.timer('fetch url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms');
 
       this.analyzedPageUrls.push(pageUrl.href);
 
@@ -110,10 +110,10 @@ class Driver {
 
       this.sleep(this.options.delay * index)
         .then(() => {
-          this.timer('browser.visit start url: ' + pageUrl.pathname);
+          this.timer('browser.visit start url: ' + pageUrl.href);
 
           browser.visit(pageUrl.href, this.options.requestTimeout, error => {
-            this.timer('browser.visit end url: ' + pageUrl.pathname);
+            this.timer('browser.visit end url: ' + pageUrl.href);
 
             pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
 
@@ -123,15 +123,21 @@ class Driver {
               return resolve();
             }
 
+            if ( !browser.document || !browser.document.documentElement ) {
+              this.wappalyzer.log('No HTML document at ' + pageUrl.href, 'driver', 'error');
+
+              return resolve();
+            }
+
             browser.wait(this.options.maxWait, () => {
-              this.timer('browser.wait end url: ' + pageUrl.pathname);
+              this.timer('browser.wait end url: ' + pageUrl.href);
 
               const headers = this.getHeaders(browser);
 
               const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
 
               if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
-                this.wappalyzer.log('Skipping ' + pageUrl.pathname + ' of content type ' + contentType, 'driver');
+                this.wappalyzer.log('Skipping ' + pageUrl.href + ' of content type ' + contentType, 'driver');
 
                 this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
 
@@ -151,7 +157,7 @@ class Driver {
 
               const links = browser.body.getElementsByTagName('a');
 
-              resolve(links);
+              return resolve(links);
             });
           });
         });
@@ -185,10 +191,14 @@ class Driver {
   }
 
   getScripts(browser) {
+    if ( !browser.document || !browser.document.scripts ) {
+      return [];
+    }
+
     const scripts = Array.prototype.slice
       .apply(browser.document.scripts)
-      .filter(s => s.src)
-      .map(s => s.src);
+      .filter(script => script.src)
+      .map(script => script.src);
 
     return scripts;
   }
