@@ -117,45 +117,52 @@ class Driver {
 
             pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
 
+            // Validate response
             if ( !browser.resources['0'] || !browser.resources['0'].response ) {
               this.wappalyzer.log('No response from server', 'browser', 'error');
 
               return resolve();
             }
 
-            if ( !browser.document || !browser.document.documentElement || !browser.body ) {
+            const headers = this.getHeaders(browser);
+
+            // Validate content type
+            const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
+
+            if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
+              this.wappalyzer.log('Skipping ' + pageUrl.href + ' of content type ' + contentType, 'driver');
+
+              this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
+
+              return resolve();
+            }
+
+            // Validate document element
+            if ( !browser.document || !browser.document.documentElement ) {
               this.wappalyzer.log('No HTML document at ' + pageUrl.href, 'driver', 'error');
 
               return resolve();
             }
 
+            const html = this.getHtml(browser);
+            const scripts = this.getScripts(browser);
+
+            const links = Array.from(browser.document.getElementsByTagName('a'))
+              .filter(link => link.hostname === this.origPageUrl.hostname)
+              .filter(link => extensions.test(link.pathname))
+              .map(link => { link.hash = ''; return url.parse(link.href) });
+
             browser.wait(this.options.maxWait, () => {
               this.timer('browser.wait end url: ' + pageUrl.href);
 
-              const headers = this.getHeaders(browser);
-
-              const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
-
-              if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
-                this.wappalyzer.log('Skipping ' + pageUrl.href + ' of content type ' + contentType, 'driver');
-
-                this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
-
-                return resolve();
-              }
-
-              const html    = this.getHtml(browser);
-              const scripts = this.getScripts(browser);
-              const js      = this.getJs(browser);
+              const js = this.getJs(browser);
 
               this.wappalyzer.analyze(pageUrl, {
                 headers,
                 html,
-                js,
-                scripts
+                scripts,
+                js
               });
-
-              const links = browser.body.getElementsByTagName('a');
 
               return resolve(links);
             });
@@ -183,7 +190,11 @@ class Driver {
 
     try {
       html = browser.html();
-    } catch ( e ) {
+
+      if ( html.length > 50000 ) {
+        html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+      }
+    } catch ( error ) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
 
@@ -237,11 +248,6 @@ class Driver {
       this.fetch(pageUrl, index, depth)
         .then(links => {
           if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
-            links = Array.from(links)
-              .filter(link => link.hostname === this.origPageUrl.hostname)
-              .filter(link => extensions.test(link.pathname))
-              .map(link => { link.hash = ''; return link });
-
             return Promise.all(links.map((link, index) => this.crawl(link, index + 1, depth + 1)));
           } else {
             return Promise.resolve();
