@@ -17,9 +17,8 @@ class Driver {
       delay: 500,
       maxDepth: 3,
       maxUrls: 10,
-      maxWait: 1000,
+      maxWait: 5000,
       recursive: false,
-      requestTimeout: 3000,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
     }, options || {});
 
@@ -29,7 +28,6 @@ class Driver {
     this.options.maxUrls = parseInt(this.options.maxUrls, 10);
     this.options.maxWait = parseInt(this.options.maxWait, 10);
     this.options.recursive = Boolean(this.options.recursive);
-    this.options.requestTimeout = parseInt(this.options.requestTimeout, 10);
 
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
@@ -61,8 +59,6 @@ class Driver {
   }
 
   displayApps(detected, meta) {
-    this.timer('displayApps');
-
     this.meta = meta;
 
     Object.keys(detected).forEach(appName => {
@@ -92,95 +88,112 @@ class Driver {
   }
 
   fetch(pageUrl, index, depth) {
-    return new Promise(resolve => {
-      // Return when the URL is a duplicate or maxUrls has been reached
-      if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
+    // Return when the URL is a duplicate or maxUrls has been reached
+    if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
+      return Promise.resolve();
+    }
+
+    this.analyzedPageUrls.push(pageUrl.href);
+
+    const timerScope = {
+      last: new Date().getTime()
+    };
+
+    this.timer('fetch; url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms', timerScope);
+
+    return new Promise(resolve => this.sleep(this.options.delay * index).then(() => this.visit(pageUrl, timerScope, resolve)));
+  }
+
+  visit(pageUrl, timerScope, resolve) {
+    const browser = new Browser({
+      silent: true,
+      userAgent: this.options.userAgent,
+      waitDuration: this.options.maxWait,
+    });
+
+    this.timer('browser.visit start; url: ' + pageUrl.href, timerScope);
+
+    browser.visit(pageUrl.href, () => {
+      this.timer('browser.visit end; url: ' + pageUrl.href, timerScope);
+
+      if ( !this.responseOk(browser, pageUrl) ) {
         return resolve();
       }
 
-      this.timer('fetch url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms');
+      const headers = this.getHeaders(browser);
+      const html = this.getHtml(browser);
+      const scripts = this.getScripts(browser);
+      const js = this.getJs(browser);
 
-      this.analyzedPageUrls.push(pageUrl.href);
-
-      const browser = new Browser({
-        silent: true,
-        userAgent: this.options.userAgent,
-        waitDuration: this.options.maxWait,
+      this.wappalyzer.analyze(pageUrl, {
+        headers,
+        html,
+        scripts,
+        js
       });
 
-      this.sleep(this.options.delay * index)
-        .then(() => {
-          this.timer('browser.visit start url: ' + pageUrl.href);
+      const links = Array.from(browser.document.getElementsByTagName('a'))
+        .filter(link => link.hostname === this.origPageUrl.hostname)
+        .filter(link => extensions.test(link.pathname))
+        .map(link => { link.hash = ''; return url.parse(link.href) });
 
-          browser.visit(pageUrl.href, this.options.requestTimeout, error => {
-            this.timer('browser.visit end url: ' + pageUrl.href);
-
-            pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
-
-            // Validate response
-            if ( !browser.resources['0'] || !browser.resources['0'].response ) {
-              this.wappalyzer.log('No response from server', 'browser', 'error');
-
-              return resolve();
-            }
-
-            const headers = this.getHeaders(browser);
-
-            // Validate content type
-            const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
-
-            if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
-              this.wappalyzer.log('Skipping ' + pageUrl.href + ' of content type ' + contentType, 'driver');
-
-              this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
-
-              return resolve();
-            }
-
-            // Validate document element
-            if ( !browser.document || !browser.document.documentElement ) {
-              this.wappalyzer.log('No HTML document at ' + pageUrl.href, 'driver', 'error');
-
-              return resolve();
-            }
-
-            const html = this.getHtml(browser);
-            const scripts = this.getScripts(browser);
-
-            const links = Array.from(browser.document.getElementsByTagName('a'))
-              .filter(link => link.hostname === this.origPageUrl.hostname)
-              .filter(link => extensions.test(link.pathname))
-              .map(link => { link.hash = ''; return url.parse(link.href) });
-
-            browser.wait(this.options.maxWait, () => {
-              this.timer('browser.wait end url: ' + pageUrl.href);
-
-              const js = this.getJs(browser);
-
-              this.wappalyzer.analyze(pageUrl, {
-                headers,
-                html,
-                scripts,
-                js
-              });
-
-              return resolve(links);
-            });
-          });
-        });
+      return resolve(links);
     });
+  }
+
+  responseOk(browser, pageUrl) {
+    // Validate response
+    const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
+
+    if ( !resource ) {
+      this.wappalyzer.log('No response from server; url: ' + pageUrl.href, 'driver', 'error');
+
+      return false;
+    }
+
+    if ( resource.response.status !== 200 ) {
+      this.wappalyzer.log('Response was not OK; status: ' + resource.response.status + ' ' + resource.response.statusText + '; url: ' + pageUrl.href, 'driver', 'error');
+
+      return false;
+    }
+
+    const headers = this.getHeaders(browser);
+
+    // Validate content type
+    const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
+
+    if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
+      this.wappalyzer.log('Skipping; url: ' + pageUrl.href + '; content type: ' + contentType, 'driver');
+
+      this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
+
+      return false;
+    }
+
+    // Validate document
+    if ( !browser.document || !browser.document.documentElement ) {
+      this.wappalyzer.log('No HTML document; url: ' + pageUrl.href, 'driver', 'error');
+
+      return false;
+    }
+
+    return true;
   }
 
   getHeaders(browser) {
     const headers = {};
 
-    browser.resources['0'].response.headers._headers.forEach(header => {
-      if ( !headers[header[0]] ){
-        headers[header[0]] = [];
-      }
+    const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
 
-      headers[header[0]].push(header[1]);
-    });
+    if ( resource ) {
+      resource.response.headers._headers.forEach(header => {
+        if ( !headers[header[0]] ){
+          headers[header[0]] = [];
+        }
+
+        headers[header[0]].push(header[1]);
+      });
+    }
 
     return headers;
   }
@@ -244,6 +257,8 @@ class Driver {
   }
 
   crawl(pageUrl, index = 1, depth = 1) {
+    pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
+
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
         .then(links => {
@@ -267,14 +282,14 @@ class Driver {
     return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
   }
 
-  timer(step) {
+  timer(message, scope) {
     const time = new Date().getTime();
     const sinceStart = ( Math.round(( time - this.time.start ) / 10) / 100) + 's';
-    const sinceLast = ( Math.round(( time - this.time.last ) / 10) / 100) + 's';
+    const sinceLast = ( Math.round(( time - scope.last ) / 10) / 100) + 's';
 
-    this.wappalyzer.log('[' + step + '] Time lapsed: ' + sinceLast + ' / ' + sinceStart, 'driver');
+    this.wappalyzer.log('[timer] ' + message + '; lapsed: ' + sinceLast + ' / ' + sinceStart, 'driver');
 
-    this.time.last = time;
+    scope.last = time;
   }
 };
 
