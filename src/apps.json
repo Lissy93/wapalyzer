@@ -605,7 +605,7 @@
       ],
       "website": "http://material.angularjs.org"
     },
-    "AngularJS": {
+    "Angular": {
       "cats": [
         "12"
       ],
@@ -614,7 +614,7 @@
         "angular.version.full": "(.*)\\;version:\\1"
       },
       "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
-      "icon": "AngularJS.svg",
+      "icon": "Angular.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
@@ -2251,6 +2251,17 @@
       "script": "dedeajax",
       "website": "http://dedecms.com"
     },
+	"deepMiner":{
+	  "cats": [
+	    "56"
+	  ],
+	  "js": {
+	    "deepMiner": ""
+	  },
+	  "script": "deepMiner\\.js",
+	  "icon": "deepminer.png",
+	  "website": "https://github.com/deepwn/deepMiner"
+	},
     "Dell": {
       "cats": [
         "40"
@@ -2985,6 +2996,15 @@
       "implies": "Python",
       "website": "http://flask.pocoo.org"
     },
+    "Flat UI": {
+      "cats": [
+        "18"
+      ],
+      "icon": "Flat UI.png",
+      "implies": "Bootstrap",
+			"html": "<link[^>]* href=[^>]+flat-ui(?:\\.min)?\\.css",
+      "website": "https://designmodo.github.io/Flat-UI/"
+    },
     "FlexCMP": {
       "cats": [
         "1"
@@ -3182,7 +3202,7 @@
       },
       "html": [
         "<div id=\"gsNavBar\" class=\"gcBorder1\">",
-        "Powered by <a href=\"[^\"]+\">([^<]+)</a>\\;version:\\1"
+        "<a href=\"http://gallery\\.sourceforge\\.net\"><img[^>]+Powered by Gallery\\s*(?:(?:v|Version)\\s*([0-9.]+))?\\;version:\\1"
       ],
       "icon": "Gallery.png",
       "website": "http://galleryproject.org/"
@@ -3917,6 +3937,19 @@
       "icon": "Hello Bar.png",
       "script": "hellobar\\.js",
       "website": "http://hellobar.com"
+    },
+    "Hexo": {
+      "cats": [
+        "11"
+      ],
+      "icon": "Hexo.png",
+      "html": [
+        "Powered by <a href=\"https?://hexo\\.io/?\"[^>]*>Hexo</"
+      ],
+      "meta": {
+        "generator": "Hexo(?: v?([\\d.]+))?\\;version:\\1"
+      },
+      "website": "https://hexo.io"
     },
     "Hiawatha": {
       "cats": [
@@ -4993,6 +5026,18 @@
       "implies": "PHP",
       "website": "http://laravel.com"
     },
+    "MYPAGE Platform": {
+      "cats": [
+        "1",
+        "6"
+      ],
+      "headers": {
+        "Set-Cookie": "botble_session"
+      },
+      "icon": "mypage-platform.png",
+      "implies": "laravel",
+      "website": "https://www.mypage.vn"
+    },
     "Lazy.js": {
       "cats": [
         "12"
@@ -5984,7 +6029,7 @@
       "cats": [
         "56"
       ],
-      "script": "<iframe[^>]+src=[\\'\"]https?://monerominer\\.rocks/miner\\.php\\?siteid=",
+      "html": "<iframe[^>]+src=[\\'\"]https?://monerominer\\.rocks/miner\\.php\\?siteid=",
       "icon": "monerominer.png",
       "website": "https://monerominer.rocks/"
     },
@@ -7960,7 +8005,7 @@
       "icon": "Ruby on Rails.png",
       "implies": "Ruby",
       "meta": {
-        "csrf-param": "authenticity_token\\;confidence:50"
+        "csrf-param": "^authenticity_token$\\;confidence:50"
       },
       "script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "http://rubyonrails.org"
@@ -8321,8 +8366,8 @@
       "icon": "Serendipity.png",
       "implies": "PHP",
       "meta": {
-        "Powered-By": "Serendipity v\\.(.+)\\;version:\\1",
-        "generator": "Serendipity"
+        "Powered-By": "Serendipity v\\.([\\d.]+)\\;version:\\1",
+        "generator": "Serendipity(?: v\\.([\\d.]+))?\\;version:\\1"
       },
       "website": "http://s9y.org"
     },
@@ -8418,6 +8463,16 @@
       },
       "script": "mediacdn\\.shopatron\\.com",
       "website": "http://ecommerce.shopatron.com"
+    },
+    "Shoper": {
+      "cats": [
+        "6"
+      ],
+      "js": {
+        "shoper": ""
+      },
+      "icon": "Shoper.svg",
+      "website": "https://www.shoper.pl"
     },
     "Shopery": {
       "cats": [
@@ -9586,7 +9641,7 @@
       "script": [
         "twitter\\.github\\.com/bootstrap",
         "bootstrap(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "(?:/([\\d.]+)/)bootstrap(?:\\.min)?\\.js\\;version:\\1"
+        "(?:/([\\d.]+))?(?:/js)?/bootstrap(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "https://getbootstrap.com"
     },
@@ -10758,6 +10813,7 @@
         "<!-- This site is optimized with the Yoast SEO plugin v([\\d.]+) -\\;version:\\1"
       ],
       "icon": "Yoast SEO.png",
+      "implies": "WordPress",
       "website": "http://yoast.com"
     },
     "YouTrack": {
@@ -11250,7 +11306,16 @@
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],
-      "website": "http://jquery.com"
+      "website": "https://jquery.com"
+    },
+    "jQuery Migrate": {
+      "cats": [
+        "12"
+      ],
+      "icon": "jQuery.svg",
+      "implies": "jQuery",
+      "script": "jquery.migrate(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "website": "https://github.com/jquery/jquery-migrate"
     },
     "jQuery Mobile": {
       "cats": [
@@ -11259,7 +11324,7 @@
       "icon": "jQuery Mobile.svg",
       "implies": "jQuery",
       "script": "jquery\\.mobile(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
-      "website": "http://jquerymobile.com"
+      "website": "https://jquerymobile.com"
     },
     "jQuery Sparklines": {
       "cats": [
@@ -11882,7 +11947,7 @@
       "cats": [
         "56"
       ],
-      "html": "<iframe[^>]src=[\\'\"]https://webmine\\.cz/miner\\?key=",
+      "html": "<iframe[^>]+src=[\\'\"]https://webmine\\.cz/miner\\?key=",
       "icon": "webmine.png",
       "website": "https://webmine.cz/"
     },
@@ -12056,7 +12121,23 @@
       },
       "icon": "vwo.svg",
       "website": "https://vwo.com/"
-    }
+    },
+	"XWiki": {
+      "cats": [
+        "8"
+      ],
+      "html": [
+        "<html[^>]data-xwiki-[^>]>"
+      ],
+      "meta": {
+        "wiki": "xwiki"
+      },
+      "implies": "Java\\;confidence:99",
+      "excludes": "MediaWiki",
+      "website": "http://www.xwiki.org",
+      "icon": "xwiki.png"
+}
+	
   },
   "categories": {
     "1": {
@@ -12069,11 +12150,11 @@
     },
     "3": {
       "name": "Database Managers",
-      "priority": "9"
+      "priority": "4"
     },
     "4": {
       "name": "Documentation Tools",
-      "priority": "9"
+      "priority": "2"
     },
     "5": {
       "name": "Widgets",
