@@ -261,6 +261,7 @@ class Driver {
 
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
+        .catch(() => {})
         .then(links => {
           if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
             return Promise.all(links.map((link, index) => this.crawl(link, index + 1, depth + 1)));

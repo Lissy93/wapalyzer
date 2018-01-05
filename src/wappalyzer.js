@@ -122,17 +122,19 @@ class Wappalyzer {
    */
   robotsTxtAllows(url) {
     return new Promise((resolve, reject) => {
-      var parsed = this.parseUrl(url.canonical);
+      var parsed = this.parseUrl(url);
 
       if ( parsed.protocol !== 'http:' && parsed.protocol !== 'https:' ) {
-        reject();
+        return reject();
       }
 
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
-          robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());
-
-          resolve();
+          if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
+            return reject();
+          } else {
+            return resolve();
+          }
         });
     });
   };
