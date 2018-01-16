@@ -70,7 +70,7 @@ function appsToDomTemplate(response) {
             'a', {
               class: 'detected__app',
               target: '_blank',
-              href: 'https://www.wappalyzer.com/applications/' + slugify(appName)
+              href: 'https://www.wappalyzer.com/technologies/' + slugify(appName)
             }, [
               'img', {
                 class: 'detected__app-icon',
