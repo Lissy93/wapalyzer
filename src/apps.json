@@ -607,7 +607,7 @@
         "ngMaterial": ""
       },
       "icon": "Angular.svg",
-      "implies": "Angular",
+      "implies": "AngularJS",
       "script": [
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
         "angular-material.*\\.js"
@@ -6147,7 +6147,7 @@
       "icon": "MotoCMS.svg",
       "implies": [
         "PHP",
-        "Angular",
+        "AngularJS",
         "jQuery"
       ],
       "script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
@@ -7511,7 +7511,7 @@
       "icon": "Proximis Omnichannel.png",
       "implies": [
         "PHP",
-        "Angular"
+        "AngularJS"
       ],
       "meta": {
         "generator": "Proximis Omnichannel"
@@ -7785,7 +7785,7 @@
       },
       "icon": "Rayo.png",
       "implies": [
-        "Angular",
+        "AngularJS",
         "Microsoft ASP.NET"
       ],
       "meta": {
@@ -9302,7 +9302,7 @@
       "icon": "Taiga.png",
       "implies": [
         "Django",
-        "Angular"
+        "AngularJS"
       ],
       "website": "http://taiga.io"
     },
