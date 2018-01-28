@@ -1,4 +1,5 @@
 {
+  "$schema": "../schema.json",
   "apps": {
     "1&1": {
       "cats": [
@@ -97,6 +98,14 @@
       ],
       "icon": "ebis.png",
       "website": "http://www.ebis.ne.jp"
+    },
+    "Accelerated Mobile Pages": {
+      "cats": [
+        "12"
+      ],
+      "html": "<html[^>]* (?:amp|⚡)",
+      "icon": "Accelerated-Mobile-Pages.svg",
+      "website": "https://www.ampproject.org"
     },
     "Amber": {
       "cats": [
@@ -609,18 +618,26 @@
       "cats": [
         "12"
       ],
+      "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "icon": "Angular.svg",
+      "website": "https://angular.io"
+    },
+    "AngularJS": {
+      "cats": [
+        "12"
+      ],
       "js": {
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-      "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
       "icon": "Angular.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "angular.*\\.js"
       ],
-      "website": "http://angular.io"
+      "website": "https://angularjs.org"
     },
     "Apache": {
       "cats": [
@@ -1271,7 +1288,16 @@
       "cats": [
         "13"
       ],
-      "html": "href=\"enter_bug\\.cgi\">",
+      "html": [
+				"href=\"enter_bug\\.cgi\">",
+				"<main id=\"bugzilla-body\""
+			],
+			"meta": {
+				"generator":"Bugzilla ?([\\d.]+)?\\;version:\\1"
+			},
+      "js": {
+        "BUGZILLA": ""
+      },
       "icon": "Bugzilla.png",
       "implies": "Perl",
       "website": "http://www.bugzilla.org"
@@ -2009,7 +2035,7 @@
       ],
       "headers": {
         "Set-Cookie": "^CraftSessionId=",
-        "X-Powered-By": "^Craft CMS$"
+        "X-Powered-By": "\\bCraft CMS\\b"
       },
       "icon": "Craft CMS.svg",
       "implies": "Yii",
@@ -3256,7 +3282,7 @@
       "icon": "Gatsby.svg",
       "implies": [
         "React",
-        "Webpack"
+        "webpack"
       ],
       "website": "https://www.gatsbyjs.org/"
     },
@@ -3624,7 +3650,7 @@
         "Set-Cookie": "cnv_session"
       },
       "icon": "CNV.png",
-      "implies": "laravel",
+      "implies": "Laravel",
       "website": "https://cnv.vn"
     },
     "Google Tag Manager": {
@@ -4107,7 +4133,7 @@
       "headers": {
         "Set-Cookie": "_hybris"
       },
-      "html": "<[^>]+/(?:sys_master|hybr|_ui/(?:desktop|common/img/webicons))/",
+      "html": "<[^>]+/(?:sys_master|hybr|_ui/(?:responsive/)?(?:desktop|common(?:/images|/img)?))/",
       "icon": "Hybris.png",
       "implies": "Java",
       "website": "https://hybris.com"
@@ -5051,6 +5077,17 @@
       "implies": "PHP",
       "website": "http://laravel.com"
     },
+    "Laterpay": {
+      "cats": [
+        "41"
+      ],
+      "meta": {
+        "laterpay:connector:callbacks:on_user_has_access": "deobfuscateText"
+      },
+      "script": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z\\-]*/live/[\\w-]+\\.js\\;version:\\1",
+      "icon": "laterpay.png",
+      "website": "https://www.laterpay.net/"
+    },
     "MYPAGE Platform": {
       "cats": [
         "1",
@@ -5060,7 +5097,7 @@
         "Set-Cookie": "botble_session"
       },
       "icon": "mypage-platform.png",
-      "implies": "laravel",
+      "implies": "Laravel",
       "website": "https://www.mypage.vn"
     },
     "Lazy.js": {
@@ -5639,7 +5676,7 @@
       "implies": [
         "MongoDB",
         "Express",
-        "AngularJS"
+        "Angular"
       ],
       "website": "http://mean.io"
     },
@@ -7831,6 +7868,9 @@
       "cats": [
         "13"
       ],
+      "headers": {
+        "Set-Cookie": "^_redmine_session"
+      },
       "html": "Powered by <a href=\"[^>]+Redmine",
       "icon": "Redmine.png",
       "implies": "Ruby on Rails",
@@ -8493,6 +8533,19 @@
         "Elcodi"
       ],
       "website": "http://shopery.com"
+    },
+    "Shopfa": {
+      "cats": [
+        "6"
+      ],
+      "js": {
+        "shopfa": ""
+       },
+      "meta": {
+        "generator": "^ShopFA ([\\d.]+)$\\;version:\\1"
+      },
+      "icon": "Shopfa.svg",
+      "website": "https://shopfa.com"
     },
     "Shopify": {
       "cats": [
@@ -9175,8 +9228,8 @@
       "excludes": "SweetAlert",
       "html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
       "icon": "SweetAlert2.png",
-      "script": "sweetalert2(?:\\.min)?\\.js",
-      "website": "https://limonte.github.io/sweetalert2"
+      "script": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+      "website": "https://sweetalert2.github.io/"
     },
     "Swiftlet": {
       "cats": [
@@ -9547,6 +9600,16 @@
       "icon": "TrackJs.png",
       "script": "tracker\\.js",
       "website": "http://trackjs.com"
+    },
+    "Transifex": {
+      "cats": [
+        "12"
+      ],
+      "icon": "transifex.png",
+      "js": {
+        "Transifex.live.lib_version": "(.+)\\;version:\\1"
+      },
+      "website": "https://www.transifex.com"
     },
     "Translucide": {
       "cats": [
@@ -10123,14 +10186,6 @@
       "script": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
       "website": "http://volusion.com"
     },
-    "Vox": {
-      "cats": [
-        "11"
-      ],
-      "icon": "Vox.png",
-      "url": "\\.vox\\.com",
-      "website": "http://www.vox.com"
-    },
     "Vue.js": {
       "cats": [
         "12"
@@ -10138,6 +10193,7 @@
       "js": {
         "Vue": ""
       },
+      "html": "<[^>]+data-v-",
       "icon": "Vue.js.png",
       "script": [
         "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -10906,7 +10962,7 @@
       ],
       "headers": {
         "Set-Cookie": "ZENDSERVERSESSID",
-        "X-Powered-By": "Zend"
+        "X-Powered-By": "Zend(?:Server)?(?:[\\s/]?([0-9.]+))?\\;version:\\1"
       },
       "icon": "Zend.png",
       "website": "http://zend.com"
@@ -11317,6 +11373,9 @@
       "cats": [
         "12"
       ],
+      "js": {
+        "jQuery.migrateVersion": "([\\d.]+)\\;version:\\1"
+      },
       "icon": "jQuery.svg",
       "implies": "jQuery",
       "script": "jquery.migrate(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
@@ -11814,7 +11873,7 @@
         "Scriptaculous": ""
       },
       "icon": "script.aculo.us.png",
-      "script": "(?:scriptaculous|protoaculous)\\.js",
+      "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
       "website": "http://script.aculo.us"
     },
     "shine.js": {
@@ -11913,7 +11972,7 @@
       "icon": "vBulletin.png",
       "implies": "PHP",
       "meta": {
-        "generator": "vBulletin"
+        "generator": "vBulletin ?([\\d.]+)?\\;version:\\1"
       },
       "website": "http://www.vbulletin.com"
     },
@@ -12154,7 +12213,7 @@
     },
     "3": {
       "name": "Database Managers",
-      "priority": "4"
+      "priority": "2"
     },
     "4": {
       "name": "Documentation Tools",
@@ -12190,7 +12249,7 @@
     },
     "12": {
       "name": "JavaScript Frameworks",
-      "priority": "3"
+      "priority": "5"
     },
     "13": {
       "name": "Issue Trackers",
@@ -12198,7 +12257,7 @@
     },
     "14": {
       "name": "Video Players",
-      "priority": "9"
+      "priority": "7"
     },
     "15": {
       "name": "Comment Systems",
@@ -12214,7 +12273,7 @@
     },
     "18": {
       "name": "Web Frameworks",
-      "priority": "2"
+      "priority": "4"
     },
     "19": {
       "name": "Miscellaneous",
@@ -12222,7 +12281,7 @@
     },
     "20": {
       "name": "Editors",
-      "priority": "9"
+      "priority": "4"
     },
     "21": {
       "name": "LMS",
@@ -12230,7 +12289,7 @@
     },
     "22": {
       "name": "Web Servers",
-      "priority": "9"
+      "priority": "7"
     },
     "23": {
       "name": "Cache Tools",
@@ -12238,7 +12297,7 @@
     },
     "24": {
       "name": "Rich Text Editors",
-      "priority": "9"
+      "priority": "5"
     },
     "25": {
       "name": "JavaScript Graphics",
@@ -12258,11 +12317,11 @@
     },
     "29": {
       "name": "Search Engines",
-      "priority": "9"
+      "priority": "4"
     },
     "30": {
       "name": "Web Mail",
-      "priority": "9"
+      "priority": "2"
     },
     "31": {
       "name": "CDN",
@@ -12274,11 +12333,11 @@
     },
     "33": {
       "name": "Web Server Extensions",
-      "priority": "9"
+      "priority": "7"
     },
     "34": {
       "name": "Databases",
-      "priority": "9"
+      "priority": "5"
     },
     "35": {
       "name": "Maps",
@@ -12306,7 +12365,7 @@
     },
     "41": {
       "name": "Payment Processors",
-      "priority": "9"
+      "priority": "8"
     },
     "42": {
       "name": "Tag Managers",
@@ -12318,19 +12377,19 @@
     },
     "44": {
       "name": "Build CI Systems",
-      "priority": "9"
+      "priority": "4"
     },
     "45": {
       "name": "Control Systems",
-      "priority": "9"
+      "priority": "8"
     },
     "46": {
       "name": "Remote Access",
-      "priority": "9"
+      "priority": "8"
     },
     "47": {
       "name": "Dev Tools",
-      "priority": "9"
+      "priority": "3"
     },
     "48": {
       "name": "Network Storage",
@@ -12354,11 +12413,11 @@
     },
     "53": {
       "name": "CRM",
-      "priority": "9"
+      "priority": "7"
     },
     "54": {
       "name": "SEO",
-      "priority": "9"
+      "priority": "7"
     },
     "55": {
       "name": "Accounting",
