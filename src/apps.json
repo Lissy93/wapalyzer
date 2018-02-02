@@ -86,6 +86,19 @@
       "icon": "3ware.png",
       "website": "http://www.3ware.com"
     },
+    "A-Frame": {
+      "cats": [
+        25
+      ],
+      "html": "<a-scene[^<>]*>",
+      "icon": "A-Frame.svg",
+      "implies": "three.js",
+      "js": {
+        "AFRAME.version": "(.*)\\;version:\\1"
+      },
+      "scripts": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
+      "website": "https://aframe.io"
+    },
     "AD EBiS": {
       "cats": [
         10
@@ -606,7 +619,7 @@
       "js": {
         "ngMaterial": ""
       },
-      "icon": "Angular.svg",
+      "icon": "AngularJS.svg",
       "implies": "AngularJS",
       "script": [
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
@@ -618,7 +631,7 @@
       "cats": [
         12
       ],
-      "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
       "icon": "Angular.svg",
       "website": "https://angular.io"
     },
@@ -631,7 +644,7 @@
         "angular.version.full": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
-      "icon": "Angular.svg",
+      "icon": "AngularJS.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
@@ -4768,6 +4781,19 @@
       "icon": "KS_HTTP.png",
       "implies": "Canon",
       "website": "http://www.canon.com"
+    },
+    "Kajabi": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "Kajabi": ""
+      },
+      "headers": {
+        "Set-Cookie": "_kjb_session"
+      },
+      "icon": "Kajabi.svg",
+      "website": "https://newkajabi.com"
     },
     "Kampyle": {
       "cats": [
@@ -8983,6 +9009,7 @@
       "js": {
         "Squarespace": ""
       },
+      "html": "<!-- This is Squarespace\\. -->",
       "headers": {
         "X-ServedBy": "squarespace"
       },
