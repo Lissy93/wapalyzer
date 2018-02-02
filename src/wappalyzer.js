@@ -442,13 +442,16 @@ class Wappalyzer {
   analyzeMeta(app, html) {
     var regex = /<meta[^>]+>/ig;
     var patterns = this.parsePatterns(app.props.meta);
-    var content;
-    var match;
+    var content = '';
+    var matches = [];
 
-    while ( patterns && ( match = regex.exec(html) ) ) {
+    while ( patterns && ( matches = regex.exec(html) ) ) {
       for ( var meta in patterns ) {
-        if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
-          content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
+        const r = new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i');
+
+        if ( new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i').test(matches[0]) ) {
+          content = matches[0].match(/content=("|')([^"']+)("|')/i);
 
           patterns[meta].forEach(pattern => {
             if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
