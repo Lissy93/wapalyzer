@@ -91,6 +91,7 @@ body {
 }
 
 .detected__app {
+  color: #4a4a4a;
   display: block;
   line-height: 1.7rem;
   text-decoration: none;
@@ -110,11 +111,26 @@ body {
 }
 
 .detected__app-name {
-  color: #4a4a4a;
+}
+
+.detected__app-version, .detected__app-confidence {
+  background: #eee;
+  border-radius: 3px;
+  font-size: .7rem;
+  margin-left: .3rem;
+  padding: .1rem .2rem;
 }
 
 .detected__app:hover .detected__app-name {
   border-bottom: 1px solid #4a4a4a;
+}
+
+.detected__app:hover .detected__app-version {
+  border-bottom: 1px solid white;
+}
+
+.detected__app:hover .detected__app-confidence {
+  border-bottom: 1px solid white;
 }
 
 .detected-app {

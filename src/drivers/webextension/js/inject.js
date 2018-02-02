@@ -1,6 +1,7 @@
 (function() {
 	try {
     addEventListener('message', (event => {
+      console.log({ event });
       if ( event.data.id !== 'patterns' ) {
         return;
       }

@@ -80,6 +80,8 @@ fetch('../apps.json')
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
 
+    wappalyzer.parseJsPatterns();
+
     categoryOrder = Object.keys(wappalyzer.categories)
       .map(categoryId => parseInt(categoryId, 10))
       .sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);

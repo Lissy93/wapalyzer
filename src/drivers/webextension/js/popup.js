@@ -112,8 +112,18 @@ function appsToDomTemplate(response) {
               'span', {
                 class: 'detected__app-name'
               },
-              appName + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' )
-            ]
+              appName,
+            ], version ? [
+              'span', {
+                class: 'detected__app-version'
+              },
+              version
+            ] : null, confidence < 100 ? [
+              'span', {
+                class: 'detected__app-confidence'
+              },
+              confidence + '% sure'
+            ] : null
           ]
         );
       }
