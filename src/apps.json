@@ -606,7 +606,7 @@
       "js": {
         "ngMaterial": ""
       },
-      "icon": "Angular.svg",
+      "icon": "AngularJS.svg",
       "implies": "AngularJS",
       "script": [
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
@@ -631,7 +631,7 @@
         "angular.version.full": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
-      "icon": "Angular.svg",
+      "icon": "AngularJS.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
