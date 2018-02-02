@@ -18,6 +18,7 @@ class Wappalyzer {
     this.apps = {};
     this.categories = {};
     this.driver = {};
+    this.jsPatterns = {};
 
     this.detected = {};
     this.hostnameCache = {};
@@ -37,28 +38,28 @@ class Wappalyzer {
     this.driver.log(message, source || '', type || 'debug');
   }
 
-  analyze(hostname, url, data, context) {
+  analyze(url, data, context) {
     var apps = {};
-
-    // Remove hash from URL
-    data.url = url = url.split('#')[0];
 
     if ( typeof data.html !== 'string' ) {
       data.html = '';
     }
 
-    if ( this.detected[url] === undefined ) {
-      this.detected[url] = {};
+    if ( this.detected[url.canonical] === undefined ) {
+      this.detected[url.canonical] = {};
     }
 
+    // Additional information
+    const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+
+    const language = matches && matches.length ? matches[1] : null;
+
     Object.keys(this.apps).forEach(appName => {
-      apps[appName] = this.detected[url] && this.detected[url][appName] ? this.detected[url][appName] : new Application(appName, this.apps[appName]);
+      apps[appName] = this.detected[url.canonical] && this.detected[url.canonical][appName] ? this.detected[url.canonical][appName] : new Application(appName, this.apps[appName]);
 
       var app = apps[appName];
 
-      if ( url ) {
-        this.analyzeUrl(app, url);
-      }
+      this.analyzeUrl(app, url);
 
       if ( data.html ) {
         this.analyzeHtml(app, data.html);
@@ -82,6 +83,12 @@ class Wappalyzer {
       }
     })
 
+    if ( data.js ) {
+      Object.keys(data.js).forEach(appName => {
+        this.analyzeJs(apps[appName], data.js[appName]);
+      });
+    }
+
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];
 
@@ -91,16 +98,16 @@ class Wappalyzer {
     });
 
     this.resolveExcludes(apps);
-    this.resolveImplies(apps, url);
+    this.resolveImplies(apps, url.canonical);
 
-    this.cacheDetectedApps(apps, url);
-    this.trackDetectedApps(apps, url, hostname, data.html);
+    this.cacheDetectedApps(apps, url.canonical);
+    this.trackDetectedApps(apps, url, language);
 
     if ( Object.keys(apps).length ) {
-      this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url, 'core');
+      this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url.canonical, 'core');
     }
 
-    this.driver.displayApps(this.detected[url], context);
+    this.driver.displayApps(this.detected[url.canonical], { language }, context);
   }
 
   /**
@@ -117,11 +124,17 @@ class Wappalyzer {
     return new Promise((resolve, reject) => {
       var parsed = this.parseUrl(url);
 
+      if ( parsed.protocol !== 'http:' && parsed.protocol !== 'https:' ) {
+        return reject();
+      }
+
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
-          robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());
-
-          resolve();
+          if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
+            return reject();
+          } else {
+            return resolve();
+          }
         });
     });
   };
@@ -169,7 +182,7 @@ class Wappalyzer {
    *
    */
   ping() {
-    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 200 ) {
+    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 50 ) {
       this.driver.ping(this.hostnameCache, this.adCache);
 
       this.hostnameCache = {};
@@ -238,6 +251,17 @@ class Wappalyzer {
     }
 
     return parsed;
+  }
+
+  /**
+   * Parse JavaScript patterns
+   */
+  parseJsPatterns() {
+    Object.keys(this.apps).forEach(appName => {
+      if ( this.apps[appName].js ) {
+        this.jsPatterns[appName] = this.parsePatterns(this.apps[appName].js);
+      }
+    });
   }
 
   resolveExcludes(apps) {
@@ -322,49 +346,42 @@ class Wappalyzer {
   /**
    * Track detected applications
    */
-  trackDetectedApps(apps, url, hostname, html) {
+  trackDetectedApps(apps, url, language) {
     if ( !( this.driver.ping instanceof Function ) ) {
       return;
     }
 
+    const hostname = url.protocol + '//' + url.hostname;
+
     Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
+      const app = apps[appName];
 
-      if ( this.detected[url][appName].getConfidence() >= 100 ) {
-        if ( validation.hostname.test(hostname) && !validation.hostnameBlacklist.test(url) ) {
-          this.robotsTxtAllows(url)
-            .then(() => {
-              if ( !( hostname in this.hostnameCache ) ) {
-                this.hostnameCache[hostname] = {
-                  applications: {},
-                  meta: {}
-                };
-              }
+      if ( this.detected[url.canonical][appName].getConfidence() >= 100 ) {
+        if ( validation.hostname.test(url.hostname) && !validation.hostnameBlacklist.test(url.hostname) ) {
+          if ( !( hostname in this.hostnameCache ) ) {
+            this.hostnameCache[hostname] = {
+              applications: {},
+              meta: {}
+            };
+          }
 
-              if ( !( appName in this.hostnameCache[hostname].applications ) ) {
-                this.hostnameCache[hostname].applications[appName] = {
-                  hits: 0
-                };
-              }
+          if ( !( appName in this.hostnameCache[hostname].applications ) ) {
+            this.hostnameCache[hostname].applications[appName] = {
+              hits: 0
+            };
+          }
 
-              this.hostnameCache[hostname].applications[appName].hits ++;
+          this.hostnameCache[hostname].applications[appName].hits ++;
 
-              if ( apps[appName].version ) {
-                this.hostnameCache[hostname].applications[appName].version = app.version;
-              }
-            })
-          .catch(() => this.log('Disallowed in robots.txt: ' + url), 'core')
+          if ( apps[appName].version ) {
+            this.hostnameCache[hostname].applications[appName].version = app.version;
+          }
         }
       }
     });
 
-    // Additional information
     if ( hostname in this.hostnameCache ) {
-      var match = html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
-
-      if ( match && match.length ) {
-        this.hostnameCache[hostname].meta['language'] = match[1];
-      }
+      this.hostnameCache[hostname].meta['language'] = language;
     }
 
     this.ping();
@@ -378,8 +395,8 @@ class Wappalyzer {
 
     if ( patterns.length ) {
       patterns.forEach(pattern => {
-        if ( pattern.regex.test(url) ) {
-          this.addDetected(app, pattern, 'url', url);
+        if ( pattern.regex.test(url.canonical) ) {
+          this.addDetected(app, pattern, 'url', url.canonical);
         }
       });
     }
@@ -425,13 +442,16 @@ class Wappalyzer {
   analyzeMeta(app, html) {
     var regex = /<meta[^>]+>/ig;
     var patterns = this.parsePatterns(app.props.meta);
-    var content;
-    var match;
+    var content = '';
+    var matches = [];
 
-    while ( patterns && ( match = regex.exec(html) ) ) {
+    while ( patterns && ( matches = regex.exec(html) ) ) {
       for ( var meta in patterns ) {
-        if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
-          content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
+        const r = new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i');
+
+        if ( new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i').test(matches[0]) ) {
+          content = matches[0].match(/content=("|')([^"']+)("|')/i);
 
           patterns[meta].forEach(pattern => {
             if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
@@ -481,6 +501,22 @@ class Wappalyzer {
         })
       });
     }
+  }
+
+  /**
+   * Analyze JavaScript variables
+   */
+  analyzeJs(app, results) {
+    Object.keys(results).forEach(string => {
+      Object.keys(results[string]).forEach(index => {
+        const pattern = this.jsPatterns[app.name][string][index];
+        const value = results[string][index];
+
+        if ( pattern.regex.test(value) ) {
+          this.addDetected(app, pattern, 'js', value);
+        }
+      });
+    });
   }
 
   /**

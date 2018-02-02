@@ -440,8 +440,9 @@
 				}
 
 				if ( this.isYoutubeAdReq(frameUrl, requestUrl) ) {
-					var videoId = this.parseYoutubeVideoIdFromUrl(requestUrl);
-					if ( videoId ) {
+					var destVideoId = this.parseYoutubeVideoIdFromUrl(requestUrl);
+					var srcVideoId = this.parseYoutubeVideoIdFromUrl(frameUrl);
+					if ( srcVideoId && destVideoId ) {
 						request.isYoutubeAd = true;
 						request.isVideo = true;
 						request.rawSrcUrl = frameUrl;
@@ -535,7 +536,7 @@
 			return match[1];
 		}
 
-		re = /^https?:\/\/www\.youtube\.com\/watch\?v=(.*$)/;
+		re = /^https?:\/\/www\.youtube\.com\/watch.*(\?|&)v=([^&]*)/;
 		match = re.exec(url);
 		if ( match && match.length > 1 ) {
 			return match[1];

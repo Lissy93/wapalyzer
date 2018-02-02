@@ -1,5 +1,7 @@
 /** global: browser */
-/** global: wappalyzer */
+/** global: Wappalyzer */
+
+const wappalyzer = new Wappalyzer();
 
 function getOption(name, defaultValue, callback) {
   browser.storage.local.get(name)
