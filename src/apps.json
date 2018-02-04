@@ -4729,7 +4729,7 @@
       "headers": {
         "X-Content-Encoded-By": "Joomla! ([\\d.]+)\\;version:\\1"
       },
-      "html": "(?:<div[^>]+id=\"wrapper_r\"|<[^>]+(?:feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
+      "html": "(?:<div[^>]+id=\"wrapper_r\"|<(?:link|script)[^>]+(?:feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
       "icon": "Joomla.svg",
       "implies": "PHP",
       "meta": {
