@@ -6269,6 +6269,9 @@
       },
       "icon": "Mustache.png",
       "script": "mustache(?:\\.min)?\\.js",
+      "js": {
+        "Mustache.version": "(.*)\\;version:\\1"
+      },
       "website": "https://mustache.github.io"
     },
     "MyBB": {
