@@ -19,7 +19,7 @@ browser.tabs.onRemoved.addListener(tabId => {
 /**
  * Get a value from localStorage
  */
-function getOption(name, defaultValue) {
+function getOption(name, defaultValue = null) {
   return new Promise((resolve, reject) => {
     const callback = item => {
       options[name] = item.hasOwnProperty(name) ? item[name] : defaultValue;
@@ -103,10 +103,10 @@ getOption('version')
       getOption('upgradeMessage', true)
         .then(upgradeMessage => {
           if ( upgradeMessage ) {
-            openTab({
-              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
-              background: true
-            });
+            // openTab({
+            //   url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
+            //   background: true
+            // });
           }
         });
     }
