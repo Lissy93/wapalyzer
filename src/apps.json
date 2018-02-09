@@ -631,7 +631,7 @@
       "cats": [
         12
       ],
-      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
       "website": "https://angular.io"
     },
@@ -643,7 +643,6 @@
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
       "icon": "AngularJS.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
