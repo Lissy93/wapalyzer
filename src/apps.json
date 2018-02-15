@@ -7775,7 +7775,7 @@
         25
       ],
       "js": {
-        "Raphael": ""
+        "Raphael.version": "(.*)\\;version:\\1"
       },
       "icon": "Raphael.png",
       "script": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
