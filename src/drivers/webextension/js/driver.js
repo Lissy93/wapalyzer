@@ -103,10 +103,10 @@ getOption('version')
       getOption('upgradeMessage', true)
         .then(upgradeMessage => {
           if ( upgradeMessage ) {
-            // openTab({
-            //   url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
-            //   background: true
-            // });
+            openTab({
+              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
+              background: true
+            });
           }
         });
     }

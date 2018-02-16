@@ -3,11 +3,12 @@
 
 if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
   try {
-    var html = new XMLSerializer().serializeToString(document);
+    var html = new XMLSerializer().serializeToString(document).split('\n');
 
-    if ( html.length > 100 * 1024 ) {
-      html = html.substring(0, 50 * 1024) + html.substring(html.length - 50 * 1024, html.length);
-    }
+    html = html
+      .slice(0, 1000).concat(html.slice(html.length - 1000))
+      .map(line => line.substring(0, 1000))
+      .join('\n');
 
     const scripts = Array.prototype.slice
       .apply(document.scripts)

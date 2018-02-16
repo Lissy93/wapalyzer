@@ -20,7 +20,7 @@
               for ( let index in patterns[appName][chain] ) {
                 const value = detectJs(chain);
 
-                if ( value ) {
+                if ( value && patterns[appName][chain].hasOwnProperty(index) ) {
                   js[appName][chain][index] = value;
                 }
               }
