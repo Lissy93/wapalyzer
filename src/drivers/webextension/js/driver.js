@@ -216,6 +216,8 @@ browser.webRequest.onCompleted.addListener(request => {
 
     sendResponse(response);
   }
+
+  return true;
 });
 
 wappalyzer.driver.document = document;

@@ -3105,6 +3105,16 @@
       ],
       "website": "https://woocommerce.com/flexslider/"
     },
+    "Flickity": {
+      "cats": [
+        12
+      ],
+      "js": {
+        "Flickity": ""
+      },
+      "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
+      "website": "https://flickity.metafizzy.co/"
+    },
     "FluxBB": {
       "cats": [
         2
@@ -3321,6 +3331,19 @@
       },
       "icon": "Gauges.png",
       "website": "https://get.gaug.es"
+    },
+    "Gazelle": {
+      "cats": [
+        29
+      ],
+      "html": [
+        "<!-- Extra divs, for stylesheet developers to add imagery -->",
+        "<link rel=\"alternate\" type=\"application/rss+xml\" href=\"[^\"]+\" title=\"[^\"]+ - Gazelle Change Log\""
+      ],
+      "js": {
+        "GazURL": ""
+      },
+      "website": "https://whatcd.github.io/Gazelle/"
     },
     "Gentoo": {
       "cats": [
@@ -4982,6 +5005,24 @@
       },
       "website": "https://www.kobimaster.com.tr"
     },
+    "Koha": {
+      "cats": [
+        21
+      ],
+      "meta": {
+        "generator": "^Koha ([\\d.]+)$\\;version:\\1"
+      },
+      "js": {
+        "KOHA": ""
+      },
+      "html": [
+        "<input name=\"koha_login_context\" value=\"intranet\" type=\"hidden\">",
+        "<a href=\"/cgi-bin/koha/"
+      ],
+      "icon": "koha.png",
+      "implies": "Perl",
+      "website": "https://koha-community.org/"
+    },
     "Kohana": {
       "cats": [
         18
@@ -5377,6 +5418,9 @@
         12
       ],
       "icon": "Lo-dash.png",
+      "js": {
+        "_.VERSION": "(.*)\\;version:\\1"
+      },
       "script": "lodash.*\\.js",
       "website": "http://www.lodash.com"
     },
@@ -5480,6 +5524,16 @@
       "html": "<!-- MHonArc v([0-9.]+) -->\\;version:\\1",
       "icon": "mhonarc.png",
       "website": "http://www.mhonarc.at"
+    },
+    "MkDocs": {
+      "cats": [
+        4
+      ],
+      "meta": {
+        "generator": "^mkdocs-([\\d.]+)\\;version:\\1"
+      },
+      "icon": "mkdocs.png",
+      "website": "http://www.mkdocs.org/"
     },
     "MOBOTIX": {
       "cats": [
@@ -7505,7 +7559,7 @@
         12
       ],
       "js": {
-        "Prototype": ""
+        "Prototype.Version": "(.*)\\;version:\\1"
       },
       "icon": "Prototype.png",
       "script": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
@@ -7772,7 +7826,7 @@
         25
       ],
       "js": {
-        "Raphael": ""
+        "Raphael.version": "(.*)\\;version:\\1"
       },
       "icon": "Raphael.png",
       "script": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
@@ -7826,7 +7880,8 @@
         12
       ],
       "js": {
-        "React": ""
+        "React": "",
+        "react.version": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+data-react",
       "icon": "React.png",
@@ -8505,6 +8560,16 @@
       },
       "script": "mediacdn\\.shopatron\\.com",
       "website": "http://ecommerce.shopatron.com"
+    },
+    "Shopcada": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "Shopcada": ""
+      },
+      "icon": "Shopcada.png",
+      "website": "http://shopcada.com"
     },
     "Shoper": {
       "cats": [
@@ -9703,6 +9768,9 @@
         "<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
         "<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
       ],
+      "js": {
+        "bootstrap.Alert.VERSION": "(.*)\\;version:\\1"
+      },
       "icon": "Bootstrap.svg",
       "script": [
         "twitter\\.github\\.com/bootstrap",
@@ -9775,7 +9843,7 @@
         17
       ],
       "js": {
-        "Typekit": ""
+        "Typekit.config.js": "(.*)\\;version:\\1"
       },
       "icon": "Typekit.png",
       "script": "use\\.typekit\\.com",
@@ -10189,7 +10257,7 @@
         12
       ],
       "js": {
-        "Vue": ""
+        "Vue.version": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+data-v-",
       "icon": "Vue.js.png",
@@ -10738,7 +10806,8 @@
         12
       ],
       "js": {
-        "YAHOO": ""
+        "YAHOO": "",
+        "YUI.version": "(.*)\\;version:\\1"
       },
       "icon": "YUI.png",
       "script": "(?:/yui/|yui\\.yahooapis\\.com)",
@@ -11402,6 +11471,9 @@
       ],
       "icon": "jQuery UI.svg",
       "implies": "jQuery",
+      "js": {
+        "jQuery.ui.version": "(.*)\\;version:\\1"
+      },
       "script": [
         "jquery-ui(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "([\\d.]+)/jquery-ui(?:\\.min)?\\.js\\;version:\\1",
@@ -11868,7 +11940,7 @@
         12
       ],
       "js": {
-        "Scriptaculous": ""
+        "Scriptaculous.Version": "(.*)\\;version:\\1"
       },
       "icon": "script.aculo.us.png",
       "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
@@ -12015,7 +12087,7 @@
     },
     "webpack": {
       "cats": [
-        44
+        19
       ],
       "js": {
         "webpackJsonp": ""

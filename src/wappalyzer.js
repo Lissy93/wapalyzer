@@ -552,8 +552,6 @@ class Wappalyzer {
   addDetected(app, pattern, type, value, key) {
     app.detected = true;
 
-    console.log(app);
-
     // Set confidence level
     app.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence || 100;
 
