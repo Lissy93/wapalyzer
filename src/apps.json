@@ -10317,6 +10317,26 @@
       "icon": "WHMCS.png",
       "website": "http://www.whmcs.com"
     },
+    "wpCache": {
+      "cats": [
+        23
+      ],
+      "headers": {
+        "X-Powered-By": "wpCache(?:/([\\d.]+))?\\;version:\\1"
+      },
+      "html": "<!--[^>]+wpCache",
+      "url": "^https?://[^/]+\\.wpcache\\.co",
+      "icon": "wpCache.png",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "wpCache",
+        "keywords": "wpCache"
+      },
+      "website": "http://wpcache.co"
+    },
     "WP Rocket": {
       "cats": [
         23
@@ -12102,22 +12122,6 @@
       },
       "icon": "webpack.svg",
       "website": "http://webpack.github.io"
-    },
-    "wpCache": {
-      "cats": [
-        23
-      ],
-      "headers": {
-        "X-Powered-By": "wpCache(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "html": "<!--[^>]+wpCache",
-      "icon": "wpCache.png",
-      "implies": "PHP",
-      "meta": {
-        "generator": "wpCache",
-        "keywords": "wpCache"
-      },
-      "website": "http://wpcache.co"
     },
     "xCharts": {
       "cats": [
