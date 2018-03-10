@@ -3055,9 +3055,12 @@
       "cats": [
         34
       ],
+      "js": {
+        "firebase.SDK_VERSION": "([\\d.]+)$\\;version:\\1"
+      },
       "icon": "Firebase.png",
-      "script": "firebase.*\\.js",
-      "website": "http://firebase.com"
+      "script": "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+      "website": "https://firebase.com"
     },
     "Fireblade": {
       "cats": [
