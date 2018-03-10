@@ -10580,7 +10580,7 @@
         12
       ],
       "js": {
-        "wink": ""
+        "wink.version": "(.*)\\;version:\\1"
       },
       "icon": "Wink.png",
       "script": "(?:_base/js/base|wink).*\\.js",
