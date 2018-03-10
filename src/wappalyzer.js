@@ -489,17 +489,17 @@ class Wappalyzer {
 
     if ( headers ) {
       Object.keys(patterns).forEach(headerName => {
-        this.asyncForEach(patterns[headerName], pattern => {
+        promises.push(this.asyncForEach(patterns[headerName], pattern => {
           headerName = headerName.toLowerCase();
 
           if ( headerName in headers ) {
-            promises.push(headers[headerName].forEach(headerValue => {
+            headers[headerName].forEach(headerValue => {
               if ( pattern.regex.test(headerValue) ) {
                 this.addDetected(app, pattern, 'headers', headerValue, headerName);
               }
-            }));
+            });
           }
-        });
+        }));
       });
     }
 
