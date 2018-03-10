@@ -644,8 +644,8 @@
         12
       ],
       "excludes": [
-        "AngularDart\\;confidence:75",
-        "AngularJS\\;confidence:75"
+        "AngularDart",
+        "AngularJS"
       ],
       "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
@@ -671,8 +671,8 @@
         12
       ],
       "excludes": [
-        "Angular\\;confidence:75",
-        "AngularDart\\;confidence:75"
+        "Angular",
+        "AngularDart"
       ],
       "js": {
         "angular": "",
@@ -2293,10 +2293,10 @@
         27
       ],
       "icon": "Dart.svg",
-      "implies": "AngularDart\\;confidence:75",
+      "implies": "AngularDart",
       "excludes": [
-        "Angular\\;confidence:75",
-        "AngularJS\\;confidence:75"
+        "Angular",
+        "AngularJS"
       ],
       "website": "https://www.dartlang.org",
       "script": [
