@@ -3,6 +3,9 @@
 
 if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
   try {
+    sendMessage('init', {});
+
+    // HTML
     var html = new XMLSerializer().serializeToString(document).split('\n');
 
     html = html
@@ -10,18 +13,16 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
       .map(line => line.substring(0, 1000))
       .join('\n');
 
+    // Scripts
     const scripts = Array.prototype.slice
       .apply(document.scripts)
       .filter(script => script.src)
       .map(script => script.src)
-      .filter(script => script.indexOf("data:text/javascript;") != 0);;
+      .filter(script => script.indexOf('data:text/javascript;') !== 0);
 
-    browser.runtime.sendMessage({
-      id: 'analyze',
-      subject: { html, scripts },
-      source: 'content.js'
-    });
+    sendMessage('analyze', { html, scripts });
 
+    // JavaScript variables
     const script = document.createElement('script');
 
     script.onload = () => {
@@ -30,20 +31,12 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
           return;
         }
 
-        browser.runtime.sendMessage({
-          id: 'analyze',
-          subject: {
-            js: event.data.js
-          },
-          source: 'content.js'
-        });
+        document.body.removeChild(script);
+
+        sendMessage('analyze', { js: event.data.js });
       }, true);
 
-      ( chrome || browser ).runtime.sendMessage({
-        id: 'init_js',
-        subject: {},
-        source: 'content.js'
-      }, response => {
+      sendMessage('get_js_patterns', {}, response => {
         if ( response ) {
           postMessage({
             id: 'patterns',
@@ -53,19 +46,18 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
       });
     };
 
-    script.setAttribute('id', 'wappalyzer');
     script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
     document.body.appendChild(script);
   } catch (e) {
-    log(e);
+    sendMessage('log', e);
   }
 }
 
-function log(message) {
-  browser.runtime.sendMessage({
-    id: 'log',
-    message,
+function sendMessage(id, subject, callback) {
+  ( chrome || browser ).runtime.sendMessage({
+    id,
+    subject,
     source: 'content.js'
-  });
+  }, callback || ( () => {} ));
 }

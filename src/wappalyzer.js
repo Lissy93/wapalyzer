@@ -38,7 +38,7 @@ class Wappalyzer {
   }
 
   asyncForEach(iterable, iterator) {
-    return Promise.all(iterable.map(item => new Promise(resolve => setTimeout(() => resolve(iterator(item)), 1))));
+    return Promise.all(( iterable || [] ).map(item => new Promise(resolve => setTimeout(() => resolve(iterator(item)), 1))));
   }
 
   analyze(url, data, context) {
@@ -73,6 +73,10 @@ class Wappalyzer {
 
       if ( data.scripts ) {
         promises.push(this.analyzeScripts(app, data.scripts));
+      }
+
+      if ( data.cookies ) {
+        promises.push(this.analyzeCookies(app, data.cookies));
       }
 
       if ( data.headers ) {
@@ -481,27 +485,47 @@ class Wappalyzer {
   }
 
   /**
-   * analyze response headers
+   * Analyze response headers
    */
   analyzeHeaders(app, headers) {
     const patterns = this.parsePatterns(app.props.headers);
     const promises = [];
 
-    if ( headers ) {
-      Object.keys(patterns).forEach(headerName => {
-        promises.push(this.asyncForEach(patterns[headerName], pattern => {
-          headerName = headerName.toLowerCase();
+    Object.keys(patterns).forEach(headerName => {
+      headerName = headerName.toLowerCase();
 
-          if ( headerName in headers ) {
-            headers[headerName].forEach(headerValue => {
-              if ( pattern.regex.test(headerValue) ) {
-                this.addDetected(app, pattern, 'headers', headerValue, headerName);
-              }
-            });
-          }
-        }));
-      });
-    }
+      promises.push(this.asyncForEach(patterns[headerName], pattern => {
+        if ( headerName in headers ) {
+          headers[headerName].forEach(headerValue => {
+            if ( pattern.regex.test(headerValue) ) {
+              this.addDetected(app, pattern, 'headers', headerValue, headerName);
+            }
+          });
+        }
+      }));
+    });
+
+    return promises ? Promise.all(promises) : Promise.resolve();
+  }
+
+  /**
+   * Analyze cookies
+   */
+  analyzeCookies(app, cookies) {
+    const patterns = this.parsePatterns(app.props.cookies);
+    const promises = [];
+
+    Object.keys(patterns).forEach(cookieName => {
+      cookieName = cookieName.toLowerCase();
+
+      promises.push(this.asyncForEach(patterns[cookieName], pattern => {
+        const cookie = cookies.find(cookie => cookie.name.toLowerCase() === cookieName);
+
+        if ( cookie && pattern.regex.test(cookie.value) ) {
+          this.addDetected(app, pattern, 'cookies', cookie.value, cookieName);
+        }
+      }));
+    });
 
     return promises ? Promise.all(promises) : Promise.resolve();
   }

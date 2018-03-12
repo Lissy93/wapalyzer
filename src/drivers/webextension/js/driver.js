@@ -170,6 +170,7 @@ browser.webRequest.onCompleted.addListener(request => {
       wappalyzer.log('Message received' + ( message.source ? ' from ' + message.source : '' ) + ': ' + message.id, 'driver');
     }
 
+    var url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
     var response;
 
     switch ( message.id ) {
@@ -177,9 +178,14 @@ browser.webRequest.onCompleted.addListener(request => {
         wappalyzer.log(message.message, message.source);
 
         break;
-      case 'analyze':
-        var url = wappalyzer.parseUrl(sender.tab.url);
+      case 'init':
+        browser.cookies.getAll({ domain: '.' + url.hostname })
+          .then(cookies => wappalyzer.analyze(url, { cookies }, {
+            tab: sender.tab
+          }));
 
+        break;
+      case 'analyze':
         if ( headersCache[url.canonical] !== undefined ) {
           message.subject.headers = headersCache[url.canonical];
         }
@@ -206,7 +212,7 @@ browser.webRequest.onCompleted.addListener(request => {
         setOption(message.key, message.value);
 
         break;
-      case 'init_js':
+      case 'get_js_patterns':
         response = {
           patterns: wappalyzer.jsPatterns
         };
