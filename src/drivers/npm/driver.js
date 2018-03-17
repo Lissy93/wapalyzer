@@ -44,6 +44,8 @@ class Driver {
 
     this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
     this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
+
+    process.on('uncaughtException', e => this.wappalyzer.log('Uncaught exception: ' + e.message, 'driver', 'error'));
   }
 
   analyze() {
