@@ -127,12 +127,14 @@ class Driver {
       const html = this.getHtml(browser);
       const scripts = this.getScripts(browser);
       const js = this.getJs(browser);
+      const cookies = this.getCookies(browser);
 
       this.wappalyzer.analyze(pageUrl, {
         headers,
         html,
         scripts,
-        js
+        js,
+        cookies,
       })
         .then(() => {
           const links = Array.prototype.reduce.call(
@@ -265,6 +267,21 @@ class Driver {
     });
 
     return js;
+  }
+
+  getCookies(browser) {
+    const cookies = [];
+
+    if ( browser.cookies ) {
+      browser.cookies.forEach(cookie => cookies.push({
+        name: cookie.key,
+        value: cookie.value,
+        domain: cookie.domain,
+        path: cookie.path,
+      }));
+    }
+
+    return cookies;
   }
 
   crawl(pageUrl, index, depth = 1) {
