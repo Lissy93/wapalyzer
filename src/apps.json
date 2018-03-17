@@ -1618,6 +1618,17 @@
       "implies": "Canon",
       "website": "http://www.canon.com"
     },
+    "CDN77": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "server": "^CDN77-Turbo$",
+        "Server": "^CDN77-Turbo$"
+      },
+      "icon": "CDN77.png",
+      "website": "https://www.cdn77.com"
+    },
     "CentOS": {
       "cats": [
         28
@@ -1898,7 +1909,7 @@
         56
       ],
       "js": {
-        "Client.Anonymous": "\\;confidence:50%"
+        "Client.Anonymous": "\\;confidence:50"
       },
       "script": "https?://www\\.hashing\\.win/scripts/min\\.js",
       "icon": "coinimp.png",
@@ -2174,7 +2185,7 @@
         "^/crypto-loot\\.com/lib/",
         "^/webmine\\.pro/",
         "^/cryptoloot\\.pro/",
-        "/crlt\\.js\\;confidence:75%"
+        "/crlt\\.js\\;confidence:75"
       ],
       "icon": "Crypto-Loot.png",
       "website": "https://crypto-loot.com/"
@@ -2496,6 +2507,7 @@
       ],
       "js": {
         "DISQUS": "",
+        "disqus_shortname": "",
         "disqus_url": ""
       },
       "html": "<div[^>]+id=\"disqus_thread\"",
@@ -3123,7 +3135,8 @@
       ],
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
-        "Fingerprint2": ""
+        "Fingerprint2": "",
+        "Fingerprint2.VERSION": "(.*)\\;version:\\1"
       },
       "script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://valve.github.io/fingerprintjs2/"
@@ -6775,6 +6788,7 @@
       "html": "Powered by <a href=\"http://octopress\\.org\">",
       "icon": "octopress.png",
       "implies": "Jekyll",
+      "script": "/octopress\\.js",
       "meta": {
         "generator": "Octopress"
       },
@@ -8383,7 +8397,8 @@
         1
       ],
       "headers": {
-        "X-Spip-Cache": ""
+        "X-Spip-Cache": "",
+        "Composed-By": "SPIP ([\\d.]+) @\\;version:\\1"
       },
       "icon": "SPIP.png",
       "implies": "PHP",
@@ -9116,6 +9131,7 @@
       ],
       "js": {
         "SoundManager": "",
+        "soundManager.version": "V(.+) \\;version:\\1",
         "BaconPlayer": ""
       },
       "icon": "SoundManager.png",
@@ -10792,14 +10808,14 @@
       },
       "html": [
         "<!-- WooCommerce",
-        "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen|)\\.css?ver=([\\d.]+)'\\;version:\\1"
+        "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\\.css?ver=([\\d.]+)'\\;version:\\1"
       ],
       "icon": "WooCommerce.png",
       "implies": "WordPress",
       "meta": {
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
-      "script": "woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "script": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "website": "http://www.woothemes.com/woocommerce"
     },
     "Woopra": {
@@ -11970,7 +11986,7 @@
       "js": {
         "particleJS": ""
       },
-      "script": "/particles(?:\\min)?\\.js",
+      "script": "/particles(?:\\.min)?\\.js",
       "html": "<div id=\"particles\\-js\">",
       "website": "https://vincentgarreau.com/particles.js/"
     },
@@ -12343,7 +12359,7 @@
       "js": {
         "Raychat": ""
       },
-      "icon": "raychat.svg",
+      "icon": "raychat.png",
       "script": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
     },
