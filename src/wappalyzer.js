@@ -42,22 +42,28 @@ class Wappalyzer {
   }
 
   analyze(url, data, context) {
+    const startTime = new Date();
+
     const promises = [];
 
     var apps = {};
-
-    if ( typeof data.html !== 'string' ) {
-      data.html = '';
-    }
 
     if ( this.detected[url.canonical] === undefined ) {
       this.detected[url.canonical] = {};
     }
 
     // Additional information
-    const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+    var language = null;
 
-    const language = matches && matches.length ? matches[1] : null;
+    if ( data.html ) {
+      if ( typeof data.html !== 'string' ) {
+        data.html = '';
+      }
+
+      const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+
+      language = matches && matches.length ? matches[1] : null;
+    }
 
     Object.keys(this.apps).forEach(appName => {
       apps[appName] = this.detected[url.canonical] && this.detected[url.canonical][appName] ? this.detected[url.canonical][appName] : new Application(appName, this.apps[appName]);
@@ -86,7 +92,7 @@ class Wappalyzer {
       if ( data.env ) {
         promises.push(this.analyzeEnv(app, data.env));
       }
-    })
+    });
 
     if ( data.js ) {
       Object.keys(data.js).forEach(appName => {
@@ -111,8 +117,10 @@ class Wappalyzer {
           this.cacheDetectedApps(apps, url.canonical);
           this.trackDetectedApps(apps, url, language);
 
+          this.log('Processing ' + Object.keys(data).join(', ') + ' took ' + (( new Date() - startTime ) / 1000).toFixed(2) + 's (' + url.hostname + ')', 'core');
+
           if ( Object.keys(apps).length ) {
-            this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url.canonical, 'core');
+            this.log('Identified ' + Object.keys(apps).join(', ') + ' (' + url.hostname + ')', 'core');
           }
 
           this.driver.displayApps(this.detected[url.canonical], { language }, context);
@@ -492,9 +500,9 @@ class Wappalyzer {
     const promises = [];
 
     Object.keys(patterns).forEach(headerName => {
-      headerName = headerName.toLowerCase();
-
       promises.push(this.asyncForEach(patterns[headerName], pattern => {
+        headerName = headerName.toLowerCase();
+
         if ( headerName in headers ) {
           headers[headerName].forEach(headerValue => {
             if ( pattern.regex.test(headerValue) ) {

@@ -26,15 +26,19 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
     const script = document.createElement('script');
 
     script.onload = () => {
-      addEventListener('message', event => {
+      const onMessage = event => {
         if ( event.data.id !== 'js' ) {
           return;
         }
 
-        document.body.removeChild(script);
+        removeEventListener('message', onMessage);
 
         sendMessage('analyze', { js: event.data.js });
-      }, true);
+
+        script.remove();
+      };
+
+      addEventListener('message', onMessage);
 
       sendMessage('get_js_patterns', {}, response => {
         if ( response ) {
@@ -61,3 +65,7 @@ function sendMessage(id, subject, callback) {
     source: 'content.js'
   }, callback || ( () => {} ));
 }
+
+// https://stackoverflow.com/a/44774834
+// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
+undefined;

@@ -8,7 +8,6 @@
 const wappalyzer = new Wappalyzer();
 
 var tabCache = {};
-var headersCache = {};
 var categoryOrder = [];
 var options = {};
 var robotsTxtQueue = {};
@@ -118,48 +117,43 @@ getOption('version')
 getOption('dynamicIcon', true);
 getOption('pinnedCategory');
 
-// Run content script
-var callback = tabs => {
-  tabs.forEach(tab => {
-    if ( tab.url.match(/^https?:\/\//) ) {
+// Run content script on all tabs
+browser.tabs.query({ url: [ 'http://*/*', 'https://*/*' ] })
+  .then(tabs => {
+    tabs.forEach(tab => {
       browser.tabs.executeScript(tab.id, {
-        file: 'js/content.js'
+        file: '../js/content.js'
       });
-    }
+    })
   })
-};
-
-browser.tabs.query({})
-  .then(callback)
   .catch(error => wappalyzer.log(error, 'driver', 'error'));
 
 // Capture response headers
 browser.webRequest.onCompleted.addListener(request => {
-  var responseHeaders = {};
+  const headers = {};
 
   if ( request.responseHeaders ) {
-    var url = wappalyzer.parseUrl(request.url);
+    const url = wappalyzer.parseUrl(request.url);
 
-    request.responseHeaders.forEach(function(header) {
-      if ( !responseHeaders[header.name.toLowerCase()] ) {
-        responseHeaders[header.name.toLowerCase()] = []
-      }
-      responseHeaders[header.name.toLowerCase()].push(header.value || '' + header.binaryValue);
-    });
+    browser.tabs.query({ url: [ url.canonical ] })
+      .then(tabs => {
+        const tab = tabs[0] || null;
 
-    if ( headersCache.length > 50 ) {
-      headersCache = {};
-    }
+        if ( tab ) {
+          request.responseHeaders.forEach(header => {
+            const name = header.name.toLowerCase();
 
-    if ( /text\/html/.test(responseHeaders['content-type'][0]) ) {
-      if ( headersCache[url.canonical] === undefined ) {
-        headersCache[url.canonical] = {};
-      }
+            headers[name] = headers[name] || [];
 
-      Object.keys(responseHeaders).forEach(header => {
-        headersCache[url.canonical][header] = responseHeaders[header].slice();
-      });
-    }
+            headers[name].push(header.value || header.binaryValue.toString());
+          });
+
+          if ( headers['content-type'] && /\/x?html/.test(headers['content-type'][0]) ) {
+            wappalyzer.analyze(url, { headers }, { tab });
+          }
+        }
+      })
+      .catch(error => wappalyzer.log(error, 'driver', 'error'));
   }
 }, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
 
@@ -167,7 +161,7 @@ browser.webRequest.onCompleted.addListener(request => {
 ( chrome || browser ).runtime.onMessage.addListener((message, sender, sendResponse) => {
   if ( typeof message.id != 'undefined' ) {
     if ( message.id !== 'log' ) {
-      wappalyzer.log('Message received' + ( message.source ? ' from ' + message.source : '' ) + ': ' + message.id, 'driver');
+      wappalyzer.log('Message' + ( message.source ? ' from ' + message.source : '' ) + ': ' + message.id, 'driver');
     }
 
     var url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
@@ -175,24 +169,16 @@ browser.webRequest.onCompleted.addListener(request => {
 
     switch ( message.id ) {
       case 'log':
-        wappalyzer.log(message.message, message.source);
+        wappalyzer.log(message.subject, message.source);
 
         break;
       case 'init':
         browser.cookies.getAll({ domain: '.' + url.hostname })
-          .then(cookies => wappalyzer.analyze(url, { cookies }, {
-            tab: sender.tab
-          }));
+          .then(cookies => wappalyzer.analyze(url, { cookies }, { tab: sender.tab }));
 
         break;
       case 'analyze':
-        if ( headersCache[url.canonical] !== undefined ) {
-          message.subject.headers = headersCache[url.canonical];
-        }
-
-        wappalyzer.analyze(url, message.subject, {
-          tab: sender.tab
-        });
+        wappalyzer.analyze(url, message.subject, { tab: sender.tab });
 
         break;
       case 'ad_log':
@@ -242,7 +228,13 @@ wappalyzer.driver.log = (message, source, type) => {
 wappalyzer.driver.displayApps = (detected, meta, context) => {
   var tab = context.tab;
 
-  tabCache[tab.id] = tabCache[tab.id] || { detected: [] };
+  if ( tab === undefined ) {
+    return;
+  }
+
+  tabCache[tab.id] = tabCache[tab.id] || {
+    detected: []
+  };
 
   tabCache[tab.id].detected = detected;
 
@@ -295,8 +287,6 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
  */
 wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
   if ( robotsTxtQueue.hasOwnProperty(host) ) {
-    wappalyzer.log('robotTxt fetch already in queue');
-
     return robotsTxtQueue[host];
   }
 
