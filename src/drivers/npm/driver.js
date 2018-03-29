@@ -110,6 +110,7 @@ class Driver {
   visit(pageUrl, timerScope, resolve) {
     const browser = new Browser({
       silent: true,
+      strictSSL: false,
       userAgent: this.options.userAgent,
       waitDuration: this.options.maxWait,
     });
