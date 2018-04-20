@@ -12303,7 +12303,11 @@
       "meta": {
         "copyright": "Pars Elecom Portal"
       },
-      "implies": [ "Microsoft ASP.NET", "IIS", "Windows Server" ],
+      "implies": [
+        "Microsoft ASP.NET",
+        "IIS",
+        "Windows Server"
+      ],
       "website": "http://parselecom.net"
     },
     "vBulletin": {
@@ -12489,14 +12493,11 @@
         10
       ],
       "js": {
-        "mouseflow.version": "(.*)\\;version:\\1"
+        "_mfq": ""
       },
       "script": [
         "cdn\\.mouseflow\\.com"
       ],
-      "js": {
-        "_mfq": ""
-      },
       "icon": "mouseflow.png",
       "website": "https://mouseflow.com/"
     },

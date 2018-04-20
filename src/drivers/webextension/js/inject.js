@@ -44,7 +44,7 @@
       for ( let i = 0; i < properties.length; i ++ ) {
         var property = properties[i];
 
-        if ( value.hasOwnProperty(property) ) {
+        if ( value && value.hasOwnProperty(property) ) {
           value = value[property];
         } else {
           value = null;

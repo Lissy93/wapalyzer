@@ -602,7 +602,7 @@ class Wappalyzer {
           }
 
           // Replace back references
-          version = version.replace(new RegExp('\\\\' + i, 'g'), match || '');
+          version = version.trim().replace(new RegExp('\\\\' + i, 'g'), match || '');
         });
 
         if ( version && versions.indexOf(version) === -1 ) {

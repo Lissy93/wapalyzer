@@ -285,7 +285,7 @@ class Driver {
     return cookies;
   }
 
-  crawl(pageUrl, index, depth = 1) {
+  crawl(pageUrl, index = 1, depth = 1) {
     pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
 
     return new Promise(resolve => {
