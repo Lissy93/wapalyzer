@@ -135,9 +135,11 @@ browser.webRequest.onCompleted.addListener(request => {
   if ( request.responseHeaders ) {
     const url = wappalyzer.parseUrl(request.url);
 
-    browser.tabs.query({ url: [ url.canonical ] })
+    browser.tabs.query({ url: [ url.href ] })
       .then(tabs => {
         const tab = tabs[0] || null;
+
+        console.log({ url: url.canonical, tab });
 
         if ( tab ) {
           request.responseHeaders.forEach(header => {
