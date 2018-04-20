@@ -21,6 +21,8 @@ class Driver {
       maxWait: 5000,
       recursive: false,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
+      htmlMaxCols: 2000,
+      htmlMaxRows: 2000,
     }, options || {});
 
     this.options.debug = Boolean(this.options.debug);
@@ -28,6 +30,8 @@ class Driver {
     this.options.maxDepth = parseInt(this.options.maxDepth, 10);
     this.options.maxUrls = parseInt(this.options.maxUrls, 10);
     this.options.maxWait = parseInt(this.options.maxWait, 10);
+    this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10);
+    this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10);
     this.options.recursive = Boolean(this.options.recursive);
 
     this.origPageUrl = url.parse(pageUrl);
@@ -216,11 +220,11 @@ class Driver {
     let html = '';
 
     try {
-      html = browser.html();
-
-      if ( html.length > 50000 ) {
-        html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-      }
+      html = browser.html()
+        .split('\n')
+        .slice(0, this.options.htmlMaxRows / 2).concat(html.slice(html.length - this.options.htmlMaxRows / 2))
+        .map(line => line.substring(0, this.options.htmlMaxCols))
+        .join('\n');
     } catch ( error ) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
