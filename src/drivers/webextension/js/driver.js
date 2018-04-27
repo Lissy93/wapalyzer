@@ -139,15 +139,13 @@ browser.webRequest.onCompleted.addListener(request => {
       .then(tabs => {
         const tab = tabs[0] || null;
 
-        console.log({ url: url.canonical, tab });
-
         if ( tab ) {
           request.responseHeaders.forEach(header => {
             const name = header.name.toLowerCase();
 
             headers[name] = headers[name] || [];
 
-            headers[name].push(header.value || header.binaryValue.toString());
+            headers[name].push(( header.value || header.binaryValue || '' ).toString());
           });
 
           if ( headers['content-type'] && /\/x?html/.test(headers['content-type'][0]) ) {
