@@ -25,14 +25,14 @@ class Driver {
       htmlMaxRows: 2000,
     }, options || {});
 
-    this.options.debug = Boolean(this.options.debug);
+    this.options.debug = Boolean(+this.options.debug);
+    this.options.recursive = Boolean(+this.options.recursive);
     this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
     this.options.maxDepth = parseInt(this.options.maxDepth, 10);
     this.options.maxUrls = parseInt(this.options.maxUrls, 10);
     this.options.maxWait = parseInt(this.options.maxWait, 10);
     this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10);
     this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10);
-    this.options.recursive = Boolean(this.options.recursive);
 
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
@@ -296,7 +296,7 @@ class Driver {
       this.fetch(pageUrl, index, depth)
         .catch(() => {})
         .then(links => {
-          if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
+          if ( links && this.options.recursive && depth < this.options.maxDepth ) {
             return this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
           } else {
             return Promise.resolve();
