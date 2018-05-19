@@ -19,10 +19,11 @@ class Driver {
       maxDepth: 3,
       maxUrls: 10,
       maxWait: 5000,
+			proxy: null,
       recursive: false,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
       htmlMaxCols: 2000,
-      htmlMaxRows: 2000,
+      htmlMaxRows: 3000,
     }, options || {});
 
     this.options.debug = Boolean(+this.options.debug);
@@ -113,6 +114,7 @@ class Driver {
 
   visit(pageUrl, timerScope, resolve) {
     const browser = new Browser({
+			proxy: this.options.proxy,
       silent: true,
       strictSSL: false,
       userAgent: this.options.userAgent,
