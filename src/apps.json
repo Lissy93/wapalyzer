@@ -763,6 +763,14 @@
       "script": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
     },
+    "Appcues": {
+      "cats": [
+        58
+      ],
+      "icon": "Appcues.svg",
+      "script": "fast\\.appcues.com*\\.js",
+      "website": "https://appcues.com"
+    },
     "Arastta": {
       "cats": [
         6
@@ -7381,6 +7389,14 @@
       "implies": "Node.js",
       "website": "http://pencilblue.org"
     },
+    "Pendo": {
+      "cats": [
+        58
+      ],
+      "icon": "Pendo.svg",
+      "script": "cdn\\.pendo\\.io*\\.js",
+      "website": "https://pendo.io"
+    },
     "Percussion": {
       "cats": [
         1
@@ -10204,6 +10220,20 @@
       },
       "website": "https://userengage.com"
     },
+    "UserGuiding": {
+      "cats": [
+        58,
+        10
+      ],
+      "icon": "UserGuiding.svg",
+      "implies": [
+        "React",
+        "webpack",
+        "Node.js"
+      ],
+      "script": "static\\.userguiding*\\.js",
+      "website": "https://userguiding.com"
+    },
     "UserLike": {
       "cats": [
         52
@@ -12744,6 +12774,10 @@
     },
     "57": {
       "name": "Static Site Generator",
+      "priority": 1
+    },
+    "58": {
+      "name": "User Onboarding",
       "priority": 1
     }
   }
