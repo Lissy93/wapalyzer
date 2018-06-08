@@ -7585,7 +7585,10 @@
         "<!-- /Module Block [a-z ]+ -->"
       ],
       "icon": "PrestaShop.svg",
-      "implies": "PHP",
+      "implies": [
+				"PHP",
+				"MySQL"
+			],
       "meta": {
         "generator": "PrestaShop"
       },
