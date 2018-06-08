@@ -617,7 +617,7 @@
         22
       ],
       "headers": {
-        "Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\b)HTTPD)\\;version:\\1"
+        "Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)HTTPD)\\;version:\\1"
       },
       "icon": "Apache.svg",
       "website": "http://apache.org"
@@ -656,7 +656,7 @@
       ],
       "headers": {
         "Server": "^Apache-Coyote(/1\\.1)?$\\;version:\\1?4.1+:",
-        "X-Powered-By": "\bTomcat\b(?:-([\\d.]+))?\\;version:\\1"
+        "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache Tomcat.svg",
       "implies": "Java",
@@ -1243,7 +1243,7 @@
       ],
       "html": [
         "(?:<!--|<BR>)Copyright\\(C\\) [\\d-]+ Brother Industries",
-        "<TITLE>\n\\s*BROTHER "
+        "<TITLE>\\n\\s*BROTHER "
       ],
       "icon": "Brother.png",
       "website": "http://www.brother.com"
@@ -2063,7 +2063,7 @@
         "CraftSessionId": ""
       },
       "headers": {
-        "X-Powered-By": "\bCraft CMS\b"
+        "X-Powered-By": "\\bCraft CMS\\b"
       },
       "icon": "Craft CMS.svg",
       "implies": "Yii",
@@ -2074,7 +2074,7 @@
         6
       ],
       "headers": {
-        "X-Powered-By": "\bCraft Commerce\b"
+        "X-Powered-By": "\\bCraft Commerce\\b"
       },
       "icon": "Craft CMS.svg",
       "implies": "Craft CMS",
@@ -3219,7 +3219,7 @@
         "FTB_API": "",
         "FTB_AddEvent": ""
       },
-      "html": "/<!--\\s*\\*\\s*FreeTextBox v\\d+ \\(([.\\d]+)(?:(?:.|\n)+?<!--\\s*\\*\\s*License Type: (Distribution|Professional)License)?/i\\;version:\\1 \\2",
+      "html": "/<!--\\s*\\*\\s*FreeTextBox v\\d+ \\(([.\\d]+)(?:(?:.|\\n)+?<!--\\s*\\*\\s*License Type: (Distribution|Professional)License)?/i\\;version:\\1 \\2",
       "icon": "FreeTextBox.png",
       "implies": "Microsoft ASP.NET",
       "website": "http://freetextbox.com"
@@ -3566,7 +3566,7 @@
         "i_like_gogits": ""
       },
       "html": [
-        "<div class=\"ui left\">\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
+        "<div class=\"ui left\">\\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
         "<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@"
       ],
       "icon": "gogs.png",
@@ -3584,7 +3584,7 @@
         "i_like_gitea": ""
       },
       "html": [
-        "<div class=\"ui left\">\n\\s+© Gitea Version: ([\\d.]+)\\;version:\\1"
+        "<div class=\"ui left\">\\n\\s+© Gitea Version: ([\\d.]+)\\;version:\\1"
       ],
       "icon": "gitea.svg",
       "meta": {
@@ -5501,7 +5501,7 @@
         27
       ],
       "headers": {
-        "X-Powered-By": "\bLua(?: ([\\d.]+))?\\;version:\\1"
+        "X-Powered-By": "\\bLua(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "Lua.png",
       "website": "http://www.lua.org"
@@ -6036,7 +6036,7 @@
       "cats": [
         2
       ],
-      "html": "<a href=\"[^\"]+minibb[^<]+</a>[^<]+\n<!--End of copyright link",
+      "html": "<a href=\"[^\"]+minibb[^<]+</a>[^<]+\\n<!--End of copyright link",
       "icon": "MiniBB.png",
       "website": "http://www.minibb.com"
     },
@@ -7295,7 +7295,7 @@
         27
       ],
       "headers": {
-        "Server": "\bPerl\b(?: ?/?v?([\\d.]+))?\\;version:\\1"
+        "Server": "\\bPerl\\b(?: ?/?v?([\\d.]+))?\\;version:\\1"
       },
       "icon": "Perl.png",
       "website": "http://perl.org"
@@ -10579,7 +10579,7 @@
         "webix": ""
       },
       "icon": "Webix.png",
-      "script": "\bwebix\\.js",
+      "script": "\\bwebix\\.js",
       "website": "http://webix.com"
     },
     "Webs": {
@@ -10701,7 +10701,7 @@
         28
       ],
       "headers": {
-        "Server": "\bWinCE\b"
+        "Server": "\\bWinCE\\b"
       },
       "icon": "Microsoft.svg",
       "website": "http://microsoft.com"
@@ -11490,7 +11490,7 @@
       ],
       "icon": "git.svg",
       "meta": {
-        "generator": "\bgit/([\\d.]+\\d)\\;version:\\1"
+        "generator": "\\bgit/([\\d.]+\\d)\\;version:\\1"
       },
       "website": "http://git-scm.com"
     },
@@ -11774,7 +11774,7 @@
         33
       ],
       "headers": {
-        "Server": "\b(?:mod_)?DAV\b(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache.svg",
       "implies": "Apache",
@@ -12013,7 +12013,7 @@
       "cookies": {
         "phpbb": ""
       },
-      "html": "(?:Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=\\.copyright|\tphpBB style name|<[^>]+styles/(?:sub|pro)silver/theme|<img[^>]+i_icon_mini|<table class=\"forumline)",
+      "html": "(?:Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=\\.copyright|\\tphpBB style name|<[^>]+styles/(?:sub|pro)silver/theme|<img[^>]+i_icon_mini|<table class=\"forumline)",
       "icon": "phpBB.png",
       "implies": "PHP",
       "meta": {
@@ -12210,7 +12210,7 @@
         22
       ],
       "headers": {
-        "Server": "\bthttpd(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "\\bthttpd(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "thttpd.png",
       "website": "http://acme.com/software/thttpd"
