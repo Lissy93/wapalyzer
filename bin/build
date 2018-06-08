@@ -22,7 +22,7 @@ find . -name ".DS_Store" -exec rm {} \;
 
 #echo "Prettifying apps.json..."
 
-#jsonlint -is src/apps.json
+#jsonlint -ips src/apps.json
 
 echo "Converting SVG icons to PNG..."
 
