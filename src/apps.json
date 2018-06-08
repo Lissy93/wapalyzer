@@ -1756,7 +1756,9 @@
         "CloudFlare": ""
       },
       "headers": {
-        "Server": "^cloudflare$"
+        "Server": "^cloudflare$",
+        "cf-cache-status": "",
+        "cf-ray": ""
       },
       "icon": "CloudFlare.svg",
       "website": "http://www.cloudflare.com"
