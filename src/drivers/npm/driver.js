@@ -13,17 +13,19 @@ const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
 class Driver {
   constructor(pageUrl, options) {
     this.options = Object.assign({}, {
+			password: '',
+			proxy: null,
+			username: '',
       chunkSize: 5,
       debug: false,
       delay: 500,
+      htmlMaxCols: 2000,
+      htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
       maxWait: 5000,
-			proxy: null,
       recursive: false,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
-      htmlMaxCols: 2000,
-      htmlMaxRows: 3000,
     }, options || {});
 
     this.options.debug = Boolean(+this.options.debug);
@@ -120,6 +122,11 @@ class Driver {
       userAgent: this.options.userAgent,
       waitDuration: this.options.maxWait,
     });
+
+		browser.on('authenticate', auth => {
+			auth.username = this.options.username;
+			auth.password = this.options.password;
+		});
 
     this.timer('browser.visit start; url: ' + pageUrl.href, timerScope);
 
