@@ -123,7 +123,7 @@ class Wappalyzer {
 
           this.driver.displayApps(this.detected[url.canonical], { language }, context);
 
-          resolve();
+          return resolve();
         });
     });
   }
@@ -152,7 +152,7 @@ class Wappalyzer {
             return reject();
           }
 
-          resolve();
+          return resolve();
         }, () => resolve());
     });
   };

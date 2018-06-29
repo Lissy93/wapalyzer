@@ -91,7 +91,7 @@ function appsToDomTemplate(response) {
     for ( let cat in categories ) {
       const apps = [];
 
-      for ( appName in categories[cat].apps ) {
+      for ( let appName in categories[cat].apps ) {
         let confidence = response.tabCache.detected[appName].confidenceTotal;
         let version    = response.tabCache.detected[appName].version;
 
