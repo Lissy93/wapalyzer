@@ -152,7 +152,7 @@ class Wappalyzer {
             return reject();
           }
 
-          return resolve();
+          resolve();
         }, () => resolve());
     });
   };
@@ -455,8 +455,6 @@ class Wappalyzer {
     }
 
     return this.asyncForEach(patterns, pattern => {
-      var match;
-
       scripts.forEach(uri => {
         if ( pattern.regex.test(uri) ) {
           this.addDetected(app, pattern, 'script', uri);
@@ -473,10 +471,10 @@ class Wappalyzer {
     const patterns = this.parsePatterns(app.props.meta);
     const promises = [];
 
-    var matches = [];
+    let matches;
 
     while ( patterns && ( matches = regex.exec(html) ) ) {
-      for ( var meta in patterns ) {
+      for ( let meta in patterns ) {
         const r = new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i');
 
         if ( r.test(matches[0]) ) {
@@ -627,7 +625,7 @@ class Application {
   getConfidence() {
     var total = 0;
 
-    for ( var id in this.confidence ) {
+    for ( let id in this.confidence ) {
       total += this.confidence[id];
     }
 

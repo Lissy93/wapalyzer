@@ -29,7 +29,11 @@ function getOption(name, defaultValue = null) {
 
     browser.storage.local.get(name)
       .then(callback)
-      .catch(error => wappalyzer.log(error, 'driver', 'error'));
+      .catch(error => {
+				wappalyzer.log(error, 'driver', 'error')
+
+				reject();
+			});
   });
 }
 
@@ -103,10 +107,12 @@ getOption('version')
       getOption('upgradeMessage', true)
         .then(upgradeMessage => {
           if ( upgradeMessage ) {
+						/*
             openTab({
               url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
               background: true
             });
+						*/
           }
         });
     }
@@ -238,16 +244,16 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
 
   tabCache[tab.id].detected = detected;
 
-  var appName, found = false;
+  let found = false;
 
   // Find the main application to display
   [ options.pinnedCategory ].concat(categoryOrder).forEach(match => {
     Object.keys(detected).forEach(appName => {
-      var app = detected[appName];
+      let app = detected[appName];
 
       app.props.cats.forEach(category => {
         if ( category === match && !found ) {
-          var icon = app.props.icon || 'default.svg';
+          let icon = app.props.icon || 'default.svg';
 
           if ( !options.dynamicIcon ) {
             icon = 'default.svg';
@@ -288,7 +294,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
     return robotsTxtQueue[host];
   }
 
-  robotsTxtQueue[host] = new Promise((resolve, reject) => {
+  robotsTxtQueue[host] = new Promise(resolve => {
     getOption('tracking', true)
       .then(tracking => {
         if ( !tracking ) {
@@ -318,7 +324,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 
                 resolve(robotsTxtCache[host]);
               })
-              .catch(err => resolve([]));
+              .catch(() => resolve([]));
           });
       });
   })

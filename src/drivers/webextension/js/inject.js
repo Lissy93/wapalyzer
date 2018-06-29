@@ -2,7 +2,7 @@
 	try {
     addEventListener('message', onMessage);
 
-    function onMessage(event) {
+    const onMessage = event => {
       if ( event.data.id !== 'patterns' ) {
         return;
       }
@@ -34,15 +34,15 @@
       }
 
       postMessage({ id: 'js', js }, '*');
-    }
+    };
 
-    function detectJs(chain) {
+    const detectJs = chain => {
       const properties = chain.split('.');
 
-      var value = properties.length ? window : null;
+      let value = properties.length ? window : null;
 
       for ( let i = 0; i < properties.length; i ++ ) {
-        var property = properties[i];
+        let property = properties[i];
 
         if ( value && value.hasOwnProperty(property) ) {
           value = value[property];
@@ -54,7 +54,7 @@
       }
 
       return typeof value === 'string' || typeof value === 'number' ? value : !!value;
-    }
+    };
   } catch(e) {
     // Fail quietly
   }

@@ -1,12 +1,12 @@
 'use strict';
 
 const Wappalyzer = require('./wappalyzer');
-const request = require('request');
 const url = require('url');
 const fs = require('fs');
+const path = require('path');
 const Browser = require('zombie');
 
-const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
+const json = JSON.parse(fs.readFileSync(path.resolve(__dirname + '/apps.json')));
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
 
