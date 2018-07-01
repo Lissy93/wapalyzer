@@ -1501,17 +1501,6 @@
       },
       "website": "http://www.cmsimple.org/en"
     },
-    "CNV Platform": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "cnv_session": ""
-      },
-      "icon": "CNV.png",
-      "implies": "Laravel",
-      "website": "https://cnv.vn"
-    },
     "CO2Stats": {
       "cats": [
         10
@@ -1649,16 +1638,6 @@
       },
       "icon": "CentOS.png",
       "website": "http://centos.org"
-    },
-    "CenteHTTPd": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "CenteHTTPd(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "CenteHTTPd.png",
-      "website": "http://cente.jp/cente/app/HTTPdc.html"
     },
     "Chameleon": {
       "cats": [
@@ -2703,22 +2682,6 @@
       "script": "dtagent.*\\.js",
       "website": "http://dynatrace.com"
     },
-    "E-Commerce Paraguay": {
-      "cats": [
-        6
-      ],
-      "icon": "eCommercePy.png",
-      "script": "cdn\\.e-commerceparaguay\\.com",
-      "website": "http://e-commerceparaguay.com"
-    },
-    "E-Merchant": {
-      "cats": [
-        6
-      ],
-      "icon": "E-Merchant.png",
-      "script": "cdn\\.e-merchant\\.com",
-      "website": "http://e-merchant.com"
-    },
     "EC-CUBE": {
       "cats": [
         6
@@ -2850,16 +2813,6 @@
       },
       "icon": "Embedthis.png",
       "website": "http://embedthis.com/appweb"
-    },
-    "Embedthis-http": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Embedthis-http(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "Embedthis.png",
-      "website": "http://github.com/embedthis/http"
     },
     "Ember.js": {
       "cats": [
@@ -3452,19 +3405,6 @@
         "GazURL": ""
       },
       "website": "https://whatcd.github.io/Gazelle/"
-    },
-    "Genexus": {
-      "cats": [
-        18,
-        19
-      ],
-      "html": "<[^>]+class=\"gxp-page\"",
-      "icon": "genexus.png",
-      "js": {
-        "gx.evt": ""
-      },
-      "script": "/gxp\\.js",
-      "website": "https://www.genexus.com"
     },
     "Gentoo": {
       "cats": [
@@ -6887,13 +6827,6 @@
       "script": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
       "website": "https://www.olark.com/"
     },
-    "OmniTouch 8660 My Teamwork": {
-      "cats": [
-        19
-      ],
-      "icon": "OmniTouch 8660 My Teamwork.png",
-      "website": "http://enterprise.alcatel-lucent.com"
-    },
     "OneAPM": {
       "cats": [
         10
@@ -7457,16 +7390,6 @@
       },
       "website": "http://percussion.com"
     },
-    "PerfSONAR-PS": {
-      "cats": [
-        19
-      ],
-      "headers": {
-        "User-agent": "perfSONAR-PS/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "PerfSONAR-PS.png",
-      "website": "http://psps.perfsonar.net"
-    },
     "Perl": {
       "cats": [
         27
@@ -7650,14 +7573,6 @@
       "script": "https?://cdn\\.plot\\.ly/plotly",
       "website": "https://plot.ly/javascript/"
     },
-    "Plura": {
-      "cats": [
-        19
-      ],
-      "html": "<iframe src=\"[^>]+pluraserver\\.com",
-      "icon": "Plura.png",
-      "website": "http://www.pluraprocessing.com"
-    },
     "Po.st": {
       "cats": [
         5
@@ -7820,15 +7735,6 @@
         "projesoft\\.js"
       ],
       "website": "https://www.projesoft.com.tr"
-    },
-    "Prospector": {
-      "cats": [
-        36
-      ],
-      "html": "<[^>]+data-name=['\"]prospectscript",
-      "icon": "Prospector.png",
-      "script": "processprospector\\.js",
-      "website": "http://prospector.io"
     },
     "Prototype": {
       "cats": [
@@ -8742,34 +8648,6 @@
       "script": "sencha-touch.*\\.js",
       "website": "http://sencha.com/products/touch"
     },
-    "Sentinel Keys Server": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "SentinelKeysServer\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "Sentinel.png",
-      "website": "http://www.safenet-inc.com/software-monetization/sentinel-rms"
-    },
-    "Sentinel License Monitor": {
-      "cats": [
-        19
-      ],
-      "html": "<title>Sentinel (?:Keys )?License Monitor</title>",
-      "icon": "Sentinel.png",
-      "website": "http://www.safenet-inc.com/software-monetization/sentinel-rms/"
-    },
-    "Sentinel Protection Server": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "SentinelProtectionServer\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "Sentinel.png",
-      "website": "http://www.safenet-inc.com/software-monetization/sentinel-rms/"
-    },
     "Serendipity": {
       "cats": [
         1,
@@ -9417,16 +9295,6 @@
       "script": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
       "website": "http://stackla.com/"
     },
-    "Stackla Social Hub": {
-      "cats": [
-        1
-      ],
-      "icon": "Stackla.png",
-      "js": {
-        "stacklaSocialHub": ""
-      },
-      "website": "http://stackla.com/"
-    },
     "Starlet": {
       "cats": [
         22
@@ -9678,16 +9546,6 @@
         "SyntaxHighlighter": ""
       },
       "website": "http://github.com/syntaxhighlighter"
-    },
-    "T-Soft": {
-      "cats": [
-        6
-      ],
-      "icon": "Tsoft.png",
-      "meta": {
-        "copyright": "T-Soft E-Ticaret Sistemleri"
-      },
-      "website": "http://www.tsoft.com.tr/"
     },
     "TWiki": {
       "cats": [
@@ -11668,16 +11526,6 @@
       "script": "[^a-z\\d]e107\\.js",
       "website": "http://e107.org"
     },
-    "eDevice SmartStack": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "eDevice SmartStack(?: ?/?([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "eDevice SmartStack.png",
-      "website": "http://edevice.com"
-    },
     "eSyndiCat": {
       "cats": [
         1
@@ -12583,13 +12431,6 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
-    },
-    "viennaCMS": {
-      "cats": [
-        1
-      ],
-      "html": "powered by <a href=\"[^>]+viennacms",
-      "website": "http://www.viennacms.nl"
     },
     "webEdition": {
       "cats": [
