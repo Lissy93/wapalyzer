@@ -104,7 +104,7 @@ function appsToDomTemplate(response) {
             }, [
               'img', {
                 class: 'detected__app-icon',
-                src: '../images/icons/' + ( response.apps[appName].icon || 'default.svg' )
+                src: '../images/icons/' + (response.apps[appName].icon || 'default.svg')
               },
             ], [
               'span', {
