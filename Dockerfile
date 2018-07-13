@@ -23,8 +23,7 @@ RUN apk del \
 RUN npm i -g \
 	jsonlint-cli \
 	manifoldjs \
-	svg2png-many \
-	yarn
+	svg2png-many
 
 RUN mkdir -p $WAPPALYZER_DIR
 

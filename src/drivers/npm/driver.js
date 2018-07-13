@@ -94,7 +94,7 @@ class Driver {
         this.apps.push({
           name: app.name,
           confidence: app.confidenceTotal.toString(),
-          version: app.version,
+          version: app.version || null,
           icon: app.props.icon || 'default.svg',
           website: app.props.website,
           categories
