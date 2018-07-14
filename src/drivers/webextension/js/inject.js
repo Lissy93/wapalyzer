@@ -5,10 +5,10 @@
 
       let value = properties.length ? window : null;
 
-      for ( let i = 0; i < properties.length; i ++ ) {
+      for (let i = 0; i < properties.length; i ++) {
         let property = properties[i];
 
-        if ( value && value.hasOwnProperty(property) ) {
+        if (value && value.hasOwnProperty(property)) {
           value = value[property];
         } else {
           value = null;
@@ -21,7 +21,7 @@
     };
 
     const onMessage = event => {
-      if ( event.data.id !== 'patterns' ) {
+      if (event.data.id !== 'patterns') {
         return;
       }
 
@@ -31,18 +31,18 @@
 
       const js = {};
 
-      for ( let appName in patterns ) {
-        if ( patterns.hasOwnProperty(appName) ) {
+      for (let appName in patterns) {
+        if (patterns.hasOwnProperty(appName)) {
           js[appName] = {};
 
-          for ( let chain in patterns[appName] ) {
-            if ( patterns[appName].hasOwnProperty(chain) ) {
+          for (let chain in patterns[appName]) {
+            if (patterns[appName].hasOwnProperty(chain)) {
               js[appName][chain] = {};
 
-              for ( let index in patterns[appName][chain] ) {
+              for (let index in patterns[appName][chain]) {
                 const value = detectJs(chain);
 
-                if ( value && patterns[appName][chain].hasOwnProperty(index) ) {
+                if (value && patterns[appName][chain].hasOwnProperty(index)) {
                   js[appName][chain][index] = value;
                 }
               }

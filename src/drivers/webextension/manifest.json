@@ -46,6 +46,10 @@
         "http://*/*",
 				"https://*/*"
 			],
+			"exclude_matches": [
+				"*.modirum.com/*",
+				"https://www.alphaecommerce.gr/*"
+			],
 			"js": [
 				"js/iframe.js"
 			],
