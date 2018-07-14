@@ -102,14 +102,14 @@ class Wappalyzer {
       Promise.all(promises)
         .then(() => {
           Object.keys(apps).forEach(appName => {
-            var app = apps[appName];
+            let app = apps[appName];
 
-            if ( !app.detected || !app.getConfidence() ) {
+            if (!app.detected || !app.getConfidence()) {
               delete apps[app.name];
             }
           });
 
-          this.resolveExcludes(apps);
+          this.resolveExcludes(apps, this.detected[url]);
           this.resolveImplies(apps, url.canonical);
 
           this.cacheDetectedApps(apps, url.canonical);
@@ -281,32 +281,32 @@ class Wappalyzer {
    */
   parseJsPatterns() {
     Object.keys(this.apps).forEach(appName => {
-      if ( this.apps[appName].js ) {
+      if (this.apps[appName].js) {
         this.jsPatterns[appName] = this.parsePatterns(this.apps[appName].js);
       }
     });
   }
 
-  resolveExcludes(apps) {
-    var excludes = [];
+  resolveExcludes(apps, detected) {
+    let excludes = [];
 
     // Exclude app in detected apps only
-    Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
+    Object.keys(Object.assign({}, apps, detected)).forEach(appName => {
+      let app = apps[appName];
 
-      if ( app.props.excludes ) {
+      if (app.props.excludes) {
         this.asArray(app.props.excludes).forEach(excluded => {
           excludes.push(excluded);
         });
       }
-    })
+    });
 
     // Remove excluded applications
     Object.keys(apps).forEach(appName => {
-      if ( excludes.indexOf(appName) > -1 ) {
+      if (excludes.indexOf(appName) > -1) {
         delete apps[appName];
       }
-    })
+    });
   }
 
   resolveImplies(apps, url) {
@@ -351,17 +351,15 @@ class Wappalyzer {
    */
   cacheDetectedApps(apps, url) {
     Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
+      let app = apps[appName];
 
       // Per URL
       this.detected[url][appName] = app;
 
-      Object.keys(app.confidence).forEach(id => {
-        this.detected[url][appName].confidence[id] = app.confidence[id];
-      });
+      Object.keys(app.confidence).forEach(id => this.detected[url][appName].confidence[id] = app.confidence[id]);
     })
 
-    if ( this.driver.ping instanceof Function ) {
+    if (this.driver.ping instanceof Function) {
       this.ping();
     }
   }
