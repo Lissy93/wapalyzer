@@ -6358,11 +6358,11 @@
       "cats": [
         1
       ],
-      "icon": "Mono.net.png",
-      "implies": "Piwik",
       "js": {
         "_monoTracker": ""
       },
+      "icon": "Mono.net.png",
+      "implies": "Matomo",
       "script": "monotracker(?:\\.min)?\\.js",
       "website": "https://www.mono.net/en"
     },
@@ -7473,10 +7473,26 @@
       "script": "//assets\\.pinterest\\.com/js/pinit\\.js",
       "website": "http://pinterest.com"
     },
-    "Piwik": {
+    "pirobase CMS": {
+      "cats": [
+        1
+      ],
+      "html": [
+        "<(?:script|link)[^>]/site/[a-z0-9/._-]+/resourceCached/[a-z0-9/._-]+",
+        "<input[^>]+cbi:///cms/"
+      ],
+      "icon": "pirobaseCMS.svg",
+      "implies": "Java",
+      "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
+    },
+    "Matomo": {
       "cats": [
         10
       ],
+      "js": {
+        "Matomo": "",
+        "_paq": ""
+      },
       "cookies": {
         "PIWIK_SESSID": ""
       },
@@ -7487,7 +7503,7 @@
       },
       "meta": {
         "apple-itunes-app": "app-id=737216887",
-        "generator": "Piwik - Open Source Web Analytics",
+        "generator": "(?:Matomo|Piwik) - Open Source Web Analytics",
         "google-play-app": "app-id=org\\.piwik\\.mobile2"
       },
       "script": "piwik\\.js|piwik\\.php",
