@@ -3,11 +3,11 @@
   "apps": {
     "1C-Bitrix": {
       "cats": [
-             "1"
+        1
       ],
       "headers": {
-             "Set-Cookie": "BITRIX_",
-             "X-Powered-CMS": "Bitrix Site Manager"
+        "Set-Cookie": "BITRIX_",
+        "X-Powered-CMS": "Bitrix Site Manager"
       },
       "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
       "icon": "1C-Bitrix.png",
@@ -606,12 +606,12 @@
         "AngularDart",
         "AngularJS"
       ],
-      "js": {
-        "ng.probe": "",
-        "ng.coreTokens": ""
-      },
       "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
+      "js": {
+        "ng.coreTokens": "",
+        "ng.probe": ""
+      },
       "website": "https://angular.io"
     },
     "Angular Material": {
@@ -3034,10 +3034,10 @@
       "cats": [
         6
       ],
+      "icon": "Fbits.png",
       "js": {
         "fbits": ""
       },
-      "icon": "Fbits.png",
       "website": "https://www.traycorp.com.br"
     },
     "Fedora": {
@@ -5708,8 +5708,8 @@
       ],
       "icon": "MakeShopKorea.png",
       "js": {
-        "MakeshopLogUniqueId": "",
-        "Makeshop": ""
+        "Makeshop": "",
+        "MakeshopLogUniqueId": ""
       },
       "website": "https://www.makeshop.co.kr"
     },
@@ -5812,6 +5812,27 @@
       },
       "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
+    },
+    "Matomo": {
+      "cats": [
+        10
+      ],
+      "cookies": {
+        "PIWIK_SESSID": ""
+      },
+      "icon": "Piwik.png",
+      "js": {
+        "Matomo": "",
+        "Piwik": "",
+        "_paq": ""
+      },
+      "meta": {
+        "apple-itunes-app": "app-id=737216887",
+        "generator": "(?:Matomo|Piwik) - Open Source Web Analytics",
+        "google-play-app": "app-id=org\\.piwik\\.mobile2"
+      },
+      "script": "piwik\\.js|piwik\\.php",
+      "website": "http://piwik.org"
     },
     "Mattermost": {
       "cats": [
@@ -6358,11 +6379,11 @@
       "cats": [
         1
       ],
+      "icon": "Mono.net.png",
+      "implies": "Matomo",
       "js": {
         "_monoTracker": ""
       },
-      "icon": "Mono.net.png",
-      "implies": "Matomo",
       "script": "monotracker(?:\\.min)?\\.js",
       "website": "https://www.mono.net/en"
     },
@@ -7473,39 +7494,6 @@
       "script": "//assets\\.pinterest\\.com/js/pinit\\.js",
       "website": "http://pinterest.com"
     },
-    "pirobase CMS": {
-      "cats": [
-        1
-      ],
-      "html": [
-        "<(?:script|link)[^>]/site/[a-z0-9/._-]+/resourceCached/[a-z0-9/._-]+",
-        "<input[^>]+cbi:///cms/"
-      ],
-      "icon": "pirobaseCMS.svg",
-      "implies": "Java",
-      "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
-    },
-    "Matomo": {
-      "cats": [
-        10
-      ],
-      "js": {
-        "Matomo": "",
-        "Piwik": "",
-        "_paq": ""
-      },
-      "cookies": {
-        "PIWIK_SESSID": ""
-      },
-      "icon": "Piwik.png",
-      "meta": {
-        "apple-itunes-app": "app-id=737216887",
-        "generator": "(?:Matomo|Piwik) - Open Source Web Analytics",
-        "google-play-app": "app-id=org\\.piwik\\.mobile2"
-      },
-      "script": "piwik\\.js|piwik\\.php",
-      "website": "http://piwik.org"
-    },
     "Planet": {
       "cats": [
         49
@@ -7596,6 +7584,17 @@
       },
       "website": "http://www.po.st/"
     },
+    "Polyfill": {
+      "cats": [
+        59
+      ],
+      "icon": "polyfill.svg",
+      "script": [
+        "^https?://cdn\\.polyfill\\.io/",
+        "/polyfill\\.min\\.js"
+      ],
+      "website": "https://polyfill.io"
+    },
     "Polymer": {
       "cats": [
         12
@@ -7607,17 +7606,6 @@
       },
       "script": "polymer\\.js",
       "website": "http://polymer-project.org"
-    },
-    "Polyfill": {
-      "cats": [
-        59
-      ],
-			"icon": "polyfill.svg",
-      "script": [
-				"^https?://cdn\\.polyfill\\.io/",
-				"/polyfill\\.min\\.js"
-			],
-      "website": "https://polyfill.io"
     },
     "Posterous": {
       "cats": [
@@ -9097,14 +9085,14 @@
     },
     "SoftTr": {
       "cats": [
-      6
+        6
       ],
       "icon": "softtr.png",
       "meta": {
-      "author": "SoftTr E-Ticaret Sitesi Yazılımı"
+        "author": "SoftTr E-Ticaret Sitesi Yazılımı"
       },
       "website": "http://www.softtr.com"
-      },
+    },
     "Solodev": {
       "cats": [
         1
@@ -10582,20 +10570,6 @@
       "script": "web2py\\.js",
       "website": "http://web2py.com"
     },
-    "Webdev": {
-      "cats": [
-        20
-      ],
-      "headers": {
-        "WebDevSrc": ""
-			},
-      "icon": "webdev.png",
-			"html": "<!-- [a-zA-Z0-9_]+ [\\d/]+ [\\d:]+ WebDev \\d\\d ([\\d.]+) -->\\;version:\\1",
-      "meta": {
-        "generator": "^WEBDEV$"
-      },
-      "website": "https://www.windev.com/webdev/index.html"
-    },
     "WebGUI": {
       "cats": [
         1
@@ -10629,6 +10603,20 @@
         "generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
       },
       "website": "http://websitex5.com"
+    },
+    "Webdev": {
+      "cats": [
+        20
+      ],
+      "headers": {
+        "WebDevSrc": ""
+      },
+      "html": "<!-- [a-zA-Z0-9_]+ [\\d/]+ [\\d:]+ WebDev \\d\\d ([\\d.]+) -->\\;version:\\1",
+      "icon": "webdev.png",
+      "meta": {
+        "generator": "^WEBDEV$"
+      },
+      "website": "https://www.windev.com/webdev/index.html"
     },
     "Webix": {
       "cats": [
@@ -11234,7 +11222,7 @@
         "PHP"
       ],
       "script": [
-        "/assets/[a-zA-Z0-9]{8}\/yii\\.js$",
+        "/assets/[a-zA-Z0-9]{8}\\/yii\\.js$",
         "/yii\\.(?:validation|activeForm)\\.js"
       ],
       "website": "https://www.yiiframework.com"
@@ -12431,9 +12419,9 @@
       "cats": [
         2
       ],
+      "html": "<div id=\"copyright\">Powered by vBulletin",
       "icon": "vBulletin.png",
       "implies": "PHP",
-			"html": "<div id=\"copyright\">Powered by vBulletin",
       "js": {
         "vBulletin": ""
       },

@@ -38,6 +38,12 @@
 						},
 						"required": true
 					},
+					"cookies": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "string"
+						}
+					},
 					"js": {
 						"type": "object",
 						"additionalProperties": {
