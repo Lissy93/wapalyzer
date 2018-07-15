@@ -9,7 +9,7 @@
   wappalyzer.driver.document = document;
 
 	const container = document.getElementById('wappalyzer-container');
-	const url = wappalyzer.parseUrl(top.location.href);
+	const url = wappalyzer.parseUrl(window.top.location.href);
 	const hasOwn = Object.prototype.hasOwnProperty;
 
   /**
@@ -27,7 +27,7 @@
       .filter(s => s.src)
       .map(s => s.src);
 
-    var html = new XMLSerializer().serializeToString(document).split('\n');
+    var html = new window.XMLSerializer().serializeToString(document).split('\n');
 
     html = html
       .slice(0, 1000).concat(html.slice(html.length - 1000))

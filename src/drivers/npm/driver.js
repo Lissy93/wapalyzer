@@ -1,41 +1,50 @@
 'use strict';
 
 const Wappalyzer = require('./wappalyzer');
-const request = require('request');
 const url = require('url');
 const fs = require('fs');
+const path = require('path');
 const Browser = require('zombie');
 
-const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
+const json = JSON.parse(fs.readFileSync(path.resolve(__dirname + '/apps.json')));
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
+
+const errorTypes = {
+	RESPONSE_NOT_OK: 'Response was not ok',
+	NO_RESPONSE: 'No response from server',
+	NO_HTML_DOCUMENT: 'No HTML document',
+};
 
 class Driver {
   constructor(pageUrl, options) {
     this.options = Object.assign({}, {
+			password: '',
+			proxy: null,
+			username: '',
       chunkSize: 5,
       debug: false,
       delay: 500,
+      htmlMaxCols: 2000,
+      htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
       maxWait: 5000,
       recursive: false,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
-      htmlMaxCols: 2000,
-      htmlMaxRows: 2000,
     }, options || {});
 
-    this.options.debug = Boolean(this.options.debug);
+    this.options.debug = Boolean(+this.options.debug);
+    this.options.recursive = Boolean(+this.options.recursive);
     this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
     this.options.maxDepth = parseInt(this.options.maxDepth, 10);
     this.options.maxUrls = parseInt(this.options.maxUrls, 10);
     this.options.maxWait = parseInt(this.options.maxWait, 10);
     this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10);
     this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10);
-    this.options.recursive = Boolean(this.options.recursive);
 
     this.origPageUrl = url.parse(pageUrl);
-    this.analyzedPageUrls = [];
+    this.analyzedPageUrls = {};
     this.apps = [];
     this.meta = {};
 
@@ -85,7 +94,7 @@ class Driver {
         this.apps.push({
           name: app.name,
           confidence: app.confidenceTotal.toString(),
-          version: app.version,
+          version: app.version || null,
           icon: app.props.icon || 'default.svg',
           website: app.props.website,
           categories
@@ -96,37 +105,49 @@ class Driver {
 
   fetch(pageUrl, index, depth) {
     // Return when the URL is a duplicate or maxUrls has been reached
-    if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
+    if (this.analyzedPageUrls[pageUrl.href] || this.analyzedPageUrls.length >= this.options.maxUrls) {
       return Promise.resolve();
     }
 
-    this.analyzedPageUrls.push(pageUrl.href);
+    this.analyzedPageUrls[pageUrl.href] = {
+			status: 0,
+		};
 
     const timerScope = {
       last: new Date().getTime()
     };
 
-    this.timer('fetch; url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms', timerScope);
+    this.timer('fetch; url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + (this.options.delay * index) + 'ms', timerScope);
 
-    return new Promise(resolve => this.sleep(this.options.delay * index).then(() => this.visit(pageUrl, timerScope, resolve)));
+    return new Promise((resolve, reject) => this.sleep(this.options.delay * index).then(() => this.visit(pageUrl, timerScope, resolve, reject)));
   }
 
-  visit(pageUrl, timerScope, resolve) {
+  visit(pageUrl, timerScope, resolve, reject) {
     const browser = new Browser({
+			proxy: this.options.proxy,
       silent: true,
       strictSSL: false,
       userAgent: this.options.userAgent,
       waitDuration: this.options.maxWait,
     });
 
+		browser.on('authenticate', auth => {
+			auth.username = this.options.username;
+			auth.password = this.options.password;
+		});
+
     this.timer('browser.visit start; url: ' + pageUrl.href, timerScope);
 
     browser.visit(pageUrl.href, () => {
       this.timer('browser.visit end; url: ' + pageUrl.href, timerScope);
 
-      if ( !this.responseOk(browser, pageUrl) ) {
-        return resolve();
-      }
+			try {
+				if (!this.checkResponse(browser, pageUrl)) {
+					return resolve();
+				}
+			} catch(error) {
+				return reject(error);
+			}
 
       const headers = this.getHeaders(browser);
       const html = this.getHtml(browser);
@@ -144,7 +165,7 @@ class Driver {
         .then(() => {
           const links = Array.prototype.reduce.call(
             browser.document.getElementsByTagName('a'), (results, link) => {
-              if ( link.protocol.match(/https?:/) || link.hostname === this.origPageUrl.hostname || extensions.test(link.pathname) ) {
+              if ( link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname) ) {
                 link.hash = '';
 
                 results.push(url.parse(link.href));
@@ -159,20 +180,18 @@ class Driver {
     });
   }
 
-  responseOk(browser, pageUrl) {
+  checkResponse(browser, pageUrl) {
     // Validate response
     const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
 
     if ( !resource ) {
-      this.wappalyzer.log('No response from server; url: ' + pageUrl.href, 'driver', 'error');
-
-      return false;
+      throw new Error('NO_RESPONSE');
     }
 
-    if ( resource.response.status !== 200 ) {
-      this.wappalyzer.log('Response was not OK; status: ' + resource.response.status + ' ' + resource.response.statusText + '; url: ' + pageUrl.href, 'driver', 'error');
+		this.analyzedPageUrls[pageUrl.href].status = resource.response.status;
 
-      return false;
+    if ( resource.response.status !== 200 ) {
+      throw new Error('RESPONSE_NOT_OK');
     }
 
     const headers = this.getHeaders(browser);
@@ -183,16 +202,14 @@ class Driver {
     if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
       this.wappalyzer.log('Skipping; url: ' + pageUrl.href + '; content type: ' + contentType, 'driver');
 
-      this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
+      delete this.analyzedPageUrls[pageUrl.href];
 
       return false;
     }
 
     // Validate document
     if ( !browser.document || !browser.document.documentElement ) {
-      this.wappalyzer.log('No HTML document; url: ' + pageUrl.href, 'driver', 'error');
-
-      return false;
+      throw new Error('NO_HTML_DOCUMENT');
     }
 
     return true;
@@ -225,7 +242,7 @@ class Driver {
         .slice(0, this.options.htmlMaxRows / 2).concat(html.slice(html.length - this.options.htmlMaxRows / 2))
         .map(line => line.substring(0, this.options.htmlMaxCols))
         .join('\n');
-    } catch ( error ) {
+    } catch(error) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
 
@@ -294,9 +311,19 @@ class Driver {
 
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
-        .catch(() => {})
+        .catch(error => {
+					const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
+					const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
+
+					this.analyzedPageUrls[pageUrl.href].error = {
+						type,
+						message,
+					};
+
+					this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
+				})
         .then(links => {
-          if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
+          if ( links && this.options.recursive && depth < this.options.maxDepth ) {
             return this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
           } else {
             return Promise.resolve();

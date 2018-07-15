@@ -29,7 +29,11 @@ function getOption(name, defaultValue = null) {
 
     browser.storage.local.get(name)
       .then(callback)
-      .catch(error => wappalyzer.log(error, 'driver', 'error'));
+      .catch(error => {
+        wappalyzer.log(error, 'driver', 'error')
+
+        reject();
+			});
   });
 }
 
@@ -37,7 +41,7 @@ function getOption(name, defaultValue = null) {
  * Set a value in localStorage
  */
 function setOption(name, value) {
-  var option = {};
+  const option = {};
 
   option[name] = value;
 
@@ -64,18 +68,12 @@ function post(url, body) {
     method: 'POST',
     body: JSON.stringify(body)
   })
-    .then(response => {
-      wappalyzer.log('POST ' + url + ': ' + response.status, 'driver');
-    })
-    .catch(error => {
-      wappalyzer.log('POST ' + url + ': ' + error, 'driver', 'error');
-    });
+    .then(response => wappalyzer.log(`POST ${url}: ${response.status}`, 'driver'))
+    .catch(error => wappalyzer.log(`POST ${url}: ${error}`, 'driver', 'error'));
 }
 
 fetch('../apps.json')
-  .then(response => {
-    return response.json();
-  })
+  .then(response => response.json())
   .then(json => {
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
@@ -86,23 +84,21 @@ fetch('../apps.json')
       .map(categoryId => parseInt(categoryId, 10))
       .sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
   })
-  .catch(error => {
-    wappalyzer.log('GET apps.json: ' + error, 'driver', 'error');
-  });
+  .catch(error => wappalyzer.log(`GET apps.json: ${error}`, 'driver', 'error'));
 
 // Version check
-var version = browser.runtime.getManifest().version;
+let version = browser.runtime.getManifest().version;
 
 getOption('version')
   .then(previousVersion => {
-    if ( previousVersion === null ) {
+    if (previousVersion === null) {
       openTab({
         url: wappalyzer.config.websiteURL + 'installed'
       });
-    } else if ( version !== previousVersion ) {
+    } else if (version !== previousVersion) {
       getOption('upgradeMessage', true)
         .then(upgradeMessage => {
-          if ( upgradeMessage ) {
+          if (upgradeMessage) {
             openTab({
               url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
               background: true
@@ -116,6 +112,8 @@ getOption('version')
 
 getOption('dynamicIcon', true);
 getOption('pinnedCategory');
+
+getOption('hostnameCache', {}).then(hostnameCache => wappalyzer.hostnameCache = hostnameCache);
 
 // Run content script on all tabs
 browser.tabs.query({ url: [ 'http://*/*', 'https://*/*' ] })
@@ -132,23 +130,23 @@ browser.tabs.query({ url: [ 'http://*/*', 'https://*/*' ] })
 browser.webRequest.onCompleted.addListener(request => {
   const headers = {};
 
-  if ( request.responseHeaders ) {
+  if (request.responseHeaders) {
     const url = wappalyzer.parseUrl(request.url);
 
     browser.tabs.query({ url: [ url.href ] })
       .then(tabs => {
         const tab = tabs[0] || null;
 
-        if ( tab ) {
+        if (tab) {
           request.responseHeaders.forEach(header => {
             const name = header.name.toLowerCase();
 
             headers[name] = headers[name] || [];
 
-            headers[name].push(( header.value || header.binaryValue || '' ).toString());
+            headers[name].push((header.value || header.binaryValue || '').toString());
           });
 
-          if ( headers['content-type'] && /\/x?html/.test(headers['content-type'][0]) ) {
+          if (headers['content-type'] && /\/x?html/.test(headers['content-type'][0])) {
             wappalyzer.analyze(url, { headers }, { tab });
           }
         }
@@ -158,14 +156,14 @@ browser.webRequest.onCompleted.addListener(request => {
 }, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
 
 // Listen for messages
-( chrome || browser ).runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if ( typeof message.id != 'undefined' ) {
-    if ( message.id !== 'log' ) {
-      wappalyzer.log('Message' + ( message.source ? ' from ' + message.source : '' ) + ': ' + message.id, 'driver');
+(chrome || browser).runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (typeof message.id != 'undefined') {
+    if (message.id !== 'log') {
+      wappalyzer.log('Message' + (message.source ? ' from ' + message.source : '') + ': ' + message.id, 'driver');
     }
 
-    var url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
-    var response;
+    let url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
+    let response;
 
     switch ( message.id ) {
       case 'log':
@@ -179,6 +177,8 @@ browser.webRequest.onCompleted.addListener(request => {
         break;
       case 'analyze':
         wappalyzer.analyze(url, message.subject, { tab: sender.tab });
+
+				setOption('hostnameCache', wappalyzer.hostnameCache);
 
         break;
       case 'ad_log':
@@ -219,16 +219,16 @@ wappalyzer.driver.document = document;
  * Log messages to console
  */
 wappalyzer.driver.log = (message, source, type) => {
-  console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+  console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
 };
 
 /**
  * Display apps
  */
 wappalyzer.driver.displayApps = (detected, meta, context) => {
-  var tab = context.tab;
+  let tab = context.tab;
 
-  if ( tab === undefined ) {
+  if (tab === undefined) {
     return;
   }
 
@@ -238,22 +238,22 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
 
   tabCache[tab.id].detected = detected;
 
-  var appName, found = false;
+  let found = false;
 
   // Find the main application to display
   [ options.pinnedCategory ].concat(categoryOrder).forEach(match => {
     Object.keys(detected).forEach(appName => {
-      var app = detected[appName];
+      let app = detected[appName];
 
       app.props.cats.forEach(category => {
-        if ( category === match && !found ) {
-          var icon = app.props.icon || 'default.svg';
+        if (category === match && !found) {
+          let icon = app.props.icon || 'default.svg';
 
-          if ( !options.dynamicIcon ) {
+          if (!options.dynamicIcon) {
             icon = 'default.svg';
           }
 
-          if ( /\.svg$/i.test(icon) ) {
+          if (/\.svg$/i.test(icon)) {
             icon = 'converted/' + icon.replace(/\.svg$/, '.png');
           }
 
@@ -272,7 +272,7 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
     });
   });
 
-  if ( typeof chrome !== 'undefined' ) {
+  if (typeof chrome !== 'undefined') {
     // Browser polyfill doesn't seem to work here
     chrome.pageAction.show(tab.id);
   } else {
@@ -284,14 +284,14 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
  * Fetch and cache robots.txt for host
  */
 wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
-  if ( robotsTxtQueue.hasOwnProperty(host) ) {
+  if (robotsTxtQueue.hasOwnProperty(host)) {
     return robotsTxtQueue[host];
   }
 
-  robotsTxtQueue[host] = new Promise((resolve, reject) => {
+  robotsTxtQueue[host] = new Promise(resolve => {
     getOption('tracking', true)
       .then(tracking => {
-        if ( !tracking ) {
+        if (!tracking) {
           return resolve([]);
         }
 
@@ -305,7 +305,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 
             const timeout = setTimeout(() => resolve([]), 3000);
 
-            fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt', { redirect: 'follow' })
+            fetch('http' + (secure ? 's' : '') + '://' + host + '/robots.txt', { redirect: 'follow' })
               .then(response => {
                 clearTimeout(timeout);
 
@@ -318,7 +318,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 
                 resolve(robotsTxtCache[host]);
               })
-              .catch(err => resolve([]));
+              .catch(() => resolve([]));
           });
       });
   })
@@ -330,15 +330,15 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = (hostnameCache, adCache) => {
+wappalyzer.driver.ping = (hostnameCache = {}, adCache = []) => {
   getOption('tracking', true)
     .then(tracking => {
-      if ( tracking ) {
-        if ( Object.keys(hostnameCache).length ) {
+      if (tracking) {
+        if (Object.keys(hostnameCache).length) {
           post('https://api.wappalyzer.com/ping/v1/', hostnameCache);
         }
 
-        if ( adCache.length ) {
+        if (adCache.length) {
           post('https://ad.wappalyzer.com/log/wp/', adCache);
         }
 

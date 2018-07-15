@@ -22,7 +22,7 @@ find . -name ".DS_Store" -exec rm {} \;
 
 echo "Prettifying apps.json..."
 
-jsonlint-cli -ist $'\t' src/apps.json
+sed -e 's/\\\\/{{ESCAPE}}/g' src/apps.json | jsonlint-cli -ps | sed -e 's/{{ESCAPE}}/\\\\/g' > /tmp/apps.json && cat /tmp/apps.json > src/apps.json
 
 echo "Converting SVG icons to PNG..."
 

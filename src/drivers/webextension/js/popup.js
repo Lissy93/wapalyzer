@@ -45,7 +45,7 @@ function replaceDom(domTemplate) {
   });
 
   Array.from(document.querySelectorAll('.detected__category-pin-wrapper')).forEach(pin => {
-    pin.addEventListener('click', event => {
+    pin.addEventListener('click', () => {
       const categoryId = parseInt(pin.dataset.categoryId, 10);
 
       if ( categoryId === pinnedCategory ) {
@@ -74,15 +74,13 @@ function replaceDom(domTemplate) {
 }
 
 function appsToDomTemplate(response) {
-  var
-    appName, confidence, version, categories,
-    template = [];
+	let template = [];
 
   if ( response.tabCache && Object.keys(response.tabCache.detected).length > 0 ) {
     const categories = {};
 
     // Group apps by category
-    for ( appName in response.tabCache.detected ) {
+    for ( let appName in response.tabCache.detected ) {
       response.apps[appName].cats.forEach(cat => {
         categories[cat] = categories[cat] || { apps: [] };
 
@@ -90,12 +88,12 @@ function appsToDomTemplate(response) {
       });
     }
 
-    for ( cat in categories ) {
+    for ( let cat in categories ) {
       const apps = [];
 
-      for ( appName in categories[cat].apps ) {
-        confidence = response.tabCache.detected[appName].confidenceTotal;
-        version    = response.tabCache.detected[appName].version;
+      for ( let appName in categories[cat].apps ) {
+        let confidence = response.tabCache.detected[appName].confidenceTotal;
+        let version    = response.tabCache.detected[appName].version;
 
         apps.push(
           [
@@ -106,7 +104,7 @@ function appsToDomTemplate(response) {
             }, [
               'img', {
                 class: 'detected__app-icon',
-                src: '../images/icons/' + ( response.apps[appName].icon || 'default.svg' )
+                src: '../images/icons/' + (response.apps[appName].icon || 'default.svg')
               },
             ], [
               'span', {

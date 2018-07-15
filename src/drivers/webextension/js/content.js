@@ -27,7 +27,7 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
 
     script.onload = () => {
       const onMessage = event => {
-        if ( event.data.id !== 'js' ) {
+        if (event.data.id !== 'js') {
           return;
         }
 
@@ -41,7 +41,7 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
       addEventListener('message', onMessage);
 
       sendMessage('get_js_patterns', {}, response => {
-        if ( response ) {
+        if (response) {
           postMessage({
             id: 'patterns',
             patterns: response.patterns
@@ -59,7 +59,7 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
 }
 
 function sendMessage(id, subject, callback) {
-  ( chrome || browser ).runtime.sendMessage({
+  (chrome || browser).runtime.sendMessage({
     id,
     subject,
     source: 'content.js'
