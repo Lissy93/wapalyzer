@@ -7462,7 +7462,7 @@
         "X-Powered-By": "Phusion Passenger ?([\\d.]+)?\\;version:\\1"
       },
       "icon": "Phusion Passenger.png",
-      "website": "http://phusionpassenger.com"
+      "website": "https://phusionpassenger.com"
     },
     "Pimcore": {
       "cats": [
@@ -8323,8 +8323,8 @@
         18
       ],
       "headers": {
-        "Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50",
-        "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?\\;confidence:50"
+        "Server": "mod_(?:rails|rack)",
+        "X-Powered-By": "mod_(?:rails|rack)"
       },
       "icon": "Ruby on Rails.png",
       "implies": "Ruby",
@@ -8332,7 +8332,7 @@
         "csrf-param": "^authenticity_token$\\;confidence:50"
       },
       "script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
-      "website": "http://rubyonrails.org"
+      "website": "https://rubyonrails.org"
     },
     "Ruxit": {
       "cats": [
