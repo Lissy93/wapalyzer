@@ -4411,7 +4411,7 @@
       "icon": "ImpressPages.png",
       "implies": "PHP",
       "meta": {
-        "generator": "ImpressPages(?: CMS)?( [\\d.]*)\\;version:\\1"
+        "generator": "ImpressPages(?: CMS)?( [\\d.]*)?\\;version:\\1"
       },
       "website": "http://impresspages.org"
     },
@@ -12270,7 +12270,7 @@
       "html": "(?:<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha')",
       "icon": "reCAPTCHA.png",
       "js": {
-        "Recaptcha": ""
+        "recaptcha": ""
       },
       "script": "(?:api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
       "website": "https://www.google.com/recaptcha/"
