@@ -2,17 +2,22 @@
  * WebExtension driver
  */
 
+/* eslint-env browser */
+/* global browser, chrome, fetch, Wappalyzer */
+
 /** global: browser */
+/** global: chrome */
+/** global: fetch */
 /** global: Wappalyzer */
 
 const wappalyzer = new Wappalyzer();
 
-var tabCache = {};
-var categoryOrder = [];
-var options = {};
-var robotsTxtQueue = {};
+const tabCache = {};
+let categoryOrder = [];
+const options = {};
+const robotsTxtQueue = {};
 
-browser.tabs.onRemoved.addListener(tabId => {
+browser.tabs.onRemoved.addListener((tabId) => {
   tabCache[tabId] = null;
 });
 
@@ -21,19 +26,19 @@ browser.tabs.onRemoved.addListener(tabId => {
  */
 function getOption(name, defaultValue = null) {
   return new Promise((resolve, reject) => {
-    const callback = item => {
-      options[name] = item.hasOwnProperty(name) ? item[name] : defaultValue;
+    const callback = (item) => {
+      options[name] = item[name] ? item[name] : defaultValue;
 
       resolve(options[name]);
     };
 
     browser.storage.local.get(name)
       .then(callback)
-      .catch(error => {
-        wappalyzer.log(error, 'driver', 'error')
+      .catch((error) => {
+        wappalyzer.log(error, 'driver', 'error');
 
         reject();
-			});
+      });
   });
 }
 
@@ -56,7 +61,7 @@ function setOption(name, value) {
 function openTab(args) {
   browser.tabs.create({
     url: args.url,
-    active: args.background === undefined || !args.background
+    active: args.background === undefined || !args.background,
   });
 }
 
@@ -66,7 +71,7 @@ function openTab(args) {
 function post(url, body) {
   fetch(url, {
     method: 'POST',
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   })
     .then(response => wappalyzer.log(`POST ${url}: ${response.status}`, 'driver'))
     .catch(error => wappalyzer.log(`POST ${url}: ${error}`, 'driver', 'error'));
@@ -74,7 +79,7 @@ function post(url, body) {
 
 fetch('../apps.json')
   .then(response => response.json())
-  .then(json => {
+  .then((json) => {
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
 
@@ -87,21 +92,21 @@ fetch('../apps.json')
   .catch(error => wappalyzer.log(`GET apps.json: ${error}`, 'driver', 'error'));
 
 // Version check
-let version = browser.runtime.getManifest().version;
+const { version } = browser.runtime.getManifest();
 
 getOption('version')
-  .then(previousVersion => {
+  .then((previousVersion) => {
     if (previousVersion === null) {
       openTab({
-        url: wappalyzer.config.websiteURL + 'installed'
+        url: `${wappalyzer.config.websiteURL}installed`,
       });
     } else if (version !== previousVersion) {
       getOption('upgradeMessage', true)
-        .then(upgradeMessage => {
+        .then((upgradeMessage) => {
           if (upgradeMessage) {
             openTab({
-              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
-              background: true
+              url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+              background: true,
             });
           }
         });
@@ -113,32 +118,37 @@ getOption('version')
 getOption('dynamicIcon', true);
 getOption('pinnedCategory');
 
-getOption('hostnameCache', {}).then(hostnameCache => wappalyzer.hostnameCache = hostnameCache);
+getOption('hostnameCache', {})
+  .then((hostnameCache) => {
+    wappalyzer.hostnameCache = hostnameCache;
+
+    return hostnameCache;
+  });
 
 // Run content script on all tabs
-browser.tabs.query({ url: [ 'http://*/*', 'https://*/*' ] })
-  .then(tabs => {
-    tabs.forEach(tab => {
+browser.tabs.query({ url: ['http://*/*', 'https://*/*'] })
+  .then((tabs) => {
+    tabs.forEach((tab) => {
       browser.tabs.executeScript(tab.id, {
-        file: '../js/content.js'
+        file: '../js/content.js',
       });
-    })
+    });
   })
   .catch(error => wappalyzer.log(error, 'driver', 'error'));
 
 // Capture response headers
-browser.webRequest.onCompleted.addListener(request => {
+browser.webRequest.onCompleted.addListener((request) => {
   const headers = {};
 
   if (request.responseHeaders) {
     const url = wappalyzer.parseUrl(request.url);
 
-    browser.tabs.query({ url: [ url.href ] })
-      .then(tabs => {
+    browser.tabs.query({ url: [url.href] })
+      .then((tabs) => {
         const tab = tabs[0] || null;
 
         if (tab) {
-          request.responseHeaders.forEach(header => {
+          request.responseHeaders.forEach((header) => {
             const name = header.name.toLowerCase();
 
             headers[name] = headers[name] || [];
@@ -153,32 +163,32 @@ browser.webRequest.onCompleted.addListener(request => {
       })
       .catch(error => wappalyzer.log(error, 'driver', 'error'));
   }
-}, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
+}, { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] }, ['responseHeaders']);
 
 // Listen for messages
 (chrome || browser).runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (typeof message.id != 'undefined') {
+  if (typeof message.id !== 'undefined') {
     if (message.id !== 'log') {
-      wappalyzer.log('Message' + (message.source ? ' from ' + message.source : '') + ': ' + message.id, 'driver');
+      wappalyzer.log(`Message${message.source ? ` from ${message.source}` : ''}: ${message.id}`, 'driver');
     }
 
-    let url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
+    const url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
     let response;
 
-    switch ( message.id ) {
+    switch (message.id) {
       case 'log':
         wappalyzer.log(message.subject, message.source);
 
         break;
       case 'init':
-        browser.cookies.getAll({ domain: '.' + url.hostname })
+        browser.cookies.getAll({ domain: `.${url.hostname}` })
           .then(cookies => wappalyzer.analyze(url, { cookies }, { tab: sender.tab }));
 
         break;
       case 'analyze':
         wappalyzer.analyze(url, message.subject, { tab: sender.tab });
 
-				setOption('hostnameCache', wappalyzer.hostnameCache);
+        setOption('hostnameCache', wappalyzer.hostnameCache);
 
         break;
       case 'ad_log':
@@ -200,7 +210,7 @@ browser.webRequest.onCompleted.addListener(request => {
         break;
       case 'get_js_patterns':
         response = {
-          patterns: wappalyzer.jsPatterns
+          patterns: wappalyzer.jsPatterns,
         };
 
         break;
@@ -226,14 +236,14 @@ wappalyzer.driver.log = (message, source, type) => {
  * Display apps
  */
 wappalyzer.driver.displayApps = (detected, meta, context) => {
-  let tab = context.tab;
+  const { tab } = context;
 
   if (tab === undefined) {
     return;
   }
 
   tabCache[tab.id] = tabCache[tab.id] || {
-    detected: []
+    detected: [],
   };
 
   tabCache[tab.id].detected = detected;
@@ -241,11 +251,11 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
   let found = false;
 
   // Find the main application to display
-  [ options.pinnedCategory ].concat(categoryOrder).forEach(match => {
-    Object.keys(detected).forEach(appName => {
-      let app = detected[appName];
+  [options.pinnedCategory].concat(categoryOrder).forEach((match) => {
+    Object.keys(detected).forEach((appName) => {
+      const app = detected[appName];
 
-      app.props.cats.forEach(category => {
+      app.props.cats.forEach((category) => {
         if (category === match && !found) {
           let icon = app.props.icon || 'default.svg';
 
@@ -254,15 +264,15 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
           }
 
           if (/\.svg$/i.test(icon)) {
-            icon = 'converted/' + icon.replace(/\.svg$/, '.png');
+            icon = `converted/${icon.replace(/\.svg$/, '.png')}`;
           }
 
           try {
             browser.pageAction.setIcon({
               tabId: tab.id,
-              path: '../images/icons/' + icon
+              path: `../images/icons/${icon}`,
             });
-          } catch(e) {
+          } catch (e) {
             // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
           }
 
@@ -284,35 +294,39 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
  * Fetch and cache robots.txt for host
  */
 wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
-  if (robotsTxtQueue.hasOwnProperty(host)) {
+  if (robotsTxtQueue[host]) {
     return robotsTxtQueue[host];
   }
 
-  robotsTxtQueue[host] = new Promise(resolve => {
+  robotsTxtQueue[host] = new Promise((resolve) => {
     getOption('tracking', true)
-      .then(tracking => {
+      .then((tracking) => {
         if (!tracking) {
-          return resolve([]);
+          resolve([]);
+
+          return;
         }
 
         getOption('robotsTxtCache')
-          .then(robotsTxtCache => {
+          .then((robotsTxtCache) => {
             robotsTxtCache = robotsTxtCache || {};
 
-            if ( host in robotsTxtCache ) {
-              return resolve(robotsTxtCache[host]);
+            if (host in robotsTxtCache) {
+              resolve(robotsTxtCache[host]);
+
+              return;
             }
 
             const timeout = setTimeout(() => resolve([]), 3000);
 
-            fetch('http' + (secure ? 's' : '') + '://' + host + '/robots.txt', { redirect: 'follow' })
-              .then(response => {
+            fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, { redirect: 'follow' })
+              .then((response) => {
                 clearTimeout(timeout);
 
                 return response.ok ? response.text() : '';
               })
-              .then(robotsTxt => {
-                robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
+              .then((robotsTxt) => {
+                robotsTxtCache[host] = Wappalyzer.parseRobotsTxt(robotsTxt);
 
                 setOption('robotsTxtCache', robotsTxtCache);
 
@@ -322,7 +336,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
           });
       });
   })
-  .finally(() => delete robotsTxtQueue[host]);
+    .finally(() => delete robotsTxtQueue[host]);
 
   return robotsTxtQueue[host];
 };
@@ -332,7 +346,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
  */
 wappalyzer.driver.ping = (hostnameCache = {}, adCache = []) => {
   getOption('tracking', true)
-    .then(tracking => {
+    .then((tracking) => {
       if (tracking) {
         if (Object.keys(hostnameCache).length) {
           post('https://api.wappalyzer.com/ping/v1/', hostnameCache);

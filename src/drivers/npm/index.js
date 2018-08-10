@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict';
+
 
 const Wappalyzer = require('./driver');
 
@@ -7,36 +7,39 @@ const args = process.argv.slice(2);
 
 const url = args.shift() || '';
 
-if ( !url ) {
+if (!url) {
   process.stderr.write('No URL specified\n');
 
   process.exit(1);
 }
 
-let options = {};
+const options = {};
+
 let arg;
 
-while ( arg = args.shift() ) {
-  let matches = /--([^=]+)=(.+)/.exec(arg);
+do {
+  arg = args.shift();
 
-  if ( matches ) {
-    let key = matches[1].replace(/-\w/g, matches => matches[1].toUpperCase());
-    let value = matches[2];
+  const matches = /--([^=]+)=(.+)/.exec(arg);
+
+  if (matches) {
+    const key = matches[1].replace(/-\w/g, _matches => _matches[1].toUpperCase());
+    const value = matches[2];
 
     options[key] = value;
   }
-}
+} while (arg);
 
 const wappalyzer = new Wappalyzer(url, options);
 
 wappalyzer.analyze()
-  .then(json => {
-    process.stdout.write(JSON.stringify(json) + '\n')
+  .then((json) => {
+    process.stdout.write(`${JSON.stringify(json)}\n`);
 
     process.exit(0);
   })
-  .catch(error => {
-    process.stderr.write(error + '\n')
+  .catch((error) => {
+    process.stderr.write(`${error}\n`);
 
     process.exit(1);
   });

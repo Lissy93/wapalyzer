@@ -1,12 +1,12 @@
 /** global: browser */
 /** global: XMLSerializer */
 
-if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
+if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
   try {
     sendMessage('init', {});
 
     // HTML
-    var html = new XMLSerializer().serializeToString(document).split('\n');
+    let html = new XMLSerializer().serializeToString(document).split('\n');
 
     html = html
       .slice(0, 1000).concat(html.slice(html.length - 1000))
@@ -26,7 +26,7 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
     const script = document.createElement('script');
 
     script.onload = () => {
-      const onMessage = event => {
+      const onMessage = (event) => {
         if (event.data.id !== 'js') {
           return;
         }
@@ -40,11 +40,11 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
 
       addEventListener('message', onMessage);
 
-      sendMessage('get_js_patterns', {}, response => {
+      sendMessage('get_js_patterns', {}, (response) => {
         if (response) {
           postMessage({
             id: 'patterns',
-            patterns: response.patterns
+            patterns: response.patterns,
           }, '*');
         }
       });
@@ -62,8 +62,8 @@ function sendMessage(id, subject, callback) {
   (chrome || browser).runtime.sendMessage({
     id,
     subject,
-    source: 'content.js'
-  }, callback || ( () => {} ));
+    source: 'content.js',
+  }, callback || (() => {}));
 }
 
 // https://stackoverflow.com/a/44774834

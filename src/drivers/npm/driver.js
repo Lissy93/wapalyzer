@@ -1,27 +1,79 @@
-'use strict';
 
-const Wappalyzer = require('./wappalyzer');
+
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
 const Browser = require('zombie');
+const Wappalyzer = require('./wappalyzer');
 
-const json = JSON.parse(fs.readFileSync(path.resolve(__dirname + '/apps.json')));
+const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)));
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
 
 const errorTypes = {
-	RESPONSE_NOT_OK: 'Response was not ok',
-	NO_RESPONSE: 'No response from server',
-	NO_HTML_DOCUMENT: 'No HTML document',
+  RESPONSE_NOT_OK: 'Response was not ok',
+  NO_RESPONSE: 'No response from server',
+  NO_HTML_DOCUMENT: 'No HTML document',
 };
+
+function sleep(ms) {
+  return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
+}
+
+function getHeaders(browser) {
+  const headers = {};
+
+  const resource = browser.resources.length
+    ? browser.resources.filter(_resource => _resource.response).shift() : null;
+
+  if (resource) {
+    // eslint-disable-next-line no-underscore-dangle
+    resource.response.headers._headers.forEach((header) => {
+      if (!headers[header[0]]) {
+        headers[header[0]] = [];
+      }
+
+      headers[header[0]].push(header[1]);
+    });
+  }
+
+  return headers;
+}
+
+function getScripts(browser) {
+  if (!browser.document || !browser.document.scripts) {
+    return [];
+  }
+
+  const scripts = Array.prototype.slice
+    .apply(browser.document.scripts)
+    .filter(script => script.src)
+    .map(script => script.src);
+
+  return scripts;
+}
+
+function getCookies(browser) {
+  const cookies = [];
+
+  if (browser.cookies) {
+    browser.cookies.forEach(cookie => cookies.push({
+      name: cookie.key,
+      value: cookie.value,
+      domain: cookie.domain,
+      path: cookie.path,
+    }));
+  }
+
+  return cookies;
+}
 
 class Driver {
   constructor(pageUrl, options) {
     this.options = Object.assign({}, {
-			password: '',
-			proxy: null,
-			username: '',
+      password: '',
+      proxy: null,
+      username: '',
       chunkSize: 5,
       debug: false,
       delay: 500,
@@ -58,46 +110,48 @@ class Driver {
     this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
     this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
 
-    process.on('uncaughtException', e => this.wappalyzer.log('Uncaught exception: ' + e.message, 'driver', 'error'));
+    process.on('uncaughtException', e => this.wappalyzer.log(`Uncaught exception: ${e.message}`, 'driver', 'error'));
   }
 
   analyze() {
     this.time = {
       start: new Date().getTime(),
       last: new Date().getTime(),
-    }
+    };
 
     return this.crawl(this.origPageUrl);
   }
 
   log(message, source, type) {
-    this.options.debug && console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+    if (this.options.debug) {
+      console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
+    }
   }
 
   displayApps(detected, meta) {
     this.meta = meta;
 
-    Object.keys(detected).forEach(appName => {
+    Object.keys(detected).forEach((appName) => {
       const app = detected[appName];
 
-      var categories = [];
+      const categories = [];
 
-      app.props.cats.forEach(id => {
-        var category = {};
+      app.props.cats.forEach((id) => {
+        const category = {};
 
         category[id] = json.categories[id].name;
 
-        categories.push(category)
+        categories.push(category);
       });
 
-      if ( !this.apps.some(detectedApp => detectedApp.name === app.name) ) {
+      if (!this.apps.some(detectedApp => detectedApp.name === app.name)) {
         this.apps.push({
           name: app.name,
           confidence: app.confidenceTotal.toString(),
           version: app.version || null,
           icon: app.props.icon || 'default.svg',
           website: app.props.website,
-          categories
+          categories,
         });
       }
     });
@@ -105,55 +159,65 @@ class Driver {
 
   fetch(pageUrl, index, depth) {
     // Return when the URL is a duplicate or maxUrls has been reached
-    if (this.analyzedPageUrls[pageUrl.href] || this.analyzedPageUrls.length >= this.options.maxUrls) {
+    if (
+      this.analyzedPageUrls[pageUrl.href]
+      || this.analyzedPageUrls.length >= this.options.maxUrls
+    ) {
       return Promise.resolve();
     }
 
     this.analyzedPageUrls[pageUrl.href] = {
-			status: 0,
-		};
-
-    const timerScope = {
-      last: new Date().getTime()
+      status: 0,
     };
 
-    this.timer('fetch; url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + (this.options.delay * index) + 'ms', timerScope);
+    const timerScope = {
+      last: new Date().getTime(),
+    };
 
-    return new Promise((resolve, reject) => this.sleep(this.options.delay * index).then(() => this.visit(pageUrl, timerScope, resolve, reject)));
+    this.timer(`fetch; url: ${pageUrl.href}; depth: ${depth}; delay: ${this.options.delay * index}ms`, timerScope);
+
+    return new Promise((resolve, reject) => {
+      sleep(this.options.delay * index)
+        .then(() => this.visit(pageUrl, timerScope, resolve, reject));
+    });
   }
 
   visit(pageUrl, timerScope, resolve, reject) {
     const browser = new Browser({
-			proxy: this.options.proxy,
+      proxy: this.options.proxy,
       silent: true,
       strictSSL: false,
       userAgent: this.options.userAgent,
       waitDuration: this.options.maxWait,
     });
 
-		browser.on('authenticate', auth => {
-			auth.username = this.options.username;
-			auth.password = this.options.password;
-		});
+    browser.on('authenticate', (auth) => {
+      auth.username = this.options.username;
+      auth.password = this.options.password;
+    });
 
-    this.timer('browser.visit start; url: ' + pageUrl.href, timerScope);
+    this.timer(`browser.visit start; url: ${pageUrl.href}`, timerScope);
 
     browser.visit(pageUrl.href, () => {
-      this.timer('browser.visit end; url: ' + pageUrl.href, timerScope);
+      this.timer(`browser.visit end; url: ${pageUrl.href}`, timerScope);
 
-			try {
-				if (!this.checkResponse(browser, pageUrl)) {
-					return resolve();
-				}
-			} catch(error) {
-				return reject(error);
-			}
+      try {
+        if (!this.checkResponse(browser, pageUrl)) {
+          resolve();
 
-      const headers = this.getHeaders(browser);
+          return;
+        }
+      } catch (error) {
+        reject(error);
+
+        return;
+      }
+
+      const headers = getHeaders(browser);
       const html = this.getHtml(browser);
-      const scripts = this.getScripts(browser);
+      const scripts = getScripts(browser);
       const js = this.getJs(browser);
-      const cookies = this.getCookies(browser);
+      const cookies = getCookies(browser);
 
       this.wappalyzer.analyze(pageUrl, {
         headers,
@@ -165,14 +229,14 @@ class Driver {
         .then(() => {
           const links = Array.prototype.reduce.call(
             browser.document.getElementsByTagName('a'), (results, link) => {
-              if ( link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname) ) {
+              if (link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname)) {
                 link.hash = '';
 
                 results.push(url.parse(link.href));
               }
 
               return results;
-            }, []
+            }, [],
           );
 
           return resolve(links);
@@ -182,25 +246,26 @@ class Driver {
 
   checkResponse(browser, pageUrl) {
     // Validate response
-    const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
+    const resource = browser.resources.length
+      ? browser.resources.filter(_resource => _resource.response).shift() : null;
 
-    if ( !resource ) {
+    if (!resource) {
       throw new Error('NO_RESPONSE');
     }
 
-		this.analyzedPageUrls[pageUrl.href].status = resource.response.status;
+    this.analyzedPageUrls[pageUrl.href].status = resource.response.status;
 
-    if ( resource.response.status !== 200 ) {
+    if (resource.response.status !== 200) {
       throw new Error('RESPONSE_NOT_OK');
     }
 
-    const headers = this.getHeaders(browser);
+    const headers = getHeaders(browser);
 
     // Validate content type
-    const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
+    const contentType = headers['content-type'] ? headers['content-type'].shift() : null;
 
-    if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
-      this.wappalyzer.log('Skipping; url: ' + pageUrl.href + '; content type: ' + contentType, 'driver');
+    if (!contentType || !/\btext\/html\b/.test(contentType)) {
+      this.wappalyzer.log(`Skipping; url: ${pageUrl.href}; content type: ${contentType}`, 'driver');
 
       delete this.analyzedPageUrls[pageUrl.href];
 
@@ -208,29 +273,11 @@ class Driver {
     }
 
     // Validate document
-    if ( !browser.document || !browser.document.documentElement ) {
+    if (!browser.document || !browser.document.documentElement) {
       throw new Error('NO_HTML_DOCUMENT');
     }
 
     return true;
-  }
-
-  getHeaders(browser) {
-    const headers = {};
-
-    const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
-
-    if ( resource ) {
-      resource.response.headers._headers.forEach(header => {
-        if ( !headers[header[0]] ){
-          headers[header[0]] = [];
-        }
-
-        headers[header[0]].push(header[1]);
-      });
-    }
-
-    return headers;
   }
 
   getHtml(browser) {
@@ -239,49 +286,37 @@ class Driver {
     try {
       html = browser.html()
         .split('\n')
-        .slice(0, this.options.htmlMaxRows / 2).concat(html.slice(html.length - this.options.htmlMaxRows / 2))
+        .slice(0, this.options.htmlMaxRows / 2)
+        .concat(html.slice(html.length - this.options.htmlMaxRows / 2))
         .map(line => line.substring(0, this.options.htmlMaxCols))
         .join('\n');
-    } catch(error) {
+    } catch (error) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
 
     return html;
   }
 
-  getScripts(browser) {
-    if ( !browser.document || !browser.document.scripts ) {
-      return [];
-    }
-
-    const scripts = Array.prototype.slice
-      .apply(browser.document.scripts)
-      .filter(script => script.src)
-      .map(script => script.src);
-
-    return scripts;
-  }
-
   getJs(browser) {
     const patterns = this.wappalyzer.jsPatterns;
     const js = {};
 
-    Object.keys(patterns).forEach(appName => {
+    Object.keys(patterns).forEach((appName) => {
       js[appName] = {};
 
-      Object.keys(patterns[appName]).forEach(chain => {
+      Object.keys(patterns[appName]).forEach((chain) => {
         js[appName][chain] = {};
 
         patterns[appName][chain].forEach((pattern, index) => {
           const properties = chain.split('.');
 
-          let value = properties.reduce((parent, property) => {
-            return parent && parent.hasOwnProperty(property) ? parent[property] : null;
-          }, browser.window);
+          let value = properties
+            .reduce((parent, property) => (parent && parent[property]
+              ? parent[property] : null), browser.window);
 
           value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
 
-          if ( value ) {
+          if (value) {
             js[appName][chain][index] = value;
           }
         });
@@ -291,81 +326,61 @@ class Driver {
     return js;
   }
 
-  getCookies(browser) {
-    const cookies = [];
-
-    if ( browser.cookies ) {
-      browser.cookies.forEach(cookie => cookies.push({
-        name: cookie.key,
-        value: cookie.value,
-        domain: cookie.domain,
-        path: cookie.path,
-      }));
-    }
-
-    return cookies;
-  }
-
   crawl(pageUrl, index = 1, depth = 1) {
-    pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
+    pageUrl.canonical = `${pageUrl.protocol}//${pageUrl.host}${pageUrl.pathname}`;
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       this.fetch(pageUrl, index, depth)
-        .catch(error => {
-					const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
-					const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
+        .catch((error) => {
+          const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
+          const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
 
-					this.analyzedPageUrls[pageUrl.href].error = {
-						type,
-						message,
-					};
+          this.analyzedPageUrls[pageUrl.href].error = {
+            type,
+            message,
+          };
 
-					this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
-				})
-        .then(links => {
-          if ( links && this.options.recursive && depth < this.options.maxDepth ) {
+          this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
+        })
+        .then((links) => {
+          if (links && this.options.recursive && depth < this.options.maxDepth) {
             return this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
-          } else {
-            return Promise.resolve();
           }
+          return Promise.resolve();
         })
         .then(() => {
           resolve({
             urls: this.analyzedPageUrls,
             applications: this.apps,
-            meta: this.meta
+            meta: this.meta,
           });
         });
     });
   }
 
   chunk(links, depth, chunk = 0) {
-    if ( links.length === 0 ) {
+    if (links.length === 0) {
       return Promise.resolve();
     }
 
     const chunked = links.splice(0, this.options.chunkSize);
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)))
         .then(() => this.chunk(links, depth, chunk + 1))
         .then(() => resolve());
     });
   }
 
-  sleep(ms) {
-    return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
-  }
-
   timer(message, scope) {
     const time = new Date().getTime();
-    const sinceStart = ( Math.round(( time - this.time.start ) / 10) / 100) + 's';
-    const sinceLast = ( Math.round(( time - scope.last ) / 10) / 100) + 's';
+    const sinceStart = `${Math.round((time - this.time.start) / 10) / 100}s`;
+    const sinceLast = `${Math.round((time - scope.last) / 10) / 100}s`;
 
-    this.wappalyzer.log('[timer] ' + message + '; lapsed: ' + sinceLast + ' / ' + sinceStart, 'driver');
+    this.wappalyzer.log(`[timer] ${message}; lapsed: ${sinceLast} / ${sinceStart}`, 'driver');
 
     scope.last = time;
   }
-};
+}
 
 module.exports = Driver;
