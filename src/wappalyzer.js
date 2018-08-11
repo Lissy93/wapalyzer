@@ -69,10 +69,11 @@ function addDetected(app, pattern, type, value, key) {
 
 function resolveExcludes(apps, detected) {
   const excludes = [];
+  const detectedApps = Object.assign({}, apps, detected);
 
   // Exclude app in detected apps only
-  Object.keys(Object.assign({}, apps, detected)).forEach((appName) => {
-    const app = apps[appName];
+  Object.keys(detectedApps).forEach((appName) => {
+    const app = detectedApps[appName];
 
     if (app.props.excludes) {
       asArray(app.props.excludes).forEach((excluded) => {
@@ -106,7 +107,7 @@ class Application {
   getConfidence() {
     let total = 0;
 
-    Object.values(this.confidence).forEach((id) => {
+    Object.keys(this.confidence).forEach((id) => {
       total += this.confidence[id];
     });
 
@@ -556,14 +557,26 @@ class Wappalyzer {
     const patterns = this.parsePatterns(app.props.meta);
     const promises = [];
 
+    if (!app.props.meta) {
+      return Promise.resolve();
+    }
+
     let matches;
 
-    while (patterns && (matches = regex.exec(html))) {
-      patterns.forEach((meta) => {
+    do {
+      matches = regex.exec(html);
+
+      if (!matches) {
+        break;
+      }
+
+      const [match] = matches;
+
+      Object.keys(patterns).forEach((meta) => {
         const r = new RegExp(`(?:name|property)=["']${meta}["']`, 'i');
 
-        if (r.test(matches[0])) {
-          const content = matches[0].match(/content=("|')([^"']+)("|')/i);
+        if (r.test(match)) {
+          const content = match.match(/content=("|')([^"']+)("|')/i);
 
           promises.push(asyncForEach(patterns[meta], (pattern) => {
             if (content && content.length === 4 && pattern.regex.test(content[2])) {
@@ -572,9 +585,9 @@ class Wappalyzer {
           }));
         }
       });
-    }
+    } while (matches);
 
-    return promises ? Promise.all(promises) : Promise.resolve();
+    return Promise.all(promises);
   }
 
   /**
