@@ -60,6 +60,7 @@ zip -qr ../../../build/wappalyzer_webextension.zip . \
   -x \*.gitkeep \
   -x \*.js.map \
   -x \*.min.js \
+  -x \*.spec.js \
   -x \*.yarn-integrity \
   -x \*package.json \
   -x \*LICENSE \

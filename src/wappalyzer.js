@@ -138,7 +138,9 @@ class Wappalyzer {
    * Log messages to console
    */
   log(message, source, type) {
-    this.driver.log(message, source || '', type || 'debug');
+    if (this.driver.log) {
+      this.driver.log(message, source || '', type || 'debug');
+    }
   }
 
   analyze(url, data, context) {
@@ -178,7 +180,7 @@ class Wappalyzer {
 
       const app = apps[appName];
 
-      this.analyzeUrl(app, url);
+      promises.push(this.analyzeUrl(app, url));
 
       if (html) {
         promises.push(this.analyzeHtml(app, html));
