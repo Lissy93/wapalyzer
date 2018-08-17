@@ -291,12 +291,12 @@ class Wappalyzer {
     let userAgent;
 
     robotsTxt.split('\n').forEach((line) => {
-      let matches = /^User-agent:\s*(.+)$/i.exec(line);
+      let matches = /^User-agent:\s*(.+)$/i.exec(line.trim());
 
       if (matches) {
         userAgent = matches[1].toLowerCase();
       } else if (userAgent === '*' || userAgent === 'wappalyzer') {
-        matches = /^Disallow:\s*(.+)$/i.exec(line);
+        matches = /^Disallow:\s*(.+)$/i.exec(line.trim());
 
         if (matches) {
           disallow.push(matches[1]);
@@ -394,39 +394,41 @@ class Wappalyzer {
   resolveImplies(apps, url) {
     let checkImplies = true;
 
+    const resolve = (appName) => {
+      const app = apps[appName];
+
+      if (app && app.props.implies) {
+        asArray(app.props.implies).forEach((implied) => {
+          [implied] = this.parsePatterns(implied);
+
+          if (!this.apps[implied.string]) {
+            this.log(`Implied application ${implied.string} does not exist`, 'core', 'warn');
+
+            return;
+          }
+
+          if (!(implied.string in apps)) {
+            apps[implied.string] = this.detected[url] && this.detected[url][implied.string]
+              ? this.detected[url][implied.string]
+              : new Application(implied.string, this.apps[implied.string], true);
+
+            checkImplies = true;
+          }
+
+          // Apply app confidence to implied app
+          Object.keys(app.confidence).forEach((id) => {
+            apps[implied.string].confidence[`${id} implied by ${appName}`] = app.confidence[id] * (implied.confidence === undefined ? 1 : implied.confidence / 100);
+          });
+        });
+      }
+    };
+
     // Implied applications
     // Run several passes as implied apps may imply other apps
     while (checkImplies) {
       checkImplies = false;
 
-      Object.keys(apps).forEach((appName) => {
-        const app = apps[appName];
-
-        if (app && app.props.implies) {
-          asArray(app.props.implies).forEach((implied) => {
-            [implied] = this.parsePatterns(implied);
-
-            if (!this.apps[implied.string]) {
-              this.log(`Implied application ${implied.string} does not exist`, 'core', 'warn');
-
-              return;
-            }
-
-            if (!(implied.string in apps)) {
-              apps[implied.string] = this.detected[url] && this.detected[url][implied.string]
-                ? this.detected[url][implied.string]
-                : new Application(implied.string, this.apps[implied.string], true);
-
-              checkImplies = true;
-            }
-
-            // Apply app confidence to implied app
-            Object.keys(app.confidence).forEach((id) => {
-              apps[implied.string].confidence[`${id} implied by ${appName}`] = app.confidence[id] * (implied.confidence === undefined ? 1 : implied.confidence / 100);
-            });
-          });
-        }
-      });
+      Object.keys(apps).forEach(resolve);
     }
   }
 
