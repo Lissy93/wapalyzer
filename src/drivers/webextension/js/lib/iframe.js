@@ -997,6 +997,8 @@
         return;
       }
 
+      if (!adData) return;
+      
       if (adData.postMessageId === POST_MSG_ID) {
         delete adData.postMessageId;
 
