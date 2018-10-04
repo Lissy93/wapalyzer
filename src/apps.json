@@ -277,6 +277,14 @@
       "url": "\\.cfm(?:$|\\?)",
       "website": "http://adobe.com/products/coldfusion-family.html"
     },
+    "Adobe DTM": {
+      "cats": [
+        42
+      ],
+      "script": "//assets.adobedtm.com/",
+      "icon": "adobedmt.png",
+      "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
+    },
     "Adobe Experience Manager": {
       "cats": [
         1
@@ -1399,6 +1407,9 @@
         "<main id=\"bugzilla-body\"",
         "<span id=\"information\" class=\"header_addl_info\">version ([\\d.]+)<\\;version:\\1"
       ],
+      "cookies": {
+        "Bugzilla_login_request_cookie": ""
+      },
       "icon": "Bugzilla.png",
       "implies": "Perl",
       "js": {
@@ -1859,6 +1870,17 @@
       "icon": "Cloudera.png",
       "website": "http://www.cloudera.com"
     },
+    "Coaster CMS": {
+      "cats": [
+        1
+      ],
+      "icon": "coaster-cms.png",
+      "implies": "Laravel",
+      "meta": {
+        "generator": "^Coaster CMS v([\\d.]+)$\\;version:\\1"
+      },
+      "website": "https://www.coastercms.org"
+    },
     "CodeIgniter": {
       "cats": [
         18
@@ -2183,7 +2205,10 @@
         "criteo_pubtag": "",
         "criteo_q": ""
       },
-      "script": "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+      "script":[ 
+        "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+        "//static.criteo.net/js/ld/ld.js"
+      ],
       "website": "http://criteo.com"
     },
     "Cross Pixel": {
@@ -2833,6 +2858,14 @@
         "Ember.VERSION": "(.*)\\;version:\\1"
       },
       "website": "http://emberjs.com"
+    },
+    "Ensighten": {
+      "cats": [
+        42
+      ],
+      "script": "//nexus\\.ensighten\\.com/",
+      "icon": "ensighten.png",
+      "website": "https://success.ensighten.com/hc/en-us"
     },
     "Enyo": {
       "cats": [
@@ -3677,6 +3710,7 @@
         "_gat": ""
       },
       "icon": "Google Analytics.svg",
+			"html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
       "js": {
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""
@@ -6017,8 +6051,8 @@
       "html": "<input[^>]+name=\"__VIEWSTATE",
       "icon": "Microsoft ASP.NET.png",
       "implies": "IIS\\;confidence:50",
-      "url": "\\.aspx(?:$|\\?)",
-      "website": "http://www.asp.net"
+      "url": "\\.aspx?(?:$|\\?)",
+      "website": "https://www.asp.net"
     },
     "Microsoft Excel": {
       "cats": [
@@ -6231,8 +6265,7 @@
         "Modernizr._version": "(.*)\\;version:\\1"
       },
       "script": [
-        "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
-        "/([\\d.]+)/modernizr(?:\\.min)?\\.js\\;version:\\1"
+        "([\\d.]+)?/modernizr(?:.([\\d.]+))?.*\\.js\\;version:\\1?\\1:\\2"
       ],
       "website": "https://modernizr.com"
     },
@@ -6733,7 +6766,8 @@
         22
       ],
       "headers": {
-        "Server": "nginx(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "nginx(?:/([\\d.]+))?\\;version:\\1",
+				"X-Fastcgi-Cache": ""
       },
       "icon": "Nginx.svg",
       "website": "http://nginx.org/en"
@@ -8397,7 +8431,7 @@
         13
       ],
       "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
-      "script": {
+      "js": {
         "Raven.config": "",
         "ravenOptions.whitelistUrls": ""
       },
@@ -8865,6 +8899,20 @@
         "/engine/Shopware/"
       ],
       "website": "http://shopware.com"
+    },
+    "Signal": {
+      "cats": [
+        32
+      ],
+      "script": [
+        "//s\\.btstatic\\.com/tag\\.js",
+        "//s\\.thebrighttag\\.com/iframe\\?"
+      ],
+      "js": {
+        "signalData": ""
+      },
+      "icon": "signal.png",
+      "website": "https://www.signal.co/"
     },
     "Silva": {
       "cats": [
@@ -9656,7 +9704,7 @@
       "script": [
         "^//tags\\.tiqcdn\\.com/",
         "/tealium/utag\\.js$"
-      ],
+        ],
       "website": "http://tealium.com"
     },
     "TeamCity": {
@@ -11181,6 +11229,15 @@
         "YStore": ""
       },
       "website": "http://smallbusiness.yahoo.com/ecommerce"
+    },
+    "Yahoo! Tag Manager": {
+      "cats": [
+        42
+      ],
+      "html":"<!-- (?:End )?Yahoo! Tag Manager -->",
+      "script": "b\\.yjtag\\.jp/iframe",
+      "icon": "yahoo.png",
+      "website": "https://tagmanager.yahoo.co.jp/"
     },
     "Yahoo! Web Analytics": {
       "cats": [
