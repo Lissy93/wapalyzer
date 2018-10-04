@@ -1334,9 +1334,11 @@
     },
     "Brightspot": {
       "cats": [
-        1 
+        1
       ],
-      "headers": { "X-Powered-By": "^Brightspot$" },
+      "headers": {
+        "X-Powered-By": "^Brightspot$"
+      },
       "icon": "Brightspot.svg",
       "implies": "Java",
       "website": "https://www.brightspot.com"
@@ -2681,9 +2683,9 @@
       "cats": [
         10
       ],
-			"headers": {
-				"X-dynaTrace-JS-Agent": ""
-			},
+      "headers": {
+        "X-dynaTrace-JS-Agent": ""
+      },
       "icon": "Dynatrace.png",
       "script": "dtagent.*\\.js",
       "website": "http://dynatrace.com"
@@ -5662,9 +5664,9 @@
       ],
       "icon": "Magento.png",
       "implies": [
-				"PHP",
-				"MySQL"
-			],
+        "PHP",
+        "MySQL"
+      ],
       "js": {
         "Mage": "",
         "VarienForm": ""
@@ -8883,7 +8885,7 @@
       "meta": {
         "generator": "^SilverStripe"
       },
-			"implies": "PHP",
+      "implies": "PHP",
       "website": "https://www.silverstripe.org"
     },
     "SimpleHTTP": {
@@ -9556,7 +9558,7 @@
       "meta": {
         "generator": "^Sympa$"
       },
-			"html": "<a href=\"https?://www\\.sympa\\.org\">\\s*Powered by Sympa\\s*</a>",
+      "html": "<a href=\"https?://www\\.sympa\\.org\">\\s*Powered by Sympa\\s*</a>",
       "icon": "sympa.png",
       "implies": "Perl",
       "website": "https://www.sympa.org/"
@@ -10734,12 +10736,12 @@
       ],
       "icon": "Weebly.png",
       "implies": [
-				"PHP",
-				"MySQL"
-			],
-			"js": {
-				"_W.configDomain": ""
-			},
+        "PHP",
+        "MySQL"
+      ],
+      "js": {
+        "_W.configDomain": ""
+      },
       "script": "cdn\\d+\\.editmysite\\.com",
       "website": "https://www.weebly.com"
     },
@@ -12485,7 +12487,7 @@
       "cookies": {
         "bbsessionhash": "",
         "bblastactivity": "",
-				"bblastvisit": ""
+        "bblastvisit": ""
       },
       "meta": {
         "generator": "vBulletin ?([\\d.]+)?\\;version:\\1"
