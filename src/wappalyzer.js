@@ -657,7 +657,7 @@ class Wappalyzer {
           const value = results[string][index];
 
           if (pattern && pattern.regex.test(value)) {
-            addDetected(app, pattern, 'js', value);
+            addDetected(app, pattern, 'js', value, string);
           }
         }));
       }
