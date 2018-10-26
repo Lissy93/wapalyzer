@@ -75,7 +75,7 @@ class Driver {
       chunkSize: 5,
       debug: false,
       delay: 500,
-      htmlMaxCols: 200,
+      htmlMaxCols: 2000,
       htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
@@ -212,13 +212,10 @@ class Driver {
       }
 
       const headers = getHeaders(browser);
-      const html = this.getHtml(browser)
-      ;//.replace(new RegExp(`(.{${this.options.htmlMaxCols},}[^>]*>)<`, 'g'), (match, p1) => `${p1}\n<`);
+      const html = this.getHtml(browser);
       const scripts = getScripts(browser);
       const js = this.getJs(browser);
       const cookies = getCookies(browser);
-
-      // console.log({ html, foo: html.split('\n').length });
 
       this.wappalyzer.analyze(pageUrl, {
         headers,
@@ -286,6 +283,7 @@ class Driver {
 
     try {
       html = browser.html()
+        .replace(new RegExp(`(.{${this.options.htmlMaxCols},}[^>]*>)<`, 'g'), (match, p1) => `${p1}\n<`)
         .split('\n')
         .slice(0, this.options.htmlMaxRows / 2)
         .concat(html.slice(html.length - this.options.htmlMaxRows / 2))
