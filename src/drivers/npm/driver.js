@@ -1,5 +1,3 @@
-
-
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
@@ -77,7 +75,7 @@ class Driver {
       chunkSize: 5,
       debug: false,
       delay: 500,
-      htmlMaxCols: 2000,
+      htmlMaxCols: 200,
       htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
@@ -214,10 +212,13 @@ class Driver {
       }
 
       const headers = getHeaders(browser);
-      const html = this.getHtml(browser);
+      const html = this.getHtml(browser)
+      ;//.replace(new RegExp(`(.{${this.options.htmlMaxCols},}[^>]*>)<`, 'g'), (match, p1) => `${p1}\n<`);
       const scripts = getScripts(browser);
       const js = this.getJs(browser);
       const cookies = getCookies(browser);
+
+      // console.log({ html, foo: html.split('\n').length });
 
       this.wappalyzer.analyze(pageUrl, {
         headers,

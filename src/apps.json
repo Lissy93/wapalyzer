@@ -2205,7 +2205,7 @@
         "criteo_pubtag": "",
         "criteo_q": ""
       },
-      "script":[ 
+      "script": [
         "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
         "//static.criteo.net/js/ld/ld.js"
       ],
@@ -3710,7 +3710,7 @@
         "_gat": ""
       },
       "icon": "Google Analytics.svg",
-			"html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
+      "html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
       "js": {
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""
@@ -6767,7 +6767,7 @@
       ],
       "headers": {
         "Server": "nginx(?:/([\\d.]+))?\\;version:\\1",
-				"X-Fastcgi-Cache": ""
+        "X-Fastcgi-Cache": ""
       },
       "icon": "Nginx.svg",
       "website": "http://nginx.org/en"
@@ -9704,7 +9704,7 @@
       "script": [
         "^//tags\\.tiqcdn\\.com/",
         "/tealium/utag\\.js$"
-        ],
+      ],
       "website": "http://tealium.com"
     },
     "TeamCity": {
@@ -11234,7 +11234,7 @@
       "cats": [
         42
       ],
-      "html":"<!-- (?:End )?Yahoo! Tag Manager -->",
+      "html": "<!-- (?:End )?Yahoo! Tag Manager -->",
       "script": "b\\.yjtag\\.jp/iframe",
       "icon": "yahoo.png",
       "website": "https://tagmanager.yahoo.co.jp/"
