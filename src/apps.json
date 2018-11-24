@@ -2584,6 +2584,10 @@
       "cookies": {
         "DokuWiki": ""
       },
+			"html": [
+				"<div[^>]+id=\"dokuwiki__>",
+				"<a[^>]+href=\"#dokuwiki__"
+			],
       "icon": "DokuWiki.png",
       "implies": "PHP",
       "meta": {
