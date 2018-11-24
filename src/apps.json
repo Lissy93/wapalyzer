@@ -56,23 +56,6 @@
       "icon": "ebis.png",
       "website": "http://www.ebis.ne.jp"
     },
-    "AMPcms": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "AMP": ""
-      },
-      "headers": {
-        "X-AMP-Version": "([\\d.]+)\\;version:\\1"
-      },
-      "icon": "AMPcms.png",
-      "implies": "PHP",
-      "js": {
-        "amp_js_init": ""
-      },
-      "website": "http://www.ampcms.org"
-    },
     "AOLserver": {
       "cats": [
         22
@@ -123,17 +106,6 @@
       "html": "<html[^>]* (?:amp|⚡)",
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
-    },
-    "Accessible Portal": {
-      "cats": [
-        1
-      ],
-      "icon": "Accessible Portal.png",
-      "implies": "PHP",
-      "meta": {
-        "generator": "Accessible Portal"
-      },
-      "website": "http://www.accessibleportal.com"
     },
     "Acquia Cloud": {
       "cats": [
@@ -1376,17 +1348,6 @@
       },
       "website": "http://bubble.is"
     },
-    "BugSense": {
-      "cats": [
-        10
-      ],
-      "icon": "BugSense.png",
-      "js": {
-        "Bugsense": ""
-      },
-      "script": "bugsense\\.js",
-      "website": "http://bugsense.com"
-    },
     "BugSnag": {
       "cats": [
         10
@@ -1523,14 +1484,6 @@
         "generator": "CMSimple( [\\d.]+)?\\;version:\\1"
       },
       "website": "http://www.cmsimple.org/en"
-    },
-    "CO2Stats": {
-      "cats": [
-        10
-      ],
-      "html": "src=[^>]+co2stats\\.com/propres\\.php",
-      "icon": "CO2Stats.png",
-      "website": "http://co2stats.com"
     },
     "CPG Dragonfly": {
       "cats": [
@@ -3923,16 +3876,6 @@
       "implies": "WordPress",
       "script": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "http://gravityforms.com"
-    },
-    "Gravity Insights": {
-      "cats": [
-        10
-      ],
-      "icon": "Gravity Insights.png",
-      "js": {
-        "gravityInsightsParams": ""
-      },
-      "website": "http://insights.gravity.com"
     },
     "Green Valley CMS": {
       "cats": [
@@ -6662,17 +6605,6 @@
       "icon": "Netlify.svg",
       "website": "https://www.netlify.com/"
     },
-    "Netmonitor": {
-      "cats": [
-        10
-      ],
-      "icon": "Netmonitor.png",
-      "js": {
-        "netmonitor": ""
-      },
-      "script": "netmonitor\\.fi/nmtracker\\.js",
-      "website": "http://netmonitor.fi/en"
-    },
     "Neto": {
       "cats": [
         6
@@ -8773,17 +8705,6 @@
       "script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
       "website": "http://shinystat.com"
     },
-    "Shopalize": {
-      "cats": [
-        5,
-        10
-      ],
-      "icon": "Shopalize.png",
-      "js": {
-        "Shopalize": ""
-      },
-      "website": "http://shopalize.com"
-    },
     "Shopatron": {
       "cats": [
         6
@@ -10620,14 +10541,6 @@
       "icon": "Warp.png",
       "implies": "Haskell",
       "website": "http://www.stackage.org/package/warp"
-    },
-    "Web Optimizer": {
-      "cats": [
-        10
-      ],
-      "html": "<title [^>]*lang=\"wo\">",
-      "icon": "Web Optimizer.png",
-      "website": "http://www.web-optimizer.us"
     },
     "Web2py": {
       "cats": [
