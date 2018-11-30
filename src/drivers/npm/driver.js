@@ -106,7 +106,8 @@ class Driver {
     this.wappalyzer.parseJsPatterns();
 
     this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
-    this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
+    this.wappalyzer.driver
+      .displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
 
     process.on('uncaughtException', e => this.wappalyzer.log(`Uncaught exception: ${e.message}`, 'driver', 'error'));
   }
@@ -282,16 +283,25 @@ class Driver {
     let html = '';
 
     try {
-      html = browser.html()
-        .replace(new RegExp(`(.{${this.options.htmlMaxCols},}[^>]*>)<`, 'g'), (match, p1) => `${p1}\n<`)
-        .split('\n')
-        .slice(0, this.options.htmlMaxRows / 2)
-        .concat(html.slice(html.length - this.options.htmlMaxRows / 2))
-        .map(line => line.substring(0, this.options.htmlMaxCols))
-        .join('\n');
+      html = browser.html();
     } catch (error) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
+
+    const chunks = [];
+    const maxCols = this.options.htmlMaxCols;
+    const maxRows = this.options.htmlMaxRows;
+    const rows = html.length / maxCols;
+
+    let i;
+
+    for (i = 0; i < rows; i += 1) {
+      if (i < maxRows / 2 || i > rows - maxRows / 2) {
+        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+      }
+    }
+
+    html = chunks.join('\n');
 
     return html;
   }
