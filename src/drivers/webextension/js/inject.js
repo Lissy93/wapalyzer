@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 (() => {
   try {
     const detectJs = (chain) => {

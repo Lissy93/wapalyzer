@@ -288,20 +288,22 @@ class Driver {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
 
-    const chunks = [];
-    const maxCols = this.options.htmlMaxCols;
-    const maxRows = this.options.htmlMaxRows;
-    const rows = html.length / maxCols;
+    if (this.options.htmlMaxCols || this.options.htmlMaxRows) {
+      const chunks = [];
+      const maxCols = this.options.htmlMaxCols;
+      const maxRows = this.options.htmlMaxRows;
+      const rows = html.length / maxCols;
 
-    let i;
+      let i;
 
-    for (i = 0; i < rows; i += 1) {
-      if (i < maxRows / 2 || i > rows - maxRows / 2) {
-        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+      for (i = 0; i < rows; i += 1) {
+        if (i < maxRows / 2 || i > rows - maxRows / 2) {
+          chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+        }
       }
-    }
 
-    html = chunks.join('\n');
+      html = chunks.join('\n');
+    }
 
     return html;
   }

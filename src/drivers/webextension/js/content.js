@@ -17,14 +17,22 @@ if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
     sendMessage('init', {});
 
     // HTML
-    let html = new XMLSerializer().serializeToString(document)
-      .replace(new RegExp('(.{1000,}[^>]*>)<', 'g'), (match, p1) => `${p1}\n<`)
-      .split('\n');
+    let html = new XMLSerializer().serializeToString(document);
 
-    html = html
-      .slice(0, 1000).concat(html.slice(html.length - 1000))
-      .map(line => line.substring(0, 1000))
-      .join('\n');
+    const chunks = [];
+    const maxCols = 2000;
+    const maxRows = 3000;
+    const rows = html.length / maxCols;
+
+    let i;
+
+    for (i = 0; i < rows; i += 1) {
+      if (i < maxRows / 2 || i > rows - maxRows / 2) {
+        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+      }
+    }
+
+    html = chunks.join('\n');
 
     // Scripts
     const scripts = Array.prototype.slice
