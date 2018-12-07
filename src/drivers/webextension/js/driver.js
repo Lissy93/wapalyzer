@@ -25,20 +25,18 @@ browser.tabs.onRemoved.addListener((tabId) => {
  * Get a value from localStorage
  */
 function getOption(name, defaultValue = null) {
-  return new Promise((resolve, reject) => {
-    const callback = (item) => {
-      options[name] = item[name] ? item[name] : defaultValue;
+  return new Promise(async (resolve) => {
+    let option = defaultValue;
 
-      resolve(options[name]);
-    };
+    try {
+      option = await browser.storage.local.get(name);
+    } catch (error) {
+      wappalyzer.log(error, 'driver', 'error');
+    }
 
-    browser.storage.local.get(name)
-      .then(callback)
-      .catch((error) => {
-        wappalyzer.log(error, 'driver', 'error');
+    options[name] = option;
 
-        reject();
-      });
+    resolve(option);
   });
 }
 

@@ -1,5 +1,7 @@
 /** global: browser */
 /** global: Wappalyzer */
+/* globals browser chrome Wappalyzer */
+/* eslint-env browser */
 
 const wappalyzer = new Wappalyzer();
 
@@ -26,15 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelector('#github').addEventListener('click', () => {
-    open(wappalyzer.config.githubURL);
+    window.open(wappalyzer.config.githubURL);
   });
 
   document.querySelector('#twitter').addEventListener('click', () => {
-    open(wappalyzer.config.twitterURL);
+    window.open(wappalyzer.config.twitterURL);
   });
 
   document.querySelector('#wappalyzer').addEventListener('click', () => {
-    open(wappalyzer.config.websiteURL);
+    window.open(wappalyzer.config.websiteURL);
   });
 
   getOption('upgradeMessage', true, (value) => {
