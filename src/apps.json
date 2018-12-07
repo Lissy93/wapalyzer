@@ -9708,7 +9708,7 @@
     },
     "tailwindcss": {
       "cats": [
-        "18"
+        18
       ],
       "html": "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
       "icon": "tailwindcss.svg",
@@ -10635,6 +10635,24 @@
         "(?:/([\\d.]+))?/vue(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "http://vuejs.org"
+    },
+    "Nuxt.js": {
+      "cats": [
+        12
+      ],
+      "html": [
+        "<div [^>]*id=\"__nuxt\"",
+        "<script [^>]*>window\\.__NUXT__"
+      ],
+      "icon": "Nuxt.js.png",
+      "js": {
+        "$nuxt": ""
+      },
+      "script": [
+        "/_nuxt/"
+      ],
+      "implies": "Vue.js",
+      "website": "https://nuxtjs.org"
     },
     "W3 Total Cache": {
       "cats": [
