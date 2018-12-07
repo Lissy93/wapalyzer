@@ -32,6 +32,10 @@ do {
 
 const wappalyzer = new Wappalyzer(url, options);
 
+wappalyzer.log = (message) => {
+  process.stdout.write('xx');
+};
+
 wappalyzer.analyze()
   .then((json) => {
     process.stdout.write(`${JSON.stringify(json)}\n`);

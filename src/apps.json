@@ -2049,11 +2049,11 @@
       },
       "website": "http://contenido.org/en"
     },
-    "Contens": {
+    "Contensis": {
       "cats": [
         1
       ],
-      "icon": "Contens.png",
+      "icon": "Contensis.png",
       "implies": [
         "Java",
         "CFML"
@@ -2061,7 +2061,7 @@
       "meta": {
         "generator": "Contensis CMS Version ([\\d.]+)\\;version:\\1"
       },
-      "website": "http://www.contens.com/en/pub/index.cfm"
+      "website": "https://zengenti.com/en-gb/products/contensis"
     },
     "ContentBox": {
       "cats": [
@@ -2772,7 +2772,7 @@
       "website": "http://www.ec-cube.net"
     },
     "Elementor": {
-      "cats": [ 
+      "cats": [
         1,
         11,
         51
@@ -2783,7 +2783,7 @@
         "<link [^>]*href=(?:\"|')[^\"']*elementor/assets",
         "<link [^>]*href=(?:\"|')[^\"']*uploads/elementor/css"
       ],
-      "js": { 
+      "js": {
         "elementorFrontend.getElements": ""
       },
       "script": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
