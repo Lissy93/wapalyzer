@@ -20,7 +20,7 @@
         6
       ],
       "icon": "91app.png",
-      "script": "https\\:\/\/track\\.91app\\.io\/track\\.js\\?",
+      "script": "https\\:\\/\\/track\\.91app\\.io\\/track\\.js\\?",
       "website": "https://www.91app.com/"
     },
     "3dCart": {
@@ -642,7 +642,7 @@
         18
       ],
       "icon": "AngularJS.svg",
-			"implies": "AngularJS",
+      "implies": "AngularJS",
       "js": {
         "ngMaterial": ""
       },
@@ -674,9 +674,9 @@
       ],
       "icon": "AngularJS.svg",
       "html": [
-				"<(?:div|html)[^>]+ng-app=",
-				"<ng-app"
-			],
+        "<(?:div|html)[^>]+ng-app=",
+        "<ng-app"
+      ],
       "js": {
         "angular": "",
         "angular.version.full": "^(.+)$\\;version:\\1"
@@ -1318,12 +1318,11 @@
       "cats": [
         32
       ],
-      "script": "//tag\\.bounceexchange\\.com/",
+      "script": "^https?://tag\\.bounceexchange\\.com/",
       "icon": "Bounce Exchange.svg",
       "js": {
         "bouncex": ""
       },
-      "script": "^https?://tag\\.bounceexchange\\.com/",
       "website": "http://www.bounceexchange.com"
     },
     "Braintree": {
@@ -1393,7 +1392,7 @@
       "html": [
         "href=\"enter_bug\\.cgi\">",
         "<main id=\"bugzilla-body\"",
-				"<a href=\"https?://www\\.bugzilla\\.org/docs/([0-9.]+)/[^>]+>Help<\\;version:\\1",
+        "<a href=\"https?://www\\.bugzilla\\.org/docs/([0-9.]+)/[^>]+>Help<\\;version:\\1",
         "<span id=\"information\" class=\"header_addl_info\">version ([\\d.]+)<\\;version:\\1"
       ],
       "cookies": {
@@ -1442,7 +1441,7 @@
       "cats": [
         36
       ],
-      "script": "\\.buysellads\\.com/",
+      "script": "^https?://s\\d\\.buysellads\\.com/",
       "icon": "BuySellAds.png",
       "js": {
         "_bsa": "",
@@ -1450,7 +1449,6 @@
         "_bsap": "",
         "_bsap_serving_callback": ""
       },
-      "script": "^https?://s\\d\\.buysellads\\.com/",
       "website": "http://buysellads.com"
     },
     "CDN77": {
@@ -1672,7 +1670,7 @@
       "icon": "Chart.js.svg",
       "js": {
         "Chart": "\\;confidence:50",
-				"Chart.defaults.doughnut": "",
+        "Chart.defaults.doughnut": "",
         "chart.ctx.bezierCurveTo": ""
       },
       "script": [
@@ -1724,8 +1722,8 @@
       "meta": {
         "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
       },
-			"script": "/chevereto\\.js",
-			"html": "Powered by <a href=\"https?://chevereto\\.com\">",
+      "script": "/chevereto\\.js",
+      "html": "Powered by <a href=\"https?://chevereto\\.com\">",
       "icon": "chevereto.png",
       "implies": "PHP",
       "website": "https://chevereto.com/"
@@ -2003,9 +2001,9 @@
       "js": {
         "CCM_IMAGE_PATH": ""
       },
-			"cookies": {
-				"CONCRETE5": ""
-			},
+      "cookies": {
+        "CONCRETE5": ""
+      },
       "meta": {
         "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
       },
@@ -2391,9 +2389,9 @@
         19
       ],
       "cookies": {
-				"datadome": ""
-			},
-			"script": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
+        "datadome": ""
+      },
+      "script": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
       "headers": {
         "X-DataDome": "",
         "Server": "^DataDome$",
@@ -2596,10 +2594,10 @@
       "cookies": {
         "DokuWiki": ""
       },
-			"html": [
-				"<div[^>]+id=\"dokuwiki__>",
-				"<a[^>]+href=\"#dokuwiki__"
-			],
+      "html": [
+        "<div[^>]+id=\"dokuwiki__>",
+        "<a[^>]+href=\"#dokuwiki__"
+      ],
       "icon": "DokuWiki.png",
       "implies": "PHP",
       "meta": {
@@ -2680,12 +2678,12 @@
         20
       ],
       "html": "<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)\\;version:\\1",
-			"js": {
-				"MM_showMenu": "",
-				"MM_preloadImages": "",
-				"MM_showHideLayers": ""
-			},
-			"icon": "DreamWeaver.png",
+      "js": {
+        "MM_showMenu": "",
+        "MM_preloadImages": "",
+        "MM_showHideLayers": ""
+      },
+      "icon": "DreamWeaver.png",
       "website": "https://www.adobe.com/products/dreamweaver.html"
     },
     "Drupal": {
@@ -2777,7 +2775,7 @@
         11,
         51
       ],
-      "html":  [
+      "html": [
         "<div class=(?:\"|')[^\"']*elementor",
         "<section class=(?:\"|')[^\"']*elementor",
         "<link [^>]*href=(?:\"|')[^\"']*elementor/assets",
@@ -3511,7 +3509,7 @@
       },
       "website": "https://get.gaug.es"
     },
-		"Gentoo": {
+    "Gentoo": {
       "cats": [
         28
       ],
@@ -6026,15 +6024,15 @@
         8
       ],
       "html": [
-				"<body[^>]+class=\"mediawiki\"",
-				"<(?:a|img)[^>]+>Powered by MediaWiki</a>",
-				"<a[^>]+/Special:WhatLinksHere/"
-			],
+        "<body[^>]+class=\"mediawiki\"",
+        "<(?:a|img)[^>]+>Powered by MediaWiki</a>",
+        "<a[^>]+/Special:WhatLinksHere/"
+      ],
       "icon": "MediaWiki.png",
       "implies": "PHP",
-			"js": {
-				"mw.util.toggleToc": ""
-			},
+      "js": {
+        "mw.util.toggleToc": ""
+      },
       "meta": {
         "generator": "^MediaWiki ?(.+)$\\;version:\\1"
       },
@@ -6364,7 +6362,7 @@
         6
       ],
       "html": "<link[^>]+href=[\"'][^\"]+mg-(?:core|plugins|templates)/",
-			"script": "mg-(?:core|plugins|templates)/",
+      "script": "mg-(?:core|plugins|templates)/",
       "icon": "Moguta.CMS.png",
       "implies": "PHP",
       "website": "https://moguta.ru"
@@ -8065,15 +8063,15 @@
         "Server": "^RainLoop"
       },
       "html": [
-				"<link[^>]href=\"rainloop/v/([0-9.]+)/static/apple-touch-icon\\.png/>\\;version:\\1"
+        "<link[^>]href=\"rainloop/v/([0-9.]+)/static/apple-touch-icon\\.png/>\\;version:\\1"
       ],
-			"meta": {
-				"rlAppVersion": "^([0-9.]+)$\\;version:\\1"
-			},
+      "meta": {
+        "rlAppVersion": "^([0-9.]+)$\\;version:\\1"
+      },
       "icon": "RainLoop.png",
       "implies": "PHP",
       "js": {
-				"rainloopI18N": "",
+        "rainloopI18N": "",
         "rainloop": ""
       },
       "script": "^rainloop/v/([0-9.]+)/\\;version:\\1",
@@ -8922,7 +8920,7 @@
       ],
       "icon": "shopline.png",
       "meta": {
-        "og:image":"https\\:\/\/img\\.shoplineapp\\.com"
+        "og:image": "https\\:\\/\\/img\\.shoplineapp\\.com"
       },
       "website": "https://shoplineapp.com/"
     },
@@ -9719,12 +9717,12 @@
         1
       ],
       "html": [
-				"<link[^>]+ href=\"typo3(?:conf|temp)/",
-				"<img[^>]+ src=\"typo3(?:conf|temp)/"
-			],
+        "<link[^>]+ href=\"typo3(?:conf|temp)/",
+        "<img[^>]+ src=\"typo3(?:conf|temp)/"
+      ],
       "icon": "TYPO3.svg",
       "implies": "PHP",
-			"script": "^typo3(?:conf|temp)/",
+      "script": "^typo3(?:conf|temp)/",
       "meta": {
         "generator": "TYPO3\\s+(?:CMS\\s+)?([\\d.]+)?(?:\\s+CMS)?\\;version:\\1"
       },
@@ -10817,10 +10815,10 @@
       "cats": [
         19
       ],
-			"html": [
-				"<link[^>]+rel=[\"']web-socket[\"']",
-				"<(?:link|a)[^>]+href=[\"']wss?://"
-			],
+      "html": [
+        "<link[^>]+rel=[\"']web-socket[\"']",
+        "<(?:link|a)[^>]+href=[\"']wss?://"
+      ],
       "icon": "websocket.png",
       "website": "https://en.wikipedia.org/wiki/WebSocket"
     },
@@ -11061,7 +11059,7 @@
       ],
       "html": [
         "<link rel=[\"']stylesheet[\"'] [^>]+/wp-(?:content|includes)/",
-				"<div[^>]*class=[\"']amp-wp-",
+        "<div[^>]*class=[\"']amp-wp-",
         "<link[^>]+s\\d+\\.wp\\.com"
       ],
       "icon": "WordPress.svg",
@@ -12030,7 +12028,7 @@
         "jQuery.pjax": ""
       },
       "script": "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
-			"html": "<div[^>]+data-pjax-container",
+      "html": "<div[^>]+data-pjax-container",
       "website": "https://github.com/defunkt/jquery-pjax"
     },
     "jQuery Sparklines": {
@@ -12280,10 +12278,10 @@
         "osCsid": ""
       },
       "html": [
-				"<br />Powered by <a href=\"https?://www\\.oscommerce\\.com",
-				"<(?:input|a)[^>]+name=\"osCsid\"",
-				"<(?:tr|td|table)class=\"[^\"]*infoBoxHeading"
-			],
+        "<br />Powered by <a href=\"https?://www\\.oscommerce\\.com",
+        "<(?:input|a)[^>]+name=\"osCsid\"",
+        "<(?:tr|td|table)class=\"[^\"]*infoBoxHeading"
+      ],
       "icon": "osCommerce.png",
       "implies": [
         "PHP",
@@ -12364,12 +12362,12 @@
         "phpbb": ""
       },
       "html": [
-				"Powered by <a[^>]+phpBB",
-				"<div class=phpbb_copyright>",
-				"<[^>]+styles/(?:sub|pro)silver/theme",
-				"<img[^>]+i_icon_mini",
-				"<table class=\"[^\"]*forumline"
-			],
+        "Powered by <a[^>]+phpBB",
+        "<div class=phpbb_copyright>",
+        "<[^>]+styles/(?:sub|pro)silver/theme",
+        "<img[^>]+i_icon_mini",
+        "<table class=\"[^\"]*forumline"
+      ],
       "icon": "phpBB.png",
       "implies": "PHP",
       "js": {
@@ -12502,7 +12500,7 @@
       ],
       "js": {
         "PUNBB": ""
-			},
+      },
       "html": "Powered by <a href=\"[^>]+punbb",
       "icon": "punBB.png",
       "implies": "PHP",
