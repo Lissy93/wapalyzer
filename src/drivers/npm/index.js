@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-
+const Browser = require('./browsers/zombie');
 const Wappalyzer = require('./driver');
 
 const args = process.argv.slice(2);
@@ -30,7 +30,10 @@ do {
   }
 } while (arg);
 
-const wappalyzer = new Wappalyzer(url, options);
+const wappalyzer = new Wappalyzer(Browser, url, options);
+
+// Optionally define a custom log function
+// wappalyzer.log = (message, source, type) => console.log(message);
 
 wappalyzer.analyze()
   .then((json) => {
