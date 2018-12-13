@@ -5763,6 +5763,9 @@
       "cookies": {
         "botble_session": ""
       },
+      "headers": {
+        "CMS-Version": "^(.+)$\\;version:\\1"
+      },
       "icon": "mypage-platform.png",
       "implies": "Laravel",
       "website": "https://www.mypage.vn"
