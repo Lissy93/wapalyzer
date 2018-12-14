@@ -45,10 +45,10 @@ node index.js [url] [options]
 
 ## Run from a script
 
+```javascript
 const Wappalyzer = require('./driver');
 const Browser = require('./browsers/zombie');
 
-```javascript
 const options = {
   debug: false,
   delay: 500,
