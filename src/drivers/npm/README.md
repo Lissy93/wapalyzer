@@ -45,6 +45,9 @@ node index.js [url] [options]
 
 ## Run from a script
 
+const Wappalyzer = require('./driver');
+const Browser = require('./browsers/zombie');
+
 ```javascript
 const options = {
   debug: false,
@@ -58,16 +61,19 @@ const options = {
   htmlMaxRows: 2000,
 };
 
-const wappalyzer = new Wappalyzer('https://www.wappalyzer.com', options);
+const wappalyzer = new Wappalyzer(Browser, 'https://www.wappalyzer.com', options);
+
+// Optionally override the default logger
+// wappalyzer.log = (message, source, type) => console.log(message);
 
 wappalyzer.analyze()
   .then(json => {
-    process.stdout.write(JSON.stringify(json, null, 2) + '\n')
+    process.stdout.write(`${JSON.stringify(json, null, 2)}\n`);
 
     process.exit(0);
   })
   .catch(error => {
-    process.stderr.write(error + '\n')
+    process.stderr.write(`${error}\n`);
 
     process.exit(1);
 });
