@@ -4703,6 +4703,18 @@
       "script": "https?://cdn\\.inwemo\\.com/inwemo\\.min\\.js",
       "website": "https://inwemo.com/"
     },
+    "Ionic": {
+      "cats": [
+        18
+      ],
+      "icon": "ionic.png",
+      "implies": "Angular",
+      "js": {
+        "Ionic.config": "",
+        "Ionic.version": "^(.+)$\\;version:\\1"
+      },
+      "website": "https://ionicframework.com"
+    },
     "Ionicons": {
       "cats": [
         17
