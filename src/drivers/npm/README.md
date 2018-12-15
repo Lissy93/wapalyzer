@@ -27,9 +27,9 @@ node index.js [url] [options]
 ### Options
 
 ```
-	--password           Password to be used for basic HTTP authentication
-	--proxy              Proxy URL, e.g. 'http://user:pass@proxy:8080'
-	--username           Username to be used for basic HTTP authentication
+  --password           Password to be used for basic HTTP authentication
+  --proxy              Proxy URL, e.g. 'http://user:pass@proxy:8080'
+  --username           Username to be used for basic HTTP authentication
   --chunk-size=num     Process links in chunks.
   --debug=0|1          Output debug messages.
   --delay=ms           Wait for ms milliseconds between requests.

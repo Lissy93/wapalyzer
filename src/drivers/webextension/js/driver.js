@@ -24,20 +24,22 @@ browser.tabs.onRemoved.addListener((tabId) => {
  * Get a value from localStorage
  */
 function getOption(name, defaultValue = null) {
-  return new Promise(async (resolve) => {
+  return new Promise(async (resolve, reject) => {
     let value = defaultValue;
 
     try {
       const option = await browser.storage.local.get(name);
 
-      if (option[name]) {
+      if (option[name] !== undefined) {
         value = option[name];
       }
     } catch (error) {
-      wappalyzer.log(error, 'driver', 'error');
+      wappalyzer.log(error.message, 'driver', 'error');
+
+      return reject(error.message);
     }
 
-    resolve(value);
+    return resolve(value);
   });
 }
 
@@ -45,14 +47,16 @@ function getOption(name, defaultValue = null) {
  * Set a value in localStorage
  */
 function setOption(name, value) {
-  return new Promise(async (resolve) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await browser.storage.local.set({ [name]: value });
     } catch (error) {
-      wappalyzer.log(error, 'driver', 'error');
+      wappalyzer.log(error.message, 'driver', 'error');
+
+      return reject(error.message);
     }
 
-    resolve();
+    return resolve();
   });
 }
 
@@ -334,10 +338,10 @@ wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
       url: `${wappalyzer.config.websiteURL}installed`,
     });
   } else if (version !== previousVersion && upgradeMessage) {
-    //openTab({
-    //  url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
-    //  background: true,
-    //});
+    openTab({
+     url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+     background: true,
+    });
   }
 
   await setOption('version', version);
