@@ -49,6 +49,8 @@ node index.js [url] [options]
 const Wappalyzer = require('./driver');
 const Browser = require('./browsers/zombie');
 
+const url = 'https://www.wappalyzer.com;
+
 const options = {
   debug: false,
   delay: 500,
@@ -61,10 +63,17 @@ const options = {
   htmlMaxRows: 2000,
 };
 
-const wappalyzer = new Wappalyzer(Browser, 'https://www.wappalyzer.com', options);
+const wappalyzer = new Wappalyzer(Browser, url, options);
 
-// Optionally override the default logger
-// wappalyzer.log = (message, source, type) => console.log(message);
+// Optional: capture log output
+// wappalyzer.on('log', params => {
+//   const { message, source, type } = params;
+// });
+
+// Optional: do something on page visit
+// wappalyzer.on('visit', params => {
+//   const { browser, pageUrl } = params;
+// });
 
 wappalyzer.analyze()
   .then(json => {

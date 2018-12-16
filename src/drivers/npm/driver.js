@@ -48,6 +48,7 @@ class Driver {
     this.analyzedPageUrls = {};
     this.apps = [];
     this.meta = {};
+    this.listeners = {};
 
     this.Browser = Browser;
 
@@ -65,6 +66,20 @@ class Driver {
     process.on('uncaughtException', e => this.wappalyzer.log(`Uncaught exception: ${e.message}`, 'driver', 'error'));
   }
 
+  on(event, callback) {
+    if (!this.listeners[event]) {
+      this.listeners[event] = [];
+    }
+
+    this.listeners[event].push(callback);
+  }
+
+  emit(event, params) {
+    if (this.listeners[event]) {
+      this.listeners[event].forEach(listener => listener(params));
+    }
+  }
+
   analyze() {
     this.time = {
       start: new Date().getTime(),
@@ -78,6 +93,8 @@ class Driver {
     if (this.options.debug) {
       console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
     }
+
+    this.emit('log', { message, source, type });
   }
 
   displayApps(detected, meta) {
@@ -150,11 +167,11 @@ class Driver {
 
     // Validate response
     if (!browser.statusCode) {
-      reject(new Error('NO_RESPONSE'));
+      return reject(new Error('NO_RESPONSE'));
     }
 
     if (browser.statusCode !== 200) {
-      reject(new Error('RESPONSE_NOT_OK'));
+      return reject(new Error('RESPONSE_NOT_OK'));
     }
 
     if (!browser.contentType || !/\btext\/html\b/.test(browser.contentType)) {
@@ -187,6 +204,8 @@ class Driver {
         return results;
       }, [],
     );
+
+    this.emit('visit', { browser, pageUrl });
 
     return resolve(reducedLinks);
   }

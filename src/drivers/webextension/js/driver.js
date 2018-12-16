@@ -339,8 +339,8 @@ wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
     });
   } else if (version !== previousVersion && upgradeMessage) {
     openTab({
-     url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
-     background: true,
+      url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+      background: true,
     });
   }
 

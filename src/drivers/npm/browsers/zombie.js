@@ -25,6 +25,8 @@ class ZombieBrowser extends Browser {
         const resource = this.browser.resources.length
           ? this.browser.resources.filter(_resource => _resource.response).shift() : null;
 
+        this.window = this.browser.window;
+        this.document = this.browser.document;
         this.headers = this.getHeaders();
         this.statusCode = resource ? resource.response.status : 0;
         this.contentType = this.headers['content-type'] ? this.headers['content-type'].shift() : null;
