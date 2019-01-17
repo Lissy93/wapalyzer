@@ -7337,10 +7337,19 @@
       "cats": [
         1
       ],
-      "html": "Powered by <a href=\"[^>]+php-fusion",
+      "html": [
+        "Powered by <a href=\"[^>]+php-fusion",
+        "Powered by PHP-Fusion"
+      ],
+      "headers": {
+        "X-Powered-By": "PHP-Fusion (.+)$\\;version:\\1"
+      },
       "icon": "PHP-Fusion.png",
-      "implies": "PHP",
-      "website": "http://www.php-fusion.co.uk"
+      "implies": [
+        "PHP",
+        "MySQL"
+      ],
+      "website": "https://www.php-fusion.co.uk"
     },
     "PHP-Nuke": {
       "cats": [
