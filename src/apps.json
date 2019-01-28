@@ -4718,6 +4718,18 @@
       "script": "https?://cdn\\.inwemo\\.com/inwemo\\.min\\.js",
       "website": "https://inwemo.com/"
     },
+    "Ionic": {
+      "cats": [
+        18
+      ],
+      "icon": "ionic.png",
+      "implies": "Angular",
+      "js": {
+        "Ionic.config": "",
+        "Ionic.version": "^(.+)$\\;version:\\1"
+      },
+      "website": "https://ionicframework.com"
+    },
     "Ionicons": {
       "cats": [
         17
@@ -4788,7 +4800,7 @@
       "js": {
         "jseMine": ""
       },
-      "script": "^(?:https):?//load\\.jsecoin\\.com/server/load/",
+      "script": "^(?:https):?//load\\.jsecoin\\.com/load/",
       "website": "https://jsecoin.com/"
     },
     "JTL Shop": {
@@ -5778,6 +5790,9 @@
       "cookies": {
         "botble_session": ""
       },
+      "headers": {
+        "CMS-Version": "^(.+)$\\;version:\\1;confidence:0"
+      },
       "icon": "mypage-platform.png",
       "implies": "Laravel",
       "website": "https://www.mypage.vn"
@@ -6306,6 +6321,17 @@
       },
       "script": "mint/\\?js",
       "website": "https://haveamint.com"
+    },
+    "Mithril": {
+      "cats": [
+        12
+      ],
+      "icon": "Mithril.svg",
+      "js": {
+        "m": ""
+      },
+      "script": "mithril/\\?js",
+      "website": "https://mithril.js.org"
     },
     "Mixpanel": {
       "cats": [
@@ -10682,7 +10708,7 @@
         "<div [^>]*id=\"__nuxt\"",
         "<script [^>]*>window\\.__NUXT__"
       ],
-      "icon": "Nuxt.js.png",
+      "icon": "Nuxt.js.svg",
       "js": {
         "$nuxt": ""
       },
@@ -12796,7 +12822,7 @@
       "js": {
         "webpackJsonp": ""
       },
-      "website": "https://webpack.github.io"
+      "website": "https://webpack.js.org/"
     },
     "parcel": {
       "cats": [
