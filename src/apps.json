@@ -12921,6 +12921,26 @@
       "implies": "Java",
       "script": "/halo-(?:backend|frontend|common)/",
       "website": "https://github.com/ruibaby/halo"
+    },
+    "Rocket": {
+      "cats": [
+        1,
+        6
+      ],
+      "meta": {
+        "_csrf": ""
+      },
+      "cookies": {
+        "PHPSESSID": ""
+      },
+      "html": [
+        "<link href=[\"']/dist/frontend-(.+)\\.css[\"'] rel=[\"']stylesheet[\"']>",
+        "<script>var onLoadList = \\[\\];</script>"
+      ],
+      "icon": "Rocket.svg",
+      "implies": ["React","PHP", "Bootstrap", "webpack", "Node.js", "MySQL", "Apache", "jQuery", "Moment.js", "Less"],
+      "script": "/dist/frontend-(.+)\\.js",
+      "website": "https://rocketcms.io"
     }
   },
   "categories": {
