@@ -12939,7 +12939,7 @@
       ],
       "icon": "Rocket.svg",
       "implies": ["React","PHP", "Bootstrap", "webpack", "Node.js", "MySQL", "Apache", "jQuery", "Moment.js", "Less"],
-      "script": "/dist/frontend-(.+)\\.js",
+      "script": "/dist/frontend-[^\\.]+\\.js",
       "website": "https://rocketcms.io"
     }
   },
