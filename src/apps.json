@@ -8476,6 +8476,9 @@
       "js": {
         "shopfa": ""
        },
+      "headers": {
+        "X-Powered-By": "^ShopFA ([\\d.]+)$\\;version:\\1"
+      },
       "meta": {
         "generator": "^ShopFA ([\\d.]+)$\\;version:\\1"
       },
