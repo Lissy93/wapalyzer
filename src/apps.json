@@ -12934,7 +12934,7 @@
         "PHPSESSID": ""
       },
       "html": [
-        "<link href=[\"']/dist/frontend-(?:.+)\\.css[\"'] rel=[\"']stylesheet[\"']>",
+        "<link href=[\"']/dist/frontend-[^\\.]+\\.css[\"'] rel=[\"']stylesheet[\"']>",
         "<script>var onLoadList = \\[\\];</script>"
       ],
       "icon": "Rocket.svg",
