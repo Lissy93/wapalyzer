@@ -12930,16 +12930,8 @@
       "meta": {
         "_csrf": ""
       },
-      "cookies": {
-        "PHPSESSID": ""
-      },
-      "html": [
-        "<link href=[\"']/dist/frontend-[^\\.]+\\.css[\"'] rel=[\"']stylesheet[\"']>",
-        "<script>var onLoadList = \\[\\];</script>"
-      ],
       "icon": "Rocket.svg",
-      "implies": ["React","PHP", "Bootstrap", "webpack", "Node.js", "MySQL", "Apache", "jQuery", "Moment.js", "Less"],
-      "script": "/dist/frontend-[^\\.]+\\.js",
+      "implies": ["webpack", "Node.js", "MySQL", "Less"],
       "website": "https://rocketcms.io"
     }
   },
