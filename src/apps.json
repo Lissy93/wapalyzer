@@ -12927,8 +12927,8 @@
         1,
         6
       ],
-      "meta": {
-        "_csrf": ""
+      "headers": {
+        "x-powered-by": "Rocket=https://rocketcms.io/"
       },
       "icon": "Rocket.svg",
       "implies": ["webpack", "Node.js", "MySQL", "Less"],
