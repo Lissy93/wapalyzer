@@ -12941,6 +12941,18 @@
       "implies": "Java",
       "script": "/halo-(?:backend|frontend|common)/",
       "website": "https://github.com/ruibaby/halo"
+    },
+    "Rocket": {
+      "cats": [
+        1,
+        6
+      ],
+      "headers": {
+        "x-powered-by": "^Rocket=https://rocketcms.io/"
+      },
+      "icon": "Rocket.svg",
+      "implies": ["webpack", "Node.js", "MySQL", "Less"],
+      "website": "https://rocketcms.io"
     }
   },
   "categories": {
