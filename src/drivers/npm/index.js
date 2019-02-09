@@ -1,41 +1,45 @@
-'use strict';
+#!/usr/bin/env node
 
 const Wappalyzer = require('./driver');
+const Browser = require('./browsers/zombie');
 
 const args = process.argv.slice(2);
 
 const url = args.shift() || '';
 
-if ( !url ) {
+if (!url) {
   process.stderr.write('No URL specified\n');
 
   process.exit(1);
 }
 
-var options = {};
-var arg;
+const options = {};
 
-while ( arg = args.shift() ) {
-  var matches = /--([^=]+)=(.+)/.exec(arg);
+let arg;
 
-  if ( matches ) {
-    var key = matches[1].replace(/-\w/g, matches => matches[1].toUpperCase());
-    var value = matches[2];
+do {
+  arg = args.shift();
+
+  const matches = /--([^=]+)=(.+)/.exec(arg);
+
+  if (matches) {
+    const key = matches[1].replace(/-\w/g, _matches => _matches[1].toUpperCase());
+    const value = matches[2];
 
     options[key] = value;
   }
-}
+} while (arg);
 
-const wappalyzer = new Wappalyzer(url, options);
+const wappalyzer = new Wappalyzer(Browser, url, options);
 
 wappalyzer.analyze()
-  .then(json => {
-    process.stdout.write(JSON.stringify(json) + '\n')
+  .then((json) => {
+    process.stdout.write(`${JSON.stringify(json)}\n`);
 
     process.exit(0);
   })
-  .catch(error => {
-    process.stderr.write(error + '\n')
+  .catch((error) => {
+    process.stderr.write(`${error}\n`);
 
     process.exit(1);
   });

@@ -1,69 +1,84 @@
 /** global: browser */
 /** global: XMLSerializer */
 
-if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
-  try {
-    var html = new XMLSerializer().serializeToString(document);
+/* global browser, chrome */
+/* eslint-env browser */
 
-    if ( html.length > 50000 ) {
-      html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+function sendMessage(id, subject, callback) {
+  (chrome || browser).runtime.sendMessage({
+    id,
+    subject,
+    source: 'content.js',
+  }, callback || (() => {}));
+}
+
+if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
+  try {
+    sendMessage('init', {});
+
+    // HTML
+    let html = new XMLSerializer().serializeToString(document);
+
+    const chunks = [];
+    const maxCols = 2000;
+    const maxRows = 3000;
+    const rows = html.length / maxCols;
+
+    let i;
+
+    for (i = 0; i < rows; i += 1) {
+      if (i < maxRows / 2 || i > rows - maxRows / 2) {
+        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+      }
     }
 
+    html = chunks.join('\n');
+
+    // Scripts
     const scripts = Array.prototype.slice
       .apply(document.scripts)
       .filter(script => script.src)
-      .map(script => script.src);
+      .map(script => script.src)
+      .filter(script => script.indexOf('data:text/javascript;') !== 0);
 
-    browser.runtime.sendMessage({
-      id: 'analyze',
-      subject: { html, scripts },
-      source: 'content.js'
-    });
+    sendMessage('analyze', { html, scripts });
 
+    // JavaScript variables
     const script = document.createElement('script');
 
     script.onload = () => {
-      addEventListener('message', event => {
-        if ( event.data.id !== 'js' ) {
+      const onMessage = (event) => {
+        if (event.data.id !== 'js') {
           return;
         }
 
-        browser.runtime.sendMessage({
-          id: 'analyze',
-          subject: {
-            js: event.data.js
-          },
-          source: 'content.js'
-        });
-      }, true);
+        window.removeEventListener('message', onMessage);
 
-      ( chrome || browser ).runtime.sendMessage({
-        id: 'init_js',
-        subject: {},
-        source: 'content.js'
-      }, response => {
-        if ( response ) {
+        sendMessage('analyze', { js: event.data.js });
+
+        script.remove();
+      };
+
+      window.addEventListener('message', onMessage);
+
+      sendMessage('get_js_patterns', {}, (response) => {
+        if (response) {
           postMessage({
             id: 'patterns',
-            patterns: response.patterns
-          }, '*');
+            patterns: response.patterns,
+          }, window.location.href);
         }
       });
     };
 
-    script.setAttribute('id', 'wappalyzer');
     script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
     document.body.appendChild(script);
   } catch (e) {
-    log(e);
+    sendMessage('log', e);
   }
 }
 
-function log(message) {
-  browser.runtime.sendMessage({
-    id: 'log',
-    message,
-    source: 'content.js'
-  });
-}
+// https://stackoverflow.com/a/44774834
+// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
+undefined; // eslint-disable-line no-unused-expressions
