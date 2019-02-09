@@ -2926,11 +2926,11 @@
       ],
       "icon": "ElementUI.svg",
       "implies": [
-				"Vue"
-			],
-			"html": [
-				"<(?:div|button) class=\"el-(?:table-column|table-filter|popper|pagination|pager|select-group|form|form-item|color-predefine|color-hue-slider|color-svpanel|color-alpha-slider|color-dropdown|color-picker|badge|tree|tree-node|select|message|dialog|checkbox|checkbox-button|checkbox-group|container|steps|carousel|menu|menu-item|submenu|menu-item-group|button|button-group|card|table|select-dropdown|row|tabs|notification|radio|progress|progress-bar|tag|popover|tooltip|cascader|cascader-menus|cascader-menu|time-spinner|spinner|spinner-inner|transfer|transfer-panel|rate|slider|dropdown|dropdown-menu|textarea|input|input-group|popup-parent|radio-group|main|breadcrumb|time-range-picker|date-range-picker|year-table|date-editor|range-editor|time-spinner|date-picker|time-panel|date-table|month-table|picker-panel|collapse|collapse-item|alert|select-dropdown|select-dropdown__empty|select-dropdown__wrap|select-dropdown__list|scrollbar|switch|carousel|upload|upload-dragger|upload-list|upload-cover|aside|input-number|header|message-box|footer|radio-button|step|autocomplete|autocomplete-suggestion|loading-parent|loading-mask|loading-spinner|)"
-			],
+        "Vue"
+      ],
+      "html": [
+        "<(?:div|button) class=\"el-(?:table-column|table-filter|popper|pagination|pager|select-group|form|form-item|color-predefine|color-hue-slider|color-svpanel|color-alpha-slider|color-dropdown|color-picker|badge|tree|tree-node|select|message|dialog|checkbox|checkbox-button|checkbox-group|container|steps|carousel|menu|menu-item|submenu|menu-item-group|button|button-group|card|table|select-dropdown|row|tabs|notification|radio|progress|progress-bar|tag|popover|tooltip|cascader|cascader-menus|cascader-menu|time-spinner|spinner|spinner-inner|transfer|transfer-panel|rate|slider|dropdown|dropdown-menu|textarea|input|input-group|popup-parent|radio-group|main|breadcrumb|time-range-picker|date-range-picker|year-table|date-editor|range-editor|time-spinner|date-picker|time-panel|date-table|month-table|picker-panel|collapse|collapse-item|alert|select-dropdown|select-dropdown__empty|select-dropdown__wrap|select-dropdown__list|scrollbar|switch|carousel|upload|upload-dragger|upload-list|upload-cover|aside|input-number|header|message-box|footer|radio-button|step|autocomplete|autocomplete-suggestion|loading-parent|loading-mask|loading-spinner|)"
+      ],
       "website": "https://element.eleme.io/"
     },
     "Eloqua": {
@@ -2984,7 +2984,7 @@
       "icon": "Envoy.png",
       "headers": {
         "Server": "^envoy$",
-        "x-envoy-upstream-service-time" : ""
+        "x-envoy-upstream-service-time": ""
       },
       "website": "https://www.envoyproxy.io/"
     },
@@ -4300,13 +4300,13 @@
       },
       "website": "http://hinzaco.com"
     },
-    "Hippo": {
+    "Bloomreach": {
       "cats": [
         1
       ],
       "html": "<[^>]+/binaries/(?:[^/]+/)*content/gallery/",
-      "icon": "Hippo.png",
-      "website": "http://onehippo.org"
+      "icon": "Bloomreach.png",
+      "website": "https://developers.bloomreach.com"
     },
     "Hogan.js": {
       "cats": [
@@ -4663,21 +4663,21 @@
       ],
       "website": "https://www.inspectlet.com/"
     },
-		"Instabot": {
-		  "cats": [ 
-				5,
-				10,
-				32,
-				52,
-				58
-			 ],
-			 "icon": "Instabot.png",
-			 "js": { 
-				 "Instabot": ""
-			 },
-			 "script": "/rokoInstabot\\.js",
-			 "website": "https://instabot.io/"
-		},
+    "Instabot": {
+      "cats": [
+        5,
+        10,
+        32,
+        52,
+        58
+      ],
+      "icon": "Instabot.png",
+      "js": {
+        "Instabot": ""
+      },
+      "script": "/rokoInstabot\\.js",
+      "website": "https://instabot.io/"
+    },
     "InstantCMS": {
       "cats": [
         1
@@ -9000,7 +9000,7 @@
       ],
       "js": {
         "shopfa": ""
-       },
+      },
       "headers": {
         "X-Powered-By": "^ShopFA ([\\d.]+)$\\;version:\\1"
       },
@@ -9008,19 +9008,6 @@
         "generator": "^ShopFA ([\\d.]+)$\\;version:\\1"
       },
       "icon": "Shopfa.svg",
-      "website": "https://shopfa.com"
-    },
-    "Shopify": {
-      "cats": [
-        6
-      ],
-      "icon": "Shopfa.svg",
-      "js": {
-        "shopfa": ""
-      },
-      "meta": {
-        "generator": "^ShopFA ([\\d.]+)$\\;version:\\1"
-      },
       "website": "https://shopfa.com"
     },
     "Shopify": {
@@ -10430,16 +10417,16 @@
       },
       "website": "http://usabilla.com"
     },
-    "UserEngage": {
+    "user.com": {
       "cats": [
         10
       ],
       "html": "<div[^>]+/id=\"ue_widget\"",
-      "icon": "UserEngage.png",
+      "icon": "user.com.svg",
       "js": {
         "UserEngage": ""
       },
-      "website": "https://userengage.com"
+      "website": "https://user.com"
     },
     "UserGuiding": {
       "cats": [
@@ -12981,7 +12968,12 @@
         "x-powered-by": "^Rocket=https://rocketcms.io/"
       },
       "icon": "Rocket.svg",
-      "implies": ["webpack", "Node.js", "MySQL", "Less"],
+      "implies": [
+        "webpack",
+        "Node.js",
+        "MySQL",
+        "Less"
+      ],
       "website": "https://rocketcms.io"
     }
   },
