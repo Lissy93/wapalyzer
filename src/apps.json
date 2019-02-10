@@ -574,7 +574,7 @@
     },
     "Amazon ELB": {
       "cats": [
-        63
+        65
       ],
       "cookies": {
         "AWSELB": ""
@@ -2979,7 +2979,7 @@
     },
     "Envoy": {
       "cats": [
-        22
+        64
       ],
       "icon": "Envoy.png",
       "headers": {
@@ -6909,7 +6909,8 @@
     },
     "Nginx": {
       "cats": [
-        22
+        22,
+        64
       ],
       "headers": {
         "Server": "nginx(?:/([\\d.]+))?\\;version:\\1",
@@ -8996,7 +8997,7 @@
     },
     "Shopfa": {
       "cats": [
-        "6"
+        6
       ],
       "js": {
         "shopfa": ""
@@ -13221,6 +13222,14 @@
     "63": {
       "name": "IaaS",
       "priority": 8
+    },
+    "64": {
+      "name": "Reverse Proxy",
+      "priority": 7
+    },
+    "65": {
+      "name": "Load Balancer",
+      "priority": 7
     }
   }
 }
