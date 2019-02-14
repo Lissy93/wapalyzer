@@ -370,7 +370,7 @@ class Wappalyzer {
             attrs.string = attr;
 
             try {
-              attrs.regex = new RegExp(attr.replace('/', '\\/'), 'i'); // Escape slashes in regular expression
+              attrs.regex = new RegExp(attr.replace('/', '\/'), 'i'); // Escape slashes in regular expression
             } catch (error) {
               attrs.regex = new RegExp();
 
