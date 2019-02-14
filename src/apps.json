@@ -3098,6 +3098,26 @@
       "script": "ext-base\\.js",
       "website": "https://www.sencha.com"
     },
+    "F5 BigIP": {
+      "cats": [
+        64
+      ],
+      "headers": {
+        "server": "BigIP|BIG-IP"
+      },
+      "cookies": {
+        "F5_ST": "",
+        "MRHSHint": "",
+        "F5_HT_shrinked": "",
+        "F5_fullWT": "",
+        "MRHSequence": "",
+        "MRHSession": "",
+        "LastMRH_Session": "",
+        "TIN": ""
+      },
+      "icon": "F5.png",
+      "website": "https://www.f5.com/products/big-ip-services"
+    },
     "FAST ESP": {
       "cats": [
         29
@@ -13236,7 +13256,7 @@
     },
     "64": {
       "name": "Reverse Proxy",
-      "priority": 7
+      "priority": 1
     },
     "65": {
       "name": "Load Balancer",
