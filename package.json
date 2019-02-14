@@ -12,7 +12,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "mocha -R spec ./test",
+    "test": "mocha -R spec src",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   }
