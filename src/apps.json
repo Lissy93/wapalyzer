@@ -1791,12 +1791,12 @@
       ],
       "html": [
         "<clr-main-container",
-        "<link [^>]*href=\"[^\"]*clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
         "<link [^>]*href=\"[^\"]*clr-ui(?:\\.min)?\\.css"
       ],
       "js": {
         "ClarityIcons": ""
       },
+      "script": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
       "icon": "clarity.svg",
       "implies": [
         "Angular"
