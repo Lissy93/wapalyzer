@@ -1785,6 +1785,24 @@
       },
       "website": "http://ckan.org/"
     },
+    "Clarity": {
+      "cats": [
+        18
+      ],
+      "html": [
+        "<clr-main-container",
+        "<link [^>]*href=\"[^\"]*clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
+        "<link [^>]*href=\"[^\"]*clr-ui(?:\\.min)?\\.css"
+      ],
+      "js": {
+        "ClarityIcons": ""
+      },
+      "icon": "clarity.svg",
+      "implies": [
+        "Angular"
+      ],
+      "website": "https://clarity.design/"
+    },
     "ClickHeat": {
       "cats": [
         10
