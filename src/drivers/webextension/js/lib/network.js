@@ -780,9 +780,11 @@
       ifTrackingEnabled(
         sender.tab,
         () => {
+          console.log('enabled');
           try { sendResponse({ tracking_enabled: true }); } catch (err) {}
         },
         () => {
+          console.log('not enabled');
           try { sendResponse({ tracking_enabled: false }); } catch (err) {}
         },
       );

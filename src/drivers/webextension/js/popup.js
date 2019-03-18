@@ -1,12 +1,15 @@
 /* eslint-env browser */
-/* global browser, chrome, jsonToDOM */
+/* global browser, jsonToDOM */
 
-/** global: chrome */
 /** global: browser */
 /** global: jsonToDOM */
 
 let pinnedCategory = null;
 let termsAccepted = false;
+
+const port = browser.runtime.connect({
+  name: 'popup.js',
+});
 
 function slugify(string) {
   return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
@@ -51,7 +54,7 @@ function replaceDom(domTemplate) {
         pinnedCategory = categoryId;
       }
 
-      (chrome || browser).runtime.sendMessage({
+      port.postMessage({
         id: 'set_option',
         key: 'pinnedCategory',
         value: pinnedCategory,
@@ -186,39 +189,58 @@ function appsToDomTemplate(response) {
   return template;
 }
 
-const func = (tabs) => {
-  (chrome || browser).runtime.sendMessage({
-    id: 'get_apps',
-    tab: tabs[0],
-    source: 'popup.js',
-  }, (response) => {
-    pinnedCategory = response.pinnedCategory;
-    termsAccepted = response.termsAccepted;
+async function getApps() {
+  try {
+    const tabs = await browser.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
 
-    if (termsAccepted) {
-      replaceDomWhenReady(appsToDomTemplate(response));
-    } else {
-      i18n();
+    port.postMessage({
+      id: 'get_apps',
+      tab: tabs[0],
+    });
+  } catch (error) {
+    console.error(error); // eslint-disable-line no-console
+  }
+}
 
-      const wrapper = document.querySelector('.terms__wrapper');
+function displayApps(response) {
+  pinnedCategory = response.pinnedCategory; // eslint-disable-line prefer-destructuring
+  termsAccepted = response.termsAccepted; // eslint-disable-line prefer-destructuring
 
-      document.querySelector('.terms__accept').addEventListener('click', () => {
-        (chrome || browser).runtime.sendMessage({
-          id: 'set_option',
-          key: 'termsAccepted',
-          value: true,
-        });
+  if (termsAccepted) {
+    replaceDomWhenReady(appsToDomTemplate(response));
+  } else {
+    i18n();
 
-        wrapper.classList.remove('terms__wrapper--active');
+    const wrapper = document.querySelector('.terms__wrapper');
 
-        func(tabs);
+    document.querySelector('.terms__accept').addEventListener('click', () => {
+      port.postMessage({
+        id: 'set_option',
+        key: 'termsAccepted',
+        value: true,
       });
 
-      wrapper.classList.add('terms__wrapper--active');
-    }
-  });
-};
+      wrapper.classList.remove('terms__wrapper--active');
 
-browser.tabs.query({ active: true, currentWindow: true })
-  .then(func)
-  .catch(console.error);
+      getApps();
+    });
+
+    wrapper.classList.add('terms__wrapper--active');
+  }
+}
+
+port.onMessage.addListener((message) => {
+  switch (message.id) {
+    case 'get_apps':
+      displayApps(message.response);
+
+      break;
+    default:
+      // Do nothing
+  }
+});
+
+getApps();

@@ -134,67 +134,74 @@ browser.webRequest.onCompleted.addListener(async (request) => {
   }
 }, { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] }, ['responseHeaders']);
 
-// Listen for messages
-browser.runtime.onMessage.addListener(async (message, sender) => {
-  if (message.id === undefined) {
-    return Promise.resolve();
-  }
+browser.runtime.onConnect.addListener((port) => {
+  port.onMessage.addListener(async (message) => {
+    if (message.id === undefined) {
+      return;
+    }
 
-  if (message.id !== 'log') {
-    wappalyzer.log(`Message${message.source ? ` from ${message.source}` : ''}: ${message.id}`, 'driver');
-  }
+    if (message.id !== 'log') {
+      wappalyzer.log(`Message from ${port.name}: ${message.id}`, 'driver');
+    }
 
-  const pinnedCategory = await getOption('pinnedCategory');
+    const pinnedCategory = await getOption('pinnedCategory');
 
-  const url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
+    const url = wappalyzer.parseUrl(port.sender.tab ? port.sender.tab.url : '');
 
-  const cookies = await browser.cookies.getAll({ domain: `.${url.hostname}` });
+    const cookies = await browser.cookies.getAll({ domain: `.${url.hostname}` });
 
-  let response;
+    let response;
 
-  switch (message.id) {
-    case 'log':
-      wappalyzer.log(message.subject, message.source);
+    switch (message.id) {
+      case 'log':
+        wappalyzer.log(message.subject, message.source);
 
-      break;
-    case 'init':
-      wappalyzer.analyze(url, { cookies }, { tab: sender.tab });
+        break;
+      case 'init':
+        wappalyzer.analyze(url, { cookies }, { tab: port.sender.tab });
 
-      break;
-    case 'analyze':
-      wappalyzer.analyze(url, message.subject, { tab: sender.tab });
+        break;
+      case 'analyze':
+        wappalyzer.analyze(url, message.subject, { tab: port.sender.tab });
 
-      await setOption('hostnameCache', wappalyzer.hostnameCache);
+        await setOption('hostnameCache', wappalyzer.hostnameCache);
 
-      break;
-    case 'ad_log':
-      wappalyzer.cacheDetectedAds(message.subject);
+        break;
+      case 'ad_log':
+        wappalyzer.cacheDetectedAds(message.subject);
 
-      break;
-    case 'get_apps':
-      response = {
-        tabCache: tabCache[message.tab.id],
-        apps: wappalyzer.apps,
-        categories: wappalyzer.categories,
-        pinnedCategory,
-        termsAccepted: userAgent() === 'chrome' || await getOption('termsAccepted', false),
-      };
+        break;
+      case 'get_apps':
+        response = {
+          tabCache: tabCache[message.tab.id],
+          apps: wappalyzer.apps,
+          categories: wappalyzer.categories,
+          pinnedCategory,
+          termsAccepted: userAgent() === 'chrome' || await getOption('termsAccepted', false),
+        };
 
-      break;
-    case 'set_option':
-      await setOption(message.key, message.value);
+        break;
+      case 'set_option':
+        await setOption(message.key, message.value);
 
-      break;
-    case 'get_js_patterns':
-      response = {
-        patterns: wappalyzer.jsPatterns,
-      };
+        break;
+      case 'get_js_patterns':
+        response = {
+          patterns: wappalyzer.jsPatterns,
+        };
 
-      break;
-    default:
-  }
+        break;
+      default:
+        // Do nothing
+    }
 
-  return Promise.resolve(response);
+    if (response) {
+      port.postMessage({
+        id: message.id,
+        response,
+      });
+    }
+  });
 });
 
 wappalyzer.driver.document = document;
@@ -205,7 +212,7 @@ wappalyzer.driver.document = document;
 wappalyzer.driver.log = (message, source, type) => {
   const log = ['warn', 'error'].indexOf(type) !== -1 ? type : 'log';
 
-  console[log](`[wappalyzer ${type}]`, `[${source}]`, message);
+  console[log](`[wappalyzer ${type}]`, `[${source}]`, message); // eslint-disable-line no-console
 };
 
 /**
@@ -372,10 +379,14 @@ wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
   try {
     const tabs = await browser.tabs.query({ url: ['http://*/*', 'https://*/*'] });
 
-    tabs.forEach((tab) => {
-      browser.tabs.executeScript(tab.id, {
-        file: '../js/content.js',
-      });
+    tabs.forEach(async (tab) => {
+      try {
+        await browser.tabs.executeScript(tab.id, {
+          file: '../js/content.js',
+        });
+      } catch (error) {
+        //
+      }
     });
   } catch (error) {
     wappalyzer.log(error, 'driver', 'error');

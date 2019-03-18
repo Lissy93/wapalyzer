@@ -1,20 +1,16 @@
 /** global: browser */
 /** global: XMLSerializer */
 
-/* global browser, chrome */
+/* global browser */
 /* eslint-env browser */
 
-function sendMessage(id, subject, callback) {
-  (chrome || browser).runtime.sendMessage({
-    id,
-    subject,
-    source: 'content.js',
-  }, callback || (() => {}));
-}
+const port = browser.runtime.connect({
+  name: 'content.js',
+});
 
 if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
   try {
-    sendMessage('init', {});
+    port.postMessage({ id: 'init' });
 
     // HTML
     let html = new XMLSerializer().serializeToString(document);
@@ -41,7 +37,7 @@ if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
       .map(script => script.src)
       .filter(script => script.indexOf('data:text/javascript;') !== 0);
 
-    sendMessage('analyze', { html, scripts });
+    port.postMessage({ id: 'analyze', subject: { html, scripts } });
 
     // JavaScript variables
     const script = document.createElement('script');
@@ -54,30 +50,37 @@ if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
 
         window.removeEventListener('message', onMessage);
 
-        sendMessage('analyze', { js: event.data.js });
+        port.postMessage({ id: 'analyze', subject: { js: event.data.js } });
 
         script.remove();
       };
 
       window.addEventListener('message', onMessage);
 
-      sendMessage('get_js_patterns', {}, (response) => {
-        if (response) {
-          postMessage({
-            id: 'patterns',
-            patterns: response.patterns,
-          }, window.location.href);
-        }
-      });
+      port.postMessage({ id: 'get_js_patterns' });
     };
 
     script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
     document.body.appendChild(script);
-  } catch (e) {
-    sendMessage('log', e);
+  } catch (error) {
+    port.postMessage({ id: 'log', subject: error });
   }
 }
+
+port.onMessage.addListener((message) => {
+  switch (message.id) {
+    case 'get_js_patterns':
+      postMessage({
+        id: 'patterns',
+        patterns: message.response.patterns,
+      }, window.location.href);
+
+      break;
+    default:
+      // Do nothing
+  }
+});
 
 // https://stackoverflow.com/a/44774834
 // https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
