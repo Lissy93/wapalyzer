@@ -11688,6 +11688,26 @@
       "icon": "YouTube.png",
       "website": "http://www.youtube.com"
     },
+    
+    "iEXExchanger": {
+      "cats": [
+        1
+      ],
+      "implies": [
+        "PHP",
+        "Apache"
+      ],
+      
+       "cookies": {
+        "iexexchanger_session": ""
+      },
+      "meta": {
+        "generator": "iEXExchanger"
+      },
+      "script": "iexexchanger",
+      "website": "https://exchanger.iexbase.com"
+    },
+    
     "ZK": {
       "cats": [
         18
