@@ -10548,15 +10548,19 @@
       "script": "vs350\\.js",
       "website": "http://www.vpasp.com"
     },
-    "VTEX Enterprise": {
+    "VTEX": {
       "cats": [
         6
       ],
+      "cookies": {
+        "VtexWorkspace": ""
+      },
       "headers": {
+        "Server": "^VTEX IO$",
         "powered": "vtex"
       },
-      "icon": "VTEX Enterprise.png",
-      "website": "http://vtex.com"
+      "icon": "VTEX.svg",
+      "website": "https://vtex.com/"
     },
     "VTEX Integrated Store": {
       "cats": [
