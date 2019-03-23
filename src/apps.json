@@ -574,7 +574,7 @@
     },
     "Amazon ELB": {
       "cats": [
-        63
+        65
       ],
       "cookies": {
         "AWSELB": ""
@@ -2979,7 +2979,7 @@
     },
     "Envoy": {
       "cats": [
-        22
+        64
       ],
       "icon": "Envoy.png",
       "headers": {
@@ -4403,6 +4403,17 @@
       "icon": "IBM.svg",
       "script": "cmdatatagutils\\.js",
       "website": "http://ibm.com/software/marketing-solutions/coremetrics"
+    },
+    "IBM DataPower": {
+      "cats": [
+        64
+      ],
+      "headers": {
+        "X-Backside-Transport": "",
+        "X-Global-Transaction-ID": ""
+      },
+      "icon": "DataPower.png",
+      "website": "https://www.ibm.com/products/datapower-gateway"
     },
     "IBM HTTP Server": {
       "cats": [
@@ -6909,7 +6920,8 @@
     },
     "Nginx": {
       "cats": [
-        22
+        22,
+        64
       ],
       "headers": {
         "Server": "nginx(?:/([\\d.]+))?\\;version:\\1",
@@ -8996,7 +9008,7 @@
     },
     "Shopfa": {
       "cats": [
-        "6"
+        6
       ],
       "js": {
         "shopfa": ""
@@ -13235,6 +13247,14 @@
     "63": {
       "name": "IaaS",
       "priority": 8
+    },
+    "64": {
+      "name": "Reverse Proxy",
+      "priority": 7
+    },
+    "65": {
+      "name": "Load Balancer",
+      "priority": 7
     }
   }
 }
