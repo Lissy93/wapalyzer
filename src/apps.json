@@ -115,6 +115,30 @@
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
     },
+    "Azure": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "azure-regionname": "",
+        "azure-sitename": "",
+        "azure-slotname": "",
+        "azure-version": ""
+      },
+      "icon": "azure.svg",
+      "website": "https://azure.microsoft.com"
+    },
+    "Azure CDN": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "server": "^(?:ECAcc|ECS|ECD)",
+        "X-EC-Debug": ""
+      },
+      "icon": "azure.svg",
+      "website": "https://azure.microsoft.com/en-us/services/cdn/"
+    },
     "Acquia Cloud": {
       "cats": [
         62
@@ -491,7 +515,7 @@
       "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
       "icon": "all-in-One-SEO-Pack.png",
       "implies": "WordPress",
-      "website": "https://www.acquia.com/"
+      "website": "https://wordpress.org/plugins/all-in-one-seo-pack/"
     },
     "Allegro RomPager": {
       "cats": [
@@ -2187,6 +2211,16 @@
       },
       "icon": "CouchDB.png",
       "website": "http://couchdb.apache.org"
+    },
+    "Countly": {
+      "cats": [
+        10
+      ],
+      "icon": "Countly.png",
+      "js": {
+        "Countly": ""
+      },
+      "website": "https://count.ly"
     },
     "Cowboy": {
       "cats": [
@@ -4122,6 +4156,17 @@
         "DC.identifier": "/content\\.jsp\\?objectid="
       },
       "website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
+    },
+    "Gridsome": {
+      "cats": [
+        57
+      ],
+      "icon": "Gridsome.svg",
+      "implies": "Vue.js",
+      "meta": {
+        "generator": "^Gridsome v([\\d.]+)$\\;version:\\1"
+      },
+      "website": "https://gridsome.org"
     },
     "HERE": {
       "cats": [
@@ -7559,6 +7604,21 @@
       },
       "website": "https://www.pagevamp.com"
     },
+    "Pantheon": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "x-pantheon-styx-hostname": "",
+        "Server": "^Pantheon"
+      },
+      "implies": [
+        "PHP",
+        "Nginx"
+      ],
+      "icon": "pantheon.svg",
+      "website": "https://pantheon.io/"
+    },
     "Paper.js": {
       "cats": [
         25
@@ -7781,6 +7841,19 @@
         "x-powered-by": "^platformOS$"
       },
       "website": "https://www.platform-os.com"
+    },
+    "Platform.sh": {
+      "cats": [
+        62
+      ],
+      "icon": "platformsh.svg",
+      "headers": {
+        "x-platform-cluster": "",
+        "x-platform-processor": "",
+        "x-platform-router": "",
+        "x-platform-server": ""
+      },
+      "website": "https://platform.sh"
     },
     "Play": {
       "cats": [
@@ -9008,6 +9081,16 @@
         "ShellInABox": ""
       },
       "website": "http://shellinabox.com"
+    },
+    "Shiny": {
+      "cats": [
+        18
+      ],
+      "icon": "Shiny.png",
+      "js": {
+        "Shiny.addCustomMessageHandler": ""
+      },
+      "website": "https://shiny.rstudio.com"
     },
     "ShinyStat": {
       "cats": [
@@ -10899,12 +10982,24 @@
         23
       ],
       "headers": {
-        "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1"
+        "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
+        "X-Rocket-Nginx-Bypass": ""
       },
       "html": "<!--[^>]+WP Rocket",
       "icon": "WP Rocket.png",
       "implies": "WordPress",
       "website": "http://wp-rocket.me"
+    },
+    "WP Engine": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "wpe-backend": ""
+      },
+      "icon": "wpengine.svg",
+      "implies": "WordPress",
+      "website": "https://wpengine.com"
     },
     "Warp": {
       "cats": [
@@ -11704,7 +11799,8 @@
       ],
       "implies": [
         "PHP",
-        "Apache"
+        "Apache",
+        "Angular"
       ],
       "cookies": {
         "iexexchanger_session": ""
@@ -11712,7 +11808,7 @@
       "meta": {
         "generator": "iEXExchanger"
       },
-      "script": "iexexchanger",
+      "icon": "iEXExchanger.png",
       "website": "https://exchanger.iexbase.com"
     },
     "ZK": {
