@@ -182,7 +182,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: 'dfd96a9-d',
+				mrev: '15a9f21-d',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -893,7 +893,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1553148212-11522-32076-13408-5488';
+	var POST_MSG_ID = '1554456894-8541-12665-19466-15909';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
@@ -1031,13 +1031,17 @@ var exports = {};
 			myWin = window.document.defaultView,
 			ifrTag;
 
-		try {
+		if ( typeof event.data === "string" && event.data.indexOf(POST_MSG_ID) != -1 ) {
+			try {
 
-			adData = JSON.parse(event.data);
-		} catch(e) {
+				adData = JSON.parse(event.data);
+			} catch (e) {
 
-			return;
+				return;
+			}
 		}
+		else
+			return;
 
 		if ( adData.postMessageId === POST_MSG_ID ) {
 
