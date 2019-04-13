@@ -115,6 +115,30 @@
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
     },
+    "Azure": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "azure-regionname": "",
+        "azure-sitename": "",
+        "azure-slotname": "",
+        "azure-version": ""
+      },
+      "icon": "azure.svg",
+      "website": "https://azure.microsoft.com"
+    },
+    "Azure CDN": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "server": "^(?:ECAcc|ECS|ECD)",
+        "X-EC-Debug": ""
+      },
+      "icon": "azure.svg",
+      "website": "https://azure.microsoft.com/en-us/services/cdn/"
+    },
     "Acquia Cloud": {
       "cats": [
         22
