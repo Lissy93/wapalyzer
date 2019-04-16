@@ -10089,6 +10089,35 @@
       },
       "website": "http://telescopeapp.org"
     },
+    "TN Express Web": {
+      "cats": [
+        1
+      ],
+      "headers": {
+        "Set-Cookie": "^(?:TNEW=)"
+      },
+      "cookies": {
+        "TNEW": ""
+      },
+      "implies": [
+        "Tessitura"
+      ],
+      "icon": "tessitura.svg",
+      "website": "https://www.tessituranetwork.com"
+    },
+    "Tessitura": {
+      "cats": [
+        53
+      ],
+      "html": "<*(?:Tessitura Version:) (\\d*\\.\\d*\\.\\d*)?\\;version:\\1",
+      "implies": [
+        "Microsoft ASP.NET",
+        "IIS",
+        "Windows Server"
+      ],
+      "icon": "tessitura.svg",
+      "website": "https://www.tessituranetwork.com"
+    },
     "Tengine": {
       "cats": [
         22
