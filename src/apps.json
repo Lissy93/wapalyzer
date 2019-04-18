@@ -7235,7 +7235,9 @@
       "cats": [
         6
       ],
-      "html": "(?:index\\.php\\?route=[a-z]+/|Powered By <a href=\"[^>]+OpenCart)",
+      "cookies": {
+        "OCSESSID": ""
+      },
       "icon": "OpenCart.png",
       "implies": "PHP",
       "website": "http://www.opencart.com"
