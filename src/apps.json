@@ -10106,7 +10106,7 @@
       "cats": [
         53
       ],
-      "html": "<*(?:Tessitura Version:) (\\d*\\.\\d*\\.\\d*)?\\;version:\\1",
+      "html": "<!--[^>]+Tessitura Version: (\\d*\\.\\d*\\.\\d*)?\\;version:\\1",
       "implies": [
         "Microsoft ASP.NET",
         "IIS",
