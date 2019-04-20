@@ -141,13 +141,18 @@
     },
     "Acquia Cloud": {
       "cats": [
-        22
+        62
       ],
       "headers": {
         "X-AH-Environment": "^\\w+$"
       },
       "icon": "acquia-cloud.png",
-      "implies": "Drupal\\;confidence:95",
+      "implies": [
+        "Drupal\\;confidence:95",
+        "Apache",
+        "Percona",
+        "Amazon EC2"
+      ],
       "website": "https://www.acquia.com/"
     },
     "Act-On": {
