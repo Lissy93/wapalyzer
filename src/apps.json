@@ -8782,14 +8782,15 @@
         10
       ],
       "js": {
-        "sa": ""
+        "sa.lib_version": "([\\d.]+)\\;version:\\1",
+        "sensorsdata_app_js_bridge_call_js": ""
       },
       "cookies": {
         "sensorsdata2015session": "",
         "sensorsdata2015jssdkcross": ""
       },
       "icon": "Sensors Data.svg",
-      "script": "static\\.sensorsdata\\.cn/sdk/([\\d.]+)/sensorsdata\\.min\\.js\\;version:\\1",
+      "script": "sensorsdata",
       "website": "https://www.sensorsdata.cn"
     },
     "Sentry": {
