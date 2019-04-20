@@ -662,6 +662,20 @@
       ],
       "website": "https://amplitude.com/"
     },
+    "Analysys Ark": {
+      "cats": [
+        10
+      ],
+      "js": {
+        "AnalysysAgent": ""
+      },
+      "cookies": {
+        "ARK_ID": ""
+      },
+      "icon": "Analysys Ark.svg",
+      "script": "AnalysysFangzhou_JS_SDK\\.min\\.js\\?v=([\\d.]+)\\;version:\\1",
+      "website": "https://ark.analysys.cn"
+    },
     "Anetwork": {
       "cats": [
         36
@@ -4167,6 +4181,21 @@
         "generator": "^Gridsome v([\\d.]+)$\\;version:\\1"
       },
       "website": "https://gridsome.org"
+    },
+    "GrowingIO": {
+      "cats": [
+        10
+      ],
+      "js": {
+        "gio": ""
+      },
+      "cookies": {
+        "grwng_uid": "",
+        "gr_user_id": ""
+      },
+      "icon": "GrowingIO.png",
+      "script": "assets\\.growingio\\.com/([\\d.]+)/gio.js\\;version:\\1",
+      "website": "https://www.growingio.com/"
     },
     "HERE": {
       "cats": [
@@ -8747,6 +8776,21 @@
       "html": "<img[^>]+_tcm\\d{2,3}-\\d{6}\\.",
       "icon": "SDL Tridion.png",
       "website": "http://www.sdl.com/products/tridion"
+    },
+    "Sensors Data": {
+      "cats": [
+        10
+      ],
+      "js": {
+        "sa": ""
+      },
+      "cookies": {
+        "sensorsdata2015session": "",
+        "sensorsdata2015jssdkcross": ""
+      },
+      "icon": "Sensors Data.svg",
+      "script": "static\\.sensorsdata\\.cn/sdk/([\\d.]+)/sensorsdata\\.min\\.js\\;version:\\1",
+      "website": "https://www.sensorsdata.cn"
     },
     "Sentry": {
       "cats": [
