@@ -126,7 +126,8 @@
         "azure-version": ""
       },
       "cookies": {
-        "ARRAffinity": ""
+        "ARRAffinity": "",
+        "TiPMix": ""
       },
       "icon": "azure.svg",
       "website": "https://azure.microsoft.com"
@@ -5268,6 +5269,19 @@
         "generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1"
       },
       "website": "http://www.kentico.com"
+    },
+    "Kestrel": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "Server": "^Kestrel"
+      },
+      "implies": [
+        "Microsoft ASP.NET"
+      ],
+      "icon": "kestrel.svg",
+      "website": "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel"
     },
     "KeyCDN": {
       "cats": [
