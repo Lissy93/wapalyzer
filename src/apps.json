@@ -5949,7 +5949,7 @@
         6
       ],
       "cookies": {
-        "botble_session": ""
+        "mypage_session": ""
       },
       "headers": {
         "CMS-Version": "^(.+)$\\;version:\\1\\;confidence:0"
@@ -5957,6 +5957,21 @@
       "icon": "mypage-platform.png",
       "implies": "Laravel",
       "website": "https://www.mypage.vn"
+    },
+    "Botble CMS": {
+      "cats": [
+        1,
+        6
+      ],
+      "cookies": {
+        "botble_session": ""
+      },
+      "headers": {
+        "CMS-Version": "^(.+)$\\;version:\\1\\;confidence:0"
+      },
+      "icon": "Botble-CMS.png",
+      "implies": "Laravel",
+      "website": "https://botble.com"
     },
     "MadAdsMedia": {
       "cats": [
