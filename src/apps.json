@@ -125,6 +125,10 @@
         "azure-slotname": "",
         "azure-version": ""
       },
+      "cookies": {
+        "ARRAffinity": "",
+        "TiPMix": ""
+      },
       "icon": "azure.svg",
       "website": "https://azure.microsoft.com"
     },
@@ -147,7 +151,12 @@
         "X-AH-Environment": "^\\w+$"
       },
       "icon": "acquia-cloud.png",
-      "implies": "Drupal\\;confidence:95",
+      "implies": [
+        "Drupal\\;confidence:95",
+        "Apache",
+        "Percona",
+        "Amazon EC2"
+      ],
       "website": "https://www.acquia.com/"
     },
     "Act-On": {
@@ -2876,8 +2885,6 @@
     },
     "Elementor": {
       "cats": [
-        1,
-        11,
         51
       ],
       "html": [
@@ -5266,6 +5273,19 @@
       },
       "website": "http://www.kentico.com"
     },
+    "Kestrel": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "Server": "^Kestrel"
+      },
+      "implies": [
+        "Microsoft ASP.NET"
+      ],
+      "icon": "kestrel.svg",
+      "website": "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel"
+    },
     "KeyCDN": {
       "cats": [
         31
@@ -6051,6 +6071,13 @@
       "icon": "ManyContacts.png",
       "script": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
+    },
+    "MariaDB": {
+      "cats": [
+        34
+      ],
+      "icon": "mariadb.svg",
+      "website": "https://mariadb.org"
     },
     "Marionette.js": {
       "cats": [
@@ -7235,7 +7262,9 @@
       "cats": [
         6
       ],
-      "html": "(?:index\\.php\\?route=[a-z]+/|Powered By <a href=\"[^>]+OpenCart)",
+      "cookies": {
+        "OCSESSID": ""
+      },
       "icon": "OpenCart.png",
       "implies": "PHP",
       "website": "http://www.opencart.com"
@@ -7614,7 +7643,8 @@
       },
       "implies": [
         "PHP",
-        "Nginx"
+        "Nginx",
+        "MariaDB"
       ],
       "icon": "pantheon.svg",
       "website": "https://pantheon.io/"
@@ -7726,6 +7756,13 @@
       "icon": "Pendo.svg",
       "script": "cdn\\.pendo\\.io*\\.js",
       "website": "https://pendo.io"
+    },
+    "Percona": {
+      "cats": [
+        34
+      ],
+      "icon": "percona.svg",
+      "website": "https://www.percona.com"
     },
     "Percussion": {
       "cats": [
@@ -10088,6 +10125,32 @@
         "Telescope": ""
       },
       "website": "http://telescopeapp.org"
+    },
+    "TN Express Web": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "TNEW": ""
+      },
+      "implies": [
+        "Tessitura"
+      ],
+      "icon": "tessitura.svg",
+      "website": "https://www.tessituranetwork.com"
+    },
+    "Tessitura": {
+      "cats": [
+        53
+      ],
+      "html": "<!--[^>]+Tessitura Version: (\\d*\\.\\d*\\.\\d*)?\\;version:\\1",
+      "implies": [
+        "Microsoft ASP.NET",
+        "IIS",
+        "Windows Server"
+      ],
+      "icon": "tessitura.svg",
+      "website": "https://www.tessituranetwork.com"
     },
     "Tengine": {
       "cats": [
