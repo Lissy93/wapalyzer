@@ -317,5 +317,6 @@ class Driver {
 }
 
 module.exports = Driver;
+
 module.exports.processJs = processJs;
 module.exports.processHtml = processHtml;
