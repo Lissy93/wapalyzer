@@ -160,6 +160,8 @@ class Wappalyzer {
       this.detected[url.canonical] = {};
     }
 
+    const metaTags = [];
+
     // Additional information
     let language = null;
 
@@ -168,9 +170,22 @@ class Wappalyzer {
         html = '';
       }
 
-      const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+      let matches = data.html.match(new RegExp('<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"', 'i'));
 
       language = matches && matches.length ? matches[1] : null;
+
+      // Meta tags
+      const regex = /<meta[^>]+>/ig;
+
+      do {
+        matches = regex.exec(html);
+
+        if (!matches) {
+          break;
+        }
+
+        metaTags.push(matches[0]);
+      } while (matches);
     }
 
     Object.keys(this.apps).forEach((appName) => {
@@ -184,7 +199,7 @@ class Wappalyzer {
 
       if (html) {
         promises.push(this.analyzeHtml(app, html));
-        promises.push(this.analyzeMeta(app, html));
+        promises.push(this.analyzeMeta(app, metaTags));
       }
 
       if (scripts) {
@@ -208,33 +223,32 @@ class Wappalyzer {
       });
     }
 
-    return new Promise((resolve) => {
-      Promise.all(promises)
-        .then(() => {
-          Object.keys(apps).forEach((appName) => {
-            const app = apps[appName];
+    return new Promise(async (resolve) => {
+      await Promise.all(promises);
 
-            if (!app.detected || !app.getConfidence()) {
-              delete apps[app.name];
-            }
-          });
+      Object.keys(apps).forEach((appName) => {
+        const app = apps[appName];
 
-          resolveExcludes(apps, this.detected[url]);
-          this.resolveImplies(apps, url.canonical);
+        if (!app.detected || !app.getConfidence()) {
+          delete apps[app.name];
+        }
+      });
 
-          this.cacheDetectedApps(apps, url.canonical);
-          this.trackDetectedApps(apps, url, language);
+      resolveExcludes(apps, this.detected[url]);
+      this.resolveImplies(apps, url.canonical);
 
-          this.log(`Processing ${Object.keys(data).join(', ')} took ${((new Date() - startTime) / 1000).toFixed(2)}s (${url.hostname})`, 'core');
+      this.cacheDetectedApps(apps, url.canonical);
+      this.trackDetectedApps(apps, url, language);
 
-          if (Object.keys(apps).length) {
-            this.log(`Identified ${Object.keys(apps).join(', ')} (${url.hostname})`, 'core');
-          }
+      this.log(`Processing ${Object.keys(data).join(', ')} took ${((new Date() - startTime) / 1000).toFixed(2)}s (${url.hostname})`, 'core');
 
-          this.driver.displayApps(this.detected[url.canonical], { language }, context);
+      if (Object.keys(apps).length) {
+        this.log(`Identified ${Object.keys(apps).join(', ')} (${url.hostname})`, 'core');
+      }
 
-          return resolve();
-        });
+      this.driver.displayApps(this.detected[url.canonical], { language }, context);
+
+      return resolve();
     });
   }
 
@@ -249,23 +263,20 @@ class Wappalyzer {
    *
    */
   robotsTxtAllows(url) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const parsed = this.parseUrl(url);
 
       if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-        reject();
-
-        return;
+        return reject();
       }
 
-      this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
-        .then((robotsTxt) => {
-          if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
-            return reject();
-          }
+      const robotsTxt = await this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:');
 
-          return resolve();
-        }, () => resolve());
+      if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
+        return reject();
+      }
+
+      return resolve();
     });
   }
 
@@ -359,11 +370,11 @@ class Wappalyzer {
             attrs.string = attr;
 
             try {
-              attrs.regex = new RegExp(attr.replace('/', '\\/'), 'i'); // Escape slashes in regular expression
-            } catch (e) {
+              attrs.regex = new RegExp(attr.replace('/', '\/'), 'i'); // Escape slashes in regular expression
+            } catch (error) {
               attrs.regex = new RegExp();
 
-              this.log(`${e}: ${attr}`, 'error', 'core');
+              this.log(`${error.message}: ${attr}`, 'error', 'core');
             }
           }
         });
@@ -556,8 +567,7 @@ class Wappalyzer {
   /**
    * Analyze meta tag
    */
-  analyzeMeta(app, html) {
-    const regex = /<meta[^>]+>/ig;
+  analyzeMeta(app, metaTags) {
     const patterns = this.parsePatterns(app.props.meta);
     const promises = [];
 
@@ -565,17 +575,7 @@ class Wappalyzer {
       return Promise.resolve();
     }
 
-    let matches;
-
-    do {
-      matches = regex.exec(html);
-
-      if (!matches) {
-        break;
-      }
-
-      const [match] = matches;
-
+    metaTags.forEach((match) => {
       Object.keys(patterns).forEach((meta) => {
         const r = new RegExp(`(?:name|property)=["']${meta}["']`, 'i');
 
@@ -589,7 +589,7 @@ class Wappalyzer {
           }));
         }
       });
-    } while (matches);
+    });
 
     return Promise.all(promises);
   }

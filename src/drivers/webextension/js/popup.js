@@ -1,32 +1,26 @@
-/** global: chrome */
+/* eslint-env browser */
+/* global browser, jsonToDOM */
+
 /** global: browser */
+/** global: jsonToDOM */
 
 let pinnedCategory = null;
+let termsAccepted = false;
 
-const func = (tabs) => {
-  (chrome || browser).runtime.sendMessage({
-    id: 'get_apps',
-    tab: tabs[0],
-    source: 'popup.js',
-  }, (response) => {
-    pinnedCategory = response.pinnedCategory;
+const port = browser.runtime.connect({
+  name: 'popup.js',
+});
 
-    replaceDomWhenReady(appsToDomTemplate(response));
+function slugify(string) {
+  return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
+}
+
+function i18n() {
+  const nodes = document.querySelectorAll('[data-i18n]');
+
+  Array.prototype.forEach.call(nodes, (node) => {
+    node.innerHTML = browser.i18n.getMessage(node.dataset.i18n);
   });
-};
-
-browser.tabs.query({ active: true, currentWindow: true })
-  .then(func)
-  .catch(console.error);
-
-function replaceDomWhenReady(dom) {
-  if (/complete|interactive|loaded/.test(document.readyState)) {
-    replaceDom(dom);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      replaceDom(dom);
-    });
-  }
 }
 
 function replaceDom(domTemplate) {
@@ -38,11 +32,7 @@ function replaceDom(domTemplate) {
 
   container.appendChild(jsonToDOM(domTemplate, document, {}));
 
-  const nodes = document.querySelectorAll('[data-i18n]');
-
-  Array.prototype.forEach.call(nodes, (node) => {
-    node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
-  });
+  i18n();
 
   Array.from(document.querySelectorAll('.detected__category-pin-wrapper')).forEach((pin) => {
     pin.addEventListener('click', () => {
@@ -64,13 +54,23 @@ function replaceDom(domTemplate) {
         pinnedCategory = categoryId;
       }
 
-      (chrome || browser).runtime.sendMessage({
+      port.postMessage({
         id: 'set_option',
         key: 'pinnedCategory',
         value: pinnedCategory,
       });
     });
   });
+}
+
+function replaceDomWhenReady(dom) {
+  if (/complete|interactive|loaded/.test(document.readyState)) {
+    replaceDom(dom);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      replaceDom(dom);
+    });
+  }
 }
 
 function appsToDomTemplate(response) {
@@ -92,8 +92,7 @@ function appsToDomTemplate(response) {
       const apps = [];
 
       for (const appName in categories[cat].apps) {
-        const confidence = response.tabCache.detected[appName].confidenceTotal;
-        const version = response.tabCache.detected[appName].version;
+        const { confidence, version } = response.tabCache.detected[appName];
 
         apps.push(
           [
@@ -190,6 +189,58 @@ function appsToDomTemplate(response) {
   return template;
 }
 
-function slugify(string) {
-  return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
+async function getApps() {
+  try {
+    const tabs = await browser.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
+
+    port.postMessage({
+      id: 'get_apps',
+      tab: tabs[0],
+    });
+  } catch (error) {
+    console.error(error); // eslint-disable-line no-console
+  }
 }
+
+function displayApps(response) {
+  pinnedCategory = response.pinnedCategory; // eslint-disable-line prefer-destructuring
+  termsAccepted = response.termsAccepted; // eslint-disable-line prefer-destructuring
+
+  if (termsAccepted) {
+    replaceDomWhenReady(appsToDomTemplate(response));
+  } else {
+    i18n();
+
+    const wrapper = document.querySelector('.terms__wrapper');
+
+    document.querySelector('.terms__accept').addEventListener('click', () => {
+      port.postMessage({
+        id: 'set_option',
+        key: 'termsAccepted',
+        value: true,
+      });
+
+      wrapper.classList.remove('terms__wrapper--active');
+
+      getApps();
+    });
+
+    wrapper.classList.add('terms__wrapper--active');
+  }
+}
+
+port.onMessage.addListener((message) => {
+  switch (message.id) {
+    case 'get_apps':
+      displayApps(message.response);
+
+      break;
+    default:
+      // Do nothing
+  }
+});
+
+getApps();

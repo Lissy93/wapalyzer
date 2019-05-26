@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 (() => {
   try {
     const detectJs = (chain) => {
@@ -51,7 +53,7 @@
         }
       }
 
-      postMessage({ id: 'js', js }, '*');
+      postMessage({ id: 'js', js }, window.location.href);
     };
 
     addEventListener('message', onMessage);
