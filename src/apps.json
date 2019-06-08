@@ -304,12 +304,17 @@
       ],
       "html": [
         "<div class=\"[^\"]*parbase",
-        "<div[^>]+data-component-path=\"[^\"+]jcr:"
+        "<div[^>]+data-component-path=\"[^\"+]jcr:",
+        "<div class=\"[^\"]*aem-Grid"
       ],
       "icon": "Adobe Experience Manager.svg",
       "implies": "Java",
-      "script": "/etc/designs/",
-      "website": "http://www.adobe.com/au/marketing-cloud/enterprise-content-management.html"
+      "script": [
+        "/etc/designs/",
+        "/etc/clientlibs/",
+        "/etc.clientlibs/"
+      ],
+      "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
     "Adobe GoLive": {
       "cats": [
