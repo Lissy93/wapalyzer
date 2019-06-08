@@ -125,7 +125,7 @@
         "WordPress"
       ],
       "meta": {
-        "generator": "^AMP Plugin v\\d+\\.\\d+"
+        "generator": "^AMP Plugin v(\\d+\\.\\d+.*?)(?:;\\s*mode=(\\w+))?$"
       },
       "website": "https://amp-wp.org"
     },
