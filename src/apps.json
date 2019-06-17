@@ -9319,11 +9319,16 @@
       "cats": [
         6
       ],
-      "html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
+      "html": "<link[^>]+=['\"]//cdn\\.shopify\\.com\\;confidence:25",
       "icon": "Shopify.svg",
       "js": {
-        "Shopify": ""
+        "Shopify": "\\;confidence:25"
       },
+      "headers": {
+        "x-shopid": "*\\;confidence:50",
+        "x-shopify-stage": "*\\;confidence:50"
+      },
+      "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
     "Shopline": {
