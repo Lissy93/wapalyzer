@@ -3185,11 +3185,15 @@
     },
     "Essential JS 2": {
       "cats": [
-        12, 18, 59
+        12,
+        18,
+        59
       ],
       "icon": "syncfusion.svg",
       "website": "https://www.syncfusion.com/javascript-ui-controls",
-      "js": { "ej.base": "" },
+      "js": {
+        "ej.base": ""
+      },
       "html": "<[^<]* class=\"[^<]*\be-control\b[^-][^<]*\be-lib\b[^>]*\"[^>]*>"
     },
     "Etherpad": {
@@ -13349,10 +13353,12 @@
       "website": "https://webpack.js.org/"
     },
     "wisyCMS": {
-      "cats": [ "1" ],
+      "cats": [
+        "1"
+      ],
       "icon": "wisyCMS.svg",
       "meta": {
-            "generator": "^wisy CMS[ v]{0,3}([0-9.,]*)\\;version:\\1"
+        "generator": "^wisy CMS[ v]{0,3}([0-9.,]*)\\;version:\\1"
       },
       "website": "https://wisy.3we.de"
     },
@@ -13464,7 +13470,9 @@
       "website": "https://zipkin.io/"
     },
     "RX Web Server": {
-      "cats": [22],
+      "cats": [
+        22
+      ],
       "headers": {
         "X-Powered-By": "RX-WEB"
       },
