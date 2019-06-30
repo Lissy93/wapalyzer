@@ -13419,13 +13419,12 @@
         1,
         11
       ],
-      "html": [
-        "<link rel=[\"']stylesheet[\"'] [^>]+/halo-(?:backend|frontend|common)/"
-      ],
       "icon": "Halo.svg",
+      "meta": {
+        "generator": "Halo ([\\d.]+)?\\;version:\\1"
+      },
       "implies": "Java",
-      "script": "/halo-(?:backend|frontend|common)/",
-      "website": "https://github.com/ruibaby/halo"
+      "website": "https://halo.run"
     },
     "Rocket": {
       "cats": [
