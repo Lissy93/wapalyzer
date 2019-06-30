@@ -115,6 +115,20 @@
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
     },
+    "AMP Plugin": {
+      "cats": [
+        1,
+        5
+      ],
+      "icon": "Accelerated-Mobile-Pages.svg",
+      "implies": [
+        "WordPress"
+      ],
+      "meta": {
+        "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
+      },
+      "website": "https://amp-wp.org"
+    },
     "Azure": {
       "cats": [
         62
@@ -11574,7 +11588,6 @@
       ],
       "html": [
         "<link rel=[\"']stylesheet[\"'] [^>]+/wp-(?:content|includes)/",
-        "<div[^>]*class=[\"']amp-wp-",
         "<link[^>]+s\\d+\\.wp\\.com"
       ],
       "icon": "WordPress.svg",
