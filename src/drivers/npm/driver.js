@@ -242,16 +242,15 @@ class Driver {
 
     const reducedLinks = Array.prototype.reduce.call(
       browser.links, (results, link) => {
-        // Catch broken links.
-        if (!link.protocol) {
-          this.wappalyzer.log("Element is not a valid link interface.", "driver", "error");
-          return;
-        }
-        if (results == null || !results.hasOwnProperty("push")) {
-          this.wappalyzer.log("Result object is not an array.", "driver", "error");
-          return;
-        }
-        if (link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname)) {
+        if (
+          results
+          && Object.prototype.hasOwnProperty.call(results, 'push')
+          && link.protocol
+          && link.protocol.match(/https?:/)
+          && link.rel !== 'nofollow'
+          && link.hostname === this.origPageUrl.hostname
+          && extensions.test(link.pathname)
+        ) {
           link.hash = '';
 
           results.push(url.parse(link.href));
