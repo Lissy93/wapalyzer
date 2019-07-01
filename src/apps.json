@@ -107,13 +107,27 @@
       },
       "website": "http://awstats.sourceforge.net"
     },
-    "Accelerated Mobile Pages": {
+    "AMP": {
       "cats": [
         12
       ],
-      "html": "<html[^>]* (?:amp|⚡)",
+      "html": "<html[^>]* (?:amp|⚡)[^-]",
       "icon": "Accelerated-Mobile-Pages.svg",
-      "website": "https://www.ampproject.org"
+      "website": "https://www.amp.dev"
+    },
+    "AMP Plugin": {
+      "cats": [
+        1,
+        5
+      ],
+      "icon": "Accelerated-Mobile-Pages.svg",
+      "implies": [
+        "WordPress"
+      ],
+      "meta": {
+        "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
+      },
+      "website": "https://amp-wp.org"
     },
     "Azure": {
       "cats": [
@@ -774,9 +788,6 @@
         "<i class=\"anticon anticon-"
       ],
       "icon": "Ant Design.svg",
-      "implies": [
-        "React"
-      ],
       "js": {
         "antd": ""
       },
@@ -2431,6 +2442,24 @@
       "script": "dhtmlxcommon\\.js",
       "website": "http://dhtmlx.com"
     },
+    "DERAK.CLOUD": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "Server": "^DERAK.CLOUD$",
+        "Derak-Umbrage": ""
+      },
+      "icon": "DerakCloud.png",
+      "cookies": {
+        "__derak_auth": "",
+        "__derak_user": ""
+      },
+      "js": {
+        "derakCloud.init": ""
+      },
+      "website": "https://derak.cloud/"
+    },
     "DM Polopoly": {
       "cats": [
         1
@@ -3164,11 +3193,15 @@
     },
     "Essential JS 2": {
       "cats": [
-        12, 18, 59
+        12,
+        18,
+        59
       ],
       "icon": "syncfusion.svg",
       "website": "https://www.syncfusion.com/javascript-ui-controls",
-      "js": { "ej.base": "" },
+      "js": {
+        "ej.base": ""
+      },
       "html": "<[^<]* class=\"[^<]*\be-control\b[^-][^<]*\be-lib\b[^>]*\"[^>]*>"
     },
     "Etherpad": {
@@ -8912,6 +8945,8 @@
       ],
       "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
       "js": {
+        "Sentry": "",
+        "Sentry.SDK_VERSION": "(.+)\\;version:\\1",
         "Raven.config": "",
         "ravenOptions.whitelistUrls": ""
       },
@@ -9341,8 +9376,8 @@
         "Shopify": "\\;confidence:25"
       },
       "headers": {
-        "x-shopid": "*\\;confidence:50",
-        "x-shopify-stage": "*\\;confidence:50"
+        "x-shopid": "\\;confidence:50",
+        "x-shopify-stage": "\\;confidence:50"
       },
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
@@ -11495,7 +11530,9 @@
     },
     "Wix": {
       "cats": [
-        1
+        1,
+        6,
+        11
       ],
       "cookies": {
         "Domain": "\\.wix\\.com"
@@ -11506,13 +11543,17 @@
         "X-Wix-Server-Artifact-Id": ""
       },
       "icon": "Wix.png",
+      "implies": [
+        "React"
+      ],
       "js": {
-        "wixData": "",
-        "wixErrors": "",
-        "wixEvents": ""
+        "wixBiSession": ""
       },
-      "script": "static\\.wixstatic\\.com",
-      "website": "http://wix.com"
+      "meta": {
+        "generator": "Wix\\.com Website Builder"
+      },
+      "script": "static\\.parastorage\\.com",
+      "website": "https://www.wix.com"
     },
     "Wolf CMS": {
       "cats": [
@@ -11582,7 +11623,6 @@
       ],
       "html": [
         "<link rel=[\"']stylesheet[\"'] [^>]+/wp-(?:content|includes)/",
-        "<div[^>]*class=[\"']amp-wp-",
         "<link[^>]+s\\d+\\.wp\\.com"
       ],
       "icon": "WordPress.svg",
@@ -13146,7 +13186,8 @@
       ],
       "html": [
         "<style[^>]*data-styled(?:-components)?[\\s\"]",
-        "<style[^>]+data-styled-version=\"([0-9]+)\"\\;version:\\1"
+        "<style[^>]+data-styled-version=\"([0-9]+)\"\\;version:\\1",
+        "<[^>]+sc-component-id: sc-"
       ],
       "icon": "styled-components.png",
       "implies": [
@@ -13320,10 +13361,12 @@
       "website": "https://webpack.js.org/"
     },
     "wisyCMS": {
-      "cats": [ "1" ],
+      "cats": [
+        "1"
+      ],
       "icon": "wisyCMS.svg",
       "meta": {
-            "generator": "^wisy CMS[ v]{0,3}([0-9.,]*)\\;version:\\1"
+        "generator": "^wisy CMS[ v]{0,3}([0-9.,]*)\\;version:\\1"
       },
       "website": "https://wisy.3we.de"
     },
@@ -13396,13 +13439,12 @@
         1,
         11
       ],
-      "html": [
-        "<link rel=[\"']stylesheet[\"'] [^>]+/halo-(?:backend|frontend|common)/"
-      ],
       "icon": "Halo.svg",
+      "meta": {
+        "generator": "Halo ([\\d.]+)?\\;version:\\1"
+      },
       "implies": "Java",
-      "script": "/halo-(?:backend|frontend|common)/",
-      "website": "https://github.com/ruibaby/halo"
+      "website": "https://halo.run"
     },
     "Rocket": {
       "cats": [
@@ -13436,7 +13478,9 @@
       "website": "https://zipkin.io/"
     },
     "RX Web Server": {
-      "cats": [22],
+      "cats": [
+        22
+      ],
       "headers": {
         "X-Powered-By": "RX-WEB"
       },
