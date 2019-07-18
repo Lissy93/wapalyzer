@@ -1,47 +1,16 @@
-'use strict';
+const Driver = require('./driver');
+const ZombieBrowser = require('./browsers/zombie');
 
-const Wappalyzer = require('./driver');
+class Wappalyzer {
+  constructor(pageUrl, options) {
+    this.browser = ZombieBrowser;
 
-const args = process.argv.slice(2);
-
-const url = args.shift() || '';
-
-if ( !url ) {
-  process.stderr.write('No URL specified\n');
-
-  process.exit(1);
-}
-
-var options = {};
-var arg;
-
-while ( arg = args.shift() ) {
-  var matches = /--([^=]+)=(.+)/.exec(arg);
-
-  if ( matches ) {
-    var key = matches[1].replace(/-\w/g, matches => matches[1].toUpperCase());
-    var value = matches[2];
-
-    options[key] = value;
+    return new Driver(this.browser, pageUrl, options);
   }
 }
 
-const wappalyzer = new Wappalyzer(url, options);
+Wappalyzer.browsers = {
+  zombie: ZombieBrowser,
+};
 
-setTimeout(() => {
-  console.log('force quit');
-
-  process.exit(1);
-}, 10000);
-
-wappalyzer.analyze()
-  .then(json => {
-    process.stdout.write(JSON.stringify(json) + '\n')
-
-    process.exit(0);
-  })
-  .catch(error => {
-    process.stderr.write(error + '\n')
-
-    process.exit(1);
-  });
+module.exports = Wappalyzer;

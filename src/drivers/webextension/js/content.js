@@ -1,17 +1,34 @@
 /** global: browser */
 /** global: XMLSerializer */
 
-if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
+/* global browser */
+/* eslint-env browser */
+
+const port = browser.runtime.connect({
+  name: 'content.js',
+});
+
+if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
   try {
-    sendMessage('init', {});
+    port.postMessage({ id: 'init' });
 
     // HTML
-    var html = new XMLSerializer().serializeToString(document).split('\n');
+    let html = new XMLSerializer().serializeToString(document);
 
-    html = html
-      .slice(0, 1000).concat(html.slice(html.length - 1000))
-      .map(line => line.substring(0, 1000))
-      .join('\n');
+    const chunks = [];
+    const maxCols = 2000;
+    const maxRows = 3000;
+    const rows = html.length / maxCols;
+
+    let i;
+
+    for (i = 0; i < rows; i += 1) {
+      if (i < maxRows / 2 || i > rows - maxRows / 2) {
+        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+      }
+    }
+
+    html = chunks.join('\n');
 
     // Scripts
     const scripts = Array.prototype.slice
@@ -20,52 +37,51 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
       .map(script => script.src)
       .filter(script => script.indexOf('data:text/javascript;') !== 0);
 
-    sendMessage('analyze', { html, scripts });
+    port.postMessage({ id: 'analyze', subject: { html, scripts } });
 
     // JavaScript variables
     const script = document.createElement('script');
 
     script.onload = () => {
-      const onMessage = event => {
-        if ( event.data.id !== 'js' ) {
+      const onMessage = (event) => {
+        if (event.data.id !== 'js') {
           return;
         }
 
-        removeEventListener('message', onMessage);
+        window.removeEventListener('message', onMessage);
 
-        sendMessage('analyze', { js: event.data.js });
+        port.postMessage({ id: 'analyze', subject: { js: event.data.js } });
 
         script.remove();
       };
 
-      addEventListener('message', onMessage);
+      window.addEventListener('message', onMessage);
 
-      sendMessage('get_js_patterns', {}, response => {
-        if ( response ) {
-          postMessage({
-            id: 'patterns',
-            patterns: response.patterns
-          }, '*');
-        }
-      });
+      port.postMessage({ id: 'get_js_patterns' });
     };
 
     script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
     document.body.appendChild(script);
-  } catch (e) {
-    sendMessage('log', e);
+  } catch (error) {
+    port.postMessage({ id: 'log', subject: error });
   }
 }
 
-function sendMessage(id, subject, callback) {
-  ( chrome || browser ).runtime.sendMessage({
-    id,
-    subject,
-    source: 'content.js'
-  }, callback || ( () => {} ));
-}
+port.onMessage.addListener((message) => {
+  switch (message.id) {
+    case 'get_js_patterns':
+      postMessage({
+        id: 'patterns',
+        patterns: message.response.patterns,
+      }, window.location.href);
+
+      break;
+    default:
+      // Do nothing
+  }
+});
 
 // https://stackoverflow.com/a/44774834
 // https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
-undefined;
+undefined; // eslint-disable-line no-unused-expressions
