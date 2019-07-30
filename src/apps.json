@@ -191,6 +191,23 @@
       "script": "adinfinity\\.com\\.au",
       "website": "http://adinfinity.com.au"
     },
+    "AdOcean": {
+      "cats": [
+        36
+      ],
+      "icon": "AdOcean.png",
+      "implies": "Gemius",
+      "js": {
+        "ado.master": "",
+        "ado.slave": "",
+        "ado.placement": ""
+      },
+      "script": [
+        "adocean\\.pl/files/js/ado\\.js",
+        "adocean\\.pl\\;confidence:0.8"
+      ],
+      "website": "https://adocean-global.com"
+    },
     "AdRiver": {
       "cats": [
         36
