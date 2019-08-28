@@ -242,7 +242,15 @@ class Driver {
 
     const reducedLinks = Array.prototype.reduce.call(
       browser.links, (results, link) => {
-        if (link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname)) {
+        if (
+          results
+          && Object.prototype.hasOwnProperty.call(results, 'push')
+          && link.protocol
+          && link.protocol.match(/https?:/)
+          && link.rel !== 'nofollow'
+          && link.hostname === this.origPageUrl.hostname
+          && extensions.test(link.pathname)
+        ) {
           link.hash = '';
 
           results.push(url.parse(link.href));
