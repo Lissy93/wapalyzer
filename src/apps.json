@@ -8907,6 +8907,23 @@
       "icon": "SAP.png",
       "website": "http://sap.com"
     },
+    "Sapper": {
+      "cats": [
+        18
+      ],
+      "html": [
+        "<script[^>]*>__SAPPER__"
+      ],
+      "icon": "Sapper.svg",
+      "js": {
+        "__SAPPER__": ""
+      },
+      "implies": [
+        "Svelte",
+        "Node.js"
+      ],
+      "website": "https://sapper.svelte.dev"
+    },
     "SDL Tridion": {
       "cats": [
         1
@@ -10068,7 +10085,7 @@
       "cats": [
         12
       ],
-      "html": "<[^>]+class=\"[^\"]*svelte-",
+      "html": "<[^>]+class=\\\"[^\\\"]+\\ssvelte-[\\w]*\\\"",
       "icon": "Svelte.svg",
       "website": "https://svelte.dev"
     },
