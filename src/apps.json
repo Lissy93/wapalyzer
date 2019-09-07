@@ -200,6 +200,23 @@
       "script": "adinfinity\\.com\\.au",
       "website": "http://adinfinity.com.au"
     },
+    "AdOcean": {
+      "cats": [
+        36
+      ],
+      "icon": "AdOcean.png",
+      "implies": "Gemius",
+      "js": {
+        "ado.master": "",
+        "ado.slave": "",
+        "ado.placement": ""
+      },
+      "script": [
+        "adocean\\.pl/files/js/ado\\.js",
+        "adocean\\.pl\\;confidence:0.8"
+      ],
+      "website": "https://adocean-global.com"
+    },
     "AdRiver": {
       "cats": [
         36
@@ -3780,6 +3797,25 @@
         "_gauges": ""
       },
       "website": "https://get.gaug.es"
+    },
+    "Gemius": {
+      "cats": [
+        10
+      ],
+      "icon": "Gemius.png",
+      "js": {
+        "pp_gemius_hit": "",
+        "gemius_init": "",
+        "gemius_hit": "",
+        "gemius_pending": ""
+      },
+      "script": [
+        "hit\\.gemius\\.pl/xgemius\\.js",
+        "hit\\.gemius\\.pl\\;confidence:0.8",
+        "xgemius\\.js\\;confidence:0.3"
+      ],
+      "html": "<a [^>]*onclick=\"gemius_hit",
+      "website": "https://www.gemius.com"
     },
     "Gentoo": {
       "cats": [
