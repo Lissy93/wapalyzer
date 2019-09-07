@@ -129,6 +129,15 @@
       },
       "website": "https://amp-wp.org"
     },
+    "Arc Publishing": {
+      "cats": [
+        1
+      ],
+      "html": "<div [^>]*id=\"pb-root\"",
+      "js": { "Fusion.arcSite":  "" },
+      "icon": "Arc-Publishing.svg",
+      "website": "https://www.arcpublishing.com/"
+    },
     "Azure": {
       "cats": [
         62
@@ -190,6 +199,23 @@
       "icon": "AdInfinity.png",
       "script": "adinfinity\\.com\\.au",
       "website": "http://adinfinity.com.au"
+    },
+    "AdOcean": {
+      "cats": [
+        36
+      ],
+      "icon": "AdOcean.png",
+      "implies": "Gemius",
+      "js": {
+        "ado.master": "",
+        "ado.slave": "",
+        "ado.placement": ""
+      },
+      "script": [
+        "adocean\\.pl/files/js/ado\\.js",
+        "adocean\\.pl\\;confidence:0.8"
+      ],
+      "website": "https://adocean-global.com"
     },
     "AdRiver": {
       "cats": [
@@ -398,6 +424,15 @@
       },
       "script": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
       "website": "http://www.advertstream.com"
+    },
+    "Adverticum": {
+      "cats": [
+        36
+      ],
+      "icon": "Adverticum.svg",
+      "script": "(?:ad\\.)?adverticum\\.net/g3\\.js",
+      "html": "<div (?:id=\"[a-zA-Z0-9_]*\" )?class=\"goAdverticum\"",
+      "website": "http://adverticum.net"
     },
     "Adyen": {
       "cats": [
@@ -1101,6 +1136,14 @@
       },
       "script": "^https?://edge\\.avangate\\.net/",
       "website": "http://avangate.com"
+    },
+    "Avasize": {
+      "cats": [
+        5
+      ],
+      "icon": "Avasize.png",
+      "script": "^https?://cdn\\.avasize\\.com/",
+      "website": "https://www.avasize.com"
     },
     "Awesomplete": {
       "cats": [
@@ -1857,6 +1900,14 @@
       },
       "script": "scripts\\.chitika\\.net/",
       "website": "http://chitika.com"
+    },
+    "Chorus": {
+      "cats": [
+        1
+      ],
+      "icon": "Chorus.png",
+      "html": "<meta data-chorus-version=",
+      "website": "https://getchorus.voxmedia.com/"
     },
     "Ckan": {
       "cats": [
@@ -3189,12 +3240,9 @@
         18,
         59
       ],
+	    "html": "<[^<]+class=\"[^\"]*[^-](?:e-control|e-lib)",
       "icon": "syncfusion.svg",
-      "website": "https://www.syncfusion.com/javascript-ui-controls",
-      "js": {
-        "ej.base": ""
-      },
-      "html": "<[^<]* class=\"[^<]*\be-control\b[^-][^<]*\be-lib\b[^>]*\"[^>]*>"
+      "website": "https://www.syncfusion.com/javascript-ui-controls"
     },
     "Etherpad": {
       "cats": [
@@ -3533,6 +3581,7 @@
       ],
       "html": [
         "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
+        "<link[^>]* href=\"https://use\\.fontawesome\\.com/releases/v(.+)/css/\\;version:\\1",
         "<script[^>]* src=[^>]+fontawesome(?:\\.js)?"
       ],
       "icon": "Font Awesome.png",
@@ -3753,6 +3802,25 @@
         "_gauges": ""
       },
       "website": "https://get.gaug.es"
+    },
+    "Gemius": {
+      "cats": [
+        10
+      ],
+      "icon": "Gemius.png",
+      "js": {
+        "pp_gemius_hit": "",
+        "gemius_init": "",
+        "gemius_hit": "",
+        "gemius_pending": ""
+      },
+      "script": [
+        "hit\\.gemius\\.pl/xgemius\\.js",
+        "hit\\.gemius\\.pl\\;confidence:0.8",
+        "xgemius\\.js\\;confidence:0.3"
+      ],
+      "html": "<a [^>]*onclick=\"gemius_hit",
+      "website": "https://www.gemius.com"
     },
     "Gentoo": {
       "cats": [
@@ -4802,6 +4870,16 @@
       "icon": "Incapsula.png",
       "website": "http://www.incapsula.com"
     },
+    "PageCDN": {
+      "cats": [
+        31 
+      ],
+      "headers": {
+        "X-CDN": "PageCDN"
+      },
+      "icon": "PageCDN.png",
+      "website": "https://pagecdn.com"
+    },
     "Includable": {
       "cats": [
         18
@@ -5844,7 +5922,7 @@
         53
       ],
       "icon": "LiveHelp.png",
-      "script": "^https?://server\\.livehelp\\.it/widgetjs/[0-9]{5}/[0-9]{1,3}\\.js",
+      "js": { "LHready": "" },
       "website": "http://www.livehelp.it"
     },
     "LiveJournal": {
@@ -6277,7 +6355,7 @@
       "cookies": {
         "PIWIK_SESSID": ""
       },
-      "icon": "Piwik.png",
+      "icon": "Matomo.png",
       "js": {
         "Matomo": "",
         "Piwik": "",
@@ -6289,7 +6367,7 @@
         "google-play-app": "app-id=org\\.piwik\\.mobile2"
       },
       "script": "piwik\\.js|piwik\\.php",
-      "website": "http://piwik.org"
+      "website": "https://matomo.org"
     },
     "Mattermost": {
       "cats": [
@@ -6429,6 +6507,22 @@
         "powered-by": "^Melis CMS"
       },
       "website": "http://www.melistechnology.com/"
+    },
+    "MemberStack": {
+      "cats": [
+        6,
+        47
+      ],
+      "icon": "MemberStack.png",
+      "cookies": {
+        "memberstack": ""
+      },
+      "js": {
+        "MemberStack": ""
+      },
+      "script": "memberstack\\.js",
+      "url": "^https?//.+\\.memberstack\\.io",
+      "website": "https://www.memberstack.io"
     },
     "Mermaid": {
       "cats": [
@@ -7377,6 +7471,15 @@
       },
       "website": "http://open-eshop.com/"
     },
+    "OpenBSD httpd": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "Server": "^OpenBSD httpd"
+      },
+      "website": "https://man.openbsd.org/httpd.8"
+    },
     "OpenCart": {
       "cats": [
         6
@@ -7614,6 +7717,24 @@
         "generator": "Orchard"
       },
       "website": "http://orchardproject.net"
+    },
+    "OroCommerce": {
+      "cats": [
+        6
+      ],
+      "html": [
+        "<script [^>]+data-requiremodule=\"oro/",
+        "<script [^>]+data-requiremodule=\"oroui/"
+      ],
+      "icon": "orocommerce.svg",
+      "implies": [
+        "PHP",
+        "MySQL"
+      ],
+      "script": [
+        "oro\\.min\\.js\\?version=([\\d.]+)\\;version:\\1"
+      ],
+      "website": "https://oroinc.com"
     },
     "Outbrain": {
       "cats": [
@@ -8784,9 +8905,9 @@
         "Symfony"
       ],
       "meta": {
-        "generator": "^Roadiz ([a-z0-9\\s\\.]+) - \\;version:\\1"
+        "generator": "^Roadiz ?(?:master|develop)? v?([0-9\\.]+)\\;version:\\1"
       },
-      "website": "http://www.roadiz.io"
+      "website": "https://www.roadiz.io"
     },
     "Robin": {
       "cats": [
@@ -8924,6 +9045,22 @@
       ],
       "website": "https://sapper.svelte.dev"
     },
+    "Scenari": {
+      "cats": [
+        1,
+        11
+      ],
+      "icon": "Scenari.png",
+      "implies": [
+        "Roadiz CMS",
+        "PHP",
+        "Symfony"
+      ],
+      "meta": {
+        "generator": "^Roadiz ?(?:master|develop)? v?[0-9\\.]+ - Scenari v?([0-9\\.]+)\\;version:\\1"
+      },
+      "website": "https://demo.scenari.site"
+    },
     "SDL Tridion": {
       "cats": [
         1
@@ -8954,6 +9091,7 @@
       ],
       "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
       "js": {
+        "__SENTRY__": "",
         "Sentry": "",
         "Sentry.SDK_VERSION": "(.+)\\;version:\\1",
         "Raven.config": "",
@@ -11273,6 +11411,20 @@
       "script": "web2py\\.js",
       "website": "http://web2py.com"
     },
+    "Webflow": {
+      "cats": [
+        51
+      ],
+      "html": "<html[^>]+data-wf-site",
+      "icon": "webflow.svg",
+      "js": {
+        "Webflow": ""
+      },
+      "meta": {
+        "generator": "Webflow"
+      },
+      "website": "https://webflow.com"
+    },
     "WebGUI": {
       "cats": [
         1
@@ -13371,7 +13523,7 @@
     },
     "wisyCMS": {
       "cats": [
-        "1"
+        1
       ],
       "icon": "wisyCMS.svg",
       "meta": {
@@ -13495,6 +13647,14 @@
       },
       "icon": "RXWeb.svg",
       "website": "http://developers.rokitax.co.uk/projects/rxweb"
+    },
+    "Tencent Waterproof Wall": {
+      "cats": [
+        9
+      ],
+      "icon": "TencentWaterproofWall.png",
+      "script": "/TCaptcha\\.js",
+      "website": "https://007.qq.com/"
     }
   },
   "categories": {
