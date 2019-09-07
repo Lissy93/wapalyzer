@@ -134,7 +134,9 @@
         1
       ],
       "html": "<div [^>]*id=\"pb-root\"",
-      "js": { "Fusion.arcSite":  "" },
+      "js": {
+        "Fusion.arcSite": ""
+      },
       "icon": "Arc-Publishing.svg",
       "website": "https://www.arcpublishing.com/"
     },
@@ -3240,7 +3242,7 @@
         18,
         59
       ],
-	    "html": "<[^<]+class=\"[^\"]*[^-](?:e-control|e-lib)",
+      "html": "<[^<]+class=\"[^\"]*[^-](?:e-control|e-lib)",
       "icon": "syncfusion.svg",
       "website": "https://www.syncfusion.com/javascript-ui-controls"
     },
@@ -3581,7 +3583,7 @@
       ],
       "html": [
         "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-        "<link[^>]* href=\"https://use\\.fontawesome\\.com/releases/v(.+)/css/\\;version:\\1",
+        "<link[^>]* href=\"https://use\\.fontawesome\\.com/releases/v([^>]+)/css/\\;version:\\1",
         "<script[^>]* src=[^>]+fontawesome(?:\\.js)?"
       ],
       "icon": "Font Awesome.png",
@@ -4872,7 +4874,7 @@
     },
     "PageCDN": {
       "cats": [
-        31 
+        31
       ],
       "headers": {
         "X-CDN": "PageCDN"
@@ -5922,7 +5924,9 @@
         53
       ],
       "icon": "LiveHelp.png",
-      "js": { "LHready": "" },
+      "js": {
+        "LHready": ""
+      },
       "website": "http://www.livehelp.it"
     },
     "LiveJournal": {
