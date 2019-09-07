@@ -8955,6 +8955,7 @@
       ],
       "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
       "js": {
+        "__SENTRY__": "",
         "Sentry": "",
         "Sentry.SDK_VERSION": "(.+)\\;version:\\1",
         "Raven.config": "",
