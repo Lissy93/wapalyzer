@@ -8882,9 +8882,9 @@
         "Symfony"
       ],
       "meta": {
-        "generator": "^Roadiz ([a-z0-9\\s\\.]+) - \\;version:\\1"
+        "generator": "^Roadiz ?(?:master|develop)? v?([0-9\\.]+)\\;version:\\1"
       },
-      "website": "http://www.roadiz.io"
+      "website": "https://www.roadiz.io"
     },
     "Robin": {
       "cats": [
@@ -9004,6 +9004,22 @@
       },
       "icon": "SAP.png",
       "website": "http://sap.com"
+    },
+    "Scenari": {
+      "cats": [
+        1,
+        11
+      ],
+      "icon": "Scenari.png",
+      "implies": [
+        "Roadiz CMS",
+        "PHP",
+        "Symfony"
+      ],
+      "meta": {
+        "generator": "^Roadiz ?(?:master|develop)? v?[0-9\\.]+ - Scenari v?([0-9\\.]+)\\;version:\\1"
+      },
+      "website": "https://demo.scenari.site"
     },
     "SDL Tridion": {
       "cats": [
