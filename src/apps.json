@@ -215,7 +215,7 @@
       },
       "script": [
         "adocean\\.pl/files/js/ado\\.js",
-        "adocean\\.pl\\;confidence:0.8"
+        "adocean\\.pl\\;confidence:80"
       ],
       "website": "https://adocean-global.com"
     },
@@ -3818,8 +3818,8 @@
       },
       "script": [
         "hit\\.gemius\\.pl/xgemius\\.js",
-        "hit\\.gemius\\.pl\\;confidence:0.8",
-        "xgemius\\.js\\;confidence:0.3"
+        "hit\\.gemius\\.pl\\;confidence:80",
+        "xgemius\\.js\\;confidence:30"
       ],
       "html": "<a [^>]*onclick=\"gemius_hit",
       "website": "https://www.gemius.com"
