@@ -2425,7 +2425,9 @@
         30
       ],
       "icon": "CrossBox.png",
-      "html": "<span class=\"product-name-loading\">CrossBox Premium Webmail",
+      "headers": {
+        "server": "CBX-WS",
+      },
       "website": "https://crossbox.io"
     },
     "Crypto-Loot": {
