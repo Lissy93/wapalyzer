@@ -105,9 +105,10 @@ body {
 .detected__app-icon {
 	display: inline-block;
 	height: 16px;
-  margin-right: .5rem;
+	margin-right: .5rem;
 	vertical-align: -.2rem;
 	width: 16px;
+	filter: drop-shadow(5px 5px 5px #222);
 }
 
 .detected__app-name {
@@ -199,4 +200,22 @@ body {
 
 .terms__privacy {
   margin-top: 1rem;
+}
+
+/* Add alternative color palette for Dark mode theme. */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background:  #333;
+    color: white;
+  }
+  .detected__category-link, .detected__app {
+    color: white;
+  }
+  .detected__app-icon {
+    -webkit-filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
+    filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
+  }
+  .detected__app-version, .detected__app-confidence {
+    background-color: #555;
+  }
 }
