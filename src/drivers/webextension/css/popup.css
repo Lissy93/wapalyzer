@@ -210,6 +210,9 @@ body {
   .detected__category-link, .detected__app {
     color: white;
   }
+  .detected__category-link:hover {
+    color: #B3B3B3;
+  }
   .detected__app-icon {
     -webkit-filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
     filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
