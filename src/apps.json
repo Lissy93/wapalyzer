@@ -13676,6 +13676,37 @@
       "icon": "TencentWaterproofWall.png",
       "script": "/TCaptcha\\.js",
       "website": "https://007.qq.com/"
+    },
+    "GoCache": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "Server": "^gocache$",
+        "X-GoCache-CacheStatus": ""
+      },
+      "icon": "GoCache.png",
+      "website": "https://www.gocache.com.br/"
+    },
+    "Litespeed Cache": {
+      "cats": [
+        23
+      ],
+      "headers": {
+        "x-litespeed-cache": ""
+      },
+      "icon": "litespeed-cache.png",
+      "implies": "WordPress",
+      "website": "https://wordpress.org/plugins/litespeed-cache/"
+    },
+    "nghttpx - HTTP/2 proxy": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "Server": "nghttpx nghttp2/?([\\d.]+)?\\;version:\\1"
+      },
+      "website": "https://nghttp2.org"
     }
   },
   "categories": {
