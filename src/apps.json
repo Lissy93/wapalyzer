@@ -13676,6 +13676,20 @@
       "icon": "TencentWaterproofWall.png",
       "script": "/TCaptcha\\.js",
       "website": "https://007.qq.com/"
+    },
+    "Saber": {
+      "cats": [
+        57
+      ],
+      "icon": "Saber.svg",
+      "html": [
+        "<div [^>]*id=\"_saber\""
+      ],
+      "meta": {
+        "generator": "^Saber v([\\d.]+)$\\;version:\\1"
+      },
+      "implies": "Vue.js",
+      "website": "https://saber.land/"
     }
   },
   "categories": {
