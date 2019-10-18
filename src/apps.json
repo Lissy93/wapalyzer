@@ -3586,6 +3586,23 @@
       "implies": "PHP",
       "website": "http://flyspray.org"
     },
+    "Flywheel": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "x-fw-hash": "",
+		"x-fw-serve": "",
+		"x-fw-server": "^Flywheel(?:/([\\d.]+))?\\;version:\\1",
+		"x-fw-static": "",
+		"x-fw-type": ""
+      },
+      "implies": [
+        "WordPress"
+      ],
+      "icon": "flywheel.svg",
+      "website": "https://getflywheel.com"
+    },
     "Font Awesome": {
       "cats": [
         17
@@ -9370,6 +9387,19 @@
       "script": "sencha-touch.*\\.js",
       "website": "http://sencha.com/products/touch"
     },
+    "Seravo": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "x-powered-by": "^Seravo"
+      },
+      "implies": [
+        "WordPress"
+      ],
+      "icon": "seravo.svg",
+      "website": "https://seravo.com"
+    },
     "Serendipity": {
       "cats": [
         1,
@@ -11836,6 +11866,19 @@
       "implies": "WordPress",
       "website": "http://z9.io/wp-super-cache/"
     },
+    "WordPress VIP": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "x-powered-by": "^WordPress.com VIP"
+      },
+      "implies": [
+        "WordPress"
+      ],
+      "icon": "wpvip.svg",
+      "website": "https://wpvip.com"
+    },
     "Wowza Media Server": {
       "cats": [
         38
@@ -12830,6 +12873,19 @@
       "implies": "jQuery",
       "script": "jqplot.*\\.js",
       "website": "http://www.jqplot.com"
+    },
+    "Kinsta": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "x-kinsta-cache": ""
+      },
+      "implies": [
+        "WordPress"
+      ],
+      "icon": "kinsta.svg",
+      "website": "https://kinsta.com"
     },
     "libwww-perl-daemon": {
       "cats": [
