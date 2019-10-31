@@ -12680,6 +12680,18 @@
       "url": "\\?do=prodetail&action=show&prodid=\\d+",
       "website": "http://zeuscart.com"
     },
+    "Zimbra": {
+      "cats": [
+        30
+      ],
+      "icon": "Zimbra.png",
+      "cookies": {
+        "ZM_TEST": "true"
+      },
+      "html": "<script>(?:.|\\n)*\"refresh\":{\"version\":\"([\\w\\.]+)\\s\\;version:\\1",
+      "implies": "Java",
+      "website": "https://www.zimbra.com/"
+    },
     "Zinnia": {
       "cats": [
         11
