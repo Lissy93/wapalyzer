@@ -11476,11 +11476,16 @@
         14
       ],
       "html": "<div[^>]+class=\"video-js+\">",
-      "icon": "VideoJS.png",
+      "icon": "VideoJS.svg",
       "js": {
+        "videojs.VERSION": "^(.+)$\\;version:\\1",
+        "videojs": "",
         "VideoJS": ""
       },
-      "script": "zencdn\\.net/c/video\\.js",
+      "script": [
+        "zencdn\\.net/c/video\\.js",
+        "^(?:https?:)?\\/\\/(?:[^\\/]+\\.)*cdnjs\\.cloudflare\\.com\\/ajax\\/libs\\/video\\.js\\/([\\d\\.]+)\\/\\;version:\\1"
+      ],
       "website": "http://videojs.com"
     },
     "VigLink": {
