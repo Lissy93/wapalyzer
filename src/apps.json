@@ -3253,7 +3253,7 @@
         18,
         59
       ],
-      "html": "<[^<]+class=\"[^\"]*[^-](?:e-control|e-lib)",
+      "html": "<[^>]+ class ?= ?\"(?:e-control|[^\"]+ e-control)(?: )[^\"]* e-lib\\b",
       "icon": "syncfusion.svg",
       "website": "https://www.syncfusion.com/javascript-ui-controls"
     },
