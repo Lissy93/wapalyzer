@@ -66,7 +66,7 @@ const options = {
 const wappalyzer = new Wappalyzer(url, options);
 
 // Optional: set the browser to use
-// wappalyzer.browser = Wappalyzer.browsers.zombie;
+// wappalyzer.Browser = Wappalyzer.browsers.zombie;
 
 // Optional: capture log output
 // wappalyzer.on('log', params => {
