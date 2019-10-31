@@ -167,6 +167,7 @@ class Driver {
           version: app.version || null,
           icon: app.props.icon || 'default.svg',
           website: app.props.website,
+          cpe: app.props.cpe || null,
           categories,
         });
       }
