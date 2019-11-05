@@ -2,15 +2,13 @@ body {
 	background: #fff;
 	font-family: Helvetica, Arial, sans-serif;
   font-size: .8rem;
-  height: 20.8rem;
 	margin: 0;
-  overflow: hidden;
-  width: 30rem;
+  min-width: 30rem;
 }
 
 .header {
   align-items: center;
-	background: linear-gradient(160deg, #32067c, #150233);
+  border-bottom: 1px solid #dbdbdb;
   height: 4rem;
   display: flex;
 }
@@ -28,9 +26,12 @@ body {
   height: 2rem;
 }
 
+.header__logo--dark {
+  display: none;
+}
+
 .container {
-  height: 15.8rem;
-  overflow-y: auto;
+  min-height: 5rem;
   padding: 1rem 1.5rem 0rem 1.5rem;
 }
 
@@ -47,9 +48,7 @@ body {
 }
 
 .detected__category-name {
-  border-bottom: 1px solid #dbdbdb;
   display: block;
-  margin-bottom: .5rem;
 }
 
 .detected__category-link {
@@ -125,10 +124,7 @@ body {
   border-bottom: 1px solid #4a4a4a;
 }
 
-.detected__app:hover .detected__app-version {
-  border-bottom: 1px solid white;
-}
-
+.detected__app:hover .detected__app-version,
 .detected__app:hover .detected__app-confidence {
   border-bottom: 1px solid white;
 }
@@ -148,7 +144,8 @@ body {
 
 .empty {
   display: flex;
-  height: 14.5rem;
+  height: 5rem;
+  margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
 }
@@ -161,8 +158,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  margin-bottom: 1rem;
+  height: 12rem;
+  width: 36rem;
 }
 
 .terms__wrapper {
@@ -198,26 +196,61 @@ body {
 }
 
 .terms__privacy {
+  color: #4608ad;
   margin-top: 1rem;
 }
 
 /* Add alternative color palette for Dark mode theme. */
 @media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(160deg, #32067c, #150233);
+  }
+
+  .header {
+    border-bottom: 1px solid #000;
+  }
+
+  .header__logo--dark {
+    display: inline-block;
+  }
+
+  .header__logo--light {
+    display: none;
+  }
+
   .container {
-    background:  #333;
     color: white;
   }
+
   .detected__category-link, .detected__app {
     color: white;
   }
+
   .detected__category-link:hover {
-    color: #A48EDE;
+    color: white;
+    border-bottom: 1px solid white;
   }
+
   .detected__app-icon {
     -webkit-filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
     filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
   }
+
   .detected__app-version, .detected__app-confidence {
-    background-color: #555;
+    background-color: #4608ad;
+  }
+
+  .detected__app:hover .detected__app-name {
+    border-bottom: 1px solid white;
+  }
+
+  .detected__app:hover .detected__app-version,
+  .detected__app:hover .detected__app-confidence {
+    border-bottom: none;
+  }
+
+  .terms__accept,
+  .terms__privacy {
+    color: white;
   }
 }
