@@ -6219,6 +6219,7 @@
       "icon": "Lo-dash.png",
       "js": {
         "_.VERSION": "^(.+)$\\;confidence:0\\;version:\\1",
+        "_.templateSettings.imports._.templateSettings.imports._.VERSION": "^(.+)$\\;version:\\1",
         "_.differenceBy": ""
       },
       "script": "lodash.*\\.js",
