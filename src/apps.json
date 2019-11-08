@@ -4726,6 +4726,21 @@
       "script": "highcharts.*\\.js",
       "website": "https://www.highcharts.com"
     },
+    "Bokeh": {
+      "cats": [
+        25
+      ],
+      "js": {
+        "Bokeh": "",
+        "Bokeh.version": "^(.+)$\\;version:\\1"
+      },
+      "script": "bokeh.*\\.js",
+      "website": "https://bokeh.org",
+      "icon": "bokeh.png",
+      "implies": [
+        "Python"
+      ]
+    },
     "Highlight.js": {
       "cats": [
         19
