@@ -1249,6 +1249,10 @@
       "cats": [
         1
       ],
+      "headers": {
+        "X-Backdrop-Cache": "",
+        "X-Generator": "^Backdrop CMS(?:\\s([\\d.]+))?\\;version:\\1"
+      },
       "excludes": "Drupal",
       "icon": "Backdrop.png",
       "implies": "PHP",
@@ -1256,9 +1260,9 @@
         "Backdrop": ""
       },
       "meta": {
-        "generator": "Backdrop CMS(?: (\\d))?\\;version:\\1"
+        "generator": "^Backdrop CMS(?:\\s([\\d.]+))?\\;version:\\1"
       },
-      "website": "http://backdropcms.org"
+      "website": "https://backdropcms.org"
     },
     "Backpack": {
       "cats": [
