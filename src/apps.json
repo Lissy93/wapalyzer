@@ -4074,14 +4074,16 @@
     },
     "GitHub Pages": {
       "cats": [
-        31
+        62
       ],
       "headers": {
         "Server": "^GitHub\\.com$",
         "X-GitHub-Request-Id": ""
       },
       "icon": "GitHub.svg",
-      "implies": "Ruby on Rails",
+      "implies": [
+        "Ruby on Rails"
+      ],
       "url": "^https?://[^/]+\\.github\\.io/",
       "website": "https://pages.github.com/"
     },
@@ -7426,13 +7428,14 @@
     },
     "Netlify": {
       "cats": [
-        22,
+        62,
         31
       ],
       "headers": {
         "X-NF-Request-ID": "",
         "Server": "^Netlify"
       },
+      "url": "^https?://[^/]+\\.netlify\\.com/",
       "icon": "Netlify.svg",
       "website": "https://www.netlify.com/"
     },
