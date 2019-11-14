@@ -10713,14 +10713,15 @@
         1
       ],
       "html": [
-        "<link[^>]+ href=\"typo3(?:conf|temp)/",
-        "<img[^>]+ src=\"typo3(?:conf|temp)/"
+        "<link[^>]+ href=\"/?typo3(?:conf|temp)/",
+        "<img[^>]+ src=\"/?typo3(?:conf|temp)/",
+        "<!--\n\tThis website is powered by TYPO3"
       ],
       "icon": "TYPO3.svg",
       "implies": "PHP",
-      "script": "^typo3(?:conf|temp)/",
+      "script": "^/?typo3(?:conf|temp)/",
       "meta": {
-        "generator": "TYPO3\\s+(?:CMS\\s+)?([\\d.]+)?(?:\\s+CMS)?\\;version:\\1"
+        "generator": "TYPO3\\s+(?:CMS\\s+)?(?:[\\d.]+)?(?:\\s+CMS)?"
       },
       "url": "/typo3/",
       "website": "https://typo3.org/"
