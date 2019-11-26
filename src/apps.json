@@ -9910,6 +9910,12 @@
         6
       ],
       "html": "<title>Shopware ([\\d\\.]+) [^<]+\\;version:\\1",
+      "headers": {
+        "sw-context-token": "^[\\w]{32}$\\;version:6",
+        "sw-language-id": "^[a-fA-F0-9]{32}$\\;version:6",
+        "sw-invalidation-states": "\\;version:6",
+        "sw-version-id": "\\;version:6"
+      },
       "icon": "Shopware.png",
       "implies": [
         "PHP",
@@ -9925,7 +9931,7 @@
         "/jquery\\.shopware\\.min\\.js",
         "/engine/Shopware/"
       ],
-      "website": "http://shopware.com"
+      "website": "https://www.shopware.com"
     },
     "Signal": {
       "cats": [
