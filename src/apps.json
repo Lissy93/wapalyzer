@@ -12914,6 +12914,18 @@
       },
       "website": "http://esyndicat.com"
     },
+    "eZ Platform": {
+      "cats": [
+        1,
+        6
+      ],
+      "icon": "eZ.svg",
+      "implies": "Symfony",
+      "meta": {
+        "generator": "eZ Platform"
+      },
+      "website": "https://ezplatform.com/"
+    },
     "eZ Publish": {
       "cats": [
         1,
@@ -12925,12 +12937,12 @@
       "headers": {
         "X-Powered-By": "^eZ Publish"
       },
-      "icon": "eZ Publish.png",
+      "icon": "eZ.svg",
       "implies": "PHP",
       "meta": {
         "generator": "eZ Publish"
       },
-      "website": "http://ez.no"
+      "website": "https://github.com/ezsystems/ezpublish-legacy"
     },
     "ef.js": {
       "cats": [
