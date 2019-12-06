@@ -10654,7 +10654,7 @@
       "cookies": {
         "sf_redirect": ""
       },
-      "html": "(?:<div id=\"sfwdt[^\"]+\" class=\"[^\"]*sf-toolbar|<div class=\"sf-toolbar[^>]+?>[^]+<span class=\"sf-toolbar-value\">([\\d.])+)\\;version:\\1",
+      "html": "(?:<div class=\"sf-toolbar[^>]+?>[^]+<span class=\"sf-toolbar-value\">([\\d.])+|<div id=\"sfwdt[^\"]+\" class=\"[^\"]*sf-toolbar)\\;version:\\1",
       "js": {
         "Sfjs": ""
       },
