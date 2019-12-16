@@ -245,7 +245,7 @@ class Driver {
       browser.links, (results, link) => {
         if (
           results
-          && Object.prototype.hasOwnProperty.call(results, 'push')
+          && Object.prototype.hasOwnProperty.call(Object.getPrototypeOf(results), 'push')
           && link.protocol
           && link.protocol.match(/https?:/)
           && link.rel !== 'nofollow'
