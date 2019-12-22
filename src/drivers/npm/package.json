@@ -14,6 +14,7 @@
     "apps.json",
     "browser.js",
     "browsers/zombie.js",
+    "browsers/puppeteer.js",
     "cli.js",
     "driver.js",
     "index.js",
@@ -24,5 +25,8 @@
   },
   "dependencies": {
     "zombie": "^6.1.2"
+  },
+  "peerDependencies": {
+    "puppeteer-cluster": "^0.18.0"
   }
 }
