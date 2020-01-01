@@ -201,56 +201,49 @@ body {
 }
 
 /* Add alternative color palette for Dark mode theme. */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(160deg, #32067c, #150233);
-  }
+body.theme-mode-sync  {
+  background: linear-gradient(160deg, #32067c, #150233);
+}
 
-  .header {
-    border-bottom: 1px solid #000;
-  }
+.theme-mode-sync .header {
+  border-bottom: 1px solid #000;
+}
 
-  .header__logo--dark {
-    display: inline-block;
-  }
+.theme-mode-sync .header__logo--dark {
+  display: inline-block;
+}
 
-  .header__logo--light {
-    display: none;
-  }
+.theme-mode-sync .header__logo--light {
+  display: none;
+}
 
-  .container {
-    color: white;
-  }
+.theme-mode-sync .container {
+  color: white;
+}
 
-  .detected__category-link, .detected__app {
-    color: white;
-  }
+.theme-mode-sync .detected__category-link, .theme-mode-sync .detected__app {
+  color: white;
+}
 
-  .detected__category-link:hover {
-    color: white;
-    border-bottom: 1px solid white;
-  }
+.theme-mode-sync .detected__category-link:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
 
-  .detected__app-icon {
-    -webkit-filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
-    filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
-  }
+.theme-mode-sync .detected__app-version, .theme-mode-sync .detected__app-confidence {
+  background-color: #4608ad;
+}
 
-  .detected__app-version, .detected__app-confidence {
-    background-color: #4608ad;
-  }
+.theme-mode-sync .detected__app:hover .detected__app-name {
+  border-bottom: 1px solid white;
+}
 
-  .detected__app:hover .detected__app-name {
-    border-bottom: 1px solid white;
-  }
+.theme-mode-sync .detected__app:hover .theme-mode-sync .detected__app-version,
+.theme-mode-sync .detected__app:hover .theme-mode-sync .detected__app-confidence {
+  border-bottom: none;
+}
 
-  .detected__app:hover .detected__app-version,
-  .detected__app:hover .detected__app-confidence {
-    border-bottom: none;
-  }
-
-  .terms__accept,
-  .terms__privacy {
-    color: white;
-  }
+.theme-mode-sync .terms__accept,
+.theme-mode-sync .terms__privacy {
+  color: white;
 }
