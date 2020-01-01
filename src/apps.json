@@ -2812,6 +2812,21 @@
       "icon": "Debian.png",
       "website": "https://debian.org"
     },
+    "decimal.js": {
+      "cats": [
+        59
+      ],
+      "icon": "decimal.js.png",
+      "js": {
+        "Decimal.ROUND_HALF_FLOOR": ""
+      },
+      "script": [
+        "decimal[.-]([\\d.]*\\d+)(?:\\.min)?\\.js\\;version:\\1",
+        "/([\\d.]*\\d+)/decimal(?:\\.min)?\\.js\\;version:\\1",
+        "decimal(?:\\.min)?\\.js(?:\\?ver(?:sion)?=([\\d.]*\\d+))?\\;version:\\1"
+      ],
+      "website": "https://mikemcl.github.io/decimal.js/"
+    },
     "DedeCMS": {
       "cats": [
         1
