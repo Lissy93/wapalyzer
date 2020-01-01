@@ -4,15 +4,16 @@ const Browser = require('../browser');
 function getJs() {
   const dereference = (obj, level = 0) => {
     try {
-      if (level > 5 || typeof obj === 'function') {
-        return undefined;
+      // eslint-disable-next-line no-undef
+      if (level > 5 || (level && obj === window)) {
+        return '[Removed]';
       }
 
       if (Array.isArray(obj)) {
         obj = obj.map(item => dereference(item, level + 1));
       }
 
-      if (typeof obj === 'object' && obj !== null) {
+      if (typeof obj === 'function' || (typeof obj === 'object' && obj !== null)) {
         const newObj = {};
 
         Object.keys(obj).forEach((key) => {
@@ -39,7 +40,7 @@ class PuppeteerBrowser extends Browser {
     super(options);
 
     this.browser = () => puppeteer.launch({
-      args: ['--no-sandbox', '--headless', '--disable-gpu'],
+      args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors'],
     });
   }
 
@@ -71,6 +72,8 @@ class PuppeteerBrowser extends Browser {
         this.contentType = headers['content-type'] || null;
       }
     });
+
+    page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
 
     await page.setUserAgent(this.options.userAgent);
 

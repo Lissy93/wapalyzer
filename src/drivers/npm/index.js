@@ -1,16 +1,12 @@
 const Driver = require('./driver');
-const ZombieBrowser = require('./browsers/zombie');
 
 class Wappalyzer {
   constructor(pageUrl, options) {
-    this.browser = ZombieBrowser;
+    // eslint-disable-next-line import/no-dynamic-require, global-require
+    const Browser = require(`./browsers/${options.browser || 'zombie'}`);
 
-    return new Driver(this.browser, pageUrl, options);
+    return new Driver(Browser, pageUrl, options);
   }
 }
-
-Wappalyzer.browsers = {
-  zombie: ZombieBrowser,
-};
 
 module.exports = Wappalyzer;

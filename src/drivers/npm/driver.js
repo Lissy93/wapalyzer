@@ -138,6 +138,7 @@ class Driver {
 
   log(message, source, type) {
     if (this.options.debug) {
+      // eslint-disable-next-line no-console
       console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
     }
 
