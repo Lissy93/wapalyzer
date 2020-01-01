@@ -8014,6 +8014,18 @@
       },
       "website": "http://orchardproject.net"
     },
+    "OrderOnline": {
+      "cats": [
+        6
+      ],
+      "icon": "OrderOnline.svg",
+      "implies": [
+        "PHP",
+        "MongoDB"
+      ],
+      "script": "^cdn\\.orderonline\\.id/$",
+      "website": "https://orderonline.id"
+    },
     "OroCommerce": {
       "cats": [
         6
