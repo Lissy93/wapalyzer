@@ -18,6 +18,12 @@ $ npm i -g wappalyzer      # Globally
 $ npm i wappalyzer --save  # As a dependency
 ```
 
+To use Puppeteer (headless Chrome browser), you must install the NPM package manually:
+
+```shell
+$ npm i puppeteer@^2.0.0
+```
+
 
 ## Run from the command line
 
