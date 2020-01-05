@@ -2,15 +2,13 @@ body {
 	background: #fff;
 	font-family: Helvetica, Arial, sans-serif;
   font-size: .8rem;
-  height: 20.8rem;
 	margin: 0;
-  overflow: hidden;
-  width: 30rem;
+  min-width: 30rem;
 }
 
 .header {
   align-items: center;
-	background: linear-gradient(160deg, #32067c, #150233);
+  border-bottom: 1px solid #dbdbdb;
   height: 4rem;
   display: flex;
 }
@@ -28,9 +26,12 @@ body {
   height: 2rem;
 }
 
+.header__logo--dark {
+  display: none;
+}
+
 .container {
-  height: 15.8rem;
-  overflow-y: auto;
+  min-height: 5rem;
   padding: 1rem 1.5rem 0rem 1.5rem;
 }
 
@@ -47,9 +48,7 @@ body {
 }
 
 .detected__category-name {
-  border-bottom: 1px solid #dbdbdb;
   display: block;
-  margin-bottom: .5rem;
 }
 
 .detected__category-link {
@@ -105,7 +104,7 @@ body {
 .detected__app-icon {
 	display: inline-block;
 	height: 16px;
-  margin-right: .5rem;
+	margin-right: .5rem;
 	vertical-align: -.2rem;
 	width: 16px;
 }
@@ -125,10 +124,7 @@ body {
   border-bottom: 1px solid #4a4a4a;
 }
 
-.detected__app:hover .detected__app-version {
-  border-bottom: 1px solid white;
-}
-
+.detected__app:hover .detected__app-version,
 .detected__app:hover .detected__app-confidence {
   border-bottom: 1px solid white;
 }
@@ -148,10 +144,106 @@ body {
 
 .empty {
   display: flex;
-  height: 14.5rem;
+  height: 5rem;
+  margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
 }
 
 .empty__text {
+}
+
+.terms {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+  height: 12rem;
+  width: 36rem;
+}
+
+.terms__wrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.terms__wrapper--active {
+  display: block;
+}
+
+.terms__content {
+  font-size: .9rem;
+  line-height: 150%;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+.terms__accept {
+  background-color: #4608ad;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: .9rem;
+  padding: .8rem 3rem;
+}
+
+.terms__accept:hover {
+  background-color: #4107a1;
+}
+
+.terms__privacy {
+  color: #4608ad;
+  margin-top: 1rem;
+}
+
+/* Add alternative color palette for Dark mode theme. */
+body.theme-mode-sync  {
+  background: linear-gradient(160deg, #32067c, #150233);
+}
+
+.theme-mode-sync .header {
+  border-bottom: 1px solid #000;
+}
+
+.theme-mode-sync .header__logo--dark {
+  display: inline-block;
+}
+
+.theme-mode-sync .header__logo--light {
+  display: none;
+}
+
+.theme-mode-sync .container {
+  color: white;
+}
+
+.theme-mode-sync .detected__category-link, .theme-mode-sync .detected__app {
+  color: white;
+}
+
+.theme-mode-sync .detected__category-link:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.theme-mode-sync .detected__app-version, .theme-mode-sync .detected__app-confidence {
+  background-color: #4608ad;
+}
+
+.theme-mode-sync .detected__app:hover .detected__app-name {
+  border-bottom: 1px solid white;
+}
+
+.theme-mode-sync .detected__app:hover .theme-mode-sync .detected__app-version,
+.theme-mode-sync .detected__app:hover .theme-mode-sync .detected__app-confidence {
+  border-bottom: none;
+}
+
+.theme-mode-sync .terms__accept,
+.theme-mode-sync .terms__privacy {
+  color: white;
 }

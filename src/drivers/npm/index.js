@@ -1,42 +1,12 @@
-#!/usr/bin/env node
-'use strict';
+const Driver = require('./driver');
 
-const Wappalyzer = require('./driver');
+class Wappalyzer {
+  constructor(pageUrl, options) {
+    // eslint-disable-next-line import/no-dynamic-require, global-require
+    const Browser = require(`./browsers/${options.browser || 'zombie'}`);
 
-const args = process.argv.slice(2);
-
-const url = args.shift() || '';
-
-if ( !url ) {
-  process.stderr.write('No URL specified\n');
-
-  process.exit(1);
-}
-
-let options = {};
-let arg;
-
-while ( arg = args.shift() ) {
-  let matches = /--([^=]+)=(.+)/.exec(arg);
-
-  if ( matches ) {
-    let key = matches[1].replace(/-\w/g, matches => matches[1].toUpperCase());
-    let value = matches[2];
-
-    options[key] = value;
+    return new Driver(Browser, pageUrl, options);
   }
 }
 
-const wappalyzer = new Wappalyzer(url, options);
-
-wappalyzer.analyze()
-  .then(json => {
-    process.stdout.write(JSON.stringify(json) + '\n')
-
-    process.exit(0);
-  })
-  .catch(error => {
-    process.stderr.write(error + '\n')
-
-    process.exit(1);
-  });
+module.exports = Wappalyzer;

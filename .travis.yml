@@ -21,7 +21,7 @@ deploy:
   file: build/*
   skip_cleanup: true
   on:
-    repo: AliasIO/Wappalyzer
+    repo: AliasIO/wappalyzer
     tags: true
 
 env:
