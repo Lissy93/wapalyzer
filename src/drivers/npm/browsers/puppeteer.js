@@ -40,6 +40,7 @@ class PuppeteerBrowser extends Browser {
     super(options);
 
     this.browser = () => puppeteer.launch({
+      executablePath: process.env.CHROME_BIN,
       args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors'],
     });
   }
