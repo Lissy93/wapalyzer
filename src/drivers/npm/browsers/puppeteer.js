@@ -118,7 +118,7 @@ class PuppeteerBrowser extends Browser {
 
       this.html = await page.content();
     } catch (error) {
-      throw new Error(error.message);
+      throw new Error(error.toString());
     }
 
     await page.close();

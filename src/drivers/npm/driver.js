@@ -173,13 +173,13 @@ class Driver {
     });
   }
 
-  fetch(pageUrl, index, depth) {
+  async fetch(pageUrl, index, depth) {
     // Return when the URL is a duplicate or maxUrls has been reached
     if (
       this.analyzedPageUrls[pageUrl.href]
       || this.analyzedPageUrls.length >= this.options.maxUrls
     ) {
-      return Promise.resolve();
+      return;
     }
 
     this.analyzedPageUrls[pageUrl.href] = {
@@ -192,21 +192,29 @@ class Driver {
 
     this.timer(`fetch; url: ${pageUrl.href}; depth: ${depth}; delay: ${this.options.delay * index}ms`, timerScope);
 
-    return new Promise(async (resolve, reject) => {
-      await sleep(this.options.delay * index);
+    await sleep(this.options.delay * index);
 
-      this.visit(pageUrl, timerScope, resolve, reject);
-    });
+    try {
+      await this.visit(pageUrl, timerScope);
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
 
-  async visit(pageUrl, timerScope, resolve, reject) {
+  async visit(pageUrl, timerScope) {
     const browser = new this.Browser(this.options);
 
     browser.log = (message, type) => this.wappalyzer.log(message, 'browser', type);
 
     this.timer(`visit start; url: ${pageUrl.href}`, timerScope);
 
-    await browser.visit(pageUrl.href);
+    try {
+      await browser.visit(pageUrl.href);
+    } catch (error) {
+      this.wappalyzer.log(error.message, 'browser', 'error');
+
+      throw new Error('RESPONSE_NOT_OK');
+    }
 
     this.timer(`visit end; url: ${pageUrl.href}`, timerScope);
 
@@ -214,11 +222,11 @@ class Driver {
 
     // Validate response
     if (!browser.statusCode) {
-      return reject(new Error('NO_RESPONSE'));
+      throw new Error('NO_RESPONSE');
     }
 
     if (browser.statusCode !== 200) {
-      return reject(new Error('RESPONSE_NOT_OK'));
+      throw new Error('RESPONSE_NOT_OK');
     }
 
     if (!browser.contentType || !/\btext\/html\b/.test(browser.contentType)) {
@@ -262,55 +270,49 @@ class Driver {
 
     this.emit('visit', { browser, pageUrl });
 
-    return resolve(reducedLinks);
+    return reducedLinks;
   }
 
-  crawl(pageUrl, index = 1, depth = 1) {
+  async crawl(pageUrl, index = 1, depth = 1) {
     pageUrl.canonical = `${pageUrl.protocol}//${pageUrl.host}${pageUrl.pathname}`;
 
-    return new Promise(async (resolve) => {
-      let links;
+    let links;
 
-      try {
-        links = await this.fetch(pageUrl, index, depth);
-      } catch (error) {
-        const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
-        const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
+    try {
+      links = await this.fetch(pageUrl, index, depth);
+    } catch (error) {
+      const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
+      const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
 
-        this.analyzedPageUrls[pageUrl.href].error = {
-          type,
-          message,
-        };
+      this.analyzedPageUrls[pageUrl.href].error = {
+        type,
+        message,
+      };
 
-        this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
-      }
+      this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
+    }
 
-      if (links && this.options.recursive && depth < this.options.maxDepth) {
-        await this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
-      }
+    if (links && this.options.recursive && depth < this.options.maxDepth) {
+      await this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
+    }
 
-      return resolve({
-        urls: this.analyzedPageUrls,
-        applications: this.apps,
-        meta: this.meta,
-      });
-    });
+    return {
+      urls: this.analyzedPageUrls,
+      applications: this.apps,
+      meta: this.meta,
+    };
   }
 
-  chunk(links, depth, chunk = 0) {
+  async chunk(links, depth, chunk = 0) {
     if (links.length === 0) {
-      return Promise.resolve();
+      return;
     }
 
     const chunked = links.splice(0, this.options.chunkSize);
 
-    return new Promise(async (resolve) => {
-      await Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)));
+    await Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)));
 
-      await this.chunk(links, depth, chunk + 1);
-
-      resolve();
-    });
+    await this.chunk(links, depth, chunk + 1);
   }
 
   timer(message, scope) {
