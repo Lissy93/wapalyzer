@@ -46,9 +46,15 @@ class PuppeteerBrowser extends Browser {
   }
 
   async visit(url) {
-    try {
-      const browser = await this.browser();
+    let browser;
 
+    try {
+      browser = await this.browser();
+    } catch (error) {
+      throw new Error(error.message || error.toString());
+    }
+
+    try {
       const page = await browser.newPage();
 
       page.setDefaultTimeout(this.options.maxWait);
@@ -116,10 +122,10 @@ class PuppeteerBrowser extends Browser {
       }));
 
       this.html = await page.content();
-
-      await page.close();
     } catch (error) {
-      throw new Error(error.toString());
+      throw new Error(error.message || error.toString());
+    } finally {
+      await browser.close();
     }
   }
 }
