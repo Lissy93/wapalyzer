@@ -46,44 +46,43 @@ class PuppeteerBrowser extends Browser {
   }
 
   async visit(url) {
-    const browser = await this.browser();
-
-    const page = await browser.newPage();
-
-    await page.setRequestInterception(true);
-
-    page.on('request', request => request.continue());
-
-    page.on('response', (response) => {
-      if (response.status() === 301 || response.status() === 302) {
-        return;
-      }
-
-      if (!this.statusCode) {
-        this.statusCode = response.status();
-
-        this.headers = {};
-
-        const headers = response.headers();
-
-        Object.keys(headers).forEach((key) => {
-          this.headers[key] = Array.isArray(headers[key]) ? headers[key] : [headers[key]];
-        });
-
-        this.contentType = headers['content-type'] || null;
-      }
-    });
-
-    page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
-
-    await page.setUserAgent(this.options.userAgent);
-
     try {
+      const browser = await this.browser();
+
+      const page = await browser.newPage();
+
+      page.setDefaultTimeout(this.options.maxWait);
+
+      await page.setRequestInterception(true);
+
+      page.on('request', request => request.continue());
+
+      page.on('response', (response) => {
+        if (response.status() === 301 || response.status() === 302) {
+          return;
+        }
+
+        if (!this.statusCode) {
+          this.statusCode = response.status();
+
+          this.headers = {};
+
+          const headers = response.headers();
+
+          Object.keys(headers).forEach((key) => {
+            this.headers[key] = Array.isArray(headers[key]) ? headers[key] : [headers[key]];
+          });
+
+          this.contentType = headers['content-type'] || null;
+        }
+      });
+
+      page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
+
+      await page.setUserAgent(this.options.userAgent);
+
       await Promise.race([
-        page.goto(url, {
-          timeout: this.options.maxWait,
-          waitUntil: 'networkidle2',
-        }),
+        page.goto(url, { waitUntil: 'networkidle2' }),
         new Promise(resolve => setTimeout(resolve, this.options.maxWait)),
       ]);
 
@@ -117,13 +116,11 @@ class PuppeteerBrowser extends Browser {
       }));
 
       this.html = await page.content();
+
+      await page.close();
     } catch (error) {
       throw new Error(error.toString());
     }
-
-    await page.close();
-
-    this.page = null;
   }
 }
 
