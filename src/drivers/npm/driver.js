@@ -179,7 +179,7 @@ class Driver {
       this.analyzedPageUrls[pageUrl.href]
       || this.analyzedPageUrls.length >= this.options.maxUrls
     ) {
-      return;
+      return [];
     }
 
     this.analyzedPageUrls[pageUrl.href] = {
@@ -195,7 +195,7 @@ class Driver {
     await sleep(this.options.delay * index);
 
     try {
-      await this.visit(pageUrl, timerScope);
+      return this.visit(pageUrl, timerScope);
     } catch (error) {
       throw new Error(error.message);
     }
