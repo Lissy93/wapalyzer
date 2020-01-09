@@ -7539,7 +7539,7 @@
         19
       ],
       "html": [
-        "<script[^>]*>[^<]*nextcloud_[^<]*oc_config={.*\"version\":\"([\\d.]+)\"\\;version:\\1"
+        "<script[^>]*>[^<]*nextcloud_[^<]*oc_config={[^}]*\"version\":\"([\\d.]+)\"\\;version:\\1"
       ],
       "icon": "nextcloud.svg",
       "implies": "PHP",
