@@ -13664,7 +13664,7 @@
         3
       ],
       "html": [
-        "<script[^>]*>[\\S\\s]*\\[CDATA[^<]*PMA_VERSION:\\\"([\\d.]+)\\;version:\\1",
+        "!\\[CDATA\\[[^<]*PMA_VERSION:\\\"([\\d.]+)\\;version:\\1",
         "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)\\;version:\\1"
       ],
       "icon": "phpMyAdmin.png",
