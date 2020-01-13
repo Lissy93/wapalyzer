@@ -54,12 +54,20 @@ class PuppeteerBrowser extends Browser {
       throw new Error(error.message || error.toString());
     }
 
+    browser.on('disconnected', () => {
+      throw new Error('Disconnected');
+    });
+
     try {
       const page = await browser.newPage();
 
       page.setDefaultTimeout(this.options.maxWait);
 
       await page.setRequestInterception(true);
+
+      page.on('error', (error) => {
+        throw new Error(error.message || error.toString());
+      });
 
       page.on('request', request => request.continue());
 
