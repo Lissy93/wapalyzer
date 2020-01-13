@@ -46,6 +46,7 @@ class PuppeteerBrowser extends Browser {
   }
 
   async visit(url) {
+    let done = false;
     let browser;
 
     try {
@@ -55,7 +56,9 @@ class PuppeteerBrowser extends Browser {
     }
 
     browser.on('disconnected', () => {
-      throw new Error('Disconnected');
+      if (!done) {
+        throw new Error('Disconnected');
+      }
     });
 
     try {
@@ -133,6 +136,8 @@ class PuppeteerBrowser extends Browser {
     } catch (error) {
       throw new Error(error.message || error.toString());
     } finally {
+      done = true;
+
       await browser.close();
     }
   }
