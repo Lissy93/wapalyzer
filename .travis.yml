@@ -11,7 +11,7 @@ after_success:
 script:
   - >-
     version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/'); ./run build $version
-  - docker build -t wappalyzer/cli" src/drivers/npm
+  - docker build -t "wappalyzer/cli" src/drivers/npm
 
 env:
   # encrypted DOCKER_PASSWORD
