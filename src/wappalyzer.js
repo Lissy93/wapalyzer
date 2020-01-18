@@ -322,7 +322,7 @@ class Wappalyzer {
    *
    */
   ping() {
-    if (Object.keys(this.hostnameCache).length > 100) {
+    if (Object.keys(this.hostnameCache).length > 25) {
       this.driver.ping(this.hostnameCache);
 
       this.hostnameCache = {};
