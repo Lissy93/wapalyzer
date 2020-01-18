@@ -1,4 +1,21 @@
-const puppeteer = require('puppeteer');
+const {
+  AWS_LAMBDA_FUNCTION_NAME,
+  CHROME_BIN,
+} = process.env;
+
+let chromium;
+let puppeteer;
+
+if (AWS_LAMBDA_FUNCTION_NAME) {
+  // eslint-disable-next-line global-require, import/no-unresolved
+  chromium = require('chrome-aws-lambda');
+
+  ({ puppeteer } = chromium);
+} else {
+  // eslint-disable-next-line global-require
+  puppeteer = require('puppeteer');
+}
+
 const Browser = require('../browser');
 
 function getJs() {
@@ -39,9 +56,14 @@ class PuppeteerBrowser extends Browser {
 
     super(options);
 
-    this.browser = () => puppeteer.launch({
-      executablePath: process.env.CHROME_BIN,
+    this.browser = async () => puppeteer.launch(chromium ? {
+      args: [...chromium.args, '--ignore-certificate-errors'],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+    } : {
       args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors'],
+      executablePath: CHROME_BIN,
     });
   }
 
