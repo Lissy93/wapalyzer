@@ -90,11 +90,7 @@ class PuppeteerBrowser extends Browser {
 
           page.setDefaultTimeout(this.options.maxWait);
 
-          await page.setRequestInterception(true);
-
           page.on('error', reject);
-
-          page.on('request', request => request.continue());
 
           page.on('response', (response) => {
             if (response.status() === 301 || response.status() === 302) {
