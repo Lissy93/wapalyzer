@@ -55,29 +55,23 @@ class PuppeteerBrowser extends Browser {
     options.maxWait = options.maxWait || 60;
 
     super(options);
-
-    this.browser = async () => puppeteer.launch(chromium ? {
-      args: [...chromium.args, '--ignore-certificate-errors'],
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
-    } : {
-      args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors'],
-      executablePath: CHROME_BIN,
-    });
   }
 
-  async visit(url) {
-    let done = false;
-    let browser;
+  visit(url) {
+    return new Promise(async (resolve, reject) => {
+      let done = false;
+      let browser;
 
-    try {
-      await new Promise(async (resolve, reject) => {
-        try {
-          browser = await this.browser();
-        } catch (error) {
-          return reject(error);
-        }
+      try {
+        browser = await puppeteer.launch(chromium ? {
+          args: [...chromium.args, '--ignore-certificate-errors'],
+          defaultViewport: chromium.defaultViewport,
+          executablePath: await chromium.executablePath,
+          headless: chromium.headless,
+        } : {
+          args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors'],
+          executablePath: CHROME_BIN,
+        });
 
         browser.on('disconnected', () => {
           if (!done) {
@@ -85,14 +79,14 @@ class PuppeteerBrowser extends Browser {
           }
         });
 
-        try {
-          const page = await browser.newPage();
+        const page = await browser.newPage();
 
-          page.setDefaultTimeout(this.options.maxWait);
+        page.setDefaultTimeout(this.options.maxWait);
 
-          page.on('error', reject);
+        page.on('error', reject);
 
-          page.on('response', (response) => {
+        page.on('response', (response) => {
+          try {
             if (response.status() === 301 || response.status() === 302) {
               return;
             }
@@ -110,60 +104,66 @@ class PuppeteerBrowser extends Browser {
 
               this.contentType = headers['content-type'] || null;
             }
-          });
+          } catch (error) {
+            reject(error);
+          }
+        });
 
-          page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
+        page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
 
-          await page.setUserAgent(this.options.userAgent);
+        await page.setUserAgent(this.options.userAgent);
 
-          await Promise.race([
-            page.goto(url, { waitUntil: 'networkidle2' }),
-            new Promise(_resolve => setTimeout(_resolve, this.options.maxWait)),
-          ]);
+        await Promise.race([
+          page.goto(url, { waitUntil: 'networkidle2' }),
+          new Promise(_resolve => setTimeout(_resolve, this.options.maxWait)),
+        ]);
 
-          // eslint-disable-next-line no-undef
-          const links = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('a')).map(({
-            hash, hostname, href, pathname, protocol, rel,
-          }) => ({
-            hash,
-            hostname,
-            href,
-            pathname,
-            protocol,
-            rel,
-          })));
+        // eslint-disable-next-line no-undef
+        const links = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('a')).map(({
+          hash, hostname, href, pathname, protocol, rel,
+        }) => ({
+          hash,
+          hostname,
+          href,
+          pathname,
+          protocol,
+          rel,
+        })));
 
-          this.links = await links.jsonValue();
+        this.links = await links.jsonValue();
 
-          // eslint-disable-next-line no-undef
-          const scripts = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('script')).map(({
-            src,
-          }) => src));
+        // eslint-disable-next-line no-undef
+        const scripts = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('script')).map(({
+          src,
+        }) => src));
 
-          this.scripts = (await scripts.jsonValue()).filter(script => script);
+        this.scripts = (await scripts.jsonValue()).filter(script => script);
 
-          this.js = await page.evaluate(getJs);
+        this.js = await page.evaluate(getJs);
 
-          this.cookies = (await page.cookies()).map(({
-            name, value, domain, path,
-          }) => ({
-            name, value, domain, path,
-          }));
+        this.cookies = (await page.cookies()).map(({
+          name, value, domain, path,
+        }) => ({
+          name, value, domain, path,
+        }));
 
-          this.html = await page.content();
-        } catch (error) {
-          return reject(error);
+        this.html = await page.content();
+
+        resolve();
+      } catch (error) {
+        reject(error);
+      } finally {
+        done = true;
+
+        if (browser) {
+          try {
+            await browser.close();
+          } catch (error) {
+            this.log(error.message || error.toString, 'error');
+          }
         }
-
-        return resolve();
-      });
-    } catch (error) {
-      throw new Error(error.message || error.toString());
-    } finally {
-      done = true;
-
-      await browser.close();
-    }
+      }
+    });
   }
 }
 
