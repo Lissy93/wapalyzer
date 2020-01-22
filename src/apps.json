@@ -872,16 +872,6 @@
       "icon": "Apache.svg",
       "website": "http://apache.org"
     },
-    "Apache HBase": {
-      "cats": [
-        34
-      ],
-      "cpe": "cpe:/a:apache:hbase",
-      "html": "<style[^>]+static/hbase",
-      "icon": "Apache HBase.png",
-      "implies": "Java",
-      "website": "http://hbase.apache.org"
-    },
     "Apache Hadoop": {
       "cats": [
         34
@@ -2141,16 +2131,6 @@
       },
       "website": "http://www.cloudflare.com"
     },
-    "Cloudcoins": {
-      "cats": [
-        56
-      ],
-      "js": {
-        "CLOUDCOINS": ""
-      },
-      "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js",
-      "website": "https://cloudcoins.co"
-    },
     "Cloudera": {
       "cats": [
         34
@@ -2243,17 +2223,6 @@
       },
       "script": "https?://www\\.hashing\\.win/scripts/min\\.js",
       "website": "https://www.coinimp.com"
-    },
-    "Coinlab": {
-      "cats": [
-        56
-      ],
-      "icon": "coinlab.png",
-      "js": {
-        "Coinlab": ""
-      },
-      "script": "https?://coinlab\\.biz/lib/coinlab\\.js\\?id=",
-      "website": "https://coinlab.biz/en"
     },
     "ColorMeShop": {
       "cats": [
@@ -4256,18 +4225,6 @@
         "go.GraphObject": ""
       }
     },
-    "GoSquared": {
-      "cats": [
-        10,
-        52,
-        53
-      ],
-      "icon": "gosquared.png",
-      "js": {
-        "_gs": "\\;confidence:30"
-      },
-      "website": "https://www.gosquared.com/"
-    },
     "GoStats": {
       "cats": [
         10
@@ -4627,14 +4584,6 @@
       "icon": "HP.svg",
       "website": "http://hp.com"
     },
-    "HP ProCurve": {
-      "cats": [
-        37
-      ],
-      "cpe": "cpe:/h:hp:procurve_switch",
-      "icon": "HP.svg",
-      "website": "http://hp.com/networking"
-    },
     "HP System Management": {
       "cats": [
         46
@@ -4858,18 +4807,6 @@
         "([\\d.]+)/hogan(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "https://twitter.github.io/hogan.js/"
-    },
-    "Homeland": {
-      "cats": [
-        1,
-        2
-      ],
-      "cookies": {
-        "_homeland_": ""
-      },
-      "icon": "Homeland.png",
-      "implies": "Ruby on Rails",
-      "website": "https://gethomeland.com"
     },
     "Hotaru CMS": {
       "cats": [
@@ -6398,21 +6335,6 @@
       },
       "website": "http://modx.com"
     },
-    "MYPAGE Platform": {
-      "cats": [
-        1,
-        6
-      ],
-      "cookies": {
-        "mypage_session": ""
-      },
-      "headers": {
-        "CMS-Version": "^(.+)$\\;version:\\1\\;confidence:0"
-      },
-      "icon": "mypage-platform.png",
-      "implies": "Laravel",
-      "website": "https://www.mypage.vn"
-    },
     "Botble CMS": {
       "cats": [
         1,
@@ -6708,16 +6630,6 @@
         "mejs.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://www.mediaelementjs.com"
-    },
-    "MediaTomb": {
-      "cats": [
-        38
-      ],
-      "headers": {
-        "Server": "MediaTomb(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "MediaTomb.png",
-      "website": "http://mediatomb.cc"
     },
     "MediaWiki": {
       "cats": [
