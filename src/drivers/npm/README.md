@@ -28,27 +28,28 @@ $ npm i puppeteer@^2.0.0
 ## Run from the command line
 
 ```
-wappalyzer [url] [options]
+wappalyzer <url> [options]
 ```
 
 ### Options
 
 ```
---browser=str        Specify which headless browser to use (zombie or puppeteer)
---password=str       Password to be used for basic HTTP authentication
---proxy=str          Proxy URL, e.g. 'http://user:pass@proxy:8080'
---username=str       Username to be used for basic HTTP authentication
---chunk-size=num     Process links in chunks.
---debug              Output debug messages.
---delay=ms           Wait for ms milliseconds between requests.
---html-max-cols=num  Limit the number of HTML characters per line processed.
---html-max-rows=num  Limit the number of HTML lines processed.
---max-depth=num      Don't analyse pages more than num levels deep.
---max-urls=num       Exit when num URLs have been analysed.
---max-wait=ms        Wait no more than ms milliseconds for page resources to load.
---pretty             Pretty-print JSON output
---recursive          Follow links on pages (crawler).
---user-agent=str     Set the user agent string.
+-b, --browser=...        Specify which headless browser to use (zombie or puppeteer)
+-c, --chunk-size=...     Process links in chunks
+-d, --debug              Output debug messages
+-t, --delay=ms           Wait for ms milliseconds between requests
+-h, --help               This text
+--html-max-cols=...      Limit the number of HTML characters per line processed
+--html-max-rows=...      Limit the number of HTML lines processed
+-D, --max-depth=...      Don't analyse pages more than num levels deep
+-m, --max-urls=...       Exit when num URLs have been analysed
+-w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
+-p, --password=...       Password to be used for basic HTTP authentication (zombie only)
+-P, --pretty             Pretty-print JSON output
+--proxy=...              Proxy URL, e.g. 'http://user:pass@proxy:8080' (zombie only)
+-r, --recursive          Follow links on pages (crawler)
+-a, --user-agent=...     Set the user agent string
+-u, --username=...       Username to be used for basic HTTP authentication (zombie only)
 ```
 
 
