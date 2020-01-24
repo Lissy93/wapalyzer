@@ -7446,6 +7446,24 @@
       },
       "website": "https://newrelic.com"
     },
+    "Nextcloud": {
+      "cats": [
+        19
+      ],
+      "html": [
+        "<script[^>]*>[^<]*nextcloud_[^<]*oc_config={[^}]*\"version\":\"([\\d.]+)\"\\;version:\\1"
+      ],
+      "icon": "nextcloud.svg",
+      "implies": "PHP",
+      "js": {
+        "nc_lastLogin": "",
+        "nc_pageLoad": ""
+      },
+      "meta": {
+        "apple-itunes-app": "app-id=1125420102"
+      },
+      "website": "https://nextcloud.com/"
+    },
     "Next.js": {
       "cats": [
         18,
