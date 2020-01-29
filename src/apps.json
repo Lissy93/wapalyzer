@@ -3109,6 +3109,17 @@
       "implies": "Drupal",
       "website": "http://drupalcommerce.org"
     },
+    "Duda": {
+      "cats": [
+        1
+      ],
+      "js": {
+        "SystemID": "^.*DIRECT.*$\\;confidence:100",
+        "version": "^(.*)$\\;version:\\1\\;confidence:0"
+      },
+      "icon": "duda.png",
+      "website": "https://www.duda.co/website-builder"
+    },
     "Dynamicweb": {
       "cats": [
         1,
@@ -5500,10 +5511,6 @@
       },
       "icon": "jimdo.png",
       "url": "\\.jimdo\\.com/",
-      "js": {
-        "jimdoData": "",
-        "jimdo_Data": ""
-      },
       "website": "https://www.jimdo.com"
     },
     "Jirafe": {
@@ -7324,6 +7331,28 @@
         "generator": "Mynetcap"
       },
       "website": "http://www.netcap-creation.fr"
+    },
+    "MyWebsite 8": {
+      "cats": [
+        1
+      ],
+      "meta": {
+        "generator": "^.*MyWebsite.*$\\;confidence:100"
+      },
+      "icon": "Ionos-by-1and1-logo.svg",
+      "website": "https://www.ionos.com"
+    },
+    "MyWebsite 9": {
+      "cats": [
+        1
+      ],
+      "js": {
+        "SystemID": "^.*1AND1.*$\\;confidence:100",
+        "version": "^(.*)$\\;version:\\1\\;confidence:0"
+      },
+      "icon": "Ionos-by-1and1-logo.svg",
+      "script": "\\/\\/integration.mywebsite-editor.com.*\\.js\\;confidence:100",
+      "website": "https://www.ionos.com"
     },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
