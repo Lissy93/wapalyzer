@@ -9261,6 +9261,7 @@
       "cats": [
         27
       ],
+      "cpe": "cpe:/a:ruby-lang:ruby",
       "headers": {
         "Server": "(?:Mongrel|WEBrick|Ruby)"
       },
@@ -9271,6 +9272,7 @@
       "cats": [
         18
       ],
+      "cpe": "cpe:/a:rubyonrails:rails",
       "headers": {
         "Server": "mod_(?:rails|rack)",
         "X-Powered-By": "mod_(?:rails|rack)"
@@ -12185,6 +12187,7 @@
         1,
         11
       ],
+      "cpe": "cpe:/a:wordpress:wordpress",
       "html": [
         "<link rel=[\"']stylesheet[\"'] [^>]+/wp-(?:content|includes)/",
         "<link[^>]+s\\d+\\.wp\\.com"
@@ -13168,6 +13171,7 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:jquery:jquery",
       "icon": "jQuery.svg",
       "js": {
         "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
@@ -13234,6 +13238,7 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:jquery:jquery_ui",
       "icon": "jQuery UI.svg",
       "implies": "jQuery",
       "js": {
