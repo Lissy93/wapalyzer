@@ -20,24 +20,28 @@ class ZombieBrowser extends Browser {
   }
 
   visit(url) {
-    return new Promise((resolve) => {
-      this.browser.visit(url, () => {
-        const resource = this.browser.resources.length
-          ? this.browser.resources.filter(_resource => _resource.response).shift() : null;
+    return new Promise((resolve, reject) => {
+      try {
+        this.browser.visit(url, () => {
+          const resource = this.browser.resources.length
+            ? this.browser.resources.filter(_resource => _resource.response).shift() : null;
 
-        this.window = this.browser.window;
-        this.document = this.browser.document;
-        this.headers = this.getHeaders();
-        this.statusCode = resource ? resource.response.status : 0;
-        this.contentType = this.headers['content-type'] ? this.headers['content-type'].shift() : null;
-        this.html = this.getHtml();
-        this.js = this.getJs();
-        this.links = this.getLinks();
-        this.scripts = this.getScripts();
-        this.cookies = this.getCookies();
+          this.window = this.browser.window;
+          this.document = this.browser.document;
+          this.headers = this.getHeaders();
+          this.statusCode = resource ? resource.response.status : 0;
+          this.contentType = this.headers['content-type'] ? this.headers['content-type'].shift() : null;
+          this.html = this.getHtml();
+          this.js = this.getJs();
+          this.links = this.getLinks();
+          this.scripts = this.getScripts();
+          this.cookies = this.getCookies();
 
-        resolve();
-      });
+          resolve();
+        });
+      } catch (error) {
+        reject(error.message);
+      }
     });
   }
 
