@@ -4015,6 +4015,24 @@
       "html": "<a [^>]*onclick=\"gemius_hit",
       "website": "https://www.gemius.com"
     },
+    "GeneXus": {
+      "cats": [
+        27
+      ],
+      "html": [
+        "<link[^>]+?id=\"gxtheme_css_reference\""
+      ],
+      "icon": "GeneXus.png",
+      "js": {
+		"gx":"",
+        "gx.gxVersion": "^(.+)-.*$\\;version:\\1"
+      },
+      "script": [
+        ".*/static/gxgral.js",
+        ".*/static/gxtimezone.js"
+      ],
+      "website": "https://www.genexus.com/"
+    },
     "Gentoo": {
       "cats": [
         28
