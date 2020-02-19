@@ -1180,7 +1180,7 @@
         62
       ],
       "headers": {
-        "X-Hacker": "(automattic.com/jobs|wpvip.com/careers)"
+        "X-Hacker": "(?:automattic.com/jobs|wpvip.com/careers)"
       },
       "icon": "automattic.png",
       "implies": "WordPress",
@@ -4055,7 +4055,7 @@
       ],
       "icon": "GeneXus.png",
       "js": {
-		"gx":"",
+        "gx": "",
         "gx.gxVersion": "^(.+)-.*$\\;version:\\1"
       },
       "script": [
@@ -4173,7 +4173,10 @@
         "<header class=\"navbar navbar-fixed-top navbar-gitlab with-horizontal-nav\">"
       ],
       "icon": "GitLab.svg",
-      "implies": ["Ruby on Rails", "Vue.js"],
+      "implies": [
+        "Ruby on Rails",
+        "Vue.js"
+      ],
       "js": {
         "GitLab": "",
         "gl.dashboardOptions": ""
@@ -14006,16 +14009,6 @@
       "script": "/media/conv/js/jquery\\.js",
       "website": "https://uknowva.com"
     },
-     "Pytonik": {
-        "cats": [
-          18,
-          22
-        ],
-        "html": "Pytonik ([0-9.]+);version:\\1",
-        "icon": "pytonik.png",
-        "implies": "Python",
-        "website": "https://pytonik.com"
-      },
     "vBulletin": {
       "cats": [
         2
@@ -14050,7 +14043,7 @@
       },
       "website": "http://vibecommerce.com.br"
     },
-	"Vikaon": {
+    "Vikaon": {
       "cats": [
         6
       ],
@@ -14318,9 +14311,6 @@
       "meta": {
         "generator": "Varbase"
       },
-      "html": [
-        "varbase_"
-      ],
       "cpe": "cpe:/a:vardot:varbase",
       "icon": "varbase.png",
       "implies": "Drupal",
