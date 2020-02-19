@@ -4141,7 +4141,7 @@
         "<header class=\"navbar navbar-fixed-top navbar-gitlab with-horizontal-nav\">"
       ],
       "icon": "GitLab.svg",
-      "implies": "Ruby on Rails",
+      "implies": ["Ruby on Rails", "Vue.js"],
       "js": {
         "GitLab": "",
         "gl.dashboardOptions": ""
@@ -11152,16 +11152,17 @@
       "url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
       "website": "http://www.tumblr.com"
     },
-    "TweenMax": {
+    "GSAP": {
       "cats": [
         12
       ],
       "icon": "TweenMax.png",
       "js": {
-        "TweenMax.version": "^(.+)$\\;version:\\1"
+        "TweenMax": "",
+        "gsapVersions": ""
       },
       "script": "TweenMax(?:\\.min)?\\.js",
-      "website": "http://greensock.com/tweenmax"
+      "website": "https://greensock.com/gsap"
     },
     "Twilight CMS": {
       "cats": [

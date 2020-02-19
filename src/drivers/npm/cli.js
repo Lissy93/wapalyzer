@@ -32,7 +32,7 @@ while (true) { // eslint-disable-line no-constant-condition
     break;
   }
 
-  const matches = /-?-([^=]+)(?:=(.+)?)?/.exec(arg);
+  const matches = /^-?-([^=]+)(?:=(.+)?)?/.exec(arg);
 
   if (matches) {
     const key = aliases[matches[1]] || matches[1].replace(/-\w/g, _matches => _matches[1].toUpperCase());
