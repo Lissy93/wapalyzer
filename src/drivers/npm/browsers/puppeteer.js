@@ -58,6 +58,7 @@ class PuppeteerBrowser extends Browser {
   }
 
   visit(url) {
+    console.log({ url });
     return new Promise(async (resolve, reject) => {
       let done = false;
       let browser;

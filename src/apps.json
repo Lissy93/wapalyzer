@@ -4055,7 +4055,6 @@
       ],
       "icon": "GeneXus.png",
       "js": {
-        "gx": "",
         "gx.gxVersion": "^(.+)-.*$\\;version:\\1"
       },
       "script": [
@@ -4599,9 +4598,6 @@
       "cats": [
         10
       ],
-      "js": {
-        "gio": ""
-      },
       "cookies": {
         "grwng_uid": "",
         "gr_user_id": ""
@@ -6012,13 +6008,6 @@
       },
       "script": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
-    },
-    "Lazy.js": {
-      "cats": [
-        59
-      ],
-      "script": "lazy(?:\\.browser)?(?:\\.min)?\\.js",
-      "website": "http://danieltao.com/lazy.js"
     },
     "Leaflet": {
       "cats": [
