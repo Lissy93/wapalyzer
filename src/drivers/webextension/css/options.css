@@ -1,6 +1,7 @@
 body {
 	color: #303942;
   cursor: default;
+  direction: __MSG_@@bidi_dir__;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: .8rem;
   line-height: 1.4rem;
@@ -59,7 +60,7 @@ a:active {
 
 .hero {
 	background: linear-gradient(160deg, #32067c, #150233);
-	padding: 1.5rem 0 1rem 1.5rem;
+	padding: 1.5rem 1.5rem 1rem 1.5rem;
 }
 
 	.hero img {
@@ -97,7 +98,8 @@ a:active {
 		border: 1px solid #dbdbdb;
 		cursor: pointer;
 		color: #303942;
-		margin: 0 1rem .5rem 0;
+		margin-bottom: .5rem;
+    margin-inline-end: 1rem;
 	}
 
 @-webkit-keyframes fadeout {

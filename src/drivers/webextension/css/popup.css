@@ -1,5 +1,6 @@
 body {
 	background: #fff;
+  direction: __MSG_@@bidi_dir__;
 	font-family: Helvetica, Arial, sans-serif;
   font-size: .8rem;
 	margin: 0;
@@ -19,7 +20,7 @@ body {
 
 .header__logo {
   display: inline-block;
-  margin: .2rem 0 0 1.5rem;
+  margin: .2rem 1.5rem 0 1.5rem;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
   transform: translateZ(0);
@@ -64,6 +65,7 @@ body {
 
 .detected__category-pin-wrapper {
   margin-left: .2rem;
+  margin-right: .2rem;
 }
 
 .detected__category-pin {
@@ -104,7 +106,7 @@ body {
 .detected__app-icon {
 	display: inline-block;
 	height: 16px;
-	margin-right: .5rem;
+	margin-inline-end: .5rem;
 	vertical-align: -.2rem;
 	width: 16px;
 }
