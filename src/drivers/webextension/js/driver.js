@@ -219,7 +219,7 @@ wappalyzer.driver.document = document;
 wappalyzer.driver.log = (message, source, type) => {
   const log = ['warn', 'error'].indexOf(type) !== -1 ? type : 'log';
 
-  console[log](`[wappalyzer ${type}]`, `[${source}]`, message); // eslint-disable-line no-console
+  console.log(`[wappalyzer ${type}]`, `[${source}]`, message); // eslint-disable-line no-console
 };
 
 /**
@@ -299,7 +299,7 @@ wappalyzer.driver.getRobotsTxt = async (host, secure = false) => {
     let response;
 
     try {
-      response = await fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, { redirect: 'follow' });
+      response = await fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, { redirect: 'follow', mode: 'no-cors' });
     } catch (error) {
       wappalyzer.log(error, 'driver', 'error');
 

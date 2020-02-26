@@ -58,7 +58,6 @@ class PuppeteerBrowser extends Browser {
   }
 
   visit(url) {
-    console.log({ url });
     return new Promise(async (resolve, reject) => {
       let done = false;
       let browser;
@@ -82,7 +81,7 @@ class PuppeteerBrowser extends Browser {
 
         const page = await browser.newPage();
 
-        page.setDefaultTimeout(this.options.maxWait);
+        page.setDefaultTimeout(this.options.maxWait * 2);
 
         page.on('error', reject);
 

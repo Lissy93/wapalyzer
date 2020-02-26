@@ -6,7 +6,6 @@ var exports = {};
 
 (function(exports) {
 
-	var port = browser.runtime.connect({name:"adparser"});
 	var utils = {
 		normalizeUrl: function(url) {
 
@@ -122,6 +121,18 @@ var exports = {};
 		},
 		sendToBackground: function(message, event, responseMessage) {
 			if ( typeof browser !== 'undefined' || typeof chrome !== 'undefined' ) {
+        var port = browser.runtime.connect({name:"adparser"});
+
+        port.onMessage.addListener((message) => {
+          if ( message && message.tracking_enabled ) {
+
+            utilCallback();
+          } else {
+
+            utilElseCallback();
+          }
+        });
+
 				port.postMessage(message);
 			} else if ( window.self.port ) {
 				window.self.port.on(responseMessage, onResponse);
@@ -141,16 +152,6 @@ var exports = {};
 
 		}
 	};
-
-	port.onMessage.addListener((message) => {
-		if ( message && message.tracking_enabled ) {
-
-			utilCallback();
-		} else {
-
-			utilElseCallback();
-		}
-	});
 
 	utils.SCRIPT_IN_FRIENDLY_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && utils.isFriendlyWindow(window.parent);
 	utils.SCRIPT_IN_HOSTILE_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && !utils.SCRIPT_IN_FRIENDLY_IFRAME;
