@@ -57,117 +57,121 @@ class PuppeteerBrowser extends Browser {
     super(options);
   }
 
-  visit(url) {
-    return new Promise(async (resolve, reject) => {
-      let done = false;
-      let browser;
+  async visit(url) {
+    let done = false;
+    let browser;
 
-      try {
-        browser = await puppeteer.launch(chromium ? {
-          args: [...chromium.args, '--ignore-certificate-errors'],
-          defaultViewport: chromium.defaultViewport,
-          executablePath: await chromium.executablePath,
-          headless: chromium.headless,
-        } : {
-          args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors', '--disable-dev-shm-usage'],
-          executablePath: CHROME_BIN,
-        });
+    try {
+      await new Promise(async (resolve, _reject) => {
+        try {
+          browser = await puppeteer.launch(chromium ? {
+            args: [...chromium.args, '--ignore-certificate-errors'],
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath,
+            headless: chromium.headless,
+          } : {
+            args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors', '--disable-dev-shm-usage'],
+            executablePath: CHROME_BIN,
+          });
 
-        browser.on('disconnected', () => {
-          if (!done) {
-            reject(new Error('browser: disconnected'));
-          }
-        });
-
-        const page = await browser.newPage();
-
-        page.setDefaultTimeout(this.options.maxWait * 2);
-
-        page.on('error', error => reject(new Error(`page error: ${error.message || error}`)));
-
-        page.on('response', (response) => {
-          try {
-            if (response.status() === 301 || response.status() === 302) {
-              return;
+          browser.on('disconnected', () => {
+            if (!done) {
+              _reject(new Error('browser: disconnected'));
             }
+          });
 
-            if (!this.statusCode) {
-              this.statusCode = response.status();
+          const page = await browser.newPage();
 
-              this.headers = {};
+          page.setDefaultTimeout(this.options.maxWait * 2);
 
-              const headers = response.headers();
+          page.on('error', error => _reject(new Error(`page error: ${error.message || error}`)));
 
-              Object.keys(headers).forEach((key) => {
-                this.headers[key] = Array.isArray(headers[key]) ? headers[key] : [headers[key]];
-              });
+          page.on('response', (response) => {
+            try {
+              if (response.status() === 301 || response.status() === 302) {
+                return;
+              }
 
-              this.contentType = headers['content-type'] || null;
+              if (!this.statusCode) {
+                this.statusCode = response.status();
+
+                this.headers = {};
+
+                const headers = response.headers();
+
+                Object.keys(headers).forEach((key) => {
+                  this.headers[key] = Array.isArray(headers[key]) ? headers[key] : [headers[key]];
+                });
+
+                this.contentType = headers['content-type'] || null;
+              }
+            } catch (error) {
+              _reject(new Error(`page error: ${error.message || error}`));
             }
-          } catch (error) {
-            reject(new Error(`page error: ${error.message || error}`));
-          }
-        });
+          });
 
-        page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
+          page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
 
-        await page.setUserAgent(this.options.userAgent);
+          await page.setUserAgent(this.options.userAgent);
 
-        await Promise.race([
-          page.goto(url, { waitUntil: 'domcontentloaded' }),
-          new Promise(_resolve => setTimeout(() => {
-            this.log('Timeout', 'error');
+          await Promise.race([
+            page.goto(url, { waitUntil: 'domcontentloaded' }),
+            new Promise(_resolve => setTimeout(() => {
+              this.log('Timeout', 'error');
 
-            _resolve();
-          }, this.options.maxWait)),
-        ]);
+              _resolve();
+            }, this.options.maxWait)),
+          ]);
 
-        // eslint-disable-next-line no-undef
-        const links = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('a')).map(({
-          hash, hostname, href, pathname, protocol, rel,
-        }) => ({
-          hash,
-          hostname,
-          href,
-          pathname,
-          protocol,
-          rel,
-        })));
+          // eslint-disable-next-line no-undef
+          const links = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('a')).map(({
+            hash, hostname, href, pathname, protocol, rel,
+          }) => ({
+            hash,
+            hostname,
+            href,
+            pathname,
+            protocol,
+            rel,
+          })));
 
-        this.links = await links.jsonValue();
+          this.links = await links.jsonValue();
 
-        // eslint-disable-next-line no-undef
-        const scripts = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('script')).map(({
-          src,
-        }) => src));
+          // eslint-disable-next-line no-undef
+          const scripts = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('script')).map(({
+            src,
+          }) => src));
 
-        this.scripts = (await scripts.jsonValue()).filter(script => script);
+          this.scripts = (await scripts.jsonValue()).filter(script => script);
 
-        this.js = await page.evaluate(getJs);
+          this.js = await page.evaluate(getJs);
 
-        this.cookies = (await page.cookies()).map(({
-          name, value, domain, path,
-        }) => ({
-          name, value, domain, path,
-        }));
+          this.cookies = (await page.cookies()).map(({
+            name, value, domain, path,
+          }) => ({
+            name, value, domain, path,
+          }));
 
-        this.html = await page.content();
+          this.html = await page.content();
 
-        resolve();
-      } catch (error) {
-        reject(new Error(`visit error: ${error.message || error}`));
-      } finally {
-        done = true;
+          resolve();
+        } catch (error) {
+          _reject(new Error(`visit error: ${error.message || error}`));
+        }
+      });
+    } catch (error) {
+      done = true;
 
-        if (browser) {
-          try {
-            await browser.close();
-          } catch (error) {
-            this.log(error.message || error.toString(), 'error');
-          }
+      if (browser) {
+        try {
+          await browser.close();
+        } catch (_error) {
+          this.log(_error.message || _error.toString(), 'error');
         }
       }
-    });
+
+      throw new Error(error.message || error.toString());
+    }
   }
 }
 
