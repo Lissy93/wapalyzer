@@ -62,7 +62,7 @@ class PuppeteerBrowser extends Browser {
     let browser;
 
     try {
-      await new Promise(async (resolve, _reject) => {
+      await new Promise(async (resolve, reject) => {
         try {
           browser = await puppeteer.launch(chromium ? {
             args: [...chromium.args, '--ignore-certificate-errors'],
@@ -70,13 +70,13 @@ class PuppeteerBrowser extends Browser {
             executablePath: await chromium.executablePath,
             headless: chromium.headless,
           } : {
-            args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors', '--disable-dev-shm-usage'],
+            args: ['--no-sandbox', '--headless', '--disable-gpu', '--ignore-certificate-errors'],
             executablePath: CHROME_BIN,
           });
 
           browser.on('disconnected', () => {
             if (!done) {
-              _reject(new Error('browser: disconnected'));
+              reject(new Error('browser: disconnected'));
             }
           });
 
@@ -84,7 +84,7 @@ class PuppeteerBrowser extends Browser {
 
           page.setDefaultTimeout(this.options.maxWait * 2);
 
-          page.on('error', error => _reject(new Error(`page error: ${error.message || error}`)));
+          page.on('error', error => reject(new Error(`page error: ${error.message || error}`)));
 
           page.on('response', (response) => {
             try {
@@ -106,7 +106,7 @@ class PuppeteerBrowser extends Browser {
                 this.contentType = headers['content-type'] || null;
               }
             } catch (error) {
-              _reject(new Error(`page error: ${error.message || error}`));
+              reject(new Error(`page error: ${error.message || error}`));
             }
           });
 
@@ -117,7 +117,7 @@ class PuppeteerBrowser extends Browser {
           await Promise.race([
             page.goto(url, { waitUntil: 'domcontentloaded' }),
             new Promise(_resolve => setTimeout(() => {
-              this.log('Timeout', 'error');
+              this.log('timeout', 'error');
 
               _resolve();
             }, this.options.maxWait)),
@@ -156,21 +156,25 @@ class PuppeteerBrowser extends Browser {
 
           resolve();
         } catch (error) {
-          _reject(new Error(`visit error: ${error.message || error}`));
+          reject(new Error(`visit error: ${error.message || error}`));
         }
       });
     } catch (error) {
+      this.log(`visit error: ${error.message || error}`, 'error');
+
+      throw new Error(error.message || error.toString());
+    } finally {
       done = true;
 
       if (browser) {
         try {
           await browser.close();
-        } catch (_error) {
-          this.log(_error.message || _error.toString(), 'error');
+
+          this.log('browser close ok');
+        } catch (error) {
+          this.log(`browser close error: ${error.message || error}`, 'error');
         }
       }
-
-      throw new Error(error.message || error.toString());
     }
   }
 }
