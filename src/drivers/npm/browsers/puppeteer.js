@@ -116,11 +116,7 @@ class PuppeteerBrowser extends Browser {
 
           await Promise.race([
             page.goto(url, { waitUntil: 'domcontentloaded' }),
-            new Promise(_resolve => setTimeout(() => {
-              this.log('timeout', 'error');
-
-              _resolve();
-            }, this.options.maxWait)),
+            new Promise((_resolve, _reject) => setTimeout(() => _reject(new Error('timeout')), this.options.maxWait)),
           ]);
 
           // eslint-disable-next-line no-undef
