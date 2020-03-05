@@ -225,10 +225,6 @@ class Driver {
       throw new Error('NO_RESPONSE');
     }
 
-    if (browser.statusCode !== 200) {
-      throw new Error('RESPONSE_NOT_OK');
-    }
-
     if (!browser.contentType || !/\btext\/html\b/.test(browser.contentType)) {
       this.wappalyzer.log(`Skipping; url: ${pageUrl.href}; content type: ${browser.contentType}`, 'driver');
 
