@@ -84,14 +84,29 @@ class PuppeteerBrowser extends Browser {
 
           page.setDefaultTimeout(this.options.maxWait * 2);
 
+          await page.setRequestInterception(true);
+
           page.on('error', error => reject(new Error(`page error: ${error.message || error}`)));
+
+          let responseReceived = false;
+
+          page.on('request', (request) => {
+            if (
+              responseReceived
+              && request.isNavigationRequest()
+              && request.frame() === page.mainFrame()
+              && request.url() !== url
+            ) {
+              this.log(`abort navigation to ${request.url()}`);
+
+              request.abort('aborted');
+            } else {
+              request.continue();
+            }
+          });
 
           page.on('response', (response) => {
             try {
-              if (response.status() === 301 || response.status() === 302) {
-                return;
-              }
-
               if (!this.statusCode) {
                 this.statusCode = response.status();
 
@@ -105,6 +120,10 @@ class PuppeteerBrowser extends Browser {
 
                 this.contentType = headers['content-type'] || null;
               }
+
+              if (response.status() < 300 || response.status() > 399) {
+                responseReceived = true;
+              }
             } catch (error) {
               reject(new Error(`page error: ${error.message || error}`));
             }
@@ -114,10 +133,16 @@ class PuppeteerBrowser extends Browser {
 
           await page.setUserAgent(this.options.userAgent);
 
-          await Promise.race([
-            page.goto(url, { waitUntil: 'domcontentloaded' }),
-            new Promise((_resolve, _reject) => setTimeout(() => _reject(new Error('timeout')), this.options.maxWait)),
-          ]);
+          try {
+            await Promise.race([
+              page.goto(url, { waitUntil: 'domcontentloaded' }),
+              new Promise((_resolve, _reject) => setTimeout(() => _reject(new Error('timeout')), this.options.maxWait)),
+            ]);
+          } catch (error) {
+            if (!this.statusCode) {
+              throw new Error(error.message || error.toString());
+            }
+          }
 
           // eslint-disable-next-line no-undef
           const links = await page.evaluateHandle(() => Array.from(document.getElementsByTagName('a')).map(({
