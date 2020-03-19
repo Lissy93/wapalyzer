@@ -3222,6 +3222,27 @@
       ],
       "website": "https://element.eleme.io/"
     },
+    "Elm": {
+      "cats": [
+        12
+      ],
+      "icon": "elm.svg",
+      "js": {
+        "Elm.Main.init": "\\;version:0.19",
+        "Elm.Main.embed": "\\;version:0.18",
+        "Elm": "\\;confidence:50",
+      },
+      "website": "https://elm-lang.org/"
+    },
+    "Elm-ui": {
+      "cats": [
+        66
+      ],
+      "icon": "elm.svg",
+      "implies": "Elm",
+      "html": "<style>[\\s\\S]*\\.explain > \\.s[\\s\\S]*\\.explain > \\.ctr > \\.s",
+      "website": "https://github.com/mdgriffith/elm-ui"
+    },
     "Eloqua": {
       "cats": [
         32
