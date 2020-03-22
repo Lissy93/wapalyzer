@@ -554,7 +554,7 @@
         61
       ],
       "html": [
-        "<form[^>]+?action=\"[^\"]+airform.io"
+        "\<form(.*?)action=['"](([a-z0-9]*?:?(\/\/)?airform\.com)[^ '"]*?)['"]"
       ],
       "icon": "Airform.svg",
       "website": "https://airform.io"
