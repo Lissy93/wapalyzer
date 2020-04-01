@@ -91,17 +91,21 @@ class PuppeteerBrowser extends Browser {
           let responseReceived = false;
 
           page.on('request', (request) => {
-            if (
-              responseReceived
-              && request.isNavigationRequest()
-              && request.frame() === page.mainFrame()
-              && request.url() !== url
-            ) {
-              this.log(`abort navigation to ${request.url()}`);
+            try {
+              if (
+                responseReceived
+                && request.isNavigationRequest()
+                && request.frame() === page.mainFrame()
+                && request.url() !== url
+              ) {
+                this.log(`abort navigation to ${request.url()}`);
 
-              request.abort('aborted');
-            } else {
-              request.continue();
+                request.abort('aborted');
+              } else {
+                request.continue();
+              }
+            } catch (error) {
+              reject(new Error(`page error: ${error.message || error}`));
             }
           });
 
