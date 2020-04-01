@@ -6251,6 +6251,27 @@
       },
       "website": "https://www.luigisbox.com"
     },
+    "Miva": {
+      "cats": [
+        6
+      ],
+      "icon": "miva.png",
+      "script": "mvga.js",
+	   "js": {
+        "MivaVM_API": "",
+        "MivaVM_Version":"^(.+)$\\;version:\\1",
+        "mivaJS": "",
+	    	"mivaJS.Store_Code":"",
+        "mivaJS.Product_Code":"",
+        "mivaJS.Product_ID": "",
+        "mivaJS.Page": "",
+        "mivaJS.Screen":""
+      },
+	  "headers": {
+        "content-disposition": "filename=(?:mvga.js|MivaEvents.js)"
+      },
+      "website": "http://www.miva.com"
+    },
     "MODX": {
       "cats": [
         1
