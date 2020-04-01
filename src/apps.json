@@ -3037,6 +3037,7 @@
         "SystemID": "^.*DIRECT.*$\\;confidence:100",
         "version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
+      "html": "<div[^>]*id=\"P6iryBW0Wu\"",
       "icon": "duda.png",
       "website": "https://www.duda.co/website-builder"
     },
@@ -4798,18 +4799,18 @@
       },
       "website": "http://gohugo.io"
     },
-    "Hybris": {
+    "SAP Commerce Cloud": {
       "cats": [
         6
       ],
       "cookies": {
         "_hybris": ""
       },
-      "cpe": "cpe:/a:sap:hybris",
+      "cpe": "cpe:/a:sap:commerce_cloud",
       "html": "<[^>]+/(?:sys_master|hybr|_ui/(?:responsive/)?(?:desktop|common(?:/images|/img)?))/",
-      "icon": "Hybris.png",
+      "icon": "SAP.png",
       "implies": "Java",
-      "website": "https://hybris.com"
+      "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
     },
     "IBM Coremetrics": {
       "cats": [
@@ -5133,7 +5134,7 @@
       "cats": [
         10
       ],
-      "icon": "Intercom.png",
+      "icon": "Intercom.svg",
       "js": {
         "Intercom": ""
       },
@@ -5165,7 +5166,6 @@
         18
       ],
       "icon": "ionic.png",
-      "implies": "Angular",
       "js": {
         "Ionic.config": "",
         "Ionic.version": "^(.+)$\\;version:\\1"
@@ -6124,6 +6124,19 @@
       "icon": "Logitech Media Server.png",
       "website": "http://www.mysqueezebox.com"
     },
+    "Loja Integrada": {
+			"cats": [
+        6
+      ],
+			"headers": {
+				"X-Powered-By": "vtex-integrated-store"
+			},
+			"icon": "Loja Integrada.png",
+			"js": {
+				"window.LOJA_ID": ""
+			},
+			"website": "https://lojaintegrada.com.br/"
+		},
     "Lotus Domino": {
       "cats": [
         22
@@ -11182,16 +11195,6 @@
       "icon": "VTEX.svg",
       "website": "https://vtex.com/"
     },
-    "VTEX Integrated Store": {
-      "cats": [
-        6
-      ],
-      "headers": {
-        "X-Powered-By": "vtex-integrated-store"
-      },
-      "icon": "VTEX Integrated Store.png",
-      "website": "http://lojaintegrada.com.br"
-    },
     "Vaadin": {
       "cats": [
         18
@@ -11394,7 +11397,7 @@
       "script": [
         "/_nuxt/"
       ],
-      "implies": "Vue.js",
+      "implies": ["Vue.js", "Node.js"],
       "website": "https://nuxtjs.org"
     },
     "W3 Total Cache": {
@@ -11843,7 +11846,7 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "script": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
-      "website": "http://www.woothemes.com/woocommerce"
+      "website": "https://woocommerce.com"
     },
     "Woopra": {
       "cats": [
@@ -13835,6 +13838,17 @@
       },
       "icon": "Cafe24.png",
       "website": "https://www.cafe24.com"
+    },
+    "Live Story": {
+      "cats": [
+        1
+      ],
+      "icon": "LiveStory.png",
+      "website": "https://www.livestory.nyc/",
+      "js": {
+        "LiveStory": "",
+        "LSHelpers": ""
+      }
     }
   },
   "categories": {
