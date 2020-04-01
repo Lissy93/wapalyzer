@@ -115,9 +115,8 @@
       "cats": [
         6
       ],
-      "html": "<a[^>]*href=\"https://www.irroba.com.br"
-        ,
-      "icon": "irroba_logo.svg",
+      "html": "<a[^>]*href=\"https://www\\.irroba\\.com\\.br",
+      "icon": "irroba.svg",
       "website": "https://www.irroba.com.br/"
     },
     "AWStats": {
@@ -394,7 +393,7 @@
       "script": [
         "/etc/designs/",
         "/etc/clientlibs/",
-        "/etc.clientlibs/"
+        "/etc\\.clientlibs/"
       ],
       "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
@@ -563,7 +562,7 @@
         61
       ],
       "html": [
-        "<form[^>]+?action=\"[^\"]+airform.io"
+        "<form[^>]+?action=\"[^\"]+airform\\.io"
       ],
       "icon": "Airform.svg",
       "website": "https://airform.io"
@@ -1162,7 +1161,7 @@
         62
       ],
       "headers": {
-        "X-Hacker": "(?:automattic.com/jobs|wpvip.com/careers)"
+        "X-Hacker": "(?:automattic\\.com/jobs|wpvip\\.com/careers)"
       },
       "icon": "automattic.png",
       "implies": "WordPress",
@@ -1172,7 +1171,7 @@
       "cats": [
         6
       ],
-      "html": "<link[^>]* href=\"^https?://edge\\.avangate\\.net/",
+      "html": "<link[^>]* href=\"https?://edge\\.avangate\\.net/",
       "icon": "Avangate.svg",
       "js": {
         "__avng8_": "",
@@ -1537,7 +1536,7 @@
       "cats": [
         32
       ],
-      "html": "<meta property=\"cf:app_domain\" content=\"app.clickfunnels.com\"",
+      "html": "<meta property=\"cf:app_domain\" content=\"app\\.clickfunnels\\.com\"",
       "env": "Clickfunnels",
       "icon": "ClickFunnels.png",
       "website": "https://www.clickfunnels.com"
@@ -2458,7 +2457,7 @@
       },
       "script": [
         "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
-        "//static.criteo.net/js/ld/ld.js"
+        "//static\\.criteo\\.net/js/ld/ld\\.js"
       ],
       "website": "http://criteo.com"
     },
@@ -2549,7 +2548,7 @@
         31
       ],
       "headers": {
-        "Server": "^DERAK.CLOUD$",
+        "Server": "^DERAK\\.CLOUD$",
         "Derak-Umbrage": ""
       },
       "icon": "DerakCloud.png",
@@ -2560,7 +2559,7 @@
       "js": {
         "derakCloud.init": ""
       },
-      "website": "https://derak.cloud/"
+      "website": "https://derak.cloud"
     },
     "DM Polopoly": {
       "cats": [
@@ -3135,7 +3134,7 @@
         6
       ],
       "cookies": {
-        "ekmpowershop":  ""
+        "ekmpowershop": ""
       },
       "js": {
         "_ekmpinpoint": ""
@@ -3213,8 +3212,8 @@
         "EcwidCart": ""
       },
       "script": [
-        "https://app.multiscreenstore.com/script.js?.*",
-        "https://app.ecwid.com/script.js?.*"
+        "https://app\\.multiscreenstore\\.com/script\\.js",
+        "https://app\\.ecwid\\.com/script\\.js"
       ],
       "website": "https://www.ecwid.com/"
     },
@@ -3277,7 +3276,7 @@
       "js": {
         "Elm.Main.init": "\\;version:0.19",
         "Elm.Main.embed": "\\;version:0.18",
-        "Elm": "\\;confidence:50",
+        "Elm": "\\;confidence:50"
       },
       "website": "https://elm-lang.org/"
     },
@@ -3565,8 +3564,8 @@
         6
       ],
       "html": [
-        "<a [^>]*href=\"(http|https)://sites.fastspring.com",
-        "<form [^>]*action=\"(http|https)://sites.fastspring.com"
+        "<a [^>]*href=\"https?://sites\\.fastspring\\.com",
+        "<form [^>]*action=\"https?://sites\\.fastspring\\.com"
       ],
       "icon": "fastspring.png",
       "website": "https://fastspring.com"
@@ -6203,18 +6202,18 @@
       "website": "http://www.mysqueezebox.com"
     },
     "Loja Integrada": {
-			"cats": [
+      "cats": [
         6
       ],
-			"headers": {
-				"X-Powered-By": "vtex-integrated-store"
-			},
-			"icon": "Loja Integrada.png",
-			"js": {
-				"window.LOJA_ID": ""
-			},
-			"website": "https://lojaintegrada.com.br/"
-		},
+      "headers": {
+        "X-Powered-By": "vtex-integrated-store"
+      },
+      "icon": "Loja Integrada.png",
+      "js": {
+        "window.LOJA_ID": ""
+      },
+      "website": "https://lojaintegrada.com.br/"
+    },
     "Lotus Domino": {
       "cats": [
         22
@@ -6272,17 +6271,17 @@
       ],
       "icon": "miva.png",
       "script": "mvga.js",
-	   "js": {
+      "js": {
         "MivaVM_API": "",
-        "MivaVM_Version":"^(.+)$\\;version:\\1",
+        "MivaVM_Version": "^(.+)$\\;version:\\1",
         "mivaJS": "",
-	    	"mivaJS.Store_Code":"",
-        "mivaJS.Product_Code":"",
+        "mivaJS.Store_Code": "",
+        "mivaJS.Product_Code": "",
         "mivaJS.Product_ID": "",
         "mivaJS.Page": "",
-        "mivaJS.Screen":""
+        "mivaJS.Screen": ""
       },
-	  "headers": {
+      "headers": {
         "content-disposition": "filename=(?:mvga.js|MivaEvents.js)"
       },
       "website": "http://www.miva.com"
@@ -10613,7 +10612,7 @@
       "cats": [
         5
       ],
-      "html": "<link [^>]*href=\"http://tamago.temonalab.com",
+      "html": "<link [^>]*href=\"http://tamago\\.temonalab\\.com",
       "icon": "Tamago.png",
       "website": "http://tamago.temonalab.com"
     },
@@ -11504,7 +11503,10 @@
       "script": [
         "/_nuxt/"
       ],
-      "implies": ["Vue.js", "Node.js"],
+      "implies": [
+        "Vue.js",
+        "Node.js"
+      ],
       "website": "https://nuxtjs.org"
     },
     "W3 Total Cache": {
@@ -11776,27 +11778,26 @@
       },
       "website": "http://worldwide.webtrends.com"
     },
-      "NivCMS": {
+    "NivCMS": {
       "cats": [
         1
       ],
-"cookies": { 
-    "cookie_name": "NivCMSPro"
-  },
+      "cookies": {
+        "cookie_name": "NivCMSPro"
+      },
       "icon": "nivsoft.png",
       "js": {
         "": ""
       },
-"headers": { 
-	"X-Powered-By": "NivCMS" 
-  },
+      "headers": {
+        "X-Powered-By": "NivCMS"
+      },
       "meta": {
         "generator": "^NivCMS"
       },
       "script": "",
       "website": "https://NivSoft.ir"
-    }
-    ,
+    },
     "Weebly": {
       "cats": [
         1
@@ -11840,17 +11841,6 @@
       "script": "cdn\\.6th\\.ir",
       "website": "https://webzi.ir"
     },
-      "see5":
-      {
-        "cats": [
-          1
-        ],
-        "html": "see5",
-        "icon": "see5.svg",
-        "website": "https://see5.ir"
-      }
-
-    ,
     "Whooshkaa": {
       "cats": [
         5
@@ -12039,7 +12029,7 @@
         62
       ],
       "headers": {
-        "x-powered-by": "^WordPress.com VIP"
+        "x-powered-by": "^WordPress\\.com VIP"
       },
       "implies": [
         "WordPress"
@@ -13384,7 +13374,7 @@
       "cats": [
         1
       ],
-      "icon": "phpCMS.png",
+      "icon": "php.svg",
       "implies": "PHP",
       "js": {
         "phpcms": ""
@@ -14004,7 +13994,6 @@
         "LiveStory": "",
         "LSHelpers": ""
       }
-
     }
   },
   "categories": {
