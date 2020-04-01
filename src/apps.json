@@ -111,6 +111,15 @@
       "script": "xiti\\.com/hit\\.xiti",
       "website": "http://atinternet.com/en"
     },
+    "Irroba": {
+      "cats": [
+        6
+      ],
+      "html": "<a[^>]*href=\"https://www.irroba.com.br"
+        ,
+      "icon": "irroba_logo.svg",
+      "website": "https://www.irroba.com.br/"
+    },
     "AWStats": {
       "cats": [
         10
@@ -1851,7 +1860,15 @@
         "catberry": "",
         "catberry.version": "^(.+)$\\;version:\\1"
       },
-      "website": "http://catberry.org"
+      "website": "https://catberry.github.io/"
+    },
+    "CCV Shop": {
+      "cats": [
+        6
+      ],
+      "script": "/website/JavaScript/Vertoshop\\.js",
+      "icon": "ccvshop.png",
+      "website": "https://www.ccvshop.nl"
     },
     "CentOS": {
       "cats": [
@@ -3037,6 +3054,7 @@
         "SystemID": "^.*DIRECT.*$\\;confidence:100",
         "version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
+      "html": "<div[^>]*id=\"P6iryBW0Wu\"",
       "icon": "duda.png",
       "website": "https://www.duda.co/website-builder"
     },
@@ -3112,6 +3130,19 @@
       "implies": "WordPress",
       "website": "https://elementor.com"
     },
+    "EKM": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "ekmpowershop":  ""
+      },
+      "js": {
+        "_ekmpinpoint": ""
+      },
+      "icon": "EKM.png",
+      "website": "https://www.ekm.com"
+    },
     "ELOG": {
       "cats": [
         19
@@ -3172,6 +3203,21 @@
       },
       "website": "http://www.eprints.org"
     },
+    "Ecwid": {
+      "cats": [
+        6
+      ],
+      "icon": "ecwid.svg",
+      "js": {
+        "Ecwid": "",
+        "EcwidCart": ""
+      },
+      "script": [
+        "https://app.multiscreenstore.com/script.js?.*",
+        "https://app.ecwid.com/script.js?.*"
+      ],
+      "website": "https://www.ecwid.com/"
+    },
     "EdgeCast": {
       "cats": [
         31
@@ -3221,6 +3267,28 @@
         "<(?:div|button) class=\"el-(?:table-column|table-filter|popper|pagination|pager|select-group|form|form-item|color-predefine|color-hue-slider|color-svpanel|color-alpha-slider|color-dropdown|color-picker|badge|tree|tree-node|select|message|dialog|checkbox|checkbox-button|checkbox-group|container|steps|carousel|menu|menu-item|submenu|menu-item-group|button|button-group|card|table|select-dropdown|row|tabs|notification|radio|progress|progress-bar|tag|popover|tooltip|cascader|cascader-menus|cascader-menu|time-spinner|spinner|spinner-inner|transfer|transfer-panel|rate|slider|dropdown|dropdown-menu|textarea|input|input-group|popup-parent|radio-group|main|breadcrumb|time-range-picker|date-range-picker|year-table|date-editor|range-editor|time-spinner|date-picker|time-panel|date-table|month-table|picker-panel|collapse|collapse-item|alert|select-dropdown|select-dropdown__empty|select-dropdown__wrap|select-dropdown__list|scrollbar|switch|carousel|upload|upload-dragger|upload-list|upload-cover|aside|input-number|header|message-box|footer|radio-button|step|autocomplete|autocomplete-suggestion|loading-parent|loading-mask|loading-spinner|)"
       ],
       "website": "https://element.eleme.io/"
+    },
+    "Elm": {
+      "cats": [
+        27,
+        12
+      ],
+      "icon": "elm.svg",
+      "js": {
+        "Elm.Main.init": "\\;version:0.19",
+        "Elm.Main.embed": "\\;version:0.18",
+        "Elm": "\\;confidence:50",
+      },
+      "website": "https://elm-lang.org/"
+    },
+    "Elm-ui": {
+      "cats": [
+        66
+      ],
+      "icon": "elm.svg",
+      "implies": "Elm",
+      "html": "<style>[\\s\\S]*\\.explain > \\.s[\\s\\S]*\\.explain > \\.ctr > \\.s",
+      "website": "https://github.com/mdgriffith/elm-ui"
     },
     "Eloqua": {
       "cats": [
@@ -3491,6 +3559,17 @@
         "generator": "^Fastcommerce"
       },
       "website": "https://www.fastcommerce.com.br"
+    },
+    "Fastspring": {
+      "cats": [
+        6
+      ],
+      "html": [
+        "<a [^>]*href=\"(http|https)://sites.fastspring.com",
+        "<form [^>]*action=\"(http|https)://sites.fastspring.com"
+      ],
+      "icon": "fastspring.png",
+      "website": "https://fastspring.com"
     },
     "Fastly": {
       "cats": [
@@ -4772,7 +4851,7 @@
         "HotleadController": "",
         "hj.apiUrlBase": ""
       },
-      "script": "^//static\\.hotjar\\.com/c/hotjar-",
+      "script": "//static\\.hotjar\\.com/c/hotjar-",
       "website": "https://www.hotjar.com"
     },
     "HubSpot": {
@@ -5165,7 +5244,6 @@
         18
       ],
       "icon": "ionic.png",
-      "implies": "Angular",
       "js": {
         "Ionic.config": "",
         "Ionic.version": "^(.+)$\\;version:\\1"
@@ -6124,6 +6202,19 @@
       "icon": "Logitech Media Server.png",
       "website": "http://www.mysqueezebox.com"
     },
+    "Loja Integrada": {
+			"cats": [
+        6
+      ],
+			"headers": {
+				"X-Powered-By": "vtex-integrated-store"
+			},
+			"icon": "Loja Integrada.png",
+			"js": {
+				"window.LOJA_ID": ""
+			},
+			"website": "https://lojaintegrada.com.br/"
+		},
     "Lotus Domino": {
       "cats": [
         22
@@ -6174,6 +6265,27 @@
         "Luigis": ""
       },
       "website": "https://www.luigisbox.com"
+    },
+    "Miva": {
+      "cats": [
+        6
+      ],
+      "icon": "miva.png",
+      "script": "mvga.js",
+	   "js": {
+        "MivaVM_API": "",
+        "MivaVM_Version":"^(.+)$\\;version:\\1",
+        "mivaJS": "",
+	    	"mivaJS.Store_Code":"",
+        "mivaJS.Product_Code":"",
+        "mivaJS.Product_ID": "",
+        "mivaJS.Page": "",
+        "mivaJS.Screen":""
+      },
+	  "headers": {
+        "content-disposition": "filename=(?:mvga.js|MivaEvents.js)"
+      },
+      "website": "http://www.miva.com"
     },
     "MODX": {
       "cats": [
@@ -7230,14 +7342,14 @@
       "script": "jquery\\.neto.*\\.js",
       "website": "https://www.neto.com.au"
     },
-    "Netsuite": {
+    "NetSuite": {
       "cats": [
         6
       ],
       "cookies": {
         "NS_VER": ""
       },
-      "icon": "Netsuite.png",
+      "icon": "NetSuite.png",
       "website": "http://netsuite.com"
     },
     "Nette Framework": {
@@ -8418,7 +8530,7 @@
       "script": "protovis.*\\.js",
       "website": "http://mbostock.github.io/protovis"
     },
-    "Proximis Omnichannel": {
+    "Proximis Unified Commerce": {
       "cats": [
         6,
         1
@@ -8433,11 +8545,11 @@
         "__change": ""
       },
       "meta": {
-        "generator": "Proximis Omnichannel"
+        "generator": "Proximis Unified Commerce"
       },
       "website": "https://www.proximis.com"
     },
-    "Proximis Web to Store": {
+    "Proximis": {
       "cats": [
         5,
         6
@@ -10497,6 +10609,14 @@
       },
       "website": "http://taiga.io"
     },
+    "Tamago": {
+      "cats": [
+        5
+      ],
+      "html": "<link [^>]*href=\"http://tamago.temonalab.com",
+      "icon": "Tamago.png",
+      "website": "http://tamago.temonalab.com"
+    },
     "Tawk.to": {
       "cats": [
         52
@@ -11182,16 +11302,6 @@
       "icon": "VTEX.svg",
       "website": "https://vtex.com/"
     },
-    "VTEX Integrated Store": {
-      "cats": [
-        6
-      ],
-      "headers": {
-        "X-Powered-By": "vtex-integrated-store"
-      },
-      "icon": "VTEX Integrated Store.png",
-      "website": "http://lojaintegrada.com.br"
-    },
     "Vaadin": {
       "cats": [
         18
@@ -11666,6 +11776,27 @@
       },
       "website": "http://worldwide.webtrends.com"
     },
+      "NivCMS": {
+      "cats": [
+        1
+      ],
+"cookies": { 
+    "cookie_name": "NivCMSPro"
+  },
+      "icon": "nivsoft.png",
+      "js": {
+        "": ""
+      },
+"headers": { 
+	"X-Powered-By": "NivCMS" 
+  },
+      "meta": {
+        "generator": "^NivCMS"
+      },
+      "script": "",
+      "website": "https://NivSoft.ir"
+    }
+    ,
     "Weebly": {
       "cats": [
         1
@@ -11709,6 +11840,17 @@
       "script": "cdn\\.6th\\.ir",
       "website": "https://webzi.ir"
     },
+      "see5":
+      {
+        "cats": [
+          1
+        ],
+        "html": "see5",
+        "icon": "see5.svg",
+        "website": "https://see5.ir"
+      }
+
+    ,
     "Whooshkaa": {
       "cats": [
         5
@@ -11843,7 +11985,7 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "script": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
-      "website": "http://www.woothemes.com/woocommerce"
+      "website": "https://woocommerce.com"
     },
     "Woopra": {
       "cats": [
@@ -12453,7 +12595,7 @@
       "js": {
         "Zone.root": ""
       },
-      "website": "https://github.com/angular/zone.js/"
+      "website": "https://github.com/angular/angular/tree/master/packages/zone.js"
     },
     "Zope": {
       "cats": [
@@ -12496,6 +12638,7 @@
       "cats": [
         25
       ],
+      "html": "<svg[^>]*><desc>JavaScript chart by amCharts ([\\d.]*)\\;version:\\1",
       "icon": "amCharts.png",
       "js": {
         "AmCharts": ""
@@ -13237,18 +13380,18 @@
       },
       "website": "https://phpbb.com"
     },
-    "phpDocumentor": {
-      "phpCMS": {
-        "cats": [
-          1
-        ],
-        "icon": "phpCMS.png",
-        "implies": "PHP",
-        "js": {
-          "phpcms": ""
-        },
-        "website": "http://phpcms.de"
+    "phpCMS": {
+      "cats": [
+        1
+      ],
+      "icon": "phpCMS.png",
+      "implies": "PHP",
+      "js": {
+        "phpcms": ""
       },
+      "website": "http://phpcms.de"
+    },
+    "phpDocumentor": {
       "cats": [
         4
       ],
@@ -13823,6 +13966,45 @@
       "icon": "varbase.png",
       "implies": "Drupal",
       "website": "https://drupal.org/project/varbase"
+    },
+    "GrandNode": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "Grand.customer": ""
+      },
+      "html": "(?:<!--GrandNode |<a[^>]+grandnode - Powered by |Powered by: <a[^>]+nopcommerce)",
+      "icon": "GrandNode.svg",
+      "implies": "Microsoft ASP.NET",
+      "meta": {
+        "generator": "grandnode"
+      },
+      "website": "https://grandnode.com"
+    },
+    "Cafe24": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "EC_ROOT_DOMAIN": "",
+        "EC_GLOBAL_INFO": "",
+        "EC_GLOBAL_DATETIME": ""
+      },
+      "icon": "Cafe24.png",
+      "website": "https://www.cafe24.com"
+    },
+    "Live Story": {
+      "cats": [
+        1
+      ],
+      "icon": "LiveStory.png",
+      "website": "https://www.livestory.nyc/",
+      "js": {
+        "LiveStory": "",
+        "LSHelpers": ""
+      }
+
     }
   },
   "categories": {
