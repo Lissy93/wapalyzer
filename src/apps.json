@@ -1378,6 +1378,17 @@
         "blazor\\.webassembly\\.js"
       ]
     },
+    "Blessing Skin": {
+      "cats": [
+        7
+      ],
+      "icon": "Blessing Skin.png",
+      "website": "https://github.com/bs-community/blessing-skin-server",
+      "implies": "Laravel",
+      "js": {
+        "blessing.version": "^(.+)$\\;version:\\1"
+      }
+    },
     "Blesta": {
       "cats": [
         6
