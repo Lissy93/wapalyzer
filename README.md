@@ -15,4 +15,4 @@ technologies used on websites. It detects
 
 ## Documentation
 
-Please read the [developer documentation](https://www.wappalyzer.com/docs) to get started.
+Please read the [developer documentation](https://docs.wappalyzer.com/) to get started.
