@@ -82,7 +82,7 @@ class PuppeteerBrowser extends Browser {
 
           const page = await browser.newPage();
 
-          page.setDefaultTimeout(this.options.maxWait * 2);
+          page.setDefaultTimeout(this.options.maxWait * 1.1);
 
           await page.setRequestInterception(true);
 
@@ -101,8 +101,12 @@ class PuppeteerBrowser extends Browser {
                 this.log(`abort navigation to ${request.url()}`);
 
                 request.abort('aborted');
-              } else {
-                request.continue();
+              } else if (!done) {
+                if (!['document', 'script'].includes(request.resourceType())) {
+                  request.abort();
+                } else {
+                  request.continue();
+                }
               }
             } catch (error) {
               reject(new Error(`page error: ${error.message || error}`));
@@ -133,19 +137,24 @@ class PuppeteerBrowser extends Browser {
             }
           });
 
-          page.on('console', ({ _type, _text, _location }) => this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type));
+          page.on('console', ({ _type, _text, _location }) => {
+            if (!/Failed to load resource: net::ERR_FAILED/.test(_text)) {
+              this.log(`${_text} (${_location.url}: ${_location.lineNumber})`, _type);
+            }
+          });
 
-          await page.setUserAgent(this.options.userAgent);
+          if (this.options.userAgent) {
+            await page.setUserAgent(this.options.userAgent);
+          }
 
           try {
             await Promise.race([
               page.goto(url, { waitUntil: 'domcontentloaded' }),
-              new Promise((_resolve, _reject) => setTimeout(() => _reject(new Error('timeout')), this.options.maxWait)),
+              // eslint-disable-next-line no-shadow
+              new Promise((resolve, reject) => setTimeout(() => reject(new Error('timeout')), this.options.maxWait)),
             ]);
           } catch (error) {
-            if (!this.statusCode) {
-              throw new Error(error.message || error.toString());
-            }
+            throw new Error(error.message || error.toString());
           }
 
           // eslint-disable-next-line no-undef
@@ -185,7 +194,7 @@ class PuppeteerBrowser extends Browser {
         }
       });
     } catch (error) {
-      this.log(`visit error: ${error.message || error}`, 'error');
+      this.log(`visit error: ${error.message || error} (${url})`, 'error');
 
       throw new Error(error.message || error.toString());
     } finally {
@@ -201,6 +210,8 @@ class PuppeteerBrowser extends Browser {
         }
       }
     }
+
+    this.log(`visit ok (${url})`);
   }
 }
 

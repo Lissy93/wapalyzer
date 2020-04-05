@@ -79,7 +79,6 @@ class Driver {
       maxUrls: 10,
       maxWait: 5000,
       recursive: false,
-      userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
     }, options || {});
 
     this.options.debug = Boolean(+this.options.debug);
