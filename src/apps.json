@@ -6633,17 +6633,34 @@
       "icon": "Meebo.png",
       "website": "http://www.meebo.com"
     },
-    "Melis CMS V2": {
+    "Melis Platform": {
       "cats": [
         1,
-        6
+        6,
+        11,
+        32
       ],
-      "html": "<!-- Rendered with Melis CMS V2",
-      "icon": "meliscmsv2.png",
+      "cpe": "cpe:/a:melisplatform:melisplatform",
+      "html": [
+        "<!-- Rendered with Melis CMS V2",
+        "<!-- Rendered with Melis Platform"
+      ],
       "meta": {
-        "powered-by": "^Melis CMS"
+        "powered-by": "^Melis CMS\\.",
+        "generator": "^Melis Platform\\."
       },
-      "website": "http://www.melistechnology.com/"
+      "icon": "melis-platform.svg",
+      "implies": [
+        "Apache",
+        "PHP",
+        "MySQL",
+        "Symfony",
+        "Laravel",
+        "Zend",
+        "Laminas",
+        "Lumen"
+      ],
+      "website": "https://www.melistechnology.com/"
     },
     "MemberStack": {
       "cats": [
