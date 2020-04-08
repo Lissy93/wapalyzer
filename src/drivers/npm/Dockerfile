@@ -1,6 +1,6 @@
 FROM node:12-alpine
 
-MAINTAINER Elbert Alias <elbert@alias.io>
+MAINTAINER Wappalyzer <info@wappalyzer.com>
 
 ENV WAPPALYZER_ROOT /opt/wappalyzer
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
