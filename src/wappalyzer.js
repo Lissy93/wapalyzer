@@ -172,7 +172,7 @@ class Wappalyzer {
 
       let matches = data.html.match(new RegExp('<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"', 'i'));
 
-      language = matches && matches.length ? matches[1] : null;
+      language = matches && matches.length ? matches[1] : data.language || null;
 
       // Meta tags
       const regex = /<meta[^>]+>/ig;

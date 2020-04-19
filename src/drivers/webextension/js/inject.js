@@ -1,4 +1,5 @@
 /* eslint-env browser */
+/* eslint-disable no-restricted-globals, no-prototype-builtins */
 
 (() => {
   try {
@@ -7,7 +8,7 @@
 
       let value = properties.length ? window : null;
 
-      for (let i = 0; i < properties.length; i++) {
+      for (let i = 0; i < properties.length; i += 1) {
         const property = properties[i];
 
         if (value && value.hasOwnProperty(property)) {
