@@ -10476,6 +10476,24 @@
       "script": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
       "website": "https://sweetalert2.github.io/"
     },
+    "Swell": {
+      "cats": [
+        6
+      ],
+      "html": [
+        "<[^>]*swell\\.is",
+        "<[^>]*swell\\.store",
+        "<[^>]*schema\\.io"
+      ],
+      "cookies": {
+        "swell-session": ""
+      },
+      "js": {
+        "swell.version": "^(.+)$\\;version:\\1"
+      },
+      "icon": "Swell.svg",
+      "website": "https://www.swell.is/"
+    },
     "Swiftlet": {
       "cats": [
         18
