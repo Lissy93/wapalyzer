@@ -1,14 +1,11 @@
 # Wappalyzer
 
 [Wappalyzer](https://www.wappalyzer.com/) is a
-[cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the
+[cross-platform](https://www.wappalyzer.com/nodejs) utility that uncovers the
 technologies used on websites. It detects
-[content management systems](https://www.wappalyzer.com/categories/cms),
-[eCommerce platforms](https://www.wappalyzer.com/categories/ecommerce),
-[web servers](https://www.wappalyzer.com/categories/web-servers),
-[JavaScript frameworks](https://www.wappalyzer.com/categories/javascript-frameworks),
-[analytics tools](https://www.wappalyzer.com/categories/analytics) and
-[many more](https://www.wappalyzer.com/applications).
+[content management systems](https://www.wappalyzer.com/technologies/cms), [ecommerce platforms](https://www.wappalyzer.com/technologies/ecommerce), [web servers](https://www.wappalyzer.com/technologies/web-servers), [JavaScript frameworks](https://www.wappalyzer.com/technologies/javascript-frameworks),
+[analytics tools](https://www.wappalyzer.com/technologies/analytics) and
+[many more](https://www.wappalyzer.com/technologies).
 
 
 ## Installation

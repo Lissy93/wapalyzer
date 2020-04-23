@@ -1,6 +1,7 @@
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
+const cld = require('cld');
 const Wappalyzer = require('./wappalyzer');
 
 const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)));
@@ -79,7 +80,6 @@ class Driver {
       maxUrls: 10,
       maxWait: 5000,
       recursive: false,
-      userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
     }, options || {});
 
     this.options.debug = Boolean(+this.options.debug);
@@ -230,12 +230,31 @@ class Driver {
     const html = processHtml(browser.html, this.options.htmlMaxCols, this.options.htmlMaxRows);
     const js = processJs(browser.js, this.wappalyzer.jsPatterns);
 
+    let language = null;
+
+    try {
+      language = await new Promise((resolve, reject) => cld.detect(html, { isHTML: true }, (error, { languages }) => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve(
+          languages
+            .filter(({ percent }) => percent >= 75)
+            .map(({ code }) => code)[0],
+        );
+      }));
+    } catch (error) {
+      this.wappalyzer.log(`${error.message || error}; url: ${pageUrl.href}`, 'driver', 'error');
+    }
+
     await this.wappalyzer.analyze(pageUrl, {
       cookies,
       headers,
       html,
       js,
       scripts,
+      language,
     });
 
     const reducedLinks = Array.prototype.reduce.call(

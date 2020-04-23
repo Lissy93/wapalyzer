@@ -85,7 +85,7 @@
    * Display apps
    */
   wappalyzer.driver.displayApps = (detected) => {
-    wappalyzer.log('func: diplayApps', 'driver');
+    wappalyzer.log('func: displayApps', 'driver');
 
     let first = true;
     let app;
