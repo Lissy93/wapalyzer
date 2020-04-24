@@ -8868,7 +8868,7 @@
       "script": [
         "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
-        "react.*\\.js"
+        "^react\\.(?:production|development)?\\.*(?:min\\.)?js"
       ],
       "website": "https://reactjs.org"
     },
