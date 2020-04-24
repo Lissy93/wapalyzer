@@ -1,8 +1,12 @@
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
-const cld = require('cld');
+const LanguageDetect = require('languagedetect');
 const Wappalyzer = require('./wappalyzer');
+
+const languageDetect = new LanguageDetect();
+
+languageDetect.setLanguageType('iso2');
 
 const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)));
 
@@ -233,17 +237,7 @@ class Driver {
     let language = null;
 
     try {
-      language = await new Promise((resolve, reject) => cld.detect(html, { isHTML: true }, (error, { languages }) => {
-        if (error) {
-          reject(error);
-        }
-
-        resolve(
-          languages
-            .filter(({ percent }) => percent >= 75)
-            .map(({ code }) => code)[0],
-        );
-      }));
+      [[language]] = languageDetect.detect(html.replace(/<\/?[^>]+(>|$)/g, ' '), 1);
     } catch (error) {
       this.wappalyzer.log(`${error.message || error}; url: ${pageUrl.href}`, 'driver', 'error');
     }
