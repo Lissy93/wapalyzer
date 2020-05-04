@@ -1,7 +1,9 @@
-/* eslint-env browser */
-/* eslint-disable func-names, no-unused-expressions, no-restricted-globals */
-/* eslint-disable no-restricted-syntax, no-continue */
-/* global wappalyzer */
+/**
+ * Bookmarklet driver
+ */
+
+/** global: wappalyzer */
+/** global: XMLHttpRequest */
 
 (function () {
   wappalyzer.driver.document = document;
@@ -14,7 +16,6 @@
    * Log messages to console
    */
   wappalyzer.driver.log = (message, source, type) => {
-    // eslint-disable-next-line no-console
     console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
   };
 
@@ -50,14 +51,14 @@
       if (xhr.readyState === 4 && xhr.status) {
         const headers = xhr.getAllResponseHeaders().split('\n');
 
-        if (headers.length > 0 && headers[0]) {
+        if (headers.length > 0 && headers[0] != '') {
           wappalyzer.log(`responseHeaders: ${xhr.getAllResponseHeaders()}`, 'driver');
 
           const responseHeaders = {};
 
           headers.forEach((line) => {
-            let name;
-            let value;
+            let name,
+              value;
 
             if (line) {
               name = line.substring(0, line.indexOf(': '));
@@ -78,10 +79,6 @@
     };
 
     xhr.send();
-  }
-
-  function slugify(string) {
-    return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
   }
 
   /**
@@ -106,13 +103,12 @@
           continue;
         }
 
-        const { version, confidence } = detected[app];
-
-        category = wappalyzer.categories[wappalyzer.apps[app].cats[0]].name;
+        let version = detected[app].version,
+          confidence = detected[app].confidence;
 
         html
           += `<div class="wappalyzer-app${first ? ' wappalyzer-first' : ''}">`
-            + `<a target="_blank" class="wappalyzer-application" href="${wappalyzer.config.websiteURL}technologies/${slugify(category)}/${slugify(app)}">`
+            + `<a target="_blank" class="wappalyzer-application" href="${wappalyzer.config.websiteURL}applications/${app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')}">`
               + '<strong>'
                 + `<img src="${wappalyzer.config.websiteURL}images/icons/${wappalyzer.apps[app].icon || 'default.svg'}" width="16" height="16"/> ${app
                 }</strong>${
@@ -126,7 +122,7 @@
 
           category = wappalyzer.categories[wappalyzer.apps[app].cats[i]].name;
 
-          html += `<a target="_blank" class="wappalyzer-category" href="${wappalyzer.config.websiteURL}technologies/${slugify(category)}">${category}</a>`;
+          html += `<a target="_blank" class="wappalyzer-category" href="${wappalyzer.config.websiteURL}categories/${slugify(category)}">${category}</a>`;
         }
 
         html += '</div>';
@@ -134,13 +130,24 @@
         first = false;
       }
     } else {
-      html += '<div id="wappalyzer-empty">No technologies detected</div>';
+      html += '<div id="wappalyzer-empty">No applications detected</div>';
     }
 
     html += '</div>';
 
     container.innerHTML = html;
+  },
+
+  /**
+   * Open a tab
+   */
+  function openTab(args) {
+    open(args.url);
   };
+
+  function slugify(string) {
+    return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
+  }
 
   getPageContent();
   getResponseHeaders();
