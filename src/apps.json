@@ -7458,7 +7458,7 @@
       "headers": {
         "x-powered-by": "^Next\\.js ?([0-9.]+)?\\;version:\\1"
       },
-      "icon": "zeit.svg",
+      "icon": "vercel.svg",
       "implies": [
         "React",
         "webpack",
@@ -7518,18 +7518,18 @@
       "script": "^/nodebb\\.min\\.js\\?",
       "website": "https://nodebb.org"
     },
-    "Now": {
+    "Vercel": {
       "cats": [
         22
       ],
       "headers": {
         "server": "^now$",
         "x-now-trace": "",
-        "x-now-id": "",
-        "x-now-cache": ""
+        "x-vercel-id": "",
+        "x-vercel-cache": ""
       },
-      "icon": "zeit.svg",
-      "website": "https://zeit.co/now"
+      "icon": "vercel.svg",
+      "website": "https://vercel.com"
     },
     "OWL Carousel": {
       "cats": [
