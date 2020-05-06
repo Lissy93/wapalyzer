@@ -18,7 +18,7 @@
     "1C-Bitrix": {
       "cats": [
         1,
-		6
+        6
       ],
       "headers": {
         "Set-Cookie": "BITRIX_",
@@ -982,7 +982,7 @@
       "implies": "Node.js",
       "website": "http://apostrophecms.org"
     },
-	"AppDynamics": {
+    "AppDynamics": {
       "cats": [
         10
       ],
@@ -1318,7 +1318,7 @@
       "cats": [
         10
       ],
-      "icon": "Baidu Tongji.ico",
+      "icon": "Baidu Tongji.png",
       "script": "hm\\.baidu\\.com/hm\\.js",
       "website": "https://tongji.baidu.com/"
     },
@@ -2188,9 +2188,9 @@
       "js": {
         "cnzz_protocol": "\\;confidence:99"
       },
-      "icon": "cnzz.ico",
+      "icon": "cnzz.png",
       "website": "https://web.umeng.com/"
-},
+    },
     "CloudSuite": {
       "cats": [
         6
@@ -5350,15 +5350,6 @@
       "html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
       "icon": "Ionicons.png",
       "website": "http://ionicons.com"
-    },
-    "J2Store": {
-      "cats": [
-        6
-      ],
-      "html": "var j2storeURL",
-      "icon": "j2store.png",
-      "implies": "Joomla",
-      "website": "https://www.j2store.org/"
     },
     "JAlbum": {
       "cats": [
@@ -12217,19 +12208,22 @@
       "icon": "wpvip.svg",
       "website": "https://wpvip.com"
     },
-	"kolors4u": {
-		"cats": [
-			1,11,23,6
-		],
-		"headers": {
-			"X-Content-Encoded-By": "kolors4u ([\\d.]+)\\;version:\\1"
-		},
-		"implies": "WordPress",
-		"meta": {
-			"generator": "kolors4u (?: ([\\d.]+))?\\;version:\\1"
-		},
-		"website": "kolors4u.com"
-	},
+    "kolors4u": {
+      "cats": [
+        1,
+        11,
+        23,
+        6
+      ],
+      "headers": {
+        "X-Content-Encoded-By": "kolors4u ([\\d.]+)\\;version:\\1"
+      },
+      "implies": "WordPress",
+      "meta": {
+        "generator": "kolors4u (?: ([\\d.]+))?\\;version:\\1"
+      },
+      "website": "http://kolors4u.com"
+    },
     "Wowza Media Server": {
       "cats": [
         38
