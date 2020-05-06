@@ -17,7 +17,8 @@
     },
     "1C-Bitrix": {
       "cats": [
-        1
+        1,
+		6
       ],
       "headers": {
         "Set-Cookie": "BITRIX_",
@@ -77,6 +78,14 @@
       ],
       "icon": "ebis.png",
       "website": "http://www.ebis.ne.jp"
+    },
+    "Alpine.js": {
+      "cats": [
+        12
+      ],
+      "html": "<[^>]+x-data[^<]+",
+      "icon": "Alpine.js.png",
+      "website": "https://github.com/alpinejs/alpine"
     },
     "AOLserver": {
       "cats": [
@@ -562,7 +571,7 @@
         61
       ],
       "html": [
-        "<form[^>]+?action=\"[^\"]+airform\\.io"
+        "<form[^>]+?action=\"[^\"]*airform\\.io[^>]+?>"
       ],
       "icon": "Airform.svg",
       "website": "https://airform.io"
@@ -715,12 +724,24 @@
       "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
+    "Amazon ALB": {
+      "cats": [
+        65
+      ],
+      "cookies": {
+        "AWSALB": "",
+        "AWSALBCORS": ""
+      },
+      "icon": "aws-elb.png",
+      "implies": "Amazon Web Services",
+      "website": "https://aws.amazon.com/elasticloadbalancing/"
+    },
     "Amazon S3": {
       "cats": [
         19
       ],
       "headers": {
-        "Server": "^AmazonS3$"
+        "server": "^AmazonS3$"
       },
       "icon": "aws-s3.svg",
       "implies": "Amazon Web Services",
@@ -961,6 +982,14 @@
       "implies": "Node.js",
       "website": "http://apostrophecms.org"
     },
+	"AppDynamics": {
+      "cats": [
+        10
+      ],
+      "icon": "AppDynamics.png",
+      "script": "adrum\\.js|adrum.([0-9].*)\\.js\\;version:\\1",
+      "website": "https://appdynamics.com"
+    },
     "AppNexus": {
       "cats": [
         36
@@ -1141,6 +1170,19 @@
       ],
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
+    "Atlassian Statuspage": {
+      "cats": [
+        13,
+        62
+      ],
+      "headers": {
+        "X-StatusPage-Skip-Logging": "",
+        "X-StatusPage-Version": ""
+      },
+      "html": "<a[^>]*href=\"https?://(?:www\\.)?statuspage\\.io/powered-by[^>]+>",
+      "icon": "Atlassian Statuspage.svg",
+      "website": "https://www.statuspage.io/"
+    },
     "Aurelia": {
       "cats": [
         12
@@ -1304,6 +1346,16 @@
       "implies": "Python",
       "website": "http://docs.python.org/2/library/basehttpserver.html"
     },
+    "Big Cartel": {
+      "cats": [
+        6
+      ],
+      "icon": "bigcartel.png",
+      "meta": {
+        "generator": "Big Cartel"
+      },
+      "website": "https://www.bigcartel.com"
+    },
     "BigDump": {
       "cats": [
         3
@@ -1385,6 +1437,17 @@
         "blazor\\.host\\.min\\.js",
         "blazor\\.webassembly\\.js"
       ]
+    },
+    "Blessing Skin": {
+      "cats": [
+        7
+      ],
+      "icon": "Blessing Skin.png",
+      "website": "https://github.com/bs-community/blessing-skin-server",
+      "implies": "Laravel",
+      "js": {
+        "blessing.version": "^(.+)$\\;version:\\1"
+      }
     },
     "Blesta": {
       "cats": [
@@ -1875,7 +1938,7 @@
       ],
       "script": "/website/JavaScript/Vertoshop\\.js",
       "icon": "ccvshop.png",
-      "website": "https://www.ccvshop.nl"
+      "website": "https://ccvshop.be"
     },
     "CentOS": {
       "cats": [
@@ -2127,6 +2190,16 @@
       },
       "icon": "cnzz.ico",
       "website": "https://web.umeng.com/"
+},
+    "CloudSuite": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "cs_secure_session": ""
+      },
+      "icon": "CloudSuite.svg",
+      "website": "https://cloudsuite.com"
     },
     "Coaster CMS": {
       "cats": [
@@ -3183,10 +3256,13 @@
       "cats": [
         6
       ],
+      "headers": {
+        "X-epages-RequestId": ""
+      },
+      "icon": "epages.png",
       "js": {
         "epages": ""
       },
-      "icon": "epages.png",
       "website": "http://www.epages.com/"
     },
     "EPiServer": {
@@ -5275,6 +5351,15 @@
       "icon": "Ionicons.png",
       "website": "http://ionicons.com"
     },
+    "J2Store": {
+      "cats": [
+        6
+      ],
+      "html": "var j2storeURL",
+      "icon": "j2store.png",
+      "implies": "Joomla",
+      "website": "https://www.j2store.org/"
+    },
     "JAlbum": {
       "cats": [
         7
@@ -6651,17 +6736,34 @@
       "icon": "Meebo.png",
       "website": "http://www.meebo.com"
     },
-    "Melis CMS V2": {
+    "Melis Platform": {
       "cats": [
         1,
-        6
+        6,
+        11,
+        32
       ],
-      "html": "<!-- Rendered with Melis CMS V2",
-      "icon": "meliscmsv2.png",
+      "cpe": "cpe:/a:melisplatform:melisplatform",
+      "html": [
+        "<!-- Rendered with Melis CMS V2",
+        "<!-- Rendered with Melis Platform"
+      ],
       "meta": {
-        "powered-by": "^Melis CMS"
+        "powered-by": "^Melis CMS\\.",
+        "generator": "^Melis Platform\\."
       },
-      "website": "http://www.melistechnology.com/"
+      "icon": "melis-platform.svg",
+      "implies": [
+        "Apache",
+        "PHP",
+        "MySQL",
+        "Symfony",
+        "Laravel",
+        "Zend",
+        "Laminas",
+        "Lumen"
+      ],
+      "website": "https://www.melistechnology.com/"
     },
     "MemberStack": {
       "cats": [
@@ -7245,6 +7347,16 @@
       "script": "pub\\.mybloglog\\.com",
       "website": "http://www.mybloglog.com"
     },
+    "MyCashFlow": {
+      "cats": [
+        6
+      ],
+      "headers": {
+        "X-MCF-ID": ""
+      },
+      "icon": "mycashflow.png",
+      "website": "https://www.mycashflow.fi/"
+    },
     "MySQL": {
       "cats": [
         34
@@ -7344,7 +7456,7 @@
         "X-NF-Request-ID": "",
         "Server": "^Netlify"
       },
-      "url": "^https?://[^/]+\\.netlify\\.com/",
+      "url": "^https?://[^/]+\\.netlify\\.(com||app)/",
       "icon": "Netlify.svg",
       "website": "https://www.netlify.com/"
     },
@@ -7412,7 +7524,7 @@
       "headers": {
         "x-powered-by": "^Next\\.js ?([0-9.]+)?\\;version:\\1"
       },
-      "icon": "zeit.svg",
+      "icon": "vercel.svg",
       "implies": [
         "React",
         "webpack",
@@ -7472,18 +7584,18 @@
       "script": "^/nodebb\\.min\\.js\\?",
       "website": "https://nodebb.org"
     },
-    "Now": {
+    "Vercel": {
       "cats": [
         22
       ],
       "headers": {
         "server": "^now$",
         "x-now-trace": "",
-        "x-now-id": "",
-        "x-now-cache": ""
+        "x-vercel-id": "",
+        "x-vercel-cache": ""
       },
-      "icon": "zeit.svg",
-      "website": "https://zeit.co/now"
+      "icon": "vercel.svg",
+      "website": "https://vercel.com"
     },
     "OWL Carousel": {
       "cats": [
@@ -7514,6 +7626,9 @@
       "cats": [
         1
       ],
+      "meta": {
+        "generator": "OctoberCMS"
+      },
       "cookies": {
         "october_session": ""
       },
@@ -7673,6 +7788,14 @@
       "script": "https://server.tebex.io/tebexAccounts/tebexaccounts\\.js",
       "icon": "Tebex.png",
       "website": "https://www.tebex.io/"
+    },
+    "T-Soft": {
+      "cats": [
+        6
+      ],
+      "html": "<a href=\"http://www.tsoft.com.tr\" target=\"_blank\" title=\"T-Soft E-ticaret Sistemleri\">",
+      "icon": "Tsoft.png",
+      "website": "https://www.tsoft.com.tr/"
     },
     "OpenCms": {
       "cats": [
@@ -8886,7 +9009,7 @@
       "script": [
         "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
-        "react.*\\.js"
+        "^react\\b.*\\.js"
       ],
       "website": "https://reactjs.org"
     },
@@ -9297,6 +9420,20 @@
       },
       "script": "/sim(?:site|core)/js",
       "website": "http://simgroep.nl/internet/portfolio-contentbeheer_41623/"
+    },
+    "SlickStack": {
+      "cats": [
+        47,
+        9
+      ],
+      "icon": "SlickStack.png",
+      "implies": [
+        "WordPress"
+      ],
+      "headers": {
+        "x-powered-by": "SlickStack"
+      },
+      "website": "https://slickstack.io"
     },
     "SMF": {
       "cats": [
@@ -10494,6 +10631,24 @@
       "script": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
       "website": "https://sweetalert2.github.io/"
     },
+    "Swell": {
+      "cats": [
+        6
+      ],
+      "html": [
+        "<[^>]*swell\\.is",
+        "<[^>]*swell\\.store",
+        "<[^>]*schema\\.io"
+      ],
+      "cookies": {
+        "swell-session": ""
+      },
+      "js": {
+        "swell.version": "^(.+)$\\;version:\\1"
+      },
+      "icon": "Swell.svg",
+      "website": "https://www.swell.is/"
+    },
     "Swiftlet": {
       "cats": [
         18
@@ -10572,6 +10727,17 @@
         "SyntaxHighlighter": ""
       },
       "website": "https://github.com/syntaxhighlighter"
+    },
+    "TagCommander": {
+      "cats": [
+        42
+      ],
+      "script": "\\.tagcommander\\.com",
+      "icon": "tagcommander.png",
+      "js": {
+        "tc_vars": ""
+      },
+      "website": "https://www.commandersact.com/en/solutions/tagcommander/"
     },
     "TWiki": {
       "cats": [
@@ -11562,7 +11728,7 @@
       "cats": [
         6
       ],
-      "cookies": {
+      "js": {
         "WHMCS": ""
       },
       "icon": "WHMCS.png",
@@ -11804,16 +11970,12 @@
         "cookie_name": "NivCMSPro"
       },
       "icon": "nivsoft.png",
-      "js": {
-        "": ""
-      },
       "headers": {
         "X-Powered-By": "NivCMS"
       },
       "meta": {
         "generator": "^NivCMS"
       },
-      "script": "",
       "website": "https://NivSoft.ir"
     },
     "Weebly": {
@@ -12055,6 +12217,19 @@
       "icon": "wpvip.svg",
       "website": "https://wpvip.com"
     },
+	"kolors4u": {
+		"cats": [
+			1,11,23,6
+		],
+		"headers": {
+			"X-Content-Encoded-By": "kolors4u ([\\d.]+)\\;version:\\1"
+		},
+		"implies": "WordPress",
+		"meta": {
+			"generator": "kolors4u (?: ([\\d.]+))?\\;version:\\1"
+		},
+		"website": "kolors4u.com"
+	},
     "Wowza Media Server": {
       "cats": [
         38
@@ -13299,7 +13474,7 @@
       "cats": [
         13
       ],
-      "html": "<!--\\s+OTRS: Copyright \\d+-\\d+, OTRS AG",
+      "html": "<!--\\s+OTRS: Copyright",
       "icon": "otrs.png",
       "implies": "Perl",
       "script": "^/otrs-web/js/",
@@ -13392,7 +13567,7 @@
       "cats": [
         1
       ],
-      "icon": "php.svg",
+      "icon": "PHP.svg",
       "implies": "PHP",
       "js": {
         "phpcms": ""
@@ -14012,6 +14187,14 @@
         "LiveStory": "",
         "LSHelpers": ""
       }
+    },
+    "RebelMouse": {
+      "cats": [
+        1
+      ],
+      "icon": "RebelMouse.svg",
+      "html": "<!-- Powered by RebelMouse.",
+      "website": "https://www.rebelmouse.com/"
     }
   },
   "categories": {

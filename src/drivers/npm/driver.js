@@ -1,7 +1,12 @@
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
+const LanguageDetect = require('languagedetect');
 const Wappalyzer = require('./wappalyzer');
+
+const languageDetect = new LanguageDetect();
+
+languageDetect.setLanguageType('iso2');
 
 const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)));
 
@@ -229,12 +234,21 @@ class Driver {
     const html = processHtml(browser.html, this.options.htmlMaxCols, this.options.htmlMaxRows);
     const js = processJs(browser.js, this.wappalyzer.jsPatterns);
 
+    let language = null;
+
+    try {
+      [[language]] = languageDetect.detect(html.replace(/<\/?[^>]+(>|$)/g, ' '), 1);
+    } catch (error) {
+      this.wappalyzer.log(`${error.message || error}; url: ${pageUrl.href}`, 'driver', 'error');
+    }
+
     await this.wappalyzer.analyze(pageUrl, {
       cookies,
       headers,
       html,
       js,
       scripts,
+      language,
     });
 
     const reducedLinks = Array.prototype.reduce.call(

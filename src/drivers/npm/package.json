@@ -2,7 +2,7 @@
   "name": "wappalyzer",
   "description": "Identify technology on websites",
   "homepage": "https://www.wappalyzer.com",
-  "version": "5.9.32",
+  "version": "5.9.33",
   "author": "Wappalyzer",
   "license": "MIT",
   "repository": {
@@ -27,6 +27,7 @@
     "wappalyzer": "./cli.js"
   },
   "dependencies": {
+    "languagedetect": "^2.0.0",
     "zombie": "^6.1.4"
   },
   "peerDependencies": {
