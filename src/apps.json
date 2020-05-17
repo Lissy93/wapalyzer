@@ -10747,7 +10747,10 @@
       "cats": [
         66
       ],
-      "html": "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
+      "html": [
+        "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
+        "[^>]*class=\"[^\"]*(?:sm:|md:|lg:|xl:)"
+      ],
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
     },
