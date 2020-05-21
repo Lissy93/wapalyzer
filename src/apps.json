@@ -13468,6 +13468,9 @@
       "cats": [
         13
       ],
+      "headers": {
+        "X-Powered-By": "OTRS ([\\d.]+)\\;version:\\1"
+      },
       "html": "<!--\\s+OTRS: Copyright",
       "icon": "otrs.png",
       "implies": "Perl",
