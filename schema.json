@@ -9,7 +9,7 @@
 		},
 		"categories": {
 			"type": "object",
-            "minProperties": 64,
+			"minProperties": 64,
 			"additionalProperties": false,
 			"patternProperties": {
 				"^[0-9]+$": {
