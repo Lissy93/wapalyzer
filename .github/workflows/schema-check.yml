@@ -23,4 +23,4 @@ jobs:
       run: npm install -g ajv-cli
     - name: Run schema check
       run: |
-        ajv validate -s schema.json -d src/apps.json
+        ajv validate -s schema.json -d src/apps.json --all-errors --error-data-path=property
