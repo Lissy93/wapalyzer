@@ -24,9 +24,3 @@ jobs:
     - name: Run schema check
       run: |
         ajv validate -s schema.json -d src/apps.json
-#    - name: Upload list of broken links
-#      if: failure() && github.event_name == 'pull_request'
-#      uses: actions/upload-artifact@v1
-#      with:
-#        name: broken-links
-#        path: brokenlinks.txt
