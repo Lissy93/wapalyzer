@@ -6,6 +6,7 @@ on:
     - master
     paths:
     - 'src/apps.json'
+    - 'schema.json'
 
 jobs:
   schema-check:
