@@ -1,19 +1,25 @@
 {
 	"title": "Wappalyzer Schema",
+	"definitions": {
+		"non-empty-non-blank-sting": {
+			"type": "string",
+			"pattern": "^(?!\\s*$).+"
+		}
+	},            
 	"type": "object",
 	"additionalProperties": false,
+	"required": ["categories","apps"],
 	"properties": {
 		"$schema": {
 			"type": "string"
 		},
 		"categories": {
 			"type": "object",
-			"required": true,
+			"minProperties": 64,
 			"additionalProperties": false,
 			"patternProperties": {
 				"^[0-9]+$": {
 					"type": "object",
-					"required": true,
 					"properties": {
 						"priority": {
 							"type": "number"
@@ -27,89 +33,124 @@
 		},
 		"apps": {
 			"type": "object",
-			"required": true,
 			"additionalProperties": {
 				"additionalProperties": false,
+				"required": ["cats","website"],
 				"properties": {
 					"cats": {
 						"type": "array",
 						"items": {
 							"type": "number"
 						},
-						"required": true
+						"minItems": 1
 					},
 					"cpe": {
-						"type": "string"
+						"$ref": "#/definitions/non-empty-non-blank-sting"
 					},
 					"cookies": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"js": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"headers": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"html": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-sting"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-sting"
+							}
+						]
 					},
 					"excludes": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-sting"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-sting"
+							}
+						]
 					},
 					"implies": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-sting"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-sting"
+							}
+						]
 					},
 					"meta": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"script": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-sting"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-sting"
+							}
+						]
 					},
 					"url": {
-						"type": "string"
+						"$ref": "#/definitions/non-empty-non-blank-sting"
 					},
 					"website": {
-						"type": "string",
-						"required": true
+						"$ref": "#/definitions/non-empty-non-blank-sting"
 					},
 					"icon": {
-						"type": "string"
+						"$ref": "#/definitions/non-empty-non-blank-sting"
 					}
 				}
 			}
