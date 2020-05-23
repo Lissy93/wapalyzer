@@ -83,8 +83,14 @@
       "cats": [
         12
       ],
-      "html": "<[^>]+x-data[^<]+",
+      "html": "<[^>]+[^\\w-]x-data[^\\w-][^<]+\\;confidence:75",
+      "js": { 
+        "Alpine.version": "^(.+)$\\;version:\\1"
+      },
       "icon": "Alpine.js.png",
+      "script": [
+        "/alpine(?:\\.min)?\\.js"
+      ],
       "website": "https://github.com/alpinejs/alpine"
     },
     "AOLserver": {
