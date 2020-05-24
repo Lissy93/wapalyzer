@@ -6244,6 +6244,19 @@
       "script": "/js/al/common\\.js\\?[0-9_]+",
       "website": "http://liveinternet.ru/rating/"
     },
+    "Livewire": {
+      "cats": [
+        18, 19
+      ],
+      "html": "<[^>]+wire:[^<]+",
+      "icon": "Livewire.png",
+      "implies": "Laravel",
+      "js": {
+        "livewire": ""
+      },
+      "script": "livewire(?:\\.min)?\\.js",
+      "website": "https://laravel-livewire.com"
+    },
     "LocalFocus": {
       "cats": [
         61
