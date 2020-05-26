@@ -31,8 +31,7 @@ wappalyzer <url> [options]
 ### Options
 
 ```
--b, --browser=...        Specify which headless browser to use (zombie or puppeteer)
--c, --chunk-size=...     Process links in chunks
+-b, --batch-size=...     Process links in batches
 -d, --debug              Output debug messages
 -t, --delay=ms           Wait for ms milliseconds between requests
 -h, --help               This text
@@ -41,12 +40,9 @@ wappalyzer <url> [options]
 -D, --max-depth=...      Don't analyse pages more than num levels deep
 -m, --max-urls=...       Exit when num URLs have been analysed
 -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
--p, --password=...       Password to be used for basic HTTP authentication (zombie only)
 -P, --pretty             Pretty-print JSON output
---proxy=...              Proxy URL, e.g. 'http://user:pass@proxy:8080' (zombie only)
 -r, --recursive          Follow links on pages (crawler)
 -a, --user-agent=...     Set the user agent string
--u, --username=...       Username to be used for basic HTTP authentication (zombie only)
 ```
 
 
@@ -58,7 +54,6 @@ const Wappalyzer = require('wappalyzer');
 const url = 'https://www.wappalyzer.com';
 
 const options = {
-  // browser: 'puppeteer',
   debug: false,
   delay: 500,
   maxDepth: 3,
@@ -70,27 +65,30 @@ const options = {
   htmlMaxRows: 2000,
 };
 
-const wappalyzer = new Wappalyzer(url, options);
+;(async function() {
+  const wappalyzer = await new Wappalyzer(options)
 
-// Optional: capture log output
-// wappalyzer.on('log', params => {
-//   const { message, source, type } = params;
-// });
+  try {
+    await wappalyzer.init()
 
-// Optional: do something on page visit
-// wappalyzer.on('visit', params => {
-//   const { browser, pageUrl } = params;
-// });
+    const site = await wappalyzer.open(url)
 
-wappalyzer.analyze()
-  .then((json) => {
-    process.stdout.write(`${JSON.stringify(json, null, 2)}\n`);
+    site.on('error', (error) => {
+      process.stderr.write(`error: ${error}\n`)
+    })
 
-    process.exit(0);
-  })
-  .catch((error) => {
-    process.stderr.write(`${error}\n`);
+    const results = await site.analyze()
 
-    process.exit(1);
-  });
-```
+    process.stdout.write(`${JSON.stringify(results, null, 2)}\n`)
+
+    await wappalyzer.destroy()
+
+    process.exit(0)
+  } catch (error) {
+    process.stderr.write(error.toString())
+
+    await wappalyzer.destroy()
+
+    process.exit(1)
+  }
+})()

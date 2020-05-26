@@ -88,8 +88,6 @@ Options:
       process.stderr.write(`page error: ${error}\n`)
     })
 
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
     const results = await site.analyze()
 
     process.stdout.write(
