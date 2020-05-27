@@ -154,9 +154,7 @@
         5
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "meta": {
         "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
       },
@@ -1052,9 +1050,7 @@
         "Server": "Artifactory(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "Artifactory.svg",
-      "implies": [
-        "Artifactory"
-      ],
+      "implies": "Artifactory",
       "website": "http://jfrog.com/open-source/#os-arti"
     },
     "ArvanCloud": {
@@ -2087,9 +2083,7 @@
       },
       "script": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
       "icon": "clarity.svg",
-      "implies": [
-        "Angular"
-      ],
+      "implies": "Angular",
       "website": "https://clarity.design/"
     },
     "ClickHeat": {
@@ -3180,9 +3174,7 @@
         9
       ],
       "icon": "EasyEngine.png",
-      "implies": [
-        "Docker"
-      ],
+      "implies": "Docker",
       "headers": {
         "x-powered-by": "^EasyEngine (.*)$\\;version:\\1"
       },
@@ -3847,9 +3839,7 @@
         "x-fw-static": "",
         "x-fw-type": ""
       },
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "icon": "flywheel.svg",
       "website": "https://getflywheel.com"
     },
@@ -4211,9 +4201,7 @@
         "X-GitHub-Request-Id": ""
       },
       "icon": "GitHub.svg",
-      "implies": [
-        "Ruby on Rails"
-      ],
+      "implies": "Ruby on Rails",
       "url": "^https?://[^/]+\\.github\\.io/",
       "website": "https://pages.github.com/"
     },
@@ -4292,9 +4280,7 @@
         "Server": "GlassFish(?: Server)?(?: Open Source Edition)?(?: ?/?([\\d.]+))?\\;version:\\1"
       },
       "icon": "GlassFish.png",
-      "implies": [
-        "Java"
-      ],
+      "implies": "Java",
       "website": "http://glassfish.java.net"
     },
     "Glyphicons": {
@@ -4869,9 +4855,7 @@
       "script": "bokeh.*\\.js",
       "website": "https://bokeh.org",
       "icon": "bokeh.png",
-      "implies": [
-        "Python"
-      ]
+      "implies": "Python"
     },
     "Highlight.js": {
       "cats": [
@@ -5755,9 +5739,7 @@
       "headers": {
         "Server": "^Kestrel"
       },
-      "implies": [
-        "Microsoft ASP.NET"
-      ],
+      "implies": "Microsoft ASP.NET",
       "icon": "kestrel.svg",
       "website": "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel"
     },
@@ -7556,9 +7538,7 @@
         "<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
       ],
       "icon": "NextGEN Gallery.png",
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "script": "/nextgen-gallery/js/",
       "website": "https://www.imagely.com/wordpress-gallery-plugin"
     },
@@ -8325,9 +8305,7 @@
       },
       "html": "<[^>]+(?:class|id)=\"phabricator-",
       "icon": "Phabricator.png",
-      "implies": [
-        "PHP"
-      ],
+      "implies": "PHP",
       "script": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
       "website": "http://phacility.com"
     },
@@ -8350,9 +8328,7 @@
         "<[^>]+id=\"phenomic(?:root)?\""
       ],
       "icon": "Phenomic.svg",
-      "implies": [
-        "React"
-      ],
+      "implies": "React",
       "script": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
       "website": "https://phenomic.io/"
     },
@@ -9439,9 +9415,7 @@
         9
       ],
       "icon": "SlickStack.png",
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "headers": {
         "x-powered-by": "SlickStack"
       },
@@ -9728,9 +9702,7 @@
       "headers": {
         "x-powered-by": "^Seravo"
       },
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "icon": "seravo.svg",
       "website": "https://seravo.com"
     },
@@ -10903,9 +10875,7 @@
       "cookies": {
         "TNEW": ""
       },
-      "implies": [
-        "Tessitura"
-      ],
+      "implies": "Tessitura",
       "icon": "tessitura.svg",
       "website": "https://www.tessituranetwork.com"
     },
@@ -12137,9 +12107,7 @@
         "X-Wix-Server-Artifact-Id": ""
       },
       "icon": "Wix.png",
-      "implies": [
-        "React"
-      ],
+      "implies": "React",
       "js": {
         "wixBiSession": ""
       },
@@ -12241,9 +12209,7 @@
       "headers": {
         "x-powered-by": "^WordPress\\.com VIP"
       },
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "icon": "wpvip.svg",
       "website": "https://wpvip.com"
     },
@@ -12412,9 +12378,7 @@
         "X-Powered-By": "XeoraCube"
       },
       "html": "<input type=\"hidden\" name=\"_sys_bind_\\d+\" id=\"_sys_bind_\\d+\" />",
-      "implies": [
-        "Microsoft ASP.NET"
-      ],
+      "implies": "Microsoft ASP.NET",
       "icon": "xeora.png",
       "script": "/_bi_sps_v.+\\.js",
       "website": "http://www.xeora.org"
@@ -12565,9 +12529,7 @@
         "Server": "Yaws(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "Yaws.png",
-      "implies": [
-        "Erlang"
-      ],
+      "implies": "Erlang",
       "website": "http://yaws.hyber.org"
     },
     "Yieldlab": {
@@ -12591,9 +12553,7 @@
         "<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]"
       ],
       "icon": "Yii.png",
-      "implies": [
-        "PHP"
-      ],
+      "implies": "PHP",
       "script": [
         "/assets/[a-zA-Z0-9]{8}\\/yii\\.js$",
         "/yii\\.(?:validation|activeForm)\\.js"
@@ -13076,9 +13036,7 @@
         1
       ],
       "icon": "govCMS.svg",
-      "implies": [
-        "Drupal"
-      ],
+      "implies": "Drupal",
       "meta": {
         "generator": "Drupal ([\\d]+) \\(http:\\/\\/drupal\\.org\\) \\+ govCMS\\;version:\\1"
       },
@@ -13276,9 +13234,7 @@
       "headers": {
         "x-kinsta-cache": ""
       },
-      "implies": [
-        "WordPress"
-      ],
+      "implies": "WordPress",
       "icon": "kinsta.svg",
       "website": "https://kinsta.com"
     },
@@ -13749,9 +13705,7 @@
       "icon": "Siteglide.svg",
       "script": "siteglide\\.js",
       "website": "https://www.siteglide.com",
-      "implies": [
-        "PlatformOS"
-      ]
+      "implies": "PlatformOS"
     },
     "sNews": {
       "cats": [
@@ -13807,9 +13761,7 @@
         "<[^>]+sc-component-id: sc-"
       ],
       "icon": "styled-components.png",
-      "implies": [
-        "React"
-      ],
+      "implies": "React",
       "js": {
         "styled": ""
       },
