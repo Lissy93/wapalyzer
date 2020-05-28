@@ -4,13 +4,14 @@ LABEL maintainer="elbert@alias.io"
 
 ENV WAPPALYZER_DIR=/opt/wappalyzer
 
-RUN apk update && apk add --no-cache \
+RUN apk update && apk add -u --no-cache \
 	bash \
 	curl \
 	fontconfig \
 	nodejs-npm \
 	optipng \
-	zip
+	zip \
+  yarn
 
 # Fixes PhantomJS
 # https://github.com/dustinblackman/phantomized
