@@ -1,60 +1,82 @@
 #!/usr/bin/env node
 
-var
-	app,
-	fs        = require('fs'),
-	fileType  = require('../node_modules/file-type'),
-	readChunk = require('../node_modules/read-chunk'),
-	isSvg     = require('../node_modules/is-svg'),
-	json      = require('../src/apps.json'),
+let app
+const fs = require('fs')
+const fileType = require('../node_modules/file-type')
+const readChunk = require('../node_modules/read-chunk')
+const isSvg = require('../node_modules/is-svg')
+const json = require('../src/apps.json')
 
-	basePath = 'src/icons/',
+const basePath = 'src/drivers/webextension/images/icons/'
 
-	iconPaths = [];//Will be used to check for stray icons
-
+const iconPaths = [] // Will be used to check for stray icons
 
 for (app in json.apps) {
-	(function(app) {
-		var
-			iconPath = json.apps[app].icon || 'default.svg',
-			path     = basePath + iconPath,
-			ext      = iconPath.substr(iconPath.length - 4);
+  ;(function(app) {
+    const iconPath = json.apps[app].icon || 'default.svg'
+    const path = basePath + iconPath
+    const ext = iconPath.substr(iconPath.length - 4)
 
-		iconPaths.push(iconPath)
+    iconPaths.push(iconPath)
 
-		if ( ext !== '.png' && ext !== '.svg' ) {
-			throw err = new Error('Icon file extension specified for app "' + app + '" is not ".png" or ".svg": src/icons/' + iconPath);
-		}
+    if (ext !== '.png' && ext !== '.svg') {
+      throw (err = new Error(
+        'Icon file extension specified for app "' +
+          app +
+          '" is not ".png" or ".svg": src/drivers/webextension/images/icons/' +
+          iconPath
+      ))
+    }
 
-		fs.exists(path, function(exists) {
-			if ( exists ) {
-				if ( ext === '.png' ) {
-					var buffer = fileType(readChunk.sync(path, 0, 262));
+    fs.exists(path, function(exists) {
+      if (exists) {
+        if (ext === '.png') {
+          const buffer = fileType(readChunk.sync(path, 0, 262))
 
-					if ( buffer === null ) {
-						throw new Error('Unknown mimetype or bad file for "' + app + '": src/icons/' + iconPath);
-					} else if ( buffer.mime !== 'image/png' ) {
-						throw new Error('Incorrect mimetype "' + buffer.mime + '" when expected PNG for app "' + app + '": src/icons/' + iconPath);
-					}
-				} else if ( ext === '.svg' ) {
-					if ( !isSvg(fs.readFileSync(path)) ) {
-						throw new Error('Incorrect mimetype when expected SVG for app "' + app + '": src/icons/' + iconPath);
-					}
-				}
-			} else {
-				throw Error('Missing file for app "' + app + '": src/icons/' + iconPath);
-			}
-		});
-	}(app));
+          if (buffer === null) {
+            throw new Error(
+              'Unknown mimetype or bad file for "' +
+                app +
+                '": src/drivers/webextension/images/icons/' +
+                iconPath
+            )
+          } else if (buffer.mime !== 'image/png') {
+            throw new Error(
+              'Incorrect mimetype "' +
+                buffer.mime +
+                '" when expected PNG for app "' +
+                app +
+                '": src/drivers/webextension/images/icons/' +
+                iconPath
+            )
+          }
+        } else if (ext === '.svg') {
+          if (!isSvg(fs.readFileSync(path))) {
+            throw new Error(
+              'Incorrect mimetype when expected SVG for app "' +
+                app +
+                '": src/drivers/webextension/images/icons/' +
+                iconPath
+            )
+          }
+        }
+      } else {
+        throw new Error(
+          'Missing file for app "' +
+            app +
+            '": src/drivers/webextension/images/icons/' +
+            iconPath
+        )
+      }
+    })
+  })(app)
 }
 
-
 // Check for stray files in icons folder
-  fs.readdirSync(basePath).forEach(function(file) {
-	if (!fs.statSync(basePath + file).isDirectory()) {
-		if(iconPaths.indexOf(file) === -1){
-			throw new Error('Stray file (no associated app): ' + basePath + file);
-		}
-	}
-  });
-
+fs.readdirSync(basePath).forEach(function(file) {
+  if (!fs.statSync(basePath + file).isDirectory()) {
+    if (!iconPaths.includes(file)) {
+      throw new Error('Stray file (no associated app): ' + basePath + file)
+    }
+  }
+})

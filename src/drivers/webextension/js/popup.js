@@ -91,7 +91,10 @@ function appsToDomTemplate(response) {
     // Group apps by category
     for (const appName in response.tabCache.detected) {
       response.apps[appName].cats.forEach((cat) => {
-        categories[cat] = categories[cat] || { apps: [] }
+        categories[cat] = categories[cat] || {
+          name: response.categories[cat].name,
+          apps: []
+        }
 
         categories[cat].apps[appName] = appName
       })
@@ -101,14 +104,15 @@ function appsToDomTemplate(response) {
       const apps = []
 
       for (const appName in categories[cat].apps) {
-        const { confidence, version } = response.tabCache.detected[appName]
+        const { confidenceTotal, version } = response.tabCache.detected[appName]
 
         apps.push([
           'a',
           {
             class: 'detected__app',
-            target: '_blank',
-            href: `https://www.wappalyzer.com/technologies/${slugify(appName)}`
+            href: `https://www.wappalyzer.com/technologies/${slugify(
+              categories[cat].name
+            )}/${slugify(appName)}`
           },
           [
             'img',
@@ -134,13 +138,13 @@ function appsToDomTemplate(response) {
                 version
               ]
             : null,
-          confidence < 100
+          confidenceTotal < 100
             ? [
                 'span',
                 {
                   class: 'detected__app-confidence'
                 },
-                `${confidence}% sure`
+                `${confidenceTotal}% sure`
               ]
             : null
         ])
@@ -160,7 +164,6 @@ function appsToDomTemplate(response) {
             'a',
             {
               class: 'detected__category-link',
-              target: '_blank',
               href: `https://www.wappalyzer.com/categories/${slugify(
                 response.categories[cat].name
               )}`
@@ -171,7 +174,7 @@ function appsToDomTemplate(response) {
             'span',
             {
               class: `detected__category-pin-wrapper${
-                pinnedCategory == cat
+                parseInt(pinnedCategory, 10) === parseInt(cat, 10)
                   ? ' detected__category-pin-wrapper--active'
                   : ''
               }`,

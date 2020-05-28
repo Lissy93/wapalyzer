@@ -11,14 +11,13 @@ fi
 cmd="docker run --rm -v "$(pwd):/opt/wappalyzer" -it wappalyzer/dev"
 
 $cmd sh -c "\
-	npm i; \
-	npm shrinkwrap; \
+	yarn install i; \
 	cd src/drivers/webextension; \
-	npm i; \
-	npm shrinkwrap; \
+	yarn install i; \
 	cd ../npm; \
-	npm i; \
-	npm shrinkwrap"
+	yarn install; \
+	cd ../puppeteer; \
+	yarn install"
 
 $cmd sh -c "cat patches/*.patch | patch -p0"
 

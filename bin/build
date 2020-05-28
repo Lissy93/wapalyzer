@@ -26,14 +26,14 @@ sed -e 's/\\\\/{{ESCAPE}}/g' src/apps.json | jsonlint-cli -ps | sed -e 's/{{ESCA
 
 echo "Converting SVG icons to PNG..."
 
-svg2png-many -i src/icons/ -o src/icons/converted/ --width=32 --height=32
+svg2png-many -i src/drivers/webextension/images/icons/ -o src/drivers/webextension/images/icons/converted/ --width=32 --height=32
 
 echo "Compressing PNG icons..."
 
 set +e
 
-optipng -quiet "src/icons/*.png"
-optipng -quiet "src/icons/converted/*.png"
+optipng -quiet "src/drivers/webextension/images/icons/*.png"
+optipng -quiet "src/drivers/webextension/images/icons/converted/*.png"
 
 set -e
 
