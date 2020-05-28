@@ -1,81 +1,129 @@
-const url = require('url');
-const fs = require('fs');
-const path = require('path');
-const LanguageDetect = require('languagedetect');
-const Wappalyzer = require('./wappalyzer');
+const { URL } = require('url')
+const fs = require('fs')
+const LanguageDetect = require('languagedetect')
+const Wappalyzer = require('./wappalyzer')
 
-const languageDetect = new LanguageDetect();
+const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
 
-languageDetect.setLanguageType('iso2');
+let puppeteer
 
-const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)));
+if (AWS_LAMBDA_FUNCTION_NAME) {
+  // eslint-disable-next-line global-require, import/no-unresolved
+  ;({
+    chromium: { puppeteer }
+  } = require('chrome-aws-lambda'))
+} else {
+  // eslint-disable-next-line global-require
+  puppeteer = require('puppeteer')
+}
 
-const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
+const languageDetect = new LanguageDetect()
+
+languageDetect.setLanguageType('iso2')
+
+const json = JSON.parse(fs.readFileSync('./apps.json'))
+
+const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
 const errorTypes = {
   RESPONSE_NOT_OK: 'Response was not ok',
   NO_RESPONSE: 'No response from server',
-  NO_HTML_DOCUMENT: 'No HTML document',
-};
+  NO_HTML_DOCUMENT: 'No HTML document'
+}
 
 function sleep(ms) {
-  return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+function getJs() {
+  const dereference = (obj, level = 0) => {
+    try {
+      // eslint-disable-next-line no-undef
+      if (level > 5 || (level && obj === window)) {
+        return '[Removed]'
+      }
+
+      if (Array.isArray(obj)) {
+        obj = obj.map((item) => dereference(item, level + 1))
+      }
+
+      if (
+        typeof obj === 'function' ||
+        (typeof obj === 'object' && obj !== null)
+      ) {
+        const newObj = {}
+
+        Object.keys(obj).forEach((key) => {
+          newObj[key] = dereference(obj[key], level + 1)
+        })
+
+        return newObj
+      }
+
+      return obj
+    } catch (error) {
+      return undefined
+    }
+  }
+
+  // eslint-disable-next-line no-undef
+  return dereference(window)
 }
 
 function processJs(window, patterns) {
-  const js = {};
+  const js = {}
 
   Object.keys(patterns).forEach((appName) => {
-    js[appName] = {};
+    js[appName] = {}
 
     Object.keys(patterns[appName]).forEach((chain) => {
-      js[appName][chain] = {};
+      js[appName][chain] = {}
 
       patterns[appName][chain].forEach((pattern, index) => {
-        const properties = chain.split('.');
+        const properties = chain.split('.')
 
-        let value = properties
-          .reduce((parent, property) => (parent && parent[property]
-            ? parent[property] : null), window);
+        let value = properties.reduce(
+          (parent, property) =>
+            parent && parent[property] ? parent[property] : null,
+          window
+        )
 
-        value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
+        value =
+          typeof value === 'string' || typeof value === 'number'
+            ? value
+            : !!value
 
         if (value) {
-          js[appName][chain][index] = value;
+          js[appName][chain][index] = value
         }
-      });
-    });
-  });
+      })
+    })
+  })
 
-  return js;
+  return js
 }
 
 function processHtml(html, maxCols, maxRows) {
   if (maxCols || maxRows) {
-    const chunks = [];
-    const rows = html.length / maxCols;
+    const batchs = []
+    const rows = html.length / maxCols
 
-    let i;
-
-    for (i = 0; i < rows; i += 1) {
+    for (let i = 0; i < rows; i += 1) {
       if (i < maxRows / 2 || i > rows - maxRows / 2) {
-        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+        batchs.push(html.slice(i * maxCols, (i + 1) * maxCols))
       }
     }
 
-    html = chunks.join('\n');
+    html = batchs.join('\n')
   }
 
-  return html;
+  return html
 }
 
 class Driver {
-  constructor(Browser, pageUrl, options) {
-    this.options = Object.assign({}, {
-      password: '',
-      proxy: null,
-      username: '',
-      chunkSize: 5,
+  constructor(options = {}) {
+    this.options = {
+      batchSize: 5,
       debug: false,
       delay: 500,
       htmlMaxCols: 2000,
@@ -84,252 +132,410 @@ class Driver {
       maxUrls: 10,
       maxWait: 5000,
       recursive: false,
-    }, options || {});
+      ...options
+    }
 
-    this.options.debug = Boolean(+this.options.debug);
-    this.options.recursive = Boolean(+this.options.recursive);
-    this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
-    this.options.maxDepth = parseInt(this.options.maxDepth, 10);
-    this.options.maxUrls = parseInt(this.options.maxUrls, 10);
-    this.options.maxWait = parseInt(this.options.maxWait, 10);
-    this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10);
-    this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10);
+    this.options.debug = Boolean(+this.options.debug)
+    this.options.recursive = Boolean(+this.options.recursive)
+    this.options.delay = this.options.recursive
+      ? parseInt(this.options.delay, 10)
+      : 0
+    this.options.maxDepth = parseInt(this.options.maxDepth, 10)
+    this.options.maxUrls = parseInt(this.options.maxUrls, 10)
+    this.options.maxWait = parseInt(this.options.maxWait, 10)
+    this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10)
+    this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10)
 
-    this.origPageUrl = url.parse(pageUrl);
-    this.analyzedPageUrls = {};
-    this.apps = [];
-    this.meta = {};
-    this.listeners = {};
-
-    this.Browser = Browser;
-
-    this.wappalyzer = new Wappalyzer();
-
-    this.wappalyzer.apps = json.apps;
-    this.wappalyzer.categories = json.categories;
-
-    this.wappalyzer.parseJsPatterns();
-
-    this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
-    this.wappalyzer.driver
-      .displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
+    this.destroyed = false
   }
+
+  async init() {
+    this.log('Launching browser...')
+
+    try {
+      this.browser = await puppeteer.launch({
+        args: [
+          '--no-sandbox',
+          '--headless',
+          '--disable-gpu',
+          '--ignore-certificate-errors'
+        ],
+        executablePath: CHROMIUM_BIN
+      })
+
+      this.browser.on('disconnected', async () => {
+        this.log('Browser disconnected')
+
+        if (!this.destroyed) {
+          await this.init()
+        }
+      })
+    } catch (error) {
+      throw new Error(error.toString())
+    }
+  }
+
+  async destroy() {
+    this.destroyed = true
+
+    if (this.browser) {
+      try {
+        await sleep(1)
+
+        await this.browser.close()
+
+        this.log('Done')
+      } catch (error) {
+        throw new Error(error.toString())
+      }
+    }
+  }
+
+  open(url) {
+    return new Site(url, this)
+  }
+
+  log(message, source = 'driver', type = 'debug') {
+    if (this.options.debug) {
+      // eslint-disable-next-line no-console
+      console.log(`${type.toUpperCase()} | ${source} | ${message}`)
+    }
+  }
+}
+
+class Site {
+  constructor(url, driver) {
+    ;({ options: this.options, browser: this.browser } = driver)
+
+    this.driver = driver
+
+    try {
+      this.originalUrl = new URL(url)
+    } catch (error) {
+      throw new Error(error.message || error.toString())
+    }
+
+    this.wappalyzer = new Wappalyzer()
+
+    this.wappalyzer.apps = json.apps
+    this.wappalyzer.categories = json.categories
+
+    this.wappalyzer.parseJsPatterns()
+
+    this.wappalyzer.driver.log = (message, source, type) =>
+      this.log(message, source, type)
+    this.wappalyzer.driver.displayApps = (detected, meta, context) =>
+      this.displayApps(detected, meta, context)
+
+    this.analyzedUrls = {}
+    this.technologies = []
+    this.meta = {}
+
+    this.listeners = {}
+
+    this.headers = {}
+  }
+
+  async init() {}
 
   on(event, callback) {
     if (!this.listeners[event]) {
-      this.listeners[event] = [];
+      this.listeners[event] = []
     }
 
-    this.listeners[event].push(callback);
+    this.listeners[event].push(callback)
   }
 
   emit(event, params) {
     if (this.listeners[event]) {
-      this.listeners[event].forEach(listener => listener(params));
+      this.listeners[event].forEach((listener) => listener(params))
     }
   }
 
-  analyze() {
-    this.time = {
-      start: new Date().getTime(),
-      last: new Date().getTime(),
-    };
+  log(...args) {
+    this.emit('log', ...args)
 
-    return this.crawl(this.origPageUrl);
+    this.driver.log(...args)
   }
 
-  log(message, source, type) {
-    if (this.options.debug) {
-      // eslint-disable-next-line no-console
-      console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
-    }
+  async fetch(url, index, depth) {}
 
-    this.emit('log', { message, source, type });
-  }
-
-  displayApps(detected, meta) {
-    this.meta = meta;
-
-    Object.keys(detected).forEach((appName) => {
-      const app = detected[appName];
-
-      const categories = [];
-
-      app.props.cats.forEach((id) => {
-        const category = {};
-
-        category[id] = json.categories[id].name;
-
-        categories.push(category);
-      });
-
-      if (!this.apps.some(detectedApp => detectedApp.name === app.name)) {
-        this.apps.push({
-          name: app.name,
-          confidence: app.confidenceTotal.toString(),
-          version: app.version || null,
-          icon: app.props.icon || 'default.svg',
-          website: app.props.website,
-          cpe: app.props.cpe || null,
-          categories,
-        });
-      }
-    });
-  }
-
-  async fetch(pageUrl, index, depth) {
+  async goto(url) {
     // Return when the URL is a duplicate or maxUrls has been reached
     if (
-      this.analyzedPageUrls[pageUrl.href]
-      || this.analyzedPageUrls.length >= this.options.maxUrls
+      this.analyzedUrls[url.href] ||
+      Object.keys(this.analyzedUrls).length >= this.options.maxUrls
     ) {
-      return [];
+      return
     }
 
-    this.analyzedPageUrls[pageUrl.href] = {
-      status: 0,
-    };
+    this.log(`Navigate to ${url}`, 'page')
 
-    const timerScope = {
-      last: new Date().getTime(),
-    };
+    this.analyzedUrls[url.href] = {
+      status: 0
+    }
 
-    this.timer(`fetch; url: ${pageUrl.href}; depth: ${depth}; delay: ${this.options.delay * index}ms`, timerScope);
+    if (!this.browser) {
+      throw new Error('Browser closed')
+    }
 
-    await sleep(this.options.delay * index);
+    const page = await this.browser.newPage()
+
+    page.setDefaultTimeout(this.options.maxWait)
+
+    await page.setRequestInterception(true)
+
+    page.on('error', (error) => this.emit('error', error))
+
+    let responseReceived = false
+
+    page.on('request', (request) => {
+      try {
+        if (
+          (responseReceived && request.isNavigationRequest()) ||
+          request.frame() !== page.mainFrame() ||
+          !['document', 'script'].includes(request.resourceType())
+        ) {
+          request.abort('blockedbyclient')
+        } else {
+          request.continue()
+        }
+      } catch (error) {
+        this.emit('error', error)
+      }
+    })
+
+    page.on('response', (response) => {
+      try {
+        if (response.url() === url.href) {
+          this.analyzedUrls[url.href] = {
+            status: response.status()
+          }
+
+          const headers = response.headers()
+
+          Object.keys(headers).forEach((key) => {
+            this.headers[key] = [
+              ...(this.headers[key] || []),
+              ...(Array.isArray(headers[key]) ? headers[key] : [headers[key]])
+            ]
+          })
+
+          this.contentType = headers['content-type'] || null
+
+          if (response.status() >= 300 && response.status() < 400) {
+            if (this.headers.location) {
+              url = new URL(this.headers.location.slice(-1))
+            }
+          } else {
+            responseReceived = true
+          }
+        }
+      } catch (error) {
+        this.emit('error', error)
+      }
+    })
+
+    if (this.options.userAgent) {
+      await page.setUserAgent(this.options.userAgent)
+    }
 
     try {
-      return this.visit(pageUrl, timerScope);
+      await Promise.race([
+        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
+        new Promise((resolve, reject) =>
+          setTimeout(() => reject(new Error('Timeout')), this.options.maxWait)
+        )
+      ])
     } catch (error) {
-      throw new Error(error.message);
-    }
-  }
-
-  async visit(pageUrl, timerScope) {
-    const browser = new this.Browser(this.options);
-
-    browser.log = (message, type) => this.wappalyzer.log(message, 'browser', type);
-
-    this.timer(`visit start; url: ${pageUrl.href}`, timerScope);
-
-    try {
-      await browser.visit(pageUrl.href);
-    } catch (error) {
-      this.wappalyzer.log(error.message, 'browser', 'error');
-
-      throw new Error('RESPONSE_NOT_OK');
+      this.emit('error', error)
     }
 
-    this.timer(`visit end; url: ${pageUrl.href}`, timerScope);
+    await sleep(1000)
 
-    this.analyzedPageUrls[pageUrl.href].status = browser.statusCode;
+    const links = await (
+      await page.evaluateHandle(() =>
+        Array.from(document.getElementsByTagName('a')).map(
+          ({ hash, hostname, href, pathname, protocol, rel }) => ({
+            hash,
+            hostname,
+            href,
+            pathname,
+            protocol,
+            rel
+          })
+        )
+      )
+    ).jsonValue()
+
+    // eslint-disable-next-line no-undef
+    const scripts = (
+      await (
+        await page.evaluateHandle(() =>
+          Array.from(document.getElementsByTagName('script')).map(
+            ({ src }) => src
+          )
+        )
+      ).jsonValue()
+    ).filter((script) => script)
+
+    const js = processJs(await page.evaluate(getJs), this.wappalyzer.jsPatterns)
+
+    const cookies = (await page.cookies()).map(
+      ({ name, value, domain, path }) => ({
+        name,
+        value,
+        domain,
+        path
+      })
+    )
+
+    const html = processHtml(
+      await page.content(),
+      this.options.htmlMaxCols,
+      this.options.htmlMaxRows
+    )
 
     // Validate response
-    if (!browser.statusCode) {
-      throw new Error('NO_RESPONSE');
+    if (!this.analyzedUrls[url.href].status) {
+      throw new Error('NO_RESPONSE')
     }
 
-    const { cookies, headers, scripts } = browser;
-
-    const html = processHtml(browser.html, this.options.htmlMaxCols, this.options.htmlMaxRows);
-    const js = processJs(browser.js, this.wappalyzer.jsPatterns);
-
-    let language = null;
+    let language = null
 
     try {
-      [[language]] = languageDetect.detect(html.replace(/<\/?[^>]+(>|$)/g, ' '), 1);
+      const [attrs] = languageDetect.detect(
+        html.replace(/<\/?[^>]+(>|$)/g, ' '),
+        1
+      )
+
+      if (attrs) {
+        ;[language] = attrs
+      }
     } catch (error) {
-      this.wappalyzer.log(`${error.message || error}; url: ${pageUrl.href}`, 'driver', 'error');
+      this.log(`${error} (${url.href})`, 'driver', 'error')
     }
 
-    await this.wappalyzer.analyze(pageUrl, {
+    await this.wappalyzer.analyze(url, {
       cookies,
-      headers,
+      headers: this.headers,
       html,
       js,
       scripts,
-      language,
-    });
+      language
+    })
 
     const reducedLinks = Array.prototype.reduce.call(
-      browser.links, (results, link) => {
+      links,
+      (results, link) => {
         if (
-          results
-          && Object.prototype.hasOwnProperty.call(Object.getPrototypeOf(results), 'push')
-          && link.protocol
-          && link.protocol.match(/https?:/)
-          && link.rel !== 'nofollow'
-          && link.hostname === this.origPageUrl.hostname
-          && extensions.test(link.pathname)
+          results &&
+          Object.prototype.hasOwnProperty.call(
+            Object.getPrototypeOf(results),
+            'push'
+          ) &&
+          link.protocol &&
+          link.protocol.match(/https?:/) &&
+          link.rel !== 'nofollow' &&
+          link.hostname === url.hostname &&
+          extensions.test(link.pathname)
         ) {
-          link.hash = '';
-
-          results.push(url.parse(link.href));
+          results.push(new URL(link.href.split('#')[0]))
         }
 
-        return results;
-      }, [],
-    );
+        return results
+      },
+      []
+    )
 
-    this.emit('visit', { browser, pageUrl });
+    this.emit('goto', url)
 
-    return reducedLinks;
+    return reducedLinks
   }
 
-  async crawl(pageUrl, index = 1, depth = 1) {
-    pageUrl.canonical = `${pageUrl.protocol}//${pageUrl.host}${pageUrl.pathname}`;
-
-    let links;
-
+  async analyze(url = this.originalUrl, index = 1, depth = 1) {
     try {
-      links = await this.fetch(pageUrl, index, depth);
+      await sleep(this.options.delay * index)
+
+      const links = await this.goto(url)
+
+      if (links && this.options.recursive && depth < this.options.maxDepth) {
+        await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+      }
     } catch (error) {
-      const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
-      const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
+      const type =
+        error.message && errorTypes[error.message]
+          ? error.message
+          : 'UNKNOWN_ERROR'
+      const message =
+        error.message && errorTypes[error.message]
+          ? errorTypes[error.message]
+          : 'Unknown error'
 
-      this.analyzedPageUrls[pageUrl.href].error = {
-        type,
-        message,
-      };
+      this.analyzedUrls[url.href] = {
+        status: 0,
+        error: {
+          type,
+          message
+        }
+      }
 
-      this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
-    }
-
-    if (links && this.options.recursive && depth < this.options.maxDepth) {
-      await this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
+      this.log(`${message} (${url.href})`, 'driver', 'error')
     }
 
     return {
-      urls: this.analyzedPageUrls,
-      applications: this.apps,
-      meta: this.meta,
-    };
+      urls: this.analyzedUrls,
+      applications: this.technologies,
+      meta: this.meta
+    }
   }
 
-  async chunk(links, depth, chunk = 0) {
+  async batch(links, depth, batch = 0) {
     if (links.length === 0) {
-      return;
+      return
     }
 
-    const chunked = links.splice(0, this.options.chunkSize);
+    const batched = links.splice(0, this.options.batchSize)
 
-    await Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)));
+    await Promise.all(
+      batched.map((link, index) => this.analyze(link, index, depth))
+    )
 
-    await this.chunk(links, depth, chunk + 1);
+    await this.batch(links, depth, batch + 1)
   }
 
-  timer(message, scope) {
-    const time = new Date().getTime();
-    const sinceStart = `${Math.round((time - this.time.start) / 10) / 100}s`;
-    const sinceLast = `${Math.round((time - scope.last) / 10) / 100}s`;
+  displayApps(technologies, meta) {
+    this.meta = meta
 
-    this.wappalyzer.log(`[timer] ${message}; lapsed: ${sinceLast} / ${sinceStart}`, 'driver');
+    Object.keys(technologies).forEach((name) => {
+      const {
+        confidenceTotal: confidence,
+        version,
+        props: { cats, icon, website, cpe }
+      } = technologies[name]
 
-    scope.last = time;
+      const categories = cats.reduce((categories, id) => {
+        categories[id] = json.categories[id].name
+
+        return categories
+      }, {})
+
+      if (!this.technologies.some(({ name: _name }) => name === _name)) {
+        this.technologies.push({
+          name,
+          confidence,
+          version: version || null,
+          icon: icon || 'default.svg',
+          website,
+          cpe: cpe || null,
+          categories
+        })
+      }
+    })
   }
 }
 
-module.exports = Driver;
+module.exports = Driver
 
-module.exports.processJs = processJs;
-module.exports.processHtml = processHtml;
+module.exports.processJs = processJs
+module.exports.processHtml = processHtml

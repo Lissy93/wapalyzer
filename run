@@ -15,11 +15,7 @@ $cmd sh -c "\
 	cd src/drivers/webextension; \
 	yarn install; \
 	cd ../npm; \
-	yarn install; \
-	cd ../puppeteer; \
 	yarn install"
-
-$cmd sh -c "cat patches/*.patch | patch -p0"
 
 $cmd ./bin/run links
 $cmd ./bin/run $@

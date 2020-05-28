@@ -1,47 +1,51 @@
 #!/usr/bin/env node
 
-const Wappalyzer = require('./driver');
+const Wappalyzer = require('./driver')
 
-const args = process.argv.slice(2);
+const args = process.argv.slice(2)
 
-const options = {};
+const options = {}
 
-let url;
-let arg;
+let url
+let arg
 
 const aliases = {
   a: 'userAgent',
-  b: 'browser',
-  c: 'chunkSize',
+  b: 'batchSize',
   d: 'debug',
   t: 'delay',
   h: 'help',
   D: 'maxDepth',
   m: 'maxUrls',
-  p: 'password',
   P: 'pretty',
   r: 'recursive',
-  u: 'username',
-  w: 'maxWait',
-};
+  w: 'maxWait'
+}
 
-while (true) { // eslint-disable-line no-constant-condition
-  arg = args.shift();
+while (true) {
+  // eslint-disable-line no-constant-condition
+  arg = args.shift()
 
   if (!arg) {
-    break;
+    break
   }
 
-  const matches = /^-?-([^=]+)(?:=(.+)?)?/.exec(arg);
+  const matches = /^-?-([^=]+)(?:=(.+)?)?/.exec(arg)
 
   if (matches) {
-    const key = aliases[matches[1]] || matches[1].replace(/-\w/g, _matches => _matches[1].toUpperCase());
+    const key =
+      aliases[matches[1]] ||
+      matches[1].replace(/-\w/g, (_matches) => _matches[1].toUpperCase())
     // eslint-disable-next-line no-nested-ternary
-    const value = matches[2] ? matches[2] : args[0] && !args[0].match(/^-/) ? args.shift() : true;
+    const value = matches[2]
+      ? matches[2]
+      : args[0] && !args[0].startsWith('-')
+      ? args.shift()
+      : true
 
-    options[key] = value;
+    options[key] = value
   } else {
-    url = arg;
+    url = arg
   }
 }
 
@@ -51,12 +55,11 @@ if (!url || options.help) {
 
 Examples:
   wappalyzer https://www.example.com
-  node cli.js https://www.example.com -b puppeteer -r -D 3 -m 50
+  node cli.js https://www.example.com -r -D 3 -m 50
   docker wappalyzer/cli https://www.example.com --pretty
 
 Options:
-  -b, --browser=...        Specify which headless browser to use (zombie or puppeteer)
-  -c, --chunk-size=...     Process links in chunks
+  -b, --batch-size=...     Process links in batches
   -d, --debug              Output debug messages
   -t, --delay=ms           Wait for ms milliseconds between requests
   -h, --help               This text
@@ -65,30 +68,40 @@ Options:
   -D, --max-depth=...      Don't analyse pages more than num levels deep
   -m, --max-urls=...       Exit when num URLs have been analysed
   -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
-  -p, --password=...       Password to be used for basic HTTP authentication (zombie only)
   -P, --pretty             Pretty-print JSON output
-  --proxy=...              Proxy URL, e.g. 'http://user:pass@proxy:8080' (zombie only)
   -r, --recursive          Follow links on pages (crawler)
   -a, --user-agent=...     Set the user agent string
-  -u, --username=...       Username to be used for basic HTTP authentication (zombie only)
-`);
+`)
 
-  process.exit(1);
+  process.exit(1)
 }
 
-// eslint-disable-next-line import/no-dynamic-require
-const Browser = require(`./browsers/${options.browser || 'zombie'}`);
+;(async function() {
+  const wappalyzer = await new Wappalyzer(options)
 
-const wappalyzer = new Wappalyzer(Browser, url, options);
+  try {
+    await wappalyzer.init()
 
-wappalyzer.analyze()
-  .then((json) => {
-    process.stdout.write(`${JSON.stringify(json, null, options.pretty ? 2 : null)}\n`);
+    const site = await wappalyzer.open(url)
 
-    process.exit(0);
-  })
-  .catch((error) => {
-    process.stderr.write(`${error}\n`);
+    site.on('error', (error) => {
+      process.stderr.write(`page error: ${error}\n`)
+    })
 
-    process.exit(1);
-  });
+    const results = await site.analyze()
+
+    process.stdout.write(
+      `${JSON.stringify(results, null, options.pretty ? 2 : null)}\n`
+    )
+
+    await wappalyzer.destroy()
+
+    process.exit(0)
+  } catch (error) {
+    process.stderr.write(error.toString())
+
+    await wappalyzer.destroy()
+
+    process.exit(1)
+  }
+})()
