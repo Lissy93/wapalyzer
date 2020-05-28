@@ -11,9 +11,9 @@ fi
 cmd="docker run --rm -v "$(pwd):/opt/wappalyzer" -it wappalyzer/dev"
 
 $cmd sh -c "\
-	yarn install i; \
+	yarn install; \
 	cd src/drivers/webextension; \
-	yarn install i; \
+	yarn install; \
 	cd ../npm; \
 	yarn install; \
 	cd ../puppeteer; \

@@ -10,7 +10,8 @@ RUN apk update && apk add --no-cache \
 	fontconfig \
 	nodejs-npm \
 	optipng \
-	zip
+	zip \
+  yarn
 
 # Fixes PhantomJS
 # https://github.com/dustinblackman/phantomized
