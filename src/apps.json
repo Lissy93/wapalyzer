@@ -12246,13 +12246,15 @@
         "MySQL"
       ],
       "headers": {
-        "link": "rel=\"https://api\\.w\\.org/\""
+        "link": "rel=\"https://api\\.w\\.org/\"",
+        "X-Pingback": "/xmlrpc\\.php$"
       },
       "js": {
         "wp_username": ""
       },
       "meta": {
-        "generator": "^WordPress ?([\\d.]+)?\\;version:\\1"
+        "generator": "^WordPress ?([\\d.]+)?\\;version:\\1",
+        "shareaholic:wp_version": ""
       },
       "script": "/wp-(?:content|includes)/",
       "website": "https://wordpress.org"
