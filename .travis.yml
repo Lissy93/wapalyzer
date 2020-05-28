@@ -12,8 +12,9 @@ cache:
 
 script:
   - >-
-    version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/') ;
-    ./run build $version ;
+    version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/') &&
+    echo Version is $version &&
+    ./run build $version &&
     docker build -t wappalyzer/cli:latest -t wappalyzer/cli:$version src/drivers/npm
 
 env:
