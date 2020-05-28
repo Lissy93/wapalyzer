@@ -24,11 +24,11 @@ browser.tabs.onRemoved.addListener((tabId) => {
 function userAgent() {
   const url = chrome.extension.getURL('/')
 
-  if (url.match(/^moz-/)) {
+  if (url.startsWith('moz-')) {
     return 'firefox'
   }
 
-  if (url.match(/^ms-browser-/)) {
+  if (url.startsWith('ms-browser')) {
     return 'edge'
   }
 

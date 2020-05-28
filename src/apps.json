@@ -4660,7 +4660,7 @@
       ],
       "icon": "gRPC.png",
       "headers": {
-        "Content-Type": "^application\\/grpc.+$"
+        "Content-Type": "^application\\/grpc"
       },
       "website": "https://grpc.io"
     },
@@ -5364,7 +5364,9 @@
       "cats": [
         6
       ],
-      "js": {"j2storeURL":""},
+      "js": {
+        "j2storeURL": ""
+      },
       "icon": "j2store.png",
       "implies": "Joomla",
       "website": "https://www.j2store.org/"
@@ -6282,9 +6284,10 @@
     },
     "Livewire": {
       "cats": [
-        18, 19
+        18,
+        19
       ],
-      "html": "<[^>]+wire:[^<]+",
+      "html": "<[^>]+wire:",
       "icon": "Livewire.png",
       "implies": "Laravel",
       "js": {
@@ -10846,8 +10849,7 @@
         66
       ],
       "html": [
-        "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
-        "[^>]*class=\"[^\"]*(?:sm:|md:|lg:|xl:)"
+        "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css"
       ],
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
@@ -12310,10 +12312,10 @@
         23
       ],
       "headers": {
-        "x-powered-by": "^Optimized by WPCacheOn.+"
+        "x-powered-by": "^Optimized by WPCacheOn"
       },
       "icon": "WPCacheOn.png",
-      "implies":[
+      "implies": [
         "WordPress"
       ],
       "website": "https://wpcacheon.io"
@@ -12332,7 +12334,7 @@
       "meta": {
         "generator": "kolors4u (?: ([\\d.]+))?\\;version:\\1"
       },
-	  "icon": "kolors4u.png",
+      "icon": "kolors4u.png",
       "website": "http://kolors4u.com"
     },
     "Wowza Media Server": {
