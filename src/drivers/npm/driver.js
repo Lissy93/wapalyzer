@@ -1,19 +1,28 @@
 const { URL } = require('url')
 const fs = require('fs')
+const path = require('path')
 const LanguageDetect = require('languagedetect')
 const Wappalyzer = require('./wappalyzer')
 
 const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
 
 let puppeteer
+let chromiumArgs = [
+  '--no-sandbox',
+  '--headless',
+  '--disable-gpu',
+  '--ignore-certificate-errors'
+]
+let chromiumBin = CHROMIUM_BIN
 
 if (AWS_LAMBDA_FUNCTION_NAME) {
-  // eslint-disable-next-line global-require, import/no-unresolved
-  ;({
-    chromium: { puppeteer }
-  } = require('chrome-aws-lambda'))
+  const chromium = require('chrome-aws-lambda')
+
+  ;({ puppeteer } = chromium)
+
+  chromiumArgs = chromiumArgs.concat(chromium.args)
+  chromiumBin = chromium.executablePath
 } else {
-  // eslint-disable-next-line global-require
   puppeteer = require('puppeteer')
 }
 
@@ -21,7 +30,7 @@ const languageDetect = new LanguageDetect()
 
 languageDetect.setLanguageType('iso2')
 
-const json = JSON.parse(fs.readFileSync('./apps.json'))
+const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)))
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
@@ -154,13 +163,8 @@ class Driver {
 
     try {
       this.browser = await puppeteer.launch({
-        args: [
-          '--no-sandbox',
-          '--headless',
-          '--disable-gpu',
-          '--ignore-certificate-errors'
-        ],
-        executablePath: CHROMIUM_BIN
+        args: chromiumArgs,
+        executablePath: await chromiumBin
       })
 
       this.browser.on('disconnected', async () => {
