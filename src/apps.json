@@ -12122,7 +12122,11 @@
       },
       "cpe": "cpe:/a:welcart:welcart",
       "icon": "welcart.png",
-      "implies": "WordPress",
+      "implies": [
+        "PHP",
+        "WordPress"
+      ],
+      "script": "uscesL10n",
       "html": [
         "<link[^>]+?href=\"[^\"]+usces_default(?:\\.min)?\\.css",
         "<!-- Welcart version : v([\\d.]+)\\;version:\\1"
