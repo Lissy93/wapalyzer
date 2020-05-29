@@ -1,52 +1,54 @@
 /* eslint-env browser */
 /* eslint-disable no-restricted-globals, no-prototype-builtins */
 
-(() => {
+;(() => {
   try {
     const detectJs = (chain) => {
-      const properties = chain.split('.');
+      const properties = chain.split('.')
 
-      let value = properties.length ? window : null;
+      let value = properties.length ? window : null
 
       for (let i = 0; i < properties.length; i += 1) {
-        const property = properties[i];
+        const property = properties[i]
 
         if (value && value.hasOwnProperty(property)) {
-          value = value[property];
+          value = value[property]
         } else {
-          value = null;
+          value = null
 
-          break;
+          break
         }
       }
 
-      return typeof value === 'string' || typeof value === 'number' ? value : !!value;
-    };
+      return typeof value === 'string' || typeof value === 'number'
+        ? value
+        : !!value
+    }
 
     const onMessage = (event) => {
       if (event.data.id !== 'patterns') {
-        return;
+        return
       }
 
-      removeEventListener('message', onMessage);
+      removeEventListener('message', onMessage)
 
-      const patterns = event.data.patterns || {};
+      const patterns = event.data.patterns || {}
 
-      const js = {};
+      const js = {}
 
       for (const appName in patterns) {
         if (patterns.hasOwnProperty(appName)) {
-          js[appName] = {};
+          js[appName] = {}
 
           for (const chain in patterns[appName]) {
             if (patterns[appName].hasOwnProperty(chain)) {
-              js[appName][chain] = {};
+              js[appName][chain] = {}
 
               for (const index in patterns[appName][chain]) {
-                const value = detectJs(chain);
+                const value = detectJs(chain)
 
                 if (value && patterns[appName][chain].hasOwnProperty(index)) {
-                  js[appName][chain][index] = value;
+                  js[appName][chain][index] = value
                 }
               }
             }
@@ -54,11 +56,11 @@
         }
       }
 
-      postMessage({ id: 'js', js }, window.location.href);
-    };
+      postMessage({ id: 'js', js }, window.location.href)
+    }
 
-    addEventListener('message', onMessage);
+    addEventListener('message', onMessage)
   } catch (e) {
     // Fail quietly
   }
-})();
+})()

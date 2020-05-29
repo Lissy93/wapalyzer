@@ -131,7 +131,10 @@ class Wappalyzer {
     this.driver = {}
     this.jsPatterns = {}
     this.detected = {}
-    this.hostnameCache = {}
+    this.hostnameCache = {
+      expires: Date.now() + 1000 * 60 * 60 * 24,
+      hostnames: {}
+    }
     this.adCache = []
 
     this.config = {
@@ -347,10 +350,17 @@ class Wappalyzer {
    *
    */
   ping() {
-    if (Object.keys(this.hostnameCache).length > 50) {
+    if (
+      !this.hostnameCache.hostnames ||
+      Object.keys(this.hostnameCache.hostnames).length > 50 ||
+      this.hostnameCache.expires < Date.now()
+    ) {
       this.driver.ping(this.hostnameCache)
 
-      this.hostnameCache = {}
+      this.hostnameCache = {
+        expires: Date.now() + 1000 * 60 * 60 * 24,
+        hostnames: {}
+      }
     }
 
     if (this.adCache.length > 50) {
@@ -517,31 +527,34 @@ class Wappalyzer {
           validation.hostname.test(url.hostname) &&
           !validation.hostnameBlacklist.test(url.hostname)
         ) {
-          if (!(hostname in this.hostnameCache)) {
-            this.hostnameCache[hostname] = {
+          if (!(hostname in this.hostnameCache.hostnames)) {
+            this.hostnameCache.hostnames[hostname] = {
               applications: {},
               meta: {}
             }
           }
 
-          if (!(appName in this.hostnameCache[hostname].applications)) {
-            this.hostnameCache[hostname].applications[appName] = {
+          if (
+            !(appName in this.hostnameCache.hostnames[hostname].applications)
+          ) {
+            this.hostnameCache.hostnames[hostname].applications[appName] = {
               hits: 0
             }
           }
 
-          this.hostnameCache[hostname].applications[appName].hits += 1
+          this.hostnameCache.hostnames[hostname].applications[appName].hits += 1
 
           if (apps[appName].version) {
-            this.hostnameCache[hostname].applications[appName].version =
-              app.version
+            this.hostnameCache.hostnames[hostname].applications[
+              appName
+            ].version = app.version
           }
         }
       }
     })
 
-    if (hostname in this.hostnameCache) {
-      this.hostnameCache[hostname].meta.language = language
+    if (hostname in this.hostnameCache.hostnames) {
+      this.hostnameCache.hostnames[hostname].meta.language = language
     }
 
     this.ping()

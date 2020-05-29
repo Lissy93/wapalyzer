@@ -354,14 +354,17 @@ wappalyzer.driver.getRobotsTxt = async (host, secure = false) => {
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
+wappalyzer.driver.ping = async (
+  hostnameCache = { expires: 0, hostnames: {} },
+  adCache = []
+) => {
   const tracking = await getOption('tracking', true)
   const termsAccepted =
     userAgent() === 'chrome' || (await getOption('termsAccepted', false))
 
   if (tracking && termsAccepted) {
-    if (Object.keys(hostnameCache).length) {
-      post('https://api.wappalyzer.com/ping/v1/', hostnameCache)
+    if (Object.keys(hostnameCache.hostnames).length) {
+      post('https://api.wappalyzer.com/ping/v1/', hostnameCache.hostnames)
     }
 
     if (adCache.length) {
@@ -404,16 +407,19 @@ wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
       url: `${wappalyzer.config.websiteURL}installed`
     })
   } else if (version !== previousVersion && upgradeMessage) {
-    openTab({
-      url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
-      background: true
-    })
+    // openTab({
+    //  url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+    //  background: true
+    // })
   }
 
   await setOption('version', version)
 
   // Hostname cache
-  wappalyzer.hostnameCache = await getOption('hostnameCache', {})
+  wappalyzer.hostnameCache = await getOption('hostnameCache', {
+    expires: Date.now() + 1000 * 60 * 60 * 24,
+    hostnames: {}
+  })
 
   // Run content script on all tabs
   try {

@@ -70,6 +70,14 @@ function replaceDom(domTemplate) {
       })
     })
   })
+
+  Array.from(document.querySelectorAll('a')).forEach((link) => {
+    link.addEventListener('click', () => {
+      browser.tabs.create({ url: link.href })
+
+      return false
+    })
+  })
 }
 
 function replaceDomWhenReady(dom) {
