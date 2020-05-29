@@ -12113,6 +12113,22 @@
       "script": "cdn\\.6th\\.ir",
       "website": "https://webzi.ir"
     },
+    "Welcart": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "usces_cookie": ""
+      },
+      "cpe": "cpe:/a:welcart:welcart",
+      "icon": "welcart.png",
+      "implies": "WordPress",
+      "html": [
+        "<link[^>]+?href=\"[^\"]+usces_default(?:\\.min)?\\.css",
+        "<!-- Welcart version : v([\\d.]+)\\;version:\\1"
+      ],
+      "website": "https://www.welcart.com"
+    },
     "Whooshkaa": {
       "cats": [
         5
