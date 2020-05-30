@@ -9060,6 +9060,26 @@
       },
       "website": "https://redaxscript.com"
     },
+    "Redis": {
+      "cats": [
+        34
+      ],
+      "cpe": "cpe:/a:redislabs:redis",
+      "icon": "Redis.svg",
+      "website": "https://redis.io"
+    },
+    "Redis Object Cache": {
+      "cats": [
+        23
+      ],
+      "icon": "RedisObjectCache.svg",
+      "implies": [
+        "Redis",
+        "WordPress"
+      ],
+      "html": "<!--\\s+Performance optimized by Redis Object Cache",
+      "website": "https://wprediscache.com"
+    },
     "ReDoc": {
       "cats": [
         4
