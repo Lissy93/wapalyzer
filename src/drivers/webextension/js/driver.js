@@ -363,7 +363,10 @@ wappalyzer.driver.ping = async (
     userAgent() === 'chrome' || (await getOption('termsAccepted', false))
 
   if (tracking && termsAccepted) {
-    if (Object.keys(hostnameCache.hostnames).length) {
+    if (
+      hostnameCache.hostnames &&
+      Object.keys(hostnameCache.hostnames).length
+    ) {
       post('https://api.wappalyzer.com/ping/v1/', hostnameCache.hostnames)
     }
 

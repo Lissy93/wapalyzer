@@ -364,7 +364,7 @@ class Wappalyzer {
     }
 
     if (this.adCache.length > 50) {
-      this.driver.ping({}, this.adCache)
+      this.driver.ping(undefined, this.adCache)
 
       this.adCache = []
     }

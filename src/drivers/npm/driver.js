@@ -114,16 +114,16 @@ function processJs(window, patterns) {
 
 function processHtml(html, maxCols, maxRows) {
   if (maxCols || maxRows) {
-    const batchs = []
+    const batches = []
     const rows = html.length / maxCols
 
     for (let i = 0; i < rows; i += 1) {
       if (i < maxRows / 2 || i > rows - maxRows / 2) {
-        batchs.push(html.slice(i * maxCols, (i + 1) * maxCols))
+        batches.push(html.slice(i * maxCols, (i + 1) * maxCols))
       }
     }
 
-    html = batchs.join('\n')
+    html = batches.join('\n')
   }
 
   return html
