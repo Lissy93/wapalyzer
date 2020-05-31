@@ -13868,10 +13868,14 @@
     },
     "Tencent Waterproof Wall": {
       "cats": [
-        9
+        9,
+        16
       ],
       "icon": "TencentWaterproofWall.png",
-      "script": "/TCaptcha\\.js",
+      "script": [
+        "/TCaptcha\\.js",
+        "captcha\\.qq\\.com/.*"
+      ],
       "website": "https://007.qq.com/"
     },
     "Saber": {
