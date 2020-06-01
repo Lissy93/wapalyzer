@@ -9477,7 +9477,7 @@
       "cats": [
         13
       ],
-      "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
+      "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1",
       "js": {
         "__SENTRY__": "",
         "Sentry": "",
@@ -12857,7 +12857,7 @@
       "cookies": {
         "ZM_TEST": "true"
       },
-      "html": "<script>(?:\\.|\\n)*\"refresh\":{\"version\":\"([\\w\\.]+)\\s\\;version:\\1",
+      "html": "<script>(?:\\.|\\n)*\"refresh\":\\{\"version\":\"([\\w\\.]+)\\s\\;version:\\1",
       "implies": "Java",
       "website": "https://www.zimbra.com/"
     },
