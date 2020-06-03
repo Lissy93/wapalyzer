@@ -329,7 +329,7 @@ class Site {
 
           if (response.status() >= 300 && response.status() < 400) {
             if (this.headers.location) {
-              url = new URL(this.headers.location.slice(-1))
+              url = new URL(this.headers.location.slice(-1), url)
             }
           } else {
             responseReceived = true
