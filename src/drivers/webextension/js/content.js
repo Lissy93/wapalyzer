@@ -1,20 +1,14 @@
-/** global: browser */
-/** global: XMLSerializer */
-
-/* global browser */
+'use strict'
 /* eslint-env browser */
+/* globals chrome */
 
-const port = browser.runtime.connect({
-  name: 'content.js'
-})
+const port = chrome.runtime.connect({ name: 'content.js' })
 
 ;(async function() {
-  if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
+  if (typeof chrome !== 'undefined' && typeof document.body !== 'undefined') {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     try {
-      port.postMessage({ id: 'init' })
-
       // HTML
       let html = new XMLSerializer().serializeToString(document)
 
@@ -23,9 +17,7 @@ const port = browser.runtime.connect({
       const maxRows = 3000
       const rows = html.length / maxCols
 
-      let i
-
-      for (i = 0; i < rows; i += 1) {
+      for (let i = 0; i < rows; i += 1) {
         if (i < maxRows / 2 || i > rows - maxRows / 2) {
           chunks.push(html.slice(i * maxCols, (i + 1) * maxCols))
         }
@@ -34,13 +26,23 @@ const port = browser.runtime.connect({
       html = chunks.join('\n')
 
       // Scripts
-      const scripts = Array.prototype.slice
-        .apply(document.scripts)
-        .filter((script) => script.src)
-        .map((script) => script.src)
+      const scripts = Array.from(document.scripts)
+        .filter(({ src }) => src)
+        .map(({ src }) => src)
         .filter((script) => script.indexOf('data:text/javascript;') !== 0)
 
-      port.postMessage({ id: 'analyze', subject: { html, scripts } })
+      // Meta
+      const meta = Array.from(document.querySelectorAll('meta'))
+        .map((meta) => ({
+          key: meta.getAttribute('name') || meta.getAttribute('property'),
+          value: meta.getAttribute('content')
+        }))
+        .filter(({ value }) => value)
+
+      port.postMessage({
+        func: 'onContentLoad',
+        args: [location.href, { html, scripts, meta }]
+      })
 
       // JavaScript variables
       const script = document.createElement('script')
@@ -53,7 +55,10 @@ const port = browser.runtime.connect({
 
           window.removeEventListener('message', onMessage)
 
-          port.postMessage({ id: 'analyze', subject: { js: event.data.js } })
+          port.postMessage({
+            func: 'analyze',
+            args: [new URL(location.href), { js: event.data.js }]
+          })
 
           script.remove()
         }
@@ -63,11 +68,11 @@ const port = browser.runtime.connect({
         port.postMessage({ id: 'get_js_patterns' })
       }
 
-      script.setAttribute('src', browser.extension.getURL('js/inject.js'))
+      script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
 
       document.body.appendChild(script)
     } catch (error) {
-      port.postMessage({ id: 'log', subject: error })
+      port.postMessage({ func: 'error', args: [error, 'content.js'] })
     }
   }
 })()

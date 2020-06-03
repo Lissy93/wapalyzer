@@ -410,10 +410,10 @@ wappalyzer.driver.ping = async (
       url: `${wappalyzer.config.websiteURL}installed`
     })
   } else if (version !== previousVersion && upgradeMessage) {
-    // openTab({
-    //  url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
-    //  background: true
-    // })
+    openTab({
+      url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+      background: true
+    })
   }
 
   await setOption('version', version)

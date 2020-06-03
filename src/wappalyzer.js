@@ -1,11 +1,3 @@
-/**
- * Wappalyzer v5
- *
- * Created by Elbert Alias <elbert@alias.io>
- *
- * License: GPLv3 http://www.gnu.org/licenses/gpl-3.0.txt
- */
-
 const validation = {
   hostname: /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/,
   hostnameBlacklist: /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/
