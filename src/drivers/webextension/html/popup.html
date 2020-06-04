@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -7,28 +6,35 @@
 
 		<link rel="stylesheet" href="../css/popup.css">
 
-		<script src="../node_modules/webextension-polyfill/dist/browser-polyfill.js"></script>
-		<script src="../js/lib/jsontodom.js"></script>
+		<script src="../js/utils.js"></script>
 		<script src="../js/popup.js"></script>
 	</head>
 	<body>
     <div class="header">
-      <a href="https://www.wappalyzer.com/" class="header__link" target="_blank">
+      <a href="https://www.wappalyzer.com/" class="header__link">
         <img alt="" class="header__logo header__logo--light" src="../images/logo-purple.svg">
         <img alt="" class="header__logo header__logo--dark" src="../images/logo-white.svg">
       </a>
     </div>
 
-    <div class="container">
-      <div class="terms__wrapper">
-        <div class="terms">
-          <div class="terms__content" data-i18n="termsContent"></div>
+    <div class="terms">
+      <div class="terms__content" data-i18n="termsContent"></div>
 
-          <button class="terms__accept" data-i18n="termsAccept" />
+      <button class="terms__accept" data-i18n="termsAccept">&nbsp;</button>
 
-          <a class="terms__privacy" href="https://www.wappalyzer.com/privacy" data-i18n="privacyPolicy"></a>
-        </div>
-      </div>
+      <a class="terms__privacy" href="https://www.wappalyzer.com/privacy" data-i18n="privacyPolicy"></a>
+    </div>
+
+    <div class="detections"></div>
+
+    <div data-template="category" class="category">
+      <a class="category__link" href="#"></a>
+
+      <div class="technologies"></div>
+    </div>
+
+    <div data-template="technology" class="technology">
+      <a class="technology__link" href="#"></a>
     </div>
 
     <div class="footer">
