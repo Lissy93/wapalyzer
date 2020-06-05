@@ -237,7 +237,13 @@ const Driver = {
       tabs.map(async ({ id: tabId }) => {
         await promisify(chrome.pageAction, 'setIcon', {
           tabId,
-          path: chrome.extension.getURL(`../images/icons/${icon}`)
+          path: chrome.extension.getURL(
+            `../images/icons/${
+              /\.svg$/i.test(icon)
+                ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                : icon
+            }`
+          )
         })
 
         chrome.pageAction.show(tabId)

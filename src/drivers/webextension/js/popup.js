@@ -2,22 +2,31 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, getOption } = Utils
+const { agent, getOption, setOption, promisify } = Utils
 
 const Popup = {
   port: chrome.runtime.connect({ name: 'popup.js' }),
 
   async init() {
+    // Templates
     Popup.templates = Array.from(
       document.querySelectorAll('[data-template]')
     ).reduce((templates, template) => {
-      templates[template.dataset.template] = template
+      templates[template.dataset.template] = template.cloneNode(true)
+
+      template.remove()
 
       return templates
     }, {})
 
-    Popup.log(agent)
+    // Theme mode
+    const themeMode = await getOption('themeMode', false)
 
+    if (themeMode) {
+      document.querySelector('body').classList.add('theme-mode')
+    }
+
+    // Terms
     const termsAccepted =
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
@@ -30,6 +39,22 @@ const Popup = {
 
       Popup.i18n()
     }
+
+    // Alert
+    const [{ url }] = await promisify(chrome.tabs, 'query', {
+      active: true,
+      currentWindow: true
+    })
+
+    document.querySelector(
+      '.alerts__link'
+    ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
+      `${url}`
+    )}`
+
+    document
+      .querySelector('.footer__settings')
+      .addEventListener('click', () => chrome.runtime.openOptionsPage())
   },
 
   driver(func, ...args) {
@@ -63,23 +88,52 @@ const Popup = {
     )
   },
 
-  onGetDetections(detections) {
+  async onGetDetections(detections) {
+    const pinnedCategory = await getOption('pinnedCategory')
+
     Popup.categorise(detections).forEach(
-      ({ name, slug: categorySlug, technologies }) => {
+      ({ id, name, slug: categorySlug, technologies }) => {
         const categoryNode = Popup.templates.category.cloneNode(true)
 
         const link = categoryNode.querySelector('.category__link')
 
-        link.href = `https://www.wappalyzer.com/technologie/${categorySlug}`
+        link.href = `https://www.wappalyzer.com/technologies/${categorySlug}`
         link.textContent = name
 
+        const pins = categoryNode.querySelectorAll('.category__pin')
+
+        if (pinnedCategory === id) {
+          pins.forEach((pin) => pin.classList.add('category__pin--active'))
+        }
+
+        pins.forEach((pin) =>
+          pin.addEventListener('click', async () => {
+            const pinnedCategory = await getOption('pinnedCategory')
+
+            Array.from(
+              document.querySelectorAll('.category__pin--active')
+            ).forEach((pin) => pin.classList.remove('category__pin--active'))
+
+            if (pinnedCategory === id) {
+              await setOption('pinnedCategory', null)
+            } else {
+              await setOption('pinnedCategory', id)
+
+              pins.forEach((pin) => pin.classList.add('category__pin--active'))
+            }
+          })
+        )
+
         technologies.forEach(({ name, slug, icon, website }) => {
-          Popup.log(name)
           const technologyNode = Popup.templates.technology.cloneNode(true)
+
+          const image = technologyNode.querySelector('.technology__icon')
+
+          image.src = `../images/icons/${icon}`
 
           const link = technologyNode.querySelector('.technology__link')
 
-          link.href = `https://www.wappalyzer.com/technologie/${categorySlug}/${slug}`
+          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
           link.textContent = name
 
           categoryNode
@@ -89,6 +143,10 @@ const Popup = {
 
         document.querySelector('.detections').appendChild(categoryNode)
       }
+    )
+
+    Array.from(document.querySelectorAll('a')).forEach((a) =>
+      a.addEventListener('click', () => Popup.driver('open', a.href))
     )
 
     Popup.i18n()

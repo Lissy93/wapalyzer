@@ -238,6 +238,8 @@ class Site {
     this.listeners = {}
 
     this.headers = {}
+
+    this.pages = []
   }
 
   async init() {}
@@ -284,6 +286,8 @@ class Site {
     }
 
     const page = await this.browser.newPage()
+
+    this.pages.push(page)
 
     page.setDefaultTimeout(this.options.maxWait)
 
@@ -402,6 +406,10 @@ class Site {
 
     // Validate response
     if (!this.analyzedUrls[url.href].status) {
+      await page.close()
+
+      this.log('Page closed')
+
       throw new Error('NO_RESPONSE')
     }
 
@@ -451,6 +459,10 @@ class Site {
       },
       []
     )
+
+    await page.close()
+
+    this.log('Page closed')
 
     this.emit('goto', url)
 
@@ -536,6 +548,24 @@ class Site {
         })
       }
     })
+  }
+
+  async destroy() {
+    await Promise.all(
+      this.pages.map(async (page) => {
+        if (page) {
+          try {
+            await page.close()
+
+            this.log('Page closed')
+          } catch (error) {
+            // Continue
+          }
+        }
+      })
+    )
+
+    this.log('Site closed')
   }
 }
 
