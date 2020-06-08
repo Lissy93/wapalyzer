@@ -2,7 +2,7 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, getOption, setOption, promisify } = Utils
+const { agent, i18n, getOption, setOption, promisify } = Utils
 
 const Popup = {
   port: chrome.runtime.connect({ name: 'popup.js' }),
@@ -37,7 +37,7 @@ const Popup = {
     } else {
       document.querySelector('.detections').style.display = 'none'
 
-      Popup.i18n()
+      i18n()
     }
 
     // Alert
@@ -65,12 +65,6 @@ const Popup = {
     Popup.driver('log', message, 'popup.js')
   },
 
-  i18n() {
-    Array.from(document.querySelectorAll('[data-i18n]')).forEach(
-      (node) => (node.innerHTML = chrome.i18n.getMessage(node.dataset.i18n))
-    )
-  },
-
   categorise(technologies) {
     return Object.values(
       technologies.reduce((categories, technology) => {
@@ -90,6 +84,10 @@ const Popup = {
 
   async onGetDetections(detections) {
     const pinnedCategory = await getOption('pinnedCategory')
+
+    if (detections.length) {
+      document.querySelector('.empty').remove()
+    }
 
     Popup.categorise(detections).forEach(
       ({ id, name, slug: categorySlug, technologies }) => {
@@ -149,7 +147,7 @@ const Popup = {
       a.addEventListener('click', () => Popup.driver('open', a.href))
     )
 
-    Popup.i18n()
+    i18n()
   }
 }
 

@@ -2,7 +2,14 @@
 /* eslint-env browser */
 /* globals chrome, Wappalyzer, Utils */
 
-const { setTechnologies, setCategories, analyze, resolve, unique } = Wappalyzer
+const {
+  setTechnologies,
+  setCategories,
+  analyze,
+  analyzeManyToMany,
+  resolve,
+  unique
+} = Wappalyzer
 const { promisify, getOption } = Utils
 
 const Driver = {
@@ -52,6 +59,26 @@ const Driver = {
     }
   },
 
+  async analyzeJs(href, js) {
+    const url = new URL(href)
+
+    await Driver.onDetect(
+      url,
+      Array.prototype.concat.apply(
+        [],
+        await Promise.all(
+          js.map(({ name, chain, value }) =>
+            analyzeManyToMany(
+              Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+              'js',
+              { [chain]: [value] }
+            )
+          )
+        )
+      )
+    )
+  },
+
   onRuntimeConnect(port) {
     port.onMessage.addListener(async ({ func, args }) => {
       if (!func) {
@@ -59,6 +86,12 @@ const Driver = {
       }
 
       Driver.log({ port: port.name, func, args })
+
+      if (!Driver[func]) {
+        Driver.error(new Error(`Method does not exist: Driver.${func}`))
+
+        return
+      }
 
       port.postMessage({
         func,
@@ -175,7 +208,10 @@ const Driver = {
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(url, await analyze(url, { headers }, { tab }))
+            await Driver.onDetect(
+              url,
+              await analyze(url.href, { headers }, { tab })
+            )
           }
         }
       } catch (error) {
@@ -192,10 +228,14 @@ const Driver = {
         domain: `.${url.hostname}`
       })
 
-      await Driver.onDetect(url, await analyze(url, items))
+      await Driver.onDetect(url, await analyze(href, items))
     } catch (error) {
       Driver.error(error)
     }
+  },
+
+  getTechnologies() {
+    return Wappalyzer.technologies
   },
 
   async onDetect(url, detections = []) {

@@ -10,6 +10,7 @@
 
 body {
 	background: #fff;
+  color: var(--color-text);
   direction: __MSG_@@bidi_dir__;
 	font-family: Helvetica, Arial, sans-serif;
   font-size: .9rem;
@@ -36,7 +37,7 @@ a:hover {
   align-items: center;
   border-bottom: 1px solid var(--color-secondary);
   display: flex;
-  height: 4rem;
+  height: 4.5rem;
 }
 
 .header__logo {
@@ -77,6 +78,12 @@ a:hover {
   columns: 2;
   column-gap: 1.5rem;
   padding: 1.5rem 1.5rem .5rem 1.5rem;
+}
+
+.empty {
+  opacity: .3;
+  padding: 3rem 1.5rem .5rem 1.5rem;
+  text-align: center;
 }
 
 .category {
@@ -189,9 +196,19 @@ a:hover {
   margin-top: 1rem;
 }
 
+.options {
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.options__label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   body.theme-mode {
     background: var(--color-primary-darken);
+    color: var(--color-text-dark);
   }
 
   .theme-mode a {
@@ -220,6 +237,10 @@ a:hover {
 
   .theme-mode .footer {
     border-color: var(--color-secondary-dark)
+  }
+
+  .theme-mode .footer__settings {
+    color: var(--color-text-dark);
   }
 
   .theme-mode .alerts__icon {

@@ -2,10 +2,10 @@
 /* eslint-env browser */
 /* globals chrome */
 
-const port = chrome.runtime.connect({ name: 'content.js' })
+const Content = {
+  port: chrome.runtime.connect({ name: 'content.js' }),
 
-;(async function() {
-  if (typeof chrome !== 'undefined' && typeof document.body !== 'undefined') {
+  async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     try {
@@ -25,13 +25,13 @@ const port = chrome.runtime.connect({ name: 'content.js' })
 
       html = chunks.join('\n')
 
-      // Scripts
+      // Script tags
       const scripts = Array.from(document.scripts)
         .filter(({ src }) => src)
         .map(({ src }) => src)
         .filter((script) => script.indexOf('data:text/javascript;') !== 0)
 
-      // Meta
+      // Meta tags
       const meta = Array.from(document.querySelectorAll('meta'))
         .map((meta) => ({
           key: meta.getAttribute('name') || meta.getAttribute('property'),
@@ -39,61 +39,64 @@ const port = chrome.runtime.connect({ name: 'content.js' })
         }))
         .filter(({ value }) => value)
 
-      port.postMessage({
+      Content.port.postMessage({
         func: 'onContentLoad',
         args: [location.href, { html, scripts, meta }]
       })
 
-      // JavaScript variables
-      const script = document.createElement('script')
+      Content.port.postMessage({ func: 'getTechnologies' })
+    } catch (error) {
+      Content.port.postMessage({ func: 'error', args: [error, 'content.js'] })
+    }
+  },
 
-      script.onload = () => {
-        const onMessage = (event) => {
-          if (event.data.id !== 'js') {
-            return
-          }
+  onGetTechnologies(technologies) {
+    const script = document.createElement('script')
 
-          window.removeEventListener('message', onMessage)
-
-          port.postMessage({
-            func: 'analyze',
-            args: [new URL(location.href), { js: event.data.js }]
-          })
-
-          script.remove()
+    script.onload = () => {
+      const onMessage = ({ data }) => {
+        if (!data.wappalyzer || !data.wappalyzer.js) {
+          return
         }
 
-        window.addEventListener('message', onMessage)
+        window.removeEventListener('message', onMessage)
 
-        port.postMessage({ id: 'get_js_patterns' })
+        Content.port.postMessage({
+          func: 'analyzeJs',
+          args: [location.href, data.wappalyzer.js]
+        })
+
+        script.remove()
       }
 
-      script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
+      window.addEventListener('message', onMessage)
 
-      document.body.appendChild(script)
-    } catch (error) {
-      port.postMessage({ func: 'error', args: [error, 'content.js'] })
+      window.postMessage({
+        wappalyzer: {
+          technologies: technologies
+            .filter(({ js }) => Object.keys(js).length)
+            .filter(({ name }) => name === 'jQuery')
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+        }
+      })
     }
+
+    script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
+
+    document.body.appendChild(script)
   }
-})()
+}
 
-port.onMessage.addListener((message) => {
-  switch (message.id) {
-    case 'get_js_patterns':
-      postMessage(
-        {
-          id: 'patterns',
-          patterns: message.response.patterns
-        },
-        window.location.href
-      )
+Content.port.onMessage.addListener(({ func, args }) => {
+  const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
 
-      break
-    default:
-    // Do nothing
+  if (Content[onFunc]) {
+    Content[onFunc](args)
   }
 })
 
-// https://stackoverflow.com/a/44774834
-// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
-undefined // eslint-disable-line no-unused-expressions
+if (/complete|interactive|loaded/.test(document.readyState)) {
+  Content.init()
+} else {
+  document.addEventListener('DOMContentLoaded', Content.init)
+}

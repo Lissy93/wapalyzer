@@ -43,5 +43,11 @@ const Utils = {
     } catch (error) {
       throw new Error(error.message || error.toString())
     }
+  },
+
+  i18n() {
+    Array.from(document.querySelectorAll('[data-i18n]')).forEach(
+      (node) => (node.innerHTML = chrome.i18n.getMessage(node.dataset.i18n))
+    )
   }
 }
