@@ -8499,13 +8499,13 @@
       ],
       "icon": "plentymarkets.svg",
       "headers": {
-        "X-Plenty-Shop": ".*"
+        "X-Plenty-Shop": ""
       },
       "meta": {
         "generator": "plentymarkets"
       },
       "script": [
-        "plenty\\.shop\\.(min\\.)?js"
+        "plenty\\.shop\\.(?:min\\.)?js"
       ],
       "website": "https://www.plentymarkets.com/"
     },
