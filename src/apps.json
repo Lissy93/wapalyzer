@@ -8505,15 +8505,31 @@
       "implies": "Scala",
       "website": "https://www.playframework.com"
     },
-    "Plentymarkets": {
+    "plentymarkets": {
       "cats": [
         6
       ],
-      "icon": "Plentymarkets.png",
+      "icon": "plentymarkets.svg",
+      "headers": {
+        "X-Plenty-Shop": ""
+      },
       "meta": {
         "generator": "plentymarkets"
       },
-      "website": "http://plentymarkets.eu"
+      "script": [
+        "plenty\\.shop\\.(?:min\\.)?js"
+      ],
+      "website": "https://www.plentymarkets.com/"
+    },
+    "Ceres": {
+      "cats": [
+        6
+      ],
+      "icon": "Ceres.svg",
+      "headers": {
+        "X-Plenty-Shop": "Ceres"
+      },
+      "website": "https://www.plentymarkets.com/"
     },
     "Plesk": {
       "cats": [
