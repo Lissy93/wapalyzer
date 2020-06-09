@@ -3853,11 +3853,11 @@
       ],
       "html": [
         "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-        "<link[^>]* href=\"https://use\\.fontawesome\\.com/releases/v([^>]+)/css/\\;version:\\1",
-        "<script[^>]* src=[^>]+fontawesome(?:\\.js)?"
+        "<link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1"
       ],
-      "icon": "Font Awesome.png",
-      "website": "http://fontawesome.io"
+      "script": "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
+      "icon": "font-awesome.svg",
+      "website": "https://fontawesome.com/"
     },
     "Fork CMS": {
       "cats": [
