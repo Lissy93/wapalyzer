@@ -61,6 +61,18 @@ const Driver = {
       ['responseHeaders']
     )
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
+
+    const { version } = chrome.runtime.getManifest()
+    const previous = await getOption('version')
+    const upgradeMessage = await getOption('upgradeMessage', true)
+
+    if (previous === null) {
+      Driver.open('https://www.wappalyzer.com/installed')
+    } else if (version !== previous && upgradeMessage) {
+      Driver.open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+    }
+
+    await setOption('version', version)
   },
 
   log(message, source = 'driver', type = 'log') {

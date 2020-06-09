@@ -31,11 +31,21 @@ const Popup = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (termsAccepted) {
-      document.querySelector('.terms').style.display = 'none'
-
       Popup.driver('getDetections')
     } else {
+      document.querySelector('.terms').style.display = 'flex'
       document.querySelector('.detections').style.display = 'none'
+      document.querySelector('.empty').style.display = 'none'
+
+      document.querySelector('.terms').addEventListener('click', async () => {
+        await setOption('termsAccepted', true)
+
+        document.querySelector('.terms').remove()
+        document.querySelector('.detections').style.display = 'block'
+        document.querySelector('.empty').style.display = 'block'
+
+        Popup.driver('getDetections')
+      })
 
       i18n()
     }
@@ -166,7 +176,13 @@ const Popup = {
     )
 
     Array.from(document.querySelectorAll('a')).forEach((a) =>
-      a.addEventListener('click', () => Popup.driver('open', a.href))
+      a.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        Popup.driver('open', a.href)
+
+        return false
+      })
     )
 
     i18n()
