@@ -1,20 +1,22 @@
-/** global: browser */
-/** global: XMLSerializer */
-
-/* global browser */
+'use strict'
 /* eslint-env browser */
+/* globals chrome */
 
-const port = browser.runtime.connect({
-  name: 'content.js'
-})
-
-;(async function() {
-  if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
+const Content = {
+  async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    try {
-      port.postMessage({ id: 'init' })
+    Content.port = chrome.runtime.connect({ name: 'content.js' })
 
+    Content.port.onMessage.addListener(({ func, args }) => {
+      const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
+
+      if (Content[onFunc]) {
+        Content[onFunc](args)
+      }
+    })
+
+    try {
       // HTML
       let html = new XMLSerializer().serializeToString(document)
 
@@ -23,9 +25,7 @@ const port = browser.runtime.connect({
       const maxRows = 3000
       const rows = html.length / maxCols
 
-      let i
-
-      for (i = 0; i < rows; i += 1) {
+      for (let i = 0; i < rows; i += 1) {
         if (i < maxRows / 2 || i > rows - maxRows / 2) {
           chunks.push(html.slice(i * maxCols, (i + 1) * maxCols))
         }
@@ -33,62 +33,83 @@ const port = browser.runtime.connect({
 
       html = chunks.join('\n')
 
-      // Scripts
-      const scripts = Array.prototype.slice
-        .apply(document.scripts)
-        .filter((script) => script.src)
-        .map((script) => script.src)
+      const language =
+        document.documentElement.getAttribute('lang') ||
+        document.documentElement.getAttribute('xml:lang') ||
+        (await new Promise((resolve) =>
+          chrome.i18n.detectLanguage(html, ({ languages }) =>
+            resolve(
+              languages
+                .filter(({ percentage }) => percentage >= 75)
+                .map(({ language: lang }) => lang)[0]
+            )
+          )
+        ))
+
+      // Script tags
+      const scripts = Array.from(document.scripts)
+        .filter(({ src }) => src)
+        .map(({ src }) => src)
         .filter((script) => script.indexOf('data:text/javascript;') !== 0)
 
-      port.postMessage({ id: 'analyze', subject: { html, scripts } })
+      // Meta tags
+      const meta = Array.from(document.querySelectorAll('meta'))
+        .map((meta) => ({
+          key: meta.getAttribute('name') || meta.getAttribute('property'),
+          value: meta.getAttribute('content')
+        }))
+        .filter(({ value }) => value)
 
-      // JavaScript variables
-      const script = document.createElement('script')
+      Content.port.postMessage({
+        func: 'onContentLoad',
+        args: [location.href, { html, scripts, meta }, language]
+      })
 
-      script.onload = () => {
-        const onMessage = (event) => {
-          if (event.data.id !== 'js') {
-            return
-          }
+      Content.port.postMessage({ func: 'getTechnologies' })
+    } catch (error) {
+      Content.port.postMessage({ func: 'error', args: [error, 'content.js'] })
+    }
+  },
 
-          window.removeEventListener('message', onMessage)
+  onGetTechnologies(technologies) {
+    const script = document.createElement('script')
 
-          port.postMessage({ id: 'analyze', subject: { js: event.data.js } })
-
-          script.remove()
+    script.onload = () => {
+      const onMessage = ({ data }) => {
+        if (!data.wappalyzer || !data.wappalyzer.js) {
+          return
         }
 
-        window.addEventListener('message', onMessage)
+        window.removeEventListener('message', onMessage)
 
-        port.postMessage({ id: 'get_js_patterns' })
+        Content.port.postMessage({
+          func: 'analyzeJs',
+          args: [location.href, data.wappalyzer.js]
+        })
+
+        script.remove()
       }
 
-      script.setAttribute('src', browser.extension.getURL('js/inject.js'))
+      window.addEventListener('message', onMessage)
 
-      document.body.appendChild(script)
-    } catch (error) {
-      port.postMessage({ id: 'log', subject: error })
+      window.postMessage({
+        wappalyzer: {
+          technologies: technologies
+            .filter(({ js }) => Object.keys(js).length)
+            .filter(({ name }) => name === 'jQuery')
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+        }
+      })
     }
+
+    script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
+
+    document.body.appendChild(script)
   }
-})()
+}
 
-port.onMessage.addListener((message) => {
-  switch (message.id) {
-    case 'get_js_patterns':
-      postMessage(
-        {
-          id: 'patterns',
-          patterns: message.response.patterns
-        },
-        window.location.href
-      )
-
-      break
-    default:
-    // Do nothing
-  }
-})
-
-// https://stackoverflow.com/a/44774834
-// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
-undefined // eslint-disable-line no-unused-expressions
+if (/complete|interactive|loaded/.test(document.readyState)) {
+  Content.init()
+} else {
+  document.addEventListener('DOMContentLoaded', Content.init)
+}

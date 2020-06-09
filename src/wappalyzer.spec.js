@@ -1,51 +1,50 @@
 /* eslint-env mocha */
 
-const { assert, expect } = require('chai');
-const Wappalyzer = require('../src/wappalyzer');
+const { assert, expect } = require('chai')
+const Wappalyzer = require('../src/wappalyzer')
 
 const appsJson = {
   appUrl: {
-    url: 'test',
+    url: 'test'
   },
   appCookies: {
     cookies: {
-      test: 'test',
-    },
+      test: 'test'
+    }
   },
   appUppercaseCookies: {
     cookies: {
-      Test: 'Test',
-    },
+      Test: 'Test'
+    }
   },
   appHeaders: {
     headers: {
-      'X-Powered-By': 'test',
-    },
+      'X-Powered-By': 'test'
+    }
   },
   appHtml: {
     html: 'test v(\\d)\\;confidence:50\\;version:\\1',
     implies: 'appImplies',
-    excludes: 'appExcludes',
+    excludes: 'appExcludes'
   },
   appMeta: {
     meta: {
-      generator: 'test',
-    },
+      generator: 'test'
+    }
   },
   appScript: {
-    script: 'test',
+    script: 'test'
   },
   appJs: {
     js: {
-      key: 'value',
-    },
+      key: 'value'
+    }
   },
-  appImplies: {
-  },
+  appImplies: {},
   appExcludes: {
-    html: 'test',
-  },
-};
+    html: 'test'
+  }
+}
 
 const driverData = {
   cookies: [
@@ -53,92 +52,86 @@ const driverData = {
       name: 'test',
       value: 'test',
       domain: '',
-      path: '',
-    },
+      path: ''
+    }
   ],
   headers: {
-    'x-powered-by': [
-      'test',
-    ],
+    'x-powered-by': ['test']
   },
   html: '<meta name="generator" content="test"> html test v1',
-  scripts: [
-    'test',
-  ],
+  scripts: ['test'],
   js: {
     appJs: {
-      key: [
-        'value',
-      ],
-    },
-  },
-};
+      key: ['value']
+    }
+  }
+}
 
 describe('Wappalyzer', () => {
   describe('#analyze()', () => {
-    let apps;
+    let apps
 
     before(async () => {
-      const wappalyzer = new Wappalyzer();
+      const wappalyzer = new Wappalyzer()
 
-      wappalyzer.apps = appsJson;
+      wappalyzer.apps = appsJson
 
-      wappalyzer.parseJsPatterns();
+      wappalyzer.parseJsPatterns()
 
       wappalyzer.driver.displayApps = (detected) => {
-        apps = detected;
-      };
+        apps = detected
+      }
 
-      await wappalyzer.analyze({ canonical: 'test' }, driverData);
-    });
+      await wappalyzer.analyze({ canonical: 'test' }, driverData)
+    })
 
     it('should identify technologies using URLs', () => {
-      expect(apps).to.have.any.keys('appUrl');
-    });
+      expect(apps).to.have.any.keys('appUrl')
+    })
 
     it('should identify technologies using HTML', () => {
-      expect(apps).to.have.any.keys('appHtml');
-    });
+      expect(apps).to.have.any.keys('appHtml')
+    })
 
     it('should identify technologies using meta tags', () => {
-      expect(apps).to.have.any.keys('appMeta');
-    });
+      expect(apps).to.have.any.keys('appMeta')
+    })
 
     it('should identify technologies using script URLs', () => {
-      expect(apps).to.have.any.keys('appScript');
-    });
+      expect(apps).to.have.any.keys('appScript')
+    })
 
     it('should identify technologies using headers', () => {
-      expect(apps).to.have.any.keys('appHeaders');
-    });
+      expect(apps).to.have.any.keys('appHeaders')
+    })
 
     it('should identify technologies using cookies', () => {
-      expect(apps).to.have.any.keys('appCookies');
-    });
+      expect(apps).to.have.any.keys('appCookies')
+    })
 
     it('should identify technologies using uppercase named cookies', () => {
-      expect(apps).to.have.any.keys('appUppercaseCookies');
-    });
+      expect(apps).to.have.any.keys('appUppercaseCookies')
+    })
 
     it('should identify technologies using JavaScript', () => {
-      expect(apps).to.have.any.keys('appJs');
-    });
+      expect(apps).to.have.any.keys('appJs')
+    })
 
     it('should return the implied technology', () => {
-      expect(apps).to.have.any.keys('appImplies');
-    });
+      expect(apps).to.have.any.keys('appImplies')
+    })
 
     it('should not return the excluded technology', () => {
-      expect(apps).to.not.have.any.keys('appExcludes');
-    });
+      expect(apps).to.not.have.any.keys('appExcludes')
+    })
 
     it('should return the confidence value', () => {
-      assert.equal(apps.appHtml.confidenceTotal, 50);
-    });
+      assert.equal(apps.appHtml.confidenceTotal, 50)
+    })
 
     it('should return the version number', () => {
-      assert.equal(apps.appHtml.version, '1');
-    });
+      assert.equal(apps.appHtml.version, '1')
+    })
 
     it('should analyze html', async () => {
       const html = `
@@ -156,123 +149,125 @@ describe('Wappalyzer', () => {
         <!-- End Google Tag Manager -->
         </body>
       </html>
-    `;
-      const wappalyzer = new Wappalyzer();
+    `
+      const wappalyzer = new Wappalyzer()
       wappalyzer.apps = {
-        "Google Tag Manager": {
-          "html": [
-            "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
-            "<!-- (?:End )?Google Tag Manager -->"
+        'Google Tag Manager': {
+          html: [
+            'googletagmanager\\.com/ns\\.html[^>]+></iframe>',
+            '<!-- (?:End )?Google Tag Manager -->'
           ]
         }
-      };
-      var applications = null;
+      }
+      let applications = null
       wappalyzer.driver = {
-        log () {},
-        displayApps (detectedMap) {
-          applications = detectedMap;
+        log() {},
+        displayApps(detectedMap) {
+          applications = detectedMap
         }
-      };
+      }
 
-      await wappalyzer.analyze({ canonical: 'example.com' }, { html });
-      assert.equal(applications['Google Tag Manager'].name, 'Google Tag Manager');
-    });
+      await wappalyzer.analyze({ canonical: 'example.com' }, { html })
+      assert.equal(
+        applications['Google Tag Manager'].name,
+        'Google Tag Manager'
+      )
+    })
 
     it('should analyze scripts', async () => {
       const scripts = [
         'http://www.google-analytics.com/analytics.js',
         'http://example.com/assets/js/jquery.min.js'
-      ];
-      const wappalyzer = new Wappalyzer();
+      ]
+      const wappalyzer = new Wappalyzer()
       wappalyzer.apps = {
-        "Google Analytics": {
-          "cats": [
-            10
-          ],
-          "script": "google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?UA:"
+        'Google Analytics': {
+          cats: [10],
+          script:
+            'google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?UA:'
         },
-        "jQuery": {
-          "script": [
-            "jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-            "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-            "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
+        jQuery: {
+          script: [
+            'jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1',
+            '/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1',
+            'jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1'
           ]
         }
-      };
-      var applications = null;
+      }
+      let applications = null
       wappalyzer.driver = {
-        log () {},
-        displayApps (detectedMap) {
-          applications = detectedMap;
+        log() {},
+        displayApps(detectedMap) {
+          applications = detectedMap
         }
-      };
+      }
 
-      await wappalyzer.analyze({ canonical: 'example.com' }, { scripts });
-      assert.equal(applications['Google Analytics'].name, 'Google Analytics');
-      assert.equal(applications['jQuery'].name, 'jQuery');
-    });
+      await wappalyzer.analyze({ canonical: 'example.com' }, { scripts })
+      assert.equal(applications['Google Analytics'].name, 'Google Analytics')
+      assert.equal(applications.jQuery.name, 'jQuery')
+    })
 
     it('should analyze headers', async () => {
       const headers = {
-        'date': [ 'Thu, 01 Feb 2018 11:34:18 GMT' ],
-        'connection': [ 'keep-alive' ],
-        'x-powered-by': [ 'Express'],
-        'etag': [ 'W/125-1jQLmiya7mfec43xR3Eb3pjdu64s' ],
-        'content-length': [ '293' ],
-        'content-type': [ 'text/html; charset=utf-8' ]
-      };
-      const wappalyzer = new Wappalyzer();
+        date: ['Thu, 01 Feb 2018 11:34:18 GMT'],
+        connection: ['keep-alive'],
+        'x-powered-by': ['Express'],
+        etag: ['W/125-1jQLmiya7mfec43xR3Eb3pjdu64s'],
+        'content-length': ['293'],
+        'content-type': ['text/html; charset=utf-8']
+      }
+      const wappalyzer = new Wappalyzer()
       wappalyzer.apps = {
-        "Express": {
-          "headers": {
-            "X-Powered-By": "^Express$"
+        Express: {
+          headers: {
+            'X-Powered-By': '^Express$'
           }
         }
-      };
-      var applications = null;
+      }
+      let applications = null
       wappalyzer.driver = {
-        log () {},
-        displayApps (detectedMap) {
-          applications = detectedMap;
+        log() {},
+        displayApps(detectedMap) {
+          applications = detectedMap
         }
-      };
+      }
 
-      await wappalyzer.analyze({ canonical: 'example.com' }, { headers });
-      assert.equal(applications['Express'].name, 'Express');
-    });
+      await wappalyzer.analyze({ canonical: 'example.com' }, { headers })
+      assert.equal(applications.Express.name, 'Express')
+    })
 
     it('should analyze js globals', async () => {
       const js = {
-        'Moment.js': { 'moment': { '0': true } },
-        'Google Font API': { 'WebFonts': { '0': true } }
-      };
-      const wappalyzer = new Wappalyzer();
+        'Moment.js': { moment: { '0': true } },
+        'Google Font API': { WebFonts: { '0': true } }
+      }
+      const wappalyzer = new Wappalyzer()
       wappalyzer.apps = {
-        "Moment.js": {
-          "js": {
-            "moment": "",
-            "moment.version": "(.*)\\;version:\\1"
+        'Moment.js': {
+          js: {
+            moment: '',
+            'moment.version': '(.*)\\;version:\\1'
           }
         },
-        "Google Font API": {
-          "js": {
-            "WebFonts": ""
+        'Google Font API': {
+          js: {
+            WebFonts: ''
           }
         }
-      };
-      var applications = null;
+      }
+      let applications = null
       wappalyzer.driver = {
-        log () {},
-        displayApps (detectedMap) {
-          applications = detectedMap;
+        log() {},
+        displayApps(detectedMap) {
+          applications = detectedMap
         }
-      };
+      }
 
-      wappalyzer.parseJsPatterns();
-      await wappalyzer.analyze({ canonical: 'example.com' }, { js });
+      wappalyzer.parseJsPatterns()
+      await wappalyzer.analyze({ canonical: 'example.com' }, { js })
 
-      assert.equal(applications['Google Font API'].name, 'Google Font API');
-      assert.equal(applications['Moment.js'].name, 'Moment.js');
-    });
-  });
-});
+      assert.equal(applications['Google Font API'].name, 'Google Font API')
+      assert.equal(applications['Moment.js'].name, 'Moment.js')
+    })
+  })
+})

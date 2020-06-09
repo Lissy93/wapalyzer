@@ -1,335 +1,188 @@
+'use strict'
 /* eslint-env browser */
-/* global browser, jsonToDOM */
+/* globals chrome, Utils */
 
-/** global: browser */
-/** global: jsonToDOM */
+const { agent, i18n, getOption, setOption, promisify } = Utils
 
-let pinnedCategory = null
-let termsAccepted = false
+const Popup = {
+  port: chrome.runtime.connect({ name: 'popup.js' }),
 
-const port = browser.runtime.connect({
-  name: 'popup.js'
-})
+  async init() {
+    // Templates
+    Popup.templates = Array.from(
+      document.querySelectorAll('[data-template]')
+    ).reduce((templates, template) => {
+      templates[template.dataset.template] = template.cloneNode(true)
 
-function slugify(string) {
-  return string
-    .toLowerCase()
-    .replace(/[^a-z0-9-]/g, '-')
-    .replace(/--+/g, '-')
-    .replace(/(?:^-|-$)/, '')
-}
+      template.remove()
 
-function i18n() {
-  const nodes = document.querySelectorAll('[data-i18n]')
+      return templates
+    }, {})
 
-  Array.prototype.forEach.call(nodes, (node) => {
-    node.innerHTML = browser.i18n.getMessage(node.dataset.i18n)
-  })
-}
+    // Theme mode
+    const themeMode = await getOption('themeMode', false)
 
-function replaceDom(domTemplate) {
-  const container = document.getElementsByClassName('container')[0]
-
-  while (container.firstChild) {
-    container.removeChild(container.firstChild)
-  }
-
-  container.appendChild(jsonToDOM(domTemplate, document, {}))
-
-  i18n()
-
-  Array.from(
-    document.querySelectorAll('.detected__category-pin-wrapper')
-  ).forEach((pin) => {
-    pin.addEventListener('click', () => {
-      const categoryId = parseInt(pin.dataset.categoryId, 10)
-
-      if (categoryId === pinnedCategory) {
-        pin.className = 'detected__category-pin-wrapper'
-
-        pinnedCategory = null
-      } else {
-        const active = document.querySelector(
-          '.detected__category-pin-wrapper--active'
-        )
-
-        if (active) {
-          active.className = 'detected__category-pin-wrapper'
-        }
-
-        pin.className =
-          'detected__category-pin-wrapper detected__category-pin-wrapper--active'
-
-        pinnedCategory = categoryId
-      }
-
-      port.postMessage({
-        id: 'set_option',
-        key: 'pinnedCategory',
-        value: pinnedCategory
-      })
-    })
-  })
-
-  Array.from(document.querySelectorAll('a')).forEach((link) => {
-    link.addEventListener('click', () => {
-      browser.tabs.create({ url: link.href })
-
-      return false
-    })
-  })
-}
-
-function replaceDomWhenReady(dom) {
-  if (/complete|interactive|loaded/.test(document.readyState)) {
-    replaceDom(dom)
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      replaceDom(dom)
-    })
-  }
-}
-
-function appsToDomTemplate(response) {
-  let template = []
-
-  if (response.tabCache && Object.keys(response.tabCache.detected).length > 0) {
-    const categories = {}
-
-    // Group apps by category
-    for (const appName in response.tabCache.detected) {
-      response.apps[appName].cats.forEach((cat) => {
-        categories[cat] = categories[cat] || {
-          name: response.categories[cat].name,
-          apps: []
-        }
-
-        categories[cat].apps[appName] = appName
-      })
+    if (themeMode) {
+      document.querySelector('body').classList.add('theme-mode')
     }
 
-    for (const cat in categories) {
-      const apps = []
+    // Terms
+    const termsAccepted =
+      agent === 'chrome' || (await getOption('termsAccepted', false))
 
-      for (const appName in categories[cat].apps) {
-        const { confidenceTotal, version } = response.tabCache.detected[appName]
+    if (termsAccepted) {
+      document.querySelector('.terms').style.display = 'none'
 
-        apps.push([
-          'a',
-          {
-            class: 'detected__app',
-            href: `https://www.wappalyzer.com/technologies/${slugify(
-              categories[cat].name
-            )}/${slugify(appName)}`
-          },
-          [
-            'img',
-            {
-              class: 'detected__app-icon',
-              src: `../images/icons/${response.apps[appName].icon ||
-                'default.svg'}`
-            }
-          ],
-          [
-            'span',
-            {
-              class: 'detected__app-name'
-            },
-            appName
-          ],
-          version
-            ? [
-                'span',
-                {
-                  class: 'detected__app-version'
-                },
-                version
-              ]
-            : null,
-          confidenceTotal < 100
-            ? [
-                'span',
-                {
-                  class: 'detected__app-confidence'
-                },
-                `${confidenceTotal}% sure`
-              ]
-            : null
-        ])
-      }
+      Popup.driver('getDetections')
+    } else {
+      document.querySelector('.detections').style.display = 'none'
 
-      template.push([
-        'div',
-        {
-          class: 'detected__category'
-        },
-        [
-          'div',
-          {
-            class: 'detected__category-name'
-          },
-          [
-            'a',
-            {
-              class: 'detected__category-link',
-              href: `https://www.wappalyzer.com/categories/${slugify(
-                response.categories[cat].name
-              )}`
-            },
-            browser.i18n.getMessage(`categoryName${cat}`)
-          ],
-          [
-            'span',
-            {
-              class: `detected__category-pin-wrapper${
-                parseInt(pinnedCategory, 10) === parseInt(cat, 10)
-                  ? ' detected__category-pin-wrapper--active'
-                  : ''
-              }`,
-              'data-category-id': cat,
-              title: browser.i18n.getMessage('categoryPin')
-            },
-            [
-              'img',
-              {
-                class: 'detected__category-pin detected__category-pin--active',
-                src: '../images/pin-active.svg'
-              }
-            ],
-            [
-              'img',
-              {
-                class:
-                  'detected__category-pin detected__category-pin--inactive',
-                src: '../images/pin.svg'
-              }
-            ]
-          ]
-        ],
-        [
-          'div',
-          {
-            class: 'detected__apps'
-          },
-          apps
-        ]
-      ])
+      i18n()
     }
 
-    template = [
-      'div',
-      {
-        class: 'detected'
-      },
-      template
-    ]
-  } else {
-    template = [
-      'div',
-      {
-        class: 'empty'
-      },
-      [
-        'span',
-        {
-          class: 'empty__text'
-        },
-        browser.i18n.getMessage('noAppsDetected')
-      ]
-    ]
-  }
-
-  return template
-}
-
-async function getApps() {
-  try {
-    const tabs = await browser.tabs.query({
+    // Alert
+    const [{ url }] = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true
     })
 
-    const url = new URL(tabs[0].url)
-
     document.querySelector(
-      '.footer__link'
+      '.alerts__link'
     ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
-      `${url.protocol}//${url.hostname}`
+      `${url}`
     )}`
 
-    port.postMessage({
-      id: 'get_apps',
-      tab: tabs[0]
-    })
-  } catch (error) {
-    console.error(error) // eslint-disable-line no-console
-  }
-}
+    document
+      .querySelector('.footer__settings')
+      .addEventListener('click', () => chrome.runtime.openOptionsPage())
+  },
 
-/**
- * Async function to update body class based on option.
- */
-function getThemeMode() {
-  try {
-    port.postMessage({
-      id: 'update_theme_mode'
-    })
-  } catch (error) {
-    console.error(error) // eslint-disable-line no-console
-  }
-}
+  driver(func, ...args) {
+    Popup.port.postMessage({ func, args })
+  },
 
-/**
- * Update theme mode based on browser option.
- * @param {object} res Response from port listener.
- */
-function updateThemeMode(res) {
-  if (res.hasOwnProperty('themeMode') && res.themeMode !== false) {
-    document.body.classList.add('theme-mode-sync')
-  }
-}
+  log(message) {
+    Popup.driver('log', message, 'popup.js')
+  },
 
-function displayApps(response) {
-  pinnedCategory = response.pinnedCategory // eslint-disable-line prefer-destructuring
-  termsAccepted = response.termsAccepted // eslint-disable-line prefer-destructuring
+  categorise(technologies) {
+    return Object.values(
+      technologies.reduce((categories, technology) => {
+        technology.categories.forEach((category) => {
+          categories[category.id] = categories[category.id] || {
+            ...category,
+            technologies: []
+          }
 
-  if (termsAccepted) {
-    replaceDomWhenReady(appsToDomTemplate(response))
-  } else {
+          categories[category.id].technologies.push(technology)
+        })
+
+        return categories
+      }, {})
+    )
+  },
+
+  async onGetDetections(detections) {
+    const pinnedCategory = await getOption('pinnedCategory')
+
+    if (detections.length) {
+      document.querySelector('.empty').remove()
+    }
+
+    Popup.categorise(detections).forEach(
+      ({ id, name, slug: categorySlug, technologies }) => {
+        const categoryNode = Popup.templates.category.cloneNode(true)
+
+        const link = categoryNode.querySelector('.category__link')
+
+        link.href = `https://www.wappalyzer.com/technologies/${categorySlug}`
+        link.textContent = name
+
+        const pins = categoryNode.querySelectorAll('.category__pin')
+
+        if (pinnedCategory === id) {
+          pins.forEach((pin) => pin.classList.add('category__pin--active'))
+        }
+
+        pins.forEach((pin) =>
+          pin.addEventListener('click', async () => {
+            const pinnedCategory = await getOption('pinnedCategory')
+
+            Array.from(
+              document.querySelectorAll('.category__pin--active')
+            ).forEach((pin) => pin.classList.remove('category__pin--active'))
+
+            if (pinnedCategory === id) {
+              await setOption('pinnedCategory', null)
+            } else {
+              await setOption('pinnedCategory', id)
+
+              pins.forEach((pin) => pin.classList.add('category__pin--active'))
+            }
+          })
+        )
+
+        technologies
+          .filter(({ confidence }) => confidence)
+          .forEach(({ name, slug, confidence, version, icon, website }) => {
+            const technologyNode = Popup.templates.technology.cloneNode(true)
+
+            const image = technologyNode.querySelector('.technology__icon')
+
+            image.src = `../images/icons/${icon}`
+
+            const link = technologyNode.querySelector('.technology__link')
+
+            link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
+            link.textContent = name
+
+            const confidenceNode = technologyNode.querySelector(
+              '.technology__confidence'
+            )
+
+            if (confidence < 100) {
+              confidenceNode.textContent = `${confidence}% sure`
+            } else {
+              confidenceNode.remove()
+            }
+
+            const versionNode = technologyNode.querySelector(
+              '.technology__version'
+            )
+
+            if (version) {
+              versionNode.textContent = version
+            } else {
+              versionNode.remove()
+            }
+
+            categoryNode
+              .querySelector('.technologies')
+              .appendChild(technologyNode)
+          })
+
+        document.querySelector('.detections').appendChild(categoryNode)
+      }
+    )
+
+    Array.from(document.querySelectorAll('a')).forEach((a) =>
+      a.addEventListener('click', () => Popup.driver('open', a.href))
+    )
+
     i18n()
-
-    const wrapper = document.querySelector('.terms__wrapper')
-
-    document.querySelector('.terms__accept').addEventListener('click', () => {
-      port.postMessage({
-        id: 'set_option',
-        key: 'termsAccepted',
-        value: true
-      })
-
-      wrapper.classList.remove('terms__wrapper--active')
-
-      getApps()
-    })
-
-    wrapper.classList.add('terms__wrapper--active')
   }
 }
 
-port.onMessage.addListener((message) => {
-  switch (message.id) {
-    case 'get_apps':
-      displayApps(message.response)
+Popup.port.onMessage.addListener(({ func, args }) => {
+  const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
 
-      break
-    case 'update_theme_mode':
-      updateThemeMode(message.response)
-
-      break
-    default:
-    // Do nothing
+  if (Popup[onFunc]) {
+    Popup[onFunc](args)
   }
 })
 
-getThemeMode()
-getApps()
+if (/complete|interactive|loaded/.test(document.readyState)) {
+  Popup.init()
+} else {
+  document.addEventListener('DOMContentLoaded', Popup.init)
+}

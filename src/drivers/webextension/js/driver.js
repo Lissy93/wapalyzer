@@ -1,445 +1,483 @@
-/**
- * WebExtension driver
- */
-
+'use strict'
 /* eslint-env browser */
-/* global browser, chrome, Wappalyzer */
+/* globals chrome, Wappalyzer, Utils */
 
-/** global: browser */
-/** global: chrome */
-/** global: fetch */
-/** global: Wappalyzer */
+const {
+  setTechnologies,
+  setCategories,
+  analyze,
+  analyzeManyToMany,
+  resolve
+} = Wappalyzer
+const { agent, promisify, getOption, setOption } = Utils
 
-const wappalyzer = new Wappalyzer()
+const expiry = 1000 * 60 * 60 * 24
 
-const tabCache = {}
-const robotsTxtQueue = {}
+const Driver = {
+  lastPing: Date.now(),
 
-let categoryOrder = []
+  async init() {
+    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
 
-browser.tabs.onRemoved.addListener((tabId) => {
-  tabCache[tabId] = null
-})
+    await Driver.loadTechnologies()
 
-function userAgent() {
-  const url = chrome.extension.getURL('/')
+    const hostnameCache = (await getOption('hostnames')) || {}
 
-  if (url.startsWith('moz-')) {
-    return 'firefox'
-  }
+    Driver.cache = {
+      hostnames: Object.keys(hostnameCache).reduce(
+        (cache, hostname) => ({
+          ...cache,
+          [hostname]: {
+            ...hostnameCache[hostname],
+            detections: hostnameCache[hostname].detections.map(
+              ({
+                pattern: { regex, confidence, version },
+                match,
+                technology: name
+              }) => ({
+                pattern: {
+                  regex: new RegExp(regex, 'i'),
+                  confidence,
+                  version
+                },
+                match,
+                technology: Wappalyzer.technologies.find(
+                  ({ name: _name }) => name === _name
+                )
+              })
+            )
+          }
+        }),
+        {}
+      ),
+      tabs: {},
+      robots: (await getOption('robots')) || {},
+      ads: (await getOption('ads')) || []
+    }
 
-  if (url.startsWith('ms-browser')) {
-    return 'edge'
-  }
+    chrome.webRequest.onCompleted.addListener(
+      Driver.onWebRequestComplete,
+      { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
+      ['responseHeaders']
+    )
+    chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
+  },
 
-  return 'chrome'
-}
+  log(message, source = 'driver', type = 'log') {
+    // eslint-disable-next-line no-console
+    console[type](`wappalyzer | ${source} |`, message)
+  },
 
-/**
- * Get a value from localStorage
- */
-function getOption(name, defaultValue = null) {
-  return new Promise(async (resolve, reject) => {
-    let value = defaultValue
+  warn(message, source = 'driver') {
+    Driver.log(message, source, 'warn')
+  },
 
+  error(error, source = 'driver') {
+    Driver.log(error, source, 'error')
+  },
+
+  open(url, active = true) {
+    chrome.tabs.create({ url, active })
+  },
+
+  async loadTechnologies() {
     try {
-      const option = await browser.storage.local.get(name)
+      const { apps: technologies, categories } = await (
+        await fetch(chrome.extension.getURL('apps.json'))
+      ).json()
 
-      if (option[name] !== undefined) {
-        value = option[name]
+      setTechnologies(technologies)
+      setCategories(categories)
+    } catch (error) {
+      Driver.error(error)
+    }
+  },
+
+  post(url, body) {
+    try {
+      return fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(body)
+      })
+    } catch (error) {
+      throw new Error(error.message || error.toString())
+    }
+  },
+
+  async analyzeJs(href, js) {
+    const url = new URL(href)
+
+    await Driver.onDetect(
+      url,
+      Array.prototype.concat.apply(
+        [],
+        await Promise.all(
+          js.map(({ name, chain, value }) =>
+            analyzeManyToMany(
+              Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+              'js',
+              { [chain]: [value] }
+            )
+          )
+        )
+      )
+    )
+  },
+
+  onRuntimeConnect(port) {
+    Driver.log(`Connected to ${port.name}`)
+
+    port.onMessage.addListener(async ({ func, args }) => {
+      if (!func) {
+        return
       }
-    } catch (error) {
-      wappalyzer.log(error.message, 'driver', 'error')
 
-      return reject(error.message)
-    }
+      Driver.log({ port: port.name, func, args })
 
-    return resolve(value)
-  })
-}
+      if (!Driver[func]) {
+        Driver.error(new Error(`Method does not exist: Driver.${func}`))
 
-/**
- * Set a value in localStorage
- */
-function setOption(name, value) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      await browser.storage.local.set({ [name]: value })
-    } catch (error) {
-      wappalyzer.log(error.message, 'driver', 'error')
+        return
+      }
 
-      return reject(error.message)
-    }
-
-    return resolve()
-  })
-}
-
-/**
- * Open a tab
- */
-function openTab(args) {
-  browser.tabs.create({
-    url: args.url,
-    active: args.background === undefined || !args.background
-  })
-}
-
-/**
- * Make a POST request
- */
-async function post(url, body) {
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(body)
+      port.postMessage({
+        func,
+        args: await Driver[func].call(port.sender, ...(args || []))
+      })
     })
+  },
 
-    wappalyzer.log(`POST ${url}: ${response.status}`, 'driver')
-  } catch (error) {
-    wappalyzer.log(`POST ${url}: ${error}`, 'driver', 'error')
-  }
-}
-
-// Capture response headers
-browser.webRequest.onCompleted.addListener(
-  async (request) => {
-    const headers = {}
-
+  async onWebRequestComplete(request) {
     if (request.responseHeaders) {
-      const url = wappalyzer.parseUrl(request.url)
-
-      let tab
+      const headers = {}
 
       try {
-        ;[tab] = await browser.tabs.query({ url: [url.href] })
-      } catch (error) {
-        wappalyzer.log(error, 'driver', 'error')
-      }
+        const url = new URL(request.url)
 
-      if (tab) {
-        request.responseHeaders.forEach((header) => {
-          const name = header.name.toLowerCase()
+        const [tab] = await promisify(chrome.tabs, 'query', { url: [url.href] })
 
-          headers[name] = headers[name] || []
+        if (tab) {
+          request.responseHeaders.forEach((header) => {
+            const name = header.name.toLowerCase()
 
-          headers[name].push(
-            (header.value || header.binaryValue || '').toString()
-          )
-        })
+            headers[name] = headers[name] || []
 
-        if (
-          headers['content-type'] &&
-          /\/x?html/.test(headers['content-type'][0])
-        ) {
-          wappalyzer.analyze(url, { headers }, { tab })
+            headers[name].push(
+              (header.value || header.binaryValue || '').toString()
+            )
+          })
+
+          if (
+            headers['content-type'] &&
+            /\/x?html/.test(headers['content-type'][0])
+          ) {
+            await Driver.onDetect(
+              url,
+              await analyze(url.href, { headers }, { tab })
+            )
+          }
         }
+      } catch (error) {
+        Driver.error(error)
       }
     }
   },
-  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-  ['responseHeaders']
-)
 
-browser.runtime.onConnect.addListener((port) => {
-  port.onMessage.addListener(async (message) => {
-    if (message.id === undefined) {
+  async onContentLoad(href, items, language) {
+    try {
+      const url = new URL(href)
+
+      items.cookies = await promisify(chrome.cookies, 'getAll', {
+        domain: `.${url.hostname}`
+      })
+
+      await Driver.onDetect(url, await analyze(href, items), language, true)
+    } catch (error) {
+      Driver.error(error)
+    }
+  },
+
+  getTechnologies() {
+    return Wappalyzer.technologies
+  },
+
+  async onDetect(url, detections = [], language, incrementHits = false) {
+    if (!detections.length) {
       return
     }
 
-    if (message.id !== 'log') {
-      wappalyzer.log(`Message from ${port.name}: ${message.id}`, 'driver')
-    }
+    const { hostname, href } = url
 
-    const pinnedCategory = await getOption('pinnedCategory')
-
-    const url = wappalyzer.parseUrl(port.sender.tab ? port.sender.tab.url : '')
-
-    const cookies = await browser.cookies.getAll({
-      domain: `.${url.hostname}`
+    // Cache detections
+    const cache = (Driver.cache.hostnames[hostname] = {
+      ...(Driver.cache.hostnames[hostname] || {
+        detections: [],
+        hits: 0
+      }),
+      dateTime: Date.now()
     })
 
-    let response
+    // Remove duplicates
+    cache.detections = cache.detections = cache.detections.concat(detections)
 
-    switch (message.id) {
-      case 'log':
-        wappalyzer.log(message.subject, message.source)
-
-        break
-      case 'init':
-        wappalyzer.analyze(url, { cookies }, { tab: port.sender.tab })
-
-        break
-      case 'analyze':
-        if (message.subject.html) {
-          browser.i18n
-            .detectLanguage(message.subject.html)
-            .then(({ languages }) => {
-              const language = languages
-                .filter(({ percentage }) => percentage >= 75)
-                .map(({ language: lang }) => lang)[0]
-
-              message.subject.language = language
-
-              wappalyzer.analyze(url, message.subject, { tab: port.sender.tab })
-            })
-        } else {
-          wappalyzer.analyze(url, message.subject, { tab: port.sender.tab })
-        }
-
-        await setOption('hostnameCache', wappalyzer.hostnameCache)
-
-        break
-      case 'ad_log':
-        wappalyzer.cacheDetectedAds(message.subject)
-
-        break
-      case 'get_apps':
-        response = {
-          tabCache: tabCache[message.tab.id],
-          apps: wappalyzer.apps,
-          categories: wappalyzer.categories,
-          pinnedCategory,
-          termsAccepted:
-            userAgent() === 'chrome' ||
-            (await getOption('termsAccepted', false))
-        }
-
-        break
-      case 'set_option':
-        await setOption(message.key, message.value)
-
-        break
-      case 'get_js_patterns':
-        response = {
-          patterns: wappalyzer.jsPatterns
-        }
-
-        break
-      case 'update_theme_mode':
-        // Sync theme mode to popup.
-        response = {
-          themeMode: await getOption('themeMode', false)
-        }
-
-        break
-      default:
-      // Do nothing
-    }
-
-    if (response) {
-      port.postMessage({
-        id: message.id,
-        response
-      })
-    }
-  })
-})
-
-wappalyzer.driver.document = document
-
-/**
- * Log messages to console
- */
-wappalyzer.driver.log = (message, source, type) => {
-  const log = ['warn', 'error'].includes(type) ? type : 'log'
-
-  console[log](`[wappalyzer ${type}]`, `[${source}]`, message) // eslint-disable-line no-console
-}
-
-/**
- * Display apps
- */
-wappalyzer.driver.displayApps = async (detected, meta, context) => {
-  const { tab } = context
-
-  if (tab === undefined) {
-    return
-  }
-
-  tabCache[tab.id] = tabCache[tab.id] || {
-    detected: []
-  }
-
-  tabCache[tab.id].detected = detected
-
-  const pinnedCategory = await getOption('pinnedCategory')
-  const dynamicIcon = await getOption('dynamicIcon', true)
-
-  let found = false
-
-  // Find the main application to display
-  ;[pinnedCategory].concat(categoryOrder).forEach((match) => {
-    Object.keys(detected).forEach((appName) => {
-      const app = detected[appName]
-
-      app.props.cats.forEach((category) => {
-        if (category === match && !found) {
-          let icon =
-            app.props.icon && dynamicIcon ? app.props.icon : 'default.svg'
-
-          if (/\.svg$/i.test(icon)) {
-            icon = `converted/${icon.replace(/\.svg$/, '.png')}`
-          }
-
-          try {
-            browser.pageAction.setIcon({
-              tabId: tab.id,
-              path: `../images/icons/${icon}`
-            })
-          } catch (e) {
-            // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
-          }
-
-          found = true
-        }
-      })
-    })
-  })
-
-  browser.pageAction.show(tab.id)
-}
-
-/**
- * Fetch and cache robots.txt for host
- */
-wappalyzer.driver.getRobotsTxt = async (host, secure = false) => {
-  if (robotsTxtQueue[host]) {
-    return robotsTxtQueue[host]
-  }
-
-  const tracking = await getOption('tracking', true)
-  const robotsTxtCache = await getOption('robotsTxtCache', {})
-
-  robotsTxtQueue[host] = new Promise(async (resolve) => {
-    if (!tracking) {
-      return resolve([])
-    }
-
-    if (host in robotsTxtCache) {
-      return resolve(robotsTxtCache[host])
-    }
-
-    const timeout = setTimeout(() => resolve([]), 3000)
-
-    let response
-
-    try {
-      response = await fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, {
-        redirect: 'follow',
-        mode: 'no-cors'
-      })
-    } catch (error) {
-      wappalyzer.log(error, 'driver', 'error')
-
-      return resolve([])
-    }
-
-    clearTimeout(timeout)
-
-    const robotsTxt = response.ok ? await response.text() : ''
-
-    robotsTxtCache[host] = Wappalyzer.parseRobotsTxt(robotsTxt)
-
-    await setOption('robotsTxtCache', robotsTxtCache)
-
-    delete robotsTxtQueue[host]
-
-    return resolve(robotsTxtCache[host])
-  })
-
-  return robotsTxtQueue[host]
-}
-
-/**
- * Anonymously track detected applications for research purposes
- */
-wappalyzer.driver.ping = async (
-  hostnameCache = { expires: 0, hostnames: {} },
-  adCache = []
-) => {
-  const tracking = await getOption('tracking', true)
-  const termsAccepted =
-    userAgent() === 'chrome' || (await getOption('termsAccepted', false))
-
-  if (tracking && termsAccepted) {
-    if (
-      hostnameCache.hostnames &&
-      Object.keys(hostnameCache.hostnames).length
-    ) {
-      post('https://api.wappalyzer.com/ping/v1/', hostnameCache.hostnames)
-    }
-
-    if (adCache.length) {
-      post('https://ad.wappalyzer.com/log/wp/', adCache)
-    }
-
-    await setOption('robotsTxtCache', {})
-  }
-}
-
-// Init
-;(async () => {
-  // Technologies
-  try {
-    const response = await fetch('../apps.json')
-    const json = await response.json()
-
-    wappalyzer.apps = json.apps
-    wappalyzer.categories = json.categories
-  } catch (error) {
-    wappalyzer.log(`GET apps.json: ${error.message}`, 'driver', 'error')
-  }
-
-  wappalyzer.parseJsPatterns()
-
-  categoryOrder = Object.keys(wappalyzer.categories)
-    .map((categoryId) => parseInt(categoryId, 10))
-    .sort(
-      (a, b) =>
-        wappalyzer.categories[a].priority - wappalyzer.categories[b].priority
+    cache.detections.filter(
+      ({ technology: { name }, pattern: { regex } }, index) =>
+        cache.detections.findIndex(
+          ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            name === _name && (!regex || regex.toString() === _regex.toString())
+        ) === index
     )
 
-  // Version check
-  const { version } = browser.runtime.getManifest()
-  const previousVersion = await getOption('version')
-  const upgradeMessage = await getOption('upgradeMessage', true)
+    cache.hits += incrementHits ? 1 : 0
+    cache.language = cache.language || language
 
-  if (previousVersion === null) {
-    openTab({
-      url: `${wappalyzer.config.websiteURL}installed`
-    })
-  } else if (version !== previousVersion && upgradeMessage) {
-    // openTab({
-    //  url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
-    //  background: true
-    // })
-  }
+    // Expire cache
+    Driver.cache.hostnames = Object.keys(Driver.cache.hostnames).reduce(
+      (hostnames, hostname) => {
+        const cache = Driver.cache.hostnames[hostname]
 
-  await setOption('version', version)
+        if (cache.dateTime > Date.now() - expiry) {
+          hostnames[hostname] = cache
+        }
 
-  // Hostname cache
-  wappalyzer.hostnameCache = await getOption('hostnameCache', {
-    expires: Date.now() + 1000 * 60 * 60 * 24,
-    hostnames: {}
-  })
+        return hostnames
+      },
+      {}
+    )
 
-  // Run content script on all tabs
-  try {
-    const tabs = await browser.tabs.query({
-      url: ['http://*/*', 'https://*/*']
-    })
+    await setOption(
+      'hostnames',
+      Object.keys(Driver.cache.hostnames).reduce(
+        (cache, hostname) => ({
+          ...cache,
+          [hostname]: {
+            ...Driver.cache.hostnames[hostname],
+            detections: Driver.cache.hostnames[hostname].detections.map(
+              ({
+                pattern: { regex, confidence, version },
+                match,
+                technology: { name: technology }
+              }) => ({
+                technology,
+                pattern: {
+                  regex: regex.source,
+                  confidence,
+                  version
+                },
+                match
+              })
+            )
+          }
+        }),
+        {}
+      )
+    )
 
-    tabs.forEach(async (tab) => {
-      try {
-        await browser.tabs.executeScript(tab.id, {
-          file: '../js/content.js'
+    const resolved = resolve(Driver.cache.hostnames[hostname].detections)
+
+    await Driver.setIcon(url, resolved)
+
+    const tabs = await promisify(chrome.tabs, 'query', { url: [href] })
+
+    tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+
+    Driver.log({ hostname, technologies: resolved })
+
+    await Driver.ping()
+  },
+
+  async onAd(ad) {
+    Driver.cache.ads.push(ad)
+
+    await setOption('ads', Driver.cache.ads)
+  },
+
+  async setIcon(url, technologies) {
+    const dynamicIcon = await getOption('dynamicIcon', true)
+
+    let icon = 'default.svg'
+
+    if (dynamicIcon) {
+      const pinnedCategory = parseInt(await getOption('pinnedCategory'), 10)
+
+      const pinned = technologies.find(({ categories }) =>
+        categories.some(({ id }) => id === pinnedCategory)
+      )
+
+      ;({ icon } = pinned ||
+        technologies.sort(({ categories: a }, { categories: b }) => {
+          const max = (value) =>
+            value.reduce((max, { priority }) => Math.max(max, priority))
+
+          return max(a) > max(b) ? -1 : 1
+        })[0] || { icon })
+    }
+
+    const tabs = await promisify(chrome.tabs, 'query', { url: [url.href] })
+
+    await Promise.all(
+      tabs.map(async ({ id: tabId }) => {
+        await promisify(chrome.pageAction, 'setIcon', {
+          tabId,
+          path: chrome.extension.getURL(
+            `../images/icons/${
+              /\.svg$/i.test(icon)
+                ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                : icon
+            }`
+          )
         })
-      } catch (error) {
-        //
-      }
+
+        chrome.pageAction.show(tabId)
+      })
+    )
+  },
+
+  async getDetections() {
+    const [{ id }] = await promisify(chrome.tabs, 'query', {
+      active: true,
+      currentWindow: true
     })
-  } catch (error) {
-    wappalyzer.log(error, 'driver', 'error')
+
+    return Driver.cache.tabs[id]
+  },
+
+  async getRobots(hostname, secure = false) {
+    if (!(await getOption('tracking', true))) {
+      return
+    }
+
+    if (typeof Driver.cache.robots[hostname] !== 'undefined') {
+      return Driver.cache.robots[hostname]
+    }
+
+    try {
+      Driver.cache.robots[hostname] = await Promise.race([
+        new Promise(async (resolve) => {
+          const response = await fetch(
+            `http${secure ? 's' : ''}://${hostname}/robots.txt`,
+            {
+              redirect: 'follow',
+              mode: 'no-cors'
+            }
+          )
+
+          if (!response.ok) {
+            Driver.error(new Error(response.statusText))
+
+            resolve('')
+          }
+
+          let agent
+
+          resolve(
+            (await response.text()).split('\n').reduce((disallows, line) => {
+              let matches = /^User-agent:\s*(.+)$/i.exec(line.trim())
+
+              if (matches) {
+                agent = matches[1].toLowerCase()
+              } else if (agent === '*' || agent === 'wappalyzer') {
+                matches = /^Disallow:\s*(.+)$/i.exec(line.trim())
+
+                if (matches) {
+                  disallows.push(matches[1])
+                }
+              }
+
+              return disallows
+            }, [])
+          )
+        }),
+        new Promise((resolve) => setTimeout(() => resolve(''), 5000))
+      ])
+
+      Driver.cache.robots = Object.keys(Driver.cache.robots)
+        .slice(-50)
+        .reduce(
+          (cache, hostname) => ({
+            ...cache,
+            [hostname]: Driver.cache.robots[hostname]
+          }),
+          {}
+        )
+
+      await setOption('robots', Driver.cache.robots)
+
+      return Driver.cache.robots[hostname]
+    } catch (error) {
+      Driver.error(error)
+    }
+  },
+
+  async checkRobots(href) {
+    const url = new URL(href)
+
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+      throw new Error('Invalid protocol')
+    }
+
+    const robots = await Driver.getRobots(
+      url.hostname,
+      url.protocol === 'https:'
+    )
+
+    if (robots.some((disallowed) => url.pathname.indexOf(disallowed) === 0)) {
+      throw new Error('Disallowed')
+    }
+  },
+
+  async ping() {
+    const tracking = await getOption('tracking', true)
+    const termsAccepted =
+      agent === 'chrome' || (await getOption('termsAccepted', false))
+
+    if (tracking && termsAccepted) {
+      const count = Object.keys(Driver.cache.hostnames).length
+
+      if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
+        await Driver.post(
+          'https://api.wappalyzer.com/ping/v1/',
+          Object.keys(Driver.cache.hostnames).reduce((hostnames, hostname) => {
+            // eslint-disable-next-line standard/computed-property-even-spacing
+            const { language, detections, hits } = Driver.cache.hostnames[
+              hostname
+            ]
+
+            hostnames[hostname] = hostnames[hostname] || {
+              applications: resolve(detections).reduce(
+                (technologies, { name, confidence, version }) => {
+                  if (confidence === 100) {
+                    technologies[name] = {
+                      version,
+                      hits
+                    }
+
+                    return technologies
+                  }
+                },
+                {}
+              ),
+              meta: {
+                language
+              }
+            }
+
+            return hostnames
+          }, {})
+        )
+
+        await setOption('hostnames', (Driver.cache.hostnames = {}))
+
+        Driver.lastPing = Date.now()
+      }
+
+      if (Driver.cache.ads.length > 50) {
+        await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+
+        await setOption('ads', (Driver.cache.ads = []))
+      }
+    }
   }
-})()
+}
+
+Driver.init()
