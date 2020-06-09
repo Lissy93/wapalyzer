@@ -122,22 +122,44 @@ const Popup = {
           })
         )
 
-        technologies.forEach(({ name, slug, icon, website }) => {
-          const technologyNode = Popup.templates.technology.cloneNode(true)
+        technologies
+          .filter(({ confidence }) => confidence)
+          .forEach(({ name, slug, confidence, version, icon, website }) => {
+            const technologyNode = Popup.templates.technology.cloneNode(true)
 
-          const image = technologyNode.querySelector('.technology__icon')
+            const image = technologyNode.querySelector('.technology__icon')
 
-          image.src = `../images/icons/${icon}`
+            image.src = `../images/icons/${icon}`
 
-          const link = technologyNode.querySelector('.technology__link')
+            const link = technologyNode.querySelector('.technology__link')
 
-          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
-          link.textContent = name
+            link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
+            link.textContent = name
 
-          categoryNode
-            .querySelector('.technologies')
-            .appendChild(technologyNode)
-        })
+            const confidenceNode = technologyNode.querySelector(
+              '.technology__confidence'
+            )
+
+            if (confidence < 100) {
+              confidenceNode.textContent = `${confidence}% sure`
+            } else {
+              confidenceNode.remove()
+            }
+
+            const versionNode = technologyNode.querySelector(
+              '.technology__version'
+            )
+
+            if (version) {
+              versionNode.textContent = version
+            } else {
+              versionNode.remove()
+            }
+
+            categoryNode
+              .querySelector('.technologies')
+              .appendChild(technologyNode)
+          })
 
         document.querySelector('.detections').appendChild(categoryNode)
       }

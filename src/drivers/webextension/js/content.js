@@ -25,6 +25,19 @@ const Content = {
 
       html = chunks.join('\n')
 
+      const language =
+        document.documentElement.getAttribute('lang') ||
+        document.documentElement.getAttribute('xml:lang') ||
+        (await new Promise((resolve) =>
+          chrome.i18n.detectLanguage(html, ({ languages }) =>
+            resolve(
+              languages
+                .filter(({ percentage }) => percentage >= 75)
+                .map(({ language: lang }) => lang)[0]
+            )
+          )
+        ))
+
       // Script tags
       const scripts = Array.from(document.scripts)
         .filter(({ src }) => src)
@@ -41,7 +54,7 @@ const Content = {
 
       Content.port.postMessage({
         func: 'onContentLoad',
-        args: [location.href, { html, scripts, meta }]
+        args: [location.href, { html, scripts, meta }, language]
       })
 
       Content.port.postMessage({ func: 'getTechnologies' })

@@ -150,6 +150,21 @@ a:hover {
   color: var(--color-text);
 }
 
+.technology__confidence {
+  opacity: .5;
+  font-size: .7rem;
+  margin-left: .2rem;
+}
+
+.technology__version {
+  background: var(--color-secondary);
+  border-radius: 3px;
+  font-size: .7rem;
+  padding: .1rem .3rem;
+  margin-left: .4rem;
+  vertical-align: middle;
+}
+
 .terms {
   align-items: center;
   display: flex;
@@ -233,6 +248,13 @@ a:hover {
 
   .theme-mode .category__pin {
     color: #fff
+  }
+
+  .theme-mode .technology__confidence {
+  }
+
+  .theme-mode .technology__version {
+    background: var(--color-primary);
   }
 
   .theme-mode .footer {

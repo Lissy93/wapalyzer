@@ -120,8 +120,8 @@ var exports = {};
 			return dict;
 		},
 		sendToBackground: function(message, event, responseMessage) {
-			if ( typeof browser !== 'undefined' || typeof chrome !== 'undefined' ) {
-        var port = browser.runtime.connect({name:"adparser"});
+			if ( typeof chrome !== 'undefined' ) {
+        var port = chrome.runtime.connect({name:"adparser"});
 
         port.onMessage.addListener((message) => {
           if ( message && message.tracking_enabled ) {
@@ -1088,8 +1088,8 @@ var exports = {};
 	}
 
 	function addBackgroundListener(event, callback) {
-		if ( typeof browser !== 'undefined' || typeof chrome !== 'undefined' ) {
-			browser.runtime.onMessage.addListener(function(msg) {
+		if ( typeof chrome !== 'undefined' ) {
+			chrome.runtime.onMessage.addListener(function(msg) {
 				if ( msg.event === event ) {
 					callback(msg);
 				}
@@ -1111,6 +1111,7 @@ var exports = {};
 
 			if ( origUrl.indexOf('google.com/_/chrome/newtab') === -1 ) {
 				var onBlockedRobotsMessage = function() {
+          return // TODO
 					var log;
 					log = _logGen.log('invalid-robotstxt', []);
 					log.doc.finalPageUrl = log.doc.url;
@@ -1173,7 +1174,7 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 })(window);
 (function(adparser, pageUrl) {
 	function onAdFound(log) {
-		adparser.sendToBackground({ id: 'ad_log', subject: log }, 'ad_log', '', function(){});
+		adparser.sendToBackground({ func: 'onAd', args: [log] }, 'onAd', '', function(){});
 	}
 
 	if (  adparser && adparser.inWindowTop  ) {

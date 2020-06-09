@@ -7,15 +7,61 @@ const {
   setCategories,
   analyze,
   analyzeManyToMany,
-  resolve,
-  unique
+  resolve
 } = Wappalyzer
-const { promisify, getOption } = Utils
+const { agent, promisify, getOption, setOption } = Utils
+
+const expiry = 1000 * 60 * 60 * 24
 
 const Driver = {
-  cache: {
-    hostnames: {},
-    robots: {}
+  lastPing: Date.now(),
+
+  async init() {
+    await Driver.loadTechnologies()
+
+    const hostnameCache = (await getOption('hostnames')) || {}
+
+    Driver.cache = {
+      hostnames: Object.keys(hostnameCache).reduce(
+        (cache, hostname) => ({
+          ...cache,
+          [hostname]: {
+            ...hostnameCache[hostname],
+            detections: hostnameCache[hostname].detections.map(
+              ({
+                pattern: { regex, confidence, version },
+                match,
+                technology: name,
+                hits
+              }) => ({
+                pattern: {
+                  regex: new RegExp(regex, 'i'),
+                  confidence,
+                  version
+                },
+                match,
+                technology: Wappalyzer.technologies.find(
+                  ({ name: _name }) => name === _name
+                ),
+                hits
+              })
+            )
+          }
+        }),
+        {}
+      ),
+      tabs: {},
+      robots: (await getOption('robots')) || {},
+      ads: (await getOption('ads')) || []
+    }
+
+    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
+    chrome.webRequest.onCompleted.addListener(
+      Driver.onWebRequestComplete,
+      { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
+      ['responseHeaders']
+    )
+    chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
   },
 
   log(message, source = 'driver', type = 'log') {
@@ -97,90 +143,6 @@ const Driver = {
         func,
         args: await Driver[func].call(port.sender, ...(args || []))
       })
-
-      /*
-      const pinnedCategory = await getOption('pinnedCategory')
-
-      const url = new URL(port.sender.tab.url)
-
-      const cookies = await browser.cookies.getAll({
-        domain: `.${url.hostname}`
-      })
-
-      let response
-
-      switch (message.id) {
-        case 'log':
-          wappalyzer.log(message.subject, message.source)
-
-          break
-        case 'analyze':
-          if (message.subject.html) {
-            browser.i18n
-              .detectLanguage(message.subject.html)
-              .then(({ languages }) => {
-                const language = languages
-                  .filter(({ percentage }) => percentage >= 75)
-                  .map(({ language: lang }) => lang)[0]
-
-                message.subject.language = language
-
-                wappalyzer.analyze(url, message.subject, {
-                  tab: port.sender.tab
-                })
-              })
-          } else {
-            wappalyzer.analyze(url, message.subject, { tab: port.sender.tab })
-          }
-
-          await setOption('hostnameCache', wappalyzer.hostnameCache)
-
-          break
-        case 'ad_log':
-          wappalyzer.cacheDetectedAds(message.subject)
-
-          break
-        case 'get_apps':
-          response = {
-            tabCache: tabCache[message.tab.id],
-            apps: wappalyzer.apps,
-            categories: wappalyzer.categories,
-            pinnedCategory,
-            termsAccepted:
-              userAgent() === 'chrome' ||
-              (await getOption('termsAccepted', false))
-          }
-
-          break
-        case 'set_option':
-          await setOption(message.key, message.value)
-
-          break
-        case 'get_js_patterns':
-          response = {
-            patterns: wappalyzer.jsPatterns
-          }
-
-          break
-        case 'update_theme_mode':
-          // Sync theme mode to popup.
-          response = {
-            themeMode: await getOption('themeMode', false)
-          }
-
-          break
-        default:
-        // Do nothing
-      }
-
-      if (response) {
-        port.postMessage({
-          id: message.id,
-          response
-        })
-      }
-    })
-    */
     })
   },
 
@@ -220,7 +182,7 @@ const Driver = {
     }
   },
 
-  async onContentLoad(href, items) {
+  async onContentLoad(href, items, language) {
     try {
       const url = new URL(href)
 
@@ -228,7 +190,7 @@ const Driver = {
         domain: `.${url.hostname}`
       })
 
-      await Driver.onDetect(url, await analyze(href, items))
+      await Driver.onDetect(url, await analyze(href, items), language)
     } catch (error) {
       Driver.error(error)
     }
@@ -238,15 +200,98 @@ const Driver = {
     return Wappalyzer.technologies
   },
 
-  async onDetect(url, detections = []) {
-    Driver.cache.hostnames[url.hostname] = unique([
-      ...(Driver.cache.hostnames[url.hostname] || []),
-      ...detections
-    ])
+  async onDetect(url, detections = [], language) {
+    // Cache detections
+    // eslint-disable-next-line standard/computed-property-even-spacing
+    Driver.cache.hostnames[url.hostname] = {
+      ...(Driver.cache.hostnames[url.hostname] || {
+        detections: []
+      }),
+      dateTime: Date.now()
+    }
 
-    const resolved = resolve(Driver.cache.hostnames[url.hostname])
+    Driver.cache.hostnames[url.hostname].language =
+      Driver.cache.hostnames[url.hostname].language || language
+
+    detections.forEach((detection) => {
+      const foo = Driver.cache.hostnames[url.hostname].detections
+      const {
+        technology: { name },
+        pattern: { regex }
+      } = detection
+
+      const cache = foo.find(
+        ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+          name === _name && (!regex || regex) === _regex
+      )
+
+      if (cache) {
+        cache.hits += 1
+      } else {
+        foo.push({
+          ...detection,
+          hits: 1
+        })
+      }
+    })
+
+    // Expire cache
+    Driver.cache.hostnames = Object.keys(Driver.cache.hostnames).reduce(
+      (hostnames, hostname) => {
+        const cache = Driver.cache.hostnames[hostname]
+
+        if (cache.dateTime > Date.now() - expiry) {
+          hostnames[hostname] = cache
+        }
+
+        return hostnames
+      },
+      {}
+    )
+
+    await setOption(
+      'hostnames',
+      Object.keys(Driver.cache.hostnames).reduce(
+        (cache, hostname) => ({
+          ...cache,
+          [hostname]: {
+            ...Driver.cache.hostnames[hostname],
+            detections: Driver.cache.hostnames[hostname].detections.map(
+              ({
+                pattern: { regex, confidence, version },
+                match,
+                technology: { name: technology }
+              }) => ({
+                technology,
+                pattern: {
+                  regex: regex.source,
+                  confidence,
+                  version
+                },
+                match
+              })
+            )
+          }
+        }),
+        {}
+      )
+    )
+
+    const resolved = resolve(Driver.cache.hostnames[url.hostname].detections)
 
     await Driver.setIcon(url, resolved)
+
+    const tabs = await promisify(chrome.tabs, 'query', { url: [url.href] })
+
+    tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+
+    await Driver.ping()
+  },
+
+  async onAd(ad) {
+    Driver.cache.ads.push(ad)
+
+    await setOption('ads', Driver.cache.ads)
   },
 
   async setIcon(url, technologies) {
@@ -292,24 +337,152 @@ const Driver = {
   },
 
   async getDetections() {
-    const [{ url: href }] = await promisify(chrome.tabs, 'query', {
+    const [{ id }] = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true
     })
 
+    return Driver.cache.tabs[id]
+  },
+
+  async getRobots(hostname, secure = false) {
+    if (!(await getOption('tracking', true))) {
+      return
+    }
+
+    if (typeof Driver.cache.robots[hostname] !== 'undefined') {
+      return Driver.cache.robots[hostname]
+    }
+
+    try {
+      Driver.cache.robots[hostname] = await Promise.race([
+        new Promise(async (resolve) => {
+          const response = await fetch(
+            `http${secure ? 's' : ''}://${hostname}/robots.txt`,
+            {
+              redirect: 'follow',
+              mode: 'no-cors'
+            }
+          )
+
+          if (!response.ok) {
+            Driver.error(new Error(response.statusText))
+
+            resolve('')
+          }
+
+          let agent
+
+          resolve(
+            (await response.text()).split('\n').reduce((disallows, line) => {
+              let matches = /^User-agent:\s*(.+)$/i.exec(line.trim())
+
+              if (matches) {
+                agent = matches[1].toLowerCase()
+              } else if (agent === '*' || agent === 'wappalyzer') {
+                matches = /^Disallow:\s*(.+)$/i.exec(line.trim())
+
+                if (matches) {
+                  disallows.push(matches[1])
+                }
+              }
+
+              return disallows
+            }, [])
+          )
+        }),
+        new Promise((resolve) => setTimeout(() => resolve(''), 5000))
+      ])
+
+      Driver.cache.robots = Object.keys(Driver.cache.robots)
+        .slice(-50)
+        .reduce(
+          (cache, hostname) => ({
+            ...cache,
+            [hostname]: Driver.cache.robots[hostname]
+          }),
+          {}
+        )
+
+      await setOption('robots', Driver.cache.robots)
+
+      return Driver.cache.robots[hostname]
+    } catch (error) {
+      Driver.error(error)
+    }
+  },
+
+  async checkRobots(href) {
     const url = new URL(href)
 
-    return resolve(Driver.cache.hostnames[url.hostname])
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+      throw new Error('Invalid protocol')
+    }
+
+    const robots = await Driver.getRobots(
+      url.hostname,
+      url.protocol === 'https:'
+    )
+
+    if (robots.some((disallowed) => url.pathname.indexOf(disallowed) === 0)) {
+      throw new Error('Disallowed')
+    }
+  },
+
+  async ping() {
+    const tracking = await getOption('tracking', true)
+    const termsAccepted =
+      agent === 'chrome' || (await getOption('termsAccepted', false))
+
+    if (tracking && termsAccepted) {
+      const count = Object.keys(Driver.cache.hostnames).length
+
+      if (count && (count >= 50 || Driver.lastPing < Date.now() - 5000)) {
+        await Driver.post(
+          'https://api.wappalyzer.com/ping/v1/',
+          Object.keys(Driver.cache.hostnames).reduce((hostnames, hostname) => {
+            const { language, detections } = Driver.cache.hostnames[hostname]
+
+            hostnames[hostname] = hostnames[hostname] || {
+              applications: {},
+              meta: {
+                language
+              }
+            }
+
+            resolve(detections).forEach(({ name, confidence, version }) => {
+              if (confidence === 100) {
+                console.log(
+                  name,
+                  detections.find(
+                    ({ technology: { name: _name } }) => name === _name
+                  )
+                )
+                hostnames[hostname].applications[name] = {
+                  version,
+                  hits: detections.find(
+                    ({ technology: { name: _name } }) => name === _name
+                  ).pattern.hits
+                }
+              }
+            })
+
+            return hostnames
+          }, {})
+        )
+
+        await setOption('hostnames', (Driver.cache.hostnames = {}))
+
+        Driver.lastPing = Date.now()
+      }
+
+      if (Driver.cache.ads.length > 50) {
+        await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+
+        await setOption('ads', (Driver.cache.ads = []))
+      }
+    }
   }
 }
 
-;(async function() {
-  await Driver.loadTechnologies()
-
-  chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
-  chrome.webRequest.onCompleted.addListener(
-    Driver.onWebRequestComplete,
-    { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-    ['responseHeaders']
-  )
-})()
+Driver.init()

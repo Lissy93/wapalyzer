@@ -1,19 +1,6 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 'use strict';
+
 (function() {
-
-	function isChrome() {
-		return (typeof chrome !== 'undefined' &&
-				window.navigator.userAgent.match(/Chrom(?:e|ium)\/([0-9\.]+)/));
-	}
-
-	var requiredBrowserApis = [
-		browser.webNavigation,
-		browser.tabs,
-		browser.webRequest,
-		browser.runtime
-	];
-
 	var MIN_FF_MAJOR_VERSION = 51;
 
 	var areListenersRegistered = false;
@@ -61,7 +48,7 @@
 		'washingtonpost.com'
 	];
 
-	var robotsTxtAllows = wappalyzer.robotsTxtAllows.bind(wappalyzer);
+	var robotsTxtAllows = Driver.checkRobots;
 	if ( !String.prototype.endsWith ) {
 		String.prototype.endsWith = function(searchString, position) {
 			var subjectString = this.toString();
@@ -76,34 +63,7 @@
 	}
 
 	function getFrame(getFrameDetails, callback) {
-		var gettingFrame = browser.webNavigation.getFrame(getFrameDetails);
-		gettingFrame.then(callback);
-	}
-
-	function ifBrowserValid(callback, elseCallback) {
-		if ( isChrome() ) {
-
-			callback();
-		} else if ( typeof browser !== 'undefined' ) {
-			try {
-				var gettingInfo = browser.runtime.getBrowserInfo();
-				gettingInfo.then(function(browserInfo) {
-					var browserVersion = parseInt(browserInfo.version.split('.')[0]);
-
-					if ( browserInfo.name === 'Firefox' &&
-						browserVersion >= MIN_FF_MAJOR_VERSION) {
-						callback();
-					} else {
-						elseCallback();
-					}
-				});
-			} catch (err) {
-
-				elseCallback();
-			}
-		} else {
-			elseCallback();
-		}
+		chrome.webNavigation.getFrame(getFrameDetails, callback);
 	}
 
 	function ifTrackingEnabled(details, ifCallback, elseCallback) {
@@ -112,24 +72,19 @@
 			allowedByRobotsTxt(details, ifCallback, elseCallback);
 		};
 
-		browser.storage.local.get('tracking').then(function(item) {
-
-			if ( item.hasOwnProperty('tracking') ) {
-				if ( item.tracking ) {
-					fullIfCallback();
-				} else {
-					elseCallback();
-				}
-			} else {
-				fullIfCallback();
-			}
+		Utils.getOption('tracking', true).then(function(tracking) {
+      if ( tracking ) {
+        fullIfCallback();
+      } else {
+        elseCallback();
+      }
 		});
 
 	}
 
 	function allowedByRobotsTxt(details, ifCallback, elseCallback) {
 		if (  details.url && !details.url.startsWith('chrome://')  ) {
-			robotsTxtAllows(details.url).then(ifCallback, elseCallback);
+      Driver.checkRobots(details.url, details.url.startsWith('https:')).then(ifCallback).catch(elseCallback);
 		} else {
 			elseCallback();
 		}
@@ -268,7 +223,7 @@
 	PageNetworkTrafficCollector.prototype.sendLogMessageToTabConsole = function() {
 		var logMessage = Array.from(arguments).join(' ');
 		var message = {message: logMessage, event: 'console-log-message'};
-		browser.tabs.sendMessage(this.tabId, message);
+		chrome.tabs.sendMessage(this.tabId, message);
 	};
 
 	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, adTrackingEvent) {
@@ -298,7 +253,7 @@
 		msg.origUrl = curPageUrl;
 		msg.displayAdFound = this.displayAdFound;
 
-		browser.tabs.sendMessage(this.tabId, msg);
+		chrome.tabs.sendMessage(this.tabId, msg);
 	};
 
 	PageNetworkTrafficCollector.prototype.getRedirKey = function(url, frameId) {
@@ -615,7 +570,7 @@
 		var _this = this,
 			origPageUrl, msgAssetReq;
 		msgAssetReq = this.msgsBeingSent[msgKey];
-		browser.tabs.get(this.tabId).then(function(tab) {
+		chrome.tabs.get(this.tabId, function(tab) {
 			origPageUrl = tab.url;
 		});
 
@@ -697,110 +652,85 @@
 
 	function registerListeners() {
 
-		browser.webRequest.onBeforeRequest.addListener(
+		chrome.webRequest.onBeforeRequest.addListener(
 			onBeforeRequestListener,
 			{urls: ['http://*/*', 'https://*/*']},
 			[]
 		);
 
-		browser.webRequest.onSendHeaders.addListener(
+		chrome.webRequest.onSendHeaders.addListener(
 			onSendHeadersListener,
 			{urls: ['http://*/*', 'https://*/*']},
 			['requestHeaders']
 		);
 
-		browser.webRequest.onHeadersReceived.addListener(
+		chrome.webRequest.onHeadersReceived.addListener(
 			onHeadersReceivedListener,
 			{urls: ['http://*/*', 'https://*/*']},
 			['responseHeaders']
 		);
 
-		browser.webRequest.onBeforeRedirect.addListener(
+		chrome.webRequest.onBeforeRedirect.addListener(
 			onBeforeRedirectListener,
 			{urls: ['http://*/*', 'https://*/*']},
 			[]
 		);
 
-		browser.webRequest.onResponseStarted.addListener(
+		chrome.webRequest.onResponseStarted.addListener(
 			onResponseStartedListener,
 			{urls: ['http://*/*', 'https://*/*']},
 			['responseHeaders']
 		);
 
-		browser.webNavigation.onCommitted.addListener(onCommittedListener);
-		browser.webNavigation.onCompleted.addListener(onCompletedListener);
-		browser.tabs.onRemoved.addListener(onRemovedListener);
-		browser.runtime.onMessage.addListener(onMessageListener);
+		chrome.webNavigation.onCommitted.addListener(onCommittedListener);
+		chrome.webNavigation.onCompleted.addListener(onCompletedListener);
+		chrome.tabs.onRemoved.addListener(onRemovedListener);
+		chrome.runtime.onMessage.addListener(onMessageListener);
 
 		areListenersRegistered = true;
 	}
 
 	function unregisterListeners() {
 
-		browser.webRequest.onBeforeRequest.removeListener(
+		chrome.webRequest.onBeforeRequest.removeListener(
 			onBeforeRequestListener
 		);
 
-		browser.webRequest.onSendHeaders.removeListener(
+		chrome.webRequest.onSendHeaders.removeListener(
 			onSendHeadersListener
 		);
 
-		browser.webRequest.onHeadersReceived.removeListener(
+		chrome.webRequest.onHeadersReceived.removeListener(
 			onHeadersReceivedListener
 		);
 
-		browser.webRequest.onBeforeRedirect.removeListener(
+		chrome.webRequest.onBeforeRedirect.removeListener(
 			onBeforeRedirectListener
 		);
 
-		browser.webRequest.onResponseStarted.removeListener(
+		chrome.webRequest.onResponseStarted.removeListener(
 			onResponseStartedListener
 		);
 
-		browser.webNavigation.onCommitted.removeListener(onCommittedListener);
-		browser.webNavigation.onCompleted.removeListener(onCompletedListener);
-		browser.tabs.onRemoved.removeListener(onRemovedListener);
-		browser.runtime.onMessage.removeListener(onMessageListener);
+		chrome.webNavigation.onCommitted.removeListener(onCommittedListener);
+		chrome.webNavigation.onCompleted.removeListener(onCompletedListener);
+		chrome.tabs.onRemoved.removeListener(onRemovedListener);
+		chrome.runtime.onMessage.removeListener(onMessageListener);
 		areListenersRegistered = false;
 	}
 
-	function areRequiredBrowserApisAvailable() {
-		return requiredBrowserApis.every(function(api) {
-			return typeof api !== 'undefined';
-		});
-	}
+  chrome.webNavigation.onBeforeNavigate.addListener(
+    function(details) {
+      if ( details.frameId === 0 ) {
+        globalPageContainer.onNewNavigation(details);
+      }
+    },
+    {
+      url: [{urlMatches: 'http://*/*'}, {urlMatches: 'https://*/*'}]
+    }
+  );
 
-	if ( areRequiredBrowserApisAvailable() ) {
-			ifBrowserValid(
-				function() {
-					browser.webNavigation.onBeforeNavigate.addListener(
-						function(details) {
-							if ( details.frameId === 0 ) {
-								globalPageContainer.onNewNavigation(details);
-							}
-						},
-						{
-							url: [{urlMatches: 'http://*/*'}, {urlMatches: 'https://*/*'}]
-						}
-					);
-				}, function() {
-
-				}
-			);
-	}
-
-	browser.runtime.onConnect.addListener((port) => {
-		port.onMessage.addListener((message) => {
-			if ( message === 'is_browser_valid' ) {
-				ifBrowserValid(
-					port.postMessage({'browser_valid': true}),
-					port.postMessage({'browser_valid': false})
-				);
-			}
-		});
-	});
-
-	browser.runtime.onConnect.addListener((port) => {
+	chrome.runtime.onConnect.addListener((port) => {
 		port.onMessage.addListener((message) => {
 			if ( message === 'is_tracking_enabled' ) {
 				ifTrackingEnabled(
@@ -816,7 +746,4 @@
 			return true;
 		});
 	});
-
 })();
-
-},{}]},{},[1]);
