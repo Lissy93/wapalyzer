@@ -17,6 +17,8 @@ const Driver = {
   lastPing: Date.now(),
 
   async init() {
+    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
+
     await Driver.loadTechnologies()
 
     const hostnameCache = (await getOption('hostnames')) || {}
@@ -31,8 +33,7 @@ const Driver = {
               ({
                 pattern: { regex, confidence, version },
                 match,
-                technology: name,
-                hits
+                technology: name
               }) => ({
                 pattern: {
                   regex: new RegExp(regex, 'i'),
@@ -42,8 +43,7 @@ const Driver = {
                 match,
                 technology: Wappalyzer.technologies.find(
                   ({ name: _name }) => name === _name
-                ),
-                hits
+                )
               })
             )
           }
@@ -55,7 +55,6 @@ const Driver = {
       ads: (await getOption('ads')) || []
     }
 
-    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
     chrome.webRequest.onCompleted.addListener(
       Driver.onWebRequestComplete,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
@@ -126,6 +125,8 @@ const Driver = {
   },
 
   onRuntimeConnect(port) {
+    Driver.log(`Connected to ${port.name}`)
+
     port.onMessage.addListener(async ({ func, args }) => {
       if (!func) {
         return
@@ -190,7 +191,7 @@ const Driver = {
         domain: `.${url.hostname}`
       })
 
-      await Driver.onDetect(url, await analyze(href, items), language)
+      await Driver.onDetect(url, await analyze(href, items), language, true)
     } catch (error) {
       Driver.error(error)
     }
@@ -200,40 +201,35 @@ const Driver = {
     return Wappalyzer.technologies
   },
 
-  async onDetect(url, detections = [], language) {
-    // Cache detections
-    // eslint-disable-next-line standard/computed-property-even-spacing
-    Driver.cache.hostnames[url.hostname] = {
-      ...(Driver.cache.hostnames[url.hostname] || {
-        detections: []
-      }),
-      dateTime: Date.now()
+  async onDetect(url, detections = [], language, incrementHits = false) {
+    if (!detections.length) {
+      return
     }
 
-    Driver.cache.hostnames[url.hostname].language =
-      Driver.cache.hostnames[url.hostname].language || language
+    const { hostname, href } = url
 
-    detections.forEach((detection) => {
-      const foo = Driver.cache.hostnames[url.hostname].detections
-      const {
-        technology: { name },
-        pattern: { regex }
-      } = detection
-
-      const cache = foo.find(
-        ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
-          name === _name && (!regex || regex) === _regex
-      )
-
-      if (cache) {
-        cache.hits += 1
-      } else {
-        foo.push({
-          ...detection,
-          hits: 1
-        })
-      }
+    // Cache detections
+    const cache = (Driver.cache.hostnames[hostname] = {
+      ...(Driver.cache.hostnames[hostname] || {
+        detections: [],
+        hits: 0
+      }),
+      dateTime: Date.now()
     })
+
+    // Remove duplicates
+    cache.detections = cache.detections = cache.detections.concat(detections)
+
+    cache.detections.filter(
+      ({ technology: { name }, pattern: { regex } }, index) =>
+        cache.detections.findIndex(
+          ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            name === _name && (!regex || regex.toString() === _regex.toString())
+        ) === index
+    )
+
+    cache.hits += incrementHits ? 1 : 0
+    cache.language = cache.language || language
 
     // Expire cache
     Driver.cache.hostnames = Object.keys(Driver.cache.hostnames).reduce(
@@ -277,13 +273,15 @@ const Driver = {
       )
     )
 
-    const resolved = resolve(Driver.cache.hostnames[url.hostname].detections)
+    const resolved = resolve(Driver.cache.hostnames[hostname].detections)
 
     await Driver.setIcon(url, resolved)
 
-    const tabs = await promisify(chrome.tabs, 'query', { url: [url.href] })
+    const tabs = await promisify(chrome.tabs, 'query', { url: [href] })
 
     tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+
+    Driver.log({ hostname, technologies: resolved })
 
     await Driver.ping()
   },
@@ -306,14 +304,13 @@ const Driver = {
         categories.some(({ id }) => id === pinnedCategory)
       )
 
-      ;({ icon } =
-        pinned ||
+      ;({ icon } = pinned ||
         technologies.sort(({ categories: a }, { categories: b }) => {
           const max = (value) =>
             value.reduce((max, { priority }) => Math.max(max, priority))
 
           return max(a) > max(b) ? -1 : 1
-        })[0])
+        })[0] || { icon })
     }
 
     const tabs = await promisify(chrome.tabs, 'query', { url: [url.href] })
@@ -437,35 +434,33 @@ const Driver = {
     if (tracking && termsAccepted) {
       const count = Object.keys(Driver.cache.hostnames).length
 
-      if (count && (count >= 50 || Driver.lastPing < Date.now() - 5000)) {
+      if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
         await Driver.post(
           'https://api.wappalyzer.com/ping/v1/',
           Object.keys(Driver.cache.hostnames).reduce((hostnames, hostname) => {
-            const { language, detections } = Driver.cache.hostnames[hostname]
+            // eslint-disable-next-line standard/computed-property-even-spacing
+            const { language, detections, hits } = Driver.cache.hostnames[
+              hostname
+            ]
 
             hostnames[hostname] = hostnames[hostname] || {
-              applications: {},
+              applications: resolve(detections).reduce(
+                (technologies, { name, confidence, version }) => {
+                  if (confidence === 100) {
+                    technologies[name] = {
+                      version,
+                      hits
+                    }
+
+                    return technologies
+                  }
+                },
+                {}
+              ),
               meta: {
                 language
               }
             }
-
-            resolve(detections).forEach(({ name, confidence, version }) => {
-              if (confidence === 100) {
-                console.log(
-                  name,
-                  detections.find(
-                    ({ technology: { name: _name } }) => name === _name
-                  )
-                )
-                hostnames[hostname].applications[name] = {
-                  version,
-                  hits: detections.find(
-                    ({ technology: { name: _name } }) => name === _name
-                  ).pattern.hits
-                }
-              }
-            })
 
             return hostnames
           }, {})

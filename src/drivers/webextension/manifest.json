@@ -36,7 +36,6 @@
         "https://*/*"
       ],
       "js": [
-        "node_modules/webextension-polyfill/dist/browser-polyfill.js",
         "js/content.js"
       ],
       "run_at": "document_idle"
@@ -46,12 +45,7 @@
         "http://*/*",
         "https://*/*"
       ],
-      "exclude_matches": [
-        "https://*.modirum.com/*",
-        "https://www.alphaecommerce.gr/*"
-      ],
       "js": [
-        "node_modules/webextension-polyfill/dist/browser-polyfill.js",
         "js/lib/iframe.js"
       ],
       "run_at": "document_start",

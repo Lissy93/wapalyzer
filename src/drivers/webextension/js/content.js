@@ -3,10 +3,18 @@
 /* globals chrome */
 
 const Content = {
-  port: chrome.runtime.connect({ name: 'content.js' }),
-
   async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
+
+    Content.port = chrome.runtime.connect({ name: 'content.js' })
+
+    Content.port.onMessage.addListener(({ func, args }) => {
+      const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
+
+      if (Content[onFunc]) {
+        Content[onFunc](args)
+      }
+    })
 
     try {
       // HTML
@@ -99,14 +107,6 @@ const Content = {
     document.body.appendChild(script)
   }
 }
-
-Content.port.onMessage.addListener(({ func, args }) => {
-  const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
-
-  if (Content[onFunc]) {
-    Content[onFunc](args)
-  }
-})
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
   Content.init()

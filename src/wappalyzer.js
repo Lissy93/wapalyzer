@@ -1,727 +1,331 @@
-const validation = {
-  hostname: /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/,
-  hostnameBlacklist: /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/
-}
+'use strict'
 
-/**
- * Enclose string in array
- */
-function asArray(value) {
-  return Array.isArray(value) ? value : [value]
-}
+const Wappalyzer = {
+  technologies: [],
+  categories: [],
 
-/**
- *
- */
-function asyncForEach(iterable, iterator) {
-  return Promise.all(
-    (iterable || []).map(
-      (item) =>
-        new Promise((resolve) => setTimeout(() => resolve(iterator(item)), 1))
-    )
-  )
-}
+  slugify(string) {
+    return string
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/--+/g, '-')
+      .replace(/(?:^-|-$)/, '')
+  },
 
-/**
- * Mark application as detected, set confidence and version
- */
-function addDetected(app, pattern, type, value, key) {
-  app.detected = true
+  getTechnology(name) {
+    return Wappalyzer.technologies.find(({ name: _name }) => name === _name)
+  },
 
-  // Set confidence level
-  app.confidence[`${type} ${key ? `${key} ` : ''}${pattern.regex}`] =
-    pattern.confidence === undefined ? 100 : parseInt(pattern.confidence, 10)
+  getCategory(id) {
+    return Wappalyzer.categories.find(({ id: _id }) => id === _id)
+  },
 
-  // Detect version number
-  if (pattern.version) {
-    const versions = []
-    const matches = pattern.regex.exec(value)
-
-    let { version } = pattern
-
-    if (matches) {
-      matches.forEach((match, i) => {
-        // Parse ternary operator
-        const ternary = new RegExp(`\\\\${i}\\?([^:]+):(.*)$`).exec(version)
-
-        if (ternary && ternary.length === 3) {
-          version = version.replace(ternary[0], match ? ternary[1] : ternary[2])
-        }
-
-        // Replace back references
-        version = version
-          .trim()
-          .replace(new RegExp(`\\\\${i}`, 'g'), match || '')
-      })
-
-      if (version && !versions.includes(version)) {
-        versions.push(version)
-      }
-
-      if (versions.length) {
-        // Use the longest detected version number
-        app.version = versions.reduce((a, b) => (a.length > b.length ? a : b))
-      }
-    }
-  }
-}
-
-function resolveExcludes(apps, detected) {
-  const excludes = []
-  const detectedApps = Object.assign({}, apps, detected)
-
-  // Exclude app in detected apps only
-  Object.keys(detectedApps).forEach((appName) => {
-    const app = detectedApps[appName]
-
-    if (app.props.excludes) {
-      asArray(app.props.excludes).forEach((excluded) => {
-        excludes.push(excluded)
-      })
-    }
-  })
-
-  // Remove excluded applications
-  Object.keys(apps).forEach((appName) => {
-    if (excludes.includes(appName)) {
-      delete apps[appName]
-    }
-  })
-}
-
-class Application {
-  constructor(name, props, detected) {
-    this.confidence = {}
-    this.confidenceTotal = 0
-    this.detected = Boolean(detected)
-    this.excludes = []
-    this.name = name
-    this.props = props
-    this.version = ''
-  }
-
-  /**
-   * Calculate confidence total
-   */
-  getConfidence() {
-    let total = 0
-
-    Object.keys(this.confidence).forEach((id) => {
-      total += this.confidence[id]
-    })
-
-    this.confidenceTotal = Math.min(total, 100)
-
-    return this.confidenceTotal
-  }
-}
-
-class Wappalyzer {
-  constructor() {
-    this.apps = {}
-    this.categories = {}
-    this.driver = {}
-    this.jsPatterns = {}
-    this.detected = {}
-    this.hostnameCache = {
-      expires: Date.now() + 1000 * 60 * 60 * 24,
-      hostnames: {}
-    }
-    this.adCache = []
-
-    this.config = {
-      websiteURL: 'https://www.wappalyzer.com/',
-      twitterURL: 'https://twitter.com/Wappalyzer',
-      githubURL: 'https://github.com/AliasIO/Wappalyzer'
-    }
-  }
-
-  /**
-   * Log messages to console
-   */
-  log(message, source, type) {
-    if (this.driver.log) {
-      this.driver.log(message, source || '', type || 'debug')
-    }
-  }
-
-  analyze(url, data, context) {
-    const apps = {}
-    const promises = []
-    const startTime = new Date()
-    const { scripts, cookies, headers, js } = data
-
-    let { html } = data
-
-    if (this.detected[url.canonical] === undefined) {
-      this.detected[url.canonical] = {}
-    }
-
-    const metaTags = []
-
-    // Additional information
-    let language = null
-
-    if (html) {
-      if (typeof html !== 'string') {
-        html = ''
-      }
-
-      let matches = data.html.match(
-        new RegExp('<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"', 'i')
-      )
-
-      language = matches && matches.length ? matches[1] : data.language || null
-
-      // Meta tags
-      const regex = /<meta[^>]+>/gi
-
-      do {
-        matches = regex.exec(html)
-
-        if (!matches) {
-          break
-        }
-
-        metaTags.push(matches[0])
-      } while (matches)
-    }
-
-    Object.keys(this.apps).forEach((appName) => {
-      apps[appName] =
-        this.detected[url.canonical] && this.detected[url.canonical][appName]
-          ? this.detected[url.canonical][appName]
-          : new Application(appName, this.apps[appName])
-
-      const app = apps[appName]
-
-      promises.push(this.analyzeUrl(app, url))
-
-      if (html) {
-        promises.push(this.analyzeHtml(app, html))
-        promises.push(this.analyzeMeta(app, metaTags))
-      }
-
-      if (scripts) {
-        promises.push(this.analyzeScripts(app, scripts))
-      }
-
-      if (cookies) {
-        promises.push(this.analyzeCookies(app, cookies))
-      }
-
-      if (headers) {
-        promises.push(this.analyzeHeaders(app, headers))
-      }
-    })
-
-    if (js) {
-      Object.keys(js).forEach((appName) => {
-        if (typeof js[appName] !== 'function') {
-          promises.push(this.analyzeJs(apps[appName], js[appName]))
-        }
-      })
-    }
-
-    return new Promise(async (resolve) => {
-      await Promise.all(promises)
-
-      Object.keys(apps).forEach((appName) => {
-        const app = apps[appName]
-
-        if (!app.detected || !app.getConfidence()) {
-          delete apps[app.name]
-        }
-      })
-
-      resolveExcludes(apps, this.detected[url])
-      this.resolveImplies(apps, url.canonical)
-
-      this.cacheDetectedApps(apps, url.canonical)
-      this.trackDetectedApps(apps, url, language)
-
-      this.log(
-        `Processing ${Object.keys(data).join(', ')} took ${(
-          (new Date() - startTime) /
-          1000
-        ).toFixed(2)}s (${url.hostname})`,
-        'core'
-      )
-
-      if (Object.keys(apps).length) {
-        this.log(
-          `Identified ${Object.keys(apps).join(', ')} (${url.hostname})`,
-          'core'
-        )
-      }
-
-      this.driver.displayApps(
-        this.detected[url.canonical],
-        { language },
-        context
-      )
-
-      return resolve()
-    })
-  }
-
-  /**
-   * Cache detected ads
-   */
-  cacheDetectedAds(ad) {
-    this.adCache.push(ad)
-  }
-
-  /**
-   *
-   */
-  robotsTxtAllows(url) {
-    return new Promise(async (resolve, reject) => {
-      const parsed = this.parseUrl(url)
-
-      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-        return reject()
-      }
-
-      const robotsTxt = await this.driver.getRobotsTxt(
-        parsed.host,
-        parsed.protocol === 'https:'
-      )
-
+  resolve(detections = []) {
+    const resolved = detections.reduce((resolved, { technology }) => {
       if (
-        robotsTxt.some(
-          (disallowedPath) => parsed.pathname.indexOf(disallowedPath) === 0
-        )
+        resolved.findIndex(
+          ({ technology: { name } }) => name === technology.name
+        ) === -1
       ) {
-        return reject()
+        let version = ''
+        let confidence = 0
+
+        detections.forEach(({ technology: { name }, pattern, match }) => {
+          if (name === technology.name) {
+            const versionValue = Wappalyzer.resolveVersion(pattern, match)
+
+            confidence = Math.min(100, confidence + pattern.confidence)
+            version =
+              versionValue.length > version.length && versionValue.length <= 10
+                ? versionValue
+                : version
+          }
+        })
+
+        resolved.push({ technology, confidence, version })
       }
 
-      return resolve()
-    })
-  }
+      return resolved
+    }, [])
 
-  /**
-   * Parse a URL
-   */
-  parseUrl(url) {
-    const a = this.driver.document.createElement('a')
+    Wappalyzer.resolveExcludes(resolved)
+    Wappalyzer.resolveImplies(resolved)
 
-    a.href = url
+    return resolved.map(
+      ({
+        technology: { name, slug, categories, icon, website },
+        confidence,
+        version
+      }) => ({
+        name,
+        slug,
+        categories: categories.map((id) => Wappalyzer.getCategory(id)),
+        confidence,
+        version,
+        icon,
+        website
+      })
+    )
+  },
 
-    a.canonical = `${a.protocol}//${a.host}${a.pathname}`
+  resolveVersion({ version, regex }, match) {
+    let resolved = version
 
-    return a
-  }
-
-  /**
-   *
-   */
-  static parseRobotsTxt(robotsTxt) {
-    const disallow = []
-
-    let userAgent
-
-    robotsTxt.split('\n').forEach((line) => {
-      let matches = /^User-agent:\s*(.+)$/i.exec(line.trim())
+    if (version) {
+      const matches = regex.exec(match)
 
       if (matches) {
-        userAgent = matches[1].toLowerCase()
-      } else if (userAgent === '*' || userAgent === 'wappalyzer') {
-        matches = /^Disallow:\s*(.+)$/i.exec(line.trim())
+        matches.forEach((match, index) => {
+          // Parse ternary operator
+          const ternary = new RegExp(`\\\\${index}\\?([^:]+):(.*)$`).exec(
+            version
+          )
 
-        if (matches) {
-          disallow.push(matches[1])
+          if (ternary && ternary.length === 3) {
+            resolved = version.replace(
+              ternary[0],
+              match ? ternary[1] : ternary[2]
+            )
+          }
+
+          // Replace back references
+          resolved = resolved
+            .trim()
+            .replace(new RegExp(`\\\\${index}`, 'g'), match || '')
+        })
+      }
+    }
+
+    return resolved
+  },
+
+  resolveExcludes(resolved) {
+    resolved.forEach(({ technology }) => {
+      technology.excludes.forEach((name) => {
+        const excluded = Wappalyzer.getTechnology(name)
+
+        if (!excluded) {
+          throw new Error(`Excluded technology does not exist: ${name}`)
         }
-      }
+
+        const index = resolved.findIndex(({ name }) => name === excluded.name)
+
+        if (index === -1) {
+          resolved.splice(index, 1)
+        }
+      })
     })
+  },
 
-    return disallow
-  }
+  resolveImplies(resolved) {
+    let done = false
 
-  /**
-   *
-   */
-  ping() {
-    if (
-      !this.hostnameCache.hostnames ||
-      Object.keys(this.hostnameCache.hostnames).length > 50 ||
-      this.hostnameCache.expires < Date.now()
-    ) {
-      this.driver.ping(this.hostnameCache)
+    while (resolved.length && !done) {
+      resolved.forEach(({ technology, confidence }) => {
+        done = true
 
-      this.hostnameCache = {
-        expires: Date.now() + 1000 * 60 * 60 * 24,
-        hostnames: {}
-      }
+        technology.implies.forEach((name) => {
+          const implied = Wappalyzer.getTechnology(name)
+
+          if (!implied) {
+            throw new Error(`Implied technology does not exist: ${name}`)
+          }
+
+          if (
+            resolved.findIndex(
+              ({ technology: { name } }) => name === implied.name
+            ) === -1
+          ) {
+            resolved.push({ technology: implied, confidence, version: '' })
+
+            done = false
+          }
+        })
+      })
     }
+  },
 
-    if (this.adCache.length > 50) {
-      this.driver.ping(undefined, this.adCache)
+  async analyze(url, { html, meta, headers, cookies, scripts }) {
+    const oo = Wappalyzer.analyzeOneToOne
+    const om = Wappalyzer.analyzeOneToMany
+    const mm = Wappalyzer.analyzeManyToMany
 
-      this.adCache = []
+    const flatten = (array) => Array.prototype.concat.apply([], array)
+
+    try {
+      const detections = flatten(
+        flatten(
+          await Promise.all(
+            Wappalyzer.technologies.map((technology) =>
+              Promise.all([
+                oo(technology, 'url', url),
+                oo(technology, 'html', html),
+                om(technology, 'meta', meta),
+                mm(technology, 'headers', headers),
+                om(technology, 'cookies', cookies),
+                om(technology, 'scripts', scripts)
+              ])
+            )
+          )
+        )
+      ).filter((technology) => technology)
+
+      return detections
+    } catch (error) {
+      throw new Error(error.message || error.toString())
     }
-  }
+  },
 
-  /**
-   * Parse apps.json patterns
-   */
-  parsePatterns(patterns) {
+  setTechnologies(data) {
+    const transform = Wappalyzer.transformPatterns
+
+    Wappalyzer.technologies = Object.keys(data).reduce((technologies, name) => {
+      const {
+        cats,
+        url,
+        html,
+        meta,
+        headers,
+        cookies,
+        script,
+        js,
+        implies,
+        excludes,
+        icon,
+        website
+      } = data[name]
+
+      technologies.push({
+        name,
+        categories: cats || [],
+        slug: Wappalyzer.slugify(name),
+        url: transform(url),
+        headers: transform(
+          Object.keys(headers || {}).reduce(
+            (lcHeaders, header) => ({
+              ...lcHeaders,
+              [header.toLowerCase()]: headers[header]
+            }),
+            {}
+          )
+        ),
+        cookies: transform(cookies),
+        html: transform(html),
+        meta: transform(meta),
+        scripts: transform(script),
+        js: transform(js),
+        implies: typeof implies === 'string' ? [implies] : implies || [],
+        excludes: typeof excludes === 'string' ? [excludes] : excludes || [],
+        icon: icon || 'default.svg',
+        website: website || ''
+      })
+
+      return technologies
+    }, [])
+  },
+
+  setCategories(data) {
+    Wappalyzer.categories = Object.keys(data)
+      .reduce((categories, id) => {
+        const category = data[id]
+
+        categories.push({
+          id: parseInt(id, 10),
+          slug: Wappalyzer.slugify(category.name),
+          ...category
+        })
+
+        return categories
+      }, [])
+      .sort(({ priority: a }, { priority: b }) => (a > b ? -1 : 0))
+  },
+
+  transformPatterns(patterns) {
     if (!patterns) {
       return []
     }
 
-    let parsed = {}
+    const toArray = (value) => (Array.isArray(value) ? value : [value])
 
-    // Convert string to object containing array containing string
     if (typeof patterns === 'string' || Array.isArray(patterns)) {
-      patterns = {
-        main: asArray(patterns)
-      }
+      patterns = { main: patterns }
     }
 
-    Object.keys(patterns).forEach((key) => {
-      parsed[key] = []
+    const parsed = Object.keys(patterns).reduce((parsed, key) => {
+      parsed[key] = toArray(patterns[key]).map((pattern) => {
+        const { regex, confidence, version } = pattern
+          .split('\\;')
+          .reduce((attrs, attr, i) => {
+            if (i) {
+              // Key value pairs
+              attr = attr.split(':')
 
-      asArray(patterns[key]).forEach((pattern) => {
-        const attrs = {}
-
-        pattern.split('\\;').forEach((attr, i) => {
-          if (i) {
-            // Key value pairs
-            attr = attr.split(':')
-
-            if (attr.length > 1) {
-              attrs[attr.shift()] = attr.join(':')
-            }
-          } else {
-            attrs.string = attr
-
-            try {
-              attrs.regex = new RegExp(attr.replace('/', '/'), 'i') // Escape slashes in regular expression
-            } catch (error) {
-              attrs.regex = new RegExp()
-
-              this.log(`${error.message}: ${attr}`, 'error', 'core')
-            }
-          }
-        })
-
-        parsed[key].push(attrs)
-      })
-    })
-
-    // Convert back to array if the original pattern list was an array (or string)
-    if ('main' in parsed) {
-      parsed = parsed.main
-    }
-
-    return parsed
-  }
-
-  /**
-   * Parse JavaScript patterns
-   */
-  parseJsPatterns() {
-    Object.keys(this.apps).forEach((appName) => {
-      if (this.apps[appName].js) {
-        this.jsPatterns[appName] = this.parsePatterns(this.apps[appName].js)
-      }
-    })
-  }
-
-  resolveImplies(apps, url) {
-    let checkImplies = true
-
-    const resolve = (appName) => {
-      const app = apps[appName]
-
-      if (app && app.props.implies) {
-        asArray(app.props.implies).forEach((implied) => {
-          ;[implied] = this.parsePatterns(implied)
-
-          if (!this.apps[implied.string]) {
-            this.log(
-              `Implied application ${implied.string} does not exist`,
-              'core',
-              'warn'
-            )
-
-            return
-          }
-
-          if (!(implied.string in apps)) {
-            apps[implied.string] =
-              this.detected[url] && this.detected[url][implied.string]
-                ? this.detected[url][implied.string]
-                : new Application(
-                    implied.string,
-                    this.apps[implied.string],
-                    true
-                  )
-
-            checkImplies = true
-          }
-
-          // Apply app confidence to implied app
-          Object.keys(app.confidence).forEach((id) => {
-            apps[implied.string].confidence[`${id} implied by ${appName}`] =
-              app.confidence[id] *
-              (implied.confidence === undefined ? 1 : implied.confidence / 100)
-          })
-        })
-      }
-    }
-
-    // Implied applications
-    // Run several passes as implied apps may imply other apps
-    while (checkImplies) {
-      checkImplies = false
-
-      Object.keys(apps).forEach(resolve)
-    }
-  }
-
-  /**
-   * Cache detected applications
-   */
-  cacheDetectedApps(apps, url) {
-    Object.keys(apps).forEach((appName) => {
-      const app = apps[appName]
-
-      // Per URL
-      this.detected[url][appName] = app
-
-      Object.keys(app.confidence).forEach((id) => {
-        this.detected[url][appName].confidence[id] = app.confidence[id]
-      })
-    })
-
-    if (this.driver.ping instanceof Function) {
-      this.ping()
-    }
-  }
-
-  /**
-   * Track detected applications
-   */
-  trackDetectedApps(apps, url, language) {
-    if (!(this.driver.ping instanceof Function)) {
-      return
-    }
-
-    const hostname = `${url.protocol}//${url.hostname}`
-
-    Object.keys(apps).forEach((appName) => {
-      const app = apps[appName]
-
-      if (this.detected[url.canonical][appName].getConfidence() >= 100) {
-        if (
-          validation.hostname.test(url.hostname) &&
-          !validation.hostnameBlacklist.test(url.hostname)
-        ) {
-          if (!(hostname in this.hostnameCache.hostnames)) {
-            this.hostnameCache.hostnames[hostname] = {
-              applications: {},
-              meta: {}
-            }
-          }
-
-          if (
-            !(appName in this.hostnameCache.hostnames[hostname].applications)
-          ) {
-            this.hostnameCache.hostnames[hostname].applications[appName] = {
-              hits: 0
-            }
-          }
-
-          this.hostnameCache.hostnames[hostname].applications[appName].hits += 1
-
-          if (apps[appName].version) {
-            this.hostnameCache.hostnames[hostname].applications[
-              appName
-            ].version = app.version
-          }
-        }
-      }
-    })
-
-    if (hostname in this.hostnameCache.hostnames) {
-      this.hostnameCache.hostnames[hostname].meta.language = language
-    }
-
-    this.ping()
-  }
-
-  /**
-   * Analyze URL
-   */
-  analyzeUrl(app, url) {
-    const patterns = this.parsePatterns(app.props.url)
-
-    if (!patterns.length) {
-      return Promise.resolve()
-    }
-
-    return asyncForEach(patterns, (pattern) => {
-      if (pattern.regex.test(url.canonical)) {
-        addDetected(app, pattern, 'url', url.canonical)
-      }
-    })
-  }
-
-  /**
-   * Analyze HTML
-   */
-  analyzeHtml(app, html) {
-    const patterns = this.parsePatterns(app.props.html)
-
-    if (!patterns.length) {
-      return Promise.resolve()
-    }
-
-    return asyncForEach(patterns, (pattern) => {
-      if (pattern.regex.test(html)) {
-        addDetected(app, pattern, 'html', html)
-      }
-    })
-  }
-
-  /**
-   * Analyze script tag
-   */
-  analyzeScripts(app, scripts) {
-    const patterns = this.parsePatterns(app.props.script)
-
-    if (!patterns.length) {
-      return Promise.resolve()
-    }
-
-    return asyncForEach(patterns, (pattern) => {
-      scripts.forEach((uri) => {
-        if (pattern.regex.test(uri)) {
-          addDetected(app, pattern, 'script', uri)
-        }
-      })
-    })
-  }
-
-  /**
-   * Analyze meta tag
-   */
-  analyzeMeta(app, metaTags) {
-    const patterns = this.parsePatterns(app.props.meta)
-    const promises = []
-
-    if (!app.props.meta) {
-      return Promise.resolve()
-    }
-
-    metaTags.forEach((match) => {
-      Object.keys(patterns).forEach((meta) => {
-        const r = new RegExp(`(?:name|property)=["']${meta}["']`, 'i')
-
-        if (r.test(match)) {
-          const content = match.match(/content=("|')([^"']+)("|')/i)
-
-          promises.push(
-            asyncForEach(patterns[meta], (pattern) => {
-              if (
-                content &&
-                content.length === 4 &&
-                pattern.regex.test(content[2])
-              ) {
-                addDetected(app, pattern, 'meta', content[2], meta)
+              if (attr.length > 1) {
+                attrs[attr.shift()] = attr.join(':')
               }
-            })
-          )
+            } else {
+              // Escape slashes in regular expression
+              attrs.regex = new RegExp(attr.replace(/\//g, '\\/'), 'i')
+            }
+
+            return attrs
+          }, {})
+
+        return {
+          regex,
+          confidence: parseInt(confidence || 100, 10),
+          version: version || ''
         }
       })
-    })
 
-    return Promise.all(promises)
-  }
+      return parsed
+    }, {})
 
-  /**
-   * Analyze response headers
-   */
-  analyzeHeaders(app, headers) {
-    const patterns = this.parsePatterns(app.props.headers)
-    const promises = []
+    return 'main' in parsed ? parsed.main : parsed
+  },
 
-    Object.keys(patterns).forEach((headerName) => {
-      if (typeof patterns[headerName] !== 'function') {
-        promises.push(
-          asyncForEach(patterns[headerName], (pattern) => {
-            headerName = headerName.toLowerCase()
-
-            if (headerName in headers) {
-              headers[headerName].forEach((headerValue) => {
-                if (pattern.regex.test(headerValue)) {
-                  addDetected(app, pattern, 'headers', headerValue, headerName)
-                }
-              })
-            }
-          })
-        )
+  analyzeOneToOne(technology, type, value) {
+    return technology[type].reduce((technologies, pattern) => {
+      if (pattern.regex.test(value)) {
+        technologies.push({ technology, pattern, match: value })
       }
-    })
 
-    return promises ? Promise.all(promises) : Promise.resolve()
-  }
+      return technologies
+    }, [])
+  },
 
-  /**
-   * Analyze cookies
-   */
-  analyzeCookies(app, cookies) {
-    const patterns = this.parsePatterns(app.props.cookies)
-    const promises = []
+  analyzeOneToMany(technology, type, items = []) {
+    return items.reduce((technologies, { key, value }) => {
+      const patterns = technology[type][key] || []
 
-    Object.keys(patterns).forEach((cookieName) => {
-      if (typeof patterns[cookieName] !== 'function') {
-        const cookieNameLower = cookieName.toLowerCase()
+      patterns.forEach((pattern) => {
+        if (pattern.regex.test(value)) {
+          technologies.push({ technology, pattern, match: value })
+        }
+      })
 
-        promises.push(
-          asyncForEach(patterns[cookieName], (pattern) => {
-            const cookie = cookies.find(
-              (_cookie) => _cookie.name.toLowerCase() === cookieNameLower
-            )
+      return technologies
+    }, [])
+  },
 
-            if (cookie && pattern.regex.test(cookie.value)) {
-              addDetected(app, pattern, 'cookies', cookie.value, cookieName)
-            }
-          })
-        )
-      }
-    })
+  analyzeManyToMany(technology, type, items = {}) {
+    return Object.keys(technology[type]).reduce((technologies, key) => {
+      const patterns = technology[type][key] || []
+      const values = items[key] || []
 
-    return promises ? Promise.all(promises) : Promise.resolve()
-  }
+      patterns.forEach((pattern) => {
+        values.forEach((value) => {
+          if (pattern.regex.test(value)) {
+            technologies.push({ technology, pattern, match: value })
+          }
+        })
+      })
 
-  /**
-   * Analyze JavaScript variables
-   */
-  analyzeJs(app, results) {
-    const promises = []
-
-    Object.keys(results).forEach((string) => {
-      if (typeof results[string] !== 'function') {
-        promises.push(
-          asyncForEach(Object.keys(results[string]), (index) => {
-            const pattern = this.jsPatterns[app.name][string][index]
-            const value = results[string][index]
-
-            if (pattern && pattern.regex.test(value)) {
-              addDetected(app, pattern, 'js', value, string)
-            }
-          })
-        )
-      }
-    })
-
-    return promises ? Promise.all(promises) : Promise.resolve()
+      return technologies
+    }, [])
   }
 }
 
-if (typeof module === 'object') {
+if (typeof module !== 'undefined') {
   module.exports = Wappalyzer
 }

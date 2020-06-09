@@ -124,12 +124,12 @@ var exports = {};
         var port = chrome.runtime.connect({name:"adparser"});
 
         port.onMessage.addListener((message) => {
-          if ( message && message.tracking_enabled ) {
-
-            utilCallback();
-          } else {
-
-            utilElseCallback();
+          if ( message && typeof message.tracking_enabled !== 'undefined' ) {
+            if (message.tracking_enabled) {
+              utilCallback();
+            } else {
+              utilElseCallback();
+            }
           }
         });
 
@@ -1111,7 +1111,6 @@ var exports = {};
 
 			if ( origUrl.indexOf('google.com/_/chrome/newtab') === -1 ) {
 				var onBlockedRobotsMessage = function() {
-          return // TODO
 					var log;
 					log = _logGen.log('invalid-robotstxt', []);
 					log.doc.finalPageUrl = log.doc.url;
