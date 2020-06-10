@@ -84,10 +84,6 @@ Options:
 
     const site = await wappalyzer.open(url)
 
-    site.on('error', (error) => {
-      process.stderr.write(`page error: ${error}\n`)
-    })
-
     const results = await site.analyze()
 
     process.stdout.write(
@@ -98,7 +94,8 @@ Options:
 
     process.exit(0)
   } catch (error) {
-    process.stderr.write(error.toString())
+    // eslint-disable-next-line no-console
+    console.error(error)
 
     await wappalyzer.destroy()
 

@@ -80,10 +80,6 @@ const Driver = {
     console[type](`wappalyzer | ${source} |`, message)
   },
 
-  warn(message, source = 'driver') {
-    Driver.log(message, source, 'warn')
-  },
-
   error(error, source = 'driver') {
     Driver.log(error, source, 'error')
   },
@@ -230,7 +226,7 @@ const Driver = {
     })
 
     // Remove duplicates
-    cache.detections = cache.detections = cache.detections.concat(detections)
+    cache.detections = cache.detections.concat(detections)
 
     cache.detections.filter(
       ({ technology: { name }, pattern: { regex } }, index) =>

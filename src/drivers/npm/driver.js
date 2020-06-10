@@ -2,7 +2,13 @@ const { URL } = require('url')
 const fs = require('fs')
 const path = require('path')
 const LanguageDetect = require('languagedetect')
-const Wappalyzer = require('./wappalyzer')
+const {
+  setTechnologies,
+  setCategories,
+  analyze,
+  analyzeManyToMany,
+  resolve
+} = require('./wappalyzer')
 
 const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
 
@@ -30,8 +36,6 @@ const languageDetect = new LanguageDetect()
 
 languageDetect.setLanguageType('iso2')
 
-const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)))
-
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
 const errorTypes = {
@@ -39,6 +43,13 @@ const errorTypes = {
   NO_RESPONSE: 'No response from server',
   NO_HTML_DOCUMENT: 'No HTML document'
 }
+
+const { apps: technologies, categories } = JSON.parse(
+  fs.readFileSync(path.resolve(`${__dirname}/apps.json`))
+)
+
+setTechnologies(technologies)
+setCategories(categories)
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -188,7 +199,7 @@ class Driver {
 
         await this.browser.close()
 
-        this.log('Done')
+        this.log('Browser closed')
       } catch (error) {
         throw new Error(error.toString())
       }
@@ -199,10 +210,10 @@ class Driver {
     return new Site(url, this)
   }
 
-  log(message, source = 'driver', type = 'debug') {
+  log(message, source = 'driver') {
     if (this.options.debug) {
       // eslint-disable-next-line no-console
-      console.log(`${type.toUpperCase()} | ${source} | ${message}`)
+      console.log(`wappalyzer | log | ${source} |`, message)
     }
   }
 }
@@ -219,21 +230,9 @@ class Site {
       throw new Error(error.message || error.toString())
     }
 
-    this.wappalyzer = new Wappalyzer()
-
-    this.wappalyzer.apps = json.apps
-    this.wappalyzer.categories = json.categories
-
-    this.wappalyzer.parseJsPatterns()
-
-    this.wappalyzer.driver.log = (message, source, type) =>
-      this.log(message, source, type)
-    this.wappalyzer.driver.displayApps = (detected, meta, context) =>
-      this.displayApps(detected, meta, context)
-
     this.analyzedUrls = {}
-    this.technologies = []
-    this.meta = {}
+    this.detections = []
+    this.language = ''
 
     this.listeners = {}
 
@@ -242,7 +241,18 @@ class Site {
     this.pages = []
   }
 
-  async init() {}
+  log(message, source = 'driver', type = 'log') {
+    if (this.options.debug) {
+      // eslint-disable-next-line no-console
+      console[type](`wappalyzer | ${type} | ${source} |`, message)
+    }
+
+    this.emit(type, { message, source })
+  }
+
+  error(error, source = 'driver') {
+    this.log(error, source, 'error')
+  }
 
   on(event, callback) {
     if (!this.listeners[event]) {
@@ -257,14 +267,6 @@ class Site {
       this.listeners[event].forEach((listener) => listener(params))
     }
   }
-
-  log(...args) {
-    this.emit('log', ...args)
-
-    this.driver.log(...args)
-  }
-
-  async fetch(url, index, depth) {}
 
   async goto(url) {
     // Return when the URL is a duplicate or maxUrls has been reached
@@ -293,7 +295,7 @@ class Site {
 
     await page.setRequestInterception(true)
 
-    page.on('error', (error) => this.emit('error', error))
+    page.on('error', (error) => this.error(error))
 
     let responseReceived = false
 
@@ -309,7 +311,7 @@ class Site {
           request.continue()
         }
       } catch (error) {
-        this.emit('error', error)
+        this.error(error)
       }
     })
 
@@ -340,7 +342,7 @@ class Site {
           }
         }
       } catch (error) {
-        this.emit('error', error)
+        this.error(error)
       }
     })
 
@@ -356,7 +358,7 @@ class Site {
         )
       ])
     } catch (error) {
-      this.emit('error', error)
+      this.error(error)
     }
 
     await sleep(1000)
@@ -387,7 +389,8 @@ class Site {
       ).jsonValue()
     ).filter((script) => script)
 
-    const js = processJs(await page.evaluate(getJs), this.wappalyzer.jsPatterns)
+    // const js = processJs(await page.evaluate(getJs), this.wappalyzer.jsPatterns)
+    // TODO
 
     const cookies = (await page.cookies()).map(
       ({ name, value, domain, path }) => ({
@@ -413,29 +416,40 @@ class Site {
       throw new Error('NO_RESPONSE')
     }
 
-    let language = null
-
-    try {
-      const [attrs] = languageDetect.detect(
-        html.replace(/<\/?[^>]+(>|$)/g, ' '),
-        1
-      )
-
-      if (attrs) {
-        ;[language] = attrs
-      }
-    } catch (error) {
-      this.log(`${error} (${url.href})`, 'driver', 'error')
+    if (!this.language) {
+      this.language = await (
+        await page.evaluateHandle(
+          () =>
+            document.documentElement.getAttribute('lang') ||
+            document.documentElement.getAttribute('xml:lang')
+        )
+      ).jsonValue()
     }
 
-    await this.wappalyzer.analyze(url, {
-      cookies,
-      headers: this.headers,
-      html,
-      js,
-      scripts,
-      language
-    })
+    if (!this.language) {
+      try {
+        const [attrs] = languageDetect.detect(
+          html.replace(/<\/?[^>]+(>|$)/gs, ' '),
+          1
+        )
+
+        if (attrs) {
+          ;[this.language] = attrs
+        }
+      } catch (error) {
+        this.error(error)
+      }
+    }
+
+    await this.onDetect(
+      url,
+      await analyze(url, {
+        cookies,
+        headers: this.headers,
+        html,
+        scripts
+      })
+    )
 
     const reducedLinks = Array.prototype.reduce.call(
       links,
@@ -496,13 +510,30 @@ class Site {
         }
       }
 
-      this.log(`${message} (${url.href})`, 'driver', 'error')
+      this.error(error)
     }
 
     return {
       urls: this.analyzedUrls,
-      applications: this.technologies,
-      meta: this.meta
+      applications: resolve(this.detections).map(
+        ({ name, confidence, version, icon, website, categories }) => ({
+          name,
+          confidence,
+          version,
+          icon,
+          website,
+          categories: categories.reduce(
+            (categories, { id, name }) => ({
+              ...categories,
+              [id]: name
+            }),
+            {}
+          )
+        })
+      ),
+      meta: {
+        language: this.language
+      }
     }
   }
 
@@ -520,34 +551,16 @@ class Site {
     await this.batch(links, depth, batch + 1)
   }
 
-  displayApps(technologies, meta) {
-    this.meta = meta
+  onDetect(url, detections = [], language) {
+    this.detections = this.detections.concat(detections)
 
-    Object.keys(technologies).forEach((name) => {
-      const {
-        confidenceTotal: confidence,
-        version,
-        props: { cats, icon, website, cpe }
-      } = technologies[name]
-
-      const categories = cats.reduce((categories, id) => {
-        categories[id] = json.categories[id].name
-
-        return categories
-      }, {})
-
-      if (!this.technologies.some(({ name: _name }) => name === _name)) {
-        this.technologies.push({
-          name,
-          confidence,
-          version: version || null,
-          icon: icon || 'default.svg',
-          website,
-          cpe: cpe || null,
-          categories
-        })
-      }
-    })
+    this.detections.filter(
+      ({ technology: { name }, pattern: { regex } }, index) =>
+        this.detections.findIndex(
+          ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            name === _name && (!regex || regex.toString() === _regex.toString())
+        ) === index
+    )
   }
 
   async destroy() {
@@ -570,6 +583,3 @@ class Site {
 }
 
 module.exports = Driver
-
-module.exports.processJs = processJs
-module.exports.processHtml = processHtml
