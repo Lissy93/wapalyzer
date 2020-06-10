@@ -48,7 +48,6 @@ webextension_dir=src/drivers/webextension
 
 pushd $webextension_dir > /dev/null
 
-sed -i "/sourceMappingURL/d" node_modules/webextension-polyfill/dist/browser-polyfill.js
 sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" manifest.json
 
 zip -qr ../../../build/wappalyzer_webextension.zip . \
