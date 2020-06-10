@@ -31,19 +31,18 @@ const Driver = {
             ...hostnameCache[hostname],
             detections: hostnameCache[hostname].detections.map(
               ({
-                pattern: { regex, confidence, version },
-                match,
-                technology: name
+                technology: name,
+                pattern: { regex, confidence },
+                version
               }) => ({
-                pattern: {
-                  regex: new RegExp(regex, 'i'),
-                  confidence,
-                  version
-                },
-                match,
                 technology: Wappalyzer.technologies.find(
                   ({ name: _name }) => name === _name
-                )
+                ),
+                pattern: {
+                  regex: new RegExp(regex, 'i'),
+                  confidence
+                },
+                version
               })
             )
           }
@@ -69,7 +68,7 @@ const Driver = {
     if (previous === null) {
       Driver.open('https://www.wappalyzer.com/installed')
     } else if (version !== previous && upgradeMessage) {
-      Driver.open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+      // Driver.open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
     }
 
     await setOption('version', version)
@@ -262,17 +261,16 @@ const Driver = {
             ...Driver.cache.hostnames[hostname],
             detections: Driver.cache.hostnames[hostname].detections.map(
               ({
-                pattern: { regex, confidence, version },
-                match,
-                technology: { name: technology }
+                technology: { name: technology },
+                pattern: { regex, confidence },
+                version
               }) => ({
                 technology,
                 pattern: {
                   regex: regex.source,
-                  confidence,
-                  version
+                  confidence
                 },
-                match
+                version
               })
             )
           }

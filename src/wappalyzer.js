@@ -30,17 +30,17 @@ const Wappalyzer = {
         let version = ''
         let confidence = 0
 
-        detections.forEach(({ technology: { name }, pattern, match }) => {
-          if (name === technology.name) {
-            const versionValue = Wappalyzer.resolveVersion(pattern, match)
-
-            confidence = Math.min(100, confidence + pattern.confidence)
-            version =
-              versionValue.length > version.length && versionValue.length <= 10
-                ? versionValue
-                : version
+        detections.forEach(
+          ({ technology: { name }, pattern, version: _version = '' }) => {
+            if (name === technology.name) {
+              confidence = Math.min(100, confidence + pattern.confidence)
+              version =
+                _version.length > version.length && _version.length <= 10
+                  ? _version
+                  : version
+            }
           }
-        })
+        )
 
         resolved.push({ technology, confidence, version })
       }
@@ -287,7 +287,11 @@ const Wappalyzer = {
   analyzeOneToOne(technology, type, value) {
     return technology[type].reduce((technologies, pattern) => {
       if (pattern.regex.test(value)) {
-        technologies.push({ technology, pattern, match: value })
+        technologies.push({
+          technology,
+          pattern,
+          version: Wappalyzer.resolveVersion(pattern, value)
+        })
       }
 
       return technologies
@@ -300,7 +304,11 @@ const Wappalyzer = {
 
       patterns.forEach((pattern) => {
         if (pattern.regex.test(value)) {
-          technologies.push({ technology, pattern, match: value })
+          technologies.push({
+            technology,
+            pattern,
+            version: Wappalyzer.resolveVersion(pattern, value)
+          })
         }
       })
 
@@ -316,7 +324,11 @@ const Wappalyzer = {
       patterns.forEach((pattern) => {
         values.forEach((value) => {
           if (pattern.regex.test(value)) {
-            technologies.push({ technology, pattern, match: value })
+            technologies.push({
+              technology,
+              pattern,
+              version: Wappalyzer.resolveVersion(pattern, value)
+            })
           }
         })
       })
