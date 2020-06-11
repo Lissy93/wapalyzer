@@ -108,7 +108,7 @@ const Wappalyzer = {
 
   resolveExcludes(resolved) {
     resolved.forEach(({ technology }) => {
-      technology.excludes.forEach((name) => {
+      technology.excludes.forEach(({ name }) => {
         const excluded = Wappalyzer.getTechnology(name)
 
         if (!excluded) {
@@ -131,7 +131,7 @@ const Wappalyzer = {
       resolved.forEach(({ technology, confidence }) => {
         done = true
 
-        technology.implies.forEach((name) => {
+        technology.implies.forEach(({ name, confidence: _confidence }) => {
           const implied = Wappalyzer.getTechnology(name)
 
           if (!implied) {
@@ -143,7 +143,11 @@ const Wappalyzer = {
               ({ technology: { name } }) => name === implied.name
             ) === -1
           ) {
-            resolved.push({ technology: implied, confidence, version: '' })
+            resolved.push({
+              technology: implied,
+              confidence: Math.min(confidence, _confidence),
+              version: ''
+            })
 
             done = false
           }
@@ -209,8 +213,13 @@ const Wappalyzer = {
         meta: transform(meta),
         scripts: transform(script),
         js: transform(js),
-        implies: typeof implies === 'string' ? [implies] : implies || [],
-        excludes: typeof excludes === 'string' ? [excludes] : excludes || [],
+        implies: transform(implies).map(({ value, confidence }) => ({
+          name: value,
+          confidence
+        })),
+        excludes: transform(excludes).map(({ value }) => ({
+          name: value
+        })),
         icon: icon || 'default.svg',
         website: website || ''
       })
@@ -248,7 +257,7 @@ const Wappalyzer = {
 
     const parsed = Object.keys(patterns).reduce((parsed, key) => {
       parsed[key.toLowerCase()] = toArray(patterns[key]).map((pattern) => {
-        const { regex, confidence, version } = pattern
+        const { value, regex, confidence, version } = pattern
           .split('\\;')
           .reduce((attrs, attr, i) => {
             if (i) {
@@ -259,6 +268,8 @@ const Wappalyzer = {
                 attrs[attr.shift()] = attr.join(':')
               }
             } else {
+              attrs.value = attr
+
               // Escape slashes in regular expression
               attrs.regex = new RegExp(attr.replace(/\//g, '\\/'), 'i')
             }
@@ -267,6 +278,7 @@ const Wappalyzer = {
           }, {})
 
         return {
+          value,
           regex,
           confidence: parseInt(confidence || 100, 10),
           version: version || ''

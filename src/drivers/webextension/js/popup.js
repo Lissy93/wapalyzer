@@ -133,7 +133,7 @@ const Popup = {
         )
 
         technologies
-          .filter(({ confidence }) => confidence)
+          .filter(({ confidence }) => confidence >= 50)
           .forEach(({ name, slug, confidence, version, icon, website }) => {
             const technologyNode = Popup.templates.technology.cloneNode(true)
 
