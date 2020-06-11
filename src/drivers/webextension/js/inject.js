@@ -13,7 +13,7 @@
 
       postMessage({
         wappalyzer: {
-          js: technologies.reduce((results, { name, chains }) => {
+          js: technologies.reduce((technologies, { name, chains }) => {
             chains.forEach((chain) => {
               const value = chain
                 .split('.')
@@ -25,14 +25,16 @@
                   window
                 )
 
-              technologies.push({
-                name,
-                chain,
-                value:
-                  typeof value === 'string' || typeof value === 'number'
-                    ? value
-                    : !!value
-              })
+              if (value !== undefined) {
+                technologies.push({
+                  name,
+                  chain,
+                  value:
+                    typeof value === 'string' || typeof value === 'number'
+                      ? value
+                      : !!value
+                })
+              }
             })
 
             return technologies

@@ -96,7 +96,6 @@ const Content = {
         wappalyzer: {
           technologies: technologies
             .filter(({ js }) => Object.keys(js).length)
-            .filter(({ name }) => name === 'jQuery')
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
         }
       })

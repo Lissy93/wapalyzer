@@ -118,13 +118,11 @@ const Driver = {
       url,
       Array.prototype.concat.apply(
         [],
-        await Promise.all(
-          js.map(({ name, chain, value }) =>
-            analyzeManyToMany(
-              Wappalyzer.technologies.find(({ name: _name }) => name === _name),
-              'js',
-              { [chain]: [value] }
-            )
+        js.map(({ name, chain, value }) =>
+          analyzeManyToMany(
+            Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+            'js',
+            { [chain]: [value] }
           )
         )
       )
@@ -178,10 +176,7 @@ const Driver = {
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(
-              url,
-              await analyze(url.href, { headers }, { tab })
-            )
+            await Driver.onDetect(url, analyze(url.href, { headers }, { tab }))
           }
         }
       } catch (error) {
@@ -198,7 +193,7 @@ const Driver = {
         domain: `.${url.hostname}`
       })
 
-      await Driver.onDetect(url, await analyze(href, items), language, true)
+      await Driver.onDetect(url, analyze(href, items), language, true)
     } catch (error) {
       Driver.error(error)
     }

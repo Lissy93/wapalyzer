@@ -2,13 +2,15 @@ const { URL } = require('url')
 const fs = require('fs')
 const path = require('path')
 const LanguageDetect = require('languagedetect')
+const Wappalyzer = require('./wappalyzer')
+
 const {
   setTechnologies,
   setCategories,
   analyze,
   analyzeManyToMany,
   resolve
-} = require('./wappalyzer')
+} = Wappalyzer
 
 const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
 
@@ -90,54 +92,17 @@ function getJs() {
   return dereference(window)
 }
 
-function processJs(window, patterns) {
-  const js = {}
-
-  Object.keys(patterns).forEach((appName) => {
-    js[appName] = {}
-
-    Object.keys(patterns[appName]).forEach((chain) => {
-      js[appName][chain] = {}
-
-      patterns[appName][chain].forEach((pattern, index) => {
-        const properties = chain.split('.')
-
-        let value = properties.reduce(
-          (parent, property) =>
-            parent && parent[property] ? parent[property] : null,
-          window
-        )
-
-        value =
-          typeof value === 'string' || typeof value === 'number'
-            ? value
-            : !!value
-
-        if (value) {
-          js[appName][chain][index] = value
-        }
-      })
-    })
-  })
-
-  return js
-}
-
-function processHtml(html, maxCols, maxRows) {
-  if (maxCols || maxRows) {
-    const batches = []
-    const rows = html.length / maxCols
-
-    for (let i = 0; i < rows; i += 1) {
-      if (i < maxRows / 2 || i > rows - maxRows / 2) {
-        batches.push(html.slice(i * maxCols, (i + 1) * maxCols))
-      }
-    }
-
-    html = batches.join('\n')
-  }
-
-  return html
+function analyzeJs(js) {
+  return Array.prototype.concat.apply(
+    [],
+    js.map(({ name, chain, value }) =>
+      analyzeManyToMany(
+        Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+        'js',
+        { [chain]: [value] }
+      )
+    )
+  )
 }
 
 class Driver {
@@ -236,8 +201,6 @@ class Site {
 
     this.listeners = {}
 
-    this.headers = {}
-
     this.pages = []
   }
 
@@ -322,23 +285,28 @@ class Site {
             status: response.status()
           }
 
-          const headers = response.headers()
+          const rawHeaders = response.headers()
+          const headers = {}
 
-          Object.keys(headers).forEach((key) => {
-            this.headers[key] = [
-              ...(this.headers[key] || []),
-              ...(Array.isArray(headers[key]) ? headers[key] : [headers[key]])
+          Object.keys(rawHeaders).forEach((key) => {
+            headers[key] = [
+              ...(headers[key] || []),
+              ...(Array.isArray(rawHeaders[key])
+                ? rawHeaders[key]
+                : [rawHeaders[key]])
             ]
           })
 
           this.contentType = headers['content-type'] || null
 
           if (response.status() >= 300 && response.status() < 400) {
-            if (this.headers.location) {
-              url = new URL(this.headers.location.slice(-1), url)
+            if (headers.location) {
+              url = new URL(headers.location.slice(-1), url)
             }
           } else {
             responseReceived = true
+
+            this.onDetect(analyze(url, { headers }))
           }
         }
       } catch (error) {
@@ -346,9 +314,10 @@ class Site {
       }
     })
 
-    if (this.options.userAgent) {
-      await page.setUserAgent(this.options.userAgent)
-    }
+    await page.setUserAgent(
+      this.options.userAgent ||
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    )
 
     try {
       await Promise.race([
@@ -363,6 +332,7 @@ class Site {
 
     await sleep(1000)
 
+    // Links
     const links = await (
       await page.evaluateHandle(() =>
         Array.from(document.getElementsByTagName('a')).map(
@@ -378,7 +348,7 @@ class Site {
       )
     ).jsonValue()
 
-    // eslint-disable-next-line no-undef
+    // Script tags
     const scripts = (
       await (
         await page.evaluateHandle(() =>
@@ -389,9 +359,40 @@ class Site {
       ).jsonValue()
     ).filter((script) => script)
 
-    // const js = processJs(await page.evaluate(getJs), this.wappalyzer.jsPatterns)
-    // TODO
+    // JavaScript
+    const win = await page.evaluate(getJs)
 
+    const js = Wappalyzer.technologies
+      .filter(({ js }) => Object.keys(js).length)
+      .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+      .reduce((technologies, { name, chains }) => {
+        chains.forEach((chain) => {
+          const value = chain
+            .split('.')
+            .reduce(
+              (value, method) =>
+                value && value.hasOwnProperty(method)
+                  ? value[method]
+                  : undefined,
+              win
+            )
+
+          if (typeof value !== 'undefined') {
+            technologies.push({
+              name,
+              chain,
+              value:
+                typeof value === 'string' || typeof value === 'number'
+                  ? value
+                  : !!value
+            })
+          }
+        })
+
+        return technologies
+      }, [])
+
+    // Cookies
     const cookies = (await page.cookies()).map(
       ({ name, value, domain, path }) => ({
         name,
@@ -401,11 +402,29 @@ class Site {
       })
     )
 
-    const html = processHtml(
-      await page.content(),
-      this.options.htmlMaxCols,
-      this.options.htmlMaxRows
-    )
+    // HTML
+    let html = await page.content()
+
+    if (this.options.htmlMaxCols && this.options.htmlMaxRows) {
+      const batches = []
+      const rows = html.length / this.options.htmlMaxCols
+
+      for (let i = 0; i < rows; i += 1) {
+        if (
+          i < this.options.htmlMaxRows / 2 ||
+          i > rows - this.options.htmlMaxRows / 2
+        ) {
+          batches.push(
+            html.slice(
+              i * this.options.htmlMaxCols,
+              (i + 1) * this.options.htmlMaxCols
+            )
+          )
+        }
+      }
+
+      html = batches.join('\n')
+    }
 
     // Validate response
     if (!this.analyzedUrls[url.href].status) {
@@ -441,11 +460,12 @@ class Site {
       }
     }
 
-    await this.onDetect(
+    this.onDetect(url, analyzeJs(js))
+
+    this.onDetect(
       url,
-      await analyze(url, {
+      analyze(url, {
         cookies,
-        headers: this.headers,
         html,
         scripts
       })

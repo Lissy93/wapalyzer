@@ -145,7 +145,7 @@ const Wappalyzer = {
     }
   },
 
-  async analyze(url, { html, meta, headers, cookies, scripts }) {
+  analyze(url, { html, meta, headers, cookies, scripts }) {
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
@@ -154,19 +154,15 @@ const Wappalyzer = {
 
     try {
       const detections = flatten(
-        flatten(
-          await Promise.all(
-            Wappalyzer.technologies.map((technology) =>
-              Promise.all([
-                oo(technology, 'url', url),
-                oo(technology, 'html', html),
-                om(technology, 'meta', meta),
-                mm(technology, 'headers', headers),
-                om(technology, 'cookies', cookies),
-                om(technology, 'scripts', scripts)
-              ])
-            )
-          )
+        Wappalyzer.technologies.map((technology) =>
+          flatten([
+            oo(technology, 'url', url),
+            oo(technology, 'html', html),
+            om(technology, 'meta', meta),
+            mm(technology, 'headers', headers),
+            om(technology, 'cookies', cookies),
+            om(technology, 'scripts', scripts)
+          ])
         )
       ).filter((technology) => technology)
 
