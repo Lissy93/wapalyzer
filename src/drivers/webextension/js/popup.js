@@ -7,6 +7,9 @@ const { agent, i18n, getOption, setOption, promisify } = Utils
 const Popup = {
   port: chrome.runtime.connect({ name: 'popup.js' }),
 
+  /**
+   * Initialize popup.
+   */
   async init() {
     // Templates
     Popup.templates = Array.from(
@@ -47,6 +50,7 @@ const Popup = {
         Popup.driver('getDetections')
       })
 
+      // Run internationalization.
       i18n()
     }
 
@@ -67,14 +71,27 @@ const Popup = {
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
   },
 
+  /**
+   * Apply function to postMessage request.
+   * @param {function} func
+   * @param  {...any} args
+   */
   driver(func, ...args) {
     Popup.port.postMessage({ func, args })
   },
 
+  /**
+   * Log message.
+   * @param {String} message
+   */
   log(message) {
     Popup.driver('log', message, 'popup.js')
   },
 
+  /**
+   * Group technologies into categories.
+   * @param {Object} technologies
+   */
   categorise(technologies) {
     return Object.values(
       technologies.reduce((categories, technology) => {
@@ -92,6 +109,10 @@ const Popup = {
     )
   },
 
+  /**
+   * Callback for getDetection listener.
+   * @param {Array} detections
+   */
   async onGetDetections(detections) {
     const pinnedCategory = await getOption('pinnedCategory')
 
@@ -189,6 +210,7 @@ const Popup = {
   }
 }
 
+// Add listener for popup PostMessage API.
 Popup.port.onMessage.addListener(({ func, args }) => {
   const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
 

@@ -16,6 +16,9 @@ const expiry = 1000 * 60 * 60 * 24
 const Driver = {
   lastPing: Date.now(),
 
+  /**
+   * Initialize Chrome extension.
+   */
   async init() {
     chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
 
@@ -74,19 +77,38 @@ const Driver = {
     await setOption('version', version)
   },
 
+  /**
+   * Logging utility function.
+   * @param {String} message
+   * @param {String} source
+   * @param {String} type
+   */
   log(message, source = 'driver', type = 'log') {
     // eslint-disable-next-line no-console
     console[type](`wappalyzer | ${source} |`, message)
   },
 
+  /**
+   * Error utility function.
+   * @param {String} error
+   * @param {String} source
+   */
   error(error, source = 'driver') {
     Driver.log(error, source, 'error')
   },
 
+  /**
+   * Open browser tab utility function.
+   * @param {String} url
+   * @param {Boolean} active
+   */
   open(url, active = true) {
     chrome.tabs.create({ url, active })
   },
 
+  /**
+   * Load technologies into memory.
+   */
   async loadTechnologies() {
     try {
       const { apps: technologies, categories } = await (
@@ -100,6 +122,11 @@ const Driver = {
     }
   },
 
+  /**
+   * Post-wrapper for fetch.
+   * @param {String} url
+   * @param {String} body
+   */
   post(url, body) {
     try {
       return fetch(url, {
@@ -111,6 +138,11 @@ const Driver = {
     }
   },
 
+  /**
+   * Analyize JavaScript detections.
+   * @param {String} url
+   * @param {Array} js
+   */
   async analyzeJs(url, js) {
     await Driver.onDetect(
       url,
@@ -127,6 +159,10 @@ const Driver = {
     )
   },
 
+  /**
+   * Initialize PostMessage interface.
+   * @param {Object} port
+   */
   onRuntimeConnect(port) {
     Driver.log(`Connected to ${port.name}`)
 
@@ -150,6 +186,10 @@ const Driver = {
     })
   },
 
+  /**
+   * Callback for WebRequestComplete listener.
+   * @param {Object} request
+   */
   async onWebRequestComplete(request) {
     if (request.responseHeaders) {
       const headers = {}
@@ -183,6 +223,12 @@ const Driver = {
     }
   },
 
+  /**
+   * Callback for onContentLoad listener.
+   * @param {String} url
+   * @param {Object} items
+   * @param {String} language
+   */
   async onContentLoad(url, items, language) {
     try {
       const { hostname } = new URL(url)
@@ -205,10 +251,20 @@ const Driver = {
     }
   },
 
+  /**
+   * Get technology detections.
+   */
   getTechnologies() {
     return Wappalyzer.technologies
   },
 
+  /**
+   * Callback for detections.
+   * @param {String} url
+   * @param {Array} detections
+   * @param {String} language
+   * @param {Boolean} incrementHits
+   */
   async onDetect(url, detections = [], language, incrementHits = false) {
     if (!detections.length) {
       return
@@ -293,12 +349,21 @@ const Driver = {
     await Driver.ping()
   },
 
+  /**
+   * Callback for onAd listener.
+   * @param {Object} ad
+   */
   async onAd(ad) {
     Driver.cache.ads.push(ad)
 
     await setOption('ads', Driver.cache.ads)
   },
 
+  /**
+   * Generate linked icon for detections.
+   * @param {String} url
+   * @param {Object} technologies
+   */
   async setIcon(url, technologies) {
     const dynamicIcon = await getOption('dynamicIcon', true)
 
@@ -340,6 +405,9 @@ const Driver = {
     )
   },
 
+  /**
+   * Get detections from site.
+   */
   async getDetections() {
     const [{ id }] = await promisify(chrome.tabs, 'query', {
       active: true,
@@ -349,6 +417,11 @@ const Driver = {
     return Driver.cache.tabs[id]
   },
 
+  /**
+   * Check for robot rules on site.
+   * @param {String} hostname
+   * @param {Boolean} secure
+   */
   async getRobots(hostname, secure = false) {
     if (!(await getOption('tracking', true))) {
       return
@@ -416,6 +489,10 @@ const Driver = {
     }
   },
 
+  /**
+   * Check for robots.txt rules.
+   * @param {String} href
+   */
   async checkRobots(href) {
     const url = new URL(href)
 
@@ -433,6 +510,9 @@ const Driver = {
     }
   },
 
+  /**
+   * Ping back home.
+   */
   async ping() {
     const tracking = await getOption('tracking', true)
     const termsAccepted =
