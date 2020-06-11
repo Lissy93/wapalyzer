@@ -311,13 +311,7 @@ const Driver = {
         categories.some(({ id }) => id === pinnedCategory)
       )
 
-      ;({ icon } = pinned ||
-        technologies.sort(({ categories: a }, { categories: b }) => {
-          const max = (value) =>
-            value.reduce((max, { priority }) => Math.max(max, priority))
-
-          return max(a) > max(b) ? -1 : 1
-        })[0] || { icon })
+      ;({ icon } = pinned || technologies[0] || { icon })
     }
 
     const tabs = await promisify(chrome.tabs, 'query', { url })

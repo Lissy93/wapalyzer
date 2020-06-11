@@ -51,21 +51,28 @@ const Wappalyzer = {
     Wappalyzer.resolveExcludes(resolved)
     Wappalyzer.resolveImplies(resolved)
 
-    return resolved.map(
-      ({
-        technology: { name, slug, categories, icon, website },
-        confidence,
-        version
-      }) => ({
-        name,
-        slug,
-        categories: categories.map((id) => Wappalyzer.getCategory(id)),
-        confidence,
-        version,
-        icon,
-        website
-      })
-    )
+    const priority = ({ technology: { categories } }) =>
+      categories.reduce((max, id) =>
+        Math.max(max, Wappalyzer.getCategory(id).priority)
+      )
+
+    return resolved
+      .sort((a, b) => (priority(a) > priority(b) ? 1 : -1))
+      .map(
+        ({
+          technology: { name, slug, categories, icon, website },
+          confidence,
+          version
+        }) => ({
+          name,
+          slug,
+          categories: categories.map((id) => Wappalyzer.getCategory(id)),
+          confidence,
+          version,
+          icon,
+          website
+        })
+      )
   },
 
   resolveVersion({ version, regex }, match) {
