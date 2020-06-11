@@ -472,11 +472,11 @@ class Site {
       }
     }
 
-    this.onDetect(url, analyzeJs(js))
+    this.onDetect(analyzeJs(js))
 
     this.onDetect(
-      url,
       analyze({
+        url,
         cookies,
         html,
         scripts,
@@ -584,7 +584,7 @@ class Site {
     await this.batch(links, depth, batch + 1)
   }
 
-  onDetect(url, detections = [], language) {
+  onDetect(detections = [], language) {
     this.detections = this.detections.concat(detections)
 
     this.detections.filter(
