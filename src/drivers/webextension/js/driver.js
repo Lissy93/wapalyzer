@@ -68,7 +68,7 @@ const Driver = {
     if (previous === null) {
       Driver.open('https://www.wappalyzer.com/installed')
     } else if (version !== previous && upgradeMessage) {
-      // Driver.open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+      Driver.open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
     }
 
     await setOption('version', version)
@@ -111,9 +111,7 @@ const Driver = {
     }
   },
 
-  async analyzeJs(href, js) {
-    const url = new URL(href)
-
+  async analyzeJs(url, js) {
     await Driver.onDetect(
       url,
       Array.prototype.concat.apply(
@@ -157,9 +155,9 @@ const Driver = {
       const headers = {}
 
       try {
-        const url = new URL(request.url)
-
-        const [tab] = await promisify(chrome.tabs, 'query', { url: [url.href] })
+        const [tab] = await promisify(chrome.tabs, 'query', {
+          url: [request.url]
+        })
 
         if (tab) {
           request.responseHeaders.forEach((header) => {
@@ -176,7 +174,7 @@ const Driver = {
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(url, analyze(url.href, { headers }, { tab }))
+            await Driver.onDetect(request.url, analyze({ headers }))
           }
         }
       } catch (error) {
@@ -185,15 +183,23 @@ const Driver = {
     }
   },
 
-  async onContentLoad(href, items, language) {
+  async onContentLoad(url, items, language) {
     try {
-      const url = new URL(href)
+      const { hostname } = new URL(url)
 
-      items.cookies = await promisify(chrome.cookies, 'getAll', {
-        domain: `.${url.hostname}`
-      })
+      items.cookies = (
+        await promisify(chrome.cookies, 'getAll', {
+          domain: `.${hostname}`
+        })
+      ).reduce(
+        (cookies, { name, value }) => ({
+          ...cookies,
+          [name]: [value]
+        }),
+        {}
+      )
 
-      await Driver.onDetect(url, analyze(href, items), language, true)
+      await Driver.onDetect(url, analyze({ url, ...items }), language, true)
     } catch (error) {
       Driver.error(error)
     }
@@ -208,7 +214,7 @@ const Driver = {
       return
     }
 
-    const { hostname, href } = url
+    const { hostname } = new URL(url)
 
     // Cache detections
     const cache = (Driver.cache.hostnames[hostname] = {
@@ -278,7 +284,7 @@ const Driver = {
 
     await Driver.setIcon(url, resolved)
 
-    const tabs = await promisify(chrome.tabs, 'query', { url: [href] })
+    const tabs = await promisify(chrome.tabs, 'query', { url })
 
     tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
 
@@ -314,7 +320,7 @@ const Driver = {
         })[0] || { icon })
     }
 
-    const tabs = await promisify(chrome.tabs, 'query', { url: [url.href] })
+    const tabs = await promisify(chrome.tabs, 'query', { url })
 
     await Promise.all(
       tabs.map(async ({ id: tabId }) => {

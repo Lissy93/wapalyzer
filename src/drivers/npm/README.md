@@ -2,22 +2,23 @@
 
 [Wappalyzer](https://www.wappalyzer.com/) indentifies technologies on websites. 
 
+*Note:* The [wappalyzer-core](https://www.npmjs.com/package/wappalyzer-core) package provides a low-level API without dependencies.
 
-## CLI
+## Command line
 
-## Installation
+### Installation
 
 ```shell
 $ npm i -g wappalyzer
 ```
 
-## Usage
+### Usage
 
 ```
 wappalyzer <url> [options]
 ```
 
-### Options
+#### Options
 
 ```
 -b, --batch-size=...     Process links in batches
@@ -37,13 +38,13 @@ wappalyzer <url> [options]
 
 ## Dependency
 
-## Installation
+### Installation
 
 ```shell
 $ npm i wappalyzer
 ```
 
-## Usage
+### Usage
 
 ```javascript
 const Wappalyzer = require('wappalyzer');

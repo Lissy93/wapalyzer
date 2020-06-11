@@ -53,12 +53,18 @@ const Content = {
         .filter((script) => script.indexOf('data:text/javascript;') !== 0)
 
       // Meta tags
-      const meta = Array.from(document.querySelectorAll('meta'))
-        .map((meta) => ({
-          key: meta.getAttribute('name') || meta.getAttribute('property'),
-          value: meta.getAttribute('content')
-        }))
-        .filter(({ value }) => value)
+      const meta = Array.from(document.querySelectorAll('meta')).reduce(
+        (metas, meta) => {
+          const key = meta.getAttribute('name') || meta.getAttribute('property')
+
+          if (key) {
+            metas[key.toLowerCase()] = [meta.getAttribute('content')]
+          }
+
+          return metas
+        },
+        {}
+      )
 
       Content.port.postMessage({
         func: 'onContentLoad',

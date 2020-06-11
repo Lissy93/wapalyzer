@@ -39,6 +39,7 @@ set -e
 
 # NPM
 sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" src/drivers/npm/package.json
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" src/package.json
 
 # WebExtension
 

@@ -110,7 +110,7 @@ const Wappalyzer = {
 
         const index = resolved.findIndex(({ name }) => name === excluded.name)
 
-        if (index === -1) {
+        if (index !== -1) {
           resolved.splice(index, 1)
         }
       })
@@ -145,7 +145,7 @@ const Wappalyzer = {
     }
   },
 
-  analyze(url, { html, meta, headers, cookies, scripts }) {
+  analyze({ url, html, meta, headers, cookies, scripts }) {
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
@@ -158,10 +158,10 @@ const Wappalyzer = {
           flatten([
             oo(technology, 'url', url),
             oo(technology, 'html', html),
-            om(technology, 'meta', meta),
-            mm(technology, 'headers', headers),
-            om(technology, 'cookies', cookies),
-            om(technology, 'scripts', scripts)
+            om(technology, 'scripts', scripts),
+            mm(technology, 'cookies', cookies),
+            mm(technology, 'meta', meta),
+            mm(technology, 'headers', headers)
           ])
         )
       ).filter((technology) => technology)
@@ -196,15 +196,7 @@ const Wappalyzer = {
         categories: cats || [],
         slug: Wappalyzer.slugify(name),
         url: transform(url),
-        headers: transform(
-          Object.keys(headers || {}).reduce(
-            (lcHeaders, header) => ({
-              ...lcHeaders,
-              [header.toLowerCase()]: headers[header]
-            }),
-            {}
-          )
-        ),
+        headers: transform(headers),
         cookies: transform(cookies),
         html: transform(html),
         meta: transform(meta),
@@ -248,7 +240,7 @@ const Wappalyzer = {
     }
 
     const parsed = Object.keys(patterns).reduce((parsed, key) => {
-      parsed[key] = toArray(patterns[key]).map((pattern) => {
+      parsed[key.toLowerCase()] = toArray(patterns[key]).map((pattern) => {
         const { regex, confidence, version } = pattern
           .split('\\;')
           .reduce((attrs, attr, i) => {
@@ -295,8 +287,8 @@ const Wappalyzer = {
   },
 
   analyzeOneToMany(technology, type, items = []) {
-    return items.reduce((technologies, { key, value }) => {
-      const patterns = technology[type][key] || []
+    return items.reduce((technologies, value) => {
+      const patterns = technology[type] || []
 
       patterns.forEach((pattern) => {
         if (pattern.regex.test(value)) {

@@ -306,7 +306,7 @@ class Site {
           } else {
             responseReceived = true
 
-            this.onDetect(analyze(url, { headers }))
+            this.onDetect(analyze({ headers }))
           }
         }
       } catch (error) {
@@ -349,15 +349,28 @@ class Site {
     ).jsonValue()
 
     // Script tags
-    const scripts = (
-      await (
-        await page.evaluateHandle(() =>
-          Array.from(document.getElementsByTagName('script')).map(
-            ({ src }) => src
-          )
-        )
-      ).jsonValue()
-    ).filter((script) => script)
+    const scripts = await (
+      await page.evaluateHandle(() =>
+        Array.from(document.getElementsByTagName('script'))
+          .map(({ src }) => src)
+          .filter((src) => src)
+      )
+    ).jsonValue()
+
+    // Meta tags
+    const meta = await (
+      await page.evaluateHandle(() =>
+        Array.from(document.querySelectorAll('meta')).reduce((metas, meta) => {
+          const key = meta.getAttribute('name') || meta.getAttribute('property')
+
+          if (key) {
+            metas[key.toLowerCase()] = [meta.getAttribute('content')]
+          }
+
+          return metas
+        }, {})
+      )
+    ).jsonValue()
 
     // JavaScript
     const win = await page.evaluate(getJs)
@@ -393,13 +406,12 @@ class Site {
       }, [])
 
     // Cookies
-    const cookies = (await page.cookies()).map(
-      ({ name, value, domain, path }) => ({
-        name,
-        value,
-        domain,
-        path
-      })
+    const cookies = (await page.cookies()).reduce(
+      (cookies, { name, value }) => ({
+        ...cookies,
+        [name]: [value]
+      }),
+      {}
     )
 
     // HTML
@@ -464,10 +476,11 @@ class Site {
 
     this.onDetect(
       url,
-      analyze(url, {
+      analyze({
         cookies,
         html,
-        scripts
+        scripts,
+        meta
       })
     )
 
