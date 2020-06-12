@@ -5,6 +5,9 @@
 const { i18n, getOption, setOption } = Utils
 
 const Options = {
+  /**
+   * Initialize Chrome options.
+   */
   async init() {
     // Theme mode
     const themeMode = await getOption('themeMode', false)

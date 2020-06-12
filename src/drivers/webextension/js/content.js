@@ -3,6 +3,9 @@
 /* globals chrome */
 
 const Content = {
+  /**
+   * Initialize content detection.
+   */
   async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
@@ -77,6 +80,10 @@ const Content = {
     }
   },
 
+  /**
+   * Callback for fetching technologies.
+   * @param {Object} technologies
+   */
   onGetTechnologies(technologies) {
     const script = document.createElement('script')
 
