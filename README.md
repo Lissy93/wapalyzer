@@ -1,4 +1,4 @@
-# Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/) [![Scrutinizer](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aliasio/wappalyzer/?branch=master)
+# Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
 [Wappalyzer](https://www.wappalyzer.com/) is a
 [cross-platform](https://www.wappalyzer.com/nodejs) utility that uncovers the

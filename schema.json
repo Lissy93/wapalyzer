@@ -1,11 +1,11 @@
 {
-	"title": "Wappalyzer Schema",
+	"title": "Wappalyzer schema",
 	"definitions": {
 		"non-empty-non-blank-string": {
 			"type": "string",
 			"pattern": "^(?!\\s*$).+"
 		}
-	},            
+	},
 	"type": "object",
 	"additionalProperties": false,
 	"required": ["categories","apps"],
