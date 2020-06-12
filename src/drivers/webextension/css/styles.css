@@ -8,6 +8,10 @@
   --color-light-grey: #fafafa;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
 	background: #fff;
   color: var(--color-text);
@@ -17,6 +21,8 @@ body {
   line-height: 1.5rem;
 	margin: 0;
   min-width: 35rem;
+  overflow-x: hidden;
+  padding-bottom: 3rem;
 }
 
 a {
@@ -51,11 +57,15 @@ a:hover {
 
 .footer {
   align-items: center;
+	background: #fff;
+  bottom: 0;
   justify-content: space-between;
   border-top: 1px solid var(--color-secondary);
   height: 3rem;
   display: flex;
   padding: 0 1.5rem;
+  position: fixed;
+  width: 100%;
 }
 
 .alerts__icon {
@@ -258,6 +268,7 @@ a:hover {
   }
 
   .theme-mode .footer {
+    background: var(--color-primary-darken);
     border-color: var(--color-secondary-dark)
   }
 

@@ -6,7 +6,7 @@ const Utils = {
   agent: chrome.extension.getURL('/').startsWith('moz-') ? 'firefox' : 'chrome',
 
   /**
-   * Promise utility tool.
+   * Use promises instead of callbacks
    * @param {Object} context
    * @param {String} method
    * @param  {...any} args
@@ -24,7 +24,7 @@ const Utils = {
   },
 
   /**
-   * Chrome tab utility.
+   * Open a browser tab
    * @param {String} url
    * @param {Boolean} active
    */
@@ -33,7 +33,7 @@ const Utils = {
   },
 
   /**
-   * Get value from local storage.
+   * Get value from local storage
    * @param {String} name
    * @param {string|mixed|null} defaultValue
    */
@@ -52,7 +52,7 @@ const Utils = {
   },
 
   /**
-   * Set value in local storage.
+   * Set value in local storage
    * @param {String} name
    * @param {String} value
    */
@@ -67,7 +67,7 @@ const Utils = {
   },
 
   /**
-   * Load internationalization.
+   * Apply internationalization
    */
   i18n() {
     Array.from(document.querySelectorAll('[data-i18n]')).forEach(

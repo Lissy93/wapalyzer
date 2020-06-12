@@ -2,13 +2,13 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, i18n, getOption, setOption, promisify } = Utils
+const { agent, open, i18n, getOption, setOption, promisify } = Utils
 
 const Popup = {
   port: chrome.runtime.connect({ name: 'popup.js' }),
 
   /**
-   * Initialize popup.
+   * Initialise popup
    */
   async init() {
     // Templates
@@ -50,7 +50,7 @@ const Popup = {
         Popup.driver('getDetections')
       })
 
-      // Run internationalization.
+      // Apply internationalization
       i18n()
     }
 
@@ -72,7 +72,7 @@ const Popup = {
   },
 
   /**
-   * Apply function to postMessage request.
+   * Call a function on driver.js through messaging
    * @param {function} func
    * @param  {...any} args
    */
@@ -81,7 +81,7 @@ const Popup = {
   },
 
   /**
-   * Log message.
+   * Log debug messages to the console
    * @param {String} message
    */
   log(message) {
@@ -89,7 +89,7 @@ const Popup = {
   },
 
   /**
-   * Group technologies into categories.
+   * Group technologies into categories
    * @param {Object} technologies
    */
   categorise(technologies) {
@@ -110,7 +110,7 @@ const Popup = {
   },
 
   /**
-   * Callback for getDetection listener.
+   * Callback for getDetection listener
    * @param {Array} detections
    */
   async onGetDetections(detections) {
@@ -200,7 +200,7 @@ const Popup = {
       a.addEventListener('click', (event) => {
         event.preventDefault()
 
-        Popup.driver('open', a.href)
+        open(a.href)
 
         return false
       })
@@ -210,7 +210,7 @@ const Popup = {
   }
 }
 
-// Add listener for popup PostMessage API.
+// Add listener for popup PostMessage API
 Popup.port.onMessage.addListener(({ func, args }) => {
   const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
 

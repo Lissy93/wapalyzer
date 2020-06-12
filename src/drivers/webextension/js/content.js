@@ -4,11 +4,12 @@
 
 const Content = {
   /**
-   * Initialize content detection.
+   * Initialise content script
    */
   async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
+    // Enable messaging to and from driver.js
     Content.port = chrome.runtime.connect({ name: 'content.js' })
 
     Content.port.onMessage.addListener(({ func, args }) => {
@@ -23,6 +24,7 @@ const Content = {
       // HTML
       let html = new XMLSerializer().serializeToString(document)
 
+      // Discard the middle portion of HTML to avoid performance degradation on large pages
       const chunks = []
       const maxCols = 2000
       const maxRows = 3000
@@ -36,6 +38,7 @@ const Content = {
 
       html = chunks.join('\n')
 
+      // Determine language based on the HTML lang attribute or content
       const language =
         document.documentElement.getAttribute('lang') ||
         document.documentElement.getAttribute('xml:lang') ||
@@ -81,10 +84,11 @@ const Content = {
   },
 
   /**
-   * Callback for fetching technologies.
+   * Callback for getTechnologies
    * @param {Object} technologies
    */
   onGetTechnologies(technologies) {
+    // Inject a script tag into the page to access methods of the window object
     const script = document.createElement('script')
 
     script.onload = () => {

@@ -7,7 +7,8 @@ const {
   setCategories,
   analyze,
   analyzeManyToMany,
-  resolve
+  resolve,
+  open
 } = Wappalyzer
 const { agent, promisify, getOption, setOption } = Utils
 
@@ -17,9 +18,10 @@ const Driver = {
   lastPing: Date.now(),
 
   /**
-   * Initialize Chrome extension.
+   * Initialise driver
    */
   async init() {
+    // Enable messaging between scripts
     chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
 
     await Driver.loadTechnologies()
@@ -69,16 +71,16 @@ const Driver = {
     const upgradeMessage = await getOption('upgradeMessage', true)
 
     if (previous === null) {
-      Driver.open('https://www.wappalyzer.com/installed')
+      open('https://www.wappalyzer.com/installed')
     } else if (version !== previous && upgradeMessage) {
-      Driver.open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+      open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
     }
 
     await setOption('version', version)
   },
 
   /**
-   * Logging utility function.
+   * Log debug messages to the console
    * @param {String} message
    * @param {String} source
    * @param {String} type
@@ -89,7 +91,7 @@ const Driver = {
   },
 
   /**
-   * Error utility function.
+   * Log errors to the console
    * @param {String} error
    * @param {String} source
    */
@@ -98,16 +100,7 @@ const Driver = {
   },
 
   /**
-   * Open browser tab utility function.
-   * @param {String} url
-   * @param {Boolean} active
-   */
-  open(url, active = true) {
-    chrome.tabs.create({ url, active })
-  },
-
-  /**
-   * Load technologies into memory.
+   * Load technologies and categories into memory
    */
   async loadTechnologies() {
     try {
@@ -123,7 +116,7 @@ const Driver = {
   },
 
   /**
-   * Post-wrapper for fetch.
+   * Perform a HTTP POST request
    * @param {String} url
    * @param {String} body
    */
@@ -139,7 +132,7 @@ const Driver = {
   },
 
   /**
-   * Analyize JavaScript detections.
+   * Analyse JavaScript variables
    * @param {String} url
    * @param {Array} js
    */
@@ -160,7 +153,7 @@ const Driver = {
   },
 
   /**
-   * Initialize PostMessage interface.
+   * Enable scripts to call Driver functions through messaging
    * @param {Object} port
    */
   onRuntimeConnect(port) {
@@ -187,7 +180,7 @@ const Driver = {
   },
 
   /**
-   * Callback for WebRequestComplete listener.
+   * Analyse response headers
    * @param {Object} request
    */
   async onWebRequestComplete(request) {
@@ -224,7 +217,7 @@ const Driver = {
   },
 
   /**
-   * Callback for onContentLoad listener.
+   * Process return values from content.js
    * @param {String} url
    * @param {Object} items
    * @param {String} language
@@ -252,14 +245,14 @@ const Driver = {
   },
 
   /**
-   * Get technology detections.
+   * Get all technologies
    */
   getTechnologies() {
     return Wappalyzer.technologies
   },
 
   /**
-   * Callback for detections.
+   * Callback for detections
    * @param {String} url
    * @param {Array} detections
    * @param {String} language
@@ -350,7 +343,7 @@ const Driver = {
   },
 
   /**
-   * Callback for onAd listener.
+   * Callback for onAd listener
    * @param {Object} ad
    */
   async onAd(ad) {
@@ -360,7 +353,7 @@ const Driver = {
   },
 
   /**
-   * Generate linked icon for detections.
+   * Update the extension icon
    * @param {String} url
    * @param {Object} technologies
    */
@@ -400,7 +393,7 @@ const Driver = {
   },
 
   /**
-   * Get detections from site.
+   * Get the detected technologies for the current tab
    */
   async getDetections() {
     const [{ id }] = await promisify(chrome.tabs, 'query', {
@@ -412,7 +405,7 @@ const Driver = {
   },
 
   /**
-   * Check for robot rules on site.
+   * Fetch the website's robots.txt rules
    * @param {String} hostname
    * @param {Boolean} secure
    */
@@ -484,7 +477,7 @@ const Driver = {
   },
 
   /**
-   * Check for robots.txt rules.
+   * Check if the website allows indexing of a URL
    * @param {String} href
    */
   async checkRobots(href) {
@@ -505,7 +498,8 @@ const Driver = {
   },
 
   /**
-   * Ping back home.
+   * Anonymously send identified technologies to wappalyzer.com
+   * This function can be disabled in the extension settings
    */
   async ping() {
     const tracking = await getOption('tracking', true)
