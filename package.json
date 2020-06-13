@@ -18,6 +18,6 @@
     "validate": "jsonlint -qV ./schema.json ./src/apps.json && node ./bin/validate.js",
     "convert": "cd ./src/drivers/webextension/images/icons ; cp *.svg converted ; cd converted ; convert-svg-to-png *.svg --width 32 --height 32 ; rm *.svg",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/apps.json",
-    "build": "yarn run link && yarn run validate && yarn run prettify && node ./bin/build.js"
+    "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js"
   }
 }
