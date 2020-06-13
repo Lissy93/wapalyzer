@@ -9,6 +9,7 @@ script:
   - >-
     version=$(grep '"version":' src/package.json | sed 's/^.*"version": "\(.*\)".*$/\1/') &&
     echo Version is $version &&
+    yarn install &&
     yarn run build $version &&
     docker build -t wappalyzer/cli:latest -t wappalyzer/cli:$version src/drivers/npm
 
