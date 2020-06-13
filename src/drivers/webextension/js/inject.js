@@ -25,6 +25,10 @@
                   window
                 )
 
+              if (name === 'Intercom') {
+                console.log(name, chains, value)
+              }
+
               if (value !== undefined) {
                 technologies.push({
                   name,

@@ -236,7 +236,7 @@ const Wappalyzer = {
         html: transform(html),
         meta: transform(meta),
         scripts: transform(script),
-        js: transform(js),
+        js: transform(js, true),
         implies: transform(implies).map(({ value, confidence }) => ({
           name: value,
           confidence
@@ -276,7 +276,7 @@ const Wappalyzer = {
    * Extract information from regex pattern.
    * @param {string|array} patterns
    */
-  transformPatterns(patterns) {
+  transformPatterns(patterns, caseSensitive = false) {
     if (!patterns) {
       return []
     }
@@ -288,7 +288,9 @@ const Wappalyzer = {
     }
 
     const parsed = Object.keys(patterns).reduce((parsed, key) => {
-      parsed[key.toLowerCase()] = toArray(patterns[key]).map((pattern) => {
+      parsed[caseSensitive ? key : key.toLowerCase()] = toArray(
+        patterns[key]
+      ).map((pattern) => {
         const { value, regex, confidence, version } = pattern
           .split('\\;')
           .reduce((attrs, attr, i) => {

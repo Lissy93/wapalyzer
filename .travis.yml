@@ -7,7 +7,7 @@ after_success:
 
 script:
   - >-
-    version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/') &&
+    version=$(grep '"version":' src/package.json | sed 's/^.*"version": "\(.*\)".*$/\1/') &&
     echo Version is $version &&
     yarn run build $version &&
     docker build -t wappalyzer/cli:latest -t wappalyzer/cli:$version src/drivers/npm
