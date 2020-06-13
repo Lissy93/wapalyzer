@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const link = (src, dest) => {
-  if (fs.statSync(dest).isFile()) {
+  if (fs.existsSync(dest)) {
     fs.unlinkSync(dest)
   }
 
