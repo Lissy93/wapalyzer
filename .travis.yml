@@ -5,16 +5,11 @@ after_success:
   - sha256sum build/* > build/SHA256SUMS
   - cat build/SHA256SUMS
 
-cache:
-  yarn: true
-  directories:
-    - node_modules
-
 script:
   - >-
     version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/') &&
     echo Version is $version &&
-    ./run build $version &&
+    yarn run build $version &&
     docker build -t wappalyzer/cli:latest -t wappalyzer/cli:$version src/drivers/npm
 
 env:

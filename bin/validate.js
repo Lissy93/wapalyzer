@@ -1,14 +1,16 @@
 const fs = require('fs')
-const path = require('path')
+
+const iconPath = './src/drivers/webextension/images/icons'
 
 const { apps: technologies, categories } = JSON.parse(
-  fs.readFileSync(path.resolve(`${__dirname}/../src/apps.json`))
+  fs.readFileSync('./src/apps.json')
 )
 
 try {
   Object.keys(technologies).forEach((name) => {
     const technology = technologies[name]
 
+    // Validate regular expressions
     ;['url', 'html', 'meta', 'headers', 'cookies', 'script', 'js'].forEach(
       (type) => {
         if (technology[type]) {
@@ -82,23 +84,19 @@ try {
       }
     )
 
+    // Validate categories
     technology.cats.forEach((id) => {
       if (!categories[id]) {
         throw new Error(`No such category: ${id} (${name})`)
       }
     })
 
-    if (
-      technology.icon &&
-      !fs.existsSync(
-        path.resolve(
-          `${__dirname}/../src/drivers/webextension/images/icons/${technology.icon}`
-        )
-      )
-    ) {
+    // Validate icons
+    if (technology.icon && !fs.existsSync(`${iconPath}/${technology.icon}`)) {
       throw new Error(`No such icon: ${technology.icon} (${name})`)
     }
 
+    // Validate website URLs
     try {
       // eslint-disable-next-line no-new
       const { protocol } = new URL(technology.website)
@@ -110,7 +108,65 @@ try {
       throw new Error(`Invalid website URL: ${technology.website} (${name})`)
     }
 
-    // TODO check implies, excludes
+    // Validate implies and excludes
+    const { implies, excludes } = technology
+
+    if (implies) {
+      ;(Array.isArray(implies) ? implies : [implies]).forEach((implied) => {
+        const [_name, ...flags] = implied.split('\\;')
+
+        const id = `${name}: implies[${implied}]`
+
+        if (!technologies[_name]) {
+          throw new Error(`Implied technology does not exist: ${_name} (${id})`)
+        }
+
+        flags.forEach((flag) => {
+          const [key, value] = flag.split(':')
+
+          if (key === 'confidence') {
+            if (
+              !/^\d+$/.test(value) ||
+              parseInt(value, 10) < 0 ||
+              parseInt(value, 10) > 99
+            ) {
+              throw new Error(
+                `Confidence value must a number between 0 and 99: ${value} (${id})`
+              )
+            }
+          } else {
+            throw new Error(`Invalid flag: ${key} (${id})`)
+          }
+        })
+      })
+    }
+
+    if (excludes) {
+      ;(Array.isArray(excludes) ? excludes : [excludes]).forEach((excluded) => {
+        const id = `${name}: excludes[${excluded}]`
+
+        if (!technologies[excluded]) {
+          throw new Error(
+            `Excluded technology does not exist: ${excluded} (${id})`
+          )
+        }
+      })
+    }
+  })
+
+  // Validate icons
+  fs.readdirSync(iconPath).forEach((file) => {
+    const filePath = `${iconPath}/${file}`
+
+    if (fs.statSync(filePath).isFile() && !file.startsWith('.')) {
+      if (!/^(png|svg)$/i.test(file.split('.').pop())) {
+        throw new Error(`Incorrect file type, expected PNG or SVG: ${filePath}`)
+      }
+
+      if (!Object.values(technologies).some(({ icon }) => icon === file)) {
+        throw new Error(`Extraneous file: ${filePath}}`)
+      }
+    }
   })
 } catch (error) {
   // eslint-disable-next-line no-console
