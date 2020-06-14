@@ -2,6 +2,14 @@
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
 
+* [wappalyzer on NPM](https://www.npmjs.com/package/wappalyzer)
+* [wappalyzer-core on NPM](https://www.npmjs.com/package/wappalyzer-core)
+* [Chrome extension](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)
+* [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
+* [Edge extension](https://microsoftedge.microsoft.com/addons/detail/mnbndgmknlpdjdnjfmfcdjoegcckoikn)
+* [Bookmarklet](https://www.wappalyzer.com/download)
+* [wappalyzer/cli on Docker Hub](https://hub.docker.com/r/wappalyzer/cli/)
+
 ## Documentation
 
 Please read the [developer documentation](https://www.wappalyzer.com/docs).
@@ -12,7 +20,7 @@ Please read the [developer documentation](https://www.wappalyzer.com/docs).
 git clone https://github.com/aliasio/wappalyzer
 cd wappalyzer
 yarn install
-yarn link
+yarn run link
 ```
 
 ## Usage
