@@ -1,6 +1,8 @@
 # Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
+It detects content management systems, ecommerce platforms, JavaScript frameworks, 
+analytics tools and [much more](https://www.wappalyzer.com/technologies).
 
 * [wappalyzer on NPM](https://www.npmjs.com/package/wappalyzer)
 * [wappalyzer-core on NPM](https://www.npmjs.com/package/wappalyzer-core)
@@ -9,6 +11,7 @@
 * [Edge extension](https://microsoftedge.microsoft.com/addons/detail/mnbndgmknlpdjdnjfmfcdjoegcckoikn)
 * [Bookmarklet](https://www.wappalyzer.com/download)
 * [wappalyzer/cli on Docker Hub](https://hub.docker.com/r/wappalyzer/cli/)
+* [Wappalyzer REST APIs](https://www.wappalyzer.com/api/)
 
 ## Documentation
 
