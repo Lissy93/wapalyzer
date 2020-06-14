@@ -75,9 +75,11 @@ function getJs() {
       ) {
         const newObj = {}
 
-        Object.keys(obj).forEach((key) => {
-          newObj[key] = dereference(obj[key], level + 1)
-        })
+        Object.keys(obj)
+          .filter((key) => obj.hasOwnProperty(key))
+          .forEach((key) => {
+            newObj[key] = dereference(obj[key], level + 1)
+          })
 
         return newObj
       }
