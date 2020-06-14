@@ -22,6 +22,7 @@ ADD cli.js .
 ADD driver.js .
 ADD package.json .
 ADD wappalyzer.js .
+ADD yarn.lock .
 
 RUN yarn install
 

@@ -1,18 +1,37 @@
 # Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
-[Wappalyzer](https://www.wappalyzer.com/) is a
-[cross-platform](https://www.wappalyzer.com/nodejs) utility that uncovers the
-technologies used on websites. It detects
-[content management systems](https://www.wappalyzer.com/technologies/cms),
-[eCommerce platforms](https://www.wappalyzer.com/technologies/ecommerce),
-[web servers](https://www.wappalyzer.com/technologies/web-servers),
-[JavaScript frameworks](https://www.wappalyzer.com/technologies/javascript-frameworks),
-[analytics tools](https://www.wappalyzer.com/technologies/analytics) and
-[many more](https://www.wappalyzer.com/applications).
-
-*Licensed under [MIT](https://github.com/aliasio/wappalyzer/blob/master/LICENSE).*
-
+[Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
 
 ## Documentation
 
-Please read the [developer documentation](https://www.wappalyzer.com/docs) to get started.
+Please read the [developer documentation](https://www.wappalyzer.com/docs).
+
+## Quick start
+
+```sh
+git clone https://github.com/aliasio/wappalyzer
+cd wappalyzer
+yarn install
+yarn link
+```
+
+## Usage
+
+### Command line
+
+```sh
+node src/drivers/npm/cli.js https://example.com
+```
+
+### Chrome extension
+
+* Go go `about:extensions`
+* Enable 'Developer mode'
+* Click 'Load unpacked'
+* Select `src/drivers/webextension`
+
+### Firefox extension
+
+* Go go `about:debugging#/runtime/this-firefox`
+* Click 'Load Temporary Add-on'
+* Select `src/drivers/webextension/manifest.json`
