@@ -64,7 +64,7 @@ const options = {
 };
 
 ;(async function() {
-  const wappalyzer = await new Wappalyzer()
+  const wappalyzer = await new Wappalyzer(options)
 
   try {
     await wappalyzer.init()
@@ -74,7 +74,7 @@ const options = {
     // Optionally capture and output errors
     site.on('error', console.error)
 
-    const results = site.analyze()
+    const results = await site.analyze()
 
     console.log(JSON.stringify(results, null, 2))
   } catch (error) {
