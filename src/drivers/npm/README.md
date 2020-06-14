@@ -74,7 +74,7 @@ const options = {
     // Optionally capture and output errors
     site.on('error', console.error)
 
-    const results = site.analyze()
+    const results = await site.analyze()
 
     console.log(JSON.stringify(results, null, 2))
   } catch (error) {
