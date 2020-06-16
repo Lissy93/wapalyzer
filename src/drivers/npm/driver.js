@@ -57,43 +57,6 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-function getJs() {
-  const dereference = (obj, level = 0) => {
-    try {
-      // eslint-disable-next-line no-undef
-      if (level > 5 || (level && obj === window)) {
-        return '[Removed]'
-      }
-
-      if (Array.isArray(obj)) {
-        obj = obj.map((item) => dereference(item, level + 1))
-      }
-
-      if (
-        typeof obj === 'function' ||
-        (typeof obj === 'object' && obj !== null)
-      ) {
-        const newObj = {}
-
-        Object.keys(obj)
-          .filter((key) => obj.hasOwnProperty(key))
-          .forEach((key) => {
-            newObj[key] = dereference(obj[key], level + 1)
-          })
-
-        return newObj
-      }
-
-      return obj
-    } catch (error) {
-      return undefined
-    }
-  }
-
-  // eslint-disable-next-line no-undef
-  return dereference(window)
-}
-
 function analyzeJs(js) {
   return Array.prototype.concat.apply(
     [],
@@ -375,37 +338,39 @@ class Site {
     ).jsonValue()
 
     // JavaScript
-    const win = await page.evaluate(getJs)
+    const js = await page.evaluate(
+      (technologies) => {
+        return technologies.reduce((technologies, { name, chains }) => {
+          chains.forEach((chain) => {
+            const value = chain
+              .split('.')
+              .reduce(
+                (value, method) =>
+                  value && value.hasOwnProperty(method)
+                    ? value[method]
+                    : undefined,
+                window
+              )
 
-    const js = Wappalyzer.technologies
-      .filter(({ js }) => Object.keys(js).length)
-      .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-      .reduce((technologies, { name, chains }) => {
-        chains.forEach((chain) => {
-          const value = chain
-            .split('.')
-            .reduce(
-              (value, method) =>
-                value && value.hasOwnProperty(method)
-                  ? value[method]
-                  : undefined,
-              win
-            )
+            if (typeof value !== 'undefined') {
+              technologies.push({
+                name,
+                chain,
+                value:
+                  typeof value === 'string' || typeof value === 'number'
+                    ? value
+                    : !!value
+              })
+            }
+          })
 
-          if (typeof value !== 'undefined') {
-            technologies.push({
-              name,
-              chain,
-              value:
-                typeof value === 'string' || typeof value === 'number'
-                  ? value
-                  : !!value
-            })
-          }
-        })
-
-        return technologies
-      }, [])
+          return technologies
+        }, [])
+      },
+      Wappalyzer.technologies
+        .filter(({ js }) => Object.keys(js).length)
+        .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+    )
 
     // Cookies
     const cookies = (await page.cookies()).reduce(
