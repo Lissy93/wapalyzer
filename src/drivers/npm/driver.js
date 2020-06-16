@@ -551,12 +551,13 @@ class Site {
     return {
       urls: this.analyzedUrls,
       applications: resolve(this.detections).map(
-        ({ name, confidence, version, icon, website, categories }) => ({
+        ({ name, confidence, version, icon, website, cpe, categories }) => ({
           name,
           confidence,
           version,
           icon,
           website,
+          cpe,
           categories: categories.reduce(
             (categories, { id, name }) => ({
               ...categories,

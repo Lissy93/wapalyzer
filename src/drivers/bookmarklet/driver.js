@@ -1,9 +1,5 @@
-/**
- * Bookmarklet driver
- */
-
-/** global: wappalyzer */
-/** global: XMLHttpRequest */
+/* eslint-env browser */
+/* globals wappalyzer */
 
 ;(function() {
   wappalyzer.driver.document = document
@@ -16,6 +12,7 @@
    * Log messages to console
    */
   wappalyzer.driver.log = (message, source, type) => {
+    // eslint-disable-next-line no-console
     console.log(`[wappalyzer ${type}]`, `[${source}]`, message)
   }
 
@@ -54,7 +51,7 @@
       if (xhr.readyState === 4 && xhr.status) {
         const headers = xhr.getAllResponseHeaders().split('\n')
 
-        if (headers.length > 0 && headers[0] != '') {
+        if (headers.length > 0 && headers[0] !== '') {
           wappalyzer.log(
             `responseHeaders: ${xhr.getAllResponseHeaders()}`,
             'driver'
@@ -89,7 +86,7 @@
   /**
    * Display apps
    */
-  ;(wappalyzer.driver.displayApps = (detected) => {
+  wappalyzer.driver.displayApps = (detected) => {
     wappalyzer.log('func: displayApps', 'driver')
 
     let first = true
@@ -150,13 +147,14 @@
     html += '</div>'
 
     container.innerHTML = html
-  }),
-    /**
-     * Open a tab
-     */
-    function openTab(args) {
-      open(args.url)
-    }
+  }
+
+  /**
+   * Open a tab
+   */
+  // function openTab(args) {
+  //  open(args.url)
+  // }
 
   function slugify(string) {
     return string

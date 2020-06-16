@@ -1732,7 +1732,6 @@
       "cats": [
         2
       ],
-      "html": "<a href=\"[^>]+woltlab\\.com[^<]+<strong>Burning Board",
       "icon": "Burning Board.png",
       "implies": [
         "PHP",
@@ -2530,7 +2529,6 @@
         "Server": "^Cowboy$"
       },
       "icon": "Cowboy.png",
-      "implies": "Erlang",
       "website": "http://ninenines.eu"
     },
     "CppCMS": {
@@ -12494,7 +12492,6 @@
       "cats": [
         1
       ],
-      "html": "var WCF_PATH[^>]+",
       "icon": "Woltlab Community Framework.png",
       "implies": "PHP",
       "script": "WCF\\..*\\.js",
@@ -12879,7 +12876,6 @@
         "Server": "Yaws(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "Yaws.png",
-      "implies": "Erlang",
       "website": "http://yaws.hyber.org"
     },
     "Yepcomm": {

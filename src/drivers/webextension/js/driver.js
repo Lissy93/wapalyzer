@@ -268,8 +268,9 @@ const Driver = {
     // Cache detections
     const cache = (Driver.cache.hostnames[hostname] = {
       ...(Driver.cache.hostnames[hostname] || {
+        url,
         detections: [],
-        hits: 0
+        hits: incrementHits ? 0 : 1
       }),
       dateTime: Date.now()
     })
@@ -513,12 +514,20 @@ const Driver = {
         await Driver.post(
           'https://api.wappalyzer.com/ping/v1/',
           Object.keys(Driver.cache.hostnames).reduce((hostnames, hostname) => {
+            if (
+              /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(
+                hostname
+              )
+            ) {
+              return
+            }
+
             // eslint-disable-next-line standard/computed-property-even-spacing
-            const { language, detections, hits } = Driver.cache.hostnames[
+            const { url, language, detections, hits } = Driver.cache.hostnames[
               hostname
             ]
 
-            hostnames[hostname] = hostnames[hostname] || {
+            hostnames[url] = hostnames[url] || {
               applications: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
                   if (confidence === 100) {

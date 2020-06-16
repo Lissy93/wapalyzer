@@ -64,7 +64,7 @@ const Wappalyzer = {
       .sort((a, b) => (priority(a) > priority(b) ? 1 : -1))
       .map(
         ({
-          technology: { name, slug, categories, icon, website },
+          technology: { name, slug, categories, icon, website, cpe },
           confidence,
           version
         }) => ({
@@ -74,7 +74,8 @@ const Wappalyzer = {
           confidence,
           version,
           icon,
-          website
+          website,
+          cpe
         })
       )
   },
@@ -223,7 +224,8 @@ const Wappalyzer = {
         implies,
         excludes,
         icon,
-        website
+        website,
+        cpe
       } = data[name]
 
       technologies.push({
@@ -245,7 +247,8 @@ const Wappalyzer = {
           name: value
         })),
         icon: icon || 'default.svg',
-        website: website || ''
+        website: website || '',
+        cpe
       })
 
       return technologies
