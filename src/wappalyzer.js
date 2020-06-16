@@ -247,8 +247,8 @@ const Wappalyzer = {
           name: value
         })),
         icon: icon || 'default.svg',
-        website: website || '',
-        cpe
+        website: website || null,
+        cpe: cpe || null
       })
 
       return technologies
