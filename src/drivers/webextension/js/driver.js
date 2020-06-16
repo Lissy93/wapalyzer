@@ -7,10 +7,9 @@ const {
   setCategories,
   analyze,
   analyzeManyToMany,
-  resolve,
-  open
+  resolve
 } = Wappalyzer
-const { agent, promisify, getOption, setOption } = Utils
+const { agent, promisify, getOption, setOption, open } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
@@ -21,12 +20,9 @@ const Driver = {
    * Initialise driver
    */
   async init() {
-    // Enable messaging between scripts
-    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
-
     await Driver.loadTechnologies()
 
-    const hostnameCache = (await getOption('hostnames')) || {}
+    const hostnameCache = await getOption('hostnames', {})
 
     Driver.cache = {
       hostnames: Object.keys(hostnameCache).reduce(
@@ -55,8 +51,8 @@ const Driver = {
         {}
       ),
       tabs: {},
-      robots: (await getOption('robots')) || {},
-      ads: (await getOption('ads')) || []
+      robots: await getOption('robots', {}),
+      ads: await getOption('ads', [])
     }
 
     chrome.webRequest.onCompleted.addListener(
@@ -65,6 +61,9 @@ const Driver = {
       ['responseHeaders']
     )
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
+
+    // Enable messaging between scripts
+    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
 
     const { version } = chrome.runtime.getManifest()
     const previous = await getOption('version')
