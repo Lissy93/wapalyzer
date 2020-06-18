@@ -3957,7 +3957,7 @@
       "cats": [
         24
       ],
-      "html": "/<!--\\s*\\*\\s*FreeTextBox v\\d+ \\(([.\\d]+)(?:(?:\\.|\\n)+?<!--\\s*\\*\\s*License Type: (Distribution|Professional)License)?/i\\;version:\\1 \\2",
+      "html": "<!-- \\* FreeTextBox v\\d \\((\\d+\\.\\d+\\.\\d+)\\;version:\\1",
       "icon": "FreeTextBox.png",
       "implies": "Microsoft ASP.NET",
       "js": {
@@ -4250,7 +4250,7 @@
       ],
       "icon": "GitBook.png",
       "meta": {
-        "generator": "GitBook(?:\\.([\\d.]+))?\\;version:\\1"
+        "generator": "GitBook ([\\d.]+)?\\;version:\\1"
       },
       "url": "^https?://[^/]+\\.gitbook\\.com/",
       "website": "https://www.gitbook.com"
@@ -5542,7 +5542,7 @@
         18
       ],
       "headers": {
-        "X-Powered-By": "Servlet(?:\\.([\\d.]+))?\\;version:\\1"
+        "X-Powered-By": "Servlet(?:\\/([\\d.]+))?\\;version:\\1"
       },
       "icon": "Java.png",
       "implies": "Java",
@@ -12450,7 +12450,7 @@
       ],
       "headers": {
         "Server": "Winstone Servlet (?:Container|Engine) v?([\\d.]+)?\\;version:\\1",
-        "X-Powered-By": "Winstone(?:\\.([\\d.]+))?\\;version:\\1"
+        "X-Powered-By": "Winstone(?:\\/([\\d.]+))?\\;version:\\1"
       },
       "website": "http://winstone.sourceforge.net"
     },
@@ -13076,7 +13076,6 @@
       "cookies": {
         "ZM_TEST": "true"
       },
-      "html": "<script>(?:\\.|\\n)*\"refresh\":\\{\"version\":\"([\\w\\.]+)\\s\\;version:\\1",
       "icon": "Zimbra.png",
       "implies": "Java",
       "website": "https://www.zimbra.com/"

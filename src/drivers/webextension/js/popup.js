@@ -120,81 +120,87 @@ const Popup = {
       document.querySelector('.empty').remove()
     }
 
-    Popup.categorise(detections).forEach(
-      ({ id, name, slug: categorySlug, technologies }) => {
-        const categoryNode = Popup.templates.category.cloneNode(true)
+    const categorised = Popup.categorise(detections)
 
-        const link = categoryNode.querySelector('.category__link')
+    categorised.forEach(({ id, name, slug: categorySlug, technologies }) => {
+      const categoryNode = Popup.templates.category.cloneNode(true)
 
-        link.href = `https://www.wappalyzer.com/technologies/${categorySlug}`
-        link.textContent = name
+      const link = categoryNode.querySelector('.category__link')
 
-        const pins = categoryNode.querySelectorAll('.category__pin')
+      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}`
+      link.dataset.i18n = `categoryName${id}`
 
-        if (pinnedCategory === id) {
-          pins.forEach((pin) => pin.classList.add('category__pin--active'))
-        }
+      const pins = categoryNode.querySelectorAll('.category__pin')
 
-        pins.forEach((pin) =>
-          pin.addEventListener('click', async () => {
-            const pinnedCategory = await getOption('pinnedCategory')
-
-            Array.from(
-              document.querySelectorAll('.category__pin--active')
-            ).forEach((pin) => pin.classList.remove('category__pin--active'))
-
-            if (pinnedCategory === id) {
-              await setOption('pinnedCategory', null)
-            } else {
-              await setOption('pinnedCategory', id)
-
-              pins.forEach((pin) => pin.classList.add('category__pin--active'))
-            }
-          })
-        )
-
-        technologies
-          .filter(({ confidence }) => confidence >= 50)
-          .forEach(({ name, slug, confidence, version, icon, website }) => {
-            const technologyNode = Popup.templates.technology.cloneNode(true)
-
-            const image = technologyNode.querySelector('.technology__icon')
-
-            image.src = `../images/icons/${icon}`
-
-            const link = technologyNode.querySelector('.technology__link')
-
-            link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
-            link.textContent = name
-
-            const confidenceNode = technologyNode.querySelector(
-              '.technology__confidence'
-            )
-
-            if (confidence < 100) {
-              confidenceNode.textContent = `${confidence}% sure`
-            } else {
-              confidenceNode.remove()
-            }
-
-            const versionNode = technologyNode.querySelector(
-              '.technology__version'
-            )
-
-            if (version) {
-              versionNode.textContent = version
-            } else {
-              versionNode.remove()
-            }
-
-            categoryNode
-              .querySelector('.technologies')
-              .appendChild(technologyNode)
-          })
-
-        document.querySelector('.detections').appendChild(categoryNode)
+      if (pinnedCategory === id) {
+        pins.forEach((pin) => pin.classList.add('category__pin--active'))
       }
-    )
+
+      pins.forEach((pin) =>
+        pin.addEventListener('click', async () => {
+          const pinnedCategory = await getOption('pinnedCategory')
+
+          Array.from(
+            document.querySelectorAll('.category__pin--active')
+          ).forEach((pin) => pin.classList.remove('category__pin--active'))
+
+          if (pinnedCategory === id) {
+            await setOption('pinnedCategory', null)
+          } else {
+            await setOption('pinnedCategory', id)
+
+            pins.forEach((pin) => pin.classList.add('category__pin--active'))
+          }
+        })
+      )
+
+      technologies
+        .filter(({ confidence }) => confidence >= 50)
+        .forEach(({ name, slug, confidence, version, icon, website }) => {
+          const technologyNode = Popup.templates.technology.cloneNode(true)
+
+          const image = technologyNode.querySelector('.technology__icon')
+
+          image.src = `../images/icons/${icon}`
+
+          const link = technologyNode.querySelector('.technology__link')
+
+          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
+          link.textContent = name
+
+          const confidenceNode = technologyNode.querySelector(
+            '.technology__confidence'
+          )
+
+          if (confidence < 100) {
+            confidenceNode.textContent = `${confidence}% sure`
+          } else {
+            confidenceNode.remove()
+          }
+
+          const versionNode = technologyNode.querySelector(
+            '.technology__version'
+          )
+
+          if (version) {
+            versionNode.textContent = version
+          } else {
+            versionNode.remove()
+          }
+
+          categoryNode
+            .querySelector('.technologies')
+            .appendChild(technologyNode)
+        })
+
+      document.querySelector('.detections').appendChild(categoryNode)
+    })
+
+    if (categorised.length === 1) {
+      document
+        .querySelector('.detections')
+        .appendChild(Popup.templates.category.cloneNode(true))
+    }
 
     Array.from(document.querySelectorAll('a')).forEach((a) =>
       a.addEventListener('click', (event) => {

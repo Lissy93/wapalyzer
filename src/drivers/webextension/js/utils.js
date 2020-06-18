@@ -44,11 +44,12 @@ const Utils = {
       if (option[name] !== undefined) {
         return option[name]
       }
-
-      return defaultValue
     } catch (error) {
-      throw new Error(error.message || error.toString())
+      // eslint-disable-next-line no-console
+      console.error('wappalyzer | utils |', error)
     }
+
+    return defaultValue
   },
 
   /**
@@ -62,7 +63,8 @@ const Utils = {
         [name]: value
       })
     } catch (error) {
-      throw new Error(error.message || error.toString())
+      // eslint-disable-next-line no-console
+      console.error('wappalyzer | utils |', error)
     }
   },
 

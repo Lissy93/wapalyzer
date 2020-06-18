@@ -515,30 +515,28 @@ const Driver = {
           ]
 
           if (
-            /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(
+            !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(
               hostname
-            ) ||
-            hits < 3
+            ) &&
+            hits >= 3
           ) {
-            return
-          }
-
-          hostnames[url] = hostnames[url] || {
-            applications: resolve(detections).reduce(
-              (technologies, { name, confidence, version }) => {
-                if (confidence === 100) {
-                  technologies[name] = {
-                    version,
-                    hits
+            hostnames[url] = hostnames[url] || {
+              applications: resolve(detections).reduce(
+                (technologies, { name, confidence, version }) => {
+                  if (confidence === 100) {
+                    technologies[name] = {
+                      version,
+                      hits
+                    }
                   }
 
                   return technologies
-                }
-              },
-              {}
-            ),
-            meta: {
-              language
+                },
+                {}
+              ),
+              meta: {
+                language
+              }
             }
           }
 
