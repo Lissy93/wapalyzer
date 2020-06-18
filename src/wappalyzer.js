@@ -34,17 +34,19 @@ const Wappalyzer = {
         let version = ''
         let confidence = 0
 
-        detections.forEach(
-          ({ technology: { name }, pattern, version: _version = '' }) => {
-            if (name === technology.name) {
-              confidence = Math.min(100, confidence + pattern.confidence)
-              version =
-                _version.length > version.length && _version.length <= 10
-                  ? _version
-                  : version
+        detections
+          .filter(({ technology }) => technology)
+          .forEach(
+            ({ technology: { name }, pattern, version: _version = '' }) => {
+              if (name === technology.name) {
+                confidence = Math.min(100, confidence + pattern.confidence)
+                version =
+                  _version.length > version.length && _version.length <= 10
+                    ? _version
+                    : version
+              }
             }
-          }
-        )
+          )
 
         resolved.push({ technology, confidence, version })
       }

@@ -275,7 +275,9 @@ const Driver = {
     })
 
     // Remove duplicates
-    cache.detections = cache.detections.concat(detections)
+    cache.detections = cache.detections
+      .concat(detections)
+      .filter(({ technology }) => technology)
 
     cache.detections.filter(
       ({ technology: { name }, pattern: { regex } }, index) =>
@@ -309,20 +311,22 @@ const Driver = {
           ...cache,
           [hostname]: {
             ...Driver.cache.hostnames[hostname],
-            detections: Driver.cache.hostnames[hostname].detections.map(
-              ({
-                technology: { name: technology },
-                pattern: { regex, confidence },
-                version
-              }) => ({
-                technology,
-                pattern: {
-                  regex: regex.source,
-                  confidence
-                },
-                version
-              })
-            )
+            detections: Driver.cache.hostnames[hostname].detections
+              .filter(({ technology }) => technology)
+              .map(
+                ({
+                  technology: { name: technology },
+                  pattern: { regex, confidence },
+                  version
+                }) => ({
+                  technology,
+                  pattern: {
+                    regex: regex.source,
+                    confidence
+                  },
+                  version
+                })
+              )
           }
         }),
         {}
