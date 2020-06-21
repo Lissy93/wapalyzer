@@ -6193,7 +6193,7 @@
       "cpe": "cpe:/a:lightbox_photo_gallery_project:lightbox_photo_gallery",
       "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
       "icon": "Lightbox.png",
-      "script": "lightbox.*\\.js",
+      "script": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
       "website": "http://lokeshdhakar.com/projects/lightbox2/"
     },
     "Lightspeed eCom": {
