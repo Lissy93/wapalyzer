@@ -6389,7 +6389,7 @@
         18,
         19
       ],
-      "html": "<[^>]{1,512}\bwire:",
+      "html": "<[^>]{1,512}\\bwire:",
       "icon": "Livewire.png",
       "implies": "Laravel",
       "js": {
@@ -6402,7 +6402,7 @@
       "cats": [
         61
       ],
-      "html": "<iframe[^>]+localfocus",
+      "html": "<iframe[^>]+\\blocalfocus\\b",
       "icon": "LocalFocus.png",
       "implies": [
         "Angular",
