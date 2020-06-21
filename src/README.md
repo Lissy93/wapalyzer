@@ -16,7 +16,8 @@ $ npm i wappalyzer-core
 const fs = require('fs')
 const Wappalyzer = require('./wappalyzer')
 
-// See https://www.wappalyzer.com/docs/dev/specification
+// See https://www.wappalyzer.com/docs/dev/specification or use
+// https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/apps.json
 const { apps: technologies, categories } = JSON.parse(
   fs.readFileSync('./apps.json')
 )
