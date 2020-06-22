@@ -5483,7 +5483,7 @@
       "js": {
         "JSChart": ""
       },
-      "script": "jscharts.*\\.js",
+      "script": "jscharts.{0,32}\\.js",
       "website": "http://www.jscharts.com"
     },
     "JSEcoin": {
@@ -6134,7 +6134,7 @@
         "L.PosAnimation": "",
         "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
       },
-      "script": "leaflet.*\\.js",
+      "script": "leaflet.{0,32}\\.js",
       "website": "http://leafletjs.com"
     },
     "Less": {
@@ -6193,7 +6193,7 @@
       "cpe": "cpe:/a:lightbox_photo_gallery_project:lightbox_photo_gallery",
       "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
       "icon": "Lightbox.png",
-      "script": "lightbox.*\\.js",
+      "script": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
       "website": "http://lokeshdhakar.com/projects/lightbox2/"
     },
     "Lightspeed eCom": {
@@ -6389,7 +6389,7 @@
         18,
         19
       ],
-      "html": "<[^>]+wire:",
+      "html": "<[^>]{1,512}\\bwire:",
       "icon": "Livewire.png",
       "implies": "Laravel",
       "js": {
@@ -6402,7 +6402,7 @@
       "cats": [
         61
       ],
-      "html": "<iframe[^>]+localfocus",
+      "html": "<iframe[^>]+\\blocalfocus\\b",
       "icon": "LocalFocus.png",
       "implies": [
         "Angular",
