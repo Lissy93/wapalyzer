@@ -58,6 +58,7 @@ try {
                 }
               })
 
+              // Validate regular expression
               try {
                 // eslint-disable-next-line no-new
                 new RegExp(regex)
@@ -65,6 +66,12 @@ try {
                 throw new Error(`${error.message} (${id})`)
               }
 
+              //
+              if (/\.[+*]/.test(regex)) {
+                console.log(regex)
+              }
+
+              // Count capture groups
               const groups = new RegExp(`${regex}|`).exec('').length - 1
 
               if (groups > maxGroups) {

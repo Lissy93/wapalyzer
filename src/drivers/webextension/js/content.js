@@ -9,17 +9,6 @@ const Content = {
   async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    // Enable messaging to and from driver.js
-    Content.port = chrome.runtime.connect({ name: 'content.js' })
-
-    Content.port.onMessage.addListener(({ func, args }) => {
-      const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
-
-      if (Content[onFunc]) {
-        Content[onFunc](args)
-      }
-    })
-
     try {
       // HTML
       let html = new XMLSerializer().serializeToString(document)
@@ -43,13 +32,15 @@ const Content = {
         document.documentElement.getAttribute('lang') ||
         document.documentElement.getAttribute('xml:lang') ||
         (await new Promise((resolve) =>
-          chrome.i18n.detectLanguage(html, ({ languages }) =>
-            resolve(
-              languages
-                .filter(({ percentage }) => percentage >= 75)
-                .map(({ language: lang }) => lang)[0]
-            )
-          )
+          chrome.i18n.detectLanguage
+            ? chrome.i18n.detectLanguage(html, ({ languages }) =>
+                resolve(
+                  languages
+                    .filter(({ percentage }) => percentage >= 75)
+                    .map(({ language: lang }) => lang)[0]
+                )
+              )
+            : resolve()
         ))
 
       // Script tags
@@ -72,22 +63,41 @@ const Content = {
         {}
       )
 
-      Content.port.postMessage({
-        func: 'onContentLoad',
-        args: [location.href, { html, scripts, meta }, language]
-      })
+      Content.driver('onContentLoad', [
+        location.href,
+        { html, scripts, meta },
+        language
+      ])
 
-      Content.port.postMessage({ func: 'getTechnologies' })
+      Content.onGetTechnologies(await Content.driver('getTechnologies'))
     } catch (error) {
-      Content.port.postMessage({ func: 'error', args: [error, 'content.js'] })
+      Content.driver('error', error)
     }
+  },
+
+  driver(func, args, callback) {
+    return new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage(
+        {
+          source: 'content.js',
+          func,
+          args: args ? (Array.isArray(args) ? args : [args]) : []
+        },
+        (response) => {
+          chrome.runtime.lastError
+            ? reject(new Error(chrome.runtime.lastError.message))
+            : resolve(response)
+        }
+      )
+    })
   },
 
   /**
    * Callback for getTechnologies
-   * @param {Object} technologies
+   * @param {Array} technologies
    */
-  onGetTechnologies(technologies) {
+  onGetTechnologies(technologies = []) {
+    console.log({ technologies })
     // Inject a script tag into the page to access methods of the window object
     const script = document.createElement('script')
 
@@ -99,7 +109,8 @@ const Content = {
 
         window.removeEventListener('message', onMessage)
 
-        Content.port.postMessage({
+        chrome.runtime.sendMessage({
+          source: 'content.js',
           func: 'analyzeJs',
           args: [location.href, data.wappalyzer.js]
         })

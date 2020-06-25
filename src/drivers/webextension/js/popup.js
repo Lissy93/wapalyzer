@@ -2,11 +2,17 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, open, i18n, getOption, setOption, promisify } = Utils
+const {
+  agent,
+  open,
+  i18n,
+  getOption,
+  setOption,
+  promisify,
+  sendMessage
+} = Utils
 
 const Popup = {
-  port: chrome.runtime.connect({ name: 'popup.js' }),
-
   /**
    * Initialise popup
    */
@@ -34,7 +40,7 @@ const Popup = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (termsAccepted) {
-      Popup.driver('getDetections')
+      Popup.onGetDetections(await Popup.driver('getDetections'))
     } else {
       document.querySelector('.terms').style.display = 'flex'
       document.querySelector('.detections').style.display = 'none'
@@ -47,7 +53,7 @@ const Popup = {
         document.querySelector('.detections').style.display = 'block'
         document.querySelector('.empty').style.display = 'block'
 
-        Popup.driver('getDetections')
+        chrome.runtime.sendMessage('getDetections', Popup.onGetDetections)
       })
 
       // Apply internationalization
@@ -71,13 +77,8 @@ const Popup = {
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
   },
 
-  /**
-   * Call a function on driver.js through messaging
-   * @param {function} func
-   * @param  {...any} args
-   */
-  driver(func, ...args) {
-    Popup.port.postMessage({ func, args })
+  driver(func, args) {
+    return sendMessage('popup.js', func, args)
   },
 
   /**
@@ -85,7 +86,7 @@ const Popup = {
    * @param {String} message
    */
   log(message) {
-    Popup.driver('log', message, 'popup.js')
+    Popup.driver('log', message)
   },
 
   /**
@@ -113,7 +114,7 @@ const Popup = {
    * Callback for getDetection listener
    * @param {Array} detections
    */
-  async onGetDetections(detections) {
+  async onGetDetections(detections = []) {
     const pinnedCategory = await getOption('pinnedCategory')
 
     if (detections.length) {
@@ -215,15 +216,6 @@ const Popup = {
     i18n()
   }
 }
-
-// Add listener for popup PostMessage API
-Popup.port.onMessage.addListener(({ func, args }) => {
-  const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
-
-  if (Popup[onFunc]) {
-    Popup[onFunc](args)
-  }
-})
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
   Popup.init()

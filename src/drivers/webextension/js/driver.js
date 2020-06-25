@@ -63,7 +63,7 @@ const Driver = {
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
     // Enable messaging between scripts
-    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
+    chrome.runtime.onMessage.addListener(Driver.onMessage)
 
     const { version } = chrome.runtime.getManifest()
     const previous = await getOption('version')
@@ -153,29 +153,28 @@ const Driver = {
 
   /**
    * Enable scripts to call Driver functions through messaging
-   * @param {Object} port
+   * @param {Object} message
+   * @param {Object} sender
+   * @param {Function} callback
    */
-  onRuntimeConnect(port) {
-    Driver.log(`Connected to ${port.name}`)
+  onMessage({ source, func, args }, sender, callback) {
+    if (!func) {
+      return
+    }
 
-    port.onMessage.addListener(async ({ func, args }) => {
-      if (!func) {
-        return
-      }
+    Driver.log({ source, func, args })
 
-      Driver.log({ port: port.name, func, args })
+    if (!Driver[func]) {
+      Driver.error(new Error(`Method does not exist: Driver.${func}`))
 
-      if (!Driver[func]) {
-        Driver.error(new Error(`Method does not exist: Driver.${func}`))
+      return
+    }
 
-        return
-      }
+    Promise.resolve(Driver[func].call(Driver[func], ...(args || [])))
+      .then(callback)
+      .catch(Driver.error)
 
-      port.postMessage({
-        func,
-        args: await Driver[func].call(port.sender, ...(args || []))
-      })
-    })
+    return !!callback
   },
 
   /**
@@ -362,6 +361,10 @@ const Driver = {
    * @param {Object} technologies
    */
   async setIcon(url, technologies) {
+    if (!chrome.pageAction.show) {
+      return
+    }
+
     const dynamicIcon = await getOption('dynamicIcon', true)
 
     let icon = 'default.svg'
@@ -380,16 +383,19 @@ const Driver = {
 
     await Promise.all(
       tabs.map(async ({ id: tabId }) => {
-        await promisify(chrome.pageAction, 'setIcon', {
-          tabId,
-          path: chrome.extension.getURL(
-            `../images/icons/${
-              /\.svg$/i.test(icon)
-                ? `converted/${icon.replace(/\.svg$/, '.png')}`
-                : icon
-            }`
-          )
-        })
+        await Promise.race([
+          promisify(chrome.pageAction, 'setIcon', {
+            tabId,
+            path: chrome.extension.getURL(
+              `../images/icons/${
+                /\.svg$/i.test(icon)
+                  ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                  : icon
+              }`
+            )
+          }),
+          new Promise((resolve) => setTimeout(resolve, 500))
+        ])
 
         chrome.pageAction.show(tabId)
       })
@@ -519,7 +525,7 @@ const Driver = {
           ]
 
           if (
-            !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(
+            !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local|127\.)/.test(
               hostname
             ) &&
             hits >= 3
