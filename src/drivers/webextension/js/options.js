@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals Utils */
+/* globals chrome, Utils */
 
 const { i18n, getOption, setOption } = Utils
 
@@ -35,6 +35,12 @@ const Options = {
         await setOption(option, !!el.checked)
       })
     })
+
+    if (!chrome.pageAction.show) {
+      document
+        .querySelector('[data-i18n="optionDynamicIcon"]')
+        .parentNode.remove()
+    }
 
     i18n()
   }

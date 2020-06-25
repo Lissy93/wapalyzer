@@ -97,7 +97,6 @@ const Content = {
    * @param {Array} technologies
    */
   onGetTechnologies(technologies = []) {
-    console.log({ technologies })
     // Inject a script tag into the page to access methods of the window object
     const script = document.createElement('script')
 

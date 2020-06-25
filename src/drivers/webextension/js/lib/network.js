@@ -730,20 +730,18 @@
     }
   );
 
-	chrome.runtime.onConnect.addListener((port) => {
-		port.onMessage.addListener((message) => {
-			if ( message === 'is_tracking_enabled' ) {
-				ifTrackingEnabled(
-					port.sender.tab,
-					function() {
-						try {port.postMessage({'tracking_enabled': true});}
-						catch(err) {} },
-					function() {
-						try {port.postMessage({'tracking_enabled': false});}
-						catch(err) {} }
-				);
-			}
-			return true;
-		});
-	});
+  chrome.runtime.onMessage.addListener((message, sender, callback) => {
+    if ( message === 'is_tracking_enabled' ) {
+      ifTrackingEnabled(
+        sender.tab,
+        function() {
+          try {callback({'tracking_enabled': true});}
+          catch(err) {} },
+        function() {
+          try {callback({'tracking_enabled': false});}
+          catch(err) {} }
+      );
+    }
+    return true;
+  });
 })();
