@@ -55,11 +55,16 @@ const Driver = {
       ads: await getOption('ads', [])
     }
 
+    await promisify(chrome.browserAction, 'setBadgeBackgroundColor', {
+      color: '#6B39BD'
+    })
+
     chrome.webRequest.onCompleted.addListener(
       Driver.onWebRequestComplete,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
       ['responseHeaders']
     )
+
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
     // Enable messaging between scripts
@@ -361,11 +366,7 @@ const Driver = {
    * @param {Object} technologies
    */
   async setIcon(url, technologies) {
-    if (!chrome.pageAction.show) {
-      return
-    }
-
-    const dynamicIcon = await getOption('dynamicIcon', true)
+    const dynamicIcon = await getOption('dynamicIcon', false)
 
     let icon = 'default.svg'
 
@@ -382,9 +383,13 @@ const Driver = {
     const tabs = await promisify(chrome.tabs, 'query', { url })
 
     await Promise.all(
-      tabs.map(async ({ id: tabId }) => {
-        await Promise.race([
-          promisify(chrome.pageAction, 'setIcon', {
+      tabs.map(({ id: tabId }) =>
+        Promise.all([
+          promisify(chrome.browserAction, 'setBadgeText', {
+            tabId,
+            text: technologies.length.toString().toString()
+          }),
+          promisify(chrome.browserAction, 'setIcon', {
             tabId,
             path: chrome.extension.getURL(
               `../images/icons/${
@@ -393,12 +398,9 @@ const Driver = {
                   : icon
               }`
             )
-          }),
-          new Promise((resolve) => setTimeout(resolve, 500))
+          })
         ])
-
-        chrome.pageAction.show(tabId)
-      })
+      )
     )
   },
 

@@ -40,24 +40,26 @@ const Popup = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (termsAccepted) {
+      document.querySelector('.terms').classList.add('terms--hidden')
+      document.querySelector('.empty').classList.remove('empty--hidden')
+
       Popup.onGetDetections(await Popup.driver('getDetections'))
     } else {
-      document.querySelector('.terms').style.display = 'flex'
-      document.querySelector('.detections').style.display = 'none'
-      document.querySelector('.empty').style.display = 'none'
+      document.querySelector('.terms').classList.remove('terms--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
+      document.querySelector('.empty').classList.add('empty--hidden')
 
       document.querySelector('.terms').addEventListener('click', async () => {
         await setOption('termsAccepted', true)
 
-        document.querySelector('.terms').remove()
-        document.querySelector('.detections').style.display = 'block'
-        document.querySelector('.empty').style.display = 'block'
+        document.querySelector('.terms').classList.remove('terms--hidden')
+        document
+          .querySelector('.detections')
+          .classList.add('.detections--hidden')
+        document.querySelector('.empty').classList.add('empty--hidden')
 
         chrome.runtime.sendMessage('getDetections', Popup.onGetDetections)
       })
-
-      // Apply internationalization
-      i18n()
     }
 
     // Alert
@@ -66,15 +68,24 @@ const Popup = {
       currentWindow: true
     })
 
-    document.querySelector(
-      '.alerts__link'
-    ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
-      `${url}`
-    )}`
+    if (url.startsWith('http')) {
+      document.querySelector('.alerts').classList.remove('alerts--hidden')
+
+      document.querySelector(
+        '.alerts__link'
+      ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
+        `${url}`
+      )}`
+    } else {
+      document.querySelector('.alerts').classList.add('alerts--hidden')
+    }
 
     document
       .querySelector('.footer__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
+
+    // Apply internationalization
+    i18n()
   },
 
   driver(func, args) {
@@ -115,11 +126,13 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
-    const pinnedCategory = await getOption('pinnedCategory')
-
-    if (detections.length) {
-      document.querySelector('.empty').remove()
+    if (!detections || !detections.length) {
+      return
     }
+
+    document.querySelector('.empty').classList.add('empty--hidden')
+
+    const pinnedCategory = await getOption('pinnedCategory')
 
     const categorised = Popup.categorise(detections)
 

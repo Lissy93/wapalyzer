@@ -18,7 +18,7 @@ const Options = {
 
     ;[
       ['upgradeMessage', true],
-      ['dynamicIcon', true],
+      ['dynamicIcon', false],
       ['tracking', true],
       ['themeMode', false]
     ].map(async ([option, defaultValue]) => {
@@ -35,12 +35,6 @@ const Options = {
         await setOption(option, !!el.checked)
       })
     })
-
-    if (!chrome.pageAction.show) {
-      document
-        .querySelector('[data-i18n="optionDynamicIcon"]')
-        .parentNode.remove()
-    }
 
     i18n()
   }

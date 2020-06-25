@@ -21,6 +21,6 @@
     "convert": "cd ./src/drivers/webextension/images/icons ; cp *.svg converted ; cd converted ; convert-svg-to-png *.svg --width 32 --height 32 ; rm *.svg",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/apps.json",
     "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
-    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --bundle-identifier com.wappalyzer.webextension --force src/drivers/webextension"
+    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension"
   }
 }
