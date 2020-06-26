@@ -55,9 +55,7 @@ const Driver = {
       ads: await getOption('ads', [])
     }
 
-    await promisify(chrome.browserAction, 'setBadgeBackgroundColor', {
-      color: '#6B39BD'
-    })
+    chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
 
     chrome.webRequest.onCompleted.addListener(
       Driver.onWebRequestComplete,
@@ -380,16 +378,18 @@ const Driver = {
       ;({ icon } = pinned || technologies[0] || { icon })
     }
 
-    const tabs = await promisify(chrome.tabs, 'query', { url })
-
-    await Promise.all(
-      tabs.map(({ id: tabId }) =>
-        Promise.all([
-          promisify(chrome.browserAction, 'setBadgeText', {
+    ;(await promisify(chrome.tabs, 'query', { url })).forEach(
+      ({ id: tabId }) => {
+        chrome.browserAction.setBadgeText(
+          {
             tabId,
-            text: technologies.length.toString().toString()
-          }),
-          promisify(chrome.browserAction, 'setIcon', {
+            text: technologies.length.toString()
+          },
+          () => {}
+        )
+
+        chrome.browserAction.setIcon(
+          {
             tabId,
             path: chrome.extension.getURL(
               `../images/icons/${
@@ -398,9 +398,10 @@ const Driver = {
                   : icon
               }`
             )
-          })
-        ])
-      )
+          },
+          () => {}
+        )
+      }
     )
   },
 

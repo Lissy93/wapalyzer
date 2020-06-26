@@ -52,32 +52,33 @@ const Popup = {
       document.querySelector('.terms').addEventListener('click', async () => {
         await setOption('termsAccepted', true)
 
-        document.querySelector('.terms').classList.remove('terms--hidden')
-        document
-          .querySelector('.detections')
-          .classList.add('.detections--hidden')
-        document.querySelector('.empty').classList.add('empty--hidden')
+        document.querySelector('.terms').classList.add('terms--hidden')
+        document.querySelector('.empty').classList.remove('empty--hidden')
 
         chrome.runtime.sendMessage('getDetections', Popup.onGetDetections)
       })
     }
 
     // Alert
-    const [{ url }] = await promisify(chrome.tabs, 'query', {
+    const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true
     })
 
-    if (url.startsWith('http')) {
-      document.querySelector('.alerts').classList.remove('alerts--hidden')
+    if (tabs && tabs.length) {
+      const [{ url }] = tabs
 
-      document.querySelector(
-        '.alerts__link'
-      ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
-        `${url}`
-      )}`
-    } else {
-      document.querySelector('.alerts').classList.add('alerts--hidden')
+      if (url.startsWith('http')) {
+        document.querySelector('.alerts').classList.remove('alerts--hidden')
+
+        document.querySelector(
+          '.alerts__link'
+        ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
+          `${url}`
+        )}`
+      } else {
+        document.querySelector('.alerts').classList.add('alerts--hidden')
+      }
     }
 
     document
@@ -131,6 +132,7 @@ const Popup = {
     }
 
     document.querySelector('.empty').classList.add('empty--hidden')
+    document.querySelector('.detections').classList.remove('empty--hidden')
 
     const pinnedCategory = await getOption('pinnedCategory')
 
