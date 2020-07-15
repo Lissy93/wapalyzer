@@ -10814,6 +10814,10 @@
         41
       ],
       "html": "<input[^>]+data-stripe",
+      "cookies": {
+        "__stripe_mid": "",
+        "__stripe_sid": ""
+      },
       "icon": "Stripe.png",
       "js": {
         "Stripe.version": "^(.+)$\\;version:\\1"

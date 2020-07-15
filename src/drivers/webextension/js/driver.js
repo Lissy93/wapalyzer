@@ -528,7 +528,7 @@ const Driver = {
           ]
 
           if (
-            !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local|127\.)/.test(
+            !/((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|google|\/admin|\.local|\.test|\.dev|127\.|0\.)/.test(
               hostname
             ) &&
             hits >= 3
