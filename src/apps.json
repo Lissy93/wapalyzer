@@ -2626,6 +2626,14 @@
       "icon": "CrossBox.png",
       "website": "https://crossbox.io"
     },
+    "Crownpeak": {
+      "cats": [
+        67
+      ],
+      "script": "c\\.evidon\\.com",    
+      "icon": "Crownpeak.png",
+      "website": "http://www.crownpeak.com"
+    },            
     "Crypto-Loot": {
       "cats": [
         56
@@ -7892,8 +7900,11 @@
       "cookies": {
         "OptanonConsent": ""
       },
-      "script": "cdn\\.cookielaw\\.org",    
-      "icon": "OneTrust.svg",
+      "script": [
+          "cdn\\.cookielaw\\.org", 
+          "optanon\\.blob\\.core\\.windows\\.net"
+      ],
+      "icon": "OneTrust.png",
       "website": "http://www.onetrust.com"
     },      
     "Onshop": {
