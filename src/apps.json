@@ -80,7 +80,10 @@
       "cats": [
         12
       ],
-      "html": "<html[^>]* (?:amp|⚡)[^-]",
+      "html": [
+        "<html[^>]* (?:amp|⚡)[^-]",
+        "<link rel=\"amphtml\""
+       ],
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.amp.dev"
     },
@@ -4477,6 +4480,7 @@
     },
     "Google Analytics Enhanced eCommerce": {
       "cats": [
+        6,
         10
       ],
       "icon": "Google Analytics.svg",
@@ -9766,11 +9770,14 @@
     "Salesforce Commerce Cloud": {
       "cats": [
         6
-      ],
+      ],       
       "headers": {
         "Server": "Demandware eCommerce Server"
       },
-      "html": "<[^>]+demandware\\.edgesuite",
+      "html": [
+        "<[^>]+demandware\\.edgesuite",
+        "/demandware\\.static/"
+       ],
       "icon": "Salesforce.svg",
       "js": {
         "dwAnalytics": ""
