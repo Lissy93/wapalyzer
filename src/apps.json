@@ -2472,6 +2472,14 @@
       "script": "conversionlab\\.trackset\\.com/track/tsend\\.js",
       "website": "http://www.trackset.it/conversionlab"
     },
+    "Cookiebot": {
+      "cats": [
+        67
+      ],
+      "script": "consent\\.cookiebot\\.com",    
+      "icon": "Cookiebot.svg",
+      "website": "http://www.cookiebot.com"
+    },      
     "Coppermine": {
       "cats": [
         7
@@ -2618,6 +2626,14 @@
       "icon": "CrossBox.png",
       "website": "https://crossbox.io"
     },
+    "Crownpeak": {
+      "cats": [
+        67
+      ],
+      "script": "c\\.evidon\\.com",    
+      "icon": "Crownpeak.png",
+      "website": "http://www.crownpeak.com"
+    },            
     "Crypto-Loot": {
       "cats": [
         56
@@ -7877,6 +7893,20 @@
       },
       "website": "http://www.onestat.com"
     },
+    "OneTrust": {
+      "cats": [
+        67
+      ],
+      "cookies": {
+        "OptanonConsent": ""
+      },
+      "script": [
+          "cdn\\.cookielaw\\.org", 
+          "optanon\\.blob\\.core\\.windows\\.net"
+      ],
+      "icon": "OneTrust.png",
+      "website": "http://www.onetrust.com"
+    },      
     "Onshop": {
       "cats": [
         6
@@ -11489,6 +11519,14 @@
       "script": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
+    "TrustArc": {
+      "cats": [
+        67
+      ],
+      "script": "consent\\.trustarc\\.com",    
+      "icon": "TrustArc.svg",
+      "website": "http://trustarc.com"
+    },      
     "Tumblr": {
       "cats": [
         11
@@ -14727,6 +14765,11 @@
     "66": {
       "name": "UI frameworks",
       "priority": 7
+    },
+    "67": {
+      "name": "Cookie compliance",
+      "priority": 9
     }
+      
   }
 }
