@@ -507,6 +507,18 @@
       "icon": "akamai.svg",
       "website": "http://akamai.com"
     },
+    "Akamai Bot Manager": {
+      "cats": [
+        16
+      ],
+      "cookies": {
+        "ak_bmsc": "",
+        "bm_sv": "",
+        "bm_sz": ""          
+      },
+      "icon": "akamai.svg",
+      "website": "http://akamai.com/bot-manager"
+    },      
     "Akaunting": {
       "cats": [
         55
@@ -2480,6 +2492,26 @@
       "icon": "Cookiebot.svg",
       "website": "http://www.cookiebot.com"
     },
+    "CookieConsent": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "www\\.cookieconsent\\.com/releases/*/cookie-consent\\.js"
+      ],
+      "icon": "CookieConsent.png",
+      "website": "https://www.cookieconsent.com/"
+    },      
+    "CookieHub": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "cookiehub\\.net/*/*\\.js"
+      ],
+      "icon": "CookieHub.png",
+      "website": "https://www.cookiehub.com"
+    },      
     "Cookie Script": {
       "cats": [
         67
@@ -2863,10 +2895,12 @@
     },
     "Datadome": {
       "cats": [
-        19
+        16
       ],
       "cookies": {
-        "datadome": ""
+        "datadome": "",
+        "datadome-_zldt": "",
+        "datadome-_zldp": ""          
       },
       "headers": {
         "Server": "^DataDome$",
@@ -6984,6 +7018,16 @@
       },
       "website": "https://www.eidosmedia.com/"
     },
+    "Metomic": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "metomic\\.js"
+      ],
+      "icon": "metomic.png",
+      "website": "https://metomic.io"
+    },      
     "Microsoft ASP.NET": {
       "cats": [
         18
@@ -8552,6 +8596,19 @@
       },
       "website": "http://percussion.com"
     },
+    "PerimeterX": {
+      "cats": [
+        16
+      ],
+      "cookies": {
+        "_px3": "",
+        "_pxvid": "",
+        "_pxff_cc": "",
+        "_pxhd": ""          
+      },
+      "icon": "perimeterx.svg",
+      "website": "https://www.perimeterx.com/"
+    },      
     "Perl": {
       "cats": [
         27
@@ -13663,6 +13720,16 @@
       "url": "imperia/md/",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
     },
+    "Imperva": {
+      "cats": [
+        16
+      ],
+      "script": [
+          "/_Incapsula_Resource"
+      ],
+      "icon": "Imperva.svg",
+      "website": "https://www.imperva.com/"
+    },        
     "io4 CMS": {
       "cats": [
         1
@@ -14653,7 +14720,7 @@
       "priority": 9
     },
     "16": {
-      "name": "Captchas",
+      "name": "Security",
       "priority": 9
     },
     "17": {
