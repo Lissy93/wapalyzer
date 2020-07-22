@@ -7191,13 +7191,20 @@
     },
     "Mobify": {
       "cats": [
+        6,
         26
       ],
+      "headers": {
+        "X-Powered-By": "Mobify"
+      },        
       "icon": "Mobify.png",
       "js": {
         "Mobify": ""
       },
-      "script": "//cdn\\.mobify\\.com/",
+      "script": [
+          "//cdn\\.mobify\\.com/",
+          "//a\\.mobify\\.com/"
+       ],
       "website": "https://www.mobify.com"
     },
     "Mobirise": {
