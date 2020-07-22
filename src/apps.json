@@ -5142,7 +5142,7 @@
         6
       ],
       "cpe": "cpe:/a:ibm:websphere_commerce_suite",
-      "html": "href=\"(?:\\/|[^>]+)webapp\\/wcs\\/",
+      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(\/wcsstore\/|webapp\\/wcs)",
       "icon": "IBM.svg",
       "implies": "Java",
       "url": "/wcs/",
@@ -9684,7 +9684,10 @@
         "_hybris": ""
       },
       "cpe": "cpe:/a:sap:commerce_cloud",
-      "html": "<[^>]+/(?:sys_master|hybr|_ui/(?:responsive/)?(?:desktop|common(?:/images|/img)?))/",
+      "html": [
+          "<[^>]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
+          "<script[^>].*hybris.*.js"
+      ],   
       "icon": "SAP.png",
       "implies": "Java",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
