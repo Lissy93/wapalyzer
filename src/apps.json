@@ -80,7 +80,10 @@
       "cats": [
         12
       ],
-      "html": "<html[^>]* (?:amp|⚡)[^-]",
+      "html": [
+        "<html[^>]* (?:amp|⚡)[^-]",
+        "<link rel=\"amphtml\""
+       ],
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.amp.dev"
     },
@@ -2469,6 +2472,14 @@
       "script": "conversionlab\\.trackset\\.com/track/tsend\\.js",
       "website": "http://www.trackset.it/conversionlab"
     },
+    "Cookiebot": {
+      "cats": [
+        67
+      ],
+      "script": "consent\\.cookiebot\\.com",    
+      "icon": "Cookiebot.svg",
+      "website": "http://www.cookiebot.com"
+    },      
     "Coppermine": {
       "cats": [
         7
@@ -2615,6 +2626,14 @@
       "icon": "CrossBox.png",
       "website": "https://crossbox.io"
     },
+    "Crownpeak": {
+      "cats": [
+        67
+      ],
+      "script": "c\\.evidon\\.com",    
+      "icon": "Crownpeak.png",
+      "website": "http://www.crownpeak.com"
+    },            
     "Crypto-Loot": {
       "cats": [
         56
@@ -4477,6 +4496,7 @@
     },
     "Google Analytics Enhanced eCommerce": {
       "cats": [
+        6,
         10
       ],
       "icon": "Google Analytics.svg",
@@ -7873,6 +7893,20 @@
       },
       "website": "http://www.onestat.com"
     },
+    "OneTrust": {
+      "cats": [
+        67
+      ],
+      "cookies": {
+        "OptanonConsent": ""
+      },
+      "script": [
+          "cdn\\.cookielaw\\.org", 
+          "optanon\\.blob\\.core\\.windows\\.net"
+      ],
+      "icon": "OneTrust.png",
+      "website": "http://www.onetrust.com"
+    },      
     "Onshop": {
       "cats": [
         6
@@ -9766,11 +9800,14 @@
     "Salesforce Commerce Cloud": {
       "cats": [
         6
-      ],
+      ],       
       "headers": {
         "Server": "Demandware eCommerce Server"
       },
-      "html": "<[^>]+demandware\\.edgesuite",
+      "html": [
+        "<[^>]+demandware\\.edgesuite",
+        "/demandware\\.static/"
+       ],
       "icon": "Salesforce.svg",
       "js": {
         "dwAnalytics": ""
@@ -10814,6 +10851,10 @@
         41
       ],
       "html": "<input[^>]+data-stripe",
+      "cookies": {
+        "__stripe_mid": "",
+        "__stripe_sid": ""
+      },
       "icon": "Stripe.png",
       "js": {
         "Stripe.version": "^(.+)$\\;version:\\1"
@@ -11478,6 +11519,14 @@
       "script": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
+    "TrustArc": {
+      "cats": [
+        67
+      ],
+      "script": "consent\\.trustarc\\.com",    
+      "icon": "TrustArc.svg",
+      "website": "http://trustarc.com"
+    },      
     "Tumblr": {
       "cats": [
         11
@@ -14716,6 +14765,11 @@
     "66": {
       "name": "UI frameworks",
       "priority": 7
+    },
+    "67": {
+      "name": "Cookie compliance",
+      "priority": 9
     }
+      
   }
 }
