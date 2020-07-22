@@ -1993,6 +1993,21 @@
       "icon": "CentOS.png",
       "website": "http://centos.org"
     },
+    "Centminmod": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "X-Powered-By": "centminmod"
+      },
+      "implies": [
+        "CentOS",
+        "Nginx",
+        "PHP"
+      ],
+      "icon": "centminmod.png",
+      "website": "https://centminmod.com"
+    },
     "Ceres": {
       "cats": [
         6
