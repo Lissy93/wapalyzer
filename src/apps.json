@@ -1967,6 +1967,21 @@
       "script": "/cargo\\.",
       "website": "http://cargocollective.com"
     },
+    "Cart Functionality": {
+      "cats": [
+        6
+      ],
+      "html": [
+          "<a[^>]*href=.*/Cart",
+          "<a[^>]*href=.*/Basket",
+          "<a[^>]*href=.*/Trolley",
+          "<a[^>]*href=.*/Bag",
+          "<a[^>]*href=.*/ShoppingBag",        
+          "<a[^>]*href=.*/Checkout"
+      ],
+      "icon": "Cart-generic.svg",
+      "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
+    },      
     "Catberry.js": {
       "cats": [
         12,
@@ -4405,6 +4420,16 @@
       "implies": "Java",
       "website": "http://glassfish.java.net"
     },
+    "Global-e": {
+      "cats": [
+        6
+      ],
+      "script": [
+          "web\\.global-e\\.com"
+      ],
+      "icon": "Globale.png",
+      "website": "https://www.global-e.com/"
+    },       
     "Glyphicons": {
       "cats": [
         17
