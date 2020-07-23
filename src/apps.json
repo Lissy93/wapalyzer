@@ -2491,23 +2491,13 @@
       "script": "consent\\.cookiebot\\.com",    
       "icon": "Cookiebot.svg",
       "website": "http://www.cookiebot.com"
-    },
-    "CookieConsent": {
-      "cats": [
-        67
-      ],
-      "script": [
-          "www\\.cookieconsent\\.com/releases/*/cookie-consent\\.js"
-      ],
-      "icon": "CookieConsent.png",
-      "website": "https://www.cookieconsent.com/"
     },      
     "CookieHub": {
       "cats": [
         67
       ],
       "script": [
-          "cookiehub\\.net/*/*\\.js"
+          "cookiehub\\.net/.*\\.js"
       ],
       "icon": "CookieHub.png",
       "website": "https://www.cookiehub.com"
@@ -2959,7 +2949,7 @@
         67
       ],
       "icon": "didomi.png",
-      "script": "sdk\\.privacy-center\\.org/*/loader\\.js",
+      "script": "sdk\\.privacy-center\\.org/.*/loader\\.js",
       "website": "https://www.didomi.io/en/consent-preference-management"
     },       
     "DirectAdmin": {
