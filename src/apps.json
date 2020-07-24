@@ -1170,7 +1170,10 @@
       "cats": [
         68
       ],
-      "html": "<iframe.*audioeye\\.com/frame/cookieStorage",
+      "html": [
+        "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
+        "ws\\.audioeye\\.com/ae\\.js"
+      ],
       "script": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/",
       "icon": "AudioEye.png"
@@ -3597,7 +3600,7 @@
       "cats": [
         68
       ],
-      "html": "<a .*essentialaccessibility\\.com/.*\\?utm_source=.*utm_medium=.*",
+      "html": "<a[ˆ>]*essentialaccessibility\\.com/[ˆ>]*utm_source=[ˆ>]*utm_campaign=",
       "website": "https://www.essentialaccessibility.com/",
       "icon": "EssentialAccessibility.png"
     },
@@ -6716,7 +6719,6 @@
       "cats": [
         68
       ],
-      "html": "<script.*mk-sense\\.com/aweb\\?license",
       "script": "mk-sense\\.com/aweb\\?license",
       "website": "https://mk-sense.com/",
       "icon": "Make-Sense.png"
@@ -9360,7 +9362,7 @@
       "cats": [
         68
       ],
-      "html": ".*(api\\.reciteme\\.com/asset/js).*",
+      "html": "api\\.reciteme\\.com/asset/js",
       "website": "https://reciteme.com/",
       "icon": "Recite Me.png"
     },
