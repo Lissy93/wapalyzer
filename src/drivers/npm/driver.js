@@ -137,7 +137,7 @@ class Driver {
   }
 
   open(url) {
-    return new Site(url, this)
+    return new Site(url.split('#')[0], this)
   }
 
   log(message, source = 'driver') {

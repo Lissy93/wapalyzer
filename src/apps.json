@@ -137,11 +137,25 @@
       ],
       "website": "https://www.adplan7.com/"
     },
+    "AdonisJS": {
+      "cats": [
+        18
+      ],
+      "icon": "AdonisJS.png",
+      "cookies": {
+        "cookie_name": "adonis-session"
+      },
+      "implies": "Node.js",
+      "website": "https://adonisjs.com"
+    },
     "AMP": {
       "cats": [
         12
       ],
-      "html": "<html[^>]* (?:amp|⚡)[^-]",
+      "html": [
+        "<html[^>]* (?:amp|⚡)[^-]",
+        "<link rel=\"amphtml\""
+       ],
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.amp.dev"
     },
@@ -2051,6 +2065,21 @@
       "icon": "CentOS.png",
       "website": "http://centos.org"
     },
+    "Centminmod": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "X-Powered-By": "centminmod"
+      },
+      "implies": [
+        "CentOS",
+        "Nginx",
+        "PHP"
+      ],
+      "icon": "centminmod.png",
+      "website": "https://centminmod.com"
+    },
     "Ceres": {
       "cats": [
         6
@@ -2530,6 +2559,14 @@
       "script": "conversionlab\\.trackset\\.com/track/tsend\\.js",
       "website": "http://www.trackset.it/conversionlab"
     },
+    "Cookiebot": {
+      "cats": [
+        67
+      ],
+      "script": "consent\\.cookiebot\\.com",    
+      "icon": "Cookiebot.svg",
+      "website": "http://www.cookiebot.com"
+    },      
     "Coppermine": {
       "cats": [
         7
@@ -2676,6 +2713,14 @@
       "icon": "CrossBox.png",
       "website": "https://crossbox.io"
     },
+    "Crownpeak": {
+      "cats": [
+        67
+      ],
+      "script": "c\\.evidon\\.com",    
+      "icon": "Crownpeak.png",
+      "website": "http://www.crownpeak.com"
+    },            
     "Crypto-Loot": {
       "cats": [
         56
@@ -3730,6 +3775,7 @@
         1
       ],
       "html": "<!-- Powered by FaraPy.",
+      "implies": "Python",
       "icon": "FaraPy.png",
       "website": "https://faral.tech"
     },
@@ -3966,6 +4012,20 @@
         "generator": "^Fork CMS$"
       },
       "website": "http://www.fork-cms.com/"
+    },
+    "ForoshGostar": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "Aws.customer": ""
+      },
+      "icon": "ForoshGostar.svg",
+      "implies": "Microsoft ASP.NET",
+      "meta": {
+        "generator": "^Forosh\\s?Gostar.*|Arsina Webshop.*$"
+      },
+      "website": "https://www.foroshgostar.com"
     },
     "Fortune3": {
       "cats": [
@@ -4538,6 +4598,7 @@
     },
     "Google Analytics Enhanced eCommerce": {
       "cats": [
+        6,
         10
       ],
       "icon": "Google Analytics.svg",
@@ -5142,7 +5203,7 @@
         6
       ],
       "cpe": "cpe:/a:ibm:websphere_commerce_suite",
-      "html": "href=\"(?:\\/|[^>]+)webapp\\/wcs\\/",
+      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(\/wcsstore\/|webapp\\/wcs)",
       "icon": "IBM.svg",
       "implies": "Java",
       "url": "/wcs/",
@@ -6475,17 +6536,17 @@
       ],
       "website": "https://www.localfocus.nl/en/"
     },
-    "Locomotive": {
+    "LocomotiveCMS": {
       "cats": [
         1
       ],
       "html": "<link[^>]*/sites/[a-z\\d]{24}/theme/stylesheets",
-      "icon": "Locomotive.png",
+      "icon": "LocomotiveCMS.png",
       "implies": [
         "Ruby on Rails",
         "MongoDB"
       ],
-      "website": "http://www.locomotivecms.com"
+      "website": "https://www.locomotivecms.com"
     },
     "Lodash": {
       "cats": [
@@ -7934,6 +7995,20 @@
       },
       "website": "http://www.onestat.com"
     },
+    "OneTrust": {
+      "cats": [
+        67
+      ],
+      "cookies": {
+        "OptanonConsent": ""
+      },
+      "script": [
+          "cdn\\.cookielaw\\.org", 
+          "optanon\\.blob\\.core\\.windows\\.net"
+      ],
+      "icon": "OneTrust.png",
+      "website": "http://www.onetrust.com"
+    },      
     "Onshop": {
       "cats": [
         6
@@ -9670,7 +9745,10 @@
         "_hybris": ""
       },
       "cpe": "cpe:/a:sap:commerce_cloud",
-      "html": "<[^>]+/(?:sys_master|hybr|_ui/(?:responsive/)?(?:desktop|common(?:/images|/img)?))/",
+      "html": [
+          "<[^>]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
+          "<script[^>].*hybris.*.js"
+      ],   
       "icon": "SAP.png",
       "implies": "Java",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
@@ -9807,6 +9885,14 @@
       "implies": "Express",
       "website": "http://sailsjs.org"
     },
+    "SaleCycle": {
+      "cats": [
+        6
+      ],
+      "html": "<iframe[^>]+title=\"SaleCycle\"[^>]+src=\"[^>]+salecycle\\.com",
+      "icon": "salecycle.svg",
+      "website": "https://www.salecycle.com/"
+    },
     "Salesforce": {
       "cats": [
         53
@@ -9827,11 +9913,14 @@
     "Salesforce Commerce Cloud": {
       "cats": [
         6
-      ],
+      ],       
       "headers": {
         "Server": "Demandware eCommerce Server"
       },
-      "html": "<[^>]+demandware\\.edgesuite",
+      "html": [
+        "<[^>]+demandware\\.edgesuite",
+        "/demandware\\.static/"
+       ],
       "icon": "Salesforce.svg",
       "js": {
         "dwAnalytics": ""
@@ -10536,7 +10625,7 @@
       "cats": [
         12
       ],
-      "icon": "Socket.io.png",
+      "icon": "Socket.IO.svg",
       "implies": "Node.js",
       "js": {
         "io.Socket": "",
@@ -10588,6 +10677,22 @@
         "generator": "^Solusquare$"
       },
       "website": "https://www.solusquare.com"
+    },
+    "SolidPixels": {
+      "cats": [
+        1,
+        6,
+        4
+      ],
+      "icon": "SolidPixels.png",
+      "implies": "React",
+      "meta": {
+        "web_author": "^solidpixels"
+      },
+      "script": [
+        "^https?://cdn\\.solidpixels\\.net/"
+      ],
+      "website": "https://www.solidpixels.net"
     },
     "Solve Media": {
       "cats": [
@@ -10933,6 +11038,16 @@
       "implies": "Symfony",
       "website": "http://sulu.io"
     },
+    "@sulu/web": {
+      "cats": [
+        59
+      ],
+      "js": {
+        "web.startComponents": ""
+      },
+      "icon": "Sulu.svg",
+      "website": "https://github.com/sulu/web-js"
+    },
     "SumoMe": {
       "cats": [
         5,
@@ -11113,6 +11228,15 @@
         "SyntaxHighlighter": ""
       },
       "website": "https://github.com/syntaxhighlighter"
+    },
+    "Taggbox": {
+      "cats": [
+        5
+      ], 
+      "icon": "Taggbox.svg",
+      "script": "web\\.taggbox\\.com", 
+      "url": "web.taggbox.com",
+      "website": "https://taggbox.com/" 
     },
     "T-Soft": {
       "cats": [
@@ -11543,6 +11667,14 @@
       "script": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
+    "TrustArc": {
+      "cats": [
+        67
+      ],
+      "script": "consent\\.trustarc\\.com",    
+      "icon": "TrustArc.svg",
+      "website": "http://trustarc.com"
+    },      
     "Tumblr": {
       "cats": [
         11
@@ -12087,7 +12219,7 @@
         12
       ],
       "html": "<[^>]+\\sdata-v(?:ue)?-",
-      "icon": "Vue.js.png",
+      "icon": "vue.svg",
       "js": {
         "Vue.version": "^(.+)$\\;version:\\1"
       },
@@ -14781,6 +14913,11 @@
     "66": {
       "name": "UI frameworks",
       "priority": 7
+    },
+    "67": {
+      "name": "Cookie compliance",
+      "priority": 9
     }
+      
   }
 }

@@ -111,7 +111,7 @@ const Content = {
         chrome.runtime.sendMessage({
           source: 'content.js',
           func: 'analyzeJs',
-          args: [location.href, data.wappalyzer.js]
+          args: [location.href.split('#')[0], data.wappalyzer.js]
         })
 
         script.remove()
