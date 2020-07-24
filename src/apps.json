@@ -1,6 +1,67 @@
 {
   "$schema": "../schema.json",
   "apps": {
+    "Apple Pay": {
+      "cats": [
+        41
+      ],
+      "html": [
+        "<[^>]+aria-labelledby=\"pi-apple_pay",
+        "<script id=\"apple-pay"
+      ],
+      "icon": "Apple.svg",
+      "website": "https://www.apple.com/apple-pay"
+    },
+    "Google Pay": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-google_pay",
+      "icon": "Google.svg",
+      "website": "https://pay.google.com"
+    },
+    "Shop Pay": {
+      "cats": [
+        41
+      ],
+      "url": "^https://pay.shopify.com",
+      "html": "<[^>]+aria-labelledby=\"pi-shopify_pay",
+      "icon": "Shopify.svg",
+      "implies": "Shopify",
+      "website": "https://pay.google.com"
+    },
+    "Venmo": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-venmo",
+      "icon": "Venmo.svg",
+      "website": "https://venmo.com"
+    },
+    "Visa": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-visa",
+      "icon": "Visa.svg",
+      "website": "https://www.visa.com"
+    },
+    "Mastercard": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-mastercard",
+      "icon": "Mastercard.svg",
+      "website": "https://www.mastercard.com"
+    },
+    "American Express": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-american_express",
+      "icon": "Amex.svg",
+      "website": "https://www.americanexpress.com"
+    },
     "1C-Bitrix": {
       "cats": [
         1,
