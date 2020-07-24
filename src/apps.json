@@ -39,6 +39,16 @@
       "script": "https\\:\\/\\/track\\.91app\\.io\\/track\\.js\\?",
       "website": "https://www.91app.com/"
     },
+    "@sulu/web": {
+      "cats": [
+        59
+      ],
+      "icon": "Sulu.svg",
+      "js": {
+        "web.startComponents": ""
+      },
+      "website": "https://github.com/sulu/web-js"
+    },
     "A-Frame": {
       "cats": [
         25
@@ -83,7 +93,7 @@
       "html": [
         "<html[^>]* (?:amp|⚡)[^-]",
         "<link rel=\"amphtml\""
-       ],
+      ],
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.amp.dev"
     },
@@ -389,10 +399,10 @@
       "cats": [
         18
       ],
-      "icon": "AdonisJS.png",
       "cookies": {
         "cookie_name": "adonis-session"
       },
+      "icon": "AdonisJS.png",
       "implies": "Node.js",
       "website": "https://adonisjs.com"
     },
@@ -721,6 +731,14 @@
       "icon": "amber.png",
       "website": "https://amberframework.org"
     },
+    "American Express": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-american_express",
+      "icon": "Amex.svg",
+      "website": "https://www.americanexpress.com"
+    },
     "Ametys": {
       "cats": [
         1
@@ -972,6 +990,17 @@
       "icon": "AppNexus.svg",
       "script": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
+    },
+    "Apple Pay": {
+      "cats": [
+        41
+      ],
+      "html": [
+        "<[^>]+aria-labelledby=\"pi-apple_pay",
+        "<script id=\"apple-pay"
+      ],
+      "icon": "Apple.svg",
+      "website": "https://www.apple.com/apple-pay"
     },
     "Arastta": {
       "cats": [
@@ -2040,12 +2069,12 @@
       "headers": {
         "X-Powered-By": "centminmod"
       },
+      "icon": "centminmod.png",
       "implies": [
         "CentOS",
         "Nginx",
         "PHP"
       ],
-      "icon": "centminmod.png",
       "website": "https://centminmod.com"
     },
     "Ceres": {
@@ -2531,10 +2560,10 @@
       "cats": [
         67
       ],
-      "script": "consent\\.cookiebot\\.com",    
       "icon": "Cookiebot.svg",
+      "script": "consent\\.cookiebot\\.com",
       "website": "http://www.cookiebot.com"
-    },      
+    },
     "Coppermine": {
       "cats": [
         7
@@ -2685,10 +2714,10 @@
       "cats": [
         67
       ],
-      "script": "c\\.evidon\\.com",    
       "icon": "Crownpeak.png",
+      "script": "c\\.evidon\\.com",
       "website": "http://www.crownpeak.com"
-    },            
+    },
     "Crypto-Loot": {
       "cats": [
         56
@@ -3767,8 +3796,8 @@
         1
       ],
       "html": "<!-- Powered by FaraPy.",
-      "implies": "Python",
       "icon": "FaraPy.png",
+      "implies": "Python",
       "website": "https://faral.tech"
     },
     "Fastcommerce": {
@@ -4678,6 +4707,14 @@
       "icon": "Google PageSpeed.png",
       "website": "http://developers.google.com/speed/pagespeed/mod"
     },
+    "Google Pay": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-google_pay",
+      "icon": "Google.svg",
+      "website": "https://pay.google.com"
+    },
     "Google Plus": {
       "cats": [
         5
@@ -5203,7 +5240,7 @@
         6
       ],
       "cpe": "cpe:/a:ibm:websphere_commerce_suite",
-      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(\/wcsstore\/|webapp\\/wcs)",
+      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(/wcsstore/|webapp\\/wcs)",
       "icon": "IBM.svg",
       "implies": "Java",
       "url": "/wcs/",
@@ -5949,10 +5986,10 @@
       "js": {
         "CMS.Application": ""
       },
-      "script": "/CMSPages/GetResource\\.ashx",
       "meta": {
         "generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1"
       },
+      "script": "/CMSPages/GetResource\\.ashx",
       "website": "http://www.kentico.com"
     },
     "Kestrel": {
@@ -6809,6 +6846,14 @@
       },
       "script": "munchkin\\.marketo\\.net/munchkin\\.js",
       "website": "https://www.marketo.com"
+    },
+    "Mastercard": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-mastercard",
+      "icon": "Mastercard.svg",
+      "website": "https://www.mastercard.com"
     },
     "Material Design Lite": {
       "cats": [
@@ -8010,13 +8055,13 @@
       "cookies": {
         "OptanonConsent": ""
       },
-      "script": [
-          "cdn\\.cookielaw\\.org", 
-          "optanon\\.blob\\.core\\.windows\\.net"
-      ],
       "icon": "OneTrust.png",
+      "script": [
+        "cdn\\.cookielaw\\.org",
+        "optanon\\.blob\\.core\\.windows\\.net"
+      ],
       "website": "http://www.onetrust.com"
-    },      
+    },
     "Onshop": {
       "cats": [
         6
@@ -9762,9 +9807,9 @@
       },
       "cpe": "cpe:/a:sap:commerce_cloud",
       "html": [
-          "<[^>]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
-          "<script[^>].*hybris.*.js"
-      ],   
+        "<[^>]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
+        "<script[^>].*hybris.*.js"
+      ],
       "icon": "SAP.png",
       "implies": "Java",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
@@ -9901,6 +9946,14 @@
       "implies": "Express",
       "website": "http://sailsjs.org"
     },
+    "SaleCycle": {
+      "cats": [
+        6
+      ],
+      "html": "<iframe[^>]+title=\"SaleCycle\"[^>]+src=\"[^>]+salecycle\\.com",
+      "icon": "salecycle.svg",
+      "website": "https://www.salecycle.com/"
+    },
     "Salesforce": {
       "cats": [
         53
@@ -9921,14 +9974,14 @@
     "Salesforce Commerce Cloud": {
       "cats": [
         6
-      ],       
+      ],
       "headers": {
         "Server": "Demandware eCommerce Server"
       },
       "html": [
         "<[^>]+demandware\\.edgesuite",
         "/demandware\\.static/"
-       ],
+      ],
       "icon": "Salesforce.svg",
       "js": {
         "dwAnalytics": ""
@@ -10203,6 +10256,16 @@
       },
       "script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
       "website": "http://shinystat.com"
+    },
+    "Shop Pay": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-shopify_pay",
+      "icon": "Shopify.svg",
+      "implies": "Shopify",
+      "url": "^https://pay.shopify.com",
+      "website": "https://pay.google.com"
     },
     "Shopatron": {
       "cats": [
@@ -10652,6 +10715,22 @@
       },
       "website": "http://www.softtr.com"
     },
+    "SolidPixels": {
+      "cats": [
+        1,
+        6,
+        4
+      ],
+      "icon": "SolidPixels.png",
+      "implies": "React",
+      "meta": {
+        "web_author": "^solidpixels"
+      },
+      "script": [
+        "^https?://cdn\\.solidpixels\\.net/"
+      ],
+      "website": "https://www.solidpixels.net"
+    },
     "Solodev": {
       "cats": [
         1
@@ -10685,22 +10764,6 @@
         "generator": "^Solusquare$"
       },
       "website": "https://www.solusquare.com"
-    },
-    "SolidPixels": {
-      "cats": [
-        1,
-        6,
-        4
-      ],
-      "icon": "SolidPixels.png",
-      "implies": "React",
-      "meta": {
-        "web_author": "^solidpixels"
-      },
-      "script": [
-        "^https?://cdn\\.solidpixels\\.net/"
-      ],
-      "website": "https://www.solidpixels.net"
     },
     "Solve Media": {
       "cats": [
@@ -10987,11 +11050,11 @@
       "cats": [
         41
       ],
-      "html": "<input[^>]+data-stripe",
       "cookies": {
         "__stripe_mid": "",
         "__stripe_sid": ""
       },
+      "html": "<input[^>]+data-stripe",
       "icon": "Stripe.png",
       "js": {
         "Stripe.version": "^(.+)$\\;version:\\1"
@@ -11045,16 +11108,6 @@
       "icon": "Sulu.svg",
       "implies": "Symfony",
       "website": "http://sulu.io"
-    },
-    "@sulu/web": {
-      "cats": [
-        59
-      ],
-      "js": {
-        "web.startComponents": ""
-      },
-      "icon": "Sulu.svg",
-      "website": "https://github.com/sulu/web-js"
     },
     "SumoMe": {
       "cats": [
@@ -11297,6 +11350,15 @@
       },
       "script": "\\.tagcommander\\.com",
       "website": "https://www.commandersact.com/en/solutions/tagcommander/"
+    },
+    "Taggbox": {
+      "cats": [
+        5
+      ],
+      "icon": "Taggbox.svg",
+      "script": "web\\.taggbox\\.com",
+      "url": "web.taggbox.com",
+      "website": "https://taggbox.com/"
     },
     "Taiga": {
       "cats": [
@@ -11678,10 +11740,10 @@
       "cats": [
         67
       ],
-      "script": "consent\\.trustarc\\.com",    
       "icon": "TrustArc.svg",
+      "script": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
-    },      
+    },
     "Tumblr": {
       "cats": [
         11
@@ -12080,6 +12142,14 @@
       "icon": "Varnish.svg",
       "website": "http://www.varnish-cache.org"
     },
+    "Venmo": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-venmo",
+      "icon": "Venmo.svg",
+      "website": "https://venmo.com"
+    },
     "Veoxa": {
       "cats": [
         36
@@ -12196,6 +12266,14 @@
       },
       "url": "/sparql",
       "website": "https://virtuoso.openlinksw.com/"
+    },
+    "Visa": {
+      "cats": [
+        41
+      ],
+      "html": "<[^>]+aria-labelledby=\"pi-visa",
+      "icon": "Visa.svg",
+      "website": "https://www.visa.com"
     },
     "Visual Website Optimizer": {
       "cats": [
@@ -14945,6 +15023,5 @@
       "name": "Accessibility",
       "priority": 9
     }
-      
   }
 }
