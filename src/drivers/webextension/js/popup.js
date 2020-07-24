@@ -73,7 +73,7 @@ const Popup = {
 
         document.querySelector(
           '.alerts__link'
-        ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
+        ).href = `https://www.wappalyzer.com/alerts?url=${encodeURIComponent(
           `${url}`
         )}`
       } else {
