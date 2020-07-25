@@ -528,6 +528,18 @@
       "icon": "akamai.svg",
       "website": "http://akamai.com"
     },
+    "Akamai Bot Manager": {
+      "cats": [
+        16
+      ],
+      "cookies": {
+        "ak_bmsc": "",
+        "bm_sv": "",
+        "bm_sz": ""          
+      },
+      "icon": "akamai.svg",
+      "website": "http://akamai.com/bot-manager"
+    },      
     "Akaunting": {
       "cats": [
         55
@@ -1830,6 +1842,14 @@
       "icon": "CFML.png",
       "website": "http://adobe.com/products/coldfusion-family.html"
     },
+    "CIVIC": {
+      "cats": [
+        67
+      ],
+      "icon": "civic.png",
+      "script": "cc\\.cdn\\.civiccomputing\\.com",
+      "website": "https://www.civicuk.com/cookie-control"
+    },      
     "CKEditor": {
       "cats": [
         24
@@ -1995,6 +2015,21 @@
       "script": "/cargo\\.",
       "website": "http://cargocollective.com"
     },
+    "Cart Functionality": {
+      "cats": [
+        6
+      ],
+      "html": [
+          "<a[^>]*href=[^>]*/Cart",
+          "<a[^>]*href=[^>]*/Basket",
+          "<a[^>]*href=[^>]*/Trolley",
+          "<a[^>]*href=[^>]*/Bag",
+          "<a[^>]*href=[^>]*/ShoppingBag",        
+          "<a[^>]*href=[^>]*/Checkout"
+      ],
+      "icon": "Cart-generic.svg",
+      "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
+    },      
     "Catberry.js": {
       "cats": [
         12,
@@ -2534,7 +2569,33 @@
       "icon": "Cookiebot.svg",
       "script": "consent\\.cookiebot\\.com",
       "website": "http://www.cookiebot.com"
+    },      
+    "CookieHub": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "cookiehub\\.net/.*\\.js"
+      ],
+      "icon": "CookieHub.png",
+      "website": "https://www.cookiehub.com"
+    },      
+    "Cookie Script": {
+      "cats": [
+        67
+      ],
+      "icon": "CookieScript.png",
+      "script": "//cookie-script\\.com/s/",
+      "website": "https://cookie-script.com/"
     },
+    "CookieYes": {
+      "cats": [
+        67
+      ],
+      "icon": "cookieyes.png",
+      "script": "app\\.cookieyes\\.com/client_data/",
+      "website": "https://www.cookieyes.com/"
+    },       
     "Coppermine": {
       "cats": [
         7
@@ -2910,10 +2971,12 @@
     },
     "Datadome": {
       "cats": [
-        19
+        16
       ],
       "cookies": {
-        "datadome": ""
+        "datadome": "",
+        "datadome-_zldt": "",
+        "datadome-_zldp": ""          
       },
       "headers": {
         "Server": "^DataDome$",
@@ -2967,6 +3030,14 @@
       "script": "dedeajax",
       "website": "http://dedecms.com"
     },
+    "Didomi": {
+      "cats": [
+        67
+      ],
+      "icon": "didomi.png",
+      "script": "sdk\\.privacy-center\\.org/.*/loader\\.js",
+      "website": "https://www.didomi.io/en/consent-preference-management"
+    },       
     "DirectAdmin": {
       "cats": [
         9
@@ -3607,6 +3678,14 @@
       ],
       "website": "https://etherpad.org"
     },
+    "eucookie.eu": {
+      "cats": [
+        67
+      ],
+      "icon": "eucookie.png",
+      "script": "eucookie\\.eu/public/gdpr-cookie-consent\\.js",
+      "website": "https://www.eucookie.eu/"
+    },      
     "Exhibit": {
       "cats": [
         25
@@ -4435,6 +4514,16 @@
       "implies": "Java",
       "website": "http://glassfish.java.net"
     },
+    "Global-e": {
+      "cats": [
+        6
+      ],
+      "script": [
+          "web\\.global-e\\.com"
+      ],
+      "icon": "Globale.png",
+      "website": "https://www.global-e.com/"
+    },       
     "Glyphicons": {
       "cats": [
         17
@@ -5519,6 +5608,16 @@
       "icon": "irroba.svg",
       "website": "https://www.irroba.com.br/"
     },
+    "Iubenda": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "iubenda\\.com/cookie-solution/confs/js/"
+      ],
+      "icon": "iubenda.png",
+      "website": "https://www.iubenda.com/"
+    },     
     "J2Store": {
       "cats": [
         6
@@ -7044,6 +7143,16 @@
       },
       "website": "https://www.eidosmedia.com/"
     },
+    "Metomic": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "metomic\\.js"
+      ],
+      "icon": "metomic.png",
+      "website": "https://metomic.io"
+    },      
     "Microsoft ASP.NET": {
       "cats": [
         18
@@ -7251,13 +7360,20 @@
     },
     "Mobify": {
       "cats": [
+        6,
         26
       ],
+      "headers": {
+        "X-Powered-By": "Mobify"
+      },        
       "icon": "Mobify.png",
       "js": {
         "Mobify": ""
       },
-      "script": "//cdn\\.mobify\\.com/",
+      "script": [
+          "//cdn\\.mobify\\.com/",
+          "//a\\.mobify\\.com/"
+       ],
       "website": "https://www.mobify.com"
     },
     "Mobirise": {
@@ -7988,6 +8104,9 @@
       },
       "icon": "OneTrust.png",
       "script": [
+        "cdn\\.cookielaw\\.org", 
+        "optanon\\.blob\\.core\\.windows\\.net",
+        "otSDKStub\\.js"
         "cdn\\.cookielaw\\.org",
         "optanon\\.blob\\.core\\.windows\\.net"
       ],
@@ -8325,6 +8444,14 @@
       ],
       "website": "https://oroinc.com"
     },
+    "Osano": {
+      "cats": [
+        67
+      ],
+      "icon": "osano.png",
+      "script": "cookieconsent\\.min\\.js",
+      "website": "https://www.osano.com/"
+    },        
     "Outbrain": {
       "cats": [
         5
@@ -8597,6 +8724,19 @@
       },
       "website": "http://percussion.com"
     },
+    "PerimeterX": {
+      "cats": [
+        16
+      ],
+      "cookies": {
+        "_px3": "",
+        "_pxvid": "",
+        "_pxff_cc": "",
+        "_pxhd": ""          
+      },
+      "icon": "perimeterx.svg",
+      "website": "https://www.perimeterx.com/"
+    },      
     "Perl": {
       "cats": [
         27
@@ -9118,7 +9258,18 @@
       "icon": "Python.png",
       "website": "http://python.org"
     },
-    "Quantcast": {
+    "Quantcast Choice": {
+      "cats": [
+        67
+      ],
+      "icon": "Quantcast.png",
+      "js": {
+        "quantserve": ""
+      },
+      "script": "quantcast\\.mgr\\.consensu\\.org",
+      "website": "https://www.quantcast.com/gdpr/consent-management-solution/"
+    },      
+    "Quantcast Measure": {
       "cats": [
         10
       ],
@@ -9127,7 +9278,7 @@
         "quantserve": ""
       },
       "script": "\\.quantserve\\.com/quant\\.js",
-      "website": "http://www.quantcast.com"
+      "website": "https://www.quantcast.com/products/measure-audience-insights/"
     },
     "Question2Answer": {
       "cats": [
@@ -10019,6 +10170,16 @@
       "icon": "sectionio.svg",
       "website": "https://www.section.io"
     },
+    "Seers": {
+      "cats": [
+        67
+      ],
+      "script": [
+          "seersco.com/script/cb\\.js"
+      ],
+      "icon": "seersco.png",
+      "website": "http://www.seersco.com"
+    },      
     "Segment": {
       "cats": [
         10
@@ -11409,6 +11570,14 @@
       "icon": "Tengine.png",
       "website": "http://tengine.taobao.org"
     },
+    "Termly": {
+      "cats": [
+        67
+      ],
+      "icon": "termly.svg",
+      "script": "app\\.termly\\.io/embed\\.min\\.js",
+      "website": "https://termly.io/"
+    },      
     "Tessitura": {
       "cats": [
         53
@@ -11446,6 +11615,16 @@
       },
       "website": "http://textpattern.com"
     },
+    "The Hut Group": {
+      "cats": [
+        6
+      ],
+      "icon": "TheHutGroup.png",
+      "script": [
+        "THEHUT-.*\\.js"
+      ],
+      "website": "https://www.thg.com/"
+    },      
     "Thelia": {
       "cats": [
         1,
@@ -11890,6 +12069,14 @@
       "script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
       "website": "http://underscorejs.org"
     },
+    "Uniconsent": {
+      "cats": [
+        67
+      ],
+      "icon": "Uniconsent.png",
+      "script": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
+      "website": "https://www.uniconsent.com/"
+    },      
     "Usabilla": {
       "cats": [
         13
@@ -12361,6 +12548,17 @@
       "script": "web2py\\.js",
       "website": "http://web2py.com"
     },
+    "WebAR": {
+      "cats": [
+        19
+      ],
+      "html": [
+        "<model-viewer"
+      ],
+      "icon": "webAR.svg",
+      "website": "https://modelviewer.dev/"
+    },      
+      
     "WebGUI": {
       "cats": [
         1
@@ -13729,6 +13927,16 @@
       "url": "imperia/md/",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
     },
+    "Imperva": {
+      "cats": [
+        16
+      ],
+      "script": [
+          "/_Incapsula_Resource"
+      ],
+      "icon": "Imperva.svg",
+      "website": "https://www.imperva.com/"
+    },        
     "io4 CMS": {
       "cats": [
         1
@@ -14719,7 +14927,7 @@
       "priority": 9
     },
     "16": {
-      "name": "Captchas",
+      "name": "Security",
       "priority": 9
     },
     "17": {
