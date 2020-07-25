@@ -1802,6 +1802,14 @@
       "icon": "CFML.png",
       "website": "http://adobe.com/products/coldfusion-family.html"
     },
+    "CIVIC": {
+      "cats": [
+        67
+      ],
+      "icon": "civic.png",
+      "script": "cc\\.cdn\\.civiccomputing\\.com",
+      "website": "https://www.civicuk.com/cookie-control"
+    },      
     "CKEditor": {
       "cats": [
         24
@@ -2524,7 +2532,15 @@
       "icon": "CookieScript.png",
       "script": "//cookie-script\\.com/s/",
       "website": "https://cookie-script.com/"
-    },      
+    },
+    "CookieYes": {
+      "cats": [
+        67
+      ],
+      "icon": "cookieyes.png",
+      "script": "app\\.cookieyes\\.com/client_data/",
+      "website": "https://www.cookieyes.com/"
+    },       
     "Coppermine": {
       "cats": [
         7
@@ -3607,6 +3623,14 @@
       ],
       "website": "https://etherpad.org"
     },
+    "eucookie.eu": {
+      "cats": [
+        67
+      ],
+      "icon": "eucookie.png",
+      "script": "eucookie\\.eu/public/gdpr-cookie-consent\\.js",
+      "website": "https://www.eucookie.eu/"
+    },      
     "Exhibit": {
       "cats": [
         25
@@ -7994,7 +8018,8 @@
       },
       "script": [
           "cdn\\.cookielaw\\.org", 
-          "optanon\\.blob\\.core\\.windows\\.net"
+          "optanon\\.blob\\.core\\.windows\\.net",
+          "otSDKStub\\.js"
       ],
       "icon": "OneTrust.png",
       "website": "http://www.onetrust.com"
@@ -9145,7 +9170,18 @@
       "icon": "Python.png",
       "website": "http://python.org"
     },
-    "Quantcast": {
+    "Quantcast Choice": {
+      "cats": [
+        67
+      ],
+      "icon": "Quantcast.png",
+      "js": {
+        "quantserve": ""
+      },
+      "script": "quantcast\\.mgr\\.consensu\\.org",
+      "website": "https://www.quantcast.com/gdpr/consent-management-solution/"
+    },      
+    "Quantcast Measure": {
       "cats": [
         10
       ],
@@ -9154,7 +9190,7 @@
         "quantserve": ""
       },
       "script": "\\.quantserve\\.com/quant\\.js",
-      "website": "http://www.quantcast.com"
+      "website": "https://www.quantcast.com/products/measure-audience-insights/"
     },
     "Question2Answer": {
       "cats": [
@@ -11400,6 +11436,14 @@
       "icon": "Tengine.png",
       "website": "http://tengine.taobao.org"
     },
+    "Termly": {
+      "cats": [
+        67
+      ],
+      "icon": "termly.svg",
+      "script": "app\\.termly\\.io/embed\\.min\\.js",
+      "website": "https://termly.io/"
+    },      
     "Tessitura": {
       "cats": [
         53
