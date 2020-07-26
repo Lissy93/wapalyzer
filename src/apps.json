@@ -1014,6 +1014,16 @@
       "icon": "Apple.svg",
       "website": "https://www.apple.com/apple-pay"
     },
+    "Amazon Pay": {
+      "cats": [
+        41
+      ],
+      "html": "<meta id=\"amazon-payments",
+      "script": "/amazonpayments(?:\\.min)?\\.js",
+      "js": "AmazonPayments",
+      "icon": "Amazon.svg",
+      "website": "https://pay.amazon.com"
+    },
     "Arastta": {
       "cats": [
         6
@@ -5155,8 +5165,9 @@
       "cats": [
         62
       ],
+      "url": "\\.herokuapp\\.com",
       "headers": {
-        "Via": "/[\\d.-]+ vegur$"
+        "Via": "[\\d.-]+ vegur$"
       },
       "icon": "heroku.svg",
       "implies": [
@@ -13991,7 +14002,6 @@
         "Server": "gunicorn(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "gunicorn.png",
-      "implies": "Python",
       "website": "http://gunicorn.org"
     },
     "hCaptcha": {
