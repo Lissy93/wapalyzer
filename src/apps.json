@@ -6941,7 +6941,7 @@
       "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
     },
-    "Matomo": {
+    "Matomo Analytics": {
       "cats": [
         10
       ],
@@ -6962,6 +6962,16 @@
       },
       "script": "piwik\\.js|piwik\\.php",
       "website": "https://matomo.org"
+    },
+    "Matomo Tag Manager": {
+      "cats": [
+        42
+      ],
+      "icon": "Matomo.png",
+      "js": {
+        "window.MatomoTagManager": ""
+      },
+      "website": "https://developer.matomo.org/guides/tagmanager/introduction"
     },
     "Mattermost": {
       "cats": [
@@ -10527,7 +10537,8 @@
     },
     "Signal": {
       "cats": [
-        32
+        32,
+        42
       ],
       "icon": "signal.png",
       "js": {
