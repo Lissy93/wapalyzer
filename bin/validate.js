@@ -66,11 +66,6 @@ try {
                 throw new Error(`${error.message} (${id})`)
               }
 
-              //
-              if (/\.[+*]/.test(regex)) {
-                console.log(regex)
-              }
-
               // Count capture groups
               const groups = new RegExp(`${regex}|`).exec('').length - 1
 
