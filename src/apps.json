@@ -154,6 +154,15 @@
       },
       "website": "http://awstats.sourceforge.net"
     },
+    "AccessiBe": {
+      "cats": [
+        68
+      ],
+      "script": "acsbap\\.com/.*/acsb\\.js",
+      "website": "https://accessibe.com/",
+      "icon": "Accessibe.png"
+    },
+    
     "Acquia Cloud": {
       "cats": [
         62
@@ -228,6 +237,14 @@
       },
       "script": "(?:a|s)\\.adroll\\.com",
       "website": "http://adroll.com"
+    },
+    "Adally": {
+      "cats": [
+        68
+      ],
+      "script": "cloudfront\\.net/.*/adally\\.js",
+      "website": "https://adally.com/",
+      "icon": "Adally.png"
     },
     "Adcash": {
       "cats": [
@@ -1189,6 +1206,15 @@
       "html": "<a[^>]*href=\"https?://(?:www\\.)?statuspage\\.io/powered-by[^>]+>",
       "icon": "Atlassian Statuspage.svg",
       "website": "https://www.statuspage.io/"
+    },
+    "AudioEye": {
+      "cats": [
+        68
+      ],
+      "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
+      "script": "audioeye\\.com/ae\\.js",
+      "website": "https://www.audioeye.com/",
+      "icon": "AudioEye.png"
     },
     "Aurelia": {
       "cats": [
@@ -3639,6 +3665,14 @@
       "url": "^https?://(?:[^/]+\\.)?ad(?:op)?shost1\\.com/",
       "website": "http://epom.com"
     },
+    "EqualWeb": {
+      "cats": [
+        68
+      ],
+      "script": "cdn\\.equalweb\\.com.*\\.js",
+      "website": "https://www.equalweb.com/",
+      "icon": "EqualWeb.png"
+    },
     "Erlang": {
       "cats": [
         27
@@ -3794,6 +3828,14 @@
       "icon": "Facebook.svg",
       "script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
+    },
+    "Facil-iti": {
+      "cats": [
+        68
+      ],
+      "script": "ws\\.facil-iti\\.com/tag/faciliti-tag\\.min\\.js",
+      "website": "https://www.facil-iti.com/",
+      "icon": "Facil-iti.png"
     },
     "Fact Finder": {
       "cats": [
@@ -5155,6 +5197,14 @@
       "icon": "Highcharts.png",
       "script": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
       "website": "http://highcharts.com/products/highstock"
+    },
+    "HikeOrders": {
+      "cats": [
+        68
+      ],
+      "script": "hikeorders\\.com/main/assets/js/hko-accessibility\\.min\\.js",
+      "website": "https://hikeorders.com/",
+      "icon": "HikeOrders.png"
     },
     "Hinza Advanced CMS": {
       "cats": [
@@ -6790,6 +6840,14 @@
       ],
       "website": "http://mailchimp.com"
     },
+    "Make-Sense": {
+      "cats": [
+        68
+      ],
+      "script": "mk-sense\\.com/aweb\\?license",
+      "website": "https://mk-sense.com/",
+      "icon": "Make-Sense.png"
+    },
     "MakeShopKorea": {
       "cats": [
         6
@@ -8106,7 +8164,7 @@
       "script": [
         "cdn\\.cookielaw\\.org", 
         "optanon\\.blob\\.core\\.windows\\.net",
-        "otSDKStub\\.js"
+        "otSDKStub\\.js",
         "cdn\\.cookielaw\\.org",
         "optanon\\.blob\\.core\\.windows\\.net"
       ],
@@ -9484,6 +9542,14 @@
         "generator": "^Rayo"
       },
       "website": "http://www.rayo.ir"
+    },
+    "Recite Me": {
+      "cats": [
+        68
+      ],
+      "html": "api\\.reciteme\\.com/asset/js",
+      "website": "https://reciteme.com/",
+      "icon": "Recite Me.png"
     },
     "ReDoc": {
       "cats": [
@@ -11601,6 +11667,14 @@
       },
       "website": "https://www.textalk.se"
     },
+    "Texthelp": {
+      "cats": [
+        68
+      ],
+      "script": "browsealoud\\.com/.*/browsealoud\\.js",
+      "website": "https://www.texthelp.com/en-gb/products/browsealoud/",
+      "icon": "Texthelp.png"
+    },
     "Textpattern CMS": {
       "cats": [
         1
@@ -12069,6 +12143,14 @@
       "script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
       "website": "http://underscorejs.org"
     },
+    "uRemediate": {
+      "cats": [
+        68
+      ],
+      "script": "fecdn\\.user1st\\.info/Loader/head",
+      "website": "https://www.user1st.com/uremediate/",
+      "icon": "User1st.png"
+    },
     "Uniconsent": {
       "cats": [
         67
@@ -12077,6 +12159,15 @@
       "script": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
       "website": "https://www.uniconsent.com/"
     },      
+    "UsableNet": {
+      "cats": [
+        68
+      ],
+      "script": "\\.usablenet\\.com/pt/",
+      "html": "<iframe[ˆ>]*\\.usablenet\\.com/pt/",
+      "website": "https://usablenet.com/",
+      "icon": "UsableNet.png"
+    },
     "Usabilla": {
       "cats": [
         13
@@ -12117,6 +12208,14 @@
         "UserVoice": ""
       },
       "website": "http://uservoice.com"
+    },
+    "UserWay": {
+      "cats": [
+        68
+      ],
+      "script": "cdn\\.userway\\.org/widget.*\\.js",
+      "website": "https://userway.org/",
+      "icon": "UserWay.png"
     },
     "Ushahidi": {
       "cats": [
@@ -15124,6 +15223,10 @@
     },
     "67": {
       "name": "Cookie compliance",
+      "priority": 9
+    },
+    "68": {
+      "name": "Accessibility",
       "priority": 9
     }
   }
