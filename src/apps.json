@@ -1685,6 +1685,18 @@
       "script": "bootstrap-table(?:\\.min)?\\.js",
       "website": "http://bootstrap-table.wenzhixin.net.cn/"
     },
+    "borderfree": {
+      "cats": [
+        6
+      ],
+      "script": [
+          "global\\.prd\\.borderfree\\.com",
+          "wm\\.prd\\.borderfree\\.com",          
+          "bfx\\.js"
+      ],
+      "icon": "borderfree.png",
+      "website": "https://www.borderfree.com/"
+    },      
     "Botble CMS": {
       "cats": [
         1,
@@ -4041,6 +4053,17 @@
       "script": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
       "website": "https://flickity.metafizzy.co/"
     },
+    "Flow": {
+      "cats": [
+        6
+      ],
+      "script": [
+          "shopify-cdn\\.flow\\.io",
+          "flow\\.min\\.js"
+      ],
+      "icon": "flow.png",
+      "website": "https://www.flow.io/"
+    },      
     "FluxBB": {
       "cats": [
         2
@@ -6976,7 +6999,7 @@
       "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
     },
-    "Matomo": {
+    "Matomo Analytics": {
       "cats": [
         10
       ],
@@ -6997,6 +7020,16 @@
       },
       "script": "piwik\\.js|piwik\\.php",
       "website": "https://matomo.org"
+    },
+    "Matomo Tag Manager": {
+      "cats": [
+        42
+      ],
+      "icon": "Matomo.png",
+      "js": {
+        "window.MatomoTagManager": ""
+      },
+      "website": "https://developer.matomo.org/guides/tagmanager/introduction"
     },
     "Mattermost": {
       "cats": [
@@ -10094,6 +10127,16 @@
       "icon": "salecycle.svg",
       "website": "https://www.salecycle.com/"
     },
+    "Salesfloor": {
+      "cats": [
+        6
+      ],
+      "script": [    
+          "salesFloor\\.js"
+      ],
+      "icon": "salesfloor.png",
+      "website": "https://salesfloor.net/"
+    },      
     "Salesforce": {
       "cats": [
         53
@@ -10560,7 +10603,8 @@
     },
     "Signal": {
       "cats": [
-        32
+        32,
+        42
       ],
       "icon": "signal.png",
       "js": {
