@@ -1170,10 +1170,7 @@
       "cats": [
         68
       ],
-      "html": [
-        "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
-        "ws\\.audioeye\\.com/ae\\.js"
-      ],
+      "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
       "script": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/",
       "icon": "AudioEye.png"
@@ -11920,6 +11917,15 @@
       "script": "fecdn\\.user1st\\.info/Loader/head",
       "website": "https://www.user1st.com/uremediate/",
       "icon": "User1st.png"
+    },
+    "UsableNet": {
+      "cats": [
+        68
+      ],
+      "script": "\\.usablenet\\.com/pt/",
+      "html": "<iframe[ˆ>]\\.usablenet\\.com/pt/",
+      "website": "https://usablenet.com/",
+      "icon": "UsableNet.png"
     },
     "Usabilla": {
       "cats": [
