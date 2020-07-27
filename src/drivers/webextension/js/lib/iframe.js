@@ -163,24 +163,15 @@
 			 * @param {String} responseMessage
 			 */
 			sendToBackground: function(message, event, responseMessage) {
-				if (typeof chrome !== 'undefined') {
-					var port = chrome.runtime.connect({ name: 'adparser' })
-
-					port.onMessage.addListener((message) => {
-						if (message && typeof message.tracking_enabled !== 'undefined') {
-							if (message.tracking_enabled) {
-								utilCallback()
-							} else {
-								utilElseCallback()
-							}
-						}
-					})
-
-					port.postMessage(message)
-				} else if (window.self.port) {
-					window.self.port.on(responseMessage, onResponse)
-					window.self.port.emit(event, message)
-				}
+        chrome.runtime.sendMessage(message, (message) => {
+          if (message && typeof message.tracking_enabled !== 'undefined') {
+            if (message.tracking_enabled) {
+              utilCallback()
+            } else {
+              utilElseCallback()
+            }
+          }
+        })
 			},
 
 			/**
@@ -1446,15 +1437,11 @@
 		 * @param {Function} callback
 		 */
 		function addBackgroundListener(event, callback) {
-			if (typeof chrome !== 'undefined') {
-				chrome.runtime.onMessage.addListener(function(msg) {
-					if (msg.event === event) {
-						callback(msg)
-					}
-				})
-			} else if (window.self.port) {
-				window.self.port.on(event, callback)
-			}
+      chrome.runtime.onMessage.addListener(function(msg) {
+        if (msg.event === event) {
+          callback(msg)
+        }
+      })
 		}
 
 		exports.coordinator = {
@@ -1541,7 +1528,7 @@
 ;(function(adparser, pageUrl) {
 	function onAdFound(log) {
 		adparser.sendToBackground(
-			{ func: 'onAd', args: [log] },
+			{ source: 'iframe.js', func: 'onAd', args: [log] },
 			'onAd',
 			'',
 			function() {}

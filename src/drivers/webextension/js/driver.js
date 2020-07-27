@@ -55,15 +55,18 @@ const Driver = {
       ads: await getOption('ads', [])
     }
 
+    chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
+
     chrome.webRequest.onCompleted.addListener(
       Driver.onWebRequestComplete,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
       ['responseHeaders']
     )
+
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
     // Enable messaging between scripts
-    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
+    chrome.runtime.onMessage.addListener(Driver.onMessage)
 
     const { version } = chrome.runtime.getManifest()
     const previous = await getOption('version')
@@ -72,7 +75,7 @@ const Driver = {
     if (previous === null) {
       open('https://www.wappalyzer.com/installed')
     } else if (version !== previous && upgradeMessage) {
-      // open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+      open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
     }
 
     await setOption('version', version)
@@ -153,29 +156,28 @@ const Driver = {
 
   /**
    * Enable scripts to call Driver functions through messaging
-   * @param {Object} port
+   * @param {Object} message
+   * @param {Object} sender
+   * @param {Function} callback
    */
-  onRuntimeConnect(port) {
-    Driver.log(`Connected to ${port.name}`)
+  onMessage({ source, func, args }, sender, callback) {
+    if (!func) {
+      return
+    }
 
-    port.onMessage.addListener(async ({ func, args }) => {
-      if (!func) {
-        return
-      }
+    Driver.log({ source, func, args })
 
-      Driver.log({ port: port.name, func, args })
+    if (!Driver[func]) {
+      Driver.error(new Error(`Method does not exist: Driver.${func}`))
 
-      if (!Driver[func]) {
-        Driver.error(new Error(`Method does not exist: Driver.${func}`))
+      return
+    }
 
-        return
-      }
+    Promise.resolve(Driver[func].call(Driver[func], ...(args || [])))
+      .then(callback)
+      .catch(Driver.error)
 
-      port.postMessage({
-        func,
-        args: await Driver[func].call(port.sender, ...(args || []))
-      })
-    })
+    return !!callback
   },
 
   /**
@@ -362,7 +364,7 @@ const Driver = {
    * @param {Object} technologies
    */
   async setIcon(url, technologies) {
-    const dynamicIcon = await getOption('dynamicIcon', true)
+    const dynamicIcon = await getOption('dynamicIcon', false)
 
     let icon = 'default.svg'
 
@@ -376,23 +378,30 @@ const Driver = {
       ;({ icon } = pinned || technologies[0] || { icon })
     }
 
-    const tabs = await promisify(chrome.tabs, 'query', { url })
+    ;(await promisify(chrome.tabs, 'query', { url })).forEach(
+      ({ id: tabId }) => {
+        chrome.browserAction.setBadgeText(
+          {
+            tabId,
+            text: technologies.length.toString()
+          },
+          () => {}
+        )
 
-    await Promise.all(
-      tabs.map(async ({ id: tabId }) => {
-        await promisify(chrome.pageAction, 'setIcon', {
-          tabId,
-          path: chrome.extension.getURL(
-            `../images/icons/${
-              /\.svg$/i.test(icon)
-                ? `converted/${icon.replace(/\.svg$/, '.png')}`
-                : icon
-            }`
-          )
-        })
-
-        chrome.pageAction.show(tabId)
-      })
+        chrome.browserAction.setIcon(
+          {
+            tabId,
+            path: chrome.extension.getURL(
+              `../images/icons/${
+                /\.svg$/i.test(icon)
+                  ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                  : icon
+              }`
+            )
+          },
+          () => {}
+        )
+      }
     )
   },
 
@@ -519,7 +528,7 @@ const Driver = {
           ]
 
           if (
-            !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(
+            !/((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|google|\/admin|\.local|\.test|\.dev|127\.|0\.)/.test(
               hostname
             ) &&
             hits >= 3

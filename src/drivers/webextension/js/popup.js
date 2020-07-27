@@ -2,11 +2,17 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, open, i18n, getOption, setOption, promisify } = Utils
+const {
+  agent,
+  open,
+  i18n,
+  getOption,
+  setOption,
+  promisify,
+  sendMessage
+} = Utils
 
 const Popup = {
-  port: chrome.runtime.connect({ name: 'popup.js' }),
-
   /**
    * Initialise popup
    */
@@ -34,50 +40,57 @@ const Popup = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (termsAccepted) {
-      Popup.driver('getDetections')
+      document.querySelector('.terms').classList.add('terms--hidden')
+      document.querySelector('.empty').classList.remove('empty--hidden')
+
+      Popup.onGetDetections(await Popup.driver('getDetections'))
     } else {
-      document.querySelector('.terms').style.display = 'flex'
-      document.querySelector('.detections').style.display = 'none'
-      document.querySelector('.empty').style.display = 'none'
+      document.querySelector('.terms').classList.remove('terms--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
+      document.querySelector('.empty').classList.add('empty--hidden')
 
       document.querySelector('.terms').addEventListener('click', async () => {
         await setOption('termsAccepted', true)
 
-        document.querySelector('.terms').remove()
-        document.querySelector('.detections').style.display = 'block'
-        document.querySelector('.empty').style.display = 'block'
+        document.querySelector('.terms').classList.add('terms--hidden')
+        document.querySelector('.empty').classList.remove('empty--hidden')
 
-        Popup.driver('getDetections')
+        chrome.runtime.sendMessage('getDetections', Popup.onGetDetections)
       })
-
-      // Apply internationalization
-      i18n()
     }
 
     // Alert
-    const [{ url }] = await promisify(chrome.tabs, 'query', {
+    const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true
     })
 
-    document.querySelector(
-      '.alerts__link'
-    ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
-      `${url}`
-    )}`
+    if (tabs && tabs.length) {
+      const [{ url }] = tabs
+
+      if (url.startsWith('http')) {
+        document.querySelector('.alerts').classList.remove('alerts--hidden')
+
+        document.querySelector(
+          '.alerts__link'
+        ).href = `https://www.wappalyzer.com/alerts?url=${encodeURIComponent(
+          `${url}`
+        )}`
+      } else {
+        document.querySelector('.alerts').classList.add('alerts--hidden')
+      }
+    }
 
     document
       .querySelector('.footer__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
+
+    // Apply internationalization
+    i18n()
   },
 
-  /**
-   * Call a function on driver.js through messaging
-   * @param {function} func
-   * @param  {...any} args
-   */
-  driver(func, ...args) {
-    Popup.port.postMessage({ func, args })
+  driver(func, args) {
+    return sendMessage('popup.js', func, args)
   },
 
   /**
@@ -85,7 +98,7 @@ const Popup = {
    * @param {String} message
    */
   log(message) {
-    Popup.driver('log', message, 'popup.js')
+    Popup.driver('log', message)
   },
 
   /**
@@ -113,12 +126,15 @@ const Popup = {
    * Callback for getDetection listener
    * @param {Array} detections
    */
-  async onGetDetections(detections) {
-    const pinnedCategory = await getOption('pinnedCategory')
-
-    if (detections.length) {
-      document.querySelector('.empty').remove()
+  async onGetDetections(detections = []) {
+    if (!detections || !detections.length) {
+      return
     }
+
+    document.querySelector('.empty').classList.add('empty--hidden')
+    document.querySelector('.detections').classList.remove('empty--hidden')
+
+    const pinnedCategory = await getOption('pinnedCategory')
 
     const categorised = Popup.categorise(detections)
 
@@ -215,15 +231,6 @@ const Popup = {
     i18n()
   }
 }
-
-// Add listener for popup PostMessage API
-Popup.port.onMessage.addListener(({ func, args }) => {
-  const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
-
-  if (Popup[onFunc]) {
-    Popup[onFunc](args)
-  }
-})
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
   Popup.init()

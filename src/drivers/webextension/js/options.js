@@ -18,7 +18,7 @@ const Options = {
 
     ;[
       ['upgradeMessage', true],
-      ['dynamicIcon', true],
+      ['dynamicIcon', false],
       ['tracking', true],
       ['themeMode', false]
     ].map(async ([option, defaultValue]) => {
