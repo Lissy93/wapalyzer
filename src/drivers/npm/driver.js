@@ -282,7 +282,10 @@ class Site {
       await Promise.race([
         page.goto(url.href, { waitUntil: 'domcontentloaded' }),
         new Promise((resolve, reject) =>
-          setTimeout(() => reject(new Error('Timeout')), this.options.maxWait)
+          setTimeout(
+            () => reject(new Error('The website took too long to respond')),
+            this.options.maxWait
+          )
         )
       ])
     } catch (error) {
@@ -497,21 +500,29 @@ class Site {
 
     return {
       urls: this.analyzedUrls,
-      applications: resolve(this.detections).map(
-        ({ name, confidence, version, icon, website, cpe, categories }) => ({
+      technologies: resolve(this.detections).map(
+        ({
+          slug,
           name,
           confidence,
           version,
           icon,
           website,
           cpe,
-          categories: categories.reduce(
-            (categories, { id, name }) => ({
-              ...categories,
-              [id]: name
-            }),
-            {}
-          )
+          categories
+        }) => ({
+          slug,
+          name,
+          confidence,
+          version: version || null,
+          icon,
+          website,
+          cpe,
+          categories: categories.map(({ id, slug, name }) => ({
+            id,
+            slug,
+            name
+          }))
         })
       ),
       meta: {
