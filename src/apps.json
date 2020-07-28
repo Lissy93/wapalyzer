@@ -76,6 +76,26 @@
       ],
       "website": "https://www.adplan7.com/"
     },
+    "Afterpay": {
+      "cats": [
+        41
+      ],
+      "cpe": "cpe:/a:afterpay:afterpay",
+      "icon": "afterpay.png",
+      "script": [
+        "portal\\.afterpay\\.com",
+        "static\\.afterpay\\.com"
+      ],
+      "website": "https://www.afterpay.com/"
+    },
+    "Amex Checkout": {
+      "cats": [
+        41
+      ],
+      "icon": "amex.png",
+      "script": "aexp-static\\.com",
+      "website": "https://www.americanexpress.com/us/express-checkout/"
+    },
     "AMP": {
       "cats": [
         12
@@ -1639,6 +1659,7 @@
         "Braintree": "",
         "Braintree.version": "^(.+)$\\;version:\\1"
       },
+      "script": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
     },
     "Brightspot": {
@@ -2656,6 +2677,14 @@
       "script": "cufon-yui\\.js",
       "website": "http://cufon.shoqolate.com"
     },
+    "Cybersource": {
+      "cats": [
+        41
+      ],
+      "icon": "cybersource.png",
+      "script": "cybersource\\..+\\.js",
+      "website": "https://www.cybersource.com/"
+    },
     "D3": {
       "cats": [
         25
@@ -3533,6 +3562,15 @@
       ],
       "website": "https://etherpad.org"
     },
+    "eWAY Payments": {
+      "cats": [
+        41
+      ],
+      "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
+      "icon": "eway.png",
+      "script": "secure\\.ewaypayments\\.com",
+      "website": "https://www.eway.com.au/"
+    },
     "Exhibit": {
       "cats": [
         25
@@ -3716,6 +3754,18 @@
       "icon": "Fat-Free Framework.png",
       "implies": "PHP",
       "website": "http://fatfreeframework.com"
+    },
+    "Fat Zebra": {
+      "cats": [
+        41
+      ],
+      "html": [
+        "<(?:iframe|img|form)[^>]+paynow\\.pmnts\\.io",
+        "<(?:iframe)[^>]+FatZebraFrame"
+      ],
+      "icon": "fatzebra.png",
+      "script": "paynow\\.pmnts\\.io",
+      "website": "https://www.fatzebra.com/"
     },
     "Fbits": {
       "cats": [
@@ -7492,6 +7542,17 @@
       "icon": "mycashflow.png",
       "website": "https://www.mycashflow.fi/"
     },
+    "My Food Link": {
+      "cats": [
+        6
+      ],
+      "html": [
+        "<div class='mfl-made-by-myfoodlink'>",
+        "<a href=\"https://www.myfoodlink.com.au"
+      ],
+      "icon": "myfoodlink.png",
+      "website": "https://www.myfoodlink.com.au/"
+    },
     "MySQL": {
       "cats": [
         34
@@ -8034,6 +8095,14 @@
       },
       "website": "http://www.opennemas.com"
     },
+    "OpenPay": {
+      "cats": [
+        41
+      ],
+      "icon": "openpay.png",
+      "script": "openpay\\.com.\\au",
+      "website": "https://www.openpay.com.au/"
+    },
     "OpenResty": {
       "cats": [
         22
@@ -8427,12 +8496,17 @@
         41
       ],
       "cpe": "cpe:/a:paypal:paypal",
-      "html": "<input[^>]+_s-xclick",
+      "html": [
+        "<input[^>]+_s-xclick",
+        "<img [^>]*src=\"[^/]*//[^/]*paypal\\.com",
+        "<img [^>]*src=\"[^/]*//[^/]*paypalobjects\\.com"
+      ],
       "icon": "PayPal.svg",
       "js": {
         "PAYPAL": ""
       },
-      "script": "paypalobjects\\.com/js",
+      "script": "paypalobjects\\.com",
+      "url": "paypal\\.com",
       "website": "https://paypal.com"
     },
     "Pelican": {
@@ -8595,6 +8669,14 @@
         "designer": "Pingoteam"
       },
       "website": "https://www.pingoteam.ir/"
+    },
+    "Pin Payments": {
+      "cats": [
+        41
+      ],
+      "icon": "pinpayments.png",
+      "script": "api\\.pinpayments\\.com",
+      "website": "https://www.pinpayments.com/"
     },
     "Pinterest": {
       "cats": [
@@ -10129,6 +10211,7 @@
         "Shopify": "\\;confidence:25"
       },
       "url": "^https?//.+\\.myshopify\\.com",
+      "script": "sdks\\.shopifycdn\\.com",
       "website": "http://shopify.com"
     },
     "Shopline": {
@@ -10614,6 +10697,14 @@
       "icon": "splitbee.svg",
       "script": "^https:\\/\\/cdn\\.splitbee\\.io\\/sb\\.js",
       "website": "https://splitbee.io"
+    },
+    "SplitIt": {
+      "cats": [
+        41
+      ],
+      "icon": "splitit.png",
+      "script": "checkout\\.production\\.splitit\\.com",
+      "website": "https://www.splitit.com/"
     },
     "Splunk": {
       "cats": [
@@ -11396,6 +11487,14 @@
       },
       "website": "http://titan360.com"
     },
+    "TNS Payments": {
+      "cats": [
+        41
+      ],
+      "icon": "tnsi.png",
+      "script": "secure\\.ap\\.tnspayments\\.com",
+      "website": "https://tnsi.com/products/payments/"
+    },
     "TomatoCart": {
       "cats": [
         6
@@ -11773,6 +11872,14 @@
       },
       "script": "/js/ushahidi\\.js$",
       "website": "http://www.ushahidi.com"
+    },
+    "Visa Checkout": {
+      "cats": [
+        41
+      ],
+      "icon": "visa.png",
+      "script": "secure\\.checkout\\.visa\\.com",
+      "website": "https://checkout.visa.com"
     },
     "VIVVO": {
       "cats": [
@@ -14462,6 +14569,18 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
+    },
+    "Zip Pay / Zip Money": {
+      "cats": [
+        41
+      ],
+      "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
+      "icon": "zip_pay.png",
+      "script": [
+        "static\\.zipmoney\\.com\\.au",
+        "zip\\.co"
+      ],
+      "website": "https://www.zip.co/"
     }
   },
   "categories": {
