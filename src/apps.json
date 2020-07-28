@@ -1025,6 +1025,18 @@
       "icon": "Apple.svg",
       "website": "https://www.apple.com/apple-pay"
     },
+    "Apple Sign-in": {
+      "cats": [
+        69
+      ],
+      "html": [
+        "<meta[ˆ>]*appleid-signin-client-id",
+        "<a[ˆ>]*appleid\\.apple\\.com/auth/authorize"
+      ],
+      "script": "appleid.auth.js",
+      "icon": "Apple.svg",
+      "website": "https://developer.apple.com/sign-in-with-apple/"
+    },
     "Arastta": {
       "cats": [
         6
@@ -3832,6 +3844,17 @@
       "script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
     },
+    "Facebook Sign-in": {
+      "cats": [
+        69
+      ],
+      "js": {
+        "FB\\.getLoginStatus":"",
+        "FB.getLoginStatus":""
+      },
+      "icon": "Facebook.svg",
+      "website": "https://developers.facebook.com/docs/facebook-login/"
+    },
     "Facil-iti": {
       "cats": [
         68
@@ -4775,6 +4798,23 @@
       },
       "script": "googleapis\\.com/.+webfont",
       "website": "http://google.com/fonts"
+    },
+    "Google Sign-in": {
+      "cats": [
+        69
+      ],
+      "html": [
+        "<meta[^>]*google-signin-client_id",
+        "<meta[^>]*google-signin-scope",
+        "<iframe[^>]*accounts\\.google\\.com/o/oauth2",
+        "<a[^>]*accounts\\.google\\.com/o/oauth2"
+      ],
+      "script": [
+        "apis\\.google\\.com/js/platform\\.js",
+        "accounts\\.google\\.com/gsi/client"
+      ],
+      "icon": "Google.svg",
+      "website": "https://developers.google.com/identity/sign-in/web"
     },
     "Google Maps": {
       "cats": [
@@ -9988,6 +10028,14 @@
       "icon": "SAP.png",
       "implies": "Java",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
+    },
+    "SAP Customer Data Cloud Sign-in": {
+      "cats": [
+        69
+      ],
+      "script": "\\.gigya\\.com/JS/gigya\\.js",
+      "icon": "SAP.png",
+      "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html"
     },
     "SDL Tridion": {
       "cats": [
