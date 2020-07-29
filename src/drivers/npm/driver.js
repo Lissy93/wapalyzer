@@ -40,12 +40,6 @@ languageDetect.setLanguageType('iso2')
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
-const errorTypes = {
-  RESPONSE_NOT_OK: 'Response was not ok',
-  NO_RESPONSE: 'No response from server',
-  NO_HTML_DOCUMENT: 'No HTML document'
-}
-
 const { apps: technologies, categories } = JSON.parse(
   fs.readFileSync(path.resolve(`${__dirname}/apps.json`))
 )
@@ -157,7 +151,7 @@ class Site {
     try {
       this.originalUrl = new URL(url)
     } catch (error) {
-      throw new Error(error.message || error.toString())
+      throw new Error(error.toString())
     }
 
     this.analyzedUrls = {}
@@ -288,7 +282,10 @@ class Site {
       await Promise.race([
         page.goto(url.href, { waitUntil: 'domcontentloaded' }),
         new Promise((resolve, reject) =>
-          setTimeout(() => reject(new Error('Timeout')), this.options.maxWait)
+          setTimeout(
+            () => reject(new Error('The website took too long to respond')),
+            this.options.maxWait
+          )
         )
       ])
     } catch (error) {
@@ -411,7 +408,7 @@ class Site {
 
       this.log('Page closed')
 
-      throw new Error('NO_RESPONSE')
+      throw new Error('No response from server')
     }
 
     if (!this.language) {
@@ -493,21 +490,9 @@ class Site {
         await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
       }
     } catch (error) {
-      const type =
-        error.message && errorTypes[error.message]
-          ? error.message
-          : 'UNKNOWN_ERROR'
-      const message =
-        error.message && errorTypes[error.message]
-          ? errorTypes[error.message]
-          : 'Unknown error'
-
       this.analyzedUrls[url.href] = {
         status: 0,
-        error: {
-          type,
-          message
-        }
+        error: error.message || error.toString()
       }
 
       this.error(error)
@@ -515,21 +500,29 @@ class Site {
 
     return {
       urls: this.analyzedUrls,
-      applications: resolve(this.detections).map(
-        ({ name, confidence, version, icon, website, cpe, categories }) => ({
+      technologies: resolve(this.detections).map(
+        ({
+          slug,
           name,
           confidence,
           version,
           icon,
           website,
           cpe,
-          categories: categories.reduce(
-            (categories, { id, name }) => ({
-              ...categories,
-              [id]: name
-            }),
-            {}
-          )
+          categories
+        }) => ({
+          slug,
+          name,
+          confidence,
+          version: version || null,
+          icon,
+          website,
+          cpe,
+          categories: categories.map(({ id, slug, name }) => ({
+            id,
+            slug,
+            name
+          }))
         })
       ),
       meta: {
