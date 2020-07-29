@@ -9629,6 +9629,18 @@
       "icon": "Recite Me.png",
       "website": "https://reciteme.com/"
     },
+    "Recurly": {
+      "cats": [
+        41
+      ],
+      "html": "<input[^>]+data-recurly",
+      "icon": "Recurly.png",
+      "js": {
+        "recurly.version": "^(.+)$\\;version:\\1"
+      },
+      "script": "js\\.recurly\\.com",
+      "website": "https://recurly.com"
+    },
     "Red Hat": {
       "cats": [
         28
