@@ -58,8 +58,9 @@ const Wappalyzer = {
     Wappalyzer.resolveImplies(resolved)
 
     const priority = ({ technology: { categories } }) =>
-      categories.reduce((max, id) =>
-        Math.max(max, Wappalyzer.getCategory(id).priority)
+      categories.reduce(
+        (max, id) => Math.max(max, Wappalyzer.getCategory(id).priority),
+        0
       )
 
     return resolved
