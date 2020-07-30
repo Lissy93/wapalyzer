@@ -86,6 +86,26 @@
       ],
       "website": "https://www.adplan7.com/"
     },
+    "Afterpay": {
+      "cats": [
+        41
+      ],
+      "cpe": "cpe:/a:afterpay:afterpay",
+      "icon": "afterpay.png",
+      "script": [
+        "portal\\.afterpay\\.com",
+        "static\\.afterpay\\.com"
+      ],
+      "website": "https://www.afterpay.com/"
+    },
+    "Amex Checkout": {
+      "cats": [
+        41
+      ],
+      "icon": "amex.png",
+      "script": "aexp-static\\.com",
+      "website": "https://www.americanexpress.com/us/express-checkout/"
+    },
     "AMP": {
       "cats": [
         12
@@ -1025,6 +1045,18 @@
       "icon": "Apple.svg",
       "website": "https://www.apple.com/apple-pay"
     },
+    "Apple Sign-in": {
+      "cats": [
+        69
+      ],
+      "html": [
+        "<meta[ˆ>]*appleid-signin-client-id",
+        "<a[ˆ>]*appleid\\.apple\\.com/auth/authorize"
+      ],
+      "script": "appleid.auth.js",
+      "icon": "Apple.svg",
+      "website": "https://developer.apple.com/sign-in-with-apple/"
+    },
     "Arastta": {
       "cats": [
         6
@@ -1731,6 +1763,7 @@
         "Braintree": "",
         "Braintree.version": "^(.+)$\\;version:\\1"
       },
+      "script": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
     },
     "Brightspot": {
@@ -2828,6 +2861,14 @@
       "script": "cufon-yui\\.js",
       "website": "http://cufon.shoqolate.com"
     },
+    "Cybersource": {
+      "cats": [
+        41
+      ],
+      "icon": "cybersource.png",
+      "script": "cybersource\\..+\\.js",
+      "website": "https://www.cybersource.com/"
+    },
     "D3": {
       "cats": [
         25
@@ -3723,6 +3764,15 @@
       ],
       "website": "https://etherpad.org"
     },
+    "eWAY Payments": {
+      "cats": [
+        41
+      ],
+      "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
+      "icon": "eway.png",
+      "script": "secure\\.ewaypayments\\.com",
+      "website": "https://www.eway.com.au/"
+    },
     "Exhibit": {
       "cats": [
         25
@@ -3832,6 +3882,16 @@
       "script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
     },
+    "Facebook Sign-in": {
+      "cats": [
+        69
+      ],
+      "js": {
+        "FB.getLoginStatus":""
+      },
+      "icon": "Facebook.svg",
+      "website": "https://developers.facebook.com/docs/facebook-login/"
+    },
     "Facil-iti": {
       "cats": [
         68
@@ -3915,6 +3975,18 @@
       "icon": "Fat-Free Framework.png",
       "implies": "PHP",
       "website": "http://fatfreeframework.com"
+    },
+    "Fat Zebra": {
+      "cats": [
+        41
+      ],
+      "html": [
+        "<(?:iframe|img|form)[^>]+paynow\\.pmnts\\.io",
+        "<(?:iframe)[^>]+FatZebraFrame"
+      ],
+      "icon": "fatzebra.png",
+      "script": "paynow\\.pmnts\\.io",
+      "website": "https://www.fatzebra.com/"
     },
     "Fbits": {
       "cats": [
@@ -4775,6 +4847,23 @@
       },
       "script": "googleapis\\.com/.+webfont",
       "website": "http://google.com/fonts"
+    },
+    "Google Sign-in": {
+      "cats": [
+        69
+      ],
+      "html": [
+        "<meta[^>]*google-signin-client_id",
+        "<meta[^>]*google-signin-scope",
+        "<iframe[^>]*accounts\\.google\\.com/o/oauth2",
+        "<a[^>]*accounts\\.google\\.com/o/oauth2"
+      ],
+      "script": [
+        "apis\\.google\\.com/js/platform\\.js",
+        "accounts\\.google\\.com/gsi/client"
+      ],
+      "icon": "Google.svg",
+      "website": "https://developers.google.com/identity/sign-in/web"
     },
     "Google Maps": {
       "cats": [
@@ -7815,6 +7904,17 @@
       "icon": "mycashflow.png",
       "website": "https://www.mycashflow.fi/"
     },
+    "My Food Link": {
+      "cats": [
+        6
+      ],
+      "html": [
+        "<div class='mfl-made-by-myfoodlink'>",
+        "<a href=\"https://www.myfoodlink.com.au"
+      ],
+      "icon": "myfoodlink.png",
+      "website": "https://www.myfoodlink.com.au/"
+    },
     "MySQL": {
       "cats": [
         34
@@ -8374,6 +8474,14 @@
       },
       "website": "http://www.opennemas.com"
     },
+    "OpenPay": {
+      "cats": [
+        41
+      ],
+      "icon": "openpay.png",
+      "script": "openpay\\.com.\\au",
+      "website": "https://www.openpay.com.au/"
+    },
     "OpenResty": {
       "cats": [
         22
@@ -8775,12 +8883,17 @@
         41
       ],
       "cpe": "cpe:/a:paypal:paypal",
-      "html": "<input[^>]+_s-xclick",
+      "html": [
+        "<input[^>]+_s-xclick",
+        "<img [^>]*src=\"[^/]*//[^/]*paypal\\.com",
+        "<img [^>]*src=\"[^/]*//[^/]*paypalobjects\\.com"
+      ],
       "icon": "PayPal.svg",
       "js": {
         "PAYPAL": ""
       },
-      "script": "paypalobjects\\.com/js",
+      "script": "paypalobjects\\.com",
+      "url": "paypal\\.com",
       "website": "https://paypal.com"
     },
     "Pelican": {
@@ -8956,6 +9069,14 @@
         "designer": "Pingoteam"
       },
       "website": "https://www.pingoteam.ir/"
+    },
+    "Pin Payments": {
+      "cats": [
+        41
+      ],
+      "icon": "pinpayments.png",
+      "script": "api\\.pinpayments\\.com",
+      "website": "https://www.pinpayments.com/"
     },
     "Pinterest": {
       "cats": [
@@ -9637,6 +9758,18 @@
       "icon": "Recite Me.png",
       "website": "https://reciteme.com/"
     },
+    "Recurly": {
+      "cats": [
+        41
+      ],
+      "html": "<input[^>]+data-recurly",
+      "icon": "Recurly.png",
+      "js": {
+        "recurly.version": "^(.+)$\\;version:\\1"
+      },
+      "script": "js\\.recurly\\.com",
+      "website": "https://recurly.com"
+    },
     "Red Hat": {
       "cats": [
         28
@@ -9996,6 +10129,14 @@
       "icon": "SAP.png",
       "implies": "Java",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
+    },
+    "SAP Customer Data Cloud Sign-in": {
+      "cats": [
+        69
+      ],
+      "script": "\\.gigya\\.com/JS/gigya\\.js",
+      "icon": "SAP.png",
+      "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html"
     },
     "SDL Tridion": {
       "cats": [
@@ -10553,6 +10694,7 @@
         "Shopify": "\\;confidence:25"
       },
       "url": "^https?//.+\\.myshopify\\.com",
+      "script": "sdks\\.shopifycdn\\.com",
       "website": "http://shopify.com"
     },
     "Shopline": {
@@ -11055,6 +11197,14 @@
       "icon": "splitbee.svg",
       "script": "^https:\\/\\/cdn\\.splitbee\\.io\\/sb\\.js",
       "website": "https://splitbee.io"
+    },
+    "SplitIt": {
+      "cats": [
+        41
+      ],
+      "icon": "splitit.png",
+      "script": "checkout\\.production\\.splitit\\.com",
+      "website": "https://www.splitit.com/"
     },
     "Splunk": {
       "cats": [
@@ -11561,7 +11711,7 @@
       ],
       "icon": "Taggbox.svg",
       "script": "web\\.taggbox\\.com",
-      "url": "web.taggbox.com",
+      "url": "web\\.taggbox\\.com",
       "website": "https://taggbox.com/"
     },
     "Taiga": {
@@ -11871,6 +12021,14 @@
         "titanEnabled": ""
       },
       "website": "http://titan360.com"
+    },
+    "TNS Payments": {
+      "cats": [
+        41
+      ],
+      "icon": "tnsi.png",
+      "script": "secure\\.ap\\.tnspayments\\.com",
+      "website": "https://tnsi.com/products/payments/"
     },
     "TomatoCart": {
       "cats": [
@@ -12282,6 +12440,14 @@
       },
       "script": "/js/ushahidi\\.js$",
       "website": "http://www.ushahidi.com"
+    },
+    "Visa Checkout": {
+      "cats": [
+        41
+      ],
+      "icon": "visa.png",
+      "script": "secure\\.checkout\\.visa\\.com",
+      "website": "https://checkout.visa.com"
     },
     "VIVVO": {
       "cats": [
@@ -15024,6 +15190,18 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
+    },
+    "Zip Pay / Zip Money": {
+      "cats": [
+        41
+      ],
+      "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
+      "icon": "zip_pay.png",
+      "script": [
+        "static\\.zipmoney\\.com\\.au",
+        "zip\\.co"
+      ],
+      "website": "https://www.zip.co/"
     }
   },
   "categories": {
@@ -15290,6 +15468,10 @@
     "68": {
       "name": "Accessibility",
       "priority": 9
+    },
+    "69": {
+      "name": "Social login",
+      "priority": 6
     }
   }
 }
