@@ -217,6 +217,8 @@ class Site {
 
     await page.setRequestInterception(true)
 
+    page.on('dialog', (dialog) => dialog.dismiss())
+
     page.on('error', (error) => this.error(error))
 
     let responseReceived = false
