@@ -365,6 +365,7 @@ const Driver = {
    */
   async setIcon(url, technologies) {
     const dynamicIcon = await getOption('dynamicIcon', false)
+    const badge = await getOption('badge', true)
 
     let icon = 'default.svg'
 
@@ -383,7 +384,7 @@ const Driver = {
         chrome.browserAction.setBadgeText(
           {
             tabId,
-            text: technologies.length.toString()
+            text: badge ? technologies.length.toString() : ''
           },
           () => {}
         )
