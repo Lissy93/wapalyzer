@@ -1703,6 +1703,9 @@
         "<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
         "<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
       ],
+      "implies": [
+        "jQuery"
+      ],
       "icon": "Bootstrap.png",
       "js": {
         "bootstrap.Alert.VERSION": "^(.+)$\\;version:\\1",
