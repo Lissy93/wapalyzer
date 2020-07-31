@@ -10461,6 +10461,9 @@
       "html": [
         "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
+      "implies": [
+        "jQuery"
+      ],
       "icon": "Semantic-ui.png",
       "script": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://semantic-ui.com/"
