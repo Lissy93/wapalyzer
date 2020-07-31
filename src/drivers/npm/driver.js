@@ -130,8 +130,8 @@ class Driver {
     }
   }
 
-  open(url) {
-    return new Site(url.split('#')[0], this)
+  open(url, headers = {}) {
+    return new Site(url.split('#')[0], headers, this)
   }
 
   log(message, source = 'driver') {
@@ -143,8 +143,13 @@ class Driver {
 }
 
 class Site {
-  constructor(url, driver) {
+  constructor(url, headers = {}, driver) {
     ;({ options: this.options, browser: this.browser } = driver)
+
+    this.options.headers = {
+      ...this.options.headers,
+      ...headers
+    }
 
     this.driver = driver
 
@@ -232,7 +237,12 @@ class Site {
         ) {
           request.abort('blockedbyclient')
         } else {
-          request.continue()
+          const headers = {
+            ...request.headers(),
+            ...this.options.headers
+          }
+
+          request.continue({ headers })
         }
       } catch (error) {
         this.error(error)

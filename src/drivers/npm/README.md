@@ -54,6 +54,7 @@ const url = 'https://www.wappalyzer.com';
 const options = {
   debug: false,
   delay: 500,
+  headers: {},
   maxDepth: 3,
   maxUrls: 10,
   maxWait: 5000,
@@ -69,7 +70,10 @@ const options = {
   try {
     await wappalyzer.init()
 
-    const site = await wappalyzer.open(url)
+    // Optionally set additional request headers
+    const headers = {}
+
+    const site = await wappalyzer.open(url, headers)
 
     // Optionally capture and output errors
     site.on('error', console.error)
