@@ -195,6 +195,14 @@ class Site {
     }
   }
 
+  timeout() {
+    return new Promise(() =>
+      setTimeout(() => {
+        throw new Error('The website took too long to respond')
+      }, this.options.maxWait)
+    )
+  }
+
   async goto(url) {
     // Return when the URL is a duplicate or maxUrls has been reached
     if (
@@ -292,204 +300,218 @@ class Site {
 
     try {
       await Promise.race([
-        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
-        new Promise((resolve, reject) =>
-          setTimeout(
-            () => reject(new Error('The website took too long to respond')),
-            this.options.maxWait
-          )
-        )
+        this.timeout(),
+        page.goto(url.href, { waitUntil: 'domcontentloaded' })
       ])
-    } catch (error) {
-      this.error(error)
-    }
 
-    await sleep(1000)
+      await sleep(1000)
 
-    // Links
-    const links = await (
-      await page.evaluateHandle(() =>
-        Array.from(document.getElementsByTagName('a')).map(
-          ({ hash, hostname, href, pathname, protocol, rel }) => ({
-            hash,
-            hostname,
-            href,
-            pathname,
-            protocol,
-            rel
-          })
-        )
-      )
-    ).jsonValue()
-
-    // Script tags
-    const scripts = await (
-      await page.evaluateHandle(() =>
-        Array.from(document.getElementsByTagName('script'))
-          .map(({ src }) => src)
-          .filter((src) => src)
-      )
-    ).jsonValue()
-
-    // Meta tags
-    const meta = await (
-      await page.evaluateHandle(() =>
-        Array.from(document.querySelectorAll('meta')).reduce((metas, meta) => {
-          const key = meta.getAttribute('name') || meta.getAttribute('property')
-
-          if (key) {
-            metas[key.toLowerCase()] = [meta.getAttribute('content')]
-          }
-
-          return metas
-        }, {})
-      )
-    ).jsonValue()
-
-    // JavaScript
-    const js = await page.evaluate(
-      (technologies) => {
-        return technologies.reduce((technologies, { name, chains }) => {
-          chains.forEach((chain) => {
-            const value = chain
-              .split('.')
-              .reduce(
-                (value, method) =>
-                  value && value.hasOwnProperty(method)
-                    ? value[method]
-                    : undefined,
-                window
-              )
-
-            if (typeof value !== 'undefined') {
-              technologies.push({
-                name,
-                chain,
-                value:
-                  typeof value === 'string' || typeof value === 'number'
-                    ? value
-                    : !!value
+      // Links
+      const links = await Promise.race([
+        this.timeout(),
+        await (
+          await page.evaluateHandle(() =>
+            Array.from(document.getElementsByTagName('a')).map(
+              ({ hash, hostname, href, pathname, protocol, rel }) => ({
+                hash,
+                hostname,
+                href,
+                pathname,
+                protocol,
+                rel
               })
-            }
-          })
-
-          return technologies
-        }, [])
-      },
-      Wappalyzer.technologies
-        .filter(({ js }) => Object.keys(js).length)
-        .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-    )
-
-    // Cookies
-    const cookies = (await page.cookies()).reduce(
-      (cookies, { name, value }) => ({
-        ...cookies,
-        [name]: [value]
-      }),
-      {}
-    )
-
-    // HTML
-    let html = await page.content()
-
-    if (this.options.htmlMaxCols && this.options.htmlMaxRows) {
-      const batches = []
-      const rows = html.length / this.options.htmlMaxCols
-
-      for (let i = 0; i < rows; i += 1) {
-        if (
-          i < this.options.htmlMaxRows / 2 ||
-          i > rows - this.options.htmlMaxRows / 2
-        ) {
-          batches.push(
-            html.slice(
-              i * this.options.htmlMaxCols,
-              (i + 1) * this.options.htmlMaxCols
             )
           )
+        ).jsonValue()
+      ])
+
+      // Script tags
+      const scripts = await Promise.race([
+        this.timeout(),
+        await (
+          await page.evaluateHandle(() =>
+            Array.from(document.getElementsByTagName('script'))
+              .map(({ src }) => src)
+              .filter((src) => src)
+          )
+        ).jsonValue()
+      ])
+
+      // Meta tags
+      const meta = await Promise.race([
+        this.timeout(),
+        await (
+          await page.evaluateHandle(() =>
+            Array.from(document.querySelectorAll('meta')).reduce(
+              (metas, meta) => {
+                const key =
+                  meta.getAttribute('name') || meta.getAttribute('property')
+
+                if (key) {
+                  metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                }
+
+                return metas
+              },
+              {}
+            )
+          )
+        ).jsonValue()
+      ])
+
+      // JavaScript
+      const js = await Promise.race([
+        this.timeout(),
+        await page.evaluate(
+          (technologies) => {
+            return technologies.reduce((technologies, { name, chains }) => {
+              chains.forEach((chain) => {
+                const value = chain
+                  .split('.')
+                  .reduce(
+                    (value, method) =>
+                      value && value.hasOwnProperty(method)
+                        ? value[method]
+                        : undefined,
+                    window
+                  )
+
+                if (typeof value !== 'undefined') {
+                  technologies.push({
+                    name,
+                    chain,
+                    value:
+                      typeof value === 'string' || typeof value === 'number'
+                        ? value
+                        : !!value
+                  })
+                }
+              })
+
+              return technologies
+            }, [])
+          },
+          Wappalyzer.technologies
+            .filter(({ js }) => Object.keys(js).length)
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+        )
+      ])
+
+      // Cookies
+      const cookies = (await page.cookies()).reduce(
+        (cookies, { name, value }) => ({
+          ...cookies,
+          [name]: [value]
+        }),
+        {}
+      )
+
+      // HTML
+      let html = await page.content()
+
+      if (this.options.htmlMaxCols && this.options.htmlMaxRows) {
+        const batches = []
+        const rows = html.length / this.options.htmlMaxCols
+
+        for (let i = 0; i < rows; i += 1) {
+          if (
+            i < this.options.htmlMaxRows / 2 ||
+            i > rows - this.options.htmlMaxRows / 2
+          ) {
+            batches.push(
+              html.slice(
+                i * this.options.htmlMaxCols,
+                (i + 1) * this.options.htmlMaxCols
+              )
+            )
+          }
+        }
+
+        html = batches.join('\n')
+      }
+
+      // Validate response
+      if (!this.analyzedUrls[url.href].status) {
+        await page.close()
+
+        this.log('Page closed')
+
+        throw new Error('No response from server')
+      }
+
+      if (!this.language) {
+        this.language = await Promise.race([
+          this.timeout(),
+          await (
+            await page.evaluateHandle(
+              () =>
+                document.documentElement.getAttribute('lang') ||
+                document.documentElement.getAttribute('xml:lang')
+            )
+          ).jsonValue()
+        ])
+      }
+
+      if (!this.language) {
+        try {
+          const [attrs] = languageDetect.detect(
+            html.replace(/<\/?[^>]+(>|$)/gs, ' '),
+            1
+          )
+
+          if (attrs) {
+            ;[this.language] = attrs
+          }
+        } catch (error) {
+          this.error(error)
         }
       }
 
-      html = batches.join('\n')
-    }
+      this.onDetect(analyzeJs(js))
 
-    // Validate response
-    if (!this.analyzedUrls[url.href].status) {
+      this.onDetect(
+        analyze({
+          url,
+          cookies,
+          html,
+          scripts,
+          meta
+        })
+      )
+
+      const reducedLinks = Array.prototype.reduce.call(
+        links,
+        (results, link) => {
+          if (
+            results &&
+            Object.prototype.hasOwnProperty.call(
+              Object.getPrototypeOf(results),
+              'push'
+            ) &&
+            link.protocol &&
+            link.protocol.match(/https?:/) &&
+            link.rel !== 'nofollow' &&
+            link.hostname === url.hostname &&
+            extensions.test(link.pathname)
+          ) {
+            results.push(new URL(link.href.split('#')[0]))
+          }
+
+          return results
+        },
+        []
+      )
+
       await page.close()
 
       this.log('Page closed')
 
-      throw new Error('No response from server')
+      this.emit('goto', url)
+
+      return reducedLinks
+    } catch (error) {
+      this.error(error)
     }
-
-    if (!this.language) {
-      this.language = await (
-        await page.evaluateHandle(
-          () =>
-            document.documentElement.getAttribute('lang') ||
-            document.documentElement.getAttribute('xml:lang')
-        )
-      ).jsonValue()
-    }
-
-    if (!this.language) {
-      try {
-        const [attrs] = languageDetect.detect(
-          html.replace(/<\/?[^>]+(>|$)/gs, ' '),
-          1
-        )
-
-        if (attrs) {
-          ;[this.language] = attrs
-        }
-      } catch (error) {
-        this.error(error)
-      }
-    }
-
-    this.onDetect(analyzeJs(js))
-
-    this.onDetect(
-      analyze({
-        url,
-        cookies,
-        html,
-        scripts,
-        meta
-      })
-    )
-
-    const reducedLinks = Array.prototype.reduce.call(
-      links,
-      (results, link) => {
-        if (
-          results &&
-          Object.prototype.hasOwnProperty.call(
-            Object.getPrototypeOf(results),
-            'push'
-          ) &&
-          link.protocol &&
-          link.protocol.match(/https?:/) &&
-          link.rel !== 'nofollow' &&
-          link.hostname === url.hostname &&
-          extensions.test(link.pathname)
-        ) {
-          results.push(new URL(link.href.split('#')[0]))
-        }
-
-        return results
-      },
-      []
-    )
-
-    await page.close()
-
-    this.log('Page closed')
-
-    this.emit('goto', url)
-
-    return reducedLinks
   }
 
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
