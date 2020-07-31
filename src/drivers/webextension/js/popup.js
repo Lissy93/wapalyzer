@@ -12,6 +12,24 @@ const {
   sendMessage
 } = Utils
 
+function setDisabledDomain(enabled) {
+  if (enabled) {
+    document
+      .querySelector('.footer__switch--enabled')
+      .classList.add('footer__switch--hidden')
+    document
+      .querySelector('.footer__switch--disabled')
+      .classList.remove('footer__switch--hidden')
+  } else {
+    document
+      .querySelector('.footer__switch--enabled')
+      .classList.remove('footer__switch--hidden')
+    document
+      .querySelector('.footer__switch--disabled')
+      .classList.add('footer__switch--hidden')
+  }
+}
+
 const Popup = {
   /**
    * Initialise popup
@@ -27,6 +45,9 @@ const Popup = {
 
       return templates
     }, {})
+
+    // Disabled domains
+    let disabledDomains = await getOption('disabledDomains', [])
 
     // Theme mode
     const themeMode = await getOption('themeMode', false)
@@ -55,7 +76,7 @@ const Popup = {
         document.querySelector('.terms').classList.add('terms--hidden')
         document.querySelector('.empty').classList.remove('empty--hidden')
 
-        chrome.runtime.sendMessage('getDetections', Popup.onGetDetections)
+        Popup.onGetDetections(await Popup.driver('getDetections'))
       })
     }
 
@@ -76,7 +97,40 @@ const Popup = {
         ).href = `https://www.wappalyzer.com/alerts?url=${encodeURIComponent(
           `${url}`
         )}`
+
+        const { hostname } = new URL(url)
+
+        setDisabledDomain(disabledDomains.includes(hostname))
+
+        document
+          .querySelector('.footer__switch--disabled')
+          .addEventListener('click', async () => {
+            disabledDomains = disabledDomains.filter(
+              (_hostname) => _hostname !== hostname
+            )
+
+            await setOption('disabledDomains', disabledDomains)
+
+            setDisabledDomain(false)
+
+            Popup.onGetDetections(await Popup.driver('getDetections'))
+          })
+
+        document
+          .querySelector('.footer__switch--enabled')
+          .addEventListener('click', async () => {
+            disabledDomains.push(hostname)
+
+            await setOption('disabledDomains', disabledDomains)
+
+            setDisabledDomain(true)
+
+            Popup.onGetDetections(await Popup.driver('getDetections'))
+          })
       } else {
+        for (const el of document.querySelectorAll('.footer__switch')) {
+          el.classList.add('footer__switch--hidden')
+        }
         document.querySelector('.alerts').classList.add('alerts--hidden')
       }
     }
@@ -128,11 +182,14 @@ const Popup = {
    */
   async onGetDetections(detections = []) {
     if (!detections || !detections.length) {
+      document.querySelector('.empty').classList.remove('empty--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
+
       return
     }
 
     document.querySelector('.empty').classList.add('empty--hidden')
-    document.querySelector('.detections').classList.remove('empty--hidden')
+    document.querySelector('.detections').classList.remove('detections--hidden')
 
     const pinnedCategory = await getOption('pinnedCategory')
 

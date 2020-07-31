@@ -7,6 +7,10 @@ const Content = {
    * Initialise content script
    */
   async init() {
+    if (await Content.driver('isDisabledDomain', [location])) {
+      return
+    }
+
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     try {

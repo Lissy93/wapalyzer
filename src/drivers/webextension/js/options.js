@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals Utils */
+/* globals Utils, chrome */
 
 const { i18n, getOption, setOption } = Utils
 
@@ -37,7 +37,28 @@ const Options = {
       })
     })
 
+    document
+      .querySelector('.options__cache')
+      .addEventListener('click', () => Options.driver('clearCache'))
+
     i18n()
+  },
+
+  driver(func, args, callback) {
+    return new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage(
+        {
+          source: 'content.js',
+          func,
+          args: args ? (Array.isArray(args) ? args : [args]) : []
+        },
+        (response) => {
+          chrome.runtime.lastError
+            ? reject(new Error(chrome.runtime.lastError.message))
+            : resolve(response)
+        }
+      )
+    })
   }
 }
 

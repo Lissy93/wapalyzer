@@ -185,6 +185,10 @@ const Driver = {
    * @param {Object} request
    */
   async onWebRequestComplete(request) {
+    if (await Driver.isDisabledDomain(request.url)) {
+      return
+    }
+
     if (request.responseHeaders) {
       const headers = {}
 
@@ -250,6 +254,19 @@ const Driver = {
    */
   getTechnologies() {
     return Wappalyzer.technologies
+  },
+
+  /**
+   * Check if Wappalyzer has been disabled for the domain
+   */
+  async isDisabledDomain(url) {
+    try {
+      const { hostname } = new URL(url)
+
+      return (await getOption('disabledDomains', [])).includes(hostname)
+    } catch (error) {
+      return false
+    }
   },
 
   /**
@@ -363,7 +380,7 @@ const Driver = {
    * @param {String} url
    * @param {Object} technologies
    */
-  async setIcon(url, technologies) {
+  async setIcon(url, technologies = []) {
     const dynamicIcon = await getOption('dynamicIcon', false)
     const badge = await getOption('badge', true)
 
@@ -384,7 +401,8 @@ const Driver = {
         chrome.browserAction.setBadgeText(
           {
             tabId,
-            text: badge ? technologies.length.toString() : ''
+            text:
+              badge && technologies.length ? technologies.length.toString() : ''
           },
           () => {}
         )
@@ -410,12 +428,22 @@ const Driver = {
    * Get the detected technologies for the current tab
    */
   async getDetections() {
-    const [{ id }] = await promisify(chrome.tabs, 'query', {
+    const [{ id, url }] = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true
     })
 
-    return Driver.cache.tabs[id]
+    if (await Driver.isDisabledDomain(url)) {
+      await Driver.setIcon(url, [])
+
+      return
+    }
+
+    const resolved = Driver.cache.tabs[id]
+
+    await Driver.setIcon(url, resolved)
+
+    return resolved
   },
 
   /**
@@ -509,6 +537,16 @@ const Driver = {
     if (robots.some((disallowed) => url.pathname.indexOf(disallowed) === 0)) {
       throw new Error('Disallowed')
     }
+  },
+
+  /**
+   * Clear caches
+   */
+  async clearCache() {
+    Driver.cache.hostnames = {}
+    Driver.cache.tabs = {}
+
+    await setOption('hostnames', {})
   },
 
   /**
