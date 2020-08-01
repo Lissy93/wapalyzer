@@ -196,10 +196,11 @@ class Site {
   }
 
   timeout() {
-    return new Promise(() =>
-      setTimeout(() => {
-        throw new Error('The website took too long to respond')
-      }, this.options.maxWait)
+    return new Promise((resolve, reject) =>
+      setTimeout(
+        () => reject(new Error('The website took too long to respond')),
+        this.options.maxWait
+      )
     )
   }
 
@@ -300,7 +301,7 @@ class Site {
 
     try {
       await Promise.race([
-        this.timeout(),
+        await this.timeout(),
         page.goto(url.href, { waitUntil: 'domcontentloaded' })
       ])
 
@@ -308,8 +309,8 @@ class Site {
 
       // Links
       const links = await Promise.race([
-        this.timeout(),
-        await (
+        await this.timeout(),
+        (
           await page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('a')).map(
               ({ hash, hostname, href, pathname, protocol, rel }) => ({
@@ -327,8 +328,8 @@ class Site {
 
       // Script tags
       const scripts = await Promise.race([
-        this.timeout(),
-        await (
+        await this.timeout(),
+        (
           await page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('script'))
               .map(({ src }) => src)
@@ -339,8 +340,8 @@ class Site {
 
       // Meta tags
       const meta = await Promise.race([
-        this.timeout(),
-        await (
+        await this.timeout(),
+        (
           await page.evaluateHandle(() =>
             Array.from(document.querySelectorAll('meta')).reduce(
               (metas, meta) => {
@@ -361,8 +362,8 @@ class Site {
 
       // JavaScript
       const js = await Promise.race([
-        this.timeout(),
-        await page.evaluate(
+        await this.timeout(),
+        page.evaluate(
           (technologies) => {
             return technologies.reduce((technologies, { name, chains }) => {
               chains.forEach((chain) => {
@@ -441,8 +442,8 @@ class Site {
 
       if (!this.language) {
         this.language = await Promise.race([
-          this.timeout(),
-          await (
+          await this.timeout(),
+          (
             await page.evaluateHandle(
               () =>
                 document.documentElement.getAttribute('lang') ||

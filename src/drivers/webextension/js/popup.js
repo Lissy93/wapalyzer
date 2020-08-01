@@ -131,6 +131,7 @@ const Popup = {
         for (const el of document.querySelectorAll('.footer__switch')) {
           el.classList.add('footer__switch--hidden')
         }
+
         document.querySelector('.alerts').classList.add('alerts--hidden')
       }
     }
