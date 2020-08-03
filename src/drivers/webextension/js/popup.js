@@ -190,7 +190,14 @@ const Popup = {
     }
 
     document.querySelector('.empty').classList.add('empty--hidden')
-    document.querySelector('.detections').classList.remove('detections--hidden')
+
+    const el = document.querySelector('.detections')
+
+    el.classList.remove('detections--hidden')
+
+    while (el.firstChild) {
+      el.removeChild(detections.lastChild)
+    }
 
     const pinnedCategory = await getOption('pinnedCategory')
 

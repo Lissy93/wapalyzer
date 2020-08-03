@@ -7,7 +7,7 @@ const Content = {
    * Initialise content script
    */
   async init() {
-    if (await Content.driver('isDisabledDomain', [location])) {
+    if (await Content.driver('isDisabledDomain', location.href)) {
       return
     }
 
@@ -79,7 +79,7 @@ const Content = {
     }
   },
 
-  driver(func, args, callback) {
+  driver(func, args) {
     return new Promise((resolve, reject) => {
       chrome.runtime.sendMessage(
         {
@@ -106,6 +106,7 @@ const Content = {
 
     script.onload = () => {
       const onMessage = ({ data }) => {
+        console.log(data)
         if (!data.wappalyzer || !data.wappalyzer.js) {
           return
         }
