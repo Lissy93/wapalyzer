@@ -10464,16 +10464,19 @@
       "script": "select2(?:\\.min|\\.full)?\\.js",
       "website": "https://select2.org/"
     },
-    "Semantic-ui": {
+    "Semantic UI": {
       "cats": [
         66
       ],
       "html": [
         "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
+      "implies": [
+        "jQuery"
+      ],
       "icon": "Semantic-ui.png",
       "script": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
-      "website": "https://semantic-ui.com"
+      "website": "https://semantic-ui.com/"
     },
     "Sencha Touch": {
       "cats": [
