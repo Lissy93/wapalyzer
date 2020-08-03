@@ -14419,7 +14419,7 @@
       "cats": [
         31
       ],
-      "html": "<[^>]+?//cdn\\.jsdelivr\\.net/",
+      "html": "<link [^>]*?href=\"?[a-zA-Z]*?:?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
       "script": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
