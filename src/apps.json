@@ -341,19 +341,9 @@
       ],
       "icon": "adobedtm.png",
       "js": {
-        "_satellite.buildDate": ""
+        "_satellite": ""
       },
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
-    },
-    "Adobe Experience Platform Launch": {
-      "cats": [
-        42
-      ],
-      "icon": "adobe-experience-platform.png",
-      "js": {
-        "_satellite.buildInfo": ""
-      },
-      "website": "https://docs.adobelaunch.com/getting-started"
     },
     "Adobe Experience Manager": {
       "cats": [
@@ -7220,9 +7210,7 @@
       "icon": "MediaWiki.png",
       "implies": "PHP",
       "js": {
-        "mw": "",
-        "wgTitle": "",
-        "wgVersion": "^(.+)$\\;version:\\1"
+        "mw.util.toggleToc": ""
       },
       "meta": {
         "generator": "^MediaWiki ?(.+)$\\;version:\\1"
@@ -10466,19 +10454,16 @@
       "script": "select2(?:\\.min|\\.full)?\\.js",
       "website": "https://select2.org/"
     },
-    "Semantic UI": {
+    "Semantic-ui": {
       "cats": [
         66
       ],
       "html": [
         "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
-      "implies": [
-        "jQuery"
-      ],
       "icon": "Semantic-ui.png",
       "script": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
-      "website": "https://semantic-ui.com/"
+      "website": "https://semantic-ui.com"
     },
     "Sencha Touch": {
       "cats": [
@@ -11209,8 +11194,10 @@
         10
       ],
       "icon": "splitbee.svg",
+      "js": {
+        "splitbee": ""
+      },
       "script": "^https://cdn\\.splitbee\\.io/sb\\.js",
-      "js": "splitbee",
       "website": "https://splitbee.io"
     },
     "Splunk": {
@@ -12184,7 +12171,7 @@
     },
     "Twitter Emoji (Twemoji)": {
       "cats": [
-        17
+        19
       ],
       "js": {
         "twemoji": ""
@@ -12720,10 +12707,10 @@
       "website": "https://www.volusion.com"
     },
     "Vue.js": {
-      "description": "Vue is a progressive framework for building user interfaces.",
       "cats": [
         12
       ],
+      "description": "Vue is a progressive framework for building user interfaces.",
       "html": "<[^>]+\\sdata-v(?:ue)?-",
       "icon": "vue.svg",
       "js": {
@@ -14426,7 +14413,7 @@
       "cats": [
         31
       ],
-      "html": "<link [^>]*?href=\"?[a-zA-Z]*?:?//cdn\\.jsdelivr\\.net/",
+      "html": "<[^>]+?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
       "script": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"

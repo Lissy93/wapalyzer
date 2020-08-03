@@ -37,6 +37,10 @@
 				"additionalProperties": false,
 				"required": ["cats","website"],
 				"properties": {
+					"description": {
+						"type": "string",
+            "pattern": "^.{0,255}$"
+					},
 					"cats": {
 						"type": "array",
 						"items": {

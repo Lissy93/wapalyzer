@@ -106,7 +106,6 @@ const Content = {
 
     script.onload = () => {
       const onMessage = ({ data }) => {
-        console.log(data)
         if (!data.wappalyzer || !data.wappalyzer.js) {
           return
         }
