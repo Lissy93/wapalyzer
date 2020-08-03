@@ -339,11 +339,21 @@
       "cats": [
         42
       ],
-      "icon": "adobedmt.png",
+      "icon": "adobedtm.png",
       "js": {
-        "_satellite": ""
+        "_satellite.buildDate": ""
       },
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
+    },
+    "Adobe Experience Platform Launch": {
+      "cats": [
+        42
+      ],
+      "icon": "adobe-experience-platform.png",
+      "js": {
+        "_satellite.buildInfo": ""
+      },
+      "website": "https://docs.adobelaunch.com/getting-started"
     },
     "Adobe Experience Manager": {
       "cats": [
@@ -7210,7 +7220,9 @@
       "icon": "MediaWiki.png",
       "implies": "PHP",
       "js": {
-        "mw.util.toggleToc": ""
+        "mw": "",
+        "wgTitle": "",
+        "wgVersion": "^(.+)$\\;version:\\1"
       },
       "meta": {
         "generator": "^MediaWiki ?(.+)$\\;version:\\1"
@@ -10454,16 +10466,19 @@
       "script": "select2(?:\\.min|\\.full)?\\.js",
       "website": "https://select2.org/"
     },
-    "Semantic-ui": {
+    "Semantic UI": {
       "cats": [
         66
       ],
       "html": [
         "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
+      "implies": [
+        "jQuery"
+      ],
       "icon": "Semantic-ui.png",
       "script": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
-      "website": "https://semantic-ui.com"
+      "website": "https://semantic-ui.com/"
     },
     "Sencha Touch": {
       "cats": [
@@ -12169,7 +12184,7 @@
     },
     "Twitter Emoji (Twemoji)": {
       "cats": [
-        19
+        17
       ],
       "js": {
         "twemoji": ""
@@ -14411,7 +14426,7 @@
       "cats": [
         31
       ],
-      "html": "<[^>]+?//cdn\\.jsdelivr\\.net/",
+      "html": "<link [^>]*?href=\"?[a-zA-Z]*?:?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
       "script": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
