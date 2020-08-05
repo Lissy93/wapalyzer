@@ -10976,14 +10976,47 @@
       },
       "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
     },
-    "Smartstore": {
+    "Smartstore biz": {
       "cats": [
         6
       ],
-      "icon": "Smartstore.png",
+      "icon": "Smartstore.biz.png",
       "script": "smjslib\\.js",
       "website": "http://smartstore.com"
-    },
+    }
+    ,
+		"Smartstore.NET": {
+			"cats": [
+				1,
+				6
+			],
+			"cookies": {
+        "SMARTSTORE.VISITOR": ""
+        },
+			"html": "(<!--Powered by SmartStore.NET - https://www.smartstore.com-->)",
+			"icon": "smartstore.png",
+			"implies": "Microsoft ASP.NET",
+			"meta": {
+				"generator": "^SmartStore.NET (.+)$\\;version:\\1"
+			 },
+			"website": "https://www.smartstore.com"
+		},
+		"Smartstore": {
+			"cats": [
+				1,
+				6
+			],
+			"cookies": {
+        "SMARTSTORE.VISITOR": ""
+        },
+			"html": "(<!--Powered by Smartstore - https://www.smartstore.com-->)",
+			"icon": "smartstore.png",
+			"implies": "Microsoft ASP.NET",
+			"meta": {
+				"generator": "^Smartstore (.+)$\\;version:\\1"
+			 },
+			"website": "https://www.smartstore.com"
+		},
     "Snap": {
       "cats": [
         18,
