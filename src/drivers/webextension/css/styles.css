@@ -167,6 +167,10 @@ a:hover {
   display: none
 }
 
+.category__heading {
+  white-space: nowrap;
+}
+
 .category__heading:hover .category__pin {
   visibility: visible;
 }

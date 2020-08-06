@@ -734,7 +734,10 @@
       "js": {
         "AmazonPayments": ""
       },
-      "script": "/amazonpayments(?:\\.min)?\\.js",
+      "script": [
+        "/amazonpayments(?:\\.min)?\\.js",
+        "static-[^.]\\.payments-amazon\\.com/OffAmazonPayments"
+      ],
       "website": "https://pay.amazon.com"
     },
     "Amazon S3": {
@@ -3872,6 +3875,16 @@
       "icon": "Facebook.svg",
       "script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
+    },
+    "Login with Amazon": {
+      "cats": [
+        69
+      ],
+      "icon": "Amazon.svg",
+      "js": {
+        "onAmazonLoginReady": ""
+      },
+      "website": "https://developer.amazon.com/apps-and-games/login-with-amazon"
     },
     "Facebook Sign-in": {
       "cats": [

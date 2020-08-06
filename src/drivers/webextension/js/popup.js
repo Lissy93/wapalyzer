@@ -162,18 +162,20 @@ const Popup = {
    */
   categorise(technologies) {
     return Object.values(
-      technologies.reduce((categories, technology) => {
-        technology.categories.forEach((category) => {
-          categories[category.id] = categories[category.id] || {
-            ...category,
-            technologies: []
-          }
+      technologies
+        .filter(({ confidence }) => confidence >= 50)
+        .reduce((categories, technology) => {
+          technology.categories.forEach((category) => {
+            categories[category.id] = categories[category.id] || {
+              ...category,
+              technologies: []
+            }
 
-          categories[category.id].technologies.push(technology)
-        })
+            categories[category.id].technologies.push(technology)
+          })
 
-        return categories
-      }, {})
+          return categories
+        }, {})
     )
   },
 
