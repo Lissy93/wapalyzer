@@ -5427,7 +5427,7 @@
         6
       ],
       "cpe": "cpe:/a:ibm:websphere_commerce_suite",
-      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(/wcsstore/|webapp\\/wcs)",
+      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(?:/wcsstore/|webapp\\/wcs)",
       "icon": "IBM.svg",
       "implies": "Java",
       "url": "/wcs/",
@@ -7741,7 +7741,7 @@
         1
       ],
       "icon": "Mono.net.png",
-      "implies": "Matomo",
+      "implies": "Matomo Analytics",
       "js": {
         "_monoTracker": ""
       },
@@ -9745,8 +9745,8 @@
       "cats": [
         68
       ],
-      "html": "api\\.reciteme\\.com/asset/js",
       "icon": "Recite Me.png",
+      "script": "api\\.reciteme\\.com/asset/js",
       "website": "https://reciteme.com/"
     },
     "Recurly": {
@@ -10304,8 +10304,7 @@
         "Server": "Demandware eCommerce Server"
       },
       "html": [
-        "<[^>]+demandware\\.edgesuite",
-        "/demandware\\.static/"
+        "<[^>]+demandware\\.edgesuite"
       ],
       "icon": "Salesforce.svg",
       "js": {
@@ -11194,8 +11193,10 @@
         10
       ],
       "icon": "splitbee.svg",
+      "js": {
+        "splitbee": ""
+      },
       "script": "^https://cdn\\.splitbee\\.io/sb\\.js",
-      "js": { "splitbee": "" },
       "website": "https://splitbee.io"
     },
     "Splunk": {
@@ -11393,7 +11394,6 @@
       "website": "https://strikingly.com"
     },
     "Stripe": {
-      "description": "Stripe offers online payment processing for internet businesses.",
       "cats": [
         41
       ],
@@ -11401,6 +11401,7 @@
         "__stripe_mid": "",
         "__stripe_sid": ""
       },
+      "description": "Stripe offers online payment processing for internet businesses.",
       "html": "<input[^>]+data-stripe",
       "icon": "Stripe.png",
       "js": {
@@ -12706,10 +12707,10 @@
       "website": "https://www.volusion.com"
     },
     "Vue.js": {
-      "description": "Vue is a progressive framework for building user interfaces.",
       "cats": [
         12
       ],
+      "description": "Vue is a progressive framework for building user interfaces.",
       "html": "<[^>]+\\sdata-v(?:ue)?-",
       "icon": "vue.svg",
       "js": {
@@ -13821,7 +13822,7 @@
         41
       ],
       "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
-      "icon": "zip_pay.png",
+      "icon": "zip_pay.svg",
       "script": [
         "static\\.zipmoney\\.com\\.au",
         "zip\\.co"

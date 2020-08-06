@@ -230,6 +230,8 @@ class Site {
 
     await page.setRequestInterception(true)
 
+    page.on('console', (msg) => console.log('PAGE LOG:', msg._text))
+
     page.on('dialog', (dialog) => dialog.dismiss())
 
     page.on('error', (error) => this.error(error))
@@ -366,13 +368,12 @@ class Site {
           (technologies) => {
             return technologies.reduce((technologies, { name, chains }) => {
               chains.forEach((chain) => {
+                chain = chain.replace(/\[([^\]]+)\]/g, '.$1')
+
                 const value = chain
                   .split('.')
                   .reduce(
-                    (value, method) =>
-                      value && value.hasOwnProperty(method)
-                        ? value[method]
-                        : undefined,
+                    (value, method) => (value ? value[method] : undefined),
                     window
                   )
 
