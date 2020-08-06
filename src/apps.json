@@ -11194,10 +11194,8 @@
         10
       ],
       "icon": "splitbee.svg",
-      "js": {
-        "splitbee": ""
-      },
       "script": "^https://cdn\\.splitbee\\.io/sb\\.js",
+      "js": { "splitbee": "" },
       "website": "https://splitbee.io"
     },
     "Splunk": {
@@ -11395,6 +11393,7 @@
       "website": "https://strikingly.com"
     },
     "Stripe": {
+      "description": "Stripe offers online payment processing for internet businesses.",
       "cats": [
         41
       ],
@@ -12707,10 +12706,10 @@
       "website": "https://www.volusion.com"
     },
     "Vue.js": {
+      "description": "Vue is a progressive framework for building user interfaces.",
       "cats": [
         12
       ],
-      "description": "Vue is a progressive framework for building user interfaces.",
       "html": "<[^>]+\\sdata-v(?:ue)?-",
       "icon": "vue.svg",
       "js": {

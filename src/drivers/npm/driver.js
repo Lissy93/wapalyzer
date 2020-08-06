@@ -197,10 +197,9 @@ class Site {
 
   timeout() {
     return new Promise((resolve, reject) =>
-      setTimeout(
-        () => reject(new Error('The website took too long to respond')),
-        this.options.maxWait
-      )
+      setTimeout(() => {
+        reject(new Error('The website took too long to respond'))
+      }, this.options.maxWait)
     )
   }
 
@@ -301,7 +300,7 @@ class Site {
 
     try {
       await Promise.race([
-        await this.timeout(),
+        this.timeout(),
         page.goto(url.href, { waitUntil: 'domcontentloaded' })
       ])
 
@@ -309,7 +308,7 @@ class Site {
 
       // Links
       const links = await Promise.race([
-        await this.timeout(),
+        this.timeout(),
         (
           await page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('a')).map(
@@ -328,7 +327,7 @@ class Site {
 
       // Script tags
       const scripts = await Promise.race([
-        await this.timeout(),
+        this.timeout(),
         (
           await page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('script'))
@@ -340,7 +339,7 @@ class Site {
 
       // Meta tags
       const meta = await Promise.race([
-        await this.timeout(),
+        this.timeout(),
         (
           await page.evaluateHandle(() =>
             Array.from(document.querySelectorAll('meta')).reduce(
@@ -362,7 +361,7 @@ class Site {
 
       // JavaScript
       const js = await Promise.race([
-        await this.timeout(),
+        this.timeout(),
         page.evaluate(
           (technologies) => {
             return technologies.reduce((technologies, { name, chains }) => {
@@ -432,7 +431,7 @@ class Site {
       }
 
       // Validate response
-      if (!this.analyzedUrls[url.href].status) {
+      if (url.protocol !== 'file:' && !this.analyzedUrls[url.href].status) {
         await page.close()
 
         this.log('Page closed')
@@ -442,7 +441,7 @@ class Site {
 
       if (!this.language) {
         this.language = await Promise.race([
-          await this.timeout(),
+          this.timeout(),
           (
             await page.evaluateHandle(
               () =>
