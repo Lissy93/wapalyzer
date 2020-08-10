@@ -317,6 +317,27 @@
       "script": "[^a-z]adnegah.*\\.js$",
       "website": "https://Adnegah.net"
     },
+    "Adobe Analytics": {
+      "cats": [
+        10,
+        61
+      ],
+      "js": {
+        "s_c_il.0._c": "s_c",
+        "s_c_il.1._c": "s_c",
+        "s_c_il.2._c": "s_c",
+        "s_c_il.3._c": "s_c",
+        "s_c_il.4._c": "s_c",
+        "s_c_il.5._c": "s_c",
+        "s_c_il.0.constructor.name": "AppMeasurement",
+        "s_c_il.1.constructor.name": "AppMeasurement",
+        "s_c_il.2.constructor.name": "AppMeasurement",
+        "s_c_il.3.constructor.name": "AppMeasurement",
+        "s_c_il.4.constructor.name": "AppMeasurement",
+        "s_c_il.5.constructor.name": "AppMeasurement"
+      },
+      "website": "https://www.adobe.com/analytics/adobe-analytics.html"
+    },
     "Adobe ColdFusion": {
       "cats": [
         18
@@ -364,6 +385,20 @@
       ],
       "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
+    "Adobe Experience Platform Identity Service": {
+      "cats": [
+        61
+      ],
+      "js": {
+        "s_c_il.0._c": "Visitor",
+        "s_c_il.1._c": "Visitor",
+        "s_c_il.2._c": "Visitor",
+        "s_c_il.3._c": "Visitor",
+        "s_c_il.4._c": "Visitor",
+        "s_c_il.5._c": "Visitor"
+      },
+      "website": "https://docs.adobe.com/content/help/en/id-service/using/home.html"
+    },
     "Adobe GoLive": {
       "cats": [
         20
@@ -393,6 +428,17 @@
       },
       "script": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
       "website": "http://adobe.com/products/robohelp.html"
+    },
+    "Adobe Target": {
+      "cats": [
+        32,
+        61
+      ],
+      "js": {
+        "adobe.target": "",
+        "adobe.target.VERSION": "^(.+)$\\;version:\\1"
+      },
+      "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
       "cats": [
@@ -10837,20 +10883,6 @@
       "icon": "Site Meter.png",
       "script": "sitemeter\\.com/js/counter\\.js\\?site=",
       "website": "http://www.sitemeter.com"
-    },
-    "SiteCatalyst": {
-      "cats": [
-        10
-      ],
-      "icon": "SiteCatalyst.png",
-      "js": {
-        "s_INST": "",
-        "s_account": "",
-        "s_code": "",
-        "s_objectID": ""
-      },
-      "script": "/s[_-]code.*\\.js",
-      "website": "http://www.adobe.com/solutions/digital-marketing.html"
     },
     "SiteEdit": {
       "cats": [
