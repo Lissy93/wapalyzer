@@ -1,7 +1,8 @@
 const { URL } = require('url')
 const fs = require('fs')
 const path = require('path')
-const LanguageDetect = require('languagedetect')
+const http = require('http')
+const https = require('https')
 const Wappalyzer = require('./wappalyzer')
 
 const {
@@ -34,10 +35,6 @@ if (AWS_LAMBDA_FUNCTION_NAME) {
   puppeteer = require('puppeteer')
 }
 
-const languageDetect = new LanguageDetect()
-
-languageDetect.setLanguageType('iso2')
-
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
 const { apps: technologies, categories } = JSON.parse(
@@ -64,6 +61,32 @@ function analyzeJs(js) {
   )
 }
 
+function get(url) {
+  if (['http:', 'https:'].includes(url.protocol)) {
+    const { get } = url.protocol === 'http:' ? http : https
+
+    return new Promise((resolve, reject) =>
+      get(url.href, (response) => {
+        if (response.statusCode >= 400) {
+          return reject(
+            new Error(`${response.statusCode} ${response.statusMessage}`)
+          )
+        }
+
+        response.setEncoding('utf8')
+
+        let body = ''
+
+        response.on('data', (data) => (body += data))
+        response.on('error', (error) => reject(new Error(error.message)))
+        response.on('end', () => resolve(body))
+      })
+    )
+  } else {
+    throw new Error(`Invalid protocol: ${url.protocol}`)
+  }
+}
+
 class Driver {
   constructor(options = {}) {
     this.options = {
@@ -74,16 +97,16 @@ class Driver {
       htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
-      maxWait: 5000,
+      maxWait: 30000,
       recursive: false,
+      probe: false,
       ...options
     }
 
     this.options.debug = Boolean(+this.options.debug)
     this.options.recursive = Boolean(+this.options.recursive)
-    this.options.delay = this.options.recursive
-      ? parseInt(this.options.delay, 10)
-      : 0
+    this.options.probe = Boolean(+this.options.probe)
+    this.options.delay = parseInt(this.options.delay, 10)
     this.options.maxDepth = parseInt(this.options.maxDepth, 10)
     this.options.maxUrls = parseInt(this.options.maxUrls, 10)
     this.options.maxWait = parseInt(this.options.maxWait, 10)
@@ -161,7 +184,6 @@ class Site {
 
     this.analyzedUrls = {}
     this.detections = []
-    this.language = ''
 
     this.listeners = {}
 
@@ -191,7 +213,9 @@ class Site {
 
   emit(event, params) {
     if (this.listeners[event]) {
-      this.listeners[event].forEach((listener) => listener(params))
+      return Promise.all(
+        this.listeners[event].map((listener) => listener(params))
+      )
     }
   }
 
@@ -230,15 +254,13 @@ class Site {
 
     await page.setRequestInterception(true)
 
-    page.on('console', (msg) => console.log('PAGE LOG:', msg._text))
-
     page.on('dialog', (dialog) => dialog.dismiss())
 
     page.on('error', (error) => this.error(error))
 
     let responseReceived = false
 
-    page.on('request', (request) => {
+    page.on('request', async (request) => {
       try {
         if (
           (responseReceived && request.isNavigationRequest()) ||
@@ -252,6 +274,8 @@ class Site {
             ...this.options.headers
           }
 
+          await this.emit('request', { page, request })
+
           request.continue({ headers })
         }
       } catch (error) {
@@ -259,7 +283,7 @@ class Site {
       }
     })
 
-    page.on('response', (response) => {
+    page.on('response', async (response) => {
       try {
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
@@ -288,6 +312,8 @@ class Site {
             responseReceived = true
 
             this.onDetect(analyze({ headers }))
+
+            await this.emit('response', { page, response })
           }
         }
       } catch (error) {
@@ -440,34 +466,6 @@ class Site {
         throw new Error('No response from server')
       }
 
-      if (!this.language) {
-        this.language = await Promise.race([
-          this.timeout(),
-          (
-            await page.evaluateHandle(
-              () =>
-                document.documentElement.getAttribute('lang') ||
-                document.documentElement.getAttribute('xml:lang')
-            )
-          ).jsonValue()
-        ])
-      }
-
-      if (!this.language) {
-        try {
-          const [attrs] = languageDetect.detect(
-            html.replace(/<\/?[^>]+(>|$)/gs, ' '),
-            1
-          )
-
-          if (attrs) {
-            ;[this.language] = attrs
-          }
-        } catch (error) {
-          this.error(error)
-        }
-      }
-
       this.onDetect(analyzeJs(js))
 
       this.onDetect(
@@ -503,11 +501,20 @@ class Site {
         []
       )
 
+      await this.emit('goto', {
+        page,
+        url,
+        html,
+        cookies,
+        scripts,
+        meta,
+        js,
+        links: reducedLinks
+      })
+
       await page.close()
 
       this.log('Page closed')
-
-      this.emit('goto', url)
 
       return reducedLinks
     } catch (error) {
@@ -517,7 +524,13 @@ class Site {
 
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
     try {
-      await sleep(this.options.delay * index)
+      if (this.recursive) {
+        await sleep(this.options.delay * index)
+      }
+
+      if (this.options.probe) {
+        await this.probe(url)
+      }
 
       const links = await this.goto(url)
 
@@ -533,7 +546,7 @@ class Site {
       this.error(error)
     }
 
-    return {
+    const results = {
       urls: this.analyzedUrls,
       technologies: resolve(this.detections).map(
         ({
@@ -559,9 +572,32 @@ class Site {
             name
           }))
         })
-      ),
-      meta: {
-        language: this.language
+      )
+    }
+
+    await this.emit('analyze', results)
+
+    return results
+  }
+
+  async probe(url) {
+    const files = {
+      robots: '/robots.txt'
+    }
+
+    for (const file of Object.keys(files)) {
+      const path = files[file]
+
+      try {
+        await sleep(this.options.delay)
+
+        const body = await get(new URL(path, url.href))
+
+        this.log(`get ${path}: ok`)
+
+        this.onDetect(analyze({ [file]: body }))
+      } catch (error) {
+        this.error(`get ${path}: ${error.message || error}`)
       }
     }
   }
@@ -580,7 +616,7 @@ class Site {
     await this.batch(links, depth, batch + 1)
   }
 
-  onDetect(detections = [], language) {
+  onDetect(detections = []) {
     this.detections = this.detections.concat(detections)
 
     this.detections.filter(
