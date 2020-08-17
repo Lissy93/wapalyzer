@@ -1025,7 +1025,10 @@
         10
       ],
       "icon": "AppDynamics.png",
-      "script": "adrum\\.js|adrum\\.([0-9].*)\\.js\\;version:\\1",
+      "js": {
+        "ADRUM.conf.agentVer": "^(.+)$\\;version:\\1"
+      },
+      "script": "adrum",
       "website": "https://appdynamics.com"
     },
     "AppNexus": {
