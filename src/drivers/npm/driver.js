@@ -20,7 +20,8 @@ let chromiumArgs = [
   '--no-sandbox',
   '--headless',
   '--disable-gpu',
-  '--ignore-certificate-errors'
+  '--ignore-certificate-errors',
+  '--disable-web-security'
 ]
 let chromiumBin = CHROMIUM_BIN
 
