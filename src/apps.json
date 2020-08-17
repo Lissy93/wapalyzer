@@ -336,6 +336,7 @@
         "s_c_il.4.constructor.name": "AppMeasurement",
         "s_c_il.5.constructor.name": "AppMeasurement"
       },
+      "icon": "Adobe Analytics.svg",
       "website": "https://www.adobe.com/analytics/adobe-analytics.html"
     },
     "Adobe ColdFusion": {
@@ -383,6 +384,7 @@
         "/etc/clientlibs/",
         "/etc\\.clientlibs/"
       ],
+      "icon": "Adobe.svg",
       "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
     "Adobe Experience Platform Identity Service": {
@@ -397,6 +399,7 @@
         "s_c_il.4._c": "Visitor",
         "s_c_il.5._c": "Visitor"
       },
+      "icon": "Adobe.svg",
       "website": "https://docs.adobe.com/content/help/en/id-service/using/home.html"
     },
     "Adobe GoLive": {
@@ -438,6 +441,7 @@
         "adobe.target": "",
         "adobe.target.VERSION": "^(.+)$\\;version:\\1"
       },
+      "icon": "Adobe.svg",
       "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
@@ -11050,7 +11054,7 @@
 			"cookies": {
         "SMARTSTORE.VISITOR": ""
         },
-			"html": "(<!--Powered by SmartStore.NET - https://www.smartstore.com-->)",
+			"html": "<!--Powered by SmartStore\\.NET - https://www\\.smartstore\\.com-->",
 			"icon": "smartstore.png",
 			"implies": "Microsoft ASP.NET",
 			"meta": {
@@ -11066,8 +11070,8 @@
 			"cookies": {
         "SMARTSTORE.VISITOR": ""
         },
-			"html": "(<!--Powered by Smartstore - https://www.smartstore.com-->)",
-			"icon": "smartstore.png",
+			"html": "<!--Powered by Smartstore - https://www\\.smartstore\\.com-->",
+			"icon": "Smartstore.png",
 			"implies": "Microsoft ASP.NET",
 			"meta": {
 				"generator": "^Smartstore (.+)$\\;version:\\1"
