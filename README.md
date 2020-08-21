@@ -1,18 +1,48 @@
-# Wappalyzer [![Travis](https://travis-ci.org/AliasIO/Wappalyzer.svg?branch=master)](https://travis-ci.org/AliasIO/Wappalyzer/) [![Scrutinizer](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/?branch=master)
+# Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
-[Wappalyzer](https://www.wappalyzer.com/) is a
-[cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the
-technologies used on websites. It detects
-[content management systems](https://www.wappalyzer.com/categories/cms),
-[eCommerce platforms](https://www.wappalyzer.com/categories/ecommerce),
-[web servers](https://www.wappalyzer.com/categories/web-servers),
-[JavaScript frameworks](https://www.wappalyzer.com/categories/javascript-frameworks),
-[analytics tools](https://www.wappalyzer.com/categories/analytics) and
-[many more](https://www.wappalyzer.com/applications).
+[Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
+It detects content management systems, ecommerce platforms, JavaScript frameworks, 
+analytics tools and [much more](https://www.wappalyzer.com/technologies).
 
-*Licensed under the [GPL](https://github.com/AliasIO/Wappalyzer/blob/master/LICENSE).*
-
+* [wappalyzer on NPM](https://www.npmjs.com/package/wappalyzer)
+* [wappalyzer-core on NPM](https://www.npmjs.com/package/wappalyzer-core)
+* [Chrome extension](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)
+* [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
+* [Edge extension](https://microsoftedge.microsoft.com/addons/detail/mnbndgmknlpdjdnjfmfcdjoegcckoikn)
+* [Bookmarklet](https://www.wappalyzer.com/download)
+* [wappalyzer/cli on Docker Hub](https://hub.docker.com/r/wappalyzer/cli/)
+* [Wappalyzer REST APIs](https://www.wappalyzer.com/api/)
 
 ## Documentation
 
-Please read the [developer documentation](https://www.wappalyzer.com/docs) to get started.
+Please read the [developer documentation](https://www.wappalyzer.com/docs).
+
+## Quick start
+
+```sh
+git clone https://github.com/aliasio/wappalyzer
+cd wappalyzer
+yarn install
+yarn run link
+```
+
+## Usage
+
+### Command line
+
+```sh
+node src/drivers/npm/cli.js https://example.com
+```
+
+### Chrome extension
+
+* Go go `about:extensions`
+* Enable 'Developer mode'
+* Click 'Load unpacked'
+* Select `src/drivers/webextension`
+
+### Firefox extension
+
+* Go go `about:debugging#/runtime/this-firefox`
+* Click 'Load Temporary Add-on'
+* Select `src/drivers/webextension/manifest.json`

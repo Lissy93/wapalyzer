@@ -1,26 +1,29 @@
-FROM alpine
+FROM node:12-alpine
 
-MAINTAINER Elbert Alias <elbert@alias.io>
+MAINTAINER Wappalyzer <info@wappalyzer.com>
 
 ENV WAPPALYZER_ROOT /opt/wappalyzer
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV CHROMIUM_BIN /usr/bin/chromium-browser
 
-RUN apk update && apk add --no-cache \
+RUN apk update && apk add -u --no-cache \
 	nodejs \
-	nodejs-npm
+  udev \
+  chromium \
+  ttf-freefont \
+  yarn
 
 RUN mkdir -p "$WAPPALYZER_ROOT/browsers"
 
 WORKDIR "$WAPPALYZER_ROOT"
 
 ADD apps.json .
-ADD browser.js .
-ADD browsers/zombie.js ./browsers
 ADD cli.js .
 ADD driver.js .
-ADD index.js .
 ADD package.json .
 ADD wappalyzer.js .
+ADD yarn.lock .
 
-RUN npm i
+RUN yarn install
 
 ENTRYPOINT ["node", "cli.js"]

@@ -1,19 +1,27 @@
 {
   "dependencies": {
-    "file-type": "7.4.*",
-    "is-svg": "2.1.*",
-    "read-chunk": "2.1.*"
+    "@prantlf/jsonlint": "^10.2.0",
+    "adm-zip": "^0.4.14",
+    "convert-svg-to-png": "^0.5.0",
+    "languagedetect": "^2.0.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "mocha": "^5.2.0"
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.2.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": "^0.5.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "^1.16.4"
   },
   "scripts": {
-    "test": "mocha -R spec src",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "link": "node ./bin/link.js",
+    "lint": "eslint src/**/*.js",
+    "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/apps.json && node ./bin/validate.js",
+    "convert": "cd ./src/drivers/webextension/images/icons ; cp *.svg converted ; cd converted ; convert-svg-to-png *.svg --width 32 --height 32 ; rm *.svg",
+    "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/apps.json",
+    "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
+    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension"
   }
 }

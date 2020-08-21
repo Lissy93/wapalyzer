@@ -1,87 +1,145 @@
-/** global: browser */
-/** global: XMLSerializer */
-
-/* global browser */
+'use strict'
 /* eslint-env browser */
+/* globals chrome */
 
-const port = browser.runtime.connect({
-  name: 'content.js',
-});
-
-if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
-  try {
-    port.postMessage({ id: 'init' });
-
-    // HTML
-    let html = new XMLSerializer().serializeToString(document);
-
-    const chunks = [];
-    const maxCols = 2000;
-    const maxRows = 3000;
-    const rows = html.length / maxCols;
-
-    let i;
-
-    for (i = 0; i < rows; i += 1) {
-      if (i < maxRows / 2 || i > rows - maxRows / 2) {
-        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
-      }
+const Content = {
+  /**
+   * Initialise content script
+   */
+  async init() {
+    if (await Content.driver('isDisabledDomain', location.href)) {
+      return
     }
 
-    html = chunks.join('\n');
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    // Scripts
-    const scripts = Array.prototype.slice
-      .apply(document.scripts)
-      .filter(script => script.src)
-      .map(script => script.src)
-      .filter(script => script.indexOf('data:text/javascript;') !== 0);
+    try {
+      // HTML
+      let html = new XMLSerializer().serializeToString(document)
 
-    port.postMessage({ id: 'analyze', subject: { html, scripts } });
+      // Discard the middle portion of HTML to avoid performance degradation on large pages
+      const chunks = []
+      const maxCols = 2000
+      const maxRows = 3000
+      const rows = html.length / maxCols
 
-    // JavaScript variables
-    const script = document.createElement('script');
+      for (let i = 0; i < rows; i += 1) {
+        if (i < maxRows / 2 || i > rows - maxRows / 2) {
+          chunks.push(html.slice(i * maxCols, (i + 1) * maxCols))
+        }
+      }
+
+      html = chunks.join('\n')
+
+      // Determine language based on the HTML lang attribute or content
+      const language =
+        document.documentElement.getAttribute('lang') ||
+        document.documentElement.getAttribute('xml:lang') ||
+        (await new Promise((resolve) =>
+          chrome.i18n.detectLanguage
+            ? chrome.i18n.detectLanguage(html, ({ languages }) =>
+                resolve(
+                  languages
+                    .filter(({ percentage }) => percentage >= 75)
+                    .map(({ language: lang }) => lang)[0]
+                )
+              )
+            : resolve()
+        ))
+
+      // Script tags
+      const scripts = Array.from(document.scripts)
+        .filter(({ src }) => src)
+        .map(({ src }) => src)
+        .filter((script) => script.indexOf('data:text/javascript;') !== 0)
+
+      // Meta tags
+      const meta = Array.from(document.querySelectorAll('meta')).reduce(
+        (metas, meta) => {
+          const key = meta.getAttribute('name') || meta.getAttribute('property')
+
+          if (key) {
+            metas[key.toLowerCase()] = [meta.getAttribute('content')]
+          }
+
+          return metas
+        },
+        {}
+      )
+
+      Content.driver('onContentLoad', [
+        location.href,
+        { html, scripts, meta },
+        language
+      ])
+
+      Content.onGetTechnologies(await Content.driver('getTechnologies'))
+    } catch (error) {
+      Content.driver('error', error)
+    }
+  },
+
+  driver(func, args) {
+    return new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage(
+        {
+          source: 'content.js',
+          func,
+          args: args ? (Array.isArray(args) ? args : [args]) : []
+        },
+        (response) => {
+          chrome.runtime.lastError
+            ? reject(new Error(chrome.runtime.lastError.message))
+            : resolve(response)
+        }
+      )
+    })
+  },
+
+  /**
+   * Callback for getTechnologies
+   * @param {Array} technologies
+   */
+  onGetTechnologies(technologies = []) {
+    // Inject a script tag into the page to access methods of the window object
+    const script = document.createElement('script')
 
     script.onload = () => {
-      const onMessage = (event) => {
-        if (event.data.id !== 'js') {
-          return;
+      const onMessage = ({ data }) => {
+        if (!data.wappalyzer || !data.wappalyzer.js) {
+          return
         }
 
-        window.removeEventListener('message', onMessage);
+        window.removeEventListener('message', onMessage)
 
-        port.postMessage({ id: 'analyze', subject: { js: event.data.js } });
+        chrome.runtime.sendMessage({
+          source: 'content.js',
+          func: 'analyzeJs',
+          args: [location.href.split('#')[0], data.wappalyzer.js]
+        })
 
-        script.remove();
-      };
+        script.remove()
+      }
 
-      window.addEventListener('message', onMessage);
+      window.addEventListener('message', onMessage)
 
-      port.postMessage({ id: 'get_js_patterns' });
-    };
+      window.postMessage({
+        wappalyzer: {
+          technologies: technologies
+            .filter(({ js }) => Object.keys(js).length)
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+        }
+      })
+    }
 
-    script.setAttribute('src', browser.extension.getURL('js/inject.js'));
+    script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
 
-    document.body.appendChild(script);
-  } catch (error) {
-    port.postMessage({ id: 'log', subject: error });
+    document.body.appendChild(script)
   }
 }
 
-port.onMessage.addListener((message) => {
-  switch (message.id) {
-    case 'get_js_patterns':
-      postMessage({
-        id: 'patterns',
-        patterns: message.response.patterns,
-      }, window.location.href);
-
-      break;
-    default:
-      // Do nothing
-  }
-});
-
-// https://stackoverflow.com/a/44774834
-// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
-undefined; // eslint-disable-line no-unused-expressions
+if (/complete|interactive|loaded/.test(document.readyState)) {
+  Content.init()
+} else {
+  document.addEventListener('DOMContentLoaded', Content.init)
+}

@@ -1,19 +1,25 @@
 {
-	"title": "Wappalyzer Schema",
+	"title": "Wappalyzer schema",
+	"definitions": {
+		"non-empty-non-blank-string": {
+			"type": "string",
+			"pattern": "^(?!\\s*$).+"
+		}
+	},
 	"type": "object",
 	"additionalProperties": false,
+	"required": ["categories","apps"],
 	"properties": {
 		"$schema": {
 			"type": "string"
 		},
 		"categories": {
 			"type": "object",
-			"required": true,
+			"minProperties": 64,
 			"additionalProperties": false,
 			"patternProperties": {
 				"^[0-9]+$": {
 					"type": "object",
-					"required": true,
 					"properties": {
 						"priority": {
 							"type": "number"
@@ -27,86 +33,141 @@
 		},
 		"apps": {
 			"type": "object",
-			"required": true,
 			"additionalProperties": {
 				"additionalProperties": false,
+				"required": ["cats","website"],
 				"properties": {
+					"description": {
+						"type": "string",
+            "pattern": "^.{0,255}$"
+					},
 					"cats": {
 						"type": "array",
 						"items": {
 							"type": "number"
 						},
-						"required": true
+						"minItems": 1
+					},
+					"cpe": {
+						"$ref": "#/definitions/non-empty-non-blank-string"
 					},
 					"cookies": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"js": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"headers": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"html": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
+					},
+					"robots": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
 					},
 					"excludes": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
 					},
 					"implies": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
 					},
 					"meta": {
 						"type": "object",
-						"additionalProperties": {
-							"type": "string"
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							},
+							"additionalProperties": {
+								"type": "string"
+							}
 						}
 					},
 					"script": {
-						"type": [
-							"string",
-							"array"
-						],
-						"items": {
-							"type": "string"
-						}
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
 					},
 					"url": {
-						"type": "string"
+						"$ref": "#/definitions/non-empty-non-blank-string"
 					},
 					"website": {
-						"type": "string",
-						"required": true
+						"$ref": "#/definitions/non-empty-non-blank-string"
 					},
 					"icon": {
-						"type": "string"
+						"$ref": "#/definitions/non-empty-non-blank-string"
 					}
 				}
 			}

@@ -1,17 +1,17 @@
 /build/*
-/src/icons/converted/*
-/node_modules
-/npm-debug.log
-/npm-debug.log
+/src/drivers/**/apps.json
+/src/drivers/**/wappalyzer.js
+/src/drivers/webextension/images/icons/converted/*
 
+node_modules
 package-lock.json
 
 !.gitkeep
 
-# Junk files
 Thumbs.db
 Desktop.ini
 *.DS_Store
+*.log
 ._*
 tags
 tags.*

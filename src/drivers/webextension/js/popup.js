@@ -1,246 +1,306 @@
+'use strict'
 /* eslint-env browser */
-/* global browser, jsonToDOM */
+/* globals chrome, Utils */
 
-/** global: browser */
-/** global: jsonToDOM */
+const {
+  agent,
+  open,
+  i18n,
+  getOption,
+  setOption,
+  promisify,
+  sendMessage
+} = Utils
 
-let pinnedCategory = null;
-let termsAccepted = false;
-
-const port = browser.runtime.connect({
-  name: 'popup.js',
-});
-
-function slugify(string) {
-  return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
-}
-
-function i18n() {
-  const nodes = document.querySelectorAll('[data-i18n]');
-
-  Array.prototype.forEach.call(nodes, (node) => {
-    node.innerHTML = browser.i18n.getMessage(node.dataset.i18n);
-  });
-}
-
-function replaceDom(domTemplate) {
-  const container = document.getElementsByClassName('container')[0];
-
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
+function setDisabledDomain(enabled) {
+  if (enabled) {
+    document
+      .querySelector('.footer__switch--enabled')
+      .classList.add('footer__switch--hidden')
+    document
+      .querySelector('.footer__switch--disabled')
+      .classList.remove('footer__switch--hidden')
+  } else {
+    document
+      .querySelector('.footer__switch--enabled')
+      .classList.remove('footer__switch--hidden')
+    document
+      .querySelector('.footer__switch--disabled')
+      .classList.add('footer__switch--hidden')
   }
+}
 
-  container.appendChild(jsonToDOM(domTemplate, document, {}));
+const Popup = {
+  /**
+   * Initialise popup
+   */
+  async init() {
+    // Templates
+    Popup.templates = Array.from(
+      document.querySelectorAll('[data-template]')
+    ).reduce((templates, template) => {
+      templates[template.dataset.template] = template.cloneNode(true)
 
-  i18n();
+      template.remove()
 
-  Array.from(document.querySelectorAll('.detected__category-pin-wrapper')).forEach((pin) => {
-    pin.addEventListener('click', () => {
-      const categoryId = parseInt(pin.dataset.categoryId, 10);
+      return templates
+    }, {})
 
-      if (categoryId === pinnedCategory) {
-        pin.className = 'detected__category-pin-wrapper';
+    // Disabled domains
+    let disabledDomains = await getOption('disabledDomains', [])
 
-        pinnedCategory = null;
+    // Theme mode
+    const themeMode = await getOption('themeMode', false)
+
+    if (themeMode) {
+      document.querySelector('body').classList.add('theme-mode')
+    }
+
+    // Terms
+    const termsAccepted =
+      agent === 'chrome' || (await getOption('termsAccepted', false))
+
+    if (termsAccepted) {
+      document.querySelector('.terms').classList.add('terms--hidden')
+      document.querySelector('.empty').classList.remove('empty--hidden')
+
+      Popup.onGetDetections(await Popup.driver('getDetections'))
+    } else {
+      document.querySelector('.terms').classList.remove('terms--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
+      document.querySelector('.empty').classList.add('empty--hidden')
+
+      document.querySelector('.terms').addEventListener('click', async () => {
+        await setOption('termsAccepted', true)
+
+        document.querySelector('.terms').classList.add('terms--hidden')
+        document.querySelector('.empty').classList.remove('empty--hidden')
+
+        Popup.onGetDetections(await Popup.driver('getDetections'))
+      })
+    }
+
+    // Alert
+    const tabs = await promisify(chrome.tabs, 'query', {
+      active: true,
+      currentWindow: true
+    })
+
+    if (tabs && tabs.length) {
+      const [{ url }] = tabs
+
+      if (url.startsWith('http')) {
+        document.querySelector('.alerts').classList.remove('alerts--hidden')
+
+        document.querySelector(
+          '.alerts__link'
+        ).href = `https://www.wappalyzer.com/alerts?url=${encodeURIComponent(
+          `${url}`
+        )}`
+
+        const { hostname } = new URL(url)
+
+        setDisabledDomain(disabledDomains.includes(hostname))
+
+        document
+          .querySelector('.footer__switch--disabled')
+          .addEventListener('click', async () => {
+            disabledDomains = disabledDomains.filter(
+              (_hostname) => _hostname !== hostname
+            )
+
+            await setOption('disabledDomains', disabledDomains)
+
+            setDisabledDomain(false)
+
+            Popup.onGetDetections(await Popup.driver('getDetections'))
+          })
+
+        document
+          .querySelector('.footer__switch--enabled')
+          .addEventListener('click', async () => {
+            disabledDomains.push(hostname)
+
+            await setOption('disabledDomains', disabledDomains)
+
+            setDisabledDomain(true)
+
+            Popup.onGetDetections(await Popup.driver('getDetections'))
+          })
       } else {
-        const active = document.querySelector('.detected__category-pin-wrapper--active');
-
-        if (active) {
-          active.className = 'detected__category-pin-wrapper';
+        for (const el of document.querySelectorAll('.footer__switch')) {
+          el.classList.add('footer__switch--hidden')
         }
 
-        pin.className = 'detected__category-pin-wrapper detected__category-pin-wrapper--active';
-
-        pinnedCategory = categoryId;
+        document.querySelector('.alerts').classList.add('alerts--hidden')
       }
-
-      port.postMessage({
-        id: 'set_option',
-        key: 'pinnedCategory',
-        value: pinnedCategory,
-      });
-    });
-  });
-}
-
-function replaceDomWhenReady(dom) {
-  if (/complete|interactive|loaded/.test(document.readyState)) {
-    replaceDom(dom);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      replaceDom(dom);
-    });
-  }
-}
-
-function appsToDomTemplate(response) {
-  let template = [];
-
-  if (response.tabCache && Object.keys(response.tabCache.detected).length > 0) {
-    const categories = {};
-
-    // Group apps by category
-    for (const appName in response.tabCache.detected) {
-      response.apps[appName].cats.forEach((cat) => {
-        categories[cat] = categories[cat] || { apps: [] };
-
-        categories[cat].apps[appName] = appName;
-      });
     }
 
-    for (const cat in categories) {
-      const apps = [];
+    document
+      .querySelector('.footer__settings')
+      .addEventListener('click', () => chrome.runtime.openOptionsPage())
 
-      for (const appName in categories[cat].apps) {
-        const { confidence, version } = response.tabCache.detected[appName];
+    // Apply internationalization
+    i18n()
+  },
 
-        apps.push(
-          [
-            'a', {
-              class: 'detected__app',
-              target: '_blank',
-              href: `https://www.wappalyzer.com/technologies/${slugify(appName)}`,
-            }, [
-              'img', {
-                class: 'detected__app-icon',
-                src: `../images/icons/${response.apps[appName].icon || 'default.svg'}`,
-              },
-            ], [
-              'span', {
-                class: 'detected__app-name',
-              },
-              appName,
-            ], version ? [
-              'span', {
-                class: 'detected__app-version',
-              },
-              version,
-            ] : null, confidence < 100 ? [
-              'span', {
-                class: 'detected__app-confidence',
-              },
-              `${confidence}% sure`,
-            ] : null,
-          ],
-        );
-      }
+  driver(func, args) {
+    return sendMessage('popup.js', func, args)
+  },
 
-      template.push(
-        [
-          'div', {
-            class: 'detected__category',
-          }, [
-            'div', {
-              class: 'detected__category-name',
-            }, [
-              'a', {
-                class: 'detected__category-link',
-                target: '_blank',
-                href: `https://www.wappalyzer.com/categories/${slugify(response.categories[cat].name)}`,
-              },
-              browser.i18n.getMessage(`categoryName${cat}`),
-            ], [
-              'span', {
-                class: `detected__category-pin-wrapper${pinnedCategory == cat ? ' detected__category-pin-wrapper--active' : ''}`,
-                'data-category-id': cat,
-                title: browser.i18n.getMessage('categoryPin'),
-              }, [
-                'img', {
-                  class: 'detected__category-pin detected__category-pin--active',
-                  src: '../images/pin-active.svg',
-                },
-              ], [
-                'img', {
-                  class: 'detected__category-pin detected__category-pin--inactive',
-                  src: '../images/pin.svg',
-                },
-              ],
-            ],
-          ], [
-            'div', {
-              class: 'detected__apps',
-            },
-            apps,
-          ],
-        ],
-      );
+  /**
+   * Log debug messages to the console
+   * @param {String} message
+   */
+  log(message) {
+    Popup.driver('log', message)
+  },
+
+  /**
+   * Group technologies into categories
+   * @param {Object} technologies
+   */
+  categorise(technologies) {
+    return Object.values(
+      technologies
+        .filter(({ confidence }) => confidence >= 50)
+        .reduce((categories, technology) => {
+          technology.categories.forEach((category) => {
+            categories[category.id] = categories[category.id] || {
+              ...category,
+              technologies: []
+            }
+
+            categories[category.id].technologies.push(technology)
+          })
+
+          return categories
+        }, {})
+    )
+  },
+
+  /**
+   * Callback for getDetection listener
+   * @param {Array} detections
+   */
+  async onGetDetections(detections = []) {
+    if (!detections || !detections.length) {
+      document.querySelector('.empty').classList.remove('empty--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
+
+      return
     }
 
-    template = [
-      'div', {
-        class: 'detected',
-      },
-      template,
-    ];
-  } else {
-    template = [
-      'div', {
-        class: 'empty',
-      },
-      [
-        'span', {
-          class: 'empty__text',
-        },
-        browser.i18n.getMessage('noAppsDetected'),
-      ],
-    ];
-  }
+    document.querySelector('.empty').classList.add('empty--hidden')
 
-  return template;
+    const el = document.querySelector('.detections')
+
+    el.classList.remove('detections--hidden')
+
+    while (el.firstChild) {
+      el.removeChild(detections.lastChild)
+    }
+
+    const pinnedCategory = await getOption('pinnedCategory')
+
+    const categorised = Popup.categorise(detections)
+
+    categorised.forEach(({ id, name, slug: categorySlug, technologies }) => {
+      const categoryNode = Popup.templates.category.cloneNode(true)
+
+      const link = categoryNode.querySelector('.category__link')
+
+      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}`
+      link.dataset.i18n = `categoryName${id}`
+
+      const pins = categoryNode.querySelectorAll('.category__pin')
+
+      if (pinnedCategory === id) {
+        pins.forEach((pin) => pin.classList.add('category__pin--active'))
+      }
+
+      pins.forEach((pin) =>
+        pin.addEventListener('click', async () => {
+          const pinnedCategory = await getOption('pinnedCategory')
+
+          Array.from(
+            document.querySelectorAll('.category__pin--active')
+          ).forEach((pin) => pin.classList.remove('category__pin--active'))
+
+          if (pinnedCategory === id) {
+            await setOption('pinnedCategory', null)
+          } else {
+            await setOption('pinnedCategory', id)
+
+            pins.forEach((pin) => pin.classList.add('category__pin--active'))
+          }
+        })
+      )
+
+      technologies
+        .filter(({ confidence }) => confidence >= 50)
+        .forEach(({ name, slug, confidence, version, icon, website }) => {
+          const technologyNode = Popup.templates.technology.cloneNode(true)
+
+          const image = technologyNode.querySelector('.technology__icon')
+
+          image.src = `../images/icons/${icon}`
+
+          const link = technologyNode.querySelector('.technology__link')
+
+          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
+          link.textContent = name
+
+          const confidenceNode = technologyNode.querySelector(
+            '.technology__confidence'
+          )
+
+          if (confidence < 100) {
+            confidenceNode.textContent = `${confidence}% sure`
+          } else {
+            confidenceNode.remove()
+          }
+
+          const versionNode = technologyNode.querySelector(
+            '.technology__version'
+          )
+
+          if (version) {
+            versionNode.textContent = version
+          } else {
+            versionNode.remove()
+          }
+
+          categoryNode
+            .querySelector('.technologies')
+            .appendChild(technologyNode)
+        })
+
+      document.querySelector('.detections').appendChild(categoryNode)
+    })
+
+    if (categorised.length === 1) {
+      document
+        .querySelector('.detections')
+        .appendChild(Popup.templates.category.cloneNode(true))
+    }
+
+    Array.from(document.querySelectorAll('a')).forEach((a) =>
+      a.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        open(a.href)
+
+        return false
+      })
+    )
+
+    i18n()
+  }
 }
 
-async function getApps() {
-  try {
-    const tabs = await browser.tabs.query({
-      active: true,
-      currentWindow: true,
-    });
-
-    port.postMessage({
-      id: 'get_apps',
-      tab: tabs[0],
-    });
-  } catch (error) {
-    console.error(error); // eslint-disable-line no-console
-  }
+if (/complete|interactive|loaded/.test(document.readyState)) {
+  Popup.init()
+} else {
+  document.addEventListener('DOMContentLoaded', Popup.init)
 }
-
-function displayApps(response) {
-  pinnedCategory = response.pinnedCategory; // eslint-disable-line prefer-destructuring
-  termsAccepted = response.termsAccepted; // eslint-disable-line prefer-destructuring
-
-  if (termsAccepted) {
-    replaceDomWhenReady(appsToDomTemplate(response));
-  } else {
-    i18n();
-
-    const wrapper = document.querySelector('.terms__wrapper');
-
-    document.querySelector('.terms__accept').addEventListener('click', () => {
-      port.postMessage({
-        id: 'set_option',
-        key: 'termsAccepted',
-        value: true,
-      });
-
-      wrapper.classList.remove('terms__wrapper--active');
-
-      getApps();
-    });
-
-    wrapper.classList.add('terms__wrapper--active');
-  }
-}
-
-port.onMessage.addListener((message) => {
-  switch (message.id) {
-    case 'get_apps':
-      displayApps(message.response);
-
-      break;
-    default:
-      // Do nothing
-  }
-});
-
-getApps();

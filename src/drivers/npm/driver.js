@@ -1,330 +1,651 @@
-const url = require('url');
-const fs = require('fs');
-const path = require('path');
-const Wappalyzer = require('./wappalyzer');
+const { URL } = require('url')
+const fs = require('fs')
+const path = require('path')
+const http = require('http')
+const https = require('https')
+const Wappalyzer = require('./wappalyzer')
 
-const json = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/apps.json`)));
+const {
+  setTechnologies,
+  setCategories,
+  analyze,
+  analyzeManyToMany,
+  resolve
+} = Wappalyzer
 
-const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
+const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
 
-const errorTypes = {
-  RESPONSE_NOT_OK: 'Response was not ok',
-  NO_RESPONSE: 'No response from server',
-  NO_HTML_DOCUMENT: 'No HTML document',
-};
+let puppeteer
+let chromiumArgs = [
+  '--no-sandbox',
+  '--headless',
+  '--disable-gpu',
+  '--ignore-certificate-errors',
+  '--disable-web-security'
+]
+let chromiumBin = CHROMIUM_BIN
+
+if (AWS_LAMBDA_FUNCTION_NAME) {
+  const chromium = require('chrome-aws-lambda')
+
+  ;({ puppeteer } = chromium)
+
+  chromiumArgs = chromiumArgs.concat(chromium.args)
+  chromiumBin = chromium.executablePath
+} else {
+  puppeteer = require('puppeteer')
+}
+
+const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
+
+const { apps: technologies, categories } = JSON.parse(
+  fs.readFileSync(path.resolve(`${__dirname}/apps.json`))
+)
+
+setTechnologies(technologies)
+setCategories(categories)
 
 function sleep(ms) {
-  return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-function processJs(window, patterns) {
-  const js = {};
+function analyzeJs(js) {
+  return Array.prototype.concat.apply(
+    [],
+    js.map(({ name, chain, value }) =>
+      analyzeManyToMany(
+        Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+        'js',
+        { [chain]: [value] }
+      )
+    )
+  )
+}
 
-  Object.keys(patterns).forEach((appName) => {
-    js[appName] = {};
+function get(url) {
+  if (['http:', 'https:'].includes(url.protocol)) {
+    const { get } = url.protocol === 'http:' ? http : https
 
-    Object.keys(patterns[appName]).forEach((chain) => {
-      js[appName][chain] = {};
-
-      patterns[appName][chain].forEach((pattern, index) => {
-        const properties = chain.split('.');
-
-        let value = properties
-          .reduce((parent, property) => (parent && parent[property]
-            ? parent[property] : null), window);
-
-        value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
-
-        if (value) {
-          js[appName][chain][index] = value;
+    return new Promise((resolve, reject) =>
+      get(url.href, (response) => {
+        if (response.statusCode >= 400) {
+          return reject(
+            new Error(`${response.statusCode} ${response.statusMessage}`)
+          )
         }
-      });
-    });
-  });
 
-  return js;
-}
+        response.setEncoding('utf8')
 
-function processHtml(html, maxCols, maxRows) {
-  if (maxCols || maxRows) {
-    const chunks = [];
-    const rows = html.length / maxCols;
+        let body = ''
 
-    let i;
-
-    for (i = 0; i < rows; i += 1) {
-      if (i < maxRows / 2 || i > rows - maxRows / 2) {
-        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
-      }
-    }
-
-    html = chunks.join('\n');
+        response.on('data', (data) => (body += data))
+        response.on('error', (error) => reject(new Error(error.message)))
+        response.on('end', () => resolve(body))
+      })
+    )
+  } else {
+    throw new Error(`Invalid protocol: ${url.protocol}`)
   }
-
-  return html;
 }
 
 class Driver {
-  constructor(Browser, pageUrl, options) {
-    this.options = Object.assign({}, {
-      password: '',
-      proxy: null,
-      username: '',
-      chunkSize: 5,
+  constructor(options = {}) {
+    this.options = {
+      batchSize: 5,
       debug: false,
       delay: 500,
       htmlMaxCols: 2000,
       htmlMaxRows: 3000,
       maxDepth: 3,
       maxUrls: 10,
-      maxWait: 5000,
+      maxWait: 30000,
       recursive: false,
-      userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
-    }, options || {});
+      probe: false,
+      ...options
+    }
 
-    this.options.debug = Boolean(+this.options.debug);
-    this.options.recursive = Boolean(+this.options.recursive);
-    this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
-    this.options.maxDepth = parseInt(this.options.maxDepth, 10);
-    this.options.maxUrls = parseInt(this.options.maxUrls, 10);
-    this.options.maxWait = parseInt(this.options.maxWait, 10);
-    this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10);
-    this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10);
+    this.options.debug = Boolean(+this.options.debug)
+    this.options.recursive = Boolean(+this.options.recursive)
+    this.options.probe = Boolean(+this.options.probe)
+    this.options.delay = parseInt(this.options.delay, 10)
+    this.options.maxDepth = parseInt(this.options.maxDepth, 10)
+    this.options.maxUrls = parseInt(this.options.maxUrls, 10)
+    this.options.maxWait = parseInt(this.options.maxWait, 10)
+    this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10)
+    this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10)
 
-    this.origPageUrl = url.parse(pageUrl);
-    this.analyzedPageUrls = {};
-    this.apps = [];
-    this.meta = {};
-    this.listeners = {};
+    this.destroyed = false
+  }
 
-    this.Browser = Browser;
+  async init() {
+    this.log('Launching browser...')
 
-    this.wappalyzer = new Wappalyzer();
+    try {
+      this.browser = await puppeteer.launch({
+        args: chromiumArgs,
+        executablePath: await chromiumBin
+      })
 
-    this.wappalyzer.apps = json.apps;
-    this.wappalyzer.categories = json.categories;
+      this.browser.on('disconnected', async () => {
+        this.log('Browser disconnected')
 
-    this.wappalyzer.parseJsPatterns();
+        if (!this.destroyed) {
+          await this.init()
+        }
+      })
+    } catch (error) {
+      throw new Error(error.toString())
+    }
+  }
 
-    this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
-    this.wappalyzer.driver
-      .displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
+  async destroy() {
+    this.destroyed = true
 
-    process.on('uncaughtException', e => this.wappalyzer.log(`Uncaught exception: ${e.message}`, 'driver', 'error'));
+    if (this.browser) {
+      try {
+        await sleep(1)
+
+        await this.browser.close()
+
+        this.log('Browser closed')
+      } catch (error) {
+        throw new Error(error.toString())
+      }
+    }
+  }
+
+  open(url, headers = {}) {
+    return new Site(url.split('#')[0], headers, this)
+  }
+
+  log(message, source = 'driver') {
+    if (this.options.debug) {
+      // eslint-disable-next-line no-console
+      console.log(`wappalyzer | log | ${source} |`, message)
+    }
+  }
+}
+
+class Site {
+  constructor(url, headers = {}, driver) {
+    ;({ options: this.options, browser: this.browser } = driver)
+
+    this.options.headers = {
+      ...this.options.headers,
+      ...headers
+    }
+
+    this.driver = driver
+
+    try {
+      this.originalUrl = new URL(url)
+    } catch (error) {
+      throw new Error(error.toString())
+    }
+
+    this.analyzedUrls = {}
+    this.detections = []
+
+    this.listeners = {}
+
+    this.pages = []
+  }
+
+  log(message, source = 'driver', type = 'log') {
+    if (this.options.debug) {
+      // eslint-disable-next-line no-console
+      console[type](`wappalyzer | ${type} | ${source} |`, message)
+    }
+
+    this.emit(type, { message, source })
+  }
+
+  error(error, source = 'driver') {
+    this.log(error, source, 'error')
   }
 
   on(event, callback) {
     if (!this.listeners[event]) {
-      this.listeners[event] = [];
+      this.listeners[event] = []
     }
 
-    this.listeners[event].push(callback);
+    this.listeners[event].push(callback)
   }
 
   emit(event, params) {
     if (this.listeners[event]) {
-      this.listeners[event].forEach(listener => listener(params));
+      return Promise.all(
+        this.listeners[event].map((listener) => listener(params))
+      )
     }
   }
 
-  analyze() {
-    this.time = {
-      start: new Date().getTime(),
-      last: new Date().getTime(),
-    };
-
-    return this.crawl(this.origPageUrl);
+  timeout() {
+    return new Promise((resolve, reject) =>
+      setTimeout(() => {
+        reject(new Error('The website took too long to respond'))
+      }, this.options.maxWait)
+    )
   }
 
-  log(message, source, type) {
-    if (this.options.debug) {
-      console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
-    }
-
-    this.emit('log', { message, source, type });
-  }
-
-  displayApps(detected, meta) {
-    this.meta = meta;
-
-    Object.keys(detected).forEach((appName) => {
-      const app = detected[appName];
-
-      const categories = [];
-
-      app.props.cats.forEach((id) => {
-        const category = {};
-
-        category[id] = json.categories[id].name;
-
-        categories.push(category);
-      });
-
-      if (!this.apps.some(detectedApp => detectedApp.name === app.name)) {
-        this.apps.push({
-          name: app.name,
-          confidence: app.confidenceTotal.toString(),
-          version: app.version || null,
-          icon: app.props.icon || 'default.svg',
-          website: app.props.website,
-          categories,
-        });
-      }
-    });
-  }
-
-  fetch(pageUrl, index, depth) {
+  async goto(url) {
     // Return when the URL is a duplicate or maxUrls has been reached
     if (
-      this.analyzedPageUrls[pageUrl.href]
-      || this.analyzedPageUrls.length >= this.options.maxUrls
+      this.analyzedUrls[url.href] ||
+      Object.keys(this.analyzedUrls).length >= this.options.maxUrls
     ) {
-      return Promise.resolve();
+      return
     }
 
-    this.analyzedPageUrls[pageUrl.href] = {
-      status: 0,
-    };
+    this.log(`Navigate to ${url}`, 'page')
 
-    const timerScope = {
-      last: new Date().getTime(),
-    };
-
-    this.timer(`fetch; url: ${pageUrl.href}; depth: ${depth}; delay: ${this.options.delay * index}ms`, timerScope);
-
-    return new Promise(async (resolve, reject) => {
-      await sleep(this.options.delay * index);
-
-      this.visit(pageUrl, timerScope, resolve, reject);
-    });
-  }
-
-  async visit(pageUrl, timerScope, resolve, reject) {
-    const browser = new this.Browser(this.options);
-
-    browser.log = (message, type) => this.wappalyzer.log(message, 'browser', type);
-
-    this.timer(`visit start; url: ${pageUrl.href}`, timerScope);
-
-    await browser.visit(pageUrl.href);
-
-    this.timer(`visit end; url: ${pageUrl.href}`, timerScope);
-
-    this.analyzedPageUrls[pageUrl.href].status = browser.statusCode;
-
-    // Validate response
-    if (!browser.statusCode) {
-      return reject(new Error('NO_RESPONSE'));
+    this.analyzedUrls[url.href] = {
+      status: 0
     }
 
-    if (browser.statusCode !== 200) {
-      return reject(new Error('RESPONSE_NOT_OK'));
+    if (!this.browser) {
+      throw new Error('Browser closed')
     }
 
-    if (!browser.contentType || !/\btext\/html\b/.test(browser.contentType)) {
-      this.wappalyzer.log(`Skipping; url: ${pageUrl.href}; content type: ${browser.contentType}`, 'driver');
+    const page = await this.browser.newPage()
 
-      delete this.analyzedPageUrls[pageUrl.href];
-    }
+    this.pages.push(page)
 
-    const { cookies, headers, scripts } = browser;
+    page.setDefaultTimeout(this.options.maxWait)
 
-    const html = processHtml(browser.html, this.options.htmlMaxCols, this.options.htmlMaxRows);
-    const js = processJs(browser.js, this.wappalyzer.jsPatterns);
+    await page.setRequestInterception(true)
 
-    await this.wappalyzer.analyze(pageUrl, {
-      cookies,
-      headers,
-      html,
-      js,
-      scripts,
-    });
+    page.on('dialog', (dialog) => dialog.dismiss())
 
-    const reducedLinks = Array.prototype.reduce.call(
-      browser.links, (results, link) => {
+    page.on('error', (error) => this.error(error))
+
+    let responseReceived = false
+
+    page.on('request', async (request) => {
+      try {
         if (
-          results
-          && Object.prototype.hasOwnProperty.call(results, 'push')
-          && link.protocol
-          && link.protocol.match(/https?:/)
-          && link.rel !== 'nofollow'
-          && link.hostname === this.origPageUrl.hostname
-          && extensions.test(link.pathname)
+          (responseReceived && request.isNavigationRequest()) ||
+          request.frame() !== page.mainFrame() ||
+          !['document', 'script'].includes(request.resourceType())
         ) {
-          link.hash = '';
+          request.abort('blockedbyclient')
+        } else {
+          const headers = {
+            ...request.headers(),
+            ...this.options.headers
+          }
 
-          results.push(url.parse(link.href));
+          await this.emit('request', { page, request })
+
+          request.continue({ headers })
+        }
+      } catch (error) {
+        this.error(error)
+      }
+    })
+
+    page.on('response', async (response) => {
+      try {
+        if (response.url() === url.href) {
+          this.analyzedUrls[url.href] = {
+            status: response.status()
+          }
+
+          const rawHeaders = response.headers()
+          const headers = {}
+
+          Object.keys(rawHeaders).forEach((key) => {
+            headers[key] = [
+              ...(headers[key] || []),
+              ...(Array.isArray(rawHeaders[key])
+                ? rawHeaders[key]
+                : [rawHeaders[key]])
+            ]
+          })
+
+          this.contentType = headers['content-type'] || null
+
+          if (response.status() >= 300 && response.status() < 400) {
+            if (headers.location) {
+              url = new URL(headers.location.slice(-1), url)
+            }
+          } else {
+            responseReceived = true
+
+            this.onDetect(analyze({ headers }))
+
+            await this.emit('response', { page, response })
+          }
+        }
+      } catch (error) {
+        this.error(error)
+      }
+    })
+
+    await page.setUserAgent(
+      this.options.userAgent ||
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    )
+
+    try {
+      await Promise.race([
+        this.timeout(),
+        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+      ])
+
+      await sleep(1000)
+
+      // Links
+      const links = await Promise.race([
+        this.timeout(),
+        (
+          await page.evaluateHandle(() =>
+            Array.from(document.getElementsByTagName('a')).map(
+              ({ hash, hostname, href, pathname, protocol, rel }) => ({
+                hash,
+                hostname,
+                href,
+                pathname,
+                protocol,
+                rel
+              })
+            )
+          )
+        ).jsonValue()
+      ])
+
+      // Script tags
+      const scripts = await Promise.race([
+        this.timeout(),
+        (
+          await page.evaluateHandle(() =>
+            Array.from(document.getElementsByTagName('script'))
+              .map(({ src }) => src)
+              .filter((src) => src)
+          )
+        ).jsonValue()
+      ])
+
+      // Meta tags
+      const meta = await Promise.race([
+        this.timeout(),
+        (
+          await page.evaluateHandle(() =>
+            Array.from(document.querySelectorAll('meta')).reduce(
+              (metas, meta) => {
+                const key =
+                  meta.getAttribute('name') || meta.getAttribute('property')
+
+                if (key) {
+                  metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                }
+
+                return metas
+              },
+              {}
+            )
+          )
+        ).jsonValue()
+      ])
+
+      // JavaScript
+      const js = await Promise.race([
+        this.timeout(),
+        page.evaluate(
+          (technologies) => {
+            return technologies.reduce((technologies, { name, chains }) => {
+              chains.forEach((chain) => {
+                chain = chain.replace(/\[([^\]]+)\]/g, '.$1')
+
+                const value = chain
+                  .split('.')
+                  .reduce(
+                    (value, method) => (value ? value[method] : undefined),
+                    window
+                  )
+
+                if (typeof value !== 'undefined') {
+                  technologies.push({
+                    name,
+                    chain,
+                    value:
+                      typeof value === 'string' || typeof value === 'number'
+                        ? value
+                        : !!value
+                  })
+                }
+              })
+
+              return technologies
+            }, [])
+          },
+          Wappalyzer.technologies
+            .filter(({ js }) => Object.keys(js).length)
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
+        )
+      ])
+
+      // Cookies
+      const cookies = (await page.cookies()).reduce(
+        (cookies, { name, value }) => ({
+          ...cookies,
+          [name]: [value]
+        }),
+        {}
+      )
+
+      // HTML
+      let html = await page.content()
+
+      if (this.options.htmlMaxCols && this.options.htmlMaxRows) {
+        const batches = []
+        const rows = html.length / this.options.htmlMaxCols
+
+        for (let i = 0; i < rows; i += 1) {
+          if (
+            i < this.options.htmlMaxRows / 2 ||
+            i > rows - this.options.htmlMaxRows / 2
+          ) {
+            batches.push(
+              html.slice(
+                i * this.options.htmlMaxCols,
+                (i + 1) * this.options.htmlMaxCols
+              )
+            )
+          }
         }
 
-        return results;
-      }, [],
-    );
+        html = batches.join('\n')
+      }
 
-    this.emit('visit', { browser, pageUrl });
+      // Validate response
+      if (url.protocol !== 'file:' && !this.analyzedUrls[url.href].status) {
+        await page.close()
 
-    return resolve(reducedLinks);
+        this.log('Page closed')
+
+        throw new Error('No response from server')
+      }
+
+      this.onDetect(analyzeJs(js))
+
+      this.onDetect(
+        analyze({
+          url,
+          cookies,
+          html,
+          scripts,
+          meta
+        })
+      )
+
+      const reducedLinks = Array.prototype.reduce.call(
+        links,
+        (results, link) => {
+          if (
+            results &&
+            Object.prototype.hasOwnProperty.call(
+              Object.getPrototypeOf(results),
+              'push'
+            ) &&
+            link.protocol &&
+            link.protocol.match(/https?:/) &&
+            link.rel !== 'nofollow' &&
+            link.hostname === url.hostname &&
+            extensions.test(link.pathname)
+          ) {
+            results.push(new URL(link.href.split('#')[0]))
+          }
+
+          return results
+        },
+        []
+      )
+
+      await this.emit('goto', {
+        page,
+        url,
+        html,
+        cookies,
+        scripts,
+        meta,
+        js,
+        links: reducedLinks
+      })
+
+      await page.close()
+
+      this.log('Page closed')
+
+      return reducedLinks
+    } catch (error) {
+      this.error(error)
+    }
   }
 
-  crawl(pageUrl, index = 1, depth = 1) {
-    pageUrl.canonical = `${pageUrl.protocol}//${pageUrl.host}${pageUrl.pathname}`;
-
-    return new Promise(async (resolve) => {
-      let links;
-
-      try {
-        links = await this.fetch(pageUrl, index, depth);
-      } catch (error) {
-        const type = error.message && errorTypes[error.message] ? error.message : 'UNKNOWN_ERROR';
-        const message = error.message && errorTypes[error.message] ? errorTypes[error.message] : 'Unknown error';
-
-        this.analyzedPageUrls[pageUrl.href].error = {
-          type,
-          message,
-        };
-
-        this.wappalyzer.log(`${message}; url: ${pageUrl.href}`, 'driver', 'error');
+  async analyze(url = this.originalUrl, index = 1, depth = 1) {
+    try {
+      if (this.recursive) {
+        await sleep(this.options.delay * index)
       }
+
+      if (this.options.probe) {
+        await this.probe(url)
+      }
+
+      const links = await this.goto(url)
 
       if (links && this.options.recursive && depth < this.options.maxDepth) {
-        await this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
+        await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+      }
+    } catch (error) {
+      this.analyzedUrls[url.href] = {
+        status: 0,
+        error: error.message || error.toString()
       }
 
-      return resolve({
-        urls: this.analyzedPageUrls,
-        applications: this.apps,
-        meta: this.meta,
-      });
-    });
-  }
-
-  chunk(links, depth, chunk = 0) {
-    if (links.length === 0) {
-      return Promise.resolve();
+      this.error(error)
     }
 
-    const chunked = links.splice(0, this.options.chunkSize);
+    const results = {
+      urls: this.analyzedUrls,
+      technologies: resolve(this.detections).map(
+        ({
+          slug,
+          name,
+          confidence,
+          version,
+          icon,
+          website,
+          cpe,
+          categories
+        }) => ({
+          slug,
+          name,
+          confidence,
+          version: version || null,
+          icon,
+          website,
+          cpe,
+          categories: categories.map(({ id, slug, name }) => ({
+            id,
+            slug,
+            name
+          }))
+        })
+      )
+    }
 
-    return new Promise(async (resolve) => {
-      await Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)));
+    await this.emit('analyze', results)
 
-      await this.chunk(links, depth, chunk + 1);
-
-      resolve();
-    });
+    return results
   }
 
-  timer(message, scope) {
-    const time = new Date().getTime();
-    const sinceStart = `${Math.round((time - this.time.start) / 10) / 100}s`;
-    const sinceLast = `${Math.round((time - scope.last) / 10) / 100}s`;
+  async probe(url) {
+    const files = {
+      robots: '/robots.txt'
+    }
 
-    this.wappalyzer.log(`[timer] ${message}; lapsed: ${sinceLast} / ${sinceStart}`, 'driver');
+    for (const file of Object.keys(files)) {
+      const path = files[file]
 
-    scope.last = time;
+      try {
+        await sleep(this.options.delay)
+
+        const body = await get(new URL(path, url.href))
+
+        this.log(`get ${path}: ok`)
+
+        this.onDetect(analyze({ [file]: body }))
+      } catch (error) {
+        this.error(`get ${path}: ${error.message || error}`)
+      }
+    }
+  }
+
+  async batch(links, depth, batch = 0) {
+    if (links.length === 0) {
+      return
+    }
+
+    const batched = links.splice(0, this.options.batchSize)
+
+    await Promise.all(
+      batched.map((link, index) => this.analyze(link, index, depth))
+    )
+
+    await this.batch(links, depth, batch + 1)
+  }
+
+  onDetect(detections = []) {
+    this.detections = this.detections.concat(detections)
+
+    this.detections.filter(
+      ({ technology: { name }, pattern: { regex } }, index) =>
+        this.detections.findIndex(
+          ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            name === _name && (!regex || regex.toString() === _regex.toString())
+        ) === index
+    )
+  }
+
+  async destroy() {
+    await Promise.all(
+      this.pages.map(async (page) => {
+        if (page) {
+          try {
+            await page.close()
+
+            this.log('Page closed')
+          } catch (error) {
+            // Continue
+          }
+        }
+      })
+    )
+
+    this.log('Site closed')
   }
 }
 
-module.exports = Driver;
-
-module.exports.processJs = processJs;
-module.exports.processHtml = processHtml;
+module.exports = Driver
