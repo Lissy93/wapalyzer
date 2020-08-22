@@ -11019,6 +11019,19 @@
       "script": "snap\\.svg(?:-min)?\\.js",
       "website": "http://snapsvg.io"
     },
+    "Snipcart": {
+      "cats": [6],
+      "website": "https://snipcart.com/",
+      "icon": "Snipcart.png", 
+      "cookies": {
+        "snipcart-cart": ""
+      },
+      "html": [
+        "<link [^>]*href=\".*snipcart\\.css\"",
+        "<div [^>]*id=\".*snipcart.*\""
+      ],
+      "script": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1" 
+    },
     "Snoobi": {
       "cats": [
         10
