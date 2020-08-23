@@ -984,6 +984,11 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
+g@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/g/-/g-2.0.1.tgz#0b5963ebd0ca70e3bc8c6766934a021821c8b857"
+  integrity sha1-C1lj69DKcOO8jGdmk0oCGCHIuFc=
+
 get-stdin@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
@@ -1409,6 +1414,18 @@ nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
+
+node-bin-setup@^1.0.0:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/node-bin-setup/-/node-bin-setup-1.0.6.tgz#4b5c9bb937ece702d7069b36ca78af4684677528"
+  integrity sha512-uPIxXNis1CRbv1DwqAxkgBk5NFV3s7cMN/Gf556jSw6jBvV7ca4F9lRL/8cALcZecRibeqU+5dFYqFFmzv5a0Q==
+
+node@^14.8.0:
+  version "14.8.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-14.8.0.tgz#c9a165d8130c9901793f834113c5bbb10c308778"
+  integrity sha512-F3hndEpkL32EaxbNawsUdMjQfPGAWvIlK8lMdQykI4Rp3dw/p9X1e0OFa0Tyvz1+hGefgT6lQWJ8wj1g/YvO9g==
+  dependencies:
+    node-bin-setup "^1.0.0"
 
 normalize-package-data@^2.3.2:
   version "2.5.0"
