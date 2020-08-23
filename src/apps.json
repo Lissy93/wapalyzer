@@ -13400,7 +13400,10 @@
         "generator": "^WordPress ?([\\d.]+)?\\;version:\\1",
         "shareaholic:wp_version": ""
       },
-      "script": "/wp-(?:content|includes)/",
+      "script": [
+        "/wp-(?:content|includes)/",
+        "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
+      ],
       "website": "https://wordpress.org"
     },
     "WordPress Super Cache": {
