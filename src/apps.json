@@ -3486,12 +3486,14 @@
       "cats": [
         10
       ],
-      "headers": {
-        "X-dynaTrace-JS-Agent": ""
-      },
       "icon": "Dynatrace.png",
-      "script": "dtagent.*\\.js",
-      "website": "http://dynatrace.com"
+      "js": {
+        "dtrum": ""
+      },
+      "cookies": {
+        "dtCookie1": ""
+      },
+      "website": "https://www.dynatrace.com"
     },
     "EC-CUBE": {
       "cats": [
