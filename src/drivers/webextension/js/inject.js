@@ -19,7 +19,9 @@
                 .split('.')
                 .reduce(
                   (value, method) =>
-                    value && value.hasOwnProperty(method)
+                    value &&
+                    value instanceof Object &&
+                    value.hasOwnProperty(method)
                       ? value[method]
                       : undefined,
                   window

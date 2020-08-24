@@ -1650,7 +1650,7 @@
       "meta": {
         "generator": "^Blogger$"
       },
-      "url": "^https?://[^/]+\\.blogspot\\.com",
+      "url": "^https?://[^/]+\\.(blogspot|blogger)\\.com",
       "website": "http://www.blogger.com"
     },
     "Bloomreach": {
@@ -3373,6 +3373,19 @@
       "script": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "website": "http://www.google.com/dfp"
     },
+    "Duopana": {
+      "cats": [
+        1,
+        11,
+        51,
+        53,
+        61
+      ],
+      "html": "(?:<!-- \/*BeraCode script)",
+      "icon": "Duopana.svg",
+      "script": "\\*berajs.beracode.com\\*",
+      "website": "https://duopana.com/"
+    },
     "DovetailWRP": {
       "cats": [
         1
@@ -3473,12 +3486,14 @@
       "cats": [
         10
       ],
-      "headers": {
-        "X-dynaTrace-JS-Agent": ""
-      },
       "icon": "Dynatrace.png",
-      "script": "dtagent.*\\.js",
-      "website": "http://dynatrace.com"
+      "js": {
+        "dtrum": ""
+      },
+      "cookies": {
+        "dtCookie1": ""
+      },
+      "website": "https://www.dynatrace.com"
     },
     "EC-CUBE": {
       "cats": [
@@ -5442,6 +5457,9 @@
       "js": {
         "_hsq": "",
         "hubspot": ""
+      },
+      "meta": {
+        "generator": "HubSpot"
       },
       "website": "https://www.hubspot.com"
     },
@@ -10141,14 +10159,6 @@
       "script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "https://rubyonrails.org"
     },
-    "Ruxit": {
-      "cats": [
-        10
-      ],
-      "icon": "Ruxit.png",
-      "script": "ruxitagentjs",
-      "website": "http://ruxit.com"
-    },
     "RxJS": {
       "cats": [
         12
@@ -10436,6 +10446,16 @@
       ],
       "icon": "Scala.png",
       "website": "http://www.scala-lang.org"
+    },
+    "Scaleway": {
+      "cats": [
+        19
+      ],
+      "icon": "Scaleway.png",
+      "website": "https://www.scaleway.com/",
+      "html": [
+        "scw.cloud"
+      ]
     },
     "Scenari": {
       "cats": [
@@ -11100,6 +11120,19 @@
       },
       "script": "snap\\.svg(?:-min)?\\.js",
       "website": "http://snapsvg.io"
+    },
+    "Snipcart": {
+      "cats": [6],
+      "website": "https://snipcart.com/",
+      "icon": "Snipcart.png", 
+      "cookies": {
+        "snipcart-cart": ""
+      },
+      "html": [
+        "<link [^>]*href=\".*snipcart\\.css\"",
+        "<div [^>]*id=\".*snipcart.*\""
+      ],
+      "script": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1" 
     },
     "Snoobi": {
       "cats": [
@@ -13361,7 +13394,10 @@
         "generator": "^WordPress ?([\\d.]+)?\\;version:\\1",
         "shareaholic:wp_version": ""
       },
-      "script": "/wp-(?:content|includes)/",
+      "script": [
+        "/wp-(?:content|includes)/",
+        "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
+      ],
       "website": "https://wordpress.org"
     },
     "WordPress Super Cache": {
@@ -15301,6 +15337,17 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
+    },
+    "hantana": {
+      "cats": [
+        10
+      ],
+      "icon": "hantana.png",
+      "js": {
+        "Hantana": ""
+      },
+      "script": "//hantana\\.org/widget",
+      "website": "https://hantana.org/"
     }
   },
   "categories": {
