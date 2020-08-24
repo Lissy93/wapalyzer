@@ -7,7 +7,7 @@ const {
   setCategories,
   analyze,
   analyzeManyToMany,
-  resolve
+  resolve,
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open } = Utils
 
@@ -34,25 +34,25 @@ const Driver = {
               ({
                 technology: name,
                 pattern: { regex, confidence },
-                version
+                version,
               }) => ({
                 technology: Wappalyzer.technologies.find(
                   ({ name: _name }) => name === _name
                 ),
                 pattern: {
                   regex: new RegExp(regex, 'i'),
-                  confidence
+                  confidence,
                 },
-                version
+                version,
               })
-            )
-          }
+            ),
+          },
         }),
         {}
       ),
       tabs: {},
       robots: await getOption('robots', {}),
-      ads: await getOption('ads', [])
+      ads: await getOption('ads', []),
     }
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
@@ -126,7 +126,7 @@ const Driver = {
     try {
       return fetch(url, {
         method: 'POST',
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       })
     } catch (error) {
       throw new Error(error.message || error.toString())
@@ -194,7 +194,7 @@ const Driver = {
 
       try {
         const [tab] = await promisify(chrome.tabs, 'query', {
-          url: [request.url]
+          url: [request.url],
         })
 
         if (tab) {
@@ -233,12 +233,12 @@ const Driver = {
 
       items.cookies = (
         await promisify(chrome.cookies, 'getAll', {
-          domain: `.${hostname}`
+          domain: `.${hostname}`,
         })
       ).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value]
+          [name]: [value],
         }),
         {}
       )
@@ -288,9 +288,9 @@ const Driver = {
       ...(Driver.cache.hostnames[hostname] || {
         url: `${protocol}//${hostname}`,
         detections: [],
-        hits: incrementHits ? 0 : 1
+        hits: incrementHits ? 0 : 1,
       }),
-      dateTime: Date.now()
+      dateTime: Date.now(),
     })
 
     // Remove duplicates
@@ -336,17 +336,17 @@ const Driver = {
                 ({
                   technology: { name: technology },
                   pattern: { regex, confidence },
-                  version
+                  version,
                 }) => ({
                   technology,
                   pattern: {
                     regex: regex.source,
-                    confidence
+                    confidence,
                   },
-                  version
+                  version,
                 })
-              )
-          }
+              ),
+          },
         }),
         {}
       )
@@ -402,7 +402,9 @@ const Driver = {
           {
             tabId,
             text:
-              badge && technologies.length ? technologies.length.toString() : ''
+              badge && technologies.length
+                ? technologies.length.toString()
+                : '',
           },
           () => {}
         )
@@ -416,7 +418,7 @@ const Driver = {
                   ? `converted/${icon.replace(/\.svg$/, '.png')}`
                   : icon
               }`
-            )
+            ),
           },
           () => {}
         )
@@ -430,7 +432,7 @@ const Driver = {
   async getDetections() {
     const [{ id, url }] = await promisify(chrome.tabs, 'query', {
       active: true,
-      currentWindow: true
+      currentWindow: true,
     })
 
     if (await Driver.isDisabledDomain(url)) {
@@ -462,12 +464,13 @@ const Driver = {
 
     try {
       Driver.cache.robots[hostname] = await Promise.race([
+        // eslint-disable-next-line no-async-promise-executor
         new Promise(async (resolve) => {
           const response = await fetch(
             `http${secure ? 's' : ''}://${hostname}/robots.txt`,
             {
               redirect: 'follow',
-              mode: 'no-cors'
+              mode: 'no-cors',
             }
           )
 
@@ -497,7 +500,7 @@ const Driver = {
             }, [])
           )
         }),
-        new Promise((resolve) => setTimeout(() => resolve(''), 5000))
+        new Promise((resolve) => setTimeout(() => resolve(''), 5000)),
       ])
 
       Driver.cache.robots = Object.keys(Driver.cache.robots)
@@ -505,7 +508,7 @@ const Driver = {
         .reduce(
           (cache, hostname) => ({
             ...cache,
-            [hostname]: Driver.cache.robots[hostname]
+            [hostname]: Driver.cache.robots[hostname],
           }),
           {}
         )
@@ -578,7 +581,7 @@ const Driver = {
                   if (confidence === 100) {
                     technologies[name] = {
                       version,
-                      hits
+                      hits,
                     }
                   }
 
@@ -587,8 +590,8 @@ const Driver = {
                 {}
               ),
               meta: {
-                language
-              }
+                language,
+              },
             }
           }
 
@@ -613,7 +616,7 @@ const Driver = {
         await setOption('ads', (Driver.cache.ads = []))
       }
     }
-  }
+  },
 }
 
 Driver.init()

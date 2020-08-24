@@ -322,21 +322,21 @@
         10,
         61
       ],
+      "icon": "Adobe Analytics.svg",
       "js": {
         "s_c_il.0._c": "s_c",
-        "s_c_il.1._c": "s_c",
-        "s_c_il.2._c": "s_c",
-        "s_c_il.3._c": "s_c",
-        "s_c_il.4._c": "s_c",
-        "s_c_il.5._c": "s_c",
         "s_c_il.0.constructor.name": "AppMeasurement",
+        "s_c_il.1._c": "s_c",
         "s_c_il.1.constructor.name": "AppMeasurement",
+        "s_c_il.2._c": "s_c",
         "s_c_il.2.constructor.name": "AppMeasurement",
+        "s_c_il.3._c": "s_c",
         "s_c_il.3.constructor.name": "AppMeasurement",
+        "s_c_il.4._c": "s_c",
         "s_c_il.4.constructor.name": "AppMeasurement",
+        "s_c_il.5._c": "s_c",
         "s_c_il.5.constructor.name": "AppMeasurement"
       },
-      "icon": "Adobe Analytics.svg",
       "website": "https://www.adobe.com/analytics/adobe-analytics.html"
     },
     "Adobe ColdFusion": {
@@ -377,20 +377,20 @@
         "<div[^>]+data-component-path=\"[^\"+]jcr:",
         "<div class=\"[^\"]*aem-Grid"
       ],
-      "icon": "Adobe Experience Manager.svg",
+      "icon": "Adobe.svg",
       "implies": "Java",
       "script": [
         "/etc/designs/",
         "/etc/clientlibs/",
         "/etc\\.clientlibs/"
       ],
-      "icon": "Adobe.svg",
       "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
     "Adobe Experience Platform Identity Service": {
       "cats": [
         61
       ],
+      "icon": "Adobe.svg",
       "js": {
         "s_c_il.0._c": "Visitor",
         "s_c_il.1._c": "Visitor",
@@ -399,7 +399,6 @@
         "s_c_il.4._c": "Visitor",
         "s_c_il.5._c": "Visitor"
       },
-      "icon": "Adobe.svg",
       "website": "https://docs.adobe.com/content/help/en/id-service/using/home.html"
     },
     "Adobe GoLive": {
@@ -437,11 +436,11 @@
         32,
         61
       ],
+      "icon": "Adobe.svg",
       "js": {
         "adobe.target": "",
         "adobe.target.VERSION": "^(.+)$\\;version:\\1"
       },
-      "icon": "Adobe.svg",
       "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
@@ -1650,7 +1649,7 @@
       "meta": {
         "generator": "^Blogger$"
       },
-      "url": "^https?://[^/]+\\.(blogspot|blogger)\\.com",
+      "url": "^https?://[^/]+\\.(?:blogspot|blogger)\\.com",
       "website": "http://www.blogger.com"
     },
     "Bloomreach": {
@@ -3373,19 +3372,6 @@
       "script": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "website": "http://www.google.com/dfp"
     },
-    "Duopana": {
-      "cats": [
-        1,
-        11,
-        51,
-        53,
-        61
-      ],
-      "html": "(?:<!-- \/*BeraCode script)",
-      "icon": "Duopana.svg",
-      "script": "\\*berajs.beracode.com\\*",
-      "website": "https://duopana.com/"
-    },
     "DovetailWRP": {
       "cats": [
         1
@@ -3466,6 +3452,19 @@
       },
       "website": "https://www.duda.co/website-builder"
     },
+    "Duopana": {
+      "cats": [
+        1,
+        11,
+        51,
+        53,
+        61
+      ],
+      "html": "(?:<!-- /*BeraCode script)",
+      "icon": "Duopana.svg",
+      "script": "\\*berajs.beracode.com\\*",
+      "website": "https://duopana.com/"
+    },
     "Dynamicweb": {
       "cats": [
         1,
@@ -3486,12 +3485,12 @@
       "cats": [
         10
       ],
+      "cookies": {
+        "dtCookie1": ""
+      },
       "icon": "Dynatrace.png",
       "js": {
         "dtrum": ""
-      },
-      "cookies": {
-        "dtCookie1": ""
       },
       "website": "https://www.dynatrace.com"
     },
@@ -3943,16 +3942,6 @@
       "icon": "Facebook.svg",
       "script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
-    },
-    "Login with Amazon": {
-      "cats": [
-        69
-      ],
-      "icon": "Amazon.svg",
-      "js": {
-        "onAmazonLoginReady": ""
-      },
-      "website": "https://developer.amazon.com/apps-and-games/login-with-amazon"
     },
     "Facebook Sign-in": {
       "cats": [
@@ -6893,6 +6882,16 @@
       },
       "script": "lodash.*\\.js",
       "website": "http://www.lodash.com"
+    },
+    "Login with Amazon": {
+      "cats": [
+        69
+      ],
+      "icon": "Amazon.svg",
+      "js": {
+        "onAmazonLoginReady": ""
+      },
+      "website": "https://developer.amazon.com/apps-and-games/login-with-amazon"
     },
     "Logitech Media Server": {
       "cats": [
@@ -10451,11 +10450,11 @@
       "cats": [
         19
       ],
-      "icon": "Scaleway.png",
-      "website": "https://www.scaleway.com/",
       "html": [
         "scw.cloud"
-      ]
+      ],
+      "icon": "Scaleway.png",
+      "website": "https://www.scaleway.com/"
     },
     "Scenari": {
       "cats": [
@@ -11057,6 +11056,22 @@
       },
       "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
     },
+    "Smartstore": {
+      "cats": [
+        1,
+        6
+      ],
+      "cookies": {
+        "SMARTSTORE.VISITOR": ""
+      },
+      "html": "<!--Powered by Smartstore - https://www\\.smartstore\\.com-->",
+      "icon": "Smartstore.png",
+      "implies": "Microsoft ASP.NET",
+      "meta": {
+        "generator": "^Smartstore (.+)$\\;version:\\1"
+      },
+      "website": "https://www.smartstore.com"
+    },
     "Smartstore biz": {
       "cats": [
         6
@@ -11064,40 +11079,23 @@
       "icon": "Smartstore.biz.png",
       "script": "smjslib\\.js",
       "website": "http://smartstore.com"
-    }
-    ,
-		"Smartstore.NET": {
-			"cats": [
-				1,
-				6
-			],
-			"cookies": {
+    },
+    "Smartstore.NET": {
+      "cats": [
+        1,
+        6
+      ],
+      "cookies": {
         "SMARTSTORE.VISITOR": ""
-        },
-			"html": "<!--Powered by SmartStore\\.NET - https://www\\.smartstore\\.com-->",
-			"icon": "smartstore.png",
-			"implies": "Microsoft ASP.NET",
-			"meta": {
-				"generator": "^SmartStore.NET (.+)$\\;version:\\1"
-			 },
-			"website": "https://www.smartstore.com"
-		},
-		"Smartstore": {
-			"cats": [
-				1,
-				6
-			],
-			"cookies": {
-        "SMARTSTORE.VISITOR": ""
-        },
-			"html": "<!--Powered by Smartstore - https://www\\.smartstore\\.com-->",
-			"icon": "Smartstore.png",
-			"implies": "Microsoft ASP.NET",
-			"meta": {
-				"generator": "^Smartstore (.+)$\\;version:\\1"
-			 },
-			"website": "https://www.smartstore.com"
-		},
+      },
+      "html": "<!--Powered by SmartStore\\.NET - https://www\\.smartstore\\.com-->",
+      "icon": "smartstore.png",
+      "implies": "Microsoft ASP.NET",
+      "meta": {
+        "generator": "^SmartStore.NET (.+)$\\;version:\\1"
+      },
+      "website": "https://www.smartstore.com"
+    },
     "Snap": {
       "cats": [
         18,
@@ -11122,9 +11120,9 @@
       "website": "http://snapsvg.io"
     },
     "Snipcart": {
-      "cats": [6],
-      "website": "https://snipcart.com/",
-      "icon": "Snipcart.png", 
+      "cats": [
+        6
+      ],
       "cookies": {
         "snipcart-cart": ""
       },
@@ -11132,7 +11130,9 @@
         "<link [^>]*href=\".*snipcart\\.css\"",
         "<div [^>]*id=\".*snipcart.*\""
       ],
-      "script": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1" 
+      "icon": "Snipcart.png",
+      "script": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
+      "website": "https://snipcart.com/"
     },
     "Snoobi": {
       "cats": [
@@ -14336,6 +14336,17 @@
       "script": "https://hcaptcha.com/([\\d]+?)/api.js\\;version:\\1",
       "website": "https://www.hcaptcha.com/"
     },
+    "hantana": {
+      "cats": [
+        10
+      ],
+      "icon": "hantana.png",
+      "js": {
+        "Hantana": ""
+      },
+      "script": "//hantana\\.org/widget",
+      "website": "https://hantana.org/"
+    },
     "iEXExchanger": {
       "cats": [
         1
@@ -15337,17 +15348,6 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
-    },
-    "hantana": {
-      "cats": [
-        10
-      ],
-      "icon": "hantana.png",
-      "js": {
-        "Hantana": ""
-      },
-      "script": "//hantana\\.org/widget",
-      "website": "https://hantana.org/"
     }
   },
   "categories": {

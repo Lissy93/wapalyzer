@@ -70,7 +70,7 @@ const Content = {
       Content.driver('onContentLoad', [
         location.href,
         { html, scripts, meta },
-        language
+        language,
       ])
 
       Content.onGetTechnologies(await Content.driver('getTechnologies'))
@@ -85,7 +85,7 @@ const Content = {
         {
           source: 'content.js',
           func,
-          args: args ? (Array.isArray(args) ? args : [args]) : []
+          args: args ? (Array.isArray(args) ? args : [args]) : [],
         },
         (response) => {
           chrome.runtime.lastError
@@ -115,7 +115,7 @@ const Content = {
         chrome.runtime.sendMessage({
           source: 'content.js',
           func: 'analyzeJs',
-          args: [location.href.split('#')[0], data.wappalyzer.js]
+          args: [location.href.split('#')[0], data.wappalyzer.js],
         })
 
         script.remove()
@@ -127,15 +127,15 @@ const Content = {
         wappalyzer: {
           technologies: technologies
             .filter(({ js }) => Object.keys(js).length)
-            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        }
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) })),
+        },
       })
     }
 
     script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
 
     document.body.appendChild(script)
-  }
+  },
 }
 
 if (/complete|interactive|loaded/.test(document.readyState)) {

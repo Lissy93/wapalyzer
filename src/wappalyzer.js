@@ -69,7 +69,7 @@ const Wappalyzer = {
         ({
           technology: { name, slug, categories, icon, website, cpe },
           confidence,
-          version
+          version,
         }) => ({
           name,
           slug,
@@ -78,7 +78,7 @@ const Wappalyzer = {
           version,
           icon,
           website,
-          cpe
+          cpe,
         })
       )
   },
@@ -166,7 +166,7 @@ const Wappalyzer = {
             resolved.push({
               technology: implied,
               confidence: Math.min(confidence, _confidence),
-              version: ''
+              version: '',
             })
 
             done = false
@@ -197,7 +197,7 @@ const Wappalyzer = {
             om(technology, 'scripts', scripts),
             mm(technology, 'cookies', cookies),
             mm(technology, 'meta', meta),
-            mm(technology, 'headers', headers)
+            mm(technology, 'headers', headers),
           ])
         )
       ).filter((technology) => technology)
@@ -230,7 +230,7 @@ const Wappalyzer = {
         excludes,
         icon,
         website,
-        cpe
+        cpe,
       } = data[name]
 
       technologies.push({
@@ -247,14 +247,14 @@ const Wappalyzer = {
         js: transform(js, true),
         implies: transform(implies).map(({ value, confidence }) => ({
           name: value,
-          confidence
+          confidence,
         })),
         excludes: transform(excludes).map(({ value }) => ({
-          name: value
+          name: value,
         })),
         icon: icon || 'default.svg',
         website: website || null,
-        cpe: cpe || null
+        cpe: cpe || null,
       })
 
       return technologies
@@ -273,7 +273,7 @@ const Wappalyzer = {
         categories.push({
           id: parseInt(id, 10),
           slug: Wappalyzer.slugify(category.name),
-          ...category
+          ...category,
         })
 
         return categories
@@ -324,7 +324,7 @@ const Wappalyzer = {
           value,
           regex,
           confidence: parseInt(confidence || 100, 10),
-          version: version || ''
+          version: version || '',
         }
       })
 
@@ -346,7 +346,7 @@ const Wappalyzer = {
         technologies.push({
           technology,
           pattern,
-          version: Wappalyzer.resolveVersion(pattern, value)
+          version: Wappalyzer.resolveVersion(pattern, value),
         })
       }
 
@@ -369,7 +369,7 @@ const Wappalyzer = {
           technologies.push({
             technology,
             pattern,
-            version: Wappalyzer.resolveVersion(pattern, value)
+            version: Wappalyzer.resolveVersion(pattern, value),
           })
         }
       })
@@ -395,7 +395,7 @@ const Wappalyzer = {
             technologies.push({
               technology,
               pattern,
-              version: Wappalyzer.resolveVersion(pattern, value)
+              version: Wappalyzer.resolveVersion(pattern, value),
             })
           }
         })
@@ -403,7 +403,7 @@ const Wappalyzer = {
 
       return technologies
     }, [])
-  }
+  },
 }
 
 if (typeof module !== 'undefined') {

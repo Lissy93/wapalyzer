@@ -21,12 +21,13 @@ const Options = {
       ['dynamicIcon', false],
       ['badge', true],
       ['tracking', true],
-      ['themeMode', false]
+      ['themeMode', false],
     ].map(async ([option, defaultValue]) => {
       const el = document
         .querySelector(
-          `[data-i18n="option${option.charAt(0).toUpperCase() +
-            option.slice(1)}"]`
+          `[data-i18n="option${
+            option.charAt(0).toUpperCase() + option.slice(1)
+          }"]`
         )
         .parentNode.querySelector('input')
 
@@ -50,7 +51,7 @@ const Options = {
         {
           source: 'content.js',
           func,
-          args: args ? (Array.isArray(args) ? args : [args]) : []
+          args: args ? (Array.isArray(args) ? args : [args]) : [],
         },
         (response) => {
           chrome.runtime.lastError
@@ -59,7 +60,7 @@ const Options = {
         }
       )
     })
-  }
+  },
 }
 
 if (/complete|interactive|loaded/.test(document.readyState)) {

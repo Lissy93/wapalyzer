@@ -9,7 +9,7 @@ const {
   getOption,
   setOption,
   promisify,
-  sendMessage
+  sendMessage,
 } = Utils
 
 function setDisabledDomain(enabled) {
@@ -83,7 +83,7 @@ const Popup = {
     // Alert
     const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
-      currentWindow: true
+      currentWindow: true,
     })
 
     if (tabs && tabs.length) {
@@ -168,7 +168,7 @@ const Popup = {
           technology.categories.forEach((category) => {
             categories[category.id] = categories[category.id] || {
               ...category,
-              technologies: []
+              technologies: [],
             }
 
             categories[category.id].technologies.push(technology)
@@ -296,7 +296,7 @@ const Popup = {
     )
 
     i18n()
-  }
+  },
 }
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
