@@ -10,7 +10,7 @@ const {
   setCategories,
   analyze,
   analyzeManyToMany,
-  resolve
+  resolve,
 } = Wappalyzer
 
 const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
@@ -18,10 +18,11 @@ const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
 let puppeteer
 let chromiumArgs = [
   '--no-sandbox',
-  '--headless',
   '--disable-gpu',
   '--ignore-certificate-errors',
-  '--disable-web-security'
+  '--allow-running-insecure-content',
+  '--disable-web-security',
+  '--user-data-dir=/tmp/chromium',
 ]
 let chromiumBin = CHROMIUM_BIN
 
@@ -101,7 +102,7 @@ class Driver {
       maxWait: 30000,
       recursive: false,
       probe: false,
-      ...options
+      ...options,
     }
 
     this.options.debug = Boolean(+this.options.debug)
@@ -123,7 +124,7 @@ class Driver {
     try {
       this.browser = await puppeteer.launch({
         args: chromiumArgs,
-        executablePath: await chromiumBin
+        executablePath: await chromiumBin,
       })
 
       this.browser.on('disconnected', async () => {
@@ -172,7 +173,7 @@ class Site {
 
     this.options.headers = {
       ...this.options.headers,
-      ...headers
+      ...headers,
     }
 
     this.driver = driver
@@ -240,7 +241,7 @@ class Site {
     this.log(`Navigate to ${url}`, 'page')
 
     this.analyzedUrls[url.href] = {
-      status: 0
+      status: 0,
     }
 
     if (!this.browser) {
@@ -272,7 +273,7 @@ class Site {
         } else {
           const headers = {
             ...request.headers(),
-            ...this.options.headers
+            ...this.options.headers,
           }
 
           await this.emit('request', { page, request })
@@ -288,7 +289,7 @@ class Site {
       try {
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
-            status: response.status()
+            status: response.status(),
           }
 
           const rawHeaders = response.headers()
@@ -299,7 +300,7 @@ class Site {
               ...(headers[key] || []),
               ...(Array.isArray(rawHeaders[key])
                 ? rawHeaders[key]
-                : [rawHeaders[key]])
+                : [rawHeaders[key]]),
             ]
           })
 
@@ -330,7 +331,7 @@ class Site {
     try {
       await Promise.race([
         this.timeout(),
-        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
       ])
 
       await sleep(1000)
@@ -347,11 +348,11 @@ class Site {
                 href,
                 pathname,
                 protocol,
-                rel
+                rel,
               })
             )
           )
-        ).jsonValue()
+        ).jsonValue(),
       ])
 
       // Script tags
@@ -363,7 +364,7 @@ class Site {
               .map(({ src }) => src)
               .filter((src) => src)
           )
-        ).jsonValue()
+        ).jsonValue(),
       ])
 
       // Meta tags
@@ -385,7 +386,7 @@ class Site {
               {}
             )
           )
-        ).jsonValue()
+        ).jsonValue(),
       ])
 
       // JavaScript
@@ -411,7 +412,7 @@ class Site {
                     value:
                       typeof value === 'string' || typeof value === 'number'
                         ? value
-                        : !!value
+                        : !!value,
                   })
                 }
               })
@@ -422,14 +423,14 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        )
+        ),
       ])
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value]
+          [name]: [value],
         }),
         {}
       )
@@ -475,7 +476,7 @@ class Site {
           cookies,
           html,
           scripts,
-          meta
+          meta,
         })
       )
 
@@ -510,7 +511,7 @@ class Site {
         scripts,
         meta,
         js,
-        links: reducedLinks
+        links: reducedLinks,
       })
 
       await page.close()
@@ -541,7 +542,7 @@ class Site {
     } catch (error) {
       this.analyzedUrls[url.href] = {
         status: 0,
-        error: error.message || error.toString()
+        error: error.message || error.toString(),
       }
 
       this.error(error)
@@ -558,7 +559,7 @@ class Site {
           icon,
           website,
           cpe,
-          categories
+          categories,
         }) => ({
           slug,
           name,
@@ -570,10 +571,10 @@ class Site {
           categories: categories.map(({ id, slug, name }) => ({
             id,
             slug,
-            name
-          }))
+            name,
+          })),
         })
-      )
+      ),
     }
 
     await this.emit('analyze', results)
@@ -583,7 +584,7 @@ class Site {
 
   async probe(url) {
     const files = {
-      robots: '/robots.txt'
+      robots: '/robots.txt',
     }
 
     for (const file of Object.keys(files)) {
