@@ -1702,7 +1702,7 @@
         "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1"
       ],
       "implies": [
-        "jQuery"
+        "jQuery\\;confidence:50"
       ],
       "icon": "Bootstrap.svg",
       "js": {
