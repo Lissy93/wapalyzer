@@ -95,6 +95,7 @@
         "<link rel=\"amphtml\""
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
+      "description": "AMP, originally created by Google, is an open source HTML framework developed by the AMP Open Source Project. AMP is designed to help webpages load faster.",
       "website": "https://www.amp.dev"
     },
     "AMP Plugin": {
@@ -162,7 +163,7 @@
       "script": "acsbap\\.com/.*/acsb\\.js",
       "website": "https://accessibe.com/"
     },
-    "Acquia Cloud": {
+    "Cloud Platform": {
       "cats": [
         62
       ],
@@ -176,6 +177,7 @@
         "Percona",
         "Amazon EC2"
       ],
+      "description": "Cloud Platform is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
       "website": "https://www.acquia.com/"
     },
     "Act-On": {
@@ -384,6 +386,7 @@
         "/etc/clientlibs/",
         "/etc\\.clientlibs/"
       ],
+      "description": "Adobe Experience Manager (AEM) is a content management solution for building websites, mobile apps and forms."
       "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
     "Adobe Experience Platform Identity Service": {
@@ -551,6 +554,7 @@
         "portal\\.afterpay\\.com",
         "static\\.afterpay\\.com"
       ],
+      "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly installments.",
       "website": "https://www.afterpay.com/"
     },
     "Ahoy": {
@@ -573,6 +577,7 @@
       ],
       "icon": "aircall.png",
       "script": "^https?://cdn\\.aircall\\.io/",
+      "description": "Aircall is a cloud-based phone system for customer support and sales teams."
       "website": "http://aircall.io"
     },
     "Airee": {
@@ -603,6 +608,7 @@
         "X-Akamai-Transformed": ""
       },
       "icon": "akamai.svg",
+      "description": "Akamai is global content delivery network (CDN) services provider for media and software delivery, and cloud security solutions.",
       "website": "http://akamai.com"
     },
     "Akamai Bot Manager": {
@@ -653,6 +659,7 @@
         "AlgoliaSearch": "",
         "algoliasearch.version": "^(.+)$\\;version:\\1"
       },
+      "description": "Algolia offers a hosted web search product delivering real-time results.",
       "website": "http://www.algolia.com"
     },
     "All in One SEO Pack": {
@@ -736,6 +743,7 @@
       },
       "icon": "Amazon-Cloudfront.svg",
       "implies": "Amazon Web Services",
+      "description": "Amazon CloudFront is a content delivery network offered by Amazon Web Services.",
       "website": "http://aws.amazon.com/cloudfront/"
     },
     "Amazon EC2": {
@@ -747,6 +755,7 @@
       },
       "icon": "aws-ec2.svg",
       "implies": "Amazon Web Services",
+      "description": "Amazon Elastic Compute Cloud is a part of Amazon.com's cloud-computing platform, Amazon Web Services, that allows users to rent virtual computers on which to run their own computer applications.",
       "website": "http://aws.amazon.com/ec2/"
     },
     "Amazon ECS": {
@@ -787,6 +796,7 @@
         "/amazonpayments(?:\\.min)?\\.js",
         "static-[^.]\\.payments-amazon\\.com/OffAmazonPayments"
       ],
+      "description": "Amazon Pay is an online payments processing service that is owned by Amazon. It lets you use the payment methods associated with your Amazon account to make payments for goods and services.",
       "website": "https://pay.amazon.com"
     },
     "Amazon S3": {
@@ -805,6 +815,7 @@
         62
       ],
       "icon": "aws.svg",
+      "description": "Amazon Web Services (AWS) is a comprehensive cloud services platform offering compute power, database storage, content delivery and other functionality."
       "website": "https://aws.amazon.com/"
     },
     "Amber": {
@@ -903,6 +914,7 @@
         "ng.coreTokens": "",
         "ng.probe": ""
       },
+      "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google."
       "website": "https://angular.io"
     },
     "Angular Material": {
@@ -1098,6 +1110,7 @@
         "<script id=\"apple-pay"
       ],
       "icon": "Apple.svg",
+      "description": "Apple Pay is a mobile payment and digital wallet service by Apple that allows users to make payments in person, in iOS apps, and on the web.",
       "website": "https://www.apple.com/apple-pay"
     },
     "Apple Sign-in": {
@@ -1548,6 +1561,7 @@
       "icon": "Bigcommerce.png",
       "script": "cdn\\d+\\.bigcommerce\\.com/",
       "url": "mybigcommerce\\.com",
+      "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
       "website": "http://www.bigcommerce.com"
     },
     "Bigware": {
@@ -2461,6 +2475,7 @@
       "js": {
         "CloudFlare": ""
       },
+      "description": "Cloudflare is a web-infrastructure and website-security company, providing content-delivery-network services, DDoS mitigation, Internet security, and distributed domain-name-server services.",
       "website": "http://www.cloudflare.com"
     },
     "Coaster CMS": {
@@ -2677,6 +2692,7 @@
       ],
       "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
       "icon": "Contentful.svg",
+      "description": "Contentful is an API-first content management platform to create, manage and publish content on any digital channel.",
       "website": "http://www.contentful.com"
     },
     "ConversionLab": {
@@ -2806,6 +2822,7 @@
       },
       "icon": "Craft CMS.svg",
       "implies": "Yii",
+      "description": "Craft CMS is a content management system for building bespoke websites.",
       "website": "https://craftcms.com"
     },
     "Craft Commerce": {
@@ -4822,6 +4839,7 @@
         "2mdn\\.net",
         "ad\\.ca\\.doubleclick\\.net"
       ],
+      "description": "Google AdSense is a program run by Google through which website publishers serve advertisements that are targeted to the site content and audience.",
       "website": "https://www.google.fr/adsense/start/"
     },
     "Google Analytics": {
@@ -6557,6 +6575,7 @@
       "js": {
         "Laravel": ""
       },
+      "description": "Laravel is a free, open-source PHP web framework.",
       "website": "https://laravel.com"
     },
     "Laterpay": {
@@ -7024,6 +7043,7 @@
         "skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community",
         "static/_requirejs\\;confidence:50\\;version:2"
       ],
+      "description": "Magento is an open-source ecommerce platform written in PHP.",
       "website": "https://magento.com"
     },
     "MailChimp": {
@@ -7043,6 +7063,7 @@
         "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
         "cdn-images\\.mailchimp\\.com/[^>]*\\.css"
       ],
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "website": "http://mailchimp.com"
     },
     "Make-Sense": {
@@ -7138,6 +7159,7 @@
         "Munchkin": ""
       },
       "script": "munchkin\\.marketo\\.net/munchkin\\.js",
+      "description": "Marketo develops and sells marketing automation software for account-based marketing and other marketing services and products including SEO and content creation.",
       "website": "https://www.marketo.com"
     },
     "Mastercard": {
@@ -10450,9 +10472,6 @@
       "cats": [
         19
       ],
-      "html": [
-        "scw.cloud"
-      ],
       "icon": "Scaleway.png",
       "website": "https://www.scaleway.com/"
     },
@@ -11529,7 +11548,7 @@
         "__stripe_mid": "",
         "__stripe_sid": ""
       },
-      "description": "Stripe offers online payment processing for internet businesses.",
+      "description": "Stripe offers online payment processing for internet businesses as well as fraud prevention, invoicing and subscription management.",
       "html": "<input[^>]+data-stripe",
       "icon": "Stripe.png",
       "js": {

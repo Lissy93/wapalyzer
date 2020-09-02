@@ -73,9 +73,9 @@ const Driver = {
     const upgradeMessage = await getOption('upgradeMessage', true)
 
     if (previous === null) {
-      open('https://www.wappalyzer.com/installed')
+      open('https://www.wappalyzer.com/installed/')
     } else if (version !== previous && upgradeMessage) {
-      open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+      open(`https://www.wappalyzer.com/upgraded/?v${version}`, false)
     }
 
     await setOption('version', version)
