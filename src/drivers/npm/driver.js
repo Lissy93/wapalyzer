@@ -13,7 +13,11 @@ const {
   resolve,
 } = Wappalyzer
 
-const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env
+const {
+  AWS_LAMBDA_FUNCTION_NAME,
+  CHROMIUM_BIN,
+  CHROMIUM_DATA_DIR,
+} = process.env
 
 let puppeteer
 let chromiumArgs = [
@@ -22,7 +26,7 @@ let chromiumArgs = [
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
   '--disable-web-security',
-  '--user-data-dir=/tmp/chromium',
+  `--user-data-dir=${CHROMIUM_DATA_DIR || '/tmp/chromium'}`,
 ]
 let chromiumBin = CHROMIUM_BIN
 
