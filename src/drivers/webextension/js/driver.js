@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, Wappalyzer, Utils */
+/* globals chrome, browser, Wappalyzer, Utils */
 
 const {
   setTechnologies,
@@ -57,11 +57,17 @@ const Driver = {
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
 
-    chrome.webRequest.onCompleted.addListener(
-      Driver.onWebRequestComplete,
+    chrome.webRequest.onHeadersReceived.addListener(
+      Driver.onHeadersReceived,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-      ['responseHeaders']
+      ['responseHeaders', 'blocking']
     )
+
+    // chrome.webRequest.onCompleted.addListener(
+    //  Driver.onWebRequestComplete,
+    //  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
+    //  ['responseHeaders']
+    // )
 
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
@@ -184,7 +190,7 @@ const Driver = {
    * Analyse response headers
    * @param {Object} request
    */
-  async onWebRequestComplete(request) {
+  async onHeadersReceived(request) {
     if (await Driver.isDisabledDomain(request.url)) {
       return
     }
@@ -208,11 +214,32 @@ const Driver = {
             )
           })
 
+          let certIssuer = ''
+
+          if (browser) {
+            // Currently only works in Firefox
+            // See https://stackoverflow.com/a/50484642
+            const { certificates } = await browser.webRequest.getSecurityInfo(
+              request.requestId,
+              {
+                certificateChain: true,
+                rawDER: false,
+              }
+            )
+
+            if (certificates && certificates.length) {
+              certIssuer = certificates[0].issuer.replace(
+                /^.*CN=([^,]+).*$/,
+                '$1'
+              )
+            }
+          }
+
           if (
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(request.url, analyze({ headers }))
+            await Driver.onDetect(request.url, analyze({ headers, certIssuer }))
           }
         }
       } catch (error) {
