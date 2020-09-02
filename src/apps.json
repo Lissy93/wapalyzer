@@ -586,7 +586,7 @@
       ],
       "icon": "aircall.png",
       "script": "^https?://cdn\\.aircall\\.io/",
-      "description": "Aircall is a cloud-based phone system for customer support and sales teams."
+      "description": "Aircall is a cloud-based phone system for customer support and sales teams.",
       "website": "http://aircall.io"
     },
     "Airee": {
@@ -742,6 +742,47 @@
       "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
+    "AWS Certificate Manager": {
+      "cats": [
+        70
+      ],
+      "certIssuer": "Amazon",
+      "icon": "aws.svg",
+      "implies": "Amazon Web Services",
+      "website": "https://aws.amazon.com/certificate-manager/"
+    },
+    "Let's Encrypt": {
+      "cats": [
+        70
+      ],
+      "certIssuer": "Let's Encrypt",
+      "icon": "Lets Encrypt.svg",
+      "website": "https://letsencrypt.org/"
+    },
+    "Sectigo": {
+      "cats": [
+        70
+      ],
+      "certIssuer": "Sectigo",
+      "icon": "Sectigo.svg",
+      "website": "https://sectigo.com/"
+    },
+    "DigiCert": {
+      "cats": [
+        70
+      ],
+      "certIssuer": "DigiCert",
+      "icon": "DigiCert.svg",
+      "website": "https://www.digicert.com/"
+    },
+    "Identrust": {
+      "cats": [
+        70
+      ],
+      "certIssuer": "TrustID",
+      "icon": "Identrust.svg",
+      "website": "https://www.identrust.com/"
+    },
     "Amazon Cloudfront": {
       "cats": [
         31
@@ -824,7 +865,7 @@
         62
       ],
       "icon": "aws.svg",
-      "description": "Amazon Web Services (AWS) is a comprehensive cloud services platform offering compute power, database storage, content delivery and other functionality."
+      "description": "Amazon Web Services (AWS) is a comprehensive cloud services platform offering compute power, database storage, content delivery and other functionality.",
       "website": "https://aws.amazon.com/"
     },
     "Amber": {
@@ -923,7 +964,7 @@
         "ng.coreTokens": "",
         "ng.probe": ""
       },
-      "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google."
+      "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
       "website": "https://angular.io"
     },
     "Angular Material": {
@@ -15655,6 +15696,10 @@
     },
     "69": {
       "name": "Social login",
+      "priority": 6
+    },
+    "70": {
+      "name": "SSL/TLS certificate authority",
       "priority": 6
     }
   }

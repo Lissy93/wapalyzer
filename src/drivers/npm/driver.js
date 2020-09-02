@@ -317,7 +317,13 @@ class Site {
           } else {
             responseReceived = true
 
-            this.onDetect(analyze({ headers }))
+            const certIssuer = response.securityDetails()
+              ? response.securityDetails().issuer()
+              : ''
+
+            console.log(certIssuer)
+
+            this.onDetect(analyze({ headers, certIssuer }))
 
             await this.emit('response', { page, response })
           }
