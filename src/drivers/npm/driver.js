@@ -526,7 +526,7 @@ class Site {
 
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
     try {
-      if (this.recursive) {
+      if (this.options.recursive) {
         await sleep(this.options.delay * index)
       }
 

@@ -365,9 +365,19 @@
       ],
       "icon": "adobedtm.png",
       "js": {
-        "_satellite": ""
+        "_satellite.buildDate": ""
       },
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
+    },
+    "Adobe Experience Platform Launch": {
+      "cats": [
+        42
+      ],
+      "icon": "adobe-experience-platform.png",
+      "js": {
+        "_satellite.buildInfo": ""
+      },
+      "website": "https://docs.adobelaunch.com/getting-started"
     },
     "Adobe Experience Manager": {
       "cats": [
@@ -2034,8 +2044,9 @@
       ],
       "icon": "cnzz.png",
       "js": {
-        "cnzz_protocol": "\\;confidence:99"
+        "cnzz_protocol": ""
       },
+      "script": "//[^./]+\\.cnzz\\.com/(?:z_stat.php|core)\\?",
       "website": "https://web.umeng.com/"
     },
     "CPG Dragonfly": {
@@ -2100,7 +2111,7 @@
         "EC_GLOBAL_INFO": "",
         "EC_ROOT_DOMAIN": ""
       },
-      "website": "https://www.cafe24.com"
+      "website": "https://ec.cafe24.com/"
     },
     "CakePHP": {
       "cats": [
@@ -11473,6 +11484,15 @@
       },
       "script": "statcounter\\.com/counter/counter",
       "website": "http://www.statcounter.com"
+    },
+    "Stimulus": {
+      "cats": [
+        12
+      ],
+      "description": "A modest JavaScript framework for the HTML you already have.",
+      "html": "data-controller",
+      "icon": "Stimulus.png",
+      "website": "https://stimulusjs.org/"
     },
     "Store Systems": {
       "cats": [
