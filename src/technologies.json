@@ -1,6 +1,6 @@
 {
   "$schema": "../schema.json",
-  "apps": {
+  "technologies": {
     "1C-Bitrix": {
       "cats": [
         1,
@@ -13,7 +13,7 @@
       "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
       "icon": "1C-Bitrix.png",
       "implies": "PHP",
-      "script": "1c-bitrix",
+      "scripts": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
     },
     "3dCart": {
@@ -28,7 +28,7 @@
         "X-Powered-By": "3DCART"
       },
       "icon": "3dCart.png",
-      "script": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
+      "scripts": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
       "website": "http://www.3dcart.com"
     },
     "91App": {
@@ -36,7 +36,7 @@
         6
       ],
       "icon": "91app.png",
-      "script": "https\\:\\/\\/track\\.91app\\.io\\/track\\.js\\?",
+      "scripts": "https\\:\\/\\/track\\.91app\\.io\\/track\\.js\\?",
       "website": "https://www.91app.com/"
     },
     "@sulu/web": {
@@ -59,7 +59,7 @@
       "js": {
         "AFRAME.version": "^(.+)$\\;version:\\1"
       },
-      "script": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://aframe.io"
     },
     "AD EBiS": {
@@ -80,7 +80,7 @@
         10
       ],
       "icon": "ADPLAN.png",
-      "script": [
+      "scripts": [
         "^https?://[^.]+\\.adplan7\\.com/\\;version:7",
         "^https?://(?!o\\.)\\w+\\.advg\\.jp/"
       ],
@@ -140,7 +140,7 @@
       "js": {
         "xt_click": ""
       },
-      "script": "xiti\\.com/hit\\.xiti",
+      "scripts": "xiti\\.com/hit\\.xiti",
       "website": "http://atinternet.com/en"
     },
     "AWStats": {
@@ -160,7 +160,7 @@
         68
       ],
       "icon": "Accessibe.png",
-      "script": "acsbap\\.com/.*/acsb\\.js",
+      "scripts": "acsbap\\.com/.*/acsb\\.js",
       "website": "https://accessibe.com/"
     },
     "Cloud Platform": {
@@ -195,7 +195,7 @@
         36
       ],
       "icon": "AdInfinity.png",
-      "script": "adinfinity\\.com\\.au",
+      "scripts": "adinfinity\\.com\\.au",
       "website": "http://adinfinity.com.au"
     },
     "AdOcean": {
@@ -209,7 +209,7 @@
         "ado.placement": "",
         "ado.slave": ""
       },
-      "script": [
+      "scripts": [
         "adocean\\.pl/files/js/ado\\.js",
         "adocean\\.pl\\;confidence:80"
       ],
@@ -224,7 +224,7 @@
       "js": {
         "adriver": ""
       },
-      "script": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)",
+      "scripts": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)",
       "website": "http://adriver.ru"
     },
     "AdRoll": {
@@ -236,7 +236,7 @@
         "adroll_adv_id": "",
         "adroll_pix_id": ""
       },
-      "script": "(?:a|s)\\.adroll\\.com",
+      "scripts": "(?:a|s)\\.adroll\\.com",
       "website": "http://adroll.com"
     },
     "Adally": {
@@ -244,7 +244,7 @@
         68
       ],
       "icon": "Adally.png",
-      "script": "cloudfront\\.net/.*/adally\\.js",
+      "scripts": "cloudfront\\.net/.*/adally\\.js",
       "website": "https://adally.com/"
     },
     "Adcash": {
@@ -261,7 +261,7 @@
         "ct_siteunder": "",
         "ct_tag": ""
       },
-      "script": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
+      "scripts": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
       "url": "^https?://(?:[^\\/]+\\.)?adcash\\.com/script/pop_",
       "website": "http://adcash.com"
     },
@@ -270,7 +270,7 @@
         5
       ],
       "icon": "AddShoppers.png",
-      "script": "cdn\\.shop\\.pe/widget/",
+      "scripts": "cdn\\.shop\\.pe/widget/",
       "website": "http://www.addshoppers.com"
     },
     "AddThis": {
@@ -281,7 +281,7 @@
       "js": {
         "addthis": ""
       },
-      "script": "addthis\\.com/js/",
+      "scripts": "addthis\\.com/js/",
       "website": "http://www.addthis.com"
     },
     "AddToAny": {
@@ -292,7 +292,7 @@
       "js": {
         "a2apage_init": ""
       },
-      "script": "addtoany\\.com/menu/page\\.js",
+      "scripts": "addtoany\\.com/menu/page\\.js",
       "website": "http://www.addtoany.com"
     },
     "Adminer": {
@@ -316,7 +316,7 @@
       },
       "html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
       "icon": "adnegah.png",
-      "script": "[^a-z]adnegah.*\\.js$",
+      "scripts": "[^a-z]adnegah.*\\.js$",
       "website": "https://Adnegah.net"
     },
     "Adobe Analytics": {
@@ -355,7 +355,7 @@
       "js": {
         "_cfEmails": ""
       },
-      "script": "/cfajax/",
+      "scripts": "/cfajax/",
       "url": "\\.cfm(?:$|\\?)",
       "website": "http://adobe.com/products/coldfusion-family.html"
     },
@@ -373,7 +373,7 @@
       "cats": [
         42
       ],
-      "icon": "adobe-experience-platform.png",
+      "icon": "adobe_experience_platform.png",
       "js": {
         "_satellite.buildInfo": ""
       },
@@ -390,7 +390,7 @@
         "<div class=\"[^\"]*aem-Grid"
       ],
       "implies": "Java",
-      "script": [
+      "scripts": [
         "/etc/designs/",
         "/etc/clientlibs/",
         "/etc\\.clientlibs/"
@@ -440,7 +440,7 @@
       "meta": {
         "generator": "^Adobe RoboHelp(?: ([\\d]+))?\\;version:\\1"
       },
-      "script": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
+      "scripts": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
       "website": "http://adobe.com/products/robohelp.html"
     },
     "Adobe Target": {
@@ -483,7 +483,7 @@
       "js": {
         "advst_is_above_the_fold": ""
       },
-      "script": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
+      "scripts": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
       "website": "http://www.advertstream.com"
     },
     "Adverticum": {
@@ -492,7 +492,7 @@
       ],
       "html": "<div (?:id=\"[a-zA-Z0-9_]*\" )?class=\"goAdverticum\"",
       "icon": "Adverticum.svg",
-      "script": "(?:ad\\.)?adverticum\\.net/g3\\.js",
+      "scripts": "(?:ad\\.)?adverticum\\.net/g3\\.js",
       "website": "http://adverticum.net"
     },
     "Adyen": {
@@ -515,7 +515,7 @@
         "ados": "",
         "adosResults": ""
       },
-      "script": "adzerk\\.net/ados\\.js",
+      "scripts": "adzerk\\.net/ados\\.js",
       "website": "http://adzerk.com"
     },
     "Aegea": {
@@ -550,7 +550,7 @@
         "<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy\\. Information and contribution at https://www\\.afterbuy\\.de</dd>"
       ],
       "icon": "after-buy.png",
-      "script": "shop-static\\.afterbuy\\.de",
+      "scripts": "shop-static\\.afterbuy\\.de",
       "website": "http://www.afterbuy.de"
     },
     "Afterpay": {
@@ -559,7 +559,7 @@
       ],
       "cpe": "cpe:/a:afterpay:afterpay",
       "icon": "afterpay.png",
-      "script": [
+      "scripts": [
         "portal\\.afterpay\\.com",
         "static\\.afterpay\\.com"
       ],
@@ -585,7 +585,7 @@
         52
       ],
       "icon": "aircall.png",
-      "script": "^https?://cdn\\.aircall\\.io/",
+      "scripts": "^https?://cdn\\.aircall\\.io/",
       "description": "Aircall is a cloud-based phone system for customer support and sales teams.",
       "website": "http://aircall.io"
     },
@@ -703,7 +703,7 @@
       "js": {
         "AUI": ""
       },
-      "script": "^https?://cdn\\.alloyui\\.com/",
+      "scripts": "^https?://cdn\\.alloyui\\.com/",
       "website": "http://www.alloyui.com"
     },
     "Alpine.js": {
@@ -715,7 +715,7 @@
       "js": {
         "Alpine.version": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "/alpine(?:\\.min)?\\.js"
       ],
       "website": "https://github.com/alpinejs/alpine"
@@ -842,7 +842,7 @@
       "js": {
         "AmazonPayments": ""
       },
-      "script": [
+      "scripts": [
         "/amazonpayments(?:\\.min)?\\.js",
         "static-[^.]\\.payments-amazon\\.com/OffAmazonPayments"
       ],
@@ -896,7 +896,7 @@
       "meta": {
         "generator": "(?:Ametys|Anyware Technologies)"
       },
-      "script": "ametys\\.js",
+      "scripts": "ametys\\.js",
       "website": "http://ametys.org"
     },
     "Amex Checkout": {
@@ -904,7 +904,7 @@
         41
       ],
       "icon": "amex.png",
-      "script": "aexp-static\\.com",
+      "scripts": "aexp-static\\.com",
       "website": "https://www.americanexpress.com/us/express-checkout/"
     },
     "Amiro.CMS": {
@@ -923,7 +923,7 @@
         10
       ],
       "icon": "amplitude.png",
-      "script": [
+      "scripts": [
         "cdn\\.amplitude\\.com"
       ],
       "website": "https://amplitude.com/"
@@ -939,7 +939,7 @@
       "js": {
         "AnalysysAgent": ""
       },
-      "script": "AnalysysFangzhou_JS_SDK\\.min\\.js\\?v=([\\d.]+)\\;version:\\1",
+      "scripts": "AnalysysFangzhou_JS_SDK\\.min\\.js\\?v=([\\d.]+)\\;version:\\1",
       "website": "https://ark.analysys.cn"
     },
     "Anetwork": {
@@ -947,7 +947,7 @@
         36
       ],
       "icon": "Anetwork.png",
-      "script": "static-cdn\\.anetwork\\.ir/",
+      "scripts": "static-cdn\\.anetwork\\.ir/",
       "website": "https://www.anetwork.ir"
     },
     "Angular": {
@@ -976,7 +976,7 @@
       "js": {
         "ngMaterial": ""
       },
-      "script": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://material.angularjs.org"
     },
     "AngularDart": {
@@ -1011,7 +1011,7 @@
         "angular": "",
         "angular.version.full": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "angular[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "\\bangular.{0,32}\\.js"
@@ -1051,7 +1051,7 @@
       "html": "<html[^>]* xmlns:jspwiki=",
       "icon": "Apache JSPWiki.png",
       "implies": "Apache Tomcat",
-      "script": "jspwiki",
+      "scripts": "jspwiki",
       "url": "wiki\\.jsp",
       "website": "http://jspwiki.org"
     },
@@ -1108,7 +1108,7 @@
       ],
       "html": "<script>[^>]{0,50}script src=[^>]/profiles/apigee",
       "icon": "apigee.svg",
-      "script": "/profiles/apigee",
+      "scripts": "/profiles/apigee",
       "website": "https://cloud.google.com/apigee/"
     },
     "Apollo": {
@@ -1139,7 +1139,7 @@
       "js": {
         "ADRUM.conf.agentVer": "^(.+)$\\;version:\\1"
       },
-      "script": "adrum",
+      "scripts": "adrum",
       "website": "https://appdynamics.com"
     },
     "AppNexus": {
@@ -1148,7 +1148,7 @@
       ],
       "html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
       "icon": "AppNexus.svg",
-      "script": "adnxs\\.(?:net|com)",
+      "scripts": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
     },
     "Apple Pay": {
@@ -1172,7 +1172,7 @@
         "<a[ˆ>]*appleid\\.apple\\.com/auth/authorize"
       ],
       "icon": "Apple.svg",
-      "script": "appleid.auth.js",
+      "scripts": "appleid.auth.js",
       "website": "https://developer.apple.com/sign-in-with-apple/"
     },
     "Arastta": {
@@ -1188,7 +1188,7 @@
       "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
       "icon": "Arastta.svg",
       "implies": "PHP",
-      "script": "arastta\\.js",
+      "scripts": "arastta\\.js",
       "website": "http://arastta.org"
     },
     "Arc Publishing": {
@@ -1207,7 +1207,7 @@
         35
       ],
       "icon": "arcgis_icon.png",
-      "script": [
+      "scripts": [
         "js\\.arcgis\\.com",
         "basemaps\\.arcgis\\.com"
       ],
@@ -1225,7 +1225,7 @@
       "js": {
         "ArtifactoryUpdates": ""
       },
-      "script": [
+      "scripts": [
         "wicket/resource/org\\.artifactory\\."
       ],
       "website": "http://jfrog.com/open-source/#os-arti"
@@ -1279,7 +1279,7 @@
       "js": {
         "asciinema": ""
       },
-      "script": "asciinema\\.org/",
+      "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
     },
     "Atlassian Bitbucket": {
@@ -1349,7 +1349,7 @@
         47
       ],
       "icon": "Atlassian Jira.svg",
-      "script": [
+      "scripts": [
         "jira-issue-collector-plugin",
         "atlassian\\.jira\\.collector\\.plugin"
       ],
@@ -1374,7 +1374,7 @@
       ],
       "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
       "icon": "AudioEye.png",
-      "script": "audioeye\\.com/ae\\.js",
+      "scripts": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/"
     },
     "Aurelia": {
@@ -1387,7 +1387,7 @@
         "<[^>]+au-target-id=[^>]\\d"
       ],
       "icon": "Aurelia.svg",
-      "script": [
+      "scripts": [
         "aurelia(?:\\.min)?\\.js"
       ],
       "website": "http://aurelia.io"
@@ -1413,7 +1413,7 @@
         "__avng8_": "",
         "avng8_": ""
       },
-      "script": "^https?://edge\\.avangate\\.net/",
+      "scripts": "^https?://edge\\.avangate\\.net/",
       "website": "http://avangate.com"
     },
     "Avasize": {
@@ -1421,7 +1421,7 @@
         5
       ],
       "icon": "Avasize.png",
-      "script": "^https?://cdn\\.avasize\\.com/",
+      "scripts": "^https?://cdn\\.avasize\\.com/",
       "website": "https://www.avasize.com"
     },
     "Awesomplete": {
@@ -1432,7 +1432,7 @@
       "js": {
         "awesomplete": ""
       },
-      "script": "/awesomplete\\.js(?:$|\\?)",
+      "scripts": "/awesomplete\\.js(?:$|\\?)",
       "website": "https://leaverou.github.io/awesomplete/"
     },
     "Azure": {
@@ -1528,7 +1528,7 @@
         "Backbone": "",
         "Backbone.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "backbone.*\\.js",
+      "scripts": "backbone.*\\.js",
       "website": "http://backbonejs.org"
     },
     "Backdrop": {
@@ -1555,7 +1555,7 @@
         10
       ],
       "icon": "Baidu Tongji.png",
-      "script": "hm\\.baidu\\.com/hm\\.js",
+      "scripts": "hm\\.baidu\\.com/hm\\.js",
       "website": "https://tongji.baidu.com/"
     },
     "Banshee": {
@@ -1609,7 +1609,7 @@
       ],
       "html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
       "icon": "Bigcommerce.png",
-      "script": "cdn\\d+\\.bigcommerce\\.com/",
+      "scripts": "cdn\\d+\\.bigcommerce\\.com/",
       "url": "mybigcommerce\\.com",
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
       "website": "http://www.bigcommerce.com"
@@ -1637,7 +1637,7 @@
       "js": {
         "bitt": ""
       },
-      "script": "bittads\\.com/js/bitt\\.js$",
+      "scripts": "bittads\\.com/js/bitt\\.js$",
       "website": "http://bittads.com"
     },
     "Bizweb": {
@@ -1668,7 +1668,7 @@
       ],
       "icon": "Blazor.png",
       "implies": "Microsoft ASP.NET",
-      "script": [
+      "scripts": [
         "blazor\\.server\\.js",
         "blazor\\.host\\.min\\.js",
         "blazor\\.webassembly\\.js"
@@ -1749,7 +1749,7 @@
         59
       ],
       "implies": "Google Analytics",
-      "script": "boba(?:\\.min)?\\.js",
+      "scripts": "boba(?:\\.min)?\\.js",
       "website": "http://boba.space150.com"
     },
     "Bokeh": {
@@ -1762,7 +1762,7 @@
         "Bokeh": "",
         "Bokeh.version": "^(.+)$\\;version:\\1"
       },
-      "script": "bokeh.*\\.js",
+      "scripts": "bokeh.*\\.js",
       "website": "https://bokeh.org"
     },
     "Bold Chat": {
@@ -1770,7 +1770,7 @@
         52
       ],
       "icon": "BoldChat.png",
-      "script": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
+      "scripts": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
       "website": "https://www.boldchat.com/"
     },
     "BoldGrid": {
@@ -1784,7 +1784,7 @@
         "<link[^>]+s\\d+\\.boldgrid\\.com"
       ],
       "implies": "WordPress",
-      "script": "/wp-content/plugins/post-and-page-builder",
+      "scripts": "/wp-content/plugins/post-and-page-builder",
       "website": "https://boldgrid.com"
     },
     "Bolt": {
@@ -1827,7 +1827,7 @@
         "bootstrap.Alert.VERSION": "^(.+)$\\;version:\\1",
         "jQuery.fn.tooltip.Constructor.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "twitter\\.github\\.com/bootstrap",
         "bootstrap[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "(?:/([\\d.]+))?(?:/js)?/bootstrap(?:\\.min)?\\.js\\;version:\\1"
@@ -1844,7 +1844,7 @@
         "Bootstrap",
         "jQuery"
       ],
-      "script": "bootstrap-table(?:\\.min)?\\.js",
+      "scripts": "bootstrap-table(?:\\.min)?\\.js",
       "website": "http://bootstrap-table.wenzhixin.net.cn/"
     },
     "Botble CMS": {
@@ -1870,7 +1870,7 @@
       "js": {
         "bouncex": ""
       },
-      "script": "^https?://tag\\.bounceexchange\\.com/",
+      "scripts": "^https?://tag\\.bounceexchange\\.com/",
       "website": "http://www.bounceexchange.com"
     },
     "Braintree": {
@@ -1882,7 +1882,7 @@
         "Braintree": "",
         "Braintree.version": "^(.+)$\\;version:\\1"
       },
-      "script": "js\\.braintreegateway\\.com",
+      "scripts": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
     },
     "Brightspot": {
@@ -1937,7 +1937,7 @@
         "bugsnag": "",
         "bugsnagClient": ""
       },
-      "script": "/bugsnag.*\\.js",
+      "scripts": "/bugsnag.*\\.js",
       "website": "http://bugsnag.com"
     },
     "Bugzilla": {
@@ -1989,7 +1989,7 @@
       ],
       "html": "<!-- BC_OBNW -->",
       "icon": "Business Catalyst.png",
-      "script": "CatalystScripts",
+      "scripts": "CatalystScripts",
       "website": "http://businesscatalyst.com"
     },
     "BuySellAds": {
@@ -2003,7 +2003,7 @@
         "_bsap": "",
         "_bsap_serving_callback": ""
       },
-      "script": "^https?://s\\d\\.buysellads\\.com/",
+      "scripts": "^https?://s\\d\\.buysellads\\.com/",
       "website": "http://buysellads.com"
     },
     "CCV Shop": {
@@ -2011,7 +2011,7 @@
         6
       ],
       "icon": "ccvshop.png",
-      "script": "/website/JavaScript/Vertoshop\\.js",
+      "scripts": "/website/JavaScript/Vertoshop\\.js",
       "website": "https://ccvshop.be"
     },
     "CDN77": {
@@ -2036,7 +2036,7 @@
         67
       ],
       "icon": "civic.png",
-      "script": "cc\\.cdn\\.civiccomputing\\.com",
+      "scripts": "cc\\.cdn\\.civiccomputing\\.com",
       "website": "https://www.civicuk.com/cookie-control"
     },
     "CKEditor": {
@@ -2086,7 +2086,7 @@
       "js": {
         "cnzz_protocol": ""
       },
-      "script": "//[^./]+\\.cnzz\\.com/(?:z_stat.php|core)\\?",
+      "scripts": "//[^./]+\\.cnzz\\.com/(?:z_stat.php|core)\\?",
       "website": "https://web.umeng.com/"
     },
     "CPG Dragonfly": {
@@ -2177,7 +2177,7 @@
       "js": {
         "Captchme": ""
       },
-      "script": "^https?://api\\.captchme\\.net/",
+      "scripts": "^https?://api\\.captchme\\.net/",
       "website": "http://captchme.com"
     },
     "Carbon Ads": {
@@ -2189,7 +2189,7 @@
       "js": {
         "_carbonads": ""
       },
-      "script": "carbonads\\.com",
+      "scripts": "carbonads\\.com",
       "website": "http://carbonads.net"
     },
     "Cargo": {
@@ -2202,7 +2202,7 @@
       "meta": {
         "cargo_title": ""
       },
-      "script": "/cargo\\.",
+      "scripts": "/cargo\\.",
       "website": "http://cargocollective.com"
     },
     "Cart Functionality": {
@@ -2309,7 +2309,7 @@
         "Chart.defaults.doughnut": "",
         "chart.ctx.bezierCurveTo": ""
       },
-      "script": [
+      "scripts": [
         "/Chart(?:\\.bundle)?(?:\\.min)?\\.js\\;confidence:75",
         "chartjs\\.org/dist/([\\d.]+(?:-[^/]+)?|master|latest)/Chart.*\\.js\\;version:\\1",
         "cdnjs\\.cloudflare\\.com/ajax/libs/Chart\\.js/([\\d.]+(?:-[^/]+)?)/Chart.*\\.js\\;version:\\1",
@@ -2326,7 +2326,7 @@
         "_sf_async_config": "",
         "_sf_endpt": ""
       },
-      "script": "chartbeat\\.js",
+      "scripts": "chartbeat\\.js",
       "website": "http://chartbeat.com"
     },
     "Cherokee": {
@@ -2363,7 +2363,7 @@
       "meta": {
         "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
       },
-      "script": "/chevereto\\.js",
+      "scripts": "/chevereto\\.js",
       "website": "https://chevereto.com/"
     },
     "Chitika": {
@@ -2375,7 +2375,7 @@
         "ch_client": "",
         "ch_color_site_link": ""
       },
-      "script": "scripts\\.chitika\\.net/",
+      "scripts": "scripts\\.chitika\\.net/",
       "website": "http://chitika.com"
     },
     "Chorus": {
@@ -2419,7 +2419,7 @@
       "js": {
         "ClarityIcons": ""
       },
-      "script": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
+      "scripts": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
       "website": "https://clarity.design/"
     },
     "ClickFunnels": {
@@ -2439,7 +2439,7 @@
       "js": {
         "clickHeatServer": ""
       },
-      "script": "clickheat.*\\.js",
+      "scripts": "clickheat.*\\.js",
       "website": "http://www.labsmedia.com/clickheat/index.html"
     },
     "ClickTale": {
@@ -2460,7 +2460,7 @@
       "js": {
         "clicky": ""
       },
-      "script": "static\\.getclicky\\.com",
+      "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
     },
     "Clientexec": {
@@ -2476,7 +2476,7 @@
         19
       ],
       "icon": "Clipboard.js.svg",
-      "script": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://clipboardjs.com/"
     },
     "CloudCart": {
@@ -2487,7 +2487,7 @@
       "meta": {
         "author": "^CloudCart LLC$"
       },
-      "script": "/cloudcart-(?:assets|storage)/",
+      "scripts": "/cloudcart-(?:assets|storage)/",
       "website": "http://cloudcart.com"
     },
     "CloudSuite": {
@@ -2576,7 +2576,7 @@
       "js": {
         "CoinHive": ""
       },
-      "script": [
+      "scripts": [
         "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
         "coinhive\\.com/lib"
       ],
@@ -2590,7 +2590,7 @@
       ],
       "html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
       "icon": "CoinHive.svg",
-      "script": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
+      "scripts": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
       "website": "https://coinhive.com"
     },
     "Coinhave": {
@@ -2598,7 +2598,7 @@
         56
       ],
       "icon": "coinhave.png",
-      "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
+      "scripts": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
       "website": "https://coin-have.com/"
     },
     "Coinimp": {
@@ -2609,7 +2609,7 @@
       "js": {
         "Client.Anonymous": "\\;confidence:50"
       },
-      "script": "https?://www\\.hashing\\.win/scripts/min\\.js",
+      "scripts": "https?://www\\.hashing\\.win/scripts/min\\.js",
       "website": "https://www.coinimp.com"
     },
     "ColorMeShop": {
@@ -2680,7 +2680,7 @@
       "meta": {
         "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
       },
-      "script": "/concrete/js/",
+      "scripts": "/concrete/js/",
       "website": "https://concrete5.org"
     },
     "Contao": {
@@ -2751,7 +2751,7 @@
         10
       ],
       "icon": "ConversionLab.png",
-      "script": "conversionlab\\.trackset\\.com/track/tsend\\.js",
+      "scripts": "conversionlab\\.trackset\\.com/track/tsend\\.js",
       "website": "http://www.trackset.it/conversionlab"
     },
     "Cookie Script": {
@@ -2759,7 +2759,7 @@
         67
       ],
       "icon": "CookieScript.png",
-      "script": "//cookie-script\\.com/s/",
+      "scripts": "//cookie-script\\.com/s/",
       "website": "https://cookie-script.com/"
     },
     "CookieHub": {
@@ -2767,7 +2767,7 @@
         67
       ],
       "icon": "CookieHub.png",
-      "script": [
+      "scripts": [
         "cookiehub\\.net/.*\\.js"
       ],
       "website": "https://www.cookiehub.com"
@@ -2777,7 +2777,7 @@
         67
       ],
       "icon": "cookieyes.png",
-      "script": "app\\.cookieyes\\.com/client_data/",
+      "scripts": "app\\.cookieyes\\.com/client_data/",
       "website": "https://www.cookieyes.com/"
     },
     "Cookiebot": {
@@ -2785,7 +2785,7 @@
         67
       ],
       "icon": "Cookiebot.svg",
-      "script": "consent\\.cookiebot\\.com",
+      "scripts": "consent\\.cookiebot\\.com",
       "website": "http://www.cookiebot.com"
     },
     "Coppermine": {
@@ -2804,7 +2804,7 @@
       ],
       "cpe": "cpe:/a:cosmoshop:cosmoshop",
       "icon": "Cosmoshop.png",
-      "script": "cosmoshop_functions\\.js",
+      "scripts": "cosmoshop_functions\\.js",
       "website": "http://cosmoshop.de"
     },
     "Cotonti": {
@@ -2895,7 +2895,7 @@
       "js": {
         "CE2": ""
       },
-      "script": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
+      "scripts": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
       "website": "http://crazyegg.com"
     },
     "Criteo": {
@@ -2908,7 +2908,7 @@
         "criteo_pubtag": "",
         "criteo_q": ""
       },
-      "script": [
+      "scripts": [
         "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
         "//static\\.criteo\\.net/js/ld/ld\\.js"
       ],
@@ -2922,7 +2922,7 @@
       "js": {
         "cp_C4w1ldN2d9PmVrkN": ""
       },
-      "script": "tag\\.crsspxl\\.com/s1\\.js",
+      "scripts": "tag\\.crsspxl\\.com/s1\\.js",
       "website": "http://datadesk.crsspxl.com"
     },
     "CrossBox": {
@@ -2940,7 +2940,7 @@
         67
       ],
       "icon": "Crownpeak.png",
-      "script": "c\\.evidon\\.com",
+      "scripts": "c\\.evidon\\.com",
       "website": "http://www.crownpeak.com"
     },
     "Crypto-Loot": {
@@ -2952,7 +2952,7 @@
         "CRLT.CONFIG.ASMJS_NAME": "",
         "CryptoLoot": ""
       },
-      "script": [
+      "scripts": [
         "^/crypto-loot\\.com/lib/",
         "^/webmine\\.pro/",
         "^/cryptoloot\\.pro/",
@@ -2981,7 +2981,7 @@
       "js": {
         "Cufon": ""
       },
-      "script": "cufon-yui\\.js",
+      "scripts": "cufon-yui\\.js",
       "website": "http://cufon.shoqolate.com"
     },
     "Cybersource": {
@@ -2989,7 +2989,7 @@
         41
       ],
       "icon": "cybersource.png",
-      "script": "cybersource\\..+\\.js",
+      "scripts": "cybersource\\..+\\.js",
       "website": "https://www.cybersource.com/"
     },
     "D3": {
@@ -3001,7 +3001,7 @@
       "js": {
         "d3.version": "^(.+)$\\;version:\\1"
       },
-      "script": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
+      "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
       "website": "http://d3js.org"
     },
     "DERAK.CLOUD": {
@@ -3027,7 +3027,7 @@
         59
       ],
       "icon": "DHTMLX.png",
-      "script": "dhtmlxcommon\\.js",
+      "scripts": "dhtmlxcommon\\.js",
       "website": "http://dhtmlx.com"
     },
     "DM Polopoly": {
@@ -3065,7 +3065,7 @@
       "meta": {
         "generator": "DotNetNuke"
       },
-      "script": [
+      "scripts": [
         "/js/dnncore\\.js",
         "/js/dnn\\.js"
       ],
@@ -3126,7 +3126,7 @@
         "___dart__$dart_dartObject_ZxYxX_0_": "",
         "___dart_dispatch_record_ZxYxX_0_": ""
       },
-      "script": [
+      "scripts": [
         "/(?:\\.)?(?:dart)(?:\\.js)?/",
         "packages/browser/dart\\.js"
       ],
@@ -3167,7 +3167,7 @@
       ],
       "icon": "DataTables.png",
       "implies": "jQuery",
-      "script": "dataTables.*\\.js",
+      "scripts": "dataTables.*\\.js",
       "website": "http://datatables.net"
     },
     "Datadome": {
@@ -3185,7 +3185,7 @@
         "X-DataDome-CID": ""
       },
       "icon": "datadome.png",
-      "script": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
+      "scripts": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
       "website": "https://datadome.co/"
     },
     "DatoCMS": {
@@ -3228,7 +3228,7 @@
       "js": {
         "DedeContainer": ""
       },
-      "script": "dedeajax",
+      "scripts": "dedeajax",
       "website": "http://dedecms.com"
     },
     "Didomi": {
@@ -3236,7 +3236,7 @@
         67
       ],
       "icon": "didomi.png",
-      "script": "sdk\\.privacy-center\\.org/.*/loader\\.js",
+      "scripts": "sdk\\.privacy-center\\.org/.*/loader\\.js",
       "website": "https://www.didomi.io/en/consent-preference-management"
     },
     "DirectAdmin": {
@@ -3297,7 +3297,7 @@
         "disqus_shortname": "",
         "disqus_url": ""
       },
-      "script": "disqus_url",
+      "scripts": "disqus_url",
       "website": "https://disqus.com"
     },
     "Django": {
@@ -3350,7 +3350,7 @@
         "dojo": "",
         "dojo.version.major": "^(.+)$\\;version:\\1"
       },
-      "script": "([\\d.]+)/dojo/dojo(?:\\.xd)?\\.js\\;version:\\1",
+      "scripts": "([\\d.]+)/dojo/dojo(?:\\.xd)?\\.js\\;version:\\1",
       "website": "https://dojotoolkit.org"
     },
     "Dokeos": {
@@ -3409,7 +3409,7 @@
         36
       ],
       "icon": "DoubleClick.svg",
-      "script": [
+      "scripts": [
         "googlesyndication\\.com/pagead/show_ads\\.js",
         "tpc\\.googlesyndication\\.com/safeframe",
         "googlesyndication\\.com.*abg\\.js"
@@ -3421,7 +3421,7 @@
         36
       ],
       "icon": "DoubleClick.svg",
-      "script": "2mdn\\.net",
+      "scripts": "2mdn\\.net",
       "website": "http://www.doubleclickbygoogle.com/solutions/digital-marketing/campaign-manager/"
     },
     "DoubleClick Floodlight": {
@@ -3429,7 +3429,7 @@
         36
       ],
       "icon": "DoubleClick.svg",
-      "script": "https?://fls\\.doubleclick\\.net",
+      "scripts": "https?://fls\\.doubleclick\\.net",
       "website": "http://support.google.com/ds/answer/6029713?hl=en"
     },
     "DoubleClick for Publishers (DFP)": {
@@ -3437,7 +3437,7 @@
         36
       ],
       "icon": "DoubleClick.svg",
-      "script": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
+      "scripts": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "website": "http://www.google.com/dfp"
     },
     "DovetailWRP": {
@@ -3447,7 +3447,7 @@
       "html": "<link[^>]* href=\"\\/DovetailWRP\\/",
       "icon": "DovetailWRP.png",
       "implies": "Microsoft ASP.NET",
-      "script": "\\/DovetailWRP\\/",
+      "scripts": "\\/DovetailWRP\\/",
       "website": "http://www.dovetailinternet.com"
     },
     "Doxygen": {
@@ -3495,7 +3495,7 @@
       "meta": {
         "generator": "^Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
-      "script": "drupal\\.js",
+      "scripts": "drupal\\.js",
       "website": "https://drupal.org"
     },
     "Drupal Commerce": {
@@ -3530,7 +3530,7 @@
       ],
       "html": "(?:<!-- /*BeraCode script)",
       "icon": "Duopana.svg",
-      "script": "\\*berajs.beracode.com\\*",
+      "scripts": "\\*berajs.beracode.com\\*",
       "website": "https://duopana.com/"
     },
     "Dynamicweb": {
@@ -3569,7 +3569,7 @@
       "cpe": "cpe:/a:lockon:ec-cube",
       "icon": "ec-cube.png",
       "implies": "PHP",
-      "script": [
+      "scripts": [
         "eccube\\.js",
         "win_op\\.js"
       ],
@@ -3672,7 +3672,7 @@
         "Ecwid": "",
         "EcwidCart": ""
       },
-      "script": [
+      "scripts": [
         "https://app\\.multiscreenstore\\.com/script\\.js",
         "https://app\\.ecwid\\.com/script\\.js"
       ],
@@ -3741,7 +3741,7 @@
       "js": {
         "elementorFrontend.getElements": ""
       },
-      "script": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
+      "scripts": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "https://elementor.com"
     },
     "Elm": {
@@ -3776,7 +3776,7 @@
         "elqSiteID": "",
         "elq_global": ""
       },
-      "script": "elqCfg\\.js",
+      "scripts": "elqCfg\\.js",
       "website": "http://eloqua.com"
     },
     "EmbedThis Appweb": {
@@ -3808,7 +3808,7 @@
         42
       ],
       "icon": "ensighten.png",
-      "script": "//nexus\\.ensighten\\.com/",
+      "scripts": "//nexus\\.ensighten\\.com/",
       "website": "https://success.ensighten.com/hc/en-us"
     },
     "Envoy": {
@@ -3832,7 +3832,7 @@
       "js": {
         "enyo": ""
       },
-      "script": "enyo\\.js",
+      "scripts": "enyo\\.js",
       "website": "http://enyojs.com"
     },
     "Epoch": {
@@ -3841,7 +3841,7 @@
       ],
       "html": "<link[^>]+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
       "implies": "D3",
-      "script": "epoch(?:\\.min)?\\.js",
+      "scripts": "epoch(?:\\.min)?\\.js",
       "website": "https://fastly.github.io/epoch"
     },
     "Epom": {
@@ -3860,7 +3860,7 @@
         68
       ],
       "icon": "EqualWeb.png",
-      "script": "cdn\\.equalweb\\.com.*\\.js",
+      "scripts": "cdn\\.equalweb\\.com.*\\.js",
       "website": "https://www.equalweb.com/"
     },
     "Erlang": {
@@ -3897,7 +3897,7 @@
         "padeditbar": "",
         "padimpexp": ""
       },
-      "script": [
+      "scripts": [
         "/ep_etherpad-lite/"
       ],
       "website": "https://etherpad.org"
@@ -3911,7 +3911,7 @@
         "Exhibit": "",
         "Exhibit.version": "^(.+)$\\;version:\\1"
       },
-      "script": "exhibit.*\\.js",
+      "scripts": "exhibit.*\\.js",
       "website": "http://simile-widgets.org/exhibit/"
     },
     "ExpertRec": {
@@ -3919,7 +3919,7 @@
         29
       ],
       "icon": "ExpertRec.png",
-      "script": "cse\\.expertrec\\.com/api/js/ci_common\\.js\\?id=.*$",
+      "scripts": "cse\\.expertrec\\.com/api/js/ci_common\\.js\\?id=.*$",
       "website": "https://expertrec.com"
     },
     "Express": {
@@ -3959,7 +3959,7 @@
         "Ext.version": "^(.+)$\\;version:\\1",
         "Ext.versions.extjs.version": "^(.+)$\\;version:\\1"
       },
-      "script": "ext-base\\.js",
+      "scripts": "ext-base\\.js",
       "website": "https://www.sencha.com"
     },
     "F5 BigIP": {
@@ -4008,7 +4008,7 @@
         5
       ],
       "icon": "Facebook.svg",
-      "script": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
+      "scripts": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
     },
     "Facebook Sign-in": {
@@ -4026,7 +4026,7 @@
         68
       ],
       "icon": "Facil-iti.png",
-      "script": "ws\\.facil-iti\\.com/tag/faciliti-tag\\.min\\.js",
+      "scripts": "ws\\.facil-iti\\.com/tag/faciliti-tag\\.min\\.js",
       "website": "https://www.facil-iti.com/"
     },
     "Fact Finder": {
@@ -4035,7 +4035,7 @@
       ],
       "html": "<!-- Factfinder",
       "icon": "Fact Finder.png",
-      "script": "Suggest\\.ff",
+      "scripts": "Suggest\\.ff",
       "url": "(?:/ViewParametricSearch|ffsuggest\\.[a-z]htm)",
       "website": "http://fact-finder.com"
     },
@@ -4048,7 +4048,7 @@
       "js": {
         "$.fancybox.version": "^(.+)$\\;version:\\1"
       },
-      "script": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
+      "scripts": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
       "website": "http://fancyapps.com/fancybox"
     },
     "FaraPy": {
@@ -4103,7 +4103,7 @@
         "<(?:iframe)[^>]+FatZebraFrame"
       ],
       "icon": "fatzebra.png",
-      "script": "paynow\\.pmnts\\.io",
+      "scripts": "paynow\\.pmnts\\.io",
       "website": "https://www.fatzebra.com/"
     },
     "Fat-Free Framework": {
@@ -4147,7 +4147,7 @@
         "Fingerprint2": "",
         "Fingerprint2.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://valve.github.io/fingerprintjs2/"
     },
     "Firebase": {
@@ -4158,7 +4158,7 @@
       "js": {
         "firebase.SDK_VERSION": "([\\d.]+)$\\;version:\\1"
       },
-      "script": "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://firebase.com"
     },
     "Fireblade": {
@@ -4230,7 +4230,7 @@
       ],
       "icon": "FlexSlider.png",
       "implies": "jQuery",
-      "script": [
+      "scripts": [
         "jquery\\.flexslider(?:\\.min)?\\.js$"
       ],
       "website": "https://woocommerce.com/flexslider/"
@@ -4242,7 +4242,7 @@
       "js": {
         "Flickity": ""
       },
-      "script": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
+      "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
       "website": "https://flickity.metafizzy.co/"
     },
     "Flow": {
@@ -4250,7 +4250,7 @@
         6
       ],
       "icon": "flow.png",
-      "script": [
+      "scripts": [
         "shopify-cdn\\.flow\\.io",
         "flow\\.min\\.js"
       ],
@@ -4302,7 +4302,7 @@
         "<link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1"
       ],
       "icon": "font-awesome.svg",
-      "script": "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
+      "scripts": "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
       "website": "https://fontawesome.com/"
     },
     "Fork CMS": {
@@ -4337,7 +4337,7 @@
       ],
       "html": "(?:<link [^>]*href=\"[^\\/]*\\/\\/www\\.fortune3\\.com\\/[^\"]*siterate\\/rate\\.css|Powered by <a [^>]*href=\"[^\"]+fortune3\\.com)",
       "icon": "Fortune3.png",
-      "script": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com",
+      "scripts": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com",
       "website": "http://fortune3.com"
     },
     "Foswiki": {
@@ -4396,7 +4396,7 @@
         10
       ],
       "icon": "Freespee.svg",
-      "script": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",
+      "scripts": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",
       "website": "https://www.freespee.com"
     },
     "Freshchat": {
@@ -4404,7 +4404,7 @@
         52
       ],
       "icon": "freshchat.png",
-      "script": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
       "website": "https://www.freshworks.com/live-chat-software/"
     },
     "Freshmarketer": {
@@ -4412,7 +4412,7 @@
         10
       ],
       "icon": "freshmarketer.png",
-      "script": "cdn\\.freshmarketer\\.com",
+      "scripts": "cdn\\.freshmarketer\\.com",
       "website": "https://www.freshworks.com/marketing-automation/conversion-rate-optimization/"
     },
     "Froala Editor": {
@@ -4447,7 +4447,7 @@
       "js": {
         "_fusion": ""
       },
-      "script": "^[^\\/]*//[ac]dn\\.fusionads\\.net/(?:api/([\\d.]+)/)?\\;version:\\1",
+      "scripts": "^[^\\/]*//[ac]dn\\.fusionads\\.net/(?:api/([\\d.]+)/)?\\;version:\\1",
       "website": "http://fusionads.net"
     },
     "Future Shop": {
@@ -4455,7 +4455,7 @@
         6
       ],
       "icon": "futureshop.png",
-      "script": "future-shop.*\\.js",
+      "scripts": "future-shop.*\\.js",
       "website": "https://www.future-shop.jp"
     },
     "G-WAN": {
@@ -4489,7 +4489,7 @@
         "TweenMax": "",
         "gsapVersions": ""
       },
-      "script": "TweenMax(?:\\.min)?\\.js",
+      "scripts": "TweenMax(?:\\.min)?\\.js",
       "website": "https://greensock.com/gsap"
     },
     "GX WebManager": {
@@ -4528,7 +4528,7 @@
       "js": {
         "gambio": ""
       },
-      "script": "gm_javascript\\.js\\.php",
+      "scripts": "gm_javascript\\.js\\.php",
       "website": "http://gambio.de"
     },
     "Gatsby": {
@@ -4575,7 +4575,7 @@
         "gemius_pending": "",
         "pp_gemius_hit": ""
       },
-      "script": [
+      "scripts": [
         "hit\\.gemius\\.pl/xgemius\\.js",
         "hit\\.gemius\\.pl\\;confidence:80",
         "xgemius\\.js\\;confidence:30"
@@ -4593,7 +4593,7 @@
       "js": {
         "gx.gxVersion": "^(.+)-.*$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "/static/gxgral\\.js",
         "/static/gxtimezone\\.js"
       ],
@@ -4630,7 +4630,7 @@
       "meta": {
         "title": "^Gerrit Code Review$"
       },
-      "script": "^gerrit_ui/gerrit_ui",
+      "scripts": "^gerrit_ui/gerrit_ui",
       "website": "http://www.gerritcodereview.com"
     },
     "Get Satisfaction": {
@@ -4776,7 +4776,7 @@
         6
       ],
       "icon": "Globale.png",
-      "script": [
+      "scripts": [
         "web\\.global-e\\.com"
       ],
       "website": "https://www.global-e.com/"
@@ -4871,7 +4871,7 @@
       "meta": {
         "keywords": "go, git, self-hosted, gogs"
       },
-      "script": "js/gogs\\.js",
+      "scripts": "js/gogs\\.js",
       "website": "http://gogs.io"
     },
     "Google AdSense": {
@@ -4884,7 +4884,7 @@
         "__google_ad_urls": "",
         "google_ad_": ""
       },
-      "script": [
+      "scripts": [
         "googlesyndication\\.com/",
         "ad\\.ca\\.doubleclick\\.net",
         "2mdn\\.net",
@@ -4908,7 +4908,7 @@
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""
       },
-      "script": "google-analytics\\.com\\/(?:ga|urchin|analytics)\\.js",
+      "scripts": "google-analytics\\.com\\/(?:ga|urchin|analytics)\\.js",
       "website": "http://google.com/analytics"
     },
     "Google Analytics Enhanced eCommerce": {
@@ -4920,7 +4920,7 @@
       "js": {
         "gaplugins.EC": ""
       },
-      "script": "google-analytics\\.com\\/plugins\\/ua\\/(?:ec|ecommerce)\\.js",
+      "scripts": "google-analytics\\.com\\/plugins\\/ua\\/(?:ec|ecommerce)\\.js",
       "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
     },
     "Google App Engine": {
@@ -4974,7 +4974,7 @@
       "js": {
         "WebFonts": ""
       },
-      "script": "googleapis\\.com/.+webfont",
+      "scripts": "googleapis\\.com/.+webfont",
       "website": "http://google.com/fonts"
     },
     "Google Maps": {
@@ -4982,7 +4982,7 @@
         35
       ],
       "icon": "Google Maps.png",
-      "script": [
+      "scripts": [
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
         "//maps\\.googleapis\\.com/maps/api/js"
       ],
@@ -5013,7 +5013,7 @@
         5
       ],
       "icon": "Google Plus.svg",
-      "script": "apis\\.google\\.com/js/[a-z]*\\.js",
+      "scripts": "apis\\.google\\.com/js/[a-z]*\\.js",
       "website": "http://plus.google.com"
     },
     "Google Sign-in": {
@@ -5027,7 +5027,7 @@
         "<a[^>]*accounts\\.google\\.com/o/oauth2"
       ],
       "icon": "Google.svg",
-      "script": [
+      "scripts": [
         "apis\\.google\\.com/js/platform\\.js",
         "accounts\\.google\\.com/gsi/client"
       ],
@@ -5061,7 +5061,7 @@
         41
       ],
       "icon": "Google Wallet.png",
-      "script": [
+      "scripts": [
         "checkout\\.google\\.com",
         "wallet\\.google\\.com"
       ],
@@ -5110,7 +5110,7 @@
       "meta": {
         "generator": "Graffiti CMS ([^\"]+)\\;version:\\1"
       },
-      "script": "/graffiti\\.js",
+      "scripts": "/graffiti\\.js",
       "website": "http://graffiticms.codeplex.com"
     },
     "GrandNode": {
@@ -5162,7 +5162,7 @@
       ],
       "icon": "gravityforms.svg",
       "implies": "WordPress",
-      "script": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
+      "scripts": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "http://gravityforms.com"
     },
     "Green Valley CMS": {
@@ -5197,7 +5197,7 @@
         "grwng_uid": ""
       },
       "icon": "GrowingIO.png",
-      "script": "assets\\.growingio\\.com/([\\d.]+)/gio\\.js\\;version:\\1",
+      "scripts": "assets\\.growingio\\.com/([\\d.]+)/gio\\.js\\;version:\\1",
       "website": "https://www.growingio.com/"
     },
     "HCL Digital Experience": {
@@ -5219,7 +5219,7 @@
         35
       ],
       "icon": "HERE.png",
-      "script": "https?://js\\.cit\\.api\\.here\\.com/se/([\\d.]+)\\/\\;version:\\1",
+      "scripts": "https?://js\\.cit\\.api\\.here\\.com/se/([\\d.]+)\\/\\;version:\\1",
       "website": "http://developer.here.com"
     },
     "HHVM": {
@@ -5281,7 +5281,7 @@
         4
       ],
       "html": "<p>Produced by <a href=\"http://www\\.haskell\\.org/haddock/\">Haddock</a> version ([0-9.]+)</p>\\;version:\\1",
-      "script": "haddock-util\\.js",
+      "scripts": "haddock-util\\.js",
       "website": "http://www.haskell.org/haddock/"
     },
     "Halo": {
@@ -5306,7 +5306,7 @@
         "Hammer": "",
         "Hammer.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "hammer(?:\\.min)?\\.js",
+      "scripts": "hammer(?:\\.min)?\\.js",
       "website": "https://hammerjs.github.io"
     },
     "Handlebars": {
@@ -5319,7 +5319,7 @@
         "Handlebars": "",
         "Handlebars.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://handlebarsjs.com"
     },
     "Haravan": {
@@ -5330,7 +5330,7 @@
       "js": {
         "Haravan": ""
       },
-      "script": "haravan.*\\.js",
+      "scripts": "haravan.*\\.js",
       "website": "https://www.haravan.com"
     },
     "Haskell": {
@@ -5349,7 +5349,7 @@
       "js": {
         "head.browser.name": ""
       },
-      "script": "head\\.(?:core|load)(?:\\.min)?\\.js",
+      "scripts": "head\\.(?:core|load)(?:\\.min)?\\.js",
       "website": "http://headjs.com"
     },
     "Heap": {
@@ -5360,7 +5360,7 @@
       "js": {
         "heap": ""
       },
-      "script": "heap-\\d+\\.js",
+      "scripts": "heap-\\d+\\.js",
       "website": "http://heapanalytics.com"
     },
     "Hello Bar": {
@@ -5371,7 +5371,7 @@
       "js": {
         "HelloBar": ""
       },
-      "script": "hellobar\\.js",
+      "scripts": "hellobar\\.js",
       "website": "http://hellobar.com"
     },
     "Heroku": {
@@ -5421,7 +5421,7 @@
         "Highcharts": "",
         "Highcharts.version": "^(.+)$\\;version:\\1"
       },
-      "script": "highcharts.*\\.js",
+      "scripts": "highcharts.*\\.js",
       "website": "https://www.highcharts.com"
     },
     "Highlight.js": {
@@ -5433,7 +5433,7 @@
         "hljs.highlightBlock": "",
         "hljs.listLanguages": ""
       },
-      "script": "/(?:([\\d.])+/)?highlight(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "/(?:([\\d.])+/)?highlight(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://highlightjs.org/"
     },
     "Highstock": {
@@ -5442,7 +5442,7 @@
       ],
       "html": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)\\;version:\\1",
       "icon": "Highcharts.png",
-      "script": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
+      "scripts": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
       "website": "http://highcharts.com/products/highstock"
     },
     "HikeOrders": {
@@ -5450,7 +5450,7 @@
         68
       ],
       "icon": "HikeOrders.png",
-      "script": "hikeorders\\.com/main/assets/js/hko-accessibility\\.min\\.js",
+      "scripts": "hikeorders\\.com/main/assets/js/hko-accessibility\\.min\\.js",
       "website": "https://hikeorders.com/"
     },
     "Hinza Advanced CMS": {
@@ -5473,7 +5473,7 @@
       "js": {
         "Hogan": ""
       },
-      "script": [
+      "scripts": [
         "hogan-[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "([\\d.]+)/hogan(?:\\.min)?\\.js\\;version:\\1"
       ],
@@ -5503,7 +5503,7 @@
         "HotleadController": "",
         "hj.apiUrlBase": ""
       },
-      "script": "//static\\.hotjar\\.com/c/hotjar-",
+      "scripts": "//static\\.hotjar\\.com/c/hotjar-",
       "website": "https://www.hotjar.com"
     },
     "HubSpot": {
@@ -5537,7 +5537,7 @@
         10
       ],
       "icon": "IBM.svg",
-      "script": "cmdatatagutils\\.js",
+      "scripts": "cmdatatagutils\\.js",
       "website": "http://ibm.com/software/marketing-solutions/coremetrics"
     },
     "IBM DataPower": {
@@ -5595,7 +5595,7 @@
         "iam_data": "",
         "szmvars": ""
       },
-      "script": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
+      "scripts": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
       "website": "https://www.infonline.de"
     },
     "INTI": {
@@ -5626,7 +5626,7 @@
         "ipb_var": "",
         "ipsSettings": ""
       },
-      "script": "jscripts/ips_",
+      "scripts": "jscripts/ips_",
       "website": "https://invisioncommunity.com/"
     },
     "Ideasoft": {
@@ -5634,7 +5634,7 @@
         6
       ],
       "icon": "Ideasoft.png",
-      "script": [
+      "scripts": [
         "\\.myideasoft\\.com/"
       ],
       "website": "https://www.ideasoft.com"
@@ -5658,7 +5658,7 @@
         "Immutable": "",
         "Immutable.version": "^(.+)$\\;version:\\1"
       },
-      "script": "^immutable\\.(?:min\\.)?js$",
+      "scripts": "^immutable\\.(?:min\\.)?js$",
       "website": "https://facebook.github.io/immutable-js/"
     },
     "Imperva": {
@@ -5666,7 +5666,7 @@
         16
       ],
       "icon": "Imperva.svg",
-      "script": [
+      "scripts": [
         "/_Incapsula_Resource"
       ],
       "website": "https://www.imperva.com/"
@@ -5685,7 +5685,7 @@
       "meta": {
         "generator": "ImpressCMS"
       },
-      "script": "include/linkexternal\\.js",
+      "scripts": "include/linkexternal\\.js",
       "website": "http://www.impresscms.org"
     },
     "ImpressPages": {
@@ -5791,7 +5791,7 @@
         "__insp": "",
         "__inspld": ""
       },
-      "script": [
+      "scripts": [
         "cdn\\.inspectlet\\.com"
       ],
       "website": "https://www.inspectlet.com/"
@@ -5808,7 +5808,7 @@
       "js": {
         "Instabot": ""
       },
-      "script": "/rokoInstabot\\.js",
+      "scripts": "/rokoInstabot\\.js",
       "website": "https://instabot.io/"
     },
     "InstantCMS": {
@@ -5843,7 +5843,7 @@
         15
       ],
       "icon": "IntenseDebate.png",
-      "script": "intensedebate\\.com",
+      "scripts": "intensedebate\\.com",
       "website": "http://intensedebate.com"
     },
     "Intercom": {
@@ -5854,7 +5854,7 @@
       "js": {
         "Intercom": ""
       },
-      "script": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
+      "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
       "website": "https://www.intercom.com"
     },
     "Intercom Articles": {
@@ -5871,7 +5871,7 @@
       ],
       "html": "<ish-root",
       "icon": "Intershop.png",
-      "script": "(?:is-bin|INTERSHOP)",
+      "scripts": "(?:is-bin|INTERSHOP)",
       "website": "http://intershop.com"
     },
     "Invenio": {
@@ -5917,7 +5917,7 @@
         67
       ],
       "icon": "iubenda.png",
-      "script": [
+      "scripts": [
         "iubenda\\.com/cookie-solution/confs/js/"
       ],
       "website": "https://www.iubenda.com/"
@@ -5984,7 +5984,7 @@
       "js": {
         "JSChart": ""
       },
-      "script": "jscharts.{0,32}\\.js",
+      "scripts": "jscharts.{0,32}\\.js",
       "website": "http://www.jscharts.com"
     },
     "JSEcoin": {
@@ -5995,7 +5995,7 @@
       "js": {
         "jseMine": ""
       },
-      "script": "^(?:https):?//load\\.jsecoin\\.com/load/",
+      "scripts": "^(?:https):?//load\\.jsecoin\\.com/load/",
       "website": "https://jsecoin.com/"
     },
     "JTL Shop": {
@@ -6058,7 +6058,7 @@
         "$jit": "",
         "$jit.version": "^(.+)$\\;version:\\1"
       },
-      "script": "jit(?:-yc)?\\.js",
+      "scripts": "jit(?:-yc)?\\.js",
       "website": "https://philogb.github.io/jit/"
     },
     "JavaServer Faces": {
@@ -6176,7 +6176,7 @@
       "js": {
         "jirafe": ""
       },
-      "script": "/jirafe\\.js",
+      "scripts": "/jirafe\\.js",
       "website": "https://docs.jirafe.com"
     },
     "Jitsi": {
@@ -6184,7 +6184,7 @@
         52
       ],
       "icon": "Jitsi.png",
-      "script": "lib-jitsi-meet.*\\.js",
+      "scripts": "lib-jitsi-meet.*\\.js",
       "website": "https://jitsi.org"
     },
     "Jive": {
@@ -6285,7 +6285,7 @@
         "k_track": "",
         "kampyle": ""
       },
-      "script": "cf\\.kampyle\\.com/k_button\\.js",
+      "scripts": "cf\\.kampyle\\.com/k_button\\.js",
       "website": "http://www.kampyle.com"
     },
     "Kamva": {
@@ -6299,7 +6299,7 @@
       "meta": {
         "generator": "[CK]amva"
       },
-      "script": "cdn\\.mykamva\\.ir",
+      "scripts": "cdn\\.mykamva\\.ir",
       "website": "https://kamva.ir"
     },
     "Kemal": {
@@ -6341,7 +6341,7 @@
       "meta": {
         "generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1"
       },
-      "script": "/CMSPages/GetResource\\.ashx",
+      "scripts": "/CMSPages/GetResource\\.ashx",
       "website": "http://www.kentico.com"
     },
     "Kestrel": {
@@ -6390,7 +6390,7 @@
         "Kinetic": "",
         "Kinetic.version": "^(.+)$\\;version:\\1"
       },
-      "script": "kinetic(?:-v?([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "kinetic(?:-v?([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://github.com/ericdrowell/KineticJS/"
     },
     "Kinsta": {
@@ -6516,7 +6516,7 @@
       "meta": {
         "generator": "Koken ([\\d.]+)\\;version:\\1"
       },
-      "script": "koken(?:\\.js\\?([\\d.]+)|/storage)\\;version:\\1",
+      "scripts": "koken(?:\\.js\\?([\\d.]+)|/storage)\\;version:\\1",
       "website": "http://koken.me"
     },
     "Kolibri CMS": {
@@ -6562,7 +6562,7 @@
       },
       "icon": "Kooboo CMS.png",
       "implies": "Microsoft ASP.NET",
-      "script": "/Kooboo",
+      "scripts": "/Kooboo",
       "website": "http://kooboo.com"
     },
     "Kotisivukone": {
@@ -6570,7 +6570,7 @@
         1
       ],
       "icon": "Kotisivukone.png",
-      "script": "kotisivukone(?:\\.min)?\\.js",
+      "scripts": "kotisivukone(?:\\.min)?\\.js",
       "website": "http://www.kotisivukone.fi"
     },
     "Kubernetes Dashboard": {
@@ -6599,7 +6599,7 @@
         58
       ],
       "icon": "LOU.png",
-      "script": "cdn\\.louassist\\.com*",
+      "scripts": "cdn\\.louassist\\.com*",
       "website": "https://www.louassist.com"
     },
     "Lagoon": {
@@ -6637,7 +6637,7 @@
       "meta": {
         "laterpay:connector:callbacks:on_user_has_access": "deobfuscateText"
       },
-      "script": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
+      "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
     },
     "Leaflet": {
@@ -6650,7 +6650,7 @@
         "L.PosAnimation": "",
         "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
       },
-      "script": "leaflet.{0,32}\\.js",
+      "scripts": "leaflet.{0,32}\\.js",
       "website": "http://leafletjs.com"
     },
     "Less": {
@@ -6709,7 +6709,7 @@
       "cpe": "cpe:/a:lightbox_photo_gallery_project:lightbox_photo_gallery",
       "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
       "icon": "Lightbox.png",
-      "script": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
+      "scripts": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
       "website": "http://lokeshdhakar.com/projects/lightbox2/"
     },
     "Lightspeed eCom": {
@@ -6718,7 +6718,7 @@
       ],
       "html": "<!-- \\[START\\] 'blocks/head\\.rain' -->",
       "icon": "Lightspeed.svg",
-      "script": "http://assets\\.webshopapp\\.com",
+      "scripts": "http://assets\\.webshopapp\\.com",
       "url": "seoshop.webshopapp.com",
       "website": "http://www.lightspeedhq.com/products/ecommerce/"
     },
@@ -6732,7 +6732,7 @@
         "LinkSmart": "",
         "_mb_site_guid": ""
       },
-      "script": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://linksmart.com"
     },
     "Linkedin": {
@@ -6740,7 +6740,7 @@
         5
       ],
       "icon": "Linkedin.svg",
-      "script": "//platform\\.linkedin\\.com/in\\.js",
+      "scripts": "//platform\\.linkedin\\.com/in\\.js",
       "website": "http://linkedin.com"
     },
     "Liquid Web": {
@@ -6761,7 +6761,7 @@
       "js": {
         "List": ""
       },
-      "script": "^list\\.(?:min\\.)?js$",
+      "scripts": "^list\\.(?:min\\.)?js$",
       "website": "http://listjs.com"
     },
     "LiteSpeed": {
@@ -6827,7 +6827,7 @@
         52
       ],
       "icon": "LiveChat.png",
-      "script": "cdn\\.livechatinc\\.com/.*tracking\\.js",
+      "scripts": "cdn\\.livechatinc\\.com/.*tracking\\.js",
       "website": "http://livechatinc.com"
     },
     "LiveHelp": {
@@ -6854,7 +6854,7 @@
         52
       ],
       "icon": "LivePerson.png",
-      "script": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
+      "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
       "website": "https://www.liveperson.com/"
     },
     "LiveStreet CMS": {
@@ -6883,7 +6883,7 @@
         "LF.CommentCount": "",
         "fyre": ""
       },
-      "script": "livefyre_init\\.js",
+      "scripts": "livefyre_init\\.js",
       "website": "http://livefyre.com"
     },
     "Liveinternet": {
@@ -6897,7 +6897,7 @@
         "<a href=\"http://www\\.liveinternet\\.ru/click\""
       ],
       "icon": "Liveinternet.png",
-      "script": "/js/al/common\\.js\\?[0-9_]+",
+      "scripts": "/js/al/common\\.js\\?[0-9_]+",
       "website": "http://liveinternet.ru/rating/"
     },
     "Livewire": {
@@ -6911,7 +6911,7 @@
       "js": {
         "livewire": ""
       },
-      "script": "livewire(?:\\.min)?\\.js",
+      "scripts": "livewire(?:\\.min)?\\.js",
       "website": "https://laravel-livewire.com"
     },
     "LocalFocus": {
@@ -6950,7 +6950,7 @@
         "_.differenceBy": "",
         "_.templateSettings.imports._.templateSettings.imports._.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "lodash.*\\.js",
+      "scripts": "lodash.*\\.js",
       "website": "http://www.lodash.com"
     },
     "Login with Amazon": {
@@ -7064,7 +7064,7 @@
         "setMIframe": "",
         "setMRefURL": ""
       },
-      "script": "^https?://(?:ads-by|pixel)\\.madadsmedia\\.com/",
+      "scripts": "^https?://(?:ads-by|pixel)\\.madadsmedia\\.com/",
       "website": "http://madadsmedia.com"
     },
     "Magento": {
@@ -7089,7 +7089,7 @@
         "Mage": "",
         "VarienForm": ""
       },
-      "script": [
+      "scripts": [
         "js/mage",
         "skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community",
         "static/_requirejs\\;confidence:50\\;version:2"
@@ -7110,7 +7110,7 @@
         "<!-- Begin MailChimp Signup Form -->"
       ],
       "icon": "mailchimp.svg",
-      "script": [
+      "scripts": [
         "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
         "cdn-images\\.mailchimp\\.com/[^>]*\\.css"
       ],
@@ -7122,7 +7122,7 @@
         68
       ],
       "icon": "Make-Sense.png",
-      "script": "mk-sense\\.com/aweb\\?license",
+      "scripts": "mk-sense\\.com/aweb\\?license",
       "website": "https://mk-sense.com/"
     },
     "MakeShopKorea": {
@@ -7162,7 +7162,7 @@
         5
       ],
       "icon": "ManyContacts.png",
-      "script": "\\/assets\\/js\\/manycontacts\\.min\\.js",
+      "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
     },
     "MariaDB": {
@@ -7186,7 +7186,7 @@
         "Marionette": "",
         "Marionette.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "backbone\\.marionette.*\\.js",
+      "scripts": "backbone\\.marionette.*\\.js",
       "website": "https://marionettejs.com"
     },
     "Marked": {
@@ -7198,7 +7198,7 @@
       "js": {
         "marked": ""
       },
-      "script": "/marked(?:\\.min)?\\.js",
+      "scripts": "/marked(?:\\.min)?\\.js",
       "website": "https://marked.js.org"
     },
     "Marketo": {
@@ -7209,7 +7209,7 @@
       "js": {
         "Munchkin": ""
       },
-      "script": "munchkin\\.marketo\\.net/munchkin\\.js",
+      "scripts": "munchkin\\.marketo\\.net/munchkin\\.js",
       "description": "Marketo develops and sells marketing automation software for account-based marketing and other marketing services and products including SEO and content creation.",
       "website": "https://www.marketo.com"
     },
@@ -7230,7 +7230,7 @@
       "js": {
         "MaterialIconToggle": ""
       },
-      "script": "(?:/([\\d.]+))?/material(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "(?:/([\\d.]+))?/material(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://getmdl.io"
     },
     "Materialize CSS": {
@@ -7239,7 +7239,7 @@
       ],
       "html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
       "icon": "Materialize CSS.png",
-      "script": "materialize(?:\\.min)?\\.js",
+      "scripts": "materialize(?:\\.min)?\\.js",
       "website": "http://materializecss.com"
     },
     "MathJax": {
@@ -7251,7 +7251,7 @@
         "MathJax": "",
         "MathJax.version": "^(.+)$\\;version:\\1"
       },
-      "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
+      "scripts": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
     },
     "Matomo Analytics": {
@@ -7273,7 +7273,7 @@
         "generator": "(?:Matomo|Piwik) - Open Source Web Analytics",
         "google-play-app": "app-id=org\\.piwik\\.mobile2"
       },
-      "script": "piwik\\.js|piwik\\.php",
+      "scripts": "piwik\\.js|piwik\\.php",
       "website": "https://matomo.org"
     },
     "Matomo Tag Manager": {
@@ -7314,7 +7314,7 @@
       "js": {
         "MauticTrackingObject": ""
       },
-      "script": "[^a-z]mtc.*\\.js",
+      "scripts": "[^a-z]mtc.*\\.js",
       "website": "https://www.mautic.org/"
     },
     "MaxCDN": {
@@ -7391,7 +7391,7 @@
       },
       "icon": "Medium.svg",
       "implies": "Node.js",
-      "script": "medium\\.com",
+      "scripts": "medium\\.com",
       "url": "^https?://(?:www\\.)?medium\\.com",
       "website": "https://medium.com"
     },
@@ -7442,7 +7442,7 @@
       "js": {
         "MemberStack": ""
       },
-      "script": "memberstack\\.js",
+      "scripts": "memberstack\\.js",
       "url": "^https?//.+\\.memberstack\\.io",
       "website": "https://www.memberstack.io"
     },
@@ -7454,7 +7454,7 @@
       "js": {
         "mermaid": ""
       },
-      "script": "/mermaid(?:\\.min)?\\.js",
+      "scripts": "/mermaid(?:\\.min)?\\.js",
       "website": "https://mermaidjs.github.io/"
     },
     "Meteor": {
@@ -7494,7 +7494,7 @@
         67
       ],
       "icon": "metomic.png",
-      "script": [
+      "scripts": [
         "metomic\\.js"
       ],
       "website": "https://metomic.io"
@@ -7615,7 +7615,7 @@
       "cats": [
         56
       ],
-      "script": [
+      "scripts": [
         "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
       ],
       "website": "http://minero.cc/"
@@ -7646,7 +7646,7 @@
       "js": {
         "Mint": ""
       },
-      "script": "mint/\\?js",
+      "scripts": "mint/\\?js",
       "website": "https://haveamint.com"
     },
     "Miva": {
@@ -7667,7 +7667,7 @@
         "mivaJS.Screen": "",
         "mivaJS.Store_Code": ""
       },
-      "script": "mvga\\.js",
+      "scripts": "mvga\\.js",
       "website": "http://www.miva.com"
     },
     "Mixpanel": {
@@ -7678,7 +7678,7 @@
       "js": {
         "mixpanel": ""
       },
-      "script": "api\\.mixpanel\\.com/track",
+      "scripts": "api\\.mixpanel\\.com/track",
       "website": "https://mixpanel.com"
     },
     "MkDocs": {
@@ -7701,7 +7701,7 @@
         "__mobxGlobals": "",
         "__mobxInstanceCount": ""
       },
-      "script": "(?:/([\\d\\.]+))?/mobx(?:\\.[a-z]+){0,2}\\.js(?:$|\\?)\\;version:\\1",
+      "scripts": "(?:/([\\d\\.]+))?/mobx(?:\\.[a-z]+){0,2}\\.js(?:$|\\?)\\;version:\\1",
       "website": "https://mobx.js.org"
     },
     "Mobify": {
@@ -7716,7 +7716,7 @@
       "js": {
         "Mobify": ""
       },
-      "script": [
+      "scripts": [
         "//cdn\\.mobify\\.com/",
         "//a\\.mobify\\.com/"
       ],
@@ -7744,7 +7744,7 @@
         "MochiKit": "",
         "MochiKit.MochiKit.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "MochiKit(?:\\.min)?\\.js",
+      "scripts": "MochiKit(?:\\.min)?\\.js",
       "website": "https://mochi.github.io/mochikit/"
     },
     "MochiWeb": {
@@ -7765,7 +7765,7 @@
       "js": {
         "Modernizr._version": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "([\\d.]+)?/modernizr(?:\\.([\\d.]+))?.*\\.js\\;version:\\1?\\1:\\2"
       ],
       "website": "https://modernizr.com"
@@ -7788,7 +7788,7 @@
       "html": "<link[^>]+href=[\"'][^\"]+mg-(?:core|plugins|templates)/",
       "icon": "Moguta.CMS.png",
       "implies": "PHP",
-      "script": "mg-(?:core|plugins|templates)/",
+      "scripts": "mg-(?:core|plugins|templates)/",
       "website": "https://moguta.ru"
     },
     "MoinMoin": {
@@ -7804,7 +7804,7 @@
       "js": {
         "show_switch2gui": ""
       },
-      "script": "moin(?:_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\1.\\2.\\3",
+      "scripts": "moin(?:_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\1.\\2.\\3",
       "website": "https://moinmo.in"
     },
     "Mojolicious": {
@@ -7826,7 +7826,7 @@
       "cpe": "cpe:/a:acquia:mollom",
       "html": "<img[^>]+\\.mollom\\.com",
       "icon": "Mollom.png",
-      "script": "mollom(?:\\.min)?\\.js",
+      "scripts": "mollom(?:\\.min)?\\.js",
       "website": "http://mollom.com"
     },
     "Moment Timezone": {
@@ -7835,7 +7835,7 @@
       ],
       "icon": "Moment.js.svg",
       "implies": "Moment.js",
-      "script": "moment-timezone(?:-data)?(?:\\.min)?\\.js",
+      "scripts": "moment-timezone(?:-data)?(?:\\.min)?\\.js",
       "website": "http://momentjs.com/timezone/"
     },
     "Moment.js": {
@@ -7847,7 +7847,7 @@
         "moment": "",
         "moment.version": "^(.+)$\\;version:\\1"
       },
-      "script": "moment(?:\\.min)?\\.js",
+      "scripts": "moment(?:\\.min)?\\.js",
       "website": "https://momentjs.com"
     },
     "Mondo Media": {
@@ -7910,7 +7910,7 @@
       "js": {
         "_monoTracker": ""
       },
-      "script": "monotracker(?:\\.min)?\\.js",
+      "scripts": "monotracker(?:\\.min)?\\.js",
       "website": "https://www.mono.net/en"
     },
     "MooTools": {
@@ -7922,7 +7922,7 @@
         "MooTools": "",
         "MooTools.version": "^(.+)$\\;version:\\1"
       },
-      "script": "mootools.*\\.js",
+      "scripts": "mootools.*\\.js",
       "website": "https://mootools.net"
     },
     "Moodle": {
@@ -7951,7 +7951,7 @@
         12
       ],
       "icon": "moon.svg",
-      "script": "/moon(?:\\.min)?\\.js$",
+      "scripts": "/moon(?:\\.min)?\\.js$",
       "website": "https://kbrsh.github.io/moon/"
     },
     "MotoCMS": {
@@ -7965,7 +7965,7 @@
         "AngularJS",
         "jQuery"
       ],
-      "script": "/mt-includes/js/website(?:assets)?\\.(?:min)?\\.js",
+      "scripts": "/mt-includes/js/website(?:assets)?\\.(?:min)?\\.js",
       "website": "http://motocms.com"
     },
     "Mouse Flow": {
@@ -7976,7 +7976,7 @@
       "js": {
         "_mfq": ""
       },
-      "script": [
+      "scripts": [
         "cdn\\.mouseflow\\.com"
       ],
       "website": "https://mouseflow.com/"
@@ -8023,7 +8023,7 @@
       "js": {
         "Mustache.version": "^(.+)$\\;version:\\1"
       },
-      "script": "mustache(?:\\.min)?\\.js",
+      "scripts": "mustache(?:\\.min)?\\.js",
       "website": "https://mustache.github.io"
     },
     "My Food Link": {
@@ -8058,7 +8058,7 @@
         5
       ],
       "icon": "MyBlogLog.png",
-      "script": "pub\\.mybloglog\\.com",
+      "scripts": "pub\\.mybloglog\\.com",
       "website": "http://www.mybloglog.com"
     },
     "MyCashFlow": {
@@ -8091,7 +8091,7 @@
       "meta": {
         "generator": "^.*MyWebsite.*$\\;version:8"
       },
-      "script": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
+      "scripts": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
       "website": "https://www.ionos.com"
     },
     "Mynetcap": {
@@ -8125,7 +8125,7 @@
         "nv.addGraph": "",
         "nv.version": "^(.+)$\\;confidence:0\\;version:\\1"
       },
-      "script": "nv\\.d3(?:\\.min)?\\.js",
+      "scripts": "nv\\.d3(?:\\.min)?\\.js",
       "website": "http://nvd3.org"
     },
     "Navegg": {
@@ -8133,7 +8133,7 @@
         10
       ],
       "icon": "Navegg.png",
-      "script": "tag\\.navdmp\\.com",
+      "scripts": "tag\\.navdmp\\.com",
       "website": "https://www.navegg.com/"
     },
     "Neos CMS": {
@@ -8202,7 +8202,7 @@
       "js": {
         "NETO": ""
       },
-      "script": "jquery\\.neto.*\\.js",
+      "scripts": "jquery\\.neto.*\\.js",
       "website": "https://www.neto.com.au"
     },
     "Nette Framework": {
@@ -8269,7 +8269,7 @@
       ],
       "icon": "NextGEN Gallery.png",
       "implies": "WordPress",
-      "script": "/nextgen-gallery/js/",
+      "scripts": "/nextgen-gallery/js/",
       "website": "https://www.imagely.com/wordpress-gallery-plugin"
     },
     "Nginx": {
@@ -8319,7 +8319,7 @@
       },
       "icon": "NodeBB.png",
       "implies": "Node.js",
-      "script": "^/nodebb\\.min\\.js\\?",
+      "scripts": "^/nodebb\\.min\\.js\\?",
       "website": "https://nodebb.org"
     },
     "Nuvemshop": {
@@ -8328,7 +8328,7 @@
       ],
       "html": "<a target=\"_blank\" title=\"Nuvemshop\"",
       "icon": "nuvem.png",
-      "script": "Nuvem",
+      "scripts": "Nuvem",
       "website": "https://www.nuvemshop.com.br/"
     },
     "Nuxt.js": {
@@ -8347,7 +8347,7 @@
       "js": {
         "$nuxt": ""
       },
-      "script": [
+      "scripts": [
         "/_nuxt/"
       ],
       "website": "https://nuxtjs.org"
@@ -8359,7 +8359,7 @@
       "html": "<link [^>]*href=\"[^\"]+owl\\.carousel(?:\\.min)?\\.css",
       "icon": "OWL Carousel.png",
       "implies": "jQuery",
-      "script": "owl\\.carousel.*\\.js",
+      "scripts": "owl\\.carousel.*\\.js",
       "website": "https://owlcarousel2.github.io/OwlCarousel2/"
     },
     "OXID eShop": {
@@ -8401,7 +8401,7 @@
       "meta": {
         "generator": "Octopress"
       },
-      "script": "/octopress\\.js",
+      "scripts": "/octopress\\.js",
       "website": "http://octopress.org"
     },
     "Odoo": {
@@ -8421,7 +8421,7 @@
       "meta": {
         "generator": "Odoo"
       },
-      "script": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
+      "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "website": "http://odoo.com"
     },
     "Olark": {
@@ -8429,7 +8429,7 @@
         52
       ],
       "icon": "Olark.png",
-      "script": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
+      "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
       "website": "https://www.olark.com/"
     },
     "OneAPM": {
@@ -8460,7 +8460,7 @@
         "OptanonConsent": ""
       },
       "icon": "OneTrust.png",
-      "script": [
+      "scripts": [
         "cdn\\.cookielaw\\.org",
         "optanon\\.blob\\.core\\.windows\\.net",
         "otSDKStub\\.js",
@@ -8479,7 +8479,7 @@
       "meta": {
         "generator": "Onshop Ecommerce"
       },
-      "script": "/opencart_custom\\.js",
+      "scripts": "/opencart_custom\\.js",
       "website": "https://onshop.asia"
     },
     "Open AdStream": {
@@ -8577,7 +8577,7 @@
       "html": "<link href=\"/opencms/",
       "icon": "OpenCms.png",
       "implies": "Java",
-      "script": "opencms",
+      "scripts": "opencms",
       "website": "http://www.opencms.org"
     },
     "OpenGSE": {
@@ -8614,7 +8614,7 @@
         "OpenLayers.VERSION_NUMBER": "([\\d.]+)\\;version:\\1",
         "ol.CanvasMap": ""
       },
-      "script": "openlayers",
+      "scripts": "openlayers",
       "website": "https://openlayers.org"
     },
     "OpenNemas": {
@@ -8635,7 +8635,7 @@
         41
       ],
       "icon": "openpay.png",
-      "script": "openpay\\.com.\\au",
+      "scripts": "openpay\\.com.\\au",
       "website": "https://www.openpay.com.au/"
     },
     "OpenResty": {
@@ -8680,7 +8680,7 @@
       "js": {
         "sap.ui.version": "^(.+)$\\;version:\\1"
       },
-      "script": "sap-ui-core\\.js",
+      "scripts": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
     },
     "OpenX": {
@@ -8689,7 +8689,7 @@
       ],
       "cpe": "cpe:/a:openx:openx",
       "icon": "OpenX.png",
-      "script": [
+      "scripts": [
         "https?://[^/]*\\.openx\\.net",
         "https?://[^/]*\\.servedbyopenx\\.com"
       ],
@@ -8703,7 +8703,7 @@
       "js": {
         "optimizely": ""
       },
-      "script": "optimizely\\.com.*\\.js",
+      "scripts": "optimizely\\.com.*\\.js",
       "website": "https://www.optimizely.com"
     },
     "Oracle Application Server": {
@@ -8766,7 +8766,7 @@
         10
       ],
       "icon": "Oracle.png",
-      "script": "atgsvcs.+atgsvcs\\.js",
+      "scripts": "atgsvcs.+atgsvcs\\.js",
       "website": "http://www.oracle.com/us/products/applications/commerce/recommendations-on-demand/index.html"
     },
     "Oracle Web Cache": {
@@ -8804,7 +8804,7 @@
         "PHP",
         "MySQL"
       ],
-      "script": [
+      "scripts": [
         "oro\\.min\\.js\\?version=([\\d.]+)\\;version:\\1"
       ],
       "website": "https://oroinc.com"
@@ -8814,7 +8814,7 @@
         67
       ],
       "icon": "osano.png",
-      "script": "cookieconsent\\.min\\.js",
+      "scripts": "cookieconsent\\.min\\.js",
       "website": "https://www.osano.com/"
     },
     "Outbrain": {
@@ -8826,7 +8826,7 @@
         "OB_releaseVer": "^(.+)$\\;version:\\1",
         "OutbrainPermaLink": ""
       },
-      "script": "widgets\\.outbrain\\.com/outbrain\\.js",
+      "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
       "website": "https://www.outbrain.com"
     },
     "Outlook Web App": {
@@ -8913,7 +8913,7 @@
         "PhpDebugBar": "",
         "phpdebugbar": ""
       },
-      "script": [
+      "scripts": [
         "debugbar.*\\.js"
       ],
       "website": "http://phpdebugbar.com/"
@@ -8923,7 +8923,7 @@
         51
       ],
       "icon": "pagefly.png",
-      "script": "pagefly\\.io",
+      "scripts": "pagefly\\.io",
       "website": "https://pagefly.io"
     },
     "Pagekit": {
@@ -9032,7 +9032,7 @@
       "cats": [
         25
       ],
-      "script": "paths(?:\\.min)?\\.js",
+      "scripts": "paths(?:\\.min)?\\.js",
       "website": "https://github.com/andreaferretti/paths-js"
     },
     "PayPal": {
@@ -9049,7 +9049,7 @@
       "js": {
         "PAYPAL": ""
       },
-      "script": "paypalobjects\\.com",
+      "scripts": "paypalobjects\\.com",
       "url": "paypal\\.com",
       "website": "https://paypal.com"
     },
@@ -9130,7 +9130,7 @@
       "html": "<[^>]+(?:class|id)=\"phabricator-",
       "icon": "Phabricator.png",
       "implies": "PHP",
-      "script": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
+      "scripts": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
       "website": "http://phacility.com"
     },
     "Phaser": {
@@ -9153,7 +9153,7 @@
       ],
       "icon": "Phenomic.svg",
       "implies": "React",
-      "script": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
+      "scripts": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
       "website": "https://phenomic.io/"
     },
     "Phoenix": {
@@ -9221,7 +9221,7 @@
         41
       ],
       "icon": "pinpayments.png",
-      "script": "api\\.pinpayments\\.com",
+      "scripts": "api\\.pinpayments\\.com",
       "website": "https://www.pinpayments.com/"
     },
     "Pingoteam": {
@@ -9240,7 +9240,7 @@
         5
       ],
       "icon": "Pinterest.svg",
-      "script": "//assets\\.pinterest\\.com/js/pinit\\.js",
+      "scripts": "//assets\\.pinterest\\.com/js/pinit\\.js",
       "website": "http://pinterest.com"
     },
     "Planet": {
@@ -9298,7 +9298,7 @@
         "X-Powered-By-Plesk": "^Plesk"
       },
       "icon": "Plesk.png",
-      "script": "common\\.js\\?plesk",
+      "scripts": "common\\.js\\?plesk",
       "website": "https://www.plesk.com/"
     },
     "Pligg": {
@@ -9337,7 +9337,7 @@
       "js": {
         "Plotly.version": "([\\d.])\\;version:\\1"
       },
-      "script": "https?://cdn\\.plot\\.ly/plotly",
+      "scripts": "https?://cdn\\.plot\\.ly/plotly",
       "website": "https://plot.ly/javascript/"
     },
     "Plyr": {
@@ -9348,7 +9348,7 @@
       "js": {
         "Plyr": ""
       },
-      "script": "https://cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
+      "scripts": "https://cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
       "website": "https://plyr.io/"
     },
     "Po.st": {
@@ -9366,7 +9366,7 @@
         59
       ],
       "icon": "polyfill.svg",
-      "script": [
+      "scripts": [
         "^https?://cdn\\.polyfill\\.io/",
         "/polyfill\\.min\\.js"
       ],
@@ -9381,7 +9381,7 @@
       "js": {
         "Polymer.version": "^(.+)$\\;version:\\1"
       },
-      "script": "polymer\\.js",
+      "scripts": "polymer\\.js",
       "website": "http://polymer-project.org"
     },
     "Posterous": {
@@ -9409,7 +9409,7 @@
         6
       ],
       "icon": "powerboutique.png",
-      "script": "powerboutique",
+      "scripts": "powerboutique",
       "website": "https://www.powerboutique.com/"
     },
     "Powergap": {
@@ -9432,7 +9432,7 @@
         "PREBID_TIMEOUT": "",
         "pbjs": ""
       },
-      "script": [
+      "scripts": [
         "/prebid\\.js",
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
@@ -9446,7 +9446,7 @@
       "js": {
         "PrefixFree": ""
       },
-      "script": "prefixfree\\.js",
+      "scripts": "prefixfree\\.js",
       "website": "https://leaverou.github.io/prefixfree/"
     },
     "PrestaShop": {
@@ -9488,7 +9488,7 @@
       "js": {
         "Prism": ""
       },
-      "script": "prism\\.js",
+      "scripts": "prism\\.js",
       "website": "http://prismjs.com"
     },
     "Project Wonderful": {
@@ -9500,7 +9500,7 @@
       "js": {
         "pw_adloader": ""
       },
-      "script": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
+      "scripts": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
       "website": "http://projectwonderful.com"
     },
     "Projesoft": {
@@ -9508,7 +9508,7 @@
         6
       ],
       "icon": "projesoft.png",
-      "script": [
+      "scripts": [
         "projesoft\\.js"
       ],
       "website": "https://www.projesoft.com.tr"
@@ -9521,7 +9521,7 @@
       "js": {
         "Prototype.Version": "^(.+)$\\;version:\\1"
       },
-      "script": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
+      "scripts": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
       "website": "http://www.prototypejs.org"
     },
     "Protovis": {
@@ -9531,7 +9531,7 @@
       "js": {
         "protovis": ""
       },
-      "script": "protovis.*\\.js",
+      "scripts": "protovis.*\\.js",
       "website": "http://mbostock.github.io/protovis"
     },
     "Proximis": {
@@ -9540,7 +9540,7 @@
         6
       ],
       "icon": "Proximis Omnichannel.png",
-      "script": "widget-commerce(?:\\.min)?\\.js",
+      "scripts": "widget-commerce(?:\\.min)?\\.js",
       "website": "https://www.proximis.com"
     },
     "Proximis Unified Commerce": {
@@ -9567,7 +9567,7 @@
         36
       ],
       "icon": "PubMatic.png",
-      "script": "https?://[^/]*\\.pubmatic\\.com",
+      "scripts": "https?://[^/]*\\.pubmatic\\.com",
       "website": "http://www.pubmatic.com/"
     },
     "Public CMS": {
@@ -9600,7 +9600,7 @@
         32
       ],
       "icon": "Pushnami.svg",
-      "script": "api\\.pushnami\\.com",
+      "scripts": "api\\.pushnami\\.com",
       "website": "https://pushnami.com"
     },
     "Pygments": {
@@ -9645,7 +9645,7 @@
       "js": {
         "quantserve": ""
       },
-      "script": "quantcast\\.mgr\\.consensu\\.org",
+      "scripts": "quantcast\\.mgr\\.consensu\\.org",
       "website": "https://www.quantcast.com/gdpr/consent-management-solution/"
     },
     "Quantcast Measure": {
@@ -9656,7 +9656,7 @@
       "js": {
         "quantserve": ""
       },
-      "script": "\\.quantserve\\.com/quant\\.js",
+      "scripts": "\\.quantserve\\.com/quant\\.js",
       "website": "https://www.quantcast.com/products/measure-audience-insights/"
     },
     "Question2Answer": {
@@ -9666,7 +9666,7 @@
       "html": "<!-- Powered by Question2Answer",
       "icon": "question2answer.png",
       "implies": "PHP",
-      "script": "\\./qa-content/qa-page\\.js\\?([0-9.]+)\\;version:\\1",
+      "scripts": "\\./qa-content/qa-page\\.js\\?([0-9.]+)\\;version:\\1",
       "website": "http://www.question2answer.org"
     },
     "Quick.CMS": {
@@ -9733,7 +9733,7 @@
       "js": {
         "RDStation": ""
       },
-      "script": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
+      "scripts": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
       "website": "http://rdstation.com.br"
     },
     "RDoc": {
@@ -9793,7 +9793,7 @@
       "meta": {
         "rlAppVersion": "^([0-9.]+)$\\;version:\\1"
       },
-      "script": "^rainloop/v/([0-9.]+)/\\;version:\\1",
+      "scripts": "^rainloop/v/([0-9.]+)/\\;version:\\1",
       "website": "https://www.rainloop.net/"
     },
     "Rakuten Digital Commerce": {
@@ -9811,7 +9811,7 @@
         59
       ],
       "icon": "Ramda.png",
-      "script": "ramda.*\\.js",
+      "scripts": "ramda.*\\.js",
       "website": "http://ramdajs.com"
     },
     "Raphael": {
@@ -9822,7 +9822,7 @@
       "js": {
         "Raphael.version": "^(.+)$\\;version:\\1"
       },
-      "script": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://dmitrybaranovskiy.github.io/raphael/"
     },
     "Raspbian": {
@@ -9844,7 +9844,7 @@
       "js": {
         "Raychat": ""
       },
-      "script": "app\\.raychat\\.io/scripts/js",
+      "scripts": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
     },
     "Rayo": {
@@ -9874,7 +9874,7 @@
       "js": {
         "Redoc.version": "^(.+)$\\;version:\\1"
       },
-      "script": "/redoc\\.(?:min\\.)?js",
+      "scripts": "/redoc\\.(?:min\\.)?js",
       "website": "https://github.com/Rebilly/ReDoc"
     },
     "React": {
@@ -9888,7 +9888,7 @@
         "React.version": "^(.+)$\\;version:\\1",
         "react.version": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
         "^react\\b.*\\.js"
@@ -9912,7 +9912,7 @@
         68
       ],
       "icon": "Recite Me.png",
-      "script": "api\\.reciteme\\.com/asset/js",
+      "scripts": "api\\.reciteme\\.com/asset/js",
       "website": "https://reciteme.com/"
     },
     "Recurly": {
@@ -9924,7 +9924,7 @@
       "js": {
         "recurly.version": "^(.+)$\\;version:\\1"
       },
-      "script": "js\\.recurly\\.com",
+      "scripts": "js\\.recurly\\.com",
       "website": "https://recurly.com"
     },
     "Red Hat": {
@@ -10017,7 +10017,7 @@
       "js": {
         "requirejs.version": "^(.+)$\\;version:\\1"
       },
-      "script": "require.*\\.js",
+      "scripts": "require.*\\.js",
       "website": "http://requirejs.org"
     },
     "Resin": {
@@ -10041,7 +10041,7 @@
       "js": {
         "Reveal.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": "(?:^|/)reveal(?:\\.min)?\\.js",
+      "scripts": "(?:^|/)reveal(?:\\.min)?\\.js",
       "website": "http://lab.hakim.se/reveal-js"
     },
     "Revel": {
@@ -10064,7 +10064,7 @@
         "<link[^>]* href=[\\'\"][^']+revslider[/\\w-]+\\.css\\?ver=([0-9.]+)[\\'\"]\\;version:\\1"
       ],
       "icon": "revslider.png",
-      "script": "/revslider/[/\\w-]+/js",
+      "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
     },
     "Rickshaw": {
@@ -10075,7 +10075,7 @@
       "js": {
         "Rickshaw": ""
       },
-      "script": "rickshaw(?:\\.min)?\\.js",
+      "scripts": "rickshaw(?:\\.min)?\\.js",
       "website": "http://code.shutterstock.com/rickshaw/"
     },
     "RightJS": {
@@ -10086,7 +10086,7 @@
       "js": {
         "RightJS": ""
       },
-      "script": "right\\.js",
+      "scripts": "right\\.js",
       "website": "http://rightjs.org"
     },
     "Riot": {
@@ -10097,7 +10097,7 @@
       "js": {
         "riot": ""
       },
-      "script": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
+      "scripts": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
       "website": "https://riot.js.org/"
     },
     "Riskified": {
@@ -10197,7 +10197,7 @@
         36
       ],
       "icon": "Rubicon Project.png",
-      "script": "https?://[^/]*\\.rubiconproject\\.com",
+      "scripts": "https?://[^/]*\\.rubiconproject\\.com",
       "website": "http://rubiconproject.com/"
     },
     "Ruby": {
@@ -10228,7 +10228,7 @@
       "meta": {
         "csrf-param": "^authenticity_token$\\;confidence:50"
       },
-      "script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
+      "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "https://rubyonrails.org"
     },
     "RxJS": {
@@ -10240,7 +10240,7 @@
         "Rx.CompositeDisposable": "",
         "Rx.Symbol": ""
       },
-      "script": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
+      "scripts": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
       "website": "http://reactivex.io"
     },
     "S.Builder": {
@@ -10284,7 +10284,7 @@
         69
       ],
       "icon": "SAP.png",
-      "script": "\\.gigya\\.com/JS/gigya\\.js",
+      "scripts": "\\.gigya\\.com/JS/gigya\\.js",
       "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html"
     },
     "SDL Tridion": {
@@ -10303,7 +10303,7 @@
       "meta": {
         "SIM.medium": ""
       },
-      "script": "/sim(?:site|core)/js",
+      "scripts": "/sim(?:site|core)/js",
       "website": "http://simgroep.nl/internet/portfolio-contentbeheer_41623/"
     },
     "SMF": {
@@ -10388,7 +10388,7 @@
       "js": {
         "SWFObject": ""
       },
-      "script": "swfobject.*\\.js",
+      "scripts": "swfobject.*\\.js",
       "website": "https://github.com/swfobject/swfobject"
     },
     "Saber": {
@@ -10432,7 +10432,7 @@
         6
       ],
       "icon": "salesfloor.png",
-      "script": [
+      "scripts": [
         "salesFloor\\.js"
       ],
       "website": "https://salesfloor.net/"
@@ -10468,7 +10468,7 @@
       "js": {
         "dwAnalytics": ""
       },
-      "script": "/demandware\\.static/",
+      "scripts": "/demandware\\.static/",
       "website": "http://demandware.com"
     },
     "Sapper": {
@@ -10590,7 +10590,7 @@
         67
       ],
       "icon": "seersco.png",
-      "script": [
+      "scripts": [
         "seersco.com/script/cb\\.js"
       ],
       "website": "http://www.seersco.com"
@@ -10603,7 +10603,7 @@
       "js": {
         "analytics": ""
       },
-      "script": "cdn\\.segment\\.com/analytics\\.js",
+      "scripts": "cdn\\.segment\\.com/analytics\\.js",
       "website": "https://segment.com"
     },
     "Select2": {
@@ -10615,7 +10615,7 @@
       "js": {
         "jQuery.fn.select2": ""
       },
-      "script": "select2(?:\\.min|\\.full)?\\.js",
+      "scripts": "select2(?:\\.min|\\.full)?\\.js",
       "website": "https://select2.org/"
     },
     "Semantic-ui": {
@@ -10626,7 +10626,7 @@
         "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
       "icon": "Semantic-ui.png",
-      "script": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://semantic-ui.com"
     },
     "Sencha Touch": {
@@ -10635,7 +10635,7 @@
         26
       ],
       "icon": "Sencha Touch.png",
-      "script": "sencha-touch.*\\.js",
+      "scripts": "sencha-touch.*\\.js",
       "website": "http://www.sencha.com/products/touch"
     },
     "Sensors Data": {
@@ -10651,7 +10651,7 @@
         "sa.lib_version": "([\\d.]+)\\;version:\\1",
         "sensorsdata_app_js_bridge_call_js": ""
       },
-      "script": "sensorsdata",
+      "scripts": "sensorsdata",
       "website": "https://www.sensorsdata.cn"
     },
     "Sentry": {
@@ -10702,7 +10702,7 @@
       "js": {
         "Shapecss": ""
       },
-      "script": [
+      "scripts": [
         "shapecss[-.]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/shapecss(?:\\.min)?\\.js\\;version:\\1",
         "shapecss.*\\.js"
@@ -10717,7 +10717,7 @@
       "js": {
         "SHARETHIS": ""
       },
-      "script": "w\\.sharethis\\.com/",
+      "scripts": "w\\.sharethis\\.com/",
       "website": "http://sharethis.com"
     },
     "ShellInABox": {
@@ -10753,7 +10753,7 @@
       "js": {
         "SSsdk": ""
       },
-      "script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
+      "scripts": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
       "website": "http://shinystat.com"
     },
     "Shop Pay": {
@@ -10781,7 +10781,7 @@
       "meta": {
         "keywords": "Shopatron"
       },
-      "script": "mediacdn\\.shopatron\\.com",
+      "scripts": "mediacdn\\.shopatron\\.com",
       "website": "http://ecommerce.shopatron.com"
     },
     "Shopcada": {
@@ -10848,7 +10848,7 @@
       "js": {
         "Shopify": "\\;confidence:25"
       },
-      "script": "sdks\\.shopifycdn\\.com",
+      "scripts": "sdks\\.shopifycdn\\.com",
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
@@ -10875,7 +10875,7 @@
       "meta": {
         "web_author": "^Shoptet"
       },
-      "script": [
+      "scripts": [
         "^https?://cdn\\.myshoptet\\.com/"
       ],
       "website": "http://www.shoptet.cz"
@@ -10901,7 +10901,7 @@
       "meta": {
         "application-name": "Shopware"
       },
-      "script": [
+      "scripts": [
         "(?:(shopware)|/web/cache/[0-9]{10}_.+)\\.js\\;version:\\1?4:5",
         "/jquery\\.shopware\\.min\\.js",
         "/engine/Shopware/"
@@ -10917,7 +10917,7 @@
       "js": {
         "signalData": ""
       },
-      "script": [
+      "scripts": [
         "//s\\.btstatic\\.com/tag\\.js",
         "//s\\.thebrighttag\\.com/iframe\\?"
       ],
@@ -10960,7 +10960,7 @@
         10
       ],
       "icon": "SimpleAnalytics.svg",
-      "script": "^https:\\/\\/cdn\\.simpleanalytics\\.io\\/hello\\.js",
+      "scripts": "^https:\\/\\/cdn\\.simpleanalytics\\.io\\/hello\\.js",
       "website": "https://simpleanalytics.com"
     },
     "SimpleHTTP": {
@@ -10987,7 +10987,7 @@
         10
       ],
       "icon": "Site Meter.png",
-      "script": "sitemeter\\.com/js/counter\\.js\\?site=",
+      "scripts": "sitemeter\\.com/js/counter\\.js\\?site=",
       "website": "http://www.sitemeter.com"
     },
     "SiteEdit": {
@@ -11041,7 +11041,7 @@
       ],
       "icon": "Siteglide.svg",
       "implies": "PlatformOS",
-      "script": "siteglide\\.js",
+      "scripts": "siteglide\\.js",
       "website": "https://www.siteglide.com"
     },
     "Sivuviidakko": {
@@ -11060,7 +11060,7 @@
       ],
       "html": "(?:<a [^>]*href=\"[^/]*//[^/]*serving-sys\\.com/|<img [^>]*src=\"[^/]*//[^/]*serving-sys\\.com/)",
       "icon": "Sizmek.png",
-      "script": "serving-sys\\.com/",
+      "scripts": "serving-sys\\.com/",
       "website": "http://sizmek.com"
     },
     "Slick": {
@@ -11069,7 +11069,7 @@
       ],
       "html": "<link [^>]+(?:/([\\d.]+)/)?slick-theme\\.css\\;version:\\1",
       "implies": "jQuery",
-      "script": "(?:/([\\d.]+))?/slick(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": "(?:/([\\d.]+))?/slick(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://kenwheeler.github.io/slick"
     },
     "SlickStack": {
@@ -11091,7 +11091,7 @@
       "html": "<link [^>]*href=\"[^/]*slimbox(?:-rtl)?\\.css",
       "icon": "Slimbox.png",
       "implies": "MooTools",
-      "script": "slimbox\\.js",
+      "scripts": "slimbox\\.js",
       "website": "http://www.digitalia.be/software/slimbox"
     },
     "Slimbox 2": {
@@ -11101,7 +11101,7 @@
       "html": "<link [^>]*href=\"[^/]*slimbox2(?:-rtl)?\\.css",
       "icon": "Slimbox 2.png",
       "implies": "jQuery",
-      "script": "slimbox2\\.js",
+      "scripts": "slimbox2\\.js",
       "website": "http://www.digitalia.be/software/slimbox2"
     },
     "Smart Ad Server": {
@@ -11147,7 +11147,7 @@
         6
       ],
       "icon": "Smartstore.biz.png",
-      "script": "smjslib\\.js",
+      "scripts": "smjslib\\.js",
       "website": "http://smartstore.com"
     },
     "Smartstore.NET": {
@@ -11186,7 +11186,7 @@
       "js": {
         "Snap.version": "^(.+)$\\;version:\\1"
       },
-      "script": "snap\\.svg(?:-min)?\\.js",
+      "scripts": "snap\\.svg(?:-min)?\\.js",
       "website": "http://snapsvg.io"
     },
     "Snipcart": {
@@ -11201,7 +11201,7 @@
         "<div [^>]*id=\".*snipcart.*\""
       ],
       "icon": "Snipcart.png",
-      "script": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
+      "scripts": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
       "website": "https://snipcart.com/"
     },
     "Snoobi": {
@@ -11212,7 +11212,7 @@
       "js": {
         "snoobi": ""
       },
-      "script": "snoobi\\.com/snoop\\.php",
+      "scripts": "snoobi\\.com/snoop\\.php",
       "website": "http://www.snoobi.com"
     },
     "SobiPro": {
@@ -11236,7 +11236,7 @@
         "io.Socket": "",
         "io.version": "^(.+)$\\;version:\\1"
       },
-      "script": "socket\\.io.*\\.js",
+      "scripts": "socket\\.io.*\\.js",
       "website": "https://socket.io"
     },
     "SoftTr": {
@@ -11260,7 +11260,7 @@
       "meta": {
         "web_author": "^solidpixels"
       },
-      "script": [
+      "scripts": [
         "^https?://cdn\\.solidpixels\\.net/"
       ],
       "website": "https://www.solidpixels.net"
@@ -11311,7 +11311,7 @@
         "_adcopy-puzzle-image-image": "",
         "adcopy-puzzle-image-image": ""
       },
-      "script": "^https?://api\\.solvemedia\\.com/",
+      "scripts": "^https?://api\\.solvemedia\\.com/",
       "website": "http://solvemedia.com"
     },
     "SonarQubes": {
@@ -11331,7 +11331,7 @@
       "meta": {
         "application-name": "^SonarQubes$"
       },
-      "script": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
+      "scripts": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
       "website": "https://www.sonarqube.org/"
     },
     "Sotel": {
@@ -11383,7 +11383,7 @@
         41
       ],
       "icon": "splitit.png",
-      "script": "checkout\\.production\\.splitit\\.com",
+      "scripts": "checkout\\.production\\.splitit\\.com",
       "website": "https://www.splitit.com/"
     },
     "Splitbee": {
@@ -11394,7 +11394,7 @@
       "js": {
         "splitbee": ""
       },
-      "script": "^https://cdn\\.splitbee\\.io/sb\\.js",
+      "scripts": "^https://cdn\\.splitbee\\.io/sb\\.js",
       "website": "https://splitbee.io"
     },
     "Splunk": {
@@ -11498,7 +11498,7 @@
       "js": {
         "Stackla": ""
       },
-      "script": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
+      "scripts": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
       "website": "http://stackla.com/"
     },
     "Starlet": {
@@ -11522,7 +11522,7 @@
         "sc_project": "\\;confidence:50",
         "sc_security": "\\;confidence:50"
       },
-      "script": "statcounter\\.com/counter/counter",
+      "scripts": "statcounter\\.com/counter/counter",
       "website": "http://www.statcounter.com"
     },
     "Stimulus": {
@@ -11530,7 +11530,7 @@
         12
       ],
       "description": "A modest JavaScript framework for the HTML you already have.",
-      "html": "data-controller",
+      "html": "<[^>]+data-controller",
       "icon": "Stimulus.png",
       "website": "https://stimulusjs.org/"
     },
@@ -11571,7 +11571,7 @@
         "Bootstrap",
         "Google Code Prettify"
       ],
-      "script": "strapdown\\.js",
+      "scripts": "strapdown\\.js",
       "website": "http://strapdownjs.com"
     },
     "Strapi": {
@@ -11614,7 +11614,7 @@
       "js": {
         "Stripe.version": "^(.+)$\\;version:\\1"
       },
-      "script": "js\\.stripe\\.com",
+      "scripts": "js\\.stripe\\.com",
       "website": "http://stripe.com"
     },
     "SublimeVideo": {
@@ -11625,7 +11625,7 @@
       "js": {
         "sublimevideo": ""
       },
-      "script": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
+      "scripts": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
       "website": "http://sublimevideo.net"
     },
     "Subrion": {
@@ -11670,7 +11670,7 @@
         32
       ],
       "icon": "SumoMe.png",
-      "script": "load\\.sumome\\.com",
+      "scripts": "load\\.sumome\\.com",
       "website": "http://sumome.com"
     },
     "SunOS": {
@@ -11689,7 +11689,7 @@
         25
       ],
       "icon": "Supersized.png",
-      "script": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
+      "scripts": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
       "website": "http://buildinternet.com/project/supersized"
     },
     "Svbtle": {
@@ -11720,7 +11720,7 @@
       "js": {
         "swal": ""
       },
-      "script": "sweet-alert(?:\\.min)?\\.js",
+      "scripts": "sweet-alert(?:\\.min)?\\.js",
       "website": "https://t4t5.github.io/sweetalert/"
     },
     "SweetAlert2": {
@@ -11733,7 +11733,7 @@
       "js": {
         "Sweetalert2": ""
       },
-      "script": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+      "scripts": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
       "website": "https://sweetalert2.github.io/"
     },
     "Swell": {
@@ -11779,7 +11779,7 @@
       "js": {
         "Swiftype": ""
       },
-      "script": "swiftype\\.com/embed\\.js$",
+      "scripts": "swiftype\\.com/embed\\.js$",
       "website": "http://swiftype.com"
     },
     "Swiper Slider": {
@@ -11791,7 +11791,7 @@
       "js": {
         "Swiper": ""
       },
-      "script": "swiper(?:\\.min)?\\.js",
+      "scripts": "swiper(?:\\.min)?\\.js",
       "website": "https://swiperjs.com"
     },
     "Symfony": {
@@ -11831,7 +11831,7 @@
         "application-name": "Synology DiskStation",
         "description": "^DiskStation provides a full-featured network attached storage"
       },
-      "script": "webapi/entry\\.cgi\\?api=SYNO\\.(?:Core|Filestation)\\.Desktop\\.",
+      "scripts": "webapi/entry\\.cgi\\?api=SYNO\\.(?:Core|Filestation)\\.Desktop\\.",
       "website": "http://synology.com"
     },
     "SyntaxHighlighter": {
@@ -11869,7 +11869,7 @@
         41
       ],
       "icon": "tnsi.png",
-      "script": "secure\\.ap\\.tnspayments\\.com",
+      "scripts": "secure\\.ap\\.tnspayments\\.com",
       "website": "https://tnsi.com/products/payments/"
     },
     "TWiki": {
@@ -11882,7 +11882,7 @@
       "html": "<img [^>]*(?:title|alt)=\"This site is powered by the TWiki collaboration platform",
       "icon": "TWiki.png",
       "implies": "Perl",
-      "script": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
+      "scripts": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
       "website": "http://twiki.org"
     },
     "TYPO3 CMS": {
@@ -11899,7 +11899,7 @@
       "meta": {
         "generator": "TYPO3\\s+(?:CMS\\s+)?(?:[\\d.]+)?(?:\\s+CMS)?"
       },
-      "script": "^/?typo3(?:conf|temp)/",
+      "scripts": "^/?typo3(?:conf|temp)/",
       "url": "/typo3/",
       "website": "https://typo3.org/"
     },
@@ -11911,7 +11911,7 @@
       "js": {
         "tc_vars": ""
       },
-      "script": "\\.tagcommander\\.com",
+      "scripts": "\\.tagcommander\\.com",
       "website": "https://www.commandersact.com/en/solutions/tagcommander/"
     },
     "Taggbox": {
@@ -11919,7 +11919,7 @@
         5
       ],
       "icon": "Taggbox.svg",
-      "script": "web\\.taggbox\\.com",
+      "scripts": "web\\.taggbox\\.com",
       "url": "web\\.taggbox\\.com",
       "website": "https://taggbox.com/"
     },
@@ -11950,7 +11950,7 @@
         52
       ],
       "icon": "TawkTo.png",
-      "script": "//embed\\.tawk\\.to",
+      "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
     },
     "Tealeaf": {
@@ -11971,7 +11971,7 @@
       "js": {
         "TEALIUMENABLED": ""
       },
-      "script": [
+      "scripts": [
         "^(?:https?:)?//tags\\.tiqcdn\\.com/",
         "/tealium/utag\\.js$"
       ],
@@ -12002,7 +12002,7 @@
         6
       ],
       "icon": "Tebex.png",
-      "script": "https://server\\.tebex\\.io/tebexAccounts/tebexaccounts\\.js",
+      "scripts": "https://server\\.tebex\\.io/tebexAccounts/tebexaccounts\\.js",
       "website": "https://www.tebex.io/"
     },
     "Telescope": {
@@ -12024,7 +12024,7 @@
         10
       ],
       "icon": "tajs.png",
-      "script": "tajs\\.qq\\.com/stats",
+      "scripts": "tajs\\.qq\\.com/stats",
       "website": "https://ta.qq.com/"
     },
     "Tencent Waterproof Wall": {
@@ -12033,7 +12033,7 @@
         16
       ],
       "icon": "TencentWaterproofWall.png",
-      "script": [
+      "scripts": [
         "/TCaptcha\\.js",
         "captcha\\.qq\\.com/.*"
       ],
@@ -12054,7 +12054,7 @@
         67
       ],
       "icon": "termly.svg",
-      "script": "app\\.termly\\.io/embed\\.min\\.js",
+      "scripts": "app\\.termly\\.io/embed\\.min\\.js",
       "website": "https://termly.io/"
     },
     "Tessitura": {
@@ -12085,7 +12085,7 @@
         68
       ],
       "icon": "Texthelp.png",
-      "script": "browsealoud\\.com/.*/browsealoud\\.js",
+      "scripts": "browsealoud\\.com/.*/browsealoud\\.js",
       "website": "https://www.texthelp.com/en-gb/products/browsealoud/"
     },
     "Textpattern CMS": {
@@ -12107,7 +12107,7 @@
         6
       ],
       "icon": "TheHutGroup.png",
-      "script": [
+      "scripts": [
         "THEHUT-.*\\.js"
       ],
       "website": "https://www.thg.com/"
@@ -12141,7 +12141,7 @@
         6
       ],
       "icon": "Ticimax.png",
-      "script": [
+      "scripts": [
         "cdn\\.ticimax\\.com/"
       ],
       "website": "https://www.ticimax.com"
@@ -12186,7 +12186,7 @@
       "meta": {
         "generator": "^Tiki"
       },
-      "script": "(?:/|_)tiki",
+      "scripts": "(?:/|_)tiki",
       "website": "http://tiki.org"
     },
     "Tilda": {
@@ -12195,7 +12195,7 @@
       ],
       "html": "<link[^>]* href=[^>]+tilda(?:cdn|\\.ws|-blocks)",
       "icon": "Tilda.svg",
-      "script": "tilda(?:cdn|\\.ws|-blocks)",
+      "scripts": "tilda(?:cdn|\\.ws|-blocks)",
       "website": "https://tilda.cc"
     },
     "Timeplot": {
@@ -12206,7 +12206,7 @@
       "js": {
         "Timeplot": ""
       },
-      "script": "timeplot.*\\.js",
+      "scripts": "timeplot.*\\.js",
       "website": "http://www.simile-widgets.org/timeplot/"
     },
     "TinyMCE": {
@@ -12217,7 +12217,7 @@
       "js": {
         "tinyMCE.majorVersion": "([\\d.]+)\\;version:\\1"
       },
-      "script": "/tiny_?mce(?:\\.min)?\\.js",
+      "scripts": "/tiny_?mce(?:\\.min)?\\.js",
       "website": "http://tinymce.com"
     },
     "Titan": {
@@ -12284,7 +12284,7 @@
       "js": {
         "TrackJs": ""
       },
-      "script": "tracker\\.js",
+      "scripts": "tracker\\.js",
       "website": "http://trackjs.com"
     },
     "Transifex": {
@@ -12306,7 +12306,7 @@
         "PHP",
         "jQuery"
       ],
-      "script": "lucide\\.init(?:\\.min)?\\.js",
+      "scripts": "lucide\\.init(?:\\.min)?\\.js",
       "website": "http://www.translucide.net"
     },
     "Tray": {
@@ -12314,7 +12314,7 @@
         6
       ],
       "icon": "tray.png",
-      "script": "tcdn\\.com\\.br",
+      "scripts": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
     "TrustArc": {
@@ -12322,7 +12322,7 @@
         67
       ],
       "icon": "TrustArc.svg",
-      "script": "consent\\.trustarc\\.com",
+      "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
     },
     "Tumblr": {
@@ -12373,7 +12373,7 @@
         5
       ],
       "icon": "Twitter.svg",
-      "script": "//platform\\.twitter\\.com/widgets\\.js",
+      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
       "website": "http://twitter.com"
     },
     "Twitter Emoji (Twemoji)": {
@@ -12383,7 +12383,7 @@
       "js": {
         "twemoji": ""
       },
-      "script": "twemoji(?:\\.min)?\\.js",
+      "scripts": "twemoji(?:\\.min)?\\.js",
       "website": "https://twitter.github.io/twemoji/"
     },
     "Twitter Flight": {
@@ -12406,7 +12406,7 @@
       "js": {
         "typeahead": ""
       },
-      "script": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
+      "scripts": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
       "website": "https://twitter.github.io/typeahead.js"
     },
     "TypePad": {
@@ -12443,7 +12443,7 @@
       "js": {
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
-      "script": "use\\.typekit\\.com",
+      "scripts": "use\\.typekit\\.com",
       "website": "http://typekit.com"
     },
     "UIKit": {
@@ -12452,7 +12452,7 @@
       ],
       "html": "<[^>]+class=\"[^\"]*(?:uk-container|uk-section)",
       "icon": "UIKit.png",
-      "script": "uikit.*\\.js",
+      "scripts": "uikit.*\\.js",
       "website": "https://getuikit.com"
     },
     "UMI.CMS": {
@@ -12482,7 +12482,7 @@
       ],
       "icon": "Ubercart.png",
       "implies": "Drupal",
-      "script": "uc_cart/uc_cart_block\\.js",
+      "scripts": "uc_cart/uc_cart_block\\.js",
       "website": "http://www.ubercart.org"
     },
     "Ubuntu": {
@@ -12505,7 +12505,7 @@
       "js": {
         "ucCatalog": ""
       },
-      "script": "cgi-bin\\/UCJavaScript\\?",
+      "scripts": "cgi-bin\\/UCJavaScript\\?",
       "url": "/cgi-bin/UCEditor\\?",
       "website": "http://ultracart.com"
     },
@@ -12540,7 +12540,7 @@
         "X-Unbounce-PageId": ""
       },
       "icon": "Unbounce.png",
-      "script": "ubembed\\.com",
+      "scripts": "ubembed\\.com",
       "website": "http://unbounce.com"
     },
     "Underscore.js": {
@@ -12553,7 +12553,7 @@
         "_.VERSION": "^(.+)$\\;confidence:0\\;version:\\1",
         "_.restArguments": ""
       },
-      "script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "scripts": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
       "website": "http://underscorejs.org"
     },
     "Uniconsent": {
@@ -12561,7 +12561,7 @@
         67
       ],
       "icon": "Uniconsent.png",
-      "script": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
+      "scripts": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
       "website": "https://www.uniconsent.com/"
     },
     "Usabilla": {
@@ -12580,7 +12580,7 @@
       ],
       "html": "<iframe[ˆ>]*\\.usablenet\\.com/pt/",
       "icon": "UsableNet.png",
-      "script": "\\.usablenet\\.com/pt/",
+      "scripts": "\\.usablenet\\.com/pt/",
       "website": "https://usablenet.com/"
     },
     "UserLike": {
@@ -12588,7 +12588,7 @@
         52
       ],
       "icon": "UserLike.svg",
-      "script": [
+      "scripts": [
         "userlike\\.min\\.js",
         "userlikelib\\.min\\.js"
       ],
@@ -12619,7 +12619,7 @@
         68
       ],
       "icon": "UserWay.png",
-      "script": "cdn\\.userway\\.org/widget.*\\.js",
+      "scripts": "cdn\\.userway\\.org/widget.*\\.js",
       "website": "https://userway.org/"
     },
     "Ushahidi": {
@@ -12639,7 +12639,7 @@
       "js": {
         "Ushahidi": ""
       },
-      "script": "/js/ushahidi\\.js$",
+      "scripts": "/js/ushahidi\\.js$",
       "website": "http://www.ushahidi.com"
     },
     "VIVVO": {
@@ -12662,7 +12662,7 @@
       "html": "<a[^>]+>Powered By VP-ASP Shopping Cart</a>",
       "icon": "VP-ASP.png",
       "implies": "Microsoft ASP.NET",
-      "script": "vs350\\.js",
+      "scripts": "vs350\\.js",
       "website": "http://www.vpasp.com"
     },
     "VTEX": {
@@ -12690,7 +12690,7 @@
       "js": {
         "vaadin": ""
       },
-      "script": "vaadinBootstrap\\.js(?:\\?v=([\\d.]+))?\\;version:\\1",
+      "scripts": "vaadinBootstrap\\.js(?:\\?v=([\\d.]+))?\\;version:\\1",
       "website": "https://vaadin.com"
     },
     "Vanilla": {
@@ -12749,7 +12749,7 @@
       "js": {
         "VuVeoxaContent": ""
       },
-      "script": "tracking\\.veoxa\\.com",
+      "scripts": "tracking\\.veoxa\\.com",
       "website": "http://veoxa.com"
     },
     "Vercel": {
@@ -12776,7 +12776,7 @@
         "videojs": "",
         "videojs.VERSION": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "zencdn\\.net/c/video\\.js",
         "cdnjs\\.cloudflare\\.com\\/ajax\\/libs\\/video\\.js\\/([\\d\\.]+)\\/\\;version:\\1"
       ],
@@ -12792,7 +12792,7 @@
         "vl_cB": "",
         "vl_disable": ""
       },
-      "script": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)",
+      "scripts": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)",
       "website": "http://viglink.com"
     },
     "Vigbo": {
@@ -12804,7 +12804,7 @@
       },
       "html": "<link[^>]* href=[^>]+(?:\\.vigbo\\.com|\\.gophotoweb\\.com)",
       "icon": "vigbo.png",
-      "script": "(?:\\.vigbo\\.com|\\.gophotoweb\\.com)",
+      "scripts": "(?:\\.vigbo\\.com|\\.gophotoweb\\.com)",
       "website": "https://vigbo.com"
     },
     "Vignette": {
@@ -12870,7 +12870,7 @@
         41
       ],
       "icon": "visa.png",
-      "script": "secure\\.checkout\\.visa\\.com",
+      "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
     },
     "Visual Website Optimizer": {
@@ -12885,7 +12885,7 @@
         "VWO": "",
         "__vwo": ""
       },
-      "script": [
+      "scripts": [
         "dev\\.visualwebsiteoptimizer\\.com"
       ],
       "website": "https://vwo.com/"
@@ -12895,7 +12895,7 @@
         10
       ],
       "icon": "VisualPath.png",
-      "script": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
+      "scripts": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
       "website": "http://www.trackset.com/web-analytics-software/visualpath"
     },
     "Volusion": {
@@ -12910,7 +12910,7 @@
       "js": {
         "volusion": ""
       },
-      "script": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
+      "scripts": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
       "website": "https://www.volusion.com"
     },
     "Vue.js": {
@@ -12923,7 +12923,7 @@
       "js": {
         "Vue.version": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "vue[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "(?:/([\\d.]+))?/vue(?:\\.min)?\\.js\\;version:\\1"
       ],
@@ -12957,7 +12957,7 @@
         10
       ],
       "icon": "W3Counter.png",
-      "script": "w3counter\\.com/tracker\\.js",
+      "scripts": "w3counter\\.com/tracker\\.js",
       "website": "http://www.w3counter.com"
     },
     "WEBXPAY": {
@@ -13058,7 +13058,7 @@
       "meta": {
         "generator": "^Web2py"
       },
-      "script": "web2py\\.js",
+      "scripts": "web2py\\.js",
       "website": "http://web2py.com"
     },
     "WebAR": {
@@ -13141,7 +13141,7 @@
       "js": {
         "webix": ""
       },
-      "script": "\\bwebix\\.js",
+      "scripts": "\\bwebix\\.js",
       "website": "http://webix.com"
     },
     "Webmine": {
@@ -13254,7 +13254,7 @@
       "meta": {
         "generator": "^Webzi"
       },
-      "script": "cdn\\.6th\\.ir",
+      "scripts": "cdn\\.6th\\.ir",
       "website": "https://webzi.ir"
     },
     "Weebly": {
@@ -13269,7 +13269,7 @@
       "js": {
         "_W.configDomain": ""
       },
-      "script": "cdn\\d+\\.editmysite\\.com",
+      "scripts": "cdn\\d+\\.editmysite\\.com",
       "website": "https://www.weebly.com"
     },
     "Weglot": {
@@ -13280,7 +13280,7 @@
         "Weglot-Translated": ""
       },
       "icon": "Weglot.png",
-      "script": [
+      "scripts": [
         "cdn\\.weglot\\.com",
         "wp-content/plugins/weglot"
       ],
@@ -13303,7 +13303,7 @@
         "PHP",
         "WordPress"
       ],
-      "script": "uscesL10n",
+      "scripts": "uscesL10n",
       "website": "https://www.welcart.com"
     },
     "Whooshkaa": {
@@ -13364,7 +13364,7 @@
       "js": {
         "wink.version": "^(.+)$\\;version:\\1"
       },
-      "script": "(?:_base/js/base|wink).*\\.js",
+      "scripts": "(?:_base/js/base|wink).*\\.js",
       "website": "http://winktoolkit.org"
     },
     "Winstone Servlet Container": {
@@ -13399,7 +13399,7 @@
       "meta": {
         "generator": "Wix\\.com Website Builder"
       },
-      "script": "static\\.parastorage\\.com",
+      "scripts": "static\\.parastorage\\.com",
       "website": "https://www.wix.com"
     },
     "Wolf CMS": {
@@ -13417,7 +13417,7 @@
       ],
       "icon": "Woltlab Community Framework.png",
       "implies": "PHP",
-      "script": "WCF\\..*\\.js",
+      "scripts": "WCF\\..*\\.js",
       "website": "http://www.woltlab.com"
     },
     "WooCommerce": {
@@ -13436,7 +13436,7 @@
       "meta": {
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
-      "script": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "scripts": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "website": "https://woocommerce.com"
     },
     "Woopra": {
@@ -13444,7 +13444,7 @@
         10
       ],
       "icon": "Woopra.png",
-      "script": "static\\.woopra\\.com",
+      "scripts": "static\\.woopra\\.com",
       "website": "http://www.woopra.com"
     },
     "WordPress": {
@@ -13473,7 +13473,7 @@
         "generator": "^WordPress ?([\\d.]+)?\\;version:\\1",
         "shareaholic:wp_version": ""
       },
-      "script": [
+      "scripts": [
         "/wp-(?:content|includes)/",
         "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
       ],
@@ -13530,7 +13530,7 @@
       "meta": {
         "generator": "X-Cart(?: (\\d+))?\\;version:\\1"
       },
-      "script": "/skin/common_files/modules/Product_Options/func\\.js",
+      "scripts": "/skin/common_files/modules/Product_Options/func\\.js",
       "website": "http://x-cart.com"
     },
     "XAMPP": {
@@ -13580,7 +13580,7 @@
       "js": {
         "XRegExp.version": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "xregexp[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/xregexp(?:\\.min)?\\.js\\;version:\\1",
         "xregexp.*\\.js"
@@ -13607,7 +13607,7 @@
         59
       ],
       "icon": "Xajax.png",
-      "script": "xajax_core.*\\.js",
+      "scripts": "xajax_core.*\\.js",
       "website": "http://xajax-project.org"
     },
     "Xanario": {
@@ -13653,7 +13653,7 @@
       "html": "<input type=\"hidden\" name=\"_sys_bind_\\d+\" id=\"_sys_bind_\\d+\" />",
       "icon": "xeora.png",
       "implies": "Microsoft ASP.NET",
-      "script": "/_bi_sps_v.+\\.js",
+      "scripts": "/_bi_sps_v.+\\.js",
       "website": "http://www.xeora.org"
     },
     "Xitami": {
@@ -13677,7 +13677,7 @@
       "meta": {
         "keywords": "xonic-solutions"
       },
-      "script": "core/jslib/jquery\\.xonic\\.js\\.php",
+      "scripts": "core/jslib/jquery\\.xonic\\.js\\.php",
       "website": "http://www.xonic-solutions.de"
     },
     "XpressEngine": {
@@ -13709,7 +13709,7 @@
         "YAHOO.VERSION": "^(.+)$\\;version:\\1",
         "YUI.version": "^(.+)$\\;version:\\1"
       },
-      "script": "(?:/yui/|yui\\.yahooapis\\.com)",
+      "scripts": "(?:/yui/|yui\\.yahooapis\\.com)",
       "website": "http://yuilibrary.com"
     },
     "YUI Doc": {
@@ -13740,7 +13740,7 @@
       "js": {
         "adxinserthtml": ""
       },
-      "script": "adinterax\\.com",
+      "scripts": "adinterax\\.com",
       "website": "http://advertising.yahoo.com"
     },
     "Yahoo! Ecommerce": {
@@ -13763,7 +13763,7 @@
       ],
       "html": "<!-- (?:End )?Yahoo! Tag Manager -->",
       "icon": "yahoo.png",
-      "script": "b\\.yjtag\\.jp/iframe",
+      "scripts": "b\\.yjtag\\.jp/iframe",
       "website": "https://tagmanager.yahoo.co.jp/"
     },
     "Yahoo! Web Analytics": {
@@ -13774,7 +13774,7 @@
       "js": {
         "YWA": ""
       },
-      "script": "d\\.yimg\\.com/mi/ywa\\.js",
+      "scripts": "d\\.yimg\\.com/mi/ywa\\.js",
       "website": "http://web.analytics.yahoo.com"
     },
     "Yandex.Direct": {
@@ -13787,7 +13787,7 @@
         "yandex_ad_format": "",
         "yandex_partner_id": ""
       },
-      "script": "https?://an\\.yandex\\.ru/",
+      "scripts": "https?://an\\.yandex\\.ru/",
       "website": "http://partner.yandex.com"
     },
     "Yandex.Metrika": {
@@ -13798,7 +13798,7 @@
       "js": {
         "yandex_metrika": ""
       },
-      "script": [
+      "scripts": [
         "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
         "cdn\\.jsdelivr\\.net\\/npm\\/yandex-metrica-watch\\/watch\\.js"
       ],
@@ -13830,7 +13830,7 @@
         36
       ],
       "icon": "Yieldlab.png",
-      "script": "^https?://(?:[^/]+\\.)?yieldlab\\.net/",
+      "scripts": "^https?://(?:[^/]+\\.)?yieldlab\\.net/",
       "website": "http://yieldlab.de"
     },
     "Yii": {
@@ -13847,7 +13847,7 @@
       ],
       "icon": "Yii.png",
       "implies": "PHP",
-      "script": [
+      "scripts": [
         "/assets/[a-zA-Z0-9]{8}\\/yii\\.js$",
         "/yii\\.(?:validation|activeForm)\\.js"
       ],
@@ -13891,7 +13891,7 @@
       "html": "<!-- ZK [.\\d\\s]+-->",
       "icon": "ZK.png",
       "implies": "Java",
-      "script": "zkau/",
+      "scripts": "zkau/",
       "website": "http://zkoss.org"
     },
     "ZURB Foundation": {
@@ -13933,7 +13933,7 @@
       "js": {
         "zanox": ""
       },
-      "script": "zanox\\.com/scripts/zanox\\.js$",
+      "scripts": "zanox\\.com/scripts/zanox\\.js$",
       "website": "http://zanox.com"
     },
     "Zen Cart": {
@@ -13981,7 +13981,7 @@
         52
       ],
       "icon": "Zendesk Chat.png",
-      "script": "v2\\.zopim\\.com",
+      "scripts": "v2\\.zopim\\.com",
       "website": "http://zopim.com"
     },
     "Zenfolio": {
@@ -14002,7 +14002,7 @@
       "js": {
         "Zepto": ""
       },
-      "script": "zepto.*\\.js",
+      "scripts": "zepto.*\\.js",
       "website": "http://zeptojs.com"
     },
     "Zimbra": {
@@ -14033,7 +14033,7 @@
       ],
       "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
       "icon": "zip_pay.svg",
-      "script": [
+      "scripts": [
         "static\\.zipmoney\\.com\\.au",
         "zip\\.co"
       ],
@@ -14096,7 +14096,7 @@
       "js": {
         "actionheroClient": ""
       },
-      "script": "actionheroClient\\.js",
+      "scripts": "actionheroClient\\.js",
       "website": "http://www.actionherojs.com"
     },
     "amCharts": {
@@ -14108,7 +14108,7 @@
       "js": {
         "AmCharts": ""
       },
-      "script": "amcharts.*\\.js",
+      "scripts": "amcharts.*\\.js",
       "website": "http://amcharts.com"
     },
     "animate.css": {
@@ -14128,7 +14128,7 @@
       "js": {
         "basket.isValidItem": ""
       },
-      "script": "basket.*\\.js\\;confidence:10",
+      "scripts": "basket.*\\.js\\;confidence:10",
       "website": "https://addyosmani.github.io/basket.js/"
     },
     "borderfree": {
@@ -14136,7 +14136,7 @@
         6
       ],
       "icon": "borderfree.png",
-      "script": [
+      "scripts": [
         "global\\.prd\\.borderfree\\.com",
         "wm\\.prd\\.borderfree\\.com",
         "bfx\\.js"
@@ -14183,7 +14183,7 @@
         "COMSCORE": "",
         "_COMSCORE": ""
       },
-      "script": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
+      "scripts": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
       "website": "http://comscore.com"
     },
     "debut": {
@@ -14204,7 +14204,7 @@
       "js": {
         "Decimal.ROUND_HALF_FLOOR": ""
       },
-      "script": [
+      "scripts": [
         "decimal[.-]([\\d.]*\\d+)(?:\\.min)?\\.js\\;version:\\1",
         "/([\\d.]*\\d+)/decimal(?:\\.min)?\\.js\\;version:\\1",
         "decimal(?:\\.min)?\\.js(?:\\?ver(?:sion)?=([\\d.]*\\d+))?\\;version:\\1"
@@ -14219,7 +14219,7 @@
       "js": {
         "deepMiner": ""
       },
-      "script": "deepMiner\\.js",
+      "scripts": "deepMiner\\.js",
       "website": "https://github.com/deepwn/deepMiner"
     },
     "e107": {
@@ -14234,7 +14234,7 @@
       },
       "icon": "e107.png",
       "implies": "PHP",
-      "script": "[^a-z\\d]e107\\.js",
+      "scripts": "[^a-z\\d]e107\\.js",
       "website": "http://e107.org"
     },
     "eSyndiCat": {
@@ -14260,7 +14260,7 @@
       ],
       "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
       "icon": "eway.png",
-      "script": "secure\\.ewaypayments\\.com",
+      "scripts": "secure\\.ewaypayments\\.com",
       "website": "https://www.eway.com.au/"
     },
     "eZ Platform": {
@@ -14302,7 +14302,7 @@
         "ef.version": "^(.+)$\\;version:\\1",
         "efCore": ""
       },
-      "script": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
+      "scripts": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
       "website": "http://ef.js.org"
     },
     "enduro.js": {
@@ -14321,7 +14321,7 @@
         67
       ],
       "icon": "eucookie.png",
-      "script": "eucookie\\.eu/public/gdpr-cookie-consent\\.js",
+      "scripts": "eucookie\\.eu/public/gdpr-cookie-consent\\.js",
       "website": "https://www.eucookie.eu/"
     },
     "experiencedCMS": {
@@ -14382,7 +14382,7 @@
       "meta": {
         "generator": "gitweb(?:/([\\d.]+\\d))?\\;version:\\1"
       },
-      "script": "static/gitweb\\.js$",
+      "scripts": "static/gitweb\\.js$",
       "website": "http://git-scm.com"
     },
     "govCMS": {
@@ -14412,7 +14412,7 @@
       ],
       "html": "<style[^>]+[^<]+#cf-hcaptcha-container[^<]+</style>",
       "icon": "hcaptcha-symbol-256.png",
-      "script": "https://hcaptcha.com/([\\d]+?)/api.js\\;version:\\1",
+      "scripts": "https://hcaptcha.com/([\\d]+?)/api.js\\;version:\\1",
       "website": "https://www.hcaptcha.com/"
     },
     "hantana": {
@@ -14423,7 +14423,7 @@
       "js": {
         "Hantana": ""
       },
-      "script": "//hantana\\.org/widget",
+      "scripts": "//hantana\\.org/widget",
       "website": "https://hantana.org/"
     },
     "iEXExchanger": {
@@ -14511,7 +14511,7 @@
       "js": {
         "clobs": ""
       },
-      "script": "clobs\\.js",
+      "scripts": "clobs\\.js",
       "website": "http://www.ip-label.com"
     },
     "jComponent": {
@@ -14534,7 +14534,7 @@
       "js": {
         "jQT": ""
       },
-      "script": "jqtouch.*\\.js",
+      "scripts": "jqtouch.*\\.js",
       "website": "http://jqtouch.com"
     },
     "jQuery": {
@@ -14546,7 +14546,7 @@
       "js": {
         "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "jquery[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
@@ -14564,7 +14564,7 @@
         "jQuery.migrateWarnings": "",
         "jqueryMigrate": ""
       },
-      "script": "jquery[.-]migrate(?:-([\\d.]+))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "scripts": "jquery[.-]migrate(?:-([\\d.]+))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://github.com/jquery/jquery-migrate"
     },
     "jQuery Mobile": {
@@ -14576,7 +14576,7 @@
       "js": {
         "jQuery.mobile.version": "^(.+)$\\;version:\\1"
       },
-      "script": "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "scripts": "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://jquerymobile.com"
     },
     "jQuery Sparklines": {
@@ -14584,7 +14584,7 @@
         25
       ],
       "implies": "jQuery",
-      "script": "jquery\\.sparkline.*\\.js",
+      "scripts": "jquery\\.sparkline.*\\.js",
       "website": "http://omnipotent.net/jquery.sparkline/"
     },
     "jQuery UI": {
@@ -14597,7 +14597,7 @@
       "js": {
         "jQuery.ui.version": "^(.+)$\\;version:\\1"
       },
-      "script": [
+      "scripts": [
         "jquery-ui[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "([\\d.]+)/jquery-ui(?:\\.min)?\\.js\\;version:\\1",
         "jquery-ui.*\\.js"
@@ -14618,7 +14618,7 @@
         "pjax-replace": "",
         "pjax-timeout": ""
       },
-      "script": "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "scripts": "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://github.com/defunkt/jquery-pjax"
     },
     "jqPlot": {
@@ -14627,7 +14627,7 @@
       ],
       "icon": "jqPlot.png",
       "implies": "jQuery",
-      "script": "jqplot.*\\.js",
+      "scripts": "jqplot.*\\.js",
       "website": "http://www.jqplot.com"
     },
     "jsDelivr": {
@@ -14636,7 +14636,7 @@
       ],
       "html": "<[^>]+?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
-      "script": "//cdn\\.jsdelivr\\.net/",
+      "scripts": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
     },
     "kolors4u": {
@@ -14685,7 +14685,7 @@
       "js": {
         "mathjs": ""
       },
-      "script": "math(?:\\.min)?\\.js",
+      "scripts": "math(?:\\.min)?\\.js",
       "website": "http://mathjs.org"
     },
     "mini_httpd": {
@@ -14896,7 +14896,7 @@
       "html": "<!--\\s+OTRS: Copyright",
       "icon": "otrs.png",
       "implies": "Perl",
-      "script": "^/otrs-web/js/",
+      "scripts": "^/otrs-web/js/",
       "website": "https://www.otrs.com"
     },
     "ownCloud": {
@@ -14938,7 +14938,7 @@
       "js": {
         "particlesJS": ""
       },
-      "script": "/particles(?:\\.min)?\\.js",
+      "scripts": "/particles(?:\\.min)?\\.js",
       "website": "https://vincentgarreau.com/particles.js/"
     },
     "phpAlbum": {
@@ -15086,7 +15086,7 @@
       "meta": {
         "generator": "plentymarkets"
       },
-      "script": [
+      "scripts": [
         "plenty\\.shop\\.(?:min\\.)?js"
       ],
       "website": "https://www.plentymarkets.com/"
@@ -15104,7 +15104,7 @@
         "pp_images": "",
         "pp_titles": ""
       },
-      "script": "jquery\\.prettyPhoto\\.js",
+      "scripts": "jquery\\.prettyPhoto\\.js",
       "website": "http://no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/"
     },
     "punBB": {
@@ -15133,7 +15133,7 @@
         "Recaptcha": "",
         "recaptcha": ""
       },
-      "script": [
+      "scripts": [
         "api-secure\\.recaptcha\\.net",
         "recaptcha_ajax\\.js",
         "/recaptcha/api\\.js"
@@ -15145,7 +15145,7 @@
         17
       ],
       "icon": "sIFR.png",
-      "script": "sifr\\.js",
+      "scripts": "sifr\\.js",
       "website": "https://www.mikeindustries.com/blog/sifr"
     },
     "sNews": {
@@ -15166,7 +15166,7 @@
       "js": {
         "Scriptaculous.Version": "^(.+)$\\;version:\\1"
       },
-      "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
+      "scripts": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
       "website": "https://script.aculo.us"
     },
     "scrollreveal": {
@@ -15178,7 +15178,7 @@
       "js": {
         "ScrollReveal().version": "^(.+)$\\;version:\\1"
       },
-      "script": "scrollreveal(?:\\.min)(?:\\.js)",
+      "scripts": "scrollreveal(?:\\.min)(?:\\.js)",
       "website": "https://scrollrevealjs.org"
     },
     "shine.js": {
@@ -15188,7 +15188,7 @@
       "js": {
         "Shine": ""
       },
-      "script": "shine(?:\\.min)?\\.js",
+      "scripts": "shine(?:\\.min)?\\.js",
       "website": "https://bigspaceship.github.io/shine.js/"
     },
     "shoperfa": {
@@ -15247,7 +15247,7 @@
       "js": {
         "THREE.REVISION": "^(.+)$\\;version:\\1"
       },
-      "script": "three(?:\\.min)?\\.js",
+      "scripts": "three(?:\\.min)?\\.js",
       "website": "https://threejs.org"
     },
     "thttpd": {
@@ -15297,7 +15297,7 @@
       "meta": {
         "generator": "uKnowva (?: ([\\d.]+))?\\;version:\\1"
       },
-      "script": "/media/conv/js/jquery\\.js",
+      "scripts": "/media/conv/js/jquery\\.js",
       "website": "https://uknowva.com"
     },
     "uRemediate": {
@@ -15305,7 +15305,7 @@
         68
       ],
       "icon": "User1st.png",
-      "script": "fecdn\\.user1st\\.info/Loader/head",
+      "scripts": "fecdn\\.user1st\\.info/Loader/head",
       "website": "https://www.user1st.com/uremediate/"
     },
     "user.com": {
@@ -15414,7 +15414,7 @@
       "js": {
         "xChart": ""
       },
-      "script": "xcharts\\.js",
+      "scripts": "xcharts\\.js",
       "website": "https://tenxer.github.io/xcharts/"
     },
     "xtCommerce": {

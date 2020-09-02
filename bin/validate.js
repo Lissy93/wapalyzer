@@ -2,8 +2,8 @@ const fs = require('fs')
 
 const iconPath = './src/drivers/webextension/images/icons'
 
-const { apps: technologies, categories } = JSON.parse(
-  fs.readFileSync('./src/apps.json')
+const { technologies, categories } = JSON.parse(
+  fs.readFileSync('./src/technologies.json')
 )
 
 try {

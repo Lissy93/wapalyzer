@@ -43,8 +43,8 @@ if (AWS_LAMBDA_FUNCTION_NAME) {
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
-const { apps: technologies, categories } = JSON.parse(
-  fs.readFileSync(path.resolve(`${__dirname}/apps.json`))
+const { technologies, categories } = JSON.parse(
+  fs.readFileSync(path.resolve(`${__dirname}/technologies.json`))
 )
 
 setTechnologies(technologies)
@@ -320,8 +320,6 @@ class Site {
             const certIssuer = response.securityDetails()
               ? response.securityDetails().issuer()
               : ''
-
-            console.log(certIssuer)
 
             this.onDetect(analyze({ headers, certIssuer }))
 

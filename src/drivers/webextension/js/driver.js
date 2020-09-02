@@ -106,8 +106,8 @@ const Driver = {
    */
   async loadTechnologies() {
     try {
-      const { apps: technologies, categories } = await (
-        await fetch(chrome.extension.getURL('apps.json'))
+      const { technologies, categories } = await (
+        await fetch(chrome.extension.getURL('technologies.json'))
       ).json()
 
       setTechnologies(technologies)

@@ -8,7 +8,7 @@
 	},
 	"type": "object",
 	"additionalProperties": false,
-	"required": ["categories","apps"],
+	"required": ["technologies", "categories"],
 	"properties": {
 		"$schema": {
 			"type": "string"
@@ -31,7 +31,7 @@
 				}
 			}
 		},
-		"apps": {
+		"technologies": {
 			"type": "object",
 			"additionalProperties": {
 				"additionalProperties": false,
@@ -110,6 +110,19 @@
 							}
 						]
 					},
+					"certIssuer": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
+					},
 					"excludes": {
 						"oneOf": [
 							{
@@ -147,7 +160,7 @@
 							}
 						}
 					},
-					"script": {
+					"scripts": {
 						"oneOf": [
 							{
 								"type": "array",

@@ -226,7 +226,7 @@ const Wappalyzer = {
         headers,
         certIssuer,
         cookies,
-        script,
+        scripts,
         js,
         implies,
         excludes,
@@ -246,7 +246,7 @@ const Wappalyzer = {
         certIssuer: transform(certIssuer),
         robots: transform(robots),
         meta: transform(meta),
-        scripts: transform(script),
+        scripts: transform(scripts),
         js: transform(js, true),
         implies: transform(implies).map(({ value, confidence }) => ({
           name: value,
