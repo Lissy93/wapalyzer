@@ -979,6 +979,16 @@
       "scripts": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://material.angularjs.org"
     },
+    "Vuetify": {
+      "cats": [
+        66
+      ],
+      "icon": "Vuetify.svg",
+      "implies": "Vue.js",
+      "html": "<div data-app[^>]+class=\"v-application",
+      "css": "\\.v-application \\.d-block ",
+      "website": "https://vuetifyjs.com"
+    },
     "AngularDart": {
       "cats": [
         18

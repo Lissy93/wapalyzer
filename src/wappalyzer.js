@@ -180,7 +180,17 @@ const Wappalyzer = {
    * Initialize analyzation.
    * @param {*} param0
    */
-  analyze({ url, html, robots, meta, headers, certIssuer, cookies, scripts }) {
+  analyze({
+    url,
+    html,
+    css,
+    robots,
+    meta,
+    headers,
+    certIssuer,
+    cookies,
+    scripts,
+  }) {
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
@@ -193,6 +203,7 @@ const Wappalyzer = {
           flatten([
             oo(technology, 'url', url),
             oo(technology, 'html', html),
+            oo(technology, 'css', css),
             oo(technology, 'robots', robots),
             oo(technology, 'certIssuer', certIssuer),
             om(technology, 'scripts', scripts),
@@ -221,6 +232,7 @@ const Wappalyzer = {
         cats,
         url,
         html,
+        css,
         robots,
         meta,
         headers,
@@ -243,6 +255,7 @@ const Wappalyzer = {
         headers: transform(headers),
         cookies: transform(cookies),
         html: transform(html),
+        css: transform(css),
         certIssuer: transform(certIssuer),
         robots: transform(robots),
         meta: transform(meta),

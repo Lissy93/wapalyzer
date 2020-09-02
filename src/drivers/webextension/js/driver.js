@@ -140,6 +140,13 @@ const Driver = {
   },
 
   /**
+   * Wrapper for analyze
+   */
+  analyze(...args) {
+    return analyze(...args)
+  },
+
+  /**
    * Analyse JavaScript variables
    * @param {String} url
    * @param {Array} js
@@ -216,13 +223,13 @@ const Driver = {
 
           let certIssuer = ''
 
-          if (browser) {
+          if (typeof browser !== 'undefined') {
             // Currently only works in Firefox
             // See https://stackoverflow.com/a/50484642
             const { certificates } = await browser.webRequest.getSecurityInfo(
               request.requestId,
               {
-                certificateChain: true,
+                certificateChain: false,
                 rawDER: false,
               }
             )

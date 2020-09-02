@@ -47,6 +47,25 @@ const Content = {
             : resolve()
         ))
 
+      // CSS rules
+      let css = []
+
+      try {
+        for (const sheet of Array.from(document.styleSheets)) {
+          for (const rules of Array.from(sheet.cssRules)) {
+            css.push(rules.cssText)
+
+            if (css.length >= 3000) {
+              break
+            }
+          }
+        }
+      } catch (error) {
+        // Continue
+      }
+
+      css = css.join('\n')
+
       // Script tags
       const scripts = Array.from(document.scripts)
         .filter(({ src }) => src)
@@ -69,7 +88,7 @@ const Content = {
 
       Content.driver('onContentLoad', [
         location.href,
-        { html, scripts, meta },
+        { html, css, scripts, meta },
         language,
       ])
 
