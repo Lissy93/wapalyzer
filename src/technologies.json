@@ -503,6 +503,7 @@
       "js": {
         "adyen.encrypt.version": "^(.+)$\\;version:\\1"
       },
+      "description": "Adyen allows businesses to accept e-commerce, mobile, and point-of-sale payments.",
       "website": "https://www.adyen.com"
     },
     "Adzerk": {
@@ -563,7 +564,7 @@
         "portal\\.afterpay\\.com",
         "static\\.afterpay\\.com"
       ],
-      "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly installments.",
+      "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
       "website": "https://www.afterpay.com/"
     },
     "Ahoy": {
@@ -885,6 +886,7 @@
       ],
       "html": "<[^>]+aria-labelledby=\"pi-american_express",
       "icon": "Amex.svg",
+      "description": "American Express, also known as Amex, facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
       "website": "https://www.americanexpress.com"
     },
     "Ametys": {
@@ -905,6 +907,7 @@
       ],
       "icon": "amex.png",
       "scripts": "aexp-static\\.com",
+      "description": "AMEX Express Checkout is a secure, easy-to-use service that simplifies and speeds up the checkout experience by seamlessly and securely auto-filling necessary cardholder payment data into merchant checkout fields.",
       "website": "https://www.americanexpress.com/us/express-checkout/"
     },
     "Amiro.CMS": {
@@ -1892,6 +1895,7 @@
         "Braintree.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "js\\.braintreegateway\\.com",
+      "description": "Braintree, a division of PayPal, that specializes in mobile and web payment systems for e-commerce companies. Braintree provides clients with a merchant account and a payment gateway.",
       "website": "https://www.braintreepayments.com"
     },
     "Brightspot": {
@@ -2999,6 +3003,7 @@
       ],
       "icon": "cybersource.png",
       "scripts": "cybersource\\..+\\.js",
+      "description": "Cybersource is an E-commerce credit card payment system management company. Customers process online payments, streamline online fraud management, and simplify payment security.",
       "website": "https://www.cybersource.com/"
     },
     "D3": {
@@ -4113,6 +4118,7 @@
       ],
       "icon": "fatzebra.png",
       "scripts": "paynow\\.pmnts\\.io",
+      "description": "Fat Zebra provides a simplified process of accepting credit card payments online.",
       "website": "https://www.fatzebra.com/"
     },
     "Fat-Free Framework": {
@@ -5019,6 +5025,7 @@
         "wallet\\.google\\.com"
       ],
       "icon": "Google.svg",
+      "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
       "website": "https://pay.google.com"
     },
     "Google Plus": {
@@ -6416,6 +6423,7 @@
       "js": {
         "_klarnaCheckout": ""
       },
+      "description": "Klarna Checkout is a complete payment solution where Klarna handles your store's entire checkout. This solution includes all of Klarna's payment methods: Pay now (card payments), Pay later (invoice) and Financing (installment plans of 6, 12, 24 and 36 months with flexible payments).",
       "website": "https://www.klarna.com/international/"
     },
     "Knockout.js": {
@@ -6640,6 +6648,7 @@
         "laterpay:connector:callbacks:on_user_has_access": "deobfuscateText"
       },
       "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
+      "description": "Laterpay is a service that simplifies payments on the Internet. In addition to the classic immediate purchase option, Laterpay also allows you to buy digital content such as articles or videos now and pay later.",
       "website": "https://www.laterpay.net/"
     },
     "Leaflet": {
@@ -7221,6 +7230,7 @@
       ],
       "html": "<[^>]+aria-labelledby=\"pi-mastercard",
       "icon": "Mastercard.svg",
+      "description": "MasterCard facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
       "website": "https://www.mastercard.com"
     },
     "Material Design Lite": {
@@ -8638,6 +8648,7 @@
       ],
       "icon": "openpay.png",
       "scripts": "openpay\\.com.\\au",
+      "description": "Openpay is an innovative online and in-store payment solution enabling you to purchase now and pay later, with no interest.",
       "website": "https://www.openpay.com.au/"
     },
     "OpenResty": {
@@ -9053,6 +9064,7 @@
       },
       "scripts": "paypalobjects\\.com",
       "url": "paypal\\.com",
+      "description": "PayPal is an online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.",
       "website": "https://paypal.com"
     },
     "Pelican": {
@@ -9224,6 +9236,7 @@
       ],
       "icon": "pinpayments.png",
       "scripts": "api\\.pinpayments\\.com",
+      "description": "Pin Payments is an all-in-one online payment system. It offers merchants a simple JSON API, secure credit card storage, multi-currency capabilities, bank account compatibility, onsite payment processing and automatic fund transfer to specified bank accounts.",
       "website": "https://www.pinpayments.com/"
     },
     "Pingoteam": {
@@ -9927,6 +9940,7 @@
         "recurly.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "js\\.recurly\\.com",
+      "description": "Recurly provides enterprise-class subscription billing and recurring payment management for thousands of businesses worldwide.",
       "website": "https://recurly.com"
     },
     "Red Hat": {
@@ -10766,6 +10780,7 @@
       "icon": "Shopify.svg",
       "implies": "Shopify",
       "url": "^https://pay.shopify.com",
+      "description": "Shop Pay is an accelerated checkout that lets customers save their email address, credit card, and shipping and billing information so they can complete their transaction faster the next time they are directed to the Shopify checkout.",
       "website": "https://pay.google.com"
     },
     "Shopatron": {
@@ -10852,7 +10867,6 @@
       },
       "scripts": "sdks\\.shopifycdn\\.com",
       "url": "^https?//.+\\.myshopify\\.com",
-      "description": "Shopify is a commerce platform that allows anyone to set up a store and sell their products online or in person.",
       "website": "http://shopify.com"
     },
     "Shopline": {
@@ -11387,6 +11401,7 @@
       ],
       "icon": "splitit.png",
       "scripts": "checkout\\.production\\.splitit\\.com",
+      "description": "Splitit is the only buy-now-pay-later plan that lets shoppers set up payment plans with their existing credit card without interest charges or fees.",
       "website": "https://www.splitit.com/"
     },
     "Splitbee": {
@@ -11873,6 +11888,7 @@
       ],
       "icon": "tnsi.png",
       "scripts": "secure\\.ap\\.tnspayments\\.com",
+      "description": "TNS Payments, is designed to securely and rapidly deliver, critical payment transaction information to banks, merchants, processors and other payment institutions.",
       "website": "https://tnsi.com/products/payments/"
     },
     "TWiki": {
@@ -12741,6 +12757,7 @@
       ],
       "html": "<[^>]+aria-labelledby=\"pi-venmo",
       "icon": "Venmo.svg",
+      "description": "Venmo is a mobile payment service owned by PayPal. Venmo account holders can transfer funds to others via a mobile phone app; both the sender and receiver have to live in the U.S.",
       "website": "https://venmo.com"
     },
     "Veoxa": {
@@ -12874,6 +12891,7 @@
       ],
       "icon": "visa.png",
       "scripts": "secure\\.checkout\\.visa\\.com",
+      "description": "Visa facilitates electronic funds transfers throughout the world, most commonly through Visa-branded credit cards, debit cards and prepaid cards.",
       "website": "https://checkout.visa.com"
     },
     "Visual Website Optimizer": {
@@ -14040,6 +14058,7 @@
         "static\\.zipmoney\\.com\\.au",
         "zip\\.co"
       ],
+      "description": "zipPay is a payment service that lets you receive your purchase now and spread the total cost over a interest-free payment schedule.",
       "website": "https://www.zip.co/"
     },
     "Zipkin": {
@@ -14264,6 +14283,7 @@
       "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
       "icon": "eway.png",
       "scripts": "secure\\.ewaypayments\\.com",
+      "description": "eWAY is a global omnichannel payment provider. The company processes secure credit card payments for merchants. eWay works through eCommerce.",
       "website": "https://www.eway.com.au/"
     },
     "eZ Platform": {
