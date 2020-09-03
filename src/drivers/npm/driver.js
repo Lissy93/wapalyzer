@@ -363,6 +363,36 @@ class Site {
         ).jsonValue(),
       ])
 
+      // CSS
+      const css = await Promise.race([
+        this.timeout(),
+        (
+          await page.evaluateHandle((maxRows) => {
+            const css = []
+
+            try {
+              if (!document.styleSheets.length) {
+                return ''
+              }
+
+              for (const sheet of Array.from(document.styleSheets)) {
+                for (const rules of Array.from(sheet.cssRules)) {
+                  css.push(rules.cssText)
+
+                  if (css.length >= maxRows) {
+                    break
+                  }
+                }
+              }
+            } catch (error) {
+              return ''
+            }
+
+            return css.join('\n')
+          }, this.options.htmlMaxRows)
+        ).jsonValue(),
+      ])
+
       // Script tags
       const scripts = await Promise.race([
         this.timeout(),
@@ -483,6 +513,7 @@ class Site {
           url,
           cookies,
           html,
+          css,
           scripts,
           meta,
         })

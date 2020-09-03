@@ -5014,6 +5014,10 @@
         41
       ],
       "html": "<[^>]+aria-labelledby=\"pi-google_pay",
+      "scripts": [
+        "checkout\\.google\\.com",
+        "wallet\\.google\\.com"
+      ],
       "icon": "Google.svg",
       "website": "https://pay.google.com"
     },
@@ -5064,17 +5068,6 @@
         "googletag": ""
       },
       "website": "http://www.google.com/tagmanager"
-    },
-    "Google Wallet": {
-      "cats": [
-        41
-      ],
-      "icon": "Google Wallet.png",
-      "scripts": [
-        "checkout\\.google\\.com",
-        "wallet\\.google\\.com"
-      ],
-      "website": "http://wallet.google.com"
     },
     "Google Web Server": {
       "cats": [
@@ -10859,6 +10852,7 @@
       },
       "scripts": "sdks\\.shopifycdn\\.com",
       "url": "^https?//.+\\.myshopify\\.com",
+      "description": "Shopify is a commerce platform that allows anyone to set up a store and sell their products online or in person.",
       "website": "http://shopify.com"
     },
     "Shopline": {
