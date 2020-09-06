@@ -14,6 +14,7 @@
       "icon": "1C-Bitrix.png",
       "implies": "PHP",
       "scripts": "1c-bitrix",
+      "description": "1C-Bitrix is a system of web project management, universal software for the creation, support and successful development of corporate websites and online stores.",
       "website": "http://www.1c-bitrix.ru"
     },
     "3dCart": {
@@ -177,7 +178,7 @@
         "Percona",
         "Amazon EC2"
       ],
-      "description": "Cloud Platform is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
+      "description": "Cloud Platform (formally Acquia Cloud) is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
       "website": "https://www.acquia.com/"
     },
     "Act-On": {
@@ -503,7 +504,7 @@
       "js": {
         "adyen.encrypt.version": "^(.+)$\\;version:\\1"
       },
-      "description": "Adyen allows businesses to accept e-commerce, mobile, and point-of-sale payments.",
+      "description": "Adyen allows businesses to accept ecommerce, mobile, and point-of-sale payments.",
       "website": "https://www.adyen.com"
     },
     "Adzerk": {
@@ -901,13 +902,13 @@
       "scripts": "ametys\\.js",
       "website": "http://ametys.org"
     },
-    "Amex Checkout": {
+    "Amex Express Checkout": {
       "cats": [
         41
       ],
       "icon": "amex.png",
       "scripts": "aexp-static\\.com",
-      "description": "AMEX Express Checkout is a secure, easy-to-use service that simplifies and speeds up the checkout experience by seamlessly and securely auto-filling necessary cardholder payment data into merchant checkout fields.",
+      "description": "Amex Express Checkout is a service that simplifies the checkout experience by auto-filling necessary cardholder payment data into merchant checkout fields.",
       "website": "https://www.americanexpress.com/us/express-checkout/"
     },
     "Amiro.CMS": {
@@ -1895,7 +1896,7 @@
         "Braintree.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "js\\.braintreegateway\\.com",
-      "description": "Braintree, a division of PayPal, that specializes in mobile and web payment systems for e-commerce companies. Braintree provides clients with a merchant account and a payment gateway.",
+      "description": "Braintree, a division of PayPal, specializes in mobile and web payment systems for e-commerce companies. Braintree provides clients with a merchant account and a payment gateway.",
       "website": "https://www.braintreepayments.com"
     },
     "Brightspot": {
@@ -1951,6 +1952,7 @@
         "bugsnagClient": ""
       },
       "scripts": "/bugsnag.*\\.js",
+      "description": "Bugsnag is a cross-platform error monitoring, reporting, and resolution software.",
       "website": "http://bugsnag.com"
     },
     "Bugzilla": {
@@ -2231,6 +2233,7 @@
         "<a[^>]*href=[^>]*/Checkout"
       ],
       "icon": "Cart-generic.svg",
+      "description": "Websites that have a shopping cart or checkout page, either using a known ecommerce platform or a custom solution.",
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
     "Catberry.js": {
@@ -3003,7 +3006,7 @@
       ],
       "icon": "cybersource.png",
       "scripts": "cybersource\\..+\\.js",
-      "description": "Cybersource is an E-commerce credit card payment system management company. Customers process online payments, streamline online fraud management, and simplify payment security.",
+      "description": "Cybersource is an ecommerce credit card payment system solution.",
       "website": "https://www.cybersource.com/"
     },
     "D3": {
@@ -3510,6 +3513,7 @@
         "generator": "^Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "scripts": "drupal\\.js",
+      "description": "Drupal is a free and open-source web content management framework.",
       "website": "https://drupal.org"
     },
     "Drupal Commerce": {
@@ -3545,6 +3549,7 @@
       "html": "(?:<!-- /*BeraCode script)",
       "icon": "Duopana.svg",
       "scripts": "\\*berajs.beracode.com\\*",
+      "description": "Duopana is a platform for creating online communities, blogs and managing collaborative content.",
       "website": "https://duopana.com/"
     },
     "Dynamicweb": {
@@ -3756,6 +3761,7 @@
         "elementorFrontend.getElements": ""
       },
       "scripts": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
+      "description": "WordPress is a free and open-source content management system used to create a website or blog.",
       "website": "https://elementor.com"
     },
     "Elm": {
@@ -4118,7 +4124,7 @@
       ],
       "icon": "fatzebra.png",
       "scripts": "paynow\\.pmnts\\.io",
-      "description": "Fat Zebra provides a simplified process of accepting credit card payments online.",
+      "description": "Fat Zebra provides a process of accepting credit card payments online.",
       "website": "https://www.fatzebra.com/"
     },
     "Fat-Free Framework": {
@@ -4259,17 +4265,6 @@
       },
       "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
       "website": "https://flickity.metafizzy.co/"
-    },
-    "Flow": {
-      "cats": [
-        6
-      ],
-      "icon": "flow.png",
-      "scripts": [
-        "shopify-cdn\\.flow\\.io",
-        "flow\\.min\\.js"
-      ],
-      "website": "https://www.flow.io/"
     },
     "FluxBB": {
       "cats": [
@@ -4734,7 +4729,7 @@
       },
       "website": "https://about.gitlab.com"
     },
-    "GitLab CI": {
+    "GitLab CI/CD": {
       "cats": [
         44,
         47
@@ -4742,7 +4737,7 @@
       "icon": "GitLab CI.png",
       "implies": "Ruby on Rails",
       "meta": {
-        "description": "GitLab Continuous Integration"
+        "description": "GitLab CI/CD is a tool built into GitLab for software development through continuous methodologies."
       },
       "website": "http://about.gitlab.com/gitlab-ci"
     },
@@ -4924,6 +4919,7 @@
         "gaGlobal": ""
       },
       "scripts": "google-analytics\\.com\\/(?:ga|urchin|analytics)\\.js",
+      "description": "Google Analytics is a free web analytics service that tracks and reports website traffic.",
       "website": "http://google.com/analytics"
     },
     "Google Analytics Enhanced eCommerce": {
@@ -4936,6 +4932,7 @@
         "gaplugins.EC": ""
       },
       "scripts": "google-analytics\\.com\\/plugins\\/ua\\/(?:ec|ecommerce)\\.js",
+      "description": "Google analytics enhanced ecommerce is a plug-in which enables the measurement of user interactions with products on ecommerce websites.",
       "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
     },
     "Google App Engine": {
@@ -5020,10 +5017,6 @@
         41
       ],
       "html": "<[^>]+aria-labelledby=\"pi-google_pay",
-      "scripts": [
-        "checkout\\.google\\.com",
-        "wallet\\.google\\.com"
-      ],
       "icon": "Google.svg",
       "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
       "website": "https://pay.google.com"
@@ -5075,6 +5068,17 @@
         "googletag": ""
       },
       "website": "http://www.google.com/tagmanager"
+    },
+    "Google Wallet": {
+      "cats": [
+        41
+      ],
+      "icon": "Google Wallet.png",
+      "scripts": [
+        "checkout\\.google\\.com",
+        "wallet\\.google\\.com"
+      ],
+      "website": "http://wallet.google.com"
     },
     "Google Web Server": {
       "cats": [
@@ -5513,6 +5517,7 @@
         "hj.apiUrlBase": ""
       },
       "scripts": "//static\\.hotjar\\.com/c/hotjar-",
+      "description": "Hotjar is a suite of analytic tools to assist in the gathering of qualitative data, providing feedback through tools such as heatmaps, session recordings, and surveys.",
       "website": "https://www.hotjar.com"
     },
     "HubSpot": {
@@ -6243,6 +6248,7 @@
         "generator": "Joomla!(?: ([\\d.]+))?\\;version:\\1"
       },
       "url": "option=com_",
+      "description": "Joomla is a free and open-source content management system for publishing web content.",
       "website": "https://www.joomla.org"
     },
     "K2": {
@@ -6423,7 +6429,7 @@
       "js": {
         "_klarnaCheckout": ""
       },
-      "description": "Klarna Checkout is a complete payment solution where Klarna handles your store's entire checkout. This solution includes all of Klarna's payment methods: Pay now (card payments), Pay later (invoice) and Financing (installment plans of 6, 12, 24 and 36 months with flexible payments).",
+      "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
       "website": "https://www.klarna.com/international/"
     },
     "Knockout.js": {
@@ -7598,6 +7604,7 @@
       "meta": {
         "generator": "Microsoft SharePoint"
       },
+      "description": "SharePoint is a cloud-based collaborative platform to manage and share content.",
       "website": "https://sharepoint.microsoft.com"
     },
     "Microsoft Word": {
@@ -8249,6 +8256,7 @@
         "NREUM": "",
         "newrelic": ""
       },
+      "description": "New Relic is a Software as a Service offering that focuses on performance and availability monitoring.",
       "website": "https://newrelic.com"
     },
     "Next.js": {
@@ -8434,6 +8442,7 @@
         "generator": "Odoo"
       },
       "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
+      "description": "Odoo is business management software which includes CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
       "website": "http://odoo.com"
     },
     "Olark": {
@@ -8492,6 +8501,7 @@
         "generator": "Onshop Ecommerce"
       },
       "scripts": "/opencart_custom\\.js",
+      "description": "OpenCartfree open source ecommerce platform for online merchants.",
       "website": "https://onshop.asia"
     },
     "Open AdStream": {
@@ -9493,6 +9503,7 @@
       "meta": {
         "generator": "PrestaShop"
       },
+      "description": "PrestaShop is a freemium, open source ecommerce solution, written in the PHP programming language with support for the MySQL database management system.",
       "website": "http://www.prestashop.com"
     },
     "Prism": {
@@ -10293,6 +10304,7 @@
       ],
       "icon": "SAP.png",
       "implies": "Java",
+      "description": "SAP Commerce Cloud is a cloud-native omnichannel commerce solution for B2B, B2C, and B2B2C companies.",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
     },
     "SAP Customer Data Cloud Sign-in": {
@@ -10468,6 +10480,7 @@
         "SFDCPage": "",
         "SFDCSessionVars": ""
       },
+      "description": "Salesforce is a cloud computing service software (SaaS) that specializes in customer relationship management (CRM).",
       "website": "https://www.salesforce.com"
     },
     "Salesforce Commerce Cloud": {
@@ -10485,6 +10498,7 @@
         "dwAnalytics": ""
       },
       "scripts": "/demandware\\.static/",
+      "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",
       "website": "http://demandware.com"
     },
     "Sapper": {
@@ -10923,6 +10937,7 @@
         "/jquery\\.shopware\\.min\\.js",
         "/engine/Shopware/"
       ],
+      "description": "Shopware is an enterprise-level ecommerce platform.",
       "website": "https://www.shopware.com"
     },
     "Signal": {
@@ -11059,6 +11074,7 @@
       "icon": "Siteglide.svg",
       "implies": "PlatformOS",
       "scripts": "siteglide\\.js",
+      "description": "SiteGlide is a Digital Experience Platform (DEP) for ecommerce stores, membership sites and customer portals.",
       "website": "https://www.siteglide.com"
     },
     "Sivuviidakko": {
@@ -11478,6 +11494,7 @@
       "js": {
         "Squarespace": ""
       },
+      "description": "Squarespace provides Software as a Service (SaaS) for website building and hosting, and allows users to use pre-built website templates.",
       "website": "http://www.squarespace.com"
     },
     "SquirrelMail": {
@@ -11880,6 +11897,7 @@
       },
       "icon": "tessitura.svg",
       "implies": "Tessitura",
+      "description": "Tessitura is an enterprise application to manage activities in ticketing, fundraising, customer relationship management, and marketing.",
       "website": "https://www.tessituranetwork.com"
     },
     "TNS Payments": {
@@ -11888,7 +11906,7 @@
       ],
       "icon": "tnsi.png",
       "scripts": "secure\\.ap\\.tnspayments\\.com",
-      "description": "TNS Payments, is designed to securely and rapidly deliver, critical payment transaction information to banks, merchants, processors and other payment institutions.",
+      "description": "TNS Payments, is designed to deliver payment transaction information to banks, merchants, processors and other payment institutions.",
       "website": "https://tnsi.com/products/payments/"
     },
     "TWiki": {
@@ -11920,6 +11938,7 @@
       },
       "scripts": "^/?typo3(?:conf|temp)/",
       "url": "/typo3/",
+      "description": "TYPO3 is a free and open-source Web content management system written in PHP.",
       "website": "https://typo3.org/"
     },
     "TagCommander": {
@@ -12304,6 +12323,7 @@
         "TrackJs": ""
       },
       "scripts": "tracker\\.js",
+      "description": "TrackJS is an error monitoring agent for production web sites and applications.",
       "website": "http://trackjs.com"
     },
     "Transifex": {
@@ -12698,6 +12718,7 @@
         "powered": "vtex"
       },
       "icon": "VTEX.svg",
+      "description": "VTEX is an ecommerce software that manages multiple online stores.",
       "website": "https://vtex.com/"
     },
     "Vaadin": {
@@ -12757,7 +12778,7 @@
       ],
       "html": "<[^>]+aria-labelledby=\"pi-venmo",
       "icon": "Venmo.svg",
-      "description": "Venmo is a mobile payment service owned by PayPal. Venmo account holders can transfer funds to others via a mobile phone app; both the sender and receiver have to live in the U.S.",
+      "description": "Venmo is a mobile payment service owned by PayPal. Venmo account holders can transfer funds to others via a mobile phone app.",
       "website": "https://venmo.com"
     },
     "Veoxa": {
@@ -13000,6 +13021,7 @@
       "js": {
         "WHMCS": ""
       },
+      "description": "WHMCS is an automation platform that simplifies and automates all aspects of operating an online web hosting and domain registrar business.",
       "website": "http://www.whmcs.com"
     },
     "WP Engine": {
@@ -13291,6 +13313,7 @@
         "_W.configDomain": ""
       },
       "scripts": "cdn\\d+\\.editmysite\\.com",
+      "description": "Weebly is a website and eCommerce service.",
       "website": "https://www.weebly.com"
     },
     "Weglot": {
@@ -13421,6 +13444,7 @@
         "generator": "Wix\\.com Website Builder"
       },
       "scripts": "static\\.parastorage\\.com",
+      "description": "Wix provides cloud-based web development services, allowing users to create HTML5 websites and mobile sites.",
       "website": "https://www.wix.com"
     },
     "Wolf CMS": {
@@ -13458,6 +13482,7 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "scripts": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "description": "WooCommerce is an open-source e-commerce plugin for WordPress.",
       "website": "https://woocommerce.com"
     },
     "Woopra": {
@@ -13995,6 +14020,7 @@
         "x-zendesk-user-id": ""
       },
       "icon": "Zendesk.png",
+      "description": "Zendesk is a cloud-based help desk management solution offering customizable tools to build customer service portal, knowledge base and online communities.",
       "website": "https://zendesk.com"
     },
     "Zendesk Chat": {
@@ -14048,7 +14074,7 @@
       },
       "website": "http://django-blog-zinnia.com"
     },
-    "Zip Pay / Zip Money": {
+    "Zip": {
       "cats": [
         41
       ],
@@ -14058,7 +14084,7 @@
         "static\\.zipmoney\\.com\\.au",
         "zip\\.co"
       ],
-      "description": "zipPay is a payment service that lets you receive your purchase now and spread the total cost over a interest-free payment schedule.",
+      "description": "Zip is a payment service that lets you receive your purchase now and spread the total cost over a interest-free payment schedule.",
       "website": "https://www.zip.co/"
     },
     "Zipkin": {
