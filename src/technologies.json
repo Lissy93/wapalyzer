@@ -238,6 +238,7 @@
         "adroll_pix_id": ""
       },
       "scripts": "(?:a|s)\\.adroll\\.com",
+      "description": "AdRoll is a digital marketing technology platform that specializes in retargeting.",
       "website": "http://adroll.com"
     },
     "Adally": {
@@ -681,6 +682,7 @@
       "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
       "icon": "all-in-One-SEO-Pack.png",
       "implies": "WordPress",
+      "description": "All in One SEO plugin optimizes WordPress website and its content for search engines.",
       "website": "https://wordpress.org/plugins/all-in-one-seo-pack/"
     },
     "Allegro RomPager": {
@@ -981,6 +983,7 @@
         "ngMaterial": ""
       },
       "scripts": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
+      "description": "Angular Material is a UI component library for Angular JS developers. Angular Material components assis in constructing attractive, consistent, and functional web pages and web applications.",
       "website": "https://material.angularjs.org"
     },
     "Vuetify": {
@@ -1163,6 +1166,7 @@
       "html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
       "icon": "AppNexus.svg",
       "scripts": "adnxs\\.(?:net|com)",
+      "description": "AppNexus is a cloud-based software platform that enables and optimizes programmatic online advertising.",
       "website": "http://appnexus.com"
     },
     "Apple Pay": {
@@ -1845,6 +1849,7 @@
       "scripts": [
         "bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1"
       ],
+      "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
       "website": "https://getbootstrap.com"
     },
     "Bootstrap Table": {
@@ -2260,6 +2265,7 @@
       "meta": {
         "generator": "^Cecil(?: ([0-9.]+))?$\\;version:\\1"
       },
+      "description": "Cecil is a CLI application that merges plain text files, images and Twig templates to generate a static website.",
       "website": "https://cecil.app"
     },
     "CentOS": {
@@ -2928,6 +2934,7 @@
         "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
         "//static\\.criteo\\.net/js/ld/ld\\.js"
       ],
+      "description": "Criteo provides personalized retargeting that works with Internet retailers to serve personalized online display advertisements to consumers who have previously visited the advertiser's website.",
       "website": "http://criteo.com"
     },
     "Cross Pixel": {
@@ -3431,6 +3438,7 @@
         "tpc\\.googlesyndication\\.com/safeframe",
         "googlesyndication\\.com.*abg\\.js"
       ],
+      "description": "DoubleClick Ad Exchange is a real-time marketplace to buy and sell display advertising space.",
       "website": "http://www.doubleclickbygoogle.com/solutions/digital-marketing/ad-exchange/"
     },
     "DoubleClick Campaign Manager (DCM)": {
@@ -3455,6 +3463,7 @@
       ],
       "icon": "DoubleClick.svg",
       "scripts": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
+      "description": "DoubleClick for Publishers (DFP) is a hosted ad serving platform that streamlines your ad management.",
       "website": "http://www.google.com/dfp"
     },
     "DovetailWRP": {
@@ -4069,6 +4078,7 @@
         "$.fancybox.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
+      "description": "FancyBox is a tool for displaying images, html content and multi-media in a Mac-style 'lightbox' that floats overtop of web page.",
       "website": "http://fancyapps.com/fancybox"
     },
     "FaraPy": {
@@ -4558,6 +4568,7 @@
       "meta": {
         "generator": "^Gatsby(?: ([0-9.]+))?$\\;version:\\1"
       },
+      "description": "Gatsby is a React-based open source framework with performance, scalability and security built-in.",
       "website": "https://www.gatsbyjs.org/"
     },
     "Gauges": {
@@ -5199,6 +5210,7 @@
       "meta": {
         "generator": "^Gridsome v([\\d.]+)$\\;version:\\1"
       },
+      "description": "Gridsome is a free and open-source Vue-powered static site generator for building static websites.",
       "website": "https://gridsome.org"
     },
     "GrowingIO": {
@@ -5412,6 +5424,8 @@
       "meta": {
         "generator": "Hexo(?: v?([\\d.]+))?\\;version:\\1"
       },
+      "implies": "Node.js",
+      "description": "Hexo is a blog framework powered by Node.js.",
       "website": "https://hexo.io"
     },
     "Hiawatha": {
@@ -5544,6 +5558,7 @@
       "meta": {
         "generator": "Hugo ([\\d.]+)?\\;version:\\1"
       },
+      "description": "Hugo is an open-source static site generator written in Go.",
       "website": "http://gohugo.io"
     },
     "IBM Coremetrics": {
@@ -5869,6 +5884,7 @@
         "Intercom": ""
       },
       "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
+      "description": "Intercom is a Conversational Relationship Platform that helps businesses build better customer relationships through personalized, messenger-based experiences.",
       "website": "https://www.intercom.com"
     },
     "Intercom Articles": {
@@ -6119,6 +6135,7 @@
       "meta": {
         "generator": "Jekyll (v[\\d.]+)?\\;version:\\1"
       },
+      "description": "Jekyll is a blog-aware, static site generator for personal, project, or organization sites.",
       "website": "http://jekyllrb.com"
     },
     "Jenkins": {
@@ -6339,6 +6356,7 @@
         "kendo": "",
         "kendo.version": "^(.+)$\\;version:\\1"
       },
+      "description": "Kendo UI is a HTML5 user interface framework for building interactive and high-performance websites and applications.",
       "website": "https://www.telerik.com/kendo-ui"
     },
     "Kentico CMS": {
@@ -6968,6 +6986,7 @@
         "_.templateSettings.imports._.templateSettings.imports._.VERSION": "^(.+)$\\;version:\\1"
       },
       "scripts": "lodash.*\\.js",
+      "description": "Lodash is a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm.",
       "website": "http://www.lodash.com"
     },
     "Login with Amazon": {
@@ -7249,6 +7268,7 @@
         "MaterialIconToggle": ""
       },
       "scripts": "(?:/([\\d.]+))?/material(?:\\.min)?\\.js\\;version:\\1",
+      "description": "Material Design Lite is a library of components for web developers.",
       "website": "https://getmdl.io"
     },
     "Materialize CSS": {
@@ -7258,6 +7278,7 @@
       "html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
       "icon": "Materialize CSS.png",
       "scripts": "materialize(?:\\.min)?\\.js",
+      "description": "Materialize CSS is a css framework which is used to create responsive websites.",
       "website": "http://materializecss.com"
     },
     "MathJax": {
@@ -7698,6 +7719,7 @@
         "mixpanel": ""
       },
       "scripts": "api\\.mixpanel\\.com/track",
+      "description": "Mixpanel provides a business analytics service. It tracks user interactions with web and mobile applications and provides tools for targeted communication with them. Its toolset contains in-app A/B tests and user survey forms.",
       "website": "https://mixpanel.com"
     },
     "MkDocs": {
@@ -7787,6 +7809,7 @@
       "scripts": [
         "([\\d.]+)?/modernizr(?:\\.([\\d.]+))?.*\\.js\\;version:\\1?\\1:\\2"
       ],
+      "description": "Modernizr is a JavaScript library that detects the features available in a user's browser.",
       "website": "https://modernizr.com"
     },
     "Modified": {
@@ -7867,6 +7890,7 @@
         "moment.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "moment(?:\\.min)?\\.js",
+      "description": "Moment.js is a free and open source JavaScript library that removes the need to use the native JavaScript Date object directly.",
       "website": "https://momentjs.com"
     },
     "Mondo Media": {
@@ -8422,6 +8446,7 @@
         "generator": "Octopress"
       },
       "scripts": "/octopress\\.js",
+      "description": "Octopress is a static blogging framework.",
       "website": "http://octopress.org"
     },
     "Odoo": {
@@ -9178,6 +9203,7 @@
       "icon": "Phenomic.svg",
       "implies": "React",
       "scripts": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
+      "description": "Phenomic is a modular website compiler.",
       "website": "https://phenomic.io/"
     },
     "Phoenix": {
@@ -9461,6 +9487,7 @@
         "/prebid\\.js",
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
+      "description": "Prebid is an open-source header bidding wrapper. It forms the core of our Nucleus ad platform, helping maximize revenue and performance for publishers.",
       "website": "http://prebid.org"
     },
     "Prefix-Free": {
@@ -9619,6 +9646,7 @@
         "<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d"
       ],
       "icon": "Pure CSS.png",
+      "description": "Pure CSS is a set of small, responsive CSS modules that can be used in web projects.",
       "website": "http://purecss.io"
     },
     "Pushnami": {
@@ -10431,6 +10459,7 @@
       "meta": {
         "generator": "^Saber v([\\d.]+)$\\;version:\\1"
       },
+      "description": "Saber is a framework for building static websites.",
       "website": "https://saber.land/"
     },
     "Sails.js": {
@@ -10634,6 +10663,7 @@
         "analytics": ""
       },
       "scripts": "cdn\\.segment\\.com/analytics\\.js",
+      "description": "Segment is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
       "website": "https://segment.com"
     },
     "Select2": {
@@ -10646,6 +10676,7 @@
         "jQuery.fn.select2": ""
       },
       "scripts": "select2(?:\\.min|\\.full)?\\.js",
+      "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
       "website": "https://select2.org/"
     },
     "Semantic-ui": {
@@ -10657,6 +10688,7 @@
       ],
       "icon": "Semantic-ui.png",
       "scripts": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "description": "Semantic UI is a front-end development framework, powered by LESS and jQuery.",
       "website": "https://semantic-ui.com"
     },
     "Sencha Touch": {
@@ -12013,6 +12045,7 @@
         "^(?:https?:)?//tags\\.tiqcdn\\.com/",
         "/tealium/utag\\.js$"
       ],
+      "description": "Tealium provides a sales enterprise tag management system and marketing software.",
       "website": "http://tealium.com"
     },
     "TeamCity": {
@@ -12033,6 +12066,7 @@
       "meta": {
         "application-name": "TeamCity"
       },
+      "description": "Underscore.js is a JavaScript library which provides utility functions for common programming tasks. It is comparable to features provided by Prototype.js and the Ruby language, but opts for a functional programming design instead of extending object prototypes.",
       "website": "https://www.jetbrains.com/teamcity/"
     },
     "Tebex": {
@@ -12492,6 +12526,7 @@
       "html": "<[^>]+class=\"[^\"]*(?:uk-container|uk-section)",
       "icon": "UIKit.png",
       "scripts": "uikit.*\\.js",
+      "description": "UIKit is the framework used for developing iOS applications.",
       "website": "https://getuikit.com"
     },
     "UMI.CMS": {
@@ -12980,6 +13015,7 @@
       "meta": {
         "generator": "^VuePress(?: ([0-9.]+))?$\\;version:\\1"
       },
+      "description": "VuePress is a static site generator with a Vue-powered theming system, and a default theme for writing technical documentation.",
       "website": "https://vuepress.vuejs.org/"
     },
     "W3 Total Cache": {
@@ -13834,6 +13870,7 @@
         "yandex_partner_id": ""
       },
       "scripts": "https?://an\\.yandex\\.ru/",
+      "description": "Yandex Direct is the platform designed for sponsored ad management.",
       "website": "http://partner.yandex.com"
     },
     "Yandex.Metrika": {
@@ -13848,6 +13885,7 @@
         "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
         "cdn\\.jsdelivr\\.net\\/npm\\/yandex-metrica-watch\\/watch\\.js"
       ],
+      "description": "Yandex.Metrica is a free web analytics service that tracks and reports website traffic.",
       "website": "http://metrika.yandex.com"
     },
     "Yaws": {
@@ -13908,6 +13946,7 @@
       ],
       "icon": "Yoast SEO.png",
       "implies": "WordPress",
+      "description": "Yoast SEO is a search engine optimization plug-in for WordPress.",
       "website": "http://yoast.com"
     },
     "YouTrack": {
@@ -13952,6 +13991,7 @@
       "js": {
         "Foundation.version": "([\\d.]+)\\;version:\\1"
       },
+      "description": "Zurb Foundation is used to prototype in the browser. Allows rapid creation of websites or applications while leveraging mobile and responsive technology. The front end framework is the collection of HTML, CSS, and Javascript containing design patterns.",
       "website": "http://foundation.zurb.com"
     },
     "Zabbix": {
@@ -14166,6 +14206,7 @@
       "html": [
         "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
       ],
+      "description": "Animate.css is a library of ready-to-use, cross-browser animations for use in web projects.",
       "website": "https://daneden.github.io/animate.css/"
     },
     "basket.js": {
@@ -14600,6 +14641,7 @@
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],
+      "description": "jQuery is a JavaScript library which is a free, open-source software designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.",
       "website": "https://jquery.com"
     },
     "jQuery Migrate": {
@@ -14614,6 +14656,7 @@
         "jqueryMigrate": ""
       },
       "scripts": "jquery[.-]migrate(?:-([\\d.]+))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "description": "Query Migrate is a javascript library that allows you to preserve the compatibility of your jQuery code developed for versions of jQuery older than 1.9.",
       "website": "https://github.com/jquery/jquery-migrate"
     },
     "jQuery Mobile": {
@@ -14651,6 +14694,7 @@
         "([\\d.]+)/jquery-ui(?:\\.min)?\\.js\\;version:\\1",
         "jquery-ui.*\\.js"
       ],
+      "description": "jQuery UI is a collection of GUI widgets, animated visual effects, and themes implemented with jQuery, Cascading Style Sheets, and HTML.",
       "website": "http://jqueryui.com"
     },
     "jQuery-pjax": {
