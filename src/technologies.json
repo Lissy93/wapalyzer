@@ -10234,6 +10234,17 @@
       },
       "website": "http://www.rockrms.com"
     },
+    "Rollbar": {
+      "cats": [
+        13
+      ],
+      "icon": "Rollbar.png",
+      "scripts": [
+        "rollbar\\.js/([0-9.]+)\\;version:\\1",
+        "([rollbar]+)-([0-9.])"
+      ],
+      "website": "https://rollbar.com/"
+    },
     "RoundCube": {
       "cats": [
         30
