@@ -13882,8 +13882,8 @@
         "yandex_metrika": ""
       },
       "scripts": [
-        "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
-        "cdn\\.jsdelivr\\.net\\/npm\\/yandex-metrica-watch\\/watch\\.js"
+        "mc\\.yandex\\.ru/metrika/(?:tag|watch)\\.js",
+        "cdn\\.jsdelivr\\.net/npm/yandex\\-metrica\\-watch/watch\\.js"
       ],
       "description": "Yandex.Metrica is a free web analytics service that tracks and reports website traffic.",
       "website": "http://metrika.yandex.com"
