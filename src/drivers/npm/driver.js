@@ -345,10 +345,10 @@ class Site {
       await sleep(1000)
 
       // Links
-      const links = await Promise.race([
-        this.timeout(),
-        (
-          await page.evaluateHandle(() =>
+      const links = await (
+        await Promise.race([
+          this.timeout(),
+          page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('a')).map(
               ({ hash, hostname, href, pathname, protocol, rel }) => ({
                 hash,
@@ -359,15 +359,15 @@ class Site {
                 rel,
               })
             )
-          )
-        ).jsonValue(),
-      ])
+          ),
+        ])
+      ).jsonValue()
 
       // CSS
-      const css = await Promise.race([
-        this.timeout(),
-        (
-          await page.evaluateHandle((maxRows) => {
+      const css = await (
+        await Promise.race([
+          this.timeout(),
+          page.evaluateHandle((maxRows) => {
             const css = []
 
             try {
@@ -389,27 +389,27 @@ class Site {
             }
 
             return css.join('\n')
-          }, this.options.htmlMaxRows)
-        ).jsonValue(),
-      ])
+          }, this.options.htmlMaxRows),
+        ])
+      ).jsonValue()
 
       // Script tags
-      const scripts = await Promise.race([
-        this.timeout(),
-        (
-          await page.evaluateHandle(() =>
+      const scripts = await (
+        await Promise.race([
+          this.timeout(),
+          page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('script'))
               .map(({ src }) => src)
               .filter((src) => src)
-          )
-        ).jsonValue(),
-      ])
+          ),
+        ])
+      ).jsonValue()
 
       // Meta tags
-      const meta = await Promise.race([
-        this.timeout(),
-        (
-          await page.evaluateHandle(() =>
+      const meta = await (
+        await Promise.race([
+          this.timeout(),
+          page.evaluateHandle(() =>
             Array.from(document.querySelectorAll('meta')).reduce(
               (metas, meta) => {
                 const key =
@@ -423,9 +423,9 @@ class Site {
               },
               {}
             )
-          )
-        ).jsonValue(),
-      ])
+          ),
+        ])
+      ).jsonValue()
 
       // JavaScript
       const js = await Promise.race([
