@@ -9435,6 +9435,23 @@
       "scripts": "polymer\\.js",
       "website": "http://polymer-project.org"
     },
+    "Popper": {
+      "cats": [
+        19
+      ],
+      "description": "Popper is an tolltip & popover positioning engine",
+      "icon": "Popper.png",
+      "html": [
+        "<script [^>]*src=\"[^\"]*/popper\\.js/([0-9.]+)\\;version:\\1"
+      ],
+      "scripts": [
+        "/popper\\.js/([0-9.]+)\\;version:\\1"
+      ],
+      "js": {
+        "createPopper": ""
+      },
+      "website": "https://popper.js.org"
+    },
     "Posterous": {
       "cats": [
         1,
