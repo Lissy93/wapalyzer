@@ -10721,7 +10721,8 @@
         13
       ],
       "html": [
-        "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1"
+        "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1",
+        "<script[^>]*src=\"[^\"]*browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js\\;version:\\1"
       ],
       "icon": "Sentry.svg",
       "js": {
@@ -10732,8 +10733,7 @@
         "ravenOptions.whitelistUrls": ""
       },
       "scripts": [
-        "browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.min)?\\.js\\;version:\\1",
-        "browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle\\.tracing(?:\\.min)?\\.js\\;version:\\1"
+        "browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "https://sentry.io/"
     },
