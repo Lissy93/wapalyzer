@@ -7478,6 +7478,8 @@
       "icon": "MediaWiki.png",
       "implies": "PHP",
       "js": {
+        "wgTitle": "",
+        "wgVersion": "^(.+)$\\;version:\\1",
         "mw.util.toggleToc": ""
       },
       "meta": {
@@ -10769,7 +10771,7 @@
       "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
       "website": "https://select2.org/"
     },
-    "Semantic-ui": {
+    "Semantic UI": {
       "cats": [
         66
       ],
@@ -10779,7 +10781,7 @@
       "icon": "Semantic-ui.png",
       "scripts": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "description": "Semantic UI is a front-end development framework, powered by LESS and jQuery.",
-      "website": "https://semantic-ui.com"
+      "website": "https://semantic-ui.com/"
     },
     "Sencha Touch": {
       "cats": [
@@ -12552,7 +12554,7 @@
     },
     "Twitter Emoji (Twemoji)": {
       "cats": [
-        19
+        17
       ],
       "js": {
         "twemoji": ""
@@ -14846,7 +14848,7 @@
       "cats": [
         31
       ],
-      "html": "<[^>]+?//cdn\\.jsdelivr\\.net/",
+      "html": "<link [^>]*?href=\"?[a-zA-Z]*?:?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
       "scripts": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
