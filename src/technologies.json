@@ -1085,7 +1085,7 @@
       ],
       "cpe": "cpe:/a:apache:tomcat",
       "headers": {
-        "Server": "^Apache-Coyote(?:/([\\d.]+))?\\;version:\\1",
+        "Server": "^Apache-Coyote(?:/([\\d.]+))?",
         "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache Tomcat.svg",
