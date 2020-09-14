@@ -7793,7 +7793,10 @@
       "js": {
         "mixpanel": ""
       },
-      "scripts": "api\\.mixpanel\\.com/track",
+      "scripts": [
+        "cdn\\.mxpnl\\.com/libs/mixpanel\\-([0-9.]+)\\.min\\.js\\;version:\\1",
+        "api\\.mixpanel\\.com/track"
+      ],
       "description": "Mixpanel provides a business analytics service. It tracks user interactions with web and mobile applications and provides tools for targeted communication with them. Its toolset contains in-app A/B tests and user survey forms.",
       "website": "https://mixpanel.com"
     },
