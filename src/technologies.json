@@ -15125,6 +15125,21 @@
       },
       "website": "https://owncloud.org"
     },
+    "Oxygen": {
+      "cats": [
+        51
+      ],
+      "html": [
+        "<body class=(?:\"|')[^\"']*oxygen-body",
+        "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/oxygen/"
+      ],
+      "scripts": [
+        "wp-content/plugins/oxygen"
+      ],
+      "icon": "Oxygen.png",
+      "implies": "WordPress",
+      "website": "https://oxygenbuilder.com"
+    },  
     "papaya CMS": {
       "cats": [
         1
