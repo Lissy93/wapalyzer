@@ -96,7 +96,7 @@
         "<link rel=\"amphtml\""
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
-      "description": "AMP, originally created by Google, is an open source HTML framework developed by the AMP Open Source Project. AMP is designed to help webpages load faster.",
+      "description": "AMP, originally created by Google, is an open-source HTML framework developed by the AMP open-source Project. AMP is designed to help webpages load faster.",
       "website": "https://www.amp.dev"
     },
     "AMP Plugin": {
@@ -162,6 +162,7 @@
       ],
       "icon": "Accessibe.png",
       "scripts": "acsbap\\.com/.*/acsb\\.js",
+      "description": "AccessiBe is an automated web accessibility solution for ADA and WCAG compliance. The system scans and analyzes a website using AI technology, and applies all the required adjustments to become ADA and WCAG 2.1 compliant.",
       "website": "https://accessibe.com/"
     },
     "Cloud Platform": {
@@ -424,6 +425,7 @@
       "meta": {
         "generator": "Adobe GoLive(?:\\s([\\d.]+))?\\;version:\\1"
       },
+      "description": "Adobe GoLive is a WYSIWYG HTML editor and web site management application.",
       "website": "http://www.adobe.com/products/golive"
     },
     "Adobe RoboHelp": {
@@ -443,6 +445,7 @@
         "generator": "^Adobe RoboHelp(?: ([\\d]+))?\\;version:\\1"
       },
       "scripts": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
+      "description": "Adobe RoboHelp is a Help Authoring Tool (HAT) that allows you to create help systems, e-learning content and knowledge bases.",
       "website": "http://adobe.com/products/robohelp.html"
     },
     "Adobe Target": {
@@ -732,6 +735,7 @@
       "meta": {
         "generator": "Amaya(?: V?([\\d.]+[a-z]))?\\;version:\\1"
       },
+      "description": "Amaya is an open-source web browser editor to create and update documents on the web.",
       "website": "http://www.w3.org/Amaya"
     },
     "Amazon ALB": {
@@ -744,6 +748,7 @@
       },
       "icon": "aws-elb.png",
       "implies": "Amazon Web Services",
+      "description": "Amazon Application Load Balancer (ALB) distributes incoming application traffic to inscrease availability and support content-based routing.",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "AWS Certificate Manager": {
@@ -824,6 +829,7 @@
         "Amazon Web Services",
         "Docker"
       ],
+      "description": "",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "Amazon ELB": {
@@ -1033,6 +1039,7 @@
         "/([\\d.]+(?:-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "\\bangular.{0,32}\\.js"
       ],
+      "description": "AngularJS is a JavaScript-based open-source web application framework led by the Angular Team at Google.",
       "website": "https://angularjs.org"
     },
     "Ant Design": {
@@ -1126,6 +1133,7 @@
       "html": "<script>[^>]{0,50}script src=[^>]/profiles/apigee",
       "icon": "apigee.svg",
       "scripts": "/profiles/apigee",
+      "description": "Apigee is an API gateway management tool to exchange data across cloud services and applications.",
       "website": "https://cloud.google.com/apigee/"
     },
     "Apollo": {
@@ -1229,6 +1237,7 @@
         "js\\.arcgis\\.com",
         "basemaps\\.arcgis\\.com"
       ],
+      "description": "ArcGIS API for JavaScript is a tool used to embed maps and tasks in web applications.",
       "website": "https://developers.arcgis.com/javascript/"
     },
     "Artifactory": {
@@ -1286,6 +1295,7 @@
       "meta": {
         "generator": "^AsciiDoc ([\\d.]+)\\;version:\\1"
       },
+      "description": "AsciiDoc is a text document format for writing documentation, slideshows, web pages, man pages and blogs. AsciiDoc files can be translated to many formats including HTML, PDF, EPUB, man page.",
       "website": "http://www.methods.co.nz/asciidoc"
     },
     "Asciinema": {
@@ -1393,6 +1403,7 @@
       "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
       "icon": "AudioEye.png",
       "scripts": "audioeye\\.com/ae\\.js",
+      "description": "AudioEye automatically evaluates and adjusts website content to be accessible.",
       "website": "https://www.audioeye.com/"
     },
     "Aurelia": {
@@ -1547,6 +1558,7 @@
         "Backbone.VERSION": "^(.+)$\\;version:\\1"
       },
       "scripts": "backbone.*\\.js",
+      "description": "BackboneJS is a JavaScript library that allows to develop and structure the client side applications that run in a web browser.",
       "website": "http://backbonejs.org"
     },
     "Backdrop": {
@@ -1732,6 +1744,7 @@
         "generator": "^Blogger$"
       },
       "url": "^https?://[^/]+\\.(?:blogspot|blogger)\\.com",
+      "description": "Blogger is a blog-publishing service that allows multi-user blogs with time-stamped entries.",
       "website": "http://www.blogger.com"
     },
     "Bloomreach": {
@@ -1750,6 +1763,7 @@
       "meta": {
         "generator": "Bluefish(?:\\s([\\d.]+))?\\;version:\\1"
       },
+      "description": "Bluefish is a free software text editor with a variety of tools for programming in general and the development of websites.",
       "website": "http://sourceforge.net/projects/bluefish"
     },
     "Boa": {
@@ -1789,6 +1803,7 @@
       ],
       "icon": "BoldChat.png",
       "scripts": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
+      "description": "BoldChat is a live chat platform.",
       "website": "https://www.boldchat.com/"
     },
     "BoldGrid": {
@@ -1803,6 +1818,7 @@
       ],
       "implies": "WordPress",
       "scripts": "/wp-content/plugins/post-and-page-builder",
+      "description": "BoldGrid is a free website builder for WordPress websites.",
       "website": "https://boldgrid.com"
     },
     "Bolt": {
@@ -2057,6 +2073,7 @@
       ],
       "icon": "civic.png",
       "scripts": "cc\\.cdn\\.civiccomputing\\.com",
+      "description": "Civic provides cookie control for user consent and the use of cookies.",
       "website": "https://www.civicuk.com/cookie-control"
     },
     "CKEditor": {
@@ -2530,6 +2547,7 @@
         "Server": "cloudera"
       },
       "icon": "Cloudera.png",
+      "description": "Cloudera is a software platform for data engineering, data warehousing, machine learning and analytics that runs in the cloud or on-premises.",
       "website": "http://www.cloudera.com"
     },
     "Cloudflare": {
@@ -2717,7 +2735,7 @@
       "icon": "Contao.png",
       "implies": "PHP",
       "meta": {
-        "generator": "^Contao Open Source CMS$"
+        "generator": "^Contao open-source CMS$"
       },
       "website": "http://contao.org"
     },
@@ -2782,6 +2800,7 @@
       ],
       "icon": "CookieScript.png",
       "scripts": "//cookie-script\\.com/s/",
+      "description": "Cookie-Script automatically scans, categorises and adds description to all cookies found on your website.",
       "website": "https://cookie-script.com/"
     },
     "CookieHub": {
@@ -2818,6 +2837,7 @@
       "html": "<!--Coppermine Photo Gallery ([\\d.]+)\\;version:\\1",
       "icon": "Coppermine.png",
       "implies": "PHP",
+      "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
       "website": "http://coppermine-gallery.net"
     },
     "Cosmoshop": {
@@ -2964,6 +2984,7 @@
       ],
       "icon": "Crownpeak.png",
       "scripts": "c\\.evidon\\.com",
+      "description": "CrownPeak is a cloud-based Digital Experience Management (DEM) platform that is designed to in the management of digital experiences across multiple touchpoints, especially for marketing and a freer IT architecture.",
       "website": "http://www.crownpeak.com"
     },
     "Crypto-Loot": {
@@ -3005,6 +3026,7 @@
         "Cufon": ""
       },
       "scripts": "cufon-yui\\.js",
+      "description": "Cufon is a tool used to overlap real text with an image.",
       "website": "http://cufon.shoqolate.com"
     },
     "Cybersource": {
@@ -3261,6 +3283,7 @@
       ],
       "icon": "didomi.png",
       "scripts": "sdk\\.privacy-center\\.org/.*/loader\\.js",
+      "description": "Didomi is a consent management platform helping brands and businesses collect, store and leverage their customer consents.",
       "website": "https://www.didomi.io/en/consent-preference-management"
     },
     "DirectAdmin": {
@@ -3322,6 +3345,7 @@
         "disqus_url": ""
       },
       "scripts": "disqus_url",
+      "description": "Disqus is a worldwide blog comment hosting service for web sites and online communities that use a networked platform.",
       "website": "https://disqus.com"
     },
     "Django": {
@@ -3362,6 +3386,7 @@
       "meta": {
         "generator": "^Docusaurus$"
       },
+      "description": "Docusaurus is a tool for teams to publish documentation websites",
       "website": "https://docusaurus.io/"
     },
     "Dojo": {
@@ -3486,6 +3511,7 @@
       "meta": {
         "generator": "Doxygen ([\\d.]+)\\;version:\\1"
       },
+      "description": "Doxygen is a documentation generator, a tool for writing software reference documentation.",
       "website": "http://www.doxygen.nl/"
     },
     "DreamWeaver": {
@@ -3500,6 +3526,7 @@
         "MM_showHideLayers": "",
         "MM_showMenu": ""
       },
+      "description": "Dreamweaver is a development tool for creating, publishing, and managing websites and mobile content.",
       "website": "https://www.adobe.com/products/dreamweaver.html"
     },
     "Drupal": {
@@ -3890,6 +3917,7 @@
       ],
       "icon": "EqualWeb.png",
       "scripts": "cdn\\.equalweb\\.com.*\\.js",
+      "description": "EqualWeb provides web accessibility, digital accessibility solutions and helps people with disabilities access digital information.",
       "website": "https://www.equalweb.com/"
     },
     "Erlang": {
@@ -4056,6 +4084,7 @@
       ],
       "icon": "Facil-iti.png",
       "scripts": "ws\\.facil-iti\\.com/tag/faciliti-tag\\.min\\.js",
+      "description": "Facil-iti is solution for website owners, providing accessibility to disability users and seniors.",
       "website": "https://www.facil-iti.com/"
     },
     "Fact Finder": {
@@ -4190,6 +4219,7 @@
         "firebase.SDK_VERSION": "([\\d.]+)$\\;version:\\1"
       },
       "scripts": "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+      "description": "Firebase is a Backend-as-a-Service (Baas) for creating mobile and web applications.",
       "website": "https://firebase.com"
     },
     "Fireblade": {
@@ -4327,6 +4357,7 @@
         "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
         "kit\\.fontawesome\\.com/([0-9a-z]+).js"
       ],
+      "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
       "website": "https://fontawesome.com/"
     },
     "Fork CMS": {
@@ -4429,6 +4460,7 @@
       ],
       "icon": "freshchat.png",
       "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "description": "Freshchat is a cloud-hosted live messaging and engagement application.",
       "website": "https://www.freshworks.com/live-chat-software/"
     },
     "Freshmarketer": {
@@ -4461,6 +4493,7 @@
         "ProgId": "^FrontPage\\.",
         "generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
       },
+      "description": "FrontPage is a program for developing and maintaining websites.",
       "website": "http://office.microsoft.com/frontpage"
     },
     "Fusion Ads": {
@@ -4514,6 +4547,7 @@
         "gsapVersions": ""
       },
       "scripts": "TweenMax(?:\\.min)?\\.js",
+      "description": "GSAP is an animation library that allows you to create animations with JavaScript.",
       "website": "https://greensock.com/gsap"
     },
     "GX WebManager": {
@@ -4572,7 +4606,7 @@
       "meta": {
         "generator": "^Gatsby(?: ([0-9.]+))?$\\;version:\\1"
       },
-      "description": "Gatsby is a React-based open source framework with performance, scalability and security built-in.",
+      "description": "Gatsby is a React-based open-source framework with performance, scalability and security built-in.",
       "website": "https://www.gatsbyjs.org/"
     },
     "Gauges": {
@@ -4692,6 +4726,7 @@
       "meta": {
         "generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1"
       },
+      "description": "Ghost is a free and open-source blogging platform written in JavaScript, designed to simplify the process of online publishing for individual bloggers as well as online publications.",
       "website": "http://ghost.org"
     },
     "GitBook": {
@@ -4703,6 +4738,7 @@
         "generator": "GitBook ([\\d.]+)?\\;version:\\1"
       },
       "url": "^https?://[^/]+\\.gitbook\\.com/",
+      "description": "GitBook is a command-line tool for creating documentation using Git and Markdown.",
       "website": "https://www.gitbook.com"
     },
     "GitHub Pages": {
@@ -4790,7 +4826,7 @@
       ],
       "cpe": "cpe:/a:oracle:glassfish_server",
       "headers": {
-        "Server": "GlassFish(?: Server)?(?: Open Source Edition)?(?: ?/?([\\d.]+))?\\;version:\\1"
+        "Server": "GlassFish(?: Server)?(?: open-source Edition)?(?: ?/?([\\d.]+))?\\;version:\\1"
       },
       "icon": "GlassFish.png",
       "implies": "Java",
@@ -4812,6 +4848,7 @@
       ],
       "html": "(?:<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css|<img[^>]* src=[^>]+glyphicons)",
       "icon": "Glyphicons.png",
+      "description": "Glyphicons are icon fonts which you can use in your web projects.",
       "website": "http://glyphicons.com"
     },
     "Go": {
@@ -5002,6 +5039,7 @@
         "WebFonts": ""
       },
       "scripts": "googleapis\\.com/.+webfont",
+      "description": "Google Font API is a web service that supports open-source font files that can be used on your web designs.",
       "website": "http://google.com/fonts"
     },
     "Google Maps": {
@@ -5013,6 +5051,7 @@
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
         "//maps\\.googleapis\\.com/maps/api/js"
       ],
+      "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
       "website": "http://maps.google.com"
     },
     "Google PageSpeed": {
@@ -5249,6 +5288,7 @@
       ],
       "icon": "HERE.png",
       "scripts": "https?://js\\.cit\\.api\\.here\\.com/se/([\\d.]+)\\/\\;version:\\1",
+      "description": "HERE provides mapping and location data to individuals and companies.",
       "website": "http://developer.here.com"
     },
     "HHVM": {
@@ -5311,6 +5351,7 @@
       ],
       "html": "<p>Produced by <a href=\"http://www\\.haskell\\.org/haddock/\">Haddock</a> version ([0-9.]+)</p>\\;version:\\1",
       "scripts": "haddock-util\\.js",
+      "description": "Haddock is a tool for automatically generating documentation from annotated Haskell source code.",
       "website": "http://www.haskell.org/haddock/"
     },
     "Halo": {
@@ -5349,6 +5390,7 @@
         "Handlebars.VERSION": "^(.+)$\\;version:\\1"
       },
       "scripts": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
+      "description": "Handlebars is a JavaScript library used to create reusable webpage templates.",
       "website": "http://handlebarsjs.com"
     },
     "Haravan": {
@@ -5482,6 +5524,7 @@
       ],
       "icon": "HikeOrders.png",
       "scripts": "hikeorders\\.com/main/assets/js/hko-accessibility\\.min\\.js",
+      "description": "HikeOrders web accessibility automated plugin.",
       "website": "https://hikeorders.com/"
     },
     "Hinza Advanced CMS": {
@@ -5842,6 +5885,7 @@
         "Instabot": ""
       },
       "scripts": "/rokoInstabot\\.js",
+      "description": "Instabot is a conversion chatbot that understands your users, and curates information, answers questions, captures contacts, and books meetings instantly.",
       "website": "https://instabot.io/"
     },
     "InstantCMS": {
@@ -5877,6 +5921,7 @@
       ],
       "icon": "IntenseDebate.png",
       "scripts": "intensedebate\\.com",
+      "description": "IntenseDebate is a blog commenting system that supports Typepad, Blogger and Wordpress blogs. The system allows blog owners to track and moderate comments from one place with features like threading, comment analytics, user reputation, and comment aggregation.",
       "website": "http://intensedebate.com"
     },
     "Intercom": {
@@ -5897,6 +5942,7 @@
       ],
       "html": "<a href=\"https://www.intercom.com/intercom-link[^\"]+solution=customer-support[^>]+>We run on Intercom",
       "icon": "Intercom.svg",
+      "description": "Intercom Articles is a tool to create, organize and publish help articles.",
       "website": "https://www.intercom.com/articles"
     },
     "Intershop": {
@@ -5917,6 +5963,7 @@
       },
       "html": "(?:Powered by|System)\\s+(?:CERN )?<a (?:class=\"footer\" )?href=\"http://(?:cdsware\\.cern\\.ch(?:/invenio)?|invenio-software\\.org|cern\\.ch/invenio)(?:/)?\">(?:CDS )?Invenio</a>\\s*v?([\\d\\.]+)?\\;version:\\1",
       "icon": "Invenio.png",
+      "description": "Invenio is an open-source software framework for large-scale digital repositories that provides the tools for management of digital assets in an institutional repository and research data management systems.",
       "website": "http://invenio-software.org"
     },
     "Ionic": {
@@ -5936,6 +5983,7 @@
       ],
       "html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
       "icon": "Ionicons.png",
+      "description": "Ionicons is an open-source icon set crafted for web, iOS, Android, and desktop apps.",
       "website": "http://ionicons.com"
     },
     "Irroba": {
@@ -6123,6 +6171,7 @@
       ],
       "html": "<!-- Generated by javadoc -->",
       "icon": "Java.png",
+      "description": "Javadoc is a tool used for generating Java code documentation in HTML format from Java source code.",
       "website": "https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html"
     },
     "Jekyll": {
@@ -6156,6 +6205,7 @@
         "jenkinsCIGlobal": "",
         "jenkinsRules": ""
       },
+      "description": "Jenkins is an open-source automation tool written in Java with plugins built for Continuous Integration (CI) purposes.",
       "website": "https://jenkins.io/"
     },
     "Jetshop": {
@@ -6220,6 +6270,7 @@
       ],
       "icon": "Jitsi.png",
       "scripts": "lib-jitsi-meet.*\\.js",
+      "description": "Jitsi is a free and open-source multiplatform voice (VoIP), videoconferencing and instant messaging applications for the web platform.",
       "website": "https://jitsi.org"
     },
     "Jive": {
@@ -6518,6 +6569,7 @@
       "meta": {
         "generator": "^Koha ([\\d.]+)$\\;version:\\1"
       },
+      "description": "Koha is an open-source Integrated Library System (ILS).",
       "website": "https://koha-community.org/"
     },
     "Kohana": {
@@ -6690,6 +6742,7 @@
         "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
       },
       "scripts": "leaflet.{0,32}\\.js",
+      "description": "Leaflet is the open-source JavaScript library for mobile-friendly interactive maps.",
       "website": "http://leafletjs.com"
     },
     "Less": {
@@ -6859,6 +6912,7 @@
       "js": {
         "LiveAgent": ""
       },
+      "description": "LiveAgent is an online live chat platform. The software provides a ticket management system.",
       "website": "https://www.ladesk.com"
     },
     "LiveChat": {
@@ -6867,6 +6921,7 @@
       ],
       "icon": "LiveChat.png",
       "scripts": "cdn\\.livechatinc\\.com/.*tracking\\.js",
+      "description": "LiveChat is an online customer service software with online chat, help desk software, and web analytics capabilities.",
       "website": "http://livechatinc.com"
     },
     "LiveHelp": {
@@ -6878,6 +6933,7 @@
       "js": {
         "LHready": ""
       },
+      "description": "LiveHelp is an online chat tool.",
       "website": "http://www.livehelp.it"
     },
     "LiveJournal": {
@@ -6886,6 +6942,7 @@
       ],
       "icon": "LiveJournal.png",
       "url": "\\.livejournal\\.com",
+      "description": "LiveJournal is a social networking service where users can keep a blog, journal or diary.",
       "website": "http://www.livejournal.com"
     },
     "LivePerson": {
@@ -6894,6 +6951,7 @@
       ],
       "icon": "LivePerson.png",
       "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
+      "description": "LivePerson is a tool for conversational chatbots and messaging.",
       "website": "https://www.liveperson.com/"
     },
     "LiveStreet CMS": {
@@ -6923,6 +6981,7 @@
         "fyre": ""
       },
       "scripts": "livefyre_init\\.js",
+      "description": "Livefyre is a platform that integrates with the social web to boost social interaction.",
       "website": "http://livefyre.com"
     },
     "Liveinternet": {
@@ -7012,6 +7071,7 @@
         "Server": "Logitech Media Server(?: \\(([\\d\\.]+))?\\;version:\\1"
       },
       "icon": "Logitech Media Server.png",
+      "description": "Logitech Media Server is a streaming audio server.",
       "website": "http://www.mysqueezebox.com"
     },
     "Loja Integrada": {
@@ -7057,6 +7117,7 @@
       "cpe": "cpe:/a:apache:lucene",
       "icon": "Lucene.png",
       "implies": "Java",
+      "description": "Lucene is a free and open-source search engine software library.",
       "website": "http://lucene.apache.org/core/"
     },
     "Luigi’s Box": {
@@ -7211,6 +7272,8 @@
       ],
       "cpe": "cpe:/a:mariadb_project:mariadb",
       "icon": "mariadb.svg",
+      "excludes": "MySQL",
+      "description": "MariaDB is an open-source relational database management system compatible with MySQL.",
       "website": "https://mariadb.org"
     },
     "Marionette.js": {
@@ -7227,6 +7290,7 @@
         "Marionette.VERSION": "^(.+)$\\;version:\\1"
       },
       "scripts": "backbone\\.marionette.*\\.js",
+      "description": "Marionette is a composite application library for Backbone.js that aims to simplify the construction of large scale JavaScript applications. It is a collection of common design and implementation patterns found in applications.",
       "website": "https://marionettejs.com"
     },
     "Marked": {
@@ -7313,7 +7377,7 @@
       },
       "meta": {
         "apple-itunes-app": "app-id=737216887",
-        "generator": "(?:Matomo|Piwik) - Open Source Web Analytics",
+        "generator": "(?:Matomo|Piwik) - open-source Web Analytics",
         "google-play-app": "app-id=org\\.piwik\\.mobile2"
       },
       "scripts": "piwik\\.js|piwik\\.php",
@@ -7418,6 +7482,8 @@
       "icon": "MediaWiki.png",
       "implies": "PHP",
       "js": {
+        "wgTitle": "",
+        "wgVersion": "^(.+)$\\;version:\\1",
         "mw.util.toggleToc": ""
       },
       "meta": {
@@ -7436,6 +7502,7 @@
       "implies": "Node.js",
       "scripts": "medium\\.com",
       "url": "^https?://(?:www\\.)?medium\\.com",
+      "description": "Medium is an online publishing platform.",
       "website": "https://medium.com"
     },
     "Meebo": {
@@ -7572,6 +7639,7 @@
         "ProgId": "^Excel\\.",
         "generator": "Microsoft Excel( [\\d.]+)?\\;version:\\1"
       },
+      "description": "Microsoft Excel is an electronic spreadsheet program used for storing, organizing, and manipulating data.",
       "website": "https://office.microsoft.com/excel"
     },
     "Microsoft HTTPAPI": {
@@ -7595,6 +7663,7 @@
         "ProgId": "^PowerPoint\\.",
         "generator": "Microsoft PowerPoint ( [\\d.]+)?\\;version:\\1"
       },
+      "description": "Microsoft PowerPoint is a tool to create presentations using simple drag and drop tools.",
       "website": "https://office.microsoft.com/powerpoint"
     },
     "Microsoft Publisher": {
@@ -7608,6 +7677,7 @@
         "ProgId": "^Publisher\\.",
         "generator": "Microsoft Publisher( [\\d.]+)?\\;version:\\1"
       },
+      "description": "Microsoft Publisher is an application that allows you to create professional documents such as newsletters, postcards, flyers, invitations, brochures.",
       "website": "https://office.microsoft.com/publisher"
     },
     "Microsoft SharePoint": {
@@ -7643,6 +7713,7 @@
         "ProgId": "^Word\\.",
         "generator": "Microsoft Word( [\\d.]+)?\\;version:\\1"
       },
+      "description": "MS Word is a word-processing program used primarily for creating documents.",
       "website": "https://office.microsoft.com/word"
     },
     "Milligram": {
@@ -7734,6 +7805,7 @@
       "meta": {
         "generator": "^mkdocs-([\\d.]+)\\;version:\\1"
       },
+      "description": "MkDocs is a static site generator, used for building project documentation.",
       "website": "http://www.mkdocs.org/"
     },
     "MobX": {
@@ -7894,7 +7966,7 @@
         "moment.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "moment(?:\\.min)?\\.js",
-      "description": "Moment.js is a free and open source JavaScript library that removes the need to use the native JavaScript Date object directly.",
+      "description": "Moment.js is a free and open-source JavaScript library that removes the need to use the native JavaScript Date object directly.",
       "website": "https://momentjs.com"
     },
     "Mondo Media": {
@@ -7913,6 +7985,7 @@
       ],
       "cpe": "cpe:/a:mongodb:mongodb",
       "icon": "MongoDB.png",
+      "description": "MongoDB is a document-oriented NoSQL database used for high volume data storage.",
       "website": "http://www.mongodb.org"
     },
     "Mongrel": {
@@ -8071,6 +8144,7 @@
         "Mustache.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "mustache(?:\\.min)?\\.js",
+      "description": "Mustache is a web template system.",
       "website": "https://mustache.github.io"
     },
     "My Food Link": {
@@ -8124,6 +8198,7 @@
       ],
       "cpe": "cpe:/a:mysql:mysql",
       "icon": "MySQL.svg",
+      "description": "MySQL is an open-source relational database management system.",
       "website": "http://mysql.com"
     },
     "MyWebsite": {
@@ -8480,6 +8555,7 @@
       ],
       "icon": "Olark.png",
       "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
+      "description": "Olark is a cloud-based live chat solution.",
       "website": "https://www.olark.com/"
     },
     "OneAPM": {
@@ -8517,6 +8593,7 @@
         "cdn\\.cookielaw\\.org",
         "optanon\\.blob\\.core\\.windows\\.net"
       ],
+      "description": "OneTrust is a cloud-based data privacy management compliance platform.",
       "website": "http://www.onetrust.com"
     },
     "Onshop": {
@@ -8530,7 +8607,7 @@
         "generator": "Onshop Ecommerce"
       },
       "scripts": "/opencart_custom\\.js",
-      "description": "OpenCartfree open source ecommerce platform for online merchants.",
+      "description": "OpenCartfree open-source ecommerce platform for online merchants.",
       "website": "https://onshop.asia"
     },
     "Open AdStream": {
@@ -8568,6 +8645,7 @@
       "meta": {
         "generator": "Open Journal Systems(?: ([\\d.]+))?\\;version:\\1"
       },
+      "description": "Open Journal Systems (OJS) is an open-source software application for managing and publishing scholarly journals.",
       "website": "http://pkp.sfu.ca/ojs"
     },
     "Open Web Analytics": {
@@ -8666,6 +8744,7 @@
         "ol.CanvasMap": ""
       },
       "scripts": "openlayers",
+      "description": "OpenLayers is an open-source JavaScript library for displaying map data in web browser.",
       "website": "https://openlayers.org"
     },
     "OpenNemas": {
@@ -8867,6 +8946,7 @@
       ],
       "icon": "osano.png",
       "scripts": "cookieconsent\\.min\\.js",
+      "description": "Osano is a data privacy platform that helps your website become compliant with laws such as GDPR and CCPA.",
       "website": "https://www.osano.com/"
     },
     "Outbrain": {
@@ -9135,6 +9215,7 @@
         34
       ],
       "icon": "percona.svg",
+      "description": "Percona server is an opensource, fully compatible, enhanced drop-in replacement for MySQL, providing superior performance, scalability, and instrumentation.",
       "website": "https://www.percona.com"
     },
     "Percussion": {
@@ -9457,6 +9538,7 @@
       ],
       "cpe": "cpe:/a:postgresql:postgresql",
       "icon": "PostgreSQL.png",
+      "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
       "website": "http://www.postgresql.org/"
     },
     "Powerboutique": {
@@ -9534,7 +9616,7 @@
       "meta": {
         "generator": "PrestaShop"
       },
-      "description": "PrestaShop is a freemium, open source ecommerce solution, written in the PHP programming language with support for the MySQL database management system.",
+      "description": "PrestaShop is a freemium, open-source ecommerce solution, written in the PHP programming language with support for the MySQL database management system.",
       "website": "http://www.prestashop.com"
     },
     "Prism": {
@@ -9579,6 +9661,7 @@
         "Prototype.Version": "^(.+)$\\;version:\\1"
       },
       "scripts": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
+      "description": "Prototype is a JavaScript Framework that aims to ease development of web applications.",
       "website": "http://www.prototypejs.org"
     },
     "Protovis": {
@@ -9704,6 +9787,7 @@
         "quantserve": ""
       },
       "scripts": "quantcast\\.mgr\\.consensu\\.org",
+      "description": "Quantcast Choice is a free consent management platform to meet key privacy requirements stemming from ePrivacy Directive, GDPR, and CCPA.",
       "website": "https://www.quantcast.com/gdpr/consent-management-solution/"
     },
     "Quantcast Measure": {
@@ -9725,6 +9809,7 @@
       "icon": "question2answer.png",
       "implies": "PHP",
       "scripts": "\\./qa-content/qa-page\\.js\\?([0-9.]+)\\;version:\\1",
+      "description": "Question2Answer (Q2A) is a popular open-source Q&A platform for PHP/MySQL.",
       "website": "http://www.question2answer.org"
     },
     "Quick.CMS": {
@@ -9809,6 +9894,7 @@
       "js": {
         "rdoc_rel_prefix": ""
       },
+      "description": "RDoc produces HTML and command-line documentation for Ruby projects.",
       "website": "https://github.com/ruby/rdoc"
     },
     "RX Web Server": {
@@ -9903,6 +9989,7 @@
         "Raychat": ""
       },
       "scripts": "app\\.raychat\\.io/scripts/js",
+      "description": "Raychat is a free customer messaging platform.",
       "website": "https://raychat.io"
     },
     "Rayo": {
@@ -9933,6 +10020,7 @@
         "Redoc.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "/redoc\\.(?:min\\.)?js",
+      "description": "Redoc is an open-source tool that generates API documentation from OpenAPI specifications.",
       "website": "https://github.com/Rebilly/ReDoc"
     },
     "React": {
@@ -9951,6 +10039,7 @@
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
         "^react\\b.*\\.js"
       ],
+      "description": "React is an open-source JavaScript library for building user interfaces or UI components.",
       "website": "https://reactjs.org"
     },
     "RebelMouse": {
@@ -9971,6 +10060,7 @@
       ],
       "icon": "Recite Me.png",
       "scripts": "api\\.reciteme\\.com/asset/js",
+      "description": "Recite Me is a cloud-based web accessibility assistive toolbar that allows website visitors to customize a site in a way that works for them.",
       "website": "https://reciteme.com/"
     },
     "Recurly": {
@@ -10028,6 +10118,7 @@
       ],
       "cpe": "cpe:/a:redislabs:redis",
       "icon": "Redis.svg",
+      "description": "Redis is an in-memory data structure project implementing a distributed, in-memory key–value database with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indexes.",
       "website": "https://redis.io"
     },
     "Redis Object Cache": {
@@ -10077,6 +10168,7 @@
         "requirejs.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "require.*\\.js",
+      "description": "RequireJS is a JavaScript library and file loader which manages the dependencies between JavaScript files and in modular programming.",
       "website": "http://requirejs.org"
     },
     "Resin": {
@@ -10683,7 +10775,7 @@
       "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
       "website": "https://select2.org/"
     },
-    "Semantic-ui": {
+    "Semantic UI": {
       "cats": [
         66
       ],
@@ -10693,7 +10785,7 @@
       "icon": "Semantic-ui.png",
       "scripts": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "description": "Semantic UI is a front-end development framework, powered by LESS and jQuery.",
-      "website": "https://semantic-ui.com"
+      "website": "https://semantic-ui.com/"
     },
     "Sencha Touch": {
       "cats": [
@@ -11151,6 +11243,7 @@
       },
       "icon": "SlickStack.png",
       "implies": "WordPress",
+      "description": "SlickStack is a free LEMP stack automation script written in Bash designed to enhance and simplify WordPress provisioning, performance, and security.",
       "website": "https://slickstack.io"
     },
     "Slimbox": {
@@ -11332,6 +11425,7 @@
       "scripts": [
         "^https?://cdn\\.solidpixels\\.net/"
       ],
+      "description": "Solidpixels is platform to build websites.",
       "website": "https://www.solidpixels.net"
     },
     "Solodev": {
@@ -11352,6 +11446,7 @@
       ],
       "icon": "Solr.png",
       "implies": "Lucene",
+      "description": "Solr is an open-source enterprise-search platform, written in Java.",
       "website": "http://lucene.apache.org/solr/"
     },
     "Solusquare OmniCommerce Cloud": {
@@ -11434,6 +11529,7 @@
       "js": {
         "DOCUMENTATION_OPTIONS": ""
       },
+      "description": "Sphinx is a tool that makes it easy to create documentation.",
       "website": "https://www.sphinx-doc.org/"
     },
     "SpinCMS": {
@@ -12025,6 +12121,8 @@
       ],
       "icon": "TawkTo.png",
       "scripts": "//embed\\.tawk\\.to",
+      "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
+
       "website": "http://tawk.to"
     },
     "Tealeaf": {
@@ -12070,7 +12168,7 @@
       "meta": {
         "application-name": "TeamCity"
       },
-      "description": "Underscore.js is a JavaScript library which provides utility functions for common programming tasks. It is comparable to features provided by Prototype.js and the Ruby language, but opts for a functional programming design instead of extending object prototypes.",
+      "description": "TeamCity is a build management and continuous integration server from JetBrains.",
       "website": "https://www.jetbrains.com/teamcity/"
     },
     "Tebex": {
@@ -12131,6 +12229,7 @@
       ],
       "icon": "termly.svg",
       "scripts": "app\\.termly\\.io/embed\\.min\\.js",
+      "description": "Termly provides free website policy resources and web-based policy creation software.",
       "website": "https://termly.io/"
     },
     "Tessitura": {
@@ -12162,6 +12261,7 @@
       ],
       "icon": "Texthelp.png",
       "scripts": "browsealoud\\.com/.*/browsealoud\\.js",
+      "description": "TextHelp is a literacy, accessibility and dyslexia software developer for people with reading and writing difficulties.",
       "website": "https://www.texthelp.com/en-gb/products/browsealoud/"
     },
     "Textpattern CMS": {
@@ -12248,6 +12348,7 @@
         "generator": "^TiddlyWiki$",
         "tiddlywiki-version": "^(.+)$\\;version:\\1"
       },
+      "description": "TiddlyWiki is an open-source notebook for capturing, organising and sharing complex information.",
       "website": "http://tiddlywiki.com"
     },
     "Tiki Wiki CMS Groupware": {
@@ -12400,6 +12501,7 @@
       ],
       "icon": "TrustArc.svg",
       "scripts": "consent\\.trustarc\\.com",
+      "description": "TrustArc provides software and services to help corporations update their privacy management processes so they comply with government laws and best practices.",
       "website": "http://trustarc.com"
     },
     "Tumblr": {
@@ -12412,6 +12514,7 @@
       "html": "<iframe src=\"[^>]+tumblr\\.com",
       "icon": "Tumblr.png",
       "url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
+      "description": "Tumblr is a microblogging and social networking website. The service allows users to post multimedia and other content to a short-form blog.",
       "website": "http://www.tumblr.com"
     },
     "Twilight CMS": {
@@ -12455,7 +12558,7 @@
     },
     "Twitter Emoji (Twemoji)": {
       "cats": [
-        19
+        17
       ],
       "js": {
         "twemoji": ""
@@ -12495,6 +12598,7 @@
         "generator": "typepad"
       },
       "url": "typepad\\.com",
+      "description": "Typepad is a blog hosting service.",
       "website": "http://www.typepad.com"
     },
     "Typecho": {
@@ -12510,6 +12614,7 @@
         "generator": "Typecho( [\\d.]+)?\\;version:\\1"
       },
       "url": "/admin/login\\.php?referer=http%3A%2F%2F",
+      "description": "Typecho is a PHP Blogging Platform.",
       "website": "http://typecho.org/"
     },
     "Typekit": {
@@ -12521,6 +12626,7 @@
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
       "scripts": "use\\.typekit\\.com",
+      "description": "Typekit is an online service which offers a subscription library of fonts.",
       "website": "http://typekit.com"
     },
     "UIKit": {
@@ -12619,6 +12725,7 @@
       },
       "icon": "Unbounce.png",
       "scripts": "ubembed\\.com",
+      "description": "Unbounce is a tool to build landing pages.",
       "website": "http://unbounce.com"
     },
     "Underscore.js": {
@@ -12632,6 +12739,7 @@
         "_.restArguments": ""
       },
       "scripts": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "description": "Underscore.js is a JavaScript library which provides utility functions for common programming tasks. It is comparable to features provided by Prototype.js and the Ruby language, but opts for a functional programming design instead of extending object prototypes.",
       "website": "http://underscorejs.org"
     },
     "Uniconsent": {
@@ -12659,6 +12767,7 @@
       "html": "<iframe[ˆ>]*\\.usablenet\\.com/pt/",
       "icon": "UsableNet.png",
       "scripts": "\\.usablenet\\.com/pt/",
+      "description": "UsableNet is a technology for web accessibility and digital transformation, providing end-to-end services.",
       "website": "https://usablenet.com/"
     },
     "UserLike": {
@@ -12670,6 +12779,7 @@
         "userlike\\.min\\.js",
         "userlikelib\\.min\\.js"
       ],
+      "description": "Userlike is a cloud-based live chat solution that can be integrated with existing websites.",
       "website": "http://userlike.com"
     },
     "UserRules": {
@@ -12698,6 +12808,7 @@
       ],
       "icon": "UserWay.png",
       "scripts": "cdn\\.userway\\.org/widget.*\\.js",
+      "description": "UserWay is a web accessibility widget add-on for websites to help improve their compliance with accessibility standards.",
       "website": "https://userway.org/"
     },
     "Ushahidi": {
@@ -12718,6 +12829,7 @@
         "Ushahidi": ""
       },
       "scripts": "/js/ushahidi\\.js$",
+      "description": "Ushahidi is a tool that collects crowdsourced data and targeted survey responses from multiple data sources.",
       "website": "http://www.ushahidi.com"
     },
     "VIVVO": {
@@ -13008,6 +13120,7 @@
         "vue[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "(?:/([\\d.]+))?/vue(?:\\.min)?\\.js\\;version:\\1"
       ],
+      "description": "Vue.js is an open-source model–view–viewmodel JavaScript framework for building user interfaces and single-page applications.",
       "website": "https://vuejs.org"
     },
     "VuePress": {
@@ -13186,9 +13299,10 @@
       "meta": {
         "generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
       },
+      "description": "WebSite X5 is a tools to create and publish websites.",
       "website": "http://websitex5.com"
     },
-    "Webdev": {
+    "WEBDEV": {
       "cats": [
         20
       ],
@@ -13200,6 +13314,7 @@
       "meta": {
         "generator": "^WEBDEV$"
       },
+      "description": "WEBDEV is a tool to develop internet and intranet sites and applications that support data and processes",
       "website": "https://www.windev.com/webdev/index.html"
     },
     "Webflow": {
@@ -13214,6 +13329,7 @@
       "meta": {
         "generator": "Webflow"
       },
+      "description": "Webflow is Software-as-a-Service (Saas) for website building and hosting.",
       "website": "https://webflow.com"
     },
     "Webix": {
@@ -13563,6 +13679,7 @@
         "/wp-(?:content|includes)/",
         "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
       ],
+      "description": "WordPress is a free and open-source content management system written in PHP and paired with a MySQL or MariaDB database. Features include a plugin architecture and a template system.",
       "website": "https://wordpress.org"
     },
     "WordPress Super Cache": {
@@ -13594,6 +13711,7 @@
       ],
       "html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
       "icon": "Wowza Media Server.png",
+      "description": "Wowza is a live video streaming platform.",
       "website": "http://www.wowza.com"
     },
     "X-Cart": {
@@ -13804,6 +13922,7 @@
       ],
       "html": "(?:<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf|<body[^>]+class=\"yui3-skin-sam)",
       "icon": "yahoo.png",
+      "description": "UIDoc is a Node.js application used at build time to generate API documentation.",
       "website": "http://developer.yahoo.com/yui/yuidoc"
     },
     "YaBB": {
@@ -14073,6 +14192,7 @@
       ],
       "icon": "Zendesk Chat.png",
       "scripts": "v2\\.zopim\\.com",
+      "description": "Zendesk Chat is a live chat and communication widget.",
       "website": "http://zopim.com"
     },
     "Zenfolio": {
@@ -14560,6 +14680,7 @@
       "meta": {
         "generator": "^iWeb( [\\d.]+)?\\;version:\\1"
       },
+      "description": "iWeb is a web site creation tool.",
       "website": "http://apple.com/ilife/iweb"
     },
     "ikiwiki": {
@@ -14731,7 +14852,7 @@
       "cats": [
         31
       ],
-      "html": "<[^>]+?//cdn\\.jsdelivr\\.net/",
+      "html": "<link [^>]*?href=\"?[a-zA-Z]*?:?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
       "scripts": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
@@ -15008,6 +15129,21 @@
       },
       "website": "https://owncloud.org"
     },
+    "Oxygen": {
+      "cats": [
+        51
+      ],
+      "html": [
+        "<body class=(?:\"|')[^\"']*oxygen-body",
+        "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/oxygen/"
+      ],
+      "scripts": [
+        "wp-content/plugins/oxygen"
+      ],
+      "icon": "Oxygen.png",
+      "implies": "WordPress",
+      "website": "https://oxygenbuilder.com"
+    },  
     "papaya CMS": {
       "cats": [
         1
@@ -15090,6 +15226,7 @@
       "html": "<!-- Generated by phpDocumentor",
       "icon": "phpDocumentor.png",
       "implies": "PHP",
+      "description": "phpDocumentor is an open-source documentation generator written in PHP.",
       "website": "https://www.phpdoc.org"
     },
     "phpMyAdmin": {
@@ -15243,6 +15380,7 @@
       ],
       "icon": "sIFR.png",
       "scripts": "sifr\\.js",
+      "description": "sIFR is a JavaScript and Adobe Flash dynamic web fonts implementation.",
       "website": "https://www.mikeindustries.com/blog/sifr"
     },
     "sNews": {
@@ -15312,7 +15450,7 @@
       "icon": "styled-components.png",
       "implies": "React",
       "js": {
-        "styled": ""
+        "styled": "Styled components is a CSS-in-JS styling framework that uses tagged template literals in JavaScript."
       },
       "website": "https://styled-components.com"
     },
@@ -15334,6 +15472,7 @@
         "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css"
       ],
       "icon": "tailwindcss.svg",
+      "description": "Tailwind is a utility-first CSS framework.",
       "website": "https://tailwindcss.com/"
     },
     "three.js": {
@@ -15345,6 +15484,7 @@
         "THREE.REVISION": "^(.+)$\\;version:\\1"
       },
       "scripts": "three(?:\\.min)?\\.js",
+      "description": "Three.js is a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL.",
       "website": "https://threejs.org"
     },
     "thttpd": {
@@ -15403,6 +15543,7 @@
       ],
       "icon": "User1st.png",
       "scripts": "fecdn\\.user1st\\.info/Loader/head",
+      "description": "uRemediate provides web accessibility testing tools.",
       "website": "https://www.user1st.com/uremediate/"
     },
     "user.com": {
@@ -15470,6 +15611,7 @@
       "js": {
         "webpackJsonp": ""
       },
+      "description": "Webpack is an open-source JavaScript module bundler.",
       "website": "https://webpack.js.org/"
     },
     "wisyCMS": {
@@ -15535,6 +15677,20 @@
         "generator": "NitroPack"
       },
       "website": "https://nitropack.io/"
+    },
+    "MasterkinG32 Framework": {
+      "cats": [
+        18
+      ],
+      "headers": {
+        "X-Powered-Framework": "MasterkinG(?:)"
+      },
+      "meta": {
+        "generator": "^MasterkinG(?:)"
+      },
+      "icon": "Masterking32.png",
+      "description": "MasterkinG32 framework.",
+      "website": "https://masterking32.com"
     }
   },
   "categories": {
