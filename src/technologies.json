@@ -13130,6 +13130,16 @@
       "scripts": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
       "website": "https://www.volusion.com"
     },
+    "Voog.com Website Builder": {
+      "cats": [
+        1,
+        6
+      ],
+      "icon": "Voog.png",
+      "html": "<script [^>]*src=\"[^\"]*voog\\.com/tracker\\.js",
+      "scripts": "voog\\.com/tracker\\.js",
+      "website": "https://www.voog.com/"
+    },
     "Vue.js": {
       "cats": [
         12
