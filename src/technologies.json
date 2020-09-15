@@ -23,7 +23,7 @@
       ],
       "html": "<[^>]+id=\"HSScorpion",
       "scripts": "cdn.cxc.scorpion.direct",
-      "js": "Process.UserData",
+      "js": { "Process.UserData": "" },
       "icon": "Scorpion.svg",
       "description": "Scorpion is a marketing and technology provider.",
       "website": "https://www.scorpion.co/"
@@ -1113,7 +1113,7 @@
       ],
       "cpe": "cpe:/a:apache:tomcat",
       "headers": {
-        "Server": "^Apache-Coyote(?:/([\\d.]+))?",
+        "Server": "^Apache-Coyote",
         "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache Tomcat.svg",
@@ -7555,7 +7555,7 @@
       "js": {
         "mw.util.toggleToc": "",
         "wgTitle": "",
-        "wgVersion": "^(.+)$\\;version:\\1",
+        "wgVersion": "^(.+)$\\;version:\\1"
       },
       "meta": {
         "generator": "^MediaWiki ?(.+)$\\;version:\\1"
@@ -9643,7 +9643,7 @@
       ],
       "cpe": "cpe:/a:postgresql:postgresql",
       "icon": "PostgreSQL.png",
-      "description", "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
+      "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
       "website": "http://www.postgresql.org/"
     },
     "Powerboutique": {
@@ -10445,7 +10445,7 @@
       "cats": [
         13
       ],
-      "icon": "Rollbar.png",
+      "icon": "Rollbar.svg",
       "scripts": [
         "rollbar\\.js/([0-9.]+)\\;version:\\1"
       ],
@@ -10748,6 +10748,17 @@
       "scripts": "/demandware\\.static/",
       "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",
       "website": "http://demandware.com"
+    },
+    "Salesforce Service Cloud": {
+      "cats": [
+        52,
+        53
+      ],
+      "js": { "embedded_svc": "" },
+      "scripts": "service\\.force\\.com",
+      "icon": "Salesforce.svg",
+      "description": "Salesforce Service Cloud is a customer relationship management (CRM) platform for customer service and support.",
+      "website": "https://www.salesforce.com/au/products/service-cloud/"
     },
     "Sapper": {
       "cats": [
@@ -15297,7 +15308,7 @@
       "icon": "Oxygen.png",
       "implies": "WordPress",
       "website": "https://oxygenbuilder.com"
-    },  
+    },
     "papaya CMS": {
       "cats": [
         1
