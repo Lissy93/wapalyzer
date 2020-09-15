@@ -10757,6 +10757,7 @@
       "js": {
         "dwAnalytics": ""
       },
+      "implies": "Salesforce",
       "scripts": "/demandware\\.static/",
       "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",
       "website": "http://demandware.com"
@@ -10768,9 +10769,20 @@
       ],
       "js": { "embedded_svc": "" },
       "scripts": "service\\.force\\.com",
+      "implies": "Salesforce",
       "icon": "Salesforce.svg",
       "description": "Salesforce Service Cloud is a customer relationship management (CRM) platform for customer service and support.",
       "website": "https://www.salesforce.com/au/products/service-cloud/"
+    },
+    "SnapEngage": {
+      "cats": [
+        52
+      ],
+      "html": "<!-- begin SnapEngage",
+      "js": { "snapengage_mobile": "", "SnapEngage": "", "SnapEngageChat": "" },
+      "icon": "SnapEngage.svg",
+      "description": "SnapEngage is a live chat solution that caters to businesses across various industries.",
+      "website": "https://snapengage.com/"
     },
     "Sapper": {
       "cats": [
