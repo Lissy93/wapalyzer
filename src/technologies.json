@@ -365,6 +365,7 @@
         "s_c_il.5._c": "s_c",
         "s_c_il.5.constructor.name": "AppMeasurement"
       },
+      "description": "Adobe Analytics is a web analytics, marketing and cross-channel analytics application.",
       "website": "https://www.adobe.com/analytics/adobe-analytics.html"
     },
     "Adobe ColdFusion": {
@@ -393,6 +394,7 @@
       "js": {
         "_satellite.buildDate": ""
       },
+      "description": "Dynamic Tag Management (DTM) is a tag management solution for Adobe Experience Cloud applications and others.",
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
     },
     "Adobe Experience Platform Launch": {
@@ -403,6 +405,7 @@
       "js": {
         "_satellite.buildInfo": ""
       },
+      "description": "Adoeb Experience Cloud Launch is an extendable tag managemt solution for Adobe Experience Cloud, Adobe Experience Platform, and other applications.",
       "website": "https://docs.adobelaunch.com/getting-started"
     },
     "Adobe Experience Manager": {
@@ -437,6 +440,7 @@
         "s_c_il.4._c": "Visitor",
         "s_c_il.5._c": "Visitor"
       },
+      "description": "Adobe Experience Platform Identity Service creates identity graphs that hold customer profiles and the known identifiers that belong to individual consumers.",
       "website": "https://docs.adobe.com/content/help/en/id-service/using/home.html"
     },
     "Adobe GoLive": {
@@ -481,6 +485,7 @@
         "adobe.target": "",
         "adobe.target.VERSION": "^(.+)$\\;version:\\1"
       },
+      "description": "Adobe Target is an A/B testing, multi-variate testing, personalisation, and optimisation application",
       "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
@@ -1108,7 +1113,7 @@
       ],
       "cpe": "cpe:/a:apache:tomcat",
       "headers": {
-        "Server": "^Apache-Coyote(?:/([\\d.]+))?\\;version:\\1",
+        "Server": "^Apache-Coyote(?:/([\\d.]+))?",
         "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache Tomcat.svg",
@@ -4395,10 +4400,14 @@
       ],
       "html": [
         "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-        "<link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1"
+        "<link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
+        "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
       ],
       "icon": "font-awesome.svg",
-      "scripts": "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
+      "scripts": [
+        "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
+        "kit\\.fontawesome\\.com/([0-9a-z]+).js"
+      ],
       "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
       "website": "https://fontawesome.com/"
     },
@@ -7856,7 +7865,10 @@
       "js": {
         "mixpanel": ""
       },
-      "scripts": "api\\.mixpanel\\.com/track",
+      "scripts": [
+        "cdn\\.mxpnl\\.com/libs/mixpanel\\-([0-9.]+)\\.min\\.js\\;version:\\1",
+        "api\\.mixpanel\\.com/track"
+      ],
       "description": "Mixpanel provides a business analytics service. It tracks user interactions with web and mobile applications and provides tools for targeted communication with them. Its toolset contains in-app A/B tests and user survey forms.",
       "website": "https://mixpanel.com"
     },
@@ -9596,6 +9608,23 @@
       "scripts": "polymer\\.js",
       "website": "http://polymer-project.org"
     },
+    "Popper": {
+      "cats": [
+        19
+      ],
+      "description": "Popper is an tolltip & popover positioning engine",
+      "icon": "Popper.png",
+      "html": [
+        "<script [^>]*src=\"[^\"]*/popper\\.js/([0-9.]+)\\;version:\\1"
+      ],
+      "scripts": [
+        "/popper\\.js/([0-9.]+)\\;version:\\1"
+      ],
+      "js": {
+        "createPopper": ""
+      },
+      "website": "https://popper.js.org"
+    },
     "Posterous": {
       "cats": [
         1,
@@ -10412,6 +10441,16 @@
       "description": "Rock RMS is a free, open-source Relationship Management System (RMS) built for churches and businesses.",
       "website": "http://www.rockrms.com"
     },
+    "Rollbar": {
+      "cats": [
+        13
+      ],
+      "icon": "Rollbar.png",
+      "scripts": [
+        "rollbar\\.js/([0-9.]+)\\;version:\\1"
+      ],
+      "website": "https://rollbar.com/"
+    },
     "RoundCube": {
       "cats": [
         30
@@ -10901,7 +10940,10 @@
       "cats": [
         13
       ],
-      "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1",
+      "html": [
+        "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1",
+        "<script[^>]*src=\"[^\"]*browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js\\;version:\\1"
+      ],
       "icon": "Sentry.svg",
       "js": {
         "Raven.config": "",
@@ -10910,6 +10952,9 @@
         "__SENTRY__": "",
         "ravenOptions.whitelistUrls": ""
       },
+      "scripts": [
+        "browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js\\;version:\\1"
+      ],
       "website": "https://sentry.io/"
     },
     "Seravo": {
@@ -13202,6 +13247,16 @@
       "scripts": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
       "website": "https://www.volusion.com"
     },
+    "Voog.com Website Builder": {
+      "cats": [
+        1,
+        6
+      ],
+      "icon": "Voog.png",
+      "html": "<script [^>]*src=\"[^\"]*voog\\.com/tracker\\.js",
+      "scripts": "voog\\.com/tracker\\.js",
+      "website": "https://www.voog.com/"
+    },
     "Vue.js": {
       "cats": [
         12
@@ -14103,8 +14158,8 @@
         "yandex_metrika": ""
       },
       "scripts": [
-        "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
-        "cdn\\.jsdelivr\\.net\\/npm\\/yandex-metrica-watch\\/watch\\.js"
+        "mc\\.yandex\\.ru/metrika/(?:tag|watch)\\.js",
+        "cdn\\.jsdelivr\\.net/npm/yandex\\-metrica\\-watch/watch\\.js"
       ],
       "description": "Yandex.Metrica is a free web analytics service that tracks and reports website traffic.",
       "website": "http://metrika.yandex.com"
@@ -15228,6 +15283,21 @@
       },
       "website": "https://owncloud.org"
     },
+    "Oxygen": {
+      "cats": [
+        51
+      ],
+      "html": [
+        "<body class=(?:\"|')[^\"']*oxygen-body",
+        "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/oxygen/"
+      ],
+      "scripts": [
+        "wp-content/plugins/oxygen"
+      ],
+      "icon": "Oxygen.png",
+      "implies": "WordPress",
+      "website": "https://oxygenbuilder.com"
+    },  
     "papaya CMS": {
       "cats": [
         1
@@ -15762,6 +15832,20 @@
         "generator": "NitroPack"
       },
       "website": "https://nitropack.io/"
+    },
+    "MasterkinG32 Framework": {
+      "cats": [
+        18
+      ],
+      "headers": {
+        "X-Powered-Framework": "MasterkinG(?:)"
+      },
+      "meta": {
+        "generator": "^MasterkinG(?:)"
+      },
+      "icon": "Masterking32.png",
+      "description": "MasterkinG32 framework.",
+      "website": "https://masterking32.com"
     }
   },
   "categories": {
