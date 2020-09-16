@@ -15288,7 +15288,10 @@
         "jQuery.devbridgeAutocomplete": "",
         "$.devbridgeAutocomplete": ""
       },
-      "scripts": "/devbridgeAutocomplete(?:-min)?\\.js",
+      "scripts": [
+        "/devbridgeAutocomplete(?:-min)?\\.js",
+        "/jquery\\.devbridge-autocomplete/([0-9.]+)/jquery\\.autocomplete(?:.min)?\\.js\\;version:\\1"
+      ],
       "website": "https://www.devbridge.com/sourcery/components/jquery-autocomplete/"
     },
     "jQuery Migrate": {
