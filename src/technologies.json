@@ -4808,17 +4808,69 @@
       "icon": "G-WAN.png",
       "website": "http://gwan.com"
     },
-    "GOV.UK Frontend": {
+    "GOV.UK Elements": {
       "cats": [
-        66,
-        19
+        66
       ],
       "html": [
-        "<body[^>]+govuk-template__body",
-        "<a[^>]+govuk-link"
+        "<link[^>]+elements-page[^>\"]+css\\;confidence:25",
+        "<div[^>]+phase-banner-alpha\\;confidence:25",
+        "<div[^>]+phase-banner-beta\\;confidence:25",
+        "<div[^>]+govuk-box-highlight\\;confidence:25"
+      ],
+      "implies": "GOV.UK Toolkit",
+      "icon": "govuk.png",
+      "website": "https://github.com/alphagov/govuk_elements/"
+    },
+    "GOV.UK Frontend": {
+      "cats": [
+        66
+      ],
+      "html": [
+        "<link[^>]* href=[^>]*?govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1?a:",
+        "<body[^>]+govuk-template__body\\;confidence:80",
+        "<a[^>]+govuk-link\\;confidence:10"
+      ],
+      "js": {
+        "window.GOVUKFrontend": ""
+      },
+      "scripts": [
+        "govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1?a:"
       ],
       "icon": "govuk.png",
       "website": "https://design-system.service.gov.uk/"
+    },
+    "GOV.UK Template": {
+      "cats": [
+        66
+      ],
+      "html": [
+        "<link[^>]+govuk-template[^>\"]+css",
+        "<link[^>]+govuk-template-print[^>\"]+css",
+        "<link[^>]+govuk-template-ie6[^>\"]+css",
+        "<link[^>]+govuk-template-ie7[^>\"]+css",
+        "<link[^>]+govuk-template-ie8[^>\"]+css"
+      ],
+      "js": {
+        "window.GOVUK": ""
+      },
+      "scripts": [
+        "govuk-template\\.js"
+      ],
+      "icon": "govuk.png",
+      "website": "https://github.com/alphagov/govuk_template/"
+    },
+    "GOV.UK Toolkit": {
+      "cats": [
+        66
+      ],
+      "js": {
+        "window.GOVUK.primaryLinks": "",
+        "window.GOVUK.details": "",
+        "window.GOVUK.modules": ""
+      },
+      "icon": "govuk.png",
+      "website": "https://github.com/alphagov/govuk_frontend_toolkit"
     },
     "GSAP": {
       "cats": [
