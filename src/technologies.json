@@ -15278,6 +15278,22 @@
       ],
       "website": "https://jquery.com"
     },
+    "jQuery DevBridge Autocomplete": {
+      "cats": [
+        59
+      ],
+      "implies": "jQuery",
+      "icon": "jQuery.svg",
+      "js": {
+        "jQuery.devbridgeAutocomplete": "",
+        "$.devbridgeAutocomplete": ""
+      },
+      "scripts": [
+        "/devbridgeAutocomplete(?:-min)?\\.js",
+        "/jquery\\.devbridge-autocomplete/([0-9.]+)/jquery\\.autocomplete(?:.min)?\\.js\\;version:\\1"
+      ],
+      "website": "https://www.devbridge.com/sourcery/components/jquery-autocomplete/"
+    },
     "jQuery Migrate": {
       "cats": [
         59
