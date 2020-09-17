@@ -225,27 +225,26 @@ class Site {
     }
   }
 
-  /**
-   * @param {Promise} promise
-   * @param {string} [errorMessage]
-   *
-   * @return {Promise}
-   */
-  async promiseTimeout(promise, errorMessage = 'The website took too long to respond') {
-    let timerId = null;
+  promiseTimeout(
+    promise,
+    errorMessage = 'The website took too long to respond'
+  ) {
+    let timeout = null
 
     return Promise.race([
       new Promise((resolve, reject) => {
-        timerId = setTimeout(() => {
-          clearTimeout(timerId);
-          reject(new Error(errorMessage));
-        }, this.options.maxWait);
+        timeout = setTimeout(() => {
+          clearTimeout(timeout)
+
+          reject(new Error(errorMessage))
+        }, this.options.maxWait)
       }),
       promise.then((value) => {
-        clearTimeout(timerId);
-        return value;
+        clearTimeout(timeout)
+
+        return value
       }),
-    ]);
+    ])
   }
 
   async goto(url) {
@@ -352,87 +351,98 @@ class Site {
     )
 
     try {
-      await this.promiseTimeout(page.goto(url.href, { waitUntil: 'domcontentloaded' }))
+      await this.promiseTimeout(
+        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+      )
+
       await sleep(1000)
 
       // Links
-      const links = await (
-        await this.promiseTimeout(
-          page.evaluateHandle(() =>
-            Array.from(document.getElementsByTagName('a')).map(
-              ({ hash, hostname, href, pathname, protocol, rel }) => ({
-                hash,
-                hostname,
-                href,
-                pathname,
-                protocol,
-                rel,
-              })
+      const links = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.getElementsByTagName('a')).map(
+                ({ hash, hostname, href, pathname, protocol, rel }) => ({
+                  hash,
+                  hostname,
+                  href,
+                  pathname,
+                  protocol,
+                  rel,
+                })
+              )
             )
-          ),
-        )
-      ).jsonValue()
+          )
+        ).jsonValue()
+      )
 
       // CSS
-      const css = await (
-        await this.promiseTimeout(
-          page.evaluateHandle((maxRows) => {
-            const css = []
+      const css = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle((maxRows) => {
+              const css = []
 
-            try {
-              if (!document.styleSheets.length) {
+              try {
+                if (!document.styleSheets.length) {
+                  return ''
+                }
+
+                for (const sheet of Array.from(document.styleSheets)) {
+                  for (const rules of Array.from(sheet.cssRules)) {
+                    css.push(rules.cssText)
+
+                    if (css.length >= maxRows) {
+                      break
+                    }
+                  }
+                }
+              } catch (error) {
                 return ''
               }
 
-              for (const sheet of Array.from(document.styleSheets)) {
-                for (const rules of Array.from(sheet.cssRules)) {
-                  css.push(rules.cssText)
-
-                  if (css.length >= maxRows) {
-                    break
-                  }
-                }
-              }
-            } catch (error) {
-              return ''
-            }
-
-            return css.join('\n')
-          }, this.options.htmlMaxRows),
-        )
-      ).jsonValue()
+              return css.join('\n')
+            }, this.options.htmlMaxRows)
+          )
+        ).jsonValue()
+      )
 
       // Script tags
-      const scripts = await (
-        await this.promiseTimeout(
-          page.evaluateHandle(() =>
-            Array.from(document.getElementsByTagName('script'))
-              .map(({ src }) => src)
-              .filter((src) => src)
-          ),
-        )
-      ).jsonValue()
+      const scripts = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.getElementsByTagName('script'))
+                .map(({ src }) => src)
+                .filter((src) => src)
+            )
+          )
+        ).jsonValue()
+      )
 
       // Meta tags
-      const meta = await (
-        await this.promiseTimeout(
-          page.evaluateHandle(() =>
-            Array.from(document.querySelectorAll('meta')).reduce(
-              (metas, meta) => {
-                const key =
-                  meta.getAttribute('name') || meta.getAttribute('property')
+      const meta = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.querySelectorAll('meta')).reduce(
+                (metas, meta) => {
+                  const key =
+                    meta.getAttribute('name') || meta.getAttribute('property')
 
-                if (key) {
-                  metas[key.toLowerCase()] = [meta.getAttribute('content')]
-                }
+                  if (key) {
+                    metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                  }
 
-                return metas
-              },
-              {}
+                  return metas
+                },
+                {}
+              )
             )
-          ),
-        )
-      ).jsonValue()
+          )
+        ).jsonValue()
+      )
 
       // JavaScript
       const js = await this.promiseTimeout(
@@ -467,7 +477,7 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        ),
+        )
       )
 
       // Cookies
@@ -565,7 +575,11 @@ class Site {
 
       return reducedLinks
     } catch (error) {
-      this.error(error)
+      if (error.constructor.name === 'TimeoutError') {
+        throw new Error('The website took too long to respond')
+      }
+
+      throw new Error(error.message)
     }
   }
 
