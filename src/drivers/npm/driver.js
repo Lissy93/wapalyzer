@@ -225,12 +225,27 @@ class Site {
     }
   }
 
-  timeout() {
-    return new Promise((resolve, reject) =>
-      setTimeout(() => {
-        reject(new Error('The website took too long to respond'))
-      }, this.options.maxWait)
-    )
+  /**
+   * @param {Promise} promise
+   * @param {string} [errorMessage]
+   *
+   * @return {Promise}
+   */
+  async promiseTimeout(promise, errorMessage = 'The website took too long to respond') {
+    let timerId = null;
+
+    return Promise.race([
+      new Promise((resolve, reject) => {
+        timerId = setTimeout(() => {
+          clearTimeout(timerId);
+          reject(new Error(errorMessage));
+        }, this.options.maxWait);
+      }),
+      promise.then((value) => {
+        clearTimeout(timerId);
+        return value;
+      }),
+    ]);
   }
 
   async goto(url) {
@@ -337,17 +352,12 @@ class Site {
     )
 
     try {
-      await Promise.race([
-        this.timeout(),
-        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
-      ])
-
+      await this.promiseTimeout(page.goto(url.href, { waitUntil: 'domcontentloaded' }))
       await sleep(1000)
 
       // Links
       const links = await (
-        await Promise.race([
-          this.timeout(),
+        await this.promiseTimeout(
           page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('a')).map(
               ({ hash, hostname, href, pathname, protocol, rel }) => ({
@@ -360,13 +370,12 @@ class Site {
               })
             )
           ),
-        ])
+        )
       ).jsonValue()
 
       // CSS
       const css = await (
-        await Promise.race([
-          this.timeout(),
+        await this.promiseTimeout(
           page.evaluateHandle((maxRows) => {
             const css = []
 
@@ -390,25 +399,23 @@ class Site {
 
             return css.join('\n')
           }, this.options.htmlMaxRows),
-        ])
+        )
       ).jsonValue()
 
       // Script tags
       const scripts = await (
-        await Promise.race([
-          this.timeout(),
+        await this.promiseTimeout(
           page.evaluateHandle(() =>
             Array.from(document.getElementsByTagName('script'))
               .map(({ src }) => src)
               .filter((src) => src)
           ),
-        ])
+        )
       ).jsonValue()
 
       // Meta tags
       const meta = await (
-        await Promise.race([
-          this.timeout(),
+        await this.promiseTimeout(
           page.evaluateHandle(() =>
             Array.from(document.querySelectorAll('meta')).reduce(
               (metas, meta) => {
@@ -424,12 +431,11 @@ class Site {
               {}
             )
           ),
-        ])
+        )
       ).jsonValue()
 
       // JavaScript
-      const js = await Promise.race([
-        this.timeout(),
+      const js = await this.promiseTimeout(
         page.evaluate(
           (technologies) => {
             return technologies.reduce((technologies, { name, chains }) => {
@@ -462,7 +468,7 @@ class Site {
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
         ),
-      ])
+      )
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
