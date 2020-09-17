@@ -4818,8 +4818,8 @@
         "<div[^>]+phase-banner-beta\\;confidence:25",
         "<div[^>]+govuk-box-highlight\\;confidence:25"
       ],
-      "implies": "GOV.UK Toolkit",
       "icon": "govuk.png",
+      "implies": "GOV.UK Toolkit",
       "website": "https://github.com/alphagov/govuk_elements/"
     },
     "GOV.UK Frontend": {
@@ -4831,13 +4831,13 @@
         "<body[^>]+govuk-template__body\\;confidence:80",
         "<a[^>]+govuk-link\\;confidence:10"
       ],
+      "icon": "govuk.png",
       "js": {
         "GOVUKFrontend": ""
       },
       "scripts": [
         "govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1?a:"
       ],
-      "icon": "govuk.png",
       "website": "https://design-system.service.gov.uk/"
     },
     "GOV.UK Template": {
@@ -4851,25 +4851,25 @@
         "<link[^>]+govuk-template-ie7[^>\"]+css",
         "<link[^>]+govuk-template-ie8[^>\"]+css"
       ],
+      "icon": "govuk.png",
       "js": {
         "GOVUK": ""
       },
       "scripts": [
         "govuk-template\\.js"
       ],
-      "icon": "govuk.png",
       "website": "https://github.com/alphagov/govuk_template/"
     },
     "GOV.UK Toolkit": {
       "cats": [
         66
       ],
-      "js": {
-        "GOVUK.primaryLinks": "",
-        "GOVUK.details": "",
-        "GOVUK.modules": ""
-      },
       "icon": "govuk.png",
+      "js": {
+        "GOVUK.details": "",
+        "GOVUK.modules": "",
+        "GOVUK.primaryLinks": ""
+      },
       "website": "https://github.com/alphagov/govuk_frontend_toolkit"
     },
     "GSAP": {
@@ -15334,11 +15334,11 @@
       "cats": [
         59
       ],
-      "implies": "jQuery",
       "icon": "jQuery.svg",
+      "implies": "jQuery",
       "js": {
-        "jQuery.devbridgeAutocomplete": "",
-        "$.devbridgeAutocomplete": ""
+        "$.devbridgeAutocomplete": "",
+        "jQuery.devbridgeAutocomplete": ""
       },
       "scripts": [
         "/devbridgeAutocomplete(?:-min)?\\.js",
