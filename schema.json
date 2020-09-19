@@ -8,7 +8,7 @@
 	},
 	"type": "object",
 	"additionalProperties": false,
-	"required": ["categories","apps"],
+	"required": ["technologies", "categories"],
 	"properties": {
 		"$schema": {
 			"type": "string"
@@ -31,12 +31,16 @@
 				}
 			}
 		},
-		"apps": {
+		"technologies": {
 			"type": "object",
 			"additionalProperties": {
 				"additionalProperties": false,
 				"required": ["cats","website"],
 				"properties": {
+					"description": {
+						"type": "string",
+            "pattern": "^.{0,500}$"
+					},
 					"cats": {
 						"type": "array",
 						"items": {
@@ -93,6 +97,45 @@
 							}
 						]
 					},
+					"css": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
+					},
+					"robots": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
+					},
+					"certIssuer": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
+					},
 					"excludes": {
 						"oneOf": [
 							{
@@ -130,7 +173,7 @@
 							}
 						}
 					},
-					"script": {
+					"scripts": {
 						"oneOf": [
 							{
 								"type": "array",

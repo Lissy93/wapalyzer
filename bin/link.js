@@ -9,9 +9,9 @@ const link = (src, dest) => {
 }
 
 // WebExtension
-link('./src/apps.json', './src/drivers/webextension/apps.json')
+link('./src/technologies.json', './src/drivers/webextension/technologies.json')
 link('./src/wappalyzer.js', './src/drivers/webextension/js/wappalyzer.js')
 
 // NPM
-link('./src/apps.json', './src/drivers/npm/apps.json')
+link('./src/technologies.json', './src/drivers/npm/technologies.json')
 link('./src/wappalyzer.js', './src/drivers/npm/wappalyzer.js')

@@ -1,13 +1,13 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, Wappalyzer, Utils */
+/* globals chrome, browser, Wappalyzer, Utils */
 
 const {
   setTechnologies,
   setCategories,
   analyze,
   analyzeManyToMany,
-  resolve
+  resolve,
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open } = Utils
 
@@ -34,45 +34,54 @@ const Driver = {
               ({
                 technology: name,
                 pattern: { regex, confidence },
-                version
+                version,
               }) => ({
                 technology: Wappalyzer.technologies.find(
                   ({ name: _name }) => name === _name
                 ),
                 pattern: {
                   regex: new RegExp(regex, 'i'),
-                  confidence
+                  confidence,
                 },
-                version
+                version,
               })
-            )
-          }
+            ),
+          },
         }),
         {}
       ),
       tabs: {},
       robots: await getOption('robots', {}),
-      ads: await getOption('ads', [])
+      ads: await getOption('ads', []),
     }
 
-    chrome.webRequest.onCompleted.addListener(
-      Driver.onWebRequestComplete,
+    chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
+
+    chrome.webRequest.onHeadersReceived.addListener(
+      Driver.onHeadersReceived,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-      ['responseHeaders']
+      ['responseHeaders', 'blocking']
     )
+
+    // chrome.webRequest.onCompleted.addListener(
+    //  Driver.onWebRequestComplete,
+    //  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
+    //  ['responseHeaders']
+    // )
+
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
     // Enable messaging between scripts
-    chrome.runtime.onConnect.addListener(Driver.onRuntimeConnect)
+    chrome.runtime.onMessage.addListener(Driver.onMessage)
 
     const { version } = chrome.runtime.getManifest()
     const previous = await getOption('version')
     const upgradeMessage = await getOption('upgradeMessage', true)
 
     if (previous === null) {
-      open('https://www.wappalyzer.com/installed')
+      open('https://www.wappalyzer.com/installed/')
     } else if (version !== previous && upgradeMessage) {
-      // open(`https://www.wappalyzer.com/upgraded?v${version}`, false)
+      open(`https://www.wappalyzer.com/upgraded/?v${version}`, false)
     }
 
     await setOption('version', version)
@@ -103,8 +112,8 @@ const Driver = {
    */
   async loadTechnologies() {
     try {
-      const { apps: technologies, categories } = await (
-        await fetch(chrome.extension.getURL('apps.json'))
+      const { technologies, categories } = await (
+        await fetch(chrome.extension.getURL('technologies.json'))
       ).json()
 
       setTechnologies(technologies)
@@ -123,11 +132,18 @@ const Driver = {
     try {
       return fetch(url, {
         method: 'POST',
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       })
     } catch (error) {
       throw new Error(error.message || error.toString())
     }
+  },
+
+  /**
+   * Wrapper for analyze
+   */
+  analyze(...args) {
+    return analyze(...args)
   },
 
   /**
@@ -153,42 +169,45 @@ const Driver = {
 
   /**
    * Enable scripts to call Driver functions through messaging
-   * @param {Object} port
+   * @param {Object} message
+   * @param {Object} sender
+   * @param {Function} callback
    */
-  onRuntimeConnect(port) {
-    Driver.log(`Connected to ${port.name}`)
+  onMessage({ source, func, args }, sender, callback) {
+    if (!func) {
+      return
+    }
 
-    port.onMessage.addListener(async ({ func, args }) => {
-      if (!func) {
-        return
-      }
+    Driver.log({ source, func, args })
 
-      Driver.log({ port: port.name, func, args })
+    if (!Driver[func]) {
+      Driver.error(new Error(`Method does not exist: Driver.${func}`))
 
-      if (!Driver[func]) {
-        Driver.error(new Error(`Method does not exist: Driver.${func}`))
+      return
+    }
 
-        return
-      }
+    Promise.resolve(Driver[func].call(Driver[func], ...(args || [])))
+      .then(callback)
+      .catch(Driver.error)
 
-      port.postMessage({
-        func,
-        args: await Driver[func].call(port.sender, ...(args || []))
-      })
-    })
+    return !!callback
   },
 
   /**
    * Analyse response headers
    * @param {Object} request
    */
-  async onWebRequestComplete(request) {
+  async onHeadersReceived(request) {
+    if (await Driver.isDisabledDomain(request.url)) {
+      return
+    }
+
     if (request.responseHeaders) {
       const headers = {}
 
       try {
         const [tab] = await promisify(chrome.tabs, 'query', {
-          url: [request.url]
+          url: [request.url],
         })
 
         if (tab) {
@@ -202,11 +221,32 @@ const Driver = {
             )
           })
 
+          let certIssuer = ''
+
+          if (typeof browser !== 'undefined') {
+            // Currently only works in Firefox
+            // See https://stackoverflow.com/a/50484642
+            const { certificates } = await browser.webRequest.getSecurityInfo(
+              request.requestId,
+              {
+                certificateChain: false,
+                rawDER: false,
+              }
+            )
+
+            if (certificates && certificates.length) {
+              certIssuer = certificates[0].issuer.replace(
+                /^.*CN=([^,]+).*$/,
+                '$1'
+              )
+            }
+          }
+
           if (
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(request.url, analyze({ headers }))
+            await Driver.onDetect(request.url, analyze({ headers, certIssuer }))
           }
         }
       } catch (error) {
@@ -227,12 +267,12 @@ const Driver = {
 
       items.cookies = (
         await promisify(chrome.cookies, 'getAll', {
-          domain: `.${hostname}`
+          domain: `.${hostname}`,
         })
       ).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value]
+          [name]: [value],
         }),
         {}
       )
@@ -248,6 +288,19 @@ const Driver = {
    */
   getTechnologies() {
     return Wappalyzer.technologies
+  },
+
+  /**
+   * Check if Wappalyzer has been disabled for the domain
+   */
+  async isDisabledDomain(url) {
+    try {
+      const { hostname } = new URL(url)
+
+      return (await getOption('disabledDomains', [])).includes(hostname)
+    } catch (error) {
+      return false
+    }
   },
 
   /**
@@ -269,9 +322,9 @@ const Driver = {
       ...(Driver.cache.hostnames[hostname] || {
         url: `${protocol}//${hostname}`,
         detections: [],
-        hits: incrementHits ? 0 : 1
+        hits: incrementHits ? 0 : 1,
       }),
-      dateTime: Date.now()
+      dateTime: Date.now(),
     })
 
     // Remove duplicates
@@ -317,17 +370,17 @@ const Driver = {
                 ({
                   technology: { name: technology },
                   pattern: { regex, confidence },
-                  version
+                  version,
                 }) => ({
                   technology,
                   pattern: {
                     regex: regex.source,
-                    confidence
+                    confidence,
                   },
-                  version
+                  version,
                 })
-              )
-          }
+              ),
+          },
         }),
         {}
       )
@@ -361,8 +414,9 @@ const Driver = {
    * @param {String} url
    * @param {Object} technologies
    */
-  async setIcon(url, technologies) {
-    const dynamicIcon = await getOption('dynamicIcon', true)
+  async setIcon(url, technologies = []) {
+    const dynamicIcon = await getOption('dynamicIcon', false)
+    const badge = await getOption('badge', true)
 
     let icon = 'default.svg'
 
@@ -376,23 +430,33 @@ const Driver = {
       ;({ icon } = pinned || technologies[0] || { icon })
     }
 
-    const tabs = await promisify(chrome.tabs, 'query', { url })
+    ;(await promisify(chrome.tabs, 'query', { url })).forEach(
+      ({ id: tabId }) => {
+        chrome.browserAction.setBadgeText(
+          {
+            tabId,
+            text:
+              badge && technologies.length
+                ? technologies.length.toString()
+                : '',
+          },
+          () => {}
+        )
 
-    await Promise.all(
-      tabs.map(async ({ id: tabId }) => {
-        await promisify(chrome.pageAction, 'setIcon', {
-          tabId,
-          path: chrome.extension.getURL(
-            `../images/icons/${
-              /\.svg$/i.test(icon)
-                ? `converted/${icon.replace(/\.svg$/, '.png')}`
-                : icon
-            }`
-          )
-        })
-
-        chrome.pageAction.show(tabId)
-      })
+        chrome.browserAction.setIcon(
+          {
+            tabId,
+            path: chrome.extension.getURL(
+              `../images/icons/${
+                /\.svg$/i.test(icon)
+                  ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                  : icon
+              }`
+            ),
+          },
+          () => {}
+        )
+      }
     )
   },
 
@@ -400,12 +464,22 @@ const Driver = {
    * Get the detected technologies for the current tab
    */
   async getDetections() {
-    const [{ id }] = await promisify(chrome.tabs, 'query', {
+    const [{ id, url }] = await promisify(chrome.tabs, 'query', {
       active: true,
-      currentWindow: true
+      currentWindow: true,
     })
 
-    return Driver.cache.tabs[id]
+    if (await Driver.isDisabledDomain(url)) {
+      await Driver.setIcon(url, [])
+
+      return
+    }
+
+    const resolved = Driver.cache.tabs[id]
+
+    await Driver.setIcon(url, resolved)
+
+    return resolved
   },
 
   /**
@@ -424,12 +498,13 @@ const Driver = {
 
     try {
       Driver.cache.robots[hostname] = await Promise.race([
+        // eslint-disable-next-line no-async-promise-executor
         new Promise(async (resolve) => {
           const response = await fetch(
             `http${secure ? 's' : ''}://${hostname}/robots.txt`,
             {
               redirect: 'follow',
-              mode: 'no-cors'
+              mode: 'no-cors',
             }
           )
 
@@ -459,7 +534,7 @@ const Driver = {
             }, [])
           )
         }),
-        new Promise((resolve) => setTimeout(() => resolve(''), 5000))
+        new Promise((resolve) => setTimeout(() => resolve(''), 5000)),
       ])
 
       Driver.cache.robots = Object.keys(Driver.cache.robots)
@@ -467,7 +542,7 @@ const Driver = {
         .reduce(
           (cache, hostname) => ({
             ...cache,
-            [hostname]: Driver.cache.robots[hostname]
+            [hostname]: Driver.cache.robots[hostname],
           }),
           {}
         )
@@ -502,6 +577,16 @@ const Driver = {
   },
 
   /**
+   * Clear caches
+   */
+  async clearCache() {
+    Driver.cache.hostnames = {}
+    Driver.cache.tabs = {}
+
+    await setOption('hostnames', {})
+  },
+
+  /**
    * Anonymously send identified technologies to wappalyzer.com
    * This function can be disabled in the extension settings
    */
@@ -519,7 +604,7 @@ const Driver = {
           ]
 
           if (
-            !/((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/.test(
+            !/((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|google|\/admin|\.local|\.test|\.dev|127\.|0\.)/.test(
               hostname
             ) &&
             hits >= 3
@@ -530,7 +615,7 @@ const Driver = {
                   if (confidence === 100) {
                     technologies[name] = {
                       version,
-                      hits
+                      hits,
                     }
                   }
 
@@ -539,8 +624,8 @@ const Driver = {
                 {}
               ),
               meta: {
-                language
-              }
+                language,
+              },
             }
           }
 
@@ -552,7 +637,7 @@ const Driver = {
       const count = Object.keys(hostnames).length
 
       if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/ping/v1/', hostnames)
+        await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
 
@@ -565,7 +650,7 @@ const Driver = {
         await setOption('ads', (Driver.cache.ads = []))
       }
     }
-  }
+  },
 }
 
 Driver.init()

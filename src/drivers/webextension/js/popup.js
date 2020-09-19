@@ -2,11 +2,35 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, open, i18n, getOption, setOption, promisify } = Utils
+const {
+  agent,
+  open,
+  i18n,
+  getOption,
+  setOption,
+  promisify,
+  sendMessage,
+} = Utils
+
+function setDisabledDomain(enabled) {
+  if (enabled) {
+    document
+      .querySelector('.footer__switch--enabled')
+      .classList.add('footer__switch--hidden')
+    document
+      .querySelector('.footer__switch--disabled')
+      .classList.remove('footer__switch--hidden')
+  } else {
+    document
+      .querySelector('.footer__switch--enabled')
+      .classList.remove('footer__switch--hidden')
+    document
+      .querySelector('.footer__switch--disabled')
+      .classList.add('footer__switch--hidden')
+  }
+}
 
 const Popup = {
-  port: chrome.runtime.connect({ name: 'popup.js' }),
-
   /**
    * Initialise popup
    */
@@ -22,6 +46,9 @@ const Popup = {
       return templates
     }, {})
 
+    // Disabled domains
+    let disabledDomains = await getOption('disabledDomains', [])
+
     // Theme mode
     const themeMode = await getOption('themeMode', false)
 
@@ -34,50 +61,91 @@ const Popup = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (termsAccepted) {
-      Popup.driver('getDetections')
+      document.querySelector('.terms').classList.add('terms--hidden')
+      document.querySelector('.empty').classList.remove('empty--hidden')
+
+      Popup.onGetDetections(await Popup.driver('getDetections'))
     } else {
-      document.querySelector('.terms').style.display = 'flex'
-      document.querySelector('.detections').style.display = 'none'
-      document.querySelector('.empty').style.display = 'none'
+      document.querySelector('.terms').classList.remove('terms--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
+      document.querySelector('.empty').classList.add('empty--hidden')
 
       document.querySelector('.terms').addEventListener('click', async () => {
         await setOption('termsAccepted', true)
 
-        document.querySelector('.terms').remove()
-        document.querySelector('.detections').style.display = 'block'
-        document.querySelector('.empty').style.display = 'block'
+        document.querySelector('.terms').classList.add('terms--hidden')
+        document.querySelector('.empty').classList.remove('empty--hidden')
 
-        Popup.driver('getDetections')
+        Popup.onGetDetections(await Popup.driver('getDetections'))
       })
-
-      // Apply internationalization
-      i18n()
     }
 
     // Alert
-    const [{ url }] = await promisify(chrome.tabs, 'query', {
+    const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
-      currentWindow: true
+      currentWindow: true,
     })
 
-    document.querySelector(
-      '.alerts__link'
-    ).href = `https://www.wappalyzer.com/alerts/manage?url=${encodeURIComponent(
-      `${url}`
-    )}`
+    if (tabs && tabs.length) {
+      const [{ url }] = tabs
+
+      if (url.startsWith('http')) {
+        document.querySelector('.alerts').classList.remove('alerts--hidden')
+
+        document.querySelector(
+          '.alerts__link'
+        ).href = `https://www.wappalyzer.com/alerts/?url=${encodeURIComponent(
+          `${url}`
+        )}`
+
+        const { hostname } = new URL(url)
+
+        setDisabledDomain(disabledDomains.includes(hostname))
+
+        document
+          .querySelector('.footer__switch--disabled')
+          .addEventListener('click', async () => {
+            disabledDomains = disabledDomains.filter(
+              (_hostname) => _hostname !== hostname
+            )
+
+            await setOption('disabledDomains', disabledDomains)
+
+            setDisabledDomain(false)
+
+            Popup.onGetDetections(await Popup.driver('getDetections'))
+          })
+
+        document
+          .querySelector('.footer__switch--enabled')
+          .addEventListener('click', async () => {
+            disabledDomains.push(hostname)
+
+            await setOption('disabledDomains', disabledDomains)
+
+            setDisabledDomain(true)
+
+            Popup.onGetDetections(await Popup.driver('getDetections'))
+          })
+      } else {
+        for (const el of document.querySelectorAll('.footer__switch')) {
+          el.classList.add('footer__switch--hidden')
+        }
+
+        document.querySelector('.alerts').classList.add('alerts--hidden')
+      }
+    }
 
     document
       .querySelector('.footer__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
+
+    // Apply internationalization
+    i18n()
   },
 
-  /**
-   * Call a function on driver.js through messaging
-   * @param {function} func
-   * @param  {...any} args
-   */
-  driver(func, ...args) {
-    Popup.port.postMessage({ func, args })
+  driver(func, args) {
+    return sendMessage('popup.js', func, args)
   },
 
   /**
@@ -85,7 +153,7 @@ const Popup = {
    * @param {String} message
    */
   log(message) {
-    Popup.driver('log', message, 'popup.js')
+    Popup.driver('log', message)
   },
 
   /**
@@ -94,18 +162,20 @@ const Popup = {
    */
   categorise(technologies) {
     return Object.values(
-      technologies.reduce((categories, technology) => {
-        technology.categories.forEach((category) => {
-          categories[category.id] = categories[category.id] || {
-            ...category,
-            technologies: []
-          }
+      technologies
+        .filter(({ confidence }) => confidence >= 50)
+        .reduce((categories, technology) => {
+          technology.categories.forEach((category) => {
+            categories[category.id] = categories[category.id] || {
+              ...category,
+              technologies: [],
+            }
 
-          categories[category.id].technologies.push(technology)
-        })
+            categories[category.id].technologies.push(technology)
+          })
 
-        return categories
-      }, {})
+          return categories
+        }, {})
     )
   },
 
@@ -113,12 +183,25 @@ const Popup = {
    * Callback for getDetection listener
    * @param {Array} detections
    */
-  async onGetDetections(detections) {
-    const pinnedCategory = await getOption('pinnedCategory')
+  async onGetDetections(detections = []) {
+    if (!detections || !detections.length) {
+      document.querySelector('.empty').classList.remove('empty--hidden')
+      document.querySelector('.detections').classList.add('detections--hidden')
 
-    if (detections.length) {
-      document.querySelector('.empty').remove()
+      return
     }
+
+    document.querySelector('.empty').classList.add('empty--hidden')
+
+    const el = document.querySelector('.detections')
+
+    el.classList.remove('detections--hidden')
+
+    while (el.firstChild) {
+      el.removeChild(detections.lastChild)
+    }
+
+    const pinnedCategory = await getOption('pinnedCategory')
 
     const categorised = Popup.categorise(detections)
 
@@ -127,7 +210,7 @@ const Popup = {
 
       const link = categoryNode.querySelector('.category__link')
 
-      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}`
+      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/`
       link.dataset.i18n = `categoryName${id}`
 
       const pins = categoryNode.querySelectorAll('.category__pin')
@@ -165,7 +248,7 @@ const Popup = {
 
           const link = technologyNode.querySelector('.technology__link')
 
-          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}`
+          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/`
           link.textContent = name
 
           const confidenceNode = technologyNode.querySelector(
@@ -213,17 +296,8 @@ const Popup = {
     )
 
     i18n()
-  }
+  },
 }
-
-// Add listener for popup PostMessage API
-Popup.port.onMessage.addListener(({ func, args }) => {
-  const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
-
-  if (Popup[onFunc]) {
-    Popup[onFunc](args)
-  }
-})
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
   Popup.init()

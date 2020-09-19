@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-;(function() {
+;(function () {
   try {
     const onMessage = ({ data }) => {
       if (!data.wappalyzer) {
@@ -19,7 +19,9 @@
                 .split('.')
                 .reduce(
                   (value, method) =>
-                    value && value.hasOwnProperty(method)
+                    value &&
+                    value instanceof Object &&
+                    Object.prototype.hasOwnProperty.call(value, method)
                       ? value[method]
                       : undefined,
                   window
@@ -32,14 +34,14 @@
                   value:
                     typeof value === 'string' || typeof value === 'number'
                       ? value
-                      : !!value
+                      : !!value,
                 })
               }
             })
 
             return technologies
-          }, [])
-        }
+          }, []),
+        },
       })
     }
 

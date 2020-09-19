@@ -17,7 +17,7 @@ if (!version) {
 ;[
   './src/package.json',
   './src/drivers/npm/package.json',
-  './src/drivers/webextension/manifest.json'
+  './src/drivers/webextension/manifest.json',
 ].forEach((file) => {
   const json = JSON.parse(fs.readFileSync(file))
 
