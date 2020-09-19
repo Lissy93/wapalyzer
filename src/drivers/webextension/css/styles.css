@@ -20,7 +20,7 @@ body {
   font-size: .9rem;
   line-height: 1.5rem;
 	margin: 0;
-  min-width: 35rem;
+  min-width: 24rem;
   overflow-x: hidden;
   padding-bottom: 3rem;
 }
@@ -59,13 +59,20 @@ a:hover {
   align-items: center;
 	background: #fff;
   bottom: 0;
-  justify-content: space-between;
   border-top: 1px solid var(--color-secondary);
   height: 3rem;
   display: flex;
   padding: 0 1.5rem;
   position: fixed;
   width: 100%;
+}
+
+.alerts {
+  white-space: nowrap;
+}
+
+.alerts--hidden {
+  visibility: hidden;
 }
 
 .alerts__icon {
@@ -76,24 +83,50 @@ a:hover {
   width: 1.1rem;
 }
 
-.footer__settings {
+.spacer {
+  flex-grow:1;
+}
+
+.footer__icon {
   color: var(--color-primary);
   cursor: pointer;
   height: 1.1rem;
+  margin-left: 1rem;
   vertical-align: middle;
   width: 1.1rem;
 }
 
+.footer__switch {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.footer__switch--hidden {
+  display: none;
+}
+
+.footer__switch--disabled {
+  color: var(--color-text);
+}
+
 .detections {
   columns: 2;
-  column-gap: 1.5rem;
+  column-gap: 3rem;
   padding: 1.5rem 1.5rem .5rem 1.5rem;
+}
+
+.detections--hidden {
+  display: none;
 }
 
 .empty {
   opacity: .3;
-  padding: 3rem 1.5rem .5rem 1.5rem;
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
   text-align: center;
+}
+
+.empty--hidden {
+  display: none;
 }
 
 .category {
@@ -132,6 +165,10 @@ a:hover {
 
 .category__pin--outline.category__pin--active {
   display: none
+}
+
+.category__heading {
+  white-space: nowrap;
 }
 
 .category__heading:hover .category__pin {
@@ -177,12 +214,16 @@ a:hover {
 
 .terms {
   align-items: center;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem 1.5rem 1rem 1.5rem;
   height: 12rem;
   width: 36rem;
+}
+
+.terms--hidden {
+  display: none;
 }
 
 .terms__wrapper {
@@ -228,6 +269,10 @@ a:hover {
 .options__label {
   display: block;
   margin-bottom: .5rem;
+}
+
+.options__cache {
+  margin-top: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {

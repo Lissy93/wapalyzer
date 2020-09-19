@@ -9,7 +9,7 @@ const Wappalyzer = {
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
       .replace(/--+/g, '-')
-      .replace(/(?:^-|-$)/, '')
+      .replace(/(?:^-|-$)/g, '')
   },
 
   getTechnology(name) {
@@ -58,8 +58,9 @@ const Wappalyzer = {
     Wappalyzer.resolveImplies(resolved)
 
     const priority = ({ technology: { categories } }) =>
-      categories.reduce((max, id) =>
-        Math.max(max, Wappalyzer.getCategory(id).priority)
+      categories.reduce(
+        (max, id) => Math.max(max, Wappalyzer.getCategory(id).priority),
+        0
       )
 
     return resolved
@@ -68,7 +69,7 @@ const Wappalyzer = {
         ({
           technology: { name, slug, categories, icon, website, cpe },
           confidence,
-          version
+          version,
         }) => ({
           name,
           slug,
@@ -77,7 +78,7 @@ const Wappalyzer = {
           version,
           icon,
           website,
-          cpe
+          cpe,
         })
       )
   },
@@ -165,7 +166,7 @@ const Wappalyzer = {
             resolved.push({
               technology: implied,
               confidence: Math.min(confidence, _confidence),
-              version: ''
+              version: '',
             })
 
             done = false
@@ -179,7 +180,17 @@ const Wappalyzer = {
    * Initialize analyzation.
    * @param {*} param0
    */
-  analyze({ url, html, meta, headers, cookies, scripts }) {
+  analyze({
+    url,
+    html,
+    css,
+    robots,
+    meta,
+    headers,
+    certIssuer,
+    cookies,
+    scripts,
+  }) {
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
@@ -192,10 +203,13 @@ const Wappalyzer = {
           flatten([
             oo(technology, 'url', url),
             oo(technology, 'html', html),
+            oo(technology, 'css', css),
+            oo(technology, 'robots', robots),
+            oo(technology, 'certIssuer', certIssuer),
             om(technology, 'scripts', scripts),
             mm(technology, 'cookies', cookies),
             mm(technology, 'meta', meta),
-            mm(technology, 'headers', headers)
+            mm(technology, 'headers', headers),
           ])
         )
       ).filter((technology) => technology)
@@ -218,16 +232,19 @@ const Wappalyzer = {
         cats,
         url,
         html,
+        css,
+        robots,
         meta,
         headers,
+        certIssuer,
         cookies,
-        script,
+        scripts,
         js,
         implies,
         excludes,
         icon,
         website,
-        cpe
+        cpe,
       } = data[name]
 
       technologies.push({
@@ -238,19 +255,22 @@ const Wappalyzer = {
         headers: transform(headers),
         cookies: transform(cookies),
         html: transform(html),
+        css: transform(css),
+        certIssuer: transform(certIssuer),
+        robots: transform(robots),
         meta: transform(meta),
-        scripts: transform(script),
+        scripts: transform(scripts),
         js: transform(js, true),
         implies: transform(implies).map(({ value, confidence }) => ({
           name: value,
-          confidence
+          confidence,
         })),
         excludes: transform(excludes).map(({ value }) => ({
-          name: value
+          name: value,
         })),
         icon: icon || 'default.svg',
         website: website || null,
-        cpe: cpe || null
+        cpe: cpe || null,
       })
 
       return technologies
@@ -269,7 +289,7 @@ const Wappalyzer = {
         categories.push({
           id: parseInt(id, 10),
           slug: Wappalyzer.slugify(category.name),
-          ...category
+          ...category,
         })
 
         return categories
@@ -320,7 +340,7 @@ const Wappalyzer = {
           value,
           regex,
           confidence: parseInt(confidence || 100, 10),
-          version: version || ''
+          version: version || '',
         }
       })
 
@@ -342,7 +362,7 @@ const Wappalyzer = {
         technologies.push({
           technology,
           pattern,
-          version: Wappalyzer.resolveVersion(pattern, value)
+          version: Wappalyzer.resolveVersion(pattern, value),
         })
       }
 
@@ -365,7 +385,7 @@ const Wappalyzer = {
           technologies.push({
             technology,
             pattern,
-            version: Wappalyzer.resolveVersion(pattern, value)
+            version: Wappalyzer.resolveVersion(pattern, value),
           })
         }
       })
@@ -391,7 +411,7 @@ const Wappalyzer = {
             technologies.push({
               technology,
               pattern,
-              version: Wappalyzer.resolveVersion(pattern, value)
+              version: Wappalyzer.resolveVersion(pattern, value),
             })
           }
         })
@@ -399,7 +419,7 @@ const Wappalyzer = {
 
       return technologies
     }, [])
-  }
+  },
 }
 
 if (typeof module !== 'undefined') {

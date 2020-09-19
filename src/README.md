@@ -17,9 +17,9 @@ const fs = require('fs')
 const Wappalyzer = require('./wappalyzer')
 
 // See https://www.wappalyzer.com/docs/dev/specification or use
-// https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/apps.json
-const { apps: technologies, categories } = JSON.parse(
-  fs.readFileSync('./apps.json')
+// https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies.json
+const { technologies, categories } = JSON.parse(
+  fs.readFileSync('./technologies.json')
 )
 
 Wappalyzer.setTechnologies(technologies)

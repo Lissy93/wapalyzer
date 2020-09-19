@@ -7,18 +7,11 @@ const Content = {
    * Initialise content script
    */
   async init() {
+    if (await Content.driver('isDisabledDomain', location.href)) {
+      return
+    }
+
     await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    // Enable messaging to and from driver.js
-    Content.port = chrome.runtime.connect({ name: 'content.js' })
-
-    Content.port.onMessage.addListener(({ func, args }) => {
-      const onFunc = `on${func.charAt(0).toUpperCase() + func.slice(1)}`
-
-      if (Content[onFunc]) {
-        Content[onFunc](args)
-      }
-    })
 
     try {
       // HTML
@@ -43,14 +36,35 @@ const Content = {
         document.documentElement.getAttribute('lang') ||
         document.documentElement.getAttribute('xml:lang') ||
         (await new Promise((resolve) =>
-          chrome.i18n.detectLanguage(html, ({ languages }) =>
-            resolve(
-              languages
-                .filter(({ percentage }) => percentage >= 75)
-                .map(({ language: lang }) => lang)[0]
-            )
-          )
+          chrome.i18n.detectLanguage
+            ? chrome.i18n.detectLanguage(html, ({ languages }) =>
+                resolve(
+                  languages
+                    .filter(({ percentage }) => percentage >= 75)
+                    .map(({ language: lang }) => lang)[0]
+                )
+              )
+            : resolve()
         ))
+
+      // CSS rules
+      let css = []
+
+      try {
+        for (const sheet of Array.from(document.styleSheets)) {
+          for (const rules of Array.from(sheet.cssRules)) {
+            css.push(rules.cssText)
+
+            if (css.length >= 3000) {
+              break
+            }
+          }
+        }
+      } catch (error) {
+        // Continue
+      }
+
+      css = css.join('\n')
 
       // Script tags
       const scripts = Array.from(document.scripts)
@@ -72,22 +86,40 @@ const Content = {
         {}
       )
 
-      Content.port.postMessage({
-        func: 'onContentLoad',
-        args: [location.href, { html, scripts, meta }, language]
-      })
+      Content.driver('onContentLoad', [
+        location.href,
+        { html, css, scripts, meta },
+        language,
+      ])
 
-      Content.port.postMessage({ func: 'getTechnologies' })
+      Content.onGetTechnologies(await Content.driver('getTechnologies'))
     } catch (error) {
-      Content.port.postMessage({ func: 'error', args: [error, 'content.js'] })
+      Content.driver('error', error)
     }
+  },
+
+  driver(func, args) {
+    return new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage(
+        {
+          source: 'content.js',
+          func,
+          args: args ? (Array.isArray(args) ? args : [args]) : [],
+        },
+        (response) => {
+          chrome.runtime.lastError
+            ? reject(new Error(chrome.runtime.lastError.message))
+            : resolve(response)
+        }
+      )
+    })
   },
 
   /**
    * Callback for getTechnologies
-   * @param {Object} technologies
+   * @param {Array} technologies
    */
-  onGetTechnologies(technologies) {
+  onGetTechnologies(technologies = []) {
     // Inject a script tag into the page to access methods of the window object
     const script = document.createElement('script')
 
@@ -99,9 +131,10 @@ const Content = {
 
         window.removeEventListener('message', onMessage)
 
-        Content.port.postMessage({
+        chrome.runtime.sendMessage({
+          source: 'content.js',
           func: 'analyzeJs',
-          args: [location.href, data.wappalyzer.js]
+          args: [location.href.split('#')[0], data.wappalyzer.js],
         })
 
         script.remove()
@@ -113,15 +146,15 @@ const Content = {
         wappalyzer: {
           technologies: technologies
             .filter(({ js }) => Object.keys(js).length)
-            .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        }
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) })),
+        },
       })
     }
 
     script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
 
     document.body.appendChild(script)
-  }
+  },
 }
 
 if (/complete|interactive|loaded/.test(document.readyState)) {

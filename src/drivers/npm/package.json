@@ -12,30 +12,34 @@
     "library",
     "software"
   ],
-  "homepage": "https://www.wappalyzer.com",
-  "version": "6.0.15",
+  "homepage": "https://www.wappalyzer.com/",
+  "version": "6.3.6",
   "author": "Wappalyzer",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliasio/wappalyzer"
   },
-  "funding": {
-    "url": "https://github.com/sponsors/aliasio"
-  },
+  "funding": [
+    {
+      "url": "https://github.com/sponsors/aliasio"
+    },
+    {
+      "url": "https://paypal.me/aliasio"
+    }
+  ],
   "main": "driver.js",
   "files": [
-    "apps.json",
     "cli.js",
     "driver.js",
     "index.js",
+    "technologies.json",
     "wappalyzer.js"
   ],
   "bin": {
     "wappalyzer": "./cli.js"
   },
   "dependencies": {
-    "languagedetect": "^2.0.0",
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^5.3.0"
   }
 }

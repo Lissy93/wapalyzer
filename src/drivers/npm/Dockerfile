@@ -17,10 +17,10 @@ RUN mkdir -p "$WAPPALYZER_ROOT/browsers"
 
 WORKDIR "$WAPPALYZER_ROOT"
 
-ADD apps.json .
 ADD cli.js .
 ADD driver.js .
 ADD package.json .
+ADD technologies.json .
 ADD wappalyzer.js .
 ADD yarn.lock .
 
