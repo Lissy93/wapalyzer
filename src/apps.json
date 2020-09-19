@@ -10747,7 +10747,7 @@
         "Server": "^statically$"
       },
       "icon": "Statically.svg",
-      "html": "<[^>]+?//cdn\\.statically\\.io/",
+      "html": "<link [^>]*?href=\"?[a-z]*?:?//cdn\\.statically\\.io/",
       "website": "http://statically.io"
     },
     "Store Systems": {
