@@ -425,6 +425,7 @@
       "certIssuer": "Amazon",
       "icon": "aws.svg",
       "implies": "Amazon Web Services",
+      "description": "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.",
       "website": "https://aws.amazon.com/certificate-manager/"
     },
     "AWStats": {
@@ -682,7 +683,7 @@
       "cats": [
         42
       ],
-      "description": "Adoeb Experience Cloud Launch is an extendable tag managemt solution for Adobe Experience Cloud, Adobe Experience Platform, and other applications.",
+      "description": "Adobe Experience Cloud Launch is an extendable tag management solution for Adobe Experience Cloud, Adobe Experience Platform, and other applications.",
       "icon": "adobe_experience_platform.png",
       "js": {
         "_satellite.buildInfo": ""
@@ -1021,7 +1022,7 @@
         "AWSALB": "",
         "AWSALBCORS": ""
       },
-      "description": "Amazon Application Load Balancer (ALB) distributes incoming application traffic to inscrease availability and support content-based routing.",
+      "description": "Amazon Application Load Balancer (ALB) distributes incoming application traffic to increase availability and support content-based routing.",
       "icon": "aws-elb.png",
       "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
@@ -1302,7 +1303,7 @@
       "implies": "Apache Tomcat",
       "scripts": "jspwiki",
       "url": "wiki\\.jsp",
-      "description": "Apache JSPWiki is an open source WikiWiki engine, built around standard JEE components (Java, servlets, JSP).",
+      "description": "Apache JSPWiki is an open-source Wiki engine, built around standard JEE components (Java, servlets, JSP).",
       "website": "http://jspwiki.org"
     },
     "Apache Tomcat": {
@@ -1537,7 +1538,7 @@
         "asciinema": ""
       },
       "scripts": "asciinema\\.org/",
-      "description": "Asciinema is a free and open source solution for recording terminal sessions and sharing them on the web.",
+      "description": "Asciinema is a free and open-source solution for recording terminal sessions and sharing them on the web.",
       "website": "https://asciinema.org/"
     },
     "Atlassian Bitbucket": {
@@ -1954,6 +1955,7 @@
       "js": {
         "blessing.version": "^(.+)$\\;version:\\1"
       },
+      "description": "Blessing Skin is a plubin that brings your custom skins back in offline Minecraft servers.",
       "website": "https://github.com/bs-community/blessing-skin-server"
     },
     "Blesta": {
@@ -2331,6 +2333,7 @@
         "CKEDITOR.version": "^(.+)$\\;version:\\1",
         "CKEDITOR_BASEPATH": ""
       },
+      "description": "CKEditor is a WYSIWYG rich text editor which enables writing content directly inside of web pages or online applications. Its core code is written in JavaScript and it is developed by CKSource. CKEditor is available under open-source and commercial licenses.",
       "website": "http://ckeditor.com"
     },
     "CMS Made Simple": {
@@ -2540,6 +2543,7 @@
         "X-Powered-By": "CentOS"
       },
       "icon": "CentOS.png",
+      "description": "CentOS is a Linux distribution that provides a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL).",
       "website": "http://centos.org"
     },
     "Centminmod": {
@@ -2581,6 +2585,7 @@
       "meta": {
         "generator": "Chamilo ([\\d.]+)\\;version:\\1"
       },
+      "description": "Chamilo is an open-source learning management and collaboration system.",
       "website": "http://www.chamilo.org"
     },
     "Chart.js": {
@@ -2599,6 +2604,7 @@
         "cdnjs\\.cloudflare\\.com/ajax/libs/Chart\\.js/([\\d.]+(?:-[^/]+)?)/Chart.*\\.js\\;version:\\1",
         "cdn\\.jsdelivr\\.net/(?:npm|gh/chartjs)/chart\\.js@([\\d.]+(?:-[^/]+)?|latest)/dist/Chart.*\\.js\\;version:\\1"
       ],
+      "description": "Chart.js is an open-source JavaScript library that allows you to draw different types of charts by using the HTML5 canvas element.",
       "website": "https://www.chartjs.org"
     },
     "Chartbeat": {
@@ -2648,6 +2654,7 @@
         "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
       },
       "scripts": "/chevereto\\.js",
+      "description": "Chevereto is an image hosting software that allows you to create a full-featured image hosting website on your own server.",
       "website": "https://chevereto.com/"
     },
     "Chitika": {
@@ -3094,6 +3101,7 @@
       ],
       "icon": "Cookiebot.svg",
       "scripts": "consent\\.cookiebot\\.com",
+      "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
       "website": "http://www.cookiebot.com"
     },
     "Coppermine": {
@@ -3101,7 +3109,7 @@
         7
       ],
       "cpe": "cpe:/a:coppermine-gallery:coppermine_photo_gallery",
-      "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
+      "description": "Coppermine is an open-source image gallery application.",
       "html": "<!--Coppermine Photo Gallery ([\\d.]+)\\;version:\\1",
       "icon": "Coppermine.png",
       "implies": "PHP",
@@ -3317,6 +3325,7 @@
         "d3.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
+      "description": "D3.js is a JavaScript library for producing dynamic, interactive data visualisations in web browsers.",
       "website": "http://d3js.org"
     },
     "DERAK.CLOUD": {
@@ -3456,6 +3465,7 @@
         "X-Powered-By": "Darwin"
       },
       "icon": "Apple.svg",
+      "description": "Darwin is the open-source operating system from Apple that forms the basis for macOS.",
       "website": "https://opensource.apple.com"
     },
     "DataLife Engine": {
@@ -3531,6 +3541,7 @@
         "X-Powered-By": "(?:Debian|dotdeb|(potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|buster|sid))\\;version:\\1"
       },
       "icon": "Debian.png",
+      "description": "Debian is a Linux software which is a free open-source software.",
       "website": "https://debian.org"
     },
     "DedeCMS": {
@@ -3592,6 +3603,7 @@
       "meta": {
         "generator": "Discourse(?: ?/?([\\d.]+\\d))?\\;version:\\1"
       },
+      "description": "Discourse is an open-source internet forum and mailing list management software application.",
       "website": "https://discourse.org"
     },
     "Discuz! X": {
@@ -3608,6 +3620,7 @@
       "meta": {
         "generator": "Discuz! X([\\d\\.]+)?\\;version:\\1"
       },
+      "description": "Discuz! X is an internet forum software written in PHP and supports MySQL and PostgreSQL databases.",
       "website": "http://www.discuz.net"
     },
     "Disqus": {
@@ -3700,6 +3713,7 @@
       "meta": {
         "generator": "Dokeos"
       },
+      "description": "Dokeos is an e-learning and course management web application.",
       "website": "https://dokeos.com"
     },
     "DokuWiki": {
@@ -3719,7 +3733,7 @@
       "meta": {
         "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
       },
-      "description": "DokuWiki is a Free Open Source wiki software.",
+      "description": "DokuWiki is a Free open-source wiki software.",
       "website": "https://www.dokuwiki.org"
     },
     "Dotclear": {
@@ -4161,6 +4175,7 @@
       ],
       "icon": "ensighten.png",
       "scripts": "//nexus\\.ensighten\\.com/",
+      "description": "Ensighten is a solution that enables secure management, implementation and control of website technologies.",
       "website": "https://success.ensighten.com/hc/en-us"
     },
     "Envoy": {
@@ -4186,6 +4201,7 @@
         "enyo": ""
       },
       "scripts": "enyo\\.js",
+      "description": "Enyo is an open-source JavaScript framework for cross-platform for mobile, desktop, TV and web applications.",
       "website": "http://enyojs.com"
     },
     "Epoch": {
@@ -4255,6 +4271,7 @@
       "scripts": [
         "/ep_etherpad-lite/"
       ],
+      "description": "Etherpad is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own colour.",
       "website": "https://etherpad.org"
     },
     "Exhibit": {
@@ -4503,6 +4520,7 @@
         "Server": "Fedora"
       },
       "icon": "Fedora.png",
+      "description": "Fedora is a free open-source Linux-based operating system.",
       "website": "http://fedoraproject.org"
     },
     "Fingerprintjs": {
@@ -4554,6 +4572,7 @@
         "app.cache.discussionList": "",
         "app.forum.freshness": ""
       },
+      "description": "Flarum is a discussion platform.",
       "website": "http://flarum.org/"
     },
     "Flask": {
@@ -4728,7 +4747,7 @@
         "foswiki.SERVERTIME": "",
         "foswiki.WIKINAME": ""
       },
-      "description": "Foswiki is a free open source collaboration platform.",
+      "description": "Foswiki is a free open-source collaboration platform.",
       "website": "http://foswiki.org"
     },
     "FreeBSD": {
@@ -4740,6 +4759,7 @@
         "Server": "FreeBSD(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "FreeBSD.png",
+      "description": "FreeBSD is a free and open-source Unix-like operating system.",
       "website": "http://freebsd.org"
     },
     "FreeTextBox": {
@@ -4753,6 +4773,7 @@
         "FTB_API": "",
         "FTB_AddEvent": ""
       },
+      "description": "FreeTextBox is a free open-source HTML Editor.",
       "website": "http://freetextbox.com"
     },
     "Freespee": {
@@ -4790,6 +4811,7 @@
         "jQuery",
         "Font Awesome"
       ],
+      "description": "Froala Editor is a WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for applications.",
       "website": "http://froala.com/wysiwyg-editor"
     },
     "FrontPage": {
@@ -4935,6 +4957,7 @@
         "$.fn.gallery_valign": "",
         "galleryAuthToken": ""
       },
+      "description": "Gallery is an open-source web based photo album organiser.",
       "website": "http://galleryproject.org/"
     },
     "Gambio": {
@@ -5028,6 +5051,7 @@
         "X-Powered-By": "gentoo"
       },
       "icon": "Gentoo.png",
+      "description": "Gentoo is a free operating system based on Linux.",
       "website": "http://www.gentoo.org"
     },
     "Gerrit": {
@@ -5372,6 +5396,7 @@
         "__googleVisualizationAbstractRendererElementsCount__": "",
         "__gvizguard__": ""
       },
+      "description": "Google Charts is an interactive web service that creates graphical charts from user-supplied information.",
       "website": "http://developers.google.com/chart/"
     },
     "Google Cloud": {
@@ -5707,6 +5732,7 @@
         "Server": "HP-iLO-Server(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "HP.svg",
+      "description": "HP iLO is a tool that provides multiple ways to configure, update, monitor, and run servers remotely.",
       "website": "http://hp.com"
     },
     "HTTP/2": {
@@ -5872,6 +5898,7 @@
         "Highcharts.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "highcharts.*\\.js",
+      "description": "Highcharts is a charting library written in pure JavaScript, for adding interactive charts to a website or web application.",
       "website": "https://www.highcharts.com"
     },
     "Highlight.js": {
@@ -6101,6 +6128,7 @@
       ],
       "certIssuer": "TrustID",
       "icon": "Identrust.svg",
+      "description": "denTrust is a digital identity authentication solution.",
       "website": "https://www.identrust.com/"
     },
     "IdoSell Shop": {
@@ -6303,6 +6331,7 @@
         "Server": "Intel\\(R\\) Active Management Technology(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "Intel Active Management Technology.png",
+      "description": "Intel Active Management Technology (AMT) is a proprietary remote management and control system for personal computers with Intel CPUs.",
       "website": "http://intel.com"
     },
     "IntenseDebate": {
@@ -6414,6 +6443,7 @@
       "meta": {
         "generator": "JAlbum( [\\d.]+)?\\;version:\\1"
       },
+      "description": "jAlbum is across-platform photo website software for creating and uploading galleries from images and videos.",
       "website": "http://jalbum.net/en"
     },
     "JBoss Application Server": {
@@ -7155,6 +7185,7 @@
       ],
       "certIssuer": "Let's Encrypt",
       "icon": "Lets Encrypt.svg",
+      "description": "Let's Encrypt is a free, automated, and open certificate authority.",
       "website": "https://letsencrypt.org/"
     },
     "Liferay": {
@@ -7781,6 +7812,7 @@
         "MathJax.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
+      "description": "MathJax is a cross-browser JavaScript library that displays mathematical notation in web browsers, using MathML, LaTeX and ASCIIMathML markup.",
       "website": "https://www.mathjax.org"
     },
     "Matomo Analytics": {
@@ -7803,7 +7835,7 @@
         "google-play-app": "app-id=org\\.piwik\\.mobile2"
       },
       "scripts": "piwik\\.js|piwik\\.php",
-      "description": "Matomo Analytics is a free and open source web analytics applicatio, that runs on a PHP/MySQL web-server.",
+      "description": "Matomo Analytics is a free and open-source web analytics applicatio, that runs on a PHP/MySQL web-server.",
       "website": "https://matomo.org"
     },
     "Matomo Tag Manager": {
@@ -8271,6 +8303,7 @@
         "//cdn\\.mobify\\.com/",
         "//a\\.mobify\\.com/"
       ],
+      "description": "Mobify is a web storefront platform for headless commerce.",
       "website": "https://www.mobify.com"
     },
     "Mobirise": {
@@ -8284,6 +8317,7 @@
       "meta": {
         "generator": "^Mobirise v([\\d.]+)\\;version:\\1"
       },
+      "description": "Mobirise is a free offline app for Windows and Mac to easily create small/medium websites, landing pages, online resumes and portfolios.",
       "website": "https://mobirise.com"
     },
     "MochiKit": {
@@ -8499,6 +8533,7 @@
       "meta": {
         "keywords": "^moodle"
       },
+      "description": "Moodle is a free and open-source Learning Management System (LMS) written in PHP and distributed under the GNU General Public License.",
       "website": "http://moodle.org"
     },
     "Moon": {
@@ -8607,6 +8642,7 @@
       "js": {
         "MyBB": ""
       },
+      "description": "MyBB is a free and open-source forum software written in PHP.",
       "website": "https://mybb.com"
     },
     "MyBlogLog": {
@@ -8683,6 +8719,7 @@
         "nv.version": "^(.+)$\\;confidence:0\\;version:\\1"
       },
       "scripts": "nv\\.d3(?:\\.min)?\\.js",
+      "description": "NVD3 is a JavaScript visualisation library that is a free open-source tool.",
       "website": "http://nvd3.org"
     },
     "Navegg": {
@@ -8830,6 +8867,7 @@
       "icon": "NextGEN Gallery.png",
       "implies": "WordPress",
       "scripts": "/nextgen-gallery/js/",
+      "description": "NextGEN Gallery is a free open-source image management plugin for the WordPress content management system.",
       "website": "https://www.imagely.com/wordpress-gallery-plugin"
     },
     "CherryPy": {
@@ -9454,6 +9492,7 @@
       "scripts": [
         "wp-content/plugins/oxygen"
       ],
+      "description": "Oxygen Builder is a tool to build a WordPress website.",
       "website": "https://oxygenbuilder.com"
     },
     "PDF.js": {
@@ -9539,6 +9578,7 @@
       ],
       "icon": "pagefly.png",
       "scripts": "pagefly\\.io",
+      "description": "PageFly is an app for Shopify that allows you to build landing pages, product pages, blogs, and FAQs.",
       "website": "https://pagefly.io"
     },
     "Pagekit": {
@@ -10356,6 +10396,7 @@
       "js": {
         "Quill": ""
       },
+      "description": "Quill is a free open-source WYSIWYG editor.",
       "website": "http://quilljs.com"
     },
     "RBS Change": {
@@ -10483,6 +10524,7 @@
         "Raphael.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "description": "Raphael is a cross-browser JavaScript library that draws Vector graphics for websites.",
       "website": "https://dmitrybaranovskiy.github.io/raphael/"
     },
     "Raspbian": {
@@ -10494,6 +10536,7 @@
         "X-Powered-By": "Raspbian"
       },
       "icon": "Raspbian.svg",
+      "description": "Raspbian is a free operating system for the Raspberry Pi hardware.",
       "website": "https://www.raspbian.org/"
     },
     "Raychat": {
@@ -10602,6 +10645,7 @@
         "X-Powered-By": "Red Hat"
       },
       "icon": "Red Hat.svg",
+      "description": "Red Hat is an open-source Linux operating system.",
       "website": "https://www.redhat.com"
     },
     "Redaxscript": {
@@ -10663,7 +10707,7 @@
       "meta": {
         "description": "Redmine"
       },
-      "description": "Redmine is a free and open source, web-based project management and issue tracking tool.",
+      "description": "Redmine is a free and open-source, web-based project management and issue tracking tool.",
       "website": "http://www.redmine.org"
     },
     "Reinvigorate": {
@@ -11000,6 +11044,7 @@
       "js": {
         "smf_": ""
       },
+      "description": "SMF is a free open-source software, used for community forums and is written in PHP.",
       "website": "http://www.simplemachines.org"
     },
     "SOBI 2": {
@@ -11063,6 +11108,7 @@
         "X-Powered-By": "SUSE(?:/?\\s?-?([\\d.]+))?\\;version:\\1"
       },
       "icon": "SUSE.png",
+      "description": "SUSE is a Linux-based server operating system.",
       "website": "http://suse.com"
     },
     "SWFObject": {
@@ -11263,6 +11309,7 @@
         "X-Scholica-Version": ""
       },
       "icon": "Scholica.svg",
+      "description": "Scholica is a Virtual Learning Platform (VLP).",
       "website": "http://scholica.com"
     },
     "Scientific Linux": {
@@ -11274,6 +11321,7 @@
         "X-Powered-By": "Scientific Linux"
       },
       "icon": "Scientific Linux.png",
+      "description": "Scientific Linux (SL) is a free open-source operating system based on Red Hat Enterprise Linux.",
       "website": "http://scientificlinux.org"
     },
     "Scorpion": {
@@ -11305,6 +11353,7 @@
       ],
       "certIssuer": "Sectigo",
       "icon": "Sectigo.svg",
+      "description": "Sectigo provides SSL certificate and computer security products.",
       "website": "https://sectigo.com/"
     },
     "Section.io": {
@@ -11375,6 +11424,7 @@
       ],
       "icon": "Sencha Touch.png",
       "scripts": "sencha-touch.*\\.js",
+      "description": "Sencha Touch is a user interface (UI) JavaScript library, or web framework, specifically built for the Mobile Web.",
       "website": "http://www.sencha.com/products/touch"
     },
     "Sensors Data": {
@@ -11479,6 +11529,7 @@
       "js": {
         "ShellInABox": ""
       },
+      "description": "Shell In A Box implements a web server that can export arbitrary command line tools to a web based terminal emulator.",
       "website": "http://shellinabox.com"
     },
     "Shiny": {
@@ -12459,6 +12510,7 @@
         "Servlet-engine": "SunOS( [\\d\\.]+)?\\;version:\\1"
       },
       "icon": "Oracle.png",
+      "description": "SunOS is a Unix-branded operating system developed by Sun Microsystems for their workstation and server computer systems.",
       "website": "http://oracle.com/solaris"
     },
     "Supersized": {
@@ -12598,7 +12650,7 @@
       "meta": {
         "generator": "^Sympa$"
       },
-      "description": "Sympa is an open source mailing list management (MLM) software.",
+      "description": "Sympa is an open-source mailing list management (MLM) software.",
       "website": "https://www.sympa.org/"
     },
     "Synology DiskStation": {
@@ -13012,6 +13064,7 @@
         "tinyMCE.majorVersion": "([\\d.]+)\\;version:\\1"
       },
       "scripts": "/tiny_?mce(?:\\.min)?\\.js",
+      "description": "TinyMCE is an online rich-text editor released as open-source software. TinyMCE is designed to integrate with JavaScript libraries, Vue.js, and AngularJS as well as content management systems such as Joomla!, and WordPress.",
       "website": "http://tinymce.com"
     },
     "Titan": {
@@ -13277,6 +13330,7 @@
         "Server": "Unix"
       },
       "icon": "UNIX.png",
+      "description": "Unix is a family of multitasking, multiuser computer operating systems.",
       "website": "http://unix.org"
     },
     "Ubercart": {
@@ -13297,6 +13351,7 @@
         "X-Powered-By": "Ubuntu"
       },
       "icon": "Ubuntu.png",
+      "description": "Ubuntu is a free and open-source operating system on Linux for the enterprise server, desktop, cloud, and IoT.",
       "website": "http://www.ubuntu.com/server"
     },
     "UltraCart": {
@@ -13515,6 +13570,7 @@
       "html": "<body id=\"(?:DiscussionsPage|vanilla)",
       "icon": "Vanilla.png",
       "implies": "PHP",
+      "description": "Vanilla is a both a cloud-based (SaaS) open-source community forum software.",
       "website": "http://vanillaforums.org"
     },
     "Varbase": {
@@ -14181,7 +14237,7 @@
       "meta": {
         "generator": "WikkaWiki"
       },
-      "description": "WikkaWiki is an open source wiki application written in PHP.",
+      "description": "WikkaWiki is an open-source wiki application written in PHP.",
       "website": "http://wikkawiki.org"
     },
     "Windows CE": {
@@ -14192,6 +14248,7 @@
         "Server": "\\bWinCE\\b"
       },
       "icon": "Microsoft.png",
+      "description": "Windows CE is an operating system designed for small footprint devices or embedded systems.",
       "website": "http://microsoft.com"
     },
     "Windows Server": {
@@ -14202,6 +14259,7 @@
         "Server": "Win32|Win64"
       },
       "icon": "WindowsServer.png",
+      "description": "Windows Server is a brand name for a group of server operating systems.",
       "website": "http://microsoft.com/windowsserver"
     },
     "Wink": {
@@ -14214,6 +14272,7 @@
         "wink.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "(?:_base/js/base|wink).*\\.js",
+      "description": "Wink Toolkit is a JavaScript toolkit used to build mobile web apps.",
       "website": "http://winktoolkit.org"
     },
     "Winstone Servlet Container": {
@@ -14495,6 +14554,7 @@
       "js": {
         "XF.GuestUsername": ""
       },
+      "description": "XenForo is a PHP-based forum hosting program for communities that is designed to be deployed on a remote web server.",
       "website": "http://xenforo.com"
     },
     "Xeora": {
@@ -14858,6 +14918,7 @@
       "js": {
         "Zenfolio": ""
       },
+      "description": "Zenfolio is a photography website builder.",
       "website": "https://zenfolio.com"
     },
     "Zepto": {
@@ -14977,6 +15038,7 @@
         "AmCharts": ""
       },
       "scripts": "amcharts.*\\.js",
+      "description": "amCharts is a JavaScript-based interactive charts and maps programming library and tool.",
       "website": "http://amcharts.com"
     },
     "animate.css": {
@@ -15408,6 +15470,7 @@
         "jQT": ""
       },
       "scripts": "jqtouch.*\\.js",
+      "description": "jQTouch is an open-source Zepto/ JQuery plugin with native animations, automatic navigation, and themes for mobile WebKit browsers like iPhone, G1 (Android), and Palm Pre.",
       "website": "http://jqtouch.com"
     },
     "jQuery": {
@@ -15469,6 +15532,7 @@
         "jQuery.mobile.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "description": "jQuery Mobile is a HTML5-based user interface system designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices.",
       "website": "https://jquerymobile.com"
     },
     "jQuery Sparklines": {
@@ -15477,6 +15541,7 @@
       ],
       "implies": "jQuery",
       "scripts": "jquery\\.sparkline.*\\.js",
+      "description": "jQuery Sparklines is a plugin that generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.",
       "website": "http://omnipotent.net/jquery.sparkline/"
     },
     "jQuery UI": {
@@ -15512,6 +15577,7 @@
         "pjax-timeout": ""
       },
       "scripts": "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "description": "jQuery PJAX is a plugin that uses AJAX and pushState.",
       "website": "https://github.com/defunkt/jquery-pjax"
     },
     "jqPlot": {
@@ -15714,7 +15780,7 @@
       },
       "icon": "mod_ssl.png",
       "implies": "Apache",
-      "description": "mod_ssl is an optional module for the Apache HTTP Server. It provides strong cryptography for the Apache v1.3 and v2 web-server via the Secure Sockets Layer and Transport Layer Security cryptographic protocols by the help of the Open Source SSL/TLS toolkit OpenSSL.",
+      "description": "mod_ssl is an optional module for the Apache HTTP Server. It provides strong cryptography for the Apache web server via the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) cryptographic protocols by the help of the open-source SSL/TLS toolkit OpenSSL.",
       "website": "http://modssl.org"
     },
     "mod_wsgi": {
@@ -15843,6 +15909,7 @@
         "particlesJS": ""
       },
       "scripts": "/particles(?:\\.min)?\\.js",
+      "description": "Particles.js is a JavaScript library for creating particles.",
       "website": "https://vincentgarreau.com/particles.js/"
     },
     "phpAlbum": {
@@ -15852,6 +15919,7 @@
       "html": "<!--phpalbum ([.\\d\\s]+)-->\\;version:\\1",
       "icon": "phpAlbum.png",
       "implies": "PHP",
+      "description": "phpAlbum is an open-source PHP script which allows you to create your personal photo album.",
       "website": "http://phpalbum.net"
     },
     "phpBB": {
@@ -15877,6 +15945,7 @@
       "meta": {
         "copyright": "phpBB Group"
       },
+      "description": "phpBB is a free open-source Internet forum package in the PHP scripting language.",
       "website": "https://phpbb.com"
     },
     "phpCMS": {
@@ -16249,6 +16318,7 @@
       "meta": {
         "generator": "vBulletin ?([\\d.]+)?\\;version:\\1"
       },
+      "description": "vBulletin is tool that is used to create and manage online forums or discussion boards. It is written in PHP and uses a MySQL database server.",
       "website": "https://www.vbulletin.com"
     },
     "vibecommerce": {
