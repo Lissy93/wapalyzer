@@ -272,6 +272,10 @@
     "70": {
       "name": "SSL/TLS certificate authority",
       "priority": 6
+    },
+    "71": {
+      "name": "Affiliate program",
+      "priority": 6
     }
   },
   "technologies": {
@@ -290,6 +294,19 @@
       "implies": "PHP",
       "scripts": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
+    },
+    "Rewardful": {
+      "cats": [
+        71,
+        61
+      ],
+      "js": {
+        "Rewardful": ""
+      },
+      "scripts": "r\\.wdfl\\.co",
+      "icon": "Rewardful.svg",
+      "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
+      "website": "https://www.getrewardful.com/"
     },
     "3dCart": {
       "cats": [
@@ -2645,7 +2662,7 @@
       "headers": {
         "Server": "CherryPy\\/?([\\d\\.]+)?\\;version:\\1"
       },
-      "icon": "CherryPy.png",
+      "icon": "CherryPy.svg",
       "implies": "Python",
       "website": "http://www.cherrypy.org"
     },
