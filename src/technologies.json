@@ -1685,7 +1685,10 @@
       ],
       "description": "Auth0 headless browser sdk",
       "icon": "Auth0.png",
-      "scripts": "/auth0(?:-js)?(/|@)([\\d.]+)(?:/([a-z]+))?/auth0(?:.min)?\\.js\\;version:\\1",
+      "scripts": [
+        "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
+        "/auth0-js@([\\d.]+)/([a-z]+)/auth0\\.min\\.js\\;version:\\1"
+      ],
       "website": "https://auth0.github.io/auth0.js/index.html"
     },
     "Auth0 Lock": {
