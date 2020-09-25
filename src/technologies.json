@@ -1679,6 +1679,24 @@
       ],
       "website": "http://aurelia.io"
     },
+    "Auth0": {
+      "cats": [
+        19
+      ],
+      "description": "Auth0 headless browser sdk",
+      "icon": "Auth0.png",
+      "scripts": "/auth0(?:-js)?(/|@)([\\d.]+)(?:/([a-z]+))?/auth0(?:.min)?\\.js\\;version:\\1",
+      "website": "https://auth0.github.io/auth0.js/index.html"
+    },
+    "Auth0 Lock": {
+      "cats": [
+        19
+      ],
+      "description": "Auth0's signin solution",
+      "icon": "Auth0.png",
+      "scripts": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
+      "website": "https://auth0.com/docs/libraries/lock"
+    },
     "Automattic": {
       "cats": [
         62
