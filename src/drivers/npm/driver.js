@@ -173,7 +173,11 @@ class Driver {
 
 class Site {
   constructor(url, headers = {}, driver) {
-    ;({ options: this.options, browser: this.browser } = driver)
+    ;({
+      options: this.options,
+      browser: this.browser,
+      init: this.initDriver,
+    } = driver)
 
     this.options.headers = {
       ...this.options.headers,
@@ -263,7 +267,7 @@ class Site {
     }
 
     if (!this.browser) {
-      await this.init()
+      await this.initDriver()
 
       if (!this.browser) {
         throw new Error('Browser closed')
