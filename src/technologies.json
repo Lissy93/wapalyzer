@@ -266,15 +266,15 @@
       "priority": 9
     },
     "69": {
-      "name": "Social login",
+      "name": "Social logins",
       "priority": 6
     },
     "70": {
-      "name": "SSL/TLS certificate authority",
+      "name": "SSL/TLS certificate authorities",
       "priority": 6
     },
     "71": {
-      "name": "Affiliate program",
+      "name": "Affiliate programs",
       "priority": 6
     }
   },
@@ -3284,7 +3284,14 @@
       ],
       "description": "CrownPeak is a cloud-based Digital Experience Management (DEM) platform that is designed to in the management of digital experiences across multiple touch-points, especially for marketing and a freer IT architecture.",
       "icon": "Crownpeak.png",
-      "scripts": "c\\.evidon\\.com",
+      "js": {
+        "CrownPeakAutocomplete": "",
+        "CrownPeakSearch": ""
+      },
+      "scripts": [
+        "c\\.evidon\\.com",
+        "js/crownpeak\\."
+      ],
       "website": "http://www.crownpeak.com"
     },
     "Crypto-Loot": {

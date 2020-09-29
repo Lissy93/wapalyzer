@@ -263,7 +263,11 @@ class Site {
     }
 
     if (!this.browser) {
-      throw new Error('Browser closed')
+      await this.init()
+
+      if (!this.browser) {
+        throw new Error('Browser closed')
+      }
     }
 
     const page = await this.browser.newPage()
