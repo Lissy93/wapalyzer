@@ -1053,7 +1053,6 @@
       "cats": [
         31
       ],
-      "description": "Amazon CloudFront is a content delivery network offered by Amazon Web Services.",
       "headers": {
         "Via": "\\(CloudFront\\)$",
         "X-Amz-Cf-Id": ""
@@ -2652,19 +2651,6 @@
       },
       "icon": "Cherokee.png",
       "website": "http://www.cherokee-project.com"
-    },
-    "CherryPy": {
-      "cats": [
-        18,
-        22
-      ],
-      "cpe": "cpe:/a:cherrypy:cherrypy",
-      "headers": {
-        "Server": "CherryPy\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "CherryPy.svg",
-      "implies": "Python",
-      "website": "http://www.cherrypy.org"
     },
     "Chevereto": {
       "cats": [
