@@ -4405,7 +4405,7 @@
       ],
       "description": "Facebook is an online social media and social networking service.",
       "icon": "Facebook.svg",
-      "scripts": "//connect\\.facebook\\.net/[^/]*/[a-z]*\\.js",
+      "scripts": "//connect\\.facebook\\.([a-z]+)/[^/]*/[a-z]*\\.js",
       "website": "http://facebook.com"
     },
     "Facebook Sign-in": {
