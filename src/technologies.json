@@ -4563,7 +4563,10 @@
       "js": {
         "firebase.SDK_VERSION": "([\\d.]+)$\\;version:\\1"
       },
-      "scripts": "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+      "scripts": [
+        "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+        "/firebasejs/([\\d.]+)/firebase\\;version:\\1"
+      ],
       "website": "https://firebase.com"
     },
     "Fireblade": {
