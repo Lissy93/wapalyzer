@@ -5488,6 +5488,9 @@
         41
       ],
       "html": "<[^>]+aria-labelledby=\"pi-google_pay",
+      "scripts": [
+        "pay\\.google\\.com/([a-z/]+)/pay\\.js"
+      ],
       "icon": "Google.svg",
       "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
       "website": "https://pay.google.com"
@@ -11604,6 +11607,9 @@
       ],
       "description": "Shop Pay is an accelerated checkout that lets customers save their email address, credit card, and shipping and billing information so they can complete their transaction faster the next time they are directed to the Shopify checkout.",
       "html": "<[^>]+aria-labelledby=\"pi-shopify_pay",
+      "scripts": [
+        "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
+      ],
       "icon": "Shopify.svg",
       "implies": "Shopify",
       "url": "^https://pay.shopify.com",
