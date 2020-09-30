@@ -1723,6 +1723,16 @@
       "scripts": "/awesomplete\\.js(?:$|\\?)",
       "website": "https://leaverou.github.io/awesomplete/"
     },
+    "Axios": {
+      "cats": [
+        19
+      ],
+      "scripts": [
+        "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
+      ],
+      "description": "Promise based HTTP client for the browser and node.js",
+      "website": "https://github.com/axios/axios"
+    },
     "Azure": {
       "cats": [
         62
@@ -5996,6 +6006,16 @@
         "generator": "hinzacms"
       },
       "website": "http://hinzaco.com"
+    },
+    "History": {
+      "cats": [
+        19
+      ],
+      "description": "Manage session history with JavaScript",
+      "scripts": [
+        "/history(@|/)([\\d.]+)(?:/[a-z]+)?/history(?:(.production|.development))?(?:.min)?\\.js\\;version:\\2"
+      ],
+      "website": "https://github.com/ReactTraining/history"
     },
     "Hogan.js": {
       "cats": [
@@ -10642,6 +10662,17 @@
       "scripts": "/redoc\\.(?:min\\.)?js",
       "website": "https://github.com/Rebilly/ReDoc"
     },
+    "Redux": {
+      "cats": [
+        12
+      ],
+      "description": "Predictable state container for JavaScript apps",
+      "icon": "Redux.png",
+      "scripts": [
+        "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
+      ],
+      "website": "https://redux.js.org/"
+    },
     "React": {
       "cats": [
         12
@@ -10660,6 +10691,33 @@
         "^react\\b.*\\.js"
       ],
       "website": "https://reactjs.org"
+    },
+    "React Redux": {
+      "cats": [
+        12
+      ],
+      "description": "Official React bindings for Redux",
+      "icon": "Redux.png",
+      "implies": [
+        "React",
+        "Redux"
+      ],
+      "scripts": [
+        "/react-redux(@|/)([\\d.]+)(?:/[a-z]+)?/react-redux(?:.min)?\\.js\\;version:\\2"
+      ],
+      "website": "https://react-redux.js.org/"
+    },
+    "React Router": {
+      "cats": [
+        12
+      ],
+      "description": "Declarative routing for React",
+      "icon": "React Router.png",
+      "implies": "React",
+      "scripts": [
+        "/react-router(@|/)([\\d.]+)(?:/[a-z]+)?/react-router(?:.min)?\\.js\\;version:\\2"
+      ],
+      "website": "https://reactrouter.com/"
     },
     "RebelMouse": {
       "cats": [
