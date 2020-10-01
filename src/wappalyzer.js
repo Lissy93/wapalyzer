@@ -231,6 +231,7 @@ const Wappalyzer = {
       const {
         cats,
         url,
+        dom,
         html,
         css,
         robots,
@@ -254,6 +255,7 @@ const Wappalyzer = {
         url: transform(url),
         headers: transform(headers),
         cookies: transform(cookies),
+        dom: transform(dom, true),
         html: transform(html),
         css: transform(css),
         certIssuer: transform(certIssuer),
@@ -298,7 +300,7 @@ const Wappalyzer = {
   },
 
   /**
-   * Extract information from regex pattern.
+   * Transform patterns for internal use.
    * @param {string|array} patterns
    */
   transformPatterns(patterns, caseSensitive = false) {
@@ -315,39 +317,55 @@ const Wappalyzer = {
     const parsed = Object.keys(patterns).reduce((parsed, key) => {
       parsed[caseSensitive ? key : key.toLowerCase()] = toArray(
         patterns[key]
-      ).map((pattern) => {
-        const { value, regex, confidence, version } = pattern
-          .split('\\;')
-          .reduce((attrs, attr, i) => {
-            if (i) {
-              // Key value pairs
-              attr = attr.split(':')
-
-              if (attr.length > 1) {
-                attrs[attr.shift()] = attr.join(':')
-              }
-            } else {
-              attrs.value = attr
-
-              // Escape slashes in regular expression
-              attrs.regex = new RegExp(attr.replace(/\//g, '\\/'), 'i')
-            }
-
-            return attrs
-          }, {})
-
-        return {
-          value,
-          regex,
-          confidence: parseInt(confidence || 100, 10),
-          version: version || '',
-        }
-      })
+      ).map((pattern) => Wappalyzer.parsePattern(pattern))
 
       return parsed
     }, {})
 
     return 'main' in parsed ? parsed.main : parsed
+  },
+
+  /**
+   * Extract information from regex pattern.
+   * @param {string|object} pattern
+   */
+  parsePattern(pattern) {
+    if (typeof pattern === 'object') {
+      return Object.keys(pattern).reduce(
+        (parsed, key) => ({
+          ...parsed,
+          [key]: Wappalyzer.parsePattern(pattern[key]),
+        }),
+        {}
+      )
+    } else {
+      const { value, regex, confidence, version } = pattern
+        .split('\\;')
+        .reduce((attrs, attr, i) => {
+          if (i) {
+            // Key value pairs
+            attr = attr.split(':')
+
+            if (attr.length > 1) {
+              attrs[attr.shift()] = attr.join(':')
+            }
+          } else {
+            attrs.value = attr
+
+            // Escape slashes in regular expression
+            attrs.regex = new RegExp(attr.replace(/\//g, '\\/'), 'i')
+          }
+
+          return attrs
+        }, {})
+
+      return {
+        value,
+        regex,
+        confidence: parseInt(confidence || 100, 10),
+        version: version || '',
+      }
+    }
   },
 
   /**
@@ -400,12 +418,19 @@ const Wappalyzer = {
    * @param {String} type
    * @param {Array} items
    */
-  analyzeManyToMany(technology, type, items = {}) {
+  analyzeManyToMany(technology, types, items = {}) {
+    const [type, ...subtypes] = types.split('.')
+
     return Object.keys(technology[type]).reduce((technologies, key) => {
       const patterns = technology[type][key] || []
       const values = items[key] || []
 
-      patterns.forEach((pattern) => {
+      patterns.forEach((_pattern) => {
+        const pattern = (subtypes || []).reduce(
+          (pattern, subtype) => pattern[subtype],
+          _pattern
+        )
+
         values.forEach((value) => {
           if (pattern.regex.test(value)) {
             technologies.push({

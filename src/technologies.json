@@ -1682,7 +1682,7 @@
       "cats": [
         19
       ],
-      "description": "Auth0 headless browser sdk",
+      "description": "Auth0 provides authentication and authorization as a service.",
       "icon": "Auth0.png",
       "scripts": [
         "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
@@ -1977,7 +1977,7 @@
     "Blackbaud Luminate Online": {
       "cats": [
         41,
-        51
+        32
       ],
       "icon": "Blackbaud-Luminate-Online.png",
       "js": {
@@ -1985,6 +1985,7 @@
       },
       "url": "/site/Donation2?.*df_id=",
       "scripts": "js/convio/modules\\.js",
+      "description": "Blackbaud Luminate Online provides online fundraising and marketing automation for nonprofits.",
       "website": "https://www.blackbaud.com/products/blackbaud-luminate-online"
     },
     "Blade": {
@@ -2758,6 +2759,7 @@
       "js": {
         "Classy": ""
       },
+      "description": "Classy is a class library for JavaScript applications.",
       "website": "https://www.classy.org/"
     },
     "Clarity": {
@@ -2784,6 +2786,7 @@
       "scripts": [
         "reveal\\.clearbit\\.com/v[(0-9)]/"
       ],
+      "description": "Clearbit Reveal identifies anonymous visitors to websites.",
       "website": "https://clearbit.com/reveal"
     },
     "ClickFunnels": {
@@ -4601,6 +4604,7 @@
       ],
       "icon": "feedback-fish.svg",
       "scripts": "^https://feedback\\.fish/ff\\.js",
+      "description": "Feedback Fish is a widget for collecting website feedback from users.",
       "website": "https://feedback.fish"
     },
     "Fedora": {
@@ -4878,6 +4882,18 @@
       "icon": "Freespee.svg",
       "scripts": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",
       "website": "https://www.freespee.com"
+    },
+    "Crisp Live Chat": {
+      "cats": [
+        52
+      ],
+      "description": "Crisp Live Chat is a live chat solution with free and paid options.",
+      "icon": "Crisp Live Chat.svg",
+      "js": {
+        "$crisp": "",
+        "CRISP_WEBSITE_ID": ""
+      },
+      "website": "https://crisp.chat/"
     },
     "Freshchat": {
       "cats": [
@@ -10706,7 +10722,7 @@
       "cats": [
         12
       ],
-      "description": "Predictable state container for JavaScript apps",
+      "description": "Redux is a predictable state container for JavaScript applications.",
       "icon": "Redux.png",
       "scripts": [
         "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
@@ -10717,6 +10733,13 @@
       "cats": [
         12
       ],
+      "dom": {
+        "#root": {
+          "properties": {
+            "_reactRootContainer": ""
+          }
+        }
+      },
       "cpe": "cpe:/a:facebook:react",
       "description": "React is an open-source JavaScript library for building user interfaces or UI components.",
       "html": "<[^>]+data-react",
@@ -10751,7 +10774,7 @@
       "cats": [
         12
       ],
-      "description": "Declarative routing for React",
+      "description": "React Router provides declarative routing for React.",
       "icon": "React Router.png",
       "implies": "React",
       "scripts": [
