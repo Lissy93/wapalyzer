@@ -2109,6 +2109,22 @@
       "scripts": "//[^./]+\\.cnzz\\.com/(?:z_stat.php|core)\\?",
       "website": "https://web.umeng.com/"
     },
+    "Commerce.js": {
+      "cats": [
+        6
+      ],
+      "icon": "commercejs.png",
+      "scripts": [
+        "^https?:/cdn\\.chec\\.io\/v2\/commerce\\.js/",
+        "chec/commerce.jscommerce\\.js"
+      ],
+      "url": "^https?//.+\\.spaces.chec\\.io",
+      "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
+      "website": "https://www.commercejs.com",
+      "headers": {
+        "X-Powered-By": "Commerce.js"
+      }
+    },
     "CPG Dragonfly": {
       "cats": [
         1
