@@ -5557,7 +5557,7 @@
       "icon": "Google Maps.png",
       "scripts": [
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
-        "//maps\\.googleapis\\.com/maps/api/js"
+        "//maps\\.google(?:apis)?\\.com/maps/api/js"
       ],
       "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
       "website": "http://maps.google.com"
