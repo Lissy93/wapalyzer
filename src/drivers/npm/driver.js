@@ -9,6 +9,7 @@ const {
   setTechnologies,
   setCategories,
   analyze,
+  analyzeOneToMany,
   analyzeManyToMany,
   resolve,
 } = Wappalyzer
@@ -64,6 +65,35 @@ function analyzeJs(js) {
         { [chain]: [value] }
       )
     )
+  )
+}
+
+function analyzeDom(dom) {
+  return Array.prototype.concat.apply(
+    [],
+    dom.map(({ name, selector, text, property, attribute, value }) => {
+      const technology = Wappalyzer.technologies.find(
+        ({ name: _name }) => name === _name
+      )
+
+      if (text) {
+        return analyzeManyToMany(technology, 'dom.text', { [selector]: [text] })
+      }
+
+      if (property) {
+        return analyzeManyToMany(technology, `dom.properties.${property}`, {
+          [selector]: [value],
+        })
+      }
+
+      if (attribute) {
+        return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
+          [selector]: [value],
+        })
+      }
+
+      return []
+    })
   )
 }
 
@@ -173,7 +203,11 @@ class Driver {
 
 class Site {
   constructor(url, headers = {}, driver) {
-    ;({ options: this.options, browser: this.browser } = driver)
+    ;({
+      options: this.options,
+      browser: this.browser,
+      init: this.initDriver,
+    } = driver)
 
     this.options.headers = {
       ...this.options.headers,
@@ -225,12 +259,26 @@ class Site {
     }
   }
 
-  timeout() {
-    return new Promise((resolve, reject) =>
-      setTimeout(() => {
-        reject(new Error('The website took too long to respond'))
-      }, this.options.maxWait)
-    )
+  promiseTimeout(
+    promise,
+    errorMessage = 'The website took too long to respond'
+  ) {
+    let timeout = null
+
+    return Promise.race([
+      new Promise((resolve, reject) => {
+        timeout = setTimeout(() => {
+          clearTimeout(timeout)
+
+          reject(new Error(errorMessage))
+        }, this.options.maxWait)
+      }),
+      promise.then((value) => {
+        clearTimeout(timeout)
+
+        return value
+      }),
+    ])
   }
 
   async goto(url) {
@@ -249,7 +297,11 @@ class Site {
     }
 
     if (!this.browser) {
-      throw new Error('Browser closed')
+      await this.initDriver()
+
+      if (!this.browser) {
+        throw new Error('Browser closed')
+      }
     }
 
     const page = await this.browser.newPage()
@@ -337,99 +389,101 @@ class Site {
     )
 
     try {
-      await Promise.race([
-        this.timeout(),
-        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
-      ])
+      await this.promiseTimeout(
+        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+      )
 
       await sleep(1000)
 
       // Links
-      const links = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle(() =>
-            Array.from(document.getElementsByTagName('a')).map(
-              ({ hash, hostname, href, pathname, protocol, rel }) => ({
-                hash,
-                hostname,
-                href,
-                pathname,
-                protocol,
-                rel,
-              })
+      const links = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.getElementsByTagName('a')).map(
+                ({ hash, hostname, href, pathname, protocol, rel }) => ({
+                  hash,
+                  hostname,
+                  href,
+                  pathname,
+                  protocol,
+                  rel,
+                })
+              )
             )
-          ),
-        ])
-      ).jsonValue()
+          )
+        ).jsonValue()
+      )
 
       // CSS
-      const css = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle((maxRows) => {
-            const css = []
+      const css = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle((maxRows) => {
+              const css = []
 
-            try {
-              if (!document.styleSheets.length) {
+              try {
+                if (!document.styleSheets.length) {
+                  return ''
+                }
+
+                for (const sheet of Array.from(document.styleSheets)) {
+                  for (const rules of Array.from(sheet.cssRules)) {
+                    css.push(rules.cssText)
+
+                    if (css.length >= maxRows) {
+                      break
+                    }
+                  }
+                }
+              } catch (error) {
                 return ''
               }
 
-              for (const sheet of Array.from(document.styleSheets)) {
-                for (const rules of Array.from(sheet.cssRules)) {
-                  css.push(rules.cssText)
-
-                  if (css.length >= maxRows) {
-                    break
-                  }
-                }
-              }
-            } catch (error) {
-              return ''
-            }
-
-            return css.join('\n')
-          }, this.options.htmlMaxRows),
-        ])
-      ).jsonValue()
+              return css.join('\n')
+            }, this.options.htmlMaxRows)
+          )
+        ).jsonValue()
+      )
 
       // Script tags
-      const scripts = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle(() =>
-            Array.from(document.getElementsByTagName('script'))
-              .map(({ src }) => src)
-              .filter((src) => src)
-          ),
-        ])
-      ).jsonValue()
+      const scripts = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.getElementsByTagName('script'))
+                .map(({ src }) => src)
+                .filter((src) => src)
+            )
+          )
+        ).jsonValue()
+      )
 
       // Meta tags
-      const meta = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle(() =>
-            Array.from(document.querySelectorAll('meta')).reduce(
-              (metas, meta) => {
-                const key =
-                  meta.getAttribute('name') || meta.getAttribute('property')
+      const meta = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.querySelectorAll('meta')).reduce(
+                (metas, meta) => {
+                  const key =
+                    meta.getAttribute('name') || meta.getAttribute('property')
 
-                if (key) {
-                  metas[key.toLowerCase()] = [meta.getAttribute('content')]
-                }
+                  if (key) {
+                    metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                  }
 
-                return metas
-              },
-              {}
+                  return metas
+                },
+                {}
+              )
             )
-          ),
-        ])
-      ).jsonValue()
+          )
+        ).jsonValue()
+      )
 
       // JavaScript
-      const js = await Promise.race([
-        this.timeout(),
+      const js = await this.promiseTimeout(
         page.evaluate(
           (technologies) => {
             return technologies.reduce((technologies, { name, chains }) => {
@@ -461,8 +515,81 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        ),
-      ])
+        )
+      )
+
+      // DOM
+      const dom = await this.promiseTimeout(
+        page.evaluate(
+          (technologies) => {
+            return technologies.reduce((technologies, { name, dom }) => {
+              const toScalar = (value) =>
+                typeof value === 'string' || typeof value === 'number'
+                  ? value
+                  : !!value
+
+              Object.keys(dom).forEach((selector) => {
+                const el = document.querySelector(selector)
+
+                if (!el) {
+                  return
+                }
+
+                dom[selector].forEach(({ text, properties, attributes }) => {
+                  if (text) {
+                    const value = el.textContent.trim()
+
+                    if (value) {
+                      technologies.push({
+                        name,
+                        selector,
+                        text: value,
+                      })
+                    }
+                  }
+
+                  if (properties) {
+                    Object.keys(properties).forEach((property) => {
+                      if (Object.prototype.hasOwnProperty.call(el, property)) {
+                        const value = el[property]
+
+                        if (typeof value !== 'undefined') {
+                          technologies.push({
+                            name,
+                            selector,
+                            property,
+                            value: toScalar(value),
+                          })
+                        }
+                      }
+                    })
+                  }
+
+                  if (attributes) {
+                    Object.keys(attributes).forEach((attribute) => {
+                      if (el.hasAttribute(attribute)) {
+                        const value = el.getAttribute(attribute)
+
+                        technologies.push({
+                          name,
+                          selector,
+                          attribute,
+                          value: toScalar(value),
+                        })
+                      }
+                    })
+                  }
+                })
+              })
+
+              return technologies
+            }, [])
+          },
+          Wappalyzer.technologies
+            .filter(({ dom }) => dom)
+            .map(({ name, dom }) => ({ name, dom }))
+        )
+      )
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
@@ -506,6 +633,7 @@ class Site {
         throw new Error('No response from server')
       }
 
+      this.onDetect(analyzeDom(dom))
       this.onDetect(analyzeJs(js))
 
       this.onDetect(
@@ -559,7 +687,11 @@ class Site {
 
       return reducedLinks
     } catch (error) {
-      this.error(error)
+      if (error.constructor.name === 'TimeoutError') {
+        throw new Error('The website took too long to respond')
+      }
+
+      throw new Error(error.message)
     }
   }
 

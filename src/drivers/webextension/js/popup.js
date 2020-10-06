@@ -96,7 +96,7 @@ const Popup = {
           '.alerts__link'
         ).href = `https://www.wappalyzer.com/alerts/?url=${encodeURIComponent(
           `${url}`
-        )}`
+        )}&utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
 
         const { hostname } = new URL(url)
 
@@ -210,7 +210,7 @@ const Popup = {
 
       const link = categoryNode.querySelector('.category__link')
 
-      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/`
+      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
       link.dataset.i18n = `categoryName${id}`
 
       const pins = categoryNode.querySelectorAll('.category__pin')
@@ -247,9 +247,10 @@ const Popup = {
           image.src = `../images/icons/${icon}`
 
           const link = technologyNode.querySelector('.technology__link')
+          const linkText = technologyNode.querySelector('.technology__name')
 
-          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/`
-          link.textContent = name
+          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
+          linkText.textContent = name
 
           const confidenceNode = technologyNode.querySelector(
             '.technology__confidence'
