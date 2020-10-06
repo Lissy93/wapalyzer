@@ -1794,6 +1794,22 @@
       "scripts": "/awesomplete\\.js(?:$|\\?)",
       "website": "https://leaverou.github.io/awesomplete/"
     },
+    "Commerce.js": {
+      "cats": [
+        6
+      ],
+      "icon": "commercejs.png",
+      "scripts": [
+        "^https?:/cdn\\.chec\\.io\/v2\/commerce\\.js/",
+        "chec/commerce.jscommerce\\.js"
+      ],
+      "url": "^https?//.+\\.spaces.chec\\.io",
+      "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
+      "website": "https://www.commercejs.com",
+      "headers": {
+        "X-Powered-By": "Commerce.js"
+      }
+    },
     "Axios": {
       "cats": [
         19
@@ -4305,6 +4321,17 @@
       },
       "website": "http://emberjs.com"
     },
+    "Engagio": {
+      "cats": [
+        10
+      ],
+      "icon": "Engagio.png",
+      "scripts": [
+        "web-analytics\\.engagio\\.com/js/ei\\.js",
+        "web-analytics\\.engagio\\.com/api/"
+      ],
+      "website": "https://www.engagio.com/"
+    },
     "Ensighten": {
       "cats": [
         42
@@ -5607,7 +5634,7 @@
       "icon": "Google Maps.png",
       "scripts": [
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
-        "//maps\\.googleapis\\.com/maps/api/js"
+        "//maps\\.google(?:apis)?\\.com/maps/api/js"
       ],
       "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
       "website": "http://maps.google.com"
@@ -5687,7 +5714,8 @@
         "googletag": ""
       },
       "scripts": [
-        "googletagmanager\\.com/gtm\\.js"
+        "googletagmanager\\.com/gtm\\.js",
+        "googletagmanager\\.com/gtag/js"
       ],
       "website": "http://www.google.com/tagmanager"
     },
@@ -16379,6 +16407,16 @@
       "scripts": "sifr\\.js",
       "website": "https://www.mikeindustries.com/blog/sifr"
     },
+    "Sift": {
+      "cats": [
+        10
+      ],
+      "icon": "Sift.png",
+      "scripts": [
+        "cdn\\.sift(?:science)?\\.com/s\\.js"
+      ],
+      "website": "https://sift.com/"
+    },
     "sNews": {
       "cats": [
         1
@@ -16467,7 +16505,8 @@
       ],
       "description": "Tailwind is a utility-first CSS framework.",
       "html": [
-        "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css"
+        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/][a-z]+/tailwind(?:.min)?.css",
+        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/]([0-9.]+)(?:/[a-z]+)?/[tailwind|base|components|utilities](?:.min)?.css\\;version:\\1"
       ],
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
