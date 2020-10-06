@@ -199,7 +199,7 @@
     },
     "52": {
       "name": "Live chat",
-      "priority": 8
+      "priority": 9
     },
     "53": {
       "name": "CRM",
@@ -271,11 +271,19 @@
     },
     "70": {
       "name": "SSL/TLS certificate authorities",
-      "priority": 6
+      "priority": 9
     },
     "71": {
       "name": "Affiliate programs",
-      "priority": 6
+      "priority": 9
+    },
+    "72": {
+      "name": "Appointment scheduling",
+      "priority": 9
+    },
+    "73": {
+      "name": "Surveys",
+      "priority": 9
     }
   },
   "technologies": {
@@ -295,6 +303,28 @@
       "scripts": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
     },
+    "Calendly": {
+      "cats": [
+        72,
+        61
+      ],
+      "js": { "Calendly": "" },
+      "script": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
+      "icon": "Calendly.svg",
+      "description": "Calendly is an app for scheduling appointments, meetings, and events.",
+      "website": "https://calendly.com/"
+    },
+    "Chili Piper": {
+      "cats": [
+        72,
+        61
+      ],
+      "js": { "ChiliPiper": "" },
+      "script": "js\\.chilipiper\\.com/marketing\\.js",
+      "icon": "Chili Piper.svg",
+      "description": "Chili Piper is a suite of automated scheduling tools that help revenue teams convert leads.",
+      "website": "https://www.chilipiper.com/"
+    },
     "Rewardful": {
       "cats": [
         71,
@@ -307,6 +337,26 @@
       "icon": "Rewardful.svg",
       "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
       "website": "https://www.getrewardful.com/"
+    },
+    "Amazon Associates Program": {
+      "cats": [
+        71
+      ],
+      "dom": {
+        "a[href*='amzn.to']": {
+          "attributes": {
+            "href": "^https?://amzn.to"
+          }
+        },
+        "a[href*='amazon.com']": {
+          "attributes": {
+            "href": "^https?://amazon.com.+&tag="
+          }
+        }
+      },
+      "icon": "Amazon.svg",
+      "description": "The Amazon Associates Program helps content creators, publishers and bloggers monetize their traffic.",
+      "website": "https://affiliate-program.amazon.com.au/"
     },
     "3dCart": {
       "cats": [
@@ -10734,7 +10784,7 @@
         12
       ],
       "dom": {
-        "#root": {
+        "body > div": {
           "properties": {
             "_reactRootContainer": ""
           }

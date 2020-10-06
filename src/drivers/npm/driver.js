@@ -9,7 +9,6 @@ const {
   setTechnologies,
   setCategories,
   analyze,
-  analyzeOneToMany,
   analyzeManyToMany,
   resolve,
 } = Wappalyzer
@@ -395,6 +394,8 @@ class Site {
 
       await sleep(1000)
 
+      // page.on('console', (message) => this.log(message.text()))
+
       // Links
       const links = await this.promiseTimeout(
         (
@@ -529,56 +530,60 @@ class Site {
                   : !!value
 
               Object.keys(dom).forEach((selector) => {
-                const el = document.querySelector(selector)
+                const nodes = document.querySelectorAll(selector)
 
-                if (!el) {
+                if (!nodes.length) {
                   return
                 }
 
                 dom[selector].forEach(({ text, properties, attributes }) => {
-                  if (text) {
-                    const value = el.textContent.trim()
+                  nodes.forEach((node) => {
+                    if (text) {
+                      const value = node.textContent.trim()
 
-                    if (value) {
-                      technologies.push({
-                        name,
-                        selector,
-                        text: value,
-                      })
-                    }
-                  }
-
-                  if (properties) {
-                    Object.keys(properties).forEach((property) => {
-                      if (Object.prototype.hasOwnProperty.call(el, property)) {
-                        const value = el[property]
-
-                        if (typeof value !== 'undefined') {
-                          technologies.push({
-                            name,
-                            selector,
-                            property,
-                            value: toScalar(value),
-                          })
-                        }
-                      }
-                    })
-                  }
-
-                  if (attributes) {
-                    Object.keys(attributes).forEach((attribute) => {
-                      if (el.hasAttribute(attribute)) {
-                        const value = el.getAttribute(attribute)
-
+                      if (value) {
                         technologies.push({
                           name,
                           selector,
-                          attribute,
-                          value: toScalar(value),
+                          text: value,
                         })
                       }
-                    })
-                  }
+                    }
+
+                    if (properties) {
+                      Object.keys(properties).forEach((property) => {
+                        if (
+                          Object.prototype.hasOwnProperty.call(node, property)
+                        ) {
+                          const value = node[property]
+
+                          if (typeof value !== 'undefined') {
+                            technologies.push({
+                              name,
+                              selector,
+                              property,
+                              value: toScalar(value),
+                            })
+                          }
+                        }
+                      })
+                    }
+
+                    if (attributes) {
+                      Object.keys(attributes).forEach((attribute) => {
+                        if (node.hasAttribute(attribute)) {
+                          const value = node.getAttribute(attribute)
+
+                          technologies.push({
+                            name,
+                            selector,
+                            attribute,
+                            value: toScalar(value),
+                          })
+                        }
+                      })
+                    }
+                  })
                 })
               })
 

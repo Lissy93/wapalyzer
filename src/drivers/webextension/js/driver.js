@@ -151,8 +151,8 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  async analyzeJs(url, js) {
-    await Driver.onDetect(
+  analyzeJs(url, js) {
+    return Driver.onDetect(
       url,
       Array.prototype.concat.apply(
         [],
@@ -163,6 +163,49 @@ const Driver = {
             { [chain]: [value] }
           )
         )
+      )
+    )
+  },
+
+  /**
+   * Analyse DOM nodes
+   * @param {String} url
+   * @param {Array} dom
+   */
+  analyzeDom(url, dom) {
+    return Driver.onDetect(
+      url,
+      Array.prototype.concat.apply(
+        [],
+        dom.map(({ name, selector, text, property, attribute, value }) => {
+          const technology = Wappalyzer.technologies.find(
+            ({ name: _name }) => name === _name
+          )
+
+          if (text) {
+            return analyzeManyToMany(technology, 'dom.text', {
+              [selector]: [text],
+            })
+          }
+
+          if (property) {
+            return analyzeManyToMany(technology, `dom.properties.${property}`, {
+              [selector]: [value],
+            })
+          }
+
+          if (attribute) {
+            return analyzeManyToMany(
+              technology,
+              `dom.attributes.${attribute}`,
+              {
+                [selector]: [value],
+              }
+            )
+          }
+
+          return []
+        })
       )
     )
   },
