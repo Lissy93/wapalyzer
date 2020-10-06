@@ -303,61 +303,6 @@
       "scripts": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
     },
-    "Calendly": {
-      "cats": [
-        72,
-        61
-      ],
-      "js": { "Calendly": "" },
-      "script": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
-      "icon": "Calendly.svg",
-      "description": "Calendly is an app for scheduling appointments, meetings, and events.",
-      "website": "https://calendly.com/"
-    },
-    "Chili Piper": {
-      "cats": [
-        72,
-        61
-      ],
-      "js": { "ChiliPiper": "" },
-      "script": "js\\.chilipiper\\.com/marketing\\.js",
-      "icon": "Chili Piper.svg",
-      "description": "Chili Piper is a suite of automated scheduling tools that help revenue teams convert leads.",
-      "website": "https://www.chilipiper.com/"
-    },
-    "Rewardful": {
-      "cats": [
-        71,
-        61
-      ],
-      "js": {
-        "Rewardful": ""
-      },
-      "scripts": "r\\.wdfl\\.co",
-      "icon": "Rewardful.svg",
-      "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
-      "website": "https://www.getrewardful.com/"
-    },
-    "Amazon Associates Program": {
-      "cats": [
-        71
-      ],
-      "dom": {
-        "a[href*='amzn.to']": {
-          "attributes": {
-            "href": "^https?://amzn.to"
-          }
-        },
-        "a[href*='amazon.com']": {
-          "attributes": {
-            "href": "^https?://amazon.com.+&tag="
-          }
-        }
-      },
-      "icon": "Amazon.svg",
-      "description": "The Amazon Associates Program helps content creators, publishers and bloggers monetize their traffic.",
-      "website": "https://affiliate-program.amazon.com.au/"
-    },
     "3dCart": {
       "cats": [
         1,
@@ -490,9 +435,9 @@
         70
       ],
       "certIssuer": "Amazon",
+      "description": "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.",
       "icon": "aws.svg",
       "implies": "Amazon Web Services",
-      "description": "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.",
       "website": "https://aws.amazon.com/certificate-manager/"
     },
     "AWStats": {
@@ -988,6 +933,7 @@
         55,
         61
       ],
+      "description": "Akaunting is a free and online accounting software.",
       "headers": {
         "X-Akaunting": "^Free Accounting Software$"
       },
@@ -997,7 +943,6 @@
       ],
       "icon": "akaunting.svg",
       "implies": "Laravel",
-      "description": "Akaunting is a free and online accounting software.",
       "website": "https://akaunting.com"
     },
     "Akka HTTP": {
@@ -1099,17 +1044,37 @@
       "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
+    "Amazon Associates": {
+      "cats": [
+        71
+      ],
+      "description": "The Amazon Associates Program helps content creators, publishers and bloggers monetize their traffic.",
+      "dom": {
+        "a[href*='amazon.com']": {
+          "attributes": {
+            "href": "^https?://amazon.com.+&tag="
+          }
+        },
+        "a[href*='amzn.to']": {
+          "attributes": {
+            "href": "^https?://amzn.to"
+          }
+        }
+      },
+      "icon": "Amazon.svg",
+      "website": "https://affiliate-program.amazon.com.au/"
+    },
     "Amazon Cloudfront": {
       "cats": [
         31
       ],
+      "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds.",
       "headers": {
         "Via": "\\(CloudFront\\)$",
         "X-Amz-Cf-Id": ""
       },
       "icon": "Amazon-Cloudfront.svg",
       "implies": "Amazon Web Services",
-      "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds.",
       "website": "http://aws.amazon.com/cloudfront/"
     },
     "Amazon EC2": {
@@ -1289,13 +1254,13 @@
       "cats": [
         66
       ],
+      "description": "Angular Material is a UI component library for Angular JS developers. Angular Material components assist in constructing attractive, consistent, and functional web pages and web applications.",
       "icon": "AngularJS.svg",
       "implies": "AngularJS",
       "js": {
         "ngMaterial": ""
       },
       "scripts": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
-      "description": "Angular Material is a UI component library for Angular JS developers. Angular Material components assist in constructing attractive, consistent, and functional web pages and web applications.",
       "website": "https://material.angularjs.org"
     },
     "AngularDart": {
@@ -1369,12 +1334,12 @@
         8
       ],
       "cpe": "cpe:/a:apache:jspwiki",
+      "description": "Apache JSPWiki is an open-source Wiki engine, built around standard JEE components (Java, servlets, JSP).",
       "html": "<html[^>]* xmlns:jspwiki=",
       "icon": "Apache JSPWiki.png",
       "implies": "Apache Tomcat",
       "scripts": "jspwiki",
       "url": "wiki\\.jsp",
-      "description": "Apache JSPWiki is an open-source Wiki engine, built around standard JEE components (Java, servlets, JSP).",
       "website": "http://jspwiki.org"
     },
     "Apache Tomcat": {
@@ -1574,6 +1539,7 @@
       "cats": [
         31
       ],
+      "description": "ArvanCloud is a Cloud Services Provider, offering a wide range of incorporated cloud services including CDN, DDoS mitigation, Cloud Managed DNS, Cloud Security, VoD/AoD Streaming, Live Streaming, Cloud Compute, Cloud Object Storage, and PaaS.",
       "headers": {
         "AR-PoweredBy": "Arvan Cloud \\(arvancloud\\.com\\)"
       },
@@ -1581,7 +1547,6 @@
       "js": {
         "ArvanCloud": ""
       },
-      "description": "ArvanCloud is a Cloud Services Provider, offering a wide range of incorporated cloud services including CDN, DDoS mitigation, Cloud Managed DNS, Cloud Security, VoD/AoD Streaming, Live Streaming, Cloud Compute, Cloud Object Storage, and PaaS.",
       "website": "http://www.ArvanCloud.com"
     },
     "AsciiDoc": {
@@ -1604,13 +1569,13 @@
       "cats": [
         14
       ],
+      "description": "Asciinema is a free and open-source solution for recording terminal sessions and sharing them on the web.",
       "html": "<asciinema-player",
       "icon": "asciinema.png",
       "js": {
         "asciinema": ""
       },
       "scripts": "asciinema\\.org/",
-      "description": "Asciinema is a free and open-source solution for recording terminal sessions and sharing them on the web.",
       "website": "https://asciinema.org/"
     },
     "Atlassian Bitbucket": {
@@ -1618,6 +1583,7 @@
         47
       ],
       "cpe": "cpe:/a:atlassian:bitbucket",
+      "description": "Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.",
       "html": "<li>Atlassian Bitbucket <span title=\"[a-z0-9]+\" id=\"product-version\" data-commitid=\"[a-z0-9]+\" data-system-build-number=\"[a-z0-9]+\"> v([\\d.]+)<\\;version:\\1",
       "icon": "Atlassian Bitbucket.svg",
       "implies": "Python",
@@ -1627,7 +1593,6 @@
       "meta": {
         "application-name": "Bitbucket"
       },
-      "description": "Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.",
       "website": "http://www.atlassian.com/software/bitbucket/overview/"
     },
     "Atlassian Confluence": {
@@ -1635,6 +1600,7 @@
         8
       ],
       "cpe": "cpe:/a:atlassian:confluence",
+      "description": "Atlassian Confluence is a web-based collaboration wiki tool.",
       "headers": {
         "X-Confluence-Request-Time": ""
       },
@@ -1644,7 +1610,6 @@
       "meta": {
         "confluence-request-time": ""
       },
-      "description": "Atlassian Confluence is a web-based collaboration wiki tool.",
       "website": "http://www.atlassian.com/software/confluence/overview/team-collaboration-software"
     },
     "Atlassian FishEye": {
@@ -1681,12 +1646,12 @@
         13,
         47
       ],
+      "description": "Atlassian Jira Issue Collector is a tool used to download a list of websites using with email addresses, phone numbers and LinkedIn profiles.",
       "icon": "Atlassian Jira.svg",
       "scripts": [
         "jira-issue-collector-plugin",
         "atlassian\\.jira\\.collector\\.plugin"
       ],
-      "description": "Atlassian Jira Issue Collector is a tool used to download a list of websites using with email addresses, phone numbers and LinkedIn profiles.",
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
     "Atlassian Statuspage": {
@@ -1694,13 +1659,13 @@
         13,
         62
       ],
+      "description": "Statuspage is a status and incident communication tool.",
       "headers": {
         "X-StatusPage-Skip-Logging": "",
         "X-StatusPage-Version": ""
       },
       "html": "<a[^>]*href=\"https?://(?:www\\.)?statuspage\\.io/powered-by[^>]+>",
       "icon": "Atlassian Statuspage.svg",
-      "description": "Statuspage is a status and incident communication tool.",
       "website": "https://www.statuspage.io/"
     },
     "AudioEye": {
@@ -1794,30 +1759,14 @@
       "scripts": "/awesomplete\\.js(?:$|\\?)",
       "website": "https://leaverou.github.io/awesomplete/"
     },
-    "Commerce.js": {
-      "cats": [
-        6
-      ],
-      "icon": "commercejs.png",
-      "scripts": [
-        "^https?:/cdn\\.chec\\.io\/v2\/commerce\\.js/",
-        "chec/commerce.jscommerce\\.js"
-      ],
-      "url": "^https?//.+\\.spaces.chec\\.io",
-      "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
-      "website": "https://www.commercejs.com",
-      "headers": {
-        "X-Powered-By": "Commerce.js"
-      }
-    },
     "Axios": {
       "cats": [
         19
       ],
+      "description": "Promise based HTTP client for the browser and node.js",
       "scripts": [
         "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
       ],
-      "description": "Promise based HTTP client for the browser and node.js",
       "website": "https://github.com/axios/axios"
     },
     "Azure": {
@@ -1842,12 +1791,12 @@
       "cats": [
         31
       ],
+      "description": "Azure Content Delivery Network (CDN) reduces load times, save bandwidth and speed responsiveness.",
       "headers": {
         "X-EC-Debug": "",
         "server": "^(?:ECAcc|ECS|ECD)"
       },
       "icon": "azure.svg",
-      "description": "Azure Content Delivery Network (CDN) reduces load times, save bandwidth and speed responsiveness.",
       "website": "https://azure.microsoft.com/en-us/services/cdn/"
     },
     "BEM": {
@@ -1900,11 +1849,11 @@
         3,
         9
       ],
+      "description": "Bablic is a localisation solution to translate your website.",
       "icon": "bablic.png",
       "js": {
         "bablic": ""
       },
-      "description": "Bablic is a localisation solution to translate your website.",
       "website": "https://www.bablic.com/"
     },
     "Backbone.js": {
@@ -2045,13 +1994,13 @@
         41,
         32
       ],
+      "description": "Blackbaud Luminate Online provides online fundraising and marketing automation for nonprofits.",
       "icon": "Blackbaud-Luminate-Online.png",
       "js": {
         "don_premium_map": ""
       },
-      "url": "/site/Donation2?.*df_id=",
       "scripts": "js/convio/modules\\.js",
-      "description": "Blackbaud Luminate Online provides online fundraising and marketing automation for nonprofits.",
+      "url": "/site/Donation2?.*df_id=",
       "website": "https://www.blackbaud.com/products/blackbaud-luminate-online"
     },
     "Blade": {
@@ -2083,12 +2032,12 @@
       "cats": [
         7
       ],
+      "description": "Blessing Skin is a plubin that brings your custom skins back in offline Minecraft servers.",
       "icon": "Blessing Skin.png",
       "implies": "Laravel",
       "js": {
         "blessing.version": "^(.+)$\\;version:\\1"
       },
-      "description": "Blessing Skin is a plubin that brings your custom skins back in offline Minecraft servers.",
       "website": "https://github.com/bs-community/blessing-skin-server"
     },
     "Blesta": {
@@ -2105,22 +2054,22 @@
       "cats": [
         14
       ],
+      "description": "Blip.tv is a media platform for web series content and also a dashboard for producers of original web series to distribute and monetise their productions.",
       "html": "<(?:param|embed|iframe)[^>]+blip\\.tv/play",
       "icon": "Blip.tv.png",
-      "description": "Blip.tv is a media platform for web series content and also a dashboard for producers of original web series to distribute and monetise their productions.",
       "website": "http://blip.tv"
     },
     "Blogger": {
       "cats": [
         11
       ],
+      "description": "Blogger is a blog-publishing service that allows multi-user blogs with time-stamped entries.",
       "icon": "Blogger.png",
       "implies": "Python",
       "meta": {
         "generator": "^Blogger$"
       },
       "url": "^https?://[^/]+\\.(?:blogspot|blogger)\\.com",
-      "description": "Blogger is a blog-publishing service that allows multi-user blogs with time-stamped entries.",
       "website": "http://www.blogger.com"
     },
     "Bloomreach": {
@@ -2226,6 +2175,7 @@
         66
       ],
       "cpe": "cpe:/a:getbootstrap:bootstrap",
+      "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
       "html": [
         "<style>\\s+/\\*!\\s+\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
         "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1"
@@ -2241,7 +2191,6 @@
       "scripts": [
         "bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1"
       ],
-      "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
       "website": "https://getbootstrap.com"
     },
     "Bootstrap Table": {
@@ -2431,11 +2380,11 @@
       "cats": [
         31
       ],
+      "description": "CDN77 is a content delivery network (CDN).",
       "headers": {
         "Server": "^CDN77-Turbo$"
       },
       "icon": "CDN77.png",
-      "description": "CDN77 is a content delivery network (CDN).",
       "website": "https://www.cdn77.com"
     },
     "CFML": {
@@ -2460,13 +2409,13 @@
         24
       ],
       "cpe": "cpe:/a:ckeditor:ckeditor",
+      "description": "CKEditor is a WYSIWYG rich text editor which enables writing content directly inside of web pages or online applications. Its core code is written in JavaScript and it is developed by CKSource. CKEditor is available under open-source and commercial licenses.",
       "icon": "CKEditor.png",
       "js": {
         "CKEDITOR": "",
         "CKEDITOR.version": "^(.+)$\\;version:\\1",
         "CKEDITOR_BASEPATH": ""
       },
-      "description": "CKEditor is a WYSIWYG rich text editor which enables writing content directly inside of web pages or online applications. Its core code is written in JavaScript and it is developed by CKSource. CKEditor is available under open-source and commercial licenses.",
       "website": "http://ckeditor.com"
     },
     "CMS Made Simple": {
@@ -2539,13 +2488,13 @@
       "cats": [
         31
       ],
+      "description": "CacheFly is a content delivery network (CDN) which offers CDN service that relies solely on IP anycast for routing, rather than DNS based global load balancing.",
       "headers": {
         "Server": "^CFS ",
         "X-CF1": "",
         "X-CF2": ""
       },
       "icon": "CacheFly.png",
-      "description": "CacheFly is a content delivery network (CDN) which offers CDN service that relies solely on IP anycast for routing, rather than DNS based global load balancing.",
       "website": "http://www.cachefly.com"
     },
     "Caddy": {
@@ -2585,6 +2534,19 @@
         "application-name": "CakePHP"
       },
       "website": "http://cakephp.org"
+    },
+    "Calendly": {
+      "cats": [
+        72,
+        61
+      ],
+      "description": "Calendly is an app for scheduling appointments, meetings, and events.",
+      "icon": "Calendly.svg",
+      "js": {
+        "Calendly": ""
+      },
+      "scripts": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
+      "website": "https://calendly.com/"
     },
     "Captch Me": {
       "cats": [
@@ -2671,12 +2633,12 @@
         28
       ],
       "cpe": "cpe:/o:centos:centos",
+      "description": "CentOS is a Linux distribution that provides a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL).",
       "headers": {
         "Server": "CentOS",
         "X-Powered-By": "CentOS"
       },
       "icon": "CentOS.png",
-      "description": "CentOS is a Linux distribution that provides a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL).",
       "website": "http://centos.org"
     },
     "Centminmod": {
@@ -2709,6 +2671,7 @@
         21
       ],
       "cpe": "cpe:/a:chamilo:chamilo_lms",
+      "description": "Chamilo is an open-source learning management and collaboration system.",
       "headers": {
         "X-Powered-By": "Chamilo ([\\d.]+)\\;version:\\1"
       },
@@ -2718,13 +2681,13 @@
       "meta": {
         "generator": "Chamilo ([\\d.]+)\\;version:\\1"
       },
-      "description": "Chamilo is an open-source learning management and collaboration system.",
       "website": "http://www.chamilo.org"
     },
     "Chart.js": {
       "cats": [
         25
       ],
+      "description": "Chart.js is an open-source JavaScript library that allows you to draw different types of charts by using the HTML5 canvas element.",
       "icon": "Chart.js.svg",
       "js": {
         "Chart": "\\;confidence:50",
@@ -2737,7 +2700,6 @@
         "cdnjs\\.cloudflare\\.com/ajax/libs/Chart\\.js/([\\d.]+(?:-[^/]+)?)/Chart.*\\.js\\;version:\\1",
         "cdn\\.jsdelivr\\.net/(?:npm|gh/chartjs)/chart\\.js@([\\d.]+(?:-[^/]+)?|latest)/dist/Chart.*\\.js\\;version:\\1"
       ],
-      "description": "Chart.js is an open-source JavaScript library that allows you to draw different types of charts by using the HTML5 canvas element.",
       "website": "https://www.chartjs.org"
     },
     "Chartbeat": {
@@ -2763,10 +2725,22 @@
       "icon": "Cherokee.png",
       "website": "http://www.cherokee-project.com"
     },
+    "CherryPy": {
+      "cats": [
+        22
+      ],
+      "description": "CherryPy is an object-oriented web application framework using the Python programming language.",
+      "headers": {
+        "Server": "CherryPy(?:/([\\d.]+))?\\;version:\\1"
+      },
+      "icon": "CherryPy.svg",
+      "website": "https://cherrypy.org/"
+    },
     "Chevereto": {
       "cats": [
         7
       ],
+      "description": "Chevereto is an image hosting software that allows you to create a full-featured image hosting website on your own server.",
       "html": "Powered by <a href=\"https?://chevereto\\.com\">",
       "icon": "chevereto.png",
       "implies": "PHP",
@@ -2774,8 +2748,20 @@
         "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
       },
       "scripts": "/chevereto\\.js",
-      "description": "Chevereto is an image hosting software that allows you to create a full-featured image hosting website on your own server.",
       "website": "https://chevereto.com/"
+    },
+    "Chili Piper": {
+      "cats": [
+        72,
+        61
+      ],
+      "description": "Chili Piper is a suite of automated scheduling tools that help revenue teams convert leads.",
+      "icon": "Chili Piper.svg",
+      "js": {
+        "ChiliPiper": ""
+      },
+      "scripts": "js\\.chilipiper\\.com/marketing\\.js",
+      "website": "https://www.chilipiper.com/"
     },
     "Chitika": {
       "cats": [
@@ -2817,17 +2803,6 @@
       },
       "website": "http://ckan.org/"
     },
-    "Classy": {
-      "cats": [
-        51
-      ],
-      "icon": "classy.png",
-      "js": {
-        "Classy": ""
-      },
-      "description": "Classy is a class library for JavaScript applications.",
-      "website": "https://www.classy.org/"
-    },
     "Clarity": {
       "cats": [
         66
@@ -2844,15 +2819,26 @@
       "scripts": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
       "website": "https://clarity.design/"
     },
+    "Classy": {
+      "cats": [
+        51
+      ],
+      "description": "Classy is a class library for JavaScript applications.",
+      "icon": "classy.png",
+      "js": {
+        "Classy": ""
+      },
+      "website": "https://www.classy.org/"
+    },
     "Clearbit Reveal": {
       "cats": [
         10
       ],
+      "description": "Clearbit Reveal identifies anonymous visitors to websites.",
       "icon": "Clearbit.png",
       "scripts": [
         "reveal\\.clearbit\\.com/v[(0-9)]/"
       ],
-      "description": "Clearbit Reveal identifies anonymous visitors to websites.",
       "website": "https://clearbit.com/reveal"
     },
     "ClickFunnels": {
@@ -3025,6 +3011,7 @@
       "cats": [
         56
       ],
+      "description": "Coinhive is a cryptocurrency mining service.",
       "icon": "CoinHive.svg",
       "js": {
         "CoinHive": ""
@@ -3034,7 +3021,6 @@
         "coinhive\\.com/lib"
       ],
       "url": "https?://cnhv\\.co/",
-      "description": "Coinhive is a cryptocurrency mining service.",
       "website": "https://coinhive.com"
     },
     "CoinHive Captcha": {
@@ -3051,21 +3037,21 @@
       "cats": [
         56
       ],
+      "description": "CoinHave is a cryptocurrency mining service.",
       "icon": "coinhave.png",
       "scripts": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
-      "description": "CoinHave is a cryptocurrency mining service.",
       "website": "https://coin-have.com/"
     },
     "Coinimp": {
       "cats": [
         56
       ],
+      "description": "CoinImp is a cryptocurrency mining service.",
       "icon": "coinimp.png",
       "js": {
         "Client.Anonymous": "\\;confidence:50"
       },
       "scripts": "https?://www\\.hashing\\.win/scripts/min\\.js",
-      "description": "CoinImp is a cryptocurrency mining service.",
       "website": "https://www.coinimp.com"
     },
     "ColorMeShop": {
@@ -3108,6 +3094,22 @@
       "icon": "Commerce Server.png",
       "implies": "Microsoft ASP.NET",
       "website": "http://commerceserver.net"
+    },
+    "Commerce.js": {
+      "cats": [
+        6
+      ],
+      "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
+      "headers": {
+        "X-Powered-By": "Commerce.js"
+      },
+      "icon": "commercejs.png",
+      "scripts": [
+        "^https?:/cdn\\.chec\\.io/v2/commerce\\.js/",
+        "chec/commerce.jscommerce\\.js"
+      ],
+      "url": "^https?//.+\\.spaces.chec\\.io",
+      "website": "https://www.commercejs.com"
     },
     "CompaqHTTPServer": {
       "cats": [
@@ -3241,9 +3243,9 @@
       "cats": [
         67
       ],
+      "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
       "icon": "Cookiebot.svg",
       "scripts": "consent\\.cookiebot\\.com",
-      "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
       "website": "http://www.cookiebot.com"
     },
     "Coppermine": {
@@ -3357,6 +3359,18 @@
       "scripts": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
       "website": "http://crazyegg.com"
     },
+    "Crisp Live Chat": {
+      "cats": [
+        52
+      ],
+      "description": "Crisp Live Chat is a live chat solution with free and paid options.",
+      "icon": "Crisp Live Chat.svg",
+      "js": {
+        "$crisp": "",
+        "CRISP_WEBSITE_ID": ""
+      },
+      "website": "https://crisp.chat/"
+    },
     "Criteo": {
       "cats": [
         36
@@ -3389,11 +3403,11 @@
       "cats": [
         30
       ],
+      "description": "CrossBox is a webmail client.",
       "headers": {
         "server": "CBX-WS"
       },
       "icon": "CrossBox.png",
-      "description": "CrossBox is a webmail client.",
       "website": "https://crossbox.io"
     },
     "Crownpeak": {
@@ -3417,6 +3431,7 @@
       "cats": [
         56
       ],
+      "description": "Crypto-Loot is a browser based web miner for the uPlexa Blockchain.",
       "icon": "Crypto-Loot.png",
       "js": {
         "CRLT.CONFIG.ASMJS_NAME": "",
@@ -3428,7 +3443,6 @@
         "^/cryptoloot\\.pro/",
         "/crlt\\.js\\;confidence:75"
       ],
-      "description": "Crypto-Loot is a browser based web miner for the uPlexa Blockchain.",
       "website": "https://crypto-loot.com/"
     },
     "CubeCart": {
@@ -3470,12 +3484,12 @@
         25
       ],
       "cpe": "cpe:/a:d3.js_project:d3.js",
+      "description": "D3.js is a JavaScript library for producing dynamic, interactive data visualisations in web browsers.",
       "icon": "D3.png",
       "js": {
         "d3.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
-      "description": "D3.js is a JavaScript library for producing dynamic, interactive data visualisations in web browsers.",
       "website": "http://d3js.org"
     },
     "DERAK.CLOUD": {
@@ -3610,12 +3624,12 @@
       "cats": [
         28
       ],
+      "description": "Darwin is the open-source operating system from Apple that forms the basis for macOS.",
       "headers": {
         "Server": "Darwin",
         "X-Powered-By": "Darwin"
       },
       "icon": "Apple.svg",
-      "description": "Darwin is the open-source operating system from Apple that forms the basis for macOS.",
       "website": "https://opensource.apple.com"
     },
     "DataLife Engine": {
@@ -3686,12 +3700,12 @@
         28
       ],
       "cpe": "cpe:/o:debian:debian_linux",
+      "description": "Debian is a Linux software which is a free open-source software.",
       "headers": {
         "Server": "Debian",
         "X-Powered-By": "(?:Debian|dotdeb|(potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|buster|sid))\\;version:\\1"
       },
       "icon": "Debian.png",
-      "description": "Debian is a Linux software which is a free open-source software.",
       "website": "https://debian.org"
     },
     "DedeCMS": {
@@ -3729,6 +3743,7 @@
         9
       ],
       "cpe": "cpe:/a:directadmin:directadmin",
+      "description": "DirectAdmin is a graphical web-based web hosting control panel designed to make administration of websites easier.",
       "headers": {
         "Server": "DirectAdmin Daemon v([\\d.]+)\\;version:\\1"
       },
@@ -3738,13 +3753,13 @@
         "PHP",
         "Apache"
       ],
-      "description": "DirectAdmin is a graphical web-based web hosting control panel designed to make administration of websites easier.",
       "website": "https://www.directadmin.com"
     },
     "Discourse": {
       "cats": [
         2
       ],
+      "description": "Discourse is an open-source internet forum and mailing list management software application.",
       "icon": "Discourse.png",
       "implies": "Ruby on Rails",
       "js": {
@@ -3753,13 +3768,13 @@
       "meta": {
         "generator": "Discourse(?: ?/?([\\d.]+\\d))?\\;version:\\1"
       },
-      "description": "Discourse is an open-source internet forum and mailing list management software application.",
       "website": "https://discourse.org"
     },
     "Discuz! X": {
       "cats": [
         2
       ],
+      "description": "Discuz! X is an internet forum software written in PHP and supports MySQL and PostgreSQL databases.",
       "icon": "Discuz X.png",
       "implies": "PHP",
       "js": {
@@ -3770,7 +3785,6 @@
       "meta": {
         "generator": "Discuz! X([\\d\\.]+)?\\;version:\\1"
       },
-      "description": "Discuz! X is an internet forum software written in PHP and supports MySQL and PostgreSQL databases.",
       "website": "http://www.discuz.net"
     },
     "Disqus": {
@@ -3809,9 +3823,9 @@
         60
       ],
       "cpe": "cpe:/a:docker:engine",
+      "description": "Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.",
       "html": "<!-- This comment is expected by the docker HEALTHCHECK  -->",
       "icon": "Docker.svg",
-      "description": "Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.",
       "website": "https://www.docker.com/"
     },
     "Docusaurus": {
@@ -3849,6 +3863,7 @@
       "cats": [
         21
       ],
+      "description": "Dokeos is an e-learning and course management web application.",
       "headers": {
         "X-Powered-By": "Dokeos"
       },
@@ -3863,7 +3878,6 @@
       "meta": {
         "generator": "Dokeos"
       },
-      "description": "Dokeos is an e-learning and course management web application.",
       "website": "https://dokeos.com"
     },
     "DokuWiki": {
@@ -3874,6 +3888,7 @@
         "DokuWiki": ""
       },
       "cpe": "cpe:/a:dokuwiki:dokuwiki",
+      "description": "DokuWiki is a Free open-source wiki software.",
       "html": [
         "<div[^>]+id=\"dokuwiki__>",
         "<a[^>]+href=\"#dokuwiki__"
@@ -3883,7 +3898,6 @@
       "meta": {
         "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
       },
-      "description": "DokuWiki is a Free open-source wiki software.",
       "website": "https://www.dokuwiki.org"
     },
     "Dotclear": {
@@ -4169,12 +4183,12 @@
         47,
         9
       ],
+      "description": "EasyEngine is a command-line tool for the Nginx web servers to manage WordPress sites that are running on the LEMP Stack.",
       "headers": {
         "x-powered-by": "^EasyEngine (.*)$\\;version:\\1"
       },
       "icon": "EasyEngine.png",
       "implies": "Docker",
-      "description": "EasyEngine is a command-line tool for the Nginx web servers to manage WordPress sites that are running on the LEMP Stack.",
       "website": "https://easyengine.io"
     },
     "Ecwid": {
@@ -4196,12 +4210,12 @@
       "cats": [
         31
       ],
+      "description": "EdgeCast is a content delivery network (CDN) that accelerated and delivers static content to users around the world.",
       "headers": {
         "Server": "^ECD\\s\\(\\S+\\)"
       },
       "icon": "EdgeCast.png",
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
-      "description": "EdgeCast is a content delivery network (CDN) that accelerated and delivers static content to users around the world.",
       "website": "http://www.edgecast.com"
     },
     "Elcodi": {
@@ -4336,9 +4350,9 @@
       "cats": [
         42
       ],
+      "description": "Ensighten is a solution that enables secure management, implementation and control of website technologies.",
       "icon": "ensighten.png",
       "scripts": "//nexus\\.ensighten\\.com/",
-      "description": "Ensighten is a solution that enables secure management, implementation and control of website technologies.",
       "website": "https://success.ensighten.com/hc/en-us"
     },
     "Envoy": {
@@ -4359,12 +4373,12 @@
         12,
         26
       ],
+      "description": "Enyo is an open-source JavaScript framework for cross-platform for mobile, desktop, TV and web applications.",
       "icon": "Enyo.png",
       "js": {
         "enyo": ""
       },
       "scripts": "enyo\\.js",
-      "description": "Enyo is an open-source JavaScript framework for cross-platform for mobile, desktop, TV and web applications.",
       "website": "http://enyojs.com"
     },
     "Epoch": {
@@ -4422,6 +4436,7 @@
         24
       ],
       "cpe": "cpe:/a:etherpad:etherpad",
+      "description": "Etherpad is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own colour.",
       "headers": {
         "Server": "^Etherpad"
       },
@@ -4434,7 +4449,6 @@
       "scripts": [
         "/ep_etherpad-lite/"
       ],
-      "description": "Etherpad is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own colour.",
       "website": "https://etherpad.org"
     },
     "Exhibit": {
@@ -4619,6 +4633,7 @@
       "cats": [
         31
       ],
+      "description": "Fastly is a cloud computing services provider. Fastly's cloud platform provides a content delivery network, Internet security services, load balancing, and video & streaming services.",
       "headers": {
         "Fastly-Debug-Digest": "",
         "Vary": "Fastly-SSL",
@@ -4626,7 +4641,6 @@
         "x-via-fastly:": ""
       },
       "icon": "Fastly.svg",
-      "description": "Fastly is a cloud computing services provider. Fastly's cloud platform provides a content delivery network, Internet security services, load balancing, and video & streaming services.",
       "website": "https://www.fastly.com"
     },
     "Fastspring": {
@@ -4674,27 +4688,27 @@
       },
       "website": "https://www.traycorp.com.br"
     },
-    "Feedback Fish": {
-      "cats": [
-        13,
-        61
-      ],
-      "icon": "feedback-fish.svg",
-      "scripts": "^https://feedback\\.fish/ff\\.js",
-      "description": "Feedback Fish is a widget for collecting website feedback from users.",
-      "website": "https://feedback.fish"
-    },
     "Fedora": {
       "cats": [
         28
       ],
       "cpe": "cpe:/o:fedoraproject:fedora",
+      "description": "Fedora is a free open-source Linux-based operating system.",
       "headers": {
         "Server": "Fedora"
       },
       "icon": "Fedora.png",
-      "description": "Fedora is a free open-source Linux-based operating system.",
       "website": "http://fedoraproject.org"
+    },
+    "Feedback Fish": {
+      "cats": [
+        13,
+        61
+      ],
+      "description": "Feedback Fish is a widget for collecting website feedback from users.",
+      "icon": "feedback-fish.svg",
+      "scripts": "^https://feedback\\.fish/ff\\.js",
+      "website": "https://feedback.fish"
     },
     "Fingerprintjs": {
       "cats": [
@@ -4738,6 +4752,7 @@
         2
       ],
       "cpe": "cpe:/a:flarum:flarum",
+      "description": "Flarum is a discussion platform.",
       "html": "<div id=\"flarum-loading\"",
       "icon": "flarum.png",
       "implies": [
@@ -4748,7 +4763,6 @@
         "app.cache.discussionList": "",
         "app.forum.freshness": ""
       },
-      "description": "Flarum is a discussion platform.",
       "website": "http://flarum.org/"
     },
     "Flask": {
@@ -4907,6 +4921,7 @@
         "SFOSWIKISID": ""
       },
       "cpe": "cpe:/a:foswiki:foswiki",
+      "description": "Foswiki is a free open-source collaboration platform.",
       "headers": {
         "X-Foswikiaction": "",
         "X-Foswikiuri": ""
@@ -4923,7 +4938,6 @@
         "foswiki.SERVERTIME": "",
         "foswiki.WIKINAME": ""
       },
-      "description": "Foswiki is a free open-source collaboration platform.",
       "website": "http://foswiki.org"
     },
     "FreeBSD": {
@@ -4931,17 +4945,18 @@
         28
       ],
       "cpe": "cpe:/o:freebsd:freebsd",
+      "description": "FreeBSD is a free and open-source Unix-like operating system.",
       "headers": {
         "Server": "FreeBSD(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "FreeBSD.png",
-      "description": "FreeBSD is a free and open-source Unix-like operating system.",
       "website": "http://freebsd.org"
     },
     "FreeTextBox": {
       "cats": [
         24
       ],
+      "description": "FreeTextBox is a free open-source HTML Editor.",
       "html": "<!-- \\* FreeTextBox v\\d \\((\\d+\\.\\d+\\.\\d+)\\;version:\\1",
       "icon": "FreeTextBox.png",
       "implies": "Microsoft ASP.NET",
@@ -4949,7 +4964,6 @@
         "FTB_API": "",
         "FTB_AddEvent": ""
       },
-      "description": "FreeTextBox is a free open-source HTML Editor.",
       "website": "http://freetextbox.com"
     },
     "Freespee": {
@@ -4959,18 +4973,6 @@
       "icon": "Freespee.svg",
       "scripts": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",
       "website": "https://www.freespee.com"
-    },
-    "Crisp Live Chat": {
-      "cats": [
-        52
-      ],
-      "description": "Crisp Live Chat is a live chat solution with free and paid options.",
-      "icon": "Crisp Live Chat.svg",
-      "js": {
-        "$crisp": "",
-        "CRISP_WEBSITE_ID": ""
-      },
-      "website": "https://crisp.chat/"
     },
     "Freshchat": {
       "cats": [
@@ -4993,13 +4995,13 @@
       "cats": [
         24
       ],
+      "description": "Froala Editor is a WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for applications.",
       "html": "<[^>]+class=\"[^\"]*(?:fr-view|fr-box)",
       "icon": "Froala.svg",
       "implies": [
         "jQuery",
         "Font Awesome"
       ],
-      "description": "Froala Editor is a WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for applications.",
       "website": "http://froala.com/wysiwyg-editor"
     },
     "FrontPage": {
@@ -5136,6 +5138,7 @@
       "cats": [
         7
       ],
+      "description": "Gallery is an open-source web based photo album organiser.",
       "html": [
         "<div id=\"gsNavBar\" class=\"gcBorder1\">",
         "<a href=\"http://gallery\\.sourceforge\\.net\"><img[^>]+Powered by Gallery\\s*(?:(?:v|Version)\\s*([0-9.]+))?\\;version:\\1"
@@ -5145,7 +5148,6 @@
         "$.fn.gallery_valign": "",
         "galleryAuthToken": ""
       },
-      "description": "Gallery is an open-source web based photo album organiser.",
       "website": "http://galleryproject.org/"
     },
     "Gambio": {
@@ -5235,11 +5237,11 @@
         28
       ],
       "cpe": "cpe:/o:gentoo:linux",
+      "description": "Gentoo is a free operating system based on Linux.",
       "headers": {
         "X-Powered-By": "gentoo"
       },
       "icon": "Gentoo.png",
-      "description": "Gentoo is a free operating system based on Linux.",
       "website": "http://www.gentoo.org"
     },
     "Gerrit": {
@@ -5336,6 +5338,7 @@
       "cookies": {
         "_gitlab_session": ""
       },
+      "description": "GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration and deployment pipeline features, using an open-source license.",
       "html": [
         "<meta content=\"https?://[^/]+/assets/gitlab_logo-",
         "<header class=\"navbar navbar-fixed-top navbar-gitlab with-horizontal-nav\">"
@@ -5352,7 +5355,6 @@
       "meta": {
         "og:site_name": "^GitLab$"
       },
-      "description": "GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration and deployment pipeline features, using an open-source license.",
       "website": "https://about.gitlab.com"
     },
     "GitLab CI/CD": {
@@ -5375,6 +5377,7 @@
         "i_like_gitea": ""
       },
       "cpe": "cpe:/a:gitea:gitea",
+      "description": "Gitea is an open-source forge software package for hosting software development version control using Git as well as other collaborative features like bug tracking, wikis and code review. It supports self-hosting but also provides a free public first-party instance hosted on DiDi's cloud.",
       "html": [
         "<div class=\"ui left\">\\n\\s+© Gitea Version: ([\\d.]+)\\;version:\\1"
       ],
@@ -5382,7 +5385,6 @@
       "meta": {
         "keywords": "^go,git,self-hosted,gitea$"
       },
-      "description": "Gitea is an open-source forge software package for hosting software development version control using Git as well as other collaborative features like bug tracking, wikis and code review. It supports self-hosting but also provides a free public first-party instance hosted on DiDi's cloud.",
       "website": "https://gitea.io"
     },
     "Gitiles": {
@@ -5450,12 +5452,12 @@
       "cats": [
         31
       ],
+      "description": "GoCache is an in-memory key:value store/cache similar to memcached that is suitable for applications running on a single machine.",
       "headers": {
         "Server": "^gocache$",
         "X-GoCache-CacheStatus": ""
       },
       "icon": "GoCache.png",
-      "description": "GoCache is an in-memory key:value store/cache similar to memcached that is suitable for applications running on a single machine.",
       "website": "https://www.gocache.com.br/"
     },
     "GoDaddy Website Builder": {
@@ -5502,6 +5504,7 @@
         "i_like_gogits": ""
       },
       "cpe": "cpe:/a:gogs:gogs",
+      "description": "Gogs is a self-hosted Git service written in Go.",
       "html": [
         "<div class=\"ui left\">\\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
         "<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@"
@@ -5511,7 +5514,6 @@
         "keywords": "go, git, self-hosted, gogs"
       },
       "scripts": "js/gogs\\.js",
-      "description": "Gogs is a self-hosted Git service written in Go.",
       "website": "http://gogs.io"
     },
     "Google AdSense": {
@@ -5582,12 +5584,12 @@
         25,
         61
       ],
+      "description": "Google Charts is an interactive web service that creates graphical charts from user-supplied information.",
       "icon": "Google Charts.png",
       "js": {
         "__googleVisualizationAbstractRendererElementsCount__": "",
         "__gvizguard__": ""
       },
-      "description": "Google Charts is an interactive web service that creates graphical charts from user-supplied information.",
       "website": "http://developers.google.com/chart/"
     },
     "Google Cloud": {
@@ -5595,11 +5597,11 @@
         31
       ],
       "cpe": "cpe:/a:google:cloud_platform",
+      "description": "Google Cloud is a suite of cloud computing services.",
       "headers": {
         "Via": "^1\\.1 google$"
       },
       "icon": "google_cloud.svg",
-      "description": "Google Cloud is a suite of cloud computing services.",
       "website": "https://cloud.google.com"
     },
     "Google Code Prettify": {
@@ -5616,27 +5618,25 @@
       "cats": [
         17
       ],
-
+      "description": "Google Font API is a web service that supports open-source font files that can be used on your web designs.",
       "html": "<link[^>]* href=[^>]+fonts\\.(?:googleapis|google)\\.com",
       "icon": "Google Font API.png",
       "js": {
         "WebFonts": ""
       },
       "scripts": "googleapis\\.com/.+webfont",
-      "description": "Google Font API is a web service that supports open-source font files that can be used on your web designs.",
       "website": "http://google.com/fonts"
     },
     "Google Maps": {
       "cats": [
         35
       ],
-
+      "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
       "icon": "Google Maps.png",
       "scripts": [
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
         "//maps\\.google(?:apis)?\\.com/maps/api/js"
       ],
-      "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
       "website": "http://maps.google.com"
     },
     "Google PageSpeed": {
@@ -5644,24 +5644,24 @@
         23,
         33
       ],
+      "description": "Google PageSpeed is a family of tools designed to help websites performance optimisations.",
       "headers": {
         "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1",
         "X-Page-Speed": "(.+)\\;version:\\1"
       },
       "icon": "Google PageSpeed.png",
-      "description": "Google PageSpeed is a family of tools designed to help websites performance optimisations.",
       "website": "http://developers.google.com/speed/pagespeed/mod"
     },
     "Google Pay": {
       "cats": [
         41
       ],
+      "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
       "html": "<[^>]+aria-labelledby=\"pi-google_pay",
+      "icon": "Google.svg",
       "scripts": [
         "pay\\.google\\.com/([a-z/]+)/pay\\.js"
       ],
-      "icon": "Google.svg",
-      "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
       "website": "https://pay.google.com"
     },
     "Google Plus": {
@@ -5926,11 +5926,11 @@
         22,
         46
       ],
+      "description": "HP iLO is a tool that provides multiple ways to configure, update, monitor, and run servers remotely.",
       "headers": {
         "Server": "HP-iLO-Server(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "HP.svg",
-      "description": "HP iLO is a tool that provides multiple ways to configure, update, monitor, and run servers remotely.",
       "website": "http://hp.com"
     },
     "HTTP/2": {
@@ -6089,6 +6089,7 @@
       "cats": [
         25
       ],
+      "description": "Highcharts is a charting library written in pure JavaScript, for adding interactive charts to a website or web application.",
       "html": "<svg[^>]*><desc>Created with Highcharts ([\\d.]*)\\;version:\\1",
       "icon": "Highcharts.png",
       "js": {
@@ -6096,7 +6097,6 @@
         "Highcharts.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "highcharts.*\\.js",
-      "description": "Highcharts is a charting library written in pure JavaScript, for adding interactive charts to a website or web application.",
       "website": "https://www.highcharts.com"
     },
     "Highlight.js": {
@@ -6335,8 +6335,8 @@
         70
       ],
       "certIssuer": "TrustID",
-      "icon": "Identrust.svg",
       "description": "denTrust is a digital identity authentication solution.",
+      "icon": "Identrust.svg",
       "website": "https://www.identrust.com/"
     },
     "IdoSell Shop": {
@@ -6405,11 +6405,11 @@
         31,
         61
       ],
+      "description": "Incapsula is a cloud-based application delivery platform. It uses a global content delivery network to provide web application security, DDoS mitigation, content caching, application delivery, load balancing and failover services.",
       "headers": {
         "X-CDN": "Incapsula"
       },
       "icon": "Incapsula.png",
-      "description": "Incapsula is a cloud-based application delivery platform. It uses a global content delivery network to provide web application security, DDoS mitigation, content caching, application delivery, load balancing and failover services.",
       "website": "http://www.incapsula.com"
     },
     "Includable": {
@@ -6537,11 +6537,11 @@
         46
       ],
       "cpe": "cpe:/a:intel:active_management_technology",
+      "description": "Intel Active Management Technology (AMT) is a proprietary remote management and control system for personal computers with Intel CPUs.",
       "headers": {
         "Server": "Intel\\(R\\) Active Management Technology(?: ([\\d.]+))?\\;version:\\1"
       },
       "icon": "Intel Active Management Technology.png",
-      "description": "Intel Active Management Technology (AMT) is a proprietary remote management and control system for personal computers with Intel CPUs.",
       "website": "http://intel.com"
     },
     "IntenseDebate": {
@@ -6648,12 +6648,12 @@
       "cats": [
         7
       ],
+      "description": "jAlbum is across-platform photo website software for creating and uploading galleries from images and videos.",
       "icon": "JAlbum.png",
       "implies": "Java",
       "meta": {
         "generator": "JAlbum( [\\d.]+)?\\;version:\\1"
       },
-      "description": "jAlbum is across-platform photo website software for creating and uploading galleries from images and videos.",
       "website": "http://jalbum.net/en"
     },
     "JBoss Application Server": {
@@ -6703,12 +6703,12 @@
       "cats": [
         56
       ],
+      "description": "JSEcoin is a way to mine, receive payments for your goods or services and transfer cryptocurrency",
       "icon": "JSEcoin.png",
       "js": {
         "jseMine": ""
       },
       "scripts": "^(?:https):?//load\\.jsecoin\\.com/load/",
-      "description": "JSEcoin is a way to mine, receive payments for your goods or services and transfer cryptocurrency",
       "website": "https://jsecoin.com/"
     },
     "JTL Shop": {
@@ -6998,6 +6998,7 @@
       "cookies": {
         "k_visit": ""
       },
+      "description": "Kampyle is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
       "icon": "Kampyle.png",
       "js": {
         "KAMPYLE_COMMON": "",
@@ -7005,7 +7006,6 @@
         "kampyle": ""
       },
       "scripts": "cf\\.kampyle\\.com/k_button\\.js",
-      "description": "Kampyle is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
       "website": "http://www.kampyle.com"
     },
     "Kamva": {
@@ -7037,6 +7037,7 @@
       "cats": [
         66
       ],
+      "description": "Kendo UI is a HTML5 user interface framework for building interactive and high-performance websites and applications.",
       "html": "<link[^>]*\\s+href=[^>]*styles/kendo\\.common(?:\\.min)?\\.css[^>]*/>",
       "icon": "Kendo UI.png",
       "implies": "jQuery",
@@ -7044,7 +7045,6 @@
         "kendo": "",
         "kendo.version": "^(.+)$\\;version:\\1"
       },
-      "description": "Kendo UI is a HTML5 user interface framework for building interactive and high-performance websites and applications.",
       "website": "https://www.telerik.com/kendo-ui"
     },
     "Kentico CMS": {
@@ -7080,11 +7080,11 @@
       "cats": [
         31
       ],
+      "description": "KeyCDN is a content delivery network (CDN).",
       "headers": {
         "Server": "^keycdn-engine$"
       },
       "icon": "KeyCDN.png",
-      "description": "KeyCDN is a content delivery network (CDN).",
       "website": "http://www.keycdn.com"
     },
     "Kibana": {
@@ -7394,8 +7394,8 @@
         70
       ],
       "certIssuer": "Let's Encrypt",
-      "icon": "Lets Encrypt.svg",
       "description": "Let's Encrypt is a free, automated, and open certificate authority.",
+      "icon": "Lets Encrypt.svg",
       "website": "https://letsencrypt.org/"
     },
     "Liferay": {
@@ -7518,12 +7518,12 @@
       "cats": [
         23
       ],
+      "description": "LiteSpeed Cache is an all-in-one site acceleration plugin for WordPress.",
       "headers": {
         "x-litespeed-cache": ""
       },
       "icon": "litespeed-cache.png",
       "implies": "WordPress",
-      "description": "LiteSpeed Cache is an all-in-one site acceleration plugin for WordPress.",
       "website": "https://wordpress.org/plugins/litespeed-cache/"
     },
     "Lithium": {
@@ -7959,20 +7959,21 @@
         32,
         61
       ],
+      "description": "Marketo develops and sells marketing automation software for account-based marketing and other marketing services and products including SEO and content creation.",
       "icon": "Marketo.png",
       "js": {
         "Munchkin": ""
       },
       "scripts": "munchkin\\.marketo\\.net/munchkin\\.js",
-      "description": "Marketo develops and sells marketing automation software for account-based marketing and other marketing services and products including SEO and content creation.",      "website": "https://www.marketo.com"
+      "website": "https://www.marketo.com"
     },
     "Mastercard": {
       "cats": [
         41
       ],
+      "description": "MasterCard facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
       "html": "<[^>]+aria-labelledby=\"pi-mastercard",
       "icon": "Mastercard.svg",
-      "description": "MasterCard facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
       "website": "https://www.mastercard.com"
     },
     "MasterkinG32 Framework": {
@@ -7993,36 +7994,36 @@
       "cats": [
         66
       ],
+      "description": "Material Design Lite is a library of components for web developers.",
       "html": "<link[^>]* href=\"[^\"]*material(?:\\.[\\w]+-[\\w]+)?(?:\\.min)?\\.css",
       "icon": "Material Design Lite.png",
       "js": {
         "MaterialIconToggle": ""
       },
       "scripts": "(?:/([\\d.]+))?/material(?:\\.min)?\\.js\\;version:\\1",
-      "description": "Material Design Lite is a library of components for web developers.",
       "website": "https://getmdl.io"
     },
     "Materialize CSS": {
       "cats": [
         66
       ],
+      "description": "Materialize CSS is a css framework which is used to create responsive websites.",
       "html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
       "icon": "Materialize CSS.png",
       "scripts": "materialize(?:\\.min)?\\.js",
-      "description": "Materialize CSS is a css framework which is used to create responsive websites.",
       "website": "http://materializecss.com"
     },
     "MathJax": {
       "cats": [
         25
       ],
+      "description": "MathJax is a cross-browser JavaScript library that displays mathematical notation in web browsers, using MathML, LaTeX and ASCIIMathML markup.",
       "icon": "MathJax.png",
       "js": {
         "MathJax": "",
         "MathJax.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
-      "description": "MathJax is a cross-browser JavaScript library that displays mathematical notation in web browsers, using MathML, LaTeX and ASCIIMathML markup.",
       "website": "https://www.mathjax.org"
     },
     "Matomo Analytics": {
@@ -8033,6 +8034,7 @@
         "PIWIK_SESSID": ""
       },
       "cpe": "cpe:/a:matomo:matomo",
+      "description": "Matomo Analytics is a free and open-source web analytics applicatio, that runs on a PHP/MySQL web-server.",
       "icon": "Matomo.png",
       "js": {
         "Matomo": "",
@@ -8045,7 +8047,6 @@
         "google-play-app": "app-id=org\\.piwik\\.mobile2"
       },
       "scripts": "piwik\\.js|piwik\\.php",
-      "description": "Matomo Analytics is a free and open-source web analytics applicatio, that runs on a PHP/MySQL web-server.",
       "website": "https://matomo.org"
     },
     "Matomo Tag Manager": {
@@ -8095,12 +8096,12 @@
       "cats": [
         31
       ],
+      "description": "MaxCDN is a content delivery network, which accelerates web-sites and decreases the server load.",
       "headers": {
         "Server": "^NetDNA",
         "X-CDN-Forward": "^maxcdn$"
       },
       "icon": "MaxCDN.png",
-      "description": "MaxCDN is a content delivery network, which accelerates web-sites and decreases the server load.",
       "website": "http://www.maxcdn.com"
     },
     "MaxSite CMS": {
@@ -8130,12 +8131,12 @@
       "cats": [
         14
       ],
+      "description": "MediaElement.js is a set of custom Flash plugins that mimic the HTML5 MediaElement API for browsers that don't support HTML5 or don't support the media codecs.",
       "icon": "MediaElement.js.png",
       "js": {
         "mejs": "",
         "mejs.version": "^(.+)$\\;version:\\1"
       },
-      "description": "MediaElement.js is a set of custom Flash plugins that mimic the HTML5 MediaElement API for browsers that don't support HTML5 or don't support the media codecs.",
       "website": "http://www.mediaelementjs.com"
     },
     "MediaWiki": {
@@ -8143,6 +8144,7 @@
         8
       ],
       "cpe": "cpe:/a:mediawiki:mediawiki",
+      "description": "MediaWiki is a free and open-source wiki engine.",
       "html": [
         "<body[^>]+class=\"mediawiki\"",
         "<(?:a|img)[^>]+>Powered by MediaWiki</a>",
@@ -8158,7 +8160,6 @@
       "meta": {
         "generator": "^MediaWiki ?(.+)$\\;version:\\1"
       },
-      "description": "MediaWiki is a free and open-source wiki engine.",
       "website": "https://www.mediawiki.org"
     },
     "Medium": {
@@ -8218,13 +8219,13 @@
       "cookies": {
         "memberstack": ""
       },
+      "description": "MemberStack is a no-code membership platform for Webflow.",
       "icon": "MemberStack.png",
       "js": {
         "MemberStack": ""
       },
       "scripts": "memberstack\\.js",
       "url": "^https?//.+\\.memberstack\\.io",
-      "description": "MemberStack is a no-code membership platform for Webflow.",
       "website": "https://www.memberstack.io"
     },
     "Mermaid": {
@@ -8403,10 +8404,10 @@
       "cats": [
         56
       ],
+      "description": "Minero.cc is a bot that helps run crypto mining application.",
       "scripts": [
         "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
       ],
-      "description": "Minero.cc is a bot that helps run crypto mining application.",
       "website": "http://minero.cc/"
     },
     "MiniBB": {
@@ -8503,6 +8504,7 @@
         6,
         26
       ],
+      "description": "Mobify is a web storefront platform for headless commerce.",
       "headers": {
         "X-Powered-By": "Mobify"
       },
@@ -8514,13 +8516,13 @@
         "//cdn\\.mobify\\.com/",
         "//a\\.mobify\\.com/"
       ],
-      "description": "Mobify is a web storefront platform for headless commerce.",
       "website": "https://www.mobify.com"
     },
     "Mobirise": {
       "cats": [
         51
       ],
+      "description": "Mobirise is a free offline app for Windows and Mac to easily create small/medium websites, landing pages, online resumes and portfolios.",
       "html": [
         "<!-- Site made with Mobirise Website Builder v([\\d.]+)\\;version:\\1"
       ],
@@ -8528,7 +8530,6 @@
       "meta": {
         "generator": "^Mobirise v([\\d.]+)\\;version:\\1"
       },
-      "description": "Mobirise is a free offline app for Windows and Mac to easily create small/medium websites, landing pages, online resumes and portfolios.",
       "website": "https://mobirise.com"
     },
     "MochiKit": {
@@ -8596,13 +8597,13 @@
         "MOIN_SESSION": ""
       },
       "cpe": "cpe:/a:moinmo:moinmoin",
+      "description": "MoinMoin is a wiki engine implemented in Python.",
       "icon": "MoinMoin.png",
       "implies": "Python",
       "js": {
         "show_switch2gui": ""
       },
       "scripts": "moin(?:_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\1.\\2.\\3",
-      "description": "MoinMoin is a wiki engine implemented in Python.",
       "website": "https://moinmo.in"
     },
     "Mojolicious": {
@@ -8734,6 +8735,7 @@
         "MoodleSession": ""
       },
       "cpe": "cpe:/a:moodle:moodle",
+      "description": "Moodle is a free and open-source Learning Management System (LMS) written in PHP and distributed under the GNU General Public License.",
       "html": "<img[^>]+moodlelogo",
       "icon": "Moodle.png",
       "implies": "PHP",
@@ -8744,7 +8746,6 @@
       "meta": {
         "keywords": "^moodle"
       },
-      "description": "Moodle is a free and open-source Learning Management System (LMS) written in PHP and distributed under the GNU General Public License.",
       "website": "http://moodle.org"
     },
     "Moon": {
@@ -8844,6 +8845,7 @@
         2
       ],
       "cpe": "cpe:/a:mybb:mybb",
+      "description": "MyBB is a free and open-source forum software written in PHP.",
       "html": "(?:<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB)",
       "icon": "MyBB.png",
       "implies": [
@@ -8853,7 +8855,6 @@
       "js": {
         "MyBB": ""
       },
-      "description": "MyBB is a free and open-source forum software written in PHP.",
       "website": "https://mybb.com"
     },
     "MyBlogLog": {
@@ -8922,6 +8923,7 @@
       "cats": [
         25
       ],
+      "description": "NVD3 is a JavaScript visualisation library that is a free open-source tool.",
       "html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
       "icon": "NVD3.png",
       "implies": "D3",
@@ -8930,7 +8932,6 @@
         "nv.version": "^(.+)$\\;confidence:0\\;version:\\1"
       },
       "scripts": "nv\\.d3(?:\\.min)?\\.js",
-      "description": "NVD3 is a JavaScript visualisation library that is a free open-source tool.",
       "website": "http://nvd3.org"
     },
     "Navegg": {
@@ -9072,25 +9073,14 @@
         7
       ],
       "cpe": "cpe:/a:imagely:nextgen_gallery",
+      "description": "NextGEN Gallery is a free open-source image management plugin for the WordPress content management system.",
       "html": [
         "<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
       ],
       "icon": "NextGEN Gallery.png",
       "implies": "WordPress",
       "scripts": "/nextgen-gallery/js/",
-      "description": "NextGEN Gallery is a free open-source image management plugin for the WordPress content management system.",
       "website": "https://www.imagely.com/wordpress-gallery-plugin"
-    },
-    "CherryPy": {
-      "cats": [
-        22
-      ],
-      "description": "CherryPy is an object-oriented web application framework using the Python programming language.",
-      "headers": {
-        "Server": "CherryPy(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "CherryPy.svg",
-      "website": "https://cherrypy.org/"
     },
     "Nginx": {
       "cats": [
@@ -9503,11 +9493,11 @@
         33
       ],
       "cpe": "cpe:/a:openssl:openssl",
+      "description": "OpenSSL is a software library for applications that secure communications over computer networks against eavesdropping or need to identify the party at the other end.",
       "headers": {
         "Server": "OpenSSL(?:/([\\d.]+[a-z]?))?\\;version:\\1"
       },
       "icon": "OpenSSL.png",
-      "description": "OpenSSL is a software library for applications that secure communications over computer networks against eavesdropping or need to identify the party at the other end.",
       "website": "http://openssl.org"
     },
     "OpenText Web Solutions": {
@@ -9621,11 +9611,11 @@
         23
       ],
       "cpe": "cpe:/a:oracle:web_cache",
+      "description": "Oracle Web Cache is a browser and content management server, which improves the performance of web sites.",
       "headers": {
         "Server": "Oracle(?:AS)?[- ]Web[- ]Cache(?:[- /]([\\da-z./]+))?\\;version:\\1"
       },
       "icon": "Oracle.png",
-      "description": "Oracle Web Cache is a browser and content management server, which improves the performance of web sites.",
       "website": "http://oracle.com"
     },
     "Orchard CMS": {
@@ -9682,6 +9672,7 @@
       "cats": [
         30
       ],
+      "description": "Outlook on the web is an information manager web app. It includes a web-based email client, a calendar tool, a contact manager, and a task manager.",
       "html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css\\;version:\\1",
       "icon": "Outlook.svg",
       "implies": "Microsoft ASP.NET",
@@ -9689,13 +9680,13 @@
         "IsOwaPremiumBrowser": ""
       },
       "url": "/owa/auth/log(?:on|off)\\.aspx",
-      "description": "Outlook on the web is an information manager web app. It includes a web-based email client, a calendar tool, a contact manager, and a task manager.",
       "website": "http://help.outlook.com"
     },
     "Oxygen": {
       "cats": [
         51
       ],
+      "description": "Oxygen Builder is a tool to build a WordPress website.",
       "html": [
         "<body class=(?:\"|')[^\"']*oxygen-body",
         "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/oxygen/"
@@ -9705,7 +9696,6 @@
       "scripts": [
         "wp-content/plugins/oxygen"
       ],
-      "description": "Oxygen Builder is a tool to build a WordPress website.",
       "website": "https://oxygenbuilder.com"
     },
     "PDF.js": {
@@ -9789,9 +9779,9 @@
       "cats": [
         51
       ],
+      "description": "PageFly is an app for Shopify that allows you to build landing pages, product pages, blogs, and FAQs.",
       "icon": "pagefly.png",
       "scripts": "pagefly\\.io",
-      "description": "PageFly is an app for Shopify that allows you to build landing pages, product pages, blogs, and FAQs.",
       "website": "https://pagefly.io"
     },
     "Pagekit": {
@@ -10001,11 +9991,11 @@
       "cookies": {
         "phsid": ""
       },
+      "description": "Phabricator is a suite of web-based software development collaboration tools, including the Differential code review tool, the Diffusion repository browser, the Herald change monitoring tool, the Maniphest bug tracker and the Phriction wiki. Phabricator integrates with Git, Mercurial, and Subversion.",
       "html": "<[^>]+(?:class|id)=\"phabricator-",
       "icon": "Phabricator.png",
       "implies": "PHP",
       "scripts": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
-      "description": "Phabricator is a suite of web-based software development collaboration tools, including the Differential code review tool, the Diffusion repository browser, the Herald change monitoring tool, the Maniphest bug tracker and the Phriction wiki. Phabricator integrates with Git, Mercurial, and Subversion.",
       "website": "http://phacility.com"
     },
     "Phaser": {
@@ -10122,15 +10112,28 @@
       "scripts": "//assets\\.pinterest\\.com/js/pinit\\.js",
       "website": "http://pinterest.com"
     },
+    "Pipedrive": {
+      "cats": [
+        52,
+        53,
+        61
+      ],
+      "description": "Pipedrive is a cloud-based sales CRM.",
+      "icon": "Pipedrive.svg",
+      "js": {
+        "LeadBooster": ""
+      },
+      "website": "https://www.pipedrive.com/"
+    },
     "Planet": {
       "cats": [
         49
       ],
+      "description": "Planet is a feed aggregator, which creates pages with entries from the original feeds in chronological order, most recent entries first.",
       "icon": "Planet.png",
       "meta": {
         "generator": "^Planet(?:/([\\d.]+))?\\;version:\\1"
       },
-      "description": "Planet is a feed aggregator, which creates pages with entries from the original feeds in chronological order, most recent entries first.",
       "website": "http://planetplanet.org"
     },
     "Platform.sh": {
@@ -10173,13 +10176,13 @@
       "cats": [
         9
       ],
+      "description": "Plesk is a web hosting and server data centre automation software with a control panel developed for Linux and Windows-based retail hosting service providers.",
       "headers": {
         "X-Powered-By": "^Plesk(?:L|W)in",
         "X-Powered-By-Plesk": "^Plesk"
       },
       "icon": "Plesk.png",
       "scripts": "common\\.js\\?plesk",
-      "description": "Plesk is a web hosting and server data centre automation software with a control panel developed for Linux and Windows-based retail hosting service providers.",
       "website": "https://www.plesk.com/"
     },
     "Pligg": {
@@ -10225,12 +10228,12 @@
       "cats": [
         14
       ],
+      "description": "Rlyr is a set of tools for splitting, applying and combining Data. ",
       "icon": "Plyr.png",
       "js": {
         "Plyr": ""
       },
       "scripts": "https://cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
-      "description": "Rlyr is a set of tools for splitting, applying and combining Data. ",
       "website": "https://plyr.io/"
     },
     "Po.st": {
@@ -10492,13 +10495,12 @@
       "cats": [
         66
       ],
-
+      "description": "Pure CSS is a set of small, responsive CSS modules that can be used in web projects.",
       "html": [
         "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
         "<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d"
       ],
       "icon": "Pure CSS.png",
-      "description": "Pure CSS is a set of small, responsive CSS modules that can be used in web projects.",
       "website": "http://purecss.io"
     },
     "Pushnami": {
@@ -10606,11 +10608,11 @@
       "cats": [
         24
       ],
+      "description": "Quill is a free open-source WYSIWYG editor.",
       "icon": "Quill.png",
       "js": {
         "Quill": ""
       },
-      "description": "Quill is a free open-source WYSIWYG editor.",
       "website": "http://quilljs.com"
     },
     "RBS Change": {
@@ -10680,18 +10682,19 @@
       "cats": [
         23
       ],
+      "description": "RackCache is a quick drop-in component to enable HTTP caching for Rack-based applications.",
       "headers": {
         "X-Rack-Cache": ""
       },
       "icon": "RackCache.png",
       "implies": "Ruby",
-      "description": "RackCache is a quick drop-in component to enable HTTP caching for Rack-based applications.",
       "website": "https://github.com/rtomayko/rack-cache"
     },
     "RainLoop": {
       "cats": [
         30
       ],
+      "description": "RainLoop is a web-based email client.",
       "headers": {
         "Server": "^RainLoop"
       },
@@ -10708,7 +10711,6 @@
         "rlAppVersion": "^([0-9.]+)$\\;version:\\1"
       },
       "scripts": "^rainloop/v/([0-9.]+)/\\;version:\\1",
-      "description": "RainLoop is a web-based email client.",
       "website": "https://www.rainloop.net/"
     },
     "Rakuten Digital Commerce": {
@@ -10733,24 +10735,24 @@
       "cats": [
         25
       ],
+      "description": "Raphael is a cross-browser JavaScript library that draws Vector graphics for websites.",
       "icon": "Raphael.png",
       "js": {
         "Raphael.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
-      "description": "Raphael is a cross-browser JavaScript library that draws Vector graphics for websites.",
       "website": "https://dmitrybaranovskiy.github.io/raphael/"
     },
     "Raspbian": {
       "cats": [
         28
       ],
+      "description": "Raspbian is a free operating system for the Raspberry Pi hardware.",
       "headers": {
         "Server": "Raspbian",
         "X-Powered-By": "Raspbian"
       },
       "icon": "Raspbian.svg",
-      "description": "Raspbian is a free operating system for the Raspberry Pi hardware.",
       "website": "https://www.raspbian.org/"
     },
     "Raychat": {
@@ -10796,21 +10798,12 @@
       "scripts": "/redoc\\.(?:min\\.)?js",
       "website": "https://github.com/Rebilly/ReDoc"
     },
-    "Redux": {
-      "cats": [
-        12
-      ],
-      "description": "Redux is a predictable state container for JavaScript applications.",
-      "icon": "Redux.png",
-      "scripts": [
-        "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
-      ],
-      "website": "https://redux.js.org/"
-    },
     "React": {
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:facebook:react",
+      "description": "React is an open-source JavaScript library for building user interfaces or UI components.",
       "dom": {
         "body > div": {
           "properties": {
@@ -10818,8 +10811,6 @@
           }
         }
       },
-      "cpe": "cpe:/a:facebook:react",
-      "description": "React is an open-source JavaScript library for building user interfaces or UI components.",
       "html": "<[^>]+data-react",
       "icon": "React.png",
       "js": {
@@ -10900,12 +10891,12 @@
         28
       ],
       "cpe": "cpe:/o:redhat:linux",
+      "description": "Red Hat is an open-source Linux operating system.",
       "headers": {
         "Server": "Red Hat",
         "X-Powered-By": "Red Hat"
       },
       "icon": "Red Hat.svg",
-      "description": "Red Hat is an open-source Linux operating system.",
       "website": "https://www.redhat.com"
     },
     "Redaxscript": {
@@ -10961,14 +10952,25 @@
         "_redmine_session": ""
       },
       "cpe": "cpe:/a:redmine:redmine",
+      "description": "Redmine is a free and open-source, web-based project management and issue tracking tool.",
       "html": "Powered by <a href=\"[^>]+Redmine",
       "icon": "Redmine.png",
       "implies": "Ruby on Rails",
       "meta": {
         "description": "Redmine"
       },
-      "description": "Redmine is a free and open-source, web-based project management and issue tracking tool.",
       "website": "http://www.redmine.org"
+    },
+    "Redux": {
+      "cats": [
+        12
+      ],
+      "description": "Redux is a predictable state container for JavaScript applications.",
+      "icon": "Redux.png",
+      "scripts": [
+        "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
+      ],
+      "website": "https://redux.js.org/"
     },
     "Reinvigorate": {
       "cats": [
@@ -11039,6 +11041,19 @@
       "icon": "revslider.png",
       "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
+    },
+    "Rewardful": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
+      "icon": "Rewardful.svg",
+      "js": {
+        "Rewardful": ""
+      },
+      "scripts": "r\\.wdfl\\.co",
+      "website": "https://www.getrewardful.com/"
     },
     "Rickshaw": {
       "cats": [
@@ -11167,6 +11182,7 @@
       "cats": [
         30
       ],
+      "description": "RoundCube is free and open-source web-based IMAP email client.",
       "html": "<title>RoundCube",
       "icon": "RoundCube.png",
       "implies": "PHP",
@@ -11174,7 +11190,6 @@
         "rcmail": "",
         "roundcube": ""
       },
-      "description": "RoundCube is free and open-source web-based IMAP email client.",
       "website": "http://roundcube.net"
     },
     "Rubicon Project": {
@@ -11298,13 +11313,13 @@
       "cats": [
         2
       ],
+      "description": "SMF is a free open-source software, used for community forums and is written in PHP.",
       "html": "credits/?\" title=\"Simple Machines Forum\" target=\"_blank\" class=\"new_win\">SMF ([0-9.]+)</a>\\;version:\\1",
       "icon": "SMF.png",
       "implies": "PHP",
       "js": {
         "smf_": ""
       },
-      "description": "SMF is a free open-source software, used for community forums and is written in PHP.",
       "website": "http://www.simplemachines.org"
     },
     "SOBI 2": {
@@ -11346,10 +11361,10 @@
       "cats": [
         3
       ],
+      "description": "SQL Buddy is an open-source web-based application written in PHP to handle the administration of MySQL and SQLite with the use of a Web browser.",
       "html": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
       "icon": "SQL Buddy.png",
       "implies": "PHP",
-      "description": "SQL Buddy is an open-source web-based application written in PHP to handle the administration of MySQL and SQLite with the use of a Web browser.",
       "website": "http://www.sqlbuddy.com"
     },
     "SQLite": {
@@ -11363,12 +11378,12 @@
       "cats": [
         28
       ],
+      "description": "SUSE is a Linux-based server operating system.",
       "headers": {
         "Server": "SUSE(?:/?\\s?-?([\\d.]+))?\\;version:\\1",
         "X-Powered-By": "SUSE(?:/?\\s?-?([\\d.]+))?\\;version:\\1"
       },
       "icon": "SUSE.png",
-      "description": "SUSE is a Linux-based server operating system.",
       "website": "http://suse.com"
     },
     "SWFObject": {
@@ -11428,19 +11443,6 @@
         "salesFloor\\.js"
       ],
       "website": "https://salesfloor.net/"
-    },
-    "Pipedrive": {
-      "cats": [
-        52,
-        53,
-        61
-      ],
-      "js": {
-        "LeadBooster": ""
-      },
-      "icon": "Pipedrive.svg",
-      "description": "Pipedrive is a cloud-based sales CRM.",
-      "website": "https://www.pipedrive.com/"
     },
     "Salesforce": {
       "cats": [
@@ -11580,23 +11582,23 @@
       "cats": [
         21
       ],
+      "description": "Scholica is a Virtual Learning Platform (VLP).",
       "headers": {
         "X-Scholica-Version": ""
       },
       "icon": "Scholica.svg",
-      "description": "Scholica is a Virtual Learning Platform (VLP).",
       "website": "http://scholica.com"
     },
     "Scientific Linux": {
       "cats": [
         28
       ],
+      "description": "Scientific Linux (SL) is a free open-source operating system based on Red Hat Enterprise Linux.",
       "headers": {
         "Server": "Scientific Linux",
         "X-Powered-By": "Scientific Linux"
       },
       "icon": "Scientific Linux.png",
-      "description": "Scientific Linux (SL) is a free open-source operating system based on Red Hat Enterprise Linux.",
       "website": "http://scientificlinux.org"
     },
     "Scorpion": {
@@ -11627,21 +11629,21 @@
         70
       ],
       "certIssuer": "Sectigo",
-      "icon": "Sectigo.svg",
       "description": "Sectigo provides SSL certificate and computer security products.",
+      "icon": "Sectigo.svg",
       "website": "https://sectigo.com/"
     },
     "Section.io": {
       "cats": [
         31
       ],
+      "description": "Section.io is a Content Delivery Network (CDN).",
       "headers": {
         "section-io-id": "",
         "section-io-origin-status": "",
         "section-io-origin-time-seconds": ""
       },
       "icon": "sectionio.svg",
-      "description": "Section.io is a Content Delivery Network (CDN).",
       "website": "https://www.section.io"
     },
     "Seers": {
@@ -11658,38 +11660,37 @@
       "cats": [
         10
       ],
+      "description": "Segment is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
       "icon": "Segment.png",
       "js": {
         "analytics": ""
       },
       "scripts": "cdn\\.segment\\.com/analytics\\.js",
-      "description": "Segment is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
       "website": "https://segment.com"
     },
     "Select2": {
       "cats": [
         59
       ],
+      "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
       "icon": "Select2.png",
       "implies": "jQuery",
       "js": {
         "jQuery.fn.select2": ""
       },
       "scripts": "select2(?:\\.min|\\.full)?\\.js",
-      "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
       "website": "https://select2.org/"
     },
     "Semantic UI": {
       "cats": [
         66
       ],
-
+      "description": "Semantic UI is a front-end development framework, powered by LESS and jQuery.",
       "html": [
         "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
       "icon": "Semantic-ui.png",
       "scripts": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
-      "description": "Semantic UI is a front-end development framework, powered by LESS and jQuery.",
       "website": "https://semantic-ui.com/"
     },
     "Sencha Touch": {
@@ -11697,9 +11698,9 @@
         12,
         26
       ],
+      "description": "Sencha Touch is a user interface (UI) JavaScript library, or web framework, specifically built for the Mobile Web.",
       "icon": "Sencha Touch.png",
       "scripts": "sencha-touch.*\\.js",
-      "description": "Sencha Touch is a user interface (UI) JavaScript library, or web framework, specifically built for the Mobile Web.",
       "website": "http://www.sencha.com/products/touch"
     },
     "Sensors Data": {
@@ -11722,6 +11723,7 @@
       "cats": [
         13
       ],
+      "description": "Sentry is an open-source platform for workflow productivity, aggregating errors from across the stack in real time.",
       "html": [
         "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1",
         "<script[^>]*src=\"[^\"]*browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js\\;version:\\1"
@@ -11737,7 +11739,6 @@
       "scripts": [
         "browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js\\;version:\\1"
       ],
-      "description": "Sentry is an open-source platform for workflow productivity, aggregating errors from across the stack in real time.",
       "website": "https://sentry.io/"
     },
     "Seravo": {
@@ -11796,6 +11797,7 @@
       "cats": [
         46
       ],
+      "description": "Shell In A Box implements a web server that can export arbitrary command line tools to a web based terminal emulator.",
       "html": [
         "<title>Shell In A Box</title>",
         "must be enabled for ShellInABox</noscript>"
@@ -11804,7 +11806,6 @@
       "js": {
         "ShellInABox": ""
       },
-      "description": "Shell In A Box implements a web server that can export arbitrary command line tools to a web based terminal emulator.",
       "website": "http://shellinabox.com"
     },
     "Shiny": {
@@ -11835,11 +11836,11 @@
       ],
       "description": "Shop Pay is an accelerated checkout that lets customers save their email address, credit card, and shipping and billing information so they can complete their transaction faster the next time they are directed to the Shopify checkout.",
       "html": "<[^>]+aria-labelledby=\"pi-shopify_pay",
+      "icon": "Shopify.svg",
+      "implies": "Shopify",
       "scripts": [
         "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
       ],
-      "icon": "Shopify.svg",
-      "implies": "Shopify",
       "url": "^https://pay.shopify.com",
       "website": "https://pay.google.com"
     },
@@ -11985,6 +11986,16 @@
         "/engine/Shopware/"
       ],
       "website": "https://www.shopware.com"
+    },
+    "Sift": {
+      "cats": [
+        10
+      ],
+      "icon": "Sift.png",
+      "scripts": [
+        "cdn\\.sift(?:science)?\\.com/s\\.js"
+      ],
+      "website": "https://sift.com/"
     },
     "Signal": {
       "cats": [
@@ -12416,6 +12427,7 @@
       "cats": [
         47
       ],
+      "description": "SonarQube is an open-source platform for the continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages.",
       "html": [
         "<link href=\"/css/sonar\\.css\\?v=([\\d.]+)\\;version:\\1",
         "<title>SonarQube</title>"
@@ -12430,7 +12442,6 @@
         "application-name": "^SonarQubes$"
       },
       "scripts": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
-      "description": "SonarQube is an open-source platform for the continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages.",
       "website": "https://www.sonarqube.org/"
     },
     "Sotel": {
@@ -12569,6 +12580,7 @@
       "cats": [
         30
       ],
+      "description": "SquirrelMail is an open-source web-mail package that is based on PHP language. It provides a web-based-email client and a proxy server for IMAP protocol.",
       "html": "<small>SquirrelMail version ([.\\d]+)[^<]*<br \\;version:\\1",
       "icon": "SquirrelMail.png",
       "implies": "PHP",
@@ -12576,7 +12588,6 @@
         "squirrelmail_loginpage_onload": ""
       },
       "url": "/src/webmail\\.php(?:$|\\?)",
-      "description": "SquirrelMail is an open-source web-mail package that is based on PHP language. It provides a web-based-email client and a proxy server for IMAP protocol.",
       "website": "http://squirrelmail.org"
     },
     "Squiz Matrix": {
@@ -12726,12 +12737,12 @@
       "cats": [
         14
       ],
+      "description": "SublimeVideo is a framework for HTML5 Video Player.",
       "icon": "SublimeVideo.png",
       "js": {
         "sublimevideo": ""
       },
       "scripts": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
-      "description": "SublimeVideo is a framework for HTML5 Video Player.",
       "website": "http://sublimevideo.net"
     },
     "Subrion": {
@@ -12752,12 +12763,12 @@
       "cats": [
         31
       ],
+      "description": "Sucuri is a WordPress security plugin used to protect websites from malware and hacks.",
       "headers": {
         "x-sucuri-cache:": "",
         "x-sucuri-id": ""
       },
       "icon": "sucuri.png",
-      "description": "Sucuri is a WordPress security plugin used to protect websites from malware and hacks.",
       "website": "https://sucuri.net/"
     },
     "Sulu": {
@@ -12785,12 +12796,12 @@
       "cats": [
         28
       ],
+      "description": "SunOS is a Unix-branded operating system developed by Sun Microsystems for their workstation and server computer systems.",
       "headers": {
         "Server": "SunOS( [\\d\\.]+)?\\;version:\\1",
         "Servlet-engine": "SunOS( [\\d\\.]+)?\\;version:\\1"
       },
       "icon": "Oracle.png",
-      "description": "SunOS is a Unix-branded operating system developed by Sun Microsystems for their workstation and server computer systems.",
       "website": "http://oracle.com/solaris"
     },
     "Supersized": {
@@ -12924,13 +12935,13 @@
       "cats": [
         30
       ],
+      "description": "Sympa is an open-source mailing list management (MLM) software.",
       "html": "<a href=\"https?://www\\.sympa\\.org\">\\s*Powered by Sympa\\s*</a>",
       "icon": "sympa.png",
       "implies": "Perl",
       "meta": {
         "generator": "^Sympa$"
       },
-      "description": "Sympa is an open-source mailing list management (MLM) software.",
       "website": "https://www.sympa.org/"
     },
     "Synology DiskStation": {
@@ -12994,11 +13005,11 @@
       "cookies": {
         "TWIKISID": ""
       },
+      "description": "TWiki is an open-source wiki and application platform.",
       "html": "<img [^>]*(?:title|alt)=\"This site is powered by the TWiki collaboration platform",
       "icon": "TWiki.png",
       "implies": "Perl",
       "scripts": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
-      "description": "TWiki is an open-source wiki and application platform.",
       "website": "http://twiki.org"
     },
     "TYPO3 CMS": {
@@ -13307,12 +13318,12 @@
         11,
         13
       ],
+      "description": "Tiki Wiki is a free and open-source wiki-based content management system and online office suite written primarily in PHP.",
       "icon": "Tiki Wiki CMS Groupware.png",
       "meta": {
         "generator": "^Tiki"
       },
       "scripts": "(?:/|_)tiki",
-      "description": "Tiki Wiki is a free and open-source wiki-based content management system and online office suite written primarily in PHP.",
       "website": "http://tiki.org"
     },
     "Tilda": {
@@ -13339,12 +13350,12 @@
       "cats": [
         24
       ],
+      "description": "TinyMCE is an online rich-text editor released as open-source software. TinyMCE is designed to integrate with JavaScript libraries, Vue.js, and AngularJS as well as content management systems such as Joomla!, and WordPress.",
       "icon": "TinyMCE.png",
       "js": {
         "tinyMCE.majorVersion": "([\\d.]+)\\;version:\\1"
       },
       "scripts": "/tiny_?mce(?:\\.min)?\\.js",
-      "description": "TinyMCE is an online rich-text editor released as open-source software. TinyMCE is designed to integrate with JavaScript libraries, Vue.js, and AngularJS as well as content management systems such as Joomla!, and WordPress.",
       "website": "http://tinymce.com"
     },
     "Titan": {
@@ -13585,10 +13596,10 @@
       "cats": [
         66
       ],
+      "description": "UIKit is the framework used for developing iOS applications.",
       "html": "<[^>]+class=\"[^\"]*(?:uk-container|uk-section)",
       "icon": "UIKit.png",
       "scripts": "uikit.*\\.js",
-      "description": "UIKit is the framework used for developing iOS applications.",
       "website": "https://getuikit.com"
     },
     "UMI.CMS": {
@@ -13606,11 +13617,11 @@
       "cats": [
         28
       ],
+      "description": "Unix is a family of multitasking, multiuser computer operating systems.",
       "headers": {
         "Server": "Unix"
       },
       "icon": "UNIX.png",
-      "description": "Unix is a family of multitasking, multiuser computer operating systems.",
       "website": "http://unix.org"
     },
     "Ubercart": {
@@ -13626,12 +13637,12 @@
       "cats": [
         28
       ],
+      "description": "Ubuntu is a free and open-source operating system on Linux for the enterprise server, desktop, cloud, and IoT.",
       "headers": {
         "Server": "Ubuntu",
         "X-Powered-By": "Ubuntu"
       },
       "icon": "Ubuntu.png",
-      "description": "Ubuntu is a free and open-source operating system on Linux for the enterprise server, desktop, cloud, and IoT.",
       "website": "http://www.ubuntu.com/server"
     },
     "UltraCart": {
@@ -13708,11 +13719,11 @@
       "cats": [
         13
       ],
+      "description": "Usabilla is a user feedback solution for collecting qualitative and quantitative user feedback across digital channels including websites, apps and emails.",
       "icon": "Usabilla.svg",
       "js": {
         "usabilla_live": ""
       },
-      "description": "Usabilla is a user feedback solution for collecting qualitative and quantitative user feedback across digital channels including websites, apps and emails.",
       "website": "http://usabilla.com"
     },
     "UsableNet": {
@@ -13752,11 +13763,11 @@
       "cats": [
         13
       ],
+      "description": "UserVoice is a management to collect and analyse feedback from customers.",
       "icon": "UserVoice.png",
       "js": {
         "UserVoice": ""
       },
-      "description": "UserVoice is a management to collect and analyse feedback from customers.",
       "website": "http://uservoice.com"
     },
     "UserWay": {
@@ -13845,13 +13856,13 @@
       "cats": [
         2
       ],
+      "description": "Vanilla is a both a cloud-based (SaaS) open-source community forum software.",
       "headers": {
         "X-Powered-By": "Vanilla"
       },
       "html": "<body id=\"(?:DiscussionsPage|vanilla)",
       "icon": "Vanilla.png",
       "implies": "PHP",
-      "description": "Vanilla is a both a cloud-based (SaaS) open-source community forum software.",
       "website": "http://vanillaforums.org"
     },
     "Varbase": {
@@ -13870,6 +13881,7 @@
       "cats": [
         23
       ],
+      "description": "Varnish is a reverse caching proxy.",
       "headers": {
         "Via": "varnish(?: \\(Varnish/([\\d.]+)\\))?\\;version:\\1",
         "X-Varnish": "",
@@ -13879,7 +13891,6 @@
         "X-Varnish-Hostname": ""
       },
       "icon": "Varnish.svg",
-      "description": "Varnish is a reverse caching proxy.",
       "website": "http://www.varnish-cache.org"
     },
     "Venmo": {
@@ -13920,6 +13931,7 @@
       "cats": [
         14
       ],
+      "description": "Video.js is a JavaScript and CSS library that makes it easier to work with and build on HTML5 video.",
       "html": "<div[^>]+class=\"video-js+\">",
       "icon": "VideoJS.svg",
       "js": {
@@ -13931,7 +13943,6 @@
         "zencdn\\.net/c/video\\.js",
         "cdnjs\\.cloudflare\\.com\\/ajax\\/libs\\/video\\.js\\/([\\d\\.]+)\\/\\;version:\\1"
       ],
-      "description": "Video.js is a JavaScript and CSS library that makes it easier to work with and build on HTML5 video.",
       "website": "http://videojs.com"
     },
     "VigLink": {
@@ -13971,9 +13982,9 @@
       "cats": [
         14
       ],
+      "description": "Vimeo is a video hosting, sharing and services platform. Vimeo operation an ad-free basis by providing subscription plans.",
       "html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
       "icon": "Vimeo.png",
-      "description": "Vimeo is a video hosting, sharing and services platform. Vimeo operation an ad-free basis by providing subscription plans.",
       "website": "http://vimeo.com"
     },
     "Virgool": {
@@ -14119,13 +14130,13 @@
       "cats": [
         23
       ],
+      "description": "W3 Total Cache (W3TC) improves the SEO and increases website performance and reducing load times by leveraging features like content delivery network (CDN) integration and the latest best practices.",
       "headers": {
         "X-Powered-By": "W3 Total Cache(?:/([\\d.]+))?\\;version:\\1"
       },
       "html": "<!--[^>]+W3 Total Cache",
       "icon": "W3 Total Cache.png",
       "implies": "WordPress",
-      "description": "W3 Total Cache (W3TC) improves the SEO and increases website performance and reducing load times by leveraging features like content delivery network (CDN) integration and the latest best practices.",
       "website": "http://www.w3-edge.com/wordpress-plugins/w3-total-cache"
     },
     "W3Counter": {
@@ -14192,6 +14203,7 @@
       "cats": [
         23
       ],
+      "description": "WP Rocket is a caching and performance optimisation plugin to improve the loading speed of WordPress websites.",
       "headers": {
         "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
         "X-Rocket-Nginx-Bypass": ""
@@ -14199,7 +14211,6 @@
       "html": "<!--[^>]+WP Rocket",
       "icon": "WP Rocket.png",
       "implies": "WordPress",
-      "description": "WP Rocket is a caching and performance optimisation plugin to improve the loading speed of WordPress websites.",
       "website": "http://wp-rocket.me"
     },
     "WP-Statistics": {
@@ -14217,6 +14228,7 @@
       "cats": [
         23
       ],
+      "description": "WPCacheOn is a caching and performance optimisation plugin, which improves the loading speed of WordPress websites.",
       "headers": {
         "x-powered-by": "^Optimized by WPCacheOn"
       },
@@ -14224,7 +14236,6 @@
       "implies": [
         "WordPress"
       ],
-      "description": "WPCacheOn is a caching and performance optimisation plugin, which improves the loading speed of WordPress websites.",
       "website": "https://wpcacheon.io"
     },
     "Warp": {
@@ -14332,9 +14343,9 @@
       "cats": [
         56
       ],
+      "description": "Webmine is a cryptocurrency mining service.",
       "html": "<iframe[^>]+src=[\\'\"]https://webmine\\.cz/miner\\?key=",
       "icon": "webmine.png",
-      "description": "Webmine is a cryptocurrency mining service.",
       "website": "https://webmine.cz/"
     },
     "WebsPlanet": {
@@ -14514,34 +14525,34 @@
       "cats": [
         8
       ],
+      "description": "WikkaWiki is an open-source wiki application written in PHP.",
       "html": "Powered by <a href=\"[^>]+WikkaWiki",
       "icon": "WikkaWiki.png",
       "meta": {
         "generator": "WikkaWiki"
       },
-      "description": "WikkaWiki is an open-source wiki application written in PHP.",
       "website": "http://wikkawiki.org"
     },
     "Windows CE": {
       "cats": [
         28
       ],
+      "description": "Windows CE is an operating system designed for small footprint devices or embedded systems.",
       "headers": {
         "Server": "\\bWinCE\\b"
       },
       "icon": "Microsoft.png",
-      "description": "Windows CE is an operating system designed for small footprint devices or embedded systems.",
       "website": "http://microsoft.com"
     },
     "Windows Server": {
       "cats": [
         28
       ],
+      "description": "Windows Server is a brand name for a group of server operating systems.",
       "headers": {
         "Server": "Win32|Win64"
       },
       "icon": "WindowsServer.png",
-      "description": "Windows Server is a brand name for a group of server operating systems.",
       "website": "http://microsoft.com/windowsserver"
     },
     "Wink": {
@@ -14549,12 +14560,12 @@
         26,
         12
       ],
+      "description": "Wink Toolkit is a JavaScript toolkit used to build mobile web apps.",
       "icon": "Wink.png",
       "js": {
         "wink.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "(?:_base/js/base|wink).*\\.js",
-      "description": "Wink Toolkit is a JavaScript toolkit used to build mobile web apps.",
       "website": "http://winktoolkit.org"
     },
     "Winstone Servlet Container": {
@@ -14677,13 +14688,13 @@
       "cats": [
         23
       ],
+      "description": "WordPpress Super Cache is a static caching plugin for WordPress.",
       "headers": {
         "WP-Super-Cache": ""
       },
       "html": "<!--[^>]+WP-Super-Cache",
       "icon": "wp_super_cache.png",
       "implies": "WordPress",
-      "description": "WordPpress Super Cache is a static caching plugin for WordPress.",
       "website": "http://z9.io/wp-super-cache/"
     },
     "WordPress VIP": {
@@ -14787,6 +14798,7 @@
       "cats": [
         8
       ],
+      "description": "XWiki is a free wiki software platform written in Java.",
       "excludes": "MediaWiki",
       "html": [
         "<html[^>]data-xwiki-[^>]>"
@@ -14796,7 +14808,6 @@
       "meta": {
         "wiki": "xwiki"
       },
-      "description": "XWiki is a free wiki software platform written in Java.",
       "website": "http://www.xwiki.org"
     },
     "Xajax": {
@@ -14825,6 +14836,7 @@
         "xf_csrf": "",
         "xf_session": ""
       },
+      "description": "XenForo is a PHP-based forum hosting program for communities that is designed to be deployed on a remote web server.",
       "html": [
         "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
         "<html id=\"XF\" "
@@ -14837,7 +14849,6 @@
       "js": {
         "XF.GuestUsername": ""
       },
-      "description": "XenForo is a PHP-based forum hosting program for communities that is designed to be deployed on a remote web server.",
       "website": "http://xenforo.com"
     },
     "Xeora": {
@@ -15072,22 +15083,22 @@
       "cats": [
         13
       ],
+      "description": "YouTrack is a browser-based bug tracker, issue tracking system and project management software.",
       "html": [
         "no-title=\"YouTrack\">",
         "data-reactid=\"[^\"]+\">youTrack ([0-9.]+)<\\;version:\\1",
         "type=\"application/opensearchdescription\\+xml\" title=\"YouTrack\"/>"
       ],
       "icon": "YouTrack.png",
-      "description": "YouTrack is a browser-based bug tracker, issue tracking system and project management software.",
       "website": "http://www.jetbrains.com/youtrack/"
     },
     "YouTube": {
       "cats": [
         14
       ],
+      "description": "YouTube is a video sharing service where users can create their own profile, upload videos, watch, like and comment on other videos.",
       "html": "<(?:param|embed|iframe)[^>]+youtube(?:-nocookie)?\\.com/(?:v|embed)",
       "icon": "YouTube.png",
-      "description": "YouTube is a video sharing service where users can create their own profile, upload videos, watch, like and comment on other videos.",
       "website": "http://www.youtube.com"
     },
     "ZK": {
@@ -15104,6 +15115,7 @@
       "cats": [
         66
       ],
+      "description": "Zurb Foundation is used to prototype in the browser. Allows rapid creation of websites or applications while leveraging mobile and responsive technology. The front end framework is the collection of HTML, CSS, and Javascript containing design patterns.",
       "html": [
         "<link[^>]+foundation[^>\"]+css",
         "<div [^>]*class=\"[^\"]*(?:small|medium|large)-\\d{1,2} columns"
@@ -15112,7 +15124,6 @@
       "js": {
         "Foundation.version": "([\\d.]+)\\;version:\\1"
       },
-      "description": "Zurb Foundation is used to prototype in the browser. Allows rapid creation of websites or applications while leveraging mobile and responsive technology. The front end framework is the collection of HTML, CSS, and Javascript containing design patterns.",
       "website": "http://foundation.zurb.com"
     },
     "Zabbix": {
@@ -15197,11 +15208,11 @@
       "cats": [
         7
       ],
+      "description": "Zenfolio is a photography website builder.",
       "icon": "Zenfolio.png",
       "js": {
         "Zenfolio": ""
       },
-      "description": "Zenfolio is a photography website builder.",
       "website": "https://zenfolio.com"
     },
     "Zepto": {
@@ -15230,12 +15241,12 @@
       "cats": [
         11
       ],
+      "description": "Zimbra is a is a collaborative software suite that includes an email server and a web client.",
       "icon": "Zinnia.png",
       "implies": "Django",
       "meta": {
         "generator": "Zinnia"
       },
-      "description": "Zimbra is a is a collaborative software suite that includes an email server and a web client.",
       "website": "http://django-blog-zinnia.com"
     },
     "Zip": {
@@ -15315,23 +15326,23 @@
       "cats": [
         25
       ],
+      "description": "amCharts is a JavaScript-based interactive charts and maps programming library and tool.",
       "html": "<svg[^>]*><desc>JavaScript chart by amCharts ([\\d.]*)\\;version:\\1",
       "icon": "amCharts.png",
       "js": {
         "AmCharts": ""
       },
       "scripts": "amcharts.*\\.js",
-      "description": "amCharts is a JavaScript-based interactive charts and maps programming library and tool.",
       "website": "http://amcharts.com"
     },
     "animate.css": {
       "cats": [
         66
       ],
+      "description": "Animate.css is a ready-to-use library collection of CSS3 animation effects.",
       "html": [
         "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
       ],
-      "description": "Animate.css is a ready-to-use library collection of CSS3 animation effects.",
       "website": "https://daneden.github.io/animate.css/"
     },
     "basket.js": {
@@ -15365,12 +15376,12 @@
         "cprelogin": "",
         "cpsession": ""
       },
+      "description": "cPanel is a web hosting control panel. The software provides a graphical interface and automation tools designed to simplify the process of hosting a website.",
       "headers": {
         "Server": "cpsrvd/([\\d.]+)\\;version:\\1"
       },
       "html": "<!-- cPanel",
       "icon": "cPanel.png",
-      "description": "cPanel is a web hosting control panel. The software provides a graphical interface and automation tools designed to simplify the process of hosting a website.",
       "website": "http://www.cpanel.net"
     },
     "cgit": {
@@ -15689,12 +15700,12 @@
       "cats": [
         8
       ],
+      "description": "ikiwiki is a free and open-source wiki application.",
       "html": [
         "<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"[^\"]*/ikiwiki\\.cgi",
         "<a href=\"/(?:cgi-bin/)?ikiwiki\\.cgi\\?do="
       ],
       "icon": "ikiwiki.png",
-      "description": "ikiwiki is a free and open-source wiki application.",
       "website": "http://ikiwiki.info"
     },
     "imperia CMS": {
@@ -15748,12 +15759,12 @@
       "cats": [
         26
       ],
+      "description": "jQTouch is an open-source Zepto/ JQuery plugin with native animations, automatic navigation, and themes for mobile WebKit browsers like iPhone, G1 (Android), and Palm Pre.",
       "icon": "jQTouch.png",
       "js": {
         "jQT": ""
       },
       "scripts": "jqtouch.*\\.js",
-      "description": "jQTouch is an open-source Zepto/ JQuery plugin with native animations, automatic navigation, and themes for mobile WebKit browsers like iPhone, G1 (Android), and Palm Pre.",
       "website": "http://jqtouch.com"
     },
     "jQuery": {
@@ -15777,6 +15788,7 @@
       "cats": [
         59
       ],
+      "description": "Ajax Autocomplete for jQuery allows you to easily create autocomplete/autosuggest boxes for text input fields.",
       "icon": "jQuery.svg",
       "implies": "jQuery",
       "js": {
@@ -15787,7 +15799,6 @@
         "/devbridgeAutocomplete(?:-min)?\\.js",
         "/jquery\\.devbridge-autocomplete/([0-9.]+)/jquery\\.autocomplete(?:.min)?\\.js\\;version:\\1"
       ],
-      "description": "Ajax Autocomplete for jQuery allows you to easily create autocomplete/autosuggest boxes for text input fields.",
       "website": "https://www.devbridge.com/sourcery/components/jquery-autocomplete/"
     },
     "jQuery Migrate": {
@@ -15809,22 +15820,22 @@
       "cats": [
         26
       ],
+      "description": "jQuery Mobile is a HTML5-based user interface system designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices.",
       "icon": "jQuery Mobile.svg",
       "implies": "jQuery",
       "js": {
         "jQuery.mobile.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
-      "description": "jQuery Mobile is a HTML5-based user interface system designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices.",
       "website": "https://jquerymobile.com"
     },
     "jQuery Sparklines": {
       "cats": [
         25
       ],
+      "description": "jQuery Sparklines is a plugin that generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.",
       "implies": "jQuery",
       "scripts": "jquery\\.sparkline.*\\.js",
-      "description": "jQuery Sparklines is a plugin that generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.",
       "website": "http://omnipotent.net/jquery.sparkline/"
     },
     "jQuery UI": {
@@ -15849,6 +15860,7 @@
       "cats": [
         26
       ],
+      "description": "jQuery PJAX is a plugin that uses AJAX and pushState.",
       "html": "<div[^>]+data-pjax-container",
       "implies": "jQuery",
       "js": {
@@ -15860,7 +15872,6 @@
         "pjax-timeout": ""
       },
       "scripts": "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
-      "description": "jQuery PJAX is a plugin that uses AJAX and pushState.",
       "website": "https://github.com/defunkt/jquery-pjax"
     },
     "jqPlot": {
@@ -15876,10 +15887,10 @@
       "cats": [
         31
       ],
+      "description": "JSDelivr is a free public CDN for open-source projects. It can serve web files directly from the npm registry and GitHub repositories without any configuration.",
       "html": "<link [^>]*?href=\"?[a-zA-Z]*?:?//cdn\\.jsdelivr\\.net/",
       "icon": "jsdelivr-icon.svg",
       "scripts": "//cdn\\.jsdelivr\\.net/",
-      "description": "JSDelivr is a free public CDN for open-source projects. It can serve web files directly from the npm registry and GitHub repositories without any configuration.",
       "website": "https://www.jsdelivr.com/"
     },
     "kolors4u": {
@@ -15945,42 +15956,43 @@
       "cats": [
         33
       ],
+      "description": "Mod_auth_pam is used to configure ways for authenticating users.",
       "headers": {
         "Server": "mod_auth_pam(?:/([\\d\\.]+))?\\;version:\\1"
       },
       "icon": "Apache.svg",
       "implies": "Apache",
-      "description": "Mod_auth_pam is used to configure ways for authenticating users.",
       "website": "http://pam.sourceforge.net/mod_auth_pam"
     },
     "mod_dav": {
       "cats": [
         33
       ],
+      "description": "Mod_dav is an Apache module to provide WebDAV capabilities for your Apache web server. It is an open-source module, provided under an Apache-style license.",
       "headers": {
         "Server": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache.svg",
       "implies": "Apache",
-      "description": "Mod_dav is an Apache module to provide WebDAV capabilities for your Apache web server. It is an open-source module, provided under an Apache-style license.",
       "website": "http://webdav.org/mod_dav"
     },
     "mod_fastcgi": {
       "cats": [
         33
       ],
+      "description": "Mod_fcgid is a high performance alternative to mod_cgi or mod_cgid, which starts a sufficient number instances of the CGI program to handle concurrent requests, and these programs remain running to handle further incoming requests.",
       "headers": {
         "Server": "mod_fastcgi(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache.svg",
       "implies": "Apache",
-      "description": "Mod_fcgid is a high performance alternative to mod_cgi or mod_cgid, which starts a sufficient number instances of the CGI program to handle concurrent requests, and these programs remain running to handle further incoming requests.",
       "website": "http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html"
     },
     "mod_jk": {
       "cats": [
         33
       ],
+      "description": "Mod_jk is an Apache module used to connect the Tomcat servlet container with web servers such as Apache, iPlanet, Sun ONE (formerly Netscape) and even IIS using the Apache JServ Protocol. A web server waits for client HTTP requests.",
       "headers": {
         "Server": "mod_jk(?:/([\\d\\.]+))?\\;version:\\1"
       },
@@ -15989,13 +16001,13 @@
         "Apache Tomcat",
         "Apache"
       ],
-      "description": "Mod_jk is an Apache module used to connect the Tomcat servlet container with web servers such as Apache, iPlanet, Sun ONE (formerly Netscape) and even IIS using the Apache JServ Protocol. A web server waits for client HTTP requests.",
       "website": "http://tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html"
     },
     "mod_perl": {
       "cats": [
         33
       ],
+      "description": "Mod_perl is an optional module for the Apache HTTP server. It embeds a Perl interpreter into the Apache server. In addition to allowing Apache modules to be written in the Perl programming language, it allows the Apache web server to be dynamically configured by Perl programs.",
       "headers": {
         "Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1"
       },
@@ -16004,13 +16016,13 @@
         "Perl",
         "Apache"
       ],
-      "description": "Mod_perl is an optional module for the Apache HTTP server. It embeds a Perl interpreter into the Apache server. In addition to allowing Apache modules to be written in the Perl programming language, it allows the Apache web server to be dynamically configured by Perl programs.",
       "website": "http://perl.apache.org"
     },
     "mod_python": {
       "cats": [
         33
       ],
+      "description": "Mod_python is an Apache HTTP Server module that integrates the Python programming language with the server. It is intended to provide a Python language binding for the Apache HTTP Server. ",
       "headers": {
         "Server": "mod_python(?:/([\\d.]+))?\\;version:\\1"
       },
@@ -16019,13 +16031,13 @@
         "Python",
         "Apache"
       ],
-      "description": "Mod_python is an Apache HTTP Server module that integrates the Python programming language with the server. It is intended to provide a Python language binding for the Apache HTTP Server. ",
       "website": "http://www.modpython.org"
     },
     "mod_rack": {
       "cats": [
         33
       ],
+      "description": "Mod_rack is a free web server and application server with support for Ruby, Python and Node.js.",
       "headers": {
         "Server": "mod_rack(?:/([\\d.]+))?\\;version:\\1",
         "X-Powered-By": "mod_rack(?:/([\\d.]+))?\\;version:\\1"
@@ -16035,13 +16047,13 @@
         "Ruby on Rails\\;confidence:50",
         "Apache"
       ],
-      "description": "Mod_rack is a free web server and application server with support for Ruby, Python and Node.js.",
       "website": "http://phusionpassenger.com"
     },
     "mod_rails": {
       "cats": [
         33
       ],
+      "description": "Mod_rails is a free web server and application server with support for Ruby, Python and Node.js.",
       "headers": {
         "Server": "mod_rails(?:/([\\d.]+))?\\;version:\\1",
         "X-Powered-By": "mod_rails(?:/([\\d.]+))?\\;version:\\1"
@@ -16051,25 +16063,25 @@
         "Ruby on Rails\\;confidence:50",
         "Apache"
       ],
-      "description": "Mod_rails is a free web server and application server with support for Ruby, Python and Node.js.",
       "website": "http://phusionpassenger.com"
     },
     "mod_ssl": {
       "cats": [
         33
       ],
+      "description": "mod_ssl is an optional module for the Apache HTTP Server. It provides strong cryptography for the Apache web server via the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) cryptographic protocols by the help of the open-source SSL/TLS toolkit OpenSSL.",
       "headers": {
         "Server": "mod_ssl(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "mod_ssl.png",
       "implies": "Apache",
-      "description": "mod_ssl is an optional module for the Apache HTTP Server. It provides strong cryptography for the Apache web server via the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) cryptographic protocols by the help of the open-source SSL/TLS toolkit OpenSSL.",
       "website": "http://modssl.org"
     },
     "mod_wsgi": {
       "cats": [
         33
       ],
+      "description": "mod_wsgi is an Apache HTTP Server module that provides a WSGI compliant interface for hosting Python based web applications under Apache.",
       "headers": {
         "Server": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1",
         "X-Powered-By": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1"
@@ -16079,7 +16091,6 @@
         "Python\\;confidence:50",
         "Apache"
       ],
-      "description": "mod_wsgi is an Apache HTTP Server module that provides a WSGI compliant interface for hosting Python based web applications under Apache.",
       "website": "https://code.google.com/p/modwsgi"
     },
     "nghttpx - HTTP/2 proxy": {
@@ -16187,22 +16198,22 @@
       "cats": [
         25
       ],
+      "description": "Particles.js is a JavaScript library for creating particles.",
       "html": "<div id=\"particles-js\">",
       "js": {
         "particlesJS": ""
       },
       "scripts": "/particles(?:\\.min)?\\.js",
-      "description": "Particles.js is a JavaScript library for creating particles.",
       "website": "https://vincentgarreau.com/particles.js/"
     },
     "phpAlbum": {
       "cats": [
         7
       ],
+      "description": "phpAlbum is an open-source PHP script which allows you to create your personal photo album.",
       "html": "<!--phpalbum ([.\\d\\s]+)-->\\;version:\\1",
       "icon": "phpAlbum.png",
       "implies": "PHP",
-      "description": "phpAlbum is an open-source PHP script which allows you to create your personal photo album.",
       "website": "http://phpalbum.net"
     },
     "phpBB": {
@@ -16212,6 +16223,7 @@
       "cookies": {
         "phpbb": ""
       },
+      "description": "phpBB is a free open-source Internet forum package in the PHP scripting language.",
       "html": [
         "Powered by <a[^>]+phpBB",
         "<div class=phpbb_copyright>",
@@ -16228,7 +16240,6 @@
       "meta": {
         "copyright": "phpBB Group"
       },
-      "description": "phpBB is a free open-source Internet forum package in the PHP scripting language.",
       "website": "https://phpbb.com"
     },
     "phpCMS": {
@@ -16256,6 +16267,7 @@
       "cats": [
         3
       ],
+      "description": "PhpMyAdmin is a free and open-source administration tool for MySQL and MariaDB.",
       "html": [
         "!\\[CDATA\\[[^<]*PMA_VERSION:\\\"([\\d.]+)\\;version:\\1",
         "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)\\;version:\\1"
@@ -16268,7 +16280,6 @@
       "js": {
         "pma_absolute_uri": ""
       },
-      "description": "PhpMyAdmin is a free and open-source administration tool for MySQL and MariaDB.",
       "website": "https://www.phpmyadmin.net"
     },
     "phpPgAdmin": {
@@ -16406,16 +16417,6 @@
       "icon": "sIFR.png",
       "scripts": "sifr\\.js",
       "website": "https://www.mikeindustries.com/blog/sifr"
-    },
-    "Sift": {
-      "cats": [
-        10
-      ],
-      "icon": "Sift.png",
-      "scripts": [
-        "cdn\\.sift(?:science)?\\.com/s\\.js"
-      ],
-      "website": "https://sift.com/"
     },
     "sNews": {
       "cats": [
@@ -16603,6 +16604,7 @@
         "bbsessionhash": ""
       },
       "cpe": "cpe:/a:vbulletin:vbulletin",
+      "description": "vBulletin is tool that is used to create and manage online forums or discussion boards. It is written in PHP and uses a MySQL database server.",
       "html": "<div id=\"copyright\">Powered by vBulletin",
       "icon": "vBulletin.png",
       "implies": "PHP",
@@ -16612,7 +16614,6 @@
       "meta": {
         "generator": "vBulletin ?([\\d.]+)?\\;version:\\1"
       },
-      "description": "vBulletin is tool that is used to create and manage online forums or discussion boards. It is written in PHP and uses a MySQL database server.",
       "website": "https://www.vbulletin.com"
     },
     "vibecommerce": {
@@ -16665,6 +16666,7 @@
       "cats": [
         23
       ],
+      "description": "WPCache is a static caching plugin for WordPress.",
       "headers": {
         "X-Powered-By": "wpCache(?:/([\\d.]+))?\\;version:\\1"
       },
@@ -16679,7 +16681,6 @@
         "keywords": "wpCache"
       },
       "url": "^https?://[^/]+\\.wpcache\\.co",
-      "description": "WPCache is a static caching plugin for WordPress.",
       "website": "https://wpcache.co"
     },
     "xCharts": {
