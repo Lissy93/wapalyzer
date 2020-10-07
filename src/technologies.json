@@ -3101,11 +3101,12 @@
       ],
       "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
       "headers": {
-        "X-Powered-By": "Commerce.js"
-      },
+         "X-Support":  "support@commercejs\\.com",
+         "Chec-Version": ".*"
+       },
       "icon": "commercejs.png",
       "scripts": [
-        "^https?:/cdn\\.chec\\.io/v2/commerce\\.js/",
+        "^https?:/cdn\\.chec\\.io/v\\d+/commerce\\.js",
         "chec/commerce.jscommerce\\.js"
       ],
       "url": "^https?//.+\\.spaces.chec\\.io",
