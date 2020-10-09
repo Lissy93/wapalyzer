@@ -1064,6 +1064,21 @@
       "icon": "Amazon.svg",
       "website": "https://affiliate-program.amazon.com.au/"
     },
+    "Google Workspace": {
+      "cats": [
+        30,
+        61
+      ],
+      "description": "Google Workspace, formerly G Suite, is a collection of cloud computing, productivity and collaboration tools.",
+      "dns": {
+        "MX": [
+          "aspmx\\.l\\.google\\.com",
+          "googlemail\\.com"
+        ]
+      },
+      "icon": "Google Workspace.svg",
+      "website": "https://workspace.google.com/"
+    },
     "Amazon Cloudfront": {
       "cats": [
         31
@@ -1072,6 +1087,9 @@
       "headers": {
         "Via": "\\(CloudFront\\)$",
         "X-Amz-Cf-Id": ""
+      },
+      "dns": {
+        "CNAME": "^[a-z0-9]+\\.cloudfront.net$"
       },
       "icon": "Amazon-Cloudfront.svg",
       "implies": "Amazon Web Services",
@@ -1145,6 +1163,9 @@
       "cats": [
         62
       ],
+      "dns": {
+        "NS": "\\.awsdns-"
+      },
       "description": "Amazon Web Services (AWS) is a comprehensive cloud services platform offering compute power, database storage, content delivery and other functionality.",
       "icon": "aws.svg",
       "website": "https://aws.amazon.com/"
@@ -12723,6 +12744,9 @@
       "cookies": {
         "__stripe_mid": "",
         "__stripe_sid": ""
+      },
+      "dns": {
+        "TXT": "stripe-verification="
       },
       "description": "Stripe offers online payment processing for internet businesses as well as fraud prevention, invoicing and subscription management.",
       "html": "<input[^>]+data-stripe",

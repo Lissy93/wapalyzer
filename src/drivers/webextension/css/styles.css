@@ -44,6 +44,7 @@ a:hover {
   border-bottom: 1px solid var(--color-secondary);
   display: flex;
   height: 4.5rem;
+  justify-content: space-between;
 }
 
 .header__logo {
@@ -53,6 +54,20 @@ a:hover {
 
 .header__logo--dark {
   display: none;
+}
+
+.header__cta {
+  text-align: right;
+  margin-right: 1.5rem;
+  white-space: nowrap;
+}
+
+.header__open-in-new {
+  color: var(--color-primary);
+  height: 1.1rem;
+  margin-left: .1rem;
+  vertical-align: middle;
+  width: 1.1rem;
 }
 
 .footer {

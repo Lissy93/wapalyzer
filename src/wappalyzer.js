@@ -187,6 +187,7 @@ const Wappalyzer = {
     robots,
     meta,
     headers,
+    dns,
     certIssuer,
     cookies,
     scripts,
@@ -210,6 +211,7 @@ const Wappalyzer = {
             mm(technology, 'cookies', cookies),
             mm(technology, 'meta', meta),
             mm(technology, 'headers', headers),
+            mm(technology, 'dns', dns),
           ])
         )
       ).filter((technology) => technology)
@@ -237,6 +239,7 @@ const Wappalyzer = {
         robots,
         meta,
         headers,
+        dns,
         certIssuer,
         cookies,
         scripts,
@@ -254,6 +257,7 @@ const Wappalyzer = {
         slug: Wappalyzer.slugify(name),
         url: transform(url),
         headers: transform(headers),
+        dns: transform(dns),
         cookies: transform(cookies),
         dom: transform(dom, true),
         html: transform(html),

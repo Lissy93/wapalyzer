@@ -1,5 +1,6 @@
 const { URL } = require('url')
 const fs = require('fs')
+const dns = require('dns').promises
 const path = require('path')
 const http = require('http')
 const https = require('https')
@@ -227,6 +228,8 @@ class Site {
     this.listeners = {}
 
     this.pages = []
+
+    this.dns = []
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -629,6 +632,44 @@ class Site {
         html = batches.join('\n')
       }
 
+      // DNS
+      if (!this.dns.length) {
+        try {
+          const records = {}
+
+          ;[
+            records.cname,
+            records.ns,
+            records.mx,
+            records.txt,
+          ] = await this.promiseTimeout(
+            Promise.all([
+              dns.resolveCname(url.hostname),
+              dns.resolveNs(url.hostname),
+              dns.resolveMx(url.hostname.replace(/^www\./, '')),
+              dns.resolveTxt(url.hostname.replace(/^www\./, '')),
+            ])
+          )
+
+          this.dns = Object.keys(records).reduce((dns, type) => {
+            dns[type] = dns[type] || []
+
+            Array.prototype.push.apply(
+              dns[type],
+              records[type]
+                .map((value) => (value.exchange ? value.exchange : value))
+                .flat()
+            )
+
+            return dns
+          }, {})
+
+          this.onDetect(analyze({ dns: this.dns }))
+        } catch (error) {
+          // Continue
+        }
+      }
+
       // Validate response
       if (url.protocol !== 'file:' && !this.analyzedUrls[url.href].status) {
         await page.close()
@@ -640,7 +681,6 @@ class Site {
 
       this.onDetect(analyzeDom(dom))
       this.onDetect(analyzeJs(js))
-
       this.onDetect(
         analyze({
           url,

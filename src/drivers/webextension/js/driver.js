@@ -63,12 +63,6 @@ const Driver = {
       ['responseHeaders', 'blocking']
     )
 
-    // chrome.webRequest.onCompleted.addListener(
-    //  Driver.onWebRequestComplete,
-    //  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-    //  ['responseHeaders']
-    // )
-
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
     // Enable messaging between scripts
