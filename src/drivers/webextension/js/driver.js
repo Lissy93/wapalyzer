@@ -73,9 +73,14 @@ const Driver = {
     const upgradeMessage = await getOption('upgradeMessage', true)
 
     if (previous === null) {
-      open('https://www.wappalyzer.com/installed/')
+      open(
+        'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
+      )
     } else if (version !== previous && upgradeMessage) {
-      open(`https://www.wappalyzer.com/upgraded/?v${version}`, false)
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -260,7 +265,11 @@ const Driver = {
 
           let certIssuer = ''
 
-          if (typeof browser !== 'undefined') {
+          if (
+            browser &&
+            browser.webRequest &&
+            browser.webRequest.getSecurityInfo
+          ) {
             // Currently only works in Firefox
             // See https://stackoverflow.com/a/50484642
             const { certificates } = await browser.webRequest.getSecurityInfo(
@@ -348,7 +357,7 @@ const Driver = {
    * @param {Boolean} incrementHits
    */
   async onDetect(url, detections = [], language, incrementHits = false) {
-    if (!detections.length) {
+    if (!url || !detections.length) {
       return
     }
 

@@ -81,6 +81,14 @@
 							}
 						}
 					},
+          "dns": {
+						"type": "object",
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							}
+						}
+					},
 					"headers": {
 						"type": "object",
 						"additionalProperties": false,

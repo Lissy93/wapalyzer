@@ -634,40 +634,54 @@ class Site {
 
       // DNS
       if (!this.dns.length) {
-        try {
-          const records = {}
+        const records = {}
 
-          ;[
-            records.cname,
-            records.ns,
-            records.mx,
-            records.txt,
-          ] = await this.promiseTimeout(
-            Promise.all([
-              dns.resolveCname(url.hostname),
-              dns.resolveNs(url.hostname),
-              dns.resolveMx(url.hostname.replace(/^www\./, '')),
-              dns.resolveTxt(url.hostname.replace(/^www\./, '')),
-            ])
+        const resolve = async (func, hostname) => {
+          try {
+            return await this.promiseTimeout(func(hostname))
+          } catch (error) {
+            if (error.code !== 'ENODATA') {
+              this.error(error)
+            }
+
+            return []
+          }
+        }
+
+        const domain = url.hostname.replace(/^www\./, '')
+
+        ;[
+          records.cname,
+          records.ns,
+          records.mx,
+          records.txt,
+          records.soa,
+        ] = await Promise.all([
+          resolve(dns.resolveCname, url.hostname),
+          resolve(dns.resolveNs, domain),
+          resolve(dns.resolveMx, domain),
+          resolve(dns.resolveTxt, domain),
+          resolve(dns.resolveSoa, domain),
+        ])
+
+        this.dns = Object.keys(records).reduce((dns, type) => {
+          dns[type] = dns[type] || []
+
+          Array.prototype.push.apply(
+            dns[type],
+            Array.isArray(records[type])
+              ? records[type].map((value) => {
+                  return typeof value === 'object'
+                    ? Object.values(value).join(' ')
+                    : value
+                })
+              : [Object.values(records[type]).join(' ')]
           )
 
-          this.dns = Object.keys(records).reduce((dns, type) => {
-            dns[type] = dns[type] || []
+          return dns
+        }, {})
 
-            Array.prototype.push.apply(
-              dns[type],
-              records[type]
-                .map((value) => (value.exchange ? value.exchange : value))
-                .flat()
-            )
-
-            return dns
-          }, {})
-
-          this.onDetect(analyze({ dns: this.dns }))
-        } catch (error) {
-          // Continue
-        }
+        this.onDetect(analyze({ dns: this.dns }))
       }
 
       // Validate response

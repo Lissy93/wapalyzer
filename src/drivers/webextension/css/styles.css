@@ -93,7 +93,7 @@ a:hover {
 .alerts__icon {
   color: var(--color-primary);
   height: 1.1rem;
-  margin-right: .5rem;
+  margin-right: .3rem;
   vertical-align: text-bottom;
   width: 1.1rem;
 }
@@ -344,6 +344,11 @@ a:hover {
     color: #fff
   }
 
+  .theme-mode .technology__link:hover .technology__name {
+    border-bottom: 1px solid var(--color-text-dark);
+    color: var(--color-text-dark);
+  }
+
   .theme-mode .technology__confidence {
   }
 
@@ -360,7 +365,19 @@ a:hover {
     color: var(--color-text-dark);
   }
 
+  .theme-mode .footer__icon {
+    color: #fff;
+  }
+
   .theme-mode .alerts__icon {
-    color:var(--color-text-dark);
+    color: #fff;
+  }
+
+  .theme-mode .header__open-in-new {
+    color: #fff;
+  }
+
+  .theme-mode .technology__open-in-new {
+    color: #fff;
   }
 }

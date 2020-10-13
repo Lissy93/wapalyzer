@@ -1798,6 +1798,14 @@
         "ARRAffinity": "",
         "TiPMix": ""
       },
+      "dns": {
+        "NS": [
+          "\\.azure-dns\\."
+        ],
+        "SOA": [
+          "azuredns-cloud\\.net"
+        ]
+      },
       "description": "Azure is a cloud computing service for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
       "headers": {
         "azure-regionname": "",
@@ -7874,6 +7882,11 @@
         32
       ],
       "cpe": "cpe:/a:thinkshout:mailchimp",
+      "dns": {
+        "TXT": [
+          "spf\\.mandrillapp\\.com"
+        ]
+      },
       "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "html": [
         "<form [^>]*data-mailchimp-url",
