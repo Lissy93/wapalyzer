@@ -66,10 +66,10 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
     "#example-id": {
       "attributes": {
         "class": "example-class"
-      }
+      },
       "properties": {
         "example-property": ""
-      }
+      },
       "content": "Example text content"
     }
   },
