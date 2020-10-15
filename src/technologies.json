@@ -1044,6 +1044,22 @@
       "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
+    "Coinbase Commerce": {
+      "cats": [
+        41,
+        61
+      ],
+      "description": "Coinbase Commerce is a platform that enables merchants to accept cryptocurrency payments.",
+      "dom": {
+        "a[href^='https://commerce.coinbase.com/checkout/']": {
+          "attributes": {
+            "href": "^https://commerce\\.coinbase\\.com/checkout/[a-z0-9-]+$"
+          }
+        }
+      },
+      "icon": "Coinbase.svg",
+      "website": "https://commerce.coinbase.com/"
+    },
     "Amazon Associates": {
       "cats": [
         71
