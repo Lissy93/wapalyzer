@@ -13,6 +13,8 @@ const { agent, promisify, getOption, setOption, open } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
+const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|127\.|0\.)/
+
 const Driver = {
   lastPing: Date.now(),
 
@@ -534,7 +536,10 @@ const Driver = {
    * @param {Boolean} secure
    */
   async getRobots(hostname, secure = false) {
-    if (!(await getOption('tracking', true))) {
+    if (
+      !(await getOption('tracking', true)) ||
+      hostnameIgnoreList.test(hostname)
+    ) {
       return
     }
 
@@ -649,12 +654,7 @@ const Driver = {
             hostname
           ]
 
-          if (
-            !/((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|google|\/admin|\.local|\.test|\.dev|127\.|0\.)/.test(
-              hostname
-            ) &&
-            hits >= 3
-          ) {
+          if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
             hostnames[url] = hostnames[url] || {
               applications: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
