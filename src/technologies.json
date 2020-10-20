@@ -1095,6 +1095,20 @@
       "icon": "Google Workspace.svg",
       "website": "https://workspace.google.com/"
     },
+    "Microsoft 365": {
+      "cats": [
+        30,
+        61
+      ],
+      "description": "Microsoft 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line.",
+      "dns": {
+        "MX": [
+          "outlook\\.com"
+        ]
+      },
+      "icon": "Microsoft 365.svg",
+      "website": "https://www.microsoft.com/microsoft-365"
+    },
     "Amazon Cloudfront": {
       "cats": [
         31
@@ -7176,7 +7190,6 @@
       "cats": [
         41,
         6,
-        5
       ],
       "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
       "icon": "Klarna.svg",
@@ -10174,6 +10187,18 @@
         "LeadBooster": ""
       },
       "website": "https://www.pipedrive.com/"
+    },
+    "Emarsys": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Emarsys is a cloud-based B2C marketing platform.",
+      "icon": "Emarsys.svg",
+      "js": {
+        "ScarabQueue": ""
+      },
+      "website": "https://emarsys.com/"
     },
     "Planet": {
       "cats": [

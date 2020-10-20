@@ -157,6 +157,8 @@ class Driver {
 
     try {
       this.browser = await puppeteer.launch({
+        ignoreHTTPSErrors: true,
+        acceptInsecureCerts: true,
         args: chromiumArgs,
         executablePath: await chromiumBin,
       })
@@ -377,7 +379,7 @@ class Site {
 
             this.onDetect(analyze({ headers, certIssuer }))
 
-            await this.emit('response', { page, response })
+            await this.emit('response', { page, response, headers, certIssuer })
           }
         }
       } catch (error) {
@@ -738,6 +740,7 @@ class Site {
         meta,
         js,
         links: reducedLinks,
+        dns: this.dns,
       })
 
       await page.close()
