@@ -1493,6 +1493,16 @@
       "scripts": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
     },
+    "Appointy": {
+      "cats": [
+        72,
+        61
+      ],
+      "description": "Appointy’s online scheduling software.",
+      "html": "<iframe[^>]+src=(\"|)https://([\\w\\d\\-]+\\.appointy.com)",
+      "icon": "Appointy.png",
+      "website": "https://www.appointy.com/"
+    },
     "Apple Pay": {
       "cats": [
         41
@@ -13423,17 +13433,6 @@
       },
       "scripts": "timeplot.*\\.js",
       "website": "http://www.simile-widgets.org/timeplot/"
-    },
-    "Timify": {
-      "cats": [
-        72,
-        61
-      ],
-      "description": "The Online Scheduling and Resource Management Software.",
-      "icon": "Timify.png",
-      "scripts": "https://widget\\.timify\\.com/js/widget\\.js",
-      "url": ".+\\.timify\\.com",
-      "website": "https://www.timify.com/"
     },
     "TinyMCE": {
       "cats": [
