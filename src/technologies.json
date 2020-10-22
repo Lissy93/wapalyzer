@@ -2680,8 +2680,8 @@
       "cats": [
         57
       ],
-      "description": "Cecil is a CLI application that merges plain text files, images and Twig templates to generate a static website.",
-      "icon": "Cecil.png",
+      "description": "Cecil is a CLI application, powered by PHP, that merge plain text files (written in Markdown), images and Twig templates to generate a static website.",
+      "icon": "Cecil.svg",
       "meta": {
         "generator": "^Cecil(?: ([0-9.]+))?$\\;version:\\1"
       },
@@ -3160,12 +3160,13 @@
       ],
       "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
       "headers": {
-        "X-Powered-By": "Commerce.js"
-      },
+         "X-Support": "support@commercejs\\.com",
+         "Chec-Version": ".*"
+       },
       "icon": "commercejs.png",
       "scripts": [
-        "^https?:/cdn\\.chec\\.io/v2/commerce\\.js/",
-        "chec/commerce.jscommerce\\.js"
+        "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
+        "chec/commerce\\.js"
       ],
       "url": "^https?//.+\\.spaces.chec\\.io",
       "website": "https://www.commercejs.com"
@@ -5124,7 +5125,7 @@
         66
       ],
       "html": [
-        "<link[^>]* href=[^>]*?govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1?a:",
+        "<link[^>]* href=[^>]*?govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1",
         "<body[^>]+govuk-template__body\\;confidence:80",
         "<a[^>]+govuk-link\\;confidence:10"
       ],
@@ -5133,7 +5134,7 @@
         "GOVUKFrontend": ""
       },
       "scripts": [
-        "govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1?a:"
+        "govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "https://design-system.service.gov.uk/"
     },
@@ -7189,7 +7190,7 @@
     "Klarna Checkout": {
       "cats": [
         41,
-        6,
+        6
       ],
       "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
       "icon": "Klarna.svg",
@@ -10187,6 +10188,20 @@
         "LeadBooster": ""
       },
       "website": "https://www.pipedrive.com/"
+    },
+    "PIXIjs": {
+      "cats": [
+        25
+      ],
+      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
+      "icon": "pixijs.png",
+      "js": {
+        "PIXI": "",
+        "PIXI.version": "^(.+)$\\;version:\\1"
+      },
+      "url": ".+\\.pixijs\\.com",
+      "scripts": "pixi\\.(min\\.)?js$",
+      "website": "https://www.pixijs.com/"
     },
     "Emarsys": {
       "cats": [
@@ -15369,6 +15384,7 @@
       "cats": [
         12
       ],
+      "implies": "Angular",
       "js": {
         "Zone.root": ""
       },
