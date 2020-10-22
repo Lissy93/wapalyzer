@@ -1499,7 +1499,7 @@
         61
       ],
       "description": "Appointy’s online scheduling software.",
-      "html": "<iframe[^>]+src=(\"|)https://([\\w\\d\\-]+\\.appointy.com)",
+      "html": "<iframe[^>]+src=(?:\"|)?https://[\\w\\d\\-]+\\.appointy\\.com",
       "icon": "Appointy.png",
       "website": "https://www.appointy.com/"
     },
