@@ -3160,9 +3160,9 @@
       ],
       "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
       "headers": {
-         "X-Support": "support@commercejs\\.com",
-         "Chec-Version": ".*"
-       },
+        "X-Support": "support@commercejs\\.com",
+        "Chec-Version": ".*"
+      },
       "icon": "commercejs.png",
       "scripts": [
         "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
@@ -8053,6 +8053,20 @@
         "generator": "^MasterkinG(?:)"
       },
       "website": "https://masterking32.com"
+    },
+    "Mastodon": {
+      "cats": [
+        2
+      ],
+      "website": "https://joinmastodon.org",
+      "description": "Federated social media platform",
+      "icon": "Mastodon.svg",
+      "cookies": {
+        "_mastodon_session": ""
+      },
+      "headers": {
+        "Server": "^Mastodon$"
+      }
     },
     "Material Design Lite": {
       "cats": [
