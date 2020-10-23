@@ -10227,6 +10227,20 @@
       },
       "website": "https://www.pipedrive.com/"
     },
+    "PixelFed": {
+      "cats": [
+        2
+      ],
+      "description": "Federated photo sharing service",
+      "website": "https://pixelfed.org",
+      "icon": "PixelFed.svg",
+      "html": [
+        "<a href=\"https://pixelfed.org\"[^>]*title=\"version ([0-9.]+)\"[^>]*>Powered by Pixelfed</a>\\;version:\\1"
+      ],
+      "implies": [
+        "Laravel"
+      ]
+    },
     "PIXIjs": {
       "cats": [
         25
