@@ -6634,6 +6634,15 @@
       "icon": "Intercom.svg",
       "website": "https://www.intercom.com/articles"
     },
+    "Intercom Help": {
+      "cats": [
+        4
+      ],
+      "description": "Intercom Articles is a tool to create, organise and publish help articles.",
+      
+      "icon": "Intercom.svg",
+      "website": "https://www.intercom.com/customer-support-software"
+    },
     "Intershop": {
       "cats": [
         6
@@ -13693,6 +13702,7 @@
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
       "scripts": "use\\.typekit\\.com",
+      "html": "<link [^>]*href=\"[^\"]+use\\.typekit\\.(?:net|com)",
       "website": "http://typekit.com"
     },
     "UIKit": {
