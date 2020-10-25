@@ -13693,6 +13693,7 @@
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
       "scripts": "use\\.typekit\\.com",
+      "html": "<link [^>]*href=\"[^\"]+use\\.typekit\\.(?:net|com)",
       "website": "http://typekit.com"
     },
     "UIKit": {
