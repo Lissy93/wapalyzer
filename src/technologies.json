@@ -1044,22 +1044,6 @@
       "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
-    "Coinbase Commerce": {
-      "cats": [
-        41,
-        61
-      ],
-      "description": "Coinbase Commerce is a platform that enables merchants to accept cryptocurrency payments.",
-      "dom": {
-        "a[href^='https://commerce.coinbase.com/checkout/']": {
-          "attributes": {
-            "href": "^https://commerce\\.coinbase\\.com/checkout/[a-z0-9-]+$"
-          }
-        }
-      },
-      "icon": "Coinbase.svg",
-      "website": "https://commerce.coinbase.com/"
-    },
     "Amazon Associates": {
       "cats": [
         71
@@ -1080,46 +1064,17 @@
       "icon": "Amazon.svg",
       "website": "https://affiliate-program.amazon.com.au/"
     },
-    "Google Workspace": {
-      "cats": [
-        30,
-        61
-      ],
-      "description": "Google Workspace, formerly G Suite, is a collection of cloud computing, productivity and collaboration tools.",
-      "dns": {
-        "MX": [
-          "aspmx\\.l\\.google\\.com",
-          "googlemail\\.com"
-        ]
-      },
-      "icon": "Google Workspace.svg",
-      "website": "https://workspace.google.com/"
-    },
-    "Microsoft 365": {
-      "cats": [
-        30,
-        61
-      ],
-      "description": "Microsoft 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line.",
-      "dns": {
-        "MX": [
-          "outlook\\.com"
-        ]
-      },
-      "icon": "Microsoft 365.svg",
-      "website": "https://www.microsoft.com/microsoft-365"
-    },
     "Amazon Cloudfront": {
       "cats": [
         31
       ],
       "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds.",
+      "dns": {
+        "CNAME": "^[a-z0-9]+\\.cloudfront.net$"
+      },
       "headers": {
         "Via": "\\(CloudFront\\)$",
         "X-Amz-Cf-Id": ""
-      },
-      "dns": {
-        "CNAME": "^[a-z0-9]+\\.cloudfront.net$"
       },
       "icon": "Amazon-Cloudfront.svg",
       "implies": "Amazon Web Services",
@@ -1193,10 +1148,10 @@
       "cats": [
         62
       ],
+      "description": "Amazon Web Services (AWS) is a comprehensive cloud services platform offering compute power, database storage, content delivery and other functionality.",
       "dns": {
         "NS": "\\.awsdns-"
       },
-      "description": "Amazon Web Services (AWS) is a comprehensive cloud services platform offering compute power, database storage, content delivery and other functionality.",
       "icon": "aws.svg",
       "website": "https://aws.amazon.com/"
     },
@@ -1828,6 +1783,7 @@
         "ARRAffinity": "",
         "TiPMix": ""
       },
+      "description": "Azure is a cloud computing service for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
       "dns": {
         "NS": [
           "\\.azure-dns\\."
@@ -1836,7 +1792,6 @@
           "azuredns-cloud\\.net"
         ]
       },
-      "description": "Azure is a cloud computing service for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
       "headers": {
         "azure-regionname": "",
         "azure-sitename": "",
@@ -3092,6 +3047,22 @@
       "scripts": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
       "website": "https://coinhive.com"
     },
+    "Coinbase Commerce": {
+      "cats": [
+        41,
+        61
+      ],
+      "description": "Coinbase Commerce is a platform that enables merchants to accept cryptocurrency payments.",
+      "dom": {
+        "a[href^='https://commerce.coinbase.com/checkout/']": {
+          "attributes": {
+            "href": "^https://commerce\\.coinbase\\.com/checkout/[a-z0-9-]+$"
+          }
+        }
+      },
+      "icon": "Coinbase.svg",
+      "website": "https://commerce.coinbase.com/"
+    },
     "Coinhave": {
       "cats": [
         56
@@ -3160,9 +3131,9 @@
       ],
       "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
       "headers": {
-         "X-Support": "support@commercejs\\.com",
-         "Chec-Version": ".*"
-       },
+        "Chec-Version": ".*",
+        "X-Support": "support@commercejs\\.com"
+      },
       "icon": "commercejs.png",
       "scripts": [
         "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
@@ -4370,6 +4341,18 @@
       },
       "scripts": "elqCfg\\.js",
       "website": "http://eloqua.com"
+    },
+    "Emarsys": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Emarsys is a cloud-based B2C marketing platform.",
+      "icon": "Emarsys.svg",
+      "js": {
+        "ScarabQueue": ""
+      },
+      "website": "https://emarsys.com/"
     },
     "EmbedThis Appweb": {
       "cats": [
@@ -5821,6 +5804,21 @@
         "gwt:property": ""
       },
       "website": "http://developers.google.com/web-toolkit"
+    },
+    "Google Workspace": {
+      "cats": [
+        30,
+        61
+      ],
+      "description": "Google Workspace, formerly G Suite, is a collection of cloud computing, productivity and collaboration tools.",
+      "dns": {
+        "MX": [
+          "aspmx\\.l\\.google\\.com",
+          "googlemail\\.com"
+        ]
+      },
+      "icon": "Google Workspace.svg",
+      "website": "https://workspace.google.com/"
     },
     "Graffiti CMS": {
       "cats": [
@@ -7912,12 +7910,12 @@
         32
       ],
       "cpe": "cpe:/a:thinkshout:mailchimp",
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "dns": {
         "TXT": [
           "spf\\.mandrillapp\\.com"
         ]
       },
-      "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "html": [
         "<form [^>]*data-mailchimp-url",
         "<form [^>]*id=\"mc-embedded-subscribe-form\"",
@@ -8344,6 +8342,20 @@
         "metomic\\.js"
       ],
       "website": "https://metomic.io"
+    },
+    "Microsoft 365": {
+      "cats": [
+        30,
+        61
+      ],
+      "description": "Microsoft 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line.",
+      "dns": {
+        "MX": [
+          "outlook\\.com"
+        ]
+      },
+      "icon": "Microsoft 365.svg",
+      "website": "https://www.microsoft.com/microsoft-365"
     },
     "Microsoft ASP.NET": {
       "cats": [
@@ -9839,6 +9851,20 @@
       ],
       "website": "http://phpdebugbar.com/"
     },
+    "PIXIjs": {
+      "cats": [
+        25
+      ],
+      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
+      "icon": "pixijs.png",
+      "js": {
+        "PIXI": "",
+        "PIXI.version": "^(.+)$\\;version:\\1"
+      },
+      "scripts": "pixi\\.(min\\.)?js$",
+      "url": ".+\\.pixijs\\.com",
+      "website": "https://www.pixijs.com/"
+    },
     "PageFly": {
       "cats": [
         51
@@ -10188,32 +10214,6 @@
         "LeadBooster": ""
       },
       "website": "https://www.pipedrive.com/"
-    },
-    "PIXIjs": {
-      "cats": [
-        25
-      ],
-      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
-      "icon": "pixijs.png",
-      "js": {
-        "PIXI": "",
-        "PIXI.version": "^(.+)$\\;version:\\1"
-      },
-      "url": ".+\\.pixijs\\.com",
-      "scripts": "pixi\\.(min\\.)?js$",
-      "website": "https://www.pixijs.com/"
-    },
-    "Emarsys": {
-      "cats": [
-        32,
-        61
-      ],
-      "description": "Emarsys is a cloud-based B2C marketing platform.",
-      "icon": "Emarsys.svg",
-      "js": {
-        "ScarabQueue": ""
-      },
-      "website": "https://emarsys.com/"
     },
     "Planet": {
       "cats": [
@@ -12814,10 +12814,10 @@
         "__stripe_mid": "",
         "__stripe_sid": ""
       },
+      "description": "Stripe offers online payment processing for internet businesses as well as fraud prevention, invoicing and subscription management.",
       "dns": {
         "TXT": "stripe-verification="
       },
-      "description": "Stripe offers online payment processing for internet businesses as well as fraud prevention, invoicing and subscription management.",
       "html": "<input[^>]+data-stripe",
       "icon": "Stripe.svg",
       "js": {

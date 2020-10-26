@@ -70,7 +70,7 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
       "properties": {
         "example-property": ""
       },
-      "content": "Example text content"
+      "text": "Example text content"
     }
   },
   "dns": {
