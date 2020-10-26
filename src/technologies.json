@@ -8059,7 +8059,7 @@
         2
       ],
       "website": "https://joinmastodon.org",
-      "description": "Federated social media platform",
+      "description": "Mastodon is a free and open-source self-hosted social networking service.",
       "icon": "Mastodon.svg",
       "cookies": {
         "_mastodon_session": ""
@@ -8521,13 +8521,13 @@
       "cats": [
         2
       ],
-      "description": "Federated social network",
-      "website": "https://join.misskey.page/en/",
+      "description": "Misskey is a distributed microblogging platform.",
+      "website": "https://join.misskey.page/",
       "icon": "Misskey.svg",
-      "html": [
-        "<meta name=\"application-name\" content=\"Misskey\">",
-        "<!-- Thank you for using Misskey! @syuilo -->"
-      ]
+      "meta": {
+        "application-name": "Misskey"
+      }
+      "html": "<!-- Thank you for using Misskey! @syuilo -->"
     },
     "Miva": {
       "cats": [
@@ -10009,13 +10009,17 @@
       "cats": [
         2
       ],
-      "description": "Federated video publishing platform",
+      "description": "PeerTube is a free and open-source, decentralized, federated video platform powered by ActivityPub and WebTorrent.",
       "icon": "PeerTube.svg",
       "website": "https://joinpeertube.org/",
-      "html": [
-        "<meta property=\"og:platform\" content=\"PeerTube\" />",
-        "<p>We are sorry but it seems that PeerTube is not compatible with your web browser\\.</p>"
-      ]
+      "meta": {
+        "og:platform": "^PeerTube$"
+      },
+      "dom": {
+        "p": {
+          "text": "^We are sorry but it seems that PeerTube is not compatible with your web browser\\.$"
+        }
+      }
     },
     "Pelican": {
       "cats": [
@@ -10231,12 +10235,17 @@
       "cats": [
         2
       ],
-      "description": "Federated photo sharing service",
+      "description": "PixelFed is an activitypub based image sharing platform.",
       "website": "https://pixelfed.org",
       "icon": "PixelFed.svg",
-      "html": [
-        "<a href=\"https://pixelfed.org\"[^>]*title=\"version ([0-9.]+)\"[^>]*>Powered by Pixelfed</a>\\;version:\\1"
-      ],
+      "dom": {
+        "a[href='https://pixelfed.org'][title*='version']": {
+          "attributes": {
+            "title": "^version ([0-9.]+)$\\;version:\\1"
+          },
+          "text": "^Powered by Pixelfed$"
+        }
+      },
       "implies": [
         "Laravel"
       ]
@@ -10318,12 +10327,17 @@
       "cats": [
         2
       ],
+      "description": "Pleroma is a free, federated social networking server built on open protocols.",
       "website": "https://pleroma.social/",
       "icon": "Pleroma.svg",
-      "html": [
-        "<title>Pleroma</title>",
-        "<noscript>To use Pleroma, please enable JavaScript.</noscript>"
-      ]
+      "dom": {
+        "title": {
+          "text": "^Pleroma$"
+        },
+        "noscript": {
+          "text": "^To use Pleroma, please enable JavaScript.$"
+        }
+      }
     },
     "Plesk": {
       "cats": [
