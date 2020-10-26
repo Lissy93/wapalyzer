@@ -1249,7 +1249,7 @@
         "AngularJS"
       ],
       "dom": {
-        "body > :first-child": {
+        "[ng-version]": {
           "attributes": {
             "ng-version": "^([\\d.]+)\\;version:\\1"
           }

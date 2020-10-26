@@ -62,7 +62,7 @@ const Driver = {
     chrome.webRequest.onHeadersReceived.addListener(
       Driver.onHeadersReceived,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-      ['responseHeaders', 'blocking']
+      ['responseHeaders' /*, 'blocking' */]
     )
 
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
@@ -265,6 +265,7 @@ const Driver = {
             )
           })
 
+          /*
           let certIssuer = ''
 
           if (
@@ -289,12 +290,16 @@ const Driver = {
               )
             }
           }
+          */
 
           if (
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(request.url, analyze({ headers, certIssuer }))
+            await Driver.onDetect(
+              request.url,
+              analyze({ headers /*, certIssuer */ })
+            )
           }
         }
       } catch (error) {
