@@ -637,7 +637,7 @@ class Site {
       // DNS
       if (!this.dns.length) {
         const records = {}
-        const resolve = async (func, hostname) => {
+        const resolve = (func, hostname) => {
           return this.promiseTimeout(
             func(hostname).catch((error) => {
               if (error.code !== 'ENODATA') {
