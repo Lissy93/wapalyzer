@@ -3160,9 +3160,9 @@
       ],
       "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
       "headers": {
-         "X-Support": "support@commercejs\\.com",
-         "Chec-Version": ".*"
-       },
+        "X-Support": "support@commercejs\\.com",
+        "Chec-Version": ".*"
+      },
       "icon": "commercejs.png",
       "scripts": [
         "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
@@ -8054,6 +8054,20 @@
       },
       "website": "https://masterking32.com"
     },
+    "Mastodon": {
+      "cats": [
+        2
+      ],
+      "website": "https://joinmastodon.org",
+      "description": "Mastodon is a free and open-source self-hosted social networking service.",
+      "icon": "Mastodon.svg",
+      "cookies": {
+        "_mastodon_session": ""
+      },
+      "headers": {
+        "Server": "^Mastodon$"
+      }
+    },
     "Material Design Lite": {
       "cats": [
         66
@@ -8502,6 +8516,18 @@
       },
       "scripts": "mint/\\?js",
       "website": "https://haveamint.com"
+    },
+    "Misskey": {
+      "cats": [
+        2
+      ],
+      "description": "Misskey is a distributed microblogging platform.",
+      "website": "https://join.misskey.page/",
+      "icon": "Misskey.svg",
+      "meta": {
+        "application-name": "Misskey"
+      }
+      "html": "<!-- Thank you for using Misskey! @syuilo -->"
     },
     "Miva": {
       "cats": [
@@ -9979,6 +10005,22 @@
       "url": "paypal\\.com",
       "website": "https://paypal.com"
     },
+    "PeerTube": {
+      "cats": [
+        2
+      ],
+      "description": "PeerTube is a free and open-source, decentralized, federated video platform powered by ActivityPub and WebTorrent.",
+      "icon": "PeerTube.svg",
+      "website": "https://joinpeertube.org/",
+      "meta": {
+        "og:platform": "^PeerTube$"
+      },
+      "dom": {
+        "p": {
+          "text": "^We are sorry but it seems that PeerTube is not compatible with your web browser\\.$"
+        }
+      }
+    },
     "Pelican": {
       "cats": [
         57
@@ -10189,6 +10231,25 @@
       },
       "website": "https://www.pipedrive.com/"
     },
+    "PixelFed": {
+      "cats": [
+        2
+      ],
+      "description": "PixelFed is an activitypub based image sharing platform.",
+      "website": "https://pixelfed.org",
+      "icon": "PixelFed.svg",
+      "dom": {
+        "a[href='https://pixelfed.org'][title*='version']": {
+          "attributes": {
+            "title": "^version ([0-9.]+)$\\;version:\\1"
+          },
+          "text": "^Powered by Pixelfed$"
+        }
+      },
+      "implies": [
+        "Laravel"
+      ]
+    },
     "PIXIjs": {
       "cats": [
         25
@@ -10261,6 +10322,22 @@
       "icon": "Play.svg",
       "implies": "Scala",
       "website": "https://www.playframework.com"
+    },
+    "Pleroma": {
+      "cats": [
+        2
+      ],
+      "description": "Pleroma is a free, federated social networking server built on open protocols.",
+      "website": "https://pleroma.social/",
+      "icon": "Pleroma.svg",
+      "dom": {
+        "title": {
+          "text": "^Pleroma$"
+        },
+        "noscript": {
+          "text": "^To use Pleroma, please enable JavaScript.$"
+        }
+      }
     },
     "Plesk": {
       "cats": [
