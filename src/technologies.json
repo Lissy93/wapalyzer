@@ -1248,7 +1248,13 @@
         "AngularDart",
         "AngularJS"
       ],
-      "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
+      "dom": {
+        "body > :first-child": {
+          "attributes": {
+            "ng-version": "^([\\d.]+)\\;version:\\1"
+          }
+        }
+      },
       "icon": "Angular.svg",
       "js": {
         "ng.coreTokens": "",
