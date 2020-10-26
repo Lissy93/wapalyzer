@@ -1448,6 +1448,16 @@
       "scripts": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
     },
+    "Appointy": {
+      "cats": [
+        72,
+        61
+      ],
+      "description": "Appointy’s online scheduling software.",
+      "html": "<iframe[^>]+src=\"?https://[\\w\\d\\-]+\\.appointy\\.com",
+      "icon": "Appointy.png",
+      "website": "https://www.appointy.com/"
+    },
     "Apple Pay": {
       "cats": [
         41
@@ -6921,12 +6931,24 @@
       "website": "http://www.eclipse.org/jetty"
     },
     "Jibres": {
+      "description": "Jibres is an ecommerce solution with an online store builder and Point-of-Sale (PoS) software.",
       "cats": [
-        6
+        6,
+        55
       ],
+      "cookies": {
+        "jibres": ""
+      },
+      "js": {
+        "jibres": ""
+      },
       "headers": {
         "X-Powered-By": "Jibres"
       },
+      "meta": {
+        "generator": "Jibres"
+      },
+      "scripts": "/jibres\\.js",
       "icon": "Jibres.svg",
       "website": "https://jibres.com"
     },
@@ -8052,6 +8074,20 @@
       },
       "website": "https://masterking32.com"
     },
+    "Mastodon": {
+      "cats": [
+        2
+      ],
+      "website": "https://joinmastodon.org",
+      "description": "Mastodon is a free and open-source self-hosted social networking service.",
+      "icon": "Mastodon.svg",
+      "cookies": {
+        "_mastodon_session": ""
+      },
+      "headers": {
+        "Server": "^Mastodon$"
+      }
+    },
     "Material Design Lite": {
       "cats": [
         66
@@ -8514,6 +8550,18 @@
       },
       "scripts": "mint/\\?js",
       "website": "https://haveamint.com"
+    },
+    "Misskey": {
+      "cats": [
+        2
+      ],
+      "description": "Misskey is a distributed microblogging platform.",
+      "website": "https://join.misskey.page/",
+      "icon": "Misskey.svg",
+      "meta": {
+        "application-name": "Misskey"
+      }
+      "html": "<!-- Thank you for using Misskey! @syuilo -->"
     },
     "Miva": {
       "cats": [
@@ -10005,6 +10053,22 @@
       "url": "paypal\\.com",
       "website": "https://paypal.com"
     },
+    "PeerTube": {
+      "cats": [
+        2
+      ],
+      "description": "PeerTube is a free and open-source, decentralized, federated video platform powered by ActivityPub and WebTorrent.",
+      "icon": "PeerTube.svg",
+      "website": "https://joinpeertube.org/",
+      "meta": {
+        "og:platform": "^PeerTube$"
+      },
+      "dom": {
+        "p": {
+          "text": "^We are sorry but it seems that PeerTube is not compatible with your web browser\\.$"
+        }
+      }
+    },
     "Pelican": {
       "cats": [
         57
@@ -10215,6 +10279,51 @@
       },
       "website": "https://www.pipedrive.com/"
     },
+    "PixelFed": {
+      "cats": [
+        2
+      ],
+      "description": "PixelFed is an activitypub based image sharing platform.",
+      "website": "https://pixelfed.org",
+      "icon": "PixelFed.svg",
+      "dom": {
+        "a[href='https://pixelfed.org'][title*='version']": {
+          "attributes": {
+            "title": "^version ([0-9.]+)$\\;version:\\1"
+          },
+          "text": "^Powered by Pixelfed$"
+        }
+      },
+      "implies": [
+        "Laravel"
+      ]
+    },
+    "PIXIjs": {
+      "cats": [
+        25
+      ],
+      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
+      "icon": "pixijs.png",
+      "js": {
+        "PIXI": "",
+        "PIXI.VERSION": "^(.+)$\\;version:\\1"
+      },
+      "url": ".+\\.pixijs\\.com",
+      "scripts": "pixi\\.(min\\.)?js$",
+      "website": "https://www.pixijs.com/"
+    },
+    "Emarsys": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Emarsys is a cloud-based B2C marketing platform.",
+      "icon": "Emarsys.svg",
+      "js": {
+        "ScarabQueue": ""
+      },
+      "website": "https://emarsys.com/"
+    },
     "Planet": {
       "cats": [
         49
@@ -10261,6 +10370,22 @@
       "icon": "Play.svg",
       "implies": "Scala",
       "website": "https://www.playframework.com"
+    },
+    "Pleroma": {
+      "cats": [
+        2
+      ],
+      "description": "Pleroma is a free, federated social networking server built on open protocols.",
+      "website": "https://pleroma.social/",
+      "icon": "Pleroma.svg",
+      "dom": {
+        "title": {
+          "text": "^Pleroma$"
+        },
+        "noscript": {
+          "text": "^To use Pleroma, please enable JavaScript.$"
+        }
+      }
     },
     "Plesk": {
       "cats": [
@@ -11268,6 +11393,19 @@
       ],
       "website": "https://rollbar.com/"
     },
+    "Rotic": {
+      "cats": [
+        5,
+        10,
+        32,
+        52,
+        58
+      ],
+      "description": "Rotic is a conversion chatbot that understands your users, and curates information, answers questions, captures contacts, and books meetings instantly.",
+      "icon": "Rotic.png",
+      "scripts": "https://rotic.ir/api/v1/enterprise/\\S+/widget/\\S+",
+      "website": "https://rotic.ir"
+    },
     "RoundCube": {
       "cats": [
         30
@@ -11771,6 +11909,24 @@
       "scripts": "select2(?:\\.min|\\.full)?\\.js",
       "website": "https://select2.org/"
     },
+    "Sellix": {
+      "cats": [
+        6
+      ],
+      "description": "Sellix is an ecommerce payment processor. It accepts PayPal, PerfectMoney and popular cryptocurrencies.",
+      "icon": "Sellix.svg",
+      "scripts": "cdn\\.sellix\\.io/static/js/embed\\.js",
+      "website": "https://sellix.io/"
+    },
+    "Selly": {
+      "cats": [
+        6
+      ],
+      "description": "Selly is an ecommerce payment processor. It accepts PayPal, Bitcoin, Ethereum, Litecoin, Stripe and more.",
+      "icon": "Selly.svg",
+      "scripts": "embed\\.selly\\.(?:gg|io)",
+      "website": "https://selly.io/"
+    },
     "Semantic UI": {
       "cats": [
         66
@@ -11986,6 +12142,18 @@
         "Elcodi"
       ],
       "website": "http://shopery.com"
+    },
+    "Shoppy": {
+      "cats": [
+        6
+      ],
+      "description" : "Shoppy is an all-in-one payment processing and e-commerce solution.",
+      "icon": "Shoppy.svg",
+      "js": {
+        "Shoppy": ""
+      },
+      "scripts": "\\.shoppy\\.gg",
+      "website": "https://shoppy.gg"
     },
     "Shopfa": {
       "cats": [
@@ -13439,6 +13607,16 @@
       "scripts": "timeplot.*\\.js",
       "website": "http://www.simile-widgets.org/timeplot/"
     },
+    "Timify": {
+      "cats": [
+        72,
+        61
+      ],
+      "description": "The Online Scheduling and Resource Management Software.",
+      "icon": "Timify.svg",
+      "scripts": "https://widget\\.timify\\.com/js/widget\\.js",
+      "website": "https://www.timify.com/"
+    },
     "TinyMCE": {
       "cats": [
         24
@@ -13683,6 +13861,7 @@
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
       "scripts": "use\\.typekit\\.com",
+      "html": "<link [^>]*href=\"[^\"]+use\\.typekit\\.(?:net|com)",
       "website": "http://typekit.com"
     },
     "UIKit": {
