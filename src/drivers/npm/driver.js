@@ -637,17 +637,16 @@ class Site {
       // DNS
       if (!this.dns.length) {
         const records = {}
-
         const resolve = async (func, hostname) => {
-          try {
-            return await this.promiseTimeout(func(hostname))
-          } catch (error) {
-            if (error.code !== 'ENODATA') {
-              this.error(error)
-            }
+          return this.promiseTimeout(
+            func(hostname).catch((error) => {
+              if (error.code !== 'ENODATA') {
+                this.error(error)
+              }
 
-            return []
-          }
+              return []
+            })
+          )
         }
 
         const domain = url.hostname.replace(/^www\./, '')
