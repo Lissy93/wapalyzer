@@ -102,7 +102,7 @@ function get(url) {
     const { get } = url.protocol === 'http:' ? http : https
 
     return new Promise((resolve, reject) =>
-      get(url.href, (response) => {
+      get(url, { rejectUnauthorized: false }, (response) => {
         if (response.statusCode >= 400) {
           return reject(
             new Error(`${response.statusCode} ${response.statusMessage}`)
@@ -116,7 +116,7 @@ function get(url) {
         response.on('data', (data) => (body += data))
         response.on('error', (error) => reject(new Error(error.message)))
         response.on('end', () => resolve(body))
-      })
+      }).on('error', (error) => reject(new Error(error.message)))
     )
   } else {
     throw new Error(`Invalid protocol: ${url.protocol}`)
