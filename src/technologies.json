@@ -1640,7 +1640,7 @@
       "headers": {
         "X-Confluence-Request-Time": ""
       },
-      "html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence(?:[^>]+>Atlassian Confluence</a> ([\\d.]+))?\\;version:\\1",
+      "html": "Atlassian Confluence ([\\d.]+)\\;version:\\1",
       "icon": "Atlassian Confluence.svg",
       "implies": "Java",
       "meta": {
@@ -1665,14 +1665,13 @@
         13
       ],
       "cpe": "cpe:/a:atlassian:jira",
-      "html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(?:\\.\\d+)?))?\\;version:\\1",
+      "html": "data-version=\"([\\d.]+)\\;version:\\1",
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "js": {
         "jira": ""
       },
       "meta": {
-        "ajs-version-number": "^(.+)$\\;version:\\1",
         "application-name": "JIRA"
       },
       "website": "http://www.atlassian.com/software/jira/overview/"
