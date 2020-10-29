@@ -1640,7 +1640,7 @@
       "headers": {
         "X-Confluence-Request-Time": ""
       },
-      "html": "Atlassian Confluence ([\\d.]+)\\;version:\\1",
+      "html": "<li class=\"print-only\">.+ Atlassian Confluence ([\\d.]+)</li>\\;version:\\1",
       "icon": "Atlassian Confluence.svg",
       "implies": "Java",
       "meta": {
@@ -1665,14 +1665,15 @@
         13
       ],
       "cpe": "cpe:/a:atlassian:jira",
-      "html": "data-version=\"([\\d.]+)\\;version:\\1",
+      "html": "<body.+data-version=\"([\d.]+)\">\\;version:\\1",
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "js": {
         "jira": ""
       },
       "meta": {
-        "application-name": "JIRA"
+        "application-name": "JIRA",
+        "data-version": ([\\d.]+)\\;version:\\1
       },
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
