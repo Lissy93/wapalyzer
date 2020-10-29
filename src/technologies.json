@@ -9093,11 +9093,20 @@
       "cats": [
         6
       ],
+      "cookies": {
+        "SessionIdCookie": ""
+      },
+      "description": "NEO is an ecommerce software that manages multiple online stores.",
       "headers": {
         "powered": "jet-neo"
       },
-      "icon": "Plataforma NEO.svg",
-      "website": "http://www.jetecommerce.com.br/"
+      "html": [
+        "<a [^>]*href=\"[^/]*//[^/]*plataformaneo\\.com",
+        "<img [^>]*src=\"[^/]*//[^/]*plataformaneo\\.com"
+      ],
+      "icon": "plataforma_neo.svg",
+      "url": "(^|^[^:]+:\/\/|[^\\.]+\\.)plataformaneo\\.com",
+      "website": "https://www.jetecommerce.com.br"
     },
     "NVD3": {
       "cats": [
