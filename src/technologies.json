@@ -2180,13 +2180,27 @@
         5,
         61,
         72
-      ],
+      ],    
       "description": "Bookingkit is an online booking management solution. Bookingkit helps its users generate PDF invoices, manage day-to-day scheduling operations, and automatically sync availabilities in real time.",
       "icon": "Bookingkit.svg",
       "js": {
         "BookingKitApp": ""
       },
       "website": "https://bookingkit.net/"
+    },
+    "Booksy": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Booksy is a booking system for people looking to schedule appointments for health and beauty services.",
+      "icon": "Booksy.svg",
+      "js": {
+        "booksy": ""
+      },
+      "scripts": "booksy\\.com/widget/code\\.js",
+      "website": "https://booksy.com/
     },
     "Bokeh": {
       "cats": [
@@ -2316,7 +2330,7 @@
       "cats": [
         41
       ],
-      "description": "Braintree, a division of PayPal, specializes in mobile and web payment systems for e-commerce companies. Braintree provides clients with a merchant account and a payment gateway.",
+      "description": "Braintree, a division of PayPal, specializes in mobile and web payment systems for ecommerce companies. Braintree provides clients with a merchant account and a payment gateway.",
       "icon": "Braintree.svg",
       "js": {
         "Braintree": "",
@@ -2793,6 +2807,18 @@
       "scripts": "chartbeat\\.js",
       "website": "http://chartbeat.com"
     },
+    "Checkfront": {
+      "cats": [
+        5,
+        6,
+        61,
+        72
+      ],
+      "description": "Checkfront is a cloud-based booking management application and ecommerce platform.",
+      "icon": "Checkfront.svg",
+      "scripts": "\\.checkfront\\.com/",
+      "website": "https://www.checkfront.com"
+    },
     "Cherokee": {
       "cats": [
         22
@@ -3058,6 +3084,20 @@
       },
       "website": "https://www.coastercms.org"
     },
+    "CoconutSoftware": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "icon": "CoconutSoftware.svg",
+      "description": "Coconut is a cloud-based appointment scheduling solution designed for enterprise financial services organizations such as credit unions, retail banks and more.",
+      "cookies": {
+        "coconut_calendar": ""
+      },
+      "website": "https://www.coconutsoftware.com/"
+    },
+    
     "CodeIgniter": {
       "cats": [
         18
@@ -3396,6 +3436,16 @@
         "Countly": ""
       },
       "website": "https://count.ly"
+    },
+    "CoverManager": {
+      "cats": [
+        5,
+        72
+      ],
+      "description": "CoverManager is a restaurant table booking widget.",
+      "icon": "CoverManager.svg",
+      "html": "<iframe[^>]*covermanager\\.com/reservation",
+      "website": "https://www.covermanager.com"
     },
     "Cowboy": {
       "cats": [
@@ -4558,6 +4608,17 @@
         "/ep_etherpad-lite/"
       ],
       "website": "https://etherpad.org"
+    },
+    "Eveve": {
+      "cats": [
+        5,
+        72
+      ],
+      "implies": "PHP",
+      "description": "Eveve is a restaurant table booking widget.",
+      "icon": "Eveve.svg",
+      "html": "<iframe[^>]*[\\w]+\\.eveve\\.com",
+      "website": "https://www.eveve.com"
     },
     "Exhibit": {
       "cats": [
@@ -9414,7 +9475,7 @@
         6
       ],
       "cpe": "cpe:/a:odoo:odoo",
-      "description": "Odoo is business management software which includes CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
+      "description": "Odoo is business management software which includes CRM, ecommerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
       "html": "<link[^>]* href=[^>]+/web/css/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "icon": "Odoo.png",
       "implies": [
@@ -9953,20 +10014,6 @@
         "debugbar.*\\.js"
       ],
       "website": "http://phpdebugbar.com/"
-    },
-    "PIXIjs": {
-      "cats": [
-        25
-      ],
-      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
-      "icon": "pixijs.png",
-      "js": {
-        "PIXI": "",
-        "PIXI.version": "^(.+)$\\;version:\\1"
-      },
-      "scripts": "pixi\\.(min\\.)?js$",
-      "url": ".+\\.pixijs\\.com",
-      "website": "https://www.pixijs.com/"
     },
     "PageFly": {
       "cats": [
@@ -12198,7 +12245,7 @@
       "cats": [
         6
       ],
-      "description" : "Shoppy is an all-in-one payment processing and e-commerce solution.",
+      "description" : "Shoppy is an all-in-one payment processing and ecommerce solution.",
       "icon": "Shoppy.svg",
       "js": {
         "Shoppy": ""
@@ -13778,6 +13825,15 @@
       "scripts": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
+    "Tripadviser.Widget": {
+      "cats": [
+        5
+      ],
+      "description": "Tripadvisor embed reviews widget.",
+      "icon": "Tripadviser.Widget.svg",
+      "scripts": "tripadvisor\\.[\\w]+/WidgetEmbed",
+      "website": "https://www.tripadvisor.com/Widgets"
+    },
     "TrustArc": {
       "cats": [
         67
@@ -14950,7 +15006,7 @@
       "cats": [
         6
       ],
-      "description": "WooCommerce is an open-source e-commerce plugin for WordPress.",
+      "description": "WooCommerce is an open-source ecommerce plugin for WordPress.",
       "html": [
         "<!-- WooCommerce",
         "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\\.css?ver=([\\d.]+)'\\;version:\\1"
