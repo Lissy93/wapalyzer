@@ -2180,7 +2180,7 @@
         5,
         61,
         72
-      ],    
+      ],
       "description": "Bookingkit is an online booking management solution. Bookingkit helps its users generate PDF invoices, manage day-to-day scheduling operations, and automatically sync availabilities in real time.",
       "icon": "Bookingkit.svg",
       "js": {
@@ -2200,7 +2200,7 @@
         "booksy": ""
       },
       "scripts": "booksy\\.com/widget/code\\.js",
-      "website": "https://booksy.com/
+      "website": "https://booksy.com/"
     },
     "Bokeh": {
       "cats": [
@@ -7676,13 +7676,23 @@
       "scripts": "//platform\\.linkedin\\.com/in\\.js",
       "website": "http://linkedin.com"
     },
-    "Linkedin CDN": {
+    "Linkedin Insight Tag": {
       "cats": [
-        31
+        10
       ],
       "icon": "Linkedin.svg",
-      "scripts": "snap\\.licdn\\.com/",
-      "website": "http://linkedin.com"
+      "dom": {
+        "noscript > img[src*='dc.ads.linkedin.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "_linkedin_data_partner_id": ""
+      },
+      "scripts": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
+      "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
     },
     "Liquid Web": {
       "cats": [
@@ -12812,7 +12822,7 @@
       "cats": [
         1
       ],
-      "icon": "default.svg",
+      "icon": "Sotel.png",
       "meta": {
         "generator": "sotel"
       },

@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, browser, Wappalyzer, Utils */
+/* globals chrome, Wappalyzer, Utils */
 
 const {
   setTechnologies,
