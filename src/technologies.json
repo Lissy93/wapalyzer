@@ -284,6 +284,10 @@
     "73": {
       "name": "Surveys",
       "priority": 9
+    },
+    "74": {
+      "name": "A/B Testing",
+      "priority": 9
     }
   },
   "technologies": {
@@ -9792,7 +9796,7 @@
     },
     "Optimizely": {
       "cats": [
-        10
+        74
       ],
       "icon": "Optimizely.png",
       "js": {
@@ -9800,6 +9804,16 @@
       },
       "scripts": "optimizely\\.com.*\\.js",
       "website": "https://www.optimizely.com"
+    },
+    "Google Optimize": {
+      "cats": [
+        74
+      ],
+      "icon": "Google Optimize.svg",
+      "description": "Google Optimize allows you to test variants of web pages and see how they perform.",
+      "scripts": "googleoptimize\\.com/optimize\\.js",
+      "js": "^google_optimize$",
+      "website": "https://optimize.google.com"
     },
     "Oracle Application Server": {
       "cats": [
@@ -11387,6 +11401,27 @@
       "js": {
         "Rewardful": ""
       },
+      "scripts": "r\\.wdfl\\.co",
+      "website": "https://www.getrewardful.com/"
+    },
+    "Clickbank": {
+      "cats": [
+        71
+      ],
+      "description": "",
+      "icon": "",
+      "js": {
+        "cbtb": ""
+      },
+      "dom": {
+        "img[width='1'][src*='hop.clickbank.net?affiliate']": {
+          "text": ""
+        },
+        "a[href*='pay.clickbank.net?cbfid']": {
+          "text": ""
+        }
+      },
+      "icon": "Clickbank.svg",
       "scripts": "r\\.wdfl\\.co",
       "website": "https://www.getrewardful.com/"
     },
