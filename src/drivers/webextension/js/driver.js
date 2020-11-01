@@ -325,7 +325,7 @@ const Driver = {
       ).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value],
+          [name.toLowerCase()]: [value],
         }),
         {}
       )
