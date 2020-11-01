@@ -4792,6 +4792,18 @@
       "implies": "Python",
       "website": "https://faral.tech"
     },
+    "FareHarbor": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "FareHarbor is an booking and schedule management solution intended for tour and activity companies.",
+      "icon": "FareHarbor.svg",
+      "html": "<iframe[^>]+fareharbor",
+      "scripts": "fareharbor\\.com/embeds/api/",
+      "website": "https://fareharbor.com"
+    },
     "Fastcommerce": {
       "cats": [
         6
@@ -9812,7 +9824,9 @@
       "icon": "Google Optimize.svg",
       "description": "Google Optimize allows you to test variants of web pages and see how they perform.",
       "scripts": "googleoptimize\\.com/optimize\\.js",
-      "js": "^google_optimize$",
+      "js": {
+        "google_optimize": ""
+      },
       "website": "https://optimize.google.com"
     },
     "Oracle Application Server": {
@@ -10445,18 +10459,6 @@
       "url": ".+\\.pixijs\\.com",
       "scripts": "pixi\\.(min\\.)?js$",
       "website": "https://www.pixijs.com/"
-    },
-    "Emarsys": {
-      "cats": [
-        32,
-        61
-      ],
-      "description": "Emarsys is a cloud-based B2C marketing platform.",
-      "icon": "Emarsys.svg",
-      "js": {
-        "ScarabQueue": ""
-      },
-      "website": "https://emarsys.com/"
     },
     "Planet": {
       "cats": [
@@ -11408,8 +11410,6 @@
       "cats": [
         71
       ],
-      "description": "",
-      "icon": "",
       "js": {
         "cbtb": ""
       },
