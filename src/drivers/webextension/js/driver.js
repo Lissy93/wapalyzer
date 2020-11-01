@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, browser, Wappalyzer, Utils */
+/* globals chrome, Wappalyzer, Utils */
 
 const {
   setTechnologies,
@@ -325,7 +325,7 @@ const Driver = {
       ).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value],
+          [name.toLowerCase()]: [value],
         }),
         {}
       )

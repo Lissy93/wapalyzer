@@ -165,7 +165,10 @@ try {
         throw new Error(`Incorrect file type, expected PNG or SVG: ${filePath}`)
       }
 
-      if (!Object.values(technologies).some(({ icon }) => icon === file)) {
+      if (
+        !Object.values(technologies).some(({ icon }) => icon === file) &&
+        file !== 'default.svg'
+      ) {
         throw new Error(`Extraneous file: ${filePath}}`)
       }
     }

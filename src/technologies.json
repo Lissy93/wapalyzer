@@ -284,6 +284,10 @@
     "73": {
       "name": "Surveys",
       "priority": 9
+    },
+    "74": {
+      "name": "A/B Testing",
+      "priority": 9
     }
   },
   "technologies": {
@@ -2175,6 +2179,33 @@
       "scripts": "bda\\.bookatable\\.com/deploy/lbui\\.direct\\.min\\.js",
       "website": "https://www.bookatable.co.uk"
     },
+    "Bookingkit": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Bookingkit is an online booking management solution. Bookingkit helps its users generate PDF invoices, manage day-to-day scheduling operations, and automatically sync availabilities in real time.",
+      "icon": "Bookingkit.svg",
+      "js": {
+        "BookingKitApp": ""
+      },
+      "website": "https://bookingkit.net/"
+    },
+    "Booksy": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Booksy is a booking system for people looking to schedule appointments for health and beauty services.",
+      "icon": "Booksy.svg",
+      "js": {
+        "booksy": ""
+      },
+      "scripts": "booksy\\.com/widget/code\\.js",
+      "website": "https://booksy.com/"
+    },
     "Bokeh": {
       "cats": [
         25
@@ -2303,7 +2334,7 @@
       "cats": [
         41
       ],
-      "description": "Braintree, a division of PayPal, specializes in mobile and web payment systems for e-commerce companies. Braintree provides clients with a merchant account and a payment gateway.",
+      "description": "Braintree, a division of PayPal, specializes in mobile and web payment systems for ecommerce companies. Braintree provides clients with a merchant account and a payment gateway.",
       "icon": "Braintree.svg",
       "js": {
         "Braintree": "",
@@ -2780,6 +2811,18 @@
       "scripts": "chartbeat\\.js",
       "website": "http://chartbeat.com"
     },
+    "Checkfront": {
+      "cats": [
+        5,
+        6,
+        61,
+        72
+      ],
+      "description": "Checkfront is a cloud-based booking management application and ecommerce platform.",
+      "icon": "Checkfront.svg",
+      "scripts": "\\.checkfront\\.com/",
+      "website": "https://www.checkfront.com"
+    },
     "Cherokee": {
       "cats": [
         22
@@ -3045,6 +3088,20 @@
       },
       "website": "https://www.coastercms.org"
     },
+    "CoconutSoftware": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "icon": "CoconutSoftware.svg",
+      "description": "Coconut is a cloud-based appointment scheduling solution designed for enterprise financial services organizations such as credit unions, retail banks and more.",
+      "cookies": {
+        "coconut_calendar": ""
+      },
+      "website": "https://www.coconutsoftware.com/"
+    },
+
     "CodeIgniter": {
       "cats": [
         18
@@ -3383,6 +3440,16 @@
         "Countly": ""
       },
       "website": "https://count.ly"
+    },
+    "CoverManager": {
+      "cats": [
+        5,
+        72
+      ],
+      "description": "CoverManager is a restaurant table booking widget.",
+      "icon": "CoverManager.svg",
+      "html": "<iframe[^>]*covermanager\\.com/reservation",
+      "website": "https://www.covermanager.com"
     },
     "Cowboy": {
       "cats": [
@@ -4545,6 +4612,17 @@
         "/ep_etherpad-lite/"
       ],
       "website": "https://etherpad.org"
+    },
+    "Eveve": {
+      "cats": [
+        5,
+        72
+      ],
+      "implies": "PHP",
+      "description": "Eveve is a restaurant table booking widget.",
+      "icon": "Eveve.svg",
+      "html": "<iframe[^>]*[\\w]+\\.eveve\\.com",
+      "website": "https://www.eveve.com"
     },
     "Exhibit": {
       "cats": [
@@ -7602,6 +7680,24 @@
       "scripts": "//platform\\.linkedin\\.com/in\\.js",
       "website": "http://linkedin.com"
     },
+    "Linkedin Insight Tag": {
+      "cats": [
+        10
+      ],
+      "icon": "Linkedin.svg",
+      "dom": {
+        "noscript > img[src*='dc.ads.linkedin.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "_linkedin_data_partner_id": ""
+      },
+      "scripts": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
+      "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
+    },
     "Liquid Web": {
       "cats": [
         62
@@ -9401,7 +9497,7 @@
         6
       ],
       "cpe": "cpe:/a:odoo:odoo",
-      "description": "Odoo is business management software which includes CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
+      "description": "Odoo is business management software which includes CRM, ecommerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
       "html": "<link[^>]* href=[^>]+/web/css/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "icon": "Odoo.png",
       "implies": [
@@ -9700,7 +9796,7 @@
     },
     "Optimizely": {
       "cats": [
-        10
+        74
       ],
       "icon": "Optimizely.png",
       "js": {
@@ -9708,6 +9804,16 @@
       },
       "scripts": "optimizely\\.com.*\\.js",
       "website": "https://www.optimizely.com"
+    },
+    "Google Optimize": {
+      "cats": [
+        74
+      ],
+      "icon": "Google Optimize.svg",
+      "description": "Google Optimize allows you to test variants of web pages and see how they perform.",
+      "scripts": "googleoptimize\\.com/optimize\\.js",
+      "js": "^google_optimize$",
+      "website": "https://optimize.google.com"
     },
     "Oracle Application Server": {
       "cats": [
@@ -9940,20 +10046,6 @@
         "debugbar.*\\.js"
       ],
       "website": "http://phpdebugbar.com/"
-    },
-    "PIXIjs": {
-      "cats": [
-        25
-      ],
-      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
-      "icon": "pixijs.png",
-      "js": {
-        "PIXI": "",
-        "PIXI.version": "^(.+)$\\;version:\\1"
-      },
-      "scripts": "pixi\\.(min\\.)?js$",
-      "url": ".+\\.pixijs\\.com",
-      "website": "https://www.pixijs.com/"
     },
     "PageFly": {
       "cats": [
@@ -11312,6 +11404,27 @@
       "scripts": "r\\.wdfl\\.co",
       "website": "https://www.getrewardful.com/"
     },
+    "Clickbank": {
+      "cats": [
+        71
+      ],
+      "description": "",
+      "icon": "",
+      "js": {
+        "cbtb": ""
+      },
+      "dom": {
+        "img[width='1'][src*='hop.clickbank.net?affiliate']": {
+          "text": ""
+        },
+        "a[href*='pay.clickbank.net?cbfid']": {
+          "text": ""
+        }
+      },
+      "icon": "Clickbank.svg",
+      "scripts": "r\\.wdfl\\.co",
+      "website": "https://www.getrewardful.com/"
+    },
     "Rickshaw": {
       "cats": [
         25
@@ -12185,7 +12298,7 @@
       "cats": [
         6
       ],
-      "description" : "Shoppy is an all-in-one payment processing and e-commerce solution.",
+      "description" : "Shoppy is an all-in-one payment processing and ecommerce solution.",
       "icon": "Shoppy.svg",
       "js": {
         "Shoppy": ""
@@ -12744,7 +12857,7 @@
       "cats": [
         1
       ],
-      "icon": "default.svg",
+      "icon": "Sotel.png",
       "meta": {
         "generator": "sotel"
       },
@@ -12935,6 +13048,17 @@
       },
       "scripts": "statcounter\\.com/counter/counter",
       "website": "http://www.statcounter.com"
+    },
+    "Statically": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "Server": "^statically$"
+      },
+      "icon": "Statically.svg",
+      "html": "<link [^>]*?href=\"?[a-z]*?:?//cdn\\.statically\\.io/",
+      "website": "https://statically.io"
     },
     "Stimulus": {
       "cats": [
@@ -13764,6 +13888,15 @@
       "icon": "tray.png",
       "scripts": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
+    },
+    "Tripadviser.Widget": {
+      "cats": [
+        5
+      ],
+      "description": "Tripadvisor embed reviews widget.",
+      "icon": "Tripadviser.Widget.svg",
+      "scripts": "tripadvisor\\.[\\w]+/WidgetEmbed",
+      "website": "https://www.tripadvisor.com/Widgets"
     },
     "TrustArc": {
       "cats": [
@@ -14937,7 +15070,7 @@
       "cats": [
         6
       ],
-      "description": "WooCommerce is an open-source e-commerce plugin for WordPress.",
+      "description": "WooCommerce is an open-source ecommerce plugin for WordPress.",
       "html": [
         "<!-- WooCommerce",
         "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\\.css?ver=([\\d.]+)'\\;version:\\1"
@@ -15368,6 +15501,16 @@
       "icon": "Yieldlab.png",
       "scripts": "^https?://(?:[^/]+\\.)?yieldlab\\.net/",
       "website": "http://yieldlab.de"
+    },
+    "Cloudinary": {
+      "cats": [
+        31
+      ],
+      "html": [
+        "<img[^>]+\\.cloudinary\\.com\\;confidence:80"
+      ],
+      "icon": "Cloudinary.svg",
+      "website": "https://cloudinary.com"
     },
     "Yii": {
       "cats": [

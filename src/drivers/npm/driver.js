@@ -605,7 +605,7 @@ class Site {
       const cookies = (await page.cookies()).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value],
+          [name.toLowerCase()]: [value],
         }),
         {}
       )
