@@ -6117,11 +6117,11 @@
       "dom": { 
         "iframe[src*='guestonline']": { 
           "attributes": {
-            "src": "ib\\.guestonline\\.(?:[\\w]+)"
+            "src": "ib\\.guestonline\\.\\w+"
           } 
         } 
       },
-      "scripts": "ib\\.guestonline\\.(?:[\\w]+)",
+      "scripts": "ib\\.guestonline\\.\\w+",
       "website": "https://www.guestonline.io"
     },
     "HCL Digital Experience": {
