@@ -6106,6 +6106,24 @@
       "scripts": "assets\\.growingio\\.com/([\\d.]+)/gio\\.js\\;version:\\1",
       "website": "https://www.growingio.com/"
     },
+    "Guestonline": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Guestonline is a restaurant table booking widget.",
+      "icon": "Guestonline.svg",
+      "dom": { 
+        "iframe[src*='guestonline']": { 
+          "attributes": {
+            "src": "ib\\.guestonline\\.\\w+"
+          } 
+        } 
+      },
+      "scripts": "ib\\.guestonline\\.\\w+",
+      "website": "https://www.guestonline.io"
+    },
     "HCL Digital Experience": {
       "cats": [
         1
