@@ -752,7 +752,6 @@ class Site {
 
       return reducedLinks
     } catch (error) {
-      console.log(error)
       if (error.constructor.name === 'TimeoutError') {
         throw new Error('The website took too long to respond')
       }
