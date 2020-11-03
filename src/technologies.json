@@ -5112,7 +5112,7 @@
       "description": "Formitable is an reservation management system for restaurants.",
       "icon": "Formitable.svg",
       "scripts": [
-        "formitable\\.js+(?:([\\d.]+))\\;version:\\1",
+        "formitable\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
         "cdn\\.formitable\\.com"       
       ],
       "website": "https://formitable.com"
