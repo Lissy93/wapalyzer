@@ -13871,6 +13871,28 @@
       ],
       "website": "https://www.thg.com/"
     },
+    "Thefork": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Thefork is a restaurant booking, managing system.",
+      "icon": "Thefork.svg",
+      "dom": { 
+        "iframe[data-src*='lafourchette']": { 
+          "attributes": {
+            "data-src": "module\\.lafourchette.\\w+"
+          } 
+        },
+        "iframe[src*='lafourchette']": { 
+          "attributes": {
+            "src": "module\\.lafourchette.\\w+"
+          } 
+        } 
+      },
+      "website": "https://www.thefork.com"
+    },
     "Thelia": {
       "cats": [
         1,
