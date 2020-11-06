@@ -11486,6 +11486,24 @@
       "scripts": "require.*\\.js",
       "website": "http://requirejs.org"
     },
+    "ResDiary": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "ResDiary, is a online reservation system for hospitality operators.",
+      "icon": "ResDiary.svg",
+      "dom": {
+        "iframe[src*='resdiary']": {
+          "attributes": {
+            "src": "\\.resdiary\\.\\w+/"
+          }
+        }
+      },
+      "scripts": "\\.resdiary\\.\\w+/",
+      "website": "https://www.resdiary.com"
+    },
     "Resin": {
       "cats": [
         22
