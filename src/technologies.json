@@ -8306,6 +8306,20 @@
       "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
     },
+    "Mangeznotez": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Mangeznotez is a restaurant table booking widget.",
+      "icon": "Mangeznotez.svg",
+      "scripts": [
+        "www\\.mangeznotez\\.\\w+",
+        "\\w+.mangeznotez\\.\\w+(?:.*\\?ver=([\\d.]+))?\\;version:\\1"
+      ],
+      "website": "https://www.mangeznotez.com"
+    },
     "MariaDB": {
       "cats": [
         34
