@@ -11579,6 +11579,107 @@
       "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
     },
+    "Rezgo": {
+      "cats": [
+        5,
+        6,
+        61,
+        72
+      ],
+      "description": "Rezgo is a tour operator software that provides online booking system.",
+      "icon": "Rezgo.svg",
+      "dom": {
+        "iframe": {
+          "attributes": {
+            "id": "rezgo_content_frame"
+          }
+        },
+        "link": {
+           "attributes": {
+             "href": "wp-content/plugins/rezgo/rezgo/templates"
+          }
+        }
+      },
+      "website": "https://www.rezgo.com"
+    },
+    "Impact": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Impact helps businesses contract and pay partners.",
+      "icon": "Impact.svg",
+      "js": {
+        "ImpactRadiusEvent": "",
+        "irEvent": ""
+      },
+      "scripts": "d\\.impactradius-event\\.com",
+      "website": "https://impact.com/"
+    },
+    "Tradedoubler": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Tradedoubler is a global affiliate marketing network.",
+      "icon": "Tradedoubler.svg",
+      "dom": {
+        "a[href*='clk.tradedoubler.com/click']": {
+          "text": ""
+        },
+        "img[src*='impes.tradedoubler.com/imp']": {
+          "text": ""
+        }
+      },
+      "website": "https://www.tradedoubler.com/"
+    },
+    "Webgains": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Webgains is an affiliate marketing network.",
+      "icon": "Webgains.svg",
+      "script": "analytics\\.webgains\\.io",
+      "js": {
+        "ITCLKQ": ""
+      },
+      "website": "https://www.webgains.com/"
+    },
+    "Rakuten": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Rakuten (formerly Ebates) allows you to earn cash-back rewards.",
+      "icon": "Rakuten.svg",
+      "script": "tag\\.rmp\\.rakuten\\.com",
+      "js": {
+        "rakutenSource": "",
+        "rakutenRanMID": ""
+      },
+      "cookies": {
+        "rakuten-source": ""
+      },
+      "website": "https://www.rakuten.com/"
+    },
+    "AWIN": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "AWIN is a global affiliate marketing network.",
+      "icon": "AWIN.svg",
+      "js": {
+        "AWIN.Tracking": ""
+      },
+      "cookies": {
+        "_aw_xid": "",
+        "BAGawin": ""
+      },
+      "scripts": "dwin1\\.com",
+      "website": "https://www.awin.com"
+    },
     "Rewardful": {
       "cats": [
         71,
