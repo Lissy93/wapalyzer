@@ -11005,6 +11005,22 @@
       "scripts": "protovis.*\\.js",
       "website": "http://mbostock.github.io/protovis"
     },
+    "ProvenExpert": {
+      "cats": [
+        5
+      ],
+      "description": "ProvenExpert is a review based marketing platform that allows users to create customer surveys, provides aggregate reviews and ratings.",
+      "icon": "ProvenExpert.svg",
+      "dom": {
+        "img[src*='provenexpert']": {
+          "attributes": {
+            "src": "images\\.provenexpert\\.\\w+"
+          }
+        }
+      },
+      "scripts": "provenexpert\\.\\w+/widget",
+      "website": "https://www.provenexpert.com"
+    },
     "Proximis": {
       "cats": [
         5,
