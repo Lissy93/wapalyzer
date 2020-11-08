@@ -13969,6 +13969,9 @@
       ],
       "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
       "icon": "TawkTo.png",
+      "cookies": {
+        "TawkConnectionTime": ""
+      },
       "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
     },
@@ -14144,17 +14147,17 @@
       ],
       "description": "Thefork is a restaurant booking, managing system.",
       "icon": "Thefork.svg",
-      "dom": { 
-        "iframe[data-src*='lafourchette']": { 
+      "dom": {
+        "iframe[data-src*='lafourchette']": {
           "attributes": {
             "data-src": "module\\.lafourchette.\\w+"
-          } 
+          }
         },
-        "iframe[src*='lafourchette']": { 
+        "iframe[src*='lafourchette']": {
           "attributes": {
             "src": "module\\.lafourchette.\\w+"
-          } 
-        } 
+          }
+        }
       },
       "website": "https://www.thefork.com"
     },
