@@ -13872,6 +13872,24 @@
       },
       "website": "https://github.com/syntaxhighlighter"
     },
+    "TableCheck": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "TableCheck is a restaurant table booking widget.",
+      "icon": "TableCheck.svg",
+      "dom": {
+        "form[action*='tablecheck']": {
+          "attributes": {
+            "action": "\\.tablecheck\\.\\w+/"
+          }
+        }
+      },
+      "scripts": "tc_widget\\.js",
+      "website": "https://www.tablecheck.com"
+    },
     "T-Soft": {
       "cats": [
         6
