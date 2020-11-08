@@ -302,7 +302,7 @@
         "X-Powered-CMS": "Bitrix Site Manager"
       },
       "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
-      "icon": "1C-Bitrix.png",
+      "icon": "1C-Bitrix.svg",
       "implies": "PHP",
       "scripts": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
@@ -2025,13 +2025,13 @@
       ],
       "website": "http://www.ozerov.de/bigdump.php"
     },
-    "Bigcommerce": {
+    "BigCommerce": {
       "cats": [
         6
       ],
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
       "html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
-      "icon": "Bigcommerce.png",
+      "icon": "BigCommerce.svg",
       "scripts": "cdn\\d+\\.bigcommerce\\.com/",
       "url": "mybigcommerce\\.com",
       "website": "http://www.bigcommerce.com"
@@ -8206,7 +8206,7 @@
         "<script [^>]+data-requiremodule=\"Magento_\\;version:2",
         "<script type=\"text/x-magento-init\">"
       ],
-      "icon": "Magento.png",
+      "icon": "Magento.svg",
       "implies": [
         "PHP",
         "MySQL"
@@ -9512,7 +9512,7 @@
         10
       ],
       "description": "New Relic is a Software-as-a-Service offering that focuses on performance and availability monitoring.",
-      "icon": "New Relic.png",
+      "icon": "New Relic.svg",
       "js": {
         "NREUM": "",
         "newrelic": ""
@@ -11780,8 +11780,6 @@
       "icon": "Rezgo.svg",
       "website": "https://www.rezgo.com"
     },
-<<<<<<< HEAD
-=======
     "Impact": {
       "cats": [
         71,
@@ -12025,7 +12023,7 @@
       "headers": {
         "Server": "SAP NetWeaver Application Server"
       },
-      "icon": "SAP.png",
+      "icon": "SAP.svg",
       "website": "http://sap.com"
     },
     "SAP Commerce Cloud": {
@@ -12041,7 +12039,7 @@
         "<[^>]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
         "<script[^>].*hybris.*.js"
       ],
-      "icon": "SAP.png",
+      "icon": "SAP.svg",
       "implies": "Java",
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
     },
@@ -12049,7 +12047,7 @@
       "cats": [
         69
       ],
-      "icon": "SAP.png",
+      "icon": "SAP.svg",
       "scripts": "\\.gigya\\.com/JS/gigya\\.js",
       "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html"
     },
@@ -15592,7 +15590,7 @@
         "X-Wix-Request-Id": "",
         "X-Wix-Server-Artifact-Id": ""
       },
-      "icon": "Wix.png",
+      "icon": "Wix.svg",
       "implies": "React",
       "js": {
         "wixBiSession": ""
@@ -15630,7 +15628,7 @@
         "<!-- WooCommerce",
         "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\\.css?ver=([\\d.]+)'\\;version:\\1"
       ],
-      "icon": "WooCommerce.png",
+      "icon": "WooCommerce.svg",
       "implies": "WordPress",
       "js": {
         "woocommerce_params": ""
