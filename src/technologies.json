@@ -12329,6 +12329,27 @@
       },
       "website": "http://s9y.org"
     },
+    "SevenRooms": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "SevenRooms is an fully-integrated reservation, seating and restaurant management system.",
+      "icon": "SevenRooms.svg",
+      "js": {
+        "SevenroomsWidget": ""
+      },
+      "dom": {
+        "iframe[src*='sevenrooms']": {
+          "attributes": {
+            "src": "\\.sevenrooms\\.\\w+/"
+          }
+        }
+      },
+      "scripts": "sevenrooms\\.\\w+/widget/embed\\.js",
+      "website": "https://sevenrooms.com"
+    },
     "Shapecss": {
       "cats": [
         66
