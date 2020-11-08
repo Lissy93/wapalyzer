@@ -11637,13 +11637,26 @@
       "implies": "Java",
       "website": "http://caucho.com"
     },
-    "Resy": {
+    "Resmio": {
       "cats": [
         5,
         61,
         72
       ],
-      "description": "Resy is an technology and media company that provides an app and back-end management software for restaurant reservations.",
+      "description": "Resmio is a restaurant table booking widget.",
+      "icon": "Resmio.svg",
+      "js": {
+        "ResmioButton": ""
+      },
+      "scripts": "static\\.resmio\\.\\w+/static/",
+      "website": "https://www.resmio.com"
+    },
+    "Resmio": {
+      "cats": [
+        5,
+        61,
+        72
+      ],      "description": "Resy is an technology and media company that provides an app and back-end management software for restaurant reservations.",
       "icon": "Resy.svg",
       "js": {
         "resyWidget": ""
