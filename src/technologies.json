@@ -15759,6 +15759,32 @@
       },
       "website": "https://www.yepcomm.com.br"
     },
+    "Yelp Review Badge": {
+      "cats": [
+        5
+      ],
+      "description": "Yelp Review Badges showcase business reviews from Yelp on websites.",
+      "icon": "Yelp.svg",
+      "scripts": "yelp\\.com/biz_badge_js",
+      "website": "http://yelp.com"
+    },
+    "Yelp Reservations": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Yelp Reservations is a cloud-based restaurant management system.",
+      "icon": "Yelp.svg",
+      "dom": {
+        "iframe[src*='yelp']": {
+          "attributes": {
+            "src": "yelp(?:.com/reservations|reservations\\.com)"
+          }
+        }
+      },
+      "website": "http://yelp.com"
+    },
     "Yieldlab": {
       "cats": [
         36
