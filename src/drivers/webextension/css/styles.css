@@ -62,6 +62,15 @@ a:hover {
   white-space: nowrap;
 }
 
+.header__cta a {
+  border-bottom: 1px solid var(--color-secondary);
+  text-decoration: none;
+}
+
+.header__cta a:hover {
+  border-bottom: 1px solid var(--color-primary);
+}
+
 .header__open-in-new {
   color: var(--color-primary);
   height: 1.1rem;
@@ -84,6 +93,15 @@ a:hover {
 
 .alerts {
   white-space: nowrap;
+}
+
+.alerts__link {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.alerts__link:hover {
+  border-bottom: 1px solid var(--color-primary);
+  text-decoration: none;
 }
 
 .alerts--hidden {
