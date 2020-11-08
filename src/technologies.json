@@ -412,6 +412,20 @@
       "icon": "AOLserver.png",
       "website": "http://aolserver.com"
     },
+    "AOS": {
+      "cats": [
+        59
+      ],
+      "description": "JavaScript library to animate elements on your page as you scroll.",
+      "js": {
+        "AOS.init": "\\;confidence:25",
+        "AOS.refresh": "\\;confidence:50",
+        "AOS.refreshHard": "\\;confidence:50"
+      },
+      "scripts": "unpkg\\.com/aos@(next)/dist/aos\\.js\\;version:\\1",
+      "icon": "AOS.svg",
+      "website": "http://michalsnik.github.io/aos/"
+    },
     "AT Internet Analyzer": {
       "cats": [
         10
@@ -478,7 +492,7 @@
         68
       ],
       "description": "AccessiBe is an automated web accessibility solution for ADA and WCAG compliance. The system scans and analyzes a website using AI technology, and applies all the required adjustments to become ADA and WCAG 2.1 compliant.",
-      "icon": "Accessibe.png",
+      "icon": "Accessibe.svg",
       "scripts": "acsbap\\.com/.*/acsb\\.js",
       "website": "https://accessibe.com/"
     },
@@ -1735,7 +1749,7 @@
       ],
       "description": "AudioEye automatically evaluates and adjusts website content to be accessible.",
       "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
-      "icon": "AudioEye.png",
+      "icon": "AudioEye.svg",
       "scripts": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/"
     },
@@ -4804,7 +4818,7 @@
         68
       ],
       "description": "Facil-iti is solution for website owners, providing accessibility to disability users and seniors.",
-      "icon": "Facil-iti.png",
+      "icon": "Facil-iti.svg",
       "scripts": "ws\\.facil-iti\\.com/tag/faciliti-tag\\.min\\.js",
       "website": "https://www.facil-iti.com/"
     },
@@ -5825,7 +5839,7 @@
       "headers": {
         "Server": "Google Frontend"
       },
-      "icon": "Google App Engine.png",
+      "icon": "Google App Engine.svg",
       "website": "http://code.google.com/appengine"
     },
     "Google Charts": {
@@ -5881,7 +5895,7 @@
         35
       ],
       "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
-      "icon": "Google Maps.png",
+      "icon": "Google Maps.svg",
       "scripts": [
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
         "//maps\\.google(?:apis)?\\.com/maps/api/js"
@@ -5910,7 +5924,7 @@
         "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1",
         "X-Page-Speed": "(.+)\\;version:\\1"
       },
-      "icon": "Google PageSpeed.png",
+      "icon": "Google PageSpeed.svg",
       "website": "http://developers.google.com/speed/pagespeed/mod"
     },
     "Google Pay": {
@@ -5969,7 +5983,7 @@
         "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
         "<!-- (?:End )?Google Tag Manager -->"
       ],
-      "icon": "Google Tag Manager.png",
+      "icon": "Google Tag Manager.svg",
       "js": {
         "google_tag_manager": "",
         "googletag": ""
@@ -6321,7 +6335,7 @@
       "cats": [
         10
       ],
-      "icon": "Heap.png",
+      "icon": "Heap.svg",
       "js": {
         "heap": ""
       },
@@ -6489,7 +6503,7 @@
         10
       ],
       "description": "Hotjar is a suite of analytic tools to assist in the gathering of qualitative data, providing feedback through tools such as heatmaps, session recordings, and surveys.",
-      "icon": "Hotjar.png",
+      "icon": "Hotjar.svg",
       "js": {
         "HotLeadfactory": "",
         "HotleadController": "",
@@ -6684,7 +6698,7 @@
       "cats": [
         16
       ],
-      "icon": "Imperva.svg",
+    "icon": "Imperva.svg",
       "scripts": [
         "/_Incapsula_Resource"
       ],
@@ -10991,6 +11005,22 @@
       "scripts": "protovis.*\\.js",
       "website": "http://mbostock.github.io/protovis"
     },
+    "ProvenExpert": {
+      "cats": [
+        5
+      ],
+      "description": "ProvenExpert is a review based marketing platform that allows users to create customer surveys, provides aggregate reviews and ratings.",
+      "icon": "ProvenExpert.svg",
+      "dom": {
+        "img[src*='provenexpert']": {
+          "attributes": {
+            "src": "images\\.provenexpert\\.\\w+"
+          }
+        }
+      },
+      "scripts": "provenexpert\\.\\w+/widget",
+      "website": "https://www.provenexpert.com"
+    },
     "Proximis": {
       "cats": [
         5,
@@ -11040,6 +11070,18 @@
       "icon": "Public CMS.png",
       "implies": "Java",
       "website": "http://www.publiccms.com"
+    },
+    "Pulse Secure": {
+      "description": "Pulse Secure allows to deploy VPNs to securely to your internal resources.",
+      "icon": "PulseSecure.png",
+      "cats": [
+        46
+      ],
+      "cookies": {
+        "DSSIGNIN": ""
+      },
+      "url": "/dana-na/auth/",
+      "website": "https://www.pulsesecure.net/products/remote-access-overview/"
     },
     "Pure CSS": {
       "cats": [
@@ -11778,23 +11820,6 @@
         "ITCLKQ": ""
       },
       "website": "https://www.webgains.com/"
-    },
-    "Rakuten": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Rakuten (formerly Ebates) allows you to earn cash-back rewards.",
-      "icon": "Rakuten.svg",
-      "script": "tag\\.rmp\\.rakuten\\.com",
-      "js": {
-        "rakutenSource": "",
-        "rakutenRanMID": ""
-      },
-      "cookies": {
-        "rakuten-source": ""
-      },
-      "website": "https://www.rakuten.com/"
     },
     "AWIN": {
       "cats": [
@@ -13833,13 +13858,21 @@
       },
       "website": "https://www.sympa.org/"
     },
+    "Synerise": {
+      "cats": [
+        10
+      ],
+      "icon": "Synerise.svg",
+      "scripts": "snrcdn\\.net/sdk/(3\\.0)/synerise-javascript-sdk\\.min\\.js\\;version:\\1",
+      "website": "https://synerise.com/"
+    },
     "Synology DiskStation": {
       "cats": [
         48
       ],
       "description": "DiskStation provides a full-featured network attached storage.",
       "html": "<noscript><div class='syno-no-script'",
-      "icon": "Synology DiskStation.png",
+      "icon": "Synology DiskStation.svg",
       "meta": {
         "application-name": "Synology DiskStation",
         "description": "^DiskStation provides a full-featured network attached storage"
@@ -13857,6 +13890,43 @@
         "SyntaxHighlighter": ""
       },
       "website": "https://github.com/syntaxhighlighter"
+    },
+    "TableBooker": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+
+      "description": "Tablebooker is an online reservation system for restaurants.",
+      "icon": "TableBooker.svg",
+      "dom": {
+        "iframe": {
+          "attributes": {
+            "id": "tablebookerResFrame_"
+          }
+        }
+      },
+      "scripts": "reservations\\.tablebooker\\.\\w+/",
+      "website": "https://www.tablebooker.com"
+    },
+    "TableCheck": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "TableCheck is a restaurant table booking widget.",
+      "icon": "TableCheck.svg",
+      "dom": {
+        "form[action*='tablecheck']": {
+          "attributes": {
+            "action": "\\.tablecheck\\.\\w+/"
+          }
+        }
+      },
+      "scripts": "tc_widget\\.js",
+      "website": "https://www.tablecheck.com"
     },
     "T-Soft": {
       "cats": [
@@ -14111,7 +14181,7 @@
         68
       ],
       "description": "TextHelp is a literacy, accessibility and dyslexia software developer for people with reading and writing difficulties.",
-      "icon": "Texthelp.png",
+      "icon": "Texthelp.svg",
       "scripts": "browsealoud\\.com/.*/browsealoud\\.js",
       "website": "https://www.texthelp.com/en-gb/products/browsealoud/"
     },
@@ -14343,7 +14413,7 @@
         10
       ],
       "description": "TrackJS is an error monitoring agent for production web sites and applications.",
-      "icon": "TrackJs.png",
+      "icon": "TrackJs.svg",
       "js": {
         "TrackJs": ""
       },
@@ -14938,7 +15008,11 @@
       ],
       "description": "Vimeo is a video hosting, sharing and services platform. Vimeo operation an ad-free basis by providing subscription plans.",
       "html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
-      "icon": "Vimeo.png",
+      "js": {
+        "Vimeo.Player": "",
+        "VimeoPlayer": ""
+      },
+      "icon": "Vimeo.svg",
       "website": "http://vimeo.com"
     },
     "Virgool": {
@@ -16645,7 +16719,7 @@
         16
       ],
       "html": "<style[^>]+[^<]+#cf-hcaptcha-container[^<]+</style>",
-      "icon": "hcaptcha-symbol-256.png",
+      "icon": "hCaptcha.svg",
       "scripts": "https://hcaptcha.com/([\\d]+?)/api.js\\;version:\\1",
       "website": "https://www.hcaptcha.com/"
     },
@@ -17404,7 +17478,7 @@
         "<link[^>]+recaptcha",
         "<div[^>]+class=\"g-recaptcha\""
       ],
-      "icon": "reCAPTCHA.png",
+      "icon": "reCAPTCHA.svg",
       "js": {
         "Recaptcha": "",
         "recaptcha": ""
