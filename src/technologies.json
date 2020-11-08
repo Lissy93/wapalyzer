@@ -434,6 +434,23 @@
       "scripts": "xiti\\.com/hit\\.xiti",
       "website": "http://atinternet.com/en"
     },
+    "AWIN": {
+      "cats": [
+        71,
+        61
+      ],
+      "cookies": {
+        "BAGawin": "",
+        "_aw_xid": ""
+      },
+      "description": "AWIN is a global affiliate marketing network.",
+      "icon": "AWIN.svg",
+      "js": {
+        "AWIN.Tracking": ""
+      },
+      "scripts": "dwin1\\.com",
+      "website": "https://www.awin.com"
+    },
     "AWS Certificate Manager": {
       "cats": [
         70
@@ -515,17 +532,6 @@
         "adocean\\.pl\\;confidence:80"
       ],
       "website": "https://adocean-global.com"
-    },
-    "Moat": {
-      "cats": [
-        10
-      ],
-      "icon": "Moat.svg",
-      "scripts": [
-        "moatads\\.com"
-      ],
-      "description": "Moat is a digital ad analytics tool.",
-      "website": "https://moat.com/"
     },
     "AdRiver": {
       "cats": [
@@ -4504,48 +4510,6 @@
       "scripts": "elqCfg\\.js",
       "website": "http://eloqua.com"
     },
-    "Klaviyo": {
-      "cats": [
-        32,
-        61
-      ],
-      "description": "Klaviyo is an email marketing platform for online businesses.",
-      "icon": "Klaviyo.svg",
-      "js": {
-        "klaviyo": "",
-        "KlaviyoSubscribe": ""
-      },
-      "scripts": "klaviyo\\.com",
-      "website": "https://www.klaviyo.com/"
-    },
-    "Recart": {
-      "cats": [
-        32,
-        61
-      ],
-      "description": "Recart is a tool to engage users who abandoned their shopping cart via Facebook Messenger.",
-      "icon": "Recart.svg",
-      "js": {
-        "recart": "",
-        "__recart": ""
-      },
-      "scripts": "api\\.recart\\.com",
-      "website": "https://recart.com/"
-    },
-    "ManyChat": {
-      "cats": [
-        32,
-        52,
-        61
-      ],
-      "description": "ManyChat is a service that allows you to create chatbots for Facebook Messenger.",
-      "icon": "ManyChat.svg",
-      "js": {
-        "mcwidget": ""
-      },
-      "scripts": "widget\\.manychat\\.com",
-      "website": "https://manychat.com/"
-    },
     "Emarsys": {
       "cats": [
         32,
@@ -5170,7 +5134,7 @@
       "icon": "Formitable.svg",
       "scripts": [
         "formitable\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
-        "cdn\\.formitable\\.com"       
+        "cdn\\.formitable\\.com"
       ],
       "website": "https://formitable.com"
     },
@@ -5840,18 +5804,6 @@
       "scripts": "google-analytics\\.com/(?:ga|urchin|analytics)\\.js",
       "website": "http://google.com/analytics"
     },
-    "Snowplow": {
-      "cats": [
-        10
-      ],
-      "description": "Snowplow is an open-source data collection platform.",
-      "icon": "Snowplow.svg",
-      "js": {
-        "GlobalSnowplowNamespace": "",
-        "Snowplow": ""
-      },
-      "website": "https://snowplowanalytics.com/"
-    },
     "Google Analytics Enhanced eCommerce": {
       "cats": [
         10,
@@ -6197,7 +6149,6 @@
         72
       ],
       "description": "Guestonline is a restaurant table booking widget.",
-      "icon": "Guestonline.svg",
       "dom": {
         "iframe[src*='guestonline']": {
           "attributes": {
@@ -6205,6 +6156,7 @@
           }
         }
       },
+      "icon": "Guestonline.svg",
       "scripts": "ib\\.guestonline\\.\\w+",
       "website": "https://www.guestonline.io"
     },
@@ -6511,7 +6463,7 @@
       "cats": [
         5,
         61,
-        72        
+        72
       ],
       "description": "Hostmeapp is an restaurant software. Includes reservation, waitlist, guestbook and marketing tools.",
       "icon": "Hostmeapp.svg",
@@ -6713,6 +6665,20 @@
       },
       "scripts": "^immutable\\.(?:min\\.)?js$",
       "website": "https://facebook.github.io/immutable-js/"
+    },
+    "Impact": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Impact helps businesses contract and pay partners.",
+      "icon": "Impact.svg",
+      "js": {
+        "ImpactRadiusEvent": "",
+        "irEvent": ""
+      },
+      "scripts": "d\\.impactradius-event\\.com",
+      "website": "https://impact.com/"
     },
     "Imperva": {
       "cats": [
@@ -7504,6 +7470,20 @@
       },
       "website": "https://www.klarna.com/international/"
     },
+    "Klaviyo": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Klaviyo is an email marketing platform for online businesses.",
+      "icon": "Klaviyo.svg",
+      "js": {
+        "KlaviyoSubscribe": "",
+        "klaviyo": ""
+      },
+      "scripts": "klaviyo\\.com",
+      "website": "https://www.klaviyo.com/"
+    },
     "Knockout.js": {
       "cats": [
         12
@@ -8105,6 +8085,15 @@
       "icon": "Logitech Media Server.png",
       "website": "http://www.mysqueezebox.com"
     },
+    "LogRocket": {
+      "cats": [
+        10
+      ],
+      "description": "LogRocket records videos of user sessions with logs and network data.",
+      "scripts": ["cdn\\.logrocket\\.(com|io)", "cdn\\.lr-ingest\\.io"],
+      "icon": "LogRocket.svg",
+      "website": "https://logrocket.com/"
+    },
     "Loja Integrada": {
       "cats": [
         6
@@ -8294,6 +8283,20 @@
       "icon": "MantisBT.png",
       "implies": "PHP",
       "website": "http://www.mantisbt.org"
+    },
+    "ManyChat": {
+      "cats": [
+        32,
+        52,
+        61
+      ],
+      "description": "ManyChat is a service that allows you to create chatbots for Facebook Messenger.",
+      "icon": "ManyChat.svg",
+      "js": {
+        "mcwidget": ""
+      },
+      "scripts": "widget\\.manychat\\.com",
+      "website": "https://manychat.com/"
     },
     "ManyContacts": {
       "cats": [
@@ -8912,6 +8915,17 @@
         "generator": "^mkdocs-([\\d.]+)\\;version:\\1"
       },
       "website": "http://www.mkdocs.org/"
+    },
+    "Moat": {
+      "cats": [
+        10
+      ],
+      "description": "Moat is a digital ad analytics tool.",
+      "icon": "Moat.svg",
+      "scripts": [
+        "moatads\\.com"
+      ],
+      "website": "https://moat.com/"
     },
     "MobX": {
       "cats": [
@@ -11205,6 +11219,23 @@
       "scripts": "^rainloop/v/([0-9.]+)/\\;version:\\1",
       "website": "https://www.rainloop.net/"
     },
+    "Rakuten": {
+      "cats": [
+        71,
+        61
+      ],
+      "cookies": {
+        "rakuten-source": ""
+      },
+      "description": "Rakuten (formerly Ebates) allows you to earn cash-back rewards.",
+      "icon": "Rakuten.svg",
+      "js": {
+        "rakutenRanMID": "",
+        "rakutenSource": ""
+      },
+      "scripts": "tag\\.rmp\\.rakuten\\.com",
+      "website": "https://www.rakuten.com/"
+    },
     "Rakuten Digital Commerce": {
       "cats": [
         6
@@ -11354,6 +11385,20 @@
       "html": "<!-- Powered by RebelMouse\\.",
       "icon": "RebelMouse.svg",
       "website": "https://www.rebelmouse.com/"
+    },
+    "Recart": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Recart is a tool to engage users who abandoned their shopping cart via Facebook Messenger.",
+      "icon": "Recart.svg",
+      "js": {
+        "__recart": "",
+        "recart": ""
+      },
+      "scripts": "api\\.recart\\.com",
+      "website": "https://recart.com/"
     },
     "Recite Me": {
       "cats": [
@@ -12385,6 +12430,44 @@
       },
       "website": "http://s9y.org"
     },
+    "SevenRooms": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Setmore is a cloud-based appointment scheduling solution.",
+      "icon": "Setmore.svg",
+      "js": {
+        "setmorePopup": ""
+      },
+      "scripts":[
+        "my\\.setmore\\.\\w+/",
+        "/setmore-appointments/script/"
+      ],
+      "website": "https://www.setmore.com"
+    },
+    "SevenRooms": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "SevenRooms is an fully-integrated reservation, seating and restaurant management system.",
+      "icon": "SevenRooms.svg",
+      "js": {
+        "SevenroomsWidget": ""
+      },
+      "dom": {
+        "iframe[src*='sevenrooms']": {
+          "attributes": {
+            "src": "\\.sevenrooms\\.\\w+/"
+          }
+        }
+      },
+      "scripts": "sevenrooms\\.\\w+/widget/embed\\.js",
+      "website": "https://sevenrooms.com"
+    },
     "Shapecss": {
       "cats": [
         66
@@ -12955,6 +13038,18 @@
       "scripts": "snoobi\\.com/snoop\\.php",
       "website": "http://www.snoobi.com"
     },
+    "Snowplow": {
+      "cats": [
+        10
+      ],
+      "description": "Snowplow is an open-source data collection platform.",
+      "icon": "Snowplow.svg",
+      "js": {
+        "GlobalSnowplowNamespace": "",
+        "Snowplow": ""
+      },
+      "website": "https://snowplowanalytics.com/"
+    },
     "SobiPro": {
       "cats": [
         19
@@ -13192,6 +13287,20 @@
       },
       "icon": "Sqreen.png",
       "website": "https://sqreen.io"
+    },
+    "Square": {
+      "cats": [
+        41,
+        61
+      ],
+      "description": "Square is a mobile payment company that offers business software, payment hardware products and small business services.",
+      "icon": "Square.svg",
+      "js": {
+        "SqPaymentForm": "",
+        "Square.Analytics": ""
+      },
+      "scripts": "js\\.squareup\\.com",
+      "website": "https://squareup.com/"
     },
     "Squarespace": {
       "cats": [
@@ -14083,6 +14192,23 @@
       "scripts": "tracker\\.js",
       "website": "http://trackjs.com"
     },
+    "Tradedoubler": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Tradedoubler is a global affiliate marketing network.",
+      "dom": {
+        "a[href*='clk.tradedoubler.com/click']": {
+          "text": ""
+        },
+        "img[src*='impes.tradedoubler.com/imp']": {
+          "text": ""
+        }
+      },
+      "icon": "Tradedoubler.svg",
+      "website": "https://www.tradedoubler.com/"
+    },
     "Transifex": {
       "cats": [
         12
@@ -14181,10 +14307,10 @@
       ],
       "description": "Twitter is a 'microblogging' system that allows you to send and receive short posts called tweets.",
       "icon": "Twitter.svg",
-      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
       "js": {
         "twttr": ""
       },
+      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
       "website": "http://twitter.com"
     },
     "Twitter Emoji (Twemoji)": {
@@ -14998,6 +15124,19 @@
       },
       "website": "https://webflow.com"
     },
+    "Webgains": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Webgains is an affiliate marketing network.",
+      "icon": "Webgains.svg",
+      "js": {
+        "ITCLKQ": ""
+      },
+      "scripts": "analytics\\.webgains\\.io",
+      "website": "https://www.webgains.com/"
+    },
     "Webix": {
       "cats": [
         12
@@ -15721,6 +15860,32 @@
       },
       "website": "https://www.yepcomm.com.br"
     },
+    "Yelp Review Badge": {
+      "cats": [
+        5
+      ],
+      "description": "Yelp Review Badges showcase business reviews from Yelp on websites.",
+      "icon": "Yelp.svg",
+      "scripts": "yelp\\.com/biz_badge_js",
+      "website": "http://yelp.com"
+    },
+    "Yelp Reservations": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Yelp Reservations is a cloud-based restaurant management system.",
+      "icon": "Yelp.svg",
+      "dom": {
+        "iframe[src*='yelp']": {
+          "attributes": {
+            "src": "yelp(?:.com/reservations|reservations\\.com)"
+          }
+        }
+      },
+      "website": "http://yelp.com"
+    },
     "Yieldlab": {
       "cats": [
         36
@@ -16163,20 +16328,6 @@
         "generator": "^eSyndiCat "
       },
       "website": "http://esyndicat.com"
-    },
-    "Square": {
-      "cats": [
-        41,
-        61
-      ],
-      "description": "Square is a mobile payment company that offers business software, payment hardware products and small business services.",
-      "icon": "Square.svg",
-      "scripts": "js\\.squareup\\.com",
-      "js": {
-        "Square.Analytics": "",
-        "SqPaymentForm": ""
-      },
-      "website": "https://squareup.com/"
     },
     "eWAY Payments": {
       "cats": [
@@ -17177,7 +17328,7 @@
       ],
       "description": "Styled components is a CSS-in-JS styling framework that uses tagged template literals in JavaScript.",
       "dom": {
-        "style[data-styled], style[data-styled-components], [sc-component-id]": {
+        "[sc-component-id]": {
           "text": ""
         },
         "style[data-styled-version]": {
@@ -17185,7 +17336,7 @@
             "data-styled-version": "(^.+$)\\;version:\\1"
           }
         },
-        "[sc-component-id]": {
+        "style[data-styled], style[data-styled-components], [sc-component-id]": {
           "text": ""
         }
       },
