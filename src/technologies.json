@@ -2014,17 +2014,6 @@
       },
       "website": "https://www.bigcartel.com"
     },
-    "BigDump": {
-      "cats": [
-        3
-      ],
-      "html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
-      "implies": [
-        "MySQL",
-        "PHP"
-      ],
-      "website": "http://www.ozerov.de/bigdump.php"
-    },
     "BigCommerce": {
       "cats": [
         6
@@ -2035,6 +2024,17 @@
       "scripts": "cdn\\d+\\.bigcommerce\\.com/",
       "url": "mybigcommerce\\.com",
       "website": "http://www.bigcommerce.com"
+    },
+    "BigDump": {
+      "cats": [
+        3
+      ],
+      "html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
+      "implies": [
+        "MySQL",
+        "PHP"
+      ],
+      "website": "http://www.ozerov.de/bigdump.php"
     },
     "Bigware": {
       "cats": [
@@ -6680,6 +6680,20 @@
       "scripts": "^immutable\\.(?:min\\.)?js$",
       "website": "https://facebook.github.io/immutable-js/"
     },
+    "Impact": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Impact helps businesses contract and pay partners.",
+      "icon": "Impact.svg",
+      "js": {
+        "ImpactRadiusEvent": "",
+        "irEvent": ""
+      },
+      "scripts": "d\\.impactradius-event\\.com",
+      "website": "https://impact.com/"
+    },
     "Imperva": {
       "cats": [
         16
@@ -9386,13 +9400,13 @@
         6
       ],
       "description": "NEO is an ecommerce software that manages multiple online stores.",
+      "dom": {
+        "#svr[value^=\"NEOWEBV\"]": {
+          "text": ""
+        }
+      },
       "headers": {
         "powered": "jet-neo"
-      },
-      "dom": {
-      	"#svr[value^=\"NEOWEBV\"]": {
-      		"text": ""
-      	}
       },
       "icon": "plataforma_neo.svg",
       "url": "\\.plataformaneo\\.com",
@@ -11786,33 +11800,6 @@
       },
       "icon": "Rezgo.svg",
       "website": "https://www.rezgo.com"
-    },
-    "Impact": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Impact helps businesses contract and pay partners.",
-      "icon": "Impact.svg",
-      "js": {
-        "ImpactRadiusEvent": "",
-        "irEvent": ""
-      },
-      "scripts": "d\\.impactradius-event\\.com",
-      "website": "https://impact.com/"
-    },
-    "Rewardful": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
-      "icon": "Rewardful.svg",
-      "js": {
-        "Rewardful": ""
-      },
-      "scripts": "r\\.wdfl\\.co",
-      "website": "https://www.getrewardful.com/"
     },
     "Rickshaw": {
       "cats": [
@@ -14388,7 +14375,6 @@
         61
       ],
       "description": "Tradedoubler is a global affiliate marketing network.",
-      "icon": "Tradedoubler.svg",
       "dom": {
         "a[href*='clk.tradedoubler.com/click']": {
           "text": ""
@@ -14397,6 +14383,7 @@
           "text": ""
         }
       },
+      "icon": "Tradedoubler.svg",
       "website": "https://www.tradedoubler.com/"
     },
     "Transifex": {
