@@ -11531,6 +11531,27 @@
       "scripts": "require.*\\.js",
       "website": "http://requirejs.org"
     },
+    "Resengo": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Resengo is a restaurant table booking widget.",
+      "icon": "Resengo.svg",
+      "dom": {
+        "iframe[src*='resengo']": {
+          "attributes": {
+            "src": "www\\.resengo\\.\\w+"
+          }
+        }
+      },
+      "js": {
+        "wpJsonpResengoReservationWidget": ""
+      },
+      "scripts": "www\\.resengo\\.\\w+",
+      "website": "https://wwc.resengo.com"
+    },
     "ResDiary": {
       "cats": [
         5,
