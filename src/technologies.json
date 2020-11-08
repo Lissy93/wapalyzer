@@ -417,13 +417,13 @@
         59
       ],
       "description": "JavaScript library to animate elements on your page as you scroll.",
+      "icon": "AOS.svg",
       "js": {
         "AOS.init": "\\;confidence:25",
         "AOS.refresh": "\\;confidence:50",
         "AOS.refreshHard": "\\;confidence:50"
       },
       "scripts": "unpkg\\.com/aos@(next)/dist/aos\\.js\\;version:\\1",
-      "icon": "AOS.svg",
       "website": "http://michalsnik.github.io/aos/"
     },
     "AT Internet Analyzer": {
@@ -6481,7 +6481,7 @@
       ],
       "description": "Hostmeapp is an restaurant software. Includes reservation, waitlist, guestbook and marketing tools.",
       "icon": "Hostmeapp.svg",
-      "scripts":"tables\\.hostmeapp\\.com",
+      "scripts": "tables\\.hostmeapp\\.com",
       "website": "https://www.hostmeapp.com"
     },
     "Hotaru CMS": {
@@ -6698,7 +6698,7 @@
       "cats": [
         16
       ],
-    "icon": "Imperva.svg",
+      "icon": "Imperva.svg",
       "scripts": [
         "/_Incapsula_Resource"
       ],
@@ -8076,6 +8076,18 @@
       "scripts": "lodash.*\\.js",
       "website": "http://www.lodash.com"
     },
+    "LogRocket": {
+      "cats": [
+        10
+      ],
+      "description": "LogRocket records videos of user sessions with logs and network data.",
+      "icon": "LogRocket.svg",
+      "scripts": [
+        "cdn\\.logrocket\\.(com|io)",
+        "cdn\\.lr-ingest\\.io"
+      ],
+      "website": "https://logrocket.com/"
+    },
     "Login with Amazon": {
       "cats": [
         69
@@ -8098,15 +8110,6 @@
       },
       "icon": "Logitech Media Server.png",
       "website": "http://www.mysqueezebox.com"
-    },
-    "LogRocket": {
-      "cats": [
-        10
-      ],
-      "description": "LogRocket records videos of user sessions with logs and network data.",
-      "scripts": ["cdn\\.logrocket\\.(com|io)", "cdn\\.lr-ingest\\.io"],
-      "icon": "LogRocket.svg",
-      "website": "https://logrocket.com/"
     },
     "Loja Integrada": {
       "cats": [
@@ -8288,6 +8291,20 @@
       },
       "website": "http://mambo-foundation.org"
     },
+    "Mangeznotez": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Mangeznotez is a restaurant table booking widget.",
+      "icon": "Mangeznotez.svg",
+      "scripts": [
+        "www\\.mangeznotez\\.\\w+",
+        "\\w+.mangeznotez\\.\\w+(?:.*\\?ver=([\\d.]+))?\\;version:\\1"
+      ],
+      "website": "https://www.mangeznotez.com"
+    },
     "MantisBT": {
       "cats": [
         13
@@ -8319,20 +8336,6 @@
       "icon": "ManyContacts.png",
       "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
-    },
-    "Mangeznotez": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "Mangeznotez is a restaurant table booking widget.",
-      "icon": "Mangeznotez.svg",
-      "scripts": [
-        "www\\.mangeznotez\\.\\w+",
-        "\\w+.mangeznotez\\.\\w+(?:.*\\?ver=([\\d.]+))?\\;version:\\1"
-      ],
-      "website": "https://www.mangeznotez.com"
     },
     "MariaDB": {
       "cats": [
@@ -10421,8 +10424,8 @@
       "description": "Peek is a online booking system for tour and activity providers.",
       "icon": "Peek.svg",
       "js": {
-        "PeekJsApi": "",
         "Peek": "",
+        "PeekJsApi": "",
         "_peekConfig": ""
       },
       "scripts": "js\\.peek\\.\\w+",
@@ -11010,7 +11013,6 @@
         5
       ],
       "description": "ProvenExpert is a review based marketing platform that allows users to create customer surveys, provides aggregate reviews and ratings.",
-      "icon": "ProvenExpert.svg",
       "dom": {
         "img[src*='provenexpert']": {
           "attributes": {
@@ -11018,6 +11020,7 @@
           }
         }
       },
+      "icon": "ProvenExpert.svg",
       "scripts": "provenexpert\\.\\w+/widget",
       "website": "https://www.provenexpert.com"
     },
@@ -11072,14 +11075,14 @@
       "website": "http://www.publiccms.com"
     },
     "Pulse Secure": {
-      "description": "Pulse Secure allows to deploy VPNs to securely to your internal resources.",
-      "icon": "PulseSecure.png",
       "cats": [
         46
       ],
       "cookies": {
         "DSSIGNIN": ""
       },
+      "description": "Pulse Secure allows to deploy VPNs to securely to your internal resources.",
+      "icon": "PulseSecure.png",
       "url": "/dana-na/auth/",
       "website": "https://www.pulsesecure.net/products/remote-access-overview/"
     },
@@ -11628,27 +11631,6 @@
       "scripts": "require.*\\.js",
       "website": "http://requirejs.org"
     },
-    "Resengo": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "Resengo is a restaurant table booking widget.",
-      "icon": "Resengo.svg",
-      "dom": {
-        "iframe[src*='resengo']": {
-          "attributes": {
-            "src": "www\\.resengo\\.\\w+"
-          }
-        }
-      },
-      "js": {
-        "wpJsonpResengoReservationWidget": ""
-      },
-      "scripts": "www\\.resengo\\.\\w+",
-      "website": "https://wwc.resengo.com"
-    },
     "ResDiary": {
       "cats": [
         5,
@@ -11656,7 +11638,6 @@
         72
       ],
       "description": "ResDiary, is a online reservation system for hospitality operators.",
-      "icon": "ResDiary.svg",
       "dom": {
         "iframe[src*='resdiary']": {
           "attributes": {
@@ -11664,8 +11645,30 @@
           }
         }
       },
+      "icon": "ResDiary.svg",
       "scripts": "\\.resdiary\\.\\w+/",
       "website": "https://www.resdiary.com"
+    },
+    "Resengo": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Resengo is a restaurant table booking widget.",
+      "dom": {
+        "iframe[src*='resengo']": {
+          "attributes": {
+            "src": "www\\.resengo\\.\\w+"
+          }
+        }
+      },
+      "icon": "Resengo.svg",
+      "js": {
+        "wpJsonpResengoReservationWidget": ""
+      },
+      "scripts": "www\\.resengo\\.\\w+",
+      "website": "https://wwc.resengo.com"
     },
     "Resin": {
       "cats": [
@@ -11693,12 +11696,13 @@
       "scripts": "static\\.resmio\\.\\w+/static/",
       "website": "https://www.resmio.com"
     },
-    "Resmio": {
+    "Resy": {
       "cats": [
         5,
         61,
         72
-      ],      "description": "Resy is an technology and media company that provides an app and back-end management software for restaurant reservations.",
+      ],
+      "description": "Resy is an technology and media company that provides an app and back-end management software for restaurant reservations.",
       "icon": "Resy.svg",
       "js": {
         "resyWidget": ""
@@ -11742,6 +11746,19 @@
       "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
     },
+    "Rewardful": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
+      "icon": "Rewardful.svg",
+      "js": {
+        "Rewardful": ""
+      },
+      "scripts": "r\\.wdfl\\.co",
+      "website": "https://www.getrewardful.com/"
+    },
     "Rezdy": {
       "cats": [
         5,
@@ -11762,7 +11779,6 @@
         72
       ],
       "description": "Rezgo is a tour operator software that provides online booking system.",
-      "icon": "Rezgo.svg",
       "dom": {
         "iframe": {
           "attributes": {
@@ -11770,86 +11786,13 @@
           }
         },
         "link": {
-           "attributes": {
-             "href": "wp-content/plugins/rezgo/rezgo/templates"
+          "attributes": {
+            "href": "wp-content/plugins/rezgo/rezgo/templates"
           }
         }
       },
+      "icon": "Rezgo.svg",
       "website": "https://www.rezgo.com"
-    },
-    "Impact": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Impact helps businesses contract and pay partners.",
-      "icon": "Impact.svg",
-      "js": {
-        "ImpactRadiusEvent": "",
-        "irEvent": ""
-      },
-      "scripts": "d\\.impactradius-event\\.com",
-      "website": "https://impact.com/"
-    },
-    "Tradedoubler": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Tradedoubler is a global affiliate marketing network.",
-      "icon": "Tradedoubler.svg",
-      "dom": {
-        "a[href*='clk.tradedoubler.com/click']": {
-          "text": ""
-        },
-        "img[src*='impes.tradedoubler.com/imp']": {
-          "text": ""
-        }
-      },
-      "website": "https://www.tradedoubler.com/"
-    },
-    "Webgains": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Webgains is an affiliate marketing network.",
-      "icon": "Webgains.svg",
-      "script": "analytics\\.webgains\\.io",
-      "js": {
-        "ITCLKQ": ""
-      },
-      "website": "https://www.webgains.com/"
-    },
-    "AWIN": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "AWIN is a global affiliate marketing network.",
-      "icon": "AWIN.svg",
-      "js": {
-        "AWIN.Tracking": ""
-      },
-      "cookies": {
-        "_aw_xid": "",
-        "BAGawin": ""
-      },
-      "scripts": "dwin1\\.com",
-      "website": "https://www.awin.com"
-    },
-    "Rewardful": {
-      "cats": [
-        71,
-        61
-      ],
-      "description": "Rewardful is a way for SaaS companies to setup affiliate and referral programs with Stripe.",
-      "icon": "Rewardful.svg",
-      "js": {
-        "Rewardful": ""
-      },
-      "scripts": "r\\.wdfl\\.co",
-      "website": "https://www.getrewardful.com/"
     },
     "Rickshaw": {
       "cats": [
@@ -12588,7 +12531,7 @@
       },
       "website": "http://s9y.org"
     },
-    "SevenRooms": {
+    "Setmore": {
       "cats": [
         5,
         61,
@@ -12599,7 +12542,7 @@
       "js": {
         "setmorePopup": ""
       },
-      "scripts":[
+      "scripts": [
         "my\\.setmore\\.\\w+/",
         "/setmore-appointments/script/"
       ],
@@ -12612,16 +12555,16 @@
         72
       ],
       "description": "SevenRooms is an fully-integrated reservation, seating and restaurant management system.",
-      "icon": "SevenRooms.svg",
-      "js": {
-        "SevenroomsWidget": ""
-      },
       "dom": {
         "iframe[src*='sevenrooms']": {
           "attributes": {
             "src": "\\.sevenrooms\\.\\w+/"
           }
         }
+      },
+      "icon": "SevenRooms.svg",
+      "js": {
+        "SevenroomsWidget": ""
       },
       "scripts": "sevenrooms\\.\\w+/widget/embed\\.js",
       "website": "https://sevenrooms.com"
@@ -13891,43 +13834,6 @@
       },
       "website": "https://github.com/syntaxhighlighter"
     },
-    "TableBooker": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-
-      "description": "Tablebooker is an online reservation system for restaurants.",
-      "icon": "TableBooker.svg",
-      "dom": {
-        "iframe": {
-          "attributes": {
-            "id": "tablebookerResFrame_"
-          }
-        }
-      },
-      "scripts": "reservations\\.tablebooker\\.\\w+/",
-      "website": "https://www.tablebooker.com"
-    },
-    "TableCheck": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "TableCheck is a restaurant table booking widget.",
-      "icon": "TableCheck.svg",
-      "dom": {
-        "form[action*='tablecheck']": {
-          "attributes": {
-            "action": "\\.tablecheck\\.\\w+/"
-          }
-        }
-      },
-      "scripts": "tc_widget\\.js",
-      "website": "https://www.tablecheck.com"
-    },
     "T-Soft": {
       "cats": [
         6
@@ -13990,6 +13896,42 @@
       "url": "/typo3/",
       "website": "https://typo3.org/"
     },
+    "TableBooker": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Tablebooker is an online reservation system for restaurants.",
+      "dom": {
+        "iframe": {
+          "attributes": {
+            "id": "tablebookerResFrame_"
+          }
+        }
+      },
+      "icon": "TableBooker.svg",
+      "scripts": "reservations\\.tablebooker\\.\\w+/",
+      "website": "https://www.tablebooker.com"
+    },
+    "TableCheck": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "TableCheck is a restaurant table booking widget.",
+      "dom": {
+        "form[action*='tablecheck']": {
+          "attributes": {
+            "action": "\\.tablecheck\\.\\w+/"
+          }
+        }
+      },
+      "icon": "TableCheck.svg",
+      "scripts": "tc_widget\\.js",
+      "website": "https://www.tablecheck.com"
+    },
     "TagCommander": {
       "cats": [
         42
@@ -14037,11 +13979,11 @@
       "cats": [
         52
       ],
-      "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
-      "icon": "TawkTo.png",
       "cookies": {
         "TawkConnectionTime": ""
       },
+      "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
+      "icon": "TawkTo.png",
       "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
     },
@@ -14216,7 +14158,6 @@
         72
       ],
       "description": "Thefork is a restaurant booking, managing system.",
-      "icon": "Thefork.svg",
       "dom": {
         "iframe[data-src*='lafourchette']": {
           "attributes": {
@@ -14229,6 +14170,7 @@
           }
         }
       },
+      "icon": "Thefork.svg",
       "website": "https://www.thefork.com"
     },
     "Thelia": {
@@ -15008,11 +14950,11 @@
       ],
       "description": "Vimeo is a video hosting, sharing and services platform. Vimeo operation an ad-free basis by providing subscription plans.",
       "html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
+      "icon": "Vimeo.svg",
       "js": {
         "Vimeo.Player": "",
         "VimeoPlayer": ""
       },
-      "icon": "Vimeo.svg",
       "website": "http://vimeo.com"
     },
     "Virgool": {
@@ -16081,16 +16023,22 @@
       "icon": "Yaws.png",
       "website": "http://yaws.hyber.org"
     },
-    "Yepcomm": {
+    "Yelp Reservations": {
       "cats": [
-        6
+        5,
+        61,
+        72
       ],
-      "icon": "yepcomm.png",
-      "meta": {
-        "author": "Yepcomm Tecnologia",
-        "copyright": "Yepcomm Tecnologia"
+      "description": "Yelp Reservations is a cloud-based restaurant management system.",
+      "dom": {
+        "iframe[src*='yelp']": {
+          "attributes": {
+            "src": "yelp(?:.com/reservations|reservations\\.com)"
+          }
+        }
       },
-      "website": "https://www.yepcomm.com.br"
+      "icon": "Yelp.svg",
+      "website": "http://yelp.com"
     },
     "Yelp Review Badge": {
       "cats": [
@@ -16101,22 +16049,16 @@
       "scripts": "yelp\\.com/biz_badge_js",
       "website": "http://yelp.com"
     },
-    "Yelp Reservations": {
+    "Yepcomm": {
       "cats": [
-        5,
-        61,
-        72
+        6
       ],
-      "description": "Yelp Reservations is a cloud-based restaurant management system.",
-      "icon": "Yelp.svg",
-      "dom": {
-        "iframe[src*='yelp']": {
-          "attributes": {
-            "src": "yelp(?:.com/reservations|reservations\\.com)"
-          }
-        }
+      "icon": "yepcomm.png",
+      "meta": {
+        "author": "Yepcomm Tecnologia",
+        "copyright": "Yepcomm Tecnologia"
       },
-      "website": "http://yelp.com"
+      "website": "https://www.yepcomm.com.br"
     },
     "Yieldlab": {
       "cats": [
