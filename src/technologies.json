@@ -492,7 +492,7 @@
         68
       ],
       "description": "AccessiBe is an automated web accessibility solution for ADA and WCAG compliance. The system scans and analyzes a website using AI technology, and applies all the required adjustments to become ADA and WCAG 2.1 compliant.",
-      "icon": "Accessibe.png",
+      "icon": "Accessibe.svg",
       "scripts": "acsbap\\.com/.*/acsb\\.js",
       "website": "https://accessibe.com/"
     },
@@ -1749,7 +1749,7 @@
       ],
       "description": "AudioEye automatically evaluates and adjusts website content to be accessible.",
       "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
-      "icon": "AudioEye.png",
+      "icon": "AudioEye.svg",
       "scripts": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/"
     },
@@ -4818,7 +4818,7 @@
         68
       ],
       "description": "Facil-iti is solution for website owners, providing accessibility to disability users and seniors.",
-      "icon": "Facil-iti.png",
+      "icon": "Facil-iti.svg",
       "scripts": "ws\\.facil-iti\\.com/tag/faciliti-tag\\.min\\.js",
       "website": "https://www.facil-iti.com/"
     },
@@ -5839,7 +5839,7 @@
       "headers": {
         "Server": "Google Frontend"
       },
-      "icon": "Google App Engine.png",
+      "icon": "Google App Engine.svg",
       "website": "http://code.google.com/appengine"
     },
     "Google Charts": {
@@ -5895,7 +5895,7 @@
         35
       ],
       "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
-      "icon": "Google Maps.png",
+      "icon": "Google Maps.svg",
       "scripts": [
         "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
         "//maps\\.google(?:apis)?\\.com/maps/api/js"
@@ -5924,7 +5924,7 @@
         "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1",
         "X-Page-Speed": "(.+)\\;version:\\1"
       },
-      "icon": "Google PageSpeed.png",
+      "icon": "Google PageSpeed.svg",
       "website": "http://developers.google.com/speed/pagespeed/mod"
     },
     "Google Pay": {
@@ -5983,7 +5983,7 @@
         "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
         "<!-- (?:End )?Google Tag Manager -->"
       ],
-      "icon": "Google Tag Manager.png",
+      "icon": "Google Tag Manager.svg",
       "js": {
         "google_tag_manager": "",
         "googletag": ""
@@ -6335,7 +6335,7 @@
       "cats": [
         10
       ],
-      "icon": "Heap.png",
+      "icon": "Heap.svg",
       "js": {
         "heap": ""
       },
@@ -6503,7 +6503,7 @@
         10
       ],
       "description": "Hotjar is a suite of analytic tools to assist in the gathering of qualitative data, providing feedback through tools such as heatmaps, session recordings, and surveys.",
-      "icon": "Hotjar.png",
+      "icon": "Hotjar.svg",
       "js": {
         "HotLeadfactory": "",
         "HotleadController": "",
@@ -6698,7 +6698,7 @@
       "cats": [
         16
       ],
-      "icon": "Imperva.svg",
+    "icon": "Imperva.svg",
       "scripts": [
         "/_Incapsula_Resource"
       ],
@@ -13853,7 +13853,7 @@
       ],
       "description": "DiskStation provides a full-featured network attached storage.",
       "html": "<noscript><div class='syno-no-script'",
-      "icon": "Synology DiskStation.png",
+      "icon": "Synology DiskStation.svg",
       "meta": {
         "application-name": "Synology DiskStation",
         "description": "^DiskStation provides a full-featured network attached storage"
@@ -14122,7 +14122,7 @@
         68
       ],
       "description": "TextHelp is a literacy, accessibility and dyslexia software developer for people with reading and writing difficulties.",
-      "icon": "Texthelp.png",
+      "icon": "Texthelp.svg",
       "scripts": "browsealoud\\.com/.*/browsealoud\\.js",
       "website": "https://www.texthelp.com/en-gb/products/browsealoud/"
     },
@@ -14354,7 +14354,7 @@
         10
       ],
       "description": "TrackJS is an error monitoring agent for production web sites and applications.",
-      "icon": "TrackJs.png",
+      "icon": "TrackJs.svg",
       "js": {
         "TrackJs": ""
       },
@@ -14949,7 +14949,11 @@
       ],
       "description": "Vimeo is a video hosting, sharing and services platform. Vimeo operation an ad-free basis by providing subscription plans.",
       "html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
-      "icon": "Vimeo.png",
+      "js": {
+        "Vimeo.Player": "",
+        "VimeoPlayer": ""
+      },
+      "icon": "Vimeo.svg",
       "website": "http://vimeo.com"
     },
     "Virgool": {
@@ -16656,7 +16660,7 @@
         16
       ],
       "html": "<style[^>]+[^<]+#cf-hcaptcha-container[^<]+</style>",
-      "icon": "hcaptcha-symbol-256.png",
+      "icon": "hCaptcha.svg",
       "scripts": "https://hcaptcha.com/([\\d]+?)/api.js\\;version:\\1",
       "website": "https://www.hcaptcha.com/"
     },
@@ -17415,7 +17419,7 @@
         "<link[^>]+recaptcha",
         "<div[^>]+class=\"g-recaptcha\""
       ],
-      "icon": "reCAPTCHA.png",
+      "icon": "reCAPTCHA.svg",
       "js": {
         "Recaptcha": "",
         "recaptcha": ""
