@@ -9100,10 +9100,11 @@
       "headers": {
         "powered": "jet-neo"
       },
-      "html": [
-        "<a [^>]*href=\"[^/]*//[^/]*plataformaneo\\.com",
-        "<img [^>]*src=\"[^/]*//[^/]*plataformaneo\\.com"
-      ],
+      "dom": {
+      	"#svr[value^=\"NEOWEBV\"]": {
+      		"text": ""
+      	}
+      },
       "icon": "plataforma_neo.svg",
       "url": "\\.plataformaneo\\.com",
       "website": "https://www.jetecommerce.com.br"
