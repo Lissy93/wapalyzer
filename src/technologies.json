@@ -2984,6 +2984,20 @@
         "reveal\\.clearbit\\.com/v[(0-9)]/"
       ],
       "website": "https://clearbit.com/reveal"
+    },    
+    "ClearSale": {
+      "cats": [
+        10
+      ],
+      "description": "ClearSale Fraud Protection Device Fingerprinting.",
+      "js": {
+        "window.csdm": "\\;confidence:50"
+      },
+      "scripts": [
+        "device\\.clearsale\\.com\\.br"
+      ],
+      "icon": "ClearSale.svg",
+      "website": "https://www.clear.sale/"
     },
     "ClickFunnels": {
       "cats": [
@@ -5174,6 +5188,21 @@
       "icon": "Fortune3.png",
       "scripts": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com",
       "website": "http://fortune3.com"
+    },
+    "Forter": {
+      "cats": [
+        10
+      ],
+      "description": "Forter fraud prevention and protection Device Fingerprinting.",
+      "scripts": "forter\\.com",
+      "cookies": {
+        "forterToken": ""
+      },
+      "js": {
+        "window.ftr__startScriptLoad": ""
+      },
+      "icon": "Forter.svg",
+      "website": "https://www.forter.com/"
     },
     "Foswiki": {
       "cats": [
@@ -7613,6 +7642,21 @@
         "generator": "Kolibri"
       },
       "website": "http://alias.io"
+    },
+    "Kount": {
+      "cats": [
+        10
+      ],
+      "description": "Kount Fraud Protection Device Fingerprinting.",
+      "scripts": [
+        "shopify\\.kount\\.net/js"
+      ],
+      "js": {
+        "ka.ClientSDK": "",
+        "ka.collectData": ""
+      },
+      "icon": "Kount.svg",
+      "website": "https://kount.com/"
     },
     "Komodo CMS": {
       "cats": [
