@@ -8280,26 +8280,6 @@
       ],
       "website": "https://magento.com"
     },
-    "Zoey": {
-      "cats": [
-        6,
-        61
-      ],
-      "description": "Zoey is a cloud-based ecommerce platform for B2B and wholesale businesses.",
-      "icon": "Zoey.svg",
-      "implies": [
-        "PHP",
-        "MySQL"
-      ],
-      "excludes": "Magento",
-      "js": {
-        "Zoey.module": "",
-        "zoey.developer": "",
-        "zoeyDev": ""
-      },
-      "scripts": "cdna4\\.zoeysite\\.com",
-      "website": "https://www.zoey.com/"
-    },
     "MailChimp": {
       "cats": [
         32
@@ -16371,6 +16351,26 @@
       },
       "icon": "Zipkin.png",
       "website": "https://zipkin.io/"
+    },
+    "Zoey": {
+      "cats": [
+        6,
+        61
+      ],
+      "description": "Zoey is a cloud-based ecommerce platform for B2B and wholesale businesses.",
+      "excludes": "Magento",
+      "icon": "Zoey.svg",
+      "implies": [
+        "PHP",
+        "MySQL"
+      ],
+      "js": {
+        "Zoey.module": "",
+        "zoey.developer": "",
+        "zoeyDev": ""
+      },
+      "scripts": "cdna4\\.zoeysite\\.com",
+      "website": "https://www.zoey.com/"
     },
     "Zone.js": {
       "cats": [
