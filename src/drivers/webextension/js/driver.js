@@ -54,7 +54,7 @@ const Driver = {
       ),
       tabs: {},
       robots: await getOption('robots', {}),
-      ads: await getOption('ads', []),
+      ads: {},
     }
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
@@ -460,8 +460,6 @@ const Driver = {
    */
   async onAd(ad) {
     Driver.cache.ads.push(ad)
-
-    await setOption('ads', Driver.cache.ads)
   },
 
   /**
@@ -699,8 +697,6 @@ const Driver = {
 
       if (Driver.cache.ads.length > 50) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
-
-        await setOption('ads', (Driver.cache.ads = []))
       }
     }
   },
