@@ -10238,6 +10238,18 @@
       "icon": "Oracle.png",
       "website": "http://oracle.com"
     },
+    "Oribi": {
+      "cats": [
+        10
+      ],
+      "description": "Oribi provides a all-in-one Marketing Analytics tool.",
+      "js": {
+        "window.ORIBI": ""
+      },
+      "scripts": "cdn\\.oribi\\.io",
+      "icon": "Oribi.svg",
+      "website": "https://oribi.io/"
+    },
     "Orchard CMS": {
       "cats": [
         1
@@ -13553,7 +13565,7 @@
       "icon": "Squarespace.png",
       "js": {
         "Squarespace": "",
-        "Static.SQUARESPACE_CONTEXT"
+        "Static.SQUARESPACE_CONTEXT": ""
       },
       "website": "http://www.squarespace.com"
     },
@@ -13564,7 +13576,7 @@
       ],
       "js": {
         "SQUARESPACE_ROLLUPS.squarespace-commerce": "",
-        "SquarespaceCommerceCartBundle"
+        "SquarespaceCommerceCartBundle": ""
       },
       "implies": "Squarespace",
       "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
