@@ -13505,9 +13505,25 @@
       "html": "<!-- This is Squarespace\\. -->",
       "icon": "Squarespace.png",
       "js": {
-        "Squarespace": ""
+        "Squarespace": "",
+        "Static.SQUARESPACE_CONTEXT"
       },
       "website": "http://www.squarespace.com"
+    },
+    "Squarespace Commerce": {
+      "cats": [
+        6,
+        61
+      ],
+      "js": {
+        "SQUARESPACE_ROLLUPS.squarespace-commerce": "",
+        "SquarespaceCommerceCartBundle"
+      },
+      "implies": "Squarespace",
+      "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
+      "icon": "Squarespace.png",
+      "scripts": "assets\\.squarespace\\.\\w+/universal/scripts-compressed/commerce-\\w+-min\\.[\\w+\\-]+\\.js",
+      "website": "https://www.squarespace.com/ecommerce-website"
     },
     "SquirrelMail": {
       "cats": [
