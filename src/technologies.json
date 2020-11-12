@@ -1836,12 +1836,15 @@
     },
     "Axios": {
       "cats": [
-        19
+        59
       ],
       "description": "Promise based HTTP client for the browser and node.js",
       "scripts": [
         "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
       ],
+      "js": {
+        "axios.get": ""
+      },
       "website": "https://github.com/axios/axios"
     },
     "Azure": {
