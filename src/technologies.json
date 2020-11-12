@@ -4972,17 +4972,22 @@
       "scripts": "^https://feedback\\.fish/ff\\.js",
       "website": "https://feedback.fish"
     },
-    "Fingerprintjs": {
+    "FingerprintJS": {
       "cats": [
         59
       ],
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
         "Fingerprint2": "",
-        "Fingerprint2.VERSION": "^(.+)$\\;version:\\1"
+        "Fingerprint2.VERSION": "^(.+)$\\;version:\\1",
+        "FingerprintJS": ""
       },
-      "scripts": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-      "website": "https://valve.github.io/fingerprintjs2/"
+      "scripts": [
+        "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+        "/fingerprintjs@(\\d)\\;version:\\1"
+      ],
+      "icon": "FingerprintJS.svg",
+      "website": "https://fingerprintjs.com/"
     },
     "Firebase": {
       "cats": [
