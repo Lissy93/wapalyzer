@@ -13784,10 +13784,10 @@
       ],
       "html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
       "icon": "SweetAlert.png",
-      "js": {
-        "swal": ""
-      },
-      "scripts": "sweet-alert(?:\\.min)?\\.js",
+      "scripts": [
+        "sweet-alert(?:\\.min)?\\.js",
+        "sweetalert/([\\d.]+)/sweetalert(?:\\.min)\\.js"
+      ],
       "website": "https://t4t5.github.io/sweetalert/"
     },
     "SweetAlert2": {
@@ -13800,7 +13800,12 @@
       "js": {
         "Sweetalert2": ""
       },
-      "scripts": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+      "scripts": [
+        "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+        "/npm/sweetalert2@([\\d.]+)\\;version:\\1",
+        "sweetalert2@([\\d.]+)/dist/sweetalert2(?:\\.all)(?:\\.min)\\.js",
+        "limonte-sweetalert2/([\\d.]+)/sweetalert2(?:\\.all)(?:\\.min)\\.js"
+      ],
       "website": "https://sweetalert2.github.io/"
     },
     "Swell": {
