@@ -1840,12 +1840,15 @@
     },
     "Axios": {
       "cats": [
-        19
+        59
       ],
       "description": "Promise based HTTP client for the browser and node.js",
       "scripts": [
         "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
       ],
+      "js": {
+        "axios.get": ""
+      },
       "website": "https://github.com/axios/axios"
     },
     "Azure": {
@@ -1996,6 +1999,21 @@
         "generator": "Banshee PHP"
       },
       "website": "http://www.banshee-php.org"
+    },
+    "Base": {
+      "cats": [
+        6
+      ],
+      "description": "Base is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
+      "icon": "Base.svg",
+      "js": {
+        "Base.App.open_nav": ""       
+      },
+      "meta": {
+        "base-theme-name": "\\d+"
+      },
+      "scripts": "thebase\\.in/js",
+      "website": "https://thebase.in"
     },
     "BaseHTTP": {
       "cats": [
@@ -4307,6 +4325,22 @@
       },
       "website": "http://www.dynamicweb.dk"
     },
+    "Dynamic Yield": {
+      "cats": [
+        74
+      ],
+      "icon": "DynamicYield.svg",
+      "description": "Dynamic Yield is a provider of automated conversion optimization tools for marketers and retailers.",
+      "cookies": {
+        "_dy_geo": "",
+        "_dy_ses_load_seq": ""
+      },
+      "js": {
+        "recommendationContext": ""
+      },
+      "scripts": "cdn\\.dynamicyield\\.\\w+/",
+      "website": "https://www.dynamicyield.com"
+    },
     "Dynatrace": {
       "cats": [
         10
@@ -4408,6 +4442,17 @@
         "generator": "EPrints ([\\d.]+)\\;version:\\1"
       },
       "website": "http://www.eprints.org"
+    },
+    "EasyDigitalDownloads": {
+      "cats": [
+        6
+      ],
+      "description": "Easy Digital Downloads is a WordPress ecommerce plugin that focuses purely on digital products.",
+      "icon": "EasyDigitalDownloads.svg",
+      "meta": {
+        "generator": "^Easy Digital Downloads v(.*)$\\;version:\\1" 
+      },
+      "website": "https://easydigitaldownloads.com"
     },
     "EasyEngine": {
       "cats": [
@@ -4673,6 +4718,24 @@
       "html": "<[^>]+ class ?= ?\"(?:e-control|[^\"]+ e-control)(?: )[^\"]* e-lib\\b",
       "icon": "syncfusion.svg",
       "website": "https://www.syncfusion.com/javascript-ui-controls"
+    },
+    "Estore Shopserve": {
+      "cats": [
+        6
+      ],
+      "description": "Estore Shopserve is an all-in-one payment processing and ecommerce solution.",
+      "icon": "EstoreShopserve.svg",
+      "scripts": "cart\\d+\\.shopserve\\.jp/",
+      "website": "https://estore.co.jp/shopserve"
+    },
+    "Estore Compare": {
+      "cats": [
+        74
+      ],
+      "description": "Estore Compare is a website optimization software that offers A/B testing, CVR and LTV measuring tools.",
+      "icon": "EstoreCompare.svg",
+      "scripts": "cdn\\d+\\.estore\\.jp/",
+      "website": "https://estore.co.jp/estorecompare/"
     },
     "Etherpad": {
       "cats": [
@@ -4976,17 +5039,22 @@
       "scripts": "^https://feedback\\.fish/ff\\.js",
       "website": "https://feedback.fish"
     },
-    "Fingerprintjs": {
+    "FingerprintJS": {
       "cats": [
         59
       ],
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
         "Fingerprint2": "",
-        "Fingerprint2.VERSION": "^(.+)$\\;version:\\1"
+        "Fingerprint2.VERSION": "^(.+)$\\;version:\\1",
+        "FingerprintJS": ""
       },
-      "scripts": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-      "website": "https://valve.github.io/fingerprintjs2/"
+      "scripts": [
+        "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+        "/fingerprintjs@(\\d)\\;version:\\1"
+      ],
+      "icon": "FingerprintJS.svg",
+      "website": "https://fingerprintjs.com/"
     },
     "Firebase": {
       "cats": [
@@ -10227,6 +10295,18 @@
       "icon": "Oracle.png",
       "website": "http://oracle.com"
     },
+    "Oribi": {
+      "cats": [
+        10
+      ],
+      "description": "Oribi is an all-in-one marketing analytics tool.",
+      "js": {
+        "ORIBI": ""
+      },
+      "scripts": "cdn\\.oribi\\.io",
+      "icon": "Oribi.svg",
+      "website": "https://oribi.io/"
+    },
     "Orchard CMS": {
       "cats": [
         1
@@ -13546,9 +13626,25 @@
       "html": "<!-- This is Squarespace\\. -->",
       "icon": "Squarespace.png",
       "js": {
-        "Squarespace": ""
+        "Squarespace": "",
+        "Static.SQUARESPACE_CONTEXT": ""
       },
       "website": "http://www.squarespace.com"
+    },
+    "Squarespace Commerce": {
+      "cats": [
+        6,
+        61
+      ],
+      "js": {
+        "SQUARESPACE_ROLLUPS.squarespace-commerce": "",
+        "SquarespaceCommerceCartBundle": ""
+      },
+      "implies": "Squarespace",
+      "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
+      "icon": "Squarespace.png",
+      "scripts": "assets\\.squarespace\\.\\w+/universal/scripts-compressed/commerce-\\w+-min\\.[\\w+\\-]+\\.js",
+      "website": "https://www.squarespace.com/ecommerce-website"
     },
     "SquirrelMail": {
       "cats": [
@@ -13825,10 +13921,10 @@
       ],
       "html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
       "icon": "SweetAlert.png",
-      "js": {
-        "swal": ""
-      },
-      "scripts": "sweet-alert(?:\\.min)?\\.js",
+      "scripts": [
+        "sweet-alert(?:\\.min)?\\.js",
+        "sweetalert/([\\d.]+)/sweetalert(?:\\.min)\\.js"
+      ],
       "website": "https://t4t5.github.io/sweetalert/"
     },
     "SweetAlert2": {
@@ -13841,7 +13937,12 @@
       "js": {
         "Sweetalert2": ""
       },
-      "scripts": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+      "scripts": [
+        "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+        "/npm/sweetalert2@([\\d.]+)\\;version:\\1",
+        "sweetalert2@([\\d.]+)/dist/sweetalert2(?:\\.all)(?:\\.min)\\.js",
+        "limonte-sweetalert2/([\\d.]+)/sweetalert2(?:\\.all)(?:\\.min)\\.js"
+      ],
       "website": "https://sweetalert2.github.io/"
     },
     "Swell": {
@@ -14570,6 +14671,20 @@
       "icon": "Tumblr.png",
       "url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
       "website": "http://www.tumblr.com"
+    },
+    "TurfJS": {
+      "cats": [
+        59
+      ],
+      "description": "Turf is a modular geospatial engine written in JavaScript.",
+      "js": {
+        "turf.point": "",
+        "turf.feature": "",
+        "turf.random": ""
+      },
+      "scripts": "(turf@[\\d.]+)?/?turf\\.min\\.js",
+      "icon": "TurfJS.svg",
+      "website": "https://turfjs.org/"
     },
     "Twilight CMS": {
       "cats": [
@@ -16244,6 +16359,20 @@
       ],
       "icon": "YouTrack.png",
       "website": "http://www.jetbrains.com/youtrack/"
+    },
+    "Yottaa": {
+      "cats": [
+        42,
+        74
+      ],
+      "description": "Yottaa is an ecommerce optimisation platform that helps with conversions, performance and security.",
+      "icon": "Yottaa.svg",
+      "meta": {
+        "X-Yottaa-Metrics": "",
+        "X-Yottaa-Optimizations": ""
+      },
+      "scripts": "cdn\\.yottaa\\.\\w+/",
+      "website": "https://www.yottaa.com"
     },
     "YouTube": {
       "cats": [
