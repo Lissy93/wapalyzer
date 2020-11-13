@@ -288,6 +288,10 @@
     "74": {
       "name": "A/B Testing",
       "priority": 9
+    },
+    "75": {
+      "name": "Email",
+      "priority": 9
     }
   },
   "technologies": {
@@ -6084,7 +6088,8 @@
     "Google Workspace": {
       "cats": [
         30,
-        61
+        61,
+        75
       ],
       "description": "Google Workspace, formerly G Suite, is a collection of cloud computing, productivity and collaboration tools.",
       "dns": {
@@ -6405,6 +6410,11 @@
       "headers": {
         "Via": "[\\d.-]+ vegur$"
       },
+      "dns": {
+        "TXT": [
+          "heroku-domain-verification"
+        ]
+      },
       "icon": "heroku.svg",
       "implies": [
         "Amazon Web Services"
@@ -6563,6 +6573,11 @@
       "description": "HubSpot is a marketing and sales software that helps companies attract visitors, convert leads, and close customers.",
       "html": "<!-- Start of Async HubSpot",
       "icon": "HubSpot.png",
+      "dns": {
+        "TXT": [
+          "hubspotemail\\.net"
+        ]
+      },
       "js": {
         "_hsq": "",
         "hubspot": ""
@@ -8297,7 +8312,8 @@
     },
     "MailChimp": {
       "cats": [
-        32
+        32,
+        75
       ],
       "cpe": "cpe:/a:thinkshout:mailchimp",
       "description": "Mailchimp is a marketing automation platform and email marketing service.",
@@ -8319,6 +8335,46 @@
         "cdn-images\\.mailchimp\\.com/[^>]*\\.css"
       ],
       "website": "http://mailchimp.com"
+    },
+    "SparkPost": {
+      "cats": [
+        75
+      ],
+      "description": "SparkPost is an email infrastructure provider.",
+      "dns": {
+        "TXT": [
+          "sparkpostmail\\.com"
+        ]
+      },
+      "icon": "SparkPost.svg",
+      "website": "https://www.sparkpost.com/"
+    },
+    "Sendgrid": {
+      "cats": [
+        75
+      ],
+      "description": "SendGrid is a cloud-based email delivery platform for transactional and marketing emails.",
+      "dns": {
+        "TXT": [
+          "sendgrid\\.net"
+        ]
+      },
+      "icon": "SendGrid.svg",
+      "website": "https://sendgrid.com/"
+    },
+    "Amazon SES": {
+      "cats": [
+        75
+      ],
+      "implies": "Amazon Web Services",
+      "description": "Amazon Simple Email Service (SES) is an email service that enables developers to send mail from within any application.",
+      "dns": {
+        "TXT": [
+          "amazonses\\.com"
+        ]
+      },
+      "icon": "aws.svg",
+      "website": "https://aws.amazon.com/ses/"
     },
     "Make-Sense": {
       "cats": [
@@ -8778,7 +8834,8 @@
     "Microsoft 365": {
       "cats": [
         30,
-        61
+        61,
+        75
       ],
       "description": "Microsoft 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line.",
       "dns": {
@@ -12277,6 +12334,11 @@
         "SFDCCmp": "",
         "SFDCPage": "",
         "SFDCSessionVars": ""
+      },
+      "dns": {
+        "TXT": [
+          "salesforce\\.com"
+        ]
       },
       "website": "https://www.salesforce.com"
     },
@@ -16282,6 +16344,11 @@
       "description": "Zendesk is a cloud-based help desk management solution offering customizable tools to build customer service portal, knowledge base and online communities.",
       "headers": {
         "x-zendesk-user-id": ""
+      },
+      "dns": {
+        "TXT": [
+          "mail\\.zendesk\\.com"
+        ]
       },
       "icon": "Zendesk.png",
       "website": "https://zendesk.com"
