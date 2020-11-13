@@ -1000,6 +1000,19 @@
       },
       "website": "https://www.bugcrowd.com"
     },
+    "Detectify": {
+      "cats": [
+        16
+      ],
+      "description": "Detectify is an automated scanner that checks your web application for vulnerabilities.",
+      "icon": "Detectify.svg",
+      "dns": {
+        "TXT": [
+          "detectify-verification"
+        ]
+      },
+      "website": "https://detectify.com/"
+    },
     "Akaunting": {
       "cats": [
         55,
@@ -10623,6 +10636,11 @@
         "X-Pardot-LB": "",
         "X-Pardot-Route": "",
         "X-Pardot-Rsp": ""
+      },
+      "dns": {
+        "TXT": [
+          "pardot"
+        ]
       },
       "icon": "Pardot.png",
       "js": {
