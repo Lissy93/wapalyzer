@@ -2007,7 +2007,7 @@
       "description": "Base is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
       "icon": "Base.svg",
       "js": {
-        "Base.App.open_nav": ""       
+        "Base.App.open_nav": ""
       },
       "meta": {
         "base-theme-name": "\\d+"
@@ -4450,7 +4450,7 @@
       "description": "Easy Digital Downloads is a WordPress ecommerce plugin that focuses purely on digital products.",
       "icon": "EasyDigitalDownloads.svg",
       "meta": {
-        "generator": "^Easy Digital Downloads v(.*)$\\;version:\\1" 
+        "generator": "^Easy Digital Downloads v(.*)$\\;version:\\1"
       },
       "website": "https://easydigitaldownloads.com"
     },
@@ -8443,6 +8443,35 @@
       },
       "icon": "aws.svg",
       "website": "https://aws.amazon.com/ses/"
+    },
+    "Zoho": {
+      "cats": [
+        53,
+        61
+      ],
+      "description": "Zoho is a web-based online office suite.",
+      "dns": {
+        "TXT": [
+          "\\.zoho\\.com"
+        ]
+      },
+      "icon": "Zoho.svg",
+      "website": "https://www.zoho.com/"
+    },
+    "Zoho Mail": {
+      "cats": [
+        61,
+        75
+      ],
+      "icon": "Zoho.svg",
+      "implies": "Zoho",
+      "description": "Zoho Mail is an email hosting service for businesses.",
+      "dns": {
+        "TXT": [
+          "transmail\\.net"
+        ]
+      },
+      "website": "https://www.zoho.com/mail/"
     },
     "Make-Sense": {
       "cats": [
