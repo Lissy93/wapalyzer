@@ -982,8 +982,23 @@
         "bm_sv": "",
         "bm_sz": ""
       },
+      "implies": "Akamai",
+      "description": "Akamai Bot Manager detect bots using device fingerprinting bot signatures.",
       "icon": "akamai.svg",
       "website": "http://akamai.com/bot-manager"
+    },
+    "Bugcrowd": {
+      "cats": [
+        16
+      ],
+      "description": "Bugcrowd is a crowdsourced cybersecurity platform.",
+      "icon": "Bugcrowd.svg",
+      "dns": {
+        "TXT": [
+          "bugcrowd-verification"
+        ]
+      },
+      "website": "https://www.bugcrowd.com"
     },
     "Akaunting": {
       "cats": [
