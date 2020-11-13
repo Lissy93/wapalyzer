@@ -2549,7 +2549,7 @@
       },
       "scripts": [
         "^https?://s\\d\\.buysellads\\.com/",
-        "servedby-buysellads\\.com/monetization\\.[\\w\\d]+\\.js"
+        "servedby-buysellads\\.com/monetization(?:\\.[\\w\\d]+)?\\.js"
       ],
       "website": "http://buysellads.com"
     },
