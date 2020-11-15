@@ -9675,7 +9675,7 @@
       "headers": {
         "powered": "jet-neo"
       },
-      "icon": "plataforma_neo.svg",
+      "icon": "Plataforma NEO.svg",
       "url": "\\.plataformaneo\\.com",
       "website": "https://www.jetecommerce.com.br"
     },
@@ -12711,6 +12711,11 @@
       "icon": "Segment.png",
       "js": {
         "analytics": ""
+      },
+      "dns": {
+        "TXT": [
+          "segment-site-verification"
+        ]
       },
       "scripts": "cdn\\.segment\\.com/analytics\\.js",
       "website": "https://segment.com"
