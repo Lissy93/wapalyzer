@@ -2547,7 +2547,10 @@
         "_bsap": "",
         "_bsap_serving_callback": ""
       },
-      "scripts": "^https?://s\\d\\.buysellads\\.com/",
+      "scripts": [
+        "^https?://s\\d\\.buysellads\\.com/",
+        "servedby-buysellads\\.com/monetization(?:\\.[\\w\\d]+)?\\.js"
+      ],
       "website": "http://buysellads.com"
     },
     "CCV Shop": {
