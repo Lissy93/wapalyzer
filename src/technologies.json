@@ -983,36 +983,10 @@
         "bm_sv": "",
         "bm_sz": ""
       },
-      "implies": "Akamai",
       "description": "Akamai Bot Manager detect bots using device fingerprinting bot signatures.",
       "icon": "akamai.svg",
+      "implies": "Akamai",
       "website": "http://akamai.com/bot-manager"
-    },
-    "Bugcrowd": {
-      "cats": [
-        16
-      ],
-      "description": "Bugcrowd is a crowdsourced cybersecurity platform.",
-      "icon": "Bugcrowd.svg",
-      "dns": {
-        "TXT": [
-          "bugcrowd-verification"
-        ]
-      },
-      "website": "https://www.bugcrowd.com"
-    },
-    "Detectify": {
-      "cats": [
-        16
-      ],
-      "description": "Detectify is an automated scanner that checks your web application for vulnerabilities.",
-      "icon": "Detectify.svg",
-      "dns": {
-        "TXT": [
-          "detectify-verification"
-        ]
-      },
-      "website": "https://detectify.com/"
     },
     "Akaunting": {
       "cats": [
@@ -1229,6 +1203,20 @@
       "icon": "aws-s3.svg",
       "implies": "Amazon Web Services",
       "website": "http://aws.amazon.com/s3/"
+    },
+    "Amazon SES": {
+      "cats": [
+        75
+      ],
+      "description": "Amazon Simple Email Service (SES) is an email service that enables developers to send mail from within any application.",
+      "dns": {
+        "TXT": [
+          "amazonses\\.com"
+        ]
+      },
+      "icon": "aws.svg",
+      "implies": "Amazon Web Services",
+      "website": "https://aws.amazon.com/ses/"
     },
     "Amazon Web Services": {
       "cats": [
@@ -1872,12 +1860,12 @@
         59
       ],
       "description": "Promise based HTTP client for the browser and node.js",
-      "scripts": [
-        "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
-      ],
       "js": {
         "axios.get": ""
       },
+      "scripts": [
+        "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
+      ],
       "website": "https://github.com/axios/axios"
     },
     "Azure": {
@@ -2484,6 +2472,19 @@
       },
       "scripts": "/bugsnag.*\\.js",
       "website": "http://bugsnag.com"
+    },
+    "Bugcrowd": {
+      "cats": [
+        16
+      ],
+      "description": "Bugcrowd is a crowdsourced cybersecurity platform.",
+      "dns": {
+        "TXT": [
+          "bugcrowd-verification"
+        ]
+      },
+      "icon": "Bugcrowd.svg",
+      "website": "https://www.bugcrowd.com"
     },
     "Bugzilla": {
       "cats": [
@@ -4002,6 +4003,19 @@
       "scripts": "dedeajax",
       "website": "http://dedecms.com"
     },
+    "Detectify": {
+      "cats": [
+        16
+      ],
+      "description": "Detectify is an automated scanner that checks your web application for vulnerabilities.",
+      "dns": {
+        "TXT": [
+          "detectify-verification"
+        ]
+      },
+      "icon": "Detectify.svg",
+      "website": "https://detectify.com/"
+    },
     "Didomi": {
       "cats": [
         67
@@ -4341,6 +4355,22 @@
       "scripts": "\\*berajs.beracode.com\\*",
       "website": "https://duopana.com/"
     },
+    "Dynamic Yield": {
+      "cats": [
+        74
+      ],
+      "cookies": {
+        "_dy_geo": "",
+        "_dy_ses_load_seq": ""
+      },
+      "description": "Dynamic Yield is a provider of automated conversion optimization tools for marketers and retailers.",
+      "icon": "DynamicYield.svg",
+      "js": {
+        "recommendationContext": ""
+      },
+      "scripts": "cdn\\.dynamicyield\\.\\w+/",
+      "website": "https://www.dynamicyield.com"
+    },
     "Dynamicweb": {
       "cats": [
         1,
@@ -4356,22 +4386,6 @@
         "generator": "Dynamicweb ([\\d.]+)\\;version:\\1"
       },
       "website": "http://www.dynamicweb.dk"
-    },
-    "Dynamic Yield": {
-      "cats": [
-        74
-      ],
-      "icon": "DynamicYield.svg",
-      "description": "Dynamic Yield is a provider of automated conversion optimization tools for marketers and retailers.",
-      "cookies": {
-        "_dy_geo": "",
-        "_dy_ses_load_seq": ""
-      },
-      "js": {
-        "recommendationContext": ""
-      },
-      "scripts": "cdn\\.dynamicyield\\.\\w+/",
-      "website": "https://www.dynamicyield.com"
     },
     "Dynatrace": {
       "cats": [
@@ -4751,15 +4765,6 @@
       "icon": "syncfusion.svg",
       "website": "https://www.syncfusion.com/javascript-ui-controls"
     },
-    "Estore Shopserve": {
-      "cats": [
-        6
-      ],
-      "description": "Estore Shopserve is an all-in-one payment processing and ecommerce solution.",
-      "icon": "EstoreShopserve.svg",
-      "scripts": "cart\\d+\\.shopserve\\.jp/",
-      "website": "https://estore.co.jp/shopserve"
-    },
     "Estore Compare": {
       "cats": [
         74
@@ -4768,6 +4773,15 @@
       "icon": "EstoreCompare.svg",
       "scripts": "cdn\\d+\\.estore\\.jp/",
       "website": "https://estore.co.jp/estorecompare/"
+    },
+    "Estore Shopserve": {
+      "cats": [
+        6
+      ],
+      "description": "Estore Shopserve is an all-in-one payment processing and ecommerce solution.",
+      "icon": "EstoreShopserve.svg",
+      "scripts": "cart\\d+\\.shopserve\\.jp/",
+      "website": "https://estore.co.jp/shopserve"
     },
     "Etherpad": {
       "cats": [
@@ -5075,6 +5089,7 @@
       "cats": [
         59
       ],
+      "icon": "FingerprintJS.svg",
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
         "Fingerprint2": "",
@@ -5085,7 +5100,6 @@
         "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
         "/fingerprintjs@(\\d)\\;version:\\1"
       ],
-      "icon": "FingerprintJS.svg",
       "website": "https://fingerprintjs.com/"
     },
     "Firebase": {
@@ -5931,21 +5945,6 @@
       ],
       "website": "https://www.google.fr/adsense/start/"
     },
-    "Plausible": {
-      "cats": [
-        10,
-        61
-      ],
-      "cookies": {
-      },
-      "description": "Plausible is an open-source  alternative to Google Analytics.",
-      "icon": "Plausible.svg",
-      "js": {
-        "plausible": ""
-      },
-      "scripts": "plausible\\.io/js/plausible\\.js",
-      "website": "https://plausible.io/"
-    },
     "Google Analytics": {
       "cats": [
         10,
@@ -6507,13 +6506,13 @@
         62
       ],
       "description": "Heroku is a cloud platform as a service (PaaS) supporting several programming languages.",
-      "headers": {
-        "Via": "[\\d.-]+ vegur$"
-      },
       "dns": {
         "TXT": [
           "heroku-domain-verification"
         ]
+      },
+      "headers": {
+        "Via": "[\\d.-]+ vegur$"
       },
       "icon": "heroku.svg",
       "implies": [
@@ -6671,13 +6670,13 @@
         32
       ],
       "description": "HubSpot is a marketing and sales software that helps companies attract visitors, convert leads, and close customers.",
-      "html": "<!-- Start of Async HubSpot",
-      "icon": "HubSpot.png",
       "dns": {
         "TXT": [
           "hubspotemail\\.net"
         ]
       },
+      "html": "<!-- Start of Async HubSpot",
+      "icon": "HubSpot.png",
       "js": {
         "_hsq": "",
         "hubspot": ""
@@ -8445,45 +8444,6 @@
       ],
       "website": "http://mailchimp.com"
     },
-    "SparkPost": {
-      "cats": [
-        75
-      ],
-      "description": "SparkPost is an email infrastructure provider.",
-      "dns": {
-        "TXT": [
-          "sparkpostmail\\.com"
-        ]
-      },
-      "icon": "SparkPost.svg",
-      "website": "https://www.sparkpost.com/"
-    },
-    "Sendgrid": {
-      "cats": [
-        75
-      ],
-      "description": "SendGrid is a cloud-based email delivery platform for transactional and marketing emails.",
-      "dns": {
-        "TXT": [
-          "sendgrid\\.net"
-        ]
-      },
-      "icon": "SendGrid.svg",
-      "website": "https://sendgrid.com/"
-    },
-    "Mailjet": {
-      "cats": [
-        75
-      ],
-      "description": "Mailjet is an email delivery service for marketing and developer teams.",
-      "dns": {
-        "TXT": [
-          "mailjet\\.com"
-        ]
-      },
-      "icon": "Mailjet.svg",
-      "website": "https://www.mailjet.com/"
-    },
     "Mailgun": {
       "cats": [
         75
@@ -8497,48 +8457,18 @@
       "icon": "Mailgun.svg",
       "website": "https://www.mailgun.com/"
     },
-    "Amazon SES": {
+    "Mailjet": {
       "cats": [
         75
       ],
-      "implies": "Amazon Web Services",
-      "description": "Amazon Simple Email Service (SES) is an email service that enables developers to send mail from within any application.",
+      "description": "Mailjet is an email delivery service for marketing and developer teams.",
       "dns": {
         "TXT": [
-          "amazonses\\.com"
+          "mailjet\\.com"
         ]
       },
-      "icon": "aws.svg",
-      "website": "https://aws.amazon.com/ses/"
-    },
-    "Zoho": {
-      "cats": [
-        53,
-        61
-      ],
-      "description": "Zoho is a web-based online office suite.",
-      "dns": {
-        "TXT": [
-          "\\.zoho\\.com"
-        ]
-      },
-      "icon": "Zoho.svg",
-      "website": "https://www.zoho.com/"
-    },
-    "Zoho Mail": {
-      "cats": [
-        61,
-        75
-      ],
-      "icon": "Zoho.svg",
-      "implies": "Zoho",
-      "description": "Zoho Mail is an email hosting service for businesses.",
-      "dns": {
-        "TXT": [
-          "transmail\\.net"
-        ]
-      },
-      "website": "https://www.zoho.com/mail/"
+      "icon": "Mailjet.svg",
+      "website": "https://www.mailjet.com/"
     },
     "Make-Sense": {
       "cats": [
@@ -10403,18 +10333,6 @@
       "icon": "Oracle.png",
       "website": "http://oracle.com"
     },
-    "Oribi": {
-      "cats": [
-        10
-      ],
-      "description": "Oribi is an all-in-one marketing analytics tool.",
-      "js": {
-        "ORIBI": ""
-      },
-      "scripts": "cdn\\.oribi\\.io",
-      "icon": "Oribi.svg",
-      "website": "https://oribi.io/"
-    },
     "Orchard CMS": {
       "cats": [
         1
@@ -10425,6 +10343,18 @@
         "generator": "Orchard"
       },
       "website": "http://orchardproject.net"
+    },
+    "Oribi": {
+      "cats": [
+        10
+      ],
+      "description": "Oribi is an all-in-one marketing analytics tool.",
+      "icon": "Oribi.svg",
+      "js": {
+        "ORIBI": ""
+      },
+      "scripts": "cdn\\.oribi\\.io",
+      "website": "https://oribi.io/"
     },
     "OroCommerce": {
       "cats": [
@@ -10668,15 +10598,15 @@
         61
       ],
       "description": "Pardot is a Software-as-a-Service (SaaS) marketing automation platform.",
-      "headers": {
-        "X-Pardot-LB": "",
-        "X-Pardot-Route": "",
-        "X-Pardot-Rsp": ""
-      },
       "dns": {
         "TXT": [
           "pardot"
         ]
+      },
+      "headers": {
+        "X-Pardot-LB": "",
+        "X-Pardot-Route": "",
+        "X-Pardot-Rsp": ""
       },
       "icon": "Pardot.png",
       "js": {
@@ -11040,6 +10970,20 @@
       },
       "icon": "PlatformOS.svg",
       "website": "https://www.platform-os.com"
+    },
+    "Plausible": {
+      "cats": [
+        10,
+        61
+      ],
+      "cookies": {},
+      "description": "Plausible is an open-source  alternative to Google Analytics.",
+      "icon": "Plausible.svg",
+      "js": {
+        "plausible": ""
+      },
+      "scripts": "plausible\\.io/js/plausible\\.js",
+      "website": "https://plausible.io/"
     },
     "Play": {
       "cats": [
@@ -12541,6 +12485,11 @@
         "com.salesforce": ""
       },
       "description": "Salesforce is a cloud computing service software (SaaS) that specializes in customer relationship management (CRM).",
+      "dns": {
+        "TXT": [
+          "salesforce\\.com"
+        ]
+      },
       "html": "<[^>]+=\"brandQuaternaryFgrs\"",
       "icon": "Salesforce.svg",
       "js": {
@@ -12548,11 +12497,6 @@
         "SFDCCmp": "",
         "SFDCPage": "",
         "SFDCSessionVars": ""
-      },
-      "dns": {
-        "TXT": [
-          "salesforce\\.com"
-        ]
       },
       "website": "https://www.salesforce.com"
     },
@@ -12754,14 +12698,14 @@
         10
       ],
       "description": "Segment is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
-      "icon": "Segment.png",
-      "js": {
-        "analytics": ""
-      },
       "dns": {
         "TXT": [
           "segment-site-verification"
         ]
+      },
+      "icon": "Segment.png",
+      "js": {
+        "analytics": ""
       },
       "scripts": "cdn\\.segment\\.com/analytics\\.js",
       "website": "https://segment.com"
@@ -12818,6 +12762,19 @@
       "icon": "Sencha Touch.png",
       "scripts": "sencha-touch.*\\.js",
       "website": "http://www.sencha.com/products/touch"
+    },
+    "Sendgrid": {
+      "cats": [
+        75
+      ],
+      "description": "SendGrid is a cloud-based email delivery platform for transactional and marketing emails.",
+      "dns": {
+        "TXT": [
+          "sendgrid\\.net"
+        ]
+      },
+      "icon": "SendGrid.svg",
+      "website": "https://sendgrid.com/"
     },
     "Sensors Data": {
       "cats": [
@@ -13645,6 +13602,19 @@
       },
       "website": "http://www.schillmania.com/projects/soundmanager2"
     },
+    "SparkPost": {
+      "cats": [
+        75
+      ],
+      "description": "SparkPost is an email infrastructure provider.",
+      "dns": {
+        "TXT": [
+          "sparkpostmail\\.com"
+        ]
+      },
+      "icon": "SparkPost.svg",
+      "website": "https://www.sparkpost.com/"
+    },
     "Sphinx": {
       "cats": [
         4
@@ -13775,13 +13745,13 @@
         6,
         61
       ],
+      "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
+      "icon": "Squarespace.png",
+      "implies": "Squarespace",
       "js": {
         "SQUARESPACE_ROLLUPS.squarespace-commerce": "",
         "SquarespaceCommerceCartBundle": ""
       },
-      "implies": "Squarespace",
-      "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
-      "icon": "Squarespace.png",
       "scripts": "assets\\.squarespace\\.\\w+/universal/scripts-compressed/commerce-\\w+-min\\.[\\w+\\-]+\\.js",
       "website": "https://www.squarespace.com/ecommerce-website"
     },
@@ -14828,13 +14798,13 @@
         59
       ],
       "description": "Turf is a modular geospatial engine written in JavaScript.",
+      "icon": "TurfJS.svg",
       "js": {
-        "turf.point": "",
         "turf.feature": "",
+        "turf.point": "",
         "turf.random": ""
       },
       "scripts": "(turf@[\\d.]+)?/?turf\\.min\\.js",
-      "icon": "TurfJS.svg",
       "website": "https://turfjs.org/"
     },
     "Twilight CMS": {
@@ -15405,21 +15375,6 @@
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
     },
-    "Visualsoft": {
-      "cats": [
-        6
-      ],
-      "description": "Visualsoft is an ecommerce agency that delivers web design, development and marketing services to online retailers.",
-      "icon": "Visualsoft.svg",
-      "cookies": {
-        "vscommerce": ""
-      },
-      "meta": {
-        "vs_status_checker_version": "\\d+",
-        "vsvatprices": ""
-      },
-      "website": "https://www.visualsoft.co.uk/"
-    },
     "Visual Website Optimizer": {
       "cats": [
         10
@@ -15444,6 +15399,21 @@
       "icon": "VisualPath.png",
       "scripts": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
       "website": "http://www.trackset.com/web-analytics-software/visualpath"
+    },
+    "Visualsoft": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "vscommerce": ""
+      },
+      "description": "Visualsoft is an ecommerce agency that delivers web design, development and marketing services to online retailers.",
+      "icon": "Visualsoft.svg",
+      "meta": {
+        "vs_status_checker_version": "\\d+",
+        "vsvatprices": ""
+      },
+      "website": "https://www.visualsoft.co.uk/"
     },
     "Volusion": {
       "cats": [
@@ -16513,19 +16483,6 @@
       "implies": "WordPress",
       "website": "http://yoast.com"
     },
-    "YouTrack": {
-      "cats": [
-        13
-      ],
-      "description": "YouTrack is a browser-based bug tracker, issue tracking system and project management software.",
-      "html": [
-        "no-title=\"YouTrack\">",
-        "data-reactid=\"[^\"]+\">youTrack ([0-9.]+)<\\;version:\\1",
-        "type=\"application/opensearchdescription\\+xml\" title=\"YouTrack\"/>"
-      ],
-      "icon": "YouTrack.png",
-      "website": "http://www.jetbrains.com/youtrack/"
-    },
     "Yottaa": {
       "cats": [
         42,
@@ -16539,6 +16496,19 @@
       },
       "scripts": "cdn\\.yottaa\\.\\w+/",
       "website": "https://www.yottaa.com"
+    },
+    "YouTrack": {
+      "cats": [
+        13
+      ],
+      "description": "YouTrack is a browser-based bug tracker, issue tracking system and project management software.",
+      "html": [
+        "no-title=\"YouTrack\">",
+        "data-reactid=\"[^\"]+\">youTrack ([0-9.]+)<\\;version:\\1",
+        "type=\"application/opensearchdescription\\+xml\" title=\"YouTrack\"/>"
+      ],
+      "icon": "YouTrack.png",
+      "website": "http://www.jetbrains.com/youtrack/"
     },
     "YouTube": {
       "cats": [
@@ -16637,13 +16607,13 @@
         "_zendesk_shared_session": ""
       },
       "description": "Zendesk is a cloud-based help desk management solution offering customizable tools to build customer service portal, knowledge base and online communities.",
-      "headers": {
-        "x-zendesk-user-id": ""
-      },
       "dns": {
         "TXT": [
           "mail\\.zendesk\\.com"
         ]
+      },
+      "headers": {
+        "x-zendesk-user-id": ""
       },
       "icon": "Zendesk.png",
       "website": "https://zendesk.com"
@@ -16748,6 +16718,35 @@
       },
       "scripts": "cdna4\\.zoeysite\\.com",
       "website": "https://www.zoey.com/"
+    },
+    "Zoho": {
+      "cats": [
+        53,
+        61
+      ],
+      "description": "Zoho is a web-based online office suite.",
+      "dns": {
+        "TXT": [
+          "\\.zoho\\.com"
+        ]
+      },
+      "icon": "Zoho.svg",
+      "website": "https://www.zoho.com/"
+    },
+    "Zoho Mail": {
+      "cats": [
+        61,
+        75
+      ],
+      "description": "Zoho Mail is an email hosting service for businesses.",
+      "dns": {
+        "TXT": [
+          "transmail\\.net"
+        ]
+      },
+      "icon": "Zoho.svg",
+      "implies": "Zoho",
+      "website": "https://www.zoho.com/mail/"
     },
     "Zone.js": {
       "cats": [

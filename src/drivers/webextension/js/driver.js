@@ -445,9 +445,11 @@ const Driver = {
 
     await Driver.setIcon(url, resolved)
 
-    const tabs = await promisify(chrome.tabs, 'query', { url })
+    if (url) {
+      const tabs = await promisify(chrome.tabs, 'query', { url })
 
-    tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+      tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+    }
 
     Driver.log({ hostname, technologies: resolved })
 
@@ -481,6 +483,10 @@ const Driver = {
       )
 
       ;({ icon } = pinned || technologies[0] || { icon })
+    }
+
+    if (!url) {
+      return
     }
 
     ;(await promisify(chrome.tabs, 'query', { url })).forEach(
