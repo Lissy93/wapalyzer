@@ -13659,6 +13659,18 @@
       "scripts": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
       "website": "https://www.sonarqube.org/"
     },
+    "SoteShop": {
+      "cats": [
+        6
+      ],
+      "description": "SoteShop is an e-shop management software.",
+      "icon": "SoteShop.svg",
+      "implies": "PHP",
+      "cookies": {
+        "soteshop": "^\\w+$"
+      },
+      "website": "https://www.soteshop.com/"
+    },
     "Sotel": {
       "cats": [
         1
