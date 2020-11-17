@@ -9998,20 +9998,48 @@
       "scripts": "owl\\.carousel.*\\.js",
       "website": "https://owlcarousel2.github.io/OwlCarousel2/"
     },
-    "OXID eShop": {
+    "OXID eShope": {
       "cats": [
         6
       ],
-      "html": "<!--[^-]*OXID eShop",
-      "icon": "OXID eShop.png",
+      "description": "OXID eShop is a free, open source ecommerce solution built using object oriented programming and PHP.",
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
       "js": {
         "oxCookieNote": "",
         "oxInputValidator": "",
         "oxLoginBox": "",
         "oxModalPopup": "",
-        "oxTopMenu": ""
+        "oxTopMenu": "",
+        "oxMiniBasket": ""
       },
-      "website": "https://en.oxid-esales.com/en/home.html"
+      "cookies": {
+        "sid_key": "oxid"
+      },  
+      "website": "https://www.oxid-esales.com"
+    },
+    "OXID eShope Community Edition": {
+      "cats": [
+        6
+      ],
+      "description": "OXID eShop Community Edition is a free, open source ecommerce solution built using object oriented programming and PHP.",
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
+      "excludes": "OXID eShope",
+      "html": "<!--[^-]*OXID eShop Community Edition, Version (\\d+)\\;version:\\1",
+      "website": "https://www.oxid-esales.com"
+    },
+    "OXID eShope Enterprise Edition": {
+      "cats": [
+        6,
+        62
+      ],
+      "description": "OXID eShop Enterprise Edition is a B2B or B2C ecommerce solution built using object oriented programming and PHP.",   
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
+      "excludes": "OXID eShope",
+      "html": "<!--[^-]*OXID eShop Enterprise Edition, Version (\\d+)\\;version:\\1",
+      "website": "https://www.oxid-esales.com"
     },
     "Ochanoko": {
       "cats": [
