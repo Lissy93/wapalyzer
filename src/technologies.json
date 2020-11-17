@@ -14081,6 +14081,26 @@
       "implies": "Symfony",
       "website": "http://sulu.io"
     },
+    "SummerCart": {
+      "cats": [
+        6
+      ],
+      "description": "SummerCart is a PHP shopping cart, ecommerce solution for online web store.",
+      "icon": "SummerCart.svg",
+      "implies": "PHP",
+      "dom": {
+        "link": {
+          "attributes": {
+            "href": "com\\.summercart\\.\\;confidence:100"
+          }
+        }
+      },
+      "js": {
+        "SC": "\\;confidence:10",
+        "SCEvents": "\\;confidence:40"
+      },
+      "website": "http://www.summercart.com"
+    },
     "SumoMe": {
       "cats": [
         5,
