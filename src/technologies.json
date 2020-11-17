@@ -8354,9 +8354,13 @@
       "icon": "Loja Virtual.svg",
       "js": {
         "id_loja_virtual": "",
-        "link_loja_virtual": ""
+        "link_loja_virtual": "",
+        "loja_sem_dominio": ""
       },
-      "scripts": "/js/ljvt_v(\\d+)/\\;version:\\1\\;confidence:20",
+      "scripts": [
+        "/js/ljvt_v(\\d+)/\\;version:\\1\\;confidence:20",
+        "cdn1\\.solojavirtual\\.com"
+      ],
       "website": "https://www.lojavirtual.com.br"
     },
     "Lotus Domino": {
