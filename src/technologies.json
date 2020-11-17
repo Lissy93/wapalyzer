@@ -15696,6 +15696,45 @@
       ],
       "website": "https://wpcacheon.io"
     },
+    "Wagtail": {
+      "cats": [
+        1
+      ],
+      "description": "A Django content management system focused on flexibility and user experience",
+      "dom": {
+        "[style*='images/']": {
+          "attributes": {
+            "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "img[src*='images/']": {
+          "attributes": {
+            "src": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "img[srcset*='images/'], source[srcset*='images/']": {
+          "attributes": {
+            "srcset": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "meta[content*='images/']": {
+          "attributes": {
+            "content": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "video[poster*='images/']": {
+          "attributes": {
+            "poster": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "style, script": {
+          "text": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+        }
+      },
+      "icon": "Wagtail.svg",
+      "implies": "Django",
+      "website": "https://wagtail.io/"
+    },
     "Warp": {
       "cats": [
         22
