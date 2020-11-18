@@ -14093,6 +14093,26 @@
       "implies": "Symfony",
       "website": "http://sulu.io"
     },
+    "SummerCart": {
+      "cats": [
+        6
+      ],
+      "description": "SummerCart is an ecommerce platform written in PHP.",
+      "icon": "SummerCart.svg",
+      "implies": "PHP",
+      "dom": {
+        "link": {
+          "attributes": {
+            "href": "com\\.summercart\\.\\;confidence:100"
+          }
+        }
+      },
+      "js": {
+        "SC": "\\;confidence:10",
+        "SCEvents": "\\;confidence:40"
+      },
+      "website": "http://www.summercart.com"
+    },
     "SumoMe": {
       "cats": [
         5,
