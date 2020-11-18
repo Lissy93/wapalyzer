@@ -292,19 +292,25 @@ a:hover {
   width: 80%;
 }
 
-.terms__accept {
+.terms__buttons {
+}
+
+.terms__button {
   background-color: #4608ad;
   border: none;
   border-radius: 3px;
   color: white;
   cursor: pointer;
   font-size: .9rem;
-  padding: 0 3rem;
+  padding: 0 2rem;
+  margin: 0 .2rem;
   height: 3rem;
 }
 
-.terms__accept:hover {
-  background-color: #4107a1;
+.terms__button--decline {
+  background-color: white;
+  border: 1px solid #4608ad;
+  color: #4608ad;
 }
 
 .terms__privacy {

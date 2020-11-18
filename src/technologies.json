@@ -1229,6 +1229,17 @@
       "icon": "aws.svg",
       "website": "https://aws.amazon.com/"
     },
+    "Amazon Webstore": {
+      "cats": [
+        6
+      ],
+      "description": "Amazon Webstore is an all-in-one hosted ecommerce website solution.",
+      "icon": "Amazon Webstore.svg",
+      "js": {
+        "amzn": ""
+      },
+      "website": "https://aws.amazon.com/marketplace/pp/Amazon-Web-Services-Amazon-Webstore/B007NLVI2S"
+    },
     "Amber": {
       "cats": [
         18,
@@ -3054,6 +3065,20 @@
       ],
       "website": "https://clearbit.com/reveal"
     },
+    "Cleverbridge": {
+      "cats": [
+        6
+      ],
+      "description": "Cleverbridge is a all-in-one ecommerce and subscription billing solution for software, (SaaS) and digital goods.",
+      "icon": "Cleverbridge.svg",
+      "js": {
+        "cbCartProductSelection": ""
+      },
+      "scripts": [
+        "static-cf\\.cleverbridge\\.\\w+/js/Shop\\.js"
+      ],
+      "website": "https://www.cleverbridge.com"
+    },
     "ClickFunnels": {
       "cats": [
         32
@@ -4032,6 +4057,19 @@
       "certIssuer": "DigiCert",
       "icon": "DigiCert.svg",
       "website": "https://www.digicert.com/"
+    },
+    "DigitalRiver": {
+      "cats": [
+        6
+      ],
+      "description": "Digital River provides global ecommerce, payments and marketing services.",
+      "icon": "DigitalRiver.svg",
+      "cookies": {
+        "X-DR-SHOPPER-ets": "",
+        "X-DR-THEME": "^\\d+$"
+      },
+      "scripts": "/drh\\.img\\.digitalriver\\.\\w+/DRHM/",
+      "website": "https://www.digitalriver.com"
     },
     "DirectAdmin": {
       "cats": [
@@ -7467,6 +7505,21 @@
       "url": "option=com_",
       "website": "https://www.joomla.org"
     },
+    "Jumpseller": {
+      "cats": [
+        6
+      ],
+      "description": "Jumpseller is a cloud ecommerce solution for small businesses.",
+      "icon": "Jumpseller.svg",
+      "js": {
+        "Jumpseller": ""
+      },
+      "scripts": [
+        "assets\\.jumpseller\\.\\w+/",
+        "jumpseller-apps\\.herokuapp\\.\\w+/"
+      ],
+      "website": "https://jumpseller.com"
+    },
     "K2": {
       "cats": [
         19
@@ -8305,6 +8358,35 @@
         "LOJA_ID": ""
       },
       "website": "https://lojaintegrada.com.br/"
+    },
+    "Loja Virtual": {
+      "cats": [
+        6
+      ],
+      "description": "Loja Virtual is an all-in-one ecommerce platform from Brazil.",
+      "icon": "Loja Virtual.svg",
+      "js": {
+        "id_loja_virtual": "",
+        "link_loja_virtual": "",
+        "loja_sem_dominio": ""
+      },
+      "scripts": [
+        "/js/ljvt_v(\\d+)/\\;version:\\1\\;confidence:20",
+        "cdn1\\.solojavirtual\\.com"
+      ],
+      "website": "https://www.lojavirtual.com.br"
+    },
+    "Loja Mestre": {
+      "cats": [
+        6
+      ],
+      "description": "Loja Mestre is an all-in-one ecommerce platform from Brazil.",
+      "icon": "Loja Mestre.svg",
+      "meta": {
+        "webmaster": "www\\.lojamestre\\.\\w+\\.br"
+      },
+      "scripts": "lojamestre\\.\\w+\\.br",
+      "website": "https://www.lojamestre.com.br/"
     },
     "Lotus Domino": {
       "cats": [
@@ -9893,16 +9975,44 @@
       "cats": [
         6
       ],
-      "html": "<!--[^-]*OXID eShop",
-      "icon": "OXID eShop.png",
+      "description": "OXID eShop is a free, open source ecommerce solution built using object oriented programming and PHP.",
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
       "js": {
         "oxCookieNote": "",
         "oxInputValidator": "",
         "oxLoginBox": "",
         "oxModalPopup": "",
-        "oxTopMenu": ""
+        "oxTopMenu": "",
+        "oxMiniBasket": ""
       },
-      "website": "https://en.oxid-esales.com/en/home.html"
+      "cookies": {
+        "sid_key": "oxid"
+      },  
+      "website": "https://www.oxid-esales.com"
+    },
+    "OXID eShop Community Edition": {
+      "cats": [
+        6
+      ],
+      "description": "OXID eShop Community Edition is a free, open source ecommerce solution built using object oriented programming and PHP.",
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
+      "excludes": "OXID eShop",
+      "html": "<!--[^-]*OXID eShop Community Edition, Version (\\d+)\\;version:\\1",
+      "website": "https://www.oxid-esales.com"
+    },
+    "OXID eShop Enterprise Edition": {
+      "cats": [
+        6,
+        62
+      ],
+      "description": "OXID eShop Enterprise Edition is a B2B or B2C ecommerce solution built using object oriented programming and PHP.",   
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
+      "excludes": "OXID eShop",
+      "html": "<!--[^-]*OXID eShop Enterprise Edition, Version (\\d+)\\;version:\\1",
+      "website": "https://www.oxid-esales.com"
     },
     "Ochanoko": {
       "cats": [
@@ -11820,6 +11930,20 @@
       },
       "website": "https://redaxscript.com"
     },
+    "RedCart": {
+      "cats": [
+        6
+      ],
+      "description": "RedCart is an all-in-one ecommerce platform from Poland.",
+      "icon": "RedCart.svg",
+      "js": {
+        "RC_SHOP_ID": ""
+      },
+      "cookies": {
+        "rc2c-erotica": "\\d+"
+      },
+      "website": "https://redcart.pl"
+    },
     "Reddit": {
       "cats": [
         2
@@ -12983,6 +13107,19 @@
       },
       "website": "http://shopcada.com"
     },
+    "ShopGold": {
+      "cats": [
+        6
+      ],
+      "description": "ShopGold is an all-in-one payment processing and ecommerce solution.",
+      "icon": "ShopGold.svg",
+      "cookies": {
+        "eGold": "^\\w+$",
+        "popup_shopGold": "",
+        "popup_shopGold_time": ""
+      },
+      "website": "https://www.shopgold.pl"
+    },
     "Shoper": {
       "cats": [
         6
@@ -13051,6 +13188,18 @@
         "og:image": "https\\:\\/\\/img\\.shoplineapp\\.com"
       },
       "website": "https://shoplineapp.com/"
+    },
+    "Shoplo": {
+      "cats": [
+        6
+      ],
+      "description": "Shoplo is an all-in-one ecommerce platform.",
+      "icon": "Shoplo.svg",
+      "js": {
+        "SHOPLOAJAX": ""
+      },
+      "scripts": "cdn\\.shoplo\\.\\w+/",
+      "website": "https://www.shoplo.com"
     },
     "Shoppy": {
       "cats": [
@@ -13195,6 +13344,15 @@
       },
       "icon": "Simplebo.png",
       "website": "https://www.simplebo.fr"
+    },
+    "Simplo7": {
+      "cats": [
+        6
+      ],
+      "description": "Simplo7 is an all-in-one ecommerce product.",
+      "icon": "Simplo7.svg",
+      "scripts": "cdn\\.simplo7\\.\\w+/",
+      "website": "https://www.simplo7.com.br"
     },
     "Site Meter": {
       "cats": [
@@ -13579,6 +13737,18 @@
       },
       "scripts": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
       "website": "https://www.sonarqube.org/"
+    },
+    "SoteShop": {
+      "cats": [
+        6
+      ],
+      "description": "SoteShop is an e-shop management software.",
+      "icon": "SoteShop.svg",
+      "implies": "PHP",
+      "cookies": {
+        "soteshop": "^\\w+$"
+      },
+      "website": "https://www.soteshop.com/"
     },
     "Sotel": {
       "cats": [
@@ -13974,6 +14144,26 @@
       "icon": "Sulu.svg",
       "implies": "Symfony",
       "website": "http://sulu.io"
+    },
+    "SummerCart": {
+      "cats": [
+        6
+      ],
+      "description": "SummerCart is an ecommerce platform written in PHP.",
+      "icon": "SummerCart.svg",
+      "implies": "PHP",
+      "dom": {
+        "link": {
+          "attributes": {
+            "href": "com\\.summercart\\.\\;confidence:100"
+          }
+        }
+      },
+      "js": {
+        "SC": "\\;confidence:10",
+        "SCEvents": "\\;confidence:40"
+      },
+      "website": "http://www.summercart.com"
     },
     "SumoMe": {
       "cats": [
@@ -15589,6 +15779,45 @@
         "WordPress"
       ],
       "website": "https://wpcacheon.io"
+    },
+    "Wagtail": {
+      "cats": [
+        1
+      ],
+      "description": "Wagtail is a Django content management system (CMS) focused on flexibility and user experience.",
+      "dom": {
+        "[style*='images/']": {
+          "attributes": {
+            "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "img[src*='images/']": {
+          "attributes": {
+            "src": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "img[srcset*='images/'], source[srcset*='images/']": {
+          "attributes": {
+            "srcset": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "meta[content*='images/']": {
+          "attributes": {
+            "content": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "video[poster*='images/']": {
+          "attributes": {
+            "poster": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+          }
+        },
+        "style, script": {
+          "text": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+        }
+      },
+      "icon": "Wagtail.svg",
+      "implies": "Django",
+      "website": "https://wagtail.io/"
     },
     "Warp": {
       "cats": [
