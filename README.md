@@ -211,8 +211,9 @@ Find the JSON schema at [`schema.json`](https://github.com/aliasio/wappalyzer/bl
         * <code>onetime</code>: one-time payment
         * <code>recurring</code>: subscription
         * <code>poa</code>: price on asking
+
       </td>
-      <td><code>true</code></td>
+      <td><code>["low", "freemium"]</code></td>
     </tr>
   </tbody>
 </table>
