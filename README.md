@@ -200,20 +200,18 @@ Find the JSON schema at [`schema.json`](https://github.com/aliasio/wappalyzer/bl
 Cost indicator (based on a typical plan or average monthly price) and available pricing models. For paid products only.
 
 One of:
-
 <ul>
-  <li><code>low</code>: Up to US 100 / mo</li>
-  <li><code>mid</code>: Up US 1,000 / mo</li>
-  <li><code>high</code>: More than 10,000 / mo</li>
+  <li><code>low</code> Up to US 100 / mo</li>
+  <li><code>mid</code> Up US 1,000 / mo</li>
+  <li><code>high</code> More than 10,000 / mo</li>
 </ul>
 
 Plus any of:
-
 <ul>
-  <li><code>freemium</code>: free plan available</li>
-  <li><code>onetime</code>: one-time payment</li>
-  <li><code>recurring</code>: subscription</li>
-  <li><code>poa</code>: price on asking</li>
+  <li><code>freemium</code> Free plan available</li>
+  <li><code>onetime</code> One-time payments accepted</li>
+  <li><code>recurring</code> Subscriptions available</li>
+  <li><code>poa</code> Price on asking</li>
 </ul>
       </td>
       <td><code>["low", "freemium"]</code></td>
