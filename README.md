@@ -94,6 +94,9 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
   },
   "script": "example-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
   "url": ".+\\.example\\.com",
+  "oss": true,
+  "saas": true,
+  "pricing": ["low", "medium", "high", "freemium", "onetime", "recurring", "poa"],
   "website": "https://example.com",
 }
 ```
@@ -173,6 +176,43 @@ Find the JSON schema at [`schema.json`](https://github.com/aliasio/wappalyzer/bl
         >.
       </td>
       <td><code>"cpe:/a:apache:http_server"</code></td>
+    </tr>
+    <tr>
+      <td><code>saas</code></td>
+      <td>Boolean</td>
+      <td>
+        The technology is offered as a Software-as-a-Service (SaaS), i.e. hosted or cloud-based.
+      </td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>oss</code></td>
+      <td>Boolean</td>
+      <td>
+        The technology has an open-source license.
+      </td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>pricing</code></td>
+      <td>Array</td>
+      <td>
+        Cost indicator (based on a typical plan or average monthly price) and available pricing models. For paid products only.
+
+        One of:
+
+        * <code>low</code>: Up to US 100 / mo
+        * <code>mid</code>: Up US 1,000 / mo
+        * <code>high</code>: More than 10,000 / mo
+
+        Plus any of:
+
+        * <code>freemium</code>: free plan available
+        * <code>onetime</code>: one-time payment
+        * <code>recurring</code>: subscription
+        * <code>poa</code>: price on asking
+      </td>
+      <td><code>true</code></td>
     </tr>
   </tbody>
 </table>
