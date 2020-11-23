@@ -1640,7 +1640,11 @@
       "headers": {
         "X-Confluence-Request-Time": ""
       },
-      "html": "<li class=\"print-only\">.+ Atlassian Confluence ([\\d.]+)</li>\\;version:\\1",
+      "dom": {
+        "li.print-only": {
+          "text": "Atlassian Confluence ([\\d.]+)\\;version:\\1"
+        }
+      },
       "icon": "Atlassian Confluence.svg",
       "implies": "Java",
       "meta": {
