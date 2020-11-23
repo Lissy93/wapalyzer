@@ -2434,9 +2434,10 @@
     },
     "Bubble": {
       "cats": [
-        1,
+        51,
         18
       ],
+      "description": "Bubble is a no-code platform that lets anyone build web apps without writing any code.",
       "headers": {
         "x-bubble-capacity-limit": "",
         "x-bubble-capacity-used": "",
@@ -2450,7 +2451,9 @@
         "bubble_hostname_modifier": "",
         "bubble_version": ""
       },
-      "website": "http://bubble.is"
+      "saas": true,
+      "pricing": ["low", "freemium", "subscription"],
+      "website": "http://bubble.io"
     },
     "BugSnag": {
       "cats": [
