@@ -2574,6 +2574,22 @@
       "icon": "CFML.png",
       "website": "http://adobe.com/products/coldfusion-family.html"
     },
+    "Borlabs Cookie": {
+      "cats": [
+        67
+      ],
+      "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
+      "icon": "Borlabs Cookie.svg",
+      "js": { "borlabsCookieConfig": "" },
+      "dom": {
+        "#BorlabsCookieBox": {
+          "text": ""
+        }
+      },
+      "pricing": ["low", "onetime"],
+      "implies": "WordPress",
+      "website": "https://borlabs.io/borlabs-cookie/"
+    },
     "CIVIC": {
       "cats": [
         67
