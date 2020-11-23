@@ -2437,9 +2437,10 @@
     },
     "Bubble": {
       "cats": [
-        1,
+        51,
         18
       ],
+      "description": "Bubble is a no-code platform that lets anyone build web apps without writing any code.",
       "headers": {
         "x-bubble-capacity-limit": "",
         "x-bubble-capacity-used": "",
@@ -2453,7 +2454,9 @@
         "bubble_hostname_modifier": "",
         "bubble_version": ""
       },
-      "website": "http://bubble.is"
+      "saas": true,
+      "pricing": ["low", "freemium", "subscription"],
+      "website": "http://bubble.io"
     },
     "BugSnag": {
       "cats": [
@@ -3220,6 +3223,18 @@
       "js": {
         "CloudFlare": ""
       },
+      "website": "http://www.cloudflare.com"
+    },
+    "Cloudflare Browser Insights": {
+      "cats": [
+        10
+      ],
+      "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
+      "icon": "CloudFlare.svg",
+      "js": {
+        "__cfBeaconCustomTag": "",
+      },
+      "scripts": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
       "website": "http://www.cloudflare.com"
     },
     "Cloudinary": {
@@ -18292,6 +18307,18 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
+    },
+    "WebAssembly": {
+      "cats": [
+        27
+      ],
+      "description": "WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.",
+      "icon": "WebAssembly.svg",
+      "oss": true,
+      "headers": {
+        "Content-Type": "application/wasm"
+      },
+      "website": "https://webassembly.org/"
     },
     "webEdition": {
       "cats": [
