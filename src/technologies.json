@@ -1665,15 +1665,19 @@
         13
       ],
       "cpe": "cpe:/a:atlassian:jira",
-      "html": "<body.+data-version=\"([\d.]+)\">\\;version:\\1",
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "js": {
-        "jira": ""
+        "jira.id": ""
+      },
+      "dom": {
+        "#jira": {
+          "text": ""
+        }
       },
       "meta": {
         "application-name": "JIRA",
-        "data-version": ([\\d.]+)\\;version:\\1
+        "data-version": ([\\d.]+)\\;version:\\1\\;confidence:0
       },
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
