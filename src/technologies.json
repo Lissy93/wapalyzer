@@ -1013,9 +1013,12 @@
       "description": "Algolia offers a hosted web search product delivering real-time results.",
       "icon": "Algolia.svg",
       "js": {
+        "__algolia": "",
         "AlgoliaSearch": "",
         "algoliasearch.version": "^(.+)$\\;version:\\1"
       },
+      "saas": true,
+      "pricing": ["freemium", "payg"],
       "website": "http://www.algolia.com"
     },
     "All in One SEO Pack": {
@@ -10750,6 +10753,8 @@
         "PAYPAL": ""
       },
       "scripts": "paypalobjects\\.com",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://paypal.com"
     },
     "Peek": {
@@ -14040,6 +14045,8 @@
         "Stripe.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "js\\.stripe\\.com",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "http://stripe.com"
     },
     "Paddle": {
