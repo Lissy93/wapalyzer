@@ -18424,10 +18424,16 @@
       "cats": [
         25
       ],
-      "description": "The fastest math typesetting library for the web. ",
+      "description": "KaTeX is a cross-browser JavaScript library that displays mathematical notation in web browsers.",
       "icon": "KaTeX.png",
       "oss": true,
-      "html": "<link[^>]* href=\"[^\"]*katex(?:\\.min)?\\.css",
+      "dom": {
+        "link[href*=katex]": {
+          "attributes": {
+            "href": "katex(?:\\.min)?\\.css"
+          }
+        }
+      },
       "js": {
         "katex": "",
         "katex.version": "^(.+)$\\;version:\\1"
