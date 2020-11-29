@@ -929,8 +929,8 @@
       ],
       "description": "Aircall is a cloud-based phone system for customer support and sales teams.",
       "icon": "aircall.png",
-      "scripts": "^https?://cdn\\.aircall\\.io/",
       "saas": true,
+      "scripts": "^https?://cdn\\.aircall\\.io/",
       "website": "http://aircall.io"
     },
     "Airee": {
@@ -1013,12 +1013,15 @@
       "description": "Algolia offers a hosted web search product delivering real-time results.",
       "icon": "Algolia.svg",
       "js": {
-        "__algolia": "",
         "AlgoliaSearch": "",
+        "__algolia": "",
         "algoliasearch.version": "^(.+)$\\;version:\\1"
       },
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["freemium", "payg"],
       "website": "http://www.algolia.com"
     },
     "All in One SEO Pack": {
@@ -2373,6 +2376,27 @@
       "scripts": "bootstrap-table(?:\\.min)?\\.js",
       "website": "http://bootstrap-table.wenzhixin.net.cn/"
     },
+    "Borlabs Cookie": {
+      "cats": [
+        67
+      ],
+      "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
+      "dom": {
+        "#BorlabsCookieBox": {
+          "text": ""
+        }
+      },
+      "icon": "Borlabs Cookie.svg",
+      "implies": "WordPress",
+      "js": {
+        "borlabsCookieConfig": ""
+      },
+      "pricing": [
+        "low",
+        "onetime"
+      ],
+      "website": "https://borlabs.io/borlabs-cookie/"
+    },
     "Botble CMS": {
       "cats": [
         1,
@@ -2454,8 +2478,12 @@
         "bubble_hostname_modifier": "",
         "bubble_version": ""
       },
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "freemium", "subscription"],
       "website": "http://bubble.io"
     },
     "BugSnag": {
@@ -2580,22 +2608,6 @@
       "description": "ColdFusion Markup Language (CFML), is a scripting language for web development that runs on the JVM, the .NET framework, and Google App Engine.",
       "icon": "CFML.png",
       "website": "http://adobe.com/products/coldfusion-family.html"
-    },
-    "Borlabs Cookie": {
-      "cats": [
-        67
-      ],
-      "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
-      "icon": "Borlabs Cookie.svg",
-      "js": { "borlabsCookieConfig": "" },
-      "dom": {
-        "#BorlabsCookieBox": {
-          "text": ""
-        }
-      },
-      "pricing": ["low", "onetime"],
-      "implies": "WordPress",
-      "website": "https://borlabs.io/borlabs-cookie/"
     },
     "CIVIC": {
       "cats": [
@@ -3232,7 +3244,7 @@
       "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
       "icon": "CloudFlare.svg",
       "js": {
-        "__cfBeaconCustomTag": "",
+        "__cfBeaconCustomTag": ""
       },
       "scripts": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
       "website": "http://www.cloudflare.com"
@@ -3653,7 +3665,12 @@
       },
       "icon": "Craft CMS.svg",
       "implies": "Yii",
-      "pricing": ["low", "freemium", "recurring", "onetime"],
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring",
+        "onetime"
+      ],
       "website": "https://craftcms.com"
     },
     "Craft Commerce": {
@@ -4073,12 +4090,12 @@
       "cats": [
         6
       ],
-      "description": "Digital River provides global ecommerce, payments and marketing services.",
-      "icon": "DigitalRiver.svg",
       "cookies": {
         "X-DR-SHOPPER-ets": "",
         "X-DR-THEME": "^\\d+$"
       },
+      "description": "Digital River provides global ecommerce, payments and marketing services.",
+      "icon": "DigitalRiver.svg",
       "scripts": "/drh\\.img\\.digitalriver\\.\\w+/DRHM/",
       "website": "https://www.digitalriver.com"
     },
@@ -8353,6 +8370,18 @@
       },
       "website": "https://lojaintegrada.com.br/"
     },
+    "Loja Mestre": {
+      "cats": [
+        6
+      ],
+      "description": "Loja Mestre is an all-in-one ecommerce platform from Brazil.",
+      "icon": "Loja Mestre.svg",
+      "meta": {
+        "webmaster": "www\\.lojamestre\\.\\w+\\.br"
+      },
+      "scripts": "lojamestre\\.\\w+\\.br",
+      "website": "https://www.lojamestre.com.br/"
+    },
     "Loja Virtual": {
       "cats": [
         6
@@ -8369,18 +8398,6 @@
         "cdn1\\.solojavirtual\\.com"
       ],
       "website": "https://www.lojavirtual.com.br"
-    },
-    "Loja Mestre": {
-      "cats": [
-        6
-      ],
-      "description": "Loja Mestre is an all-in-one ecommerce platform from Brazil.",
-      "icon": "Loja Mestre.svg",
-      "meta": {
-        "webmaster": "www\\.lojamestre\\.\\w+\\.br"
-      },
-      "scripts": "lojamestre\\.\\w+\\.br",
-      "website": "https://www.lojamestre.com.br/"
     },
     "Lotus Domino": {
       "cats": [
@@ -9963,6 +9980,9 @@
       "cats": [
         6
       ],
+      "cookies": {
+        "sid_key": "oxid"
+      },
       "description": "OXID eShop is a free, open source ecommerce solution built using object oriented programming and PHP.",
       "icon": "OXID eShop.svg",
       "implies": "PHP",
@@ -9970,12 +9990,9 @@
         "oxCookieNote": "",
         "oxInputValidator": "",
         "oxLoginBox": "",
+        "oxMiniBasket": "",
         "oxModalPopup": "",
-        "oxTopMenu": "",
-        "oxMiniBasket": ""
-      },
-      "cookies": {
-        "sid_key": "oxid"
+        "oxTopMenu": ""
       },
       "website": "https://www.oxid-esales.com"
     },
@@ -9984,10 +10001,10 @@
         6
       ],
       "description": "OXID eShop Community Edition is a free, open source ecommerce solution built using object oriented programming and PHP.",
-      "icon": "OXID eShop.svg",
-      "implies": "PHP",
       "excludes": "OXID eShop",
       "html": "<!--[^-]*OXID eShop Community Edition, Version (\\d+)\\;version:\\1",
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
       "website": "https://www.oxid-esales.com"
     },
     "OXID eShop Enterprise Edition": {
@@ -9996,10 +10013,10 @@
         62
       ],
       "description": "OXID eShop Enterprise Edition is a B2B or B2C ecommerce solution built using object oriented programming and PHP.",
-      "icon": "OXID eShop.svg",
-      "implies": "PHP",
       "excludes": "OXID eShop",
       "html": "<!--[^-]*OXID eShop Enterprise Edition, Version (\\d+)\\;version:\\1",
+      "icon": "OXID eShop.svg",
+      "implies": "PHP",
       "website": "https://www.oxid-esales.com"
     },
     "Ochanoko": {
@@ -10623,6 +10640,24 @@
       "url": ".+\\.pixijs\\.com",
       "website": "https://www.pixijs.com/"
     },
+    "Paddle": {
+      "cats": [
+        41
+      ],
+      "description": "Paddle is a billing and payment gateway for B2B SaaS companies.",
+      "icon": "Paddle.svg",
+      "js": {
+        "Paddle.Checkout": "",
+        "PaddleScriptLocation": ""
+      },
+      "pricing": [
+        "recurring",
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.paddle\\.com/paddle/paddle\\.js",
+      "website": "https://paddle.com/"
+    },
     "PageFly": {
       "cats": [
         51
@@ -10767,9 +10802,11 @@
       "js": {
         "PAYPAL": ""
       },
-      "scripts": "paypalobjects\\.com",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
+      "scripts": "paypalobjects\\.com",
       "website": "https://paypal.com"
     },
     "Peek": {
@@ -11311,11 +11348,11 @@
         "MySQL"
       ],
       "js": {
-        "prestashop": "",
-        "rcAnalyticsEvents.eventPrestashopCheckout": "",
         "freeProductTranslation": "\\;confidence:25",
+        "prestashop": "",
         "priceDisplayMethod": "\\;confidence:25",
-        "priceDisplayPrecision": "\\;confidence:25"
+        "priceDisplayPrecision": "\\;confidence:25",
+        "rcAnalyticsEvents.eventPrestashopCheckout": ""
       },
       "meta": {
         "generator": "PrestaShop"
@@ -11902,6 +11939,20 @@
       "icon": "Red Hat.svg",
       "website": "https://www.redhat.com"
     },
+    "RedCart": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "rc2c-erotica": "\\d+"
+      },
+      "description": "RedCart is an all-in-one ecommerce platform from Poland.",
+      "icon": "RedCart.svg",
+      "js": {
+        "RC_SHOP_ID": ""
+      },
+      "website": "https://redcart.pl"
+    },
     "Redaxscript": {
       "cats": [
         1
@@ -11912,20 +11963,6 @@
         "generator": "^Redaxscript ([\\d\\.]+)\\;version:\\1"
       },
       "website": "https://redaxscript.com"
-    },
-    "RedCart": {
-      "cats": [
-        6
-      ],
-      "description": "RedCart is an all-in-one ecommerce platform from Poland.",
-      "icon": "RedCart.svg",
-      "js": {
-        "RC_SHOP_ID": ""
-      },
-      "cookies": {
-        "rc2c-erotica": "\\d+"
-      },
-      "website": "https://redcart.pl"
     },
     "Reddit": {
       "cats": [
@@ -13050,6 +13087,19 @@
       "url": "^https://pay.shopify.com",
       "website": "https://pay.google.com"
     },
+    "ShopGold": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "eGold": "^\\w+$",
+        "popup_shopGold": "",
+        "popup_shopGold_time": ""
+      },
+      "description": "ShopGold is an all-in-one payment processing and ecommerce solution.",
+      "icon": "ShopGold.svg",
+      "website": "https://www.shopgold.pl"
+    },
     "Shopatron": {
       "cats": [
         6
@@ -13077,19 +13127,6 @@
         "Shopcada": ""
       },
       "website": "http://shopcada.com"
-    },
-    "ShopGold": {
-      "cats": [
-        6
-      ],
-      "description": "ShopGold is an all-in-one payment processing and ecommerce solution.",
-      "icon": "ShopGold.svg",
-      "cookies": {
-        "eGold": "^\\w+$",
-        "popup_shopGold": "",
-        "popup_shopGold_time": ""
-      },
-      "website": "https://www.shopgold.pl"
     },
     "Shoper": {
       "cats": [
@@ -13306,6 +13343,15 @@
       },
       "website": "http://example.com"
     },
+    "Simplo7": {
+      "cats": [
+        6
+      ],
+      "description": "Simplo7 is an all-in-one ecommerce product.",
+      "icon": "Simplo7.svg",
+      "scripts": "cdn\\.simplo7\\.\\w+/",
+      "website": "https://www.simplo7.com.br"
+    },
     "Simplébo": {
       "cats": [
         1
@@ -13315,15 +13361,6 @@
       },
       "icon": "Simplebo.png",
       "website": "https://www.simplebo.fr"
-    },
-    "Simplo7": {
-      "cats": [
-        6
-      ],
-      "description": "Simplo7 is an all-in-one ecommerce product.",
-      "icon": "Simplo7.svg",
-      "scripts": "cdn\\.simplo7\\.\\w+/",
-      "website": "https://www.simplo7.com.br"
     },
     "Site Meter": {
       "cats": [
@@ -13712,12 +13749,12 @@
       "cats": [
         6
       ],
-      "description": "SoteShop is an e-shop management software.",
-      "icon": "SoteShop.svg",
-      "implies": "PHP",
       "cookies": {
         "soteshop": "^\\w+$"
       },
+      "description": "SoteShop is an e-shop management software.",
+      "icon": "SoteShop.svg",
+      "implies": "PHP",
       "website": "https://www.soteshop.com/"
     },
     "Sotel": {
@@ -14059,25 +14096,12 @@
       "js": {
         "Stripe.version": "^(.+)$\\;version:\\1"
       },
-      "scripts": "js\\.stripe\\.com",
-      "saas": true,
-      "pricing": ["payg"],
-      "website": "http://stripe.com"
-    },
-    "Paddle": {
-      "cats": [
-        41
+      "pricing": [
+        "payg"
       ],
-      "description": "Paddle is a billing and payment gateway for B2B SaaS companies.",
-      "icon": "Paddle.svg",
-      "js": {
-        "Paddle.Checkout": "",
-        "PaddleScriptLocation": ""
-      },
-      "scripts": "cdn\\.paddle\\.com/paddle/paddle\\.js",
       "saas": true,
-      "pricing": ["recurring", "poa"],
-      "website": "https://paddle.com/"
+      "scripts": "js\\.stripe\\.com",
+      "website": "http://stripe.com"
     },
     "SublimeVideo": {
       "cats": [
@@ -14133,8 +14157,6 @@
         6
       ],
       "description": "SummerCart is an ecommerce platform written in PHP.",
-      "icon": "SummerCart.svg",
-      "implies": "PHP",
       "dom": {
         "link": {
           "attributes": {
@@ -14142,6 +14164,8 @@
           }
         }
       },
+      "icon": "SummerCart.svg",
+      "implies": "PHP",
       "js": {
         "SC": "\\;confidence:10",
         "SCEvents": "\\;confidence:40"
@@ -15783,13 +15807,13 @@
             "content": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
           }
         },
+        "style, script": {
+          "text": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+        },
         "video[poster*='images/']": {
           "attributes": {
             "poster": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
           }
-        },
-        "style, script": {
-          "text": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
         }
       },
       "icon": "Wagtail.svg",
@@ -15834,6 +15858,18 @@
       ],
       "icon": "webAR.svg",
       "website": "https://modelviewer.dev/"
+    },
+    "WebAssembly": {
+      "cats": [
+        27
+      ],
+      "description": "WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.",
+      "headers": {
+        "Content-Type": "application/wasm"
+      },
+      "icon": "WebAssembly.svg",
+      "oss": true,
+      "website": "https://webassembly.org/"
     },
     "WebGUI": {
       "cats": [
@@ -18307,18 +18343,6 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
-    },
-    "WebAssembly": {
-      "cats": [
-        27
-      ],
-      "description": "WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.",
-      "icon": "WebAssembly.svg",
-      "oss": true,
-      "headers": {
-        "Content-Type": "application/wasm"
-      },
-      "website": "https://webassembly.org/"
     },
     "webEdition": {
       "cats": [
