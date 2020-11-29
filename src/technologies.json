@@ -568,7 +568,7 @@
       },
       "scripts": "(?:a|s)\\.adroll\\.com",
       "saas": true,
-      "pricing": ["low", "recurring"]
+      "pricing": ["low", "recurring"],
       "website": "http://adroll.com"
     },
     "Adally": {
@@ -1527,7 +1527,7 @@
       "icon": "AppNexus.svg",
       "scripts": "adnxs\\.(?:net|com)",
       "saas": true,
-      "pricing": ["poa"]
+      "pricing": ["poa"],
       "website": "http://appnexus.com"
     },
     "Apple Pay": {
@@ -2064,7 +2064,7 @@
       "scripts": "cdn\\d+\\.bigcommerce\\.com/",
       "url": "mybigcommerce\\.com
       "saas": true,
-      "pricing": ["low", "recurring"]
+      "pricing": ["low", "recurring"],
       "website": "http://www.bigcommerce.com"
     },
     "BigDump": {
@@ -2668,7 +2668,7 @@
       "js": {
         "fn_compare_strings": ""
       },
-      "pricing": ["mid", "onetime"]
+      "pricing": ["mid", "onetime"],
       "website": "http://www.cs-cart.com"
     },
     "CacheFly": {
@@ -2706,7 +2706,7 @@
         "EC_ROOT_DOMAIN": ""
       },
       "saas": true,
-      "pricing": ["low"]
+      "pricing": ["low"],
       "website": "https://ec.cafe24.com/"
     },
     "CakePHP": {
@@ -3681,7 +3681,7 @@
         "//static\\.criteo\\.net/js/ld/ld\\.js"
       ],
       "saas": true,
-      "pricing": ["poa"]
+      "pricing": ["poa"],
       "website": "http://criteo.com"
     },
     "Cross Pixel": {
@@ -4271,7 +4271,7 @@
       "icon": "DoubleClick.svg",
       "scripts": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "saas": true,
-      "pricing": ["freemium"]
+      "pricing": ["freemium"],
       "website": "http://www.google.com/dfp"
     },
     "DovetailWRP": {
@@ -4485,7 +4485,7 @@
         "epages": ""
       },
       "saas": true,
-      "pricing": ["low", "recurring"]
+      "pricing": ["low", "recurring"],
       "website": "http://www.epages.com/"
     },
     "EPiServer": {
@@ -4557,7 +4557,7 @@
         "https://app\\.ecwid\\.com/script\\.js"
       ],
       "saas": true,
-      "pricing": ["freemium"]
+      "pricing": ["freemium"],
       "website": "https://www.ecwid.com/"
     },
     "EdgeCast": {
@@ -6771,7 +6771,7 @@
       "implies": "Java",
       "url": "/wcs/",
       "saas": true,
-      "pricing": ["poa"]
+      "pricing": ["poa"],
       "website": "http://ibm.com/software/genservers/commerceproductline"
     },
     "IIS": {
@@ -7537,7 +7537,7 @@
         "Kajabi": ""
       },
       "saas": true,
-      "pricing": ["mid"]
+      "pricing": ["mid"],
       "website": "https://newkajabi.com"
     },
     "Kampyle": {
@@ -8035,7 +8035,7 @@
       "scripts": "http://assets\\.webshopapp\\.com",
       "url": "seoshop.webshopapp.com",
       "saas": true,
-      "pricing": ["low"]
+      "pricing": ["low"],
       "website": "http://www.lightspeedhq.com/products/ecommerce/"
     },
     "LinkSmart": {
@@ -10347,7 +10347,7 @@
       },
       "scripts": "optimizely\\.com.*\\.js",
       "saas": true,
-      "pricing": ["poa", "high"]
+      "pricing": ["poa", "high"],
       "website": "https://www.optimizely.com"
     },
     "Oracle Application Server": {
@@ -11271,7 +11271,7 @@
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
       "oss": true,
-      "pricing": ["freemium"]
+      "pricing": ["freemium"],
       "website": "http://prebid.org"
     },
     "Prefix-Free": {
@@ -11318,7 +11318,7 @@
         "generator": "PrestaShop"
       },
       "oss": true,
-      "pricing": ["freemium"]
+      "pricing": ["freemium"],
       "website": "http://www.prestashop.com"
     },
     "Prism": {
@@ -12226,7 +12226,7 @@
         "riskifiedBeaconLoad": ""
       },
       "saas": true,
-      "pricing": ["poa"]
+      "pricing": ["poa"],
       "website": "https://www.riskified.com/"
     },
     "RiteCMS": {
@@ -12413,7 +12413,7 @@
       "icon": "SAP.svg",
       "implies": "Java",
       "saas": true,
-      "pricing": ["poa"]
+      "pricing": ["poa"],
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
     },
     "SAP Customer Data Cloud Sign-in": {
@@ -12619,7 +12619,7 @@
       },
       "scripts": "/demandware\\.static/",
       "saas": true,
-      "pricing": ["poa"]
+      "pricing": ["poa"],
       "website": "http://demandware.com"
     },
     "Salesforce Service Cloud": {
@@ -13105,7 +13105,7 @@
         "shoper": ""
       },
       "saas": true,
-      "pricing": ["low"]
+      "pricing": ["low"],
       "website": "https://www.shoper.pl"
     },
     "Shopery": {
@@ -13239,7 +13239,7 @@
         "/engine/Shopware/"
       ],
       "saas": true,
-      "pricing": ["low", "freemium", "recurring"]
+      "pricing": ["low", "freemium", "recurring"],
       "website": "https://www.shopware.com"
     },
     "Sift": {
@@ -15333,7 +15333,7 @@
       },
       "icon": "VTEX.svg",
       "saas": true,
-      "pricing": ["commission"]
+      "pricing": ["payg"],
       "website": "https://vtex.com/"
     },
     "Vaadin": {
@@ -15592,7 +15592,7 @@
       },
       "scripts": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
       "saas": true,
-      "pricing": ["low", "recurring"]
+      "pricing": ["low", "recurring"],
       "website": "https://www.volusion.com"
     },
     "Voog.com Website Builder": {
@@ -15700,7 +15700,7 @@
         "WHMCS": ""
       },
       "oss": true,
-      "pricing": ["low", "recurring"]
+      "pricing": ["low", "recurring"],
       "website": "http://www.whmcs.com"
     },
     "WP Engine": {
@@ -16172,7 +16172,7 @@
       },
       "scripts": "static\\.parastorage\\.com",
       "saas": true,
-      "pricing": ["low", "recurring"]
+      "pricing": ["low", "recurring"],
       "website": "https://www.wix.com"
     },
     "Wolf CMS": {
