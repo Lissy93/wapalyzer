@@ -551,7 +551,7 @@ const Driver = {
       !(await getOption('tracking', true)) ||
       hostnameIgnoreList.test(hostname)
     ) {
-      return
+      return []
     }
 
     if (typeof Driver.cache.robots[hostname] !== 'undefined') {
@@ -703,6 +703,8 @@ const Driver = {
 
       if (Driver.cache.ads.length > 1) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+
+        Driver.cache.ads = []
       }
     }
   },
