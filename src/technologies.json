@@ -567,8 +567,6 @@
         "adroll_pix_id": ""
       },
       "scripts": "(?:a|s)\\.adroll\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "http://adroll.com"
     },
     "Adally": {
@@ -1532,8 +1530,6 @@
       "html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
       "icon": "AppNexus.svg",
       "scripts": "adnxs\\.(?:net|com)",
-      "saas": true,
-      "pricing": ["poa"],
       "website": "http://appnexus.com"
     },
     "Apple Pay": {
@@ -1707,11 +1703,7 @@
       "headers": {
         "X-Confluence-Request-Time": ""
       },
-      "dom": {
-        "li.print-only": {
-          "text": "Atlassian Confluence ([\\d.]+)\\;version:\\1"
-        }
-      },
+      "html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence(?:[^>]+>Atlassian Confluence</a> ([\\d.]+))?\\;version:\\1",
       "icon": "Atlassian Confluence.svg",
       "implies": "Java",
       "meta": {
@@ -1736,19 +1728,15 @@
         13
       ],
       "cpe": "cpe:/a:atlassian:jira",
+      "html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(?:\\.\\d+)?))?\\;version:\\1",
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "js": {
-        "jira.id": ""
-      },
-      "dom": {
-        "#jira": {
-          "text": ""
-        }
+        "jira": ""
       },
       "meta": {
-        "application-name": "JIRA",
-        "data-version": "([\\d.]+)\\;version:\\1\\;confidence:0"
+        "ajs-version-number": "^(.+)$\\;version:\\1",
+        "application-name": "JIRA"
       },
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
@@ -2077,8 +2065,6 @@
       "icon": "BigCommerce.svg",
       "scripts": "cdn\\d+\\.bigcommerce\\.com/",
       "url": "mybigcommerce\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "http://www.bigcommerce.com"
     },
     "BigDump": {
@@ -2710,7 +2696,6 @@
       "js": {
         "fn_compare_strings": ""
       },
-      "pricing": ["mid", "onetime"],
       "website": "http://www.cs-cart.com"
     },
     "CacheFly": {
@@ -2747,8 +2732,6 @@
         "EC_GLOBAL_INFO": "",
         "EC_ROOT_DOMAIN": ""
       },
-      "saas": true,
-      "pricing": ["low"],
       "website": "https://ec.cafe24.com/"
     },
     "CakePHP": {
@@ -2765,6 +2748,18 @@
         "application-name": "CakePHP"
       },
       "website": "http://cakephp.org"
+    },
+    "Skedify": {
+      "cats": [
+        72
+      ],
+      "description": "Skedify is an appointment booking solution created for enterprises.",
+      "icon": "Skedify.svg",
+      "js": {
+        "Skedify.Plugin.version": "^(.+)$\\;version:\\1"
+      },
+      "scripts": "plugin\\.skedify\\.io",
+      "website": "https://calendly.com/"
     },
     "Calendly": {
       "cats": [
@@ -3739,8 +3734,6 @@
         "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
         "//static\\.criteo\\.net/js/ld/ld\\.js"
       ],
-      "saas": true,
-      "pricing": ["poa"],
       "website": "http://criteo.com"
     },
     "Cross Pixel": {
@@ -4303,7 +4296,6 @@
         "tpc\\.googlesyndication\\.com/safeframe",
         "googlesyndication\\.com.*abg\\.js"
       ],
-      "saas": true,
       "website": "http://www.doubleclickbygoogle.com/solutions/digital-marketing/ad-exchange/"
     },
     "DoubleClick Campaign Manager (DCM)": {
@@ -4329,8 +4321,6 @@
       "description": "DoubleClick for Publishers (DFP) is a hosted ad serving platform that streamlines your ad management.",
       "icon": "DoubleClick.svg",
       "scripts": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
-      "saas": true,
-      "pricing": ["freemium"],
       "website": "http://www.google.com/dfp"
     },
     "DovetailWRP": {
@@ -4497,7 +4487,6 @@
         "eccube\\.js",
         "win_op\\.js"
       ],
-      "oss": true,
       "website": "http://www.ec-cube.net"
     },
     "EKM": {
@@ -4543,8 +4532,6 @@
       "js": {
         "epages": ""
       },
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "http://www.epages.com/"
     },
     "EPiServer": {
@@ -4615,8 +4602,6 @@
         "https://app\\.multiscreenstore\\.com/script\\.js",
         "https://app\\.ecwid\\.com/script\\.js"
       ],
-      "saas": true,
-      "pricing": ["freemium"],
       "website": "https://www.ecwid.com/"
     },
     "EdgeCast": {
@@ -6029,7 +6014,6 @@
         "2mdn\\.net",
         "ad\\.ca\\.doubleclick\\.net"
       ],
-      "saas": true,
       "website": "https://www.google.fr/adsense/start/"
     },
     "Google Analytics": {
@@ -6829,8 +6813,6 @@
       "icon": "IBM.svg",
       "implies": "Java",
       "url": "/wcs/",
-      "saas": true,
-      "pricing": ["poa"],
       "website": "http://ibm.com/software/genservers/commerceproductline"
     },
     "IIS": {
@@ -7595,8 +7577,6 @@
       "js": {
         "Kajabi": ""
       },
-      "saas": true,
-      "pricing": ["mid"],
       "website": "https://newkajabi.com"
     },
     "Kampyle": {
@@ -8093,8 +8073,6 @@
       "icon": "Lightspeed.svg",
       "scripts": "http://assets\\.webshopapp\\.com",
       "url": "seoshop.webshopapp.com",
-      "saas": true,
-      "pricing": ["low"],
       "website": "http://www.lightspeedhq.com/products/ecommerce/"
     },
     "LinkSmart": {
@@ -8543,7 +8521,6 @@
         "skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community",
         "static/_requirejs\\;confidence:50\\;version:2"
       ],
-      "oss": true,
       "website": "https://magento.com"
     },
     "MailChimp": {
@@ -10113,7 +10090,6 @@
         "generator": "Odoo"
       },
       "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
-      "oss": true,
       "website": "http://odoo.com"
     },
     "Olark": {
@@ -10405,8 +10381,6 @@
         "optimizely": ""
       },
       "scripts": "optimizely\\.com.*\\.js",
-      "saas": true,
-      "pricing": ["poa", "high"],
       "website": "https://www.optimizely.com"
     },
     "Oracle Application Server": {
@@ -11334,7 +11308,6 @@
         "<input type=\"hidden\" name=\"shopid\""
       ],
       "icon": "Powergap.png",
-      "saas": true,
       "website": "http://powergap.de"
     },
     "Prebid": {
@@ -11351,8 +11324,6 @@
         "/prebid\\.js",
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
-      "oss": true,
-      "pricing": ["freemium"],
       "website": "http://prebid.org"
     },
     "Prefix-Free": {
@@ -11398,8 +11369,6 @@
       "meta": {
         "generator": "PrestaShop"
       },
-      "oss": true,
-      "pricing": ["freemium"],
       "website": "http://www.prestashop.com"
     },
     "Prism": {
@@ -12306,8 +12275,6 @@
         "RISKX": "",
         "riskifiedBeaconLoad": ""
       },
-      "saas": true,
-      "pricing": ["poa"],
       "website": "https://www.riskified.com/"
     },
     "RiteCMS": {
@@ -12493,8 +12460,6 @@
       ],
       "icon": "SAP.svg",
       "implies": "Java",
-      "saas": true,
-      "pricing": ["poa"],
       "website": "https://www.sap.com/products/crm/e-commerce-platforms.html"
     },
     "SAP Customer Data Cloud Sign-in": {
@@ -12699,8 +12664,6 @@
         "dwAnalytics": ""
       },
       "scripts": "/demandware\\.static/",
-      "saas": true,
-      "pricing": ["poa"],
       "website": "http://demandware.com"
     },
     "Salesforce Service Cloud": {
@@ -13185,8 +13148,6 @@
       "js": {
         "shoper": ""
       },
-      "saas": true,
-      "pricing": ["low"],
       "website": "https://www.shoper.pl"
     },
     "Shopery": {
@@ -13236,8 +13197,6 @@
       },
       "scripts": "sdks\\.shopifycdn\\.com",
       "url": "^https?//.+\\.myshopify\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "http://shopify.com"
     },
     "Shopline": {
@@ -13319,8 +13278,6 @@
         "/jquery\\.shopware\\.min\\.js",
         "/engine/Shopware/"
       ],
-      "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
       "website": "https://www.shopware.com"
     },
     "Sift": {
@@ -15417,8 +15374,6 @@
         "powered": "vtex"
       },
       "icon": "VTEX.svg",
-      "saas": true,
-      "pricing": ["payg"],
       "website": "https://vtex.com/"
     },
     "Vaadin": {
@@ -15676,8 +15631,6 @@
         "volusion": ""
       },
       "scripts": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://www.volusion.com"
     },
     "Voog.com Website Builder": {
@@ -15784,8 +15737,6 @@
       "js": {
         "WHMCS": ""
       },
-      "oss": true,
-      "pricing": ["low", "recurring"],
       "website": "http://www.whmcs.com"
     },
     "WP Engine": {
@@ -16268,8 +16219,6 @@
         "generator": "Wix\\.com Website Builder"
       },
       "scripts": "static\\.parastorage\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://www.wix.com"
     },
     "Wolf CMS": {
@@ -16308,7 +16257,6 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "scripts": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
-      "oss": true,
       "website": "https://woocommerce.com"
     },
     "Woopra": {
@@ -17886,7 +17834,6 @@
       "meta": {
         "generator": "^nopCommerce$"
       },
-      "oss": true,
       "website": "http://www.nopcommerce.com"
     },
     "osCommerce": {
@@ -18500,27 +18447,6 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
-    },
-    "KaTeX": {
-      "cats": [
-        25
-      ],
-      "description": "KaTeX is a cross-browser JavaScript library that displays mathematical notation in web browsers.",
-      "icon": "KaTeX.svg",
-      "oss": true,
-      "dom": {
-        "link[href*=katex]": {
-          "attributes": {
-            "href": "katex(?:\\.min)?\\.css"
-          }
-        }
-      },
-      "js": {
-        "katex": "",
-        "katex.version": "^(.+)$\\;version:\\1"
-      },
-      "scripts": "katex(?:\\.min)?\\.js",
-      "website": "https://katex.org/"
     }
   }
 }
