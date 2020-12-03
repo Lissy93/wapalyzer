@@ -10491,6 +10491,20 @@
       "icon": "OpenSSL.png",
       "website": "http://openssl.org"
     },
+    "OpenStreetMap": {
+      "cats": [
+        35
+      ],
+      "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
+      "icon": "OpenStreetMap.svg",
+      "dom": {
+        "iframe[src=*openstreetmap.org],iframe[data-lazy-src=*openstreetmap.org]": {
+          "text": ""
+        }
+      },
+      "oss": true,
+      "website": "https://www.openstreetmap.org"
+    },
     "OpenText Web Solutions": {
       "cats": [
         1
