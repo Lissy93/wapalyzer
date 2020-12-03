@@ -3324,7 +3324,7 @@
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
       "icon": "ClustrMaps.svg",
       "dom": {
-        "img[src*=clustrmaps.com]": {
+        "img[src*='clustrmaps.com']": {
           "attributes": {
             "src": ""
           }
@@ -10575,8 +10575,10 @@
       "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
       "icon": "OpenStreetMap.svg",
       "dom": {
-        "iframe[src=*openstreetmap.org],iframe[data-lazy-src=*openstreetmap.org]": {
-          "text": ""
+        "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']": {
+          "attributes": {
+            "src": ""
+          }
         }
       },
       "oss": true,
@@ -15330,6 +15332,18 @@
       "icon": "TrustArc.svg",
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
+    },
+    "Trustpilot": {
+      "cats": [
+        5
+      ],
+      "description": "Trustpilot is a Danish consumer review website which provide embed stand-alone applications in your website to show your most recent reviews, TrustScore, and star ratings.",
+      "icon": "Trustpilot.svg",
+      "js": {
+        "Trustpilot": ""
+      },
+      "scripts": "\\.trustpilot\\.com",
+      "website": "https://business.trustpilot.com"
     },
     "Tumblr": {
       "cats": [
