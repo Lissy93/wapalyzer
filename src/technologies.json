@@ -3312,6 +3312,22 @@
       "icon": "Cloudinary.svg",
       "website": "https://cloudinary.com"
     },
+    "ClustrMaps Widget": {
+      "cats": [
+        35
+      ],
+      "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
+      "icon": "ClustrMaps.svg",
+      "dom": {
+        "img[src*=clustrmaps.com]": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "scripts": "clustrmaps\\.com",
+      "website": "https://clustrmaps.com/"
+    },
     "Coaster CMS": {
       "cats": [
         1
