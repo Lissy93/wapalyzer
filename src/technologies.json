@@ -462,6 +462,8 @@
         "AWIN.Tracking": ""
       },
       "scripts": "dwin1\\.com",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://www.awin.com"
     },
     "AWS Certificate Manager": {
@@ -994,6 +996,7 @@
       ],
       "icon": "akaunting.svg",
       "implies": "Laravel",
+      "oss": true,
       "website": "https://akaunting.com"
     },
     "Akka HTTP": {
@@ -1112,6 +1115,7 @@
         }
       },
       "icon": "Amazon.svg",
+      "saas": true,
       "website": "https://affiliate-program.amazon.com.au/"
     },
     "Amazon Cloudfront": {
@@ -13438,6 +13442,8 @@
       },
       "icon": "SlickStack.png",
       "implies": "WordPress",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://slickstack.io"
     },
     "Slimbox": {
@@ -15452,6 +15458,8 @@
         "vl_disable": ""
       },
       "scripts": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://viglink.com"
     },
     "Vigbo": {
