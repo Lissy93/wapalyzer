@@ -3283,9 +3283,9 @@
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
       "icon": "ClustrMaps.svg",
       "dom": {
-        "img": {
+        "img[src*=clustrmaps.com]": {
           "attributes": {
-            "src": "clustrmaps\\.com"
+            "src": ""
           }
         }
       },
