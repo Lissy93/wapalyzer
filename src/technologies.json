@@ -7040,11 +7040,14 @@
       "cats": [
         6
       ],
+      "description": "Ideasoft is a Turkish software company providing web-based software solutions, software design, ecommerce solutions, and other services.",
       "icon": "Ideasoft.png",
       "scripts": [
-        "\\.myideasoft\\.com/"
+        "\\.myideasoft\\.com/([\\d.]+)\\;version:\\1"
       ],
-      "website": "https://www.ideasoft.com"
+      "saas": true,
+      "pricing": ["mid","recurring"],
+      "website": "https://www.ideasoft.com.tr"
     },
     "Identrust": {
       "cats": [
