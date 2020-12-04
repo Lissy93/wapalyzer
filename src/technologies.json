@@ -2870,6 +2870,21 @@
       "icon": "Cart-generic.svg",
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
+    "CartStack": {
+      "cats": [
+        6,
+        10
+      ],
+      "description": "CartStack is a SaaS solution that allows any company with an ecommerce site or reservation system to increase revenue through reminding/encouraging consumers to return to their abandoned cart and complete their purchase.",
+      "icon": "CartStack.svg",
+      "js": {
+        "_cartstack": ""
+      },
+      "scripts": "api\\.cartstack\\.\\w+",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.cartstack.com"
+    },
     "Catberry.js": {
       "cats": [
         12,
