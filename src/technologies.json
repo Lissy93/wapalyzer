@@ -15365,6 +15365,22 @@
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
     },
+    "TrustYou": {
+      "cats": [
+        5
+      ],
+      "description": "TrustYou is guest feedback and hotel reputation software company located in Germany.",
+      "icon": "TrustYou.svg",
+      "dom": {
+        "iframe[src*='api.trustyou.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "saas": true,
+      "website": "https://www.trustyou.com"
+    },
     "Tumblr": {
       "cats": [
         11
