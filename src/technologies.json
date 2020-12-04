@@ -3324,7 +3324,7 @@
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
       "icon": "ClustrMaps.svg",
       "dom": {
-        "img[src*=clustrmaps.com]": {
+        "img[src*='clustrmaps.com']": {
           "attributes": {
             "src": ""
           }
@@ -7011,11 +7011,14 @@
       "cats": [
         6
       ],
+      "description": "Ideasoft is a Turkish software company providing web-based software solutions, software design, ecommerce solutions, and other services.",
       "icon": "Ideasoft.png",
       "scripts": [
-        "\\.myideasoft\\.com/"
+        "\\.myideasoft\\.com/([\\d.]+)\\;version:\\1"
       ],
-      "website": "https://www.ideasoft.com"
+      "saas": true,
+      "pricing": ["mid","recurring"],
+      "website": "https://www.ideasoft.com.tr"
     },
     "Identrust": {
       "cats": [
@@ -10575,8 +10578,10 @@
       "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
       "icon": "OpenStreetMap.svg",
       "dom": {
-        "iframe[src=*openstreetmap.org],iframe[data-lazy-src=*openstreetmap.org]": {
-          "text": ""
+        "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']": {
+          "attributes": {
+            "src": ""
+          }
         }
       },
       "oss": true,
