@@ -3324,7 +3324,7 @@
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
       "icon": "ClustrMaps.svg",
       "dom": {
-        "img[src*=clustrmaps.com]": {
+        "img[src*='clustrmaps.com']": {
           "attributes": {
             "src": ""
           }
@@ -10575,8 +10575,10 @@
       "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
       "icon": "OpenStreetMap.svg",
       "dom": {
-        "iframe[src=*openstreetmap.org],iframe[data-lazy-src=*openstreetmap.org]": {
-          "text": ""
+        "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']": {
+          "attributes": {
+            "src": ""
+          }
         }
       },
       "oss": true,
@@ -15330,6 +15332,22 @@
       "icon": "TrustArc.svg",
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
+    },
+    "TrustYou": {
+      "cats": [
+        5
+      ],
+      "description": "TrustYou is guest feedback and hotel reputation software company located in Germany.",
+      "icon": "TrustYou.svg",
+      "dom": {
+        "iframe[src*='api.trustyou.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "saas": true,
+      "website": "https://www.trustyou.com"
     },
     "Tumblr": {
       "cats": [
