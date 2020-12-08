@@ -8926,6 +8926,25 @@
       "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
     },
+    "Mapbox GL JS": {
+        "cats": [
+          35
+        ],
+        "description": "Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.",
+        "icon": "Mapbogljs.png",
+        "js": {
+            "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
+        },
+        "dom": {
+            "link[href*='mapbox-gl.css']": {
+                "attributes": {
+                    "href": ""
+                }
+            }
+        },
+        "scripts": "mapbox-gl.js",
+        "website": "https://github.com/mapbox/mapbox-gl-js"
+    },
     "MariaDB": {
       "cats": [
         34
