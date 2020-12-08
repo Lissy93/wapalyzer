@@ -359,13 +359,36 @@
       ],
       "dom": {
         "iframe[src*='buildertrend.net'], script[src*='buildertrend.net']": {
-          "src": ""
+          "attributes": {
+            "src": ""
+          }
         }
       },
       "saas": true,
       "pricing": ["mid", "recurring"],
       "icon": "Buildertrend.svg",
       "website": "https://buildertrend.com"
+    },
+    "CoConstruct": {
+      "cats": [
+        19
+      ],
+      "dom": {
+        "a[href*='co-construct.com/skins']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "iframe[src*='co-construct.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "icon": "CoConstruct.png",
+      "website": "https://www.coconstruct.com"
     },
     "AD EBiS": {
       "cats": [
@@ -5469,6 +5492,9 @@
         "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
       ],
       "icon": "font-awesome.svg",
+      "js": {
+        "___FONT_AWESOME___": ""
+      },
       "scripts": [
         "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
         "kit\\.fontawesome\\.com/([0-9a-z]+).js"
