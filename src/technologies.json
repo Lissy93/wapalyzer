@@ -683,6 +683,24 @@
       "implies": "PHP",
       "website": "http://www.adminer.org"
     },
+    "Upvoty": {
+      "cats": [
+        47
+      ],
+      "dom": {
+        "div.upvotyContainer": {
+          "text": ""
+        }
+      },
+      "js": {
+        "upvoty": ""
+      },
+      "icon": "upvoty.png",
+      "implies": "PHP",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://upvoty.com"
+    },
     "Adnegah": {
       "cats": [
         36
@@ -1745,6 +1763,24 @@
       },
       "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
+    },
+    "ATSHOP": {
+      "cats": [
+        6
+      ],
+      "description": "ATSHOP is an all-in-one ecommerce platform.",
+      "icon": "ATSHOP.png",
+      "dom": {
+        "link[href*='cdn\\.atshop\\.io']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "\\.atshop\\.io",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://atshop.io"
     },
     "Atlassian Bitbucket": {
       "cats": [
@@ -4349,7 +4385,8 @@
     },
     "Docusaurus": {
       "cats": [
-        4
+        4,
+        57
       ],
       "description": "Docusaurus is a tool for teams to publish documentation websites.",
       "icon": "docusaurus.svg",
@@ -8559,6 +8596,21 @@
       "scripts": "livewire(?:\\.min)?\\.js",
       "website": "https://laravel-livewire.com"
     },
+    "Loox": {
+      "cats": [
+        5,
+        6
+      ],
+      "description": "Loox is a reviews app for Shopify that helps you gather reviews and user-generated photos from your customers.",
+      "icon": "Loox.svg",
+      "js": {
+        "loox_global_hash": ""
+      },
+      "scripts": "loox\\.io/widget",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://loox.app"
+    },
     "LocalFocus": {
       "cats": [
         25
@@ -8929,6 +8981,25 @@
       "icon": "ManyContacts.png",
       "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
+    },
+    "Mapbox GL JS": {
+        "cats": [
+          35
+        ],
+        "description": "Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.",
+        "icon": "Mapbogljs.png",
+        "js": {
+            "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
+        },
+        "dom": {
+            "link[href*='mapbox-gl.css']": {
+                "attributes": {
+                    "href": ""
+                }
+            }
+        },
+        "scripts": "mapbox-gl.js",
+        "website": "https://github.com/mapbox/mapbox-gl-js"
     },
     "MariaDB": {
       "cats": [
@@ -16107,6 +16178,23 @@
       "icon": "Voog.png",
       "scripts": "voog\\.com/tracker\\.js",
       "website": "https://www.voog.com/"
+    },
+    "Voracio": {
+      "cats": [
+        6
+      ],
+      "description": "Voracio is a cloud SaaS ecommerce platform powered by Microsoft .NET and built on the Microsoft Azure cloud framework.",
+      "icon": "Voracio.svg",
+      "cookies": {
+        "voracio_sessionid": "",
+        "voracio_csrf_token": ""
+      },
+      "js": {
+        "voracio": ""
+      },
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.voracio.co.uk"
     },
     "Vue.js": {
       "cats": [
