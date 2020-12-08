@@ -353,6 +353,20 @@
       "scripts": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://aframe.io"
     },
+    "Buildertrend": {
+      "cats": [
+        19
+      ],
+      "dom": {
+        "iframe[src*='buildertrend.net'], script[src*='buildertrend.net']": {
+          "src": ""
+        }
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "icon": "Buildertrend.svg",
+      "website": "https://buildertrend.com"
+    },
     "AD EBiS": {
       "cats": [
         10
