@@ -8900,9 +8900,9 @@
             "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
         },
         "dom": {
-            "link": {
+            "link[href*='mapbox-gl.css']": {
                 "attributes": {
-                    "href": "mapbox-gl.css"
+                    "href": ""
                 }
             }
         },
