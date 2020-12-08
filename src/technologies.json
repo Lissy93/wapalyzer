@@ -1709,6 +1709,24 @@
       "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
     },
+    "ATSHOP": {
+      "cats": [
+        6
+      ],
+      "description": "ATSHOP is an all-in-one ecommerce platform.",
+      "icon": "ATSHOP.png",
+      "dom": {
+        "link[href*='cdn\\.atshop\\.io']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "\\.atshop\\.io",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://atshop.io"
+    },
     "Atlassian Bitbucket": {
       "cats": [
         47
