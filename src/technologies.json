@@ -5430,6 +5430,24 @@
       "icon": "Fireblade.png",
       "website": "http://fireblade.com"
     },
+    "Firepush": {
+      "cats": [
+        32
+      ],
+      "description": "Firepush is an omnichannel marketing app that helps Shopify stores to drive sales with automated web push, email and SMS campaigns.",
+      "icon": "Firepush.svg",
+      "dom": {
+        "link[href*='cdn.firepush.net']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "cdn\\.firepush\\.\\w+",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://getfirepush.com"
+    },
     "Flarum": {
       "cats": [
         2
