@@ -1604,10 +1604,17 @@
         69
       ],
       "description": "Apple Sign-in is based on OAuth 2.0 and OpenID Connect, and provides a privacy-friendly way for users to sign in to websites and apps.",
-      "html": [
-        "<meta[ˆ>]*appleid-signin-client-id",
-        "<a[ˆ>]*appleid\\.apple\\.com/auth/authorize"
-      ],
+      "dom": {
+        "a[href*='appleid.apple.com/auth/authorize']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "button": {
+          "text": "(Sign|Log) in with Apple"
+        }
+      },
+      "html": "<meta[ˆ>]*appleid-signin-client-id",
       "icon": "Apple.svg",
       "scripts": "appleid.auth.js",
       "website": "https://developer.apple.com/sign-in-with-apple/"
@@ -6421,6 +6428,11 @@
         69
       ],
       "description": "Google Sign-In is a secure authentication system that reduces the burden of login for users, by enabling them to sign in with their Google account.",
+      "dom": {
+        "button": {
+          "text": "(Sign|Log) in with Google"
+        }
+      },
       "html": [
         "<meta[^>]*google-signin-client_id",
         "<meta[^>]*google-signin-scope",
