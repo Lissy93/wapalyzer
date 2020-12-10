@@ -983,6 +983,18 @@
       "icon": "Airform.svg",
       "website": "https://airform.io"
     },
+    "Airship": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Airship is an American company that provides marketing and branding services. Airship allows companies to generate custom messages to consumers via push notifications, SMS messaging, and similar, and provides customer analytics services.",
+      "icon": "Airship.svg",
+      "scripts": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.airship.com"
+    },
     "Akamai": {
       "cats": [
         31
