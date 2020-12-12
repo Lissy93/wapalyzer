@@ -1611,12 +1611,15 @@
           }
         },
         "button": {
-          "text": "(Sign|Log) in with Apple"
+          "text": "(Sign (in|up)|Log in|Continue) with Apple"
         }
       },
       "html": "<meta[ˆ>]*appleid-signin-client-id",
+      "js": {
+        "AppleID": ""
+      },
+      "scripts": "appleid\\.auth\\.js",
       "icon": "Apple.svg",
-      "scripts": "appleid.auth.js",
       "website": "https://developer.apple.com/sign-in-with-apple/"
     },
     "Appointy": {
