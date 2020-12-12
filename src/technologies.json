@@ -9111,7 +9111,26 @@
       "js": {
         "Munchkin": ""
       },
-      "scripts": "munchkin\\.marketo\\.net/munchkin\\.js",
+      "scripts": "munchkin\\.marketo\\.\\w+/(?:([\\d.]+)/)?munchkin\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.marketo.com"
+    },
+    "Marketo Forms": {
+      "cats": [
+        5
+      ],
+      "description": "Marketo Forms help create web forms without programming knowledge. Forms can reside on Marketo landing pages and also be embedded on any page of website.",
+      "icon": "Marketo.png",
+      "js": {
+        "formatMarketoForm": ""
+      },
+      "scripts": [
+        "marketo\\.\\w+/js/forms(?:[\\d.]+)/js/forms([\\d.]+)\\.min\\.js\\;version:\\1",
+        "v([\\d.]+)/js/marketo-alt-form\\.min\\.js\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.marketo.com"
     },
     "Mastercard": {
