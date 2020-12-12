@@ -15278,8 +15278,10 @@
         5
       ],
       "icon": "Taggbox.svg",
-      "scripts": "web\\.taggbox\\.com",
-      "url": "web\\.taggbox\\.com",
+      "script": "(widget|web)\\.taggbox\\.com",
+      "url": "(widget|web)\\.taggbox\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring", "freemium"],
       "website": "https://taggbox.com/"
     },
     "Taiga": {
@@ -16555,7 +16557,7 @@
         "dev\\.visualwebsiteoptimizer\\.com/?([\\d.]+)\\;version:\\1"
       ],
       "saas": true,
-      "pricing": ["mid", "recurring"], 
+      "pricing": ["mid", "recurring"],
       "website": "https://vwo.com/"
     },
     "VWO Engage": {
@@ -16569,7 +16571,7 @@
       },
       "scripts": "cdn\\.pushcrew\\.\\w+",
       "saas": true,
-      "pricing": ["mid", "recurring"],     
+      "pricing": ["mid", "recurring"],
       "website": "https://vwo.com/engage"
     },
     "W3 Total Cache": {
