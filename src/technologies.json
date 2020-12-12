@@ -14067,6 +14067,21 @@
       "scripts": "plugin\\.skedify\\.io",
       "website": "https://calendly.com/"
     },
+    "SkyVerge": {
+      "cats": [
+        41
+      ],
+      "description": "SkyVerge  is a company which develop extension tools for WooCommerce stores.",
+      "implies": "WooCommerce",
+      "icon": "SkyVerge.svg",
+      "js": {
+        "sv_wc_payment_gateway_payment_form_param": ""
+      },
+      "scripts": "sv-wc-payment-gateway-payment-form\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.skyverge.com"
+    },
     "Slick": {
       "cats": [
         59
