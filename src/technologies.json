@@ -8941,10 +8941,53 @@
       "icon": "mailchimp.svg",
       "scripts": [
         "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
-        "cdn-images\\.mailchimp\\.com/[^>]*\\.css",
-        "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
-        "mailchimp-for-wp/assets/js/forms\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+        "cdn-images\\.mailchimp\\.com/[^>]*\\.css"
       ],
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "http://mailchimp.com"
+    },
+    "MailChimp for WooCommerce": {
+      "cats": [
+        32,
+        75
+      ],
+      "excludes": "MailChimp",  
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
+      "scripts": "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "http://mailchimp.com"
+    },
+    "MailChimp for WordPress": {
+      "cats": [
+        32,
+        75
+      ],
+      "excludes": "MailChimp",  
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
+      "js": {
+        "mc4wp": "\\;confidence:50"
+      },
+      "scripts": "mailchimp-for-wp/assets/js/forms\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "http://mailchimp.com"
+    },
+    "MailChimp for Shopify": {
+      "cats": [
+        32,
+        75
+      ],
+      "excludes": "MailChimp",  
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
+      "js": {
+        "$mcSite": "\\;confidence:50"
+      },
+      "scripts": "chimpstatic\\.com/mcjs-connected",
       "saas": true,
       "pricing": ["low", "freemium", "recurring"],
       "website": "http://mailchimp.com"
