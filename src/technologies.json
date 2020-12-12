@@ -2555,6 +2555,22 @@
       "scripts": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
     },
+    "Braze": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Braze is a customer engagement platform that delivers messaging experiences across push, email, in-product, and more.",
+      "icon": "Braze.svg",
+      "js": {
+        "appboy": "",
+        "appboyQueue": ""
+      },
+      "scripts": "js\\.appboycdn\\.com/web-sdk/([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.braze.com"
+    },
     "Brightspot": {
       "cats": [
         1
