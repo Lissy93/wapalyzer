@@ -10383,6 +10383,25 @@
       "scripts": "^/nodebb\\.min\\.js\\?",
       "website": "https://nodebb.org"
     },
+    "Nosto": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "Nosto is an ecommerce platform providing product recommendations based on individual behavioral data.",
+      "icon": "Nosto.svg",
+      "js": {
+        "nostojs": "\\;confidence:50",
+        "nosto": "\\;confidence:50"
+      },
+      "meta": {
+        "nosto-version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "connect\\.nosto\\.\\w+/",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.nosto.com"
+    },
     "Nuvemshop": {
       "cats": [
         6
