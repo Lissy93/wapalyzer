@@ -9156,8 +9156,7 @@
       "cats": [
         32,
         75
-      ],
-      "includes": "MailChimp",  
+      ],  
       "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "icon": "mailchimp.svg",
       "scripts": "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
@@ -9169,8 +9168,7 @@
       "cats": [
         32,
         75
-      ],
-      "includes": "MailChimp",  
+      ], 
       "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "icon": "mailchimp.svg",
       "js": {
@@ -9186,7 +9184,6 @@
         32,
         75
       ],
-      "includes": "MailChimp",  
       "description": "Mailchimp is a marketing automation platform and email marketing service.",
       "icon": "mailchimp.svg",
       "js": {
@@ -15500,7 +15497,7 @@
         5
       ],
       "icon": "Taggbox.svg",
-      "script": "(widget|web)\\.taggbox\\.com",
+      "scripts": "(widget|web)\\.taggbox\\.com",
       "url": "(widget|web)\\.taggbox\\.com",
       "saas": true,
       "pricing": ["low", "recurring", "freemium"],
