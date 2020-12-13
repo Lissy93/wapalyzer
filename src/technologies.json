@@ -15496,9 +15496,15 @@
       "cats": [
         5
       ],
+      "description": "Taggbox is an UGC platform to collect, curate, manage rights, and publish user-generated content marketing campaigns across multiple channels.",
       "icon": "Taggbox.svg",
-      "scripts": "(widget|web)\\.taggbox\\.com",
-      "url": "(widget|web)\\.taggbox\\.com",
+      "js": {
+        "taggboxAjaxurl": ""
+      },
+      "scripts": [
+        "(?:widget|web)\\.taggbox\\.com",
+        "taggbox\\.com/app/js/embed\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+      ],
       "saas": true,
       "pricing": ["low", "recurring", "freemium"],
       "website": "https://taggbox.com/"
