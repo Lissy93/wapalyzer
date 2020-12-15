@@ -723,6 +723,8 @@
         "/etc/clientlibs/",
         "/etc\\.clientlibs/"
       ],
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.adobe.com/marketing/experience-manager.html"
     },
     "Adobe Experience Platform Identity Service": {
@@ -2738,6 +2740,8 @@
         "Calendly": ""
       },
       "scripts": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
+      "saas": true,
+      "pricing": ["low", "freemium"],
       "website": "https://calendly.com/"
     },
     "Captch Me": {
@@ -2963,6 +2967,8 @@
         "ChiliPiper": ""
       },
       "scripts": "js\\.chilipiper\\.com/marketing\\.js",
+      "saas": true,
+      "pricing": ["low", "freemium"],
       "website": "https://www.chilipiper.com/"
     },
     "Chitika": {
@@ -3442,6 +3448,8 @@
       "meta": {
         "generator": "^Contao Open Source CMS$"
       },
+      "description": "Contao is an open source CMS that allows you to create websites and scalable web applications."
+      "oss" true,
       "website": "http://contao.org"
     },
     "Contenido": {
@@ -3489,6 +3497,8 @@
       "description": "Contentful is an API-first content management platform to create, manage and publish content on any digital channel.",
       "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
       "icon": "Contentful.svg",
+      "saas": true,
+      "pricing": ["mid", "freemium", "recurring"],
       "website": "http://www.contentful.com"
     },
     "ConversionLab": {
@@ -3632,6 +3642,7 @@
       },
       "icon": "Craft CMS.svg",
       "implies": "Yii",
+      "oss": true,
       "pricing": ["low", "freemium", "recurring", "onetime"],
       "website": "https://craftcms.com"
     },
@@ -3856,6 +3867,7 @@
         "/js/dnncore\\.js",
         "/js/dnn\\.js"
       ],
+      "oss": true,
       "website": "http://dnnsoftware.com"
     },
     "DTG": {
@@ -3879,6 +3891,9 @@
       },
       "icon": "Dancer.png",
       "implies": "Perl",
+      "description": "Mono.net delivers the a Software-as-a-Service (SaaS) platform to build and sell websites and other digital products.",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://perldancer.org"
     },
     "Danneo CMS": {
@@ -4349,6 +4364,7 @@
         "generator": "^Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "scripts": "drupal\\.js",
+      "oss": true,
       "website": "https://drupal.org"
     },
     "Drupal Commerce": {
@@ -4371,6 +4387,8 @@
         "SystemID": "^.*DIRECT.*$",
         "version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://www.duda.co/website-builder"
     },
     "Duopana": {
@@ -4895,6 +4913,8 @@
       "cpe": "cpe:/a:ellislab:expressionengine",
       "icon": "ExpressionEngine.svg",
       "implies": "PHP",
+      "description": "ExpressionEngine is a free and open-source CMS.",
+      "oss" true,
       "website": "http://expressionengine.com"
     },
     "ExtJS": {
@@ -5025,6 +5045,8 @@
       "html": "<iframe[^>]+fareharbor",
       "icon": "FareHarbor.svg",
       "scripts": "fareharbor\\.com/embeds/api/",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://fareharbor.com"
     },
     "Fastcommerce": {
@@ -5912,6 +5934,8 @@
       "meta": {
         "generator": "Go Daddy Website Builder (.+)\\;version:\\1"
       },
+      "saas": true,
+      "pricing": ["mid"],
       "website": "https://www.godaddy.com/websites/website-builder"
     },
     "GoJS": {
@@ -7419,6 +7443,9 @@
       },
       "icon": "jimdo.png",
       "url": "\\.jimdo\\.com/",
+      "description": "Jimdo is a website-builder and all-in-one hosting solution, designed to enable users to build their own websites.",
+      "saas": true,
+      "pricing": ["low", "freemium"],
       "website": "https://www.jimdo.com"
     },
     "Jirafe": {
@@ -7490,6 +7517,7 @@
         "generator": "Joomla!(?: ([\\d.]+))?\\;version:\\1"
       },
       "url": "option=com_",
+      "oss": true,
       "website": "https://www.joomla.org"
     },
     "Jumpseller": {
@@ -7617,6 +7645,9 @@
         "generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1"
       },
       "scripts": "/CMSPages/GetResource\\.ashx",
+      "description": "Kentico CMS is a web content management system for building websites, online stores, intranets, and Web 2.0 community sites.",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://www.kentico.com"
     },
     "Kestrel": {
@@ -7991,6 +8022,9 @@
       "js": {
         "Liferay": ""
       },
+      "description": "Liferay is an open-source company that provides free documentation and paid professional service to users of its software."
+      "oss": true,
+      "pricing": ["poa],
       "website": "https://www.liferay.com"
     },
     "Lift": {
@@ -8183,6 +8217,8 @@
       "js": {
         "LHready": ""
       },
+      "saas": true,
+      "pricing": ["low"],
       "website": "http://www.livehelp.it"
     },
     "LiveJournal": {
@@ -8446,6 +8482,10 @@
       "meta": {
         "generator": "MODX[^\\d.]*([\\d.]+)?\\;version:\\1"
       },
+      "description": "MODX is an open source content management system and web application framework for publishing content on the world wide web and intranets.",
+      "oss": true,
+      "saas": true,
+      "pricing": ["low"],
       "website": "http://modx.com"
     },
     "MadAdsMedia": {
@@ -9101,6 +9141,8 @@
       "meta": {
         "generator": "Microsoft SharePoint"
       },
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://sharepoint.microsoft.com"
     },
     "Microsoft Word": {
@@ -9138,6 +9180,8 @@
         "HealcodeWidget": ""
       },
       "scripts": "\\w+\\.healcode\\.com",
+      "saas": true,
+      "pricing": ["mid"],
       "website": "https://www.mindbodyonline.com"
     },
     "Minero.cc": {
@@ -9660,6 +9704,9 @@
         "generator": "^.*MyWebsite.*$\\;version:8"
       },
       "scripts": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
+      "description": "MyWebsite is website builder designed for easy editing and fast results.",
+      "saas": true,
+      "pricing": ["low", "recurring"],
       "website": "https://www.ionos.com"
     },
     "Mynetcap": {
@@ -10023,6 +10070,8 @@
       "meta": {
         "generator": "OctoberCMS"
       },
+      "description": "October is a free, open-source, self-hosted CMS platform based on the Laravel PHP Framework.",
+      "oss": true,
       "website": "http://octobercms.com"
     },
     "Octopress": {
@@ -11008,6 +11057,8 @@
       "js": {
         "LeadBooster": ""
       },
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://www.pipedrive.com/"
     },
     "PixelFed": {
@@ -11275,7 +11326,6 @@
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
       "oss": true,
-      "pricing": ["freemium"],
       "website": "http://prebid.org"
     },
     "Prefix-Free": {
@@ -12603,6 +12653,8 @@
         "SFDCPage": "",
         "SFDCSessionVars": ""
       },
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://www.salesforce.com"
     },
     "Salesforce Commerce Cloud": {
@@ -12638,6 +12690,8 @@
         "embedded_svc": ""
       },
       "scripts": "service\\.force\\.com",
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://www.salesforce.com/au/products/service-cloud/"
     },
     "Sapper": {
@@ -13292,6 +13346,8 @@
       "meta": {
         "generator": "^SilverStripe"
       },
+      "description": "Silverstripe CMS is a free and open source Content Management System and Framework for creating and maintaining websites and web applications.",
+      "oss": true,
       "website": "https://www.silverstripe.org"
     },
     "Simbel": {
@@ -13378,6 +13434,9 @@
       },
       "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
       "icon": "Sitecore.png",
+      "description": "Sitecore provides web content management, and multichannel marketing automation software.",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://sitecore.net"
     },
     "Sitefinity": {
@@ -13389,6 +13448,9 @@
       "meta": {
         "generator": "^Sitefinity (.+)$\\;version:\\1"
       },
+      "description": "Sitefinity is a content management system (CMS) that you use to create, store, manage, and present content on your website.",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://www.sitefinity.com"
     },
     "Siteglide": {
@@ -13401,6 +13463,8 @@
       "icon": "Siteglide.svg",
       "implies": "PlatformOS",
       "scripts": "siteglide\\.js",
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://www.siteglide.com"
     },
     "Sivuviidakko": {
@@ -13893,6 +13957,8 @@
         "Squarespace": "",
         "Static.SQUARESPACE_CONTEXT": ""
       },
+      "saas": true,
+      "pricing": ["low", "recurring"],
       "website": "http://www.squarespace.com"
     },
     "Squarespace Commerce": {
@@ -14408,6 +14474,7 @@
       },
       "scripts": "^/?typo3(?:conf|temp)/",
       "url": "/typo3/",
+      "oss": true,
       "website": "https://typo3.org/"
     },
     "TableBooker": {
@@ -14779,9 +14846,12 @@
       "cats": [
         1
       ],
+      "description": "Tilda is a web design tool.",
       "html": "<link[^>]* href=[^>]+tilda(?:cdn|\\.ws|-blocks)",
       "icon": "Tilda.svg",
       "scripts": "tilda(?:cdn|\\.ws|-blocks)",
+      "saas": true,
+      "pricing": ["low", "recurring"],
       "website": "https://tilda.cc"
     },
     "Timeplot": {
@@ -16044,6 +16114,8 @@
         "_W.configDomain": ""
       },
       "scripts": "cdn\\d+\\.editmysite\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring", "freemium"],
       "website": "https://www.weebly.com"
     },
     "Weglot": {
@@ -16261,9 +16333,11 @@
         "/wp-(?:content|includes)/",
         "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
       ],
+      "saas": true,
+      "pricing": ["low", "recurring", "freemium"],
       "website": "https://wordpress.org"
-    },
-    "WordPress Super Cache": {
+      },
+      "WordPress Super Cache": {
       "cats": [
         23
       ],
@@ -16828,6 +16902,8 @@
         "x-zendesk-user-id": ""
       },
       "icon": "Zendesk.png",
+      "saas": true,
+      "pricing": ["low"],
       "website": "https://zendesk.com"
     },
     "Zendesk Chat": {
@@ -16941,6 +17017,8 @@
         ]
       },
       "icon": "Zoho.svg",
+      "saas": true,
+      "pricing": ["low", "freemium"],
       "website": "https://www.zoho.com/"
     },
     "Zoho Mail": {
