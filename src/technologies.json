@@ -1971,6 +1971,28 @@
       "scripts": "^https?://cdn\\.avasize\\.com/",
       "website": "https://www.avasize.com"
     },
+    "Aweber": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "AWeber is an email marketing service.",
+      "icon": "Aweber.svg",
+      "dom": {
+        "form[action*='aweber.com']": {
+          "attributes": {
+            "action": "www\\.aweber\\.com"
+          }
+        }
+      },
+      "js": {
+        "awt_analytics": ""
+      },
+      "scripts": "\\.aweber\\.com/",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.aweber.com"
+    },
     "Awesomplete": {
       "cats": [
         29
