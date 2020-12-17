@@ -6126,6 +6126,25 @@
       ],
       "website": "https://www.gemius.com"
     },
+    "Genesys Cloud": {
+      "cats": [
+        32,
+        5,
+        75
+      ],
+      "description": "Genesys Cloud is an all-in-one cloud-based contact center software built to improve the customer experience.",
+      "icon": "Genesys Cloud.svg",
+      "js": {
+        "PURECLOUD_WEBCHAT_FRAME_CONFIG": ""
+      },
+      "scripts": [
+        "apps\\.mypurecloud\\.\\w+/widgets/([\\d.]+)\\;version:\\1",
+        "apps\\.mypurecloud\\.\\w+"
+      ],
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.genesys.com"
+    },
     "GeneXus": {
       "cats": [
         27
