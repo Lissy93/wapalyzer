@@ -5566,7 +5566,13 @@
       ],
       "description": "FinanceAds is a performance marketing agency that has grown affiliate network for the financial sector.",
       "icon": "Financeads.png",
-      "html": "<link[^>]+href=\"[^>]*js\\.financeads\\.(?:net|com)",
+      "dom": {
+        "link[href*='js.financeads.net'], link[href*='js.financeads.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
       "saas": true,
       "pricing": ["payg"],
       "website": "https://www.financeads.com"
