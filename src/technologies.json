@@ -3154,6 +3154,21 @@
       },
       "website": "http://www.chamilo.org"
     },
+    "Chargebee": {
+      "cats": [
+        41
+      ],
+      "description": "Chargebee is a PCI Level 1 certified recurring billing platform for SaaS and subscription-based businesses.",
+      "icon": "Chargebee.svg",
+      "js": {
+        "Chargebee": "",
+        "chargebeeTrackFunc": ""
+      },
+      "scripts": "js\\.chargebee\\.com/v([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["mid","recurring"],
+      "website": "https://www.chargebee.com"
+    },
     "Chart.js": {
       "cats": [
         25
