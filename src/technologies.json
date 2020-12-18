@@ -5560,6 +5560,23 @@
       "scripts": "^https://feedback\\.fish/ff\\.js",
       "website": "https://feedback.fish"
     },
+    "Financeads": {
+      "cats": [
+        71
+      ],
+      "description": "FinanceAds is a performance marketing agency that has grown affiliate network for the financial sector.",
+      "icon": "Financeads.png",
+      "dom": {
+        "link[href*='js.financeads.net'], link[href*='js.financeads.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.financeads.com"
+    },
     "FingerprintJS": {
       "cats": [
         59
