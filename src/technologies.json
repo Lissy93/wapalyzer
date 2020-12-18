@@ -11240,7 +11240,7 @@
       "description": "Optimise Media Group is a UK-based performance advertising network.",
       "icon": "Optimise.svg",
       "js": {
-        "OMID": "\\;confidence:50"
+        "OMID": "^[0-9]+$"
       },
       "scripts": "track\\.omguk\\.com",
       "website": "https://www.optimisemedia.com"
