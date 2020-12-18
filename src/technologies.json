@@ -8359,6 +8359,23 @@
       "scripts": "klaviyo\\.com",
       "website": "https://www.klaviyo.com/"
     },
+    "Klevu": {
+      "cats": [
+        29,
+        6
+      ],
+      "description": "Klevu is a highly advanced AI-Powered search solution for ecommerce platforms.",
+      "icon": "Klevu.png",
+      "js": {
+        "klevu_apiKey": "",
+        "klevu_layout": "",
+        "klevu_sessionId": ""
+      },
+      "scripts": "js\\.klevu\\.\\w+/klevu-js-v([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.klevu.com"
+    },
     "Knockout.js": {
       "cats": [
         12
