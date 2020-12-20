@@ -16649,6 +16649,27 @@
       "scripts": "vaadinBootstrap\\.js(?:\\?v=([\\d.]+))?\\;version:\\1",
       "website": "https://vaadin.com"
     },
+    "ValueCommerce": {
+      "cats": [
+        71
+      ],
+      "description": "ValueCommerce is a pay-per-performance advertising affiliate marketing network.",
+      "icon": "ValueCommerce.png",
+      "dom": {
+        "img[src*='ap.valuecommerce.com'],img[data-src*='ap.valuecommerce.com']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "a[href*='ap.valuecommerce.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "\\.valuecommerce\\.com",
+      "website": "https://www.valuecommerce.co.jp"
+    },
     "Vanilla": {
       "cats": [
         2
