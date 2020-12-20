@@ -903,6 +903,23 @@
       ],
       "website": "http://blogengine.ru"
     },
+    "Affiliate B": {
+      "cats": [
+        71,
+        36
+      ],
+      "description": "Affiliate B is an advertising system that allows site operators (HP, blogs, e-mail newsletters, etc.) to place advertiser advertisements on their own sites.",
+      "icon": "Affiliate B.svg",
+      "dom": {
+        "img[src*='www.afi-b.com']": {
+          "attributes": {
+            "src": "www\\.afi-b\\.com"
+          }
+        }
+      },
+      "scripts": "t\\.afi-b\\.com",
+      "website": "https://affiliate-b.com"
+    },
     "Affiliate Future": {
       "cats": [
         71
