@@ -340,6 +340,27 @@
       },
       "website": "https://github.com/sulu/web-js"
     },
+    "A8.net": {
+      "cats": [
+        71
+      ],
+      "description": " A8.net is an affiliate marketing network.",
+      "icon": "A8.net.png",
+      "dom": {
+        "img[src*='.a8.net']": {
+          "attributes": {
+            "src": "\\.a8\\.net"
+          }
+        }
+      },
+      "js": {
+        "a8sales": "",
+        "A8salesCookieRepository": "",
+        "map_A8": ""
+      },
+      "scripts": "statics\\.a8\\.net",
+      "website": "https://www.a8.net"
+    },
     "A-Frame": {
       "cats": [
         25
