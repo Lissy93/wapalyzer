@@ -537,9 +537,15 @@
         68
       ],
       "description": "AccessiBe is an automated web accessibility solution for ADA and WCAG compliance. The system scans and analyzes a website using AI technology, and applies all the required adjustments to become ADA and WCAG 2.1 compliant.",
-      "icon": "Accessibe.svg",
-      "scripts": "acsbap\\.com/.*/acsb\\.js",
-      "website": "https://accessibe.com/"
+      "icon": "AccessiBe.svg",
+      "js": {
+        "acsb": "\\;confidence:50",
+        "acsbJS": "\\;confidence:50"
+      },
+      "scripts": "acsbapp?\\.com/.*/acsb\\.js",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://accessibe.com"
     },
     "Accesso": {
       "cats": [
