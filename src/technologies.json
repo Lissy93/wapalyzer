@@ -9859,6 +9859,26 @@
       "icon": "Microsoft 365.svg",
       "website": "https://www.microsoft.com/microsoft-365"
     },
+    "Microsoft Advertising": {
+      "cats": [
+        10,
+        36
+      ],
+      "description": "Microsoft Advertising is a service that provides pay per click advertising on both the Bing and Yahoo! search engines.",
+      "icon": "Microsoft.png",
+      "js": {
+        "uetq": "",
+        "UET": ""
+      },
+      "cookies": {
+        "_uetsid": "\\w+",
+        "_uetvid": "\\w+"
+      },
+      "saas": true,
+      "pricing": ["payg"],
+      "scripts": "bat\\.bing\\.com/bat\\.js",
+      "website": "https://about.ads.microsoft.com"
+    },
     "Microsoft ASP.NET": {
       "cats": [
         18
