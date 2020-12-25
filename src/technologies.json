@@ -2694,18 +2694,6 @@
       "implies": "Laravel",
       "website": "https://botble.com"
     },
-    "Bounce Exchange": {
-      "cats": [
-        32
-      ],
-      "description": "Bounce Exchange is a software for behavioural marketing technologies, created to de-anonymise site visitors, analyse their digital behaviour and create relevant digital experiences regardless of channel or device.",
-      "icon": "Bounce Exchange.svg",
-      "js": {
-        "bouncex": ""
-      },
-      "scripts": "^https?://tag\\.bounceexchange\\.com/",
-      "website": "http://www.bounceexchange.com"
-    },
     "Braintree": {
       "cats": [
         41
@@ -17836,6 +17824,20 @@
       "html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
       "icon": "Wowza Media Server.png",
       "website": "http://www.wowza.com"
+    },
+    "Wunderkind": {
+      "cats": [
+        32
+      ],
+      "description": "Wunderkind (Formerly BounceX) is a software for behavioural marketing technologies, created to de-anonymise site visitors, analyse their digital behaviour and create relevant digital experiences regardless of channel or device.",
+      "icon": "Wunderkind.svg",
+      "js": {
+        "bouncex": ""
+      },
+      "saas": true,
+      "pricing": ["poa"],
+      "scripts": "\\.bounceexchange\\.com",
+      "website": "https://www.wunderkind.co"
     },
     "X-Cart": {
       "cats": [
