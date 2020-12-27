@@ -6535,7 +6535,8 @@
       "js": {
         "Goog_AdSense_": "",
         "__google_ad_urls": "",
-        "google_ad_": ""
+        "google_ad_": "",
+        "Goog_AdSense_OsdAdapter": ""
       },
       "saas": true,
       "scripts": [
@@ -6692,6 +6693,18 @@
       "icon": "Google Plus.svg",
       "scripts": "apis\\.google\\.com/js/[a-z]*\\.js",
       "website": "http://plus.google.com"
+    },
+    "Google Publisher Tag": {
+      "cats": [
+        36
+      ],
+      "description": "Google Publisher Tag (GPT) is an ad tagging library for Google Ad Manager which is used to dynamically build ad requests.",
+      "icon": "Google Publisher Tag.svg",
+      "scripts": [
+        "googletagservices\\.com/tag/js/gpt\\.js",
+        "securepubads\\.g\\.doubleclick\\.net/gpt"
+      ],
+      "website": "https://developers.google.com/publisher-tag/guides/get-started"
     },
     "Google Sign-in": {
       "cats": [
