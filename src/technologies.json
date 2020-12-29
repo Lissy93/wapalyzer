@@ -1300,7 +1300,13 @@
       "html": "<meta id=\"amazon-payments",
       "icon": "Amazon Pay.svg",
       "js": {
-        "AmazonPayments": ""
+        "AmazonPayments": "",
+        "enableAmazonPay": ""
+      },
+      "dom": {
+        "img[src*='amazonpay']": {
+          "text": ""
+        }
       },
       "scripts": [
         "/amazonpayments(?:\\.min)?\\.js",
@@ -1685,6 +1691,10 @@
         "<[^>]+aria-labelledby=\"pi-apple_pay",
         "<script id=\"apple-pay"
       ],
+      "js": {
+        "enableApplePay": "",
+        "ApplePay": ""
+      },
       "icon": "Apple.svg",
       "website": "https://www.apple.com/apple-pay"
     },
@@ -11863,7 +11873,10 @@
       "html": "<input[^>]+_s-xclick",
       "icon": "PayPal.svg",
       "js": {
-        "PAYPAL": ""
+        "PAYPAL": "",
+        "paypalClientId": "",
+        "paypalJs": "",
+        "enablePaypal": ""
       },
       "pricing": [
         "payg"
@@ -16975,6 +16988,11 @@
       ],
       "html": "<[^>]+aria-labelledby=\"pi-visa",
       "icon": "Visa.svg",
+      "js": {
+        "visaApi": "",
+        "visaSrc": "",
+        "visaImage": ""
+      },
       "website": "https://www.visa.com"
     },
     "Visa Checkout": {
