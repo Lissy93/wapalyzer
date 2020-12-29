@@ -14601,8 +14601,11 @@
         "SMARTSTORE.VISITOR": "",
 		"SMARTSTORE.CUSTOMER": ""
       },
-	  "html": "<!--Powered by Smart[sS]tore(.NET)? - https://www\\.smartstore\\.com-->",
-	  "html": "<meta property=\"sm:pagedata",
+	  "html": [
+				"<!--Powered by Smart[sS]tore",
+				"<meta property=\"sm:pagedata\""
+				],
+				
       "icon": "Smartstore.png",
       "implies": "Microsoft ASP.NET",
       "meta": {
