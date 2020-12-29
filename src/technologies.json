@@ -1038,6 +1038,8 @@
         "X-Akamai-Transformed": ""
       },
       "icon": "akamai.svg",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://akamai.com"
     },
     "Akamai Bot Manager": {
@@ -1052,7 +1054,48 @@
       "description": "Akamai Bot Manager detect bots using device fingerprinting bot signatures.",
       "icon": "akamai.svg",
       "implies": "Akamai",
-      "website": "http://akamai.com/bot-manager"
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.akamai.com/us/en/products/security/bot-manager.jsp"
+    },
+    "Akamai mPulse": {
+      "cats": [
+        13,
+        10
+      ],
+      "description": "Akamai mPulse is a real user monitoring (RUM) solution that enables companies to monitor, find, and fix website and application performance issues.",
+      "icon": "akamai.svg",
+      "cookies": {
+        "akaas_AB-Testing": ""
+      },
+      "js": {
+        "BOOMR_mq": "",
+        "BOOMR_API_key": "",
+        "BOOMR": "",
+        "BOOMR_lstart": ""
+      },
+      "implies": "Akamai",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.akamai.com/uk/en/products/performance/mpulse-real-user-monitoring.jsp"
+    },
+    "Akamai Web Application Protector": {
+      "cats": [
+        16
+      ],
+      "description": "Akamai Web Application Protector is designed for companies looking for a more automated approach to web application firewall (WAF) and distributed denial-of-service (DDoS) security.",
+      "icon": "akamai.svg",
+      "js": {
+        "AKSB": "\\;confidence:50"
+      },
+      "scripts": [
+        "ds-aksb-a\\.akamaihd\\.net/aksb.min.js",
+        "aksb\\.min\\.js\\;confidence:50"
+      ],
+      "implies": "Akamai",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.akamai.com/us/en/products/security/web-application-protector-enterprise-waf-firewall-ddos-protection.jsp"
     },
     "Akaunting": {
       "cats": [
