@@ -5820,17 +5820,18 @@
       "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
       "html": [
         "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-        "<link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
         "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
       ],
       "icon": "font-awesome.svg",
       "js": {
-        "___FONT_AWESOME___": ""
+        "___FONT_AWESOME___": "",
+        "FontAwesomeCdnConfig": ""
       },
       "scripts": [
         "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
-        "kit\\.fontawesome\\.com/([0-9a-z]+).js"
+        "\\.fontawesome\\.com/([0-9a-z]+).js"
       ],
+      "pricing": ["low", "freemium", "recurring"],
       "website": "https://fontawesome.com/"
     },
     "Fork CMS": {
