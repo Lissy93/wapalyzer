@@ -11176,6 +11176,21 @@
       "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "website": "http://odoo.com"
     },
+    "Okta": {
+      "cats": [
+        69
+      ],
+      "description": "Okta is a platform in the Identity-as-a-Service (IDaaS) category. Okta features include Provisioning, Single Sign-On (SSO), Active Directory (AD) and LDAP integration, the centralized de-provisioning of users, multi-factor authentication (MFA), mobile identity management.",
+      "icon": "Okta.svg",
+      "js": {
+        "OktaAuth": "",
+        "isOktaEnabled": "",
+        "oktaCurrentSessionUrl": ""
+      },
+      "scripts": "oktacdn\\.com/.+/([\\d.]+)/\\;version:\\1",
+      "pricing": ["poa", "freemium", "recurring"],
+      "website": "https://developer.okta.com"
+    },
     "Olark": {
       "cats": [
         52
