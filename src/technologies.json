@@ -4023,6 +4023,21 @@
       "scripts": "conversionlab\\.trackset\\.com/track/tsend\\.js",
       "website": "http://www.trackset.it/conversionlab"
     },
+    "ConvertFlow": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "ConvertFlow is the all-in-one conversion marketing platform.",
+      "icon": "ConvertFlow.svg",
+      "js": {
+        "convertflow": ""
+      },
+      "scripts": "(?:app|js)\\.convertflow\\.co",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.convertflow.com"
+    },
     "Cookie Script": {
       "cats": [
         67
@@ -5718,9 +5733,7 @@
       "js": {
         "FilePond": "",
         "FilePond.create": "",
-
         "FilePond.setOptions": ""
-
       },
       "scripts": "filepond.js",
       "website": "https://pqina.nl/filepond/"
@@ -9243,6 +9256,27 @@
       },
       "website": "https://developer.amazon.com/apps-and-games/login-with-amazon"
     },
+    "LoginRadius": {
+      "cats": [
+        5,
+        69
+      ],
+      "description": "LoginRadius is a cloud based SaaS Customer Identity Access Management platform based in Canada.",
+      "icon": "LoginRadius.svg",
+      "js": {
+        "LoginRadius": "",
+        "LoginRadiusSDK": "",
+        "LoginRadiusDefaults": "",
+        "LoginRadiusUtility": ""
+      },
+      "scripts":[
+        "\\.loginradius\\.com",
+        "\\.lrcontent\\.com"
+      ],
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.loginradius.com"
+    },
     "Logitech Media Server": {
       "cats": [
         22,
@@ -11178,6 +11212,21 @@
       "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "website": "http://odoo.com"
     },
+    "Okta": {
+      "cats": [
+        19
+      ],
+      "description": "Okta is a platform in the Identity-as-a-Service (IDaaS) category. Okta features include Provisioning, Single Sign-On (SSO), Active Directory (AD) and LDAP integration, the centralized de-provisioning of users, multi-factor authentication (MFA), mobile identity management.",
+      "icon": "Okta.svg",
+      "js": {
+        "OktaAuth": "",
+        "isOktaEnabled": "",
+        "oktaCurrentSessionUrl": ""
+      },
+      "scripts": "oktacdn\\.com/.+/([\\d.]+)/\\;version:\\1",
+      "pricing": ["poa", "freemium", "recurring"],
+      "website": "https://developer.okta.com"
+    },
     "Olark": {
       "cats": [
         52
@@ -11223,6 +11272,20 @@
       "saas": true,
       "pricing": ["low", "freemium", "recurring"],
       "website": "https://www.omnisend.com"
+    },
+    "OneAll": {
+      "cats": [
+        69
+      ],
+      "description": "OneAll is a social login solution enables your users to sign into their accounts on your website or mobile app using their login details from networking sites.",
+      "icon": "OneAll.png",
+      "js": {
+        "oa_social_login": ""
+      },
+      "scripts": "api\\.oneall\\.com/socialize",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.oneall.com"
     },
     "OneAPM": {
       "cats": [
@@ -11610,6 +11673,17 @@
       },
       "icon": "Oracle.png",
       "website": "http://oracle.com"
+    },
+    "Oracle Infinity": {
+      "cats": [
+        10
+      ],
+      "description": "Oracle Infinity is a digital analytics platform for tracking, measuring, and optimizing the performance and visitor behavior of enterprise websites and mobile apps.",
+      "icon": "Oracle.png",
+      "scripts": "c\\.oracleinfinity\\.io",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.oracle.com/cx/marketing/digital-intelligence/"
     },
     "Oracle Recommendations On Demand": {
       "cats": [
@@ -14987,31 +15061,31 @@
       "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
     },
     "Smartstore": {
-	"oss": true,
-	"description": "Open source e-commerce system with the largest functionality, highest scalability and most innovative CMS capabilities",
+	    "oss": true,
+	    "description": "Smartstore is an open-source ecommerce system with CMS capabilities.",
       "cats": [
         6
       ],
       "cookies": {
         "SMARTSTORE.VISITOR": "",
-		"SMARTSTORE.CUSTOMER": ""
+		    "SMARTSTORE.CUSTOMER": ""
       },
-	  "html": [
+	    "html": [
 				"<!--Powered by Smart[sS]tore",
 				"<meta property=\"sm:pagedata\""
-				],
+		  ],
       "icon": "Smartstore.png",
       "implies": "Microsoft ASP.NET",
       "meta": {
-		"generator": "^Smart[sS]tore(.NET)? (.+)$\\;version:\\2"
+		    "generator": "^Smart[sS]tore(.NET)? (.+)$\\;version:\\2"
       },
       "website": "https://www.smartstore.com"
     },
-	"Smartstore Page Builder": {
+  	"Smartstore Page Builder": {
       "cats": [
         1
       ],
-	  "css": "\\.g-stage \\.g-stage-root",
+	    "css": "\\.g-stage \\.g-stage-root",
       "html": "<section[^>]+class=\"g-stage",
       "icon": "Smartstore.png",
       "implies": "Microsoft ASP.NET",
@@ -15110,6 +15184,17 @@
         "SobiProUrl": ""
       },
       "website": "http://sigsiu.net/sobipro.html"
+    },
+    "Social9": {
+      "cats": [
+        5
+      ],
+      "description": "Social9 is a social sharing widgets and plugins.",
+      "icon": "Social9.svg",
+      "scripts": "social9\\.com/.+\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa", "freemium"],
+      "website": "https://social9.com"
     },
     "Socket.io": {
       "cats": [
@@ -15685,6 +15770,17 @@
       },
       "icon": "Oracle.png",
       "website": "http://oracle.com/solaris"
+    },
+    "Super Socializer": {
+      "cats": [
+        69
+      ],
+      "implies": "WordPress",
+      "description": "Super Socializer is a multipurpose social media plugin for WordPress.",
+      "icon": "Super Socializer.png",
+      "scripts": "plugins/super-socializer/.+?ver=([\\d.]+)\\;version:\\1",
+      "oss": true,
+      "website": "https://super-socializer-wordpress.heateor.com"
     },
     "Supersized": {
       "cats": [
