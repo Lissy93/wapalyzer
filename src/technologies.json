@@ -15757,6 +15757,17 @@
       "icon": "Oracle.png",
       "website": "http://oracle.com/solaris"
     },
+    "Super Socializer": {
+      "cats": [
+        69
+      ],
+      "implies": "WordPress",
+      "description": "Super Socializer is a multipurpose social media plugin for WordPress.",
+      "icon": "Super Socializer.png",
+      "scripts": "plugins/super-socializer/.+?ver=([\\d.]+)\\;version:\\1",
+      "oss": true,
+      "website": "https://super-socializer-wordpress.heateor.com"
+    },
     "Supersized": {
       "cats": [
         25
