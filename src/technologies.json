@@ -15061,19 +15061,34 @@
       "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
     },
     "Smartstore": {
+	    "oss": true,
+	    "description": "Smartstore is an open-source ecommerce system with CMS capabilities.",
       "cats": [
-        1,
         6
       ],
       "cookies": {
-        "SMARTSTORE.VISITOR": ""
+        "SMARTSTORE.VISITOR": "",
+		    "SMARTSTORE.CUSTOMER": ""
       },
-      "html": "<!--Powered by Smartstore - https://www\\.smartstore\\.com-->",
+	    "html": [
+				"<!--Powered by Smart[sS]tore",
+				"<meta property=\"sm:pagedata\""
+		  ],
       "icon": "Smartstore.png",
       "implies": "Microsoft ASP.NET",
       "meta": {
-        "generator": "^Smartstore (.+)$\\;version:\\1"
+		    "generator": "^Smart[sS]tore(.NET)? (.+)$\\;version:\\2"
       },
+      "website": "https://www.smartstore.com"
+    },
+  	"Smartstore Page Builder": {
+      "cats": [
+        1
+      ],
+	    "css": "\\.g-stage \\.g-stage-root",
+      "html": "<section[^>]+class=\"g-stage",
+      "icon": "Smartstore.png",
+      "implies": "Microsoft ASP.NET",
       "website": "https://www.smartstore.com"
     },
     "Smartstore biz": {
@@ -15083,22 +15098,6 @@
       "icon": "Smartstore.biz.png",
       "scripts": "smjslib\\.js",
       "website": "http://smartstore.com"
-    },
-    "Smartstore.NET": {
-      "cats": [
-        1,
-        6
-      ],
-      "cookies": {
-        "SMARTSTORE.VISITOR": ""
-      },
-      "html": "<!--Powered by SmartStore\\.NET - https://www\\.smartstore\\.com-->",
-      "icon": "Smartstore.png",
-      "implies": "Microsoft ASP.NET",
-      "meta": {
-        "generator": "^SmartStore.NET (.+)$\\;version:\\1"
-      },
-      "website": "https://www.smartstore.com"
     },
     "Snap": {
       "cats": [
