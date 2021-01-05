@@ -9510,7 +9510,7 @@
         "<form [^>]*name=\"mc-embedded-subscribe-form\"",
         "<input [^>]*id=\"mc-email\"\\;confidence:20",
         "<!-- Begin MailChimp Signup Form -->"
-      ],     
+      ],
       "js": {
         "mc4wp": "\\;confidence:50"
       },
@@ -10278,6 +10278,22 @@
       },
       "scripts": "mint/\\?js",
       "website": "https://haveamint.com"
+    },
+    "Miresoone": {
+      "cats": [
+        6
+      ],
+      "implies": [
+        "Laravel",
+        "React"
+      ],
+      "description": "Miresoone is an online ordering site builder.",
+      "icon": "Miresoone.svg",
+      "meta": {
+        "generator": "^Miresoone"
+      },
+      "saas": true,
+      "website": "https://miresoone.com"
     },
     "Misskey": {
       "cats": [
@@ -12625,7 +12641,7 @@
         "PREBID_TIMEOUT": "",
         "pbjs": ""
       },
-    
+
       "scripts": [
         "/prebid\\.js",
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
