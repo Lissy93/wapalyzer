@@ -8396,7 +8396,7 @@
         "katex.version": "^(.+)$\\;version:\\1"
       },
       "oss": true,
-      "scripts": "katex(?:\\.min)?\\.js",
+      "scripts": "katex(@|/)[0-9.]+(?:/dist)?/katex(?:\\.min)?\\.(mjs|js|css)\\;version:\\1",
       "website": "https://katex.org/"
     },
     "Kajabi": {
