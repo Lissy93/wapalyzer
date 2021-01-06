@@ -672,10 +672,14 @@
     },
     "AddShoppers": {
       "cats": [
-        5
+        5,
+        10
       ],
+      "description": "AddShoppers is the social media marketing command center for small-medium online retailers.",
       "icon": "AddShoppers.png",
-      "scripts": "cdn\\.shop\\.pe/widget/",
+      "scripts": "(?:cdn\\.)?shop\\.pe/widget/",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://www.addshoppers.com"
     },
     "AddThis": {
@@ -2550,6 +2554,27 @@
       "html": "<[^>]+/binaries/(?:[^/]+/)*content/gallery/",
       "icon": "Bloomreach.png",
       "website": "https://developers.bloomreach.com"
+    },
+    "Bloomreach Search & Merchandising": {
+      "cats": [
+        29,
+        10,
+        32,
+        74
+      ],
+      "description": "Bloomreach Search & Merchandising (brSM) is an AI-driven platform for eCommerce.",
+      "icon": "Bloomreach.png",
+      "js": {
+        "br_data": "",
+        "BrTrk": ""
+      },
+      "scripts": [
+        "cdns\\.brsrvr\\.com/v([\\d.]+)\\;version:\\1",
+        "cdn\\.brcdn\\.com/v([\\d.]+)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["high", "recurring"],
+      "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
     },
     "Bluefish": {
       "cats": [
