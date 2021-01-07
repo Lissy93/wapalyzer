@@ -6002,6 +6002,20 @@
       "implies": "WordPress",
       "website": "https://getflywheel.com"
     },
+    "Fomo": {
+      "cats": [
+        32
+      ],
+      "description": "Fomo is a social proof marketing platform.",
+      "icon": "Fomo.png",
+      "js": {
+        "fomo.version": "(.+)\\;version:\\1"
+      },
+      "scripts": "fomo\\.com/api/v",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://fomo.com"
+    },
     "Font Awesome": {
       "cats": [
         17
