@@ -3438,6 +3438,17 @@
       "scripts": "scripts\\.chitika\\.net/",
       "website": "http://chitika.com"
     },
+    "Choices": {
+      "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
+      "cats": [
+        19
+      ],
+      "icon": "Choices.png",
+      "scripts": [
+        "choices\\.js/|@([\\d.]+)(?:/assets)?(?:/scripts)?(?:/styles)?(?:/dist)?/choices(?:\\.min)?\\.js|css\\;version:\\1"
+      ],
+      "website": "https://joshuajohnson.co.uk/Choices/"
+    },
     "Chorus": {
       "cats": [
         1
@@ -9115,7 +9126,7 @@
       "js": {
         "List": ""
       },
-      "scripts": "^list\\.(?:min\\.)?js$",
+      "scripts": "list\\.js/|@([\\d.]+)/(?:/dist)?list\\.(?:min\\.)?js\\;version:\\1",
       "website": "http://listjs.com"
     },
     "Listrak": {
