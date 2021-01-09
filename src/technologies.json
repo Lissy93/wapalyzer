@@ -14502,11 +14502,16 @@
           "segment-site-verification"
         ]
       },
-      "icon": "Segment.png",
+      "icon": "Segment.svg",
       "js": {
-        "analytics": ""
+        "analytics.VERSION": "(.+)\\;version:\\1"
       },
-      "scripts": "cdn\\.segment\\.com/analytics\\.js",
+      "scripts": [
+        "cdn\\.segment\\.com/analytics\\.js",
+        "/segment-wrapper\\.min\\.js"
+      ],
+      "saas": true,
+      "pricing": ["mid", "freemium", "recurring"],
       "website": "https://segment.com"
     },
     "Select2": {
