@@ -14313,6 +14313,25 @@
       "scripts": "service\\.force\\.com",
       "website": "https://www.salesforce.com/au/products/service-cloud/"
     },
+    "Sanity": {
+      "cats": [
+        1
+      ],
+      "description": "Sanity is a platform for structured content. It comes with an open-source, headless CMS that can be customized with Javascript, a real-time hosted data store and an asset delivery pipeline.",
+      "dom": {
+        "img[src*='cdn.sanity.io'],img[srcset*='cdn.sanity.io'],video[src*='cdn.sanity.io'],source[src*='cdn.sanity.io'],source[srcset*='cdn.sanity.io'],track[src*='cdn.sanity.io']": {
+          "attributes": { "src": "", "srcset": "" }
+        }
+      },
+      "icon": "Sanity.svg",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.sanity.io"
+    },
     "Sapper": {
       "cats": [
         18
