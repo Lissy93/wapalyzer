@@ -6826,6 +6826,18 @@
       "icon": "google_cloud.svg",
       "website": "https://cloud.google.com"
     },
+    "Google Cloud Storage": {
+      "cats": [
+        19
+      ],
+      "description": "Google Cloud Storage allows world-wide storage and retrieval of any amount of data at any time.",
+      "headers": {
+        "x-goog-storage-class": "^\\w+$"
+      },
+      "icon": "google-cloud-storage.svg",
+      "implies": "Google Cloud",
+      "website": "https://cloud.google.com/storage"
+    },
     "Google Code Prettify": {
       "cats": [
         19
