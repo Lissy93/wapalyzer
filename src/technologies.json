@@ -19845,6 +19845,20 @@
       "oss": true,
       "website": "http://www.nopcommerce.com"
     },
+    "NSW Design System": {
+      "cats": [
+        66
+      ],
+      "html": [
+        "<link[^>]+?href=\"[^\"]+nsw-design-system[^>\"]+css",
+        "<div class=(?:\"|')[^\"']*nsw(?:-)[^\"']*"
+      ],
+      "website": "https://github.com/digitalnsw/nsw-design-system",
+      "icon": "NSWgov.png",
+      "js": {
+        "NSW": ""
+      }
+    },
     "osCommerce": {
       "cats": [
         6
