@@ -9124,9 +9124,12 @@
       ],
       "icon": "List.js.png",
       "js": {
-        "List": ""
+        "List": "\\;confidence:50"
       },
-      "scripts": "list\\.js/|@([\\d.]+)/(?:/dist)?list\\.(?:min\\.)?js\\;version:\\1",
+      "scripts": [
+        "list\\.js/\\;confidence:50",        
+        "@([\\d.]+)/(?:/dist)?list\\.(?:min\\.)?js\\;version:\\1",
+      ],
       "website": "http://listjs.com"
     },
     "Listrak": {
