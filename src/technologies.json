@@ -6527,6 +6527,21 @@
       },
       "website": "http://get-simple.info"
     },
+    "GetSocial": {
+      "cats": [
+        69,
+        10
+      ],
+      "description": "GetSocial is a social analytics and publishing platform.",
+      "icon": "GetSocial.png",
+      "js": {
+        "GETSOCIAL_VERSION": "(.+)\\;version:\\1"
+      },
+      "scripts": "api\\.at\\.getsocial\\.io",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://getsocial.io"
+    },
     "Ghost": {
       "cats": [
         11
