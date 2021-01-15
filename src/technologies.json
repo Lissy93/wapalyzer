@@ -861,7 +861,8 @@
     },
     "Adobe Target": {
       "cats": [
-        32
+        32,
+        74
       ],
       "description": "Adobe Target is an A/B testing, multi-variate testing, personalisation, and optimisation application",
       "icon": "Adobe.svg",
@@ -869,6 +870,8 @@
         "adobe.target": "",
         "adobe.target.VERSION": "^(.+)$\\;version:\\1"
       },
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
