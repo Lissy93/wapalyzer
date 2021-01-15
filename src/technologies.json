@@ -7922,6 +7922,30 @@
       },
       "website": "http://www.instantcms.ru"
     },
+    "Instapage": {
+      "cats": [
+        51,
+        74,
+        10        
+      ],
+      "description": "Instapage is a cloud-based landing page platform designed for marketing teams and agencies.",
+      "icon": "Instapage.svg",
+      "implies": [
+        "Lua",
+        "Node.js"
+      ],
+      "js": {
+        "instapageSp": "",
+        "_instapageSnowplow": ""
+      },
+      "scripts": [
+        "cdn\\.instapagemetrics\\.com",
+        "heatmap-events-collector\\.instapage\\.com"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://instapage.com"
+    },
     "Intel Active Management Technology": {
       "cats": [
         22,
