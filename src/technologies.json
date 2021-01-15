@@ -2827,6 +2827,25 @@
       "scripts": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
     },
+    "Branch": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Branch is a mobile deep linking system to increase engagement and retention.",
+      "icon": "Branch.png",
+      "js": {
+        "branch.setBranchViewData": "",
+        "branch_callback__0": ""
+      },
+      "scripts": [
+        "cdn\\.branch\\.io",
+        "app\\.link/_r\\?sdk=web([\\d.]+)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["poa", "freemium"],
+      "website": "https://branch.io"
+    },
     "Braze": {
       "cats": [
         32,
