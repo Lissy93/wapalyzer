@@ -5396,7 +5396,7 @@
       "cats": [
         51
       ],
-      "description": "WordPress is a free and open-source content management system used to create a website or blog.",
+      "description": "Elementor is a website builder platform for professionals on WordPress.",
       "html": [
         "<div class=(?:\"|')[^\"']*elementor",
         "<section class=(?:\"|')[^\"']*elementor",
@@ -5404,7 +5404,6 @@
         "<link [^>]*href=(?:\"|')[^\"']*uploads/elementor/css"
       ],
       "icon": "Elementor.png",
-      "implies": "WordPress",
       "js": {
         "elementorFrontend.getElements": ""
       },
