@@ -8536,6 +8536,32 @@
       "saas": true,
       "website": "https://newkajabi.com"
     },
+    "Kameleoon": {
+      "cats": [
+        74
+      ],
+      "description": "Kameleoon is a personalization technology platform for real-time omnichannel optimization and conversion.",
+      "icon": "Kameleoon.svg",
+      "dom": {
+        "link[href*='.kameleoon.eu/kameleoon.js']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "cookies": {
+        "kameleoonVisitorCode": ""
+      },
+      "js": {
+        "Kameleoon.Gatherer.SCRIPT_VERSION": "(.+)\\;version:\\1",
+        "kameleoonEndLoadTime": "",
+        "kameleoonS": ""
+      },
+      "scripts": "\\.kameleoon\\.\\w+/kameleoon\\.js",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://kameleoon.com/"
+    },
     "Kampyle": {
       "cats": [
         10,
