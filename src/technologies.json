@@ -19849,14 +19849,20 @@
       "cats": [
         66
       ],
-      "html": [
-        "<link[^>]+?href=\"[^\"]+nsw-design-system[^>\"]+css",
-        "<div class=(?:\"|')[^\"']*nsw(?:-)[^\"']*"
+      "dom": {
+        "link[href*='nsw-design-system']": {
+          "attributes": {
+            "href": "",
+          }
+        },
+        ".nsw-container, .nsw-header, .nsw-icon": {
+          "text": ""
+        }
       ],
-      "website": "https://github.com/digitalnsw/nsw-design-system",
-      "icon": "NSWgov.png",
+      "website": "https://www.digital.nsw.gov.au/digital-design-system",
+      "icon": "NSW Design System.svg",
       "js": {
-        "NSW": ""
+        "NSW.initSite": ""
       }
     },
     "osCommerce": {
