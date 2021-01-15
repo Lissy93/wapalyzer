@@ -12237,7 +12237,7 @@
       "cats": [
         62
       ],
-      "description": "Pantheon is a Website Management Platform for WordPress and Drupal.",
+      "description": "Pantheon is a WebOps (Website Operations) and Management Platform for WordPress and Drupal.",
       "headers": {
         "Server": "^Pantheon",
         "x-pantheon-styx-hostname": "",
@@ -12247,7 +12247,8 @@
       "implies": [
         "PHP",
         "Nginx",
-        "MariaDB"
+        "MariaDB",
+        "Fastly"
       ],
       "website": "https://pantheon.io/"
     },
