@@ -15672,6 +15672,32 @@
       },
       "website": "http://www.schillmania.com/projects/soundmanager2"
     },
+    "Service Provider Pro": {
+      "cats": [
+        41,
+        53
+      ],
+      "description": "Service Provider Pro is a client management & billing software for productized service agencies.",
+      "icon": "Service Provider Pro.svg",
+      "meta": {
+        "server": "app.spp.co"
+      },
+      "cookies": {
+        "spp_session": "\\;confidence:25",
+        "spp_csrf": "\\;confidence:25",
+        "spp_orderform": ""
+      },
+      "js": {
+        "sppOrderform": ""
+      },
+      "scripts": [
+        "js/spp_clients\\.js\\;confidence:50",
+        "\\.spp\\.io/js/"
+      ],
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://spp.co"
+    },
     "SparkPost": {
       "cats": [
         75
