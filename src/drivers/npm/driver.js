@@ -755,6 +755,10 @@ class Site {
         throw new Error('The website took too long to respond')
       }
 
+      if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
+        throw new Error('Hostname could not be resolved')
+      }
+
       throw new Error(error.message)
     }
   }
