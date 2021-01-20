@@ -16,64 +16,73 @@ const appPaths = () => {
   }
 }
 
+/**
+ * Copy files from source to destination.
+ * @param source
+ * @param destination
+ */
+function copyFiles(source, destination) {
+  // File destination will be created or overwritten by default.
+  fs.copyFileSync(source, destination)
+  // console.log(`${source} -> ${destination}`)
+}
+
+/**
+ * Get extension of image file.
+ * @returns {string}
+ */
+function getFileExtension(filePath) {
+  return path.extname(filePath)
+}
+
+/**
+ * Get base name of image file.
+ * @returns {string}
+ */
+function getFileName(filePath) {
+  return path.basename(filePath, getFileExtension(filePath))
+}
+
+function getConvertFileName(filePath) {
+  const name = getFileName(filePath)
+  return `${appPaths().convertPath}/${name}.png`
+}
+
+/**
+ * Check if converted image exists
+ * @returns {boolean}
+ */
+function checkFileExists(imagePath) {
+  const fileExists = fs.existsSync(imagePath)
+  return fileExists
+}
+
+function checkIfFile(filePath) {
+  return fs.statSync(filePath).isFile()
+}
+
+function diffFiles(fileOne, fileTwo) {
+  const f1 = fs.readFileSync(fileOne)
+  const f2 = fs.readFileSync(fileTwo)
+  return f1.equals(f2)
+}
+
+function dateModified(file) {
+  return fs.statSync(file).mtime
+}
+
+function dateDiff(file) {
+  const now = new Date().getTime()
+  const then = dateModified(file).getTime()
+  return Math.round(Math.abs((then - now) / 86400000))
+}
+
 // Main script
 fs.readdirSync(appPaths().iconPath).forEach((fileName) => {
   const image = {
     id: fileName,
     path: `${appPaths().iconPath}/${fileName}`,
     convertPath: `${appPaths().convertPath}/${fileName}`,
-    /**
-     * Copy files from source to destination.
-     * @param source
-     * @param destination
-     */
-    copyFiles(source, destination) {
-      // File destination will be created or overwritten by default.
-      fs.copyFileSync(source, destination)
-      console.log(`Copied icon: ${this.id}`)
-    },
-    /**
-     * Get extension of image file.
-     * @returns {string}
-     */
-    getFileExtension() {
-      return path.extname(this.path)
-    },
-    /**
-     * Get base name of image file.
-     * @returns {string}
-     */
-    getFileName() {
-      return path.basename(this.path, this.getFileExtension())
-    },
-    getConvertFileName() {
-      const name = this.getFileName()
-      return `${appPaths().convertPath}/${name}.png`
-    },
-    /**
-     * Check if converted image exists
-     * @returns {boolean}
-     */
-    checkFileExists(imagePath) {
-      const fileExists = fs.existsSync(imagePath)
-      return fileExists
-    },
-    checkIfFile() {
-      return fs.statSync(this.path).isFile()
-    },
-    diffFiles(fileOne, fileTwo) {
-      const f1 = fs.readFileSync(fileOne)
-      const f2 = fs.readFileSync(fileTwo)
-      return f1.equals(f2)
-    },
-    dateModified(file) {
-      return fs.statSync(file).mtime
-    },
-    dateDiff(file) {
-      const now = new Date().getTime()
-      const then = this.dateModified(file).getTime()
-      return Math.round(Math.abs((then - now) / 86400000))
-    },
     async convertAndCopy() {
       await convertFile(this.path, {
         height: 32,
@@ -85,15 +94,15 @@ fs.readdirSync(appPaths().iconPath).forEach((fileName) => {
     },
     processFile() {
       // Setup variables.
-      const ext = this.getFileExtension()
+      const ext = getFileExtension(this.path)
 
       // If SVG, run checks.
       if (ext === '.svg') {
         // Check if converted file exists.
-        const convertFilePath = this.getConvertFileName()
-        if (this.checkFileExists(convertFilePath)) {
+        const convertFilePath = getConvertFileName(this.path)
+        if (checkFileExists(convertFilePath)) {
           // If file has changed in past 7 days.
-          if (this.dateDiff(this.path) > 8) {
+          if (dateDiff(this.path) > 8) {
             console.log(`File exists, skipping: ${this.id}`)
             return null
           }
@@ -103,8 +112,8 @@ fs.readdirSync(appPaths().iconPath).forEach((fileName) => {
       } else {
         // If PNG or other, just copy the file as-is.
         // eslint-disable-next-line no-lonely-if
-        if (this.checkIfFile()) {
-          this.copyFiles(this.path, this.convertPath)
+        if (checkIfFile(this.path)) {
+          copyFiles(this.path, this.convertPath)
         } else {
           console.info('Not a file, skipping...')
         }
