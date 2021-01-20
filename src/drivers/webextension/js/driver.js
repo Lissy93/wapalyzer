@@ -269,7 +269,8 @@ const Driver = {
 
           if (
             headers['content-type'] &&
-            /\/x?html/.test(headers['content-type'][0])
+            (/\/x?html/.test(headers['content-type'][0]) ||
+              /\/plain/.test(headers['content-type'][0]))
           ) {
             await Driver.onDetect(request.url, analyze({ headers }))
           }
