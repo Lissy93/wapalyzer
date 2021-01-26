@@ -3714,10 +3714,17 @@
       "cats": [
         10
       ],
+      "description": "ClickTale is a SaaS solution enabling organizations to gain visual in-page analytics.",
       "icon": "ClickTale.png",
       "js": {
+        "ClickTale": "",
+        "ClickTaleEvent": "",
+        "ClickTaleGlobal": "",
         "clickTaleStartEventSignal": ""
       },
+      "scripts": "\\.clicktale\\.net",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
       "website": "http://www.clicktale.com"
     },
     "Clickbank": {
@@ -17479,7 +17486,7 @@
       "js": {
         "analyticsHost": "stats\\.uscreen\\.io" 
       },
-      "icon": "Uscreen.svg",
+      "icon": "Uscreen.png",
       "website": "https://uscreen.tv/",
       "pricing": [
         "mid",
