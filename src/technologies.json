@@ -17215,11 +17215,33 @@
       ],
       "description": "Twitter is a 'microblogging' system that allows you to send and receive short posts called tweets.",
       "icon": "Twitter.svg",
+      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
+      "website": "http://twitter.com"
+    },
+    "Twitter Ads": {
+      "cats": [
+        36
+      ],
+      "description": "Twitter Ads is an advertising platform for Twitter 'microblogging' system.",
+      "icon": "Twitter.svg",
       "js": {
         "twttr": ""
       },
-      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
-      "website": "http://twitter.com"
+      "saas": true,
+      "pricing": ["payg"],
+      "scripts": "static\\.ads-twitter\\.com/uwt\\.js",
+      "website": "https://ads.twitter.com"
+    },
+    "Twitter Analytics": {
+      "cats": [
+        10
+      ],
+      "description": "Twitter Analytics is a built-in data-tracking platform that shows you insights specific to your Twitter account and activity.",
+      "icon": "Twitter.svg",
+      "scripts": "analytics\\.twitter\\.com",
+      "saas": true,
+      "pricing": ["freemium"],
+      "website": "https://analytics.twitter.com"
     },
     "Twitter Emoji (Twemoji)": {
       "cats": [
@@ -17479,7 +17501,7 @@
       "js": {
         "analyticsHost": "stats\\.uscreen\\.io" 
       },
-      "icon": "Uscreen.svg",
+      "icon": "Uscreen.png",
       "website": "https://uscreen.tv/",
       "pricing": [
         "mid",
