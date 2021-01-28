@@ -7553,6 +7553,20 @@
       "icon": "Hiawatha.png",
       "website": "http://hiawatha-webserver.org"
     },
+    "HiConversion": {
+      "cats": [
+        74
+      ],
+      "description": "HiConversion is a SaaS solution that caters to ecommerce brands seeking actionable insights through their adaptive customer experience optimization.",
+      "icon": "HiConversion.png",
+      "js": {
+        "__hic.version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "deploy\\.hiconversion\\.com",
+      "saas": true,
+      "pricing": ["poa", "recurring"],
+      "website": "https://www.hiconversion.com"
+    },
     "Highcharts": {
       "cats": [
         25
@@ -17479,7 +17493,7 @@
       "js": {
         "analyticsHost": "stats\\.uscreen\\.io" 
       },
-      "icon": "Uscreen.svg",
+      "icon": "Uscreen.png",
       "website": "https://uscreen.tv/",
       "pricing": [
         "mid",
