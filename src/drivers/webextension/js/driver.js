@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, browser, Wappalyzer, Utils */
+/* globals chrome, Wappalyzer, Utils */
 
 const {
   setTechnologies,
@@ -12,6 +12,8 @@ const {
 const { agent, promisify, getOption, setOption, open } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
+
+const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|^[0-9.]$)/
 
 const Driver = {
   lastPing: Date.now(),
@@ -52,22 +54,16 @@ const Driver = {
       ),
       tabs: {},
       robots: await getOption('robots', {}),
-      ads: await getOption('ads', []),
+      ads: [],
     }
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
 
-    chrome.webRequest.onHeadersReceived.addListener(
-      Driver.onHeadersReceived,
+    chrome.webRequest.onCompleted.addListener(
+      Driver.onWebRequestComplete,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-      ['responseHeaders', 'blocking']
+      ['responseHeaders']
     )
-
-    // chrome.webRequest.onCompleted.addListener(
-    //  Driver.onWebRequestComplete,
-    //  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-    //  ['responseHeaders']
-    // )
 
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
@@ -79,9 +75,14 @@ const Driver = {
     const upgradeMessage = await getOption('upgradeMessage', true)
 
     if (previous === null) {
-      open('https://www.wappalyzer.com/installed/')
+      open(
+        'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
+      )
     } else if (version !== previous && upgradeMessage) {
-      open(`https://www.wappalyzer.com/upgraded/?v${version}`, false)
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -151,8 +152,8 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  async analyzeJs(url, js) {
-    await Driver.onDetect(
+  analyzeJs(url, js) {
+    return Driver.onDetect(
       url,
       Array.prototype.concat.apply(
         [],
@@ -163,6 +164,49 @@ const Driver = {
             { [chain]: [value] }
           )
         )
+      )
+    )
+  },
+
+  /**
+   * Analyse DOM nodes
+   * @param {String} url
+   * @param {Array} dom
+   */
+  analyzeDom(url, dom) {
+    return Driver.onDetect(
+      url,
+      Array.prototype.concat.apply(
+        [],
+        dom.map(({ name, selector, text, property, attribute, value }) => {
+          const technology = Wappalyzer.technologies.find(
+            ({ name: _name }) => name === _name
+          )
+
+          if (text) {
+            return analyzeManyToMany(technology, 'dom.text', {
+              [selector]: [text],
+            })
+          }
+
+          if (property) {
+            return analyzeManyToMany(technology, `dom.properties.${property}`, {
+              [selector]: [value],
+            })
+          }
+
+          if (attribute) {
+            return analyzeManyToMany(
+              technology,
+              `dom.attributes.${attribute}`,
+              {
+                [selector]: [value],
+              }
+            )
+          }
+
+          return []
+        })
       )
     )
   },
@@ -197,7 +241,7 @@ const Driver = {
    * Analyse response headers
    * @param {Object} request
    */
-  async onHeadersReceived(request) {
+  async onWebRequestComplete(request) {
     if (await Driver.isDisabledDomain(request.url)) {
       return
     }
@@ -206,6 +250,8 @@ const Driver = {
       const headers = {}
 
       try {
+        await new Promise((resolve) => setTimeout(resolve, 500))
+
         const [tab] = await promisify(chrome.tabs, 'query', {
           url: [request.url],
         })
@@ -221,33 +267,7 @@ const Driver = {
             )
           })
 
-          let certIssuer = ''
-
-          if (typeof browser !== 'undefined') {
-            // Currently only works in Firefox
-            // See https://stackoverflow.com/a/50484642
-            const { certificates } = await browser.webRequest.getSecurityInfo(
-              request.requestId,
-              {
-                certificateChain: false,
-                rawDER: false,
-              }
-            )
-
-            if (certificates && certificates.length) {
-              certIssuer = certificates[0].issuer.replace(
-                /^.*CN=([^,]+).*$/,
-                '$1'
-              )
-            }
-          }
-
-          if (
-            headers['content-type'] &&
-            /\/x?html/.test(headers['content-type'][0])
-          ) {
-            await Driver.onDetect(request.url, analyze({ headers, certIssuer }))
-          }
+          await Driver.onDetect(request.url, analyze({ headers }))
         }
       } catch (error) {
         Driver.error(error)
@@ -272,7 +292,7 @@ const Driver = {
       ).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value],
+          [name.toLowerCase()]: [value],
         }),
         {}
       )
@@ -311,7 +331,7 @@ const Driver = {
    * @param {Boolean} incrementHits
    */
   async onDetect(url, detections = [], language, incrementHits = false) {
-    if (!detections.length) {
+    if (!url || !detections.length) {
       return
     }
 
@@ -390,9 +410,11 @@ const Driver = {
 
     await Driver.setIcon(url, resolved)
 
-    const tabs = await promisify(chrome.tabs, 'query', { url })
+    if (url) {
+      const tabs = await promisify(chrome.tabs, 'query', { url })
 
-    tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+      tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
+    }
 
     Driver.log({ hostname, technologies: resolved })
 
@@ -403,10 +425,8 @@ const Driver = {
    * Callback for onAd listener
    * @param {Object} ad
    */
-  async onAd(ad) {
+  onAd(ad) {
     Driver.cache.ads.push(ad)
-
-    await setOption('ads', Driver.cache.ads)
   },
 
   /**
@@ -428,6 +448,10 @@ const Driver = {
       )
 
       ;({ icon } = pinned || technologies[0] || { icon })
+    }
+
+    if (!url) {
+      return
     }
 
     ;(await promisify(chrome.tabs, 'query', { url })).forEach(
@@ -488,8 +512,11 @@ const Driver = {
    * @param {Boolean} secure
    */
   async getRobots(hostname, secure = false) {
-    if (!(await getOption('tracking', true))) {
-      return
+    if (
+      !(await getOption('tracking', true)) ||
+      hostnameIgnoreList.test(hostname)
+    ) {
+      return []
     }
 
     if (typeof Driver.cache.robots[hostname] !== 'undefined') {
@@ -603,12 +630,7 @@ const Driver = {
             hostname
           ]
 
-          if (
-            !/((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|google|\/admin|\.local|\.test|\.dev|127\.|0\.)/.test(
-              hostname
-            ) &&
-            hits >= 3
-          ) {
+          if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
             hostnames[url] = hostnames[url] || {
               applications: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
@@ -636,7 +658,7 @@ const Driver = {
 
       const count = Object.keys(hostnames).length
 
-      if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
+      if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
         await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
@@ -644,10 +666,10 @@ const Driver = {
         Driver.lastPing = Date.now()
       }
 
-      if (Driver.cache.ads.length > 50) {
+      if (Driver.cache.ads.length > 25) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
 
-        await setOption('ads', (Driver.cache.ads = []))
+        Driver.cache.ads = []
       }
     }
   },

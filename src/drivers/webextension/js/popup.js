@@ -55,6 +55,7 @@ const Popup = {
     if (themeMode) {
       document.querySelector('body').classList.add('theme-mode')
     }
+    document.querySelector('body').classList.add('theme-mode')
 
     // Terms
     const termsAccepted =
@@ -70,17 +71,31 @@ const Popup = {
       document.querySelector('.detections').classList.add('detections--hidden')
       document.querySelector('.empty').classList.add('empty--hidden')
 
-      document.querySelector('.terms').addEventListener('click', async () => {
-        await setOption('termsAccepted', true)
+      document
+        .querySelector('.terms__button--accept')
+        .addEventListener('click', async () => {
+          await setOption('termsAccepted', true)
+          await setOption('tracking', true)
 
-        document.querySelector('.terms').classList.add('terms--hidden')
-        document.querySelector('.empty').classList.remove('empty--hidden')
+          document.querySelector('.terms').classList.add('terms--hidden')
+          document.querySelector('.empty').classList.remove('empty--hidden')
 
-        Popup.onGetDetections(await Popup.driver('getDetections'))
-      })
+          Popup.onGetDetections(await Popup.driver('getDetections'))
+        })
+
+      document
+        .querySelector('.terms__button--decline')
+        .addEventListener('click', async () => {
+          await setOption('termsAccepted', true)
+          await setOption('tracking', false)
+
+          document.querySelector('.terms').classList.add('terms--hidden')
+          document.querySelector('.empty').classList.remove('empty--hidden')
+
+          Popup.onGetDetections(await Popup.driver('getDetections'))
+        })
     }
 
-    // Alert
     const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
@@ -90,14 +105,6 @@ const Popup = {
       const [{ url }] = tabs
 
       if (url.startsWith('http')) {
-        document.querySelector('.alerts').classList.remove('alerts--hidden')
-
-        document.querySelector(
-          '.alerts__link'
-        ).href = `https://www.wappalyzer.com/alerts/?url=${encodeURIComponent(
-          `${url}`
-        )}`
-
         const { hostname } = new URL(url)
 
         setDisabledDomain(disabledDomains.includes(hostname))
@@ -131,8 +138,6 @@ const Popup = {
         for (const el of document.querySelectorAll('.footer__switch')) {
           el.classList.add('footer__switch--hidden')
         }
-
-        document.querySelector('.alerts').classList.add('alerts--hidden')
       }
     }
 
@@ -210,7 +215,7 @@ const Popup = {
 
       const link = categoryNode.querySelector('.category__link')
 
-      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/`
+      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
       link.dataset.i18n = `categoryName${id}`
 
       const pins = categoryNode.querySelectorAll('.category__pin')
@@ -247,9 +252,10 @@ const Popup = {
           image.src = `../images/icons/${icon}`
 
           const link = technologyNode.querySelector('.technology__link')
+          const linkText = technologyNode.querySelector('.technology__name')
 
-          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/`
-          link.textContent = name
+          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
+          linkText.textContent = name
 
           const confidenceNode = technologyNode.querySelector(
             '.technology__confidence'

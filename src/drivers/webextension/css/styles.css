@@ -44,6 +44,7 @@ a:hover {
   border-bottom: 1px solid var(--color-secondary);
   display: flex;
   height: 4.5rem;
+  justify-content: space-between;
 }
 
 .header__logo {
@@ -67,19 +68,26 @@ a:hover {
   width: 100%;
 }
 
-.alerts {
+.footer__cta {
+  text-align: right;
+  margin-right: 1.5rem;
   white-space: nowrap;
 }
 
-.alerts--hidden {
-  visibility: hidden;
+.footer__cta a {
+  border-bottom: 1px solid var(--color-secondary);
+  text-decoration: none;
 }
 
-.alerts__icon {
+.footer__cta a:hover {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.footer__open-in-new {
   color: var(--color-primary);
   height: 1.1rem;
-  margin-right: .5rem;
-  vertical-align: text-bottom;
+  margin-left: .1rem;
+  vertical-align: middle;
   width: 1.1rem;
 }
 
@@ -195,6 +203,21 @@ a:hover {
 
 .technology__link {
   color: var(--color-text);
+  display: block;
+  width: 100%;
+}
+
+.technology__link .technology__name {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.technology__link:hover {
+  text-decoration: none;
+}
+
+.technology__link:hover .technology__name {
+  border-bottom: 1px solid var(--color-primary);
+  color: var(--color-primary);
 }
 
 .technology__confidence {
@@ -208,7 +231,7 @@ a:hover {
   border-radius: 3px;
   font-size: .7rem;
   padding: .1rem .3rem;
-  margin-left: .4rem;
+  margin-left: .2rem;
   vertical-align: middle;
 }
 
@@ -218,7 +241,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem 1.5rem 1rem 1.5rem;
-  height: 12rem;
+  height: 14rem;
   width: 36rem;
 }
 
@@ -244,18 +267,25 @@ a:hover {
   width: 80%;
 }
 
-.terms__accept {
+.terms__buttons {
+}
+
+.terms__button {
   background-color: #4608ad;
   border: none;
   border-radius: 3px;
   color: white;
   cursor: pointer;
   font-size: .9rem;
-  padding: .8rem 3rem;
+  padding: 0 2rem;
+  margin: 0 .2rem;
+  height: 3rem;
 }
 
-.terms__accept:hover {
-  background-color: #4107a1;
+.terms__button--decline {
+  background-color: white;
+  border: 1px solid #4608ad;
+  color: #4608ad;
 }
 
 .terms__privacy {
@@ -305,6 +335,11 @@ a:hover {
     color: #fff
   }
 
+  .theme-mode .technology__link:hover .technology__name {
+    border-bottom: 1px solid var(--color-text-dark);
+    color: var(--color-text-dark);
+  }
+
   .theme-mode .technology__confidence {
   }
 
@@ -321,7 +356,15 @@ a:hover {
     color: var(--color-text-dark);
   }
 
-  .theme-mode .alerts__icon {
-    color:var(--color-text-dark);
+  .theme-mode .footer__icon {
+    color: #fff;
+  }
+
+  .theme-mode .footer__open-in-new {
+    color: #fff;
+  }
+
+  .theme-mode .technology__open-in-new {
+    color: #fff;
   }
 }
