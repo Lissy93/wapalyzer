@@ -12353,21 +12353,25 @@
       "url": "\\.php(?:$|\\?)",
       "website": "http://php.net"
     },
-    "PHP-Fusion": {
+    "PHPFusion": {
       "cats": [
         1
       ],
-      "cpe": "cpe:/a:php-fusion:php-fusion",
+      "cpe": "cpe:/a:phpfusion:phpfusion",
       "headers": {
-        "X-Powered-By": "PHP-Fusion (.+)$\\;version:\\1"
+        "X-Powered-By": "PHPFusion (.+)$\\;version:\\1",
+        "X-PHPFusion": "(.+)$\\;version:\\1"
       },
-      "html": "Powered by <a href=\"[^>]+php-fusion",
-      "icon": "PHP-Fusion.png",
+      "html": [
+        "Powered by <a href=\"[^>]+phpfusion",
+        "Powered by <a href=\"[^>]+php-fusion"
+      ],
+      "icon": "PHPFusion.png",
       "implies": [
         "PHP",
         "MySQL"
       ],
-      "website": "https://www.php-fusion.co.uk"
+      "website": "https://phpfusion.com"
     },
     "PHP-Nuke": {
       "cats": [
@@ -17612,7 +17616,7 @@
         }
       },
       "js": {
-        "analyticsHost": "stats\\.uscreen\\.io" 
+        "analyticsHost": "stats\\.uscreen\\.io"
       },
       "icon": "Uscreen.png",
       "website": "https://uscreen.tv/",
