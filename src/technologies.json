@@ -548,16 +548,6 @@
       },
       "website": "http://awstats.sourceforge.net"
     },
-    "Abicart": {
-      "cats": [
-        6
-      ],
-      "icon": "abicart.png",
-      "meta": {
-        "generator": "Abicart"
-      },
-      "website": "https://abicart.com/"
-    },
     "AccessTrade": {
       "cats": [
         71
@@ -16780,15 +16770,18 @@
       ],
       "website": "https://www.tessituranetwork.com"
     },
-    "Textalk": {
+    "Abicart": {
       "cats": [
         6
       ],
-      "icon": "textalk.png",
+      "description": "Abicart is an ecommerce platform developed by the Swedish company Abicart AB."
+      "icon": "abicart.png",
       "meta": {
-        "generator": "Textalk Webshop"
+        "generator": ["Abicart", "Textalk Webshop"]
       },
-      "website": "https://www.textalk.se"
+      "saas": true,
+      "pricing": ["mid", "recurring"]
+      "website": "https://abicart.com/"
     },
     "Texthelp": {
       "cats": [
