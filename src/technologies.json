@@ -11670,6 +11670,32 @@
       "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
       "website": "https://www.olark.com/"
     },
+    "Ometria": {
+      "cats": [
+        32
+      ],
+      "description": "Ometria is a customer insight and marketing automation platform.",
+      "icon": "Ometria.svg",
+      "dom": {
+        "form[action*='api.ometria.com']": {
+          "attributes": {
+            "action": "api\\.ometria\\.com"
+          }
+        }
+      },
+      "js": {
+        "ometria": "",
+        "AddOmetriaBasket": "",
+        "AddOmetriaIdentify": ""
+      },
+      "cookies": {
+        "ometria": ""
+      },
+      "scripts": "cdn\\.ometria\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://ometria.com"
+    },
     "Omise": {
       "cats": [
         41
