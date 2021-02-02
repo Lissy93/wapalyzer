@@ -3714,10 +3714,17 @@
       "cats": [
         10
       ],
+      "description": "ClickTale is a SaaS solution enabling organizations to gain visual in-page analytics.",
       "icon": "ClickTale.png",
       "js": {
+        "ClickTale": "",
+        "ClickTaleEvent": "",
+        "ClickTaleGlobal": "",
         "clickTaleStartEventSignal": ""
       },
+      "scripts": "\\.clicktale\\.net",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
       "website": "http://www.clicktale.com"
     },
     "Clickbank": {
@@ -4192,6 +4199,22 @@
       "icon": "ConversionLab.png",
       "scripts": "conversionlab\\.trackset\\.com/track/tsend\\.js",
       "website": "http://www.trackset.it/conversionlab"
+    },
+    "Convert": {
+      "cats": [
+        74
+      ],
+      "description": "Convert Experiences is an enterprise A/B testing and personalization solution for conversion optimization and data-driven decisions in high-traffic websites.",
+      "icon": "Convert.png",
+      "js": {
+        "convert_temp": "\\;confidence:33",
+        "convertData": "\\;confidence:33",
+        "convert": "\\;confidence:34"
+      },
+      "scripts": "\\.convertexperiments\\.com/js",
+      "saas": true,
+      "pricing": ["high", "recurring"],
+      "website": "https://www.convert.com"
     },
     "ConvertFlow": {
       "cats": [
@@ -5839,7 +5862,8 @@
         "Fastly-Debug-Digest": "",
         "Vary": "Fastly-SSL",
         "X-Fastly-Request-ID": "",
-        "x-via-fastly:": ""
+        "x-via-fastly:": "",
+        "x-fastly-origin": ""
       },
       "icon": "Fastly.svg",
       "website": "https://www.fastly.com"
@@ -6308,17 +6332,32 @@
         52
       ],
       "description": "Freshchat is a cloud-hosted live messaging and engagement application.",
-      "icon": "freshchat.png",
+      "icon": "Freshchat.svg",
       "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "saas": true,
+      "pricing": ["low", "recurring"],
       "website": "https://www.freshworks.com/live-chat-software/"
     },
-    "Freshmarketer": {
+    "Freshworks CRM": {
       "cats": [
-        10
+        53,
+        32,
+        74
       ],
-      "icon": "freshmarketer.png",
-      "scripts": "cdn\\.freshmarketer\\.com",
-      "website": "https://www.freshworks.com/marketing-automation/conversion-rate-optimization/"
+      "description": "Freshworks CRM is a cloud-based customer relationship management (CRM) solution. Key features include one-click phone, sales lead tracking, sales management, event tracking and more.",
+      "icon": "Freshworks CRM.svg",
+      "js": {
+        "zarget": "",
+        "zargetAPI": "",
+        "ZargetForm": ""    
+      },
+      "scripts": [
+        "cdn\\.freshmarketer\\.com",
+        "cdn\\.zarget\\.com"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.freshworks.com/crm"
     },
     "Froala Editor": {
       "cats": [
@@ -7551,6 +7590,20 @@
       },
       "icon": "Hiawatha.png",
       "website": "http://hiawatha-webserver.org"
+    },
+    "HiConversion": {
+      "cats": [
+        74
+      ],
+      "description": "HiConversion is a SaaS solution that caters to ecommerce brands seeking actionable insights through their adaptive customer experience optimization.",
+      "icon": "HiConversion.png",
+      "js": {
+        "__hic.version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "deploy\\.hiconversion\\.com",
+      "saas": true,
+      "pricing": ["poa", "recurring"],
+      "website": "https://www.hiconversion.com"
     },
     "Highcharts": {
       "cats": [
@@ -11631,6 +11684,32 @@
       "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
       "website": "https://www.olark.com/"
     },
+    "Ometria": {
+      "cats": [
+        32
+      ],
+      "description": "Ometria is a customer insight and marketing automation platform.",
+      "icon": "Ometria.svg",
+      "dom": {
+        "form[action*='api.ometria.com']": {
+          "attributes": {
+            "action": "api\\.ometria\\.com"
+          }
+        }
+      },
+      "js": {
+        "ometria": "",
+        "AddOmetriaBasket": "",
+        "AddOmetriaIdentify": ""
+      },
+      "cookies": {
+        "ometria": ""
+      },
+      "scripts": "cdn\\.ometria\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://ometria.com"
+    },
     "Omise": {
       "cats": [
         41
@@ -11646,6 +11725,26 @@
       ],
       "scripts": "cdn\\.omise\\.co",
       "website": "https://www.omise.co"
+    },
+    "Omniconvert": {
+      "cats": [
+        74
+      ],
+      "description": "Omniconvert is an award-winning conversion rate optimization (CRO) software that can be used for A/B testing, online surveys, traffic segmentation.",
+      "icon": "Omniconvert.png",
+      "dom": {
+        "link[href*='app.omniconvert.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "js": {
+        "_omni": ""
+      },
+      "scripts": "cdn\\.omniconvert\\.com",
+      "pricing": ["mid", "recurring"],   
+      "website": "https://www.omniconvert.com"
     },
     "Omnisend": {
       "cats": [
@@ -12254,21 +12353,25 @@
       "url": "\\.php(?:$|\\?)",
       "website": "http://php.net"
     },
-    "PHP-Fusion": {
+    "PHPFusion": {
       "cats": [
         1
       ],
-      "cpe": "cpe:/a:php-fusion:php-fusion",
+      "cpe": "cpe:/a:phpfusion:phpfusion",
       "headers": {
-        "X-Powered-By": "PHP-Fusion (.+)$\\;version:\\1"
+        "X-Powered-By": "PHPFusion (.+)$\\;version:\\1",
+        "X-PHPFusion": "(.+)$\\;version:\\1"
       },
-      "html": "Powered by <a href=\"[^>]+php-fusion",
-      "icon": "PHP-Fusion.png",
+      "html": [
+        "Powered by <a href=\"[^>]+phpfusion",
+        "Powered by <a href=\"[^>]+php-fusion"
+      ],
+      "icon": "PHPFusion.png",
       "implies": [
         "PHP",
         "MySQL"
       ],
-      "website": "https://www.php-fusion.co.uk"
+      "website": "https://phpfusion.com"
     },
     "PHP-Nuke": {
       "cats": [
@@ -15430,6 +15533,21 @@
       "scripts": "siteglide\\.js",
       "website": "https://www.siteglide.com"
     },
+    "SiteSpect": {
+      "cats": [
+        74
+      ],
+      "description": "SiteSpect is the A/B testing and optimization solution.",
+      "icon": "SiteSpect.png",
+      "js": {
+        "SS": "\\;confidence:50",
+        "ss_dom_var": "\\;confidence:50"
+      },
+      "scripts": "/__ssobj/core\\.js",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.sitespect.com"
+    },
     "Sivuviidakko": {
       "cats": [
         1
@@ -16769,15 +16887,18 @@
       ],
       "website": "https://www.tessituranetwork.com"
     },
-    "Textalk": {
+    "Abicart": {
       "cats": [
         6
       ],
-      "icon": "textalk.png",
+      "description": "Abicart is an ecommerce platform developed by the Swedish company Abicart AB.",
+      "icon": "abicart.png",
       "meta": {
-        "generator": "Textalk Webshop"
+        "generator": ["Abicart", "Textalk Webshop"]
       },
-      "website": "https://www.textalk.se"
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://abicart.com/"
     },
     "Texthelp": {
       "cats": [
@@ -16918,6 +17039,21 @@
         "tiddlywiki-version": "^(.+)$\\;version:\\1"
       },
       "website": "http://tiddlywiki.com"
+    },
+    "Tidio": {
+      "cats": [
+       32,
+       5
+      ],
+      "description": "Tidio is a customer communication product. It provides multi-channel support so users can communicate with customers on the go. Live chat, messenger, or email are all supported.",
+      "icon": "Tidio.svg",
+      "js": {
+        "tidioChatApi": ""
+      },
+      "scripts": "code\\.tidio\\.co",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.tidio.com"
     },
     "Tiki Wiki CMS Groupware": {
       "cats": [
@@ -17199,11 +17335,33 @@
       ],
       "description": "Twitter is a 'microblogging' system that allows you to send and receive short posts called tweets.",
       "icon": "Twitter.svg",
+      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
+      "website": "http://twitter.com"
+    },
+    "Twitter Ads": {
+      "cats": [
+        36
+      ],
+      "description": "Twitter Ads is an advertising platform for Twitter 'microblogging' system.",
+      "icon": "Twitter.svg",
       "js": {
         "twttr": ""
       },
-      "scripts": "//platform\\.twitter\\.com/widgets\\.js",
-      "website": "http://twitter.com"
+      "saas": true,
+      "pricing": ["payg"],
+      "scripts": "static\\.ads-twitter\\.com/uwt\\.js",
+      "website": "https://ads.twitter.com"
+    },
+    "Twitter Analytics": {
+      "cats": [
+        10
+      ],
+      "description": "Twitter Analytics is a built-in data-tracking platform that shows you insights specific to your Twitter account and activity.",
+      "icon": "Twitter.svg",
+      "scripts": "analytics\\.twitter\\.com",
+      "saas": true,
+      "pricing": ["freemium"],
+      "website": "https://analytics.twitter.com"
     },
     "Twitter Emoji (Twemoji)": {
       "cats": [
@@ -17449,6 +17607,27 @@
       "icon": "UsableNet.png",
       "scripts": "\\.usablenet\\.com/pt/",
       "website": "https://usablenet.com/"
+    },
+    "Uscreen": {
+      "cats": [
+        1
+      ],
+      "description": "Uscreen is a CMS to monetize VOD and live content. They provide site hosting, video hosting, and a payment gateway for selling video based content.",
+      "dom": {
+        ".powered-by-uscreen": {
+          "text": ""
+        }
+      },
+      "js": {
+        "analyticsHost": "stats\\.uscreen\\.io"
+      },
+      "icon": "Uscreen.png",
+      "website": "https://uscreen.tv/",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true
     },
     "UserLike": {
       "cats": [
@@ -20596,7 +20775,7 @@
       "description": "Tailwind is a utility-first CSS framework.",
       "html": [
         "<link[^>]+?href=\"[^\"]+tailwindcss[@|/][a-z]+/tailwind(?:.min)?.css",
-        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/]([0-9.]+)(?:/[a-z]+)?/[tailwind|base|components|utilities](?:.min)?.css\\;version:\\1"
+        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
       ],
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
