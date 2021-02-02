@@ -6332,17 +6332,32 @@
         52
       ],
       "description": "Freshchat is a cloud-hosted live messaging and engagement application.",
-      "icon": "freshchat.png",
+      "icon": "Freshchat.svg",
       "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "saas": true,
+      "pricing": ["low", "recurring"],
       "website": "https://www.freshworks.com/live-chat-software/"
     },
-    "Freshmarketer": {
+    "Freshworks CRM": {
       "cats": [
-        10
+        53,
+        32,
+        74
       ],
-      "icon": "freshmarketer.png",
-      "scripts": "cdn\\.freshmarketer\\.com",
-      "website": "https://www.freshworks.com/marketing-automation/conversion-rate-optimization/"
+      "description": "Freshworks CRM is a cloud-based customer relationship management (CRM) solution. Key features include one-click phone, sales lead tracking, sales management, event tracking and more.",
+      "icon": "Freshworks CRM.svg",
+      "js": {
+        "zarget": "",
+        "zargetAPI": "",
+        "ZargetForm": ""    
+      },
+      "scripts": [
+        "cdn\\.freshmarketer\\.com",
+        "cdn\\.zarget\\.com"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.freshworks.com/crm"
     },
     "Froala Editor": {
       "cats": [
