@@ -381,13 +381,15 @@
       "description": "AB Tasty is a customer experience optimization company. AB Tasty offers AI-driven experimentation, personalization, and product optimization platforms for user testing.",
       "icon": "AB Tasty.svg",
       "js": {
-        "_abtasty": "",
         "ABTasty": "",
+        "_abtasty": "",
         "loadABTasty": ""
       },
-      "scripts": "try\\.abtasty\\.com",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "try\\.abtasty\\.com",
       "website": "https://www.abtasty.com"
     },
     "AD EBiS": {
@@ -548,6 +550,25 @@
       },
       "website": "http://awstats.sourceforge.net"
     },
+    "Abicart": {
+      "cats": [
+        6
+      ],
+      "description": "Abicart is an ecommerce platform developed by the Swedish company Abicart AB.",
+      "icon": "abicart.png",
+      "meta": {
+        "generator": [
+          "Abicart",
+          "Textalk Webshop"
+        ]
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://abicart.com/"
+    },
     "AccessTrade": {
       "cats": [
         71
@@ -593,6 +614,23 @@
       },
       "scripts": "/embed/accesso\\.js",
       "website": "https://accesso.com/"
+    },
+    "Acquia Cloud Platform": {
+      "cats": [
+        62
+      ],
+      "description": "Acquia Cloud Platform is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
+      "headers": {
+        "X-AH-Environment": "^\\w+$"
+      },
+      "icon": "acquia-cloud.png",
+      "implies": [
+        "Drupal\\;confidence:95",
+        "Apache",
+        "Percona",
+        "Amazon EC2"
+      ],
+      "website": "https://www.acquia.com/"
     },
     "Act-On": {
       "cats": [
@@ -693,9 +731,11 @@
       ],
       "description": "AddShoppers is the social media marketing command center for small-medium online retailers.",
       "icon": "AddShoppers.png",
-      "scripts": "(?:cdn\\.)?shop\\.pe/widget/",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "(?:cdn\\.)?shop\\.pe/widget/",
       "website": "http://www.addshoppers.com"
     },
     "AddThis": {
@@ -890,8 +930,10 @@
         "adobe.target": "",
         "adobe.target.VERSION": "^(.+)$\\;version:\\1"
       },
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
       "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
@@ -1768,16 +1810,6 @@
       "scripts": "adrum",
       "website": "https://appdynamics.com"
     },
-    "Appian": {
-      "cats": [
-        62
-      ],
-      "description": "Appian is an enterprise low-code application platform.",
-      "icon": "Appian.png",
-      "saas": true,
-      "scripts": "\/suite\/tempo\/ui\/sail-client\/embeddedBootstrap.nocache.js",
-      "website": "https://www.appian.com"
-    },
     "AppNexus": {
       "cats": [
         36
@@ -1791,6 +1823,16 @@
       "saas": true,
       "scripts": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
+    },
+    "Appian": {
+      "cats": [
+        62
+      ],
+      "description": "Appian is an enterprise low-code application platform.",
+      "icon": "Appian.png",
+      "saas": true,
+      "scripts": "/suite/tempo/ui/sail-client/embeddedBootstrap.nocache.js",
+      "website": "https://www.appian.com"
     },
     "Apple Pay": {
       "cats": [
@@ -2594,15 +2636,18 @@
       "description": "Bloomreach Search & Merchandising (brSM) is an AI-driven platform for ecommerce.",
       "icon": "Bloomreach.png",
       "js": {
-        "br_data": "",
-        "BrTrk": ""
+        "BrTrk": "",
+        "br_data": ""
       },
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "cdns\\.brsrvr\\.com/v([\\d.]+)\\;version:\\1",
         "cdn\\.brcdn\\.com/v([\\d.]+)\\;version:\\1"
       ],
-      "saas": true,
-      "pricing": ["high", "recurring"],
       "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
     },
     "Bluecore": {
@@ -2613,14 +2658,16 @@
       "description": "Bluecore is a retail marketing technology that uses data gained from direct marketing like email, social media, site activity.",
       "icon": "Bluecore.svg",
       "js": {
-        "triggermail": "",
-        "triggermail_email_address": "",
+        "_bluecoreTrack": "",
         "bluecore_action_trigger": "",
-        "_bluecoreTrack": ""
+        "triggermail": "",
+        "triggermail_email_address": ""
       },
-      "scripts": "\\.bluecore\\.com",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "\\.bluecore\\.com",
       "website": "https://www.bluecore.com"
     },
     "Bluefish": {
@@ -2863,12 +2910,15 @@
         "branch.setBranchViewData": "",
         "branch_callback__0": ""
       },
+      "pricing": [
+        "poa",
+        "freemium"
+      ],
+      "saas": true,
       "scripts": [
         "cdn\\.branch\\.io",
         "app\\.link/_r\\?sdk=web([\\d.]+)\\;version:\\1"
       ],
-      "saas": true,
-      "pricing": ["poa", "freemium"],
       "website": "https://branch.io"
     },
     "Braze": {
@@ -2908,13 +2958,15 @@
       "description": "Bronto is a cloud-based email marketing automation software.",
       "icon": "Bronto.svg",
       "js": {
-        "bronto.versions.sca": "(.+)\\;version:\\1",
         "BrontoShopify": "",
+        "bronto.versions.sca": "(.+)\\;version:\\1",
         "brontoCookieConsent": ""
       },
-      "scripts": "(?:snip|cdn)\\.bronto\\.com",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "(?:snip|cdn)\\.bronto\\.com",
       "website": "https://bronto.com"
     },
     "BrowserCMS": {
@@ -3547,10 +3599,10 @@
       "website": "http://chitika.com"
     },
     "Choices": {
-      "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
       "cats": [
         19
       ],
+      "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
       "icon": "Choices.png",
       "scripts": [
         "choices\\.js/|@([\\d.]+)(?:/assets)?(?:/scripts)?(?:/styles)?(?:/dist)?/choices(?:\\.min)?\\.js|css\\;version:\\1"
@@ -3722,9 +3774,12 @@
         "ClickTaleGlobal": "",
         "clickTaleStartEventSignal": ""
       },
-      "scripts": "\\.clicktale\\.net",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
+      "scripts": "\\.clicktale\\.net",
       "website": "http://www.clicktale.com"
     },
     "Clickbank": {
@@ -3772,23 +3827,6 @@
       "icon": "Clipboard.js.svg",
       "scripts": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://clipboardjs.com/"
-    },
-    "Acquia Cloud Platform": {
-      "cats": [
-        62
-      ],
-      "description": "Acquia Cloud Platform is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
-      "headers": {
-        "X-AH-Environment": "^\\w+$"
-      },
-      "icon": "acquia-cloud.png",
-      "implies": [
-        "Drupal\\;confidence:95",
-        "Apache",
-        "Percona",
-        "Amazon EC2"
-      ],
-      "website": "https://www.acquia.com/"
     },
     "CloudCart": {
       "cats": [
@@ -4207,13 +4245,16 @@
       "description": "Convert Experiences is an enterprise A/B testing and personalization solution for conversion optimization and data-driven decisions in high-traffic websites.",
       "icon": "Convert.png",
       "js": {
-        "convert_temp": "\\;confidence:33",
+        "convert": "\\;confidence:34",
         "convertData": "\\;confidence:33",
-        "convert": "\\;confidence:34"
+        "convert_temp": "\\;confidence:33"
       },
-      "scripts": "\\.convertexperiments\\.com/js",
+      "pricing": [
+        "high",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["high", "recurring"],
+      "scripts": "\\.convertexperiments\\.com/js",
       "website": "https://www.convert.com"
     },
     "ConvertFlow": {
@@ -5862,8 +5903,8 @@
         "Fastly-Debug-Digest": "",
         "Vary": "Fastly-SSL",
         "X-Fastly-Request-ID": "",
-        "x-via-fastly:": "",
-        "x-fastly-origin": ""
+        "x-fastly-origin": "",
+        "x-via-fastly:": ""
       },
       "icon": "Fastly.svg",
       "website": "https://www.fastly.com"
@@ -6153,9 +6194,12 @@
       "js": {
         "fomo.version": "(.+)\\;version:\\1"
       },
-      "scripts": "fomo\\.com/api/v",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "fomo\\.com/api/v",
       "website": "https://fomo.com"
     },
     "Font Awesome": {
@@ -6333,9 +6377,12 @@
       ],
       "description": "Freshchat is a cloud-hosted live messaging and engagement application.",
       "icon": "Freshchat.svg",
-      "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
       "website": "https://www.freshworks.com/live-chat-software/"
     },
     "Freshworks CRM": {
@@ -6347,16 +6394,19 @@
       "description": "Freshworks CRM is a cloud-based customer relationship management (CRM) solution. Key features include one-click phone, sales lead tracking, sales management, event tracking and more.",
       "icon": "Freshworks CRM.svg",
       "js": {
+        "ZargetForm": "",
         "zarget": "",
-        "zargetAPI": "",
-        "ZargetForm": ""    
+        "zargetAPI": ""
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "cdn\\.freshmarketer\\.com",
         "cdn\\.zarget\\.com"
       ],
-      "saas": true,
-      "pricing": ["mid", "recurring"],
       "website": "https://www.freshworks.com/crm"
     },
     "Froala Editor": {
@@ -6689,9 +6739,12 @@
       "js": {
         "GETSOCIAL_VERSION": "(.+)\\;version:\\1"
       },
-      "scripts": "api\\.at\\.getsocial\\.io",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "api\\.at\\.getsocial\\.io",
       "website": "https://getsocial.io"
     },
     "Ghost": {
@@ -7352,6 +7405,20 @@
       "scripts": "ib\\.guestonline\\.\\w+",
       "website": "https://www.guestonline.io"
     },
+    "HCL Commerce": {
+      "cats": [
+        6
+      ],
+      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(?:/wcsstore/|webapp\\/wcs)",
+      "icon": "HCL Commerce.svg",
+      "implies": "Java",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "url": "/wcs/",
+      "website": "https://www.hcltechsw.com/products/commerce"
+    },
     "HCL Digital Experience": {
       "cats": [
         1
@@ -7581,16 +7648,6 @@
       },
       "website": "https://hexo.io"
     },
-    "Hiawatha": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Hiawatha v([\\d.]+)\\;version:\\1"
-      },
-      "icon": "Hiawatha.png",
-      "website": "http://hiawatha-webserver.org"
-    },
     "HiConversion": {
       "cats": [
         74
@@ -7600,10 +7657,23 @@
       "js": {
         "__hic.version": "([\\d.]+)\\;version:\\1"
       },
-      "scripts": "deploy\\.hiconversion\\.com",
+      "pricing": [
+        "poa",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["poa", "recurring"],
+      "scripts": "deploy\\.hiconversion\\.com",
       "website": "https://www.hiconversion.com"
+    },
+    "Hiawatha": {
+      "cats": [
+        22
+      ],
+      "headers": {
+        "Server": "Hiawatha v([\\d.]+)\\;version:\\1"
+      },
+      "icon": "Hiawatha.png",
+      "website": "http://hiawatha-webserver.org"
     },
     "Highcharts": {
       "cats": [
@@ -7801,20 +7871,6 @@
       },
       "icon": "IBM.svg",
       "website": "http://ibm.com/software/webservers/httpservers"
-    },
-    "HCL Commerce": {
-      "cats": [
-        6
-      ],
-      "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(?:/wcsstore/|webapp\\/wcs)",
-      "icon": "HCL Commerce.svg",
-      "implies": "Java",
-      "pricing": [
-        "poa"
-      ],
-      "saas": true,
-      "url": "/wcs/",
-      "website": "https://www.hcltechsw.com/products/commerce"
     },
     "IIS": {
       "cats": [
@@ -8147,15 +8203,18 @@
         "Node.js"
       ],
       "js": {
-        "instapageSp": "",
-        "_instapageSnowplow": ""
+        "_instapageSnowplow": "",
+        "instapageSp": ""
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "cdn\\.instapagemetrics\\.com",
         "heatmap-events-collector\\.instapage\\.com"
       ],
-      "saas": true,
-      "pricing": ["mid", "recurring"],
       "website": "https://instapage.com"
     },
     "Intel Active Management Technology": {
@@ -8749,8 +8808,10 @@
       "cats": [
         74
       ],
+      "cookies": {
+        "kameleoonVisitorCode": ""
+      },
       "description": "Kameleoon is a personalization technology platform for real-time omnichannel optimization and conversion.",
-      "icon": "Kameleoon.svg",
       "dom": {
         "link[href*='.kameleoon.eu/kameleoon.js']": {
           "attributes": {
@@ -8758,17 +8819,17 @@
           }
         }
       },
-      "cookies": {
-        "kameleoonVisitorCode": ""
-      },
+      "icon": "Kameleoon.svg",
       "js": {
         "Kameleoon.Gatherer.SCRIPT_VERSION": "(.+)\\;version:\\1",
         "kameleoonEndLoadTime": "",
         "kameleoonS": ""
       },
-      "scripts": "\\.kameleoon\\.\\w+/kameleoon\\.js",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "\\.kameleoon\\.\\w+/kameleoon\\.js",
       "website": "https://kameleoon.com/"
     },
     "Kampyle": {
@@ -8896,8 +8957,10 @@
       ],
       "description": "Kibo Commerce is a enterprise ecommerce platform  that offers a cloud-based, end-to-end commerce solution for retailers and branded manufacturers.",
       "icon": "Kibo.png",
+      "pricing": [
+        "poa"
+      ],
       "scripts": "cdn-tp\\d+\\.mozu\\.com",
-      "pricing": ["poa"],
       "website": "https://kibocommerce.com"
     },
     "Kibo Personalization": {
@@ -8908,13 +8971,15 @@
       "description": "Kibo Personalization is a omnichannel personalization software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
       "icon": "Kibo.png",
       "js": {
-        "monetateT": "",
+        "monetate": "",
         "monetateQ": "",
-        "monetate": ""
+        "monetateT": ""
       },
-      "scripts": "\\.monetate\\.net",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "\\.monetate\\.net",
       "website": "https://kibocommerce.com/personalization-software"
     },
     "KineticJS": {
@@ -11252,6 +11317,26 @@
       "url": "\\.plataformaneo\\.com",
       "website": "https://www.jetecommerce.com.br"
     },
+    "NSW Design System": {
+      "cats": [
+        66
+      ],
+      "dom": {
+        ".nsw-container, .nsw-header, .nsw-icon": {
+          "text": ""
+        },
+        "link[href*='nsw-design-system']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "icon": "NSW Design System.svg",
+      "js": {
+        "NSW.initSite": ""
+      },
+      "website": "https://www.digital.nsw.gov.au/digital-design-system"
+    },
     "NVD3": {
       "cats": [
         25
@@ -11688,8 +11773,10 @@
       "cats": [
         32
       ],
+      "cookies": {
+        "ometria": ""
+      },
       "description": "Ometria is a customer insight and marketing automation platform.",
-      "icon": "Ometria.svg",
       "dom": {
         "form[action*='api.ometria.com']": {
           "attributes": {
@@ -11697,17 +11784,17 @@
           }
         }
       },
+      "icon": "Ometria.svg",
       "js": {
-        "ometria": "",
         "AddOmetriaBasket": "",
-        "AddOmetriaIdentify": ""
-      },
-      "cookies": {
+        "AddOmetriaIdentify": "",
         "ometria": ""
       },
-      "scripts": "cdn\\.ometria\\.com",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "cdn\\.ometria\\.com",
       "website": "https://ometria.com"
     },
     "Omise": {
@@ -11731,7 +11818,6 @@
         74
       ],
       "description": "Omniconvert is an award-winning conversion rate optimization (CRO) software that can be used for A/B testing, online surveys, traffic segmentation.",
-      "icon": "Omniconvert.png",
       "dom": {
         "link[href*='app.omniconvert.com']": {
           "attributes": {
@@ -11739,11 +11825,15 @@
           }
         }
       },
+      "icon": "Omniconvert.png",
       "js": {
         "_omni": ""
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "scripts": "cdn\\.omniconvert\\.com",
-      "pricing": ["mid", "recurring"],   
       "website": "https://www.omniconvert.com"
     },
     "Omnisend": {
@@ -12353,26 +12443,6 @@
       "url": "\\.php(?:$|\\?)",
       "website": "http://php.net"
     },
-    "PHPFusion": {
-      "cats": [
-        1
-      ],
-      "cpe": "cpe:/a:phpfusion:phpfusion",
-      "headers": {
-        "X-Powered-By": "PHPFusion (.+)$\\;version:\\1",
-        "X-PHPFusion": "(.+)$\\;version:\\1"
-      },
-      "html": [
-        "Powered by <a href=\"[^>]+phpfusion",
-        "Powered by <a href=\"[^>]+php-fusion"
-      ],
-      "icon": "PHPFusion.png",
-      "implies": [
-        "PHP",
-        "MySQL"
-      ],
-      "website": "https://phpfusion.com"
-    },
     "PHP-Nuke": {
       "cats": [
         1
@@ -12399,6 +12469,26 @@
         "debugbar.*\\.js"
       ],
       "website": "http://phpdebugbar.com/"
+    },
+    "PHPFusion": {
+      "cats": [
+        1
+      ],
+      "cpe": "cpe:/a:phpfusion:phpfusion",
+      "headers": {
+        "X-PHPFusion": "(.+)$\\;version:\\1",
+        "X-Powered-By": "PHPFusion (.+)$\\;version:\\1"
+      },
+      "html": [
+        "Powered by <a href=\"[^>]+phpfusion",
+        "Powered by <a href=\"[^>]+php-fusion"
+      ],
+      "icon": "PHPFusion.png",
+      "implies": [
+        "PHP",
+        "MySQL"
+      ],
+      "website": "https://phpfusion.com"
     },
     "PIXIjs": {
       "cats": [
@@ -13469,9 +13559,11 @@
         "__qubit": "",
         "onQubitReady": ""
       },
-      "scripts": "static\\.goqubit\\.com",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "static\\.goqubit\\.com",
       "website": "https://www.qubit.com"
     },
     "Question2Answer": {
@@ -14676,7 +14768,10 @@
       "description": "Sanity is a platform for structured content. It comes with an open-source, headless CMS that can be customized with Javascript, a real-time hosted data store and an asset delivery pipeline.",
       "dom": {
         "img[src*='cdn.sanity.io'],img[srcset*='cdn.sanity.io'],video[src*='cdn.sanity.io'],source[src*='cdn.sanity.io'],source[srcset*='cdn.sanity.io'],track[src*='cdn.sanity.io']": {
-          "attributes": { "src": "", "srcset": "" }
+          "attributes": {
+            "src": "",
+            "srcset": ""
+          }
         }
       },
       "icon": "Sanity.svg",
@@ -14880,12 +14975,16 @@
       "js": {
         "analytics.VERSION": "(.+)\\;version:\\1"
       },
+      "pricing": [
+        "mid",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "cdn\\.segment\\.com/analytics\\.js",
         "/segment-wrapper\\.min\\.js"
       ],
-      "saas": true,
-      "pricing": ["mid", "freemium", "recurring"],
       "website": "https://segment.com"
     },
     "Select2": {
@@ -15027,6 +15126,35 @@
         "generator": "Serendipity(?: v\\.([\\d.]+))?\\;version:\\1"
       },
       "website": "http://s9y.org"
+    },
+    "Service Provider Pro": {
+      "cats": [
+        41,
+        53
+      ],
+      "cookies": {
+        "spp_csrf": "\\;confidence:25",
+        "spp_orderform": "",
+        "spp_session": "\\;confidence:25"
+      },
+      "description": "Service Provider Pro is a client management & billing software for productized service agencies.",
+      "icon": "Service Provider Pro.svg",
+      "js": {
+        "sppOrderform": ""
+      },
+      "meta": {
+        "server": "app.spp.co"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": [
+        "js/spp_clients\\.js\\;confidence:50",
+        "\\.spp\\.io/js/"
+      ],
+      "website": "https://spp.co"
     },
     "Setmore": {
       "cats": [
@@ -15485,6 +15613,23 @@
       "icon": "siteground.svg",
       "website": "https://www.siteground.com"
     },
+    "SiteSpect": {
+      "cats": [
+        74
+      ],
+      "description": "SiteSpect is the A/B testing and optimization solution.",
+      "icon": "SiteSpect.png",
+      "js": {
+        "SS": "\\;confidence:50",
+        "ss_dom_var": "\\;confidence:50"
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "/__ssobj/core\\.js",
+      "website": "https://www.sitespect.com"
+    },
     "Sitecore": {
       "cats": [
         1
@@ -15532,21 +15677,6 @@
       "saas": true,
       "scripts": "siteglide\\.js",
       "website": "https://www.siteglide.com"
-    },
-    "SiteSpect": {
-      "cats": [
-        74
-      ],
-      "description": "SiteSpect is the A/B testing and optimization solution.",
-      "icon": "SiteSpect.png",
-      "js": {
-        "SS": "\\;confidence:50",
-        "ss_dom_var": "\\;confidence:50"
-      },
-      "scripts": "/__ssobj/core\\.js",
-      "saas": true,
-      "pricing": ["poa"],
-      "website": "https://www.sitespect.com"
     },
     "Sivuviidakko": {
       "cats": [
@@ -15948,32 +16078,6 @@
         "soundManager.version": "V(.+) \\;version:\\1"
       },
       "website": "http://www.schillmania.com/projects/soundmanager2"
-    },
-    "Service Provider Pro": {
-      "cats": [
-        41,
-        53
-      ],
-      "description": "Service Provider Pro is a client management & billing software for productized service agencies.",
-      "icon": "Service Provider Pro.svg",
-      "meta": {
-        "server": "app.spp.co"
-      },
-      "cookies": {
-        "spp_session": "\\;confidence:25",
-        "spp_csrf": "\\;confidence:25",
-        "spp_orderform": ""
-      },
-      "js": {
-        "sppOrderform": ""
-      },
-      "scripts": [
-        "js/spp_clients\\.js\\;confidence:50",
-        "\\.spp\\.io/js/"
-      ],
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://spp.co"
     },
     "SparkPost": {
       "cats": [
@@ -16887,19 +16991,6 @@
       ],
       "website": "https://www.tessituranetwork.com"
     },
-    "Abicart": {
-      "cats": [
-        6
-      ],
-      "description": "Abicart is an ecommerce platform developed by the Swedish company Abicart AB.",
-      "icon": "abicart.png",
-      "meta": {
-        "generator": ["Abicart", "Textalk Webshop"]
-      },
-      "saas": true,
-      "pricing": ["mid", "recurring"],
-      "website": "https://abicart.com/"
-    },
     "Texthelp": {
       "cats": [
         68
@@ -17042,17 +17133,21 @@
     },
     "Tidio": {
       "cats": [
-       32,
-       5
+        32,
+        5
       ],
       "description": "Tidio is a customer communication product. It provides multi-channel support so users can communicate with customers on the go. Live chat, messenger, or email are all supported.",
       "icon": "Tidio.svg",
       "js": {
         "tidioChatApi": ""
       },
-      "scripts": "code\\.tidio\\.co",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
+      "scripts": "code\\.tidio\\.co",
       "website": "https://www.tidio.com"
     },
     "Tiki Wiki CMS Groupware": {
@@ -17347,8 +17442,10 @@
       "js": {
         "twttr": ""
       },
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
       "scripts": "static\\.ads-twitter\\.com/uwt\\.js",
       "website": "https://ads.twitter.com"
     },
@@ -17358,9 +17455,11 @@
       ],
       "description": "Twitter Analytics is a built-in data-tracking platform that shows you insights specific to your Twitter account and activity.",
       "icon": "Twitter.svg",
-      "scripts": "analytics\\.twitter\\.com",
+      "pricing": [
+        "freemium"
+      ],
       "saas": true,
-      "pricing": ["freemium"],
+      "scripts": "analytics\\.twitter\\.com",
       "website": "https://analytics.twitter.com"
     },
     "Twitter Emoji (Twemoji)": {
@@ -17618,16 +17717,16 @@
           "text": ""
         }
       },
+      "icon": "Uscreen.svg",
       "js": {
         "analyticsHost": "stats\\.uscreen\\.io"
       },
-      "icon": "Uscreen.png",
-      "website": "https://uscreen.tv/",
       "pricing": [
         "mid",
         "recurring"
       ],
-      "saas": true
+      "saas": true,
+      "website": "https://uscreen.tv/"
     },
     "UserLike": {
       "cats": [
@@ -18041,12 +18140,14 @@
       "description": "Vizury is a commerce marketing platform.",
       "icon": "Vizury.png",
       "js": {
-        "vizury_data": "",
-        "safariVizury": ""
+        "safariVizury": "",
+        "vizury_data": ""
       },
-      "scripts": "\\.vizury\\.com",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "\\.vizury\\.com",
       "website": "https://www.vizury.com"
     },
     "Volusion": {
@@ -18357,14 +18458,14 @@
       },
       "website": "http://www.webgui.org"
     },
-    "WebMetric":{
+    "WebMetric": {
       "cats": [
         10
       ],
-      "icon": "WebMetric.svg",
       "cookies": {
         "_wmuid": ""
       },
+      "icon": "WebMetric.svg",
       "js": {
         "_wmid": ""
       },
@@ -20356,26 +20457,6 @@
       },
       "oss": true,
       "website": "http://www.nopcommerce.com"
-    },
-    "NSW Design System": {
-      "cats": [
-        66
-      ],
-      "dom": {
-        "link[href*='nsw-design-system']": {
-          "attributes": {
-            "href": ""
-          }
-        },
-        ".nsw-container, .nsw-header, .nsw-icon": {
-          "text": ""
-        }
-      },
-      "website": "https://www.digital.nsw.gov.au/digital-design-system",
-      "icon": "NSW Design System.svg",
-      "js": {
-        "NSW.initSite": ""
-      }
     },
     "osCommerce": {
       "cats": [
