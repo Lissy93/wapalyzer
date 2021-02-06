@@ -1381,22 +1381,6 @@
       "saas": true,
       "website": "https://affiliate-program.amazon.com.au/"
     },
-    "Azion": {
-      "cats": [
-        31
-      ],
-      "description": "",
-      "headers": {
-        "Server": "^Azion "
-      },
-      "dns": {
-        "CNAME": "azioncdn\\.net\\.?$"
-      },
-      "icon": "Azion.svg",
-      "saas": true,
-      "pricing": ["poa", "payg"],
-      "website": "https://www.azion.com/"
-    },
     "Amazon Cloudfront": {
       "cats": [
         31
@@ -2281,6 +2265,25 @@
         "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
       ],
       "website": "https://github.com/axios/axios"
+    },
+    "Azion": {
+      "cats": [
+        31
+      ],
+      "description": "",
+      "dns": {
+        "CNAME": "azioncdn\\.net\\.?$"
+      },
+      "headers": {
+        "Server": "^Azion "
+      },
+      "icon": "Azion.svg",
+      "pricing": [
+        "poa",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.azion.com/"
     },
     "Azure": {
       "cats": [
