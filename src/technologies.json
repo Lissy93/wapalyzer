@@ -5736,8 +5736,13 @@
       ],
       "description": "ExpertRec is a collaborative Web search engine, which allows users share search histories through a web browser.",
       "icon": "ExpertRec.png",
-      "scripts": "cse\\.expertrec\\.com/api/js/ci_common\\.js\\?id=.*$",
-      "website": "https://expertrec.com"
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "expertrec\\.com/api/js/ci_common\\.js\\?id=.*",
+      "website": "https://www.expertrec.com"
     },
     "Express": {
       "cats": [
