@@ -1231,6 +1231,9 @@
         "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>"
       ],
       "icon": "akamai.svg",
+      "implies": [
+        "Boomerang"
+      ],
       "js": {
         "BOOMR_API_key": ""
       },
@@ -2833,6 +2836,20 @@
       ],
       "scripts": "booksy\\.com/widget/code\\.js",
       "website": "https://booksy.com/"
+    },
+    "Boomerang": {
+      "cats": [
+        59
+      ],
+      "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
+      "icon": "boomerang.svg",
+      "js": {
+        "BOOMR": "",
+        "BOOMR_lstart": "",
+        "BOOMR_mq": ""
+      },
+      "oss": true,
+      "website": "https://akamai.github.io/boomerang"
     },
     "Bootstrap": {
       "cats": [
