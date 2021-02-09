@@ -322,14 +322,6 @@
       "scripts": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
       "website": "http://www.3dcart.com"
     },
-    "91App": {
-      "cats": [
-        6
-      ],
-      "icon": "91app.png",
-      "scripts": "https\\:\\/\\/track\\.91app\\.io\\/track\\.js\\?",
-      "website": "https://www.91app.com/"
-    },
     "@sulu/web": {
       "cats": [
         59
@@ -2453,17 +2445,6 @@
       "scripts": "thebase\\.in/js",
       "website": "https://thebase.in"
     },
-    "BaseHTTP": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "BaseHTTP\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "BaseHTTP.png",
-      "implies": "Python",
-      "website": "http://docs.python.org/2/library/basehttpserver.html"
-    },
     "Big Cartel": {
       "cats": [
         6
@@ -2703,16 +2684,6 @@
         "generator": "Bluefish(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "website": "http://sourceforge.net/projects/bluefish"
-    },
-    "Boa": {
-      "cats": [
-        22
-      ],
-      "cpe": "cpe:/a:boa:boa",
-      "headers": {
-        "Server": "Boa\\/?([\\d\\.a-z]+)?\\;version:\\1"
-      },
-      "website": "http://www.boa.org"
     },
     "Boba.js": {
       "cats": [
@@ -3121,17 +3092,6 @@
       "html": "<link[^>]+?href=\"[^\"]+bulma(?:\\.min)?\\.css",
       "icon": "Bulma.png",
       "website": "http://bulma.io"
-    },
-    "Burning Board": {
-      "cats": [
-        2
-      ],
-      "icon": "Burning Board.png",
-      "implies": [
-        "PHP",
-        "Woltlab Community Framework"
-      ],
-      "website": "http://www.woltlab.com"
     },
     "Business Catalyst": {
       "cats": [
@@ -4133,34 +4093,6 @@
       "implies": "Microsoft ASP.NET",
       "website": "http://commerceserver.net"
     },
-    "Commerce.js": {
-      "cats": [
-        6
-      ],
-      "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
-      "headers": {
-        "Chec-Version": ".*",
-        "X-Support": "support@commercejs\\.com"
-      },
-      "icon": "commercejs.png",
-      "scripts": [
-        "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version:\\1",
-        "chec/commerce\\.js"
-      ],
-      "url": "^https?//.+\\.spaces.chec\\.io",
-      "website": "https://www.commercejs.com"
-    },
-    "CompaqHTTPServer": {
-      "cats": [
-        22
-      ],
-      "cpe": "cpe:/a:hp:compaqhttpserver",
-      "headers": {
-        "Server": "CompaqHTTPServer\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "HP.svg",
-      "website": "http://www.hp.com"
-    },
     "Concrete5": {
       "cats": [
         1
@@ -4266,14 +4198,6 @@
       ],
       "saas": true,
       "website": "http://www.contentful.com"
-    },
-    "ConversionLab": {
-      "cats": [
-        10
-      ],
-      "icon": "ConversionLab.png",
-      "scripts": "conversionlab\\.trackset\\.com/track/tsend\\.js",
-      "website": "http://www.trackset.it/conversionlab"
     },
     "Convert": {
       "cats": [
@@ -5141,16 +5065,6 @@
       "saas": true,
       "scripts": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "website": "http://www.google.com/dfp"
-    },
-    "DovetailWRP": {
-      "cats": [
-        1
-      ],
-      "html": "<link[^>]* href=\"\\/DovetailWRP\\/",
-      "icon": "DovetailWRP.png",
-      "implies": "Microsoft ASP.NET",
-      "scripts": "\\/DovetailWRP\\/",
-      "website": "http://www.dovetailinternet.com"
     },
     "Doxygen": {
       "cats": [
@@ -7552,15 +7466,6 @@
       "url": "/wps/",
       "website": "https://www.hcltechsw.com/products/dx"
     },
-    "HERE": {
-      "cats": [
-        35
-      ],
-      "description": "HERE provides mapping and location data to individuals and companies.",
-      "icon": "HERE.png",
-      "scripts": "https?://js\\.cit\\.api\\.here\\.com/se/([\\d.]+)\\/\\;version:\\1",
-      "website": "http://developer.here.com"
-    },
     "HHVM": {
       "cats": [
         22
@@ -7572,16 +7477,6 @@
       "icon": "HHVM.png",
       "implies": "PHP\\;confidence:75",
       "website": "http://hhvm.com"
-    },
-    "HP ChaiServer": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "HP-Chai(?:Server|SOE)(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "HP.svg",
-      "website": "http://hp.com"
     },
     "HP Compact Server": {
       "cats": [
@@ -8029,15 +7924,6 @@
       },
       "scripts": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
       "website": "https://www.infonline.de"
-    },
-    "INTI": {
-      "cats": [
-        6,
-        53
-      ],
-      "icon": "byINTI.svg",
-      "url": "\\.byinti\\.com",
-      "website": "https://byinti.com"
     },
     "IPB": {
       "cats": [
@@ -10246,14 +10132,6 @@
       "scripts": "widget\\.manychat\\.com",
       "website": "https://manychat.com/"
     },
-    "ManyContacts": {
-      "cats": [
-        5
-      ],
-      "icon": "ManyContacts.png",
-      "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
-      "website": "http://www.manycontacts.com"
-    },
     "Mapbox GL JS": {
       "cats": [
         35
@@ -10891,24 +10769,6 @@
         "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
       ],
       "website": "http://minero.cc/"
-    },
-    "MiniBB": {
-      "cats": [
-        2
-      ],
-      "cpe": "cpe:/a:minibb:minibb",
-      "html": "<a href=\"[^\"]+minibb[^<]+</a>[^<]+\\n<!--End of copyright link",
-      "icon": "MiniBB.png",
-      "website": "http://www.minibb.com"
-    },
-    "MiniServ": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "MiniServ\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "website": "http://sourceforge.net/projects/miniserv"
     },
     "Mint": {
       "cats": [
@@ -14116,17 +13976,6 @@
       "saas": true,
       "website": "https://redcart.pl"
     },
-    "Redaxscript": {
-      "cats": [
-        1
-      ],
-      "icon": "Redaxscript.svg",
-      "implies": "PHP",
-      "meta": {
-        "generator": "^Redaxscript ([\\d\\.]+)\\;version:\\1"
-      },
-      "website": "https://redaxscript.com"
-    },
     "Reddit": {
       "cats": [
         2
@@ -14647,16 +14496,6 @@
       "scripts": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
       "website": "http://reactivex.io"
     },
-    "S.Builder": {
-      "cats": [
-        1
-      ],
-      "icon": "S.Builder.png",
-      "meta": {
-        "generator": "S\\.Builder"
-      },
-      "website": "http://www.sbuilder.ru"
-    },
     "SAP": {
       "cats": [
         22
@@ -15006,29 +14845,6 @@
       "icon": "Scala.png",
       "website": "http://www.scala-lang.org"
     },
-    "Scaleway": {
-      "cats": [
-        19
-      ],
-      "icon": "Scaleway.png",
-      "website": "https://www.scaleway.com/"
-    },
-    "Scenari": {
-      "cats": [
-        1,
-        11
-      ],
-      "icon": "Scenari.png",
-      "implies": [
-        "Roadiz CMS",
-        "PHP",
-        "Symfony"
-      ],
-      "meta": {
-        "generator": "^Roadiz ?(?:master|develop)? v?[0-9\\.]+ - Scenari v?([0-9\\.]+)\\;version:\\1"
-      },
-      "website": "https://demo.scenari.site"
-    },
     "Schedule Engine": {
       "cats": [
         52
@@ -15037,17 +14853,6 @@
       "icon": "Schedule Engine.svg",
       "scripts": "webchat.scheduleengine.net",
       "website": "https://www.scheduleengine.com/"
-    },
-    "Scholica": {
-      "cats": [
-        21
-      ],
-      "description": "Scholica is a Virtual Learning Platform (VLP).",
-      "headers": {
-        "X-Scholica-Version": ""
-      },
-      "icon": "Scholica.svg",
-      "website": "http://scholica.com"
     },
     "Scientific Linux": {
       "cats": [
@@ -15559,16 +15364,6 @@
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
-    "Shopline": {
-      "cats": [
-        6
-      ],
-      "icon": "shopline.png",
-      "meta": {
-        "og:image": "https\\:\\/\\/img\\.shoplineapp\\.com"
-      },
-      "website": "https://shoplineapp.com/"
-    },
     "Shoplo": {
       "cats": [
         6
@@ -15683,16 +15478,6 @@
       ],
       "website": "https://www.signal.co/"
     },
-    "Silva": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "X-Powered-By": "SilvaCMS"
-      },
-      "icon": "Silva.png",
-      "website": "http://silvacms.org"
-    },
     "SilverStripe": {
       "cats": [
         1
@@ -15716,14 +15501,6 @@
       },
       "icon": "simbel.svg",
       "website": "http://simbel.com.ar/"
-    },
-    "Simple Analytics": {
-      "cats": [
-        10
-      ],
-      "icon": "SimpleAnalytics.svg",
-      "scripts": "^https:\\/\\/cdn\\.simpleanalytics\\.io\\/hello\\.js",
-      "website": "https://simpleanalytics.com"
     },
     "SimpleHTTP": {
       "cats": [
@@ -17090,14 +16867,6 @@
       },
       "website": "https://www.jetbrains.com/teamcity/"
     },
-    "Tebex": {
-      "cats": [
-        6
-      ],
-      "icon": "Tebex.png",
-      "scripts": "https://server\\.tebex\\.io/tebexAccounts/tebexaccounts\\.js",
-      "website": "https://www.tebex.io/"
-    },
     "Telescope": {
       "cats": [
         1
@@ -18279,14 +18048,6 @@
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
     },
-    "VisualPath": {
-      "cats": [
-        10
-      ],
-      "icon": "VisualPath.png",
-      "scripts": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
-      "website": "http://www.trackset.com/web-analytics-software/visualpath"
-    },
     "Visualsoft": {
       "cats": [
         6
@@ -18646,16 +18407,6 @@
       "scripts": "cdn\\.webmetric\\.ir",
       "website": "https://webmetric.ir/"
     },
-    "WebPublisher": {
-      "cats": [
-        1
-      ],
-      "icon": "WebPublisher.png",
-      "meta": {
-        "generator": "WEB\\|Publisher"
-      },
-      "website": "http://scannet.dk"
-    },
     "WebSite X5": {
       "cats": [
         20
@@ -18704,15 +18455,6 @@
       },
       "scripts": "\\bwebix\\.js",
       "website": "http://webix.com"
-    },
-    "Webmine": {
-      "cats": [
-        56
-      ],
-      "description": "Webmine is a cryptocurrency mining service.",
-      "html": "<iframe[^>]+src=[\\'\"]https://webmine\\.cz/miner\\?key=",
-      "icon": "webmine.png",
-      "website": "https://webmine.cz/"
     },
     "WebsPlanet": {
       "cats": [
@@ -19093,15 +18835,6 @@
         "Automattic"
       ],
       "website": "https://wpvip.com"
-    },
-    "Wowza Media Server": {
-      "cats": [
-        38
-      ],
-      "description": "Wowza is a live video streaming platform.",
-      "html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
-      "icon": "Wowza Media Server.png",
-      "website": "http://www.wowza.com"
     },
     "Wunderkind": {
       "cats": [
@@ -19929,16 +19662,6 @@
       "scripts": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
       "website": "http://comscore.com"
     },
-    "debut": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "debut\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "debut.png",
-      "website": "http://www.brother.com"
-    },
     "decimal.js": {
       "cats": [
         59
@@ -20079,16 +19802,6 @@
         "generator": "^experiencedCMS$"
       },
       "website": "https://experiencedcms.berkearas.de"
-    },
-    "gRPC": {
-      "cats": [
-        18
-      ],
-      "headers": {
-        "Content-Type": "^application\\/grpc"
-      },
-      "icon": "gRPC.png",
-      "website": "https://grpc.io"
     },
     "git": {
       "cats": [
@@ -20238,16 +19951,6 @@
       },
       "url": "imperia/md/",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
-    },
-    "io4 CMS": {
-      "cats": [
-        1
-      ],
-      "icon": "io4 CMS.png",
-      "meta": {
-        "generator": "GO[ |]+CMS Enterprise"
-      },
-      "website": "http://notenbomer.nl/Producten/Content_management/io4_|_cms"
     },
     "ip-label": {
       "cats": [
@@ -20409,23 +20112,6 @@
       "icon": "jsdelivr-icon.svg",
       "scripts": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
-    },
-    "kolors4u": {
-      "cats": [
-        1,
-        11,
-        23,
-        6
-      ],
-      "headers": {
-        "X-Content-Encoded-By": "kolors4u ([\\d.]+)\\;version:\\1"
-      },
-      "icon": "kolors4u.png",
-      "implies": "WordPress",
-      "meta": {
-        "generator": "kolors4u (?: ([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://kolors4u.com"
     },
     "libwww-perl-daemon": {
       "cats": [
@@ -20979,17 +20665,6 @@
       "scripts": "shine(?:\\.min)?\\.js",
       "website": "https://bigspaceship.github.io/shine.js/"
     },
-    "shoperfa": {
-      "cats": [
-        6
-      ],
-      "headers": {
-        "X-Powered-By": "^Shoperfa$"
-      },
-      "icon": "Shoperfa.png",
-      "url": "^https?://(?:www\\.)?shoperfa\\.com",
-      "website": "https://shoperfa.com"
-    },
     "styled-components": {
       "cats": [
         12,
@@ -21071,16 +20746,6 @@
       "icon": "total.js.png",
       "implies": "Node.js",
       "website": "https://totaljs.com"
-    },
-    "uCoz": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "uCoz": ""
-      },
-      "icon": "uCoz.svg",
-      "website": "https://ucoz.ru"
     },
     "uKnowva": {
       "cats": [
