@@ -1169,7 +1169,9 @@
       ],
       "description": "Akamai is global content delivery network (CDN) services provider for media and software delivery, and cloud security solutions.",
       "headers": {
-        "X-Akamai-Transformed": ""
+        "X-Akamai-Transformed": "",
+        "X-EdgeConnect-MidMile-RTT": "",
+        "X-EdgeConnect-Origin-MEX-Latency": ""
       },
       "icon": "akamai.svg",
       "pricing": [
@@ -1218,26 +1220,28 @@
     },
     "Akamai mPulse": {
       "cats": [
-        13,
-        10
+        10,
+        47
       ],
       "cookies": {
         "akaas_AB-Testing": ""
       },
       "description": "Akamai mPulse is a real user monitoring (RUM) solution that enables companies to monitor, find, and fix website and application performance issues.",
+      "html": [
+        "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>"
+      ],
       "icon": "akamai.svg",
-      "implies": "Akamai",
+      "implies": [
+        "Boomerang"
+      ],
       "js": {
-        "BOOMR": "",
-        "BOOMR_API_key": "",
-        "BOOMR_lstart": "",
-        "BOOMR_mq": ""
+        "BOOMR_API_key": ""
       },
       "pricing": [
         "poa"
       ],
       "saas": true,
-      "website": "https://www.akamai.com/uk/en/products/performance/mpulse-real-user-monitoring.jsp"
+      "website": "https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution"
     },
     "Akaunting": {
       "cats": [
@@ -2832,6 +2836,20 @@
       ],
       "scripts": "booksy\\.com/widget/code\\.js",
       "website": "https://booksy.com/"
+    },
+    "Boomerang": {
+      "cats": [
+        59
+      ],
+      "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
+      "icon": "boomerang.svg",
+      "js": {
+        "BOOMR": "",
+        "BOOMR_lstart": "",
+        "BOOMR_mq": ""
+      },
+      "oss": true,
+      "website": "https://akamai.github.io/boomerang"
     },
     "Bootstrap": {
       "cats": [
