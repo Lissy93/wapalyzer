@@ -21072,6 +21072,42 @@
       "implies": "Node.js",
       "website": "https://totaljs.com"
     },
+    "TwicPics": {
+      "description": "TwicPics offers on-demand responsive image generation.",
+      "cats": [
+        31,
+        59
+      ],
+      "headers": {
+        "server": "^TwicPics/\\d+\\.\\d+\\.\\d+$"
+      },
+      "scripts": ".+\\.twic\\.pics",
+      "dom": {
+        "[data-twic-src]": {
+          "attributes": {
+            "data-twic-src": ""
+          }
+        },
+        "data-twic-background": {
+          "attributes": {
+            "data-twic-background": ""
+          }
+        },
+        ".twic": {
+          "attributes": {
+            "data-src": ""
+          }
+        }
+      },
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "icon": "TwicPics.svg",
+      "website": "https://www.twicpics.com"
+    },
     "uCoz": {
       "cats": [
         1
