@@ -368,8 +368,6 @@ class Site {
             ]
           })
 
-          this.contentType = headers['content-type'] || null
-
           if (response.status() >= 300 && response.status() < 400) {
             if (headers.location) {
               url = new URL(headers.location.slice(-1), url)
@@ -690,7 +688,11 @@ class Site {
       }
 
       // Validate response
-      if (url.protocol !== 'file:' && !this.analyzedUrls[url.href].status) {
+      if (
+        url.protocol !== 'file:' &&
+        this.analyzedUrls[url.href] &&
+        !this.analyzedUrls[url.href].status
+      ) {
         await page.close()
 
         this.log('Page closed')
@@ -753,6 +755,10 @@ class Site {
     } catch (error) {
       if (error.constructor.name === 'TimeoutError') {
         throw new Error('The website took too long to respond')
+      }
+
+      if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
+        throw new Error('Hostname could not be resolved')
       }
 
       throw new Error(error.message)

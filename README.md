@@ -7,6 +7,8 @@
 * [Chrome extension](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)
 * [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
 * [Edge extension](https://microsoftedge.microsoft.com/addons/detail/mnbndgmknlpdjdnjfmfcdjoegcckoikn)
+* [Safari extension](https://apps.apple.com/app/wappalyzer/id1520333300)
+* [All apps and integrations](https://www.wappalyzer.com/api/download)
 * [Wappalyzer REST APIs](https://www.wappalyzer.com/api/)
 
 ## Prerequisites
@@ -96,7 +98,7 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
   "url": ".+\\.example\\.com",
   "oss": true,
   "saas": true,
-  "pricing": ["low", "medium", "high", "freemium", "onetime", "recurring", "poa"],
+  "pricing": ["medium", "freemium", "recurring"],
   "website": "https://example.com",
 }
 ```

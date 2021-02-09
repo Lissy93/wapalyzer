@@ -8,6 +8,7 @@ const {
   analyze,
   analyzeManyToMany,
   resolve,
+  getTechnology,
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open } = Utils
 
@@ -212,6 +213,19 @@ const Driver = {
   },
 
   /**
+   * Force a technology detection by URL and technology name
+   * @param {String} url
+   * @param {String} name
+   */
+  detectTechnology(url, name) {
+    const technology = getTechnology(name)
+
+    return Driver.onDetect(url, [
+      { technology, pattern: { regex: '', confidence: 100 }, version: '' },
+    ])
+  },
+
+  /**
    * Enable scripts to call Driver functions through messaging
    * @param {Object} message
    * @param {Object} sender
@@ -267,42 +281,7 @@ const Driver = {
             )
           })
 
-          /*
-          let certIssuer = ''
-
-          if (
-            browser &&
-            browser.webRequest &&
-            browser.webRequest.getSecurityInfo
-          ) {
-            // Currently only works in Firefox
-            // See https://stackoverflow.com/a/50484642
-            const { certificates } = await browser.webRequest.getSecurityInfo(
-              request.requestId,
-              {
-                certificateChain: false,
-                rawDER: false,
-              }
-            )
-
-            if (certificates && certificates.length) {
-              certIssuer = certificates[0].issuer.replace(
-                /^.*CN=([^,]+).*$/,
-                '$1'
-              )
-            }
-          }
-          */
-
-          if (
-            headers['content-type'] &&
-            /\/x?html/.test(headers['content-type'][0])
-          ) {
-            await Driver.onDetect(
-              request.url,
-              analyze({ headers /*, certIssuer */ })
-            )
-          }
+          await Driver.onDetect(request.url, analyze({ headers }))
         }
       } catch (error) {
         Driver.error(error)
@@ -446,7 +425,13 @@ const Driver = {
     await Driver.setIcon(url, resolved)
 
     if (url) {
-      const tabs = await promisify(chrome.tabs, 'query', { url })
+      let tabs = []
+
+      try {
+        tabs = await promisify(chrome.tabs, 'query', { url })
+      } catch (error) {
+        // Continue
+      }
 
       tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
     }
@@ -489,34 +474,38 @@ const Driver = {
       return
     }
 
-    ;(await promisify(chrome.tabs, 'query', { url })).forEach(
-      ({ id: tabId }) => {
-        chrome.browserAction.setBadgeText(
-          {
-            tabId,
-            text:
-              badge && technologies.length
-                ? technologies.length.toString()
-                : '',
-          },
-          () => {}
-        )
+    let tabs = []
 
-        chrome.browserAction.setIcon(
-          {
-            tabId,
-            path: chrome.extension.getURL(
-              `../images/icons/${
-                /\.svg$/i.test(icon)
-                  ? `converted/${icon.replace(/\.svg$/, '.png')}`
-                  : icon
-              }`
-            ),
-          },
-          () => {}
-        )
-      }
-    )
+    try {
+      tabs = await promisify(chrome.tabs, 'query', { url })
+    } catch (error) {
+      // Continue
+    }
+
+    tabs.forEach(({ id: tabId }) => {
+      chrome.browserAction.setBadgeText(
+        {
+          tabId,
+          text:
+            badge && technologies.length ? technologies.length.toString() : '',
+        },
+        () => {}
+      )
+
+      chrome.browserAction.setIcon(
+        {
+          tabId,
+          path: chrome.extension.getURL(
+            `../images/icons/${
+              /\.svg$/i.test(icon)
+                ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                : icon
+            }`
+          ),
+        },
+        () => {}
+      )
+    })
   },
 
   /**
@@ -693,7 +682,7 @@ const Driver = {
 
       const count = Object.keys(hostnames).length
 
-      if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
+      if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
         await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
@@ -701,7 +690,7 @@ const Driver = {
         Driver.lastPing = Date.now()
       }
 
-      if (Driver.cache.ads.length > 1) {
+      if (Driver.cache.ads.length > 25) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
 
         Driver.cache.ads = []
