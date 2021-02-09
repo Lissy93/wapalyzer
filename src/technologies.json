@@ -9408,6 +9408,30 @@
       "scripts": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
       "website": "https://www.leanplum.com"
     },
+    "Lede": {
+      "cats": [
+        1
+      ],
+      "description": "Lede is a publishing platform and growth program designed to support journalism startups and news media.",
+      "html": [
+        "<a [^>]*href=\"[^\"]+joinlede.com"
+      ],
+      "icon": "lede.png",
+      "implies": [
+        "WordPress",
+        "WordPress VIP"
+      ],
+      "js": {
+        "ledeChartbeatViews": "",
+        "ledeEngagement": "",
+        "ledeEngagementReset": ""
+      },
+      "meta": {
+        "og:image": "https?\\:\\/\\/lede-admin"
+      },
+      "saas": true,
+      "website": "https://joinlede.com/"
+    },
     "Less": {
       "cats": [
         19
@@ -12961,6 +12985,24 @@
       },
       "icon": "Phusion Passenger.png",
       "website": "https://phusionpassenger.com"
+    },
+    "Pico": {
+      "cats": [
+        53
+      ],
+      "icon": "pico.svg",
+      "js": {
+        "Pico": ""
+      },
+      "scripts": [
+        "widget\\.pico\\.tools"
+      ],
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://trypico.com"
     },
     "Pimcore": {
       "cats": [
@@ -18998,7 +19040,10 @@
         "x-powered-by": "^WordPress\\.com VIP"
       },
       "icon": "wpvip.svg",
-      "implies": "WordPress",
+      "implies": [
+        "WordPress",
+        "Automattic"
+      ],
       "website": "https://wpvip.com"
     },
     "Wowza Media Server": {
