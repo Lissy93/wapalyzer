@@ -5739,6 +5739,21 @@
       ],
       "website": "https://etherpad.org"
     },
+    "Etracker": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "Etracker is a web optimization solution.",
+      "icon": "Etracker.png",
+      "js": {
+        "_etracker": ""
+      },
+      "scripts": "\\.etracker\\.com",
+      "saas": true,
+      "pricing": ["low","recurring"],
+      "website": "https://www.etracker.com"
+    },
     "Eveve": {
       "cats": [
         5,
@@ -6482,6 +6497,39 @@
         "Font Awesome"
       ],
       "website": "http://froala.com/wysiwyg-editor"
+    },
+    "Frontity": {
+      "cats": [
+        12,
+        18
+      ],
+      "description": "Frontity is a React open-source framework focused on WordPress.",
+      "icon": "frontity.png",
+      "implies": [
+        "React",
+        "webpack",
+        "WordPress"
+      ],
+      "meta": {
+        "generator": "^Frontity(.*)"
+      },
+      "website": "https://frontity.org
+    },
+    "Frosmo": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "Frosmo is a SaaS company wich provides AI-driven personalization products.",
+      "icon": "Frosmo.png",
+      "js": {
+        "frosmo": "",
+        "_frosmo": ""
+      },
+      "scripts": "frosmo\\.easy\\.js",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://frosmo.com"
     },
     "FrontPage": {
       "cats": [
@@ -9407,6 +9455,30 @@
       "saas": true,
       "scripts": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
       "website": "https://www.leanplum.com"
+    },
+    "Lede": {
+      "cats": [
+        1
+      ],
+      "description": "Lede is a publishing platform and growth program designed to support journalism startups and news media.",
+      "html": [
+        "<a [^>]*href=\"[^\"]+joinlede.com"
+      ],
+      "icon": "lede.png",
+      "implies": [
+        "WordPress",
+        "WordPress VIP"
+      ],
+      "js": {
+        "ledeChartbeatViews": "",
+        "ledeEngagement": "",
+        "ledeEngagementReset": ""
+      },
+      "meta": {
+        "og:image": "https?\\:\\/\\/lede-admin"
+      },
+      "saas": true,
+      "website": "https://joinlede.com/"
     },
     "Less": {
       "cats": [
@@ -12961,6 +13033,24 @@
       },
       "icon": "Phusion Passenger.png",
       "website": "https://phusionpassenger.com"
+    },
+    "Pico": {
+      "cats": [
+        53
+      ],
+      "icon": "pico.svg",
+      "js": {
+        "Pico": ""
+      },
+      "scripts": [
+        "widget\\.pico\\.tools"
+      ],
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://trypico.com"
     },
     "Pimcore": {
       "cats": [
@@ -18998,7 +19088,10 @@
         "x-powered-by": "^WordPress\\.com VIP"
       },
       "icon": "wpvip.svg",
-      "implies": "WordPress",
+      "implies": [
+        "WordPress",
+        "Automattic"
+      ],
       "website": "https://wpvip.com"
     },
     "Wowza Media Server": {
