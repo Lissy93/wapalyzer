@@ -10623,6 +10623,20 @@
       "scripts": "bat\\.bing\\.com/bat\\.js",
       "website": "https://ads.microsoft.com"
     },
+    "Microsoft Clarity": {
+      "cats": [
+        10
+      ],
+      "description": "Microsoft's Clarity is a analytics tool which provides website usage statistics, session recording, and heatmaps.",
+      "icon": "Microsoft.png",
+      "js": {
+        "clarity": ""
+      },
+      "scripts": "www\\.clarity\\.ms/.+/([\\d.]+)/clarity\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["freemium"],
+      "website": "https://clarity.microsoft.com"
+    },
     "Microsoft Excel": {
       "cats": [
         20
@@ -17293,6 +17307,20 @@
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
     },
+    "Trustpilot": {
+      "cats": [
+        5
+      ],
+      "description": "Trustpilot is a Danish consumer review website which provide embed stand-alone applications in your website to show your most recent reviews, TrustScore, and star ratings.",
+      "icon": "Trustpilot.svg",
+      "js": {
+        "Trustpilot": ""
+      },
+      "saas": true,
+      "pricing": ["mid","freemium","recurring"],
+      "scripts": "\\.trustpilot\\.com",
+      "website": "https://business.trustpilot.com"
+    },
     "TrustYou": {
       "cats": [
         5
@@ -20746,6 +20774,42 @@
       "icon": "total.js.png",
       "implies": "Node.js",
       "website": "https://totaljs.com"
+    },
+    "TwicPics": {
+      "description": "TwicPics offers on-demand responsive image generation.",
+      "cats": [
+        31,
+        59
+      ],
+      "headers": {
+        "server": "^TwicPics/\\d+\\.\\d+\\.\\d+$"
+      },
+      "scripts": ".+\\.twic\\.pics",
+      "dom": {
+        "[data-twic-src]": {
+          "attributes": {
+            "data-twic-src": ""
+          }
+        },
+        "data-twic-background": {
+          "attributes": {
+            "data-twic-background": ""
+          }
+        },
+        ".twic": {
+          "attributes": {
+            "data-src": ""
+          }
+        }
+      },
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "icon": "TwicPics.svg",
+      "website": "https://www.twicpics.com"
     },
     "uKnowva": {
       "cats": [
