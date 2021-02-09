@@ -5203,9 +5203,28 @@
         6
       ],
       "cpe": "cpe:/a:commerceguys:commerce",
-      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
       "icon": "Drupal Commerce.png",
+      "description": "Drupal Commerce is open-source ecommerce software that augments the content management system Drupal.",
+      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+      "dom": {
+        "form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart": {
+          "attributes": {
+            "class": ""
+          }
+        },
+        "aside#cart-offcanvas": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "scripts": [
+        "/modules/(?:contrib/)?commerce/js/conditions\\.js\\;confidence:50",
+        "/profiles/commerce_kickstart/modules/contrib/commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50",
+        "/sites/(?:all|default)/modules/(?:contrib/)?commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50"
+      ],
       "implies": "Drupal",
+      "oss": true,
       "website": "http://drupalcommerce.org"
     },
     "Duda": {
