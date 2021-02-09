@@ -8,6 +8,7 @@ const {
   analyze,
   analyzeManyToMany,
   resolve,
+  getTechnology,
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open } = Utils
 
@@ -212,6 +213,19 @@ const Driver = {
   },
 
   /**
+   * Force a technology detection by URL and technology name
+   * @param {String} url
+   * @param {String} name
+   */
+  detectTechnology(url, name) {
+    const technology = getTechnology(name)
+
+    return Driver.onDetect(url, [
+      { technology, pattern: { regex: '', confidence: 100 }, version: '' },
+    ])
+  },
+
+  /**
    * Enable scripts to call Driver functions through messaging
    * @param {Object} message
    * @param {Object} sender
@@ -411,7 +425,13 @@ const Driver = {
     await Driver.setIcon(url, resolved)
 
     if (url) {
-      const tabs = await promisify(chrome.tabs, 'query', { url })
+      let tabs = []
+
+      try {
+        tabs = await promisify(chrome.tabs, 'query', { url })
+      } catch (error) {
+        // Continue
+      }
 
       tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
     }
@@ -454,34 +474,38 @@ const Driver = {
       return
     }
 
-    ;(await promisify(chrome.tabs, 'query', { url })).forEach(
-      ({ id: tabId }) => {
-        chrome.browserAction.setBadgeText(
-          {
-            tabId,
-            text:
-              badge && technologies.length
-                ? technologies.length.toString()
-                : '',
-          },
-          () => {}
-        )
+    let tabs = []
 
-        chrome.browserAction.setIcon(
-          {
-            tabId,
-            path: chrome.extension.getURL(
-              `../images/icons/${
-                /\.svg$/i.test(icon)
-                  ? `converted/${icon.replace(/\.svg$/, '.png')}`
-                  : icon
-              }`
-            ),
-          },
-          () => {}
-        )
-      }
-    )
+    try {
+      tabs = await promisify(chrome.tabs, 'query', { url })
+    } catch (error) {
+      // Continue
+    }
+
+    tabs.forEach(({ id: tabId }) => {
+      chrome.browserAction.setBadgeText(
+        {
+          tabId,
+          text:
+            badge && technologies.length ? technologies.length.toString() : '',
+        },
+        () => {}
+      )
+
+      chrome.browserAction.setIcon(
+        {
+          tabId,
+          path: chrome.extension.getURL(
+            `../images/icons/${
+              /\.svg$/i.test(icon)
+                ? `converted/${icon.replace(/\.svg$/, '.png')}`
+                : icon
+            }`
+          ),
+        },
+        () => {}
+      )
+    })
   },
 
   /**

@@ -1169,7 +1169,9 @@
       ],
       "description": "Akamai is global content delivery network (CDN) services provider for media and software delivery, and cloud security solutions.",
       "headers": {
-        "X-Akamai-Transformed": ""
+        "X-Akamai-Transformed": "",
+        "X-EdgeConnect-MidMile-RTT": "",
+        "X-EdgeConnect-Origin-MEX-Latency": ""
       },
       "icon": "akamai.svg",
       "pricing": [
@@ -1218,26 +1220,28 @@
     },
     "Akamai mPulse": {
       "cats": [
-        13,
-        10
+        10,
+        47
       ],
       "cookies": {
         "akaas_AB-Testing": ""
       },
       "description": "Akamai mPulse is a real user monitoring (RUM) solution that enables companies to monitor, find, and fix website and application performance issues.",
+      "html": [
+        "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>"
+      ],
       "icon": "akamai.svg",
-      "implies": "Akamai",
+      "implies": [
+        "Boomerang"
+      ],
       "js": {
-        "BOOMR": "",
-        "BOOMR_API_key": "",
-        "BOOMR_lstart": "",
-        "BOOMR_mq": ""
+        "BOOMR_API_key": ""
       },
       "pricing": [
         "poa"
       ],
       "saas": true,
-      "website": "https://www.akamai.com/uk/en/products/performance/mpulse-real-user-monitoring.jsp"
+      "website": "https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution"
     },
     "Akaunting": {
       "cats": [
@@ -1380,22 +1384,6 @@
       "icon": "Amazon.svg",
       "saas": true,
       "website": "https://affiliate-program.amazon.com.au/"
-    },
-    "Azion": {
-      "cats": [
-        31
-      ],
-      "description": "",
-      "headers": {
-        "Server": "^Azion "
-      },
-      "dns": {
-        "CNAME": "azioncdn\\.net\\.?$"
-      },
-      "icon": "Azion.svg",
-      "saas": true,
-      "pricing": ["poa", "payg"],
-      "website": "https://www.azion.com/"
     },
     "Amazon Cloudfront": {
       "cats": [
@@ -2282,6 +2270,25 @@
       ],
       "website": "https://github.com/axios/axios"
     },
+    "Azion": {
+      "cats": [
+        31
+      ],
+      "description": "",
+      "dns": {
+        "CNAME": "azioncdn\\.net\\.?$"
+      },
+      "headers": {
+        "Server": "^Azion "
+      },
+      "icon": "Azion.svg",
+      "pricing": [
+        "poa",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.azion.com/"
+    },
     "Azure": {
       "cats": [
         62
@@ -2829,6 +2836,20 @@
       ],
       "scripts": "booksy\\.com/widget/code\\.js",
       "website": "https://booksy.com/"
+    },
+    "Boomerang": {
+      "cats": [
+        59
+      ],
+      "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
+      "icon": "boomerang.svg",
+      "js": {
+        "BOOMR": "",
+        "BOOMR_lstart": "",
+        "BOOMR_mq": ""
+      },
+      "oss": true,
+      "website": "https://akamai.github.io/boomerang"
     },
     "Bootstrap": {
       "cats": [
@@ -5200,9 +5221,28 @@
         6
       ],
       "cpe": "cpe:/a:commerceguys:commerce",
-      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
       "icon": "Drupal Commerce.png",
+      "description": "Drupal Commerce is open-source ecommerce software that augments the content management system Drupal.",
+      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+      "dom": {
+        "form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart": {
+          "attributes": {
+            "class": ""
+          }
+        },
+        "aside#cart-offcanvas": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "scripts": [
+        "/modules/(?:contrib/)?commerce/js/conditions\\.js\\;confidence:50",
+        "/profiles/commerce_kickstart/modules/contrib/commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50",
+        "/sites/(?:all|default)/modules/(?:contrib/)?commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50"
+      ],
       "implies": "Drupal",
+      "oss": true,
       "website": "http://drupalcommerce.org"
     },
     "Duda": {
@@ -5699,6 +5739,21 @@
       ],
       "website": "https://etherpad.org"
     },
+    "Etracker": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "Etracker is a web optimization solution.",
+      "icon": "Etracker.png",
+      "js": {
+        "_etracker": ""
+      },
+      "scripts": "\\.etracker\\.com",
+      "saas": true,
+      "pricing": ["low","recurring"],
+      "website": "https://www.etracker.com"
+    },
     "Eveve": {
       "cats": [
         5,
@@ -5733,8 +5788,13 @@
       ],
       "description": "ExpertRec is a collaborative Web search engine, which allows users share search histories through a web browser.",
       "icon": "ExpertRec.png",
-      "scripts": "cse\\.expertrec\\.com/api/js/ci_common\\.js\\?id=.*$",
-      "website": "https://expertrec.com"
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "expertrec\\.com/api/js/ci_common\\.js\\?id=.*",
+      "website": "https://www.expertrec.com"
     },
     "Express": {
       "cats": [
@@ -6453,7 +6513,23 @@
       "meta": {
         "generator": "^Frontity(.*)"
       },
-      "website": "https://frontity.org/"
+      "website": "https://frontity.org
+    },
+    "Frosmo": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "Frosmo is a SaaS company wich provides AI-driven personalization products.",
+      "icon": "Frosmo.png",
+      "js": {
+        "frosmo": "",
+        "_frosmo": ""
+      },
+      "scripts": "frosmo\\.easy\\.js",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://frosmo.com"
     },
     "FrontPage": {
       "cats": [
@@ -7010,6 +7086,16 @@
       },
       "scripts": "js/gogs\\.js",
       "website": "http://gogs.io"
+    },
+    "Google Ads": {
+      "cats": [
+        36
+      ],
+      "description": "Google Ads is an online advertising platform developed by Google.",
+      "icon": "Google Ads.svg",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://ads.google.com"
     },
     "Google AdSense": {
       "cats": [
@@ -7645,6 +7731,20 @@
       },
       "scripts": "hellobar\\.js",
       "website": "http://hellobar.com"
+    },
+    "Helpscout": {
+      "cats": [
+        52
+      ],
+      "description": "Simple Customer Service Software and Education.",
+      "icon": "Helpscout.svg",
+      "js": {
+        "Beacon": "\\;confidence:25"
+      },
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "scripts": "beacon-v2\\.helpscout\\.net",
+      "website": "https://www.helpscout.com/"
     },
     "Heroku": {
       "cats": [
@@ -9356,6 +9456,30 @@
       "scripts": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
       "website": "https://www.leanplum.com"
     },
+    "Lede": {
+      "cats": [
+        1
+      ],
+      "description": "Lede is a publishing platform and growth program designed to support journalism startups and news media.",
+      "html": [
+        "<a [^>]*href=\"[^\"]+joinlede.com"
+      ],
+      "icon": "lede.png",
+      "implies": [
+        "WordPress",
+        "WordPress VIP"
+      ],
+      "js": {
+        "ledeChartbeatViews": "",
+        "ledeEngagement": "",
+        "ledeEngagementReset": ""
+      },
+      "meta": {
+        "og:image": "https?\\:\\/\\/lede-admin"
+      },
+      "saas": true,
+      "website": "https://joinlede.com/"
+    },
     "Less": {
       "cats": [
         19
@@ -10602,14 +10726,13 @@
     },
     "Microsoft Advertising": {
       "cats": [
-        10,
         36
       ],
       "cookies": {
         "_uetsid": "\\w+",
         "_uetvid": "\\w+"
       },
-      "description": "Microsoft Advertising is a service that provides pay per click advertising on both the Bing and Yahoo! search engines.",
+      "description": "Microsoft Advertising is an online advertising platform developed by Microsoft.",
       "icon": "Microsoft.png",
       "js": {
         "UET": "",
@@ -10620,7 +10743,7 @@
       ],
       "saas": true,
       "scripts": "bat\\.bing\\.com/bat\\.js",
-      "website": "https://about.ads.microsoft.com"
+      "website": "https://ads.microsoft.com"
     },
     "Microsoft Excel": {
       "cats": [
@@ -12910,6 +13033,24 @@
       },
       "icon": "Phusion Passenger.png",
       "website": "https://phusionpassenger.com"
+    },
+    "Pico": {
+      "cats": [
+        53
+      ],
+      "icon": "pico.svg",
+      "js": {
+        "Pico": ""
+      },
+      "scripts": [
+        "widget\\.pico\\.tools"
+      ],
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://trypico.com"
     },
     "Pimcore": {
       "cats": [
@@ -18947,7 +19088,10 @@
         "x-powered-by": "^WordPress\\.com VIP"
       },
       "icon": "wpvip.svg",
-      "implies": "WordPress",
+      "implies": [
+        "WordPress",
+        "Automattic"
+      ],
       "website": "https://wpvip.com"
     },
     "Wowza Media Server": {
