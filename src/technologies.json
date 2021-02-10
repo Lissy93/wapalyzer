@@ -6425,7 +6425,7 @@
         "WordPress"
       ],
       "meta": {
-        "generator": "^Frontity(.*)"
+        "generator": "^Frontity"
       },
       "website": "https://frontity.org"
     },
@@ -16360,17 +16360,17 @@
       ],
       "description": "Bread is a buy now, pay later platform for ecommerce websites.",
       "icon": "Bread.svg",
-      "script": "\\.getbread\\.com"
+      "scripts": "\\.getbread\\.com",
       "dom": {
         "#bread-mini-cart-btn": {
-          text: ""
+          "text": ""
         }
       },
       "js": {
         "bread.appHost": "",
         "BreadError": "",
-        "BreadShopify": ""
-        "BreadLoaded": ""
+        "BreadShopify": "",
+        "BreadLoaded": "",
         "BreadCalc": ""
       },
       "pricing": [
