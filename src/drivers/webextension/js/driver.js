@@ -10,7 +10,7 @@ const {
   resolve,
   getTechnology,
 } = Wappalyzer
-const { agent, promisify, getOption, setOption, open } = Utils
+const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
@@ -267,7 +267,7 @@ const Driver = {
         await new Promise((resolve) => setTimeout(resolve, 500))
 
         const [tab] = await promisify(chrome.tabs, 'query', {
-          url: [request.url],
+          url: [globEscape(request.url)],
         })
 
         if (tab) {
@@ -428,7 +428,9 @@ const Driver = {
       let tabs = []
 
       try {
-        tabs = await promisify(chrome.tabs, 'query', { url })
+        tabs = await promisify(chrome.tabs, 'query', {
+          url: globEscape(url),
+        })
       } catch (error) {
         // Continue
       }
@@ -477,7 +479,9 @@ const Driver = {
     let tabs = []
 
     try {
-      tabs = await promisify(chrome.tabs, 'query', { url })
+      tabs = await promisify(chrome.tabs, 'query', {
+        url: globEscape(url),
+      })
     } catch (error) {
       // Continue
     }
