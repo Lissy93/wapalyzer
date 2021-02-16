@@ -9388,6 +9388,24 @@
       "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
     },
+    "Launchrock": {
+      "cats": [
+        74,
+        51
+      ],
+      "description": "Launchrock is an online tool designed to help capture email addresses and create online product launching events.",
+      "icon": "Launchrock.svg",
+      "js": {
+        "lrignition": "\\;confidence:25",
+        "lrLoadedJs": "\\;confidence:25",
+        "lrSiteSettingAsBoolean": "\\;confidence:25",
+        "lrIgnition": "\\;confidence:25"
+      },
+      "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
+      "saas": true,
+      "pricing": ["freemium", "low", "recurring"],
+      "website": "https://www.launchrock.com"
+    },
     "Leaflet": {
       "cats": [
         35
