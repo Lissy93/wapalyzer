@@ -5696,6 +5696,22 @@
       "scripts": "exhibit.*\\.js",
       "website": "http://simile-widgets.org/exhibit/"
     },
+    "ExitIntel": {
+      "cats": [
+        32
+      ],
+      "description": "ExitIntel is a full service conversion optimization agency that focuses on ecommerce companies.",
+      "icon": "ExitIntel.png",
+      "js": {
+        "exitintel.VERSION": "(.+)$\\;version:\\1",
+        "exitintelAccount": "",
+        "exitintelConfig": ""
+      },
+      "scripts": "(?:get.)?exitintel\\.com",
+      "saas": true,
+      "pricing": ["high", "recurring", "payg"],
+      "website": "https://exitintelligence.com"
+    },
     "ExpertRec": {
       "cats": [
         29
@@ -5752,6 +5768,23 @@
       },
       "scripts": "ext-base\\.js",
       "website": "https://www.sencha.com"
+    },
+    "Ezoic": {
+      "cats": [
+        10,
+        36
+      ],
+      "description": "Ezoic is a website optimization platform for digital publishers and website owners powered by machine learning.",
+      "icon": "Ezoic.svg",
+      "js": {
+        "EzoicBanger": "",
+        "EzoicA": "",
+        "ezoicTestActive": ""
+      },
+      "scripts": "\\.ezo(?:js|ic|dn)\\.(?:com|net)",
+      "saas": true,
+      "pricing": ["freemium","recurring","poa","payg"],
+      "website": "https://www.ezoic.com"
     },
     "F5 BigIP": {
       "cats": [
@@ -10132,6 +10165,18 @@
       "scripts": "widget\\.manychat\\.com",
       "website": "https://manychat.com/"
     },
+    "ManyContacts": {
+      "cats": [
+        32,
+        5
+      ],
+      "description": "ManyContacts is an attention-grabbing contact form sitting on top of your website that helps to increase conversion by converting visitors into leads.",
+      "icon": "ManyContacts.png",
+      "scripts": "\\.manycontacts\\.com",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.manycontacts.com"
+    },
     "Mapbox GL JS": {
       "cats": [
         35
@@ -13488,6 +13533,21 @@
       "url": "/dana-na/auth/",
       "website": "https://www.pulsesecure.net/products/remote-access-overview/"
     },
+    "Pure Chat": {
+      "cats": [
+        5
+      ],
+      "description": "Pure Chat is a live chat solution for small to mid-sized teams.",
+      "icon": "Pure Chat.png",
+      "js": {
+        "PCWidget": "",
+        "purechatApi": ""
+      },
+      "scripts": "app\\.purechat\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.purechat.com"
+    },
     "Pure CSS": {
       "cats": [
         66
@@ -14497,6 +14557,20 @@
       },
       "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "https://rubyonrails.org"
+    },
+    "Ruby Receptionists": {
+      "cats": [
+        5
+      ],
+      "description": "Ruby Receptionists is a Portland, Oregon based virtual answering service for small businesses.",
+      "icon": "Ruby Receptionists.svg",
+      "js": {
+        "rubyApi": ""
+      },
+      "scripts": "chatwidget\\.ruby\\.com",
+      "saas": true,
+      "pricing": ["mid","recurring"],
+      "website": "https://www.ruby.com"
     },
     "RxJS": {
       "cats": [
@@ -16080,6 +16154,19 @@
       "implies": "PHP",
       "website": "http://www.spin.cw"
     },
+    "Spinnakr": {
+      "cats": [
+        10
+      ],
+      "description": "Spinnakr is a startup with a platform designed to personalize messages on blogs and websites.",
+      "icon": "Spinnakr.png",
+      "js":{
+        "_spinnakr_site_id": ""
+      },
+      "saas": true, 
+      "pricing": ["poa"],
+      "website": "https://www.spinnakr.com"
+    },
     "SplitIt": {
       "cats": [
         41
@@ -16626,6 +16713,32 @@
       },
       "scripts": "swiper(?:\\.min)?\\.js",
       "website": "https://swiperjs.com"
+    },
+    "Sylius": {
+      "cats": [
+        6
+      ],
+      "description": "Sylius is an open source ecommerce framework based on Symfony full stack.",
+      "icon": "Sylius.svg",
+      "implies": "Symfony",
+      "dom": {
+        "body.sylius_homepage": {
+          "attributes": {
+            "class": ""
+          }
+        },
+        "div#sylius-cart-button": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "scripts": [
+        "syliusshop/script\\.js",
+        "syliusgtmenhancedecommerceplugin"
+      ],
+      "oss": true,
+      "website": "https://sylius.com"
     },
     "Symfony": {
       "cats": [
@@ -19253,6 +19366,13 @@
       ],
       "description": "Yelp Review Badges showcase business reviews from Yelp on websites.",
       "icon": "Yelp.svg",
+      "dom": {
+        "img[src*='dyn.yelpcdn.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
       "scripts": "yelp\\.com/biz_badge_js",
       "website": "http://yelp.com"
     },
@@ -19586,6 +19706,22 @@
         "Zone.root": ""
       },
       "website": "https://github.com/angular/angular/tree/master/packages/zone.js"
+    },
+    "Zonos": {
+      "cats": [
+        5
+      ],
+      "description": "Zonos is a cross-border ecommerce software and app solution for companies with international business.",
+      "icon": "Zonos.svg",
+      "js": {
+        "zonos": "",
+        "Zonos": "",
+        "zonosCheckout": ""
+      },
+      "scripts": "\\.zonos\\.com/",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://zonos.com"
     },
     "Zope": {
       "cats": [
