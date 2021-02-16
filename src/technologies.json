@@ -2947,6 +2947,31 @@
       "scripts": "js\\.appboycdn\\.com/web-sdk/([\\d.]+)\\;version:\\1",
       "website": "https://www.braze.com"
     },
+    "Bread": {
+      "cats": [
+        41
+      ],
+      "description": "Bread is a buy now, pay later platform for ecommerce websites.",
+      "dom": {
+        "#bread-mini-cart-btn": {
+          "text": ""
+        }
+      },
+      "icon": "Bread.svg",
+      "js": {
+        "BreadCalc": "",
+        "BreadError": "",
+        "BreadLoaded": "",
+        "BreadShopify": "",
+        "bread.appHost": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.getbread\\.com",
+      "website": "https://www.breadpayments.com"
+    },
     "Brightspot": {
       "cats": [
         1
@@ -5135,28 +5160,28 @@
         6
       ],
       "cpe": "cpe:/a:commerceguys:commerce",
-      "icon": "Drupal Commerce.png",
       "description": "Drupal Commerce is open-source ecommerce software that augments the content management system Drupal.",
-      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
       "dom": {
-        "form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart": {
-          "attributes": {
-            "class": ""
-          }
-        },
         "aside#cart-offcanvas": {
           "attributes": {
             "id": ""
           }
+        },
+        "form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart": {
+          "attributes": {
+            "class": ""
+          }
         }
       },
+      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+      "icon": "Drupal Commerce.png",
+      "implies": "Drupal",
+      "oss": true,
       "scripts": [
         "/modules/(?:contrib/)?commerce/js/conditions\\.js\\;confidence:50",
         "/profiles/commerce_kickstart/modules/contrib/commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50",
         "/sites/(?:all|default)/modules/(?:contrib/)?commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50"
       ],
-      "implies": "Drupal",
-      "oss": true,
       "website": "http://drupalcommerce.org"
     },
     "Duda": {
@@ -5663,9 +5688,12 @@
       "js": {
         "_etracker": ""
       },
-      "scripts": "\\.etracker\\.com",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low","recurring"],
+      "scripts": "\\.etracker\\.com",
       "website": "https://www.etracker.com"
     },
     "Eveve": {
@@ -5707,9 +5735,13 @@
         "exitintelAccount": "",
         "exitintelConfig": ""
       },
-      "scripts": "(?:get.)?exitintel\\.com",
+      "pricing": [
+        "high",
+        "recurring",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["high", "recurring", "payg"],
+      "scripts": "(?:get.)?exitintel\\.com",
       "website": "https://exitintelligence.com"
     },
     "ExpertRec": {
@@ -5777,13 +5809,18 @@
       "description": "Ezoic is a website optimization platform for digital publishers and website owners powered by machine learning.",
       "icon": "Ezoic.svg",
       "js": {
-        "EzoicBanger": "",
         "EzoicA": "",
+        "EzoicBanger": "",
         "ezoicTestActive": ""
       },
-      "scripts": "\\.ezo(?:js|ic|dn)\\.(?:com|net)",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "poa",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["freemium","recurring","poa","payg"],
+      "scripts": "\\.ezo(?:js|ic|dn)\\.(?:com|net)",
       "website": "https://www.ezoic.com"
     },
     "F5 BigIP": {
@@ -6445,6 +6482,19 @@
       ],
       "website": "http://froala.com/wysiwyg-editor"
     },
+    "FrontPage": {
+      "cats": [
+        20
+      ],
+      "cpe": "cpe:/a:microsoft:frontpage",
+      "description": "FrontPage is a program for developing and maintaining websites.",
+      "icon": "FrontPage.png",
+      "meta": {
+        "ProgId": "^FrontPage\\.",
+        "generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
+      },
+      "website": "http://office.microsoft.com/frontpage"
+    },
     "Frontity": {
       "cats": [
         12,
@@ -6470,26 +6520,15 @@
       "description": "Frosmo is a SaaS company wich provides AI-driven personalization products.",
       "icon": "Frosmo.png",
       "js": {
-        "frosmo": "",
-        "_frosmo": ""
+        "_frosmo": "",
+        "frosmo": ""
       },
-      "scripts": "frosmo\\.easy\\.js",
-      "saas": true,
-      "pricing": ["poa"],
-      "website": "https://frosmo.com"
-    },
-    "FrontPage": {
-      "cats": [
-        20
+      "pricing": [
+        "poa"
       ],
-      "cpe": "cpe:/a:microsoft:frontpage",
-      "description": "FrontPage is a program for developing and maintaining websites.",
-      "icon": "FrontPage.png",
-      "meta": {
-        "ProgId": "^FrontPage\\.",
-        "generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://office.microsoft.com/frontpage"
+      "saas": true,
+      "scripts": "frosmo\\.easy\\.js",
+      "website": "https://frosmo.com"
     },
     "Fusion Ads": {
       "cats": [
@@ -7034,16 +7073,6 @@
       "scripts": "js/gogs\\.js",
       "website": "http://gogs.io"
     },
-    "Google Ads": {
-      "cats": [
-        36
-      ],
-      "description": "Google Ads is an online advertising platform developed by Google.",
-      "icon": "Google Ads.svg",
-      "saas": true,
-      "pricing": ["payg"],
-      "website": "https://ads.google.com"
-    },
     "Google AdSense": {
       "cats": [
         36
@@ -7064,6 +7093,18 @@
         "ad\\.ca\\.doubleclick\\.net"
       ],
       "website": "https://www.google.fr/adsense/start/"
+    },
+    "Google Ads": {
+      "cats": [
+        36
+      ],
+      "description": "Google Ads is an online advertising platform developed by Google.",
+      "icon": "Google Ads.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ads.google.com"
     },
     "Google Analytics": {
       "cats": [
@@ -7669,8 +7710,11 @@
       "js": {
         "Beacon": "\\;confidence:25"
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "scripts": "beacon-v2\\.helpscout\\.net",
       "website": "https://www.helpscout.com/"
     },
@@ -10172,9 +10216,11 @@
       ],
       "description": "ManyContacts is an attention-grabbing contact form sitting on top of your website that helps to increase conversion by converting visitors into leads.",
       "icon": "ManyContacts.png",
-      "scripts": "\\.manycontacts\\.com",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
+      "scripts": "\\.manycontacts\\.com",
       "website": "https://www.manycontacts.com"
     },
     "Mapbox GL JS": {
@@ -10677,9 +10723,11 @@
       "js": {
         "clarity": ""
       },
-      "scripts": "www\\.clarity\\.ms/.+/([\\d.]+)/clarity\\.js\\;version:\\1",
+      "pricing": [
+        "freemium"
+      ],
       "saas": true,
-      "pricing": ["freemium"],
+      "scripts": "www\\.clarity\\.ms/.+/([\\d.]+)/clarity\\.js\\;version:\\1",
       "website": "https://clarity.microsoft.com"
     },
     "Microsoft Excel": {
@@ -12961,14 +13009,14 @@
       "js": {
         "Pico": ""
       },
-      "scripts": [
-        "widget\\.pico\\.tools"
-      ],
       "pricing": [
         "low",
         "recurring"
       ],
       "saas": true,
+      "scripts": [
+        "widget\\.pico\\.tools"
+      ],
       "website": "https://trypico.com"
     },
     "Pimcore": {
@@ -13533,21 +13581,6 @@
       "url": "/dana-na/auth/",
       "website": "https://www.pulsesecure.net/products/remote-access-overview/"
     },
-    "Pure Chat": {
-      "cats": [
-        5
-      ],
-      "description": "Pure Chat is a live chat solution for small to mid-sized teams.",
-      "icon": "Pure Chat.png",
-      "js": {
-        "PCWidget": "",
-        "purechatApi": ""
-      },
-      "scripts": "app\\.purechat\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://www.purechat.com"
-    },
     "Pure CSS": {
       "cats": [
         66
@@ -13559,6 +13592,24 @@
       ],
       "icon": "Pure CSS.png",
       "website": "http://purecss.io"
+    },
+    "Pure Chat": {
+      "cats": [
+        5
+      ],
+      "description": "Pure Chat is a live chat solution for small to mid-sized teams.",
+      "icon": "Pure Chat.png",
+      "js": {
+        "PCWidget": "",
+        "purechatApi": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "app\\.purechat\\.com",
+      "website": "https://www.purechat.com"
     },
     "PushEngage": {
       "cats": [
@@ -14537,6 +14588,23 @@
       "icon": "Ruby.png",
       "website": "http://ruby-lang.org"
     },
+    "Ruby Receptionists": {
+      "cats": [
+        5
+      ],
+      "description": "Ruby Receptionists is a Portland, Oregon based virtual answering service for small businesses.",
+      "icon": "Ruby Receptionists.svg",
+      "js": {
+        "rubyApi": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "chatwidget\\.ruby\\.com",
+      "website": "https://www.ruby.com"
+    },
     "Ruby on Rails": {
       "cats": [
         18
@@ -14557,20 +14625,6 @@
       },
       "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "https://rubyonrails.org"
-    },
-    "Ruby Receptionists": {
-      "cats": [
-        5
-      ],
-      "description": "Ruby Receptionists is a Portland, Oregon based virtual answering service for small businesses.",
-      "icon": "Ruby Receptionists.svg",
-      "js": {
-        "rubyApi": ""
-      },
-      "scripts": "chatwidget\\.ruby\\.com",
-      "saas": true,
-      "pricing": ["mid","recurring"],
-      "website": "https://www.ruby.com"
     },
     "RxJS": {
       "cats": [
@@ -16160,11 +16214,13 @@
       ],
       "description": "Spinnakr is a startup with a platform designed to personalize messages on blogs and websites.",
       "icon": "Spinnakr.png",
-      "js":{
+      "js": {
         "_spinnakr_site_id": ""
       },
-      "saas": true, 
-      "pricing": ["poa"],
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
       "website": "https://www.spinnakr.com"
     },
     "SplitIt": {
@@ -16441,31 +16497,6 @@
       "icon": "Strikingly.png",
       "website": "https://strikingly.com"
     },
-    "Bread": {
-      "cats": [
-        41
-      ],
-      "description": "Bread is a buy now, pay later platform for ecommerce websites.",
-      "icon": "Bread.svg",
-      "scripts": "\\.getbread\\.com",
-      "dom": {
-        "#bread-mini-cart-btn": {
-          "text": ""
-        }
-      },
-      "js": {
-        "bread.appHost": "",
-        "BreadError": "",
-        "BreadShopify": "",
-        "BreadLoaded": "",
-        "BreadCalc": ""
-      },
-      "pricing": [
-        "poa"
-      ],
-      "saas": true,
-      "website": "https://www.breadpayments.com"
-    },
     "Stripe": {
       "cats": [
         41
@@ -16719,8 +16750,6 @@
         6
       ],
       "description": "Sylius is an open source ecommerce framework based on Symfony full stack.",
-      "icon": "Sylius.svg",
-      "implies": "Symfony",
       "dom": {
         "body.sylius_homepage": {
           "attributes": {
@@ -16733,11 +16762,13 @@
           }
         }
       },
+      "icon": "Sylius.svg",
+      "implies": "Symfony",
+      "oss": true,
       "scripts": [
         "syliusshop/script\\.js",
         "syliusgtmenhancedecommerceplugin"
       ],
-      "oss": true,
       "website": "https://sylius.com"
     },
     "Symfony": {
@@ -17445,20 +17476,6 @@
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
     },
-    "Trustpilot": {
-      "cats": [
-        5
-      ],
-      "description": "Trustpilot is a Danish consumer review website which provide embed stand-alone applications in your website to show your most recent reviews, TrustScore, and star ratings.",
-      "icon": "Trustpilot.svg",
-      "js": {
-        "Trustpilot": ""
-      },
-      "saas": true,
-      "pricing": ["mid","freemium","recurring"],
-      "scripts": "\\.trustpilot\\.com",
-      "website": "https://business.trustpilot.com"
-    },
     "TrustYou": {
       "cats": [
         5
@@ -17474,6 +17491,24 @@
       "icon": "TrustYou.svg",
       "saas": true,
       "website": "https://www.trustyou.com"
+    },
+    "Trustpilot": {
+      "cats": [
+        5
+      ],
+      "description": "Trustpilot is a Danish consumer review website which provide embed stand-alone applications in your website to show your most recent reviews, TrustScore, and star ratings.",
+      "icon": "Trustpilot.svg",
+      "js": {
+        "Trustpilot": ""
+      },
+      "pricing": [
+        "mid",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.trustpilot\\.com",
+      "website": "https://business.trustpilot.com"
     },
     "Tumblr": {
       "cats": [
@@ -17501,6 +17536,42 @@
       },
       "scripts": "(turf@[\\d.]+)?/?turf\\.min\\.js",
       "website": "https://turfjs.org/"
+    },
+    "TwicPics": {
+      "cats": [
+        31,
+        59
+      ],
+      "description": "TwicPics offers on-demand responsive image generation.",
+      "dom": {
+        ".twic": {
+          "attributes": {
+            "data-src": ""
+          }
+        },
+        "[data-twic-src]": {
+          "attributes": {
+            "data-twic-src": ""
+          }
+        },
+        "data-twic-background": {
+          "attributes": {
+            "data-twic-background": ""
+          }
+        }
+      },
+      "headers": {
+        "server": "^TwicPics/\\d+\\.\\d+\\.\\d+$"
+      },
+      "icon": "TwicPics.svg",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": ".+\\.twic\\.pics",
+      "website": "https://www.twicpics.com"
     },
     "Twilight CMS": {
       "cats": [
@@ -19365,7 +19436,6 @@
         5
       ],
       "description": "Yelp Review Badges showcase business reviews from Yelp on websites.",
-      "icon": "Yelp.svg",
       "dom": {
         "img[src*='dyn.yelpcdn.com']": {
           "attributes": {
@@ -19373,6 +19443,7 @@
           }
         }
       },
+      "icon": "Yelp.svg",
       "scripts": "yelp\\.com/biz_badge_js",
       "website": "http://yelp.com"
     },
@@ -19714,13 +19785,15 @@
       "description": "Zonos is a cross-border ecommerce software and app solution for companies with international business.",
       "icon": "Zonos.svg",
       "js": {
-        "zonos": "",
         "Zonos": "",
+        "zonos": "",
         "zonosCheckout": ""
       },
-      "scripts": "\\.zonos\\.com/",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "\\.zonos\\.com/",
       "website": "https://zonos.com"
     },
     "Zope": {
@@ -20934,42 +21007,6 @@
       "icon": "total.js.png",
       "implies": "Node.js",
       "website": "https://totaljs.com"
-    },
-    "TwicPics": {
-      "description": "TwicPics offers on-demand responsive image generation.",
-      "cats": [
-        31,
-        59
-      ],
-      "headers": {
-        "server": "^TwicPics/\\d+\\.\\d+\\.\\d+$"
-      },
-      "scripts": ".+\\.twic\\.pics",
-      "dom": {
-        "[data-twic-src]": {
-          "attributes": {
-            "data-twic-src": ""
-          }
-        },
-        "data-twic-background": {
-          "attributes": {
-            "data-twic-background": ""
-          }
-        },
-        ".twic": {
-          "attributes": {
-            "data-src": ""
-          }
-        }
-      },
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "recurring",
-        "payg"
-      ],
-      "icon": "TwicPics.svg",
-      "website": "https://www.twicpics.com"
     },
     "uKnowva": {
       "cats": [
