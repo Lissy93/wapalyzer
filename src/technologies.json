@@ -4216,6 +4216,10 @@
       "description": "Contentful is an API-first content management platform to create, manage and publish content on any digital channel.",
       "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
       "icon": "Contentful.svg",
+      "headers": {
+        "x-contentful-request-id": ""
+      },
+      "xhr": "cdn\\.contentful\\.com",
       "pricing": [
         "mid",
         "freemium",
@@ -15482,6 +15486,19 @@
         "generator": "^ShopFA ([\\d.]+)$\\;version:\\1"
       },
       "website": "https://shopfa.com"
+    },
+    "commercelayer": {
+      "cats": [
+        6
+      ],
+      "pricing": [
+        "medium",
+        "recurring"
+      ],
+      "saas": true,
+      "xhr": "\\.commercelayer\\.io",
+      "icon": "commercelayer.svg",
+      "website": "https://commercelayer.io"
     },
     "Shopify": {
       "cats": [
