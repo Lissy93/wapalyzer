@@ -5527,13 +5527,16 @@
     },
     "Emarsys": {
       "cats": [
-        32
+        32,
+        76
       ],
       "description": "Emarsys is a cloud-based B2C marketing platform.",
       "icon": "Emarsys.svg",
       "js": {
+        "Scarab": "",
         "ScarabQueue": ""
       },
+      "scripts": "(?:static|cdn)\\.scarabresearch\\.com",
       "website": "https://emarsys.com/"
     },
     "EmbedThis Appweb": {
