@@ -14342,6 +14342,28 @@
       "scripts": "widgets\\.resy\\.\\w+",
       "website": "https://resy.com"
     },
+    "Retail Rocket": {
+      "cats": [
+        76
+      ],
+      "description": "Retail Rocket is a big data-based personalization platform for ecommerce websites.",
+      "icon": "Retail Rocket.png",
+      "cookies": {
+        "rr-testCookie": "testvalue",
+        "rrpvid": "^\\d+$"
+      },
+      "js": {
+        "retailrocket": "",
+        "rrLibrary": "\\;confidence:25",
+        "rrApiOnReady": "\\;confidence:25",
+        "rrPartnerId": "\\;confidence:25",
+        "rrAddToBasket": "\\;confidence:25"
+      },
+      "scripts": "cdn\\.retailrocket\\.net",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://retailrocket.net"
+    },
     "Reveal.js": {
       "cats": [
         12
