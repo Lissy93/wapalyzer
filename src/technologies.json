@@ -17494,6 +17494,27 @@
       "scripts": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
+    "Trbo": {
+      "cats": [
+        74,
+        76
+      ],
+      "description": "Trbo is a personalization, recommendations, A/B testing platform from Germany.",
+      "icon": "Trbo.svg",
+      "cookies": {
+        "trbo_session": "^(?:[\\d]+)$",
+        "trbo_usr": "^(?:[\\d\\w]+)$"
+      },
+      "js": {
+        "_trbo": "",
+        "_trbo_start": "",
+        "_trboq": ""
+      },
+      "scripts": "\\.trbo\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.trbo.com"
+    },
     "Tripadviser.Widget": {
       "cats": [
         5
