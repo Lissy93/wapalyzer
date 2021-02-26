@@ -1439,21 +1439,24 @@
         41
       ],
       "description": "Amazon Pay is an online payments processing service that is owned by Amazon. It lets you use the payment methods associated with your Amazon account to make payments for goods and services.",
+      "icon": "Amazon Pay.svg",
       "dom": {
         "img[src*='amazonpay']": {
           "text": ""
         }
       },
-      "html": "<meta id=\"amazon-payments",
-      "icon": "Amazon Pay.svg",
       "js": {
         "AmazonPayments": "",
-        "enableAmazonPay": ""
+        "enableAmazonPay": "",
+        "onAmazonPaymentsReady": "",
+        "OffAmazonPayments": ""
       },
       "scripts": [
         "/amazonpayments(?:\\.min)?\\.js",
-        "static-[^.]\\.payments-amazon\\.com/OffAmazonPayments"
+        "\\.payments-amazon\\.com/OffAmazonPayments"
       ],
+      "xhr": "payments\\.amazon\\.com",
+      "pricing": ["payg"],
       "website": "https://pay.amazon.com"
     },
     "Amazon S3": {
