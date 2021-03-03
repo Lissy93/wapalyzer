@@ -3382,14 +3382,11 @@
         6
       ],
       "description": "Websites that have a shopping cart or checkout page, either using a known ecommerce platform or a custom solution.",
-      "html": [
-        "<a[^>]*href=[^>]*/Cart",
-        "<a[^>]*href=[^>]*/Basket",
-        "<a[^>]*href=[^>]*/Trolley",
-        "<a[^>]*href=[^>]*/Bag",
-        "<a[^>]*href=[^>]*/ShoppingBag",
-        "<a[^>]*href=[^>]*/Checkout"
-      ],
+      "dom": {
+        "a[href*='/cart'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']": {
+          "text": ""
+        }
+      },
       "icon": "Cart-generic.svg",
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
@@ -10972,6 +10969,22 @@
       "scripts": "mvga\\.js",
       "website": "http://www.miva.com"
     },
+    "DocuSign": {
+      "cats": [
+        19
+      ],
+      "description": "DocuSign allows organizations to manage electronic agreements.",
+      "icon": "DocuSign.svg",
+      "dns": {
+        "TXT": [
+          "docusign"
+        ]
+      },
+      "xhr": "docusign\\.net",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.docusign.com"
+    },
     "Mixpanel": {
       "cats": [
         10
@@ -10980,6 +10993,11 @@
       "icon": "Mixpanel.png",
       "js": {
         "mixpanel": ""
+      },
+      "dns": {
+        "TXT": [
+          "mixpanel-domain-verify"
+        ]
       },
       "scripts": [
         "cdn\\.mxpnl\\.com/libs/mixpanel\\-([0-9.]+)\\.min\\.js\\;version:\\1",
