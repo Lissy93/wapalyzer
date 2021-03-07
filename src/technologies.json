@@ -5885,6 +5885,24 @@
       "url": "Pages/SearchResults\\.aspx\\?k=",
       "website": "http://sharepoint.microsoft.com/en-us/product/capabilities/search/Pages/Fast-Search.aspx"
     },
+    "Facebook Pixel": {
+      "cats": [
+        10
+      ],
+      "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
+      "icon": "Facebook.svg",
+      "dom": {
+        "img[src*='facebook.com/tr']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "_fbq": ""
+      },
+      "website": "http://facebook.com"
+    },
     "Facebook": {
       "cats": [
         5
