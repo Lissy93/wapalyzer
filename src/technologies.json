@@ -8495,6 +8495,23 @@
       "icon": "Invenio.png",
       "website": "http://invenio-software.org"
     },
+    "Inveon": {
+      "cats": [
+        6
+      ],
+      "description": "Inveon is a technology company that has been delivering ecommerce infrastructure software and mcommerce applications.",
+      "icon": "Inveon.svg",
+      "js": {
+        "invTagManagerParams": "",
+        "InvApp": "\\;confidence:50"
+      },
+      "cookies": {
+        "INV.Customer": "\\;confidence:50",
+        "inveonSessionId": ""
+      },
+      "scripts": "Scripts/_app/Inv(?:\\w+)\\.js\\?v=(.+)$\\;version:\\1",
+      "website": "https://www.inveon.com"
+    },
     "Ionic": {
       "cats": [
         18
