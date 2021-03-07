@@ -9165,6 +9165,8 @@
       "description": "Kibo Personalization is a omnichannel personalisation software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
       "icon": "Kibo.png",
       "js": {
+        "BaynoteJSVersion": "",
+        "BaynoteAPI": "",
         "monetate": "",
         "monetateQ": "",
         "monetateT": ""
@@ -9173,7 +9175,10 @@
         "poa"
       ],
       "saas": true,
-      "scripts": "\\.monetate\\.net",
+      "scripts": [
+        "\\.monetate\\.net",
+        "\\.baynote\\.net"
+      ],
       "website": "https://kibocommerce.com/personalization-software"
     },
     "KineticJS": {
