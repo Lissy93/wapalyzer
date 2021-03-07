@@ -11979,6 +11979,29 @@
       "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "website": "http://odoo.com"
     },
+    "Okendo": {
+      "cats": [
+        5,
+        76
+      ],
+      "description": "Okendo is a customer marketing platform with product ratings and reviews, customer photos and videos to help personalise experiences.",
+      "icon": "Okendo.svg",
+      "js": {
+        "okendoReviews": "",
+        "okeWidgetControlInit": "",
+        "okeReviewsWidgetOnInit": ""
+      },
+      "dom": {
+        "div.okeReviews": {
+          "attributes": {
+            "data-oke-reviews-version": "^([\\d.]+)$\\;version:\\1"
+          }
+        }
+      },
+      "saas": true,
+      "pricing": ["low", "mid", "recurring"],
+      "website": "https://www.okendo.io"
+    },
     "Okta": {
       "cats": [
         19
