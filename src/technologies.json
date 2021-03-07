@@ -7743,12 +7743,18 @@
       "cats": [
         10
       ],
+      "description": "Heap is an analytics platform.",
       "icon": "Heap.svg",
       "js": {
-        "heap": ""
+        "heap.version.heapJsVersion": "([\\d.]+)\\;version:\\1"
       },
-      "scripts": "heap-\\d+\\.js",
-      "website": "http://heapanalytics.com"
+      "scripts": [
+        "cdn\\.heapanalytics\\.com",
+        "heap-\\d+\\.js"
+      ],
+      "saas": true,
+      "pricing": ["freemium", "high"],
+      "website": "https://heap.io"
     },
     "Heartland Payment Systems": {
       "cats": [
