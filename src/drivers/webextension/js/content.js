@@ -92,7 +92,14 @@ const Content = {
         language,
       ])
 
-      Content.onGetTechnologies(await Content.driver('getTechnologies'))
+      const technologies = await Content.driver('getTechnologies')
+
+      Content.onGetTechnologies(technologies)
+
+      // Delayed second pass to capture async JS
+      await new Promise((resolve) => setTimeout(resolve, 5000))
+
+      Content.onGetTechnologies(technologies)
     } catch (error) {
       Content.driver('error', error)
     }
@@ -154,6 +161,100 @@ const Content = {
     script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
 
     document.body.appendChild(script)
+
+    // DOM
+    const dom = technologies
+      .filter(({ dom }) => dom)
+      .map(({ name, dom }) => ({ name, dom }))
+      .reduce((technologies, { name, dom }) => {
+        const toScalar = (value) =>
+          typeof value === 'string' || typeof value === 'number'
+            ? value
+            : !!value
+
+        Object.keys(dom).forEach((selector) => {
+          const nodes = document.querySelectorAll(selector)
+
+          if (!nodes.length) {
+            return
+          }
+
+          dom[selector].forEach(({ text, properties, attributes }) => {
+            nodes.forEach((node) => {
+              if (text) {
+                const value = node.textContent.trim()
+
+                if (value) {
+                  technologies.push({
+                    name,
+                    selector,
+                    text: value,
+                  })
+                }
+              }
+
+              if (properties) {
+                Object.keys(properties).forEach((property) => {
+                  if (Object.prototype.hasOwnProperty.call(node, property)) {
+                    const value = node[property]
+
+                    if (typeof value !== 'undefined') {
+                      technologies.push({
+                        name,
+                        selector,
+                        property,
+                        value: toScalar(value),
+                      })
+                    }
+                  }
+                })
+              }
+
+              if (attributes) {
+                Object.keys(attributes).forEach((attribute) => {
+                  if (node.hasAttribute(attribute)) {
+                    const value = node.getAttribute(attribute)
+
+                    technologies.push({
+                      name,
+                      selector,
+                      attribute,
+                      value: toScalar(value),
+                    })
+                  }
+                })
+              }
+            })
+          })
+        })
+
+        return technologies
+      }, [])
+
+    // Detect Google Ads
+    if (/^(www\.)?google(\.[a-z]{2,3}){1,2}$/.test(location.hostname)) {
+      const ads = document.querySelectorAll('#tads [data-text-ad] a[data-pcu]')
+
+      for (const ad of ads) {
+        Content.driver('detectTechnology', [ad.href, 'Google Ads'])
+      }
+    }
+
+    // Detect Microsoft Ads
+    if (/^(www\.)?bing\.com$/.test(location.hostname)) {
+      const ads = document.querySelectorAll('.b_ad .b_adurl cite')
+
+      for (const ad of ads) {
+        const url = ad.textContent.split(' ')[0].trim()
+
+        Content.driver('detectTechnology', [
+          url.startsWith('http') ? url : `http://${url}`,
+          'Microsoft Advertising',
+        ])
+      }
+    }
+
+    Content.driver('analyzeDom', [location.href, dom])
   },
 }
 

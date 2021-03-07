@@ -1,5 +1,6 @@
 const { URL } = require('url')
 const fs = require('fs')
+const dns = require('dns').promises
 const path = require('path')
 const http = require('http')
 const https = require('https')
@@ -50,6 +51,8 @@ const { technologies, categories } = JSON.parse(
 setTechnologies(technologies)
 setCategories(categories)
 
+const xhrDebounce = []
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
@@ -67,12 +70,41 @@ function analyzeJs(js) {
   )
 }
 
+function analyzeDom(dom) {
+  return Array.prototype.concat.apply(
+    [],
+    dom.map(({ name, selector, text, property, attribute, value }) => {
+      const technology = Wappalyzer.technologies.find(
+        ({ name: _name }) => name === _name
+      )
+
+      if (text) {
+        return analyzeManyToMany(technology, 'dom.text', { [selector]: [text] })
+      }
+
+      if (property) {
+        return analyzeManyToMany(technology, `dom.properties.${property}`, {
+          [selector]: [value],
+        })
+      }
+
+      if (attribute) {
+        return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
+          [selector]: [value],
+        })
+      }
+
+      return []
+    })
+  )
+}
+
 function get(url) {
   if (['http:', 'https:'].includes(url.protocol)) {
     const { get } = url.protocol === 'http:' ? http : https
 
     return new Promise((resolve, reject) =>
-      get(url.href, (response) => {
+      get(url, { rejectUnauthorized: false }, (response) => {
         if (response.statusCode >= 400) {
           return reject(
             new Error(`${response.statusCode} ${response.statusMessage}`)
@@ -86,7 +118,7 @@ function get(url) {
         response.on('data', (data) => (body += data))
         response.on('error', (error) => reject(new Error(error.message)))
         response.on('end', () => resolve(body))
-      })
+      }).on('error', (error) => reject(new Error(error.message)))
     )
   } else {
     throw new Error(`Invalid protocol: ${url.protocol}`)
@@ -127,6 +159,8 @@ class Driver {
 
     try {
       this.browser = await puppeteer.launch({
+        ignoreHTTPSErrors: true,
+        acceptInsecureCerts: true,
         args: chromiumArgs,
         executablePath: await chromiumBin,
       })
@@ -135,7 +169,11 @@ class Driver {
         this.log('Browser disconnected')
 
         if (!this.destroyed) {
-          await this.init()
+          try {
+            await this.init()
+          } catch (error) {
+            this.log(error.toString())
+          }
         }
       })
     } catch (error) {
@@ -173,7 +211,11 @@ class Driver {
 
 class Site {
   constructor(url, headers = {}, driver) {
-    ;({ options: this.options, browser: this.browser } = driver)
+    ;({
+      options: this.options,
+      browser: this.browser,
+      init: this.initDriver,
+    } = driver)
 
     this.options.headers = {
       ...this.options.headers,
@@ -194,6 +236,8 @@ class Site {
     this.listeners = {}
 
     this.pages = []
+
+    this.dns = []
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -225,12 +269,26 @@ class Site {
     }
   }
 
-  timeout() {
-    return new Promise((resolve, reject) =>
-      setTimeout(() => {
-        reject(new Error('The website took too long to respond'))
-      }, this.options.maxWait)
-    )
+  promiseTimeout(
+    promise,
+    errorMessage = 'The website took too long to respond'
+  ) {
+    let timeout = null
+
+    return Promise.race([
+      new Promise((resolve, reject) => {
+        timeout = setTimeout(() => {
+          clearTimeout(timeout)
+
+          reject(new Error(errorMessage))
+        }, this.options.maxWait)
+      }),
+      promise.then((value) => {
+        clearTimeout(timeout)
+
+        return value
+      }),
+    ])
   }
 
   async goto(url) {
@@ -249,7 +307,11 @@ class Site {
     }
 
     if (!this.browser) {
-      throw new Error('Browser closed')
+      await this.initDriver()
+
+      if (!this.browser) {
+        throw new Error('Browser closed')
+      }
     }
 
     const page = await this.browser.newPage()
@@ -268,6 +330,26 @@ class Site {
 
     page.on('request', async (request) => {
       try {
+        if (request.resourceType() === 'xhr') {
+          let hostname
+
+          try {
+            ;({ hostname } = new URL(request.url()))
+          } catch (error) {
+            return
+          }
+
+          if (!xhrDebounce.includes(hostname)) {
+            xhrDebounce.push(hostname)
+
+            setTimeout(() => {
+              xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
+
+              this.onDetect(analyze({ xhr: hostname }))
+            }, 1000)
+          }
+        }
+
         if (
           (responseReceived && request.isNavigationRequest()) ||
           request.frame() !== page.mainFrame() ||
@@ -308,8 +390,6 @@ class Site {
             ]
           })
 
-          this.contentType = headers['content-type'] || null
-
           if (response.status() >= 300 && response.status() < 400) {
             if (headers.location) {
               url = new URL(headers.location.slice(-1), url)
@@ -323,7 +403,7 @@ class Site {
 
             this.onDetect(analyze({ headers, certIssuer }))
 
-            await this.emit('response', { page, response })
+            await this.emit('response', { page, response, headers, certIssuer })
           }
         }
       } catch (error) {
@@ -337,99 +417,103 @@ class Site {
     )
 
     try {
-      await Promise.race([
-        this.timeout(),
-        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
-      ])
+      await this.promiseTimeout(
+        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+      )
 
       await sleep(1000)
 
+      // page.on('console', (message) => this.log(message.text()))
+
       // Links
-      const links = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle(() =>
-            Array.from(document.getElementsByTagName('a')).map(
-              ({ hash, hostname, href, pathname, protocol, rel }) => ({
-                hash,
-                hostname,
-                href,
-                pathname,
-                protocol,
-                rel,
-              })
+      const links = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.getElementsByTagName('a')).map(
+                ({ hash, hostname, href, pathname, protocol, rel }) => ({
+                  hash,
+                  hostname,
+                  href,
+                  pathname,
+                  protocol,
+                  rel,
+                })
+              )
             )
-          ),
-        ])
-      ).jsonValue()
+          )
+        ).jsonValue()
+      )
 
       // CSS
-      const css = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle((maxRows) => {
-            const css = []
+      const css = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle((maxRows) => {
+              const css = []
 
-            try {
-              if (!document.styleSheets.length) {
+              try {
+                if (!document.styleSheets.length) {
+                  return ''
+                }
+
+                for (const sheet of Array.from(document.styleSheets)) {
+                  for (const rules of Array.from(sheet.cssRules)) {
+                    css.push(rules.cssText)
+
+                    if (css.length >= maxRows) {
+                      break
+                    }
+                  }
+                }
+              } catch (error) {
                 return ''
               }
 
-              for (const sheet of Array.from(document.styleSheets)) {
-                for (const rules of Array.from(sheet.cssRules)) {
-                  css.push(rules.cssText)
-
-                  if (css.length >= maxRows) {
-                    break
-                  }
-                }
-              }
-            } catch (error) {
-              return ''
-            }
-
-            return css.join('\n')
-          }, this.options.htmlMaxRows),
-        ])
-      ).jsonValue()
+              return css.join('\n')
+            }, this.options.htmlMaxRows)
+          )
+        ).jsonValue()
+      )
 
       // Script tags
-      const scripts = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle(() =>
-            Array.from(document.getElementsByTagName('script'))
-              .map(({ src }) => src)
-              .filter((src) => src)
-          ),
-        ])
-      ).jsonValue()
+      const scripts = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.getElementsByTagName('script'))
+                .map(({ src }) => src)
+                .filter((src) => src)
+            )
+          )
+        ).jsonValue()
+      )
 
       // Meta tags
-      const meta = await (
-        await Promise.race([
-          this.timeout(),
-          page.evaluateHandle(() =>
-            Array.from(document.querySelectorAll('meta')).reduce(
-              (metas, meta) => {
-                const key =
-                  meta.getAttribute('name') || meta.getAttribute('property')
+      const meta = await this.promiseTimeout(
+        (
+          await this.promiseTimeout(
+            page.evaluateHandle(() =>
+              Array.from(document.querySelectorAll('meta')).reduce(
+                (metas, meta) => {
+                  const key =
+                    meta.getAttribute('name') || meta.getAttribute('property')
 
-                if (key) {
-                  metas[key.toLowerCase()] = [meta.getAttribute('content')]
-                }
+                  if (key) {
+                    metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                  }
 
-                return metas
-              },
-              {}
+                  return metas
+                },
+                {}
+              )
             )
-          ),
-        ])
-      ).jsonValue()
+          )
+        ).jsonValue()
+      )
 
       // JavaScript
-      const js = await Promise.race([
-        this.timeout(),
+      const js = await this.promiseTimeout(
         page.evaluate(
           (technologies) => {
             return technologies.reduce((technologies, { name, chains }) => {
@@ -461,14 +545,91 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        ),
-      ])
+        )
+      )
+
+      // DOM
+      const dom = await this.promiseTimeout(
+        page.evaluate(
+          (technologies) => {
+            return technologies.reduce((technologies, { name, dom }) => {
+              const toScalar = (value) =>
+                typeof value === 'string' || typeof value === 'number'
+                  ? value
+                  : !!value
+
+              Object.keys(dom).forEach((selector) => {
+                const nodes = document.querySelectorAll(selector)
+
+                if (!nodes.length) {
+                  return
+                }
+
+                dom[selector].forEach(({ text, properties, attributes }) => {
+                  nodes.forEach((node) => {
+                    if (text) {
+                      const value = node.textContent.trim()
+
+                      if (value) {
+                        technologies.push({
+                          name,
+                          selector,
+                          text: value,
+                        })
+                      }
+                    }
+
+                    if (properties) {
+                      Object.keys(properties).forEach((property) => {
+                        if (
+                          Object.prototype.hasOwnProperty.call(node, property)
+                        ) {
+                          const value = node[property]
+
+                          if (typeof value !== 'undefined') {
+                            technologies.push({
+                              name,
+                              selector,
+                              property,
+                              value: toScalar(value),
+                            })
+                          }
+                        }
+                      })
+                    }
+
+                    if (attributes) {
+                      Object.keys(attributes).forEach((attribute) => {
+                        if (node.hasAttribute(attribute)) {
+                          const value = node.getAttribute(attribute)
+
+                          technologies.push({
+                            name,
+                            selector,
+                            attribute,
+                            value: toScalar(value),
+                          })
+                        }
+                      })
+                    }
+                  })
+                })
+              })
+
+              return technologies
+            }, [])
+          },
+          Wappalyzer.technologies
+            .filter(({ dom }) => dom)
+            .map(({ name, dom }) => ({ name, dom }))
+        )
+      )
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
         (cookies, { name, value }) => ({
           ...cookies,
-          [name]: [value],
+          [name.toLowerCase()]: [value],
         }),
         {}
       )
@@ -497,8 +658,63 @@ class Site {
         html = batches.join('\n')
       }
 
+      // DNS
+      if (!Object.keys(this.dns).length) {
+        const records = {}
+        const resolve = (func, hostname) => {
+          return this.promiseTimeout(
+            func(hostname).catch((error) => {
+              if (error.code !== 'ENODATA') {
+                this.error(error)
+              }
+
+              return []
+            })
+          )
+        }
+
+        const domain = url.hostname.replace(/^www\./, '')
+
+        ;[
+          records.cname,
+          records.ns,
+          records.mx,
+          records.txt,
+          records.soa,
+        ] = await Promise.all([
+          resolve(dns.resolveCname, url.hostname),
+          resolve(dns.resolveNs, domain),
+          resolve(dns.resolveMx, domain),
+          resolve(dns.resolveTxt, domain),
+          resolve(dns.resolveSoa, domain),
+        ])
+
+        this.dns = Object.keys(records).reduce((dns, type) => {
+          dns[type] = dns[type] || []
+
+          Array.prototype.push.apply(
+            dns[type],
+            Array.isArray(records[type])
+              ? records[type].map((value) => {
+                  return typeof value === 'object'
+                    ? Object.values(value).join(' ')
+                    : value
+                })
+              : [Object.values(records[type]).join(' ')]
+          )
+
+          return dns
+        }, {})
+
+        this.onDetect(analyze({ dns: this.dns }))
+      }
+
       // Validate response
-      if (url.protocol !== 'file:' && !this.analyzedUrls[url.href].status) {
+      if (
+        url.protocol !== 'file:' &&
+        this.analyzedUrls[url.href] &&
+        !this.analyzedUrls[url.href].status
+      ) {
         await page.close()
 
         this.log('Page closed')
@@ -506,8 +722,8 @@ class Site {
         throw new Error('No response from server')
       }
 
+      this.onDetect(analyzeDom(dom))
       this.onDetect(analyzeJs(js))
-
       this.onDetect(
         analyze({
           url,
@@ -530,9 +746,8 @@ class Site {
             ) &&
             link.protocol &&
             link.protocol.match(/https?:/) &&
-            link.rel !== 'nofollow' &&
             link.hostname === url.hostname &&
-            extensions.test(link.pathname)
+            extensions.test(link.pathname.slice(-5))
           ) {
             results.push(new URL(link.href.split('#')[0]))
           }
@@ -551,6 +766,7 @@ class Site {
         meta,
         js,
         links: reducedLinks,
+        dns: this.dns,
       })
 
       await page.close()
@@ -559,7 +775,15 @@ class Site {
 
       return reducedLinks
     } catch (error) {
-      this.error(error)
+      if (error.constructor.name === 'TimeoutError') {
+        throw new Error('The website took too long to respond')
+      }
+
+      if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
+        throw new Error('Hostname could not be resolved')
+      }
+
+      throw new Error(error.message)
     }
   }
 

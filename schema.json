@@ -41,6 +41,19 @@
 						"type": "string",
             "pattern": "^.{0,500}$"
 					},
+					"oss": {
+						"type": "boolean"
+					},
+					"saas": {
+						"type": "boolean"
+					},
+          "pricing": {
+						"type": "array",
+						"items": {
+							"type": "string",
+              "pattern": "^(low|mid|high|freemium|poa|payg|onetime|recurring)$"
+						}
+          },
 					"cats": {
 						"type": "array",
 						"items": {
@@ -70,6 +83,22 @@
 							},
 							"additionalProperties": {
 								"type": "string"
+							}
+						}
+					},
+          "dom": {
+						"type": "object",
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
+							}
+						}
+					},
+          "dns": {
+						"type": "object",
+						"additionalProperties": false,
+						"patternProperties": {
+							"^.+$": {
 							}
 						}
 					},
@@ -193,6 +222,9 @@
 						"$ref": "#/definitions/non-empty-non-blank-string"
 					},
 					"icon": {
+						"$ref": "#/definitions/non-empty-non-blank-string"
+					},
+					"xhr": {
 						"$ref": "#/definitions/non-empty-non-blank-string"
 					}
 				}
