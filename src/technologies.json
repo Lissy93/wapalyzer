@@ -4157,6 +4157,26 @@
       "implies": "Microsoft ASP.NET",
       "website": "http://commerceserver.net"
     },
+    "Commerce.js": {
+      "cats": [
+        6
+      ],
+      "icon": "commercejs.png",
+      "scripts": [
+        "cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
+        "chec/commerce\\.js"
+      ],
+      "js": {
+        "CommercejsSpace": ""
+      },
+      "url": "\\.spaces.chec\\.io",
+      "description": "Commerce.js is an API-first ecommerce platform for developers and businesses.",
+      "website": "https://www.commercejs.com",
+      "headers": {
+        "X-Powered-By": "Commerce.js",
+        "Chec-Version": ".*"
+      }
+    },
     "Concrete5": {
       "cats": [
         1
