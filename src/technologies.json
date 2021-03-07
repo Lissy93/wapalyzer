@@ -2488,7 +2488,7 @@
           "attributes": {
             "data-src": "",
             "src": ""
-          }      
+          }
         }
       },
       "scripts": "cdn\\d+\\.bigcommerce\\.com/",
@@ -17291,9 +17291,10 @@
       ],
       "saas": true,
       "scripts": [
-        "(?:widget|web)\\.taggbox\\.com",
+        "\\.taggbox\\.com",
         "taggbox\\.com/app/js/embed\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
       ],
+      "url": "\\.taggbox\\.com",
       "website": "https://taggbox.com/"
     },
     "Taiga": {
