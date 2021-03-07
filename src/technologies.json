@@ -15009,6 +15009,39 @@
       "implies": "Express",
       "website": "http://sailsjs.org"
     },
+    "Sailthru": {
+      "cats": [
+        32,
+        75,
+        76
+      ],
+      "description": "Sailthru is a marketing automation software and multi-channel personalization tool that serves ecommerce and media brands.",
+      "icon": "Sailthru.svg",
+      "cookies": {
+        "sailthru_pageviews": ""
+      },
+      "meta": {
+        "sailthru.title": "",
+        "sailthru.image.full": ""
+      },
+      "dom": {
+        "link[href*='ak.sail-horizon.com'],link[href*='api.sail-personalize.com'],link[href*='api.sail-track.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "js": {
+        "Sailthru": "",
+        "trackSailthruUser": "",
+        "sailthruNewsletterRegistration": "",
+        "sailthruIdentify": ""
+      },
+      "scripts": "ak\\.sail-horizon\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.sailthru.com"
+    },
     "SaleCycle": {
       "cats": [
         6
