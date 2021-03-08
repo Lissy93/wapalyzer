@@ -1462,6 +1462,7 @@
           "text": ""
         }
       },
+      "xhr": "payments\\.amazon\\.com",
       "js": {
         "AmazonPayments": "",
         "enableAmazonPay": "",
@@ -7853,9 +7854,6 @@
         "Via": "[\\d.-]+ vegur$"
       },
       "icon": "heroku.svg",
-      "implies": [
-        "Amazon Web Services"
-      ],
       "url": "\\.herokuapp\\.com",
       "website": "https://www.heroku.com/"
     },
@@ -20046,8 +20044,12 @@
           "mail\\.zendesk\\.com"
         ]
       },
+      "scripts": "static\\.zdassets\\.com",
       "headers": {
         "x-zendesk-user-id": ""
+      },
+      "js": {
+        "Zendesk": ""
       },
       "icon": "Zendesk.png",
       "pricing": [
