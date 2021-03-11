@@ -421,7 +421,7 @@ class Site {
         page.goto(url.href, { waitUntil: 'domcontentloaded' })
       )
 
-      await sleep(1000)
+      await sleep(15000)
 
       // page.on('console', (message) => this.log(message.text()))
 
