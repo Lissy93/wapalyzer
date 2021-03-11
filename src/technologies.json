@@ -3166,6 +3166,22 @@
       },
       "website": "http://www.bugzilla.org"
     },
+    "Builder": {
+      "cats": [
+        1
+      ],
+      "description": "Builder.io is a headless CMS with a powerful drag-and-drop visual editor that lets you build and optimize digital experiences with speed and flexibility. ",
+      "html": ["<[^>]*data-builder-content-id=", "<[^>]*cdn.builder.io"],
+      "icon": "Builder.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://builder.io",
+      "xhr": "cdn\\.builder\\.io"
+    },
     "Buildertrend": {
       "cats": [
         19
