@@ -1893,6 +1893,26 @@
       "saas": true,
       "website": "https://www.appointy.com/"
     },
+    "Apptus": {
+      "cats": [
+        76
+      ],
+      "description": "Apptus is an AI-powered ecommerce optimisation software provider.",
+      "icon": "Apptus.svg",
+      "js": {
+        "apptusDebug": "",
+        "apptusConfig": "",
+        "ApptusEsales": ""
+      },
+      "cookies": {
+        "apptus.customerKey": "",
+        "apptus.sessionKey": ""
+      },
+      "scripts": "cdn\\.esales\\.apptus\\.com.+(?:apptus-esales-api-([\\d.]+))\\.min\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.apptus.com"
+    },
     "AquilaCMS": {
       "cats": [
         1
