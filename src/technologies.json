@@ -13123,6 +13123,21 @@
       "icon": "Perl.png",
       "website": "http://perl.org"
     },
+    "PersonaClick": {
+      "cats": [
+        76
+      ],
+      "description": "PersonaClick is a provide personalization, recommandation and multi channel services.",
+      "icon": "PersonaClick.png",
+      "js": {
+        "personaclick": "",
+        "personaclick_callback": ""
+      },
+      "scripts": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.personaclick.com"
+    },
     "Phabricator": {
       "cats": [
         13,
