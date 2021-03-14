@@ -632,11 +632,14 @@
       "cats": [
         32
       ],
-      "description": "Act-On is a Software-as-a-Service (SaaS) product for marketing automation.",
-      "icon": "ActOn.png",
+      "description": "Act-On is a cloud-based SaaS product for marketing automation.",
+      "icon": "Act-On.svg",
       "js": {
         "ActOn": ""
       },
+      "scripts": "/cdnr/\\d+/acton/bn/tracker/\\d+",
+      "saas": true,
+      "pricing": ["high","recurring"],
       "website": "http://act-on.com"
     },
     "AdInfinity": {
