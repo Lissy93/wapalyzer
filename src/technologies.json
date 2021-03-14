@@ -13007,6 +13007,11 @@
         },
         "img[src*='paypal.com'], img[src*='paypalobjects.com']": {
           "text": ""
+        },
+        "link": {
+          "attributes": {
+            "href": "paypal-express-checkout"
+          }
         }
       },
       "html": "<input[^>]+_s-xclick",
