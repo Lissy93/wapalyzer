@@ -18308,7 +18308,13 @@
           "text": ""
         }
       },
-      "html": "<link[^>]* rel=\"stylesheet\" media=\"screen\" href=\"https:\/\/cdn-uscreen-alpha\\.global\\.ssl\\.fastly\\.net\/packs\/css\/tailwind-[^\"]*\\.chunk\\.css\" \/>",
+      "dom": {
+        "link[rel='stylesheet'][href*='css/tailwind-']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
       "icon": "Uscreen.svg",
       "js": {
         "analyticsHost": "stats\\.uscreen\\.io"
