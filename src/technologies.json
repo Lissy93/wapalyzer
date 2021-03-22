@@ -4381,7 +4381,11 @@
         67
       ],
       "icon": "cookieyes.svg",
-      "html": "<div[^>]+id=\"cookie-law-info-bar\"",
+      "dom": {
+        "#cookie-law-info-bar": {
+          "text": ""
+        }
+      },
       "scripts": "app\\.cookieyes\\.com/client_data/",
       "website": "https://www.cookieyes.com/"
     },
