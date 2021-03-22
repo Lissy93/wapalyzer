@@ -2570,6 +2570,16 @@
       "scripts": "thebase\\.in/js",
       "website": "https://thebase.in"
     },
+    "Basic": {
+      "cats": [
+        16
+      ],
+      "description": "Basic is an authetication method used by some web servers.",
+      "headers":{
+        "WWW-Authenticate": "^Basic"
+      },
+      "website": "https://tools.ietf.org/html/rfc7617"
+    },
     "Big Cartel": {
       "cats": [
         6
@@ -4772,6 +4782,16 @@
         "derakCloud.init": ""
       },
       "website": "https://derak.cloud"
+    },
+    "Digest": {
+      "cats": [
+        16
+      ],
+      "description": "Digest is an authentication method based on a MD5 hash used by web servers.",
+      "headers": {
+        "WWW-Authenticate": "^Digest"
+      },
+      "website": "https://tools.ietf.org/html/rfc7616"
     },
     "DHTMLX": {
       "cats": [
@@ -9272,6 +9292,16 @@
       "scripts": "/CMSPages/GetResource\\.ashx",
       "website": "http://www.kentico.com"
     },
+    "Kerberos": {
+      "cats": [
+        16
+      ],
+      "description": "Kerberos is an authentication method commonly used by Windows servers",
+      "headers": {
+        "WWW-Authenticate": "^Kerberos"
+      },
+      "website": "https://tools.ietf.org/html/rfc4559"
+    },
     "Kestrel": {
       "cats": [
         22
@@ -11755,6 +11785,16 @@
         "NSW.initSite": ""
       },
       "website": "https://www.digital.nsw.gov.au/digital-design-system"
+    },
+    "NTLM": {
+      "cats": [
+        16
+      ],
+      "description": "NTLM is an authentication method commonly used by Windows servers",
+      "headers": {
+        "WWW-Authenticate": "^NTLM"
+      },
+      "website": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-ntht/"
     },
     "NVD3": {
       "cats": [
@@ -15192,6 +15232,16 @@
       "saas": true,
       "scripts": "www\\.semrush\\.com",
       "website": "https://www.semrush.com"
+    },
+    "SPNEGO": {
+      "cats": [
+        16
+      ],
+      "description": "SPNEGO is an authentication method commonly used in Windows servers to allow NTLM or Kerberos authentication",
+      "headers": {
+        "WWW-Authenticate": "^Negotiate"
+      },
+      "website": "https://tools.ietf.org/html/rfc4559"
     },
     "SIMsite": {
       "cats": [
