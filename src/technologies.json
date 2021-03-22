@@ -16661,6 +16661,25 @@
       "icon": "Splunk.png",
       "website": "http://splunk.com"
     },
+    "SpotX": {
+      "cats": [
+        36
+      ],
+      "description": "SpotX is a video advertising platform.",
+      "icon": "SpotX.png",
+      "dom": {
+        "link[href*='.spotxchange.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "js": {
+        "SpotX.VERSION": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "js\\.spotx\\.tv",
+      "website": "https://www.spotx.tv"
+    },
     "Spree": {
       "cats": [
         6
