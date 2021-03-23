@@ -18677,13 +18677,6 @@
           "text": ""
         }
       },
-      "dom": {
-        "link[rel='stylesheet'][href*='css/tailwind-']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
       "icon": "Uscreen.svg",
       "js": {
         "analyticsHost": "stats\\.uscreen\\.io"
@@ -21884,9 +21877,15 @@
       ],
       "description": "Tailwind is a utility-first CSS framework.",
       "html": [
-        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/][a-z]+/tailwind(?:.min)?.css",
         "<link[^>]+?href=\"[^\"]+tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
       ],
+      "dom": {
+        "link[rel='stylesheet'][href*='tailwind']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
     },
