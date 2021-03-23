@@ -4068,14 +4068,6 @@
       "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
     },
-    "Clientexec": {
-      "cats": [
-        6
-      ],
-      "html": "clientexec\\.[^>]*\\s?=\\s?[^>]*;",
-      "icon": "Clientexec.png",
-      "website": "http://www.clientexec.com"
-    },
     "Clipboard.js": {
       "cats": [
         19
@@ -17156,7 +17148,7 @@
       "cats": [
         6
       ],
-      "html": "Shopsystem von <a href=[^>]+store-systems\\.de\"|\\.mws_boxTop",
+      "html": "Shopsystem von <a href=[^>]+store-systems\\.de\"",
       "icon": "Store Systems.png",
       "website": "http://store-systems.de"
     },
@@ -20075,7 +20067,7 @@
       },
       "description": "XenForo is a PHP-based forum hosting program for communities that is designed to be deployed on a remote web server.",
       "html": [
-        "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+        "(?:jQuery\\.extend\\(true, XenForo|<a[^>]+>Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
         "<html id=\"XF\" "
       ],
       "icon": "XenForo.png",
