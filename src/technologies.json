@@ -5850,8 +5850,11 @@
         47
       ],
       "dom": {
-        "style[data-emotion]": {
-          "text": ""
+        "style[data-emotion], style[data-emotion-css]": {
+          "text": "",
+          "attributes": {
+            "type": "text/css"
+          }
         }
       },
       "icon": "Emotion.png",
