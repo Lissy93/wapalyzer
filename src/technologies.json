@@ -557,6 +557,7 @@
       "description": "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.",
       "icon": "aws.svg",
       "implies": "Amazon Web Services",
+      "saas": true,
       "website": "https://aws.amazon.com/certificate-manager/"
     },
     "AWStats": {
@@ -651,6 +652,7 @@
         "Percona",
         "Amazon EC2"
       ],
+      "saas": true,
       "website": "https://www.acquia.com/"
     },
     "Act-On": {
@@ -858,6 +860,7 @@
         "s_c_il.5._c": "s_c",
         "s_c_il.5.constructor.name": "AppMeasurement"
       },
+      "saas": true,
       "website": "https://www.adobe.com/analytics/adobe-analytics.html"
     },
     "Adobe ColdFusion": {
@@ -887,6 +890,7 @@
       "js": {
         "_satellite.buildDate": ""
       },
+      "saas": true,
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
     },
     "Adobe Experience Manager": {
@@ -1136,6 +1140,7 @@
         "portal\\.afterpay\\.com",
         "static\\.afterpay\\.com"
       ],
+      "saas": true,
       "website": "https://www.afterpay.com/"
     },
     "Ahoy": {
@@ -1451,6 +1456,7 @@
       },
       "icon": "Amazon-Cloudfront.svg",
       "implies": "Amazon Web Services",
+      "saas": true,
       "website": "http://aws.amazon.com/cloudfront/"
     },
     "Amazon EC2": {
@@ -1463,6 +1469,7 @@
       },
       "icon": "aws-ec2.svg",
       "implies": "Amazon Web Services",
+      "saas": true,
       "website": "http://aws.amazon.com/ec2/"
     },
     "Amazon ECS": {
@@ -1477,6 +1484,7 @@
         "Amazon Web Services",
         "Docker"
       ],
+      "saas": true,
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "Amazon ELB": {
@@ -1488,6 +1496,7 @@
       },
       "icon": "aws-elb.png",
       "implies": "Amazon Web Services",
+      "saas": true,
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "Amazon Pay": {
@@ -1507,6 +1516,7 @@
         "enableAmazonPay": "",
         "onAmazonPaymentsReady": ""
       },
+      "saas": true,
       "pricing": [
         "payg"
       ],
@@ -1526,6 +1536,7 @@
       },
       "icon": "aws-s3.svg",
       "implies": "Amazon Web Services",
+      "saas": true,
       "website": "http://aws.amazon.com/s3/"
     },
     "Amazon SES": {
@@ -1540,6 +1551,7 @@
       },
       "icon": "aws.svg",
       "implies": "Amazon Web Services",
+      "saas": true,
       "website": "https://aws.amazon.com/ses/"
     },
     "Amazon Web Services": {
@@ -1561,6 +1573,7 @@
         "x-amz-version-id": ""
       },
       "icon": "aws.svg",
+      "saas": true,
       "website": "https://aws.amazon.com/"
     },
     "Amazon Webstore": {
@@ -1572,6 +1585,7 @@
       "js": {
         "amzn": ""
       },
+      "saas": true,
       "website": "https://aws.amazon.com/marketplace/pp/Amazon-Web-Services-Amazon-Webstore/B007NLVI2S"
     },
     "Amber": {
@@ -7477,7 +7491,10 @@
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""
       },
-      "scripts": "google-analytics\\.com/(?:ga|urchin|analytics)\\.js",
+      "scripts": [
+        "google-analytics\\.com/(?:ga|urchin|analytics)\\.js",
+        "googletagmanager\\.com/gtag/js"
+      ],
       "website": "http://google.com/analytics"
     },
     "Google Analytics Enhanced eCommerce": {
@@ -7677,10 +7694,8 @@
         "google_tag_manager": "",
         "googletag": ""
       },
-      "scripts": [
-        "googletagmanager\\.com/gtm\\.js",
-        "googletagmanager\\.com/gtag/js"
-      ],
+      "saas": true,
+      "scripts": "googletagmanager\\.com/gtm\\.js",
       "website": "http://www.google.com/tagmanager"
     },
     "Google Wallet": {
@@ -7692,6 +7707,7 @@
         "checkout\\.google\\.com",
         "wallet\\.google\\.com"
       ],
+      "saas": true,
       "website": "http://wallet.google.com"
     },
     "Google Web Server": {
