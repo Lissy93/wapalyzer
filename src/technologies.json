@@ -2936,12 +2936,12 @@
       "scripts": "/wp-content/plugins/post-and-page-builder",
       "website": "https://boldgrid.com"
     },
-    "Bolt": {
+    "Bolt CMS": {
       "cats": [
         1
       ],
       "cpe": "cpe:/a:bolt:bolt",
-      "icon": "Bolt.png",
+      "icon": "Bolt CMS.png",
       "implies": "PHP",
       "meta": {
         "generator": "Bolt"
@@ -17349,6 +17349,28 @@
       "saas": true,
       "scripts": "js\\.stripe\\.com",
       "website": "http://stripe.com"
+    },
+    "Bolt Payments": {
+      "cats": [
+        41
+      ],
+      "description": "Bolt powers a checkout experience designed to convert shoppers.",
+      "icon": "Bolt.svg",
+      "xhr": "connect\\.bolt\\.com",
+      "dom": {
+        "bolt-checkout-button": {
+          "text": ""
+        }
+      },
+      "js": {
+        "BoltCheckout": "",
+        "bolt_callbacks": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.bolt.com/"
     },
     "SublimeVideo": {
       "cats": [
