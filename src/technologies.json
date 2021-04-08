@@ -10951,6 +10951,23 @@
       "icon": "Meebo.png",
       "website": "http://www.meebo.com"
     },
+    "Meeting Scheduler": {
+      "cats": [
+        5,
+        72
+      ],
+      "description": "Meeting Scheduler is a schedule appointments widget.",
+      "icon": "Meeting Scheduler.png",
+      "dom": {
+        "a[href*='bookmenow.info/book']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "bookmenow\\.info/(?:runtime|main).+\\.js",
+      "website": "https://bookmenow.info"
+    },
     "Melis Platform": {
       "cats": [
         1,
