@@ -5879,6 +5879,20 @@
       },
       "website": "http://emberjs.com"
     },
+    "Emotion": {
+      "description": "Emotion is a library designed for writing CSS styles with JavaScript.",
+      "cats": [
+        12,
+        47
+      ],
+      "dom": {
+        "style[data-emotion], style[data-emotion-css]": {
+          "text": ""
+        }
+      },
+      "icon": "Emotion.png",
+      "website": "http://emotion.sh"
+    },
     "Engagio": {
       "cats": [
         10
@@ -16751,8 +16765,8 @@
       "description": "Snowplow is an open-source behavioral data management platform for businesses.",
       "icon": "Snowplow.svg",
       "js": {
-        "GlobalSnowplowNamespace": "",
-        "Snowplow": ""
+        "Snowplow": "",
+        "GlobalSnowplowNamespace": ""
       },
       "oss": true,
       "pricing": [
