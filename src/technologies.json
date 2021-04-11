@@ -1136,11 +1136,11 @@
         "Afterpay": "",
         "afterpay_product": ""
       },
+      "saas": true,
       "scripts": [
         "portal\\.afterpay\\.com",
         "static\\.afterpay\\.com"
       ],
-      "saas": true,
       "website": "https://www.afterpay.com/"
     },
     "Ahoy": {
@@ -1219,6 +1219,32 @@
       "saas": true,
       "scripts": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
       "website": "https://www.airship.com"
+    },
+    "Arc": {
+      "cats": [
+        31
+      ],
+      "description": "Arc is a peer-to-peer CDN that pays site owners for using it. Instead of expensive servers in distant datacenters, Arc's network is comprised of browsers.",
+      "js": {
+        "arc.p2pClient": "",
+        "arcWidgetJsonp": ""
+      },
+      "xhr": "\\.arc\\.io",
+      "dom": {
+        "#arc-widget": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "scripts": "arc\\.io/widget\\.js",
+      "icon": "Arc.svg",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://arc.io"
     },
     "Akamai": {
       "cats": [
@@ -1516,10 +1542,10 @@
         "enableAmazonPay": "",
         "onAmazonPaymentsReady": ""
       },
-      "saas": true,
       "pricing": [
         "payg"
       ],
+      "saas": true,
       "scripts": [
         "/amazonpayments(?:\\.min)?\\.js",
         "\\.payments-amazon\\.com/OffAmazonPayments"
@@ -2947,6 +2973,28 @@
         "generator": "Bolt"
       },
       "website": "http://bolt.cm"
+    },
+    "Bolt Payments": {
+      "cats": [
+        41
+      ],
+      "description": "Bolt powers a checkout experience designed to convert shoppers.",
+      "dom": {
+        "bolt-checkout-button": {
+          "text": ""
+        }
+      },
+      "icon": "Bolt.svg",
+      "js": {
+        "BoltCheckout": "",
+        "bolt_callbacks": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.bolt.com/",
+      "xhr": "connect\\.bolt\\.com"
     },
     "Bonfire": {
       "cats": [
@@ -5880,11 +5928,11 @@
       "website": "http://emberjs.com"
     },
     "Emotion": {
-      "description": "Emotion is a library designed for writing CSS styles with JavaScript.",
       "cats": [
         12,
         47
       ],
+      "description": "Emotion is a library designed for writing CSS styles with JavaScript.",
       "dom": {
         "style[data-emotion], style[data-emotion-css]": {
           "text": ""
@@ -7717,11 +7765,11 @@
         41
       ],
       "icon": "Google Wallet.png",
+      "saas": true,
       "scripts": [
         "checkout\\.google\\.com",
         "wallet\\.google\\.com"
       ],
-      "saas": true,
       "website": "http://wallet.google.com"
     },
     "Google Web Server": {
@@ -10971,7 +11019,6 @@
         72
       ],
       "description": "Meeting Scheduler is a schedule appointments widget.",
-      "icon": "Meeting Scheduler.png",
       "dom": {
         "a[href*='bookmenow.info/book']": {
           "attributes": {
@@ -10979,6 +11026,7 @@
           }
         }
       },
+      "icon": "Meeting Scheduler.png",
       "scripts": "bookmenow\\.info/(?:runtime|main).+\\.js",
       "website": "https://bookmenow.info"
     },
@@ -16765,8 +16813,8 @@
       "description": "Snowplow is an open-source behavioral data management platform for businesses.",
       "icon": "Snowplow.svg",
       "js": {
-        "Snowplow": "",
-        "GlobalSnowplowNamespace": ""
+        "GlobalSnowplowNamespace": "",
+        "Snowplow": ""
       },
       "oss": true,
       "pricing": [
@@ -17349,28 +17397,6 @@
       "saas": true,
       "scripts": "js\\.stripe\\.com",
       "website": "http://stripe.com"
-    },
-    "Bolt Payments": {
-      "cats": [
-        41
-      ],
-      "description": "Bolt powers a checkout experience designed to convert shoppers.",
-      "icon": "Bolt.svg",
-      "xhr": "connect\\.bolt\\.com",
-      "dom": {
-        "bolt-checkout-button": {
-          "text": ""
-        }
-      },
-      "js": {
-        "BoltCheckout": "",
-        "bolt_callbacks": ""
-      },
-      "pricing": [
-        "poa"
-      ],
-      "saas": true,
-      "website": "https://www.bolt.com/"
     },
     "SublimeVideo": {
       "cats": [
@@ -22079,6 +22105,22 @@
       "scripts": "/media/conv/js/jquery\\.js",
       "website": "https://uknowva.com"
     },
+    "uPortal": {
+      "cats": [
+        21
+      ],
+      "description": "uPortal is an open source enterprise portal framework built by and for higher education institutions.",
+      "icon": "uPortal.png",
+      "implies": "Java",
+      "js": {
+        "uportal": ""
+      },
+      "meta": {
+        "description": " uPortal "
+      },
+      "oss": true,
+      "website": "https://www.apereo.org/projects/uportal"
+    },
     "uRemediate": {
       "cats": [
         68
@@ -22229,22 +22271,6 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
-    },
-    "uPortal": {
-      "cats": [
-        21
-      ],
-      "description": "uPortal is an open source enterprise portal framework built by and for higher education institutions.",
-      "implies": "Java",
-      "icon": "uPortal.png",
-      "meta": {
-        "description": " uPortal "
-      },
-      "js": {
-        "uportal": ""
-      },
-      "oss": true,
-      "website": "https://www.apereo.org/projects/uportal"
     }
   }
 }
