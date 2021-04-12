@@ -7897,6 +7897,29 @@
       "scripts": "ib\\.guestonline\\.\\w+",
       "website": "https://www.guestonline.io"
     },
+    "GumGum": {
+      "cats": [
+        36
+      ],
+      "description": "GumGum is a technology and media company specializing in contextual intelligence.",
+      "icon": "GumGum.png",
+      "dom": {
+        "iframe[src*='gumgum.com']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "img[src*='gumgum.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "xhr": "\\.gumgum\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://gumgum.com"
+    },
     "HCL Commerce": {
       "cats": [
         6
