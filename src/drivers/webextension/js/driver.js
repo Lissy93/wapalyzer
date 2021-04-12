@@ -192,6 +192,7 @@ const Driver = {
           )
 
           if (text) {
+            console.log(selector, text)
             return analyzeManyToMany(technology, 'dom.text', {
               [selector]: [text],
             })

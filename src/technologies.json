@@ -13390,7 +13390,7 @@
       ],
       "description": "PeerTube is a free and open-source, decentralized, federated video platform powered by ActivityPub and WebTorrent.",
       "dom": {
-        "p": {
+        "#incompatible-browser p": {
           "text": "^We are sorry but it seems that PeerTube is not compatible with your web browser\\.$"
         }
       },
@@ -22271,6 +22271,21 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
+    },
+    "Bumb": {
+      "cats": [
+        4
+      ],
+      "description": "Bump is an API contract management platform that helps document and track APIs by identifying changes in API structure, and keeping developers informed through an elegant documentation.",
+      "dom": {
+        ".doc-navigation footer, footer.catalog-footer": {
+          "text": "Powered by Bump"
+        }
+      },
+      "pricing": ["recurring", "freemium", "low"],
+      "saas": true,
+      "icon": "Bump.svg",
+      "website": "https://bump.sh"
     }
   }
 }
