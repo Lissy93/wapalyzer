@@ -828,6 +828,22 @@
       "implies": "PHP",
       "website": "http://www.adminer.org"
     },
+    "Admitad": {
+      "cats": [
+        71
+      ],
+      "description": "Admitad is an affiliate network that acts as an intermediary between advertisers and publishers.",
+      "icon": "Admitad.svg",
+      "js": {
+        "ADMITAD": "",
+        "admitad": ""
+      },
+      "scripts": [
+        "artfut\\.com/static/(?:tracking|crossdevice)\\.min\\.js",
+        "cdn\\.admitad\\.com"
+      ],
+      "website": "https://www.admitad.com"
+    },
     "Adnegah": {
       "cats": [
         36
@@ -16797,6 +16813,20 @@
     "Social9": {
       "cats": [
         5
+      ],
+      "description": "Social9 is a social sharing widgets and plugins.",
+      "icon": "Social9.svg",
+      "pricing": [
+        "poa",
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "social9\\.com/.+\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "website": "https://social9.com"
+    },
+    "Sociomantic": {
+      "cats": [
+        77
       ],
       "description": "Social9 is a social sharing widgets and plugins.",
       "icon": "Social9.svg",
