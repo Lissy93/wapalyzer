@@ -10149,6 +10149,25 @@
       "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
       "website": "https://www.liveperson.com/"
     },
+    "LiveRamp PCM": {
+      "cats": [
+        67
+      ],
+      "description": "LiveRamp PCM is a preference and consent management platform that enables comply with the ePrivacy Directive, GDPR, CCPA, and other data protection and privacy laws and regulations.",
+      "icon": "LiveRamp.svg",
+      "dom": {
+        "iframe[src*='gdpr-consent-tool\\.privacymanager\\.io']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "wpJsonpLiverampGdprCmp": ""
+      },
+      "scripts": "gdpr\\.privacymanager\\.io",
+      "website": "https://liveramp.com/our-platform/preference-consent-management"
+    },
     "LiveStreet CMS": {
       "cats": [
         1
