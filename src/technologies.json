@@ -1900,13 +1900,23 @@
         36
       ],
       "description": "AppNexus is a cloud-based software platform that enables and optimizes programmatic online advertising.",
-      "html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
       "icon": "AppNexus.svg",
-      "pricing": [
-        "poa"
-      ],
-      "saas": true,
+      "dom": {
+        "iframe[src*='.adnxs.com']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "img[src*='.adnxs.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "xhr": "prebid\\.adnxs\\.com",
       "scripts": "adnxs\\.(?:net|com)",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://appnexus.com"
     },
     "Appian": {
@@ -12764,11 +12774,25 @@
         36
       ],
       "cpe": "cpe:/a:openx:openx",
+      "description": "OpenX is a programmatic advertising technology company.",
       "icon": "OpenX.png",
+      "dom": {
+        "iframe[src*='.openx.net']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "img[src*='.openx.net']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
       "scripts": [
         "https?://[^/]*\\.openx\\.net",
         "https?://[^/]*\\.servedbyopenx\\.com"
       ],
+      "saas": true,
       "website": "http://openx.com"
     },
     "Optimise": {
@@ -15199,8 +15223,23 @@
       "cats": [
         36
       ],
+      "description": "Rubicon Project is an advertising automation platform enabling publishers to transact advertising brands.",
       "icon": "Rubicon Project.svg",
+      "dom": {
+        "iframe[src*='.rubiconproject.com']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "img[src*='.rubiconproject.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "xhr": "\\.rubiconproject\\.com",
       "scripts": "https?://[^/]*\\.rubiconproject\\.com",
+      "saas": true,
       "website": "http://rubiconproject.com/"
     },
     "Ruby": {
