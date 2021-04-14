@@ -22286,6 +22286,27 @@
       "saas": true,
       "icon": "Bump.svg",
       "website": "https://bump.sh"
+    },
+    "SmugMug": {
+      "cats": [
+        7
+      ],
+      "description": "SmugMug is a paid image sharing, image hosting service, and online video platform on which users can upload photos and videos.",
+      "dom": {
+        ".sm-page-footer-copyright": {
+          "text": "SmugMug"
+        }
+      },
+      "headers": {
+        "Smug-CDN": ""
+      },
+      "js": {
+        "_smugsp": ""
+      },
+      "pricing": ["recurring", "low"],
+      "saas": true,
+      "icon": "SmugMug.svg",
+      "website": "https://www.smugmug.com"
     }
   }
 }
