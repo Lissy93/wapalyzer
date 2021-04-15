@@ -9366,6 +9366,20 @@
       "scripts": "cdn\\.mykamva\\.ir",
       "website": "https://kamva.ir"
     },
+    "Karma": {
+      "cats": [
+        59
+      ],
+      "description": "Karma is a test runner for JavaScript that runs on Node.js.",
+      "implies": "Node.js",
+      "icon": "Karma.svg",
+      "js": {
+        "karma.vars.version": "(.+)\\;version:\\1"
+      },
+      "scripts": "karma\\.mdpcdn\\.com",
+      "oss": true,
+      "website": "https://karma-runner.github.io"
+    },
     "Kemal": {
       "cats": [
         18,
