@@ -237,6 +237,7 @@ class Site {
 
     this.pages = []
 
+    this.dnsChecked = false
     this.dns = []
   }
 
@@ -418,7 +419,8 @@ class Site {
 
     try {
       await this.promiseTimeout(
-        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
+        'a'
       )
 
       await sleep(1000)
@@ -440,9 +442,11 @@ class Site {
                   rel,
                 })
               )
-            )
+            ),
+            'c'
           )
-        ).jsonValue()
+        ).jsonValue(),
+        'b'
       )
 
       // CSS
@@ -471,9 +475,11 @@ class Site {
               }
 
               return css.join('\n')
-            }, this.options.htmlMaxRows)
+            }, this.options.htmlMaxRows),
+            'd'
           )
-        ).jsonValue()
+        ).jsonValue(),
+        'e'
       )
 
       // Script tags
@@ -507,9 +513,11 @@ class Site {
                 },
                 {}
               )
-            )
+            ),
+            'f'
           )
-        ).jsonValue()
+        ).jsonValue(),
+        'g'
       )
 
       // JavaScript
@@ -545,7 +553,8 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        )
+        ),
+        'h'
       )
 
       // DOM
@@ -622,7 +631,8 @@ class Site {
           Wappalyzer.technologies
             .filter(({ dom }) => dom)
             .map(({ name, dom }) => ({ name, dom }))
-        )
+        ),
+        'i'
       )
 
       // Cookies
@@ -659,7 +669,9 @@ class Site {
       }
 
       // DNS
-      if (!Object.keys(this.dns).length) {
+      if (!this.dnsChecked) {
+        this.dnsChecked = true
+
         const records = {}
         const resolve = (func, hostname) => {
           return this.promiseTimeout(
@@ -670,7 +682,7 @@ class Site {
 
               return []
             })
-          )
+          ).catch(() => [])
         }
 
         const domain = url.hostname.replace(/^www\./, '')
