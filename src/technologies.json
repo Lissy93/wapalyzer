@@ -6331,6 +6331,7 @@
         31
       ],
       "description": "Fastly is a cloud computing services provider. Fastly's cloud platform provides a content delivery network, Internet security services, load balancing, and video & streaming services.",
+      "icon": "Fastly.svg",
       "headers": {
         "Fastly-Debug-Digest": "",
         "Vary": "Fastly-SSL",
@@ -6338,7 +6339,8 @@
         "x-fastly-origin": "",
         "x-via-fastly:": ""
       },
-      "icon": "Fastly.svg",
+      "xhr": "\\.fastly\\.net",
+      "pricing": ["payg"],
       "website": "https://www.fastly.com"
     },
     "Fastspring": {
