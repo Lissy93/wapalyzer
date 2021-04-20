@@ -16078,6 +16078,20 @@
       "scripts": "w\\.sharethis\\.com/",
       "website": "http://sharethis.com"
     },
+    "SharpSpring": {
+      "cats": [
+        32
+      ],
+      "description": "SharpSpring is a cloud-based marketing tool that offers customer relationship management, marketing automation, mobile and social marketing, sales team automation, customer service and more, all within one solution.",
+      "icon": "SharpSpring.png",
+      "js": {
+        "sharpspring_tracking_installed": ""
+      },
+      "scripts": "\\.marketingautomation\\.services.+(?:ver=)([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["high","recurring"],
+      "website": "https://sharpspring.com"
+    },
     "SharpSpring Ads": {
       "cats": [
         77
@@ -16092,7 +16106,6 @@
       "saas": true,
       "website": "https://sharpspring.com/ads"
     },
-    
     "ShellInABox": {
       "cats": [
         46
