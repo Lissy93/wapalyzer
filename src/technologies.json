@@ -1220,32 +1220,6 @@
       "scripts": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
       "website": "https://www.airship.com"
     },
-    "Arc": {
-      "cats": [
-        31
-      ],
-      "description": "Arc is a peer-to-peer CDN that pays site owners for using it. Instead of expensive servers in distant datacenters, Arc's network is comprised of browsers.",
-      "js": {
-        "arc.p2pClient": "",
-        "arcWidgetJsonp": ""
-      },
-      "xhr": "\\.arc\\.io",
-      "dom": {
-        "#arc-widget": {
-          "attributes": {
-            "id": ""
-          }
-        }
-      },
-      "scripts": "arc\\.io/widget\\.js",
-      "icon": "Arc.svg",
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "saas": true,
-      "website": "https://arc.io"
-    },
     "Akamai": {
       "cats": [
         31
@@ -2055,6 +2029,32 @@
       "implies": "PHP",
       "scripts": "arastta\\.js",
       "website": "http://arastta.org"
+    },
+    "Arc": {
+      "cats": [
+        31
+      ],
+      "description": "Arc is a peer-to-peer CDN that pays site owners for using it. Instead of expensive servers in distant datacenters, Arc's network is comprised of browsers.",
+      "dom": {
+        "#arc-widget": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "icon": "Arc.svg",
+      "js": {
+        "arc.p2pClient": "",
+        "arcWidgetJsonp": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "arc\\.io/widget\\.js",
+      "website": "https://arc.io",
+      "xhr": "\\.arc\\.io"
     },
     "Arc Publishing": {
       "cats": [
@@ -3433,6 +3433,25 @@
       "html": "<link[^>]+?href=\"[^\"]+bulma(?:\\.min)?\\.css",
       "icon": "Bulma.png",
       "website": "http://bulma.io"
+    },
+    "Bumb": {
+      "cats": [
+        4
+      ],
+      "description": "Bump is an API contract management platform that helps document and track APIs by identifying changes in API structure, and keeping developers informed through an elegant documentation.",
+      "dom": {
+        ".doc-navigation footer, footer.catalog-footer": {
+          "text": "Powered by Bump"
+        }
+      },
+      "icon": "Bump.svg",
+      "pricing": [
+        "recurring",
+        "freemium",
+        "low"
+      ],
+      "saas": true,
+      "website": "https://bump.sh"
     },
     "Business Catalyst": {
       "cats": [
@@ -6296,25 +6315,6 @@
       },
       "website": "http://facebook.com"
     },
-    "TikTok Pixel": {
-      "cats": [
-        10
-      ],
-      "description": "",
-      "dom": {
-        "script[data-hid='tiktok']": {
-          "attributes": {
-            "data-hid": ""
-          }
-        }
-      },
-      "xhr": "analytics\\.tiktok\\.com",
-      "icon": "TikTok.svg",
-      "js": {
-        "TiktokAnalyticsObject": ""
-      },
-      "website": "https://ads.tiktok.com"
-    },
     "Facebook Sign-in": {
       "cats": [
         69
@@ -7760,6 +7760,14 @@
       "icon": "Google Sites.png",
       "url": "^https?://sites\\.google\\.com",
       "website": "http://sites.google.com"
+    },
+    "Google My Business": {
+      "cats": [
+        1
+      ],
+      "icon": "Google.svg",
+      "url": "https?://[^.]+\\.business\\.site",
+      "website": "https://www.google.com/business/website-builder"
     },
     "Google Tag Manager": {
       "cats": [
@@ -16757,6 +16765,30 @@
       "scripts": "smjslib\\.js",
       "website": "http://smartstore.com"
     },
+    "SmugMug": {
+      "cats": [
+        7
+      ],
+      "description": "SmugMug is a paid image sharing, image hosting service, and online video platform on which users can upload photos and videos.",
+      "dom": {
+        ".sm-page-footer-copyright": {
+          "text": "SmugMug"
+        }
+      },
+      "headers": {
+        "Smug-CDN": ""
+      },
+      "icon": "SmugMug.svg",
+      "js": {
+        "_smugsp": ""
+      },
+      "pricing": [
+        "recurring",
+        "low"
+      ],
+      "saas": true,
+      "website": "https://www.smugmug.com"
+    },
     "Snap": {
       "cats": [
         18,
@@ -18172,6 +18204,25 @@
       "saas": true,
       "scripts": "code\\.tidio\\.co",
       "website": "https://www.tidio.com"
+    },
+    "TikTok Pixel": {
+      "cats": [
+        10
+      ],
+      "description": "",
+      "dom": {
+        "script[data-hid='tiktok']": {
+          "attributes": {
+            "data-hid": ""
+          }
+        }
+      },
+      "icon": "TikTok.svg",
+      "js": {
+        "TiktokAnalyticsObject": ""
+      },
+      "website": "https://ads.tiktok.com",
+      "xhr": "analytics\\.tiktok\\.com"
     },
     "Tiki Wiki CMS Groupware": {
       "cats": [
@@ -22290,42 +22341,6 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
-    },
-    "Bumb": {
-      "cats": [
-        4
-      ],
-      "description": "Bump is an API contract management platform that helps document and track APIs by identifying changes in API structure, and keeping developers informed through an elegant documentation.",
-      "dom": {
-        ".doc-navigation footer, footer.catalog-footer": {
-          "text": "Powered by Bump"
-        }
-      },
-      "pricing": ["recurring", "freemium", "low"],
-      "saas": true,
-      "icon": "Bump.svg",
-      "website": "https://bump.sh"
-    },
-    "SmugMug": {
-      "cats": [
-        7
-      ],
-      "description": "SmugMug is a paid image sharing, image hosting service, and online video platform on which users can upload photos and videos.",
-      "dom": {
-        ".sm-page-footer-copyright": {
-          "text": "SmugMug"
-        }
-      },
-      "headers": {
-        "Smug-CDN": ""
-      },
-      "js": {
-        "_smugsp": ""
-      },
-      "pricing": ["recurring", "low"],
-      "saas": true,
-      "icon": "SmugMug.svg",
-      "website": "https://www.smugmug.com"
     }
   }
 }

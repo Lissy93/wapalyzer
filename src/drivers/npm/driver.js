@@ -419,8 +419,7 @@ class Site {
 
     try {
       await this.promiseTimeout(
-        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
-        'a'
+        page.goto(url.href, { waitUntil: 'domcontentloaded' })
       )
 
       await sleep(1000)
@@ -442,12 +441,10 @@ class Site {
                   rel,
                 })
               )
-            ),
-            'c'
-          )
-        ).jsonValue(),
-        'b'
-      )
+            )
+          ).catch(() => [])
+        ).jsonValue()
+      ).catch(() => [])
 
       // CSS
       const css = await this.promiseTimeout(
@@ -475,12 +472,10 @@ class Site {
               }
 
               return css.join('\n')
-            }, this.options.htmlMaxRows),
-            'd'
-          )
-        ).jsonValue(),
-        'e'
-      )
+            }, this.options.htmlMaxRows)
+          ).catch(() => '')
+        ).jsonValue()
+      ).catch(() => '')
 
       // Script tags
       const scripts = await this.promiseTimeout(
@@ -491,9 +486,9 @@ class Site {
                 .map(({ src }) => src)
                 .filter((src) => src)
             )
-          )
+          ).catch(() => [])
         ).jsonValue()
-      )
+      ).catch(() => [])
 
       // Meta tags
       const meta = await this.promiseTimeout(
@@ -513,12 +508,10 @@ class Site {
                 },
                 {}
               )
-            ),
-            'f'
-          )
-        ).jsonValue(),
-        'g'
-      )
+            )
+          ).catch(() => [])
+        ).jsonValue()
+      ).catch(() => [])
 
       // JavaScript
       const js = await this.promiseTimeout(
@@ -553,9 +546,8 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        ),
-        'h'
-      )
+        )
+      ).catch(() => [])
 
       // DOM
       const dom = await this.promiseTimeout(
@@ -631,9 +623,8 @@ class Site {
           Wappalyzer.technologies
             .filter(({ dom }) => dom)
             .map(({ name, dom }) => ({ name, dom }))
-        ),
-        'i'
-      )
+        )
+      ).catch(() => [])
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
