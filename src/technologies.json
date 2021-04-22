@@ -21261,6 +21261,25 @@
       "scripts": "secure\\.ewaypayments\\.com",
       "website": "https://www.eway.com.au/"
     },
+    "EX.CO": {
+      "cats": [
+        5
+      ],
+      "description": "EX.CO (formerly Playbuzz) is an online publishing platform for publishers, brand agencies, and individual content creators to create content in interactive formats such as polls, quizzes, lists, video snippets, slideshows, and countdowns.",
+      "icon": "EX.CO.svg",
+      "js": {
+        "excoPixelUrl": "",
+        "__EXCO": "",
+        "__EXCO_INTEGRATION_TYPE": ""
+      },
+      "scripts": [
+        "\\.ex\\.co",
+        "\\.playbuzz\\.com"
+      ],
+      "xhr": "prd-collector-anon\\.ex\\.co",
+      "pricing": ["poa"],
+      "website": "https://ex.co"
+    },
     "eZ Platform": {
       "cats": [
         1,
