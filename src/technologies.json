@@ -4650,6 +4650,30 @@
       "scripts": "\\.convertexperiments\\.com/js",
       "website": "https://www.convert.com"
     },
+    "ConvertKit": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "ConvertKit is an email marketing tool built for content creators.",
+      "icon": "ConvertKit.svg",
+      "dom": {
+        "form[action*='app.convertkit.com']": {
+          "attributes": {
+            "action": ""
+          }
+        },
+        "link[href*='.convertkit.com']": {
+          "attributes": {
+            "action": ""
+          }
+        }
+      },
+      "scripts": "\\.convertkit\\.com",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://convertkit.com"
+    },
     "ConvertFlow": {
       "cats": [
         10,
