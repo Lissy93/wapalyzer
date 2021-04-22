@@ -1451,7 +1451,7 @@
       "cats": [
         71
       ],
-      "description": "The Amazon Associates Program helps content creators, publishers and bloggers monetize their traffic.",
+      "description": "Amazon Associates is an affiliate marketing program that allows website owners and bloggers to create links and earn referral fees when customers click through and buy products from Amazon.",
       "dom": {
         "a[href*='amazon.com']": {
           "attributes": {
@@ -1464,9 +1464,10 @@
           }
         }
       },
+      "scripts": "\\.associates-amazon\\.com",
       "icon": "Amazon.svg",
       "saas": true,
-      "website": "https://affiliate-program.amazon.com.au/"
+      "website": "https://affiliate-program.amazon.com"
     },
     "Amazon Cloudfront": {
       "cats": [
@@ -1557,6 +1558,7 @@
       "cats": [
         19
       ],
+      "description": "Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services (AWS) that provides object storage through a web service interface.",
       "headers": {
         "server": "^AmazonS3$"
       },
