@@ -20538,9 +20538,13 @@
         54
       ],
       "description": "Yoast SEO is a search engine optimization plugin for WordPress and other platforms.",
-      "html": [
-        "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\\d.]+) -\\;version:\\1",
-        "<script type=\"application/ld+json\" class=\"yoast-schema-graph\">"
+      "html": "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\\d.]+) -\\;version:\\1",
+      "dom": {
+        "script.yoast-schema-graph": {
+          "attributes": {
+            "class": ""
+          }
+        }
       ],
       "icon": "Yoast SEO.png",
       "website": "https://yoast.com"
