@@ -9397,6 +9397,35 @@
       ],
       "website": "https://jumpseller.com"
     },
+    "JW Player": {
+      "cats": [
+        14
+      ],
+      "description": "JW Player is a online video player with video engagement analytics, custom video player skins, and live video streaming capability.",
+      "icon": "JW Player.svg",
+      "dom": {
+        "div[data-video-provider*=jwplayer]": {
+          "attributes": {
+            "data-video-provider": ""
+          }
+        }
+      },
+      "js": {
+        "jwDefaults": "",
+        "webpackJsonpjwplayer": "",
+        "jwplayer": "",
+        "jwplayerApiUrl": ""
+      },
+      "scripts": [
+        "\\.jwplayer\\.com",
+        "\\.jwpcdn\\.com"
+      ],
+      "xhr": "\\.jwpsrv\\.com",
+      "pricing": ["low","recurring","freemium"],
+      "oss": true,
+      "saas": true,
+      "website": "https://www.jwplayer.com"
+    },
     "K2": {
       "cats": [
         19
