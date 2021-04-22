@@ -828,6 +828,20 @@
       "implies": "PHP",
       "website": "http://www.adminer.org"
     },
+    "Broadstreet": {
+      "cats": [
+        36
+      ],
+      "description": "Broadstreet is an ad manager that caters specifically to the needs of direct, digital ad sales.",
+      "icon": "Broadstreet.png",
+      "scripts": "cdn\\.broadstreetads\\.com",
+      "js": {
+        "broadstreet": ""
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://broadstreetads.com"
+    },
     "Adnegah": {
       "cats": [
         36
@@ -1958,6 +1972,23 @@
       "scripts": "appleid\\.auth\\.js",
       "website": "https://developer.apple.com/sign-in-with-apple/"
     },
+    "Booxi": {
+      "cats": [
+        72
+      ],
+      "description": "Booxi is a cloud-based appointment management platform for small to midsize businesses.",
+      "js": {
+        "booxi": "",
+        "booxiController": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "icon": "Booxi.svg",
+      "website": "https://www.booxi.com"
+    },
     "Appointy": {
       "cats": [
         72
@@ -2107,6 +2138,21 @@
       "icon": "Artifactory.svg",
       "implies": "Artifactory",
       "website": "http://jfrog.com/open-source/#os-arti"
+    },
+    "Starhost": {
+      "cats": [
+        51,
+        62
+      ],
+      "description": "Starhost provides a Platform-as-a-Service (PaaS) for website building, web hosting, and domain registration.",
+      "headers": {
+        "X-Starhost": "",
+        "Cache-Control": "Starhost"
+      },
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "icon": "Starhost.svg",
+      "website": "https://starhost.verbosec.com"
     },
     "ArvanCloud": {
       "cats": [
@@ -8406,10 +8452,25 @@
         "_hsq": "",
         "hubspot": ""
       },
+      "website": "https://www.hubspot.com"
+    },
+    "HubSpot CMS Hub": {
+      "cats": [
+        1
+      ],
+      "description": "CMS Hub is a content management platform by HubSpot for marketers to manage, optimize, and track content performance on websites, blogs, and landing pages.",
+      "icon": "HubSpot.png",
+      "headers": {
+        "x-hs-hub-id": "",
+        "x-powered-by": "HubSpot"
+      },
+      "implies": "HubSpot",
       "meta": {
         "generator": "HubSpot"
       },
-      "website": "https://www.hubspot.com"
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.hubspot.com/products/cms"
     },
     "HubSpot Analytics": {
       "cats": [
