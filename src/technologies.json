@@ -6362,11 +6362,11 @@
       },
       "website": "http://facebook.com"
     },
-    "Facebook Sign-in": {
+    "Facebook Login": {
       "cats": [
         69
       ],
-      "description": "FaceBook sign-in allows uses to create an account or log into Facebook. Connect with friends, family and other people you know. Share photos and videos, send messages and get updates.",
+      "description": "Facebook Login is a way for people to create accounts and log into your app across multiple platforms.",
       "icon": "Facebook.svg",
       "js": {
         "FB.getLoginStatus": ""
@@ -10111,14 +10111,18 @@
       "scripts": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://linksmart.com"
     },
-    "Linkedin": {
+    "Linkedin Sign-in": {
       "cats": [
-        5
+        69
       ],
-      "description": "LinkedIn is the world's largest professional networking platform.",
+      "description": "Linkedin Sign-In is an authentication system that reduces the burden of login for users, by enabling them to sign in with their Linkedin account.",
       "icon": "Linkedin.svg",
-      "scripts": "//platform\\.linkedin\\.com/in\\.js",
-      "website": "http://linkedin.com"
+      "js": {
+        "onLinkedInLoad": "",
+        "OnLinkedInAuth": ""
+      },
+      "scripts": "platform\\.linkedin\\.com\/(?:.*)?in\\.js(?:\\?version)?([\\d.]+)?\\;version:\\1",
+      "website": "https://www.linkedin.com/developers"
     },
     "Linkedin Insight Tag": {
       "cats": [
