@@ -13978,6 +13978,28 @@
       ],
       "website": "https://trypico.com"
     },
+    "Picreel": {
+      "cats": [
+        77,
+        5
+      ],
+      "description": "Picreel is a conversion optimisation software.",
+      "icon": "Picreel.svg",
+      "dom": {
+        "iframe[src*='app.picreel.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "picreel": ""
+      },
+      "scripts": "\\.picreel\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.picreel.com"
+    },
     "Pimcore": {
       "cats": [
         1,
