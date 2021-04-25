@@ -315,6 +315,28 @@
       "scripts": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
     },
+    "33Across": {
+      "cats": [
+        36
+      ],
+      "description": "33Across is a technology company focused on solving the challenge of consumer attention for automated advertising.",
+      "icon": "33Across.png",
+      "dom": {
+        "link[href*='.33across.com']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "iframe[src*='.33across.com]": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "xhr": "\\.33across\\.com",
+      "saas": true,
+      "website": "https://www.33across.com"
+    },
     "3dCart": {
       "cats": [
         1,
