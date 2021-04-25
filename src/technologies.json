@@ -18860,6 +18860,24 @@
       "scripts": "tripadvisor\\.[\\w]+/WidgetEmbed",
       "website": "https://www.tripadvisor.com/Widgets"
     },
+    "TripleLift": {
+      "cats": [
+        36
+      ],
+      "description": "TripleLift is an advertising technology company providing native programmatic to buyers and sellers.",
+      "icon": "TripleLift.png",
+      "dom": {
+        "iframe[src*='.3lift.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "xhr": "\\.3lift\\.com",
+      "saas": true,
+      "pricing": ["low","mid", "recurring"],
+      "website": "https://triplelift.com"
+    },
     "TrustArc": {
       "cats": [
         67
