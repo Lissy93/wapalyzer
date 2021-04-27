@@ -1767,11 +1767,16 @@
       "cats": [
         10
       ],
-      "icon": "amplitude.png",
-      "scripts": [
-        "cdn\\.amplitude\\.com"
-      ],
-      "website": "https://amplitude.com/"
+      "description": "Amplitude is a web and mobile analytics solution with cross-platform user journey tracking, user behavior analysis and segmentation capabilities.",
+      "icon": "Amplitude.svg",
+      "js": {
+        "AMPLITUDE_KEY": ""
+      },
+      "scripts": "cdn\\.amplitude\\.com",
+      "xhr": "\\.amplitude\\.com",
+      "saas": true,
+      "pricing": ["freemium","poa", "recurring"],
+      "website": "https://amplitude.com"
     },
     "Analysys Ark": {
       "cats": [
