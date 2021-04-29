@@ -695,7 +695,7 @@
     "Albacross": {
       "cats": [
         10,
-        76
+        77
       ],
       "description": "Albacross is a lead generation and account intelligence platform. It helps marketing and sales teams identify their ideal customers visiting their website and gives them the insights they need to generate more qualified leads, make prospecting more efficient and close more deals.",
       "icon": "Albacross.svg",
@@ -6698,7 +6698,7 @@
       ],
       "description": "FinanceAds is a performance marketing agency that has grown affiliate network for the financial sector.",
       "dom": {
-        "link[href*='js.financeads.net'], link[href*='js.financeads.com']": {
+        "link[href*='js.financeads.net'], link[href*='js.financeads.com'], a[href*='www.financeads.net/tc.php']": {
           "attributes": {
             "href": ""
           }
@@ -7098,6 +7098,28 @@
       "saas": true,
       "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
       "website": "https://www.freshworks.com/live-chat-software/"
+    },
+    "Keap": {
+      "cats": [
+        53
+      ],
+      "description": "Keap offers an email marketing and sales platform for small businesses, including products to manage customers, customer relationship management, marketing, and ecommerce.",
+      "icon": "Keap.svg",
+      "dom": {
+        "form[action*='property.infusionsoft.com']": {
+          "attributes": {
+            "action": ""
+          }
+        }
+      },
+      "xhr": "property\\.infusionsoft\\.com",
+      "scripts": "property\\.infusionsoft\\.com",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://keap.com"
     },
     "Freshworks CRM": {
       "cats": [
@@ -16905,6 +16927,18 @@
         "//s\\.thebrighttag\\.com/iframe\\?"
       ],
       "website": "https://www.signal.co/"
+    },
+    "Bentobox": {
+      "cats": [
+        1
+      ],
+      "description": "Bentobox is a restaurant website platform that handles menus, reservations, gift cards and more.",
+      "icon": "Bentobox.svg",
+      "html": "<!-- Powered by BentoBox",
+      "js": {
+        "BentoAnalytics": ""
+      },
+      "website": "https://getbento.com"
     },
     "SilverStripe": {
       "cats": [
