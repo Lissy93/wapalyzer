@@ -5562,6 +5562,23 @@
       "scripts": "disqus_url",
       "website": "https://disqus.com"
     },
+    "District M": {
+      "cats": [
+        36
+      ],
+      "description": "District M is a programmatic advertising exchange.",
+      "icon": "District M.svg",
+      "dom": {
+        "iframe[src*='.districtm.io']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "xhr": "\\.districtm\\.io",
+      "saas": true,
+      "website": "https://districtm.net"
+    },
     "Django": {
       "cats": [
         18
