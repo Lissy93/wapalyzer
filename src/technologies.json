@@ -18492,6 +18492,30 @@
       "scripts": "tc_widget\\.js",
       "website": "https://www.tablecheck.com"
     },
+    "Taboola": {
+      "cats": [
+        36
+      ],
+      "description": "Taboola is a content discovery & native advertising platform for publishers and advertisers.",
+      "icon": "Taboola.svg",
+      "dom": {
+        "link[href*='.taboola.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "js": {
+        "_taboolaNetworkMode": "",
+        "_taboola": "",
+        "taboola_view_id": ""
+      },
+      "scripts": "\\.taboola\\.com",
+      "xhr": "\\.taboola\\.com",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.taboola.com"
+    },
     "TagCommander": {
       "cats": [
         42
