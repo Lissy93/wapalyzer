@@ -1890,6 +1890,32 @@
       },
       "website": "https://ant.design"
     },
+    "AnyClip": {
+      "cats": [
+        36
+      ],
+      "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalized video feeds.",
+      "icon": "AnyClip.svg",
+      "dom": {
+        "video[poster*='.anyclip.com']": {
+          "attributes": {
+            "poster": ""
+          }
+        },
+        "img[src*='.anyclip.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "anyclip": ""
+      },
+      "scripts": "\\.anyclip\\.com",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.anyclip.com"
+    },
     "Apache": {
       "cats": [
         22
