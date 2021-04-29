@@ -2318,6 +2318,29 @@
       "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
     },
+    "Astute Solutions": {
+      "cats": [
+        53
+      ],
+      "description": "Astute Solutions is a customer engagement software.",
+      "icon": "Astute Solutions.svg",
+      "dom": {
+        "iframe[src*='.iperceptions.com]": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "link[href*='.iperceptions.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "\\.iperceptions\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://astutesolutions.com"
+    },
     "Athena Search": {
       "cats": [
         29
@@ -4765,14 +4788,14 @@
       "description": "ConvertKit is an email marketing tool built for content creators.",
       "icon": "ConvertKit.svg",
       "dom": {
-        "form[action*='app.convertkit.com']": {
+        "form[action*='.convertkit.com']": {
           "attributes": {
             "action": ""
           }
         },
         "link[href*='.convertkit.com']": {
           "attributes": {
-            "action": ""
+            "href": ""
           }
         }
       },
