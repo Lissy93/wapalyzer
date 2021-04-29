@@ -3116,6 +3116,28 @@
       ],
       "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
     },
+    "Blue": {
+      "cats": [
+        77
+      ],
+      "description": "Blue is a ecommerce data marketing, lead generation, real time bidding and recommendation solutions.",
+      "icon": "Blue.svg",
+      "dom": {
+        "iframe[src*='.getblue.io']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "blueProductId": "",
+        "bluecpy_id": ""
+      },
+      "scripts": "\\.getblue\\.io",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://web.getblue.io/en/"
+    },
     "Bluecore": {
       "cats": [
         32,
