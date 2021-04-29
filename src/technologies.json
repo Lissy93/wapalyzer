@@ -14532,6 +14532,34 @@
       ],
       "website": "http://www.prestashop.com"
     },
+    "Primis": {
+      "cats": [
+        36
+      ],
+      "description": "Primis is a video discovery platform for publishers.",
+      "icon": "Primis.svg",
+      "dom": {
+        "iframe[src*='.sekindo.com']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "img[src*='.sekindo.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "SekindoNativeSkinApi": "",
+        "sekindoDisplayedPlacement": "",
+        "sekindoFlowingPlayerOn": ""
+      },
+      "scripts": "\\.sekindo\\.com",
+      "xhr": "\\.sekindo\\.com",
+      "saas": true,
+      "website": "https://www.primis.tech"
+    },
     "Prism": {
       "cats": [
         19
