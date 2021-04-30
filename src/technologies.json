@@ -12730,12 +12730,21 @@
       "cats": [
         10
       ],
-      "description": "New Relic is a Software-as-a-Service offering that focuses on performance and availability monitoring.",
+      "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
       "icon": "New Relic.svg",
+      "dom": {
+        "link[.newrelic.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
       "js": {
         "NREUM": "",
         "newrelic": ""
       },
+      "saas": true,
+      "pricing": ["freemium","payg","low", "mid", "recurring"],
       "website": "https://newrelic.com"
     },
     "Next.js": {
