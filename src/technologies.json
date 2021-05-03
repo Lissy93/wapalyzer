@@ -22260,6 +22260,43 @@
       "scripts": "static/gitweb\\.js$",
       "website": "http://git-scm.com"
     },
+    "GraphCMS": {
+      "cats": [
+        1
+      ],
+      "icon": "GraphCMS.svg",
+      "description": "GraphCMS is a GraphQL headless CMS for content federation and omnichannel headless content management.",
+      "xhr": "\\.graphcms\\.com",
+      "dom": {
+        ".graphcms-image-wrapper": {
+          "text": ""
+        },
+        "img[src*='media.graphcms.com']": {
+          "text": ""
+        }
+      },
+      "implies": ["GraphQL", "PostgreSQL", "Go", "TypeScript"],
+      "pricing": ["mid", "recurring", "freemium"],
+      "website": "https://graphcms.com"
+    },
+    "GraphQL": {
+      "cats": [
+        27
+      ],
+      "description": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
+      "oss": true,
+      "icon": "GraphQL.svg",
+      "website": "https://graphql.org"
+    },
+    "TypeScript": {
+      "cats": [
+        27
+      ],
+      "description": "TypeScript is an open-source language which builds on JavaScript  by adding static type definitions.",
+      "oss": true,
+      "icon": "TypeScript.svg",
+      "website": "https://www.typescriptlang.org"
+    },
     "govCMS": {
       "cats": [
         1
