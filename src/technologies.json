@@ -6672,6 +6672,24 @@
       },
       "website": "https://developers.facebook.com/docs/facebook-login/"
     },
+    "Pinterest Conversion Tag": {
+      "cats": [
+        10
+      ],
+      "description": "Pinterest Conversion Tag allows you to track actions people take on your website after viewing your Promoted Pin.",
+      "icon": "Pinterest.svg",
+      "dom": {
+        "img[src*='ct.pinterest.com/v3/?tid']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "js": {
+        "pintrk": ""
+      },
+      "website": "https://www.pinterest.com.au/business/"
+    },
     "Facebook Pixel": {
       "cats": [
         10
@@ -14370,7 +14388,7 @@
       "cats": [
         36
       ],
-      "description": "Pinterest Ads is an online advertising platform developed by Pinterest. The Pinterest tag allows you to track actions people take on your website after viewing your Promoted Pin.",
+      "description": "Pinterest Ads is an online advertising platform developed by Pinterest.",
       "icon": "Pinterest.svg",
       "website": "https://ads.pinterest.com/",
       "xhr": "ct\\.pinterest\\.com"
@@ -17080,6 +17098,30 @@
         "generator": "^ShopFA ([\\d.]+)$\\;version:\\1"
       },
       "website": "https://shopfa.com"
+    },
+    "Sellacious": {
+      "cats": [
+        6
+      ],
+      "description": "Sellacious is an open-source ecommerce and marketplace platform for integrated POS and online stores.",
+      "dom": {
+        ".mod-sellacious-cart": {
+          "text": ""
+        }
+      },
+      "js": {
+        "SellaciousViewCartAIO": ""
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "freemium"
+      ],
+      "implies": "Joomla",
+      "saas": true,
+      "oss": true,
+      "icon": "Sellacious.png",
+      "website": "https://www.sellacious.com"
     },
     "Shopify": {
       "cats": [
