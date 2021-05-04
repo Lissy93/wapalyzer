@@ -1830,6 +1830,7 @@
           }
         }
       },
+      "implies": "TypeScript",
       "excludes": [
         "AngularDart",
         "AngularJS"
@@ -1839,6 +1840,7 @@
         "ng.coreTokens": "",
         "ng.probe": ""
       },
+      "oss": true,
       "website": "https://angular.io"
     },
     "Angular Material": {
@@ -17704,13 +17706,19 @@
       "cookies": {
         "snipcart-cart": ""
       },
-      "html": [
-        "<link [^>]*href=\".*snipcart\\.css\"",
-        "<div [^>]*id=\".*snipcart.*\""
-      ],
+      "dom": {
+        "link[href*='snipcart.css']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "div#snipcart": {
+          "text": ""
+        }
+      },
       "icon": "Snipcart.png",
       "scripts": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
-      "website": "https://snipcart.com/"
+      "website": "https://snipcart.com"
     },
     "Snoobi": {
       "cats": [
@@ -19654,13 +19662,8 @@
         4
       ],
       "description": "TypeDoc is an API documentation generator for TypeScript projects.",
-      "dom": {
-        "a[href*='typedoc.org']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "implies": "TypeScript",
+      "oss": true,
       "icon": "TypeDoc.png",
       "website": "https://typedoc.org"
     },
