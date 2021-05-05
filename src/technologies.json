@@ -12732,13 +12732,7 @@
       ],
       "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
       "icon": "New Relic.svg",
-      "dom": {
-        "link[.newrelic.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[.newrelic.com']",
       "js": {
         "NREUM": "",
         "newrelic": ""
