@@ -10345,17 +10345,10 @@
       ],
       "description": "Konduto is a fraud detection service for ecommerce.",
       "icon": "Konduto.png",
-      "dom": {
-        "link[href*='.konduto.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='.konduto.com']",
       "js": {
         "Konduto": "",
         "getKondutoID": ""
-
       },
       "scripts": "\\.k-analytix\\.com",
       "saas": true,
