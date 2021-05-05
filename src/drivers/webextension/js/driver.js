@@ -186,35 +186,50 @@ const Driver = {
       url,
       Array.prototype.concat.apply(
         [],
-        dom.map(({ name, selector, text, property, attribute, value }) => {
-          const technology = Wappalyzer.technologies.find(
-            ({ name: _name }) => name === _name
-          )
-
-          if (text) {
-            return analyzeManyToMany(technology, 'dom.text', {
-              [selector]: [text],
-            })
-          }
-
-          if (property) {
-            return analyzeManyToMany(technology, `dom.properties.${property}`, {
-              [selector]: [value],
-            })
-          }
-
-          if (attribute) {
-            return analyzeManyToMany(
-              technology,
-              `dom.attributes.${attribute}`,
-              {
-                [selector]: [value],
-              }
+        dom.map(
+          (
+            { name, selector, exists, text, property, attribute, value },
+            index
+          ) => {
+            const technology = Wappalyzer.technologies.find(
+              ({ name: _name }) => name === _name
             )
-          }
 
-          return []
-        })
+            if (typeof exists !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.exists', {
+                [selector]: [''],
+              })
+            }
+
+            if (typeof text !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.text', {
+                [selector]: [text],
+              })
+            }
+
+            if (typeof property !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.properties.${property}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+
+            if (typeof attribute !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.attributes.${attribute}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+
+            return []
+          }
+        )
       )
     )
   },
@@ -263,8 +278,6 @@ const Driver = {
    * @param {Object} request
    */
   async onWebRequestComplete(request) {
-    console.log('xxx', request.responseHeaders)
-
     if (request.responseHeaders) {
       if (await Driver.isDisabledDomain(request.url)) {
         return
