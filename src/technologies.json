@@ -452,6 +452,8 @@
         "<link rel=\"amphtml\""
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
+      "oss": true,
+      "xhr": "cdn\\.ampproject\\.org",
       "website": "https://www.amp.dev"
     },
     "AMP Plugin": {
@@ -17757,7 +17759,9 @@
       "js": {
         "SpotX.VERSION": "([\\d.]+)\\;version:\\1"
       },
+      "xhr": "\\.spotx(?:change|cdn)\\.com",
       "scripts": "js\\.spotx\\.tv",
+      "saas": true,
       "website": "https://www.spotx.tv"
     },
     "Spree": {
