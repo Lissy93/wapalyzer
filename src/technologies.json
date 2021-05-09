@@ -3076,6 +3076,8 @@
       "description": "BoldChat is a live chat platform.",
       "icon": "BoldChat.png",
       "scripts": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.boldchat.com/"
     },
     "BoldGrid": {
@@ -5687,6 +5689,8 @@
         "drift": "",
         "driftt": ""
       },
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.drift.com/"
     },
     "Drupal": {
@@ -10517,7 +10521,9 @@
       "js": {
         "LiveAgent": ""
       },
-      "website": "https://www.ladesk.com"
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.liveagent.com"
     },
     "LiveChat": {
       "cats": [
@@ -10526,6 +10532,8 @@
       "description": "LiveChat is an online customer service software with online chat, help desk software, and web analytics capabilities.",
       "icon": "LiveChat.png",
       "scripts": "cdn\\.livechatinc\\.com/.*tracking\\.js",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "http://livechatinc.com"
     },
     "LiveHelp": {
@@ -10578,6 +10586,8 @@
       "description": "LivePerson is a tool for conversational chatbots and messaging.",
       "icon": "LivePerson.png",
       "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.liveperson.com/"
     },
     "LiveRamp PCM": {
@@ -12775,6 +12785,8 @@
       "description": "Olark is a cloud-based live chat solution.",
       "icon": "Olark.png",
       "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://www.olark.com/"
     },
     "Ometria": {
@@ -14642,7 +14654,7 @@
     },
     "Pure Chat": {
       "cats": [
-        5
+        52
       ],
       "description": "Pure Chat is a live chat solution for small to mid-sized teams.",
       "icon": "Pure Chat.png",
@@ -17372,6 +17384,8 @@
         "SnapEngageChat": "",
         "snapengage_mobile": ""
       },
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://snapengage.com/"
     },
     "Snipcart": {
@@ -18585,6 +18599,8 @@
       "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
       "icon": "TawkTo.png",
       "scripts": "//embed\\.tawk\\.to",
+      "saas": true,
+      "pricing": ["freemium", "payg"],
       "website": "http://tawk.to"
     },
     "Teads": {
@@ -19600,10 +19616,18 @@
       ],
       "description": "Userlike is a cloud-based live chat solution that can be integrated with existing websites.",
       "icon": "UserLike.svg",
+      "js": {
+        "userlike": "",
+        "userlikeInit": ""
+      },
       "scripts": [
         "userlike\\.min\\.js",
-        "userlikelib\\.min\\.js"
+        "userlikelib\\.min\\.js",
+        "//userlike-cdn-widgets\\.",
+        "api\\.userlike\\.com"
       ],
+      "saas": true,
+      "pricing": ["freemium", "payg"],
       "website": "http://userlike.com"
     },
     "UserRules": {
@@ -21478,6 +21502,8 @@
       "description": "Zendesk Chat is a live chat and communication widget.",
       "icon": "Zendesk Chat.png",
       "scripts": "v2\\.zopim\\.com",
+      "saas": true,
+      "pricing": ["freemium","payg"],
       "website": "http://zopim.com"
     },
     "Zenfolio": {
