@@ -17313,6 +17313,21 @@
       "scripts": "smjslib\\.js",
       "website": "http://smartstore.com"
     },
+    "Smartsupp": {
+      "cats": [
+        52
+      ],
+      "description": "Smartsupp is a live chat tool that offers visitor recording feature.",
+      "icon": "Smartsupp.svg",
+      "js": {
+        "$smartsupp.options.widgetVersion": "([\\d.]+)\\;version:\\1",
+        "smartsupp": ""
+      },
+      "scripts": "\\.smartsuppchat\\.com",
+      "saas": true,
+      "pricing": ["freemium", "payg"],
+      "website": "https://www.smartsupp.com"
+    },
     "SmugMug": {
       "cats": [
         7
