@@ -3996,7 +3996,7 @@
     },
     "Chaport": {
       "cats": [
-        5
+        52
       ],
       "description": "Chaport is a multi-channel live chat and chatbot software for business.",
       "icon": "Chaport.png",
@@ -9584,6 +9584,21 @@
       },
       "icon": "Jive.png",
       "website": "http://www.jivesoftware.com"
+    },
+    "JivoChat": {
+      "cats": [
+        52
+      ],
+      "description": "JivoChat is a live chat solution for websites offering customizable web and mobile chat widgets.",
+      "icon": "JivoChat.png",
+      "js": {
+        "jivo_api": "",
+        "jivo_version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "\\.jivosite\\.com",
+      "saas": true,
+      "pricing": ["freemium","recurring","payg"],
+      "website": "https://www.jivosite.com"
     },
     "JobberBase": {
       "cats": [
