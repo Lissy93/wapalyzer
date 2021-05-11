@@ -12339,6 +12339,20 @@
       },
       "website": "http://www.netcap-creation.fr"
     },
+    "MyLiveChat": {
+      "cats": [
+        52
+      ],
+      "description": "MyLiveChat is a live chat developed by CuteSoft.",
+      "icon": "MyLiveChat.png",
+      "js": {
+        "MyLiveChat.Version": "(.+)$\\;version:\\1"
+      },
+      "scripts": "mylivechat\\.com/",
+      "saas": true,
+      "pricing": ["freemium", "payg"],
+      "website": "https://mylivechat.com"
+    },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
         6
