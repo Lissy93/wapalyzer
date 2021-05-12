@@ -119,7 +119,7 @@ a, a:focus, a:hover {
   columns: 2;
   column-gap: 3rem;
   min-height: 200px;
-  padding: 1.5rem 1.5rem .5rem 1.5rem;
+  padding: 1.5rem;
 }
 
 .detections--hidden {
@@ -227,7 +227,6 @@ body.dynamic-icon .category__heading:hover .category__pin {
 
 .technology__name {
   font-size: .85rem;
-  flex: 1;
   letter-spacing: .5px;
   text-decoration: underline;
 }
