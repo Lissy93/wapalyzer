@@ -12591,7 +12591,7 @@
       ],
       "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
       "icon": "New Relic.svg",
-      "dom": "link['.newrelic.com']",
+      "dom": "link[href*='.newrelic.com']",
       "js": {
         "NREUM": "",
         "newrelic": ""
@@ -20954,6 +20954,21 @@
       "implies": "PHP",
       "scripts": "WCF\\..*\\.js",
       "website": "http://www.woltlab.com"
+    },
+    "JoomShopping": {
+      "cats": [
+        6
+      ],
+      "description": "JoomShopping is an open-source ecommerce plugin for Joomla.",
+      "js": {
+        "joomshoppingVideoHtml5": ""
+      },
+      "scripts": "/components/com_jshopping/",
+      "icon": "JoomShopping.png",
+      "implies": "Joomla",
+      "oss": true,
+      "pricing": ["freemium", "onetime"],
+      "website": "https://www.webdesigner-profi.de/joomla-webdesign/joomla-shop"
     },
     "WooCommerce": {
       "cats": [
