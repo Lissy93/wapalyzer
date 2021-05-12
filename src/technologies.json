@@ -20624,29 +20624,21 @@
         6,
         11
       ],
-      "cookies": {
-        "Domain": "\\.wix\\.com"
-      },
-      "description": "Weblium is the most effortless way to build a web site",
-      "headers": {
-        "X-Wix-Renderer-Server": "",
-        "X-Wix-Request-Id": "",
-        "X-Wix-Server-Artifact-Id": ""
-      },
+      "description": "Weblium is the most effortless way to build a web site or e-commerce online shop",
       "icon": "Weblium.png",
-      "implies": "React",
+      "implies": ["OpenResty", "React"],
+      "excludes": ["Java"],
       "js": {
-        "wixBiSession": ""
+        "WEBLIUM_DOMAIN": ""
       },
-      "meta": {
-        "generator": "Wix\\.com Website Builder"
-      },
+      "html": "<link [^>]*href=\"//res2\\.weblium\\.site",
       "pricing": [
         "low",
+        "freemium",
         "recurring"
       ],
       "saas": true,
-      "scripts": "static\\.parastorage\\.com",
+      "scripts": "res2\\.weblium\\.site/common/core\\.min\\.js",
       "website": "https://weblium.com"
     },
     "WebsPlanet": {
