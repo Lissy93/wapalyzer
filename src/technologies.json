@@ -20626,7 +20626,7 @@
       ],
       "description": "Weblium is the most effortless way to build a web site or e-commerce online shop",
       "icon": "Weblium.png",
-      "implies": ["OpenResty", "React"],
+      "implies": ["Node.js", "OpenResty", "React"],
       "excludes": ["Java"],
       "js": {
         "WEBLIUM_DOMAIN": ""
