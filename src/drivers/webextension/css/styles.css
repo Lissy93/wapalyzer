@@ -119,7 +119,7 @@ a, a:focus, a:hover {
   columns: 2;
   column-gap: 3rem;
   min-height: 200px;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem .5rem 1.5rem;
 }
 
 .detections--hidden {
@@ -220,6 +220,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 .technology__link, .technology__link:active, .technology__link:hover {
   align-items: center;
   display: flex;
+  min-width: 180px;
   padding: .1rem 0;
   text-decoration: none;
   width: 100%;
@@ -232,9 +233,13 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .technology__confidence {
-  opacity: .5;
+  background: var(--color-primary-lighten);
+  color: var(--color-primary);
+  border-radius: 3px;
   font-size: .7rem;
-  margin-left: .4rem;
+  padding: .1rem .3rem;
+  margin-left: .3rem;
+  vertical-align: middle;
 }
 
 .technology__version {
@@ -319,7 +324,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
     color: var(--color-text-dark);
   }
 
-  body.theme-mode .category__link, .category__link:active, .category__link:hover {
+  body.theme-mode .category__link, body.theme-mode .category__link:active, body.theme-mode .category__link:hover {
     color: var(--color-text-dark);
   }
 
@@ -332,6 +337,11 @@ body.dynamic-icon .category__heading:hover .category__pin {
   }
 
   body.theme-mode .technology__version {
+    background: var(--color-primary);
+    color: var(--color-text-dark);
+  }
+
+  body.theme-mode .technology__confidence {
     background: var(--color-primary);
     color: var(--color-text-dark);
   }
