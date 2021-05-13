@@ -12748,6 +12748,23 @@
       "scripts": "owl\\.carousel.*\\.js",
       "website": "https://owlcarousel2.github.io/OwlCarousel2/"
     },
+    "Brownie": {
+      "cats": [
+        1,
+        6
+      ],
+      "description": "Brownie is a framework, CMS, ecommerce and ERP omni-channel platform to manage your entire business in one cloud solution.",
+      "dom": "a[href*='browniesuite.com'][target='_blank'] img[src*='brownie']",
+      "scripts": "assets\\.youthsrl\\.com/brownie",
+      "headers": {
+        "X-Powered-By": "Brownie"
+      },
+      "icon": "Brownie.svg",
+      "saas": true
+      "implies": ["PHP", "MySQL", "Amazon Web Services", "Bootstrap", "jQuery"],
+      "pricing": ["mid", "recurring", "poa", "payg"],
+      "website": "https://www.browniesuite.com"
+    },
     "Sellingo": {
       "cats": [
         6
