@@ -12748,6 +12748,24 @@
       "scripts": "owl\\.carousel.*\\.js",
       "website": "https://owlcarousel2.github.io/OwlCarousel2/"
     },
+    "Sellingo": {
+      "cats": [
+        6
+      ],
+      "description": "Sellingo is a Polish ecommerce platform.",
+      "icon": "Sellingo.svg",
+      "dom": {
+        "a[href*='sellingo.pl'][target='_blank']": {
+          "text": "Oprogramowanie sklepu internetowego Sellingo.pl"
+        }
+      },
+      "js": {
+        "sellingoQuantityCalc": ""
+      },
+      "saas": true,
+      "pricing": ["recurring", "low", "freemium"],
+      "website": "https://sellingo.pl"
+    },
     "Sana Commerce": {
       "cats": [
         6
