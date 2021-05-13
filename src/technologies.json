@@ -13304,8 +13304,7 @@
       },
       "icon": "OpenResty.png",
       "implies": [
-        "Nginx",
-        "Lua"
+        "Nginx"
       ],
       "website": "http://openresty.org"
     },
@@ -20669,17 +20668,16 @@
     "Weblium": {
       "cats": [
         1,
-        6,
-        11
+        6
       ],
-      "description": "Weblium is the most effortless way to build a web site or e-commerce online shop",
-      "icon": "Weblium.png",
+      "description": "Weblium let's you create a web site or online store without the need for a web developer or designer.",
+      "icon": "Weblium.svg",
       "implies": ["Node.js", "OpenResty", "React"],
-      "excludes": ["Java"],
       "js": {
         "WEBLIUM_DOMAIN": ""
       },
-      "html": "<link [^>]*href=\"//res2\\.weblium\\.site",
+      "dom": "link[href*='res2.weblium.site']",
+      "url": "\\.weblium\\.site",
       "pricing": [
         "low",
         "freemium",
