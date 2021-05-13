@@ -20666,6 +20666,29 @@
       "scripts": "\\bwebix\\.js",
       "website": "http://webix.com"
     },
+    "Weblium": {
+      "cats": [
+        1,
+        6,
+        11
+      ],
+      "description": "Weblium is the most effortless way to build a web site or e-commerce online shop",
+      "icon": "Weblium.png",
+      "implies": ["Node.js", "OpenResty", "React"],
+      "excludes": ["Java"],
+      "js": {
+        "WEBLIUM_DOMAIN": ""
+      },
+      "html": "<link [^>]*href=\"//res2\\.weblium\\.site",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "res2\\.weblium\\.site/common/core\\.min\\.js",
+      "website": "https://weblium.com"
+    },
     "WebsPlanet": {
       "cats": [
         1
