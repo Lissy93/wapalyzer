@@ -619,6 +619,20 @@
       "scripts": "acsbapp?\\.com/.*/acsb\\.js",
       "website": "https://accessibe.com"
     },
+    "Bookero": {
+      "cats": [
+        72
+      ],
+      "description": "Bookero is online booking system for you website or Facebook page.",
+      "icon": "Bookero.svg",
+      "scripts": "cdn\\.bookero\\.pl",
+      "js": {
+        "bookero_config": ""
+      },
+      "url": "\\.bookero\\.(?:org|pl)",
+      "pricing": ["low", "recurring"],
+      "website": "https://www.bookero.org"
+    },
     "Accesso": {
       "cats": [
         6,
@@ -23499,6 +23513,18 @@
       },
       "scripts": "xcharts\\.js",
       "website": "https://tenxer.github.io/xcharts/"
+    },
+    "Commerce7": {
+      "cats": [
+        6
+      ],
+      "description": "Commerce7 is an ecommerce platform for wineries.",
+      "icon": "Commerce7.svg",
+      "xhr": "api\\.commerce7\\.com",
+      "pricing": ["mid", "recurring", "payg"],
+      "scripts": "cdn\\.commerce7\\.com",
+      "saas": true,
+      "website": "https://commerce7.com"
     },
     "xtCommerce": {
       "cats": [
