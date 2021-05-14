@@ -663,6 +663,34 @@
       "saas": true,
       "website": "https://www.acquia.com/"
     },
+    "Elasticsearch": {
+      "cats": [
+        29
+      ],
+      "description": "Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.",
+      "icon": "Elasticsearch.svg",
+      "website": "https://www.elastic.co"
+    },
+    "Adabra": {
+      "cats": [
+        32
+      ],
+      "description": "Adabra is a SaaS omnichannel marketing automation platform to help boost sales. Adabra allows you to manage user segmentation, create workflow and campaigns through email, social, SMS and more.",
+      "icon": "Adabra.svg",
+      "pricing": [
+        "poa",
+        "recurring"
+      ],
+      "xhr": "my\\.adabra\\.com",
+      "js": {
+        "adabra_version_track": "(^.+$)\\;version:\\1",
+        "adabra_version_panel": "(^.+$)\\;version:\\1",
+        "adabraPreview": ""
+      },
+      "scripts": "track\\.adabra\\.com",
+      "saas": true,
+      "website": "https://www.adabra.com"
+    },
     "Act-On": {
       "cats": [
         32
@@ -10021,7 +10049,7 @@
       },
       "html": "<title>Kibana</title>",
       "icon": "kibana.svg",
-      "implies": "Node.js",
+      "implies": ["Node.js", "Elasticsearch"],
       "url": "kibana#/dashboard/",
       "website": "http://www.elastic.co/products/kibana"
     },
