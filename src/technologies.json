@@ -1974,6 +1974,27 @@
       },
       "website": "http://wicket.apache.org"
     },
+    "STUDIO": {
+      "description": "STUDIO is a Japan-based company and SaaS application for designing and hosting websites. The service includes a visual editor with built-in CMS and analytics.",
+      "cats": [
+        51
+      ],
+      "icon": "STUDIO.svg",
+      "dom": ".StudioCanvas, .publish-studio-style",
+      "meta": {
+        "generator": "^STUDIO$"
+      },
+      "saas": true,
+      "pricing": ["low", "recurring", "freemium"],
+      "implies": [
+        "Vue.js",
+        "Nuxt.js",
+        "Firebase",
+        "Google Cloud",
+        "Google Tag Manager"
+      ],
+      "website": "https://studio.design"
+    },
     "ApexPages": {
       "cats": [
         51
