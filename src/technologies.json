@@ -12953,6 +12953,25 @@
       "implies": "PHP",
       "website": "https://www.oxid-esales.com"
     },
+    "Occasion": {
+      "cats": [
+        72
+      ],
+      "description": "Occasion is an online booking system.",
+      "icon": "Occasion.png",
+      "dom": [
+        "iframe[src*='app.getoccasion.com']",
+        "a[href*='app.getoccasion.com']"
+      ],
+      "js": {
+        "occsnMerchantToken": "",
+        "OCCSN.stack": ""
+      },
+      "scripts": "app\\.getoccasion\\.com",
+      "saas": true,
+      "pricing": ["low", "payg", "recurring"],
+      "website": "https://www.getoccasion.com"
+    },
     "Ochanoko": {
       "cats": [
         6
