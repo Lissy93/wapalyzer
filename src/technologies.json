@@ -15674,8 +15674,10 @@
       "icon": "Reservio.svg",
       "dom": [
         ".reservio-booking-button",
-        "a[href*='.reservio.com']"
+        "a[href*='.reservio.com'][target='_blank']",
+        "a[href*='bookings.reservio.com']"
       ],
+      "scripts": "static\\.reservio\.com",
       "saas": true,
       "pricing": ["freemium", "recurring","low"],
       "website": "https://www.reservio.com"
