@@ -15685,6 +15685,22 @@
       "scripts": "www\\.resengo\\.\\w+",
       "website": "https://wwc.resengo.com"
     },
+    "Reservio": {
+      "cats": [
+        72
+      ],
+      "description": "Reservio is a cloud-based appointment scheduling and online booking solution.",
+      "icon": "Reservio.svg",
+      "dom": [
+        ".reservio-booking-button",
+        "a[href*='.reservio.com'][target='_blank']",
+        "a[href*='bookings.reservio.com']"
+      ],
+      "scripts": "static\\.reservio\.com",
+      "saas": true,
+      "pricing": ["freemium", "recurring","low"],
+      "website": "https://www.reservio.com"
+    },
     "Resin": {
       "cats": [
         22
