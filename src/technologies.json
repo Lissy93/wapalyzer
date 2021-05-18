@@ -21826,7 +21826,7 @@
       ],
       "description": "Zocdoc is a New York City-based company offering an online service that allows people to find and book in-person or telemedicine appointments for medical or dental care.",
       "icon": "Zocdoc.svg",
-      "dom": "a[href*='www.zocdoc.com']",
+      "dom": "a[href*='www.zocdoc.com'][target='_blank']",
       "scripts": "offsiteschedule\\.zocdoc\\.com",
       "saas": true,
       "pricing": ["payg"],
