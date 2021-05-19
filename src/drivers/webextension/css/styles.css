@@ -23,7 +23,6 @@ body {
   line-height: 1.5rem;
 	margin: 0;
   min-width: 24rem;
-  overflow-x: hidden;
 }
 
 a, a:focus, a:hover {
@@ -305,6 +304,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   padding: .1rem .3rem;
   margin-left: .3rem;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .technology__version {
