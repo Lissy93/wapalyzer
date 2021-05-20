@@ -10,10 +10,11 @@
 
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
-	background: #fff;
+  background: var(--color-primary);
   color: var(--color-text);
   direction: __MSG_@@bidi_dir__;
 	font-family: Helvetica, Arial, sans-serif;
@@ -183,6 +184,7 @@ a, a:focus, a:hover {
 }
 
 .detections {
+	background: #fff;
   columns: 2;
   column-gap: 3rem;
   min-height: 200px;
@@ -194,8 +196,9 @@ a, a:focus, a:hover {
 }
 
 .empty {
-  opacity: .8;
-  padding: 4.5rem 1.5rem 4.5rem 1.5rem;
+	background: #fff;
+  height: calc(100% - 4.5rem);
+  padding: 4.5rem 1.5rem 5rem 1.5rem;
   text-align: center;
 }
 
@@ -389,12 +392,19 @@ body.dynamic-icon .category__heading:hover .category__pin {
 /* Dark mode */
 
 .dark {
-  background: var(--color-primary-darken);
   color: var(--color-text-dark);
 }
 
+.dark .detections {
+  background: var(--color-primary-darken);
+}
+
+.dark .empty {
+  background: var(--color-primary-darken);
+}
+
 .dark .category__link, .dark .category__link:active, .dark .category__link:hover {
-  color: var(--color-text-dark);
+  color: white;
 }
 
 .dark .technology__link {
@@ -419,7 +429,8 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .footer {
-  background: var(--color-primary);
+  background: var(--color-primary-darken);
+  border-top: 1px solid var(--color-primary);
   color: var(--color-text-dark);
 }
 
