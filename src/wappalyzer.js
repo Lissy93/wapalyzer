@@ -158,10 +158,10 @@ const Wappalyzer = {
   resolveImplies(resolved) {
     let done = false
 
-    while (resolved.length && !done) {
-      resolved.forEach(({ technology, confidence }) => {
-        done = true
+    do {
+      done = true
 
+      resolved.forEach(({ technology, confidence }) => {
         technology.implies.forEach(({ name, confidence: _confidence }) => {
           const implied = Wappalyzer.getTechnology(name)
 
@@ -184,7 +184,7 @@ const Wappalyzer = {
           }
         })
       })
-    }
+    } while (resolved.length && !done)
   },
 
   /**
