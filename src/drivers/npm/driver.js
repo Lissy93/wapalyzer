@@ -265,6 +265,8 @@ class Site {
 
     this.dnsChecked = false
     this.dns = []
+
+    this.probed = false
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -839,8 +841,10 @@ class Site {
         await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
       }
 
-      if (this.options.probe) {
+      if (this.options.probe && !this.probed) {
         await this.probe(url)
+
+        this.probed = true
       }
     } catch (error) {
       this.analyzedUrls[url.href] = {

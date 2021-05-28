@@ -4561,13 +4561,17 @@
         6
       ],
       "description": "Cococart is an ecommerce platform.",
-      "icon": "Cococart.png",
       "dom": [
         "meta[property='og:image'][content*='static.cococart.co']",
         "div[style*='static.cococart.co']"
       ],
+      "icon": "Cococart.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["freemium", "recurring", "payg"],
       "website": "https://www.cococart.co"
     },
     "CoconutSoftware": {
@@ -5208,9 +5212,12 @@
         "$czater": "",
         "$czaterMethods": ""
       },
-      "scripts": "\\.czater\\.pl",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "\\.czater\\.pl",
       "website": "https://www.czater.pl"
     },
     "D3": {
@@ -5490,21 +5497,6 @@
       "icon": "Detectify.svg",
       "website": "https://detectify.com/"
     },
-    "Shuttle": {
-      "cats": [
-        1
-      ],
-      "description": "Shuttle is a website development platform.",
-      "icon": "Devisto.svg",
-      "implies":["Laravel", "PHP", "Amazon Web Services"],
-      "js": {
-        "Shuttle.FrontApp": ""
-      },
-      "scripts": "shuttle(?:-assets-new|-storage)\\.s3\\.amazonaws\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://www.devisto.com"
-    },
     "Didomi": {
       "cats": [
         67
@@ -5630,9 +5622,13 @@
       "js": {
         "DIVI": ""
       },
-      "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
+      "pricing": [
+        "low",
+        "recurring",
+        "onetime"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring", "onetime"],
+      "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
       "website": "https://www.elegantthemes.com/gallery/divi"
     },
     "Django": {
@@ -6023,18 +6019,6 @@
         "win_op\\.js"
       ],
       "website": "http://www.ec-cube.net"
-    },
-    "eClass": {
-      "cats": [
-        1
-      ],
-      "description": "eClass is an online learning platform.",
-      "icon": "eClass.png",
-      "js": {
-        "fe_eclass": "\\;confidence:50",
-        "fe_eclass_guest": "\\;confidence:50"
-      },
-      "website": "https://www.eclass.com.hk"
     },
     "EKM": {
       "cats": [
@@ -9920,6 +9904,27 @@
       },
       "website": "https://www.kissmetrics.com"
     },
+    "KQS.store": {
+      "cats": [
+        6
+      ],
+      "description": "KQS.store is an ecommerce software.",
+      "dom": [
+        "a[href*='kqsdesign.pl'][target='_blank']",
+        "a[href*='kqs.pl'][target='_blank']",
+        "#kqs-box,kqs-cookie"
+      ],
+      "icon": "KQS.store.png",
+      "js": {
+        "kqs_box": "\\;confidence:50",
+        "kqs_off": "\\;confidence:50"
+      },
+      "pricing": [
+        "onetime"
+      ],
+      "saas": false,
+      "website": "https://www.kqs.pl"
+    },
     "KaTeX": {
       "cats": [
         25
@@ -10446,25 +10451,6 @@
         "shopify\\.kount\\.net/js"
       ],
       "website": "https://kount.com/"
-    },
-    "KQS.store": {
-      "cats": [
-        6
-      ],
-      "description": "KQS.store is an ecommerce software.",
-      "icon": "KQS.store.png",
-      "dom": [
-        "a[href*='kqsdesign.pl'][target='_blank']",
-        "a[href*='kqs.pl'][target='_blank']",
-        "#kqs-box,kqs-cookie"
-      ],
-      "js": {
-        "kqs_box": "\\;confidence:50",
-        "kqs_off": "\\;confidence:50"
-      },
-      "saas": false,
-      "pricing": ["onetime"],
-      "website": "https://www.kqs.pl"
     },
     "Kubernetes Dashboard": {
       "cats": [
@@ -12710,23 +12696,6 @@
       },
       "website": "https://www.digital.nsw.gov.au/digital-design-system"
     },
-    "Nukeviet CMS": {
-      "cats": [
-        1
-      ],
-      "description": "NukeViet CMS is a Vietnamese content management system.",
-      "icon": "Nukeviet CMS.png",
-      "meta": {
-        "generator": "NukeViet v([\\d.]+)\\;version:\\1"
-      },
-      "js": {
-        "nv_DigitalClock": "\\;confidence:50",
-        "nv_is_change_act_confirm": "\\;confidence:50"
-      },
-      "oss": true,
-      "pricing": ["freemium"],
-      "website": "https://nukeviet.vn/en/"
-    },
     "NTLM": {
       "cats": [
         16
@@ -12977,6 +12946,25 @@
       "saas": true,
       "scripts": "connect\\.nosto\\.\\w+/",
       "website": "https://www.nosto.com"
+    },
+    "Nukeviet CMS": {
+      "cats": [
+        1
+      ],
+      "description": "NukeViet CMS is a Vietnamese content management system.",
+      "icon": "Nukeviet CMS.png",
+      "js": {
+        "nv_DigitalClock": "\\;confidence:50",
+        "nv_is_change_act_confirm": "\\;confidence:50"
+      },
+      "meta": {
+        "generator": "NukeViet v([\\d.]+)\\;version:\\1"
+      },
+      "oss": true,
+      "pricing": [
+        "freemium"
+      ],
+      "website": "https://nukeviet.vn/en/"
     },
     "Nuvemshop": {
       "cats": [
@@ -15007,13 +14995,17 @@
     },
     "Provide Support": {
       "cats": [
-       52
+        52
       ],
       "description": "Provide Support is a SaaS for customer service that includes live chat, real-time website monitoring, chat statistics.",
       "icon": "Provide Support.svg",
-      "scripts": "\\.providesupport\\.com",
+      "pricing": [
+        "low",
+        "recurring",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring", "payg"],
+      "scripts": "\\.providesupport\\.com",
       "website": "https://www.providesupport.com"
     },
     "Proximis": {
@@ -17465,6 +17457,28 @@
       ],
       "website": "https://www.shopware.com"
     },
+    "Shuttle": {
+      "cats": [
+        1
+      ],
+      "description": "Shuttle is a website development platform.",
+      "icon": "Devisto.svg",
+      "implies": [
+        "Laravel",
+        "PHP",
+        "Amazon Web Services"
+      ],
+      "js": {
+        "Shuttle.FrontApp": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "shuttle(?:-assets-new|-storage)\\.s3\\.amazonaws\\.com",
+      "website": "https://www.devisto.com"
+    },
     "Sift": {
       "cats": [
         10
@@ -17493,17 +17507,20 @@
     },
     "Signifyd": {
       "cats": [
-       10,
-       16
+        10,
+        16
       ],
       "description": "Signifyd is a provider of an enterprise-grade fraud technology solution for ecommerce stores.",
       "icon": "Signifyd.svg",
       "js": {
         "SIGNIFYD_GLOBAL": ""
       },
-      "scripts": "\\.signifyd\\.com",
+      "pricing": [
+        "high",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["high", "recurring"],
+      "scripts": "\\.signifyd\\.com",
       "website": "https://www.signifyd.com"
     },
     "SilverStripe": {
@@ -19186,13 +19203,16 @@
         6
       ],
       "description": "TakeDrop is an ecommerce platform.",
-      "icon": "TakeDrop.png",
       "dom": "img[src*='main.takedropstorage.com']",
+      "icon": "TakeDrop.png",
       "js": {
         "webpackJsonptakedrop-react": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://takedrop.pl"
     },
     "Tamago": {
@@ -21015,6 +21035,24 @@
       "oss": true,
       "website": "https://webassembly.org/"
     },
+    "WebEngage": {
+      "cats": [
+        32,
+        76
+      ],
+      "description": "WebEngage is a customer data platform and marketing automation suite.",
+      "icon": "WebEngage.png",
+      "js": {
+        "webengage.__v": "([\\d.]+)\\;version:\\1"
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.webengage\\.co(?:m)?/",
+      "website": "https://webengage.com"
+    },
     "WebGUI": {
       "cats": [
         1
@@ -22499,6 +22537,18 @@
       "scripts": "[^a-z\\d]e107\\.js",
       "website": "http://e107.org"
     },
+    "eClass": {
+      "cats": [
+        1
+      ],
+      "description": "eClass is an online learning platform.",
+      "icon": "eClass.png",
+      "js": {
+        "fe_eclass": "\\;confidence:50",
+        "fe_eclass_guest": "\\;confidence:50"
+      },
+      "website": "https://www.eclass.com.hk"
+    },
     "eSyndiCat": {
       "cats": [
         1
@@ -23674,21 +23724,6 @@
         "generator": "webEdition"
       },
       "website": "http://webedition.de/en"
-    },
-    "WebEngage": {
-      "cats": [
-        32,
-        76
-      ],
-      "description": "WebEngage is a customer data platform and marketing automation suite.",
-      "icon": "WebEngage.png",
-      "js": {
-        "webengage.__v": "([\\d.]+)\\;version:\\1"
-      },
-      "scripts": "\\.webengage\\.co(?:m)?/",
-      "saas": true,
-      "pricing": ["mid", "recurring"],
-      "website": "https://webengage.com"
     },
     "webpack": {
       "cats": [
