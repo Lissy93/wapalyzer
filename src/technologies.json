@@ -3572,6 +3572,27 @@
       },
       "website": "http://browsercms.org"
     },
+    "Bsale": {
+      "cats": [
+        6
+      ],
+      "description": "Bsale is an store management solution for retail businesses that sell both in store and online.",
+      "icon": "Bsale.png",
+      "implies": "Nginx",
+      "meta": {
+        "autor": "Bsale",
+        "generator": "Bsale"   
+      },
+      "js": {
+        "Bsale.version": "([\\d.]+)\\;version:\\1"
+      },
+      "cookies": {
+        "_bsalemarket_session": ""
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.bsale.cl"
+    },
     "Bubble": {
       "cats": [
         51,
