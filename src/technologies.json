@@ -17654,6 +17654,25 @@
       "scripts": "/__ssobj/core\\.js",
       "website": "https://www.sitespect.com"
     },
+    "Sitevision CMS": {
+      "cats": [
+        1
+      ],
+      "description": "Sitevision CMS is a platform for web publishing that consists of flexible and pre-made modules. Available as self-hosed software and Cloud SaaS.",
+      "icon": "Sitevision CMS.png",
+      "scripts": [
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/docready-min\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/AppRegistry\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/webapps/webapp_sdk-min\\.js\\;confidence:50",
+        "sitevision/system-resource/(?:[\\w\\d]+)/envision/envision\\.js\\;confidence:50"
+      ],
+      "cookies": {
+        "SiteVisionLTM": ""
+      },
+      "saas": true,
+      "pricing": ["recurring", "payg"],
+      "website": "https://www.sitevision.se"
+    },
     "Sitecore": {
       "cats": [
         1
