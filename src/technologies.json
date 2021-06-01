@@ -1053,6 +1053,19 @@
       },
       "website": "https://docs.adobelaunch.com/getting-started"
     },
+    "Adobe Flash": {
+      "cats": [
+        27
+      ],
+      "cpe": "cpe:/a:adobe:flash",
+      "description": "Adobe Flash is a multimedia software platform used for production of animations, rich web applications and embedded web browser video players.",
+      "icon": "Adobe Flash.svg",
+      "dom": [
+        "object[type='application/x-shockwave-flash']",
+        "param[value*='.swf']"
+      ],
+      "website": "https://www.adobe.com/products/flashplayer"
+    },
     "Adobe GoLive": {
       "cats": [
         20
