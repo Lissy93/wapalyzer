@@ -84,6 +84,7 @@ const Driver = {
 
         Driver.cache.tabs[id] = cache ? resolve(cache.detections) : []
 
+        console.log('a')
         await Driver.setIcon(url, Driver.cache.tabs[id])
       }
     })
@@ -430,30 +431,41 @@ const Driver = {
       return
     }
 
-    const { protocol, hostname } = new URL(url)
+    const { hostname } = new URL(url)
 
     // Cache detections
-    const cache = (Driver.cache.hostnames[hostname] = {
-      ...(Driver.cache.hostnames[hostname] || {
-        url: `${protocol}//${hostname}`,
-        detections: [],
-        hits: incrementHits ? 0 : 1,
-      }),
-      dateTime: Date.now(),
+    const cache = (Driver.cache.hostnames[hostname] = Driver.cache.hostnames[
+      hostname
+    ] || {
+      detections: [],
+      hits: incrementHits ? 0 : 1,
     })
+
+    cache.dateTime = Date.now()
 
     // Remove duplicates
     cache.detections = cache.detections
       .concat(detections)
       .filter(({ technology }) => technology)
       .filter(
-        ({ technology: { name }, pattern: { regex } }, index) =>
-          cache.detections.findIndex(
+        ({ technology: { name }, pattern: { regex } }, index, detections) =>
+          detections.findIndex(
             ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
               name === _name &&
               (!regex || regex.toString() === _regex.toString())
           ) === index
       )
+      .map((detection) => {
+        if (
+          detections.find(
+            ({ technology: { slug } }) => slug === detection.technology.slug
+          )
+        ) {
+          detection.lastUrl = url
+        }
+
+        return detection
+      })
 
     cache.hits += incrementHits ? 1 : 0
     cache.language = cache.language || language
@@ -475,17 +487,18 @@ const Driver = {
     await setOption(
       'hostnames',
       Object.keys(Driver.cache.hostnames).reduce(
-        (cache, hostname) => ({
-          ...cache,
+        (hostnames, hostname) => ({
+          ...hostnames,
           [hostname]: {
-            ...Driver.cache.hostnames[hostname],
-            detections: Driver.cache.hostnames[hostname].detections
+            ...cache,
+            detections: cache.detections
               .filter(({ technology }) => technology)
               .map(
                 ({
                   technology: { name: technology },
                   pattern: { regex, confidence },
                   version,
+                  lastUrl,
                 }) => ({
                   technology,
                   pattern: {
@@ -493,6 +506,7 @@ const Driver = {
                     confidence,
                   },
                   version,
+                  lastUrl,
                 })
               ),
           },
@@ -501,8 +515,15 @@ const Driver = {
       )
     )
 
-    const resolved = resolve(Driver.cache.hostnames[hostname].detections)
+    const resolved = resolve(cache.detections).map((detection) => {
+      detection.cached = detection.lastUrl !== url
 
+      delete detection.lastUrl
+
+      return detection
+    })
+
+    console.log('b')
     await Driver.setIcon(url, resolved)
 
     if (url) {
@@ -543,12 +564,16 @@ const Driver = {
     }
 
     const dynamicIcon = await getOption('dynamicIcon', false)
+    const showCached = await getOption('showCached', true)
     const badge = await getOption('badge', true)
+
+    console.log(showCached)
 
     let icon = 'default.svg'
 
     const _technologies = technologies.filter(
-      ({ slug }) => slug !== 'cart-functionality'
+      ({ slug, cached }) =>
+        slug !== 'cart-functionality' && (showCached || cached === false)
     )
 
     if (dynamicIcon) {
@@ -613,13 +638,19 @@ const Driver = {
     })
 
     if (await Driver.isDisabledDomain(url)) {
+      console.log('c')
       await Driver.setIcon(url, [])
 
       return
     }
 
-    const resolved = Driver.cache.tabs[id]
+    const showCached = await getOption('showCached', true)
 
+    const resolved = (Driver.cache.tabs[id] || []).filter(
+      ({ cached }) => showCached || cached === false
+    )
+
+    console.log('d')
     await Driver.setIcon(url, resolved)
 
     return resolved
