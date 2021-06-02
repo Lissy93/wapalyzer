@@ -15,7 +15,7 @@ const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 const expiry = 1000 * 60 * 60 * 24
 
 const hostnameIgnoreList =
-  /\b((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|[^a-z]demo(shop)?|cache)[.-]|localhost|((wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube)\.)|\.local|\.test|\.netlify\.app|\.shopifypreview\.com|^[0-9.]+|[\d.]+$|^([a-f0-9:]+:+)+[a-f0-9]+$)/
+  /\b((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|[^a-z]demo(shop)?|cache)[.-]|localhost|((wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube)\.)|\.local|\.test|\.netlify\.app|\.shopifypreview\.com|^([0-9.]+|[\d.]+)$|^([a-f0-9:]+:+)+[a-f0-9]+$)/
 
 const xhrDebounce = []
 
@@ -74,7 +74,19 @@ const Driver = {
       types: ['xmlhttprequest'],
     })
 
-    chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
+    chrome.tabs.onRemoved.addListener((id) => delete Driver.cache.tabs[id])
+
+    chrome.tabs.onUpdated.addListener(async (id, { url }) => {
+      if (url) {
+        const { hostname } = new URL(url)
+
+        const cache = Driver.cache.hostnames[hostname]
+
+        Driver.cache.tabs[id] = cache ? resolve(cache.detections) : []
+
+        await Driver.setIcon(url, Driver.cache.tabs[id])
+      }
+    })
 
     // Enable messaging between scripts
     chrome.runtime.onMessage.addListener(Driver.onMessage)
@@ -434,14 +446,14 @@ const Driver = {
     cache.detections = cache.detections
       .concat(detections)
       .filter(({ technology }) => technology)
-
-    cache.detections.filter(
-      ({ technology: { name }, pattern: { regex } }, index) =>
-        cache.detections.findIndex(
-          ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
-            name === _name && (!regex || regex.toString() === _regex.toString())
-        ) === index
-    )
+      .filter(
+        ({ technology: { name }, pattern: { regex } }, index) =>
+          cache.detections.findIndex(
+            ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+              name === _name &&
+              (!regex || regex.toString() === _regex.toString())
+          ) === index
+      )
 
     cache.hits += incrementHits ? 1 : 0
     cache.language = cache.language || language
@@ -526,6 +538,10 @@ const Driver = {
    * @param {Object} technologies
    */
   async setIcon(url, technologies = []) {
+    if (await Driver.isDisabledDomain(url)) {
+      technologies = []
+    }
+
     const dynamicIcon = await getOption('dynamicIcon', false)
     const badge = await getOption('badge', true)
 
