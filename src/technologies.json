@@ -2053,6 +2053,10 @@
         59
       ],
       "icon": "Apollo.svg",
+      "implies": [
+        "GraphQL",
+        "TypeScript\\;confidence:50"
+      ],
       "js": {
         "__APOLLO_CLIENT__": "",
         "__APOLLO_CLIENT__.version": "^(.+)$\\;version:\\1"
