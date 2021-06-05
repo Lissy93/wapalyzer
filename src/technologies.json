@@ -9216,6 +9216,26 @@
       "icon": "Indico.png",
       "website": "http://indico-software.org"
     },
+    "Inertia": {
+      "cats": [
+        12
+      ],
+      "description": "Inertia is a protocol for creating monolithic single-page applications.",
+      "icon": "Inertia.svg",
+      "headers": {
+        "X-Inertia": ""
+      },
+      "dom": {
+        "div[data-page*='component']": {
+          "attributes": {
+            "data-page": "component.+props.+url"
+          }
+        }
+      },
+      "saas": false,
+      "oss": true,
+      "website": "https://inertiajs.com"
+    },
     "Indy": {
       "cats": [
         22
