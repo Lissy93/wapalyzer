@@ -17412,23 +17412,37 @@
         6
       ],
       "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
+      "icon": "Shopify.svg",
       "headers": {
         "x-shopid": "\\;confidence:50",
         "x-shopify-stage": "\\;confidence:50"
       },
-      "html": "<link[^>]+=['\"]//cdn\\.shopify\\.com\\;confidence:25",
-      "icon": "Shopify.svg",
+      "cookies": {
+        "_shopify_y": "",
+        "_shopify_s": ""
+      },
+      "meta": {
+        "shopify-digital-wallet": "",
+        "shopify-checkout-api-token": ""
+      },
+      "dom": {
+        "link[href*='cdn.shopify.com']": {
+          "attributes": {
+            "href": "cdn\\.shopify\\.com\\;confidence:50"
+          }
+        }
+      },
       "js": {
         "Shopify": "\\;confidence:25",
         "ShopifyAPI": ""
       },
-      "pricing": [
-        "low",
-        "recurring"
+      "scripts": [
+        "sdks\\.shopifycdn\\.com",
+        "cdn\\.shopify\\.com"
       ],
-      "saas": true,
-      "scripts": "sdks\\.shopifycdn\\.com",
       "url": "^https?//.+\\.myshopify\\.com",
+      "saas": true,
+      "pricing": ["low","recurring"],
       "website": "http://shopify.com"
     },
     "Shoplo": {
