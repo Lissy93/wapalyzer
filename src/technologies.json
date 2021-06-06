@@ -2880,15 +2880,14 @@
         6
       ],
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
-      "dom": "img[data-src*='.bigcommerce.com'], img[src*='.bigcommerce.com']",
-      "html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
+      "dom": "img[data-src*='.bigcommerce.com'], img[src*='.bigcommerce.com'], link[href*='.bigcommerce.com']",
       "icon": "BigCommerce.svg",
       "pricing": [
         "low",
         "recurring"
       ],
       "saas": true,
-      "scripts": "cdn\\d+\\.bigcommerce\\.com/",
+      "scripts": ".bigcommerce\\.com",
       "url": "mybigcommerce\\.com",
       "website": "http://www.bigcommerce.com"
     },
@@ -4892,6 +4891,21 @@
         "generator": "ContentBox powered by ColdBox"
       },
       "website": "http://www.gocontentbox.org"
+    },
+    "Prismic": {
+      "cats": [
+        1
+      ],
+      "description": "Prismic is a headless CMS for Jamstack.",
+      "xhr": "\\.cdn\\.prismic\\.io",
+      "icon": "Prismic.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://prismic.io"
     },
     "Contentful": {
       "cats": [
