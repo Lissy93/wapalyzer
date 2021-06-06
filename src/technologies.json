@@ -1059,11 +1059,11 @@
       ],
       "cpe": "cpe:/a:adobe:flash",
       "description": "Adobe Flash is a multimedia software platform used for production of animations, rich web applications and embedded web browser video players.",
-      "icon": "Adobe Flash.svg",
       "dom": [
         "object[type='application/x-shockwave-flash']",
         "param[value*='.swf']"
       ],
+      "icon": "Adobe Flash.svg",
       "website": "https://www.adobe.com/products/flashplayer"
     },
     "Adobe GoLive": {
@@ -1794,23 +1794,6 @@
         "generator": "Amiro"
       },
       "website": "http://amirocms.com"
-    },
-    "amoCRM": {
-      "cats": [
-        53
-      ],
-      "description": "amoCRM is a web-based customer relationship management software solution.",
-      "icon": "amoCRM.svg",
-      "js": {
-        "AMOCRM": "",
-        "AMO_PIXEL_CLIENT": "",
-        "amoFormsWidget": "",
-        "amoSocialButton": ""
-      },
-      "scripts": "\\.amocrm\\.(?:ru|com)",
-      "saas": true,
-      "pricing": ["low", "recurring", "payg"],
-      "website": "https://www.amocrm.com"
     },
     "Amplitude": {
       "cats": [
@@ -3609,21 +3592,24 @@
       "cats": [
         6
       ],
+      "cookies": {
+        "_bsalemarket_session": ""
+      },
       "description": "Bsale is an store management solution for retail businesses that sell both in store and online.",
       "icon": "Bsale.png",
       "implies": "Nginx",
+      "js": {
+        "Bsale.version": "([\\d.]+)\\;version:\\1"
+      },
       "meta": {
         "autor": "Bsale",
         "generator": "Bsale"
       },
-      "js": {
-        "Bsale.version": "([\\d.]+)\\;version:\\1"
-      },
-      "cookies": {
-        "_bsalemarket_session": ""
-      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
       "website": "https://www.bsale.cl"
     },
     "Bubble": {
@@ -4891,21 +4877,6 @@
         "generator": "ContentBox powered by ColdBox"
       },
       "website": "http://www.gocontentbox.org"
-    },
-    "Prismic": {
-      "cats": [
-        1
-      ],
-      "description": "Prismic is a headless CMS for Jamstack.",
-      "xhr": "\\.cdn\\.prismic\\.io",
-      "icon": "Prismic.svg",
-      "pricing": [
-        "low",
-        "freemium",
-        "recurring"
-      ],
-      "saas": true,
-      "website": "https://prismic.io"
     },
     "Contentful": {
       "cats": [
@@ -9230,26 +9201,6 @@
       "icon": "Indico.png",
       "website": "http://indico-software.org"
     },
-    "Inertia": {
-      "cats": [
-        12
-      ],
-      "description": "Inertia is a protocol for creating monolithic single-page applications.",
-      "icon": "Inertia.svg",
-      "headers": {
-        "X-Inertia": ""
-      },
-      "dom": {
-        "div[data-page*='component']": {
-          "attributes": {
-            "data-page": "component.+props.+url"
-          }
-        }
-      },
-      "saas": false,
-      "oss": true,
-      "website": "https://inertiajs.com"
-    },
     "Indy": {
       "cats": [
         22
@@ -9258,6 +9209,26 @@
         "Server": "Indy(?:/([\\d.]+))?\\;version:\\1"
       },
       "website": "http://indyproject.org"
+    },
+    "Inertia": {
+      "cats": [
+        12
+      ],
+      "description": "Inertia is a protocol for creating monolithic single-page applications.",
+      "dom": {
+        "div[data-page*='component']": {
+          "attributes": {
+            "data-page": "component.+props.+url"
+          }
+        }
+      },
+      "headers": {
+        "X-Inertia": ""
+      },
+      "icon": "Inertia.svg",
+      "oss": true,
+      "saas": false,
+      "website": "https://inertiajs.com"
     },
     "InfernoJS": {
       "cats": [
@@ -15011,6 +14982,21 @@
       "scripts": "prism\\.js",
       "website": "http://prismjs.com"
     },
+    "Prismic": {
+      "cats": [
+        1
+      ],
+      "description": "Prismic is a headless CMS for Jamstack.",
+      "icon": "Prismic.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://prismic.io",
+      "xhr": "\\.cdn\\.prismic\\.io"
+    },
     "Profitwell": {
       "cats": [
         10
@@ -17425,20 +17411,11 @@
       "cats": [
         6
       ],
-      "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
-      "icon": "Shopify.svg",
-      "headers": {
-        "x-shopid": "\\;confidence:50",
-        "x-shopify-stage": "\\;confidence:50"
-      },
       "cookies": {
-        "_shopify_y": "",
-        "_shopify_s": ""
+        "_shopify_s": "",
+        "_shopify_y": ""
       },
-      "meta": {
-        "shopify-digital-wallet": "",
-        "shopify-checkout-api-token": ""
-      },
+      "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
       "dom": {
         "link[href*='cdn.shopify.com']": {
           "attributes": {
@@ -17446,17 +17423,29 @@
           }
         }
       },
+      "headers": {
+        "x-shopid": "\\;confidence:50",
+        "x-shopify-stage": "\\;confidence:50"
+      },
+      "icon": "Shopify.svg",
       "js": {
         "Shopify": "\\;confidence:25",
         "ShopifyAPI": ""
       },
+      "meta": {
+        "shopify-checkout-api-token": "",
+        "shopify-digital-wallet": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "sdks\\.shopifycdn\\.com",
         "cdn\\.shopify\\.com"
       ],
       "url": "^https?//.+\\.myshopify\\.com",
-      "saas": true,
-      "pricing": ["low","recurring"],
       "website": "http://shopify.com"
     },
     "Shoplo": {
@@ -17759,25 +17748,6 @@
       "scripts": "/__ssobj/core\\.js",
       "website": "https://www.sitespect.com"
     },
-    "Sitevision CMS": {
-      "cats": [
-        1
-      ],
-      "description": "Sitevision CMS is a platform for web publishing that consists of flexible and pre-made modules. Available as self-hosed software and Cloud SaaS.",
-      "icon": "Sitevision CMS.png",
-      "scripts": [
-        "sitevision/system-resource/(?:[\\w\\d]+)/js/docready-min\\.js\\;confidence:25",
-        "sitevision/system-resource/(?:[\\w\\d]+)/js/AppRegistry\\.js\\;confidence:25",
-        "sitevision/system-resource/(?:[\\w\\d]+)/webapps/webapp_sdk-min\\.js\\;confidence:50",
-        "sitevision/system-resource/(?:[\\w\\d]+)/envision/envision\\.js\\;confidence:50"
-      ],
-      "cookies": {
-        "SiteVisionLTM": ""
-      },
-      "saas": true,
-      "pricing": ["recurring", "payg"],
-      "website": "https://www.sitevision.se"
-    },
     "Sitecore": {
       "cats": [
         1
@@ -17825,6 +17795,28 @@
       "saas": true,
       "scripts": "siteglide\\.js",
       "website": "https://www.siteglide.com"
+    },
+    "Sitevision CMS": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "SiteVisionLTM": ""
+      },
+      "description": "Sitevision CMS is a platform for web publishing that consists of flexible and pre-made modules. Available as self-hosed software and Cloud SaaS.",
+      "icon": "Sitevision CMS.png",
+      "pricing": [
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/docready-min\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/AppRegistry\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/webapps/webapp_sdk-min\\.js\\;confidence:50",
+        "sitevision/system-resource/(?:[\\w\\d]+)/envision/envision\\.js\\;confidence:50"
+      ],
+      "website": "https://www.sitevision.se"
     },
     "Sivuviidakko": {
       "cats": [
@@ -18973,7 +18965,6 @@
         66
       ],
       "description": "SvelteKit is the official Svelte framework for building web applications with a flexible filesystem-based routing.",
-      "icon": "Svelte.svg",
       "dom": {
         "a": {
           "attributes": {
@@ -18981,6 +18972,7 @@
           }
         }
       },
+      "icon": "Svelte.svg",
       "oss": true,
       "website": "https://kit.svelte.dev"
     },
@@ -22544,6 +22536,27 @@
       },
       "scripts": "amcharts.*\\.js",
       "website": "http://amcharts.com"
+    },
+    "amoCRM": {
+      "cats": [
+        53
+      ],
+      "description": "amoCRM is a web-based customer relationship management software solution.",
+      "icon": "amoCRM.svg",
+      "js": {
+        "AMOCRM": "",
+        "AMO_PIXEL_CLIENT": "",
+        "amoFormsWidget": "",
+        "amoSocialButton": ""
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.amocrm\\.(?:ru|com)",
+      "website": "https://www.amocrm.com"
     },
     "animate.css": {
       "cats": [
