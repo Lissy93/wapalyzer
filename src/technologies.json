@@ -11108,6 +11108,29 @@
       ],
       "website": "https://www.localfocus.nl/en/"
     },
+    "Localised": {
+      "cats": [
+        6
+      ],
+      "description": "Localised is local-first ecommerce platform.",
+      "icon": "Localised.png",
+      "dom": {
+        "img[src='.localised.com'": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "span": {
+          "attributes": {
+            "text": ".+Localised Inc\\..+"
+          }
+        }
+      },
+      "xhr": "api\\.localised\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.localised.com"
+    },
     "LocomotiveCMS": {
       "cats": [
         1
