@@ -18717,6 +18717,24 @@
       "implies": "Perl",
       "website": "http://metacpan.org/pod/Starlet"
     },
+    "Statamic": {
+      "cats": [
+        1
+      ],
+      "description": "Statamic is an open-source and self-hosted content management system based on the PHP programming language.",
+      "icon": "Statamic.svg",
+      "headers": {
+        "x-powered-by": "^Statamic$"
+      },
+      "implies": [
+        "PHP",
+        "Laravel"
+      ],
+      "saas": false,
+      "oss": true,
+      "pricing": ["freemium", "mid", "payg"],
+      "website": "https://statamic.com"
+    },
     "Statcounter": {
       "cats": [
         10
