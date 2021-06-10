@@ -9403,14 +9403,17 @@
     },
     "Intercom": {
       "cats": [
-        10
+        52,
+        53
       ],
-      "description": "Intercom is a Conversational Relationship Platform that helps businesses build better customer relationships through personalised, messenger-based experiences.",
+      "description": "Intercom is an American software company that produces a messaging platform which allows businesses to communicate with prospective and existing customers within their app, on their website, through social media, or via email.",
       "icon": "Intercom.svg",
       "js": {
         "Intercom": ""
       },
       "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
+      "saas": true,
+      "pricing": ["mid","recurring"],
       "website": "https://www.intercom.com"
     },
     "Intercom Articles": {
@@ -14622,7 +14625,7 @@
       ],
       "description": "PixelFed is an activitypub based image sharing platform.",
       "dom": {
-        "a[href='https://pixelfed.org'][title*='version']": {
+        "a[href='pixelfed.org'][title*='version']": {
           "attributes": {
             "title": "^version ([0-9.]+)$\\;version:\\1"
           },
