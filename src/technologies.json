@@ -6235,6 +6235,22 @@
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
       "website": "http://www.edgecast.com"
     },
+    "eDokan": {
+      "cats": [
+        6
+      ],
+      "description": "eDokan is hosted ecommerce platform with drag-drop template builder and zero programming knowledge.",
+      "icon": "eDokan.png",
+      "implies": [
+        "Node.js",
+        "Angular",
+        "MongoDB"
+      ],
+      "dom": "img[src*='cdn.edokan.co']",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://edokan.co"
+    },
     "Elasticsearch": {
       "cats": [
         29
