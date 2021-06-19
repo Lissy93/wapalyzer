@@ -10386,7 +10386,7 @@
       ],
       "description": "Ko-fi is an online platform that helps content creators get the financial support.",
       "icon": "Ko-fi.svg",
-      "dom": "a[href*='ko-fi.com/']",
+      "dom": "a[href*='ko-fi.com/'][target='_blank']",
       "js": {
         "kofiwidget2": ""
       },
