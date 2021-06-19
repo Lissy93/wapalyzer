@@ -22651,7 +22651,12 @@
       ],
       "icon": "Borderfree.png",
       "description": "Borderfree is an cross-border ecommerce solutions provider.",
-      "dom": "link[href*='.borderfree.com']",
+      "cookies": {
+        "bfx.language": "^\\w+$\\;confidence:25",
+        "bfx.logLevel": "^\\w+$\\;confidence:25",
+        "bfx.apiKey:": "^[\\w\\d-]+$\\;confidence:25",
+        "bfx.country:": "^\\w+$\\;confidence:25"
+      },
       "js": {
         "bfx._brand": "\\;confidence:50",
         "bfx._apiKey": "\\;confidence:50"
