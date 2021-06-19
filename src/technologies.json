@@ -14198,11 +14198,13 @@
     },
     "Patreon": {
       "cats": [
-        19
+        5,
+        41
       ],
       "description": "Patreon is an American membership platform that provides business tools for content creators to run a subscription service.",
       "icon": "Patreon.svg",
       "dom": "a[href*='www.patreon.com/']",
+      "scripts": "patreon-connect/assets/.+ver=([\\d.]+)\\;version:\\1",
       "saas": true,
       "pricing": [
         "payg"
