@@ -296,6 +296,10 @@
     "77": {
       "name": "Retargeting",
       "priority": 9
+    },
+    "78": {
+      "name": "RUM",
+      "priority": 9
     }
   },
   "technologies": {
@@ -1389,7 +1393,7 @@
     "Akamai mPulse": {
       "cats": [
         10,
-        47
+        78
       ],
       "cookies": {
         "akaas_AB-Testing": ""
@@ -2074,13 +2078,19 @@
     },
     "AppDynamics": {
       "cats": [
-        10
+        10,
+        78
       ],
+      "description": "AppDynamics is an application performance management (APM) and IT operations analytics (ITOA) company based in San Francisco.",
       "icon": "AppDynamics.png",
       "js": {
         "ADRUM.conf.agentVer": "^(.+)$\\;version:\\1"
       },
       "scripts": "adrum",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
       "website": "https://appdynamics.com"
     },
     "AppNexus": {
@@ -3123,6 +3133,23 @@
       "scripts": "\\.blueknow\\.com",
       "website": "https://www.blueknow.com"
     },
+    "Blue Triangle": {
+      "cats": [
+        16,
+        78
+      ],
+
+      "description": "Blue Triangle is a connected view of marketing, web performance, and third-party tag analytics while constantly monitoring website code for security vulnerabilities.",
+      "icon": "Blue Triangle.png",
+      "js": {
+        "_bttUtil.version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "\\.btttag\\.com/btt\\.js",
+      "xhr": "\\.btttag\\.com",
+      "saas": true,
+      "pricing": ["poa", "high", "recurring"],
+      "website": "https://bluetriangle.com"
+    },
     "Boba.js": {
       "cats": [
         59
@@ -3287,7 +3314,8 @@
     },
     "Boomerang": {
       "cats": [
-        59
+        59,
+        78
       ],
       "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
       "icon": "boomerang.svg",
@@ -4541,7 +4569,8 @@
     },
     "Cloudflare Browser Insights": {
       "cats": [
-        10
+        10,
+        78
       ],
       "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
       "icon": "CloudFlare.svg",
@@ -5421,6 +5450,27 @@
         "packages/browser/dart\\.js"
       ],
       "website": "https://www.dartlang.org"
+    },
+    "Datadog": {
+      "cats": [
+        78,
+        10
+      ],
+      "description": "Datadog is a SaaS-based monitoring and analytics platform for large-scale applications and infrastructure.",
+      "icon": "Datadog.svg",
+      "js": {
+        "DD_LOGS": "\\;confidence:1",
+        "DD_RUM": "\\;confidence:99"
+      },
+      "scripts": "www\\.datadoghq-browser-agent\\.com",
+      "saas": true,
+      "pricing": [
+        "low", 
+        "payg", 
+        "recurring", 
+        "freemium"
+      ],
+      "website": "https://www.datadoghq.com"
     },
     "Darwin": {
       "cats": [
@@ -9308,7 +9358,8 @@
     "Instana": {
       "cats": [
         10,
-        13
+        13,
+        78
       ],
       "description": "Instana is a Kubernetes-native APM tool which is built for new-stack including Microservices and lately Serverless but also supports the existing VM based stacks  including several supported technologies.",
       "icon": "Instana.svg",
@@ -14544,6 +14595,20 @@
       "implies": "PHP",
       "website": "http://pimcore.org"
     },
+    "Pingdom": {
+      "cats": [
+       78
+      ],
+      "description": "Pingdom is a Swedish website monitoring software as a service company.",
+      "icon": "Pingdom.svg",
+      "scripts": "\\.pingdom\\.net",
+      "saas": true,
+      "pricing": [
+        "payg", 
+        "recurring"
+      ],
+      "website": "https://www.pingdom.com"
+    },
     "Pin Payments": {
       "cats": [
         41
@@ -15596,6 +15661,26 @@
       "scripts": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
     },
+    "Raygun": {
+      "cats": [
+        78,
+        13
+      ],
+      "description": "Raygun is a cloud-based networking monitoring and bug tracking application.",
+      "icon": "Raygun.svg",
+      "js": {
+        "Raygun": "",
+        "raygunEnabled": "",
+        "raygunFactory": ""
+      },
+      "scripts": "\\.raygun\\.io",
+      "saas": true,
+      "pricing": [
+        "payg", 
+        "recurring"
+      ],
+      "website": "https://raygun.com"
+    },
     "Rayo": {
       "cats": [
         1
@@ -16450,6 +16535,26 @@
       "scripts": "/sim(?:site|core)/js",
       "website": "http://simgroep.nl/internet/portfolio-contentbeheer_41623/"
     },
+    "Site24x7": {
+      "cats": [
+        78
+      ],
+      "description": "Site24x7 is a cloud-based website and server monitoring platform.",
+      "icon": "Site24x7.png",
+      "js": {
+        "site24x7RumError": "",
+        "site24x7rum": "",
+        "s247RUM": "",
+        "S247RumQueueImpl": ""
+      },
+      "scripts": "\\.site24x7rum\\.com",
+      "saas": true,
+      "pricing": [
+        "low", 
+        "recurring"
+      ],
+      "website": "https://www.site24x7.com"
+    },
     "SMF": {
       "cats": [
         2
@@ -16482,6 +16587,26 @@
       },
       "icon": "SPDY.png",
       "website": "http://chromium.org/spdy"
+    },
+    "SpeedCurve": {
+      "cats": [
+        78
+      ],
+      "description": "SpeedCurve is a front-end performance monitoring service.",
+      "icon": "SpeedCurve.svg",
+      "js": {
+        "LUX.version": "([\\d.]+)\\;version:\\1",
+        "LUX_t_end": "\\d+\\;confidence:50",
+        "LUX_t_start": "\\d+\\;confidence:50"
+      },
+      "scripts": "\\.speedcurve\\.com",
+      "saas": true,
+      "pricing": [
+        "mid", 
+        "high", 
+        "recurring"
+      ],
+      "website": "https://www.speedcurve.com"
     },
     "SPIP": {
       "cats": [
