@@ -10150,6 +10150,25 @@
       "scripts": "karma\\.mdpcdn\\.com",
       "website": "https://karma-runner.github.io"
     },
+    "Kartra": {
+      "cats": [
+        32
+      ],
+      "description": "Kartra is an online business platform that offers marketing and sales tools.",
+      "icon": "Kartra.png",  
+      "dom": "form[action*='app.kartra.com']",
+      "js": {
+        "init_kartra_tracking": "",
+        "kartra_tracking_loaded": ""
+      },
+      "scripts": "app\\.kartra\\.com",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://home.kartra.com"
+    },
     "Keap": {
       "cats": [
         53
