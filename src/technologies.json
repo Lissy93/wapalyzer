@@ -19508,6 +19508,28 @@
       "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
     },
+    "Teachable": {
+      "cats": [
+        21
+      ],
+      "description": "Teachable is a learning management system or LMS platform.",
+      "icon": "Teachable.png",
+      "cookies": {
+        "_gat_teachableTracker": "\\d+"
+      },
+      "meta": {
+        "asset_host": "\\.teachablecdn\\.com"
+      },
+      "js": {
+        "trackTeachableGAEvent": "",
+        "isTeachable": "\\;confidence:50",
+        "teachableIcons": "\\;confidence:50"
+      },
+      "scripts": "\\.teachablecdn\\.com",
+      "saas": true,
+      "pricing": ["low", "mid" , "recurring"],
+      "website": "https://teachable.com"
+    },
     "Teads": {
       "cats": [
         36
