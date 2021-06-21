@@ -301,7 +301,7 @@ const Popup = {
     Array.from(document.querySelectorAll('a')).forEach((a) =>
       a.addEventListener('click', (event) => {
         event.preventDefault()
-        event.stopPropagation()
+        event.stopImmediatePropagation()
 
         open(a.href)
 
@@ -462,7 +462,7 @@ const Popup = {
     Array.from(document.querySelectorAll('a')).forEach((a) =>
       a.addEventListener('click', (event) => {
         event.preventDefault()
-        event.stopPropagation()
+        event.stopImmediatePropagation()
 
         open(a.href)
 
