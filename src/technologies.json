@@ -22827,17 +22827,32 @@
       "scripts": "basket.*\\.js\\;confidence:10",
       "website": "https://addyosmani.github.io/basket.js/"
     },
-    "borderfree": {
+    "Borderfree": {
       "cats": [
         6
       ],
-      "icon": "borderfree.png",
+      "icon": "Borderfree.png",
+      "description": "Borderfree is an cross-border ecommerce solutions provider.",
+      "cookies": {
+        "bfx.language": "^\\w+$\\;confidence:25",
+        "bfx.logLevel": "^\\w+$\\;confidence:25",
+        "bfx.apiKey:": "^[\\w\\d-]+$\\;confidence:25",
+        "bfx.country:": "^\\w+$\\;confidence:25"
+      },
+      "js": {
+        "bfx._brand": "\\;confidence:50",
+        "bfx._apiKey": "\\;confidence:50"
+      },
       "scripts": [
         "global\\.prd\\.borderfree\\.com",
         "wm\\.prd\\.borderfree\\.com",
         "bfx\\.js"
       ],
-      "website": "https://www.borderfree.com/"
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.borderfree.com"
     },
     "cPanel": {
       "cats": [
