@@ -3783,6 +3783,21 @@
       "scripts": "CatalystScripts",
       "website": "http://businesscatalyst.com"
     },
+    "Buy me a coffee": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Buy me a coffee is a service for online content creators that they may use to receive tips and donations to support their work.",
+      "icon": "Buy me a coffee.svg",
+      "dom": "a[href*='www.buymeacoffee.com/'][target='_blank']",
+      "scripts": "cdnjs\\.buymeacoffee\\.com/([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://www.buymeacoffee.com"
+    },
     "BuySellAds": {
       "cats": [
         36
@@ -5006,7 +5021,15 @@
       ],
       "dom": "#cookie-law-info-bar",
       "icon": "cookieyes.svg",
-      "scripts": "app\\.cookieyes\\.com/client_data/",
+      "dom": {
+        "#cookie-law-info-bar": {
+          "text": ""
+        }
+      },
+      "scripts": [
+        "app\\.cookieyes\\.com/client_data/",
+        "cdn-cookieyes\\.com/client_data/"
+      ],
       "website": "https://www.cookieyes.com/"
     },
     "Cookiebot": {
@@ -7555,7 +7578,9 @@
       "description": "GSAP is an animation library that allows you to create animations with JavaScript.",
       "icon": "TweenMax.png",
       "js": {
-        "TweenMax": "",
+        "gsap.version": "([\\d.]+)\\;version:\\1",
+        "TweenLite.version": "([\\d.]+)\\;version:\\1",
+        "TweenMax.version": "([\\d.]+)\\;version:\\1",
         "gsapVersions": ""
       },
       "scripts": "TweenMax(?:\\.min)?\\.js",
@@ -7905,11 +7930,21 @@
       "cats": [
         6
       ],
-      "icon": "Globale.png",
-      "scripts": [
-        "web\\.global-e\\.com"
-      ],
-      "website": "https://www.global-e.com/"
+      "description": "Global-e is a provider of cross-border ecommerce solutions.",
+      "icon": "Global-e.svg",
+      "cookies": {
+        "GlobalE_SupportThirdPartCookies": "",
+        "GlobalE_CT_Data": "",
+        "GlobalE_Data": ""
+      },
+      "js": {
+        "GLOBALE_ENGINE_CONFIG": "",
+        "GlobalE": ""
+      },
+      "scripts": "\\.global-e\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.global-e.com"
     },
     "Glyphicons": {
       "cats": [
@@ -8470,6 +8505,26 @@
       },
       "website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
     },
+    "Griddo": {
+      "cats": [
+        1
+      ],
+      "description": "Griddo is an Martech Experience Platform for creating custom digital experiences.",
+      "icon": "Griddo.svg",
+      "implies": [
+        "React",
+        "Gatsby"
+      ],
+      "meta": {
+        "generator": "^Griddo$"
+      },
+      "saas": true,
+      "pricing": [
+        "high",
+        "poa"
+      ],
+      "website": "https://griddo.io"
+    },
     "Gridsome": {
       "cats": [
         57
@@ -8954,6 +9009,24 @@
       },
       "scripts": "//static\\.hotjar\\.com/",
       "website": "https://www.hotjar.com"
+    },
+    "Howler.js": {
+      "cats": [
+        59
+      ],
+      "description": "Howler.js is an audio library with support for the Web Audio API and a fallback mechanism for HTML5 Audio.",
+      "icon": "Howler.js.svg",
+      "js": {
+        "HowlerGlobal": "",
+        "Howler": ""
+      },
+      "scripts": [
+        "howler@([\\d.]+)/dist/howler\\.min\\.js\\;version:\\1",
+        "howler/([\\d.]+)/howler(?:\\.core)?\\.min\\.js\\;version:\\1"
+      ],
+      "saas": false,
+      "oss": true,
+      "website": "https://howlerjs.com"
     },
     "HubSpot": {
       "cats": [
@@ -10163,6 +10236,25 @@
       "scripts": "karma\\.mdpcdn\\.com",
       "website": "https://karma-runner.github.io"
     },
+    "Kartra": {
+      "cats": [
+        32
+      ],
+      "description": "Kartra is an online business platform that offers marketing and sales tools.",
+      "icon": "Kartra.png",  
+      "dom": "form[action*='app.kartra.com']",
+      "js": {
+        "init_kartra_tracking": "",
+        "kartra_tracking_loaded": ""
+      },
+      "scripts": "app\\.kartra\\.com",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://home.kartra.com"
+    },
     "Keap": {
       "cats": [
         53
@@ -10430,6 +10522,26 @@
       },
       "website": "https://www.kobimaster.com.tr"
     },
+    "Ko-fi": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Ko-fi is an online platform that helps content creators get the financial support.",
+      "icon": "Ko-fi.svg",
+      "dom": "a[href*='ko-fi.com/'][target='_blank']",
+      "js": {
+        "kofiwidget2": ""
+      },
+      "scripts": "ko-fi\\.com/widgets",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "website": "https://ko-fi.com"
+    },
     "Koha": {
       "cats": [
         50
@@ -10691,6 +10803,21 @@
       "saas": true,
       "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
       "website": "https://www.launchrock.com"
+    },
+    "Leadinfo": {
+      "cats": [
+        10
+      ],
+      "description": "Leadinfo is a lead generation software that enables you to recognise B2B website visitors.",
+      "icon": "Leadinfo.svg",
+      "js": {
+        "GlobalLeadinfoNamespace": "\\;confidence:50",
+        "leadinfo": "\\;confidence:50"
+      },
+      "scripts": "cdn\\.leadinfo\\.net",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.leadinfo.com"
     },
     "Leaflet": {
       "cats": [
@@ -12679,6 +12806,21 @@
         "cdn\\.mouseflow\\.com"
       ],
       "website": "https://mouseflow.com/"
+    },
+    "Movable Ink": {
+      "cats": [
+        76
+      ],
+      "description": "Movable Ink is a technology company that allows marketers to change emails after they have been sent out.",
+      "icon": "Movable Ink.png",
+      "js": {
+        "MovableInkTrack": ""
+      },
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://movableink.com"
     },
     "Movable Type": {
       "cats": [
@@ -14862,6 +15004,27 @@
       },
       "website": "http://www.po.st/"
     },
+    "Podia": {
+      "cats": [
+        21,
+        6
+      ],
+      "description": "Podia is a platform to host and sell online courses, memberships, and digital downloads.",
+      "icon": "Podia.svg",
+      "cookies": {
+        "_podia_storefront_visitor_id": ""
+      },
+      "js": {
+        "Podia.Checkout": ""
+      },
+      "scripts": "cdn\\.podia\\.com",
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.podia.com"
+    },
     "Polyfill": {
       "cats": [
         59
@@ -15372,6 +15535,20 @@
       },
       "icon": "Python.png",
       "website": "http://python.org"
+    },
+    "Quadpay": {
+      "cats": [
+        41
+      ],
+      "description": "Quadpay is a payment platform.",
+      "icon": "Quadpay.svg",
+      "js": {
+        "QuadPayShopify": ""
+      },
+      "scripts": "\\.quadpay\\.com/quadpay-widget-([\\d.]+)\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.quadpay.com"
     },
     "Quantcast Choice": {
       "cats": [
@@ -19566,6 +19743,28 @@
       "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
     },
+    "Teachable": {
+      "cats": [
+        21
+      ],
+      "description": "Teachable is a learning management system or LMS platform.",
+      "icon": "Teachable.png",
+      "cookies": {
+        "_gat_teachableTracker": "\\d+"
+      },
+      "meta": {
+        "asset_host": "\\.teachablecdn\\.com"
+      },
+      "js": {
+        "trackTeachableGAEvent": "",
+        "isTeachable": "\\;confidence:50",
+        "teachableIcons": "\\;confidence:50"
+      },
+      "scripts": "\\.teachablecdn\\.com",
+      "saas": true,
+      "pricing": ["low", "mid" , "recurring"],
+      "website": "https://teachable.com"
+    },
     "Teads": {
       "cats": [
         36
@@ -19760,6 +19959,24 @@
         "Symfony"
       ],
       "website": "http://thelia.net"
+    },
+    "Thinkific": {
+      "cats": [
+        21
+      ],
+      "description": "Thinkific is a software platform that enables entrepreneurs to create, market, sell, and deliver their own online courses.",
+      "icon": "Thinkific.svg",
+      "cookies": {
+        "_thinkific_session": ""
+      },
+      "js": {
+        "Thinkific": "",
+        "ThinkificAnalytics": ""
+      },
+      "scripts": "cdn(?:-themes)?\\.thinkific\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.thinkific.com"
     },
     "ThinkPHP": {
       "cats": [
@@ -22770,17 +22987,32 @@
       "scripts": "basket.*\\.js\\;confidence:10",
       "website": "https://addyosmani.github.io/basket.js/"
     },
-    "borderfree": {
+    "Borderfree": {
       "cats": [
         6
       ],
-      "icon": "borderfree.png",
+      "icon": "Borderfree.png",
+      "description": "Borderfree is an cross-border ecommerce solutions provider.",
+      "cookies": {
+        "bfx.language": "^\\w+$\\;confidence:25",
+        "bfx.logLevel": "^\\w+$\\;confidence:25",
+        "bfx.apiKey:": "^[\\w\\d-]+$\\;confidence:25",
+        "bfx.country:": "^\\w+$\\;confidence:25"
+      },
+      "js": {
+        "bfx._brand": "\\;confidence:50",
+        "bfx._apiKey": "\\;confidence:50"
+      },
       "scripts": [
         "global\\.prd\\.borderfree\\.com",
         "wm\\.prd\\.borderfree\\.com",
         "bfx\\.js"
       ],
-      "website": "https://www.borderfree.com/"
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.borderfree.com"
     },
     "cPanel": {
       "cats": [
