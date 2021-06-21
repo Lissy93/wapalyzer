@@ -3755,6 +3755,21 @@
       "scripts": "CatalystScripts",
       "website": "http://businesscatalyst.com"
     },
+    "Buy me a coffee": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Buy me a coffee is a service for online content creators that they may use to receive tips and donations to support their work.",
+      "icon": "Buy me a coffee.svg",
+      "dom": "a[href*='www.buymeacoffee.com/'][target='_blank']",
+      "scripts": "cdnjs\\.buymeacoffee\\.com/([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://www.buymeacoffee.com"
+    },
     "BuySellAds": {
       "cats": [
         36
