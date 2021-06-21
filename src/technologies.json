@@ -4977,7 +4977,15 @@
       ],
       "dom": "#cookie-law-info-bar",
       "icon": "cookieyes.svg",
-      "scripts": "app\\.cookieyes\\.com/client_data/",
+      "dom": {
+        "#cookie-law-info-bar": {
+          "text": ""
+        }
+      },
+      "scripts": [
+        "app\\.cookieyes\\.com/client_data/",
+        "cdn-cookieyes\\.com/client_data/"
+      ],
       "website": "https://www.cookieyes.com/"
     },
     "Cookiebot": {
