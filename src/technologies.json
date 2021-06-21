@@ -8907,6 +8907,24 @@
       "scripts": "//static\\.hotjar\\.com/",
       "website": "https://www.hotjar.com"
     },
+    "Howler.js": {
+      "cats": [
+        59
+      ],
+      "description": "Howler.js is an audio library with support for the Web Audio API and a fallback mechanism for HTML5 Audio.",
+      "icon": "Howler.js.svg",
+      "js": {
+        "HowlerGlobal": "",
+        "Howler": ""
+      },
+      "scripts": [
+        "howler@([\\d.]+)/dist/howler\\.min\\.js\\;version:\\1",
+        "howler/([\\d.]+)/howler(?:\\.core)?\\.min\\.js\\;version:\\1"
+      ],
+      "saas": false,
+      "oss": true,
+      "website": "https://howlerjs.com"
+    },
     "HubSpot": {
       "cats": [
         32
