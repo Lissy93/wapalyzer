@@ -6,19 +6,15 @@ const http = require('http')
 const https = require('https')
 const Wappalyzer = require('./wappalyzer')
 
-const {
-  setTechnologies,
-  setCategories,
-  analyze,
-  analyzeManyToMany,
-  resolve,
-} = Wappalyzer
+const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
+  Wappalyzer
 
-const {
-  AWS_LAMBDA_FUNCTION_NAME,
-  CHROMIUM_BIN,
-  CHROMIUM_DATA_DIR,
-} = process.env
+function next() {
+  return new Promise((resolve) => setImmediate(resolve))
+}
+
+const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN, CHROMIUM_DATA_DIR } =
+  process.env
 
 let puppeteer
 let chromiumArgs = [
@@ -57,45 +53,75 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-function analyzeJs(js) {
+async function analyzeJs(js) {
   return Array.prototype.concat.apply(
     [],
-    js.map(({ name, chain, value }) =>
-      analyzeManyToMany(
-        Wappalyzer.technologies.find(({ name: _name }) => name === _name),
-        'js',
-        { [chain]: [value] }
-      )
+    await Promise.all(
+      js.map(async ({ name, chain, value }) => {
+        await next()
+
+        return analyzeManyToMany(
+          Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+          'js',
+          { [chain]: [value] }
+        )
+      })
     )
   )
 }
 
-function analyzeDom(dom) {
+async function analyzeDom(dom) {
   return Array.prototype.concat.apply(
     [],
-    dom.map(({ name, selector, text, property, attribute, value }) => {
-      const technology = Wappalyzer.technologies.find(
-        ({ name: _name }) => name === _name
+    await Promise.all(
+      dom.map(
+        async ({
+          name,
+          selector,
+          exists,
+          text,
+          property,
+          attribute,
+          value,
+        }) => {
+          await next()
+
+          const technology = Wappalyzer.technologies.find(
+            ({ name: _name }) => name === _name
+          )
+
+          if (typeof exists !== 'undefined') {
+            return analyzeManyToMany(technology, 'dom.exists', {
+              [selector]: [''],
+            })
+          }
+
+          if (typeof text !== 'undefined') {
+            return analyzeManyToMany(technology, 'dom.text', {
+              [selector]: [text],
+            })
+          }
+
+          if (typeof property !== 'undefined') {
+            return analyzeManyToMany(technology, `dom.properties.${property}`, {
+              [selector]: [value],
+            })
+          }
+
+          if (typeof attribute !== 'undefined') {
+            return analyzeManyToMany(
+              technology,
+              `dom.attributes.${attribute}`,
+              {
+                [selector]: [value],
+              }
+            )
+          }
+
+          return []
+        }
       )
-
-      if (text) {
-        return analyzeManyToMany(technology, 'dom.text', { [selector]: [text] })
-      }
-
-      if (property) {
-        return analyzeManyToMany(technology, `dom.properties.${property}`, {
-          [selector]: [value],
-        })
-      }
-
-      if (attribute) {
-        return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
-          [selector]: [value],
-        })
-      }
-
-      return []
-    })
+    )
   )
 }
 
@@ -237,7 +263,10 @@ class Site {
 
     this.pages = []
 
+    this.dnsChecked = false
     this.dns = []
+
+    this.probed = false
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -271,16 +300,21 @@ class Site {
 
   promiseTimeout(
     promise,
+    fallback,
     errorMessage = 'The website took too long to respond'
   ) {
     let timeout = null
+
+    if (!(promise instanceof Promise)) {
+      return Promise.resolve(promise)
+    }
 
     return Promise.race([
       new Promise((resolve, reject) => {
         timeout = setTimeout(() => {
           clearTimeout(timeout)
 
-          reject(new Error(errorMessage))
+          fallback ? resolve(fallback) : reject(new Error(errorMessage))
         }, this.options.maxWait)
       }),
       promise.then((value) => {
@@ -342,10 +376,10 @@ class Site {
           if (!xhrDebounce.includes(hostname)) {
             xhrDebounce.push(hostname)
 
-            setTimeout(() => {
+            setTimeout(async () => {
               xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
-              this.onDetect(analyze({ xhr: hostname }))
+              this.onDetect(await analyze({ xhr: hostname }))
             }, 1000)
           }
         }
@@ -401,7 +435,7 @@ class Site {
               ? response.securityDetails().issuer()
               : ''
 
-            this.onDetect(analyze({ headers, certIssuer }))
+            this.onDetect(await analyze({ headers, certIssuer }))
 
             await this.emit('response', { page, response, headers, certIssuer })
           }
@@ -440,9 +474,11 @@ class Site {
                   rel,
                 })
               )
-            )
+            ),
+            { jsonValue: () => [] }
           )
-        ).jsonValue()
+        ).jsonValue(),
+        []
       )
 
       // CSS
@@ -471,9 +507,11 @@ class Site {
               }
 
               return css.join('\n')
-            }, this.options.htmlMaxRows)
+            }, this.options.htmlMaxRows),
+            { jsonValue: () => '' }
           )
-        ).jsonValue()
+        ).jsonValue(),
+        ''
       )
 
       // Script tags
@@ -484,9 +522,11 @@ class Site {
               Array.from(document.getElementsByTagName('script'))
                 .map(({ src }) => src)
                 .filter((src) => src)
-            )
+            ),
+            { jsonValue: () => [] }
           )
-        ).jsonValue()
+        ).jsonValue(),
+        []
       )
 
       // Meta tags
@@ -507,9 +547,11 @@ class Site {
                 },
                 {}
               )
-            )
+            ),
+            { jsonValue: () => [] }
           )
-        ).jsonValue()
+        ).jsonValue(),
+        []
       )
 
       // JavaScript
@@ -545,7 +587,8 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        )
+        ),
+        []
       )
 
       // DOM
@@ -559,70 +602,87 @@ class Site {
                   : !!value
 
               Object.keys(dom).forEach((selector) => {
-                const nodes = document.querySelectorAll(selector)
+                let nodes = []
+
+                try {
+                  nodes = document.querySelectorAll(selector)
+                } catch (error) {
+                  // Continue
+                }
 
                 if (!nodes.length) {
                   return
                 }
 
-                dom[selector].forEach(({ text, properties, attributes }) => {
-                  nodes.forEach((node) => {
-                    if (text) {
-                      const value = node.textContent.trim()
-
-                      if (value) {
+                dom[selector].forEach(
+                  ({ exists, text, properties, attributes }) => {
+                    nodes.forEach((node) => {
+                      if (exists) {
                         technologies.push({
                           name,
                           selector,
-                          text: value,
+                          exists: '',
                         })
                       }
-                    }
 
-                    if (properties) {
-                      Object.keys(properties).forEach((property) => {
-                        if (
-                          Object.prototype.hasOwnProperty.call(node, property)
-                        ) {
-                          const value = node[property]
+                      if (text) {
+                        const value = node.textContent.trim()
 
-                          if (typeof value !== 'undefined') {
-                            technologies.push({
-                              name,
-                              selector,
-                              property,
-                              value: toScalar(value),
-                            })
-                          }
-                        }
-                      })
-                    }
-
-                    if (attributes) {
-                      Object.keys(attributes).forEach((attribute) => {
-                        if (node.hasAttribute(attribute)) {
-                          const value = node.getAttribute(attribute)
-
+                        if (value) {
                           technologies.push({
                             name,
                             selector,
-                            attribute,
-                            value: toScalar(value),
+                            text: value,
                           })
                         }
-                      })
-                    }
-                  })
-                })
+                      }
+
+                      if (properties) {
+                        Object.keys(properties).forEach((property) => {
+                          if (
+                            Object.prototype.hasOwnProperty.call(node, property)
+                          ) {
+                            const value = node[property]
+
+                            if (typeof value !== 'undefined') {
+                              technologies.push({
+                                name,
+                                selector,
+                                property,
+                                value: toScalar(value),
+                              })
+                            }
+                          }
+                        })
+                      }
+
+                      if (attributes) {
+                        Object.keys(attributes).forEach((attribute) => {
+                          if (node.hasAttribute(attribute)) {
+                            const value = node.getAttribute(attribute)
+
+                            technologies.push({
+                              name,
+                              selector,
+                              attribute,
+                              value: toScalar(value),
+                            })
+                          }
+                        })
+                      }
+                    })
+                  }
+                )
               })
 
               return technologies
             }, [])
           },
           Wappalyzer.technologies
-            .filter(({ dom }) => dom)
+            .filter(({ dom }) => dom && dom.constructor === Object)
             .map(({ name, dom }) => ({ name, dom }))
-        )
+        ),
+        []
       )
 
       // Cookies
@@ -659,7 +719,9 @@ class Site {
       }
 
       // DNS
-      if (!Object.keys(this.dns).length) {
+      if (!this.dnsChecked) {
+        this.dnsChecked = true
+
         const records = {}
         const resolve = (func, hostname) => {
           return this.promiseTimeout(
@@ -669,25 +731,21 @@ class Site {
               }
 
               return []
-            })
+            }),
+            []
           )
         }
 
         const domain = url.hostname.replace(/^www\./, '')
 
-        ;[
-          records.cname,
-          records.ns,
-          records.mx,
-          records.txt,
-          records.soa,
-        ] = await Promise.all([
-          resolve(dns.resolveCname, url.hostname),
-          resolve(dns.resolveNs, domain),
-          resolve(dns.resolveMx, domain),
-          resolve(dns.resolveTxt, domain),
-          resolve(dns.resolveSoa, domain),
-        ])
+        ;[records.cname, records.ns, records.mx, records.txt, records.soa] =
+          await Promise.all([
+            resolve(dns.resolveCname, url.hostname),
+            resolve(dns.resolveNs, domain),
+            resolve(dns.resolveMx, domain),
+            resolve(dns.resolveTxt, domain),
+            resolve(dns.resolveSoa, domain),
+          ])
 
         this.dns = Object.keys(records).reduce((dns, type) => {
           dns[type] = dns[type] || []
@@ -706,7 +764,7 @@ class Site {
           return dns
         }, {})
 
-        this.onDetect(analyze({ dns: this.dns }))
+        this.onDetect(await analyze({ dns: this.dns }))
       }
 
       // Validate response
@@ -722,10 +780,10 @@ class Site {
         throw new Error('No response from server')
       }
 
-      this.onDetect(analyzeDom(dom))
-      this.onDetect(analyzeJs(js))
+      this.onDetect(await analyzeDom(dom))
+      this.onDetect(await analyzeJs(js))
       this.onDetect(
-        analyze({
+        await analyze({
           url,
           cookies,
           html,
@@ -793,14 +851,16 @@ class Site {
         await sleep(this.options.delay * index)
       }
 
-      if (this.options.probe) {
-        await this.probe(url)
-      }
-
       const links = await this.goto(url)
 
       if (links && this.options.recursive && depth < this.options.maxDepth) {
         await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+      }
+
+      if (this.options.probe && !this.probed) {
+        this.probed = true
+
+        await this.probe(url)
       }
     } catch (error) {
       this.analyzedUrls[url.href] = {
@@ -848,6 +908,7 @@ class Site {
   async probe(url) {
     const files = {
       robots: '/robots.txt',
+      magento: '/magento_version',
     }
 
     for (const file of Object.keys(files)) {
@@ -860,7 +921,7 @@ class Site {
 
         this.log(`get ${path}: ok`)
 
-        this.onDetect(analyze({ [file]: body }))
+        this.onDetect(await analyze({ [file]: body }))
       } catch (error) {
         this.error(`get ${path}: ${error.message || error}`)
       }

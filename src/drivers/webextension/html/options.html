@@ -13,6 +13,8 @@
   </head>
   <body>
     <div class="options">
+      <button data-i18n="clearCache" class="options__cache">&nbsp;</button>
+
       <label class="options__label">
         <input class="options__checkbox" type="checkbox">
 
@@ -34,16 +36,20 @@
       <label class="options__label">
         <input class="options__checkbox" type="checkbox">
 
-        <span data-i18n="optionTracking">&nbsp;</span>
+        <span data-i18n="optionShowCached">Show cached results</span>
       </label>
 
       <label class="options__label">
         <input class="options__checkbox" type="checkbox">
 
-        <span data-i18n="optionThemeMode">&nbsp;</span>
+        <span data-i18n="optionTracking">&nbsp;</span>
       </label>
 
-      <button data-i18n="clearCache" class="options__cache">&nbsp;</button>
+      <label class="options__label">
+        <span data-i18n="optionApiKey">&nbsp;</span>
+
+        <input class="options__input" type="password">
+      </label>
     </div>
   </body>
 </html>
