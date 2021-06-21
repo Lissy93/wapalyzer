@@ -7505,7 +7505,9 @@
       "description": "GSAP is an animation library that allows you to create animations with JavaScript.",
       "icon": "TweenMax.png",
       "js": {
-        "TweenMax": "",
+        "gsap.version": "([\\d.]+)\\;version:\\1",
+        "TweenLite.version": "([\\d.]+)\\;version:\\1",
+        "TweenMax.version": "([\\d.]+)\\;version:\\1",
         "gsapVersions": ""
       },
       "scripts": "TweenMax(?:\\.min)?\\.js",
