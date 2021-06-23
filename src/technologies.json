@@ -5682,6 +5682,28 @@
       "icon": "DigiCert.svg",
       "website": "https://www.digicert.com/"
     },
+    "Digistore24": {
+      "cats": [
+        71
+      ],
+      "description": "Digistore24 is a German digital reselling and affiliate marketing platform.",
+      "icon": "Digistore24.svg",
+      "dom": "a[href*='www.digistore24.com'][target='_blank']",
+      "js": {
+        "getTheSourceForDigistoreLinks": "",
+        "DIGISTORE_VENDORKEY": "",
+        "DIGISTORE_LINK_ID_KEY": ""
+      },
+      "scripts": [
+        "digistore/digistore\\.js",
+        "www\\.digistore24\\.com"
+      ],
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://www.digistore24.com"
+    },
     "DigitalRiver": {
       "cats": [
         6
