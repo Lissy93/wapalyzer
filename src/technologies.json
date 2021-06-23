@@ -4441,7 +4441,7 @@
       "description": "ClearSale offers fraud management and chargeback protection services.",
       "icon": "ClearSale.svg",
       "js": {
-        "window.csdm": "\\;confidence:50"
+        "csdm": "\\;confidence:50"
       },
       "scripts": [
         "device\\.clearsale\\.com\\.br"
@@ -7382,7 +7382,7 @@
       "description": "Forter is a SaaS company that provides fraud prevention technology for online retailers and marketplaces.",
       "icon": "Forter.svg",
       "js": {
-        "window.ftr__startScriptLoad": ""
+        "ftr__startScriptLoad": ""
       },
       "scripts": "forter\\.com",
       "saas": true,
@@ -9680,6 +9680,99 @@
       "html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
       "icon": "Ionicons.png",
       "website": "http://ionicons.com"
+    },
+    "ip-api": {
+      "cats": [
+        79
+      ],
+      "icon": "ip-api.png",
+      "xhr": "ip-api\\.com/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ip-api.com/"
+    },
+    "ipapi.co": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi.co is a web analytics provider with IP address lookup and location API.",
+      "icon": "ipapi.co.png",
+      "xhr": "ipapi\\.co/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ipapi.co"
+    },
+    "ipapi": {
+    "cats": [
+      79
+    ],
+    "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
+    "icon": "ipapi.png",
+    "xhr": "api\\.ipapi\\.com",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "payg"
+    ],
+    "website": "https://ipapi.com"
+    },
+    "ipdata": {
+      "cats": [
+        79
+      ],
+      "description": "ipdata is a JSON IP Address Geolocation API that allows to lookup the location of both IPv4 and IPv6.",
+      "icon": "ipdata.png",
+      "xhr": "api\\.ipdata\\.co",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "low"
+      ],
+      "website": "https://ipdata.co/"
+    },
+    "ipify": {
+      "cats": [
+        79
+      ],
+      "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
+      "icon": "ipify.png",
+      "xhr": "(?:api|api64|geo)\\.ipify\\.org",
+      "scripts": "\\.ipify\\.org",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg",
+        "mid",
+        "recurring"
+      ],
+      "website": "https://ipify.org"
+    },
+    "ipstack": {
+      "cats": [
+        79
+      ],
+      "description": "ipstack is a real-time IP to geolocation API capable of looking at location data and assessing security threats originating from risky IP addresses.",
+      "icon": "ipstack.png",
+      "xhr": "api\\.ipstack\\.com",
+      "js": {
+        "ENV.ipStackAccessToken": ""
+      },
+      "saas": true,
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "website": "https://ipstack.com"
     },
     "Irroba": {
       "cats": [
