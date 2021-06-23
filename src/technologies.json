@@ -12048,6 +12048,25 @@
       },
       "website": "http://max-3000.com"
     },
+    "MaxMind": {
+      "cats": [
+        79,
+        83
+      ],
+      "icon": "MaxMind.png",
+      "description": "MaxMind is a provider of geolocation and online fraud detection tools.",
+      "scripts": [
+        "[device|js]\\.maxmind\\.com/",
+        "geoip\\.maxmind\\.min\\.js"
+      ],
+      "xhr": "\\.maxmind\\.com",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "website": "https://www.maxmind.com"
+    }, 
     "Maxemail": {
       "cats": [
         32
