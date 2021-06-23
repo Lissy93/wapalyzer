@@ -7066,8 +7066,10 @@
     },
     "FingerprintJS": {
       "cats": [
-        59
+        59,
+        89
       ],
+      "description": "FingerprintJS is a browser fingerprinting library that queries browser attributes and computes a hashed visitor identifier from them.",
       "icon": "FingerprintJS.svg",
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
@@ -7077,9 +7079,18 @@
       },
       "scripts": [
         "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "/fingerprintjs@(\\d)\\;version:\\1"
+        "/fingerprintjs@(\\d.*?)/\\;version:\\1",
+        "/fingerprintjs-pro/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs-pro@(\\d.*?)/\\;version:\\1",
+        "/fingerprintjs2/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs2@(\\d.*?)/\\;version:\\1"
       ],
-      "website": "https://fingerprintjs.com/"
+      "saas": true,
+      "oss": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://fingerprintjs.com"
     },
     "Firebase": {
       "cats": [
@@ -7362,18 +7373,23 @@
     },
     "Forter": {
       "cats": [
-        10
+        6,
+        16
       ],
       "cookies": {
         "forterToken": ""
       },
-      "description": "Forter provides fraud prevention technology for online retailers and marketplaces.",
+      "description": "Forter is a SaaS company that provides fraud prevention technology for online retailers and marketplaces.",
       "icon": "Forter.svg",
       "js": {
         "window.ftr__startScriptLoad": ""
       },
       "scripts": "forter\\.com",
-      "website": "https://www.forter.com/"
+      "saas": true,
+      "pricing": [
+
+      ],
+      "website": "https://www.forter.com"
     },
     "Fortune3": {
       "cats": [
@@ -7532,7 +7548,7 @@
         32,
         74
       ],
-      "description": "Frosmo is a SaaS company wich provides AI-driven personalisation products.",
+      "description": "Frosmo is a SaaS company which provides AI-driven personalisation products.",
       "icon": "Frosmo.png",
       "js": {
         "_frosmo": "",
@@ -10752,7 +10768,8 @@
     },
     "Kount": {
       "cats": [
-        10
+        6,
+        16
       ],
       "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
       "icon": "Kount.svg",
@@ -14636,14 +14653,25 @@
       "cats": [
         16
       ],
+      "icon": "perimeterx.svg",
+      "description": "PerimeterX is a provider of scalable, behavior-based threat protection technology for the web, cloud, and mobile.",
       "cookies": {
         "_px3": "",
         "_pxff_cc": "",
         "_pxhd": "",
         "_pxvid": ""
       },
-      "icon": "perimeterx.svg",
-      "website": "https://www.perimeterx.com/"
+      "js": {
+        "_pxAppId": ""
+      },
+      "scripts": "client\\.a\\.pxi\\.pub/",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "recurring",
+        "poa"
+      ],
+      "website": "https://www.perimeterx.com"
     },
     "Perl": {
       "cats": [
