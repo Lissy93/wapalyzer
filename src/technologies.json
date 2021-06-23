@@ -9693,7 +9693,7 @@
       ],
       "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
       "icon": "ipify.png",
-      "xhr": "[api|api64|geo]\\.ipify\\.org",
+      "xhr": "(?:api|api64|geo)\\.ipify\\.org",
       "scripts": "\\.ipify\\.org",
       "saas": true,
       "pricing": [
