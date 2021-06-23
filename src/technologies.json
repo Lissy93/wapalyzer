@@ -316,6 +316,10 @@
     "82": {
       "name": "Drupal themes",
       "priority": 9
+    },
+    "83": {
+      "name": "Browser fingerprinting",
+      "priority": 9
     }
   },
   "technologies": {
@@ -4569,6 +4573,23 @@
       },
       "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
+    },
+    "ClientJS": {
+      "cats": [
+        59,
+        83
+      ],
+      "description": "ClientJS is a JavaScript library for generating browser fingerprints, exposing all the browser data-points.",
+      "icon": "ClientJS.png",
+      "js": {
+        "ClientJS": ""
+      },
+      "scripts": [
+        "/clientjs@(\\d.*?)/\\;version:\\1",
+        "/ClientJS/(?:(\\d.*?)/)?\\;version:\\1"
+      ],
+      "oss": true,
+      "website": "http://clientjs.org"
     },
     "Clipboard.js": {
       "cats": [
