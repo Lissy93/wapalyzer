@@ -9632,40 +9632,65 @@
       "cats": [
         79
       ],
-      "description": "ipapi.co provides a REST API to find the location of an IP address.",
-      "xhr": "ipapi\\.co",
-      "icon": "ipapi1.png",
-      "website": "https://ipapi.co",
-      "pricing": ["low", "freemium"]
+      "description": "ipapi.co is a web analytics provider with IP address lookup and location API.",
+      "icon": "ipapi.co.png",
+      "xhr": "ipapi\\.co/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ipapi.co"
     },
     "ipapi": {
-      "cats": [
-        79
-      ],
-      "description": "ipapi provides an easy-to-use API interface allowing customers to look various pieces of information IPv4 and IPv6 addresses are associated with.",
-      "xhr": "api\\.ipapi\\.com",
-      "icon": "ipapi2.png",
-      "website": "https://ipapi.com",
-      "pricing": ["low", "freemium"]
-    },
+    "cats": [
+      79
+    ],
+    "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
+    "icon": "ipapi.png",
+    "xhr": "api\\.ipapi\\.com",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "payg"
+    ],
+    "website": "https://ipapi.com"
+  },
     "ipify": {
       "cats": [
         79
       ],
-      "description": "Maybe you're provisioning new cloud servers and need to know your IP -- maybe you're behind a corporate firewall and need to tunnel information -- whatever the reason: sometimes having a public IP address API is useful!",
-      "xhr": "[api|api64|geo]\\.ipify\\.org",
+      "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
       "icon": "ipify.png",
+      "xhr": "[api|api64|geo]\\.ipify\\.org",
+      "scripts": "\\.ipify\\.org",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg",
+        "mid",
+        "recurring"
+      ],
       "website": "https://ipify.org"
     },
     "ipstack": {
       "cats": [
         79
       ],
-      "description": "ipstack offers one of the leading IP to geolocation APIs and global IP database services worldwide.",
-      "xhr": "api\\.ipstack\\.com",
+      "description": "ipstack is a real-time IP to geolocation API capable of looking at location data and assessing security threats originating from risky IP addresses.",
       "icon": "ipstack.png",
-      "website": "https://ipstack.com",
-      "pricing": ["low", "freemium"]
+      "xhr": "api\\.ipstack\\.com",
+      "js": {
+        "window.ENV.ipStackAccessToken": ""
+      },
+      "saas": true,
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "website": "https://ipstack.com"
     },
     "Irroba": {
       "cats": [
