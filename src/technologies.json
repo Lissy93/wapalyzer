@@ -5370,6 +5370,24 @@
       "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
       "website": "http://d3js.org"
     },
+    "db-ip": {
+      "cats": [
+        79
+      ],
+      "description": "dbip is a geolocation API and database.",
+      "icon": "db-ip.webp",
+      "xhr": "api\\.db-ip\\.com",
+      "scripts": "cdn\\.db-ip\\.com",
+      "js": {
+        "ENV.dbip": ""
+      },
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://db-ip.com/"
+    },
     "DERAK.CLOUD": {
       "cats": [
         31
