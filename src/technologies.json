@@ -4421,7 +4421,7 @@
       "description": "ClearSale offers fraud management and chargeback protection services.",
       "icon": "ClearSale.svg",
       "js": {
-        "window.csdm": "\\;confidence:50"
+        "csdm": "\\;confidence:50"
       },
       "scripts": [
         "device\\.clearsale\\.com\\.br"
@@ -7333,7 +7333,7 @@
       "description": "Forter provides fraud prevention technology for online retailers and marketplaces.",
       "icon": "Forter.svg",
       "js": {
-        "window.ftr__startScriptLoad": ""
+        "ftr__startScriptLoad": ""
       },
       "scripts": "forter\\.com",
       "website": "https://www.forter.com/"
@@ -9712,7 +9712,7 @@
       "icon": "ipstack.png",
       "xhr": "api\\.ipstack\\.com",
       "js": {
-        "window.ENV.ipStackAccessToken": ""
+        "ENV.ipStackAccessToken": ""
       },
       "saas": true,
       "pricing": [
