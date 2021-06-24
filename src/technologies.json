@@ -7132,12 +7132,8 @@
         "FingerprintJS": ""
       },
       "scripts": [
-        "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "/fingerprintjs@(\\d.*?)/\\;version:\\1",
-        "/fingerprintjs-pro/(?:(\\d.*?)/)?\\;version:\\1",
-        "/fingerprintjs-pro@(\\d.*?)/\\;version:\\1",
-        "/fingerprintjs2/(?:(\\d.*?)/)?\\;version:\\1",
-        "/fingerprintjs2@(\\d.*?)/\\;version:\\1"
+        "fingerprint(?:\/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.dev]+)\\;version:\\1\\2"
       ],
       "saas": true,
       "oss": true,
