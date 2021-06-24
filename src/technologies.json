@@ -5421,6 +5421,24 @@
       "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
       "website": "http://d3js.org"
     },
+    "db-ip": {
+      "cats": [
+        79
+      ],
+      "description": "dbip is a geolocation API and database.",
+      "icon": "db-ip.png",
+      "xhr": "api\\.db-ip\\.com",
+      "scripts": "cdn\\.db-ip\\.com",
+      "js": {
+        "ENV.dbip": ""
+      },
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://db-ip.com/"
+    },
     "DERAK.CLOUD": {
       "cats": [
         31
@@ -9766,19 +9784,19 @@
       "website": "https://ipapi.co"
     },
     "ipapi": {
-    "cats": [
-      79
-    ],
-    "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
-    "icon": "ipapi.png",
-    "xhr": "api\\.ipapi\\.com",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "payg"
-    ],
-    "website": "https://ipapi.com"
+      "cats": [
+        79
+      ],
+      "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
+      "icon": "ipapi.png",
+      "xhr": "api\\.ipapi\\.com",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ipapi.com"
     },
     "ipdata": {
       "cats": [
@@ -9794,6 +9812,21 @@
         "low"
       ],
       "website": "https://ipdata.co/"
+    },
+    "ipgeolocation": {
+      "cats": [
+        79
+      ],
+      "description": "ipgeolocation is an IP Geolocation API and Accurate IP Lookup Database.",
+      "icon": "ipgeolocation.png",
+      "xhr": "api\\.ipgeolocation\\.io",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "mid"
+      ],
+      "website": "https://ipgeolocation.co/"
     },
     "ipify": {
       "cats": [
@@ -9811,6 +9844,16 @@
         "recurring"
       ],
       "website": "https://ipify.org"
+    },
+    "IPInfoDB": {
+      "cats": [
+        79
+      ],
+      "description": "IPInfoDB is the API that returns the location of an IP address.",
+      "icon": "IPInfoDB.png",
+      "xhr": "api\\.ipinfodb\\.com",
+      "saas": true,
+      "website": "https://www.ipinfodb.com/"
     },
     "ipstack": {
       "cats": [
