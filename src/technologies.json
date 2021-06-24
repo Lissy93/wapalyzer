@@ -21414,9 +21414,9 @@
       "icon": "varbase.png",
       "implies": "Drupal",
       "html": [
-        "<meta[^>]+(content=\"Varbase\")\\;confidence:100",
+        "<meta[^>]+(?:content=\"Varbase\")\\;confidence:99",
         "<[^>]+(?:class=\"[^>]+block[_-]+varbase|class=\"[^>]+view[_-]+varbase|class=\"[^>]+view-mode[_-]+varbase)\\;confidence:50",
-        "(?:varbase_bootstrap_paragraphs|vbp-colors|varbase_heroslider_media|varbase_media|varbase_video_player|varbase_blog)\\;confidence:75"
+        "<script[^>]+(?:drupal-settings-json)(?:[\\s\\S]*)(?:varbase_|vbp-colors|vmi|vartheme)\\;confidence:50"
       ],
       "oss": true,
       "website": "https://www.vardot.com/solutions/varbase"
