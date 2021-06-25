@@ -830,6 +830,24 @@
       "scripts": "ads\\.adthrive\\.com",
       "website": "https://www.adthrive.com"
     },
+    "Advally": {
+      "cats": [
+        36
+      ],
+      "description": "Advally is an advertising platform for publishers.",
+      "icon": "Advally.png",
+      "js": {
+        "advally": ""
+      },
+      "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "high",
+        "recurring"
+      ],
+      "website": "https://www.advally.com"
+    },
     "Ada": {
       "cats": [
         52
