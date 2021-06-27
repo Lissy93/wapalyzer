@@ -18310,11 +18310,21 @@
     },
     "Sift": {
       "cats": [
-        10
+        10,
+        16
       ],
+      "description": "Sift is a CA-based fraud prevention company.",
       "icon": "Sift.png",
-      "scripts": [
-        "cdn\\.sift(?:science)?\\.com/s\\.js"
+      "js": {
+        "_sift": "",
+        "__siftFlashCB": ""
+      },
+      "scripts": "cdn\\.sift(?:science)?\\.com/s\\.js",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "high",
+        "recurring"
       ],
       "website": "https://sift.com/"
     },
