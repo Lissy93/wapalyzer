@@ -14427,9 +14427,18 @@
         67
       ],
       "description": "Osano is a data privacy platform that helps your website become compliant with laws such as GDPR and CCPA.",
-      "icon": "osano.png",
+      "icon": "Osano.svg",
+      "js": {
+        "Osano": ""
+      },
       "scripts": "cookieconsent\\.min\\.js",
-      "website": "https://www.osano.com/"
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "mid",
+        "recurring"
+      ],
+      "website": "https://www.osano.com"
     },
     "Outbrain": {
       "cats": [
