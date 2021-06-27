@@ -14433,14 +14433,22 @@
     },
     "Outbrain": {
       "cats": [
-        5
+        5,
+        36
       ],
+      "description": "Outbrain is a web advertising platform that displays boxes of links, known as chumboxes, to pages within websites.",
       "icon": "Outbrain.png",
       "js": {
         "OB_releaseVer": "^(.+)$\\;version:\\1",
-        "OutbrainPermaLink": ""
+        "OutbrainPermaLink": "",
+        "obApi.version": "^[\\d.]+$",
+        "OB_ADV_ID": ""
       },
       "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
       "website": "https://www.outbrain.com"
     },
     "Outlook Web App": {
