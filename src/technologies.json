@@ -17275,11 +17275,17 @@
     },
     "SaleCycle": {
       "cats": [
-        6
+        6,
+        76
       ],
-      "html": "<iframe[^>]+title=\"SaleCycle\"[^>]+src=\"[^>]+salecycle\\.com",
+      "description": "SaleCycle is a UK based global behavioral marketing firm.",
       "icon": "salecycle.svg",
-      "website": "https://www.salecycle.com/"
+      "dom": "iframe[src*='.salecycle.com'][target='_self']",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.salecycle.com"
     },
     "Salesfloor": {
       "cats": [
