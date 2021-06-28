@@ -23502,14 +23502,12 @@
       "description": "jQuery is a JavaScript library which is a free, open-source software designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.",
       "icon": "jQuery.svg",
       "js": {
-        "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1",
-        "$().jquery": "([\\d.]+)\\;version:\\1",
+        "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
         "$.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
       "scripts": [
-        "jquery[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-        "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
+        "/jquery(-(\\d+\\.\\d+\\.\\d+))[/.-];version:\\1",
+        "/(\\d+\\.\\d+\\.\\d+)/jquery[/.-];version:\\1"
       ],
       "website": "https://jquery.com"
     },
