@@ -23506,6 +23506,7 @@
         "$.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
       "scripts": [
+        "jquery",
         "/jquery(-(\\d+\\.\\d+\\.\\d+))[/.-];version:\\1",
         "/(\\d+\\.\\d+\\.\\d+)/jquery[/.-];version:\\1"
       ],
