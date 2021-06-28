@@ -296,6 +296,30 @@
     "77": {
       "name": "Retargeting",
       "priority": 9
+    },
+    "78": {
+      "name": "RUM",
+      "priority": 9
+    },
+    "79": {
+      "name": "Geolocation",
+      "priority": 9
+    },
+    "80": {
+      "name": "WordPress themes",
+      "priority": 9
+    },
+    "81": {
+      "name": "Shopify themes",
+      "priority": 9
+    },
+    "82": {
+      "name": "Drupal themes",
+      "priority": 9
+    },
+    "83": {
+      "name": "Browser fingerprinting",
+      "priority": 9
     }
   },
   "technologies": {
@@ -452,7 +476,9 @@
         "<link rel=\"amphtml\""
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
-      "website": "https://www.amp.dev"
+      "oss": true,
+      "website": "https://www.amp.dev",
+      "xhr": "cdn\\.ampproject\\.org"
     },
     "AMP Plugin": {
       "cats": [
@@ -703,6 +729,24 @@
       ],
       "website": "https://www.actito.com"
     },
+    "Acuity Scheduling": {
+      "cats": [
+        72
+      ],
+      "description": "Acuity Scheduling is a cloud-based appointment scheduling software solution.",
+      "dom": "a[href*='app.acuityscheduling.com']",
+      "icon": "Acuity Scheduling.png",
+      "js": {
+        "ACUITY_MODAL_INIT": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.acuityscheduling\\.com",
+      "website": "https://acuityscheduling.com"
+    },
     "Ad Lightning": {
       "cats": [
         36
@@ -785,6 +829,43 @@
       "saas": true,
       "scripts": "ads\\.adthrive\\.com",
       "website": "https://www.adthrive.com"
+    },
+    "Ada": {
+      "cats": [
+        52
+      ],
+      "description": "Ada is an automated customer experience company that provides chat bots used in customer support.",
+      "icon": "Ada.svg",
+      "js": {
+        "__AdaEmbedConstructor": "",
+        "adaEmbed": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.ada\\.support",
+      "website": "https://www.ada.cx"
+    },
+    "Adabra": {
+      "cats": [
+        32
+      ],
+      "description": "Adabra is a SaaS omnichannel marketing automation platform to help boost sales. Adabra allows you to manage user segmentation, create workflow and campaigns through email, social, SMS and more.",
+      "icon": "Adabra.svg",
+      "js": {
+        "adabraPreview": "",
+        "adabra_version_panel": "(^.+$)\\;version:\\1",
+        "adabra_version_track": "(^.+$)\\;version:\\1"
+      },
+      "pricing": [
+        "poa",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "track\\.adabra\\.com",
+      "website": "https://www.adabra.com",
+      "xhr": "my\\.adabra\\.com"
     },
     "Adally": {
       "cats": [
@@ -996,6 +1077,19 @@
       },
       "website": "https://docs.adobelaunch.com/getting-started"
     },
+    "Adobe Flash": {
+      "cats": [
+        27
+      ],
+      "cpe": "cpe:/a:adobe:flash",
+      "description": "Adobe Flash is a multimedia software platform used for production of animations, rich web applications and embedded web browser video players.",
+      "dom": [
+        "object[type='application/x-shockwave-flash']",
+        "param[value*='.swf']"
+      ],
+      "icon": "Adobe Flash.svg",
+      "website": "https://www.adobe.com/products/flashplayer"
+    },
     "Adobe GoLive": {
       "cats": [
         20
@@ -1056,6 +1150,24 @@
       "icon": "AdonisJS.png",
       "implies": "Node.js",
       "website": "https://adonisjs.com"
+    },
+    "Advally": {
+      "cats": [
+        36
+      ],
+      "description": "Advally is an advertising platform for publishers.",
+      "icon": "Advally.png",
+      "js": {
+        "advally": ""
+      },
+      "pricing": [
+        "payg",
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
+      "website": "https://www.advally.com"
     },
     "Advanced Web Stats": {
       "cats": [
@@ -1172,6 +1284,7 @@
       ],
       "cpe": "cpe:/a:afterpay:afterpay",
       "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
+      "dom": "#afterpay, .afterpay, [aria-label='Afterpay']",
       "icon": "afterpay.png",
       "js": {
         "Afterpay": "",
@@ -1319,7 +1432,7 @@
     "Akamai mPulse": {
       "cats": [
         10,
-        47
+        78
       ],
       "cookies": {
         "akaas_AB-Testing": ""
@@ -1770,6 +1883,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:angularjs:angular.js",
       "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
       "dom": {
         "[ng-version]": {
@@ -1778,12 +1892,12 @@
           }
         }
       },
-      "implies": "TypeScript",
       "excludes": [
         "AngularDart",
         "AngularJS"
       ],
       "icon": "Angular.svg",
+      "implies": "TypeScript",
       "js": {
         "ng.coreTokens": "",
         "ng.probe": ""
@@ -1958,6 +2072,23 @@
       "scripts": "/profiles/apigee",
       "website": "https://cloud.google.com/apigee/"
     },
+    "Apisearch": {
+      "cats": [
+        29
+      ],
+      "description": "Apisearch is a real-time search platform for ecommerce.",
+      "icon": "Apisearch.png",
+      "oss": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "static\\.apisearch\\.cloud",
+      "website": "https://apisearch.io"
+    },
     "Aplazame": {
       "cats": [
         41
@@ -1982,6 +2113,10 @@
         59
       ],
       "icon": "Apollo.svg",
+      "implies": [
+        "GraphQL",
+        "TypeScript\\;confidence:50"
+      ],
       "js": {
         "__APOLLO_CLIENT__": "",
         "__APOLLO_CLIENT__.version": "^(.+)$\\;version:\\1"
@@ -1999,12 +2134,18 @@
     },
     "AppDynamics": {
       "cats": [
-        10
+        10,
+        78
       ],
+      "description": "AppDynamics is an application performance management (APM) and IT operations analytics (ITOA) company based in San Francisco.",
       "icon": "AppDynamics.png",
       "js": {
         "ADRUM.conf.agentVer": "^(.+)$\\;version:\\1"
       },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "scripts": "adrum",
       "website": "https://appdynamics.com"
     },
@@ -2663,6 +2804,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:backbone_project:backbone",
       "description": "BackboneJS is a JavaScript library that allows to develop and structure the client side applications that run in a web browser.",
       "icon": "Backbone.js.png",
       "implies": "Underscore.js",
@@ -2787,15 +2929,14 @@
         6
       ],
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
-      "dom": "img[data-src*='.bigcommerce.com'], img[src*='.bigcommerce.com']",
-      "html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
+      "dom": "img[data-src*='.bigcommerce.com'], img[src*='.bigcommerce.com'], link[href*='.bigcommerce.com']",
       "icon": "BigCommerce.svg",
       "pricing": [
         "low",
         "recurring"
       ],
       "saas": true,
-      "scripts": "cdn\\d+\\.bigcommerce\\.com/",
+      "scripts": ".bigcommerce\\.com",
       "url": "mybigcommerce\\.com",
       "website": "http://www.bigcommerce.com"
     },
@@ -3000,6 +3141,26 @@
       "scripts": "\\.getblue\\.io",
       "website": "https://web.getblue.io/en/"
     },
+    "Blue Triangle": {
+      "cats": [
+        16,
+        78
+      ],
+      "description": "Blue Triangle is a connected view of marketing, web performance, and third-party tag analytics while constantly monitoring website code for security vulnerabilities.",
+      "icon": "Blue Triangle.png",
+      "js": {
+        "_bttUtil.version": "([\\d.]+)\\;version:\\1"
+      },
+      "pricing": [
+        "poa",
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.btttag\\.com/btt\\.js",
+      "website": "https://bluetriangle.com",
+      "xhr": "\\.btttag\\.com"
+    },
     "Bluecore": {
       "cats": [
         32,
@@ -3075,6 +3236,10 @@
       ],
       "description": "BoldChat is a live chat platform.",
       "icon": "BoldChat.png",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
       "scripts": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
       "website": "https://www.boldchat.com/"
     },
@@ -3155,6 +3320,23 @@
       "scripts": "bda\\.bookatable\\.com/deploy/lbui\\.direct\\.min\\.js",
       "website": "https://www.bookatable.co.uk"
     },
+    "Bookero": {
+      "cats": [
+        72
+      ],
+      "description": "Bookero is online booking system for you website or Facebook page.",
+      "icon": "Bookero.svg",
+      "js": {
+        "bookero_config": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "scripts": "cdn\\.bookero\\.pl",
+      "url": "\\.bookero\\.(?:org|pl)",
+      "website": "https://www.bookero.org"
+    },
     "Bookingkit": {
       "cats": [
         5,
@@ -3191,7 +3373,8 @@
     },
     "Boomerang": {
       "cats": [
-        59
+        59,
+        78
       ],
       "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
       "icon": "boomerang.svg",
@@ -3257,6 +3440,33 @@
       "saas": true,
       "scripts": "/bxe_core\\.js",
       "website": "https://www.booxi.com"
+    },
+    "Borderfree": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "bfx.apiKey:": "^[\\w\\d-]+$\\;confidence:25",
+        "bfx.country:": "^\\w+$\\;confidence:25",
+        "bfx.language": "^\\w+$\\;confidence:25",
+        "bfx.logLevel": "^\\w+$\\;confidence:25"
+      },
+      "description": "Borderfree is an cross-border ecommerce solutions provider.",
+      "icon": "Borderfree.png",
+      "js": {
+        "bfx._apiKey": "\\;confidence:50",
+        "bfx._brand": "\\;confidence:50"
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "global\\.prd\\.borderfree\\.com",
+        "wm\\.prd\\.borderfree\\.com",
+        "bfx\\.js"
+      ],
+      "website": "https://www.borderfree.com"
     },
     "Borlabs Cookie": {
       "cats": [
@@ -3453,6 +3663,34 @@
       "scripts": "(?:snip|cdn)\\.bronto\\.com",
       "website": "https://bronto.com"
     },
+    "Brownie": {
+      "cats": [
+        1,
+        6
+      ],
+      "description": "Brownie is a framework, CMS, ecommerce and ERP omni-channel platform to manage your entire business in one cloud solution.",
+      "dom": "a[href*='browniesuite.com'][target='_blank'] img[src*='brownie']",
+      "headers": {
+        "X-Powered-By": "Brownie"
+      },
+      "icon": "Brownie.svg",
+      "implies": [
+        "PHP",
+        "MySQL",
+        "Amazon Web Services",
+        "Bootstrap",
+        "jQuery"
+      ],
+      "pricing": [
+        "mid",
+        "recurring",
+        "poa",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "assets\\.youthsrl\\.com/brownie",
+      "website": "https://www.browniesuite.com"
+    },
     "BrowserCMS": {
       "cats": [
         1
@@ -3463,6 +3701,30 @@
         "generator": "BrowserCMS ([\\d.]+)\\;version:\\1"
       },
       "website": "http://browsercms.org"
+    },
+    "Bsale": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "_bsalemarket_session": ""
+      },
+      "description": "Bsale is an store management solution for retail businesses that sell both in store and online.",
+      "icon": "Bsale.png",
+      "implies": "Nginx",
+      "js": {
+        "Bsale.version": "([\\d.]+)\\;version:\\1"
+      },
+      "meta": {
+        "autor": "Bsale",
+        "generator": "Bsale"
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.bsale.cl"
     },
     "Bubble": {
       "cats": [
@@ -3579,7 +3841,7 @@
       "icon": "Bulma.png",
       "website": "http://bulma.io"
     },
-    "Bumb": {
+    "Bump": {
       "cats": [
         4
       ],
@@ -3606,6 +3868,21 @@
       "icon": "Business Catalyst.svg",
       "scripts": "CatalystScripts",
       "website": "http://businesscatalyst.com"
+    },
+    "Buy me a coffee": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Buy me a coffee is a service for online content creators that they may use to receive tips and donations to support their work.",
+      "dom": "a[href*='www.buymeacoffee.com/'][target='_blank']",
+      "icon": "Buy me a coffee.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "cdnjs\\.buymeacoffee\\.com/([\\d.]+)\\;version:\\1",
+      "website": "https://www.buymeacoffee.com"
     },
     "BuySellAds": {
       "cats": [
@@ -3964,7 +4241,7 @@
     },
     "Chaport": {
       "cats": [
-        5
+        52
       ],
       "description": "Chaport is a multi-channel live chat and chatbot software for business.",
       "icon": "Chaport.png",
@@ -3972,9 +4249,13 @@
         "chaport": "",
         "chaportConfig": ""
       },
-      "scripts": "\\.chaport\\.com",
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["freemium", "low", "recurring"],
+      "scripts": "\\.chaport\\.com",
       "website": "https://www.chaport.com"
     },
     "Chargebee": {
@@ -4025,6 +4306,20 @@
       },
       "scripts": "chartbeat\\.js",
       "website": "http://chartbeat.com"
+    },
+    "Chatango": {
+      "cats": [
+        5
+      ],
+      "description": "Chatango is a website used for connecting to a large selection of users.",
+      "dom": "iframe[src*='st.chatango.com']",
+      "icon": "Chatango.png",
+      "pricing": [
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "st\\.chatango\\.com",
+      "website": "https://chatango.com"
     },
     "Checkfront": {
       "cats": [
@@ -4181,7 +4476,7 @@
       "description": "ClearSale offers fraud management and chargeback protection services.",
       "icon": "ClearSale.svg",
       "js": {
-        "window.csdm": "\\;confidence:50"
+        "csdm": "\\;confidence:50"
       },
       "scripts": [
         "device\\.clearsale\\.com\\.br"
@@ -4314,6 +4609,23 @@
       "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
     },
+    "ClientJS": {
+      "cats": [
+        59,
+        83
+      ],
+      "description": "ClientJS is a JavaScript library for generating browser fingerprints, exposing all the browser data-points.",
+      "icon": "ClientJS.png",
+      "js": {
+        "ClientJS": ""
+      },
+      "oss": true,
+      "scripts": [
+        "/clientjs@(\\d.*?)/\\;version:\\1",
+        "/ClientJS/(?:(\\d.*?)/)?\\;version:\\1"
+      ],
+      "website": "http://clientjs.org"
+    },
     "Clipboard.js": {
       "cats": [
         19
@@ -4375,7 +4687,8 @@
     },
     "Cloudflare Browser Insights": {
       "cats": [
-        10
+        10,
+        78
       ],
       "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
       "icon": "CloudFlare.svg",
@@ -4429,6 +4742,24 @@
         "generator": "^Coaster CMS v([\\d.]+)$\\;version:\\1"
       },
       "website": "https://www.coastercms.org"
+    },
+    "Cococart": {
+      "cats": [
+        6
+      ],
+      "description": "Cococart is an ecommerce platform.",
+      "dom": [
+        "meta[property='og:image'][content*='static.cococart.co']",
+        "div[style*='static.cococart.co']"
+      ],
+      "icon": "Cococart.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.cococart.co"
     },
     "CoconutSoftware": {
       "cats": [
@@ -4587,6 +4918,22 @@
       "url": "\\.spaces.chec\\.io",
       "website": "https://www.commercejs.com"
     },
+    "Commerce7": {
+      "cats": [
+        6
+      ],
+      "description": "Commerce7 is an ecommerce platform for wineries.",
+      "icon": "Commerce7.svg",
+      "pricing": [
+        "mid",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.commerce7\\.com",
+      "website": "https://commerce7.com",
+      "xhr": "api\\.commerce7\\.com"
+    },
     "Concrete5": {
       "cats": [
         1
@@ -4697,6 +5044,20 @@
       "website": "http://www.contentful.com",
       "xhr": "cdn\\.contentful\\.com"
     },
+    "Contentstack": {
+      "cats": [
+        1
+      ],
+      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalized content experiences to audiences via multiple channels.",
+      "dom": "img[src*='images.contentstack.io']",
+      "icon": "Contentstack.png",
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.contentstack.com"
+    },
     "Convert": {
       "cats": [
         74
@@ -4775,9 +5136,16 @@
       "cats": [
         67
       ],
-      "dom": "#cookie-law-info-bar",
+      "dom": {
+        "#cookie-law-info-bar": {
+          "text": ""
+        }
+      },
       "icon": "cookieyes.svg",
-      "scripts": "app\\.cookieyes\\.com/client_data/",
+      "scripts": [
+        "app\\.cookieyes\\.com/client_data/",
+        "cdn-cookieyes\\.com/client_data/"
+      ],
       "website": "https://www.cookieyes.com/"
     },
     "Cookiebot": {
@@ -4799,6 +5167,21 @@
       "icon": "Coppermine.png",
       "implies": "PHP",
       "website": "http://coppermine-gallery.net"
+    },
+    "Corebine": {
+      "cats": [
+        1
+      ],
+      "description": "Corebine is a content management system designed for Sports",
+      "dom": "#corebine-app",
+      "icon": "Corebine.png",
+      "js": {
+        "corebine": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://corebine.com"
     },
     "Cosmoshop": {
       "cats": [
@@ -5042,6 +5425,24 @@
       "scripts": "cybersource\\..+\\.js",
       "website": "https://www.cybersource.com/"
     },
+    "Czater": {
+      "cats": [
+        52
+      ],
+      "description": "Czater is an live chat solution with extended CRM and videochat features.",
+      "icon": "Czater.svg",
+      "js": {
+        "$czater": "",
+        "$czaterMethods": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.czater\\.pl",
+      "website": "https://www.czater.pl"
+    },
     "D3": {
       "cats": [
         25
@@ -5228,6 +5629,27 @@
       "scripts": "dataTables.*\\.js",
       "website": "http://datatables.net"
     },
+    "Datadog": {
+      "cats": [
+        78,
+        10
+      ],
+      "description": "Datadog is a SaaS-based monitoring and analytics platform for large-scale applications and infrastructure.",
+      "icon": "Datadog.svg",
+      "js": {
+        "DD_LOGS": "\\;confidence:1",
+        "DD_RUM": "\\;confidence:99"
+      },
+      "pricing": [
+        "low",
+        "payg",
+        "recurring",
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "www\\.datadoghq-browser-agent\\.com",
+      "website": "https://www.datadoghq.com"
+    },
     "Datadome": {
       "cats": [
         16
@@ -5346,6 +5768,28 @@
       "icon": "DigiCert.svg",
       "website": "https://www.digicert.com/"
     },
+    "Digistore24": {
+      "cats": [
+        71
+      ],
+      "description": "Digistore24 is a German digital reselling and affiliate marketing platform.",
+      "dom": "a[href*='www.digistore24.com'][target='_blank']",
+      "icon": "Digistore24.svg",
+      "js": {
+        "DIGISTORE_LINK_ID_KEY": "",
+        "DIGISTORE_VENDORKEY": "",
+        "getTheSourceForDigistoreLinks": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "digistore/digistore\\.js",
+        "www\\.digistore24\\.com"
+      ],
+      "website": "https://www.digistore24.com"
+    },
     "DigitalRiver": {
       "cats": [
         6
@@ -5434,6 +5878,24 @@
       "saas": true,
       "website": "https://districtm.net",
       "xhr": "\\.districtm\\.io"
+    },
+    "Divi": {
+      "cats": [
+        51
+      ],
+      "description": "Divi is a WordPress Theme and standalone WordPress plugin from Elegant themes that allows users to build websites using the visual drag-and-drop Divi page builder.",
+      "icon": "Divi.png",
+      "js": {
+        "DIVI": ""
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "onetime"
+      ],
+      "saas": true,
+      "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
+      "website": "https://www.elegantthemes.com/gallery/divi"
     },
     "Django": {
       "cats": [
@@ -5687,6 +6149,10 @@
         "drift": "",
         "driftt": ""
       },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
       "website": "https://www.drift.com/"
     },
     "Drupal": {
@@ -5982,6 +6448,14 @@
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
       "website": "http://www.edgecast.com"
     },
+    "Elasticsearch": {
+      "cats": [
+        29
+      ],
+      "description": "Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.",
+      "icon": "Elasticsearch.svg",
+      "website": "https://www.elastic.co"
+    },
     "Elcodi": {
       "cats": [
         6
@@ -6110,21 +6584,6 @@
         "Ember.VERSION": "^(.+)$\\;version:\\1"
       },
       "website": "http://emberjs.com"
-    },
-    "emBlue": {
-      "cats": [
-        32,
-        75
-      ],
-      "description": "emBlue is an email and marketing automation platform.",
-      "icon": "emBlue.svg",
-      "js": {
-        "emblueOnSiteApp": ""
-      },
-      "scripts": "\\.embluemail\\.com\/(?:library\/([\\d.]+))?\\;version:\\1",
-      "saas": true,
-      "pricing": ["freemium", "mid", "recurring"],
-      "website": "https://www.embluemail.com/en"
     },
     "Emotion": {
       "cats": [
@@ -6389,6 +6848,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:sencha:ext_js",
       "icon": "ExtJS.png",
       "js": {
         "Ext": "",
@@ -6483,18 +6943,6 @@
         "FB.getLoginStatus": ""
       },
       "website": "https://developers.facebook.com/docs/facebook-login/"
-    },
-    "Pinterest Conversion Tag": {
-      "cats": [
-        10
-      ],
-      "description": "Pinterest Conversion Tag allows you to track actions people take on your website after viewing your Promoted Pin.",
-      "icon": "Pinterest.svg",
-      "dom": "img[src*='ct.pinterest.com/v3/?tid']",
-      "js": {
-        "pintrk": ""
-      },
-      "website": "https://www.pinterest.com.au/business/"
     },
     "Facebook Pixel": {
       "cats": [
@@ -6689,8 +7137,10 @@
     },
     "FingerprintJS": {
       "cats": [
-        59
+        59,
+        83
       ],
+      "description": "FingerprintJS is a browser fingerprinting library that queries browser attributes and computes a hashed visitor identifier from them.",
       "icon": "FingerprintJS.svg",
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
@@ -6698,11 +7148,16 @@
         "Fingerprint2.VERSION": "^(.+)$\\;version:\\1",
         "FingerprintJS": ""
       },
-      "scripts": [
-        "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "/fingerprintjs@(\\d)\\;version:\\1"
+      "oss": true,
+      "pricing": [
+        "payg"
       ],
-      "website": "https://fingerprintjs.com/"
+      "saas": true,
+      "scripts": [
+        "fingerprint(?:/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.a-z]+)?\\;version:\\1\\2"
+      ],
+      "website": "https://fingerprintjs.com"
     },
     "Firebase": {
       "cats": [
@@ -6744,6 +7199,38 @@
       "saas": true,
       "scripts": "cdn\\.firepush\\.\\w+",
       "website": "https://getfirepush.com"
+    },
+    "FirstImpression.io": {
+      "cats": [
+        36
+      ],
+      "description": "FirstImpression.io is a customized ad placements for publisher websites on their platform, with zero technical work.",
+      "icon": "FirstImpression.io.png",
+      "js": {
+        "FI.options": "",
+        "fiPrebidAnalyticsHandler": ""
+      },
+      "scripts": "\\.firstimpression\\.io",
+      "website": "https://www.firstimpression.io",
+      "xhr": "\\.firstimpression\\.io"
+    },
+    "Fit Analytics": {
+      "cats": [
+        5,
+        76
+      ],
+      "description": "Fit Analytics is a platform that provides clothing size recommendations for online customers by measuring individual dimensions via webcams.",
+      "icon": "Fit Analytics.png",
+      "js": {
+        "FitAnalyticsWidget": "",
+        "_fitAnalytics": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.fitanalytics\\.com",
+      "website": "https://www.fitanalytics.com"
     },
     "Flarum": {
       "cats": [
@@ -6971,18 +7458,23 @@
     },
     "Forter": {
       "cats": [
-        10
+        6,
+        16
       ],
       "cookies": {
         "forterToken": ""
       },
-      "description": "Forter provides fraud prevention technology for online retailers and marketplaces.",
+      "description": "Forter is a SaaS company that provides fraud prevention technology for online retailers and marketplaces.",
       "icon": "Forter.svg",
       "js": {
-        "window.ftr__startScriptLoad": ""
+        "ftr__startScriptLoad": ""
       },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
       "scripts": "forter\\.com",
-      "website": "https://www.forter.com/"
+      "website": "https://www.forter.com"
     },
     "Fortune3": {
       "cats": [
@@ -7141,7 +7633,7 @@
         32,
         74
       ],
-      "description": "Frosmo is a SaaS company wich provides AI-driven personalisation products.",
+      "description": "Frosmo is a SaaS company which provides AI-driven personalisation products.",
       "icon": "Frosmo.png",
       "js": {
         "_frosmo": "",
@@ -7254,7 +7746,9 @@
       "description": "GSAP is an animation library that allows you to create animations with JavaScript.",
       "icon": "TweenMax.png",
       "js": {
-        "TweenMax": "",
+        "TweenLite.version": "([\\d.]+)\\;version:\\1",
+        "TweenMax.version": "([\\d.]+)\\;version:\\1",
+        "gsap.version": "([\\d.]+)\\;version:\\1",
         "gsapVersions": ""
       },
       "scripts": "TweenMax(?:\\.min)?\\.js",
@@ -7369,6 +7863,20 @@
       ],
       "website": "https://www.genexus.com/"
     },
+    "Genesis theme": {
+      "cats": [
+        80
+      ],
+      "description": "Genesis theme is a WordPress theme that has been developed using the Genesis Framework from Studiopress.",
+      "icon": "Genesis theme.svg",
+      "js": {
+        "genesisBlocksShare": "",
+        "genesis_responsive_menu": ""
+      },
+      "requires": "WordPress",
+      "scripts": "/wp-content/themes/genesis/lib/js/",
+      "website": "https://www.studiopress.com/themes/genesis"
+    },
     "Genesys Cloud": {
       "cats": [
         32,
@@ -7466,8 +7974,22 @@
       "scripts": "api\\.at\\.getsocial\\.io",
       "website": "https://getsocial.io"
     },
+    "Getintent": {
+      "cats": [
+        36
+      ],
+      "description": "Getintent is an adtech company that offers AI-powered programmatic suite for agencies, publishers, broadcasters and content owners.",
+      "icon": "Getintent.png",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://getintent.com",
+      "xhr": "\\.adhigh\\.net"
+    },
     "Ghost": {
       "cats": [
+        1,
         11
       ],
       "description": "Ghost is a free and open-source blogging platform written in JavaScript, designed to simplify the process of online publishing for individual bloggers as well as online publications.",
@@ -7591,11 +8113,23 @@
       "cats": [
         6
       ],
-      "icon": "Globale.png",
-      "scripts": [
-        "web\\.global-e\\.com"
+      "cookies": {
+        "GlobalE_CT_Data": "",
+        "GlobalE_Data": "",
+        "GlobalE_SupportThirdPartCookies": ""
+      },
+      "description": "Global-e is a provider of cross-border ecommerce solutions.",
+      "icon": "Global-e.svg",
+      "js": {
+        "GLOBALE_ENGINE_CONFIG": "",
+        "GlobalE": ""
+      },
+      "pricing": [
+        "poa"
       ],
-      "website": "https://www.global-e.com/"
+      "saas": true,
+      "scripts": "\\.global-e\\.com",
+      "website": "https://www.global-e.com"
     },
     "Glyphicons": {
       "cats": [
@@ -8050,6 +8584,43 @@
       },
       "website": "https://grandnode.com"
     },
+    "GraphCMS": {
+      "cats": [
+        1
+      ],
+      "description": "GraphCMS is a GraphQL headless CMS for content federation and omnichannel headless content management.",
+      "dom": {
+        ".graphcms-image-wrapper": {
+          "text": ""
+        },
+        "img[src*='media.graphcms.com']": {
+          "text": ""
+        }
+      },
+      "icon": "GraphCMS.svg",
+      "implies": [
+        "GraphQL",
+        "PostgreSQL",
+        "Go",
+        "TypeScript"
+      ],
+      "pricing": [
+        "mid",
+        "recurring",
+        "freemium"
+      ],
+      "website": "https://graphcms.com",
+      "xhr": "\\.graphcms\\.com"
+    },
+    "GraphQL": {
+      "cats": [
+        27
+      ],
+      "description": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
+      "icon": "GraphQL.svg",
+      "oss": true,
+      "website": "https://graphql.org"
+    },
     "Grav": {
       "cats": [
         1
@@ -8118,6 +8689,26 @@
         "DC.identifier": "/content\\.jsp\\?objectid="
       },
       "website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
+    },
+    "Griddo": {
+      "cats": [
+        1
+      ],
+      "description": "Griddo is an Martech Experience Platform for creating custom digital experiences.",
+      "icon": "Griddo.svg",
+      "implies": [
+        "React",
+        "Gatsby"
+      ],
+      "meta": {
+        "generator": "^Griddo$"
+      },
+      "pricing": [
+        "high",
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://griddo.io"
     },
     "Gridsome": {
       "cats": [
@@ -8286,6 +8877,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:handlebars.js_project:handlebars.js",
       "description": "Handlebars is a JavaScript library used to create reusable webpage templates.",
       "html": "<[^>]*type=[^>]text\\/x-handlebars-template",
       "icon": "Handlebars.png",
@@ -8603,6 +9195,24 @@
       "scripts": "//static\\.hotjar\\.com/",
       "website": "https://www.hotjar.com"
     },
+    "Howler.js": {
+      "cats": [
+        59
+      ],
+      "description": "Howler.js is an audio library with support for the Web Audio API and a fallback mechanism for HTML5 Audio.",
+      "icon": "Howler.js.svg",
+      "js": {
+        "Howler": "",
+        "HowlerGlobal": ""
+      },
+      "oss": true,
+      "saas": false,
+      "scripts": [
+        "howler@([\\d.]+)/dist/howler\\.min\\.js\\;version:\\1",
+        "howler/([\\d.]+)/howler(?:\\.core)?\\.min\\.js\\;version:\\1"
+      ],
+      "website": "https://howlerjs.com"
+    },
     "HubSpot": {
       "cats": [
         32
@@ -8650,6 +9260,22 @@
       ],
       "saas": true,
       "website": "https://www.hubspot.com/products/cms"
+    },
+    "HubSpot Chat": {
+      "cats": [
+        52
+      ],
+      "description": "HubSpot Chat is a tool where you can view, manage, and reply to incoming messages from multiple channels.",
+      "icon": "HubSpot.png",
+      "js": {
+        "HubSpotConversations": ""
+      },
+      "pricing": [
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "js\\.usemessages\\.com",
+      "website": "https://www.hubspot.com/products/crm/live-chat"
     },
     "Hugo": {
       "cats": [
@@ -8741,6 +9367,16 @@
       },
       "scripts": "jscripts/ips_",
       "website": "https://invisioncommunity.com/"
+    },
+    "IPInfoDB": {
+      "cats": [
+        79
+      ],
+      "description": "IPInfoDB is the API that returns the location of an IP address.",
+      "icon": "IPInfoDB.png",
+      "saas": true,
+      "website": "https://www.ipinfodb.com/",
+      "xhr": "api\\.ipinfodb\\.com"
     },
     "Ideasoft": {
       "cats": [
@@ -8907,6 +9543,26 @@
       },
       "website": "http://indyproject.org"
     },
+    "Inertia": {
+      "cats": [
+        12
+      ],
+      "description": "Inertia is a protocol for creating monolithic single-page applications.",
+      "dom": {
+        "div[data-page*='component']": {
+          "attributes": {
+            "data-page": "component.+props.+url"
+          }
+        }
+      },
+      "headers": {
+        "X-Inertia": ""
+      },
+      "icon": "Inertia.svg",
+      "oss": true,
+      "saas": false,
+      "website": "https://inertiajs.com"
+    },
     "InfernoJS": {
       "cats": [
         12
@@ -8970,7 +9626,8 @@
     "Instana": {
       "cats": [
         10,
-        13
+        13,
+        78
       ],
       "description": "Instana is a Kubernetes-native APM tool which is built for new-stack including Microservices and lately Serverless but also supports the existing VM based stacks  including several supported technologies.",
       "icon": "Instana.svg",
@@ -9051,13 +9708,19 @@
     },
     "Intercom": {
       "cats": [
-        10
+        52,
+        53
       ],
-      "description": "Intercom is a Conversational Relationship Platform that helps businesses build better customer relationships through personalised, messenger-based experiences.",
+      "description": "Intercom is an American software company that produces a messaging platform which allows businesses to communicate with prospective and existing customers within their app, on their website, through social media, or via email.",
       "icon": "Intercom.svg",
       "js": {
         "Intercom": ""
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
       "website": "https://www.intercom.com"
     },
@@ -9525,6 +10188,25 @@
       "icon": "Jive.png",
       "website": "http://www.jivesoftware.com"
     },
+    "JivoChat": {
+      "cats": [
+        52
+      ],
+      "description": "JivoChat is a live chat solution for websites offering customizable web and mobile chat widgets.",
+      "icon": "JivoChat.png",
+      "js": {
+        "jivo_api": "",
+        "jivo_version": "([\\d.]+)\\;version:\\1"
+      },
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.jivosite\\.com",
+      "website": "https://www.jivosite.com"
+    },
     "JobberBase": {
       "cats": [
         19
@@ -9538,6 +10220,24 @@
         "generator": "Jobberbase"
       },
       "website": "http://www.jobberbase.com"
+    },
+    "JoomShopping": {
+      "cats": [
+        6
+      ],
+      "description": "JoomShopping is an open-source ecommerce plugin for Joomla.",
+      "icon": "JoomShopping.png",
+      "implies": "Joomla",
+      "js": {
+        "joomshoppingVideoHtml5": ""
+      },
+      "oss": true,
+      "pricing": [
+        "freemium",
+        "onetime"
+      ],
+      "scripts": "/components/com_jshopping/",
+      "website": "https://www.webdesigner-profi.de/joomla-webdesign/joomla-shop"
     },
     "Joomla": {
       "cats": [
@@ -9603,6 +10303,27 @@
         "KM_COOKIE_DOMAIN": ""
       },
       "website": "https://www.kissmetrics.com"
+    },
+    "KQS.store": {
+      "cats": [
+        6
+      ],
+      "description": "KQS.store is an ecommerce software.",
+      "dom": [
+        "a[href*='kqsdesign.pl'][target='_blank']",
+        "a[href*='kqs.pl'][target='_blank']",
+        "#kqs-box,kqs-cookie"
+      ],
+      "icon": "KQS.store.png",
+      "js": {
+        "kqs_box": "\\;confidence:50",
+        "kqs_off": "\\;confidence:50"
+      },
+      "pricing": [
+        "onetime"
+      ],
+      "saas": false,
+      "website": "https://www.kqs.pl"
     },
     "KaTeX": {
       "cats": [
@@ -9709,6 +10430,25 @@
       "oss": true,
       "scripts": "karma\\.mdpcdn\\.com",
       "website": "https://karma-runner.github.io"
+    },
+    "Kartra": {
+      "cats": [
+        32
+      ],
+      "description": "Kartra is an online business platform that offers marketing and sales tools.",
+      "dom": "form[action*='app.kartra.com']",
+      "icon": "Kartra.png",
+      "js": {
+        "init_kartra_tracking": "",
+        "kartra_tracking_loaded": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "app\\.kartra\\.com",
+      "website": "https://home.kartra.com"
     },
     "Keap": {
       "cats": [
@@ -9819,7 +10559,10 @@
       },
       "html": "<title>Kibana</title>",
       "icon": "kibana.svg",
-      "implies": "Node.js",
+      "implies": [
+        "Node.js",
+        "Elasticsearch"
+      ],
       "url": "kibana#/dashboard/",
       "website": "http://www.elastic.co/products/kibana"
     },
@@ -9937,6 +10680,26 @@
       },
       "website": "http://knockoutjs.com"
     },
+    "Ko-fi": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Ko-fi is an online platform that helps content creators get the financial support.",
+      "dom": "a[href*='ko-fi.com/'][target='_blank']",
+      "icon": "Ko-fi.svg",
+      "js": {
+        "kofiwidget2": ""
+      },
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "ko-fi\\.com/widgets",
+      "website": "https://ko-fi.com"
+    },
     "Koa": {
       "cats": [
         18,
@@ -10042,6 +10805,24 @@
       },
       "website": "http://www.komodocms.com"
     },
+    "Konduto": {
+      "cats": [
+        16
+      ],
+      "description": "Konduto is a fraud detection service for ecommerce.",
+      "dom": "link[href*='.konduto.com']",
+      "icon": "Konduto.png",
+      "js": {
+        "Konduto": "",
+        "getKondutoID": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.k-analytix\\.com",
+      "website": "https://www.konduto.com"
+    },
     "Koobi": {
       "cats": [
         1
@@ -10087,22 +10868,6 @@
       "saas": true,
       "website": "https://www.kooomo.com"
     },
-    "Konduto": {
-      "cats": [
-        16
-      ],
-      "description": "Konduto is a fraud detection service for ecommerce.",
-      "icon": "Konduto.png",
-      "dom": "link[href*='.konduto.com']",
-      "js": {
-        "Konduto": "",
-        "getKondutoID": ""
-      },
-      "scripts": "\\.k-analytix\\.com",
-      "saas": true,
-      "pricing": ["poa"],
-      "website": "https://www.konduto.com"
-    },
     "Kotisivukone": {
       "cats": [
         1
@@ -10113,7 +10878,8 @@
     },
     "Kount": {
       "cats": [
-        10
+        6,
+        16
       ],
       "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
       "icon": "Kount.svg",
@@ -10121,10 +10887,14 @@
         "ka.ClientSDK": "",
         "ka.collectData": ""
       },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
       "scripts": [
         "shopify\\.kount\\.net/js"
       ],
-      "website": "https://kount.com/"
+      "website": "https://kount.com"
     },
     "Kubernetes Dashboard": {
       "cats": [
@@ -10233,6 +11003,24 @@
       "saas": true,
       "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
       "website": "https://www.launchrock.com"
+    },
+    "Leadinfo": {
+      "cats": [
+        10
+      ],
+      "description": "Leadinfo is a lead generation software that enables you to recognise B2B website visitors.",
+      "icon": "Leadinfo.svg",
+      "js": {
+        "GlobalLeadinfoNamespace": "\\;confidence:50",
+        "leadinfo": "\\;confidence:50"
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.leadinfo\\.net",
+      "website": "https://www.leadinfo.com"
     },
     "Leaflet": {
       "cats": [
@@ -10479,7 +11267,7 @@
         "x-litespeed-cache": ""
       },
       "icon": "litespeed-cache.png",
-      "implies": "WordPress",
+      "implies": "LiteSpeed",
       "website": "https://wordpress.org/plugins/litespeed-cache/"
     },
     "Lithium": {
@@ -10517,7 +11305,11 @@
       "js": {
         "LiveAgent": ""
       },
-      "website": "https://www.ladesk.com"
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.liveagent.com"
     },
     "LiveChat": {
       "cats": [
@@ -10525,6 +11317,10 @@
       ],
       "description": "LiveChat is an online customer service software with online chat, help desk software, and web analytics capabilities.",
       "icon": "LiveChat.png",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "scripts": "cdn\\.livechatinc\\.com/.*tracking\\.js",
       "website": "http://livechatinc.com"
     },
@@ -10577,6 +11373,10 @@
       ],
       "description": "LivePerson is a tool for conversational chatbots and messaging.",
       "icon": "LivePerson.png",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
       "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
       "website": "https://www.liveperson.com/"
     },
@@ -10606,6 +11406,25 @@
         "LIVESTREET_SECURITY_KEY": ""
       },
       "website": "http://livestreetcms.com"
+    },
+    "LiveZilla": {
+      "cats": [
+        52
+      ],
+      "description": "LiveZilla is a web-based live support platform.",
+      "dom": "#lz_overlay_chat",
+      "icon": "LiveZilla.png",
+      "js": {
+        "lz_chat_execute": "",
+        "lz_code_id": "(?:[\\w\\d]+)",
+        "lz_tracking_set_widget_visibility": ""
+      },
+      "pricing": [
+        "onetime",
+        "mid"
+      ],
+      "saas": false,
+      "website": "https://www.livezilla.net"
     },
     "Livefyre": {
       "cats": [
@@ -10661,6 +11480,31 @@
         "D3"
       ],
       "website": "https://www.localfocus.nl/en/"
+    },
+    "Localised": {
+      "cats": [
+        6
+      ],
+      "description": "Localised is local-first ecommerce platform.",
+      "dom": {
+        "img[src='.localised.com'": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "span": {
+          "attributes": {
+            "text": ".+Localised Inc\\..+"
+          }
+        }
+      },
+      "icon": "Localised.png",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.localised.com",
+      "xhr": "api\\.localised\\.com"
     },
     "LocomotiveCMS": {
       "cats": [
@@ -10934,6 +11778,7 @@
         "Mage": "",
         "VarienForm": ""
       },
+      "magento": "Magento/([0-9.]+)\\;version:\\1",
       "oss": true,
       "scripts": [
         "js/mage",
@@ -11322,6 +12167,25 @@
       },
       "icon": "MaxCDN.png",
       "website": "http://www.maxcdn.com"
+    },
+    "MaxMind": {
+      "cats": [
+        79,
+        83
+      ],
+      "description": "MaxMind is a provider of geolocation and online fraud detection tools.",
+      "icon": "MaxMind.png",
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "[device|js]\\.maxmind\\.com/",
+        "geoip\\.maxmind\\.min\\.js"
+      ],
+      "website": "https://www.maxmind.com",
+      "xhr": "\\.maxmind\\.com"
     },
     "MaxSite CMS": {
       "cats": [
@@ -12022,6 +12886,7 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:momentjs:moment",
       "description": "Moment.js is a free and open-source JavaScript library that removes the need to use the native JavaScript Date object directly.",
       "icon": "Moment.js.svg",
       "js": {
@@ -12164,6 +13029,21 @@
       ],
       "website": "https://mouseflow.com/"
     },
+    "Movable Ink": {
+      "cats": [
+        76
+      ],
+      "description": "Movable Ink is a technology company that allows marketers to change emails after they have been sent out.",
+      "icon": "Movable Ink.png",
+      "js": {
+        "MovableInkTrack": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://movableink.com"
+    },
     "Movable Type": {
       "cats": [
         1
@@ -12255,6 +13135,23 @@
       },
       "icon": "mycashflow.png",
       "website": "https://www.mycashflow.fi/"
+    },
+    "MyLiveChat": {
+      "cats": [
+        52
+      ],
+      "description": "MyLiveChat is a live chat developed by CuteSoft.",
+      "icon": "MyLiveChat.png",
+      "js": {
+        "MyLiveChat.Version": "(.+)$\\;version:\\1"
+      },
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "mylivechat\\.com/",
+      "website": "https://mylivechat.com"
     },
     "MySQL": {
       "cats": [
@@ -12452,14 +13349,20 @@
         10
       ],
       "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
+      "dom": "link[href*='.newrelic.com']",
       "icon": "New Relic.svg",
-      "dom": "link[.newrelic.com']",
       "js": {
         "NREUM": "",
         "newrelic": ""
       },
+      "pricing": [
+        "freemium",
+        "payg",
+        "low",
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["freemium","payg","low", "mid", "recurring"],
       "website": "https://newrelic.com"
     },
     "Next.js": {
@@ -12565,6 +13468,25 @@
       "scripts": "connect\\.nosto\\.\\w+/",
       "website": "https://www.nosto.com"
     },
+    "Nukeviet CMS": {
+      "cats": [
+        1
+      ],
+      "description": "NukeViet CMS is a Vietnamese content management system.",
+      "icon": "Nukeviet CMS.png",
+      "js": {
+        "nv_DigitalClock": "\\;confidence:50",
+        "nv_is_change_act_confirm": "\\;confidence:50"
+      },
+      "meta": {
+        "generator": "NukeViet v([\\d.]+)\\;version:\\1"
+      },
+      "oss": true,
+      "pricing": [
+        "freemium"
+      ],
+      "website": "https://nukeviet.vn/en/"
+    },
     "Nuvemshop": {
       "cats": [
         6
@@ -12652,6 +13574,29 @@
       "icon": "OXID eShop.svg",
       "implies": "PHP",
       "website": "https://www.oxid-esales.com"
+    },
+    "Occasion": {
+      "cats": [
+        72
+      ],
+      "description": "Occasion is an online booking system.",
+      "dom": [
+        "iframe[src*='app.getoccasion.com']",
+        "a[href*='app.getoccasion.com']"
+      ],
+      "icon": "Occasion.png",
+      "js": {
+        "OCCSN.stack": "",
+        "occsnMerchantToken": ""
+      },
+      "pricing": [
+        "low",
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "app\\.getoccasion\\.com",
+      "website": "https://www.getoccasion.com"
     },
     "Ochanoko": {
       "cats": [
@@ -12774,6 +13719,10 @@
       ],
       "description": "Olark is a cloud-based live chat solution.",
       "icon": "Olark.png",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
       "website": "https://www.olark.com/"
     },
@@ -13116,8 +14065,7 @@
       },
       "icon": "OpenResty.png",
       "implies": [
-        "Nginx",
-        "Lua"
+        "Nginx"
       ],
       "website": "http://openresty.org"
     },
@@ -13663,6 +14611,27 @@
       "scripts": "paths(?:\\.min)?\\.js",
       "website": "https://github.com/andreaferretti/paths-js"
     },
+    "Patreon": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Patreon is an American membership platform that provides business tools for content creators to run a subscription service.",
+      "dom": {
+        "a[href*='www.patreon.com/']": {
+          "attributes": {
+            "href": "patreon\\.com/.+"
+          }
+        }
+      },
+      "icon": "Patreon.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "patreon-connect/assets/.+ver=([\\d.]+)\\;version:\\1",
+      "website": "https://www.patreon.com"
+    },
     "PayBright": {
       "cats": [
         41
@@ -13804,8 +14773,19 @@
         "_pxhd": "",
         "_pxvid": ""
       },
+      "description": "PerimeterX is a provider of scalable, behavior-based threat protection technology for the web, cloud, and mobile.",
       "icon": "perimeterx.svg",
-      "website": "https://www.perimeterx.com/"
+      "js": {
+        "_pxAppId": ""
+      },
+      "pricing": [
+        "payg",
+        "recurring",
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "client\\.a\\.pxi\\.pub/",
+      "website": "https://www.perimeterx.com"
     },
     "Perl": {
       "cats": [
@@ -14003,10 +14983,10 @@
         6
       ],
       "cpe": "cpe:/a:pimcore:pimcore",
+      "dom": ".pimcore_area_content",
       "headers": {
         "X-Powered-By": "^pimcore$"
       },
-      "dom": ".pimcore_area_content",
       "icon": "pimcore.svg",
       "implies": "PHP",
       "website": "http://pimcore.org"
@@ -14019,6 +14999,20 @@
       "icon": "pinpayments.png",
       "scripts": "api\\.pinpayments\\.com",
       "website": "https://www.pinpayments.com/"
+    },
+    "Pingdom": {
+      "cats": [
+        78
+      ],
+      "description": "Pingdom is a Swedish website monitoring software as a service company.",
+      "icon": "Pingdom.svg",
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.pingdom\\.net",
+      "website": "https://www.pingdom.com"
     },
     "Pingoteam": {
       "cats": [
@@ -14049,6 +15043,18 @@
       "website": "https://ads.pinterest.com/",
       "xhr": "ct\\.pinterest\\.com"
     },
+    "Pinterest Conversion Tag": {
+      "cats": [
+        10
+      ],
+      "description": "Pinterest Conversion Tag allows you to track actions people take on your website after viewing your Promoted Pin.",
+      "dom": "img[src*='ct.pinterest.com/v3/?tid']",
+      "icon": "Pinterest.svg",
+      "js": {
+        "pintrk": ""
+      },
+      "website": "https://www.pinterest.com.au/business/"
+    },
     "Pipedrive": {
       "cats": [
         52,
@@ -14071,7 +15077,7 @@
       ],
       "description": "PixelFed is an activitypub based image sharing platform.",
       "dom": {
-        "a[href='https://pixelfed.org'][title*='version']": {
+        "a[href='pixelfed.org'][title*='version']": {
           "attributes": {
             "title": "^version ([0-9.]+)$\\;version:\\1"
           },
@@ -14252,6 +15258,45 @@
       },
       "website": "http://www.po.st/"
     },
+    "Podia": {
+      "cats": [
+        21,
+        6
+      ],
+      "cookies": {
+        "_podia_storefront_visitor_id": ""
+      },
+      "description": "Podia is a platform to host and sell online courses, memberships, and digital downloads.",
+      "icon": "Podia.svg",
+      "js": {
+        "Podia.Checkout": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.podia\\.com",
+      "website": "https://www.podia.com"
+    },
+    "Podium": {
+      "cats": [
+        5,
+        52
+      ],
+      "description": "Podium is a customer communication platform for businesses who interact with customers on a local level.",
+      "icon": "Podium.png",
+      "js": {
+        "PodiumWebChat": "",
+        "podiumWebsiteWidgetLoaded": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.podium\\.com/",
+      "website": "https://www.podium.com"
+    },
     "Polyfill": {
       "cats": [
         59
@@ -14355,6 +15400,16 @@
       "icon": "Powergap.png",
       "saas": true,
       "website": "http://powergap.de"
+    },
+    "Preact": {
+      "cats": [
+        59
+      ],
+      "description": "Preact is a JavaScript library that describes itself as a fast 3kB alternative to React with the same ES6 API.",
+      "dom": "meta[data-preact-helmet='true']",
+      "icon": "Preact.svg",
+      "oss": true,
+      "website": "https://preactjs.com"
     },
     "Prebid": {
       "cats": [
@@ -14483,6 +15538,21 @@
       "scripts": "prism\\.js",
       "website": "http://prismjs.com"
     },
+    "Prismic": {
+      "cats": [
+        1
+      ],
+      "description": "Prismic is a headless CMS for Jamstack.",
+      "icon": "Prismic.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://prismic.io",
+      "xhr": "\\.cdn\\.prismic\\.io"
+    },
     "Profitwell": {
       "cats": [
         10
@@ -14519,6 +15589,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:prototypejs:prototype",
       "description": "Prototype is a JavaScript Framework that aims to ease development of web applications.",
       "icon": "Prototype.png",
       "js": {
@@ -14552,6 +15623,21 @@
       "icon": "ProvenExpert.svg",
       "scripts": "provenexpert\\.\\w+/widget",
       "website": "https://www.provenexpert.com"
+    },
+    "Provide Support": {
+      "cats": [
+        52
+      ],
+      "description": "Provide Support is a SaaS for customer service that includes live chat, real-time website monitoring, chat statistics.",
+      "icon": "Provide Support.svg",
+      "pricing": [
+        "low",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.providesupport\\.com",
+      "website": "https://www.providesupport.com"
     },
     "Proximis": {
       "cats": [
@@ -14642,7 +15728,7 @@
     },
     "Pure Chat": {
       "cats": [
-        5
+        52
       ],
       "description": "Pure Chat is a live chat solution for small to mid-sized teams.",
       "icon": "Pure Chat.png",
@@ -14731,6 +15817,22 @@
       },
       "icon": "Python.png",
       "website": "http://python.org"
+    },
+    "Quadpay": {
+      "cats": [
+        41
+      ],
+      "description": "Quadpay is a payment platform.",
+      "icon": "Quadpay.svg",
+      "js": {
+        "QuadPayShopify": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.quadpay\\.com/quadpay-widget-([\\d.]+)\\.js\\;version:\\1",
+      "website": "https://www.quadpay.com"
     },
     "Quantcast Choice": {
       "cats": [
@@ -14871,6 +15973,19 @@
       },
       "website": "https://github.com/ruby/rdoc"
     },
+    "RTB House": {
+      "cats": [
+        77
+      ],
+      "description": "RTB House is a company that provides learning-powered retargeting solutions for brands and agencies.",
+      "icon": "RTB House.png",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.rtbhouse.com",
+      "xhr": "\\.creativecdn\\.com"
+    },
     "RX Web Server": {
       "cats": [
         22
@@ -15006,6 +16121,26 @@
       },
       "scripts": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
+    },
+    "Raygun": {
+      "cats": [
+        78,
+        13
+      ],
+      "description": "Raygun is a cloud-based networking monitoring and bug tracking application.",
+      "icon": "Raygun.svg",
+      "js": {
+        "Raygun": "",
+        "raygunEnabled": "",
+        "raygunFactory": ""
+      },
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.raygun\\.io",
+      "website": "https://raygun.com"
     },
     "Rayo": {
       "cats": [
@@ -15337,6 +16472,26 @@
       },
       "scripts": "www\\.resengo\\.\\w+",
       "website": "https://wwc.resengo.com"
+    },
+    "Reservio": {
+      "cats": [
+        72
+      ],
+      "description": "Reservio is a cloud-based appointment scheduling and online booking solution.",
+      "dom": [
+        ".reservio-booking-button",
+        "a[href*='.reservio.com'][target='_blank']",
+        "a[href*='bookings.reservio.com']"
+      ],
+      "icon": "Reservio.svg",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "low"
+      ],
+      "saas": true,
+      "scripts": "static\\.reservio\\.com",
+      "website": "https://www.reservio.com"
     },
     "Resin": {
       "cats": [
@@ -15768,7 +16923,7 @@
     },
     "SAP": {
       "cats": [
-        22
+        53
       ],
       "headers": {
         "Server": "SAP NetWeaver Application Server"
@@ -15916,6 +17071,31 @@
       "icon": "SQLite.png",
       "website": "http://www.sqlite.org"
     },
+    "STUDIO": {
+      "cats": [
+        51
+      ],
+      "description": "STUDIO is a Japan-based company and SaaS application for designing and hosting websites. The service includes a visual editor with built-in CMS and analytics.",
+      "dom": ".StudioCanvas, .publish-studio-style",
+      "icon": "STUDIO.svg",
+      "implies": [
+        "Vue.js",
+        "Nuxt.js",
+        "Firebase",
+        "Google Cloud",
+        "Google Tag Manager"
+      ],
+      "meta": {
+        "generator": "^STUDIO$"
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "freemium"
+      ],
+      "saas": true,
+      "website": "https://studio.design"
+    },
     "SUSE": {
       "cats": [
         28
@@ -15932,10 +17112,12 @@
       "cats": [
         19
       ],
+      "description": "SWFObject is an open-source JavaScript library used to embed Adobe Flash content onto web pages.",
       "icon": "SWFObject.png",
       "js": {
         "SWFObject": ""
       },
+      "oss": true,
       "scripts": "swfobject.*\\.js",
       "website": "https://github.com/swfobject/swfobject"
     },
@@ -16088,6 +17270,22 @@
       "saas": true,
       "scripts": "service\\.force\\.com",
       "website": "https://www.salesforce.com/au/products/service-cloud/"
+    },
+    "Sana Commerce": {
+      "cats": [
+        6
+      ],
+      "description": "Sana Commerce is an ecommerce platform for SAP and Microsoft Dynamics.",
+      "icon": "Sana Commerce.svg",
+      "js": {
+        "Sana.UI": ""
+      },
+      "pricing": [
+        "recurring",
+        "onetime"
+      ],
+      "saas": true,
+      "website": "https://www.sana-commerce.com"
     },
     "Sanity": {
       "cats": [
@@ -16333,6 +17531,52 @@
       },
       "scripts": "select2(?:\\.min|\\.full)?\\.js",
       "website": "https://select2.org/"
+    },
+    "Sellacious": {
+      "cats": [
+        6
+      ],
+      "description": "Sellacious is an open-source ecommerce and marketplace platform for integrated POS and online stores.",
+      "dom": {
+        ".mod-sellacious-cart": {
+          "text": ""
+        }
+      },
+      "icon": "Sellacious.png",
+      "implies": "Joomla",
+      "js": {
+        "SellaciousViewCartAIO": ""
+      },
+      "oss": true,
+      "pricing": [
+        "low",
+        "recurring",
+        "freemium"
+      ],
+      "saas": true,
+      "website": "https://www.sellacious.com"
+    },
+    "Sellingo": {
+      "cats": [
+        6
+      ],
+      "description": "Sellingo is a Polish ecommerce platform.",
+      "dom": {
+        "a[href*='sellingo.pl'][target='_blank']": {
+          "text": "Oprogramowanie sklepu internetowego Sellingo.pl"
+        }
+      },
+      "icon": "Sellingo.svg",
+      "js": {
+        "sellingoQuantityCalc": ""
+      },
+      "pricing": [
+        "recurring",
+        "low",
+        "freemium"
+      ],
+      "saas": true,
+      "website": "https://sellingo.pl"
     },
     "Sellix": {
       "cats": [
@@ -16663,7 +17907,6 @@
         }
       },
       "icon": "Shopify.svg",
-      "implies": "Shopify",
       "scripts": [
         "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
       ],
@@ -16755,51 +17998,44 @@
       },
       "website": "https://shopfa.com"
     },
-    "Sellacious": {
-      "cats": [
-        6
-      ],
-      "description": "Sellacious is an open-source ecommerce and marketplace platform for integrated POS and online stores.",
-      "dom": {
-        ".mod-sellacious-cart": {
-          "text": ""
-        }
-      },
-      "js": {
-        "SellaciousViewCartAIO": ""
-      },
-      "pricing": [
-        "low",
-        "recurring",
-        "freemium"
-      ],
-      "implies": "Joomla",
-      "saas": true,
-      "oss": true,
-      "icon": "Sellacious.png",
-      "website": "https://www.sellacious.com"
-    },
     "Shopify": {
       "cats": [
         6
       ],
+      "cookies": {
+        "_shopify_s": "",
+        "_shopify_y": ""
+      },
       "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
+      "dom": {
+        "link[href*='cdn.shopify.com']": {
+          "attributes": {
+            "href": "cdn\\.shopify\\.com\\;confidence:50"
+          }
+        }
+      },
       "headers": {
         "x-shopid": "\\;confidence:50",
         "x-shopify-stage": "\\;confidence:50"
       },
-      "html": "<link[^>]+=['\"]//cdn\\.shopify\\.com\\;confidence:25",
       "icon": "Shopify.svg",
       "js": {
         "Shopify": "\\;confidence:25",
         "ShopifyAPI": ""
+      },
+      "meta": {
+        "shopify-checkout-api-token": "",
+        "shopify-digital-wallet": ""
       },
       "pricing": [
         "low",
         "recurring"
       ],
       "saas": true,
-      "scripts": "sdks\\.shopifycdn\\.com",
+      "scripts": [
+        "sdks\\.shopifycdn\\.com",
+        "cdn\\.shopify\\.com"
+      ],
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
@@ -16906,6 +18142,28 @@
       ],
       "website": "https://www.shopware.com"
     },
+    "Shuttle": {
+      "cats": [
+        1
+      ],
+      "description": "Shuttle is a website development platform.",
+      "icon": "Devisto.svg",
+      "implies": [
+        "Laravel",
+        "PHP",
+        "Amazon Web Services"
+      ],
+      "js": {
+        "Shuttle.FrontApp": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "shuttle(?:-assets-new|-storage)\\.s3\\.amazonaws\\.com",
+      "website": "https://www.devisto.com"
+    },
     "Sift": {
       "cats": [
         10
@@ -16931,6 +18189,24 @@
         "//s\\.thebrighttag\\.com/iframe\\?"
       ],
       "website": "https://www.signal.co/"
+    },
+    "Signifyd": {
+      "cats": [
+        10,
+        16
+      ],
+      "description": "Signifyd is a provider of an enterprise-grade fraud technology solution for ecommerce stores.",
+      "icon": "Signifyd.svg",
+      "js": {
+        "SIGNIFYD_GLOBAL": ""
+      },
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.signifyd\\.com",
+      "website": "https://www.signifyd.com"
     },
     "SilverStripe": {
       "cats": [
@@ -16989,6 +18265,18 @@
       "icon": "Simplebo.png",
       "website": "https://www.simplebo.fr"
     },
+    "Site Kit": {
+      "cats": [
+        10
+      ],
+      "description": "Site Kit is a one-stop solution for WordPress users to use everything Google has to offer to make them successful on the web.",
+      "icon": "Google.svg",
+      "implies": "WordPress",
+      "meta": {
+        "generator": "^Site Kit by Google ?([\\d.]+)?\\;version:\\1"
+      },
+      "website": "https://sitekit.withgoogle.com/"
+    },
     "Site Meter": {
       "cats": [
         10
@@ -16996,6 +18284,26 @@
       "icon": "Site Meter.png",
       "scripts": "sitemeter\\.com/js/counter\\.js\\?site=",
       "website": "http://www.sitemeter.com"
+    },
+    "Site24x7": {
+      "cats": [
+        78
+      ],
+      "description": "Site24x7 is a cloud-based website and server monitoring platform.",
+      "icon": "Site24x7.png",
+      "js": {
+        "S247RumQueueImpl": "",
+        "s247RUM": "",
+        "site24x7RumError": "",
+        "site24x7rum": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.site24x7rum\\.com",
+      "website": "https://www.site24x7.com"
     },
     "SiteEdit": {
       "cats": [
@@ -17041,8 +18349,7 @@
       "description": "SiteSpect is the A/B testing and optimisation solution.",
       "icon": "SiteSpect.png",
       "js": {
-        "SS": "\\;confidence:50",
-        "ss_dom_var": "\\;confidence:50"
+        "ss_dom_var": ""
       },
       "pricing": [
         "poa"
@@ -17099,6 +18406,28 @@
       "scripts": "siteglide\\.js",
       "website": "https://www.siteglide.com"
     },
+    "Sitevision CMS": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "SiteVisionLTM": ""
+      },
+      "description": "Sitevision CMS is a platform for web publishing that consists of flexible and pre-made modules. Available as self-hosed software and Cloud SaaS.",
+      "icon": "Sitevision CMS.png",
+      "pricing": [
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/docready-min\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/AppRegistry\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/webapps/webapp_sdk-min\\.js\\;confidence:50",
+        "sitevision/system-resource/(?:[\\w\\d]+)/envision/envision\\.js\\;confidence:50"
+      ],
+      "website": "https://www.sitevision.se"
+    },
     "Sivuviidakko": {
       "cats": [
         1
@@ -17147,6 +18476,31 @@
       "scripts": "\\.skimresources\\.com",
       "website": "https://skimlinks.com",
       "xhr": "\\.skimresources\\.com"
+    },
+    "Sky-Shop": {
+      "cats": [
+        6
+      ],
+      "description": "Sky-Shop.pl is a platform for dropshipping an online sales on Allegro, eBay and Amazon.",
+      "dom": ".skyshop-container",
+      "icon": "Sky-Shop.svg",
+      "implies": [
+        "PHP",
+        "Bootstrap",
+        "jQuery"
+      ],
+      "js": {
+        "L.CONTINUE_SHOPPING": ""
+      },
+      "meta": {
+        "generator": "Sky-Shop"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://sky-shop.pl"
     },
     "SkyVerge": {
       "cats": [
@@ -17292,6 +18646,24 @@
       "scripts": "smjslib\\.js",
       "website": "http://smartstore.com"
     },
+    "Smartsupp": {
+      "cats": [
+        52
+      ],
+      "description": "Smartsupp is a live chat tool that offers visitor recording feature.",
+      "icon": "Smartsupp.svg",
+      "js": {
+        "$smartsupp.options.widgetVersion": "([\\d.]+)\\;version:\\1",
+        "smartsupp": ""
+      },
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.smartsuppchat\\.com",
+      "website": "https://www.smartsupp.com"
+    },
     "SmugMug": {
       "cats": [
         7
@@ -17351,6 +18723,10 @@
         "SnapEngageChat": "",
         "snapengage_mobile": ""
       },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "website": "https://snapengage.com/"
     },
     "Snipcart": {
@@ -17361,13 +18737,13 @@
         "snipcart-cart": ""
       },
       "dom": {
+        "div#snipcart": {
+          "text": ""
+        },
         "link[href*='snipcart.css']": {
           "attributes": {
             "href": ""
           }
-        },
-        "div#snipcart": {
-          "text": ""
         }
       },
       "icon": "Snipcart.png",
@@ -17641,6 +19017,26 @@
       "icon": "SparkPost.svg",
       "website": "https://www.sparkpost.com/"
     },
+    "SpeedCurve": {
+      "cats": [
+        78
+      ],
+      "description": "SpeedCurve is a front-end performance monitoring service.",
+      "icon": "SpeedCurve.svg",
+      "js": {
+        "LUX.version": "([\\d.]+)\\;version:\\1",
+        "LUX_t_end": "\\d+\\;confidence:50",
+        "LUX_t_start": "\\d+\\;confidence:50"
+      },
+      "pricing": [
+        "mid",
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.speedcurve\\.com",
+      "website": "https://www.speedcurve.com"
+    },
     "Sphinx": {
       "cats": [
         4
@@ -17736,8 +19132,10 @@
       "js": {
         "SpotX.VERSION": "([\\d.]+)\\;version:\\1"
       },
+      "saas": true,
       "scripts": "js\\.spotx\\.tv",
-      "website": "https://www.spotx.tv"
+      "website": "https://www.spotx.tv",
+      "xhr": "\\.spotx(?:change|cdn)\\.com"
     },
     "Spree": {
       "cats": [
@@ -17920,6 +19318,28 @@
       "implies": "Perl",
       "website": "http://metacpan.org/pod/Starlet"
     },
+    "Statamic": {
+      "cats": [
+        1
+      ],
+      "description": "Statamic is an open-source and self-hosted content management system based on the PHP programming language.",
+      "headers": {
+        "x-powered-by": "^Statamic$"
+      },
+      "icon": "Statamic.svg",
+      "implies": [
+        "PHP",
+        "Laravel"
+      ],
+      "oss": true,
+      "pricing": [
+        "freemium",
+        "mid",
+        "payg"
+      ],
+      "saas": false,
+      "website": "https://statamic.com"
+    },
     "Statcounter": {
       "cats": [
         10
@@ -18056,6 +19476,28 @@
       "scripts": "js\\.stripe\\.com",
       "website": "http://stripe.com"
     },
+    "Stylitics": {
+      "cats": [
+        5,
+        32
+      ],
+      "description": "Stylitics is a cloud-based SaaS platform for retailers to automate and distribute visual content at scale.",
+      "dom": "link[href*='.stylitics.com']",
+      "icon": "Stylitics.svg",
+      "js": {
+        "Stylitics": "",
+        "stylitics": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "\\.stylitics\\.com/v([\\d.]+)\\;version:\\1",
+        "/stylitics/js/stylitics\\.js\\?ver=v([\\d.]+)\\;version:\\1"
+      ],
+      "website": "https://stylitics.com"
+    },
     "SublimeVideo": {
       "cats": [
         14
@@ -18186,9 +19628,27 @@
       "cats": [
         12
       ],
+      "description": "Svelte is a free and open-source front end compiler created by Rich Harris and maintained by the Svelte core team members.",
       "html": "<[^>]+class=\\\"[^\\\"]+\\ssvelte-[\\w]*\\\"",
       "icon": "Svelte.svg",
+      "oss": true,
       "website": "https://svelte.dev"
+    },
+    "SvelteKit": {
+      "cats": [
+        66
+      ],
+      "description": "SvelteKit is the official Svelte framework for building web applications with a flexible filesystem-based routing.",
+      "dom": {
+        "a": {
+          "attributes": {
+            "sveltekit:prefetch": ""
+          }
+        }
+      },
+      "icon": "Svelte.svg",
+      "oss": true,
+      "website": "https://kit.svelte.dev"
     },
     "SweetAlert": {
       "cats": [
@@ -18370,6 +19830,26 @@
       },
       "website": "https://github.com/syntaxhighlighter"
     },
+    "Syte": {
+      "cats": [
+        76,
+        29
+      ],
+      "description": "Syte is a provider of visual AI technology that aims to improve retailers' site navigation, product discovery, and user experience by powering solutions that engage and convert shoppers.",
+      "dom": "img[src*='cdn.syteapi.com']",
+      "icon": "Syte.svg",
+      "js": {
+        "SyteApi.getBinImageBB": "",
+        "SyteApp.Analytics": "",
+        "SytePixel": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.syteapi\\.com/",
+      "website": "https://www.syte.ai"
+    },
     "T-Soft": {
       "cats": [
         6
@@ -18546,6 +20026,23 @@
       },
       "website": "http://taiga.io"
     },
+    "TakeDrop": {
+      "cats": [
+        6
+      ],
+      "description": "TakeDrop is an ecommerce platform.",
+      "dom": "img[src*='main.takedropstorage.com']",
+      "icon": "TakeDrop.png",
+      "js": {
+        "webpackJsonptakedrop-react": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://takedrop.pl"
+    },
     "Tamago": {
       "cats": [
         5
@@ -18563,8 +20060,39 @@
       },
       "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
       "icon": "TawkTo.png",
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
       "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
+    },
+    "Teachable": {
+      "cats": [
+        21
+      ],
+      "cookies": {
+        "_gat_teachableTracker": "\\d+"
+      },
+      "description": "Teachable is a learning management system or LMS platform.",
+      "icon": "Teachable.png",
+      "js": {
+        "isTeachable": "\\;confidence:50",
+        "teachableIcons": "\\;confidence:50",
+        "trackTeachableGAEvent": ""
+      },
+      "meta": {
+        "asset_host": "\\.teachablecdn\\.com"
+      },
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.teachablecdn\\.com",
+      "website": "https://teachable.com"
     },
     "Teads": {
       "cats": [
@@ -18772,6 +20300,41 @@
       "implies": "PHP",
       "website": "http://www.thinkphp.cn"
     },
+    "Thinkific": {
+      "cats": [
+        21
+      ],
+      "cookies": {
+        "_thinkific_session": ""
+      },
+      "description": "Thinkific is a software platform that enables entrepreneurs to create, market, sell, and deliver their own online courses.",
+      "icon": "Thinkific.svg",
+      "js": {
+        "Thinkific": "",
+        "ThinkificAnalytics": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn(?:-themes)?\\.thinkific\\.com",
+      "website": "https://www.thinkific.com"
+    },
+    "ThreatMetrix": {
+      "cats": [
+        16,
+        83
+      ],
+      "description": "LexisNexis ThreatMetrix is an enterprise solution for online risk and fraud protection ('digital identity intelligence and digital authentication').",
+      "icon": "ThreatMetrix.svg",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.online-metrix\\.net",
+      "website": "https://risk.lexisnexis.com/products/threatmetrix"
+    },
     "ThriveCart": {
       "cats": [
         6
@@ -18926,6 +20489,7 @@
       "cats": [
         24
       ],
+      "cpe": "cpe:/a:tiny:tinymce",
       "description": "TinyMCE is an online rich-text editor released as open-source software. TinyMCE is designed to integrate with JavaScript libraries, Vue.js, and AngularJS as well as content management systems such as Joomla!, and WordPress.",
       "icon": "TinyMCE.png",
       "js": {
@@ -18999,7 +20563,6 @@
       "js": {
         "TrackJs": ""
       },
-      "scripts": "tracker\\.js",
       "website": "http://trackjs.com"
     },
     "Tradedoubler": {
@@ -19101,6 +20664,23 @@
       "saas": true,
       "website": "https://triplelift.com",
       "xhr": "\\.3lift\\.com"
+    },
+    "TruValidate": {
+      "cats": [
+        16,
+        83
+      ],
+      "description": "TransUnion TruValidate (previously ReputationShield/IDVision from iovation) is an online risk and fraud detection platform.",
+      "icon": "TruValidate.svg",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "mpsnare\\.iesnare\\.com",
+        "ci-mpsnare\\.iovation\\.com"
+      ],
+      "website": "https://www.transunion.com/solution/truvalidate"
     },
     "TrustArc": {
       "cats": [
@@ -19316,9 +20896,9 @@
         4
       ],
       "description": "TypeDoc is an API documentation generator for TypeScript projects.",
+      "icon": "TypeDoc.png",
       "implies": "TypeScript",
       "oss": true,
-      "icon": "TypeDoc.png",
       "website": "https://typedoc.org"
     },
     "TypePad": {
@@ -19332,6 +20912,15 @@
       },
       "url": "typepad\\.com",
       "website": "http://www.typepad.com"
+    },
+    "TypeScript": {
+      "cats": [
+        27
+      ],
+      "description": "TypeScript is an open-source language which builds on JavaScript  by adding static type definitions.",
+      "icon": "TypeScript.svg",
+      "oss": true,
+      "website": "https://www.typescriptlang.org"
     },
     "Typecho": {
       "cats": [
@@ -19490,6 +21079,17 @@
       "scripts": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
       "website": "https://www.uniconsent.com/"
     },
+    "Unpkg": {
+      "cats": [
+        31
+      ],
+      "description": "Unpkg is a content delivery network for everything on npm.",
+      "dom": "link[href*='unpkg.com']",
+      "icon": "Unpkg.png",
+      "oss": true,
+      "scripts": "unpkg\\.com/",
+      "website": "https://unpkg.com"
+    },
     "UpSellit": {
       "cats": [
         76
@@ -19579,9 +21179,20 @@
       ],
       "description": "Userlike is a cloud-based live chat solution that can be integrated with existing websites.",
       "icon": "UserLike.svg",
+      "js": {
+        "userlike": "",
+        "userlikeInit": ""
+      },
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
       "scripts": [
         "userlike\\.min\\.js",
-        "userlikelib\\.min\\.js"
+        "userlikelib\\.min\\.js",
+        "//userlike-cdn-widgets\\.",
+        "api\\.userlike\\.com"
       ],
       "website": "http://userlike.com"
     },
@@ -20340,6 +21951,24 @@
       "oss": true,
       "website": "https://webassembly.org/"
     },
+    "WebEngage": {
+      "cats": [
+        32,
+        76
+      ],
+      "description": "WebEngage is a customer data platform and marketing automation suite.",
+      "icon": "WebEngage.png",
+      "js": {
+        "webengage.__v": "([\\d.]+)\\;version:\\1"
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.webengage\\.co(?:m)?/",
+      "website": "https://webengage.com"
+    },
     "WebGUI": {
       "cats": [
         1
@@ -20416,6 +22045,29 @@
       },
       "scripts": "\\bwebix\\.js",
       "website": "http://webix.com"
+    },
+    "Weblium": {
+      "cats": [
+        1,
+        6
+      ],
+      "description": "Weblium let's you create a web site or online store without the need for a web developer or designer.",
+      "dom": "link[href*='res2.weblium.site']",
+      "icon": "Weblium.svg",
+      "implies": [
+        "Node.js",
+        "OpenResty",
+        "React"
+      ],
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "res2\\.weblium\\.site/common/core\\.min\\.js",
+      "url": "\\.weblium\\.site",
+      "website": "https://weblium.com"
     },
     "WebsPlanet": {
       "cats": [
@@ -20759,10 +22411,7 @@
         6
       ],
       "description": "WooCommerce is an open-source ecommerce plugin for WordPress.",
-      "html": [
-        "<!-- WooCommerce",
-        "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\\.css?ver=([\\d.]+)'\\;version:\\1"
-      ],
+      "dom": ".woocommerce, .woocommerce-no-js, link[rel*='woocommerce']",
       "icon": "WooCommerce.svg",
       "implies": "WordPress",
       "js": {
@@ -20772,7 +22421,10 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "oss": true,
-      "scripts": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "scripts": [
+        "woocommerce",
+        "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
+      ],
       "website": "https://woocommerce.com"
     },
     "Woopra": {
@@ -20782,18 +22434,6 @@
       "icon": "Woopra.png",
       "scripts": "static\\.woopra\\.com",
       "website": "http://www.woopra.com"
-    },
-    "Site Kit": {
-      "cats": [
-        10
-      ],
-      "icon": "Google.svg",
-      "implies": "WordPress",
-      "meta": {
-        "generator": "^Site Kit by Google ?([\\d.]+)?\\;version:\\1"
-      },
-      "website": "https://sitekit.withgoogle.com/",
-      "description": "Site Kit is a one-stop solution for WordPress users to use everything Google has to offer to make them successful on the web."
     },
     "WordPress": {
       "cats": [
@@ -20830,7 +22470,7 @@
       "saas": true,
       "scripts": [
         "/wp-(?:content|includes)/",
-        "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
+        "wp-embed\\.min\\.js"
       ],
       "website": "https://wordpress.org"
     },
@@ -21074,6 +22714,7 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:yahoo:yui",
       "icon": "YUI.png",
       "js": {
         "YAHOO.VERSION": "^(.+)$\\;version:\\1",
@@ -21456,6 +23097,11 @@
       ],
       "description": "Zendesk Chat is a live chat and communication widget.",
       "icon": "Zendesk Chat.png",
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
       "scripts": "v2\\.zopim\\.com",
       "website": "http://zopim.com"
     },
@@ -21529,6 +23175,20 @@
       },
       "icon": "Zipkin.png",
       "website": "https://zipkin.io/"
+    },
+    "Zocdoc": {
+      "cats": [
+        72
+      ],
+      "description": "Zocdoc is a New York City-based company offering an online service that allows people to find and book in-person or telemedicine appointments for medical or dental care.",
+      "dom": "a[href*='www.zocdoc.com'][target='_blank']",
+      "icon": "Zocdoc.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "offsiteschedule\\.zocdoc\\.com",
+      "website": "https://www.zocdoc.com"
     },
     "Zoey": {
       "cats": [
@@ -21659,6 +23319,27 @@
       "scripts": "amcharts.*\\.js",
       "website": "http://amcharts.com"
     },
+    "amoCRM": {
+      "cats": [
+        53
+      ],
+      "description": "amoCRM is a web-based customer relationship management software solution.",
+      "icon": "amoCRM.svg",
+      "js": {
+        "AMOCRM": "",
+        "AMO_PIXEL_CLIENT": "",
+        "amoFormsWidget": "",
+        "amoSocialButton": ""
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.amocrm\\.(?:ru|com)",
+      "website": "https://www.amocrm.com"
+    },
     "animate.css": {
       "cats": [
         66
@@ -21668,6 +23349,16 @@
         "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
       ],
       "website": "https://daneden.github.io/animate.css/"
+    },
+    "augmented-ui": {
+      "cats": [
+        66
+      ],
+      "description": "augmented-ui is a UI framework inspired by cyberpunk and sci-fi.",
+      "dom": "[data-augmented-ui]",
+      "icon": "augmented-ui.png",
+      "oss": true,
+      "website": "http://augmented-ui.com"
     },
     "basket.js": {
       "cats": [
@@ -21679,18 +23370,6 @@
       },
       "scripts": "basket.*\\.js\\;confidence:10",
       "website": "https://addyosmani.github.io/basket.js/"
-    },
-    "borderfree": {
-      "cats": [
-        6
-      ],
-      "icon": "borderfree.png",
-      "scripts": [
-        "global\\.prd\\.borderfree\\.com",
-        "wm\\.prd\\.borderfree\\.com",
-        "bfx\\.js"
-      ],
-      "website": "https://www.borderfree.com/"
     },
     "cPanel": {
       "cats": [
@@ -21749,6 +23428,24 @@
       "website": "https://commercelayer.io",
       "xhr": "\\.commercelayer\\.io"
     },
+    "db-ip": {
+      "cats": [
+        79
+      ],
+      "description": "dbip is a geolocation API and database.",
+      "icon": "db-ip.png",
+      "js": {
+        "ENV.dbip": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.db-ip\\.com",
+      "website": "https://db-ip.com/",
+      "xhr": "api\\.db-ip\\.com"
+    },
     "decimal.js": {
       "cats": [
         59
@@ -21789,6 +23486,37 @@
       "implies": "PHP",
       "scripts": "[^a-z\\d]e107\\.js",
       "website": "http://e107.org"
+    },
+    "eClass": {
+      "cats": [
+        1
+      ],
+      "description": "eClass is an online learning platform.",
+      "icon": "eClass.png",
+      "js": {
+        "fe_eclass": "\\;confidence:50",
+        "fe_eclass_guest": "\\;confidence:50"
+      },
+      "website": "https://www.eclass.com.hk"
+    },
+    "eDokan": {
+      "cats": [
+        6
+      ],
+      "description": "eDokan is hosted ecommerce platform with drag-drop template builder and zero programming knowledge.",
+      "dom": "img[src*='cdn.edokan.co']",
+      "icon": "eDokan.png",
+      "implies": [
+        "Node.js",
+        "Angular",
+        "MongoDB"
+      ],
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://edokan.co"
     },
     "eSyndiCat": {
       "cats": [
@@ -21859,6 +23587,25 @@
       "scripts": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
       "website": "http://ef.js.org"
     },
+    "emBlue": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "emBlue is an email and marketing automation platform.",
+      "icon": "emBlue.svg",
+      "js": {
+        "emblueOnSiteApp": ""
+      },
+      "pricing": [
+        "freemium",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.embluemail\\.com/(?:library/([\\d.]+))?\\;version:\\1",
+      "website": "https://www.embluemail.com/en"
+    },
     "enduro.js": {
       "cats": [
         1
@@ -21928,43 +23675,6 @@
       },
       "scripts": "static/gitweb\\.js$",
       "website": "http://git-scm.com"
-    },
-    "GraphCMS": {
-      "cats": [
-        1
-      ],
-      "icon": "GraphCMS.svg",
-      "description": "GraphCMS is a GraphQL headless CMS for content federation and omnichannel headless content management.",
-      "xhr": "\\.graphcms\\.com",
-      "dom": {
-        ".graphcms-image-wrapper": {
-          "text": ""
-        },
-        "img[src*='media.graphcms.com']": {
-          "text": ""
-        }
-      },
-      "implies": ["GraphQL", "PostgreSQL", "Go", "TypeScript"],
-      "pricing": ["mid", "recurring", "freemium"],
-      "website": "https://graphcms.com"
-    },
-    "GraphQL": {
-      "cats": [
-        27
-      ],
-      "description": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
-      "oss": true,
-      "icon": "GraphQL.svg",
-      "website": "https://graphql.org"
-    },
-    "TypeScript": {
-      "cats": [
-        27
-      ],
-      "description": "TypeScript is an open-source language which builds on JavaScript  by adding static type definitions.",
-      "oss": true,
-      "icon": "TypeScript.svg",
-      "website": "https://www.typescriptlang.org"
     },
     "govCMS": {
       "cats": [
@@ -22076,6 +23786,20 @@
       "url": "imperia/md/",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
     },
+    "ip-api": {
+      "cats": [
+        79
+      ],
+      "icon": "ip-api.png",
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ip-api.com/",
+      "xhr": "ip-api\\.com/"
+    },
     "ip-label": {
       "cats": [
         10
@@ -22086,6 +23810,100 @@
       },
       "scripts": "clobs\\.js",
       "website": "http://www.ip-label.com"
+    },
+    "ipapi": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
+      "icon": "ipapi.png",
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ipapi.com",
+      "xhr": "api\\.ipapi\\.com"
+    },
+    "ipapi.co": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi.co is a web analytics provider with IP address lookup and location API.",
+      "icon": "ipapi.co.png",
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ipapi.co",
+      "xhr": "ipapi\\.co/"
+    },
+    "ipdata": {
+      "cats": [
+        79
+      ],
+      "description": "ipdata is a JSON IP Address Geolocation API that allows to lookup the location of both IPv4 and IPv6.",
+      "icon": "ipdata.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "low"
+      ],
+      "saas": true,
+      "website": "https://ipdata.co/",
+      "xhr": "api\\.ipdata\\.co"
+    },
+    "ipgeolocation": {
+      "cats": [
+        79
+      ],
+      "description": "ipgeolocation is an IP Geolocation API and Accurate IP Lookup Database.",
+      "icon": "ipgeolocation.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "mid"
+      ],
+      "saas": true,
+      "website": "https://ipgeolocation.co/",
+      "xhr": "api\\.ipgeolocation\\.io"
+    },
+    "ipify": {
+      "cats": [
+        79
+      ],
+      "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
+      "icon": "ipify.png",
+      "pricing": [
+        "freemium",
+        "payg",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.ipify\\.org",
+      "website": "https://ipify.org",
+      "xhr": "(?:api|api64|geo)\\.ipify\\.org"
+    },
+    "ipstack": {
+      "cats": [
+        79
+      ],
+      "description": "ipstack is a real-time IP to geolocation API capable of looking at location data and assessing security threats originating from risky IP addresses.",
+      "icon": "ipstack.png",
+      "js": {
+        "ENV.ipStackAccessToken": ""
+      },
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "saas": true,
+      "website": "https://ipstack.com",
+      "xhr": "api\\.ipstack\\.com"
     },
     "iubenda": {
       "cats": [
@@ -22131,11 +23949,7 @@
       "js": {
         "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
-      "scripts": [
-        "jquery[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-        "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
-      ],
+      "scripts": "jquery",
       "website": "https://jquery.com"
     },
     "jQuery DevBridge Autocomplete": {
