@@ -14311,20 +14311,37 @@
         67
       ],
       "description": "Osano is a data privacy platform that helps your website become compliant with laws such as GDPR and CCPA.",
-      "icon": "osano.png",
+      "icon": "Osano.svg",
+      "js": {
+        "Osano": ""
+      },
       "scripts": "cookieconsent\\.min\\.js",
-      "website": "https://www.osano.com/"
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "mid",
+        "recurring"
+      ],
+      "website": "https://www.osano.com"
     },
     "Outbrain": {
       "cats": [
-        5
+        5,
+        36
       ],
-      "icon": "Outbrain.png",
+      "description": "Outbrain is a web advertising platform that displays boxes of links, known as chumboxes, to pages within websites.",
+      "icon": "Outbrain.svg",
       "js": {
         "OB_releaseVer": "^(.+)$\\;version:\\1",
-        "OutbrainPermaLink": ""
+        "OutbrainPermaLink": "",
+        "obApi.version": "^[\\d.]+$",
+        "OB_ADV_ID": ""
       },
       "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
       "website": "https://www.outbrain.com"
     },
     "Outlook Web App": {
@@ -18203,11 +18220,21 @@
     },
     "Sift": {
       "cats": [
-        10
+        10,
+        16
       ],
+      "description": "Sift is a CA-based fraud prevention company.",
       "icon": "Sift.png",
-      "scripts": [
-        "cdn\\.sift(?:science)?\\.com/s\\.js"
+      "js": {
+        "_sift": "",
+        "__siftFlashCB": ""
+      },
+      "scripts": "cdn\\.sift(?:science)?\\.com/s\\.js",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "high",
+        "recurring"
       ],
       "website": "https://sift.com/"
     },
