@@ -5893,6 +5893,9 @@
         "recurring",
         "onetime"
       ],
+      "meta": {
+        "generator": "Divi"
+      },
       "saas": true,
       "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
       "website": "https://www.elegantthemes.com/gallery/divi"
@@ -24789,6 +24792,25 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
+    },
+    "Visual Composer": {
+      "cats": [
+        51
+      ],
+      "description": "Visual Composer is an all-in-one web design tool for anyone who uses WordPress.",
+      "icon": "visualcomposer.svg",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "Powered by Visual Composer Website Builder"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://visualcomposer.com"
     },
     "webEdition": {
       "cats": [
