@@ -16735,7 +16735,6 @@
     "Rezdy": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Rezdy is an online booking software for tours and attractions.",
@@ -16751,7 +16750,6 @@
     "Rezgo": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Rezgo is a tour operator software that provides online booking system.",
@@ -16773,6 +16771,23 @@
       ],
       "saas": true,
       "website": "https://www.rezgo.com"
+    },
+    "RichRelevance": {
+      "cats": [
+        76
+      ],
+      "description": "RichRelevance is a cloud-based omnichannel personalization platform built to help Retailers, B2B, financial services, travel and hospitality, and branded manufacturers personalize their customer experiences.",
+      "icon": "RichRelevance.png",
+      "js": {
+        "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50",
+        "RR.U": "\\;confidence:50"
+      },
+      "scripts": "\\.richrelevance\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://richrelevance.com"
     },
     "Rickshaw": {
       "cats": [
