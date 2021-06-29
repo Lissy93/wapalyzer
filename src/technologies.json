@@ -24721,6 +24721,40 @@
       },
       "website": "https://snewscms.com"
     },
+    "snigel AdConsent": {
+      "cats": [
+        67
+      ],
+      "description": "snigel AdConsent is a IAB-registered consent managment platfrom (CMP) which help keep sites speed intact while remaining compliant with GDPR and CCPA.",
+      "icon": "snigel.svg",
+      "js": {
+        "snhb.baseSettings": "\\;confidence:50",
+        "snhb.info.cmpVersion": "",
+        "adconsent.version": "^([\\d.]+)$\\;version:\\1"
+      },
+      "scripts": "(?:staging-)?cdn\\.snigelweb\\.com/(?:snhb|adconsent)/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.snigel.com/adconsent/"
+    },
+    "snigel AdEngine": {
+      "cats": [
+        36
+      ],
+      "description": "snigel AdEngine is a header bidding solution product from snigel.",
+      "icon": "snigel.svg",
+      "scripts": [
+        "(?:staging-)?cdn\\.snigelweb\\.com/adengine/",
+        "adengine\\.snigelweb\\.com"
+      ],
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.snigel.com/adengine/"
+    },
     "script.aculo.us": {
       "cats": [
         59
