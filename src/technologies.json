@@ -8278,6 +8278,39 @@
       "saas": true,
       "website": "https://ads.google.com"
     },
+    "Google Ads Conversion Tracking": {
+      "cats": [
+        10
+      ],
+      "description": "Google Ads Conversion Tracking is a free tool that shows you what happens after a customer interacts with your ads.",
+      "icon": "Google.svg",
+      "js": {
+        "google_trackConversion": ""
+      },
+      "scripts": "\\.googleadservices\\.com/pagead/conversion_async\\.js",
+      "saas": true,
+      "pricing": [
+        "freemium"
+      ],
+      "website": "https://support.google.com/google-ads/answer/1722022"
+    },
+    "Google Call Conversion Tracking": {
+      "cats": [
+        10
+      ],
+      "description": "Google Call Conversion Tracking is conversion tracking that shows which search keywords are driving the most calls.",
+      "icon": "Google.svg",
+      "js": {
+        "google_wcc_status": "",
+        "_googCallTrackingImpl": ""
+      },
+      "scripts": "gstatic\\.com/call-tracking/.+\\.js",
+      "saas": true,
+      "pricing": [
+        "freemium"
+      ],
+      "website": "https://support.google.com/google-ads/answer/6100664"
+    },
     "Google Analytics": {
       "cats": [
         10
@@ -8508,6 +8541,18 @@
       "saas": true,
       "scripts": "googletagmanager\\.com/gtm\\.js",
       "website": "http://www.google.com/tagmanager"
+    },
+    "Google Remarketing Tag": {
+      "cats": [
+        77
+      ],
+      "description": "Google Remarketing Tag is a web tagging library for Google's site measurement, conversion tracking and remarketing products.",
+      "icon": "Google Tag Manager.svg",
+      "js": {
+        "gtag": ""
+      },
+      "saas": true,
+      "website": "https://support.google.com/google-ads/answer/2476688"
     },
     "Google Wallet": {
       "cats": [
