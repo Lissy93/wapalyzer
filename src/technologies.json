@@ -7174,7 +7174,7 @@
       "saas": true,
       "scripts": [
         "fingerprint(?:/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.a-z]+)?\\;version:\\1\\2"
+        "fingerprintjs(?:\\-pro|2)?(?:@|/)(\\d.*?)?/\\;version:\\1"
       ],
       "website": "https://fingerprintjs.com"
     },
