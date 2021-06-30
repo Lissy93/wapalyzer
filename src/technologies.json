@@ -13484,7 +13484,7 @@
       "cats": [
         5,
         32
-      ],    
+      ],
       "description": "Nextsale is a conversion optimisation platform that provides social proof and urgency tools for ecommerce websites.",
       "icon": "Nextsale.svg",
       "saas": true,
@@ -22596,7 +22596,6 @@
     "Wix": {
       "cats": [
         1,
-        6,
         11
       ],
       "cookies": {
@@ -22611,6 +22610,7 @@
       "icon": "Wix.svg",
       "implies": "React",
       "js": {
+        "wixPerformanceMeasurements": "",
         "wixBiSession": ""
       },
       "meta": {
@@ -22623,6 +22623,24 @@
       "saas": true,
       "scripts": "static\\.parastorage\\.com",
       "website": "https://www.wix.com"
+    },
+    "Wix eCommerce": {
+      "cats": [
+        6
+      ],
+      "icon": "Wix.svg",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "dom": {
+        "#wix-viewer-model": {
+          "text": "wixstores"
+        }
+      },
+      "implies": "Wix",
+      "website": "https://www.wix.com/freesitebuilder/tae-store"
     },
     "Wolf CMS": {
       "cats": [
