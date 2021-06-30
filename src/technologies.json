@@ -1169,15 +1169,6 @@
       "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
       "website": "https://www.advally.com"
     },
-    "Advanced Web Stats": {
-      "cats": [
-        10
-      ],
-      "html": "aws\\.src = [^<]+caphyon-analytics",
-      "icon": "Advanced Web Stats.png",
-      "implies": "Java",
-      "website": "http://www.advancedwebstats.com"
-    },
     "Advert Stream": {
       "cats": [
         36
@@ -1543,16 +1534,6 @@
       "icon": "all-in-One-SEO-Pack.png",
       "implies": "WordPress",
       "website": "https://wordpress.org/plugins/all-in-one-seo-pack/"
-    },
-    "Allegro RomPager": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Allegro-Software-RomPager(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "Allegro RomPager.png",
-      "website": "http://allegrosoft.com/embedded-web-server-s2"
     },
     "AlloyUI": {
       "cats": [
@@ -5557,17 +5538,6 @@
       ],
       "website": "http://dnnsoftware.com"
     },
-    "DTG": {
-      "cats": [
-        1
-      ],
-      "html": [
-        "<a[^>]+Site Powered by DTG"
-      ],
-      "icon": "DTG.png",
-      "implies": "Mono.net",
-      "website": "https://www.dtg.nl"
-    },
     "Dancer": {
       "cats": [
         18
@@ -7718,16 +7688,6 @@
       "icon": "futureshop.png",
       "scripts": "future-shop.*\\.js",
       "website": "https://www.future-shop.jp"
-    },
-    "G-WAN": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "G-WAN"
-      },
-      "icon": "G-WAN.png",
-      "website": "http://gwan.com"
     },
     "GOV.UK Elements": {
       "cats": [
@@ -12674,22 +12634,6 @@
       "scripts": "mint/\\?js",
       "website": "https://haveamint.com"
     },
-    "Miresoone": {
-      "cats": [
-        6
-      ],
-      "description": "Miresoone is an online ordering site builder.",
-      "icon": "Miresoone.svg",
-      "implies": [
-        "Laravel",
-        "React"
-      ],
-      "meta": {
-        "generator": "^Miresoone"
-      },
-      "saas": true,
-      "website": "https://miresoone.com"
-    },
     "Misskey": {
       "cats": [
         2
@@ -13811,7 +13755,7 @@
         "payg"
       ],
       "saas": true,
-      "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
+      "scripts": "\\.olark\\.com",
       "website": "https://www.olark.com/"
     },
     "Ometria": {
@@ -17001,15 +16945,6 @@
       ],
       "website": "https://rollbar.com/"
     },
-    "Rotic": {
-      "cats": [
-        52
-      ],
-      "description": "Rotic is a conversion chatbot that answers questions, captures contacts, and books meetings.",
-      "icon": "Rotic.png",
-      "scripts": "https://rotic.ir/api/v1/enterprise/\\S+/widget/\\S+",
-      "website": "https://rotic.ir"
-    },
     "RoundCube": {
       "cats": [
         30
@@ -19284,17 +19219,6 @@
       },
       "website": "https://www.sphinx-doc.org/"
     },
-    "SpinCMS": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "spincms_session": ""
-      },
-      "icon": "SpinCMS.png",
-      "implies": "PHP",
-      "website": "http://www.spin.cw"
-    },
     "Spinnakr": {
       "cats": [
         10
@@ -19309,15 +19233,6 @@
       ],
       "saas": true,
       "website": "https://www.spinnakr.com"
-    },
-    "SplitIt": {
-      "cats": [
-        41
-      ],
-      "description": "Splitit is the only buy-now-pay-later plan that lets shoppers set up payment plans with their existing credit card without interest charges or fees.",
-      "icon": "splitit.png",
-      "scripts": "checkout\\.production\\.splitit\\.com",
-      "website": "https://www.splitit.com/"
     },
     "Splitbee": {
       "cats": [
@@ -19933,23 +19848,6 @@
         "swell.version": "^(.+)$\\;version:\\1"
       },
       "website": "https://www.swell.is/"
-    },
-    "Swiftlet": {
-      "cats": [
-        18
-      ],
-      "headers": {
-        "X-Generator": "Swiftlet",
-        "X-Powered-By": "Swiftlet",
-        "X-Swiftlet-Cache": ""
-      },
-      "html": "Powered by <a href=\"[^>]+Swiftlet",
-      "icon": "Swiftlet.png",
-      "implies": "PHP",
-      "meta": {
-        "generator": "Swiftlet"
-      },
-      "website": "http://swiftlet.org"
     },
     "Swiftype": {
       "cats": [
@@ -24931,16 +24829,6 @@
         "styled": ""
       },
       "website": "https://styled-components.com"
-    },
-    "swift.engine": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "X-Powered-By": "swift\\.engine"
-      },
-      "icon": "swift.engine.png",
-      "website": "http://mittec.ru/default"
     },
     "tailwindcss": {
       "cats": [
