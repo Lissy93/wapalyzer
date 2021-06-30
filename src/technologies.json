@@ -4308,19 +4308,19 @@
       ],
       "description": "Chatra is a cloud-based live chat platform aimed at small businesses and ecommerce retailers.",
       "icon": "Chatra.svg",
-       "js": {
-         "ChatraID": "",
-         "ChatraSetup": ""
-       },
-      "scripts": "call\\.chatra\\.io/chatra\\.js",
-      "xhr": "chat\\.chatra\\.io/",
-      "saas": true,
+      "js": {
+        "ChatraID": "",
+        "ChatraSetup": ""
+      },
       "pricing": [
         "freemium",
         "payg",
         "recurring"
       ],
-      "website": "https://chatra.com"
+      "saas": true,
+      "scripts": "call\\.chatra\\.io/chatra\\.js",
+      "website": "https://chatra.com",
+      "xhr": "chat\\.chatra\\.io/"
     },
     "Checkfront": {
       "cats": [
@@ -5184,11 +5184,11 @@
       "js": {
         "cooladata": ""
       },
-      "scripts": "cdn\\.cooladata\\.com/",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "cdn\\.cooladata\\.com/",
       "website": "https://www.cooladata.com"
     },
     "Coppermine": {
@@ -5746,14 +5746,14 @@
       "description": "Decibel is a behavioral analysis solution that helps users gain actionable insights about their digital audience.",
       "icon": "Decibel.svg",
       "js": {
-        "decibelInsightLayer": "",
-        "decibelInsight": ""
+        "decibelInsight": "",
+        "decibelInsightLayer": ""
       },
-      "scripts": "cdn\\.decibelinsight\\.net",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "cdn\\.decibelinsight\\.net",
       "website": "https://decibel.com"
     },
     "DedeCMS": {
@@ -8307,29 +8307,12 @@
       "js": {
         "google_trackConversion": ""
       },
+      "pricing": [
+        "freemium"
+      ],
+      "saas": true,
       "scripts": "\\.googleadservices\\.com/pagead/conversion_async\\.js",
-      "saas": true,
-      "pricing": [
-        "freemium"
-      ],
       "website": "https://support.google.com/google-ads/answer/1722022"
-    },
-    "Google Call Conversion Tracking": {
-      "cats": [
-        10
-      ],
-      "description": "Google Call Conversion Tracking is conversion tracking that shows which search keywords are driving the most calls.",
-      "icon": "Google.svg",
-      "js": {
-        "google_wcc_status": "",
-        "_googCallTrackingImpl": ""
-      },
-      "scripts": "gstatic\\.com/call-tracking/.+\\.js",
-      "saas": true,
-      "pricing": [
-        "freemium"
-      ],
-      "website": "https://support.google.com/google-ads/answer/6100664"
     },
     "Google Analytics": {
       "cats": [
@@ -8375,6 +8358,23 @@
       },
       "icon": "Google App Engine.svg",
       "website": "http://code.google.com/appengine"
+    },
+    "Google Call Conversion Tracking": {
+      "cats": [
+        10
+      ],
+      "description": "Google Call Conversion Tracking is conversion tracking that shows which search keywords are driving the most calls.",
+      "icon": "Google.svg",
+      "js": {
+        "_googCallTrackingImpl": "",
+        "google_wcc_status": ""
+      },
+      "pricing": [
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "gstatic\\.com/call-tracking/.+\\.js",
+      "website": "https://support.google.com/google-ads/answer/6100664"
     },
     "Google Charts": {
       "cats": [
@@ -8513,6 +8513,18 @@
       ],
       "website": "https://developers.google.com/publisher-tag/guides/get-started"
     },
+    "Google Remarketing Tag": {
+      "cats": [
+        77
+      ],
+      "description": "Google Remarketing Tag is a web tagging library for Google's site measurement, conversion tracking and remarketing products.",
+      "icon": "Google Tag Manager.svg",
+      "js": {
+        "gtag": ""
+      },
+      "saas": true,
+      "website": "https://support.google.com/google-ads/answer/2476688"
+    },
     "Google Sign-in": {
       "cats": [
         69
@@ -8561,18 +8573,6 @@
       "saas": true,
       "scripts": "googletagmanager\\.com/gtm\\.js",
       "website": "http://www.google.com/tagmanager"
-    },
-    "Google Remarketing Tag": {
-      "cats": [
-        77
-      ],
-      "description": "Google Remarketing Tag is a web tagging library for Google's site measurement, conversion tracking and remarketing products.",
-      "icon": "Google Tag Manager.svg",
-      "js": {
-        "gtag": ""
-      },
-      "saas": true,
-      "website": "https://support.google.com/google-ads/answer/2476688"
     },
     "Google Wallet": {
       "cats": [
@@ -13487,16 +13487,16 @@
       ],
       "description": "Nextsale is a conversion optimisation platform that provides social proof and urgency tools for ecommerce websites.",
       "icon": "Nextsale.svg",
-      "saas": true,
       "js": {
         "NextsaleObject": ""
       },
-      "scripts": "(?:api|sdk)\\.nextsale\\.io/",
       "pricing": [
         "freemium",
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "(?:api|sdk)\\.nextsale\\.io/",
       "website": "https://nextsale.io"
     },
     "Nginx": {
@@ -13596,11 +13596,11 @@
       "js": {
         "nuqliumObject": ""
       },
-      "scripts": "\\.nuqlium\\.com/api",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.nuqlium\\.com/api",
       "website": "https://www.nuqlium.com"
     },
     "Nuvemshop": {
@@ -14253,14 +14253,14 @@
       "description": "OpinionLab is a omnichannel customer feedback solution provider.",
       "icon": "OpinionLab.png",
       "js": {
-        "OOo.version": "([\\d.]+)\\;version:\\1",
-        "OOo.Browser": ""
+        "OOo.Browser": "",
+        "OOo.version": "([\\d.]+)\\;version:\\1"
       },
-      "scripts": "\\.foresee\\.com/code/([\\d.]+)-oo/oo_engine\\.min\\.js\\;version:\\1",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.foresee\\.com/code/([\\d.]+)-oo/oo_engine\\.min\\.js\\;version:\\1",
       "website": "https://www.opinionlab.com"
     },
     "Optimise": {
@@ -16270,12 +16270,12 @@
       ],
       "description": "RapidSpike is an uptime and performance monitoring service for web sites and applications.",
       "icon": "RapidSpike.svg",
-      "scripts": "\\.rapidspike\\.com/",
-      "saas": true,
       "pricing": [
         "poa",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.rapidspike\\.com/",
       "website": "https://www.rapidspike.com"
     },
     "Raptor": {
@@ -16892,14 +16892,14 @@
       "description": "RichRelevance is a cloud-based omnichannel personalisation platform built to help Retailers, B2B, financial services, travel and hospitality, and branded manufacturers personalise their customer experiences.",
       "icon": "RichRelevance.png",
       "js": {
-        "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50",
-        "RR.U": "\\;confidence:50"
+        "RR.U": "\\;confidence:50",
+        "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50"
       },
-      "scripts": "\\.richrelevance\\.com/",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.richrelevance\\.com/",
       "website": "https://richrelevance.com"
     },
     "Rickshaw": {
@@ -17476,11 +17476,11 @@
         "Evergage": "",
         "evergageHideSections": ""
       },
-      "scripts": "cdn\\.evgnet\\.com",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "cdn\\.evgnet\\.com",
       "website": "https://www.salesforce.com/products/marketing-cloud/customer-interaction"
     },
     "Salesforce Service Cloud": {
@@ -22610,8 +22610,8 @@
       "icon": "Wix.svg",
       "implies": "React",
       "js": {
-        "wixPerformanceMeasurements": "",
-        "wixBiSession": ""
+        "wixBiSession": "",
+        "wixPerformanceMeasurements": ""
       },
       "meta": {
         "generator": "Wix\\.com Website Builder"
@@ -22628,18 +22628,18 @@
       "cats": [
         6
       ],
-      "icon": "Wix.svg",
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "saas": true,
       "dom": {
         "#wix-viewer-model": {
           "text": "wixstores"
         }
       },
+      "icon": "Wix.svg",
       "implies": "Wix",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
       "website": "https://www.wix.com/freesitebuilder/tae-store"
     },
     "Wolf CMS": {
@@ -24839,40 +24839,6 @@
       },
       "website": "https://snewscms.com"
     },
-    "snigel AdConsent": {
-      "cats": [
-        67
-      ],
-      "description": "snigel AdConsent is a IAB-registered consent managment platfrom (CMP) which help keep sites speed intact while remaining compliant with GDPR and CCPA.",
-      "icon": "snigel.svg",
-      "js": {
-        "snhb.baseSettings": "\\;confidence:50",
-        "snhb.info.cmpVersion": "",
-        "adconsent.version": "^([\\d.]+)$\\;version:\\1"
-      },
-      "scripts": "(?:staging-)?cdn\\.snigelweb\\.com/(?:snhb|adconsent)/",
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://www.snigel.com/adconsent/"
-    },
-    "snigel AdEngine": {
-      "cats": [
-        36
-      ],
-      "description": "snigel AdEngine is a header bidding solution product from snigel.",
-      "icon": "snigel.svg",
-      "scripts": [
-        "(?:staging-)?cdn\\.snigelweb\\.com/adengine/",
-        "adengine\\.snigelweb\\.com"
-      ],
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://www.snigel.com/adengine/"
-    },
     "script.aculo.us": {
       "cats": [
         59
@@ -24905,6 +24871,40 @@
       },
       "scripts": "shine(?:\\.min)?\\.js",
       "website": "https://bigspaceship.github.io/shine.js/"
+    },
+    "snigel AdConsent": {
+      "cats": [
+        67
+      ],
+      "description": "snigel AdConsent is a IAB-registered consent managment platfrom (CMP) which help keep sites speed intact while remaining compliant with GDPR and CCPA.",
+      "icon": "snigel.svg",
+      "js": {
+        "adconsent.version": "^([\\d.]+)$\\;version:\\1",
+        "snhb.baseSettings": "\\;confidence:50",
+        "snhb.info.cmpVersion": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "(?:staging-)?cdn\\.snigelweb\\.com/(?:snhb|adconsent)/",
+      "website": "https://www.snigel.com/adconsent/"
+    },
+    "snigel AdEngine": {
+      "cats": [
+        36
+      ],
+      "description": "snigel AdEngine is a header bidding solution product from snigel.",
+      "icon": "snigel.svg",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "(?:staging-)?cdn\\.snigelweb\\.com/adengine/",
+        "adengine\\.snigelweb\\.com"
+      ],
+      "website": "https://www.snigel.com/adengine/"
     },
     "styled-components": {
       "cats": [
