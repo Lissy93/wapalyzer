@@ -5025,6 +5025,22 @@
       },
       "website": "http://www.gocontentbox.org"
     },
+    "ContentSquare": {
+      "cats": [
+        58
+      ],
+      "description": "ContentSquare is an enterprise-level UX optimisation platform.",
+      "icon": "ContentSquare.png",
+      "js": {
+        "CS_CONF.trackerDomain": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.contentsquare\\.net/",
+      "website": "https://contentsquare.com"
+    },
     "Contentful": {
       "cats": [
         1
@@ -5043,22 +5059,6 @@
       "saas": true,
       "website": "http://www.contentful.com",
       "xhr": "cdn\\.contentful\\.com"
-    },
-    "ContentSquare": {
-      "cats": [
-        58
-      ],
-      "description": "ContentSquare is an enterprise-level UX optimisation platform.",
-      "icon": "ContentSquare.png",
-      "js": {
-        "CS_CONF.trackerDomain": ""
-      },
-      "scripts": "\\.contentsquare\\.net/",
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://contentsquare.com"
     },
     "Contentstack": {
       "cats": [
@@ -5939,14 +5939,14 @@
       "js": {
         "DIVI": ""
       },
+      "meta": {
+        "generator": "Divi"
+      },
       "pricing": [
         "low",
         "recurring",
         "onetime"
       ],
-      "meta": {
-        "generator": "Divi"
-      },
       "saas": true,
       "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
       "website": "https://www.elegantthemes.com/gallery/divi"
@@ -13247,23 +13247,6 @@
       },
       "website": "http://www.netcap-creation.fr"
     },
-    "Najva": {
-      "cats": [
-        32
-      ],
-      "description": "Najva is a retention marketing solution that offers push notification and email marketing.",
-      "icon": "Najva.png",
-      "js": {
-        "Najva.identifyEmailSubscriber": ""
-      },
-      "scripts": "app\\.najva\\.com/",
-      "saas": true,
-      "pricing": [
-        "low",
-        "freemium"
-      ],
-      "website": "https://www.najva.com"
-    },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
         6
@@ -13312,6 +13295,23 @@
       },
       "scripts": "nv\\.d3(?:\\.min)?\\.js",
       "website": "http://nvd3.org"
+    },
+    "Najva": {
+      "cats": [
+        32
+      ],
+      "description": "Najva is a retention marketing solution that offers push notification and email marketing.",
+      "icon": "Najva.png",
+      "js": {
+        "Najva.identifyEmailSubscriber": ""
+      },
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "app\\.najva\\.com/",
+      "website": "https://www.najva.com"
     },
     "Navegg": {
       "cats": [
@@ -14339,14 +14339,14 @@
       "description": "Oracle Maxymiser is a real-time behavioral targeting, in-session personalisation, and product recommendations platform.",
       "icon": "Oracle.png",
       "js": {
-        "mmsystem.getConfig": "\\;confidence:80",
-        "maxy": "\\;confidence:20"
+        "maxy": "\\;confidence:20",
+        "mmsystem.getConfig": "\\;confidence:80"
       },
-      "scripts": "service\\.maxymiser\\.net",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "service\\.maxymiser\\.net",
       "website": "https://www.oracle.com/uk/cx/marketing/personalization-testing"
     },
     "Oracle Recommendations On Demand": {
@@ -14419,13 +14419,13 @@
       "js": {
         "Osano": ""
       },
-      "scripts": "cookieconsent\\.min\\.js",
-      "saas": true,
       "pricing": [
         "freemium",
         "mid",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "cookieconsent\\.min\\.js",
       "website": "https://www.osano.com"
     },
     "Outbrain": {
@@ -14436,16 +14436,16 @@
       "description": "Outbrain is a web advertising platform that displays boxes of links, known as chumboxes, to pages within websites.",
       "icon": "Outbrain.svg",
       "js": {
+        "OB_ADV_ID": "",
         "OB_releaseVer": "^(.+)$\\;version:\\1",
         "OutbrainPermaLink": "",
-        "obApi.version": "^[\\d.]+$",
-        "OB_ADV_ID": ""
+        "obApi.version": "^[\\d.]+$"
       },
-      "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
-      "saas": true,
       "pricing": [
         "payg"
       ],
+      "saas": true,
+      "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
       "website": "https://www.outbrain.com"
     },
     "Outlook Web App": {
@@ -14894,12 +14894,12 @@
       "js": {
         "pendo.VERSION": "(.+)\\;version:\\1"
       },
-      "scripts": "\\.pendo\\.io/",
-      "saas": true,
       "pricing": [
         "freemium",
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.pendo\\.io/",
       "website": "https://www.pendo.io"
     },
     "Percona": {
@@ -17379,12 +17379,12 @@
         76
       ],
       "description": "SaleCycle is a UK based global behavioral marketing firm.",
-      "icon": "salecycle.svg",
       "dom": "iframe[src*='.salecycle.com'][target='_self']",
-      "saas": true,
+      "icon": "salecycle.svg",
       "pricing": [
         "poa"
       ],
+      "saas": true,
       "website": "https://www.salecycle.com"
     },
     "Salesfloor": {
@@ -18383,16 +18383,16 @@
       "description": "Sift is a CA-based fraud prevention company.",
       "icon": "Sift.png",
       "js": {
-        "_sift": "",
-        "__siftFlashCB": ""
+        "__siftFlashCB": "",
+        "_sift": ""
       },
-      "scripts": "cdn\\.sift(?:science)?\\.com/s\\.js",
-      "saas": true,
       "pricing": [
         "mid",
         "high",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "cdn\\.sift(?:science)?\\.com/s\\.js",
       "website": "https://sift.com/"
     },
     "Signal": {
@@ -18921,6 +18921,20 @@
       "implies": "Haskell",
       "website": "http://snapframework.com"
     },
+    "Snap Pixel": {
+      "cats": [
+        36
+      ],
+      "description": "Snap Pixel is a piece of JavaScript code that helps advertisers measure the cross-device impact of campaigns.",
+      "icon": "Snap Pixel.svg",
+      "js": {
+        "__SnapPixel": "",
+        "snaptr.pixelIdList": ""
+      },
+      "saas": true,
+      "scripts": "intg\\.snapchat\\.com/",
+      "website": "https://businesshelp.snapchat.com/s/article/snap-pixel-about"
+    },
     "Snap.svg": {
       "cats": [
         59
@@ -18949,20 +18963,6 @@
       ],
       "saas": true,
       "website": "https://snapengage.com/"
-    },
-    "Snap Pixel": {
-      "cats": [
-        36
-      ],
-      "description": "Snap Pixel is a piece of JavaScript code that helps advertisers measure the cross-device impact of campaigns.",
-      "icon": "Snap Pixel.svg",
-      "js": {
-        "__SnapPixel": "",
-        "snaptr.pixelIdList": ""
-      },
-      "scripts": "intg\\.snapchat\\.com/",
-      "saas": true,
-      "website": "https://businesshelp.snapchat.com/s/article/snap-pixel-about"
     },
     "Snipcart": {
       "cats": [
@@ -20524,24 +20524,6 @@
       ],
       "website": "http://thelia.net"
     },
-    "theTradeDesk": {
-      "cats": [
-       36
-      ],
-      "description": "theTradeDesk is an technology company that markets a software platform used by digital ad buyers to purchase data-driven digital advertising campaigns across various ad formats and devices.",
-      "icon": "theTradeDesk.svg",
-      "js": {
-        "TTDUniversalPixelApi": "",
-        "ttd_dom_ready": ""
-      },
-      "scripts": "\\.adsrvr\\.org/",
-      "xhr": "adsvr\\.org",
-      "saas": true,
-      "pricing": [
-        "payg"
-      ],
-      "website": "https://www.thetradedesk.com"
-    },
     "ThinkPHP": {
       "cats": [
         18
@@ -21854,6 +21836,25 @@
       "icon": "visa.png",
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
+    },
+    "Visual Composer": {
+      "cats": [
+        51
+      ],
+      "description": "Visual Composer is an all-in-one web design tool for anyone who uses WordPress.",
+      "icon": "visualcomposer.svg",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "Powered by Visual Composer Website Builder"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://visualcomposer.com"
     },
     "Visualsoft": {
       "cats": [
@@ -24200,8 +24201,8 @@
       "description": "jQuery is a JavaScript library which is a free, open-source software designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.",
       "icon": "jQuery.svg",
       "js": {
-        "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1",
-        "$.fn.jquery": "([\\d.]+)\\;version:\\1"
+        "$.fn.jquery": "([\\d.]+)\\;version:\\1",
+        "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
       "scripts": [
         "jquery",
@@ -24959,6 +24960,24 @@
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
     },
+    "theTradeDesk": {
+      "cats": [
+        36
+      ],
+      "description": "theTradeDesk is an technology company that markets a software platform used by digital ad buyers to purchase data-driven digital advertising campaigns across various ad formats and devices.",
+      "icon": "theTradeDesk.svg",
+      "js": {
+        "TTDUniversalPixelApi": "",
+        "ttd_dom_ready": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.adsrvr\\.org/",
+      "website": "https://www.thetradedesk.com",
+      "xhr": "adsvr\\.org"
+    },
     "three.js": {
       "cats": [
         25
@@ -25081,25 +25100,6 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
-    },
-    "Visual Composer": {
-      "cats": [
-        51
-      ],
-      "description": "Visual Composer is an all-in-one web design tool for anyone who uses WordPress.",
-      "icon": "visualcomposer.svg",
-      "implies": [
-        "WordPress",
-        "PHP"
-      ],
-      "meta": {
-        "generator": "Powered by Visual Composer Website Builder"
-      },
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "website": "https://visualcomposer.com"
     },
     "webEdition": {
       "cats": [
