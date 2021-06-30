@@ -1976,7 +1976,7 @@
       "cats": [
         36
       ],
-      "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalized video feeds.",
+      "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalised video feeds.",
       "dom": "img[src*='.anyclip.com'], video[poster*='.anyclip.com']",
       "icon": "AnyClip.svg",
       "js": {
@@ -2529,7 +2529,7 @@
         76,
         5
       ],
-      "description": "Attentive is a personalized mobile messaging platform that helps retail & ecommerce brands acquire, retain, and interact with mobile shoppers.",
+      "description": "Attentive is a personalised mobile messaging platform that helps retail & ecommerce brands acquire, retain, and interact with mobile shoppers.",
       "icon": "Attentive.svg",
       "js": {
         "__attentive": "",
@@ -5064,7 +5064,7 @@
       "cats": [
         1
       ],
-      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalized content experiences to audiences via multiple channels.",
+      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalised content experiences to audiences via multiple channels.",
       "dom": "img[src*='images.contentstack.io']",
       "icon": "Contentstack.png",
       "pricing": [
@@ -14266,7 +14266,7 @@
         74,
         76
       ],
-      "description": "Oracle Maxymiser is a real-time behavioral targeting, in-session personalization, and product recommendations platform.",
+      "description": "Oracle Maxymiser is a real-time behavioral targeting, in-session personalisation, and product recommendations platform.",
       "icon": "Oracle.png",
       "js": {
         "mmsystem.getConfig": "\\;confidence:80",
@@ -16750,7 +16750,6 @@
     "Rezdy": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Rezdy is an online booking software for tours and attractions.",
@@ -16766,7 +16765,6 @@
     "Rezgo": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Rezgo is a tour operator software that provides online booking system.",
@@ -16788,6 +16786,23 @@
       ],
       "saas": true,
       "website": "https://www.rezgo.com"
+    },
+    "RichRelevance": {
+      "cats": [
+        76
+      ],
+      "description": "RichRelevance is a cloud-based omnichannel personalisation platform built to help Retailers, B2B, financial services, travel and hospitality, and branded manufacturers personalise their customer experiences.",
+      "icon": "RichRelevance.png",
+      "js": {
+        "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50",
+        "RR.U": "\\;confidence:50"
+      },
+      "scripts": "\\.richrelevance\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://richrelevance.com"
     },
     "Rickshaw": {
       "cats": [
@@ -22055,7 +22070,7 @@
         76,
         5
       ],
-      "description": "Wair is the widget to personalized fit.",
+      "description": "Wair is the widget to personalised fit.",
       "icon": "Wair.png",
       "js": {
         "PredictV3.default.version": "([\\d.]+)\\;version:\\1",
