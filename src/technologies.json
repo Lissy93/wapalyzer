@@ -6282,9 +6282,15 @@
       "description": "Dynamic Yield is a provider of automated conversion optimisation tools for marketers and retailers.",
       "icon": "DynamicYield.svg",
       "js": {
-        "recommendationContext": ""
+        "_dy_memStore": "",
+        "DY.AdDetection": "",
+        "DYExps.sectionConfig": ""
       },
-      "scripts": "cdn\\.dynamicyield\\.\\w+/",
+      "scripts": "cdn(?:-eu)?\\.dynamicyield\\.\\w+/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
       "website": "https://www.dynamicyield.com"
     },
     "Dynamicweb": {
