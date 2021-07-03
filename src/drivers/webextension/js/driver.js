@@ -485,6 +485,8 @@ const Driver = {
     incrementHits = false,
     analyzeRequires = true
   ) {
+    url = url.split('#')[0]
+
     if (!url || !detections.length) {
       return
     }
