@@ -7605,6 +7605,26 @@
       "scripts": "wchat\\.freshchat\\.com/js/widget\\.js",
       "website": "https://www.freshworks.com/live-chat-software/"
     },
+    "Freshop": {
+      "cats": [
+        6
+      ],
+      "description": "Freshop is an online platform for grocers.",
+      "icon": "Freshop.png",
+      "meta": {
+        "author": "^Freshop, Inc\\.$"
+      },
+      "js": {
+        "freshop": "",
+        "freshopInitialized": ""
+      },
+      "scripts": "asset(?:cdn)?\\.freshop\\.com/",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://www.freshop.com"
+    },
     "Freshworks CRM": {
       "cats": [
         53,
