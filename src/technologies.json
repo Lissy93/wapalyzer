@@ -23658,6 +23658,24 @@
       },
       "website": "http://git.zx2c4.com/cgit"
     },
+    "Complianz": {
+      "cats": [
+        74,
+        67
+      ],
+      "description": "Complianz is a GDPR/CCPA Cookie Consent plugin that supports GDPR, DSGVO, CCPA and PIPEDA with a conditional Cookie Notice and customized Cookie Policy based on the results of the built-in Cookie Scan.",
+      "icon": "Complianz.png",
+      "implies": "WordPress",
+      "js": {
+        "complianz.version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "wp-content/plugins/complianz-gdpr-premium",
+      "saas": true,
+      "pricing": [
+        "onetime"
+      ],
+      "website": "https://complianz.io"
+    },
     "comScore": {
       "cats": [
         10
