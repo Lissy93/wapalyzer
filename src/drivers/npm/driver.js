@@ -582,7 +582,7 @@ class Site {
         'Timeout (navigation)'
       )
 
-      await sleep(1000)
+      await sleep(5000)
 
       // page.on('console', (message) => this.log(message.text()))
 
