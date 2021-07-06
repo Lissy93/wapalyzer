@@ -120,7 +120,6 @@ function getDom(technologies) {
 }
 
 const Content = {
-  href: location.href,
   cache: {},
   language: '',
 
@@ -237,7 +236,7 @@ const Content = {
       Content.cache = { html, css, scripts, meta }
 
       await Content.driver('onContentLoad', [
-        Content.href,
+        location.href,
         Content.cache,
         Content.language,
       ])
@@ -325,7 +324,7 @@ const Content = {
           await Promise.all([
             Content.onGetTechnologies(technologies, name),
             Content.driver('onContentLoad', [
-              Content.href,
+              location.href,
               Content.cache,
               Content.language,
               name,
@@ -341,14 +340,12 @@ const Content = {
    * @param {Array} technologies
    */
   async onGetTechnologies(technologies = [], requires) {
-    const url = location.href.split('#')[0]
-
     const js = await getJs(technologies)
     const dom = getDom(technologies)
 
     await Promise.all([
-      Content.driver('analyzeJs', [url, js, requires]),
-      Content.driver('analyzeDom', [url, dom, requires]),
+      Content.driver('analyzeJs', [location.href, js, requires]),
+      Content.driver('analyzeDom', [location.href, dom, requires]),
     ])
   },
 }
