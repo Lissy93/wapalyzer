@@ -7202,6 +7202,25 @@
       "saas": true,
       "website": "https://www.financeads.com"
     },
+    "Findify": {
+      "cats": [
+        29,
+        76
+      ],
+      "description": "Findify is an intelligent ecommerce search, navigation and personalisation solution.",
+      "icon": "Findify.svg",
+      "js": {
+        "findify": "",
+        "FindifyAnalytics": ""
+      },
+      "scripts": "@findify/bundle@([\\d.]+)/dist/.+\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://www.findify.io"
+    },
     "FingerprintJS": {
       "cats": [
         59,
