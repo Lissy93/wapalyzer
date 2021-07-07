@@ -23665,7 +23665,7 @@
       ],
       "description": "Complianz is a GDPR/CCPA Cookie Consent plugin that supports GDPR, DSGVO, CCPA and PIPEDA with a conditional Cookie Notice and customized Cookie Policy based on the results of the built-in Cookie Scan.",
       "icon": "Complianz.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "js": {
         "complianz.version": "([\\d.]+)\\;version:\\1"
       },
