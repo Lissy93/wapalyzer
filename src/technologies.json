@@ -16050,21 +16050,32 @@
       "description": "Quantcast Choice is a free consent management platform to meet key privacy requirements stemming from ePrivacy Directive, GDPR, and CCPA.",
       "icon": "Quantcast.png",
       "js": {
-        "quantserve": ""
+        "__tcfapi": ""
       },
       "scripts": "quantcast\\.mgr\\.consensu\\.org",
-      "website": "https://www.quantcast.com/gdpr/consent-management-solution/"
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "poa"
+      ],
+      "website": "https://www.quantcast.com/products/choice-consent-management-platform"
     },
     "Quantcast Measure": {
       "cats": [
         10
       ],
+      "description": "Quantcast Measure is an audience insights and analytics tool.",
       "icon": "Quantcast.png",
       "js": {
         "quantserve": ""
       },
       "scripts": "\\.quantserve\\.com/quant\\.js",
-      "website": "https://www.quantcast.com/products/measure-audience-insights/"
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "poa"
+      ],
+      "website": "https://www.quantcast.com/products/measure-audience-insights"
     },
     "Qubit": {
       "cats": [
