@@ -17854,6 +17854,19 @@
       ],
       "website": "https://segment.com"
     },
+    "Segment Consent Manager ": {
+      "cats": [
+        67
+      ],
+      "description": " Segment Consent Manager is a tool that automates the process of requesting consent for data usage, stores data on user privacy preferences, and updates these preferences when users request changes.",
+      "icon": "Segment.svg",
+      "js": {
+        "consentManager.version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "@segment/consent-manager@([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "website": "https://segment.com/blog/how-to-build-consent-management-into-your-site-in-less-than-a-week"
+    },
     "SegmentStream": {
       "cats": [
         10
