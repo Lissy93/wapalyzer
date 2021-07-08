@@ -6577,6 +6577,28 @@
       "scripts": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "https://elementor.com"
     },
+    "Elementor Hello Theme": {
+      "cats": [
+        80
+      ],
+      "description": "Hello Elementor is a WordPress theme built for the Elementor website builder platform. It uses minimal styling and scripts for maximum speed and design freedom.",
+      "icon": "Hello Elementor.png",
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "html": [
+        "<link [^>]*href=(?:\"|')[^\"']*wp-content/themes/hello-elementor",
+        "<link [^>]*href=(?:\"|')[^\"']*wp-content/themes/elementor-hello"
+      ],
+      "dom": [
+        "style[id*='hello-elementor']",
+        "style[id*='elementor-hello']"
+      ],
+      "implies": "Elementor",
+      "requires" : "Wordpress",
+      "website": "https://elementor.com/hello-theme/"
+    },
     "Elm": {
       "cats": [
         27,
@@ -9152,6 +9174,7 @@
       "scripts": "hellobar\\.js",
       "website": "http://hellobar.com"
     },
+  
     "HelpDocs": {
       "cats": [
         4,
