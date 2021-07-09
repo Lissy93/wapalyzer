@@ -13843,11 +13843,9 @@
         "low",
         "recurring"
       ],
+      "dom": "link[rel='stylesheet'][id*='oceanwp-style-css']",
       "html": [
-        "<link[^>]* href=[\\'\"][^']+wp-content/themes/oceanwp/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
-      ],
-      "dom": [
-        "style[id*='oceanwp.*']"
+        "<link[^>]* href=[\\'\"][^']+oceanwp/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
       ],
       "requires": "WordPress",
       "website": "https://oceanwp.org"
