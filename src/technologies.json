@@ -6588,8 +6588,8 @@
         "freemium"
       ],
       "html": [
-        "<link [^>]*href=(?:\"|')[^\"']*wp-content/themes/hello-elementor",
-        "<link [^>]*href=(?:\"|')[^\"']*wp-content/themes/elementor-hello"
+        "<link [^>]*href=(?:\"|')[^\"']*wp-content/themes/hello-elementor/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
+        "<link [^>]*href=(?:\"|')[^\"']*wp-content/themes/elementor-hello/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
       ],
       "dom": [
         "style[id*='hello-elementor']",
