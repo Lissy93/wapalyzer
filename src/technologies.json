@@ -329,14 +329,24 @@
         6
       ],
       "description": "1C-Bitrix is a system of web project management, universal software for the creation, support and successful development of corporate websites and online stores.",
+      "icon": "1C-Bitrix.svg",
       "headers": {
         "Set-Cookie": "BITRIX_",
         "X-Powered-CMS": "Bitrix Site Manager"
       },
-      "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
-      "icon": "1C-Bitrix.svg",
+      "cookies": {
+        "BITRIX_SM_LAST_IP": "",
+        "BITRIX_SM_SALE_UID": "",
+        "BITRIX_SM_GUEST_ID": ""   
+      },
+      "scripts": "bitrix(?:\\.info/|/js/main/core)",
       "implies": "PHP",
-      "scripts": "1c-bitrix",
+      "saas": true,
+      "pricing": [
+        "onetime",
+        "mid",
+        "recurring"
+      ],
       "website": "http://www.1c-bitrix.ru"
     },
     "33Across": {
@@ -2983,6 +2993,29 @@
         "birdeye\\.com"
       ],
       "website": "https://birdeye.com"
+    },
+    "Bitrix24": {
+      "cats": [
+       53
+      ],
+      "description": "Bitrix24 is a set of tools for the organization and management of business processes.",
+      "icon": "Bitrix24.svg",
+      "js": {
+        "Bitrix24FormObject": "",
+        "Bitrix24FormLoader": "",
+        "b24Tracker": ""
+      },
+      "scripts": [
+        "cdn\\.bitrix24\\.com",
+        "\\.bitrix24\\..+/bitrix/js/crm/form_loader\\.js"
+      ],
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.bitrix24.com"
     },
     "BittAds": {
       "cats": [
