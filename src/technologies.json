@@ -2409,7 +2409,10 @@
         "low",
         "freemium"
       ],
-      "html": "<!--\\[if IE]>*.<script.*\/themes\/astra",
+      "html": [
+        "<link[^>]* href=[\\'\"][^']+wp-content/themes/astra/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
+        "<!--\\[if IE]>*.<script.*\/themes\/astra"
+      ], 
       "dom": [
         "style[id*='astra-theme']",
         "script[id*='astra-theme']"
