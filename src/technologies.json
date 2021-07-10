@@ -6519,6 +6519,22 @@
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
       "website": "http://www.edgecast.com"
     },
+    "Elastic APM": {
+      "cats": [
+        10,
+        13,
+        78
+      ],
+      "implies": [
+        "Elasticsearch"
+      ],
+      "description": "Elastic APM offers free and open application performance monitoring.",
+      "icon": "ElasticAPM.png",
+      "js": {
+        "elasticApm": ""
+      },
+      "website": "https://www.elastic.co/apm"
+    },
     "Elasticsearch": {
       "cats": [
         29
