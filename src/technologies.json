@@ -17644,13 +17644,22 @@
     },
     "Salesfloor": {
       "cats": [
+        5,
         6
       ],
+      "description": "Salesfloor is a mobile clienteling and virtual selling platform designed for store associates to connect with customers-beyond the store and a mpos platform for frictionless in-store experiences.",
       "icon": "salesfloor.png",
-      "scripts": [
-        "salesFloor\\.js"
+      "dom": "iframe[src*='.salesfloor.net'], div[data-siterefer='salesfloor']",
+      "js": {
+        "salesFloorHost": "",
+        "NMConfig.SALESFLOOR_ENV": ""
+      },
+      "scripts": "\\.salesfloor\\.net/",
+      "saas": true,
+      "pricing": [
+        "recurring"
       ],
-      "website": "https://salesfloor.net/"
+      "website": "https://salesfloor.net"
     },
     "Salesforce": {
       "cats": [
