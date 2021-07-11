@@ -444,15 +444,21 @@
     },
     "AD EBiS": {
       "cats": [
-        10
+        36,
+        32
       ],
-      "html": [
-        "<!-- EBiS contents tag",
-        "<!--EBiS tag",
-        "<!-- Tag EBiS",
-        "<!-- EBiS common tag"
-      ],
+      "description": "AD EBiS is an advertising and marketing platform that offers advertisement effectiveness measurement, access and user analysis.",
       "icon": "ebis.png",
+      "dom": "a[href*='.ebis.ne.jp/'][target='_blank']",
+      "js": {
+        "ebis.c.pageurl": ""
+      },
+      "scripts": "\\.ebis\\.ne\\.jp/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
       "website": "http://www.ebis.ne.jp"
     },
     "AMP": {
