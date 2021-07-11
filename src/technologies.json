@@ -2536,7 +2536,8 @@
       "description": "AudioEye is a software solution delivering immediate ADA and WCAG accessibility compliance at scale.",
       "icon": "AudioEye.svg",
       "js": {
-        "window.AudioEye.version": "^([\\d.]+)-\\d+$\\;version:\\1"
+        "window.AudioEye.version": "^([\\d.]+)-\\d+$\\;version:\\1",
+        "$ae.attrHooks": ""
       },
       "dom": "iframe[scr*='.audioeye.com/']",
       "scripts": "(?:\\.)?audioeye\\.com/(?:ae\\.js)?",
