@@ -21915,10 +21915,12 @@
       "cpe": "cpe:/a:vardot:varbase",
       "icon": "varbase.png",
       "implies": "Drupal",
-      "meta": {
-        "generator": "Varbase"
+      "dom": "meta[content='Varbase'],div[class*='varbase_'],div[class*='_varbase'],div[class*='varbase-'],div[class*='block-varbase'],div[class*='blockvarbase']",
+      "js": {
+        "drupalSettings.ajaxPageState.libraries": ".+varbase_.+"
       },
-      "website": "https://drupal.org/project/varbase"
+      "oss": true,
+      "website": "https://www.vardot.com/solutions/varbase"
     },
     "Varnish": {
       "cats": [
