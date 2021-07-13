@@ -145,19 +145,16 @@ const Popup = {
         Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
       })
 
-      el.termsButtonDecline('.terms__button--decline').addEventListener(
-        'click',
-        async () => {
-          await setOption('termsAccepted', true)
-          await setOption('tracking', false)
+      el.termsButtonDecline.addEventListener('click', async () => {
+        await setOption('termsAccepted', true)
+        await setOption('tracking', false)
 
-          el.terms.classList.add('terms--hidden')
-          el.footer.classList.remove('footer--hidden')
-          el.tabPro.classList.remove('tab--disabled')
+        el.terms.classList.add('terms--hidden')
+        el.footer.classList.remove('footer--hidden')
+        el.tabPro.classList.remove('tab--disabled')
 
-          Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
-        }
-      )
+        Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
+      })
     }
 
     let url

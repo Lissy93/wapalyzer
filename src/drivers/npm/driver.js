@@ -1002,12 +1002,9 @@ class Site {
     if (this.cache[url.href]) {
       const resolved = resolve(this.detections)
 
-      const requires = Wappalyzer.requires
-        .filter(({ name, technologies }) =>
-          resolved.some(({ name: _name }) => _name === name)
-        )
-        .map(({ technologies }) => technologies)
-        .flat()
+      const requires = Wappalyzer.requires.filter(({ name, technologies }) =>
+        resolved.some(({ name: _name }) => _name === name)
+      )
 
       await Promise.all(
         Object.keys(requires).map(async (name) => {
