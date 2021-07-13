@@ -74,12 +74,12 @@ const Driver = {
 
     chrome.tabs.onRemoved.addListener((id) => delete Driver.cache.tabs[id])
 
-    chrome.tabs.onUpdated.addListener(async (id, { status }) => {
-      delete Driver.cache.tabs[id]
-
+    chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
       if (status === 'complete') {
-        const { url } = await promisify(chrome.tabs, 'get', id)
+        ;({ url } = await promisify(chrome.tabs, 'get', id))
+      }
 
+      if (url) {
         const { hostname } = new URL(url)
 
         const cache = Driver.cache.hostnames[hostname]
@@ -102,10 +102,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      open(
-        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-        false
-      )
+      // open(
+      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+      //   false
+      // )
     }
 
     await setOption('version', version)
@@ -485,6 +485,8 @@ const Driver = {
     incrementHits = false,
     analyzeRequires = true
   ) {
+    url = url.split('#')[0]
+
     if (!url || !detections.length) {
       return
     }
