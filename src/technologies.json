@@ -2946,7 +2946,8 @@
       "cats": [
         6
       ],
-      "icon": "bigcartel.png",
+      "description": "Big Cartel is a cloud-hosted ecommerce platform.",
+      "icon": "Big Cartel.svg",
       "meta": {
         "generator": "Big Cartel"
       },
@@ -5784,7 +5785,7 @@
     },
     "Dealer Spike": {
       "cats": [
-        6,
+        36,
         32
       ],
       "description": "Dealer Spike is a digital marketing and advertising company focused that helps dealers grow their business.",
@@ -6438,13 +6439,19 @@
       "cats": [
         6
       ],
+      "description": "EKM is an all-in-one online store builder, with the company based in the UK.",
+      "icon": "EKM.png",
       "cookies": {
         "ekmpowershop": ""
       },
-      "icon": "EKM.png",
       "js": {
         "_ekmpinpoint": ""
       },
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "website": "https://www.ekm.com"
     },
     "ELOG": {
@@ -7624,7 +7631,6 @@
     "Formitable": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Formitable is an reservation management system for restaurants.",
@@ -12664,8 +12670,7 @@
     },
     "MemberStack": {
       "cats": [
-        6,
-        47
+        1
       ],
       "cookies": {
         "memberstack": ""
@@ -12677,6 +12682,12 @@
       },
       "scripts": "memberstack\\.js",
       "url": "^https?//.+\\.memberstack\\.io",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "low",
+        "recurring"
+      ],
       "website": "https://www.memberstack.io"
     },
     "Mercado Shops": {
@@ -12996,6 +13007,7 @@
       "headers": {
         "content-disposition": "filename=(?:mvga\\.js|MivaEvents\\.js)"
       },
+      "description": "Miva is a privately owned ecommerce shopping cart software and hosting company with headquarters in San Diego.",
       "icon": "miva.png",
       "js": {
         "MivaVM_API": "",
@@ -17788,7 +17800,6 @@
     },
     "SaleCycle": {
       "cats": [
-        6,
         76
       ],
       "description": "SaleCycle is a UK based global behavioral marketing firm.",
@@ -19047,8 +19058,7 @@
     "Siteglide": {
       "cats": [
         1,
-        53,
-        6
+        53
       ],
       "description": "SiteGlide is a Digital Experience Platform (DEP) for ecommerce stores, membership sites and customer portals.",
       "icon": "Siteglide.svg",
@@ -19401,6 +19411,8 @@
       "cats": [
         6
       ],
+      "description": "Snipcart is a shopping cart platform that can be integrated into any website with simple HTML and JavaScript.",
+      "icon": "Snipcart.svg",
       "cookies": {
         "snipcart-cart": ""
       },
@@ -19414,8 +19426,11 @@
           }
         }
       },
-      "icon": "Snipcart.png",
       "scripts": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
       "website": "https://snipcart.com"
     },
     "Snoobi": {
@@ -20371,6 +20386,7 @@
       "cats": [
         6
       ],
+      "description": "Swell is a headless ecommerce platform for modern brands, startups, and agencies.",
       "cookies": {
         "swell-session": ""
       },
@@ -20950,6 +20966,7 @@
         6
       ],
       "html": "<(?:link|style|script)[^>]+/assets/frontOffice/",
+      "description": "",
       "icon": "Thelia.png",
       "implies": [
         "PHP",
@@ -25325,13 +25342,14 @@
       "implies": "Java",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
     },
-    "plentymarkets": {
+    "Plentymarkets": {
       "cats": [
         6
       ],
       "headers": {
         "X-Plenty-Shop": ""
       },
+      "description": "Plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
       "icon": "plentymarkets.svg",
       "meta": {
         "generator": "plentymarkets"
