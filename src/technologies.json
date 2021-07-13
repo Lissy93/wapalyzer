@@ -10897,9 +10897,21 @@
       ],
       "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
       "icon": "Klarna.svg",
-      "js": {
-        "_klarnaCheckout": ""
+      "cookies": {
+        "ku1-sid": "",
+        "ku1-vid": ""
       },
+      "js": {
+        "_klarnaCheckout": "",
+        "KlarnaOnsiteService": ""
+      },
+      "scripts": "\\.klarnaservices\\.com/lib\\.js",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "low",
+        "recurring"
+      ],
       "website": "https://www.klarna.com/international/"
     },
     "Klaviyo": {
