@@ -2549,11 +2549,20 @@
       "cats": [
         68
       ],
-      "description": "AudioEye automatically evaluates and adjusts website content to be accessible.",
-      "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
+      "description": "AudioEye is a software solution delivering immediate ADA and WCAG accessibility compliance at scale.",
       "icon": "AudioEye.svg",
-      "scripts": "audioeye\\.com/ae\\.js",
-      "website": "https://www.audioeye.com/"
+      "js": {
+        "window.AudioEye.version": "^([\\d.]+)-\\d+$\\;version:\\1",
+        "$ae.attrHooks": ""
+      },
+      "dom": "iframe[scr*='.audioeye.com/']",
+      "scripts": "(?:\\.)?audioeye\\.com/(?:ae\\.js)?",
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.audioeye.com"
     },
     "Aurelia": {
       "cats": [
