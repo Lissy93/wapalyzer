@@ -21421,6 +21421,23 @@
       },
       "scripts": "(turf@[\\d.]+)?/?turf\\.min\\.js",
       "website": "https://turfjs.org/"
+    },    
+    "TwentyTwenty": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Twenty is the default WordPress theme for 2020.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[rel='stylesheet'][id*='twentytwenty-style-css']",
+        "body[class*='twentytwenty-theme']"
+      ],
+      "html": [
+        "<link[^>]* href=[\\'\"][^']+twentytwenty/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
+        "<script[^>]* src=[\\'\"][^']+themes/twentytwenty.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
+      ],
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentytwenty"
     },
     "TwicPics": {
       "cats": [
