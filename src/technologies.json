@@ -21413,11 +21413,10 @@
       "cpe": "cpe:/a:vardot:varbase",
       "icon": "varbase.png",
       "implies": "Drupal",
-      "html": [
-        "<meta[^>]+(?:content=\"Varbase\")\\;confidence:99",
-        "<[^>]+(?:class=\"[^>]+block[_-]+varbase|class=\"[^>]+view[_-]+varbase|class=\"[^>]+view-mode[_-]+varbase)\\;confidence:50",
-        "<script[^>]+(?:drupal-settings-json)(?:[\\s\\S]*)(?:varbase_|vbp-colors|vmi|vartheme)\\;confidence:50"
-      ],
+      "dom": "meta[content='Varbase'],div[class*='varbase_'],div[class*='_varbase'],div[class*='varbase-'],div[class*='block-varbase'],div[class*='blockvarbase']",
+      "js": {
+        "drupalSettings.ajaxPageState.libraries": ".+varbase_.+"
+      },
       "oss": true,
       "website": "https://www.vardot.com/solutions/varbase"
     },
