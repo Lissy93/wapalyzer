@@ -5886,15 +5886,23 @@
     },
     "DigitalRiver": {
       "cats": [
-        6
+        6,
+        41
       ],
+      "description": "Digital River provides global ecommerce, payments and marketing services.",
+      "icon": "DigitalRiver.svg",
       "cookies": {
         "X-DR-SHOPPER-ets": "",
         "X-DR-THEME": "^\\d+$"
       },
-      "description": "Digital River provides global ecommerce, payments and marketing services.",
-      "icon": "DigitalRiver.svg",
-      "scripts": "/drh\\.img\\.digitalriver\\.\\w+/DRHM/",
+      "js": {
+        "DigitalRiver": ""
+      },
+      "scripts": "\\.digitalriver\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
       "website": "https://www.digitalriver.com"
     },
     "DirectAdmin": {
