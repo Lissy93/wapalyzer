@@ -329,14 +329,24 @@
         6
       ],
       "description": "1C-Bitrix is a system of web project management, universal software for the creation, support and successful development of corporate websites and online stores.",
+      "icon": "1C-Bitrix.svg",
       "headers": {
         "Set-Cookie": "BITRIX_",
         "X-Powered-CMS": "Bitrix Site Manager"
       },
-      "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
-      "icon": "1C-Bitrix.svg",
+      "cookies": {
+        "BITRIX_SM_LAST_IP": "",
+        "BITRIX_SM_SALE_UID": "",
+        "BITRIX_SM_GUEST_ID": ""   
+      },
+      "scripts": "bitrix(?:\\.info/|/js/main/core)",
       "implies": "PHP",
-      "scripts": "1c-bitrix",
+      "saas": true,
+      "pricing": [
+        "onetime",
+        "mid",
+        "recurring"
+      ],
       "website": "http://www.1c-bitrix.ru"
     },
     "33Across": {
@@ -444,15 +454,21 @@
     },
     "AD EBiS": {
       "cats": [
-        10
+        36,
+        32
       ],
-      "html": [
-        "<!-- EBiS contents tag",
-        "<!--EBiS tag",
-        "<!-- Tag EBiS",
-        "<!-- EBiS common tag"
-      ],
+      "description": "AD EBiS is an advertising and marketing platform that offers advertisement effectiveness measurement, access and user analysis.",
       "icon": "ebis.png",
+      "dom": "a[href*='.ebis.ne.jp/'][target='_blank']",
+      "js": {
+        "ebis.c.pageurl": ""
+      },
+      "scripts": "\\.ebis\\.ne\\.jp/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
       "website": "http://www.ebis.ne.jp"
     },
     "AMP": {
@@ -804,6 +820,23 @@
       "saas": true,
       "scripts": "(?:a|s)\\.adroll\\.com",
       "website": "http://adroll.com"
+    },
+    "AdRoll CMP System": {
+      "cats": [
+        67
+      ],
+      "description": "AdRoll CMP System is a consent management solution.",
+      "icon": "AdRoll.svg",
+      "js": {
+        "__adroll_consent": "",
+        "__adroll_consent_is_gdpr": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.adroll.com/features/consent-management"
     },
     "AdThrive": {
       "cats": [
@@ -2533,11 +2566,20 @@
       "cats": [
         68
       ],
-      "description": "AudioEye automatically evaluates and adjusts website content to be accessible.",
-      "html": "<iframe[^>]*audioeye\\.com/frame/cookieStorage",
+      "description": "AudioEye is a software solution delivering immediate ADA and WCAG accessibility compliance at scale.",
       "icon": "AudioEye.svg",
-      "scripts": "audioeye\\.com/ae\\.js",
-      "website": "https://www.audioeye.com/"
+      "js": {
+        "window.AudioEye.version": "^([\\d.]+)-\\d+$\\;version:\\1",
+        "$ae.attrHooks": ""
+      },
+      "dom": "iframe[scr*='.audioeye.com/']",
+      "scripts": "(?:\\.)?audioeye\\.com/(?:ae\\.js)?",
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.audioeye.com"
     },
     "Aurelia": {
       "cats": [
@@ -2972,6 +3014,29 @@
         "birdeye\\.com"
       ],
       "website": "https://birdeye.com"
+    },
+    "Bitrix24": {
+      "cats": [
+       53
+      ],
+      "description": "Bitrix24 is a set of tools for the organization and management of business processes.",
+      "icon": "Bitrix24.svg",
+      "js": {
+        "Bitrix24FormObject": "",
+        "Bitrix24FormLoader": "",
+        "b24Tracker": ""
+      },
+      "scripts": [
+        "cdn\\.bitrix24\\.com",
+        "\\.bitrix24\\..+/bitrix/js/crm/form_loader\\.js"
+      ],
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.bitrix24.com"
     },
     "BittAds": {
       "cats": [
@@ -5838,15 +5903,23 @@
     },
     "DigitalRiver": {
       "cats": [
-        6
+        6,
+        41
       ],
+      "description": "Digital River provides global ecommerce, payments and marketing services.",
+      "icon": "DigitalRiver.svg",
       "cookies": {
         "X-DR-SHOPPER-ets": "",
         "X-DR-THEME": "^\\d+$"
       },
-      "description": "Digital River provides global ecommerce, payments and marketing services.",
-      "icon": "DigitalRiver.svg",
-      "scripts": "/drh\\.img\\.digitalriver\\.\\w+/DRHM/",
+      "js": {
+        "DigitalRiver": ""
+      },
+      "scripts": "\\.digitalriver\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
       "website": "https://www.digitalriver.com"
     },
     "DirectAdmin": {
@@ -10864,9 +10937,21 @@
       ],
       "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
       "icon": "Klarna.svg",
-      "js": {
-        "_klarnaCheckout": ""
+      "cookies": {
+        "ku1-sid": "",
+        "ku1-vid": ""
       },
+      "js": {
+        "_klarnaCheckout": "",
+        "KlarnaOnsiteService": ""
+      },
+      "scripts": "\\.klarnaservices\\.com/lib\\.js",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "low",
+        "recurring"
+      ],
       "website": "https://www.klarna.com/international/"
     },
     "Klaviyo": {
@@ -11308,6 +11393,23 @@
       },
       "saas": true,
       "website": "https://joinlede.com/"
+    },
+    "Legal Monster": {
+      "cats": [
+        67
+      ],
+      "description": "Legal Monster is a consent and privacy management solution, which helps businesses maintain compliance with ePrivacy, marketing requirements and General Data Protection Regulation (GDPR).",
+      "icon": "Legal Monster.svg",
+      "js": {
+        "legal.__VERSION__": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "\\.legalmonster\\.com/",
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.legalmonster.com"
     },
     "Less": {
       "cats": [
@@ -11880,6 +11982,26 @@
       "saas": true,
       "scripts": "loja2\\.com\\.br",
       "website": "https://www.loja2.com.br"
+    },
+    "Lootly": {
+      "cats": [
+        5,
+        32
+      ],
+      "description": "Lootly is a loyalty and referral marketing automation software suite for ecommerce businesses.",
+      "icon": "Lootly.png",
+      "dom": "iframe[src*='lootly.io/']",
+      "js": {
+        "lootlyWidgetInit": "",
+        "Lootly.config": ""
+      },
+      "scripts": "lootly\\.io/",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://lootly.io"
     },
     "Loox": {
       "cats": [
@@ -16247,6 +16369,23 @@
       "scripts": "\\.quadpay\\.com/quadpay-widget-([\\d.]+)\\.js\\;version:\\1",
       "website": "https://www.quadpay.com"
     },
+    "Qualtrics": {
+      "cats": [
+        73
+      ],
+      "description": "Qualtrics is an cloud-based platform for creating and distributing web-based surveys.",
+      "icon": "Qualtrics.svg",
+      "js": {
+        "QSI.ClientSideTargeting": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.qualtrics\\.com/",
+      "website": "https://www.qualtrics.com"
+    },
     "Quantcast Choice": {
       "cats": [
         67
@@ -17667,13 +17806,22 @@
     },
     "Salesfloor": {
       "cats": [
+        5,
         6
       ],
+      "description": "Salesfloor is a mobile clienteling and virtual selling platform designed for store associates to connect with customers-beyond the store and a mpos platform for frictionless in-store experiences.",
       "icon": "salesfloor.png",
-      "scripts": [
-        "salesFloor\\.js"
+      "dom": "iframe[src*='.salesfloor.net'], div[data-siterefer='salesfloor']",
+      "js": {
+        "salesFloorHost": "",
+        "NMConfig.SALESFLOOR_ENV": ""
+      },
+      "scripts": "\\.salesfloor\\.net/",
+      "saas": true,
+      "pricing": [
+        "recurring"
       ],
-      "website": "https://salesfloor.net/"
+      "website": "https://salesfloor.net"
     },
     "Salesforce": {
       "cats": [
@@ -21630,7 +21778,8 @@
     },
     "UpSellit": {
       "cats": [
-        76
+        76,
+        6
       ],
       "description": "UpSellit is a performance based lead and cart abandonment recovery solutions.",
       "icon": "UpSellit.png",
@@ -21640,12 +21789,12 @@
         "usi_commons": "\\;confidence:25",
         "usi_cookies": "\\;confidence:25"
       },
+      "scripts": "www\\.upsellit\\.com/",
       "pricing": [
         "poa",
         "mid"
       ],
       "saas": true,
-      "scripts": "www\\.upsellit\\.com/active",
       "website": "https://us.upsellit.com"
     },
     "Upvoty": {
@@ -21938,10 +22087,12 @@
       "cpe": "cpe:/a:vardot:varbase",
       "icon": "varbase.png",
       "implies": "Drupal",
-      "meta": {
-        "generator": "Varbase"
+      "dom": "meta[content='Varbase'],div[class*='varbase_'],div[class*='_varbase'],div[class*='varbase-'],div[class*='block-varbase'],div[class*='blockvarbase']",
+      "js": {
+        "drupalSettings.ajaxPageState.libraries": ".+varbase_.+"
       },
-      "website": "https://drupal.org/project/varbase"
+      "oss": true,
+      "website": "https://www.vardot.com/solutions/varbase"
     },
     "Varnish": {
       "cats": [
