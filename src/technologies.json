@@ -337,7 +337,7 @@
       "cookies": {
         "BITRIX_SM_LAST_IP": "",
         "BITRIX_SM_SALE_UID": "",
-        "BITRIX_SM_GUEST_ID": ""   
+        "BITRIX_SM_GUEST_ID": ""
       },
       "scripts": "bitrix(?:\\.info/|/js/main/core)",
       "implies": "PHP",
@@ -5005,7 +5005,7 @@
       "website": "https://commerce7.com",
       "xhr": "api\\.commerce7\\.com"
     },
-    "Concrete5": {
+    "Concrete CMS": {
       "cats": [
         1
       ],
@@ -5013,7 +5013,7 @@
         "CONCRETE5": ""
       },
       "cpe": "cpe:/a:concrete5:concrete5",
-      "icon": "Concrete5.png",
+      "icon": "Concrete CMS.svg",
       "implies": "PHP",
       "js": {
         "CCM_IMAGE_PATH": ""
@@ -5022,7 +5022,7 @@
         "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
       },
       "scripts": "/concrete/js/",
-      "website": "https://concrete5.org"
+      "website": "https://www.concretecms.com"
     },
     "Conekta": {
       "cats": [
