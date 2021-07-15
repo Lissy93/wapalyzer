@@ -24446,6 +24446,23 @@
       },
       "website": "http://git.zx2c4.com/cgit"
     },
+    "ColorMag": {
+      "cats": [
+          80
+      ],
+      "description": "ColorMag theme is for creating news, magazine, newspaper and other kinds of publishing sites. Compatible with Elementor.",
+      "icon": "themegrill.png",
+      "dom": [
+          "link[rel='stylesheet'][id*='colormag-style-css']",
+          "body[class*='colormag-theme']"
+      ],
+      "html": [
+          "<link[^>]* href=[\\'\"][^']+colormag/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
+          "<script[^>]* src=[\\'\"][^']+themes/colormag.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
+      ],
+      "requires": "WordPress",
+      "website": "https://themegrill.com/themes/colormag/"
+    },
     "Complianz": {
       "cats": [
         74,
