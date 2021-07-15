@@ -337,7 +337,7 @@
       "cookies": {
         "BITRIX_SM_LAST_IP": "",
         "BITRIX_SM_SALE_UID": "",
-        "BITRIX_SM_GUEST_ID": ""   
+        "BITRIX_SM_GUEST_ID": ""
       },
       "scripts": "bitrix(?:\\.info/|/js/main/core)",
       "implies": "PHP",
@@ -5027,7 +5027,7 @@
       "website": "https://commerce7.com",
       "xhr": "api\\.commerce7\\.com"
     },
-    "Concrete5": {
+    "Concrete CMS": {
       "cats": [
         1
       ],
@@ -5035,7 +5035,7 @@
         "CONCRETE5": ""
       },
       "cpe": "cpe:/a:concrete5:concrete5",
-      "icon": "Concrete5.png",
+      "icon": "Concrete CMS.svg",
       "implies": "PHP",
       "js": {
         "CCM_IMAGE_PATH": ""
@@ -5044,7 +5044,7 @@
         "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
       },
       "scripts": "/concrete/js/",
-      "website": "https://concrete5.org"
+      "website": "https://www.concretecms.com"
     },
     "Conekta": {
       "cats": [
@@ -14043,6 +14043,23 @@
       "icon": "OXID eShop.svg",
       "implies": "PHP",
       "website": "https://www.oxid-esales.com"
+    },
+    "OceanWP": {
+      "cats": [
+        80
+      ],
+      "description": "OceanWP is a fast-loading WordPress theme that has great support for third-party plugins and drag-and-drop page builders.",
+      "icon": "OceanWP.png",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "dom": "link[rel='stylesheet'][id*='oceanwp-style-css']",
+      "html": [
+        "<link[^>]* href=[\\'\"][^']+oceanwp/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+      ],
+      "requires": "WordPress",
+      "website": "https://oceanwp.org"
     },
     "Occasion": {
       "cats": [

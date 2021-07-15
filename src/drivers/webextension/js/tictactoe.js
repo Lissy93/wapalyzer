@@ -32,6 +32,8 @@ const players = ['x', 'o']
 function fill(cell, player) {
   cell.value = player
 
+  cell.el.firstChild && cell.el.removeChild(cell.el.firstChild)
+
   cell.el.appendChild(icons[player].cloneNode(true))
 }
 
@@ -109,6 +111,8 @@ function check(dryrun) {
   }
 
   if (!dryrun) {
+    paused = true
+
     if (complete.player) {
       scores[complete.player].score++
 
