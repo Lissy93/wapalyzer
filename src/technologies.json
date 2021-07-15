@@ -2421,6 +2421,28 @@
       "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
     },
+    "Astra": {
+      "cats": [
+        80
+      ],
+      "description": "Astra is a fast, lightweight, and highly customizable WordPress Theme.",
+      "icon": "astra.png",
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "html": [
+        "<link[^>]* href=[\\'\"][^']+wp-content/themes/astra/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
+        "<!--\\[if IE]>*.<script.*\/themes\/astra"
+      ], 
+      "dom": [
+        "style[id*='astra-theme']",
+        "script[id*='astra-theme']"
+      ],
+      "scripts": "wp-content/themes/astra",
+      "requires": "WordPress",
+      "website": "https://wpastra.com/"
+    },
     "Astute Solutions": {
       "cats": [
         53
