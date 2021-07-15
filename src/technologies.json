@@ -8116,6 +8116,23 @@
       ],
       "website": "https://www.gemius.com"
     },
+    "GeneratePress": {
+      "cats": [
+          80
+      ],
+      "description": "GeneratePress is a lightweight WordPress theme that focuses on speed, stability, and accessibility",
+      "icon": "generatepress.png",
+      "dom": [
+          "link[rel='stylesheet'][id*='generatepress-style-css']",
+          "body[class*='generatepress-theme']"
+      ],
+      "html": [
+          "<link[^>]* href=[\\'\"][^']+generatepress/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
+          "<script[^>]* src=[\\'\"][^']+themes/generatepress.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
+      ],
+      "requires": "WordPress",
+      "website": "https://generatepress.com/"
+    },
     "GeneXus": {
       "cats": [
         27
