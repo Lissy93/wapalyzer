@@ -14054,7 +14054,9 @@
         "low",
         "recurring"
       ],
-      "dom": "link[rel='stylesheet'][id*='oceanwp-style-css']",
+      "dom": ["link[rel='stylesheet'][id*='oceanwp-style-css']",
+              "body[class*='oceanwp-theme']"
+      ],
       "html": [
         "<link[^>]* href=[\\'\"][^']+oceanwp/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
       ],
