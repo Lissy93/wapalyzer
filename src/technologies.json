@@ -5047,10 +5047,11 @@
       "icon": "Concrete CMS.svg",
       "implies": "PHP",
       "js": {
+        "Concrete": "",
         "CCM_IMAGE_PATH": ""
       },
       "meta": {
-        "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
+        "generator": "^concrete5(?: - ([\\d.]+)$)?\\;version:\\1"
       },
       "scripts": "/concrete/js/",
       "website": "https://www.concretecms.com"
@@ -13960,9 +13961,10 @@
       ],
       "description": "Nuvemshop is a website builder with customizable layouts, product, shipping and payment management, marketing tools and a mobile app.",
       "icon": "Nuvemshop.svg",
-      "dom": "a[href*='www.nuvemshop.com.br'][target='_blank']",
+      "dom": "a[href*='www.nuvemshop.com.br'][title*='Nuvemshop'][target='_blank']",
       "js": {
-        "LS.store.url": "^.+nuvem.com.br$"
+        "LS.store.url": "^.+nuvem.com.br$",
+        "nuvemShopIdProduct": ""
       },
       "saas": true,
       "pricing": [
