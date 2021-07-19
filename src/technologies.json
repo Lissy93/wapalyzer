@@ -2963,12 +2963,16 @@
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
       "dom": "img[data-src*='.bigcommerce.com'], img[src*='.bigcommerce.com'], link[href*='.bigcommerce.com']",
       "icon": "BigCommerce.svg",
+      "js": {
+        "bigcommerce_config": "",
+        "bigcommerce_i18n": ""
+      },
       "pricing": [
         "low",
         "recurring"
       ],
       "saas": true,
-      "scripts": ".bigcommerce\\.com",
+      "scripts": "(?:\\.|plugins\/)?bigcommerce(?:\\.com)?\/(?:assets)?",
       "url": "mybigcommerce\\.com",
       "website": "http://www.bigcommerce.com"
     },
