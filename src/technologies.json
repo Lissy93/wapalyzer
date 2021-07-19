@@ -4194,6 +4194,9 @@
       "description": "Websites that have a shopping cart or checkout page, either using a known ecommerce platform or a custom solution.",
       "dom": "a[href*='/cart'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']",
       "icon": "Cart-generic.svg",
+      "js": {
+        "google_tag_params.ecomm_pagetype": ""
+      },
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
     "CartStack": {
