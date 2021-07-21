@@ -11342,6 +11342,25 @@
       "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
     },
+    "LaunchDarkly": {
+      "cats": [
+        85
+      ],
+      "description": "LaunchDarkly is a continuous delivery and feature flags as a service platform that integrates into a company's current development cycle.",
+      "icon": "LaunchDarkly.svg",
+      "dom": "link[href*='.launchdarkly.com']",
+      "js": {
+        "launchDarkly": "",
+        "DDC.WS.state": ""
+      },
+      "scripts": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "website": "https://launchdarkly.com"
+    },
     "Launchrock": {
       "cats": [
         74,
