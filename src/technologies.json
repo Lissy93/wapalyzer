@@ -17743,6 +17743,27 @@
       },
       "website": "http://www.spip.net"
     },
+    "Split": {
+      "cats": [
+        85,
+        74
+      ],
+      "description": "Split is a feature delivery platform that powers feature flag management, software experimentation, and continuous delivery.",
+      "icon": "Split.png",
+      "js": {
+        "SPLITIO_API_KEY": "",
+        "split_shopper_client": "",
+        "split_visitor_client": "",
+        "splitio": ""
+      },
+      "scripts": "\\.split\\.io/(?:sdk/split-([\\d\\.]+)\\.min\\.js)?\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "poa"
+      ],
+      "website": "https://www.split.io"
+    },
     "SPNEGO": {
       "cats": [
         16
