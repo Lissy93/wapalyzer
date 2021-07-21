@@ -13580,13 +13580,11 @@
     },
     "MyWebsite": {
       "cats": [
-        1
+        51
       ],
-      "description": "MyWebsite is website builder designed for easy editing and fast results.",
-      "icon": "Ionos-by-1and1-logo.svg",
+      "implies": "Duda",
       "js": {
-        "SystemID": "^.*1AND1.*$",
-        "d_version": "^(.*)$\\;version:\\1\\;confidence:0"
+        "SystemID": "^.*1AND1.*$"
       },
       "meta": {
         "generator": "^.*MyWebsite.*$\\;version:8"
@@ -13597,7 +13595,9 @@
       ],
       "saas": true,
       "scripts": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
-      "website": "https://www.ionos.com"
+      "website": "https://www.ionos.com",
+      "description": "MyWebsite is website builder designed for easy editing and fast results.",
+      "icon": "Ionos-by-1and1-logo.svg"
     },
     "Mynetcap": {
       "cats": [
