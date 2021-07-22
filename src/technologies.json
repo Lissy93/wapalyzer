@@ -14725,6 +14725,23 @@
       "icon": "Oracle.png",
       "website": "http://www.oracle.com/technetwork/middleware/ias/overview/index.html"
     },
+    "Oracle BlueKai": {
+      "cats": [
+        86
+      ],
+      "description": "Oracle BlueKai is a cloud-based big data platform that enables companies to personalise online, offline, and mobile marketing campaigns.",
+      "icon": "Oracle.png",
+      "dom": "link[href*='tags.bluekai.com'],link[href*='tags.bkrtx.com']",
+      "js": {
+        "bluekaiLoaded": ""
+      },
+      "scripts": "tags\\.(?:bluekai|bkrtx)\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.oracle.com/cx/marketing/data-management-platform"
+    },
     "Oracle Commerce": {
       "cats": [
         6
