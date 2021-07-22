@@ -1031,6 +1031,25 @@
       "saas": true,
       "website": "https://www.adobe.com/analytics/adobe-analytics.html"
     },
+    "Adobe Audience Manager": {
+      "cats": [
+        86
+      ],
+      
+      "description": "Adobe Audience Manager is a versatile audience data management platform.",
+      "icon": "Adobe.svg",
+      "dom": "iframe[src*='.demdex.net/'],link[href*='.demdex.net']",
+      "js": {
+        "Demdex.version": "([\\d\\.]+)\\;version:\\1"
+      },
+      "scripts": "\\.demdex\\.net/",
+      "saas": true,
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "website": "https://business.adobe.com/products/audience-manager/adobe-audience-manager.html"
+    },
     "Adobe ColdFusion": {
       "cats": [
         18
