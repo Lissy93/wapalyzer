@@ -13887,13 +13887,10 @@
       "description": "Neve is a super-fast, easily customizable, multi-purpose theme that works perfectly with Gutenberg and the most popular page builders as well as WooCommerce",
       "icon": "themeisle.png",
       "dom": [
-          "link[rel='stylesheet'][id*='neve-style-css']",
+          "link[id*='neve-style']",
           "body[class*='neve-theme']"
       ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+neve/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/neve.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
+      "scripts": "themes/neve.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://themeisle.com/themes/neve/"
   },
