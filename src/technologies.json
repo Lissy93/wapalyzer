@@ -324,6 +324,14 @@
     "84": {
       "name": "Loyalty & rewards",
       "priority": 9
+    },
+    "85": {
+      "name": "Feature management",
+      "priority": 9
+    },
+    "86": {
+      "name": "Segmentation",
+      "priority": 9
     }
   },
   "technologies": {
@@ -1022,6 +1030,25 @@
       },
       "saas": true,
       "website": "https://www.adobe.com/analytics/adobe-analytics.html"
+    },
+    "Adobe Audience Manager": {
+      "cats": [
+        86
+      ],
+      
+      "description": "Adobe Audience Manager is a versatile audience data management platform.",
+      "icon": "Adobe.svg",
+      "dom": "iframe[src*='.demdex.net/'],link[href*='.demdex.net']",
+      "js": {
+        "Demdex.version": "([\\d\\.]+)\\;version:\\1"
+      },
+      "scripts": "\\.demdex\\.net/",
+      "saas": true,
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "website": "https://business.adobe.com/products/audience-manager/adobe-audience-manager.html"
     },
     "Adobe ColdFusion": {
       "cats": [
@@ -7588,6 +7615,25 @@
       "scripts": "\\.fitanalytics\\.com",
       "website": "https://www.fitanalytics.com"
     },
+    "FlagSmith": {
+      "cats": [
+        85
+      ],
+      "description": "FlagSmith is an open-source, fully supported feature flag & remote configuration solution, which provides hosted API to help deployment to a private cloud or on-premises environment.",
+      "icon": "FlagSmith.svg",
+      "js": {
+        "flagsmith": ""
+      },
+      "scripts": "cdn\\.flagsmith\\.com/",
+      "oss": true,
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "website": "https://flagsmith.com"
+    },
     "Flarum": {
       "cats": [
         2
@@ -11460,6 +11506,25 @@
       "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
     },
+    "LaunchDarkly": {
+      "cats": [
+        85
+      ],
+      "description": "LaunchDarkly is a continuous delivery and feature flags as a service platform that integrates into a company's current development cycle.",
+      "icon": "LaunchDarkly.svg",
+      "dom": "link[href*='.launchdarkly.com']",
+      "js": {
+        "launchDarkly": "",
+        "DDC.WS.state": ""
+      },
+      "scripts": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "website": "https://launchdarkly.com"
+    },
     "Launchrock": {
       "cats": [
         74,
@@ -14822,6 +14887,23 @@
       "icon": "Oracle.png",
       "website": "http://www.oracle.com/technetwork/middleware/ias/overview/index.html"
     },
+    "Oracle BlueKai": {
+      "cats": [
+        86
+      ],
+      "description": "Oracle BlueKai is a cloud-based big data platform that enables companies to personalise online, offline, and mobile marketing campaigns.",
+      "icon": "Oracle.png",
+      "dom": "link[href*='tags.bluekai.com'],link[href*='tags.bkrtx.com']",
+      "js": {
+        "bluekaiLoaded": ""
+      },
+      "scripts": "tags\\.(?:bluekai|bkrtx)\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.oracle.com/cx/marketing/data-management-platform"
+    },
     "Oracle Commerce": {
       "cats": [
         6
@@ -17866,6 +17948,27 @@
       },
       "website": "http://www.spip.net"
     },
+    "Split": {
+      "cats": [
+        85,
+        74
+      ],
+      "description": "Split is a feature delivery platform that powers feature flag management, software experimentation, and continuous delivery.",
+      "icon": "Split.png",
+      "js": {
+        "SPLITIO_API_KEY": "",
+        "split_shopper_client": "",
+        "split_visitor_client": "",
+        "splitio": ""
+      },
+      "scripts": "\\.split\\.io/(?:sdk/split-([\\d\\.]+)\\.min\\.js)?\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "poa"
+      ],
+      "website": "https://www.split.io"
+    },
     "SPNEGO": {
       "cats": [
         16
@@ -18066,6 +18169,25 @@
       "saas": true,
       "website": "https://www.salesforce.com"
     },
+    "Salesforce Audience Studio": {
+      "cats": [
+        86
+      ],
+      "description": "Salesforce Audience Studio is a customer data marketplace that only other platform users can access.",
+      "icon": "Salesforce.svg",
+      "dom": "link[href*='.krxd.net']",
+      "js": {
+        "Krux": "",
+        "updateKruxCookie": ""
+      },
+      "scripts": "\\.krxd\\.net/",
+      "saas": true,
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "website": "https://www.salesforce.com/products/marketing-cloud/data-management"
+    },
     "Salesforce Commerce Cloud": {
       "cats": [
         6
@@ -18091,7 +18213,8 @@
     },
     "Salesforce Interaction Studio": {
       "cats": [
-        76
+        76,
+        86
       ],
       "description": "Salesforce Interaction Studio (formerly Evergage) is a cloud-based software that allows users to collect, analyze, and respond to user behavior on their websites and web applications in real-time.",
       "icon": "Salesforce.svg",
@@ -21075,6 +21198,20 @@
         "/tealium/utag\\.js$"
       ],
       "website": "http://tealium.com"
+    },
+    "Tealium AudienceStream": {
+      "cats": [
+        86
+      ],
+      "description": "Tealium AudienceStream is an omnichannel customer segmentation and real-time action engine.",
+      "icon": "Tealium.png",
+      "dom": "link[href*='.tealiumiq.com']",
+      "scripts": "\\.tealiumiq\\.com",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://tealium.com/products/audiencestream"
     },
     "TeamCity": {
       "cats": [
