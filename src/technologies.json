@@ -3399,11 +3399,14 @@
       "icon": "Bolt.svg",
       "js": {
         "BoltCheckout": "",
-        "bolt_callbacks": ""
+        "bolt_callbacks": "",
+        "BoltPopup": "",
+        "BoltTrack": ""
       },
       "pricing": [
         "poa"
       ],
+      "scripts": "connect\\.bolt\\.com/",
       "saas": true,
       "website": "https://www.bolt.com/",
       "xhr": "connect\\.bolt\\.com"
