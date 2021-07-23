@@ -16501,7 +16501,9 @@
       ],
       "description": "Quadpay is a payment platform.",
       "icon": "Quadpay.svg",
+      "dom": "link[href*='widgets.quadpay.com/'], div[data-quadpay-src*='.quadpay.com/']",
       "js": {
+        "quadpayID": "",
         "QuadPayShopify": ""
       },
       "pricing": [
