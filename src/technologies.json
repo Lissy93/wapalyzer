@@ -14177,12 +14177,11 @@
         "low",
         "recurring"
       ],
-      "dom": ["link[rel='stylesheet'][id*='oceanwp-style-css']",
-              "body[class*='oceanwp-theme']"
+      "dom": [
+        "link[id*='oceanwp']",
+        "body[class*='oceanwp-theme']"
       ],
-      "html": [
-        "<link[^>]* href=[\\'\"][^']+oceanwp/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
-      ],
+      "scripts": "themes/oceanwp.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://oceanwp.org"
     },
