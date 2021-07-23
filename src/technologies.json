@@ -2435,15 +2435,11 @@
         "low",
         "freemium"
       ],
-      "html": [
-        "<link[^>]* href=[\\'\"][^']+wp-content/themes/astra/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-        "<!--\\[if*.<script.*\/themes\/astra"
-      ], 
       "dom": [
         "style[id*='astra-theme']",
         "script[id*='astra-theme']"
       ],
-      "scripts": "wp-content/themes/astra",
+      "scripts": "themes/astra.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://wpastra.com/"
     },
