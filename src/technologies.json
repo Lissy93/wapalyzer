@@ -4978,13 +4978,13 @@
     },
     "ColorMag": {
       "cats": [
-          80
+        80
       ],
       "description": "ColorMag theme is for creating news, magazine, newspaper and other kinds of publishing sites. Compatible with Elementor.",
       "icon": "themegrill.png",
       "dom": [
-          "link[id*='colormag-style']",
-          "body[class*='colormag-theme']"
+        "link[id*='colormag-style']",
+        "body[class*='colormag-theme']"
       ],
       "scripts": "themes/colormag.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
@@ -8147,17 +8147,17 @@
     },
     "GeneratePress": {
       "cats": [
-          80
+        80
       ],
       "description": "GeneratePress is a lightweight WordPress theme that focuses on speed, stability, and accessibility",
       "icon": "generatepress.png",
       "dom": [
-          "link[id*='generatepress-style']",
-          "link[id*='generate-style']",
-          "body[class*='generatepress-theme']"
+        "link[id*='generatepress-style']",
+        "link[id*='generate-style']",
+        "body[class*='generatepress-theme']"
       ],
       "scripts": [
-          "themes/generatepress.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
+        "themes/generatepress.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
       ],
       "requires": "WordPress",
       "website": "https://generatepress.com/"
@@ -9352,7 +9352,7 @@
         "link[id*='elementor-hello']"
       ],
       "implies": "Elementor",
-      "requires" : "WordPress",
+      "requires": "WordPress",
       "website": "https://elementor.com/hello-theme/"
     },
     "HelpDocs": {
@@ -9411,13 +9411,13 @@
     },
     "Hestia": {
       "cats": [
-          80
+        80
       ],
       "description": "Hestia is a modern WordPress theme for professionals a multipurpose one-page design, widgetized footer, blog/news page, and a clean look.",
       "icon": "themeisle.png",
       "dom": [
-          "link[id*='hestia']",
-          "body[class*='hestia-theme']"
+        "link[id*='hestia']",
+        "body[class*='hestia-theme']"
       ],
       "scripts": "themes/hestia.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
@@ -13875,18 +13875,18 @@
     },
     "Neve": {
       "cats": [
-          80
+        80
       ],
       "description": "Neve is a super-fast, easily customizable, multi-purpose theme that works perfectly with Gutenberg and the most popular page builders as well as WooCommerce",
       "icon": "themeisle.png",
       "dom": [
-          "link[id*='neve-style']",
-          "body[class*='neve-theme']"
+        "link[id*='neve-style']",
+        "body[class*='neve-theme']"
       ],
       "scripts": "themes/neve.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://themeisle.com/themes/neve/"
-  },
+    },
     "New Relic": {
       "cats": [
         10
@@ -20602,13 +20602,13 @@
     },
     "Sydney": {
       "cats": [
-          80
+        80
       ],
       "description": "Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an online presence. Built by aThemes.",
       "icon": "athemes.png",
       "dom": [
-          "link[id*='sydney-style']",
-          "body[class*='sydney-theme']"
+        "link[id*='sydney-style']",
+        "body[class*='sydney-theme']"
       ],
       "scripts": "themes/sydney.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
@@ -21628,23 +21628,161 @@
       },
       "scripts": "(turf@[\\d.]+)?/?turf\\.min\\.js",
       "website": "https://turfjs.org/"
-    },    
-    "TwentyTwenty": {
+    },
+    "Twenty Eleven": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Eleven is the default theme for WordPress in 2011.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentyeleven-style']",
+        "body[class*='twentyeleven-theme']"
+      ],
+      "scripts": "themes/twentyeleven/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentyeleven"
+    },
+    "Twenty Fifteen": {
+      "cats": [
+        80
+      ],
+      "description": "The annual WordPress theme for 2015 is super-clean, content-focused, and designed to bring a little more simplicity to our blogs.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentyfifteen-style']",
+        "body[class*='twentyfifteen-theme']"
+      ],
+      "scripts": "themes/twentyfifteen/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentyfifteen"
+    },
+    "Twenty Fourteen": {
+      "cats": [
+        80
+      ],
+      "description": "The default theme for 2014 is a magazine theme with a sleek, modern, and beautifully crafted responsive design.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[[id*='twentyfourteen-style']",
+        "body[class*='twentyfourteen-theme']"
+      ],
+      "scripts": "themes/twentyfourteen/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentyfourteen"
+    },
+    "Twenty Nineteen": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Nineteen is the default WordPress theme for 2019",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentynineteen-style']",
+        "body[class*='twentynineteen-theme']"
+      ],
+      "scripts": "themes/twentynineteen.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentynineteen"
+    },
+    "Twenty Seventeen": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Seventeen is the default WordPress theme for 2017.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentyseventeen-style']",
+        "body[class*='twentyseventeen-theme']"
+      ],
+      "scripts": "themes/twentyseventeen/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentyseventeen"
+    },
+    "Twenty Sixteen": {
+      "cats": [
+        80
+      ],
+      "description": "The annual WordPress theme for 2016 is a modern take on an ever-popular layout.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentysixteen-style']",
+        "body[class*='twentysixteen-theme']"
+      ],
+      "scripts": "themes/twentysixteen/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentysixteen"
+    },
+    "Twenty Thirteen": {
+      "cats": [
+        80
+      ],
+      "description": "The 2013 theme for WordPress.com is colorful, opinionated, and ready to give your blog a warm, welcoming vibe.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentythirteen-style']",
+        "body[class*='twentythirteen-theme']"
+      ],
+      "scripts": "themes/twentythirteen/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentythirteen"
+    },
+    "Twenty Ten": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Ten is the default theme for WordPress in 2010.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentyten-style']",
+        "body[class*='twentyten-theme']"
+      ],
+      "scripts": "themes/twentyten/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentyten"
+    },
+    "Twenty Twelve": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Twelve is an elegant, readable, and fully responsive theme that makes your site content look its best on any device.",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentytwelve-style']",
+        "body[class*='twentytwelve-theme']"
+      ],    
+      "scripts": "themes/twentytwelve/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentytwelve"
+    },
+    "Twenty Twenty": {
       "cats": [
         80
       ],
       "description": "Twenty Twenty is the default WordPress theme for 2020.",
       "icon": "WordPress.svg",
       "dom": [
-        "link[rel='stylesheet'][id*='twentytwenty-style-css']",
+        "link[id*='twentytwenty-style']",
+        "style[id*='twentytwenty-style']",
         "body[class*='twentytwenty-theme']"
       ],
-      "html": [
-        "<link[^>]* href=[\\'\"][^']+twentytwenty/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-        "<script[^>]* src=[\\'\"][^']+themes/twentytwenty.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
+      "scripts": "themes/twentytwenty/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://wordpress.com/theme/twentytwenty"
+    },
+    "Twenty Twenty-One": {
+      "cats": [
+        80
+      ],
+      "description": "Twenty Twenty One is the default WordPress theme for 2021",
+      "icon": "WordPress.svg",
+      "dom": [
+        "link[id*='twentytwentyone-style']",
+        "body[class*='twentytwentyone-theme']"
+      ],
+      "scripts": "themes/twentytwentyone/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://wordpress.com/theme/twentytwentyone"
     },
     "TwicPics": {
       "cats": [
@@ -23472,193 +23610,6 @@
       "icon": "wp_super_cache.png",
       "implies": "WordPress",
       "website": "http://z9.io/wp-super-cache/"
-    },
-    "WordPress Twenty Ten": {
-      "cats": [
-          80
-      ],
-      "description": "Twenty Ten is the default theme for WordPress in 2010.",
-      "icon": "WordPress.svg",
-      "dom": [
-          "link[rel='stylesheet'][id*='twentyten-style-css']",
-          "body[class*='twentyten-theme']"
-      ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+twentyten/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/twentyten.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
-      "requires": "WordPress",
-      "website": "https://wordpress.com/theme/twentyten"
-  },
-  "WordPress Twenty Eleven": {
-    "cats": [
-        80
-    ],
-    "description": "Twenty Eleven is the default theme for WordPress in 2011.",
-    "icon": "WordPress.svg",
-    "dom": [
-        "link[rel='stylesheet'][id*='twentyeleven-style-css']",
-        "body[class*='twentyeleven-theme']"
-    ],
-    "html": [
-        "<link[^>]* href=[\\'\"][^']+twentyeleven/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-        "<script[^>]* src=[\\'\"][^']+themes/twentyeleven.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-    ],
-    "requires": "WordPress",
-    "website": "https://wordpress.com/theme/twentyeleven"
-},
-"WordPress Twenty Twelve": {
-  "cats": [
-      80
-  ],
-  "description": "Twenty Twelve is an elegant, readable, and fully responsive theme that makes your site content look its best on any device.",
-  "icon": "WordPress.svg",
-  "dom": [
-      "link[rel='stylesheet'][id*='twentytwelve-style-css']",
-      "body[class*='twentytwelve-theme']"
-  ],
-  "html": [
-      "<link[^>]* href=[\\'\"][^']+twentytwelve/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-      "<script[^>]* src=[\\'\"][^']+themes/twentytwelve.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-  ],
-  "requires": "WordPress",
-  "website": "https://wordpress.com/theme/twentytwelve"
-},
-"WordPress Twenty Thirteen": {
-  "cats": [
-      80
-  ],
-  "description": "The 2013 theme for WordPress.com is colorful, opinionated, and ready to give your blog a warm, welcoming vibe.",
-  "icon": "WordPress.svg",
-  "dom": [
-      "link[rel='stylesheet'][id*='twentythirteen-style-css']",
-      "body[class*='twentythirteen-theme']"
-  ],
-  "html": [
-      "<link[^>]* href=[\\'\"][^']+twentythirteen/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-      "<script[^>]* src=[\\'\"][^']+themes/twentythirteen.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-  ],
-  "requires": "WordPress",
-  "website": "https://wordpress.com/theme/twentythirteen"
-},
-    "WordPress Twenty Fourteen": {
-      "cats": [
-          80
-      ],
-      "description": "The default theme for 2014 is a magazine theme with a sleek, modern, and beautifully crafted responsive design.",
-      "icon": "WordPress.svg",
-      "dom": [
-          "link[rel='stylesheet'][id*='twentyfourteen-style-css']",
-          "body[class*='twentyfourteen-theme']"
-      ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+twentyfourteen/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/twentyfourteen.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
-      "requires": "WordPress",
-      "website": "https://wordpress.com/theme/twentyfourteen"
-  },
-    "WordPress Twenty Fifteen": {
-      "cats": [
-          80
-      ],
-      "description": "The annual WordPress theme for 2015 is super-clean, content-focused, and designed to bring a little more simplicity to our blogs.",
-      "icon": "WordPress.svg",
-      "dom": [
-          "link[rel='stylesheet'][id*='twentyfifteen-style-css']",
-          "body[class*='twentyfifteen-theme']"
-      ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+twentyfifteen/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/twentyfifteen.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
-      "requires": "WordPress",
-      "website": "https://wordpress.com/theme/twentyfifteen"
-  },
-    "WordPress Twenty Sixteen": {
-      "cats": [
-          80
-      ],
-      "description": "The annual WordPress theme for 2016 is a modern take on an ever-popular layout.",
-      "icon": "WordPress.svg",
-      "dom": [
-          "link[rel='stylesheet'][id*='twentysixteen-style-css']",
-          "body[class*='twentysixteen-theme']"
-      ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+twentysixteen/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/twentysixteen.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
-      "requires": "WordPress",
-      "website": "https://wordpress.com/theme/twentysixteen"
-  },
-    "WordPress Twenty Seventeen": {
-        "cats": [
-            80
-        ],
-        "description": "Twenty Seventeen is the default WordPress theme for 2017.",
-        "icon": "WordPress.svg",
-        "dom": [
-            "link[rel='stylesheet'][id*='twentyseventeen-style-css']",
-            "body[class*='twentyseventeen-theme']"
-        ],
-        "html": [
-            "<link[^>]* href=[\\'\"][^']+twentyseventeen/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-            "<script[^>]* src=[\\'\"][^']+themes/twentyseventeen.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-        ],
-        "requires": "WordPress",
-        "website": "https://wordpress.com/theme/twentyseventeen"
-    },
-  "WordPress Twenty Nineteen": {
-    "cats": [
-        80
-    ],
-    "description": "Twenty Nineteen is the default WordPress theme for 2019",
-    "icon": "WordPress.svg",
-    "dom": [
-        "link[rel='stylesheet'][id*='twentynineteen-style-css']",
-        "body[class*='twentynineteen-theme']"
-    ],
-    "html": [
-        "<link[^>]* href=[\\'\"][^']+twentynineteen/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-        "<script[^>]* src=[\\'\"][^']+themes/twentynineteen.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-    ],
-    "requires": "WordPress",
-    "website": "https://wordpress.com/theme/twentynineteen"
-  },
-    "WordPress Twenty Twenty": {
-        "cats": [
-            80
-        ],
-        "description": "Twenty Twenty is the default WordPress theme for 2020",
-        "icon": "WordPress.svg",
-        "dom": [
-            "link[rel='stylesheet'][id*='twentytwenty-style-css']",
-            "body[class*='twentytwenty-theme']"
-        ],
-        "html": [
-            "<link[^>]* href=[\\'\"][^']+twentytwenty/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-            "<script[^>]* src=[\\'\"][^']+themes/twentytwenty.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-        ],
-        "requires": "WordPress",
-        "website": "https://wordpress.com/theme/twentytwenty"
-    },
-    "WordPress Twenty Twenty-One": {
-        "cats": [
-            80
-        ],
-        "description": "Twenty Twenty One is the default WordPress theme for 2021",
-        "icon": "WordPress.svg",
-        "dom": [
-            "link[rel='stylesheet'][id*='twentytwentyone-style-css']",
-            "body[class*='twentytwentyone-theme']"
-        ],
-        "html": [
-            "<link[^>]* href=[\\'\"][^']+twentytwentyone/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-            "<script[^>]* src=[\\'\"][^']+themes/twentytwentyone.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-        ],
-        "requires": "WordPress",
-        "website": "https://wordpress.com/theme/twentytwentyone"
     },
     "WordPress VIP": {
       "cats": [
