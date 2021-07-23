@@ -9420,13 +9420,10 @@
       "description": "Hestia is a modern WordPress theme for professionals a multipurpose one-page design, widgetized footer, blog/news page, and a clean look.",
       "icon": "themeisle.png",
       "dom": [
-          "link[rel='stylesheet'][id*='hestia-style-css']",
+          "link[id*='hestia']",
           "body[class*='hestia-theme']"
       ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+hestia/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/hestia.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
+      "scripts": "themes/hestia.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://themeisle.com/themes/hestia/"
     },
