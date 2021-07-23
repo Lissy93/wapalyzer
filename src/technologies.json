@@ -20615,13 +20615,10 @@
       "description": "Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an online presence. Built by aThemes.",
       "icon": "athemes.png",
       "dom": [
-          "link[rel='stylesheet'][id*='sydney-style-css']",
+          "link[id*='sydney-style']",
           "body[class*='sydney-theme']"
       ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+sydney/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/sydney.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
-      ],
+      "scripts": "themes/sydney.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://athemes.com/theme/sydney/"
     },
