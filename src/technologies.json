@@ -8181,14 +8181,12 @@
       "description": "GeneratePress is a lightweight WordPress theme that focuses on speed, stability, and accessibility",
       "icon": "generatepress.png",
       "dom": [
-          "link[rel='stylesheet'][id*='generatepress-style-css']",
-          "link[rel='stylesheet'][id*='generate-style-css']",
+          "link[id*='generatepress-style']",
+          "link[id*='generate-style']",
           "body[class*='generatepress-theme']"
       ],
-      "html": [
-          "<link[^>]* href=[\\'\"][^']+generatepress/.*\\.css\\?ver=([0-9.]+)\\;version:\\1",
-          "<script[^>]* src=[\\'\"][^']+themes/generatepress.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
-          "<!--\\[if IE]>*.<script.*\/themes\/generatepress"
+      "scripts": [
+          "themes/generatepress.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
       ],
       "requires": "WordPress",
       "website": "https://generatepress.com/"
