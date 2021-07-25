@@ -756,14 +756,14 @@
       "js": {
         "acEnableTracking": ""
       },
-      "scripts": [
-        "plugins/activecampaign-subscription-forms/site_tracking\\.js",
-        "\\.activehosted\\.com/"
-      ],
-      "saas": true,
       "pricing": [
         "low",
         "recurring"
+      ],
+      "saas": true,
+      "scripts": [
+        "plugins/activecampaign-subscription-forms/site_tracking\\.js",
+        "\\.activehosted\\.com/"
       ],
       "website": "https://www.activecampaign.com"
     },
@@ -1056,19 +1056,18 @@
       "cats": [
         86
       ],
-      
       "description": "Adobe Audience Manager is a versatile audience data management platform.",
-      "icon": "Adobe.svg",
       "dom": "iframe[src*='.demdex.net/'],link[href*='.demdex.net']",
+      "icon": "Adobe.svg",
       "js": {
         "Demdex.version": "([\\d\\.]+)\\;version:\\1"
       },
-      "scripts": "\\.demdex\\.net/",
-      "saas": true,
       "pricing": [
         "high",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.demdex\\.net/",
       "website": "https://business.adobe.com/products/audience-manager/adobe-audience-manager.html"
     },
     "Adobe ColdFusion": {
@@ -1342,14 +1341,14 @@
         41
       ],
       "description": "Affirm is a loan company that allows users to buy goods or services offered by online merchants and pay off those purchases in fixed monthly payments.",
-      "icon": "Affirm.svg",
       "dom": "link[href*='.affirm.com']",
+      "icon": "Affirm.svg",
       "js": {
         "_affirm_config": "",
         "affirm.Rollbar": ""
       },
-      "scripts": "\\.affirm\\.com/js/v([\\d\\.]+)/affirm\\.js\\;version:\\1",
       "saas": true,
+      "scripts": "\\.affirm\\.com/js/v([\\d\\.]+)/affirm\\.js\\;version:\\1",
       "website": "https://www.affirm.com"
     },
     "Afosto": {
@@ -2768,6 +2767,25 @@
       "scripts": "/awesomplete\\.js(?:$|\\?)",
       "website": "https://leaverou.github.io/awesomplete/"
     },
+    "Axeptio": {
+      "cats": [
+        67
+      ],
+      "description": "Axeptio is a trusted third party that collects and archive users' consent in a GDPR compliant fashion.",
+      "dom": "img[src*='axeptio.imgix.net/']",
+      "icon": "Axeptio.png",
+      "js": {
+        "axeptioSDK": "",
+        "axeptioSettings": ""
+      },
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.axeptio.eu"
+    },
     "Axios": {
       "cats": [
         59
@@ -2780,25 +2798,6 @@
         "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
       ],
       "website": "https://github.com/axios/axios"
-    },
-    "Axeptio": {
-      "cats": [
-        67
-      ],
-      "description": "Axeptio is a trusted third party that collects and archive users' consent in a GDPR compliant fashion.",
-      "icon": "Axeptio.png",
-      "dom": "img[src*='axeptio.imgix.net/']",
-      "js": {
-        "axeptioSDK": "",
-        "axeptioSettings": ""
-      },
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "low",
-        "recurring"
-      ],
-      "website": "https://www.axeptio.eu"
     },
     "Azion": {
       "cats": [
@@ -3420,15 +3419,15 @@
       "icon": "Bolt.svg",
       "js": {
         "BoltCheckout": "",
-        "bolt_callbacks": "",
         "BoltPopup": "",
-        "BoltTrack": ""
+        "BoltTrack": "",
+        "bolt_callbacks": ""
       },
       "pricing": [
         "poa"
       ],
-      "scripts": "connect\\.bolt\\.com/",
       "saas": true,
+      "scripts": "connect\\.bolt\\.com/",
       "website": "https://www.bolt.com/",
       "xhr": "connect\\.bolt\\.com"
     },
@@ -5181,18 +5180,18 @@
         75
       ],
       "description": "Constant Contact is a marketing automation and email marketing solution.",
-      "icon": "Constant Contact.svg",
       "dom": "a[href*='.constantcontact.com/'][target='_blank']",
+      "icon": "Constant Contact.svg",
       "js": {
         "_ctct_m": "",
         "ctctOnLoadCallback": ""
       },
-      "scripts": "\\.ctctcdn\\.com/",
-      "saas": true,
       "pricing": [
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.ctctcdn\\.com/",
       "website": "https://www.constantcontact.com"
     },
     "Contao": {
@@ -5310,11 +5309,11 @@
       "js": {
         "conversant": ""
       },
-      "scripts": "cdn\\.conversant\\.mgr\\.consensu\\.org/",
-      "saas": true,
       "pricing": [
         "freemium"
       ],
+      "saas": true,
+      "scripts": "cdn\\.conversant\\.mgr\\.consensu\\.org/",
       "website": "https://www.conversantmedia.eu/consent-tool"
     },
     "Convert": {
@@ -5381,6 +5380,24 @@
       "scripts": "//cookie-script\\.com/s/",
       "website": "https://cookie-script.com/"
     },
+    "CookieFirst": {
+      "cats": [
+        67
+      ],
+      "description": "CookieFirst is an GDPR and CCPA compliant consent management platform.",
+      "icon": "CookieFirst.png",
+      "js": {
+        "cookiefirst_show_settings": ""
+      },
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "consent\\.cookiefirst\\.com/",
+      "website": "https://cookiefirst.com"
+    },
     "CookieHub": {
       "cats": [
         67
@@ -5415,24 +5432,6 @@
       "icon": "Cookiebot.svg",
       "scripts": "consent\\.cookiebot\\.com",
       "website": "http://www.cookiebot.com"
-    },
-    "CookieFirst": {
-      "cats": [
-        67
-      ],
-      "description": "CookieFirst is an GDPR and CCPA compliant consent management platform.",
-      "icon": "CookieFirst.png",
-      "js": {
-        "cookiefirst_show_settings": ""
-      },
-      "scripts": "consent\\.cookiefirst\\.com/",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "low",
-        "recurring"
-      ],
-      "website": "https://cookiefirst.com"
     },
     "Cooladata": {
       "cats": [
@@ -6513,6 +6512,7 @@
       "cats": [
         51
       ],
+      "description": "Duda is a web design platform for companies that offer web design services.",
       "icon": "duda.png",
       "js": {
         "d_version": "^(.*)$\\;version:\\1\\;confidence:0",
@@ -6524,8 +6524,7 @@
         "low"
       ],
       "saas": true,
-      "website": "https://www.duda.co/website-builder",
-      "description": "Duda is a web design platform for companies that offer web design services."
+      "website": "https://www.duda.co/website-builder"
     },
     "Dukaan": {
       "cats": [
@@ -7027,19 +7026,6 @@
       "icon": "Erlang.png",
       "website": "http://www.erlang.org"
     },
-    "eSSENTIAL Accessibility": {
-      "cats": [
-        68
-      ],     
-      "description": "eSSENTIAL Accessibility is a digital accessibility-as-a-service platform.",
-      "icon": "eSSENTIAL Accessibility.png",
-      "dom": " a[href*='.essentialaccessibility.com'] > img",
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://www.essentialaccessibility.com"
-    },
     "Essential JS 2": {
       "cats": [
         12,
@@ -7317,15 +7303,15 @@
         6
       ],
       "description": "Fabric is a headless commerce platform helping direct-to-consumer and B2B brands utilize an ecommerce platform designed for their needs.",
+      "dom": "img[data-src*='fabric.imgix.net/']",
       "icon": "Fabric.svg",
       "meta": {
         "powered-by": "FabricInc"
       },
-      "dom": "img[data-src*='fabric.imgix.net/']",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
       "website": "https://fabric.inc"
     },
     "Facebook": {
@@ -7427,11 +7413,11 @@
         "FAST_VERSION": "([\\d\\.]+)\\;version:\\1",
         "Fast.Events": ""
       },
-      "scripts": "js\\.fast\\.co/",
-      "saas": true,
       "pricing": [
         "payg"
       ],
+      "saas": true,
+      "scripts": "js\\.fast\\.co/",
       "website": "https://www.fast.co"
     },
     "Fastcommerce": {
@@ -7681,14 +7667,14 @@
       "js": {
         "flagsmith": ""
       },
-      "scripts": "cdn\\.flagsmith\\.com/",
       "oss": true,
-      "saas": true,
       "pricing": [
         "freemium",
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "cdn\\.flagsmith\\.com/",
       "website": "https://flagsmith.com"
     },
     "Flarum": {
@@ -8138,13 +8124,13 @@
       "js": {
         "FS.clearUserCookie": ""
       },
-      "scripts": "\\.fullstory\\.com/",
-      "saas": true,
       "pricing": [
         "freemium",
         "mid",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.fullstory\\.com/",
       "website": "https://www.fullstory.com"
     },
     "Fusion Ads": {
@@ -11568,18 +11554,18 @@
         85
       ],
       "description": "LaunchDarkly is a continuous delivery and feature flags as a service platform that integrates into a company's current development cycle.",
-      "icon": "LaunchDarkly.svg",
       "dom": "link[href*='.launchdarkly.com']",
+      "icon": "LaunchDarkly.svg",
       "js": {
-        "launchDarkly": "",
-        "DDC.WS.state": ""
+        "DDC.WS.state": "",
+        "launchDarkly": ""
       },
-      "scripts": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
-      "saas": true,
       "pricing": [
         "payg",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
       "website": "https://launchdarkly.com"
     },
     "Launchrock": {
@@ -12324,12 +12310,12 @@
       "js": {
         "loyaltylion.version": "([\\d\\-]+)\\;version:\\1"
       },
-      "scripts": "sdk\\.loyaltylion\\.net/",
-      "saas": true,
       "pricing": [
         "mid",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "sdk\\.loyaltylion\\.net/",
       "website": "https://loyaltylion.com"
     },
     "Lua": {
@@ -13841,6 +13827,8 @@
       "cats": [
         51
       ],
+      "description": "MyWebsite is website builder designed for easy editing and fast results.",
+      "icon": "Ionos-by-1and1-logo.svg",
       "implies": "Duda",
       "js": {
         "SystemID": "^.*1AND1.*$"
@@ -13854,9 +13842,7 @@
       ],
       "saas": true,
       "scripts": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
-      "website": "https://www.ionos.com",
-      "description": "MyWebsite is website builder designed for easy editing and fast results.",
-      "icon": "Ionos-by-1and1-logo.svg"
+      "website": "https://www.ionos.com"
     },
     "Mynetcap": {
       "cats": [
@@ -14917,11 +14903,11 @@
       "cats": [
         74
       ],
-      "description": "Optimizely is an American company that provides digital experience platform software as a service.",
-      "icon": "Optimizely.svg",
       "cookies": {
         "optimizelyEndUserId": ""
       },
+      "description": "Optimizely is an American company that provides digital experience platform software as a service.",
+      "icon": "Optimizely.svg",
       "js": {
         "optimizely": ""
       },
@@ -14949,16 +14935,16 @@
         86
       ],
       "description": "Oracle BlueKai is a cloud-based big data platform that enables companies to personalise online, offline, and mobile marketing campaigns.",
-      "icon": "Oracle.png",
       "dom": "link[href*='tags.bluekai.com'],link[href*='tags.bkrtx.com']",
+      "icon": "Oracle.png",
       "js": {
         "bluekaiLoaded": ""
       },
-      "scripts": "tags\\.(?:bluekai|bkrtx)\\.com/",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "tags\\.(?:bluekai|bkrtx)\\.com/",
       "website": "https://www.oracle.com/cx/marketing/data-management-platform"
     },
     "Oracle Commerce": {
@@ -16711,11 +16697,11 @@
         41
       ],
       "description": "Quadpay is a payment platform.",
-      "icon": "Quadpay.svg",
       "dom": "link[href*='widgets.quadpay.com/'], div[data-quadpay-src*='.quadpay.com/']",
+      "icon": "Quadpay.svg",
       "js": {
-        "quadpayID": "",
-        "QuadPayShopify": ""
+        "QuadPayShopify": "",
+        "quadpayID": ""
       },
       "pricing": [
         "payg"
@@ -17340,11 +17326,11 @@
         "RFK_DEPLOY_TIME": "",
         "RfkParams": ""
       },
-      "scripts": "\\.cloudfront\\.net/js/reflektion\\.js",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.cloudfront\\.net/js/reflektion\\.js",
       "website": "https://reflektion.com"
     },
     "Regiondo": {
@@ -18005,27 +17991,6 @@
       },
       "website": "http://www.spip.net"
     },
-    "Split": {
-      "cats": [
-        85,
-        74
-      ],
-      "description": "Split is a feature delivery platform that powers feature flag management, software experimentation, and continuous delivery.",
-      "icon": "Split.png",
-      "js": {
-        "SPLITIO_API_KEY": "",
-        "split_shopper_client": "",
-        "split_visitor_client": "",
-        "splitio": ""
-      },
-      "scripts": "\\.split\\.io/(?:sdk/split-([\\d\\.]+)\\.min\\.js)?\\;version:\\1",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "poa"
-      ],
-      "website": "https://www.split.io"
-    },
     "SPNEGO": {
       "cats": [
         16
@@ -18231,18 +18196,18 @@
         86
       ],
       "description": "Salesforce Audience Studio is a customer data marketplace that only other platform users can access.",
-      "icon": "Salesforce.svg",
       "dom": "link[href*='.krxd.net']",
+      "icon": "Salesforce.svg",
       "js": {
         "Krux": "",
         "updateKruxCookie": ""
       },
-      "scripts": "\\.krxd\\.net/",
-      "saas": true,
       "pricing": [
         "high",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.krxd\\.net/",
       "website": "https://www.salesforce.com/products/marketing-cloud/data-management"
     },
     "Salesforce Commerce Cloud": {
@@ -19139,19 +19104,19 @@
         6
       ],
       "description": "ShopRunner is a service offering consumers free two-day shipping and returns on online orders placed with certain retailers.",
-      "icon": "Shoprunner.png",
       "dom": "link[href*='content.shoprunner.com']",
+      "icon": "Shoprunner.png",
       "js": {
-        "_shoprunner_com.version": "([\\d\\.]+)\\;version:\\1",
-        "_shoprunner_com": ""
+        "_shoprunner_com": "",
+        "_shoprunner_com.version": "([\\d\\.]+)\\;version:\\1"
       },
-      "scripts": "/shoprunner/shoprunner_init\\.js",
-      "saas": true,
       "pricing": [
         "freemium",
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "/shoprunner/shoprunner_init\\.js",
       "website": "https://www.shoprunner.com"
     },
     "Shoptet": {
@@ -20173,6 +20138,27 @@
       "saas": true,
       "website": "https://www.spinnakr.com"
     },
+    "Split": {
+      "cats": [
+        85,
+        74
+      ],
+      "description": "Split is a feature delivery platform that powers feature flag management, software experimentation, and continuous delivery.",
+      "icon": "Split.png",
+      "js": {
+        "SPLITIO_API_KEY": "",
+        "split_shopper_client": "",
+        "split_visitor_client": "",
+        "splitio": ""
+      },
+      "pricing": [
+        "freemium",
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.split\\.io/(?:sdk/split-([\\d\\.]+)\\.min\\.js)?\\;version:\\1",
+      "website": "https://www.split.io"
+    },
     "SplitIt": {
       "cats": [
         41
@@ -20919,11 +20905,11 @@
       "js": {
         "SyndecaAnalyticsObject": ""
       },
-      "scripts": "\\.syndeca\\.com/",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.syndeca\\.com/",
       "website": "https://www.syndeca.com"
     },
     "Synerise": {
@@ -21250,39 +21236,39 @@
       "js": {
         "TEALIUMENABLED": ""
       },
-      "scripts": [
-        "^(?:https?:)?//tags\\.tiqcdn\\.com/",
-        "/tealium/utag\\.js$"
-      ],
-      "saas": true,
       "pricing": [
         "mid",
         "recurring"
       ],
-      "website": "http://tealium.com"
-    },
-    "Tealium Consent Management": {
-      "cats": [
-        67
+      "saas": true,
+      "scripts": [
+        "^(?:https?:)?//tags\\.tiqcdn\\.com/",
+        "/tealium/utag\\.js$"
       ],
-      "description": "Tealium Consent Management adds consent and data privacy support.",
-      "icon": "Tealium.png",
-      "dom": "script#__tealiumGDPRecScript,div#__tealiumGDPRecModal",
-      "website": "https://docs.tealium.com/platforms/getting-started/consent-management"
+      "website": "http://tealium.com"
     },
     "Tealium AudienceStream": {
       "cats": [
         86
       ],
       "description": "Tealium AudienceStream is an omnichannel customer segmentation and real-time action engine.",
-      "icon": "Tealium.png",
       "dom": "link[href*='.tealiumiq.com']",
-      "scripts": "\\.tealiumiq\\.com",
-      "saas": true,
+      "icon": "Tealium.png",
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.tealiumiq\\.com",
       "website": "https://tealium.com/products/audiencestream"
+    },
+    "Tealium Consent Management": {
+      "cats": [
+        67
+      ],
+      "description": "Tealium Consent Management adds consent and data privacy support.",
+      "dom": "script#__tealiumGDPRecScript,div#__tealiumGDPRecModal",
+      "icon": "Tealium.png",
+      "website": "https://docs.tealium.com/platforms/getting-started/consent-management"
     },
     "TeamCity": {
       "cats": [
@@ -22410,13 +22396,13 @@
       ],
       "description": "UserZoom is a cloud-based user experience solution.",
       "icon": "UserZoom.png",
-      "scripts": "\\.userzoom\\.com/",
-      "saas": true,
       "pricing": [
         "poa",
         "high",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.userzoom\\.com/",
       "website": "https://www.userzoom.com"
     },
     "Usercentrics": {
@@ -24825,6 +24811,19 @@
       ],
       "saas": true,
       "website": "http://www.epages.com/"
+    },
+    "eSSENTIAL Accessibility": {
+      "cats": [
+        68
+      ],
+      "description": "eSSENTIAL Accessibility is a digital accessibility-as-a-service platform.",
+      "dom": " a[href*='.essentialaccessibility.com'] > img",
+      "icon": "eSSENTIAL Accessibility.png",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.essentialaccessibility.com"
     },
     "eSyndiCat": {
       "cats": [
