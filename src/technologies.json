@@ -2435,11 +2435,23 @@
         "low",
         "freemium"
       ],
-      "dom": [
-        "style[id*='astra-theme']",
-        "script[id*='astra-theme']"
-      ],
       "scripts": "themes/astra.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "dom": {
+        "link[href*='themes/astra',style[id*='astra-theme']": {
+          "attributes": { 
+            "href": "astra/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+          }
+        },
+        "style[id*='astra-theme']": {
+          "text": ""
+        },
+        "body[class*='astra-']": {
+          "text": ""
+        },
+        "script[id*='astra-']": {
+          "text": ""
+        }
+      },
       "requires": "WordPress",
       "website": "https://wpastra.com/"
     },
