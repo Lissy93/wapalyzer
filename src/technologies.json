@@ -2437,7 +2437,7 @@
       ],
       "scripts": "themes/astra.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "dom": {
-        "link[href*='themes/astra',style[id*='astra-theme']": {
+        "link[href*='themes/astra']": {
           "attributes": { 
             "href": "astra/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
           }
