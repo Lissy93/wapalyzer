@@ -1056,11 +1056,11 @@
       "cats": [
         86
       ],
-      "description": "Adobe Audience Manager is a versatile audience data management platform.",
-      "icon": "Adobe.svg",
       "cookies": {
         "aam_uuid": ""
       },
+      "description": "Adobe Audience Manager is a versatile audience data management platform.",
+      "icon": "Adobe.svg",
       "pricing": [
         "high",
         "recurring"
@@ -7282,20 +7282,6 @@
       "url": "Pages/SearchResults\\.aspx\\?k=",
       "website": "http://sharepoint.microsoft.com/en-us/product/capabilities/search/Pages/Fast-Search.aspx"
     },
-    "Foxy.io": {
-      "cats": [
-        6
-      ],
-      "description": "Foxy’s hosted cart & payment page allow you to sell anything, using your existing website or platform.",
-      "icon": "Foxy.io.svg",
-      "pricing": [
-        "payg",
-        "recurring"
-      ],
-      "saas": true,
-      "scripts": "cdn\\.foxycart\\.com",
-      "website": "https://www.foxy.io"
-    },
     "Fabric": {
       "cats": [
         6
@@ -7960,6 +7946,20 @@
       },
       "website": "http://foswiki.org"
     },
+    "Foxy.io": {
+      "cats": [
+        6
+      ],
+      "description": "Foxy’s hosted cart & payment page allow you to sell anything, using your existing website or platform.",
+      "icon": "Foxy.io.svg",
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.foxycart\\.com",
+      "website": "https://www.foxy.io"
+    },
     "FreeBSD": {
       "cats": [
         28
@@ -8419,6 +8419,17 @@
         "GSFN": ""
       },
       "website": "https://getsatisfaction.com/corp/"
+    },
+    "GetFeedback": {
+      "cats": [
+        13
+      ],
+      "description": "GetFeedback (formerly Usabilla) is a user feedback solution for collecting qualitative and quantitative user feedback across digital channels including websites, apps and emails.",
+      "icon": "GetFeedback.svg",
+      "js": {
+        "usabilla_live": ""
+      },
+      "website": "https://www.getfeedback.com"
     },
     "GetSimple CMS": {
       "cats": [
@@ -10939,25 +10950,6 @@
       "scripts": "\\.kameleoon\\.\\w+/kameleoon\\.js",
       "website": "https://kameleoon.com/"
     },
-    "Medallia": {
-      "cats": [
-        10,
-        13,
-        73
-      ],
-      "cookies": {
-        "k_visit": ""
-      },
-      "description": "Medallia (formerly Kampyle) is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
-      "icon": "Medallia.svg",
-      "js": {
-        "KAMPYLE_COMMON": "",
-        "k_track": "",
-        "kampyle": ""
-      },
-      "scripts": "cf\\.kampyle\\.com/k_button\\.js",
-      "website": "https://www.medallia.com"
-    },
     "Kamva": {
       "cats": [
         6
@@ -12847,6 +12839,25 @@
         "Mxm.Tracker": ""
       },
       "website": "https://maxemail.xtremepush.com"
+    },
+    "Medallia": {
+      "cats": [
+        10,
+        13,
+        73
+      ],
+      "cookies": {
+        "k_visit": ""
+      },
+      "description": "Medallia (formerly Kampyle) is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
+      "icon": "Medallia.svg",
+      "js": {
+        "KAMPYLE_COMMON": "",
+        "k_track": "",
+        "kampyle": ""
+      },
+      "scripts": "cf\\.kampyle\\.com/k_button\\.js",
+      "website": "https://www.medallia.com"
     },
     "MediaElement.js": {
       "cats": [
@@ -21852,22 +21863,6 @@
       "saas": true,
       "website": "https://www.trustyou.com"
     },
-    "eKomi": {
-      "cats": [
-        5
-      ],
-      "description": "eKomi is a German supplier and product review service.",
-      "icon": "eKomi.png",
-      "js": {
-        "ekomiWidgetMain": ""
-      },
-      "dom": ".ekomi-widget-container",
-      "pricing": [
-        "poa"
-      ],
-      "saas": true,
-      "website": "https://www.ekomi.de"
-    },
     "Trustpilot": {
       "cats": [
         5
@@ -22308,17 +22303,6 @@
       ],
       "saas": true,
       "website": "https://upvoty.com"
-    },
-    "GetFeedback": {
-      "cats": [
-        13
-      ],
-      "description": "GetFeedback (formerly Usabilla) is a user feedback solution for collecting qualitative and quantitative user feedback across digital channels including websites, apps and emails.",
-      "icon": "GetFeedback.svg",
-      "js": {
-        "usabilla_live": ""
-      },
-      "website": "https://www.getfeedback.com"
     },
     "UsableNet": {
       "cats": [
@@ -24807,6 +24791,22 @@
       ],
       "saas": true,
       "website": "https://edokan.co"
+    },
+    "eKomi": {
+      "cats": [
+        5
+      ],
+      "description": "eKomi is a German supplier and product review service.",
+      "dom": ".ekomi-widget-container",
+      "icon": "eKomi.png",
+      "js": {
+        "ekomiWidgetMain": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.ekomi.de"
     },
     "ePages": {
       "cats": [
