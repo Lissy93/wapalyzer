@@ -8170,7 +8170,7 @@
       "description": "GeneratePress is a lightweight WordPress theme that focuses on speed, stability, and accessibility",
       "icon": "generatepress.png",
       "dom": {
-        "link[id*='generatepress-style']": {
+        "link[id*='generatepress']": {
           "attributes": { 
             "href": "generatepress.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
           }
@@ -21895,7 +21895,7 @@
         "body[class*='twentytwenty-theme']": {
           "text": ""
         }
-      }
+      },
       "scripts": "themes/twentytwenty/.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
       "requires": "WordPress",
       "website": "https://wordpress.com/theme/twentytwenty"
