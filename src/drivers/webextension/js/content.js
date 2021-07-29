@@ -31,7 +31,7 @@ function getJs(technologies) {
       })
     }
 
-    script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
+    script.setAttribute('src', chrome.runtime.getURL('js/inject.js'))
 
     document.body.appendChild(script)
   })
@@ -129,7 +129,9 @@ const Content = {
    * Initialise content script
    */
   async init() {
-    if (await Content.driver('isDisabledDomain', location.href)) {
+    const url = location.href
+
+    if (await Content.driver('isDisabledDomain', url)) {
       return
     }
 
@@ -236,7 +238,7 @@ const Content = {
       Content.cache = { html, css, scripts, meta }
 
       await Content.driver('onContentLoad', [
-        location.href,
+        url,
         Content.cache,
         Content.language,
       ])
@@ -313,7 +315,7 @@ const Content = {
     })
   },
 
-  async analyzeRequires(requires) {
+  async analyzeRequires(url, requires) {
     await Promise.all(
       Object.keys(requires).map(async (name) => {
         if (!Content.analyzedRequires.includes(name)) {
@@ -324,7 +326,7 @@ const Content = {
           await Promise.all([
             Content.onGetTechnologies(technologies, name),
             Content.driver('onContentLoad', [
-              location.href,
+              url,
               Content.cache,
               Content.language,
               name,
@@ -340,12 +342,14 @@ const Content = {
    * @param {Array} technologies
    */
   async onGetTechnologies(technologies = [], requires) {
+    const url = location.href
+
     const js = await getJs(technologies)
     const dom = getDom(technologies)
 
     await Promise.all([
-      Content.driver('analyzeJs', [location.href, js, requires]),
-      Content.driver('analyzeDom', [location.href, dom, requires]),
+      Content.driver('analyzeJs', [url, js, requires]),
+      Content.driver('analyzeDom', [url, dom, requires]),
     ])
   },
 }

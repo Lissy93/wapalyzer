@@ -137,7 +137,7 @@ const Driver = {
   async loadTechnologies() {
     try {
       const { technologies, categories } = await (
-        await fetch(chrome.extension.getURL('technologies.json'))
+        await fetch(chrome.runtime.getURL('technologies.json'))
       ).json()
 
       setTechnologies(technologies)
@@ -503,6 +503,8 @@ const Driver = {
 
     cache.dateTime = Date.now()
 
+    console.log('xxx', { url, hostname, cache, detections })
+
     // Remove duplicates
     cache.detections = cache.detections
       .concat(detections)
@@ -588,7 +590,7 @@ const Driver = {
     )
 
     try {
-      await Driver.content(url, 'analyzeRequires', [requires])
+      await Driver.content(url, 'analyzeRequires', [url, requires])
     } catch (error) {
       // Continue
     }
@@ -682,7 +684,7 @@ const Driver = {
       chrome.browserAction.setIcon(
         {
           tabId,
-          path: chrome.extension.getURL(
+          path: chrome.runtime.getURL(
             `../images/icons/${
               /\.svg$/i.test(icon)
                 ? `converted/${icon.replace(/\.svg$/, '.png')}`

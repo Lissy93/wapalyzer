@@ -3,9 +3,9 @@
 /* globals chrome */
 
 const Utils = {
-  agent: chrome.extension.getURL('/').startsWith('moz-')
+  agent: chrome.runtime.getURL('/').startsWith('moz-')
     ? 'firefox'
-    : chrome.extension.getURL('/').startsWith('safari-')
+    : chrome.runtime.getURL('/').startsWith('safari-')
     ? 'safari'
     : 'chrome',
 
