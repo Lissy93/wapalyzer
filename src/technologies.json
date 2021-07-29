@@ -1057,17 +1057,15 @@
         86
       ],
       "description": "Adobe Audience Manager is a versatile audience data management platform.",
-      "dom": "iframe[src*='.demdex.net/'],link[href*='.demdex.net']",
       "icon": "Adobe.svg",
-      "js": {
-        "Demdex.version": "([\\d\\.]+)\\;version:\\1"
+      "cookies": {
+        "aam_uuid": ""
       },
       "pricing": [
         "high",
         "recurring"
       ],
       "saas": true,
-      "scripts": "\\.demdex\\.net/",
       "website": "https://business.adobe.com/products/audience-manager/adobe-audience-manager.html"
     },
     "Adobe ColdFusion": {
@@ -10941,23 +10939,24 @@
       "scripts": "\\.kameleoon\\.\\w+/kameleoon\\.js",
       "website": "https://kameleoon.com/"
     },
-    "Kampyle": {
+    "Medallia": {
       "cats": [
         10,
-        13
+        13,
+        73
       ],
       "cookies": {
         "k_visit": ""
       },
-      "description": "Kampyle is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
-      "icon": "Kampyle.png",
+      "description": "Medallia (formerly Kampyle) is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
+      "icon": "Medallia.svg",
       "js": {
         "KAMPYLE_COMMON": "",
         "k_track": "",
         "kampyle": ""
       },
       "scripts": "cf\\.kampyle\\.com/k_button\\.js",
-      "website": "http://www.kampyle.com"
+      "website": "https://www.medallia.com"
     },
     "Kamva": {
       "cats": [
@@ -21853,6 +21852,22 @@
       "saas": true,
       "website": "https://www.trustyou.com"
     },
+    "eKomi": {
+      "cats": [
+        5
+      ],
+      "description": "eKomi is a German supplier and product review service.",
+      "icon": "eKomi.png",
+      "js": {
+        "ekomiWidgetMain": ""
+      },
+      "dom": ".ekomi-widget-container",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.ekomi.de"
+    },
     "Trustpilot": {
       "cats": [
         5
@@ -22294,16 +22309,16 @@
       "saas": true,
       "website": "https://upvoty.com"
     },
-    "Usabilla": {
+    "GetFeedback": {
       "cats": [
         13
       ],
-      "description": "Usabilla is a user feedback solution for collecting qualitative and quantitative user feedback across digital channels including websites, apps and emails.",
-      "icon": "Usabilla.svg",
+      "description": "GetFeedback (formerly Usabilla) is a user feedback solution for collecting qualitative and quantitative user feedback across digital channels including websites, apps and emails.",
+      "icon": "GetFeedback.svg",
       "js": {
         "usabilla_live": ""
       },
-      "website": "http://usabilla.com"
+      "website": "https://www.getfeedback.com"
     },
     "UsableNet": {
       "cats": [
