@@ -408,7 +408,7 @@ const Driver = {
         xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
         Driver.onDetect(
-          request.originUrl,
+          request.originUrl || request.initiator,
           await analyze({ xhr: hostname })
         ).catch(Driver.error)
       }, 1000)
