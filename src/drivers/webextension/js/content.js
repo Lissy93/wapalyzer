@@ -171,6 +171,14 @@ const Content = {
             : resolve()
         ))
 
+      const cookies = document.cookie.split('; ').reduce(
+        (cookies, cookie) => ({
+          ...cookies,
+          [cookie.split('=').shift()]: [cookie.split('=').pop()],
+        }),
+        {}
+      )
+
       // CSS rules
       let css = []
 
@@ -235,7 +243,7 @@ const Content = {
         }
       }
 
-      Content.cache = { html, css, scripts, meta }
+      Content.cache = { html, css, scripts, meta, cookies }
 
       await Content.driver('onContentLoad', [
         url,

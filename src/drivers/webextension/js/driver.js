@@ -423,18 +423,15 @@ const Driver = {
    */
   async onContentLoad(url, items, language, requires) {
     try {
-      const { hostname } = new URL(url)
+      items.cookies = items.cookies || {}
 
-      items.cookies = (
+      //
+      ;(
         await promisify(chrome.cookies, 'getAll', {
-          domain: `.${hostname}`,
+          url,
         })
-      ).reduce(
-        (cookies, { name, value }) => ({
-          ...cookies,
-          [name.toLowerCase()]: [value],
-        }),
-        {}
+      ).forEach(
+        ({ name, value }) => (items.cookies[name.toLowerCase()] = [value])
       )
 
       await Driver.onDetect(
