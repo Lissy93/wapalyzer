@@ -2435,11 +2435,11 @@
         "low",
         "freemium"
       ],
-      "scripts": "themes/astra.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "scripts": "themes/astra\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "dom": {
         "link[href*='themes/astra']": {
           "attributes": { 
-            "href": "astra/.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "astra\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "style[id*='astra-theme']": {
@@ -4997,14 +4997,14 @@
       "dom": {
         "link[id*='colormag']": {
           "attributes": { 
-            "href": "themes/colormag.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "themes/colormag\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "body[class*='colormag-theme']": {
           "text": ""
         }
       },
-      "scripts": "themes/colormag.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "scripts": "themes/colormag.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "requires": "WordPress",
       "website": "https://themegrill.com/themes/colormag/"
     },
@@ -8172,12 +8172,12 @@
       "dom": {
         "link[id*='generatepress']": {
           "attributes": { 
-            "href": "generatepress.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "generatepress\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "link[id*='generate-style']": {
           "attributes": { 
-            "href": "generatepress.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "generatepress\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "body[class*='generatepress-theme']": {
@@ -8185,7 +8185,7 @@
         }
       },
       "scripts": [
-        "themes/generatepress.*\\.js\\?ver=([0-9.]+)\\;version:\\1"
+        "themes/generatepress\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
       ],
       "requires": "WordPress",
       "website": "https://generatepress.com/"
@@ -9378,12 +9378,12 @@
       "dom": {
         "link[id*='hello-elementor']": {
           "attributes": { 
-            "href": "hello-elementor.*\\.css(?:\\?ver=([0-9.]+))\\;version:\\1"
+            "href": "hello-elementor\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "link[id*='elementor-hello']": {
           "attributes": { 
-            "href": "elementor-hello.*\\.css(?:\\?ver=([0-9.]+))\\;version:\\1"
+            "href": "elementor-hello\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "script[id*='hello-elementor']": {
@@ -9457,14 +9457,14 @@
       "dom": {
         "link[id*='hestia']": {
           "attributes": { 
-            "href": "hestia.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "hestia\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "body[class*='hestia-theme']": {
           "text": ""
         }
       },
-      "scripts": "themes/hestia.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "scripts": "themes/hestia.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "requires": "WordPress",
       "website": "https://themeisle.com/themes/hestia/"
     },
@@ -13927,14 +13927,14 @@
       "dom": {
         "link[id*='neve-style']": {
           "attributes": { 
-            "href": "neve.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "neve\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "body[class*='neve-theme']": {
           "text": ""
         }
       },
-      "scripts": "themes/neve.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "scripts": "themes/neve\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "requires": "WordPress",
       "website": "https://themeisle.com/themes/neve/"
     },
@@ -14227,14 +14227,14 @@
       "dom": {
         "link[id*='oceanwp']": {
           "attributes": { 
-            "href": "oceanwp.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "oceanwp\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "body[class*='oceanwp-theme']": {
           "text": ""
         }
       },
-      "scripts": "themes/oceanwp.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "scripts": "themes/oceanwp\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "requires": "WordPress",
       "website": "https://oceanwp.org"
     },
@@ -20666,14 +20666,14 @@
       "dom": {
         "link[id*='sydney']": {
           "attributes": { 
-            "href": "sydney.*\\.css\\?ver=([0-9.]+)\\;version:\\1"
+            "href": "sydney\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
         "body[class*='sydney-theme']": {
           "text": ""
         }
       },
-      "scripts": "themes/sydney.*\\.js\\?ver=([0-9.]+)\\;version:\\1",
+      "scripts": "themes/sydney\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
       "requires": "WordPress",
       "website": "https://athemes.com/theme/sydney/"
     },
