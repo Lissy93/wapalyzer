@@ -2442,13 +2442,7 @@
             "href": "astra\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
           }
         },
-        "style[id*='astra-theme']": {
-          "text": ""
-        },
-        "body[class*='astra-']": {
-          "text": ""
-        },
-        "script[id*='astra-']": {
+        "style[id*='astra-theme'], body[class*='astra-'], script[id*='astra-']": {
           "text": ""
         }
       },
