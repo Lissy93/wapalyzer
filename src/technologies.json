@@ -2485,6 +2485,30 @@
       "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
     },
+    "Astra": {
+      "cats": [
+        80
+      ],
+      "description": "Astra is a fast, lightweight, and highly customizable WordPress Theme.",
+      "icon": "astra.png",
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "scripts": "themes/astra\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "dom": {
+        "link[href*='themes/astra']": {
+          "attributes": { 
+            "href": "astra\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "style[id*='astra-theme'], body[class*='astra-'], script[id*='astra-']": {
+          "text": ""
+        }
+      },
+      "requires": "WordPress",
+      "website": "https://wpastra.com/"
+    },
     "Astute Solutions": {
       "cats": [
         53
@@ -5040,6 +5064,26 @@
       "scripts": "https?://www\\.hashing\\.win/scripts/min\\.js",
       "website": "https://www.coinimp.com"
     },
+    "ColorMag": {
+      "cats": [
+        80
+      ],
+      "description": "ColorMag theme is for creating news, magazine, newspaper and other kinds of publishing sites. Compatible with Elementor.",
+      "icon": "themegrill.png",
+      "dom": {
+        "link[id*='colormag']": {
+          "attributes": { 
+            "href": "themes/colormag\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "body[class*='colormag-theme']": {
+          "text": ""
+        }
+      },
+      "scripts": "themes/colormag.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://themegrill.com/themes/colormag/"
+    },
     "ColorMeShop": {
       "cats": [
         6
@@ -5125,15 +5169,15 @@
       ],
       "description": "Complianz is a GDPR/CCPA Cookie Consent plugin that supports GDPR, DSGVO, CCPA and PIPEDA with a conditional Cookie Notice and customized Cookie Policy based on the results of the built-in Cookie Scan.",
       "icon": "Complianz.png",
+      "requires": "WordPress",
       "js": {
         "complianz.version": "([\\d.]+)\\;version:\\1"
       },
+      "scripts": "wp-content/plugins/complianz-gdpr-premium",
+      "saas": true,
       "pricing": [
         "onetime"
       ],
-      "requires": "WordPress",
-      "saas": true,
-      "scripts": "wp-content/plugins/complianz-gdpr-premium",
       "website": "https://complianz.io"
     },
     "Concrete CMS": {
@@ -8322,6 +8366,33 @@
       ],
       "website": "https://www.gemius.com"
     },
+    "GeneratePress": {
+      "cats": [
+        80
+      ],
+      "description": "GeneratePress is a lightweight WordPress theme that focuses on speed, stability, and accessibility",
+      "icon": "generatepress.png",
+      "dom": {
+        "link[id*='generatepress']": {
+          "attributes": { 
+            "href": "generatepress\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "link[id*='generate-style']": {
+          "attributes": { 
+            "href": "generatepress\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "body[class*='generatepress-theme']": {
+          "text": ""
+        }
+      },
+      "scripts": [
+        "themes/generatepress\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
+      ],
+      "requires": "WordPress",
+      "website": "https://generatepress.com/"
+    },
     "GeneXus": {
       "cats": [
         27
@@ -9508,6 +9579,35 @@
       "scripts": "hellobar\\.js",
       "website": "http://hellobar.com"
     },
+    "Hello Elementor": {
+      "cats": [
+        80
+      ],
+      "description": "Hello Elementor is a WordPress theme built for the Elementor website builder platform. It uses minimal styling and scripts for maximum speed and design freedom.",
+      "icon": "Hello Elementor.png",
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "dom": {
+        "link[id*='hello-elementor']": {
+          "attributes": { 
+            "href": "hello-elementor\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "link[id*='elementor-hello']": {
+          "attributes": { 
+            "href": "elementor-hello\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "script[id*='hello-elementor']": {
+          "text": ""
+        }
+      },
+      "implies": "Elementor",
+      "requires": "WordPress",
+      "website": "https://elementor.com/hello-theme/"
+    },
     "HelpDocs": {
       "cats": [
         4,
@@ -9561,6 +9661,26 @@
       "icon": "heroku.svg",
       "url": "\\.herokuapp\\.com",
       "website": "https://www.heroku.com/"
+    },
+    "Hestia": {
+      "cats": [
+        80
+      ],
+      "description": "Hestia is a modern WordPress theme for professionals a multipurpose one-page design, widgetized footer, blog/news page, and a clean look.",
+      "icon": "themeisle.png",
+      "dom": {
+        "link[id*='hestia']": {
+          "attributes": { 
+            "href": "hestia\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "body[class*='hestia-theme']": {
+          "text": ""
+        }
+      },
+      "scripts": "themes/hestia.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://themeisle.com/themes/hestia/"
     },
     "Hexo": {
       "cats": [
@@ -14052,6 +14172,26 @@
       },
       "website": "https://nette.org"
     },
+    "Neve": {
+      "cats": [
+        80
+      ],
+      "description": "Neve is a super-fast, easily customizable, multi-purpose theme that works perfectly with Gutenberg and the most popular page builders as well as WooCommerce",
+      "icon": "themeisle.png",
+      "dom": {
+        "link[id*='neve-style']": {
+          "attributes": { 
+            "href": "neve\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "body[class*='neve-theme']": {
+          "text": ""
+        }
+      },
+      "scripts": "themes/neve\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://themeisle.com/themes/neve/"
+    },
     "New Relic": {
       "cats": [
         10
@@ -14327,6 +14467,30 @@
       "icon": "OXID eShop.svg",
       "implies": "PHP",
       "website": "https://www.oxid-esales.com"
+    },
+    "OceanWP": {
+      "cats": [
+        80
+      ],
+      "description": "OceanWP is a fast-loading WordPress theme that has great support for third-party plugins and drag-and-drop page builders.",
+      "icon": "OceanWP.png",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "dom": {
+        "link[id*='oceanwp']": {
+          "attributes": { 
+            "href": "oceanwp\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "body[class*='oceanwp-theme']": {
+          "text": ""
+        }
+      },
+      "scripts": "themes/oceanwp\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://oceanwp.org"
     },
     "Occasion": {
       "cats": [
@@ -20851,6 +21015,26 @@
       "scripts": "swiper(?:\\.min)?\\.js",
       "website": "https://swiperjs.com"
     },
+    "Sydney": {
+      "cats": [
+        80
+      ],
+      "description": "Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an online presence. Built by aThemes.",
+      "icon": "athemes.png",
+      "dom": {
+        "link[id*='sydney']": {
+          "attributes": { 
+            "href": "sydney\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
+          }
+        },
+        "body[class*='sydney-theme']": {
+          "text": ""
+        }
+      },
+      "scripts": "themes/sydney\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "requires": "WordPress",
+      "website": "https://athemes.com/theme/sydney/"
+    },
     "Sylius": {
       "cats": [
         6
@@ -23750,7 +23934,7 @@
       "cats": [
         23
       ],
-      "description": "WordPpress Super Cache is a static caching plugin for WordPress.",
+      "description": "WordPress Super Cache is a static caching plugin for WordPress.",
       "headers": {
         "WP-Super-Cache": ""
       },
