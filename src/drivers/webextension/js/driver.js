@@ -482,11 +482,11 @@ const Driver = {
     incrementHits = false,
     analyzeRequires = true
   ) {
-    url = url.split('#')[0]
-
     if (!url || !detections.length) {
       return
     }
+
+    url = url.split('#')[0]
 
     const { hostname } = new URL(url)
 
@@ -838,11 +838,11 @@ const Driver = {
       const hostnames = Object.keys(Driver.cache.hostnames).reduce(
         (hostnames, hostname) => {
           // eslint-disable-next-line standard/computed-property-even-spacing
-          const { url, language, detections, hits } =
+          const { language, detections, hits } =
             Driver.cache.hostnames[hostname]
 
           if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
-            hostnames[url] = hostnames[url] || {
+            hostnames[hostname] = hostnames[hostname] || {
               applications: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
                   if (confidence === 100) {
