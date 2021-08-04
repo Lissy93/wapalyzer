@@ -332,6 +332,10 @@
     "86": {
       "name": "Segmentation",
       "priority": 9
+    },
+    "87": {
+      "name": "WordPress plugins",
+      "priority": 9
     }
   },
   "technologies": {
@@ -500,10 +504,11 @@
     "AMP Plugin": {
       "cats": [
         1,
-        5
+        5,
+        87
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "meta": {
         "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
       },
@@ -1627,13 +1632,14 @@
     },
     "All in One SEO Pack": {
       "cats": [
-        54
+        54,
+        87
       ],
       "cpe": "cpe:/a:semperfiwebdesign:all_in_one_seo_pack",
       "description": "All in One SEO plugin optimizes WordPress website and its content for search engines.",
       "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
       "icon": "all-in-One-SEO-Pack.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "website": "https://wordpress.org/plugins/all-in-one-seo-pack/"
     },
     "AlloyUI": {
@@ -3408,7 +3414,8 @@
     "BoldGrid": {
       "cats": [
         1,
-        11
+        11,
+        87
       ],
       "description": "BoldGrid is a free website builder for WordPress websites.",
       "html": [
@@ -3416,7 +3423,7 @@
         "<link rel=[\"']stylesheet[\"'] [^>]+post-and-page-builder",
         "<link[^>]+s\\d+\\.boldgrid\\.com"
       ],
-      "implies": "WordPress",
+      "requires": "WordPress",
       "scripts": "/wp-content/plugins/post-and-page-builder",
       "website": "https://boldgrid.com"
     },
@@ -3635,12 +3642,13 @@
     },
     "Borlabs Cookie": {
       "cats": [
-        67
+        67,
+        87
       ],
       "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
       "dom": "#BorlabsCookieBox",
       "icon": "Borlabs Cookie.svg",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "js": {
         "borlabsCookieConfig": ""
       },
@@ -5165,7 +5173,8 @@
     "Complianz": {
       "cats": [
         74,
-        67
+        67,
+        87
       ],
       "description": "Complianz is a GDPR/CCPA Cookie Consent plugin that supports GDPR, DSGVO, CCPA and PIPEDA with a conditional Cookie Notice and customized Cookie Policy based on the results of the built-in Cookie Scan.",
       "icon": "Complianz.png",
@@ -6231,7 +6240,8 @@
     },
     "Divi": {
       "cats": [
-        51
+        51,
+        87
       ],
       "description": "Divi is a WordPress Theme and standalone WordPress plugin from Elegant themes that allows users to build websites using the visual drag-and-drop Divi page builder.",
       "icon": "Divi.png",
@@ -6246,6 +6256,7 @@
         "recurring",
         "onetime"
       ],
+      "requires": "WordPress",
       "saas": true,
       "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
       "website": "https://www.elegantthemes.com/gallery/divi"
@@ -6756,7 +6767,8 @@
     },
     "EasyDigitalDownloads": {
       "cats": [
-        6
+        6,
+        87
       ],
       "description": "Easy Digital Downloads is a WordPress ecommerce plugin that focuses purely on digital products.",
       "icon": "EasyDigitalDownloads.svg",
@@ -9268,7 +9280,8 @@
     },
     "Gravity Forms": {
       "cats": [
-        19
+        19,
+        87
       ],
       "html": [
         "<div class=(?:\"|')[^>]*gform_wrapper",
@@ -9277,7 +9290,7 @@
         "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/"
       ],
       "icon": "gravityforms.svg",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "scripts": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "http://gravityforms.com"
     },
@@ -11977,14 +11990,15 @@
     },
     "Litespeed Cache": {
       "cats": [
-        23
+        23,
+        87
       ],
       "description": "LiteSpeed Cache is an all-in-one site acceleration plugin for WordPress.",
       "headers": {
         "x-litespeed-cache": ""
       },
       "icon": "litespeed-cache.png",
-      "implies": "LiteSpeed",
+      "requires": "LiteSpeed",
       "website": "https://wordpress.org/plugins/litespeed-cache/"
     },
     "Lithium": {
@@ -13781,7 +13795,8 @@
     },
     "Moove GDPR Consent": {
       "cats": [
-        67
+        67,
+        87
       ],
       "description": "Moove GDPR Consent is a GDPR Cookie Compliance plugin for Wordpress.",
       "icon": "Moove.svg",
@@ -14236,7 +14251,8 @@
     },
     "NextGEN Gallery": {
       "cats": [
-        7
+        7,
+        87
       ],
       "cpe": "cpe:/a:imagely:nextgen_gallery",
       "description": "NextGEN Gallery is a free open-source image management plugin for the WordPress content management system.",
@@ -14244,7 +14260,7 @@
         "<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
       ],
       "icon": "NextGEN Gallery.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "scripts": "/nextgen-gallery/js/",
       "website": "https://www.imagely.com/wordpress-gallery-plugin"
     },
@@ -15351,7 +15367,8 @@
     },
     "Oxygen": {
       "cats": [
-        51
+        51,
+        87
       ],
       "description": "Oxygen Builder is a tool to build a WordPress website.",
       "html": [
@@ -15359,7 +15376,7 @@
         "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/oxygen/"
       ],
       "icon": "Oxygen.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "scripts": [
         "wp-content/plugins/oxygen"
       ],
@@ -17738,7 +17755,8 @@
     },
     "Revslider": {
       "cats": [
-        19
+        19,
+        87
       ],
       "description": "Slider Revolution is a WordPress plugin that allows you to create responsive sliders with many animation effects, text, image and video layers, and many other features.",
       "html": [
@@ -17746,6 +17764,7 @@
       ],
       "icon": "revslider.png",
       "scripts": "/revslider/[/\\w-]+/js",
+      "requires": "WordPress",
       "website": "https://revolution.themepunch.com/"
     },
     "Rewardful": {
@@ -19484,11 +19503,12 @@
     },
     "Site Kit": {
       "cats": [
-        10
+        10,
+        87
       ],
       "description": "Site Kit is a one-stop solution for WordPress users to use everything Google has to offer to make them successful on the web.",
       "icon": "Google.svg",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "meta": {
         "generator": "^Site Kit by Google ?([\\d.]+)?\\;version:\\1"
       },
@@ -20817,13 +20837,15 @@
     },
     "Sucuri": {
       "cats": [
-        31
+        31,
+        87
       ],
       "description": "Sucuri is a WordPress security plugin used to protect websites from malware and hacks.",
       "headers": {
         "x-sucuri-cache:": "",
         "x-sucuri-id": ""
       },
+      "requires": "WordPress",
       "icon": "sucuri.png",
       "website": "https://sucuri.net/"
     },
@@ -20887,11 +20909,12 @@
     },
     "Super Socializer": {
       "cats": [
-        69
+        69,
+        87
       ],
       "description": "Super Socializer is a multipurpose social media plugin for WordPress.",
       "icon": "Super Socializer.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "oss": true,
       "scripts": "plugins/super-socializer/.+?ver=([\\d.]+)\\;version:\\1",
       "website": "https://super-socializer-wordpress.heateor.com"
@@ -23149,7 +23172,8 @@
     },
     "W3 Total Cache": {
       "cats": [
-        23
+        23,
+        87
       ],
       "description": "W3 Total Cache (W3TC) improves the SEO and increases website performance and reducing load times by leveraging features like content delivery network (CDN) integration and the latest best practices.",
       "headers": {
@@ -23157,7 +23181,7 @@
       },
       "html": "<!--[^>]+W3 Total Cache",
       "icon": "W3 Total Cache.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "website": "http://www.w3-edge.com/wordpress-plugins/w3-total-cache"
     },
     "W3Counter": {
@@ -23227,7 +23251,8 @@
     },
     "WP Rocket": {
       "cats": [
-        23
+        23,
+        87
       ],
       "description": "WP Rocket is a caching and performance optimisation plugin to improve the loading speed of WordPress websites.",
       "headers": {
@@ -23236,30 +23261,32 @@
       },
       "html": "<!--[^>]+WP Rocket",
       "icon": "WP Rocket.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "website": "http://wp-rocket.me"
     },
     "WP-Statistics": {
       "cats": [
-        10
+        10,
+        87
       ],
       "html": [
         "<!-- Analytics by WP-Statistics v([\\d.]+) -\\;version:\\1"
       ],
       "icon": "WP-Statistics.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "website": "https://wp-statistics.com"
     },
     "WPCacheOn": {
       "cats": [
-        23
+        23,
+        87
       ],
       "description": "WPCacheOn is a caching and performance optimisation plugin, which improves the loading speed of WordPress websites.",
       "headers": {
         "x-powered-by": "^Optimized by WPCacheOn"
       },
       "icon": "WPCacheOn.png",
-      "implies": [
+      "requires": [
         "WordPress"
       ],
       "website": "https://wpcacheon.io"
@@ -23633,7 +23660,8 @@
     },
     "Welcart": {
       "cats": [
-        6
+        6,
+        87
       ],
       "cookies": {
         "usces_cookie": ""
@@ -23864,12 +23892,13 @@
     },
     "WooCommerce": {
       "cats": [
-        6
+        6,
+        87
       ],
       "description": "WooCommerce is an open-source ecommerce plugin for WordPress.",
       "dom": ".woocommerce, .woocommerce-no-js, link[rel*='woocommerce']",
       "icon": "WooCommerce.svg",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "js": {
         "woocommerce_params": ""
       },
@@ -23932,7 +23961,8 @@
     },
     "WordPress Super Cache": {
       "cats": [
-        23
+        23,
+        87
       ],
       "description": "WordPress Super Cache is a static caching plugin for WordPress.",
       "headers": {
@@ -23940,7 +23970,7 @@
       },
       "html": "<!--[^>]+WP-Super-Cache",
       "icon": "wp_super_cache.png",
-      "implies": "WordPress",
+      "requires": "WordPress",
       "website": "http://z9.io/wp-super-cache/"
     },
     "WordPress VIP": {
@@ -24391,7 +24421,8 @@
     },
     "Yoast SEO": {
       "cats": [
-        54
+        54,
+        87
       ],
       "description": "Yoast SEO is a search engine optimisation plugin for WordPress and other platforms.",
       "dom": {
@@ -24401,6 +24432,7 @@
           }
         }
       },
+      "requires": "WordPress",
       "html": "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\\d.]+) -\\;version:\\1",
       "icon": "Yoast SEO.png",
       "website": "https://yoast.com"
@@ -26384,14 +26416,13 @@
     },
     "wpBakery": {
       "cats": [
-        51
+        51,
+        87
       ],
       "description": "WPBakery is a drag and drop visual page builder plugin for WordPress.",
       "icon": "wpBakery.svg",
-      "implies": [
-        "WordPress",
-        "PHP"
-      ],
+      "requires": "WordPress",
+      "implies": "PHP",
       "meta": {
         "generator": "WPBakery"
       },
@@ -26403,7 +26434,8 @@
     },
     "wpCache": {
       "cats": [
-        23
+        23,
+        87
       ],
       "description": "WPCache is a static caching plugin for WordPress.",
       "headers": {
@@ -26411,10 +26443,8 @@
       },
       "html": "<!--[^>]+wpCache",
       "icon": "wpCache.png",
-      "implies": [
-        "WordPress",
-        "PHP"
-      ],
+      "requires": "WordPress",
+      "implies": "PHP",
       "meta": {
         "generator": "wpCache",
         "keywords": "wpCache"
