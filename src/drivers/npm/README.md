@@ -31,9 +31,10 @@ wappalyzer <url> [options]
 -m, --max-urls=...       Exit when num URLs have been analysed
 -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
 -P, --pretty             Pretty-print JSON output
--p, --probe              Perform a deeper scan by requesting common files
+-p, --probe              Perform a deeper scan by performing additional requests and inspecting DNS records
 -r, --recursive          Follow links on pages (crawler)
 -a, --user-agent=...     Set the user agent string
+-n, --no-scripts         Disabled JavaScript on web pages
 ```
 
 
@@ -64,6 +65,7 @@ const options = {
   userAgent: 'Wappalyzer',
   htmlMaxCols: 2000,
   htmlMaxRows: 2000,
+  noScripts: false,
 };
 
 const wappalyzer = new Wappalyzer(options)

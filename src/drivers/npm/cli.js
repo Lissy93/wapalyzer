@@ -21,6 +21,7 @@ const aliases = {
   P: 'pretty',
   r: 'recursive',
   w: 'maxWait',
+  n: 'noScripts',
 }
 
 while (true) {
@@ -69,10 +70,11 @@ Options:
   -D, --max-depth=...      Don't analyse pages more than num levels deep
   -m, --max-urls=...       Exit when num URLs have been analysed
   -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
-  -p, --probe              Perform a deeper scan by making additional network requests
+  -p, --probe              Perform a deeper scan by performing additional requests and inspecting DNS records
   -P, --pretty             Pretty-print JSON output
   -r, --recursive          Follow links on pages (crawler)
   -a, --user-agent=...     Set the user agent string
+  -n, --no-scripts         Disabled JavaScript on web pages
 `)
 
   process.exit(1)

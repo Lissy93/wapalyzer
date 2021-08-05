@@ -282,6 +282,7 @@ class Driver {
       maxWait: 30000,
       recursive: false,
       probe: false,
+      noScripts: false,
       ...options,
     }
 
@@ -294,6 +295,7 @@ class Driver {
     this.options.maxWait = parseInt(this.options.maxWait, 10)
     this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10)
     this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10)
+    this.options.noScripts = Boolean(+this.options.noScripts)
 
     this.destroyed = false
   }
@@ -381,9 +383,6 @@ class Site {
     this.listeners = {}
 
     this.pages = []
-
-    this.dnsChecked = false
-    this.dns = []
 
     this.cache = {}
 
@@ -477,6 +476,8 @@ class Site {
 
     this.pages.push(page)
 
+    page.setJavaScriptEnabled(!this.options.noScripts)
+
     page.setDefaultTimeout(this.options.maxWait)
 
     await page.setRequestInterception(true)
@@ -512,7 +513,9 @@ class Site {
         if (
           (responseReceived && request.isNavigationRequest()) ||
           request.frame() !== page.mainFrame() ||
-          !['document', 'script'].includes(request.resourceType())
+          !['document', ...(this.options.noScripts ? [] : ['script'])].includes(
+            request.resourceType()
+          )
         ) {
           request.abort('blockedbyclient')
         } else {
@@ -582,7 +585,9 @@ class Site {
         'Timeout (navigation)'
       )
 
-      await sleep(1000)
+      if (!this.options.noScripts) {
+        await sleep(1000)
+      }
 
       // page.on('console', (message) => this.log(message.text()))
 
@@ -690,7 +695,9 @@ class Site {
       )
 
       // JavaScript
-      const js = await this.promiseTimeout(getJs(page), [], 'Timeout (js)')
+      const js = this.options.noScripts
+        ? []
+        : await this.promiseTimeout(getJs(page), [], 'Timeout (js)')
 
       // DOM
       const dom = await this.promiseTimeout(getDom(page), [], 'Timeout (dom)')
@@ -728,56 +735,6 @@ class Site {
         html = batches.join('\n')
       }
 
-      // DNS
-      if (!this.dnsChecked) {
-        this.dnsChecked = true
-
-        const records = {}
-        const resolve = (func, hostname) => {
-          return this.promiseTimeout(
-            func(hostname).catch((error) => {
-              if (error.code !== 'ENODATA') {
-                this.error(error)
-              }
-
-              return []
-            }),
-            [],
-            'Timeout (dns)'
-          )
-        }
-
-        const domain = url.hostname.replace(/^www\./, '')
-
-        ;[records.cname, records.ns, records.mx, records.txt, records.soa] =
-          await Promise.all([
-            resolve(dns.resolveCname, url.hostname),
-            resolve(dns.resolveNs, domain),
-            resolve(dns.resolveMx, domain),
-            resolve(dns.resolveTxt, domain),
-            resolve(dns.resolveSoa, domain),
-          ])
-
-        this.dns = Object.keys(records).reduce((dns, type) => {
-          dns[type] = dns[type] || []
-
-          Array.prototype.push.apply(
-            dns[type],
-            Array.isArray(records[type])
-              ? records[type].map((value) => {
-                  return typeof value === 'object'
-                    ? Object.values(value).join(' ')
-                    : value
-                })
-              : [Object.values(records[type]).join(' ')]
-          )
-
-          return dns
-        }, {})
-
-        await this.onDetect(url, await analyze({ dns: this.dns }))
-      }
-
       // Validate response
       if (
         url.protocol !== 'file:' &&
@@ -797,7 +754,6 @@ class Site {
         cookies,
         scripts,
         meta,
-        dns: this.dns,
       }
 
       await this.onDetect(
@@ -971,6 +927,52 @@ class Site {
         this.error(`get ${path}: ${error.message || error}`)
       }
     }
+
+    // DNS
+    const records = {}
+    const resolve = (func, hostname) => {
+      return this.promiseTimeout(
+        func(hostname).catch((error) => {
+          if (error.code !== 'ENODATA') {
+            this.error(error)
+          }
+
+          return []
+        }),
+        [],
+        'Timeout (dns)'
+      )
+    }
+
+    const domain = url.hostname.replace(/^www\./, '')
+
+    ;[records.cname, records.ns, records.mx, records.txt, records.soa] =
+      await Promise.all([
+        resolve(dns.resolveCname, url.hostname),
+        resolve(dns.resolveNs, domain),
+        resolve(dns.resolveMx, domain),
+        resolve(dns.resolveTxt, domain),
+        resolve(dns.resolveSoa, domain),
+      ])
+
+    const dnsRecords = Object.keys(records).reduce((dns, type) => {
+      dns[type] = dns[type] || []
+
+      Array.prototype.push.apply(
+        dns[type],
+        Array.isArray(records[type])
+          ? records[type].map((value) => {
+              return typeof value === 'object'
+                ? Object.values(value).join(' ')
+                : value
+            })
+          : [Object.values(records[type]).join(' ')]
+      )
+
+      return dns
+    }, {})
+
+    await this.onDetect(url, await analyze({ dns: dnsRecords }))
   }
 
   async batch(links, depth, batch = 0) {
