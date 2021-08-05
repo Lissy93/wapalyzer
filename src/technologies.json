@@ -520,10 +520,10 @@
         87
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
-      "requires": "WordPress",
       "meta": {
         "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
       },
+      "requires": "WordPress",
       "website": "https://amp-wp.org"
     },
     "AOLserver": {
@@ -3686,7 +3686,6 @@
       "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
       "dom": "#BorlabsCookieBox",
       "icon": "Borlabs Cookie.svg",
-      "requires": "WordPress",
       "js": {
         "borlabsCookieConfig": ""
       },
@@ -3694,6 +3693,7 @@
         "low",
         "onetime"
       ],
+      "requires": "WordPress",
       "website": "https://borlabs.io/borlabs-cookie/"
     },
     "Botble CMS": {
@@ -17884,8 +17884,8 @@
         "<link[^>]* href=[\\'\"][^']+revslider[/\\w-]+\\.css\\?ver=([0-9.]+)[\\'\"]\\;version:\\1"
       ],
       "icon": "revslider.png",
-      "scripts": "/revslider/[/\\w-]+/js",
       "requires": "WordPress",
+      "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
     },
     "Rewardful": {
@@ -19653,10 +19653,10 @@
       ],
       "description": "Site Kit is a one-stop solution for WordPress users to use everything Google has to offer to make them successful on the web.",
       "icon": "Google.svg",
-      "requires": "WordPress",
       "meta": {
         "generator": "^Site Kit by Google ?([\\d.]+)?\\;version:\\1"
       },
+      "requires": "WordPress",
       "website": "https://sitekit.withgoogle.com/"
     },
     "Site Meter": {
@@ -21008,8 +21008,8 @@
         "x-sucuri-cache:": "",
         "x-sucuri-id": ""
       },
-      "requires": "WordPress",
       "icon": "sucuri.png",
+      "requires": "WordPress",
       "website": "https://sucuri.net/"
     },
     "Sulu": {
@@ -21077,8 +21077,8 @@
       ],
       "description": "Super Socializer is a multipurpose social media plugin for WordPress.",
       "icon": "Super Socializer.png",
-      "requires": "WordPress",
       "oss": true,
+      "requires": "WordPress",
       "scripts": "plugins/super-socializer/.+?ver=([\\d.]+)\\;version:\\1",
       "website": "https://super-socializer-wordpress.heateor.com"
     },
@@ -23623,22 +23623,22 @@
         1,
         51
       ],
-      "description": "Webnode is a drag-and-drop online website builder.",
-      "icon": "WebNode.svg",
       "cookies": {
         "_gat_wnd_header": ""
+      },
+      "description": "Webnode is a drag-and-drop online website builder.",
+      "icon": "WebNode.svg",
+      "js": {
+        "wnd.$system": ""
       },
       "meta": {
         "generator": "^Webnode(?:\\s([\\d.]+))?$\\;version:\\1"
       },
-      "js": {
-        "wnd.$system": ""
-      },
-      "saas": true,
       "pricing": [
         "low",
         "recurring"
       ],
+      "saas": true,
       "website": "https://www.webnode.com"
     },
     "WebSite X5": {
@@ -24094,7 +24094,6 @@
       "description": "WooCommerce is an open-source ecommerce plugin for WordPress.",
       "dom": ".woocommerce, .woocommerce-no-js, link[rel*='woocommerce']",
       "icon": "WooCommerce.svg",
-      "requires": "WordPress",
       "js": {
         "woocommerce_params": ""
       },
@@ -24102,6 +24101,7 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "oss": true,
+      "requires": "WordPress",
       "scripts": [
         "woocommerce",
         "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
@@ -24646,9 +24646,9 @@
           }
         }
       },
-      "requires": "WordPress",
       "html": "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\\d.]+) -\\;version:\\1",
       "icon": "Yoast SEO.png",
+      "requires": "WordPress",
       "website": "https://yoast.com"
     },
     "Yottaa": {
@@ -25109,9 +25109,9 @@
       "cats": [
         67
       ],
-      "scripts": "clickio\\.mgr\\.consensu\\.org/t/consent_[0-9]+\\.js",
       "description": "Clickio Consent Tool collects and communicates consent both to IAB Framework vendors and to Google Ads products.",
       "icon": "clickio.png",
+      "scripts": "clickio\\.mgr\\.consensu\\.org/t/consent_[0-9]+\\.js",
       "website": "http://www.gdpr.clickio.com/"
     },
     "comScore": {
@@ -26644,7 +26644,6 @@
       ],
       "description": "WPBakery is a drag and drop visual page builder plugin for WordPress.",
       "icon": "wpBakery.svg",
-      "requires": "WordPress",
       "implies": "PHP",
       "meta": {
         "generator": "WPBakery"
@@ -26653,6 +26652,7 @@
         "low",
         "onetime"
       ],
+      "requires": "WordPress",
       "website": "https://wpbakery.com"
     },
     "wpCache": {
@@ -26666,12 +26666,12 @@
       },
       "html": "<!--[^>]+wpCache",
       "icon": "wpCache.png",
-      "requires": "WordPress",
       "implies": "PHP",
       "meta": {
         "generator": "wpCache",
         "keywords": "wpCache"
       },
+      "requires": "WordPress",
       "url": "^https?://[^/]+\\.wpcache\\.co",
       "website": "https://wpcache.co"
     },
