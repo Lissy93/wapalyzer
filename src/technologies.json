@@ -15355,6 +15355,27 @@
       "url": "/owa/auth/log(?:on|off)\\.aspx",
       "website": "http://help.outlook.com"
     },
+    "OutSystems": {
+      "cats": [
+        47
+      ],
+      "description": "OutSystems is a low-code platform which provides tools for companies to develop, deploy and manage omnichannel enterprise applications.",
+      "icon": "OutSystems.svg",
+      "implies": [
+        "Windows Server",
+        "IIS"
+      ],
+      "js": {
+        "outsystems": "",
+        "OutSystemsDebugger": ""
+      },
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.outsystems.com"
+    },
     "Oxatis": {
       "cats": [
         6
