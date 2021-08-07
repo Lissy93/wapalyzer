@@ -4272,6 +4272,22 @@
       "scripts": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
       "website": "https://calendly.com/"
     },
+    "Campaign Monitor": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "Campaign Monitor is a global technology company that provides an email marketing platform.",
+      "icon": "Campaign Monitor.svg",
+      "dom": "input[value='campaignmonitor_subscribe_form'][name='form_id'], form[action*='createsend'][class='js-cm-form']",
+      "scripts": "\\.createsend1\\.com/",
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://www.campaignmonitor.com"
+    },
     "Captch Me": {
       "cats": [
         16,
