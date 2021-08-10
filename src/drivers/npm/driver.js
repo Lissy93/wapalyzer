@@ -580,7 +580,7 @@ class Site {
 
     try {
       await this.promiseTimeout(
-        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
+        page.goto(url.href),
         undefined,
         'Timeout (navigation)'
       )
@@ -592,28 +592,30 @@ class Site {
       // page.on('console', (message) => this.log(message.text()))
 
       // Links
-      const links = await this.promiseTimeout(
-        (
-          await this.promiseTimeout(
-            page.evaluateHandle(() =>
-              Array.from(document.getElementsByTagName('a')).map(
-                ({ hash, hostname, href, pathname, protocol, rel }) => ({
-                  hash,
-                  hostname,
-                  href,
-                  pathname,
-                  protocol,
-                  rel,
-                })
+      const links = !this.options.recursive
+        ? []
+        : await this.promiseTimeout(
+            (
+              await this.promiseTimeout(
+                page.evaluateHandle(() =>
+                  Array.from(document.getElementsByTagName('a')).map(
+                    ({ hash, hostname, href, pathname, protocol, rel }) => ({
+                      hash,
+                      hostname,
+                      href,
+                      pathname,
+                      protocol,
+                      rel,
+                    })
+                  )
+                ),
+                { jsonValue: () => [] },
+                'Timeout (links)'
               )
-            ),
-            { jsonValue: () => [] },
+            ).jsonValue(),
+            [],
             'Timeout (links)'
           )
-        ).jsonValue(),
-        [],
-        'Timeout (links)'
-      )
 
       // CSS
       const css = await this.promiseTimeout(

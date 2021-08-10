@@ -3606,9 +3606,6 @@
         "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1"
       ],
       "icon": "Bootstrap.svg",
-      "implies": [
-        "jQuery\\;confidence:50"
-      ],
       "js": {
         "bootstrap.Alert.VERSION": "^(.+)$\\;version:\\1",
         "jQuery.fn.tooltip.Constructor.VERSION": "^(.+)$\\;version:\\1"
@@ -15814,6 +15811,7 @@
         "paypalClientId": "",
         "paypalJs": ""
       },
+      "xhr": "\\.paypal\\.com",
       "pricing": [
         "payg"
       ],
@@ -20905,6 +20903,19 @@
       "html": "<!-- Powered by Strikingly\\.com",
       "icon": "Strikingly.png",
       "website": "https://strikingly.com"
+    },
+    "WorldPay": {
+      "cats": [
+        41
+      ],
+      "description": "",
+      "icon": "WorldPay.svg",
+      "dom": "img[src*='secure.worldpay.com'], img[alt='Powered by WorldPay'], a[href*='worldpay.com'][target='_blank']",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://online.worldpay.com"
     },
     "Stripe": {
       "cats": [
