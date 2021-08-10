@@ -1597,9 +1597,9 @@
         1
       ],
       "description": "Aksara CMS is a CodeIgniter based CRUD toolkit.",
-      "icon": "Aksara CMS.svg",
       "dom": "div.aksara-footer",
-      "implies":[
+      "icon": "Aksara CMS.svg",
+      "implies": [
         "PHP",
         "MySQL",
         "CodeIgniter",
@@ -4309,14 +4309,14 @@
         75
       ],
       "description": "Campaign Monitor is a global technology company that provides an email marketing platform.",
-      "icon": "Campaign Monitor.svg",
       "dom": "input[value='campaignmonitor_subscribe_form'][name='form_id'], form[action*='createsend'][class='js-cm-form']",
-      "scripts": "\\.createsend1\\.com/",
-      "saas": true,
+      "icon": "Campaign Monitor.svg",
       "pricing": [
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.createsend1\\.com/",
       "website": "https://www.campaignmonitor.com"
     },
     "Captch Me": {
@@ -10008,8 +10008,8 @@
         67
       ],
       "description": "HubSpot Cookie Policy banner is a cookie compliance functionality from HubSpot.",
-      "icon": "HubSpot.png",
       "dom": "#hs-eu-cookie-confirmation",
+      "icon": "HubSpot.png",
       "website": "https://knowledge.hubspot.com/reports/customize-your-cookie-tracking-settings-and-privacy-policy-alert"
     },
     "Hugo": {
@@ -15392,6 +15392,28 @@
       ],
       "website": "https://www.osano.com"
     },
+    "OutSystems": {
+      "cats": [
+        47
+      ],
+      "description": "OutSystems is a low-code platform which provides tools for companies to develop, deploy and manage omnichannel enterprise applications.",
+      "icon": "OutSystems.svg",
+      "implies": [
+        "Windows Server",
+        "IIS"
+      ],
+      "js": {
+        "OutSystemsDebugger": "",
+        "outsystems": ""
+      },
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "scripts/OutSystems(?:[\\w]+)?\\.js",
+      "website": "https://www.outsystems.com"
+    },
     "Outbrain": {
       "cats": [
         5,
@@ -15425,28 +15447,6 @@
       },
       "url": "/owa/auth/log(?:on|off)\\.aspx",
       "website": "http://help.outlook.com"
-    },
-    "OutSystems": {
-      "cats": [
-        47
-      ],
-      "description": "OutSystems is a low-code platform which provides tools for companies to develop, deploy and manage omnichannel enterprise applications.",
-      "icon": "OutSystems.svg",
-      "implies": [
-        "Windows Server",
-        "IIS"
-      ],
-      "js": {
-        "outsystems": "",
-        "OutSystemsDebugger": ""
-      },
-      "scripts": "scripts/OutSystems(?:[\\w]+)?\\.js",
-      "pricing": [
-        "high",
-        "recurring"
-      ],
-      "saas": true,
-      "website": "https://www.outsystems.com"
     },
     "Oxatis": {
       "cats": [
@@ -15811,13 +15811,13 @@
         "paypalClientId": "",
         "paypalJs": ""
       },
-      "xhr": "\\.paypal\\.com",
       "pricing": [
         "payg"
       ],
       "saas": true,
       "scripts": "paypalobjects\\.com",
-      "website": "https://paypal.com"
+      "website": "https://paypal.com",
+      "xhr": "\\.paypal\\.com"
     },
     "Peek": {
       "cats": [
@@ -20364,24 +20364,6 @@
       "implies": "PHP",
       "website": "https://www.soteshop.com/"
     },
-    "Sotoon": {
-      "cats": [
-        31
-      ],
-      "description": "Sotoon is a CDN provider serving users specially in the MENA region.",
-      "icon": "Sotoon.svg",
-      "headers": {
-        "server": "^Sotoon$"
-      },
-      "saas": true,
-      "pricing": [
-        "high",
-        "recurring",
-        "payg",
-        "poa"
-      ],
-      "website": "https://sotoon.ir"
-    },
     "Sotel": {
       "cats": [
         1
@@ -20391,6 +20373,24 @@
         "generator": "sotel"
       },
       "website": "https://www.soteledu.com/en/"
+    },
+    "Sotoon": {
+      "cats": [
+        31
+      ],
+      "description": "Sotoon is a CDN provider serving users specially in the MENA region.",
+      "headers": {
+        "server": "^Sotoon$"
+      },
+      "icon": "Sotoon.svg",
+      "pricing": [
+        "high",
+        "recurring",
+        "payg",
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://sotoon.ir"
     },
     "SoundManager": {
       "cats": [
@@ -20903,19 +20903,6 @@
       "html": "<!-- Powered by Strikingly\\.com",
       "icon": "Strikingly.png",
       "website": "https://strikingly.com"
-    },
-    "WorldPay": {
-      "cats": [
-        41
-      ],
-      "description": "",
-      "icon": "WorldPay.svg",
-      "dom": "img[src*='secure.worldpay.com'], img[alt='Powered by WorldPay'], a[href*='worldpay.com'][target='_blank']",
-      "pricing": [
-        "payg"
-      ],
-      "saas": true,
-      "website": "https://online.worldpay.com"
     },
     "Stripe": {
       "cats": [
@@ -24194,6 +24181,19 @@
       ],
       "website": "https://wpvip.com"
     },
+    "WorldPay": {
+      "cats": [
+        41
+      ],
+      "description": "",
+      "dom": "img[src*='secure.worldpay.com'], img[alt='Powered by WorldPay'], a[href*='worldpay.com'][target='_blank']",
+      "icon": "WorldPay.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://online.worldpay.com"
+    },
     "Wunderkind": {
       "cats": [
         32
@@ -24209,24 +24209,6 @@
       "saas": true,
       "scripts": "\\.bounceexchange\\.com",
       "website": "https://www.wunderkind.co"
-    },
-    "X.ai": {
-      "cats": [
-        72
-      ],
-      "description": "X.ai is a scheduling tool that organizes meeting times and improves lead conversion by adding embedded booking buttons to websites or within live chat applications.",
-      "icon": "X.ai.png",
-      "js": {
-        "xdotaiAction": "",
-        "xdotaiButton": ""
-      },
-      "scripts": "(?:cdn)?x\\.ai/.*/xdotai-embed\\.js",
-      "saas": true,
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "website": "https://x.ai"
     },
     "X-Cart": {
       "cats": [
@@ -24250,6 +24232,24 @@
       },
       "scripts": "/skin/common_files/modules/Product_Options/func\\.js",
       "website": "http://x-cart.com"
+    },
+    "X.ai": {
+      "cats": [
+        72
+      ],
+      "description": "X.ai is a scheduling tool that organizes meeting times and improves lead conversion by adding embedded booking buttons to websites or within live chat applications.",
+      "icon": "X.ai.png",
+      "js": {
+        "xdotaiAction": "",
+        "xdotaiButton": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "(?:cdn)?x\\.ai/.*/xdotai-embed\\.js",
+      "website": "https://x.ai"
     },
     "XAMPP": {
       "cats": [
