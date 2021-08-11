@@ -340,7 +340,15 @@
     "88": {
       "name": "Hosting",
       "priority": 9
-    }
+    },
+    "89": {
+      "name": "Translation",
+      "priority": 9
+    },
+    "90": {
+      "name": "Reviews",
+      "priority": 9
+    }    
   },
   "technologies": {
     "1C-Bitrix": {
@@ -2955,8 +2963,7 @@
     },
     "Bablic": {
       "cats": [
-        3,
-        9
+        89
       ],
       "description": "Bablic is a localisation solution to translate your website.",
       "icon": "bablic.png",
@@ -23768,7 +23775,7 @@
     },
     "Weglot": {
       "cats": [
-        19
+        89
       ],
       "headers": {
         "Weglot-Translated": ""
