@@ -340,7 +340,15 @@
     "88": {
       "name": "Hosting",
       "priority": 9
-    }
+    },
+    "89": {
+      "name": "Translation",
+      "priority": 9
+    },
+    "90": {
+      "name": "Reviews",
+      "priority": 9
+    }    
   },
   "technologies": {
     "1C-Bitrix": {
@@ -2955,8 +2963,7 @@
     },
     "Bablic": {
       "cats": [
-        3,
-        9
+        89
       ],
       "description": "Bablic is a localisation solution to translate your website.",
       "icon": "bablic.png",
@@ -3661,7 +3668,8 @@
       "scripts": [
         "global\\.prd\\.borderfree\\.com",
         "wm\\.prd\\.borderfree\\.com",
-        "bfx\\.js"
+        "bfx\\.js",
+        "cbt\\.js"
       ],
       "website": "https://www.borderfree.com"
     },
@@ -15290,6 +15298,10 @@
         6
       ],
       "description": "Orckestra is a provider of cloud-based digital unified and omnichannel commerce solutions for retail and manufacturing industries.",
+      "headers": {
+        "x-powered-by": "Orckestra",
+        "x-orckestra-commerce": ".NET Client"
+      },      
       "icon": "Orckestra.svg",
       "implies": "Microsoft ASP.NET",
       "meta": {
@@ -18473,13 +18485,14 @@
       "cats": [
         6
       ],
-      "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",
+      "cookies": {
+        "dwsid": "",
+        "dw_dnt": ""
+      },      
+      "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",      
       "headers": {
         "Server": "Demandware eCommerce Server"
       },
-      "html": [
-        "<[^>]+demandware\\.edgesuite"
-      ],
       "icon": "Salesforce.svg",
       "implies": "Salesforce",
       "js": {
@@ -23761,7 +23774,7 @@
     },
     "Weglot": {
       "cats": [
-        19
+        89
       ],
       "headers": {
         "Weglot-Translated": ""
