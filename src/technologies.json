@@ -18925,6 +18925,25 @@
       "icon": "SendGrid.svg",
       "website": "https://sendgrid.com/"
     },
+    "Sendinblue": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "Sendinblue is an email marketing solution for small and medium-sized businesses that want to send and automate email marketing campaigns.",
+      "icon": "Sendinblue.svg",
+      "dom": "iframe[src*='sibautomation.com/']",
+      "js": {
+        "sendinblue": ""
+      },
+      "scripts": "sib(?:automation|forms)\\.com/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "website": "https://www.sendinblue.com"
+    },
     "Sensors Data": {
       "cats": [
         10
