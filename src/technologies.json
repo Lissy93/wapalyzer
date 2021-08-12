@@ -6008,6 +6008,10 @@
       ],
       "icon": "DataTables.png",
       "implies": "jQuery",
+      "js": {
+        "jQuery.fn.dataTable.version": "^(.+)$\\;version:\\1",
+        "$.fn.dataTable.version": "^(.+)$\\;version:\\1"
+      },
       "scripts": "dataTables.*\\.js",
       "website": "http://datatables.net"
     },
