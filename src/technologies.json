@@ -7463,7 +7463,9 @@
       "icon": "FancyBox.png",
       "implies": "jQuery",
       "js": {
-        "$.fancybox.version": "^(.+)$\\;version:\\1"
+        "$.fancybox.version": "^(.+)$\\;version:\\1",
+        "jQuery.fancybox.version": "^(.+)$\\;version:\\1",
+        "Fancybox.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
       "website": "http://fancyapps.com/fancybox"
