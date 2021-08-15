@@ -6006,8 +6006,15 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:datatables:datatables.net",
+      "description": "DataTables is a plug-in for the jQuery Javascript library adding advanced features like pagination, instant search, themes, and more to any HTML table.",
       "icon": "DataTables.png",
       "implies": "jQuery",
+      "js": {
+        "jQuery.fn.dataTable.version": "^(.+)$\\;version:\\1",
+        "$.fn.dataTable.version": "^(.+)$\\;version:\\1"
+      },
+      "oss": true,
       "scripts": "dataTables.*\\.js",
       "website": "http://datatables.net"
     },
