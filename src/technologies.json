@@ -1827,6 +1827,7 @@
       ],
       "description": "Amazon Pay is an online payments processing service that is owned by Amazon. It lets you use the payment methods associated with your Amazon account to make payments for goods and services.",
       "dom": "img[src*='amazonpay']",
+      "html": "<[^>]+aria-labelledby=\"pi-amazon",      
       "icon": "Amazon Pay.svg",
       "js": {
         "AmazonPayments": "",
@@ -1834,6 +1835,9 @@
         "enableAmazonPay": "",
         "onAmazonPaymentsReady": ""
       },
+      "meta": {
+        "id": "amazon-payments-metadata"
+      },      
       "pricing": [
         "payg"
       ],
@@ -2312,7 +2316,8 @@
       "icon": "Apple.svg",
       "js": {
         "ApplePay": "",
-        "enableApplePay": ""
+        "enableApplePay": "",
+        "dw.applepay": ""
       },
       "website": "https://www.apple.com/apple-pay"
     },
@@ -17046,9 +17051,6 @@
       ],
       "description": "Quantcast Choice is a free consent management platform to meet key privacy requirements stemming from ePrivacy Directive, GDPR, and CCPA.",
       "icon": "Quantcast.png",
-      "js": {
-        "__tcfapi": ""
-      },
       "pricing": [
         "freemium",
         "poa"
@@ -18207,6 +18209,9 @@
         "<script[^>].*hybris.*.js"
       ],
       "icon": "SAP.svg",
+      "js": {
+        "smartedit": ""
+      },      
       "implies": "Java",
       "pricing": [
         "poa"
