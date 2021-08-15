@@ -348,7 +348,7 @@
     "90": {
       "name": "Reviews",
       "priority": 9
-    }    
+    }
   },
   "technologies": {
     "1C-Bitrix": {
@@ -1826,8 +1826,7 @@
         41
       ],
       "description": "Amazon Pay is an online payments processing service that is owned by Amazon. It lets you use the payment methods associated with your Amazon account to make payments for goods and services.",
-      "dom": "img[src*='amazonpay']",
-      "html": "<[^>]+aria-labelledby=\"pi-amazon",      
+      "dom": "img[src*='amazonpay'], [aria-labelledby='pi-amazon']",
       "icon": "Amazon Pay.svg",
       "js": {
         "AmazonPayments": "",
@@ -1837,7 +1836,7 @@
       },
       "meta": {
         "id": "amazon-payments-metadata"
-      },      
+      },
       "pricing": [
         "payg"
       ],
@@ -1927,7 +1926,7 @@
         41
       ],
       "description": "American Express, also known as Amex, facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
-      "html": "<[^>]+aria-labelledby=\"pi-american_express",
+      "dom": "[aria-labelledby='pi-american_express']",
       "icon": "Amex.svg",
       "website": "https://www.americanexpress.com"
     },
@@ -2309,10 +2308,7 @@
         41
       ],
       "description": "Apple Pay is a mobile payment and digital wallet service by Apple that allows users to make payments in person, in iOS apps, and on the web.",
-      "html": [
-        "<[^>]+aria-labelledby=\"pi-apple_pay",
-        "<script id=\"apple-pay"
-      ],
+      "dom": [ "[aria-labelledby='pi-apple_pay']", script#apple-pay" ],
       "icon": "Apple.svg",
       "js": {
         "ApplePay": "",
@@ -12862,7 +12858,7 @@
         41
       ],
       "description": "MasterCard facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
-      "html": "<[^>]+aria-labelledby=\"pi-mastercard",
+      "dom": "[aria-labelledby='pi-mastercard']",
       "icon": "Mastercard.svg",
       "website": "https://www.mastercard.com"
     },
@@ -15326,7 +15322,7 @@
       "headers": {
         "x-powered-by": "Orckestra",
         "x-orckestra-commerce": ".NET Client"
-      },      
+      },
       "icon": "Orckestra.svg",
       "implies": "Microsoft ASP.NET",
       "meta": {
@@ -16740,7 +16736,7 @@
         "low",
         "freemium",
         "recurring"
-      ], 
+      ],
       "website": "https://www.privy.com"
     },
     "Profitwell": {
@@ -18209,7 +18205,7 @@
       "icon": "SAP.svg",
       "js": {
         "smartedit": ""
-      },      
+      },
       "implies": "Java",
       "pricing": [
         "poa"
@@ -18535,8 +18531,8 @@
       "cookies": {
         "dwsid": "",
         "dw_dnt": ""
-      },      
-      "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",      
+      },
+      "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",
       "headers": {
         "Server": "Demandware eCommerce Server"
       },
@@ -23002,7 +22998,7 @@
         41
       ],
       "description": "Venmo is a mobile payment service owned by PayPal. Venmo account holders can transfer funds to others via a mobile phone app.",
-      "html": "<[^>]+aria-labelledby=\"pi-venmo",
+      "dom": "[aria-labelledby='pi-venmo']",
       "icon": "Venmo.svg",
       "website": "https://venmo.com"
     },
@@ -23178,7 +23174,7 @@
       "cats": [
         41
       ],
-      "html": "<[^>]+aria-labelledby=\"pi-visa",
+      "dom": "[aria-labelledby='pi-visa']",
       "icon": "Visa.svg",
       "js": {
         "visaApi": "",
