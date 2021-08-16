@@ -2308,7 +2308,7 @@
         41
       ],
       "description": "Apple Pay is a mobile payment and digital wallet service by Apple that allows users to make payments in person, in iOS apps, and on the web.",
-      "dom": [ "[aria-labelledby='pi-apple_pay']", script#apple-pay" ],
+      "dom": [ "[aria-labelledby='pi-apple_pay']", "script#apple-pay" ],
       "icon": "Apple.svg",
       "js": {
         "ApplePay": "",
@@ -26720,8 +26720,12 @@
         41
       ],
       "description": "Razorpay is a provider of an online payment gateway that allows businesses to accept, process, and disburse payments",
-      "icon": "razorpay.svg",
-      "scripts": "checkout\\.razorpay\\.com/v1/checkout\\.js",
+      "icon": "Razorpay.svg",
+      "js": {
+        "Razorpay": ""
+      },
+      "scripts": "checkout\\.razorpay\\.com",
+      "pricing": ["payg"],
       "website": "https://razorpay.com/"
     }
 
