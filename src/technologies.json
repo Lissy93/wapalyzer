@@ -12345,6 +12345,24 @@
       "scripts": "lodash.*\\.js",
       "website": "http://www.lodash.com"
     },
+    "Loggly": {
+      "cats": [
+        10
+      ],
+      "description": "Loggly is a cloud-based log management service provider.",
+      "icon": "Loggly.svg",
+      "dom": "link[href*='.loggly.com']",
+      "js": {
+        "LogglyTracker": ""
+      },
+      "scripts": "\\.loggly\\.com/",
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://www.loggly.com"
+    },
     "LogRocket": {
       "cats": [
         10
