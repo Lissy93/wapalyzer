@@ -9026,6 +9026,19 @@
       },
       "website": "http://code.google.com/p/google-code-prettify"
     },
+    "Google Core Web Vitals": {
+      "cats": [
+        78
+      ],
+      "description": "Google Core Web Vitals is a tiny, modular library for measuring all the web vitals metrics on real users.",
+      "icon": "Google Core Web Vitals.svg",
+      "js": {
+        "webVitals.getCLS": ""
+      },
+      "scripts": "web-vitals@([\\d.]+)/dist/web-vitals.*\\.js\\;version:\\1",
+      "oss": true,
+      "website": "https://github.com/GoogleChrome/web-vitals"
+    },
     "Google Font API": {
       "cats": [
         17
