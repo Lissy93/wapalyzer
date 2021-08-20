@@ -26850,6 +26850,25 @@
       "scripts": "checkout\\.razorpay\\.com",
       "pricing": ["payg"],
       "website": "https://razorpay.com/"
+    },
+    "Sirclo" : {
+      "cats": [
+        6
+      ],
+      "description": "online business solutions, how to sell online, manage marketplaces, manage e-commerce websites, go digital",
+      "icon": "Sirclo.svg",
+      "headers": {
+        "X-Powered-By": "Sirclo"
+      },
+      "scripts": "template\\.sirclocdn\\.com/",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "url": "^https?//.+\\.sirclo\\.me",
+      "website": "https://sirclo.com/"
     }
   }
 }
