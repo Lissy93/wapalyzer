@@ -348,6 +348,10 @@
     "90": {
       "name": "Reviews",
       "priority": 9
+    },
+    "91": {
+      "name": "Buy now pay later",
+      "priority": 9
     }
   },
   "technologies": {
@@ -1353,7 +1357,8 @@
     },
     "Affirm": {
       "cats": [
-        41
+        41,
+        91
       ],
       "description": "Affirm is a loan company that allows users to buy goods or services offered by online merchants and pay off those purchases in fixed monthly payments.",
       "dom": "link[href*='.affirm.com']",
@@ -1389,7 +1394,8 @@
     },
     "Afterpay": {
       "cats": [
-        41
+        41,
+        91
       ],
       "cpe": "cpe:/a:afterpay:afterpay",
       "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
@@ -3781,7 +3787,8 @@
     },
     "Bread": {
       "cats": [
-        41
+        41,
+        91
       ],
       "description": "Bread is a buy now, pay later platform for ecommerce websites.",
       "dom": "#bread-mini-cart-btn",
@@ -11441,7 +11448,8 @@
     "Klarna Checkout": {
       "cats": [
         41,
-        6
+        6,
+        91
       ],
       "cookies": {
         "ku1-sid": "",
@@ -11796,7 +11804,8 @@
     },
     "Laterpay": {
       "cats": [
-        41
+        41,
+        91
       ],
       "description": "Laterpay is a service that simplifies payments on the Internet. In addition to the classic immediate purchase option, Laterpay also allows you to buy digital content such as articles or videos now and pay later.",
       "icon": "laterpay.png",
@@ -15127,7 +15136,8 @@
     },
     "OpenPay": {
       "cats": [
-        41
+        41,
+        91
       ],
       "description": "Openpay is an innovative online and in-store payment solution enabling you to purchase now and pay later, with no interest.",
       "icon": "openpay.png",
