@@ -14385,7 +14385,13 @@
         "host-header": "Newspack"
       },
       "icon": "newspack.png",
-      "dom": "link[href*='newspack.pub']",
+      "dom": {
+        "link[href*='newspack.pub']": {
+          "attributes": {
+            "class": "imprint"
+          }
+        }
+      },
       "pricing": [
         "mid",
         "recurring"
