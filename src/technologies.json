@@ -5615,6 +5615,9 @@
       ],
       "description": "core-js is a modular standard library for JavaScript, with polyfills for cutting-edge ECMAScript features.",
       "js": {
+        "__core-js_shared__": "",
+        "__core-js_shared__.versions.0.version": "^(.+)$\\;version:\\1",
+        "core": "",
         "core.version": "^(.+)$\\;version:\\1"
       },
       "oss": true,
