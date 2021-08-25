@@ -5482,6 +5482,16 @@
       "scripts": "\\.convertexperiments\\.com/js",
       "website": "https://www.convert.com"
     },
+    "Convertcart": {
+      "cats": [
+        32
+      ],
+      "description": "SConvertCart helps online businesses deliver outstanding experiences to customers throughout their journey.",
+      "icon": "Convertcart.svg",
+      "saas": true,
+      "scripts": "cdn\\.convertcart\\.com",
+      "website": "https://www.convertcart.com/"
+    },    
     "ConvertFlow": {
       "cats": [
         10,
@@ -8314,6 +8324,18 @@
       ],
       "website": "http://froala.com/wysiwyg-editor"
     },
+    "Frontastic": {
+      "cats": [
+        51
+      ],
+      "description": "Frontastic is a Commerce Frontend Platform that unites business and development teams to build commerce sites on headless.",
+      "headers": {
+        "frontastic-request-id": ""
+      },
+      "icon": "Frontastic.png",
+      "saas": true,
+      "website": "https://www.frontastic.cloud/"
+    },
     "FrontPage": {
       "cats": [
         20
@@ -9555,6 +9577,16 @@
       },
       "website": "https://gridsome.org"
     },
+    "GroupBy": {
+      "cats": [
+        29
+      ],
+      "description": "GroupBy is a search enging for eCommerce sites.",
+      "icon": "Groupby.svg",
+      "saas": true,
+      "scripts": "cdn\\.groupbycloud\\.com",
+      "website": "https://groupbyinc.com/"
+    },    
     "GrowingIO": {
       "cats": [
         10
@@ -19571,6 +19603,18 @@
       "scripts": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
       "website": "http://shinystat.com"
     },
+    "Shogun": {
+      "cats": [
+        51
+      ],
+      "description": "Shogun is a page builder commonly used with headless implementations.",
+      "icon": "Shogun.svg",
+      "js": {
+        "shogunAnalytics": ""
+      },      
+      "saas": true,
+      "website": "https://getshogun.com/"
+    },    
     "Shop Pay": {
       "cats": [
         41
@@ -20113,7 +20157,8 @@
         1
       ],
       "cookies": {
-        "SC_ANALYTICS_GLOBAL_COOKIE": ""
+        "SC_ANALYTICS_GLOBAL_COOKIE": "",
+        "sc_expview": ""        
       },
       "description": "Sitecore provides web content management, and multichannel marketing automation software.",
       "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
@@ -25149,6 +25194,24 @@
       "icon": "Yoast SEO.png",
       "requires": "WordPress",
       "website": "https://yoast.com"
+    },
+    "Yotpo": {
+      "cats": [
+        84,
+        90
+      ],
+      "description": "Yotpo is a provider of Loyalty & Referrals, SMS Marketing, Reviews, and Visual UGC solutions.",
+      "icon": "Yotpo.png",
+      "js": {
+        "yotpo": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "staticw2\\.yotpo\\.com",
+      "website": "https://www.yotpo.com/"
     },
     "Yottaa": {
       "cats": [
