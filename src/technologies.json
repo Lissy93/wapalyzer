@@ -17519,6 +17519,19 @@
       },
       "website": "http://opensolution.org"
     },
+    "Quicklink": {
+      "cats": [
+        59
+      ],
+      "description": "Quicklink is a JS library which aims to be a drop-in solution for sites to prefetch links based on what is in the user's viewport",
+      "icon": "Quicklink.svg",
+      "js": {
+        "quicklink": "",
+        "drupalSettings.quicklink": ""
+      },
+      "scripts": "quicklink@([\\d.]+)/dist/quicklink.*\\.js\\;version:\\1",
+      "website": "https://getquick.link/"
+    },    
     "Quill": {
       "cats": [
         24
@@ -20276,7 +20289,7 @@
         90
       ],
       "description": "Sitejabber is the leading destination for customer ratings and reviews of businesses. Consumers find ratings and read reviews to ensure they buy from the best companies.",
-      "icon": "Sitejabber.svg",
+      "icon": "SiteJabber.svg",
       "saas": true,
       "scripts": "biz\\.sitejabber\\.com",
       "website": "https://www.sitejabber.com/"
