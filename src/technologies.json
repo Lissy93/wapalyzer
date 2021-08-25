@@ -5615,7 +5615,11 @@
       ],
       "description": "core-js is a modular standard library for JavaScript, with polyfills for cutting-edge ECMAScript features.",
       "js": {
-        "core.version": "^(.+)$\\;version:\\1"
+        "__core-js_shared__": "",
+        "__core-js_shared__.versions[0].version": "^(.+)$\\;version:\\1",
+        "core": "",
+        "core.version": "^(.+)$\\;version:\\1",
+        "_babelPolyfill": ""
       },
       "oss": true,
       "website": "https://github.com/zloirock/core-js"
@@ -16602,8 +16606,7 @@
       ],
       "icon": "polyfill.svg",
       "scripts": [
-        "^https?://cdn\\.polyfill\\.io/",
-        "/polyfill\\.min\\.js"
+        "^https?://cdn\\.polyfill\\.io/"
       ],
       "website": "https://polyfill.io"
     },
