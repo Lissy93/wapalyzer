@@ -496,6 +496,7 @@ const Driver = {
     ] || {
       detections: [],
       hits: incrementHits ? 0 : 1,
+      https: url.startsWith('https://'),
     })
 
     cache.dateTime = Date.now()
@@ -835,14 +836,16 @@ const Driver = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (tracking && termsAccepted) {
-      const hostnames = Object.keys(Driver.cache.hostnames).reduce(
-        (hostnames, hostname) => {
+      const urls = Object.keys(Driver.cache.hostnames).reduce(
+        (urls, hostname) => {
           // eslint-disable-next-line standard/computed-property-even-spacing
-          const { language, detections, hits } =
+          const { language, detections, hits, https } =
             Driver.cache.hostnames[hostname]
 
+          const url = `http${https ? 's' : ''}://${hostname}`
+
           if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
-            hostnames[hostname] = hostnames[hostname] || {
+            urls[url] = urls[url] || {
               applications: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
                   if (confidence === 100) {
@@ -862,15 +865,15 @@ const Driver = {
             }
           }
 
-          return hostnames
+          return urls
         },
         {}
       )
 
-      const count = Object.keys(hostnames).length
+      const count = Object.keys(urls).length
 
       if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
+        await Driver.post('https://api.wappalyzer.com/ping/v2/', urls)
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
 
