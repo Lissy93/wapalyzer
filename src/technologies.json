@@ -6663,15 +6663,14 @@
     },
     "Duda": {
       "cats": [
-        51
+        1
       ],
       "description": "Duda is a web design platform for companies that offer web design services.",
+      "html": "<div[^>]*id=\"P6iryBW0Wu\"",
       "icon": "duda.png",
       "js": {
-        "d_version": "^(.*)$\\;version:\\1\\;confidence:0",
-        "isDudaone": "",
-        "jquery.DM": "",
-        "window.Parameters.SiteType": "DUDAONE"
+        "SystemID": "^.*DIRECT.*$",
+        "d_version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
       "pricing": [
         "low"
@@ -8864,7 +8863,7 @@
     },
     "GoDaddy Website Builder": {
       "cats": [
-        51
+        1
       ],
       "cookies": {
         "dps_site_id": ""
