@@ -23647,6 +23647,33 @@
       ],
       "website": "https://vuejs.org"
     },
+    "Vue-Storefront 1": {
+      "cats": [
+        6,
+        12
+      ],
+      "description": "Vue Storefront is the world's fastest-growing open-source eCommerce frontend.",
+      "icon": "vue-storefront.svg",
+      "implies": "Vue.js",
+      "scripts": [
+        "(?:\\/([\\d.]+))?\\/vsf-layout"
+      ],
+      "website": "https://www.vuestorefront.io/"
+    },
+    "Vue-Storefront 2": {
+      "cats": [
+        6,
+        12
+      ],
+      "description": "Vue Storefront is the world's fastest-growing open-source eCommerce frontend.",
+      "html": "<[^>]+\\sdata-v(?:ue)?-",
+      "icon": "vue-storefront.svg",
+      "implies": "Nuxt.js",
+      "meta": {
+        "generator": "^Vue Storefront\\ [0-9.]+?$"
+      },
+      "website": "https://www.vuestorefront.io/"
+    },
     "VuePress": {
       "cats": [
         57
