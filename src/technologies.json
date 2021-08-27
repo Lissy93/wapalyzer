@@ -23569,7 +23569,8 @@
       "cookies": {
         "VtexFingerPrint": "",
         "VtexWorkspace": "",
-        "vtex_session": ""
+        "vtex_session": "",
+        "VtexStoreVersion": ""       
       },
       "description": "VTEX is an ecommerce software that manages multiple online stores.",
       "headers": {
@@ -23577,10 +23578,14 @@
         "powered": "vtex"
       },
       "icon": "VTEX.svg",
+      "js": {
+        "vtex": ""
+      },      
       "pricing": [
         "payg"
       ],
       "saas": true,
+      "scripts": "io\\.vtex\\.com\\.br",      
       "website": "https://vtex.com/"
     },
     "VWO": {
