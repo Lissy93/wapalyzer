@@ -17203,25 +17203,6 @@
       "icon": "Python.png",
       "website": "http://python.org"
     },
-    "Quadpay": {
-      "cats": [
-        41,
-        91
-      ],
-      "description": "Quadpay is a payment platform.",
-      "dom": "link[href*='widgets.quadpay.com/'], div[data-quadpay-src*='.quadpay.com/']",
-      "icon": "Quadpay.svg",
-      "js": {
-        "QuadPayShopify": "",
-        "quadpayID": ""
-      },
-      "pricing": [
-        "payg"
-      ],
-      "saas": true,
-      "scripts": "\\.quadpay\\.com/quadpay-widget-([\\d.]+)\\.js\\;version:\\1",
-      "website": "https://www.quadpay.com"
-    },
     "Qualtrics": {
       "cats": [
         73
@@ -25199,11 +25180,21 @@
         91
       ],
       "description": "Zip is a payment service that lets you receive your purchase now and spread the total cost over a interest-free payment schedule.",
+      "dom": "link[href*='widgets.quadpay.com/'], div[data-quadpay-src*='.quadpay.com/']",
       "icon": "zip_pay.svg",
       "scripts": [
+        "quadpay\\.com",
         "static\\.zipmoney\\.com\\.au",
         "zip\\.co"
       ],
+      "js": {
+        "QuadPayShopify": "",
+        "quadpayID": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "website": "https://www.zip.co/"
     },
     "Zipkin": {
