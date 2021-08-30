@@ -5629,6 +5629,20 @@
       "scripts": "\\.convertkit\\.com",
       "website": "https://convertkit.com"
     },
+    "ConveyThis": {
+      "cats": [
+        89
+      ],
+      "description": "ConveyThis is a website translation service.",
+      "icon": "ConveyThis.png",
+      "pricing": [
+        "low",
+        "recurring"
+      ],      
+      "saas": true,
+      "scripts": "cdn\\.conveythis\\.com",
+      "website": "https://www.conveythis.com/"
+    },    
     "Cookie Script": {
       "cats": [
         67
@@ -16443,6 +16457,16 @@
       "scripts": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
       "website": "https://www.personaclick.com"
     },
+    "Perzonalization": {
+      "cats": [
+        76
+      ],
+      "description": "Perzonalization is a AI powered personalization engine for eCommerce",
+      "icon": "Perzonalization.png",
+      "saas": true,
+      "scripts": "cdn\\.perzonalization\\.com",
+      "website": "https://www.perzonalization.com/"
+    },    
     "Phabricator": {
       "cats": [
         13,
@@ -18758,6 +18782,22 @@
       "scripts": "\\.gigya\\.com/JS/gigya\\.js",
       "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html"
     },
+    "SAP Upscale Commerce": {
+      "cats": [
+        6
+      ],
+      "description": "SAP Upscale Commerce is a SaaS solution for small-to-medium organizations selling directly to consumers.",
+      "dom": {
+        "[upscale-version]": {
+          "attributes": {
+            "upscale-version": "^([\\d.]+)\\;version:\\1"
+          }
+        }
+      },
+      "icon": "SAP.svg",
+      "saas": true,      
+      "website": "https://www.sapstore.com/solutions/47000/SAP-Upscale-Commerce"
+    },    
     "SDL Tridion": {
       "cats": [
         1
