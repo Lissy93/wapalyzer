@@ -352,6 +352,10 @@
     "91": {
       "name": "Buy now pay later",
       "priority": 9
+    },
+    "92": {
+      "name": "Performance",
+      "priority": 9
     }
   },
   "technologies": {
@@ -3139,7 +3143,7 @@
       "cats": [
         90
       ],
-      "description": "Bazaarvoice is a provide of UGC solutions like ratings and reviews and Q&A.",
+      "description": "Bazaarvoice is a provider of UGC solutions like ratings and reviews and Q&A.",
       "icon": "Bazaarvoice.png",
       "js": {
         "BV.api": ""
@@ -7793,6 +7797,17 @@
       },
       "website": "https://www.fastcommerce.com.br"
     },
+    "Fasterize": {
+      "cats": [
+        92
+      ],
+      "description": "Fasterize is a website accelerator service.",
+      "icon": "Fasterize.svg",
+      "js": {
+        "fstrz": ""
+      },      
+      "website": "https://www.fasterize.com/"
+    },
     "Fastly": {
       "cats": [
         31
@@ -9795,6 +9810,19 @@
       "website": "https://gumgum.com",
       "xhr": "\\.gumgum\\.com"
     },
+    "Gumlet": {
+      "cats": [
+        92
+      ],
+      "description": "Gumlet is a solution to optimize images.",
+      "icon": "Gumlet.png",
+      "js": {
+        "gumlet": ""
+      },
+      "saas": true,
+      "scripts": "cdn\\.gumlet\\.com",
+      "website": "https://www.gumlet.com/"
+    },    
     "HCL Commerce": {
       "cats": [
         6
@@ -10377,6 +10405,23 @@
       },
       "website": "http://gohugo.io"
     },
+    "Hyperspeed": {
+      "cats": [
+        92
+      ],
+      "description": "Fasterize is a website accelerator service.",
+      "icon": "Hyperspeed.png",
+      "implies": "Shopify",
+      "js": {
+        "hyperscripts": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],      
+      "saas": true,
+      "website": "https://www.hyperspeed.me/"
+    },
     "IBM Coremetrics": {
       "cats": [
         10
@@ -10767,6 +10812,20 @@
       },
       "website": "http://www.instantcms.ru"
     },
+    "InstantClick": {
+      "cats": [
+        59,
+        92
+      ],
+      "description": "InstantClick is a JavaScript library that speeds up your website, making navigation faster.",
+      "icon": "InstantClick.svg",      
+      "js": {
+        "InstantClick": ""
+      },
+      "oss": true,      
+      "scripts": "instantclick\\.min\\.js",
+      "website": "http://instantclick.io/"
+    },     
     "Instapage": {
       "cats": [
         51,
@@ -11390,6 +11449,16 @@
       "saas": true,
       "scripts": "cdn\\.judge\\.me",
       "website": "https://judge.me/"
+    },
+    "Jumbo": {
+      "cats": [
+        92
+      ],
+      "description": "Jumbo is a page speed optimizer app for Shopify based sites.",
+      "icon": "Jumbo.png",
+      "implies": "Shopify",      
+      "scripts": "mt\\.tryjumbo\\.com",
+      "website": "https://www.tryjumbo.com/"
     },
     "Jumpseller": {
       "cats": [
@@ -14576,6 +14645,15 @@
       "scripts": "app\\.najva\\.com/",
       "website": "https://www.najva.com"
     },
+    "Narrativ": {
+      "cats": [
+        71
+      ],
+      "description": "Narrativ is a subscription technology platform for brands to acquire new customers through trusted creators.",
+      "icon": "Narrativ.png",
+      "scripts": "static\\.narrativ\\.com/",      
+      "website": "https://narrativ.com/"
+    },    
     "Navegg": {
       "cats": [
         10
@@ -17120,6 +17198,19 @@
       "saas": true,
       "website": "http://powergap.de"
     },
+    "PowerReviews": {
+      "cats": [
+        90
+      ],
+      "description": "Powerreviews is a provider of UGC solutions like ratings and reviews.",
+      "icon": "PowerReviews.png",
+      "js": {
+        "POWERREVIEWS": ""
+      },
+      "saas": true,
+      "scripts": "ui\\.powerreviews\\.com",
+      "website": "https://www.powerreviews.com/"
+    },    
     "Preact": {
       "cats": [
         59
@@ -17670,7 +17761,8 @@
     },
     "Quicklink": {
       "cats": [
-        59
+        59,
+        92
       ],
       "description": "Quicklink is a JS library which aims to be a drop-in solution for sites to prefetch links based on what is in the user's viewport",
       "icon": "Quicklink.svg",
@@ -21187,6 +21279,17 @@
       "scripts": "\\.speedcurve\\.com",
       "website": "https://www.speedcurve.com"
     },
+    "SpeedKit": {
+      "cats": [
+        92
+      ],
+      "description": "Baqend develops a performance add-on that uses caching algorithms to minimize loading times of e-commerce websites.",
+      "icon": "Speedkit.svg",
+      "js": {
+        "speedKit": ""
+      },      
+      "website": "https://www.baqend.com/"
+    }, 
     "Sphinx": {
       "cats": [
         4
@@ -21849,6 +21952,16 @@
       "scripts": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
       "website": "http://buildinternet.com/project/supersized"
     },
+    "Superspeed": {
+      "cats": [
+        92
+      ],
+      "description": "Superspeed is a page speed optimizer app for Shopify based sites.",
+      "icon": "Superspeed.png",
+      "implies": "Shopify",      
+      "scripts": "superspeed\\.gadget-edge\\.com",
+      "website": "https://apps.shopify.com/superspeed-free-speed-boost"
+    },    
     "Svbtle": {
       "cats": [
         11
@@ -23051,6 +23164,15 @@
       ],
       "website": "https://truendo.com"
     },
+    "TrueCommerce": {
+      "cats": [
+        6
+      ],
+      "description": "TrueCommerce is an eCommerce platform.",
+      "icon": "Truecommerce.svg",
+      "scripts": "cdn\\.nexternal\\.com/",
+      "website": "https://www.truecommerce.com"
+    },
     "TruValidate": {
       "cats": [
         16,
@@ -23124,6 +23246,18 @@
       "url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
       "website": "http://www.tumblr.com"
     },
+    "Turbolinks": {
+      "cats": [
+        92
+      ],
+      "description": "Turbolinks is a Rails feature, available as a gem and enabled by default in new Rails apps. It is intended to speed up navigating between pages of your application.",
+      "js": {
+        "Turbolinks": ""
+      },
+      "oss": true,      
+      "scripts": "turolinks\\.js",
+      "website": "https://github.com/turbolinks/turbolinks"
+    },    
     "TurfJS": {
       "cats": [
         59
@@ -25598,7 +25732,8 @@
     "Yottaa": {
       "cats": [
         42,
-        74
+        74,
+        92
       ],
       "description": "Yottaa is an ecommerce optimisation platform that helps with conversions, performance and security.",
       "icon": "Yottaa.svg",
@@ -25927,6 +26062,16 @@
       "scripts": "\\.zonos\\.com/",
       "website": "https://zonos.com"
     },
+    "Zoominfo": {
+      "cats": [
+        10
+      ],
+      "description": "ZoomInfo provides actionable B2B contact and company information for sales and marketing teams.",
+      "icon": "Zoominfo.svg",
+      "saas": true,
+      "scripts": "ws\\.zoominfo\\.com",
+      "website": "https://www.zoominfo.com/"
+    },    
     "Zope": {
       "cats": [
         22
