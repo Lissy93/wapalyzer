@@ -19,6 +19,8 @@ const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN, CHROMIUM_DATA_DIR } =
 let puppeteer
 let chromiumArgs = [
   '--no-sandbox',
+  '--single-process',
+  '--no-zygote',
   '--disable-gpu',
   '--ignore-certificate-errors',
   '--allow-running-insecure-content',
