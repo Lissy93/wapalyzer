@@ -352,7 +352,11 @@
     "91": {
       "name": "Buy now pay later",
       "priority": 9
-    }
+    },
+    "92": {
+      "name": "Performance",
+      "priority": 9
+    },
   },
   "technologies": {
     "1C-Bitrix": {
@@ -7793,6 +7797,17 @@
       },
       "website": "https://www.fastcommerce.com.br"
     },
+    "Fasterize": {
+      "cats": [
+        92
+      ],
+      "description": "Fasterize is a website accelerator service.",
+      "icon": "Fasterize.svg",
+      "js": {
+        "fstrz": ""
+      },      
+      "website": "https://www.fasterize.com/"
+    },
     "Fastly": {
       "cats": [
         31
@@ -10377,6 +10392,23 @@
       },
       "website": "http://gohugo.io"
     },
+    "Hyperspeed": {
+      "cats": [
+        92
+      ],
+      "description": "Fasterize is a website accelerator service.",
+      "icon": "Hyperspeed.png",
+      "implies": "Shopify",
+      "js": {
+        "hyperscripts": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],      
+      "saas": true,
+      "website": "hhttps://www.hyperspeed.me/"
+    },
     "IBM Coremetrics": {
       "cats": [
         10
@@ -11390,6 +11422,16 @@
       "saas": true,
       "scripts": "cdn\\.judge\\.me",
       "website": "https://judge.me/"
+    },
+    "Jumbo": {
+      "cats": [
+        92
+      ],
+      "description": "Jumbo is a page speed optimizer app for Shopify based sites.",
+      "icon": "Jumbo.png",
+      "implies": "Shopify",      
+      "scripts": "mt\\.tryjumbo\\.com",
+      "website": "https://www.tryjumbo.com/"
     },
     "Jumpseller": {
       "cats": [
@@ -17670,7 +17712,8 @@
     },
     "Quicklink": {
       "cats": [
-        59
+        59,
+        92
       ],
       "description": "Quicklink is a JS library which aims to be a drop-in solution for sites to prefetch links based on what is in the user's viewport",
       "icon": "Quicklink.svg",
@@ -21849,6 +21892,16 @@
       "scripts": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
       "website": "http://buildinternet.com/project/supersized"
     },
+    "Superspeed": {
+      "cats": [
+        92
+      ],
+      "description": "Superspeed is a page speed optimizer app for Shopify based sites.",
+      "icon": "Superspeed.png",
+      "implies": "Shopify",      
+      "scripts": "superspeed\\.gadget-edge\\.com",
+      "website": "https://apps.shopify.com/superspeed-free-speed-boost"
+    },    
     "Svbtle": {
       "cats": [
         11
@@ -25582,7 +25635,8 @@
     "Yottaa": {
       "cats": [
         42,
-        74
+        74,
+        92
       ],
       "description": "Yottaa is an ecommerce optimisation platform that helps with conversions, performance and security.",
       "icon": "Yottaa.svg",
