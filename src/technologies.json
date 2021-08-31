@@ -24187,7 +24187,23 @@
       ],
       "website": "https://vuejs.org"
     },
-    "VuePress": {
+    "Vue-Storefront": {
+      "cats": [
+        6,
+        12
+      ],
+      "description": "Vue Storefront is a frontend platform for headless commerce.",
+      "icon": "vue-storefront.svg",
+      "implies": "Vue.js",
+      "scripts": [
+        "(?:\\/([\\d.]+))?\\/vsf-layout;version=1"
+      ],
+      "meta": {
+        "generator": "^Vue Storefront\\ [0-9.]+?$;version=2"
+      },
+      "website": "https://www.vuestorefront.io/"
+    },
+   "VuePress": {
       "cats": [
         57
       ],
