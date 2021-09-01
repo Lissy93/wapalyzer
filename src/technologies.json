@@ -1446,12 +1446,14 @@
       "icon": "afterpay.png",
       "js": {
         "Afterpay": "",
-        "afterpay_product": ""
+        "afterpay_product": "",
+        "AfterpayAttractWidget": ""      
       },
       "saas": true,
       "scripts": [
         "portal\\.afterpay\\.com",
-        "static\\.afterpay\\.com"
+        "static\\.afterpay\\.com",
+        "present-afterpay\\.js"
       ],
       "website": "https://www.afterpay.com/"
     },
@@ -9062,6 +9064,20 @@
       ],
       "website": "http://gerrit.googlesource.com/gitiles/"
     },
+    "Gladly": {
+      "cats": [
+        52,
+        53
+      ],
+      "description": "Gladly is a customer service platform.",
+      "icon": "Gladly.png",
+      "js": {
+        "Gladly": ""
+      },
+      "saas": true,
+      "scripts": "cdn\\.gladly\\.com",
+      "website": " https://www.gladly.com/"
+    },    
     "GlassFish": {
       "cats": [
         22
@@ -9436,15 +9452,6 @@
       ],
       "website": "https://pay.google.com"
     },
-    "Google Plus": {
-      "cats": [
-        5
-      ],
-      "description": "Google Plus is a social network.",
-      "icon": "Google Plus.svg",
-      "scripts": "apis\\.google\\.com/js/[a-z]*\\.js",
-      "website": "http://plus.google.com"
-    },
     "Google Publisher Tag": {
       "cats": [
         36
@@ -9757,6 +9764,19 @@
       },
       "website": "https://gridsome.org"
     },
+    "Grin": {
+      "cats": [
+        32
+      ],
+      "description": "Grin is a influence marketing platform.",
+      "icon": "Grin.png",
+      "js": {
+        "Grin": ""
+      },
+      "saas": true,
+      "scripts": "grin-sdk\\.js",
+      "website": "https://grin.co/"
+    },    
     "GroupBy": {
       "cats": [
         29
@@ -10986,6 +11006,21 @@
       ],
       "website": "https://isotope.metafizzy.co"
     },
+    "Iterable": {
+      "cats": [
+        32
+      ],
+      "description": "Iterable is a cross-channel marketing platform that powers unified customer experiences.",
+      "icon": "Iterable.png",
+      "js": {
+        "iterableAnalytics": ""
+      },
+      "saas": true,
+      "scripts": [
+        "js\\.iterable\\.com"
+      ],
+      "website": "https://iterable.com/"
+    },     
     "Izooto": {
       "cats": [
         32,
@@ -14512,6 +14547,17 @@
       "scripts": "mylivechat\\.com/",
       "website": "https://mylivechat.com"
     },
+    "MyOnlineStore": {
+      "cats": [
+        6
+      ],
+      "description": "MyOnlineStore is a web shop system in the Netherlands.",      
+      "icon": "MyOnlineStore.png",
+      "meta": {
+        "generator": "Mijnwebwinkel"
+      },
+      "website": "https://www.myonlinestore.com/ "
+    },    
     "MySQL": {
       "cats": [
         34
@@ -17389,8 +17435,11 @@
         10
       ],
       "icon": "Profitwell.svg",
+      "js": {
+        "profitwell": ""
+      },      
       "scripts": [
-        "public\\.profitwell\\.com/js/profitwell\\.js"
+        "profitwell\\.js"
       ],
       "website": "https://www.profitwell.com/"
     },
@@ -18854,6 +18903,21 @@
       "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "https://rubyonrails.org"
     },
+    "Rudderstack": {
+      "cats": [
+        10
+      ],
+      "description": "Rudderstack is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
+      "icon": "Rudderstack.png",
+      "js": {
+        "rudderanalytics": ""
+      },
+      "saas": true,
+      "scripts": [
+        "cdn\\.rudderlabs\\.com"
+      ],
+      "website": "https://rudderstack.com/"
+    },     
     "RxJS": {
       "cats": [
         12
@@ -20390,6 +20454,21 @@
       "icon": "simbel.svg",
       "website": "http://simbel.com.ar/"
     },
+    "Simon": {
+      "cats": [
+        10
+      ],
+      "description": "Simon is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
+      "icon": "Simon.svg",
+      "js": {
+        "SimonData": ""
+      },
+      "saas": true,
+      "scripts": [
+        "static\\.simonsignal\\.com"
+      ],
+      "website": "https://www.simondata.com/"
+    },    
     "SimpleHTTP": {
       "cats": [
         22
@@ -23033,8 +23112,10 @@
       "description": "TrackJS is an error monitoring agent for production web sites and applications.",
       "icon": "TrackJs.svg",
       "js": {
-        "TrackJs": ""
+        "TrackJs": "",
+        "trackJs": ""        
       },
+      "scripts": "cdn\\.trackjs\\.com",      
       "website": "http://trackjs.com"
     },
     "Tradedoubler": {
