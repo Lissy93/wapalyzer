@@ -7,4 +7,4 @@ assignees: ''
 
 ---
 
-You may request a new technology to be added but changes of having it included are greatly improved if you submit a pull request. Please refer to the [documentation](https://docs.wappalyzer.com/dev/contributing.html#adding-a-new-application).
+You may request a new technology to be added but changes of having it included are greatly improved if you submit a pull request. Please refer to the [contributing guide](https://github.com/AliasIO/wappalyzer/blob/master/CONTRIBUTING.md).
