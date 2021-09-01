@@ -1446,12 +1446,14 @@
       "icon": "afterpay.png",
       "js": {
         "Afterpay": "",
-        "afterpay_product": ""
+        "afterpay_product": "",
+        "AfterpayAttractWidget": ""      
       },
       "saas": true,
       "scripts": [
         "portal\\.afterpay\\.com",
-        "static\\.afterpay\\.com"
+        "static\\.afterpay\\.com",
+        "present-afterpay\\.js"
       ],
       "website": "https://www.afterpay.com/"
     },
@@ -23110,8 +23112,10 @@
       "description": "TrackJS is an error monitoring agent for production web sites and applications.",
       "icon": "TrackJs.svg",
       "js": {
-        "TrackJs": ""
+        "TrackJs": "",
+        "trackJs": ""        
       },
+      "scripts": "cdn\\.trackjs\\.com",      
       "website": "http://trackjs.com"
     },
     "Tradedoubler": {
