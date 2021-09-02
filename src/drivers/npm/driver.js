@@ -67,11 +67,16 @@ function getJs(page, technologies = Wappalyzer.technologies) {
           const value = chain
             .split('.')
             .reduce(
-              (value, method) => (value ? value[method] : undefined),
+              (value, method) =>
+                value &&
+                value instanceof Object &&
+                Object.prototype.hasOwnProperty.call(value, method)
+                  ? value[method]
+                  : '__UNDEFINED__',
               window
             )
 
-          if (typeof value !== 'undefined') {
+          if (value !== '__UNDEFINED__') {
             technologies.push({
               name,
               chain,
