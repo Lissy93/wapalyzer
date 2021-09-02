@@ -14897,6 +14897,7 @@
       "cats": [
         88
       ],
+<<<<<<< HEAD
       "description": "Automattic's Newspack is an all-in-one platform designed for small and medium-sized news organizations that simplifies publishing and drives audience and revenue right out of the box.",
       "headers": {
         "host-header": "Newspack"
@@ -14909,6 +14910,14 @@
           }
         }
       },
+=======
+      "description": "Automattic's Newspack service is an all-in-one platform designed for small and medium-sized news organizations that simplifies publishing and drives audience and revenue right out of the box.",
+      "headers": {
+        "host-header": "Newspack"
+      },
+      "icon": "NewspackLogo.png",
+      "implies": "Newspack",
+>>>>>>> 2c090ee2 (Improve Newspack hosting platform detection)
       "pricing": [
         "mid",
         "recurring"
