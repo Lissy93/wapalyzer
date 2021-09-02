@@ -2320,19 +2320,6 @@
       "implies": "Node.js",
       "website": "http://apostrophecms.org"
     },
-    "Appcues": {
-      "cats": [
-        58
-      ],
-      "description": "Appcues is a solution for measuring and improving product adoption.",
-      "icon": "Appcues.png",
-      "js": {
-        "Appcues": ""
-      },
-      "saas": true,
-      "scripts": "fast\\.appcues\\.com",
-      "website": "https://www.appcues.com/"
-    },
     "AppDynamics": {
       "cats": [
         10,
@@ -2369,6 +2356,19 @@
       "website": "http://appnexus.com",
       "xhr": "prebid\\.adnxs\\.com"
     },
+    "Appcues": {
+      "cats": [
+        58
+      ],
+      "description": "Appcues is a solution for measuring and improving product adoption.",
+      "icon": "Appcues.png",
+      "js": {
+        "Appcues": ""
+      },
+      "saas": true,
+      "scripts": "fast\\.appcues\\.com",
+      "website": "https://www.appcues.com/"
+    },
     "Appian": {
       "cats": [
         62
@@ -2384,12 +2384,15 @@
         41
       ],
       "description": "Apple Pay is a mobile payment and digital wallet service by Apple that allows users to make payments in person, in iOS apps, and on the web.",
-      "dom": [ "[aria-labelledby='pi-apple_pay']", "script#apple-pay" ],
+      "dom": [
+        "[aria-labelledby='pi-apple_pay']",
+        "script#apple-pay"
+      ],
       "icon": "Apple.svg",
       "js": {
         "ApplePay": "",
-        "enableApplePay": "",
-        "dw.applepay": ""
+        "dw.applepay": "",
+        "enableApplePay": ""
       },
       "website": "https://www.apple.com/apple-pay"
     },
@@ -5642,16 +5645,6 @@
       "scripts": "\\.convertexperiments\\.com/js",
       "website": "https://www.convert.com"
     },
-    "Convertcart": {
-      "cats": [
-        32
-      ],
-      "description": "SConvertCart helps online businesses deliver outstanding experiences to customers throughout their journey.",
-      "icon": "Convertcart.svg",
-      "saas": true,
-      "scripts": "cdn\\.convertcart\\.com",
-      "website": "https://www.convertcart.com/"
-    },
     "ConvertFlow": {
       "cats": [
         10,
@@ -5687,6 +5680,16 @@
       "saas": true,
       "scripts": "\\.convertkit\\.com",
       "website": "https://convertkit.com"
+    },
+    "Convertcart": {
+      "cats": [
+        32
+      ],
+      "description": "SConvertCart helps online businesses deliver outstanding experiences to customers throughout their journey.",
+      "icon": "Convertcart.svg",
+      "saas": true,
+      "scripts": "cdn\\.convertcart\\.com",
+      "website": "https://www.convertcart.com/"
     },
     "ConveyThis": {
       "cats": [
@@ -5806,21 +5809,6 @@
         "poa"
       ],
       "website": "https://corebine.com"
-    },
-    "core-js": {
-      "cats": [
-        59
-      ],
-      "description": "core-js is a modular standard library for JavaScript, with polyfills for cutting-edge ECMAScript features.",
-      "js": {
-        "__core-js_shared__": "",
-        "__core-js_shared__.versions[0].version": "^(.+)$\\;version:\\1",
-        "core": "",
-        "core.version": "^(.+)$\\;version:\\1",
-        "_babelPolyfill": ""
-      },
-      "oss": true,
-      "website": "https://github.com/zloirock/core-js"
     },
     "Cosmoshop": {
       "cats": [
@@ -6268,8 +6256,8 @@
       "icon": "DataTables.png",
       "implies": "jQuery",
       "js": {
-        "jQuery.fn.dataTable.version": "^(.+)$\\;version:\\1",
-        "$.fn.dataTable.version": "^(.+)$\\;version:\\1"
+        "$.fn.dataTable.version": "^(.+)$\\;version:\\1",
+        "jQuery.fn.dataTable.version": "^(.+)$\\;version:\\1"
       },
       "oss": true,
       "scripts": "dataTables.*\\.js",
@@ -7137,16 +7125,16 @@
       ],
       "description": "EasyStore is a multi sales channel ecommerce platform.",
       "icon": "EasyStore.svg",
-      "saas": true,
       "js": {
         "EasyStore": ""
       },
-      "scripts": "\\.easystore\\.co/",
       "pricing": [
         "freemium",
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.easystore\\.co/",
       "website": "https://www.easystore.co"
     },
     "Ecwid": {
@@ -7768,8 +7756,8 @@
       "implies": "jQuery",
       "js": {
         "$.fancybox.version": "^(.+)$\\;version:\\1",
-        "jQuery.fancybox.version": "^(.+)$\\;version:\\1",
-        "Fancybox.version": "^(.+)$\\;version:\\1"
+        "Fancybox.version": "^(.+)$\\;version:\\1",
+        "jQuery.fancybox.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
       "website": "http://fancyapps.com/fancybox"
@@ -8358,33 +8346,6 @@
       "scripts": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com",
       "website": "http://fortune3.com"
     },
-    "Four": {
-      "cats": [
-        41,
-        91
-      ],
-      "description": "Pay with four is a Buy now pay later solution.",
-      "icon": "Four.svg",
-      "js": {
-        "Four": ""
-      },
-      "saas": true,
-      "scripts": "scripts\\.paywithfour\\.com",
-      "website": "https://paywithfour.com/"
-    },
-    "Foursixty": {
-      "cats": [
-        5
-      ],
-      "description": "Foursixty is a widget which turns Instagram content and UGC into shoppable galleries.",
-      "icon": "Foursixty.png",
-      "js": {
-        "FoursixtyEmbed": ""
-      },
-      "saas": true,
-      "scripts": "foursixty\\.com",
-      "website": "https://foursixty.com/"
-    },
     "Foswiki": {
       "cats": [
         8
@@ -8412,6 +8373,33 @@
         "foswiki.WIKINAME": ""
       },
       "website": "http://foswiki.org"
+    },
+    "Four": {
+      "cats": [
+        41,
+        91
+      ],
+      "description": "Pay with four is a Buy now pay later solution.",
+      "icon": "Four.svg",
+      "js": {
+        "Four": ""
+      },
+      "saas": true,
+      "scripts": "scripts\\.paywithfour\\.com",
+      "website": "https://paywithfour.com/"
+    },
+    "Foursixty": {
+      "cats": [
+        5
+      ],
+      "description": "Foursixty is a widget which turns Instagram content and UGC into shoppable galleries.",
+      "icon": "Foursixty.png",
+      "js": {
+        "FoursixtyEmbed": ""
+      },
+      "saas": true,
+      "scripts": "foursixty\\.com",
+      "website": "https://foursixty.com/"
     },
     "Foxy.io": {
       "cats": [
@@ -8532,18 +8520,6 @@
       ],
       "website": "http://froala.com/wysiwyg-editor"
     },
-    "Frontastic": {
-      "cats": [
-        51
-      ],
-      "description": "Frontastic is a Commerce Frontend Platform that unites business and development teams to build commerce sites on headless.",
-      "headers": {
-        "frontastic-request-id": ""
-      },
-      "icon": "Frontastic.png",
-      "saas": true,
-      "website": "https://www.frontastic.cloud/"
-    },
     "FrontPage": {
       "cats": [
         20
@@ -8556,6 +8532,18 @@
         "generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
       },
       "website": "http://office.microsoft.com/frontpage"
+    },
+    "Frontastic": {
+      "cats": [
+        51
+      ],
+      "description": "Frontastic is a Commerce Frontend Platform that unites business and development teams to build commerce sites on headless.",
+      "headers": {
+        "frontastic-request-id": ""
+      },
+      "icon": "Frontastic.png",
+      "saas": true,
+      "website": "https://www.frontastic.cloud/"
     },
     "Frontity": {
       "cats": [
@@ -9404,8 +9392,8 @@
       "js": {
         "webVitals.getCLS": ""
       },
-      "scripts": "web-vitals@([\\d.]+)/dist/web-vitals.*\\.js\\;version:\\1",
       "oss": true,
+      "scripts": "web-vitals@([\\d.]+)/dist/web-vitals.*\\.js\\;version:\\1",
       "website": "https://github.com/GoogleChrome/web-vitals"
     },
     "Google Font API": {
@@ -11560,12 +11548,12 @@
       ],
       "description": "Justo is a subscription-based software that allows anyone to set up an online store and sell their products with delivery options.",
       "icon": "Justo.svg",
-      "scripts": "\\.getjusto\\.com/",
-      "saas": true,
       "pricing": [
         "high",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.getjusto\\.com/",
       "website": "https://www.getjusto.com"
     },
     "K2": {
@@ -11900,16 +11888,16 @@
       ],
       "description": "Kiwi Sizing is a size chart and a recommender plugin on the Shopify platform.",
       "icon": "Kiwi Sizing.png",
-      "saas": true,
       "js": {
         "KiwiSizing": ""
       },
-      "scripts": "cdn\\.static\\.kiwisizing\\.com/",
       "pricing": [
         "freemium",
         "low",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "cdn\\.static\\.kiwisizing\\.com/",
       "website": "https://www.kiwisizing.com"
     },
     "Klarna Checkout": {
@@ -12871,24 +12859,6 @@
       "scripts": "lodash.*\\.js",
       "website": "http://www.lodash.com"
     },
-    "Loggly": {
-      "cats": [
-        10
-      ],
-      "description": "Loggly is a cloud-based log management service provider.",
-      "icon": "Loggly.svg",
-      "dom": "link[href*='.loggly.com']",
-      "js": {
-        "LogglyTracker": ""
-      },
-      "scripts": "\\.loggly\\.com/",
-      "saas": true,
-      "pricing": [
-        "mid",
-        "recurring"
-      ],
-      "website": "https://www.loggly.com"
-    },
     "LogRocket": {
       "cats": [
         10
@@ -12900,6 +12870,24 @@
         "cdn\\.lr-ingest\\.io"
       ],
       "website": "https://logrocket.com/"
+    },
+    "Loggly": {
+      "cats": [
+        10
+      ],
+      "description": "Loggly is a cloud-based log management service provider.",
+      "dom": "link[href*='.loggly.com']",
+      "icon": "Loggly.svg",
+      "js": {
+        "LogglyTracker": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.loggly\\.com/",
+      "website": "https://www.loggly.com"
     },
     "Login with Amazon": {
       "cats": [
@@ -14897,27 +14885,12 @@
       "cats": [
         88
       ],
-<<<<<<< HEAD
-      "description": "Automattic's Newspack is an all-in-one platform designed for small and medium-sized news organizations that simplifies publishing and drives audience and revenue right out of the box.",
-      "headers": {
-        "host-header": "Newspack"
-      },
-      "icon": "newspack.png",
-      "dom": {
-        "link[href*='newspack.pub']": {
-          "attributes": {
-            "class": "imprint"
-          }
-        }
-      },
-=======
       "description": "Automattic's Newspack service is an all-in-one platform designed for small and medium-sized news organizations that simplifies publishing and drives audience and revenue right out of the box.",
       "headers": {
         "host-header": "Newspack"
       },
       "icon": "NewspackLogo.png",
       "implies": "Newspack",
->>>>>>> 2c090ee2 (Improve Newspack hosting platform detection)
       "pricing": [
         "mid",
         "recurring"
@@ -15947,8 +15920,8 @@
       ],
       "description": "Orckestra is a provider of cloud-based digital unified and omnichannel commerce solutions for retail and manufacturing industries.",
       "headers": {
-        "x-powered-by": "Orckestra",
-        "x-orckestra-commerce": ".NET Client"
+        "x-orckestra-commerce": ".NET Client",
+        "x-powered-by": "Orckestra"
       },
       "icon": "Orckestra.svg",
       "implies": "Microsoft ASP.NET",
@@ -15969,16 +15942,16 @@
         6
       ],
       "description": "OrderYOYO is an online ordering, payment, and marketing software solution provider.",
-      "icon": "OrderYOYO.png",
       "dom": "a[href*='.orderyoyo.com/'][target='_blank']",
+      "icon": "OrderYOYO.png",
       "js": {
         "SmartBannerOY": ""
       },
-      "saas": true,
       "pricing": [
         "low",
         "recurring"
       ],
+      "saas": true,
       "website": "https://orderyoyo.com"
     },
     "Oribi": {
@@ -16484,17 +16457,6 @@
       "scripts": "app\\.paykickstart\\.com",
       "website": "https://paykickstart.com"
     },
-    "Payl8r": {
-      "cats": [
-        41,
-        91
-      ],
-      "description": "PayL8r.com offers repayment plans and online finance which allow you to purchase products online.",
-      "icon": "Payl8r.svg",
-      "saas": true,
-      "scripts": "payl8r\\.com",
-      "website": "https://payl8r.com/"
-    },
     "PayPal": {
       "cats": [
         41
@@ -16527,6 +16489,17 @@
       "scripts": "paypalobjects\\.com",
       "website": "https://paypal.com",
       "xhr": "\\.paypal\\.com"
+    },
+    "Payl8r": {
+      "cats": [
+        41,
+        91
+      ],
+      "description": "PayL8r.com offers repayment plans and online finance which allow you to purchase products online.",
+      "icon": "Payl8r.svg",
+      "saas": true,
+      "scripts": "payl8r\\.com",
+      "website": "https://payl8r.com/"
     },
     "Peek": {
       "cats": [
@@ -17284,15 +17257,28 @@
       "description": "Postscript is an SMS and MMS marketing platform for Shopify stores.",
       "icon": "Postscript.svg",
       "js": {
-        "postscript.getSubscriberId": "",
-        "Postscript.isSubscriberInputChecked": ""
+        "Postscript.isSubscriberInputChecked": "",
+        "postscript.getSubscriberId": ""
       },
-      "scripts": "sdk\\.postscript\\.io/",
-      "saas": true,
       "pricing": [
         "payg"
       ],
+      "saas": true,
+      "scripts": "sdk\\.postscript\\.io/",
       "website": "https://www.postscript.io"
+    },
+    "PowerReviews": {
+      "cats": [
+        90
+      ],
+      "description": "Powerreviews is a provider of UGC solutions like ratings and reviews.",
+      "icon": "PowerReviews.png",
+      "js": {
+        "POWERREVIEWS": ""
+      },
+      "saas": true,
+      "scripts": "ui\\.powerreviews\\.com",
+      "website": "https://www.powerreviews.com/"
     },
     "Powerboutique": {
       "cats": [
@@ -17487,17 +17473,17 @@
       "description": "Privy is a all-in-one marketing automation platform for ecommerce.",
       "icon": "Privy.svg",
       "js": {
+        "Privy": "",
         "PrivyWidget": "",
-        "privySettings": "",
-        "Privy": ""
+        "privySettings": ""
       },
-      "scripts": "\\.privy\\.com/",
-      "saas": true,
       "pricing": [
         "low",
         "freemium",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "\\.privy\\.com/",
       "website": "https://www.privy.com"
     },
     "Profitwell": {
@@ -17886,8 +17872,8 @@
       "description": "Quicklink is a JS library which aims to be a drop-in solution for sites to prefetch links based on what is in the user's viewport",
       "icon": "Quicklink.svg",
       "js": {
-        "quicklink": "",
-        "drupalSettings.quicklink": ""
+        "drupalSettings.quicklink": "",
+        "quicklink": ""
       },
       "scripts": "quicklink@([\\d.]+)/dist/quicklink.*\\.js\\;version:\\1",
       "website": "https://getquick.link/"
@@ -18167,6 +18153,21 @@
         "generator": "^Rayo"
       },
       "website": "http://www.rayo.ir"
+    },
+    "Razorpay": {
+      "cats": [
+        41
+      ],
+      "description": "Razorpay is a provider of an online payment gateway that allows businesses to accept, process, and disburse payments.",
+      "icon": "Razorpay.svg",
+      "js": {
+        "Razorpay": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "scripts": "checkout\\.razorpay\\.com",
+      "website": "https://razorpay.com/"
     },
     "ReDoc": {
       "cats": [
@@ -19024,10 +19025,10 @@
         "<script[^>].*hybris.*.js"
       ],
       "icon": "SAP.svg",
+      "implies": "Java",
       "js": {
         "smartedit": ""
       },
-      "implies": "Java",
       "pricing": [
         "poa"
       ],
@@ -19106,6 +19107,17 @@
         "smf_": ""
       },
       "website": "http://www.simplemachines.org"
+    },
+    "SMSBump": {
+      "cats": [
+        32
+      ],
+      "description": "SMS Bump is a SMS marketing and automations app.",
+      "icon": "Smsbump.png",
+      "js": {
+        "SMSBumpForm": ""
+      },
+      "website": "https://smsbump.com/"
     },
     "SOBI 2": {
       "cats": [
@@ -19366,8 +19378,8 @@
         6
       ],
       "cookies": {
-        "dwsid": "",
-        "dw_dnt": ""
+        "dw_dnt": "",
+        "dwsid": ""
       },
       "description": "Salesforce Commerce Cloud is a cloud-based software-as-a-service (SaaS) ecommerce solution.",
       "headers": {
@@ -19822,17 +19834,17 @@
         75
       ],
       "description": "Sendinblue is an email marketing solution for small and medium-sized businesses that want to send and automate email marketing campaigns.",
-      "icon": "Sendinblue.svg",
       "dom": "iframe[src*='sibautomation.com/']",
+      "icon": "Sendinblue.svg",
       "js": {
         "sendinblue": ""
       },
-      "scripts": "sib(?:automation|forms)\\.com/",
-      "saas": true,
       "pricing": [
         "freemium",
         "payg"
       ],
+      "saas": true,
+      "scripts": "sib(?:automation|forms)\\.com/",
       "website": "https://www.sendinblue.com"
     },
     "Sensors Data": {
@@ -19996,8 +20008,8 @@
       "description": "Sezzle offers a buy-now-pay-later solution.",
       "icon": "Sezzle.svg",
       "js": {
-        "sezzle_footer_images": "",
-        "AwesomeSezzle": ""
+        "AwesomeSezzle": "",
+        "sezzle_footer_images": ""
       },
       "saas": true,
       "scripts": "widget\\.sezzle\\.in",
@@ -20581,6 +20593,25 @@
       "icon": "Simplebo.png",
       "website": "https://www.simplebo.fr"
     },
+    "Sirclo": {
+      "cats": [
+        6
+      ],
+      "description": "Sirclo offers online business solutions.",
+      "headers": {
+        "X-Powered-By": "Sirclo"
+      },
+      "icon": "Sirclo.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "template\\.sirclocdn\\.com/",
+      "url": "^https?//.+\\.sirclo\\.me",
+      "website": "https://sirclo.com/"
+    },
     "Site Kit": {
       "cats": [
         10,
@@ -20642,6 +20673,16 @@
       },
       "icon": "siteground.svg",
       "website": "https://www.siteground.com"
+    },
+    "SiteJabber": {
+      "cats": [
+        90
+      ],
+      "description": "Sitejabber is the leading destination for customer ratings and reviews of businesses. Consumers find ratings and read reviews to ensure they buy from the best companies.",
+      "icon": "SiteJabber.svg",
+      "saas": true,
+      "scripts": "biz\\.sitejabber\\.com",
+      "website": "https://www.sitejabber.com/"
     },
     "SiteMinder": {
       "cats": [
@@ -20721,16 +20762,6 @@
       "saas": true,
       "scripts": "siteglide\\.js",
       "website": "https://www.siteglide.com"
-    },
-    "SiteJabber": {
-      "cats": [
-        90
-      ],
-      "description": "Sitejabber is the leading destination for customer ratings and reviews of businesses. Consumers find ratings and read reviews to ensure they buy from the best companies.",
-      "icon": "SiteJabber.svg",
-      "saas": true,
-      "scripts": "biz\\.sitejabber\\.com",
-      "website": "https://www.sitejabber.com/"
     },
     "Sitevision CMS": {
       "cats": [
@@ -21007,17 +21038,6 @@
       "saas": true,
       "scripts": "js\\.smile\\.io/v([\\d.]+)/\\;version:\\1",
       "website": "https://smile.io"
-    },
-    "SMSBump": {
-      "cats": [
-        32
-      ],
-      "description": "SMS Bump is a SMS marketing and automations app.",
-      "icon": "Smsbump.png",
-      "js": {
-        "SMSBumpForm": ""
-      },
-      "website": "https://smsbump.com/"
     },
     "SmugMug": {
       "cats": [
@@ -21536,20 +21556,6 @@
       "icon": "Splunk.png",
       "website": "http://splunk.com"
     },
-    "Spotii": {
-      "cats": [
-        41,
-        91
-      ],
-      "description": "Spotii is a tech-enabled payments platform where anyone can Shop Now and Pay Later with absolutely zero interest or cost.",
-      "icon": "Spotii.svg",
-      "js": {
-        "spotiiConfig": ""
-      },
-      "saas": true,
-      "scripts": "widget\\.spotii\\.me",
-      "website": "https://www.spotii.com/"
-    },
     "SpotX": {
       "cats": [
         36
@@ -21570,6 +21576,20 @@
       "scripts": "js\\.spotx\\.tv",
       "website": "https://www.spotx.tv",
       "xhr": "\\.spotx(?:change|cdn)\\.com"
+    },
+    "Spotii": {
+      "cats": [
+        41,
+        91
+      ],
+      "description": "Spotii is a tech-enabled payments platform where anyone can Shop Now and Pay Later with absolutely zero interest or cost.",
+      "icon": "Spotii.svg",
+      "js": {
+        "spotiiConfig": ""
+      },
+      "saas": true,
+      "scripts": "widget\\.spotii\\.me",
+      "website": "https://www.spotii.com/"
     },
     "Spree": {
       "cats": [
@@ -22408,6 +22428,27 @@
       "scripts": "secure\\.ap\\.tnspayments\\.com",
       "website": "https://tnsi.com/products/payments/"
     },
+    "TRUENDO": {
+      "cats": [
+        67
+      ],
+      "description": "TRUENDO is a GDPR compliance software.",
+      "icon": "TRUENDO.svg",
+      "js": {
+        "Truendo": "",
+        "TruendoCookieControlCallback": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": [
+        "cdn\\.priv\\.center/",
+        "cdn\\.truendo\\.com/"
+      ],
+      "website": "https://truendo.com"
+    },
     "TWiki": {
       "cats": [
         8
@@ -22894,6 +22935,20 @@
       ],
       "website": "http://thelia.net"
     },
+    "Thimatic": {
+      "cats": [
+        90
+      ],
+      "description": "Thimatic is a Shopify app for product reviews.",
+      "icon": "Thimatic.png",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "thimatic-apps\\.com/product_review/.*?v=([\\d.]+)\\;version:\\1",
+      "website": "https://thimatic-apps.com/"
+    },
     "ThinkPHP": {
       "cats": [
         18
@@ -23304,36 +23359,6 @@
       "website": "https://triplelift.com",
       "xhr": "\\.3lift\\.com"
     },
-    "TRUENDO": {
-      "cats": [
-        67
-      ],
-      "description": "TRUENDO is a GDPR compliance software.",
-      "icon": "TRUENDO.svg",
-      "js": {
-        "Truendo": "",
-        "TruendoCookieControlCallback": ""
-      },
-      "scripts": [
-        "cdn\\.priv\\.center/",
-        "cdn\\.truendo\\.com/"
-      ],
-      "saas": true,
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "website": "https://truendo.com"
-    },
-    "TrueCommerce": {
-      "cats": [
-        6
-      ],
-      "description": "TrueCommerce is an eCommerce platform.",
-      "icon": "Truecommerce.svg",
-      "scripts": "cdn\\.nexternal\\.com/",
-      "website": "https://www.truecommerce.com"
-    },
     "TruValidate": {
       "cats": [
         16,
@@ -23350,6 +23375,15 @@
         "ci-mpsnare\\.iovation\\.com"
       ],
       "website": "https://www.transunion.com/solution/truvalidate"
+    },
+    "TrueCommerce": {
+      "cats": [
+        6
+      ],
+      "description": "TrueCommerce is an eCommerce platform.",
+      "icon": "Truecommerce.svg",
+      "scripts": "cdn\\.nexternal\\.com/",
+      "website": "https://www.truecommerce.com"
     },
     "TrustArc": {
       "cats": [
@@ -24015,9 +24049,9 @@
       ],
       "cookies": {
         "VtexFingerPrint": "",
+        "VtexStoreVersion": "",
         "VtexWorkspace": "",
-        "vtex_session": "",
-        "VtexStoreVersion": ""
+        "vtex_session": ""
       },
       "description": "VTEX is an ecommerce software that manages multiple online stores.",
       "headers": {
@@ -24466,6 +24500,22 @@
       "saas": true,
       "website": "https://www.voracio.co.uk"
     },
+    "Vue-Storefront": {
+      "cats": [
+        6,
+        12
+      ],
+      "description": "Vue Storefront is a frontend platform for headless commerce.",
+      "icon": "vue-storefront.svg",
+      "implies": "Vue.js",
+      "meta": {
+        "generator": "^Vue Storefront\\ [0-9.]+?$;version=2"
+      },
+      "scripts": [
+        "(?:\\/([\\d.]+))?\\/vsf-layout;version=1"
+      ],
+      "website": "https://www.vuestorefront.io/"
+    },
     "Vue.js": {
       "cats": [
         12
@@ -24482,23 +24532,7 @@
       ],
       "website": "https://vuejs.org"
     },
-    "Vue-Storefront": {
-      "cats": [
-        6,
-        12
-      ],
-      "description": "Vue Storefront is a frontend platform for headless commerce.",
-      "icon": "vue-storefront.svg",
-      "implies": "Vue.js",
-      "scripts": [
-        "(?:\\/([\\d.]+))?\\/vsf-layout;version=1"
-      ],
-      "meta": {
-        "generator": "^Vue Storefront\\ [0-9.]+?$;version=2"
-      },
-      "website": "https://www.vuestorefront.io/"
-    },
-   "VuePress": {
+    "VuePress": {
       "cats": [
         57
       ],
@@ -26098,11 +26132,6 @@
       "description": "Zip is a payment service that lets you receive your purchase now and spread the total cost over a interest-free payment schedule.",
       "dom": "link[href*='widgets.quadpay.com/'], div[data-quadpay-src*='.quadpay.com/']",
       "icon": "zip_pay.svg",
-      "scripts": [
-        "quadpay\\.com",
-        "static\\.zipmoney\\.com\\.au",
-        "zip\\.co"
-      ],
       "js": {
         "QuadPayShopify": "",
         "quadpayID": ""
@@ -26111,6 +26140,11 @@
         "payg"
       ],
       "saas": true,
+      "scripts": [
+        "quadpay\\.com",
+        "static\\.zipmoney\\.com\\.au",
+        "zip\\.co"
+      ],
       "website": "https://www.zip.co/"
     },
     "Zipkin": {
@@ -26407,6 +26441,21 @@
       "saas": true,
       "website": "https://commercelayer.io",
       "xhr": "\\.commercelayer\\.io"
+    },
+    "core-js": {
+      "cats": [
+        59
+      ],
+      "description": "core-js is a modular standard library for JavaScript, with polyfills for cutting-edge ECMAScript features.",
+      "js": {
+        "__core-js_shared__": "",
+        "__core-js_shared__.versions[0].version": "^(.+)$\\;version:\\1",
+        "_babelPolyfill": "",
+        "core": "",
+        "core.version": "^(.+)$\\;version:\\1"
+      },
+      "oss": true,
+      "website": "https://github.com/zloirock/core-js"
     },
     "db-ip": {
       "cats": [
@@ -27749,20 +27798,6 @@
       "website": "https://www.thetradedesk.com",
       "xhr": "adsvr\\.org"
     },
-    "Thimatic": {
-      "cats": [
-        90
-      ],
-      "description": "Thimatic is a Shopify app for product reviews.",
-      "icon": "Thimatic.png",
-      "scripts": "thimatic-apps\\.com/product_review/.*?v=([\\d.]+)\\;version:\\1",
-      "saas": true,
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "website": "https://thimatic-apps.com/"
-    },
     "three.js": {
       "cats": [
         25
@@ -27979,38 +28014,6 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
-    },
-    "Razorpay" : {
-      "cats": [
-        41
-      ],
-      "description": "Razorpay is a provider of an online payment gateway that allows businesses to accept, process, and disburse payments.",
-      "icon": "Razorpay.svg",
-      "js": {
-        "Razorpay": ""
-      },
-      "scripts": "checkout\\.razorpay\\.com",
-      "pricing": ["payg"],
-      "website": "https://razorpay.com/"
-    },
-    "Sirclo" : {
-      "cats": [
-        6
-      ],
-      "description": "Sirclo offers online business solutions.",
-      "icon": "Sirclo.svg",
-      "headers": {
-        "X-Powered-By": "Sirclo"
-      },
-      "scripts": "template\\.sirclocdn\\.com/",
-      "pricing": [
-        "low",
-        "freemium",
-        "recurring"
-      ],
-      "saas": true,
-      "url": "^https?//.+\\.sirclo\\.me",
-      "website": "https://sirclo.com/"
     }
   }
 }
