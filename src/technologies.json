@@ -1446,8 +1446,8 @@
       "icon": "afterpay.png",
       "js": {
         "Afterpay": "",
-        "AfterpayAttractWidget": "",
-        "afterpay_product": ""
+        "afterpay_product": "",
+        "AfterpayAttractWidget": ""
       },
       "saas": true,
       "scripts": [
@@ -2780,6 +2780,19 @@
       "saas": true,
       "scripts": "cdn\\.attn\\.tv",
       "website": "https://www.attentivemobile.com"
+    },
+    "Attraqt": {
+      "cats": [
+        29,
+        76
+      ],
+      "description": "Attraqt provides AI-driven search, merchandising and personalisation solutions.",
+      "icon": "Attraqt.png",
+      "js": {
+        "_attraqt": ""
+      },
+      "scripts": "cdn\\.attraqt\\.io",
+      "website": "https://www.attraqt.com/"
     },
     "AudioEye": {
       "cats": [
@@ -5104,6 +5117,19 @@
         "CloudFlare": ""
       },
       "website": "http://www.cloudflare.com"
+    },
+    "Cloudflare Bot Management": {
+      "cats": [
+        16
+      ],
+      "cookies": {
+        "__cf_bm": ""
+      },
+      "description": "Cloudflare bot management solution identifies and mitigates automated traffic to protect websites from bad bots.",
+      "icon": "CloudFlare.svg",
+      "implies": "Cloudflare",
+      "saas": true,
+      "website": "https://www.cloudflare.com/en-gb/products/bot-management/"
     },
     "Cloudflare Browser Insights": {
       "cats": [
@@ -9830,6 +9856,19 @@
       "saas": true,
       "scripts": "cdn\\.gumlet\\.com",
       "website": "https://www.gumlet.com/"
+    },
+    "Gumstack": {
+      "cats": [
+        5
+      ],
+      "description": "Gumstack provides a live video shopping solution for eCommerce.",
+      "icon": "Gumstack.svg",
+      "js": {
+        "Gumstack": ""
+      },
+      "saas": true,
+      "scripts": "w\\.gumstack\\.com",
+      "website": "https://gumstack.com/"
     },
     "HCL Commerce": {
       "cats": [
@@ -17263,6 +17302,19 @@
     },
     "Preact": {
       "cats": [
+        90
+      ],
+      "description": "Powerreviews is a provider of UGC solutions like ratings and reviews.",
+      "icon": "PowerReviews.png",
+      "js": {
+        "POWERREVIEWS": ""
+      },
+      "saas": true,
+      "scripts": "ui\\.powerreviews\\.com",
+      "website": "https://www.powerreviews.com/"
+    },
+    "Preact": {
+      "cats": [
         59
       ],
       "description": "Preact is a JavaScript library that describes itself as a fast 3kB alternative to React with the same ES6 API.",
@@ -21991,6 +22043,16 @@
       "requires": "WordPress",
       "website": "https://sucuri.net/"
     },
+    "Suiteshare": {
+      "cats": [
+        52
+      ],
+      "description": "Suiteshare powers conversational shopping experiences.",
+      "icon": "Suiteshare.png",
+      "saas": true,
+      "scripts": "static\\.suiteshare\\.com",
+      "website": "https://suiteshare.com/"
+    },
     "Sulu": {
       "cats": [
         1
@@ -25047,15 +25109,12 @@
       ],
       "description": "Wheelio is gamified pop-up/widget for ecommerce sites.",
       "icon": "Wheelio.png",
-      "js": {
-        "WheelEvent": ""
-      },
       "pricing": [
         "low",
         "recurring"
       ],
       "saas": true,
-      "scripts": "wheelio\\.azureedge\\.net",
+      "scripts": "wheelioapp\\.azureedge\\.net",
       "website": "https://wheelio-app.com/"
     },
     "Whooshkaa": {
@@ -26179,7 +26238,7 @@
     },
     "Zonos": {
       "cats": [
-        5
+        6
       ],
       "description": "Zonos is a cross-border ecommerce software and app solution for companies with international business.",
       "icon": "Zonos.svg",
@@ -26204,6 +26263,16 @@
       "saas": true,
       "scripts": "ws\\.zoominfo\\.com",
       "website": "https://www.zoominfo.com/"
+    },
+    "Zoominfo Chat": {
+      "cats": [
+        52
+      ],
+      "description": "ZoomInfo chat is a live chat solution.",
+      "icon": "Zoominfo.svg",
+      "saas": true,
+      "scripts": "madstreetden\\.widget\\.insent\\.ai",
+      "website": "hhttps://www.zoominfo.com/chat"
     },
     "Zope": {
       "cats": [
