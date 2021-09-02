@@ -238,7 +238,17 @@
         "$ref": "#/definitions/non-empty-non-blank-string"
       },
       "xhr": {
-        "$ref": "#/definitions/non-empty-non-blank-string"
+        "oneOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/non-empty-non-blank-string"
+            }
+          },
+          {
+            "$ref": "#/definitions/non-empty-non-blank-string"
+          }
+        ]
       }
     }
   }
