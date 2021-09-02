@@ -14,7 +14,7 @@
       postMessage({
         wappalyzer: {
           js: technologies.reduce((technologies, { name, chains }) => {
-            chains.forEach((chain) => {
+            chains.forEach((chain, index) => {
               const value = chain
                 .split('.')
                 .reduce(
@@ -23,11 +23,11 @@
                     value instanceof Object &&
                     Object.prototype.hasOwnProperty.call(value, method)
                       ? value[method]
-                      : undefined,
+                      : '__UNDEFINED__',
                   window
                 )
 
-              if (value !== undefined) {
+              if (value !== '__UNDEFINED__') {
                 technologies.push({
                   name,
                   chain,
