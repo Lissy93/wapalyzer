@@ -685,7 +685,10 @@
     ],
     "description": "Google analytics enhanced ecommerce is a plug-in which enables the measurement of user interactions with products on ecommerce websites.",
     "icon": "Google Analytics.svg",
-    "implies": "Google Analytics",
+    "implies": [
+      "Google Analytics",
+      "Cart Functionality"
+    ], 
     "js": {
       "gaplugins.EC": ""
     },
