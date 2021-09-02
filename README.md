@@ -53,7 +53,7 @@ node src/drivers/npm/cli.js https://example.com
 
 A long list of [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) is used to identify technologies on web pages. Wappalyzer inspects HTML code, as well as JavaScript variables, response headers and more.
 
-Patterns (regular expressions) are kept in [`src/technologies.json`](https://github.com/aliasio/wappalyzer/blob/master/src/technologies.json). The following is an example of an application fingerprint.
+Patterns (regular expressions) are kept in [`src/technologies/`](https://github.com/aliasio/wappalyzer/blob/master/src/technologies). The following is an example of an application fingerprint.
 
 #### Example
 

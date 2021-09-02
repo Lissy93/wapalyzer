@@ -19,9 +19,9 @@
     "link": "node ./bin/link.js",
     "lint": "eslint src/**/*.{js,json}",
     "lint:fix": "eslint --fix src/**/*.{js,json}",
-    "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/technologies.json && node ./bin/validate.js",
+    "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/technologies/*.json && node ./bin/validate.js",
     "convert": "node ./bin/convert.js",
-    "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/technologies.json",
+    "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/categories.json ./src/technologies/*.json",
     "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
     "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension"
   }

@@ -17,10 +17,25 @@ const fs = require('fs')
 const Wappalyzer = require('./wappalyzer')
 
 // See https://www.wappalyzer.com/docs/dev/specification or use
-// https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies.json
-const { technologies, categories } = JSON.parse(
-  fs.readFileSync('./technologies.json')
+// https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies
+const categories = JSON.parse(
+  fs.readFileSync(path.resolve(`./categories.json`))
 )
+
+let technologies = {}
+
+for (const index of Array(27).keys()) {
+  const character = index ? String.fromCharCode(index + 96) : '_'
+
+  technologies = {
+    ...technologies,
+    ...JSON.parse(
+      fs.readFileSync(
+        path.resolve(`./technologies/${character}.json`)
+      )
+    ),
+  }
+}
 
 Wappalyzer.setTechnologies(technologies)
 Wappalyzer.setCategories(categories)

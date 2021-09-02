@@ -136,9 +136,22 @@ const Driver = {
    */
   async loadTechnologies() {
     try {
-      const { technologies, categories } = await (
-        await fetch(chrome.runtime.getURL('technologies.json'))
+      const categories = await (
+        await fetch(chrome.runtime.getURL('categories.json'))
       ).json()
+
+      let technologies = {}
+
+      for (const index of Array(27).keys()) {
+        const character = index ? String.fromCharCode(index + 96) : '_'
+
+        technologies = {
+          ...technologies,
+          ...(await (
+            await fetch(chrome.runtime.getURL(`technologies/${character}.json`))
+          ).json()),
+        }
+      }
 
       setTechnologies(technologies)
       setCategories(categories)

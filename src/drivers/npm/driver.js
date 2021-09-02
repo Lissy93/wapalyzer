@@ -42,9 +42,24 @@ if (AWS_LAMBDA_FUNCTION_NAME) {
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
-const { technologies, categories } = JSON.parse(
-  fs.readFileSync(path.resolve(`${__dirname}/technologies.json`))
+const categories = JSON.parse(
+  fs.readFileSync(path.resolve(`${__dirname}/categories.json`))
 )
+
+let technologies = {}
+
+for (const index of Array(27).keys()) {
+  const character = index ? String.fromCharCode(index + 96) : '_'
+
+  technologies = {
+    ...technologies,
+    ...JSON.parse(
+      fs.readFileSync(
+        path.resolve(`${__dirname}/technologies/${character}.json`)
+      )
+    ),
+  }
+}
 
 setTechnologies(technologies)
 setCategories(categories)

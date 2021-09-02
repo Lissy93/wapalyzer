@@ -8,10 +8,21 @@ const link = (src, dest) => {
   fs.linkSync(src, dest)
 }
 
-// WebExtension
-link('./src/technologies.json', './src/drivers/webextension/technologies.json')
 link('./src/wappalyzer.js', './src/drivers/webextension/js/wappalyzer.js')
-
-// NPM
-link('./src/technologies.json', './src/drivers/npm/technologies.json')
 link('./src/wappalyzer.js', './src/drivers/npm/wappalyzer.js')
+
+link('./src/categories.json', './src/drivers/webextension/categories.json')
+link('./src/categories.json', './src/drivers/npm/categories.json')
+
+for (const index of Array(27).keys()) {
+  const character = index ? String.fromCharCode(index + 96) : '_'
+
+  link(
+    `./src/technologies/${character}.json`,
+    `./src/drivers/webextension/technologies/${character}.json`
+  )
+  link(
+    `./src/technologies/${character}.json`,
+    `./src/drivers/npm/technologies/${character}.json`
+  )
+}

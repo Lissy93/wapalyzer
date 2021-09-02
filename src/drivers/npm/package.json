@@ -31,9 +31,10 @@
   "main": "driver.js",
   "files": [
     "cli.js",
+    "categories.json",
     "driver.js",
     "index.js",
-    "technologies.json",
+    "technologies/*",
     "wappalyzer.js"
   ],
   "bin": {

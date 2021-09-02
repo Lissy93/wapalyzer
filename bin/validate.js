@@ -2,9 +2,43 @@ const fs = require('fs')
 
 const iconPath = './src/drivers/webextension/images/icons'
 
-const { technologies, categories } = JSON.parse(
-  fs.readFileSync('./src/technologies.json')
-)
+const categories = JSON.parse(fs.readFileSync('./src/categories.json'))
+
+let technologies = {}
+
+for (const index of Array(27).keys()) {
+  const charCode = index ? index + 96 : 95
+  const character = String.fromCharCode(charCode)
+
+  const _technologies = JSON.parse(
+    fs.readFileSync(`./src/technologies/${character}.json`)
+  )
+
+  Object.keys(_technologies).forEach((name) => {
+    const _charCode = name.toLowerCase().charCodeAt(0)
+
+    if (charCode !== _charCode) {
+      if (_charCode < 97 || _charCode > 122) {
+        if (charCode !== 95) {
+          throw new Error(
+            `${name} should be moved from ./src/technologies/${character}.json to ./src/technologies/_.json`
+          )
+        }
+      } else {
+        throw new Error(
+          `${name} should be moved from ./src/technologies/${character}.json to ./src/technologies/${String.fromCharCode(
+            _charCode
+          )}.json`
+        )
+      }
+    }
+  })
+
+  technologies = {
+    ...technologies,
+    ..._technologies,
+  }
+}
 
 Object.keys(technologies).forEach((name) => {
   const technology = technologies[name]
