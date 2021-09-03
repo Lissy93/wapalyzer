@@ -95,7 +95,10 @@
     "saas": true,
     "scripts": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
     "website": "https://launchdarkly.com",
-    "xhr": "app\\.launchdarkly\\.com"
+    "xhr": [
+      "app\\.launchdarkly\\.com",
+      "events\\.launchdarkly\\.com"
+    ]
   },
   "Launchrock": {
     "cats": [
