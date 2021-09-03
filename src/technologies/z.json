@@ -324,5 +324,23 @@
     },
     "icon": "Zope.png",
     "website": "http://zope.org"
+  },
+  "Zyro": {
+    "cats": [
+      51
+    ],
+    "description": "Zyro is a website builder service by the Hostinger group.",
+    "icon": "Zyro.svg",
+    "implies": "Vue.js",
+    "meta":{
+      "generator": "^Zyro\\.com Website Builder$"
+    },
+    "scripts": "userapp\\.zyrosite\\.com/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://zyro.com"
   }
 }
