@@ -994,6 +994,20 @@
     "scripts": "grab-paylater\\.js",
     "website": "https://www.grab.com/sg/finance/pay-later/"
   },
+  "Grafana": {
+    "cats": [
+      10
+    ],
+    "description": "Grafana is a multi-platform open source analytics and interactive visualisation web application.",
+    "icon": "Grafana.svg",
+    "js": {
+      "grafanaBootData.settings.buildInfo['version']": "([\\d.]+)\\;version:\\1",
+      "__grafana_public_path__": ""
+    },
+    "scripts": "grafana\\..+\\.com/public/build/",
+    "oss": true,
+    "website": "https://grafana.com"
+  },
   "Graffiti CMS": {
     "cats": [
       1
