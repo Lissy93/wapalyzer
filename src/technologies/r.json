@@ -391,12 +391,13 @@
     "cats": [
       41
     ],
-    "description": "Recharge is the a subscription payments platform designed for merchants to set up and manage dynamic recurring billing across web and mobile",
+    "description": "Recharge is the a subscription payments platform designed for merchants to set up and manage dynamic recurring billing across web and mobile.",
     "icon": "Recharge.png",
     "implies": [
       "Cart Functionality"
     ],    
-    "saas": true,    
+    "saas": true,   
+    "pricing": ["recurring", "payg", "medium"],
     "scripts": [
       "rechargeassets-bootstrapheroes-rechargeapps\\.netdna-ssl\\.com"
     ],
