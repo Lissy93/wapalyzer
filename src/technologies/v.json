@@ -162,6 +162,29 @@
     "icon": "Varnish.svg",
     "website": "http://www.varnish-cache.org"
   },
+  "vcita": {
+    "cats": [
+      53,
+      72
+    ],
+    "description": "vcita is an all-in-one customer service and business management software designed for service providers.",
+    "icon": "vcita.svg",
+    "dom": "iframe[src*='www.vcita.com/widgets/']",
+    "js": {
+      "Vcita": "",
+      "LiveSite.btCheckout": ""
+    },
+    "scripts": [
+      "www\\.vcita\\.com/widgets/",
+      "widgets\\.vcdnita\\.com/"
+    ],
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.vcita.com"
+  },
   "Venmo": {
     "cats": [
       41
