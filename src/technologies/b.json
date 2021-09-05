@@ -149,7 +149,10 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "apps\\.bazaarvoice\\.com",
+    "scripts": [
+      "apps\\.bazaarvoice\\.com",
+      "cdn\\.curalate\\.com"
+    ],
     "website": "https://www.bazaarvoice.com/"
   },
   "Beans": {
@@ -403,6 +406,17 @@
     "html": "<(?:param|embed|iframe)[^>]+blip\\.tv/play",
     "icon": "Blip.tv.png",
     "website": "http://blip.tv"
+  },
+  "Blitz": {
+    "cats": [
+      92
+    ],
+    "description": "Blitz provides intelligent static page caching for creating lightning-fast sites with Craft CMS.",
+    "html": "<!-- Cached by Blitz on",
+    "implies": "Craft CMS",
+    "pricing": ["onetime", "low"],
+    "icon": "Blitz.svg",
+    "website": "https://putyourlightson.com/plugins/blitz"
   },
   "Blogger": {
     "cats": [

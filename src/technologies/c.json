@@ -251,7 +251,7 @@
       6
     ],
     "description": "Websites that have a shopping cart or checkout page, either using a known ecommerce platform or a custom solution.",
-    "dom": "a[href*='/cart'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']",
+    "dom": "a[href*='/cart'], a[href*='/order'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']",
     "icon": "Cart-generic.svg",
     "js": {
       "google_tag_params.ecomm_pagetype": ""
@@ -1820,6 +1820,17 @@
     },
     "scripts": "cufon-yui\\.js",
     "website": "http://cufon.shoqolate.com"
+  },
+  "Customer.io": {
+    "cats": [
+      32
+    ],
+    "description": "Customer.io is an automated messaging platform for marketers.",
+    "icon": "Customer.io.png",
+    "saas": true,
+    "pricing": ["recurring", "medium"],
+    "scripts": "assets\\.customer\\.io",
+    "website": "https://customer.io/"
   },
   "Cybersource": {
     "cats": [

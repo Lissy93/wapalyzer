@@ -358,6 +358,22 @@
     "icon": "RebelMouse.svg",
     "website": "https://www.rebelmouse.com/"
   },
+  "Rebuy": {
+    "cats": [
+      76
+    ],
+    "description": "Rebuy offers personlisation solutions for ecommerce sites.",
+    "icon": "Rebuy.png",
+    "implies": [
+      "Cart Functionality"
+    ],
+    "js": {
+      "rebuyConfig": ""
+    },   
+    "pricing": ["recurring", "payg", "low"],
+    "scripts": "rebuyengine\\.com",
+    "website": "https://rebuyengine.com/"
+  },  
   "Recart": {
     "cats": [
       32
@@ -371,6 +387,22 @@
     "scripts": "api\\.recart\\.com",
     "website": "https://recart.com/"
   },
+  "Recharge": {
+    "cats": [
+      41
+    ],
+    "description": "Recharge is the a subscription payments platform designed for merchants to set up and manage dynamic recurring billing across web and mobile.",
+    "icon": "Recharge.png",
+    "implies": [
+      "Cart Functionality"
+    ],    
+    "saas": true,   
+    "pricing": ["recurring", "payg", "medium"],
+    "scripts": [
+      "rechargeassets-bootstrapheroes-rechargeapps\\.netdna-ssl\\.com"
+    ],
+    "website": "https://rechargepayments.com/"
+  },   
   "Recite Me": {
     "cats": [
       68
@@ -453,6 +485,15 @@
     "url": "^https?://(?:www\\.)?reddit\\.com",
     "website": "http://code.reddit.com"
   },
+  "Reddit Ads": {
+    "cats": [
+      36
+    ],
+    "description": "Reddit Ads is an online advertising offering from Reddit.",    
+    "icon": "Reddit.png",
+    "scripts": "www\\.redditstatic\\.com",
+    "website": "https://advertising.reddithelp.com/"
+  },  
   "Redis": {
     "cats": [
       34
