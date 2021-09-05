@@ -103,7 +103,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
   "xhr": "example\\.com",
   "oss": true,
   "saas": true,
-  "pricing": ["medium", "freemium", "recurring"],
+  "pricing": ["mid", "freemium", "recurring"],
   "website": "https://example.com",
 }
 ```
