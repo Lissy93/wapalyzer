@@ -626,6 +626,27 @@
     ],
     "website": "https://fontawesome.com/"
   },
+  "Fork Awesome": {
+    "cats": [
+      17
+    ],
+    "description": "Fork Awesome is now a community effort based on Font Awesome by Dave Gandy.",
+    "icon": "Fork Awesome.png",
+    "dom": {
+      "link[href*='fork-awesome.min.css']": {
+        "attributes": {
+          "href": ".+fork-awesome\\.min\\.css(?:\\?ver=([\\d.]+))?\\;version:\\1"
+        }
+      },
+      "link[href*='npm/fork-awesome']": {
+        "attributes": {
+          "href": "/npm/fork-awesome@([\\d.]+)/css/fork-awesome\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://forkaweso.me"
+  },
   "Fork CMS": {
     "cats": [
       1
