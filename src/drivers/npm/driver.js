@@ -265,26 +265,41 @@ async function analyzeDom(dom, technologies = Wappalyzer.technologies) {
   )
 }
 
-function get(url) {
+function get(url, options = {}) {
+  const timeout = options.timeout || 10000
+
   if (['http:', 'https:'].includes(url.protocol)) {
     const { get } = url.protocol === 'http:' ? http : https
 
     return new Promise((resolve, reject) =>
-      get(url, { rejectUnauthorized: false }, (response) => {
-        if (response.statusCode >= 400) {
-          return reject(
-            new Error(`${response.statusCode} ${response.statusMessage}`)
-          )
+      get(
+        url,
+        {
+          rejectUnauthorized: false,
+          headers: {
+            'User-Agent': options.userAgent,
+          },
+        },
+        (response) => {
+          if (response.statusCode >= 400) {
+            return reject(
+              new Error(`${response.statusCode} ${response.statusMessage}`)
+            )
+          }
+
+          response.setEncoding('utf8')
+
+          let body = ''
+
+          response.on('data', (data) => (body += data))
+          response.on('error', (error) => reject(new Error(error.message)))
+          response.on('end', () => resolve(body))
         }
-
-        response.setEncoding('utf8')
-
-        let body = ''
-
-        response.on('data', (data) => (body += data))
-        response.on('error', (error) => reject(new Error(error.message)))
-        response.on('end', () => resolve(body))
-      }).on('error', (error) => reject(new Error(error.message)))
+      )
+        .setTimeout(timeout, () =>
+          reject(new Error(`Timeout (${url.href}, ${timeout}ms)`))
+        )
+        .on('error', (error) => reject(new Error(error.message)))
     )
   } else {
     throw new Error(`Invalid protocol: ${url.protocol}`)
@@ -305,6 +320,8 @@ class Driver {
       recursive: false,
       probe: false,
       noScripts: false,
+      userAgent:
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
       ...options,
     }
 
@@ -595,10 +612,7 @@ class Site {
       }
     })
 
-    await page.setUserAgent(
-      this.options.userAgent ||
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
-    )
+    await page.setUserAgent(this.options.userAgent)
 
     try {
       await this.promiseTimeout(
@@ -942,11 +956,17 @@ class Site {
       try {
         await sleep(this.options.delay)
 
-        const body = await get(new URL(path, url.href))
+        const body = await get(new URL(path, url.href), {
+          userAgent: this.options.userAgent,
+          timeout: Math.min(this.options.maxWait, 3000),
+        })
 
         this.log(`get ${path}: ok`)
 
-        await this.onDetect(url, await analyze({ [file]: body }))
+        await this.onDetect(
+          url,
+          await analyze({ [file]: body.slice(0, 100000) })
+        )
       } catch (error) {
         this.error(`get ${path}: ${error.message || error}`)
       }
