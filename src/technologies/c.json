@@ -619,20 +619,20 @@
       21
     ],
     "description": "Classeh is a LMS that allows user to participate in webinars and also use LMS options like messanger,finances,homework,quiz and some extra options like sending messages and more.",
+    "dom": "a[href*='apps.classeh.ir'][target='_blank']",
     "icon": "Classeh.svg",
     "implies": [
       "PHP",
       "React",
       "Python"
     ],
-    "dom": "a[href*='apps.classeh.ir'][target='_blank']",
     "meta": {
       "author": "^fanavar\\.org$"
     },
-    "saas": true,
     "pricing": [
       "recurring"
     ],
+    "saas": true,
     "website": "https://fanavar.org"
   },
   "Classy": {
@@ -1848,8 +1848,11 @@
     ],
     "description": "Customer.io is an automated messaging platform for marketers.",
     "icon": "Customer.io.png",
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
     "saas": true,
-    "pricing": ["recurring", "mid"],
     "scripts": "assets\\.customer\\.io",
     "website": "https://customer.io/"
   },

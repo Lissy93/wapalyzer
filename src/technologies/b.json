@@ -346,8 +346,8 @@
     "description": "Blackbaud Luminate Online provides online fundraising and marketing automation for nonprofits.",
     "icon": "Blackbaud-Luminate-Online.png",
     "js": {
-      "don_premium_map": "",
-      "BLACKBAUD": ""
+      "BLACKBAUD": "",
+      "don_premium_map": ""
     },
     "scripts": "js/convio/modules\\.js",
     "url": "/site/Donation2?.*df_id=",
@@ -415,9 +415,12 @@
     ],
     "description": "Blitz provides intelligent static page caching for creating lightning-fast sites with Craft CMS.",
     "html": "<!-- Cached by Blitz on",
-    "implies": "Craft CMS",
-    "pricing": ["onetime", "low"],
     "icon": "Blitz.svg",
+    "implies": "Craft CMS",
+    "pricing": [
+      "onetime",
+      "low"
+    ],
     "website": "https://putyourlightson.com/plugins/blitz"
   },
   "Blogger": {

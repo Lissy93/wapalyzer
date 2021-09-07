@@ -514,19 +514,19 @@
   "Periodic": {
     "cats": [
       72
-    ],  
+    ],
     "description": "Periodic is a white-label scheduling system.",
     "icon": "Periodic.svg",
     "js": {
       "PeriodicSyncManager": "",
       "PeriodicWave": ""
     },
-    "scripts": "/integrations/embed/periodic-embed-resize\\.js",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "/integrations/embed/periodic-embed-resize\\.js",
     "website": "https://periodic.is"
   },
   "Perl": {
@@ -1346,10 +1346,10 @@
     "icon": "Printful.png",
     "implies": [
       "Cart Functionality"
-    ],    
+    ],
     "scripts": "static\\.cdn\\.printful\\.com",
     "website": "https://www.printful.com/"
-  },  
+  },
   "Prism": {
     "cats": [
       19
@@ -1367,8 +1367,8 @@
       1
     ],
     "description": "Prismic is a headless CMS for Jamstack.",
-    "icon": "Prismic.svg",
     "dom": "img[src*='images.prismic.io'",
+    "icon": "Prismic.svg",
     "pricing": [
       "low",
       "freemium",

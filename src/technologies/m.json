@@ -236,16 +236,16 @@
       35
     ],
     "description": "Mapplic is a plugin for creating interactive maps based on simple image (jpg, png) or vector (svg) files.",
-    "icon": "Mapplic.svg",
     "dom": "div.mapplic-layer > div.mapplic-map-image",
-    "scripts": [
-      "wp-content/plugins/mapplic/",
-      "/include/mapplic/mapplic\\.js"
-    ],
-    "saas": true,
+    "icon": "Mapplic.svg",
     "pricing": [
       "low",
       "onetime"
+    ],
+    "saas": true,
+    "scripts": [
+      "wp-content/plugins/mapplic/",
+      "/include/mapplic/mapplic\\.js"
     ],
     "website": "https://mapplic.com"
   },
@@ -1007,11 +1007,11 @@
     "meta": {
       "mixin_hash_id": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "payg"
     ],
+    "saas": true,
     "website": "https://mixin.ir"
   },
   "Mixpanel": {
