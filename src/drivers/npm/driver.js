@@ -615,11 +615,16 @@ class Site {
     await page.setUserAgent(this.options.userAgent)
 
     try {
-      await this.promiseTimeout(
-        page.goto(url.href),
-        undefined,
-        'Timeout (navigation)'
-      )
+      try {
+        await this.promiseTimeout(page.goto(url.href))
+      } catch (error) {
+        if (
+          error.constructor.name !== 'TimeoutError' &&
+          error.code !== 'PROMISE_TIMEOUT_ERROR'
+        ) {
+          throw error
+        }
+      }
 
       if (!this.options.noScripts) {
         await sleep(1000)
@@ -779,11 +784,7 @@ class Site {
         this.analyzedUrls[url.href] &&
         !this.analyzedUrls[url.href].status
       ) {
-        await page.close()
-
-        this.log(`Page closed (${url})`)
-
-        throw new Error(`No response from server`)
+        throw new Error('No response from server')
       }
 
       this.cache[url.href] = {
@@ -843,10 +844,18 @@ class Site {
 
       await page.close()
 
-      this.log('Page closed')
+      this.log(`Page closed (${url})`)
 
       return reducedLinks
     } catch (error) {
+      try {
+        await page.close()
+
+        this.log(`Page closed (${url})`)
+      } catch (error) {
+        this.log(error)
+      }
+
       let hostname = url
 
       try {
@@ -1130,8 +1139,6 @@ class Site {
         if (page) {
           try {
             await page.close()
-
-            this.log('Page closed')
           } catch (error) {
             // Continue
           }
