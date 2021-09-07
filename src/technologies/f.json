@@ -535,9 +535,9 @@
     "description": "Flow is an ecommerce platform that enables brands and retailers to sell their merchandise to customers internationally by creating localized shopping experiences.",
     "icon": "Flow.png",
     "js": {
+      "flow.cart": "",
       "flow.countryPicker": "",
-      "flow_cart_localize": "",
-      "flow.cart": ""      
+      "flow_cart_localize": ""
     },
     "pricing": [
       "poa"
@@ -631,7 +631,6 @@
       17
     ],
     "description": "Fork Awesome is now a community effort based on Font Awesome by Dave Gandy.",
-    "icon": "Fork Awesome.png",
     "dom": {
       "link[href*='fork-awesome.min.css']": {
         "attributes": {
@@ -644,6 +643,7 @@
         }
       }
     },
+    "icon": "Fork Awesome.png",
     "oss": true,
     "website": "https://forkaweso.me"
   },
@@ -843,7 +843,7 @@
     "icon": "Freshchat.svg",
     "js": {
       "Freshbots": ""
-    },    
+    },
     "pricing": [
       "low",
       "recurring"

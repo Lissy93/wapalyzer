@@ -1,4 +1,18 @@
 {
+  "GEOvendas": {
+    "cats": [
+      6
+    ],
+    "description": "GEOvendas is an ecommerce platform with analytics, sales force, B2B and B2C products.",
+    "dom": "a[href*='geovendas.com.br'][target='_blank']",
+    "icon": "GEOvendas.svg",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.geovendas.com"
+  },
   "GOV.UK Elements": {
     "cats": [
       66
@@ -262,20 +276,6 @@
     },
     "icon": "Gentoo.png",
     "website": "http://www.gentoo.org"
-  },
-  "GEOvendas": {
-    "cats": [
-      6
-    ],   
-    "description": "GEOvendas is an ecommerce platform with analytics, sales force, B2B and B2C products.",
-    "icon": "GEOvendas.svg",
-    "dom": "a[href*='geovendas.com.br'][target='_blank']",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.geovendas.com"
   },
   "Gerrit": {
     "cats": [
@@ -702,7 +702,7 @@
     "implies": [
       "Google Analytics",
       "Cart Functionality"
-    ], 
+    ],
     "js": {
       "gaplugins.EC": ""
     },
@@ -1028,11 +1028,11 @@
     "description": "Grafana is a multi-platform open source analytics and interactive visualisation web application.",
     "icon": "Grafana.svg",
     "js": {
-      "grafanaBootData.settings.buildInfo['version']": "([\\d.]+)\\;version:\\1",
-      "__grafana_public_path__": ""
+      "__grafana_public_path__": "",
+      "grafanaBootData.settings.buildInfo['version']": "([\\d.]+)\\;version:\\1"
     },
-    "scripts": "grafana\\..+\\.com/public/build/",
     "oss": true,
+    "scripts": "grafana\\..+\\.com/public/build/",
     "website": "https://grafana.com"
   },
   "Graffiti CMS": {

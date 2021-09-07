@@ -19,7 +19,6 @@ const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN, CHROMIUM_DATA_DIR } =
 let puppeteer
 let chromiumArgs = [
   '--no-sandbox',
-  '--single-process',
   '--no-zygote',
   '--disable-gpu',
   '--ignore-certificate-errors',
@@ -460,7 +459,8 @@ class Site {
   promiseTimeout(
     promise,
     fallback,
-    errorMessage = 'Operation took too long to respond'
+    errorMessage = 'Operation took too long to respond',
+    maxWait = this.options.maxWait
   ) {
     let timeout = null
 
@@ -478,7 +478,7 @@ class Site {
           error.code = 'PROMISE_TIMEOUT_ERROR'
 
           fallback !== undefined ? resolve(fallback) : reject(error)
-        }, this.options.maxWait)
+        }, maxWait)
       }),
       promise.then((value) => {
         clearTimeout(timeout)
@@ -615,11 +615,16 @@ class Site {
     await page.setUserAgent(this.options.userAgent)
 
     try {
-      await this.promiseTimeout(
-        page.goto(url.href),
-        undefined,
-        'Timeout (navigation)'
-      )
+      try {
+        await this.promiseTimeout(page.goto(url.href))
+      } catch (error) {
+        if (
+          error.constructor.name !== 'TimeoutError' &&
+          error.code !== 'PROMISE_TIMEOUT_ERROR'
+        ) {
+          throw error
+        }
+      }
 
       if (!this.options.noScripts) {
         await sleep(1000)
@@ -779,11 +784,7 @@ class Site {
         this.analyzedUrls[url.href] &&
         !this.analyzedUrls[url.href].status
       ) {
-        await page.close()
-
-        this.log(`Page closed (${url})`)
-
-        throw new Error(`No response from server`)
+        throw new Error('No response from server')
       }
 
       this.cache[url.href] = {
@@ -843,10 +844,18 @@ class Site {
 
       await page.close()
 
-      this.log('Page closed')
+      this.log(`Page closed (${url})`)
 
       return reducedLinks
     } catch (error) {
+      try {
+        await page.close()
+
+        this.log(`Page closed (${url})`)
+      } catch (error) {
+        this.log(error)
+      }
+
       let hostname = url
 
       try {
@@ -890,17 +899,26 @@ class Site {
         await sleep(this.options.delay * index)
       }
 
-      const links = await this.goto(url)
+      await Promise.all([
+        (async () => {
+          const links = await this.goto(url)
 
-      if (links && this.options.recursive && depth < this.options.maxDepth) {
-        await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
-      }
+          if (
+            links &&
+            this.options.recursive &&
+            depth < this.options.maxDepth
+          ) {
+            await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+          }
+        })(),
+        (async () => {
+          if (this.options.probe && !this.probed) {
+            this.probed = true
 
-      if (this.options.probe && !this.probed) {
-        this.probed = true
-
-        await this.probe(url)
-      }
+            await this.probe(url)
+          }
+        })(),
+      ])
     } catch (error) {
       this.analyzedUrls[url.href] = {
         status: 0,
@@ -950,31 +968,9 @@ class Site {
       magento: '/magento_version',
     }
 
-    for (const file of Object.keys(files)) {
-      const path = files[file]
-
-      try {
-        await sleep(this.options.delay)
-
-        const body = await get(new URL(path, url.href), {
-          userAgent: this.options.userAgent,
-          timeout: Math.min(this.options.maxWait, 3000),
-        })
-
-        this.log(`get ${path}: ok`)
-
-        await this.onDetect(
-          url,
-          await analyze({ [file]: body.slice(0, 100000) })
-        )
-      } catch (error) {
-        this.error(`get ${path}: ${error.message || error}`)
-      }
-    }
-
     // DNS
     const records = {}
-    const resolve = (func, hostname) => {
+    const resolveDns = (func, hostname) => {
       return this.promiseTimeout(
         func(hostname).catch((error) => {
           if (error.code !== 'ENODATA') {
@@ -984,39 +980,74 @@ class Site {
           return []
         }),
         [],
-        'Timeout (dns)'
+        'Timeout (dns)',
+        Math.min(this.options.maxWait, 15000)
       )
     }
 
     const domain = url.hostname.replace(/^www\./, '')
 
-    ;[records.cname, records.ns, records.mx, records.txt, records.soa] =
-      await Promise.all([
-        resolve(dns.resolveCname, url.hostname),
-        resolve(dns.resolveNs, domain),
-        resolve(dns.resolveMx, domain),
-        resolve(dns.resolveTxt, domain),
-        resolve(dns.resolveSoa, domain),
-      ])
+    await Promise.all([
+      // Static files
+      ...Object.keys(files).map(async (file, index) => {
+        const path = files[file]
 
-    const dnsRecords = Object.keys(records).reduce((dns, type) => {
-      dns[type] = dns[type] || []
+        try {
+          await sleep(this.options.delay * index)
 
-      Array.prototype.push.apply(
-        dns[type],
-        Array.isArray(records[type])
-          ? records[type].map((value) => {
-              return typeof value === 'object'
-                ? Object.values(value).join(' ')
-                : value
-            })
-          : [Object.values(records[type]).join(' ')]
-      )
+          const body = await get(new URL(path, url.href), {
+            userAgent: this.options.userAgent,
+            timeout: Math.min(this.options.maxWait, 3000),
+          })
 
-      return dns
-    }, {})
+          this.log(`Probe ok (${path})`)
 
-    await this.onDetect(url, await analyze({ dns: dnsRecords }))
+          await this.onDetect(
+            url,
+            await analyze({ [file]: body.slice(0, 100000) })
+          )
+        } catch (error) {
+          this.error(`Probe failed (${path}): ${error.message || error}`)
+        }
+      }),
+      // DNS
+      // eslint-disable-next-line no-async-promise-executor
+      new Promise(async (resolve, reject) => {
+        ;[records.cname, records.ns, records.mx, records.txt, records.soa] =
+          await Promise.all([
+            resolveDns(dns.resolveCname, url.hostname),
+            resolveDns(dns.resolveNs, domain),
+            resolveDns(dns.resolveMx, domain),
+            resolveDns(dns.resolveTxt, domain),
+            resolveDns(dns.resolveSoa, domain),
+          ])
+
+        const dnsRecords = Object.keys(records).reduce((dns, type) => {
+          dns[type] = dns[type] || []
+
+          Array.prototype.push.apply(
+            dns[type],
+            Array.isArray(records[type])
+              ? records[type].map((value) => {
+                  return typeof value === 'object'
+                    ? Object.values(value).join(' ')
+                    : value
+                })
+              : [Object.values(records[type]).join(' ')]
+          )
+
+          return dns
+        }, {})
+
+        this.log(
+          `Probe DNS ok: (${Object.values(dnsRecords).flat().length} records)`
+        )
+
+        await this.onDetect(url, await analyze({ dns: dnsRecords }))
+
+        resolve()
+      }),
+    ])
   }
 
   async batch(links, depth, batch = 0) {
@@ -1108,8 +1139,6 @@ class Site {
         if (page) {
           try {
             await page.close()
-
-            this.log('Page closed')
           } catch (error) {
             // Continue
           }
