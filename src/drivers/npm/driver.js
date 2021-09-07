@@ -778,15 +778,6 @@ class Site {
         html = batches.join('\n')
       }
 
-      // Validate response
-      if (
-        url.protocol !== 'file:' &&
-        this.analyzedUrls[url.href] &&
-        !this.analyzedUrls[url.href].status
-      ) {
-        throw new Error('No response from server')
-      }
-
       this.cache[url.href] = {
         page,
         html,
