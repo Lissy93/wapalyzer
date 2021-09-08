@@ -488,10 +488,10 @@
     "icon": "vue-storefront.svg",
     "implies": "Vue.js",
     "meta": {
-      "generator": "^Vue Storefront\\ [0-9.]+?$;version=2"
+      "generator": "^Vue Storefront ([0-9.]+)?$\\;version:\\1"
     },
     "scripts": [
-      "(?:\\/([\\d.]+))?\\/vsf-layout;version=1"
+      "vsf-layout\\;version:1"
     ],
     "website": "https://www.vuestorefront.io/"
   },
