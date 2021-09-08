@@ -102,10 +102,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      // open(
-      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-      //   false
-      // )
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -170,6 +170,9 @@ const Driver = {
       return fetch(url, {
         method: 'POST',
         body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
     } catch (error) {
       throw new Error(error.message || error.toString())
@@ -859,7 +862,7 @@ const Driver = {
 
           if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
             urls[url] = urls[url] || {
-              applications: resolve(detections).reduce(
+              technologies: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
                   if (confidence === 100) {
                     technologies[name] = {
@@ -886,7 +889,10 @@ const Driver = {
       const count = Object.keys(urls).length
 
       if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/ping/v2/', urls)
+        await Driver.post('https://api.wappalyzer.com/ping/v2/', {
+          version: chrome.runtime.getManifest().version,
+          urls,
+        })
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
 
