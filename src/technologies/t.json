@@ -1010,6 +1010,19 @@
     "scripts": "consent\\.trustarc\\.com",
     "website": "http://trustarc.com"
   },
+  "Trustspot": {
+    "cats": [
+      90
+    ],
+    "description": "TrustSpot provides a solution to capture ratings & reviews, video testimonials, photos, social experiences, and product Q&A.",
+    "icon": "Trustspot.png",
+    "js": {
+      "trustspot_key": ""
+    },
+    "saas": true,
+    "scripts": "trustspot\\.io",
+    "website": "https://trustspot.io/"
+  },
   "TrustYou": {
     "cats": [
       5
@@ -1328,6 +1341,13 @@
       36
     ],
     "description": "theTradeDesk is an technology company that markets a software platform used by digital ad buyers to purchase data-driven digital advertising campaigns across various ad formats and devices.",
+    "dom": {
+      "iframe[src*='insight.adsrvr.org']": {
+        "attributes": {
+          "src": ""
+        }
+      }
+    },
     "icon": "theTradeDesk.svg",
     "js": {
       "TTDUniversalPixelApi": "",
