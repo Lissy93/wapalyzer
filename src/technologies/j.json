@@ -654,10 +654,10 @@
       31
     ],
     "description": "JSDelivr is a free public CDN for open-source projects. It can serve web files directly from the npm registry and GitHub repositories without any configuration.",
-    "dom": "link[href*=[cdn.jsdelivr.net']",
-    "xhr": "cdn\\.jsdelivr\\.net",
+    "dom": "link[href*='cdn.jsdelivr.net']",
     "icon": "jsdelivr-icon.svg",
     "scripts": "cdn\\.jsdelivr\\.net",
-    "website": "https://www.jsdelivr.com/"
+    "website": "https://www.jsdelivr.com/",
+    "xhr": "cdn\\.jsdelivr\\.net"
   }
 }
