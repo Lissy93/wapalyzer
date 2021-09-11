@@ -547,6 +547,26 @@
     "scripts": "js\\.chilipiper\\.com/marketing\\.js",
     "website": "https://www.chilipiper.com/"
   },
+  "Chinese Menu Online": {
+    "cats": [
+      51,
+      93
+    ],
+    "description": "Chinese Menu Online is an online food ordering service.",
+    "icon": "Chinese Menu Online.svg",
+    "dom": {
+      "li > a[href*='chinesemenuonline.com']": {
+        "attributes": {
+          "href": ""
+        }
+      }
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.chinesemenuonline.com"
+  },
   "Chitika": {
     "cats": [
       36
