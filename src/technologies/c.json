@@ -554,13 +554,7 @@
     ],
     "description": "Chinese Menu Online is an online food ordering service.",
     "icon": "Chinese Menu Online.png",
-    "dom": {
-      "li > a[href*='chinesemenuonline.com']": {
-        "attributes": {
-          "href": ""
-        }
-      }
-    },
+    "dom": "li > a[href*='chinesemenuonline.com']",
     "saas": true,
     "pricing": [
       "payg"
