@@ -528,6 +528,25 @@
     "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
     "website": "https://flickity.metafizzy.co/"
   },
+  "Flocktory": {
+    "cats": [
+      94,
+      84
+    ],
+    "description": "Flocktory is a social referral marketing platform that enables users to share personalised offers via social networks.",
+    "icon": "Flocktory.png",
+    "dom": "iframe[src*='.flocktory.com/']",
+    "js": {
+      "flocktory": "",
+      "flocktoryPurchase": ""
+    },
+    "scripts": "\\.flocktory\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.flocktory.com"
+  },
   "Flow": {
     "cats": [
       6
