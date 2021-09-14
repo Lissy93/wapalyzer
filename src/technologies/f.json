@@ -528,6 +528,25 @@
     "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
     "website": "https://flickity.metafizzy.co/"
   },
+  "Flocktory": {
+    "cats": [
+      94,
+      84
+    ],
+    "description": "Flocktory is a social referral marketing platform that enables users to share personalised offers via social networks.",
+    "icon": "Flocktory.png",
+    "dom": "iframe[src*='.flocktory.com/']",
+    "js": {
+      "flocktory": "",
+      "flocktoryPurchase": ""
+    },
+    "scripts": "\\.flocktory\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.flocktory.com"
+  },
   "Flow": {
     "cats": [
       6
@@ -894,6 +913,27 @@
       "cdn\\.zarget\\.com"
     ],
     "website": "https://www.freshworks.com/crm"
+  },
+  "Friendbuy": {
+    "cats": [
+      94
+    ],
+    "description": "Friendbuy is a cloud-based referral marketing solution designed to help ecommerce businesses of all sizes.",
+    "icon": "Friendbuy.svg",
+    "js": {
+      "friendbuyAPI.merchantId": "",
+      "friendbuy": ""
+    },
+    "scripts": [
+      "\\.cloudfront\\.net/js/friendbuy\\.min\\.js",
+      "static\\.fbot\\.me/friendbuy\\.js"
+    ],
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.friendbuy.com"
   },
   "Froala Editor": {
     "cats": [
