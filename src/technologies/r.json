@@ -164,6 +164,25 @@
     "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://dmitrybaranovskiy.github.io/raphael/"
   },
+  "RapidSec": {
+    "cats": [
+      16
+    ],
+    "description": "CSP and Security Headers Made Easy.",
+    "headers": {
+      "Content-Security-Policy": ".*(?:.*\\.rapidsec\\.net)?/g/r/csp.*",
+      "Content-Security-Policy-Report-Only": ".*(?:.*\\.rapidsec\\.net)?/g/r/csp.*",
+      "report-to": ".*(?:.*\\.rapidsec\\.net)?/g/r/csp.*"
+    },
+    "icon": "RapidSec.svg",
+    "pricing": [
+      "mid",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://rapidsec.com"
+  },
   "RapidSpike": {
     "cats": [
       13,
