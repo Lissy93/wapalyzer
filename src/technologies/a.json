@@ -282,6 +282,38 @@
     "oss": true,
     "website": "https://ackee.electerious.com"
   },
+  "Acquia Campaign Factory": {
+    "cats": [
+      32
+    ],
+    "description": "Acquia Campaign Factory is centralized marketing management system powered by Mautic.",
+    "icon": "acquia-campaign-factory.png",
+    "implies": [
+      "Mautic"
+    ],
+    "saas": true,
+    "scripts": [
+      "mautic\\.net",
+      "maestro\\.mautic\\.com"
+    ],
+    "website": "https://www.acquia.com/products/marketing-cloud/campaign-factory"
+  },
+  "Acquia Cloud IDE": {
+    "cats": [
+      47
+    ],
+    "description": "Acquia Cloud IDE is a browser-based source code editor and a Drupal development stack running on the Acquia Cloud Platform.",
+    "icon": "acquia-cloud-ide.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "https?:\\/\\/.+\\.web\\.ahdev\\.cloud"
+    ],
+    "url": "https:?\\/\\/.+\\.web\\.ahdev\\.cloud",
+    "website": "https://www.acquia.com/products/drupal-cloud/cloud-ide"
+  },
   "Acquia Cloud Platform": {
     "cats": [
       62
@@ -292,13 +324,119 @@
     },
     "icon": "acquia-cloud.png",
     "implies": [
-      "Drupal\\;confidence:95",
+      "Drupal",
       "Apache",
-      "Percona",
-      "Amazon EC2"
+      "Percona"
     ],
     "saas": true,
     "website": "https://www.acquia.com/"
+  },
+  "Acquia Cloud Site Factory": {
+    "cats": [
+      88
+    ],
+    "description": "Acquia Site Factory is a multisite platform for Drupal.",
+    "dom": [
+      "script[src*='sites/g/files']",
+      "img[src*='sites/g/files']",
+      "img[data-src*='sites/g/files']",
+      "link[href*='sites/g/files']"
+    ],
+    "icon": "acquia-site-factory.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "sites\\/g\\/files"
+    ],
+    "website": "https://www.acquia.com/products/drupal-cloud/site-factory"
+  },
+  "Acquia Content Hub": {
+    "cats": [
+      19
+    ],
+    "description": "Acquia Content Hub is a cloud-based, centralized content distribution and syndication service.",
+    "dom": [
+      "[data-lift-slot]"
+    ],
+    "headers": {
+      "content-security-policy": "content-hub\\.acquia\\.com"
+    },
+    "icon": "acquia-content-hub.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "content-hub\\.acquia\\.com"
+    ],
+    "url": "https?:\\/\\/.+\\.content-hub\\.acquia\\.com",
+    "website": "https://www.acquia.com/products/drupal-cloud/content-hub"
+  },
+  "Acquia Customer Data Platform": {
+    "cats": [
+      10
+    ],
+    "description": "Acquia Customer Data Platform (formerly AgilOne) is a customer data platform for Drupal.",
+    "dom": [
+      "[data-function*='Agilone']"
+    ],
+    "icon": "acquia-cdp.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "js": {
+      "agiloneObject": ""
+    },
+    "saas": true,
+    "scripts": [
+      "^https?:\\/\\/.+\\.agilone\\.com",
+      "^https?:\\/\\/scripts\\.agilone\\.com\\/latest\\/a1.js"
+    ],
+    "website": "https://www.acquia.com/products/marketing-cloud/customer-data-platform"
+  },
+  "Acquia Personalization": {
+    "cats": [
+      10,
+      76
+    ],
+    "description": "Acquia Personalization (formerly Acquia Lift) lets you track customers' behavior throughout your website.",
+    "dom": [
+      "[data-lift-slot]"
+    ],
+    "icon": "acquia-personalization.png",
+    "implies": [
+      "Acquia Cloud Platform\\;confidence:95"
+    ],
+    "js": {
+      "AcquiaLift": "",
+      "_tcaq": ""
+    },
+    "saas": true,
+    "scripts": [
+      "lift\\.acquia\\.com"
+    ],
+    "website": "https://www.acquia.com/products/marketing-cloud/personalization",
+    "xhr": "lift\\.acquia\\.com"
+  },
+  "Acquia Site Studio": {
+    "cats": [
+      51
+    ],
+    "description": "Site Studio (formerly Cohesion) is a low-code, Drupal add-on page builder.",
+    "dom": [
+      "div[class*='coh-component coh-component-instance']"
+    ],
+    "icon": "acquia-site-studio.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "sites/\\w*/files/cohesion"
+    ],
+    "website": "https://www.acquia.com/products/drupal-cloud/site-studio"
   },
   "Act-On": {
     "cats": [
