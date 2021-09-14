@@ -639,6 +639,24 @@
     "scripts": "ext-base\\.js",
     "website": "https://www.sencha.com"
   },
+  "Extole": {
+    "cats": [
+      94,
+      84
+    ],
+    "description": "Extole is an online marketing platform that enables brands and businesses to get new customers through loyalty and referral programs.",
+    "icon": "Extole.png",
+    "dom": "li > a[href*='.extole.com/'][target='_blank']",
+    "js": {
+      "extole.VERSION": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scripts": "\\.(?:extole|xtlo)\\.(?:com|net)/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.extole.com"
+  },
   "Ezoic": {
     "cats": [
       10,
