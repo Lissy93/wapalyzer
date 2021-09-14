@@ -817,12 +817,24 @@
     ],
     "website": "http://drupalcommerce.org"
   },
+  "Drupal Multisite": {
+    "cats": [
+      88
+    ],
+    "description": "Drupal Multisite enables separate, independent sites to be served from a single codebase.",
+    "icon": "Drupal.svg",
+    "implies": "Drupal",
+    "oss": true,
+    "scripts": [
+      "sites/(?!default).*/files"
+    ],
+    "website": "https://www.drupal.org/docs/multisite-drupal"
+  },
   "Duda": {
     "cats": [
       1
     ],
     "description": "Duda is a web design platform for companies that offer web design services.",
-    "html": "<div[^>]*id=\"P6iryBW0Wu\"",
     "icon": "duda.png",
     "js": {
       "SystemID": "^.*DIRECT.*$",

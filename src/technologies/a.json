@@ -282,6 +282,21 @@
     "oss": true,
     "website": "https://ackee.electerious.com"
   },
+  "Acquia Cloud IDE": {
+    "cats": [
+      47
+    ],
+    "description": "Acquia Cloud IDE is a browser-based source code editor and a Drupal development stack running on the Acquia Cloud Platform.",
+    "icon": "acquia-cloud-ide.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "web.ahdev.cloud"
+    ],
+    "website": "https://www.acquia.com/products/drupal-cloud/cloud-ide"
+  },
   "Acquia Cloud Platform": {
     "cats": [
       62
@@ -292,13 +307,89 @@
     },
     "icon": "acquia-cloud.png",
     "implies": [
-      "Drupal\\;confidence:95",
+      "Drupal",
       "Apache",
-      "Percona",
-      "Amazon EC2"
+      "Percona"
     ],
     "saas": true,
     "website": "https://www.acquia.com/"
+  },
+  "Acquia Cloud Site Factory": {
+    "cats": [
+      88
+    ],
+    "description": "Acquia Site Factory is a multisite platform for Drupal.",
+    "icon": "acquia-site-factory.png",
+    "implies": [
+      "Acquia Cloud Platform\\;confidence:95"
+    ],
+    "saas": true,
+    "scripts": [
+      "sites/g/files"
+    ],
+    "website": "https://www.acquia.com/products/drupal-cloud/site-factory"
+  },
+  "Acquia Content Hub": {
+    "cats": [
+      19
+    ],
+    "description": "Acquia Content Hub is a cloud-based, centralized content distribution and syndication service.",
+    "dom": [
+      "[data-lift-slot]"
+    ],
+    "headers": {
+      "content-security-policy": "content-hub.acquia.com"
+    },
+    "icon": "acquia-content-hub.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "content-hub.acquia.com"
+    ],
+    "website": "https://www.acquia.com/products/drupal-cloud/content-hub"
+  },
+  "Acquia Personalization": {
+    "cats": [
+      10,
+      76
+    ],
+    "description": "Acquia Personalization (formerly Acquia Lift) lets you track customers' behavior throughout your website.",
+    "dom": [
+      "[data-lift-slot]"
+    ],
+    "icon": "acquia-personalization.png",
+    "implies": [
+      "Acquia Cloud Platform\\;confidence:95"
+    ],
+    "js": {
+      "AcquiaLift": "",
+      "_tcaq": ""
+    },
+    "saas": true,
+    "scripts": [
+      "lift.acquia.com"
+    ],
+    "website": "https://www.acquia.com/products/marketing-cloud/personalization"
+  },
+  "Acquia Site Studio": {
+    "cats": [
+      51
+    ],
+    "description": "Site Studio (formerly Cohesion) is a low-code, Drupal add-on page builder.",
+    "dom": [
+      "div[class*='coh-component coh-component-instance']"
+    ],
+    "icon": "acquia-site-studio.png",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "scripts": [
+      "sites/\\w*/files/cohesion"
+    ],
+    "website": "https://www.acquia.com/products/drupal-cloud/site-studio"
   },
   "Act-On": {
     "cats": [
