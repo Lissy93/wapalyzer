@@ -1146,6 +1146,35 @@
     "icon": "Combeenation.png",
     "website": "https://www.combeenation.com"
   },
+  "Commanders Act TagCommander": {
+    "cats": [
+      42
+    ],
+    "description": "Commanders Act TagCommander is a European company providing a tag management product designed to handle website tags.",
+    "icon": "Commanders Act.svg",
+    "js": {
+      "tc_vars": ""
+    },
+    "scripts": "\\.tagcommander\\.com",
+    "saas": true,
+    "pricing":[
+      "poa"
+    ],
+    "website": "https://www.commandersact.com/en/solutions/tagcommander/"
+  },
+  "Commanders Act TrustCommander": {
+    "cats": [
+      67
+    ],
+    "description": "Commanders Act TrustCommander is a consent management platform (CMP) which allows you to comply with the general data protection regulation (GDPR) regulation in terms of collecting consent.",
+    "icon": "Commanders Act.svg",
+    "scripts": "\\.trustcommander\\.net/privacy/.+_v([\\d]+)_([\\d]+)\\.js\\;version:\\1.\\2",
+    "saas": true,
+    "pricing":[
+      "poa"
+    ],
+    "website": "https://www.commandersact.com/en/solutions/trustcommander/"
+  },
   "Commerce Server": {
     "cats": [
       6
