@@ -210,10 +210,18 @@
       68
     ],
     "description": "UsableNet is a technology for web accessibility and digital transformation, providing end-to-end services.",
-    "html": "<iframe[ˆ>]*\\.usablenet\\.com/pt/",
     "icon": "UsableNet.png",
+    "dom": "iframe[src*='.usablenet.com/pt/']",
+    "js": {
+      "enableUsableNetAssistive": ""
+    },
     "scripts": "\\.usablenet\\.com/pt/",
-    "website": "https://usablenet.com/"
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "website": "https://usablenet.com"
   },
   "Uscreen": {
     "cats": [
