@@ -1474,6 +1474,25 @@
     "url": "/mozard/!suite",
     "website": "http://mozard.nl"
   },
+  "MTCaptcha": {
+    "cats": [
+      16
+    ],
+    "description": "MTCaptcha is a captcha service that is GDPR and WCAG compliant, providing the confidence of privacy and accessibility.",
+    "icon": "MTCaptcha.png",
+    "js": {
+      "mtcaptchaConfig.sitekey": "",
+      "mtcaptcha.getVerifiedToken": ""
+    },
+    "scripts": "service(?:2)?\\.mtcaptcha\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.mtcaptcha.com"
+  },
   "Mura CMS": {
     "cats": [
       1,
