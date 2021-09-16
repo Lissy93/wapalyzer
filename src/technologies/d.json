@@ -826,7 +826,7 @@
     "implies": "Drupal",
     "oss": true,
     "scripts": [
-      "sites/(?!default).*/files"
+      "sites\\/(?!default|all).*\\/files"
     ],
     "website": "https://www.drupal.org/docs/multisite-drupal"
   },
