@@ -678,20 +678,50 @@
   },
   "PhotoShelter": {
     "cats": [
-      1
+      1,
+      6
     ],
-    "html": [
-      "<!--\\s+#+ Powered by the PhotoShelter Beam platform",
-      "<link[^>]+c\\.photoshelter\\.com"
-    ],
+    "description": "PhotoShelter is a cloud storage service that doubles as a website and ecommerce platform for photographers.",
     "icon": "PhotoShelter.png",
     "implies": [
       "PHP",
       "MySQL",
       "jQuery"
     ],
+    "dom": "link[href*='.c.photoshelter.com']",
+    "scripts": "\\.psecn\\.photoshelter\\.com/",
     "url": "photoshelter\\.com",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
     "website": "https://www.photoshelter.com"
+  },
+  "PhotoShelter for Brands": {
+    "cats": [
+      95
+    ],
+    "description": "PhotoShelter for Brands is a cloud-based media management system for companies and organizations.",
+    "icon": "PhotoShelter.png",
+    "excludes": "PhotoShelter",
+    "dom": {
+      "a[href*='.photoshelter.com/']": {
+        "attributes": {
+          "href": "^(?:(?!psecn).)*$"
+        }
+      },
+      "a[href*='brands.photoshelter.com/']": {
+        "attributes": {
+          "text": "^Powered by PhotoShelter for Brands$"
+        }
+      }
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://brands.photoshelter.com"
   },
   "Phusion Passenger": {
     "cats": [
