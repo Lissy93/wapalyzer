@@ -242,6 +242,23 @@
     "scripts": "acsbapp?\\.com/.*/acsb\\.js",
     "website": "https://accessibe.com"
   },
+  "Accessible360": {
+    "cats": [
+      68
+    ],
+    "description": "Accessible360 is a web accessibility company based in Edina, Minnesota.",
+    "icon": "Accessible360.png",
+    "dom": "a[href*='accessible360.com/'][target='_blank'], a[href*='accessible360.com/'] > img",
+    "scripts": [
+      "/npm/@accessible360/accessible-slick@([\\d\\.]+)/\\;version:\\1",
+      "/accessible360/accessible-slick/slick/slick\\.min\\.js\\?v=([\\d\\.]+)\\;version:\\1"
+    ],
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://accessible360.com"
+  },
   "Accessibly": {
     "cats": [
       76
