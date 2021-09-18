@@ -618,5 +618,15 @@
       "generator": "vibecommerce"
     },
     "website": "http://vibecommerce.com.br"
+  },
+ "vk.com": {
+    "cats": [
+      1
+    ],
+    "description": "vk.com is russian social network",
+    "html": "<img [^>]*src=\"[^\"]*vk\\.com/rtrg?p=VK-RTRG-*",
+    "icon": "vk.svg",
+    "scripts": "vk\\.com/js/api/openapi\\.js",
+    "website": "https://vk.com/"
   }
 }
