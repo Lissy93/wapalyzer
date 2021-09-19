@@ -618,5 +618,15 @@
       "generator": "vibecommerce"
     },
     "website": "http://vibecommerce.com.br"
+  },
+ "VK Pixel": {
+    "cats": [
+      10
+    ],
+    "description": "VK is a Russian online social media and social networking service.",
+    "dom": "img[src*='vk.com/rtrg?p=VK-RTRG-']",
+    "icon": "vk.svg",
+    "scripts": "vk\\.com/js/api/openapi\\.js",
+    "website": "https://vk.com/"
   }
 }
