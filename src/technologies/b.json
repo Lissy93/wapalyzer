@@ -135,6 +135,16 @@
     },
     "website": "https://tools.ietf.org/html/rfc7617"
   },
+  "basket.js": {
+    "cats": [
+      59
+    ],
+    "icon": "basket.js.png",
+    "js": {
+      "basket.isValidItem": ""
+    },
+    "website": "https://addyosmani.github.io/basket.js/"
+  },
   "Bazaarvoice": {
     "cats": [
       90
@@ -1224,6 +1234,16 @@
     "saas": true,
     "website": "https://bump.sh"
   },
+  "Bunny": {
+    "cats": [
+      31
+    ],
+    "headers": {
+      "Server": "^BunnyCDN"
+    },
+    "icon": "Bunny.png",
+    "website": "https://bunny.net"
+  },
   "Business Catalyst": {
     "cats": [
       1
@@ -1282,25 +1302,24 @@
     ],
     "website": "http://buysellads.com"
   },
-  "basket.js": {
+  "Bynder": {
     "cats": [
-      59
+      95
     ],
-    "icon": "basket.js.png",
+    "description": "Bynder is a cloud-based marketing platform where brands create, find, and use all their digital content.",
+    "icon": "Bynder.svg",
     "js": {
-      "basket.isValidItem": ""
+      "Bynder.cloudfront": "\\.cloudfront\\.net/frontend/([\\d\\.]+)/\\;version:\\1"
     },
-    "scripts": "basket.*\\.js\\;confidence:10",
-    "website": "https://addyosmani.github.io/basket.js/"
-  },
-  "Bunny": {
-    "cats": [
-      31
+    "cookies": {
+      "bynder": "^[\\dA-Z]+-[\\dA-Z]+-[\\dA-Z]+-[\\dA-Z]+$"
+    },
+    "saas": true,
+    "pricing": [
+      "payg",
+      "mid",
+      "recurring"
     ],
-    "headers": {
-      "Server": "^BunnyCDN"
-    },
-    "icon": "Bunny.png",
-    "website": "https://bunny.net"
+    "website": "https://www.bynder.com"
   }
 }
