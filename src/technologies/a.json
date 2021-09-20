@@ -1561,6 +1561,17 @@
     "saas": true,
     "website": "http://aws.amazon.com/cloudfront/"
   },
+  "Amazon Cognito": {
+    "cats": [
+      69
+    ],
+    "xhr": "cognito-idp\\..+\\.amazonaws\\.com",
+    "description": "Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps. Amazon Cognito supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.",
+    "pricing": ["payg"],
+    "icon": "aws.svg",
+    "implies": "Amazon Web Services",
+    "website": "https://aws.amazon.com/cognito/"
+  },
   "Amazon EC2": {
     "cats": [
       22
