@@ -909,22 +909,13 @@
       69
     ],
     "description": "Google Sign-In is a secure authentication system that reduces the burden of login for users, by enabling them to sign in with their Google account.",
-    "dom": {
-      "button": {
-        "text": "(Sign|Log) in with Google"
-      }
+    "dom": "iframe[src*='accounts.google.com/o/oauth2'], a[href*='accounts.google.com/o/oauth2']",
+    "meta": {
+      "google-signin-client_id": "",
+      "google-signin-scope": ""
     },
-    "html": [
-      "<meta[^>]*google-signin-client_id",
-      "<meta[^>]*google-signin-scope",
-      "<iframe[^>]*accounts\\.google\\.com/o/oauth2",
-      "<a[^>]*accounts\\.google\\.com/o/oauth2"
-    ],
     "icon": "Google.svg",
-    "scripts": [
-      "apis\\.google\\.com/js/platform\\.js",
-      "accounts\\.google\\.com/gsi/client"
-    ],
+    "scripts": "accounts\\.google\\.com/gsi/client",
     "website": "https://developers.google.com/identity/sign-in/web"
   },
   "Google Sites": {
