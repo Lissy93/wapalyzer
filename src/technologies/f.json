@@ -85,6 +85,10 @@
     ],
     "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
     "dom": "img[src*='facebook.com/tr']",
+    "scripts": [
+      "connect\\.facebook.\\w+/signals\/config/\\d+\\?v=([\\d\\.]+)\\;version:\\1",
+      "connect\\.facebook\\.\\w+/.+/fbevents\\.js"
+    ],
     "icon": "Facebook.svg",
     "js": {
       "_fbq": ""
