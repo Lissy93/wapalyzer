@@ -214,12 +214,12 @@
       95
     ],
     "description": "Canto is a digital asset management solution.",
-    "icon": "Canto.svg",
     "dom": "link[href*='.canto.com/'], a[href*='.canto.com/'], img[src*='.canto.com/']",
-    "saas": true,
+    "icon": "Canto.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.canto.com"
   },
   "Captch Me": {
@@ -380,13 +380,13 @@
       32
     ],
     "description": "ChannelAdvisor is a provider of cloud-based solutions to ecommerce companies.",
-    "icon": "ChannelAdvisor.svg",
     "dom": "link[href*='.channeladvisor.com']",
-    "scripts": "\\.channeladvisor\\.com/",
-    "saas": true,
-    "pricing":[
+    "icon": "ChannelAdvisor.svg",
+    "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "\\.channeladvisor\\.com/",
     "website": "https://www.channeladvisor.com"
   },
   "Chaport": {
@@ -581,12 +581,12 @@
       93
     ],
     "description": "Chinese Menu Online is an online food ordering service.",
-    "icon": "Chinese Menu Online.png",
     "dom": "li > a[href*='chinesemenuonline.com']",
-    "saas": true,
+    "icon": "Chinese Menu Online.png",
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://www.chinesemenuonline.com"
   },
   "Chitika": {
@@ -1183,11 +1183,11 @@
     "js": {
       "tc_vars": ""
     },
-    "scripts": "\\.tagcommander\\.com",
-    "saas": true,
-    "pricing":[
+    "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "\\.tagcommander\\.com",
     "website": "https://www.commandersact.com/en/solutions/tagcommander/"
   },
   "Commanders Act TrustCommander": {
@@ -1196,11 +1196,11 @@
     ],
     "description": "Commanders Act TrustCommander is a consent management platform (CMP) which allows you to comply with the general data protection regulation (GDPR) regulation in terms of collecting consent.",
     "icon": "Commanders Act.svg",
-    "scripts": "\\.trustcommander\\.net/privacy/.+_v([\\d]+)_([\\d]+)\\.js\\;version:\\1.\\2",
-    "saas": true,
-    "pricing":[
+    "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "\\.trustcommander\\.net/privacy/.+_v([\\d]+)_([\\d]+)\\.js\\;version:\\1.\\2",
     "website": "https://www.commandersact.com/en/solutions/trustcommander/"
   },
   "Commerce Server": {
@@ -1711,20 +1711,6 @@
     ],
     "website": "https://www.coveo.com/"
   },
-  "Covet.pics": {
-    "cats": [
-      5
-    ],
-    "description": "Covet.pics is a customizable Shopify app for Instagram and Lookbook shoppable galleries.",
-    "icon": "Covet.pics.svg",
-    "scripts": "\\.covet\\.pics/.+widget@([\\d\\.]+)\\;version:\\1",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://covet.pics"
-  },
   "CoverManager": {
     "cats": [
       5,
@@ -1734,6 +1720,20 @@
     "html": "<iframe[^>]*covermanager\\.com/reservation",
     "icon": "CoverManager.svg",
     "website": "https://www.covermanager.com"
+  },
+  "Covet.pics": {
+    "cats": [
+      5
+    ],
+    "description": "Covet.pics is a customizable Shopify app for Instagram and Lookbook shoppable galleries.",
+    "icon": "Covet.pics.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.covet\\.pics/.+widget@([\\d\\.]+)\\;version:\\1",
+    "website": "https://covet.pics"
   },
   "Cowboy": {
     "cats": [
@@ -1866,18 +1866,18 @@
     "implies": [
       "Shopify",
       "Cart Functionality"
-    ],    
+    ],
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
-    "saas": true,    
+    "saas": true,
     "scripts": [
       "load\\.csell\\.co"
     ],
     "website": "https://csell.io/"
-  },  
+  },
   "CrossBox": {
     "cats": [
       30

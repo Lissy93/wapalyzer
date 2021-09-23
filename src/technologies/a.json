@@ -247,15 +247,15 @@
       68
     ],
     "description": "Accessible360 is a web accessibility company based in Edina, Minnesota.",
-    "icon": "Accessible360.png",
     "dom": "a[href*='accessible360.com/'][target='_blank'], a[href*='accessible360.com/'] > img",
+    "icon": "Accessible360.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
     "scripts": [
       "/npm/@accessible360/accessible-slick@([\\d\\.]+)/\\;version:\\1",
       "/accessible360/accessible-slick/slick/slick\\.min\\.js\\?v=([\\d\\.]+)\\;version:\\1"
-    ],
-    "saas": true,
-    "pricing": [
-      "poa"
     ],
     "website": "https://accessible360.com"
   },
@@ -1404,13 +1404,13 @@
     "js": {
       "_atrk_opts.domain": ""
     },
-    "scripts": "\\.cloudfront\\.net/atrk\\.js",
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "\\.cloudfront\\.net/atrk\\.js",
     "website": "https://support.alexa.com/hc/en-us/sections/200063374"
   },
   "Algolia": {
@@ -1565,12 +1565,14 @@
     "cats": [
       69
     ],
-    "xhr": "cognito-idp\\..+\\.amazonaws\\.com",
     "description": "Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps. Amazon Cognito supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.",
-    "pricing": ["payg"],
     "icon": "aws.svg",
     "implies": "Amazon Web Services",
-    "website": "https://aws.amazon.com/cognito/"
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://aws.amazon.com/cognito/",
+    "xhr": "cognito-idp\\..+\\.amazonaws\\.com"
   },
   "Amazon EC2": {
     "cats": [
@@ -1710,12 +1712,12 @@
     "js": {
       "_mbsy.integrations": ""
     },
-    "scripts": "cdn\\.getambassador\\.com/",
-    "saas": true,
     "pricing": [
       "high",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "cdn\\.getambassador\\.com/",
     "website": "https://www.getambassador.com"
   },
   "Amber": {
@@ -2593,18 +2595,6 @@
     "icon": "Auth0.png",
     "scripts": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
-  },
-  "Automattic": {
-    "cats": [
-      62
-    ],
-    "description": "Automattic is a freemium blogging service and an open-source blogging software.",
-    "headers": {
-      "X-Hacker": "(?:automattic\\.com/jobs|wpvip\\.com/careers)"
-    },
-    "icon": "automattic.png",
-    "implies": "WordPress",
-    "website": "https://automattic.com/"
   },
   "Autopilot": {
     "cats": [
