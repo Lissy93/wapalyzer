@@ -1,24 +1,4 @@
 {
-  "SaaSquatch": {
-    "cats": [
-      94,
-      84
-    ],
-    "description": "SaaSquatch is a cloud-based loyalty, referral and rewards marketing platform.",
-    "icon": "SaaSquatch.svg",
-    "js": {
-      "SAASQUATCH_TENANT_ALIAS": "",
-      "squatch.CtaWidget": "",
-      "squatchQuery": ""
-    },
-    "scripts": "(?:\\.cloudfront\\.net/assets/javascripts/(?:v2/)?|/sas)squatch\\.min\\.js",
-    "saas": true,
-    "pricing": [
-      "high",
-      "recurring"
-    ],
-    "website": "https://www.saasquatch.com"
-  },
   "SAP": {
     "cats": [
       53
@@ -249,6 +229,26 @@
     "scripts": "swfobject.*\\.js",
     "website": "https://github.com/swfobject/swfobject"
   },
+  "SaaSquatch": {
+    "cats": [
+      94,
+      84
+    ],
+    "description": "SaaSquatch is a cloud-based loyalty, referral and rewards marketing platform.",
+    "icon": "SaaSquatch.svg",
+    "js": {
+      "SAASQUATCH_TENANT_ALIAS": "",
+      "squatch.CtaWidget": "",
+      "squatchQuery": ""
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "(?:\\.cloudfront\\.net/assets/javascripts/(?:v2/)?|/sas)squatch\\.min\\.js",
+    "website": "https://www.saasquatch.com"
+  },
   "Saber": {
     "cats": [
       57
@@ -333,15 +333,15 @@
     ],
     "description": "SalesFire is a SaaS company specialising in conversion rate optimisation, intelligent personalisation and on-site search solutions.",
     "icon": "SalesFire.svg",
-    "js":{
+    "js": {
       "loadSalesfire": ""
     },
-    "scripts": "cdn\\.salesfire\\.co\\.uk/",
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "cdn\\.salesfire\\.co\\.uk/",
     "website": "https://www.salesfire.co.uk"
   },
   "Salesfloor": {
@@ -860,7 +860,7 @@
     ],
     "saas": true,
     "website": "https://selz.com/"
-  },  
+  },
   "Semantic UI": {
     "cats": [
       66
@@ -1369,8 +1369,8 @@
       1
     ],
     "description": "Shopistry is a data-driven, headless customer management system.",
-    "icon": "Shopistry.png",
     "dom": "img[src*='cdn.shopistrystage.com/'],link[imagesrcset*='cdn.shopistrystage.com/']",
+    "icon": "Shopistry.png",
     "pricing": [
       "mid",
       "recurring"
@@ -1964,12 +1964,12 @@
       93
     ],
     "description": "Slice is an online food ordering platform for independent pizzerias.",
-    "icon": "Slice.svg",
     "dom": "a[href*='slicelife.com/restaurants/']",
-    "saas": true,
+    "icon": "Slice.svg",
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://slicelife.com/owners"
   },
   "Slick": {
@@ -2662,12 +2662,12 @@
     "js": {
       "Spothopper": ""
     },
-    "scripts": "static\\.spotapps\\.co/",
-    "saas":true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "static\\.spotapps\\.co/",
     "website": "https://www.spothopperapp.com"
   },
   "SpotX": {
@@ -2734,11 +2734,11 @@
     "js": {
       "webpackJsonpteespring-custom-storefront": ""
     },
-    "scripts": "\\.creator-spring\\.com/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
+    "scripts": "\\.creator-spring\\.com/",
     "website": "https://www.spri.ng"
   },
   "Sqreen": {
