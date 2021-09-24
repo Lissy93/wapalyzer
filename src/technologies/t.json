@@ -817,7 +817,9 @@
     "icon": "TomTom.svg",
     "xhr": "api\\.tomtom\\.com",
     "scripts": "api\\.tomtom\\.com",
-    "js": "tomtom.Map",
+    "js": {
+      "tomtom.Map": ""
+    },
     "saas": true,
     "website": "https://www.tomtom.com"
   },
