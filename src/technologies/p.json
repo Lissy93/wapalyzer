@@ -394,6 +394,24 @@
     "website": "https://paypal.com",
     "xhr": "\\.paypal\\.com"
   },
+  "PayPal Marketing Solutions": {
+    "cats": [
+      10,
+      32
+    ],
+    "description": "PayPal Marketing Solutions enables merchants to see shopper insights and provide custom rewards for buyers with PayPal accounts.",
+    "icon": "PayPal.svg",
+    "scripts": [
+      "\\.paypalobjects\\.com/muse/",
+      "\\.paypal\\.com/tagmanager/pptm\\.js"
+    ],
+    "implies": "PayPal",
+    "saas": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://developer.paypal.com/docs/marketing-solutions"
+  },
   "Payflex": {
     "cats": [
       41,
