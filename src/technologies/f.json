@@ -68,6 +68,25 @@
     "scripts": "//connect\\.facebook\\.([a-z]+)/[^/]*/[a-z]*\\.js",
     "website": "http://facebook.com"
   },
+  "Facebook Chat Plugin": {
+    "cats": [
+      52
+    ],
+    "description": "Facebook Chat Plugin is a website plugin that businesses with a Facebook Page can install on their website.",
+    "icon": "Facebook.svg",
+    "dom": {
+      "iframe[src*=.facebook.com/']": {
+        "attributes": {
+          "src": "\\.facebook\\.com/v([\\d\\.]+)/plugins/customerchat\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "facebookChatSettings": ""
+    },
+    "scripts": "connect\\.facebook\\.net/.+\\.customerchat\\.js",
+    "website": "https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/"
+  },
   "Facebook Login": {
     "cats": [
       69
@@ -85,6 +104,10 @@
     ],
     "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
     "dom": "img[src*='facebook.com/tr']",
+    "scripts": [
+      "connect\\.facebook.\\w+/signals\/config/\\d+\\?v=([\\d\\.]+)\\;version:\\1",
+      "connect\\.facebook\\.\\w+/.+/fbevents\\.js"
+    ],
     "icon": "Facebook.svg",
     "js": {
       "_fbq": ""
