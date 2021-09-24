@@ -127,12 +127,12 @@
       "Kapchat": "",
       "kap_chat_js": ""
     },
-    "scripts": "\\.kapturecrm\\.com/.+\\?ver=([\\d\\.]+)\\;version:\\1",
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "\\.kapturecrm\\.com/.+\\?ver=([\\d\\.]+)\\;version:\\1",
     "website": "https://www.kapturecrm.com"
   },
   "Karma": {
@@ -343,6 +343,24 @@
     "icon": "kinsta.svg",
     "implies": "WordPress",
     "website": "https://kinsta.com"
+  },
+  "Kitcart": {
+    "cats": [
+      6
+    ],
+    "description": "KitCart is a cloud-based solution that helps businesses build ecommerce stores, manage inventory, and more.",
+    "icon": "Kitcart.png",
+    "implies": [
+      "Laravel",
+      "PHP"
+    ],
+    "dom": "a[href*='kitcart.net'][target='_blank'], form[action*='kitcart.net/']",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://kitcart.net"
   },
   "Kiwi Sizing": {
     "cats": [

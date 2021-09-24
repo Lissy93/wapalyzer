@@ -298,6 +298,23 @@
     "scripts": "checkout\\.razorpay\\.com",
     "website": "https://razorpay.com/"
   },
+  "Re:amaze": {
+    "cats": [
+      52
+    ],
+    "description": "Re:amaze is a multi-brand customer service, live chat, and help desk solution.",
+    "icon": "Re-amaze.png",
+    "js": {
+      "reamaze.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.reamaze\\.com/",
+    "website": "https://www.reamaze.com"
+  },
   "ReDoc": {
     "cats": [
       4
@@ -364,23 +381,6 @@
       "/react-router(@|/)([\\d.]+)(?:/[a-z]+)?/react-router(?:.min)?\\.js\\;version:\\2"
     ],
     "website": "https://reactrouter.com/"
-  },
-  "Re:amaze": {
-    "cats": [
-      52
-    ],
-    "description": "Re:amaze is a multi-brand customer service, live chat, and help desk solution.",
-    "icon": "Re:amaze.png",
-    "js": {
-      "reamaze.version": "^([\\d\\.]+)$\\;version:\\1"
-    },
-    "scripts": "\\.reamaze\\.com/",
-    "saas": true,
-    "pricing": [
-      "payg",
-      "recurring"
-    ],
-    "website": "https://www.reamaze.com"
   },
   "RebelMouse": {
     "cats": [
@@ -606,14 +606,14 @@
       84
     ],
     "description": "ReferralCandy is a marketing platform that gets shoppers to refer their friends.",
-    "icon": "ReferralCandy.svg",
     "dom": "iframe[src*='.referralcandy.com/'],li > a[href*='.referralcandy.com/'],div > a[href*='.referralcandy.com/'] ",
-    "scripts": "\\.referralcandy\\.com/",
-    "saas": true,
+    "icon": "ReferralCandy.svg",
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "\\.referralcandy\\.com/",
     "website": "https://www.referralcandy.com"
   },
   "Refersion": {

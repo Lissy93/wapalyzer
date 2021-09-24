@@ -311,6 +311,22 @@
     "icon": "Detectify.svg",
     "website": "https://detectify.com/"
   },
+  "Dianomi": {
+    "cats": [
+      36
+    ],
+    "description": "Dianomi is an advertiser campaign management software for financial services, premium lifestyle, technology and corporate sectors.",
+    "icon": "Dianomi.svg",
+    "dom": "iframe[src*='.dianomi.com/']",
+    "scripts": "\\.dianomi\\.com/",
+    "saas" :true,
+    "pricing": [
+      "high",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.dianomi.com"
+  },
   "Didomi": {
     "cats": [
       67
@@ -486,14 +502,14 @@
       91
     ],
     "description": "Dividebuy provides retailer financing solutions.",
-    "dom": "div[class*='dividebuy-softcredit']",    
+    "dom": "div[class*='dividebuy-softcredit']",
     "icon": "DivideBuy.png",
     "js": {
       "display_dividebuy_modal": ""
     },
     "saas": true,
     "website": "https://dividebuy.co.uk/"
-  }, 
+  },
   "Divido": {
     "cats": [
       41,

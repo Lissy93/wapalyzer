@@ -337,18 +337,6 @@
     "scripts": "app\\.paybright\\.com",
     "website": "https://paybright.com"
   },
-  "Payflex": {
-    "cats": [
-      41,
-      91
-    ],
-    "description": "Payflex offers an online payment gateway solution to South African merchants that allows shoppers to pay over 6 weeks, interest-free.",
-    "dom": "[aria-labelledby='pi-payflex']",
-    "icon": "Payflex.png",
-    "saas": true,
-    "scripts": "partpayassets\\.blob\\.core\\.windows\\.net",
-    "website": "https://payflex.co.za/"
-  },
   "PayFast": {
     "cats": [
       41
@@ -357,7 +345,7 @@
     "dom": "[aria-labelledby='pi-payfast_instant_eft']",
     "icon": "Payfast.svg",
     "website": "https://www.payfast.co.za/"
-  },  
+  },
   "PayKickStart": {
     "cats": [
       5,
@@ -383,7 +371,7 @@
       "button": {
         "text": "PayPal"
       },
-      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout']": {
+      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout'], [aria-labelledby='pi-paypal']": {
         "exists": ""
       }
     },
@@ -423,6 +411,18 @@
       "freemium"
     ],
     "website": "https://developer.paypal.com/docs/marketing-solutions"
+  },
+  "Payflex": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Payflex offers an online payment gateway solution to South African merchants that allows shoppers to pay over 6 weeks, interest-free.",
+    "dom": "[aria-labelledby='pi-payflex']",
+    "icon": "Payflex.png",
+    "saas": true,
+    "scripts": "partpayassets\\.blob\\.core\\.windows\\.net",
+    "website": "https://payflex.co.za/"
   },
   "Payl8r": {
     "cats": [
@@ -517,11 +517,11 @@
       "Pepperjam": "",
       "PepperjamTracking": ""
     },
-    "scripts": "\\.pepperjam\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "\\.pepperjam\\.com/",
     "website": "https://www.pepperjam.com"
   },
   "Percona": {
@@ -700,20 +700,20 @@
       6
     ],
     "description": "PhotoShelter is a cloud storage service that doubles as a website and ecommerce platform for photographers.",
+    "dom": "link[href*='.c.photoshelter.com']",
     "icon": "PhotoShelter.png",
     "implies": [
       "PHP",
       "MySQL",
       "jQuery"
     ],
-    "dom": "link[href*='.c.photoshelter.com']",
-    "scripts": "\\.psecn\\.photoshelter\\.com/",
-    "url": "photoshelter\\.com",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "\\.psecn\\.photoshelter\\.com/",
+    "url": "photoshelter\\.com",
     "website": "https://www.photoshelter.com"
   },
   "PhotoShelter for Brands": {
@@ -721,8 +721,6 @@
       95
     ],
     "description": "PhotoShelter for Brands is a cloud-based media management system for companies and organizations.",
-    "icon": "PhotoShelter.png",
-    "excludes": "PhotoShelter",
     "dom": {
       "a[href*='.photoshelter.com/']": {
         "attributes": {
@@ -735,10 +733,12 @@
         }
       }
     },
-    "saas": true,
+    "excludes": "PhotoShelter",
+    "icon": "PhotoShelter.png",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://brands.photoshelter.com"
   },
   "Phusion Passenger": {
@@ -1166,13 +1166,13 @@
     "cats": [
       68
     ],
-    "description": "Pojo.me provides a Accessibility overlay plug-in for any WordPress Theme or Page Builder.",   
+    "description": "Pojo.me provides a Accessibility overlay plug-in for any WordPress Theme or Page Builder.",
     "icon": "Pojo.me.png",
     "js": {
       "PojoA11yOptions": ""
     },
     "website": "https://pojo.me/plugins/accessibility/"
-  },  
+  },
   "Polyfill": {
     "cats": [
       59
@@ -1370,6 +1370,20 @@
     },
     "scripts": "prefixfree\\.js",
     "website": "https://leaverou.github.io/prefixfree/"
+  },
+  "Pressable": {
+    "cats": [
+      62
+    ],
+    "description": "Pressable is a managed hoting platform for WordPress.",
+    "headers": {
+      "host-header": "^Pressable"
+    },
+    "icon": "pressable.svg",
+    "implies": [
+      "WordPress"
+    ],
+    "website": "https://pressable.com"
   },
   "PrestaShop": {
     "cats": [
@@ -1635,6 +1649,22 @@
     "scripts": "https?://[^/]*\\.pubmatic\\.com",
     "website": "http://www.pubmatic.com/",
     "xhr": "\\.pubmatic\\.com"
+  },
+  "PubGuru": {
+    "cats": [
+      36
+    ],
+    "description": "PubGuru is a header wrapper and ad ops platform.",
+    "icon": "PubGuru.png",
+    "js": {
+      "pg.version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:25"
+    },
+    "scripts": "cdn\\.pubguru\\.com/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://pubguru.com"
   },
   "Public CMS": {
     "cats": [
