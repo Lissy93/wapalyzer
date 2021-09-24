@@ -333,21 +333,6 @@
     },
     "website": "http://get-simple.info"
   },
-  "Getsitecontrol": {
-    "cats": [
-      5,
-      73
-    ],
-    "description": "Getsitecontrol is a form and popup builder.",
-    "icon": "Getsitecontrol.svg",
-    "scripts": "\\.getsitecontrol\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://getsitecontrol.com"
-  },
   "GetSocial": {
     "cats": [
       69,
@@ -366,6 +351,32 @@
     "scripts": "api\\.at\\.getsocial\\.io",
     "website": "https://getsocial.io"
   },
+  "GetYourGuide": {
+    "cats": [
+      72
+    ],
+    "description": "GetYourGuide is a Berlin-based online travel agency and online marketplace for tour guides and excursions.",
+    "icon": "GetYourGuide.svg",
+    "dom": {
+      "img[src*='cdn.getyourguide.com/']": {
+        "src": ""
+      },
+      "link[href*='cdn.getyourguide.com/']": {
+        "src": ""
+      },
+      "a[href*='.getyourguide.']": {
+        "attributes": {
+          "href": "\\.getyourguide\\.\\w+/\\?partner_id="
+        }
+      }
+    },
+    "scripts": "\\.getyourguide\\.com/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://partner.getyourguide.com"
+  },
   "Getintent": {
     "cats": [
       36
@@ -378,6 +389,21 @@
     "saas": true,
     "website": "https://getintent.com",
     "xhr": "\\.adhigh\\.net"
+  },
+  "Getsitecontrol": {
+    "cats": [
+      5,
+      73
+    ],
+    "description": "Getsitecontrol is a form and popup builder.",
+    "icon": "Getsitecontrol.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.getsitecontrol\\.com/",
+    "website": "https://getsitecontrol.com"
   },
   "Ghost": {
     "cats": [
@@ -909,22 +935,13 @@
       69
     ],
     "description": "Google Sign-In is a secure authentication system that reduces the burden of login for users, by enabling them to sign in with their Google account.",
-    "dom": {
-      "button": {
-        "text": "(Sign|Log) in with Google"
-      }
+    "dom": "iframe[src*='accounts.google.com/o/oauth2'], a[href*='accounts.google.com/o/oauth2']",
+    "meta": {
+      "google-signin-client_id": "",
+      "google-signin-scope": ""
     },
-    "html": [
-      "<meta[^>]*google-signin-client_id",
-      "<meta[^>]*google-signin-scope",
-      "<iframe[^>]*accounts\\.google\\.com/o/oauth2",
-      "<a[^>]*accounts\\.google\\.com/o/oauth2"
-    ],
     "icon": "Google.svg",
-    "scripts": [
-      "apis\\.google\\.com/js/platform\\.js",
-      "accounts\\.google\\.com/gsi/client"
-    ],
+    "scripts": "accounts\\.google\\.com/gsi/client",
     "website": "https://developers.google.com/identity/sign-in/web"
   },
   "Google Sites": {

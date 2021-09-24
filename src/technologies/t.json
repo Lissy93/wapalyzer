@@ -225,10 +225,10 @@
     "js": {
       "talkable.config.version": "([\\d\\.]+)\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.talkable.com"
   },
   "Tamago": {
@@ -809,6 +809,20 @@
     },
     "website": "http://tomatocart.com"
   },
+  "TomTom Maps": {
+    "cats": [
+      35
+    ],
+    "description": "TomTom Maps is a web mapping service.",
+    "icon": "TomTom.svg",
+    "xhr": "api\\.tomtom\\.com",
+    "scripts": "api\\.tomtom\\.com",
+    "js": {
+      "tomtom.Map": ""
+    },
+    "saas": true,
+    "website": "https://www.tomtom.com"
+  },
   "TornadoServer": {
     "cats": [
       22
@@ -1022,19 +1036,6 @@
     "scripts": "consent\\.trustarc\\.com",
     "website": "http://trustarc.com"
   },
-  "Trustspot": {
-    "cats": [
-      90
-    ],
-    "description": "TrustSpot provides a solution to capture ratings & reviews, video testimonials, photos, social experiences, and product Q&A.",
-    "icon": "Trustspot.png",
-    "js": {
-      "trustspot_key": ""
-    },
-    "saas": true,
-    "scripts": "trustspot\\.io",
-    "website": "https://trustspot.io/"
-  },
   "TrustYou": {
     "cats": [
       5
@@ -1057,12 +1058,12 @@
     ],
     "description": "Trusted Shops is a company that acts as a 3'rd party representing the common interests of both consumers and retailers.",
     "icon": "Trusted Shops.svg",
-    "scripts": "widgets\\.trustedshops\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "widgets\\.trustedshops\\.com/",
     "website": "https://www.trustedshops.co.uk"
   },
   "Trustpilot": {
@@ -1082,6 +1083,19 @@
     "saas": true,
     "scripts": "\\.trustpilot\\.com",
     "website": "https://business.trustpilot.com"
+  },
+  "Trustspot": {
+    "cats": [
+      90
+    ],
+    "description": "TrustSpot provides a solution to capture ratings & reviews, video testimonials, photos, social experiences, and product Q&A.",
+    "icon": "Trustspot.png",
+    "js": {
+      "trustspot_key": ""
+    },
+    "saas": true,
+    "scripts": "trustspot\\.io",
+    "website": "https://trustspot.io/"
   },
   "Tumblr": {
     "cats": [

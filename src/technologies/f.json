@@ -68,6 +68,25 @@
     "scripts": "//connect\\.facebook\\.([a-z]+)/[^/]*/[a-z]*\\.js",
     "website": "http://facebook.com"
   },
+  "Facebook Chat Plugin": {
+    "cats": [
+      52
+    ],
+    "description": "Facebook Chat Plugin is a website plugin that businesses with a Facebook Page can install on their website.",
+    "icon": "Facebook.svg",
+    "dom": {
+      "iframe[src*=.facebook.com/']": {
+        "attributes": {
+          "src": "\\.facebook\\.com/v([\\d\\.]+)/plugins/customerchat\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "facebookChatSettings": ""
+    },
+    "scripts": "connect\\.facebook\\.net/.+\\.customerchat\\.js",
+    "website": "https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/"
+  },
   "Facebook Login": {
     "cats": [
       69
@@ -85,6 +104,10 @@
     ],
     "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
     "dom": "img[src*='facebook.com/tr']",
+    "scripts": [
+      "connect\\.facebook.\\w+/signals\/config/\\d+\\?v=([\\d\\.]+)\\;version:\\1",
+      "connect\\.facebook\\.\\w+/.+/fbevents\\.js"
+    ],
     "icon": "Facebook.svg",
     "js": {
       "_fbq": ""
@@ -336,6 +359,20 @@
     "scripts": "@findify/bundle@([\\d.]+)/dist/.+\\.js\\;version:\\1",
     "website": "https://www.findify.io"
   },
+  "Fing": {
+    "cats": [
+      62
+    ],
+    "description": "Fing is a cloud service to deploy and manage your applications without being worried about your infrastructure and environment.",
+    "headers": {
+      "server": "^Fing"
+    },
+    "icon": "Fing.svg",
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://fing.ir"
+  },
   "FingerprintJS": {
     "cats": [
       59,
@@ -534,17 +571,17 @@
       84
     ],
     "description": "Flocktory is a social referral marketing platform that enables users to share personalised offers via social networks.",
-    "icon": "Flocktory.png",
     "dom": "iframe[src*='.flocktory.com/']",
+    "icon": "Flocktory.png",
     "js": {
       "flocktory": "",
       "flocktoryPurchase": ""
     },
-    "scripts": "\\.flocktory\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "\\.flocktory\\.com/",
     "website": "https://www.flocktory.com"
   },
   "Flow": {
@@ -921,17 +958,17 @@
     "description": "Friendbuy is a cloud-based referral marketing solution designed to help ecommerce businesses of all sizes.",
     "icon": "Friendbuy.svg",
     "js": {
-      "friendbuyAPI.merchantId": "",
-      "friendbuy": ""
+      "friendbuy": "",
+      "friendbuyAPI.merchantId": ""
     },
-    "scripts": [
-      "\\.cloudfront\\.net/js/friendbuy\\.min\\.js",
-      "static\\.fbot\\.me/friendbuy\\.js"
-    ],
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
+    ],
+    "saas": true,
+    "scripts": [
+      "\\.cloudfront\\.net/js/friendbuy\\.min\\.js",
+      "static\\.fbot\\.me/friendbuy\\.js"
     ],
     "website": "https://www.friendbuy.com"
   },

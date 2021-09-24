@@ -135,16 +135,6 @@
     },
     "website": "https://tools.ietf.org/html/rfc7617"
   },
-  "basket.js": {
-    "cats": [
-      59
-    ],
-    "icon": "basket.js.png",
-    "js": {
-      "basket.isValidItem": ""
-    },
-    "website": "https://addyosmani.github.io/basket.js/"
-  },
   "Bazaarvoice": {
     "cats": [
       90
@@ -181,6 +171,25 @@
     "saas": true,
     "scripts": "cdn\\.trybeans\\.com",
     "website": "https://www.trybeans.com/"
+  },
+  "Beeketing": {
+    "cats": [
+      32
+    ],
+    "description": "Beeketing is a suite of marketing apps for ecommerce shop owners.",
+    "icon": "Beeketing.svg",
+    "js": {
+      "beeketingAnalyticsParams": "",
+      "beeketingSDKLoaded": ""
+    },
+    "scripts": "sdk\\.beeketing\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://beeketing.com"
   },
   "Bentobox": {
     "cats": [
@@ -223,11 +232,11 @@
     ],
     "description": "BeyondMenu is an online food ordering service.",
     "icon": "BeyondMenu.png",
-    "scripts": "static\\.beyondmenu\\.com/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scripts": "static\\.beyondmenu\\.com/",
     "website": "https://www.beyondmenu.com/contactus.aspx"
   },
   "Big Cartel": {
@@ -939,11 +948,11 @@
     "js": {
       "Brandfolder.account": ""
     },
-    "scripts": "cdn\\.brandfolder\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "cdn\\.brandfolder\\.com/",
     "website": "https://brandfolder.com"
   },
   "Braze": {
@@ -1269,23 +1278,6 @@
     "scripts": "CatalystScripts",
     "website": "http://businesscatalyst.com"
   },
-  "Buyapowa": {
-    "cats": [
-      94
-    ],
-    "description": "Buyapowa is a scalable referral marketing and advocacy platform designed for all industries.",
-    "icon": "Buyapowa.svg",
-    "js": {
-      "Buyapowa.CanaryCheck": ""
-    },
-    "scripts": "cdn\\.co-buying\\.com/",
-    "saas": true,
-    "pricing": [
-      "poa",
-      "recurring"
-    ],
-    "website": "https://www.buyapowa.com"
-  },
   "Buy me a coffee": {
     "cats": [
       5,
@@ -1318,24 +1310,51 @@
     ],
     "website": "http://buysellads.com"
   },
+  "Buyapowa": {
+    "cats": [
+      94
+    ],
+    "description": "Buyapowa is a scalable referral marketing and advocacy platform designed for all industries.",
+    "icon": "Buyapowa.svg",
+    "js": {
+      "Buyapowa.CanaryCheck": ""
+    },
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.co-buying\\.com/",
+    "website": "https://www.buyapowa.com"
+  },
   "Bynder": {
     "cats": [
       95
     ],
+    "cookies": {
+      "bynder": "^[\\dA-Z]+-[\\dA-Z]+-[\\dA-Z]+-[\\dA-Z]+$"
+    },
     "description": "Bynder is a cloud-based marketing platform where brands create, find, and use all their digital content.",
     "icon": "Bynder.svg",
     "js": {
       "Bynder.cloudfront": "\\.cloudfront\\.net/frontend/([\\d\\.]+)/\\;version:\\1"
     },
-    "cookies": {
-      "bynder": "^[\\dA-Z]+-[\\dA-Z]+-[\\dA-Z]+-[\\dA-Z]+$"
-    },
-    "saas": true,
     "pricing": [
       "payg",
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.bynder.com"
+  },
+  "basket.js": {
+    "cats": [
+      59
+    ],
+    "icon": "basket.js.png",
+    "js": {
+      "basket.isValidItem": ""
+    },
+    "website": "https://addyosmani.github.io/basket.js/"
   }
 }

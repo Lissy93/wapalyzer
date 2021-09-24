@@ -117,6 +117,25 @@
     "scripts": "ocnk-min\\.js",
     "website": "https://www.ocnk.com"
   },
+  "Octane AI": {
+    "cats": [
+      5,
+      52
+    ],
+    "description": "Octane AI provides an all-in-one platform for engaging quizzes, data collection, and personalised Facebook Messenger and SMS automation.",
+    "icon": "Octane AI.svg",
+    "js": {
+      "oct8neApi": "",
+      "OctaneConfig": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.(?:octaneai|oct8ne)\\.com/",
+    "website": "https://www.octaneai.com"
+  },
   "October CMS": {
     "cats": [
       1
@@ -466,6 +485,8 @@
     "headers": {
       "Server": "^OpenBSD httpd"
     },
+    "excludes": "Apache",
+    "oss": true,
     "website": "https://man.openbsd.org/httpd.8"
   },
   "OpenCart": {
@@ -813,13 +834,13 @@
       "Orankl": "",
       "oranklInit": ""
     },
-    "scripts": "www\\.orankl\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "www\\.orankl\\.com/",
     "website": "https://www.orankl.com"
   },
   "Orchard CMS": {
