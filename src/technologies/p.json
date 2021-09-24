@@ -371,7 +371,7 @@
       "button": {
         "text": "PayPal"
       },
-      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout']": {
+      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout'], [aria-labelledby='pi-paypal']": {
         "exists": ""
       }
     },
