@@ -1358,7 +1358,7 @@
     "scripts": "use\\.typekit\\.com",
     "website": "http://typekit.com"
   },
-  "tailwindcss": {
+  "Tailwind CSS": {
     "cats": [
       66
     ],
@@ -1366,13 +1366,10 @@
     "dom": {
       "link[rel='stylesheet'][href*='tailwind']": {
         "attributes": {
-          "href": ""
+          "href": "tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
         }
       }
     },
-    "html": [
-      "<link[^>]+?href=\"[^\"]+tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
-    ],
     "icon": "tailwindcss.svg",
     "website": "https://tailwindcss.com/"
   },
