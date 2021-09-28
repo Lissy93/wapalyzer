@@ -545,7 +545,7 @@
     },
     "scripts": [
       "jquery",
-      "/jquery(-(\\d+\\.\\d+\\.\\d+))[/.-]\\;version:\\1",
+      "/jquery(?:-(\\d+\\.\\d+\\.\\d+))[/.-]\\;version:\\1",
       "/(\\d+\\.\\d+\\.\\d+)/jquery[/.-]\\;version:\\1"
     ],
     "website": "https://jquery.com"
