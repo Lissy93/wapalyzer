@@ -363,6 +363,27 @@
     "icon": "Zope.png",
     "website": "http://zope.org"
   },
+  "Zozo": {
+    "cats": [
+      6
+    ],
+    "description": "Zozo is a multi-channel ecommerce services provider from Vietnam.",
+    "excludes": "OpenCart",
+    "html": [
+      "<script [^>]*src=\"catalog\/view\/theme\/[^\"]+\/javascript\/common\\.js",
+      "Thiết kế bởi <a[^>]+>Zozo</a>"
+    ],
+    "icon": "Zozo.png",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "meta": {
+      "generator": "Zozo Ecommerce"
+    },
+    "scripts": "zozo-main\\.min\\.js",
+    "website": "https://zozo.vn"
+  },
   "Zyro": {
     "cats": [
       51
