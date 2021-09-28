@@ -31,6 +31,12 @@ body {
   width: 34rem;
 }
 
+@media (max-width: 34rem) {
+  .body__popup {
+    width: 100%;
+  }
+}
+
 a, a:focus, a:hover {
   color: var(--color-primary);
   outline: none;
