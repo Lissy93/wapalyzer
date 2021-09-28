@@ -73,7 +73,6 @@
       52
     ],
     "description": "Facebook Chat Plugin is a website plugin that businesses with a Facebook Page can install on their website.",
-    "icon": "Facebook.svg",
     "dom": {
       "iframe[src*=.facebook.com/']": {
         "attributes": {
@@ -81,6 +80,7 @@
         }
       }
     },
+    "icon": "Facebook.svg",
     "js": {
       "facebookChatSettings": ""
     },
@@ -104,14 +104,14 @@
     ],
     "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
     "dom": "img[src*='facebook.com/tr']",
-    "scripts": [
-      "connect\\.facebook.\\w+/signals\/config/\\d+\\?v=([\\d\\.]+)\\;version:\\1",
-      "connect\\.facebook\\.\\w+/.+/fbevents\\.js"
-    ],
     "icon": "Facebook.svg",
     "js": {
       "_fbq": ""
     },
+    "scripts": [
+      "connect\\.facebook.\\w+/signals/config/\\d+\\?v=([\\d\\.]+)\\;version:\\1",
+      "connect\\.facebook\\.\\w+/.+/fbevents\\.js"
+    ],
     "website": "http://facebook.com"
   },
   "Facil-iti": {
@@ -1015,12 +1015,12 @@
       95
     ],
     "description": "Frontify is a cloud-based brand management platform for creators and collaborators of brands.",
-    "icon": "Frontify.svg",
     "dom": "a[href*='.frontify.com/'], img[src*='.frontify.com/'], link[href*='.frontify.com/']",
-    "saas": true,
+    "icon": "Frontify.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.frontify.com"
   },
   "Frontity": {

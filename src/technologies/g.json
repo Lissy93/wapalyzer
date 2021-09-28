@@ -356,25 +356,25 @@
       72
     ],
     "description": "GetYourGuide is a Berlin-based online travel agency and online marketplace for tour guides and excursions.",
-    "icon": "GetYourGuide.svg",
     "dom": {
+      "a[href*='.getyourguide.']": {
+        "attributes": {
+          "href": "\\.getyourguide\\.\\w+/\\?partner_id="
+        }
+      },
       "img[src*='cdn.getyourguide.com/']": {
         "src": ""
       },
       "link[href*='cdn.getyourguide.com/']": {
         "src": ""
-      },
-      "a[href*='.getyourguide.']": {
-        "attributes": {
-          "href": "\\.getyourguide\\.\\w+/\\?partner_id="
-        }
       }
     },
-    "scripts": "\\.getyourguide\\.com/",
-    "saas": true,
+    "icon": "GetYourGuide.svg",
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scripts": "\\.getyourguide\\.com/",
     "website": "https://partner.getyourguide.com"
   },
   "Getintent": {
@@ -936,11 +936,11 @@
     ],
     "description": "Google Sign-In is a secure authentication system that reduces the burden of login for users, by enabling them to sign in with their Google account.",
     "dom": "iframe[src*='accounts.google.com/o/oauth2'], a[href*='accounts.google.com/o/oauth2']",
+    "icon": "Google.svg",
     "meta": {
       "google-signin-client_id": "",
       "google-signin-scope": ""
     },
-    "icon": "Google.svg",
     "scripts": "accounts\\.google\\.com/gsi/client",
     "website": "https://developers.google.com/identity/sign-in/web"
   },

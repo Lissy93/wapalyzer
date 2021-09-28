@@ -162,26 +162,6 @@
     },
     "website": "https://tools.ietf.org/html/rfc4559"
   },
-  "Spryker": {
-    "cats": [
-      6,
-      62
-    ],
-    "description": "Spryker is a ecommerce technology platform that enables global enterprises to build transactional business models.",
-    "icon": "Spryker.svg",
-    "meta":{
-      "generator": "spryker"
-    },
-    "js": {
-      "spryker.config": ""
-    },
-    "saas": false,
-    "pricing": [
-      "high",
-      "poa"
-    ],
-    "website": "https://www.spryker.com"
-  },
   "SQL Buddy": {
     "cats": [
       3
@@ -494,12 +474,12 @@
       95
     ],
     "description": "Salsify is a product experience management platform which connects digital asset management, content syndication, and digital catalog capabilities.",
-    "icon": "Salsify.svg",
     "dom": "a[href*='.salsify.com/'][target='_blank'], img[data-src*='images.salsify.com/'], link[href*='.salsify.com']",
-    "saas": true,
+    "icon": "Salsify.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.salsify.com"
   },
   "Sana Commerce": {
@@ -2773,6 +2753,26 @@
     "saas": true,
     "scripts": "\\.creator-spring\\.com/",
     "website": "https://www.spri.ng"
+  },
+  "Spryker": {
+    "cats": [
+      6,
+      62
+    ],
+    "description": "Spryker is a ecommerce technology platform that enables global enterprises to build transactional business models.",
+    "icon": "Spryker.svg",
+    "js": {
+      "spryker.config": ""
+    },
+    "meta": {
+      "generator": "spryker"
+    },
+    "pricing": [
+      "high",
+      "poa"
+    ],
+    "saas": false,
+    "website": "https://www.spryker.com"
   },
   "Sqreen": {
     "cats": [

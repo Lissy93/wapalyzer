@@ -401,14 +401,14 @@
     ],
     "description": "PayPal Marketing Solutions enables merchants to see shopper insights and provide custom rewards for buyers with PayPal accounts.",
     "icon": "PayPal.svg",
+    "implies": "PayPal",
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
     "scripts": [
       "\\.paypalobjects\\.com/muse/",
       "\\.paypal\\.com/tagmanager/pptm\\.js"
-    ],
-    "implies": "PayPal",
-    "saas": true,
-    "pricing": [
-      "freemium"
     ],
     "website": "https://developer.paypal.com/docs/marketing-solutions"
   },
@@ -1629,6 +1629,22 @@
     },
     "website": "https://www.proximis.com"
   },
+  "PubGuru": {
+    "cats": [
+      36
+    ],
+    "description": "PubGuru is a header wrapper and ad ops platform.",
+    "icon": "PubGuru.png",
+    "js": {
+      "pg.version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:25"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.pubguru\\.com/",
+    "website": "https://pubguru.com"
+  },
   "PubMatic": {
     "cats": [
       36
@@ -1649,22 +1665,6 @@
     "scripts": "https?://[^/]*\\.pubmatic\\.com",
     "website": "http://www.pubmatic.com/",
     "xhr": "\\.pubmatic\\.com"
-  },
-  "PubGuru": {
-    "cats": [
-      36
-    ],
-    "description": "PubGuru is a header wrapper and ad ops platform.",
-    "icon": "PubGuru.png",
-    "js": {
-      "pg.version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:25"
-    },
-    "scripts": "cdn\\.pubguru\\.com/",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://pubguru.com"
   },
   "Public CMS": {
     "cats": [

@@ -197,6 +197,21 @@
     },
     "website": "http://taiga.io"
   },
+  "Tailwind CSS": {
+    "cats": [
+      66
+    ],
+    "description": "Tailwind is a utility-first CSS framework.",
+    "dom": {
+      "link[rel='stylesheet'][href*='tailwind']": {
+        "attributes": {
+          "href": "tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
+        }
+      }
+    },
+    "icon": "tailwindcss.svg",
+    "website": "https://tailwindcss.com/"
+  },
   "TakeDrop": {
     "cats": [
       6
@@ -796,6 +811,20 @@
     },
     "website": "http://titan360.com"
   },
+  "TomTom Maps": {
+    "cats": [
+      35
+    ],
+    "description": "TomTom Maps is a web mapping service.",
+    "icon": "TomTom.svg",
+    "js": {
+      "tomtom.Map": ""
+    },
+    "saas": true,
+    "scripts": "api\\.tomtom\\.com",
+    "website": "https://www.tomtom.com",
+    "xhr": "api\\.tomtom\\.com"
+  },
   "TomatoCart": {
     "cats": [
       6
@@ -808,20 +837,6 @@
       "generator": "TomatoCart"
     },
     "website": "http://tomatocart.com"
-  },
-  "TomTom Maps": {
-    "cats": [
-      35
-    ],
-    "description": "TomTom Maps is a web mapping service.",
-    "icon": "TomTom.svg",
-    "xhr": "api\\.tomtom\\.com",
-    "scripts": "api\\.tomtom\\.com",
-    "js": {
-      "tomtom.Map": ""
-    },
-    "saas": true,
-    "website": "https://www.tomtom.com"
   },
   "TornadoServer": {
     "cats": [
@@ -1357,21 +1372,6 @@
     ],
     "scripts": "use\\.typekit\\.com",
     "website": "http://typekit.com"
-  },
-  "Tailwind CSS": {
-    "cats": [
-      66
-    ],
-    "description": "Tailwind is a utility-first CSS framework.",
-    "dom": {
-      "link[rel='stylesheet'][href*='tailwind']": {
-        "attributes": {
-          "href": "tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
-        }
-      }
-    },
-    "icon": "tailwindcss.svg",
-    "website": "https://tailwindcss.com/"
   },
   "theTradeDesk": {
     "cats": [
