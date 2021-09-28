@@ -369,10 +369,9 @@
     ],
     "description": "Zozo is a multi-channel ecommerce services provider from Vietnam.",
     "excludes": "OpenCart",
-    "html": [
-      "<script [^>]*src=\"catalog\/view\/theme\/[^\"]+\/javascript\/common\\.js",
-      "Thiết kế bởi <a[^>]+>Zozo</a>"
-    ],
+    "dom": "a[href*='/zozo.vn/'][href*='footerurl'][target='_blank']": {
+      "text": "^Zozo"
+    },
     "icon": "Zozo.png",
     "implies": [
       "PHP",
@@ -381,7 +380,10 @@
     "meta": {
       "generator": "Zozo Ecommerce"
     },
-    "scripts": "zozo-main\\.min\\.js",
+    "scripts": [
+      "catalog/view/theme/[^\"]+/javascript/common\\.js",
+      "zozo-main\\.min\\.js"
+    ],
     "website": "https://zozo.vn"
   },
   "Zyro": {
