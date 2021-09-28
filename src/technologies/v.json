@@ -319,7 +319,7 @@
       14
     ],
     "description": "Vimeo is a video hosting, sharing and services platform. Vimeo operation an ad-free basis by providing subscription plans.",
-    "html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
+    "dom": "iframe[src*='vimeo.com'],embed[src*='vimeo.com']",
     "icon": "Vimeo.svg",
     "js": {
       "Vimeo.Player": "",
