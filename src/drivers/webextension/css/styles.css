@@ -28,13 +28,8 @@ body {
 }
 
 .body__popup {
-  width: 34rem;
-}
-
-@media (max-width: 34rem) {
-  .body__popup {
-    width: 100%;
-  }
+  min-width: 24rem;
+  max-width: 34rem;
 }
 
 a, a:focus, a:hover {
@@ -198,7 +193,7 @@ small {
   align-items: center;
   border-bottom: 1px solid var(--color-secondary-darken);
 	background: white;
-  display: none;
+  display: flex;
   font-size: .8rem;
 }
 
@@ -445,10 +440,6 @@ small {
   opacity: .8;
 }
 
-.footer__toggle {
-  flex: 0 1;
-}
-
 .footer--hidden {
   display: none;
 }
@@ -466,7 +457,7 @@ small {
 }
 
 .footer__toggle {
-  flex: 1;
+  flex: 0 1;
   text-align: right;
 }
 
