@@ -2821,13 +2821,12 @@
     ],
     "description": "Squarespace provides Software-as-a-Service (SaaS) for website building and hosting, and allows users to use pre-built website templates.",
     "headers": {
-      "X-ServedBy": "squarespace"
+      "server": "Squarespace"
     },
-    "html": "<!-- This is Squarespace\\. -->",
-    "icon": "Squarespace.png",
+    "icon": "Squarespace.svg",
     "js": {
       "Squarespace": "",
-      "Static.SQUARESPACE_CONTEXT": ""
+      "Static.SQUARESPACE_CONTEXT.templateVersion": "^(\\d(?:\\.\\d)?)$\\;version:\\1"
     },
     "pricing": [
       "low",
@@ -2841,11 +2840,10 @@
       6
     ],
     "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
-    "icon": "Squarespace.png",
     "implies": "Squarespace",
+    "icon": "Squarespace.svg",
     "js": {
-      "SQUARESPACE_ROLLUPS.squarespace-commerce": "",
-      "SquarespaceCommerceCartBundle": ""
+      "SQUARESPACE_ROLLUPS.squarespace-commerce": ""
     },
     "pricing": [
       "low",
