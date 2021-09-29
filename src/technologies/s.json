@@ -179,6 +179,30 @@
     "icon": "SQLite.png",
     "website": "http://www.sqlite.org"
   },
+  "Stitches": {
+    "cats": [
+      12,
+      47
+    ],
+    "description": "Stitches is a is a CSS-in-JS styling framework with near-zero runtime, SSR, multi-variant support, and a best-in-class developer experience",
+    "html":"<style id=\"stitches\">",
+    "dom": ".StudioCanvas, .publish-studio-style",
+    "icon": "Stitches.svg",
+    "implies": [
+      "React",
+      "Next.js",
+      "Gatsby",
+      "Svelte",
+      "SvelteKit",
+      "Vue.js",
+      "Angular"
+    ],
+    "oss": true,
+    "meta": {
+      "generator": "^c-[A-Za-z]{5}$"
+    },
+    "website": "https://stitches.dev"
+  },
   "STUDIO": {
     "cats": [
       51
