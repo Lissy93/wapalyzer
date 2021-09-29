@@ -368,12 +368,12 @@
       6
     ],
     "description": "Zozo is a multi-channel ecommerce services provider from Vietnam.",
-    "excludes": "OpenCart",
     "dom": {
       "a[href*='/zozo.vn/'][href*='footerurl'][target='_blank']": {
         "text": "^Zozo"
       }
     },
+    "excludes": "OpenCart",
     "icon": "Zozo.png",
     "implies": [
       "PHP",
