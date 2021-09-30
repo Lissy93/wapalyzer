@@ -74,7 +74,7 @@
     ],
     "description": "Facebook Chat Plugin is a website plugin that businesses with a Facebook Page can install on their website.",
     "dom": {
-      "iframe[src*=.facebook.com/']": {
+      "iframe[src*='.facebook.com/']": {
         "attributes": {
           "src": "\\.facebook\\.com/v([\\d\\.]+)/plugins/customerchat\\;version:\\1"
         }
