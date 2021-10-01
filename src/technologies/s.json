@@ -2854,8 +2854,8 @@
       6
     ],
     "description": "Squarespace Commerce is an ecommerce platform designed to facilitate the creation of websites and online stores, with domain registration and web hosting included.",
-    "implies": "Squarespace",
     "icon": "Squarespace.svg",
+    "implies": "Squarespace",
     "js": {
       "SQUARESPACE_ROLLUPS.squarespace-commerce": ""
     },
@@ -3060,6 +3060,29 @@
     "html": "<[^>]+data-controller",
     "icon": "Stimulus.png",
     "website": "https://stimulusjs.org/"
+  },
+  "Stitches": {
+    "cats": [
+      12,
+      47
+    ],
+    "description": "Stitches is a is a CSS-in-JS styling framework with near-zero runtime, SSR, and multi-variant support.",
+    "dom": "style#stitches, .StudioCanvas, .publish-studio-style",
+    "icon": "Stitches.svg",
+    "implies": [
+      "React",
+      "Next.js",
+      "Gatsby",
+      "Svelte",
+      "SvelteKit",
+      "Vue.js",
+      "Angular"
+    ],
+    "meta": {
+      "generator": "^c-[A-Za-z]{5}$"
+    },
+    "oss": true,
+    "website": "https://stitches.dev"
   },
   "Store Systems": {
     "cats": [
