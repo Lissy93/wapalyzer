@@ -2751,11 +2751,17 @@
         "azuredns-cloud\\.net"
       ]
     },
+    "xhr": {
+      "x-ms-gateway-requestid": "",
+      "x-ms-client-request-id": "",
+      "x-ms-correlation-request-id": ""
+    },
     "headers": {
       "azure-regionname": "",
       "azure-sitename": "",
       "azure-slotname": "",
-      "azure-version": ""
+      "azure-version": "",
+      "server": "^Windows-Azure"
     },
     "icon": "azure.svg",
     "website": "https://azure.microsoft.com"
