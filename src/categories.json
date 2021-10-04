@@ -1,370 +1,462 @@
 {
   "1": {
     "name": "CMS",
+    "groups": [ 3 ],
     "priority": 1
   },
   "2": {
     "name": "Message boards",
+    "groups": [ 3, 4 ],
     "priority": 1
   },
   "3": {
     "name": "Database managers",
+    "groups": [ 5 ],
     "priority": 2
   },
   "4": {
     "name": "Documentation",
+    "groups": [ 3 ],
     "priority": 2
   },
   "5": {
     "name": "Widgets",
+    "groups": [ 6 ],
     "priority": 9
   },
   "6": {
     "name": "Ecommerce",
+    "groups": [ 1 ],
     "priority": 1
   },
   "7": {
     "name": "Photo galleries",
+    "groups": [ 3 ],
     "priority": 1
   },
   "8": {
     "name": "Wikis",
+    "groups": [ 3 ],
     "priority": 1
   },
   "9": {
     "name": "Hosting panels",
+    "groups": [ 5, 7 ],
     "priority": 1
   },
   "10": {
     "name": "Analytics",
+    "groups": [ 8 ],
     "priority": 9
   },
   "11": {
     "name": "Blogs",
+    "groups": [ 3 ],
     "priority": 1
   },
   "12": {
     "name": "JavaScript frameworks",
+    "groups": [ 9 ],
     "priority": 8
   },
   "13": {
     "name": "Issue trackers",
+    "groups": [ 3 ],
     "priority": 2
   },
   "14": {
     "name": "Video players",
+    "groups": [ 10 ],
     "priority": 7
   },
   "15": {
     "name": "Comment systems",
+    "groups": [ 3 ],
     "priority": 9
   },
   "16": {
     "name": "Security",
+    "groups": [ 11 ],
     "priority": 9
   },
   "17": {
     "name": "Font scripts",
+    "groups": [ 9 ],
     "priority": 9
   },
   "18": {
     "name": "Web frameworks",
+    "groups": [ 9 ],
     "priority": 7
   },
   "19": {
     "name": "Miscellaneous",
+    "groups": [ 6 ],
     "priority": 9
   },
   "20": {
     "name": "Editors",
+    "groups": [ 9 ],
     "priority": 4
   },
   "21": {
     "name": "LMS",
+    "groups": [ 3 ],
     "priority": 1
   },
   "22": {
     "name": "Web servers",
+    "groups": [ 7 ],
     "priority": 8
   },
   "23": {
     "name": "Caching",
+    "groups": [ 7 ],
     "priority": 7
   },
   "24": {
     "name": "Rich text editors",
+    "groups": [ 3 ],
     "priority": 5
   },
   "25": {
     "name": "JavaScript graphics",
+    "groups": [ 9 ],
     "priority": 6
   },
   "26": {
     "name": "Mobile frameworks",
+    "groups": [ 9 ],
     "priority": 8
   },
   "27": {
     "name": "Programming languages",
+    "groups": [ 9 ],
     "priority": 5
   },
   "28": {
     "name": "Operating systems",
+    "groups": [ 7 ],
     "priority": 6
   },
   "29": {
     "name": "Search engines",
+    "groups": [ 3 ],
     "priority": 4
   },
   "30": {
     "name": "Webmail",
+    "groups": [ 4 ],
     "priority": 2
   },
   "31": {
     "name": "CDN",
+    "groups": [ 7 ],
     "priority": 9
   },
   "32": {
     "name": "Marketing automation",
+    "groups": [ 2 ],
     "priority": 9
   },
   "33": {
     "name": "Web server extensions",
+    "groups": [ 7 ],
     "priority": 7
   },
   "34": {
     "name": "Databases",
+    "groups": [ 7 ],
     "priority": 5
   },
   "35": {
     "name": "Maps",
+    "groups": [ 6 ],
     "priority": 6
   },
   "36": {
     "name": "Advertising",
+    "groups": [ 2 ],
     "priority": 9
   },
   "37": {
     "name": "Network devices",
+    "groups": [ 7 ],
     "priority": 2
   },
   "38": {
     "name": "Media servers",
+    "groups": [ 10, 7 ],
     "priority": 1
   },
   "39": {
     "name": "Webcams",
+    "groups": [ 4 ],
     "priority": 9
   },
   "41": {
     "name": "Payment processors",
+    "groups": [ 1 ],
     "priority": 8
   },
   "42": {
     "name": "Tag managers",
+    "groups": [ 8 ],
     "priority": 9
   },
   "44": {
     "name": "CI",
+    "groups": [ 9 ],
     "priority": 3
   },
   "45": {
     "name": "Control systems",
+    "groups": [ 7 ],
     "priority": 2
   },
   "46": {
     "name": "Remote access",
+    "groups": [ 4 ],
     "priority": 1
   },
   "47": {
     "name": "Development",
+    "groups": [ 9 ],
     "priority": 2
   },
   "48": {
     "name": "Network storage",
+    "groups": [ 10 ],
     "priority": 2
   },
   "49": {
     "name": "Feed readers",
+    "groups": [ 3 ],
     "priority": 1
   },
   "50": {
     "name": "DMS",
+    "groups": [ 3 ],
     "priority": 1
   },
   "51": {
     "name": "Page builders",
+    "groups": [ 9 ],
     "priority": 2
   },
   "52": {
     "name": "Live chat",
+    "groups": [ 4 ],
     "priority": 9
   },
   "53": {
     "name": "CRM",
+    "groups": [ 2 ],
     "priority": 5
   },
   "54": {
     "name": "SEO",
+    "groups": [ 2 ],
     "priority": 8
   },
   "55": {
     "name": "Accounting",
+    "groups": [ 1 ],
     "priority": 1
   },
   "56": {
     "name": "Cryptominers",
+    "groups": [ 5 ],
     "priority": 5
   },
   "57": {
     "name": "Static site generator",
+    "groups": [ 9 ],
     "priority": 1
   },
   "58": {
     "name": "User onboarding",
+    "groups": [ 6 ],
     "priority": 8
   },
   "59": {
     "name": "JavaScript libraries",
+    "groups": [ 9 ],
     "priority": 9
   },
   "60": {
     "name": "Containers",
+    "groups": [ 7 ],
     "priority": 8
   },
   "62": {
     "name": "PaaS",
+    "groups": [ 7 ],
     "priority": 8
   },
   "63": {
     "name": "IaaS",
+    "groups": [ 7 ],
     "priority": 8
   },
   "64": {
     "name": "Reverse proxies",
+    "groups": [ 7 ],
     "priority": 7
   },
   "65": {
     "name": "Load balancers",
+    "groups": [ 7 ],
     "priority": 7
   },
   "66": {
     "name": "UI frameworks",
+    "groups": [ 9 ],
     "priority": 7
   },
   "67": {
     "name": "Cookie compliance",
+    "groups": [ 13 ],
     "priority": 9
   },
   "68": {
     "name": "Accessibility",
+    "groups": [ 9 ],
     "priority": 9
   },
   "69": {
     "name": "Authentication",
+    "groups": [ 11 ],
     "priority": 6
   },
   "70": {
     "name": "SSL/TLS certificate authorities",
+    "groups": [ 11 ],
     "priority": 9
   },
   "71": {
     "name": "Affiliate programs",
+    "groups": [ 2 ],
     "priority": 9
   },
   "72": {
     "name": "Appointment scheduling",
+    "groups": [ 13 ],
     "priority": 9
   },
   "73": {
     "name": "Surveys",
+    "groups": [ 2 ],
     "priority": 9
   },
   "74": {
     "name": "A/B Testing",
+    "groups": [ 9 ],
     "priority": 9
   },
   "75": {
     "name": "Email",
+    "groups": [ 4 ],
     "priority": 9
   },
   "76": {
     "name": "Personalisation",
+    "groups": [ 2 ],
     "priority": 9
   },
   "77": {
     "name": "Retargeting",
+    "groups": [ 2 ],
     "priority": 9
   },
   "78": {
     "name": "RUM",
+    "groups": [ 2 ],
     "priority": 9
   },
   "79": {
     "name": "Geolocation",
+    "groups": [ 8 ],
     "priority": 9
   },
   "80": {
     "name": "WordPress themes",
+    "groups": [ 14 ],
     "priority": 9
   },
   "81": {
     "name": "Shopify themes",
+    "groups": [ 14 ],
     "priority": 9
   },
   "82": {
     "name": "Drupal themes",
+    "groups": [ 14 ],
     "priority": 9
   },
   "83": {
     "name": "Browser fingerprinting",
+    "groups": [ 8 ],
     "priority": 9
   },
   "84": {
     "name": "Loyalty & rewards",
+    "groups": [ 1 ],
     "priority": 9
   },
   "85": {
     "name": "Feature management",
+    "groups": [ 9 ],
     "priority": 9
   },
   "86": {
     "name": "Segmentation",
+    "groups": [ 2 ],
     "priority": 9
   },
   "87": {
     "name": "WordPress plugins",
+    "groups": [ 14 ],
     "priority": 9
   },
   "88": {
     "name": "Hosting",
+    "groups": [ 7 ],
     "priority": 9
   },
   "89": {
     "name": "Translation",
+    "groups": [ 3 ],
     "priority": 9
   },
   "90": {
     "name": "Reviews",
+    "groups": [ 2 ],
     "priority": 9
   },
   "91": {
     "name": "Buy now pay later",
+    "groups": [ 1 ],
     "priority": 9
   },
   "92": {
     "name": "Performance",
+    "groups": [ 7 ],
     "priority": 9
   },
   "93": {
     "name": "Reservations & delivery",
+    "groups": [ 13 ],
     "priority": 9
   },
   "94": {
     "name": "Referral marketing",
+    "groups": [ 2 ],
     "priority": 9
   },
   "95": {
     "name": "Digital asset management",
+    "groups": [ 10 ],
     "priority": 9
   }
 }
