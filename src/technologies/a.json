@@ -2769,6 +2769,7 @@
       "X-EC-Debug": "",
       "server": "^(?:ECAcc|ECS|ECD)"
     },
+    "implies": "Azure",
     "icon": "azure.svg",
     "website": "https://azure.microsoft.com/en-us/services/cdn/"
   },
@@ -2852,5 +2853,15 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
+  },
+  "Azure AD B2C": {
+    "cats": [
+      69
+    ],
+    "description": "Azure Active Directory B2C is a customer identity access management (CIAM) solution.",
+    "icon": "AzureADB2C.png",
+	  "url": "https.+\\.b2clogin\\.com",
+    "implies": "Azure",
+    "website": "https://azure.microsoft.com/en-us/services/active-directory/external-identities/b2c/"
   }
 }
