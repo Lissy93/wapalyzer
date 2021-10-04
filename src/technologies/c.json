@@ -533,6 +533,19 @@
     "icon": "Cherokee.png",
     "website": "http://www.cherokee-project.com"
   },
+  "Checkout.com": {
+    "cats": [
+      41
+    ],
+    "description": "Checkout.com is an international payment platform that processes different payment methods across a variety of currencies.",
+    "icon": "Checkout.com.svg",
+    "scripts": "cdn\\.checkout\\.com/js/.+js(?:\\?ver=)?([\\d\\.]+)?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.checkout.com"
+  },
   "CherryPy": {
     "cats": [
       22
