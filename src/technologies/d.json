@@ -414,6 +414,29 @@
     ],
     "website": "https://www.directadmin.com"
   },
+  "Directus": {
+    "cats": [
+      1
+    ],
+    "description": "Directus is a free and open-source headless CMS framework for managing custom SQL-based databases.",
+    "icon": "Directus.svg",
+    "headers": {
+      "x-powered-by": "^Directus$"
+    },
+    "implies": [
+      "Vue.js",
+      "TinyMCE",
+      "core-js"
+    ],
+    "saas": true,
+    "oss": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://directus.io"
+  },
   "Discourse": {
     "cats": [
       2
