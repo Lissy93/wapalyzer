@@ -149,6 +149,24 @@
     "scripts": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
     "website": "http://fancyapps.com/fancybox"
   },
+  "Fanplayr": {
+    "cats": [
+      76
+    ],
+    "description": "Fanplayr is a real-time insights platform that provides website optimisation and personalisation solutions for businesses.",
+    "icon": "Fanplayr.svg",
+    "dom": "link[href*='cdn.fanplayr.com']",
+    "js": {
+      "fanplayr.platform.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scripts": "cdn\\.fanplayr\\.com/.+/([\\d\\.]+)\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://fanplayr.com"
+  },
   "FaraPy": {
     "cats": [
       1
