@@ -116,6 +116,27 @@
     "scripts": "ubembed\\.com",
     "website": "http://unbounce.com"
   },
+  "Unbxd": {
+    "cats": [
+      76,
+      29
+    ],
+    "description": "Unbxd is an ecommerce product discovery platform that applies artificial intelligence and advanced data sciences to connect shoppers to the products they are most likely to buy.",
+    "icon": "Unbxd.svg",
+    "js": {
+      "Unbxd.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scripts": [
+      "\\.cloudfront\\.net/unbxdAnalytics\\.js",
+      "unbxd\\.s\\d\\.amazonaws\\.com"
+    ],
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://unbxd.com"
+  },
   "Underscore.js": {
     "cats": [
       59
