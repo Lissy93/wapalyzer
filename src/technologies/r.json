@@ -346,7 +346,8 @@
     "icon": "React.png",
     "js": {
       "React.version": "^(.+)$\\;version:\\1",
-      "react.version": "^(.+)$\\;version:\\1"
+      "ReactOnRails": "",
+      "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
     },
     "scripts": [
       "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -1187,6 +1188,10 @@
     "implies": "Ruby",
     "meta": {
       "csrf-param": "^authenticity_token$\\;confidence:50"
+    },
+    "js": {
+      "ReactOnRails": "",
+      "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
     },
     "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
     "website": "https://rubyonrails.org"

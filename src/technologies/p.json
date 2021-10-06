@@ -1993,5 +1993,24 @@
       "PUNBB": ""
     },
     "website": "http://punbb.informer.com"
+  },
+  "Popmenu": {
+    "cats": [
+      1,
+      93
+    ],
+    "description": "Popmenu is a restaurant platform which offers CMS, online menus, ordering and delivery and marketing automation solutions.",
+    "pricing": ["recurring", "mid"],
+    "icon": "Popmenu.svg",
+    "cookies": {
+      "Popmenu-Token": ""
+    },
+    "js": {
+      "popmenuHydrated": "",
+      "POPMENU_CLIENT": ""
+    },
+    "xhr": "popmenu\\.com",
+    "implies": ["React", "Apollo"],
+    "website": "https://get.popmenu.com"
   }
 }
