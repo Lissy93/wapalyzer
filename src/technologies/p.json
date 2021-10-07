@@ -193,6 +193,24 @@
     },
     "website": "https://www.pagevamp.com"
   },
+  "PagSeguro": {
+    "cats": [
+      41
+    ],
+    "description": "PagSeguro is an online or mobile payment-based ecommerce service for commercial operations.",
+    "icon": "PagSeguro.svg",
+    "dom": "form[action*='pagseguro.uol.com.br'][target='pagseguro']",
+    "js": {
+      "PagSeguroDirectPayment": "",
+      "_PagSeguroDirectPayment": ""
+    },
+    "scripts": "\\.pagseguro\\.uol\\.com\\.br/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://pagseguro.uol.com.br"
+  },
   "Pantheon": {
     "cats": [
       62
