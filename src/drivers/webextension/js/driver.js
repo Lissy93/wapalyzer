@@ -506,6 +506,8 @@ const Driver = {
 
     const { hostname } = new URL(url)
 
+    console.log(hostname, detections)
+
     // Cache detections
     const cache = (Driver.cache.hostnames[hostname] = Driver.cache.hostnames[
       hostname

@@ -1476,13 +1476,13 @@
     ],
     "description": "Allyable is an automated web accessibility solution with an AI engine.",
     "icon": "Allyable.png",
-    "scripts": "portal\\.allyable\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "portal\\.allyable\\.com/",
     "website": "https://allyable.com"
   },
   "Alpine.js": {
@@ -2756,13 +2756,23 @@
       "azure-sitename": "",
       "azure-slotname": "",
       "azure-version": "",
-      "x-ms-gateway-requestid": "",
+      "server": "^Windows-Azure",
       "x-ms-client-request-id": "",
       "x-ms-correlation-request-id": "",
-      "server": "^Windows-Azure"
+      "x-ms-gateway-requestid": ""
     },
     "icon": "azure.svg",
     "website": "https://azure.microsoft.com"
+  },
+  "Azure AD B2C": {
+    "cats": [
+      69
+    ],
+    "description": "Azure Active Directory B2C is a customer identity access management (CIAM) solution.",
+    "icon": "AzureADB2C.png",
+    "implies": "Azure",
+    "url": "https.+\\.b2clogin\\.com",
+    "website": "https://azure.microsoft.com/en-us/services/active-directory/external-identities/b2c/"
   },
   "Azure CDN": {
     "cats": [
@@ -2773,8 +2783,8 @@
       "X-EC-Debug": "",
       "server": "^(?:ECAcc|ECS|ECD)"
     },
-    "implies": "Azure",
     "icon": "azure.svg",
+    "implies": "Azure",
     "website": "https://azure.microsoft.com/en-us/services/cdn/"
   },
   "a-blog cms": {
@@ -2857,15 +2867,5 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
-  },
-  "Azure AD B2C": {
-    "cats": [
-      69
-    ],
-    "description": "Azure Active Directory B2C is a customer identity access management (CIAM) solution.",
-    "icon": "AzureADB2C.png",
-	  "url": "https.+\\.b2clogin\\.com",
-    "implies": "Azure",
-    "website": "https://azure.microsoft.com/en-us/services/active-directory/external-identities/b2c/"
   }
 }

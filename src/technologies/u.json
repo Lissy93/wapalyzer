@@ -126,14 +126,14 @@
     "js": {
       "Unbxd.version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "scripts": [
-      "\\.cloudfront\\.net/unbxdAnalytics\\.js",
-      "unbxd\\.s\\d\\.amazonaws\\.com"
-    ],
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
+    ],
+    "saas": true,
+    "scripts": [
+      "\\.cloudfront\\.net/unbxdAnalytics\\.js",
+      "unbxd\\.s\\d\\.amazonaws\\.com"
     ],
     "website": "https://unbxd.com"
   },

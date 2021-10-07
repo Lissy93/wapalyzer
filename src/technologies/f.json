@@ -68,6 +68,18 @@
     "scripts": "//connect\\.facebook\\.([a-z]+)/[^/]*/[a-z]*\\.js",
     "website": "http://facebook.com"
   },
+  "Facebook Ads": {
+    "cats": [
+      36
+    ],
+    "description": "Facebook Ads is an online advertising platform developed by Facebook.",
+    "icon": "Facebook.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.facebook.com/business/ads"
+  },
   "Facebook Chat Plugin": {
     "cats": [
       52
@@ -154,17 +166,17 @@
       76
     ],
     "description": "Fanplayr is a real-time insights platform that provides website optimisation and personalisation solutions for businesses.",
-    "icon": "Fanplayr.svg",
     "dom": "link[href*='cdn.fanplayr.com']",
+    "icon": "Fanplayr.svg",
     "js": {
       "fanplayr.platform.version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "scripts": "cdn\\.fanplayr\\.com/.+/([\\d\\.]+)\\;version:\\1",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "cdn\\.fanplayr\\.com/.+/([\\d\\.]+)\\;version:\\1",
     "website": "https://fanplayr.com"
   },
   "FaraPy": {

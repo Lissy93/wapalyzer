@@ -1186,12 +1186,12 @@
     },
     "icon": "Ruby on Rails.png",
     "implies": "Ruby",
-    "meta": {
-      "csrf-param": "^authenticity_token$\\;confidence:50"
-    },
     "js": {
       "ReactOnRails": "",
       "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
+    },
+    "meta": {
+      "csrf-param": "^authenticity_token$\\;confidence:50"
     },
     "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
     "website": "https://rubyonrails.org"

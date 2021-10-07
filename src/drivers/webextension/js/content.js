@@ -240,6 +240,30 @@ const Content = {
         }
       }
 
+      // Detect Facebook Ads
+      if (/^(www\.)?facebook\.com$/.test(location.hostname)) {
+        const ads = document.querySelectorAll('a[aria-label="Advertiser"]')
+
+        for (const ad of ads) {
+          const urls = [
+            ...new Set([
+              `https://${decodeURIComponent(
+                ad.href.split(/^.+\?u=https%3A%2F%2F/).pop()
+              )
+                .split('/')
+                .shift()}`,
+
+              // eslint-disable-next-line unicorn/prefer-text-content
+              `https://${ad.innerText.split('\n').pop()}`,
+            ]),
+          ]
+
+          urls.forEach((url) =>
+            Content.driver('detectTechnology', [url, 'Facebook Ads'])
+          )
+        }
+      }
+
       Content.cache = { html, css, scripts, meta, cookies }
 
       await Content.driver('onContentLoad', [

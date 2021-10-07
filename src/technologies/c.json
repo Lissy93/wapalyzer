@@ -7,16 +7,6 @@
     "scripts": "/website/JavaScript/Vertoshop\\.js",
     "website": "https://ccvshop.be"
   },
-  "cdnjs": {
-    "cats": [
-      31
-    ],
-    "description": "cdnjs is a free distributed JS library delivery service.",
-    "icon": "cdnjs.svg",
-    "scripts": "cdnjs\\.cloudflare\\.com",
-    "oss": true,
-    "website": "https://cdnjs.com"
-  },
   "CDN77": {
     "cats": [
       31
@@ -532,6 +522,19 @@
     "scripts": "\\.checkfront\\.com/",
     "website": "https://www.checkfront.com"
   },
+  "Checkout.com": {
+    "cats": [
+      41
+    ],
+    "description": "Checkout.com is an international payment platform that processes different payment methods across a variety of currencies.",
+    "icon": "Checkout.com.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.checkout\\.com/js/.+js(?:\\?ver=)?([\\d\\.]+)?\\;version:\\1",
+    "website": "https://www.checkout.com"
+  },
   "Cherokee": {
     "cats": [
       22
@@ -542,19 +545,6 @@
     },
     "icon": "Cherokee.png",
     "website": "http://www.cherokee-project.com"
-  },
-  "Checkout.com": {
-    "cats": [
-      41
-    ],
-    "description": "Checkout.com is an international payment platform that processes different payment methods across a variety of currencies.",
-    "icon": "Checkout.com.svg",
-    "scripts": "cdn\\.checkout\\.com/js/.+js(?:\\?ver=)?([\\d\\.]+)?\\;version:\\1",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.checkout.com"
   },
   "CherryPy": {
     "cats": [
@@ -1020,6 +1010,22 @@
     ],
     "saas": true,
     "website": "https://www.coconstruct.com"
+  },
+  "CoRover": {
+    "cats": [
+      52
+    ],
+    "description": "CoRover is a conversational AI chatbot platform with proprietary cognitive AI technology.",
+    "icon": "CoRover.png",
+    "js": {
+      "CoRover_tag": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.corover\\.mobi/",
+    "website": "https://corover.ai"
   },
   "Coaster CMS": {
     "cats": [
@@ -1677,22 +1683,6 @@
     ],
     "website": "https://corebine.com"
   },
-  "CoRover": {
-    "cats": [
-      52
-    ],
-    "description": "CoRover is a conversational AI chatbot platform with proprietary cognitive AI technology.",
-    "icon": "CoRover.png",
-    "js": {
-      "CoRover_tag": ""
-    },
-    "scripts": "\\.corover\\.mobi/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://corover.ai"
-  },
   "Cosmoshop": {
     "cats": [
       6
@@ -2010,12 +2000,12 @@
     "js": {
       "customily.sticky": ""
     },
-    "scripts": "(?:cdn|app)\\.customily\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "(?:cdn|app)\\.customily\\.com/",
     "website": "https://www.customily.com"
   },
   "Cybersource": {
@@ -2060,6 +2050,16 @@
     "html": "<!-- cPanel",
     "icon": "cPanel.png",
     "website": "http://www.cpanel.net"
+  },
+  "cdnjs": {
+    "cats": [
+      31
+    ],
+    "description": "cdnjs is a free distributed JS library delivery service.",
+    "icon": "cdnjs.svg",
+    "oss": true,
+    "scripts": "cdnjs\\.cloudflare\\.com",
+    "website": "https://cdnjs.com"
   },
   "cgit": {
     "cats": [
