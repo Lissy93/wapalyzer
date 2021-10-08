@@ -1763,6 +1763,9 @@
     "description": "AmeriCommerce is an ecommerce platform built for high volume online stores and complex products with features such as multi-store management.",
     "icon": "AmeriCommerce.png",
     "dom": "p.AmeriCommerce-powered-by-link > a[href*='.americommerce.com/'][target='_blank']",
+    "js": {
+      "AC.storeDomain": ""
+    },
     "scripts": "\\.americommerce\\.com/",
     "saas": true,
     "pricing": [
