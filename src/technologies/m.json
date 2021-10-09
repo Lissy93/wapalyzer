@@ -49,6 +49,24 @@
     "scripts": "service(?:2)?\\.mtcaptcha\\.com/",
     "website": "https://www.mtcaptcha.com"
   },
+  "Mulberry": {
+    "cats": [
+      5
+    ],
+    "description": "Mulberry is a developer of personalised product protection solutions used to help brands unlock additional revenue.",
+    "icon": "Mulberry.svg",
+    "implies": "Cart Functionality",
+    "js": {
+      "mulberryShop": "",
+      "mulberry.cta": ""
+    },
+    "scripts": "\\.getmulberry\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.getmulberry.com"
+  },
   "MadAdsMedia": {
     "cats": [
       36
