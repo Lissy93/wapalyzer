@@ -565,7 +565,7 @@
       52
     ],
     "description": "WhatsApp Business is a free to download app available on Android and iPhone using which businesses can connect with their customers.",
-    "dom": "link[href*='api.whatsapp.com/send'], link[href*='wa.me/'], div[class*='wptwa-container']",
+    "dom": "link[href*='api.whatsapp.com/send'], link[href*='wa.me/'], div[class*='wptwa-container'], a[href*='wa.link'][target='_blank']",
     "icon": "WhatsApp.svg",
     "website": "https://www.whatsapp.com/business"
   },
@@ -608,6 +608,24 @@
     "saas": true,
     "scripts": "assets/\\d+-\\d+/stack/en/widenjs\\.js",
     "website": "https://www.widen.com"
+  },
+  "WidgetWhats": {
+    "cats": [
+      52
+    ],
+    "description": "WidgetWhats is a fully customizable chat widget with appearance, text, color, button style and position.",
+    "icon": "WidgetWhats.png",
+    "js": {
+      "wwwa_loaded": ""
+    },
+    "scripts": "\\.widgetwhats\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://widgetwhats.com"
   },
   "Wigzo": {
     "cats": [
