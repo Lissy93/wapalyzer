@@ -22,7 +22,7 @@ If you don't have time to configure, host, debug and maintain your own infrastru
 ## Quick start
 
 ```sh
-git clone https://github.com/aliasio/wappalyzer
+git clone https://github.com/AliasIO/wappalyzer.git
 cd wappalyzer
 yarn install
 yarn run link
