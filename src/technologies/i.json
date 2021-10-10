@@ -542,7 +542,7 @@
     "description": "Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport.",
     "scripts": [
       "cdn\\.jsdelivr\\.net/npm/intersection-observer@([\\d\\.]+)\\;version:\\1",
-      "/assets/js/lib/intersection-observer\\.min\\.js"
+      "/assets/(?:.+)?intersection-observer\\.[\\d\\w\\.]+\\.js"
     ],
     "website": "https://www.w3.org/TR/intersection-observer"
   },
