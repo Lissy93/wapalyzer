@@ -113,7 +113,11 @@
       "AOS.refresh": "\\;confidence:50",
       "AOS.refreshHard": "\\;confidence:50"
     },
-    "scripts": "unpkg\\.com/aos@(next)/dist/aos\\.js\\;version:\\1",
+    "scripts": [
+      "unpkg\\.com/aos@([\\d\\.]+)/dist/aos\\.js\\;version:\\1",
+      "/typo3conf/ext/udem_vendor/Resources/Public/aos-([\\d\\.]+)\\;version:\\1"
+    ],
+    "oss": true,
     "website": "http://michalsnik.github.io/aos/"
   },
   "AT Internet Analyzer": {
