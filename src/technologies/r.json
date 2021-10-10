@@ -415,6 +415,20 @@
     "scripts": "rebuyengine\\.com",
     "website": "https://rebuyengine.com/"
   },
+  "Recapture": {
+    "cats": [
+      32,
+      75
+    ],
+    "description": "Recapture is an abandoned cart recovery and email marketing solution.",
+    "icon": "Recapture.png",
+    "scripts": "cdn\\.recapture\\.io/.+\\?v=\\d+(?:&ver=([\\d\\.]+)?)?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://recapture.io"
+  },
   "Recart": {
     "cats": [
       32
