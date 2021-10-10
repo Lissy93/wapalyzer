@@ -199,6 +199,26 @@
     },
     "website": "http://www.xpressengine.com/"
   },
+  "Xpresslane": {
+    "cats": [
+      41
+    ],
+    "description": "Xpresslane is a checkout platform for ecommerce that focuses on increasing conversion during the checkout process.",
+    "icon": "Xpresslane.png",
+    "dom": {
+      "link[href*='/assets/xpresslane.css']": {
+        "attributes": {
+          "href": "cdn\\.shopify\\.com/.+/assets/xpresslane\\.css"
+        }
+      }
+    },
+    "scripts": "apps\\.xpresslane\\.in/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.xpresslane.in"
+  },
   "Xtremepush": {
     "cats": [
       32
