@@ -12,6 +12,23 @@
     "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
     "website": "http://d3js.org"
   },
+  "Daily Deals": {
+    "cats": [
+      5
+    ],
+    "description": "Daily Deals is a flash sale, limited-time discounts, countdown timers, and sales analytics solution.",
+    "icon": "Daily Deals.svg",
+    "js": {
+      "ddAddToCheckout": "\\;confidence:50",
+      "ddAddToOrder": "\\;confidence:50"
+    },
+    "scripts": "assets\\.dailydeals\\.ai/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://dailydeals.ai"
+  },
   "DERAK.CLOUD": {
     "cats": [
       31
