@@ -215,11 +215,19 @@
     "cats": [
       5
     ],
+    "description": "Hello Bar is a customizable notification bar that draws visitors to an important call to action on the website.",
     "icon": "Hello Bar.png",
     "js": {
-      "HelloBar": ""
+      "HelloBar": "",
+      "hellobarSiteSettings": ""
     },
-    "scripts": "hellobar\\.js",
+    "scripts": "\\.?hellobar\\.(?:com|js)",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
     "website": "http://hellobar.com"
   },
   "Hello Elementor": {

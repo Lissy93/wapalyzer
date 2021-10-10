@@ -300,13 +300,20 @@
   },
   "UserVoice": {
     "cats": [
-      13
+      13,
+      73
     ],
     "description": "UserVoice is a management to collect and analyse feedback from customers.",
-    "icon": "UserVoice.png",
+    "icon": "UserVoice.svg",
     "js": {
       "UserVoice": ""
     },
+    "scripts": "\\.uservoice\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "website": "http://uservoice.com"
   },
   "UserWay": {
