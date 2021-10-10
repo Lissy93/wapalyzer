@@ -18,7 +18,7 @@ RUN mkdir -p "$WAPPALYZER_ROOT/browsers"
 WORKDIR "$WAPPALYZER_ROOT"
 
 ADD cli.js .
-ADD categories.json
+ADD categories.json .
 ADD driver.js .
 ADD package.json .
 ADD technologies .
