@@ -422,11 +422,11 @@
     ],
     "description": "Recapture is an abandoned cart recovery and email marketing solution.",
     "icon": "Recapture.png",
-    "scripts": "cdn\\.recapture\\.io/.+\\?v=\\d+(?:&ver=([\\d\\.]+)?)?\\;version:\\1",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scripts": "cdn\\.recapture\\.io/.+\\?v=\\d+(?:&ver=([\\d\\.]+)?)?\\;version:\\1",
     "website": "https://recapture.io"
   },
   "Recart": {
@@ -845,22 +845,6 @@
     "scripts": "cdn\\.retailrocket\\.net",
     "website": "https://retailrocket.net"
   },
-  "ReviewSolicitors": {
-    "cats": [
-      90
-    ],
-    "description": "ReviewSolicitors is a free and independent client-led review platform focusing on the UK legal market.",
-    "icon": "ReviewSolicitors.svg",
-    "js": {
-      "rs.getWidgetHtml": ""
-    },
-    "pricing": [
-      "freemium"
-    ],
-    "saas": true,
-    "scripts": "\\.reviewsolicitors\\.co\\.uk/",
-    "website": "https://www.reviewsolicitors.co.uk"
-  },
   "RevLifter": {
     "cats": [
       76
@@ -913,6 +897,22 @@
     "icon": "RevenueHut.png",
     "scripts": "admin\\.revenuehunt\\.com/",
     "website": "https://revenuehut.com"
+  },
+  "ReviewSolicitors": {
+    "cats": [
+      90
+    ],
+    "description": "ReviewSolicitors is a free and independent client-led review platform focusing on the UK legal market.",
+    "icon": "ReviewSolicitors.svg",
+    "js": {
+      "rs.getWidgetHtml": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "scripts": "\\.reviewsolicitors\\.co\\.uk/",
+    "website": "https://www.reviewsolicitors.co.uk"
   },
   "RevolverMaps": {
     "cats": [

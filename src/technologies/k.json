@@ -168,22 +168,6 @@
     "scripts": "app\\.kartra\\.com",
     "website": "https://home.kartra.com"
   },
-  "k-eCommerce": {
-    "cats": [
-      6
-    ],
-    "description": "k-eCommerce is mdf commerce’s platform for SMBs, providing all-in-one ecommerce and digital payment solutions integrated to Microsoft Dynamics and SAP Business One. ",
-    "icon": "k-eCommerce.png",
-    "meta": {
-      "generator": "k-eCommerce"
-    },
-    "dom": "a[href*='.k-ecommerce.com/'][target='_blank']",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.k-ecommerce.com"
-  },
   "Keap": {
     "cats": [
       53
@@ -722,5 +706,21 @@
       "cdn\\.kustomerapp\\.com"
     ],
     "website": "https://www.kustomer.com/"
+  },
+  "k-eCommerce": {
+    "cats": [
+      6
+    ],
+    "description": "k-eCommerce is mdf commerce’s platform for SMBs, providing all-in-one ecommerce and digital payment solutions integrated to Microsoft Dynamics and SAP Business One. ",
+    "dom": "a[href*='.k-ecommerce.com/'][target='_blank']",
+    "icon": "k-eCommerce.png",
+    "meta": {
+      "generator": "k-eCommerce"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.k-ecommerce.com"
   }
 }

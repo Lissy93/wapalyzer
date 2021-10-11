@@ -130,11 +130,11 @@
       "caast.open": "",
       "caastInstance": ""
     },
-    "scripts": "cdn\\.caast\\.tv/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "cdn\\.caast\\.tv/",
     "website": "https://en.caast.tv"
   },
   "CacheFly": {
@@ -1005,11 +1005,11 @@
     "js": {
       "removeCloverly": ""
     },
-    "scripts": "apps\\.cloverly\\.com/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scripts": "apps\\.cloverly\\.com/",
     "website": "https://www.cloverly.com"
   },
   "Cluep": {
@@ -1608,19 +1608,36 @@
     "scripts": "cdn\\.conveythis\\.com",
     "website": "https://www.conveythis.com/"
   },
+  "Cookie Information": {
+    "cats": [
+      67
+    ],
+    "description": "Cookie Information is a privacy tech company that develops software that helps making company websites and mobile apps GDPR and ePrivacy compliant.",
+    "icon": "Cookie Information.svg",
+    "js": {
+      "CookieInformation.config.version": "(.+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.app\\.cookieinformation\\.com/",
+    "website": "https://cookieinformation.com"
+  },
   "Cookie Script": {
     "cats": [
       67
     ],
     "description": "Cookie-Script automatically scans, categorizes and adds description to all cookies found on your website.",
     "icon": "CookieScript.svg",
-    "scripts": "\\.cookie-script\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "\\.cookie-script\\.com/",
     "website": "https://cookie-script.com"
   },
   "CookieFirst": {
@@ -1650,23 +1667,6 @@
       "cookiehub\\.net/.*\\.js"
     ],
     "website": "https://www.cookiehub.com"
-  },
-  "Cookie Information": {
-    "cats": [
-      67
-    ],
-    "description": "Cookie Information is a privacy tech company that develops software that helps making company websites and mobile apps GDPR and ePrivacy compliant.",
-    "icon": "Cookie Information.svg",
-    "js": {
-      "CookieInformation.config.version": "(.+)\\;version:\\1"
-    },
-    "scripts": "\\.app\\.cookieinformation\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://cookieinformation.com"
   },
   "CookieYes": {
     "cats": [

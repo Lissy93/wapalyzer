@@ -1,4 +1,20 @@
 {
+  "MGID": {
+    "cats": [
+      36
+    ],
+    "description": "MGID is a programmatic advertising platform frequently used by misinformation websites.",
+    "icon": "MGID.png",
+    "js": {
+      "MgSensor.mgqWorker": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.mgid\\.com/",
+    "website": "https://www.mgid.com"
+  },
   "MODX": {
     "cats": [
       1
@@ -48,24 +64,6 @@
     "saas": true,
     "scripts": "service(?:2)?\\.mtcaptcha\\.com/",
     "website": "https://www.mtcaptcha.com"
-  },
-  "Mulberry": {
-    "cats": [
-      5
-    ],
-    "description": "Mulberry is a developer of personalised product protection solutions used to help brands unlock additional revenue.",
-    "icon": "Mulberry.svg",
-    "implies": "Cart Functionality",
-    "js": {
-      "mulberryShop": "",
-      "mulberry.cta": ""
-    },
-    "scripts": "\\.getmulberry\\.com/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.getmulberry.com"
   },
   "MadAdsMedia": {
     "cats": [
@@ -807,6 +805,16 @@
     },
     "website": "https://www.eidosmedia.com/"
   },
+  "Metomic": {
+    "cats": [
+      67
+    ],
+    "icon": "metomic.png",
+    "scripts": [
+      "metomic\\.js"
+    ],
+    "website": "https://metomic.io"
+  },
   "Metrilo": {
     "cats": [
       10,
@@ -819,39 +827,13 @@
       "metriloBotRegexp": "",
       "metriloCookie": ""
     },
-    "scripts": "\\.metrilo\\.com/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
-    "website": "https://www.metrilo.com"
-  },
-  "Metomic": {
-    "cats": [
-      67
-    ],
-    "icon": "metomic.png",
-    "scripts": [
-      "metomic\\.js"
-    ],
-    "website": "https://metomic.io"
-  },
-  "MGID": {
-    "cats": [
-      36
-    ],
-    "description": "MGID is a programmatic advertising platform frequently used by misinformation websites.",
-    "icon": "MGID.png",
-    "js": {
-      "MgSensor.mgqWorker": ""
-    },
-    "scripts": "\\.mgid\\.com/",
     "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.mgid.com"
+    "scripts": "\\.metrilo\\.com/",
+    "website": "https://www.metrilo.com"
   },
   "Microsoft 365": {
     "cats": [
@@ -1546,6 +1528,24 @@
     },
     "url": "/mozard/!suite",
     "website": "http://mozard.nl"
+  },
+  "Mulberry": {
+    "cats": [
+      5
+    ],
+    "description": "Mulberry is a developer of personalised product protection solutions used to help brands unlock additional revenue.",
+    "icon": "Mulberry.svg",
+    "implies": "Cart Functionality",
+    "js": {
+      "mulberry.cta": "",
+      "mulberryShop": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.getmulberry\\.com/",
+    "website": "https://www.getmulberry.com"
   },
   "Mura CMS": {
     "cats": [

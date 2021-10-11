@@ -127,23 +127,6 @@
     "scripts": "pay\\.pacenow\\.co",
     "website": "https://pacenow.co/"
   },
-  "Pagar.me": {
-    "cats": [
-      41
-    ],
-    "description": "Pagar.me is a Portuguese-language online payments solution for businesses in Brazil.",
-    "icon": "Pagar.me.svg",
-    "js": {
-      "PagarMeCheckout": "",
-      "pagarme.balance": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "scripts": "assets\\.pagar\\.me/",
-    "website": "https://pagar.me"
-  },
   "Paddle": {
     "cats": [
       41
@@ -161,6 +144,41 @@
     "saas": true,
     "scripts": "cdn\\.paddle\\.com/paddle/paddle\\.js",
     "website": "https://paddle.com/"
+  },
+  "PagSeguro": {
+    "cats": [
+      41
+    ],
+    "description": "PagSeguro is an online or mobile payment-based ecommerce service for commercial operations.",
+    "dom": "form[action*='pagseguro.uol.com.br'][target='pagseguro']",
+    "icon": "PagSeguro.svg",
+    "js": {
+      "PagSeguroDirectPayment": "",
+      "_PagSeguroDirectPayment": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.pagseguro\\.uol\\.com\\.br/",
+    "website": "https://pagseguro.uol.com.br"
+  },
+  "Pagar.me": {
+    "cats": [
+      41
+    ],
+    "description": "Pagar.me is a Portuguese-language online payments solution for businesses in Brazil.",
+    "icon": "Pagar.me.svg",
+    "js": {
+      "PagarMeCheckout": "",
+      "pagarme.balance": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "assets\\.pagar\\.me/",
+    "website": "https://pagar.me"
   },
   "PageFly": {
     "cats": [
@@ -209,24 +227,6 @@
       "Pagevamp": ""
     },
     "website": "https://www.pagevamp.com"
-  },
-  "PagSeguro": {
-    "cats": [
-      41
-    ],
-    "description": "PagSeguro is an online or mobile payment-based ecommerce service for commercial operations.",
-    "icon": "PagSeguro.svg",
-    "dom": "form[action*='pagseguro.uol.com.br'][target='pagseguro']",
-    "js": {
-      "PagSeguroDirectPayment": "",
-      "_PagSeguroDirectPayment": ""
-    },
-    "scripts": "\\.pagseguro\\.uol\\.com\\.br/",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://pagseguro.uol.com.br"
   },
   "Pantheon": {
     "cats": [

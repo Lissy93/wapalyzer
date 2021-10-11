@@ -27,19 +27,6 @@
     "scripts": "statics\\.a8\\.net",
     "website": "https://www.a8.net"
   },
-  "ABOUT YOU Commerce Suite": {
-    "cats": [
-      6
-    ],
-    "description": "ABOUT YOU Commerce Suite is an enterprise ready infrastructure solution designed for ecommerce companies.",
-    "icon": "ABOUT YOU Commerce Suite.svg",
-    "dom": "link[href*='cdn.aboutyou.de/'], img[src*='cdn.aboutyou.de/']",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://commercesuite.aboutyou.com"
-  },
   "AB Tasty": {
     "cats": [
       74
@@ -57,6 +44,19 @@
     "saas": true,
     "scripts": "try\\.abtasty\\.com",
     "website": "https://www.abtasty.com"
+  },
+  "ABOUT YOU Commerce Suite": {
+    "cats": [
+      6
+    ],
+    "description": "ABOUT YOU Commerce Suite is an enterprise ready infrastructure solution designed for ecommerce companies.",
+    "dom": "link[href*='cdn.aboutyou.de/'], img[src*='cdn.aboutyou.de/']",
+    "icon": "ABOUT YOU Commerce Suite.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://commercesuite.aboutyou.com"
   },
   "AD EBiS": {
     "cats": [
@@ -126,11 +126,11 @@
       "AOS.refresh": "\\;confidence:50",
       "AOS.refreshHard": "\\;confidence:50"
     },
+    "oss": true,
     "scripts": [
       "unpkg\\.com/aos@([\\d\\.]+)/dist/aos\\.js\\;version:\\1",
       "/typo3conf/ext/udem_vendor/Resources/Public/aos-([\\d\\.]+)\\;version:\\1"
     ],
-    "oss": true,
     "website": "http://michalsnik.github.io/aos/"
   },
   "AT Internet Analyzer": {
@@ -658,16 +658,16 @@
     "description": "AdScale is a cloud-based, AI-powered performance optimisation platform which utilises machine learning to automate and optimise AdWords campaigns across Google Search, Google Shopping, Google Display, and YouTube.",
     "icon": "AdScale.svg",
     "js": {
+      "_adscale": "",
       "adscaleAddToCart": "",
-      "adscaleViewProduct": "",
-      "_adscale": ""
+      "adscaleViewProduct": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring",
       "payg"
     ],
+    "saas": true,
     "scripts": "\\.adscale\\.com/",
     "website": "https://www.adscale.com"
   },
@@ -1797,6 +1797,24 @@
     "icon": "amber.png",
     "website": "https://amberframework.org"
   },
+  "AmeriCommerce": {
+    "cats": [
+      6
+    ],
+    "description": "AmeriCommerce is an ecommerce platform built for high volume online stores and complex products with features such as multi-store management.",
+    "dom": "p.AmeriCommerce-powered-by-link > a[href*='.americommerce.com/'][target='_blank']",
+    "icon": "AmeriCommerce.png",
+    "js": {
+      "AC.storeDomain": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.americommerce\\.com/",
+    "website": "https://www.americommerce.com"
+  },
   "American Express": {
     "cats": [
       41
@@ -1805,24 +1823,6 @@
     "dom": "[aria-labelledby='pi-american_express']",
     "icon": "Amex.svg",
     "website": "https://www.americanexpress.com"
-  },
-  "AmeriCommerce": {
-    "cats": [
-      6
-    ],
-    "description": "AmeriCommerce is an ecommerce platform built for high volume online stores and complex products with features such as multi-store management.",
-    "icon": "AmeriCommerce.png",
-    "dom": "p.AmeriCommerce-powered-by-link > a[href*='.americommerce.com/'][target='_blank']",
-    "js": {
-      "AC.storeDomain": ""
-    },
-    "scripts": "\\.americommerce\\.com/",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.americommerce.com"
   },
   "Ametys": {
     "cats": [
@@ -2649,8 +2649,8 @@
       36
     ],
     "description": "Audiohook specializes in programmatic audio advertising.",
-    "icon": "Audiohook.svg",
     "dom": "img[src*='listen.audiohook.com/']",
+    "icon": "Audiohook.svg",
     "website": "https://www.audiohook.com"
   },
   "Aurelia": {
@@ -2677,11 +2677,11 @@
     "js": {
       "aurycJsLibConfig.base.code_version": "([\\d\\.]+)\\;version:\\1"
     },
-    "scripts": "cdn\\.auryc\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "cdn\\.auryc\\.com/",
     "website": "https://www.auryc.com"
   },
   "Auth0": {

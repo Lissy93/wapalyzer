@@ -525,21 +525,6 @@
     "icon": "Intercom.svg",
     "website": "https://www.intercom.com/articles"
   },
-  "Intershop": {
-    "cats": [
-      6
-    ],
-    "html": "<ish-root",
-    "description": "Intershop is an ecommerce platform, tailored to the needs of complex business processes and major organisations.",
-    "icon": "Intershop.png",
-    "scripts": "(?:is-bin|INTERSHOP)",
-    "saas": true,
-    "pricing": [
-      "onetime",
-      "high"
-    ],
-    "website": "http://intershop.com"
-  },
   "Intersection Observer": {
     "cats": [
       92,
@@ -551,6 +536,21 @@
       "/assets/(?:.+)?intersection-observer\\.[\\d\\w\\.]+\\.js"
     ],
     "website": "https://www.w3.org/TR/intersection-observer"
+  },
+  "Intershop": {
+    "cats": [
+      6
+    ],
+    "description": "Intershop is an ecommerce platform, tailored to the needs of complex business processes and major organisations.",
+    "html": "<ish-root",
+    "icon": "Intershop.png",
+    "pricing": [
+      "onetime",
+      "high"
+    ],
+    "saas": true,
+    "scripts": "(?:is-bin|INTERSHOP)",
+    "website": "http://intershop.com"
   },
   "Invenio": {
     "cats": [

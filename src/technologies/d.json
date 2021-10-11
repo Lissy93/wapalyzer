@@ -12,23 +12,6 @@
     "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
     "website": "http://d3js.org"
   },
-  "Daily Deals": {
-    "cats": [
-      5
-    ],
-    "description": "Daily Deals is a flash sale, limited-time discounts, countdown timers, and sales analytics solution.",
-    "icon": "Daily Deals.svg",
-    "js": {
-      "ddAddToCheckout": "\\;confidence:50",
-      "ddAddToOrder": "\\;confidence:50"
-    },
-    "scripts": "assets\\.dailydeals\\.ai/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://dailydeals.ai"
-  },
   "DERAK.CLOUD": {
     "cats": [
       31
@@ -96,6 +79,23 @@
       "/js/dnn\\.js"
     ],
     "website": "http://dnnsoftware.com"
+  },
+  "Daily Deals": {
+    "cats": [
+      5
+    ],
+    "description": "Daily Deals is a flash sale, limited-time discounts, countdown timers, and sales analytics solution.",
+    "icon": "Daily Deals.svg",
+    "js": {
+      "ddAddToCheckout": "\\;confidence:50",
+      "ddAddToOrder": "\\;confidence:50"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "assets\\.dailydeals\\.ai/",
+    "website": "https://dailydeals.ai"
   },
   "Dancer": {
     "cats": [
@@ -729,13 +729,13 @@
     "js": {
       "doofinder.classic.version": "(.+)\\;version:\\1"
     },
-    "scripts": "cdn\\.doofinder\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "cdn\\.doofinder\\.com/",
     "website": "https://www.doofinder.com"
   },
   "Dotclear": {

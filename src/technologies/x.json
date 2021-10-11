@@ -204,7 +204,6 @@
       41
     ],
     "description": "Xpresslane is a checkout platform for ecommerce that focuses on increasing conversion during the checkout process.",
-    "icon": "Xpresslane.png",
     "dom": {
       "link[href*='/assets/xpresslane.css']": {
         "attributes": {
@@ -212,11 +211,12 @@
         }
       }
     },
-    "scripts": "apps\\.xpresslane\\.in/",
-    "saas": true,
+    "icon": "Xpresslane.png",
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scripts": "apps\\.xpresslane\\.in/",
     "website": "https://www.xpresslane.in"
   },
   "Xtremepush": {

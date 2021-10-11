@@ -321,6 +321,24 @@
     },
     "website": "https://www.getfeedback.com"
   },
+  "GetMeAShop": {
+    "cats": [
+      6
+    ],
+    "description": "GetMeAShop is a cloud-based ecommerce solution for small and midsize businesses across industries such as retail and manufacturing.",
+    "dom": "link[href*='.getmeashop.com']",
+    "icon": "GetMeAShop.png",
+    "js": {
+      "gmas_base_url": "'\\.getmeashop\\.com",
+      "search_api_base_uri": "search\\.getmeashop\\.com"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.getmeashop.com"
+  },
   "GetSimple CMS": {
     "cats": [
       1
@@ -389,24 +407,6 @@
     "saas": true,
     "website": "https://getintent.com",
     "xhr": "\\.adhigh\\.net"
-  },
-  "GetMeAShop": {
-    "cats": [
-      6
-    ],
-    "description": "GetMeAShop is a cloud-based ecommerce solution for small and midsize businesses across industries such as retail and manufacturing.",
-    "icon": "GetMeAShop.png",
-    "dom": "link[href*='.getmeashop.com']",
-    "js": {
-      "gmas_base_url": "'\\.getmeashop\\.com",
-      "search_api_base_uri": "search\\.getmeashop\\.com"
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.getmeashop.com"
   },
   "Getsitecontrol": {
     "cats": [
@@ -1290,10 +1290,10 @@
     ],
     "description": "GrocerKey is an ecommerce platform that helps grocery stores build an online store.",
     "icon": "GrocerKey.png",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "scripts": [
       "\\.grocerywebsite\\.com/",
       "grocerkey-widget\\.s3\\.amazonaws\\.com/"

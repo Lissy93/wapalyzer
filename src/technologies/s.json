@@ -344,6 +344,20 @@
     "scripts": "cdn\\.salesfire\\.co\\.uk/",
     "website": "https://www.salesfire.co.uk"
   },
+  "SalesReps.io": {
+    "cats": [
+      10
+    ],
+    "description": "SalesReps.io is a sales representative performance and commission reporting software provider.",
+    "icon": "SalesReps.io.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "api\\.salesreps\\.io/",
+    "website": "https://salesreps.io"
+  },
   "Salesfloor": {
     "cats": [
       5,
@@ -468,20 +482,6 @@
     "saas": true,
     "scripts": "service\\.force\\.com",
     "website": "https://www.salesforce.com/au/products/service-cloud/"
-  },
-  "SalesReps.io": {
-    "cats": [
-      10
-    ],
-    "description": "SalesReps.io is a sales representative performance and commission reporting software provider.",
-    "icon": "SalesReps.io.png",
-    "scripts": "api\\.salesreps\\.io/",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://salesreps.io"
   },
   "Salsify": {
     "cats": [
@@ -1048,16 +1048,16 @@
       73
     ],
     "description": "Service Management Group offers customer experience measurement, employee engagement, social monitoring, publishing, and brand research services.",
-    "icon": "Service Management Group.png",
     "dom": "link[href*='api.smg.com']",
+    "icon": "Service Management Group.png",
     "js": {
       "smgETrackParams": ""
     },
-    "scripts": "\\.smg\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "\\.smg\\.com/",
     "website": "https://www.smg.com"
   },
   "Service Provider Pro": {
@@ -1421,17 +1421,6 @@
     "url": "^https?//.+\\.myshopify\\.com",
     "website": "http://shopify.com"
   },
-  "Shopify Consent Management": {
-    "cats": [
-      67
-    ],
-    "description": "Shopify Consent Management let's you create a tracking consent banner for EU customers.",
-    "icon": "Shopify.svg",
-    "scripts": [
-      "cookie_consent_shopify\\.js"
-    ],
-    "website": "https://apps.shopify.com/customer-privacy-banner"
-  },
   "Shopify Chat": {
     "cats": [
       52
@@ -1442,6 +1431,17 @@
       "cdn\\.shopify\\.com/shopifycloud/shopify_chat/"
     ],
     "website": "https://www.shopify.com/inbox"
+  },
+  "Shopify Consent Management": {
+    "cats": [
+      67
+    ],
+    "description": "Shopify Consent Management let's you create a tracking consent banner for EU customers.",
+    "icon": "Shopify.svg",
+    "scripts": [
+      "cookie_consent_shopify\\.js"
+    ],
+    "website": "https://apps.shopify.com/customer-privacy-banner"
   },
   "Shopify Product Reviews": {
     "cats": [
@@ -1525,13 +1525,13 @@
       6
     ],
     "description": "Shoppiko is an ecommerce platform solution in India, which provides ecommerce website or ecommerce mobile application.",
-    "icon": "Shoppiko.png",
     "dom": "a[href*='shoppiko.com'][target='_blank']",
-    "saas": true,
+    "icon": "Shoppiko.png",
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://shoppiko.com"
   },
   "Shoppy": {
@@ -2845,16 +2845,16 @@
     ],
     "description": "Sprig is a UX analysis and management tool to understand what motivates customers to sign up, engage, and remain loyal to products.",
     "icon": "Sprig.png",
-    "saas": true,
     "js": {
       "UserLeap": ""
     },
-    "scripts": "cdn\\.userleap\\.com/",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "cdn\\.userleap\\.com/",
     "website": "https://sprig.com"
   },
   "Spring": {
@@ -3200,20 +3200,6 @@
     "oss": true,
     "website": "https://stitches.dev"
   },
-  "StoreHippo": {
-    "cats": [
-      6
-    ],
-    "description": "StoreHippo is a SaaS based ecommerce platform.",
-    "icon": "StoreHippo.png",
-    "dom": "link[href*='.storehippo.com'], img[src*='.storehippo.com']",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.storehippo.com"
-  },
   "Store Systems": {
     "cats": [
       6
@@ -3222,20 +3208,19 @@
     "icon": "Store Systems.png",
     "website": "http://store-systems.de"
   },
-  "StorifyMe": {
+  "StoreHippo": {
     "cats": [
-      5
+      6
     ],
-    "description": "StorifyMe is a storytelling platform for creating and distributing web stories on social networks and the open web.",
-    "icon": "StorifyMe.png",
-    "dom": "link[href*='cdn.storifyme.com/']",
-    "scripts": "cdn\\.storifyme\\.com/",
-    "saas": true,
+    "description": "StoreHippo is a SaaS based ecommerce platform.",
+    "dom": "link[href*='.storehippo.com'], img[src*='.storehippo.com']",
+    "icon": "StoreHippo.png",
     "pricing": [
-      "freemium",
-      "poa"
+      "mid",
+      "recurring"
     ],
-    "website": "https://www.storifyme.com"
+    "saas": true,
+    "website": "https://www.storehippo.com"
   },
   "Storeden": {
     "cats": [
@@ -3246,6 +3231,21 @@
     },
     "icon": "storeden.svg",
     "website": "https://www.storeden.com"
+  },
+  "StorifyMe": {
+    "cats": [
+      5
+    ],
+    "description": "StorifyMe is a storytelling platform for creating and distributing web stories on social networks and the open web.",
+    "dom": "link[href*='cdn.storifyme.com/']",
+    "icon": "StorifyMe.png",
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.storifyme\\.com/",
+    "website": "https://www.storifyme.com"
   },
   "Storyblok": {
     "cats": [
