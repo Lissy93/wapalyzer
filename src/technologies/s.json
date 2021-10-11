@@ -3054,13 +3054,20 @@
   },
   "Stackla": {
     "cats": [
-      5
+      96,
+      95
     ],
+    "description": "Stackla is a cloud-based content marketing platform that helps discover, curate, display and engage with user-generated content across all digital marketing platforms.",
     "icon": "Stackla.png",
     "js": {
       "Stackla": ""
     },
-    "scripts": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
+    "scripts": "\\.stackla\\.com/",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
     "website": "http://stackla.com/"
   },
   "Stamped": {
