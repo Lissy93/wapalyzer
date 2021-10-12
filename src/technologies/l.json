@@ -77,6 +77,23 @@
     "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
     "website": "https://www.laterpay.net/"
   },
+  "LatitudePay": {
+    "cats": [
+      91
+    ],
+    "description": "LatitudePay is an interest-free, buy now, pay later solution.",
+    "icon": "LatitudePay.svg",
+    "dom": "a[href*='latitudepay.com/'][target='_blank'], img[src='.latitudepayapps.com/']",
+    "js": {
+      "checkout.assets.latitudepay.url": "\\.latitudepay\\.com"
+    },
+    "scripts": "\\.latitudepayapps\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://www.latitudepay.com"
+  },
   "LaunchDarkly": {
     "cats": [
       85
