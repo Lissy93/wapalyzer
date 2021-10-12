@@ -1660,19 +1660,59 @@
     ],
     "description": "MyWebsite is website builder designed for easy editing and fast results.",
     "icon": "MyWebsite.svg",
-    "implies": "Duda",
+    "excludes": "Jimdo",
     "js": {
-      "SystemID": "^.*1AND1.*$"
+      "SystemID": "^.*1AND1.*$\\;version:8"
     },
     "meta": {
-      "generator": "^.*MyWebsite.*$\\;version:8"
+      "generator": "IONOS MyWebsite\\;version:8"
     },
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
+    "website": "https://www.ionos.com"
+  },
+  "MyWebsite Creator": {
+    "cats": [
+      51
+    ],
+    "description": "MyWebsite Creator is website builder designed for easy editing and fast results.",
+    "icon": "MyWebsite.svg",
+    "implies": "Duda",
+    "dom": "body#dmRoot",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": [
+      "website-editor\\.net",
+      "mywebsite-editor\\.com"
+    ],
+    "website": "https://www.ionos.com"
+  },
+  "MyWebsite Now": {
+    "cats": [
+      51
+    ],
+    "description": "MyWebsite Now is a website builder designed for getting online quickly.",
+    "icon": "MyWebsite.svg",
+    "dom": "img[src*='/-_-/res/']",
+    "implies": [
+      "React",
+      "Node.js",
+      "GraphQL"
+    ],
+    "meta": {
+      "generator": "MyWebsite NOW"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
     "website": "https://www.ionos.com"
   },
   "Mynetcap": {
