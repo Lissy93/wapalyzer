@@ -3392,7 +3392,8 @@
     "html": "<input[^>]+data-stripe",
     "icon": "Stripe.svg",
     "js": {
-      "Stripe.version": "^(.+)$\\;version:\\1"
+      "Stripe.version": "^(.+)$\\;version:\\1",
+      "checkout.enabledpayments.stripe": "^true$"
     },
     "pricing": [
       "payg"
