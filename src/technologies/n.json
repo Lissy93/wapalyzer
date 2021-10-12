@@ -373,6 +373,25 @@
     "scripts": "^/nodebb\\.min\\.js\\?",
     "website": "https://nodebb.org"
   },
+  "Norton Shopping Guarantee": {
+    "cats": [
+      5
+    ],
+    "description": "Norton Shopping Guarantee offering a third-party shopping guarantee to customers provides added protection and validation that you are safe to buy from.",
+    "icon": "Norton Shopping Guarantee.svg",
+    "implies": "Cart Functionality",
+    "js": {
+      "DO_NORTON_SHOPPING": ""
+    },
+    "scripts": "nsg\\.symantec\\.com/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://norton.buysafe.com"
+  },
   "Nosto": {
     "cats": [
       76,
