@@ -639,6 +639,21 @@
     "icon": "Scientific Linux.png",
     "website": "http://scientificlinux.org"
   },
+  "Scoop.it": {
+    "cats": [
+      96
+    ],
+    "description": "Scoop.it is a content marketing software company based in San Francisco which provide content curation platform.",
+    "icon": "Scoop.it.svg",
+    "dom": "iframe[src*='.scoop.it/'], a[href*='.scoop.it/'][target='_blank']",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.scoop.it"
+  },
   "Scorpion": {
     "cats": [
       1
@@ -2363,6 +2378,23 @@
     "scripts": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
     "website": "https://snipcart.com"
   },
+  "Sniply": {
+    "cats": [
+      96
+    ],
+    "description": "Sniply is a special URL shortener that allows to add a call-to-action to any landing page.",
+    "icon": "Sniply.svg",
+    "js": {
+      "sniply.create_sniply_bar": ""
+    },
+    "scripts": "gosniply\\.com/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://sniply.io"
+  },
   "Snoobi": {
     "cats": [
       10
@@ -3054,13 +3086,20 @@
   },
   "Stackla": {
     "cats": [
-      5
+      96,
+      95
     ],
+    "description": "Stackla is a cloud-based content marketing platform that helps discover, curate, display and engage with user-generated content across all digital marketing platforms.",
     "icon": "Stackla.png",
     "js": {
       "Stackla": ""
     },
-    "scripts": "assetscdn\\.stackla\\.com\\/media\\/js\\/widget\\/(?:[a-zA-Z0-9.]+)?\\.js",
+    "scripts": "\\.stackla\\.com/",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
     "website": "http://stackla.com/"
   },
   "Stamped": {
@@ -3256,6 +3295,20 @@
       "generator": "storyblok"
     },
     "website": "https://www.storyblok.com"
+  },
+  "StoryStream": {
+    "cats": [
+      96
+    ],
+    "description": "StoryStream is a content curation platform that specialises in user generated content.",
+    "icon": "StoryStream.png",
+    "scripts": "apps\\.storystream\\.ai/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://storystream.ai"
   },
   "Strapdown.js": {
     "cats": [
