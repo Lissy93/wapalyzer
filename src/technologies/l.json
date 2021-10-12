@@ -82,16 +82,16 @@
       91
     ],
     "description": "LatitudePay is an interest-free, buy now, pay later solution.",
-    "icon": "LatitudePay.svg",
     "dom": "a[href*='latitudepay.com/'][target='_blank'], img[src='.latitudepayapps.com/']",
+    "icon": "LatitudePay.svg",
     "js": {
       "checkout.enabledpayments.latitudepay": "^true$"
     },
-    "scripts": "\\.latitudepayapps\\.com/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
+    "scripts": "\\.latitudepayapps\\.com/",
     "website": "https://www.latitudepay.com"
   },
   "LaunchDarkly": {
@@ -144,16 +144,16 @@
       91
     ],
     "description": "Laybuy is a payment service that lets you receive your purchase now and spread the total cost over 6 weekly automatic payments interest free.",
-    "icon": "LayBuy.svg",
     "dom": "iframe[src='.laybuy.com/']",
+    "icon": "LayBuy.svg",
     "js": {
       "LaybuyHelper": "",
       "checkout.enabledpayments.laybuy": "^true$",
-      "laybuyMoneyOverides": "",
-      "laybuyEnableCart": ""
+      "laybuyEnableCart": "",
+      "laybuyMoneyOverides": ""
     },
     "pricing": [
-     "payg"
+      "payg"
     ],
     "saas": true,
     "scripts": "\\.laybuy\\.com/",

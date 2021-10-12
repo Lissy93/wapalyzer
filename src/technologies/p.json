@@ -414,10 +414,10 @@
     "icon": "PayPal.svg",
     "js": {
       "PAYPAL": "",
+      "checkout.enabledpayments.paypal": "^true$",
       "enablePaypal": "",
       "paypalClientId": "",
-      "paypalJs": "",
-      "checkout.enabledpayments.paypal": "^true$"
+      "paypalJs": ""
     },
     "meta": {
       "id": "in-context-paypal-metadata"
@@ -1043,35 +1043,6 @@
     "icon": "Play.svg",
     "implies": "Scala",
     "website": "https://www.playframework.com"
-  },
-  "plentymarkets": {
-    "cats": [
-      6
-    ],
-    "description": "plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
-    "headers": {
-      "X-Plenty-Shop": ""
-    },
-    "icon": "plentymarkets.svg",
-    "meta": {
-      "generator": "plentymarkets"
-    },
-    "scripts": [
-      "plenty\\.shop\\.(?:min\\.)?js"
-    ],
-    "website": "https://www.plentymarkets.com/"
-  },
-  "plentyShop LTS": {
-    "cats": [
-      6
-    ],
-    "description": "The official template plugin developed by plentymarkets. plentyShop LTS is the default template for plentymarkets online stores.",
-    "headers": {
-      "X-Plenty-Shop": "Ceres"
-    },
-    "icon": "plentyShop LTS.svg",
-    "oss": true,
-    "website": "https://www.plentymarkets.com/product/modules/online-shop/"
   },
   "Pleroma": {
     "cats": [
@@ -2038,6 +2009,35 @@
     "icon": "pirobaseCMS.svg",
     "implies": "Java",
     "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
+  },
+  "plentyShop LTS": {
+    "cats": [
+      6
+    ],
+    "description": "The official template plugin developed by plentymarkets. plentyShop LTS is the default template for plentymarkets online stores.",
+    "headers": {
+      "X-Plenty-Shop": "Ceres"
+    },
+    "icon": "plentyShop LTS.svg",
+    "oss": true,
+    "website": "https://www.plentymarkets.com/product/modules/online-shop/"
+  },
+  "plentymarkets": {
+    "cats": [
+      6
+    ],
+    "description": "plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
+    "headers": {
+      "X-Plenty-Shop": ""
+    },
+    "icon": "plentymarkets.svg",
+    "meta": {
+      "generator": "plentymarkets"
+    },
+    "scripts": [
+      "plenty\\.shop\\.(?:min\\.)?js"
+    ],
+    "website": "https://www.plentymarkets.com/"
   },
   "prettyPhoto": {
     "cats": [

@@ -644,14 +644,14 @@
       96
     ],
     "description": "Scoop.it is a content marketing software company based in San Francisco which provide content curation platform.",
-    "icon": "Scoop.it.svg",
     "dom": "iframe[src*='.scoop.it/'], a[href*='.scoop.it/'][target='_blank']",
-    "saas": true,
+    "icon": "Scoop.it.svg",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.scoop.it"
   },
   "Scorpion": {
@@ -1941,8 +1941,8 @@
       51
     ],
     "description": "SiteW is a French-based company that offers a website building service.",
-    "icon": "SiteW.svg",
     "dom": "link[href*='.sitew.com']",
+    "icon": "SiteW.svg",
     "pricing": [
       "freemium",
       "low",
@@ -2402,12 +2402,12 @@
     "js": {
       "sniply.create_sniply_bar": ""
     },
-    "scripts": "gosniply\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "gosniply\\.com/",
     "website": "https://sniply.io"
   },
   "Snoobi": {
@@ -2714,20 +2714,6 @@
     "scripts": "\\.speedcurve\\.com",
     "website": "https://www.speedcurve.com"
   },
-  "Speedimize": {
-    "cats": [
-      92
-    ],
-    "description": "Speedimize is a Shopify agency that focuses on website speed optimisation and performance issues.",
-    "icon": "Speedimize.svg",
-    "scripts": "cdn\\.shopify\\.com/.+/assets/speedimize\\.js",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://speedimize.io"
-  },
   "SpeedKit": {
     "cats": [
       92
@@ -2738,6 +2724,20 @@
       "speedKit": ""
     },
     "website": "https://www.baqend.com/"
+  },
+  "Speedimize": {
+    "cats": [
+      92
+    ],
+    "description": "Speedimize is a Shopify agency that focuses on website speed optimisation and performance issues.",
+    "icon": "Speedimize.svg",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.shopify\\.com/.+/assets/speedimize\\.js",
+    "website": "https://speedimize.io"
   },
   "Sphinx": {
     "cats": [
@@ -3123,12 +3123,12 @@
     "js": {
       "Stackla": ""
     },
-    "scripts": "\\.stackla\\.com/",
-    "saas": true,
     "pricing": [
       "high",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "\\.stackla\\.com/",
     "website": "http://stackla.com/"
   },
   "Stamped": {
@@ -3315,6 +3315,20 @@
     "scripts": "cdn\\.storifyme\\.com/",
     "website": "https://www.storifyme.com"
   },
+  "StoryStream": {
+    "cats": [
+      96
+    ],
+    "description": "StoryStream is a content curation platform that specialises in user generated content.",
+    "icon": "StoryStream.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "apps\\.storystream\\.ai/",
+    "website": "https://storystream.ai"
+  },
   "Storyblok": {
     "cats": [
       1
@@ -3324,20 +3338,6 @@
       "generator": "storyblok"
     },
     "website": "https://www.storyblok.com"
-  },
-  "StoryStream": {
-    "cats": [
-      96
-    ],
-    "description": "StoryStream is a content curation platform that specialises in user generated content.",
-    "icon": "StoryStream.png",
-    "scripts": "apps\\.storystream\\.ai/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://storystream.ai"
   },
   "Strapdown.js": {
     "cats": [
