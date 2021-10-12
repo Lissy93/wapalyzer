@@ -122,6 +122,24 @@
     "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
     "website": "https://www.launchrock.com"
   },
+  "LayBuy": {
+    "cats": [
+      91
+    ],
+    "description": "Laybuy is a payment service that lets you receive your purchase now and spread the total cost over 6 weekly automatic payments interest free.",
+    "icon": "LayBuy.svg",
+    "dom": "iframe[src='.laybuy.com/']",
+    "js": {
+      "LaybuyHelper": "",
+      "checkout.enabledpayments.laybuy": "^true$"
+    },
+    "pricing": [
+     "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.laybuy\\.com/",
+    "website": "https://www.laybuy.com"
+  },
   "Layer0": {
     "cats": [
       92
