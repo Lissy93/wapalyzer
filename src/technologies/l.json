@@ -85,7 +85,7 @@
     "icon": "LatitudePay.svg",
     "dom": "a[href*='latitudepay.com/'][target='_blank'], img[src='.latitudepayapps.com/']",
     "js": {
-      "checkout.assets.latitudepay.url": "\\.latitudepay\\.com"
+      "checkout.enabledpayments.latitudepay": "^true$"
     },
     "scripts": "\\.latitudepayapps\\.com/",
     "saas": true,
