@@ -46,6 +46,23 @@
     "saas": true,
     "website": "http://modx.com"
   },
+  "mParticle": {
+    "cats": [
+      97
+    ],
+    "description": "mParticle is a mobile-focused event tracking and data ingestion tool.",
+    "icon": "mParticle.svg",
+    "js": {
+      "mParticle.config.snippetVersion": "(.+)\\;version:\\1",
+      "mParticle": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.mparticle\\.com/",
+    "website": "https://www.mparticle.com"
+  },
   "MTCaptcha": {
     "cats": [
       16
