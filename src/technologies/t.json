@@ -909,6 +909,27 @@
     "icon": "TornadoServer.png",
     "website": "http://tornadoweb.org"
   },
+  "Totango": {
+    "cats": [
+      97
+    ],
+    "description": "Totango is a customer success platform that helps recurring revenue businesses simplify the complexities of customer success by connecting the dots of customer data, actively monitoring customer health changes, and driving proactive engagements.",
+    "icon": "Totango.svg",
+    "js": {
+      "totango": "",
+      "totangoLoader": ""
+    },
+    "scripts": [
+      "\\.totango\\.com/totango([\\d\\.]+)\\.js\\;version:\\1",
+      "\\.amazonaws\\.com/totango-cdn/totango\\d\\.js"
+    ],
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "website": "https://www.totango.com"
+  },
   "TotalCode": {
     "cats": [
       6
