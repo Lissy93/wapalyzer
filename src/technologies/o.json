@@ -733,6 +733,24 @@
     "scripts": "optimizely\\.com.*\\.js",
     "website": "https://www.optimizely.com"
   },
+  "Optimove": {
+    "cats": [
+      97
+    ],
+    "description": "Optimove is a relationship marketing hub powered by a combination of advanced customer modeling, predictive micro-segmentation and campaign automation technologies.",
+    "icon": "Optimove.svg",
+    "js": {
+      "optimoveSDK": "",
+      "optimoveSDKVersion": "([\\d\\.]+)\\;version:\\1"
+    },
+    "scripts": "\\.optimove\\.net/.+v([\\d\\.]+)\\.js\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.optimove.com"
+  },
   "Oracle Application Server": {
     "cats": [
       22
