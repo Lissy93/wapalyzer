@@ -406,7 +406,8 @@
   },
   "Salesforce Audience Studio": {
     "cats": [
-      86
+      86,
+      97
     ],
     "description": "Salesforce Audience Studio is a customer data marketplace that only other platform users can access.",
     "dom": "link[href*='.krxd.net']",
@@ -766,7 +767,7 @@
   },
   "Segment": {
     "cats": [
-      10
+      97
     ],
     "description": "Segment is a customer data platform (CDP) that helps you collect, clean, and control your customer data.",
     "dns": {
@@ -1815,6 +1816,28 @@
     "scripts": "template\\.sirclocdn\\.com/",
     "url": "^https?//.+\\.sirclo\\.me",
     "website": "https://sirclo.com/"
+  },
+  "Sirdata": {
+    "cats": [
+      97,
+      67,
+      86
+    ],
+    "description": "Sirdata is a self-service, third party data-collecting platform that specialises in the collection of behavioural data, predictive targeting and selling of audience segments.",
+    "icon": "Sirdata.svg",
+    "js": {
+      "SDDAN.cmp": "",
+      "Sddan.cmpLoaded": ""
+    },
+    "scripts": [
+      "(?:choices|cache)\\.consentframework\\.com/",
+      "js\\.sddan\\.com/"
+    ],
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.sirdata.com"
   },
   "Site Kit": {
     "cats": [

@@ -436,7 +436,8 @@
   },
   "Listrak": {
     "cats": [
-      32
+      32,
+      97
     ],
     "description": "Listrak is a AI-based marketing automation and CRM solutions that unify, interpret and personalise data to engage customer across channels and devices.",
     "icon": "Listrak.png",
@@ -1031,5 +1032,22 @@
     },
     "icon": "lighttpd.png",
     "website": "http://www.lighttpd.net"
+  },
+  "Lytics": {
+    "cats": [
+      97
+    ],
+    "description": "Lytics is a customer data platform built for marketing teams.",
+    "icon": "Lytics.svg",
+    "js": {
+      "__lytics__jstag__.version": "(.+)\\;version:\\1"
+    },
+    "scripts": "\\.lytics\\.io/",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.lytics.com"
   }
 }
