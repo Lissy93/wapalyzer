@@ -1032,5 +1032,22 @@
     },
     "icon": "lighttpd.png",
     "website": "http://www.lighttpd.net"
+  },
+  "Lytics": {
+    "cats": [
+      97
+    ],
+    "description": "Lytics is a customer data platform built for marketing teams.",
+    "icon": "Lytics.svg",
+    "js": {
+      "__lytics__jstag__.version": "(.+)\\;version:\\1"
+    },
+    "scripts": "\\.lytics\\.io/",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.lytics.com"
   }
 }
