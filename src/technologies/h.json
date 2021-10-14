@@ -122,6 +122,18 @@
     "scripts": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "http://handlebarsjs.com"
   },
+  "Handtalk": {
+    "cats": [
+      68
+    ],
+    "description": "Handtalk is an accessiblity plug-in which uses sign language to make sites accessible.",
+    "icon": "Handtalk.png",
+    "js": {
+      "HandTalk": ""
+    },
+    "scripts": "api\\.handtalk\\.me",
+    "website": "https://www.handtalk.me/"
+  },
   "Haravan": {
     "cats": [
       6
@@ -203,11 +215,19 @@
     "cats": [
       5
     ],
+    "description": "Hello Bar is a customizable notification bar that draws visitors to an important call to action on the website.",
     "icon": "Hello Bar.png",
     "js": {
-      "HelloBar": ""
+      "HelloBar": "",
+      "hellobarSiteSettings": ""
     },
-    "scripts": "hellobar\\.js",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.?hellobar\\.(?:com|js)",
     "website": "http://hellobar.com"
   },
   "Hello Elementor": {
@@ -405,6 +425,22 @@
     "scripts": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
     "website": "http://highcharts.com/products/highstock"
   },
+  "Highstreet": {
+    "cats": [
+      19
+    ],
+    "description": "Highstreet is the enterprise-grade D2C app platform for global fashion and lifestyle brands.",
+    "icon": "Highstreet.png",
+    "js": {
+      "highstreetBanner.config": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.api\\.highstreetapp\\.com/",
+    "website": "https://www.highstreetmobile.com"
+  },
   "HikeOrders": {
     "cats": [
       68
@@ -450,9 +486,25 @@
     ],
     "website": "https://twitter.github.io/hogan.js/"
   },
+  "Homestead": {
+    "cats": [
+      51
+    ],
+    "description": "Homestead is a website builder.",
+    "icon": "Homestead.png",
+    "meta": {
+      "generator": "^Homestead SiteBuilder$"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.homestead.com"
+  },
   "Hostmeapp": {
     "cats": [
-      5,
+      93,
       72
     ],
     "description": "Hostmeapp is an restaurant software. Includes reservation, waitlist, guestbook and marketing tools.",
@@ -595,6 +647,126 @@
       "generator": "Hugo ([\\d.]+)?\\;version:\\1"
     },
     "website": "http://gohugo.io"
+  },
+  "HulkApps Age Verification": {
+    "cats": [
+      5
+    ],
+    "description": "HulkApps Age Verification allow your customers to certify their age before they land in your store.",
+    "icon": "HulkApps.svg",
+    "implies": "Shopify",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "age-verification\\.hulkapps\\.com/",
+    "website": "https://www.hulkapps.com/products/age-verification-shopify"
+  },
+  "HulkApps Form Builder": {
+    "cats": [
+      73
+    ],
+    "description": "HulkApps Form Builder is an application that creates customizable, job-specific forms for unit needs.",
+    "icon": "HulkApps.svg",
+    "implies": "Shopify",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "formbuilder\\.hulkapps\\.com/",
+    "website": "https://www.hulkapps.com/products/form-builder-shopify"
+  },
+  "HulkApps GDPR/CCPA Compliance Manager": {
+    "cats": [
+      67
+    ],
+    "description": "HulkApps GDPR/CCPA Compliance Manager is a consent management solution.",
+    "icon": "HulkApps.svg",
+    "implies": "Shopify",
+    "js": {
+      "hulkSetCookie": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cookiebar\\.hulkapps\\.com/hulk_cookie_bar\\.js",
+    "website": "https://www.hulkapps.com/products/gdpr-ccpa-cookie-manager-shopify-app"
+  },
+  "HulkApps Infinite Product Options": {
+    "cats": [
+      76
+    ],
+    "description": "HulkApps Infinite Product Options is a unlimited custom options for products. Display variant options as buttons, color and image swatches, and more.",
+    "icon": "HulkApps.svg",
+    "implies": "Shopify",
+    "js": {
+      "hulkapps.po_url": "productoption\\.hulkapps\\.com"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.hulkapps.com/products/infinite-product-options-shopify"
+  },
+  "HulkApps Product Reviews": {
+    "cats": [
+      90
+    ],
+    "description": "HulkApps Product Reviews is a customer product reviews app for building social proof for store.",
+    "dom": "link[href*='reviews.hulkapps.com/']",
+    "icon": "HulkApps.svg",
+    "implies": "Shopify",
+    "js": {
+      "hulkappsProductReview": "",
+      "hulkappsReviews": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.hulkapps.com/products/product-reviews-shopify"
+  },
+  "Humm": {
+    "cats": [
+      91
+    ],
+    "description": "Humm (formerly Flexigroup) is a buy now pay later service operating in Australia.",
+    "icon": "Humm.svg",
+    "js": {
+      "checkout.enabledpayments.humm": "^true$"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "widgets\\.shophumm\\.com",
+    "website": "https://www.shophumm.com"
+  },
+  "Hushly": {
+    "cats": [
+      32
+    ],
+    "description": "Hushly is an all-in-one B2B marketing software platform.",
+    "dom": "link[href*='.hushly.com/']",
+    "icon": "Hushly.png",
+    "js": {
+      "__hly_widget_object": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.hushly\\.com/",
+    "website": "https://www.hushly.com"
   },
   "Hyperspeed": {
     "cats": [

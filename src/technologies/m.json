@@ -1,4 +1,20 @@
 {
+  "MGID": {
+    "cats": [
+      36
+    ],
+    "description": "MGID is a programmatic advertising platform frequently used by misinformation websites.",
+    "icon": "MGID.png",
+    "js": {
+      "MgSensor.mgqWorker": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.mgid\\.com/",
+    "website": "https://www.mgid.com"
+  },
   "MODX": {
     "cats": [
       1
@@ -29,6 +45,42 @@
     ],
     "saas": true,
     "website": "http://modx.com"
+  },
+  "mParticle": {
+    "cats": [
+      97
+    ],
+    "description": "mParticle is a mobile-focused event tracking and data ingestion tool.",
+    "icon": "mParticle.svg",
+    "js": {
+      "mParticle.config.snippetVersion": "(.+)\\;version:\\1",
+      "mParticle": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.mparticle\\.com/",
+    "website": "https://www.mparticle.com"
+  },
+  "MTCaptcha": {
+    "cats": [
+      16
+    ],
+    "description": "MTCaptcha is a captcha service that is GDPR and WCAG compliant, providing the confidence of privacy and accessibility.",
+    "icon": "MTCaptcha.png",
+    "js": {
+      "mtcaptcha.getVerifiedToken": "",
+      "mtcaptchaConfig.sitekey": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "service(?:2)?\\.mtcaptcha\\.com/",
+    "website": "https://www.mtcaptcha.com"
   },
   "MadAdsMedia": {
     "cats": [
@@ -327,7 +379,7 @@
       41
     ],
     "description": "MasterCard facilitates electronic funds transfers throughout the world, most commonly through branded credit cards, debit cards and prepaid cards.",
-    "dom": "[aria-labelledby='pi-mastercard']",
+    "dom": "[aria-labelledby='pi-mastercard'], [aria-labelledby='pi-master']",
     "icon": "Mastercard.svg",
     "website": "https://www.mastercard.com"
   },
@@ -666,6 +718,51 @@
     "url": "^https?//.+\\.memberstack\\.io",
     "website": "https://www.memberstack.io"
   },
+  "Mention Me": {
+    "cats": [
+      94
+    ],
+    "description": "Mention Me is a referral marketing platform for conversion-obsessed ecommerce brands.",
+    "icon": "Mention Me.png",
+    "js": {
+      "MentionMe": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.mention-me\\.com/",
+    "website": "https://www.mention-me.com"
+  },
+  "Menufy Online Ordering": {
+    "cats": [
+      93
+    ],
+    "description": "Menufy is an online and mobile meal ordering service.",
+    "dom": "a[href*='.menufy.com/'][target='_blank']",
+    "icon": "Menufy.png",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://restaurant.menufy.com"
+  },
+  "Menufy Website": {
+    "cats": [
+      51
+    ],
+    "description": "Menufy is an online and mobile meal ordering service.",
+    "icon": "Menufy.png",
+    "js": {
+      "Views_Website_Layouts_Footer_Menufy": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "sitecontent-menufycom\\.netdna-ssl\\.com/",
+    "website": "https://restaurant.menufy.com"
+  },
   "Mercado Shops": {
     "cats": [
       6
@@ -734,6 +831,26 @@
       "metomic\\.js"
     ],
     "website": "https://metomic.io"
+  },
+  "Metrilo": {
+    "cats": [
+      10,
+      75
+    ],
+    "description": "Metrilo is an ecommerce analytics, email marketing software provider.",
+    "icon": "Metrilo.svg",
+    "js": {
+      "metrilo": "",
+      "metriloBotRegexp": "",
+      "metriloCookie": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.metrilo\\.com/",
+    "website": "https://www.metrilo.com"
   },
   "Microsoft 365": {
     "cats": [
@@ -1429,6 +1546,24 @@
     "url": "/mozard/!suite",
     "website": "http://mozard.nl"
   },
+  "Mulberry": {
+    "cats": [
+      5
+    ],
+    "description": "Mulberry is a developer of personalised product protection solutions used to help brands unlock additional revenue.",
+    "icon": "Mulberry.svg",
+    "implies": "Cart Functionality",
+    "js": {
+      "mulberry.cta": "",
+      "mulberryShop": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.getmulberry\\.com/",
+    "website": "https://www.getmulberry.com"
+  },
   "Mura CMS": {
     "cats": [
       1,
@@ -1541,20 +1676,60 @@
       51
     ],
     "description": "MyWebsite is website builder designed for easy editing and fast results.",
-    "icon": "Ionos-by-1and1-logo.svg",
-    "implies": "Duda",
+    "excludes": "Jimdo",
+    "icon": "MyWebsite.svg",
     "js": {
-      "SystemID": "^.*1AND1.*$"
+      "SystemID": "^.*1AND1.*$\\;version:8"
     },
     "meta": {
-      "generator": "^.*MyWebsite.*$\\;version:8"
+      "generator": "IONOS MyWebsite\\;version:8"
     },
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\/\\/integration\\.mywebsite-editor\\.com.*\\.js\\;version:9",
+    "website": "https://www.ionos.com"
+  },
+  "MyWebsite Creator": {
+    "cats": [
+      51
+    ],
+    "description": "MyWebsite Creator is website builder designed for easy editing and fast results.",
+    "dom": "body#dmRoot",
+    "icon": "MyWebsite.svg",
+    "implies": "Duda",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": [
+      "website-editor\\.net",
+      "mywebsite-editor\\.com"
+    ],
+    "website": "https://www.ionos.com"
+  },
+  "MyWebsite Now": {
+    "cats": [
+      51
+    ],
+    "description": "MyWebsite Now is a website builder designed for getting online quickly.",
+    "dom": "img[src*='/-_-/res/']",
+    "icon": "MyWebsite.svg",
+    "implies": [
+      "React",
+      "Node.js",
+      "GraphQL"
+    ],
+    "meta": {
+      "generator": "MyWebsite NOW"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
     "website": "https://www.ionos.com"
   },
   "Mynetcap": {
@@ -1592,7 +1767,8 @@
       "payg"
     ],
     "saas": true,
-    "website": "https://microcms.io"
+    "website": "https://microcms.io",
+    "xhr": "\\.microcms\\.io"
   },
   "mini_httpd": {
     "cats": [
@@ -1603,6 +1779,16 @@
     },
     "icon": "mini_httpd.png",
     "website": "http://acme.com/software/mini_httpd"
+  },
+  "mobicred": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Mobicred is a credit facility that allows you to safely shop online with our participating retailers.",
+    "icon": "Mobicred.png",
+    "scripts": "app\\.mobicredwidget\\.co\\.za",
+    "website": "https://mobicred.co.za/"
   },
   "mod_auth_pam": {
     "cats": [

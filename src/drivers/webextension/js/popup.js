@@ -67,14 +67,15 @@ const Popup = {
       detections: document.querySelector('.detections'),
       empty: document.querySelector('.empty'),
       footer: document.querySelector('.footer'),
-      tabPro: document.querySelector('.tab--pro'),
+      tabPlus: document.querySelector('.tab--plus'),
+      tabPlusDot: document.querySelector('.tab__dot'),
       termsButtonAccept: document.querySelector('.terms__button--accept'),
       termsButtonDecline: document.querySelector('.terms__button--decline'),
       headerSwitches: document.querySelectorAll('.header__switch'),
       headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
       headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
-      proConfigureApiKey: document.querySelector('.pro-configure__apikey'),
-      proConfigureSave: document.querySelector('.pro-configure__save'),
+      plusConfigureApiKey: document.querySelector('.plus-configure__apikey'),
+      plusConfigureSave: document.querySelector('.plus-configure__save'),
       headerSettings: document.querySelector('.header__settings'),
       headerThemes: document.querySelectorAll('.header__theme'),
       headerThemeLight: document.querySelector('.header__theme--light'),
@@ -100,6 +101,12 @@ const Popup = {
 
       return templates
     }, {})
+
+    const plusTabViewed = await getOption('plusTabViewed', false)
+
+    if (plusTabViewed) {
+      el.tabPlusDot.classList.add('tab__dot--hidden')
+    }
 
     // Disabled domains
     const dynamicIcon = await getOption('dynamicIcon', false)
@@ -132,7 +139,7 @@ const Popup = {
       el.terms.classList.remove('terms--hidden')
       el.detections.classList.add('detections--hidden')
       el.footer.classList.add('footer--hidden')
-      el.tabPro.classList.add('tab--disabled')
+      el.tabPlus.classList.add('tab--disabled')
 
       el.termsButtonAccept.addEventListener('click', async () => {
         await setOption('termsAccepted', true)
@@ -140,7 +147,7 @@ const Popup = {
 
         el.terms.classList.add('terms--hidden')
         el.footer.classList.remove('footer--hidden')
-        el.tabPro.classList.remove('tab--disabled')
+        el.tabPlus.classList.remove('tab--disabled')
 
         Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
       })
@@ -151,7 +158,7 @@ const Popup = {
 
         el.terms.classList.add('terms--hidden')
         el.footer.classList.remove('footer--hidden')
-        el.tabPro.classList.remove('tab--disabled')
+        el.tabPlus.classList.remove('tab--disabled')
 
         Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
       })
@@ -198,17 +205,17 @@ const Popup = {
           headerSwitch.classList.add('header__switch--hidden')
         }
 
-        el.tabPro.classList.add('tab--disabled')
+        el.tabPlus.classList.add('tab--disabled')
       }
     }
 
-    // PRO configuration
-    el.proConfigureApiKey.value = await getOption('apiKey', '')
+    // Plus configuration
+    el.plusConfigureApiKey.value = await getOption('apiKey', '')
 
-    el.proConfigureSave.addEventListener('click', async (event) => {
-      await setOption('apiKey', el.proConfigureApiKey.value)
+    el.plusConfigureSave.addEventListener('click', async (event) => {
+      await setOption('apiKey', el.plusConfigureApiKey.value)
 
-      await Popup.getPro(url)
+      await Popup.getPlus(url)
     })
 
     // Header
@@ -246,8 +253,14 @@ const Popup = {
         el.credits.classList.add('credits--hidden')
         el.footer.classList.remove('footer--hidden')
 
-        if (tab.classList.contains('tab--pro')) {
-          await Popup.getPro(url)
+        if (tab.classList.contains('tab--plus')) {
+          await Popup.getPlus(url)
+
+          if (!plusTabViewed) {
+            await setOption('plusTabViewed', true)
+
+            el.tabPlusDot.classList.add('tab__dot--hidden')
+          }
         }
       })
     })
@@ -463,40 +476,40 @@ const Popup = {
    * Show company and contact details
    * @param {String} url
    */
-  async getPro(url) {
+  async getPlus(url) {
     const apiKey = await getOption('apiKey', '')
 
     const el = {
       loading: document.querySelector('.loading'),
       panels: document.querySelector('.panels'),
-      empty: document.querySelector('.pro-empty'),
-      crawl: document.querySelector('.pro-crawl'),
-      error: document.querySelector('.pro-error'),
-      errorMessage: document.querySelector('.pro-error__message'),
-      configure: document.querySelector('.pro-configure'),
+      empty: document.querySelector('.plus-empty'),
+      crawl: document.querySelector('.plus-crawl'),
+      error: document.querySelector('.plus-error'),
+      errorMessage: document.querySelector('.plus-error__message'),
+      configure: document.querySelector('.plus-configure'),
       credits: document.querySelector('.credits'),
       creditsRemaining: document.querySelector('.credits__remaining'),
       footer: document.querySelector('.footer'),
     }
 
-    el.error.classList.add('pro-error--hidden')
+    el.error.classList.add('plus-error--hidden')
 
     if (apiKey) {
       el.loading.classList.remove('loading--hidden')
-      el.configure.classList.add('pro-configure--hidden')
+      el.configure.classList.add('plus-configure--hidden')
       el.footer.classList.remove('footer--hidden')
     } else {
       el.loading.classList.add('loading--hidden')
-      el.configure.classList.remove('pro-configure--hidden')
+      el.configure.classList.remove('plus-configure--hidden')
       el.footer.classList.add('footer--hidden')
 
       return
     }
 
     el.panels.classList.add('panels--hidden')
-    el.empty.classList.add('pro-empty--hidden')
-    el.crawl.classList.add('pro-crawl--hidden')
-    el.error.classList.add('pro-error--hidden')
+    el.empty.classList.add('plus-empty--hidden')
+    el.crawl.classList.add('plus-crawl--hidden')
+    el.error.classList.add('plus-error--hidden')
 
     while (el.panels.lastElementChild) {
       el.panels.removeChild(el.panels.lastElementChild)
@@ -504,7 +517,7 @@ const Popup = {
 
     try {
       const response = await fetch(
-        `https://api.wappalyzer.com/pro/v2/${encodeURIComponent(url)}`,
+        `https://api.wappalyzer.com/plus/v2/${encodeURIComponent(url)}`,
         {
           method: 'GET',
           headers: {
@@ -537,14 +550,14 @@ const Popup = {
 
       if (crawl) {
         document
-          .querySelector('.pro-crawl')
-          .classList.remove('pro-crawl--hidden')
+          .querySelector('.plus-crawl')
+          .classList.remove('plus-crawl--hidden')
 
         return
       }
 
       if (!Object.keys(attributes).length) {
-        el.empty.classList.remove('pro-empty--hidden')
+        el.empty.classList.remove('plus-empty--hidden')
 
         return
       }
@@ -660,7 +673,7 @@ const Popup = {
               ? error.data
               : 'No access. Please check your API key.'
 
-          el.configure.classList.remove('pro-configure--hidden')
+          el.configure.classList.remove('plus-configure--hidden')
         } else if (error.response.status === 429) {
           el.errorMessage.textContent =
             'Too many requests. Please try again in a few seconds.'
@@ -673,7 +686,7 @@ const Popup = {
       }
 
       el.loading.classList.add('loading--hidden')
-      el.error.classList.remove('pro-error--hidden')
+      el.error.classList.remove('plus-error--hidden')
     }
 
     Array.from(document.querySelectorAll('.panels a')).forEach((a) =>

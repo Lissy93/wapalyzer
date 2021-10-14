@@ -80,6 +80,23 @@
     ],
     "website": "http://dnnsoftware.com"
   },
+  "Daily Deals": {
+    "cats": [
+      5
+    ],
+    "description": "Daily Deals is a flash sale, limited-time discounts, countdown timers, and sales analytics solution.",
+    "icon": "Daily Deals.svg",
+    "js": {
+      "ddAddToCheckout": "\\;confidence:50",
+      "ddAddToOrder": "\\;confidence:50"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "assets\\.dailydeals\\.ai/",
+    "website": "https://dailydeals.ai"
+  },
   "Dancer": {
     "cats": [
       18
@@ -311,6 +328,22 @@
     "icon": "Detectify.svg",
     "website": "https://detectify.com/"
   },
+  "Dianomi": {
+    "cats": [
+      36
+    ],
+    "description": "Dianomi is an advertiser campaign management software for financial services, premium lifestyle, technology and corporate sectors.",
+    "dom": "iframe[src*='.dianomi.com/']",
+    "icon": "Dianomi.svg",
+    "pricing": [
+      "high",
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.dianomi\\.com/",
+    "website": "https://www.dianomi.com"
+  },
   "Didomi": {
     "cats": [
       67
@@ -398,6 +431,29 @@
     ],
     "website": "https://www.directadmin.com"
   },
+  "Directus": {
+    "cats": [
+      1
+    ],
+    "description": "Directus is a free and open-source headless CMS framework for managing custom SQL-based databases.",
+    "headers": {
+      "x-powered-by": "^Directus$"
+    },
+    "icon": "Directus.svg",
+    "implies": [
+      "Vue.js",
+      "TinyMCE",
+      "core-js"
+    ],
+    "oss": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://directus.io"
+  },
   "Discourse": {
     "cats": [
       2
@@ -457,6 +513,22 @@
     "website": "https://districtm.net",
     "xhr": "\\.districtm\\.io"
   },
+  "Dito": {
+    "cats": [
+      53
+    ],
+    "description": "Dito is a tool that centralizes and manages the relationship between brands and their customers.",
+    "icon": "Dito.svg",
+    "js": {
+      "dito.AppSettings": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "storage\\.googleapis\\.com/dito/sdk\\.js",
+    "website": "https://www.dito.com.br"
+  },
   "Divi": {
     "cats": [
       51,
@@ -479,6 +551,20 @@
     "saas": true,
     "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
     "website": "https://www.elegantthemes.com/gallery/divi"
+  },
+  "DivideBuy": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Dividebuy provides retailer financing solutions.",
+    "dom": "div[class*='dividebuy-softcredit']",
+    "icon": "DivideBuy.png",
+    "js": {
+      "display_dividebuy_modal": ""
+    },
+    "saas": true,
+    "website": "https://dividebuy.co.uk/"
   },
   "Divido": {
     "cats": [
@@ -633,6 +719,24 @@
       "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
     },
     "website": "https://www.dokuwiki.org"
+  },
+  "Doofinder": {
+    "cats": [
+      29
+    ],
+    "description": "Doofinder is a search site solution that enables users to include advanced and smart search engine capabilities in their ecommerce website.",
+    "icon": "Doofinder.svg",
+    "js": {
+      "doofinder.classic.version": "(.+)\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.doofinder\\.com/",
+    "website": "https://www.doofinder.com"
   },
   "Dotclear": {
     "cats": [
@@ -803,12 +907,24 @@
     ],
     "website": "http://drupalcommerce.org"
   },
+  "Drupal Multisite": {
+    "cats": [
+      88
+    ],
+    "description": "Drupal Multisite enables separate, independent sites to be served from a single codebase.",
+    "icon": "Drupal.svg",
+    "implies": "Drupal",
+    "oss": true,
+    "scripts": [
+      "sites\\/(?!default|all).*\\/files"
+    ],
+    "website": "https://www.drupal.org/docs/multisite-drupal"
+  },
   "Duda": {
     "cats": [
       1
     ],
     "description": "Duda is a web design platform for companies that offer web design services.",
-    "html": "<div[^>]*id=\"P6iryBW0Wu\"",
     "icon": "duda.png",
     "js": {
       "SystemID": "^.*DIRECT.*$",

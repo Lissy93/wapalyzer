@@ -142,6 +142,23 @@
     "scripts": "zepto.*\\.js",
     "website": "http://zeptojs.com"
   },
+  "ZestMoney": {
+    "cats": [
+      91
+    ],
+    "description": "ZestMoney is a fintech company that uses digital EMI without the need for a credit card or a credit score.",
+    "icon": "ZestMoney.png",
+    "js": {
+      "ZestMoneyWidget": "",
+      "zestBind": "",
+      "zestMerchant": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "website": "https://www.zestmoney.in"
+  },
   "Zimbra": {
     "cats": [
       30
@@ -192,6 +209,7 @@
     "icon": "zip_pay.svg",
     "js": {
       "QuadPayShopify": "",
+      "checkout.enabledpayments.zip": "^true$",
       "quadpayID": ""
     },
     "pricing": [
@@ -218,6 +236,23 @@
     },
     "icon": "Zipkin.png",
     "website": "https://zipkin.io/"
+  },
+  "Zmags Creator": {
+    "cats": [
+      95
+    ],
+    "description": "Zmags Creator enables marketers to design and publish endless types of interactive digital experiences without coding.",
+    "icon": "Zmags Creator.png",
+    "js": {
+      "__zmags": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "c(?:reator)?\\.zmags\\.com/",
+    "website": "https://www.creatorbyzmags.com"
   },
   "Zocdoc": {
     "cats": [
@@ -284,6 +319,27 @@
     "implies": "Zoho",
     "website": "https://www.zoho.com/mail/"
   },
+  "Zoko": {
+    "cats": [
+      52
+    ],
+    "description": "Zoko is an all-in-one system that leverages the WhatsApp API to help you do business, on WhatsApp",
+    "icon": "Zoko.png",
+    "implies": [
+      "WhatsApp Business Chat"
+    ],
+    "js": {
+      "__zoko_app_version": ""
+    },
+    "pricing": [
+      "recurring",
+      "payg",
+      "mid"
+    ],
+    "saas": true,
+    "scripts": "zoko-shopify-prod\\.web\\.app",
+    "website": "https://www.zoko.io/"
+  },
   "Zone.js": {
     "cats": [
       12
@@ -341,6 +397,31 @@
     },
     "icon": "Zope.png",
     "website": "http://zope.org"
+  },
+  "Zozo": {
+    "cats": [
+      6
+    ],
+    "description": "Zozo is a multi-channel ecommerce services provider from Vietnam.",
+    "dom": {
+      "a[href*='/zozo.vn/'][href*='footerurl'][target='_blank']": {
+        "text": "^Zozo"
+      }
+    },
+    "excludes": "OpenCart",
+    "icon": "Zozo.png",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "meta": {
+      "generator": "Zozo Ecommerce"
+    },
+    "scripts": [
+      "catalog/view/theme/[^\"]+/javascript/common\\.js",
+      "zozo-main\\.min\\.js"
+    ],
+    "website": "https://zozo.vn"
   },
   "Zyro": {
     "cats": [

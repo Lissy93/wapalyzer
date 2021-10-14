@@ -145,6 +145,41 @@
     "scripts": "cdn\\.paddle\\.com/paddle/paddle\\.js",
     "website": "https://paddle.com/"
   },
+  "PagSeguro": {
+    "cats": [
+      41
+    ],
+    "description": "PagSeguro is an online or mobile payment-based ecommerce service for commercial operations.",
+    "dom": "form[action*='pagseguro.uol.com.br'][target='pagseguro']",
+    "icon": "PagSeguro.svg",
+    "js": {
+      "PagSeguroDirectPayment": "",
+      "_PagSeguroDirectPayment": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.pagseguro\\.uol\\.com\\.br/",
+    "website": "https://pagseguro.uol.com.br"
+  },
+  "Pagar.me": {
+    "cats": [
+      41
+    ],
+    "description": "Pagar.me is a Portuguese-language online payments solution for businesses in Brazil.",
+    "icon": "Pagar.me.svg",
+    "js": {
+      "PagarMeCheckout": "",
+      "pagarme.balance": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "assets\\.pagar\\.me/",
+    "website": "https://pagar.me"
+  },
   "PageFly": {
     "cats": [
       51
@@ -337,6 +372,15 @@
     "scripts": "app\\.paybright\\.com",
     "website": "https://paybright.com"
   },
+  "PayFast": {
+    "cats": [
+      41
+    ],
+    "description": "PayFast is a payments processing service for South Africans & South African websites.",
+    "dom": "[aria-labelledby='pi-payfast_instant_eft']",
+    "icon": "Payfast.svg",
+    "website": "https://www.payfast.co.za/"
+  },
   "PayKickStart": {
     "cats": [
       5,
@@ -362,7 +406,7 @@
       "button": {
         "text": "PayPal"
       },
-      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout']": {
+      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout'], [aria-labelledby='pi-paypal']": {
         "exists": ""
       }
     },
@@ -370,6 +414,7 @@
     "icon": "PayPal.svg",
     "js": {
       "PAYPAL": "",
+      "checkout.enabledpayments.paypal": "^true$",
       "enablePaypal": "",
       "paypalClientId": "",
       "paypalJs": ""
@@ -384,6 +429,36 @@
     "scripts": "paypalobjects\\.com",
     "website": "https://paypal.com",
     "xhr": "\\.paypal\\.com"
+  },
+  "PayPal Marketing Solutions": {
+    "cats": [
+      10,
+      32
+    ],
+    "description": "PayPal Marketing Solutions enables merchants to see shopper insights and provide custom rewards for buyers with PayPal accounts.",
+    "icon": "PayPal.svg",
+    "implies": "PayPal",
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "scripts": [
+      "\\.paypalobjects\\.com/muse/",
+      "\\.paypal\\.com/tagmanager/pptm\\.js"
+    ],
+    "website": "https://developer.paypal.com/docs/marketing-solutions"
+  },
+  "Payflex": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Payflex offers an online payment gateway solution to South African merchants that allows shoppers to pay over 6 weeks, interest-free.",
+    "dom": "[aria-labelledby='pi-payflex']",
+    "icon": "Payflex.png",
+    "saas": true,
+    "scripts": "partpayassets\\.blob\\.core\\.windows\\.net",
+    "website": "https://payflex.co.za/"
   },
   "Payl8r": {
     "cats": [
@@ -468,6 +543,23 @@
     "scripts": "\\.pendo\\.io/",
     "website": "https://www.pendo.io"
   },
+  "Pepperjam": {
+    "cats": [
+      71
+    ],
+    "description": "Pepperjam is an affiliate marketing solutions provider.",
+    "icon": "Pepperjam.png",
+    "js": {
+      "Pepperjam": "",
+      "PepperjamTracking": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.pepperjam\\.com/",
+    "website": "https://www.pepperjam.com"
+  },
   "Percona": {
     "cats": [
       34
@@ -516,10 +608,8 @@
       72
     ],
     "description": "Periodic is a white-label scheduling system.",
+    "dom": "#periodic-embedded-calendar-script, .periodic-embedded-calendar-window, .bookingmain__maincontent",
     "icon": "Periodic.svg",
-    "js": {
-      "PeriodicSyncManager": ""
-    },
     "pricing": [
       "low",
       "recurring"
@@ -643,20 +733,50 @@
   },
   "PhotoShelter": {
     "cats": [
-      1
+      1,
+      6
     ],
-    "html": [
-      "<!--\\s+#+ Powered by the PhotoShelter Beam platform",
-      "<link[^>]+c\\.photoshelter\\.com"
-    ],
+    "description": "PhotoShelter is a cloud storage service that doubles as a website and ecommerce platform for photographers.",
+    "dom": "link[href*='.c.photoshelter.com']",
     "icon": "PhotoShelter.png",
     "implies": [
       "PHP",
       "MySQL",
       "jQuery"
     ],
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.psecn\\.photoshelter\\.com/",
     "url": "photoshelter\\.com",
     "website": "https://www.photoshelter.com"
+  },
+  "PhotoShelter for Brands": {
+    "cats": [
+      95
+    ],
+    "description": "PhotoShelter for Brands is a cloud-based media management system for companies and organizations.",
+    "dom": {
+      "a[href*='.photoshelter.com/']": {
+        "attributes": {
+          "href": "^(?:(?!psecn).)*$"
+        }
+      },
+      "a[href*='brands.photoshelter.com/']": {
+        "attributes": {
+          "text": "^Powered by PhotoShelter for Brands$"
+        }
+      }
+    },
+    "excludes": "PhotoShelter",
+    "icon": "PhotoShelter.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://brands.photoshelter.com"
   },
   "Phusion Passenger": {
     "cats": [
@@ -848,7 +968,7 @@
   },
   "Pixlee": {
     "cats": [
-      32
+      96
     ],
     "description": "Pixlee is a visual marketing platform that helps brands leverage user-generated content to improve their marketing performance.",
     "icon": "Pixlee.png",
@@ -923,23 +1043,6 @@
     "icon": "Play.svg",
     "implies": "Scala",
     "website": "https://www.playframework.com"
-  },
-  "Plentymarkets": {
-    "cats": [
-      6
-    ],
-    "description": "Plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
-    "headers": {
-      "X-Plenty-Shop": ""
-    },
-    "icon": "plentymarkets.svg",
-    "meta": {
-      "generator": "plentymarkets"
-    },
-    "scripts": [
-      "plenty\\.shop\\.(?:min\\.)?js"
-    ],
-    "website": "https://www.plentymarkets.com/"
   },
   "Pleroma": {
     "cats": [
@@ -1079,6 +1182,17 @@
     "scripts": "cdn\\.pdst\\.fm",
     "website": "https://podsights.com/"
   },
+  "Pojo.me": {
+    "cats": [
+      68
+    ],
+    "description": "Pojo.me provides a Accessibility overlay plug-in for any WordPress Theme or Page Builder.",
+    "icon": "Pojo.me.png",
+    "js": {
+      "PojoA11yOptions": ""
+    },
+    "website": "https://pojo.me/plugins/accessibility/"
+  },
   "Polyfill": {
     "cats": [
       59
@@ -1100,6 +1214,31 @@
     },
     "scripts": "polymer\\.js",
     "website": "http://polymer-project.org"
+  },
+  "Popmenu": {
+    "cats": [
+      1,
+      93
+    ],
+    "cookies": {
+      "Popmenu-Token": ""
+    },
+    "description": "Popmenu is a restaurant platform which offers CMS, online menus, ordering and delivery and marketing automation solutions.",
+    "icon": "Popmenu.svg",
+    "implies": [
+      "React",
+      "Apollo"
+    ],
+    "js": {
+      "POPMENU_CLIENT": "",
+      "popmenuHydrated": ""
+    },
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "website": "https://get.popmenu.com",
+    "xhr": "popmenu\\.com"
   },
   "Popper": {
     "cats": [
@@ -1217,7 +1356,13 @@
       59
     ],
     "description": "Preact is a JavaScript library that describes itself as a fast 3kB alternative to React with the same ES6 API.",
-    "dom": "meta[data-preact-helmet='true']",
+    "dom": {
+      "#app, .app, #root, .root, body, body > *, body > * > *, body > * > * > *": {
+        "properties": {
+          "__k": ""
+        }
+      }
+    },
     "icon": "Preact.svg",
     "oss": true,
     "website": "https://preactjs.com"
@@ -1271,6 +1416,20 @@
     "scripts": "prefixfree\\.js",
     "website": "https://leaverou.github.io/prefixfree/"
   },
+  "Pressable": {
+    "cats": [
+      62
+    ],
+    "description": "Pressable is a managed hoting platform for WordPress.",
+    "headers": {
+      "host-header": "^Pressable"
+    },
+    "icon": "pressable.svg",
+    "implies": [
+      "WordPress"
+    ],
+    "website": "https://pressable.com"
+  },
   "PrestaShop": {
     "cats": [
       6
@@ -1308,6 +1467,22 @@
       "freemium"
     ],
     "website": "http://www.prestashop.com"
+  },
+  "PriceSpider": {
+    "cats": [
+      97
+    ],
+    "description": "PriceSpider is an advanced retail data technology company that provides insights about consumer purchasing behavior.",
+    "icon": "PriceSpider.png",
+    "js": {
+      "PriceSpider.version": "(.+)\\;version:\\1"
+    },
+    "scripts": "cdn\\.pricespider\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.pricespider.com"
   },
   "Primis": {
     "cats": [
@@ -1366,7 +1541,7 @@
       1
     ],
     "description": "Prismic is a headless CMS for Jamstack.",
-    "dom": "img[src*='images.prismic.io'",
+    "dom": "img[src*='images.prismic.io']",
     "icon": "Prismic.svg",
     "pricing": [
       "low",
@@ -1514,6 +1689,22 @@
       "generator": "Proximis Unified Commerce"
     },
     "website": "https://www.proximis.com"
+  },
+  "PubGuru": {
+    "cats": [
+      36
+    ],
+    "description": "PubGuru is a header wrapper and ad ops platform.",
+    "icon": "PubGuru.png",
+    "js": {
+      "pg.version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:25"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.pubguru\\.com/",
+    "website": "https://pubguru.com"
   },
   "PubMatic": {
     "cats": [
@@ -1834,6 +2025,35 @@
     "icon": "pirobaseCMS.svg",
     "implies": "Java",
     "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
+  },
+  "plentyShop LTS": {
+    "cats": [
+      6
+    ],
+    "description": "The official template plugin developed by plentymarkets. plentyShop LTS is the default template for plentymarkets online stores.",
+    "headers": {
+      "X-Plenty-Shop": "Ceres"
+    },
+    "icon": "plentyShop LTS.svg",
+    "oss": true,
+    "website": "https://www.plentymarkets.com/product/modules/online-shop/"
+  },
+  "plentymarkets": {
+    "cats": [
+      6
+    ],
+    "description": "plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
+    "headers": {
+      "X-Plenty-Shop": ""
+    },
+    "icon": "plentymarkets.svg",
+    "meta": {
+      "generator": "plentymarkets"
+    },
+    "scripts": [
+      "plenty\\.shop\\.(?:min\\.)?js"
+    ],
+    "website": "https://www.plentymarkets.com/"
   },
   "prettyPhoto": {
     "cats": [

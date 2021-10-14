@@ -77,6 +77,23 @@
     "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
     "website": "https://www.laterpay.net/"
   },
+  "LatitudePay": {
+    "cats": [
+      91
+    ],
+    "description": "LatitudePay is an interest-free, buy now, pay later solution.",
+    "dom": "a[href*='latitudepay.com/'][target='_blank'], img[src='.latitudepayapps.com/']",
+    "icon": "LatitudePay.svg",
+    "js": {
+      "checkout.enabledpayments.latitudepay": "^true$"
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "scripts": "\\.latitudepayapps\\.com/",
+    "website": "https://www.latitudepay.com"
+  },
   "LaunchDarkly": {
     "cats": [
       85
@@ -121,6 +138,49 @@
     "saas": true,
     "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
     "website": "https://www.launchrock.com"
+  },
+  "LayBuy": {
+    "cats": [
+      91
+    ],
+    "description": "Laybuy is a payment service that lets you receive your purchase now and spread the total cost over 6 weekly automatic payments interest free.",
+    "dom": "iframe[src='.laybuy.com/']",
+    "icon": "LayBuy.svg",
+    "js": {
+      "LaybuyHelper": "",
+      "checkout.enabledpayments.laybuy": "^true$",
+      "laybuyEnableCart": "",
+      "laybuyMoneyOverides": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.laybuy\\.com/",
+    "website": "https://www.laybuy.com"
+  },
+  "Layer0": {
+    "cats": [
+      92
+    ],
+    "cookies": {
+      "layer0_bucket": "",
+      "layer0_destination": "",
+      "layer0_eid": ""
+    },
+    "description": "Layer0 is an all-in-one Jamstack platform to develop, deploy, preview, split test, and monitor the company's frontend.",
+    "icon": "Layer0.svg",
+    "js": {
+      "Layer0.Metrics": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "/__layer0__/cache-manifest\\.js",
+    "website": "https://www.layer0.co"
   },
   "Leadinfo": {
     "cats": [
@@ -299,6 +359,19 @@
     "url": "seoshop.webshopapp.com",
     "website": "http://www.lightspeedhq.com/products/ecommerce/"
   },
+  "LimeChat": {
+    "cats": [
+      52
+    ],
+    "description": "LimeChat is India's first level-3 AI chatbot company.",
+    "icon": "LimeChat.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.limechat\\.ai/",
+    "website": "https://www.limechat.ai"
+  },
   "LinkSmart": {
     "cats": [
       36
@@ -363,7 +436,8 @@
   },
   "Listrak": {
     "cats": [
-      32
+      32,
+      97
     ],
     "description": "Listrak is a AI-based marketing automation and CRM solutions that unify, interpret and personalise data to engage customer across channels and devices.",
     "icon": "Listrak.png",
@@ -700,6 +774,22 @@
     "scripts": "\\.loggly\\.com/",
     "website": "https://www.loggly.com"
   },
+  "LogiCommerce": {
+    "cats": [
+      6
+    ],
+    "description": "LogiCommerce is the headless ecommerce platform.",
+    "icon": "LogiCommerce.svg",
+    "meta": {
+      "generator": "^LogiCommerce$"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.logicommerce.com"
+  },
   "Login with Amazon": {
     "cats": [
       69
@@ -942,5 +1032,22 @@
     },
     "icon": "lighttpd.png",
     "website": "http://www.lighttpd.net"
+  },
+  "Lytics": {
+    "cats": [
+      97
+    ],
+    "description": "Lytics is a customer data platform built for marketing teams.",
+    "icon": "Lytics.svg",
+    "js": {
+      "__lytics__jstag__.version": "(.+)\\;version:\\1"
+    },
+    "scripts": "\\.lytics\\.io/",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.lytics.com"
   }
 }

@@ -120,6 +120,23 @@
     ],
     "website": "http://www.cs-cart.com"
   },
+  "Caast.tv": {
+    "cats": [
+      5
+    ],
+    "description": "Caast.tv is a digital commercial animation solution integrated into the ecommerce customer journey.",
+    "icon": "Caast.tv.png",
+    "js": {
+      "caast.open": "",
+      "caastInstance": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.caast\\.tv/",
+    "website": "https://en.caast.tv"
+  },
   "CacheFly": {
     "cats": [
       31
@@ -209,6 +226,19 @@
     "scripts": "\\.createsend1\\.com/",
     "website": "https://www.campaignmonitor.com"
   },
+  "Canto": {
+    "cats": [
+      95
+    ],
+    "description": "Canto is a digital asset management solution.",
+    "dom": "link[href*='.canto.com/'], a[href*='.canto.com/'], img[src*='.canto.com/']",
+    "icon": "Canto.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.canto.com"
+  },
   "Captch Me": {
     "cats": [
       16,
@@ -279,6 +309,21 @@
     "scripts": "api\\.cartstack\\.\\w+",
     "website": "https://www.cartstack.com"
   },
+  "Carts Guru": {
+    "cats": [
+      32,
+      75
+    ],
+    "description": "Carts Guru is the all-in-one marketing automation tool for ecommerce stores.",
+    "icon": "Carts Guru.png",
+    "pricing": [
+      "payg",
+      "mid"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.cartsguru\\.io/",
+    "website": "https://www.carts.guru"
+  },
   "Catberry.js": {
     "cats": [
       12,
@@ -334,16 +379,6 @@
     ],
     "website": "https://centminmod.com"
   },
-  "Ceres": {
-    "cats": [
-      6
-    ],
-    "headers": {
-      "X-Plenty-Shop": "Ceres"
-    },
-    "icon": "Ceres.svg",
-    "website": "https://www.plentymarkets.com/"
-  },
   "Chamilo": {
     "cats": [
       21
@@ -360,6 +395,21 @@
       "generator": "Chamilo ([\\d.]+)\\;version:\\1"
     },
     "website": "http://www.chamilo.org"
+  },
+  "ChannelAdvisor": {
+    "cats": [
+      10,
+      32
+    ],
+    "description": "ChannelAdvisor is a provider of cloud-based solutions to ecommerce companies.",
+    "dom": "link[href*='.channeladvisor.com']",
+    "icon": "ChannelAdvisor.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.channeladvisor\\.com/",
+    "website": "https://www.channeladvisor.com"
   },
   "Chaport": {
     "cats": [
@@ -494,6 +544,19 @@
     "scripts": "\\.checkfront\\.com/",
     "website": "https://www.checkfront.com"
   },
+  "Checkout.com": {
+    "cats": [
+      41
+    ],
+    "description": "Checkout.com is an international payment platform that processes different payment methods across a variety of currencies.",
+    "icon": "Checkout.com.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.checkout\\.com/js/.+js(?:\\?ver=)?([\\d\\.]+)?\\;version:\\1",
+    "website": "https://www.checkout.com"
+  },
   "Cherokee": {
     "cats": [
       22
@@ -546,6 +609,20 @@
     "saas": true,
     "scripts": "js\\.chilipiper\\.com/marketing\\.js",
     "website": "https://www.chilipiper.com/"
+  },
+  "Chinese Menu Online": {
+    "cats": [
+      51,
+      93
+    ],
+    "description": "Chinese Menu Online is an online food ordering service.",
+    "dom": "li > a[href*='chinesemenuonline.com']",
+    "icon": "Chinese Menu Online.png",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.chinesemenuonline.com"
   },
   "Chitika": {
     "cats": [
@@ -924,6 +1001,22 @@
     "icon": "Cloudinary.svg",
     "website": "https://cloudinary.com"
   },
+  "Cloverly": {
+    "cats": [
+      5
+    ],
+    "description": "Cloverly is an API integration for ethical ecommerce brands to help their customers offset the carbon footprint of their online transactions.",
+    "icon": "Cloverly.svg",
+    "js": {
+      "removeCloverly": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "apps\\.cloverly\\.com/",
+    "website": "https://www.cloverly.com"
+  },
   "Cluep": {
     "cats": [
       36
@@ -955,6 +1048,22 @@
     ],
     "saas": true,
     "website": "https://www.coconstruct.com"
+  },
+  "CoRover": {
+    "cats": [
+      52
+    ],
+    "description": "CoRover is a conversational AI chatbot platform with proprietary cognitive AI technology.",
+    "icon": "CoRover.png",
+    "js": {
+      "CoRover_tag": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.corover\\.mobi/",
+    "website": "https://corover.ai"
   },
   "Coaster CMS": {
     "cats": [
@@ -1131,6 +1240,35 @@
     "html": "<iframe[^>]+src=\"[^>]+portal\\.combeenation\\.com",
     "icon": "Combeenation.png",
     "website": "https://www.combeenation.com"
+  },
+  "Commanders Act TagCommander": {
+    "cats": [
+      42
+    ],
+    "description": "Commanders Act TagCommander is a European company providing a tag management product designed to handle website tags.",
+    "icon": "Commanders Act.svg",
+    "js": {
+      "tc_vars": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.tagcommander\\.com",
+    "website": "https://www.commandersact.com/en/solutions/tagcommander/"
+  },
+  "Commanders Act TrustCommander": {
+    "cats": [
+      67
+    ],
+    "description": "Commanders Act TrustCommander is a consent management platform (CMP) which allows you to comply with the general data protection regulation (GDPR) regulation in terms of collecting consent.",
+    "icon": "Commanders Act.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.trustcommander\\.net/privacy/.+_v([\\d]+)_([\\d]+)\\.js\\;version:\\1.\\2",
+    "website": "https://www.commandersact.com/en/solutions/trustcommander/"
   },
   "Commerce Server": {
     "cats": [
@@ -1328,6 +1466,20 @@
     "scripts": "\\.contentsquare\\.net/",
     "website": "https://contentsquare.com"
   },
+  "ContentStudio": {
+    "cats": [
+      96
+    ],
+    "description": "ContentStudio is an integrated cloud-based social media management and content marketing solution.",
+    "dom": "link[href*='/wp-content/plugins/contentstudio']",
+    "icon": "ContentStudio.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://contentstudio.io"
+  },
   "Contentful": {
     "cats": [
       1
@@ -1475,14 +1627,37 @@
     "scripts": "cdn\\.conveythis\\.com",
     "website": "https://www.conveythis.com/"
   },
+  "Cookie Information": {
+    "cats": [
+      67
+    ],
+    "description": "Cookie Information is a privacy tech company that develops software that helps making company websites and mobile apps GDPR and ePrivacy compliant.",
+    "icon": "Cookie Information.svg",
+    "js": {
+      "CookieInformation.config.version": "(.+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.app\\.cookieinformation\\.com/",
+    "website": "https://cookieinformation.com"
+  },
   "Cookie Script": {
     "cats": [
       67
     ],
     "description": "Cookie-Script automatically scans, categorizes and adds description to all cookies found on your website.",
-    "icon": "CookieScript.png",
-    "scripts": "//cookie-script\\.com/s/",
-    "website": "https://cookie-script.com/"
+    "icon": "CookieScript.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.cookie-script\\.com/",
+    "website": "https://cookie-script.com"
   },
   "CookieFirst": {
     "cats": [
@@ -1542,8 +1717,7 @@
   },
   "Cooladata": {
     "cats": [
-      76,
-      10
+      97
     ],
     "description": "Cooladata is a data warehouse and behavioral analytics platform designed for gaming, elearning, ecommerce, SaaS, and media companies.",
     "icon": "Cooladata.png",
@@ -1649,6 +1823,20 @@
     "html": "<iframe[^>]*covermanager\\.com/reservation",
     "icon": "CoverManager.svg",
     "website": "https://www.covermanager.com"
+  },
+  "Covet.pics": {
+    "cats": [
+      5
+    ],
+    "description": "Covet.pics is a customizable Shopify app for Instagram and Lookbook shoppable galleries.",
+    "icon": "Covet.pics.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.covet\\.pics/.+widget@([\\d\\.]+)\\;version:\\1",
+    "website": "https://covet.pics"
   },
   "Cowboy": {
     "cats": [
@@ -1772,6 +1960,27 @@
     "scripts": "tag\\.crsspxl\\.com",
     "website": "http://crosspixel.net"
   },
+  "Cross Sell": {
+    "cats": [
+      76
+    ],
+    "description": "Cross Sell provide recommendations solution for Shopify based sites.",
+    "icon": "CrossSell.png",
+    "implies": [
+      "Shopify",
+      "Cart Functionality"
+    ],
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": [
+      "load\\.csell\\.co"
+    ],
+    "website": "https://csell.io/"
+  },
   "CrossBox": {
     "cats": [
       30
@@ -1856,6 +2065,23 @@
     "scripts": "assets\\.customer\\.io",
     "website": "https://customer.io/"
   },
+  "Customily": {
+    "cats": [
+      76
+    ],
+    "description": "Customily is an online product personalisation software.",
+    "icon": "Customily.png",
+    "js": {
+      "customily.sticky": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "(?:cdn|app)\\.customily\\.com/",
+    "website": "https://www.customily.com"
+  },
   "Cybersource": {
     "cats": [
       41
@@ -1898,6 +2124,16 @@
     "html": "<!-- cPanel",
     "icon": "cPanel.png",
     "website": "http://www.cpanel.net"
+  },
+  "cdnjs": {
+    "cats": [
+      31
+    ],
+    "description": "cdnjs is a free distributed JS library delivery service.",
+    "icon": "cdnjs.svg",
+    "oss": true,
+    "scripts": "cdnjs\\.cloudflare\\.com",
+    "website": "https://cdnjs.com"
   },
   "cgit": {
     "cats": [

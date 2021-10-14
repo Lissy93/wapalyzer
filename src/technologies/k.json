@@ -78,7 +78,7 @@
       "mid"
     ],
     "saas": true,
-    "website": "https://newkajabi.com"
+    "website": "https://kajabi.com"
   },
   "Kameleoon": {
     "cats": [
@@ -115,6 +115,25 @@
     },
     "scripts": "cdn\\.mykamva\\.ir",
     "website": "https://kamva.ir"
+  },
+  "Kapture CRM": {
+    "cats": [
+      52,
+      53
+    ],
+    "description": "Kapture CRM is an enterprise-grade SaaS-based customer support automation platform.",
+    "icon": "Kapture CRM.png",
+    "js": {
+      "Kapchat": "",
+      "kap_chat_js": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.kapturecrm\\.com/.+\\?ver=([\\d\\.]+)\\;version:\\1",
+    "website": "https://www.kapturecrm.com"
   },
   "Karma": {
     "cats": [
@@ -325,6 +344,24 @@
     "implies": "WordPress",
     "website": "https://kinsta.com"
   },
+  "Kitcart": {
+    "cats": [
+      6
+    ],
+    "description": "KitCart is a cloud-based solution that helps businesses build ecommerce stores, manage inventory, and more.",
+    "dom": "a[href*='kitcart.net'][target='_blank'], form[action*='kitcart.net/']",
+    "icon": "Kitcart.png",
+    "implies": [
+      "Laravel",
+      "PHP"
+    ],
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://kitcart.net"
+  },
   "Kiwi Sizing": {
     "cats": [
       76
@@ -354,6 +391,7 @@
       "ku1-vid": ""
     },
     "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
+    "dom": "[aria-labelledby='pi-klarna']",
     "icon": "Klarna.svg",
     "js": {
       "KlarnaOnsiteService": "",
@@ -399,6 +437,19 @@
     "saas": true,
     "scripts": "js\\.klevu\\.\\w+/klevu-js-v([\\d.]+)\\;version:\\1",
     "website": "https://www.klevu.com"
+  },
+  "Klickly": {
+    "cats": [
+      36
+    ],
+    "description": "Klickly is an invite-only, commission-based advertising platform.",
+    "icon": "Klickly.svg",
+    "scripts": "analytics\\.klickly\\.com/pixel\\.js\\?v=([\\d\\.]+)\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.klickly.com"
   },
   "Knockout.js": {
     "cats": [
@@ -668,5 +719,21 @@
       "cdn\\.kustomerapp\\.com"
     ],
     "website": "https://www.kustomer.com/"
+  },
+  "k-eCommerce": {
+    "cats": [
+      6
+    ],
+    "description": "k-eCommerce is mdf commerce’s platform for SMBs, providing all-in-one ecommerce and digital payment solutions integrated to Microsoft Dynamics and SAP Business One. ",
+    "dom": "a[href*='.k-ecommerce.com/'][target='_blank']",
+    "icon": "k-eCommerce.png",
+    "meta": {
+      "generator": "k-eCommerce"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.k-ecommerce.com"
   }
 }

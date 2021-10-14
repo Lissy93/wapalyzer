@@ -68,6 +68,37 @@
     "scripts": "//connect\\.facebook\\.([a-z]+)/[^/]*/[a-z]*\\.js",
     "website": "http://facebook.com"
   },
+  "Facebook Ads": {
+    "cats": [
+      36
+    ],
+    "description": "Facebook Ads is an online advertising platform developed by Facebook.",
+    "icon": "Facebook.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.facebook.com/business/ads"
+  },
+  "Facebook Chat Plugin": {
+    "cats": [
+      52
+    ],
+    "description": "Facebook Chat Plugin is a website plugin that businesses with a Facebook Page can install on their website.",
+    "dom": {
+      "iframe[src*='.facebook.com/']": {
+        "attributes": {
+          "src": "\\.facebook\\.com/v([\\d\\.]+)/plugins/customerchat\\;version:\\1"
+        }
+      }
+    },
+    "icon": "Facebook.svg",
+    "js": {
+      "facebookChatSettings": ""
+    },
+    "scripts": "connect\\.facebook\\.net/.+\\.customerchat\\.js",
+    "website": "https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/"
+  },
   "Facebook Login": {
     "cats": [
       69
@@ -89,6 +120,10 @@
     "js": {
       "_fbq": ""
     },
+    "scripts": [
+      "connect\\.facebook.\\w+/signals/config/\\d+\\?v=([\\d\\.]+)\\;version:\\1",
+      "connect\\.facebook\\.\\w+/.+/fbevents\\.js"
+    ],
     "website": "http://facebook.com"
   },
   "Facil-iti": {
@@ -125,6 +160,24 @@
     },
     "scripts": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
     "website": "http://fancyapps.com/fancybox"
+  },
+  "Fanplayr": {
+    "cats": [
+      76
+    ],
+    "description": "Fanplayr is a real-time insights platform that provides website optimisation and personalisation solutions for businesses.",
+    "dom": "link[href*='cdn.fanplayr.com']",
+    "icon": "Fanplayr.svg",
+    "js": {
+      "fanplayr.platform.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.fanplayr\\.com/.+/([\\d\\.]+)\\;version:\\1",
+    "website": "https://fanplayr.com"
   },
   "FaraPy": {
     "cats": [
@@ -242,6 +295,23 @@
     "implies": "PHP",
     "website": "http://fatfreeframework.com"
   },
+  "Fathom": {
+    "cats": [
+      10
+    ],
+    "description": "Fathom is easy-yet-powerful website analytics that protects digital privacy.",
+    "icon": "Fathom.svg",
+    "js": {
+      "fathom.blockTrackingForMe": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.usefathom\\.com/",
+    "website": "https://usefathom.com"
+  },
   "Fbits": {
     "cats": [
       6
@@ -335,6 +405,20 @@
     "saas": true,
     "scripts": "@findify/bundle@([\\d.]+)/dist/.+\\.js\\;version:\\1",
     "website": "https://www.findify.io"
+  },
+  "Fing": {
+    "cats": [
+      62
+    ],
+    "description": "Fing is a cloud service to deploy and manage your applications without being worried about your infrastructure and environment.",
+    "headers": {
+      "server": "^Fing"
+    },
+    "icon": "Fing.svg",
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://fing.ir"
   },
   "FingerprintJS": {
     "cats": [
@@ -528,6 +612,25 @@
     "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
     "website": "https://flickity.metafizzy.co/"
   },
+  "Flocktory": {
+    "cats": [
+      94,
+      84
+    ],
+    "description": "Flocktory is a social referral marketing platform that enables users to share personalised offers via social networks.",
+    "dom": "iframe[src*='.flocktory.com/']",
+    "icon": "Flocktory.png",
+    "js": {
+      "flocktory": "",
+      "flocktoryPurchase": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "\\.flocktory\\.com/",
+    "website": "https://www.flocktory.com"
+  },
   "Flow": {
     "cats": [
       6
@@ -661,8 +764,7 @@
   },
   "Formitable": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Formitable is an reservation management system for restaurants.",
     "icon": "Formitable.svg",
@@ -776,13 +878,17 @@
   },
   "Foursixty": {
     "cats": [
-      5
+      96
     ],
-    "description": "Foursixty is a widget which turns Instagram content and UGC into shoppable galleries.",
+    "description": "Foursixty is a widget which turns Instagram content and user-generated content into shoppable galleries.",
     "icon": "Foursixty.png",
     "js": {
       "FoursixtyEmbed": ""
     },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "saas": true,
     "scripts": "foursixty\\.com",
     "website": "https://foursixty.com/"
@@ -896,6 +1002,27 @@
     ],
     "website": "https://www.freshworks.com/crm"
   },
+  "Friendbuy": {
+    "cats": [
+      94
+    ],
+    "description": "Friendbuy is a cloud-based referral marketing solution designed to help ecommerce businesses of all sizes.",
+    "icon": "Friendbuy.svg",
+    "js": {
+      "friendbuy": "",
+      "friendbuyAPI.merchantId": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": [
+      "\\.cloudfront\\.net/js/friendbuy\\.min\\.js",
+      "static\\.fbot\\.me/friendbuy\\.js"
+    ],
+    "website": "https://www.friendbuy.com"
+  },
   "Froala Editor": {
     "cats": [
       24
@@ -933,6 +1060,19 @@
     "icon": "Frontastic.png",
     "saas": true,
     "website": "https://www.frontastic.cloud/"
+  },
+  "Frontify": {
+    "cats": [
+      95
+    ],
+    "description": "Frontify is a cloud-based brand management platform for creators and collaborators of brands.",
+    "dom": "a[href*='.frontify.com/'], img[src*='.frontify.com/'], link[href*='.frontify.com/']",
+    "icon": "Frontify.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.frontify.com"
   },
   "Frontity": {
     "cats": [

@@ -142,6 +142,23 @@
     "scripts": "template-assets\\.iluria\\.com/commons/",
     "website": "https://www.iluria.com.br"
   },
+  "Image Relay": {
+    "cats": [
+      95
+    ],
+    "description": "Image Relay is a digital asset management system that allows organizations to upload, manage, organize, monitor and track their digital assets.",
+    "dom": "a[href*='.imagerelay.com/'][target='_blank']",
+    "icon": "Image Relay.svg",
+    "js": {
+      "ImageRelay.accounts": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "static\\.imagerelay\\.com/",
+    "website": "https://www.imagerelay.com"
+  },
   "Immutable.js": {
     "cats": [
       59
@@ -208,6 +225,24 @@
       "generator": "ImpressPages(?: CMS)?( [\\d.]*)?\\;version:\\1"
     },
     "website": "http://impresspages.org"
+  },
+  "Imweb": {
+    "cats": [
+      6
+    ],
+    "description": "Imweb is a ecommerce website builder software.",
+    "icon": "Imweb.png",
+    "js": {
+      "IMWEB_TEMPLATE": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "vendor-cdn\\.imweb\\.me/",
+    "website": "https://imweb.me"
   },
   "Incapsula": {
     "cats": [
@@ -308,7 +343,7 @@
   },
   "Insider": {
     "cats": [
-      32
+      97
     ],
     "description": "Insider is the first integrated Growth Management Platform helping digital marketers drive growth across the funnel, from Acquisition to Activation, Retention, and Revenue from a unified platform powered by Artificial Intelligence and Machine Learning.",
     "icon": "Insider.svg",
@@ -490,12 +525,30 @@
     "icon": "Intercom.svg",
     "website": "https://www.intercom.com/articles"
   },
+  "Intersection Observer": {
+    "cats": [
+      92,
+      59
+    ],
+    "description": "Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport.",
+    "scripts": [
+      "cdn\\.jsdelivr\\.net/npm/intersection-observer@([\\d\\.]+)\\;version:\\1",
+      "/assets/(?:.+)?intersection-observer\\.[\\d\\w\\.]+\\.js"
+    ],
+    "website": "https://www.w3.org/TR/intersection-observer"
+  },
   "Intershop": {
     "cats": [
       6
     ],
+    "description": "Intershop is an ecommerce platform, tailored to the needs of complex business processes and major organisations.",
     "html": "<ish-root",
     "icon": "Intershop.png",
+    "pricing": [
+      "onetime",
+      "high"
+    ],
+    "saas": true,
     "scripts": "(?:is-bin|INTERSHOP)",
     "website": "http://intershop.com"
   },
@@ -689,7 +742,7 @@
     ],
     "saas": true,
     "website": "https://ip-api.com/",
-    "xhr": "ip-api\\.com/"
+    "xhr": "ip-api\\.com"
   },
   "ip-label": {
     "cats": [

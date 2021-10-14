@@ -560,6 +560,15 @@
     "scripts": "whatfix\\.com",
     "website": "https://whatfix.com"
   },
+  "WhatsApp Business Chat": {
+    "cats": [
+      52
+    ],
+    "description": "WhatsApp Business is a free to download app available on Android and iPhone using which businesses can connect with their customers.",
+    "dom": "link[href*='api.whatsapp.com/send'], link[href*='wa.me/'], div[class*='wptwa-container'], a[href*='wa.link'][target='_blank']",
+    "icon": "WhatsApp.svg",
+    "website": "https://www.whatsapp.com/business"
+  },
   "Wheelio": {
     "cats": [
       5
@@ -581,6 +590,42 @@
     "html": "<iframe src=\"[^>]+whooshkaa\\.com",
     "icon": "Whooshkaa.svg",
     "website": "https://www.whooshkaa.com"
+  },
+  "Widen": {
+    "cats": [
+      95
+    ],
+    "description": "Widen is a digital asset management and product information management solutions provider.",
+    "icon": "Widen.svg",
+    "js": {
+      "WidenSessionTimer": "\\;confidence:50",
+      "WidenUI": "\\;confidence:50"
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "assets/\\d+-\\d+/stack/en/widenjs\\.js",
+    "website": "https://www.widen.com"
+  },
+  "WidgetWhats": {
+    "cats": [
+      52
+    ],
+    "description": "WidgetWhats is a fully customizable chat widget with appearance, text, color, button style and position.",
+    "icon": "WidgetWhats.png",
+    "js": {
+      "wwwa_loaded": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.widgetwhats\\.com/",
+    "website": "https://widgetwhats.com"
   },
   "Wigzo": {
     "cats": [
@@ -675,6 +720,23 @@
       "X-Powered-By": "Winstone(?:\\/([\\d.]+))?\\;version:\\1"
     },
     "website": "http://winstone.sourceforge.net"
+  },
+  "Wirecard": {
+    "cats": [
+      41
+    ],
+    "description": "Wirecard is a defunct German payment processor and financial services provider.",
+    "icon": "Wirecard.svg",
+    "js": {
+      "WirecardHPP": "",
+      "WirecardPaymentPage": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.wirecard\\.com/",
+    "website": "https://www.wirecard.com"
   },
   "Wisepops": {
     "cats": [
@@ -812,6 +874,22 @@
     "scripts": "static\\.woopra\\.com",
     "website": "http://www.woopra.com"
   },
+  "WoowUp": {
+    "cats": [
+      53
+    ],
+    "description": "WoowUp is a tool of CRM and predictive marketing.",
+    "icon": "WoowUp.png",
+    "js": {
+      "WU._trackProductVTEXField": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "assets-cdn\\.woowup\\.com/",
+    "website": "https://www.woowup.com"
+  },
   "WordPress": {
     "cats": [
       1,
@@ -836,7 +914,7 @@
       "wp_username": ""
     },
     "meta": {
-      "generator": "^WordPress ?([\\d.]+)?\\;version:\\1",
+      "generator": "^WordPress(?: ([\\d.]+))?\\;version:\\1",
       "shareaholic:wp_version": ""
     },
     "pricing": [
@@ -869,15 +947,40 @@
     "cats": [
       62
     ],
+    "description": "WordPress VIP is a managed hosting platform for WordPress.",
     "headers": {
-      "x-powered-by": "^WordPress\\.com VIP"
+      "x-powered-by": "^WordPress VIP|wpvip\\.com"
     },
     "icon": "wpvip.svg",
     "implies": [
-      "WordPress",
-      "Automattic"
+      "WordPress"
     ],
     "website": "https://wpvip.com"
+  },
+  "WordPress.com": {
+    "cats": [
+      62
+    ],
+    "description": "WordPress.com is a platform for self-publishing that is popular for blogging and other works.",
+    "headers": {
+      "host-header": "WordPress\\.com"
+    },
+    "icon": "WordPress.svg",
+    "implies": [
+      "WordPress"
+    ],
+    "website": "https://wordpress.com"
+  },
+  "Workarea": {
+    "cats": [
+      6
+    ],
+    "description": "Workarea is a SaaS commerce platform for medium to large businesses.",
+    "icon": "Workarea.png",
+    "js": {
+      "workarea": ""
+    },
+    "website": "https://www.workarea.com/"
   },
   "WorldPay": {
     "cats": [
@@ -922,6 +1025,18 @@
     "saas": true,
     "scripts": "\\.bounceexchange\\.com",
     "website": "https://www.wunderkind.co"
+  },
+  "Wurfl": {
+    "cats": [
+      59
+    ],
+    "description": "WURFL.js is JavaScript that detects device models of smartphones, tablets, smart TVs and game consoles accessing your website.",
+    "icon": "Wurfl.png",
+    "js": {
+      "WURFL": ""
+    },
+    "scripts": "\\.wurfl\\.io",
+    "website": "https://web.wurfl.io/"
   },
   "webEdition": {
     "cats": [

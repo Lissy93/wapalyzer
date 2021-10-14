@@ -164,6 +164,25 @@
     "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://dmitrybaranovskiy.github.io/raphael/"
   },
+  "RapidSec": {
+    "cats": [
+      16
+    ],
+    "description": "RapidSec offers automated client-side security and monitoring.",
+    "headers": {
+      "Content-Security-Policy": "\\.rapidsec\\.net",
+      "Content-Security-Policy-Report-Only": "\\.rapidsec\\.net",
+      "report-to": "\\.rapidsec\\.net"
+    },
+    "icon": "RapidSec.svg",
+    "pricing": [
+      "mid",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://rapidsec.com"
+  },
   "RapidSpike": {
     "cats": [
       13,
@@ -279,6 +298,23 @@
     "scripts": "checkout\\.razorpay\\.com",
     "website": "https://razorpay.com/"
   },
+  "Re:amaze": {
+    "cats": [
+      52
+    ],
+    "description": "Re:amaze is a multi-brand customer service, live chat, and help desk solution.",
+    "icon": "Re-amaze.png",
+    "js": {
+      "reamaze.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.reamaze\\.com/",
+    "website": "https://www.reamaze.com"
+  },
   "ReDoc": {
     "cats": [
       4
@@ -295,7 +331,7 @@
   },
   "React": {
     "cats": [
-      59
+      12
     ],
     "cpe": "cpe:/a:facebook:react",
     "description": "React is an open-source JavaScript library for building user interfaces or UI components.",
@@ -310,7 +346,8 @@
     "icon": "React.png",
     "js": {
       "React.version": "^(.+)$\\;version:\\1",
-      "react.version": "^(.+)$\\;version:\\1"
+      "ReactOnRails": "",
+      "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
     },
     "scripts": [
       "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -377,6 +414,20 @@
     ],
     "scripts": "rebuyengine\\.com",
     "website": "https://rebuyengine.com/"
+  },
+  "Recapture": {
+    "cats": [
+      32,
+      75
+    ],
+    "description": "Recapture is an abandoned cart recovery and email marketing solution.",
+    "icon": "Recapture.png",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.recapture\\.io/.+\\?v=\\d+(?:&ver=([\\d\\.]+)?)?\\;version:\\1",
+    "website": "https://recapture.io"
   },
   "Recart": {
     "cats": [
@@ -564,6 +615,22 @@
     "scripts": "mark\\.reevoo\\.com",
     "website": "https://www.reevoo.com/"
   },
+  "ReferralCandy": {
+    "cats": [
+      94,
+      84
+    ],
+    "description": "ReferralCandy is a marketing platform that gets shoppers to refer their friends.",
+    "dom": "iframe[src*='.referralcandy.com/'],li > a[href*='.referralcandy.com/'],div > a[href*='.referralcandy.com/'] ",
+    "icon": "ReferralCandy.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.referralcandy\\.com/",
+    "website": "https://www.referralcandy.com"
+  },
   "Refersion": {
     "cats": [
       71,
@@ -647,8 +714,7 @@
   },
   "ResDiary": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "ResDiary, is a online reservation system for hospitality operators.",
     "dom": {
@@ -669,8 +735,7 @@
   },
   "Resengo": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Resengo is a restaurant table booking widget.",
     "dom": {
@@ -689,6 +754,7 @@
   },
   "Reservio": {
     "cats": [
+      93,
       72
     ],
     "description": "Reservio is a cloud-based appointment scheduling and online booking solution.",
@@ -721,8 +787,7 @@
   },
   "Resmio": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Resmio is a restaurant table booking widget.",
     "icon": "Resmio.svg",
@@ -741,8 +806,7 @@
   },
   "Resy": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Resy is an technology and media company that provides an app and back-end management software for restaurant reservations.",
     "icon": "Resy.svg",
@@ -824,6 +888,31 @@
     "icon": "Revel.png",
     "implies": "Go",
     "website": "https://revel.github.io"
+  },
+  "RevenueHut": {
+    "cats": [
+      71
+    ],
+    "description": "RevenueHut is an affiliate marketing and advertising company specializing in paid surveys and cost per lead campaigns.",
+    "icon": "RevenueHut.png",
+    "scripts": "admin\\.revenuehunt\\.com/",
+    "website": "https://revenuehut.com"
+  },
+  "ReviewSolicitors": {
+    "cats": [
+      90
+    ],
+    "description": "ReviewSolicitors is a free and independent client-led review platform focusing on the UK legal market.",
+    "icon": "ReviewSolicitors.svg",
+    "js": {
+      "rs.getWidgetHtml": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "scripts": "\\.reviewsolicitors\\.co\\.uk/",
+    "website": "https://www.reviewsolicitors.co.uk"
   },
   "RevolverMaps": {
     "cats": [
@@ -1127,6 +1216,10 @@
     },
     "icon": "Ruby on Rails.png",
     "implies": "Ruby",
+    "js": {
+      "ReactOnRails": "",
+      "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
+    },
     "meta": {
       "csrf-param": "^authenticity_token$\\;confidence:50"
     },
@@ -1159,6 +1252,24 @@
     },
     "scripts": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
     "website": "http://reactivex.io"
+  },
+  "Ryviu": {
+    "cats": [
+      90
+    ],
+    "description": "Ryviu is customer product reviews app for building social proof for store.",
+    "icon": "Ryviu.png",
+    "js": {
+      "ryviu_global_settings": ""
+    },
+    "pricing": [
+      "recurring",
+      "payg",
+      "low"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.ryviu\\.com",
+    "website": "https://www.ryviu.com/"
   },
   "reCAPTCHA": {
     "cats": [

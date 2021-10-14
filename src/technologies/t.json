@@ -28,6 +28,20 @@
     "scripts": "secure\\.ap\\.tnspayments\\.com",
     "website": "https://tnsi.com/products/payments/"
   },
+  "TRISOshop": {
+    "cats": [
+      6
+    ],
+    "description": "TRISOshop is an ecommerce platform.",
+    "dom": "a[href*='www.trisoshop.pl'][target='_blank']",
+    "icon": "TRISOshop.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.trisoshop.pl"
+  },
   "TRUENDO": {
     "cats": [
       67
@@ -100,8 +114,7 @@
   },
   "TableBooker": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Tablebooker is an online reservation system for restaurants.",
     "dom": {
@@ -122,8 +135,7 @@
   },
   "TableCheck": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "TableCheck is a restaurant table booking widget.",
     "dom": {
@@ -163,17 +175,20 @@
     "website": "https://www.taboola.com",
     "xhr": "\\.taboola\\.com"
   },
-  "TagCommander": {
+  "Tagboard": {
     "cats": [
-      42
+      96
     ],
-    "description": "TagCommander is an enterprise tag management system (TMS) that makes it easy to add and remove vendor tags from your Drupal-based websites.",
-    "icon": "tagcommander.png",
-    "js": {
-      "tc_vars": ""
-    },
-    "scripts": "\\.tagcommander\\.com",
-    "website": "https://www.commandersact.com/en/solutions/tagcommander/"
+    "description": "Tagboard is a platform which allows users to aggregate data from major social networking websites and embed, repost and redisplay it on various media.",
+    "dom": "iframe[src*='.tagboard.com/']",
+    "icon": "Tagboard.svg",
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.tagboard\\.com/",
+    "website": "https://tagboard.com"
   },
   "Taggbox": {
     "cats": [
@@ -211,6 +226,34 @@
     },
     "website": "http://taiga.io"
   },
+  "Tail": {
+    "cats": [
+      97
+    ],
+    "description": "Tail is a customer data management platform.",
+    "icon": "Tail.svg",
+    "scripts": "\\.tailtarget\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.tail.digital"
+  },
+  "Tailwind CSS": {
+    "cats": [
+      66
+    ],
+    "description": "Tailwind is a utility-first CSS framework.",
+    "dom": {
+      "link[rel='stylesheet'][href*='tailwind']": {
+        "attributes": {
+          "href": "tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
+        }
+      }
+    },
+    "icon": "tailwindcss.svg",
+    "website": "https://tailwindcss.com/"
+  },
   "TakeDrop": {
     "cats": [
       6
@@ -227,6 +270,23 @@
     ],
     "saas": true,
     "website": "https://takedrop.pl"
+  },
+  "Talkable": {
+    "cats": [
+      74,
+      84,
+      94
+    ],
+    "description": "Talkable is a cloud-based referral marketing system that assists medium to large businesses with campaign creation and channel performance tracking.",
+    "icon": "Talkable.svg",
+    "js": {
+      "talkable.config.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.talkable.com"
   },
   "Tamago": {
     "cats": [
@@ -249,6 +309,15 @@
     "saas": true,
     "scripts": "cdn\\.tamara\\.co",
     "website": "https://tamara.co/"
+  },
+  "Target2Sell": {
+    "cats": [
+      76
+    ],
+    "description": "Target2Sell is a personalisation solution for ecommerce sites.",
+    "icon": "Target2Sell.png",
+    "scripts": "static\\.target2sell\\.com",
+    "website": "https://www.target2sell.com/"
   },
   "Tatari": {
     "cats": [
@@ -309,6 +378,7 @@
     ],
     "description": "Teads is a technology provider that sells ads on publisher websites.",
     "icon": "Teads.svg",
+    "scripts": "teads\\.tv",
     "website": "https://www.teads.com",
     "xhr": "\\.teads\\.tv"
   },
@@ -324,7 +394,8 @@
   },
   "Tealium": {
     "cats": [
-      42
+      42,
+      97
     ],
     "description": "Tealium provides a sales enterprise tag management system and marketing software.",
     "icon": "Tealium.png",
@@ -462,6 +533,24 @@
     ],
     "website": "https://www.tessituranetwork.com"
   },
+  "TestFreaks": {
+    "cats": [
+      90
+    ],
+    "description": "TestFreaks is an impartial source that provides product and seller review content for ecommerce websites.",
+    "icon": "TestFreaks.svg",
+    "js": {
+      "applyTestFreaks": "",
+      "testFreaks": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.testfreaks\\.com/",
+    "website": "https://www.testfreaks.com"
+  },
   "Texthelp": {
     "cats": [
       68
@@ -497,8 +586,7 @@
   },
   "Thefork": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Thefork is a restaurant booking, managing system.",
     "dom": {
@@ -587,7 +675,7 @@
       83
     ],
     "description": "LexisNexis ThreatMetrix is an enterprise solution for online risk and fraud protection ('digital identity intelligence and digital authentication').",
-    "icon": "ThreatMetrix.svg",
+    "icon": "threatmetrix.png",
     "pricing": [
       "poa"
     ],
@@ -784,6 +872,20 @@
     },
     "website": "http://titan360.com"
   },
+  "TomTom Maps": {
+    "cats": [
+      35
+    ],
+    "description": "TomTom Maps is a web mapping service.",
+    "icon": "TomTom.svg",
+    "js": {
+      "tomtom.Map": ""
+    },
+    "saas": true,
+    "scripts": "api\\.tomtom\\.com",
+    "website": "https://www.tomtom.com",
+    "xhr": "api\\.tomtom\\.com"
+  },
   "TomatoCart": {
     "cats": [
       6
@@ -806,6 +908,27 @@
     },
     "icon": "TornadoServer.png",
     "website": "http://tornadoweb.org"
+  },
+  "Totango": {
+    "cats": [
+      97
+    ],
+    "description": "Totango is a customer success platform that helps recurring revenue businesses simplify the complexities of customer success by connecting the dots of customer data, actively monitoring customer health changes, and driving proactive engagements.",
+    "icon": "Totango.svg",
+    "js": {
+      "totango": "",
+      "totangoLoader": ""
+    },
+    "scripts": [
+      "\\.totango\\.com/totango([\\d\\.]+)\\.js\\;version:\\1",
+      "\\.amazonaws\\.com/totango-cdn/totango\\d\\.js"
+    ],
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "website": "https://www.totango.com"
   },
   "TotalCode": {
     "cats": [
@@ -945,6 +1068,39 @@
     "scripts": "\\.trbo\\.com",
     "website": "https://www.trbo.com"
   },
+  "Treasure Data": {
+    "cats": [
+      97
+    ],
+    "description": "Treasure Data is the only enterprise customer data platform.",
+    "icon": "Treasure Data.svg",
+    "js": {
+      "Treasure.version": "(.+)\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.treasuredata\\.com/",
+    "website": "https://www.treasuredata.com"
+  },
+  "Trengo": {
+    "cats": [
+      52
+    ],
+    "description": "Trengo is an omnichannel communication platform that unifies all messaging channels into one single view.",
+    "icon": "Trengo.svg",
+    "js": {
+      "Trengo.eventBus": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.widget\\.trengo\\.eu/",
+    "website": "https://trengo.com"
+  },
   "Tripadviser.Widget": {
     "cats": [
       5
@@ -992,6 +1148,20 @@
     ],
     "website": "https://www.transunion.com/solution/truvalidate"
   },
+  "True Fit": {
+    "cats": [
+      76
+    ],
+    "description": "True Fit is a data-driven personalisation platform for footwear and apparel retailers.",
+    "icon": "True Fit.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.truefitcorp\\.com/(?:.+/([\\d\\.]+))?\\;version:\\1",
+    "website": "https://www.truefit.com"
+  },
   "TrueCommerce": {
     "cats": [
       6
@@ -1026,9 +1196,23 @@
     "saas": true,
     "website": "https://www.trustyou.com"
   },
+  "Trusted Shops": {
+    "cats": [
+      90
+    ],
+    "description": "Trusted Shops is a company that acts as a 3'rd party representing the common interests of both consumers and retailers.",
+    "icon": "Trusted Shops.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "widgets\\.trustedshops\\.com/",
+    "website": "https://www.trustedshops.co.uk"
+  },
   "Trustpilot": {
     "cats": [
-      5
+      90
     ],
     "description": "Trustpilot is a Danish consumer review website which provide embed stand-alone applications in your website to show your most recent reviews, TrustScore, and star ratings.",
     "icon": "Trustpilot.svg",
@@ -1043,6 +1227,19 @@
     "saas": true,
     "scripts": "\\.trustpilot\\.com",
     "website": "https://business.trustpilot.com"
+  },
+  "Trustspot": {
+    "cats": [
+      90
+    ],
+    "description": "TrustSpot provides a solution to capture ratings & reviews, video testimonials, photos, social experiences, and product Q&A.",
+    "icon": "Trustspot.png",
+    "js": {
+      "trustspot_key": ""
+    },
+    "saas": true,
+    "scripts": "trustspot\\.io",
+    "website": "https://trustspot.io/"
   },
   "Tumblr": {
     "cats": [
@@ -1305,29 +1502,18 @@
     "scripts": "use\\.typekit\\.com",
     "website": "http://typekit.com"
   },
-  "tailwindcss": {
-    "cats": [
-      66
-    ],
-    "description": "Tailwind is a utility-first CSS framework.",
-    "dom": {
-      "link[rel='stylesheet'][href*='tailwind']": {
-        "attributes": {
-          "href": ""
-        }
-      }
-    },
-    "html": [
-      "<link[^>]+?href=\"[^\"]+tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
-    ],
-    "icon": "tailwindcss.svg",
-    "website": "https://tailwindcss.com/"
-  },
   "theTradeDesk": {
     "cats": [
       36
     ],
     "description": "theTradeDesk is an technology company that markets a software platform used by digital ad buyers to purchase data-driven digital advertising campaigns across various ad formats and devices.",
+    "dom": {
+      "iframe[src*='insight.adsrvr.org']": {
+        "attributes": {
+          "src": ""
+        }
+      }
+    },
     "icon": "theTradeDesk.svg",
     "js": {
       "TTDUniversalPixelApi": "",

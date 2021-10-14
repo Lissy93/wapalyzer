@@ -321,6 +321,24 @@
     },
     "website": "https://www.getfeedback.com"
   },
+  "GetMeAShop": {
+    "cats": [
+      6
+    ],
+    "description": "GetMeAShop is a cloud-based ecommerce solution for small and midsize businesses across industries such as retail and manufacturing.",
+    "dom": "link[href*='.getmeashop.com']",
+    "icon": "GetMeAShop.png",
+    "js": {
+      "gmas_base_url": "'\\.getmeashop\\.com",
+      "search_api_base_uri": "search\\.getmeashop\\.com"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.getmeashop.com"
+  },
   "GetSimple CMS": {
     "cats": [
       1
@@ -351,6 +369,32 @@
     "scripts": "api\\.at\\.getsocial\\.io",
     "website": "https://getsocial.io"
   },
+  "GetYourGuide": {
+    "cats": [
+      72
+    ],
+    "description": "GetYourGuide is a Berlin-based online travel agency and online marketplace for tour guides and excursions.",
+    "dom": {
+      "a[href*='.getyourguide.']": {
+        "attributes": {
+          "href": "\\.getyourguide\\.\\w+/\\?partner_id="
+        }
+      },
+      "img[src*='cdn.getyourguide.com/']": {
+        "src": ""
+      },
+      "link[href*='cdn.getyourguide.com/']": {
+        "src": ""
+      }
+    },
+    "icon": "GetYourGuide.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "\\.getyourguide\\.com/",
+    "website": "https://partner.getyourguide.com"
+  },
   "Getintent": {
     "cats": [
       36
@@ -363,6 +407,21 @@
     "saas": true,
     "website": "https://getintent.com",
     "xhr": "\\.adhigh\\.net"
+  },
+  "Getsitecontrol": {
+    "cats": [
+      5,
+      73
+    ],
+    "description": "Getsitecontrol is a form and popup builder.",
+    "icon": "Getsitecontrol.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "\\.getsitecontrol\\.com/",
+    "website": "https://getsitecontrol.com"
   },
   "Ghost": {
     "cats": [
@@ -549,6 +608,20 @@
     },
     "icon": "GoAhead.png",
     "website": "http://embedthis.com/products/goahead/index.html"
+  },
+  "GoAnywhere": {
+    "cats": [
+      19
+    ],
+    "description": "GoAnywhere by HelpSystems is a Managed File Transfer (MFT) system with sharing and collaboration features",
+    "headers": {
+      "Server": "goanywhere"
+    },
+    "icon": "goanywhere.png",
+    "js": {
+      "appContainer": "GoAnywhereWebClientContainer"
+    },
+    "website": "https://www.goanywhere.com/"
   },
   "GoCache": {
     "cats": [
@@ -843,7 +916,8 @@
   "Google PageSpeed": {
     "cats": [
       23,
-      33
+      33,
+      92
     ],
     "description": "Google PageSpeed is a family of tools designed to help websites performance optimisations.",
     "headers": {
@@ -894,22 +968,13 @@
       69
     ],
     "description": "Google Sign-In is a secure authentication system that reduces the burden of login for users, by enabling them to sign in with their Google account.",
-    "dom": {
-      "button": {
-        "text": "(Sign|Log) in with Google"
-      }
-    },
-    "html": [
-      "<meta[^>]*google-signin-client_id",
-      "<meta[^>]*google-signin-scope",
-      "<iframe[^>]*accounts\\.google\\.com/o/oauth2",
-      "<a[^>]*accounts\\.google\\.com/o/oauth2"
-    ],
+    "dom": "iframe[src*='accounts.google.com/o/oauth2'], a[href*='accounts.google.com/o/oauth2']",
     "icon": "Google.svg",
-    "scripts": [
-      "apis\\.google\\.com/js/platform\\.js",
-      "accounts\\.google\\.com/gsi/client"
-    ],
+    "meta": {
+      "google-signin-client_id": "",
+      "google-signin-scope": ""
+    },
+    "scripts": "accounts\\.google\\.com/gsi/client",
     "website": "https://developers.google.com/identity/sign-in/web"
   },
   "Google Sites": {
@@ -1220,6 +1285,22 @@
     "scripts": "grin-sdk\\.js",
     "website": "https://grin.co/"
   },
+  "GrocerKey": {
+    "cats": [
+      6
+    ],
+    "description": "GrocerKey is an ecommerce platform that helps grocery stores build an online store.",
+    "icon": "GrocerKey.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scripts": [
+      "\\.grocerywebsite\\.com/",
+      "grocerkey-widget\\.s3\\.amazonaws\\.com/"
+    ],
+    "website": "https://grocerkey.com"
+  },
   "GroupBy": {
     "cats": [
       29
@@ -1244,8 +1325,7 @@
   },
   "Guestonline": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "Guestonline is a restaurant table booking widget.",
     "dom": "iframe[src*='ib.guestonline.']",

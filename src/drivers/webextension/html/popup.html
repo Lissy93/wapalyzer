@@ -47,7 +47,7 @@
 
       <div class="tabs">
         <div class="tab tab--technologies tab--active" data-i18n="tabTechnologies">&nbsp;</div>
-        <div class="tab tab--pro" data-i18n="tabPro">&nbsp;</div>
+        <div class="tab tab--plus"><span data-i18n="tabPlus">&nbsp;</span><span class="tab__dot">●</span></div>
 
         <div class="credits credits--hidden">
           <span data-i18n="creditBalance">&nbsp;</span>
@@ -154,8 +154,8 @@
       </div>
 
       <div class="tab-item tab-item--hidden">
-        <div class="pro-error pro-error--hidden">
-          <div class="pro-error__message">
+        <div class="plus-error plus-error--hidden">
+          <div class="plus-error__message">
           </div>
         </div>
 
@@ -168,26 +168,19 @@
         <div class="panels panels--hidden">
         </div>
 
-        <div class="pro-configure pro-configure--hidden">
+        <div class="plus-configure plus-configure--hidden">
           <div class="message">
             <div class="message__heading">
-              <svg class="message__heading__icon" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M10 13C11.1 13 12 13.89 12 15C12 16.11 11.11 17 10 17S8 16.11 8 15 8.9 13 10 13M18 1C15.24 1 13 3.24 13 6V8H4C2.9 8 2 8.9 2 10V20C2 21.1 2.9 22 4 22H16C17.1 22 18 21.1 18 20V10C18 8.9 17.1 8 16 8H15V6C15 4.34 16.34 3 18 3S21 4.34 21 6V8H23V6C23 3.24 20.76 1 18 1M16 10V20H4V10H16Z" />
-              </svg>
-
-              <span data-i18n="proMessageHeading">&nbsp;</span>
+              <span data-i18n="plusMessageHeading">&nbsp;</span>
             </div>
 
             <p>
-            <span data-i18n="proMessage">&nbsp;</span>
-            <small>
-              (<a href="https://www.wappalyzer.com/pro/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer" data-i18n="proInfo">&nbsp;</a>)
-            </small>
+            <span data-i18n="plusMessage">&nbsp;</span>
             </p>
 
             <div class="message__button button">
-              <a class="button__link" href="https://www.wappalyzer.com/pricing/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer">
-                <span class="button__text" data-i18n="proButton"></span>
+              <a class="button__link" href="https://www.wappalyzer.com/plus/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer">
+                <span class="button__text" data-i18n="plusButton"></span>
 
                 <svg class="button__icon button__icon--right" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
@@ -196,7 +189,7 @@
             </div>
           </div>
 
-          <form class="pro-configure__form">
+          <form class="plus-configure__form">
             <div class="control">
               <span class="label">
                 <span data-i18n="optionApiKey">&nbsp;</span>
@@ -206,11 +199,11 @@
                 </small>
               </span>
 
-              <input type="password" class="pro-configure__apikey input" />
+              <input type="password" class="plus-configure__apikey input" />
             </div>
 
             <div class="message__button button">
-              <span class="pro-configure__save button__link">
+              <span class="plus-configure__save button__link">
                 <svg class="button__icon button__icon--left" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
                 </svg>
@@ -221,8 +214,8 @@
           </form>
         </div>
 
-        <div class="pro-empty pro-empty--hidden" data-i18n="proEmpty"></div>
-        <div class="pro-crawl pro-crawl--hidden" data-i18n="proCrawl"></div>
+        <div class="plus-empty plus-empty--hidden" data-i18n="plusEmpty"></div>
+        <div class="plus-crawl plus-crawl--hidden" data-i18n="plusCrawl"></div>
       </div>
 
       <div class="footer">

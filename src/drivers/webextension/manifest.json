@@ -4,7 +4,7 @@
   "author": "Wappalyzer",
   "homepage_url": "https://www.wappalyzer.com/",
   "description": "Identify web technologies",
-  "version": "6.8.12",
+  "version": "6.8.19",
   "default_locale": "en",
   "manifest_version": 2,
   "icons": {
@@ -60,7 +60,8 @@
     }
   ],
   "web_accessible_resources": [
-    "js/inject.js"
+    "js/js.js",
+    "js/dom.js"
   ],
   "options_ui": {
     "page": "html/options.html",

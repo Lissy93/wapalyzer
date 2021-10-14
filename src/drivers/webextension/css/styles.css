@@ -24,11 +24,12 @@ body {
   font-size: .9rem;
   line-height: 1.5rem;
 	margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .body__popup {
-  width: 34rem;
+  min-width: 24rem;
+  max-width: 34rem;
 }
 
 a, a:focus, a:hover {
@@ -43,6 +44,8 @@ p {
 
 .popup {
   background: white;
+  max-height: 34rem;
+  overflow-y: auto;
 }
 
 .input[type="text"], .input[type="password"] {
@@ -200,6 +203,8 @@ small {
   letter-spacing: .5px;
   padding: 1rem 1.5rem .8rem 1.5rem;
   text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
 }
 
 .tab--disabled {
@@ -222,6 +227,17 @@ small {
   display: none;
 }
 
+.tab__dot {
+  color: #ff5252;
+  position: absolute;
+  margin-left: .1rem;
+  top: .6rem;
+}
+
+.tab__dot--hidden {
+  display: none;
+}
+
 .credits {
   color: var(--color-text-lighten);
   display: block;
@@ -229,6 +245,7 @@ small {
   flex: 1;
   padding: 0 1.5rem;
   margin-bottom: -3px;
+  line-height: 1rem;
 }
 
 .credits--hidden {
@@ -327,11 +344,11 @@ small {
   background: var(--color-primary-lighten)
 }
 
-.pro-configure {
+.plus-configure {
   margin: 1.5rem;
 }
 
-.pro-configure--hidden {
+.plus-configure--hidden {
   display: none;
 }
 
@@ -360,40 +377,40 @@ small {
   text-align: right;
 }
 
-.pro-configure__form {
+.plus-configure__form {
   background: var(--color-primary-lighten);
   border-radius: 4px;
   color: var(--color-primary);
   padding: 1rem 1.5rem;
 }
 
-.pro-empty {
+.plus-empty {
   text-align: center;
   padding: 4rem 1.5rem;
 }
 
-.pro-empty--hidden {
+.plus-empty--hidden {
   display: none;
 }
 
-.pro-crawl {
+.plus-crawl {
   text-align: center;
   padding: 4rem 1.5rem;
 }
 
-.pro-crawl--hidden {
+.plus-crawl--hidden {
   display: none;
 }
 
-.pro-error {
+.plus-error {
   margin: 1.5rem;
 }
 
-.pro-error--hidden {
+.plus-error--hidden {
   display: none;
 }
 
-.pro-error__message {
+.plus-error__message {
   border: 1px solid var(--color-error);
   border-radius: 4px;
   color: var(--color-error);
@@ -437,10 +454,6 @@ small {
   opacity: .8;
 }
 
-.footer__toggle {
-  flex: 0 1;
-}
-
 .footer--hidden {
   display: none;
 }
@@ -458,7 +471,7 @@ small {
 }
 
 .footer__toggle {
-  flex: 1;
+  flex: 0 1;
   text-align: right;
 }
 
@@ -810,7 +823,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   color: white;
 }
 
-.dark .pro-configure__form {
+.dark .plus-configure__form {
   background: var(--color-primary);
   color: var(--color-text-dark);
 }

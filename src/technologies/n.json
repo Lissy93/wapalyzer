@@ -351,6 +351,20 @@
     },
     "website": "https://nitropack.io/"
   },
+  "Noddus": {
+    "cats": [
+      10,
+      32
+    ],
+    "description": "Noddus offers brands and agencies access to an advanced proprietary content marketing platform automating content production, distribution and analytics.",
+    "icon": "Noddus.png",
+    "scripts": "noddus\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.enterprise.noddus.com"
+  },
   "Node.js": {
     "cats": [
       27
@@ -372,6 +386,25 @@
     "implies": "Node.js",
     "scripts": "^/nodebb\\.min\\.js\\?",
     "website": "https://nodebb.org"
+  },
+  "Norton Shopping Guarantee": {
+    "cats": [
+      16
+    ],
+    "description": "Norton Shopping Guarantee offering a third-party shopping guarantee to customers provides added protection and validation that you are safe to buy from.",
+    "icon": "Norton Shopping Guarantee.svg",
+    "implies": "Cart Functionality",
+    "js": {
+      "DO_NORTON_SHOPPING": ""
+    },
+    "pricing": [
+      "low",
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "nsg\\.symantec\\.com/",
+    "website": "https://norton.buysafe.com"
   },
   "Nosto": {
     "cats": [

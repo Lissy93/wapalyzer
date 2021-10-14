@@ -2,20 +2,20 @@
 /* eslint-env browser */
 /* globals chrome */
 
-function getJs(technologies) {
+function inject(src, id, message) {
   return new Promise((resolve) => {
     // Inject a script tag into the page to access methods of the window object
     const script = document.createElement('script')
 
     script.onload = () => {
       const onMessage = ({ data }) => {
-        if (!data.wappalyzer || !data.wappalyzer.js) {
+        if (!data.wappalyzer || !data.wappalyzer[id]) {
           return
         }
 
         window.removeEventListener('message', onMessage)
 
-        resolve(data.wappalyzer.js)
+        resolve(data.wappalyzer[id])
 
         script.remove()
       }
@@ -23,25 +23,38 @@ function getJs(technologies) {
       window.addEventListener('message', onMessage)
 
       window.postMessage({
-        wappalyzer: {
-          technologies: technologies
-            .filter(({ js }) => Object.keys(js).length)
-            .map(({ name, js }) => ({ name, chains: Object.keys(js) })),
-        },
+        wappalyzer: message,
       })
     }
 
-    script.setAttribute('src', chrome.runtime.getURL('js/inject.js'))
+    script.setAttribute('src', chrome.runtime.getURL(src))
 
     document.body.appendChild(script)
   })
 }
 
-function getDom(technologies) {
-  return technologies
+function getJs(technologies) {
+  return inject('js/js.js', 'js', {
+    technologies: technologies
+      .filter(({ js }) => Object.keys(js).length)
+      .map(({ name, js }) => ({ name, chains: Object.keys(js) })),
+  })
+}
+
+async function getDom(technologies) {
+  const _technologies = technologies
     .filter(({ dom }) => dom && dom.constructor === Object)
     .map(({ name, dom }) => ({ name, dom }))
-    .reduce((technologies, { name, dom }) => {
+
+  return [
+    ...(await inject('js/dom.js', 'dom', {
+      technologies: _technologies.filter(({ dom }) =>
+        Object.values(dom)
+          .flat()
+          .some(({ properties }) => properties)
+      ),
+    })),
+    ..._technologies.reduce((technologies, { name, dom }) => {
       const toScalar = (value) =>
         typeof value === 'string' || typeof value === 'number' ? value : !!value
 
@@ -58,7 +71,7 @@ function getDom(technologies) {
           return
         }
 
-        dom[selector].forEach(({ exists, text, properties, attributes }) => {
+        dom[selector].forEach(({ exists, text, attributes }) => {
           nodes.forEach((node) => {
             if (exists) {
               technologies.push({
@@ -80,23 +93,6 @@ function getDom(technologies) {
               }
             }
 
-            if (properties) {
-              Object.keys(properties).forEach((property) => {
-                if (Object.prototype.hasOwnProperty.call(node, property)) {
-                  const value = node[property]
-
-                  if (typeof value !== 'undefined') {
-                    technologies.push({
-                      name,
-                      selector,
-                      property,
-                      value: toScalar(value),
-                    })
-                  }
-                }
-              })
-            }
-
             if (attributes) {
               Object.keys(attributes).forEach((attribute) => {
                 if (node.hasAttribute(attribute)) {
@@ -116,7 +112,8 @@ function getDom(technologies) {
       })
 
       return technologies
-    }, [])
+    }, []),
+  ]
 }
 
 const Content = {
@@ -243,6 +240,30 @@ const Content = {
         }
       }
 
+      // Detect Facebook Ads
+      if (/^(www\.)?facebook\.com$/.test(location.hostname)) {
+        const ads = document.querySelectorAll('a[aria-label="Advertiser"]')
+
+        for (const ad of ads) {
+          const urls = [
+            ...new Set([
+              `https://${decodeURIComponent(
+                ad.href.split(/^.+\?u=https%3A%2F%2F/).pop()
+              )
+                .split('/')
+                .shift()}`,
+
+              // eslint-disable-next-line unicorn/prefer-text-content
+              `https://${ad.innerText.split('\n').pop()}`,
+            ]),
+          ]
+
+          urls.forEach((url) =>
+            Content.driver('detectTechnology', [url, 'Facebook Ads'])
+          )
+        }
+      }
+
       Content.cache = { html, css, scripts, meta, cookies }
 
       await Content.driver('onContentLoad', [
@@ -353,7 +374,7 @@ const Content = {
     const url = location.href
 
     const js = await getJs(technologies)
-    const dom = getDom(technologies)
+    const dom = await getDom(technologies)
 
     await Promise.all([
       Content.driver('analyzeJs', [url, js, requires]),
