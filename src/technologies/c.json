@@ -995,9 +995,16 @@
     "cats": [
       31
     ],
-    "html": [
-      "<img[^>]+\\.cloudinary\\.com\\;confidence:80"
-    ],
+    "dom": {
+      "img[src*='.cloudinary.com']": {
+        "attributes": {
+          "src": "\\;confidence:80"
+        }
+      }
+    },
+    "js": {
+      "_cloudinary": ""
+    },
     "icon": "Cloudinary.svg",
     "website": "https://cloudinary.com"
   },

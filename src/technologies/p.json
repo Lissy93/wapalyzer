@@ -406,21 +406,21 @@
       "button": {
         "text": "PayPal"
       },
-      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout'], [aria-labelledby='pi-paypal']": {
+      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout'], [aria-labelledby='pi-paypal'], [data-paypal-v4='true']": {
         "exists": ""
       }
     },
-    "html": "<input[^>]+_s-xclick",
+    "meta": {
+      "id": "in-context-paypal-metadata"
+    },
     "icon": "PayPal.svg",
     "js": {
       "PAYPAL": "",
       "checkout.enabledpayments.paypal": "^true$",
       "enablePaypal": "",
       "paypalClientId": "",
-      "paypalJs": ""
-    },
-    "meta": {
-      "id": "in-context-paypal-metadata"
+      "paypalJs": "",
+      "__paypal_global__": ""
     },
     "pricing": [
       "payg"
