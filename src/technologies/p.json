@@ -473,6 +473,23 @@
     ],
     "website": "https://payjustnow.com"
   },
+  "Pay It Later": {
+    "cats": [
+      91
+    ],
+    "description": "Pay It Later collect payments in weekly instalments from you when you make a purchase online, so you can buy now and pay it later.",
+    "icon": "Pay It Later.png",
+    "dom": "a[href='.payitlater.com.au'][target='_blank'], img[src*='PayItLater'][alt='PayItLater']",
+    "js": {
+      "payitlater": ""
+    },
+    "scripts": "/wp-content/plugins/payitlater-gateway-for-woocommerce/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.payitlater.com.au"
+  },
   "Payl8r": {
     "cats": [
       41,
@@ -1313,6 +1330,24 @@
     "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
     "icon": "PostgreSQL.png",
     "website": "http://www.postgresql.org/"
+  },
+  "Postpay": {
+    "cats": [
+      91
+    ],
+    "description": "Postpay is a payment solution that allows you to split your purchase amount into instalments.",
+    "icon": "Postpay.svg",
+    "js": {
+      "PostpayJsConfig": "\\;confidence:50",
+      "postpay": "\\;confidence:25",
+      "wc_postpay_init_params": "\\;confidence:25"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.postpay\\.io/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "website": "https://postpay.io"
   },
   "Postscript": {
     "cats": [
