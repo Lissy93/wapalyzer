@@ -1301,6 +1301,24 @@
     "icon": "PostgreSQL.png",
     "website": "http://www.postgresql.org/"
   },
+  "Postpay": {
+    "cats": [
+      91
+    ],
+    "description": "Postpay is a payment solution that allows you to split your purchase amount into instalments",
+    "icon": "Postpay.svg",
+    "js": {
+      "PostpayJsConfig": "",
+      "postpay": "",
+      "wc_postpay_init_params": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "cdn\\.postpay\\.io/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "website": "https://postpay.io"
+  },
   "Postscript": {
     "cats": [
       32
