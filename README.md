@@ -99,6 +99,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
     "generator": "(?:Example|Another Example)"
   },
   "scriptSrc": "example-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
+  "scripts": "function webpackJsonpCallback\\(data\\) {",
   "url": "example\\.com",
   "xhr": "example\\.com",
   "oss": true,
@@ -385,6 +386,16 @@ Plus any of:
         URLs of JavaScript files included on the page.
       </td>
       <td><code>"jquery\\.js"</code></td>
+    </tr>
+    <tr>
+      <td><code>scripts</code></td>
+      <td>String | Array</td>
+      <td>
+        JavaScript source code. Inspects inline and external scripts. For performance reasons, avoid
+        <code>scripts</code> where possible and use
+        <code>js</code> instead.
+      </td>
+      <td><code>"function webpackJsonpCallback\\(data\\) {"</code></td>
     </tr>
   </tbody>
 </table>
