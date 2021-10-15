@@ -55,7 +55,7 @@
       "PhpDebugBar": "",
       "phpdebugbar": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "debugbar.*\\.js"
     ],
     "website": "http://phpdebugbar.com/"
@@ -90,7 +90,7 @@
       "PIXI": "",
       "PIXI.VERSION": "^(.+)$\\;version:\\1"
     },
-    "scripts": "pixi\\.(min\\.)?js$",
+    "scriptSrc": "pixi\\.(min\\.)?js$",
     "url": ".+\\.pixijs\\.com",
     "website": "https://www.pixijs.com/"
   },
@@ -110,7 +110,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "www\\.powr\\.io/powr\\.js",
+    "scriptSrc": "www\\.powr\\.io/powr\\.js",
     "website": "https://www.powr.io"
   },
   "Pace": {
@@ -124,7 +124,7 @@
       "pacePay": ""
     },
     "saas": true,
-    "scripts": "pay\\.pacenow\\.co",
+    "scriptSrc": "pay\\.pacenow\\.co",
     "website": "https://pacenow.co/"
   },
   "Paddle": {
@@ -142,7 +142,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.paddle\\.com/paddle/paddle\\.js",
+    "scriptSrc": "cdn\\.paddle\\.com/paddle/paddle\\.js",
     "website": "https://paddle.com/"
   },
   "PagSeguro": {
@@ -160,7 +160,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.pagseguro\\.uol\\.com\\.br/",
+    "scriptSrc": "\\.pagseguro\\.uol\\.com\\.br/",
     "website": "https://pagseguro.uol.com.br"
   },
   "Pagar.me": {
@@ -177,7 +177,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "assets\\.pagar\\.me/",
+    "scriptSrc": "assets\\.pagar\\.me/",
     "website": "https://pagar.me"
   },
   "PageFly": {
@@ -186,7 +186,7 @@
     ],
     "description": "PageFly is an app for Shopify that allows you to build landing pages, product pages, blogs, and FAQs.",
     "icon": "pagefly.png",
-    "scripts": "pagefly\\.io",
+    "scriptSrc": "pagefly\\.io",
     "website": "https://pagefly.io"
   },
   "Pagekit": {
@@ -311,14 +311,14 @@
       "PartiallyButton": ""
     },
     "saas": true,
-    "scripts": "partial\\.ly",
+    "scriptSrc": "partial\\.ly",
     "website": "https://partial.ly/"
   },
   "Paths.js": {
     "cats": [
       25
     ],
-    "scripts": "paths(?:\\.min)?\\.js",
+    "scriptSrc": "paths(?:\\.min)?\\.js",
     "website": "https://github.com/andreaferretti/paths-js"
   },
   "Patreon": {
@@ -339,7 +339,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "patreon-connect/assets/.+ver=([\\d.]+)\\;version:\\1",
+    "scriptSrc": "patreon-connect/assets/.+ver=([\\d.]+)\\;version:\\1",
     "website": "https://www.patreon.com"
   },
   "Pattern by Etsy": {
@@ -369,7 +369,7 @@
     "js": {
       "_paybright_config": ""
     },
-    "scripts": "app\\.paybright\\.com",
+    "scriptSrc": "app\\.paybright\\.com",
     "website": "https://paybright.com"
   },
   "PayFast": {
@@ -393,7 +393,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "app\\.paykickstart\\.com",
+    "scriptSrc": "app\\.paykickstart\\.com",
     "website": "https://paykickstart.com"
   },
   "PayPal": {
@@ -426,7 +426,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "paypalobjects\\.com",
+    "scriptSrc": "paypalobjects\\.com",
     "website": "https://paypal.com",
     "xhr": "\\.paypal\\.com"
   },
@@ -442,7 +442,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "\\.paypalobjects\\.com/muse/",
       "\\.paypal\\.com/tagmanager/pptm\\.js"
     ],
@@ -457,7 +457,7 @@
     "dom": "[aria-labelledby='pi-payflex']",
     "icon": "Payflex.png",
     "saas": true,
-    "scripts": "partpayassets\\.blob\\.core\\.windows\\.net",
+    "scriptSrc": "partpayassets\\.blob\\.core\\.windows\\.net",
     "website": "https://payflex.co.za/"
   },
   "PayJustNow": {
@@ -498,7 +498,7 @@
     "description": "PayL8r.com offers repayment plans and online finance which allow you to purchase products online.",
     "icon": "Payl8r.svg",
     "saas": true,
-    "scripts": "payl8r\\.com",
+    "scriptSrc": "payl8r\\.com",
     "website": "https://payl8r.com/"
   },
   "Peek": {
@@ -513,7 +513,7 @@
       "PeekJsApi": "",
       "_peekConfig": ""
     },
-    "scripts": "js\\.peek\\.\\w+",
+    "scriptSrc": "js\\.peek\\.\\w+",
     "website": "https://www.peek.com/"
   },
   "PeerTube": {
@@ -570,7 +570,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.pendo\\.io/",
+    "scriptSrc": "\\.pendo\\.io/",
     "website": "https://www.pendo.io"
   },
   "Pepperjam": {
@@ -587,7 +587,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.pepperjam\\.com/",
+    "scriptSrc": "\\.pepperjam\\.com/",
     "website": "https://www.pepperjam.com"
   },
   "Percona": {
@@ -630,7 +630,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "client\\.a\\.pxi\\.pub/",
+    "scriptSrc": "client\\.a\\.pxi\\.pub/",
     "website": "https://www.perimeterx.com"
   },
   "Periodic": {
@@ -645,7 +645,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "/integrations/embed/periodic-embed-resize\\.js",
+    "scriptSrc": "/integrations/embed/periodic-embed-resize\\.js",
     "website": "https://periodic.is"
   },
   "Perl": {
@@ -673,7 +673,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.permutive\\.com",
+    "scriptSrc": "cdn\\.permutive\\.com",
     "website": "https://permutive.com",
     "xhr": "api\\.permutive\\.com"
   },
@@ -691,7 +691,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
+    "scriptSrc": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
     "website": "https://www.personaclick.com"
   },
   "Perzonalization": {
@@ -701,7 +701,7 @@
     "description": "Perzonalization is a AI powered personalization engine for eCommerce",
     "icon": "Perzonalization.png",
     "saas": true,
-    "scripts": "cdn\\.perzonalization\\.com",
+    "scriptSrc": "cdn\\.perzonalization\\.com",
     "website": "https://www.perzonalization.com/"
   },
   "Phabricator": {
@@ -716,7 +716,7 @@
     "html": "<[^>]+(?:class|id)=\"phabricator-",
     "icon": "Phabricator.png",
     "implies": "PHP",
-    "scripts": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
+    "scriptSrc": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
     "website": "http://phacility.com"
   },
   "Phaser": {
@@ -740,7 +740,7 @@
     ],
     "icon": "Phenomic.svg",
     "implies": "React",
-    "scripts": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
+    "scriptSrc": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
     "website": "https://phenomic.io/"
   },
   "Phoenix": {
@@ -779,7 +779,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.psecn\\.photoshelter\\.com/",
+    "scriptSrc": "\\.psecn\\.photoshelter\\.com/",
     "url": "photoshelter\\.com",
     "website": "https://www.photoshelter.com"
   },
@@ -835,7 +835,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "\\.tinypass\\.com",
       "\\.piano\\.io"
     ],
@@ -854,7 +854,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "widget\\.pico\\.tools"
     ],
     "website": "https://trypico.com"
@@ -875,7 +875,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.picreel\\.com",
+    "scriptSrc": "\\.picreel\\.com",
     "website": "https://www.picreel.com"
   },
   "Pimcore": {
@@ -903,7 +903,7 @@
     ],
     "description": "Pin Payments is an all-in-one online payment system. It offers merchants a simple JSON API, secure credit card storage, multi-currency capabilities, bank account compatibility, onsite payment processing and automatic fund transfer to specified bank accounts.",
     "icon": "pinpayments.png",
-    "scripts": "api\\.pinpayments\\.com",
+    "scriptSrc": "api\\.pinpayments\\.com",
     "website": "https://www.pinpayments.com/"
   },
   "Pingdom": {
@@ -917,7 +917,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.pingdom\\.net",
+    "scriptSrc": "\\.pingdom\\.net",
     "website": "https://www.pingdom.com"
   },
   "Pingoteam": {
@@ -937,7 +937,7 @@
     ],
     "description": "Pinterest is an image sharing and social media service designed to enable saving and discovery of information.",
     "icon": "Pinterest.svg",
-    "scripts": "//assets\\.pinterest\\.com/js/pinit\\.js",
+    "scriptSrc": "//assets\\.pinterest\\.com/js/pinit\\.js",
     "website": "http://pinterest.com"
   },
   "Pinterest Ads": {
@@ -1011,7 +1011,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "assets\\.pixlee\\.com",
+    "scriptSrc": "assets\\.pixlee\\.com",
     "website": "https://pixlee.com"
   },
   "Planet": {
@@ -1059,7 +1059,7 @@
     "js": {
       "plausible": ""
     },
-    "scripts": "plausible\\.io/js/plausible\\.js",
+    "scriptSrc": "plausible\\.io/js/plausible\\.js",
     "website": "https://plausible.io/"
   },
   "Play": {
@@ -1100,7 +1100,7 @@
       "X-Powered-By-Plesk": "^Plesk"
     },
     "icon": "Plesk.png",
-    "scripts": "common\\.js\\?plesk",
+    "scriptSrc": "common\\.js\\?plesk",
     "website": "https://www.plesk.com/"
   },
   "Pligg": {
@@ -1139,7 +1139,7 @@
     "js": {
       "Plotly.version": "([\\d.])\\;version:\\1"
     },
-    "scripts": "https?://cdn\\.plot\\.ly/plotly",
+    "scriptSrc": "https?://cdn\\.plot\\.ly/plotly",
     "website": "https://plot.ly/javascript/"
   },
   "Plyr": {
@@ -1151,7 +1151,7 @@
     "js": {
       "Plyr": ""
     },
-    "scripts": "https://cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
+    "scriptSrc": "https://cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
     "website": "https://plyr.io/"
   },
   "Po.st": {
@@ -1182,7 +1182,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.podia\\.com",
+    "scriptSrc": "cdn\\.podia\\.com",
     "website": "https://www.podia.com"
   },
   "Podium": {
@@ -1200,7 +1200,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.podium\\.com/",
+    "scriptSrc": "\\.podium\\.com/",
     "website": "https://www.podium.com"
   },
   "Podsights": {
@@ -1209,7 +1209,7 @@
     ],
     "description": "Podsights is attribution technology platform that brands and agencies use to measure and scale their podcast advertising",
     "icon": "Podsights.png",
-    "scripts": "cdn\\.pdst\\.fm",
+    "scriptSrc": "cdn\\.pdst\\.fm",
     "website": "https://podsights.com/"
   },
   "Pojo.me": {
@@ -1228,7 +1228,7 @@
       59
     ],
     "icon": "polyfill.svg",
-    "scripts": [
+    "scriptSrc": [
       "^https?://cdn\\.polyfill\\.io/"
     ],
     "website": "https://polyfill.io"
@@ -1242,7 +1242,7 @@
     "js": {
       "Polymer.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "polymer\\.js",
+    "scriptSrc": "polymer\\.js",
     "website": "http://polymer-project.org"
   },
   "Popmenu": {
@@ -1282,7 +1282,7 @@
     "js": {
       "createPopper": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "/popper\\.js/([0-9.]+)\\;version:\\1"
     ],
     "website": "https://popper.js.org"
@@ -1304,7 +1304,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "postaffiliatepro\\.com/scripts/trackjs\\.js",
       "(?:affiliate|associate)\\..+/scripts/trackjs\\.js"
     ],
@@ -1363,7 +1363,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "sdk\\.postscript\\.io/",
+    "scriptSrc": "sdk\\.postscript\\.io/",
     "website": "https://www.postscript.io"
   },
   "PowerReviews": {
@@ -1376,7 +1376,7 @@
       "POWERREVIEWS": ""
     },
     "saas": true,
-    "scripts": "ui\\.powerreviews\\.com",
+    "scriptSrc": "ui\\.powerreviews\\.com",
     "website": "https://www.powerreviews.com/"
   },
   "Powerboutique": {
@@ -1384,7 +1384,7 @@
       6
     ],
     "icon": "powerboutique.png",
-    "scripts": "powerboutique",
+    "scriptSrc": "powerboutique",
     "website": "https://www.powerboutique.com/"
   },
   "Powergap": {
@@ -1429,7 +1429,7 @@
     "pricing": [
       "freemium"
     ],
-    "scripts": [
+    "scriptSrc": [
       "/prebid\\.js",
       "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
     ],
@@ -1450,7 +1450,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "js/prediggo/(?:[\\w]+)\\.js",
+    "scriptSrc": "js/prediggo/(?:[\\w]+)\\.js",
     "website": "https://prediggo.com"
   },
   "Prefix-Free": {
@@ -1461,7 +1461,7 @@
     "js": {
       "PrefixFree": ""
     },
-    "scripts": "prefixfree\\.js",
+    "scriptSrc": "prefixfree\\.js",
     "website": "https://leaverou.github.io/prefixfree/"
   },
   "Pressable": {
@@ -1525,7 +1525,7 @@
     "js": {
       "PriceSpider.version": "(.+)\\;version:\\1"
     },
-    "scripts": "cdn\\.pricespider\\.com/",
+    "scriptSrc": "cdn\\.pricespider\\.com/",
     "saas": true,
     "pricing": [
       "poa"
@@ -1556,7 +1556,7 @@
       "sekindoFlowingPlayerOn": ""
     },
     "saas": true,
-    "scripts": "\\.sekindo\\.com",
+    "scriptSrc": "\\.sekindo\\.com",
     "website": "https://www.primis.tech",
     "xhr": "\\.sekindo\\.com"
   },
@@ -1569,7 +1569,7 @@
     "implies": [
       "Cart Functionality"
     ],
-    "scripts": "static\\.cdn\\.printful\\.com",
+    "scriptSrc": "static\\.cdn\\.printful\\.com",
     "website": "https://www.printful.com/"
   },
   "Prism": {
@@ -1581,7 +1581,7 @@
     "js": {
       "Prism": ""
     },
-    "scripts": "prism\\.js",
+    "scriptSrc": "prism\\.js",
     "website": "http://prismjs.com"
   },
   "Prismic": {
@@ -1618,7 +1618,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.privy\\.com/",
+    "scriptSrc": "\\.privy\\.com/",
     "website": "https://www.privy.com"
   },
   "Profitwell": {
@@ -1629,7 +1629,7 @@
     "js": {
       "profitwell": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "profitwell\\.js"
     ],
     "website": "https://www.profitwell.com/"
@@ -1643,7 +1643,7 @@
     "js": {
       "pw_adloader": ""
     },
-    "scripts": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
+    "scriptSrc": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
     "website": "http://projectwonderful.com"
   },
   "Projesoft": {
@@ -1651,7 +1651,7 @@
       6
     ],
     "icon": "projesoft.png",
-    "scripts": [
+    "scriptSrc": [
       "projesoft\\.js"
     ],
     "website": "https://www.projesoft.com.tr"
@@ -1666,7 +1666,7 @@
     "js": {
       "Prototype.Version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
+    "scriptSrc": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
     "website": "http://www.prototypejs.org"
   },
   "Protovis": {
@@ -1676,7 +1676,7 @@
     "js": {
       "protovis": ""
     },
-    "scripts": "protovis.*\\.js",
+    "scriptSrc": "protovis.*\\.js",
     "website": "http://mbostock.github.io/protovis"
   },
   "ProvenExpert": {
@@ -1692,7 +1692,7 @@
       }
     },
     "icon": "ProvenExpert.svg",
-    "scripts": "provenexpert\\.\\w+/widget",
+    "scriptSrc": "provenexpert\\.\\w+/widget",
     "website": "https://www.provenexpert.com"
   },
   "Provide Support": {
@@ -1707,7 +1707,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.providesupport\\.com",
+    "scriptSrc": "\\.providesupport\\.com",
     "website": "https://www.providesupport.com"
   },
   "Proximis": {
@@ -1716,7 +1716,7 @@
       6
     ],
     "icon": "Proximis Omnichannel.png",
-    "scripts": "widget-commerce(?:\\.min)?\\.js",
+    "scriptSrc": "widget-commerce(?:\\.min)?\\.js",
     "website": "https://www.proximis.com"
   },
   "Proximis Unified Commerce": {
@@ -1751,7 +1751,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "cdn\\.pubguru\\.com/",
+    "scriptSrc": "cdn\\.pubguru\\.com/",
     "website": "https://pubguru.com"
   },
   "PubMatic": {
@@ -1771,7 +1771,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "https?://[^/]*\\.pubmatic\\.com",
+    "scriptSrc": "https?://[^/]*\\.pubmatic\\.com",
     "website": "http://www.pubmatic.com/",
     "xhr": "\\.pubmatic\\.com"
   },
@@ -1828,7 +1828,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "app\\.purechat\\.com",
+    "scriptSrc": "app\\.purechat\\.com",
     "website": "https://www.purechat.com"
   },
   "PushEngage": {
@@ -1843,7 +1843,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "clientcdn\\.pushengage\\.\\w+/core",
+    "scriptSrc": "clientcdn\\.pushengage\\.\\w+/core",
     "website": "https://www.pushengage.com"
   },
   "PushOwl": {
@@ -1858,7 +1858,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.pushowl\\.com",
+    "scriptSrc": "cdn\\.pushowl\\.com",
     "website": "https://pushowl.com"
   },
   "Pushnami": {
@@ -1867,7 +1867,7 @@
     ],
     "description": "Pushnami is an AI-powered messaging platform that uses intelligent analytics to deliver superior push, social, and email performance.",
     "icon": "Pushnami.svg",
-    "scripts": "api\\.pushnami\\.com",
+    "scriptSrc": "api\\.pushnami\\.com",
     "website": "https://pushnami.com"
   },
   "Pygments": {
@@ -1933,7 +1933,7 @@
     "js": {
       "particlesJS": ""
     },
-    "scripts": "/particles(?:\\.min)?\\.js",
+    "scriptSrc": "/particles(?:\\.min)?\\.js",
     "website": "https://vincentgarreau.com/particles.js/"
   },
   "phpAlbum": {
@@ -2098,7 +2098,7 @@
     "meta": {
       "generator": "plentymarkets"
     },
-    "scripts": [
+    "scriptSrc": [
       "plenty\\.shop\\.(?:min\\.)?js"
     ],
     "website": "https://www.plentymarkets.com/"
@@ -2116,7 +2116,7 @@
       "pp_images": "",
       "pp_titles": ""
     },
-    "scripts": "jquery\\.prettyPhoto\\.js",
+    "scriptSrc": "jquery\\.prettyPhoto\\.js",
     "website": "http://no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/"
   },
   "punBB": {

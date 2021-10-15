@@ -19,6 +19,8 @@ const hostnameIgnoreList =
 
 const xhrDebounce = []
 
+const scriptsPending = []
+
 const Driver = {
   lastPing: Date.now(),
 
@@ -66,6 +68,11 @@ const Driver = {
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
       ['responseHeaders']
     )
+
+    chrome.webRequest.onCompleted.addListener(Driver.onScriptRequestComplete, {
+      urls: ['http://*/*', 'https://*/*'],
+      types: ['script'],
+    })
 
     chrome.webRequest.onCompleted.addListener(Driver.onXhrRequestComplete, {
       urls: ['http://*/*', 'https://*/*'],
@@ -397,6 +404,30 @@ const Driver = {
       } catch (error) {
         Driver.error(error)
       }
+    }
+  },
+
+  /**
+   * Analyse scripts
+   * @param {Object} request
+   */
+  async onScriptRequestComplete(request) {
+    if (await Driver.isDisabledDomain(request.url)) {
+      return
+    }
+
+    if (scriptsPending.includes(request.url)) {
+      scriptsPending.splice(scriptsPending.indexOf(request.url), 1)
+    } else if (request.statusCode === 200) {
+      scriptsPending.push(request.url)
+
+      const response = await fetch(request.url)
+
+      const scripts = await response.text()
+
+      Driver.onDetect(request.documentUrl, await analyze({ scripts })).catch(
+        Driver.error
+      )
     }
   },
 

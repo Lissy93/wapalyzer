@@ -6,7 +6,7 @@
     "html": "<!-- ZK [.\\d\\s]+-->",
     "icon": "ZK.png",
     "implies": "Java",
-    "scripts": "zkau/",
+    "scriptSrc": "zkau/",
     "website": "http://zkoss.org"
   },
   "ZURB Foundation": {
@@ -49,7 +49,7 @@
     "js": {
       "zanox": ""
     },
-    "scripts": "zanox\\.com/scripts/zanox\\.js$",
+    "scriptSrc": "zanox\\.com/scripts/zanox\\.js$",
     "website": "http://zanox.com"
   },
   "Zen Cart": {
@@ -103,7 +103,7 @@
       "low"
     ],
     "saas": true,
-    "scripts": "static\\.zdassets\\.com",
+    "scriptSrc": "static\\.zdassets\\.com",
     "website": "https://zendesk.com"
   },
   "Zendesk Chat": {
@@ -117,7 +117,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "v2\\.zopim\\.com",
+    "scriptSrc": "v2\\.zopim\\.com",
     "website": "http://zopim.com"
   },
   "Zenfolio": {
@@ -138,7 +138,7 @@
     "description": "Zeotap is a customer intelligence platform that helps brands better understand their customers and predict behaviors.",
     "icon": "Zeotap.png",
     "dom": "link[href*='.zeotap.com']",
-    "scripts": "\\.zeotap\\.com",
+    "scriptSrc": "\\.zeotap\\.com",
     "saas": true,
     "pricing": [
       "poa"
@@ -153,7 +153,7 @@
     "js": {
       "Zepto": ""
     },
-    "scripts": "zepto.*\\.js",
+    "scriptSrc": "zepto.*\\.js",
     "website": "http://zeptojs.com"
   },
   "ZestMoney": {
@@ -230,7 +230,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "quadpay\\.com",
       "static\\.zipmoney\\.com\\.au",
       "zip\\.co"
@@ -265,7 +265,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "c(?:reator)?\\.zmags\\.com/",
+    "scriptSrc": "c(?:reator)?\\.zmags\\.com/",
     "website": "https://www.creatorbyzmags.com"
   },
   "Zocdoc": {
@@ -279,7 +279,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "offsiteschedule\\.zocdoc\\.com",
+    "scriptSrc": "offsiteschedule\\.zocdoc\\.com",
     "website": "https://www.zocdoc.com"
   },
   "Zoey": {
@@ -298,7 +298,7 @@
       "zoey.developer": "",
       "zoeyDev": ""
     },
-    "scripts": "cdna4\\.zoeysite\\.com",
+    "scriptSrc": "cdna4\\.zoeysite\\.com",
     "website": "https://www.zoey.com/"
   },
   "Zoho": {
@@ -351,7 +351,7 @@
       "mid"
     ],
     "saas": true,
-    "scripts": "zoko-shopify-prod\\.web\\.app",
+    "scriptSrc": "zoko-shopify-prod\\.web\\.app",
     "website": "https://www.zoko.io/"
   },
   "Zone.js": {
@@ -379,7 +379,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.zonos\\.com/",
+    "scriptSrc": "\\.zonos\\.com/",
     "website": "https://zonos.com"
   },
   "Zoominfo": {
@@ -389,7 +389,7 @@
     "description": "ZoomInfo provides actionable B2B contact and company information for sales and marketing teams.",
     "icon": "Zoominfo.svg",
     "saas": true,
-    "scripts": "ws\\.zoominfo\\.com",
+    "scriptSrc": "ws\\.zoominfo\\.com",
     "website": "https://www.zoominfo.com/"
   },
   "Zoominfo Chat": {
@@ -399,7 +399,7 @@
     "description": "ZoomInfo chat is a live chat solution.",
     "icon": "Zoominfo.svg",
     "saas": true,
-    "scripts": "madstreetden\\.widget\\.insent\\.ai",
+    "scriptSrc": "madstreetden\\.widget\\.insent\\.ai",
     "website": "https://www.zoominfo.com/chat"
   },
   "Zope": {
@@ -431,7 +431,7 @@
     "meta": {
       "generator": "Zozo Ecommerce"
     },
-    "scripts": [
+    "scriptSrc": [
       "catalog/view/theme/[^\"]+/javascript/common\\.js",
       "zozo-main\\.min\\.js"
     ],
@@ -452,7 +452,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "userapp\\.zyrosite\\.com/",
+    "scriptSrc": "userapp\\.zyrosite\\.com/",
     "website": "https://zyro.com"
   }
 }

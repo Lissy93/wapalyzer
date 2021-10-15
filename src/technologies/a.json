@@ -9,7 +9,7 @@
     "js": {
       "AFRAME.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
+    "scriptSrc": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://aframe.io"
   },
   "A8.net": {
@@ -24,7 +24,7 @@
       "a8sales": "",
       "map_A8": ""
     },
-    "scripts": "statics\\.a8\\.net",
+    "scriptSrc": "statics\\.a8\\.net",
     "website": "https://www.a8.net"
   },
   "AB Tasty": {
@@ -42,7 +42,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "try\\.abtasty\\.com",
+    "scriptSrc": "try\\.abtasty\\.com",
     "website": "https://www.abtasty.com"
   },
   "ABOUT YOU Commerce Suite": {
@@ -74,7 +74,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.ebis\\.ne\\.jp/",
+    "scriptSrc": "\\.ebis\\.ne\\.jp/",
     "website": "http://www.ebis.ne.jp"
   },
   "AMP": {
@@ -127,7 +127,7 @@
       "AOS.refreshHard": "\\;confidence:50"
     },
     "oss": true,
-    "scripts": [
+    "scriptSrc": [
       "unpkg\\.com/aos@([\\d\\.]+)/dist/aos\\.js\\;version:\\1",
       "/typo3conf/ext/udem_vendor/Resources/Public/aos-([\\d\\.]+)\\;version:\\1"
     ],
@@ -152,7 +152,7 @@
     "js": {
       "xt_click": ""
     },
-    "scripts": "xiti\\.com/hit\\.xiti",
+    "scriptSrc": "xiti\\.com/hit\\.xiti",
     "website": "http://atinternet.com/en"
   },
   "ATSHOP": {
@@ -167,7 +167,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.atshop\\.io",
+    "scriptSrc": "\\.atshop\\.io",
     "website": "https://atshop.io"
   },
   "AWIN": {
@@ -187,7 +187,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "dwin1\\.com",
+    "scriptSrc": "dwin1\\.com",
     "website": "https://www.awin.com"
   },
   "AWS Certificate Manager": {
@@ -256,7 +256,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "acsbapp?\\.com/.*/acsb\\.js",
+    "scriptSrc": "acsbapp?\\.com/.*/acsb\\.js",
     "website": "https://accessibe.com"
   },
   "Accessibility Toolbar Plugin": {
@@ -282,7 +282,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "/npm/@accessible360/accessible-slick@([\\d\\.]+)/\\;version:\\1",
       "/accessible360/accessible-slick/slick/slick\\.min\\.js\\?v=([\\d\\.]+)\\;version:\\1"
     ],
@@ -299,7 +299,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "accessibly\\.onthemapmarketing\\.com",
+    "scriptSrc": "accessibly\\.onthemapmarketing\\.com",
     "website": "https://www.onthemapmarketing.com/accessibly/"
   },
   "Accesso": {
@@ -312,7 +312,7 @@
     "js": {
       "accesso": ""
     },
-    "scripts": "/embed/accesso\\.js",
+    "scriptSrc": "/embed/accesso\\.js",
     "website": "https://accesso.com/"
   },
   "Ackee": {
@@ -338,7 +338,7 @@
       "Mautic"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "mautic\\.net",
       "maestro\\.mautic\\.com"
     ],
@@ -354,7 +354,7 @@
       "Acquia Cloud Platform"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "https?:\\/\\/.+\\.web\\.ahdev\\.cloud"
     ],
     "url": "https:?\\/\\/.+\\.web\\.ahdev\\.cloud",
@@ -393,7 +393,7 @@
       "Acquia Cloud Platform"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "sites\\/g\\/files"
     ],
     "website": "https://www.acquia.com/products/drupal-cloud/site-factory"
@@ -414,7 +414,7 @@
       "Acquia Cloud Platform"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "content-hub\\.acquia\\.com"
     ],
     "url": "https?:\\/\\/.+\\.content-hub\\.acquia\\.com",
@@ -436,7 +436,7 @@
       "agiloneObject": ""
     },
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "^https?:\\/\\/.+\\.agilone\\.com",
       "^https?:\\/\\/scripts\\.agilone\\.com\\/latest\\/a1.js"
     ],
@@ -460,7 +460,7 @@
       "_tcaq": ""
     },
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "lift\\.acquia\\.com"
     ],
     "website": "https://www.acquia.com/products/marketing-cloud/personalization",
@@ -479,7 +479,7 @@
       "Acquia Cloud Platform"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "sites/\\w*/files/cohesion"
     ],
     "website": "https://www.acquia.com/products/drupal-cloud/site-studio"
@@ -498,7 +498,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "/cdnr/\\d+/acton/bn/tracker/\\d+",
+    "scriptSrc": "/cdnr/\\d+/acton/bn/tracker/\\d+",
     "website": "http://act-on.com"
   },
   "Actito": {
@@ -520,7 +520,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.actito\\.be",
       "\\.advisor\\.smartfocus\\.com"
     ],
@@ -541,7 +541,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "plugins/activecampaign-subscription-forms/site_tracking\\.js",
       "\\.activehosted\\.com/"
     ],
@@ -562,7 +562,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.acuityscheduling\\.com",
+    "scriptSrc": "\\.acuityscheduling\\.com",
     "website": "https://acuityscheduling.com"
   },
   "Ad Lightning": {
@@ -575,7 +575,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.adlightning\\.com",
+    "scriptSrc": "\\.adlightning\\.com",
     "website": "https://www.adlightning.com"
   },
   "AdInfinity": {
@@ -583,7 +583,7 @@
       36
     ],
     "icon": "AdInfinity.png",
-    "scripts": "adinfinity\\.com\\.au",
+    "scriptSrc": "adinfinity\\.com\\.au",
     "website": "http://adinfinity.com.au"
   },
   "AdOcean": {
@@ -597,7 +597,7 @@
       "ado.placement": "",
       "ado.slave": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "adocean\\.pl/files/js/ado\\.js",
       "adocean\\.pl\\;confidence:80"
     ],
@@ -612,7 +612,7 @@
     "js": {
       "adriver": ""
     },
-    "scripts": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)",
+    "scriptSrc": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)",
     "website": "http://adriver.ru"
   },
   "AdRoll": {
@@ -631,7 +631,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "(?:a|s)\\.adroll\\.com",
+    "scriptSrc": "(?:a|s)\\.adroll\\.com",
     "website": "http://adroll.com"
   },
   "AdRoll CMP System": {
@@ -668,7 +668,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.adscale\\.com/",
+    "scriptSrc": "\\.adscale\\.com/",
     "website": "https://www.adscale.com"
   },
   "AdThrive": {
@@ -682,7 +682,7 @@
       "adthriveVideosInjected": ""
     },
     "saas": true,
-    "scripts": "ads\\.adthrive\\.com",
+    "scriptSrc": "ads\\.adthrive\\.com",
     "website": "https://www.adthrive.com"
   },
   "Ada": {
@@ -699,7 +699,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.ada\\.support",
+    "scriptSrc": "\\.ada\\.support",
     "website": "https://www.ada.cx"
   },
   "Adabra": {
@@ -718,7 +718,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "track\\.adabra\\.com",
+    "scriptSrc": "track\\.adabra\\.com",
     "website": "https://www.adabra.com",
     "xhr": "my\\.adabra\\.com"
   },
@@ -727,7 +727,7 @@
       68
     ],
     "icon": "Adally.png",
-    "scripts": "cloudfront\\.net/.*/adally\\.js",
+    "scriptSrc": "cloudfront\\.net/.*/adally\\.js",
     "website": "https://adally.com/"
   },
   "Adalyser": {
@@ -739,7 +739,7 @@
     "js": {
       "adalyserModules": ""
     },
-    "scripts": "c5\\.adalyser\\.com",
+    "scriptSrc": "c5\\.adalyser\\.com",
     "website": "https://adalyser.com/"
   },
   "Adcash": {
@@ -756,7 +756,7 @@
       "ct_siteunder": "",
       "ct_tag": ""
     },
-    "scripts": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
+    "scriptSrc": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
     "url": "^https?://(?:[^\\/]+\\.)?adcash\\.com/script/pop_",
     "website": "http://adcash.com"
   },
@@ -771,7 +771,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "(?:cdn\\.)?shop\\.pe/widget/",
+    "scriptSrc": "(?:cdn\\.)?shop\\.pe/widget/",
     "website": "http://www.addshoppers.com"
   },
   "AddThis": {
@@ -783,7 +783,7 @@
     "js": {
       "addthis": ""
     },
-    "scripts": "addthis\\.com/js/",
+    "scriptSrc": "addthis\\.com/js/",
     "website": "http://www.addthis.com"
   },
   "AddToAny": {
@@ -795,7 +795,7 @@
     "js": {
       "a2apage_init": ""
     },
-    "scripts": "addtoany\\.com/menu/page\\.js",
+    "scriptSrc": "addtoany\\.com/menu/page\\.js",
     "website": "http://www.addtoany.com"
   },
   "Adminer": {
@@ -823,7 +823,7 @@
     "pricing": [
       "payg"
     ],
-    "scripts": [
+    "scriptSrc": [
       "artfut\\.com/static/(?:tracking|crossdevice)\\.min\\.js",
       "cdn\\.admitad\\.com"
     ],
@@ -838,7 +838,7 @@
     },
     "html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
     "icon": "adnegah.png",
-    "scripts": "[^a-z]adnegah.*\\.js$",
+    "scriptSrc": "[^a-z]adnegah.*\\.js$",
     "website": "https://Adnegah.net"
   },
   "Adobe Analytics": {
@@ -894,7 +894,7 @@
     "js": {
       "_cfEmails": ""
     },
-    "scripts": "/cfajax/",
+    "scriptSrc": "/cfajax/",
     "url": "\\.cfm(?:$|\\?)",
     "website": "http://adobe.com/products/coldfusion-family.html"
   },
@@ -926,7 +926,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "/etc/designs/",
       "/etc/clientlibs/",
       "/etc\\.clientlibs/"
@@ -1002,7 +1002,7 @@
     "meta": {
       "generator": "^Adobe RoboHelp(?: ([\\d]+))?\\;version:\\1"
     },
-    "scripts": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
+    "scriptSrc": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
     "website": "http://adobe.com/products/robohelp.html"
   },
   "Adobe Target": {
@@ -1049,7 +1049,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
+    "scriptSrc": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
     "website": "https://www.advally.com"
   },
   "Advert Stream": {
@@ -1060,7 +1060,7 @@
     "js": {
       "advst_is_above_the_fold": ""
     },
-    "scripts": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
+    "scriptSrc": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
     "website": "http://www.advertstream.com"
   },
   "Adverticum": {
@@ -1069,7 +1069,7 @@
     ],
     "html": "<div (?:id=\"[a-zA-Z0-9_]*\" )?class=\"goAdverticum\"",
     "icon": "Adverticum.svg",
-    "scripts": "(?:ad\\.)?adverticum\\.net/g3\\.js",
+    "scriptSrc": "(?:ad\\.)?adverticum\\.net/g3\\.js",
     "website": "http://adverticum.net"
   },
   "Adyen": {
@@ -1093,7 +1093,7 @@
       "ados": "",
       "adosResults": ""
     },
-    "scripts": "adzerk\\.net/ados\\.js",
+    "scriptSrc": "adzerk\\.net/ados\\.js",
     "website": "http://adzerk.com"
   },
   "Aegea": {
@@ -1133,7 +1133,7 @@
     "description": "Affiliate B is an advertising system that allows site operators (HP, blogs, e-mail newsletters, etc.) to place advertiser advertisements on their own sites.",
     "dom": "img[src*='www.afi-b.com']",
     "icon": "Affiliate B.svg",
-    "scripts": "t\\.afi-b\\.com",
+    "scriptSrc": "t\\.afi-b\\.com",
     "website": "https://affiliate-b.com"
   },
   "Affiliate Future": {
@@ -1143,7 +1143,7 @@
     "description": "Affiliate Future is a provider of advertisers with marketing solution through its affiliate network and tools.",
     "dom": "img[src*='banners.affiliatefuture.com']",
     "icon": "Affiliate Future.png",
-    "scripts": "tags\\.affiliatefuture\\.com",
+    "scriptSrc": "tags\\.affiliatefuture\\.com",
     "website": "http://affiliatefuture.com"
   },
   "Affirm": {
@@ -1159,7 +1159,7 @@
       "affirm.Rollbar": ""
     },
     "saas": true,
-    "scripts": "\\.affirm\\.com/js/v([\\d\\.]+)/affirm\\.js\\;version:\\1",
+    "scriptSrc": "\\.affirm\\.com/js/v([\\d\\.]+)/affirm\\.js\\;version:\\1",
     "website": "https://www.affirm.com"
   },
   "Afosto": {
@@ -1180,7 +1180,7 @@
       "<dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy\\. Information and contribution at https://www\\.afterbuy\\.de</dd>"
     ],
     "icon": "after-buy.png",
-    "scripts": "shop-static\\.afterbuy\\.de",
+    "scriptSrc": "shop-static\\.afterbuy\\.de",
     "website": "http://www.afterbuy.de"
   },
   "Afterpay": {
@@ -1199,7 +1199,7 @@
       "checkout.enabledpayments.afterpay": "^true$"
     },
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "portal\\.afterpay\\.com",
       "static\\.afterpay\\.com",
       "present-afterpay\\.js",
@@ -1237,7 +1237,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.aimtell\\.\\w+/",
+    "scriptSrc": "cdn\\.aimtell\\.\\w+/",
     "website": "https://aimtell.com"
   },
   "Aircall": {
@@ -1247,7 +1247,7 @@
     "description": "Aircall is a cloud-based phone system for customer support and sales teams.",
     "icon": "aircall.png",
     "saas": true,
-    "scripts": "^https?://cdn\\.aircall\\.io/",
+    "scriptSrc": "^https?://cdn\\.aircall\\.io/",
     "website": "http://aircall.io"
   },
   "Airee": {
@@ -1281,7 +1281,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
+    "scriptSrc": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
     "website": "https://www.airship.com"
   },
   "Akamai": {
@@ -1333,7 +1333,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "ds-aksb-a\\.akamaihd\\.net/aksb.min.js",
       "aksb\\.min\\.js\\;confidence:50"
     ],
@@ -1430,7 +1430,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.albacross\\.com",
+    "scriptSrc": "\\.albacross\\.com",
     "website": "https://albacross.com"
   },
   "AlertifyJS": {
@@ -1443,7 +1443,7 @@
       "alertify.defaults.autoReset": ""
     },
     "oss": true,
-    "scripts": "/alertify/alertify\\.min\\.js",
+    "scriptSrc": "/alertify/alertify\\.min\\.js",
     "website": "https://alertifyjs.com"
   },
   "Alexa Certified Site Metrics": {
@@ -1461,7 +1461,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.cloudfront\\.net/atrk\\.js",
+    "scriptSrc": "\\.cloudfront\\.net/atrk\\.js",
     "website": "https://support.alexa.com/hc/en-us/sections/200063374"
   },
   "Algolia": {
@@ -1518,7 +1518,7 @@
     "js": {
       "AUI": ""
     },
-    "scripts": "^https?://cdn\\.alloyui\\.com/",
+    "scriptSrc": "^https?://cdn\\.alloyui\\.com/",
     "website": "http://www.alloyui.com"
   },
   "Allyable": {
@@ -1533,7 +1533,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "portal\\.allyable\\.com/",
+    "scriptSrc": "portal\\.allyable\\.com/",
     "website": "https://allyable.com"
   },
   "Alpine.js": {
@@ -1545,7 +1545,7 @@
     "js": {
       "Alpine.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": [
+    "scriptSrc": [
       "/alpine(?:\\.min)?\\.js"
     ],
     "website": "https://github.com/alpinejs/alpine"
@@ -1585,7 +1585,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.amazon-adsystem\\.com",
+    "scriptSrc": "\\.amazon-adsystem\\.com",
     "website": "https://advertising.amazon.com",
     "xhr": "\\.amazon-adsystem\\.com"
   },
@@ -1608,7 +1608,7 @@
     },
     "icon": "Amazon.svg",
     "saas": true,
-    "scripts": "\\.associates-amazon\\.com",
+    "scriptSrc": "\\.associates-amazon\\.com",
     "website": "https://affiliate-program.amazon.com"
   },
   "Amazon Cloudfront": {
@@ -1701,7 +1701,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "/amazonpayments(?:\\.min)?\\.js",
       "\\.payments-amazon\\.com/OffAmazonPayments"
     ],
@@ -1784,7 +1784,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.getambassador\\.com/",
+    "scriptSrc": "cdn\\.getambassador\\.com/",
     "website": "https://www.getambassador.com"
   },
   "Amber": {
@@ -1813,7 +1813,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.americommerce\\.com/",
+    "scriptSrc": "\\.americommerce\\.com/",
     "website": "https://www.americommerce.com"
   },
   "American Express": {
@@ -1834,7 +1834,7 @@
     "meta": {
       "generator": "(?:Ametys|Anyware Technologies)"
     },
-    "scripts": "ametys\\.js",
+    "scriptSrc": "ametys\\.js",
     "website": "http://ametys.org"
   },
   "Amex Express Checkout": {
@@ -1843,7 +1843,7 @@
     ],
     "description": "Amex Express Checkout is a service that simplifies the checkout experience by auto-filling necessary cardholder payment data into merchant checkout fields.",
     "icon": "amex.png",
-    "scripts": "aexp-static\\.com",
+    "scriptSrc": "aexp-static\\.com",
     "website": "https://www.americanexpress.com/us/express-checkout/"
   },
   "Amiro.CMS": {
@@ -1872,7 +1872,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.amplitude\\.com",
+    "scriptSrc": "cdn\\.amplitude\\.com",
     "website": "https://amplitude.com",
     "xhr": "\\.amplitude\\.com"
   },
@@ -1887,7 +1887,7 @@
     "js": {
       "AnalysysAgent": ""
     },
-    "scripts": "AnalysysFangzhou_JS_SDK\\.min\\.js\\?v=([\\d.]+)\\;version:\\1",
+    "scriptSrc": "AnalysysFangzhou_JS_SDK\\.min\\.js\\?v=([\\d.]+)\\;version:\\1",
     "website": "https://ark.analysys.cn"
   },
   "Anetwork": {
@@ -1895,7 +1895,7 @@
       36
     ],
     "icon": "Anetwork.png",
-    "scripts": "static-cdn\\.anetwork\\.ir/",
+    "scriptSrc": "static-cdn\\.anetwork\\.ir/",
     "website": "https://www.anetwork.ir"
   },
   "Angular": {
@@ -1934,7 +1934,7 @@
     "js": {
       "ngMaterial": ""
     },
-    "scripts": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
+    "scriptSrc": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://material.angularjs.org"
   },
   "AngularDart": {
@@ -1970,7 +1970,7 @@
       "angular": "",
       "angular.version.full": "^(.+)$\\;version:\\1"
     },
-    "scripts": [
+    "scriptSrc": [
       "angular[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
       "/([\\d.]+(?:-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
       "\\bangular.{0,32}\\.js"
@@ -2005,7 +2005,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.anyclip\\.com",
+    "scriptSrc": "\\.anyclip\\.com",
     "website": "https://www.anyclip.com"
   },
   "Apache": {
@@ -2029,7 +2029,7 @@
     "html": "<html[^>]* xmlns:jspwiki=",
     "icon": "Apache JSPWiki.png",
     "implies": "Apache Tomcat",
-    "scripts": "jspwiki",
+    "scriptSrc": "jspwiki",
     "url": "wiki\\.jsp",
     "website": "http://jspwiki.org"
   },
@@ -2088,7 +2088,7 @@
     "description": "Apigee is an API gateway management tool to exchange data across cloud services and applications",
     "html": "<script>[^>]{0,50}script src=[^>]/profiles/apigee",
     "icon": "apigee.svg",
-    "scripts": "/profiles/apigee",
+    "scriptSrc": "/profiles/apigee",
     "website": "https://cloud.google.com/apigee/"
   },
   "Apisearch": {
@@ -2105,7 +2105,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "static\\.apisearch\\.cloud",
+    "scriptSrc": "static\\.apisearch\\.cloud",
     "website": "https://apisearch.io"
   },
   "Aplazame": {
@@ -2122,7 +2122,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.aplazame\\.com/aplazame\\.js",
       "aplazame\\.com/static/aplazame\\.js"
     ],
@@ -2167,7 +2167,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "adrum",
+    "scriptSrc": "adrum",
     "website": "https://appdynamics.com"
   },
   "AppNexus": {
@@ -2185,7 +2185,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "adnxs\\.(?:net|com)",
+    "scriptSrc": "adnxs\\.(?:net|com)",
     "website": "http://appnexus.com",
     "xhr": "prebid\\.adnxs\\.com"
   },
@@ -2199,7 +2199,7 @@
       "Appcues": ""
     },
     "saas": true,
-    "scripts": "fast\\.appcues\\.com",
+    "scriptSrc": "fast\\.appcues\\.com",
     "website": "https://www.appcues.com/"
   },
   "Appian": {
@@ -2209,7 +2209,7 @@
     "description": "Appian is an enterprise low-code application platform.",
     "icon": "Appian.png",
     "saas": true,
-    "scripts": "/suite/tempo/ui/sail-client/embeddedBootstrap.nocache.js",
+    "scriptSrc": "/suite/tempo/ui/sail-client/embeddedBootstrap.nocache.js",
     "website": "https://www.appian.com"
   },
   "Apple Pay": {
@@ -2248,7 +2248,7 @@
     "js": {
       "AppleID": ""
     },
-    "scripts": "appleid\\.auth\\.js",
+    "scriptSrc": "appleid\\.auth\\.js",
     "website": "https://developer.apple.com/sign-in-with-apple/"
   },
   "Appointy": {
@@ -2275,7 +2275,7 @@
     "js": {
       "AppsFlyerSdkObject": ""
     },
-    "scripts": "websdk\\.appsflyer\\.com",
+    "scriptSrc": "websdk\\.appsflyer\\.com",
     "website": "https://www.appsflyer.com/"
   },
   "Apptus": {
@@ -2297,7 +2297,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.esales\\.apptus\\.com.+(?:apptus-esales-api-([\\d.]+))\\.min\\.js\\;version:\\1",
+    "scriptSrc": "cdn\\.esales\\.apptus\\.com.+(?:apptus-esales-api-([\\d.]+))\\.min\\.js\\;version:\\1",
     "website": "https://www.apptus.com"
   },
   "AquilaCMS": {
@@ -2332,7 +2332,7 @@
     "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
     "icon": "Arastta.svg",
     "implies": "PHP",
-    "scripts": "arastta\\.js",
+    "scriptSrc": "arastta\\.js",
     "website": "http://arastta.org"
   },
   "Arc": {
@@ -2351,7 +2351,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "arc\\.io/widget\\.js",
+    "scriptSrc": "arc\\.io/widget\\.js",
     "website": "https://arc.io",
     "xhr": "\\.arc\\.io"
   },
@@ -2372,7 +2372,7 @@
     ],
     "description": "ArcGIS API for JavaScript is a tool used to embed maps and tasks in web applications.",
     "icon": "arcgis_icon.png",
-    "scripts": [
+    "scriptSrc": [
       "js\\.arcgis\\.com",
       "basemaps\\.arcgis\\.com"
     ],
@@ -2390,7 +2390,7 @@
     "js": {
       "ArtifactoryUpdates": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "wicket/resource/org\\.artifactory\\."
     ],
     "website": "http://jfrog.com/open-source/#os-arti"
@@ -2447,7 +2447,7 @@
     "js": {
       "asciinema": ""
     },
-    "scripts": "asciinema\\.org/",
+    "scriptSrc": "asciinema\\.org/",
     "website": "https://asciinema.org/"
   },
   "Astra": {
@@ -2471,7 +2471,7 @@
       "freemium"
     ],
     "requires": "WordPress",
-    "scripts": "themes/astra\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+    "scriptSrc": "themes/astra\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://wpastra.com/"
   },
   "Astute Solutions": {
@@ -2485,7 +2485,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.iperceptions\\.com",
+    "scriptSrc": "\\.iperceptions\\.com",
     "website": "https://astutesolutions.com"
   },
   "Athena Search": {
@@ -2499,7 +2499,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "wp-content/plugins/athena-search",
+    "scriptSrc": "wp-content/plugins/athena-search",
     "website": "https://www.athenasearch.io"
   },
   "Atlassian Bitbucket": {
@@ -2576,7 +2576,7 @@
     ],
     "description": "Atlassian Jira Issue Collector is a tool used to download a list of websites using with email addresses, phone numbers and LinkedIn profiles.",
     "icon": "Atlassian Jira.svg",
-    "scripts": [
+    "scriptSrc": [
       "jira-issue-collector-plugin",
       "atlassian\\.jira\\.collector\\.plugin"
     ],
@@ -2612,7 +2612,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.attn\\.tv",
+    "scriptSrc": "cdn\\.attn\\.tv",
     "website": "https://www.attentivemobile.com"
   },
   "Attraqt": {
@@ -2625,7 +2625,7 @@
     "js": {
       "_attraqt": ""
     },
-    "scripts": "cdn\\.attraqt\\.io",
+    "scriptSrc": "cdn\\.attraqt\\.io",
     "website": "https://www.attraqt.com/"
   },
   "AudioEye": {
@@ -2644,7 +2644,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "(?:\\.)?audioeye\\.com/(?:ae\\.js)?",
+    "scriptSrc": "(?:\\.)?audioeye\\.com/(?:ae\\.js)?",
     "website": "https://www.audioeye.com"
   },
   "Audiohook": {
@@ -2666,7 +2666,7 @@
       "<[^>]+au-target-id=[^>]\\d"
     ],
     "icon": "Aurelia.svg",
-    "scripts": [
+    "scriptSrc": [
       "aurelia(?:\\.min)?\\.js"
     ],
     "website": "http://aurelia.io"
@@ -2684,7 +2684,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.auryc\\.com/",
+    "scriptSrc": "cdn\\.auryc\\.com/",
     "website": "https://www.auryc.com"
   },
   "Auth0": {
@@ -2693,7 +2693,7 @@
     ],
     "description": "Auth0 provides authentication and authorisation as a service.",
     "icon": "Auth0.png",
-    "scripts": [
+    "scriptSrc": [
       "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
       "/auth0-js@([\\d.]+)/([a-z]+)/auth0\\.min\\.js\\;version:\\1"
     ],
@@ -2705,7 +2705,7 @@
     ],
     "description": "Auth0's signin solution",
     "icon": "Auth0.png",
-    "scripts": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
+    "scriptSrc": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
   },
   "Autopilot": {
@@ -2737,7 +2737,7 @@
       "__avng8_": "",
       "avng8_": ""
     },
-    "scripts": "^https?://edge\\.avangate\\.net/",
+    "scriptSrc": "^https?://edge\\.avangate\\.net/",
     "website": "http://avangate.com"
   },
   "Avasize": {
@@ -2745,7 +2745,7 @@
       5
     ],
     "icon": "Avasize.png",
-    "scripts": "^https?://cdn\\.avasize\\.com/",
+    "scriptSrc": "^https?://cdn\\.avasize\\.com/",
     "website": "https://www.avasize.com"
   },
   "Aweber": {
@@ -2765,7 +2765,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.aweber\\.com/",
+    "scriptSrc": "\\.aweber\\.com/",
     "website": "https://www.aweber.com"
   },
   "Awesomplete": {
@@ -2777,7 +2777,7 @@
     "js": {
       "awesomplete": ""
     },
-    "scripts": "/awesomplete\\.js(?:$|\\?)",
+    "scriptSrc": "/awesomplete\\.js(?:$|\\?)",
     "website": "https://leaverou.github.io/awesomplete/"
   },
   "Axeptio": {
@@ -2807,7 +2807,7 @@
     "js": {
       "axios.get": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
     ],
     "website": "https://github.com/axios/axios"
@@ -2907,7 +2907,7 @@
     "js": {
       "actionheroClient": ""
     },
-    "scripts": "actionheroClient\\.js",
+    "scriptSrc": "actionheroClient\\.js",
     "website": "http://www.actionherojs.com"
   },
   "amCharts": {
@@ -2920,7 +2920,7 @@
     "js": {
       "AmCharts": ""
     },
-    "scripts": "amcharts.*\\.js",
+    "scriptSrc": "amcharts.*\\.js",
     "website": "http://amcharts.com"
   },
   "amoCRM": {
@@ -2941,7 +2941,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.amocrm\\.(?:ru|com)",
+    "scriptSrc": "\\.amocrm\\.(?:ru|com)",
     "website": "https://www.amocrm.com"
   },
   "animate.css": {

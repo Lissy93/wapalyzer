@@ -24,7 +24,7 @@
       "lkqdSettings": "",
       "lkqd_http_response": ""
     },
-    "scripts": "\\.lkqd\\.net",
+    "scriptSrc": "\\.lkqd\\.net",
     "website": "https://wiki.lkqd.com",
     "xhr": "\\.lkqd\\.net"
   },
@@ -34,7 +34,7 @@
     ],
     "description": "LOU is a Digital Adoption Platform that streamlines user onboarding and training.",
     "icon": "LOU.png",
-    "scripts": "cdn\\.louassist\\.com*",
+    "scriptSrc": "cdn\\.louassist\\.com*",
     "website": "https://www.louassist.com"
   },
   "Lagoon": {
@@ -74,7 +74,7 @@
     "meta": {
       "laterpay:connector:callbacks:on_user_has_access": "deobfuscateText"
     },
-    "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
+    "scriptSrc": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
     "website": "https://www.laterpay.net/"
   },
   "LatitudePay": {
@@ -91,7 +91,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "\\.latitudepayapps\\.com/",
+    "scriptSrc": "\\.latitudepayapps\\.com/",
     "website": "https://www.latitudepay.com"
   },
   "LaunchDarkly": {
@@ -110,7 +110,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
+    "scriptSrc": "(?:\\.|\\-)launchdarkly(?:\\.com/|\\-sdk\\.)",
     "website": "https://launchdarkly.com",
     "xhr": [
       "app\\.launchdarkly\\.com",
@@ -136,7 +136,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
+    "scriptSrc": "js/ignition-current\\.min\\.js\\;confidence:50",
     "website": "https://www.launchrock.com"
   },
   "LayBuy": {
@@ -156,7 +156,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.laybuy\\.com/",
+    "scriptSrc": "\\.laybuy\\.com/",
     "website": "https://www.laybuy.com"
   },
   "Layer0": {
@@ -179,7 +179,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "/__layer0__/cache-manifest\\.js",
+    "scriptSrc": "/__layer0__/cache-manifest\\.js",
     "website": "https://www.layer0.co"
   },
   "Leadinfo": {
@@ -197,7 +197,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.leadinfo\\.net",
+    "scriptSrc": "cdn\\.leadinfo\\.net",
     "website": "https://www.leadinfo.com"
   },
   "Leaflet": {
@@ -211,7 +211,7 @@
       "L.PosAnimation": "",
       "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
     },
-    "scripts": "leaflet.{0,32}\\.js",
+    "scriptSrc": "leaflet.{0,32}\\.js",
     "website": "http://leafletjs.com"
   },
   "Leanplum": {
@@ -228,7 +228,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
+    "scriptSrc": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
     "website": "https://www.leanplum.com"
   },
   "Lede": {
@@ -269,7 +269,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.legalmonster\\.com/",
+    "scriptSrc": "\\.legalmonster\\.com/",
     "website": "https://www.legalmonster.com"
   },
   "Less": {
@@ -342,7 +342,7 @@
     "cpe": "cpe:/a:lightbox_photo_gallery_project:lightbox_photo_gallery",
     "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
     "icon": "Lightbox.png",
-    "scripts": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
+    "scriptSrc": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
     "website": "http://lokeshdhakar.com/projects/lightbox2/"
   },
   "Lightspeed eCom": {
@@ -355,7 +355,7 @@
       "low"
     ],
     "saas": true,
-    "scripts": "http://assets\\.webshopapp\\.com",
+    "scriptSrc": "http://assets\\.webshopapp\\.com",
     "url": "seoshop.webshopapp.com",
     "website": "http://www.lightspeedhq.com/products/ecommerce/"
   },
@@ -369,7 +369,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.limechat\\.ai/",
+    "scriptSrc": "\\.limechat\\.ai/",
     "website": "https://www.limechat.ai"
   },
   "LinkSmart": {
@@ -382,7 +382,7 @@
       "LinkSmart": "",
       "_mb_site_guid": ""
     },
-    "scripts": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
+    "scriptSrc": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
     "website": "http://linksmart.com"
   },
   "Linkedin Insight Tag": {
@@ -394,7 +394,7 @@
     "js": {
       "_linkedin_data_partner_id": ""
     },
-    "scripts": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
+    "scriptSrc": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
     "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
   },
   "Linkedin Sign-in": {
@@ -407,7 +407,7 @@
       "OnLinkedInAuth": "",
       "onLinkedInLoad": ""
     },
-    "scripts": "platform\\.linkedin\\.com/(?:.*)?in\\.js(?:\\?version)?([\\d.]+)?\\;version:\\1",
+    "scriptSrc": "platform\\.linkedin\\.com/(?:.*)?in\\.js(?:\\?version)?([\\d.]+)?\\;version:\\1",
     "website": "https://www.linkedin.com/developers"
   },
   "Liquid Web": {
@@ -428,7 +428,7 @@
     "js": {
       "List": "\\;confidence:50"
     },
-    "scripts": [
+    "scriptSrc": [
       "list\\.js/\\;confidence:50",
       "@([\\d.]+)/(?:/dist)?list\\.(?:min\\.)?js\\;version:\\1"
     ],
@@ -449,7 +449,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "(?:cdn|s1)\\.listrakbi\\.com",
       "services\\.listrak\\.com"
     ],
@@ -531,7 +531,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "cdn\\.livechatinc\\.com/.*tracking\\.js",
+    "scriptSrc": "cdn\\.livechatinc\\.com/.*tracking\\.js",
     "website": "http://livechatinc.com"
   },
   "LiveHelp": {
@@ -564,7 +564,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.liadm\\.com",
+    "scriptSrc": "\\.liadm\\.com",
     "website": "https://www.liveintent.com",
     "xhr": "\\.liadm\\.com"
   },
@@ -587,7 +587,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
+    "scriptSrc": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
     "website": "https://www.liveperson.com/"
   },
   "LiveRamp PCM": {
@@ -600,7 +600,7 @@
     "js": {
       "wpJsonpLiverampGdprCmp": ""
     },
-    "scripts": "gdpr\\.privacymanager\\.io",
+    "scriptSrc": "gdpr\\.privacymanager\\.io",
     "website": "https://liveramp.com/our-platform/preference-consent-management"
   },
   "LiveStreet CMS": {
@@ -649,7 +649,7 @@
       "LF.CommentCount": "",
       "fyre": ""
     },
-    "scripts": "livefyre_init\\.js",
+    "scriptSrc": "livefyre_init\\.js",
     "website": "http://livefyre.com"
   },
   "Liveinternet": {
@@ -676,7 +676,7 @@
     "js": {
       "livewire": ""
     },
-    "scripts": "livewire(?:\\.min)?\\.js",
+    "scriptSrc": "livewire(?:\\.min)?\\.js",
     "website": "https://laravel-livewire.com"
   },
   "LocalFocus": {
@@ -741,7 +741,7 @@
       "_.differenceBy": "",
       "_.templateSettings.imports._.templateSettings.imports._.VERSION": "^(.+)$\\;version:\\1"
     },
-    "scripts": "lodash.*\\.js",
+    "scriptSrc": "lodash.*\\.js",
     "website": "http://www.lodash.com"
   },
   "LogRocket": {
@@ -750,7 +750,7 @@
     ],
     "description": "LogRocket records videos of user sessions with logs and network data.",
     "icon": "LogRocket.svg",
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.logrocket\\.(com|io)",
       "cdn\\.lr-ingest\\.io"
     ],
@@ -771,7 +771,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.loggly\\.com/",
+    "scriptSrc": "\\.loggly\\.com/",
     "website": "https://www.loggly.com"
   },
   "LogiCommerce": {
@@ -820,7 +820,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "\\.loginradius\\.com",
       "\\.lrcontent\\.com"
     ],
@@ -853,7 +853,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "lojamestre\\.\\w+\\.br",
+    "scriptSrc": "lojamestre\\.\\w+\\.br",
     "website": "https://www.lojamestre.com.br/"
   },
   "Loja Virtual": {
@@ -872,7 +872,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "/js/ljvt_v(\\d+)/\\;version:\\1\\;confidence:20",
       "cdn1\\.solojavirtual\\.com"
     ],
@@ -890,7 +890,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "loja2\\.com\\.br",
+    "scriptSrc": "loja2\\.com\\.br",
     "website": "https://www.loja2.com.br"
   },
   "Loop54": {
@@ -930,7 +930,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "lootly\\.io/",
+    "scriptSrc": "lootly\\.io/",
     "website": "https://lootly.io"
   },
   "Loox": {
@@ -947,7 +947,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "loox\\.io/widget",
+    "scriptSrc": "loox\\.io/widget",
     "website": "https://loox.app"
   },
   "Lotus Domino": {
@@ -976,7 +976,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "sdk\\.loyaltylion\\.net/",
+    "scriptSrc": "sdk\\.loyaltylion\\.net/",
     "website": "https://loyaltylion.com"
   },
   "Lua": {
@@ -1042,7 +1042,7 @@
     "js": {
       "__lytics__jstag__.version": "(.+)\\;version:\\1"
     },
-    "scripts": "\\.lytics\\.io/",
+    "scriptSrc": "\\.lytics\\.io/",
     "saas": true,
     "pricing": [
       "high",

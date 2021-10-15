@@ -98,7 +98,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
   "meta": {
     "generator": "(?:Example|Another Example)"
   },
-  "script": "example-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
+  "scriptSrc": "example-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
   "url": "example\\.com",
   "xhr": "example\\.com",
   "oss": true,
@@ -379,7 +379,7 @@ Plus any of:
       <td><code>{ "generator": "^WordPress$" }</code></td>
     </tr>
     <tr>
-      <td><code>scripts</code></td>
+      <td><code>scriptSrc</code></td>
       <td>String | Array</td>
       <td>
         URLs of JavaScript files included on the page.
@@ -432,7 +432,7 @@ Tags (a non-standard syntax) can be appended to patterns (and implies and exclud
         syntax.
       </td>
       <td>
-        <code>"scripts": "jquery-([0-9.]+)\.js\\;version:\\1"</code>
+        <code>"scriptSrc": "jquery-([0-9.]+)\.js\\;version:\\1"</code>
       </td>
     </tr>
   </tbody>

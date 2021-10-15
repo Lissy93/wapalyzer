@@ -132,5 +132,5 @@ Listen to events with `site.on(eventName, callback)`. Use the `page` parameter t
 | `error`     | `message`, `source`            | Error messages                           |
 | `request`   | `page`, `request`              | Emitted at the start of a request        |
 | `response`  | `page`, `request`              | Emitted upon receiving a server response |
-| `goto`      | `page`, `url`, `html`, `cookies`, `scripts`, `meta`, `js`, `language` `links` | Emitted after a page has been analysed |
+| `goto`      | `page`, `url`, `html`, `cookies`, `scriptsSrc`, `scripts`, `meta`, `js`, `language` `links` | Emitted after a page has been analysed |
 | `analyze`   | `urls`, `technologies`, `meta` | Emitted when the site has been analysed |

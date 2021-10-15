@@ -25,7 +25,7 @@
     ],
     "description": "TNS Payments, is designed to deliver payment transaction information to banks, merchants, processors and other payment institutions.",
     "icon": "tnsi.png",
-    "scripts": "secure\\.ap\\.tnspayments\\.com",
+    "scriptSrc": "secure\\.ap\\.tnspayments\\.com",
     "website": "https://tnsi.com/products/payments/"
   },
   "TRISOshop": {
@@ -57,7 +57,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.priv\\.center/",
       "cdn\\.truendo\\.com/"
     ],
@@ -74,7 +74,7 @@
     "html": "<img [^>]*(?:title|alt)=\"This site is powered by the TWiki collaboration platform",
     "icon": "TWiki.png",
     "implies": "Perl",
-    "scripts": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
+    "scriptSrc": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
     "website": "http://twiki.org"
   },
   "TYPO3 CMS": {
@@ -93,7 +93,7 @@
       "generator": "TYPO3\\s+(?:CMS\\s+)?(?:[\\d.]+)?(?:\\s+CMS)?"
     },
     "oss": true,
-    "scripts": "^/?typo3(?:conf|temp)/",
+    "scriptSrc": "^/?typo3(?:conf|temp)/",
     "url": "/typo3/",
     "website": "https://typo3.org/"
   },
@@ -109,7 +109,7 @@
       "TabbyPromo": ""
     },
     "saas": true,
-    "scripts": "checkout\\.tabby\\.ai",
+    "scriptSrc": "checkout\\.tabby\\.ai",
     "website": "https://tabby.ai/"
   },
   "TableBooker": {
@@ -130,7 +130,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "reservations\\.tablebooker\\.\\w+/",
+    "scriptSrc": "reservations\\.tablebooker\\.\\w+/",
     "website": "https://www.tablebooker.com"
   },
   "TableCheck": {
@@ -146,7 +146,7 @@
       }
     },
     "icon": "TableCheck.svg",
-    "scripts": "tc_widget\\.js",
+    "scriptSrc": "tc_widget\\.js",
     "website": "https://www.tablecheck.com"
   },
   "Taboola": {
@@ -171,7 +171,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.taboola\\.com",
+    "scriptSrc": "\\.taboola\\.com",
     "website": "https://www.taboola.com",
     "xhr": "\\.taboola\\.com"
   },
@@ -187,7 +187,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.tagboard\\.com/",
+    "scriptSrc": "\\.tagboard\\.com/",
     "website": "https://tagboard.com"
   },
   "Taggbox": {
@@ -205,7 +205,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "\\.taggbox\\.com",
       "taggbox\\.com/app/js/embed\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
     ],
@@ -232,7 +232,7 @@
     ],
     "description": "Tail is a customer data management platform.",
     "icon": "Tail.svg",
-    "scripts": "\\.tailtarget\\.com/",
+    "scriptSrc": "\\.tailtarget\\.com/",
     "saas": true,
     "pricing": [
       "poa"
@@ -307,7 +307,7 @@
       "TamaraProductWidget": ""
     },
     "saas": true,
-    "scripts": "cdn\\.tamara\\.co",
+    "scriptSrc": "cdn\\.tamara\\.co",
     "website": "https://tamara.co/"
   },
   "Target2Sell": {
@@ -316,7 +316,7 @@
     ],
     "description": "Target2Sell is a personalisation solution for ecommerce sites.",
     "icon": "Target2Sell.png",
-    "scripts": "static\\.target2sell\\.com",
+    "scriptSrc": "static\\.target2sell\\.com",
     "website": "https://www.target2sell.com/"
   },
   "Tatari": {
@@ -344,7 +344,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "//embed\\.tawk\\.to",
+    "scriptSrc": "//embed\\.tawk\\.to",
     "website": "http://tawk.to"
   },
   "Teachable": {
@@ -369,7 +369,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.teachablecdn\\.com",
+    "scriptSrc": "\\.teachablecdn\\.com",
     "website": "https://teachable.com"
   },
   "Teads": {
@@ -378,7 +378,7 @@
     ],
     "description": "Teads is a technology provider that sells ads on publisher websites.",
     "icon": "Teads.svg",
-    "scripts": "teads\\.tv",
+    "scriptSrc": "teads\\.tv",
     "website": "https://www.teads.com",
     "xhr": "\\.teads\\.tv"
   },
@@ -407,7 +407,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "^(?:https?:)?//tags\\.tiqcdn\\.com/",
       "/tealium/utag\\.js$"
     ],
@@ -424,7 +424,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.tealiumiq\\.com",
+    "scriptSrc": "\\.tealiumiq\\.com",
     "website": "https://tealium.com/products/audiencestream"
   },
   "Tealium Consent Management": {
@@ -476,7 +476,7 @@
       10
     ],
     "icon": "tajs.png",
-    "scripts": "tajs\\.qq\\.com/stats",
+    "scriptSrc": "tajs\\.qq\\.com/stats",
     "website": "https://ta.qq.com/"
   },
   "Tencent Waterproof Wall": {
@@ -485,7 +485,7 @@
       16
     ],
     "icon": "TencentWaterproofWall.png",
-    "scripts": [
+    "scriptSrc": [
       "/TCaptcha\\.js",
       "captcha\\.qq\\.com/.*"
     ],
@@ -508,7 +508,7 @@
     ],
     "description": "Termly provides free website policy resources and web-based policy creation software.",
     "icon": "termly.svg",
-    "scripts": "app\\.termly\\.io/embed\\.min\\.js",
+    "scriptSrc": "app\\.termly\\.io/embed\\.min\\.js",
     "website": "https://termly.io/"
   },
   "TerriaJS": {
@@ -548,7 +548,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.testfreaks\\.com/",
+    "scriptSrc": "\\.testfreaks\\.com/",
     "website": "https://www.testfreaks.com"
   },
   "Texthelp": {
@@ -557,7 +557,7 @@
     ],
     "description": "TextHelp is a literacy, accessibility and dyslexia software developer for people with reading and writing difficulties.",
     "icon": "Texthelp.svg",
-    "scripts": "browsealoud\\.com/.*/browsealoud\\.js",
+    "scriptSrc": "browsealoud\\.com/.*/browsealoud\\.js",
     "website": "https://www.texthelp.com/en-gb/products/browsealoud/"
   },
   "Textpattern CMS": {
@@ -579,7 +579,7 @@
       6
     ],
     "icon": "TheHutGroup.png",
-    "scripts": [
+    "scriptSrc": [
       "THEHUT-.*\\.js"
     ],
     "website": "https://www.thg.com/"
@@ -634,7 +634,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "thimatic-apps\\.com/product_review/.*?v=([\\d.]+)\\;version:\\1",
+    "scriptSrc": "thimatic-apps\\.com/product_review/.*?v=([\\d.]+)\\;version:\\1",
     "website": "https://thimatic-apps.com/"
   },
   "ThinkPHP": {
@@ -666,7 +666,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn(?:-themes)?\\.thinkific\\.com",
+    "scriptSrc": "cdn(?:-themes)?\\.thinkific\\.com",
     "website": "https://www.thinkific.com"
   },
   "ThreatMetrix": {
@@ -680,7 +680,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.online-metrix\\.net",
+    "scriptSrc": "\\.online-metrix\\.net",
     "website": "https://risk.lexisnexis.com/products/threatmetrix"
   },
   "ThriveCart": {
@@ -697,7 +697,7 @@
       "onetime"
     ],
     "saas": true,
-    "scripts": "thrivecart\\.js",
+    "scriptSrc": "thrivecart\\.js",
     "website": "https://thrivecart.com"
   },
   "Ticimax": {
@@ -705,7 +705,7 @@
       6
     ],
     "icon": "Ticimax.png",
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.ticimax\\.com/"
     ],
     "website": "https://www.ticimax.com"
@@ -755,7 +755,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "code\\.tidio\\.co",
+    "scriptSrc": "code\\.tidio\\.co",
     "website": "https://www.tidio.com"
   },
   "Tiendanube": {
@@ -805,7 +805,7 @@
     "meta": {
       "generator": "^Tiki"
     },
-    "scripts": "(?:/|_)tiki",
+    "scriptSrc": "(?:/|_)tiki",
     "website": "http://tiki.org"
   },
   "Tilda": {
@@ -820,7 +820,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "tilda(?:cdn|\\.ws|-blocks)",
+    "scriptSrc": "tilda(?:cdn|\\.ws|-blocks)",
     "website": "https://tilda.cc"
   },
   "Timeplot": {
@@ -831,7 +831,7 @@
     "js": {
       "Timeplot": ""
     },
-    "scripts": "timeplot.*\\.js",
+    "scriptSrc": "timeplot.*\\.js",
     "website": "http://www.simile-widgets.org/timeplot/"
   },
   "Timify": {
@@ -845,7 +845,7 @@
       "freemium",
       "recurring"
     ],
-    "scripts": "https://widget\\.timify\\.com/js/widget\\.js",
+    "scriptSrc": "https://widget\\.timify\\.com/js/widget\\.js",
     "website": "https://www.timify.com/"
   },
   "TinyMCE": {
@@ -858,7 +858,7 @@
     "js": {
       "tinyMCE.majorVersion": "([\\d.]+)\\;version:\\1"
     },
-    "scripts": "/tiny_?mce(?:\\.min)?\\.js",
+    "scriptSrc": "/tiny_?mce(?:\\.min)?\\.js",
     "website": "http://tinymce.com"
   },
   "Titan": {
@@ -882,7 +882,7 @@
       "tomtom.Map": ""
     },
     "saas": true,
-    "scripts": "api\\.tomtom\\.com",
+    "scriptSrc": "api\\.tomtom\\.com",
     "website": "https://www.tomtom.com",
     "xhr": "api\\.tomtom\\.com"
   },
@@ -919,7 +919,7 @@
       "totango": "",
       "totangoLoader": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "\\.totango\\.com/totango([\\d\\.]+)\\.js\\;version:\\1",
       "\\.amazonaws\\.com/totango-cdn/totango\\d\\.js"
     ],
@@ -989,7 +989,7 @@
       "TrackJs": "",
       "trackJs": ""
     },
-    "scripts": "cdn\\.trackjs\\.com",
+    "scriptSrc": "cdn\\.trackjs\\.com",
     "website": "http://trackjs.com"
   },
   "Tradedoubler": {
@@ -1006,7 +1006,7 @@
       }
     },
     "icon": "Tradedoubler.svg",
-    "scripts": "swrap\\.tradedoubler\\.com",
+    "scriptSrc": "swrap\\.tradedoubler\\.com",
     "website": "https://www.tradedoubler.com/"
   },
   "Transifex": {
@@ -1028,7 +1028,7 @@
       "PHP",
       "jQuery"
     ],
-    "scripts": "lucide\\.init(?:\\.min)?\\.js",
+    "scriptSrc": "lucide\\.init(?:\\.min)?\\.js",
     "website": "http://www.translucide.net"
   },
   "Tray": {
@@ -1042,7 +1042,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "tcdn\\.com\\.br",
+    "scriptSrc": "tcdn\\.com\\.br",
     "website": "https://www.tray.com.br"
   },
   "Trbo": {
@@ -1065,7 +1065,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.trbo\\.com",
+    "scriptSrc": "\\.trbo\\.com",
     "website": "https://www.trbo.com"
   },
   "Treasure Data": {
@@ -1081,7 +1081,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.treasuredata\\.com/",
+    "scriptSrc": "cdn\\.treasuredata\\.com/",
     "website": "https://www.treasuredata.com"
   },
   "Trengo": {
@@ -1098,7 +1098,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.widget\\.trengo\\.eu/",
+    "scriptSrc": "\\.widget\\.trengo\\.eu/",
     "website": "https://trengo.com"
   },
   "Tripadviser.Widget": {
@@ -1107,7 +1107,7 @@
     ],
     "description": "Tripadvisor embed reviews widget.",
     "icon": "Tripadviser.Widget.svg",
-    "scripts": "tripadvisor\\.[\\w]+/WidgetEmbed",
+    "scriptSrc": "tripadvisor\\.[\\w]+/WidgetEmbed",
     "website": "https://www.tripadvisor.com/Widgets"
   },
   "TripleLift": {
@@ -1142,7 +1142,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "mpsnare\\.iesnare\\.com",
       "ci-mpsnare\\.iovation\\.com"
     ],
@@ -1159,7 +1159,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.truefitcorp\\.com/(?:.+/([\\d\\.]+))?\\;version:\\1",
+    "scriptSrc": "cdn\\.truefitcorp\\.com/(?:.+/([\\d\\.]+))?\\;version:\\1",
     "website": "https://www.truefit.com"
   },
   "TrueCommerce": {
@@ -1168,7 +1168,7 @@
     ],
     "description": "TrueCommerce is an eCommerce platform.",
     "icon": "Truecommerce.svg",
-    "scripts": "cdn\\.nexternal\\.com/",
+    "scriptSrc": "cdn\\.nexternal\\.com/",
     "website": "https://www.truecommerce.com"
   },
   "TrustArc": {
@@ -1177,7 +1177,7 @@
     ],
     "description": "TrustArc provides software and services to help corporations update their privacy management processes so they comply with government laws and best practices.",
     "icon": "TrustArc.svg",
-    "scripts": "consent\\.trustarc\\.com",
+    "scriptSrc": "consent\\.trustarc\\.com",
     "website": "http://trustarc.com"
   },
   "TrustYou": {
@@ -1207,7 +1207,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "widgets\\.trustedshops\\.com/",
+    "scriptSrc": "widgets\\.trustedshops\\.com/",
     "website": "https://www.trustedshops.co.uk"
   },
   "Trustpilot": {
@@ -1225,7 +1225,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.trustpilot\\.com",
+    "scriptSrc": "\\.trustpilot\\.com",
     "website": "https://business.trustpilot.com"
   },
   "Trustspot": {
@@ -1238,7 +1238,7 @@
       "trustspot_key": ""
     },
     "saas": true,
-    "scripts": "trustspot\\.io",
+    "scriptSrc": "trustspot\\.io",
     "website": "https://trustspot.io/"
   },
   "Tumblr": {
@@ -1263,7 +1263,7 @@
       "Turbolinks": ""
     },
     "oss": true,
-    "scripts": "turolinks\\.js",
+    "scriptSrc": "turolinks\\.js",
     "website": "https://github.com/turbolinks/turbolinks"
   },
   "TurfJS": {
@@ -1277,7 +1277,7 @@
       "turf.point": "",
       "turf.random": ""
     },
-    "scripts": "(turf@[\\d.]+)?/?turf\\.min\\.js",
+    "scriptSrc": "(turf@[\\d.]+)?/?turf\\.min\\.js",
     "website": "https://turfjs.org/"
   },
   "TwicPics": {
@@ -1313,7 +1313,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": ".+\\.twic\\.pics",
+    "scriptSrc": ".+\\.twic\\.pics",
     "website": "https://www.twicpics.com"
   },
   "Twik": {
@@ -1331,7 +1331,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.twik\\.io",
+    "scriptSrc": "cdn\\.twik\\.io",
     "website": "https://www.twik.io/"
   },
   "Twilight CMS": {
@@ -1371,7 +1371,7 @@
     ],
     "description": "Twitter is a 'microblogging' system that allows you to send and receive short posts called tweets.",
     "icon": "Twitter.svg",
-    "scripts": "//platform\\.twitter\\.com/widgets\\.js",
+    "scriptSrc": "//platform\\.twitter\\.com/widgets\\.js",
     "website": "http://twitter.com"
   },
   "Twitter Ads": {
@@ -1387,7 +1387,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "static\\.ads-twitter\\.com/uwt\\.js",
+    "scriptSrc": "static\\.ads-twitter\\.com/uwt\\.js",
     "website": "https://ads.twitter.com"
   },
   "Twitter Analytics": {
@@ -1400,7 +1400,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "analytics\\.twitter\\.com",
+    "scriptSrc": "analytics\\.twitter\\.com",
     "website": "https://analytics.twitter.com"
   },
   "Twitter Emoji (Twemoji)": {
@@ -1411,7 +1411,7 @@
     "js": {
       "twemoji": ""
     },
-    "scripts": "twemoji(?:\\.min)?\\.js",
+    "scriptSrc": "twemoji(?:\\.min)?\\.js",
     "website": "https://twitter.github.io/twemoji/"
   },
   "Twitter Flight": {
@@ -1434,7 +1434,7 @@
     "js": {
       "typeahead": ""
     },
-    "scripts": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
+    "scriptSrc": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
     "website": "https://twitter.github.io/typeahead.js"
   },
   "TypeDoc": {
@@ -1499,7 +1499,7 @@
       "freemium",
       "recurring"
     ],
-    "scripts": "use\\.typekit\\.com",
+    "scriptSrc": "use\\.typekit\\.com",
     "website": "http://typekit.com"
   },
   "theTradeDesk": {
@@ -1523,7 +1523,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "\\.adsrvr\\.org/",
+    "scriptSrc": "\\.adsrvr\\.org/",
     "website": "https://www.thetradedesk.com",
     "xhr": "adsvr\\.org"
   },
@@ -1536,7 +1536,7 @@
     "js": {
       "THREE.REVISION": "^(.+)$\\;version:\\1"
     },
-    "scripts": "three(?:\\.min)?\\.js",
+    "scriptSrc": "three(?:\\.min)?\\.js",
     "website": "https://threejs.org"
   },
   "thttpd": {

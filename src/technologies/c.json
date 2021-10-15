@@ -4,7 +4,7 @@
       6
     ],
     "icon": "ccvshop.png",
-    "scripts": "/website/JavaScript/Vertoshop\\.js",
+    "scriptSrc": "/website/JavaScript/Vertoshop\\.js",
     "website": "https://ccvshop.be"
   },
   "CDN77": {
@@ -32,7 +32,7 @@
     ],
     "description": "Civic provides cookie control for user consent and the use of cookies.",
     "icon": "civic.png",
-    "scripts": "cc\\.cdn\\.civiccomputing\\.com",
+    "scriptSrc": "cc\\.cdn\\.civiccomputing\\.com",
     "website": "https://www.civicuk.com/cookie-control"
   },
   "CKEditor": {
@@ -83,7 +83,7 @@
     "js": {
       "cnzz_protocol": ""
     },
-    "scripts": "//[^./]+\\.cnzz\\.com/(?:z_stat.php|core)\\?",
+    "scriptSrc": "//[^./]+\\.cnzz\\.com/(?:z_stat.php|core)\\?",
     "website": "https://web.umeng.com/"
   },
   "CPG Dragonfly": {
@@ -134,7 +134,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.caast\\.tv/",
+    "scriptSrc": "cdn\\.caast\\.tv/",
     "website": "https://en.caast.tv"
   },
   "CacheFly": {
@@ -207,7 +207,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
+    "scriptSrc": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
     "website": "https://calendly.com/"
   },
   "Callbell": {
@@ -242,7 +242,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.createsend1\\.com/",
+    "scriptSrc": "\\.createsend1\\.com/",
     "website": "https://www.campaignmonitor.com"
   },
   "Canto": {
@@ -267,7 +267,7 @@
     "js": {
       "Captchme": ""
     },
-    "scripts": "^https?://api\\.captchme\\.net/",
+    "scriptSrc": "^https?://api\\.captchme\\.net/",
     "website": "http://captchme.com"
   },
   "Carbon Ads": {
@@ -279,7 +279,7 @@
     "js": {
       "_carbonads": ""
     },
-    "scripts": "carbonads\\.com",
+    "scriptSrc": "carbonads\\.com",
     "website": "http://carbonads.net"
   },
   "Cargo": {
@@ -292,7 +292,7 @@
     "meta": {
       "cargo_title": ""
     },
-    "scripts": "/cargo\\.",
+    "scriptSrc": "/cargo\\.",
     "website": "http://cargocollective.com"
   },
   "Cart Functionality": {
@@ -305,7 +305,7 @@
     "js": {
       "google_tag_params.ecomm_pagetype": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "googlecommerce\\.com/trustedstores/api/js"
     ],
     "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
@@ -325,7 +325,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "api\\.cartstack\\.\\w+",
+    "scriptSrc": "api\\.cartstack\\.\\w+",
     "website": "https://www.cartstack.com"
   },
   "Carts Guru": {
@@ -340,7 +340,7 @@
       "mid"
     ],
     "saas": true,
-    "scripts": "cdn\\.cartsguru\\.io/",
+    "scriptSrc": "cdn\\.cartsguru\\.io/",
     "website": "https://www.carts.guru"
   },
   "Catberry.js": {
@@ -427,7 +427,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.channeladvisor\\.com/",
+    "scriptSrc": "\\.channeladvisor\\.com/",
     "website": "https://www.channeladvisor.com"
   },
   "Chaport": {
@@ -446,7 +446,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.chaport\\.com",
+    "scriptSrc": "\\.chaport\\.com",
     "website": "https://www.chaport.com"
   },
   "ChargeAfter": {
@@ -460,7 +460,7 @@
       "ChargeAfter": ""
     },
     "saas": true,
-    "scripts": "cdn\\.chargeafter\\.com",
+    "scriptSrc": "cdn\\.chargeafter\\.com",
     "website": "https://chargeafter.com/"
   },
   "Chargebee": {
@@ -478,7 +478,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "js\\.chargebee\\.com/v([\\d.]+)\\;version:\\1",
+    "scriptSrc": "js\\.chargebee\\.com/v([\\d.]+)\\;version:\\1",
     "website": "https://www.chargebee.com"
   },
   "Chart.js": {
@@ -492,7 +492,7 @@
       "Chart.defaults.doughnut": "",
       "chart.ctx.bezierCurveTo": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "/Chart(?:\\.bundle)?(?:\\.min)?\\.js\\;confidence:75",
       "chartjs\\.org/dist/([\\d.]+(?:-[^/]+)?|master|latest)/Chart.*\\.js\\;version:\\1",
       "cdnjs\\.cloudflare\\.com/ajax/libs/Chart\\.js/([\\d.]+(?:-[^/]+)?)/Chart.*\\.js\\;version:\\1",
@@ -509,7 +509,7 @@
       "_sf_async_config": "",
       "_sf_endpt": ""
     },
-    "scripts": "chartbeat\\.js",
+    "scriptSrc": "chartbeat\\.js",
     "website": "http://chartbeat.com"
   },
   "Chatango": {
@@ -523,7 +523,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "st\\.chatango\\.com",
+    "scriptSrc": "st\\.chatango\\.com",
     "website": "https://chatango.com"
   },
   "Chatra": {
@@ -542,7 +542,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "call\\.chatra\\.io/chatra\\.js",
+    "scriptSrc": "call\\.chatra\\.io/chatra\\.js",
     "website": "https://chatra.com",
     "xhr": "chat\\.chatra\\.io/"
   },
@@ -560,7 +560,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.checkfront\\.com/",
+    "scriptSrc": "\\.checkfront\\.com/",
     "website": "https://www.checkfront.com"
   },
   "Checkout.com": {
@@ -573,7 +573,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "cdn\\.checkout\\.com/js/.+js(?:\\?ver=)?([\\d\\.]+)?\\;version:\\1",
+    "scriptSrc": "cdn\\.checkout\\.com/js/.+js(?:\\?ver=)?([\\d\\.]+)?\\;version:\\1",
     "website": "https://www.checkout.com"
   },
   "Cherokee": {
@@ -609,7 +609,7 @@
     "meta": {
       "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
     },
-    "scripts": "/chevereto\\.js",
+    "scriptSrc": "/chevereto\\.js",
     "website": "https://chevereto.com/"
   },
   "Chili Piper": {
@@ -626,7 +626,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "js\\.chilipiper\\.com/marketing\\.js",
+    "scriptSrc": "js\\.chilipiper\\.com/marketing\\.js",
     "website": "https://www.chilipiper.com/"
   },
   "Chinese Menu Online": {
@@ -652,7 +652,7 @@
       "ch_client": "",
       "ch_color_site_link": ""
     },
-    "scripts": "scripts\\.chitika\\.net/",
+    "scriptSrc": "scripts\\.chitika\\.net/",
     "website": "http://chitika.com"
   },
   "Choices": {
@@ -661,7 +661,7 @@
     ],
     "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
     "icon": "Choices.png",
-    "scripts": [
+    "scriptSrc": [
       "choices\\.js/|@([\\d.]+)(?:/assets)?(?:/scripts)?(?:/styles)?(?:/dist)?/choices(?:\\.min)?\\.js|css\\;version:\\1"
     ],
     "website": "https://joshuajohnson.co.uk/Choices/"
@@ -707,7 +707,7 @@
     "js": {
       "ClarityIcons": ""
     },
-    "scripts": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
+    "scriptSrc": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
     "website": "https://clarity.design/"
   },
   "Classeh": {
@@ -751,7 +751,7 @@
     "js": {
       "csdm": "\\;confidence:50"
     },
-    "scripts": [
+    "scriptSrc": [
       "device\\.clearsale\\.com\\.br"
     ],
     "website": "https://www.clear.sale/"
@@ -762,7 +762,7 @@
     ],
     "description": "Clearbit Reveal identifies anonymous visitors to websites.",
     "icon": "Clearbit.png",
-    "scripts": [
+    "scriptSrc": [
       "reveal\\.clearbit\\.com/v[(0-9)]/"
     ],
     "website": "https://clearbit.com/reveal"
@@ -782,7 +782,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "\\.clerk\\.io/"
     ],
     "website": "https://clerk.io"
@@ -813,7 +813,7 @@
     "js": {
       "cbCartProductSelection": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "static-cf\\.cleverbridge\\.\\w+/js/Shop\\.js"
     ],
     "website": "https://www.cleverbridge.com"
@@ -832,7 +832,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "analytics\\.clickdimensions\\.com/",
+    "scriptSrc": "analytics\\.clickdimensions\\.com/",
     "website": "https://clickdimensions.com"
   },
   "ClickFunnels": {
@@ -853,7 +853,7 @@
     "js": {
       "clickHeatServer": ""
     },
-    "scripts": "clickheat.*\\.js",
+    "scriptSrc": "clickheat.*\\.js",
     "website": "http://www.labsmedia.com/clickheat/index.html"
   },
   "ClickTale": {
@@ -873,7 +873,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.clicktale\\.net",
+    "scriptSrc": "\\.clicktale\\.net",
     "website": "http://www.clicktale.com"
   },
   "Clickbank": {
@@ -885,7 +885,7 @@
     "js": {
       "cbtb": ""
     },
-    "scripts": "r\\.wdfl\\.co",
+    "scriptSrc": "r\\.wdfl\\.co",
     "website": "https://www.clickbank.com/"
   },
   "Clicky": {
@@ -896,7 +896,7 @@
     "js": {
       "clicky": ""
     },
-    "scripts": "static\\.getclicky\\.com",
+    "scriptSrc": "static\\.getclicky\\.com",
     "website": "http://getclicky.com"
   },
   "ClientJS": {
@@ -910,7 +910,7 @@
       "ClientJS": ""
     },
     "oss": true,
-    "scripts": [
+    "scriptSrc": [
       "/clientjs@(\\d.*?)/\\;version:\\1",
       "/ClientJS/(?:(\\d.*?)/)?\\;version:\\1"
     ],
@@ -922,7 +922,7 @@
     ],
     "description": "Clinch delivers hyper-personalized creative experiences and consumer intelligence across all channels.",
     "icon": "Clinch.png",
-    "scripts": "cdn\\.clinch\\.co",
+    "scriptSrc": "cdn\\.clinch\\.co",
     "website": "https://clinch.co/"
   },
   "Clipboard.js": {
@@ -930,7 +930,7 @@
       19
     ],
     "icon": "Clipboard.js.svg",
-    "scripts": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+    "scriptSrc": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://clipboardjs.com/"
   },
   "CloudCart": {
@@ -941,7 +941,7 @@
     "meta": {
       "author": "^CloudCart LLC$"
     },
-    "scripts": "/cloudcart-(?:assets|storage)/",
+    "scriptSrc": "/cloudcart-(?:assets|storage)/",
     "website": "http://cloudcart.com"
   },
   "CloudSuite": {
@@ -1007,7 +1007,7 @@
     "js": {
       "__cfBeaconCustomTag": ""
     },
-    "scripts": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
+    "scriptSrc": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
     "website": "http://www.cloudflare.com"
   },
   "Cloudinary": {
@@ -1040,7 +1040,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "apps\\.cloverly\\.com/",
+    "scriptSrc": "apps\\.cloverly\\.com/",
     "website": "https://www.cloverly.com"
   },
   "Cluep": {
@@ -1049,7 +1049,7 @@
     ],
     "description": "Cluep's artificially intelligent mobile ad platform targets people based on what they are sharing, how they are feeling and where they go in the physical world.",
     "icon": "Cluep.png",
-    "scripts": "cas\\.cluep\\.com",
+    "scriptSrc": "cas\\.cluep\\.com",
     "website": "https://cluep.com/"
   },
   "ClustrMaps Widget": {
@@ -1059,7 +1059,7 @@
     "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
     "dom": "img[src*='clustrmaps.com']",
     "icon": "ClustrMaps.svg",
-    "scripts": "clustrmaps\\.com",
+    "scriptSrc": "clustrmaps\\.com",
     "website": "https://clustrmaps.com/"
   },
   "CoConstruct": {
@@ -1088,7 +1088,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.corover\\.mobi/",
+    "scriptSrc": "\\.corover\\.mobi/",
     "website": "https://corover.ai"
   },
   "Coaster CMS": {
@@ -1170,7 +1170,7 @@
     "js": {
       "CoinHive": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
       "coinhive\\.com/lib"
     ],
@@ -1184,7 +1184,7 @@
     ],
     "html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
     "icon": "CoinHive.svg",
-    "scripts": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
+    "scriptSrc": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
     "website": "https://coinhive.com"
   },
   "Coinbase Commerce": {
@@ -1202,7 +1202,7 @@
     ],
     "description": "CoinHave is a cryptocurrency mining service.",
     "icon": "coinhave.png",
-    "scripts": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
+    "scriptSrc": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
     "website": "https://coin-have.com/"
   },
   "Coinimp": {
@@ -1214,7 +1214,7 @@
     "js": {
       "Client.Anonymous": "\\;confidence:50"
     },
-    "scripts": "https?://www\\.hashing\\.win/scripts/min\\.js",
+    "scriptSrc": "https?://www\\.hashing\\.win/scripts/min\\.js",
     "website": "https://www.coinimp.com"
   },
   "ColorMag": {
@@ -1234,7 +1234,7 @@
     },
     "icon": "themegrill.png",
     "requires": "WordPress",
-    "scripts": "themes/colormag.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+    "scriptSrc": "themes/colormag.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://themegrill.com/themes/colormag/"
   },
   "ColorMeShop": {
@@ -1280,7 +1280,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.tagcommander\\.com",
+    "scriptSrc": "\\.tagcommander\\.com",
     "website": "https://www.commandersact.com/en/solutions/tagcommander/"
   },
   "Commanders Act TrustCommander": {
@@ -1293,7 +1293,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.trustcommander\\.net/privacy/.+_v([\\d]+)_([\\d]+)\\.js\\;version:\\1.\\2",
+    "scriptSrc": "\\.trustcommander\\.net/privacy/.+_v([\\d]+)_([\\d]+)\\.js\\;version:\\1.\\2",
     "website": "https://www.commandersact.com/en/solutions/trustcommander/"
   },
   "Commerce Server": {
@@ -1321,7 +1321,7 @@
     "js": {
       "CommercejsSpace": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version:\\1",
       "chec/commerce\\.js"
     ],
@@ -1340,7 +1340,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "cdn\\.commerce7\\.com",
+    "scriptSrc": "cdn\\.commerce7\\.com",
     "website": "https://commerce7.com",
     "xhr": "api\\.commerce7\\.com"
   },
@@ -1360,7 +1360,7 @@
     ],
     "requires": "WordPress",
     "saas": true,
-    "scripts": "wp-content/plugins/complianz-gdpr-premium",
+    "scriptSrc": "wp-content/plugins/complianz-gdpr-premium",
     "website": "https://complianz.io"
   },
   "Concrete CMS": {
@@ -1380,7 +1380,7 @@
     "meta": {
       "generator": "^concrete5(?: - ([\\d.]+)$)?\\;version:\\1"
     },
-    "scripts": "/concrete/js/",
+    "scriptSrc": "/concrete/js/",
     "website": "https://www.concretecms.com"
   },
   "Conekta": {
@@ -1393,7 +1393,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "conektaapi/v([\\d.]+)\\;version:\\1",
       "cdn\\.conekta\\.\\w+/js/(?:v([\\d.]+)|)\\;version:\\1"
     ],
@@ -1416,7 +1416,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.ctctcdn\\.com/",
+    "scriptSrc": "\\.ctctcdn\\.com/",
     "website": "https://www.constantcontact.com"
   },
   "Contao": {
@@ -1489,7 +1489,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.contentsquare\\.net/",
+    "scriptSrc": "\\.contentsquare\\.net/",
     "website": "https://contentsquare.com"
   },
   "ContentStudio": {
@@ -1555,7 +1555,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.contlo\\.com/",
+    "scriptSrc": "\\.contlo\\.com/",
     "website": "https://www.contlo.com"
   },
   "Conversant Consent Tool": {
@@ -1571,7 +1571,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "cdn\\.conversant\\.mgr\\.consensu\\.org/",
+    "scriptSrc": "cdn\\.conversant\\.mgr\\.consensu\\.org/",
     "website": "https://www.conversantmedia.eu/consent-tool"
   },
   "Convert": {
@@ -1590,7 +1590,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.convertexperiments\\.com/js",
+    "scriptSrc": "\\.convertexperiments\\.com/js",
     "website": "https://www.convert.com"
   },
   "ConvertFlow": {
@@ -1609,7 +1609,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "(?:app|js)\\.convertflow\\.co",
+    "scriptSrc": "(?:app|js)\\.convertflow\\.co",
     "website": "https://www.convertflow.com"
   },
   "ConvertKit": {
@@ -1626,7 +1626,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.convertkit\\.com",
+    "scriptSrc": "\\.convertkit\\.com",
     "website": "https://convertkit.com"
   },
   "Convertcart": {
@@ -1636,7 +1636,7 @@
     "description": "SConvertCart helps online businesses deliver outstanding experiences to customers throughout their journey.",
     "icon": "Convertcart.svg",
     "saas": true,
-    "scripts": "cdn\\.convertcart\\.com",
+    "scriptSrc": "cdn\\.convertcart\\.com",
     "website": "https://www.convertcart.com/"
   },
   "ConveyThis": {
@@ -1650,7 +1650,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.conveythis\\.com",
+    "scriptSrc": "cdn\\.conveythis\\.com",
     "website": "https://www.conveythis.com/"
   },
   "Cookie Information": {
@@ -1667,7 +1667,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.app\\.cookieinformation\\.com/",
+    "scriptSrc": "\\.app\\.cookieinformation\\.com/",
     "website": "https://cookieinformation.com"
   },
   "Cookie Script": {
@@ -1682,7 +1682,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.cookie-script\\.com/",
+    "scriptSrc": "\\.cookie-script\\.com/",
     "website": "https://cookie-script.com"
   },
   "CookieFirst": {
@@ -1700,7 +1700,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "consent\\.cookiefirst\\.com/",
+    "scriptSrc": "consent\\.cookiefirst\\.com/",
     "website": "https://cookiefirst.com"
   },
   "CookieHub": {
@@ -1708,7 +1708,7 @@
       67
     ],
     "icon": "CookieHub.png",
-    "scripts": [
+    "scriptSrc": [
       "cookiehub\\.net/.*\\.js"
     ],
     "website": "https://www.cookiehub.com"
@@ -1726,7 +1726,7 @@
     "js": {
       "cookieYes": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "app\\.cookieyes\\.com/client_data/",
       "cdn-cookieyes\\.com/client_data/"
     ],
@@ -1738,7 +1738,7 @@
     ],
     "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
     "icon": "Cookiebot.svg",
-    "scripts": "consent\\.cookiebot\\.com",
+    "scriptSrc": "consent\\.cookiebot\\.com",
     "website": "http://www.cookiebot.com"
   },
   "Cooladata": {
@@ -1754,7 +1754,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.cooladata\\.com/",
+    "scriptSrc": "cdn\\.cooladata\\.com/",
     "website": "https://www.cooladata.com"
   },
   "Coppermine": {
@@ -1789,7 +1789,7 @@
     ],
     "cpe": "cpe:/a:cosmoshop:cosmoshop",
     "icon": "Cosmoshop.png",
-    "scripts": "cosmoshop_functions\\.js",
+    "scriptSrc": "cosmoshop_functions\\.js",
     "website": "http://cosmoshop.de"
   },
   "Cotonti": {
@@ -1835,7 +1835,7 @@
     "js": {
       "Coveo": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "static\\.cloud\\.coveo\\.com"
     ],
     "website": "https://www.coveo.com/"
@@ -1861,7 +1861,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.covet\\.pics/.+widget@([\\d\\.]+)\\;version:\\1",
+    "scriptSrc": "\\.covet\\.pics/.+widget@([\\d\\.]+)\\;version:\\1",
     "website": "https://covet.pics"
   },
   "Cowboy": {
@@ -1926,7 +1926,7 @@
     "js": {
       "CE2": ""
     },
-    "scripts": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
+    "scriptSrc": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
     "website": "http://crazyegg.com"
   },
   "Crisp Live Chat": {
@@ -1957,7 +1957,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
       "//static\\.criteo\\.net/js/ld/ld\\.js"
     ],
@@ -1971,7 +1971,7 @@
     "js": {
       "crobox": ""
     },
-    "scripts": "cdn\\.crobox\\.com",
+    "scriptSrc": "cdn\\.crobox\\.com",
     "website": "https://crobox.com/"
   },
   "Cross Pixel": {
@@ -1983,7 +1983,7 @@
     "js": {
       "cp_C4w1ldN2d9PmVrkN": ""
     },
-    "scripts": "tag\\.crsspxl\\.com",
+    "scriptSrc": "tag\\.crsspxl\\.com",
     "website": "http://crosspixel.net"
   },
   "Cross Sell": {
@@ -2002,7 +2002,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "load\\.csell\\.co"
     ],
     "website": "https://csell.io/"
@@ -2028,7 +2028,7 @@
       "CrownPeakAutocomplete": "",
       "CrownPeakSearch": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "c\\.evidon\\.com",
       "js/crownpeak\\."
     ],
@@ -2044,7 +2044,7 @@
       "CRLT.CONFIG.ASMJS_NAME": "",
       "CryptoLoot": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "^/crypto-loot\\.com/lib/",
       "^/webmine\\.pro/",
       "^/cryptoloot\\.pro/",
@@ -2074,7 +2074,7 @@
     "js": {
       "Cufon": ""
     },
-    "scripts": "cufon-yui\\.js",
+    "scriptSrc": "cufon-yui\\.js",
     "website": "http://cufon.shoqolate.com"
   },
   "Customer.io": {
@@ -2088,7 +2088,7 @@
       "mid"
     ],
     "saas": true,
-    "scripts": "assets\\.customer\\.io",
+    "scriptSrc": "assets\\.customer\\.io",
     "website": "https://customer.io/"
   },
   "Customily": {
@@ -2105,7 +2105,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "(?:cdn|app)\\.customily\\.com/",
+    "scriptSrc": "(?:cdn|app)\\.customily\\.com/",
     "website": "https://www.customily.com"
   },
   "Cybersource": {
@@ -2114,7 +2114,7 @@
     ],
     "description": "Cybersource is an ecommerce credit card payment system solution.",
     "icon": "cybersource.png",
-    "scripts": "cybersource\\..+\\.js",
+    "scriptSrc": "cybersource\\..+\\.js",
     "website": "https://www.cybersource.com/"
   },
   "Czater": {
@@ -2132,7 +2132,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.czater\\.pl",
+    "scriptSrc": "\\.czater\\.pl",
     "website": "https://www.czater.pl"
   },
   "cPanel": {
@@ -2158,7 +2158,7 @@
     "description": "cdnjs is a free distributed JS library delivery service.",
     "icon": "cdnjs.svg",
     "oss": true,
-    "scripts": "cdnjs\\.cloudflare\\.com",
+    "scriptSrc": "cdnjs\\.cloudflare\\.com",
     "website": "https://cdnjs.com"
   },
   "cgit": {
@@ -2182,7 +2182,7 @@
     ],
     "description": "Clickio Consent Tool collects and communicates consent both to IAB Framework vendors and to Google Ads products.",
     "icon": "clickio.png",
-    "scripts": "clickio\\.mgr\\.consensu\\.org/t/consent_[0-9]+\\.js",
+    "scriptSrc": "clickio\\.mgr\\.consensu\\.org/t/consent_[0-9]+\\.js",
     "website": "http://www.gdpr.clickio.com/"
   },
   "comScore": {
@@ -2195,7 +2195,7 @@
       "COMSCORE": "",
       "_COMSCORE": ""
     },
-    "scripts": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
+    "scriptSrc": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
     "website": "http://comscore.com"
   },
   "commercelayer": {

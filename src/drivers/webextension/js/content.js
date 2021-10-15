@@ -196,10 +196,15 @@ const Content = {
       css = css.join('\n')
 
       // Script tags
-      const scripts = Array.from(document.scripts)
-        .filter(({ src }) => src)
+      const scriptNodes = Array.from(document.scripts)
+
+      const scriptSrc = scriptNodes
+        .filter(({ src }) => src && !src.startsWith('data:text/javascript;'))
         .map(({ src }) => src)
-        .filter((script) => script.indexOf('data:text/javascript;') !== 0)
+
+      const scripts = scriptNodes
+        .map((node) => node.textContent)
+        .filter((script) => script)
 
       // Meta tags
       const meta = Array.from(document.querySelectorAll('meta')).reduce(
@@ -264,7 +269,7 @@ const Content = {
         }
       }
 
-      Content.cache = { html, css, scripts, meta, cookies }
+      Content.cache = { html, css, scriptSrc, scripts, meta, cookies }
 
       await Content.driver('onContentLoad', [
         url,

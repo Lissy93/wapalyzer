@@ -44,7 +44,7 @@ Wappalyzer.analyze({
   url: 'https://example.github.io/',
   meta: { generator: ['WordPress'] },
   headers: { server: ['Nginx'] },
-  scripts: ['jquery-3.0.0.js'],
+  scriptSrc: ['jquery-3.0.0.js'],
   cookies: { awselb: [''] },
   html: '<div ng-app="">'
 }).then((detections) => {

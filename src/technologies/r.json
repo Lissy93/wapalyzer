@@ -31,7 +31,7 @@
     "js": {
       "RDStation": ""
     },
-    "scripts": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
+    "scriptSrc": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
     "website": "http://rdstation.com.br"
   },
   "RDoc": {
@@ -107,7 +107,7 @@
     "meta": {
       "rlAppVersion": "^([0-9.]+)$\\;version:\\1"
     },
-    "scripts": "^rainloop/v/([0-9.]+)/\\;version:\\1",
+    "scriptSrc": "^rainloop/v/([0-9.]+)/\\;version:\\1",
     "website": "https://www.rainloop.net/"
   },
   "Rakuten": {
@@ -123,7 +123,7 @@
       "rakutenRanMID": "",
       "rakutenSource": ""
     },
-    "scripts": "tag\\.rmp\\.rakuten\\.com",
+    "scriptSrc": "tag\\.rmp\\.rakuten\\.com",
     "website": "https://www.rakuten.com/"
   },
   "Rakuten Advertising": {
@@ -131,7 +131,7 @@
       36
     ],
     "icon": "Rakuten Advertising.svg",
-    "scripts": "tag\\.rmp\\.rakuten\\.com",
+    "scriptSrc": "tag\\.rmp\\.rakuten\\.com",
     "website": "https://rakutenadvertising.com/"
   },
   "Rakuten Digital Commerce": {
@@ -149,7 +149,7 @@
       59
     ],
     "icon": "Ramda.png",
-    "scripts": "ramda.*\\.js",
+    "scriptSrc": "ramda.*\\.js",
     "website": "http://ramdajs.com"
   },
   "Raphael": {
@@ -161,7 +161,7 @@
     "js": {
       "Raphael.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+    "scriptSrc": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://dmitrybaranovskiy.github.io/raphael/"
   },
   "RapidSec": {
@@ -198,7 +198,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.rapidspike\\.com/",
+    "scriptSrc": "\\.rapidspike\\.com/",
     "website": "https://www.rapidspike.com"
   },
   "Raptor": {
@@ -216,7 +216,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "api\\.raptorsmartadvisor\\.com",
       "msecnd\\.net/script/raptor-([\\d.]+)\\.js\\;version:\\1"
     ],
@@ -243,7 +243,7 @@
     "js": {
       "Raychat": ""
     },
-    "scripts": "app\\.raychat\\.io/scripts/js",
+    "scriptSrc": "app\\.raychat\\.io/scripts/js",
     "website": "https://raychat.io"
   },
   "Raygun": {
@@ -263,7 +263,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.raygun\\.io",
+    "scriptSrc": "\\.raygun\\.io",
     "website": "https://raygun.com"
   },
   "Rayo": {
@@ -295,7 +295,7 @@
     "pricing": [
       "payg"
     ],
-    "scripts": "checkout\\.razorpay\\.com",
+    "scriptSrc": "checkout\\.razorpay\\.com",
     "website": "https://razorpay.com/"
   },
   "Re:amaze": {
@@ -312,7 +312,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.reamaze\\.com/",
+    "scriptSrc": "\\.reamaze\\.com/",
     "website": "https://www.reamaze.com"
   },
   "ReDoc": {
@@ -326,7 +326,7 @@
     "js": {
       "Redoc.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "/redoc\\.(?:min\\.)?js",
+    "scriptSrc": "/redoc\\.(?:min\\.)?js",
     "website": "https://github.com/Rebilly/ReDoc"
   },
   "React": {
@@ -349,7 +349,7 @@
       "ReactOnRails": "",
       "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
       "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
       "^react\\b.*\\.js"
@@ -366,7 +366,7 @@
       "React",
       "Redux"
     ],
-    "scripts": [
+    "scriptSrc": [
       "/react-redux(@|/)([\\d.]+)(?:/[a-z]+)?/react-redux(?:.min)?\\.js\\;version:\\2"
     ],
     "website": "https://react-redux.js.org/"
@@ -378,7 +378,7 @@
     "description": "React Router provides declarative routing for React.",
     "icon": "React Router.png",
     "implies": "React",
-    "scripts": [
+    "scriptSrc": [
       "/react-router(@|/)([\\d.]+)(?:/[a-z]+)?/react-router(?:.min)?\\.js\\;version:\\2"
     ],
     "website": "https://reactrouter.com/"
@@ -412,7 +412,7 @@
       "payg",
       "low"
     ],
-    "scripts": "rebuyengine\\.com",
+    "scriptSrc": "rebuyengine\\.com",
     "website": "https://rebuyengine.com/"
   },
   "Recapture": {
@@ -426,7 +426,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "cdn\\.recapture\\.io/.+\\?v=\\d+(?:&ver=([\\d\\.]+)?)?\\;version:\\1",
+    "scriptSrc": "cdn\\.recapture\\.io/.+\\?v=\\d+(?:&ver=([\\d\\.]+)?)?\\;version:\\1",
     "website": "https://recapture.io"
   },
   "Recart": {
@@ -439,7 +439,7 @@
       "__recart": "",
       "recart": ""
     },
-    "scripts": "api\\.recart\\.com",
+    "scriptSrc": "api\\.recart\\.com",
     "website": "https://recart.com/"
   },
   "Recharge": {
@@ -457,7 +457,7 @@
       "mid"
     ],
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "rechargeassets-bootstrapheroes-rechargeapps\\.netdna-ssl\\.com"
     ],
     "website": "https://rechargepayments.com/"
@@ -468,7 +468,7 @@
     ],
     "description": "Recite Me is a web accessibility overlay that claims to allow website visitors to customize a site in a way that works for them.",
     "icon": "Recite Me.png",
-    "scripts": "api\\.reciteme\\.com/asset/js",
+    "scriptSrc": "api\\.reciteme\\.com/asset/js",
     "website": "https://reciteme.com/"
   },
   "RecoverMyCart": {
@@ -483,7 +483,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.recovermycart\\.com",
+    "scriptSrc": "cdn\\.recovermycart\\.com",
     "website": "https://app.recovermycart.com/"
   },
   "Recurly": {
@@ -496,7 +496,7 @@
     "js": {
       "recurly.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "js\\.recurly\\.com",
+    "scriptSrc": "js\\.recurly\\.com",
     "website": "https://recurly.com"
   },
   "Red Hat": {
@@ -550,7 +550,7 @@
     ],
     "description": "Reddit Ads is an online advertising offering from Reddit.",
     "icon": "Reddit.png",
-    "scripts": "www\\.redditstatic\\.com",
+    "scriptSrc": "www\\.redditstatic\\.com",
     "website": "https://advertising.reddithelp.com/"
   },
   "Redis": {
@@ -597,7 +597,7 @@
     ],
     "description": "Redux is a predictable state container for JavaScript applications.",
     "icon": "Redux.png",
-    "scripts": [
+    "scriptSrc": [
       "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
     ],
     "website": "https://redux.js.org/"
@@ -612,7 +612,7 @@
       "ReevooApi": ""
     },
     "saas": true,
-    "scripts": "mark\\.reevoo\\.com",
+    "scriptSrc": "mark\\.reevoo\\.com",
     "website": "https://www.reevoo.com/"
   },
   "ReferralCandy": {
@@ -628,7 +628,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.referralcandy\\.com/",
+    "scriptSrc": "\\.referralcandy\\.com/",
     "website": "https://www.referralcandy.com"
   },
   "Refersion": {
@@ -655,7 +655,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.refersion\\.com",
+    "scriptSrc": "\\.refersion\\.com",
     "website": "http://refersion.com"
   },
   "Reflektion": {
@@ -672,7 +672,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.cloudfront\\.net/js/reflektion\\.js",
+    "scriptSrc": "\\.cloudfront\\.net/js/reflektion\\.js",
     "website": "https://reflektion.com"
   },
   "Regiondo": {
@@ -687,7 +687,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "cdn\\.regiondo\\.net",
+    "scriptSrc": "cdn\\.regiondo\\.net",
     "website": "https://www.regiondo.com"
   },
   "Reinvigorate": {
@@ -709,7 +709,7 @@
     "js": {
       "requirejs.version": "^(.+)$\\;version:\\1"
     },
-    "scripts": "require.*\\.js",
+    "scriptSrc": "require.*\\.js",
     "website": "http://requirejs.org"
   },
   "ResDiary": {
@@ -730,7 +730,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "\\.resdiary\\.\\w+/",
+    "scriptSrc": "\\.resdiary\\.\\w+/",
     "website": "https://www.resdiary.com"
   },
   "Resengo": {
@@ -749,7 +749,7 @@
     "js": {
       "wpJsonpResengoReservationWidget": ""
     },
-    "scripts": "www\\.resengo\\.\\w+",
+    "scriptSrc": "www\\.resengo\\.\\w+",
     "website": "https://wwc.resengo.com"
   },
   "Reservio": {
@@ -770,7 +770,7 @@
       "low"
     ],
     "saas": true,
-    "scripts": "static\\.reservio\\.com",
+    "scriptSrc": "static\\.reservio\\.com",
     "website": "https://www.reservio.com"
   },
   "Resin": {
@@ -801,7 +801,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "static\\.resmio\\.\\w+/static/",
+    "scriptSrc": "static\\.resmio\\.\\w+/static/",
     "website": "https://www.resmio.com"
   },
   "Resy": {
@@ -818,7 +818,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "widgets\\.resy\\.\\w+",
+    "scriptSrc": "widgets\\.resy\\.\\w+",
     "website": "https://resy.com"
   },
   "Retail Rocket": {
@@ -842,7 +842,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "cdn\\.retailrocket\\.net",
+    "scriptSrc": "cdn\\.retailrocket\\.net",
     "website": "https://retailrocket.net"
   },
   "RevLifter": {
@@ -862,7 +862,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "assets\\.revlifter\\.io",
+    "scriptSrc": "assets\\.revlifter\\.io",
     "website": "https://www.revlifter.com"
   },
   "Reveal.js": {
@@ -874,7 +874,7 @@
     "js": {
       "Reveal.VERSION": "^(.+)$\\;version:\\1"
     },
-    "scripts": "(?:^|/)reveal(?:\\.min)?\\.js",
+    "scriptSrc": "(?:^|/)reveal(?:\\.min)?\\.js",
     "website": "http://lab.hakim.se/reveal-js"
   },
   "Revel": {
@@ -895,7 +895,7 @@
     ],
     "description": "RevenueHut is an affiliate marketing and advertising company specializing in paid surveys and cost per lead campaigns.",
     "icon": "RevenueHut.png",
-    "scripts": "admin\\.revenuehunt\\.com/",
+    "scriptSrc": "admin\\.revenuehunt\\.com/",
     "website": "https://revenuehut.com"
   },
   "ReviewSolicitors": {
@@ -911,7 +911,7 @@
       "freemium"
     ],
     "saas": true,
-    "scripts": "\\.reviewsolicitors\\.co\\.uk/",
+    "scriptSrc": "\\.reviewsolicitors\\.co\\.uk/",
     "website": "https://www.reviewsolicitors.co.uk"
   },
   "RevolverMaps": {
@@ -920,7 +920,7 @@
     ],
     "description": "RevolverMaps is a collection of real-time visitor statistics widgets for website or blog. Interactive visitor mappings to a globe rendered by the Revolver Engine.",
     "icon": "RevolverMaps.svg",
-    "scripts": "\\.revolvermaps\\.com",
+    "scriptSrc": "\\.revolvermaps\\.com",
     "website": "https://www.revolvermaps.com"
   },
   "Revslider": {
@@ -934,7 +934,7 @@
     ],
     "icon": "revslider.png",
     "requires": "WordPress",
-    "scripts": "/revslider/[/\\w-]+/js",
+    "scriptSrc": "/revslider/[/\\w-]+/js",
     "website": "https://revolution.themepunch.com/"
   },
   "Rewardful": {
@@ -946,7 +946,7 @@
     "js": {
       "Rewardful": ""
     },
-    "scripts": "r\\.wdfl\\.co",
+    "scriptSrc": "r\\.wdfl\\.co",
     "website": "https://www.getrewardful.com/"
   },
   "Rezdy": {
@@ -961,7 +961,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "rezdy\\.\\w+/pluginJs",
+    "scriptSrc": "rezdy\\.\\w+/pluginJs",
     "website": "https://www.rezdy.com"
   },
   "Rezgo": {
@@ -1003,7 +1003,7 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "\\.richrelevance\\.com/",
+    "scriptSrc": "\\.richrelevance\\.com/",
     "website": "https://richrelevance.com"
   },
   "Rickshaw": {
@@ -1014,7 +1014,7 @@
     "js": {
       "Rickshaw": ""
     },
-    "scripts": "rickshaw(?:\\.min)?\\.js",
+    "scriptSrc": "rickshaw(?:\\.min)?\\.js",
     "website": "http://code.shutterstock.com/rickshaw/"
   },
   "RightJS": {
@@ -1025,7 +1025,7 @@
     "js": {
       "RightJS": ""
     },
-    "scripts": "right\\.js",
+    "scriptSrc": "right\\.js",
     "website": "http://rightjs.org"
   },
   "Riot": {
@@ -1036,7 +1036,7 @@
     "js": {
       "riot": ""
     },
-    "scripts": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
+    "scriptSrc": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
     "website": "https://riot.js.org/"
   },
   "Riskified": {
@@ -1130,7 +1130,7 @@
       13
     ],
     "icon": "Rollbar.svg",
-    "scripts": [
+    "scriptSrc": [
       "rollbar\\.js/([0-9.]+)\\;version:\\1"
     ],
     "website": "https://rollbar.com/"
@@ -1168,7 +1168,7 @@
     },
     "icon": "Rubicon Project.svg",
     "saas": true,
-    "scripts": "https?://[^/]*\\.rubiconproject\\.com",
+    "scriptSrc": "https?://[^/]*\\.rubiconproject\\.com",
     "website": "http://rubiconproject.com/",
     "xhr": "\\.rubiconproject\\.com"
   },
@@ -1198,7 +1198,7 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "chatwidget\\.ruby\\.com",
+    "scriptSrc": "chatwidget\\.ruby\\.com",
     "website": "https://www.ruby.com"
   },
   "Ruby on Rails": {
@@ -1223,7 +1223,7 @@
     "meta": {
       "csrf-param": "^authenticity_token$\\;confidence:50"
     },
-    "scripts": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
+    "scriptSrc": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
     "website": "https://rubyonrails.org"
   },
   "Rudderstack": {
@@ -1236,7 +1236,7 @@
       "rudderanalytics": ""
     },
     "saas": true,
-    "scripts": [
+    "scriptSrc": [
       "cdn\\.rudderlabs\\.com"
     ],
     "website": "https://rudderstack.com/"
@@ -1250,7 +1250,7 @@
       "Rx.CompositeDisposable": "",
       "Rx.Symbol": ""
     },
-    "scripts": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
+    "scriptSrc": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
     "website": "http://reactivex.io"
   },
   "Ryviu": {
@@ -1268,7 +1268,7 @@
       "low"
     ],
     "saas": true,
-    "scripts": "cdn\\.ryviu\\.com",
+    "scriptSrc": "cdn\\.ryviu\\.com",
     "website": "https://www.ryviu.com/"
   },
   "reCAPTCHA": {
@@ -1285,7 +1285,7 @@
       "Recaptcha": "",
       "recaptcha": ""
     },
-    "scripts": [
+    "scriptSrc": [
       "api-secure\\.recaptcha\\.net",
       "recaptcha_ajax\\.js",
       "/recaptcha/api\\.js"

@@ -511,7 +511,6 @@ class Site {
 
     if (!this.browser) {
       await this.initDriver()
-
       if (!this.browser) {
         throw new Error('Browser closed')
       }
@@ -580,6 +579,15 @@ class Site {
 
     page.on('response', async (response) => {
       try {
+        if (
+          response.frame().url() === url.href &&
+          response.request().resourceType() === 'script'
+        ) {
+          const scripts = await response.text()
+
+          await this.onDetect(response.url(), await analyze({ scripts }))
+        }
+
         if (response.url() === url.href) {
           this.analyzedUrls[url.href] = {
             status: response.status(),
@@ -673,6 +681,7 @@ class Site {
 
       let links = []
       let css = ''
+      let scriptSrc = []
       let scripts = []
       let meta = []
       let js = []
@@ -741,20 +750,32 @@ class Site {
         )
 
         // Script tags
-        scripts = await this.promiseTimeout(
+        ;[scripts, scriptSrc] = await this.promiseTimeout(
           (
             await this.promiseTimeout(
-              page.evaluateHandle(() =>
-                Array.from(document.getElementsByTagName('script'))
-                  .map(({ src }) => src)
-                  .filter((src) => src)
-              ),
+              page.evaluateHandle(() => {
+                const nodes = Array.from(
+                  document.getElementsByTagName('script')
+                )
+
+                return [
+                  nodes
+                    .map(
+                      ({ src }) =>
+                        src && !src.startsWith('data:text/javascript;')
+                    )
+                    .filter((src) => src),
+                  nodes
+                    .map((node) => node.textContent)
+                    .filter((script) => script),
+                ]
+              }),
               { jsonValue: () => [] },
-              'Timeout (scripts)'
+              'Timeout (scriptSrc)'
             )
           ).jsonValue(),
           [],
-          'Timeout (scripts)'
+          'Timeout (scriptSrc)'
         )
 
         // Meta tags
@@ -798,6 +819,7 @@ class Site {
         html,
         cookies,
         scripts,
+        scriptSrc,
         meta,
       }
 
@@ -813,6 +835,7 @@ class Site {
               html,
               css,
               scripts,
+              scriptSrc,
               meta,
             }),
           ])
@@ -1099,7 +1122,7 @@ class Site {
           if (!this.analyzedRequires[url.href].includes(name)) {
             this.analyzedRequires[url.href].push(name)
 
-            const { page, cookies, html, css, scripts, meta } =
+            const { page, cookies, html, css, scripts, scriptSrc, meta } =
               this.cache[url.href]
 
             const js = await this.promiseTimeout(
@@ -1126,6 +1149,7 @@ class Site {
                       html,
                       css,
                       scripts,
+                      scriptSrc,
                       meta,
                     },
                     technologies
