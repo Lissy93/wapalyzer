@@ -764,7 +764,10 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "widgets\\.shophumm\\.com",
+    "scriptSrc": [
+      "widgets\\.shophumm\\.com",
+      "/wp-content/plugins/oxipay-payment-gateway/"
+    ],
     "website": "https://www.shophumm.com"
   },
   "Hushly": {
