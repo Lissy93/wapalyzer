@@ -602,7 +602,16 @@ body.dynamic-icon .category__heading:hover .category__pin {
   vertical-align: middle;
 }
 
-.technology__link, .technology__link:active, .technology__link:hover {
+.technology__link {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  padding: .1rem 0;
+  text-decoration: underline;
+  width: 200px;
+}
+
+.technology__link:active, .technology__link:hover {
   align-items: center;
   display: flex;
   overflow: hidden;
@@ -614,7 +623,6 @@ body.dynamic-icon .category__heading:hover .category__pin {
 .technology__name {
   font-size: .85rem;
   letter-spacing: .5px;
-  text-decoration: underline;
 }
 
 .technology__confidence {
