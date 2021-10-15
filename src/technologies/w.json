@@ -815,7 +815,7 @@
     "description": "Wix Answers is a cloud-based help desk software.",
     "icon": "Wix Answers.svg",
     "dom": "iframe[src*='.wixanswers.com/']",
-    "scripts": "\\.wixanswers\\.com/",
+    "scriptSrc": "\\.wixanswers\\.com/",
     "pricing": [
       "recurring",
       "payg"

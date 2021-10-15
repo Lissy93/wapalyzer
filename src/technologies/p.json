@@ -466,7 +466,7 @@
     ],
     "description": "PayJustNow is a buy now, pay later checkout option for ecommerce sites.",
     "icon": "PayJustNow.svg",
-    "scripts": "\\.payjustnow\\.com/",
+    "scriptSrc": "\\.payjustnow\\.com/",
     "saas": true,
     "pricing": [
       "payg"
@@ -483,7 +483,7 @@
     "js": {
       "payitlater": ""
     },
-    "scripts": "/wp-content/plugins/payitlater-gateway-for-woocommerce/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "scriptSrc": "/wp-content/plugins/payitlater-gateway-for-woocommerce/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
     "pricing": [
       "payg"
     ],
@@ -1346,7 +1346,7 @@
       "payg"
     ],
     "saas": true,
-    "scripts": "cdn\\.postpay\\.io/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "scriptSrc": "cdn\\.postpay\\.io/(?:.+\\?ver=([\\d\\.]+))?\\;version:\\1",
     "website": "https://postpay.io"
   },
   "Postscript": {
