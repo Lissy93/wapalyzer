@@ -156,7 +156,10 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "\\.laybuy\\.com/",
+    "scriptSrc": [
+      "\\.laybuy\\.com/",
+      "/wp-content/plugins/woo-laybuy/"
+    ],
     "website": "https://www.laybuy.com"
   },
   "Layer0": {

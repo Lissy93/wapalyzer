@@ -1190,7 +1190,7 @@
     ],
     "cpe": "cpe:/a:afterpay:afterpay",
     "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
-    "dom": "#afterpay, .afterpay, [aria-label='Afterpay']",
+    "dom": "#afterpay, .afterpay, [aria-label='Afterpay'], link[href*='/wp-content/plugins/afterpay-gateway-for-woocommerce/']",
     "icon": "afterpay.png",
     "js": {
       "Afterpay": "",
