@@ -620,6 +620,10 @@ body.dynamic-icon .category__heading:hover .category__pin {
   width: 200px;
 }
 
+.technology__link:active .technology__icon, .technology__link:hover .technology__icon {
+	box-shadow: 0px 2px 1px -3px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
 .technology__name {
   font-size: .85rem;
   letter-spacing: .5px;
@@ -866,6 +870,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 
 .dark .technology__link {
   color: var(--color-text-dark);
+  text-decoration: underline;
 }
 
 .dark .technology__name {
