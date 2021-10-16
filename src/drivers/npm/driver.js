@@ -750,7 +750,7 @@ class Site {
         )
 
         // Script tags
-        ;[scripts, scriptSrc] = await this.promiseTimeout(
+        ;[scriptSrc, scripts] = await this.promiseTimeout(
           (
             await this.promiseTimeout(
               page.evaluateHandle(() => {
@@ -760,22 +760,22 @@ class Site {
 
                 return [
                   nodes
-                    .map(
+                    .filter(
                       ({ src }) =>
                         src && !src.startsWith('data:text/javascript;')
                     )
-                    .filter((src) => src),
+                    .map(({ src }) => src),
                   nodes
                     .map((node) => node.textContent)
                     .filter((script) => script),
                 ]
               }),
               { jsonValue: () => [] },
-              'Timeout (scriptSrc)'
+              'Timeout (scripts)'
             )
           ).jsonValue(),
           [],
-          'Timeout (scriptSrc)'
+          'Timeout (scripts)'
         )
 
         // Meta tags
