@@ -607,7 +607,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   display: flex;
   overflow: hidden;
   padding: .1rem 0;
-  text-decoration: underline;
+  text-decoration: none;
   width: 200px;
 }
 
@@ -620,6 +620,10 @@ body.dynamic-icon .category__heading:hover .category__pin {
   width: 200px;
 }
 
+.technology__link:active .technology__name, .technology__link:hover .technology__name {
+  text-decoration: none;
+}
+
 .technology__link:active .technology__icon, .technology__link:hover .technology__icon {
 	box-shadow: 0px 2px 1px -3px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -627,6 +631,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 .technology__name {
   font-size: .85rem;
   letter-spacing: .5px;
+  text-decoration: underline;
 }
 
 .technology__confidence {
@@ -870,15 +875,16 @@ body.dynamic-icon .category__heading:hover .category__pin {
 
 .dark .technology__link {
   color: var(--color-text-dark);
-  text-decoration: underline;
 }
 
 .dark .technology__name {
   opacity: .8;
+  text-decoration: underline;
 }
 
-.dark .technology__name:hover {
+.dark .technology__link:active .technology__name,  .dark .technology__link:hover .technology__name {
   opacity: 1;
+  text-decoration: underline;
 }
 
 .dark .technology__icon {

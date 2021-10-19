@@ -379,8 +379,10 @@
     "cpe": "cpe:/a:emberjs:ember.js",
     "icon": "Ember.js.png",
     "implies": "Handlebars",
+    "scripts": "@overview\\s+Ember -[\\s\\S]+@version\\s+(.+)\\;version:\\1",
     "js": {
       "Ember": "",
+      "EmberENV": "",
       "Ember.VERSION": "^(.+)$\\;version:\\1"
     },
     "website": "http://emberjs.com"
