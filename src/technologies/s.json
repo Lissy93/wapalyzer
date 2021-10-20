@@ -3036,7 +3036,7 @@
     ],
     "description": "SpurIT Recurring Payments App is a simple way to create a system of bill payment,subscriptions and invoicing.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "js": {
       "Spurit.recurringInvoices": ""
     },
@@ -3054,7 +3054,7 @@
     ],
     "description": "SpurIT Partial Payments App allow your customers to pay for the order in several ways or to share a payment with other people.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/split-payments/",
     "saas": true,
     "pricing": [
@@ -3062,6 +3062,25 @@
       "recurring"
     ],
     "website": "https://spur-i-t.com/shopify-apps/split-partial-payments/"
+  },
+  "SpurIT Loyalty App": {
+    "cats": [
+      84,
+      94
+    ],
+    "description": "SpurIT Loyalty App is a turnkey solution allowing you to reward existing customers in a number of ways.",
+    "icon": "SpurIT.svg",
+    "implies": "Shopify",
+    "js": {
+      "Spurit.Loyaltypoints": ""
+    },
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/loyaltypoints/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com/shopify-apps/loyalty-points-manager"
   },
   "Spryker": {
     "cats": [
