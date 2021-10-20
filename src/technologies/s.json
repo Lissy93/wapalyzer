@@ -3030,6 +3030,25 @@
     "scriptSrc": "\\.creator-spring\\.com/",
     "website": "https://www.spri.ng"
   },
+  "SpurIT": {
+    "cats": [
+      5
+    ],
+    "description": "SpurIT is a team of certified Shopify experts which provide ecommerce software solutions.",
+    "icon": "SpurIT.svg",
+    "implies": "Shopify",
+    "js": {
+      "Spurit.global.version": "(.+)\\;version:\\1"
+    },
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com"
+  },
   "SpurIT Abandoned Cart Reminder": {
     "cats": [
       98
