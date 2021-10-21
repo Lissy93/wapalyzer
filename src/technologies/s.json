@@ -1962,6 +1962,20 @@
     "scriptSrc": "widget\\.siteminder\\.com",
     "website": "https://www.siteminder.com"
   },
+  "SiteOrigin Vantage": {
+    "cats": [
+     80
+    ],
+    "description": "SiteOrigin Vantage is a response, multi-purpose theme carefully developed with seamless integration into an array of amazing third-party plugins.",
+    "icon": "SiteOrigin.svg",
+    "requires": "WordPress",
+    "dom": "style#vantage-style-css",
+    "scriptSrc": "/wp-content/themes/vantage/",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://siteorigin.com/theme/vantage"
+  },
   "SiteSpect": {
     "cats": [
       74
@@ -3036,7 +3050,7 @@
     ],
     "description": "SpurIT is a team of certified Shopify experts which provide ecommerce software solutions.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "js": {
       "Spurit.global.version": "(.+)\\;version:\\1"
     },
@@ -3055,7 +3069,7 @@
     ],
     "description": "SpurIT Abandoned Cart Reminder bring back your Shopify store visitors who moved to another tab by blinking your store tab.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "js": {
       "ACR_SPURIT_Params.folderCss": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/"
     },
@@ -3073,7 +3087,7 @@
     ],
     "description": "SpurIT Recurring Payments App is a simple way to create a system of bill payment,subscriptions and invoicing.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "js": {
       "Spurit.recurringInvoices": ""
     },
@@ -3091,7 +3105,7 @@
     ],
     "description": "SpurIT Partial Payments App allow your customers to pay for the order in several ways or to share a payment with other people.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/split-payments/",
     "saas": true,
     "pricing": [
@@ -3107,7 +3121,7 @@
     ],
     "description": "SpurIT Loyalty App is a turnkey solution allowing you to reward existing customers in a number of ways.",
     "icon": "SpurIT.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "js": {
       "Spurit.Loyaltypoints": ""
     },
@@ -3962,7 +3976,7 @@
     "description": "Syndeca is a visual commerce platform that allows brands to quickly create engaging, actionable campaigns.",
     "icon": "Syndeca.svg",
     "js": {
-      "SyndecaAnalyticsObject": ""
+      "ss360Config": ""
     },
     "pricing": [
       "poa"
