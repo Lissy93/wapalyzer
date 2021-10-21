@@ -642,7 +642,7 @@
     "cookies": {
       "dps_site_id": ""
     },
-    "icon": "godaddy.svg",
+    "icon": "GoDaddy.svg",
     "meta": {
       "generator": "Go Daddy Website Builder (.+)\\;version:\\1"
     },
@@ -651,6 +651,20 @@
     ],
     "saas": true,
     "website": "https://www.godaddy.com/websites/website-builder"
+  },
+  "GoDaddy WordPress Lyrical": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy WordPress Lyrical is a Primer child theme with a focus on photography and beautiful fonts.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/lyrical/']",
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "website": "https://github.com/godaddy-wordpress/primer-child-lyrical"
   },
   "GoJS": {
     "cats": [
