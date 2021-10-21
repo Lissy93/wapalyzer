@@ -642,7 +642,7 @@
     "cookies": {
       "dps_site_id": ""
     },
-    "icon": "godaddy.svg",
+    "icon": "GoDaddy.svg",
     "meta": {
       "generator": "Go Daddy Website Builder (.+)\\;version:\\1"
     },
@@ -651,6 +651,21 @@
     ],
     "saas": true,
     "website": "https://www.godaddy.com/websites/website-builder"
+  },
+  "GoDaddy Uptown Style": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Uptown Style is a GoDaddy Primer child theme with elegance and class.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "excludes": "GoDaddy Primer",
+    "dom": "link[href*='/wp-content/themes/uptown-style/']",
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "website": "https://github.com/godaddy-wordpress/primer-child-uptownstyle"
   },
   "GoJS": {
     "cats": [
