@@ -1113,9 +1113,7 @@ class Site {
       )
 
       await Promise.all(
-        Object.keys(requires).map(async (name) => {
-          const technologies = Wappalyzer.requires[name].technologies
-
+        requires.map(async ({ name, technologies }) => {
           this.analyzedRequires[url.href] =
             this.analyzedRequires[url.href] || []
 
