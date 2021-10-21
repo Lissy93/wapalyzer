@@ -363,7 +363,7 @@ Plus any of:
     </tr>
     <tr>
       <td><code>url</code></td>
-      <td>String</td>
+      <td>String | Array</td>
       <td>Full URL of the page.</td>
       <td><code>"^https?//.+\\.wordpress\\.com"</code></td>
     </tr>
