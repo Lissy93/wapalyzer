@@ -348,6 +348,25 @@
     "scriptSrc": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
     "website": "http://lokeshdhakar.com/projects/lightbox2/"
   },
+  "Lightning": {
+    "cats": [
+      80
+    ],
+    "description": "Lightning is a very simple and easy to customize WordPress theme which is based on the Bootstrap.",
+    "icon": "Lightning.png",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/lightning/'], link[href*='/wp-content/themes/lightning-pro/']",
+    "js": {
+      "lightningOpt.header_scrool": ""
+    },
+    "scriptSrc": "/wp-content/themes/lightning(?:-pro)?/.+lightning\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://lightning.vektor-inc.co.jp/en/"
+  },
   "Lightspeed eCom": {
     "cats": [
       6

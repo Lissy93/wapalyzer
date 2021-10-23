@@ -662,6 +662,26 @@
     "excludes": "GoDaddy Primer",
     "dom": "link[href*='/wp-content/themes/lyrical/']",
   },
+  "GoDaddy Uptown Style": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Uptown Style is a GoDaddy Primer child theme with elegance and class.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "excludes": "GoDaddy Primer",
+    "dom": "link[href*='/wp-content/themes/uptown-style/']",
+  },
+  "GoDaddy Primer": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Primer is a powerful theme that brings clarity to your content in a fresh design. This is the parent for all themes in the GoDaddy Primer theme family.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/primer/']",
+    "scriptSrc": "/wp-content/themes/primer/.+navigation\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+  },
   "GoDaddy Go": {
     "cats": [
       80
