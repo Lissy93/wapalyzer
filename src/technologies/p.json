@@ -1480,6 +1480,23 @@
     "scriptSrc": "prefixfree\\.js",
     "website": "https://leaverou.github.io/prefixfree/"
   },
+  "Press Hueman": {
+    "cats": [
+      80
+    ],
+    "description": "Press Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites.",
+    "icon": "Press.svg",
+    "requires": "WordPress",
+    "dom": "link[*='/wp-content/themes/hueman/']",
+    "js": {
+      "HUParams": ""
+    },
+    "scriptSrc": "/wp-content/themes/hueman/.+scripts\\.min\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://presscustomizr.com/hueman"
+  },
   "Press Customizr": {
     "cats": [
       80
