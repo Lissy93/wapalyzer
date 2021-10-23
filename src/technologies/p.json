@@ -1270,6 +1270,22 @@
     "website": "https://get.popmenu.com",
     "xhr": "popmenu\\.com"
   },
+  "PopularFX": {
+    "cats": [
+      80
+    ],
+    "description": "PopularFX is a fully customizable responsive WordPress theme. It comes with drag and drop page builder.",
+    "icon": "PopularFX.png",
+    "requires": "WordPress",
+    "dom": "link#popularfx-style-css",
+    "scriptSrc": "/wp-content/themes/popularfx/.+\\?ver=([\\d\\.]+)\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://popularfx.com"
+  },
   "Popper": {
     "cats": [
       19
@@ -1463,6 +1479,37 @@
     },
     "scriptSrc": "prefixfree\\.js",
     "website": "https://leaverou.github.io/prefixfree/"
+  },
+  "Press Hueman": {
+    "cats": [
+      80
+    ],
+    "description": "Press Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites.",
+    "icon": "Press.svg",
+    "requires": "WordPress",
+    "dom": "link[*='/wp-content/themes/hueman/']",
+    "js": {
+      "HUParams": ""
+    },
+    "scriptSrc": "/wp-content/themes/hueman/.+scripts\\.min\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://presscustomizr.com/hueman"
+  },
+  "Press Customizr": {
+    "cats": [
+      80
+    ],
+    "description": "Press Customizr is a multipurpose WordPress theme suitable for small businesses and ecommerce sites.",
+    "icon": "Press.svg",
+    "requires": "WordPress",
+    "dom": "style#customizr-skin-inline-css, link#customizr-style-css",
+    "scriptSrc": "/wp-content/themes/customizr/.+js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://presscustomizr.com/customizr"
   },
   "Pressable": {
     "cats": [
