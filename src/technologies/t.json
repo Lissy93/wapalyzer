@@ -623,6 +623,26 @@
     ],
     "website": "http://thelia.net"
   },
+  "ThemeGrill Spacious": {
+    "cats": [
+      80
+    ],
+    "description": "ThemeGrill Spacious is beautiful small to medium business responsive WordPress theme.",
+    "icon": "ThemeGrill.png",
+    "requires": "WordPress",
+    "dom": "link#spacious_style-css",
+    "js": {
+      "spacious_slider_value": ""
+    },
+    "scriptSrc": "/wp-content/themes/spacious(?:-pro)?/.+navigation(?:\\.min)?\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://themegrill.com/themes/spacious"
+  },
   "Thimatic": {
     "cats": [
       90
