@@ -671,6 +671,7 @@
     "requires": "WordPress",
     "excludes": "GoDaddy Primer",
     "dom": "link[href*='/wp-content/themes/uptown-style/']",
+    "website": "https://github.com/godaddy-wordpress/primer-child-uptownstyle"
   },
   "GoDaddy Primer": {
     "cats": [
@@ -681,6 +682,7 @@
     "requires": "WordPress",
     "dom": "link[href*='/wp-content/themes/primer/']",
     "scriptSrc": "/wp-content/themes/primer/.+navigation\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+    "website": "https://github.com/godaddy-wordpress/primer"
   },
   "GoDaddy Go": {
     "cats": [
