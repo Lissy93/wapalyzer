@@ -661,11 +661,24 @@
     "requires": "WordPress",
     "excludes": "GoDaddy Primer",
     "dom": "link[href*='/wp-content/themes/lyrical/']",
+  },
+  "GoDaddy Go": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Go is a flexible Gutenberg-first WordPress theme built for go-getters everywhere.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "dom": "link#go-style-css",
+    "js": {
+      "goFrontend.openMenuOnHover": ""
+    },
+    "scriptSrc": "/wp-content/themes/go/.+frontend\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
     "pricing": [
       "freemium"
     ],
     "oss": true,
-    "website": "https://github.com/godaddy-wordpress/primer-child-lyrical"
+    "website": "https://github.com/godaddy-wordpress/go"
   },
   "GoJS": {
     "cats": [
