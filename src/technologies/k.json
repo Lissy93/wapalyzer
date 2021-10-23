@@ -11,6 +11,27 @@
     },
     "website": "https://getk2.org"
   },
+  "Kadence WP Kadence": {
+    "cats": [
+      80
+    ],
+    "description": "Kadence WP Kadence is a multipurpose WordPress theme that is available for free download and also offers a pro version.",
+    "icon": "Kadence WP.svg",
+    "requires": "WordPress",
+    "dom": "link#kadence-global-css",
+    "js": {
+      "kadence": "",
+      "kadenceConfig": ""
+    },
+    "scriptSrc": "/wp-content/themes/kadence/.+navigation\\.min\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "onetime",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.kadencewp.com/kadence-theme"
+  },
   "KISSmetrics": {
     "cats": [
       10

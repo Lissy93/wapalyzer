@@ -642,7 +642,7 @@
     "cookies": {
       "dps_site_id": ""
     },
-    "icon": "godaddy.svg",
+    "icon": "GoDaddy.svg",
     "meta": {
       "generator": "Go Daddy Website Builder (.+)\\;version:\\1"
     },
@@ -651,6 +651,56 @@
     ],
     "saas": true,
     "website": "https://www.godaddy.com/websites/website-builder"
+  },
+  "GoDaddy Lyrical": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Lyrical is a GoDaddy Primer child theme with a focus on photography and beautiful fonts.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "excludes": "GoDaddy Primer",
+    "dom": "link[href*='/wp-content/themes/lyrical/']",
+  },
+  "GoDaddy Uptown Style": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Uptown Style is a GoDaddy Primer child theme with elegance and class.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "excludes": "GoDaddy Primer",
+    "dom": "link[href*='/wp-content/themes/uptown-style/']",
+    "website": "https://github.com/godaddy-wordpress/primer-child-uptownstyle"
+  },
+  "GoDaddy Primer": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Primer is a powerful theme that brings clarity to your content in a fresh design. This is the parent for all themes in the GoDaddy Primer theme family.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/primer/']",
+    "scriptSrc": "/wp-content/themes/primer/.+navigation\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+    "website": "https://github.com/godaddy-wordpress/primer"
+  },
+  "GoDaddy Go": {
+    "cats": [
+      80
+    ],
+    "description": "GoDaddy Go is a flexible Gutenberg-first WordPress theme built for go-getters everywhere.",
+    "icon": "GoDaddy.svg",
+    "requires": "WordPress",
+    "dom": "link#go-style-css",
+    "js": {
+      "goFrontend.openMenuOnHover": ""
+    },
+    "scriptSrc": "/wp-content/themes/go/.+frontend\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "website": "https://github.com/godaddy-wordpress/go"
   },
   "GoJS": {
     "cats": [
