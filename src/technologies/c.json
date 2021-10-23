@@ -1265,6 +1265,29 @@
     "scriptSrc": "themes/colormag.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://themegrill.com/themes/colormag/"
   },
+  "Colibri WP": {
+    "cats": [
+      80,
+      51
+    ],
+    "description": "Colibri WP is a drag-and-drop WordPress website builder.",
+    "icon": "Colibri WP.png",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/plugins/colibri-page-builder']",
+    "js": {
+      "Colibri": "",
+      "colibriFrontendData": "",
+      "colibriData": ""
+    },
+    "scriptSrc": "/wp-content/plugins/colibri-page-builder.+\\.js(?:.+ver=([\\d\\.\\-\\w]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://colibriwp.com"
+  },
   "Colorlib Travelify": {
     "cats": [
       80
