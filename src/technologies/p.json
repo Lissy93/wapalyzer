@@ -1270,6 +1270,22 @@
     "website": "https://get.popmenu.com",
     "xhr": "popmenu\\.com"
   },
+  "PopularFX": {
+    "cats": [
+      80
+    ],
+    "description": "PopularFX is a fully customizable responsive WordPress theme. It comes with drag and drop page builder.",
+    "icon": "PopularFX.png",
+    "requires": "WordPress",
+    "dom": "link#popularfx-style-css",
+    "scriptSrc": "/wp-content/themes/popularfx/.+\\?ver=([\\d\\.]+)\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://popularfx.com"
+  },
   "Popper": {
     "cats": [
       19
