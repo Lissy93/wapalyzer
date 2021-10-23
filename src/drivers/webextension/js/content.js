@@ -351,11 +351,9 @@ const Content = {
 
   async analyzeRequires(url, requires) {
     await Promise.all(
-      Object.keys(requires).map(async (name) => {
+      requires.map(async ({ name, technologies }) => {
         if (!Content.analyzedRequires.includes(name)) {
           Content.analyzedRequires.push(name)
-
-          const technologies = requires[name].technologies
 
           await Promise.all([
             Content.onGetTechnologies(technologies, name),

@@ -200,7 +200,7 @@ const Driver = {
    */
   async analyzeJs(url, js, requires) {
     const technologies = requires
-      ? Wappalyzer.requires[requires].technologies
+      ? Wappalyzer.requires.find(({ name }) => name === requires).technologies
       : Wappalyzer.technologies
 
     return Driver.onDetect(
@@ -532,6 +532,10 @@ const Driver = {
     if (!url || !detections.length) {
       return
     }
+
+    Driver.log([
+      ...new Set(detections.map(({ technology }) => technology.name)),
+    ])
 
     url = url.split('#')[0]
 
@@ -920,7 +924,7 @@ const Driver = {
       const count = Object.keys(urls).length
 
       if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/ping/v2/', {
+        await Driver.post('https://api.wappalyzer.com/v2/ping/', {
           version: chrome.runtime.getManifest().version,
           urls,
         })

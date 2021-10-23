@@ -1962,6 +1962,7 @@
     "scriptSrc": "widget\\.siteminder\\.com",
     "website": "https://www.siteminder.com"
   },
+
   "Site Search 360": {
     "cats": [
       29
@@ -1977,6 +1978,20 @@
       "ss360Config": ""
     },
     "website": "https://www.sitesearch360.com/"
+  },
+  "SiteOrigin Vantage": {
+    "cats": [
+     80
+    ],
+    "description": "SiteOrigin Vantage is a response, multi-purpose theme carefully developed with seamless integration into an array of amazing third-party plugins.",
+    "icon": "SiteOrigin.svg",
+    "requires": "WordPress",
+    "dom": "style#vantage-style-css",
+    "scriptSrc": "/wp-content/themes/vantage/",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://siteorigin.com/theme/vantage"
   },
   "SiteSpect": {
     "cats": [
@@ -3045,6 +3060,95 @@
     "saas": true,
     "scriptSrc": "\\.creator-spring\\.com/",
     "website": "https://www.spri.ng"
+  },
+  "SpurIT": {
+    "cats": [
+      5
+    ],
+    "description": "SpurIT is a team of certified Shopify experts which provide ecommerce software solutions.",
+    "icon": "SpurIT.svg",
+    "requires": "Shopify",
+    "js": {
+      "Spurit.global.version": "(.+)\\;version:\\1"
+    },
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com"
+  },
+  "SpurIT Abandoned Cart Reminder": {
+    "cats": [
+      98
+    ],
+    "description": "SpurIT Abandoned Cart Reminder bring back your Shopify store visitors who moved to another tab by blinking your store tab.",
+    "icon": "SpurIT.svg",
+    "requires": "Shopify",
+    "js": {
+      "ACR_SPURIT_Params.folderCss": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/"
+    },
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com/shopify-apps/abandoned-cart-reminder/"
+  },
+  "SpurIT Recurring Payments App": {
+    "cats": [
+      41
+    ],
+    "description": "SpurIT Recurring Payments App is a simple way to create a system of bill payment,subscriptions and invoicing.",
+    "icon": "SpurIT.svg",
+    "requires": "Shopify",
+    "js": {
+      "Spurit.recurringInvoices": ""
+    },
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/recurring-invoices/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com/shopify-apps/recurring-order-subscription"
+  },
+  "SpurIT Partial Payments App": {
+    "cats": [
+      41
+    ],
+    "description": "SpurIT Partial Payments App allow your customers to pay for the order in several ways or to share a payment with other people.",
+    "icon": "SpurIT.svg",
+    "requires": "Shopify",
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/split-payments/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com/shopify-apps/split-partial-payments/"
+  },
+  "SpurIT Loyalty App": {
+    "cats": [
+      84,
+      94
+    ],
+    "description": "SpurIT Loyalty App is a turnkey solution allowing you to reward existing customers in a number of ways.",
+    "icon": "SpurIT.svg",
+    "requires": "Shopify",
+    "js": {
+      "Spurit.Loyaltypoints": ""
+    },
+    "scriptSrc": "cdn-spurit\\.com/shopify-apps/loyaltypoints/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://spur-i-t.com/shopify-apps/loyalty-points-manager"
   },
   "Spryker": {
     "cats": [

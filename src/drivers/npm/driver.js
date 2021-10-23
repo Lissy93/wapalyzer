@@ -13,8 +13,12 @@ function next() {
   return new Promise((resolve) => setImmediate(resolve))
 }
 
-const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN, CHROMIUM_DATA_DIR } =
-  process.env
+const {
+  AWS_LAMBDA_FUNCTION_NAME,
+  CHROMIUM_BIN,
+  CHROMIUM_DATA_DIR,
+  CHROMIUM_WEBSOCKET,
+} = process.env
 
 let puppeteer
 let chromiumArgs = [
@@ -342,12 +346,20 @@ class Driver {
     this.log('Launching browser...')
 
     try {
-      this.browser = await puppeteer.launch({
-        ignoreHTTPSErrors: true,
-        acceptInsecureCerts: true,
-        args: chromiumArgs,
-        executablePath: await chromiumBin,
-      })
+      if (CHROMIUM_WEBSOCKET) {
+        this.browser = await puppeteer.connect({
+          ignoreHTTPSErrors: true,
+          acceptInsecureCerts: true,
+          browserWSEndpoint: CHROMIUM_WEBSOCKET,
+        })
+      } else {
+        this.browser = await puppeteer.launch({
+          ignoreHTTPSErrors: true,
+          acceptInsecureCerts: true,
+          args: chromiumArgs,
+          executablePath: await chromiumBin,
+        })
+      }
 
       this.browser.on('disconnected', async () => {
         this.log('Browser disconnected')
@@ -1113,9 +1125,7 @@ class Site {
       )
 
       await Promise.all(
-        Object.keys(requires).map(async (name) => {
-          const technologies = Wappalyzer.requires[name].technologies
-
+        requires.map(async ({ name, technologies }) => {
           this.analyzedRequires[url.href] =
             this.analyzedRequires[url.href] || []
 

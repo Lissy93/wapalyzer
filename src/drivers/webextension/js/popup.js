@@ -517,7 +517,7 @@ const Popup = {
 
     try {
       const response = await fetch(
-        `https://api.wappalyzer.com/plus/v2/${encodeURIComponent(url)}`,
+        `https://api.wappalyzer.com/v2/plus/${encodeURIComponent(url)}`,
         {
           method: 'GET',
           headers: {

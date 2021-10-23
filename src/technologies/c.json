@@ -1265,6 +1265,91 @@
     "scriptSrc": "themes/colormag.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://themegrill.com/themes/colormag/"
   },
+  "Colibri WP": {
+    "cats": [
+      80,
+      51
+    ],
+    "description": "Colibri WP is a drag-and-drop WordPress website builder.",
+    "icon": "Colibri WP.png",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/plugins/colibri-page-builder']",
+    "js": {
+      "Colibri": "",
+      "colibriFrontendData": "",
+      "colibriData": ""
+    },
+    "scriptSrc": "/wp-content/plugins/colibri-page-builder.+\\.js(?:.+ver=([\\d\\.\\-\\w]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://colibriwp.com"
+  },
+  "Colorlib Travelify": {
+    "cats": [
+      80
+    ],
+    "description": "Colorlib Travelify is a responsive, free, travel WordPress theme.",
+    "icon": "Colorlib.png",
+    "requires": "WordPress",
+    "dom": "link#travelify-style-css",
+    "js": {
+      "travelify_slider_value": ""
+    },
+    "scriptSrc": "/wp-content/themes/travelify/",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://colorlib.com/wp/themes/travelify"
+  },
+  "Colorlib Sparkling": {
+    "cats": [
+      80
+    ],
+    "description": "Colorlib Sparkling is a clean, modern, flat design WordPress theme developed using Bootstrap.",
+    "icon": "Colorlib.png",
+    "requires": "WordPress",
+    "dom": "link#sparkling-style-css",
+    "scriptSrc": "/wp-content/themes/sparkling/",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://colorlib.com/wp/themes/sparkling"
+  },
+  "Colorlib Illdy": {
+    "cats": [
+      80
+    ],
+    "description": "Colorlib Illdy is a stunning multipurpose WordPress theme built based on Bootstrap frontend framework making it fully responsive and mobile friendly.",
+    "icon": "Colorlib.png",
+    "requires": "WordPress",
+    "dom": "link#illdy-style-css",
+    "scriptSrc": "/wp-content/themes/illdy/",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://colorlib.com/wp/themes/illdy"
+  },
+  "Colorlib Shapely": {
+    "cats": [
+      80
+    ],
+    "description": "Colorlib Shapely is considered as a powerful, clean and beautiful full-width free WordPress theme.",
+    "icon": "Colorlib.png",
+    "requires": "WordPress",
+    "dom": "link#shapely-style-css",
+    "js": {
+      "ShapelyAdminObject": ""
+    },
+    "scriptSrc": "/wp-content/themes/shapely/",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://colorlib.com/wp/themes/shapely"
+  },
   "ColorMeShop": {
     "cats": [
       6
@@ -1945,6 +2030,28 @@
     "icon": "Craft CMS.svg",
     "implies": "Craft CMS",
     "website": "https://craftcommerce.com"
+  },
+  "Cratejoy": {
+    "cats": [
+      1,
+      6
+    ],
+    "description": "Cratejoy is a brand new ecommerce platform with a focus on subscription payments.",
+    "icon": "Cratejoy.png",
+    "js": {
+      "statjoyServer": "stats\\.cratejoy\\.com"
+    },
+    "cookies": {
+      "statjoy_metrics": "",
+      "cratejoy_muffin42": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.cratejoy.com"
   },
   "Crazy Egg": {
     "cats": [
