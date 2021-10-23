@@ -660,7 +660,7 @@
     "icon": "GoDaddy.svg",
     "requires": "WordPress",
     "excludes": "GoDaddy Primer",
-    "dom": "link[href*='/wp-content/themes/uptown-style/']",
+    "dom": "link[href*='/wp-content/themes/uptown-style/']"
   },
   "GoDaddy Primer": {
     "cats": [
@@ -670,7 +670,7 @@
     "icon": "GoDaddy.svg",
     "requires": "WordPress",
     "dom": "link[href*='/wp-content/themes/primer/']",
-    "scriptSrc": "/wp-content/themes/primer/.+navigation\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1",
+    "scriptSrc": "/wp-content/themes/primer/.+navigation\\.min\\.js(?:.+ver=([\\d\\.]+))?\\;version:\\1"
   },
   "GoDaddy Go": {
     "cats": [
