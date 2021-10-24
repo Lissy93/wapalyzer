@@ -715,6 +715,24 @@
     "oss": true,
     "website": "http://expressionengine.com"
   },
+  "ExtendThemes EmpowerWP": {
+    "cats": [
+      80
+    ],
+    "description": "ExtendThemes EmpowerWP is an flexible, multipurpose WordPress theme.",
+    "icon": "ExtendThemes.svg",
+    "requires": "WordPress",
+    "excludes": "ExtendThemes Mesmerize",
+    "dom": "link[href*='/wp-content/themes/empowerwp']",
+    "scriptSrc": "/wp-content/themes/empowerwp(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://extendthemes.com/empowerwp"
+  },
   "ExtJS": {
     "cats": [
       12
