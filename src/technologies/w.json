@@ -21,6 +21,21 @@
     "scriptSrc": "w3counter\\.com/tracker\\.js",
     "website": "http://www.w3counter.com"
   },
+  "web-vitals": {
+    "cats": [
+      59,
+      78
+    ],
+    "description": "The web-vitals JavaScript is a tiny, modular library for measuring all the web vitals metrics on real users.",
+    "icon": "web-vitals.svg",
+    "scripts": "(8999999999999[\\s\\S]+1e12[\\s\\S]+(largest-contentful-paint|first-input|layout-shift)|(largest-contentful-paint|first-input|layout-shift)[\\s\\S]+8999999999999[\\s\\S]+1e12)",
+    "js": {
+      "webVitals": ""
+    },
+    "oss": true,
+    "scriptSrc": "web-vitals@([\\d.]+)/dist/web-vitals.*\\.js\\;version:\\1",
+    "website": "https://github.com/GoogleChrome/web-vitals"
+  },
   "WEBDEV": {
     "cats": [
       20
