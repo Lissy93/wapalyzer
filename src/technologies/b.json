@@ -472,6 +472,27 @@
     ],
     "website": "https://putyourlightson.com/plugins/blitz"
   },
+  "Blocksy": {
+    "cats": [
+      80
+    ],
+    "description": "Blocksy is a blazing fast and lightweight WordPress theme.",
+    "icon": "Blocksy.svg",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/blocksy/']",
+    "js": {
+      "blocksyJsonP": "",
+      "blocksyResponsiveMenuCache": ""
+    },
+    "scriptSrc": "/wp-content/themes/blocksy/(?:.+main\\.js(?:\\?ver=([\\d\\.]+)))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://creativethemes.com/blocksy"
+  },
   "Blogger": {
     "cats": [
       11
