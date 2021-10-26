@@ -502,6 +502,22 @@
     "icon": "Erlang.png",
     "website": "http://www.erlang.org"
   },
+  "Errorception": {
+    "cats": [
+     10
+    ],
+    "description": "Errorception is a error reporting service for client-side in-browser JavaScript errors.",
+    "icon": "Errorception.png",
+    "js": {
+      "_errs": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://errorception.com"
+  },
   "Essent SiteBuilder Pro": {
     "cats": [
       1,
@@ -730,8 +746,37 @@
       "low",
       "recurring",
       "onetime"
-    ],
+    ],    
     "website": "https://extendthemes.com/empowerwp"
+  }
+  "ExtendThemes Highlight": {
+    "cats": [
+      80
+    ],
+    "description": "ExtendThemes Highlight is an flexible, multipurpose WordPress theme.",
+    "icon": "ExtendThemes.svg",
+    "requires": "WordPress",
+    "excludes": "ExtendThemes Mesmerize",
+    "dom": "link[href*='/wp-content/themes/highlight/'], link[href*='/wp-content/themes/highlight-pro/']",
+    "scriptSrc": "/wp-content/themes/highlight(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://extendthemes.com/highlight"
+  },
+  "ExtendThemes Calliope": {
+    "cats": [
+      80
+    ],
+    "description": "ExtendThemes Calliope is an flexible, multipurpose WordPress child theme of Colibri WP.",
+    "icon": "ExtendThemes.svg",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/calliope/']",
+    "scriptSrc": "/wp-content/themes/calliope/",
+    "website": "https://wordpress.org/themes/calliope"
   },
   "ExtJS": {
     "cats": [
@@ -1029,5 +1074,33 @@
       "generator": "^experiencedCMS$"
     },
     "website": "https://experiencedcms.berkearas.de"
+  },
+  "ElasticSuite": {
+    "cats": [
+      6,
+      29
+    ],
+    "cookies": {
+      "STUID": "\\;confidence:50",
+      "STVID": "\\;confidence:50"
+    },
+    "html": [
+      "<input [^>]*Smile_Elasticsuite[^>]*>",
+      "<input [\\S\\s]*[^>]*(Smile_Elasticsuite)[\\S\\s]*",
+      "<[\\S\\s]*(.*)Smile_Elasticsuite(.*)[\\S\\s]"
+    ],
+    "js": {
+      "smileTracker": ""
+    },
+    "oss": true,
+    "scriptSrc": [
+      "Smile_ElasticsuiteTracker/js/tracking\\.js"
+    ],
+    "icon": "elasticsuite.svg",
+    "implies": [
+      "PHP",
+      "Elasticsearch"
+    ],
+    "website": "https://elasticsuite.io"
   }
 }

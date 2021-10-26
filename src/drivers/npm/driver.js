@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-text-content */
 const { URL } = require('url')
 const fs = require('fs')
 const dns = require('dns').promises
@@ -692,6 +693,7 @@ class Site {
       }
 
       let links = []
+      let text = ''
       let css = ''
       let scriptSrc = []
       let scripts = []
@@ -725,6 +727,21 @@ class Site {
               [],
               'Timeout (links)'
             )
+
+        // Text
+        text = await this.promiseTimeout(
+          (
+            await this.promiseTimeout(
+              page.evaluateHandle(() =>
+                document.body.innerText.replace(/\s+/g, ' ')
+              ),
+              { jsonValue: () => '' },
+              'Timeout (text)'
+            )
+          ).jsonValue(),
+          '',
+          'Timeout (text)'
+        )
 
         // CSS
         css = await this.promiseTimeout(
@@ -829,6 +846,7 @@ class Site {
       this.cache[url.href] = {
         page,
         html,
+        text,
         cookies,
         scripts,
         scriptSrc,
@@ -845,6 +863,7 @@ class Site {
               url,
               cookies,
               html,
+              text,
               css,
               scripts,
               scriptSrc,
@@ -1120,19 +1139,30 @@ class Site {
     if (this.cache[url.href]) {
       const resolved = resolve(this.detections)
 
-      const requires = Wappalyzer.requires.filter(({ name, technologies }) =>
-        resolved.some(({ name: _name }) => _name === name)
-      )
+      const requires = [
+        ...Wappalyzer.requires.filter(({ name }) =>
+          resolved.some(({ name: _name }) => _name === name)
+        ),
+        ...Wappalyzer.categoryRequires.filter(({ categoryId }) =>
+          resolved.some(({ categories }) =>
+            categories.some(({ id }) => id === categoryId)
+          )
+        ),
+      ]
 
       await Promise.all(
-        requires.map(async ({ name, technologies }) => {
+        requires.map(async ({ name, categoryId, technologies }) => {
+          const id = categoryId
+            ? `category:${categoryId}`
+            : `technology:${name}`
+
           this.analyzedRequires[url.href] =
             this.analyzedRequires[url.href] || []
 
-          if (!this.analyzedRequires[url.href].includes(name)) {
-            this.analyzedRequires[url.href].push(name)
+          if (!this.analyzedRequires[url.href].includes(id)) {
+            this.analyzedRequires[url.href].push(id)
 
-            const { page, cookies, html, css, scripts, scriptSrc, meta } =
+            const { page, cookies, html, text, css, scripts, scriptSrc, meta } =
               this.cache[url.href]
 
             const js = await this.promiseTimeout(
@@ -1157,6 +1187,7 @@ class Site {
                       url,
                       cookies,
                       html,
+                      text,
                       css,
                       scripts,
                       scriptSrc,

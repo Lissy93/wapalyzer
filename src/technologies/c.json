@@ -1655,6 +1655,21 @@
     "website": "http://www.contentful.com",
     "xhr": "cdn\\.contentful\\.com"
   },
+  "Contently": {
+    "cats": [
+      96
+    ],
+    "description": "Contently is a SaaS content marketing platform from the company of the same name headquartered in New York.",
+    "icon": "Contently.png",
+    "js": {
+      "_contently.siteId": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://contently.com"
+  },
   "Contentstack": {
     "cats": [
       1
@@ -1897,6 +1912,15 @@
     "icon": "Coppermine.png",
     "implies": "PHP",
     "website": "http://coppermine-gallery.net"
+  },
+  "CopyPoison": {
+    "cats": [
+      19
+    ],
+    "description": "Copypoison is a plagarism protection tool that protects content by replacing text with symbols that are visually similar.",
+    "icon": "Copypoison.png",
+    "scriptSrc": "copypoison\\.com/cp\\.js",
+    "website": "https://copypoison.com/"
   },
   "Corebine": {
     "cats": [
@@ -2259,6 +2283,22 @@
     "saas": true,
     "scriptSrc": "(?:cdn|app)\\.customily\\.com/",
     "website": "https://www.customily.com"
+  },
+  "CyberChimps Responsive": {
+    "cats": [
+      80
+    ],
+    "description": "CyberChimps Responsive is a modern, lightweight, fully customizable, fast and responsive WordPress theme.",
+    "icon": "CyberChimps.png",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/responsive/'], link[href*='/wp-content/themes/responsivepro/']",
+    "scriptSrc": "/wp-content/themes/responsive(?:pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://cyberchimps.com/responsive"
   },
   "Cybersource": {
     "cats": [
