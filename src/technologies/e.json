@@ -1011,5 +1011,33 @@
       "generator": "^experiencedCMS$"
     },
     "website": "https://experiencedcms.berkearas.de"
+  },
+  "ElasticSuite": {
+    "cats": [
+      6,
+      29
+    ],
+    "cookies": {
+      "STUID": "\\;confidence:50",
+      "STVID": "\\;confidence:50"
+    },
+    "html": [
+      "<input [^>]*Smile_Elasticsuite[^>]*>",
+      "<input [\\S\\s]*[^>]*(Smile_Elasticsuite)[\\S\\s]*",
+      "<[\\S\\s]*(.*)Smile_Elasticsuite(.*)[\\S\\s]"
+    ],
+    "js": {
+      "smileTracker": ""
+    },
+    "oss": true,
+    "scriptSrc": [
+      "Smile_ElasticsuiteTracker/js/tracking\\.js"
+    ],
+    "icon": "elasticsuite.svg",
+    "implies": [
+      "PHP",
+      "Elasticsearch"
+    ],
+    "website": "https://elasticsuite.io"
   }
 }
