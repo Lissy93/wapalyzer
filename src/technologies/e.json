@@ -731,6 +731,28 @@
     "oss": true,
     "website": "http://expressionengine.com"
   },
+  "ExtendThemes Materialis": {
+    "cats": [
+      80
+    ],
+    "description": "ExtendThemes Materialis is an flexible, multipurpose WordPress theme.",
+    "icon": "ExtendThemes.svg",
+    "requires": "WordPress",
+    "dom": "link#materialis-style-css",
+    "js": {
+      "MaterialisTheme": "",
+      "materialisSetHeaderTopSpacing": "",
+      "materialis_theme_pro_settings": ""
+    },
+    "scriptSrc": "/wp-content/themes/materialis(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://extendthemes.com/materialis"    
+  },
   "ExtendThemes EmpowerWP": {
     "cats": [
       80
