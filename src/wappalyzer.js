@@ -12,6 +12,7 @@ const Wappalyzer = {
   technologies: [],
   categories: [],
   requires: [],
+  categoryRequires: [],
 
   slugify: (string) =>
     string
@@ -24,6 +25,9 @@ const Wappalyzer = {
     [
       ...Wappalyzer.technologies,
       ...Wappalyzer.requires.map(({ technologies }) => technologies).flat(),
+      ...Wappalyzer.categoryRequires
+        .map(({ technologies }) => technologies)
+        .flat(),
     ].find(({ name: _name }) => name === _name),
 
   getCategory: (id) => Wappalyzer.categories.find(({ id: _id }) => id === _id),
@@ -205,6 +209,7 @@ const Wappalyzer = {
       url,
       xhr,
       html,
+      text,
       scripts,
       css,
       robots,
@@ -234,6 +239,7 @@ const Wappalyzer = {
               oo(technology, 'url', url),
               oo(technology, 'xhr', xhr),
               oo(technology, 'html', html),
+              oo(technology, 'text', text),
               oo(technology, 'scripts', scripts),
               oo(technology, 'css', css),
               oo(technology, 'robots', robots),
@@ -269,6 +275,7 @@ const Wappalyzer = {
         xhr,
         dom,
         html,
+        text,
         scripts,
         css,
         robots,
@@ -283,6 +290,7 @@ const Wappalyzer = {
         implies,
         excludes,
         requires,
+        requiresCategory,
         icon,
         website,
         cpe,
@@ -311,6 +319,7 @@ const Wappalyzer = {
           false
         ),
         html: transform(html),
+        text: transform(text),
         scripts: transform(scripts),
         css: transform(css),
         certIssuer: transform(certIssuer),
@@ -328,6 +337,9 @@ const Wappalyzer = {
         })),
         requires: transform(requires).map(({ value }) => ({
           name: value,
+        })),
+        requiresCategory: transform(requiresCategory).map(({ value }) => ({
+          id: value,
         })),
         icon: icon || 'default.svg',
         website: website || null,
@@ -356,8 +368,27 @@ const Wappalyzer = {
       technologies: Wappalyzer.requires[name],
     }))
 
+    Wappalyzer.technologies
+      .filter(({ requiresCategory }) => requiresCategory.length)
+      .forEach((technology) =>
+        technology.requiresCategory.forEach(({ id }) => {
+          Wappalyzer.categoryRequires[id] =
+            Wappalyzer.categoryRequires[id] || []
+
+          Wappalyzer.categoryRequires[id].push(technology)
+        })
+      )
+
+    Wappalyzer.categoryRequires = Object.keys(Wappalyzer.categoryRequires).map(
+      (id) => ({
+        categoryId: parseInt(id, 10),
+        technologies: Wappalyzer.categoryRequires[id],
+      })
+    )
+
     Wappalyzer.technologies = Wappalyzer.technologies.filter(
-      ({ requires }) => !requires.length
+      ({ requires, requiresCategory }) =>
+        !requires.length && !requiresCategory.length
     )
   },
 
@@ -391,7 +422,11 @@ const Wappalyzer = {
       return []
     }
 
-    if (typeof patterns === 'string' || Array.isArray(patterns)) {
+    if (
+      typeof patterns === 'string' ||
+      typeof patterns === 'number' ||
+      Array.isArray(patterns)
+    ) {
       patterns = { main: patterns }
     }
 
@@ -421,6 +456,7 @@ const Wappalyzer = {
       )
     } else {
       const { value, regex, confidence, version } = pattern
+        .toString()
         .split('\\;')
         .reduce((attrs, attr, i) => {
           if (i) {
@@ -431,7 +467,7 @@ const Wappalyzer = {
               attrs[attr.shift()] = attr.join(':')
             }
           } else {
-            attrs.value = attr
+            attrs.value = typeof pattern === 'number' ? pattern : attr
 
             // Escape slashes in regular expression
             attrs.regex = new RegExp(
