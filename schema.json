@@ -113,6 +113,19 @@
           }
         ]
       },
+      "text": {
+        "oneOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/non-empty-non-blank-string"
+            }
+          },
+          {
+            "$ref": "#/definitions/non-empty-non-blank-string"
+          }
+        ]
+      },
       "css": {
         "oneOf": [
           {
@@ -201,6 +214,19 @@
           },
           {
             "$ref": "#/definitions/non-empty-non-blank-string"
+          }
+        ]
+      },
+      "requiresCategory": {
+        "oneOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          {
+            "type": "number"
           }
         ]
       },

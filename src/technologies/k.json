@@ -32,6 +32,22 @@
     ],
     "website": "https://www.kadencewp.com/kadence-theme"
   },
+  "Kadence WP Virtue": {
+    "cats": [
+      80
+    ],
+    "description": "Kadence WP Virtue is a multipurpose WordPress theme that is available for free download and also offers a pro version.",
+    "icon": "Kadence WP.svg",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/virtue/']",
+    "scriptSrc": "/wp-content/themes/virtue/.+main-min\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.kadencewp.com/product/virtue-free-theme"
+  },
   "KISSmetrics": {
     "cats": [
       10
