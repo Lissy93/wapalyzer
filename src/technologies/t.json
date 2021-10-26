@@ -666,7 +666,30 @@
     "requires": "WordPress",
     "dom": "link#colormag_style-css",
     "scriptSrc": "/wp-content/themes/colormag(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
     "website": "https://themegrill.com/themes/colormag"
+  },
+  "ThemeGrill Flash": {
+    "cats": [
+      80
+    ],
+    "description": "ThemeGrill Flash is one of the most flexible multipurpose WordPress themes.",
+    "icon": "ThemeGrill.png",
+    "requires": "WordPress",
+    "dom": "link[href='/wp-content/themes/flash']",
+    "scriptSrc": "/wp-content/themes/flash(?:-pro)?/",
+      "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],  
+    "website": "https://themegrill.com/themes/flash"
   },
   "ThemeGrill Radiate": {
     "cats": [
