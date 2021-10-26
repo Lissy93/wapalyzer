@@ -1175,5 +1175,22 @@
     "icon": "futureshop.png",
     "scriptSrc": "future-shop.*\\.js",
     "website": "https://www.future-shop.jp"
+  },
+  "Futurio": {
+    "cats": [
+      80
+    ],
+    "description": "Futurio is a lightweight and customizable multi-purpose and WooCommerce WordPress theme.",
+    "icon": "Futurio.png",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/futurio/']",
+    "scriptSrc": "/wp-content/themes/futurio/.+customscript\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://futuriowp.com"
   }
 }

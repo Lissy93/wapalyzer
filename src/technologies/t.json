@@ -623,6 +623,40 @@
     ],
     "website": "http://thelia.net"
   },
+  "ThemeGrill Accelerate": {
+    "cats": [
+      80
+    ],
+    "description": "ThemeGrill Accelerate is free minimal WordPress theme.",
+    "icon": "ThemeGrill.png",
+    "requires": "WordPress",
+    "dom": "link#accelerate_style-css",
+    "scriptSrc": "/wp-content/themes/accelerate(?:-pro)?/",
+        "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://themegrill.com/themes/accelerate"
+  },
+  "ThemeGrill Cenote": {
+    "cats": [
+      80
+    ],
+    "description": "ThemeGrill Cenote is a creative blogging WordPress theme, fully compatible with WooCommerce and popular page builders.",
+    "icon": "ThemeGrill.png",
+    "requires": "WordPress",
+    "dom": "link[href*='/wp-content/themes/cenote/'], link[href*='/wp-content/themes/cenote-pro/']",
+    "scriptSrc": "/wp-content/themes/cenote(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://themegrill.com/themes/cenote"
+  },
   "ThemeGrill ColorMag": {
     "cats": [
       80
@@ -649,13 +683,33 @@
     "requires": "WordPress",
     "dom": "link[href='/wp-content/themes/flash']",
     "scriptSrc": "/wp-content/themes/flash(?:-pro)?/",
+      "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],  
+    "website": "https://themegrill.com/themes/flash"
+  },
+  "ThemeGrill Radiate": {
+    "cats": [
+      80
+    ],
+    "description": "ThemeGrill Radiate is a simple and minimal WordPress theme focused on blogging.",
+    "icon": "ThemeGrill.png",
+    "requires": "WordPress",
+    "dom": "link#radiate-style-css",
+    "js": {
+      "radiateScriptParam": ""
+    },
+    "scriptSrc": "/wp-content/themes/radiate(?:-pro)?/",
     "pricing": [
       "freemium",
       "low",
       "recurring",
       "onetime"
     ],
-    "website": "https://themegrill.com/themes/flash"
+    "website": "https://themegrill.com/themes/radiate"
   },
   "ThemeGrill Spacious": {
     "cats": [
@@ -701,6 +755,21 @@
     "icon": "ThinkPHP.png",
     "implies": "PHP",
     "website": "http://www.thinkphp.cn"
+  },
+  "Think Up Themes Consulting": {
+    "cats": [
+      80
+    ],
+    "description": "Think Up Themes Consulting is a multipurpose WordPress theme that is available for free download and also offers a pro version.",
+    "icon": "Think Up Themes.png",
+    "requires": "WordPress",
+    "dom": "link#consulting-style-css",
+    "scriptSrc": "/wp-content/themes/consulting(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "website": "https://www.thinkupthemes.com/themes/consulting"
   },
   "Thinkific": {
     "cats": [

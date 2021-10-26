@@ -375,6 +375,21 @@
     "scriptSrc": "api\\.salesreps\\.io/",
     "website": "https://salesreps.io"
   },
+  "Salonist": {
+    "cats": [
+      72
+    ],
+    "description": "Salonist is a salon management software.",
+    "icon": "Salonist.png",
+    "dom": "iframe[src*='.salonist.io/'], a[href*='.salonist.io/'][target='_blank']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://salonist.io"
+  },
   "Salesfloor": {
     "cats": [
       5,
@@ -1340,6 +1355,9 @@
       }
     },
     "icon": "Shopify.svg",
+    "js": {
+      "ShopifyPay.apiHost": ""
+    },
     "scriptSrc": [
       "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
     ],
@@ -3629,6 +3647,22 @@
     ],
     "website": "https://stylitics.com"
   },
+  "Sub2Tech": {
+    "cats": [
+      97
+    ],
+    "description": "Sub2Tech is combining real time customer data with industry-leading technology.",
+    "icon": "Sub2Tech.png",
+    "js": {
+      "SUB2.codebaseversion": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scriptSrc": "cdn\\.sub2tech\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.sub2tech.com"
+  },
   "Subbly": {
     "cats": [
       6
@@ -3907,26 +3941,6 @@
     },
     "scriptSrc": "swiper(?:\\.min)?\\.js",
     "website": "https://swiperjs.com"
-  },
-  "Sydney": {
-    "cats": [
-      80
-    ],
-    "description": "Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an online presence. Built by aThemes.",
-    "dom": {
-      "body[class*='sydney-theme']": {
-        "text": ""
-      },
-      "link[id*='sydney']": {
-        "attributes": {
-          "href": "sydney\\S*\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1"
-        }
-      }
-    },
-    "icon": "athemes.png",
-    "requires": "WordPress",
-    "scriptSrc": "themes/sydney\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
-    "website": "https://athemes.com/theme/sydney/"
   },
   "Sylius": {
     "cats": [
