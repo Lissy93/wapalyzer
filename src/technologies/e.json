@@ -731,6 +731,24 @@
     "oss": true,
     "website": "http://expressionengine.com"
   },
+  "ExtendThemes Highlight": {
+    "cats": [
+      80
+    ],
+    "description": "ExtendThemes Highlight is an flexible, multipurpose WordPress theme.",
+    "icon": "ExtendThemes.svg",
+    "requires": "WordPress",
+    "excludes": "ExtendThemes Mesmerize",
+    "dom": "link[href*='/wp-content/themes/highlight/'], link[href*='/wp-content/themes/highlight-pro/']",
+    "scriptSrc": "/wp-content/themes/highlight(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://extendthemes.com/highlight"
+  },
   "ExtendThemes Calliope": {
     "cats": [
       80
