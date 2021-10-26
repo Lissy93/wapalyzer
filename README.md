@@ -91,6 +91,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
     "X-Powered-By": "Example"
   },
   "html": "<link[^>]example\\.css",
+  "text": "\bexample\b",
   "css": "\\.example-class",
   "robots": "Disallow: /unique-path/",
   "implies": "PHP\\;confidence:50",
@@ -342,6 +343,14 @@ Plus any of:
         <code>dom</code> instead.
       </td>
       <td><code>"&lt;a [^&gt;]*href=\"index.html"</code></td>
+    </tr>
+    <tr>
+      <td><code>text</code></td>
+      <td>String | Array</td>
+      <td>
+        Matches plain text. Should only be used in very specific cases where other methods can't be used.
+      </td>
+      <td><code>\bexample\b</code></td>
     </tr>
     <tr>
       <td><code>css</code></td>

@@ -239,7 +239,8 @@
     "description": "AccessTrade is an affiliate marketing platform based on the CPA model developed by Interspace Co.",
     "dom": "img[src*='.accesstrade.net'],img[data-src*='.accesstrade.net']",
     "icon": "AccessTrade.png",
-    "website": "https://www.accesstrade.ne.jp"
+    "scriptSrc": ["accesstrade\\.net/js/", "click\\.accesstra\\.de/js/nct/lp\\.js"],
+    "website": "https://accesstrade.global/"
   },
   "AccessiBe": {
     "cats": [
@@ -1741,7 +1742,7 @@
     "saas": true,
     "scriptSrc": [
       "/amazonpayments(?:\\.min)?\\.js",
-      "\\.payments-amazon\\.com/OffAmazonPayments"
+      "\\.payments-amazon\\.com/"
     ],
     "website": "https://pay.amazon.com",
     "xhr": "payments\\.amazon\\.com"
@@ -2541,6 +2542,23 @@
       "recurring"
     ],
     "website": "https://athemes.com/theme/airi"
+  },
+  "aThemes Sydney": {
+    "cats": [
+      80
+    ],
+    "description": "aThemes Sydney is a powerful business WordPress theme that provides a fast way for companies or freelancers to create an online presence.",
+    "icon": "aThemes.svg",
+    "requires": "WordPress",
+    "dom": "link#sydney-style-css",
+    "scriptSrc": "/wp-content/themes/sydney(?:-pro-ii)?/",
+    "pricing": [
+      "low",
+      "recurring",
+      "onetime",
+      "freemium"
+    ],
+    "website": "https://athemes.com/theme/sydney"
   },
   "Athena Search": {
     "cats": [
