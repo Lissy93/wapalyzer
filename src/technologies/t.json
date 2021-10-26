@@ -674,6 +674,26 @@
     ],
     "website": "https://themegrill.com/themes/colormag"
   },
+  "ThemeGrill eStore": {
+    "cats": [
+      80
+    ],
+    "description": "ThemeGrill eStore is one of the most popular WooCommerce integrated WordPress themes.",
+    "icon": "ThemeGrill.png",
+    "requires": "WordPress",
+    "implies": "Cart Functionality",
+    "meta": {
+      "generator": "eStore v\\.([\\d\\.]+)\\;version:\\1"
+    },
+    "scriptSrc": "/wp-content/themes/e(?:s|S)tore(?:-pro)?/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"      
+    ],
+    "website": "https://themegrill.com/themes/estore"
+  },
   "ThemeGrill Flash": {
     "cats": [
       80
@@ -688,7 +708,7 @@
       "low",
       "recurring",
       "onetime"
-    ],  
+     ],
     "website": "https://themegrill.com/themes/flash"
   },
   "ThemeGrill Radiate": {
