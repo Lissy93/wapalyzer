@@ -533,7 +533,7 @@
   },
   "Errorception": {
     "cats": [
-     10
+      10
     ],
     "description": "Errorception is a error reporting service for client-side in-browser JavaScript errors.",
     "icon": "Errorception.png",
@@ -803,7 +803,7 @@
       "recurring",
       "onetime"
     ],
-    "website": "https://extendthemes.com/materialis"    
+    "website": "https://extendthemes.com/materialis"
   },
   "ExtendThemes EmpowerWP": {
     "cats": [
@@ -820,7 +820,7 @@
       "low",
       "recurring",
       "onetime"
-    ],    
+    ],
     "website": "https://extendthemes.com/empowerwp"
   },
   "ExtendThemes Highlight": {
@@ -1148,5 +1148,28 @@
       "generator": "^experiencedCMS$"
     },
     "website": "https://experiencedcms.berkearas.de"
+  },
+  "ElasticSuite": {
+    "cats": [
+      6,
+      29
+    ],
+    "cookies": {
+      "STUID": "\\;confidence:50",
+      "STVID": "\\;confidence:50"
+    },
+    "js": {
+      "smileTracker": ""
+    },
+    "oss": true,
+    "scriptSrc": [
+      "Smile_ElasticsuiteTracker/js/tracking\\.js"
+    ],
+    "icon": "elasticsuite.svg",
+    "implies": [
+      "PHP",
+      "Elasticsearch"
+    ],
+    "website": "https://elasticsuite.io"
   }
 }
