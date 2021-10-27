@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-text-content */
 const { URL } = require('url')
 const fs = require('fs')
 const dns = require('dns').promises
@@ -733,6 +732,7 @@ class Site {
           (
             await this.promiseTimeout(
               page.evaluateHandle(() =>
+                // eslint-disable-next-line unicorn/prefer-text-content
                 document.body.innerText.replace(/\s+/g, ' ')
               ),
               { jsonValue: () => '' },

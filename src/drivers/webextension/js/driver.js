@@ -21,6 +21,16 @@ const xhrDebounce = []
 
 const scriptsPending = []
 
+function getRequiredTechnologies(name, categoryId) {
+  return name
+    ? Wappalyzer.requires.find(({ name: _name }) => _name === name).technologies
+    : categoryId
+    ? Wappalyzer.categoryRequires.find(
+        ({ categoryId: _categoryId }) => _categoryId === categoryId
+      ).technologies
+    : undefined
+}
+
 const Driver = {
   lastPing: Date.now(),
 
@@ -198,10 +208,8 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  async analyzeJs(url, js, requires) {
-    const technologies = requires
-      ? Wappalyzer.requires.find(({ name }) => name === requires).technologies
-      : Wappalyzer.technologies
+  async analyzeJs(url, js, requires, categoryRequires) {
+    const technologies = getRequiredTechnologies(requires, categoryRequires)
 
     return Driver.onDetect(
       url,
@@ -227,10 +235,8 @@ const Driver = {
    * @param {String} url
    * @param {Array} dom
    */
-  async analyzeDom(url, dom, requires) {
-    const technologies = requires
-      ? Wappalyzer.requires[requires].technologies
-      : Wappalyzer.technologies
+  async analyzeDom(url, dom, requires, categoryRequires) {
+    const technologies = getRequiredTechnologies(requires, categoryRequires)
 
     return Driver.onDetect(
       url,
@@ -468,7 +474,7 @@ const Driver = {
    * @param {Object} items
    * @param {String} language
    */
-  async onContentLoad(url, items, language, requires) {
+  async onContentLoad(url, items, language, requires, categoryRequires) {
     try {
       items.cookies = items.cookies || {}
 
@@ -481,12 +487,11 @@ const Driver = {
         ({ name, value }) => (items.cookies[name.toLowerCase()] = [value])
       )
 
+      const technologies = getRequiredTechnologies(requires, categoryRequires)
+
       await Driver.onDetect(
         url,
-        await analyze(
-          { url, ...items },
-          requires ? Wappalyzer.requires[requires].technologies : undefined
-        ),
+        await analyze({ url, ...items }, technologies),
         language,
         true
       )
@@ -532,10 +537,6 @@ const Driver = {
     if (!url || !detections.length) {
       return
     }
-
-    Driver.log([
-      ...new Set(detections.map(({ technology }) => technology.name)),
-    ])
 
     url = url.split('#')[0]
 
@@ -632,9 +633,16 @@ const Driver = {
       return detection
     })
 
-    const requires = Wappalyzer.requires.filter(({ name, technologies }) =>
-      resolved.some(({ name: _name }) => _name === name)
-    )
+    const requires = [
+      ...Wappalyzer.requires.filter(({ name }) =>
+        resolved.some(({ name: _name }) => _name === name)
+      ),
+      ...Wappalyzer.categoryRequires.filter(({ categoryId }) =>
+        resolved.some(({ categories }) =>
+          categories.some(({ id }) => id === categoryId)
+        )
+      ),
+    ]
 
     try {
       await Driver.content(url, 'analyzeRequires', [url, requires])

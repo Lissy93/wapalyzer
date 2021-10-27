@@ -176,6 +176,10 @@ const Content = {
         {}
       )
 
+      // Text
+      // eslint-disable-next-line unicorn/prefer-text-content
+      const text = document.body.innerText.replace(/\s+/g, ' ')
+
       // CSS rules
       let css = []
 
@@ -269,7 +273,7 @@ const Content = {
         }
       }
 
-      Content.cache = { html, css, scriptSrc, scripts, meta, cookies }
+      Content.cache = { html, text, css, scriptSrc, scripts, meta, cookies }
 
       await Content.driver('onContentLoad', [
         url,
@@ -351,17 +355,20 @@ const Content = {
 
   async analyzeRequires(url, requires) {
     await Promise.all(
-      requires.map(async ({ name, technologies }) => {
-        if (!Content.analyzedRequires.includes(name)) {
-          Content.analyzedRequires.push(name)
+      requires.map(async ({ name, categoryId, technologies }) => {
+        const id = categoryId ? `category:${categoryId}` : `technology:${name}`
+
+        if (!Content.analyzedRequires.includes(id)) {
+          Content.analyzedRequires.push(id)
 
           await Promise.all([
-            Content.onGetTechnologies(technologies, name),
+            Content.onGetTechnologies(technologies, name, categoryId),
             Content.driver('onContentLoad', [
               url,
               Content.cache,
               Content.language,
               name,
+              categoryId,
             ]),
           ])
         }
@@ -373,15 +380,15 @@ const Content = {
    * Callback for getTechnologies
    * @param {Array} technologies
    */
-  async onGetTechnologies(technologies = [], requires) {
+  async onGetTechnologies(technologies = [], requires, categoryRequires) {
     const url = location.href
 
     const js = await getJs(technologies)
     const dom = await getDom(technologies)
 
     await Promise.all([
-      Content.driver('analyzeJs', [url, js, requires]),
-      Content.driver('analyzeDom', [url, dom, requires]),
+      Content.driver('analyzeJs', [url, js, requires, categoryRequires]),
+      Content.driver('analyzeDom', [url, dom, requires, categoryRequires]),
     ])
   },
 }
