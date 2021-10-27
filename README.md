@@ -96,6 +96,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
   "robots": "Disallow: /unique-path/",
   "implies": "PHP\\;confidence:50",
   "requires": "WordPress",
+  "requiresCategory": "Ecommerce",
   "meta": {
     "generator": "(?:Example|Another Example)"
   },
@@ -256,7 +257,15 @@ Plus any of:
       <td>
         Similar to implies but detection only runs if the required technology has been identified. Useful for themes for a specific CMS. 
       </td>
-      <td><code>"WordPres"</code></td>
+      <td><code>"WordPress"</code></td>
+    </tr>   
+    <tr>
+      <td><code>requiresCategory</code></td>
+      <td>String | Array</td>
+      <td>
+        Similar to requires; detection only runs if a technology in the required category has been identified.
+      </td>
+      <td><code>"Ecommerce"</code></td>
     </tr>   
     <tr>
       <td><code>excludes</code></td>
