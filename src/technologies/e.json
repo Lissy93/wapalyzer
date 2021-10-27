@@ -215,11 +215,15 @@
     "cats": [
       29
     ],
-    "description": "ElasticSuite is a merchandising suite for Magento and ORO Commerce.",
+    "description": "ElasticSuite is a merchandising suite for Magento and OroCommerce.",
     "icon": "ElasticSuite.svg",
     "implies": [
       "PHP",
       "Elasticsearch"
+    ],
+    "requires": [
+      "OroCommerce",
+      "Magento"
     ],
     "cookies": {
       "STUID": "\\;confidence:50",
