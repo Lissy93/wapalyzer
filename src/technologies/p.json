@@ -186,7 +186,14 @@
     ],
     "description": "PageFly is an app for Shopify that allows you to build landing pages, product pages, blogs, and FAQs.",
     "icon": "pagefly.png",
-    "scriptSrc": "pagefly\\.io",
+    "scriptSrc": "cdn\\.pagefly\\.io",
+    "js": {
+      "__pagefly_setting__": ""
+    },
+    "headers": {
+      "X-Powered-By": "PageFly"
+    },
+    "saas": true,
     "website": "https://pagefly.io"
   },
   "Pagekit": {

@@ -211,6 +211,35 @@
     "icon": "Elasticsearch.svg",
     "website": "https://www.elastic.co"
   },
+  "ElasticSuite": {
+    "cats": [
+      29
+    ],
+    "description": "ElasticSuite is a merchandising suite for Magento and OroCommerce.",
+    "icon": "ElasticSuite.svg",
+    "implies": [
+      "PHP",
+      "Elasticsearch"
+    ],
+    "requires": [
+      "OroCommerce",
+      "Magento"
+    ],
+    "cookies": {
+      "STUID": "\\;confidence:50",
+      "STVID": "\\;confidence:50"
+    },
+    "js": {
+      "smileTracker": ""
+    },
+    "scriptSrc": "Smile_ElasticsuiteTracker/js/tracking\\.js",
+    "oss": true,
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://elasticsuite.io"
+  },
   "Elcodi": {
     "cats": [
       6
