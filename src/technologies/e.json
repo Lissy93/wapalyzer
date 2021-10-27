@@ -211,6 +211,35 @@
     "icon": "Elasticsearch.svg",
     "website": "https://www.elastic.co"
   },
+  "ElasticSuite": {
+    "cats": [
+      29
+    ],
+    "description": "ElasticSuite is a merchandising suite for Magento and OroCommerce.",
+    "icon": "ElasticSuite.svg",
+    "implies": [
+      "PHP",
+      "Elasticsearch"
+    ],
+    "requires": [
+      "OroCommerce",
+      "Magento"
+    ],
+    "cookies": {
+      "STUID": "\\;confidence:50",
+      "STVID": "\\;confidence:50"
+    },
+    "js": {
+      "smileTracker": ""
+    },
+    "scriptSrc": "Smile_ElasticsuiteTracker/js/tracking\\.js",
+    "oss": true,
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://elasticsuite.io"
+  },
   "Elcodi": {
     "cats": [
       6
@@ -793,7 +822,7 @@
       "onetime"
     ],    
     "website": "https://extendthemes.com/empowerwp"
-  }
+  },
   "ExtendThemes Highlight": {
     "cats": [
       80
@@ -1119,33 +1148,5 @@
       "generator": "^experiencedCMS$"
     },
     "website": "https://experiencedcms.berkearas.de"
-  },
-  "ElasticSuite": {
-    "cats": [
-      6,
-      29
-    ],
-    "cookies": {
-      "STUID": "\\;confidence:50",
-      "STVID": "\\;confidence:50"
-    },
-    "html": [
-      "<input [^>]*Smile_Elasticsuite[^>]*>",
-      "<input [\\S\\s]*[^>]*(Smile_Elasticsuite)[\\S\\s]*",
-      "<[\\S\\s]*(.*)Smile_Elasticsuite(.*)[\\S\\s]"
-    ],
-    "js": {
-      "smileTracker": ""
-    },
-    "oss": true,
-    "scriptSrc": [
-      "Smile_ElasticsuiteTracker/js/tracking\\.js"
-    ],
-    "icon": "elasticsuite.svg",
-    "implies": [
-      "PHP",
-      "Elasticsearch"
-    ],
-    "website": "https://elasticsuite.io"
   }
 }
