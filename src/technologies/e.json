@@ -232,9 +232,12 @@
     "js": {
       "smileTracker": ""
     },
+    "html": [
+      "<input [^>]*Smile_Elasticsuite[^>]*>",
+      "<[\\S\\s.*]*Smile_Elasticsuite[\\S\\s.*]*>"
+    ],
     "scriptSrc": "Smile_ElasticsuiteTracker/js/tracking\\.js",
     "oss": true,
-    "saas": true,
     "pricing": [
       "poa"
     ],
