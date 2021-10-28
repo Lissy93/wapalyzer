@@ -1212,6 +1212,24 @@
     "website": "https://graphcms.com",
     "xhr": "\\.graphcms\\.com"
   },
+  "Graphene": {
+    "cats": [
+      80
+    ],
+    "description": "Graphene is a WordPress theme created by Graphene Themes.",
+    "icon": "Graphene Themes.png",
+    "requires": "WordPress",
+    "js": {
+      "grapheneGetInfScrollBtnLbl": "",
+      "grapheneJS.templateUrl": ""
+    },
+    "scriptSrc": "/wp-content/themes/graphene(?:-plus)?/.+graphene\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "website": "https://www.graphene-theme.com/graphene-theme"
+  },
   "GraphQL": {
     "cats": [
       27
