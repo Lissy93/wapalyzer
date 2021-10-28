@@ -887,7 +887,7 @@
     "cats": [
       72
     ],
-    "description": "Mews is a hospitalitions service that enables hotels to track their bookings.",   
+    "description": "Mews is a hospitalitions service that enables hotels to track their bookings.",
     "icon": "Mews.png",
     "dom": "a[href*='.mews.li/'][target='_blank']",
     "js": {
@@ -1979,5 +1979,35 @@
       "Apache"
     ],
     "website": "https://code.google.com/p/modwsgi"
+  },
+  "MRW": {
+    "cats": [
+      99
+    ],
+    "description": "MRW is a Spanish courier company specialised in express national and international shipping services.",
+    "text": [ "\\bMRW\\b" ],
+    "icon": "MRW.png",
+    "requiresCategory": 6,
+    "website": "https://www.mrw.es"
+  },
+  "Mondial Relay": {
+    "cats": [
+      99
+    ],
+    "description": "Mondial Relay is a parcel shipping and delivery service in Europe.",
+    "text": [ "\\bMondial Relay\\b" ],
+    "icon": "Mondial Relay.svg",
+    "requiresCategory": 6,
+    "website": "https://www.mondialrelay.com"
+  },
+  "My Flying Box": {
+    "cats": [
+      99
+    ],
+    "description": "My Flying Box is an international parcel shipping company.",
+    "text": [ "\\bMy Flying Box\\b" ],
+    "icon": "My Flying Box.svg",
+    "requiresCategory": 6,
+    "website": "https://www.myflyingbox.com/"
   }
 }

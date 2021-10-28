@@ -152,7 +152,7 @@
     ],
     "description": "HashThemes Total is the powerful and creative multipurpose WordPress theme.",
     "icon": "HashThemes.png",
-    "requires": "WordPress",    
+    "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/(?:t|T)otal(?:-plus)?/",
     "pricing": [
       "freemium",
@@ -858,5 +858,25 @@
     },
     "scriptSrc": "//hantana\\.org/widget",
     "website": "https://hantana.org/"
+  },
+  "Hermes": {
+    "cats": [
+      99
+    ],
+    "description": "Hermes offers integrated solutions along the supply chain and partners with national and international trading companies.",
+    "text": [ "\\bHermes\\b" ],
+    "icon": "Hermes.svg",
+    "requiresCategory": 6,
+    "website": "https://www.hermesworld.com"
+  },
+  "Homerr": {
+    "cats": [
+      99
+    ],
+    "description": "Homerr is a logistics company operating in the Netherlands and Belgium.",
+    "text": [ "\\bHomerr\\b" ],
+    "icon": "Homerr.svg",
+    "requiresCategory": 6,
+    "website": "https://www.homerr.com"
   }
 }
