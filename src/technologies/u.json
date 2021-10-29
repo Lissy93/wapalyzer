@@ -461,5 +461,25 @@
       "UserEngage": ""
     },
     "website": "https://user.com"
+  },
+  "UK Mail": {
+    "cats": [
+      99
+    ],
+    "description": "UK Mail is a postal service company operating in the United Kingdom.",
+    "text": [ "\\bUK Mail\\b" ],
+    "icon": "UK Mail.png",
+    "requiresCategory": 6,
+    "website": "https://www.ukmail.com"
+  },
+  "UPS": {
+    "cats": [
+      99
+    ],
+    "description": "UPS is an American multinational shipping & receiving and supply chain management company.",
+    "text": [ "\\bUPS\\b" ],
+    "icon": "UPS.svg",
+    "requiresCategory": 6,
+    "website": "https://www.ups.com"
   }
 }

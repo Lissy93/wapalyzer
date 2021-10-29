@@ -293,5 +293,14 @@
     "html": "<(?:param|embed|iframe)[^>]+youtube(?:-nocookie)?\\.com/(?:v|embed)",
     "icon": "YouTube.png",
     "website": "http://www.youtube.com"
+  },
+  "Yodel": {
+    "cats": [
+      99
+    ],
+    "description": "Yodel is a delivery company for B2B and B2C orders in the United Kingdom.",
+    "text": [ "\\bYodel\\b" ],
+    "requiresCategory": 6,
+    "website": "https://www.yodel.co.uk/"
   }
 }

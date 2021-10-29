@@ -690,7 +690,7 @@
       "freemium",
       "low",
       "recurring",
-      "onetime"      
+      "onetime"
     ],
     "website": "https://themegrill.com/themes/estore"
   },
@@ -1866,5 +1866,34 @@
     "icon": "total.js.png",
     "implies": "Node.js",
     "website": "https://totaljs.com"
+  },
+  "Tipsa": {
+    "cats": [
+      99
+    ],
+    "description": "TIPSA is a parcel delivery company in Spain, Portugal and Andorra.",
+    "text": [ "\\bTipsa\\b" ],
+    "icon": "Tipsa.svg",
+    "requiresCategory": 6,
+    "website": "https://www.tip-sa.com"
+  },
+  "Transmart": {
+    "cats": [
+      99
+    ],
+    "description": "Transmart is a shipping company in Turkey.",
+    "text": [ "\\bTransmart\\b" ],
+    "requiresCategory": 6,
+    "website": "https://transmartshipping.com"
+  },
+  "Trunkrs": {
+    "cats": [
+      99
+    ],
+    "description": "Trunkrs is a Dutch parcel delivery service.",
+    "text": [ "\\bTrunkrs\\b" ],
+    "icon": "Trunkrs.svg",
+    "requiresCategory": 6,
+    "website": "https://trunkrs.nl"
   }
 }

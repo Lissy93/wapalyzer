@@ -1173,5 +1173,15 @@
       "apple-itunes-app": "app-id=543672169"
     },
     "website": "https://owncloud.org"
+  },
+  "Osterreichische Post": {
+    "cats": [
+      99
+    ],
+    "description": "Österreichische Post is an Austrian logistics and postal services provider.",
+    "text": [ "\\bpost\\.at\\b", "\\bPost AG\\b", "\\b[ÖO]sterreichische Post\\b" ],
+    "icon": "Post AG.svg",
+    "requiresCategory": 6,
+    "website": "https://www.post.at"
   }
 }
