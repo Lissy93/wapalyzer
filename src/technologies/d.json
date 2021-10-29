@@ -35,9 +35,9 @@
       99
     ],
     "description": "DHL is an international courier, package delivery and express mail service, which is a division of the German logistics firm Deutsche Post.",
-    "text": "\\bDHL\\b",
     "icon": "DHL.svg",
     "requiresCategory": 6,
+    "text": "\\bDHL\\b",
     "website": "https://www.dhl.com"
   },
   "DHTMLX": {
@@ -89,6 +89,42 @@
       "/js/dnn\\.js"
     ],
     "website": "http://dnnsoftware.com"
+  },
+  "DPD": {
+    "cats": [
+      99
+    ],
+    "description": "DPD is an international parcel delivery service for sorter compatible parcels.",
+    "icon": "DPD.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bDPD\\b"
+    ],
+    "website": "https://www.dpd.com"
+  },
+  "DX": {
+    "cats": [
+      99
+    ],
+    "description": "DX (also known as DX Freight) is a British mail, courier and logistics company.",
+    "icon": "DX.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bDX\\b"
+    ],
+    "website": "https://www.dxdelivery.com"
+  },
+  "Dachser": {
+    "cats": [
+      99
+    ],
+    "description": "Dachser is a German freight company.",
+    "icon": "Dachser.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bDachser\\b"
+    ],
+    "website": "https://www.dachser.com"
   },
   "Daily Deals": {
     "cats": [
@@ -325,6 +361,18 @@
     "scriptSrc": "dedeajax",
     "website": "http://dedecms.com"
   },
+  "Delivengo": {
+    "cats": [
+      99
+    ],
+    "description": "Delivengo is an international shipping service powered by La Poste.",
+    "icon": "La Poste.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bDelivengo\\b"
+    ],
+    "website": "https://mydelivengo.laposte.fr/"
+  },
   "Detectify": {
     "cats": [
       16
@@ -337,6 +385,18 @@
     },
     "icon": "Detectify.svg",
     "website": "https://detectify.com/"
+  },
+  "Deutsche Post": {
+    "cats": [
+      99
+    ],
+    "description": "Deutsche Post is a German multinational package delivery and supply chain management company in Germany.",
+    "icon": "Deutsche Post.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bDeutsche Post\\b"
+    ],
+    "website": "https://www.deutschepost.de"
   },
   "Dianomi": {
     "cats": [
@@ -403,6 +463,20 @@
     ],
     "website": "https://www.digistore24.com"
   },
+  "Digital Showroom": {
+    "cats": [
+      6
+    ],
+    "description": "Digital Showroom is an ecommerce platform.",
+    "dom": "div.dd-showrom__layout",
+    "icon": "Digital Showroom.png",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://digitalshowroom.in"
+  },
   "DigitalRiver": {
     "cats": [
       6,
@@ -423,20 +497,6 @@
     "saas": true,
     "scriptSrc": "\\.digitalriver\\.com/",
     "website": "https://www.digitalriver.com"
-  },
-  "Digital Showroom": {
-    "cats": [
-      6
-    ],
-    "description": "Digital Showroom is an ecommerce platform.",
-    "icon": "Digital Showroom.png",
-    "dom": "div.dd-showrom__layout",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "website": "https://digitalshowroom.in"
   },
   "DirectAdmin": {
     "cats": [
@@ -1084,55 +1144,5 @@
     },
     "scriptSrc": "deepMiner\\.js",
     "website": "https://github.com/deepwn/deepMiner"
-  },
-  "DPD": {
-    "cats": [
-      99
-    ],
-    "description": "DPD is an international parcel delivery service for sorter compatible parcels.",
-    "text": [ "\\bDPD\\b" ],
-    "icon": "DPD.svg",
-    "requiresCategory": 6,
-    "website": "https://www.dpd.com"
-  },
-  "DX": {
-    "cats": [
-      99
-    ],
-    "description": "DX (also known as DX Freight) is a British mail, courier and logistics company.",
-    "text": [ "\\bDX\\b" ],
-    "icon": "DX.svg",
-    "requiresCategory": 6,
-    "website": "https://www.dxdelivery.com"
-  },
-  "Dachser": {
-    "cats": [
-      99
-    ],
-    "description": "Dachser is a German freight company.",
-    "text": [ "\\bDachser\\b" ],
-    "icon": "Dachser.svg",
-    "requiresCategory": 6,
-    "website": "https://www.dachser.com"
-  },
-  "Delivengo": {
-    "cats": [
-      99
-    ],
-    "description": "Delivengo is an international shipping service powered by La Poste.",
-    "text": [ "\\bDelivengo\\b" ],
-    "icon": "La Poste.svg",
-    "requiresCategory": 6,
-    "website": "https://mydelivengo.laposte.fr/"
-  },
-  "Deutsche Post": {
-    "cats": [
-      99
-    ],
-    "description": "Deutsche Post is a German multinational package delivery and supply chain management company in Germany.",
-    "text": [ "\\bDeutsche Post\\b" ],
-    "icon": "Deutsche Post.svg",
-    "requiresCategory": 6,
-    "website": "https://www.deutschepost.de"
   }
 }

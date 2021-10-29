@@ -133,6 +133,16 @@
     ],
     "website": "http://michalsnik.github.io/aos/"
   },
+  "APC": {
+    "cats": [
+      99
+    ],
+    "description": "APC offers door-to-door parcel and mail delivery.",
+    "icon": "APC.svg",
+    "requiresCategory": 6,
+    "text": "\\APC\\b",
+    "website": "https://www.apc-pli.com"
+  },
   "AT Internet Analyzer": {
     "cats": [
       10
@@ -239,7 +249,10 @@
     "description": "AccessTrade is an affiliate marketing platform based on the CPA model developed by Interspace Co.",
     "dom": "img[src*='.accesstrade.net'],img[data-src*='.accesstrade.net']",
     "icon": "AccessTrade.png",
-    "scriptSrc": ["accesstrade\\.net/js/", "click\\.accesstra\\.de/js/nct/lp\\.js"],
+    "scriptSrc": [
+      "accesstrade\\.net/js/",
+      "click\\.accesstra\\.de/js/nct/lp\\.js"
+    ],
     "website": "https://accesstrade.global/"
   },
   "AccessiBe": {
@@ -579,27 +592,21 @@
     "scriptSrc": "\\.adlightning\\.com",
     "website": "https://www.adlightning.com"
   },
-  "Addi": {
+  "AdBridg": {
     "cats": [
-      91
+      36
     ],
-    "icon": "addi.png",
-    "scriptSrc": "s3\\.amazonaws\\.com/widgets\\.addi\\.com/bundle\\.min\\.js",
-    "website": "https://www.addi.com/"
-  },
-  "Addsearch": {
-    "cats": [
-      29
-    ],
-    "description": "Addsearch is a site search solution for small and large websites.",
-    "icon": "AddSearch.png",
+    "description": "AdBridg is a bidding solutions provider for publishers looking to maximize their programmatic revenues.",
+    "icon": "AdBridg.png",
+    "js": {
+      "AdBridg.cmd": ""
+    },
     "pricing": [
-      "mid",
+      "poa",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "https://addsearch\\.com/js/",
-    "website": "https://www.addsearch.com/"
+    "website": "https://www.adbridg.com"
   },
   "AdInfinity": {
     "cats": [
@@ -765,22 +772,6 @@
     "scriptSrc": "c5\\.adalyser\\.com",
     "website": "https://adalyser.com/"
   },
-  "AdBridg": {
-    "cats": [
-      36
-    ],
-    "description": "AdBridg is a bidding solutions provider for publishers looking to maximize their programmatic revenues.",
-    "icon": "AdBridg.png",
-    "js": {
-      "AdBridg.cmd": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa",
-      "recurring"
-    ],
-    "website": "https://www.adbridg.com"
-  },
   "Adcash": {
     "cats": [
       36
@@ -836,6 +827,28 @@
     },
     "scriptSrc": "addtoany\\.com/menu/page\\.js",
     "website": "http://www.addtoany.com"
+  },
+  "Addi": {
+    "cats": [
+      91
+    ],
+    "icon": "addi.png",
+    "scriptSrc": "s3\\.amazonaws\\.com/widgets\\.addi\\.com/bundle\\.min\\.js",
+    "website": "https://www.addi.com/"
+  },
+  "Addsearch": {
+    "cats": [
+      29
+    ],
+    "description": "Addsearch is a site search solution for small and large websites.",
+    "icon": "AddSearch.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "https://addsearch\\.com/js/",
+    "website": "https://www.addsearch.com/"
   },
   "Adminer": {
     "cats": [
@@ -2189,13 +2202,13 @@
     ],
     "description": "Apollo13Themes Rife is a great portfolio and photography WordPress theme with 7 ready-to-use demo layouts.",
     "icon": "Apollo13Themes.png",
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/rife(?:-free)?/(?:.+script\\.min\\.js(?:\\?ver=([\\d\\.]+)))?\\;version:\\1",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/rife(?:-free)?/(?:.+script\\.min\\.js(?:\\?ver=([\\d\\.]+)))?\\;version:\\1",
     "website": "https://apollo13themes.com/rife"
   },
   "ApostropheCMS": {
@@ -2504,6 +2517,16 @@
     "scriptSrc": "asciinema\\.org/",
     "website": "https://asciinema.org/"
   },
+  "Asendia": {
+    "cats": [
+      99
+    ],
+    "description": "Asendia is an international mail joint venture of French La Poste and Swiss Post.",
+    "icon": "Asendia.svg",
+    "requiresCategory": 6,
+    "text": "\\Asendia\\b",
+    "website": "https://www.asendia.com"
+  },
   "Astra": {
     "cats": [
       80
@@ -2541,39 +2564,6 @@
     "saas": true,
     "scriptSrc": "\\.iperceptions\\.com",
     "website": "https://astutesolutions.com"
-  },
-  "aThemes Airi": {
-    "cats": [
-      80
-    ],
-    "description": "aThemes Airi is a powerful yet lightweight and flexible WordPress theme for organization or freelancer.",
-    "icon": "aThemes.svg",
-    "requires": "WordPress",
-    "dom": "link#airi-style-css",
-    "scriptSrc": "/wp-content/themes/airi/",
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://athemes.com/theme/airi"
-  },
-  "aThemes Sydney": {
-    "cats": [
-      80
-    ],
-    "description": "aThemes Sydney is a powerful business WordPress theme that provides a fast way for companies or freelancers to create an online presence.",
-    "icon": "aThemes.svg",
-    "requires": "WordPress",
-    "dom": "link#sydney-style-css",
-    "scriptSrc": "/wp-content/themes/sydney(?:-pro-ii)?/",
-    "pricing": [
-      "low",
-      "recurring",
-      "onetime",
-      "freemium"
-    ],
-    "website": "https://athemes.com/theme/sydney"
   },
   "Athena Search": {
     "cats": [
@@ -2844,11 +2834,11 @@
     "js": {
       "avisVerifies": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.netreviews.com"
   },
   "Aweber": {
@@ -2997,6 +2987,39 @@
     },
     "website": "http://www.a-blogcms.jp"
   },
+  "aThemes Airi": {
+    "cats": [
+      80
+    ],
+    "description": "aThemes Airi is a powerful yet lightweight and flexible WordPress theme for organization or freelancer.",
+    "dom": "link#airi-style-css",
+    "icon": "aThemes.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/airi/",
+    "website": "https://athemes.com/theme/airi"
+  },
+  "aThemes Sydney": {
+    "cats": [
+      80
+    ],
+    "description": "aThemes Sydney is a powerful business WordPress theme that provides a fast way for companies or freelancers to create an online presence.",
+    "dom": "link#sydney-style-css",
+    "icon": "aThemes.svg",
+    "pricing": [
+      "low",
+      "recurring",
+      "onetime",
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/sydney(?:-pro-ii)?/",
+    "website": "https://athemes.com/theme/sydney"
+  },
   "actionhero.js": {
     "cats": [
       18,
@@ -3066,25 +3089,5 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
-  },
-  "APC": {
-    "cats": [
-      99
-    ],
-    "description": "APC offers door-to-door parcel and mail delivery.",
-    "text": "\\APC\\b",
-    "icon": "APC.svg",
-    "requiresCategory": 6,
-    "website": "https://www.apc-pli.com"
-  },
-  "Asendia": {
-    "cats": [
-      99
-    ],
-    "description": "Asendia is an international mail joint venture of French La Poste and Swiss Post.",
-    "text": "\\Asendia\\b",
-    "icon": "Asendia.svg",
-    "requiresCategory": 6,
-    "website": "https://www.asendia.com"
   }
 }

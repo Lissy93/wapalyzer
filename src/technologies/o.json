@@ -388,19 +388,19 @@
       80
     ],
     "description": "OnePage Express is a beautiful WordPress theme that can be used to create a one page website in minutes by drag and drop.",
-    "icon": "ExtendThemes.svg",
-    "requires": "WordPress",
     "dom": "link#one-page-express-style-css",
+    "icon": "ExtendThemes.svg",
     "js": {
       "one_page_express_settings": ""
     },
-    "scriptSrc": "/wp-content/themes/one-page-express(?:-pro)?/",
     "pricing": [
       "freemium",
       "low",
       "recurring",
       "onetime"
     ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/one-page-express(?:-pro)?/",
     "website": "https://onepageexpress.com"
   },
   "OneSignal": {
@@ -764,12 +764,12 @@
       "optimoveSDK": "",
       "optimoveSDKVersion": "([\\d\\.]+)\\;version:\\1"
     },
-    "scriptSrc": "\\.optimove\\.net/.+v([\\d\\.]+)\\.js\\;version:\\1",
-    "saas": true,
     "pricing": [
       "high",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.optimove\\.net/.+v([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://www.optimove.com"
   },
   "Oracle Application Server": {
@@ -1015,6 +1015,20 @@
     ],
     "website": "https://www.osano.com"
   },
+  "Osterreichische Post": {
+    "cats": [
+      99
+    ],
+    "description": "Österreichische Post is an Austrian logistics and postal services provider.",
+    "icon": "Post AG.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bpost\\.at\\b",
+      "\\bPost AG\\b",
+      "\\b[ÖO]sterreichische Post\\b"
+    ],
+    "website": "https://www.post.at"
+  },
   "OutSystems": {
     "cats": [
       47
@@ -1173,15 +1187,5 @@
       "apple-itunes-app": "app-id=543672169"
     },
     "website": "https://owncloud.org"
-  },
-  "Osterreichische Post": {
-    "cats": [
-      99
-    ],
-    "description": "Österreichische Post is an Austrian logistics and postal services provider.",
-    "text": [ "\\bpost\\.at\\b", "\\bPost AG\\b", "\\b[ÖO]sterreichische Post\\b" ],
-    "icon": "Post AG.svg",
-    "requiresCategory": 6,
-    "website": "https://www.post.at"
   }
 }

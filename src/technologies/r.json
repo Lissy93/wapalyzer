@@ -52,18 +52,6 @@
     },
     "website": "https://github.com/ruby/rdoc"
   },
-  "Route": {
-    "cats": [
-      19
-    ],
-    "description": "Route is a delivery and shipping tracking app",
-    "icon": "route.png",
-    "js": {
-      "Routeapp": ""
-    },
-    "scriptSrc": "//cdn.routeapp.io/",
-    "website": "https://route.com/"
-  },
   "RTB House": {
     "cats": [
       77
@@ -523,6 +511,18 @@
     "icon": "Red Hat.svg",
     "website": "https://www.redhat.com"
   },
+  "Red je Pakketje": {
+    "cats": [
+      99
+    ],
+    "description": "Red je Pakketje is a Dutch company specialised in same-day-delivery.",
+    "icon": "Red je Pakketje.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bRed je Pakketje\\b"
+    ],
+    "website": "https://redjepakketje.nl"
+  },
   "RedCart": {
     "cats": [
       6
@@ -710,6 +710,18 @@
       "reinvigorate": ""
     },
     "website": "http://www.reinvigorate.net"
+  },
+  "Relais Colis": {
+    "cats": [
+      99
+    ],
+    "description": "Relais Colis is a French parcel delivery network.",
+    "icon": "Relais Colis.png",
+    "requiresCategory": 6,
+    "text": [
+      "\\bRelais Colis\\b"
+    ],
+    "website": "https://www.relaiscolis.com"
   },
   "RequireJS": {
     "cats": [
@@ -1160,6 +1172,30 @@
     },
     "website": "http://roundcube.net"
   },
+  "Route": {
+    "cats": [
+      19
+    ],
+    "description": "Route is a delivery and shipping tracking app",
+    "icon": "route.png",
+    "js": {
+      "Routeapp": ""
+    },
+    "scriptSrc": "//cdn.routeapp.io/",
+    "website": "https://route.com/"
+  },
+  "Royal Mail": {
+    "cats": [
+      99
+    ],
+    "description": "Royal Mail is a British multinational postal service and courier company.",
+    "icon": "Royal Mail.png",
+    "requiresCategory": 6,
+    "text": [
+      "\\bRoyal Mail\\b"
+    ],
+    "website": "https://www.royalmail.com"
+  },
   "Rubicon Project": {
     "cats": [
       36
@@ -1302,35 +1338,5 @@
       "/recaptcha/api\\.js"
     ],
     "website": "https://www.google.com/recaptcha/"
-  },
-  "Red je Pakketje": {
-    "cats": [
-      99
-    ],
-    "description": "Red je Pakketje is a Dutch company specialised in same-day-delivery.",
-    "text": [ "\\bRed je Pakketje\\b" ],
-    "icon": "Red je Pakketje.svg",
-    "requiresCategory": 6,
-    "website": "https://redjepakketje.nl"
-  },
-  "Relais Colis": {
-    "cats": [
-      99
-    ],
-    "description": "Relais Colis is a French parcel delivery network.",
-    "text": [ "\\bRelais Colis\\b" ],
-    "icon": "Relais Colis.png",
-    "requiresCategory": 6,
-    "website": "https://www.relaiscolis.com"
-  },
-  "Royal Mail": {
-    "cats": [
-      99
-    ],
-    "description": "Royal Mail is a British multinational postal service and courier company.",
-    "text": [ "\\bRoyal Mail\\b" ],
-    "icon": "Royal Mail.png",
-    "requiresCategory": 6,
-    "website": "https://www.royalmail.com"
   }
 }
