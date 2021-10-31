@@ -1438,10 +1438,12 @@
     "cats": [
       6
     ],
-    "description":"Akinon is a cloud-based headless commerce platform with an integrated application suite including omnichannel and marketplace capabilities, mobile and in-store solutions, and an OMS.",
+    "description": "Akinon is a cloud-based headless commerce platform with an integrated application suite including omnichannel and marketplace capabilities, mobile and in-store solutions, and an OMS.",
     "icon": "akinon.png",
+    "pricing": [
+      "poa"
+    ],
     "scriptSrc": "cdn-mgsm\\.akinon\\.net/",
-    "pricing": [ "poa" ],
     "website": "https://www.akinon.com/"
   },
   "Akka HTTP": {
@@ -1953,32 +1955,6 @@
     "scriptSrc": "AnalysysFangzhou_JS_SDK\\.min\\.js\\?v=([\\d.]+)\\;version:\\1",
     "website": "https://ark.analysys.cn"
   },
-  "AndersNoren Fukasawa": {
-    "cats": [
-      80
-    ],
-    "description": "AndersNoren Fukasawa is a minimal masonry style blog WordPress theme for photographers and collectors.",
-    "icon": "AndersNoren.svg",
-    "pricing": [
-      "freemium"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/fukasawa/",
-    "website": "https://andersnoren.se/teman/fukasawa-wordpress-theme"
-  },
-  "AndersNoren Lovecraft": {
-    "cats": [
-      80
-    ],
-    "description": "AndersNoren Lovecraft is a beautiful two-column WordPress theme for bloggers.",
-    "icon": "AndersNoren.svg",
-    "pricing": [
-      "freemium"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/lovecraft/",
-    "website": "https://andersnoren.se/teman/lovecraft-wordpress-theme"
-  },
   "AndersNoren Baskerville": {
     "cats": [
       80
@@ -1992,6 +1968,19 @@
     "scriptSrc": "/wp-content/themes/baskerville(?:-2)?/",
     "website": "https://andersnoren.se/teman/baskerville-wordpress-theme"
   },
+  "AndersNoren Fukasawa": {
+    "cats": [
+      80
+    ],
+    "description": "AndersNoren Fukasawa is a minimal masonry style blog WordPress theme for photographers and collectors.",
+    "icon": "AndersNoren.svg",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/fukasawa/",
+    "website": "https://andersnoren.se/teman/fukasawa-wordpress-theme"
+  },
   "AndersNoren Hemingway": {
     "cats": [
       80
@@ -2004,6 +1993,19 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/hemingway/",
     "website": "https://andersnoren.se/teman/hemingway-wordpress-theme"
+  },
+  "AndersNoren Lovecraft": {
+    "cats": [
+      80
+    ],
+    "description": "AndersNoren Lovecraft is a beautiful two-column WordPress theme for bloggers.",
+    "icon": "AndersNoren.svg",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/lovecraft/",
+    "website": "https://andersnoren.se/teman/lovecraft-wordpress-theme"
   },
   "Anetwork": {
     "cats": [
@@ -2742,8 +2744,8 @@
     ],
     "description": "Atome is a brand that allows users to purchase products online and pay for them in monthly installments.",
     "icon": "atome.png",
-    "js":{
-      "atomeWidget":""
+    "js": {
+      "atomeWidget": ""
     },
     "scriptSrc": "gateway\\.apaylater\\.com/",
     "website": "https://www.atome.sg/"
