@@ -1,4 +1,5 @@
 const { URL } = require('url')
+const os = require('os')
 const fs = require('fs')
 const dns = require('dns').promises
 const path = require('path')
@@ -13,15 +14,10 @@ function next() {
   return new Promise((resolve) => setImmediate(resolve))
 }
 
-const {
-  AWS_LAMBDA_FUNCTION_NAME,
-  CHROMIUM_BIN,
-  CHROMIUM_DATA_DIR,
-  CHROMIUM_WEBSOCKET,
-} = process.env
+const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
 
 let puppeteer
-let chromiumArgs = [
+const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
   '--disable-gpu',
@@ -30,15 +26,13 @@ let chromiumArgs = [
   '--disable-web-security',
   `--user-data-dir=${CHROMIUM_DATA_DIR || '/tmp/chromium'}`,
 ]
-let chromiumBin = CHROMIUM_BIN
 
-if (AWS_LAMBDA_FUNCTION_NAME) {
-  const chromium = require('chrome-aws-lambda')
+if (os.arch() === 'arm64') {
+  chromiumArgs.push('--single-process')
+}
 
-  ;({ puppeteer } = chromium)
-
-  chromiumArgs = chromiumArgs.concat(chromium.args)
-  chromiumBin = chromium.executablePath
+if (CHROMIUM_BIN) {
+  puppeteer = require('puppeteer-core')
 } else {
   puppeteer = require('puppeteer')
 }
@@ -357,7 +351,7 @@ class Driver {
           ignoreHTTPSErrors: true,
           acceptInsecureCerts: true,
           args: chromiumArgs,
-          executablePath: await chromiumBin,
+          executablePath: CHROMIUM_BIN,
         })
       }
 
