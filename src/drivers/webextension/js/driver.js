@@ -209,7 +209,9 @@ const Driver = {
    * @param {Array} js
    */
   async analyzeJs(url, js, requires, categoryRequires) {
-    const technologies = getRequiredTechnologies(requires, categoryRequires)
+    const technologies =
+      getRequiredTechnologies(requires, categoryRequires) ||
+      Wappalyzer.technologies
 
     return Driver.onDetect(
       url,
@@ -236,7 +238,9 @@ const Driver = {
    * @param {Array} dom
    */
   async analyzeDom(url, dom, requires, categoryRequires) {
-    const technologies = getRequiredTechnologies(requires, categoryRequires)
+    const technologies =
+      getRequiredTechnologies(requires, categoryRequires) ||
+      Wappalyzer.technologies
 
     return Driver.onDetect(
       url,

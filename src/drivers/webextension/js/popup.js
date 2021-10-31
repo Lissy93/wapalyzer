@@ -68,7 +68,6 @@ const Popup = {
       empty: document.querySelector('.empty'),
       footer: document.querySelector('.footer'),
       tabPlus: document.querySelector('.tab--plus'),
-      tabPlusDot: document.querySelector('.tab__dot'),
       termsButtonAccept: document.querySelector('.terms__button--accept'),
       termsButtonDecline: document.querySelector('.terms__button--decline'),
       headerSwitches: document.querySelectorAll('.header__switch'),
@@ -101,12 +100,6 @@ const Popup = {
 
       return templates
     }, {})
-
-    const plusTabViewed = await getOption('plusTabViewed', false)
-
-    if (plusTabViewed) {
-      el.tabPlusDot.classList.add('tab__dot--hidden')
-    }
 
     // Disabled domains
     const dynamicIcon = await getOption('dynamicIcon', false)
@@ -255,12 +248,6 @@ const Popup = {
 
         if (tab.classList.contains('tab--plus')) {
           await Popup.getPlus(url)
-
-          if (!plusTabViewed) {
-            await setOption('plusTabViewed', true)
-
-            el.tabPlusDot.classList.add('tab__dot--hidden')
-          }
         }
       })
     })
