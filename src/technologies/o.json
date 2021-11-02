@@ -1051,6 +1051,21 @@
     "scriptSrc": "scripts/OutSystems(?:[\\w]+)?\\.js",
     "website": "https://www.outsystems.com"
   },
+  "OutTheBoxThemes Panoramic": {
+    "cats": [
+      80
+    ],
+    "description": "Panoramic is a fully responsive WordPress theme with a homepage slider by OutTheBoxThemes.",
+    "icon": "OutTheBoxThemes.png",
+    "dom": "link#panoramic_customizer_theme_fonts-css",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/panoramic/.+custom\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.outtheboxthemes.com/wordpress-themes/panoramic"
+  },
   "Outbrain": {
     "cats": [
       5,
