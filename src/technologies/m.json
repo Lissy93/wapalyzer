@@ -1768,6 +1768,35 @@
     ],
     "website": "https://mysterythemes.com/wp-themes/news-portal-mag"
   },
+  "MysteryThemes News Portal Lite": {
+    "cats": [
+      80
+    ],
+    "description": "News Portal Lite is child theme of News Portal ultimate magazine WordPress theme by MysteryThemes.",
+    "icon": "MysteryThemes.png",
+    "requires": "WordPress",
+    "excludes": "MysteryThemes News Portal",
+    "dom": "link[href*='/wp-content/themes/news-portal-lite/']",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],  
+    "website": "https://mysterythemes.com/wp-themes/news-portal-lite"
+  },
+  "MysteryThemes News Portal": {
+    "cats": [
+      80
+    ],
+    "description": "News Portal is the ultimate magazine WordPress theme by MysteryThemes.",
+    "icon": "MysteryThemes.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/news-portal(?:-pro)?/.+np-custom-scripts\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://mysterythemes.com/wp-themes/news-portal"
+  },
   "MyWebsite": {
     "cats": [
       51
