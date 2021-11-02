@@ -811,6 +811,26 @@
     "scriptSrc": "/wp-content/themes/iconic-one(?:-[\\w]+)?/",
     "website": "https://themonic.com/iconic-one"
   },
+  "The Theme Foundry Make": {
+    "cats": [
+      80
+    ],
+    "description": "Make is a free, open-source builder WordPress theme by The Theme Foundry.",
+    "icon": "The Theme Foundry.svg",
+    "js": {
+      "MakeDynamicStylesheet": "\\;confidence:50",
+      "MakeFrontEnd": "\\;confidence:50"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://thethemefoundry.com/wordpress-themes/make"
+  },
   "Thimatic": {
     "cats": [
       90
