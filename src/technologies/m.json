@@ -1754,6 +1754,20 @@
     "icon": "MySQL.svg",
     "website": "http://mysql.com"
   },
+  "MysteryThemes News Portal": {
+    "cats": [
+      80
+    ],
+    "description": "News Portal is the ultimate magazine WordPress theme by MysteryThemes.",
+    "icon": "MysteryThemes.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/news-portal(?:-pro)?/.+np-custom-scripts\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://mysterythemes.com/wp-themes/news-portal"
+  },
   "MyWebsite": {
     "cats": [
       51
