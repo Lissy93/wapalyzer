@@ -721,7 +721,7 @@ class Site {
             await this.promiseTimeout(
               page.evaluateHandle(() =>
                 // eslint-disable-next-line unicorn/prefer-text-content
-                document.body.innerText.replace(/\s+/g, ' ')
+                document.body.innerText.replace(/\s+/g, ' ').slice(0, 25000)
               ),
               { jsonValue: () => '' },
               'Timeout (text)'

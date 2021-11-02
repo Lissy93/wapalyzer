@@ -19,6 +19,8 @@ const hostnameIgnoreList =
 
 const xhrDebounce = []
 
+let xhrAnalyzed = {}
+
 const scriptsPending = []
 
 function getRequiredTechnologies(name, categoryId) {
@@ -458,16 +460,34 @@ const Driver = {
       return
     }
 
+    let originHostname
+
+    try {
+      ;({ hostname: originHostname } = new URL(request.originUrl))
+    } catch (error) {
+      return
+    }
+
     if (!xhrDebounce.includes(hostname)) {
       xhrDebounce.push(hostname)
 
       setTimeout(async () => {
         xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
-        Driver.onDetect(
-          request.originUrl || request.initiator,
-          await analyze({ xhr: hostname })
-        ).catch(Driver.error)
+        xhrAnalyzed[originHostname] = xhrAnalyzed[originHostname] || []
+
+        if (!xhrAnalyzed[originHostname].includes(hostname)) {
+          xhrAnalyzed[originHostname].push(hostname)
+
+          if (Object.keys(xhrAnalyzed).length > 500) {
+            xhrAnalyzed = {}
+          }
+
+          Driver.onDetect(
+            request.originUrl || request.initiator,
+            await analyze({ xhr: hostname })
+          ).catch(Driver.error)
+        }
       }, 1000)
     }
   },
@@ -885,6 +905,8 @@ const Driver = {
   async clearCache() {
     Driver.cache.hostnames = {}
     Driver.cache.tabs = {}
+
+    xhrAnalyzed = {}
 
     await setOption('hostnames', {})
   },

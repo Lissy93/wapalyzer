@@ -178,7 +178,7 @@ const Content = {
 
       // Text
       // eslint-disable-next-line unicorn/prefer-text-content
-      const text = document.body.innerText.replace(/\s+/g, ' ')
+      const text = document.body.innerText.replace(/\s+/g, ' ').slice(0, 25000)
 
       // CSS rules
       let css = []
