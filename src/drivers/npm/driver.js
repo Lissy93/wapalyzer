@@ -5,6 +5,7 @@ const dns = require('dns').promises
 const path = require('path')
 const http = require('http')
 const https = require('https')
+const puppeteer = require('puppeteer')
 const Wappalyzer = require('./wappalyzer')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
@@ -16,7 +17,6 @@ function next() {
 
 const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
 
-let puppeteer
 const chromiumArgs = [
   '--no-sandbox',
   '--no-zygote',
@@ -29,12 +29,6 @@ const chromiumArgs = [
 
 if (os.arch() === 'arm64') {
   chromiumArgs.push('--single-process')
-}
-
-if (CHROMIUM_BIN) {
-  puppeteer = require('puppeteer-core')
-} else {
-  puppeteer = require('puppeteer')
 }
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
