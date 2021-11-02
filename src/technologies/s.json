@@ -1900,16 +1900,16 @@
       80
     ],
     "description": "Sinatra is a lightweight and highly customizable multi-purpose WordPress theme.",
-    "icon": "Sinatra.png", 
+    "icon": "Sinatra.png",
     "js": {
-      "sinatra_vars.nonce": "",
-      "sinatraSlideUp": ""
+      "sinatraSlideUp": "",
+      "sinatra_vars.nonce": ""
     },
-    "scriptSrc": "/wp-content/themes/sinatra/.+sinatra\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "pricing": [
       "freemium"
     ],
     "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/sinatra/.+sinatra\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://try.sinatrawp.com"
   },
   "Sirclo": {
@@ -3284,11 +3284,11 @@
       "Square.Analytics": "",
       "__BOOTSTRAP_STATE__.storeInfo.square_application_id": ""
     },
-    "scriptSrc": "js\\.squareup\\.com",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "js\\.squareup\\.com",
     "website": "https://squareup.com/",
     "xhr": "\\.squareup\\.com"
   },
@@ -3299,17 +3299,17 @@
     "description": "Square Online is a subscription based service that provides ecommerce solutions to small and medium sized businesses.",
     "icon": "Square.svg",
     "implies": "Weebly",
-    "requires": "Weebly",
     "js": {
       "APP_ORIGIN": "square\\.online"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring",
       "payg"
     ],
+    "requires": "Weebly",
+    "saas": true,
     "website": "https://squareup.com/us/en/online-store"
   },
   "Squarespace": {

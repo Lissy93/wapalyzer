@@ -584,6 +584,26 @@
     ],
     "website": "https://www.thg.com/"
   },
+  "The Theme Foundry Make": {
+    "cats": [
+      80
+    ],
+    "description": "Make is a free, open-source builder WordPress theme by The Theme Foundry.",
+    "icon": "The Theme Foundry.svg",
+    "js": {
+      "MakeDynamicStylesheet": "\\;confidence:50",
+      "MakeFrontEnd": "\\;confidence:50"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://thethemefoundry.com/wordpress-themes/make"
+  },
   "Thefork": {
     "cats": [
       93
@@ -632,12 +652,12 @@
     "js": {
       "evolve_js_local_vars": ""
     },
-    "scriptSrc": "/wp-content/themes/evolve(?:-plus)?/",
     "pricing": [
       "freemium",
       "onetime"
     ],
     "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/evolve(?:-plus)?/",
     "website": "https://theme4press.com/evolve-multipurpose-wordpress-theme"
   },
   "ThemeGrill Accelerate": {
@@ -768,49 +788,6 @@
     "scriptSrc": "/wp-content/themes/e(?:s|S)tore(?:-pro)?/",
     "website": "https://themegrill.com/themes/estore"
   },
-  "Themeansar Newsup": {
-    "cats": [
-      80
-    ],
-    "description": "Themeansar Newsup is a fast, clean, modern-looking responsive news magazine WordPress theme.",
-    "icon": "Themeansar.png",
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/newsup(?:-pro)?/",
-    "website": "https://themeansar.com/free-themes/newsup"
-  },
-
-  "Themes4Wp Bulk": {
-    "cats": [
-      80
-    ],
-    "description": "Themes4Wp Bulk is a modern and responsive multipurpose WordPress theme.",
-    "icon": "Themes4Wp.png",
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/bulk(?:-pro)?/.+customscript\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://themes4wp.com/theme/bulk"
-  },
-  "Themegraphy Graphy": {
-    "cats": [
-      80
-    ],
-    "description": "Themegraphy Graphy is now compatible with WordPress 5.0 and Gutenberg blog-oriented WordPress theme.",
-    "icon": "Themegraphy.png",
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/graphy(?:-pro)?/",
-    "website": "https://themegraphy.com/wordpress-themes/graphy"
-  },
   "ThemeZee Donovan": {
     "cats": [
       80
@@ -831,19 +808,47 @@
     "scriptSrc": "/wp-content/themes/donovan/",
     "website": "https://themezee.com/themes/donovan"
   },
-  "ThemezHut HitMag": {
+  "Themeansar Newsup": {
     "cats": [
       80
     ],
-    "description": "ThemezHut HitMag is a stylish and powerful WordPress theme crafted for magazines, newspapers or personal blogs.",
-    "icon": "ThemezHut.png",
+    "description": "Themeansar Newsup is a fast, clean, modern-looking responsive news magazine WordPress theme.",
+    "icon": "Themeansar.png",
     "pricing": [
       "freemium",
       "onetime"
     ],
     "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/hitmag(?:-pro)?/",
-    "website": "https://themezhut.com/themes/hitmag"
+    "scriptSrc": "/wp-content/themes/newsup(?:-pro)?/",
+    "website": "https://themeansar.com/free-themes/newsup"
+  },
+  "Themegraphy Graphy": {
+    "cats": [
+      80
+    ],
+    "description": "Themegraphy Graphy is now compatible with WordPress 5.0 and Gutenberg blog-oriented WordPress theme.",
+    "icon": "Themegraphy.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/graphy(?:-pro)?/",
+    "website": "https://themegraphy.com/wordpress-themes/graphy"
+  },
+  "Themes4Wp Bulk": {
+    "cats": [
+      80
+    ],
+    "description": "Themes4Wp Bulk is a modern and responsive multipurpose WordPress theme.",
+    "icon": "Themes4Wp.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/bulk(?:-pro)?/.+customscript\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://themes4wp.com/theme/bulk"
   },
   "ThemezHut Bam": {
     "cats": [
@@ -859,6 +864,20 @@
     "scriptSrc": "/wp-content/themes/bam(?:-pro)?/",
     "website": "https://themezhut.com/themes/bam"
   },
+  "ThemezHut HitMag": {
+    "cats": [
+      80
+    ],
+    "description": "ThemezHut HitMag is a stylish and powerful WordPress theme crafted for magazines, newspapers or personal blogs.",
+    "icon": "ThemezHut.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/hitmag(?:-pro)?/",
+    "website": "https://themezhut.com/themes/hitmag"
+  },
   "Themonic Iconic One": {
     "cats": [
       80
@@ -873,26 +892,6 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/iconic-one(?:-[\\w]+)?/",
     "website": "https://themonic.com/iconic-one"
-  },
-  "The Theme Foundry Make": {
-    "cats": [
-      80
-    ],
-    "description": "Make is a free, open-source builder WordPress theme by The Theme Foundry.",
-    "icon": "The Theme Foundry.svg",
-    "js": {
-      "MakeDynamicStylesheet": "\\;confidence:50",
-      "MakeFrontEnd": "\\;confidence:50"
-    },
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://thethemefoundry.com/wordpress-themes/make"
   },
   "Thimatic": {
     "cats": [

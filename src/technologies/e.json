@@ -211,19 +211,6 @@
     "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
     "website": "http://www.edgecast.com"
   },
-  "Enigma": {
-    "cats": [
-      80
-    ],
-    "description": "Enigma is the popular superfine multipurpose responsive WordPress theme from Infigo Software.",
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/enigma/",
-    "website": "https://wordpress.org/themes/enigma"
-  },
   "Elastic APM": {
     "cats": [
       10,
@@ -475,6 +462,19 @@
       "web-analytics\\.engagio\\.com/api/"
     ],
     "website": "https://www.engagio.com/"
+  },
+  "Enigma": {
+    "cats": [
+      80
+    ],
+    "description": "Enigma is the popular superfine multipurpose responsive WordPress theme from Infigo Software.",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/enigma/",
+    "website": "https://wordpress.org/themes/enigma"
   },
   "Enjin CMS": {
     "cats": [
@@ -757,8 +757,8 @@
     ],
     "description": "ExpertRec is a collaborative Web search engine, which allows users share search histories through a web browser.",
     "icon": "ExpertRec.png",
-    "js":{
-      "_er_config":""
+    "js": {
+      "_er_config": ""
     },
     "pricing": [
       "low",
