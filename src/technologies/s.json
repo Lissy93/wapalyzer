@@ -3285,8 +3285,32 @@
       "__BOOTSTRAP_STATE__.storeInfo.square_application_id": ""
     },
     "scriptSrc": "js\\.squareup\\.com",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
     "website": "https://squareup.com/",
     "xhr": "\\.squareup\\.com"
+  },
+  "Square Online": {
+    "cats": [
+      6
+    ],
+    "description": "Square Online is a subscription based service that provides ecommerce solutions to small and medium sized businesses.",
+    "icon": "Square.svg",
+    "implies": "Weebly",
+    "requires": "Weebly",
+    "js": {
+      "APP_ORIGIN": "square\\.online"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://squareup.com/us/en/online-store"
   },
   "Squarespace": {
     "cats": [
