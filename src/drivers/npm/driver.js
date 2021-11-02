@@ -415,6 +415,7 @@ class Site {
     }
 
     this.analyzedUrls = {}
+    this.analyzedXhr = {}
     this.analyzedRequires = {}
     this.detections = []
 
@@ -549,7 +550,14 @@ class Site {
             setTimeout(async () => {
               xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
-              await this.onDetect(url, await analyze({ xhr: hostname }))
+              this.analyzedXhr[url.hostname] =
+                this.analyzedXhr[url.hostname] || []
+
+              if (!this.analyzedXhr[url.hostname].includes(hostname)) {
+                this.analyzedXhr[url.hostname].push(hostname)
+
+                await this.onDetect(url, await analyze({ xhr: hostname }))
+              }
             }, 1000)
           }
         }

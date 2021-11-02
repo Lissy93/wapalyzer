@@ -223,6 +223,10 @@ const Wappalyzer = {
     },
     technologies = Wappalyzer.technologies
   ) {
+    if (xhr) {
+      console.log('analyze', xhr)
+    }
+
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
