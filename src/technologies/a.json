@@ -1446,6 +1446,25 @@
     "scriptSrc": "cdn-mgsm\\.akinon\\.net/",
     "website": "https://www.akinon.com/"
   },
+  "Akismet": {
+    "cats": [
+      87
+    ],
+    "description": "Akismet is a service that filters spam from comments, trackbacks, and contact form messages.",
+    "icon": "Akismet.png",
+    "dom": "link[href*='/wp-content/plugins/akismet/']",
+    "js": {
+      "ak_js.checkValidity": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/akismet/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://akismet.com"
+  },
   "Akka HTTP": {
     "cats": [
       18,
