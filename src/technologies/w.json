@@ -266,6 +266,26 @@
     "implies": "Haskell",
     "website": "http://www.stackage.org/package/warp"
   },
+  "Weaver Xtreme": {
+    "cats": [
+      80
+    ],
+    "description": "Weaver Xtreme is the orginal options-based WordPress theme.",
+    "icon": "Weaver Xtreme.png",
+    "dom": "link#weaverx-style-sheet-css",
+    "js": {
+      "weaverxBottomFooter": "",
+      "weaverxOnResize": "",
+      "weaverxMonitorContent": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/weaver-xtreme/.+weaverxjslib-end\\.min.\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://weavertheme.com"
+  },
   "Web2py": {
     "cats": [
       18
