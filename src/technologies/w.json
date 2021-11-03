@@ -1035,6 +1035,41 @@
     "scriptSrc": "assets-cdn\\.woowup\\.com/",
     "website": "https://www.woowup.com"
   },
+  "Wordfence": {
+    "cats": [
+      87,
+      16
+    ],
+    "description": "Wordfence is a security plugin for sites that use WordPress. Wordfence includes an endpoint firewall and malware scanner.",
+    "icon": "Wordfence.svg",
+    "js": {
+      "wordfenceAJAXWatcher": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wordfence/.+admin\\.ajaxWatcher\\.\\d+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.wordfence.com"
+  },
+  "Wordfence Login Security": {
+    "cats": [
+      87,
+      16
+    ],
+    "description": "Wordfence Login Security contains a subset of the functionality found in the full Wordfence plugin: Two-factor Authentication, XML-RPC Protection and Login Page CAPTCHA.",
+    "icon": "Wordfence.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wordfence/.+login\\.\\d+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.wordfence.com"
+  },
   "WordPress": {
     "cats": [
       1,
