@@ -187,9 +187,6 @@
       "<!-- Begin MailChimp Signup Form -->"
     ],
     "icon": "mailchimp.svg",
-    "js": {
-      "mc4wp": "\\;confidence:50"
-    },
     "pricing": [
       "low",
       "freemium",
@@ -204,6 +201,27 @@
       "chimpstatic\\.com/mcjs-connected"
     ],
     "website": "http://mailchimp.com"
+  },
+  "MailChimp for WordPress": {
+    "cats": [
+      87,
+      32
+    ],
+    "description": "MailChimp for WordPress is an email marketing plugin that enables you to build subscriber lists.",
+    "icon": "MailChimp for WordPress.png",
+    "implies": "MailChimp",
+    "dom": "link[href*='/wp-content/plugins/mailchimp-for-wp/']",
+    "js": {
+      "mc4wp": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/mailchimp-for-wp/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.mc4wp.com"
   },
   "Mailgun": {
     "cats": [
