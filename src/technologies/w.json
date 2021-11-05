@@ -597,6 +597,24 @@
     "icon": "websocket.png",
     "website": "https://en.wikipedia.org/wiki/WebSocket"
   },
+  "WebToffee GDPR Cookie Consent": {
+    "cats": [
+      87,
+      67
+    ],
+    "description": "WebToffee GDPR Cookie Consent is a cookie consent and compliance notice WordPress plugin which will assist you in making your website GDPR (RGPD, DSVGO) compliant.",
+    "icon": "WebToffee.svg",
+    "dom": "link[href*='/wp-content/plugins/cookie-law-info/']",
+    "implies": "CookieYes",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/cookie-law-info/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.webtoffee.com/product/gdpr-cookie-consent/"
+  },
   "Webtrekk": {
     "cats": [
       10
