@@ -127,6 +127,25 @@
     "requires": "WordPress",    
     "website": "https://getwpo.com"
   },
+  "WP Fastest Cache": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "WP Fastest Cache is one of a number of plugins for WordPress designed to accelerate the performance of your website.",
+    "icon": "WP Fastest Cache.png",
+    "dom": "link[href*='/wp-content/cache/wpfc-minified/']",
+    "js": {
+      "Wpfcll": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/cache/wpfc-minified/",
+    "website": "https://www.wpfastestcache.com"
+  },
   "WPForms": {
     "cats": [
       87
