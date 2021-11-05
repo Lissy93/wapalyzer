@@ -2071,6 +2071,21 @@
     "scriptSrc": "widget\\.siteminder\\.com",
     "website": "https://www.siteminder.com"
   },
+  "SiteOrigin Page Builder": {
+    "cats": [
+      87,
+      51
+    ],
+    "description": "Page Builder by SiteOrigin makes it easy to build responsive grid-based page content that adapts to mobile devices with pixel perfect accuracy.",
+    "icon": "SiteOrigin.svg",
+    "dom": "link[href*='/wp-content/plugins/siteorigin-panels/']",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/siteorigin-panels/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://siteorigin.com/page-builder"
+  },
   "SiteOrigin Vantage": {
     "cats": [
       80
