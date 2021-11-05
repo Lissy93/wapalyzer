@@ -2937,6 +2937,22 @@
     "saas": true,
     "website": "https://www.autopilothq.com"
   },
+  "Autoptimize": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "Autoptimize is a popular performance plugin for WordPress.",
+    "icon": "Autoptimize.png",
+    "dom": "link[href*='/wp-content/plugins/autoptimize/']",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/autoptimize/.+\\.js(?:\\?ao_version=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://autoptimize.com"
+  },
   "Avangate": {
     "cats": [
       6
