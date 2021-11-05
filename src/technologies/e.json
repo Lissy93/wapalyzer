@@ -322,6 +322,23 @@
     "scriptSrc": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
     "website": "https://elementor.com"
   },
+  "Elementor Header & Footer Builder": {
+    "cats": [
+      87
+    ],
+    "description": "Elementor Header & Footer Builder is a simple yet powerful WordPress plugin that allows you to create a layout with Elementor and set it as.",
+    "icon": "Elementor Header & Footer Builder.svg",
+    "implies": "Elementor",
+    "dom": "link[href*='/wp-content/plugins/header-footer-elementor/']",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": [
+      "WordPress",
+      "Elementor"
+    ],
+    "website": "https://github.com/brainstormforce/header-footer-elementor"
+  },
   "Elevar": {
     "cats": [
       10
