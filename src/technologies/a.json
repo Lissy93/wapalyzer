@@ -1116,6 +1116,25 @@
     "scriptSrc": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
     "website": "http://www.advertstream.com"
   },
+  "Advanced Custom Fields": {
+    "cats": [
+      87
+    ],
+    "description": "Advanced Custom Fields is a WordPress plugin which allows you to add extra content fields to your WordPress edit screens.",
+    "icon": "Advanced Custom Fields.png",
+    "js": {
+      "acf": "",
+      "acfL10n": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/advanced-custom-fields(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.advancedcustomfields.com"
+  },
   "Adverticum": {
     "cats": [
       36
