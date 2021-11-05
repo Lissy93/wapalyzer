@@ -1493,6 +1493,26 @@
     "scriptSrc": "monotracker(?:\\.min)?\\.js",
     "website": "https://www.mono.net/en"
   },
+  "MonsterInsights": {
+    "cats": [
+      87,
+      10
+    ],
+    "description": "MonsterInsights is the most popular Google Analytics plugin for WordPress.",
+    "icon": "MonsterInsights.png",
+    "js": {
+      "MonsterInsights": "",
+      "monsterinsights_frontend": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/google-analytics-for-wordpress/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.monsterinsights.com"
+  },
   "MooTools": {
     "cats": [
       12
