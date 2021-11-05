@@ -96,7 +96,21 @@
     "implies": "WordPress",
     "website": "https://wpengine.com"
   },
-
+  "WPMU DEV Smush": {
+    "cats": [
+      87
+    ],
+    "description": "WPMU DEV Smush is a WordPress plugin that allows you to optimise images without losing quality.",
+    "icon": "WPMU DEV.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",   
+    "scriptSrc": "/wp-content/plugins/wp-smushit(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wpmudev.com/project/wp-smush-pro"    
+  },
   "WP-Optimize": {
     "cats": [
       87,
