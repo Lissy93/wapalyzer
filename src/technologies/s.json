@@ -2071,6 +2071,21 @@
     "scriptSrc": "widget\\.siteminder\\.com",
     "website": "https://www.siteminder.com"
   },
+  "SiteOrigin Page Builder": {
+    "cats": [
+      87,
+      51
+    ],
+    "description": "Page Builder by SiteOrigin makes it easy to build responsive grid-based page content that adapts to mobile devices with pixel perfect accuracy.",
+    "icon": "SiteOrigin.svg",
+    "dom": "link[href*='/wp-content/plugins/siteorigin-panels/']",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/siteorigin-panels/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://siteorigin.com/page-builder"
+  },
   "SiteOrigin Vantage": {
     "cats": [
       80
@@ -2451,6 +2466,22 @@
     "saas": true,
     "scriptSrc": "\\.smartsuppchat\\.com",
     "website": "https://www.smartsupp.com"
+  },
+  "Smash Balloon Instagram Feed": {
+    "cats": [
+      87
+    ],
+    "description": "Instagram Feed displays Instagram posts from your Instagram accounts, either in the same single feed or in multiple different ones. Created by Smash Balloon.",
+    "icon": "Smash Balloon.svg",
+    "dom": "link[href*='/wp-content/plugins/instagram-feed/']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/instagram-feed/",
+    "website": "https://smashballoon.com/instagram-feed"
   },
   "Smile": {
     "cats": [

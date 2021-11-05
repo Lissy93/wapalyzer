@@ -1116,6 +1116,25 @@
     "scriptSrc": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
     "website": "http://www.advertstream.com"
   },
+  "Advanced Custom Fields": {
+    "cats": [
+      87
+    ],
+    "description": "Advanced Custom Fields is a WordPress plugin which allows you to add extra content fields to your WordPress edit screens.",
+    "icon": "Advanced Custom Fields.png",
+    "js": {
+      "acf": "",
+      "acfL10n": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/advanced-custom-fields(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.advancedcustomfields.com"
+  },
   "Adverticum": {
     "cats": [
       36
@@ -1586,9 +1605,14 @@
     "cpe": "cpe:/a:semperfiwebdesign:all_in_one_seo_pack",
     "description": "All in One SEO plugin optimizes WordPress website and its content for search engines.",
     "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
-    "icon": "all-in-One-SEO-Pack.png",
+    "icon": "AIOSEO.svg",
     "requires": "WordPress",
-    "website": "https://wordpress.org/plugins/all-in-one-seo-pack/"
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://aioseo.com"
   },
   "AlloyUI": {
     "cats": [
@@ -2912,6 +2936,22 @@
     ],
     "saas": true,
     "website": "https://www.autopilothq.com"
+  },
+  "Autoptimize": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "Autoptimize is a popular performance plugin for WordPress.",
+    "icon": "Autoptimize.png",
+    "dom": "link[href*='/wp-content/plugins/autoptimize/']",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/autoptimize/.+\\.js(?:\\?ao_version=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://autoptimize.com"
   },
   "Avangate": {
     "cats": [

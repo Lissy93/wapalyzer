@@ -107,9 +107,44 @@
       "low",
       "recurring"
     ],
-    "requires": "WordPress",
+    "requires": "WordPress",   
     "scriptSrc": "/wp-content/plugins/wp-smushit(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://wpmudev.com/project/wp-smush-pro"
+    "website": "https://wpmudev.com/project/wp-smush-pro"    
+  },
+  "WP-Optimize": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "WP-Optimize is an all-in-one WordPress plugin that cleans your database, compresses your large images and caches your site.",
+    "icon": "WP-Optimize.png",
+    "html": "<!--[^>]+Cached by WP-Optimize",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",    
+    "website": "https://getwpo.com"
+  },
+  "WPForms": {
+    "cats": [
+      87
+    ],
+    "description": "WPForms is a drag and drop WordPress form builder.",
+    "icon": "WPForms.svg",
+    "js": {
+      "wpforms": "",
+      "wpforms_settings": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wpforms(?:-lite)?/.+(?:frontend\\.min|wpforms)\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wpforms.com"
   },
   "WP Puzzle Basic": {
     "cats": [

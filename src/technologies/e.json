@@ -322,6 +322,23 @@
     "scriptSrc": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
     "website": "https://elementor.com"
   },
+  "Elementor Header & Footer Builder": {
+    "cats": [
+      87
+    ],
+    "description": "Elementor Header & Footer Builder is a simple yet powerful WordPress plugin that allows you to create a layout with Elementor and set it as.",
+    "icon": "Elementor Header & Footer Builder.svg",
+    "implies": "Elementor",
+    "dom": "link[href*='/wp-content/plugins/header-footer-elementor/']",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": [
+      "WordPress",
+      "Elementor"
+    ],
+    "website": "https://github.com/brainstormforce/header-footer-elementor"
+  },
   "Elevar": {
     "cats": [
       10
@@ -642,6 +659,22 @@
     "icon": "syncfusion.svg",
     "website": "https://www.syncfusion.com/javascript-ui-controls"
   },
+  "Essential Addons for Elementor": {
+    "cats": [
+      87
+    ],
+    "description": "Essential Addons for Elementor gives you 70+ creative elements and extensions to help you extend the stock features of Elementor page builder.",
+    "icon": "Essential Addons for Elementor.svg",
+    "dom": "link[href*='/wp-content/uploads/essential-addons-elementor/']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/uploads/essential-addons-elementor/",
+    "website": "https://essential-addons.com/elementor/"
+  },
   "Estore Compare": {
     "cats": [
       74
@@ -827,6 +860,23 @@
     },
     "scriptSrc": "ext-base\\.js",
     "website": "https://www.sencha.com"
+  },
+  "Extendify": {
+    "cats": [
+      87
+    ],
+    "description": "Extendify (formerly Redux framework) is one of the most popular, advanced, and free to use option panel frameworks for WordPress themes and plugins.",
+    "icon": "Extendify.svg",
+    "meta": {
+      "framework": "^Redux ([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://extendify.com"
   },
   "ExtendThemes Calliope": {
     "cats": [
