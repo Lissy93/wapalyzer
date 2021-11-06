@@ -355,7 +355,7 @@
       "[class*='shopping-cart']",
       "[class*='checkout']"
     ],
-    "url": "/(cart|order|basket|trolley|bag|shoppingbag|checkout)",
+    "url": "/(?:cart|order|basket|trolley|bag|shoppingbag|checkout)",
     "icon": "Cart-generic.svg",
     "js": {
       "google_tag_params.ecomm_pagetype": ""
