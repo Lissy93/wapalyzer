@@ -351,10 +351,11 @@
       "a[href*='/shoppingbag']",
       "a[href*='/checkout']",
       "[aria-controls='cart']",
-      "*[class*='shopping-bag']",
-      "*[class*='shopping-cart']",
-      "*[class*='checkout']"
+      "[class*='shopping-bag']",
+      "[class*='shopping-cart']",
+      "[class*='checkout']"
     ],
+    "url": "/(cart|order|basket|trolley|bag|shoppingbag|checkout)",
     "icon": "Cart-generic.svg",
     "js": {
       "google_tag_params.ecomm_pagetype": ""
