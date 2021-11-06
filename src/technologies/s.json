@@ -1329,9 +1329,13 @@
     "description": "ShareThis provides free engagement and growth tools (e.g., share buttons, follow buttons, and reaction buttons) for site owners.",
     "icon": "ShareThis.png",
     "js": {
-      "SHARETHIS": ""
+      "SHARETHIS": "",
+      "__sharethis__docReady": ""
     },
-    "scriptSrc": "w\\.sharethis\\.com/",
+    "scriptSrc": "\\.sharethis\\.com/",
+    "pricing": [
+      "freemium"
+    ],
     "website": "http://sharethis.com"
   },
   "SharpSpring": {
