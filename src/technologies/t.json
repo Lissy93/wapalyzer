@@ -328,6 +328,25 @@
     "scriptSrc": "cdn\\.tamara\\.co",
     "website": "https://tamara.co/"
   },
+  "Tapcart": {
+    "cats": [
+      19
+    ],
+    "description": "Tapcart is a mobile commerce SaaS platform that integrates directly with Shopify.",
+    "icon": "Tapcart.svg",
+    "requires": "Shopify",
+    "dom": "a[href*='tapcart.app'][target='_blank']",
+    "js": {
+      "tapcartwebBanner": ""
+    },
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "scriptSrc": "cdn\\.tapcart\\.com/",
+    "website": "https://tapcart.com"
+  },
   "Target2Sell": {
     "cats": [
       76
