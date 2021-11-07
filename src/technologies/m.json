@@ -155,17 +155,19 @@
     },
     "cpe": "cpe:/a:magento:magento",
     "description": "Magento is an open-source ecommerce platform written in PHP.",
-    "html": [
-      "<script [^>]+data-requiremodule=\"mage/\\;version:2",
-      "<script [^>]+data-requiremodule=\"Magento_\\;version:2",
-      "<script type=\"text/x-magento-init\">"
-    ],
     "icon": "Magento.svg",
     "implies": [
       "PHP",
       "MySQL"
     ],
-    "dom": "html[data-image-optimizing-origin]",
+    "dom": {
+      "script[type='text/x-magento-init']": {
+        "exists": ""
+      },
+      "script[data-requiremodule*='mage'], script[data-requiremodule*='Magento_'], html[data-image-optimizing-origin]": {
+        "exists": "\\;version:2"
+      }
+    },
     "js": {
       "Mage": "",
       "VarienForm": ""
