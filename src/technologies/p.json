@@ -1277,10 +1277,10 @@
     "cats": [
       59
     ],
+    "description": "Polyfill is a service which accepts a request for a set of browser features and returns only the polyfills that are needed by the requesting browser.",
     "icon": "polyfill.svg",
-    "scriptSrc": [
-      "^https?://cdn\\.polyfill\\.io/"
-    ],
+    "scriptSrc": "polyfill\\.io/v([\\d\\.]+)\\;version:\\1",
+    "oss": true,
     "website": "https://polyfill.io"
   },
   "Polymer": {
