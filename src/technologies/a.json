@@ -888,7 +888,7 @@
     ],
     "description": "Admo.tv is a company developing a TV and radio analytics platform.",
     "icon": "Admo.tv.svg",
-    "dom": "link[href*='.admo.tv'], a[href*='.admo.tv'][target='_blank'], iframe[src='.admo.tv/']",
+    "dom": "link[href*='.admo.tv'], a[href*='.admo.tv'][target='_blank'], iframe[src*='.admo.tv/']",
     "js": {
       "ADMO_config": "",
       "ADMO_TT": ""
