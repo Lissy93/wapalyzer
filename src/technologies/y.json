@@ -265,18 +265,24 @@
       84,
       90
     ],
-    "description": "Yotpo is a provider of Loyalty & Referrals, SMS Marketing, Reviews, and Visual UGC solutions.",
-    "icon": "Yotpo.png",
+    "description": "Yotpo is a user-generated content marketing platform.",
+    "icon": "Yotpo.svg",
     "js": {
-      "yotpo": ""
+      "yotpo": "",
+      "SwellConfig": "",
+      "swellAPI": ""
     },
     "pricing": [
+      "fremium",
       "low",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "staticw2\\.yotpo\\.com",
-    "website": "https://www.yotpo.com/"
+    "scriptSrc": [
+      "\\.yotpo\\.com/",
+      "cdn\\.swellrewards\\.com/"
+    ],
+    "website": "https://www.yotpo.com"
   },
   "Yottaa": {
     "cats": [
