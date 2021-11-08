@@ -210,8 +210,6 @@
     "scriptSrc": [
       "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
       "cdn-images\\.mailchimp\\.com/[^>]*\\.css",
-      "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
-      "mailchimp-for-wp/assets/js/forms\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
       "chimpstatic\\.com/mcjs-connected"
     ],
     "website": "http://mailchimp.com"
@@ -236,6 +234,20 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/mailchimp-for-wp/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.mc4wp.com"
+  },
+  "MailChimp for WooCommerce": {
+    "cats": [
+      87
+    ],
+    "description": "MailChimp for WooCommerce gives you the ability to automatically sync customer purchase data to your MailChimp account.",
+    "icon": "mailchimp.svg",
+    "implies": "MailChimp",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/mailchimp-for-woocommerce/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://mailchimp.com/integrations/woocommerce"
   },
   "Mailgun": {
     "cats": [
