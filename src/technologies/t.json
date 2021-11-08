@@ -328,25 +328,6 @@
     "scriptSrc": "cdn\\.tamara\\.co",
     "website": "https://tamara.co/"
   },
-  "Tapcart": {
-    "cats": [
-      19
-    ],
-    "description": "Tapcart is a mobile commerce SaaS platform that integrates directly with Shopify.",
-    "icon": "Tapcart.svg",
-    "requires": "Shopify",
-    "dom": "a[href*='tapcart.app'][target='_blank']",
-    "js": {
-      "tapcartwebBanner": ""
-    },
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "scriptSrc": "cdn\\.tapcart\\.com/",
-    "website": "https://tapcart.com"
-  },
   "Target2Sell": {
     "cats": [
       76
@@ -640,6 +621,22 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://thethemefoundry.com/wordpress-themes/make"
+  },
+  "The Events Calendar": {
+    "cats": [
+      87
+    ],
+    "description": "The Events Calendar is a free event management plugin for WordPress.",
+    "icon": "The Events Calendar.png",
+    "dom": "link[href*='/wp-content/plugins/the-events-calendar/']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/the-events-calendar(?:-pro)?/",
+    "website": "https://theeventscalendar.com"
   },
   "Thefork": {
     "cats": [
