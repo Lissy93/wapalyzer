@@ -1774,6 +1774,22 @@
     ],
     "website": "https://www.shopware.com"
   },
+  "Shortcodes Ultimate": {
+    "cats": [
+      87
+    ],
+    "description": "Shortcodes Ultimate is a comprehensive collection of visual components for WordPress.",
+    "icon": "Shortcodes Ultimate.svg",
+    "dom": "link[href*='/wp-content/plugins/shortcodes-ultimate/']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/shortcodes-ultimate/.+index\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://getshortcodes.com"
+  },
   "Shuttle": {
     "cats": [
       1
