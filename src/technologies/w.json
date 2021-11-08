@@ -165,6 +165,20 @@
     "scriptSrc": "/wp-content/plugins/wpforms(?:-lite)?/.+(?:frontend\\.min|wpforms)\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wpforms.com"
   },
+  "WP Maintenance Mode": {
+    "cats": [
+      87
+    ],
+    "description": "WP Maintenance Mode is a WordPress plugin which add a maintenance page to your blog.",
+    "icon": "WP Maintenance Mode.png",
+    "js":{
+      "wpmm_vars": ""
+    },
+    "requires": "WordPress",
+    "oss": true,
+    "scriptSrc": "/wp-content/plugins/wp-maintenance-mode/.+wpmm\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://github.com/andrianvaleanu/WP-Maintenance-Mode"
+  },
   "WP Puzzle Basic": {
     "cats": [
       80
