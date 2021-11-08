@@ -2121,6 +2121,20 @@
     "scriptSrc": "/wp-content/themes/vantage/",
     "website": "https://siteorigin.com/theme/vantage"
   },
+  "SiteOrigin Widgets Bundle": {
+    "cats": [
+      87
+    ],
+    "description": "SiteOrigin Widgets Bundle is a WordPress plugin that gives you all the elements you need to build modern, responsive, and engaging website pages.",
+    "icon": "SiteOrigin.svg",
+    "dom": "link[href*='/wp-content/plugins/so-widgets-bundle/']",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/so-widgets-bundle/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://siteorigin.com/widgets-bundle"
+  },
   "SiteSpect": {
     "cats": [
       74
