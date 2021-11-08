@@ -790,6 +790,23 @@
     "scriptSrc": "\\.optimove\\.net/.+v([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://www.optimove.com"
   },
+  "OptinMonster": {
+    "cats": [
+      87
+    ],
+    "description": "OptinMonster is a lead-generation plugin for WordPress.",
+    "icon": "OptinMonster.png",
+    "js": {
+      "OptinMonsterApp": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/optinmonster/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://optinmonster.com"
+  },
   "Oracle Application Server": {
     "cats": [
       22
