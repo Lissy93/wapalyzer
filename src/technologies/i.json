@@ -158,6 +158,24 @@
     "scriptSrc": "template-assets\\.iluria\\.com/commons/",
     "website": "https://www.iluria.com.br"
   },
+  "Imagely NextGEN Gallery": {
+    "cats": [
+      87,
+      7
+    ],
+    "description": "NextGEN Gallery is a WordPress gallery plugin maintained by Imagely.",
+    "icon": "Imagely.png",
+    "dom": "link[href*='/wp-content/plugins/nextgen-gallery/']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/nextgen-gallery(?:-pro|-plus)?/",
+    "website": "https://www.imagely.com/wordpress-gallery-plugin"
+  },
   "Image Relay": {
     "cats": [
       95
