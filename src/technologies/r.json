@@ -152,6 +152,23 @@
     "scriptSrc": "ramda.*\\.js",
     "website": "http://ramdajs.com"
   },
+  "RankMath SEO": {
+    "cats": [
+      87,
+      54
+    ],
+    "description": "RankMath SEO is a search engine optimization plugin for WordPress.",
+    "icon": "RankMath SEO.svg",
+    "dom": "link[href*='/wp-content/plugins/seo-by-rank-math/']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/seo-by-rank-math(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://rankmath.com"
+  },
   "Raphael": {
     "cats": [
       25
