@@ -1092,6 +1092,21 @@
     ],
     "website": "https://woocommerce.com"
   },
+  "WooCommerce Stripe Payment Gateway": {
+    "cats": [
+      87
+    ],
+    "description": "WooCommerce Stripe Payment Gateway plugin extends WooCommerce allowing you to take payments directly on your store via Stripe’s API.",
+    "icon": "WooCommerce Stripe Payment Gateway.png",
+    "implies": "Stripe",
+    "dom": "link[href*='/wp-content/plugins/woocommerce-gateway-stripe/']",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-stripe/",
+    "website": "https://woocommerce.com/products/stripe"
+  },
   "Woopra": {
     "cats": [
       10
