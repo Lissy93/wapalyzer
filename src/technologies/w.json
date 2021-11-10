@@ -1106,6 +1106,22 @@
     ],
     "website": "https://woocommerce.com"
   },
+  "WooCommerce PayPal Checkout Payment Gateway": {
+    "cats": [
+      87
+    ],
+    "description": "WooCommerce PayPal Checkout Payment Gateway is a WordPress plugin which allows you to securely sell your products and subscriptions online using in-context checkout.",
+    "icon": "WooCommerce PayPal.png",
+    "implies": "PayPal",
+    "dom": "link[href*='/wp-content/plugins/woocommerce-gateway-paypal-express-checkout/']",
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-paypal-express-checkout/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://github.com/woocommerce/woocommerce-gateway-paypal-express-checkout"
+  },
   "WooCommerce Stripe Payment Gateway": {
     "cats": [
       87
