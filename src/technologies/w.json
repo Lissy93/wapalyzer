@@ -1106,6 +1106,23 @@
     ],
     "website": "https://woocommerce.com"
   },
+
+  "WooCommerce PayPal Payments": {
+    "cats": [
+      87
+    ],
+    "description": "WooCommerce PayPal Payments is a latest WordPress plugin with most complete payment processing solution. Accept PayPal exclusives, credit/debit cards and local payment methods.",
+    "icon": "WooCommerce PayPal.png",
+    "implies": "PayPal",
+    "dom": "link[href*='/wp-content/plugins/woocommerce-paypal-payments/']",
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woocommerce-paypal-payments/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://github.com/woocommerce/woocommerce-paypal-payments"
+  },
   "WooCommerce PayPal Checkout Payment Gateway": {
     "cats": [
       87
