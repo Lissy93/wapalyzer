@@ -1089,6 +1089,22 @@
     "scriptSrc": "googletagmanager\\.com/gtm\\.js",
     "website": "http://www.google.com/tagmanager"
   },
+  "Google Tag Manager for WordPress": {
+    "cats": [
+      87
+    ],
+    "description": "Google Tag Manager for WordPress plugin places the GTM container code snippets onto your wordpress website so that you do not need to add this manually.",
+    "icon": "Google Tag Manager for WordPress.png",
+    "implies": "Google Tag Manager",
+    "dom": "link[href*='/wp-content/plugins/duracelltomi-google-tag-manager/']",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/duracelltomi-google-tag-manager/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://gtm4wp.com"
+  },
   "Google Wallet": {
     "cats": [
       41
