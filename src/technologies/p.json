@@ -1353,6 +1353,24 @@
     "scriptSrc": "/wp-content/themes/popularfx/.+\\?ver=([\\d\\.]+)\\;version:\\1",
     "website": "https://popularfx.com"
   },
+  "Popup Maker": {
+    "cats": [
+      87
+    ],
+    "description": "Popup Maker is a plugin that lets you create popup windows for your WordPress website.",
+    "icon": "Popup Maker.png",
+    "js": {
+      "pum_popups": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/popup-maker/(?:.+site(?:\\.min)?\\.js\\?.+ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wppopupmaker.com"
+  },
   "Post Affiliate Pro": {
     "cats": [
       71
