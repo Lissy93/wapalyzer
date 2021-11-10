@@ -91,16 +91,17 @@
     "website": "https://www.amp.dev",
     "xhr": "cdn\\.ampproject\\.org"
   },
-  "AMP Plugin": {
+  "AMP for WordPress": {
     "cats": [
-      1,
-      5,
       87
     ],
+    "description": "AMP for WordPress automatically adds Accelerated Mobile Pages (Google AMP Project) functionality to your WordPress site.",
     "icon": "Accelerated-Mobile-Pages.svg",
+    "implies": "AMP",
     "meta": {
       "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
     },
+    "dom": "link[href*='/wp-content/plugins/amp/']",
     "requires": "WordPress",
     "website": "https://amp-wp.org"
   },
