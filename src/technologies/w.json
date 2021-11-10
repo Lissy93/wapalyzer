@@ -447,13 +447,30 @@
     ],
     "description": "WebFactory Under Construction is a WordPress plugin which allows you to create an under construction page.",
     "icon": "WebFactory.png",
-    "dom": "link[href*='/wp-content/plugins/under-construction-page/']",
+    "dom": "link[href*='/wp-content/plugins/under-construction-page/']"    
     "pricing": [
       "freemium"
     ],
     "requires": "WordPress",
     "oss": true,
-    "website": "https://wordpress.org/plugins/under-construction-page"
+    "website": "https://wordpress.org/plugins/under-construction-page",
+  },  
+  "WebFactory Maintenance": {
+    "cats": [
+      87
+    ],
+    "description": "WebFactory Maintenance is a WordPress plugin which allows you to create an maintenance page.",
+    "icon": "WebFactory.png",
+    "dom": "link[href*='/wp-content/plugins/maintenance/']",
+    "js": {
+      "mtnc_front_options": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "oss": true,
+    "website": "https://wordpress.org/plugins/maintenance"
   },
   "WebGUI": {
     "cats": [
