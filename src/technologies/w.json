@@ -261,11 +261,19 @@
       10,
       87
     ],
-    "html": [
-      "<!-- Analytics by WP-Statistics v([\\d.]+) -\\;version:\\1"
+    "description": "WP-Statistics is a WordPress plugin which allows you to know your website statistics.",
+    "icon": "WP-Statistics.svg",
+    "dom": "link[href*='/wp-content/plugins/wp-statistics/']",
+    "js": {
+      "WP_Statistics_http": "",
+      "wps_statistics_object": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
     ],
-    "icon": "WP-Statistics.png",
     "requires": "WordPress",
+    "oss": true,
     "website": "https://wp-statistics.com"
   },
   "WPCacheOn": {
