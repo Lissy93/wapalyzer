@@ -127,6 +127,20 @@
     "requires": "WordPress",    
     "website": "https://getwpo.com"
   },
+  "WP-PageNavi": {
+    "cats": [
+      87
+    ],
+    "description": "WP-PageNavi is a WordPress plugin which adds a more advanced paging navigation interface to your WordPress blog.",
+    "icon": "WP-PageNavi.svg",
+    "dom": "link[href*='/wp-content/plugins/wp-pagenavi/']",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "website": "https://github.com/lesterchan/wp-pagenavi"
+  },
   "WP Fastest Cache": {
     "cats": [
       87,
@@ -1092,6 +1106,7 @@
     ],
     "website": "https://woocommerce.com"
   },
+
   "WooCommerce PayPal Payments": {
     "cats": [
       87
@@ -1107,6 +1122,22 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/woocommerce-paypal-payments/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://github.com/woocommerce/woocommerce-paypal-payments"
+  },
+  "WooCommerce PayPal Checkout Payment Gateway": {
+    "cats": [
+      87
+    ],
+    "description": "WooCommerce PayPal Checkout Payment Gateway is a WordPress plugin which allows you to securely sell your products and subscriptions online using in-context checkout.",
+    "icon": "WooCommerce PayPal.png",
+    "implies": "PayPal",
+    "dom": "link[href*='/wp-content/plugins/woocommerce-gateway-paypal-express-checkout/']",
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-paypal-express-checkout/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://github.com/woocommerce/woocommerce-gateway-paypal-express-checkout"
   },
   "WooCommerce Stripe Payment Gateway": {
     "cats": [
