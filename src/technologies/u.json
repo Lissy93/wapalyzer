@@ -399,6 +399,7 @@
       67
     ],
     "description": "Usercentrics is a SaaS enterprise solution for Consent Management (CMP) that helps enterprise customers to obtain, manage and document the user consent.",
+    "dom": "link[href*='app.usercentrics.eu'], script[data-usercentrics]",
     "icon": "Usercentrics.svg",
     "js": {
       "usercentrics.appVersion": "([\\d.]+)\\;version:\\1"
