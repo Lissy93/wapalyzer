@@ -1962,14 +1962,13 @@
     "description": "Cookie Information is a privacy tech company that develops software that helps making company websites and mobile apps GDPR and ePrivacy compliant.",
     "icon": "Cookie Information.svg",
     "js": {
-      "CookieInformation.config.version": "(.+)\\;version:\\1"
+      "CookieInformation.config.cdnUrl": ""
     },
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "\\.app\\.cookieinformation\\.com/",
     "website": "https://cookieinformation.com"
   },
   "Cookie Notice": {
@@ -2573,6 +2572,27 @@
     "saas": true,
     "scriptSrc": "(?:cdn|app)\\.customily\\.com/",
     "website": "https://www.customily.com"
+  },
+  "Cxense": {
+    "cats": [
+      76,
+      86
+    ],
+    "description": "Cxense was an AI-powered data management and intelligent personalisation platform.",
+    "icon": "Cxense.png",
+    "meta": {
+      "cXenseParse:pageclass": "",
+      "cXenseParse:itm-meta-keywords": "",
+      "cXenseParse:publishtime": "",
+      "cXenseParse:url": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "scriptSrc": "\\.cxense\\.com/",
+    "saas": true,
+    "website": "https://www.cxense.com"
   },
   "CyberChimps Responsive": {
     "cats": [
