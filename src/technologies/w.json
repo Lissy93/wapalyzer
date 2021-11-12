@@ -86,7 +86,7 @@
     ],
     "description": "WorldShopping makes online purchases in Japan easier for international visitors.",
     "icon": "worldshopping.png",
-    "scriptSrc": "checkout-js\\.worldshopping\\.jp(?:/checkout-(\\d+)_(\\d+)_(\\d+))?\\;version:\\1.\\2.\\3",
+    "scriptSrc": "checkout-api\\.worldshopping\\.jp/(v\\d+)?\\;version:\\1",
     "website": "https://www.worldshopping.global/"
   },
   "WP Engine": {
