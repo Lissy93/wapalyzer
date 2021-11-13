@@ -709,7 +709,7 @@
     ],
     "cpe": "cpe:/a:openx:openx",
     "description": "OpenX is a programmatic advertising technology company.",
-    "dom": "iframe[src*='.openx.net'], img[src*='.openx.net']",
+    "dom": "iframe[src*='.openx.net'], img[src*='.openx.net'], link[href*='.openx.net']",
     "icon": "OpenX.png",
     "js": {
       "openx.name": "openx"
@@ -1118,7 +1118,7 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "widgets\\.outbrain\\.com/outbrain\\.js",
+    "scriptSrc": "\\.outbrain\\.com/",
     "website": "https://www.outbrain.com"
   },
   "Outlook Web App": {

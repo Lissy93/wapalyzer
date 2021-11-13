@@ -666,6 +666,7 @@
     ],
     "description": "AdRoll is a digital marketing technology platform that specializes in retargeting.",
     "icon": "AdRoll.svg",
+    "dom": "link[href*='.adroll.com']",
     "js": {
       "adroll_adv_id": "",
       "adroll_pix_id": ""
@@ -2459,7 +2460,7 @@
       36
     ],
     "description": "AppNexus is a cloud-based software platform that enables and optimizes programmatic online advertising.",
-    "dom": "iframe[src*='.adnxs.com'], img[src*='.adnxs.com']",
+    "dom": "iframe[src*='.adnxs.com'], img[src*='.adnxs.com'], link[href*='.adnxs.com']",
     "icon": "AppNexus.svg",
     "js": {
       "appnexus": "",
