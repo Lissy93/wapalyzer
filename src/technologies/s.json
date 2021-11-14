@@ -2424,11 +2424,17 @@
     "cats": [
       36
     ],
-    "html": "<img[^>]+smartadserver\\.com\\/call",
-    "icon": "Smart Ad Server.png",
+    "description": "Smart Ad Server is an adserving and RTB platform.",
+    "icon": "Smart Ad Server.svg",
+    "dom": "img[src*='smartadserver.com/'], link[href*='.smartadserver.com']",
     "js": {
       "SmartAdServer": ""
     },
+    "scriptSrc": "\\.sascdn\\.com/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
     "website": "http://smartadserver.com"
   },
   "Smartling": {
