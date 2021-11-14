@@ -413,6 +413,25 @@
     "scriptSrc": "^https://feedback\\.fish/ff\\.js",
     "website": "https://feedback.fish"
   },
+  "Feefo": {
+    "cats": [
+      90
+    ],
+    "description": "Feefo is a cloud-based consumer review and rating management software.",
+    "icon": "Feefo.svg",
+    "dom": "a[href*='.feefo.com/'][target='_blank'], link[href*='.feefo.com/'], img[src*='.feefo.com/']",
+    "js": {
+      "feefoTracker": "",
+      "feefoWidget": ""
+    },
+    "scriptSrc": "\\.feefo\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.feefo.com"
+  },
   "Fera": {
     "cats": [
       90
