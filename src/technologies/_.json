@@ -43,9 +43,16 @@
       36
     ],
     "description": "33Across is a technology company focused on solving the challenge of consumer attention for automated advertising.",
-    "dom": "iframe[src*='.33across.com'], link[href*='.33across.com']",
+    "dom": "iframe[src*='.33across.com'], link[href*='.33across.com'], link[href*='.tynt.com']",
     "icon": "33Across.png",
+    "js": {
+      "Tynt": ""
+    },
     "saas": true,
+    "scriptSrc": [
+      "\\.33across\\.com/",
+      "\\.tynt\\.com/"
+    ],
     "website": "https://www.33across.com",
     "xhr": "\\.33across\\.com"
   },
