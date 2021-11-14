@@ -8,6 +8,9 @@ const { agent, open, i18n, getOption, setOption, promisify, sendMessage } =
 const baseUrl = 'https://www.wappalyzer.com'
 const utm = '?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer'
 
+let csv = ''
+let csvFilename = ''
+
 const footers = [
   {
     heading: 'Generate sales leads',
@@ -147,6 +150,9 @@ const Popup = {
       headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
       plusConfigureApiKey: document.querySelector('.plus-configure__apikey'),
       plusConfigureSave: document.querySelector('.plus-configure__save'),
+      plusDownloadLink: document.querySelector(
+        '.plus-download__button .button__link'
+      ),
       headerSettings: document.querySelector('.header__settings'),
       headerThemes: document.querySelectorAll('.header__theme'),
       headerThemeLight: document.querySelector('.header__theme--light'),
@@ -323,6 +329,9 @@ const Popup = {
         }
       })
     })
+
+    // Download
+    el.plusDownloadLink.addEventListener('click', (event) => Popup.downloadCsv)
 
     // Footer
     const item =
@@ -592,7 +601,7 @@ const Popup = {
 
       https = protocol === 'https:'
 
-      hostname = hostname.replace(/^www\./, '').replace(/\./g, '-')
+      hostname = hostname.replace(/^www\./, '')
     } catch (error) {
       // Continue
     }
@@ -660,7 +669,10 @@ const Popup = {
         ),
       ]
 
-      const csv = [`"${columns.join('","')}"`]
+      csv = [`"${columns.join('","')}"`]
+      csvFilename = `wappalyzer${
+        hostname ? `_${hostname.replace('.', '-')}` : ''
+      }.csv`
 
       const row = [`http${https ? 's' : ''}://${www ? 'www.' : ''}${hostname}`]
 
@@ -855,6 +867,19 @@ const Popup = {
     )
 
     i18n()
+  },
+
+  downloadCsv() {
+    event.preventDefault()
+
+    chrome.downloads.download({
+      url: URL.createObjectURL(
+        new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
+      ),
+      filename: csvFilename,
+    })
+
+    return false
   },
 }
 
