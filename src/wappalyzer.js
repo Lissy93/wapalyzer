@@ -315,7 +315,7 @@ const Wappalyzer = {
                 {}
               )
             : dom,
-          false,
+          true,
           false
         ),
         html: transform(html),
