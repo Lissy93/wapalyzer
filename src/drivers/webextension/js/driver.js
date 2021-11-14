@@ -180,6 +180,13 @@ const Driver = {
   },
 
   /**
+   * Get all categories
+   */
+  getCategories() {
+    return Wappalyzer.categories
+  },
+
+  /**
    * Perform a HTTP POST request
    * @param {String} url
    * @param {String} body
@@ -780,10 +787,16 @@ const Driver = {
    * Get the detected technologies for the current tab
    */
   async getDetections() {
-    const [{ id, url }] = await promisify(chrome.tabs, 'query', {
+    const tab = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
     })
+
+    if (!tab) {
+      return
+    }
+
+    const [{ id, url }] = tab
 
     if (await Driver.isDisabledDomain(url)) {
       await Driver.setIcon(url, [])

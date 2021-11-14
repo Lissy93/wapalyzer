@@ -41,6 +41,54 @@ const footers = [
   },
 ]
 
+const attributeKeys = [
+  'phone',
+  'skype',
+  'whatsapp',
+  'email',
+  'verifiedEmail',
+  'safeEmail',
+  'twitter',
+  'facebook',
+  'instagram',
+  'github',
+  'tiktok',
+  'youtube',
+  'pinterest',
+  'linkedin',
+  'owler',
+  'title',
+  'description',
+  'copyright',
+  'copyrightYear',
+  'responsive',
+  'schemaOrgTypes',
+  'certInfo.subjectOrg',
+  'certInfo.subjectCountry',
+  'certInfo.subjectState',
+  'certInfo.subjectLocality',
+  'certInfo.issuer',
+  'certInfo.protocol',
+  'certInfo.validTo',
+  'dns.spf',
+  'dns.dmarc',
+  'https',
+  'trackerGoogleAnalytics',
+  'trackerGoogleAdSense',
+  'trackerMedianet',
+  'trackerFacebook',
+  'trackerOptimizely',
+  'companyName',
+  'inferredCompanyName',
+  'industry',
+  'about',
+  'locations',
+  'companySize',
+  'companyType',
+  'companyFounded',
+  'employees',
+]
+
 function setDisabledDomain(enabled) {
   const el = {
     headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
@@ -54,6 +102,30 @@ function setDisabledDomain(enabled) {
     el.headerSwitchEnabled.classList.remove('header__switch--hidden')
     el.headerSwitchDisabled.classList.add('header__switch--hidden')
   }
+}
+
+function csvEscape(value = '') {
+  if (Array.isArray(value)) {
+    value = value
+      .flat()
+      .slice(0, 10)
+      .map((value) => csvEscape(value.replace(/ ; /g, ' : ')))
+      .join(' ; ')
+  }
+
+  if (typeof value === 'string') {
+    return value.replace(/\n/g, ' ').replace(/"/g, '""').trim()
+  }
+
+  if (typeof value === 'boolean') {
+    return String(value).toUpperCase()
+  }
+
+  if (value === null) {
+    return ''
+  }
+
+  return String(value).replace(/"/g, '""')
 }
 
 const Popup = {
@@ -472,6 +544,10 @@ const Popup = {
       empty: document.querySelector('.plus-empty'),
       crawl: document.querySelector('.plus-crawl'),
       error: document.querySelector('.plus-error'),
+      download: document.querySelector('.plus-download'),
+      downloadLink: document.querySelector(
+        '.plus-download__button .button__link'
+      ),
       errorMessage: document.querySelector('.plus-error__message'),
       configure: document.querySelector('.plus-configure'),
       credits: document.querySelector('.credits'),
@@ -494,12 +570,31 @@ const Popup = {
     }
 
     el.panels.classList.add('panels--hidden')
+    el.download.classList.add('plus-download--hidden')
     el.empty.classList.add('plus-empty--hidden')
     el.crawl.classList.add('plus-crawl--hidden')
     el.error.classList.add('plus-error--hidden')
 
     while (el.panels.lastElementChild) {
       el.panels.removeChild(el.panels.lastElementChild)
+    }
+
+    let hostname = ''
+    let www = false
+    let https = false
+
+    try {
+      let protocol = ''
+
+      ;({ hostname, protocol } = new URL(url))
+
+      www = hostname.startsWith('www')
+
+      https = protocol === 'https:'
+
+      hostname = hostname.replace(/^www\./, '').replace(/\./g, '-')
+    } catch (error) {
+      // Continue
     }
 
     try {
@@ -549,6 +644,45 @@ const Popup = {
         return
       }
 
+      const categories = await Popup.driver('getCategories')
+
+      const columns = [
+        'URL',
+        ...categories.map(({ id }) =>
+          chrome.i18n.getMessage(`categoryName${id}`)
+        ),
+        ...attributeKeys.map((key) =>
+          chrome.i18n.getMessage(
+            `attribute${
+              key.charAt(0).toUpperCase() + key.slice(1).replace('.', '_')
+            }`
+          )
+        ),
+      ]
+
+      const csv = [`"${columns.join('","')}"`]
+
+      const row = [`http${https ? 's' : ''}://${www ? 'www.' : ''}${hostname}`]
+
+      const detections = await Popup.driver('getDetections')
+
+      row.push(
+        ...categories.reduce((categories, { id }) => {
+          categories.push(
+            detections
+              .filter(({ categories }) =>
+                categories.some(({ id: _id }) => _id === id)
+              )
+              .map(({ name }) => name)
+              .join(' ; ')
+          )
+
+          return categories
+        }, [])
+      )
+
+      const attributeValues = {}
+
       Object.keys(attributes).forEach((set) => {
         const panel = document.createElement('div')
         const header = document.createElement('div')
@@ -579,11 +713,15 @@ const Popup = {
             }`
           )
 
+          attributeValues[key] = []
+
           if (Array.isArray(value)) {
             value.forEach((value) => {
               const div = document.createElement('div')
 
               if (typeof value === 'object') {
+                attributeValues[key].push(value.text)
+
                 const a = document.createElement('a')
 
                 a.href = value.to
@@ -601,6 +739,8 @@ const Popup = {
                   td.appendChild(div)
                 }
               } else if (key === 'employees') {
+                attributeValues[key].push(value)
+
                 const [name, title] = value.split(' -- ')
 
                 const strong = document.createElement('strong')
@@ -613,17 +753,23 @@ const Popup = {
                 div.appendChild(span)
                 td.appendChild(div)
               } else {
+                attributeValues[key].push(value)
+
                 div.textContent = value
                 td.appendChild(div)
               }
             })
           } else if (key === 'companyName') {
+            attributeValues[key].push(value)
+
             const strong = document.createElement('strong')
 
             strong.textContent = value
 
             td.appendChild(strong)
           } else {
+            attributeValues[key].push(value)
+
             td.textContent = value
           }
 
@@ -642,7 +788,29 @@ const Popup = {
         el.panels.appendChild(panel)
       })
 
+      row.push(...attributeKeys.map((key) => csvEscape(attributeValues[key])))
+
+      csv.push(`"${row.join('","')}"`)
+
+      el.downloadLink.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        const file = URL.createObjectURL(
+          new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
+        )
+
+        chrome.downloads.download({
+          url: file,
+          filename: `wappalyzer${
+            hostname ? `_${hostname.replace('.', '-')}` : ''
+          }.csv`,
+        })
+
+        return false
+      })
+
       el.panels.classList.remove('panels--hidden')
+      el.download.classList.remove('plus-download--hidden')
     } catch (error) {
       Popup.log(error.data)
 
