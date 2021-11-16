@@ -752,6 +752,22 @@
     "scriptSrc": "(?:shopify-)?cdn\\.flow\\.io/",
     "website": "https://www.flow.io/"
   },
+  "Flutter": {
+    "cats": [
+      66
+    ],
+    "description": "Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase.",
+    "icon": "Flutter.svg",
+    "implies": "Dart",
+    "meta": {
+      "id": "^flutterweb-theme$"
+    },
+    "js": {
+      "flutterCanvasKit": ""
+    },
+    "oss": true,
+    "website": "https://flutter.dev"
+  },
   "FluxBB": {
     "cats": [
       2
