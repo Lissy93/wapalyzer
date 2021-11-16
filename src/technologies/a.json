@@ -3077,9 +3077,11 @@
     ],
     "description": "Avis Verifies is a complete solution for managing your customer reviews.",
     "icon": "Avis Verifies.png",
+    "dom": "a[href*='.avis-verifies.com/'][target='_blank'], iframe[src*='.avis-verifies.com/']",
     "js": {
       "avisVerifies": ""
     },
+    "scriptSrc": "\\.avis-verifies\\.com/",
     "pricing": [
       "low",
       "recurring"
