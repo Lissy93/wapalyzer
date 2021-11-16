@@ -8,9 +8,6 @@ const { agent, open, i18n, getOption, setOption, promisify, sendMessage } =
 const baseUrl = 'https://www.wappalyzer.com'
 const utm = '?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer'
 
-let csv = ''
-let csvFilename = ''
-
 const footers = [
   {
     heading: 'Generate sales leads',
@@ -107,6 +104,71 @@ function setDisabledDomain(enabled) {
   }
 }
 
+function getCsv() {
+  let hostname = ''
+  let www = false
+  let https = false
+
+  try {
+    let protocol = ''
+
+    ;({ hostname, protocol } = new URL(Popup.cache.url))
+
+    www = hostname.startsWith('www')
+
+    https = protocol === 'https:'
+
+    hostname = hostname.replace(/^www\./, '')
+  } catch (error) {
+    // Continue
+  }
+
+  const columns = [
+    'URL',
+    ...Popup.cache.categories.map(({ id }) =>
+      chrome.i18n.getMessage(`categoryName${id}`)
+    ),
+    ...attributeKeys.map((key) =>
+      chrome.i18n.getMessage(
+        `attribute${
+          key.charAt(0).toUpperCase() + key.slice(1).replace('.', '_')
+        }`
+      )
+    ),
+  ]
+
+  const csv = [`"${columns.join('","')}"`]
+
+  const filename = `wappalyzer${
+    hostname ? `_${hostname.replace('.', '-')}` : ''
+  }.csv`
+
+  const row = [`http${https ? 's' : ''}://${www ? 'www.' : ''}${hostname}`]
+
+  row.push(
+    ...Popup.cache.categories.reduce((categories, { id }) => {
+      categories.push(
+        Popup.cache.detections
+          .filter(({ categories }) =>
+            categories.some(({ id: _id }) => _id === id)
+          )
+          .map(({ name }) => name)
+          .join(' ; ')
+      )
+
+      return categories
+    }, [])
+  )
+
+  row.push(
+    ...attributeKeys.map((key) => csvEscape(Popup.cache.attributeValues[key]))
+  )
+
+  csv.push(`"${row.join('","')}"`)
+
+  return { csv, filename }
+}
+
 function csvEscape(value = '') {
   if (Array.isArray(value)) {
     value = value
@@ -136,6 +198,13 @@ const Popup = {
    * Initialise popup
    */
   async init() {
+    Popup.cache = {
+      url: '',
+      categories: [],
+      detections: [],
+      attributeValues: {},
+    }
+
     const el = {
       body: document.body,
       terms: document.querySelector('.terms'),
@@ -150,6 +219,7 @@ const Popup = {
       headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
       plusConfigureApiKey: document.querySelector('.plus-configure__apikey'),
       plusConfigureSave: document.querySelector('.plus-configure__save'),
+      plusDownload: document.querySelector('.plus-download'),
       plusDownloadLink: document.querySelector(
         '.plus-download__button .button__link'
       ),
@@ -246,6 +316,8 @@ const Popup = {
       ;[{ url }] = tabs
 
       if (url.startsWith('http')) {
+        Popup.cache.url = url
+
         const { hostname } = new URL(url)
 
         setDisabledDomain(disabledDomains.includes(hostname))
@@ -322,6 +394,7 @@ const Popup = {
         el.tabItems[index].classList.remove('tab-item--hidden')
 
         el.credits.classList.add('credits--hidden')
+        el.plusDownload.classList.remove('plus-download--hidden')
         el.footer.classList.remove('footer--hidden')
 
         if (tab.classList.contains('tab--plus')) {
@@ -331,7 +404,7 @@ const Popup = {
     })
 
     // Download
-    el.plusDownloadLink.addEventListener('click', (event) => Popup.downloadCsv)
+    el.plusDownloadLink.addEventListener('click', Popup.downloadCsv)
 
     // Footer
     const item =
@@ -381,6 +454,8 @@ const Popup = {
 
     // Apply internationalization
     i18n()
+
+    Popup.cache.categories = await Popup.driver('getCategories')
   },
 
   driver(func, args) {
@@ -423,9 +498,12 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
+    Popup.cache.detections = detections
+
     const el = {
       empty: document.querySelector('.empty'),
       detections: document.querySelector('.detections'),
+      plusDownload: document.querySelector('.plus-download'),
     }
 
     detections = (detections || [])
@@ -435,12 +513,14 @@ const Popup = {
     if (!detections || !detections.length) {
       el.empty.classList.remove('empty--hidden')
       el.detections.classList.add('detections--hidden')
+      el.plusDownload.classList.add('plus-download--hidden')
 
       return
     }
 
     el.empty.classList.add('empty--hidden')
     el.detections.classList.remove('detections--hidden')
+    el.plusDownload.classList.remove('plus-download--hidden')
 
     while (el.detections.firstChild) {
       el.detections.removeChild(detections.firstChild)
@@ -554,9 +634,6 @@ const Popup = {
       crawl: document.querySelector('.plus-crawl'),
       error: document.querySelector('.plus-error'),
       download: document.querySelector('.plus-download'),
-      downloadLink: document.querySelector(
-        '.plus-download__button .button__link'
-      ),
       errorMessage: document.querySelector('.plus-error__message'),
       configure: document.querySelector('.plus-configure'),
       credits: document.querySelector('.credits'),
@@ -565,6 +642,7 @@ const Popup = {
     }
 
     el.error.classList.add('plus-error--hidden')
+    el.download.classList.add('plus-download--hidden')
 
     if (apiKey) {
       el.loading.classList.remove('loading--hidden')
@@ -579,31 +657,12 @@ const Popup = {
     }
 
     el.panels.classList.add('panels--hidden')
-    el.download.classList.add('plus-download--hidden')
     el.empty.classList.add('plus-empty--hidden')
     el.crawl.classList.add('plus-crawl--hidden')
     el.error.classList.add('plus-error--hidden')
 
     while (el.panels.lastElementChild) {
       el.panels.removeChild(el.panels.lastElementChild)
-    }
-
-    let hostname = ''
-    let www = false
-    let https = false
-
-    try {
-      let protocol = ''
-
-      ;({ hostname, protocol } = new URL(url))
-
-      www = hostname.startsWith('www')
-
-      https = protocol === 'https:'
-
-      hostname = hostname.replace(/^www\./, '')
-    } catch (error) {
-      // Continue
     }
 
     try {
@@ -635,9 +694,8 @@ const Popup = {
         10
       ).toLocaleString()
 
-      el.credits.classList.remove('credits--hidden')
-
       el.loading.classList.add('loading--hidden')
+      el.credits.classList.remove('credits--hidden')
 
       if (crawl) {
         document
@@ -649,49 +707,10 @@ const Popup = {
 
       if (!Object.keys(attributes).length) {
         el.empty.classList.remove('plus-empty--hidden')
+        el.download.classList.remove('plus-download--hidden')
 
         return
       }
-
-      const categories = await Popup.driver('getCategories')
-
-      const columns = [
-        'URL',
-        ...categories.map(({ id }) =>
-          chrome.i18n.getMessage(`categoryName${id}`)
-        ),
-        ...attributeKeys.map((key) =>
-          chrome.i18n.getMessage(
-            `attribute${
-              key.charAt(0).toUpperCase() + key.slice(1).replace('.', '_')
-            }`
-          )
-        ),
-      ]
-
-      csv = [`"${columns.join('","')}"`]
-      csvFilename = `wappalyzer${
-        hostname ? `_${hostname.replace('.', '-')}` : ''
-      }.csv`
-
-      const row = [`http${https ? 's' : ''}://${www ? 'www.' : ''}${hostname}`]
-
-      const detections = await Popup.driver('getDetections')
-
-      row.push(
-        ...categories.reduce((categories, { id }) => {
-          categories.push(
-            detections
-              .filter(({ categories }) =>
-                categories.some(({ id: _id }) => _id === id)
-              )
-              .map(({ name }) => name)
-              .join(' ; ')
-          )
-
-          return categories
-        }, [])
-      )
 
       const attributeValues = {}
 
@@ -800,26 +819,7 @@ const Popup = {
         el.panels.appendChild(panel)
       })
 
-      row.push(...attributeKeys.map((key) => csvEscape(attributeValues[key])))
-
-      csv.push(`"${row.join('","')}"`)
-
-      el.downloadLink.addEventListener('click', (event) => {
-        event.preventDefault()
-
-        const file = URL.createObjectURL(
-          new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
-        )
-
-        chrome.downloads.download({
-          url: file,
-          filename: `wappalyzer${
-            hostname ? `_${hostname.replace('.', '-')}` : ''
-          }.csv`,
-        })
-
-        return false
-      })
+      Popup.cache.attributeValues = attributeValues
 
       el.panels.classList.remove('panels--hidden')
       el.download.classList.remove('plus-download--hidden')
@@ -869,14 +869,20 @@ const Popup = {
     i18n()
   },
 
-  downloadCsv() {
+  downloadCsv(event) {
+    console.log('x')
+
     event.preventDefault()
 
+    const { csv, filename } = getCsv()
+
+    const file = URL.createObjectURL(
+      new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
+    )
+
     chrome.downloads.download({
-      url: URL.createObjectURL(
-        new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
-      ),
-      filename: csvFilename,
+      url: file,
+      filename,
     })
 
     return false
