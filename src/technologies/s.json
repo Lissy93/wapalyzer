@@ -2993,6 +2993,24 @@
     "saas": true,
     "website": "https://sotoon.ir"
   },
+  "SoundCloud": {
+    "cats": [
+      5
+    ],
+    "description": "SoundCloud widget gives you the ability to upload, manage and share tracks.",
+    "icon": "SoundCloud.svg",
+    "dom": "iframe[src*='.soundcloud.com/'], img[src*='.sndcdn.com/']",
+    "js": {
+      "SC.Widget.Events.PLAY": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://developers.soundcloud.com/docs/api/html5-widget"
+  },
   "SoundManager": {
     "cats": [
       59
