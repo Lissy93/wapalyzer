@@ -857,6 +857,26 @@
     "url": "\\.bookero\\.(?:org|pl)",
     "website": "https://www.bookero.org"
   },
+  "Booking.com": {
+    "cats": [
+      71
+    ],
+    "description": "Booking.com is one of the largest ecommerce travel companies in the world. As an affiliate member, you can make up to 40% commission.",
+    "icon": "Booking.com.svg",
+    "scriptSrc": "aff\\.bstatic\\.com/",
+    "website": "https://www.booking.com/affiliate-program/v2/selfmanaged.html"
+  },
+  "Booking.com widget": {
+    "cats": [
+      5
+    ],
+    "description": "Booking.com is one of the largest ecommerce travel companies in the world. As an affiliate member, you can make up to 40% commission.",
+    "icon": "Booking.com.svg",
+    "implies": "Booking.com",
+    "dom": "form[action*='.booking.com/'][target='_blank'], img[src*='q-xx.bstatic.com/']",
+    "scriptSrc": "q\\.bstatic\\.com/",
+    "website": "https://www.booking.com/affiliate-program/v2/selfmanaged.html"
+  },
   "Bookingkit": {
     "cats": [
       5,
