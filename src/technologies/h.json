@@ -307,22 +307,24 @@
     "scriptSrc": "cdn\\.helpdocs\\.io",
     "website": "https://www.helpdocs.io"
   },
-  "Helpscout": {
+  "Help Scout": {
     "cats": [
+      13,
       52
     ],
-    "description": "Helpscout is a customer service platform including email, a knowledge base tool and live chat.",
-    "icon": "Helpscout.svg",
+    "description": "Help Scout is a customer service platform including email, a knowledge base tool and live chat.",
+    "icon": "Help Scout.svg",
     "js": {
-      "Beacon": "\\;confidence:25"
+      "beaconStore": "\\;confidence:25",
+      "__onBeaconDestroy": "\\;confidence:25"
     },
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "beacon-v2\\.helpscout\\.net",
-    "website": "https://www.helpscout.com/"
+    "scriptSrc": "\\.helpscout\\.net/",
+    "website": "https://www.helpscout.com"
   },
   "Hermes": {
     "cats": [
