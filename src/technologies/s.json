@@ -2999,7 +2999,7 @@
     ],
     "description": "SoundCloud widget gives you the ability to upload, manage and share tracks.",
     "icon": "SoundCloud.svg",
-    "dom:": "iframe[src*='.soundcloud.com/'], img[src*='.sndcdn.com/']",
+    "dom": "iframe[src*='.soundcloud.com/'], img[src*='.sndcdn.com/']",
     "js": {
       "SC.Widget.Events.PLAY": ""
     },
