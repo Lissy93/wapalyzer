@@ -4044,15 +4044,25 @@
     "saas": true,
     "website": "http://www.summercart.com"
   },
-  "SumoMe": {
+  "Sumo": {
     "cats": [
       5,
       32
     ],
     "description": "Sumo is a plugin offering set of marketing tools to automate a website's growth. These tools help drive extra traffic, engage visitors, increase email subscribers and build community.",
-    "icon": "SumoMe.png",
-    "scriptSrc": "load\\.sumome\\.com",
-    "website": "http://sumome.com"
+    "icon": "Sumo.png",
+    "js": {
+      "sumo": "",
+      "sumome": ""
+    },
+    "scriptSrc": "\\.sumo(?:me)?\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "http://sumo.com"
   },
   "SunOS": {
     "cats": [
