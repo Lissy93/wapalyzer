@@ -637,12 +637,17 @@
     ],
     "description": "LivePerson is a tool for conversational chatbots and messaging.",
     "icon": "LivePerson.png",
+    "js": {
+      "lpTag.Chronos": ""
+    },
     "pricing": [
-      "poa"
+      "mid",
+      "recurring",
+      "payg"
     ],
     "saas": true,
-    "scriptSrc": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
-    "website": "https://www.liveperson.com/"
+    "scriptSrc": "\\.(?:liveperson|contactatonce)?\\.(?:com|net|co\\.uk)\/",
+    "website": "https://www.liveperson.com"
   },
   "LiveRamp PCM": {
     "cats": [
