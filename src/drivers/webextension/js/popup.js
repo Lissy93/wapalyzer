@@ -870,8 +870,6 @@ const Popup = {
   },
 
   downloadCsv(event) {
-    console.log('x')
-
     event.preventDefault()
 
     const { csv, filename } = getCsv()
