@@ -809,13 +809,26 @@
   },
   "OptinMonster": {
     "cats": [
-      87
+      32
     ],
-    "description": "OptinMonster is a lead-generation plugin for WordPress.",
+    "description": "OptinMonster is a conversion optimisation tool that allows you to grow your email list.",
     "icon": "OptinMonster.png",
     "js": {
       "OptinMonsterApp": ""
     },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://optinmonster.com"
+  },
+  "OptinMonster plugin": {
+    "cats": [
+      87
+    ],
+    "description": "OptinMonster is a lead-generation plugin for WordPress.",
+    "icon": "OptinMonster.png",
+    "implies": "OptinMonster",
     "pricing": [
       "low",
       "recurring"
