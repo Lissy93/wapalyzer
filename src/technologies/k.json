@@ -132,6 +132,19 @@
     "saas": true,
     "website": "https://kajabi.com"
   },
+  "Kakao": {
+    "cats": [
+      19
+    ],
+    "description": "Kakao platform provides various services such as Kakao Talk, Kakao Talk Channel, Kakao Story as well as Kakao Pay, Kakao Commerce, Kakao Page provided by the subsidiaries. Users can use all Kakao platform services with a united account called Kakao Account.",
+    "icon": "Kakao.svg",
+    "dom": "a[href*='.kakao.com/'][target='_blank']",
+    "js": {
+      "Kakao.VERSION": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scriptSrc": "\\.kakao\\.com/",
+    "website": "https://developers.kakao.com/product"
+  },
   "Kameleoon": {
     "cats": [
       74
