@@ -2030,6 +2030,18 @@
     "icon": "TwistedWeb.png",
     "website": "http://twistedmatrix.com/trac/wiki/TwistedWeb"
   },
+  "Twitch Player": {
+    "cats": [
+      14
+    ],
+    "description": "Twitch is an American video live streaming service that focuses on video game live streaming, including broadcasts of esports competitions.",
+    "icon": "Twitch.svg",
+    "dom": "iframe[src*='player\\.twitch\\.tv']",
+    "js": {
+      "Twitch.Player": ""
+    },
+    "website": "https://dev.twitch.tv/docs/embed/video-and-clips/"
+  },
   "Twitter": {
     "cats": [
       5
