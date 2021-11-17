@@ -477,10 +477,13 @@
       41
     ],
     "description": "Recharge is the a subscription payments platform designed for merchants to set up and manage dynamic recurring billing across web and mobile.",
-    "icon": "Recharge.png",
+    "icon": "Recharge.svg",
     "implies": [
       "Cart Functionality"
     ],
+    "js": {
+      "ReChargeWidget": ""
+    },
     "pricing": [
       "recurring",
       "payg",
