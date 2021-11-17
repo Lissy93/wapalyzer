@@ -3224,6 +3224,35 @@
     "scriptSrc": "static\\.spotapps\\.co/",
     "website": "https://www.spothopperapp.com"
   },
+  "Spotify Widgets": {
+    "cats": [
+      5
+    ],
+    "description": "Spotify Widgets provide an embeddable view of a track, artist, album, user, playlist, podcast or episode for use within your web project.",
+    "icon": "Spotify.svg",
+    "dom": "iframe[src*='open.spotify.com/']",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://developer.spotify.com/documentation/widgets"
+  },
+  "Spotify Web API": {
+    "cats": [
+      19
+    ],
+    "description": "Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.",
+    "icon": "Spotify.svg",
+    "dom": "link[href*='.spotify.com']",
+    "js": {
+      "getSpotifyData": "",
+      "spotifyme": "",
+      "spotify_tracks": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://developer.spotify.com/documentation/web-api"
+  },
   "SpotX": {
     "cats": [
       36
