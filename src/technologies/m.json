@@ -1059,7 +1059,7 @@
       "_uetvid": "\\w+"
     },
     "description": "Microsoft Advertising is an online advertising platform developed by Microsoft.",
-    "icon": "Microsoft.png",
+    "icon": "Microsoft.svg",
     "dom": "link[href*='.bing.com']",
     "js": {
       "UET": "",
@@ -1072,12 +1072,21 @@
     "scriptSrc": "bat\\.bing\\.com/bat\\.js",
     "website": "https://ads.microsoft.com"
   },
+  "Microsoft Ajax Content Delivery Network": {
+    "cats": [
+      31
+    ],
+    "description": "Microsoft Ajax Content Delivery Network hosts popular third party JavaScript libraries such as jQuery and enables you to easily add them to your web applications.",
+    "icon": "Microsoft.svg",
+    "scriptSrc": "ajax\\.aspnetcdn\\.com/ajax/",
+    "website": "https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview"
+  },
   "Microsoft Clarity": {
     "cats": [
       10
     ],
     "description": "Microsoft's Clarity is a analytics tool which provides website usage statistics, session recording, and heatmaps.",
-    "icon": "Microsoft.png",
+    "icon": "Microsoft.svg",
     "js": {
       "clarity": ""
     },
@@ -1109,7 +1118,7 @@
     "headers": {
       "Server": "Microsoft-HTTPAPI(?:/([\\d.]+))?\\;version:\\1"
     },
-    "icon": "Microsoft.png",
+    "icon": "Microsoft.svg",
     "website": "http://microsoft.com"
   },
   "Microsoft PowerPoint": {
