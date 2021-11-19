@@ -92,6 +92,28 @@
     "scriptSrc": "d\\.yimg\\.com/mi/ywa\\.js",
     "website": "http://web.analytics.yahoo.com"
   },
+  "Yandex.Cloud": {
+    "cats": [
+      62
+    ],
+    "description": "Yandex.Cloud is a public cloud platform where companies can create and develop projects using Yandex's scalable computing power, advanced technologies, and infrastructure.",
+    "icon": "Yandex.Cloud.svg",
+    "saas": false,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://cloud.yandex.com/en/"
+  },
+  "Yandex.Cloud CDN": {
+    "cats": [
+      31
+    ],
+    "description": "Yandex.Cloud CDN helps you streamline static content delivery for your web service.",
+    "icon": "Yandex.Cloud.svg",
+    "implies": "Yandex.Cloud",
+    "dom": "[href*='storage.yandexcloud.net'], [src*='storage.yandexcloud.net']",
+    "website": "https://cloud.yandex.com/en/services/cdn"
+  },
   "Yandex.Direct": {
     "cats": [
       36
