@@ -1180,6 +1180,22 @@
     "url": "/owa/auth/log(?:on|off)\\.aspx",
     "website": "http://help.outlook.com"
   },
+  "OVHcloud": {
+    "cats": [
+      62,
+      88
+    ],
+    "description": "OVHcloud is a global, cloud provider delivering hosted private cloud, public cloud, and dedicated server solutions.",
+    "icon": "OVHcloud.svg",
+    "dns": {
+      "SOA": "\\d+\\.ovh\\.net",
+      "NS": "\\d+\\.ovh\\.net"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.ovhcloud.com"
+  },
   "Oxatis": {
     "cats": [
       6
