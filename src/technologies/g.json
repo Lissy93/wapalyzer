@@ -1018,6 +1018,16 @@
     "scriptSrc": "googleapis\\.com/.+webfont",
     "website": "http://google.com/fonts"
   },
+  "Google Hosted Libraries": {
+    "cats": [
+      31
+    ],
+    "description": "Google Hosted Libraries is a stable, reliable, high-speed, globally available content distribution network for the most popular, open-source JavaScript libraries.",
+    "icon": "Google Developers.svg",
+    "dom": "link[href*='ajax.googleapis.com/ajax/libs']",
+    "scriptSrc": "ajax\\.googleapis\\.com/ajax/libs/",
+    "website": "https://developers.google.com/speed/libraries"
+  },
   "Google Maps": {
     "cats": [
       35
@@ -1081,7 +1091,7 @@
       36
     ],
     "description": "Google Publisher Tag (GPT) is an ad tagging library for Google Ad Manager which is used to dynamically build ad requests.",
-    "icon": "Google Publisher Tag.svg",
+    "icon": "Google Developers.svg",
     "scriptSrc": [
       "googletagservices\\.com/tag/js/gpt\\.js",
       "securepubads\\.g\\.doubleclick\\.net/gpt"
