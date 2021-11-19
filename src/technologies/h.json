@@ -370,6 +370,26 @@
     "url": "\\.herokuapp\\.com",
     "website": "https://www.heroku.com/"
   },
+  "Hetzner": {
+    "cats": [
+      88,
+      62
+    ],
+    "description": "Hetzner provides dedicated hosting, shared web hosting, virtual private servers, managed servers, domain names, SSL certificates, storage boxes, and cloud.",
+    "icon": "Hetzner.svg",
+    "headers": {
+      "X-Powered-By": "Hetzner"
+    },
+    "dns": {
+      "SOA": "\\.hetzner\\.com",
+      "NS": "\\.ns\\.hetzner\\.com"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.hetzner.com"
+  },
   "Hestia": {
     "cats": [
       80
