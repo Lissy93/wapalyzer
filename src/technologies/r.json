@@ -861,6 +861,23 @@
     "scriptSrc": "static\\.resmio\\.\\w+/static/",
     "website": "https://www.resmio.com"
   },
+  "ResponsiveVoice": {
+    "cats": [
+      19
+    ],
+    "description": "ResponsiveVoice is a Text-To-Speech API supported in 51 languages.",
+    "icon": "ResponsiveVoice.png",
+    "js": {
+      "responsiveVoice.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://responsivevoice.org"
+  },
   "Resy": {
     "cats": [
       93
