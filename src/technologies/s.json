@@ -3944,11 +3944,35 @@
   },
   "Strato": {
     "cats": [
-      6
+      88,
+      62
     ],
-    "html": "<a href=\"http://www\\.strato\\.de/\" target=\"_blank\">",
-    "icon": "strato.png",
-    "website": "http://shop.strato.com"
+    "description": "Strato is an internet hosting service provider headquartered in Berlin, Germany which provide dedicated server hosting, a website builder and a cloud storage services.",
+    "icon": "Strato.svg",
+    "dns": {
+      "SOA": "\\.strato-rz\\.de"
+    },
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.strato.com"
+  },
+  "Strato Website": {
+    "cats": [
+      1
+    ],
+    "description": "Strato Website is a website builder by Strato hosting provider.",
+    "icon": "Strato.svg",
+    "js": {
+      "Strftime.configuration": ""
+    },
+    "scriptSrc": "strato-editor\\.com/",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.strato.de/homepage-baukasten"
   },
   "Strikingly": {
     "cats": [
