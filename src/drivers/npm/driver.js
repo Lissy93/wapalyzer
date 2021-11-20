@@ -588,6 +588,7 @@ class Site {
     page.on('response', async (response) => {
       try {
         if (
+          response.status < 300 &&
           response.frame().url() === url.href &&
           response.request().resourceType() === 'script'
         ) {
