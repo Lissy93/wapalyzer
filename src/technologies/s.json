@@ -386,6 +386,26 @@
     "saas": true,
     "website": "https://www.salecycle.com"
   },
+  "Saleor": {
+    "cats": [
+      6
+    ],
+    "description": "Saleor is a headless, GraphQL ecommerce platform.",
+    "icon": "Saleor.svg",
+    "implies": "GraphQL",
+    "js": {
+      "___NEXT_DATA__.runtimeConfig.SALEOR": ""
+    },
+    "dom": "img[src*='saleor.imgix.net']",
+    "pricing": [
+      "freemium",
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "oss": true,
+    "website": "https://saleor.io"
+  },
   "SalesFire": {
     "cats": [
       76,
