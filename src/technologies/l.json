@@ -234,6 +234,22 @@
     "scriptSrc": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
     "website": "https://www.leanplum.com"
   },
+  "Leaseweb": {
+    "cats": [
+      63,
+      88
+    ],
+    "description": "Leaseweb is an Infrastructure-as-a-Service (IaaS) provider offering dedicated servers, CDN, cloud hosting and hybrid cloud on a global network.",
+    "icon": "Leaseweb.svg",
+    "dns": {
+      "SOA": "\\.leaseweb\\.nl"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.leaseweb.com"
+  },
   "Lede": {
     "cats": [
       1
@@ -466,12 +482,21 @@
   },
   "Liquid Web": {
     "cats": [
-      62
+      62,
+      88
     ],
+    "description": "Liquid Web is a US-based host offering premium managed web hosting solutions.",
+    "icon": "Liquid Web.svg",
     "headers": {
       "x-lw-cache": ""
     },
-    "icon": "liquidweb.svg",
+    "dns": {
+      "SOA": "\\.liquidweb\\.com"
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "website": "https://www.liquidweb.com"
   },
   "List.js": {
