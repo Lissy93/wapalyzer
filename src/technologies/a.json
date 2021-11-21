@@ -1691,6 +1691,21 @@
     "saas": true,
     "website": "https://apps.shopify.com/ali-reviews"
   },
+  "ALL-INKL": {
+    "cats": [
+      88
+    ],
+    "description": "ALL-INKL is a German-based web hosting provider that promises to offer high-performance services for fair prices.",
+    "icon": "ALL-INKL.png",
+    "dns": {
+      "SOA": "\\.kasserver\\.com"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://all-inkl.com"
+  },
   "All in One SEO Pack": {
     "cats": [
       54,
@@ -1751,6 +1766,18 @@
       "/alpine(?:\\.min)?\\.js"
     ],
     "website": "https://github.com/alpinejs/alpine"
+  },
+  "AlternC": {
+    "cats": [
+      9
+    ],
+    "description": "AlternC is a set of software management on Linux shared hosting.",
+    "icon": "AlternC.png",
+    "requires": "Debian",
+    "scriptSrc": "js/alternc\\.js",
+    "oss": true,
+    "saas": false,
+    "website": "https://alternc.com"
   },
   "Amaya": {
     "cats": [
@@ -2705,6 +2732,25 @@
       "wicket/resource/org\\.artifactory\\."
     ],
     "website": "http://jfrog.com/open-source/#os-arti"
+  },
+  "Aruba.it": {
+    "cats": [
+      88,
+      62
+    ],
+    "description": "Aruba.it is an Italian company mainly active in the web hosting and domain registration businesses.",
+    "icon": "Aruba.it.svg",
+    "headers": {
+      "x-servername": "\\.aruba\\.it"
+    },
+    "dns": {
+      "SOA": "\\.technorail\\.com"
+    },
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.aruba.it"
   },
   "Artifactory Web Server": {
     "cats": [
