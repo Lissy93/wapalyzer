@@ -1475,19 +1475,14 @@
     "cookies": {
       "shopaholic_cart_id": ""
     },
-    "dom": {
-      "[class*='_shopaholic']": {
-        "exists": ""
-      }
+    "dom": "[class*='_shopaholic']",
+    "js": {
+      "ShopaholicCart": "",
     },
-    "implies": [
-      "PHP\\;confidence:100",
-      "October CMS\\;confidence:100",
-      "Laravel\\;confidence:100",
-    ],
     "requires": "October CMS",
-    "description": "Shopaholic is an open-source ecosystem of plugins and themes for rapid e-commerce website development that allows building projects of various scale: from small online shops to large multi-vendor marketplaces with hundreds of thousands of SKUs.",
+    "description": "Shopaholic is an open-source ecosystem of plugins and themes for rapid ecommerce website development that allows building projects from small to large online shops.",
     "icon": "Shopaholic.svg",
+    "oss": true,
     "website": "https://shopaholic.one"
   },
   "Shopatron": {
