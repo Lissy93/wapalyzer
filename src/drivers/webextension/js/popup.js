@@ -193,6 +193,14 @@ function csvEscape(value = '') {
   return String(value).replace(/"/g, '""')
 }
 
+function parseEmail(fullEmail) {
+  const email = fullEmail.replace(/^[^<]*<([^>]+)>/, '$1')
+
+  const [name, title] = fullEmail.replace(/ <([^>]+)>$/, '').split(' -- ')
+
+  return { email, name, title }
+}
+
 const Popup = {
   /**
    * Initialise popup
@@ -758,13 +766,32 @@ const Popup = {
                 a.href = value.to
                 a.textContent = value.text
 
-                if (
-                  ['social', 'keywords'].includes(set) ||
-                  ['phone', 'email'].includes(key)
-                ) {
-                  a.classList.add('chip')
+                if (['email', 'verifiedEmail', 'safeEmail'].includes(key)) {
+                  const { email, name, title } = parseEmail(value.text)
+
+                  a.textContent = email
+
+                  const elName = document.createElement('span')
+                  const elTitle = document.createElement('span')
+                  const elBreak1 = document.createElement('br')
+                  const elBreak2 = document.createElement('br')
+
+                  elName.textContent = name
+                  elTitle.textContent = `${title}`
+
+                  elTitle.className = 'light-text'
 
                   td.appendChild(a)
+
+                  if (name) {
+                    td.appendChild(elBreak1)
+                    td.appendChild(elName)
+
+                    if (title) {
+                      td.appendChild(elBreak2)
+                      td.appendChild(elTitle)
+                    }
+                  }
                 } else {
                   div.appendChild(a)
                   td.appendChild(div)
@@ -774,14 +801,18 @@ const Popup = {
 
                 const [name, title] = value.split(' -- ')
 
-                const strong = document.createElement('strong')
-                const span = document.createElement('span')
+                const elName = document.createElement('span')
+                const elTitle = document.createElement('span')
+                const elBreak = document.createElement('br')
 
-                strong.textContent = name
-                span.textContent = title
+                elTitle.className = 'light-text'
 
-                div.appendChild(strong)
-                div.appendChild(span)
+                elName.textContent = name
+                elTitle.textContent = title
+
+                div.appendChild(elName)
+                div.appendChild(elBreak)
+                div.appendChild(elTitle)
                 td.appendChild(div)
               } else {
                 attributeValues[key].push(value)

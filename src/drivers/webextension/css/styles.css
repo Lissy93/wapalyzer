@@ -42,6 +42,10 @@ p {
   margin: 0 0 .5rem 0;
 }
 
+.light-text {
+  color: var(--color-text-lighten);
+}
+
 .popup {
   background: white;
   max-height: 34rem;
@@ -329,19 +333,6 @@ small {
 .panel__content td div:last-child {
   border-bottom: none;
   padding-bottom: 0;
-}
-
-.chip, .chip:focus, .chip:hover {
-  border: 1px solid var(--color-secondary-darken);
-  border-radius: 4px;
-  margin: 0 .5rem .5rem 0;
-  display: inline-block;
-  padding: .2rem .5rem;
-  text-decoration: none;
-}
-
-.chip:focus, .chip:hover {
-  background: var(--color-primary-lighten)
 }
 
 .plus-configure {
@@ -842,12 +833,12 @@ body.dynamic-icon .category__heading:hover .category__pin {
   color: var(--color-primary-text);
 }
 
-.input[type="text"], .input[type="password"] {
-  border-color: var(--color-primary-darken);
+.dark .light-text {
+  color: var(--color-primary-text);
 }
 
-.dark .chip:focus, .dark .chip:hover {
-  background: var(--color-primary);
+.input[type="text"], .input[type="password"] {
+  border-color: var(--color-primary-darken);
 }
 
 .dark .message {
