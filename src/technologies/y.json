@@ -211,6 +211,19 @@
     },
     "website": "https://www.yepcomm.com.br"
   },
+  "Yett": {
+    "cats": [
+      67
+    ],
+    "description": "Yett is a small webpage library to control the execution of (third party) scripts like analytics.",
+    "icon": "Yett.png",
+    "js": {
+      "YETT_BLACKLIST": ""
+    },
+    "scriptSrc": "/yett@([\\d\\.]+)/dist/yett\\.min\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://github.com/elbywan/yett"
+  },
   "Yieldify": {
     "cats": [
       76
