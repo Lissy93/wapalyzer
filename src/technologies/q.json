@@ -5,10 +5,18 @@
     ],
     "description": "Qualaroo provides surveys on websites and apps to get user feedback.",
     "icon": "qualaroo.png",
+    "dom": "link[href*='.qualaroo.com']",
+    "js": {
+      "QUALAROO_DNT": ""
+    },
     "saas": true,
-    "pricing": [ "recurring", "mid" ],
-    "scriptSrc": "cl\\.qualaroo\\.com",
-    "website": "https://qualaroo.com/"
+    "pricing": [ 
+      "recurring", 
+      "mid" ,
+      "payg"
+    ],
+    "scriptSrc": "\\.qualaroo\\.com",
+    "website": "https://qualaroo.com"
   },
   "Qualtrics": {
     "cats": [
