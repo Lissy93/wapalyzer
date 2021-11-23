@@ -1667,6 +1667,9 @@
     ],
     "description": "Algolia offers a hosted web search product delivering real-time results.",
     "icon": "Algolia.svg",
+    "headers": {
+      "Content-Security-Policy": "\\.algolia"
+    },
     "js": {
       "AlgoliaSearch": "",
       "__algolia": "",
