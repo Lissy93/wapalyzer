@@ -547,6 +547,22 @@
     ],
     "website": "https://unruly.co"
   },
+  "Uploadcare": {
+    "cats": [
+      63
+    ],
+    "description": "Uploadcare is a complete file handling platform for online business. Receive files from you users via File Uploader or File Upload API, implement image optimization and transformations with Image CDN API, and get HIPAA-compliant storage.",
+    "icon": "Uploadcare.svg",
+    "dom": "img[src*='.ucarecdn.com/'], link[href*='ucarecdn.com'], img[data-src*='.ucarecdn.com/']",
+    "js": {
+      "uploadcare.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://uploadcare.com"
+  },
   "uPortal": {
     "cats": [
       21
