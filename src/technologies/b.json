@@ -1364,6 +1364,19 @@
     },
     "website": "http://browsercms.org"
   },
+  "Browser-Update.org": {
+    "cats": [
+      5,
+      59
+    ],
+    "description": "Browser-update.org is a tool to unobtrusively notify visitors that they should update their web browser in order to use your website.",
+    "icon": "Browser-Update.org.png",
+    "js": {
+      "$bu_.version": "^([\\d\\.]+)$\\;version:\\1",
+      "$bu_getBrowser": ""
+    },
+    "website": "https://browser-update.org"
+  },
   "Bsale": {
     "cats": [
       6
