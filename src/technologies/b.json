@@ -968,7 +968,8 @@
     ],
     "description": "Bootstrap Icons is a growing library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team.",
     "icon": "Bootstrap Icons.svg",
-    "html": "bootstrap-icons(?:@[\\d\\.]+)?/\\;version:\\1",
+    "html": "<link[^>]+bootstrap-icons(?:@|/)([\\d\\.]+)?\\;version:\\1",
+    "dom": "link[href*='bootstrap-icons']",
     "oss": true,
     "pricing": [
       "freemium"
