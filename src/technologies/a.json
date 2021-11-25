@@ -2570,6 +2570,23 @@
     "scriptSrc": "/suite/tempo/ui/sail-client/embeddedBootstrap.nocache.js",
     "website": "https://www.appian.com"
   },
+  "Apple Business Chat": {
+    "cats": [
+      52
+    ],
+    "description": "Apple Business Chat is a service from Apple that allows your organization to directly chat with your customers using the Messages app.",
+    "icon": "Apple.svg",
+    "dom": "a[href*='bcrw.apple.com/business/api']",
+    "js": {
+      "appleBusinessChat.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scriptSrc": "/apple_business_chat_commerce/.+/apple_message_button_v([\\d\\.]+)\\.js\\;version:\\1",
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "website": "https://developer.apple.com/documentation/businesschat"
+  },
   "Apple Pay": {
     "cats": [
       41
