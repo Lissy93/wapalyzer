@@ -296,7 +296,7 @@
     "description": "Geniee is an ad technology company.",
     "icon": "Geniee.png",
     "dom": "img[src*='.gssprt.jp/'], link[href*='.gssprt.jp']",
-    "scriptSrc": "\\.gsspcln\\.jp/",  
+    "scriptSrc": "\\.gsspcln\\.jp/",
     "saas": true,
     "pricing": [
       "poa"
@@ -680,6 +680,23 @@
     },
     "icon": "GoAhead.png",
     "website": "http://embedthis.com/products/goahead/index.html"
+  },
+  "GoAffPro": {
+    "cats": [
+      71
+    ],
+    "description": "Goaffpro is an affiliate marketing solution for ecommerce stores.",
+    "icon": "goaffpro.svg",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "js": {
+      "gfp_api_server": ""
+    },
+    "scriptSrc": "api\\.goaffpro\\.com/loader\\.js",
+    "website": "https://goaffpro.com/"
   },
   "GoAnywhere": {
     "cats": [
