@@ -439,6 +439,18 @@
     "scriptSrc": "\\.limechat\\.ai/",
     "website": "https://www.limechat.ai"
   },
+  "LINE Login": {
+    "cats": [
+      69
+    ],
+    "description": "LINE Login is an API that allows you to implement a login function into your services, regardless of whether they are web apps or native apps.",
+    "icon": "LINE.svg",
+    "js": {
+      "Constants.authorization_request_url": "access\\.line\\.me/oauth2/v([\\d\\.]+)/\\;version:\\1"
+    },
+    "dom": "a[href*='access.line.me/']",
+    "website": "https://developers.line.biz/en/services/line-login/"
+  },
   "Limit Login Attempts Reloaded": {
     "cats": [
       87,
