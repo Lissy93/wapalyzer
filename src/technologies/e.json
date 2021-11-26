@@ -506,6 +506,24 @@
     "icon": "Emotion.png",
     "website": "http://emotion.sh"
   },
+  "Enable": {
+    "cats": [
+      68,
+      87
+    ],
+    "description": "Enable is a web accessibility plugin by uPress.",
+    "icon": "Enable.png",
+    "requires": "WordPress",
+    "js": {
+      "enable_toolbar.is_premium": ""
+    },
+    "scriptSrc": "cdn\\.enable\\.co\\.il/.+\\.js\\?ver=(\\d+(?:\\.\\d+)+)\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "website": "https://www.enable-accessibility.com"
+  },
   "Engagio": {
     "cats": [
       10
