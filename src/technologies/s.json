@@ -4280,10 +4280,10 @@
       13
     ],
     "description": "Super Hero is a knowledge base solution to reduce inbound support requests.",
-    "icon": "superhero.png",
     "html": [
-      "data-ng-app=\"ngSupportHero\""
+      "<html[^>]+?data-ng-app=\"ngSupportHero\""
     ],
+    "icon": "superhero.png",
     "website": "https://www.supporthero.com/"
   },
   "Super Socializer": {
