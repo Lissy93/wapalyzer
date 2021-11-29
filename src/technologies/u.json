@@ -9,22 +9,6 @@
     "scriptSrc": "uikit.*\\.js",
     "website": "https://getuikit.com"
   },
-  "UKFast": {
-    "cats": [
-      88,
-      62
-    ],
-    "description": "UKFast is a business-to-business internet hosting company based in Manchester, UK.",
-    "icon": "UKFast.png",
-    "dns": {
-      "SOA": "\\.ukfast\\.net"
-    },
-    "pricing": [
-      "recurring",
-      "payg"
-    ],
-    "website": "https://www.ukfast.co.uk"
-  },
   "UK Mail": {
     "cats": [
       99
@@ -36,6 +20,22 @@
       "\\bUK Mail\\b"
     ],
     "website": "https://www.ukmail.com"
+  },
+  "UKFast": {
+    "cats": [
+      88,
+      62
+    ],
+    "description": "UKFast is a business-to-business internet hosting company based in Manchester, UK.",
+    "dns": {
+      "SOA": "\\.ukfast\\.net"
+    },
+    "icon": "UKFast.png",
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.ukfast.co.uk"
   },
   "UMI.CMS": {
     "cats": [
@@ -120,6 +120,22 @@
     ],
     "saas": true,
     "website": "https://www.ueeshop.com"
+  },
+  "Ultimate GDPR & CCPA": {
+    "cats": [
+      67,
+      87
+    ],
+    "description": "Ultimate GDPR & CCPA is a compliance toolkit for WordPress by createIT",
+    "icon": "Ultimate GDPR & CCPA.png",
+    "js": {
+      "ct_ultimate_gdpr_cookie": ""
+    },
+    "pricing": [
+      "low"
+    ],
+    "requires": "WordPress",
+    "website": "https://www.createit.com/gdpr"
   },
   "UltraCart": {
     "cats": [
@@ -240,6 +256,22 @@
     "scriptSrc": "unpkg\\.com/",
     "website": "https://unpkg.com"
   },
+  "Unruly": {
+    "cats": [
+      36
+    ],
+    "description": "Unruly is a video advertising platform.",
+    "dom": "link[href*='.unrulymedia.com']",
+    "icon": "Unruly.png",
+    "js": {
+      "unruly.native": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://unruly.co"
+  },
   "UpSellit": {
     "cats": [
       98
@@ -259,6 +291,22 @@
     "saas": true,
     "scriptSrc": "www\\.upsellit\\.com/",
     "website": "https://us.upsellit.com"
+  },
+  "Uploadcare": {
+    "cats": [
+      31
+    ],
+    "description": "Uploadcare is a complete file handling platform for online business. Receive files from you users via File Uploader or File Upload API, implement image optimization and transformations with Image CDN API, and get HIPAA-compliant storage.",
+    "dom": "img[src*='.ucarecdn.com/'], link[href*='ucarecdn.com'], img[data-src*='.ucarecdn.com/']",
+    "icon": "Uploadcare.svg",
+    "js": {
+      "uploadcare.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://uploadcare.com"
   },
   "Upserve": {
     "cats": [
@@ -363,14 +411,14 @@
       73
     ],
     "description": "UserReport is an online survey and feedback management platform.",
-    "icon": "UserReport.svg",
     "dom": "a[href*='feedback.userreport.com/'][target='_blank']",
-    "scriptSrc": "\\.userreport\\.com/",
-    "saas": true,
+    "icon": "UserReport.svg",
     "pricing": [
       "freemium",
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.userreport\\.com/",
     "website": "https://www.userreport.com"
   },
   "UserRules": {
@@ -509,59 +557,11 @@
     "js": {
       "uLogin.version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "freemium"
     ],
-    "website": "https://ulogin.ru"
-  },
-  "Ultimate GDPR & CCPA": {
-    "cats": [
-      67,
-      87
-    ],
-    "description": "Ultimate GDPR & CCPA is a compliance toolkit for WordPress by createIT",
-    "icon": "Ultimate GDPR & CCPA.png",
-    "js": {
-      "ct_ultimate_gdpr_cookie": ""
-    },
-    "pricing": [
-      "low"
-    ],
-    "requires": "WordPress",
-    "website": "https://www.createit.com/gdpr"
-  },
-  "Unruly": {
-    "cats": [
-      36
-    ],
-    "description": "Unruly is a video advertising platform.",
-    "icon": "Unruly.png",
-    "dom": "link[href*='.unrulymedia.com']",
-    "js": {
-      "unruly.native": ""
-    },
     "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://unruly.co"
-  },
-  "Uploadcare": {
-    "cats": [
-      31
-    ],
-    "description": "Uploadcare is a complete file handling platform for online business. Receive files from you users via File Uploader or File Upload API, implement image optimization and transformations with Image CDN API, and get HIPAA-compliant storage.",
-    "icon": "Uploadcare.svg",
-    "dom": "img[src*='.ucarecdn.com/'], link[href*='ucarecdn.com'], img[data-src*='.ucarecdn.com/']",
-    "js": {
-      "uploadcare.version": "^([\\d\\.]+)$\\;version:\\1"
-    },
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "website": "https://uploadcare.com"
+    "website": "https://ulogin.ru"
   },
   "uPortal": {
     "cats": [

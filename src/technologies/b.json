@@ -123,11 +123,13 @@
     "cats": [
       19
     ],
-    "js":{
+    "icon": "Bambuser.png",
+    "js": {
       "_bambuser": ""
     },
-    "icon": "Bambuser.png",
-    "pricing": [ "poa" ],
+    "pricing": [
+      "poa"
+    ],
     "scriptSrc": "cdn\\.liveshopping\\.bambuser\\.com",
     "website": "https://bambuser.com/"
   },
@@ -602,24 +604,6 @@
     "scriptSrc": "\\.getblue\\.io",
     "website": "https://web.getblue.io/en/"
   },
-  "BlueConic": {
-    "cats": [
-      97
-    ],
-    "description": "BlueConic is the advanced customer data platform that liberates companies' first-party data from disparate systems.",
-    "icon": "BlueConic.svg",
-    "js": {
-      "blueConicClient": "",
-      "blueConicPreListeners": "",
-      "loadValuesFromBlueConic": "",
-      "BlueConicEngagement": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.blueconic.com"
-  },
   "Blue Triangle": {
     "cats": [
       16,
@@ -639,6 +623,24 @@
     "scriptSrc": "\\.btttag\\.com/btt\\.js",
     "website": "https://bluetriangle.com",
     "xhr": "\\.btttag\\.com"
+  },
+  "BlueConic": {
+    "cats": [
+      97
+    ],
+    "description": "BlueConic is the advanced customer data platform that liberates companies' first-party data from disparate systems.",
+    "icon": "BlueConic.svg",
+    "js": {
+      "BlueConicEngagement": "",
+      "blueConicClient": "",
+      "blueConicPreListeners": "",
+      "loadValuesFromBlueConic": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.blueconic.com"
   },
   "Bluecore": {
     "cats": [
@@ -676,11 +678,11 @@
       88
     ],
     "description": "Bluehost is a large web host known for its WordPress expertise, variety of “one-stop-shop” services, and bargain prices.",
-    "icon": "Bluehost.svg",
     "dns": {
       "NS": "\\.bluehost\\.com",
       "SOA": "\\.bluehost\\.com"
     },
+    "icon": "Bluehost.svg",
     "pricing": [
       "payg",
       "recurring"
@@ -713,6 +715,20 @@
     "scriptSrc": "cdn.getblueshift.com/",
     "website": "https://blueshift.com/"
   },
+  "Boats Group": {
+    "cats": [
+      51
+    ],
+    "description": "Boats Group is a website platform for boat dealers and brokers.",
+    "dom": "a[href*='.boatsgroup.com/'][target='_blank']",
+    "icon": "Boats Group.png",
+    "pricing": [
+      "poa"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "website": "https://www.boatsgroup.com/websites"
+  },
   "Boba.js": {
     "cats": [
       59
@@ -720,20 +736,6 @@
     "implies": "Google Analytics",
     "scriptSrc": "boba(?:\\.min)?\\.js",
     "website": "http://boba.space150.com"
-  },
-  "Boats Group": {
-    "cats": [
-      51
-    ],
-    "description": "Boats Group is a website platform for boat dealers and brokers.",
-    "icon": "Boats Group.png",
-    "requires": "WordPress",
-    "dom": "a[href*='.boatsgroup.com/'][target='_blank']",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.boatsgroup.com/websites"
   },
   "Bokeh": {
     "cats": [
@@ -887,9 +889,9 @@
       5
     ],
     "description": "Booking.com is one of the largest ecommerce travel companies in the world. As an affiliate member, you can make up to 40% commission.",
+    "dom": "form[action*='.booking.com/'][target='_blank'], img[src*='q-xx.bstatic.com/']",
     "icon": "Booking.com.svg",
     "implies": "Booking.com",
-    "dom": "form[action*='.booking.com/'][target='_blank'], img[src*='q-xx.bstatic.com/']",
     "scriptSrc": "q\\.bstatic\\.com/",
     "website": "https://www.booking.com/affiliate-program/v2/selfmanaged.html"
   },
@@ -1220,13 +1222,13 @@
       87
     ],
     "description": "Breadcrumb NavXT is a WordPress plugin compatible with WordPress versions 4.9 and up.",
-    "icon": "Breadcrumb NavXT.svg",
     "html": "<!-- Breadcrumb NavXT ([\\d\\.]+)\\;version:\\1",
+    "icon": "Breadcrumb NavXT.svg",
+    "oss": true,
     "pricing": [
       "freemium"
     ],
     "requires": "WordPress",
-    "oss": true,
     "website": "https://github.com/mtekk/Breadcrumb-NavXT"
   },
   "Breinify": {
@@ -1243,20 +1245,6 @@
     ],
     "saas": true,
     "website": "https://home.breinify.ai"
-  },
-  "Brightcove": {
-    "cats": [
-      14
-    ],
-    "description": "Brightcove is a cloud-based online video platform.",
-    "icon": "Brightcove.png",
-    "saas": true,
-    "dom": "iframe[src*='players.brightcove.'], link[href*='players.brightcove.']",
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.brightcove.com"
   },
   "BrightInfo": {
     "cats": [
@@ -1277,6 +1265,20 @@
     "saas": true,
     "scriptSrc": "app\\.brightinfo\\.com",
     "website": "https://www.brightinfo.com"
+  },
+  "Brightcove": {
+    "cats": [
+      14
+    ],
+    "description": "Brightcove is a cloud-based online video platform.",
+    "dom": "iframe[src*='players.brightcove.'], link[href*='players.brightcove.']",
+    "icon": "Brightcove.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.brightcove.com"
   },
   "Brightspot": {
     "cats": [
@@ -1353,17 +1355,6 @@
     "scriptSrc": "assets\\.youthsrl\\.com/brownie",
     "website": "https://www.browniesuite.com"
   },
-  "BrowserCMS": {
-    "cats": [
-      1
-    ],
-    "icon": "BrowserCMS.png",
-    "implies": "Ruby",
-    "meta": {
-      "generator": "BrowserCMS ([\\d.]+)\\;version:\\1"
-    },
-    "website": "http://browsercms.org"
-  },
   "Browser-Update.org": {
     "cats": [
       5,
@@ -1376,6 +1367,17 @@
       "$bu_getBrowser": ""
     },
     "website": "https://browser-update.org"
+  },
+  "BrowserCMS": {
+    "cats": [
+      1
+    ],
+    "icon": "BrowserCMS.png",
+    "implies": "Ruby",
+    "meta": {
+      "generator": "BrowserCMS ([\\d.]+)\\;version:\\1"
+    },
+    "website": "http://browsercms.org"
   },
   "Bsale": {
     "cats": [
@@ -1440,6 +1442,23 @@
     ],
     "website": "https://app.budbee.com/"
   },
+  "BugHerd": {
+    "cats": [
+      13
+    ],
+    "description": "BugHerd is a cloud-based feedback collection and bug management tool.",
+    "icon": "BugHerd.svg",
+    "js": {
+      "BugHerdConfig": ""
+    },
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.bugherd\\.com/",
+    "website": "https://bugherd.com"
+  },
   "BugSnag": {
     "cats": [
       10
@@ -1466,23 +1485,6 @@
     },
     "icon": "Bugcrowd.svg",
     "website": "https://www.bugcrowd.com"
-  },
-  "BugHerd": {
-    "cats": [
-      13
-    ],
-    "description": "BugHerd is a cloud-based feedback collection and bug management tool.",
-    "icon": "BugHerd.svg",
-    "js": {
-      "BugHerdConfig": ""
-    },
-    "saas": true,
-    "scriptSrc": "\\.bugherd\\.com/",
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "website": "https://bugherd.com"
   },
   "Bugzilla": {
     "cats": [

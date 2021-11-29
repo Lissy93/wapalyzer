@@ -77,6 +77,21 @@
     "scriptSrc": "\\.ebis\\.ne\\.jp/",
     "website": "http://www.ebis.ne.jp"
   },
+  "ALL-INKL": {
+    "cats": [
+      88
+    ],
+    "description": "ALL-INKL is a German-based web hosting provider that promises to offer high-performance services for fair prices.",
+    "dns": {
+      "SOA": "\\.kasserver\\.com"
+    },
+    "icon": "ALL-INKL.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://all-inkl.com"
+  },
   "AMP": {
     "cats": [
       12
@@ -96,12 +111,12 @@
       87
     ],
     "description": "AMP for WordPress automatically adds Accelerated Mobile Pages (Google AMP Project) functionality to your WordPress site.",
+    "dom": "link[href*='/wp-content/plugins/amp/']",
     "icon": "Accelerated-Mobile-Pages.svg",
     "implies": "AMP",
     "meta": {
       "generator": "^AMP Plugin v(\\d+\\.\\d+.*)$\\;version:\\1"
     },
-    "dom": "link[href*='/wp-content/plugins/amp/']",
     "requires": "WordPress",
     "website": "https://amp-wp.org"
   },
@@ -143,6 +158,19 @@
     "requiresCategory": 6,
     "text": "\\APC\\b",
     "website": "https://www.apc-pli.com"
+  },
+  "ARI Network Services": {
+    "cats": [
+      6
+    ],
+    "description": "ARI Network Services provides website, software, and data solutions to help dealers, distributors, and OEMs improve their selling process.",
+    "icon": "ARI Network Services.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.ari-secure\\.com/",
+    "website": "https://arinet.com"
   },
   "AT Internet Analyzer": {
     "cats": [
@@ -335,12 +363,12 @@
       5
     ],
     "description": "AccuWeather provides weather forecasts and warnings and additional weather products and services.",
-    "icon": "AccuWeather.svg",
     "dom": "a[href*='.accuweather.com'][target='_blank']",
-    "saas": true,
+    "icon": "AccuWeather.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://partners.accuweather.com"
   },
   "Ackee": {
@@ -606,19 +634,6 @@
     "scriptSrc": "\\.adlightning\\.com",
     "website": "https://www.adlightning.com"
   },
-  "Adloox": {
-    "cats": [
-      36
-    ],
-    "description": "Adloox is a European-born buy-side ad verification and insights company.",
-    "icon": "Adloox.png",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.adlooxtracking\\.com/",
-    "website": "https://www.adloox.com"
-  },
   "AdBridg": {
     "cats": [
       36
@@ -678,8 +693,8 @@
       77
     ],
     "description": "AdRoll is a digital marketing technology platform that specializes in retargeting.",
-    "icon": "AdRoll.svg",
     "dom": "link[href*='.adroll.com']",
+    "icon": "AdRoll.svg",
     "js": {
       "adroll_adv_id": "",
       "adroll_pix_id": ""
@@ -863,27 +878,13 @@
     "description": "AddToAny Share Buttons plugin for WordPress increases traffic and engagement by helping people share your posts and pages to any service.",
     "icon": "AddToAny.svg",
     "implies": "AddToAny",
+    "oss": true,
     "pricing": [
       "freemium"
     ],
-    "oss": true,
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/add-to-any/addtoany\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://github.com/projectestac/wordpress-add-to-any"
-  },
-  "Adform": {
-    "cats": [
-      36
-    ],
-    "description": "Adform is an all-in-one platform for digital advertising.",
-    "icon": "Adform.svg",
-    "dom": "link[href*='.adformdsp.net'], link[href*='.adform.net']",
-    "scriptSrc": "\\.adform\\.net/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://site.adform.com"
   },
   "Addi": {
     "cats": [
@@ -907,6 +908,33 @@
     "saas": true,
     "scriptSrc": "https://addsearch\\.com/js/",
     "website": "https://www.addsearch.com/"
+  },
+  "Adform": {
+    "cats": [
+      36
+    ],
+    "description": "Adform is an all-in-one platform for digital advertising.",
+    "dom": "link[href*='.adformdsp.net'], link[href*='.adform.net']",
+    "icon": "Adform.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.adform\\.net/",
+    "website": "https://site.adform.com"
+  },
+  "Adloox": {
+    "cats": [
+      36
+    ],
+    "description": "Adloox is a European-born buy-side ad verification and insights company.",
+    "icon": "Adloox.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.adlooxtracking\\.com/",
+    "website": "https://www.adloox.com"
   },
   "Adminer": {
     "cats": [
@@ -946,15 +974,15 @@
     "description": "Admixer is an independent adtech company developing an ecosystem of full-stack programmatic solutions.",
     "icon": "Admixer.svg",
     "js": {
-      "admixerML": "",
-      "admixerAds": ""
+      "admixerAds": "",
+      "admixerML": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring",
       "onetime"
     ],
+    "saas": true,
     "scriptSrc": "\\.admixer\\.net/",
     "website": "https://admixer.com"
   },
@@ -963,17 +991,17 @@
       36
     ],
     "description": "Admo.tv is a company developing a TV and radio analytics platform.",
-    "icon": "Admo.tv.svg",
     "dom": "link[href*='.admo.tv'], a[href*='.admo.tv'][target='_blank'], iframe[src*='.admo.tv/']",
+    "icon": "Admo.tv.svg",
     "js": {
-      "ADMO_config": "",
-      "ADMO_TT": ""
+      "ADMO_TT": "",
+      "ADMO_config": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.admo.tv"
   },
   "Adnegah": {
@@ -1199,17 +1227,6 @@
     "scriptSrc": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
     "website": "https://www.advally.com"
   },
-  "Advert Stream": {
-    "cats": [
-      36
-    ],
-    "icon": "Advert Stream.png",
-    "js": {
-      "advst_is_above_the_fold": ""
-    },
-    "scriptSrc": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
-    "website": "http://www.advertstream.com"
-  },
   "Advanced Custom Fields": {
     "cats": [
       87
@@ -1228,6 +1245,17 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/advanced-custom-fields(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.advancedcustomfields.com"
+  },
+  "Advert Stream": {
+    "cats": [
+      36
+    ],
+    "icon": "Advert Stream.png",
+    "js": {
+      "advst_is_above_the_fold": ""
+    },
+    "scriptSrc": "(?:ad\\.advertstream\\.com|adxcore\\.com)",
+    "website": "http://www.advertstream.com"
   },
   "Adverticum": {
     "cats": [
@@ -1318,12 +1346,12 @@
     ],
     "description": "Affiliatly is an affiliate marketing software for ecommerce store owners.",
     "icon": "Affiliatly.png",
-    "scriptSrc": "static\\.affiliatly\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "static\\.affiliatly\\.com/",
     "website": "https://www.affiliatly.com"
   },
   "Affirm": {
@@ -1429,11 +1457,11 @@
     "js": {
       "Air360.SDK_Version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.air360.io"
   },
   "Aircall": {
@@ -1594,8 +1622,8 @@
       87
     ],
     "description": "Akismet is a service that filters spam from comments, trackbacks, and contact form messages.",
-    "icon": "Akismet.png",
     "dom": "link[href*='/wp-content/plugins/akismet/']",
+    "icon": "Akismet.png",
     "js": {
       "ak_js.checkValidity": ""
     },
@@ -1696,10 +1724,10 @@
       29
     ],
     "description": "Algolia offers a hosted web search product delivering real-time results.",
-    "icon": "Algolia.svg",
     "headers": {
       "Content-Security-Policy": "\\.algolia"
     },
+    "icon": "Algolia.svg",
     "js": {
       "AlgoliaSearch": "",
       "__algolia": "",
@@ -1724,21 +1752,6 @@
     "saas": true,
     "website": "https://apps.shopify.com/ali-reviews"
   },
-  "ALL-INKL": {
-    "cats": [
-      88
-    ],
-    "description": "ALL-INKL is a German-based web hosting provider that promises to offer high-performance services for fair prices.",
-    "icon": "ALL-INKL.png",
-    "dns": {
-      "SOA": "\\.kasserver\\.com"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://all-inkl.com"
-  },
   "All in One SEO Pack": {
     "cats": [
       54,
@@ -1748,12 +1761,12 @@
     "description": "All in One SEO plugin optimizes WordPress website and its content for search engines.",
     "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
     "icon": "AIOSEO.svg",
-    "requires": "WordPress",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "WordPress",
     "website": "https://aioseo.com"
   },
   "AlloyUI": {
@@ -1786,6 +1799,18 @@
     "scriptSrc": "portal\\.allyable\\.com/",
     "website": "https://allyable.com"
   },
+  "Alpine Linux": {
+    "cats": [
+      28
+    ],
+    "description": "Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.",
+    "headers": {
+      "X-Powered-By": "Alpine"
+    },
+    "icon": "Alpine Linux.svg",
+    "oss": true,
+    "website": "https://www.alpinelinux.org"
+  },
   "Alpine.js": {
     "cats": [
       12
@@ -1806,10 +1831,10 @@
     ],
     "description": "AlternC is a set of software management on Linux shared hosting.",
     "icon": "AlternC.png",
-    "requires": "Debian",
-    "scriptSrc": "js/alternc\\.js",
     "oss": true,
+    "requires": "Debian",
     "saas": false,
+    "scriptSrc": "js/alternc\\.js",
     "website": "https://alternc.com"
   },
   "Amaya": {
@@ -2119,20 +2144,29 @@
     },
     "website": "http://amirocms.com"
   },
+  "Amobee": {
+    "cats": [
+      36
+    ],
+    "description": "Amobee is a cloud-based advertising and data management platform.",
+    "dom": "img[src*='.turn.com/r/beacon']",
+    "icon": "Amobee.png",
+    "website": "https://www.amobee.com"
+  },
   "Amplience": {
     "cats": [
       1
     ],
     "description": "Amplience is an API-first, headless content management platform for enterprise retail.",
-    "icon": "Amplience.png",
     "dom": "link[href*='.amplience.net'], img[src*='.amplience.net']",
+    "icon": "Amplience.png",
     "js": {
       "amplianceTemplates": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://amplience.com"
   },
   "Amplitude": {
@@ -2575,17 +2609,17 @@
       52
     ],
     "description": "Apple Business Chat is a service from Apple that allows your organization to directly chat with your customers using the Messages app.",
-    "icon": "Apple.svg",
     "dom": "a[href*='bcrw.apple.com/business/api']",
+    "icon": "Apple.svg",
     "js": {
       "appleBusinessChat.version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "scriptSrc": "/apple_business_chat_commerce/.+/apple_message_button_v([\\d\\.]+)\\.js\\;version:\\1",
     "pricing": [
       "freemium",
       "poa"
     ],
     "saas": true,
+    "scriptSrc": "/apple_business_chat_commerce/.+/apple_message_button_v([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://developer.apple.com/documentation/businesschat"
   },
   "Apple Pay": {
@@ -2754,19 +2788,6 @@
     ],
     "website": "https://developers.arcgis.com/javascript/"
   },
-  "ARI Network Services": {
-    "cats": [
-      6
-    ],
-    "description": "ARI Network Services provides website, software, and data solutions to help dealers, distributors, and OEMs improve their selling process.",
-    "icon": "ARI Network Services.png",
-    "scriptSrc": "\\.ari-secure\\.com/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://arinet.com"
-  },
   "Artifactory": {
     "cats": [
       47
@@ -2784,25 +2805,6 @@
     ],
     "website": "http://jfrog.com/open-source/#os-arti"
   },
-  "Aruba.it": {
-    "cats": [
-      88,
-      62
-    ],
-    "description": "Aruba.it is an Italian company mainly active in the web hosting and domain registration businesses.",
-    "icon": "Aruba.it.svg",
-    "headers": {
-      "x-servername": "\\.aruba\\.it"
-    },
-    "dns": {
-      "SOA": "\\.technorail\\.com"
-    },
-    "pricing": [
-      "recurring",
-      "payg"
-    ],
-    "website": "https://www.aruba.it"
-  },
   "Artifactory Web Server": {
     "cats": [
       22
@@ -2814,6 +2816,25 @@
     "icon": "Artifactory.svg",
     "implies": "Artifactory",
     "website": "http://jfrog.com/open-source/#os-arti"
+  },
+  "Aruba.it": {
+    "cats": [
+      88,
+      62
+    ],
+    "description": "Aruba.it is an Italian company mainly active in the web hosting and domain registration businesses.",
+    "dns": {
+      "SOA": "\\.technorail\\.com"
+    },
+    "headers": {
+      "x-servername": "\\.aruba\\.it"
+    },
+    "icon": "Aruba.it.svg",
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.aruba.it"
   },
   "ArvanCloud": {
     "cats": [
@@ -3138,6 +3159,18 @@
     "scriptSrc": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
   },
+  "Automizely": {
+    "cats": [
+      32
+    ],
+    "description": "Automizely creates and manages enterprise-level marketing automation systems including contact and CRM mappings, lead funnels, email nurture, lead-generating pages, and blog posts, and website integrations.",
+    "icon": "Automizely.svg",
+    "pricing": [
+      "freemium"
+    ],
+    "scriptSrc": "\\.automizely\\.com/",
+    "website": "https://www.automizely.com/marketing"
+  },
   "Autopilot": {
     "cats": [
       32,
@@ -3163,8 +3196,8 @@
       92
     ],
     "description": "Autoptimize is a popular performance plugin for WordPress.",
-    "icon": "Autoptimize.png",
     "dom": "link[href*='/wp-content/plugins/autoptimize/']",
+    "icon": "Autoptimize.png",
     "pricing": [
       "freemium",
       "onetime"
@@ -3172,18 +3205,6 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/autoptimize/.+\\.js(?:\\?ao_version=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://autoptimize.com"
-  },
-  "Automizely": {
-    "cats": [
-      32
-    ],
-    "description": "Automizely creates and manages enterprise-level marketing automation systems including contact and CRM mappings, lead funnels, email nurture, lead-generating pages, and blog posts, and website integrations.",
-    "icon": "Automizely.svg",
-    "pricing": [
-      "freemium"
-    ],
-    "scriptSrc": "\\.automizely\\.com/",
-    "website": "https://www.automizely.com/marketing"
   },
   "Avangate": {
     "cats": [
@@ -3211,17 +3232,17 @@
       90
     ],
     "description": "Avis Verifies is a complete solution for managing your customer reviews.",
-    "icon": "Avis Verifies.png",
     "dom": "a[href*='.avis-verifies.com/'][target='_blank'], iframe[src*='.avis-verifies.com/']",
+    "icon": "Avis Verifies.png",
     "js": {
       "avisVerifies": ""
     },
-    "scriptSrc": "\\.avis-verifies\\.com/",
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
+    "scriptSrc": "\\.avis-verifies\\.com/",
     "website": "https://www.netreviews.com"
   },
   "Aweber": {
@@ -3449,15 +3470,6 @@
     "scriptSrc": "amcharts.*\\.js",
     "website": "http://amcharts.com"
   },
-  "Amobee": {
-    "cats": [
-      36
-    ],
-    "description": "Amobee is a cloud-based advertising and data management platform.",
-    "icon": "Amobee.png",
-    "dom": "img[src*='.turn.com/r/beacon']",
-    "website": "https://www.amobee.com"
-  },
   "amoCRM": {
     "cats": [
       53
@@ -3498,17 +3510,5 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
-  },
-  "Alpine Linux": {
-    "cats": [
-      28
-    ],
-    "description": "Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.",
-    "headers": {
-      "X-Powered-By": "Alpine"
-    },
-    "oss": true,
-    "icon": "Alpine Linux.svg",
-    "website": "https://www.alpinelinux.org"
   }
 }

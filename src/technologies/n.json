@@ -118,18 +118,18 @@
       36
     ],
     "description": "Nativo is an advertising technology provider.",
-    "icon": "Nativo.png",
     "dom": "link[href*='.postrelease.com/'], img[src*='.postrelease.com/']",
+    "icon": "Nativo.png",
     "js": {
       "ntvConfig": ""
     },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
     "scriptSrc": [
       "\\.ntv\\.io/",
       "\\.postrelease\\.com/"
-    ],
-    "saas": true,
-    "pricing": [
-      "poa"
     ],
     "website": "https://www.nativo.com"
   },
@@ -181,10 +181,10 @@
       88
     ],
     "description": "Nestify is a fully managed WordPress hosting platform that runs on AWS graviton processors.",
-    "icon": "Nestify.png",
     "headers": {
       "x-nestify-cache": ""
     },
+    "icon": "Nestify.png",
     "pricing": [
       "recurring",
       "payg"
@@ -420,8 +420,8 @@
       87
     ],
     "description": "Ninja Forms is the WordPress form builder.",
-    "icon": "Ninja Forms.svg",
     "dom": "link[href*='/wp-content/plugins/ninja-forms/']",
+    "icon": "Ninja Forms.svg",
     "js": {
       "nfForms": ""
     },
@@ -444,6 +444,20 @@
       "generator": "NitroPack"
     },
     "website": "https://nitropack.io/"
+  },
+  "NoFraud": {
+    "cats": [
+      16
+    ],
+    "description": "NoFraud is a fraud prevention solution for ecommerce businesses.",
+    "icon": "NoFraud.svg",
+    "pricing": [
+      "poa"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "scriptSrc": "services\\.nofraud\\.com/",
+    "website": "https://www.nofraud.com"
   },
   "Noddus": {
     "cats": [
@@ -480,20 +494,6 @@
     "implies": "Node.js",
     "scriptSrc": "^/nodebb\\.min\\.js\\?",
     "website": "https://nodebb.org"
-  },
-  "NoFraud": {
-    "cats": [
-      16
-    ],
-    "description": "NoFraud is a fraud prevention solution for ecommerce businesses.",
-    "icon": "NoFraud.svg",
-    "scriptSrc": "services\\.nofraud\\.com/",
-    "requiresCategory": 6,
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.nofraud.com"
   },
   "Norton Shopping Guarantee": {
     "cats": [

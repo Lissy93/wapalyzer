@@ -163,23 +163,6 @@
     "scriptSrc": "\\.pagseguro\\.uol\\.com\\.br/",
     "website": "https://pagseguro.uol.com.br"
   },
-  "Paidy": {
-    "cats": [
-      41,
-      91
-    ],
-    "description": "Paidy is basically a two-sided payments service, acting as a middleman between consumers and merchants in Japan.",
-    "icon": "Paidy.png",
-    "js": {
-      "Constants.paidy": ""
-    },
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "scriptSrc": "apps\\.paidy\\.com",
-    "website": "https://paidy.com"
-  },
   "Pagar.me": {
     "cats": [
       41
@@ -266,6 +249,23 @@
       "Pagevamp": ""
     },
     "website": "https://www.pagevamp.com"
+  },
+  "Paidy": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Paidy is basically a two-sided payments service, acting as a middleman between consumers and merchants in Japan.",
+    "icon": "Paidy.png",
+    "js": {
+      "Constants.paidy": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "apps\\.paidy\\.com",
+    "website": "https://paidy.com"
   },
   "Pantheon": {
     "cats": [
@@ -1319,8 +1319,8 @@
     ],
     "description": "Polyfill is a service which accepts a request for a set of browser features and returns only the polyfills that are needed by the requesting browser.",
     "icon": "polyfill.svg",
-    "scriptSrc": "polyfill\\.io/v([\\d\\.]+)\\;version:\\1",
     "oss": true,
+    "scriptSrc": "polyfill\\.io/v([\\d\\.]+)\\;version:\\1",
     "website": "https://polyfill.io"
   },
   "Polylang": {
@@ -1329,12 +1329,12 @@
       89
     ],
     "description": "Polylang is a WordPress plugin which allows you to create a bilingual or multilingual WordPress site.",
-    "icon": "Polylang.svg",
     "dom": "img[src*='/wp-content/plugins/polylang/']",
+    "icon": "Polylang.svg",
+    "oss": true,
     "pricing": [
       "freemium"
     ],
-    "oss": true,
     "requires": "WordPress",
     "website": "https://github.com/polylang/polylang"
   },
@@ -2021,22 +2021,6 @@
     "icon": "Pure CSS.png",
     "website": "http://purecss.io"
   },
-  "PureCars": {
-    "cats": [
-      6
-    ],
-    "description": "PureCars is an automotive software and managed services company serving dealerships, advertising associations, and OEMs across the North American retail automotive industry.",
-    "icon": "PureCars.png",
-    "dom": "a[href*='app.purecars.com/']",
-    "js": {
-      "_pureCars": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.purecars.com"
-  },
   "Pure Chat": {
     "cats": [
       52
@@ -2054,6 +2038,22 @@
     "saas": true,
     "scriptSrc": "app\\.purechat\\.com",
     "website": "https://www.purechat.com"
+  },
+  "PureCars": {
+    "cats": [
+      6
+    ],
+    "description": "PureCars is an automotive software and managed services company serving dealerships, advertising associations, and OEMs across the North American retail automotive industry.",
+    "dom": "a[href*='app.purecars.com/']",
+    "icon": "PureCars.png",
+    "js": {
+      "_pureCars": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.purecars.com"
   },
   "PushEngage": {
     "cats": [
@@ -2090,8 +2090,8 @@
       32
     ],
     "description": "PushPushGo is a GDPR-ready platform which enables startups, SMBs and corporations to create and send automatic web push notification campaigns on desktop and via mobile to manage various scenarios including abandoned carts, segmentation, cross-selling, customer engagement, and return rates.",
-    "icon": "PushPushGo.svg",
     "dom": "link[href*='.pushpushgo.com/']",
+    "icon": "PushPushGo.svg",
     "pricing": [
       "mid",
       "recurring"

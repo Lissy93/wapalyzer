@@ -497,11 +497,8 @@ class Site {
 
   async goto(url) {
     // Return when the URL is a duplicate or maxUrls has been reached
-    if (
-      this.analyzedUrls[url.href] ||
-      Object.keys(this.analyzedUrls).length >= this.options.maxUrls
-    ) {
-      return
+    if (this.analyzedUrls[url.href]) {
+      return []
     }
 
     this.log(`Navigate to ${url}`, 'page')
@@ -958,14 +955,23 @@ class Site {
 
       await Promise.all([
         (async () => {
-          const links = await this.goto(url)
+          const links = ((await this.goto(url)) || []).filter(
+            ({ href }) => !this.analyzedUrls[href]
+          )
 
           if (
-            links &&
+            links.length &&
             this.options.recursive &&
+            Object.keys(this.analyzedUrls).length < this.options.maxUrls &&
             depth < this.options.maxDepth
           ) {
-            await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+            await this.batch(
+              links.slice(
+                0,
+                this.options.maxUrls - Object.keys(this.analyzedUrls).length
+              ),
+              depth + 1
+            )
           }
         })(),
         (async () => {

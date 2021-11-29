@@ -283,10 +283,10 @@
       88
     ],
     "description": "FastComet is a hosting service company from San Francisco, California.",
-    "icon": "FastComet.png",
     "dns": {
       "SOA": "\\.fcomet\\.com"
     },
+    "icon": "FastComet.png",
     "pricing": [
       "recurring",
       "payg"
@@ -433,18 +433,18 @@
       90
     ],
     "description": "Feefo is a cloud-based consumer review and rating management software.",
-    "icon": "Feefo.svg",
     "dom": "a[href*='.feefo.com/'][target='_blank'], link[href*='.feefo.com/'], img[src*='.feefo.com/']",
+    "icon": "Feefo.svg",
     "js": {
       "feefoTracker": "",
       "feefoWidget": ""
     },
-    "scriptSrc": "\\.feefo\\.com/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.feefo\\.com/",
     "website": "https://www.feefo.com"
   },
   "Fera": {
@@ -595,12 +595,12 @@
     ],
     "description": "FirstHive is a full-stack customer data platform that enables consumer marketers and brands to take control of their first-party data from all sources.",
     "icon": "FirstHive.svg",
-    "scriptSrc": "firsthive\\.com/engage/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "firsthive\\.com/engage/",
     "website": "https://firsthive.com"
   },
   "FirstImpression.io": {
@@ -774,11 +774,11 @@
     "description": "Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase.",
     "icon": "Flutter.svg",
     "implies": "Dart",
-    "meta": {
-      "id": "^flutterweb-theme$"
-    },
     "js": {
       "flutterCanvasKit": ""
+    },
+    "meta": {
+      "id": "^flutterweb-theme$"
     },
     "oss": true,
     "website": "https://flutter.dev"
@@ -1058,18 +1058,18 @@
       36
     ],
     "description": "FreakOut is a marketing technology company with programmatic solutions (DSP,SSP) that delivers in-feed display and video formats across global publishers.",
-    "icon": "FreakOut.png",
     "dom": "img[src*='.fout.jp/'], link[href*='.fout.jp']",
+    "icon": "FreakOut.png",
     "js": {
       "FOut": "",
-      "_fout_queue": "",
-      "_fout_jsurl": ""
+      "_fout_jsurl": "",
+      "_fout_queue": ""
     },
-    "scriptSrc": "\\.fout\\.jp/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.fout\\.jp/",
     "website": "https://www.fout.co.jp"
   },
   "FreeBSD": {

@@ -111,22 +111,6 @@
     ],
     "website": "https://www.seur.com"
   },
-  "Simple Analytics": {
-    "cats": [
-      10
-    ],
-    "description": "Simple Analytics is a privacy-friendly Google Analytics alternative.",
-    "icon": "Simple Analytics.svg",
-    "js": {
-      "sa_event": ""
-    },
-    "scriptSrc": [
-      "simpleanalyticscdn\\.com",
-      "simpleanalytics\\.io",
-      "simpleanalytics\\.com"
-    ],
-    "website": "https://simpleanalytics.com"
-  },
   "SIMsite": {
     "cats": [
       1
@@ -261,6 +245,21 @@
     "icon": "SUSE.png",
     "website": "http://suse.com"
   },
+  "SVG Support": {
+    "cats": [
+      87
+    ],
+    "description": "SVG Support is a WordPress plugin which allows you to safely upload SVG files to your media library and use them like any other image.",
+    "dom": "link[href*='/wp-content/plugins/svg-support/']",
+    "icon": "SVG Support.png",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/svg-support/",
+    "website": "https://github.com/wp-plugins/svg-support"
+  },
   "SWFObject": {
     "cats": [
       19
@@ -363,11 +362,11 @@
       88
     ],
     "description": "Sakura Internet is a web hosting provider that has been operating for almost 30 years.",
-    "icon": "Sakura Internet.png",
     "dns": {
       "NS": "\\.gslbN\\.sakura\\.ne\\.jp",
       "SOA": "tech\\.sakura\\.ad\\.jp"
     },
+    "icon": "Sakura Internet.png",
     "pricing": [
       "payg"
     ],
@@ -391,19 +390,19 @@
       6
     ],
     "description": "Saleor is a headless, GraphQL ecommerce platform.",
+    "dom": "img[src*='saleor.imgix.net']",
     "icon": "Saleor.svg",
     "implies": "GraphQL",
     "js": {
       "___NEXT_DATA__.runtimeConfig.SALEOR": ""
     },
-    "dom": "img[src*='saleor.imgix.net']",
+    "oss": true,
     "pricing": [
       "freemium",
       "high",
       "recurring"
     ],
     "saas": true,
-    "oss": true,
     "website": "https://saleor.io"
   },
   "SalesFire": {
@@ -737,11 +736,11 @@
     ],
     "description": "Scalefast is an outsourced ecommerce solution designed to build and manage global ecommerce for brands, with customer loyalty programs.",
     "icon": "Scalefast.svg",
-    "scriptSrc": "cdn-prod\\.scalefast\\.com/(?:.+\\.js\\?version=([\\d\\.]+))?\\;version:\\1",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "cdn-prod\\.scalefast\\.com/(?:.+\\.js\\?version=([\\d\\.]+))?\\;version:\\1",
     "website": "https://www.scalefast.com"
   },
   "Schedule Engine": {
@@ -770,8 +769,8 @@
       80
     ],
     "description": "Writee is an elegant free personal WordPress blog theme and well suited for personal, food, travel, fashion, corporate, or any other amazing blog.",
-    "icon": "Scissor Themes.png",
     "dom": "link#WRT-style-css",
+    "icon": "Scissor Themes.png",
     "pricing": [
       "freemium",
       "onetime"
@@ -901,8 +900,8 @@
       51
     ],
     "description": "SeedProd Coming Soon is a page builder allows you to add a new website under construction page to your WordPress site without hiring a developer.",
-    "icon": "SeedProd.svg",
     "dom": "link[href*='/wp-content/plugins/coming-soon/']",
+    "icon": "SeedProd.svg",
     "pricing": [
       "freemium",
       "low",
@@ -1396,10 +1395,10 @@
       "SHARETHIS": "",
       "__sharethis__docReady": ""
     },
-    "scriptSrc": "\\.sharethis\\.com/",
     "pricing": [
       "freemium"
     ],
+    "scriptSrc": "\\.sharethis\\.com/",
     "website": "http://sharethis.com"
   },
   "Sharethrough": {
@@ -1407,12 +1406,12 @@
       36
     ],
     "description": "Sharethrough is a software company that powers in-feed advertising for brands and publishers.",
-    "icon": "Sharethrough.svg",
     "dom": "link[href*='.sharethrough.com']",
-    "scriptSrc": "\\.sharethrough\\.com/",
+    "icon": "Sharethrough.svg",
     "pricing": [
       "poa"
     ],
+    "scriptSrc": "\\.sharethrough\\.com/",
     "website": "https://www.sharethrough.com"
   },
   "SharpSpring": {
@@ -1539,14 +1538,14 @@
     "cookies": {
       "shopaholic_cart_id": ""
     },
+    "description": "Shopaholic is an open-source ecosystem of plugins and themes for rapid ecommerce website development that allows building projects from small to large online shops.",
     "dom": "[class*='_shopaholic']",
+    "icon": "Shopaholic.svg",
     "js": {
       "ShopaholicCart": ""
     },
-    "requires": "October CMS",
-    "description": "Shopaholic is an open-source ecosystem of plugins and themes for rapid ecommerce website development that allows building projects from small to large online shops.",
-    "icon": "Shopaholic.svg",
     "oss": true,
+    "requires": "October CMS",
     "website": "https://shopaholic.one"
   },
   "Shopatron": {
@@ -1783,15 +1782,14 @@
     "description": "ShoppingFeeder is a feed management solution for online retailers.",
     "icon": "ShoppingFeeder.png",
     "js": {
-      "sfdrUniqid": "",
-      "sfdrOrderData": ""
+      "sfdrOrderData": "",
+      "sfdrUniqid": ""
     },
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
-    "saas": true,
     "requires": [
       "Magento",
       "Shopify",
@@ -1799,6 +1797,7 @@
       "PrestaShop",
       "WooCommerce"
     ],
+    "saas": true,
     "website": "https://sfdr.co"
   },
   "Shoppy": {
@@ -1898,8 +1897,8 @@
       87
     ],
     "description": "Shortcodes Ultimate is a comprehensive collection of visual components for WordPress.",
-    "icon": "Shortcodes Ultimate.svg",
     "dom": "link[href*='/wp-content/plugins/shortcodes-ultimate/']",
+    "icon": "Shortcodes Ultimate.svg",
     "pricing": [
       "freemium",
       "low",
@@ -2023,6 +2022,22 @@
       "static\\.simonsignal\\.com"
     ],
     "website": "https://www.simondata.com/"
+  },
+  "Simple Analytics": {
+    "cats": [
+      10
+    ],
+    "description": "Simple Analytics is a privacy-friendly Google Analytics alternative.",
+    "icon": "Simple Analytics.svg",
+    "js": {
+      "sa_event": ""
+    },
+    "scriptSrc": [
+      "simpleanalyticscdn\\.com",
+      "simpleanalytics\\.io",
+      "simpleanalytics\\.com"
+    ],
+    "website": "https://simpleanalytics.com"
   },
   "SimpleHTTP": {
     "cats": [
@@ -2197,12 +2212,12 @@
       88
     ],
     "description": "SiteGround is a web hosting service.",
+    "dns": {
+      "NS": "ns\\d+\\.c\\d+\\.sgvps\\.net",
+      "SOA": "\\.siteground\\.net"
+    },
     "headers": {
       "host-header": "192fc2e7e50945beb8231a492d6a8024|b7440e60b07ee7b8044761568fab26e8|624d5be7be38418a3e2a818cc8b7029b|6b7412fb82ca5edfd0917e3957f05d89"
-    },
-    "dns": {
-      "SOA": "\\.siteground\\.net",
-      "NS": "ns\\d+\\.c\\d+\\.sgvps\\.net"
     },
     "icon": "siteground.svg",
     "website": "https://www.siteground.com"
@@ -2238,8 +2253,8 @@
       51
     ],
     "description": "Page Builder by SiteOrigin makes it easy to build responsive grid-based page content that adapts to mobile devices with pixel perfect accuracy.",
-    "icon": "SiteOrigin.svg",
     "dom": "link[href*='/wp-content/plugins/siteorigin-panels/']",
+    "icon": "SiteOrigin.svg",
     "pricing": [
       "freemium"
     ],
@@ -2266,8 +2281,8 @@
       87
     ],
     "description": "SiteOrigin Widgets Bundle is a WordPress plugin that gives you all the elements you need to build modern, responsive, and engaging website pages.",
-    "icon": "SiteOrigin.svg",
     "dom": "link[href*='/wp-content/plugins/so-widgets-bundle/']",
+    "icon": "SiteOrigin.svg",
     "pricing": [
       "freemium"
     ],
@@ -2549,44 +2564,17 @@
       36
     ],
     "description": "Smart Ad Server is an adserving and RTB platform.",
-    "icon": "Smart Ad Server.svg",
     "dom": "img[src*='smartadserver.com/'], link[href*='.smartadserver.com']",
+    "icon": "Smart Ad Server.svg",
     "js": {
       "SmartAdServer": ""
     },
-    "scriptSrc": "\\.sascdn\\.com/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
-    "website": "http://smartadserver.com"
-  },
-  "Smartling": {
-    "cats": [
-      89
-    ],
-    "description": "Smartling is a cloud-based translation management system.",
-    "icon": "Smartling.svg",
-    "js": {
-      "populateSmartlingDdl": ""
-    },
-    "scriptSrc": "\\.smartling\\.com/",
     "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.smartling.com"
-  },
-  "SmartSite": {
-    "cats": [
-      1
-    ],
-    "html": "<[^>]+/smartsite\\.(?:dws|shtml)\\?id=",
-    "icon": "SmartSite.png",
-    "meta": {
-      "author": "Redacteur SmartInstant"
-    },
-    "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
+    "scriptSrc": "\\.sascdn\\.com/",
+    "website": "http://smartadserver.com"
   },
   "Smart Slider 3": {
     "cats": [
@@ -2601,6 +2589,17 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/smart-slider-3(?:-pro)?/",
     "website": "https://smartslider3.com"
+  },
+  "SmartSite": {
+    "cats": [
+      1
+    ],
+    "html": "<[^>]+/smartsite\\.(?:dws|shtml)\\?id=",
+    "icon": "SmartSite.png",
+    "meta": {
+      "author": "Redacteur SmartInstant"
+    },
+    "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
   },
   "Smarter Click": {
     "cats": [
@@ -2620,6 +2619,22 @@
     "saas": true,
     "scriptSrc": "\\.?smct\\.(?:io|co)/",
     "website": "https://smarterclick.com"
+  },
+  "Smartling": {
+    "cats": [
+      89
+    ],
+    "description": "Smartling is a cloud-based translation management system.",
+    "icon": "Smartling.svg",
+    "js": {
+      "populateSmartlingDdl": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.smartling\\.com/",
+    "website": "https://www.smartling.com"
   },
   "Smartstore": {
     "cats": [
@@ -2683,8 +2698,8 @@
       87
     ],
     "description": "Instagram Feed displays Instagram posts from your Instagram accounts, either in the same single feed or in multiple different ones. Created by Smash Balloon.",
-    "icon": "Smash Balloon.svg",
     "dom": "link[href*='/wp-content/plugins/instagram-feed/']",
+    "icon": "Smash Balloon.svg",
     "pricing": [
       "freemium",
       "low",
@@ -2762,22 +2777,6 @@
     "scriptSrc": "intg\\.snapchat\\.com/",
     "website": "https://businesshelp.snapchat.com/s/article/snap-pixel-about"
   },
-  "SnapWidget": {
-    "cats": [
-      5
-    ],
-    "description": "SnapWidget is a set of interactive Instagram, Twitter and 500px widgets.",
-    "icon": "SnapWidget.svg",
-    "dom": "iframe[src*='snapwidget.com/']",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "scriptSrc": "snapwidget\\.com/",
-    "website": "https://snapwidget.com"
-  },
   "Snap.svg": {
     "cats": [
       59
@@ -2806,6 +2805,22 @@
     ],
     "saas": true,
     "website": "https://snapengage.com/"
+  },
+  "SnapWidget": {
+    "cats": [
+      5
+    ],
+    "description": "SnapWidget is a set of interactive Instagram, Twitter and 500px widgets.",
+    "dom": "iframe[src*='snapwidget.com/']",
+    "icon": "SnapWidget.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "snapwidget\\.com/",
+    "website": "https://snapwidget.com"
   },
   "Snipcart": {
     "cats": [
@@ -3028,8 +3043,11 @@
     "js": {
       "Solvvy": ""
     },
+    "pricing": [
+      "recurring",
+      "poa"
+    ],
     "saas": true,
-    "pricing": [ "recurring", "poa" ],
     "scriptSrc": "cdn\\.solvvy\\.com/",
     "website": "https://solvvy.com/"
   },
@@ -3073,11 +3091,11 @@
     "js": {
       "deployads": ""
     },
-    "scriptSrc": "\\.deployads\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.deployads\\.com/",
     "website": "https://sortable.com"
   },
   "SoteShop": {
@@ -3125,17 +3143,17 @@
       5
     ],
     "description": "SoundCloud widget gives you the ability to upload, manage and share tracks.",
-    "icon": "SoundCloud.svg",
     "dom": "iframe[src*='.soundcloud.com/'], img[src*='.sndcdn.com/']",
+    "icon": "SoundCloud.svg",
     "js": {
       "SC.Widget.Events.PLAY": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://developers.soundcloud.com/docs/api/html5-widget"
   },
   "SoundManager": {
@@ -3369,35 +3387,6 @@
     "scriptSrc": "static\\.spotapps\\.co/",
     "website": "https://www.spothopperapp.com"
   },
-  "Spotify Widgets": {
-    "cats": [
-      5
-    ],
-    "description": "Spotify Widgets provide an embeddable view of a track, artist, album, user, playlist, podcast or episode for use within your web project.",
-    "icon": "Spotify.svg",
-    "dom": "iframe[src*='open.spotify.com/']",
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://developer.spotify.com/documentation/widgets"
-  },
-  "Spotify Web API": {
-    "cats": [
-      19
-    ],
-    "description": "Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.",
-    "icon": "Spotify.svg",
-    "dom": "link[href*='.spotify.com']",
-    "js": {
-      "getSpotifyData": "",
-      "spotifyme": "",
-      "spotify_tracks": ""
-    },
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://developer.spotify.com/documentation/web-api"
-  },
   "SpotX": {
     "cats": [
       36
@@ -3418,6 +3407,35 @@
     "scriptSrc": "js\\.spotx\\.tv",
     "website": "https://www.spotx.tv",
     "xhr": "\\.spotx(?:change|cdn)\\.com"
+  },
+  "Spotify Web API": {
+    "cats": [
+      19
+    ],
+    "description": "Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.",
+    "dom": "link[href*='.spotify.com']",
+    "icon": "Spotify.svg",
+    "js": {
+      "getSpotifyData": "",
+      "spotify_tracks": "",
+      "spotifyme": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://developer.spotify.com/documentation/web-api"
+  },
+  "Spotify Widgets": {
+    "cats": [
+      5
+    ],
+    "description": "Spotify Widgets provide an embeddable view of a track, artist, album, user, playlist, podcast or episode for use within your web project.",
+    "dom": "iframe[src*='open.spotify.com/']",
+    "icon": "Spotify.svg",
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://developer.spotify.com/documentation/widgets"
   },
   "Spotii": {
     "cats": [
@@ -4023,10 +4041,10 @@
       62
     ],
     "description": "Strato is an internet hosting service provider headquartered in Berlin, Germany which provide dedicated server hosting, a website builder and a cloud storage services.",
-    "icon": "Strato.svg",
     "dns": {
       "SOA": "\\.strato-rz\\.de"
     },
+    "icon": "Strato.svg",
     "pricing": [
       "recurring",
       "payg"
@@ -4042,11 +4060,11 @@
     "js": {
       "Strftime.configuration": ""
     },
-    "scriptSrc": "strato-editor\\.com/",
     "pricing": [
       "low",
       "recurring"
     ],
+    "scriptSrc": "strato-editor\\.com/",
     "website": "https://www.strato.de/homepage-baukasten"
   },
   "Strikingly": {
@@ -4149,11 +4167,11 @@
     "js": {
       "loadSublimeSkinz": ""
     },
-    "scriptSrc": "\\.ayads\\.co/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "\\.ayads\\.co/",
     "website": "https://www.sublime.xyz"
   },
   "SublimeVideo": {
@@ -4253,13 +4271,13 @@
       "sumo": "",
       "sumome": ""
     },
-    "scriptSrc": "\\.sumo(?:me)?\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.sumo(?:me)?\\.com/",
     "website": "http://sumo.com"
   },
   "SunOS": {
@@ -4341,21 +4359,6 @@
     "oss": true,
     "website": "https://kit.svelte.dev"
   },
-  "SVG Support": {
-    "cats": [
-      87
-    ],
-    "description": "SVG Support is a WordPress plugin which allows you to safely upload SVG files to your media library and use them like any other image.",
-    "icon": "SVG Support.png",
-    "dom": "link[href*='/wp-content/plugins/svg-support/']",
-    "pricing": [
-      "freemium"
-    ],
-    "requires": "WordPress",
-    "oss": true,
-    "scriptSrc": "/wp-content/plugins/svg-support/",
-    "website": "https://github.com/wp-plugins/svg-support"
-  },
   "Swagger UI": {
     "cats": [
       4
@@ -4375,12 +4378,12 @@
     "js": {
       "Swagify": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
     "requires": "Shopify",
+    "saas": true,
     "scriptSrc": "api\\.swagifyapp\\.com/",
     "website": "https://swagifyapp.com"
   },

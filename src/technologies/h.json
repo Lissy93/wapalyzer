@@ -61,19 +61,6 @@
     "icon": "HP.svg",
     "website": "http://hp.com"
   },
-  "HrFlow.ai": {
-    "cats": [
-      19
-    ],
-    "description": "HrFlow.ai is an HR data automation API platform.",
-    "icon": "HrFlow.ai.svg",
-    "scriptSrc": "\\.hrflow\\.ai",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://hrflow.ai"
-  },
   "HTTP/2": {
     "cats": [
       19
@@ -287,6 +274,25 @@
     "requires": "WordPress",
     "website": "https://elementor.com/hello-theme/"
   },
+  "Help Scout": {
+    "cats": [
+      13,
+      52
+    ],
+    "description": "Help Scout is a customer service platform including email, a knowledge base tool and live chat.",
+    "icon": "Help Scout.svg",
+    "js": {
+      "__onBeaconDestroy": "\\;confidence:25",
+      "beaconStore": "\\;confidence:25"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.helpscout\\.net/",
+    "website": "https://www.helpscout.com"
+  },
   "HelpDocs": {
     "cats": [
       4,
@@ -306,25 +312,6 @@
     "saas": true,
     "scriptSrc": "cdn\\.helpdocs\\.io",
     "website": "https://www.helpdocs.io"
-  },
-  "Help Scout": {
-    "cats": [
-      13,
-      52
-    ],
-    "description": "Help Scout is a customer service platform including email, a knowledge base tool and live chat.",
-    "icon": "Help Scout.svg",
-    "js": {
-      "beaconStore": "\\;confidence:25",
-      "__onBeaconDestroy": "\\;confidence:25"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.helpscout\\.net/",
-    "website": "https://www.helpscout.com"
   },
   "Hermes": {
     "cats": [
@@ -370,26 +357,6 @@
     "url": "\\.herokuapp\\.com",
     "website": "https://www.heroku.com/"
   },
-  "Hetzner": {
-    "cats": [
-      88,
-      62
-    ],
-    "description": "Hetzner provides dedicated hosting, shared web hosting, virtual private servers, managed servers, domain names, SSL certificates, storage boxes, and cloud.",
-    "icon": "Hetzner.svg",
-    "headers": {
-      "X-Powered-By": "Hetzner"
-    },
-    "dns": {
-      "SOA": "\\.hetzner\\.com",
-      "NS": "\\.ns\\.hetzner\\.com"
-    },
-    "pricing": [
-      "payg",
-      "recurring"
-    ],
-    "website": "https://www.hetzner.com"
-  },
   "Hestia": {
     "cats": [
       80
@@ -409,6 +376,26 @@
     "requires": "WordPress",
     "scriptSrc": "themes/hestia.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://themeisle.com/themes/hestia/"
+  },
+  "Hetzner": {
+    "cats": [
+      88,
+      62
+    ],
+    "description": "Hetzner provides dedicated hosting, shared web hosting, virtual private servers, managed servers, domain names, SSL certificates, storage boxes, and cloud.",
+    "dns": {
+      "NS": "\\.ns\\.hetzner\\.com",
+      "SOA": "\\.hetzner\\.com"
+    },
+    "headers": {
+      "X-Powered-By": "Hetzner"
+    },
+    "icon": "Hetzner.svg",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.hetzner.com"
   },
   "Hexo": {
     "cats": [
@@ -529,15 +516,15 @@
       10
     ],
     "description": "Histats is a simple website visitor analysis and tracking tool.",
-    "icon": "Histats.png",
     "dom": "img[src*='.histats.com/']",
+    "icon": "Histats.png",
     "js": {
       "Histats.ver": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
     "website": "https://www.histats.com"
   },
   "History": {
@@ -592,95 +579,95 @@
     "saas": true,
     "website": "https://www.homestead.com"
   },
-  "Hostgator": {
-    "cats": [
-      88
-    ],
-    "description": "HostGator is a Houston-based provider of shared, reseller, virtual private server, and dedicated web hosting with an additional presence in Austin, Texas.",
-    "icon": "Hostgator.svg",
-    "dns": {
-      "SOA": "\\.hostgator\\.com"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.hostgator.com"
-  },
-  "Hostinger": {
-    "cats": [
-      88
-    ],
-    "description": "Hostinger is an employee-owned Web hosting provider and internet domain registrar.",
-    "icon": "Hostinger.svg",
-    "dns": {
-      "SOA": "\\.(?:dns-parking|hostinger)\\.com"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.hostinger.com"
-  },
   "HostEurope": {
     "cats": [
       88
     ],
     "description": "HostEurope is a European website hosting, email and domain name registrar company headquartered Hayes, West London.",
-    "icon": "HostEurope.png",
     "dns": {
       "SOA": "\\.hosteurope\\.com"
     },
+    "icon": "HostEurope.png",
     "pricing": [
       "low",
       "recurring"
-    ],  
+    ],
     "website": "https://www.hosteurope.de"
-  },
-  "Hosting Ukraine": {
-    "cats": [
-      88
-    ],
-    "description": "Hosting Ukraine is a web hosting provider and internet domain registrar.",
-    "icon": "Hosting Ukraine.png",
-    "dns": {
-      "SOA": "ns\\d+\\.ukraine\\.com\\.ua"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.ukraine.com.ua"
-  },
-  "Hostiq": {
-    "cats": [
-      88
-    ],
-    "description": "Hostiq is a web hosting provider and internet domain registrar.",
-    "icon": "Hostiq.png",
-    "dns": {
-      "SOA": "\\.hostiq\\.ua"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://hostiq.ua"
   },
   "Hostens": {
     "cats": [
       88
     ],
     "description": "Hostens is a web hosting company specialising in hosting services, virtual private server hosting, and the domain name or transition.",
-    "icon": "Hostens.svg",
     "dns": {
       "SOA": "\\.hostens\\.com"
     },
+    "icon": "Hostens.svg",
     "pricing": [
       "low",
       "recurring"
     ],
     "website": "https://www.hostens.com"
+  },
+  "Hostgator": {
+    "cats": [
+      88
+    ],
+    "description": "HostGator is a Houston-based provider of shared, reseller, virtual private server, and dedicated web hosting with an additional presence in Austin, Texas.",
+    "dns": {
+      "SOA": "\\.hostgator\\.com"
+    },
+    "icon": "Hostgator.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.hostgator.com"
+  },
+  "Hosting Ukraine": {
+    "cats": [
+      88
+    ],
+    "description": "Hosting Ukraine is a web hosting provider and internet domain registrar.",
+    "dns": {
+      "SOA": "ns\\d+\\.ukraine\\.com\\.ua"
+    },
+    "icon": "Hosting Ukraine.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.ukraine.com.ua"
+  },
+  "Hostinger": {
+    "cats": [
+      88
+    ],
+    "description": "Hostinger is an employee-owned Web hosting provider and internet domain registrar.",
+    "dns": {
+      "SOA": "\\.(?:dns-parking|hostinger)\\.com"
+    },
+    "icon": "Hostinger.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.hostinger.com"
+  },
+  "Hostiq": {
+    "cats": [
+      88
+    ],
+    "description": "Hostiq is a web hosting provider and internet domain registrar.",
+    "dns": {
+      "SOA": "\\.hostiq\\.ua"
+    },
+    "icon": "Hostiq.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://hostiq.ua"
   },
   "Hostmeapp": {
     "cats": [
@@ -702,10 +689,10 @@
       88
     ],
     "description": "Hostpoint is a Switzerland-based web hosting company.",
-    "icon": "Hostpoint.svg",
     "dns": {
       "SOA": "\\.hostpoint\\.ch"
     },
+    "icon": "Hostpoint.svg",
     "pricing": [
       "low",
       "recurring"
@@ -737,13 +724,13 @@
       "HotleadController": "",
       "hj.apiUrlBase": ""
     },
-    "scriptSrc": "//static\\.hotjar\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "//static\\.hotjar\\.com/",
     "website": "https://www.hotjar.com"
   },
   "Hotjar Incoming Feedback": {
@@ -751,8 +738,8 @@
       5
     ],
     "description": "Hotjar Incoming Feedback is a widget that sits at the edge of a page.",
-    "icon": "Hotjar.svg",
     "dom": "a[href*='hotjar.com/incoming-feedback'][target='_blank']",
+    "icon": "Hotjar.svg",
     "scriptSrc": "\\.hotjar\\.com/preact-incoming-feedback",
     "website": "https://www.hotjar.com"
   },
@@ -773,6 +760,19 @@
       "howler/([\\d.]+)/howler(?:\\.core)?\\.min\\.js\\;version:\\1"
     ],
     "website": "https://howlerjs.com"
+  },
+  "HrFlow.ai": {
+    "cats": [
+      19
+    ],
+    "description": "HrFlow.ai is an HR data automation API platform.",
+    "icon": "HrFlow.ai.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.hrflow\\.ai",
+    "website": "https://hrflow.ai"
   },
   "HubSpot": {
     "cats": [
@@ -1003,8 +1003,8 @@
       13
     ],
     "description": "Hund.io is an automated status pages with monitoring.",
-    "icon": "Hund.io.svg",
     "dom": "link[href*='hund-client-logos']",
+    "icon": "Hund.io.svg",
     "pricing": [
       "recurring",
       "payg"
