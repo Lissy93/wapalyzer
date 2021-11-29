@@ -950,7 +950,7 @@
     "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
     "html": [
       "<style>\\s+/\\*!\\s+\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
-      "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1"
+      "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>-]*?(?:\\.min)?\\.css\\;version:\\1"
     ],
     "icon": "Bootstrap.svg",
     "js": {
@@ -968,8 +968,13 @@
     ],
     "description": "Bootstrap Icons is a growing library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team.",
     "icon": "Bootstrap Icons.svg",
-    "html": "<link[^>]+bootstrap-icons(?:@|/)([\\d\\.]+)?\\;version:\\1",
-    "dom": "link[href*='bootstrap-icons']",
+    "dom": { 
+      "link[href*='bootstrap-icons']": {
+        "attributes": {
+          "href": "bootstrap-icons(?:@|/)?([\\d\\.]+)?\\;version:\\1"
+        }
+      }
+    },
     "oss": true,
     "pricing": [
       "freemium"
