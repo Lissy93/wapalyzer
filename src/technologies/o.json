@@ -1202,12 +1202,12 @@
       30
     ],
     "description": "Outlook on the web is an information manager web app. It includes a web-based email client, a calendar tool, a contact manager, and a task manager.",
-    "icon": "Outlook.svg",
-    "implies": "Microsoft ASP.NET",
-    "html": "<link[^>]+/owa/auth/([\\d\\.]+)/themes/resources\\;version:\\1",
     "headers": {
       "X-OWA-Version": "([\\d\\.]+)?\\;version:\\1"
     },
+    "html": "<link[^>]+/owa/auth/([\\d\\.]+)/themes/resources\\;version:\\1",
+    "icon": "Outlook.svg",
+    "implies": "Microsoft ASP.NET",
     "js": {
       "IsOwaPremiumBrowser": ""
     },
