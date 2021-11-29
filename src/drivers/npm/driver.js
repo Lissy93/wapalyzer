@@ -610,21 +610,33 @@ class Site {
             ]
           })
 
+          // Prevent cross-domain redirects
           if (response.status() >= 300 && response.status() < 400) {
             if (headers.location) {
-              url = new URL(headers.location.slice(-1), url)
+              const _url = new URL(headers.location.slice(-1), url)
+
+              if (
+                _url.hostname.replace(/^www\./, '') ===
+                  this.originalUrl.hostname.replace(/^www\./, '') ||
+                (Object.keys(this.analyzedUrls).length === 1 &&
+                  !this.options.noRedirect)
+              ) {
+                url = _url
+
+                return
+              }
             }
-          } else {
-            responseReceived = true
-
-            const certIssuer = response.securityDetails()
-              ? response.securityDetails().issuer()
-              : ''
-
-            await this.onDetect(url, await analyze({ headers, certIssuer }))
-
-            await this.emit('response', { page, response, headers, certIssuer })
           }
+
+          responseReceived = true
+
+          const certIssuer = response.securityDetails()
+            ? response.securityDetails().issuer()
+            : ''
+
+          await this.onDetect(url, await analyze({ headers, certIssuer }))
+
+          await this.emit('response', { page, response, headers, certIssuer })
         }
       } catch (error) {
         this.error(error)
@@ -983,7 +995,7 @@ class Site {
       ])
     } catch (error) {
       this.analyzedUrls[url.href] = {
-        status: 0,
+        status: this.analyzedUrls[url.href]?.status || 0,
         error: error.message || error.toString(),
       }
 
