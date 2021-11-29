@@ -1,4 +1,3 @@
-const { URL } = require('url')
 const os = require('os')
 const fs = require('fs')
 const dns = require('dns').promises
