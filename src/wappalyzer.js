@@ -1,9 +1,5 @@
 'use strict'
 
-function next() {
-  return new Promise((resolve) => setTimeout(resolve, 0))
-}
-
 function toArray(value) {
   return Array.isArray(value) ? value : [value]
 }
@@ -204,7 +200,7 @@ const Wappalyzer = {
    * Initialize analyzation.
    * @param {*} param0
    */
-  async analyze(
+  analyze(
     {
       url,
       xhr,
@@ -231,28 +227,24 @@ const Wappalyzer = {
 
     try {
       const detections = flatten(
-        await Promise.all(
-          technologies.map(async (technology) => {
-            await next()
-
-            return flatten([
-              oo(technology, 'url', url),
-              oo(technology, 'xhr', xhr),
-              oo(technology, 'html', html),
-              oo(technology, 'text', text),
-              oo(technology, 'scripts', scripts),
-              oo(technology, 'css', css),
-              oo(technology, 'robots', robots),
-              oo(technology, 'magento', magento),
-              oo(technology, 'certIssuer', certIssuer),
-              om(technology, 'scriptSrc', scriptSrc),
-              mm(technology, 'cookies', cookies),
-              mm(technology, 'meta', meta),
-              mm(technology, 'headers', headers),
-              mm(technology, 'dns', dns),
-            ])
-          })
-        )
+        technologies.map((technology) => {
+          return flatten([
+            oo(technology, 'url', url),
+            oo(technology, 'xhr', xhr),
+            oo(technology, 'html', html),
+            oo(technology, 'text', text),
+            oo(technology, 'scripts', scripts),
+            oo(technology, 'css', css),
+            oo(technology, 'robots', robots),
+            oo(technology, 'magento', magento),
+            oo(technology, 'certIssuer', certIssuer),
+            om(technology, 'scriptSrc', scriptSrc),
+            mm(technology, 'cookies', cookies),
+            mm(technology, 'meta', meta),
+            mm(technology, 'headers', headers),
+            mm(technology, 'dns', dns),
+          ])
+        })
       ).filter((technology) => technology)
 
       return detections

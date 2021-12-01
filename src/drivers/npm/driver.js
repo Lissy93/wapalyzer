@@ -552,7 +552,7 @@ class Site {
               if (!this.analyzedXhr[url.hostname].includes(hostname)) {
                 this.analyzedXhr[url.hostname].push(hostname)
 
-                await this.onDetect(url, await analyze({ xhr: hostname }))
+                await this.onDetect(url, analyze({ xhr: hostname }))
               }
             }, 1000)
           }
@@ -590,7 +590,7 @@ class Site {
         ) {
           const scripts = await response.text()
 
-          await this.onDetect(response.url(), await analyze({ scripts }))
+          await this.onDetect(response.url(), analyze({ scripts }))
         }
 
         if (response.url() === url.href) {
@@ -634,7 +634,7 @@ class Site {
             ? response.securityDetails().issuer()
             : ''
 
-          await this.onDetect(url, await analyze({ headers, certIssuer }))
+          await this.onDetect(url, analyze({ headers, certIssuer }))
 
           await this.emit('response', { page, response, headers, certIssuer })
         }
@@ -1076,10 +1076,7 @@ class Site {
 
           this.log(`Probe ok (${path})`)
 
-          await this.onDetect(
-            url,
-            await analyze({ [file]: body.slice(0, 100000) })
-          )
+          await this.onDetect(url, analyze({ [file]: body.slice(0, 100000) }))
         } catch (error) {
           this.error(`Probe failed (${path}): ${error.message || error}`)
         }
@@ -1117,7 +1114,7 @@ class Site {
           `Probe DNS ok: (${Object.values(dnsRecords).flat().length} records)`
         )
 
-        await this.onDetect(url, await analyze({ dns: dnsRecords }))
+        await this.onDetect(url, analyze({ dns: dnsRecords }))
 
         resolve()
       }),

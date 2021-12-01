@@ -416,9 +416,7 @@ const Driver = {
             )
           })
 
-          Driver.onDetect(request.url, await analyze({ headers })).catch(
-            Driver.error
-          )
+          Driver.onDetect(request.url, analyze({ headers })).catch(Driver.error)
         }
       } catch (error) {
         Driver.error(error)
@@ -444,7 +442,7 @@ const Driver = {
 
       const scripts = await response.text()
 
-      Driver.onDetect(request.documentUrl, await analyze({ scripts })).catch(
+      Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
         Driver.error
       )
     }
@@ -492,7 +490,7 @@ const Driver = {
 
           Driver.onDetect(
             request.originUrl || request.initiator,
-            await analyze({ xhr: hostname })
+            analyze({ xhr: hostname })
           ).catch(Driver.error)
         }
       }, 1000)
@@ -522,7 +520,7 @@ const Driver = {
 
       await Driver.onDetect(
         url,
-        await analyze({ url, ...items }, technologies),
+        analyze({ url, ...items }, technologies),
         language,
         true
       )
