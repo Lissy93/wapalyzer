@@ -2081,6 +2081,41 @@
     "icon": "Simplebo.png",
     "website": "https://www.simplebo.fr"
   },
+  "Simplero": {
+    "cats": [
+      32
+    ],
+    "description": "Simplero is an all-in-one marketing software.",
+    "icon": "Simplero.svg",
+    "dom": "a[href*='.simplero.com/'][target='_blank']",
+    "js": {
+      "Simplero": ""
+    },
+    "scriptSrc": "\\.simplero\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://simplero.com"
+  },
+  "Simplero Websites": {
+    "cats": [
+      21
+    ],
+    "description": "Simplero Websites are a learning management system which suited for courses, coaching programs, memberships and digital products by Simplero.",
+    "icon": "Simplero.svg",
+    "implies": "Cart Functionality",
+    "cookies": {
+      "_simplero_session_id": ""
+    },
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://simplero.com/websites"
+  },
   "Sinatra": {
     "cats": [
       80
