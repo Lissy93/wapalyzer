@@ -995,7 +995,7 @@ class Site {
       ])
     } catch (error) {
       this.analyzedUrls[url.href] = {
-        status: this.analyzedUrls[url.href]?.status || 0,
+        status: this.analyzedUrls[url.href].status || 0,
         error: error.message || error.toString(),
       }
 
