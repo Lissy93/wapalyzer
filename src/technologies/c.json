@@ -1201,19 +1201,24 @@
   },
   "Cloudinary": {
     "cats": [
-      31
+      31,
+      95
     ],
-    "dom": {
-      "img[src*='.cloudinary.com']": {
-        "attributes": {
-          "src": "\\;confidence:80"
-        }
-      }
-    },
+    "description": "Cloudinary is an end-to-end image- and video-management solution for websites and mobile apps, covering everything from image and video uploads, storage, manipulations, optimisations to delivery.",
     "icon": "Cloudinary.svg",
+    "dom": "img[src*='.cloudinary.com/'], img[data-src*='.cloudinary.com/']",
+    "headers": {
+      "Content-Security-Policy": "player\\.cloudinary\\.com"
+    },
     "js": {
       "_cloudinary": ""
     },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring",
+      "poa"
+    ],
     "website": "https://cloudinary.com"
   },
   "Cloudways": {
