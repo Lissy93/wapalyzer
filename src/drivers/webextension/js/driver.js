@@ -476,7 +476,7 @@ const Driver = {
     if (!xhrDebounce.includes(hostname)) {
       xhrDebounce.push(hostname)
 
-      setTimeout(async () => {
+      setTimeout(() => {
         xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
         xhrAnalyzed[originHostname] = xhrAnalyzed[originHostname] || []
