@@ -2374,16 +2374,28 @@
   },
   "Ant Design": {
     "cats": [
-      12
+      66
     ],
     "html": [
       "<[^>]*class=\"ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider|drawer)",
       "<i class=\"anticon anticon-"
     ],
+    "description": "Ant Design is a UI library that can be used with data flow solutions and application frameworks in any React ecosystem.",
     "icon": "Ant Design.svg",
-    "js": {
-      "antd": ""
+    "dom": { 
+      "link[href*='antd']": {
+        "attributes": {
+          "href": "antd(?:@|/)?([\\d\\.]+)?(?:.+|)?\\.css\\;version:\\1"
+        }
+      }
     },
+    "js": {
+      "antd.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "https://ant.design"
   },
   "AnyClip": {
