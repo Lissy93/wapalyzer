@@ -1230,10 +1230,15 @@
     "cats": [
       22
     ],
+    "description": "Lighttpd is an open-source web server optimised for speed-critical environment.",
+    "icon": "lighttpd.svg",
     "headers": {
-      "Server": "lighttpd(?:/([\\d.]+))?\\;version:\\1"
+      "Server": "(?:L|l)ight(?:y)?(?:tpd)?(?:/([\\d\\.]+))?\\;version:\\1"
     },
-    "icon": "lighttpd.png",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "http://www.lighttpd.net"
   }
 }
