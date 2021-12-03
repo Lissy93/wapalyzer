@@ -491,13 +491,13 @@
       95
     ],
     "description": "Censhare is a commercial digital experience platform in the form of an enterprise content management system.",
-    "icon": "Censhare.svg",
     "dom": "img[data-src*='CENSHARE'], img[src*='CENSHARE']",
-    "saas": true,
+    "icon": "Censhare.svg",
     "pricing": [
       "high",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.censhare.com"
   },
   "CentOS": {
@@ -1219,11 +1219,11 @@
       95
     ],
     "description": "Cloudinary is an end-to-end image- and video-management solution for websites and mobile apps, covering everything from image and video uploads, storage, manipulations, optimisations to delivery.",
-    "icon": "Cloudinary.svg",
     "dom": "img[src*='.cloudinary.com/'], img[data-src*='.cloudinary.com/']",
     "headers": {
       "Content-Security-Policy": "player\\.cloudinary\\.com"
     },
+    "icon": "Cloudinary.svg",
     "js": {
       "_cloudinary": ""
     },
@@ -2846,8 +2846,8 @@
     "cats": [
       59
     ],
-    "icon": "core-js.png",
     "description": "core-js is a modular standard library for JavaScript, with polyfills for cutting-edge ECMAScript features.",
+    "icon": "core-js.png",
     "js": {
       "__core-js_shared__": "",
       "__core-js_shared__.versions.0.version": "^(.+)$\\;version:\\1",

@@ -685,12 +685,12 @@
       "adoptApp.domain": "",
       "adopt_website_code": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://goadopt.io"
   },
   "AdRiver": {
@@ -2376,19 +2376,19 @@
     "cats": [
       66
     ],
-    "html": [
-      "<[^>]*class=\"ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider|drawer)",
-      "<i class=\"anticon anticon-"
-    ],
     "description": "Ant Design is a UI library that can be used with data flow solutions and application frameworks in any React ecosystem.",
-    "icon": "Ant Design.svg",
-    "dom": { 
+    "dom": {
       "link[href*='antd']": {
         "attributes": {
           "href": "antd(?:@|/)?([\\d\\.]+)?(?:.+|)?\\.css\\;version:\\1"
         }
       }
     },
+    "html": [
+      "<[^>]*class=\"ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider|drawer)",
+      "<i class=\"anticon anticon-"
+    ],
+    "icon": "Ant Design.svg",
     "js": {
       "antd.version": "^([\\d\\.]+)$\\;version:\\1"
     },
@@ -2745,12 +2745,12 @@
       95
     ],
     "description": "Aprimo is a United States-based company that develops and sells marketing automation software and digital asset management technology.",
-    "icon": "Aprimo.png",
     "dom": "source[data-srcset*='/media/aprimo'], img[data-src*='/media/Aprimo'], img[src*='aprimo']",
-    "saas": true,
+    "icon": "Aprimo.png",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.aprimo.com"
   },
   "AquilaCMS": {

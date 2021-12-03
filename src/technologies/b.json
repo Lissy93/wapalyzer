@@ -758,16 +758,16 @@
     "description": "Bokun is a cloud-based booking management solution which enables small to large travel and tourism businesses manage reservations, products content, images, categorisation, pricing, inventory, and payments.",
     "icon": "Bokun.svg",
     "js": {
-      "__bokunWidgets": "",
       "BokunWidgetEmbedder": "",
-      "bokunSessionId": "",
-      "bokunBookingChannelUUID": ""
+      "__bokunWidgets": "",
+      "bokunBookingChannelUUID": "",
+      "bokunSessionId": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "payg"
     ],
+    "saas": true,
     "website": "https://www.bokun.io"
   },
   "Bol.com": {
@@ -989,14 +989,14 @@
       17
     ],
     "description": "Bootstrap Icons is a growing library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team.",
-    "icon": "Bootstrap Icons.svg",
-    "dom": { 
+    "dom": {
       "link[href*='bootstrap-icons']": {
         "attributes": {
           "href": "bootstrap-icons(?:@|/)?([\\d\\.]+)?\\;version:\\1"
         }
       }
     },
+    "icon": "Bootstrap Icons.svg",
     "oss": true,
     "pricing": [
       "freemium"

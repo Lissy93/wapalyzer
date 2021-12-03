@@ -1,16 +1,4 @@
 {
-  "PayWhirl": {
-    "cats": [
-      41
-    ],
-    "description": "PayWhirl provides widgets and tools to handle recurring payments.",
-    "icon": "paywhirl.png",
-    "js": {
-      "paywhirlForShopifySettings": ""
-    },
-    "pricing": ["payg", "recurring"],
-    "website": "https://app.paywhirl.com/"
-  },
   "PDF.js": {
     "cats": [
       19
@@ -553,6 +541,21 @@
     ],
     "website": "https://developer.paypal.com/docs/marketing-solutions"
   },
+  "PayWhirl": {
+    "cats": [
+      41
+    ],
+    "description": "PayWhirl provides widgets and tools to handle recurring payments.",
+    "icon": "paywhirl.png",
+    "js": {
+      "paywhirlForShopifySettings": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://app.paywhirl.com/"
+  },
   "Payflex": {
     "cats": [
       41,
@@ -974,8 +977,8 @@
       95
     ],
     "description": "Picturepark is designed to facilitate your DAM policies by storing, tagging, searching and delivering files in an automated and controlled way.",
-    "icon": "Picturepark.svg",
     "dom": "img[data-name*='Picturepark'], img[data-srcset*='picturepark'], div[style*='picturepark'], source[srcset*='picturepark']",
+    "icon": "Picturepark.svg",
     "js": {
       "pictureparkConfiguration": ""
     },
