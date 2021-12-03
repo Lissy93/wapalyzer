@@ -10,10 +10,6 @@ const Wappalyzer = require('./wappalyzer')
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
 
-function next() {
-  return new Promise((resolve) => setImmediate(resolve))
-}
-
 const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
 
 const chromiumArgs = [
@@ -98,21 +94,16 @@ function getJs(page, technologies = Wappalyzer.technologies) {
   }, technologies)
 }
 
-async function analyzeJs(js, technologies = Wappalyzer.technologies) {
-  return Array.prototype.concat.apply(
-    [],
-    await Promise.all(
-      js.map(async ({ name, chain, value }) => {
-        await next()
-
-        return analyzeManyToMany(
-          technologies.find(({ name: _name }) => name === _name),
-          'js',
-          { [chain]: [value] }
-        )
-      })
-    )
-  )
+function analyzeJs(js, technologies = Wappalyzer.technologies) {
+  return js
+    .map(({ name, chain, value }) => {
+      return analyzeManyToMany(
+        technologies.find(({ name: _name }) => name === _name),
+        'js',
+        { [chain]: [value] }
+      )
+    })
+    .flat()
 }
 
 function getDom(page, technologies = Wappalyzer.technologies) {
@@ -200,59 +191,36 @@ function getDom(page, technologies = Wappalyzer.technologies) {
   }, technologies)
 }
 
-async function analyzeDom(dom, technologies = Wappalyzer.technologies) {
-  return Array.prototype.concat.apply(
-    [],
-    await Promise.all(
-      dom.map(
-        async ({
-          name,
-          selector,
-          exists,
-          text,
-          property,
-          attribute,
-          value,
-        }) => {
-          await next()
+function analyzeDom(dom, technologies = Wappalyzer.technologies) {
+  return dom
+    .map(({ name, selector, exists, text, property, attribute, value }) => {
+      const technology = technologies.find(({ name: _name }) => name === _name)
 
-          const technology = technologies.find(
-            ({ name: _name }) => name === _name
-          )
+      if (typeof exists !== 'undefined') {
+        return analyzeManyToMany(technology, 'dom.exists', {
+          [selector]: [''],
+        })
+      }
 
-          if (typeof exists !== 'undefined') {
-            return analyzeManyToMany(technology, 'dom.exists', {
-              [selector]: [''],
-            })
-          }
+      if (typeof text !== 'undefined') {
+        return analyzeManyToMany(technology, 'dom.text', {
+          [selector]: [text],
+        })
+      }
 
-          if (typeof text !== 'undefined') {
-            return analyzeManyToMany(technology, 'dom.text', {
-              [selector]: [text],
-            })
-          }
+      if (typeof property !== 'undefined') {
+        return analyzeManyToMany(technology, `dom.properties.${property}`, {
+          [selector]: [value],
+        })
+      }
 
-          if (typeof property !== 'undefined') {
-            return analyzeManyToMany(technology, `dom.properties.${property}`, {
-              [selector]: [value],
-            })
-          }
-
-          if (typeof attribute !== 'undefined') {
-            return analyzeManyToMany(
-              technology,
-              `dom.attributes.${attribute}`,
-              {
-                [selector]: [value],
-              }
-            )
-          }
-
-          return []
-        }
-      )
-    )
-  )
+      if (typeof attribute !== 'undefined') {
+        return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
+          [selector]: [value],
+        })
+      }
+    })
+    .flat()
 }
 
 function get(url, options = {}) {
@@ -860,22 +828,20 @@ class Site {
 
       await this.onDetect(
         url,
-        (
-          await Promise.all([
-            analyzeDom(dom),
-            analyzeJs(js),
-            analyze({
-              url,
-              cookies,
-              html,
-              text,
-              css,
-              scripts,
-              scriptSrc,
-              meta,
-            }),
-          ])
-        ).flat()
+        [
+          analyzeDom(dom),
+          analyzeJs(js),
+          analyze({
+            url,
+            cookies,
+            html,
+            text,
+            css,
+            scripts,
+            scriptSrc,
+            meta,
+          }),
+        ].flat()
       )
 
       const reducedLinks = Array.prototype.reduce.call(
@@ -1189,25 +1155,23 @@ class Site {
 
             await this.onDetect(
               url,
-              (
-                await Promise.all([
-                  analyzeDom(dom, technologies),
-                  analyzeJs(js, technologies),
-                  analyze(
-                    {
-                      url,
-                      cookies,
-                      html,
-                      text,
-                      css,
-                      scripts,
-                      scriptSrc,
-                      meta,
-                    },
-                    technologies
-                  ),
-                ])
-              ).flat()
+              [
+                analyzeDom(dom, technologies),
+                analyzeJs(js, technologies),
+                await analyze(
+                  {
+                    url,
+                    cookies,
+                    html,
+                    text,
+                    css,
+                    scripts,
+                    scriptSrc,
+                    meta,
+                  },
+                  technologies
+                ),
+              ].flat()
             )
           }
         })

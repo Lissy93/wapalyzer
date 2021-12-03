@@ -288,7 +288,9 @@ const Content = {
       // Delayed second pass to capture async JS
       await new Promise((resolve) => setTimeout(resolve, 5000))
 
-      await Content.onGetTechnologies(technologies)
+      const js = await getJs(technologies)
+
+      await Content.driver('analyzeJs', [url, js])
     } catch (error) {
       Content.driver('error', error)
     }

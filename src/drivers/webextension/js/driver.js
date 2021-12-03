@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, Wappalyzer, Utils, next */
+/* globals chrome, Wappalyzer, Utils */
 
 const {
   setTechnologies,
@@ -217,27 +217,22 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  async analyzeJs(url, js, requires, categoryRequires) {
+  analyzeJs(url, js, requires, categoryRequires) {
     const technologies =
       getRequiredTechnologies(requires, categoryRequires) ||
       Wappalyzer.technologies
 
     return Driver.onDetect(
       url,
-      Array.prototype.concat.apply(
-        [],
-        await Promise.all(
-          js.map(async ({ name, chain, value }) => {
-            await next()
-
-            return analyzeManyToMany(
-              technologies.find(({ name: _name }) => name === _name),
-              'js',
-              { [chain]: [value] }
-            )
-          })
-        )
-      )
+      js
+        .map(({ name, chain, value }) => {
+          return analyzeManyToMany(
+            technologies.find(({ name: _name }) => name === _name),
+            'js',
+            { [chain]: [value] }
+          )
+        })
+        .flat()
     )
   },
 
@@ -246,64 +241,57 @@ const Driver = {
    * @param {String} url
    * @param {Array} dom
    */
-  async analyzeDom(url, dom, requires, categoryRequires) {
+  analyzeDom(url, dom, requires, categoryRequires) {
     const technologies =
       getRequiredTechnologies(requires, categoryRequires) ||
       Wappalyzer.technologies
 
     return Driver.onDetect(
       url,
-      Array.prototype.concat.apply(
-        [],
-        await Promise.all(
-          dom.map(
-            async (
-              { name, selector, exists, text, property, attribute, value },
-              index
-            ) => {
-              await next()
+      dom
+        .map(
+          (
+            { name, selector, exists, text, property, attribute, value },
+            index
+          ) => {
+            const technology = technologies.find(
+              ({ name: _name }) => name === _name
+            )
 
-              const technology = technologies.find(
-                ({ name: _name }) => name === _name
-              )
-
-              if (typeof exists !== 'undefined') {
-                return analyzeManyToMany(technology, 'dom.exists', {
-                  [selector]: [''],
-                })
-              }
-
-              if (typeof text !== 'undefined') {
-                return analyzeManyToMany(technology, 'dom.text', {
-                  [selector]: [text],
-                })
-              }
-
-              if (typeof property !== 'undefined') {
-                return analyzeManyToMany(
-                  technology,
-                  `dom.properties.${property}`,
-                  {
-                    [selector]: [value],
-                  }
-                )
-              }
-
-              if (typeof attribute !== 'undefined') {
-                return analyzeManyToMany(
-                  technology,
-                  `dom.attributes.${attribute}`,
-                  {
-                    [selector]: [value],
-                  }
-                )
-              }
-
-              return []
+            if (typeof exists !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.exists', {
+                [selector]: [''],
+              })
             }
-          )
+
+            if (typeof text !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.text', {
+                [selector]: [text],
+              })
+            }
+
+            if (typeof property !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.properties.${property}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+
+            if (typeof attribute !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.attributes.${attribute}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+          }
         )
-      )
+        .flat()
     )
   },
 
@@ -673,11 +661,7 @@ const Driver = {
       ),
     ]
 
-    try {
-      await Driver.content(url, 'analyzeRequires', [url, requires])
-    } catch (error) {
-      // Continue
-    }
+    Driver.content(url, 'analyzeRequires', [url, requires])
 
     await Driver.setIcon(url, resolved)
 
