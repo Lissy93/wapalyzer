@@ -1866,6 +1866,21 @@
     "scriptSrc": "\\.privy\\.com/",
     "website": "https://www.privy.com"
   },
+  "ProfilePress": {
+    "cats": [
+      87
+    ],
+    "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
+    "icon": "ProfilePress.svg",
+    "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wp-user-avatar(?:-pro)?/.+frontend\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://profilepress.net"
+  },
   "Profitwell": {
     "cats": [
       10
