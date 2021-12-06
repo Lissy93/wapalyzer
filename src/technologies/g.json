@@ -1683,5 +1683,16 @@
     },
     "icon": "gunicorn.png",
     "website": "http://gunicorn.org"
+  },
+  "Gutenberg Blocks": {
+    "cats": [
+      87
+    ],
+    "description": "Gutenberg Blocks are the editor blocks that are used to create content layouts in the new WordPress block editor aka Gutenberg by Brainstorm Force.",
+    "icon": "Gutenberg Blocks.png",
+    "dom": "link[href*='/wp-content/plugins/ultimate-addons-for-gutenberg/']",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/ultimate-addons-for-gutenberg/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://ultimategutenberg.com"
   }
 }
