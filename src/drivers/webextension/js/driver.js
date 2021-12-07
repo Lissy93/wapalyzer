@@ -121,10 +121,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      // open(
-      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-      //   false
-      // )
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -209,6 +209,8 @@ const Driver = {
    * Wrapper for analyze
    */
   analyze(...args) {
+    Driver.log('analyze: Driver.analyze')
+
     return analyze(...args)
   },
 
@@ -404,6 +406,8 @@ const Driver = {
             )
           })
 
+          Driver.log('analyze: onWebRequestComplete | headers')
+
           Driver.onDetect(request.url, analyze({ headers })).catch(Driver.error)
         }
       } catch (error) {
@@ -430,6 +434,8 @@ const Driver = {
 
       const scripts = await response.text()
 
+      console.log('analyze: onScriptRequestComplete | scripts')
+
       Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
         Driver.error
       )
@@ -446,16 +452,10 @@ const Driver = {
     }
 
     let hostname
-
-    try {
-      ;({ hostname } = new URL(request.url))
-    } catch (error) {
-      return
-    }
-
     let originHostname
 
     try {
+      ;({ hostname } = new URL(request.url))
       ;({ hostname: originHostname } = new URL(request.originUrl))
     } catch (error) {
       return
@@ -475,6 +475,8 @@ const Driver = {
           if (Object.keys(xhrAnalyzed).length > 500) {
             xhrAnalyzed = {}
           }
+
+          console.log('analyze: onXhrRequestComplete | xhr', hostname)
 
           Driver.onDetect(
             request.originUrl || request.initiator,
@@ -505,6 +507,8 @@ const Driver = {
       )
 
       const technologies = getRequiredTechnologies(requires, categoryRequires)
+
+      Driver.log('analyze: onContentLoad | url, ...item')
 
       await Driver.onDetect(
         url,

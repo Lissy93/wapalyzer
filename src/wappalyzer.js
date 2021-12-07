@@ -4,6 +4,68 @@ function toArray(value) {
   return Array.isArray(value) ? value : [value]
 }
 
+const benchmarkEnabled = !!process.env.WAPPALYZER_BENCHMARK
+
+let benchmarks = []
+
+function benchmark(duration, pattern, value = '', technology) {
+  if (!benchmarkEnabled) {
+    return
+  }
+
+  benchmarks.push({
+    duration,
+    pattern: String(pattern.regex),
+    value: String(value).slice(0, 100),
+    valueLength: value.length,
+    technology: technology.name,
+  })
+}
+
+function benchmarkSummary() {
+  if (!benchmarkEnabled) {
+    return
+  }
+
+  const totalPatterns = Object.values(benchmarks).length
+  const totalDuration = Object.values(benchmarks).reduce(
+    (sum, { duration }) => sum + duration,
+    0
+  )
+
+  // eslint-disable-next-line no-console
+  console.log({
+    totalPatterns,
+    totalDuration,
+    averageDuration: Math.round(totalDuration / totalPatterns),
+    slowestTechnologies: Object.values(
+      benchmarks.reduce((benchmarks, { duration, technology }) => {
+        if (benchmarks[technology]) {
+          benchmarks[technology].duration += duration
+        } else {
+          benchmarks[technology] = { technology, duration }
+        }
+
+        return benchmarks
+      }, {})
+    )
+      .sort(({ duration: a }, { duration: b }) => (a > b ? -1 : 1))
+      .filter(({ duration }) => duration)
+      .slice(0, 5)
+      .reduce(
+        (technologies, { technology, duration }) => ({
+          ...technologies,
+          [technology]: duration,
+        }),
+        {}
+      ),
+    slowestPatterns: Object.values(benchmarks)
+      .sort(({ duration: a }, { duration: b }) => (a > b ? -1 : 1))
+      .filter(({ duration }) => duration)
+      .slice(0, 5),
+  })
+}
+
 const Wappalyzer = {
   technologies: [],
   categories: [],
@@ -200,52 +262,44 @@ const Wappalyzer = {
    * Initialize analyzation.
    * @param {*} param0
    */
-  analyze(
-    {
-      url,
-      xhr,
-      html,
-      text,
-      scripts,
-      css,
-      robots,
-      magento,
-      meta,
-      headers,
-      dns,
-      certIssuer,
-      cookies,
-      scriptSrc,
-    },
-    technologies = Wappalyzer.technologies
-  ) {
+  analyze(items, technologies = Wappalyzer.technologies) {
+    benchmarks = []
+
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
 
-    const flatten = (array) => Array.prototype.concat.apply([], array)
+    const relations = {
+      url: oo,
+      xhr: oo,
+      html: oo,
+      text: oo,
+      scripts: oo,
+      css: oo,
+      robots: oo,
+      magento: oo,
+      certIssuer: oo,
+      scriptSrc: om,
+      cookies: mm,
+      meta: mm,
+      headers: mm,
+      dns: mm,
+    }
 
     try {
-      const detections = flatten(
-        technologies.map((technology) => {
-          return flatten([
-            oo(technology, 'url', url),
-            oo(technology, 'xhr', xhr),
-            oo(technology, 'html', html),
-            oo(technology, 'text', text),
-            oo(technology, 'scripts', scripts),
-            oo(technology, 'css', css),
-            oo(technology, 'robots', robots),
-            oo(technology, 'magento', magento),
-            oo(technology, 'certIssuer', certIssuer),
-            om(technology, 'scriptSrc', scriptSrc),
-            mm(technology, 'cookies', cookies),
-            mm(technology, 'meta', meta),
-            mm(technology, 'headers', headers),
-            mm(technology, 'dns', dns),
-          ])
-        })
-      ).filter((technology) => technology)
+      const detections = technologies
+        .map((technology) =>
+          Object.keys(relations)
+            .map(
+              (type) =>
+                items[type] && relations[type](technology, type, items[type])
+            )
+            .flat()
+        )
+        .flat()
+        .filter((technology) => technology)
+
+      benchmarkSummary()
 
       return detections
     } catch (error) {
@@ -461,9 +515,15 @@ const Wappalyzer = {
           } else {
             attrs.value = typeof pattern === 'number' ? pattern : attr
 
-            // Escape slashes in regular expression
             attrs.regex = new RegExp(
-              isRegex ? attr.replace(/\//g, '\\/') : '',
+              isRegex
+                ? attr
+                    // Escape slashes
+                    .replace(/\//g, '\\/')
+                    // Optimise quantifiers for long strings
+                    .replace(/\+/g, '{1,250}')
+                    .replace(/\*/g, '{0,250}')
+                : '',
               'i'
             )
           }
@@ -488,6 +548,8 @@ const Wappalyzer = {
    */
   analyzeOneToOne(technology, type, value) {
     return technology[type].reduce((technologies, pattern) => {
+      const startTime = Date.now()
+
       if (pattern.regex.test(value)) {
         technologies.push({
           technology,
@@ -495,6 +557,8 @@ const Wappalyzer = {
           version: Wappalyzer.resolveVersion(pattern, value),
         })
       }
+
+      benchmark(Date.now() - startTime, pattern, value, technology)
 
       return technologies
     }, [])
@@ -511,6 +575,8 @@ const Wappalyzer = {
       const patterns = technology[type] || []
 
       patterns.forEach((pattern) => {
+        const startTime = Date.now()
+
         if (pattern.regex.test(value)) {
           technologies.push({
             technology,
@@ -518,6 +584,8 @@ const Wappalyzer = {
             version: Wappalyzer.resolveVersion(pattern, value),
           })
         }
+
+        benchmark(Date.now() - startTime, pattern, value, technology)
       })
 
       return technologies
@@ -544,6 +612,8 @@ const Wappalyzer = {
         )
 
         values.forEach((value) => {
+          const startTime = Date.now()
+
           if (pattern.regex.test(value)) {
             technologies.push({
               technology,
@@ -551,6 +621,8 @@ const Wappalyzer = {
               version: Wappalyzer.resolveVersion(pattern, value),
             })
           }
+
+          benchmark(Date.now() - startTime, pattern, value, technology)
         })
       })
 
