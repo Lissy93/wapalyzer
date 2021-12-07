@@ -215,8 +215,12 @@ const Content = {
         (metas, meta) => {
           const key = meta.getAttribute('name') || meta.getAttribute('property')
 
+          console.log(key, meta.getAttribute('content'))
+
           if (key) {
-            metas[key.toLowerCase()] = [meta.getAttribute('content')]
+            metas[key.toLowerCase()] = metas[key.toLowerCase()] || []
+
+            metas[key.toLowerCase()].push(meta.getAttribute('content'))
           }
 
           return metas

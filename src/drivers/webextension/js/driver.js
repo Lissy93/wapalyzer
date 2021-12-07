@@ -209,8 +209,6 @@ const Driver = {
    * Wrapper for analyze
    */
   analyze(...args) {
-    Driver.log('analyze: Driver.analyze')
-
     return analyze(...args)
   },
 
@@ -406,8 +404,6 @@ const Driver = {
             )
           })
 
-          Driver.log('analyze: onWebRequestComplete | headers')
-
           Driver.onDetect(request.url, analyze({ headers })).catch(Driver.error)
         }
       } catch (error) {
@@ -433,8 +429,6 @@ const Driver = {
       const response = await fetch(request.url)
 
       const scripts = await response.text()
-
-      console.log('analyze: onScriptRequestComplete | scripts')
 
       Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
         Driver.error
@@ -476,8 +470,6 @@ const Driver = {
             xhrAnalyzed = {}
           }
 
-          console.log('analyze: onXhrRequestComplete | xhr', hostname)
-
           Driver.onDetect(
             request.originUrl || request.initiator,
             analyze({ xhr: hostname })
@@ -507,8 +499,6 @@ const Driver = {
       )
 
       const technologies = getRequiredTechnologies(requires, categoryRequires)
-
-      Driver.log('analyze: onContentLoad | url, ...item')
 
       await Driver.onDetect(
         url,

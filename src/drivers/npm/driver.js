@@ -791,7 +791,11 @@ class Site {
                       meta.getAttribute('name') || meta.getAttribute('property')
 
                     if (key) {
-                      metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                      metas[key.toLowerCase()] = metas[key.toLowerCase()] || []
+
+                      metas[key.toLowerCase()].push(
+                        meta.getAttribute('content')
+                      )
                     }
 
                     return metas
