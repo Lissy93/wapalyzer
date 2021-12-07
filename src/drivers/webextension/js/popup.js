@@ -900,7 +900,7 @@ const Popup = {
     i18n()
   },
 
-  downloadCsv(event) {
+  async downloadCsv(event) {
     event.preventDefault()
 
     const { csv, filename } = getCsv()
@@ -909,10 +909,16 @@ const Popup = {
       new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
     )
 
-    chrome.downloads.download({
-      url: file,
-      filename,
+    const granted = await promisify(chrome.permissions, 'request', {
+      permissions: ['downloads'],
     })
+
+    if (granted) {
+      chrome.downloads.download({
+        url: file,
+        filename,
+      })
+    }
 
     return false
   },
