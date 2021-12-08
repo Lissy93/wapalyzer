@@ -863,6 +863,31 @@
     ],
     "website": "https://fontawesome.com/"
   },
+  "FooPlugins FooGallery": {
+    "cats": [
+      87,
+      7
+    ],
+    "description": "FooPlugins FooGallery is a great image gallery plugin for WordPress.",
+    "icon": "FooPlugins.svg",
+    "dom": { 
+      "link[href*='/wp-content/plugins/foogallery/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/foogallery/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "FooGallery": ""
+    },
+    "requires": "WordPress",
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
+    "website": "https://fooplugins.com/foogallery-wordpress-gallery-plugin"
+  },
   "Fork Awesome": {
     "cats": [
       17
