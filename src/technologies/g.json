@@ -1710,6 +1710,28 @@
     "icon": "gunicorn.png",
     "website": "http://gunicorn.org"
   },
+  "Gutenberg": {
+    "cats": [
+      87,
+      20
+    ],
+    "description": "Gutenberg is the code name for the new block based editor introduced in WordPress 5.",
+    "icon": "Gutenberg.png",
+    "dom": { 
+      "link[href*='/wp-content/plugins/gutenberg/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/gutenberg/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "oss": true,
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/gutenberg/",
+    "website": "https://github.com/WordPress/gutenberg"
+  },
   "Gutenberg Blocks": {
     "cats": [
       87
