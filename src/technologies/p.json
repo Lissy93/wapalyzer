@@ -870,6 +870,22 @@
     },
     "website": "https://github.com/Sazito/phoenix/"
   },
+  "Photo Gallery": {
+    "cats": [
+      87,
+      7
+    ],
+    "description": "Photo Gallery plugin is a feature-rich, yet easy-to-use WordPress tool, which lets you add mobile-friendly image galleries and gallery groups to your website by 10Web.",
+    "icon": "Photo Gallery.svg",
+    "dom": "link[href*='/wp-content/plugins/photo-gallery/']",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/photo-gallery/.+scripts\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://10web.io/plugins/wordpress-photo-gallery"
+  },
   "PhotoShelter": {
     "cats": [
       1,
