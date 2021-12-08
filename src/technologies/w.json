@@ -115,6 +115,24 @@
     "scriptSrc": "/wp-content/cache/wpfc-minified/",
     "website": "https://www.wpfastestcache.com"
   },
+  "WP Google Map Plugin": {
+    "cats": [
+      87,
+      35
+    ],
+    "description": "WP Google Map Plugin allows you to create google maps shortcodes to display responsive google maps on pages, widgets and custom templates.",
+    "icon": "WP Google Map Plugin.png",
+    "js": {
+      "wpgmp_local": ""
+    },
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wp-google-map-plugin/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "website": "https://www.wpmapspro.com"
+  },
   "WP Maintenance Mode": {
     "cats": [
       87
