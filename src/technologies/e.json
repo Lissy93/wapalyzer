@@ -434,6 +434,20 @@
     "scriptSrc": "(?:static|cdn)\\.scarabresearch\\.com",
     "website": "https://emarsys.com/"
   },
+  "EmbedPlus": {
+    "cats": [
+      87
+    ],
+    "description": "EmbedPlus is a WordPress plugin for YouTube allows you to embed gallery, channel, playlist, or even live stream on your webpage.",
+    "icon": "EmbedPlus.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/youtube-embed-plus(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.embedplus.com"
+  },
   "EmbedSocial": {
     "cats": [
       5
