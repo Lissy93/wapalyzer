@@ -2947,7 +2947,7 @@
         "text": ""
       }
     },
-    "icon": "astra.png",
+    "icon": "Astra.svg",
     "pricing": [
       "low",
       "freemium"
@@ -2955,6 +2955,29 @@
     "requires": "WordPress",
     "scriptSrc": "themes/astra\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://wpastra.com/"
+  },
+  "Astra Widgets": {
+    "cats": [
+      87,
+      5
+    ],
+    "description": "Astra Widgets is a handy little free plugin that lets you display address, list icons or social profiles within the Astra Theme.",
+    "icon": "Astra.svg",
+    "dom": { 
+      "link[href*='/wp-content/plugins/astra-widgets/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/astra-widgets/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "requires": [
+      "WordPress",
+      "Astra"
+    ],
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://wpastra.com/did-you-know-astra-is-widget-ready"
   },
   "Astute Solutions": {
     "cats": [
