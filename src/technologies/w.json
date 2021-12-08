@@ -1163,6 +1163,29 @@
     ],
     "website": "https://woocommerce.com"
   },
+  "WooCommerce Blocks": {
+    "cats": [
+      87
+    ],
+    "description": "WooCommerce Blocks offers a range of Gutenberg blocks you can use to build and customise your site.",
+    "icon": "WooCommerce Blocks.png",
+    "dom": { 
+      "link[href*='/wp-content/plugins/woo-gutenberg-products-block/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/woo-gutenberg-products-block/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "requires": [
+      "WordPress",
+      "WooCommerce"
+    ],
+    "website": "https://github.com/woocommerce/woocommerce-gutenberg-products-block"
+  },
   "WooCommerce PayPal Checkout Payment Gateway": {
     "cats": [
       87
