@@ -4,7 +4,8 @@ function toArray(value) {
   return Array.isArray(value) ? value : [value]
 }
 
-const benchmarkEnabled = !!process.env.WAPPALYZER_BENCHMARK
+const benchmarkEnabled =
+  typeof process !== 'undefined' ? !!process.env.WAPPALYZER_BENCHMARK : false
 
 let benchmarks = []
 
