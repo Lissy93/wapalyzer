@@ -869,23 +869,23 @@
       7
     ],
     "description": "FooPlugins FooGallery is a great image gallery plugin for WordPress.",
-    "icon": "FooPlugins.svg",
-    "dom": { 
+    "dom": {
       "link[href*='/wp-content/plugins/foogallery/']": {
         "attributes": {
           "href": "/wp-content/plugins/foogallery/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
         }
       }
     },
+    "icon": "FooPlugins.svg",
     "js": {
       "FooGallery": ""
     },
-    "requires": "WordPress",
     "pricing": [
       "freemium",
       "recurring",
       "low"
     ],
+    "requires": "WordPress",
     "website": "https://fooplugins.com/foogallery-wordpress-gallery-plugin"
   },
   "Fork Awesome": {
@@ -927,8 +927,8 @@
       73
     ],
     "description": "Formidable Forms is a WordPress plugin that enables you to create quizzes, surveys, calculators, timesheets, multi-page application forms.",
-    "icon": "Formidable Form.png",
     "dom": "link[href*='/wp-content/plugins/formidable/']",
+    "icon": "Formidable Form.png",
     "pricing": [
       "freemium",
       "low",

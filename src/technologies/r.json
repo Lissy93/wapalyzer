@@ -347,6 +347,20 @@
     "scriptSrc": "\\.reamaze\\.com/",
     "website": "https://www.reamaze.com"
   },
+  "ReCaptcha v2 for Contact Form 7": {
+    "cats": [
+      87
+    ],
+    "description": "Contact Form 7 v5.1 dropped support for reCaptcha v2 along with the [recaptcha] tag December 2018. This plugin brings that functionality back from Contact Form 7 5.0.5 and re-adds the [recaptcha] tag.",
+    "icon": "ReCaptcha v2 for Contact Form 7.svg",
+    "implies": "Contact Form 7",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wpcf7-recaptcha/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/wpcf7-recaptcha/"
+  },
   "ReDoc": {
     "cats": [
       4
@@ -460,20 +474,6 @@
     ],
     "scriptSrc": "rebuyengine\\.com",
     "website": "https://rebuyengine.com/"
-  },
-  "ReCaptcha v2 for Contact Form 7": {
-    "cats": [
-      87
-    ],
-    "description": "Contact Form 7 v5.1 dropped support for reCaptcha v2 along with the [recaptcha] tag December 2018. This plugin brings that functionality back from Contact Form 7 5.0.5 and re-adds the [recaptcha] tag.",
-    "icon": "ReCaptcha v2 for Contact Form 7.svg",
-    "scriptSrc": "/wp-content/plugins/wpcf7-recaptcha/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "requires": "WordPress",
-    "implies": "Contact Form 7",
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://wordpress.org/plugins/wpcf7-recaptcha/"
   },
   "Recapture": {
     "cats": [

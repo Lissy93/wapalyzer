@@ -1892,22 +1892,6 @@
     ],
     "website": "https://www.shopware.com"
   },
-  "Shortcodes Ultimate": {
-    "cats": [
-      87
-    ],
-    "description": "Shortcodes Ultimate is a comprehensive collection of visual components for WordPress.",
-    "dom": "link[href*='/wp-content/plugins/shortcodes-ultimate/']",
-    "icon": "Shortcodes Ultimate.svg",
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/shortcodes-ultimate/.+index\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://getshortcodes.com"
-  },
   "ShortPixel Image Optimizer": {
     "cats": [
       87,
@@ -1925,6 +1909,22 @@
     ],
     "requires": "WordPress",
     "website": "https://shortpixel.com"
+  },
+  "Shortcodes Ultimate": {
+    "cats": [
+      87
+    ],
+    "description": "Shortcodes Ultimate is a comprehensive collection of visual components for WordPress.",
+    "dom": "link[href*='/wp-content/plugins/shortcodes-ultimate/']",
+    "icon": "Shortcodes Ultimate.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/shortcodes-ultimate/.+index\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://getshortcodes.com"
   },
   "Shuttle": {
     "cats": [
@@ -2281,8 +2281,8 @@
       16
     ],
     "description": "SiteGurad WP Plugin is the plugin specialised for the protection against the attack to the management page and login.",
-    "icon": "SiteGuard WP Plugin.png",
     "dom": "img[src*='/wp-content/plugins/siteguard/']",
+    "icon": "SiteGuard WP Plugin.png",
     "requires": "WordPress",
     "website": "https://www.jp-secure.com/siteguard_wp_plugin_en"
   },
