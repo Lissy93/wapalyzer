@@ -12,6 +12,26 @@
     "scriptSrc": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://aframe.io"
   },
+  "a3 Lazy Load": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "a3 Lazy Load is a mobile oriented, very simple to use plugin that will speed up sites page load speed.",
+    "icon": "a3.png",
+    "js": {
+      "a3_lazyload_extend_params": "",
+      "a3_lazyload_params": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/a3-lazy-load/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://a3rev.com/shop/a3-lazy-load/"
+  },
   "A8.net": {
     "cats": [
       71
