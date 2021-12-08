@@ -206,6 +206,30 @@
     },
     "website": "http://cakephp.org"
   },
+  "Caldera Forms": {
+    "cats": [
+      87
+    ],
+    "description": "Caldera Forms is the free WordPress form builder plugin.",
+    "icon": "Caldera Forms.png",
+    "dom": { 
+      "link[href*='/wp-content/plugins/caldera-forms/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/caldera-forms/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "calderaForms": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/caldera-forms/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://calderaforms.com"
+  },
   "CalendarHero": {
     "cats": [
       72
