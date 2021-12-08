@@ -925,6 +925,26 @@
     "scriptSrc": "static\\.resmio\\.\\w+/static/",
     "website": "https://www.resmio.com"
   },
+  "Responsive Lightbox & Gallery": {
+    "cats": [
+      87,
+      7
+    ],
+    "description": "Responsive Lightbox & Gallery plugin is a lightweight WordPress gallery plugin by Digital Factory.",
+    "icon": "Digital Factory.png",
+    "js": {
+      "rlArgs.activeGalleries": "",
+      "rl_hide_image": "",
+      "rl_view_image": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/responsive-lightbox/.+front\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://dfactory.eu/products/responsive-lightbox-gallery-extensions/"
+  },
   "ResponsiveVoice": {
     "cats": [
       19
