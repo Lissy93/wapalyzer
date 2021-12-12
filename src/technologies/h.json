@@ -485,6 +485,22 @@
     "scriptSrc": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
     "website": "http://highcharts.com/products/highstock"
   },
+  "HighStore": {
+    "cats": [
+      6
+    ],
+    "description": "HighStore is an ecommerce platform from Iran.",
+    "meta": {
+      "generator": "^HighStore\\.IR$",
+      "hs:version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:50"
+    },
+    "implies": "Microsoft ASP.NET",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://digitalserver.ir"
+  },
   "Highstreet": {
     "cats": [
       19
