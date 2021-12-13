@@ -2100,10 +2100,8 @@
     "description": "MGPanel has it all, a content management system that gives programmers the freedom to create professional web pages from scratch, also providing their clients with a self-managing platform.",
     "icon": "MGPanel.png",
     "scriptSrc": "\\.mgpanel\\.org/",
-    "implies": [
-      "PHP",
-      "MySQL"
-    ],
+    "implies": "MySQL",
+    "requires": "PHP",
     "pricing": [
       "poa"
     ],
