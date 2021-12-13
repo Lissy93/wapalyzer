@@ -228,7 +228,7 @@
     ],
     "description": "Caldera Forms is the free WordPress form builder plugin.",
     "icon": "Caldera Forms.png",
-    "dom": { 
+    "dom": {
       "link[href*='/wp-content/plugins/caldera-forms/']": {
         "attributes": {
           "href": "/wp-content/plugins/caldera-forms/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
@@ -439,10 +439,12 @@
       "a[href*='/bag']",
       "a[href*='/shoppingbag']",
       "a[href*='/checkout']",
+      "a[href*='/winkelwagen']",
       "[aria-controls='cart']",
       "[class*='shopping-bag']",
       "[class*='shopping-cart']",
-      "[class*='checkout']"
+      "[class*='checkout']",
+      "[class*='winkelwagen']"
     ],
     "icon": "Cart-generic.svg",
     "js": {
