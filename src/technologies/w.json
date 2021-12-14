@@ -1204,6 +1204,20 @@
     ],
     "website": "https://github.com/woocommerce/woocommerce-gutenberg-products-block"
   },
+  "WooCommerce Multilingual": {
+    "cats": [
+      87,
+      89
+    ],
+    "description": "WooCommerce Multilingual plugin makes it possible to run fully multilingual ecommerce sites using WooCommerce and WPML.",
+    "icon": "WooCommerce Multilingual.png",
+    "requires": [
+      "WordPress",
+      "WooCommerce"
+    ],
+    "scriptSrc": "/wp-content/plugins/woocommerce-multilingual/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/woocommerce-multilingual"
+  },
   "WooCommerce PayPal Checkout Payment Gateway": {
     "cats": [
       87
