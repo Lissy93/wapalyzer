@@ -605,6 +605,24 @@
     ],
     "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
   },
+  "Blossom Travel": {
+    "cats": [
+      80
+    ],
+    "description": "Blossom Travel is a free WordPress theme which allows you to create various types of feminine blogs such as travel blog, personal blog, fashion blog, beauty blog, and many more.",
+    "icon": "Blossom.png",
+    "js": {
+      "blossom_travel_data": "",
+      "blossom_travel_pro_data": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/blossom-travel(?:-pro)?/.+custom\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://blossomthemes.com/wordpress-themes/blossom-travel"
+  },
   "Blue": {
     "cats": [
       77
