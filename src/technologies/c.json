@@ -333,6 +333,20 @@
     "scriptSrc": "\\.createsend1\\.com/",
     "website": "https://www.campaignmonitor.com"
   },
+  "Candid Themes Fairy": {
+    "cats": [
+      80
+    ],
+    "description": "Fairy is a free and minimal WordPress blog theme by Candid Themes.",
+    "icon": "Candid Themes.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/fairy(?:-premium)?/.+custom\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.candidthemes.com/themes/fairy"
+  },
   "Canto": {
     "cats": [
       95
