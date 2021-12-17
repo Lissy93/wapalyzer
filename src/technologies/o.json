@@ -482,6 +482,25 @@
     ],
     "website": "http://www.onetrust.com"
   },
+  "Onfido": {
+    "cats": [
+      16,
+      69
+    ],
+    "description": "Onfido is a technology company that helps businesses verify people's identities using a photo-based identity document, a selfie and artificial intelligence algorithms.",
+    "icon": "Onfido.svg",
+    "headers": {
+      "content-security-policy": "(?:api|sync)\\.onfido\\.com"
+    },
+    "dom": "link[href*='.onfido.com']",
+    "saas": true,
+    "pricing": [
+      "payg",
+      "recurring",
+      "mid"
+    ],
+    "website": "https://onfido.com"
+  },
   "Onshop": {
     "cats": [
       6
