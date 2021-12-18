@@ -492,7 +492,7 @@
     "headers": {
       "content-security-policy": "(?:api|sync)\\.onfido\\.com"
     },
-    "dom": "link[href*='.onfido.com']",
+    "dom": "link[href*='.onfido.com'], iframe[src*='onfido.com']",
     "saas": true,
     "pricing": [
       "payg",
