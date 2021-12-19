@@ -1081,6 +1081,8 @@ class Site {
           return dns
         }, {})
 
+        console.log(dnsRecords)
+
         this.log(
           `Probe DNS ok: (${Object.values(dnsRecords).flat().length} records)`
         )

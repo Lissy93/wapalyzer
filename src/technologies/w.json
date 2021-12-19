@@ -870,7 +870,7 @@
       52
     ],
     "description": "WhatsApp Business is a free to download app available on Android and iPhone using which businesses can connect with their customers.",
-    "dom": "link[href*='api.whatsapp.com/send'], link[href*='wa.me/'], div[class*='wptwa-container'], a[href*='wa.link'][target='_blank']",
+    "dom": "a[href*='api.whatsapp.com/send'], a[href*='wa.me/'], div[class*='wptwa-container'], a[href*='wa.link'][target='_blank']",
     "icon": "WhatsApp.svg",
     "website": "https://www.whatsapp.com/business"
   },
@@ -1217,7 +1217,7 @@
     ],
     "description": "WooCommerce Blocks offers a range of Gutenberg blocks you can use to build and customise your site.",
     "icon": "WooCommerce Blocks.png",
-    "dom": { 
+    "dom": {
       "link[href*='/wp-content/plugins/woo-gutenberg-products-block/']": {
         "attributes": {
           "href": "/wp-content/plugins/woo-gutenberg-products-block/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
