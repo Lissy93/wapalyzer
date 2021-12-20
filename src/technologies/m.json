@@ -46,6 +46,21 @@
     "scriptSrc": "\\.mgid\\.com/",
     "website": "https://www.mgid.com"
   },
+  "MGPanel": {
+    "cats": [
+      1
+    ],
+    "description": "MGPanel has it all, a content management system that gives programmers the freedom to create professional web pages from scratch, also providing their clients with a self-managing platform.",
+    "icon": "MGPanel.png",
+    "implies": "MySQL",
+    "pricing": [
+      "poa"
+    ],
+    "requires": "PHP",
+    "saas": true,
+    "scriptSrc": "\\.mgpanel\\.org/",
+    "website": "https://mgpanel.org"
+  },
   "MODX": {
     "cats": [
       1
@@ -2092,21 +2107,6 @@
     },
     "scriptSrc": "math(?:\\.min)?\\.js",
     "website": "http://mathjs.org"
-  },
-  "MGPanel": {
-    "cats": [
-      1
-    ],
-    "description": "MGPanel has it all, a content management system that gives programmers the freedom to create professional web pages from scratch, also providing their clients with a self-managing platform.",
-    "icon": "MGPanel.png",
-    "scriptSrc": "\\.mgpanel\\.org/",
-    "implies": "MySQL",
-    "requires": "PHP",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://mgpanel.org"
   },
   "microCMS": {
     "cats": [

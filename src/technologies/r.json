@@ -506,14 +506,14 @@
       87
     ],
     "description": "Recent Posts Widget With Thumbnails is based on the well-known WordPress default widget 'Recent Posts' and extended to display more informations about the posts.",
-    "icon": "Recent Posts Widget With Thumbnails.png",
-    "dom": { 
+    "dom": {
       "link[href*='/wp-content/plugins/recent-posts-widget-with-thumbnails/']": {
         "attributes": {
           "href": "/wp-content/plugins/recent-posts-widget-with-thumbnails/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
         }
       }
     },
+    "icon": "Recent Posts Widget With Thumbnails.png",
     "pricing": [
       "freemium"
     ],

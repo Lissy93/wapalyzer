@@ -35,9 +35,6 @@
       99
     ],
     "description": "DHL is an international courier, package delivery and express mail service, which is a division of the German logistics firm Deutsche Post.",
-    "icon": "DHL.svg",
-    "requiresCategory": 6,
-    "text": "\\bDHL\\b",
     "dom": {
       "img[alt*='dhl' i]": {
         "attributes": {
@@ -45,6 +42,9 @@
         }
       }
     },
+    "icon": "DHL.svg",
+    "requiresCategory": 6,
+    "text": "\\bDHL\\b",
     "website": "https://www.dhl.com"
   },
   "DHTMLX": {
@@ -1098,6 +1098,16 @@
     "saas": true,
     "website": "https://www.drift.com/"
   },
+  "Dropbox": {
+    "cats": [
+      95
+    ],
+    "dns": {
+      "TXT": "dropbox-domain-verification"
+    },
+    "icon": "Dropbox.svg",
+    "website": "https://www.dropbox.com"
+  },
   "Drupal": {
     "cats": [
       1
@@ -1293,15 +1303,5 @@
     },
     "scriptSrc": "deepMiner\\.js",
     "website": "https://github.com/deepwn/deepMiner"
-  },
-  "Dropbox": {
-    "cats": [
-      95
-    ],
-    "dns": {
-      "TXT": "dropbox-domain-verification"
-    },
-    "icon": "Dropbox.svg",
-    "website": "https://www.dropbox.com"
   }
 }

@@ -141,12 +141,12 @@
     "js": {
       "wpgmp_local": ""
     },
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/wp-google-map-plugin/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "pricing": [
       "freemium",
       "onetime"
     ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wp-google-map-plugin/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.wpmapspro.com"
   },
   "WP Maintenance Mode": {
@@ -673,16 +673,6 @@
     "url": "\\.weblium\\.site",
     "website": "https://weblium.com"
   },
-  "WebsPlanet": {
-    "cats": [
-      1
-    ],
-    "icon": "WebsPlanet.png",
-    "meta": {
-      "generator": "WebsPlanet"
-    },
-    "website": "http://websplanet.com"
-  },
   "Webriti Busiprof": {
     "cats": [
       80
@@ -696,6 +686,16 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/busiprof(?:-pro)?/",
     "website": "https://webriti.com/busiprof-premium-wordpress-theme-1"
+  },
+  "WebsPlanet": {
+    "cats": [
+      1
+    ],
+    "icon": "WebsPlanet.png",
+    "meta": {
+      "generator": "WebsPlanet"
+    },
+    "website": "http://websplanet.com"
   },
   "Websale": {
     "cats": [
@@ -1216,7 +1216,6 @@
       87
     ],
     "description": "WooCommerce Blocks offers a range of Gutenberg blocks you can use to build and customise your site.",
-    "icon": "WooCommerce Blocks.png",
     "dom": {
       "link[href*='/wp-content/plugins/woo-gutenberg-products-block/']": {
         "attributes": {
@@ -1224,6 +1223,7 @@
         }
       }
     },
+    "icon": "WooCommerce Blocks.png",
     "oss": true,
     "pricing": [
       "freemium"

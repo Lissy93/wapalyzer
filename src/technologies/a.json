@@ -12,26 +12,6 @@
     "scriptSrc": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://aframe.io"
   },
-  "a3 Lazy Load": {
-    "cats": [
-      87,
-      92
-    ],
-    "description": "a3 Lazy Load is a mobile oriented, very simple to use plugin that will speed up sites page load speed.",
-    "icon": "a3.png",
-    "js": {
-      "a3_lazyload_extend_params": "",
-      "a3_lazyload_params": ""
-    },
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/a3-lazy-load/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://a3rev.com/shop/a3-lazy-load/"
-  },
   "A8.net": {
     "cats": [
       71
@@ -96,6 +76,22 @@
     "saas": true,
     "scriptSrc": "\\.ebis\\.ne\\.jp/",
     "website": "http://www.ebis.ne.jp"
+  },
+  "AFThemes CoverNews": {
+    "cats": [
+      80
+    ],
+    "description": "AFThemes CoverNews is a clean and elegant free WordPress theme that is perfect for online blog and magazine.",
+    "icon": "AFThemes.png",
+    "pricing": [
+      "freemium",
+      "onetime",
+      "recurring",
+      "low"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/covernews(?:-pro)?/",
+    "website": "https://afthemes.com/products/covernews"
   },
   "ALL-INKL": {
     "cats": [
@@ -1129,12 +1125,12 @@
     ],
     "cpe": "cpe:/a:adobe:experience_manager",
     "description": "Adobe Experience Manager (AEM) is a content management solution for building websites, mobile apps and forms.",
-    "icon": "Adobe Experience Platform.svg",
     "html": [
       "<div class=\"[^\"]*parbase",
       "<div[^>]+data-component-path=\"[^\"+]jcr:",
       "<div class=\"[^\"]*aem-Grid"
     ],
+    "icon": "Adobe Experience Platform.svg",
     "implies": "Java",
     "pricing": [
       "poa"
@@ -1467,22 +1463,6 @@
       "ahoy": ""
     },
     "website": "https://github.com/ankane/ahoy"
-  },
-  "AFThemes CoverNews": {
-    "cats": [
-      80
-    ],
-    "description": "AFThemes CoverNews is a clean and elegant free WordPress theme that is perfect for online blog and magazine.",
-    "icon": "AFThemes.png",
-    "pricing": [
-      "freemium",
-      "onetime",
-      "recurring",
-      "low"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/covernews(?:-pro)?/",
-    "website": "https://afthemes.com/products/covernews"
   },
   "Aimtell": {
     "cats": [
@@ -3493,6 +3473,26 @@
       "generator": "a-blog cms"
     },
     "website": "http://www.a-blogcms.jp"
+  },
+  "a3 Lazy Load": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "a3 Lazy Load is a mobile oriented, very simple to use plugin that will speed up sites page load speed.",
+    "icon": "a3.png",
+    "js": {
+      "a3_lazyload_extend_params": "",
+      "a3_lazyload_params": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/a3-lazy-load/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://a3rev.com/shop/a3-lazy-load/"
   },
   "aThemes Airi": {
     "cats": [

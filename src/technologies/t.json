@@ -824,15 +824,23 @@
     "scriptSrc": "/wp-content/themes/newscard(?:-pro)?/",
     "website": "https://www.themehorse.com/themes/newscard"
   },
-  "ThemeIsle Menu Icons": {
+  "Theme Vision Agama": {
     "cats": [
-      87
+      80
     ],
-    "description": "ThemeIsle Menu Icons plugin gives you the ability to add icons to your menu items, similar to the look of the latest dashboard menu.",
-    "icon": "ThemeIsle.png",
+    "description": "Agama is a free multi-purpose WordPress theme by Theme Vision.",
+    "icon": "Theme Vision.png",
+    "js": {
+      "agama": "",
+      "agama_pro": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
     "requires": "WordPress",
-    "dom": "link[href*='/wp-content/plugins/menu-icons/']",
-    "website": "https://wordpress.org/plugins/menu-icons"
+    "scriptSrc": "/wp-content/themes/agama(?:-pro)?/.+functions\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://theme-vision.com/agama"
   },
   "Theme4Press Evolve": {
     "cats": [
@@ -979,6 +987,16 @@
     "scriptSrc": "/wp-content/themes/e(?:s|S)tore(?:-pro)?/",
     "website": "https://themegrill.com/themes/estore"
   },
+  "ThemeIsle Menu Icons": {
+    "cats": [
+      87
+    ],
+    "description": "ThemeIsle Menu Icons plugin gives you the ability to add icons to your menu items, similar to the look of the latest dashboard menu.",
+    "dom": "link[href*='/wp-content/plugins/menu-icons/']",
+    "icon": "ThemeIsle.png",
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/menu-icons"
+  },
   "ThemeZee Donovan": {
     "cats": [
       80
@@ -1042,14 +1060,14 @@
       80
     ],
     "description": "Themeansar Newsberg is a fast, clean, modern-looking, responsive news magazine WordPress theme.",
-    "icon": "Themeansar.png",
     "dom": "link#newsberg-style-css",
+    "excludes": "Themeansar Newsup",
+    "icon": "Themeansar.png",
     "pricing": [
       "freemium",
       "onetime"
     ],
     "requires": "WordPress",
-    "excludes": "Themeansar Newsup",
     "website": "https://themeansar.com/free-themes/newsberg"
   },
   "Themeansar Newsup": {
@@ -1126,24 +1144,6 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/bulk(?:-pro)?/.+customscript\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://themes4wp.com/theme/bulk"
-  },
-  "Theme Vision Agama": {
-    "cats": [
-      80
-    ],
-    "description": "Agama is a free multi-purpose WordPress theme by Theme Vision.",
-    "icon": "Theme Vision.png",
-    "js": {
-      "agama": "",
-      "agama_pro": ""
-    },
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/themes/agama(?:-pro)?/.+functions\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://theme-vision.com/agama"
   },
   "ThemezHut Bam": {
     "cats": [
@@ -1667,8 +1667,8 @@
     ],
     "description": "Translate WordPress is a website translator plugin which can translate any website to any language automatically. Translate WordPress plugin is now a part of GTranslate family.",
     "icon": "GTranslate.svg",
-    "scriptSrc": "/wp-content/plugins/google-language-translator/.+scripts\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/google-language-translator/.+scripts\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://gtranslate.io"
   },
   "Translucide": {
