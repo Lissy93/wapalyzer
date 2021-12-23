@@ -1380,5 +1380,22 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/futurio/.+customscript\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
     "website": "https://futuriowp.com"
+  },
+  "Fynd Platform": {
+    "cats": [
+      6
+    ],
+    "description": "Fynd Platform is a subscription based software as a service where brands can mange their catalog, send marketing sms/emailers and sell their products.",
+    "icon": "Fynd Platform.png",
+    "js": {
+      "__fyndAction": ""
+    },
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://platform.fynd.com"
   }
 }
