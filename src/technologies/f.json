@@ -1072,9 +1072,20 @@
     "cats": [
       6
     ],
-    "description": "Fourthwall helps to create and launch a branded website,",
-    "icon": "fourthwall.png",
-    "scriptSrc": "cdn\\.fourthwall\\.com/shop-event-listener/shop-events-listener\\.js",
+    "description": "Fourthwall helps to create and launch a branded website",
+    "icon": "Fourthwall.svg",
+    "js": {
+      "fourthwallTheme": "",
+     "FourthwallAnalytics": ""
+    },
+    "meta": {
+      "version": "^(.+)$\\;version:\\1\\;confidence:0"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.fourthwall\\.com/shop-event-listener/shop-events-listener\\.js",
     "website": "https://fourthwall.com/"
   },
   "Foxy.io": {
