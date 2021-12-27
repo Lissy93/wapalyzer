@@ -16,7 +16,8 @@
       19
     ],
     "description": "freeing the web one face at a time.",
-    "html": "<[^>]+libravatar\\.org/avatar/",
+    "dom": "img[src*='.libravatar.org/avatar/']",
+    "oss": true,
     "icon": "libravatar.png",
     "website": "https://www.libravatar.org/"
   },
