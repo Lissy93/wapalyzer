@@ -233,11 +233,12 @@
       22
     ],
     "headers": {
-      "Server": "daphne"
+      "Server": "Daphne"
     },
     "implies":[
       "TwistedWeb",
-      "Python"
+      "Python",
+      "Zope"
     ],
     "oss": true,
     "icon": "daphne.svg",
