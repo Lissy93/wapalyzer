@@ -228,6 +228,21 @@
     },
     "website": "http://danneo.com"
   },
+  "Daphne": {
+    "cats": [
+      22
+    ],
+    "headers": {
+      "Server": "daphne"
+    },
+    "implies":[
+      "TwistedWeb",
+      "Python"
+    ],
+    "oss": true,
+    "icon": "daphne.svg",
+    "website": "https://github.com/django/daphne"
+  },
   "Dart": {
     "cats": [
       27
