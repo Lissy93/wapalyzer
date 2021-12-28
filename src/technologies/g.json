@@ -1740,6 +1740,7 @@
     "headers": {
       "Server": "gunicorn(?:/([\\d.]+))?\\;version:\\1"
     },
+    "implies": "Python",
     "icon": "gunicorn.png",
     "website": "http://gunicorn.org"
   }
