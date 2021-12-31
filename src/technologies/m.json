@@ -1920,15 +1920,23 @@
     ],
     "cpe": "cpe:/a:mybb:mybb",
     "description": "MyBB is a free and open-source forum software written in PHP.",
-    "html": "(?:<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB)",
     "icon": "MyBB.png",
     "implies": [
       "PHP",
       "MySQL"
     ],
     "js": {
-      "MyBB": ""
+      "MyBB": "",
+      "MyBBEditor": ""
     },
+    "cookies": {
+      "mybb[lastvisit]": "",
+      "mybb[lastactive]": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "https://mybb.com"
   },
   "MyBlogLog": {
