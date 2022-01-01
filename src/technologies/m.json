@@ -1887,12 +1887,32 @@
     "cats": [
       6
     ],
-    "html": [
-      "<div class='mfl-made-by-myfoodlink'>",
-      "<a href=\"https://www.myfoodlink.com.au"
+    "description": "My Food Link provides a fully hosted specialist online supermarket ecommerce platform to supermarkets and grocers.",
+    "icon": "My Food Link.svg",
+    "js": {
+      "myfoodlink": "",
+      "Myfoodlink": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
     ],
-    "icon": "myfoodlink.png",
-    "website": "https://www.myfoodlink.com.au/"
+    "website": "https://www.myfoodlink.com.au"
+  },
+  "Muuri": {
+    "cats": [
+      59
+    ],
+    "description": "Muuri is a JavaScript layout engine that allows you to build all kinds of layouts and make them responsive, sortable, filterable, draggable and/or animated.",
+    "icon": "Muuri.svg",
+    "js": {
+      "Muuri": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://muuri.dev"
   },
   "MyBB": {
     "cats": [
@@ -1900,15 +1920,23 @@
     ],
     "cpe": "cpe:/a:mybb:mybb",
     "description": "MyBB is a free and open-source forum software written in PHP.",
-    "html": "(?:<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB)",
     "icon": "MyBB.png",
     "implies": [
       "PHP",
       "MySQL"
     ],
     "js": {
-      "MyBB": ""
+      "MyBB": "",
+      "MyBBEditor": ""
     },
+    "cookies": {
+      "mybb[lastvisit]": "",
+      "mybb[lastactive]": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "https://mybb.com"
   },
   "MyBlogLog": {

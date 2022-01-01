@@ -361,7 +361,11 @@
       }
     },
     "icon": "Wagtail.svg",
-    "implies": "Django",
+    "implies": [
+      "Django",
+      "Python"
+    ],
+    "oss": true,
     "website": "https://wagtail.io/"
   },
   "Wair": {
