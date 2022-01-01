@@ -1159,6 +1159,21 @@
     ],
     "website": "https://www.laposte.fr/entreprise/produit-entreprise/frequenceo"
   },
+  "Fresco": {
+    "cats": [
+      59
+    ],
+    "description": "Fresco is a responsive lightbox. Fresco comes with thumbnail support, fullscreen zoom, Youtube and Vimeo integration for HTML5 video and a powerful Javascript API.",
+    "icon": "default.svg",
+    "js": {
+      "Fresco.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://github.com/staaky/fresco"
+  },
   "Freshchat": {
     "cats": [
       52
@@ -1380,5 +1395,23 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/futurio/.+customscript\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
     "website": "https://futuriowp.com"
+  },
+  "Fynd Platform": {
+    "cats": [
+      6
+    ],
+    "description": "Fynd Platform is a subscription based software as a service where brands can mange their catalog, send marketing sms/emailers and sell their products.",
+    "icon": "Fynd Platform.png",
+    "implies": "Vue.js",
+    "js": {
+      "__fyndAction": ""
+    },
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://platform.fynd.com"
   }
 }
