@@ -837,6 +837,22 @@
     "scriptSrc": "cloudfront\\.net/.*/adally\\.js",
     "website": "https://adally.com/"
   },
+  "AdaSiteCompliance": {
+    "cats": [
+      68
+    ],
+    "description": "AdaSiteCompliance is a web accessibility solution, making websites compliant and accessible to WCAG 2.1 and section 508 compliance standards.",
+    "icon": "AdaSiteCompliance.png",
+    "js": {
+      "adascHelper": "",
+      "ADASTOOLBOXAPPSTATE": ""
+    },
+    "pricing": [
+      "onetime",
+      "high"
+    ],
+    "website": "https://adasitecompliance.com"
+  },
   "Adalyser": {
     "cats": [
       36
@@ -1433,7 +1449,7 @@
     ],
     "cpe": "cpe:/a:afterpay:afterpay",
     "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
-    "dom": "#afterpay, .afterpay, [aria-label='Afterpay'], link[href*='/wp-content/plugins/afterpay-gateway-for-woocommerce/']",
+    "dom": "#afterpay, .afterpay, .AfterpayMessage, [aria-label='Afterpay'], link[href*='/wp-content/plugins/afterpay-gateway-for-woocommerce/']",
     "icon": "afterpay.png",
     "js": {
       "Afterpay": "",
@@ -1446,7 +1462,8 @@
       "portal\\.afterpay\\.com",
       "static\\.afterpay\\.com",
       "present-afterpay\\.js",
-      "afterpay-products\\.min\\.js"
+      "afterpay-products\\.min\\.js",
+      "js\\.stripe\\.com/v3/fingerprinted/js/elements-afterpay-clearpay-message-.+\\.js"
     ],
     "website": "https://www.afterpay.com/"
   },
@@ -2388,6 +2405,18 @@
       "\\bangular.{0,32}\\.js"
     ],
     "website": "https://angularjs.org"
+  },
+  "anime.js":{
+    "cats": [
+      25
+    ],
+    "description":"Anime.js (/ˈæn.ə.meɪ/) is a lightweight JavaScript animation library with a simple, yet powerful API.It works with CSS properties, SVG, DOM attributes and JavaScript Objects.",
+    "oss": true,
+    "js": {
+      "anime.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "icon":"anime.js.png",
+    "website": "https://animejs.com/"
   },
   "Ant Design": {
     "cats": [
