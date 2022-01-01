@@ -916,6 +916,11 @@
     "meta": {
       "keywords": "go, git, self-hosted, gogs"
     },
+    "implies": [
+      "Go",
+      "Macaron"
+    ],
+    "oss": true,
     "scriptSrc": "js/gogs\\.js",
     "website": "http://gogs.io"
   },
