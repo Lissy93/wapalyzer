@@ -1348,6 +1348,10 @@
       "__grafana_public_path__": "",
       "grafanaBootData.settings.buildInfo['version']": "([\\d.]+)\\;version:\\1"
     },
+    "implies": [
+      "Go",
+      "Macaron"
+    ],
     "oss": true,
     "scriptSrc": "grafana\\..+\\.com/public/build/",
     "website": "https://grafana.com"
