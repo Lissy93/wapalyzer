@@ -362,7 +362,10 @@ const Content = {
       requires.map(async ({ name, categoryId, technologies }) => {
         const id = categoryId ? `category:${categoryId}` : `technology:${name}`
 
-        if (!Content.analyzedRequires.includes(id)) {
+        if (
+          !Content.analyzedRequires.includes(id) &&
+          Object.keys(Content.cache).length
+        ) {
           Content.analyzedRequires.push(id)
 
           await Promise.all([
