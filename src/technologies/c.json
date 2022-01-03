@@ -1292,6 +1292,18 @@
     "scriptSrc": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
     "website": "http://www.cloudflare.com"
   },
+  "Cloudflare Network Error Logging": {
+    "cats": [
+      13
+    ],
+    "description": "Cloudflare Network Error Logging is a browser-based technology used to quickly identify problems with site visitors connecting to Cloudflare.",
+    "icon": "CloudFlare.svg",
+    "headers": {
+      "nel": "cf-nel\\;confidence:50",
+      "report-to": "a\\.nel\\.cloudflare\\.com\\;confidence:50"
+    },
+    "website": "https://developers.cloudflare.com/logs/reference/log-fields/zone/nel_reports"
+  },
   "Cloudinary": {
     "cats": [
       31,
