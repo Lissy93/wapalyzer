@@ -809,6 +809,22 @@
     "scriptSrc": "\\.ada\\.support",
     "website": "https://www.ada.cx"
   },
+  "AdaSiteCompliance": {
+    "cats": [
+      68
+    ],
+    "description": "AdaSiteCompliance is a web accessibility solution, making websites compliant and accessible to WCAG 2.1 and section 508 compliance standards.",
+    "icon": "AdaSiteCompliance.png",
+    "js": {
+      "ADASTOOLBOXAPPSTATE": "",
+      "adascHelper": ""
+    },
+    "pricing": [
+      "onetime",
+      "high"
+    ],
+    "website": "https://adasitecompliance.com"
+  },
   "Adabra": {
     "cats": [
       32
@@ -836,22 +852,6 @@
     "icon": "Adally.png",
     "scriptSrc": "cloudfront\\.net/.*/adally\\.js",
     "website": "https://adally.com/"
-  },
-  "AdaSiteCompliance": {
-    "cats": [
-      68
-    ],
-    "description": "AdaSiteCompliance is a web accessibility solution, making websites compliant and accessible to WCAG 2.1 and section 508 compliance standards.",
-    "icon": "AdaSiteCompliance.png",
-    "js": {
-      "adascHelper": "",
-      "ADASTOOLBOXAPPSTATE": ""
-    },
-    "pricing": [
-      "onetime",
-      "high"
-    ],
-    "website": "https://adasitecompliance.com"
   },
   "Adalyser": {
     "cats": [
@@ -2406,18 +2406,6 @@
     ],
     "website": "https://angularjs.org"
   },
-  "anime.js":{
-    "cats": [
-      25
-    ],
-    "description":"Anime.js (/ˈæn.ə.meɪ/) is a lightweight JavaScript animation library with a simple, yet powerful API.It works with CSS properties, SVG, DOM attributes and JavaScript Objects.",
-    "oss": true,
-    "js": {
-      "anime.version": "^([\\d\\.]+)$\\;version:\\1"
-    },
-    "icon":"anime.js.png",
-    "website": "https://animejs.com/"
-  },
   "Ant Design": {
     "cats": [
       66
@@ -3662,6 +3650,18 @@
       "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
     ],
     "website": "https://daneden.github.io/animate.css/"
+  },
+  "anime.js": {
+    "cats": [
+      25
+    ],
+    "description": "Anime.js (/ˈæn.ə.meɪ/) is a lightweight JavaScript animation library with a simple, yet powerful API.It works with CSS properties, SVG, DOM attributes and JavaScript Objects.",
+    "icon": "anime.js.png",
+    "js": {
+      "anime.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://animejs.com/"
   },
   "augmented-ui": {
     "cats": [

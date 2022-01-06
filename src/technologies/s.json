@@ -2399,7 +2399,11 @@
     "meta": {
       "generator": "^SitePad .+$"
     },
-    "pricing": ["freemium", "recurring", "low"],
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
     "website": "https://sitepad.com/"
   },
   "SiteSpect": {
@@ -4065,11 +4069,14 @@
     "cats": [
       18
     ],
-    "description": "StimulusReflex lets you create reactive web interfaces with Ruby on Rails.",    
+    "description": "StimulusReflex lets you create reactive web interfaces with Ruby on Rails.",
     "dom": "[data-reflex]",
     "icon": "stimulus-reflex-logo.svg",
-    "implies": ["Ruby on Rails", "Stimulus"],    
-    "scripts": "\\.stimulate",    
+    "implies": [
+      "Ruby on Rails",
+      "Stimulus"
+    ],
+    "scripts": "\\.stimulate",
     "website": "https://docs.stimulusreflex.com"
   },
   "Stitches": {

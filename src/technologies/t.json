@@ -42,17 +42,6 @@
     "saas": true,
     "website": "https://www.trisoshop.pl"
   },
-  "Trix": {
-    "cats": [
-      24
-    ],
-    "js": {
-      "Trix.VERSION": "^(.+)$\\;version:\\1"
-    },
-    "website": "https://trix-editor.org",
-    "description": "Trix is an open-source project from Basecamp, the creators of Ruby on Rails.",
-    "icon": "trix.png"
-  },
   "TRUENDO": {
     "cats": [
       67
@@ -1806,6 +1795,17 @@
     "website": "https://triplelift.com",
     "xhr": "\\.3lift\\.com"
   },
+  "Trix": {
+    "cats": [
+      24
+    ],
+    "description": "Trix is an open-source project from Basecamp, the creators of Ruby on Rails.",
+    "icon": "trix.png",
+    "js": {
+      "Trix.VERSION": "^(.+)$\\;version:\\1"
+    },
+    "website": "https://trix-editor.org"
+  },
   "TruValidate": {
     "cats": [
       16,
@@ -1903,14 +1903,14 @@
       90
     ],
     "description": "Google Reviews s a premium plugin that can help you to embed reviews on your site by Trustindex.",
-    "icon": "Trustindex.svg",
     "dom": "link[href*='/wp-content/plugins/widget-google-reviews/']",
-    "scriptSrc": "/wp-content/plugins/widget-google-reviews/",
-    "saas": true,
+    "icon": "Trustindex.svg",
     "pricing": [
       "onetime"
     ],
     "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/widget-google-reviews/",
     "website": "https://www.trustindex.io"
   },
   "Trustpilot": {
@@ -1961,13 +1961,13 @@
     "cats": [
       92
     ],
-    "website": "https://turbo.hotwired.dev/",
     "description": "Turbo is a JavaScript framework for building fast web applications.",
     "icon": "Turbo.svg",
-    "oss": true,
     "js": {
       "Turbo": ""
-    }
+    },
+    "oss": true,
+    "website": "https://turbo.hotwired.dev/"
   },
   "Turbolinks": {
     "cats": [
@@ -2256,8 +2256,8 @@
     "headers": {
       "Server": "TwistedWeb(?:/([\\d.]+))?\\;version:\\1"
     },
-    "oss": true,
     "icon": "TwistedWeb.png",
+    "oss": true,
     "website": "http://twistedmatrix.com/trac/wiki/TwistedWeb"
   },
   "Twitch Player": {

@@ -30,15 +30,6 @@
     "saas": true,
     "website": "https://ma-jin.jp"
   },
-  "Macaron":{
-    "cats": [
-      18
-    ],
-    "description":"Macaron is a high productive and modular web framework in Go.",
-    "implies": "Go",
-    "icon": "Macaron.png",
-    "website": "https://go-macaron.com"
-  },
   "MGID": {
     "cats": [
       36
@@ -131,6 +122,15 @@
     "saas": true,
     "scriptSrc": "service(?:2)?\\.mtcaptcha\\.com/",
     "website": "https://www.mtcaptcha.com"
+  },
+  "Macaron": {
+    "cats": [
+      18
+    ],
+    "description": "Macaron is a high productive and modular web framework in Go.",
+    "icon": "Macaron.png",
+    "implies": "Go",
+    "website": "https://go-macaron.com"
   },
   "MachoThemes NewsMag": {
     "cats": [
@@ -1880,6 +1880,21 @@
     "scriptSrc": "mustache(?:\\.min)?\\.js",
     "website": "https://mustache.github.io"
   },
+  "Muuri": {
+    "cats": [
+      59
+    ],
+    "description": "Muuri is a JavaScript layout engine that allows you to build all kinds of layouts and make them responsive, sortable, filterable, draggable and/or animated.",
+    "icon": "Muuri.svg",
+    "js": {
+      "Muuri": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://muuri.dev"
+  },
   "My Flying Box": {
     "cats": [
       99
@@ -1899,34 +1914,23 @@
     "description": "My Food Link provides a fully hosted specialist online supermarket ecommerce platform to supermarkets and grocers.",
     "icon": "My Food Link.svg",
     "js": {
-      "myfoodlink": "",
-      "Myfoodlink": ""
+      "Myfoodlink": "",
+      "myfoodlink": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.myfoodlink.com.au"
-  },
-  "Muuri": {
-    "cats": [
-      59
-    ],
-    "description": "Muuri is a JavaScript layout engine that allows you to build all kinds of layouts and make them responsive, sortable, filterable, draggable and/or animated.",
-    "icon": "Muuri.svg",
-    "js": {
-      "Muuri": ""
-    },
-    "oss": true,
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://muuri.dev"
   },
   "MyBB": {
     "cats": [
       2
     ],
+    "cookies": {
+      "mybb[lastactive]": "",
+      "mybb[lastvisit]": ""
+    },
     "cpe": "cpe:/a:mybb:mybb",
     "description": "MyBB is a free and open-source forum software written in PHP.",
     "icon": "MyBB.png",
@@ -1937,10 +1941,6 @@
     "js": {
       "MyBB": "",
       "MyBBEditor": ""
-    },
-    "cookies": {
-      "mybb[lastvisit]": "",
-      "mybb[lastactive]": ""
     },
     "oss": true,
     "pricing": [
