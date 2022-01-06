@@ -2387,6 +2387,20 @@
     "scriptSrc": "/wp-content/plugins/so-widgets-bundle/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://siteorigin.com/widgets-bundle"
   },
+  "SitePad": {
+    "cats": [
+      57
+    ],
+    "description": "Build your professional website using easy to use editor and publish static web pages.",
+    "icon": "SitePad.png",
+    "implies": [
+      "PHP"
+    ],
+    "meta": {
+      "generator": "^SitePad .+$"
+    },
+    "website": "https://sitepad.com/"
+  },
   "SiteSpect": {
     "cats": [
       74
