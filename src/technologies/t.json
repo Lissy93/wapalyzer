@@ -46,12 +46,11 @@
     "cats": [
       24
     ],
-    "html": [
-      "<[a-z]+ [^>]*class=\"trix-container\"",
-      "<trix-editor"
-    ],
+    "js": {
+      "Trix.VERSION": "^(.+)$\\;version:\\1"
+    }
     "website": "https://trix-editor.org",
-    "description": "Trix is an open-source project from Basecamp, the creators of Ruby on Rails. Millions of people trust their text to Basecamp, and we built Trix to give them the best possible editing experience.",
+    "description": "Trix is an open-source project from Basecamp, the creators of Ruby on Rails.",
     "icon": "trix.png"
   },
   "TRUENDO": {
@@ -1948,7 +1947,7 @@
     ],
     "website": "https://turbo.hotwired.dev/",
     "description": "Turbo is a JavaScript framework for building fast web applications.",
-    "icon": "turbo.png",
+    "icon": "Turbo.svg",
     "oss": true,
     "js": {
       "Turbo": ""
