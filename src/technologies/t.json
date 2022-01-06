@@ -42,6 +42,17 @@
     "saas": true,
     "website": "https://www.trisoshop.pl"
   },
+  "Trix": {
+    "cats": [
+      24
+    ],
+    "js": {
+      "Trix.VERSION": "^(.+)$\\;version:\\1"
+    }
+    "website": "https://trix-editor.org",
+    "description": "Trix is an open-source project from Basecamp, the creators of Ruby on Rails.",
+    "icon": "trix.png"
+  },
   "TRUENDO": {
     "cats": [
       67
@@ -1946,6 +1957,18 @@
     "url": "^https?://(?:www\\.)?[^/]+\\.tumblr\\.com/",
     "website": "http://www.tumblr.com"
   },
+  "Turbo": {
+    "cats": [
+      92
+    ],
+    "website": "https://turbo.hotwired.dev/",
+    "description": "Turbo is a JavaScript framework for building fast web applications.",
+    "icon": "Turbo.svg",
+    "oss": true,
+    "js": {
+      "Turbo": ""
+    }
+  },
   "Turbolinks": {
     "cats": [
       92
@@ -2233,6 +2256,7 @@
     "headers": {
       "Server": "TwistedWeb(?:/([\\d.]+))?\\;version:\\1"
     },
+    "oss": true,
     "icon": "TwistedWeb.png",
     "website": "http://twistedmatrix.com/trac/wiki/TwistedWeb"
   },
