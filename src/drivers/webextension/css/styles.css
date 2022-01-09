@@ -42,6 +42,10 @@ p {
   margin: 0 0 .5rem 0;
 }
 
+.light-text {
+  color: var(--color-text-lighten);
+}
+
 .popup {
   background: white;
   max-height: 34rem;
@@ -72,7 +76,7 @@ p {
   text-align: right;
 }
 
-.button__link:hover:before {
+.button__link:before {
   background: var(--color-primary);
   border-radius: 4px;
   content: '';
@@ -81,6 +85,10 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 0;
+}
+
+.button__link:hover:before {
   opacity: .1;
 }
 
@@ -223,16 +231,22 @@ small {
   overflow: hidden;
 }
 
+.tab-item:nth-child(2) {
+  width: 31rem;
+}
+
 .tab-item--hidden {
   display: none;
 }
 
 .credits {
+  background: var(--color-secondary);
   color: var(--color-text-lighten);
   display: block;
+  font-size: .8rem;
   text-align: right;
   flex: 1;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem 0 1.5rem;
   margin-bottom: -3px;
   line-height: 1rem;
 }
@@ -286,6 +300,7 @@ small {
 .panel__content th {
   font-weight: normal;
   text-align: left;
+  min-width: 200px;
   width: 33%;
 }
 
@@ -318,19 +333,6 @@ small {
 .panel__content td div:last-child {
   border-bottom: none;
   padding-bottom: 0;
-}
-
-.chip, .chip:focus, .chip:hover {
-  border: 1px solid var(--color-secondary-darken);
-  border-radius: 4px;
-  margin: 0 .5rem .5rem 0;
-  display: inline-block;
-  padding: .2rem .5rem;
-  text-decoration: none;
-}
-
-.chip:focus, .chip:hover {
-  background: var(--color-primary-lighten)
 }
 
 .plus-configure {
@@ -389,6 +391,25 @@ small {
 
 .plus-crawl--hidden {
   display: none;
+}
+
+.plus-download {
+  flex: 1 0;
+  text-align: right;
+  padding: 0 1.5rem;
+  white-space: nowrap;
+}
+
+.plus-download .button__link:before {
+  opacity: .1;
+}
+
+.plus-download .button__link:hover:before {
+  opacity: .2;
+}
+
+.plus-download--hidden {
+  visibility: hidden;
 }
 
 .plus-error {
@@ -812,12 +833,12 @@ body.dynamic-icon .category__heading:hover .category__pin {
   color: var(--color-primary-text);
 }
 
-.input[type="text"], .input[type="password"] {
-  border-color: var(--color-primary-darken);
+.dark .light-text {
+  color: var(--color-primary-text);
 }
 
-.dark .chip:focus, .dark .chip:hover {
-  background: var(--color-primary);
+.input[type="text"], .input[type="password"] {
+  border-color: var(--color-primary-darken);
 }
 
 .dark .message {
@@ -838,7 +859,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   color: var(--color-text-dark);
 }
 
-.dark .button__link:hover:before {
+.dark .button__link:before {
   background: white;
 }
 
@@ -941,6 +962,11 @@ body.dynamic-icon .category__heading:hover .category__pin {
 .dark .panel__content td div {
   border-color: var(--color-primary);
 }
+
+.dark .credits {
+  background: var(--color-primary-darken);
+}
+
 
 .dark .footer {
   background: var(--color-primary-darken);

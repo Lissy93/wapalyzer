@@ -250,6 +250,23 @@
     },
     "website": "https://www.pagevamp.com"
   },
+  "Paidy": {
+    "cats": [
+      41,
+      91
+    ],
+    "description": "Paidy is basically a two-sided payments service, acting as a middleman between consumers and merchants in Japan.",
+    "icon": "Paidy.png",
+    "js": {
+      "Constants.paidy": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "apps\\.paidy\\.com",
+    "website": "https://paidy.com"
+  },
   "Pantheon": {
     "cats": [
       62
@@ -306,6 +323,18 @@
     },
     "website": "https://www.pardot.com"
   },
+  "ParkingCrew": {
+    "cats": [
+      19
+    ],
+    "description": "ParkingCrew is a direct navigation monetisation provider.",
+    "icon": "ParkingCrew.png",
+    "js": {
+      "pcrewAdloaded": ""
+    },
+    "scripts": "var\\slink\\s=\\s'www\\.parkingcrew\\.net'",
+    "website": "https://www.parkingcrew.com"
+  },
   "Pars Elecom Portal": {
     "cats": [
       1
@@ -347,6 +376,21 @@
     "saas": true,
     "scriptSrc": "partial\\.ly",
     "website": "https://partial.ly/"
+  },
+  "Partytown": {
+    "cats": [
+      92
+    ],
+    "description": "Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread.",
+    "icon": "Partytown.png",
+    "js": {
+      "partytown.lib": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://github.com/BuilderIO/partytown"
   },
   "Paths.js": {
     "cats": [
@@ -470,7 +514,7 @@
       "button": {
         "text": "PayPal"
       },
-      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], [aria-labelledby='pi-paypal'], [data-paypal-v4='true']": {
+      "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], [aria-labelledby='pi-paypal'], [data-paypal-v4='true'], img[alt*='PayPal' i]": {
         "exists": ""
       }
     },
@@ -511,6 +555,21 @@
       "\\.paypal\\.com/tagmanager/pptm\\.js"
     ],
     "website": "https://developer.paypal.com/docs/marketing-solutions"
+  },
+  "PayWhirl": {
+    "cats": [
+      41
+    ],
+    "description": "PayWhirl provides widgets and tools to handle recurring payments.",
+    "icon": "paywhirl.png",
+    "js": {
+      "paywhirlForShopifySettings": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://app.paywhirl.com/"
   },
   "Payflex": {
     "cats": [
@@ -811,6 +870,22 @@
     },
     "website": "https://github.com/Sazito/phoenix/"
   },
+  "Photo Gallery": {
+    "cats": [
+      87,
+      7
+    ],
+    "description": "Photo Gallery plugin is a feature-rich, yet easy-to-use WordPress tool, which lets you add mobile-friendly image galleries and gallery groups to your website by 10Web.",
+    "dom": "link[href*='/wp-content/plugins/photo-gallery/']",
+    "icon": "Photo Gallery.svg",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/photo-gallery/.+scripts\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://10web.io/plugins/wordpress-photo-gallery"
+  },
   "PhotoShelter": {
     "cats": [
       1,
@@ -927,6 +1002,22 @@
     "saas": true,
     "scriptSrc": "\\.picreel\\.com",
     "website": "https://www.picreel.com"
+  },
+  "Picturepark": {
+    "cats": [
+      95
+    ],
+    "description": "Picturepark is designed to facilitate your DAM policies by storing, tagging, searching and delivering files in an automated and controlled way.",
+    "dom": "img[data-name*='Picturepark'], img[data-srcset*='picturepark'], div[style*='picturepark'], source[srcset*='picturepark']",
+    "icon": "Picturepark.svg",
+    "js": {
+      "pictureparkConfiguration": ""
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://picturepark.com"
   },
   "Pimcore": {
     "cats": [
@@ -1046,6 +1137,26 @@
     ],
     "website": "https://pixelfed.org"
   },
+  "PixelYourSite": {
+    "cats": [
+      87,
+      10
+    ],
+    "description": "PixelyourSite is now probably the most complex tracking tool for WordPress, managing the Facebook Pixel, Google Analytics, Google Ads Remarketing, Pinterest Tag, Bing Tag, and virtually any other script.",
+    "icon": "PixelYourSite.png",
+    "js": {
+      "pys.Facebook": "",
+      "pysOptions": "",
+      "pys_generate_token": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/pixelyoursite/",
+    "website": "https://www.pixelyoursite.com"
+  },
   "Pixlee": {
     "cats": [
       96
@@ -1063,6 +1174,31 @@
     "saas": true,
     "scriptSrc": "assets\\.pixlee\\.com",
     "website": "https://pixlee.com"
+  },
+  "Pixnet": {
+    "cats": [
+      1
+    ],
+    "description": "Pixnet is an Taiwanese mobile photo sharing, blogging, and social networking service.",
+    "icon": "Pixnet.svg",
+    "js": {
+      "pix.MIB": ""
+    },
+    "website": "https://www.pixnet.net"
+  },
+  "PizzaNetz": {
+    "cats": [
+      1,
+      93
+    ],
+    "description": "PizzaNetz is an ordering system and shop system for pizzerias, Chinese restaurant and kebabs.",
+    "dom": "form[name*='pizzanetz']",
+    "icon": "PizzaNetz.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.pizzanetz.de"
   },
   "Planet": {
     "cats": [
@@ -1279,8 +1415,8 @@
     ],
     "description": "Polyfill is a service which accepts a request for a set of browser features and returns only the polyfills that are needed by the requesting browser.",
     "icon": "polyfill.svg",
-    "scriptSrc": "polyfill\\.io/v([\\d\\.]+)\\;version:\\1",
     "oss": true,
+    "scriptSrc": "polyfill\\.io/v([\\d\\.]+)\\;version:\\1",
     "website": "https://polyfill.io"
   },
   "Polylang": {
@@ -1289,12 +1425,12 @@
       89
     ],
     "description": "Polylang is a WordPress plugin which allows you to create a bilingual or multilingual WordPress site.",
-    "icon": "Polylang.svg",
     "dom": "img[src*='/wp-content/plugins/polylang/']",
+    "icon": "Polylang.svg",
+    "oss": true,
     "pricing": [
       "freemium"
     ],
-    "oss": true,
     "requires": "WordPress",
     "website": "https://github.com/polylang/polylang"
   },
@@ -1339,7 +1475,7 @@
     "cats": [
       19
     ],
-    "description": "Popper is an tolltip & popover positioning engine",
+    "description": "Popper is an tooltip and popover positioning engine.",
     "html": [
       "<script [^>]*src=\"[^\"]*/popper\\.js/([0-9.]+)\\;version:\\1"
     ],
@@ -1414,6 +1550,7 @@
       99
     ],
     "description": "PostNL (formerly TNT) is a mail, parcel and ecommerce corporation with operations in the Netherlands, Germany, Italy, Belgium, and the United Kingdom.",
+    "dom": "img[alt*='postnl' i], img[src*='postnl' i]",
     "icon": "PostNL.svg",
     "requiresCategory": 6,
     "text": [
@@ -1606,7 +1743,7 @@
       80
     ],
     "description": "Press Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites.",
-    "dom": "link[*='/wp-content/themes/hueman/']",
+    "dom": "link[href*='/wp-content/themes/hueman/']",
     "icon": "Press.svg",
     "js": {
       "HUParams": ""
@@ -1689,6 +1826,22 @@
       "freemium"
     ],
     "website": "http://www.prestashop.com"
+  },
+  "Pretty Links": {
+    "cats": [
+      87,
+      71
+    ],
+    "description": "Pretty Links is a WordPress plugin URL shortener, link cloaker, branded link, and QR code generator.",
+    "dom": "link[href*='/wp-content/plugins/pretty-link/']",
+    "icon": "Pretty Links.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://prettylinks.com"
   },
   "PriceSpider": {
     "cats": [
@@ -1794,6 +1947,21 @@
     "saas": true,
     "scriptSrc": "\\.privy\\.com/",
     "website": "https://www.privy.com"
+  },
+  "ProfilePress": {
+    "cats": [
+      87
+    ],
+    "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
+    "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
+    "icon": "ProfilePress.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wp-user-avatar(?:-pro)?/.+frontend\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://profilepress.net"
   },
   "Profitwell": {
     "cats": [
@@ -1933,13 +2101,7 @@
       36
     ],
     "description": "PubMatic is a company that develops and implements online advertising software and strategies for the digital publishing and advertising industry.",
-    "dom": {
-      "iframe[src*='.pubmatic.com']": {
-        "attributes": {
-          "src": ""
-        }
-      }
-    },
+    "dom": "iframe[src*='.pubmatic.com'], link[href*='.pubmatic.com']",
     "icon": "PubMatic.svg",
     "pricing": [
       "payg"
@@ -2005,6 +2167,22 @@
     "scriptSrc": "app\\.purechat\\.com",
     "website": "https://www.purechat.com"
   },
+  "PureCars": {
+    "cats": [
+      6
+    ],
+    "description": "PureCars is an automotive software and managed services company serving dealerships, advertising associations, and OEMs across the North American retail automotive industry.",
+    "dom": "a[href*='app.purecars.com/']",
+    "icon": "PureCars.png",
+    "js": {
+      "_pureCars": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.purecars.com"
+  },
   "PushEngage": {
     "cats": [
       32
@@ -2040,8 +2218,8 @@
       32
     ],
     "description": "PushPushGo is a GDPR-ready platform which enables startups, SMBs and corporations to create and send automatic web push notification campaigns on desktop and via mobile to manage various scenarios including abandoned carts, segmentation, cross-selling, customer engagement, and return rates.",
-    "icon": "PushPushGo.svg",
     "dom": "link[href*='.pushpushgo.com/']",
+    "icon": "PushPushGo.svg",
     "pricing": [
       "mid",
       "recurring"

@@ -1,10 +1,10 @@
 {
-  "name": "Wappalyzer",
+  "name": "Wappalyzer - Technology profiler",
   "short_name": "Wappalyzer",
   "author": "Wappalyzer",
   "homepage_url": "https://www.wappalyzer.com/",
   "description": "Identify web technologies",
-  "version": "6.9.2",
+  "version": "6.9.11",
   "default_locale": "en",
   "manifest_version": 2,
   "icons": {
@@ -75,6 +75,9 @@
     "webNavigation",
     "http://*/*",
     "https://*/*"
+  ],
+  "optional_permissions": [
+    "downloads"
   ],
   "content_security_policy": "script-src 'self'; object-src 'self'"
 }

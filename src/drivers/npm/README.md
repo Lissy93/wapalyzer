@@ -35,6 +35,7 @@ wappalyzer <url> [options]
 -r, --recursive          Follow links on pages (crawler)
 -a, --user-agent=...     Set the user agent string
 -n, --no-scripts         Disabled JavaScript on web pages
+-N, --no-redirect        Disable cross-domain redirects
 ```
 
 
@@ -66,6 +67,7 @@ const options = {
   htmlMaxCols: 2000,
   htmlMaxRows: 2000,
   noScripts: false,
+  noRedirect: false,
 };
 
 const wappalyzer = new Wappalyzer(options)

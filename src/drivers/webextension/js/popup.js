@@ -41,6 +41,54 @@ const footers = [
   },
 ]
 
+const attributeKeys = [
+  'phone',
+  'skype',
+  'whatsapp',
+  'email',
+  'verifiedEmail',
+  'safeEmail',
+  'twitter',
+  'facebook',
+  'instagram',
+  'github',
+  'tiktok',
+  'youtube',
+  'pinterest',
+  'linkedin',
+  'owler',
+  'title',
+  'description',
+  'copyright',
+  'copyrightYear',
+  'responsive',
+  'schemaOrgTypes',
+  'certInfo.subjectOrg',
+  'certInfo.subjectCountry',
+  'certInfo.subjectState',
+  'certInfo.subjectLocality',
+  'certInfo.issuer',
+  'certInfo.protocol',
+  'certInfo.validTo',
+  'dns.spf',
+  'dns.dmarc',
+  'https',
+  'trackerGoogleAnalytics',
+  'trackerGoogleAdSense',
+  'trackerMedianet',
+  'trackerFacebook',
+  'trackerOptimizely',
+  'companyName',
+  'inferredCompanyName',
+  'industry',
+  'about',
+  'locations',
+  'companySize',
+  'companyType',
+  'companyFounded',
+  'employees',
+]
+
 function setDisabledDomain(enabled) {
   const el = {
     headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
@@ -56,11 +104,115 @@ function setDisabledDomain(enabled) {
   }
 }
 
+function getCsv() {
+  let hostname = ''
+  let www = false
+  let https = false
+
+  try {
+    let protocol = ''
+
+    ;({ hostname, protocol } = new URL(Popup.cache.url))
+
+    www = hostname.startsWith('www')
+
+    https = protocol === 'https:'
+
+    hostname = hostname.replace(/^www\./, '')
+  } catch (error) {
+    // Continue
+  }
+
+  const columns = [
+    'URL',
+    ...Popup.cache.categories.map(({ id }) =>
+      chrome.i18n.getMessage(`categoryName${id}`)
+    ),
+    ...attributeKeys.map((key) =>
+      chrome.i18n.getMessage(
+        `attribute${
+          key.charAt(0).toUpperCase() + key.slice(1).replace('.', '_')
+        }`
+      )
+    ),
+  ]
+
+  const csv = [`"${columns.join('","')}"`]
+
+  const filename = `wappalyzer${
+    hostname ? `_${hostname.replace('.', '-')}` : ''
+  }.csv`
+
+  const row = [`http${https ? 's' : ''}://${www ? 'www.' : ''}${hostname}`]
+
+  row.push(
+    ...Popup.cache.categories.reduce((categories, { id }) => {
+      categories.push(
+        Popup.cache.detections
+          .filter(({ categories }) =>
+            categories.some(({ id: _id }) => _id === id)
+          )
+          .map(({ name }) => name)
+          .join(' ; ')
+      )
+
+      return categories
+    }, [])
+  )
+
+  row.push(
+    ...attributeKeys.map((key) => csvEscape(Popup.cache.attributeValues[key]))
+  )
+
+  csv.push(`"${row.join('","')}"`)
+
+  return { csv, filename }
+}
+
+function csvEscape(value = '') {
+  if (Array.isArray(value)) {
+    value = value
+      .flat()
+      .slice(0, 10)
+      .map((value) => csvEscape(value.replace(/ ; /g, ' : ')))
+      .join(' ; ')
+  }
+
+  if (typeof value === 'string') {
+    return value.replace(/\n/g, ' ').replace(/"/g, '""').trim()
+  }
+
+  if (typeof value === 'boolean') {
+    return String(value).toUpperCase()
+  }
+
+  if (value === null) {
+    return ''
+  }
+
+  return String(value).replace(/"/g, '""')
+}
+
+function parseEmail(fullEmail) {
+  const email = fullEmail.replace(/^[^<]*<([^>]+)>/, '$1')
+
+  const [name, title] = fullEmail.replace(/ <([^>]+)>$/, '').split(' -- ')
+
+  return { email, name, title }
+}
+
 const Popup = {
   /**
    * Initialise popup
    */
   async init() {
+    Popup.cache = {
+      url: '',
+      categories: [],
+      detections: [],
+      attributeValues: {},
+    }
+
     const el = {
       body: document.body,
       terms: document.querySelector('.terms'),
@@ -75,6 +227,10 @@ const Popup = {
       headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
       plusConfigureApiKey: document.querySelector('.plus-configure__apikey'),
       plusConfigureSave: document.querySelector('.plus-configure__save'),
+      plusDownload: document.querySelector('.plus-download'),
+      plusDownloadLink: document.querySelector(
+        '.plus-download__button .button__link'
+      ),
       headerSettings: document.querySelector('.header__settings'),
       headerThemes: document.querySelectorAll('.header__theme'),
       headerThemeLight: document.querySelector('.header__theme--light'),
@@ -168,6 +324,8 @@ const Popup = {
       ;[{ url }] = tabs
 
       if (url.startsWith('http')) {
+        Popup.cache.url = url
+
         const { hostname } = new URL(url)
 
         setDisabledDomain(disabledDomains.includes(hostname))
@@ -244,6 +402,7 @@ const Popup = {
         el.tabItems[index].classList.remove('tab-item--hidden')
 
         el.credits.classList.add('credits--hidden')
+        el.plusDownload.classList.remove('plus-download--hidden')
         el.footer.classList.remove('footer--hidden')
 
         if (tab.classList.contains('tab--plus')) {
@@ -251,6 +410,9 @@ const Popup = {
         }
       })
     })
+
+    // Download
+    el.plusDownloadLink.addEventListener('click', Popup.downloadCsv)
 
     // Footer
     const item =
@@ -300,6 +462,8 @@ const Popup = {
 
     // Apply internationalization
     i18n()
+
+    Popup.cache.categories = await Popup.driver('getCategories')
   },
 
   driver(func, args) {
@@ -342,9 +506,12 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
+    Popup.cache.detections = detections
+
     const el = {
       empty: document.querySelector('.empty'),
       detections: document.querySelector('.detections'),
+      plusDownload: document.querySelector('.plus-download'),
     }
 
     detections = (detections || [])
@@ -354,12 +521,14 @@ const Popup = {
     if (!detections || !detections.length) {
       el.empty.classList.remove('empty--hidden')
       el.detections.classList.add('detections--hidden')
+      el.plusDownload.classList.add('plus-download--hidden')
 
       return
     }
 
     el.empty.classList.add('empty--hidden')
     el.detections.classList.remove('detections--hidden')
+    el.plusDownload.classList.remove('plus-download--hidden')
 
     while (el.detections.firstChild) {
       el.detections.removeChild(detections.firstChild)
@@ -472,6 +641,7 @@ const Popup = {
       empty: document.querySelector('.plus-empty'),
       crawl: document.querySelector('.plus-crawl'),
       error: document.querySelector('.plus-error'),
+      download: document.querySelector('.plus-download'),
       errorMessage: document.querySelector('.plus-error__message'),
       configure: document.querySelector('.plus-configure'),
       credits: document.querySelector('.credits'),
@@ -480,6 +650,7 @@ const Popup = {
     }
 
     el.error.classList.add('plus-error--hidden')
+    el.download.classList.add('plus-download--hidden')
 
     if (apiKey) {
       el.loading.classList.remove('loading--hidden')
@@ -531,9 +702,8 @@ const Popup = {
         10
       ).toLocaleString()
 
-      el.credits.classList.remove('credits--hidden')
-
       el.loading.classList.add('loading--hidden')
+      el.credits.classList.remove('credits--hidden')
 
       if (crawl) {
         document
@@ -545,9 +715,12 @@ const Popup = {
 
       if (!Object.keys(attributes).length) {
         el.empty.classList.remove('plus-empty--hidden')
+        el.download.classList.remove('plus-download--hidden')
 
         return
       }
+
+      const attributeValues = {}
 
       Object.keys(attributes).forEach((set) => {
         const panel = document.createElement('div')
@@ -579,51 +752,86 @@ const Popup = {
             }`
           )
 
+          attributeValues[key] = []
+
           if (Array.isArray(value)) {
             value.forEach((value) => {
               const div = document.createElement('div')
 
               if (typeof value === 'object') {
+                attributeValues[key].push(value.text)
+
                 const a = document.createElement('a')
 
                 a.href = value.to
                 a.textContent = value.text
 
-                if (
-                  ['social', 'keywords'].includes(set) ||
-                  ['phone', 'email'].includes(key)
-                ) {
-                  a.classList.add('chip')
+                if (['email', 'verifiedEmail', 'safeEmail'].includes(key)) {
+                  const { email, name, title } = parseEmail(value.text)
+
+                  a.textContent = email
+
+                  const elName = document.createElement('span')
+                  const elTitle = document.createElement('span')
+                  const elBreak1 = document.createElement('br')
+                  const elBreak2 = document.createElement('br')
+
+                  elName.textContent = name
+                  elTitle.textContent = `${title}`
+
+                  elTitle.className = 'light-text'
 
                   td.appendChild(a)
+
+                  if (name) {
+                    td.appendChild(elBreak1)
+                    td.appendChild(elName)
+
+                    if (title) {
+                      td.appendChild(elBreak2)
+                      td.appendChild(elTitle)
+                    }
+                  }
                 } else {
                   div.appendChild(a)
                   td.appendChild(div)
                 }
               } else if (key === 'employees') {
+                attributeValues[key].push(value)
+
                 const [name, title] = value.split(' -- ')
 
-                const strong = document.createElement('strong')
-                const span = document.createElement('span')
+                const elName = document.createElement('span')
+                const elTitle = document.createElement('span')
+                const elBreak = document.createElement('br')
 
-                strong.textContent = name
-                span.textContent = title
+                elTitle.className = 'light-text'
 
-                div.appendChild(strong)
-                div.appendChild(span)
+                elName.textContent = name
+                elTitle.textContent = title
+
+                div.appendChild(elName)
+                div.appendChild(elBreak)
+                div.appendChild(elTitle)
                 td.appendChild(div)
               } else {
+                attributeValues[key].push(value)
+
                 div.textContent = value
                 td.appendChild(div)
               }
             })
           } else if (key === 'companyName') {
+            attributeValues[key].push(value)
+
             const strong = document.createElement('strong')
 
             strong.textContent = value
 
             td.appendChild(strong)
           } else {
+            attributeValues[key].push(value)
+
             td.textContent = value
           }
 
@@ -642,7 +850,10 @@ const Popup = {
         el.panels.appendChild(panel)
       })
 
+      Popup.cache.attributeValues = attributeValues
+
       el.panels.classList.remove('panels--hidden')
+      el.download.classList.remove('plus-download--hidden')
     } catch (error) {
       Popup.log(error.data)
 
@@ -687,6 +898,29 @@ const Popup = {
     )
 
     i18n()
+  },
+
+  async downloadCsv(event) {
+    event.preventDefault()
+
+    const { csv, filename } = getCsv()
+
+    const file = URL.createObjectURL(
+      new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
+    )
+
+    const granted = await promisify(chrome.permissions, 'request', {
+      permissions: ['downloads'],
+    })
+
+    if (granted) {
+      chrome.downloads.download({
+        url: file,
+        filename,
+      })
+    }
+
+    return false
   },
 }
 

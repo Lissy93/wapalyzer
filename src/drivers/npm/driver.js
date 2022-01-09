@@ -1,4 +1,3 @@
-const { URL } = require('url')
 const os = require('os')
 const fs = require('fs')
 const dns = require('dns').promises
@@ -10,10 +9,6 @@ const Wappalyzer = require('./wappalyzer')
 
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
-
-function next() {
-  return new Promise((resolve) => setImmediate(resolve))
-}
 
 const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
 
@@ -99,21 +94,16 @@ function getJs(page, technologies = Wappalyzer.technologies) {
   }, technologies)
 }
 
-async function analyzeJs(js, technologies = Wappalyzer.technologies) {
-  return Array.prototype.concat.apply(
-    [],
-    await Promise.all(
-      js.map(async ({ name, chain, value }) => {
-        await next()
-
-        return analyzeManyToMany(
-          technologies.find(({ name: _name }) => name === _name),
-          'js',
-          { [chain]: [value] }
-        )
-      })
-    )
-  )
+function analyzeJs(js, technologies = Wappalyzer.technologies) {
+  return js
+    .map(({ name, chain, value }) => {
+      return analyzeManyToMany(
+        technologies.find(({ name: _name }) => name === _name),
+        'js',
+        { [chain]: [value] }
+      )
+    })
+    .flat()
 }
 
 function getDom(page, technologies = Wappalyzer.technologies) {
@@ -201,59 +191,36 @@ function getDom(page, technologies = Wappalyzer.technologies) {
   }, technologies)
 }
 
-async function analyzeDom(dom, technologies = Wappalyzer.technologies) {
-  return Array.prototype.concat.apply(
-    [],
-    await Promise.all(
-      dom.map(
-        async ({
-          name,
-          selector,
-          exists,
-          text,
-          property,
-          attribute,
-          value,
-        }) => {
-          await next()
+function analyzeDom(dom, technologies = Wappalyzer.technologies) {
+  return dom
+    .map(({ name, selector, exists, text, property, attribute, value }) => {
+      const technology = technologies.find(({ name: _name }) => name === _name)
 
-          const technology = technologies.find(
-            ({ name: _name }) => name === _name
-          )
+      if (typeof exists !== 'undefined') {
+        return analyzeManyToMany(technology, 'dom.exists', {
+          [selector]: [''],
+        })
+      }
 
-          if (typeof exists !== 'undefined') {
-            return analyzeManyToMany(technology, 'dom.exists', {
-              [selector]: [''],
-            })
-          }
+      if (typeof text !== 'undefined') {
+        return analyzeManyToMany(technology, 'dom.text', {
+          [selector]: [text],
+        })
+      }
 
-          if (typeof text !== 'undefined') {
-            return analyzeManyToMany(technology, 'dom.text', {
-              [selector]: [text],
-            })
-          }
+      if (typeof property !== 'undefined') {
+        return analyzeManyToMany(technology, `dom.properties.${property}`, {
+          [selector]: [value],
+        })
+      }
 
-          if (typeof property !== 'undefined') {
-            return analyzeManyToMany(technology, `dom.properties.${property}`, {
-              [selector]: [value],
-            })
-          }
-
-          if (typeof attribute !== 'undefined') {
-            return analyzeManyToMany(
-              technology,
-              `dom.attributes.${attribute}`,
-              {
-                [selector]: [value],
-              }
-            )
-          }
-
-          return []
-        }
-      )
-    )
-  )
+      if (typeof attribute !== 'undefined') {
+        return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
+          [selector]: [value],
+        })
+      }
+    })
+    .flat()
 }
 
 function get(url, options = {}) {
@@ -497,11 +464,8 @@ class Site {
 
   async goto(url) {
     // Return when the URL is a duplicate or maxUrls has been reached
-    if (
-      this.analyzedUrls[url.href] ||
-      Object.keys(this.analyzedUrls).length >= this.options.maxUrls
-    ) {
-      return
+    if (this.analyzedUrls[url.href]) {
+      return []
     }
 
     this.log(`Navigate to ${url}`, 'page')
@@ -556,7 +520,7 @@ class Site {
               if (!this.analyzedXhr[url.hostname].includes(hostname)) {
                 this.analyzedXhr[url.hostname].push(hostname)
 
-                await this.onDetect(url, await analyze({ xhr: hostname }))
+                await this.onDetect(url, analyze({ xhr: hostname }))
               }
             }, 1000)
           }
@@ -588,12 +552,13 @@ class Site {
     page.on('response', async (response) => {
       try {
         if (
+          response.status < 300 &&
           response.frame().url() === url.href &&
           response.request().resourceType() === 'script'
         ) {
           const scripts = await response.text()
 
-          await this.onDetect(response.url(), await analyze({ scripts }))
+          await this.onDetect(response.url(), analyze({ scripts }))
         }
 
         if (response.url() === url.href) {
@@ -613,21 +578,33 @@ class Site {
             ]
           })
 
+          // Prevent cross-domain redirects
           if (response.status() >= 300 && response.status() < 400) {
             if (headers.location) {
-              url = new URL(headers.location.slice(-1), url)
+              const _url = new URL(headers.location.slice(-1), url)
+
+              if (
+                _url.hostname.replace(/^www\./, '') ===
+                  this.originalUrl.hostname.replace(/^www\./, '') ||
+                (Object.keys(this.analyzedUrls).length === 1 &&
+                  !this.options.noRedirect)
+              ) {
+                url = _url
+
+                return
+              }
             }
-          } else {
-            responseReceived = true
-
-            const certIssuer = response.securityDetails()
-              ? response.securityDetails().issuer()
-              : ''
-
-            await this.onDetect(url, await analyze({ headers, certIssuer }))
-
-            await this.emit('response', { page, response, headers, certIssuer })
           }
+
+          responseReceived = true
+
+          const certIssuer = response.securityDetails()
+            ? response.securityDetails().issuer()
+            : ''
+
+          await this.onDetect(url, analyze({ headers, certIssuer }))
+
+          await this.emit('response', { page, response, headers, certIssuer })
         }
       } catch (error) {
         this.error(error)
@@ -727,9 +704,10 @@ class Site {
         text = await this.promiseTimeout(
           (
             await this.promiseTimeout(
-              page.evaluateHandle(() =>
-                // eslint-disable-next-line unicorn/prefer-text-content
-                document.body.innerText.replace(/\s+/g, ' ').slice(0, 25000)
+              page.evaluateHandle(
+                () =>
+                  // eslint-disable-next-line unicorn/prefer-text-content
+                  document.body.innerText // .replace(/\s+/g, ' ').slice(0, 25000)
               ),
               { jsonValue: () => '' },
               'Timeout (text)'
@@ -814,7 +792,11 @@ class Site {
                       meta.getAttribute('name') || meta.getAttribute('property')
 
                     if (key) {
-                      metas[key.toLowerCase()] = [meta.getAttribute('content')]
+                      metas[key.toLowerCase()] = metas[key.toLowerCase()] || []
+
+                      metas[key.toLowerCase()].push(
+                        meta.getAttribute('content')
+                      )
                     }
 
                     return metas
@@ -851,22 +833,20 @@ class Site {
 
       await this.onDetect(
         url,
-        (
-          await Promise.all([
-            analyzeDom(dom),
-            analyzeJs(js),
-            analyze({
-              url,
-              cookies,
-              html,
-              text,
-              css,
-              scripts,
-              scriptSrc,
-              meta,
-            }),
-          ])
-        ).flat()
+        [
+          analyzeDom(dom),
+          analyzeJs(js),
+          analyze({
+            url,
+            cookies,
+            html,
+            text,
+            css,
+            scripts,
+            scriptSrc,
+            meta,
+          }),
+        ].flat()
       )
 
       const reducedLinks = Array.prototype.reduce.call(
@@ -957,14 +937,23 @@ class Site {
 
       await Promise.all([
         (async () => {
-          const links = await this.goto(url)
+          const links = ((await this.goto(url)) || []).filter(
+            ({ href }) => !this.analyzedUrls[href]
+          )
 
           if (
-            links &&
+            links.length &&
             this.options.recursive &&
+            Object.keys(this.analyzedUrls).length < this.options.maxUrls &&
             depth < this.options.maxDepth
           ) {
-            await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+            await this.batch(
+              links.slice(
+                0,
+                this.options.maxUrls - Object.keys(this.analyzedUrls).length
+              ),
+              depth + 1
+            )
           }
         })(),
         (async () => {
@@ -977,7 +966,7 @@ class Site {
       ])
     } catch (error) {
       this.analyzedUrls[url.href] = {
-        status: 0,
+        status: this.analyzedUrls[url.href]?.status || 0,
         error: error.message || error.toString(),
       }
 
@@ -1058,10 +1047,7 @@ class Site {
 
           this.log(`Probe ok (${path})`)
 
-          await this.onDetect(
-            url,
-            await analyze({ [file]: body.slice(0, 100000) })
-          )
+          await this.onDetect(url, analyze({ [file]: body.slice(0, 100000) }))
         } catch (error) {
           this.error(`Probe failed (${path}): ${error.message || error}`)
         }
@@ -1099,7 +1085,7 @@ class Site {
           `Probe DNS ok: (${Object.values(dnsRecords).flat().length} records)`
         )
 
-        await this.onDetect(url, await analyze({ dns: dnsRecords }))
+        await this.onDetect(url, analyze({ dns: dnsRecords }))
 
         resolve()
       }),
@@ -1174,25 +1160,23 @@ class Site {
 
             await this.onDetect(
               url,
-              (
-                await Promise.all([
-                  analyzeDom(dom, technologies),
-                  analyzeJs(js, technologies),
-                  analyze(
-                    {
-                      url,
-                      cookies,
-                      html,
-                      text,
-                      css,
-                      scripts,
-                      scriptSrc,
-                      meta,
-                    },
-                    technologies
-                  ),
-                ])
-              ).flat()
+              [
+                analyzeDom(dom, technologies),
+                analyzeJs(js, technologies),
+                await analyze(
+                  {
+                    url,
+                    cookies,
+                    html,
+                    text,
+                    css,
+                    scripts,
+                    scriptSrc,
+                    meta,
+                  },
+                  technologies
+                ),
+              ].flat()
             )
           }
         })

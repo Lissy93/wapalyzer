@@ -16,7 +16,7 @@ If you don't have time to configure, host, debug and maintain your own infrastru
 ## Prerequisites
 
 -   [Git](https://git-scm.com)
--   [Node.js](https://nodejs.org) version 12 or higher
+-   [Node.js](https://nodejs.org) version 14 or higher
 -   [Yarn](https://yarnpkg.com)
 
 ## Quick start

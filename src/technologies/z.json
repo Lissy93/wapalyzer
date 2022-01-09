@@ -73,6 +73,22 @@
     "scriptSrc": "zanox\\.com/scripts/zanox\\.js$",
     "website": "http://zanox.com"
   },
+  "Zaraz": {
+    "cats": [
+      92
+    ],
+    "description": "Zaraz allows most tools to send their information through the Zaraz backend, replacing multiple network requests with a single request. Zaraz replaces heavy third-party widgets with a lighter-weight version that loads first so that the full-featured tool loads only when the browser reaches interactivity or upon user interaction.",
+    "icon": "Zaraz.svg",
+    "js": {
+      "zaraz": "",
+      "zarazData": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://zaraz.com"
+  },
   "Zeleris": {
     "cats": [
       99
@@ -245,6 +261,20 @@
     },
     "website": "http://django-blog-zinnia.com"
   },
+  "Zinrelo": {
+    "cats": [
+      84
+    ],
+    "description": "Zinrelo is an enterprise-grade, loyalty rewards platform.",
+    "icon": "Zinrelo.png",
+    "js": {
+      "zrl_mi": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.zinrelo.com"
+  },
   "Zip": {
     "cats": [
       41,
@@ -364,6 +394,26 @@
     "icon": "Zoho.svg",
     "implies": "Zoho",
     "website": "https://www.zoho.com/mail/"
+  },
+  "Zoho PageSense": {
+    "cats": [
+      74,
+      76
+    ],
+    "description": "Zoho PageSense is a conversion optimisation platform which combines the power of web analytics, A/B testing, and personalisation.",
+    "icon": "Zoho.svg",
+    "implies": "Zoho",
+    "js": {
+      "$pagesense": "",
+      "pagesense": ""
+    },
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.pagesense\\.(?:cn|io)?",
+    "website": "https://www.zoho.com/pagesense/"
   },
   "Zoko": {
     "cats": [

@@ -22,6 +22,7 @@ const aliases = {
   r: 'recursive',
   w: 'maxWait',
   n: 'noScripts',
+  N: 'noRedirect',
 }
 
 while (true) {
@@ -75,6 +76,7 @@ Options:
   -r, --recursive          Follow links on pages (crawler)
   -a, --user-agent=...     Set the user agent string
   -n, --no-scripts         Disabled JavaScript on web pages
+  -N, --no-redirect        Disable cross-domain redirects
 `)
 
   process.exit(1)

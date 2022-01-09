@@ -123,11 +123,13 @@
     "cats": [
       19
     ],
-    "js":{
+    "icon": "Bambuser.png",
+    "js": {
       "_bambuser": ""
     },
-    "icon": "Bambuser.png",
-    "pricing": [ "poa" ],
+    "pricing": [
+      "poa"
+    ],
     "scriptSrc": "cdn\\.liveshopping\\.bambuser\\.com",
     "website": "https://bambuser.com/"
   },
@@ -168,6 +170,25 @@
       "WWW-Authenticate": "^Basic"
     },
     "website": "https://tools.ietf.org/html/rfc7617"
+  },
+  "Batflat": {
+    "cats": [
+      1
+    ],
+    "description": "Batflat is a lightweight CMS for free.",
+    "icon": "Batflat.svg",
+    "implies": [
+      "PHP",
+      "SQLite"
+    ],
+    "meta": {
+      "generator": "^Batflat$"
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://batflat.org"
   },
   "Bazaarvoice": {
     "cats": [
@@ -584,6 +605,24 @@
     ],
     "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
   },
+  "Blossom Travel": {
+    "cats": [
+      80
+    ],
+    "description": "Blossom Travel is a free WordPress theme which allows you to create various types of feminine blogs such as travel blog, personal blog, fashion blog, beauty blog, and many more.",
+    "icon": "Blossom.png",
+    "js": {
+      "blossom_travel_data": "",
+      "blossom_travel_pro_data": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/blossom-travel(?:-pro)?/.+custom\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://blossomthemes.com/wordpress-themes/blossom-travel"
+  },
   "Blue": {
     "cats": [
       77
@@ -601,24 +640,6 @@
     "saas": true,
     "scriptSrc": "\\.getblue\\.io",
     "website": "https://web.getblue.io/en/"
-  },
-  "BlueConic": {
-    "cats": [
-      97
-    ],
-    "description": "BlueConic is the advanced customer data platform that liberates companies' first-party data from disparate systems.",
-    "icon": "BlueConic.svg",
-    "js": {
-      "blueConicClient": "",
-      "blueConicPreListeners": "",
-      "loadValuesFromBlueConic": "",
-      "BlueConicEngagement": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.blueconic.com"
   },
   "Blue Triangle": {
     "cats": [
@@ -639,6 +660,24 @@
     "scriptSrc": "\\.btttag\\.com/btt\\.js",
     "website": "https://bluetriangle.com",
     "xhr": "\\.btttag\\.com"
+  },
+  "BlueConic": {
+    "cats": [
+      97
+    ],
+    "description": "BlueConic is the advanced customer data platform that liberates companies' first-party data from disparate systems.",
+    "icon": "BlueConic.svg",
+    "js": {
+      "BlueConicEngagement": "",
+      "blueConicClient": "",
+      "blueConicPreListeners": "",
+      "loadValuesFromBlueConic": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.blueconic.com"
   },
   "Bluecore": {
     "cats": [
@@ -671,6 +710,22 @@
     },
     "website": "http://sourceforge.net/projects/bluefish"
   },
+  "Bluehost": {
+    "cats": [
+      88
+    ],
+    "description": "Bluehost is a large web host known for its WordPress expertise, variety of “one-stop-shop” services, and bargain prices.",
+    "dns": {
+      "NS": "\\.bluehost\\.com",
+      "SOA": "\\.bluehost\\.com"
+    },
+    "icon": "Bluehost.svg",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.bluehost.com"
+  },
   "Blueknow": {
     "cats": [
       76
@@ -697,6 +752,20 @@
     "scriptSrc": "cdn.getblueshift.com/",
     "website": "https://blueshift.com/"
   },
+  "Boats Group": {
+    "cats": [
+      51
+    ],
+    "description": "Boats Group is a website platform for boat dealers and brokers.",
+    "dom": "a[href*='.boatsgroup.com/'][target='_blank']",
+    "icon": "Boats Group.png",
+    "pricing": [
+      "poa"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "website": "https://www.boatsgroup.com/websites"
+  },
   "Boba.js": {
     "cats": [
       59
@@ -718,6 +787,26 @@
     "scriptSrc": "bokeh.*\\.js",
     "website": "https://bokeh.org"
   },
+  "Bokun": {
+    "cats": [
+      5,
+      72
+    ],
+    "description": "Bokun is a cloud-based booking management solution which enables small to large travel and tourism businesses manage reservations, products content, images, categorisation, pricing, inventory, and payments.",
+    "icon": "Bokun.svg",
+    "js": {
+      "BokunWidgetEmbedder": "",
+      "__bokunWidgets": "",
+      "bokunBookingChannelUUID": "",
+      "bokunSessionId": ""
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.bokun.io"
+  },
   "Bol.com": {
     "cats": [
       99
@@ -726,7 +815,7 @@
     "icon": "Bol.com.svg",
     "requiresCategory": 6,
     "text": [
-      "\\bBOL\\b",
+      "\\b(?<!-)BOL\\b",
       "\\bbol\\.com\\b"
     ],
     "website": "https://www.bol.com"
@@ -843,6 +932,26 @@
     "url": "\\.bookero\\.(?:org|pl)",
     "website": "https://www.bookero.org"
   },
+  "Booking.com": {
+    "cats": [
+      71
+    ],
+    "description": "Booking.com is one of the largest ecommerce travel companies in the world. As an affiliate member, you can make up to 40% commission.",
+    "icon": "Booking.com.svg",
+    "scriptSrc": "aff\\.bstatic\\.com/",
+    "website": "https://www.booking.com/affiliate-program/v2/selfmanaged.html"
+  },
+  "Booking.com widget": {
+    "cats": [
+      5
+    ],
+    "description": "Booking.com is one of the largest ecommerce travel companies in the world. As an affiliate member, you can make up to 40% commission.",
+    "dom": "form[action*='.booking.com/'][target='_blank'], img[src*='q-xx.bstatic.com/']",
+    "icon": "Booking.com.svg",
+    "implies": "Booking.com",
+    "scriptSrc": "q\\.bstatic\\.com/",
+    "website": "https://www.booking.com/affiliate-program/v2/selfmanaged.html"
+  },
   "Bookingkit": {
     "cats": [
       5,
@@ -900,7 +1009,7 @@
     "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
     "html": [
       "<style>\\s+/\\*!\\s+\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
-      "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css\\;version:\\1"
+      "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>-]*?(?:\\.min)?\\.css\\;version:\\1"
     ],
     "icon": "Bootstrap.svg",
     "js": {
@@ -911,6 +1020,25 @@
       "bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.js\\;version:\\1"
     ],
     "website": "https://getbootstrap.com"
+  },
+  "Bootstrap Icons": {
+    "cats": [
+      17
+    ],
+    "description": "Bootstrap Icons is a growing library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team.",
+    "dom": {
+      "link[href*='bootstrap-icons']": {
+        "attributes": {
+          "href": "bootstrap-icons(?:@|/)?([\\d\\.]+)?\\;version:\\1"
+        }
+      }
+    },
+    "icon": "Bootstrap Icons.svg",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://icons.getbootstrap.com"
   },
   "Bootstrap Table": {
     "cats": [
@@ -1170,13 +1298,13 @@
       87
     ],
     "description": "Breadcrumb NavXT is a WordPress plugin compatible with WordPress versions 4.9 and up.",
-    "icon": "Breadcrumb NavXT.svg",
     "html": "<!-- Breadcrumb NavXT ([\\d\\.]+)\\;version:\\1",
+    "icon": "Breadcrumb NavXT.svg",
+    "oss": true,
     "pricing": [
       "freemium"
     ],
     "requires": "WordPress",
-    "oss": true,
     "website": "https://github.com/mtekk/Breadcrumb-NavXT"
   },
   "Breinify": {
@@ -1213,6 +1341,20 @@
     "saas": true,
     "scriptSrc": "app\\.brightinfo\\.com",
     "website": "https://www.brightinfo.com"
+  },
+  "Brightcove": {
+    "cats": [
+      14
+    ],
+    "description": "Brightcove is a cloud-based online video platform.",
+    "dom": "iframe[src*='players.brightcove.'], link[href*='players.brightcove.']",
+    "icon": "Brightcove.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.brightcove.com"
   },
   "Brightspot": {
     "cats": [
@@ -1289,6 +1431,19 @@
     "scriptSrc": "assets\\.youthsrl\\.com/brownie",
     "website": "https://www.browniesuite.com"
   },
+  "Browser-Update.org": {
+    "cats": [
+      5,
+      59
+    ],
+    "description": "Browser-update.org is a tool to unobtrusively notify visitors that they should update their web browser in order to use your website.",
+    "icon": "Browser-Update.org.png",
+    "js": {
+      "$bu_.version": "^([\\d\\.]+)$\\;version:\\1",
+      "$bu_getBrowser": ""
+    },
+    "website": "https://browser-update.org"
+  },
   "BrowserCMS": {
     "cats": [
       1
@@ -1363,6 +1518,33 @@
     ],
     "website": "https://app.budbee.com/"
   },
+  "BuddyPress": {
+    "cats": [
+      87
+    ],
+    "description": "BuddyPress is designed to allow schools, companies, sports teams, or any other niche community to start their own social network or communication tool.",
+    "icon": "BuddyPress.svg",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/buddypress/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://buddypress.org"
+  },
+  "BugHerd": {
+    "cats": [
+      13
+    ],
+    "description": "BugHerd is a cloud-based feedback collection and bug management tool.",
+    "icon": "BugHerd.svg",
+    "js": {
+      "BugHerdConfig": ""
+    },
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.bugherd\\.com/",
+    "website": "https://bugherd.com"
+  },
   "BugSnag": {
     "cats": [
       10
@@ -1389,23 +1571,6 @@
     },
     "icon": "Bugcrowd.svg",
     "website": "https://www.bugcrowd.com"
-  },
-  "BugHerd": {
-    "cats": [
-      13
-    ],
-    "description": "BugHerd is a cloud-based feedback collection and bug management tool.",
-    "icon": "BugHerd.svg",
-    "js": {
-      "BugHerdConfig": ""
-    },
-    "saas": true,
-    "scriptSrc": "\\.bugherd\\.com/",
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "website": "https://bugherd.com"
   },
   "Bugzilla": {
     "cats": [

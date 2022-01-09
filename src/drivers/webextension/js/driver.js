@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, Wappalyzer, Utils, next */
+/* globals chrome, Wappalyzer, Utils */
 
 const {
   setTechnologies,
@@ -121,10 +121,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      // open(
-      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-      //   false
-      // )
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -180,6 +180,13 @@ const Driver = {
   },
 
   /**
+   * Get all categories
+   */
+  getCategories() {
+    return Wappalyzer.categories
+  },
+
+  /**
    * Perform a HTTP POST request
    * @param {String} url
    * @param {String} body
@@ -210,27 +217,22 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  async analyzeJs(url, js, requires, categoryRequires) {
+  analyzeJs(url, js, requires, categoryRequires) {
     const technologies =
       getRequiredTechnologies(requires, categoryRequires) ||
       Wappalyzer.technologies
 
     return Driver.onDetect(
       url,
-      Array.prototype.concat.apply(
-        [],
-        await Promise.all(
-          js.map(async ({ name, chain, value }) => {
-            await next()
-
-            return analyzeManyToMany(
-              technologies.find(({ name: _name }) => name === _name),
-              'js',
-              { [chain]: [value] }
-            )
-          })
-        )
-      )
+      js
+        .map(({ name, chain, value }) => {
+          return analyzeManyToMany(
+            technologies.find(({ name: _name }) => name === _name),
+            'js',
+            { [chain]: [value] }
+          )
+        })
+        .flat()
     )
   },
 
@@ -239,64 +241,57 @@ const Driver = {
    * @param {String} url
    * @param {Array} dom
    */
-  async analyzeDom(url, dom, requires, categoryRequires) {
+  analyzeDom(url, dom, requires, categoryRequires) {
     const technologies =
       getRequiredTechnologies(requires, categoryRequires) ||
       Wappalyzer.technologies
 
     return Driver.onDetect(
       url,
-      Array.prototype.concat.apply(
-        [],
-        await Promise.all(
-          dom.map(
-            async (
-              { name, selector, exists, text, property, attribute, value },
-              index
-            ) => {
-              await next()
+      dom
+        .map(
+          (
+            { name, selector, exists, text, property, attribute, value },
+            index
+          ) => {
+            const technology = technologies.find(
+              ({ name: _name }) => name === _name
+            )
 
-              const technology = technologies.find(
-                ({ name: _name }) => name === _name
-              )
-
-              if (typeof exists !== 'undefined') {
-                return analyzeManyToMany(technology, 'dom.exists', {
-                  [selector]: [''],
-                })
-              }
-
-              if (typeof text !== 'undefined') {
-                return analyzeManyToMany(technology, 'dom.text', {
-                  [selector]: [text],
-                })
-              }
-
-              if (typeof property !== 'undefined') {
-                return analyzeManyToMany(
-                  technology,
-                  `dom.properties.${property}`,
-                  {
-                    [selector]: [value],
-                  }
-                )
-              }
-
-              if (typeof attribute !== 'undefined') {
-                return analyzeManyToMany(
-                  technology,
-                  `dom.attributes.${attribute}`,
-                  {
-                    [selector]: [value],
-                  }
-                )
-              }
-
-              return []
+            if (typeof exists !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.exists', {
+                [selector]: [''],
+              })
             }
-          )
+
+            if (typeof text !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.text', {
+                [selector]: [text],
+              })
+            }
+
+            if (typeof property !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.properties.${property}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+
+            if (typeof attribute !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.attributes.${attribute}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+          }
         )
-      )
+        .flat()
     )
   },
 
@@ -409,9 +404,7 @@ const Driver = {
             )
           })
 
-          Driver.onDetect(request.url, await analyze({ headers })).catch(
-            Driver.error
-          )
+          Driver.onDetect(request.url, analyze({ headers })).catch(Driver.error)
         }
       } catch (error) {
         Driver.error(error)
@@ -437,7 +430,7 @@ const Driver = {
 
       const scripts = await response.text()
 
-      Driver.onDetect(request.documentUrl, await analyze({ scripts })).catch(
+      Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
         Driver.error
       )
     }
@@ -453,16 +446,10 @@ const Driver = {
     }
 
     let hostname
-
-    try {
-      ;({ hostname } = new URL(request.url))
-    } catch (error) {
-      return
-    }
-
     let originHostname
 
     try {
+      ;({ hostname } = new URL(request.url))
       ;({ hostname: originHostname } = new URL(request.originUrl))
     } catch (error) {
       return
@@ -471,7 +458,7 @@ const Driver = {
     if (!xhrDebounce.includes(hostname)) {
       xhrDebounce.push(hostname)
 
-      setTimeout(async () => {
+      setTimeout(() => {
         xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
         xhrAnalyzed[originHostname] = xhrAnalyzed[originHostname] || []
@@ -485,7 +472,7 @@ const Driver = {
 
           Driver.onDetect(
             request.originUrl || request.initiator,
-            await analyze({ xhr: hostname })
+            analyze({ xhr: hostname })
           ).catch(Driver.error)
         }
       }, 1000)
@@ -515,7 +502,7 @@ const Driver = {
 
       await Driver.onDetect(
         url,
-        await analyze({ url, ...items }, technologies),
+        analyze({ url, ...items }, technologies),
         language,
         true
       )
@@ -668,11 +655,7 @@ const Driver = {
       ),
     ]
 
-    try {
-      await Driver.content(url, 'analyzeRequires', [url, requires])
-    } catch (error) {
-      // Continue
-    }
+    Driver.content(url, 'analyzeRequires', [url, requires])
 
     await Driver.setIcon(url, resolved)
 
@@ -780,10 +763,16 @@ const Driver = {
    * Get the detected technologies for the current tab
    */
   async getDetections() {
-    const [{ id, url }] = await promisify(chrome.tabs, 'query', {
+    const tab = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
     })
+
+    if (!tab) {
+      return
+    }
+
+    const [{ id, url }] = tab
 
     if (await Driver.isDisabledDomain(url)) {
       await Driver.setIcon(url, [])

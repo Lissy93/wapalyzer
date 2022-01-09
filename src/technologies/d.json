@@ -35,6 +35,13 @@
       99
     ],
     "description": "DHL is an international courier, package delivery and express mail service, which is a division of the German logistics firm Deutsche Post.",
+    "dom": {
+      "img[alt*='dhl' i]": {
+        "attributes": {
+          "alt": "\\bDHL\\b"
+        }
+      }
+    },
     "icon": "DHL.svg",
     "requiresCategory": 6,
     "text": "\\bDHL\\b",
@@ -102,6 +109,19 @@
     ],
     "website": "https://www.dpd.com"
   },
+  "DTScout": {
+    "cats": [
+      36
+    ],
+    "description": "DTScout is a marketing data intelligence software.",
+    "icon": "DTScout.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.dtscout\\.com/",
+    "website": "https://www.dtscout.com"
+  },
   "DX": {
     "cats": [
       99
@@ -162,6 +182,18 @@
     "scriptSrc": "assets\\.dailykarma\\.io/",
     "website": "https://www.dailykarma.com"
   },
+  "Dailymotion": {
+    "cats": [
+      14
+    ],
+    "description": "Dailymotion is a French video-sharing technology platform.",
+    "dom": "img[data-src*='.dailymotion.com/'], iframe[scr*='.dailymotion.com/']",
+    "icon": "Dailymotion.svg",
+    "meta": {
+      "name": "dailymotion-domain-verification"
+    },
+    "website": "https://www.dailymotion.com"
+  },
   "Dancer": {
     "cats": [
       18
@@ -195,6 +227,22 @@
       "generator": "Danneo CMS ([\\d.]+)\\;version:\\1"
     },
     "website": "http://danneo.com"
+  },
+  "Daphne": {
+    "cats": [
+      22
+    ],
+    "headers": {
+      "Server": "Daphne"
+    },
+    "icon": "daphne.svg",
+    "implies": [
+      "TwistedWeb",
+      "Python",
+      "Zope"
+    ],
+    "oss": true,
+    "website": "https://github.com/django/daphne"
   },
   "Dart": {
     "cats": [
@@ -692,6 +740,7 @@
       "__admin_media_prefix__": "",
       "django": ""
     },
+    "oss": true,
     "website": "https://djangoproject.com"
   },
   "Django CMS": {
@@ -840,6 +889,38 @@
     },
     "website": "https://www.dokuwiki.org"
   },
+  "DomainFactory": {
+    "cats": [
+      88
+    ],
+    "description": "DomainFactory has been operating as a web hosting company. It is owned by GoDaddy and targets businesses in Austria and Germany.",
+    "dns": {
+      "SOA": "ns(?:\\d+)?\\.namespace4you\\.de"
+    },
+    "icon": "DomainFactory.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.df.eu"
+  },
+  "Dominate WooCommerce": {
+    "cats": [
+      87
+    ],
+    "description": "Dominate WooCommerce is a cloud-based checkout-page which supports PayPal Smart buttons for Venmo, PayPal Credit, and other payment methods.",
+    "icon": "Dominate.png",
+    "pricing": [
+      "freemium"
+    ],
+    "requires": [
+      "WordPress",
+      "WooCommerce"
+    ],
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/iwd-checkout-connector/",
+    "website": "https://www.dominate.co/woocommerce"
+  },
   "Doofinder": {
     "cats": [
       29
@@ -932,6 +1013,20 @@
     "scriptSrc": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
     "website": "http://www.google.com/dfp"
   },
+  "DoubleVerify": {
+    "cats": [
+      36,
+      10
+    ],
+    "description": "DoubleVerify is a software platform for digital media measurement, data, and analytics.",
+    "dom": "link[href*='.doubleverify.com']",
+    "icon": "DoubleVerify.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://doubleverify.com"
+  },
   "Doxygen": {
     "cats": [
       4
@@ -954,26 +1049,36 @@
     "scriptSrc": "draft-js(@|/)([\\d.]+)\\;version:\\2",
     "website": "https://draftjs.org/"
   },
-  "Dreamdata": {
+  "Draftpress HFCM": {
     "cats": [
-      32,
-      10
+      87
     ],
-    "description": "Dreamdata is a B2B revenue attribution platform.",
-    "icon": "Dreamdata.png",
-    "dom": "link[href*='.bizible.com']",
-    "js": {
-      "Bizible": "",
-      "BizTrackingA": ""
-    },
-    "scriptSrc": "\\.bizible\\.com/",
-    "saas": true,
+    "description": "Header Footer Code Manager by Draftpress is a easy interface to add snippets to the header or footer or above or below the content of your page.",
+    "html": "<!--[^>]*HFCM\\sby\\s99\\sRobots",
+    "icon": "Draftpress.png",
     "pricing": [
       "freemium",
-      "mid",
+      "low",
       "recurring"
     ],
-    "website": "https://dreamdata.io"
+    "requires": "WordPress",
+    "website": "https://draftpress.com/products/header-footer-code-manager-pro/"
+  },
+  "DreamHost": {
+    "cats": [
+      88
+    ],
+    "description": "DreamHost is a Los Angeles-based web hosting provider and domain name registrar.",
+    "dns": {
+      "NS": "ns\\d+\\.dreamhost\\.com",
+      "SOA": "ns\\d+\\.dreamhost\\.com"
+    },
+    "icon": "DreamHost.svg",
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "website": "https://www.dreamhost.com"
   },
   "DreamWeaver": {
     "cats": [
@@ -990,6 +1095,27 @@
     },
     "website": "https://www.adobe.com/products/dreamweaver.html"
   },
+  "Dreamdata": {
+    "cats": [
+      32,
+      10
+    ],
+    "description": "Dreamdata is a B2B revenue attribution platform.",
+    "dom": "link[href*='.bizible.com']",
+    "icon": "Dreamdata.png",
+    "js": {
+      "BizTrackingA": "",
+      "Bizible": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.bizible\\.com/",
+    "website": "https://dreamdata.io"
+  },
   "Drift": {
     "cats": [
       52
@@ -1005,6 +1131,16 @@
     ],
     "saas": true,
     "website": "https://www.drift.com/"
+  },
+  "Dropbox": {
+    "cats": [
+      95
+    ],
+    "dns": {
+      "TXT": "dropbox-domain-verification"
+    },
+    "icon": "Dropbox.svg",
+    "website": "https://www.dropbox.com"
   },
   "Drupal": {
     "cats": [

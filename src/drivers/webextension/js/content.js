@@ -216,7 +216,9 @@ const Content = {
           const key = meta.getAttribute('name') || meta.getAttribute('property')
 
           if (key) {
-            metas[key.toLowerCase()] = [meta.getAttribute('content')]
+            metas[key.toLowerCase()] = metas[key.toLowerCase()] || []
+
+            metas[key.toLowerCase()].push(meta.getAttribute('content'))
           }
 
           return metas
@@ -288,7 +290,9 @@ const Content = {
       // Delayed second pass to capture async JS
       await new Promise((resolve) => setTimeout(resolve, 5000))
 
-      await Content.onGetTechnologies(technologies)
+      const js = await getJs(technologies)
+
+      await Content.driver('analyzeJs', [url, js])
     } catch (error) {
       Content.driver('error', error)
     }
@@ -358,7 +362,10 @@ const Content = {
       requires.map(async ({ name, categoryId, technologies }) => {
         const id = categoryId ? `category:${categoryId}` : `technology:${name}`
 
-        if (!Content.analyzedRequires.includes(id)) {
+        if (
+          !Content.analyzedRequires.includes(id) &&
+          Object.keys(Content.cache).length
+        ) {
           Content.analyzedRequires.push(id)
 
           await Promise.all([

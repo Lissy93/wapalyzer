@@ -1,4 +1,12 @@
 {
+  "C": {
+    "cats": [
+      27
+    ],
+    "description": "C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system.",
+    "icon": "C.png",
+    "website": "http://www.open-std.org/jtc1/sc22/wg14/"
+  },
   "CCV Shop": {
     "cats": [
       6
@@ -120,6 +128,22 @@
     ],
     "website": "http://www.cs-cart.com"
   },
+  "CSSIgniter Olsen Light": {
+    "cats": [
+      80
+    ],
+    "description": "CSSIgniter Olsen Light is a clean, minimal, stylish and elegant WordPress blog theme, perfect for lifestyle, food, cooking, fashion, travel, wedding, health & fitness, photography and beauty blogging.",
+    "icon": "CSSIgniter.svg",
+    "pricing": [
+      "freemium",
+      "onetime",
+      "recurring",
+      "low"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/olsen-light/.+scripts(?:\\.min)?\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.cssigniter.com/themes/olsen-light"
+  },
   "CTT": {
     "cats": [
       99
@@ -178,8 +202,8 @@
     "cats": [
       6
     ],
-    "description": "Cafe24 is a ecommerce hosting platform that provides everything you need to build an online DTC store in one-stop.",
-    "icon": "Cafe24.png",
+    "description": "Cafe24 is a global ecommerce platform that provides everything people need to build an online DTC store in one stop.",
+    "icon": "Cafe24.svg",
     "js": {
       "EC_GLOBAL_DATETIME": "",
       "EC_GLOBAL_INFO": "",
@@ -189,7 +213,7 @@
       "low"
     ],
     "saas": true,
-    "website": "https://ec.cafe24.com/"
+    "website": "https://www.cafe24.com/en/"
   },
   "CakePHP": {
     "cats": [
@@ -205,6 +229,47 @@
       "application-name": "CakePHP"
     },
     "website": "http://cakephp.org"
+  },
+  "Caldera Forms": {
+    "cats": [
+      87
+    ],
+    "description": "Caldera Forms is the free WordPress form builder plugin.",
+    "dom": {
+      "link[href*='/wp-content/plugins/caldera-forms/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/caldera-forms/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "icon": "Caldera Forms.png",
+    "js": {
+      "calderaForms": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/caldera-forms/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://calderaforms.com"
+  },
+  "CalendarHero": {
+    "cats": [
+      72
+    ],
+    "description": "CalendarHero (formerly Zoom.ai) is meeting scheduling software that helps you book meetings automatically.",
+    "icon": "CalendarHero.png",
+    "js": {
+      "ZOOMAI.VARS": ""
+    },
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://calendarhero.com"
   },
   "Calendly": {
     "cats": [
@@ -222,6 +287,24 @@
     "saas": true,
     "scriptSrc": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
     "website": "https://calendly.com/"
+  },
+  "CallRail": {
+    "cats": [
+      10
+    ],
+    "description": "CallRail is a service that tracks and manages your phone leads, helping businesses to determine which marketing campaigns are driving quality leads.",
+    "icon": "CallRail.png",
+    "js": {
+      "CallTrk": "",
+      "CallTrkSwap": "",
+      "crwpVer": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.callrail.com"
   },
   "Callbell": {
     "cats": [
@@ -257,6 +340,20 @@
     "saas": true,
     "scriptSrc": "\\.createsend1\\.com/",
     "website": "https://www.campaignmonitor.com"
+  },
+  "Candid Themes Fairy": {
+    "cats": [
+      80
+    ],
+    "description": "Fairy is a free and minimal WordPress blog theme by Candid Themes.",
+    "icon": "Candid Themes.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/fairy(?:-premium)?/.+custom\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.candidthemes.com/themes/fairy"
   },
   "Canto": {
     "cats": [
@@ -350,12 +447,13 @@
       "a[href*='/bag']",
       "a[href*='/shoppingbag']",
       "a[href*='/checkout']",
+      "a[href*='/winkelwagen']",
       "[aria-controls='cart']",
       "[class*='shopping-bag']",
       "[class*='shopping-cart']",
-      "[class*='checkout']"
+      "[class*='checkout']",
+      "[class*='winkelwagen']"
     ],
-    "url": "/(?:cart|order|basket|trolley|bag|shoppingbag|checkout)",
     "icon": "Cart-generic.svg",
     "js": {
       "google_tag_params.ecomm_pagetype": ""
@@ -363,6 +461,7 @@
     "scriptSrc": [
       "googlecommerce\\.com/trustedstores/api/js"
     ],
+    "url": "/(?:cart|order|basket|trolley|bag|shoppingbag|checkout)",
     "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
   },
   "CartStack": {
@@ -418,8 +517,8 @@
       80
     ],
     "description": "Catch Box is a lightweight, box shaped, clean responsive WordPress theme by Catch Themes.",
-    "icon": "Catch Themes.png",
     "dom": "link[href*='/wp-content/themes/catch-box/']",
+    "icon": "Catch Themes.png",
     "pricing": [
       "freemium",
       "onetime"
@@ -427,6 +526,21 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/catch-box(?:-pro)?/",
     "website": "https://catchthemes.com/themes/catch-box"
+  },
+  "Catch Themes Fotografie": {
+    "cats": [
+      80
+    ],
+    "description": "Fotografie is a modern photography WordPress theme that comes with high-quality features and minimal design by Catch Themes.",
+    "dom": "link[href*='/wp-content/themes/fotografie/']",
+    "icon": "Catch Themes.png",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/fotografie(?:-pro)?/",
+    "website": "https://catchthemes.com/themes/fotografie"
   },
   "Cecil": {
     "cats": [
@@ -450,6 +564,20 @@
       "\\bCeleritas\\b"
     ],
     "website": "https://celeritastransporte.com"
+  },
+  "Censhare": {
+    "cats": [
+      95
+    ],
+    "description": "Censhare is a commercial digital experience platform in the form of an enterprise content management system.",
+    "dom": "img[data-src*='CENSHARE'], img[src*='CENSHARE']",
+    "icon": "Censhare.svg",
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.censhare.com"
   },
   "CentOS": {
     "cats": [
@@ -758,10 +886,11 @@
     ],
     "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
     "icon": "Choices.png",
+    "oss": true,
     "scriptSrc": [
       "choices\\.js/|@([\\d.]+)(?:/assets)?(?:/scripts)?(?:/styles)?(?:/dist)?/choices(?:\\.min)?\\.js|css\\;version:\\1"
     ],
-    "website": "https://joshuajohnson.co.uk/Choices/"
+    "website": "https://github.com/Choices-js/Choices"
   },
   "Chorus": {
     "cats": [
@@ -800,10 +929,12 @@
       41
     ],
     "description": "CitrusPay provides payement gateway and wallet services.",
-    "scriptSrc": "checkout-static\\.citruspay\\.com/",
     "icon": "citruspay.png",
+    "pricing": [
+      "payg"
+    ],
     "saas": true,
-    "pricing": [ "payg" ],
+    "scriptSrc": "checkout-static\\.citruspay\\.com/",
     "website": "https://consumers.citruspay.com/"
   },
   "CityMail": {
@@ -1036,10 +1167,17 @@
     "cats": [
       10
     ],
+    "description": "Clicky is web an analytics tool which helps you to get real-time analysis including spy view.",
     "icon": "Clicky.png",
     "js": {
       "clicky": ""
     },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
     "scriptSrc": "static\\.getclicky\\.com",
     "website": "http://getclicky.com"
   },
@@ -1154,22 +1292,53 @@
     "scriptSrc": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
     "website": "http://www.cloudflare.com"
   },
+  "Cloudflare Network Error Logging": {
+    "cats": [
+      13
+    ],
+    "description": "Cloudflare Network Error Logging is a browser-based technology used to quickly identify problems with site visitors connecting to Cloudflare.",
+    "headers": {
+      "nel": "cf-nel\\;confidence:50",
+      "report-to": "a\\.nel\\.cloudflare\\.com\\;confidence:50"
+    },
+    "icon": "CloudFlare.svg",
+    "website": "https://developers.cloudflare.com/logs/reference/log-fields/zone/nel_reports"
+  },
   "Cloudinary": {
     "cats": [
-      31
+      31,
+      95
     ],
-    "dom": {
-      "img[src*='.cloudinary.com']": {
-        "attributes": {
-          "src": "\\;confidence:80"
-        }
-      }
+    "description": "Cloudinary is an end-to-end image- and video-management solution for websites and mobile apps, covering everything from image and video uploads, storage, manipulations, optimisations to delivery.",
+    "dom": "img[src*='.cloudinary.com/'], img[data-src*='.cloudinary.com/']",
+    "headers": {
+      "Content-Security-Policy": "player\\.cloudinary\\.com"
     },
     "icon": "Cloudinary.svg",
     "js": {
       "_cloudinary": ""
     },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring",
+      "poa"
+    ],
     "website": "https://cloudinary.com"
+  },
+  "Cloudways": {
+    "cats": [
+      62
+    ],
+    "description": "Cloudways offers managed cloud-hosting services for WordPress sites on a cloud server where multiple copies of your content will be replicated throughout your chosen data center.",
+    "headers": {
+      "cache-provider": "CLOUDWAYS-CACHE-DE"
+    },
+    "icon": "Cloudways.png",
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.cloudways.com"
   },
   "Cloverly": {
     "cats": [
@@ -1537,6 +1706,24 @@
     "icon": "Combeenation.png",
     "website": "https://www.combeenation.com"
   },
+  "Comm100": {
+    "cats": [
+      52
+    ],
+    "description": "Comm100 is a provider of customer service and communication products.",
+    "icon": "Comm100.svg",
+    "js": {
+      "Comm100API": "",
+      "comm100_chatButton": "",
+      "comm100_livechat_open_link": ""
+    },
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.comm100.com"
+  },
   "Commanders Act TagCommander": {
     "cats": [
       42
@@ -1689,13 +1876,28 @@
     "scriptSrc": "\\.ctctcdn\\.com/",
     "website": "https://www.constantcontact.com"
   },
+  "Contabo": {
+    "cats": [
+      88
+    ],
+    "description": "Contabo is a German hosting provider, previously known by the name Giga-International.",
+    "dns": {
+      "SOA": "\\.contabo\\.net"
+    },
+    "icon": "Contabo.svg",
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "website": "https://contabo.com"
+  },
   "Contact Form 7": {
     "cats": [
       87
     ],
     "description": "Contact Form 7 is an WordPress plugin which can manage multiple contact forms. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering.",
-    "icon": "Contact Form 7.png",
     "dom": "link[href*='/wp-content/plugins/contact-form-7/']",
+    "icon": "Contact Form 7.png",
     "js": {
       "wpcf7": ""
     },
@@ -1971,6 +2173,23 @@
     "saas": true,
     "website": "https://cookieinformation.com"
   },
+  "Cookie Information plugin": {
+    "cats": [
+      87,
+      67
+    ],
+    "description": "Cookie Information plugin helps your website stay compliant with GDPR using a free cookie pop-up, consent log, and more.",
+    "icon": "Cookie Information.svg",
+    "implies": "Cookie Information",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wp-gdpr-compliance/",
+    "website": "https://wordpress.org/plugins/wp-gdpr-compliance"
+  },
   "Cookie Notice": {
     "cats": [
       67,
@@ -2205,7 +2424,7 @@
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "\\.covet\\.pics/.+widget@([\\d\\.]+)\\;version:\\1",
+    "scriptSrc": "\\.covet\\.pics/",
     "website": "https://covet.pics"
   },
   "Cowboy": {
@@ -2295,6 +2514,16 @@
     "scriptSrc": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
     "website": "http://crazyegg.com"
   },
+  "CreateJS": {
+    "cats": [
+      31
+    ],
+    "description": "CreateJS is a suite of modular libraries and tools which work together or independently to enable interactive content on open web technologies via HTML5.",
+    "icon": "CreateJS.svg",
+    "saas": true,
+    "scriptSrc": "code\\.createjs\\.com/",
+    "website": "https://code.createjs.com"
+  },
   "Creativ.eMail": {
     "cats": [
       87,
@@ -2321,6 +2550,12 @@
       "$crisp": "",
       "CRISP_WEBSITE_ID": ""
     },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
     "website": "https://crisp.chat/"
   },
   "Criteo": {
@@ -2329,6 +2564,7 @@
       77
     ],
     "description": "Criteo provides personalised retargeting that works with Internet retailers to serve personalised online display advertisements to consumers who have previously visited the advertiser's website.",
+    "dom": "link[href*='.criteo.com']",
     "icon": "Criteo.svg",
     "js": {
       "Criteo": "",
@@ -2400,20 +2636,21 @@
     "icon": "CrossBox.png",
     "website": "https://crossbox.io"
   },
-  "Crownpeak": {
+  "CrownPeak": {
     "cats": [
-      67
+      19
     ],
     "description": "CrownPeak is a cloud-based Digital Experience Management (DEM) platform that is designed to in the management of digital experiences across multiple touch-points, especially for marketing and a freer IT architecture.",
-    "icon": "Crownpeak.png",
+    "icon": "CrownPeak.png",
     "js": {
       "CrownPeakAutocomplete": "",
       "CrownPeakSearch": ""
     },
-    "scriptSrc": [
-      "c\\.evidon\\.com",
-      "js/crownpeak\\."
+    "pricing": [
+      "poa"
     ],
+    "saas": true,
+    "scriptSrc": "js/crownpeak\\.",
     "website": "http://www.crownpeak.com"
   },
   "Cryout Creations Bravada": {
@@ -2542,6 +2779,21 @@
     "scriptSrc": "cufon-yui\\.js",
     "website": "http://cufon.shoqolate.com"
   },
+  "Custom Fonts": {
+    "cats": [
+      87,
+      17
+    ],
+    "description": "Custom Fonts plugin helps you easily embed custom fonts files (woff2, woff, ttf, svg, eot, otf) easily in your WordPress website.",
+    "icon": "Custom Fonts.png",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/custom-fonts/",
+    "website": "https://github.com/brainstormforce/custom-fonts"
+  },
   "Customer.io": {
     "cats": [
       32
@@ -2581,8 +2833,8 @@
     "description": "Cxense was an AI-powered data management and intelligent personalisation platform.",
     "icon": "Cxense.png",
     "meta": {
-      "cXenseParse:pageclass": "",
       "cXenseParse:itm-meta-keywords": "",
+      "cXenseParse:pageclass": "",
       "cXenseParse:publishtime": "",
       "cXenseParse:url": ""
     },
@@ -2590,8 +2842,8 @@
       "low",
       "recurring"
     ],
-    "scriptSrc": "\\.cxense\\.com/",
     "saas": true,
+    "scriptSrc": "\\.cxense\\.com/",
     "website": "https://www.cxense.com"
   },
   "CyberChimps Responsive": {
@@ -2672,7 +2924,10 @@
       "generated by <a href='http://git\\.zx2c4\\.com/cgit/about/'>cgit v([\\d.a-z-]+)</a>\\;version:\\1"
     ],
     "icon": "cgit.png",
-    "implies": "git",
+    "implies": [
+      "git",
+      "C"
+    ],
     "meta": {
       "generator": "^cgit v([\\d.a-z-]+)$\\;version:\\1"
     },
@@ -2713,11 +2968,26 @@
     "website": "https://commercelayer.io",
     "xhr": "\\.commercelayer\\.io"
   },
+  "commercetools": {
+    "cats": [
+      6
+    ],
+    "description": "commercetools is a headless commerce platform.",
+    "dom": "link[href*='.commercetools.com/'], body[data-commerce-tools-host*='.commercetools.com']",
+    "icon": "commercetools.svg",
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://commercetools.com"
+  },
   "core-js": {
     "cats": [
       59
     ],
     "description": "core-js is a modular standard library for JavaScript, with polyfills for cutting-edge ECMAScript features.",
+    "icon": "core-js.png",
     "js": {
       "__core-js_shared__": "",
       "__core-js_shared__.versions.0.version": "^(.+)$\\;version:\\1",
