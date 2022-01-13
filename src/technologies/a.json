@@ -610,12 +610,19 @@
     },
     "pricing": [
       "low",
-      "recurring"
+      "recurring",
+      "poa"
     ],
     "saas": true,
     "scriptSrc": [
       "plugins/activecampaign-subscription-forms/site_tracking\\.js",
-      "\\.activehosted\\.com/"
+      "\\.activehosted\\.com",
+      "\\.app-us1\\.com",
+      "\\.ac-page\\.com"
+    ],
+    "url": [
+      "\\.activehosted\\.com",
+      "\\.ac-page\\.com"
     ],
     "website": "https://www.activecampaign.com"
   },
