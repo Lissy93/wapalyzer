@@ -1073,13 +1073,14 @@
     "cats": [
       36
     ],
+    "description": "Adnegah is a digital marketing and internet advertising agency.",
+    "icon": "Adnegah.png",
+    "dom": "iframe[scr*='adnegah.net']",
     "headers": {
       "X-Advertising-By": "adnegah\\.net"
     },
-    "html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
-    "icon": "adnegah.png",
-    "scriptSrc": "[^a-z]adnegah.*\\.js$",
-    "website": "https://Adnegah.net"
+    "scriptSrc": "\\.adnegah\\.net/",
+    "website": "https://adnegah.net"
   },
   "Adobe Analytics": {
     "cats": [
