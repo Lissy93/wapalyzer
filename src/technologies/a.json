@@ -720,12 +720,20 @@
     "cats": [
       36
     ],
-    "html": "(?:<embed[^>]+(?:src=\"https?://mh\\d?\\.adriver\\.ru/|flashvars=\"[^\"]*(?:http:%3A//(?:ad|mh\\d?)\\.adriver\\.ru/|adriver_banner))|<(?:(?:iframe|img)[^>]+src|a[^>]+href)=\"https?://ad\\.adriver\\.ru/)",
+    "description": "AdRiver is a company which provide internet advertising management and audit software.",
     "icon": "AdRiver.png",
+    "dom": "link[href*='.adriver.ru'], img[src*='.adriver.ru'], iframe[src*='.adriver.ru']",
     "js": {
-      "adriver": ""
+      "adriver": "",
+      "AdriverCounter": "",
+      "AdriverPrebid": "",
+      "adfoxBiddersMap.adriver": ""
     },
-    "scriptSrc": "(?:adriver\\.core\\.\\d\\.js|https?://(?:content|ad|masterh\\d)\\.adriver\\.ru/)",
+    "scriptSrc": "\\.adriver\\.ru/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
     "website": "http://adriver.ru"
   },
   "AdRoll": {
