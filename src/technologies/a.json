@@ -3012,6 +3012,26 @@
     "scriptSrc": "themes/astra\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://wpastra.com/"
   },
+  "Astro": {
+    "cats": [
+      57,
+      12
+    ],
+    "description": "Astro is a new JavaScript-based static site builder.",
+    "icon": "Astro.svg",
+    "dom": {
+      "link[href*='/_astro/']": {
+        "attributes": {
+          "href": "/_astro/(?:common|index)-[\\d\\w]+\\.css"
+        }
+      }
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://astro.build"
+  },
   "Astra Widgets": {
     "cats": [
       87,
