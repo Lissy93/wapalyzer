@@ -1328,9 +1328,14 @@
     "cats": [
       36
     ],
-    "html": "<div (?:id=\"[a-zA-Z0-9_]*\" )?class=\"goAdverticum\"",
+    "description": "Adverticum is the developer and operator of Hungary's market leading online ad serving solution, the Adverticum AdServer.",
     "icon": "Adverticum.svg",
-    "scriptSrc": "(?:ad\\.)?adverticum\\.net/g3\\.js",
+    "dom": "a[href*='ad.adverticum.net'], div.goAdverticum",
+    "scriptSrc": "\\.adverticum\\.net/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "http://adverticum.net"
   },
   "Adyen": {
