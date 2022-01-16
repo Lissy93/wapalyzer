@@ -1001,6 +1001,25 @@
     "oss": true,
     "website": "https://akamai.github.io/boomerang"
   },
+  "Boost Commerce": {
+    "cats": [
+      29,
+      100
+    ],
+    "description": "Boost Commerce provides beautiful and advanced product filter and smart site search for Shopify stores to boost sales.",
+    "icon": "Boost Commerce.png",
+    "requires": "Shopify",
+    "js": {
+      "bcSfFilterConfig.api.filterUrl": "services\\.mybcapps\\.com/",
+      "boostPFSAppConfig.api.filterUrl": "services\\.mybcapps\\.com/"
+    },
+    "saas": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://boostcommerce.net"
+  },
   "Bootstrap": {
     "cats": [
       66
