@@ -2760,8 +2760,10 @@
         "text": "(Sign (in|up)|Log in|Continue) with Apple"
       }
     },
-    "html": "<meta[ˆ>]*appleid-signin-client-id",
     "icon": "Apple.svg",
+    "meta": {
+      "appleid-signin-client-id": ""
+    },
     "js": {
       "AppleID": ""
     },
