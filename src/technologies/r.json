@@ -581,6 +581,23 @@
     "scriptSrc": "js\\.recurly\\.com",
     "website": "https://recurly.com"
   },
+  "REDAXO": {
+    "cats": [
+      1
+    ],
+    "description": "REDAXO is a content management system that provides business optimisation through web projects and output codes.",
+    "icon": "REDAXO.png",
+    "implies": "PHP",
+    "js": {
+      "redaxo": "\\;confidence:50"
+    },
+    "url": "^https?://(?:www\\.)?[\\d\\w\\-]+\\.[\\w]+\/redaxo/\\;confidence:50",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://redaxo.org"
+  },
   "Red Hat": {
     "cats": [
       28
