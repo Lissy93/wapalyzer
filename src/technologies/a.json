@@ -2877,15 +2877,20 @@
       6
     ],
     "cpe": "cpe:/a:arastta:ecommerce",
+    "description": "Arastta is a free and open-source project with contributors from all over the world.",
+    "icon": "Arastta.svg",
     "excludes": "OpenCart",
+    "implies": "PHP",
     "headers": {
       "Arastta": "^(.+)$\\;version:\\1",
-      "X-Arastta": ""
+      "X-Arastta": "",
+      "x-arastta": ""
     },
-    "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
-    "icon": "Arastta.svg",
-    "implies": "PHP",
     "scriptSrc": "arastta\\.js",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "http://arastta.org"
   },
   "Arc": {
