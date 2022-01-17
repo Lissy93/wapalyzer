@@ -1582,10 +1582,13 @@
     "cats": [
       19
     ],
-    "html": [
-      "<form[^>]+?action=\"[^\"]*airform\\.io[^>]+?>"
-    ],
+    "description": "Airform is a functional HTML forms for front-end developers.",
     "icon": "Airform.svg",
+    "dom": "form[action*='airform.io/']",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "https://airform.io"
   },
   "Airship": {
