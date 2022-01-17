@@ -201,6 +201,34 @@ function parseEmail(fullEmail) {
   return { email, name, title }
 }
 
+function getTechnologySpend(technologies) {
+  const totals = technologies.reduce(
+    (totals, { pricing }) => {
+      pricing.forEach((price) => totals[price]++)
+
+      return totals
+    },
+    { low: 0, poa: 0, mid: 0, high: 0 }
+  )
+
+  totals.mid += Math.floor(totals.low / 3)
+  totals.high += Math.floor(totals.poa / 2)
+  totals.high += Math.floor(totals.mid / 3)
+  totals.xhigh = Math.floor(totals.high / 3)
+
+  const spend = totals.xhigh
+    ? 'Very high'
+    : totals.high
+    ? 'High'
+    : totals.mid
+    ? 'Medium'
+    : totals.low
+    ? 'Low'
+    : 'Very low'
+
+  return spend
+}
+
 const Popup = {
   /**
    * Initialise popup
@@ -697,6 +725,14 @@ const Popup = {
 
       const { attributes, creditsRemaining, crawl } = data
 
+      if (Popup.cache.detections.length) {
+        attributes.signals = attributes.signals || []
+
+        attributes.signals.technologySpend = getTechnologySpend(
+          Popup.cache.detections
+        )
+      }
+
       el.creditsRemaining.textContent = parseInt(
         creditsRemaining || 0,
         10
@@ -766,11 +802,20 @@ const Popup = {
                 a.href = value.to
                 a.textContent = value.text
 
-                if (['email', 'verifiedEmail', 'safeEmail'].includes(key)) {
+                if (key === 'keywords') {
+                  a.style = 'padding-right: .3rem;'
+
+                  const space = document.createTextNode(' ')
+
+                  td.append(a, space)
+                } else if (
+                  ['email', 'verifiedEmail', 'safeEmail'].includes(key)
+                ) {
                   const { email, name, title } = parseEmail(value.text)
 
                   a.textContent = email
 
+                  const div = document.createElement('div')
                   const elName = document.createElement('span')
                   const elTitle = document.createElement('span')
                   const elBreak1 = document.createElement('br')
@@ -781,17 +826,19 @@ const Popup = {
 
                   elTitle.className = 'light-text'
 
-                  td.appendChild(a)
+                  div.append(a)
 
-                  if (name) {
-                    td.appendChild(elBreak1)
-                    td.appendChild(elName)
+                  if (name && name !== email) {
+                    div.appendChild(elBreak1)
+                    div.appendChild(elName)
 
                     if (title) {
-                      td.appendChild(elBreak2)
-                      td.appendChild(elTitle)
+                      div.appendChild(elBreak2)
+                      div.appendChild(elTitle)
                     }
                   }
+
+                  td.append(div)
                 } else {
                   div.appendChild(a)
                   td.appendChild(div)

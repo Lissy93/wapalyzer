@@ -476,12 +476,23 @@ class Site {
 
     if (!this.browser) {
       await this.initDriver()
+
       if (!this.browser) {
         throw new Error('Browser closed')
       }
     }
 
-    const page = await this.browser.newPage()
+    let page
+
+    try {
+      page = await this.browser.newPage()
+    } catch (error) {
+      this.error(error)
+
+      await this.initDriver()
+
+      page = await this.browser.newPage()
+    }
 
     this.pages.push(page)
 
@@ -632,13 +643,19 @@ class Site {
       // page.on('console', (message) => this.log(message.text()))
 
       // Cookies
-      const cookies = (await page.cookies()).reduce(
-        (cookies, { name, value }) => ({
-          ...cookies,
-          [name.toLowerCase()]: [value],
-        }),
-        {}
-      )
+      let cookies = []
+
+      try {
+        cookies = (await page.cookies()).reduce(
+          (cookies, { name, value }) => ({
+            ...cookies,
+            [name.toLowerCase()]: [value],
+          }),
+          {}
+        )
+      } catch (error) {
+        this.error(error)
+      }
 
       // HTML
       let html = await this.promiseTimeout(page.content(), '', 'Timeout (html)')
@@ -707,7 +724,7 @@ class Site {
               page.evaluateHandle(
                 () =>
                   // eslint-disable-next-line unicorn/prefer-text-content
-                  document.body.innerText // .replace(/\s+/g, ' ').slice(0, 25000)
+                  document.body && document.body.innerText
               ),
               { jsonValue: () => '' },
               'Timeout (text)'
