@@ -2772,9 +2772,9 @@
     "cats": [
       72
     ],
-    "description": "Appointy’s online scheduling software.",
-    "html": "<iframe[^>]+src=\"?https://[\\w\\d\\-]+\\.appointy\\.com",
+    "description": "Appointy is a cloud-based scheduling solution that helps professionals and businesses to manage their appointment scheduling activities and routines.",
     "icon": "Appointy.png",
+    "dom":"a[href*='.appointy.com/'][target='_blank'], iframe[src*='.appointy.com/']",
     "pricing": [
       "low",
       "freemium",
