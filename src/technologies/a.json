@@ -2658,10 +2658,20 @@
     "cats": [
       1
     ],
-    "html": "<[^>]+data-apos-refreshable[^>]",
+    "description": "ApostropheCMS is a powerful website builder platform built on an enterprise open source CMS.",
     "icon": "ApostropheCMS.svg",
     "implies": "Node.js",
-    "website": "http://apostrophecms.org"
+    "js": {
+      "APOS_DIALOGS.dialogAttributes": "",
+      "apos.csrfCookieName": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://apostrophecms.com"
   },
   "AppDynamics": {
     "cats": [
