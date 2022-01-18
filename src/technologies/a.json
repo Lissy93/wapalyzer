@@ -3401,14 +3401,16 @@
     "cats": [
       6
     ],
-    "html": "<link[^>]* href=\"https?://edge\\.avangate\\.net/",
+    "description": "Avangate (2Checkout) is a digital ecommerce platform for businesses that sell physical goods or digital products.",
     "icon": "Avangate.svg",
+    "implies": "Verifone",
     "js": {
-      "__avng8_": "",
-      "avng8_": ""
+      "__avng8_callbacks": "",
+      "AvaCart.version": "(.+)\\;version:\\1",
+      "avaSlugify": ""
     },
     "scriptSrc": "^https?://edge\\.avangate\\.net/",
-    "website": "http://avangate.com"
+    "website": "https://www.2checkout.com"
   },
   "Avasize": {
     "cats": [
