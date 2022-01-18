@@ -3302,14 +3302,17 @@
     "cats": [
       12
     ],
-    "html": [
-      "<[^>]+aurelia-app=[^>]",
-      "<[^>]+data-main=[^>]aurelia-bootstrapper",
-      "<[^>]+au-target-id=[^>]\\d"
-    ],
+    "description": "Aurelia is an open-source UI JavaScript framework designed to create single page applications.",
     "icon": "Aurelia.svg",
-    "scriptSrc": [
-      "aurelia(?:\\.min)?\\.js"
+    "dom":"div[aurelia-app], body[aurelia-app], body[aurelia-app], a[au-target-id]",
+    "js": {
+      "_aureliaConfigureModuleLoader": "",
+      "localAurelia": ""
+    },
+    "scriptSrc": "/aurelia[\\d\\w\\-\\.]+\\.js",
+    "oss": true,
+    "pricing": [
+      "freemium"
     ],
     "website": "http://aurelia.io"
   },
