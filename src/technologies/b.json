@@ -119,6 +119,17 @@
     "scriptSrc": "hm\\.baidu\\.com/hm\\.js",
     "website": "https://tongji.baidu.com/"
   },
+  "Baidu Maps": {
+    "cats": [
+      35
+    ],
+    "description": "Baidu Maps is a desktop and mobile web mapping service application and technology provided by Baidu, offering satellite imagery, street maps, street view and indoor view perspectives, as well as functions such as a route planner for traveling by foot, car, or with public transportation.",
+    "icon": "Baidu Maps.png",
+    "js": {
+      "BMAP_API_VERSION": "(.+)\\;version:\\1"
+    },
+    "website": "https://map.baidu.com"
+  },
   "Bambuser": {
     "cats": [
       19
