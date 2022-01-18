@@ -141,6 +141,23 @@
     "scriptSrc": "tag\\.navdmp\\.com",
     "website": "https://www.navegg.com/"
   },
+  "Naver Maps": {
+    "cats": [
+      35
+    ],
+    "description": "Naver Maps help develop location-based services which provided by Naver.",
+    "icon": "Navegg.png",
+    "js": {
+      "naver.maps": ""
+    },
+    "scriptSrc": "openapi\\.map\\.naver\\.com/openapi/v([\\d\\.]+)\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://www.ncloud.com/product/applicationService/maps"
+  },
   "Neos CMS": {
     "cats": [
       1
