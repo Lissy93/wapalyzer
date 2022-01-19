@@ -3302,14 +3302,17 @@
     "cats": [
       12
     ],
-    "html": [
-      "<[^>]+aurelia-app=[^>]",
-      "<[^>]+data-main=[^>]aurelia-bootstrapper",
-      "<[^>]+au-target-id=[^>]\\d"
-    ],
+    "description": "Aurelia is an open-source UI JavaScript framework designed to create single page applications.",
     "icon": "Aurelia.svg",
-    "scriptSrc": [
-      "aurelia(?:\\.min)?\\.js"
+    "dom":"div[aurelia-app], body[aurelia-app], a[au-target-id]",
+    "js": {
+      "_aureliaConfigureModuleLoader": "",
+      "localAurelia": ""
+    },
+    "scriptSrc": "/aurelia[\\d\\w\\-\\.]+\\.js",
+    "oss": true,
+    "pricing": [
+      "freemium"
     ],
     "website": "http://aurelia.io"
   },
@@ -3401,14 +3404,16 @@
     "cats": [
       6
     ],
-    "html": "<link[^>]* href=\"https?://edge\\.avangate\\.net/",
+    "description": "Avangate (2Checkout) is a digital ecommerce platform for businesses that sell physical goods or digital products.",
     "icon": "Avangate.svg",
+    "implies": "Verifone",
     "js": {
-      "__avng8_": "",
-      "avng8_": ""
+      "__avng8_callbacks": "",
+      "AvaCart.version": "(.+)\\;version:\\1",
+      "avaSlugify": ""
     },
     "scriptSrc": "^https?://edge\\.avangate\\.net/",
-    "website": "http://avangate.com"
+    "website": "https://www.2checkout.com"
   },
   "Avasize": {
     "cats": [
