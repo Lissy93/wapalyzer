@@ -194,13 +194,13 @@
   "Umbraco": {
     "cats": [
       1
-    ],
+    ], 
+    "description": "Umbraco is an open-source Microsoft ASP.NET based content management system.",
+    "icon": "Umbraco.png",
+    "implies": "Microsoft ASP.NET",
     "headers": {
       "X-Umbraco-Version": "^(.+)$\\;version:\\1"
     },
-    "html": "powered by <a href=[^>]+umbraco",
-    "icon": "Umbraco.png",
-    "implies": "Microsoft ASP.NET",
     "js": {
       "UC_IMAGE_SERVICE|ITEM_INFO_SERVICE": "",
       "UC_ITEM_INFO_SERVICE": "",
@@ -210,7 +210,16 @@
     "meta": {
       "generator": "umbraco"
     },
+    "scripts": "/Umbraco/Api/",
     "url": "/umbraco/login\\.aspx(?:$|\\?)",
+    "xhr": "/umbraco/api/",
+    "oss": true,
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
     "website": "http://umbraco.com"
   },
   "Unbounce": {
