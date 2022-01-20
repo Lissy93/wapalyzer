@@ -1,4 +1,21 @@
 {
+  "VAPTCHA": {
+    "cats": [
+      16
+    ],
+    "description": "VAPTCHA is the abbreviation of (Variation Analysis based Public Turing Test to Tell Computers and Humans Apart), also known as gesture verification code, is a human-machine verification solution based on artificial intelligence and big data.",
+    "icon": "VAPTCHA.svg",
+    "js": {
+      "vaptcha": ""
+    },
+    "pricing": [
+      "poa",
+      "freemium"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.vaptcha\\.com/v([\\d\\.]+)\\.js\\;version:\\1",
+    "website": "https://en.vaptcha.com"
+  },
   "VDX.tv": {
     "cats": [
       36
@@ -158,23 +175,6 @@
     "icon": "Vanilla.png",
     "implies": "PHP",
     "website": "http://vanillaforums.org"
-  },
-  "VAPTCHA": {
-    "cats": [
-      16
-    ],
-    "description": "VAPTCHA is the abbreviation of (Variation Analysis based Public Turing Test to Tell Computers and Humans Apart), also known as gesture verification code, is a human-machine verification solution based on artificial intelligence and big data.",
-    "icon": "VAPTCHA.svg",
-    "js": {
-      "vaptcha": ""
-    },
-    "scriptSrc": "\\.vaptcha\\.com/v([\\d\\.]+)\\.js\\;version:\\1",
-    "saas": true,
-    "pricing": [
-      "poa",
-      "freemium"
-    ],
-    "website": "https://en.vaptcha.com"
   },
   "Varbase": {
     "cats": [

@@ -23,6 +23,7 @@ const aliases = {
   w: 'maxWait',
   n: 'noScripts',
   N: 'noRedirect',
+  e: 'extended',
 }
 
 while (true) {
@@ -77,6 +78,7 @@ Options:
   -a, --user-agent=...     Set the user agent string
   -n, --no-scripts         Disabled JavaScript on web pages
   -N, --no-redirect        Disable cross-domain redirects
+  -e, --extended           Output additional information
 `)
 
   process.exit(1)

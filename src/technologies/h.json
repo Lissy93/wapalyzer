@@ -82,6 +82,18 @@
     "scriptSrc": "haddock-util\\.js",
     "website": "http://www.haskell.org/haddock/"
   },
+  "Halo": {
+    "cats": [
+      1,
+      11
+    ],
+    "icon": "Halo.png",
+    "implies": "Java",
+    "meta": {
+      "generator": "Halo ([\\d.]+)?\\;version:\\1"
+    },
+    "website": "https://halo.run"
+  },
   "Hamechio": {
     "cats": [
       18
@@ -97,18 +109,6 @@
       "freemium"
     ],
     "website": "https://hamech.io"
-  },
-  "Halo": {
-    "cats": [
-      1,
-      11
-    ],
-    "icon": "Halo.png",
-    "implies": "Java",
-    "meta": {
-      "generator": "Halo ([\\d.]+)?\\;version:\\1"
-    },
-    "website": "https://halo.run"
   },
   "Hammer.js": {
     "cats": [
@@ -833,7 +833,10 @@
       "_hsq": "",
       "hubspot": ""
     },
-    "pricing": ["recurring", "high"],
+    "pricing": [
+      "recurring",
+      "high"
+    ],
     "saas": true,
     "website": "https://www.hubspot.com"
   },
