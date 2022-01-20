@@ -157,11 +157,14 @@
       1,
       18
     ],
-    "html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
+    "description": "Banshee is a PHP website framework with a main focus on security. Banshee is protected against common attacks like SQL injection, cross-site scripting, cross-site request forgery and session hijacking.", 
     "icon": "Banshee.png",
     "implies": "PHP",
     "meta": {
       "generator": "Banshee PHP"
+    },
+    "headers": {
+      "X-Powered-By": "Banshee PHP framework v([\\d\\.]+)\\;version:\\1"
     },
     "website": "http://www.banshee-php.org"
   },
