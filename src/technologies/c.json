@@ -394,11 +394,12 @@
   },
   "CareCart": {
     "cats": [
-      98
+      98,
+      100
     ],
     "description": "CareCart is a smart app to recover big value carts on all sizes of shopify stores.",
     "icon": "CareCart.png",
-    "implies": "Shopify",
+    "requires": "Shopify",
     "pricing": [
       "low",
       "recurring"
@@ -409,11 +410,12 @@
   },
   "CareCart Sales Pop Up": {
     "cats": [
+      100,
       5
     ],
     "description": "CareCart Sales Pop Up is a stock countdown timer, recent sales notifications, live sales pop up widget.",
     "icon": "CareCart.png",
-    "implies": "Shopify",
+    "requires": "Shopify",
     "pricing": [
       "freemium"
     ],
