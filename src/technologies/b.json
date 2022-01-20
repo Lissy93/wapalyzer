@@ -262,14 +262,19 @@
   },
   "Bentobox": {
     "cats": [
-      1
+      1,
+      93
     ],
     "description": "Bentobox is a restaurant website platform that handles menus, reservations, gift cards and more.",
-    "html": "<!-- Powered by BentoBox",
     "icon": "Bentobox.svg",
     "js": {
       "BentoAnalytics": ""
     },
+    "scriptSrc": "\\.getbento\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "https://getbento.com"
   },
   "Beyable": {
