@@ -260,6 +260,22 @@
     },
     "website": "https://www.elastic.co/apm"
   },
+  "ElasticPress": {
+    "cats": [
+      87
+    ],
+    "description": "ElasticPress is a hosting service that connects your WordPress site to search hosting.",
+    "headers": {
+      "x-elasticpress-query": ""
+    },
+    "icon": "elasticpress.svg",
+    "implies": [
+      "Elasticsearch"
+    ],
+    "pricing": ["recurring", "freemium", "mid"],
+    "saas": true,
+    "website": "https://www.elasticpress.io/"
+  },
   "ElasticSuite": {
     "cats": [
       29
