@@ -2913,16 +2913,23 @@
     "website": "https://arc.io",
     "xhr": "\\.arc\\.io"
   },
-  "Arc Publishing": {
+  "Arc XP": {
     "cats": [
-      1
+      1,
+      95
     ],
-    "html": "<div [^>]*id=\"pb-root\"",
-    "icon": "Arc-Publishing.svg",
+    "description": "Arc XP is a cloud-based digital experience platform that helps enterprise companies, retail brands and media and entertainment organization create and distribute content, drive digital commerce, and deliver powerful experiences.",
+    "icon": "Arc XP.svg",
+    "dom":"img[srcset*='images.arcpublishing.com/']",
     "js": {
       "Fusion.arcSite": ""
     },
-    "website": "https://www.arcpublishing.com/"
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "high"
+    ],
+    "website": "https://www.arcxp.com"
   },
   "ArcGIS API for JavaScript": {
     "cats": [
