@@ -2476,15 +2476,19 @@
     "cats": [
       1
     ],
-    "cookies": {
-      "SC_ANALYTICS_GLOBAL_COOKIE": "",
-      "sc_expview": ""
-    },
     "description": "Sitecore provides web content management, and multichannel marketing automation software.",
     "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
-    "icon": "Sitecore.png",
+    "icon": "Sitecore.svg",
+    "requires": "Microsoft ASP.NET",
+    "cookies": {
+      "SC_ANALYTICS_GLOBAL_COOKIE": "",
+      "sc_expview": "",
+      "SC_OS_SessionId": ""
+    },
     "pricing": [
-      "poa"
+      "poa",
+      "recurring",
+      "high"
     ],
     "saas": true,
     "website": "https://www.sitecore.com/"
