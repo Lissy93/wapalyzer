@@ -557,7 +557,7 @@ const Wappalyzer = {
       if (pattern.regex.test(value)) {
         technologies.push({
           technology,
-          pattern: { ...pattern, type },
+          pattern: { ...pattern, type, value },
           version: Wappalyzer.resolveVersion(pattern, value),
         })
       }
@@ -584,7 +584,7 @@ const Wappalyzer = {
         if (pattern.regex.test(value)) {
           technologies.push({
             technology,
-            pattern: { ...pattern, type },
+            pattern: { ...pattern, type, value },
             version: Wappalyzer.resolveVersion(pattern, value),
           })
         }
@@ -621,7 +621,7 @@ const Wappalyzer = {
           if (pattern.regex.test(value)) {
             technologies.push({
               technology,
-              pattern: { ...pattern, type },
+              pattern: { ...pattern, type, value },
               version: Wappalyzer.resolveVersion(pattern, value),
             })
           }
