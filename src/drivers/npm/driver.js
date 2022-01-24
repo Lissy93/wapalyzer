@@ -998,7 +998,7 @@ class Site {
             patterns,
             {
               technology: { name, implies, excludes },
-              pattern: { regex, value, confidence, type, version },
+              pattern: { regex, value, match, confidence, type, version },
             }
           ) => {
             patterns[name] = patterns[name] || []
@@ -1007,6 +1007,7 @@ class Site {
               type,
               regex: regex.source,
               value: value.length <= 250 ? value : null,
+              match: match.length <= 250 ? match : null,
               confidence,
               version,
               implies: implies.map(({ name }) => name),

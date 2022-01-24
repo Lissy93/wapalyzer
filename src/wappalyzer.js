@@ -554,10 +554,17 @@ const Wappalyzer = {
     return technology[type].reduce((technologies, pattern) => {
       const startTime = Date.now()
 
-      if (pattern.regex.test(value)) {
+      const matches = pattern.regex.exec(value)
+
+      if (matches) {
         technologies.push({
           technology,
-          pattern: { ...pattern, type, value },
+          pattern: {
+            ...pattern,
+            type,
+            value,
+            match: matches[0],
+          },
           version: Wappalyzer.resolveVersion(pattern, value),
         })
       }
@@ -581,10 +588,17 @@ const Wappalyzer = {
       patterns.forEach((pattern) => {
         const startTime = Date.now()
 
-        if (pattern.regex.test(value)) {
+        const matches = pattern.regex.exec(value)
+
+        if (matches) {
           technologies.push({
             technology,
-            pattern: { ...pattern, type, value },
+            pattern: {
+              ...pattern,
+              type,
+              value,
+              match: matches[0],
+            },
             version: Wappalyzer.resolveVersion(pattern, value),
           })
         }
@@ -618,10 +632,17 @@ const Wappalyzer = {
         values.forEach((value) => {
           const startTime = Date.now()
 
-          if (pattern.regex.test(value)) {
+          const matches = pattern.regex.exec(value)
+
+          if (matches) {
             technologies.push({
               technology,
-              pattern: { ...pattern, type, value },
+              pattern: {
+                ...pattern,
+                type,
+                value,
+                match: matches[0],
+              },
               version: Wappalyzer.resolveVersion(pattern, value),
             })
           }
