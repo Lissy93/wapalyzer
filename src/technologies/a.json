@@ -1501,11 +1501,14 @@
     "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
     "dom": "#afterpay, .afterpay, .AfterpayMessage, [aria-label='Afterpay'], link[href*='/wp-content/plugins/afterpay-gateway-for-woocommerce/']",
     "icon": "afterpay.png",
+    "requiresCategory": 6,
     "js": {
       "Afterpay": "",
       "AfterpayAttractWidget": "",
       "afterpay_product": "",
-      "checkout.enabledpayments.afterpay": "^true$"
+      "checkout.enabledpayments.afterpay": "^true$",
+      "AfterpayWidgetHtml": "",
+      "AfterpayGenericErrorHtml": ""
     },
     "saas": true,
     "scriptSrc": [

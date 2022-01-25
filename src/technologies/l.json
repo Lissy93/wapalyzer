@@ -156,7 +156,8 @@
       91
     ],
     "description": "Laybuy is a payment service that lets you receive your purchase now and spread the total cost over 6 weekly automatic payments interest free.",
-    "dom": "iframe[src='.laybuy.com/']",
+    "dom": "iframe[src='.laybuy.com/'], a[href*='.laybuy.com/what-is-laybuy']",
+    "requiresCategory": 6,
     "icon": "LayBuy.svg",
     "js": {
       "LaybuyHelper": "",
