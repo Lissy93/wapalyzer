@@ -377,6 +377,29 @@
     "scriptSrc": "partial\\.ly",
     "website": "https://partial.ly/"
   },
+  "Parttrap ONE": {
+    "cats": [
+      6
+    ],
+    "description": "Parttrap ONE is a complete solution including PIM, CMS, business optimization and ERP integration.",
+    "icon": "Parttrap.png",
+    "requires": "Microsoft ASP.NET",
+    "implies": [
+      "Handlebars",
+      "Microsoft ASP.NET",
+      "Bootstrap"
+    ],
+    "js": {
+      "PT.Translation.BasketIsEmpty": "",
+      "PT.Analytics.addItem": "",
+      "PT.Sections.Checkout": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.parttrap.com"
+  },
   "Partytown": {
     "cats": [
       92
