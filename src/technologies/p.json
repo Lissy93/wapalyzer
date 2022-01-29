@@ -802,6 +802,21 @@
     "scriptSrc": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
     "website": "https://www.personaclick.com"
   },
+  "Personio": {
+    "cats": [
+      101
+    ],
+    "description": "Personio is the all-in-one HR software for small- and medium-sized companies with 10 to 2000 employees.",
+    "icon": "Personio.svg",
+    "dom":"a[href*='.jobs.personio.']",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.cdn\\.personio\\.",
+    "website": "https://www.personio.com"
+  },
   "Perzonalization": {
     "cats": [
       76
