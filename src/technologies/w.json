@@ -331,6 +331,11 @@
     ],
     "description": "Wagtail is a Django content management system (CMS) focused on flexibility and user experience.",
     "dom": {
+      "[data-block-key]": {
+        "attributes": {
+          "data-block-key": "[a-z0-9]{5}"
+        }
+      },
       "[style*='images/']": {
         "attributes": {
           "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
