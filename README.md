@@ -387,7 +387,7 @@ Plus any of:
     </tr>
     <tr>
       <td><code>xhr</code></td>
-      <td>String</td>
+      <td>String | Array</td>
       <td>Hostnames of XHR requests.</td>
       <td><code>"cdn\\.netlify\\.com"</code></td>
     </tr>

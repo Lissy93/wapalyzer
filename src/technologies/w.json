@@ -331,6 +331,11 @@
     ],
     "description": "Wagtail is a Django content management system (CMS) focused on flexibility and user experience.",
     "dom": {
+      "[data-block-key]": {
+        "attributes": {
+          "data-block-key": "[a-z0-9]{5}"
+        }
+      },
       "[style*='images/']": {
         "attributes": {
           "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
@@ -1502,6 +1507,23 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/wordfence/.+login\\.\\d+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.wordfence.com"
+  },
+  "Workable": {
+    "cats": [
+      101
+    ],
+    "description": "Workable is the all-in-one hiring solution.",
+    "icon": "Workable.svg",
+    "dom":"a[href*='.workable.com/']",
+    "js": {
+      "webpackChunk_workable_candidate": ""
+    },
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.workable.com"
   },
   "Workarea": {
     "cats": [
