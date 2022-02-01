@@ -138,6 +138,27 @@
     },
     "website": "https://map.baidu.com"
   },
+  "BambooHR": {
+    "cats": [
+      101
+    ],
+    "description": "BambooHR is an American technology company that provides human resources software as a service.",
+    "icon": "BambooHR.svg",
+    "dom":"a[href*='.bamboohr.com/'][target='_blank']",
+    "headers": {
+      "Content-Security-Policy": "\\.bamboohr\\.com"
+    },
+    "js": {
+      "scrollToBambooHR": ""
+    },
+    "scriptSrc": "\\.bamboohr\\.com/",
+    "saas": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.bamboohr.com"
+  },
   "Bambuser": {
     "cats": [
       19
