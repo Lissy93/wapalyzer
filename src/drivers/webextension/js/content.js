@@ -82,7 +82,8 @@ async function getDom(technologies) {
             }
 
             if (text) {
-              const value = node.textContent.trim()
+              // eslint-disable-next-line unicorn/prefer-text-content
+              const value = node.innerText.trim()
 
               if (value) {
                 technologies.push({
