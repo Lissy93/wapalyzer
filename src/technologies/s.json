@@ -111,6 +111,22 @@
     ],
     "website": "https://www.seur.com"
   },
+  "SHE Media": {
+    "cats": [
+      36
+    ],
+    "description": "SHE Media is an ad network, which means that they basically serve as a coordinator between advertisers and publishers (bloggers).",
+    "icon": "SHE Media.png",
+    "js": {
+      "SheMedia": "",
+      "blogherads.adq": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.shemedia.com"
+  },
   "SIMsite": {
     "cats": [
       1
@@ -1110,8 +1126,8 @@
       6
     ],
     "description": "Sellix is an ecommerce payment processor. It accepts PayPal, PerfectMoney and popular cryptocurrencies.",
-    "icon": "Sellix.svg",
     "dom": "link[href*='.sellix.io']",
+    "icon": "Sellix.svg",
     "pricing": [
       "low",
       "freemium",
@@ -1512,22 +1528,6 @@
       "ShellInABox": ""
     },
     "website": "http://shellinabox.com"
-  },
-  "SHE Media": {
-    "cats": [
-      36
-    ],
-    "description": "SHE Media is an ad network, which means that they basically serve as a coordinator between advertisers and publishers (bloggers).",
-    "icon": "SHE Media.png",
-    "js": {
-      "SheMedia": "",
-      "blogherads.adq": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.shemedia.com"
   },
   "Shiny": {
     "cats": [
@@ -2492,20 +2492,20 @@
     "cats": [
       1
     ],
+    "cookies": {
+      "SC_ANALYTICS_GLOBAL_COOKIE": "",
+      "SC_OS_SessionId": "",
+      "sc_expview": ""
+    },
     "description": "Sitecore provides web content management, and multichannel marketing automation software.",
     "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
     "icon": "Sitecore.svg",
-    "requires": "Microsoft ASP.NET",
-    "cookies": {
-      "SC_ANALYTICS_GLOBAL_COOKIE": "",
-      "sc_expview": "",
-      "SC_OS_SessionId": ""
-    },
     "pricing": [
       "poa",
       "recurring",
       "high"
     ],
+    "requires": "Microsoft ASP.NET",
     "saas": true,
     "website": "https://www.sitecore.com/"
   },
@@ -4201,7 +4201,10 @@
     "meta": {
       "generator": "storyblok"
     },
-    "pricing": ["recurring", "mid"],
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
     "saas": true,
     "website": "https://www.storyblok.com"
   },

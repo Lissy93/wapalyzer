@@ -143,20 +143,20 @@
       101
     ],
     "description": "BambooHR is an American technology company that provides human resources software as a service.",
-    "icon": "BambooHR.svg",
-    "dom":"a[href*='.bamboohr.com/'][target='_blank']",
+    "dom": "a[href*='.bamboohr.com/'][target='_blank']",
     "headers": {
       "Content-Security-Policy": "\\.bamboohr\\.com"
     },
+    "icon": "BambooHR.svg",
     "js": {
       "scrollToBambooHR": ""
     },
-    "scriptSrc": "\\.bamboohr\\.com/",
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.bamboohr\\.com/",
     "website": "https://www.bamboohr.com"
   },
   "Bambuser": {
@@ -178,14 +178,14 @@
       1,
       18
     ],
-    "description": "Banshee is a PHP website framework with a main focus on security. Banshee is protected against common attacks like SQL injection, cross-site scripting, cross-site request forgery and session hijacking.", 
+    "description": "Banshee is a PHP website framework with a main focus on security. Banshee is protected against common attacks like SQL injection, cross-site scripting, cross-site request forgery and session hijacking.",
+    "headers": {
+      "X-Powered-By": "Banshee PHP framework v([\\d\\.]+)\\;version:\\1"
+    },
     "icon": "Banshee.png",
     "implies": "PHP",
     "meta": {
       "generator": "Banshee PHP"
-    },
-    "headers": {
-      "X-Powered-By": "Banshee PHP framework v([\\d\\.]+)\\;version:\\1"
     },
     "website": "http://www.banshee-php.org"
   },
@@ -300,11 +300,11 @@
     "js": {
       "BentoAnalytics": ""
     },
-    "scriptSrc": "\\.getbento\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.getbento\\.com/",
     "website": "https://getbento.com"
   },
   "Beyable": {
@@ -464,15 +464,15 @@
     ],
     "description": "BiteSpeed is an all-in-one Shopify marketing app which helps ecommerce brands recover revenue.",
     "icon": "BiteSpeed.png",
-    "requires": "Shopify",
-    "scripts": "app\\.bitespeed\\.co/",
-    "scriptSrc": "cdn\\.bitespeed\\.co/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.bitespeed\\.co/",
+    "scripts": "app\\.bitespeed\\.co/",
     "website": "https://www.bitespeed.co"
   },
   "Bitrix24": {

@@ -559,14 +559,14 @@
       101
     ],
     "description": "Hireology is a staffing and hiring platform for the franchise and retail-automotive industries.",
-    "icon": "Hireology.png",
     "dom": "a[href*='sites.hireology.com/']",
-    "url": "sites\\.hireology\\.com/",
-    "saas": true,
+    "icon": "Hireology.png",
     "pricing": [
       "poa",
       "recurring"
     ],
+    "saas": true,
+    "url": "sites\\.hireology\\.com/",
     "website": "https://hireology.com"
   },
   "Histats": {
@@ -1163,12 +1163,14 @@
       6
     ],
     "description": "Hyvä themes is a frontend for Magento 2.",
+    "headers": {
+      "X-Built-With": "^Hyva Themes$"
+    },
     "icon": "Hyva.svg",
     "implies": "Magento",
     "pricing": [
       "onetime"
     ],
-    "headers": {"X-Built-With": "^Hyva Themes$" },
     "website": "https://hyva.io/"
   }
 }

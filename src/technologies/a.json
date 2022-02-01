@@ -1501,15 +1501,15 @@
     "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
     "dom": "#afterpay, .afterpay, .AfterpayMessage, [aria-label='Afterpay'], link[href*='/wp-content/plugins/afterpay-gateway-for-woocommerce/']",
     "icon": "afterpay.png",
-    "requiresCategory": 6,
     "js": {
       "Afterpay": "",
       "AfterpayAttractWidget": "",
-      "afterpay_product": "",
-      "checkout.enabledpayments.afterpay": "^true$",
+      "AfterpayGenericErrorHtml": "",
       "AfterpayWidgetHtml": "",
-      "AfterpayGenericErrorHtml": ""
+      "afterpay_product": "",
+      "checkout.enabledpayments.afterpay": "^true$"
     },
+    "requiresCategory": 6,
     "saas": true,
     "scriptSrc": [
       "portal\\.afterpay\\.com",
@@ -2922,17 +2922,17 @@
       95
     ],
     "description": "Arc XP is a cloud-based digital experience platform that helps enterprise companies, retail brands and media and entertainment organization create and distribute content, drive digital commerce, and deliver powerful experiences.",
+    "dom": "#pb-root",
     "icon": "Arc XP.svg",
-    "dom":"#pb-root",
     "js": {
       "Fusion.arcSite": ""
     },
-    "saas": true,
     "pricing": [
       "recurring",
       "poa",
       "high"
     ],
+    "saas": true,
     "website": "https://www.arcxp.com"
   },
   "ArcGIS API for JavaScript": {
@@ -3324,17 +3324,17 @@
       12
     ],
     "description": "Aurelia is an open-source UI JavaScript framework designed to create single page applications.",
+    "dom": "div[aurelia-app], body[aurelia-app], a[au-target-id]",
     "icon": "Aurelia.svg",
-    "dom":"div[aurelia-app], body[aurelia-app], a[au-target-id]",
     "js": {
       "_aureliaConfigureModuleLoader": "",
       "localAurelia": ""
     },
-    "scriptSrc": "/aurelia[\\d\\w\\-\\.]+\\.js",
     "oss": true,
     "pricing": [
       "freemium"
     ],
+    "scriptSrc": "/aurelia[\\d\\w\\-\\.]+\\.js",
     "website": "http://aurelia.io"
   },
   "Auryc": {
@@ -3427,10 +3427,10 @@
     ],
     "description": "Avangate (2Checkout) is a digital ecommerce platform for businesses that sell physical goods or digital products.",
     "icon": "Avangate.svg",
-    "implies": "Verifone",
+    "implies": "Verifone 2Checkout",
     "js": {
-      "__avng8_callbacks": "",
       "AvaCart.version": "(.+)\\;version:\\1",
+      "__avng8_callbacks": "",
       "avaSlugify": ""
     },
     "scriptSrc": "^https?://edge\\.avangate\\.net/",

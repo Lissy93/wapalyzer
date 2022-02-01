@@ -157,7 +157,6 @@
     ],
     "description": "Laybuy is a payment service that lets you receive your purchase now and spread the total cost over 6 weekly automatic payments interest free.",
     "dom": "iframe[src='.laybuy.com/'], a[href*='.laybuy.com/what-is-laybuy']",
-    "requiresCategory": 6,
     "icon": "LayBuy.svg",
     "js": {
       "LaybuyHelper": "",
@@ -168,6 +167,7 @@
     "pricing": [
       "payg"
     ],
+    "requiresCategory": 6,
     "saas": true,
     "scriptSrc": [
       "\\.laybuy\\.com/",
@@ -355,15 +355,15 @@
       101
     ],
     "description": "Lever is a software company headquartered in San Francisco, California and Toronto, Canada that provides an applicant tracking system for hiring.",
-    "icon": "Lever.svg",
     "dom": "a[href*='jobs.lever.co/']",
     "headers": {
       "Content-Security-Policy": "\\.lever\\.co"
     },
-    "saas": true,
+    "icon": "Lever.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.lever.co"
   },
   "Libravatar": {
@@ -1115,7 +1115,6 @@
     ],
     "description": "Loox is a reviews app for Shopify that helps you gather reviews and user-generated photos from your customers.",
     "icon": "Loox.svg",
-    "requires": "Shopify",
     "js": {
       "loox_global_hash": ""
     },
@@ -1123,6 +1122,7 @@
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "loox\\.io/widget",
     "website": "https://loox.app"

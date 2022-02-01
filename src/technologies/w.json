@@ -1008,13 +1008,13 @@
     ],
     "description": "WildJar is a call tracking and intelligence platform which helps you understand where your leads are coming from, who is calling you, what your conversations are about and connect that data into other platforms.",
     "icon": "WildJar.png",
-    "scriptSrc": "trkcall\\.com/scripts",
-    "saas": true,
     "pricing": [
       "freemium",
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "trkcall\\.com/scripts",
     "website": "https://www.wildjar.com"
   },
   "Windows CE": {
@@ -1513,16 +1513,16 @@
       101
     ],
     "description": "Workable is the all-in-one hiring solution.",
+    "dom": "a[href*='.workable.com/']",
     "icon": "Workable.svg",
-    "dom":"a[href*='.workable.com/']",
     "js": {
       "webpackChunk_workable_candidate": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.workable.com"
   },
   "Workarea": {
