@@ -540,7 +540,7 @@
     ],
     "description": "Marko is HTML re-imagined as a language for building dynamic and reactive user interfaces.",
     "icon": "Marko.svg",
-    "dom": "div#data-marko-key, html[data-framework='marko']",
+    "dom": "#data-marko-key, html[data-framework='marko']",
     "implies": "Node.js",
     "js": {
       "markoVars": "",
