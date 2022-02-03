@@ -67,6 +67,40 @@
     "scriptSrc": "b\\.yjtag\\.jp/iframe",
     "website": "https://tagmanager.yahoo.co.jp/"
   },
+  "Yampi Virtual store": {
+    "cats": [
+      6
+    ],
+    "description": "Yampi Virtual store is an ecommerce platform from Brazil.",
+    "icon": "Yampi.svg",
+    "implies": "Yampi Checkout",
+    "js": {
+      "Yampi.api_domain": "",
+      "Yampi.cart_token": ""
+    },
+    "scriptSrc": "cdn\\.yampi\\.io/",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "poa"
+    ],
+    "website": "https://www.yampi.com.br/loja-virtual"
+  },
+  "Yampi Checkout": {
+    "cats": [
+      41
+    ],
+    "description": "Yampi Checkout is an payment processor from Brazil.", 
+    "icon": "Yampi.svg",
+    "js": {
+      "yampiCheckoutUrl": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.yampi.com.br/checkout"
+  },
   "Yahoo! Web Analytics": {
     "cats": [
       10
