@@ -1559,16 +1559,16 @@
     "cats": [
       19
     ],
-    "description": "Popper is an tooltip and popover positioning engine.",
-    "html": [
-      "<script [^>]*src=\"[^\"]*/popper\\.js/([0-9.]+)\\;version:\\1"
-    ],
-    "icon": "Popper.png",
+    "description": "Popper is a positioning engine, its purpose is to calculate the position of an element to make it possible to position it near a given reference element.",
+    "icon": "Popper.svg",
     "js": {
+      "Popper.Defaults": "",
       "createPopper": ""
     },
-    "scriptSrc": [
-      "/popper\\.js/([0-9.]+)\\;version:\\1"
+    "scriptSrc": "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?\\;version:\\1",
+    "oss": true,
+    "pricing": [
+      "freemium"
     ],
     "website": "https://popper.js.org"
   },
