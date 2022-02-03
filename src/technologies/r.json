@@ -1577,12 +1577,9 @@
     "cats": [
       16
     ],
-    "html": [
-      "<div[^>]+id=\"recaptcha_image",
-      "<link[^>]+recaptcha",
-      "<div[^>]+class=\"g-recaptcha\""
-    ],
+    "description": "reCAPTCHA is a free service from Google that helps protect websites from spam and abuse.",
     "icon": "reCAPTCHA.svg",
+    "dom": "#recaptcha_image, iframe[src*='.google.com/recaptcha/'], div.g-recaptcha",
     "js": {
       "Recaptcha": "",
       "recaptcha": ""
@@ -1590,7 +1587,14 @@
     "scriptSrc": [
       "api-secure\\.recaptcha\\.net",
       "recaptcha_ajax\\.js",
-      "/recaptcha/api\\.js"
+      "/recaptcha/(?:api|enterprise)\\.js"
+    ],
+    "scripts": "/recaptcha/api\\.js",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "poa"
     ],
     "website": "https://www.google.com/recaptcha/"
   }
