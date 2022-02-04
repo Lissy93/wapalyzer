@@ -18,7 +18,7 @@
     ],
     "description": "UIDoc is a Node.js application used at build time to generate API documentation.",
     "html": "(?:<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf|<body[^>]+class=\"yui3-skin-sam)",
-    "icon": "yahoo.png",
+    "icon": "Yahoo.svg",
     "website": "http://developer.yahoo.com/yui/yuidoc"
   },
   "YaBB": {
@@ -31,18 +31,21 @@
   },
   "Yahoo Advertising": {
     "cats": [
-      36
+      36,
+      77
     ],
-    "html": [
-      "<iframe[^>]+adserver\\.yahoo\\.com",
-      "<img[^>]+clicks\\.beap\\.bc\\.yahoo\\.com"
-    ],
-    "icon": "yahoo.png",
+    "description": "Yahoo Advertising includes a comprehensive suite of web, mobile, and video ad products across native, audience, and premium display, which are accessible through a new buying platform.",
+    "icon": "Yahoo.svg",
+    "dom": "link[href*='bc.yahoo.com']",
     "js": {
-      "adxinserthtml": ""
+      "adxinserthtml": "",
+      "yahoo_retargeting_pv_id": "",
+      "yahoo_ydn_conv_transaction_id": "",
+      "yahoo_ydn_conv_label": "",
+      "yahooCvLoad": ""
     },
-    "scriptSrc": "adinterax\\.com",
-    "website": "http://advertising.yahoo.com"
+    "scriptSrc": "(?:adinterax|adserver\\.yahoo)\\.com",
+    "website": "https://www.adtech.yahooinc.com"
   },
   "Yahoo! Ecommerce": {
     "cats": [
@@ -52,7 +55,7 @@
       "X-XRDS-Location": "/ystore/"
     },
     "html": "<link[^>]+store\\.yahoo\\.net",
-    "icon": "yahoo.png",
+    "icon": "Yahoo.svg",
     "js": {
       "YStore": ""
     },
@@ -63,7 +66,7 @@
       42
     ],
     "html": "<!-- (?:End )?Yahoo! Tag Manager -->",
-    "icon": "yahoo.png",
+    "icon": "Yahoo.svg",
     "scriptSrc": "b\\.yjtag\\.jp/iframe",
     "website": "https://tagmanager.yahoo.co.jp/"
   },
@@ -71,7 +74,7 @@
     "cats": [
       10
     ],
-    "icon": "yahoo.png",
+    "icon": "Yahoo.svg",
     "js": {
       "YWA": ""
     },
