@@ -1232,6 +1232,22 @@
     "scriptSrc": "asset(?:cdn)?\\.freshop\\.com/",
     "website": "https://www.freshop.com"
   },
+  "Freshteam": {
+    "cats": [
+      101
+    ],
+    "description": "Freshteam is a cloud-based HR and applicant tracking solution offered by Freshworks.",
+    "icon": "Freshteam.svg",
+    "dom": "a[href*='.freshteam.com/jobs']",
+    "scriptSrc": "assets\\.freshteam\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],  
+    "website": "https://www.freshworks.com/hrms/"
+  },
   "Freshworks CRM": {
     "cats": [
       53,
