@@ -3527,25 +3527,18 @@
     "saas": true,
     "website": "https://www.splittypay.com"
   },
-  "Splunk": {
+  "Splunkd": {
     "cats": [
       19
     ],
-    "html": "<p class=\"footer\">&copy; [-\\d]+ Splunk Inc\\.(?: Splunk ([\\d\\.]+(?: build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1",
-    "icon": "Splunk.png",
-    "meta": {
-      "author": "Splunk Inc\\;confidence:50"
-    },
-    "website": "http://splunk.com"
-  },
-  "Splunkd": {
-    "cats": [
-      22
-    ],
+    "description": "Splunkd is the system process that handles indexing, searching, forwarding.",
     "headers": {
       "Server": "Splunkd"
     },
-    "icon": "Splunk.png",
+    "icon": "Splunk.svg",
+    "pricing": [
+      "poa"
+    ],
     "website": "http://splunk.com"
   },
   "SpotHopper": {
