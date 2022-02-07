@@ -2265,6 +2265,9 @@
       67
     ],
     "dom": {
+      "link[href*='/wp-content/plugins/cookie-law-info/']": {
+        "exists": ""
+      },
       "#cookie-law-info-bar": {
         "text": ""
       }
@@ -2275,7 +2278,8 @@
     },
     "scriptSrc": [
       "app\\.cookieyes\\.com/client_data/",
-      "cdn-cookieyes\\.com/client_data/"
+      "cdn-cookieyes\\.com/client_data/",
+      "/wp-content/plugins/cookie-law-info/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
     ],
     "website": "https://www.cookieyes.com/"
   },
