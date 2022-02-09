@@ -1149,7 +1149,8 @@
       86
     ],
     "cookies": {
-      "aam_uuid": ""
+      "aam_uuid": "",
+      "Demdex": ""
     },
     "description": "Adobe Audience Manager is a versatile audience data management platform.",
     "icon": "Adobe.svg",
@@ -1159,6 +1160,17 @@
     ],
     "saas": true,
     "website": "https://business.adobe.com/products/audience-manager/adobe-audience-manager.html"
+  },
+  "Adobe Client Data Layer": {
+    "cats": [
+      12
+    ],
+    "description": "Adobe Client Data Layer is a framework of JavaScript objects on your site that contains all variable values used in your implementation.",
+    "icon": "Adobe.svg",
+    "js": {
+      "adobeDataLayer.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "website": "https://github.com/adobe/adobe-client-data-layer"
   },
   "Adobe ColdFusion": {
     "cats": [
@@ -1851,10 +1863,13 @@
       29
     ],
     "description": "Algolia offers a hosted web search product delivering real-time results.",
+    "icon": "Algolia.svg",
     "headers": {
       "Content-Security-Policy": "\\.algolia"
     },
-    "icon": "Algolia.svg",
+    "cookies": {
+      "_ALGOLIA": ""
+    },
     "js": {
       "AlgoliaSearch": "",
       "__algolia": "",
@@ -2682,6 +2697,7 @@
     "cats": [
       59
     ],
+    "description": "Apollo is a fully-featured caching GraphQL client with integrations for React, Angular, and more.",
     "dom": "script#__APOLLO_STATE__",
     "icon": "Apollo.svg",
     "implies": [
@@ -2819,7 +2835,8 @@
       "ApplePay": "",
       "checkout.enabledpayments.applepay": "^true$",
       "dw.applepay": "",
-      "enableApplePay": ""
+      "enableApplePay": "",
+      "braintree.applePay": ""
     },
     "website": "https://www.apple.com/apple-pay"
   },
