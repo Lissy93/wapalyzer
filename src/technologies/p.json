@@ -2606,11 +2606,11 @@
     ],
     "description": "PWA Studio is a collection of tools that lets developers build complex Progressive Web Applications on top of Magento 2 or Adobe Commerce stores.",
     "icon": "PWA Studio.png",
-    "implies": [
-      "React",
-      "webpack"
-    ],
-    "html": "\\(var\\(--venia-",
+    "requires": "Magento",
+    "js": {
+      "fetchRootComponent": "\\;confidence:50",
+      "__fetchLocaleData__": "\\;confidence:50"
+    },
     "oss": true,
     "pricing": [
       "freemium"
