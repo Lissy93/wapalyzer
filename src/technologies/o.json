@@ -517,6 +517,25 @@
     "scriptSrc": "/opencart_custom\\.js",
     "website": "https://onshop.asia"
   },
+  "Oookla Speedtest Custom": {
+    "cats": [
+      5
+    ],
+    "description": "Speedtest Custom is a robust and accurate testing solution that is HTML5-based, Flash-free and supports both mobile and desktop browsers built by Ookla.",
+    "icon": "Oookla.svg",
+    "headers": {
+      "content-security-policy": "\\.speedtestcustom\\.com"
+    },
+    "dom":"iframe[src*='.speedtestcustom.com'], a[href*='.speedtestcustom.com']",
+    "scriptSrc": "\\.speedtestcustom\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.ookla.com/speedtest-custom"
+  },
   "Open AdStream": {
     "cats": [
       36
