@@ -1190,6 +1190,38 @@
       88
     ],
     "description": "Drupal Multisite enables separate, independent sites to be served from a single codebase.",
+    "dom": {
+      "img[src*='sites/default/']": {
+        "attributes": {
+          "src": "sites\\/default\\/.*\\/files'"
+        }
+      },
+      "img[src*='sites/all/']": {
+        "attributes": {
+          "src": "sites\\/all\\/.*\\/files'"
+        }
+      },
+      "img[data-src*='sites/default/']": {
+        "attributes": {
+          "data-src": "sites\\/default\\/.*\\/files'"
+        }
+      },
+      "img[data-src*='sites/all/']": {
+        "attributes": {
+          "data-src": "sites\\/all\\/.*\\/files'"
+        }
+      },
+      "link[href*='sites/default/']": {
+        "attributes": {
+          "href": "sites\\/default\\/.*\\/files'"
+        }
+      },
+      "link[href*='sites/all/']": {
+        "attributes": {
+          "href": "sites\\/all\\/.*\\/files'"
+        }
+      }
+    ],
     "icon": "Drupal.svg",
     "implies": "Drupal",
     "oss": true,
