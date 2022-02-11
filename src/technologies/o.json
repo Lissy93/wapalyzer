@@ -638,6 +638,26 @@
     "scriptSrc": "opencms",
     "website": "http://www.opencms.org"
   },
+  "OpenElement": {
+    "cats": [
+      1
+    ],
+    "description": "OpenElement is a free website building application with a WYSIWYG interface.",
+    "icon": "OpenElement.png",
+    "implies": "PHP",
+    "meta": {
+      "generator": "openElement\\s\\(([\\d\\.]+)\\)\\;version:\\1"
+    },
+    "js": {
+      "OEConfWEMenu": "",
+      "OE.GETools": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "http://openelement.uk"
+  },
   "OpenGSE": {
     "cats": [
       22
