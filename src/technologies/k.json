@@ -335,17 +335,17 @@
       36
     ],
     "description": "Kevel (formerly Adzerk) is a developer of ad-serving APIs to help developers build server-side ad platforms.",
-    "icon": "Kevel.svg",
     "dom": "iframe[src*='adzerk.net'], link[href*='adzerk.net']",
+    "icon": "Kevel.svg",
     "js": {
       "ados": "",
       "adosResults": ""
     },
-    "scriptSrc": "adzerk\\.net/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "adzerk\\.net/",
     "website": "https://www.kevel.com"
   },
   "KeyCDN": {
@@ -493,7 +493,6 @@
   "Klarna Checkout": {
     "cats": [
       41,
-      6,
       91
     ],
     "cookies": {
@@ -503,6 +502,9 @@
     "description": "Klarna Checkout is a complete payment solution where Klarna handles a store's entire checkout.",
     "dom": "[aria-labelledby='pi-klarna']",
     "icon": "Klarna.svg",
+    "headers": {
+      "content-security-policy": "\\.klarna(?:cdn|services)\\.(?:net|com)"
+    },
     "js": {
       "KlarnaOnsiteService": "",
       "_klarnaCheckout": ""

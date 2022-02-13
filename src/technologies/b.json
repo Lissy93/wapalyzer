@@ -13,21 +13,27 @@
     "cats": [
       12
     ],
+    "description": "BEM (Block, Element, Modifier) is a naming convention for classes in HTML and CSS what was developed by Yandex.",
     "html": "<[^>]+data-bem",
     "icon": "BEM.png",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "website": "http://en.bem.info"
   },
   "BIGACE": {
     "cats": [
       1
     ],
-    "html": "(?:Powered by <a href=\"[^>]+BIGACE|<!--\\s+Site is running BIGACE)",
+    "description": "Bigace is a free open-source content management developed in PHP and JavaScript that uses a MySQL or ADOdb environment.",
     "icon": "BIGACE.png",
     "implies": "PHP",
     "meta": {
       "generator": "BIGACE ([\\d.]+)\\;version:\\1"
     },
-    "website": "http://bigace.de"
+    "oss": true,
+    "website": "https://github.com/bigace"
   },
   "BOOM": {
     "cats": [
@@ -115,9 +121,43 @@
     "cats": [
       10
     ],
+    "description": "Baidu Analytics (百度统计) is a free tool for tracking and reporting traffic data of users visiting your site.",
     "icon": "Baidu Tongji.png",
-    "scriptSrc": "hm\\.baidu\\.com/hm\\.js",
+    "scriptSrc": "hm\\.baidu\\.com/hm?\\.js",
     "website": "https://tongji.baidu.com/"
+  },
+  "Baidu Maps": {
+    "cats": [
+      35
+    ],
+    "description": "Baidu Maps is a desktop and mobile web mapping service application and technology provided by Baidu, offering satellite imagery, street maps, street view and indoor view perspectives, as well as functions such as a route planner for traveling by foot, car, or with public transportation.",
+    "icon": "Baidu Maps.png",
+    "js": {
+      "BMAP_API_VERSION": "(.+)\\;version:\\1",
+      "bmap.version": "(.+)\\;version:\\1"
+    },
+    "website": "https://map.baidu.com"
+  },
+  "BambooHR": {
+    "cats": [
+      101
+    ],
+    "description": "BambooHR is an American technology company that provides human resources software as a service.",
+    "dom": "a[href*='.bamboohr.com/'][target='_blank']",
+    "headers": {
+      "Content-Security-Policy": "\\.bamboohr\\.com"
+    },
+    "icon": "BambooHR.svg",
+    "js": {
+      "scrollToBambooHR": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.bamboohr\\.com/",
+    "website": "https://www.bamboohr.com"
   },
   "Bambuser": {
     "cats": [
@@ -138,7 +178,10 @@
       1,
       18
     ],
-    "html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
+    "description": "Banshee is a PHP website framework with a main focus on security. Banshee is protected against common attacks like SQL injection, cross-site scripting, cross-site request forgery and session hijacking.",
+    "headers": {
+      "X-Powered-By": "Banshee PHP framework v([\\d\\.]+)\\;version:\\1"
+    },
     "icon": "Banshee.png",
     "implies": "PHP",
     "meta": {
@@ -249,14 +292,19 @@
   },
   "Bentobox": {
     "cats": [
-      1
+      1,
+      93
     ],
     "description": "Bentobox is a restaurant website platform that handles menus, reservations, gift cards and more.",
-    "html": "<!-- Powered by BentoBox",
     "icon": "Bentobox.svg",
     "js": {
       "BentoAnalytics": ""
     },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.getbento\\.com/",
     "website": "https://getbento.com"
   },
   "Beyable": {
@@ -325,17 +373,6 @@
     "scriptSrc": "(?:\\.|plugins/)?bigcommerce(?:\\.com)?/(?:assets)?",
     "url": "mybigcommerce\\.com",
     "website": "http://www.bigcommerce.com"
-  },
-  "BigDump": {
-    "cats": [
-      3
-    ],
-    "html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
-    "implies": [
-      "MySQL",
-      "PHP"
-    ],
-    "website": "http://www.ozerov.de/bigdump.php"
   },
   "Bigware": {
     "cats": [
@@ -408,6 +445,24 @@
     "dom": "[aria-labelledby='pi-bitcoin']",
     "icon": "Bitcoin.svg",
     "website": "https://en.wikipedia.org/wiki/Bitcoin"
+  },
+  "BiteSpeed": {
+    "cats": [
+      100,
+      98
+    ],
+    "description": "BiteSpeed is an all-in-one Shopify marketing app which helps ecommerce brands recover revenue.",
+    "icon": "BiteSpeed.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.bitespeed\\.co/",
+    "scripts": "app\\.bitespeed\\.co/",
+    "website": "https://www.bitespeed.co"
   },
   "Bitrix24": {
     "cats": [
@@ -516,15 +571,6 @@
     "icon": "Blesta.png",
     "website": "http://www.blesta.com"
   },
-  "Blip.tv": {
-    "cats": [
-      14
-    ],
-    "description": "Blip.tv is a media platform for web series content and also a dashboard for producers of original web series to distribute and monetise their productions.",
-    "html": "<(?:param|embed|iframe)[^>]+blip\\.tv/play",
-    "icon": "Blip.tv.png",
-    "website": "http://blip.tv"
-  },
   "Blitz": {
     "cats": [
       92
@@ -533,6 +579,13 @@
     "html": "<!-- Cached by Blitz on",
     "icon": "Blitz.svg",
     "implies": "Craft CMS",
+    "headers": {
+      "X-Powered-By": "^Blitz$"
+    },
+    "js": {
+      "Blitz": "",
+      "blitzReplace": ""
+    },
     "pricing": [
       "onetime",
       "low"
@@ -578,21 +631,19 @@
       1
     ],
     "html": "<[^>]+/binaries/(?:[^/]+/)*content/gallery/",
-    "icon": "Bloomreach.png",
+    "icon": "Bloomreach.svg",
     "website": "https://developers.bloomreach.com"
   },
   "Bloomreach Search & Merchandising": {
     "cats": [
       29,
-      10,
-      32,
       74
     ],
     "description": "Bloomreach Search & Merchandising (brSM) is an AI-driven platform for ecommerce.",
-    "icon": "Bloomreach.png",
+    "icon": "Bloomreach.svg",
     "js": {
-      "BrTrk": "",
-      "br_data": ""
+      "BrTrk.scriptVersion": "([\\d\\.]+)\\;version:\\1",
+      "br_data.acct_id": ""
     },
     "pricing": [
       "high",
@@ -600,10 +651,10 @@
     ],
     "saas": true,
     "scriptSrc": [
-      "cdns\\.brsrvr\\.com/v([\\d.]+)\\;version:\\1",
-      "cdn\\.brcdn\\.com/v([\\d.]+)\\;version:\\1"
+      "\\.brsrvr\\.com/",
+      "\\.brcdn\\.com/"
     ],
-    "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
+    "website": "https://www.bloomreach.com/en/products/discovery"
   },
   "Blossom Travel": {
     "cats": [
@@ -807,19 +858,6 @@
     "saas": true,
     "website": "https://www.bokun.io"
   },
-  "Bol.com": {
-    "cats": [
-      99
-    ],
-    "description": "Bol.com is a webshop in the Netherlands and offers general merchandising products.",
-    "icon": "Bol.com.svg",
-    "requiresCategory": 6,
-    "text": [
-      "\\b(?<!-)BOL\\b",
-      "\\bbol\\.com\\b"
-    ],
-    "website": "https://www.bol.com"
-  },
   "Bold Chat": {
     "cats": [
       52
@@ -1008,16 +1046,16 @@
     ],
     "description": "Boost Commerce provides beautiful and advanced product filter and smart site search for Shopify stores to boost sales.",
     "icon": "Boost Commerce.png",
-    "requires": "Shopify",
     "js": {
       "bcSfFilterConfig.api.filterUrl": "services\\.mybcapps\\.com/",
       "boostPFSAppConfig.api.filterUrl": "services\\.mybcapps\\.com/"
     },
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
     "website": "https://boostcommerce.net"
   },
   "Bootstrap": {
@@ -1368,12 +1406,31 @@
     "description": "Brightcove is a cloud-based online video platform.",
     "dom": "iframe[src*='players.brightcove.'], link[href*='players.brightcove.']",
     "icon": "Brightcove.png",
+    "scripts": "players\\.brightcove\\.net/",
     "pricing": [
       "mid",
       "recurring"
     ],
     "saas": true,
     "website": "https://www.brightcove.com"
+  },
+  "BrightEdge": {
+    "cats": [
+      54
+    ],
+    "description": "BrightEdge is an SEO solution and content performance marketing platform.",
+    "icon": "BrightEdge.png",
+    "js": {
+      "_bright3.VERSION": "([\\d\\.]+)\\;version:\\1",
+      "be_sdk_options": "",
+      "BEJSSDK.CLIENT_VERSION": "([\\d\\.]+)\\;version:\\1"
+    },
+    "scriptSrc": "\\.brightedge\\.com/",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.brightedge.com"
   },
   "Brightspot": {
     "cats": [

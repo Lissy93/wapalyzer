@@ -1,4 +1,21 @@
 {
+  "VAPTCHA": {
+    "cats": [
+      16
+    ],
+    "description": "VAPTCHA is the abbreviation of (Variation Analysis based Public Turing Test to Tell Computers and Humans Apart), also known as gesture verification code, is a human-machine verification solution based on artificial intelligence and big data.",
+    "icon": "VAPTCHA.svg",
+    "js": {
+      "vaptcha": ""
+    },
+    "pricing": [
+      "poa",
+      "freemium"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.vaptcha\\.com/v([\\d\\.]+)\\.js\\;version:\\1",
+    "website": "https://en.vaptcha.com"
+  },
   "VDX.tv": {
     "cats": [
       36
@@ -159,23 +176,6 @@
     "implies": "PHP",
     "website": "http://vanillaforums.org"
   },
-  "VAPTCHA": {
-    "cats": [
-      16
-    ],
-    "description": "VAPTCHA is the abbreviation of (Variation Analysis based Public Turing Test to Tell Computers and Humans Apart), also known as gesture verification code, is a human-machine verification solution based on artificial intelligence and big data.",
-    "icon": "VAPTCHA.svg",
-    "js": {
-      "vaptcha": ""
-    },
-    "scriptSrc": "\\.vaptcha\\.com/v([\\d\\.]+)\\.js\\;version:\\1",
-    "saas": true,
-    "pricing": [
-      "poa",
-      "freemium"
-    ],
-    "website": "https://en.vaptcha.com"
-  },
   "Varbase": {
     "cats": [
       1
@@ -256,6 +256,27 @@
     "icon": "vercel.svg",
     "website": "https://vercel.com"
   },
+  "Verifone 2Checkout": {
+    "cats": [
+      41
+    ],
+    "description": "Verifone is an American multinational corporation headquartered in Coral Springs, Florida, that provides technology for electronic payment transactions and value-added services at the point-of-sale.",
+    "dom": {
+      "#order__processedby": {
+        "text": "2Checkout"
+      },
+      "link[href*='.2checkout.com']": {
+        "exists": ""
+      }
+    },
+    "icon": "Verifone.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scripts": "2checkout\\.com",
+    "website": "https://www.2checkout.com"
+  },
   "VerifyPass": {
     "cats": [
       5,
@@ -334,8 +355,12 @@
       14
     ],
     "description": "Video.js is a JavaScript and CSS library that makes it easier to work with and build on HTML5 video.",
-    "html": "<div[^>]+class=\"video-js+\">",
     "icon": "VideoJS.svg",
+    "dom": "div.video-js",
+    "css": [
+      "\\.video-js\\;confidence:25",
+      "\\.vjs-big-play-button\\;confidence:75"
+    ],
     "js": {
       "VideoJS": "",
       "videojs": "",

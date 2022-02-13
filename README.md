@@ -2,10 +2,10 @@
 [![wappalyzer NPM](https://img.shields.io/badge/npm-wappalyzer-blue)](https://www.npmjs.com/package/wappalyzer)
 [![wappalyzer-core NPM](https://img.shields.io/badge/npm-wappalyzer--core-blue)](https://www.npmjs.com/package/wappalyzer-core)
 [![Github Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/AliasIO)](https://github.com/sponsors/AliasIO)
- 
+
 <a href="https://www.wappalyzer.com/?utm_source=readme&utm_medium=github&utm_campaign=wappalyzer"><img src="https://www.wappalyzer.com/images/logo/icon_192.png" height="72" alt="Wappalyzer" align="left" /></a>
 
-# Wappalyzer 
+# Wappalyzer
 
 <br>
 
@@ -38,14 +38,14 @@ node src/drivers/npm/cli.js https://example.com
 
 ### Chrome extension
 
-* Go go `about:extensions`
+* Go to `about:extensions`
 * Enable 'Developer mode'
 * Click 'Load unpacked'
 * Select `src/drivers/webextension`
 
 ### Firefox extension
 
-* Go go `about:debugging#/runtime/this-firefox`
+* Go to `about:debugging#/runtime/this-firefox`
 * Click 'Load Temporary Add-on'
 * Select `src/drivers/webextension/manifest.json`
 
@@ -247,7 +247,7 @@ Plus any of:
       <td>String | Array</td>
       <td>
         The presence of one application can imply the presence of
-        another, e.g. WordpPress means PHP is also in use.
+        another, e.g. WordPress means PHP is also in use.
       </td>
       <td><code>"PHP"</code></td>
     </tr>
@@ -255,10 +255,10 @@ Plus any of:
       <td><code>requires</code></td>
       <td>String | Array</td>
       <td>
-        Similar to implies but detection only runs if the required technology has been identified. Useful for themes for a specific CMS. 
+        Similar to implies but detection only runs if the required technology has been identified. Useful for themes for a specific CMS.
       </td>
       <td><code>"WordPress"</code></td>
-    </tr>   
+    </tr>
     <tr>
       <td><code>requiresCategory</code></td>
       <td>String | Array</td>
@@ -266,7 +266,7 @@ Plus any of:
         Similar to requires; detection only runs if a technology in the required category has been identified.
       </td>
       <td><code>"Ecommerce"</code></td>
-    </tr>   
+    </tr>
     <tr>
       <td><code>excludes</code></td>
       <td>String | Array</td>
@@ -387,7 +387,7 @@ Plus any of:
     </tr>
     <tr>
       <td><code>xhr</code></td>
-      <td>String</td>
+      <td>String | Array</td>
       <td>Hostnames of XHR requests.</td>
       <td><code>"cdn\\.netlify\\.com"</code></td>
     </tr>

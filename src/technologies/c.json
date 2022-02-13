@@ -394,29 +394,31 @@
   },
   "CareCart": {
     "cats": [
-      98
+      98,
+      100
     ],
     "description": "CareCart is a smart app to recover big value carts on all sizes of shopify stores.",
     "icon": "CareCart.png",
-    "implies": "Shopify",
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "app\\.carecart\\.io/api/abandoned-cart/",
     "website": "https://carecart.io/abandoned-cart-recovery-app"
   },
   "CareCart Sales Pop Up": {
     "cats": [
+      100,
       5
     ],
     "description": "CareCart Sales Pop Up is a stock countdown timer, recent sales notifications, live sales pop up widget.",
     "icon": "CareCart.png",
-    "implies": "Shopify",
     "pricing": [
       "freemium"
     ],
+    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "sales-pop\\.carecart\\.io/",
     "website": "https://carecart.io/sales-pop-up-app"
@@ -606,6 +608,21 @@
       "PHP"
     ],
     "website": "https://centminmod.com"
+  },
+  "Chakra UI": {
+    "cats": [
+      66
+    ],
+    "description": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+    "icon": "Chakra UI.svg",
+    "implies": "React",
+    "dom": "html[style*='chakra-ui-color-mode']",
+    "scriptSrc": "\\.chakra-ui\\.",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://chakra-ui.com"
   },
   "Chamilo": {
     "cats": [
@@ -2248,6 +2265,9 @@
       67
     ],
     "dom": {
+      "link[href*='/wp-content/plugins/cookie-law-info/']": {
+        "exists": ""
+      },
       "#cookie-law-info-bar": {
         "text": ""
       }
@@ -2258,7 +2278,8 @@
     },
     "scriptSrc": [
       "app\\.cookieyes\\.com/client_data/",
-      "cdn-cookieyes\\.com/client_data/"
+      "cdn-cookieyes\\.com/client_data/",
+      "/wp-content/plugins/cookie-law-info/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
     ],
     "website": "https://www.cookieyes.com/"
   },
@@ -2998,5 +3019,20 @@
     },
     "oss": true,
     "website": "https://github.com/zloirock/core-js"
+  },
+  "Chabokan": {
+    "cats": [
+      62
+    ],
+    "description": "Chabokan is a cloud services provider, offering a wide range of incorporated cloud services including Cloud Object Storage, DBaaS, BaaS, and PaaS.",
+    "headers": {
+      "ch-powered-by": "Chabokan\\s\\(chabokan\\.net\\)"
+    },
+    "pricing": [
+      "low",
+      "payg"
+    ],
+    "icon": "Chabokan.svg",
+    "website": "https://chabokan.net"
   }
 }

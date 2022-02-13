@@ -331,6 +331,11 @@
     ],
     "description": "Wagtail is a Django content management system (CMS) focused on flexibility and user experience.",
     "dom": {
+      "[data-block-key]": {
+        "attributes": {
+          "data-block-key": "[a-z0-9]{5}"
+        }
+      },
       "[style*='images/']": {
         "attributes": {
           "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
@@ -597,24 +602,6 @@
       "generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
     },
     "website": "http://websitex5.com"
-  },
-  "WebToffee GDPR Cookie Consent": {
-    "cats": [
-      87,
-      67
-    ],
-    "description": "WebToffee GDPR Cookie Consent is a cookie consent and compliance notice WordPress plugin which will assist you in making your website GDPR (RGPD, DSVGO) compliant.",
-    "dom": "link[href*='/wp-content/plugins/cookie-law-info/']",
-    "icon": "WebToffee.svg",
-    "implies": "CookieYes",
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/cookie-law-info/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "website": "https://www.webtoffee.com/product/gdpr-cookie-consent/"
   },
   "Webflow": {
     "cats": [
@@ -996,6 +983,21 @@
       "generator": "WikkaWiki"
     },
     "website": "http://wikkawiki.org"
+  },
+  "WildJar": {
+    "cats": [
+      10
+    ],
+    "description": "WildJar is a call tracking and intelligence platform which helps you understand where your leads are coming from, who is calling you, what your conversations are about and connect that data into other platforms.",
+    "icon": "WildJar.png",
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "trkcall\\.com/scripts",
+    "website": "https://www.wildjar.com"
   },
   "Windows CE": {
     "cats": [
@@ -1488,6 +1490,23 @@
     "scriptSrc": "/wp-content/plugins/wordfence/.+login\\.\\d+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.wordfence.com"
   },
+  "Workable": {
+    "cats": [
+      101
+    ],
+    "description": "Workable is the all-in-one hiring solution.",
+    "dom": "a[href*='.workable.com/']",
+    "icon": "Workable.svg",
+    "js": {
+      "webpackChunk_workable_candidate": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.workable.com"
+  },
   "Workarea": {
     "cats": [
       6
@@ -1535,6 +1554,21 @@
     "icon": "worldshopping.png",
     "scriptSrc": "checkout-api\\.worldshopping\\.jp/(v\\d+)?\\;version:\\1",
     "website": "https://www.worldshopping.global/"
+  },
+  "Worldz": {
+    "cats": [
+      5,
+      76
+    ],
+    "description": "Worldz calculates the economic value of a user’s social popularity (qualitatively and quantitatively). In proportion to this value, it provides a personalised discount, which can be applied in exchange for a social sharing by the user on their Instagram or Facebook profile.",
+    "icon": "Worldz.png",
+    "scriptSrc": "\\.worldztool\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.worldz-business.net"
   },
   "Wufoo": {
     "cats": [
