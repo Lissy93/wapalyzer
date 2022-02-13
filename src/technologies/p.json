@@ -1,4 +1,22 @@
 {
+  "PCRecruiter": {
+    "cats": [
+      101
+    ],
+    "description": "PCRecruiter is an ATS/CRM hybrid SaaS solution for recruiting and sourcing professionals.",
+    "icon": "PCRecruiter.png",
+    "js": {
+      "pcrbaseurl": "\\.pcrecruiter\\.net/",
+      "pcrdialog": "",
+      "pcrframeoptions": ""
+    },
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "saas": true,
+    "website": "https://www.pcrecruiter.net"
+  },
   "PDF.js": {
     "cats": [
       19
@@ -377,6 +395,42 @@
     "scriptSrc": "partial\\.ly",
     "website": "https://partial.ly/"
   },
+  "Partnerize": {
+    "cats": [
+      71
+    ],
+    "description": "Partnerize is the only partnership management solution for marketers seeking high quality, scalable subsidies to primary channels.",
+    "dom": "a[href*='prf.hn/click'], img[src*='.prf.hn/']",
+    "icon": "Partnerize.png",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://prf.hn"
+  },
+  "Parttrap ONE": {
+    "cats": [
+      6
+    ],
+    "description": "Parttrap ONE is a complete solution including PIM, CMS, business optimization and ERP integration.",
+    "icon": "Parttrap.png",
+    "implies": [
+      "Handlebars",
+      "Microsoft ASP.NET",
+      "Bootstrap"
+    ],
+    "js": {
+      "PT.Analytics.addItem": "",
+      "PT.Sections.Checkout": "",
+      "PT.Translation.BasketIsEmpty": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "requires": "Microsoft ASP.NET",
+    "saas": true,
+    "website": "https://www.parttrap.com"
+  },
   "Partytown": {
     "cats": [
       92
@@ -441,7 +495,7 @@
       91
     ],
     "description": "Pay It Later collect payments in weekly instalments from you when you make a purchase online, so you can buy now and pay it later.",
-    "dom": "a[href='.payitlater.com.au'][target='_blank'], img[src*='PayItLater'][alt='PayItLater']",
+    "dom": "a[href*='.payitlater.com.au'][target='_blank'], img[src*='PayItLater'][alt='PayItLater']",
     "icon": "Pay It Later.png",
     "js": {
       "payitlater": ""
@@ -510,6 +564,9 @@
     ],
     "cpe": "cpe:/a:paypal:paypal",
     "description": "PayPal is an online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.",
+    "headers": {
+      "content-security-policy": "\\.paypal\\.com"
+    },
     "dom": {
       "button": {
         "text": "PayPal"
@@ -525,7 +582,8 @@
       "checkout.enabledpayments.paypal": "^true$",
       "enablePaypal": "",
       "paypalClientId": "",
-      "paypalJs": ""
+      "paypalJs": "",
+      "paypal": ""
     },
     "meta": {
       "id": "in-context-paypal-metadata"
@@ -593,6 +651,21 @@
     "saas": true,
     "scriptSrc": "payl8r\\.com",
     "website": "https://payl8r.com/"
+  },
+  "Paylocity": {
+    "cats": [
+      101
+    ],
+    "description": "Paylocity is an American company which provides cloud-based payroll and human capital management software.",
+    "dom": "a[href*='recruiting\\.paylocity\\.com/recruiting/jobs/']",
+    "icon": "Paylocity.svg",
+    "pricing": [
+      "low",
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.paylocity.com"
   },
   "Peek": {
     "cats": [
@@ -702,6 +775,20 @@
     },
     "website": "http://percussion.com"
   },
+  "Perfex CRM": {
+    "cats": [
+      53
+    ],
+    "description": "Perfex CRM is self hosted customer relationship management software that is a great fit for almost any company, freelancer or many other uses.",
+    "icon": "Perfex CRM.png",
+    "scriptSrc": "/assets/themes/perfex/js/global\\.min\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "onetime",
+      "low"
+    ],
+    "website": "https://www.perfexcrm.com"
+  },
   "PerimeterX": {
     "cats": [
       16
@@ -786,6 +873,21 @@
     "saas": true,
     "scriptSrc": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
     "website": "https://www.personaclick.com"
+  },
+  "Personio": {
+    "cats": [
+      101
+    ],
+    "description": "Personio is the all-in-one HR software for small- and medium-sized companies with 10 to 2000 employees.",
+    "dom": "a[href*='.jobs.personio.']",
+    "icon": "Personio.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.cdn\\.personio\\.",
+    "website": "https://www.personio.com"
   },
   "Perzonalization": {
     "cats": [
@@ -1475,16 +1577,16 @@
     "cats": [
       19
     ],
-    "description": "Popper is an tooltip and popover positioning engine.",
-    "html": [
-      "<script [^>]*src=\"[^\"]*/popper\\.js/([0-9.]+)\\;version:\\1"
-    ],
-    "icon": "Popper.png",
+    "description": "Popper is a positioning engine, its purpose is to calculate the position of an element to make it possible to position it near a given reference element.",
+    "icon": "Popper.svg",
     "js": {
+      "Popper.Defaults": "",
       "createPopper": ""
     },
-    "scriptSrc": [
-      "/popper\\.js/([0-9.]+)\\;version:\\1"
+    "scriptSrc": "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?\\;version:\\1",
+    "oss": true,
+    "pricing": [
+      "freemium"
     ],
     "website": "https://popper.js.org"
   },
@@ -2497,5 +2599,22 @@
       "PUNBB": ""
     },
     "website": "http://punbb.informer.com"
+  },
+  "PWA Studio": {
+    "cats": [
+      6
+    ],
+    "description": "PWA Studio is a collection of tools that lets developers build complex Progressive Web Applications on top of Magento 2 or Adobe Commerce stores.",
+    "icon": "PWA Studio.png",
+    "requires": "Magento",
+    "js": {
+      "fetchRootComponent": "\\;confidence:50",
+      "__fetchLocaleData__": "\\;confidence:50"
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://github.com/magento/pwa-studio"
   }
 }

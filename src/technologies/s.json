@@ -111,6 +111,22 @@
     ],
     "website": "https://www.seur.com"
   },
+  "SHE Media": {
+    "cats": [
+      36
+    ],
+    "description": "SHE Media is an ad network, which means that they basically serve as a coordinator between advertisers and publishers (bloggers).",
+    "icon": "SHE Media.png",
+    "js": {
+      "SheMedia": "",
+      "blogherads.adq": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.shemedia.com"
+  },
   "SIMsite": {
     "cats": [
       1
@@ -1110,6 +1126,7 @@
       6
     ],
     "description": "Sellix is an ecommerce payment processor. It accepts PayPal, PerfectMoney and popular cryptocurrencies.",
+    "dom": "link[href*='.sellix.io']",
     "icon": "Sellix.svg",
     "pricing": [
       "low",
@@ -2477,14 +2494,18 @@
     ],
     "cookies": {
       "SC_ANALYTICS_GLOBAL_COOKIE": "",
+      "SC_OS_SessionId": "",
       "sc_expview": ""
     },
     "description": "Sitecore provides web content management, and multichannel marketing automation software.",
     "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
-    "icon": "Sitecore.png",
+    "icon": "Sitecore.svg",
     "pricing": [
-      "poa"
+      "poa",
+      "recurring",
+      "high"
     ],
+    "requires": "Microsoft ASP.NET",
     "saas": true,
     "website": "https://www.sitecore.com/"
   },
@@ -2780,6 +2801,21 @@
     "saas": true,
     "scriptSrc": "\\.smartling\\.com/",
     "website": "https://www.smartling.com"
+  },
+  "SmartRecruiters": {
+    "cats": [
+      101
+    ],
+    "description": "SmartRecruiters is a web-based talent acquisition platform.",
+    "icon": "SmartRecruiters.png",
+    "dom": "a[href*='careers.smartrecruiters.com/']",
+    "scriptSrc": "\\.smartrecruiters\\.com/",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.smartrecruiters.com"
   },
   "Smartstore": {
     "cats": [
@@ -3293,6 +3329,7 @@
     "js": {
       "SC.Widget.Events.PLAY": ""
     },
+    "scriptSrc": "\\.sndcdn\\.com/",
     "pricing": [
       "freemium",
       "low",
@@ -3506,25 +3543,18 @@
     "saas": true,
     "website": "https://www.splittypay.com"
   },
-  "Splunk": {
+  "Splunkd": {
     "cats": [
       19
     ],
-    "html": "<p class=\"footer\">&copy; [-\\d]+ Splunk Inc\\.(?: Splunk ([\\d\\.]+(?: build [\\d\\.]*\\d)?))?[^<]*</p>\\;version:\\1",
-    "icon": "Splunk.png",
-    "meta": {
-      "author": "Splunk Inc\\;confidence:50"
-    },
-    "website": "http://splunk.com"
-  },
-  "Splunkd": {
-    "cats": [
-      22
-    ],
+    "description": "Splunkd is the system process that handles indexing, searching, forwarding.",
     "headers": {
       "Server": "Splunkd"
     },
-    "icon": "Splunk.png",
+    "icon": "Splunk.svg",
+    "pricing": [
+      "poa"
+    ],
     "website": "http://splunk.com"
   },
   "SpotHopper": {
@@ -4110,14 +4140,6 @@
     "oss": true,
     "website": "https://stitches.dev"
   },
-  "Store Systems": {
-    "cats": [
-      6
-    ],
-    "html": "Shopsystem von <a href=[^>]+store-systems\\.de\"",
-    "icon": "Store Systems.png",
-    "website": "http://store-systems.de"
-  },
   "StoreHippo": {
     "cats": [
       6
@@ -4175,10 +4197,16 @@
     "cats": [
       1
     ],
-    "icon": "storyblok.png",
+    "description": "Storyblok is a headless CMS with a visual editor for developers, marketers and content editors. Storyblok helps your team to manage content and digital experiences for every use-case from corporate websites, ecommerce, helpdesks, mobile apps, screen displays, and more.",
+    "icon": "Storyblok.svg",
     "meta": {
       "generator": "storyblok"
     },
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "saas": true,
     "website": "https://www.storyblok.com"
   },
   "Strapdown.js": {
@@ -4418,8 +4446,7 @@
     "icon": "SummerCart.svg",
     "implies": "PHP",
     "js": {
-      "SC": "\\;confidence:10",
-      "SCEvents": "\\;confidence:40"
+      "SCEvents": ""
     },
     "pricing": [
       "mid",

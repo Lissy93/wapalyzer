@@ -30,6 +30,22 @@
     "saas": true,
     "website": "https://ma-jin.jp"
   },
+  "MDUI": {
+    "cats": [
+      66
+    ],
+    "description": "MDUI is a CSS Framework based on material design.",
+    "icon": "MDUI.png",
+    "js": {
+      "_mduiEventId": "",
+      "mdui.Drawer": ""
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://www.mdui.org"
+  },
   "MGID": {
     "cats": [
       36
@@ -444,6 +460,27 @@
     "scriptSrc": "\\.marchex\\.io/",
     "website": "https://www.marchex.com"
   },
+  "Marfeel": {
+    "cats": [
+      10,
+      36
+    ],
+    "description": "Marfeel is a publisher platform that allows publishers to create, optimise and monetise their mobile websites.",
+    "icon": "Marfeel.svg",
+    "js": {
+      "marfeel": ""
+    },
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "\\.marfeel\\.com/",
+      "\\.mrf\\.io/"
+    ],
+    "website": "https://www.marfeel.com"
+  },
   "MariaDB": {
     "cats": [
       34
@@ -516,6 +553,27 @@
       "v([\\d.]+)/js/marketo-alt-form\\.min\\.js\\;version:\\1"
     ],
     "website": "https://www.marketo.com"
+  },
+  "Marko": {
+    "cats": [
+      18,
+      66
+    ],
+    "description": "Marko is HTML re-imagined as a language for building dynamic and reactive user interfaces.",
+    "icon": "Marko.svg",
+    "dom": "#data-marko-key, html[data-framework='marko']",
+    "implies": "Node.js",
+    "js": {
+      "markoVars": "",
+      "markoSections": "",
+      "markoComponent": ""
+    },
+    "scripts": "\\.marko(\\.js)?",
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://markojs.com"
   },
   "Mastercard": {
     "cats": [
@@ -709,22 +767,6 @@
       "Mxm.Tracker": ""
     },
     "website": "https://maxemail.xtremepush.com"
-  },
-  "MDUI": {
-    "cats": [
-      66
-    ],
-    "description": "MDUI is a CSS Framework based on material design.",
-    "icon": "MDUI.png",
-    "js": {
-      "mdui.Drawer": "",
-      "_mduiEventId": ""
-    },
-    "oss": true,
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://www.mdui.org"
   },
   "Medallia": {
     "cats": [

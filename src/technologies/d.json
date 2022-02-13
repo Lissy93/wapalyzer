@@ -1190,6 +1190,38 @@
       88
     ],
     "description": "Drupal Multisite enables separate, independent sites to be served from a single codebase.",
+    "dom": {
+      "img[src*='sites/default/']": {
+        "attributes": {
+          "src": "sites\\/default\\/.*\\/files'"
+        }
+      },
+      "img[src*='sites/all/']": {
+        "attributes": {
+          "src": "sites\\/all\\/.*\\/files'"
+        }
+      },
+      "img[data-src*='sites/default/']": {
+        "attributes": {
+          "data-src": "sites\\/default\\/.*\\/files'"
+        }
+      },
+      "img[data-src*='sites/all/']": {
+        "attributes": {
+          "data-src": "sites\\/all\\/.*\\/files'"
+        }
+      },
+      "link[href*='sites/default/']": {
+        "attributes": {
+          "href": "sites\\/default\\/.*\\/files'"
+        }
+      },
+      "link[href*='sites/all/']": {
+        "attributes": {
+          "href": "sites\\/all\\/.*\\/files'"
+        }
+      }
+    },
     "icon": "Drupal.svg",
     "implies": "Drupal",
     "oss": true,
@@ -1284,16 +1316,38 @@
   },
   "Dynatrace": {
     "cats": [
-      10
+      10,
+      92
     ],
+    "description": "Dynatrace is a technology company that produces a software intelligence platform based on artificial intelligence to monitor and optimise application performance and development, IT infrastructure, and user experience for businesses and government agencies throughout the world.",
+    "icon": "Dynatrace.svg",
     "cookies": {
       "dtCookie1": ""
     },
-    "icon": "Dynatrace.png",
     "js": {
       "dtrum": ""
     },
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "low"
+    ],
     "website": "https://www.dynatrace.com"
+  },
+  "Dynatrace RUM": {
+    "cats": [
+      78
+    ],
+    "description": "Dynatrace RUM is a AI powered, full stack, automated real user monutoring platform built by Dynatrace.",
+    "icon": "Dynatrace.svg",
+    "implies": "Dynatrace",
+    "scriptSrc": "/ruxitagentjs_(?:.+)_(?:.+)\\.js",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "website": "https://www.dynatrace.com/platform/real-user-monitoring"
   },
   "db-ip": {
     "cats": [

@@ -280,6 +280,7 @@ class Driver {
       noScripts: false,
       userAgent:
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+      extended: false,
       ...options,
     }
 
@@ -293,6 +294,7 @@ class Driver {
     this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10)
     this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10)
     this.options.noScripts = Boolean(+this.options.noScripts)
+    this.options.extended = Boolean(+this.options.extended)
 
     this.destroyed = false
   }
@@ -990,6 +992,34 @@ class Site {
       this.error(error)
     }
 
+    const patterns = this.options.extended
+      ? this.detections.reduce(
+          (
+            patterns,
+            {
+              technology: { name, implies, excludes },
+              pattern: { regex, value, match, confidence, type, version },
+            }
+          ) => {
+            patterns[name] = patterns[name] || []
+
+            patterns[name].push({
+              type,
+              regex: regex.source,
+              value: value.length <= 250 ? value : null,
+              match: match.length <= 250 ? match : null,
+              confidence,
+              version,
+              implies: implies.map(({ name }) => name),
+              excludes: excludes.map(({ name }) => name),
+            })
+
+            return patterns
+          },
+          {}
+        )
+      : undefined
+
     const results = {
       urls: this.analyzedUrls,
       technologies: resolve(this.detections).map(
@@ -1017,6 +1047,7 @@ class Site {
           })),
         })
       ),
+      patterns,
     }
 
     await this.emit('analyze', results)
