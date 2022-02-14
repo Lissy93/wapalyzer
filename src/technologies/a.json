@@ -3873,5 +3873,18 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
+  },
+  "Australia Post": {
+    "cats": [
+      99
+    ],
+    "description": "Australia Post is the government business enterprise that provides postal services in Australia.",
+    "icon": "AusPost.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bAusPost\\b",
+      "\\bAustralia Post\\b"
+    ],
+    "website": "https://auspost.com.au"
   }
 }
