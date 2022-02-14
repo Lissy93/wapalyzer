@@ -289,10 +289,6 @@
       "STVID": "\\;confidence:50"
     },
     "description": "ElasticSuite is a merchandising suite for Magento and OroCommerce.",
-    "html": [
-      "<input [^>]*Smile_Elasticsuite[^>]*>",
-      "<[\\S\\s.*]*Smile_Elasticsuite[\\S\\s.*]*>"
-    ],
     "icon": "ElasticSuite.svg",
     "implies": [
       "PHP",
@@ -309,7 +305,7 @@
       "OroCommerce",
       "Magento"
     ],
-    "scriptSrc": "Smile_ElasticsuiteTracker/js/tracking\\.js",
+    "scriptSrc": "/Smile_ElasticsuiteTracker/",
     "website": "https://elasticsuite.io"
   },
   "Elasticsearch": {
