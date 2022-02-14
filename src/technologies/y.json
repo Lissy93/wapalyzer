@@ -391,6 +391,30 @@
     "scriptSrc": "cdn\\.yottaa\\.\\w+/",
     "website": "https://www.yottaa.com"
   },
+  "YouCan": {
+    "cats": [
+      6
+    ],
+    "description": "YouCan is an integrated platform specialised in ecommerce, offering a wide range of services needed by merchants and entrepreneurs.",
+    "icon": "YouCan.svg",
+    "implies": [
+      "PHP",
+      "MySQL",
+      "Redis",
+      "Laravel"
+    ],
+    "headers": {
+      "x-powered-by": "Youcan\\.Private\\.DC/"
+    },
+    "js": {
+      "YCPay": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://youcan.shop"
+  },
   "YouTrack": {
     "cats": [
       13
