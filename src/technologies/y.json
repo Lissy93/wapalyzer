@@ -35,14 +35,14 @@
       77
     ],
     "description": "Yahoo Advertising includes a comprehensive suite of web, mobile, and video ad products across native, audience, and premium display, which are accessible through a new buying platform.",
-    "icon": "Yahoo.svg",
     "dom": "link[href*='bc.yahoo.com']",
+    "icon": "Yahoo.svg",
     "js": {
       "adxinserthtml": "",
+      "yahooCvLoad": "",
       "yahoo_retargeting_pv_id": "",
-      "yahoo_ydn_conv_transaction_id": "",
       "yahoo_ydn_conv_label": "",
-      "yahooCvLoad": ""
+      "yahoo_ydn_conv_transaction_id": ""
     },
     "scriptSrc": "(?:adinterax|adserver\\.yahoo)\\.com",
     "website": "https://www.adtech.yahooinc.com"
@@ -70,6 +70,32 @@
     "scriptSrc": "b\\.yjtag\\.jp/iframe",
     "website": "https://tagmanager.yahoo.co.jp/"
   },
+  "Yahoo! Web Analytics": {
+    "cats": [
+      10
+    ],
+    "icon": "Yahoo.svg",
+    "js": {
+      "YWA": ""
+    },
+    "scriptSrc": "d\\.yimg\\.com/mi/ywa\\.js",
+    "website": "http://web.analytics.yahoo.com"
+  },
+  "Yampi Checkout": {
+    "cats": [
+      41
+    ],
+    "description": "Yampi Checkout is an payment processor from Brazil.",
+    "icon": "Yampi.svg",
+    "js": {
+      "yampiCheckoutUrl": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.yampi.com.br/checkout"
+  },
   "Yampi Virtual store": {
     "cats": [
       6
@@ -81,39 +107,13 @@
       "Yampi.api_domain": "",
       "Yampi.cart_token": ""
     },
-    "scriptSrc": "cdn\\.yampi\\.io/",
-    "saas": true,
     "pricing": [
       "recurring",
       "poa"
     ],
-    "website": "https://www.yampi.com.br/loja-virtual"
-  },
-  "Yampi Checkout": {
-    "cats": [
-      41
-    ],
-    "description": "Yampi Checkout is an payment processor from Brazil.", 
-    "icon": "Yampi.svg",
-    "js": {
-      "yampiCheckoutUrl": ""
-    },
     "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.yampi.com.br/checkout"
-  },
-  "Yahoo! Web Analytics": {
-    "cats": [
-      10
-    ],
-    "icon": "Yahoo.svg",
-    "js": {
-      "YWA": ""
-    },
-    "scriptSrc": "d\\.yimg\\.com/mi/ywa\\.js",
-    "website": "http://web.analytics.yahoo.com"
+    "scriptSrc": "cdn\\.yampi\\.io/",
+    "website": "https://www.yampi.com.br/loja-virtual"
   },
   "Yandex.Cloud": {
     "cats": [
@@ -396,6 +396,9 @@
       6
     ],
     "description": "YouCan is an integrated platform specialised in ecommerce, offering a wide range of services needed by merchants and entrepreneurs.",
+    "headers": {
+      "x-powered-by": "Youcan\\.Private\\.DC/"
+    },
     "icon": "YouCan.svg",
     "implies": [
       "PHP",
@@ -403,16 +406,13 @@
       "Redis",
       "Laravel"
     ],
-    "headers": {
-      "x-powered-by": "Youcan\\.Private\\.DC/"
-    },
     "js": {
       "YCPay": ""
     },
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://youcan.shop"
   },
   "YouTrack": {

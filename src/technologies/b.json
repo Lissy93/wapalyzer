@@ -576,12 +576,12 @@
       92
     ],
     "description": "Blitz provides intelligent static page caching for creating lightning-fast sites with Craft CMS.",
-    "html": "<!-- Cached by Blitz on",
-    "icon": "Blitz.svg",
-    "implies": "Craft CMS",
     "headers": {
       "X-Powered-By": "^Blitz$"
     },
+    "html": "<!-- Cached by Blitz on",
+    "icon": "Blitz.svg",
+    "implies": "Craft CMS",
     "js": {
       "Blitz": "",
       "blitzReplace": ""
@@ -1379,6 +1379,24 @@
     "saas": true,
     "website": "https://home.breinify.ai"
   },
+  "BrightEdge": {
+    "cats": [
+      54
+    ],
+    "description": "BrightEdge is an SEO solution and content performance marketing platform.",
+    "icon": "BrightEdge.png",
+    "js": {
+      "BEJSSDK.CLIENT_VERSION": "([\\d\\.]+)\\;version:\\1",
+      "_bright3.VERSION": "([\\d\\.]+)\\;version:\\1",
+      "be_sdk_options": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.brightedge\\.com/",
+    "website": "https://www.brightedge.com"
+  },
   "BrightInfo": {
     "cats": [
       32,
@@ -1406,31 +1424,13 @@
     "description": "Brightcove is a cloud-based online video platform.",
     "dom": "iframe[src*='players.brightcove.'], link[href*='players.brightcove.']",
     "icon": "Brightcove.png",
-    "scripts": "players\\.brightcove\\.net/",
     "pricing": [
       "mid",
       "recurring"
     ],
     "saas": true,
+    "scripts": "players\\.brightcove\\.net/",
     "website": "https://www.brightcove.com"
-  },
-  "BrightEdge": {
-    "cats": [
-      54
-    ],
-    "description": "BrightEdge is an SEO solution and content performance marketing platform.",
-    "icon": "BrightEdge.png",
-    "js": {
-      "_bright3.VERSION": "([\\d\\.]+)\\;version:\\1",
-      "be_sdk_options": "",
-      "BEJSSDK.CLIENT_VERSION": "([\\d\\.]+)\\;version:\\1"
-    },
-    "scriptSrc": "\\.brightedge\\.com/",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.brightedge.com"
   },
   "Brightspot": {
     "cats": [

@@ -206,6 +206,22 @@
     "website": "https://www.taboola.com",
     "xhr": "\\.taboola\\.com"
   },
+  "TagPro": {
+    "cats": [
+      42
+    ],
+    "description": "TagPro is software that updates and allows you to manage tags within websites, identifying various types of variables to optimise loads for advertising.",
+    "icon": "TagPro.png",
+    "js": {
+      "initAdproTags": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "tagpro\\.adpromedia\\.net/",
+    "website": "https://tagpro.adpromedia.net"
+  },
   "Tagboard": {
     "cats": [
       96
@@ -242,22 +258,6 @@
     ],
     "url": "\\.taggbox\\.com",
     "website": "https://taggbox.com/"
-  },
-  "TagPro": {
-    "cats": [
-      42
-    ],
-    "description": "TagPro is software that updates and allows you to manage tags within websites, identifying various types of variables to optimise loads for advertising.",
-    "icon": "TagPro.png",
-    "js": {
-      "initAdproTags": ""
-    },
-    "scriptSrc": "tagpro\\.adpromedia\\.net/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://tagpro.adpromedia.net"
   },
   "Taiga": {
     "cats": [
@@ -1516,18 +1516,6 @@
     },
     "website": "http://titan360.com"
   },
-  "toastr": {
-    "description": "toastr is a Javascript library for non-blocking notifications. The goal is to create a simple core library that can be customized and extended.",
-    "cats": [
-      12
-    ],
-    "icon": "toastr.png",
-    "js": {
-      "toastr.version": "(.*)\\;version:\\1"
-    },
-    "oss": true,
-    "website": "https://github.com/CodeSeven/toastr"
-  },
   "TomTom Maps": {
     "cats": [
       35
@@ -2503,6 +2491,18 @@
     },
     "icon": "thttpd.png",
     "website": "https://acme.com/software/thttpd"
+  },
+  "toastr": {
+    "cats": [
+      12
+    ],
+    "description": "toastr is a Javascript library for non-blocking notifications. The goal is to create a simple core library that can be customized and extended.",
+    "icon": "toastr.png",
+    "js": {
+      "toastr.version": "(.*)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://github.com/CodeSeven/toastr"
   },
   "total.js": {
     "cats": [

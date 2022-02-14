@@ -2756,6 +2756,21 @@
     "scriptSrc": "/wp-content/plugins/smart-slider-3(?:-pro)?/",
     "website": "https://smartslider3.com"
   },
+  "SmartRecruiters": {
+    "cats": [
+      101
+    ],
+    "description": "SmartRecruiters is a web-based talent acquisition platform.",
+    "dom": "a[href*='careers.smartrecruiters.com/']",
+    "icon": "SmartRecruiters.png",
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.smartrecruiters\\.com/",
+    "website": "https://www.smartrecruiters.com"
+  },
   "SmartSite": {
     "cats": [
       1
@@ -2801,21 +2816,6 @@
     "saas": true,
     "scriptSrc": "\\.smartling\\.com/",
     "website": "https://www.smartling.com"
-  },
-  "SmartRecruiters": {
-    "cats": [
-      101
-    ],
-    "description": "SmartRecruiters is a web-based talent acquisition platform.",
-    "icon": "SmartRecruiters.png",
-    "dom": "a[href*='careers.smartrecruiters.com/']",
-    "scriptSrc": "\\.smartrecruiters\\.com/",
-    "saas": true,
-    "pricing": [
-      "recurring",
-      "payg"
-    ],
-    "website": "https://www.smartrecruiters.com"
   },
   "Smartstore": {
     "cats": [
@@ -3329,13 +3329,13 @@
     "js": {
       "SC.Widget.Events.PLAY": ""
     },
-    "scriptSrc": "\\.sndcdn\\.com/",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
     "saas": true,
+    "scriptSrc": "\\.sndcdn\\.com/",
     "website": "https://developers.soundcloud.com/docs/api/html5-widget"
   },
   "SoundManager": {
@@ -4563,17 +4563,21 @@
     ],
     "description": "SvelteKit is the official Svelte framework for building web applications with a flexible filesystem-based routing.",
     "dom": {
+      "#svelte-announcer": {
+        "exists": ""
+      },
       "a": {
         "attributes": {
           "sveltekit:prefetch": ""
         }
-      },
-      "#svelte-announcer": {
-        "exists": ""
       }
     },
-    "implied":["Svelte","Node.js","Vite"],
     "icon": "Svelte.svg",
+    "implies": [
+      "Svelte",
+      "Node.js",
+      "Vite"
+    ],
     "oss": true,
     "website": "https://kit.svelte.dev"
   },

@@ -522,18 +522,18 @@
       5
     ],
     "description": "Speedtest Custom is a robust and accurate testing solution that is HTML5-based, Flash-free and supports both mobile and desktop browsers built by Ookla.",
-    "icon": "Ookla.svg",
+    "dom": "iframe[src*='.speedtestcustom.com'], a[href*='.speedtestcustom.com']",
     "headers": {
       "content-security-policy": "\\.speedtestcustom\\.com"
     },
-    "dom":"iframe[src*='.speedtestcustom.com'], a[href*='.speedtestcustom.com']",
-    "scriptSrc": "\\.speedtestcustom\\.com/",
-    "saas": true,
+    "icon": "Ookla.svg",
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.speedtestcustom\\.com/",
     "website": "https://www.ookla.com/speedtest-custom"
   },
   "Open AdStream": {
@@ -645,12 +645,12 @@
     "description": "OpenElement is a free website building application with a WYSIWYG interface.",
     "icon": "OpenElement.png",
     "implies": "PHP",
+    "js": {
+      "OE.GETools": "",
+      "OEConfWEMenu": ""
+    },
     "meta": {
       "generator": "openElement\\s\\(([\\d\\.]+)\\)\\;version:\\1"
-    },
-    "js": {
-      "OEConfWEMenu": "",
-      "OE.GETools": ""
     },
     "oss": true,
     "pricing": [

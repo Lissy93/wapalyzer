@@ -609,19 +609,34 @@
     ],
     "website": "https://centminmod.com"
   },
+  "Chabokan": {
+    "cats": [
+      62
+    ],
+    "description": "Chabokan is a cloud services provider, offering a wide range of incorporated cloud services including Cloud Object Storage, DBaaS, BaaS, and PaaS.",
+    "headers": {
+      "ch-powered-by": "Chabokan\\s\\(chabokan\\.net\\)"
+    },
+    "icon": "Chabokan.svg",
+    "pricing": [
+      "low",
+      "payg"
+    ],
+    "website": "https://chabokan.net"
+  },
   "Chakra UI": {
     "cats": [
       66
     ],
     "description": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+    "dom": "html[style*='chakra-ui-color-mode']",
     "icon": "Chakra UI.svg",
     "implies": "React",
-    "dom": "html[style*='chakra-ui-color-mode']",
-    "scriptSrc": "\\.chakra-ui\\.",
     "oss": true,
     "pricing": [
       "freemium"
     ],
+    "scriptSrc": "\\.chakra-ui\\.",
     "website": "https://chakra-ui.com"
   },
   "Chamilo": {
@@ -2265,11 +2280,11 @@
       67
     ],
     "dom": {
-      "link[href*='/wp-content/plugins/cookie-law-info/']": {
-        "exists": ""
-      },
       "#cookie-law-info-bar": {
         "text": ""
+      },
+      "link[href*='/wp-content/plugins/cookie-law-info/']": {
+        "exists": ""
       }
     },
     "icon": "cookieyes.svg",
@@ -3019,20 +3034,5 @@
     },
     "oss": true,
     "website": "https://github.com/zloirock/core-js"
-  },
-  "Chabokan": {
-    "cats": [
-      62
-    ],
-    "description": "Chabokan is a cloud services provider, offering a wide range of incorporated cloud services including Cloud Object Storage, DBaaS, BaaS, and PaaS.",
-    "headers": {
-      "ch-powered-by": "Chabokan\\s\\(chabokan\\.net\\)"
-    },
-    "pricing": [
-      "low",
-      "payg"
-    ],
-    "icon": "Chabokan.svg",
-    "website": "https://chabokan.net"
   }
 }

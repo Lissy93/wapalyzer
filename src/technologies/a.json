@@ -1042,14 +1042,14 @@
     "js": {
       "admiral": ""
     },
-    "scripts": "admiral(?:-engaged|:enabled)",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring",
       "payg"
     ],
+    "saas": true,
+    "scripts": "admiral(?:-engaged|:enabled)",
     "website": "https://www.getadmiral.com"
   },
   "Admitad": {
@@ -1149,8 +1149,8 @@
       86
     ],
     "cookies": {
-      "aam_uuid": "",
-      "Demdex": ""
+      "Demdex": "",
+      "aam_uuid": ""
     },
     "description": "Adobe Audience Manager is a versatile audience data management platform.",
     "icon": "Adobe.svg",
@@ -1862,14 +1862,14 @@
     "cats": [
       29
     ],
-    "description": "Algolia offers a hosted web search product delivering real-time results.",
-    "icon": "Algolia.svg",
-    "headers": {
-      "Content-Security-Policy": "\\.algolia"
-    },
     "cookies": {
       "_ALGOLIA": ""
     },
+    "description": "Algolia offers a hosted web search product delivering real-time results.",
+    "headers": {
+      "Content-Security-Policy": "\\.algolia"
+    },
+    "icon": "Algolia.svg",
     "js": {
       "AlgoliaSearch": "",
       "__algolia": "",
@@ -2528,16 +2528,16 @@
       25
     ],
     "description": "AntV G2 is a highly interactive data-driven visualisation grammar for statistical charts.",
-    "icon": "AntV.svg",
     "dom": "div.g2-tooltip",
+    "icon": "AntV.svg",
     "js": {
-      "G2.VERSION": "([\\d\\.]+)\\;version:\\1",
-      "G2.Chart": ""
+      "G2.Chart": "",
+      "G2.VERSION": "([\\d\\.]+)\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
     "website": "https://g2plot.antv.vision"
   },
   "AntV G6": {
@@ -2547,13 +2547,13 @@
     "description": "AntV G6 is a graph visualisation framework in JavaScript.",
     "icon": "AntV.svg",
     "js": {
-      "g6.version": "([\\d\\.]+)\\;version:\\1",
-      "g6.Graph": ""
+      "g6.Graph": "",
+      "g6.version": "([\\d\\.]+)\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
     "website": "https://g6.antv.vision"
   },
   "AnyClip": {
@@ -2833,10 +2833,10 @@
     "icon": "Apple.svg",
     "js": {
       "ApplePay": "",
+      "braintree.applePay": "",
       "checkout.enabledpayments.applepay": "^true$",
       "dw.applepay": "",
-      "enableApplePay": "",
-      "braintree.applePay": ""
+      "enableApplePay": ""
     },
     "website": "https://www.apple.com/apple-pay"
   },
@@ -2868,14 +2868,14 @@
       101
     ],
     "description": "ApplicantStack is a full-service applicant tracking system that automates and streamlines all stages of the hiring process.",
+    "dom": "a[href*='.applicantstack.com/']",
     "icon": "ApplicantStack.png",
-    "dom":"a[href*='.applicantstack.com/']",
-    "scriptSrc": "\\.applicantstack\\.com/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.applicantstack\\.com/",
     "website": "https://www.applicantstack.com"
   },
   "Appointy": {

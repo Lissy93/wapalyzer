@@ -354,13 +354,13 @@
     "cats": [
       14
     ],
-    "description": "Video.js is a JavaScript and CSS library that makes it easier to work with and build on HTML5 video.",
-    "icon": "VideoJS.svg",
-    "dom": "div.video-js",
     "css": [
       "\\.video-js\\;confidence:25",
       "\\.vjs-big-play-button\\;confidence:75"
     ],
+    "description": "Video.js is a JavaScript and CSS library that makes it easier to work with and build on HTML5 video.",
+    "dom": "div.video-js",
+    "icon": "VideoJS.svg",
     "js": {
       "VideoJS": "",
       "videojs": "",
@@ -534,6 +534,14 @@
     ],
     "saas": true,
     "website": "https://www.visualsoft.co.uk/"
+  },
+  "Vite": {
+    "cats": [
+      19
+    ],
+    "description": "Next Generation Frontend Tooling",
+    "icon": "vite.svg",
+    "website": "https://vitejs.dev/"
   },
   "Vizury": {
     "cats": [
@@ -726,13 +734,5 @@
       "generator": "vibecommerce"
     },
     "website": "http://vibecommerce.com.br"
-  },
-  "Vite":{
-    "cats": [
-      19
-    ],
-    "description":"Next Generation Frontend Tooling",
-    "icon":"vite.svg",
-    "website":"https://vitejs.dev/"
   }
 }

@@ -1354,22 +1354,6 @@
     },
     "website": "http://www.rockrms.com"
   },
-  "Rokt": {
-    "cats": [
-      76
-    ],
-    "description": "Rokt is an ecommerce marketing technology that gives customers a personalised and relevant experience while buying online.",
-    "icon": "Rokt.svg",
-    "headers": {
-      "Content-Security-Policy": "\\.rokt\\.com"
-    },
-    "scriptSrc": "\\.rokt\\.com/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.rokt.com"
-  },
   "Rockerbox": {
     "cats": [
       32
@@ -1402,6 +1386,22 @@
     ],
     "saas": true,
     "website": "https://rocket.chat"
+  },
+  "Rokt": {
+    "cats": [
+      76
+    ],
+    "description": "Rokt is an ecommerce marketing technology that gives customers a personalised and relevant experience while buying online.",
+    "headers": {
+      "Content-Security-Policy": "\\.rokt\\.com"
+    },
+    "icon": "Rokt.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.rokt\\.com/",
+    "website": "https://www.rokt.com"
   },
   "Rollbar": {
     "cats": [
@@ -1594,24 +1594,24 @@
       16
     ],
     "description": "reCAPTCHA is a free service from Google that helps protect websites from spam and abuse.",
-    "icon": "reCAPTCHA.svg",
     "dom": "#recaptcha_image, iframe[src*='.google.com/recaptcha/'], div.g-recaptcha",
+    "icon": "reCAPTCHA.svg",
     "js": {
       "Recaptcha": "",
       "recaptcha": ""
     },
+    "pricing": [
+      "freemium",
+      "payg",
+      "poa"
+    ],
+    "saas": true,
     "scriptSrc": [
       "api-secure\\.recaptcha\\.net",
       "recaptcha_ajax\\.js",
       "/recaptcha/(?:api|enterprise)\\.js"
     ],
     "scripts": "/recaptcha/api\\.js",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "payg",
-      "poa"
-    ],
     "website": "https://www.google.com/recaptcha/"
   }
 }

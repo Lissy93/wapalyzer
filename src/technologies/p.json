@@ -131,6 +131,23 @@
     "scriptSrc": "www\\.powr\\.io/powr\\.js",
     "website": "https://www.powr.io"
   },
+  "PWA Studio": {
+    "cats": [
+      6
+    ],
+    "description": "PWA Studio is a collection of tools that lets developers build complex Progressive Web Applications on top of Magento 2 or Adobe Commerce stores.",
+    "icon": "PWA Studio.png",
+    "js": {
+      "__fetchLocaleData__": "\\;confidence:50",
+      "fetchRootComponent": "\\;confidence:50"
+    },
+    "oss": true,
+    "pricing": [
+      "freemium"
+    ],
+    "requires": "Magento",
+    "website": "https://github.com/magento/pwa-studio"
+  },
   "Pace": {
     "cats": [
       41,
@@ -564,9 +581,6 @@
     ],
     "cpe": "cpe:/a:paypal:paypal",
     "description": "PayPal is an online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.",
-    "headers": {
-      "content-security-policy": "\\.paypal\\.com"
-    },
     "dom": {
       "button": {
         "text": "PayPal"
@@ -575,15 +589,18 @@
         "exists": ""
       }
     },
+    "headers": {
+      "content-security-policy": "\\.paypal\\.com"
+    },
     "icon": "PayPal.svg",
     "js": {
       "PAYPAL": "",
       "__paypal_global__": "",
       "checkout.enabledpayments.paypal": "^true$",
       "enablePaypal": "",
+      "paypal": "",
       "paypalClientId": "",
-      "paypalJs": "",
-      "paypal": ""
+      "paypalJs": ""
     },
     "meta": {
       "id": "in-context-paypal-metadata"
@@ -781,12 +798,12 @@
     ],
     "description": "Perfex CRM is self hosted customer relationship management software that is a great fit for almost any company, freelancer or many other uses.",
     "icon": "Perfex CRM.png",
-    "scriptSrc": "/assets/themes/perfex/js/global\\.min\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "saas": true,
     "pricing": [
       "onetime",
       "low"
     ],
+    "saas": true,
+    "scriptSrc": "/assets/themes/perfex/js/global\\.min\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.perfexcrm.com"
   },
   "PerimeterX": {
@@ -1583,11 +1600,11 @@
       "Popper.Defaults": "",
       "createPopper": ""
     },
-    "scriptSrc": "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?\\;version:\\1",
     "oss": true,
     "pricing": [
       "freemium"
     ],
+    "scriptSrc": "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?\\;version:\\1",
     "website": "https://popper.js.org"
   },
   "PopularFX": {
@@ -2599,22 +2616,5 @@
       "PUNBB": ""
     },
     "website": "http://punbb.informer.com"
-  },
-  "PWA Studio": {
-    "cats": [
-      6
-    ],
-    "description": "PWA Studio is a collection of tools that lets developers build complex Progressive Web Applications on top of Magento 2 or Adobe Commerce stores.",
-    "icon": "PWA Studio.png",
-    "requires": "Magento",
-    "js": {
-      "fetchRootComponent": "\\;confidence:50",
-      "__fetchLocaleData__": "\\;confidence:50"
-    },
-    "oss": true,
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://github.com/magento/pwa-studio"
   }
 }
