@@ -864,6 +864,23 @@
     ],
     "website": "https://fontawesome.com/"
   },
+  "FoodBooking": {
+    "cats": [
+      93
+    ],
+    "description": "FoodBooking is a virtual food court based on a curated list of restaurants that use the GloriaFood ordering system.",
+    "icon": "FoodBooking.png",
+    "implies": "GloriaFood",
+    "dom": "a[href*='.foodbooking.com/ordering/restaurant/'][target='_blank']",
+    "saas": true,
+    "scriptSrc": "\\.(?:fbgcdn|foodbooking)\\.com/",
+    "pricing": [
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://www.foodbooking.com"
+  },
   "FooPlugins FooGallery": {
     "cats": [
       87,
