@@ -1194,7 +1194,7 @@
     "implies": "Drupal",
     "oss": true,
     "scriptSrc": [
-      "sites\\/(?!.*(default|all))\\/files"
+      "/sites/(?!.*(default|all)).*/(?:files|themes|modules)/"
     ],
     "website": "https://www.drupal.org/docs/multisite-drupal"
   },
