@@ -1073,15 +1073,24 @@
   },
   "Google Cloud": {
     "cats": [
-      31
+      63
     ],
     "cpe": "cpe:/a:google:cloud_platform",
     "description": "Google Cloud is a suite of cloud computing services.",
+    "icon": "google_cloud.svg",
+    "website": "https://cloud.google.com"
+  },
+  "Google Cloud CDN": {
+    "cats": [
+      31
+    ],
+    "description": "Cloud CDN uses Google's global edge network to serve content closer to users.",
     "headers": {
       "Via": "^1\\.1 google$"
     },
-    "icon": "google_cloud.svg",
-    "website": "https://cloud.google.com"
+    "icon": "google-cloud-cdn.svg",
+    "implies": "Google Cloud",
+    "website": "https://cloud.google.com/cdn"
   },
   "Google Cloud Storage": {
     "cats": [
@@ -1094,6 +1103,18 @@
     "icon": "google-cloud-storage.svg",
     "implies": "Google Cloud",
     "website": "https://cloud.google.com/storage"
+  },
+  "Google Cloud Trace": {
+    "cats": [
+      92
+    ],
+    "description": "Google Cloud Trace is a distributed tracing system that collects latency data from applications and displays it in the Google Cloud Console.",
+    "headers": {
+      "x-cloud-trace-context": ""
+    },
+    "icon": "google-cloud-trace.svg",
+    "implies": "Google Cloud",
+    "website": "https://cloud.google.com/trace"
   },
   "Google Code Prettify": {
     "cats": [
