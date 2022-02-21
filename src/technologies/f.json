@@ -1396,6 +1396,21 @@
     "scriptSrc": "frosmo\\.easy\\.js",
     "website": "https://frosmo.com"
   },
+  "fullPage.js": {
+    "cats": [
+      59
+    ],
+    "description": "fullPage.js a jQuery and vanilla JavaScript plugin for fullscreen scrolling websites.",
+    "icon": "fullPage.js.png",
+    "implies": "jQuery",
+    "dom":"link[href*='fullPage.css']\\;confidence:10",
+    "js": {
+      "fullpage_api.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "scriptSrc": "/fullPage\\.js(?:/([\\d\\.]+)/)?\\;version:\\1",
+    "website": "https://github.com/alvarotrigo/fullpage.js"
+  },
   "FullStory": {
     "cats": [
       10
