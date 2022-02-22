@@ -708,6 +708,34 @@
     "icon": "Glyphicons.png",
     "website": "http://glyphicons.com"
   },
+  "Gnuboard": {
+    "cats": [
+      1
+    ],
+    "description": "Gnuboard is an open-source bulletin board system or CMS from South Korea.",
+    "icon": "default.svg",
+    "implies": "PHP",
+    "dom": {
+      "a[href*='board.php']": {
+        "attributes": {
+          "href": "(?:gnuboard/)?bbs/(?:gnu)?board\\.php"
+        }
+      },
+      "link[href*='/gnuboard/style.css']": {
+        "attributes": {
+          "href": ""
+        }
+      }
+    },
+    "js": {
+      "g5_js_ver": "",
+      "g4_bbs_img": "",
+      "g5_is_admin": "",
+      "g4_is_admin": ""
+    },
+    "oss": true,
+    "website": "https://github.com/gnuboard"
+  },
   "Go": {
     "cats": [
       27
