@@ -714,7 +714,10 @@
     ],
     "description": "Gnuboard is an open-source bulletin board system or CMS from South Korea.",
     "icon": "default.svg",
-    "implies": "PHP",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
     "dom": {
       "a[href*='board.php']": {
         "attributes": {
