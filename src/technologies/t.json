@@ -63,6 +63,25 @@
     ],
     "website": "https://truendo.com"
   },
+  "Trumba": {
+    "cats": [
+      72
+    ],
+    "description": "Trumba offers web-hosted event calendar software for publishing online, interactive, calendars of events.",
+    "icon": "Trumba.png",
+    "dom": "a[href*='www.trumba.com/calendars/']",
+    "js": {
+      "$Trumba.version": "([\\d\\.]+)\\;version:\\1",
+      "$Trumba": "",
+      "Trumba": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.trumba.com"
+  },
   "TVSquared": {
     "cats": [
       36
