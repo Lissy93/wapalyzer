@@ -1574,6 +1574,7 @@
       }
     },
     "icon": "Shop Pay.svg",
+    "requires": "Shopify",
     "js": {
       "ShopifyPay.apiHost": ""
     },
@@ -1588,6 +1589,7 @@
     ],
     "description": "Shop Pay Installments allows customers to pay for orders between 50 USD and 3,000 USD in 4 interest-free installments.",
     "icon": "Shop Pay.svg",
+    "requires": "Shopify",
     "implies": [
       "Affirm",
       "Shop Pay"
