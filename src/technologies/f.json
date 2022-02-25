@@ -864,23 +864,6 @@
     ],
     "website": "https://fontawesome.com/"
   },
-  "FoodBooking": {
-    "cats": [
-      93
-    ],
-    "description": "FoodBooking is a virtual food court based on a curated list of restaurants that use the GloriaFood ordering system.",
-    "icon": "FoodBooking.png",
-    "implies": "GloriaFood",
-    "dom": "a[href*='.foodbooking.com/ordering/restaurant/'][target='_blank']",
-    "saas": true,
-    "scriptSrc": "\\.(?:fbgcdn|foodbooking)\\.com/",
-    "pricing": [
-      "low",
-      "recurring",
-      "onetime"
-    ],
-    "website": "https://www.foodbooking.com"
-  },
   "FooPlugins FooGallery": {
     "cats": [
       87,
@@ -905,6 +888,23 @@
     ],
     "requires": "WordPress",
     "website": "https://fooplugins.com/foogallery-wordpress-gallery-plugin"
+  },
+  "FoodBooking": {
+    "cats": [
+      93
+    ],
+    "description": "FoodBooking is a virtual food court based on a curated list of restaurants that use the GloriaFood ordering system.",
+    "dom": "a[href*='.foodbooking.com/ordering/restaurant/'][target='_blank']",
+    "icon": "FoodBooking.png",
+    "implies": "GloriaFood",
+    "pricing": [
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.(?:fbgcdn|foodbooking)\\.com/",
+    "website": "https://www.foodbooking.com"
   },
   "Fork Awesome": {
     "cats": [
@@ -1396,21 +1396,6 @@
     "scriptSrc": "frosmo\\.easy\\.js",
     "website": "https://frosmo.com"
   },
-  "fullPage.js": {
-    "cats": [
-      59
-    ],
-    "description": "fullPage.js a jQuery and vanilla JavaScript plugin for fullscreen scrolling websites.",
-    "icon": "fullPage.js.png",
-    "implies": "jQuery",
-    "dom":"link[href*='fullPage.css']\\;confidence:10",
-    "js": {
-      "fullpage_api.version": "([\\d\\.]+)\\;version:\\1"
-    },
-    "oss": true,
-    "scriptSrc": "/fullPage\\.js(?:/([\\d\\.]+)/)?\\;version:\\1",
-    "website": "https://github.com/alvarotrigo/fullpage.js"
-  },
   "FullStory": {
     "cats": [
       10
@@ -1482,5 +1467,20 @@
     ],
     "saas": true,
     "website": "https://platform.fynd.com"
+  },
+  "fullPage.js": {
+    "cats": [
+      59
+    ],
+    "description": "fullPage.js a jQuery and vanilla JavaScript plugin for fullscreen scrolling websites.",
+    "dom": "link[href*='fullPage.css']\\;confidence:10",
+    "icon": "fullPage.js.png",
+    "implies": "jQuery",
+    "js": {
+      "fullpage_api.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "scriptSrc": "/fullPage\\.js(?:/([\\d\\.]+)/)?\\;version:\\1",
+    "website": "https://github.com/alvarotrigo/fullpage.js"
   }
 }

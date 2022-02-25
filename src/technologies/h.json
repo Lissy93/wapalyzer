@@ -147,6 +147,19 @@
     "scriptSrc": "api\\.handtalk\\.me",
     "website": "https://www.handtalk.me/"
   },
+  "HappyFox Helpdesk": {
+    "cats": [
+      53
+    ],
+    "description": "HappyFox is a help desk ticketing system that is hosted on cloud, supporting multiple customer support channels like email, voice and live chat.",
+    "icon": "HappyFox.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.happyfox\\.com/media/",
+    "website": "https://www.happyfox.com/customer-service-software/"
+  },
   "HappyFox Live Chat": {
     "cats": [
       52
@@ -156,26 +169,13 @@
     "js": {
       "HappyFoxChatObject": ""
     },
-    "scriptSrc": "\\.happyfoxchat\\.com/",
-    "saas": true,
     "pricing": [
       "recurring",
       "low"
     ],
-    "website": "https://www.happyfox.com/live-chat"
-  },
-  "HappyFox Helpdesk": {
-    "cats": [
-      53
-    ],
-    "description": "HappyFox is a help desk ticketing system that is hosted on cloud, supporting multiple customer support channels like email, voice and live chat.",
-    "icon": "HappyFox.svg",
-    "scriptSrc": "\\.happyfox\\.com/media/",
     "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.happyfox.com/customer-service-software/"
+    "scriptSrc": "\\.happyfoxchat\\.com/",
+    "website": "https://www.happyfox.com/live-chat"
   },
   "Haravan": {
     "cats": [
@@ -274,11 +274,11 @@
       88
     ],
     "description": "Helhost is a web hosting provider and internet domain registrar from Democratic Republic of Congo.",
-    "icon": "Helhost.svg",
     "dns": {
       "NS": "ns\\d\\.helhost\\.com",
       "SOA": "ns\\d\\.helhost\\.com"
     },
+    "icon": "Helhost.svg",
     "pricing": [
       "low",
       "recurring",

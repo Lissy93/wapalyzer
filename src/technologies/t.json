@@ -63,25 +63,6 @@
     ],
     "website": "https://truendo.com"
   },
-  "Trumba": {
-    "cats": [
-      72
-    ],
-    "description": "Trumba offers web-hosted event calendar software for publishing online, interactive, calendars of events.",
-    "icon": "Trumba.png",
-    "dom": "a[href*='www.trumba.com/calendars/']",
-    "js": {
-      "$Trumba.version": "([\\d\\.]+)\\;version:\\1",
-      "$Trumba": "",
-      "Trumba": ""
-    },
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.trumba.com"
-  },
   "TVSquared": {
     "cats": [
       36
@@ -1878,6 +1859,25 @@
     "icon": "Truecommerce.svg",
     "scriptSrc": "cdn\\.nexternal\\.com/",
     "website": "https://www.truecommerce.com"
+  },
+  "Trumba": {
+    "cats": [
+      72
+    ],
+    "description": "Trumba offers web-hosted event calendar software for publishing online, interactive, calendars of events.",
+    "dom": "a[href*='www.trumba.com/calendars/']",
+    "icon": "Trumba.png",
+    "js": {
+      "$Trumba": "",
+      "$Trumba.version": "([\\d\\.]+)\\;version:\\1",
+      "Trumba": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.trumba.com"
   },
   "Trunkrs": {
     "cats": [

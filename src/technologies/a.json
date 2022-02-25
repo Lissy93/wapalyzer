@@ -1939,10 +1939,10 @@
       28
     ],
     "description": "AlmaLinux is an open-source, community-driven Linux operating system that fills the gap left by the discontinuation of the CentOS Linux stable release.",
-    "icon": "AlmaLinux.svg",
     "headers": {
       "server": "AlmaLinux"
     },
+    "icon": "AlmaLinux.svg",
     "oss": true,
     "website": "https://almalinux.org"
   },
@@ -3429,6 +3429,19 @@
     "scriptSrc": "cdn\\.auryc\\.com/",
     "website": "https://www.auryc.com"
   },
+  "Australia Post": {
+    "cats": [
+      99
+    ],
+    "description": "Australia Post is the government business enterprise that provides postal services in Australia.",
+    "icon": "AusPost.svg",
+    "requiresCategory": 6,
+    "text": [
+      "\\bAusPost\\b",
+      "\\bAustralia Post\\b"
+    ],
+    "website": "https://auspost.com.au"
+  },
   "Auth0": {
     "cats": [
       19
@@ -3865,18 +3878,5 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
-  },
-  "Australia Post": {
-    "cats": [
-      99
-    ],
-    "description": "Australia Post is the government business enterprise that provides postal services in Australia.",
-    "icon": "AusPost.svg",
-    "requiresCategory": 6,
-    "text": [
-      "\\bAusPost\\b",
-      "\\bAustralia Post\\b"
-    ],
-    "website": "https://auspost.com.au"
   }
 }

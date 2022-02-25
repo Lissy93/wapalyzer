@@ -691,8 +691,8 @@
     "description": "GloriaFood is an online ordering and food delivery platform that helps restaurant owners manage orders and streamline point-of-sale operations.",
     "icon": "Oracle.svg",
     "js": {
-      "glfWidget": "",
-      "glfBindButtons": ""
+      "glfBindButtons": "",
+      "glfWidget": ""
     },
     "pricing": [
       "freemium"
@@ -713,11 +713,6 @@
       1
     ],
     "description": "Gnuboard is an open-source bulletin board system or CMS from South Korea.",
-    "icon": "default.svg",
-    "implies": [
-      "PHP",
-      "MySQL"
-    ],
     "dom": {
       "a[href*='board.php']": {
         "attributes": {
@@ -730,11 +725,16 @@
         }
       }
     },
+    "icon": "default.svg",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
     "js": {
-      "g5_js_ver": "",
       "g4_bbs_img": "",
+      "g4_is_admin": "",
       "g5_is_admin": "",
-      "g4_is_admin": ""
+      "g5_js_ver": ""
     },
     "oss": true,
     "website": "https://github.com/gnuboard"

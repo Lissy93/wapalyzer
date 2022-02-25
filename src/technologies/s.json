@@ -224,6 +224,22 @@
     "icon": "SQLite.png",
     "website": "http://www.sqlite.org"
   },
+  "STN Video": {
+    "cats": [
+      36,
+      14
+    ],
+    "description": "STN Video is a online video platform that solves digital video for publishers, content creators, and advertisers.",
+    "icon": "STN Video.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "embed\\.sendtonews\\.com/",
+    "scripts": "embed\\.sendtonews\\.com/",
+    "website": "https://www.stnvideo.com"
+  },
   "STUDIO": {
     "cats": [
       51
@@ -1574,10 +1590,10 @@
       }
     },
     "icon": "Shop Pay.svg",
-    "requires": "Shopify",
     "js": {
       "ShopifyPay.apiHost": ""
     },
+    "requires": "Shopify",
     "scriptSrc": [
       "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
     ],
@@ -1588,13 +1604,13 @@
       91
     ],
     "description": "Shop Pay Installments allows customers to pay for orders between 50 USD and 3,000 USD in 4 interest-free installments.",
+    "dom": ".shopify-installments__learn-more, .shopify-installments, #shopify-installments-cta",
     "icon": "Shop Pay.svg",
-    "requires": "Shopify",
     "implies": [
       "Affirm",
       "Shop Pay"
     ],
-    "dom": ".shopify-installments__learn-more, .shopify-installments, #shopify-installments-cta",
+    "requires": "Shopify",
     "website": "https://shoppay.affirm.com"
   },
   "ShopGold": {
@@ -4151,22 +4167,6 @@
     },
     "oss": true,
     "website": "https://stitches.dev"
-  },
-  "STN Video": {
-    "cats": [
-      36,
-      14
-    ],
-    "description": "STN Video is a online video platform that solves digital video for publishers, content creators, and advertisers.",
-    "icon": "STN Video.png",
-    "scripts": "embed\\.sendtonews\\.com/",
-    "scriptSrc": "embed\\.sendtonews\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.stnvideo.com"
   },
   "StoreHippo": {
     "cats": [

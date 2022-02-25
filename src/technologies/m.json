@@ -750,20 +750,6 @@
     },
     "website": "http://max-3000.com"
   },
-  "mdBook": {
-    "cats": [
-      4
-    ],
-    "description": "mdBook is a utility to create modern online books from Markdown files.",
-    "icon": "mdBook.svg",
-    "implies": [
-      "Rust",
-      "Handlebars"
-    ],
-    "scripts": "localStorage\\.getItem\\('mdbook-(?:sidebar|theme)'\\)",
-    "oss": true,
-    "website": "https://github.com/rust-lang/mdBook"
-  },
   "Maxemail": {
     "cats": [
       32
@@ -2204,6 +2190,20 @@
     },
     "scriptSrc": "math(?:\\.min)?\\.js",
     "website": "http://mathjs.org"
+  },
+  "mdBook": {
+    "cats": [
+      4
+    ],
+    "description": "mdBook is a utility to create modern online books from Markdown files.",
+    "icon": "mdBook.svg",
+    "implies": [
+      "Rust",
+      "Handlebars"
+    ],
+    "oss": true,
+    "scripts": "localStorage\\.getItem\\('mdbook-(?:sidebar|theme)'\\)",
+    "website": "https://github.com/rust-lang/mdBook"
   },
   "microCMS": {
     "cats": [
