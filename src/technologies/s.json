@@ -1573,7 +1573,8 @@
         "text": "ShopPay"
       }
     },
-    "icon": "Shopify.svg",
+    "icon": "Shop Pay.svg",
+    "requires": "Shopify",
     "js": {
       "ShopifyPay.apiHost": ""
     },
@@ -1581,6 +1582,20 @@
       "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
     ],
     "website": "https://shop.app"
+  },
+  "Shop Pay Installments": {
+    "cats": [
+      91
+    ],
+    "description": "Shop Pay Installments allows customers to pay for orders between 50 USD and 3,000 USD in 4 interest-free installments.",
+    "icon": "Shop Pay.svg",
+    "requires": "Shopify",
+    "implies": [
+      "Affirm",
+      "Shop Pay"
+    ],
+    "dom": ".shopify-installments__learn-more, .shopify-installments, #shopify-installments-cta",
+    "website": "https://shoppay.affirm.com"
   },
   "ShopGold": {
     "cats": [
