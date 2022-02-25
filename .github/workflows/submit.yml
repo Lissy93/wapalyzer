@@ -6,23 +6,12 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.2
+      - name: Download Github Release Assets
+        uses: plasmo-corp/download-release-asset@v1.0.0
         with:
-          node-version: '14'
-      - name: Restore npm cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Install dependencies
-        run: npm install
-      - name: Build package
-        run: npm run build
+          files: webextension.zip
       - name: Browser Plugin Publish
         uses: plasmo-corp/bpp@v1
         with:
-          artifact: ./build/webextension.zip
+          artifact: webextension.zip
           keys: ${{ secrets.SUBMIT_KEYS }}
