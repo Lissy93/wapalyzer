@@ -3198,6 +3198,11 @@
         "attributes": {
           "href": "/_astro/(?:common|index)-[\\d\\w]+\\.css"
         }
+      },
+      "[class^='astro-']": {
+        "attributes": {
+          "class": "astro-[\\d\\w]{8,}"
+        }
       }
     },
     "icon": "Astro.svg",
