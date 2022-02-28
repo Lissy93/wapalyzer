@@ -3199,7 +3199,7 @@
           "href": "/_astro/(?:common|index)-[\\d\\w]+\\.css"
         }
       },
-      "span,section": {
+      "[class^='astro-']": {
         "attributes": {
           "class": "astro-[\\d\\w]{8,}"
         }
