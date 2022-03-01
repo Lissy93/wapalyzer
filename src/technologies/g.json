@@ -629,15 +629,15 @@
     ],
     "description": "GiveWP is a donation plugin for WordPress.",
     "icon": "GiveWP.svg",
-    "requires": "WordPress",
     "js": {
-      "giveApiSettings": "",
-      "Give.donor": ""
+      "Give.donor": "",
+      "giveApiSettings": ""
     },
     "pricing": [
       "freemium",
       "onetime"
     ],
+    "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/give/.+give\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://givewp.com"
   },

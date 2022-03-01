@@ -731,14 +731,14 @@
     "cats": [
       18
     ],
+    "cookies": {
+      "django_language": ""
+    },
     "cpe": "cpe:/a:djangoproject:django",
     "description": "Django is a Python-based free and open-source web application framework.",
     "html": "(?:powered by <a[^>]+>Django ?([\\d.]+)?<\\/a>|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)\\;version:\\1",
     "icon": "Django.png",
     "implies": "Python",
-    "cookies": {
-      "django_language": ""
-    },
     "js": {
       "__admin_media_prefix__": "",
       "django": ""

@@ -1653,6 +1653,20 @@
     "scriptSrc": "moment(?:\\.min)?\\.js",
     "website": "https://momentjs.com"
   },
+  "Monaco Editor": {
+    "cats": [
+      24
+    ],
+    "css": "\\.monaco-editor",
+    "description": "Monaco Editor is the code editor that powers VS Code. Monaco Editor is a tool in the text editor category of a tech stack.",
+    "icon": "Microsoft.svg",
+    "js": {
+      "MonacoEnvironment": "",
+      "monaco.editor": ""
+    },
+    "oss": true,
+    "website": "https://microsoft.github.io/monaco-editor/"
+  },
   "Mondial Relay": {
     "cats": [
       99
@@ -2382,19 +2396,5 @@
       "Apache"
     ],
     "website": "https://code.google.com/p/modwsgi"
-  },
-  "Monaco Editor": {
-    "cats": [
-      24
-    ],
-    "description": "Monaco Editor is the code editor that powers VS Code. Monaco Editor is a tool in the text editor category of a tech stack.",
-    "icon": "Microsoft.svg",
-    "css": "\\.monaco-editor",
-    "js": {
-      "monaco.editor": "",
-      "MonacoEnvironment": ""
-    },
-    "oss": true,
-    "website": "https://microsoft.github.io/monaco-editor/"
   }
 }
