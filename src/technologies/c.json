@@ -2989,13 +2989,20 @@
     "cats": [
       10
     ],
-    "html": "<iframe[^>]* (?:id=\"comscore\"|scr=[^>]+comscore)|\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
+    "description": "comScore is an American media measurement and analytics company providing marketing data and analytics to enterprises; media and advertising agencies; and publishers.",
     "icon": "comScore.png",
+    "dom":"iframe[src*='.scorecardresearch.com/beacon'], iframe#comscore, iframe[src*='COMSCORE.beacon],",
     "js": {
       "COMSCORE": "",
       "_COMSCORE": ""
     },
     "scriptSrc": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
     "website": "http://comscore.com"
   },
   "commercelayer": {
