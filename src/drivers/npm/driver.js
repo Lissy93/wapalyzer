@@ -277,6 +277,7 @@ class Driver {
       maxWait: 30000,
       recursive: false,
       probe: false,
+      proxy: false,
       noScripts: false,
       userAgent:
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
@@ -295,6 +296,10 @@ class Driver {
     this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10)
     this.options.noScripts = Boolean(+this.options.noScripts)
     this.options.extended = Boolean(+this.options.extended)
+
+    if (this.options.proxy) {
+      chromiumArgs.push(`--proxy-server=${this.options.proxy}`)
+    }
 
     this.destroyed = false
   }

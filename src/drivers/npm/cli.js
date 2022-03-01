@@ -74,6 +74,7 @@ Options:
   -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
   -p, --probe              Perform a deeper scan by performing additional requests and inspecting DNS records
   -P, --pretty             Pretty-print JSON output
+  --proxy=...              Proxy URL, e.g. 'http://user:pass@proxy:8080'
   -r, --recursive          Follow links on pages (crawler)
   -a, --user-agent=...     Set the user agent string
   -n, --no-scripts         Disabled JavaScript on web pages

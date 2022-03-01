@@ -32,6 +32,7 @@ wappalyzer <url> [options]
 -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
 -P, --pretty             Pretty-print JSON output
 -p, --probe              Perform a deeper scan by performing additional requests and inspecting DNS records
+--proxy=...              Proxy URL, e.g. 'http://user:pass@proxy:8080'
 -r, --recursive          Follow links on pages (crawler)
 -a, --user-agent=...     Set the user agent string
 -n, --no-scripts         Disabled JavaScript on web pages
@@ -63,6 +64,7 @@ const options = {
   maxWait: 5000,
   recursive: true,
   probe: true,
+  proxy: false,
   userAgent: 'Wappalyzer',
   htmlMaxCols: 2000,
   htmlMaxRows: 2000,
