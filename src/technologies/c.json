@@ -1718,10 +1718,15 @@
   },
   "Combeenation": {
     "cats": [
-      6
+      76
     ],
-    "html": "<iframe[^>]+src=\"[^>]+portal\\.combeenation\\.com",
+    "description": "Combeenation is a powerful cloud-based configurator platform.",
     "icon": "Combeenation.png",
+    "dom": "iframe[src*='portal.combeenation.com/']",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "https://www.combeenation.com"
   },
   "Comm100": {
