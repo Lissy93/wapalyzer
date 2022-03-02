@@ -2781,9 +2781,11 @@
       6
     ],
     "cpe": "cpe:/a:cubecart:cubecart",
-    "html": "(?:Powered by <a href=[^>]+cubecart\\.com|<p[^>]+>Powered by CubeCart)",
+    "description": "CubeCart is a free ecommerce platform that businesses can use to build, manage, and market their online stores.",
     "icon": "CubeCart.png",
     "implies": "PHP",
+    "oss": true,
+    "dom": "a[href*='.cubecart.com'][target='_blank']",
     "meta": {
       "generator": "cubecart"
     },
