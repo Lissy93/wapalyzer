@@ -2438,12 +2438,16 @@
   },
   "CoverManager": {
     "cats": [
-      5,
-      72
+      93
     ],
     "description": "CoverManager is a restaurant table booking widget.",
-    "html": "<iframe[^>]*covermanager\\.com/reservation",
+    "dom": "iframe[src*='.covermanager.com/']",
     "icon": "CoverManager.svg",
+    "saas": true,
+    "scriptSrc": "\\.covermanager\\.com/",
+    "pricing": [
+      "poa"
+    ],
     "website": "https://www.covermanager.com"
   },
   "Covet.pics": {
