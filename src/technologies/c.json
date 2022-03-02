@@ -1716,23 +1716,17 @@
     "scriptSrc": "/wp-content/themes/travelify/",
     "website": "https://colorlib.com/wp/themes/travelify"
   },
-  "Comandia": {
-    "cats": [
-      6
-    ],
-    "html": "<link[^>]+=['\"]//cdn\\.mycomandia\\.com",
-    "icon": "Comandia.svg",
-    "js": {
-      "Comandia": ""
-    },
-    "website": "http://comandia.com"
-  },
   "Combeenation": {
     "cats": [
-      6
+      76
     ],
-    "html": "<iframe[^>]+src=\"[^>]+portal\\.combeenation\\.com",
+    "description": "Combeenation is a powerful cloud-based configurator platform.",
     "icon": "Combeenation.png",
+    "dom": "iframe[src*='portal.combeenation.com/']",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "https://www.combeenation.com"
   },
   "Comm100": {
@@ -2366,6 +2360,22 @@
       "\\bCorreos\\b"
     ],
     "website": "https://www.correos.es"
+  },
+  "Correos Ecommerce": {
+    "cats": [
+      6
+    ],
+    "description": "Correos Ecommerce is an ecommerce platfrom from Spain.",
+    "icon": "Correos.svg",
+    "js": {
+      "Comandia": ""
+    },
+    "scriptSrc": "\\.mycorreosecommerce\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.correosecommerce.com"
   },
   "Cosmoshop": {
     "cats": [
