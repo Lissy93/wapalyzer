@@ -1937,10 +1937,7 @@
     ],
     "cpe": "cpe:/a:contao:contao_cms",
     "description": "Contao is an open source CMS that allows you to create websites and scalable web applications.",
-    "html": [
-      "<!--[^>]+powered by (?:TYPOlight|Contao)[^>]*-->",
-      "<link[^>]+(?:typolight|contao)\\.css"
-    ],
+    "dom": "link[href*='/typolight.css'], link[href*='/contao.css']",
     "icon": "Contao.svg",
     "implies": "PHP",
     "meta": {
