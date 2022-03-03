@@ -1524,8 +1524,9 @@
       16,
       56
     ],
-    "html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
+    "description": "Coinhive Captcha provides captcha service that is simple to integrate, where your users’ devices need to solve a number of hashes, adjustable by you, in order to login or post a comment to your site.",
     "icon": "CoinHive.svg",
+    "dom": "div.coinhive-captcha",
     "scriptSrc": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
     "website": "https://coinhive.com"
   },
