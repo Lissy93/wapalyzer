@@ -384,12 +384,18 @@
     "cats": [
       36
     ],
-    "html": "<[a-z]+ [^>]*id=\"carbonads-container\"",
+    "description": "Carbon Ads is an ad tech company, that connects advertisers to users through targeted verticals called Circles.",
+    "dom": "div#carbonads-container",
     "icon": "Carbon Ads.png",
     "js": {
-      "_carbonads": ""
+      "_carbonads": "",
+      "_carbonads_go": ""
     },
-    "scriptSrc": "carbonads\\.com",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "scriptSrc": "\\.carbonads\\.com/",
     "website": "http://carbonads.net"
   },
   "CareCart": {
