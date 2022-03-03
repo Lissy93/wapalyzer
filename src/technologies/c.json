@@ -1171,11 +1171,23 @@
   },
   "ClickFunnels": {
     "cats": [
-      32
+      32,
+      51
     ],
     "description": "Clickfunnels is an online sales funnel builder that helps businesses market, sell, and deliver their products online.",
-    "html": "<meta property=\"cf:app_domain\" content=\"app\\.clickfunnels\\.com\"",
-    "icon": "ClickFunnels.png",
+    "icon": "ClickFunnels.svg",
+    "meta": {
+      "cf:app_domain:": "app\\.clickfunnels\\.com"
+    },
+    "js": {
+      "CFAppDomain": "app\\.clickfunnels\\.com",
+      "CFSurveyParticipantID": ""
+    },
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "website": "https://www.clickfunnels.com"
   },
   "ClickHeat": {
