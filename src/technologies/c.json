@@ -864,17 +864,25 @@
   },
   "Chevereto": {
     "cats": [
-      7
+      7,
+      19
     ],
     "description": "Chevereto is an image hosting software that allows you to create a full-featured image hosting website on your own server.",
-    "html": "Powered by <a href=\"https?://chevereto\\.com\">",
-    "icon": "chevereto.png",
+    "icon": "Chevereto.svg",
     "implies": "PHP",
     "meta": {
-      "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
+      "generator": "Chevereto\\s(?:[\\d\\.]+)"
+    },
+    "js": {
+      "CHEVERETO.version": "([\\d\\.]+)\\;version:\\1"
     },
     "scriptSrc": "/chevereto\\.js",
-    "website": "https://chevereto.com/"
+    "saas": true,
+    "pricing": [
+      "low",
+      "onetime"
+    ],
+    "website": "https://chevereto.com"
   },
   "Chili Piper": {
     "cats": [
