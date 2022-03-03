@@ -1033,17 +1033,16 @@
     "cats": [
       66
     ],
-    "html": [
-      "<clr-main-container",
-      "<link [^>]*href=\"[^\"]*clr-ui(?:\\.min)?\\.css"
-    ],
+    "description": "Clarity is an open-source design system that brings together UX guidelines, an HTML/CSS framework, and Angular components.",
     "icon": "clarity.svg",
     "implies": "Angular",
+    "dom": "link[href*='clr-ui'], clr-main-container",
     "js": {
       "ClarityIcons": ""
     },
+    "oss": true,
     "scriptSrc": "clr-angular(?:\\.umd)?(?:\\.min)?\\.js",
-    "website": "https://clarity.design/"
+    "website": "https://clarity.design"
   },
   "Classeh": {
     "cats": [
