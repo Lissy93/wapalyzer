@@ -113,15 +113,15 @@
       6
     ],
     "description": "CS Cart is a turnkey ecommerce shopping cart software solution.",
-    "html": [
-      "&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)",
-      "\\.cm-noscript[^>]+</style>"
-    ],
     "icon": "CS Cart.svg",
     "implies": "PHP",
+    "dom": "a[href*='.cs-cart.com'][target='_blank']",
     "js": {
-      "fn_compare_strings": ""
+      "fn_compare_strings": "",
+      "fn_buy_together_apply_discount": "",
+      "fn_calculate_total_shipping": ""
     },
+    "scriptSrc": "var/cache/misc/assets/js/tygh/scripts-(?:[\\d\\w]+)\\.js",
     "pricing": [
       "mid",
       "onetime"
