@@ -655,7 +655,7 @@
     "headers": {
       "X-Powered-By": "Chamilo ([\\d.]+)\\;version:\\1"
     },
-    "html": "\">Chamilo ([\\d.]+)</a>\\;version:\\1",
+    "dom": "link[href*='chamilo.org/']",
     "icon": "Chamilo.png",
     "implies": "PHP",
     "meta": {
