@@ -179,6 +179,20 @@
     ],
     "website": "http://www.easylog.com.br"
   },
+  "ECharts": {
+    "cats": [
+      25
+    ],
+    "description": "ECharts is an Open Source JavaScript Visualization Library.",
+    "dom": "div[_echarts_instance_]",
+    "scriptSrc": [
+      "/echarts\\.min\\.[a-zA-Z0-9]*\\.js",
+      "/echarts(?:\\.simple)?(?:\\.esm)?(?:\\.common)?(?:\\.min)?\\.js",
+      "cdn\\.jsdelivr\\.net/(?:npm|gh/apache)/echarts@([\\d.]+(?:-[^/]+)?|latest)/dist/echarts.*\\.js\\;version:\\1"
+    ],
+    "icon": "echarts.png",
+    "website": "https://echarts.apache.org/"
+  },
   "Ecovium": {
     "cats": [
       99
