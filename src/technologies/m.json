@@ -1164,6 +1164,23 @@
     "scriptSrc": "bat\\.bing\\.com/bat\\.js",
     "website": "https://ads.microsoft.com"
   },
+  "Microsoft Application Insights": {
+    "cats": [
+      78
+    ],
+    "description": "Microsoft Application Insights is a feature of Azure Monitor that provides extensible application performance management (APM) and monitoring for live web apps.",
+    "icon": "Microsoft.svg",
+    "js": {
+      "appInsights.addTelemetryInitializer": "",
+      "appInsightsSDK": "appInsights",
+      "appInsights.SeverityLevel": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+  },
   "Microsoft Ajax Content Delivery Network": {
     "cats": [
       31
