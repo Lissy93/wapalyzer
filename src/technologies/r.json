@@ -406,7 +406,7 @@
       }
     },
     "html": "<[^>]+data-react",
-    "icon": "React.png",
+    "icon": "React.svg",
     "js": {
       "React.version": "^(.+)$\\;version:\\1",
       "ReactOnRails": "",
@@ -418,6 +418,28 @@
       "^react\\b.*\\.js"
     ],
     "website": "https://reactjs.org"
+  },
+  "React Bricks": {
+    "cats": [
+      1
+    ],
+    "description": "React Bricks is a visual editing CMS based on React components.",
+    "icon": "React Bricks.svg",
+    "implies": "React",
+    "requires": "React",
+    "dom": {
+      "img[src*='react']": {
+        "attributes": {
+          "src": "react(?:-)?bricks\\."
+        }
+      }
+    },
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://reactbricks.com"
   },
   "React Redux": {
     "cats": [
