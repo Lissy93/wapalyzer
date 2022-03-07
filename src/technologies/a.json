@@ -3705,6 +3705,25 @@
     "implies": "Azure",
     "website": "https://azure.microsoft.com/en-us/services/cdn/"
   },
+  "Azure Monitor": {
+    "cats": [
+      10,
+      92
+    ],
+    "description": "Azure Monitor collects monitoring telemetry from a variety of on-premises and Azure sources. Azure Monitor helps you maximise the availability and performance of your applications and services.",
+    "icon": "azure.svg",
+    "implies": "Azure",
+    "headers": {
+      "Content-Security-Policy": "js\\.monitor\\.azure\\.com"
+    },
+    "dom": "link[href*='js.monitor.azure.com']",
+    "scriptSrc": "js\\.monitor\\.azure\\.com/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://azure.microsoft.com/en-us/services/monitor"
+  },
   "a-blog cms": {
     "cats": [
       1
