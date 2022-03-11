@@ -1,6 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const { createConverter } = require('convert-svg-to-png')
+const terminalOverwrite = require('terminal-overwrite')
+
+// Fix memoryleak warning
+const maxConvertProcesses = 50
+process.setMaxListeners(maxConvertProcesses + 1)
 
 const appPaths = () => {
   const fileDir = path.dirname(require.main.filename).split('/')
@@ -57,6 +62,11 @@ function checkFileExists(imagePath) {
   return fileExists
 }
 
+/**
+ * Check if path is a file
+ * @param {*} filePath
+ * @returns
+ */
 function checkIfFile(filePath) {
   return fs.statSync(filePath).isFile()
 }
@@ -82,16 +92,27 @@ const converter = createConverter()
 ;(async () => {
   // Main script
   const files = fs.readdirSync(appPaths().iconPath)
-
   const totalFiles = files.length
+  const batchNum = Math.ceil(totalFiles / maxConvertProcesses)
+  let batchCount = 1
 
   do {
+    let percentComplete = `${
+      100 - Math.round((100 / totalFiles) * files.length)
+    }%`
+    terminalOverwrite(
+      `Processing Batch: ${batchCount} of ${batchNum} (${percentComplete})`
+    )
+
     await Promise.all(
-      files.splice(0, 50).map(async (fileName) => {
+      files.splice(0, maxConvertProcesses).map(async (fileName) => {
         const image = {
           id: fileName,
           path: `${appPaths().iconPath}/${fileName}`,
           convertPath: `${appPaths().convertPath}/${fileName}`,
+          /**
+           * Convert SVG to PNG and copy to new folder.
+           */
           async convertAndCopy() {
             for (let attempt = 1; attempt <= 3; attempt++) {
               try {
@@ -126,8 +147,9 @@ const converter = createConverter()
               // Check if converted file exists.
               const convertFilePath = getConvertFileName(this.path)
               if (checkFileExists(convertFilePath)) {
-                // If file has changed in past 7 days.
-                if (dateDiff(this.path) > 8) {
+                // If file has changed in past 30 days.
+                const fileAge = dateDiff(this.path)
+                if (fileAge > 30) {
                   return null
                 }
               }
@@ -146,8 +168,7 @@ const converter = createConverter()
         await image.processFile()
       })
     )
-
-    console.log(`${100 - Math.round((100 / totalFiles) * files.length)}%`)
+    batchCount++
   } while (files.length)
 
   await converter.destroy()
