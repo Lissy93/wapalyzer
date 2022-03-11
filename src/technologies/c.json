@@ -1440,6 +1440,25 @@
     "icon": "CloudFlare.svg",
     "website": "https://developers.cloudflare.com/logs/reference/log-fields/zone/nel_reports"
   },
+  "Cloudimage": {
+    "cats": [
+      31,
+      95
+    ],
+    "description": "Cloudimage automates the transformation and optimisation of images on the fly and accelerates their distribution via the Content Delivery Network (CDN).",
+    "icon": "Cloudimage.svg",
+    "dom": "img[src*='.cloudimg.io/'], link[href*='.cloudimg.io/'], amp-img[src*='.cloudimg.io/']",
+    "js": {
+      "ciResponsive.config.domain": "cloudimg\\.io"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.cloudimage.io"
+  },
   "Cloudinary": {
     "cats": [
       31,
