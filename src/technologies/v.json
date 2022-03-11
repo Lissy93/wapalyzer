@@ -633,11 +633,15 @@
     "description": "Vue.ai is an AI-powered experience management suite which combines the power of product, customer and business intelligence using computer vision and NLP.",
     "icon": "Vue.ai.svg",
     "js": {
-      "vuex": ""
+      "vuex": "",
+      "getVueUrlSegments": ""
     },
     "saas": true,
-    "scriptSrc": "vuex\\.vue\\.ai",
-    "website": "https://vue.ai/"
+    "scriptSrc": [
+      "vuex\\.vue\\.ai",
+      "vue_ai\\.js"
+    ],
+    "website": "https://vue.ai"
   },
   "Vue.js": {
     "cats": [
