@@ -1430,12 +1430,16 @@
     ],
     "description": "Sezzle offers a buy-now-pay-later solution.",
     "icon": "Sezzle.svg",
+    "meta": {
+      "sezzle_cid": ""
+    },
     "js": {
       "AwesomeSezzle": "",
-      "sezzle_footer_images": ""
+      "sezzle_footer_images": "",
+      "renderSezzleIframe": ""
     },
     "saas": true,
-    "scriptSrc": "widget\\.sezzle\\.in",
+    "scriptSrc": "widget\\.sezzle\\.(?:in|com)",
     "website": "https://sezzle.com/"
   },
   "Shanon": {
