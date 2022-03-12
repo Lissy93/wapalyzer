@@ -675,10 +675,12 @@
     "cats": [
       66
     ],
-    "css": "\\.v-application \\.d-block ",
-    "html": "<div data-app[^>]+class=\"v-application",
+    "description": "Vuetify is a reusable semantic component framework for Vue.js that aims to provide clean, semantic and reusable components.",
     "icon": "Vuetify.svg",
     "implies": "Vue.js",
+    "css": "\\.v-application \\.d-block",
+    "dom": "style#vuetify-theme-stylesheet",
+    "oss": true,
     "website": "https://vuetifyjs.com"
   },
   "vBulletin": {
