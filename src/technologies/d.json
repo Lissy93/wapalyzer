@@ -909,16 +909,17 @@
       "DokuWiki": ""
     },
     "cpe": "cpe:/a:dokuwiki:dokuwiki",
-    "description": "DokuWiki is a Free open-source wiki software.",
-    "html": [
-      "<div[^>]+id=\"dokuwiki__>",
-      "<a[^>]+href=\"#dokuwiki__"
-    ],
+    "description": "DokuWiki is a free open-source wiki software.",
     "icon": "DokuWiki.png",
     "implies": "PHP",
     "meta": {
       "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
     },
+    "js": {
+      "DOKU_TPL": "\\;confidence:50",
+      "doku_edit_text_content": "\\;confidence:50"
+    },
+    "oss": true,
     "website": "https://www.dokuwiki.org"
   },
   "DomainFactory": {
