@@ -59,8 +59,9 @@
     "cats": [
       1
     ],
-    "html": "<(?:link [^>]*href|img [^>]*src)=\"/polopoly_fs/",
+    "description": "DM Polopoly is a web content management solution focused on enhancing the user experience built by Atex.",
     "icon": "DM Polopoly.png",
+    "dom":"img[data-src*='/polopoly_fs/'], link[href*='/polopoly_fs/'], img[src*='/polopoly_fs/']",
     "implies": "Java",
     "website": "http://www.atex.com/products/dm-polopoly"
   },
