@@ -674,14 +674,18 @@
     ],
     "cpe": "cpe:/a:disqus:disqus_comment_system",
     "description": "Disqus is a worldwide blog comment hosting service for web sites and online communities that use a networked platform.",
-    "html": "<div[^>]+id=\"disqus_thread\"",
     "icon": "Disqus.svg",
+    "dom":"div#disqus_thread",
     "js": {
       "DISQUS": "",
       "disqus_shortname": "",
       "disqus_url": ""
     },
     "scriptSrc": "disqus_url",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
     "website": "https://disqus.com"
   },
   "District M": {
