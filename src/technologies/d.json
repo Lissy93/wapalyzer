@@ -265,8 +265,9 @@
       "Angular",
       "AngularJS"
     ],
-    "html": "/(?:<script)[^>]+(?:type=\"application/dart\")/",
+    "description": "Dart is an open-source, general-purpose, object-oriented programming language with C-style syntax developed by Google in 2011.",
     "icon": "Dart.svg",
+    "dom": "script[type='application/dart']",
     "js": {
       "___dart__$dart_dartObject_ZxYxX_0_": "",
       "___dart_dispatch_record_ZxYxX_0_": ""
@@ -275,6 +276,7 @@
       "/(?:\\.)?(?:dart)(?:\\.js)?/",
       "packages/browser/dart\\.js"
     ],
+    "oss": true,
     "website": "https://www.dartlang.org"
   },
   "Darwin": {
