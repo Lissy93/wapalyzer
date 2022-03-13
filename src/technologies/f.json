@@ -768,6 +768,24 @@
     "scriptSrc": "(?:shopify-)?cdn\\.flow\\.io/",
     "website": "https://www.flow.io/"
   },
+  "Flowplayer": {
+    "cats": [
+      14
+    ],
+    "description": "Flowplayer is a scalable, performance-first HTML 5 video player and platform hosting solution for publishers, broadcasters and digital media.",
+    "icon": "Flowplayer.svg",
+    "js": {
+      "flowplayer": "",
+      "flowplayer.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://flowplayer.com"
+  },
   "Flutter": {
     "cats": [
       66
