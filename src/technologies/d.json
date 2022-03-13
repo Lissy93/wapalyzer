@@ -369,8 +369,17 @@
     "cats": [
       1
     ],
-    "html": "<[^>]+https://www\\.datocms-assets\\.com",
-    "icon": "datocms.svg",
+    "description": "DatoCMS is a cloud-based headless Content as a service (CaaS) platform created to work with static websites, mobile apps and server-side applications of any kind.",
+    "icon": "DatoCMS.svg",
+    "headers": {
+      "content-security-policy": "\\.datocms-assets\\.com"
+    },
+    "dom": "link[href*='datocms-assets.com'], img[src*='datocms-assets.com'], source[src*='datocms-assets.com'], div[style*='datocms-assets.com']",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
     "website": "https://www.datocms.com"
   },
   "Day.js": {
