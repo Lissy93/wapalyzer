@@ -4543,6 +4543,22 @@
     "icon": "Oracle.svg",
     "website": "http://oracle.com/solaris"
   },
+  "Super Builder": {
+    "cats": [
+      51
+    ],
+    "description": "Super Builder is a new tool for creating sleek landing pages right in Notion.",
+    "dom": "link[href*='https://super-static-assets.s3.amazonaws.com']",
+    "icon": "Super Builder.svg",
+    "implies": "Next.js",
+    "oss": false,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://super.so"
+  },
   "Super Socializer": {
     "cats": [
       69,
@@ -4554,21 +4570,6 @@
     "requires": "WordPress",
     "scriptSrc": "plugins/super-socializer/.+?ver=([\\d.]+)\\;version:\\1",
     "website": "https://super-socializer-wordpress.heateor.com"
-  },
-  "Super.so": {
-    "cats": [
-      51
-    ],
-    "description": "Build websites with Notion.",
-    "dom": "div.super-content",
-    "icon": "super.so.png",
-    "implies": "Next.js",
-    "oss": false,
-    "pricing": [
-      "freemium"
-    ],
-    "saas": true,
-    "website": "https://super.so"
   },
   "Supersized": {
     "cats": [
