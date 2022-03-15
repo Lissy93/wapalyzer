@@ -4,7 +4,7 @@ const { createConverter } = require('convert-svg-to-png')
 const terminalOverwrite = require('terminal-overwrite')
 
 // Fix memoryleak warning
-const maxConvertProcesses = 50
+const maxConvertProcesses = 1
 process.setMaxListeners(maxConvertProcesses + 1)
 
 const appPaths = () => {
@@ -71,12 +71,6 @@ function checkIfFile(filePath) {
   return fs.statSync(filePath).isFile()
 }
 
-function diffFiles(fileOne, fileTwo) {
-  const f1 = fs.readFileSync(fileOne)
-  const f2 = fs.readFileSync(fileTwo)
-  return f1.equals(f2)
-}
-
 function dateModified(file) {
   return fs.statSync(file).mtime
 }
@@ -84,10 +78,8 @@ function dateModified(file) {
 function dateDiff(file) {
   const now = new Date().getTime()
   const then = dateModified(file).getTime()
-  return Math.round(Math.abs((then - now) / 86400000))
+  return Math.round(Math.abs(((then - now) / 1000) * 60 * 60 * 24))
 }
-
-const converter = createConverter()
 
 ;(async () => {
   // Main script
@@ -95,6 +87,8 @@ const converter = createConverter()
   const totalFiles = files.length
   const batchNum = Math.ceil(totalFiles / maxConvertProcesses)
   let batchCount = 1
+
+  const converter = createConverter()
 
   do {
     const percentComplete = `${
@@ -106,76 +100,67 @@ const converter = createConverter()
 
     await Promise.all(
       files.splice(0, maxConvertProcesses).map(async (fileName) => {
-        const image = {
-          id: fileName,
-          path: `${appPaths().iconPath}/${fileName}`,
-          convertPath: getConvertFileName(fileName),
-          /**
-           * Convert SVG to PNG and copy to new folder.
-           */
-          async convertAndCopy() {
-            for (let attempt = 1; attempt <= 3; attempt++) {
-              try {
-                await converter
-                  .convertFile(this.path, {
-                    height: 32,
-                    width: 32,
-                    outputFilePath: this.convertPath,
-                  })
-                  .catch((error) => {
-                    throw new Error(`${error} (${fileName})`)
-                  })
-              } catch (error) {
-                if (attempt >= 3) {
-                  throw error
-                } else {
-                  await new Promise((resolve) =>
-                    setTimeout(resolve, 500 * attempt)
-                  )
-                }
-              }
+        const path = `${appPaths().iconPath}/${fileName}`
+        const outputFilePath = getConvertFileName(fileName)
+        const ext = getFileExtension(path)
+
+        if (ext === '.svg') {
+          // Check if converted file exists.
+          if (checkFileExists(outputFilePath)) {
+            // Skip if destination file exists and source file hasn't changed in
+            // 30 days or destination file was created in the last day
+            const fileAgeA = dateDiff(path)
+            const fileAgeB = dateDiff(outputFilePath)
+
+            if (fileAgeA > 30 || fileAgeB < 1) {
+              return
+            }
+          }
+
+          // Convert and copy file.
+          for (let attempt = 1; attempt <= 3; attempt++) {
+            try {
+              await converter
+                .convertFile(path, {
+                  height: 32,
+                  width: 32,
+                  outputFilePath,
+                })
+                .catch((error) => {
+                  throw new Error(`${error} (${fileName})`)
+                })
 
               break
-            }
-          },
-          async processFile() {
-            // Setup variables.
-            const ext = getFileExtension(this.path)
+            } catch (error) {
+              if (attempt >= 3) {
+                throw error
+              } else {
+                // eslint-disable-next-line no-console
+                console.error(`${error.message || error} (attempt ${attempt})`)
 
-            // If SVG, run checks.
-            if (ext === '.svg') {
-              // Check if converted file exists.
-              const convertFilePath = getConvertFileName(this.path)
-              if (checkFileExists(convertFilePath)) {
-                // If file has changed in past 30 days.
-                const fileAge = dateDiff(this.path)
-                if (fileAge > 30) {
-                  return null
-                }
-              }
-              // Convert and copy file.
-              await this.convertAndCopy()
-            } else {
-              // If PNG or other, just copy the file as-is.
-              // eslint-disable-next-line no-lonely-if
-              if (checkIfFile(this.path)) {
-                copyFiles(this.path, this.convertPath)
+                await new Promise((resolve) =>
+                  setTimeout(resolve, 500 * attempt)
+                )
               }
             }
-          },
+          }
+        } else if (this.ext === '.png') {
+          // If PNG, just copy the file as-is.
+          // eslint-disable-next-line no-lonely-if
+          if (checkIfFile(this.path)) {
+            copyFiles(this.path, this.convertPath)
+          }
         }
-
-        await image.processFile()
       })
     )
+
     batchCount++
   } while (files.length)
 
   await converter.destroy()
 
+  // eslint-disable-next-line no-console
   console.log(`Converted ${totalFiles.toLocaleString()} files.`)
-
-  process.exit()
 })()
 
 /**
