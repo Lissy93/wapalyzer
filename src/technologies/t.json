@@ -1825,17 +1825,17 @@
       6
     ],
     "description": "Trove (formerly Yerdle) builds white-label technology and end-to-end operations for ecommerce platforms.",
+    "dom": "img[src*='res.cloudinary.com/yerdle']",
     "headers": {
       "x-trove-app-name": "",
       "x-trove-country-code": "",
       "x-trove-order-uuid": "",
       "x-yerdle-app-name": ""
     },
-    "dom": "img[src*='res.cloudinary.com/yerdle']",
-    "xhr": "reware-production\\.yerdlesite\\.com",
     "icon": "trove.png",
     "saas": true,
-    "website": "https://trove.co"
+    "website": "https://trove.co",
+    "xhr": "reware-production\\.yerdlesite\\.com"
   },
   "TruValidate": {
     "cats": [

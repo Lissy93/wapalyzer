@@ -393,11 +393,11 @@
     ],
     "description": "Wakav Performance Monitoring is a real user monitoring (RUM), Web/App performance and availability test platform.",
     "icon": "Wakav Performance Monitoring.png",
-    "scriptSrc": "rum\\.wakav\\.ir/",
     "pricing": [
       "payg"
     ],
     "saas": true,
+    "scriptSrc": "rum\\.wakav\\.ir/",
     "website": "https://www.wakav.ir"
   },
   "WalkMe": {
@@ -460,6 +460,25 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/weaver-xtreme/.+weaverxjslib-end\\.min.\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://weavertheme.com"
+  },
+  "Web Shop Manager": {
+    "cats": [
+      6
+    ],
+    "description": "Web Shop Manager is an ecommerce and search platform for the automotive industry and markets with complex product catalogs.",
+    "icon": "Web Shop Manager.png",
+    "js": {
+      "WSM.Tracking": "",
+      "WSM_CHART_COLORS_OPAQUE": "",
+      "wsmHideHelpBox": "",
+      "wsm_catalogTabby": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://webshopmanager.com"
   },
   "Web2py": {
     "cats": [
@@ -558,6 +577,22 @@
     },
     "website": "http://www.webgui.org"
   },
+  "WebHostUK": {
+    "cats": [
+      88
+    ],
+    "description": "WebHostUK is a UK based web hosting company offering cheap yet reliable and secure web hosting solutions on both Linux and Windows servers.",
+    "dns": {
+      "NS": "ns2\\d\\.dnshostcentral\\.com",
+      "SOA": "ns2\\d\\.dnshostcentral\\.com"
+    },
+    "icon": "WebHostUK.png",
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "website": "https://www.webhostuk.co.uk"
+  },
   "WebMetric": {
     "cats": [
       10
@@ -632,22 +667,6 @@
     },
     "scriptSrc": "analytics\\.webgains\\.io",
     "website": "https://www.webgains.com/"
-  },
-  "WebHostUK": {
-    "cats": [
-      88
-    ],
-    "description": "WebHostUK is a UK based web hosting company offering cheap yet reliable and secure web hosting solutions on both Linux and Windows servers.",
-    "icon": "WebHostUK.png",
-    "dns": {
-      "NS": "ns2\\d\\.dnshostcentral\\.com",
-      "SOA": "ns2\\d\\.dnshostcentral\\.com"
-    },
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "website": "https://www.webhostuk.co.uk"
   },
   "Webix": {
     "cats": [
@@ -732,25 +751,6 @@
       "wsc_rendermode": ""
     },
     "website": "https://www.hosttech.ch/websitecreator"
-  },
-  "Web Shop Manager": {
-    "cats": [
-      6
-    ],
-    "description": "Web Shop Manager is an ecommerce and search platform for the automotive industry and markets with complex product catalogs.",
-    "icon": "Web Shop Manager.png",
-    "js": {
-      "WSM.Tracking": "",
-      "wsm_catalogTabby": "",
-      "wsmHideHelpBox": "",
-      "WSM_CHART_COLORS_OPAQUE": ""
-    },
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://webshopmanager.com"
   },
   "WebsiteBaker": {
     "cats": [

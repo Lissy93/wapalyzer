@@ -60,8 +60,8 @@
       1
     ],
     "description": "DM Polopoly is a web content management solution focused on enhancing the user experience built by Atex.",
+    "dom": "img[data-src*='/polopoly_fs/'], link[href*='/polopoly_fs/'], img[src*='/polopoly_fs/']",
     "icon": "DM Polopoly.png",
-    "dom":"img[data-src*='/polopoly_fs/'], link[href*='/polopoly_fs/'], img[src*='/polopoly_fs/']",
     "implies": "Java",
     "website": "http://www.atex.com/products/dm-polopoly"
   },
@@ -262,22 +262,22 @@
     "cats": [
       27
     ],
+    "description": "Dart is an open-source, general-purpose, object-oriented programming language with C-style syntax developed by Google in 2011.",
+    "dom": "script[type='application/dart']",
     "excludes": [
       "Angular",
       "AngularJS"
     ],
-    "description": "Dart is an open-source, general-purpose, object-oriented programming language with C-style syntax developed by Google in 2011.",
     "icon": "Dart.svg",
-    "dom": "script[type='application/dart']",
     "js": {
       "___dart__$dart_dartObject_ZxYxX_0_": "",
       "___dart_dispatch_record_ZxYxX_0_": ""
     },
+    "oss": true,
     "scriptSrc": [
       "/(?:\\.)?(?:dart)(?:\\.js)?/",
       "packages/browser/dart\\.js"
     ],
-    "oss": true,
     "website": "https://www.dartlang.org"
   },
   "Darwin": {
@@ -370,11 +370,11 @@
       1
     ],
     "description": "DatoCMS is a cloud-based headless Content as a service (CaaS) platform created to work with static websites, mobile apps and server-side applications of any kind.",
-    "icon": "DatoCMS.svg",
+    "dom": "link[href*='datocms-assets.com'], img[src*='datocms-assets.com'], source[src*='datocms-assets.com'], div[style*='datocms-assets.com']",
     "headers": {
       "content-security-policy": "\\.datocms-assets\\.com"
     },
-    "dom": "link[href*='datocms-assets.com'], img[src*='datocms-assets.com'], source[src*='datocms-assets.com'], div[style*='datocms-assets.com']",
+    "icon": "DatoCMS.svg",
     "pricing": [
       "freemium",
       "mid",
@@ -686,18 +686,18 @@
     ],
     "cpe": "cpe:/a:disqus:disqus_comment_system",
     "description": "Disqus is a worldwide blog comment hosting service for web sites and online communities that use a networked platform.",
+    "dom": "div#disqus_thread",
     "icon": "Disqus.svg",
-    "dom":"div#disqus_thread",
     "js": {
       "DISQUS": "",
       "disqus_shortname": "",
       "disqus_url": ""
     },
-    "scriptSrc": "disqus_url",
     "pricing": [
       "low",
       "recurring"
     ],
+    "scriptSrc": "disqus_url",
     "website": "https://disqus.com"
   },
   "District M": {
@@ -928,12 +928,12 @@
     "description": "DokuWiki is a free open-source wiki software.",
     "icon": "DokuWiki.png",
     "implies": "PHP",
-    "meta": {
-      "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
-    },
     "js": {
       "DOKU_TPL": "\\;confidence:50",
       "doku_edit_text_content": "\\;confidence:50"
+    },
+    "meta": {
+      "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
     },
     "oss": true,
     "website": "https://www.dokuwiki.org"
@@ -1188,17 +1188,17 @@
     ],
     "description": "Drop A Hint is an Shopify app which help share hints via email, SMS, WhatsApp and messengers.",
     "icon": "Drop A Hint.png",
-    "requires": "Shopify",
-    "saas": true,
     "js": {
-      "dropAHintTypeProduct": "",
-      "DropAHint.BaseURL": "dropahint\\.love/"
+      "DropAHint.BaseURL": "dropahint\\.love/",
+      "dropAHintTypeProduct": ""
     },
     "pricing": [
       "payg",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
     "website": "https://apps.shopify.com/drop-a-hint-v2"
   },
   "Dropbox": {
@@ -1306,12 +1306,12 @@
     ],
     "description": "Duopana is a platform for creating online communities, blogs and managing collaborative content.",
     "icon": "Duopana.svg",
-    "scriptSrc": "\\.beracode\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.beracode\\.com/",
     "website": "https://duopana.com"
   },
   "Dynamic Yield": {

@@ -307,6 +307,23 @@
     "saas": true,
     "website": "https://abicart.com/"
   },
+  "Accentuate Custom Fields": {
+    "cats": [
+      100
+    ],
+    "description": "Accentuate Custom Fields is the professional and de facto solution to easily extend your Shopify store with your own custom fields such multi-language text fields, images, checkboxes, dates, selection list and custom JSON objects.",
+    "dom": "a[style*='.accentuate.io/'], a[data-bg*='.accentuate.io/'], div[style*='.accentuate.io/'], img[src*='.accentuate.io/'], img[data-src*='.accentuate.io/']",
+    "icon": "Accentuate Custom Fields.png",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scripts": "\\.accentuate\\.io/",
+    "website": "https://www.accentuate.io"
+  },
   "AccessTrade": {
     "cats": [
       71
@@ -319,23 +336,6 @@
       "click\\.accesstra\\.de/js/nct/lp\\.js"
     ],
     "website": "https://accesstrade.global/"
-  },
-  "Accentuate Custom Fields": {
-    "cats": [
-      100
-    ],
-    "description": "Accentuate Custom Fields is the professional and de facto solution to easily extend your Shopify store with your own custom fields such multi-language text fields, images, checkboxes, dates, selection list and custom JSON objects.",
-    "icon": "Accentuate Custom Fields.png",
-    "requires": "Shopify",
-    "dom": "a[style*='.accentuate.io/'], a[data-bg*='.accentuate.io/'], div[style*='.accentuate.io/'], img[src*='.accentuate.io/'], img[data-src*='.accentuate.io/']",
-    "scripts": "\\.accentuate\\.io/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.accentuate.io"
   },
   "AccessiBe": {
     "cats": [
@@ -3728,17 +3728,17 @@
       92
     ],
     "description": "Azure Monitor collects monitoring telemetry from a variety of on-premises and Azure sources. Azure Monitor helps you maximise the availability and performance of your applications and services.",
-    "icon": "azure.svg",
-    "implies": "Azure",
+    "dom": "link[href*='js.monitor.azure.com']",
     "headers": {
       "Content-Security-Policy": "js\\.monitor\\.azure\\.com"
     },
-    "dom": "link[href*='js.monitor.azure.com']",
-    "scriptSrc": "js\\.monitor\\.azure\\.com/",
-    "saas": true,
+    "icon": "azure.svg",
+    "implies": "Azure",
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "js\\.monitor\\.azure\\.com/",
     "website": "https://azure.microsoft.com/en-us/services/monitor"
   },
   "a-blog cms": {

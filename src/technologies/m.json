@@ -136,6 +136,22 @@
     "scriptSrc": "service(?:2)?\\.mtcaptcha\\.com/",
     "website": "https://www.mtcaptcha.com"
   },
+  "MUI": {
+    "cats": [
+      66
+    ],
+    "css": "\\.MuiPaper-root",
+    "description": "MUI(formerly Material UI) is a simple and customisable component library to build faster, beautiful, and more accessible React applications.",
+    "dom": "style[data-meta='MuiPaper']",
+    "icon": "MUI.svg",
+    "oss": true,
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://mui.com"
+  },
   "Macaron": {
     "cats": [
       18
@@ -1164,23 +1180,6 @@
     "scriptSrc": "bat\\.bing\\.com/bat\\.js",
     "website": "https://ads.microsoft.com"
   },
-  "Microsoft Application Insights": {
-    "cats": [
-      78
-    ],
-    "description": "Microsoft Application Insights is a feature of Azure Monitor that provides extensible application performance management (APM) and monitoring for live web apps.",
-    "icon": "Microsoft.svg",
-    "js": {
-      "appInsights.addTelemetryInitializer": "",
-      "appInsightsSDK": "appInsights",
-      "appInsights.SeverityLevel": ""
-    },
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "website": "https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
-  },
   "Microsoft Ajax Content Delivery Network": {
     "cats": [
       31
@@ -1189,6 +1188,23 @@
     "icon": "Microsoft.svg",
     "scriptSrc": "ajax\\.aspnetcdn\\.com/ajax/",
     "website": "https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview"
+  },
+  "Microsoft Application Insights": {
+    "cats": [
+      78
+    ],
+    "description": "Microsoft Application Insights is a feature of Azure Monitor that provides extensible application performance management (APM) and monitoring for live web apps.",
+    "icon": "Microsoft.svg",
+    "js": {
+      "appInsights.SeverityLevel": "",
+      "appInsights.addTelemetryInitializer": "",
+      "appInsightsSDK": "appInsights"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
   },
   "Microsoft Clarity": {
     "cats": [
@@ -1936,22 +1952,6 @@
     },
     "url": "/mozard/!suite",
     "website": "http://mozard.nl"
-  },
-  "MUI": {
-    "cats": [
-      66
-    ],
-    "description": "MUI(formerly Material UI) is a simple and customisable component library to build faster, beautiful, and more accessible React applications.",
-    "icon": "MUI.svg",
-    "oss": true,
-    "saas": true,
-    "css": "\\.MuiPaper-root",
-    "dom": "style[data-meta='MuiPaper']",
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "website": "https://mui.com"
   },
   "Mulberry": {
     "cats": [

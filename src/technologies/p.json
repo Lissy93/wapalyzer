@@ -141,8 +141,8 @@
       "__fetchLocaleData__": "\\;confidence:50",
       "fetchRootComponent": "\\;confidence:50"
     },
-    "scripts": "RootCmp_CMS_PAGE",
     "oss": true,
+    "scripts": "RootCmp_CMS_PAGE",
     "website": "https://developer.adobe.com/commerce/pwa-studio/"
   },
   "Pace": {
@@ -741,8 +741,8 @@
     "description": "Pendo is a product analytics platform used in release to enrich the product experience and provide insights to the product management team.",
     "icon": "Pendo.svg",
     "js": {
-      "pendo.VERSION": "(.+)\\;version:\\1\\;confidence:1",
-      "pendo.HOST": "\\.pendo\\.io"
+      "pendo.HOST": "\\.pendo\\.io",
+      "pendo.VERSION": "(.+)\\;version:\\1\\;confidence:1"
     },
     "pricing": [
       "freemium",

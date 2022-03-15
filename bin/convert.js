@@ -97,7 +97,7 @@ const converter = createConverter()
   let batchCount = 1
 
   do {
-    let percentComplete = `${
+    const percentComplete = `${
       100 - Math.round((100 / totalFiles) * files.length)
     }%`
     terminalOverwrite(
@@ -109,7 +109,7 @@ const converter = createConverter()
         const image = {
           id: fileName,
           path: `${appPaths().iconPath}/${fileName}`,
-          convertPath: `${appPaths().convertPath}/${fileName}`,
+          convertPath: getConvertFileName(fileName),
           /**
            * Convert SVG to PNG and copy to new folder.
            */

@@ -424,9 +424,6 @@
       1
     ],
     "description": "React Bricks is a visual editing CMS based on React components.",
-    "icon": "React Bricks.svg",
-    "implies": "React",
-    "requires": "React",
     "dom": {
       "img[src*='react']": {
         "attributes": {
@@ -434,11 +431,14 @@
         }
       }
     },
-    "saas": true,
+    "icon": "React Bricks.svg",
+    "implies": "React",
     "pricing": [
       "mid",
       "recurring"
     ],
+    "requires": "React",
+    "saas": true,
     "website": "https://reactbricks.com"
   },
   "React Redux": {
