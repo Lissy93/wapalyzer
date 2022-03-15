@@ -385,6 +385,25 @@
     "scriptSrc": "app\\.upserve\\.com/",
     "website": "https://onlineordering.upserve.com"
   },
+  "UptimeRobot": {
+    "cats": [
+      13
+    ],
+    "description": "UptimeRobot is a web-based software that is designed to monitor the sites frequently to check whether any site is down owing to server problem or any bug in coding.",
+    "icon": "UptimeRobot.svg",
+    "dom": "a[href*='stats.uptimerobot.com/']",
+    "headers": {
+      "content-security-policy": "\\.uptimerobot\\.com"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "stats\\.uptimerobot\\.com/",
+    "website": "https://uptimerobot.com"
+  },
   "Upvoty": {
     "cats": [
       47
