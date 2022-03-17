@@ -60,26 +60,6 @@
     "icon": "Lagoon.png",
     "website": "https://www.amazee.io/hosting"
   },
-  "langify": {
-    "cats": [
-      89
-    ],
-    "description": "langify translate your shop into multiple languages. langify comes with a visual configurator that allows you to add language switchers that integrate seamlessly into your existing design.",
-    "icon": "langify.png",
-    "requiresCategory": 6,
-    "js": {
-      "langify.settings.switcher.version": "([\\d\\.]+)\\;version:\\1",
-      "Langify": "",
-      "langify": ""
-
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://langify-app.com"
-  },
   "Laravel": {
     "cats": [
       18
@@ -1329,6 +1309,25 @@
     "saas": true,
     "scriptSrc": "\\.lytics\\.io/",
     "website": "https://www.lytics.com"
+  },
+  "langify": {
+    "cats": [
+      89
+    ],
+    "description": "langify translate your shop into multiple languages. langify comes with a visual configurator that allows you to add language switchers that integrate seamlessly into your existing design.",
+    "icon": "langify.png",
+    "js": {
+      "Langify": "",
+      "langify": "",
+      "langify.settings.switcher.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "website": "https://langify-app.com"
   },
   "libwww-perl-daemon": {
     "cats": [

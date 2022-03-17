@@ -114,6 +114,24 @@
     "url": "/typo3/",
     "website": "https://typo3.org/"
   },
+  "Tabarnapp": {
+    "cats": [
+      100
+    ],
+    "description": "Tabarnapp is a platform for Shopify apps and themes.",
+    "icon": "Tabarnapp.png",
+    "js": {
+      "tabarnapp_loaded_ad": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.tabarn\\.app/",
+    "website": "https://tabarnapp.com"
+  },
   "Tabby": {
     "cats": [
       41,
@@ -128,24 +146,6 @@
     "saas": true,
     "scriptSrc": "checkout\\.tabby\\.ai",
     "website": "https://tabby.ai/"
-  },
-  "Tabarnapp": {
-    "cats": [
-      100
-    ],
-    "description": "Tabarnapp is a platform for Shopify apps and themes.",
-    "icon": "Tabarnapp.png",
-    "requires": "Shopify",
-    "js": {
-      "tabarnapp_loaded_ad": ""
-    },
-    "saas": true,
-    "scriptSrc": "cdn\\.tabarn\\.app/",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://tabarnapp.com"
   },
   "TableBooker": {
     "cats": [
@@ -1326,6 +1326,24 @@
     "saas": true,
     "scriptSrc": "\\.online-metrix\\.net",
     "website": "https://risk.lexisnexis.com/products/threatmetrix"
+  },
+  "Threekit": {
+    "cats": [
+      76,
+      95
+    ],
+    "description": "Threekit is a visual customer experience solution that enables brands to create, manage and scale photorealistic images and 3D product visuals, all from a single design file.",
+    "icon": "Threekit.svg",
+    "js": {
+      "threekit.configuratorForm": "",
+      "threekitAR": "",
+      "threekitPlayer": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.threekit.com"
   },
   "ThriveCart": {
     "cats": [
@@ -2548,24 +2566,6 @@
     },
     "scriptSrc": "three(?:\\.min)?\\.js",
     "website": "https://threejs.org"
-  },
-  "Threekit": {
-    "cats": [
-      76,
-      95
-    ],
-    "description": "Threekit is a visual customer experience solution that enables brands to create, manage and scale photorealistic images and 3D product visuals, all from a single design file.",
-    "icon": "Threekit.svg",
-    "js": {
-      "threekitAR": "",
-      "threekit.configuratorForm": "",
-      "threekitPlayer": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.threekit.com"
   },
   "thttpd": {
     "cats": [

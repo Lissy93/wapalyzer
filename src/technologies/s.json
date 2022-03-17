@@ -943,17 +943,17 @@
     ],
     "description": "Secomapp is a trusted Shopify Expert providing services through Shopify Apps.",
     "icon": "Secomapp.png",
-    "requires": "Shopify",
     "js": {
       "SECOMAPP": ""
     },
-    "scriptSrc": "cdn\\.secomapp\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.secomapp\\.com/",
     "website": "https://www.secomapp.com"
   },
   "Sectigo": {
@@ -1675,17 +1675,17 @@
     ],
     "description": "Shopapps is a trusted Shopify Expert providing services through Shopify Apps.",
     "icon": "Shopapps.png",
-    "requires": "Shopify",
     "js": {
-      "iWishUrl": "iwish\\.myshopapps\\.com/",
-      "iStockUrl": "iwish\\.myshopapps\\.com/"
+      "iStockUrl": "iwish\\.myshopapps\\.com/",
+      "iWishUrl": "iwish\\.myshopapps\\.com/"
     },
-    "scriptSrc": "cdn\\.myshopapps\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.myshopapps\\.com/",
     "website": "http://www.shopapps.in"
   },
   "Shopatron": {

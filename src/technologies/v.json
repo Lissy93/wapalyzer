@@ -457,14 +457,14 @@
     ],
     "description": "Virtooal allows shoppers to try on and combine decorative cosmetics, sunglasses, contact lenses, jewellery and fashion accessories using models, their own photo or a live webcam feed.",
     "icon": "Virtooal.svg",
-    "requiresCategory": 6,
-    "scriptSrc": "\\.virtooal\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "requiresCategory": 6,
+    "saas": true,
+    "scriptSrc": "\\.virtooal\\.com/",
     "website": "https://try.virtooal.com"
   },
   "VirtueMart": {
@@ -503,26 +503,6 @@
     },
     "website": "https://www.visa.com"
   },
-  "Visely": {
-    "cats": [
-      100,
-      76
-    ],
-    "description": "Visely is a Shopify app which personalise product recommendations for Shopify sites.",
-    "icon": "Visely.svg",
-    "requires": "Shopify",
-    "js": {
-      "Visely.RecommendationsApi": "",
-      "ViselyCartProductIds": "",
-      "ViselyPage": ""
-    },
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://visely.io"
-  },
   "Visa Checkout": {
     "cats": [
       41
@@ -531,6 +511,26 @@
     "icon": "visa.png",
     "scriptSrc": "secure\\.checkout\\.visa\\.com",
     "website": "https://checkout.visa.com"
+  },
+  "Visely": {
+    "cats": [
+      100,
+      76
+    ],
+    "description": "Visely is a Shopify app which personalise product recommendations for Shopify sites.",
+    "icon": "Visely.svg",
+    "js": {
+      "Visely.RecommendationsApi": "",
+      "ViselyCartProductIds": "",
+      "ViselyPage": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "website": "https://visely.io"
   },
   "Visual Composer": {
     "cats": [

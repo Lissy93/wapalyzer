@@ -452,16 +452,16 @@
     ],
     "description": "Carro connects participating Shopify stores together to enable cross-store selling or the ability for like-minded partners to directly sell each other products without the need for inventory, managing returns, or minimum order quantities.",
     "icon": "Carro.svg",
-    "requires": "Shopify",
-    "scriptSrc": [
-      "\\.getcarro\\.com/",
-      "/carro\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
-    ],
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": [
+      "\\.getcarro\\.com/",
+      "/carro\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
     ],
     "website": "https://getcarro.com"
   },

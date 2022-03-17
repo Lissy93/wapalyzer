@@ -327,6 +327,24 @@
     "scriptSrc": "vendor-cdn\\.imweb\\.me/",
     "website": "https://imweb.me"
   },
+  "InMoment": {
+    "cats": [
+      10,
+      73
+    ],
+    "description": "InMoment provides SaaS based customer survey and enterprise feedback management solutions.",
+    "headers": {
+      "Content-Security-Policy": "\\.inmoment\\.com",
+      "Content-Security-Policy-Report-Only": "\\.inmoment\\.com"
+    },
+    "icon": "InMoment.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.inmoment\\.com(?:\\.\\w+)?/",
+    "website": "https://inmoment.com"
+  },
   "Incapsula": {
     "cats": [
       31
@@ -455,24 +473,6 @@
       "recurring"
     ],
     "website": "https://www.infomaniak.com"
-  },
-  "InMoment": {
-    "cats": [
-      10,
-      73
-    ],
-    "description": "InMoment provides SaaS based customer survey and enterprise feedback management solutions.",
-    "icon": "InMoment.svg",
-    "headers": {
-      "Content-Security-Policy-Report-Only": "\\.inmoment\\.com",
-      "Content-Security-Policy": "\\.inmoment\\.com"
-    },
-    "scriptSrc": "\\.inmoment\\.com(?:\\.\\w+)?/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://inmoment.com"
   },
   "Insider": {
     "cats": [
