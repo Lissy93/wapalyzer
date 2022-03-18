@@ -103,6 +103,21 @@
     "website": "https://www.ipinfodb.com/",
     "xhr": "api\\.ipinfodb\\.com"
   },
+  "IPinfo": {
+    "cats": [
+      79
+    ],
+    "description": "IPinfo is an IP address data provider.",
+    "icon": "IPinfo.svg",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "ipinfo\\.io/",
+    "website": "https://ipinfo.io",
+    "xhr": "ipinfo\\.io/"
+  },
   "Iamport": {
     "cats": [
       41
@@ -311,6 +326,24 @@
     "saas": true,
     "scriptSrc": "vendor-cdn\\.imweb\\.me/",
     "website": "https://imweb.me"
+  },
+  "InMoment": {
+    "cats": [
+      10,
+      73
+    ],
+    "description": "InMoment provides SaaS based customer survey and enterprise feedback management solutions.",
+    "headers": {
+      "Content-Security-Policy": "\\.inmoment\\.com",
+      "Content-Security-Policy-Report-Only": "\\.inmoment\\.com"
+    },
+    "icon": "InMoment.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.inmoment\\.com(?:\\.\\w+)?/",
+    "website": "https://inmoment.com"
   },
   "Incapsula": {
     "cats": [

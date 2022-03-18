@@ -307,6 +307,23 @@
     "saas": true,
     "website": "https://abicart.com/"
   },
+  "Accentuate Custom Fields": {
+    "cats": [
+      100
+    ],
+    "description": "Accentuate Custom Fields is the professional and de facto solution to easily extend your Shopify store with your own custom fields such multi-language text fields, images, checkboxes, dates, selection list and custom JSON objects.",
+    "dom": "a[style*='.accentuate.io/'], a[data-bg*='.accentuate.io/'], div[style*='.accentuate.io/'], img[src*='.accentuate.io/'], img[data-src*='.accentuate.io/']",
+    "icon": "Accentuate Custom Fields.png",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scripts": "\\.accentuate\\.io/",
+    "website": "https://www.accentuate.io"
+  },
   "AccessTrade": {
     "cats": [
       71
@@ -2571,6 +2588,19 @@
     "saas": true,
     "website": "https://g6.antv.vision"
   },
+  "Antsomi CDP 365": {
+    "cats": [
+      97
+    ],
+    "description": "Antsomi CDP 365 is a AI-enabled customer data platform from Southeast Asia.",
+    "icon": "Antsomi.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.cdp\\.asia/",
+    "website": "https://www.antsomi.com"
+  },
   "AnyClip": {
     "cats": [
       36
@@ -3704,6 +3734,25 @@
     "icon": "azure.svg",
     "implies": "Azure",
     "website": "https://azure.microsoft.com/en-us/services/cdn/"
+  },
+  "Azure Monitor": {
+    "cats": [
+      10,
+      92
+    ],
+    "description": "Azure Monitor collects monitoring telemetry from a variety of on-premises and Azure sources. Azure Monitor helps you maximise the availability and performance of your applications and services.",
+    "dom": "link[href*='js.monitor.azure.com']",
+    "headers": {
+      "Content-Security-Policy": "js\\.monitor\\.azure\\.com"
+    },
+    "icon": "azure.svg",
+    "implies": "Azure",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "js\\.monitor\\.azure\\.com/",
+    "website": "https://azure.microsoft.com/en-us/services/monitor"
   },
   "a-blog cms": {
     "cats": [

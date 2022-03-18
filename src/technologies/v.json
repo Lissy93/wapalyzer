@@ -451,6 +451,22 @@
     "url": "^https?://(?:www\\.)?virgool\\.io",
     "website": "https://virgool.io"
   },
+  "Virtooal": {
+    "cats": [
+      76
+    ],
+    "description": "Virtooal allows shoppers to try on and combine decorative cosmetics, sunglasses, contact lenses, jewellery and fashion accessories using models, their own photo or a live webcam feed.",
+    "icon": "Virtooal.svg",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "scriptSrc": "\\.virtooal\\.com/",
+    "website": "https://try.virtooal.com"
+  },
   "VirtueMart": {
     "cats": [
       6
@@ -495,6 +511,26 @@
     "icon": "visa.png",
     "scriptSrc": "secure\\.checkout\\.visa\\.com",
     "website": "https://checkout.visa.com"
+  },
+  "Visely": {
+    "cats": [
+      100,
+      76
+    ],
+    "description": "Visely is a Shopify app which personalise product recommendations for Shopify sites.",
+    "icon": "Visely.svg",
+    "js": {
+      "Visely.RecommendationsApi": "",
+      "ViselyCartProductIds": "",
+      "ViselyPage": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "website": "https://visely.io"
   },
   "Visual Composer": {
     "cats": [
@@ -633,11 +669,15 @@
     "description": "Vue.ai is an AI-powered experience management suite which combines the power of product, customer and business intelligence using computer vision and NLP.",
     "icon": "Vue.ai.svg",
     "js": {
+      "getVueUrlSegments": "",
       "vuex": ""
     },
     "saas": true,
-    "scriptSrc": "vuex\\.vue\\.ai",
-    "website": "https://vue.ai/"
+    "scriptSrc": [
+      "vuex\\.vue\\.ai",
+      "vue_ai\\.js"
+    ],
+    "website": "https://vue.ai"
   },
   "Vue.js": {
     "cats": [
@@ -671,10 +711,12 @@
     "cats": [
       66
     ],
-    "css": "\\.v-application \\.d-block ",
-    "html": "<div data-app[^>]+class=\"v-application",
+    "css": "\\.v-application \\.d-block",
+    "description": "Vuetify is a reusable semantic component framework for Vue.js that aims to provide clean, semantic and reusable components.",
+    "dom": "style#vuetify-theme-stylesheet",
     "icon": "Vuetify.svg",
     "implies": "Vue.js",
+    "oss": true,
     "website": "https://vuetifyjs.com"
   },
   "vBulletin": {

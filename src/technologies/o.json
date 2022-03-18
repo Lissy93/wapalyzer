@@ -973,20 +973,24 @@
       6
     ],
     "cpe": "cpe:/a:oracle:commerce_platform",
+    "description": "Oracle Commerce is a unified B2B and B2C ecommerce platform.",
+    "dom": "input[name*='/atg/commerce/'], .atgShoppingBagContent",
     "headers": {
       "X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1"
     },
     "icon": "Oracle.svg",
+    "saas": true,
     "website": "http://www.oracle.com/applications/customer-experience/commerce/products/commerce-platform/index.html"
   },
   "Oracle Commerce Cloud": {
     "cats": [
       6
     ],
+    "description": "Oracle Commerce Cloud is a cloud-native, fully featured, extensible SaaS ecommerce solution, delivered in the Oracle Cloud, supporting B2C and B2B models in a single platform.",
+    "dom": "#oracle-cc",
     "headers": {
       "OracleCommerceCloud-Version": "^(.+)$\\;version:\\1"
     },
-    "html": "<[^>]+id=\"oracle-cc\"",
     "icon": "Oracle.svg",
     "website": "http://cloud.oracle.com/commerce-cloud"
   },

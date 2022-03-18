@@ -3,15 +3,17 @@
     "cats": [
       6
     ],
-    "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(?:/wcsstore/|webapp\\/wcs)",
+    "description": "HCL Commerce is a software platform framework for ecommerce, including marketing, sales, customer and order processing functionality.",
+    "dom": "link[href*='/wcsstore/'], link[href*='webapp/wcs/'], a[href*='/wcsstore/'], a[href*='webapp/wcs/'], script[src*='/wcsstore/'], script[src*='webapp/wcs/']",
     "icon": "HCL Commerce.svg",
     "implies": "Java",
     "pricing": [
       "poa"
     ],
     "saas": true,
+    "scripts": "/webapp/wcs/",
     "url": "/wcs/",
-    "website": "https://www.hcltechsw.com/products/commerce"
+    "website": "https://www.hcltechsw.com/commerce"
   },
   "HCL Digital Experience": {
     "cats": [

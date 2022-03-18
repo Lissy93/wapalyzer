@@ -114,6 +114,24 @@
     "url": "/typo3/",
     "website": "https://typo3.org/"
   },
+  "Tabarnapp": {
+    "cats": [
+      100
+    ],
+    "description": "Tabarnapp is a platform for Shopify apps and themes.",
+    "icon": "Tabarnapp.png",
+    "js": {
+      "tabarnapp_loaded_ad": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.tabarn\\.app/",
+    "website": "https://tabarnapp.com"
+  },
   "Tabby": {
     "cats": [
       41,
@@ -1202,6 +1220,23 @@
     "scriptSrc": "/wp-content/themes/iconic-one(?:-[\\w]+)?/",
     "website": "https://themonic.com/iconic-one"
   },
+  "Thesis": {
+    "cats": [
+      10
+    ],
+    "description": "Thesis is a conversion rate optimisation company.",
+    "icon": "Thesis.svg",
+    "js": {
+      "thix.history": "\\;confidence:50",
+      "thix.t": "\\;confidence:50"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "thix\\.ttsep\\.com/",
+    "website": "https://www.thesistesting.com"
+  },
   "Thimatic": {
     "cats": [
       90,
@@ -1292,6 +1327,24 @@
     "saas": true,
     "scriptSrc": "\\.online-metrix\\.net",
     "website": "https://risk.lexisnexis.com/products/threatmetrix"
+  },
+  "Threekit": {
+    "cats": [
+      76,
+      95
+    ],
+    "description": "Threekit is a visual customer experience solution that enables brands to create, manage and scale photorealistic images and 3D product visuals, all from a single design file.",
+    "icon": "Threekit.svg",
+    "js": {
+      "threekit.configuratorForm": "",
+      "threekitAR": "",
+      "threekitPlayer": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.threekit.com"
   },
   "ThriveCart": {
     "cats": [
@@ -1820,6 +1873,23 @@
       "Trix.VERSION": "^(.+)$\\;version:\\1"
     },
     "website": "https://trix-editor.org"
+  },
+  "Trove Recommerce": {
+    "cats": [
+      6
+    ],
+    "description": "Trove (formerly Yerdle) builds white-label technology and end-to-end operations for ecommerce platforms.",
+    "dom": "img[src*='res.cloudinary.com/yerdle']",
+    "headers": {
+      "x-trove-app-name": "",
+      "x-trove-country-code": "",
+      "x-trove-order-uuid": "",
+      "x-yerdle-app-name": ""
+    },
+    "icon": "trove.png",
+    "saas": true,
+    "website": "https://trove.co",
+    "xhr": "reware-production\\.yerdlesite\\.com"
   },
   "TruValidate": {
     "cats": [

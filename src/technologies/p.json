@@ -142,8 +142,8 @@
       "fetchRootComponent": "\\;confidence:50"
     },
     "oss": true,
-    "requires": "Magento",
-    "website": "https://github.com/magento/pwa-studio"
+    "scripts": "RootCmp_CMS_PAGE",
+    "website": "https://developer.adobe.com/commerce/pwa-studio/"
   },
   "Pace": {
     "cats": [
@@ -298,6 +298,23 @@
     "saas": true,
     "scriptSrc": "apps\\.paidy\\.com",
     "website": "https://paidy.com"
+  },
+  "Paloma": {
+    "cats": [
+      100
+    ],
+    "description": "Paloma helps ecommerce businesses sell directly to customers in messaging channels, with automated personal shopping conversations.",
+    "icon": "Paloma.svg",
+    "js": {
+      "Paloma.createCookie": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "\\.getpaloma\\.com/",
+    "website": "https://www.getpaloma.com"
   },
   "Pantheon": {
     "cats": [
@@ -735,12 +752,14 @@
   },
   "Pendo": {
     "cats": [
+      10,
       58
     ],
-    "description": "Pendo is a product experience platform for teams to capture product usage data and behavior.",
+    "description": "Pendo is a product analytics platform used in release to enrich the product experience and provide insights to the product management team.",
     "icon": "Pendo.svg",
     "js": {
-      "pendo.VERSION": "(.+)\\;version:\\1"
+      "pendo.HOST": "\\.pendo\\.io",
+      "pendo.VERSION": "(.+)\\;version:\\1\\;confidence:1"
     },
     "pricing": [
       "freemium",
