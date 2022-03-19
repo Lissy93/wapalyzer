@@ -3148,6 +3148,19 @@
     },
     "website": "http://www.methods.co.nz/asciidoc"
   },
+  "Asciidoctor": {
+    "cats": [
+      4
+    ],
+    "description": "Asciidoctor is an open-source text processor and publishing toolchain, written in Ruby, for converting AsciiDoc content to HTML 5, DocBook 5, and other formats.",
+    "icon": "Asciidoctor.png",
+    "meta": {
+      "generator": "^Asciidoctor\\s([\\d\\.]+)$\\;version:\\1"
+    },
+    "implies": "Ruby",
+    "oss": true,
+    "website": "https://github.com/asciidoctor/asciidoctor"
+  },
   "Asciinema": {
     "cats": [
       14
