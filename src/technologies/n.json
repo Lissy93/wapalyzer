@@ -113,6 +113,28 @@
     "scriptSrc": "static\\.narrativ\\.com/",
     "website": "https://narrativ.com/"
   },
+  "Narvar": {
+    "cats": [
+      102,
+      99
+    ],
+    "description": "Narvar is a customer experience platform that helps retailers inspire long-term customer loyalty, at all steps of the post-purchase journey.",
+    "icon": "Narvar.svg",
+    "requiresCategory": 6,
+    "dom": "a[href*='\\.narvar\\.com/']",
+    "headers": {
+      "Content-Security-Policy": "\\.narvar\\.com"
+    },
+    "js": {
+      "NARVARJS_URL": "",
+      "narvar": "\\;confidence:1"
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://corp.narvar.com"
+  },
   "Nativo": {
     "cats": [
       36
