@@ -1219,6 +1219,19 @@
     "url": "\\.cfm(?:$|\\?)",
     "website": "http://adobe.com/products/coldfusion-family.html"
   },
+  "Adobe Dynamic Media Classic": {
+    "cats": [
+      95
+    ],
+    "description": "Adobe Dynamic Media Classic is a platform that enables customers to manage, enhance, publish, and deliver dynamic rich media content and personal experiences to consumers across all channels and devices, including web, print material, email campaigns, desktops, social, and mobile.",
+    "icon": "Adobe Experience Platform.svg",
+    "headers": {
+      "Content-Security-Policy": "\\.scene7\\.com"
+    },
+    "dom": "source[srcset*='.scene7.com/'], link[href*='.scene7.com']",
+    "saas": true,
+    "website": "https://business.adobe.com/uk/products/experience-manager/scene7-login.html"
+  },
   "Adobe DTM": {
     "cats": [
       42
