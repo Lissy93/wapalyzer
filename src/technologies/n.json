@@ -120,8 +120,7 @@
     ],
     "description": "Narvar is a customer experience platform that helps retailers inspire long-term customer loyalty, at all steps of the post-purchase journey.",
     "icon": "Narvar.svg",
-    "requiresCategory": 6,
-    "dom": "a[href*='\\.narvar\\.com/']",
+    "dom": "a[href*='.narvar.com/'], img[src*='.narvar.com/']",
     "headers": {
       "Content-Security-Policy": "\\.narvar\\.com"
     },
