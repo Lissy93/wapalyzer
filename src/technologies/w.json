@@ -1118,6 +1118,25 @@
     "scriptSrc": "loader\\.wisepops\\.com/get-loader\\.js",
     "website": "https://wisepops.com"
   },
+  "Wishlist King": {
+    "cats": [
+      100
+    ],
+    "description": "Wishlist King is a Shopify app which helps you to add your favorite products or share the wishlist with your friends built by Appmate.",
+    "icon": "Wishlist King.png",
+    "requires": "Shopify",
+    "js": {
+      "Appmate.version": "([\\d\\.]+)\\;version:\\1\\;confidence:1",
+      "Appmate.wk": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://appmate.io"
+  },
   "Wistia": {
     "cats": [
       14
