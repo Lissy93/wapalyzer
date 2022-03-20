@@ -200,7 +200,7 @@ fs.readdirSync(iconPath).forEach((file) => {
       !Object.values(technologies).some(({ icon }) => icon === file) &&
       file !== 'default.svg'
     ) {
-      throw new Error(`Extraneous file: ${filePath}}`)
+      throw new Error(`Extraneous file: ${filePath}`)
     }
   }
 })

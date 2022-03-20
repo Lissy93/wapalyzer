@@ -1138,6 +1138,27 @@
     "scriptSrc": "cdn\\.foxycart\\.com",
     "website": "https://www.foxy.io"
   },
+  "Framer Sites": {
+    "cats": [
+      51
+    ],
+    "description": "Framer is primarily a design and prototyping tool. It allows you to design interactive prototypes of websites and applications using production components and real data.",
+    "icon": "Framer Sites.svg",
+    "implies": "React",
+    "js": {
+      "Framer.version": "([\\d\\.]+)\\;version:\\1\\;confidence:0",
+      "Framer.Animatable": ""
+    },
+    "oss": false,
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "framerusercontent\\.com",
+    "website": "https://framer.com/sites"
+  },
   "France Express": {
     "cats": [
       99
