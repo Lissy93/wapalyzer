@@ -1346,16 +1346,19 @@
     "saas": true,
     "website": "https://langify-app.com"
   },
-  "libwww-perl-daemon": {
+  "libphonenumber": {
     "cats": [
-      22
+      59
     ],
-    "headers": {
-      "Server": "libwww-perl-daemon(?:/([\\d\\.]+))?\\;version:\\1"
+    "description": "libphonenumber is a JavaScript library for parsing, formatting, and validating international phone numbers.",
+    "icon": "default.svg",
+    "js": {
+      "libphonenumber.DIGITS": "",
+      "libphonenumber.AsYouType": ""
     },
-    "icon": "libwww-perl-daemon.png",
-    "implies": "Perl",
-    "website": "http://metacpan.org/pod/HTTP::Daemon"
+    "scriptSrc": "(?:/([\\d\\.]+))?\/libphonenumber(?:-js\\.min)?\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://github.com/google/libphonenumber"
   },
   "lighttpd": {
     "cats": [
