@@ -237,5 +237,27 @@
     },
     "scriptSrc": "\\.quora\\.com/",
     "website": "https://quoraadsupport.zendesk.com/hc/en-us/categories/115001573928-Pixels-Tracking"
+  },
+  "Qwik": {
+    "cats": [
+      18
+    ],
+    "description": "Qwik is designed for the fastest possible page load time, by delivering pure HTML with near 0 JavaScript.",
+    "icon": "Qwik.svg",
+    "dom": {
+      "html": {
+        "attributes": {
+          "q:version": "^([\\d\\.]+(?:-\\d+)?)\\;version:\\1"
+        }
+      },
+      "div": {
+        "attributes": {
+          "q:obj": "\\;confidence:50",
+          "q:host": "\\;confidence:50"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://github.com/builderio/qwik"
   }
 }
