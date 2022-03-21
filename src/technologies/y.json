@@ -352,6 +352,23 @@
     ],
     "website": "https://www.yodel.co.uk/"
   },
+  "YooMoney": {
+    "cats": [
+      41
+    ],
+    "description": "YooMoney is an IT company working with electronic payments on the Internet, creating and supporting financial services for individuals and businesses.",
+    "icon":"YooMoney.svg",
+    "headers": {
+      "Content-Security-Policy": "\\.yoomoney\\.ru"
+    },
+    "dom":"a[href*='yoomoney.ru'][target='_blank'], iframe[src*='yoomoney.ru'], img[src*='yoomoney.ru']",
+    "scriptSrc": "\\.yoomoney\\.ru/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://yoomoney.ru"
+  },
   "Yotpo": {
     "cats": [
       84,
