@@ -2379,13 +2379,19 @@
     ],
     "description": "Convertr is a Brazilian ecommerce platform, fashion specialist.",
     "icon": "Convertr.svg",
+    "implies": [
+      "PHP",
+      "MySQL",
+      "Vue.js",
+      "Nuxt.js",
+      "Amazon Web Services"
+    ],
     "meta": {
       "author": "^Convertr Commerce$"
     },
     "saas": true,
     "pricing": [
-      "mid",
-      "recurring"
+      "poa"
     ],
     "website": "https://convertr.com.br"
   },
