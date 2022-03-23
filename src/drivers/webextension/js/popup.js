@@ -315,6 +315,7 @@ const Popup = {
     } else {
       el.terms.classList.remove('terms--hidden')
       el.detections.classList.add('detections--hidden')
+      el.issue.classList.add('issue--hidden')
       el.footer.classList.add('footer--hidden')
       el.tabPlus.classList.add('tab--disabled')
 
@@ -482,7 +483,7 @@ const Popup = {
         event.preventDefault()
         event.stopImmediatePropagation()
 
-        open(a.href)
+        open(a.href.replace(/__URL__/g, url))
 
         return false
       })
@@ -539,6 +540,7 @@ const Popup = {
     const el = {
       empty: document.querySelector('.empty'),
       detections: document.querySelector('.detections'),
+      issue: document.querySelector('.issue'),
       plusDownload: document.querySelector('.plus-download'),
     }
 
@@ -549,6 +551,7 @@ const Popup = {
     if (!detections || !detections.length) {
       el.empty.classList.remove('empty--hidden')
       el.detections.classList.add('detections--hidden')
+      el.issue.classList.add('issue--hidden')
       el.plusDownload.classList.add('plus-download--hidden')
 
       return

@@ -510,10 +510,24 @@ small {
   columns: 2;
   column-gap: 3rem;
   min-height: 200px;
-  padding: 1rem 1.5rem .5rem 1.5rem;
+  padding: 1rem 1.5rem 0 1.5rem;
 }
 
 .detections--hidden {
+  display: none;
+}
+
+.issue {
+  font-size: .8rem;
+  padding: 0rem 1.5rem 1rem 1.5rem;
+  text-align: right;
+}
+
+.issue a {
+  color: var(--color-text-lighten);
+}
+
+.issue--hidden {
   display: none;
 }
 
