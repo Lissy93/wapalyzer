@@ -710,6 +710,18 @@
     "scriptSrc": "jquery\\.sparkline.*\\.js",
     "website": "http://omnipotent.net/jquery.sparkline/"
   },
+  "jQuery Modal": {
+    "cats": [
+      59
+    ],
+    "description": "JQuery Modal is an overlay dialog box or in other words, a popup window that is made to display on the top or 'overlayed' on the current page.",
+    "icon": "jQuery Modal.png",
+    "implies": "jQuery",
+    "dom": "link[href*='jquery.modal.min.css']",
+    "scriptSrc": "jquery-modal/([\\d\\.]+)/jquery\\.modal\\.min\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://jquerymodal.com"
+  },
   "jQuery UI": {
     "cats": [
       59
