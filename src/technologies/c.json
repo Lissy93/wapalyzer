@@ -2979,6 +2979,20 @@
     "scriptSrc": "/wp-content/themes/parabola/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.cryoutcreations.eu/wordpress-themes/parabola"
   },
+  "crypto-js": {
+    "cats": [
+      59
+    ],
+    "description": "crypto-js is a JavaScript library of crypto standards.",
+    "icon": "default.svg",
+    "js": {
+      "CryptoJS.algo": "",
+      "CryptoJS.Rabbit": ""
+    },
+    "scriptSrc": "(?:/([\\d\\.-]+))?/crypto-js(?:\\.min)?\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://github.com/brix/crypto-js"
+  },
   "Crypto-Loot": {
     "cats": [
       56
