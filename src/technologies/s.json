@@ -4647,6 +4647,23 @@
     "scriptSrc": "plugins/super-socializer/.+?ver=([\\d.]+)\\;version:\\1",
     "website": "https://super-socializer-wordpress.heateor.com"
   },
+  "SuperLemon app": {
+    "cats": [
+      100
+    ],
+    "description": "SuperLemon app is an all-in-one WhatsApp plugin for Shopify stores.",
+    "icon": "SuperLemon.png",
+    "requires": "Shopify",
+    "implies": "WhatsApp Business Chat",
+    "scriptSrc": "/files/superlemon_.+\\.js",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/whatsapp-chat-button"
+  },
   "Supersized": {
     "cats": [
       25
