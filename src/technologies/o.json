@@ -69,6 +69,26 @@
     "implies": "PHP",
     "website": "https://www.oxid-esales.com"
   },
+  "Obviyo": {
+    "cats": [
+      100,
+      76
+    ],
+    "description": "Obviyo is an ecommerce intelligence platform helping merchants personalise and optimise shopping experience.",
+    "icon": "Obviyo.png",
+    "requires": "Shopify",
+    "js": {
+      "__hic.version": "([\\d.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "deploy\\.hiconversion\\.com",
+    "website": "https://www.obviyo.com"
+  },
   "Occasion": {
     "cats": [
       72
