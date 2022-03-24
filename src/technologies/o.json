@@ -920,7 +920,9 @@
     "description": "Optimizely is an experimentation platform that helps developers build and run A/B tests on websites.",
     "icon": "Optimizely.svg",
     "js": {
-      "optimizely": ""
+      "optimizely": "",
+      "optimizelyClient.clientVersion": "([\\d\\.]+)\\;version:\\1",
+      "optimizelySdk": ""
     },
     "pricing": [
       "poa",
