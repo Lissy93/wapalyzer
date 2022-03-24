@@ -245,12 +245,9 @@
     "description": "Qwik is designed for the fastest possible page load time, by delivering pure HTML with near 0 JavaScript.",
     "icon": "Qwik.svg",
     "dom": {
-      "html,body,div": {
+      "*": {
         "attributes": {
-          "q:version": "^([\\d\\.]+(?:-\\d+)?)\\;version:\\1",
-          "q:obj": "\\;confidence:50",
-          "q:host": "\\;confidence:50",
-          "q:base": "cdn\\.builder\\.io/"
+          "q:version": "^([\\d\\.]+(?:-\\d+)?)\\;version:\\1"
         }
       }
     },
