@@ -2019,6 +2019,15 @@
     "scriptSrc": "static\\.cdn\\.printful\\.com",
     "website": "https://www.printful.com/"
   },
+  "Priority Hints": {
+    "cats": [
+      92
+    ],
+    "description": "Priority Hints exposes a mechanism for developers to signal a relative priority for browsers to consider when fetching resources.",
+    "icon": "default.svg",
+    "dom":"iframe[fetchpriority], img[fetchpriority], script[fetchpriority], link[fetchpriority]",
+    "website": "https://wicg.github.io/priority-hints/"
+  },
   "Prism": {
     "cats": [
       19
