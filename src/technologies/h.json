@@ -464,6 +464,27 @@
     "scriptSrc": "themes/hestia.*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
     "website": "https://themeisle.com/themes/hestia/"
   },
+  "HetrixTools": {
+    "cats": [
+      13
+    ],
+    "description": "HetrixTools is an uptime and blacklist monitoring platform.",
+    "icon": "HetrixTools.png",
+    "headers": {
+      "content-security-policy": "\\.hetrixtools\\.com"
+    },
+    "js": {
+      "htoolz": ""
+    },
+    "scriptSrc": "\\.hetrixtools\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://hetrixtools.com"
+  },
   "Hetzner": {
     "cats": [
       88,
