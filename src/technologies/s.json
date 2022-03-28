@@ -1483,6 +1483,18 @@
     "scriptSrc": "widget\\.sezzle\\.(?:in|com)",
     "website": "https://sezzle.com/"
   },
+  "Shaka Player": {
+    "cats": [
+      14
+    ],
+    "description": "Shaka Player is an open-source JavaScript library for adaptive media.",
+    "icon": "Shaka Player.png",
+    "js": {
+      "shaka.Player.version": "v([\\d\\.-\\w]+)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://github.com/shaka-project/shaka-player"
+  },
   "Shanon": {
     "cats": [
       32
