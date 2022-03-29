@@ -1837,21 +1837,36 @@
   },
   "Shopify Consent Management": {
     "cats": [
-      67
+      67,
+      100
     ],
     "description": "Shopify Consent Management let's you create a tracking consent banner for EU customers.",
     "icon": "Shopify.svg",
+    "requires": "Shopify",
     "scriptSrc": [
       "cookie_consent_shopify\\.js"
     ],
     "website": "https://apps.shopify.com/customer-privacy-banner"
   },
+  "Shopify Geolocation App": {
+    "cats": [
+      100,
+      79
+    ],
+    "description": "Shopify Geolocation App makes language and country recommendations to your customers based on their geographic location and browser or device language.",
+    "icon": "Shopify Geolocation App.png",
+    "requires": "Shopify",
+    "scriptSrc": "geolocation-recommendations\\.shopifycloud\\.com/",
+    "website": "https://apps.shopify.com/geolocation"
+  },
   "Shopify Product Reviews": {
     "cats": [
-      90
+      90,
+      100
     ],
     "description": "Shopify Product reviews allows you to add a customer review feature to your products.",
     "icon": "Shopify.svg",
+    "requires": "Shopify",
     "js": {
       "SPR": ""
     },
