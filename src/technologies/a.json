@@ -3585,6 +3585,23 @@
     "scriptSrc": "/wp-content/plugins/autoptimize/.+\\.js(?:\\?ao_version=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://autoptimize.com"
   },
+  "Avada AVASHIP": {
+    "cats": [
+      100
+    ],
+    "description": "Avada AVASHIP is an order tracking Shopify app.",
+    "icon": "Avada.svg",
+    "requires": "Shopify",
+    "js": {
+      "AVADA_FSB.bars": ""
+    },
+    "scriptSrc": "freeshippingbar\\.apps\\.avada\\.io/",
+    "saas": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://apps.shopify.com/avaship"
+  },
   "Avada Boost Sales": {
     "cats": [
       100,
@@ -3602,23 +3619,6 @@
       "freemium"
     ],
     "website": "https://apps.shopify.com/avada-boost-sales"
-  },
-  "Avada AVASHIP": {
-    "cats": [
-      100
-    ],
-    "description": "Avada AVASHIP is an order tracking Shopify app.",
-    "icon": "Avada.svg",
-    "requires": "Shopify",
-    "js": {
-      "AVADA_FSB.bars": ""
-    },
-    "scriptSrc": "freeshippingbar\\.apps\\.avada\\.io/",
-    "saas": true,
-    "pricing": [
-      "freemium"
-    ],
-    "website": "https://apps.shopify.com/avaship"
   },
   "Avada SEO": {
     "cats": [
