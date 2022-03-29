@@ -3585,6 +3585,24 @@
     "scriptSrc": "/wp-content/plugins/autoptimize/.+\\.js(?:\\?ao_version=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://autoptimize.com"
   },
+  "Avada Boost Sales": {
+    "cats": [
+      100,
+      5
+    ],
+    "description": "AVADA Boost Sales is a one-stop solution that is specially designed to increase your sales with countdown timer, trust badges, sales pop, sales boost and many more.",
+    "icon": "Avada.svg",
+    "requires": "Shopify",
+    "js": {
+      "AVADA_BS_LAST_UPDATE": ""
+    },
+    "scriptSrc": "boostsales\\.apps\\.avada\\.io/",
+    "saas": true,
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://apps.shopify.com/avada-boost-sales"
+  },
   "Avada AVASHIP": {
     "cats": [
       100
