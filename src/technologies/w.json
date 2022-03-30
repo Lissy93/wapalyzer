@@ -1642,6 +1642,10 @@
     ],
     "description": "Wunderkind (Formerly BounceX) is a software for behavioural marketing technologies, created to de-anonymise site visitors, analyse their digital behaviour and create relevant digital experiences regardless of channel or device.",
     "icon": "Wunderkind.svg",
+    "dom":"link[href*='.smarterhq.io']",
+    "headers": {
+      "Content-Security-Policy": "\\.smarterhq\\.io"
+    },
     "js": {
       "bouncex": ""
     },
@@ -1649,7 +1653,10 @@
       "poa"
     ],
     "saas": true,
-    "scriptSrc": "\\.bounceexchange\\.com",
+    "scriptSrc": [
+      "\\.bounceexchange\\.com",
+      "\\.smarterhq\\.io/"
+    ],
     "website": "https://www.wunderkind.co"
   },
   "Wurfl": {
