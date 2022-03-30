@@ -17,13 +17,14 @@ RUN mkdir -p "$WAPPALYZER_ROOT/browsers"
 
 WORKDIR "$WAPPALYZER_ROOT"
 
-ADD cli.js .
-ADD categories.json .
-ADD driver.js .
-ADD package.json .
-ADD technologies .
-ADD wappalyzer.js .
-ADD yarn.lock .
+COPY technologies ./technologies
+COPY \
+  cli.js \
+  categories.json \
+  driver.js \
+  package.json \
+  wappalyzer.js \
+  yarn.lock .
 
 RUN yarn install
 
