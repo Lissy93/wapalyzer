@@ -1,4 +1,4 @@
-[![Validate](https://github.com/AliasIO/wappalyzer/actions/workflows/validate.yml/badge.svg)](https://github.com/AliasIO/wappalyzer/actions/workflows/validate.yml)
+[![Validate](https://github.com/wappalyzer/wappalyzer/actions/workflows/validate.yml/badge.svg)](https://github.com/wappalyzer/wappalyzer/actions/workflows/validate.yml)
 [![wappalyzer NPM](https://img.shields.io/badge/npm-wappalyzer-blue)](https://www.npmjs.com/package/wappalyzer)
 [![wappalyzer-core NPM](https://img.shields.io/badge/npm-wappalyzer--core-blue)](https://www.npmjs.com/package/wappalyzer-core)
 [![Github Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/AliasIO)](https://github.com/sponsors/AliasIO)
@@ -22,7 +22,7 @@ If you don't have time to configure, host, debug and maintain your own infrastru
 ## Quick start
 
 ```sh
-git clone https://github.com/AliasIO/wappalyzer.git
+git clone https://github.com/wappalyzer/wappalyzer.git
 cd wappalyzer
 yarn install
 yarn run link
@@ -53,7 +53,7 @@ node src/drivers/npm/cli.js https://example.com
 
 A long list of [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) is used to identify technologies on web pages. Wappalyzer inspects HTML code, as well as JavaScript variables, response headers and more.
 
-Patterns (regular expressions) are kept in [`src/technologies/`](https://github.com/aliasio/wappalyzer/blob/master/src/technologies). The following is an example of an application fingerprint.
+Patterns (regular expressions) are kept in [`src/technologies/`](https://github.com/wappalyzer/wappalyzer/blob/master/src/technologies). The following is an example of an application fingerprint.
 
 #### Example
 
@@ -113,7 +113,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
 
 ## JSON fields
 
-Find the JSON schema at [`schema.json`](https://github.com/aliasio/wappalyzer/blob/master/schema.json).
+Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer/blob/master/schema.json).
 
 ### Required properties
 
