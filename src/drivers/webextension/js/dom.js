@@ -17,42 +17,46 @@
       postMessage({
         wappalyzer: {
           dom: technologies.reduce((technologies, { name, dom }) => {
-            Object.keys(dom).forEach((selector) => {
-              let nodes = []
+            try {
+              Object.keys(dom).forEach((selector) => {
+                let nodes = []
 
-              try {
-                nodes = document.querySelectorAll(selector)
-              } catch (error) {
-                // Continue
-              }
+                try {
+                  nodes = document.querySelectorAll(selector)
+                } catch (error) {
+                  // Continue
+                }
 
-              if (!nodes.length) {
-                return
-              }
+                if (!nodes.length) {
+                  return
+                }
 
-              nodes.forEach((node) => {
-                dom[selector].forEach(({ properties }) => {
-                  if (properties) {
-                    Object.keys(properties).forEach((property) => {
-                      if (
-                        Object.prototype.hasOwnProperty.call(node, property)
-                      ) {
-                        const value = node[property]
+                nodes.forEach((node) => {
+                  dom[selector].forEach(({ properties }) => {
+                    if (properties) {
+                      Object.keys(properties).forEach((property) => {
+                        if (
+                          Object.prototype.hasOwnProperty.call(node, property)
+                        ) {
+                          const value = node[property]
 
-                        if (typeof value !== 'undefined') {
-                          technologies.push({
-                            name,
-                            selector,
-                            property,
-                            value: toScalar(value),
-                          })
+                          if (typeof value !== 'undefined') {
+                            technologies.push({
+                              name,
+                              selector,
+                              property,
+                              value: toScalar(value),
+                            })
+                          }
                         }
-                      }
-                    })
-                  }
+                      })
+                    }
+                  })
                 })
               })
-            })
+            } catch (error) {
+              // Fail quietly
+            }
 
             return technologies
           }, []),
