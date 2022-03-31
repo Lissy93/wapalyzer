@@ -590,6 +590,23 @@
     "scriptSrc": "cdn\\.enable\\.co\\.il/",
     "website": "https://www.enable.co.il"
   },
+  "Endurance Page Cache": {
+    "cats": [
+      87,
+      23
+    ],
+    "description": "Endurance Page Cache adds basic file-based caching to WordPress.",
+    "headers": {
+      "x-endurance-cache-level": ""
+    },
+    "icon": "endurance-cache.png",
+    "implies": [
+      "Bluehost\\;confidence:50"
+    ],
+    "oss": true,
+    "requires": "WordPress",
+    "website": "https://github.com/bluehost/endurance-page-cache"
+  },
   "Engagio": {
     "cats": [
       10
