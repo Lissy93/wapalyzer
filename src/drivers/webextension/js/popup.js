@@ -267,6 +267,7 @@ const Popup = {
       tabs: document.querySelectorAll('.tab'),
       tabItems: document.querySelectorAll('.tab-item'),
       credits: document.querySelector('.credits'),
+      issue: document.querySelector('.issue'),
       footerHeadingText: document.querySelector('.footer__heading-text'),
       footerContentBody: document.querySelector('.footer__content-body'),
       footerButtonText: document.querySelector('.footer .button__text'),
