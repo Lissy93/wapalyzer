@@ -357,16 +357,16 @@
       41
     ],
     "description": "YooMoney is an IT company working with electronic payments on the Internet, creating and supporting financial services for individuals and businesses.",
-    "icon":"YooMoney.svg",
+    "dom": "a[href*='yoomoney.ru'][target='_blank'], iframe[src*='yoomoney.ru'], img[src*='yoomoney.ru']",
     "headers": {
       "Content-Security-Policy": "\\.yoomoney\\.ru"
     },
-    "dom":"a[href*='yoomoney.ru'][target='_blank'], iframe[src*='yoomoney.ru'], img[src*='yoomoney.ru']",
-    "scriptSrc": "\\.yoomoney\\.ru/",
-    "saas": true,
+    "icon": "YooMoney.svg",
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "\\.yoomoney\\.ru/",
     "website": "https://yoomoney.ru"
   },
   "Yotpo": {

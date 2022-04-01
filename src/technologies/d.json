@@ -30,18 +30,6 @@
     },
     "website": "https://derak.cloud"
   },
-  "Deta": {
-    "description": "Deta is a cloud platform for building and deploying apps.",
-    "cats": [
-      62
-    ],
-    "headers": {
-      "Server": "^Deta$"
-    },
-    "url": "^https?://[^/]+\\.deta\\.(?:app|dev)",
-    "icon": "deta.svg",
-    "website": "https://deta.sh"
-  },
   "DHL": {
     "cats": [
       99
@@ -494,6 +482,18 @@
     "saas": true,
     "scriptSrc": "tag.demandbase.com",
     "website": "https://www.demandbase.com"
+  },
+  "Deta": {
+    "cats": [
+      62
+    ],
+    "description": "Deta is a cloud platform for building and deploying apps.",
+    "headers": {
+      "Server": "^Deta$"
+    },
+    "icon": "deta.svg",
+    "url": "^https?://[^/]+\\.deta\\.(?:app|dev)",
+    "website": "https://deta.sh"
   },
   "Detectify": {
     "cats": [

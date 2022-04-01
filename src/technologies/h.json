@@ -149,6 +149,20 @@
     "scriptSrc": "api\\.handtalk\\.me",
     "website": "https://www.handtalk.me/"
   },
+  "Happy Returns": {
+    "cats": [
+      102
+    ],
+    "description": "Happy Returns is a return software and reverse logistics company, provides a packaging-free, in-person way for customers to return an online purchase for an immediate refund.",
+    "dom": "a[href*='.happyreturns.com'], img[src*='.happyreturns.com/']",
+    "icon": "Happy Returns.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://happyreturns.com"
+  },
   "HappyFox Helpdesk": {
     "cats": [
       53
@@ -178,20 +192,6 @@
     "saas": true,
     "scriptSrc": "\\.happyfoxchat\\.com/",
     "website": "https://www.happyfox.com/live-chat"
-  },
-  "Happy Returns": {
-    "cats": [
-      102
-    ],
-    "description": "Happy Returns is a return software and reverse logistics company, provides a packaging-free, in-person way for customers to return an online purchase for an immediate refund.",
-    "icon": "Happy Returns.png",
-    "dom":"a[href*='.happyreturns.com'], img[src*='.happyreturns.com/']",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://happyreturns.com"
   },
   "Haravan": {
     "cats": [
@@ -468,20 +468,20 @@
       13
     ],
     "description": "HetrixTools is an uptime and blacklist monitoring platform.",
-    "icon": "HetrixTools.png",
     "headers": {
       "content-security-policy": "\\.hetrixtools\\.com"
     },
+    "icon": "HetrixTools.png",
     "js": {
       "htoolz": ""
     },
-    "scriptSrc": "\\.hetrixtools\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.hetrixtools\\.com/",
     "website": "https://hetrixtools.com"
   },
   "Hetzner": {
@@ -632,20 +632,6 @@
     "saas": true,
     "website": "https://www.histats.com"
   },
-  "Hoefler&Co": {
-    "cats": [
-      17
-    ],
-    "description": "Hoefler&Co is a digital type foundry (font design studio) in Woburn, Massachusetts (formerly New York City), founded by type designer Jonathan Hoefler. Hoefler&Co designs typefaces for clients and for retail on its website.",
-    "icon": "Hoefler&Co.svg",
-    "dom": "link[href*='cloud.typography.com/']",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.typography.com"
-  },
   "History": {
     "cats": [
       19
@@ -655,6 +641,20 @@
       "/history(@|/)([\\d.]+)(?:/[a-z]+)?/history(?:(.production|.development))?(?:.min)?\\.js\\;version:\\2"
     ],
     "website": "https://github.com/ReactTraining/history"
+  },
+  "Hoefler&Co": {
+    "cats": [
+      17
+    ],
+    "description": "Hoefler&Co is a digital type foundry (font design studio) in Woburn, Massachusetts (formerly New York City), founded by type designer Jonathan Hoefler. Hoefler&Co designs typefaces for clients and for retail on its website.",
+    "dom": "link[href*='cloud.typography.com/']",
+    "icon": "Hoefler&Co.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.typography.com"
   },
   "Hogan.js": {
     "cats": [
@@ -1190,16 +1190,16 @@
     ],
     "description": "Hypervisual Page Builder is a page builder for Shopify.",
     "icon": "Hypervisual.png",
-    "requires": "Shopify",
     "js": {
       "hypervisualPreflight": ""
     },
-    "scriptSrc": "cdn\\.gethypervisual\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.gethypervisual\\.com/",
     "website": "https://gethypervisual.com"
   },
   "hCaptcha": {

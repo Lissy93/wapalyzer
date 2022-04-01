@@ -76,7 +76,6 @@
     ],
     "description": "Obviyo is an ecommerce intelligence platform helping merchants personalise and optimise shopping experience.",
     "icon": "Obviyo.png",
-    "requires": "Shopify",
     "js": {
       "__hic.version": "([\\d.]+)\\;version:\\1"
     },
@@ -85,6 +84,7 @@
       "mid",
       "recurring"
     ],
+    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "deploy\\.hiconversion\\.com",
     "website": "https://www.obviyo.com"
@@ -1175,16 +1175,16 @@
     ],
     "description": "OrderLogic app allows you to define minimum and maximum product quantities for all products in your Shopify store.",
     "icon": "OrderLogic app.png",
-    "requires": "Shopify",
     "js": {
+      "OrderLogic.ALERTS_KEY": "",
       "OrderLogic.DEFAULT_MONEY_FORMAT": "",
-      "OrderLogic.cartData": "",
-      "OrderLogic.ALERTS_KEY": ""
+      "OrderLogic.cartData": ""
     },
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
     "saas": true,
     "website": "https://apps.shopify.com/orderlogic"
   },
