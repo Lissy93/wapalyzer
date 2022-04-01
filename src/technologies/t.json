@@ -2600,9 +2600,11 @@
     "cats": [
       25
     ],
+    "oss": true,
     "description": "Three.js is a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL.",
     "icon": "three.js.png",
     "js": {
+      "window.__THREE__": "^(.+)$\\;version:\\1",
       "THREE.REVISION": "^(.+)$\\;version:\\1"
     },
     "scriptSrc": "three(?:\\.min)?\\.js",
