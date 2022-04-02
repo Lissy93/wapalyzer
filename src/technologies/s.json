@@ -3738,6 +3738,21 @@
     ],
     "website": "http://splunk.com"
   },
+  "Splunk RUM": {
+    "cats": [
+      78
+    ],
+    "description": "Splunk RUM is a real-time, front-end user monitoring and troubleshooting.",
+    "icon": "Splunk.svg",
+    "js": {
+      "PLUMBR._core.version": "^([\\d\\.]+).+$\\;version:\\1",
+      "PLUMBR._core.selfURL": "browser\\.plumbr\\.io/pa(?:-early)?\\.js"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.splunk.com/en_us/observability/real-user-monitoring.html"
+  },
   "SpotHopper": {
     "cats": [
       51,
