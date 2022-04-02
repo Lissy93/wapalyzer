@@ -268,28 +268,6 @@
     "saas": true,
     "website": "https://studio.design"
   },
-  "Survicate": {
-    "cats": [
-      73
-    ],
-    "description": "Survicate is an all-in-one customer feedback tool that allows you collect feedback.",
-    "icon": "Survicate.svg",
-    "headers": {
-      "content-security-policy": "api\\.survicate\\.com"
-    },
-    "dom": "link[href*='.survicate.com']",
-    "js": {
-      "survicate": ""
-    },
-    "scriptSrc": "\\.survicate\\.com/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "recurring",
-      "payg"
-    ],
-    "website": "https://survicate.com"
-  },
   "SUSE": {
     "cats": [
       28
@@ -352,10 +330,10 @@
       88
     ],
     "description": "Saba.Host is a total web-hosting solutions. It provides shared hosting, WordPress hosting, dedicated server, virtual private server (VPS), SSL and more.",
-    "icon": "Saba.Host.png",
     "dns": {
       "SOA": "\\.saba\\.host"
     },
+    "icon": "Saba.Host.png",
     "pricing": [
       "recurring"
     ],
@@ -1570,7 +1548,6 @@
   },
   "Sharetribe": {
     "cats": [
-      1,
       6
     ],
     "description": "Sharetribe is cloud-based platform for small to medium businesses, which helps businesses to create and manage custom online marketplaces.",
@@ -1908,10 +1885,10 @@
     ],
     "description": "Shopify Product reviews allows you to add a customer review feature to your products.",
     "icon": "Shopify.svg",
-    "requires": "Shopify",
     "js": {
       "SPR": ""
     },
+    "requires": "Shopify",
     "scriptSrc": [
       "productreviews\\.shopifycdn\\.com"
     ],
@@ -2129,21 +2106,6 @@
     "requires": "WordPress",
     "website": "https://shortpixel.com"
   },
-  "ShoutOut": {
-    "cats": [
-      71
-    ],
-    "description": "ShoutOut is a multi-level marketing SaaS solution that allows tracking of affiliates.",
-    "icon": "ShoutOut.png",
-    "requiresCategory": 6,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "scriptSrc": "\\.shoutout\\.global/",
-    "website": "https://www.shoutout.global"
-  },
   "Shortcodes Ultimate": {
     "cats": [
       87
@@ -2159,6 +2121,21 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/shortcodes-ultimate/.+index\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://getshortcodes.com"
+  },
+  "ShoutOut": {
+    "cats": [
+      71
+    ],
+    "description": "ShoutOut is a multi-level marketing SaaS solution that allows tracking of affiliates.",
+    "icon": "ShoutOut.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requiresCategory": 6,
+    "scriptSrc": "\\.shoutout\\.global/",
+    "website": "https://www.shoutout.global"
   },
   "Shuttle": {
     "cats": [
@@ -2949,6 +2926,22 @@
     },
     "website": "http://www.seneca.nl/pub/Smartsite/Smartsite-Smartsite-iXperion"
   },
+  "SmartWeb": {
+    "cats": [
+      6
+    ],
+    "description": "SmartWeb is an ecommerce platform from Denmark.",
+    "icon": "SmartWeb.png",
+    "meta": {
+      "generator": "^SmartWeb$"
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.smartweb.dk"
+  },
   "Smarter Click": {
     "cats": [
       77
@@ -3040,22 +3033,6 @@
     "saas": true,
     "scriptSrc": "\\.smartsuppchat\\.com",
     "website": "https://www.smartsupp.com"
-  },
-  "SmartWeb": {
-    "cats": [
-      6
-    ],
-    "description": "SmartWeb is an ecommerce platform from Denmark.",
-    "icon": "SmartWeb.png",
-    "meta": {
-      "generator": "^SmartWeb$"
-    },
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.smartweb.dk"
   },
   "Smash Balloon Instagram Feed": {
     "cats": [
@@ -4724,15 +4701,15 @@
     ],
     "description": "SuperLemon app is an all-in-one WhatsApp plugin for Shopify stores.",
     "icon": "SuperLemon.png",
-    "requires": "Shopify",
     "implies": "WhatsApp Business Chat",
-    "scriptSrc": "/files/superlemon_.+\\.js",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
     "saas": true,
+    "scriptSrc": "/files/superlemon_.+\\.js",
     "website": "https://apps.shopify.com/whatsapp-chat-button"
   },
   "Supersized": {
@@ -4771,6 +4748,28 @@
     ],
     "saas": true,
     "website": "https://www.supporthero.com/"
+  },
+  "Survicate": {
+    "cats": [
+      73
+    ],
+    "description": "Survicate is an all-in-one customer feedback tool that allows you collect feedback.",
+    "dom": "link[href*='.survicate.com']",
+    "headers": {
+      "content-security-policy": "api\\.survicate\\.com"
+    },
+    "icon": "Survicate.svg",
+    "js": {
+      "survicate": ""
+    },
+    "pricing": [
+      "freemium",
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.survicate\\.com/",
+    "website": "https://survicate.com"
   },
   "Svbtle": {
     "cats": [

@@ -43,6 +43,20 @@
     "scriptSrc": "cc\\.cdn\\.civiccomputing\\.com",
     "website": "https://www.civicuk.com/cookie-control"
   },
+  "CJDropshipping app": {
+    "cats": [
+      100
+    ],
+    "description": "CJDropshipping is a dropshipping supplier and fulfillment service from China.",
+    "icon": "CJDropshipping.svg",
+    "pricing": [
+      "payg"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "app\\.cjdropshipping\\.com/",
+    "website": "https://apps.shopify.com/cucheng"
+  },
   "CKEditor": {
     "cats": [
       24
@@ -465,17 +479,6 @@
     ],
     "website": "https://getcarro.com"
   },
-  "Cart.js": {
-    "cats": [
-      59
-    ],
-    "description": "Cart.js is a very small open-source Javascript library that makes the addition of powerful Ajax cart functionality to your Shopify theme a breeze.",
-    "icon": "Cart.js.png",
-    "requires": "Shopify",
-    "oss": true,
-    "scriptSrc": "(?:shopify-cartjs/([\\d\\.]+)|assets)/rivets-cart\\.min\\.js\\;version:\\1",
-    "website": "https://cartjs.org"
-  },
   "Cart Functionality": {
     "cats": [
       6
@@ -505,6 +508,17 @@
     ],
     "url": "/(?:cart|order|basket|trolley|bag|shoppingbag|checkout)",
     "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
+  },
+  "Cart.js": {
+    "cats": [
+      59
+    ],
+    "description": "Cart.js is a very small open-source Javascript library that makes the addition of powerful Ajax cart functionality to your Shopify theme a breeze.",
+    "icon": "Cart.js.png",
+    "oss": true,
+    "requires": "Shopify",
+    "scriptSrc": "(?:shopify-cartjs/([\\d\\.]+)|assets)/rivets-cart\\.min\\.js\\;version:\\1",
+    "website": "https://cartjs.org"
   },
   "CartStack": {
     "cats": [
@@ -543,14 +557,14 @@
       91
     ],
     "description": "Cashew Payments is a buy now, pay later platform that allows its customers to shop now and pay later in equal monthly installments.",
-    "icon": "Cashew Payments.svg",
-    "requiresCategory": 6,
     "headers": {
       "Content-Security-Policy": "\\.cashewpayments\\.com"
     },
+    "icon": "Cashew Payments.svg",
     "pricing": [
       "payg"
     ],
+    "requiresCategory": 6,
     "saas": true,
     "scriptSrc": "\\.cashewpayments\\.com/",
     "website": "https://www.cashewpayments.com"
@@ -780,11 +794,11 @@
     ],
     "description": "ChannelApe is an ecommerce and inventory management solution for the footwear and apparel industry.",
     "icon": "ChannelApe.svg",
-    "requiresCategory": 6,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "requiresCategory": 6,
     "saas": true,
     "website": "https://www.channelape.com",
     "xhr": "\\.channelape\\.com"
@@ -1153,20 +1167,6 @@
       "\\bCitymail\\b"
     ],
     "website": "https://www.citymail.se"
-  },
-  "CJDropshipping app": {
-    "cats": [
-      100
-    ],
-    "description": "CJDropshipping is a dropshipping supplier and fulfillment service from China.",
-    "icon": "CJDropshipping.svg",
-    "requires": "Shopify",
-    "scriptSrc": "app\\.cjdropshipping\\.com/",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://apps.shopify.com/cucheng"
   },
   "Ckan": {
     "cats": [
@@ -2100,6 +2100,20 @@
     ],
     "website": "https://conekta.com"
   },
+  "Confer With": {
+    "cats": [
+      103
+    ],
+    "description": "Confer With triggers live streaming video calls between shoppers and instore experts from a website, or outside a store.",
+    "icon": "Confer With.svg",
+    "pricing": [
+      "poa"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "scriptSrc": "\\.conferwith\\.io/",
+    "website": "https://conferwith.io"
+  },
   "Conjured": {
     "cats": [
       100
@@ -2414,10 +2428,10 @@
     "meta": {
       "author": "^Convertr Commerce$"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://convertr.com.br"
   },
   "ConveyThis": {
@@ -3026,20 +3040,6 @@
     "scriptSrc": "/wp-content/themes/parabola/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.cryoutcreations.eu/wordpress-themes/parabola"
   },
-  "crypto-js": {
-    "cats": [
-      59
-    ],
-    "description": "crypto-js is a JavaScript library of crypto standards.",
-    "icon": "default.svg",
-    "js": {
-      "CryptoJS.algo": "",
-      "CryptoJS.Rabbit": ""
-    },
-    "scriptSrc": "(?:/([\\d\\.-]+))?/crypto-js(?:\\.min)?\\.js\\;version:\\1",
-    "oss": true,
-    "website": "https://github.com/brix/crypto-js"
-  },
   "Crypto-Loot": {
     "cats": [
       56
@@ -3329,5 +3329,19 @@
     },
     "oss": true,
     "website": "https://github.com/zloirock/core-js"
+  },
+  "crypto-js": {
+    "cats": [
+      59
+    ],
+    "description": "crypto-js is a JavaScript library of crypto standards.",
+    "icon": "default.svg",
+    "js": {
+      "CryptoJS.Rabbit": "",
+      "CryptoJS.algo": ""
+    },
+    "oss": true,
+    "scriptSrc": "(?:/([\\d\\.-]+))?/crypto-js(?:\\.min)?\\.js\\;version:\\1",
+    "website": "https://github.com/brix/crypto-js"
   }
 }

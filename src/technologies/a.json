@@ -678,25 +678,6 @@
     ],
     "website": "https://www.activecampaign.com"
   },
-  "AcuityAds": {
-    "cats": [
-      36
-    ],
-    "description": "AcuityAds offers automatic solutions to marketers willing to connect through clients across mobile, social, and online display advertising campaigns.",
-    "icon": "AcuityAds.svg",
-    "headers": {
-      "Content-Security-Policy": "\\.acuityplatform\\.com"
-    },
-    "js": {
-      "acuityAdsEventQueue": "",
-      "acuityAdsPixelKey": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.acuityads.com"
-  },
   "Acuity Scheduling": {
     "cats": [
       72
@@ -714,6 +695,25 @@
     "saas": true,
     "scriptSrc": "\\.acuityscheduling\\.com",
     "website": "https://acuityscheduling.com"
+  },
+  "AcuityAds": {
+    "cats": [
+      36
+    ],
+    "description": "AcuityAds offers automatic solutions to marketers willing to connect through clients across mobile, social, and online display advertising campaigns.",
+    "headers": {
+      "Content-Security-Policy": "\\.acuityplatform\\.com"
+    },
+    "icon": "AcuityAds.svg",
+    "js": {
+      "acuityAdsEventQueue": "",
+      "acuityAdsPixelKey": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.acuityads.com"
   },
   "Ad Lightning": {
     "cats": [
@@ -1238,19 +1238,6 @@
     "url": "\\.cfm(?:$|\\?)",
     "website": "http://adobe.com/products/coldfusion-family.html"
   },
-  "Adobe Dynamic Media Classic": {
-    "cats": [
-      95
-    ],
-    "description": "Adobe Dynamic Media Classic is a platform that enables customers to manage, enhance, publish, and deliver dynamic rich media content and personal experiences to consumers across all channels and devices, including web, print material, email campaigns, desktops, social, and mobile.",
-    "icon": "Adobe Experience Platform.svg",
-    "headers": {
-      "Content-Security-Policy": "\\.scene7\\.com"
-    },
-    "dom": "source[srcset*='.scene7.com/'], link[href*='.scene7.com']",
-    "saas": true,
-    "website": "https://business.adobe.com/uk/products/experience-manager/scene7-login.html"
-  },
   "Adobe DTM": {
     "cats": [
       42
@@ -1262,6 +1249,19 @@
     },
     "saas": true,
     "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
+  },
+  "Adobe Dynamic Media Classic": {
+    "cats": [
+      95
+    ],
+    "description": "Adobe Dynamic Media Classic is a platform that enables customers to manage, enhance, publish, and deliver dynamic rich media content and personal experiences to consumers across all channels and devices, including web, print material, email campaigns, desktops, social, and mobile.",
+    "dom": "source[srcset*='.scene7.com/'], link[href*='.scene7.com']",
+    "headers": {
+      "Content-Security-Policy": "\\.scene7\\.com"
+    },
+    "icon": "Adobe Experience Platform.svg",
+    "saas": true,
+    "website": "https://business.adobe.com/uk/products/experience-manager/scene7-login.html"
   },
   "Adobe Experience Manager": {
     "cats": [
@@ -1546,12 +1546,12 @@
     ],
     "description": "Affilo is an all-in-one solution for referrals and affiliate marketing.",
     "icon": "Affilo.png",
-    "requires": "Shopify",
-    "scriptSrc": "//affilo\\.io/",
-    "saas": true,
     "pricing": [
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "//affilo\\.io/",
     "website": "https://affilo.io"
   },
   "Affirm": {
@@ -3214,10 +3214,10 @@
     ],
     "description": "Asciidoctor is an open-source text processor and publishing toolchain, written in Ruby, for converting AsciiDoc content to HTML 5, DocBook 5, and other formats.",
     "icon": "Asciidoctor.png",
+    "implies": "Ruby",
     "meta": {
       "generator": "^Asciidoctor\\s([\\d\\.]+)$\\;version:\\1"
     },
-    "implies": "Ruby",
     "oss": true,
     "website": "https://github.com/asciidoctor/asciidoctor"
   },
@@ -3625,15 +3625,15 @@
     ],
     "description": "Avada AVASHIP is an order tracking Shopify app.",
     "icon": "Avada.svg",
-    "requires": "Shopify",
     "js": {
       "AVADA_FSB.bars": ""
     },
-    "scriptSrc": "freeshippingbar\\.apps\\.avada\\.io/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "freeshippingbar\\.apps\\.avada\\.io/",
     "website": "https://apps.shopify.com/avaship"
   },
   "Avada Boost Sales": {
@@ -3643,15 +3643,15 @@
     ],
     "description": "AVADA Boost Sales is a one-stop solution that is specially designed to increase your sales with countdown timer, trust badges, sales pop, sales boost and many more.",
     "icon": "Avada.svg",
-    "requires": "Shopify",
     "js": {
       "AVADA_BS_LAST_UPDATE": ""
     },
-    "scriptSrc": "boostsales\\.apps\\.avada\\.io/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "boostsales\\.apps\\.avada\\.io/",
     "website": "https://apps.shopify.com/avada-boost-sales"
   },
   "Avada SEO": {
@@ -3661,14 +3661,14 @@
     ],
     "description": "Avada SEO is a Shopify app built and designed following strict SEO practices.",
     "icon": "Avada.svg",
-    "requires": "Shopify",
-    "scriptSrc": "seo\\.apps\\.avada\\.io/",
-    "saas": true,
     "pricing": [
       "freemium",
       "recurring",
       "low"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "seo\\.apps\\.avada\\.io/",
     "website": "https://apps.shopify.com/avada-seo-suite"
   },
   "Avada Size Chart": {
@@ -3677,12 +3677,12 @@
     ],
     "description": "Avada Size Chart is a thoughtful app that helps online stores reduce return rates with useful size guides.",
     "icon": "Avada.svg",
-    "requires": "Shopify",
-    "scriptSrc": "sizechart\\.apps\\.avada\\.io/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "sizechart\\.apps\\.avada\\.io/",
     "website": "https://apps.shopify.com/avada-size-chart"
   },
   "Avangate": {

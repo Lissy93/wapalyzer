@@ -578,19 +578,19 @@
     ],
     "description": "Vitals is an all-in-one Shopify marketing software.",
     "icon": "Vitals.svg",
-    "requires": "Shopify",
     "js": {
       "VITALS": "",
       "vitals_app_cache_keys_v1": "",
       "vitals_country_code": "",
       "vitals_product_data": ""
     },
-    "scriptSrc": "//appsolve\\.io/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "//appsolve\\.io/",
     "website": "https://vitals.co"
   },
   "Vite": {
@@ -638,6 +638,20 @@
     "saas": true,
     "scriptSrc": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
     "website": "https://www.volusion.com"
+  },
+  "Vonage Video API": {
+    "cats": [
+      103
+    ],
+    "description": "Vonage Video API platform makes it easy to embed real-time, high-quality interactive video, messaging, screen-sharing, and more into web and mobile apps.",
+    "icon": "Vonage.svg",
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.opentok\\.com/",
+    "website": "https://www.vonage.com/communications-apis/video/"
   },
   "Voog.com Website Builder": {
     "cats": [

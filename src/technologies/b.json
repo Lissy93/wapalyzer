@@ -89,6 +89,22 @@
     "scriptSrc": "babylist\\.com/",
     "website": "https://www.babylist.com"
   },
+  "Back In Stock": {
+    "cats": [
+      100
+    ],
+    "description": "Back In Stock lets your customers choose restock alerts for specific variant combinations, including size, colour or style.",
+    "icon": "Back In Stock.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "app\\.backinstock\\.org/",
+    "website": "https://backinstock.org"
+  },
   "Backbone.js": {
     "cats": [
       12
@@ -122,22 +138,6 @@
       "generator": "^Backdrop CMS(?:\\s([\\d.]+))?\\;version:\\1"
     },
     "website": "https://backdropcms.org"
-  },
-  "Back In Stock": {
-    "cats": [
-      100
-    ],
-    "description": "Back In Stock lets your customers choose restock alerts for specific variant combinations, including size, colour or style.",
-    "icon": "Back In Stock.png",
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "requires": "Shopify",
-    "saas": true,
-    "scriptSrc": "app\\.backinstock\\.org/",
-    "website": "https://backinstock.org"
   },
   "Baidu Analytics (百度统计)": {
     "cats": [
@@ -183,18 +183,18 @@
   },
   "Bambuser": {
     "cats": [
-      19
+      103
     ],
     "description": "Bambuser is a SaaS company based in Stockholm that provides live video shopping technology.",
     "icon": "Bambuser.png",
     "js": {
-      "_bambuser": "",
-      "BambuserLiveShopping": ""
+      "BambuserLiveShopping": "",
+      "_bambuser": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "scriptSrc": "\\.bambuser\\.com/",
     "website": "https://bambuser.com"
   },

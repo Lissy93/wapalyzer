@@ -1392,6 +1392,21 @@
     "implies": "Scala",
     "website": "https://www.playframework.com"
   },
+  "Plaza": {
+    "cats": [
+      103
+    ],
+    "description": "Plaza is a ecommerce platform that allows brands and retailers to communicate with customers via live video.",
+    "dom": "iframe[src*='stream.useplaza.com/']",
+    "icon": "Plaza.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.useplaza.com"
+  },
   "Pleroma": {
     "cats": [
       2
@@ -1547,13 +1562,13 @@
     ],
     "description": "Poloriz's technology automatically creates a personalised, full-screen, mobile-first, cross-selling user experience for shoppers.",
     "icon": "Poloriz.svg",
-    "saas": true,
-    "scriptSrc": "widget\\.poloriz\\.com/",
     "pricing": [
       "payg",
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "widget\\.poloriz\\.com/",
     "website": "https://www.poloriz.com"
   },
   "Polyfill": {
@@ -2039,8 +2054,8 @@
       92
     ],
     "description": "Priority Hints exposes a mechanism for developers to signal a relative priority for browsers to consider when fetching resources.",
+    "dom": "iframe[fetchpriority], img[fetchpriority], script[fetchpriority], link[fetchpriority]",
     "icon": "default.svg",
-    "dom":"iframe[fetchpriority], img[fetchpriority], script[fetchpriority], link[fetchpriority]",
     "website": "https://wicg.github.io/priority-hints/"
   },
   "Prism": {
@@ -2146,22 +2161,22 @@
     "cats": [
       51
     ],
-    "description": "PromoBuilding is a subscription-based website builder for optimising budgets for creating promotional campaigns.",
-    "icon": "PromoBuilding.svg",
     "cookies": {
       "promobuilding_session": ""
     },
+    "description": "PromoBuilding is a subscription-based website builder for optimising budgets for creating promotional campaigns.",
+    "icon": "PromoBuilding.svg",
     "js": {
       "promoApi": "\\;confidence:25",
       "promoDomain": "\\;confidence:25",
       "promoIsOver": "\\;confidence:25",
       "promoStart": "\\;confidence:25"
     },
-    "saas": true,
     "pricing": [
       "recurring",
       "payg"
     ],
+    "saas": true,
     "website": "https://promobuilding.ru"
   },
   "Prototype": {

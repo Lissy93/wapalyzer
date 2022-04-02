@@ -808,21 +808,6 @@
     "scriptSrc": "gdpr\\.privacymanager\\.io",
     "website": "https://liveramp.com/our-platform/preference-consent-management"
   },
-  "Livescale": {
-    "cats": [
-      100
-    ],
-    "description": "Livescale is a video platform that enables teams to transform content and ecommerce into a live shopping experience that reaches engages and monetizes audiences with LiveShopping.",
-    "icon": "Livescale.png",
-    "requires": "Shopify",
-    "scriptSrc": "\\.livescale\\.tv/",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.livescale.tv"
-  },
   "LiveStreet CMS": {
     "cats": [
       1
@@ -884,6 +869,22 @@
     ],
     "icon": "Liveinternet.png",
     "website": "http://liveinternet.ru/rating/"
+  },
+  "Livescale": {
+    "cats": [
+      100,
+      103
+    ],
+    "description": "Livescale is a video platform that enables teams to transform content and ecommerce into a live shopping experience that reaches engages and monetizes audiences with LiveShopping.",
+    "icon": "Livescale.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "\\.livescale\\.tv/",
+    "website": "https://www.livescale.tv"
   },
   "Livewire": {
     "cats": [
@@ -1142,8 +1143,8 @@
       102
     ],
     "description": "Loop Returns is a return portal that automated all the returns and refunds of products.",
-    "icon": "Loop.svg",
     "dom": "a[href*='.loopreturns.com/']",
+    "icon": "Loop.svg",
     "js": {
       "Loop.config.variantParam": ""
     },
@@ -1385,11 +1386,11 @@
     "description": "libphonenumber is a JavaScript library for parsing, formatting, and validating international phone numbers.",
     "icon": "default.svg",
     "js": {
-      "libphonenumber.DIGITS": "",
-      "libphonenumber.AsYouType": ""
+      "libphonenumber.AsYouType": "",
+      "libphonenumber.DIGITS": ""
     },
-    "scriptSrc": "(?:/([\\d\\.]+))?/libphonenumber(?:-js\\.min)?\\.js\\;version:\\1",
     "oss": true,
+    "scriptSrc": "(?:/([\\d\\.]+))?/libphonenumber(?:-js\\.min)?\\.js\\;version:\\1",
     "website": "https://github.com/google/libphonenumber"
   },
   "libwww-perl-daemon": {

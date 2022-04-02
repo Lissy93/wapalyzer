@@ -136,19 +136,19 @@
       99
     ],
     "description": "Narvar is a customer experience platform that helps retailers inspire long-term customer loyalty, at all steps of the post-purchase journey.",
-    "icon": "Narvar.svg",
     "dom": "a[href*='.narvar.com/'], img[src*='.narvar.com/']",
     "headers": {
       "Content-Security-Policy": "\\.narvar\\.com"
     },
+    "icon": "Narvar.svg",
     "js": {
       "NARVARJS_URL": "",
       "narvar": "\\;confidence:1"
     },
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://corp.narvar.com"
   },
   "Nativo": {
@@ -378,6 +378,22 @@
     "saas": true,
     "website": "https://newrelic.com"
   },
+  "NewStore": {
+    "cats": [
+      19
+    ],
+    "description": "NewStore is the only integrated platform offering omnichannel solutions for stores and consumers.",
+    "icon": "NewStore.png",
+    "js": {
+      "highstreetBanner.config": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.api\\.highstreetapp\\.com/",
+    "website": "https://www.newstore.com"
+  },
   "Newspack": {
     "cats": [
       87
@@ -403,22 +419,6 @@
       "recurring"
     ],
     "website": "https://newspack.pub/"
-  },
-  "NewStore": {
-    "cats": [
-      19
-    ],
-    "description": "NewStore is the only integrated platform offering omnichannel solutions for stores and consumers.",
-    "icon": "NewStore.png",
-    "js": {
-      "highstreetBanner.config": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.api\\.highstreetapp\\.com/",
-    "website": "https://www.newstore.com"
   },
   "Nexive": {
     "cats": [
@@ -665,19 +665,19 @@
     ],
     "description": "Nudgify is a Social Proof & Fomo App tool that integrates seamlessly with ecommerce platform such as Shopify, WooCommerce and Magento.",
     "icon": "Nudgify.svg",
-    "requiresCategory": 6,
     "js": {
       "nudgify.cart": ""
     },
-    "scriptSrc": [
-      "\\.nudgify\\.com/",
-      "cdn\\.convertize\\.com/nudgify-shopify\\.js"
-    ],
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "scriptSrc": [
+      "\\.nudgify\\.com/",
+      "cdn\\.convertize\\.com/nudgify-shopify\\.js"
     ],
     "website": "https://www.nudgify.com"
   },
