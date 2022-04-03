@@ -1447,8 +1447,12 @@
       41,
       91
     ],
-    "description": "Grab Pay Later is a Buy now pay later solution offered by Grab.",
+    "description": "Grab Pay Later is a buy now pay later solution offered by Grab.",
     "icon": "Grab.svg",
+    "js": {
+      "GrabWidget": "",
+      "grab_widget_money_format": ""
+    },
     "saas": true,
     "scriptSrc": "grab-paylater\\.js",
     "website": "https://www.grab.com/sg/finance/pay-later/"
