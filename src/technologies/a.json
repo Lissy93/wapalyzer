@@ -2934,7 +2934,9 @@
     "description": "Apple Pay is a mobile payment and digital wallet service by Apple that allows users to make payments in person, in iOS apps, and on the web.",
     "dom": [
       "[aria-labelledby='pi-apple_pay']",
-      "script#apple-pay"
+      "script#apple-pay",
+      "script#apple-pay-shop-capabilities",
+      "input#applePayMerchantId"
     ],
     "icon": "Apple.svg",
     "js": {
@@ -2942,7 +2944,8 @@
       "braintree.applePay": "",
       "checkout.enabledpayments.applepay": "^true$",
       "dw.applepay": "",
-      "enableApplePay": ""
+      "enableApplePay": "",
+      "applePayButtonClicked": ""
     },
     "website": "https://www.apple.com/apple-pay"
   },
