@@ -1645,6 +1645,7 @@
     "headers": {
       "content-security-policy": "\\.modiface\\.com"
     },
+    "dom": "iframe[src*='.modiface.com/']",
     "js": {
       "initModiface": ""
     },
