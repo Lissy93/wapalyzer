@@ -1380,12 +1380,15 @@
       24
     ],
     "description": "Froala Editor is a WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for applications.",
-    "html": "<[^>]+class=\"[^\"]*(?:fr-view|fr-box)",
+    "dom": ".fr-view, .fr-box, .fr-popup, .froala-box",
     "icon": "Froala.svg",
     "implies": [
       "jQuery",
       "Font Awesome"
     ],
+    "js": {
+      "FroalaEditor.VERSION": "([\\d\\.]+)\\;version:\\1"
+    },
     "website": "http://froala.com/wysiwyg-editor"
   },
   "FrontPage": {
