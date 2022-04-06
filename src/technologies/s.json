@@ -16,6 +16,17 @@
     "scriptSrc": "\\.salesmanago\\.com/",
     "website": "https://www.salesmanago.com"
   },
+  "Salla": {
+	"cats": [6],
+	"description": "Salla is an ecommerce platform.",
+	"scriptSrc": "cdn\\.salla\\.sa/",
+	"headers": {
+	  "x-powered-by": "^Salla$"
+    },
+    "dom": "img[src*='cdn.salla.sa']",
+    "website": "https://salla.sa",
+    "icon": "Salla.svg"
+  },
   "SAP": {
     "cats": [
       53
