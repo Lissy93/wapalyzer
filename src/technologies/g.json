@@ -1480,6 +1480,9 @@
     ],
     "description": "Grafana is a multi-platform open source analytics and interactive visualisation web application.",
     "icon": "Grafana.svg",
+    "js": {
+      "__grafana_public_path__": ""
+    },
     "implies": [
       "Go",
       "Macaron"
