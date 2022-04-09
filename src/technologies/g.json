@@ -1484,11 +1484,8 @@
       "Go",
       "Macaron"
     ],
-    "js": {
-      "__grafana_public_path__": "",
-      "grafanaBootData.settings.buildInfo['version']": "([\\d.]+)\\;version:\\1"
-    },
     "oss": true,
+    "scripts": ".+latestVersion\":\"[\\d\\.]+\"\\,\"version\":\"([\\d\\.]+)\\;version:\\1\\;confidence:75",
     "scriptSrc": "grafana\\..+\\.com/public/build/",
     "website": "https://grafana.com"
   },
