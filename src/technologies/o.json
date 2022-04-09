@@ -574,18 +574,22 @@
     "saas": true,
     "website": "https://onfido.com"
   },
-  "Onshop": {
+  "OnShop": {
     "cats": [
       6
     ],
-    "description": "OpenCartfree open-source ecommerce platform for online merchants.",
-    "excludes": "OpenCart",
+    "description": "OnShop is an ecommerce platform for online merchants.",
+    "dom":"link[href*='cdn.onshop.asia/']",
     "icon": "Onshop.svg",
-    "implies": "PHP",
+    "excludes": "OpenCart",
+    "implies": "PHP",  
     "meta": {
       "generator": "Onshop Ecommerce"
     },
-    "scriptSrc": "/opencart_custom\\.js",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "https://onshop.asia"
   },
   "Ookla Speedtest Custom": {
