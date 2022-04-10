@@ -1488,7 +1488,7 @@
       "Macaron"
     ],
     "oss": true,
-    "scripts": ".+latestVersion\":\"[\\d\\.]+\"\\,\"version\":\"([\\d\\.]+)\\;version:\\1\\;confidence:75",
+    "scripts": ".+latestVersion\":\"[\\d\\.\\w\\-]+\"\\,\"version\":\"([\\d\\.]+)\\;version:\\1\\;confidence:75",
     "scriptSrc": "grafana\\..+\\.com/public/build/",
     "website": "https://grafana.com"
   },
