@@ -544,6 +544,22 @@
     },
     "website": "http://ghost.org"
   },
+  "Gist Giftship": {
+    "cats": [
+      100
+    ],
+    "description": "Gist Giftship is a gifting app on Shopify that allows your customers to complete all of their gift shopping at once.",
+    "icon": "Gist.svg",
+    "requires": "Shopify",
+    "scriptSrc": "assets/js/giftship\\.([\\d\\.]+)\\.js\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://gist-apps.com/giftship"
+  },
   "GitBook": {
     "cats": [
       4
@@ -746,6 +762,23 @@
       "recurring"
     ],
     "website": "https://apps.shopify.com/globo-related-products"
+  },
+  "GlobalShopex": {
+    "cats": [
+      106
+    ],
+    "description": "GlobalShopex offers a logistics ecommerce solution easy to integrate, which helps online businesses to sell in over 200 countries.",
+    "icon": "GlobalShopex.png",
+    "js": {
+      "GSXPreviewCheckout": "",
+      "GSXMiniCheckout": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "//globalshopex\\.com/",
+    "website": "http://www.globalshopex.com"
   },
   "GloriaFood": {
     "cats": [
@@ -1496,15 +1529,15 @@
     ],
     "description": "Grafana is a multi-platform open source analytics and interactive visualisation web application.",
     "icon": "Grafana.svg",
+    "js": {
+      "__grafana_public_path__": ""
+    },
     "implies": [
       "Go",
       "Macaron"
     ],
-    "js": {
-      "__grafana_public_path__": "",
-      "grafanaBootData.settings.buildInfo['version']": "([\\d.]+)\\;version:\\1"
-    },
     "oss": true,
+    "scripts": ".+latestVersion\":\"[\\d\\.\\w\\-]+\"\\,\"version\":\"([\\d\\.]+)\\;version:\\1\\;confidence:75",
     "scriptSrc": "grafana\\..+\\.com/public/build/",
     "website": "https://grafana.com"
   },

@@ -643,6 +643,10 @@ class Site {
         }
       }
 
+      if (page.url() === 'about:blank') {
+        throw new Error('The website failed to load')
+      }
+
       if (!this.options.noScripts) {
         await sleep(1000)
       }
