@@ -1144,9 +1144,11 @@
     ],
     "description": "Loop Returns is a return portal that automated all the returns and refunds of products.",
     "dom": "a[href*='.loopreturns.com/']",
+    "requiresCategory": 6,
     "icon": "Loop.svg",
     "js": {
-      "Loop.config.variantParam": ""
+      "Loop.config.variantParam": "",
+      "LoopOnstore": ""
     },
     "pricing": [
       "low",
