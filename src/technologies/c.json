@@ -1491,7 +1491,6 @@
       "cf-ray": ""
     },
     "icon": "CloudFlare.svg",
-    "dom": "link[href*='cdnjs.cloudflare.com/']",
     "js": {
       "CloudFlare": ""
     },
@@ -3273,7 +3272,9 @@
     ],
     "description": "cdnjs is a free distributed JS library delivery service.",
     "icon": "cdnjs.svg",
+    "implies": "Cloudflare",
     "oss": true,
+    "dom": "link[href*='cdnjs.cloudflare.com/']",
     "scriptSrc": "cdnjs\\.cloudflare\\.com",
     "website": "https://cdnjs.com"
   },
