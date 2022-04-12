@@ -16,18 +16,6 @@
     "scriptSrc": "\\.salesmanago\\.com/",
     "website": "https://www.salesmanago.com"
   },
-  "Salla": {
-    "cats": [
-      6
-    ],
-    "description": "Salla is an ecommerce platform.",
-    "icon": "Salla.svg",
-    "headers": {
-      "x-powered-by": "^Salla$"
-    },
-    "scriptSrc": "cdn\\.salla\\.sa/",
-    "website": "https://salla.sa"  
-  },
   "SAP": {
     "cats": [
       53
@@ -96,20 +84,6 @@
     "html": "<img[^>]+_tcm\\d{2,3}-\\d{6}\\.",
     "icon": "SDL Tridion.svg",
     "website": "http://www.sdl.com/products/tridion"
-  },
-  "Sematext Experience": {
-    "cats": [
-      78
-    ],
-    "description": "Sematext Experience for Real User Monitoring Analyze data collected from real-user sessions, detect anomalies, send alerts in real-time, and enhance overall customer digital experience.",
-    "icon": "Sematext.svg",
-    "scriptSrc": "\\.sematext\\.com/experience\\.js",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://sematext.com/experience"
   },
   "SEMrush": {
     "cats": [
@@ -634,6 +608,18 @@
     "saas": true,
     "scriptSrc": "service\\.force\\.com",
     "website": "https://www.salesforce.com/au/products/service-cloud/"
+  },
+  "Salla": {
+    "cats": [
+      6
+    ],
+    "description": "Salla is an ecommerce platform.",
+    "headers": {
+      "x-powered-by": "^Salla$"
+    },
+    "icon": "Salla.svg",
+    "scriptSrc": "cdn\\.salla\\.sa/",
+    "website": "https://salla.sa"
   },
   "Salonist": {
     "cats": [
@@ -1269,6 +1255,20 @@
     "icon": "Semantic-ui.png",
     "scriptSrc": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://semantic-ui.com/"
+  },
+  "Sematext Experience": {
+    "cats": [
+      78
+    ],
+    "description": "Sematext Experience for Real User Monitoring Analyze data collected from real-user sessions, detect anomalies, send alerts in real-time, and enhance overall customer digital experience.",
+    "icon": "Sematext.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.sematext\\.com/experience\\.js",
+    "website": "https://sematext.com/experience"
   },
   "Sencha Touch": {
     "cats": [
@@ -3750,6 +3750,22 @@
     "saas": true,
     "website": "https://www.splittypay.com"
   },
+  "Splunk RUM": {
+    "cats": [
+      78
+    ],
+    "description": "Splunk RUM is a real-time, front-end user monitoring and troubleshooting.",
+    "icon": "Splunk.svg",
+    "js": {
+      "PLUMBR._core.selfURL": "browser\\.plumbr\\.io/pa(?:-early)?\\.js",
+      "PLUMBR._core.version": "^([\\d\\.]+).+$\\;version:\\1"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "scriptSrc": "browser\\.plumbr\\.io/pa(?:-early)?\\.js",
+    "website": "https://www.splunk.com/en_us/observability/real-user-monitoring.html"
+  },
   "Splunkd": {
     "cats": [
       19
@@ -3763,22 +3779,6 @@
       "poa"
     ],
     "website": "http://splunk.com"
-  },
-  "Splunk RUM": {
-    "cats": [
-      78
-    ],
-    "description": "Splunk RUM is a real-time, front-end user monitoring and troubleshooting.",
-    "icon": "Splunk.svg",
-    "js": {
-      "PLUMBR._core.version": "^([\\d\\.]+).+$\\;version:\\1",
-      "PLUMBR._core.selfURL": "browser\\.plumbr\\.io/pa(?:-early)?\\.js"
-    },
-    "scriptSrc": "browser\\.plumbr\\.io/pa(?:-early)?\\.js",
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.splunk.com/en_us/observability/real-user-monitoring.html"
   },
   "SpotHopper": {
     "cats": [

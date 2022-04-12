@@ -240,14 +240,14 @@
       51
     ],
     "description": "Umso is a website builder for Startups.",
+    "dom": "link[href*='.umso.co/'], img[src*='.umso.co/'], video[poster*='.umso.co/']",
     "icon": "Umso.svg",
-    "dom":"link[href*='.umso.co/'], img[src*='.umso.co/'], video[poster*='.umso.co/']",
-    "scripts": "isPriorBlockingEnabled\\;confidence:75",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scripts": "isPriorBlockingEnabled\\;confidence:75",
     "website": "https://www.umso.com"
   },
   "Unbounce": {

@@ -124,8 +124,6 @@
       12
     ],
     "description": "Quasar is an open-source Vue.js based framework.",
-    "icon": "Quasar.svg",
-    "requires": "Vue.js",
     "dom": {
       "div#q-app": {
         "attributes": {
@@ -138,7 +136,9 @@
         }
       }
     },
+    "icon": "Quasar.svg",
     "oss": true,
+    "requires": "Vue.js",
     "website": "https://quasar.dev"
   },
   "Qubit": {

@@ -138,15 +138,15 @@
       89
     ],
     "description": "GTranslate app is a website translator which can translate any website to any language automatically.",
-    "icon": "GTranslate.svg",
     "dom": "img[src*='gtranslate.io/shopify']",
-    "scriptSrc": "gtranslate\\.io/shopify/",
+    "icon": "GTranslate.svg",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
     "requires": "Shopify",
+    "scriptSrc": "gtranslate\\.io/shopify/",
     "website": "https://apps.shopify.com/multilingual-shop-by-gtranslate"
   },
   "GX WebManager": {
@@ -550,14 +550,14 @@
     ],
     "description": "Gist Giftship is a gifting app on Shopify that allows your customers to complete all of their gift shopping at once.",
     "icon": "Gist.svg",
-    "requires": "Shopify",
-    "scriptSrc": "assets/js/giftship\\.([\\d\\.]+)\\.js\\;version:\\1",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring",
       "payg"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "assets/js/giftship\\.([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://gist-apps.com/giftship"
   },
   "GitBook": {
@@ -747,38 +747,6 @@
     "scriptSrc": "\\.global-e\\.com",
     "website": "https://www.global-e.com"
   },
-  "Glopal": {
-    "cats": [
-      106
-    ],
-    "description": "Glopal provides advanced international marketing solutions for ecommerce retailers and brands seeking to grow their businesses' globally.",
-    "icon": "Glopal.png",
-    "scriptSrc": "\\.glopal\\.com/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "mid",
-      "recurring",
-      "payg"
-    ],
-    "website": "https://www.glopal.com"
-  },
-  "Globo Also Bought": {
-    "cats": [
-      100
-    ],
-    "description": "Also Bought is a conversion Shopify app by Globo.",
-    "icon": "Also Bought.png",
-    "requires": "Shopify",
-    "scriptSrc": "assets/globo\\.alsobought\\.js",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://apps.shopify.com/globo-related-products"
-  },
   "GlobalShopex": {
     "cats": [
       106
@@ -786,8 +754,8 @@
     "description": "GlobalShopex offers a logistics ecommerce solution easy to integrate, which helps online businesses to sell in over 200 countries.",
     "icon": "GlobalShopex.png",
     "js": {
-      "GSXPreviewCheckout": "",
-      "GSXMiniCheckout": ""
+      "GSXMiniCheckout": "",
+      "GSXPreviewCheckout": ""
     },
     "pricing": [
       "poa"
@@ -795,6 +763,38 @@
     "saas": true,
     "scriptSrc": "//globalshopex\\.com/",
     "website": "http://www.globalshopex.com"
+  },
+  "Globo Also Bought": {
+    "cats": [
+      100
+    ],
+    "description": "Also Bought is a conversion Shopify app by Globo.",
+    "icon": "Also Bought.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "assets/globo\\.alsobought\\.js",
+    "website": "https://apps.shopify.com/globo-related-products"
+  },
+  "Glopal": {
+    "cats": [
+      106
+    ],
+    "description": "Glopal provides advanced international marketing solutions for ecommerce retailers and brands seeking to grow their businesses' globally.",
+    "icon": "Glopal.png",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.glopal\\.com/",
+    "website": "https://www.glopal.com"
   },
   "GloriaFood": {
     "cats": [
@@ -1545,16 +1545,16 @@
     ],
     "description": "Grafana is a multi-platform open source analytics and interactive visualisation web application.",
     "icon": "Grafana.svg",
-    "js": {
-      "__grafana_public_path__": ""
-    },
     "implies": [
       "Go",
       "Macaron"
     ],
+    "js": {
+      "__grafana_public_path__": ""
+    },
     "oss": true,
-    "scripts": ".+latestVersion\":\"[\\d\\.\\w\\-]+\"\\,\"version\":\"([\\d\\.]+)\\;version:\\1\\;confidence:75",
     "scriptSrc": "grafana\\..+\\.com/public/build/",
+    "scripts": ".+latestVersion\":\"[\\d\\.\\w\\-]+\"\\,\"version\":\"([\\d\\.]+)\\;version:\\1\\;confidence:75",
     "website": "https://grafana.com"
   },
   "Graffiti CMS": {

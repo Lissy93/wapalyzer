@@ -1723,6 +1723,21 @@
     },
     "website": "http://codemirror.net"
   },
+  "Coin Currency Converter": {
+    "cats": [
+      100
+    ],
+    "description": "Coin Currency Converter is an automatic currency conversion app for Shopify.",
+    "icon": "Coin Currency Converter.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "/apps/coin/coin\\.js.+\\.myshopify\\.com",
+    "website": "https://apps.shopify.com/coin"
+  },
   "CoinHive": {
     "cats": [
       56
@@ -1758,21 +1773,6 @@
     "dom": "a[href^='https://commerce.coinbase.com/checkout/']",
     "icon": "Coinbase.svg",
     "website": "https://commerce.coinbase.com/"
-  },
-  "Coin Currency Converter": {
-    "cats": [
-      100
-    ],
-    "description": "Coin Currency Converter is an automatic currency conversion app for Shopify.",
-    "icon": "Coin Currency Converter.png",
-    "requires": "Shopify",
-    "scriptSrc": "/apps/coin/coin\\.js.+\\.myshopify\\.com",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://apps.shopify.com/coin"
   },
   "Coinhave": {
     "cats": [
@@ -2154,12 +2154,12 @@
       "connectif.version": "^([\\d\\.]+)$\\;version:\\1",
       "connectifInfo.store": ""
     },
-    "scriptSrc": "cdn\\.connectif\\.cloud/",
     "pricing": [
       "recurring",
       "payg"
     ],
     "saas": true,
+    "scriptSrc": "cdn\\.connectif\\.cloud/",
     "website": "https://connectif.ai"
   },
   "Constant Contact": {
@@ -3271,10 +3271,10 @@
       31
     ],
     "description": "cdnjs is a free distributed JS library delivery service.",
+    "dom": "link[href*='cdnjs.cloudflare.com/']",
     "icon": "cdnjs.svg",
     "implies": "Cloudflare",
     "oss": true,
-    "dom": "link[href*='cdnjs.cloudflare.com/']",
     "scriptSrc": "cdnjs\\.cloudflare\\.com",
     "website": "https://cdnjs.com"
   },

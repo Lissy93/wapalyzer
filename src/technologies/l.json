@@ -1145,7 +1145,6 @@
     ],
     "description": "Loop Returns is a return portal that automated all the returns and refunds of products.",
     "dom": "a[href*='.loopreturns.com/']",
-    "requiresCategory": 6,
     "icon": "Loop.svg",
     "js": {
       "Loop.config.variantParam": "",
@@ -1155,6 +1154,7 @@
       "low",
       "recurring"
     ],
+    "requiresCategory": 6,
     "saas": true,
     "website": "https://www.loopreturns.com"
   },
@@ -1333,22 +1333,22 @@
       105
     ],
     "description": "Luna is a company that sells software that aids eyewear companies sell their products online using virtual fitting.",
-    "icon": "Luna.svg",
+    "dom": "link[href*='bsdk.api.ditto.com']",
     "headers": {
       "Content-Security-Policy": "bsdk\\.api\\.ditto.com"
     },
-    "dom":"link[href*='bsdk.api.ditto.com']",
+    "icon": "Luna.svg",
     "js": {
+      "Ditto.__esModule": "",
       "dittoIdLifetime": "",
       "globalDittoKey": "",
       "globalDittoServer": "",
-      "Ditto.__esModule": "",
       "jstextmap.DittoSdkUrl": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://luna.io"
   },
   "LyraThemes Kale": {

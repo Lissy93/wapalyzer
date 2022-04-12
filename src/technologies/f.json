@@ -446,8 +446,8 @@
     "icon": "Fenicio.svg",
     "js": {
       "_FN.validadorTelefono": "",
-      "fneCommerce.miCompraVisto": "",
-      "fnWishlist.cargarInfoArticulos": ""
+      "fnWishlist.cargarInfoArticulos": "",
+      "fneCommerce.miCompraVisto": ""
     },
     "pricing": [
       "mid",
@@ -563,12 +563,12 @@
     ],
     "description": "FintechOS is a low-code platform for banking and insurance.",
     "icon": "FintechOS.svg",
-    "meta": {
-      "ftos-app-version": "\\sv([\\d\\.]+)\\s\\;version:\\1"
-    },
     "js": {
       "FtosChat": "",
       "ftos.core.getB2CCulture": ""
+    },
+    "meta": {
+      "ftos-app-version": "\\sv([\\d\\.]+)\\s\\;version:\\1"
     },
     "pricing": [
       "poa"
@@ -908,6 +908,21 @@
     ],
     "website": "https://fontawesome.com/"
   },
+  "Fontify": {
+    "cats": [
+      100
+    ],
+    "description": "Fontify allows you to utilise any font without having to alter code.",
+    "icon": "Fontify.png",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "fontify\\.nitroapps\\.co/",
+    "website": "https://apps.shopify.com/fontify-change-customize-font-for-your-store"
+  },
   "FooPlugins FooGallery": {
     "cats": [
       87,
@@ -932,21 +947,6 @@
     ],
     "requires": "WordPress",
     "website": "https://fooplugins.com/foogallery-wordpress-gallery-plugin"
-  },
-  "Fontify": {
-    "cats": [
-      100
-    ],
-    "description": "Fontify allows you to utilise any font without having to alter code.",
-    "icon": "Fontify.png",
-    "requires": "Shopify",
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "saas": true,
-    "scriptSrc": "fontify\\.nitroapps\\.co/",
-    "website": "https://apps.shopify.com/fontify-change-customize-font-for-your-store"
   },
   "FoodBooking": {
     "cats": [
@@ -1257,22 +1257,6 @@
     },
     "website": "http://freetextbox.com"
   },
-  "Frequently Bought Together": {
-    "cats": [
-      100
-    ],
-    "description": "Frequently Bought Together is a Shopify app which add Amazon-like 'Customers Who Bought This Item Also Bought' product recommendations to your store.",
-    "icon": "Frequently Bought Together.png",
-    "requires": "Shopify",
-    "scriptSrc": "\\.codeblackbelt\\.com/js/modules/frequently-bought-together/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.codeblackbelt.com"
-  },
   "Freespee": {
     "cats": [
       10
@@ -1292,6 +1276,22 @@
       "\\bFrequenceo\\b"
     ],
     "website": "https://www.laposte.fr/entreprise/produit-entreprise/frequenceo"
+  },
+  "Frequently Bought Together": {
+    "cats": [
+      100
+    ],
+    "description": "Frequently Bought Together is a Shopify app which add Amazon-like 'Customers Who Bought This Item Also Bought' product recommendations to your store.",
+    "icon": "Frequently Bought Together.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "\\.codeblackbelt\\.com/js/modules/frequently-bought-together/",
+    "website": "https://www.codeblackbelt.com"
   },
   "Fresco": {
     "cats": [

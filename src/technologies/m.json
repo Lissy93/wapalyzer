@@ -1641,20 +1641,20 @@
       105
     ],
     "description": "ModiFace is a provider of Augmented Reality technology for the beauty industry.",
-    "icon": "ModiFace.svg",
+    "dom": "iframe[src*='.modiface.com/']",
     "headers": {
       "content-security-policy": "\\.modiface\\.com"
     },
-    "dom": "iframe[src*='.modiface.com/']",
+    "icon": "ModiFace.svg",
     "js": {
       "initModiface": ""
     },
-    "scriptSrc": "\\.modiface\\.com/",
-    "saas": true,
     "pricing": [
       "high",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.modiface\\.com/",
     "website": "https://modiface.com"
   },
   "Modified": {
