@@ -480,6 +480,33 @@
     "saas": true,
     "website": "https://webshopmanager.com"
   },
+  "Web Stories": {
+    "cats": [
+      5
+    ],
+    "description": "Web Stories is a format for visual storytelling for the open web.",
+    "dom": "amp-story",
+    "icon": "Web-Stories.svg",
+    "implies": "AMP",
+    "oss": true,
+    "website": "https://amp.dev/about/stories/"
+  },
+  "Web Stories for WordPress": {
+    "cats": [
+      20,
+      87
+    ],
+    "description": "Web Stories for WordPress is a visual editor for creating Web Stories.",
+    "icon": "Web-Stories.svg",
+    "implies": "Web Stories",
+    "meta": {
+      "amp-story-generator-name": "^Web Stories for WordPress$",
+      "amp-story-generator-version": "^(.+)$\\;version:\\1"
+    },
+    "requires": "WordPress",
+    "oss": true,
+    "website": "https://wp.stories.google"
+  },
   "Web2py": {
     "cats": [
       18
