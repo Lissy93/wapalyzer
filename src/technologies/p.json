@@ -1073,7 +1073,7 @@
     "description": "Phusion Passenger is a free web server and application server with support for Ruby, Python and Node.js.",
     "headers": {
       "Server": "Phusion Passenger ([\\d.]+)\\;version:\\1",
-      "X-Powered-By": "Phusion Passenger ?([\\d.]+)?\\;version:\\1"
+      "X-Powered-By": "Phusion Passenger(?:\\(R\\))? ?([\\d.]+)?\\;version:\\1"
     },
     "icon": "Phusion Passenger.png",
     "website": "https://phusionpassenger.com"
