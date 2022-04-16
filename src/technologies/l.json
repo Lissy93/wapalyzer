@@ -571,6 +571,40 @@
     "scriptSrc": "platform\\.linkedin\\.com/(?:.*)?in\\.js(?:\\?version)?([\\d.]+)?\\;version:\\1",
     "website": "https://www.linkedin.com/developers"
   },
+  "Linx Commerce": {
+    "cats": [
+      6
+    ],
+    "description": "Linx Commerce is an ecommerce platform, which provides seamless and personalised cross-channel solution that enables a true omni-channel shopping experience.",
+    "icon": "Linx.png",
+    "js": {
+      "linxImpulse.config.integrationFlags.platformProvider": "linxCommerce"
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.linx.com.br/linx-commerce"
+  },
+  "Linx Impulse": {
+    "cats": [
+      77,
+      76
+    ],
+    "description": "Linx Impulse is a personalisation, media and retargeting solutions built by Linx.",
+    "icon": "Linx.png",
+    "dom": "link[href*='.linximpulse.net']",
+    "js": {
+      "linx.banner": "",
+      "linxImpulse.config": "",
+      "linxImpulseInitialized": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.linx.com.br/linx-impulse"
+  },
   "Liquid Web": {
     "cats": [
       62,
