@@ -484,7 +484,9 @@ const Popup = {
         event.preventDefault()
         event.stopImmediatePropagation()
 
-        open(a.href.replace(/__URL__/g, url))
+        const { version } = chrome.runtime.getManifest()
+
+        open(a.href.replace(/__URL__/g, url).replace(/__VERSION__/g, version))
 
         return false
       })

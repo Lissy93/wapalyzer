@@ -1,12 +1,18 @@
 :root {
+  --color-background: white;
+  --color-background-dark: #121212;
+  --color-background-dark-lighten: #2b2b2b;
   --color-primary: #4608ad;
-  --color-primary-darken: #32067c;
   --color-primary-lighten: #f4f1fa;
   --color-secondary: #fafafa;
-  --color-secondary-darken: #e0e0e0;
+  --color-secondary-dark: #1e1e1e;
+  --color-border: #ebebeb;
+  --color-border-dark: #2b2b2b;
   --color-text: #4a4a4a;
   --color-text-lighten: #7a7a7a;
-  --color-text-dark: var(--color-primary-lighten);
+  --color-text-dark: var(--color-background);
+  --color-text-dark-lighten: #979797;
+  --color-anchor-dark: var(--color-text-dark);
   --color-success: #50b154;
   --color-error: #ff5252;
 }
@@ -47,14 +53,14 @@ p {
 }
 
 .popup {
-  background: white;
+  background: var(--color-background);
   max-height: 34rem;
   overflow-y: auto;
 }
 
 .input[type="text"], .input[type="password"] {
-  background: white;
-  border: 1px solid var(--color-primary);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   color: var(--color-text);
   font-size: .9rem;
@@ -199,14 +205,14 @@ small {
 
 .tabs {
   align-items: center;
-  border-bottom: 1px solid var(--color-secondary-darken);
-	background: white;
+  border-bottom: 1px solid var(--color-border);
+	background: var(--color-background);
   display: flex;
   font-size: .8rem;
 }
 
 .tab {
-  color: var(--color-primary);
+  color: var(--color-text-lighten);
   cursor: pointer;
   letter-spacing: .5px;
   padding: 1rem 1.5rem .8rem 1.5rem;
@@ -215,19 +221,24 @@ small {
   position: relative;
 }
 
+.tab:hover {
+  background: var(--color-secondary);
+}
+
 .tab--disabled {
   opacity: .5;
   pointer-events: none;
 }
 
 .tab--active {
+  background: var(--color-primary-lighten);
   border-bottom: 2px solid var(--color-primary);
   color: var(--color-primary);
   pointer-events: none;
 }
 
 .tab-item {
-  background: white;
+  background: var(--color-background);
   overflow: hidden;
 }
 
@@ -269,8 +280,8 @@ small {
 }
 
 .panel {
-  background: white;
-  border: 1px solid var(--color-secondary-darken);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
   border-width: 1px 0;
   margin: 1rem 0;
 }
@@ -290,7 +301,7 @@ small {
 }
 
 .panel__content tr {
-  border-bottom: 1px solid var(--color-secondary-darken);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .panel__content tr:last-child {
@@ -321,7 +332,7 @@ small {
 }
 
 .panel__content td div {
-  border-bottom: 1px solid var(--color-secondary-darken);
+  border-bottom: 1px solid var(--color-border);
   padding: .5rem 1.5rem .5rem 0;
   margin-right: -1.5rem;
 }
@@ -461,7 +472,7 @@ small {
   font-size: .9rem;
   font-weight: inherit;
   margin-bottom: 0;
-  opacity: .8;
+  opacity: .7;
 }
 
 .footer--hidden {
@@ -518,7 +529,7 @@ small {
 }
 
 .issue {
-  font-size: .8rem;
+  font-size: .7rem;
   padding: 0 1.5rem 1rem 1.5rem;
 }
 
@@ -669,7 +680,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .technology__version {
-  background: var(--color-secondary-darken);
+  background: var(--color-secondary);
   color: var(--color-text);
   border-radius: 3px;
   font-size: .7rem;
@@ -711,7 +722,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   background-color: var(--color-primary);
   border: none;
   border-radius: 4px;
-  color: white;
+  color: var(--color-background);
   cursor: pointer;
   font-size: .9rem;
   padding: .7rem 1.5rem;
@@ -843,7 +854,13 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark a, .dark a:focus, .dark a:hover {
-  color: var(--color-primary-text);
+  color: var(--color-anchor-dark);
+}
+
+.dark .input[type="text"], .dark .input[type="password"] {
+  background: var(--color-background-dark-lighten);
+  border: 1px solid var(--color-text-dark);
+  color: var(--color-text-dark);
 }
 
 .dark .light-text {
@@ -851,11 +868,11 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .input[type="text"], .input[type="password"] {
-  border-color: var(--color-primary-darken);
+  border-color: var(--color-primary);
 }
 
 .dark .message {
-  background: var(--color-primary);
+  background: var(--color-background-dark-lighten);
   color: var(--color-text-dark);
 }
 
@@ -864,7 +881,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .plus-configure__form {
-  background: var(--color-primary);
+  background: var(--color-background-dark-lighten);
   color: var(--color-text-dark);
 }
 
@@ -885,11 +902,15 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .detections {
-  background: var(--color-primary-darken);
+  background: var(--color-background-dark);
 }
 
 .dark .empty {
-  background: var(--color-primary-darken);
+  background: var(--color-background-dark);
+}
+
+.dark .issue a {
+  color: var(--color-text-dark-lighten);
 }
 
 .dark .category__link, .dark .category__link:active, .dark .category__link:hover {
@@ -897,12 +918,11 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .technology__link {
-  color: var(--color-text-dark);
 }
 
 .dark .technology__name {
-  opacity: .8;
   text-decoration: underline;
+  opacity: .8
 }
 
 .dark .technology__link:active .technology__name,  .dark .technology__link:hover .technology__name {
@@ -911,10 +931,11 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .technology__icon {
+  background: var(--color-background-dark-lighten);
 }
 
 .dark .technology__version {
-  background: var(--color-primary);
+  background: var(--color-background-dark-lighten);
   color: var(--color-text-dark);
 }
 
@@ -928,8 +949,8 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .tabs {
-	background: var(--color-primary-darken);
-  border-bottom-color: var(--color-primary);
+	background: var(--color-secondary-dark);
+  border: none;
 }
 
 .dark .tab {
@@ -937,17 +958,22 @@ body.dynamic-icon .category__heading:hover .category__pin {
   opacity: .8;
 }
 
+.dark .tab:hover {
+  background: var(--color-background-dark-lighten);
+}
+
 .dark .tab--disabled {
-  opacity: .5;
+  color: var(--color-text-dark-lighten);
 }
 
 .dark .tab--active {
+  background: var(--color-background-dark-lighten);
   border-color: var(--color-text-dark);
   opacity: 1;
 }
 
 .dark .tab-item {
-	background: var(--color-primary-darken);
+	background: var(--color-background-dark);
 }
 
 .dark .credits {
@@ -955,35 +981,35 @@ body.dynamic-icon .category__heading:hover .category__pin {
   opacity: .5;
 }
 
- .dark .panels {
-  background: var(--color-primary-darken);
+.dark .panels {
+  background: var(--color-background-dark);
 }
 
 .dark .panel {
-  background: var(--color-primary-darken);
-  border-color: var(--color-primary);
+  background: var(--color-secondary-dark);
+  border: none;
 }
 
 .dark .panel__content tr {
-  border-bottom-color: var(--color-primary);
+  border-bottom-color: var(--color-border-dark);
 }
 
 .dark .panel__content td {
-  opacity: .8;
+  opacity: .7;
 }
 
 .dark .panel__content td div {
-  border-color: var(--color-primary);
+  border-color: var(--color-border-dark);
 }
 
 .dark .credits {
-  background: var(--color-primary-darken);
+  background: var(--color-background-dark);
 }
 
 
 .dark .footer {
-  background: var(--color-primary-darken);
-  border-top: 1px solid var(--color-primary);
+  background: var(--color-background-dark-lighten);
+  border: none;
   color: var(--color-text-dark);
 }
 
@@ -996,7 +1022,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .footer__content {
-  opacity: .8;
+  opacity: .7;
 }
 
 .dark .terms__button {
@@ -1005,9 +1031,21 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .dark .terms__button--decline {
-  background-color: var(--color-primary-darken);
-  border: 1px solid white;
+  background-color: var(--color-background-dark);
+  border: 1px solid var(--color-text);
   color: white;
+}
+
+.dark .ttt-grid {
+  background: var(--color-background-dark-lighten);
+}
+
+.dark .ttt-cell {
+  border-color: 1px solid var(--color-text-dark);
+}
+
+.dark .ttt-cell .ttt-icon {
+  color: var(--color-text-dark);
 }
 
 .dark .ttt-player-icon {
