@@ -1361,6 +1361,24 @@
     "scriptSrc": "[^a-z\\d]e107\\.js",
     "website": "http://e107.org"
   },
+  "Ebasnet": {
+    "cats": [
+      1
+    ],
+    "description": "Ebasnet is a web project creation and management platform in the cloud. It allows anyone to set up an online store or corporate website without prior IT knowledge.",
+    "icon": "Ebasnet.svg",
+    "meta": {
+      "author": "^Ebasnet Web Solutions$"
+    },
+    "implies": [
+      "PHP",
+      "MySQL",
+      "Varnish",
+      "Symfony"
+    ],
+    "scriptSrc": "cdnebasnet\\.com/",
+    "website": "https://ebasnet.com"
+  },
   "eBay Partner Network": {
     "cats": [
       71,
