@@ -193,7 +193,8 @@
       6
     ],
     "cookies": {
-      "frontend": "\\;confidence:50"
+      "frontend": "\\;confidence:50",
+      "X-Magento-Vary": ""
     },
     "cpe": "cpe:/a:magento:magento",
     "description": "Magento is an open-source ecommerce platform written in PHP.",
@@ -212,8 +213,7 @@
     ],
     "js": {
       "Mage": "",
-      "VarienForm": "",
-      "X-Magento-Vary": ""
+      "VarienForm": ""
     },
     "magento": "Magento/([0-9.]+)\\;version:\\1",
     "oss": true,
