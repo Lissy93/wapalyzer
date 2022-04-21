@@ -1872,7 +1872,8 @@
   },
   "Shopify Chat": {
     "cats": [
-      52
+      52,
+      100
     ],
     "description": "Shopify Chat is Shopify's native live chat function that allows you to have real-time conversations with customers visiting your Shopify store.",
     "icon": "Shopify.svg",
@@ -3985,14 +3986,15 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/",
     "website": "https://spur-i-t.com"
   },
   "SpurIT Abandoned Cart Reminder": {
     "cats": [
-      98
+      98,
+      100
     ],
     "description": "SpurIT Abandoned Cart Reminder bring back your Shopify store visitors who moved to another tab by blinking your store tab.",
     "icon": "SpurIT.svg",
@@ -4003,7 +4005,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/",
     "website": "https://spur-i-t.com/shopify-apps/abandoned-cart-reminder/"
@@ -4011,7 +4013,8 @@
   "SpurIT Loyalty App": {
     "cats": [
       84,
-      94
+      94,
+      100
     ],
     "description": "SpurIT Loyalty App is a turnkey solution allowing you to reward existing customers in a number of ways.",
     "icon": "SpurIT.svg",
@@ -4022,14 +4025,15 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/loyaltypoints/",
     "website": "https://spur-i-t.com/shopify-apps/loyalty-points-manager"
   },
   "SpurIT Partial Payments App": {
     "cats": [
-      41
+      41,
+      100
     ],
     "description": "SpurIT Partial Payments App allow your customers to pay for the order in several ways or to share a payment with other people.",
     "icon": "SpurIT.svg",
@@ -4037,14 +4041,15 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/split-payments/",
     "website": "https://spur-i-t.com/shopify-apps/split-partial-payments/"
   },
   "SpurIT Recurring Payments App": {
     "cats": [
-      41
+      41,
+      100
     ],
     "description": "SpurIT Recurring Payments App is a simple way to create a system of bill payment,subscriptions and invoicing.",
     "icon": "SpurIT.svg",
@@ -4055,7 +4060,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/recurring-invoices/",
     "website": "https://spur-i-t.com/shopify-apps/recurring-order-subscription"
