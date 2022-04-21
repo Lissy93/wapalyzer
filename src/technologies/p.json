@@ -2115,16 +2115,13 @@
     ],
     "description": "Product Personalizer apps can help you to customise your products and offer a more personalised experience for your customers.",
     "icon": "Product Personalizer.png",
-    "js": {
-      "Zepto": ""
-    },
     "scriptSrc": "/product-personalizer/pplr_common\\.js",
     "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "website": "https://productpersonalizer.com"
   },
   "ProfilePress": {
