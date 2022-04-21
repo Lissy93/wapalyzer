@@ -5157,6 +5157,23 @@
     "scriptSrc": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
     "website": "https://script.aculo.us"
   },
+  "ScrollMagic": {
+    "cats": [
+      59
+    ],
+    "description": "ScrollMagic is a jQuery plugin which essentially lets you use the scrollbar like a playback scrub control.",
+    "icon": "ScrollMagic.png",
+    "implies": [
+      "jQuery",
+      "GSAP"
+    ],
+    "js": {
+      "ScrollMagic.version": "^([\\d\\.]+)$\\;version:\\1",
+      "ScrollMagic": ""
+    },
+    "oss": true,
+    "website": "https://scrollmagic.io"
+  },
   "scrollreveal": {
     "cats": [
       59
