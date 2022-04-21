@@ -246,8 +246,23 @@
       "L.PosAnimation": "",
       "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
     },
-    "scriptSrc": "leaflet.{0,32}\\.js",
+    "scriptSrc": "leaflet.{0,32}\\.js(?!.+shopify)",
     "website": "http://leafletjs.com"
+  },
+  "Leaflet platform": {
+    "cats": [
+      100,
+      74
+    ],
+    "description": "Leaflet is the price testing platform for Shopify.",
+    "icon": "Leaflet platform.png",
+    "requires": "Shopify",
+    "scriptSrc": "scripts\\.leaflet\\.co/",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://join.leaflet.co"
   },
   "Leanplum": {
     "cats": [
