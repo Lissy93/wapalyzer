@@ -647,6 +647,15 @@
     "scriptSrc": "\\.enjin\\.com/",
     "website": "https://www.enjin.com"
   },
+  "Engintron": {
+   "cats":[33],
+    "description": "Engintron is a plugin that integrates Nginx to cPanel/WHM server.",
+    "requires": "Nginx",
+     "headers": {
+      "X-Server-Powered-By": "^Engintron$"
+    },
+    "website": "https://github.com/engintron/engintron"
+  },
   "Ensi": {
     "cats": [
       6
