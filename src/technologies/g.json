@@ -775,9 +775,23 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "assets/globo\\.alsobought\\.js",
+    "website": "https://apps.shopify.com/globo-related-products"
+  },
+  "Globo Color Swatch": {
+    "cats": [
+      100
+    ],
+    "description": "Globo Color Swatch app gives you an easy-to-use tool to display product variants on both collection page, homepage and product page creatively as a means to enhance customers' experience and stimulate them to purchase.",
+    "icon": "Globo apps.png",
+    "pricing": [
+      "freemium"
+    ],
+    "implies": "Shopify",
+    "saas": true,
+    "scriptSrc": "assets/globo\\.swatch\\.data\\.js",
     "website": "https://apps.shopify.com/globo-related-products"
   },
   "Globo Form Builder": {
@@ -791,7 +805,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "/assets/globo\\.formbuilder\\.init\\.js",
     "website": "https://apps.shopify.com/form-builder-contact-form"
