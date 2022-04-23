@@ -1188,11 +1188,15 @@
   },
   "Hyperspeed": {
     "cats": [
-      92
+      92,
+      100
     ],
-    "description": "Fasterize is a website accelerator service.",
+    "description": "Hyperspeed is the most advanced speed booster for Shopify.",
     "icon": "Hyperspeed.png",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Instant.Page"
+    ],
     "js": {
       "hyperscripts": ""
     },
@@ -1201,7 +1205,8 @@
       "recurring"
     ],
     "saas": true,
-    "website": "https://www.hyperspeed.me/"
+    "scriptSrc": "cdn\\.shopify\\.com/.+/assets/hs-(?:instantload|lazysizes)\\.min\\.js",
+    "website": "https://www.hyperspeed.me"
   },
   "Hypervisual Page Builder": {
     "cats": [
