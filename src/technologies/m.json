@@ -768,7 +768,8 @@
     "saas": true,
     "scriptSrc": [
       "(?:device|js)\\.maxmind\\.com/",
-      "geoip\\.maxmind\\.min\\.js"
+      "geoip\\.maxmind\\.min\\.js",
+      "geoip-js\\.com/.+/v([\\d\\.]+)/\\;version:\\1"
     ],
     "website": "https://www.maxmind.com",
     "xhr": "\\.maxmind\\.com"
