@@ -2431,6 +2431,26 @@
     "saas": true,
     "website": "https://www.purecars.com"
   },
+  "PushDaddy Whatsapp Chat": {
+    "cats": [
+      100,
+      98
+    ],
+    "description": "Whatsapp Chat is an live chat and abondoned cart solution built by PushDaddy.",
+    "icon": "PushDaddy.png",
+    "implies": [
+      "WhatsApp Business Chat",
+      "Shopify"
+    ],
+    "scriptSrc": "cdn\\.shopify\\.com/.+/pushdaddy_v([\\d\\.]+).*\\.js\\;version:\\1",
+    "dom": "div.pushdaddy-chats",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/whatsapp-chat-for-support"
+  },
   "PushEngage": {
     "cats": [
       32
@@ -2450,7 +2470,7 @@
     "cats": [
       32
     ],
-    "description": " PushOwl is a push notification platform for ecommerce stores.",
+    "description": "PushOwl is a push notification platform for ecommerce stores.",
     "icon": "PushOwl.svg",
     "pricing": [
       "low",
