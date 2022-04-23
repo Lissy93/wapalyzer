@@ -1193,7 +1193,10 @@
     ],
     "description": "Hyperspeed is the most advanced speed booster for Shopify.",
     "icon": "Hyperspeed.png",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Instant.Page"
+    ],
     "js": {
       "hyperscripts": ""
     },
