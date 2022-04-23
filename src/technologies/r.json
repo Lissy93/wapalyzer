@@ -757,11 +757,17 @@
     "description": "Reevoo is a provider of UGC solutions like reviews.",
     "icon": "Reevoo.svg",
     "js": {
-      "ReevooApi": ""
+      "ReevooApi": "",
+      "reevooUrl": "\\.reevoo\\.com/",
+      "reevooAccessCode": "",
+      "reevooLoader.tracking": ""
     },
     "saas": true,
-    "scriptSrc": "mark\\.reevoo\\.com",
-    "website": "https://www.reevoo.com/"
+    "scriptSrc": "\\.reevoo\\.com/",
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.reevoo.com"
   },
   "ReferralCandy": {
     "cats": [
