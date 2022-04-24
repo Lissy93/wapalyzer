@@ -3636,8 +3636,14 @@
     ],
     "description": "Automizely creates and manages enterprise-level marketing automation systems including contact and CRM mappings, lead funnels, email nurture, lead-generating pages, and blog posts, and website integrations.",
     "icon": "Automizely.svg",
+    "js": {
+      "automizelyConversions": "",
+      "amStorefrontKit.hRequestEventTarget": "",
+      "AM_CONSENT_SDK.product": "automizely"
+    },
     "pricing": [
-      "freemium"
+      "freemium",
+      "payg"
     ],
     "scriptSrc": "\\.automizely\\.com/",
     "website": "https://www.automizely.com/marketing"
