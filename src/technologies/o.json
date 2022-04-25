@@ -1231,6 +1231,25 @@
     "saas": true,
     "website": "https://apps.shopify.com/orderlogic"
   },
+  "Ordersify Product Alerts": {
+    "cats": [
+      100
+    ],
+    "description": "Ordersify Product Alerts is a Shopify app which detects automatically product stock and send email alerts to contact immediately after your products are restocked.",
+    "icon": "Ordersify.svg",
+    "implies": "Shopify",
+    "js": {
+      "ORDERSIFY_BIS.stockRemainingSetting": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.ordersify\\.com/sdk/productalerts-shopify\\.js",
+    "website": "https://ordersify.com/products/product-alerts"
+  },
   "OrderYOYO": {
     "cats": [
       6
