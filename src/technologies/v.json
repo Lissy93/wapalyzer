@@ -806,6 +806,9 @@
     ],
     "description": "VuFind is a library resource portal designed and developed by Villanova University library.",
     "icon": "VuFind.png",
+    "meta": {
+      "generator": "^VuFind\\s([\\d\\.]+)$\\;version:\\1"
+    },
     "js": {
       "VuFind.defaultSearchBackend": ""
     },
