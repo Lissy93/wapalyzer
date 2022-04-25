@@ -1786,8 +1786,16 @@
     "cats": [
       66
     ],
-    "html": "<link[^>]+?href=\"[^\"]+bulma(?:\\.min)?\\.css",
+    "description": "Bulma is a free class-based framework for CSS.",
     "icon": "Bulma.svg",
+    "dom": {
+      "link[href*='bulma.min.css']": {
+        "attributes": {
+          "href": "(?:([\\d\\.]+)/css/)?bulma\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
     "website": "http://bulma.io"
   },
   "Bump": {
