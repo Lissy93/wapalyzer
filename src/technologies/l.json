@@ -281,6 +281,24 @@
     "scriptSrc": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
     "website": "https://www.leanplum.com"
   },
+  "LearnWorlds": {
+    "cats": [
+      21
+    ],
+    "description": "LearnWorlds is a powerful yet lightweight, user-friendly, white-labeled cloud-based LMS ideal for versatile employee training.",
+    "icon": "LearnWorlds.svg",
+    "js": {
+      "LWSettings.deactive_components": "",
+      "LWClient.ebooks": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.mycourse\\.app/v([\\d\\.]+)/\\;version:\\1",
+    "website": "https://www.learnworlds.com"
+  },
   "Leaseweb": {
     "cats": [
       63,
