@@ -1199,10 +1199,19 @@
     "cats": [
       67
     ],
-    "icon": "iubenda.png",
-    "scriptSrc": [
-      "iubenda\\.com/cookie-solution/confs/js/"
+    "description": "iubenda is a compliance software used by businesses for their websites and apps.",
+    "icon": "iubenda.svg",
+    "js": {
+      "_iub": "",
+      "addIubendaCs": ""
+    },
+    "scriptSrc": "iubenda\\.com/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring",
+      "freemium"
     ],
-    "website": "https://www.iubenda.com/"
+    "website": "https://www.iubenda.com"
   }
 }
