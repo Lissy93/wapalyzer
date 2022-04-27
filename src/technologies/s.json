@@ -1855,9 +1855,9 @@
     },
     "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
     "dom": {
-      "link[href*='cdn.shopify.com']": {
+      "link[href*='shopify.com']": {
         "attributes": {
-          "href": "cdn\\.shopify\\.com\\;confidence:50"
+          "href": "(?:cdn\\.|\\.my)shopify\\.com\\;confidence:50"
         }
       }
     },
@@ -1868,7 +1868,8 @@
     "icon": "Shopify.svg",
     "js": {
       "Shopify": "\\;confidence:25",
-      "ShopifyAPI": ""
+      "ShopifyAPI": "",
+      "ShopifyCustomer": ""
     },
     "meta": {
       "shopify-checkout-api-token": "",
