@@ -194,6 +194,16 @@
     "url": "/cgi-bin/UCEditor\\?",
     "website": "http://ultracart.com"
   },
+  "utterances": {
+    "description":"A lightweight comments widget built on GitHub issues",
+    "cats": [
+      15
+    ],
+    "dom": "iframe[src*='^(https?:\/\/)?(www\.)?utteranc.es/client.js']",
+    "xhr": "^(https?:\/\/)?(www\.)?utteranc\.es\/.*\.(html|js|css)"
+    "icon": "utterances.png",
+    "website": "https://github.com/utterance/utterances"
+  },
   "Umami": {
     "cats": [
       10
