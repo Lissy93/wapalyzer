@@ -221,6 +221,25 @@
     "website": "https://www.taboola.com",
     "xhr": "\\.taboola\\.com"
   },
+  "Tachyons": {
+    "cats": [
+      66
+    ],
+    "description": "Tachyons is a functional CSS framework.",
+    "icon": "default.svg",
+    "dom": {
+      "link[href*='tachyons.min.css']": {
+        "attributes": {
+          "href": "(?:([\\d\\.]+)(?:/css)?/)?tachyons\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "webpackChunkgatsby_starter_blog_tachyons": ""
+    },
+    "oss": true,
+    "website": "https://tachyons.io"
+  },
   "TagPro": {
     "cats": [
       42
