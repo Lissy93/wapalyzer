@@ -2502,5 +2502,19 @@
       "Apache"
     ],
     "website": "https://code.google.com/p/modwsgi"
+  },
+  "Module Federation": {
+    "cats": [
+      19
+    ],
+    "description": "Module Federation is a webpack technology for dynamically loading parts of other independently deployed builds.",
+    "scripts": [
+      "data-webpack\\;confidence:50",
+      "Container missing\\;confidence:50",
+      "Initialization of sharing external failed\\;confidence:50"
+    ],
+    "implies": [ "webpack" ],
+    "icon": "Module Federation.png",
+    "website": "https://webpack.js.org/concepts/module-federation/"
   }
 }
