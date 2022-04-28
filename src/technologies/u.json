@@ -195,13 +195,14 @@
     "website": "http://ultracart.com"
   },
   "utterances": {
-    "description":"A lightweight comments widget built on GitHub issues",
+    "description":"Utterances is a lightweight comments widget built on GitHub issues",
     "cats": [
       15
     ],
-    "dom": "iframe[src*='^(https?:\/\/)?(www\.)?utteranc\.es/client.js']",
-    "xhr": "^(https?:\/\/)?(www\.)?utteranc\.es\/.*\.(html|js|css)"
+    "dom": "iframe[src*='utteranc.es/client.js']",
+    "xhr": ".\utteranc\.es",
     "icon": "utterances.png",
+    "oss": true,
     "website": "https://github.com/utterance/utterances"
   },
   "Umami": {
