@@ -1250,10 +1250,20 @@
     "cats": [
       16
     ],
-    "html": "<style[^>]+[^<]+#cf-hcaptcha-container[^<]+</style>",
+    "description": "hCaptcha is an anti-bot solution that protects user privacy and rewards websites.",
+    "css": "#cf-hcaptcha-container",
     "icon": "hCaptcha.svg",
-    "scriptSrc": "https://hcaptcha.com/([\\d]+?)/api.js\\;version:\\1",
-    "website": "https://www.hcaptcha.com/"
+    "js": {
+      "hcaptcha.getRespKey": "",
+      "hcaptchaOnLoad": ""
+    },
+    "scriptSrc": "hcaptcha\\.com/([\\d]+?)/api\\.js\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "website": "https://www.hcaptcha.com"
   },
   "hantana": {
     "cats": [
