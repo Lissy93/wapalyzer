@@ -1253,6 +1253,10 @@
     "description": "hCaptcha is an anti-bot solution that protects user privacy and rewards websites.",
     "css": "#cf-hcaptcha-container",
     "icon": "hCaptcha.svg",
+    "dom": "link[href*='hcaptcha.com']",
+    "headers": {
+      "content-security-policy": "(?:\\.|//)hcaptcha\\.com"
+    },
     "js": {
       "hcaptcha.getRespKey": "",
       "hcaptchaOnLoad": ""
