@@ -2220,6 +2220,24 @@
     "saas": true,
     "website": "http://aws.amazon.com/cloudfront/"
   },
+  "Amazon CloudWatch RUM": {
+    "cats": [
+      78
+    ],
+    "description": "Amazon CloudWatch RUM is a real-user monitoring capability that helps you identify and debug issues in the client-side on web applications and enhance end user's digital experience.",
+    "icon": "aws.svg",
+    "js": {
+      "AwsRumClient": "",
+      "AwsRumClient.v": "([\\d\\.]+)\\;version:\\1",
+      "AwsRumConfig": "",
+      "AwsRum": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM.html"
+  },
   "Amazon Cognito": {
     "cats": [
       69
