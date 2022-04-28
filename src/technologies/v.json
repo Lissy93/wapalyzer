@@ -766,9 +766,11 @@
     ],
     "description": "Vue.js is an open-source model–view–viewmodel JavaScript framework for building user interfaces and single-page applications.",
     "html": "<[^>]+\\sdata-v(?:ue)?-",
+    "css": "\\.vue-notification",
     "icon": "vue.svg",
     "js": {
-      "Vue.version": "^(.+)$\\;version:\\1"
+      "Vue.version": "^(.+)$\\;version:\\1",
+      "__VUE_HOT_MAP__": ""
     },
     "scriptSrc": [
       "vue[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
