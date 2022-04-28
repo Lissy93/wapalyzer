@@ -210,6 +210,28 @@
     ],
     "website": "http://www.easylog.com.br"
   },
+  "Ebasnet": {
+    "cats": [
+      1
+    ],
+    "description": "Ebasnet is a web project creation and management platform in the cloud. It allows anyone to set up an online store or corporate website without prior IT knowledge.",
+    "icon": "Ebasnet.svg",
+    "implies": [
+      "PHP",
+      "MySQL",
+      "Varnish",
+      "Symfony"
+    ],
+    "meta": {
+      "author": "^Ebasnet Web Solutions$"
+    },
+    "pricing": [
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cdnebasnet\\.com/",
+    "website": "https://ebasnet.com"
+  },
   "Ecovium": {
     "cats": [
       99
@@ -615,6 +637,18 @@
     ],
     "website": "https://www.engagio.com/"
   },
+  "Engintron": {
+    "cats": [
+      33
+    ],
+    "description": "Engintron is a plugin that integrates Nginx to cPanel/WHM server.",
+    "headers": {
+      "X-Server-Powered-By": "^Engintron$"
+    },
+    "icon": "engintron.png",
+    "requires": "Nginx",
+    "website": "https://github.com/engintron/engintron"
+  },
   "Enigma": {
     "cats": [
       80
@@ -646,16 +680,6 @@
     "saas": true,
     "scriptSrc": "\\.enjin\\.com/",
     "website": "https://www.enjin.com"
-  },
-  "Engintron": {
-   "cats":[33],
-    "description": "Engintron is a plugin that integrates Nginx to cPanel/WHM server.",
-    "icon": "engintron.png",
-    "requires": "Nginx",
-     "headers": {
-      "X-Server-Powered-By": "^Engintron$"
-    },
-    "website": "https://github.com/engintron/engintron"
   },
   "Ensi": {
     "cats": [
@@ -1370,28 +1394,6 @@
     "implies": "PHP",
     "scriptSrc": "[^a-z\\d]e107\\.js",
     "website": "http://e107.org"
-  },
-  "Ebasnet": {
-    "cats": [
-      1
-    ],
-    "description": "Ebasnet is a web project creation and management platform in the cloud. It allows anyone to set up an online store or corporate website without prior IT knowledge.",
-    "icon": "Ebasnet.svg",
-    "meta": {
-      "author": "^Ebasnet Web Solutions$"
-    },
-    "implies": [
-      "PHP",
-      "MySQL",
-      "Varnish",
-      "Symfony"
-    ],
-    "scriptSrc": "cdnebasnet\\.com/",
-    "saas": true,
-    "pricing": [
-      "recurring"
-    ],
-    "website": "https://ebasnet.com"
   },
   "eBay Partner Network": {
     "cats": [

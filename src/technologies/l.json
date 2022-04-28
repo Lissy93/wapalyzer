@@ -256,12 +256,12 @@
     ],
     "description": "Leaflet is the price testing platform for Shopify.",
     "icon": "Leaflet platform.png",
-    "requires": "Shopify",
-    "scriptSrc": "scripts\\.leaflet\\.co/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "scripts\\.leaflet\\.co/",
     "website": "https://join.leaflet.co"
   },
   "Leanplum": {
@@ -288,8 +288,8 @@
     "description": "LearnWorlds is a powerful yet lightweight, user-friendly, white-labeled cloud-based LMS ideal for versatile employee training.",
     "icon": "LearnWorlds.svg",
     "js": {
-      "LWSettings.deactive_components": "",
-      "LWClient.ebooks": ""
+      "LWClient.ebooks": "",
+      "LWSettings.deactive_components": ""
     },
     "pricing": [
       "mid",
@@ -613,10 +613,10 @@
     "js": {
       "linxImpulse.config.integrationFlags.platformProvider": "linxCommerce"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.linx.com.br/linx-commerce"
   },
   "Linx Impulse": {
@@ -625,17 +625,17 @@
       76
     ],
     "description": "Linx Impulse is a personalisation, media and retargeting solutions built by Linx.",
-    "icon": "Linx.png",
     "dom": "link[href*='.linximpulse.net']",
+    "icon": "Linx.png",
     "js": {
       "linx.banner": "",
       "linxImpulse.config": "",
       "linxImpulseInitialized": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.linx.com.br/linx-impulse"
   },
   "Liquid Web": {
@@ -1353,8 +1353,8 @@
     "js": {
       "lozad": ""
     },
-    "scripts": "/lozad\\.min\\.js",
     "oss": true,
+    "scripts": "/lozad\\.min\\.js",
     "website": "https://apoorv.pro/lozad.js/"
   },
   "Lua": {

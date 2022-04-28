@@ -159,8 +159,8 @@
     "description": "NationBuilder is a Los Angeles based technology start-up that develops content management and customer relationship management (CRM) software.",
     "icon": "NationBuilder.svg",
     "js": {
-      "NB.Liquid": "",
-      "NB.FBAppId": ""
+      "NB.FBAppId": "",
+      "NB.Liquid": ""
     },
     "pricing": [
       "mid",
@@ -677,23 +677,6 @@
     "scriptSrc": "connect\\.nosto\\.\\w+/",
     "website": "https://www.nosto.com"
   },
-  "novomind iSHOP": {
-    "cats": [
-      6
-    ],
-    "description": "novomind iSHOP can be introduced rapidly, is highly scalable, has open APIs headless ecommerce and GDPR-compliant in the novomind Cloud.",
-    "icon": "novomind.svg",
-    "js": {
-      "_ishopevents_url": "/ishop-api/events/",
-      "_ishopevents": "",
-      "iShop.config.baseUrl": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.novomind.com/en/shopsystem/novomind-ishop-software"
-  },
   "Nudgify": {
     "cats": [
       32
@@ -817,5 +800,22 @@
     },
     "oss": true,
     "website": "http://www.nopcommerce.com"
+  },
+  "novomind iSHOP": {
+    "cats": [
+      6
+    ],
+    "description": "novomind iSHOP can be introduced rapidly, is highly scalable, has open APIs headless ecommerce and GDPR-compliant in the novomind Cloud.",
+    "icon": "novomind.svg",
+    "js": {
+      "_ishopevents": "",
+      "_ishopevents_url": "/ishop-api/events/",
+      "iShop.config.baseUrl": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.novomind.com/en/shopsystem/novomind-ishop-software"
   }
 }

@@ -102,6 +102,22 @@
     "scriptSrc": "www\\.semrush\\.com",
     "website": "https://www.semrush.com"
   },
+  "SEOmatic": {
+    "cats": [
+      54
+    ],
+    "description": "SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3.",
+    "icon": "SEOmatic.svg",
+    "implies": "Craft CMS",
+    "meta": {
+      "generator": "^SEOmatic$"
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "saas": true,
+    "website": "https://plugins.craftcms.com/seomatic"
+  },
   "SEUR": {
     "cats": [
       99
@@ -699,8 +715,8 @@
       }
     },
     "headers": {
-      "x-sanity-shard": "",
-      "content-security-policy": "cdn\\.sanity\\.io"
+      "content-security-policy": "cdn\\.sanity\\.io",
+      "x-sanity-shard": ""
     },
     "icon": "Sanity.svg",
     "pricing": [
@@ -899,21 +915,22 @@
     "scriptSrc": "cdn.cxc.scorpion.direct",
     "website": "https://www.scorpion.co/"
   },
-  "SEOmatic": {
+  "ScrollMagic": {
     "cats": [
-      54
+      59
     ],
-    "description": "SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3.",
-    "icon": "SEOmatic.svg",
-    "implies": "Craft CMS",
-    "meta": {
-      "generator": "^SEOmatic$"
+    "description": "ScrollMagic is a jQuery plugin which essentially lets you use the scrollbar like a playback scrub control.",
+    "icon": "ScrollMagic.png",
+    "implies": [
+      "jQuery",
+      "GSAP"
+    ],
+    "js": {
+      "ScrollMagic": "",
+      "ScrollMagic.version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "saas": true,
-    "pricing": [
-      "onetime"
-    ],
-    "website": "https://plugins.craftcms.com/seomatic"
+    "oss": true,
+    "website": "https://scrollmagic.io"
   },
   "SeQura": {
     "cats": [
@@ -1736,6 +1753,22 @@
     "icon": "ShopGold.svg",
     "website": "https://www.shopgold.pl"
   },
+  "ShopPad Infinite Options": {
+    "cats": [
+      100
+    ],
+    "description": "ShopPad Infinite Options allows you to create as many custom option fields for your product pages as you need.",
+    "icon": "ShopPad.svg",
+    "js": {
+      "Shoppad.apps.infiniteoptions": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "website": "https://apps.shopify.com/custom-options"
+  },
   "Shopaholic": {
     "cats": [
       6
@@ -2001,22 +2034,6 @@
     ],
     "robots": "# Powered by Shoporama",
     "website": "https://www.shoporama.dk"
-  },
-  "ShopPad Infinite Options": {
-    "cats": [
-      100
-    ],
-    "description": "ShopPad Infinite Options allows you to create as many custom option fields for your product pages as you need.",
-    "icon": "ShopPad.svg",
-    "requires": "Shopify",
-    "js": {
-      "Shoppad.apps.infiniteoptions": ""
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://apps.shopify.com/custom-options"
   },
   "Shoppiko": {
     "cats": [
@@ -3728,13 +3745,13 @@
     ],
     "description": "Spin-a-Sale adds the intensity of gamification to your site. Spin-a-Sale overlay displays a special prize wheel for visitors that you can fully configure.",
     "icon": "Spin-a-Sale.png",
-    "scriptSrc": "client\\.spinasale\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
     "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "client\\.spinasale\\.com/",
     "website": "https://spinasale.com"
   },
   "Spinnakr": {
@@ -4008,6 +4025,7 @@
     ],
     "description": "SpurIT is a team of certified Shopify experts which provide ecommerce software solutions.",
     "icon": "SpurIT.svg",
+    "implies": "Shopify",
     "js": {
       "Spurit.global.version": "(.+)\\;version:\\1"
     },
@@ -4016,7 +4034,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/",
     "website": "https://spur-i-t.com"
@@ -4028,6 +4045,7 @@
     ],
     "description": "SpurIT Abandoned Cart Reminder bring back your Shopify store visitors who moved to another tab by blinking your store tab.",
     "icon": "SpurIT.svg",
+    "implies": "Shopify",
     "js": {
       "ACR_SPURIT_Params.folderCss": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/"
     },
@@ -4035,7 +4053,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/",
     "website": "https://spur-i-t.com/shopify-apps/abandoned-cart-reminder/"
@@ -4048,6 +4065,7 @@
     ],
     "description": "SpurIT Loyalty App is a turnkey solution allowing you to reward existing customers in a number of ways.",
     "icon": "SpurIT.svg",
+    "implies": "Shopify",
     "js": {
       "Spurit.Loyaltypoints": ""
     },
@@ -4055,7 +4073,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/loyaltypoints/",
     "website": "https://spur-i-t.com/shopify-apps/loyalty-points-manager"
@@ -4067,11 +4084,11 @@
     ],
     "description": "SpurIT Partial Payments App allow your customers to pay for the order in several ways or to share a payment with other people.",
     "icon": "SpurIT.svg",
+    "implies": "Shopify",
     "pricing": [
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/split-payments/",
     "website": "https://spur-i-t.com/shopify-apps/split-partial-payments/"
@@ -4083,6 +4100,7 @@
     ],
     "description": "SpurIT Recurring Payments App is a simple way to create a system of bill payment,subscriptions and invoicing.",
     "icon": "SpurIT.svg",
+    "implies": "Shopify",
     "js": {
       "Spurit.recurringInvoices": ""
     },
@@ -4090,7 +4108,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn-spurit\\.com/shopify-apps/recurring-invoices/",
     "website": "https://spur-i-t.com/shopify-apps/recurring-order-subscription"
@@ -4516,10 +4533,10 @@
     "cats": [
       1
     ],
+    "description": "Strapi is an open-source headless CMS used for building fast and easily manageable APIs written in JavaScript.",
     "headers": {
       "X-Powered-By": "^Strapi"
     },
-    "description": "Strapi is an open-source headless CMS used for building fast and easily manageable APIs written in JavaScript.",
     "icon": "Strapi.svg",
     "oss": true,
     "website": "https://strapi.io"
@@ -5070,8 +5087,8 @@
       "sf_redirect": ""
     },
     "description": "Symfony is a PHP web application framework and a set of reusable PHP components/libraries.",
+    "dom": "div.sf-toolbar-block, div.sf-toolbar",
     "icon": "Symfony.svg",
-    "dom":"div.sf-toolbar-block, div.sf-toolbar",
     "implies": "PHP",
     "js": {
       "Sfjs": ""
@@ -5191,23 +5208,6 @@
     },
     "scriptSrc": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
     "website": "https://script.aculo.us"
-  },
-  "ScrollMagic": {
-    "cats": [
-      59
-    ],
-    "description": "ScrollMagic is a jQuery plugin which essentially lets you use the scrollbar like a playback scrub control.",
-    "icon": "ScrollMagic.png",
-    "implies": [
-      "jQuery",
-      "GSAP"
-    ],
-    "js": {
-      "ScrollMagic.version": "^([\\d\\.]+)$\\;version:\\1",
-      "ScrollMagic": ""
-    },
-    "oss": true,
-    "website": "https://scrollmagic.io"
   },
   "scrollreveal": {
     "cats": [

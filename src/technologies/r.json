@@ -757,13 +757,13 @@
       18
     ],
     "description": "RedwoodJS is a full-stack serverless web application framework built by Tom Preston Werner (co-founder of Github) et al.",
+    "dom": "div#redwood-app",
     "icon": "RedwoodJS.svg",
     "implies": [
       "React",
       "GraphQL",
       "TypeScript"
     ],
-    "dom": "div#redwood-app",
     "oss": true,
     "website": "https://redwoodjs.com"
   },
@@ -775,15 +775,15 @@
     "icon": "Reevoo.svg",
     "js": {
       "ReevooApi": "",
-      "reevooUrl": "\\.reevoo\\.com/",
       "reevooAccessCode": "",
-      "reevooLoader.tracking": ""
+      "reevooLoader.tracking": "",
+      "reevooUrl": "\\.reevoo\\.com/"
     },
-    "saas": true,
-    "scriptSrc": "\\.reevoo\\.com/",
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.reevoo\\.com/",
     "website": "https://www.reevoo.com"
   },
   "ReferralCandy": {
@@ -906,13 +906,13 @@
     ],
     "description": "Reputon is an customer reviews Shopify app.",
     "icon": "Reputon.svg",
-    "requires": "Shopify",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
     "scriptSrc": "\\.reputon\\.com/",
     "website": "https://reputon.com"
   },
@@ -1105,15 +1105,15 @@
     "description": "ReturnGO's AI-driven returns management platform significantly improves customer lifetime value and post-purchase experience.",
     "icon": "ReturnGO.png",
     "js": {
-      "returnGoIntegrationData": "",
-      "returnGoCanBeRun": ""
+      "returnGoCanBeRun": "",
+      "returnGoIntegrationData": ""
     },
-    "scriptSrc": "\\.returngo\\.ai/",
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
+    "scriptSrc": "\\.returngo\\.ai/",
     "website": "https://returngo.ai"
   },
   "RevJet": {
@@ -1227,19 +1227,19 @@
     ],
     "description": "Revy is dedicated to build Shopify Apps to generate more sales for merchants.",
     "icon": "Revy.png",
-    "requires": "Shopify",
     "js": {
       "RevyApp": "",
       "RevyBundle": "",
       "RevyUpsell": ""
     },
-    "scriptSrc": "api\\.revy\\.io/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "api\\.revy\\.io/",
     "website": "https://revy.io"
   },
   "Rewardful": {

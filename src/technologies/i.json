@@ -327,6 +327,21 @@
     "scriptSrc": "vendor-cdn\\.imweb\\.me/",
     "website": "https://imweb.me"
   },
+  "In Cart Upsell & Cross-Sell": {
+    "cats": [
+      100
+    ],
+    "description": "In Cart Upsell & Cross-Sell is a Shopify app built by InCart Upsell, provides targeted upsells and cross-sells directly in your cart and product page.",
+    "icon": "In Cart Upsell & Cross-Sell.png",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "\\.incartupsell\\.com/",
+    "website": "https://incartupsell.com"
+  },
   "InMoment": {
     "cats": [
       10,
@@ -355,21 +370,6 @@
     },
     "icon": "Incapsula.png",
     "website": "http://www.incapsula.com"
-  },
-  "In Cart Upsell & Cross-Sell": {
-    "cats": [
-      100
-    ],
-    "description": "In Cart Upsell & Cross-Sell is a Shopify app built by InCart Upsell, provides targeted upsells and cross-sells directly in your cart and product page.",
-    "icon": "In Cart Upsell & Cross-Sell.png",
-    "requires": "Shopify",
-    "scriptSrc": "\\.incartupsell\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://incartupsell.com"
   },
   "Includable": {
     "cats": [
@@ -1205,13 +1205,13 @@
       "_iub": "",
       "addIubendaCs": ""
     },
-    "scriptSrc": "iubenda\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring",
       "freemium"
     ],
+    "saas": true,
+    "scriptSrc": "iubenda\\.com/",
     "website": "https://www.iubenda.com"
   }
 }

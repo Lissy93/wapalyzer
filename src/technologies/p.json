@@ -167,10 +167,10 @@
     "description": "Packlink PRO is a multicarrier shipping solutions for ecommerce and marketplaces.",
     "icon": "Packlink.png",
     "implies": "Shopify",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "scriptSrc": "packlink-spf-pro\\.appspot\\.com/.+myshopify\\.com",
     "website": "https://apps.shopify.com/packlink-pro"
   },
@@ -827,17 +827,17 @@
     ],
     "description": "Swift is a page speed solution for ecommerce store owners built by PerfectApps.",
     "icon": "PerfectApps Swift.png",
-    "requires": "Shopify",
     "js": {
       "ps_apiURI": "swift-api\\.perfectapps\\.io/",
       "ps_storeUrl": "swift\\.perfectapps\\.io"
     },
-    "scriptSrc": "swift\\.perfectapps\\.io/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "swift\\.perfectapps\\.io/",
     "website": "https://apps.shopify.com/swift"
   },
   "Perfex CRM": {
@@ -2167,13 +2167,13 @@
     ],
     "description": "Product Personalizer apps can help you to customise your products and offer a more personalised experience for your customers.",
     "icon": "Product Personalizer.png",
-    "scriptSrc": "/product-personalizer/pplr_common\\.js",
-    "saas": true,
+    "implies": "Shopify",
     "pricing": [
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
+    "saas": true,
+    "scriptSrc": "/product-personalizer/pplr_common\\.js",
     "website": "https://productpersonalizer.com"
   },
   "ProfilePress": {
@@ -2452,18 +2452,18 @@
       98
     ],
     "description": "Whatsapp Chat is an live chat and abondoned cart solution built by PushDaddy.",
+    "dom": "div.pushdaddy-chats",
     "icon": "PushDaddy.png",
     "implies": [
       "WhatsApp Business Chat",
       "Shopify"
     ],
-    "scriptSrc": "cdn\\.shopify\\.com/.+/pushdaddy_v([\\d\\.]+).*\\.js\\;version:\\1",
-    "dom": "div.pushdaddy-chats",
     "pricing": [
       "freemium",
       "payg"
     ],
     "saas": true,
+    "scriptSrc": "cdn\\.shopify\\.com/.+/pushdaddy_v([\\d\\.]+).*\\.js\\;version:\\1",
     "website": "https://apps.shopify.com/whatsapp-chat-for-support"
   },
   "PushEngage": {

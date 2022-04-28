@@ -74,6 +74,22 @@
     "scriptSrc": "\\.mgpanel\\.org/",
     "website": "https://mgpanel.org"
   },
+  "MIYN Online Appointment": {
+    "cats": [
+      72
+    ],
+    "description": "MIYN Online Appointment is an advanced cloud-based online appointment scheduling software.",
+    "icon": "MIYN.svg",
+    "js": {
+      "MIYNLive.settings": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://miyn.app/online-appointment"
+  },
   "MODX": {
     "cats": [
       1
@@ -143,8 +159,8 @@
     "css": "\\.MuiPaper-root",
     "description": "MUI(formerly Material UI) is a simple and customisable component library to build faster, beautiful, and more accessible React applications.",
     "dom": "style[data-meta='MuiPaper'], div.MuiBox-root, div.MuiPaper-root",
-    "implies": "React",
     "icon": "MUI.svg",
+    "implies": "React",
     "oss": true,
     "pricing": [
       "freemium",
@@ -194,8 +210,8 @@
       6
     ],
     "cookies": {
-      "frontend": "\\;confidence:50",
-      "X-Magento-Vary": ""
+      "X-Magento-Vary": "",
+      "frontend": "\\;confidence:50"
     },
     "cpe": "cpe:/a:magento:magento",
     "description": "Magento is an open-source ecommerce platform written in PHP.",
@@ -467,7 +483,6 @@
     "description": "Mapp is designed specifically to help consumer-facing brands run highly personalised, cross-channel marketing campaigns powered by real-time customer data and generated insights.",
     "icon": "Mapp.svg",
     "js": {
-      "wtSmart": "",
       "WebtrekkV3": "",
       "webtrekk": "",
       "webtrekkConfig": "",
@@ -475,6 +490,7 @@
       "webtrekkLinktrackObjects": "",
       "webtrekkUnloadObjects": "",
       "webtrekkV3": "",
+      "wtSmart": "",
       "wt_tt": "",
       "wt_ttv2": ""
     },
@@ -1401,6 +1417,24 @@
     "icon": "Milligram.png",
     "website": "https://milligram.io"
   },
+  "MinMaxify": {
+    "cats": [
+      100
+    ],
+    "description": "MinMaxify is an app that allows Shopify store owners to set minimum and maximum values for customer orders built by Intillium.",
+    "icon": "MinMaxify.png",
+    "implies": "Shopify",
+    "js": {
+      "minMaxify.checkLimits": "",
+      "minMaxify.shop": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/order-limits-minmaxify"
+  },
   "MindBody": {
     "cats": [
       5,
@@ -1428,24 +1462,6 @@
       "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
     ],
     "website": "http://minero.cc/"
-  },
-  "MinMaxify": {
-    "cats": [
-      100
-    ],
-    "description": "MinMaxify is an app that allows Shopify store owners to set minimum and maximum values for customer orders built by Intillium.",
-    "icon": "MinMaxify.png",
-    "implies": "Shopify",
-    "js": {
-      "minMaxify.checkLimits": "",
-      "minMaxify.shop": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://apps.shopify.com/order-limits-minmaxify"
   },
   "Mint": {
     "cats": [
@@ -1542,22 +1558,6 @@
       "api\\.mixpanel\\.com/track"
     ],
     "website": "https://mixpanel.com"
-  },
-  "MIYN Online Appointment": {
-    "cats": [
-      72
-    ],
-    "description": "MIYN Online Appointment is an advanced cloud-based online appointment scheduling software.",
-    "icon": "MIYN.svg",
-    "js": {
-      "MIYNLive.settings": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://miyn.app/online-appointment"
   },
   "MizbanCloud": {
     "cats": [
@@ -1727,6 +1727,22 @@
       "generator": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www\\.modified-shop\\.org"
     },
     "website": "http://www.modified-shop.org/"
+  },
+  "Module Federation": {
+    "cats": [
+      19
+    ],
+    "description": "Module Federation is a webpack technology for dynamically loading parts of other independently deployed builds.",
+    "icon": "Module Federation.png",
+    "implies": [
+      "webpack"
+    ],
+    "scripts": [
+      "data-webpack\\;confidence:50",
+      "Container missing\\;confidence:50",
+      "Initialization of sharing external failed\\;confidence:50"
+    ],
+    "website": "https://webpack.js.org/concepts/module-federation/"
   },
   "Moguta.CMS": {
     "cats": [
@@ -2544,19 +2560,5 @@
       "Apache"
     ],
     "website": "https://code.google.com/p/modwsgi"
-  },
-  "Module Federation": {
-    "cats": [
-      19
-    ],
-    "description": "Module Federation is a webpack technology for dynamically loading parts of other independently deployed builds.",
-    "scripts": [
-      "data-webpack\\;confidence:50",
-      "Container missing\\;confidence:50",
-      "Initialization of sharing external failed\\;confidence:50"
-    ],
-    "implies": [ "webpack" ],
-    "icon": "Module Federation.png",
-    "website": "https://webpack.js.org/concepts/module-federation/"
   }
 }

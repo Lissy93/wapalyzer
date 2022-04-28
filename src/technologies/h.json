@@ -200,16 +200,16 @@
     "description": "Haptik is an Indian enterprise conversational AI platform founded in August 2013, and acquired by Reliance Industries Limited in 2019.",
     "icon": "Haptik.png",
     "js": {
-      "haptikInitSettings": "",
       "HaptikSDK": "",
-      "haptik": ""
+      "haptik": "",
+      "haptikInitSettings": ""
     },
-    "scriptSrc": "\\.haptikapi\\.com/",
-    "saas": true,
     "pricing": [
       "high",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.haptikapi\\.com/",
     "website": "https://www.haptik.ai"
   },
   "Haravan": {
@@ -544,14 +544,14 @@
     ],
     "description": "Free Shipping Bar is a Shopify app built by Hextom. Free Shipping Bar help promote free shipping with progressive messages to motivate customers to buy more.",
     "icon": "Hextom.png",
-    "requires": "Shopify",
-    "scriptSrc": "\\.hextom\\.com/js/freeshippingbar\\.js",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "\\.hextom\\.com/js/freeshippingbar\\.js",
     "website": "https://hextom.com/case_study/free-shipping-bar"
   },
   "Hiawatha": {
@@ -1250,23 +1250,23 @@
     "cats": [
       16
     ],
-    "description": "hCaptcha is an anti-bot solution that protects user privacy and rewards websites.",
     "css": "#cf-hcaptcha-container",
-    "icon": "hCaptcha.svg",
+    "description": "hCaptcha is an anti-bot solution that protects user privacy and rewards websites.",
     "dom": "link[href*='hcaptcha.com']",
     "headers": {
       "content-security-policy": "(?:\\.|//)hcaptcha\\.com"
     },
+    "icon": "hCaptcha.svg",
     "js": {
       "hcaptcha.getRespKey": "",
       "hcaptchaOnLoad": ""
     },
-    "scriptSrc": "hcaptcha\\.com/([\\d]+?)/api\\.js\\;version:\\1",
-    "saas": true,
     "pricing": [
       "freemium",
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "hcaptcha\\.com/([\\d]+?)/api\\.js\\;version:\\1",
     "website": "https://www.hcaptcha.com"
   },
   "hantana": {
