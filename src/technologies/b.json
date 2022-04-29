@@ -947,7 +947,7 @@
     "cats": [
       100
     ],
-    "description": "Product Options is a Shopify app which allows customers to customise products with unlimited custom options.",
+    "description": "Product Options is a Shopify app which allows customers to customise products with unlimited custom options built by Bold.",
     "icon": "Bold.svg",
     "implies": "Shopify",
     "js": {
@@ -960,6 +960,25 @@
     "saas": true,
     "scriptSrc": "option\\.boldapps\\.net/",
     "website": "https://boldcommerce.com/product-options"
+  },
+  "Bold Upsell": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Upsell allows the substitution or attachment of products to the customers' carts.",
+    "icon": "Bold.svg",
+    "implies": "Shopify",
+    "js": {
+      "BOLD.upsell": ""
+    },
+    "pricing": [
+      "pay",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "upsells\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/upsell"
   },
   "BoldGrid": {
     "cats": [
@@ -975,7 +994,7 @@
     ],
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/post-and-page-builder",
-    "website": "https://boldcommerce.com/product-options"
+    "website": "https://boldgrid.com"
   },
   "Bolt CMS": {
     "cats": [
