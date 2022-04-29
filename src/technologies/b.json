@@ -943,6 +943,21 @@
     "scriptSrc": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
     "website": "https://www.boldchat.com/"
   },
+  "Bold Motivator": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Motivator motivate customers to spend more on your store with free shipping and gifts using a customisable banner that counts down how much more they have to buy.",
+    "icon": "Bold.svg",
+    "implies": "Shopify",
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "motivate\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/motivator"
+  },
   "Bold Product Options": {
     "cats": [
       100
@@ -972,7 +987,7 @@
       "BOLD.upsell": ""
     },
     "pricing": [
-      "pay",
+      "payg",
       "recurring",
       "low"
     ],
