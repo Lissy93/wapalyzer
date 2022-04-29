@@ -962,6 +962,24 @@
     "scriptSrc": "brain-assets\\.boldapps\\.net/",
     "website": "https://boldcommerce.com/bold-brain"
   },
+  "Bold Custom Pricing": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Custom Pricing is an app that makes it easy to create a tiered pricing structure for your customers.",
+    "icon": "Bold.svg",
+    "implies": "Shopify",
+    "js": {
+      "BOLD.csp.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cp.\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/custom-pricing"
+  },
   "Bold Motivator": {
     "cats": [
       100
