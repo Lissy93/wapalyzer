@@ -1442,6 +1442,24 @@
     "scriptSrc": "/ruxitagentjs_(?:.+)_(?:.+)\\.js",
     "website": "https://www.dynatrace.com/platform/real-user-monitoring"
   },
+  "Dyte": {
+    "cats": [
+      103
+    ],
+    "description": "Dyte is a developer-friendly, real-time audio and video communication software development kit (SDK).",
+    "icon": "Dyte.svg",
+    "implies": "WebRTC",
+    "css": "\\.dyte-client-selfVideo",
+    "js": {
+      "triggerDyteRecording": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "xhr": "cdn\\.dyte\\.in/",
+    "website": "https://dyte.io"
+  },
   "db-ip": {
     "cats": [
       79
