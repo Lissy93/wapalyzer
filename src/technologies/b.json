@@ -956,7 +956,10 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "\\.boldapps\\.net/",
+    "scriptSrc": [
+      "\\.boldapps\\.net/",
+      "\\.boldcommerce\\.com"
+    ],
     "website": "https://boldcommerce.com"
   },
   "Bold Brain": {
@@ -965,7 +968,10 @@
     ],
     "description": "Bold Brain help customers discover more products and add more to their cart with dynamic recommendations for Shopify and use advanced analytics.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "js": {
       "BOLD.brain": ""
     },
@@ -984,7 +990,10 @@
     ],
     "description": "Bold Bundles Shopify app is designed to present recommended product widgets to cross-sell your products.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "js": {
       "BOLD.bundles": ""
     },
@@ -1002,7 +1011,10 @@
     ],
     "description": "Bold Custom Pricing is an app that makes it easy to create a tiered pricing structure for your customers.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "js": {
       "BOLD.csp.version": "([\\d\\.]+)\\;version:\\1"
     },
@@ -1020,7 +1032,10 @@
     ],
     "description": "Bold Motivator motivate customers to spend more on your store with free shipping and gifts using a customisable banner that counts down how much more they have to buy.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "pricing": [
       "recurring",
       "low"
@@ -1035,7 +1050,10 @@
     ],
     "description": "Product Options is a Shopify app which allows customers to customise products with unlimited custom options built by Bold.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "js": {
       "BOLD.options.version": "([\\d\\.]+)\\;version:\\1"
     },
@@ -1053,7 +1071,10 @@
     ],
     "description": "Bold Subscriptions provides powerful, API-driven customisation options to build and scale a subscription service that fits your business.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "js": {
       "BOLD.subscriptions": ""
     },
@@ -1073,7 +1094,10 @@
     ],
     "description": "Bold Upsell allows the substitution or attachment of products to the customers' carts.",
     "icon": "Bold.svg",
-    "implies": "Shopify",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
     "js": {
       "BOLD.upsell": ""
     },
