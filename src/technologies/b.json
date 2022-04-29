@@ -943,6 +943,24 @@
     "scriptSrc": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
     "website": "https://www.boldchat.com/"
   },
+  "Bold Product Options": {
+    "cats": [
+      100
+    ],
+    "description": "Product Options is a Shopify app which allows customers to customise products with unlimited custom options.",
+    "icon": "Bold.svg",
+    "implies": "Shopify",
+    "js": {
+      "BOLD.options.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "option\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/product-options"
+  },
   "BoldGrid": {
     "cats": [
       1,
@@ -957,7 +975,7 @@
     ],
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/post-and-page-builder",
-    "website": "https://boldgrid.com"
+    "website": "https://boldcommerce.com/product-options"
   },
   "Bolt CMS": {
     "cats": [
