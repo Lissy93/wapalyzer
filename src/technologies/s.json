@@ -85,6 +85,23 @@
     "icon": "SDL Tridion.svg",
     "website": "http://www.sdl.com/products/tridion"
   },
+  "Semplice": {
+    "cats": [
+      80,
+      51
+    ],
+    "description": "Semplice is a Wordpress-based website builder made by designers for designers.",
+    "icon": "Semplice.svg",
+    "js": {
+      "semplice.template_dir": ""
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/themes/semplice(?:\\d+)?(?:-child)?(?:-theme)?/",
+    "website": "https://www.semplice.com"
+  },
   "SEMrush": {
     "cats": [
       32
