@@ -943,6 +943,173 @@
     "scriptSrc": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
     "website": "https://www.boldchat.com/"
   },
+  "Bold Commerce": {
+    "cats": [
+      76
+    ],
+    "description": "Bold Commerce is a software company that specialises in ecommerce websites and app development.",
+    "icon": "Bold.svg",
+    "pricing": [
+      "recurring",
+      "payg",
+      "low",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "\\.boldapps\\.net/",
+      "\\.boldcommerce\\.com"
+    ],
+    "website": "https://boldcommerce.com"
+  },
+  "Bold Brain": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Brain help customers discover more products and add more to their cart with dynamic recommendations for Shopify and use advanced analytics.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "js": {
+      "BOLD.brain": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "brain-assets\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/bold-brain"
+  },
+  "Bold Bundles": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Bundles Shopify app is designed to present recommended product widgets to cross-sell your products.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "js": {
+      "BOLD.bundles": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "bundles\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/bundles"
+  },
+  "Bold Custom Pricing": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Custom Pricing is an app that makes it easy to create a tiered pricing structure for your customers.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "js": {
+      "BOLD.csp.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cp.\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/custom-pricing"
+  },
+  "Bold Motivator": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Motivator motivate customers to spend more on your store with free shipping and gifts using a customisable banner that counts down how much more they have to buy.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "motivate\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/motivator"
+  },
+  "Bold Product Options": {
+    "cats": [
+      100
+    ],
+    "description": "Product Options is a Shopify app which allows customers to customise products with unlimited custom options built by Bold.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "js": {
+      "BOLD.options.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "option\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/product-options"
+  },
+  "Bold Subscriptions": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Subscriptions provides powerful, API-driven customisation options to build and scale a subscription service that fits your business.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "js": {
+      "BOLD.subscriptions": ""
+    },
+    "pricing": [
+      "recurring",
+      "low",
+      "payg",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "sub\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/shopify-subscription-app"
+  },
+  "Bold Upsell": {
+    "cats": [
+      100
+    ],
+    "description": "Bold Upsell allows the substitution or attachment of products to the customers' carts.",
+    "icon": "Bold.svg",
+    "implies": [
+      "Shopify",
+      "Bold Commerce"
+    ],
+    "js": {
+      "BOLD.upsell": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "upsells\\.boldapps\\.net/",
+    "website": "https://boldcommerce.com/upsell"
+  },
   "BoldGrid": {
     "cats": [
       1,
