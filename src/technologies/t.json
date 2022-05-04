@@ -799,6 +799,28 @@
     "saas": true,
     "website": "https://www.thefork.com"
   },
+  "The Hotels Network": {
+    "cats": [
+      10,
+      76
+    ],
+    "description": "The Hotels Network provides a SaaS software that enhances hotelier websites with predictive marketing personalisation and user behavior analytics.",
+    "icon": "The Hotels Network.svg",
+    "saas": true,
+    "headers": {
+      "content-security-policy": "\\.thehotelsnetwork\\.com",
+      "content-security-policy-report-only": "\\.thehotelsnetwork\\.com"
+    },
+    "js": {
+      "thn.data.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "scriptSrc": "\\.thehotelsnetwork\\.com/",
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "website": "https://thehotelsnetwork.com"
+  },
   "Thelia": {
     "cats": [
       1,
