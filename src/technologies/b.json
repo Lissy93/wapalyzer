@@ -1402,16 +1402,16 @@
       106
     ],
     "cookies": {
-      "bfx.apiKey:": "^[\\w\\d-]+$\\;confidence:25",
-      "bfx.country:": "^\\w+$\\;confidence:25",
-      "bfx.language": "^\\w+$\\;confidence:25",
-      "bfx.logLevel": "^\\w+$\\;confidence:25"
+      "bfx.apiKey:": "^[\\w\\d-]+$",
+      "bfx.country:": "^\\w+$",
+      "bfx.language": "^\\w+$",
+      "bfx.logLevel": "^\\w+$"
     },
     "description": "Borderfree is an cross-border ecommerce solutions provider.",
     "icon": "Borderfree.png",
     "js": {
-      "bfx._apiKey": "\\;confidence:50",
-      "bfx._brand": "\\;confidence:50"
+      "bfx._apiKey": "",
+      "bfx._brand": ""
     },
     "pricing": [
       "poa"
@@ -1420,8 +1420,7 @@
     "scriptSrc": [
       "global\\.prd\\.borderfree\\.com",
       "wm\\.prd\\.borderfree\\.com",
-      "bfx\\.js",
-      "cbt\\.js"
+      "bfx-objects\\.prd\\.borderfree\\.com"
     ],
     "website": "https://www.borderfree.com"
   },
