@@ -284,10 +284,9 @@
     "oss": true,
     "website": "https://batflat.org"
   },
-  "Bazaarvoice": {
+  "Bazaarvoice Reviews": {
     "cats": [
-      90,
-      96
+      90
     ],
     "description": "Bazaarvoice is a provider of user-generated content solutions like ratings and reviews and Q&A.",
     "icon": "Bazaarvoice.png",
@@ -300,10 +299,26 @@
     ],
     "saas": true,
     "scriptSrc": [
-      "apps\\.bazaarvoice\\.com",
+      "apps\\.bazaarvoice\\.com"
+    ],
+    "website": "https://www.bazaarvoice.com/products/ratings-and-reviews/"
+  },
+  "Bazaarvoice Curation": {
+    "cats": [
+      96
+    ],
+    "description": "Bazaarvoice Curation is a content curation service Bazaarvoice provides post it's acquisition of Curalate.",
+    "icon": "Bazaarvoice.png",
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "edge\\.curalate\\.com",
       "cdn\\.curalate\\.com"
     ],
-    "website": "https://www.bazaarvoice.com/"
+    "website": "https://www.bazaarvoice.com/products/visual-and-social-content/"
   },
   "Beans": {
     "cats": [
