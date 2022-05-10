@@ -593,13 +593,31 @@
     "scriptSrc": "api\\.reciteme\\.com/asset/js",
     "website": "https://reciteme.com/"
   },
+  "ReConvert": {
+    "cats": [
+      100
+    ],
+    "description": "ReConvert is a post-purchase upsell & thank you page.",
+    "icon": "ReConvert.svg",
+    "implies": "Shopify",
+    "pricing": [
+      "low",
+      "payg",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.stilyoapps\\.com/reconvert/assets/js/store_reconvert_node\\.js",
+    "website": "https://www.reconvert.io"
+  },
   "RecoverMyCart": {
     "cats": [
       76,
       100
     ],
-    "description": "RecoverMyCart is a shopify app for abandoned basket recovery.",
+    "description": "RecoverMyCart is a Shopify app for abandoned basket recovery.",
     "icon": "RecoverMyCart.png",
+    "implies": "Shopify",
     "pricing": [
       "low",
       "freemium",
