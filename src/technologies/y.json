@@ -401,16 +401,34 @@
     "scriptSrc": "\\.yoomoney\\.ru/",
     "website": "https://yoomoney.ru"
   },
-  "Yotpo": {
+  "Yotpo Loyalty & Referrals": {
     "cats": [
-      84,
-      90
+      84
     ],
     "description": "Yotpo is a user-generated content marketing platform.",
     "icon": "Yotpo.svg",
     "js": {
       "SwellConfig": "",
-      "swellAPI": "",
+      "swellAPI": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "cdn\\.swellrewards\\.com/"
+    ],
+    "website": "https://www.yotpo.com/platform/loyalty/"
+  },
+  "Yotpo Reviews": {
+    "cats": [
+      90
+    ],
+    "description": "Yotpo is a user-generated content marketing platform.",
+    "icon": "Yotpo.svg",
+    "js": {
       "yotpo": ""
     },
     "pricing": [
@@ -420,10 +438,20 @@
     ],
     "saas": true,
     "scriptSrc": [
-      "\\.yotpo\\.com/",
-      "cdn\\.swellrewards\\.com/"
+      "\\.yotpo\\.com/"
     ],
-    "website": "https://www.yotpo.com"
+    "website": "https://www.yotpo.com/platform/reviews/"
+  },
+  "Yotpo SMSBump": {
+    "cats": [
+      32
+    ],
+    "description": "SMS Bump is a SMS marketing and automations app which was acquired by Yotpo.",
+    "icon": "Yotpo.svg",
+    "js": {
+      "SMSBumpForm": ""
+    },
+    "website": "https://www.yotpo.com/platform/smsbump-sms-marketing/"
   },
   "Yottaa": {
     "cats": [
