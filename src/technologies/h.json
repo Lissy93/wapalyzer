@@ -399,6 +399,34 @@
     "scriptSrc": "\\.helpscout\\.net/",
     "website": "https://www.helpscout.com"
   },
+   "HeliumWeb": {
+    "cats": [
+      18
+    ],
+  
+    "description": "HeliumWeb is a server-side (backend) web framework written in PHP & JavaScript",
+  
+
+    "implies": "PHP",
+     
+     "headers": {
+    "X-Powered-By": "Adrikikicp Development"
+  },
+     
+  
+    "js": {
+      "helium.js": ""
+
+    },
+      "pricing": [
+     "freemium"
+    ],
+   
+     "oss": true,
+     "saas":true,
+    "scriptSrc": ["helium/src/helium.js/helium_web.js", "http://maven.enriquitomcfh.ml/helium.js/helium_web.js", "http://maven.enriquitomcfh.ml/helium.js/helium_web.min.js"],
+    "website": "https://heliumweb.adrikikicp-development.ml"
+  },
   "HelpDocs": {
     "cats": [
       4
