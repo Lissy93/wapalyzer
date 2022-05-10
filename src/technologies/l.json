@@ -1578,5 +1578,15 @@
     },
     "oss": true,
     "website": "https://lit.dev"
+  },
+  "lite-youtube-embed": {
+    "cats": [
+      59
+    ],
+    "description": "The lite-youtube-embed technique renders the YouTube video inside the IFRAME tag only when the play button in clicked thus improving the core web vitals score of your website.",
+    "dom": "lite-youtube",
+    "website": "https://github.com/paulirish/lite-youtube-embed",
+    "oss": true, 
+    "implies": "YouTube"
   }
 }
