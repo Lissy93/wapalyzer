@@ -1031,6 +1031,16 @@
     "icon": "Sectigo.svg",
     "website": "https://sectigo.com/"
   },
+  "Sections.design Shopify App Optimization": {
+    "cats": [
+      92
+    ],
+    "description": "Sections.design Shopify App Optimization is a Shopify section written in liquid for the purpose of improving performance of Shopify stores by optimizing how Shopify app loads.",
+    "dom": "div#shopify-section-app-optimization",
+    "icon": "Sections-Design.png",
+    "implies": "Shopify",
+    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization"
+  },
   "Section.io": {
     "cats": [
       31
@@ -1948,6 +1958,7 @@
     ],
     "description": "Shopify Chat is Shopify's native live chat function that allows you to have real-time conversations with customers visiting your Shopify store.",
     "icon": "Shopify.svg",
+    "implies": "Shopify",
     "scriptSrc": [
       "cdn\\.shopify\\.com/shopifycloud/shopify_chat/"
     ],
@@ -1960,7 +1971,7 @@
     ],
     "description": "Shopify Consent Management let's you create a tracking consent banner for EU customers.",
     "icon": "Shopify.svg",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": [
       "cookie_consent_shopify\\.js"
     ],
@@ -1973,7 +1984,7 @@
     ],
     "description": "Shopify Geolocation App makes language and country recommendations to your customers based on their geographic location and browser or device language.",
     "icon": "Shopify Geolocation App.png",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": "geolocation-recommendations\\.shopifycloud\\.com/",
     "website": "https://apps.shopify.com/geolocation"
   },
@@ -1987,7 +1998,7 @@
     "js": {
       "SPR": ""
     },
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": [
       "productreviews\\.shopifycdn\\.com"
     ],
