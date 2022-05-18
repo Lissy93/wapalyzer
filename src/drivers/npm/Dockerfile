@@ -24,7 +24,7 @@ COPY \
   driver.js \
   package.json \
   wappalyzer.js \
-  yarn.lock .
+  yarn.lock ./
 
 RUN yarn install
 
