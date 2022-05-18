@@ -1017,7 +1017,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "Implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn\\.secomapp\\.com/",
     "website": "https://www.secomapp.com"
@@ -1797,7 +1797,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "website": "https://apps.shopify.com/custom-options"
   },
   "Shopaholic": {
@@ -1831,7 +1831,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "cdn\\.myshopapps\\.com/",
     "website": "http://www.shopapps.in"
@@ -1950,6 +1950,20 @@
     ],
     "url": "^https?//.+\\.myshopify\\.com",
     "website": "http://shopify.com"
+  },
+  "Shopify Buy Button": {
+    "cats": [
+      100
+    ],
+    "description": "Shopify Buy Button is an app from Shopify which allows merchant to embed buy functionality for any product or collection into another website or blog.",
+    "icon": "Shopify.svg",
+    "js": {
+      "ShopifyBuy": ""
+    },
+    "scriptSrc": [
+      "sdk\\. shopifycdn\\.com/buy-button/latest/"
+    ],
+    "website": "https://apps.shopify.com/buy-button"
   },
   "Shopify Chat": {
     "cats": [
