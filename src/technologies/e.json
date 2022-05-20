@@ -98,6 +98,19 @@
     },
     "website": "http://www.eprints.org"
   },
+  "ESW": {
+    "cats": [
+      106
+    ],
+    "description": "eShopWorld is a company providing payments, shipping, and delivery services focusing on cross-border commerce.",
+    "icon": "ESW.png",
+    "js": {
+      "eshopworld": "",
+      "eswRetailerDisplayConfiguration": ""
+    },
+    "scriptSrc": "Eswhooks\\.js",
+    "website": "http://esw.com/"
+  },
   "EWWW Image Optimizer": {
     "cats": [
       87,
@@ -140,12 +153,12 @@
     ],
     "description": "Easy Redirects is a Shopify app built by Eastside, and part of the best Shopify Apps collection.",
     "icon": "Easy Redirects.png",
+    "implies": "Shopify",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "easy-redirects\\..+/redirect-app\\.js",
     "website": "https://apps.shopify.com/easyredirects"
@@ -998,6 +1011,15 @@
     "scriptSrc": "\\.etracker\\.com",
     "website": "https://www.etracker.com"
   },
+  "Everflow": {
+    "cats": [
+      10
+    ],
+    "description": "Medallia (formerly Kampyle) is a complete customer feedback platform that helps digital enterprises listen, understand, and act across all digital touch-points.",
+    "icon": "Everflow.svg",
+    "scriptSrc": "everflow\\.js",
+    "website": "https://www.everflow.com"
+  },
   "Eveve": {
     "cats": [
       5,
@@ -1059,6 +1081,7 @@
     ],
     "description": "Exemptify allows you to conduct proper EU B2B transactions by validating EU VAT IDs.",
     "icon": "Exemptify.png",
+    "implies": "Shopify",
     "js": {
       "ExemptifyTriggerUpdate": "",
       "m4u_ex_vat_postfix_txt": ""
@@ -1067,7 +1090,6 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "\\.modules4u\\.biz/shopify/exemptify",
     "website": "http://modules4u.biz/exemptify"
