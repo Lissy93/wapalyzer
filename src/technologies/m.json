@@ -612,11 +612,16 @@
       13
     ],
     "description": "Marker.io is an issue tracker solution for Project Managers, QA Testers and Agency Clients to report feedback & bugs to developers.",
-    "icon": "Marker.png",
+    "icon": "Marker.svg",
     "js": {
       "markerConfig": ""
     },
     "scriptSrc": "edge\\.marker\\.io",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
     "website": "https://marker.io"
   },
   "Marketo": {
@@ -871,8 +876,12 @@
       10
     ],
     "description": "Measured is an analytics platform to measure efficiency of marketing channels.",
-    "icon": "Measured.png",
+    "icon": "Measured.svg",
     "scriptSrc": "tag\\.measured\\.com",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "https://www.measured.com"
   },
   "Medallia": {
@@ -1844,7 +1853,7 @@
       91
     ],
     "description": "Mokka is a Buy Now Pay Later solution that connects target customer acquisition and settlement costs through marketing and promotion..",
-    "icon": "Mokka.png",
+    "icon": "Mokka.svg",
     "saas": true,
     "scriptSrc": "revoiframe\\.js",
     "website": "https://mokka.ro"
