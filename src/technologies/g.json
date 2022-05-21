@@ -809,6 +809,24 @@
     "scriptSrc": "/assets/globo\\.formbuilder\\.init\\.js",
     "website": "https://apps.shopify.com/form-builder-contact-form"
   },
+  "Globo Pre-Order": {
+    "cats": [
+      100
+    ],
+    "description": "Globo Pre-Order is a Shopify app for building pre-order functionality on Shopify stores.",
+    "icon": "Globo apps.png",
+    "implies": "Shopify",
+    "js": {
+      "GloboPreorderParams": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/pre-order-pro"
+  },
   "Glopal": {
     "cats": [
       106
@@ -1007,6 +1025,17 @@
     "icon": "GoDaddy.svg",
     "requires": "WordPress",
     "website": "https://github.com/godaddy-wordpress/primer-child-lyrical"
+  },
+  "GoDaddy Online Store": {
+    "cats": [
+      6
+    ],
+    "headers": {
+      "via": "^1\\.1 mysimplestore\\.com$"
+    },
+    "icon": "GoDaddy.svg",
+    "saas": true,
+    "website": "https://www.godaddy.com/en-uk/websites/online-store"
   },
   "GoDaddy Primer": {
     "cats": [
