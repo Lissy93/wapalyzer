@@ -211,7 +211,7 @@
     ],
     "description": "LayoutHub is an easy page builder that helps merchants quickly set up an online store with any kind of page type by using our library of pre-designed layouts and blocks.",
     "icon": "LayoutHub.png",
-    "requires": "Shopify",
+    "implies": "Shopify",
     "scriptSrc": "app\\.layouthub\\.com/shopify/layouthub\\.js",
     "saas": true,
     "pricing": [
@@ -291,7 +291,7 @@
     "pricing": [
       "payg"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "scripts\\.leaflet\\.co/",
     "website": "https://join.leaflet.co"
@@ -785,10 +785,11 @@
   },
   "Littledata": {
     "cats": [
-      10
+      100,
     ],
     "description": "Littledata provides a seamless connection between your Shopify site, marketing channels, and Google Analytics.",
     "icon": "Littledata.svg",
+    "implies": "Shopify",
     "js": {
       "LittledataLayer": "",
       "LittledataLayer.version": "v([\\d\\.]+)\\;version:\\1"
@@ -999,7 +1000,7 @@
       "mid",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "\\.livescale\\.tv/",
     "website": "https://www.livescale.tv"
@@ -1067,6 +1068,23 @@
     "saas": true,
     "website": "https://www.localised.com",
     "xhr": "api\\.localised\\.com"
+  },
+  "Locksmith": {
+    "cats": [
+      100
+    ],
+    "description": "Locksmith is a shopify app for adding access control capability on shopify stores.",
+    "icon": "Locksmith.png",
+    "implies": "Shopify",
+    "js": {
+      "Locksmith": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/locksmith",
   },
   "LocomotiveCMS": {
     "cats": [
@@ -1329,7 +1347,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "loox\\.io/widget",
     "website": "https://loox.app"
