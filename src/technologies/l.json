@@ -238,7 +238,8 @@
   },
   "LazySizes": {
     "cats": [
-      59
+      59,
+      92
     ],
     "description": "LazySizes is a JavaScript library used to delay the loading of images (iframes, scripts, etc) until they come into view.",
     "icon": "default.svg",
@@ -248,6 +249,17 @@
     },
     "oss": true,
     "website": "https://github.com/aFarkas/lazysizes"
+  },
+  "LazySizes unveilhooks plugin": {
+    "cats": [
+      59,
+      92
+    ],
+    "description": "LazySizes unveilhooks plugin extends lazySizes to lazyload scripts/widgets, background images, styles and video/audio elements.",
+    "icon": "default.svg",
+    "scriptSrc": "ls.\\unveilhooks(?:\\.min)?\\.js",
+    "oss": true,
+    "website": "https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks"
   },
   "Leadinfo": {
     "cats": [
