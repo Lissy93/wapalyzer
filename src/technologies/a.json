@@ -1798,6 +1798,20 @@
     "scriptSrc": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
     "website": "https://www.airship.com"
   },
+  "AiSpeed": {
+    "cats": [
+      92,    
+      100
+    ],
+    "description": "AiSpeed is a shopify app focused on improving site speed.",
+    "icon": "AiSpeed.png",
+    "implies": "Shopify",
+    "js": {
+      "aispeed_init": ""
+    },      
+    "scriptSrc": "aispeed\\.js",
+    "website": "https://apps.shopify.com/aispeed"
+  },     
   "Akamai": {
     "cats": [
       31
