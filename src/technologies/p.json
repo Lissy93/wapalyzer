@@ -639,6 +639,22 @@
     "website": "https://paypal.com",
     "xhr": "\\.paypal\\.com"
   },
+  "PayPal Credit": {
+    "cats": [
+      91
+    ],
+    "description": "PayPal Credit is a reusable line of credit that lets you pay for online purchases over time.",
+    "icon": "PayPal.svg",
+    "requiresCategory": 6,
+    "implies": "PayPal",
+    "dom": "img[alt*='PayPal Credit'], a[title*='PayPal Credit']",
+    "js": {
+      "PaypalOffersObject": "",
+      "payPalCreditPopover": ""
+    },
+    "scriptSrc": "\\.paypalobjects\\.com/.+/smart-credit-message@([\\d\\.]+)\\.js\\;version:\\1",
+    "website": "https://www.paypal.com/uk/webapps/mpp/paypal-virtual-credit"
+  },
   "PayPal Marketing Solutions": {
     "cats": [
       10,
