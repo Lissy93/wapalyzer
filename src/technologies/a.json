@@ -1645,6 +1645,26 @@
     "scriptSrc": "\\.afterbuy\\.de/",
     "website": "http://www.afterbuy.de"
   },
+  "AfterSell": {
+    "cats": [
+      100
+    ],
+    "description": "AfterSell helps brands create powerful post purchase offers.",
+    "icon": "AfterSell.svg",
+    "implies": "Shopify",
+    "js": {
+      "aftersell.hooks": ""
+
+    },
+    "scriptSrc": "\\.aftersell\\.app/", 
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://www.aftership.com"
+  },
   "AfterShip": {
     "cats": [
       19
