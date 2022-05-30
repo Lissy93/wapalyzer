@@ -851,6 +851,24 @@
     "scriptSrc": "cdn\\.equalweb\\.com.*\\.js",
     "website": "https://www.equalweb.com/"
   },
+  "EraofEcom WinAds": {
+    "cats": [
+      100
+    ],
+    "description": "EraofEcom WinAds is an all-in-one Facebook pixel app for Shopify.",
+    "icon": "EraofEcom.png",
+    "implies": "Shopify",
+    "dom": "link[href*='winads.eraofecom.org']",
+    "js": {
+      "win_ads.baseURL": "winads\\.eraofecom\\.org"
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://eraofecom.org/collections/tech/products/win-ads-manager"
+  },
   "Erlang": {
     "cats": [
       27
