@@ -329,6 +329,43 @@
     ],
     "website": "https://www.bazaarvoice.com/products/visual-and-social-content/"
   },
+  "Beam AfterSell": {
+    "cats": [
+      100
+    ],
+    "description": "AfterSell is a Shopify app by Beam which helps brands create powerful post purchase offers.",
+    "icon": "AfterSell.svg",
+    "implies": "Shopify",
+    "js": {
+      "aftersell.hooks": ""
+    },
+    "scriptSrc": "\\.aftersell\\.app/", 
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://www.aftersell.com"
+  },
+  "Beam OutSell": {
+    "cats": [
+      100
+    ],
+    "description": "OutSell is a Shopify app by Beam. Frequently Bought Together, Discounted Upsell, Also Bought.",
+    "icon": "Beam.svg",
+    "implies": "Shopify",
+    "js": {
+      "outsellApp": "",
+      "outsellAiRecommendationsIsEnabled": ""
+    },
+    "scriptSrc": "//outsellapp\\.com/", 
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/outsell"
+  },
   "Beans": {
     "cats": [
       84
