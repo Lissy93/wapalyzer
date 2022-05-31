@@ -310,9 +310,17 @@
     ],
     "description": "Helhost is a web hosting provider and internet domain registrar from Democratic Republic of Congo.",
     "dns": {
-      "NS": "ns\\d\\.helhost\\.com",
-      "SOA": "ns\\d\\.helhost\\.com"
+      "NS": "\\.helhost\\.com",
+      "SOA": "\\.helhost\\.com"
     },
+    "headers": {
+      "x-powered-by": "Helhost"
+    },
+    "implies": [
+      "Nginx",
+      "AlmaLinux",
+      "Apache"
+    ],
     "icon": "Helhost.svg",
     "pricing": [
       "low",
