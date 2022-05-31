@@ -1645,42 +1645,6 @@
     "scriptSrc": "\\.afterbuy\\.de/",
     "website": "http://www.afterbuy.de"
   },
-  "AfterSell": {
-    "cats": [
-      100
-    ],
-    "description": "AfterSell helps brands create powerful post purchase offers.",
-    "icon": "AfterSell.svg",
-    "implies": "Shopify",
-    "js": {
-      "aftersell.hooks": ""
-
-    },
-    "scriptSrc": "\\.aftersell\\.app/", 
-    "pricing": [
-      "freemium",
-      "recurring",
-      "low"
-    ],
-    "saas": true,
-    "website": "https://www.aftersell.com"
-  },
-  "AfterShip": {
-    "cats": [
-      19
-    ],
-    "description": "AfterShip provides automated shipment tracking as a service.",
-    "icon": "AfterShip.svg",
-    "js": {
-      "aftership.__VERSION__": "([\\d\\.]+)\\;version:\\1"
-    },
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "saas": true,
-    "website": "https://www.aftership.com"
-  },
   "AfterShip Returns Center": {
     "cats": [
       102
