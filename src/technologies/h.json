@@ -1,4 +1,15 @@
-{
+{ 
+  "h5ai": {
+    "cats": [
+      19
+    ],
+    "description": "h5ai is a modern HTTP web server index for Apache httpd, lighttpd, and nginx.",
+    "icon": "default.svg",
+    "implies": "PHP",
+    "scriptSrc": "/_h5ai/(?:public|client)/js/scripts\\.js",
+    "oss": true,
+    "website": "https://github.com/lrsjng/h5ai"
+  },
   "HCL Commerce": {
     "cats": [
       6
