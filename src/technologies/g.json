@@ -196,11 +196,8 @@
       12
     ],
     "description": "Gatsby is a React-based open-source framework with performance, scalability and security built-in.",
-    "html": [
-      "<div id=\"___gatsby\">",
-      "<style id=\"gatsby-inlined-css\">"
-    ],
     "icon": "Gatsby.svg",
+    "dom": "div#___gatsby, style#gatsby-inlined-css",
     "implies": [
       "React",
       "webpack"
@@ -209,6 +206,21 @@
       "generator": "^Gatsby(?: ([0-9.]+))?$\\;version:\\1"
     },
     "website": "https://www.gatsbyjs.org/"
+  },
+  "Gatsby Cloud Image CDN": {
+    "cats": [
+      31
+    ],
+    "description": "Image CDN is a new feature of hosting on Gatsby Cloud. Instead of processing images at build time, Image CDN defers and offloads image processing to the edge.",
+    "icon": "Gatsby.svg",
+    "dom":"img[srcset*='/_gatsby/image/'], source[srcset*='/_gatsby/image/']",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.gatsbyjs.com/products/cloud/image-cdn"
   },
   "Gauges": {
     "cats": [
