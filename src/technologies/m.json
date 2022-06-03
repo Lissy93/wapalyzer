@@ -341,6 +341,25 @@
     "scriptSrc": "/wp-content/plugins/mailchimp-for-wp/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.mc4wp.com"
   },
+  "MailerLite": {
+    "cats": [
+      32
+    ],
+    "description": "MailerLite is an email marketing tool and website builder for businesses of all shapes and sizes.",
+    "icon": "Mailgun.svg",
+    "dom": "link[href*='.mailerlite.com']",
+    "js": {
+      "MailerLiteObject": ""
+    },
+    "scriptSrc": "\\.mailerlite\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.mailerlite.com"
+  },
   "Mailgun": {
     "cats": [
       75
