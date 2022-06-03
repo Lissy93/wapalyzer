@@ -1250,6 +1250,23 @@
     "saas": true,
     "website": "https://www.orckestra.com"
   },
+  "Order Deadline": {
+    "cats": [
+      100
+    ],
+    "description": "Order Deadline is an estimated delivery, countdown timer, shipping date Shopify app.",
+    "icon": "Order Deadline.png",
+    "implies": "Shopify",
+    "js": {
+      "orderDeadlineAppByEESL": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/orderlogic"
+  },
   "OrderLogic app": {
     "cats": [
       100
@@ -1265,7 +1282,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "website": "https://apps.shopify.com/orderlogic"
   },
