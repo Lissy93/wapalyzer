@@ -341,6 +341,36 @@
     "scriptSrc": "/wp-content/plugins/mailchimp-for-wp/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.mc4wp.com"
   },
+  "MailerLite": {
+    "cats": [
+      32
+    ],
+    "description": "MailerLite is an email marketing tool and website builder for businesses of all shapes and sizes.",
+    "icon": "MailerLite.svg",
+    "dom": "link[href*='.mailerlite.com']",
+    "js": {
+      "MailerLiteObject": ""
+    },
+    "scriptSrc": "\\.mailerlite\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.mailerlite.com"
+  },
+  "MailerLite plugin": {
+    "cats": [
+      87
+    ],
+    "description": "The official MailerLite signup forms plugin makes it easy to grow your newsletter subscriber list from your WordPress blog or website. The plugin automatically integrates your WordPress form with your MailerLite email marketing account.",
+    "icon": "MailerLite.svg",
+    "implies": "MailerLite",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woo-mailerlite/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://ru.wordpress.org/plugins/official-mailerlite-sign-up-forms/"
+  },
   "Mailgun": {
     "cats": [
       75
