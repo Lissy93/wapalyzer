@@ -972,6 +972,24 @@
     "icon": "GoCache.png",
     "website": "https://www.gocache.com.br/"
   },
+  "GoCertify": {
+    "cats": [
+      5
+    ],
+    "description": "GoCertify is a conversion-focused and cost-effective way to verify students, key workers, under-26s, over-60s, military and more for exclusive discounts.",
+    "icon": "GoCertify.png",
+    "dom": "a[href*='secure.gocertify.me']",
+    "cookies": {
+      "_gocertify_session": ""
+    },
+    "scriptSrc": "assets\\.gocertify\\.me/",
+    "pricing": [
+      "poa",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.gocertify.me"
+  },
   "GoDaddy": {
     "cats": [
       88
