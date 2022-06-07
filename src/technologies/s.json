@@ -4713,7 +4713,8 @@
     "icon": "Stripe.svg",
     "js": {
       "Stripe.version": "^(.+)$\\;version:\\1",
-      "checkout.enabledpayments.stripe": "^true$"
+      "checkout.enabledpayments.stripe": "^true$",
+      "__NEXT_DATA__.props.pageProps.appSettings.STRIPE_API_PUBLIC_KEY": ""
     },
     "pricing": [
       "payg"
