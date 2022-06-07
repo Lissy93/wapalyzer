@@ -267,6 +267,26 @@
     ],
     "website": "https://www.farfetchplatformsolutions.com/"
   },
+  "Fast Bundle": {
+    "cats": [
+      100
+    ],
+    "description": "Fast Bundle gives you the ability to create product bundle offers with discounts.",
+    "icon": "Fast Bundle.svg",
+    "implies": "Shopify",
+    "js": {
+      "FastBundleConf.cartInfo.app_version": "v([\\d\\.]+)\\;version:\\1",
+      "FastBundleConf.bundleBox": ""
+    },
+    "scriptSrc": "api\\.fastbundle\\.co/",
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://fastbundle.co"
+  },
   "Fast Checkout": {
     "cats": [
       6
