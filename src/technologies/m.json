@@ -814,6 +814,18 @@
     },
     "website": "https://developer.matomo.org/guides/tagmanager/introduction"
   },
+  "MATORI.NET": {
+    "cats": [
+      64
+    ],
+    "description": "MATORI.NET is a fully managed reverse proxy.",
+    "icon": "default.svg",
+    "implies": "OpenResty",
+    "headers": {
+      "X-Powered-By": "MATORI.NET"
+    },
+    "website": "http://matori.net"
+  },
   "Mattermost": {
     "cats": [
       2
