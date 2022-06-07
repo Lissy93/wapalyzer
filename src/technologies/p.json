@@ -1391,6 +1391,20 @@
     "scriptSrc": "\\.piwik\\.pro/",
     "website": "https://piwik.pro"
   },
+  "Pixc": {
+    "cats": [
+      19
+    ],
+    "description": "Pixc is human powered image editing platform.",
+    "icon": "Pixc.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "//pixc\\.com/",
+    "website": "https://pixc.com"
+  },
   "PixelFed": {
     "cats": [
       2
@@ -1779,10 +1793,14 @@
     "icon": "Popper.svg",
     "js": {
       "Popper.Defaults": "",
-      "createPopper": ""
+      "createPopper": "",
+      "Popper.applyStyles": ""
     },
     "oss": true,
-    "scriptSrc": "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?\\;version:\\1",
+    "scriptSrc": [
+      "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?\\;version:\\1",
+      "popperjs(?:/|-)core(?:@|-)([\\d\\.]+)\\;version:\\1"
+    ],
     "website": "https://popper.js.org"
   },
   "PopularFX": {

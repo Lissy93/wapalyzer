@@ -57,6 +57,22 @@
     "saas": true,
     "website": "https://www.trisoshop.pl"
   },
+  "Tritac Katana Commerce": {
+    "cats": [
+      6
+    ],
+    "description": "Katana Commerce is Tritac's B2B and B2C ecommerce platform.",
+    "icon": "Tritac.svg",
+    "meta": {
+      "powered-by": "^Katana\\sCommerce$"
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.tritac.com/nl/producten/katana-commerce/"
+  },
   "TRUENDO": {
     "cats": [
       67
@@ -1598,6 +1614,20 @@
     },
     "scriptSrc": "/tiny_?mce(?:\\.min)?\\.js",
     "website": "http://tinymce.com"
+  },
+  "Tippy.js": {
+    "cats": [
+      59
+    ],
+    "description": "Tippy.js is the complete tooltip, popover, dropdown, and menu solution for the web, powered by Popper.",
+    "icon": "Tippy.js.svg",
+    "dom": "style[data-tippy-stylesheet]",
+    "js": {
+      "tippy.defaultProps": ""
+    },
+    "scriptSrc": "/tippy\\.js(?:@|/)?([\\d\\.]+)?\\;version:\\1",
+    "oss": true,
+    "website": "https://atomiks.github.io/tippyjs"
   },
   "Tipsa": {
     "cats": [

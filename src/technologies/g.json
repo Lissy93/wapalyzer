@@ -196,11 +196,8 @@
       12
     ],
     "description": "Gatsby is a React-based open-source framework with performance, scalability and security built-in.",
-    "html": [
-      "<div id=\"___gatsby\">",
-      "<style id=\"gatsby-inlined-css\">"
-    ],
     "icon": "Gatsby.svg",
+    "dom": "div#___gatsby, style#gatsby-inlined-css",
     "implies": [
       "React",
       "webpack"
@@ -209,6 +206,21 @@
       "generator": "^Gatsby(?: ([0-9.]+))?$\\;version:\\1"
     },
     "website": "https://www.gatsbyjs.org/"
+  },
+  "Gatsby Cloud Image CDN": {
+    "cats": [
+      31
+    ],
+    "description": "Image CDN is a new feature of hosting on Gatsby Cloud. Instead of processing images at build time, Image CDN defers and offloads image processing to the edge.",
+    "icon": "Gatsby.svg",
+    "dom":"img[srcset*='/_gatsby/image/'], source[srcset*='/_gatsby/image/']",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.gatsbyjs.com/products/cloud/image-cdn"
   },
   "Gauges": {
     "cats": [
@@ -959,6 +971,24 @@
     },
     "icon": "GoCache.png",
     "website": "https://www.gocache.com.br/"
+  },
+  "GoCertify": {
+    "cats": [
+      5
+    ],
+    "description": "GoCertify is a conversion-focused and cost-effective way to verify students, key workers, under-26s, over-60s, military and more for exclusive discounts.",
+    "icon": "GoCertify.png",
+    "dom": "a[href*='secure.gocertify.me']",
+    "cookies": {
+      "_gocertify_session": ""
+    },
+    "scriptSrc": "assets\\.gocertify\\.me/",
+    "pricing": [
+      "poa",
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.gocertify.me"
   },
   "GoDaddy": {
     "cats": [

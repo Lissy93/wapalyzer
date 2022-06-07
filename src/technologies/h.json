@@ -615,10 +615,30 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "\\.hextom\\.com/js/freeshippingbar\\.js",
     "website": "https://hextom.com/case_study/free-shipping-bar"
+  },
+  "Hextom Ultimate Sales Boost": {
+    "cats": [
+      100
+    ],
+    "description": "Ultimate Sales Boost by Hextom is an app designed to help you drive more sales by creating a sense of urgency, scarcity and trust.",
+    "icon": "Hextom.png",
+    "js": {
+      "hextom_usb": "",
+      "ht_usb.isLoaded": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "implies": "Shopify",
+    "saas": true,
+    "scriptSrc": "\\.hextom\\.com/js/ultimatesalesboost\\.js",
+    "website": "https://hextom.com/case_study/ultimate-sales-boost"
   },
   "Hiawatha": {
     "cats": [

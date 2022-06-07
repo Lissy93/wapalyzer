@@ -113,6 +113,20 @@
     "scriptSrc": "/wp-content/themes/covernews(?:-pro)?/",
     "website": "https://afthemes.com/products/covernews"
   },
+  "Alli": {
+    "cats": [
+      54
+    ],
+    "description": "Alli is artificial intelligence for search engine optimisation.",
+    "icon": "Alli.png", 
+    "scriptSrc": "\\.alliai\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.alliai.com"
+  },
   "ALL-INKL": {
     "cats": [
       88
@@ -2036,7 +2050,8 @@
       "AlgoliaSearch": "",
       "__GLOBAL__.algolia": "",
       "__algolia": "",
-      "algoliasearch.version": "^(.+)$\\;version:\\1"
+      "algoliasearch.version": "^(.+)$\\;version:\\1",
+      "__NEXT_DATA__.props.pageProps.appSettings.ALGOLIA_APP_ID": ""
     },
     "pricing": [
       "freemium",
