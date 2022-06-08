@@ -57,22 +57,6 @@
     "saas": true,
     "website": "https://www.trisoshop.pl"
   },
-  "Tritac Katana Commerce": {
-    "cats": [
-      6
-    ],
-    "description": "Katana Commerce is Tritac's B2B and B2C ecommerce platform.",
-    "icon": "Tritac.svg",
-    "meta": {
-      "powered-by": "^Katana\\sCommerce$"
-    },
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.tritac.com/nl/producten/katana-commerce/"
-  },
   "TRUENDO": {
     "cats": [
       67
@@ -428,12 +412,12 @@
       36
     ],
     "description": "Tapad is a venture-funded startup company that develops and markets software and services for cross-device advertising and content delivery.",
-    "icon": "Tapad.svg",
     "dom": "link[href*='pixel.tapad.com'], img[src*='pixel.tapad.com']",
-    "saas": true,
+    "icon": "Tapad.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.tapad.com"
   },
   "Tapcart": {
@@ -754,8 +738,8 @@
     "dom": "link[href*='/wp-content/plugins/the-events-calendar/']",
     "icon": "The Events Calendar.png",
     "js": {
-      "tribe_l10n_datatables": "",
-      "TribeCalendar": ""
+      "TribeCalendar": "",
+      "tribe_l10n_datatables": ""
     },
     "pricing": [
       "freemium",
@@ -765,6 +749,28 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/the-events-calendar(?:-pro)?/",
     "website": "https://theeventscalendar.com"
+  },
+  "The Hotels Network": {
+    "cats": [
+      10,
+      76
+    ],
+    "description": "The Hotels Network provides a SaaS software that enhances hotelier websites with predictive marketing personalisation and user behavior analytics.",
+    "headers": {
+      "content-security-policy": "\\.thehotelsnetwork\\.com",
+      "content-security-policy-report-only": "\\.thehotelsnetwork\\.com"
+    },
+    "icon": "The Hotels Network.svg",
+    "js": {
+      "thn.data.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.thehotelsnetwork\\.com/",
+    "website": "https://thehotelsnetwork.com"
   },
   "The Theme Foundry Make": {
     "cats": [
@@ -831,28 +837,6 @@
     ],
     "saas": true,
     "website": "https://www.thefork.com"
-  },
-  "The Hotels Network": {
-    "cats": [
-      10,
-      76
-    ],
-    "description": "The Hotels Network provides a SaaS software that enhances hotelier websites with predictive marketing personalisation and user behavior analytics.",
-    "icon": "The Hotels Network.svg",
-    "saas": true,
-    "headers": {
-      "content-security-policy": "\\.thehotelsnetwork\\.com",
-      "content-security-policy-report-only": "\\.thehotelsnetwork\\.com"
-    },
-    "js": {
-      "thn.data.version": "([\\d\\.]+)\\;version:\\1"
-    },
-    "scriptSrc": "\\.thehotelsnetwork\\.com/",
-    "pricing": [
-      "freemium",
-      "poa"
-    ],
-    "website": "https://thehotelsnetwork.com"
   },
   "Thelia": {
     "cats": [
@@ -1620,13 +1604,13 @@
       59
     ],
     "description": "Tippy.js is the complete tooltip, popover, dropdown, and menu solution for the web, powered by Popper.",
-    "icon": "Tippy.js.svg",
     "dom": "style[data-tippy-stylesheet]",
+    "icon": "Tippy.js.svg",
     "js": {
       "tippy.defaultProps": ""
     },
-    "scriptSrc": "/tippy\\.js(?:@|/)?([\\d\\.]+)?\\;version:\\1",
     "oss": true,
+    "scriptSrc": "/tippy\\.js(?:@|/)?([\\d\\.]+)?\\;version:\\1",
     "website": "https://atomiks.github.io/tippyjs"
   },
   "Tipsa": {
@@ -1776,22 +1760,6 @@
     "implies": "Python",
     "website": "http://trac.edgewall.org"
   },
-  "Trackify X": {
-    "cats": [
-      100,
-      10
-    ],
-    "description": "Trackify X is a pixel engine that helps merchants backup their pixel data and manage multiple pixels.",
-    "icon": "Trackify X.png",
-    "implies": "Shopify",
-    "scriptSrc": "trackifyx\\.redretarget\\.com/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://trackifyapp.com"
-  },
   "TrackJs": {
     "cats": [
       10
@@ -1804,6 +1772,22 @@
     },
     "scriptSrc": "cdn\\.trackjs\\.com",
     "website": "http://trackjs.com"
+  },
+  "Trackify X": {
+    "cats": [
+      100,
+      10
+    ],
+    "description": "Trackify X is a pixel engine that helps merchants backup their pixel data and manage multiple pixels.",
+    "icon": "Trackify X.png",
+    "implies": "Shopify",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "trackifyx\\.redretarget\\.com/",
+    "website": "https://trackifyapp.com"
   },
   "Tradedoubler": {
     "cats": [
@@ -1836,7 +1820,7 @@
     "scriptSrc": "\\.tsyndicate\\.com/",
     "website": "https://trafficstars.com"
   },
- "Transcend": {
+  "Transcend": {
     "cats": [
       67
     ],
@@ -1845,10 +1829,10 @@
     "js": {
       "transcend": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "http://www.transcend.io"
   },
   "Transcy": {
@@ -2015,6 +1999,22 @@
     "saas": true,
     "website": "https://triplelift.com",
     "xhr": "\\.3lift\\.com"
+  },
+  "Tritac Katana Commerce": {
+    "cats": [
+      6
+    ],
+    "description": "Katana Commerce is Tritac's B2B and B2C ecommerce platform.",
+    "icon": "Tritac.svg",
+    "meta": {
+      "powered-by": "^Katana\\sCommerce$"
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.tritac.com/nl/producten/katana-commerce/"
   },
   "Trix": {
     "cats": [

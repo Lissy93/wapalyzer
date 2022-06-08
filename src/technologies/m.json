@@ -30,6 +30,18 @@
     "saas": true,
     "website": "https://ma-jin.jp"
   },
+  "MATORI.NET": {
+    "cats": [
+      64
+    ],
+    "description": "MATORI.NET is a fully managed reverse proxy.",
+    "headers": {
+      "X-Powered-By": "MATORI.NET"
+    },
+    "icon": "default.svg",
+    "implies": "OpenResty",
+    "website": "http://matori.net"
+  },
   "MDUI": {
     "cats": [
       66
@@ -214,10 +226,10 @@
     "meta": {
       "web-author": "^Magazord$"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.magazord.com.br"
   },
   "Magento": {
@@ -346,18 +358,18 @@
       32
     ],
     "description": "MailerLite is an email marketing tool and website builder for businesses of all shapes and sizes.",
-    "icon": "MailerLite.svg",
     "dom": "link[href*='.mailerlite.com']",
+    "icon": "MailerLite.svg",
     "js": {
       "MailerLiteObject": ""
     },
-    "scriptSrc": "\\.mailerlite\\.com/",
-    "saas": true,
     "pricing": [
       "freemium",
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.mailerlite\\.com/",
     "website": "https://www.mailerlite.com"
   },
   "MailerLite plugin": {
@@ -646,12 +658,12 @@
     "js": {
       "markerConfig": ""
     },
-    "scriptSrc": "edge\\.marker\\.io",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "edge\\.marker\\.io",
     "website": "https://marker.io"
   },
   "Marketo": {
@@ -814,18 +826,6 @@
     },
     "website": "https://developer.matomo.org/guides/tagmanager/introduction"
   },
-  "MATORI.NET": {
-    "cats": [
-      64
-    ],
-    "description": "MATORI.NET is a fully managed reverse proxy.",
-    "icon": "default.svg",
-    "implies": "OpenResty",
-    "headers": {
-      "X-Powered-By": "MATORI.NET"
-    },
-    "website": "http://matori.net"
-  },
   "Mattermost": {
     "cats": [
       2
@@ -919,11 +919,11 @@
     ],
     "description": "Measured is an analytics platform to measure efficiency of marketing channels.",
     "icon": "Measured.svg",
-    "scriptSrc": "tag\\.measured\\.com",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "tag\\.measured\\.com",
     "website": "https://www.measured.com"
   },
   "Medallia": {
@@ -1545,17 +1545,17 @@
       32
     ],
     "description": "Mindbox is a marketing automation platform.",
-    "icon":"Mindbox.png",
+    "icon": "Mindbox.png",
     "js": {
-      "mindbox": "",
       "MindboxEndpointSettings": "",
+      "mindbox": "",
       "mindboxBatchedModulesInitialized": ""
     },
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
     "website": "https://mindbox.ru"
   },
   "Minero.cc": {
@@ -1974,17 +1974,17 @@
       41
     ],
     "description": "Moneris (formerly Moneris Solutions) is Canada's largest financial technology company that specialises in payment processing.",
-    "icon": "Moneris.svg",
     "headers": {
       "content-security-policy": "\\.moneris\\.com"
     },
+    "icon": "Moneris.svg",
     "js": {
       "initialServerData.monerisConfiguration": ""
     },
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://www.moneris.com"
   },
   "Moneris Payment Gateway": {
@@ -2000,8 +2000,8 @@
     "js": {
       "wc_moneris_hosted_tokenization_params": ""
     },
-    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-moneris/",
     "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/woocommerce-gateway-moneris/",
     "website": "https://wordpress.org/plugins/wc-moneris-payment-gateway"
   },
   "MongoDB": {

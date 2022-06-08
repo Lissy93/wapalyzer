@@ -647,6 +647,15 @@
     "saas": true,
     "website": "https://www.webnode.com"
   },
+  "WebRTC": {
+    "cats": [
+      19
+    ],
+    "description": "WebRTC is an open-source project that enables real-time voice, text and video communications capabilities between web browsers and devices.",
+    "icon": "WebRTC.svg",
+    "oss": true,
+    "website": "https://webrtc.org"
+  },
   "WebSite X5": {
     "cats": [
       20
@@ -732,15 +741,6 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/themes/busiprof(?:-pro)?/",
     "website": "https://webriti.com/busiprof-premium-wordpress-theme-1"
-  },
-  "WebRTC": {
-    "cats": [
-      19
-    ],
-    "description": "WebRTC is an open-source project that enables real-time voice, text and video communications capabilities between web browsers and devices.",
-    "icon": "WebRTC.svg",
-    "oss": true,
-    "website": "https://webrtc.org"
   },
   "WebsPlanet": {
     "cats": [
@@ -1701,17 +1701,6 @@
     ],
     "website": "https://www.wunderkind.co"
   },
-  "WysiBB": {
-    "cats": [
-      24
-    ],
-    "description": "WysiBB very simple and functional open-source WYSIWYG BBCode editor based on jQuery.",
-    "icon": "WysiBB.svg",
-    "implies": "jQuery",
-    "scriptSrc": "/jquery\\.wysibb\\.min\\.js",
-    "oss": true,
-    "website": "http://wysibb.com"
-  },
   "Wurfl": {
     "cats": [
       59
@@ -1723,6 +1712,17 @@
     },
     "scriptSrc": "\\.wurfl\\.io",
     "website": "https://web.wurfl.io/"
+  },
+  "WysiBB": {
+    "cats": [
+      24
+    ],
+    "description": "WysiBB very simple and functional open-source WYSIWYG BBCode editor based on jQuery.",
+    "icon": "WysiBB.svg",
+    "implies": "jQuery",
+    "oss": true,
+    "scriptSrc": "/jquery\\.wysibb\\.min\\.js",
+    "website": "http://wysibb.com"
   },
   "web-vitals": {
     "cats": [
@@ -1758,8 +1758,8 @@
     "description": "Webpack is an open-source JavaScript module bundler.",
     "icon": "webpack.svg",
     "js": {
-      "webpackJsonp": "",
-      "webpackChunk": ""
+      "webpackChunk": "",
+      "webpackJsonp": ""
     },
     "website": "https://webpack.js.org/"
   },

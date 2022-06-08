@@ -20,6 +20,21 @@
     "icon": "F5.png",
     "website": "https://www.f5.com/products/big-ip-services"
   },
+  "FARFETCH Black & White": {
+    "cats": [
+      6
+    ],
+    "description": "Farfetch Platform Solutions is a full service platform and agency providing end-to-end, multichannel e-commerce solutions for luxury fashion brands under the name Farfetch Black & White.",
+    "icon": "Farfetch.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "cdn-static\\.farfetch-contents.com\\.js"
+    ],
+    "website": "https://www.farfetchplatformsolutions.com/"
+  },
   "FAST ESP": {
     "cats": [
       29
@@ -252,21 +267,6 @@
     "scriptSrc": "fareharbor\\.com/embeds/api/",
     "website": "https://fareharbor.com"
   },
-  "FARFETCH Black & White": {
-    "cats": [
-      6
-    ],
-    "description": "Farfetch Platform Solutions is a full service platform and agency providing end-to-end, multichannel e-commerce solutions for luxury fashion brands under the name Farfetch Black & White.",
-    "icon": "Farfetch.png",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": [
-      "cdn-static\\.farfetch-contents.com\\.js"
-    ],
-    "website": "https://www.farfetchplatformsolutions.com/"
-  },
   "Fast Bundle": {
     "cats": [
       100
@@ -275,16 +275,16 @@
     "icon": "Fast Bundle.svg",
     "implies": "Shopify",
     "js": {
-      "FastBundleConf.cartInfo.app_version": "v([\\d\\.]+)\\;version:\\1",
-      "FastBundleConf.bundleBox": ""
+      "FastBundleConf.bundleBox": "",
+      "FastBundleConf.cartInfo.app_version": "v([\\d\\.]+)\\;version:\\1"
     },
-    "scriptSrc": "api\\.fastbundle\\.co/",
     "pricing": [
       "freemium",
       "recurring",
       "low"
     ],
     "saas": true,
+    "scriptSrc": "api\\.fastbundle\\.co/",
     "website": "https://fastbundle.co"
   },
   "Fast Checkout": {
@@ -803,6 +803,16 @@
     ],
     "website": "https://woocommerce.com/flexslider/"
   },
+  "Flickity": {
+    "cats": [
+      59
+    ],
+    "js": {
+      "Flickity": ""
+    },
+    "scriptSrc": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
+    "website": "https://flickity.metafizzy.co/"
+  },
   "Flits": {
     "cats": [
       100
@@ -813,22 +823,12 @@
     "js": {
       "flitsObjects.accountPage": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://getflits.com"
-  },
-  "Flickity": {
-    "cats": [
-      59
-    ],
-    "js": {
-      "Flickity": ""
-    },
-    "scriptSrc": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
-    "website": "https://flickity.metafizzy.co/"
   },
   "Flocktory": {
     "cats": [
@@ -1485,11 +1485,11 @@
     ],
     "description": "Froala Editor is a WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for applications.",
     "dom": {
-      ".froala-box": {
-        "exists": "\\;version:1"
-      },
       ".fr-view, .fr-box, .fr-popup": {
         "exists": "\\;version:2+"
+      },
+      ".froala-box": {
+        "exists": "\\;version:1"
       }
     },
     "icon": "Froala.svg",

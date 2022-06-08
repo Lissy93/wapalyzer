@@ -75,17 +75,17 @@
     ],
     "description": "Obsidian Incentivize is designed to increase your average order size through in-cart upsells, cross sells and personalised product recommendations.",
     "icon": "Obsidian.png",
-    "requires": "Shopify",
     "js": {
       "Obsidian.IncentiveApi": ""
     },
-    "scriptSrc": "cdn\\.shopify\\.com/extensions/.+/([\\.\\d]{3,})/assets/upsell\\.min\\.js\\;version:\\1",
-    "saas": true,
     "pricing": [
       "low",
       "recurring",
       "freemium"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.shopify\\.com/extensions/.+/([\\.\\d]{3,})/assets/upsell\\.min\\.js\\;version:\\1",
     "website": "https://obsidianapps.co"
   },
   "Obviyo": {
@@ -419,6 +419,25 @@
     "scriptSrc": "omnisrc\\.com",
     "website": "https://www.omnisend.com"
   },
+  "Omurga Sistemi": {
+    "cats": [
+      1
+    ],
+    "icon": "Omurga Sistemi.svg",
+    "implies": [
+      "MySQL",
+      "PHP"
+    ],
+    "meta": {
+      "generator": "^OS-Omurga Sistemi"
+    },
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.os.com.tr"
+  },
   "OnShop": {
     "cats": [
       6
@@ -451,25 +470,6 @@
     ],
     "saas": true,
     "website": "https://onuniverse.com"
-  },
-  "Omurga Sistemi": {
-    "cats": [
-      1
-    ],
-    "icon": "Omurga Sistemi.svg",
-    "implies": [
-      "MySQL",
-      "PHP"
-    ],
-    "meta": {
-      "generator": "^OS-Omurga Sistemi"
-    },
-    "pricing": [
-      "poa",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.os.com.tr"
   },
   "One.com": {
     "cats": [
@@ -1273,6 +1273,7 @@
     ],
     "description": "OrderLogic app allows you to define minimum and maximum product quantities for all products in your Shopify store.",
     "icon": "OrderLogic app.png",
+    "implies": "Shopify",
     "js": {
       "OrderLogic.ALERTS_KEY": "",
       "OrderLogic.DEFAULT_MONEY_FORMAT": "",
@@ -1282,7 +1283,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "website": "https://apps.shopify.com/orderlogic"
   },

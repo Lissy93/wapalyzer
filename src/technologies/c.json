@@ -419,11 +419,11 @@
     ],
     "description": "CareCart is a smart app to recover big value carts on all sizes of shopify stores.",
     "icon": "CareCart.png",
+    "implies": "Shopify",
     "pricing": [
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "app\\.carecart\\.io/api/abandoned-cart/",
     "website": "https://carecart.io/abandoned-cart-recovery-app"
@@ -435,10 +435,10 @@
     ],
     "description": "CareCart Sales Pop Up is a stock countdown timer, recent sales notifications, live sales pop up widget.",
     "icon": "CareCart.png",
+    "implies": "Shopify",
     "pricing": [
       "freemium"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "sales-pop\\.carecart\\.io/",
     "website": "https://carecart.io/sales-pop-up-app"
@@ -466,12 +466,12 @@
     ],
     "description": "Carro connects participating Shopify stores together to enable cross-store selling or the ability for like-minded partners to directly sell each other products without the need for inventory, managing returns, or minimum order quantities.",
     "icon": "Carro.svg",
+    "implies": "Shopify",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": [
       "\\.getcarro\\.com/",
@@ -515,8 +515,8 @@
     ],
     "description": "Cart.js is a very small open-source Javascript library that makes the addition of powerful Ajax cart functionality to your Shopify theme a breeze.",
     "icon": "Cart.js.png",
-    "oss": true,
     "implies": "Shopify",
+    "oss": true,
     "scriptSrc": "(?:shopify-cartjs/([\\d\\.]+)|assets)/rivets-cart\\.min\\.js\\;version:\\1",
     "website": "https://cartjs.org"
   },
@@ -1754,11 +1754,11 @@
     ],
     "description": "Coin Currency Converter is an automatic currency conversion app for Shopify.",
     "icon": "Coin Currency Converter.png",
+    "implies": "Shopify",
     "pricing": [
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "scriptSrc": "/apps/coin/coin\\.js.+\\.myshopify\\.com",
     "website": "https://apps.shopify.com/coin"
@@ -2822,11 +2822,11 @@
     "js": {
       "cozyEcoAdnsUa": ""
     },
-    "scriptSrc": "cdncozyantitheft\\.addons\\.business/",
-    "saas": true,
     "pricing": [
       "freemium"
     ],
+    "saas": true,
+    "scriptSrc": "cdncozyantitheft\\.addons\\.business/",
     "website": "https://apps.shopify.com/cozy-antitheft-for-images-and-more"
   },
   "CppCMS": {

@@ -113,20 +113,6 @@
     "scriptSrc": "/wp-content/themes/covernews(?:-pro)?/",
     "website": "https://afthemes.com/products/covernews"
   },
-  "Alli": {
-    "cats": [
-      54
-    ],
-    "description": "Alli is artificial intelligence for search engine optimisation.",
-    "icon": "Alli.png", 
-    "scriptSrc": "\\.alliai\\.com/",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.alliai.com"
-  },
   "ALL-INKL": {
     "cats": [
       88
@@ -1733,6 +1719,20 @@
     },
     "website": "https://github.com/ankane/ahoy"
   },
+  "AiSpeed": {
+    "cats": [
+      92,
+      100
+    ],
+    "description": "AiSpeed is a shopify app focused on improving site speed.",
+    "icon": "AiSpeed.png",
+    "implies": "Shopify",
+    "js": {
+      "aispeed_init": ""
+    },
+    "scriptSrc": "aispeed\\.js",
+    "website": "https://apps.shopify.com/aispeed"
+  },
   "Aimtell": {
     "cats": [
       32
@@ -1812,20 +1812,6 @@
     "scriptSrc": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
     "website": "https://www.airship.com"
   },
-  "AiSpeed": {
-    "cats": [
-      92,    
-      100
-    ],
-    "description": "AiSpeed is a shopify app focused on improving site speed.",
-    "icon": "AiSpeed.png",
-    "implies": "Shopify",
-    "js": {
-      "aispeed_init": ""
-    },      
-    "scriptSrc": "aispeed\\.js",
-    "website": "https://apps.shopify.com/aispeed"
-  },     
   "Akamai": {
     "cats": [
       31
@@ -2049,9 +2035,9 @@
     "js": {
       "AlgoliaSearch": "",
       "__GLOBAL__.algolia": "",
+      "__NEXT_DATA__.props.pageProps.appSettings.ALGOLIA_APP_ID": "",
       "__algolia": "",
-      "algoliasearch.version": "^(.+)$\\;version:\\1",
-      "__NEXT_DATA__.props.pageProps.appSettings.ALGOLIA_APP_ID": ""
+      "algoliasearch.version": "^(.+)$\\;version:\\1"
     },
     "pricing": [
       "freemium",
@@ -2089,6 +2075,20 @@
     ],
     "requires": "WordPress",
     "website": "https://aioseo.com"
+  },
+  "Alli": {
+    "cats": [
+      54
+    ],
+    "description": "Alli is artificial intelligence for search engine optimisation.",
+    "icon": "Alli.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.alliai\\.com/",
+    "website": "https://www.alliai.com"
   },
   "AlloyUI": {
     "cats": [
@@ -4024,14 +4024,14 @@
     "cats": [
       65
     ],
-    "headers": {
-      "X-Azure-Ref": ""
-    },
     "cookies": {
       "ASLBSA": "",
       "ASLBSACORS": ""
     },
     "description": "Azure Front Door is a scalable and secure entry point for fast delivery of your global web applications.",
+    "headers": {
+      "X-Azure-Ref": ""
+    },
     "icon": "azure.svg",
     "implies": "Azure",
     "website": "https://docs.microsoft.com/en-us/azure/frontdoor/"

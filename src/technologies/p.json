@@ -644,14 +644,14 @@
       91
     ],
     "description": "PayPal Credit is a reusable line of credit that lets you pay for online purchases over time.",
-    "icon": "PayPal.svg",
-    "requiresCategory": 6,
-    "implies": "PayPal",
     "dom": "img[alt*='PayPal Credit'], a[title*='PayPal Credit']",
+    "icon": "PayPal.svg",
+    "implies": "PayPal",
     "js": {
       "PaypalOffersObject": "",
       "payPalCreditPopover": ""
     },
+    "requiresCategory": 6,
     "scriptSrc": "\\.paypalobjects\\.com/.+/smart-credit-message@([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://www.paypal.com/uk/webapps/mpp/paypal-virtual-credit"
   },
@@ -732,11 +732,11 @@
     ],
     "description": "PebblePost provides marketers a way to transform recent online data into intelligent direct mail programs that perform.",
     "icon": "PebblePost.svg",
-    "scriptSrc": "cdn\\.pbbl\\.co/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "cdn\\.pbbl\\.co/",
     "website": "https://www.pebblepost.com"
   },
   "Peek": {
@@ -760,12 +760,12 @@
     ],
     "description": "PeerBoard is a plug-and-play community solution, which helps groups, clubs, startups, marketplaces and businesses create discussion forums.",
     "icon": "PeerBoard.png",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "scriptSrc": "\\.peerboard\\.com/",
     "website": "https://peerboard.com"
   },
@@ -1381,8 +1381,8 @@
       10
     ],
     "description": "Piwik PRO Core is a free alternative to Google Analytics that is privacy & compliance focused.",
-    "icon": "Piwik PRO Core.svg",
     "excludes": "Matomo Analytics",
+    "icon": "Piwik PRO Core.svg",
     "pricing": [
       "freemium",
       "poa"
@@ -1793,8 +1793,8 @@
     "icon": "Popper.svg",
     "js": {
       "Popper.Defaults": "",
-      "createPopper": "",
-      "Popper.applyStyles": ""
+      "Popper.applyStyles": "",
+      "createPopper": ""
     },
     "oss": true,
     "scriptSrc": [
@@ -1998,8 +1998,8 @@
     "icon": "Prebid.png",
     "js": {
       "PREBID_TIMEOUT": "",
-      "pbjs.version": "v([\\d\\.]+)\\;version:\\1",
-      "pbjs": ""
+      "pbjs": "",
+      "pbjs.version": "v([\\d\\.]+)\\;version:\\1"
     },
     "oss": true,
     "scriptSrc": [
@@ -2273,11 +2273,11 @@
       1
     ],
     "description": "ProcessWire is an open source content management system (CMS) and framework (CMF).",
-    "icon": "ProcessWire.svg",
-    "implies": "PHP",
     "headers": {
       "X-Powered-By": "ProcessWire CMS"
     },
+    "icon": "ProcessWire.svg",
+    "implies": "PHP",
     "js": {
       "ProcessWire": ""
     },
@@ -2304,11 +2304,11 @@
     "cats": [
       87
     ],
-    "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
-    "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
     "cookies": {
       "ppwp_wp_session": ""
     },
+    "description": "ProfilePress is a WordPress registration plugin that lets you create login forms, registration forms, user profiles, and more.",
+    "dom": "link[href*='/wp-content/plugins/wp-user-avatar/']",
     "icon": "ProfilePress.svg",
     "pricing": [
       "low",
