@@ -433,7 +433,7 @@ class Site {
     promise,
     fallback,
     errorMessage = 'Operation took too long to complete',
-    maxWait = this.options.maxWait
+    maxWait = Math.min(this.options.maxWait, 1000)
   ) {
     let timeout = null
 
@@ -951,14 +951,6 @@ class Site {
         await page.close()
 
         this.log(`Page closed (${url})`)
-      } catch (error) {
-        // Continue
-      }
-
-      let hostname = url
-
-      try {
-        ;({ hostname } = new URL(url))
       } catch (error) {
         // Continue
       }
