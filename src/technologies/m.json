@@ -1298,7 +1298,8 @@
     "description": "ASP.NET is an open-source, server-side web-application framework designed for web development to produce dynamic web pages.",
     "headers": {
       "X-AspNet-Version": "(.+)\\;version:\\1",
-      "X-Powered-By": "^ASP\\.NET"
+      "X-Powered-By": "^ASP\\.NET",
+      "set-cookie": "\\.AspNetCore"
     },
     "html": "<input[^>]+name=\"__VIEWSTATE",
     "icon": "Microsoft ASP.NET.svg",
