@@ -852,6 +852,9 @@
     "description": "nopStation is a one stop ecommerce solution with custom integrations and custom built plugins based on custom tailored requirements on top of nopCommerce.",
     "dom": "a[href*='.nop-station.com/']",
     "icon": "nopStation.png",
+    "excludes": [
+      "nopCommerce"
+    ],
     "implies": "Microsoft ASP.NET",
     "website": "http://www.nop-station.com"
   },
