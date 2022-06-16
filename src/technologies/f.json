@@ -1038,6 +1038,33 @@
     "scriptSrc": "\\.(?:fbgcdn|foodbooking)\\.com/",
     "website": "https://www.foodbooking.com"
   },
+  "Food-Ordering.co.uk": {
+    "cats": [
+      6,
+      93
+    ],
+    "description": "Food-Ordering.co.uk is a multi-lingual food ordering system for several hospitality scenarios including online ordering for delivery/takeout, in-store ordering (order at table, room service, self ordering kiosk), telephone ordering with callerID, and table booking.",
+    "icon": "Food-Ordering.co.uk.png",
+    "requires": [
+      "Microsoft ASP.NET",
+      "Bootstrap",
+      "Plesk",
+      "Google Maps"
+    ],
+    "js": {
+      "disabledelivery": "No\\;confidence:25",
+      "disablecollection": "No\\;confidence:25",
+      "GetOrderAcceptFor": "\\;confidence:25",
+      "StoreToC": "\\;confidence:25"
+    },
+    "pricing": [
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "saas": true,
+    "website": "https://www.food-ordering.co.uk"
+  },
   "Fork Awesome": {
     "cats": [
       17
