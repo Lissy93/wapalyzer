@@ -648,8 +648,10 @@
     "dom": "noscript > img[src*='dc.ads.linkedin.com']",
     "icon": "Linkedin.svg",
     "js": {
-      "_linkedin_data_partner_id": ""
+      "_linkedin_data_partner_id": "",
+      "_linkedin_partner_id": ""
     },
+    "scripts": "_linkedin_partner_id",
     "scriptSrc": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
     "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
   },
