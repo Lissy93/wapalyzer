@@ -1634,13 +1634,15 @@
     "cats": [
       14
     ],
-    "description": "Rlyr is a set of tools for splitting, applying and combining Data. ",
+    "description": "Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.",
     "icon": "Plyr.png",
+    "css": "--plyr-progress",
     "js": {
       "Plyr": ""
     },
-    "scriptSrc": "https://cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
-    "website": "https://plyr.io/"
+    "scriptSrc": "cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://plyr.io"
   },
   "Po.st": {
     "cats": [
