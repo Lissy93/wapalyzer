@@ -595,6 +595,25 @@
     },
     "website": "https://www.jetbrains.com/teamcity/"
   },
+  "Tebex": {
+    "cats": [
+      6
+    ],
+    "description": "Tebex specialises in providing gcommerce solutions for online games.",
+    "icon": "Tebex.svg",
+    "requires": "Cart Functionality",
+    "implies": [
+      "MySQL",
+      "Sass"
+    ],
+    "headers": {
+      "tb-cache-country": "\\;confidence:33",
+      "tb-cache-group": "\\;confidence:34",
+      "tb-node": "\\;confidence:33"
+    },
+    "saas": true,
+    "website": "https://www.tebex.io"
+  },
   "Telescope": {
     "cats": [
       1
