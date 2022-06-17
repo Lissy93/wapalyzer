@@ -867,6 +867,17 @@
     "scriptSrc": "(?:shopify-)?cdn\\.flow\\.io/",
     "website": "https://www.flow.io/"
   },
+  "Flowbite": {
+    "cats": [
+      66
+    ],
+    "description": "Flowbite is an open-source library of UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.",
+    "icon": "Flowbite.svg",
+    "implies": "Tailwind CSS",
+    "oss": true,
+    "scriptSrc": "/flowbite(?:@([\\d\\.]+)/|\\.bundle\\.js)\\;version:\\1",
+    "website": "https://github.com/themesberg/flowbite"
+  },
   "Flowplayer": {
     "cats": [
       14
