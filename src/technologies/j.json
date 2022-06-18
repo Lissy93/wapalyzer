@@ -104,7 +104,11 @@
     ],
     "description": "JsViews is the MVVM library which provides two-way data binding for the template. The library is developed and maintained by Microsoft employee Boris Moore and is used in projects such as Outlook.com and Windows Azure.",
     "icon": "JsViews.svg",
-    "implies": "JsObservable",
+    "implies": [
+      "JsObservable",
+      "JsRender"
+    ],
+    "scriptSrc": "([\\d\\.]+)?/jsviews(?:\\.min)?\\.js\\;version:\\1",
     "oss": true,
     "website": "https://www.jsviews.com/#jsviews"
   },
