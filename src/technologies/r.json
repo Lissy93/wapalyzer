@@ -420,7 +420,17 @@
         "properties": {
           "_reactRootContainer": ""
         }
-      }
+      },
+      "div[id*='react']": {
+        "attributes": {
+          "id": "react-root"
+        }
+      },
+      "span[id*='react-']": {
+        "attributes": {
+          "id": "react-"
+        }
+      }    
     },
     "html": "<[^>]+data-react",
     "icon": "React.svg",
