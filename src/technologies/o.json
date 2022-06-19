@@ -172,6 +172,25 @@
     "scriptSrc": "ocnk-min\\.js",
     "website": "https://www.ocnk.com"
   },
+  "Oct8ne": {
+    "cats": [
+      5,
+      52
+    ],
+    "description": "Oct8ne is a visual customer service software.",
+    "icon": "Oct8ne.png",
+    "js": {
+      "oct8neApi": "",
+      "oct8neVars.pluginVersion": "([\\d\\.]+)\\;version:\\1",
+      "oct8ne.agentsAvailable": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.oct8ne\\.com/",
+    "website": "https://oct8ne.com"
+  },
   "Octane AI": {
     "cats": [
       5,
@@ -180,15 +199,14 @@
     "description": "Octane AI provides an all-in-one platform for engaging quizzes, data collection, and personalised Facebook Messenger and SMS automation.",
     "icon": "Octane AI.svg",
     "js": {
-      "OctaneConfig": "",
-      "oct8neApi": ""
+      "OctaneConfig": ""
     },
     "pricing": [
       "low",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "\\.(?:octaneai|oct8ne)\\.com/",
+    "scriptSrc": "\\.octaneai\\.com/",
     "website": "https://www.octaneai.com"
   },
   "October CMS": {
