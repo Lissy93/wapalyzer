@@ -2678,6 +2678,26 @@
     "scriptSrc": "biz\\.sitejabber\\.com",
     "website": "https://www.sitejabber.com/"
   },
+  "SiteManager": {
+    "cats": [
+      1
+    ],
+    "description": "SiteManager is a collaborative no-code/low-code web design platform for agencies and marketing teams.",
+    "icon": "SiteManager.svg",
+    "dom": "link[href*='.sitemn.gr/']",
+    "requires": "PHP",
+    "js": {
+      "SM_Modal": "\\;confidence:50",
+      "SM_CookiesModal": "\\;confidence:50"
+    },
+    "scriptSrc": "s\\d+\\.sitemn\\.gr/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.sitemanager.io"
+  },
   "SiteMinder": {
     "cats": [
       5,
