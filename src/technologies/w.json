@@ -149,6 +149,27 @@
     "scriptSrc": "/wp-content/plugins/wp-google-map-plugin/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.wpmapspro.com"
   },
+  "WP Job Openings": {
+    "cats": [
+      87,
+      101
+    ],
+    "description": "WP Job Openings is a job listing and recruitment plugin for WordPress websites.",
+    "icon": "WP Job Openings.svg",
+    "requires": "WordPress",
+    "js": {
+      "awsmJobs": ""
+    },
+    "scriptSrc": "/wp-content/plugins/wp-job-openings/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "website": "https://wpjobopenings.com"
+  },
   "WP Maintenance Mode": {
     "cats": [
       87
