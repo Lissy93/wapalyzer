@@ -425,7 +425,7 @@
     "html": "<[^>]+data-react",
     "icon": "React.svg",
     "js": {
-      "React.version": "^(.+)$\\;version:\\1",
+      "React.version": "^([\\d\\.]+)$\\;version:\\1",
       "ReactOnRails": "",
       "__REACT_ON_RAILS_EVENT_HANDLERS_RAN_ONCE__": ""
     },
@@ -433,8 +433,8 @@
       "description": "^Web site created using create-react-app$"
     },
     "scriptSrc": [
-      "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-      "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
+      "react(?:-with-addons)?[.-](\\d+(?:\\.\\d+)+)[^/]*\\.js\\;version:\\1",
+      "/([\\d\\.]+)/react(?:\\.min)?\\.js\\;version:\\1",
       "^react\\b.*\\.js"
     ],
     "website": "https://reactjs.org"
