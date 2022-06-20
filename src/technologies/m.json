@@ -537,11 +537,12 @@
     ],
     "description": "Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.",
     "dom": "link[href*='mapbox-gl.css']",
-    "icon": "Mapbogljs.png",
+    "icon": "Mapbox.svg",
     "js": {
       "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
     },
-    "scriptSrc": "mapbox-gl.js",
+    "scriptSrc": "mapbox-gl\\.js",
+    "oss": true,
     "website": "https://github.com/mapbox/mapbox-gl-js"
   },
   "Mapp": {
