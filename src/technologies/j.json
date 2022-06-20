@@ -87,6 +87,40 @@
     "scriptSrc": "^(?:https):?//load\\.jsecoin\\.com/load/",
     "website": "https://jsecoin.com/"
   },
+  "JsRender": {
+    "cats": [
+      59
+    ],
+    "description": "JsRender is the template library. The library is developed and maintained by Microsoft employee Boris Moore and is used in projects such as Outlook.com and Windows Azure.",
+    "icon": "JsRender.svg",
+    "implies": "JsViews",
+    "scriptSrc": "([\\d\\.]+)?/jsrender(?:\\.min)?\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://www.jsviews.com/#jsrender"
+  },
+  "JsViews": {
+    "cats": [
+      59
+    ],
+    "description": "JsViews is the MVVM library which provides two-way data binding for the template. The library is developed and maintained by Microsoft employee Boris Moore and is used in projects such as Outlook.com and Windows Azure.",
+    "icon": "JsViews.svg",
+    "implies": [
+      "JsObservable",
+      "JsRender"
+    ],
+    "scriptSrc": "([\\d\\.]+)?/jsviews(?:\\.min)?\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://www.jsviews.com/#jsviews"
+  },
+  "JsObservable": {
+    "cats": [
+      59
+    ],
+    "description": "JsObservable is integrated with JsViews and facilitates observable data manipulations that are immediately reflected in the data-bound templates. The library is developed and maintained by Microsoft employee Boris Moore and is used in projects such as Outlook.com and Windows Azure.",
+    "icon": "JsObservable.svg",
+    "oss": true,
+    "website": "https://www.jsviews.com/#jsobservable"
+  },
   "JSS": {
     "cats": [
       12,
