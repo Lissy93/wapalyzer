@@ -269,6 +269,27 @@
     "scriptSrc": "head\\.(?:core|load)(?:\\.min)?\\.js",
     "website": "http://headjs.com"
   },
+  "Headless UI": {
+    "cats": [
+      66
+    ],
+    "description": "Headless UI is an unstyled component library for either React.js or Vue.js from the same people that created Tailwind CSS.",
+    "icon": "Headless UI.svg",
+    "dom": {
+      "button": {
+        "attributes": {
+          "id": "headlessui-"
+        }
+      },
+      "div": {
+        "attributes": {
+          "id": "headlessui-"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://headlessui.dev"
+  },
   "Heap": {
     "cats": [
       10
