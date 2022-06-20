@@ -1136,11 +1136,19 @@
       57
     ],
     "description": "Hugo is an open-source static site generator written in Go.",
-    "html": "powered by <a [^>]*href=\"http://hugo\\.spf13\\.com",
-    "icon": "Hugo.png",
+    "icon": "Hugo.svg",
+    "dom": {
+      "a[href*='hugo.']": {
+        "attributes": {
+          "href": "(?:go)?hugo(?:\\..+)?\\.(?:com|io)\\;confidence:0"
+        },
+        "text": "Hugo\\;confidence:99"
+      }
+    }, 
     "meta": {
       "generator": "Hugo ([\\d.]+)?\\;version:\\1"
     },
+    "oss": true,
     "website": "http://gohugo.io"
   },
   "HulkApps Age Verification": {
