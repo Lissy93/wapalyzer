@@ -4952,7 +4952,10 @@
     "description": "Super Builder is a new tool for creating sleek landing pages right in Notion.",
     "dom": "link[href*='super-static-assets.'], img[srcset*='super-static-assets.']",
     "icon": "Super Builder.svg",
-    "implies": "Next.js",
+    "implies": [
+      "Notion",
+      "Next.js"
+    ],
     "oss": false,
     "pricing": [
       "low",
