@@ -507,6 +507,9 @@
       62
     ],
     "description": "Deno Deploy is a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide.",
+    "implies": [
+      "Deno"
+    ],
     "headers": {
       "server": "^deno/*"
     },
