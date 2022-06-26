@@ -38,7 +38,6 @@
     "headers": {
       "X-Powered-By": "MATORI.NET"
     },
-    "icon": "default.svg",
     "implies": "OpenResty",
     "website": "http://matori.net"
   },
@@ -1256,7 +1255,6 @@
       59
     ],
     "description": "metisMenu is a collapsible jQuery menu plugin.",
-    "icon": "default.svg",
     "implies": "jQuery",
     "js": {
       "metisMenu": "",
@@ -1625,6 +1623,17 @@
       "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
     ],
     "website": "http://minero.cc/"
+  },
+  "MiniServ": {
+    "cats": [
+      22
+    ],
+    "implies": "Webmin",
+    "headers": {
+      "Server": "MiniServ/([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://github.com/webmin/webmin/blob/master/miniserv.pl"
   },
   "Mint": {
     "cats": [
