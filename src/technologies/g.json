@@ -1129,23 +1129,6 @@
     },
     "website": "http://gostats.com/"
   },
-  "GotiPath": {
-    "cats": [
-      31
-    ],
-    "description": "GotiPath is a content delivery network (CDN) provider that is associated with telecom giant Telekom Malaysia Berhad.",
-    "icon": "GotiPath.png",
-    "headers": {
-      "X-Cache": "\\.swiftserve\\.com"
-    },
-    "dom":"img[src*='.gotipath.com/'], link[href*='.gpcdn.net/']",
-    "pricing": [
-      "recurring",
-      "poa",
-      "payg"
-    ],
-    "website": "https://gotipath.com"
-  },
   "GoatCounter": {
     "cats": [
       10
@@ -1212,8 +1195,8 @@
       "Goog_AdSense_": "",
       "Goog_AdSense_OsdAdapter": "",
       "__google_ad_urls": "",
-      "google_ad_": "",
-      "adsbygoogle": ""
+      "adsbygoogle": "",
+      "google_ad_": ""
     },
     "saas": true,
     "scriptSrc": [
@@ -1617,6 +1600,23 @@
     ],
     "saas": true,
     "website": "https://www.gorgias.com/"
+  },
+  "GotiPath": {
+    "cats": [
+      31
+    ],
+    "description": "GotiPath is a content delivery network (CDN) provider that is associated with telecom giant Telekom Malaysia Berhad.",
+    "dom": "img[src*='.gotipath.com/'], link[href*='.gpcdn.net/']",
+    "headers": {
+      "X-Cache": "\\.swiftserve\\.com"
+    },
+    "icon": "GotiPath.png",
+    "pricing": [
+      "recurring",
+      "poa",
+      "payg"
+    ],
+    "website": "https://gotipath.com"
   },
   "Grab Pay Later": {
     "cats": [

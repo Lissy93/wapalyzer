@@ -274,7 +274,6 @@
       66
     ],
     "description": "Headless UI is an unstyled component library for either React.js or Vue.js from the same people that created Tailwind CSS.",
-    "icon": "Headless UI.svg",
     "dom": {
       "button": {
         "attributes": {
@@ -287,6 +286,7 @@
         }
       }
     },
+    "icon": "Headless UI.svg",
     "oss": true,
     "website": "https://headlessui.dev"
   },
@@ -1136,7 +1136,6 @@
       57
     ],
     "description": "Hugo is an open-source static site generator written in Go.",
-    "icon": "Hugo.svg",
     "dom": {
       "a[href*='hugo.']": {
         "attributes": {
@@ -1144,7 +1143,8 @@
         },
         "text": "Hugo\\;confidence:99"
       }
-    }, 
+    },
+    "icon": "Hugo.svg",
     "meta": {
       "generator": "Hugo ([\\d.]+)?\\;version:\\1"
     },

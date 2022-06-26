@@ -98,40 +98,6 @@
     ],
     "website": "https://phpfusion.com"
   },
-  "Pixieset Website": {
-    "cats": [
-      1,
-      51
-    ],
-    "description": "Pixieset Website is a space to create your own beautiful photography website.",
-    "icon": "Pixieset.svg",
-    "meta": {
-      "generator": "^Pixieset$"
-    },
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://pixieset.com"
-  },
-  "Pixieset Store": {
-    "cats": [
-      6
-    ],
-    "description": "Pixieset Store lets you sell professional print products, digital downloads, and other items directly from your galleries.",
-    "icon": "Pixieset.svg",
-    "js": {
-      "PixiesetProductEditor": "",
-      "PixiesetProductOptionSelection": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://pixieset.com"
-  },
   "PIXIjs": {
     "cats": [
       25
@@ -1478,6 +1444,40 @@
     "scriptSrc": "/wp-content/plugins/pixelyoursite/",
     "website": "https://www.pixelyoursite.com"
   },
+  "Pixieset Store": {
+    "cats": [
+      6
+    ],
+    "description": "Pixieset Store lets you sell professional print products, digital downloads, and other items directly from your galleries.",
+    "icon": "Pixieset.svg",
+    "js": {
+      "PixiesetProductEditor": "",
+      "PixiesetProductOptionSelection": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://pixieset.com"
+  },
+  "Pixieset Website": {
+    "cats": [
+      1,
+      51
+    ],
+    "description": "Pixieset Website is a space to create your own beautiful photography website.",
+    "icon": "Pixieset.svg",
+    "meta": {
+      "generator": "^Pixieset$"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://pixieset.com"
+  },
   "Pixlee": {
     "cats": [
       96
@@ -1668,14 +1668,14 @@
     "cats": [
       14
     ],
+    "css": "--plyr-progress",
     "description": "Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.",
     "icon": "Plyr.png",
-    "css": "--plyr-progress",
     "js": {
       "Plyr": ""
     },
-    "scriptSrc": "cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
     "oss": true,
+    "scriptSrc": "cdn\\.plyr\\.io/([0-9.]+)/.+\\.js\\;version:\\1",
     "website": "https://plyr.io"
   },
   "Po.st": {
@@ -2062,25 +2062,6 @@
     "scriptSrc": "js/prediggo/(?:[\\w]+)\\.js",
     "website": "https://prediggo.com"
   },
-  "Premio Chaty": {
-    "cats": [
-      87
-    ],
-    "description": "Chat with your website visitors via their favorite channels with Chaty by Premio.",
-    "icon": "Premio.png",
-    "requires": "WordPress",
-    "js": {
-      "chaty_settings.object_settings": "",
-      "chaty_settings.chaty_widgets": ""
-    },
-    "scriptSrc": "/wp-content/plugins/chaty/",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://premio.io/downloads/chaty"
-  },
   "Prefix-Free": {
     "cats": [
       19
@@ -2091,6 +2072,25 @@
     },
     "scriptSrc": "prefixfree\\.js",
     "website": "https://leaverou.github.io/prefixfree/"
+  },
+  "Premio Chaty": {
+    "cats": [
+      87
+    ],
+    "description": "Chat with your website visitors via their favorite channels with Chaty by Premio.",
+    "icon": "Premio.png",
+    "js": {
+      "chaty_settings.chaty_widgets": "",
+      "chaty_settings.object_settings": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/chaty/",
+    "website": "https://premio.io/downloads/chaty"
   },
   "Press Customizr": {
     "cats": [

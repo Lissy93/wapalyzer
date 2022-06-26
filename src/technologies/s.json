@@ -350,14 +350,14 @@
     ],
     "description": "SabaVision, one of the core products of SabaIdea, is Iran's largest online advertising agency.",
     "icon": "SabaVision.png",
+    "js": {
+      "SabavisionElement": "",
+      "__SABAVISION_GET_ADD_TIMEOUT": "",
+      "sabaVisionWebsiteID": "",
+      "sabaVisionWebsitePage": ""
+    },
     "meta": {
       "sabavision_zone": ""
-    },
-    "js": {
-      "sabaVisionWebsitePage": "",
-      "sabaVisionWebsiteID": "",
-      "SabavisionElement": "",
-      "__SABAVISION_GET_ADD_TIMEOUT": ""
     },
     "website": "https://www.sabavision.com"
   },
@@ -787,8 +787,8 @@
       27
     ],
     "description": "Sass is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more.",
-    "icon": "Sass.svg",
     "dom": "link[href*='/index.scss']",
+    "icon": "Sass.svg",
     "website": "https://sass-lang.com"
   },
   "Satori": {
@@ -2683,19 +2683,19 @@
       1
     ],
     "description": "SiteManager is a collaborative no-code/low-code web design platform for agencies and marketing teams.",
-    "icon": "SiteManager.svg",
     "dom": "link[href*='.sitemn.gr/']",
-    "requires": "PHP",
+    "icon": "SiteManager.svg",
     "js": {
-      "SM_Modal": "\\;confidence:50",
-      "SM_CookiesModal": "\\;confidence:50"
+      "SM_CookiesModal": "\\;confidence:50",
+      "SM_Modal": "\\;confidence:50"
     },
-    "scriptSrc": "s\\d+\\.sitemn\\.gr/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "PHP",
+    "saas": true,
+    "scriptSrc": "s\\d+\\.sitemn\\.gr/",
     "website": "https://www.sitemanager.io"
   },
   "SiteMinder": {

@@ -622,8 +622,8 @@
       "_linkedin_data_partner_id": "",
       "_linkedin_partner_id": ""
     },
-    "scripts": "_linkedin_partner_id",
     "scriptSrc": "snap\\.licdn\\.com/li\\.lms-analytics/insight\\.min\\.js",
+    "scripts": "_linkedin_partner_id",
     "website": "https://business.linkedin.com/marketing-solutions/insight-tag"
   },
   "Linkedin Sign-in": {
@@ -911,6 +911,23 @@
     },
     "scriptSrc": "gdpr\\.privacymanager\\.io",
     "website": "https://liveramp.com/our-platform/preference-consent-management"
+  },
+  "LiveSession": {
+    "cats": [
+      10
+    ],
+    "description": "LiveSession helps increase conversion rates using session replays, and event-based product analytics.",
+    "icon": "LiveSession.svg",
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "cdn\\.livesession\\.io"
+    ],
+    "website": "https://livesession.io/"
   },
   "LiveStreet CMS": {
     "cats": [
@@ -1620,22 +1637,5 @@
     "implies": "YouTube",
     "oss": true,
     "website": "https://github.com/paulirish/lite-youtube-embed"
-  },
-  "LiveSession": {
-    "cats": [
-      10
-    ],
-    "description": "LiveSession helps increase conversion rates using session replays, and event-based product analytics.",
-    "icon": "LiveSession.svg",
-    "scriptSrc": [
-      "cdn\\.livesession\\.io"
-    ],
-    "website": "https://livesession.io/",
-    "saas": true,
-    "pricing": [
-        "low",
-        "freemium",
-        "recurring"
-    ]
   }
 }

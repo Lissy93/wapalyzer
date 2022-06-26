@@ -502,25 +502,6 @@
     "scriptSrc": "tag.demandbase.com",
     "website": "https://www.demandbase.com"
   },
-  "Deno Deploy": {
-    "cats": [
-      62
-    ],
-    "description": "Deno Deploy is a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide.",
-    "implies": [
-      "Deno"
-    ],
-    "headers": {
-      "server": "^deno/*"
-    },
-    "icon": "deno.svg",
-    "pricing": [
-      "freemium",
-      "low"
-    ],
-    "saas": true,
-    "website": "https://deno.land/"
-  },
   "Deno": {
     "cats": [
       22
@@ -529,6 +510,25 @@
     "icon": "Deno.svg",
     "oss": true,
     "website": "https://deno.land"
+  },
+  "Deno Deploy": {
+    "cats": [
+      62
+    ],
+    "description": "Deno Deploy is a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide.",
+    "headers": {
+      "server": "^deno/*"
+    },
+    "icon": "deno.svg",
+    "implies": [
+      "Deno"
+    ],
+    "pricing": [
+      "freemium",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://deno.land/"
   },
   "Deta": {
     "cats": [
@@ -1321,16 +1321,16 @@
     "description": "Dropzone is a JavaScript library that turns any HTML element into a dropzone.",
     "icon": "Dropzone.svg",
     "js": {
-      "Dropzone.version": "([\\d\\.]+)\\;version:\\1",
-      "Dropzone": ""
+      "Dropzone": "",
+      "Dropzone.version": "([\\d\\.]+)\\;version:\\1"
     },
     "oss": true,
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.dropzone.dev"
   },
   "Droxit": {
@@ -1351,11 +1351,11 @@
     ],
     "description": "Droz Bot is a multi-channel, customisable chatbot designed to help brands provide customer service across commonly used social apps.",
     "icon": "Droz.svg",
-    "scriptSrc": "chat-app\\.meudroz\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "chat-app\\.meudroz\\.com/",
     "website": "https://meudroz.com/droz-bot/"
   },
   "Drupal": {

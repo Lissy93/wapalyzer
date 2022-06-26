@@ -156,18 +156,18 @@
     ],
     "description": "WP Job Openings is a job listing and recruitment plugin for WordPress websites.",
     "icon": "WP Job Openings.svg",
-    "requires": "WordPress",
     "js": {
       "awsmJobs": ""
     },
-    "scriptSrc": "/wp-content/plugins/wp-job-openings/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring",
       "onetime"
     ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/wp-job-openings/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wpjobopenings.com"
   },
   "WP Maintenance Mode": {
@@ -645,16 +645,6 @@
     "scriptSrc": "cdn\\.webmetric\\.ir",
     "website": "https://webmetric.ir/"
   },
-  "Webmin": {
-    "cats": [
-      19
-    ],
-    "description": "Webmin is a free, open-source application for Linux server administration.",
-    "icon": "Webmin.png",
-    "implies": "Perl",
-    "oss": true,
-    "website": "https://www.webmin.com"
-  },
   "WebNode": {
     "cats": [
       1,
@@ -697,6 +687,27 @@
       "generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
     },
     "website": "http://websitex5.com"
+  },
+  "WebZi": {
+    "cats": [
+      1,
+      51
+    ],
+    "description": "WebZi is a professional website builder.",
+    "icon": "Webzi.svg",
+    "js": {
+      "WebziCart": "",
+      "WebziValidate": ""
+    },
+    "meta": {
+      "generator": "^Webzi\\.ir\\sWebsite\\sBuilder$"
+    },
+    "pricing": [
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "//webzi\\.ir/",
+    "website": "https://webzi.ir"
   },
   "Webflow": {
     "cats": [
@@ -758,6 +769,16 @@
     "scriptSrc": "res2\\.weblium\\.site/common/core\\.min\\.js",
     "url": "\\.weblium\\.site",
     "website": "https://weblium.com"
+  },
+  "Webmin": {
+    "cats": [
+      19
+    ],
+    "description": "Webmin is a free, open-source application for Linux server administration.",
+    "icon": "Webmin.png",
+    "implies": "Perl",
+    "oss": true,
+    "website": "https://www.webmin.com"
   },
   "Webriti Busiprof": {
     "cats": [
@@ -845,27 +866,6 @@
       "WebTrends": ""
     },
     "website": "http://worldwide.webtrends.com"
-  },
-  "WebZi": {
-    "cats": [
-      1,
-      51
-    ],
-    "description": "WebZi is a professional website builder.",
-    "icon": "Webzi.svg",
-    "js": {
-      "WebziCart": "",
-      "WebziValidate": ""
-    },
-    "meta": {
-      "generator": "^Webzi\\.ir\\sWebsite\\sBuilder$"
-    },
-    "scriptSrc": "//webzi\\.ir/",
-    "saas": true,
-    "pricing": [
-      "recurring"
-    ],
-    "website": "https://webzi.ir"
   },
   "Weebly": {
     "cats": [
