@@ -846,18 +846,25 @@
     },
     "website": "http://worldwide.webtrends.com"
   },
-  "Webzi": {
+  "WebZi": {
     "cats": [
-      1
+      1,
+      51
     ],
+    "description": "WebZi is a professional website builder.",
     "icon": "Webzi.svg",
     "js": {
-      "Webzi": ""
+      "WebziCart": "",
+      "WebziValidate": ""
     },
     "meta": {
-      "generator": "^Webzi"
+      "generator": "^Webzi\\.ir\\sWebsite\\sBuilder$"
     },
-    "scriptSrc": "cdn\\.6th\\.ir",
+    "scriptSrc": "//webzi\\.ir/",
+    "saas": true,
+    "pricing": [
+      "recurring"
+    ],
     "website": "https://webzi.ir"
   },
   "Weebly": {
