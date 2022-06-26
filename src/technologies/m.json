@@ -1631,10 +1631,12 @@
       22
     ],
     "icon": "default.svg",
+    "implies": "Webmin",
     "headers": {
       "Server": "MiniServ/([\\d\\.]+)\\;version:\\1"
     },
-    "oss": true
+    "oss": true,
+    "website": "https://github.com/webmin/webmin/blob/master/miniserv.pl"
   },
   "Mint": {
     "cats": [
