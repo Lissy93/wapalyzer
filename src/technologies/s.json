@@ -4420,24 +4420,6 @@
     "icon": "StackPath.svg",
     "website": "https://www.stackpath.com"
   },
-  "Stackla": {
-    "cats": [
-      96,
-      95
-    ],
-    "description": "Stackla is a cloud-based content marketing platform that helps discover, curate, display and engage with user-generated content across all digital marketing platforms.",
-    "icon": "Stackla.png",
-    "js": {
-      "Stackla": ""
-    },
-    "pricing": [
-      "high",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.stackla\\.com/",
-    "website": "http://stackla.com/"
-  },
   "Stamped": {
     "cats": [
       90
@@ -4952,7 +4934,10 @@
     "description": "Super Builder is a new tool for creating sleek landing pages right in Notion.",
     "dom": "link[href*='super-static-assets.'], img[srcset*='super-static-assets.']",
     "icon": "Super Builder.svg",
-    "implies": "Next.js",
+    "implies": [
+      "Notion",
+      "Next.js"
+    ],
     "oss": false,
     "pricing": [
       "low",

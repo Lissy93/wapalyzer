@@ -645,6 +645,16 @@
     "scriptSrc": "cdn\\.webmetric\\.ir",
     "website": "https://webmetric.ir/"
   },
+  "Webmin": {
+    "cats": [
+      19
+    ],
+    "description": "Webmin is a free, open-source application for Linux server administration.",
+    "icon": "Webmin.png",
+    "implies": "Perl",
+    "oss": true,
+    "website": "https://www.webmin.com"
+  },
   "WebNode": {
     "cats": [
       1,
@@ -836,18 +846,25 @@
     },
     "website": "http://worldwide.webtrends.com"
   },
-  "Webzi": {
+  "WebZi": {
     "cats": [
-      1
+      1,
+      51
     ],
+    "description": "WebZi is a professional website builder.",
     "icon": "Webzi.svg",
     "js": {
-      "Webzi": ""
+      "WebziCart": "",
+      "WebziValidate": ""
     },
     "meta": {
-      "generator": "^Webzi"
+      "generator": "^Webzi\\.ir\\sWebsite\\sBuilder$"
     },
-    "scriptSrc": "cdn\\.6th\\.ir",
+    "scriptSrc": "//webzi\\.ir/",
+    "saas": true,
+    "pricing": [
+      "recurring"
+    ],
     "website": "https://webzi.ir"
   },
   "Weebly": {
@@ -1196,7 +1213,10 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "\\.rch\\.io/",
+    "scriptSrc": [
+      "\\.rch\\.io/",
+      "checkout\\.gointerpay\\.net"
+    ],
     "website": "https://www.withreach.com"
   },
   "Wix": {
