@@ -421,16 +421,9 @@
           "_reactRootContainer": ""
         }
       },
-      "div[id*='react-root']": {
-        "attributes": {
-          "id": "react-root"
-        }
-      },
-      "span[id*='react-']": {
-        "attributes": {
-          "id": "react-"
-        }
-      }    
+      "div[id*='react-root'], span[id*='react-']": {
+        "exists": ""
+      }  
     },
     "html": "<[^>]+data-react",
     "icon": "React.svg",
