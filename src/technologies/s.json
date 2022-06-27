@@ -85,6 +85,27 @@
     "icon": "SDL Tridion.svg",
     "website": "http://www.sdl.com/products/tridion"
   },
+  "Seal Subscriptions": {
+    "cats": [
+      100
+    ],
+    "description": "Seal Subscriptions is a Shopify subscriptions app, packed with lots of features, such as automated product swaps, interval changes, payment calendar, Quick Checkout Wizard, and more.",
+    "icon": "Seal Subscriptions.png",
+    "implies": "Shopify",
+    "js": {
+      "sealsubscriptions_settings_updated": "",
+      "sealsubsloaded": "",
+      "SealSubs.checkout": ""
+    },
+    "scriptSrc": "\\.sealsubscriptions\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.sealsubscriptions.com"
+  },
   "SEMrush": {
     "cats": [
       32
