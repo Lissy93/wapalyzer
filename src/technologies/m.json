@@ -383,6 +383,24 @@
     "scriptSrc": "\\.mailerlite\\.com/",
     "website": "https://www.mailerlite.com"
   },
+  "MailerLite Website Builder": {
+    "cats": [
+      51
+    ],
+    "description": "MailerLite Website Builder is a free drag & drop website builder with interactive blocks and ecommerce integrations.",
+    "icon": "MailerLite.svg",
+    "requires": [
+      "MailerLite",
+      "Go",
+      "Caddy"
+    ],
+    "pricing": [
+      "freemium"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.mailerlite\\.com/moment/moment\\.min\\.js",
+    "website": "https://www.mailerlite.com/features/website-builder"
+  },
   "MailerLite plugin": {
     "cats": [
       87
