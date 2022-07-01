@@ -99,15 +99,15 @@
     ],
     "description": "IPFS is a peer-to-peer hypermedia protocol that provides a distributed hypermedia web.",
     "headers": {
+      "x-cf-ipfs-cache-status": "",
       "x-ipfs-datasize": "",
       "x-ipfs-gateway-host": "",
       "x-ipfs-lb-pop": "",
       "x-ipfs-path": "",
       "x-ipfs-pop": "",
-      "x-ipfs-roots": "",
       "x-ipfs-root": "",
-      "x-cf-ipfs-cache-status": "",
-      "x-ipfs-root-cid": ""
+      "x-ipfs-root-cid": "",
+      "x-ipfs-roots": ""
     },
     "icon": "IPFS.png",
     "website": "https://ipfs.io/"
@@ -393,21 +393,6 @@
     "saas": true,
     "scriptSrc": "\\.inmoment\\.com(?:\\.\\w+)?/",
     "website": "https://inmoment.com"
-  },
-  "Instatus": {
-    "cats": [
-      13
-    ],
-    "description": "Instatus is a status and incident communication tool.",
-    "icon": "Instatus.svg",
-    "dom": "a[href*='instatus.com'][target='_blank']",
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://instatus.com"
   },
   "InSyncai": {
     "cats": [
@@ -714,6 +699,21 @@
       "heatmap-events-collector\\.instapage\\.com"
     ],
     "website": "https://instapage.com"
+  },
+  "Instatus": {
+    "cats": [
+      13
+    ],
+    "description": "Instatus is a status and incident communication tool.",
+    "dom": "a[href*='instatus.com'][target='_blank']",
+    "icon": "Instatus.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://instatus.com"
   },
   "Integral Ad Science": {
     "cats": [

@@ -60,6 +60,28 @@
     "icon": "Lagoon.png",
     "website": "https://www.amazee.io/hosting"
   },
+  "LangShop": {
+    "cats": [
+      100,
+      89
+    ],
+    "description": "LangShop is an app for translating Shopify stores.",
+    "icon": "LangShop.svg",
+    "implies": "Shopify",
+    "js": {
+      "LangShop": "",
+      "LangShopConfig": "",
+      "LangShopSDK": ""
+    },
+    "pricing": [
+      "low",
+      "recurring",
+      "freemium"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.langshop\\.app/",
+    "website": "https://langshop.io"
+  },
   "Laravel": {
     "cats": [
       18
@@ -646,9 +668,9 @@
     "description": "Linx Commerce is an ecommerce platform, which provides seamless and personalised cross-channel solution that enables a true omni-channel shopping experience.",
     "icon": "Linx.png",
     "js": {
-      "linxImpulse.config.integrationFlags.platformProvider": "linxCommerce",
       "EzGaCfg.Config.Store": "",
-      "EzGaCfg.Shopper": ""
+      "EzGaCfg.Shopper": "",
+      "linxImpulse.config.integrationFlags.platformProvider": "linxCommerce"
     },
     "pricing": [
       "poa"
@@ -1568,28 +1590,6 @@
     "requiresCategory": 6,
     "saas": true,
     "website": "https://langify-app.com"
-  },
-  "LangShop": {
-    "cats": [
-      100,
-      89
-    ],
-    "description": "LangShop is an app for translating Shopify stores.",
-    "icon": "LangShop.svg",
-    "implies": "Shopify",
-    "js": {
-      "LangShop": "",
-      "LangShopConfig": "",
-      "LangShopSDK": ""
-    },
-    "pricing": [
-      "low",
-      "recurring",
-      "freemium"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.langshop\\.app/",
-    "website": "https://langshop.io"
   },
   "libphonenumber": {
     "cats": [

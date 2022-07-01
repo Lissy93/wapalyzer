@@ -208,19 +208,19 @@
       "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
       "X-Rocket-Nginx-Bypass": ""
     },
+    "html": "<!--[^>]+WP Rocket",
+    "icon": "WP Rocket.png",
     "js": {
       "RocketPreloadLinksConfig": "",
       "rocket_lazy": ""
     },
-    "html": "<!--[^>]+WP Rocket",
-    "icon": "WP Rocket.png",
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/wp-rocket/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/wp-rocket/",
     "website": "http://wp-rocket.me"
   },
   "WP-Optimize": {
@@ -719,24 +719,6 @@
     "scriptSrc": "//webzi\\.ir/",
     "website": "https://webzi.ir"
   },
-  "Webzie": {
-    "cats": [
-      1,
-      6,
-      51
-    ],
-    "description": "Webzie is a website builder optimised for performance.",
-
-    "meta": {
-      "generator": "^Webzie\\.com\\sWebsite\\sBuilder$"
-    },
-
-    "icon": "Webzie.svg",
-
-    "pricing": ["low", "recurring"],
-    "saas": true,
-    "website": "https://www.webzie.com/"
-  },
   "Webflow": {
     "cats": [
       51
@@ -894,6 +876,24 @@
       "WebTrends": ""
     },
     "website": "http://worldwide.webtrends.com"
+  },
+  "Webzie": {
+    "cats": [
+      1,
+      6,
+      51
+    ],
+    "description": "Webzie is a website builder optimised for performance.",
+    "icon": "Webzie.svg",
+    "meta": {
+      "generator": "^Webzie\\.com\\sWebsite\\sBuilder$"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.webzie.com/"
   },
   "Weebly": {
     "cats": [

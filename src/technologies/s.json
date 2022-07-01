@@ -85,27 +85,6 @@
     "icon": "SDL Tridion.svg",
     "website": "http://www.sdl.com/products/tridion"
   },
-  "Seal Subscriptions": {
-    "cats": [
-      100
-    ],
-    "description": "Seal Subscriptions is a Shopify subscriptions app, packed with lots of features, such as automated product swaps, interval changes, payment calendar, Quick Checkout Wizard, and more.",
-    "icon": "Seal Subscriptions.png",
-    "implies": "Shopify",
-    "js": {
-      "sealsubscriptions_settings_updated": "",
-      "sealsubsloaded": "",
-      "SealSubs.checkout": ""
-    },
-    "scriptSrc": "\\.sealsubscriptions\\.com/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.sealsubscriptions.com"
-  },
   "SEMrush": {
     "cats": [
       32
@@ -985,6 +964,27 @@
     "saas": true,
     "scriptSrc": "live\\.sequracdn\\.com/",
     "website": "https://www.sequra.es"
+  },
+  "Seal Subscriptions": {
+    "cats": [
+      100
+    ],
+    "description": "Seal Subscriptions is a Shopify subscriptions app, packed with lots of features, such as automated product swaps, interval changes, payment calendar, Quick Checkout Wizard, and more.",
+    "icon": "Seal Subscriptions.png",
+    "implies": "Shopify",
+    "js": {
+      "SealSubs.checkout": "",
+      "sealsubscriptions_settings_updated": "",
+      "sealsubsloaded": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.sealsubscriptions\\.com/",
+    "website": "https://www.sealsubscriptions.com"
   },
   "SeamlessCMS": {
     "cats": [
@@ -2267,16 +2267,6 @@
     ],
     "website": "https://www.shopware.com"
   },
-  "Shortly": {
-    "cats": [
-      100
-    ],
-    "description": "Shortly help create short URLs for influencer-marketing, social media posts & email-marketing campaigns with your own store domain.",
-    "icon": "Shortly.png",
-    "implies": "Shopify",
-    "scriptSrc": "//shortly\\.shop/",
-    "website": "https://apps.shopify.com/shortly"
-  },
   "ShortPixel Image Optimizer": {
     "cats": [
       87,
@@ -2310,6 +2300,16 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/shortcodes-ultimate/.+index\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://getshortcodes.com"
+  },
+  "Shortly": {
+    "cats": [
+      100
+    ],
+    "description": "Shortly help create short URLs for influencer-marketing, social media posts & email-marketing campaigns with your own store domain.",
+    "icon": "Shortly.png",
+    "implies": "Shopify",
+    "scriptSrc": "//shortly\\.shop/",
+    "website": "https://apps.shopify.com/shortly"
   },
   "ShoutOut": {
     "cats": [
@@ -4439,20 +4439,6 @@
     },
     "website": "https://www.stackcommerce.com/"
   },
-  "Stackify": {
-    "cats": [
-      13,
-      78
-    ],
-    "description": "Stackify offers the only solution that fully integrates application performance monitoring with errors and logs.",
-    "icon": "Stackify.svg",
-    "scriptSrc": "\\.stackify\\.com/",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://stackify.com"
-  },
   "StackPath": {
     "cats": [
       31
@@ -4464,6 +4450,20 @@
     },
     "icon": "StackPath.svg",
     "website": "https://www.stackpath.com"
+  },
+  "Stackify": {
+    "cats": [
+      13,
+      78
+    ],
+    "description": "Stackify offers the only solution that fully integrates application performance monitoring with errors and logs.",
+    "icon": "Stackify.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.stackify\\.com/",
+    "website": "https://stackify.com"
   },
   "Stamped": {
     "cats": [
