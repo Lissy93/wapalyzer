@@ -131,6 +131,15 @@
     "scriptSrc": "www\\.powr\\.io/powr\\.js",
     "website": "https://www.powr.io"
   },
+  "PWA": {
+    "cats": [
+      19
+    ],
+    "description": "Progressive Web Apps (PWAs) are web apps built and enhanced with modern APIs to deliver enhanced capabilities, reliability, and installability while reaching anyone, anywhere, on any device, all with a single codebase.",
+    "icon": "PWA.svg",
+    "dom": "link[rel='manifest']",
+    "website": "https://web.dev/progressive-web-apps/"
+  },
   "PWA Studio": {
     "cats": [
       6
@@ -1110,6 +1119,25 @@
     },
     "website": "https://github.com/Sazito/phoenix/"
   },
+  "Phoenix Site": {
+    "cats": [
+      1
+    ],
+    "description": "Phoenix Site software has been developed by the Internet Marketing Union and is especially intended for entrepreneurs (without technical knowledge) who want to score better in Google (SEO) and get more leads and customers (conversion) from their website.",
+    "icon": "Phoenix Site.png",
+    "cookies": {
+      "phoenix_p_session": ""
+    },
+    "js": {
+      "phxsite.pages_version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://phoenixsite.nl"
+  },
   "Photo Gallery": {
     "cats": [
       87,
@@ -1708,6 +1736,23 @@
     "saas": true,
     "scriptSrc": "cdn\\.podia\\.com",
     "website": "https://www.podia.com"
+  },
+  "Podigee": {
+    "cats": [
+      5
+    ],
+    "description": "Podigee is an independent company for podcast publishers. Podigee offers hosting, distribution, analytics and monetisation of podcasts.",
+    "icon": "Podigee.svg",
+    "dom": "iframe[src*='cdn.podigee.com/']",
+    "js": {
+      "podigeePodcastPlayers": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.podigee.com"
   },
   "Podium": {
     "cats": [

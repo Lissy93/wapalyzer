@@ -2353,6 +2353,26 @@
     "scriptSrc": "trustspot\\.io",
     "website": "https://trustspot.io/"
   },
+  "Trustvox": {
+    "cats": [
+      90
+    ],
+    "description": "Trustvox collects reviews from customers who purchased ecommerce products and publishes them on product pages with Sincerity Seals.",
+    "icon": "Trustvox.png",
+    "js": {
+      "TrustvoxRatesWidget": "",
+      "_trustvox_colt": "",
+      "_trustvox_shelf_rate": "",
+      "TrustvoxCertificateWidget": "",
+      "trustvox_id": "",
+      "_trustvox": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://site.trustvox.com.br"
+  },
   "Tumblr": {
     "cats": [
       11
@@ -2835,6 +2855,27 @@
     "saas": true,
     "scriptSrc": "portal/js/typof\\.js\\;confidence:50",
     "website": "https://typof.com"
+  },
+  "Tyslo EasySell": {
+    "cats": [
+      100
+    ],
+    "description": "Tyslo EasySell replaces default Shopify checkout process by embedding (or popup) a simple order form on the product or cart page.",
+    "icon": "Tyslo EasySell.png",
+    "implies": "Shopify",
+    "js": {
+      "openTysloForm": "",
+      "tysloEasysellConfig": "",
+      "tysloApplyDiscount": "",
+      "tysloConfigVersion": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "website": "https://tyslo.com"
   },
   "theTradeDesk": {
     "cats": [

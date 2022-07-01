@@ -208,9 +208,19 @@
       "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
       "X-Rocket-Nginx-Bypass": ""
     },
+    "js": {
+      "RocketPreloadLinksConfig": "",
+      "rocket_lazy": ""
+    },
     "html": "<!--[^>]+WP Rocket",
     "icon": "WP Rocket.png",
     "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/wp-rocket/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
     "website": "http://wp-rocket.me"
   },
   "WP-Optimize": {
@@ -708,6 +718,24 @@
     "saas": true,
     "scriptSrc": "//webzi\\.ir/",
     "website": "https://webzi.ir"
+  },
+  "Webzie": {
+    "cats": [
+      1,
+      6,
+      51
+    ],
+    "description": "Webzie is a website builder optimised for performance.",
+
+    "meta": {
+      "generator": "^Webzie\\.com\\sWebsite\\sBuilder$"
+    },
+
+    "icon": "Webzie.svg",
+
+    "pricing": ["low", "recurring"],
+    "saas": true,
+    "website": "https://www.webzie.com/"
   },
   "Webflow": {
     "cats": [
