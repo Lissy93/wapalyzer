@@ -1569,6 +1569,28 @@
     "saas": true,
     "website": "https://langify-app.com"
   },
+  "LangShop": {
+    "cats": [
+      100,
+      89
+    ],
+    "description": "LangShop is an app for translating Shopify stores.",
+    "icon": "LangShop.svg",
+    "implies": "Shopify",
+    "js": {
+      "LangShop": "",
+      "LangShopConfig": "",
+      "LangShopSDK": ""
+    },
+    "pricing": [
+      "low",
+      "recurring",
+      "freemium"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.langshop\\.app/",
+    "website": "https://langshop.io"
+  },
   "libphonenumber": {
     "cats": [
       59
