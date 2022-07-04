@@ -934,8 +934,8 @@
     },
     "headers": {
       "fly-request-id": "",
-      "server": "^Fly/*",
-      "via": "*fly.io$"
+      "server": "^Fly/[\\w]+\\s\\(.*\\)$",
+      "via": "^.*\\sfly\\.io$"
     },
     "pricing": ["freemium", "payg"],
     "icon": "Fly.io.png",
