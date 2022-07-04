@@ -276,6 +276,23 @@
     "saas": true,
     "website": "https://aws.amazon.com/certificate-manager/"
   },
+  "AWS WAF Captcha": {
+    "cats": [
+      16
+    ],
+    "description": "AWS WAF Captcha helps block unwanted bot traffic by requiring users to successfully complete challenges before their web request are allowed to reach AWS WAF protected resources.",
+    "icon": "aws.svg",
+    "implies": "Amazon Web Services",
+    "headers": {
+      "x-amzn-waf-action": ""
+    },
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha.html"
+  },
   "AWStats": {
     "cats": [
       10
