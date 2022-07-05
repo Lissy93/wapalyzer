@@ -284,8 +284,9 @@
     "icon": "aws.svg",
     "implies": "Amazon Web Services",
     "headers": {
-      "x-amzn-waf-action": ""
+      "x-amzn-waf-action": "^captcha$"
     },
+    "scriptSrc": "captcha\\.awswaf\\.com/",
     "saas": true,
     "pricing": [
       "recurring",
