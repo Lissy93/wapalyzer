@@ -15,6 +15,7 @@ const aliases = {
   d: 'debug',
   t: 'delay',
   h: 'help',
+  H: 'header',
   D: 'maxDepth',
   m: 'maxUrls',
   p: 'probe',
@@ -47,7 +48,15 @@ while (true) {
       ? args.shift()
       : true
 
-    options[key] = value
+    if (options[key]) {
+      if (!Array.isArray(options[key])) {
+        options[key] = [options[key]]
+      }
+
+      options[key].push(value)
+    } else {
+      options[key] = value
+    }
   } else {
     url = arg
   }
@@ -59,7 +68,7 @@ if (!url || options.help) {
 
 Examples:
   wappalyzer https://www.example.com
-  node cli.js https://www.example.com -r -D 3 -m 50
+  node cli.js https://www.example.com -r -D 3 -m 50 -H "Cookie: username=admin"
   docker wappalyzer/cli https://www.example.com --pretty
 
 Options:
@@ -67,6 +76,7 @@ Options:
   -d, --debug              Output debug messages
   -t, --delay=ms           Wait for ms milliseconds between requests
   -h, --help               This text
+  -H, --header             Extra header to send with requests
   --html-max-cols=...      Limit the number of HTML characters per line processed
   --html-max-rows=...      Limit the number of HTML lines processed
   -D, --max-depth=...      Don't analyse pages more than num levels deep
@@ -85,13 +95,25 @@ Options:
   process.exit(1)
 }
 
+const headers = {}
+
+if (options.header) {
+  ;(Array.isArray(options.header) ? options.header : [options.header]).forEach(
+    (header) => {
+      const [key, value] = header.split(':')
+
+      headers[key.trim()] = (value || '').trim()
+    }
+  )
+}
+
 ;(async function () {
   const wappalyzer = new Wappalyzer(options)
 
   try {
     await wappalyzer.init()
 
-    const site = await wappalyzer.open(url)
+    const site = await wappalyzer.open(url, headers)
 
     const results = await site.analyze()
 
