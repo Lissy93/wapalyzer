@@ -21,8 +21,6 @@ const xhrDebounce = []
 
 let xhrAnalyzed = {}
 
-const scriptsPending = []
-
 function getRequiredTechnologies(name, categoryId) {
   return name
     ? Wappalyzer.requires.find(({ name: _name }) => _name === name).technologies
@@ -421,19 +419,29 @@ const Driver = {
       return
     }
 
-    if (scriptsPending.includes(request.url)) {
-      scriptsPending.splice(scriptsPending.indexOf(request.url), 1)
-    } else if (request.statusCode === 200) {
-      scriptsPending.push(request.url)
+    const { hostname } = new URL(request.documentUrl)
 
-      const response = await fetch(request.url)
-
-      const scripts = await response.text()
-
-      Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
-        Driver.error
-      )
+    if (!Driver.cache.hostnames[hostname]) {
+      Driver.cache.hostnames[hostname] = {}
     }
+
+    if (!Driver.cache.hostnames[hostname].analyzedScripts) {
+      Driver.cache.hostnames[hostname].analyzedScripts = []
+    }
+
+    if (Driver.cache.hostnames[hostname].analyzedScripts.length > 50) {
+      return
+    }
+
+    Driver.cache.hostnames[hostname].analyzedScripts.push(request.url)
+
+    const response = await fetch(request.url)
+
+    const scripts = (await response.text()).slice(0, 500000)
+
+    Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
+      Driver.error
+    )
   },
 
   /**
@@ -554,15 +562,14 @@ const Driver = {
     const { hostname } = new URL(url)
 
     // Cache detections
-    const cache = (Driver.cache.hostnames[hostname] = Driver.cache.hostnames[
-      hostname
-    ] || {
+    const cache = (Driver.cache.hostnames[hostname] = {
       detections: [],
       hits: incrementHits ? 0 : 1,
       https: url.startsWith('https://'),
+      analyzedScripts: [],
+      ...(Driver.cache.hostnames[hostname] || []),
+      dateTime: Date.now(),
     })
-
-    cache.dateTime = Date.now()
 
     // Remove duplicates
     cache.detections = cache.detections
