@@ -429,7 +429,7 @@ const Driver = {
       Driver.cache.hostnames[hostname].analyzedScripts = []
     }
 
-    if (Driver.cache.hostnames[hostname].analyzedScripts.length > 50) {
+    if (Driver.cache.hostnames[hostname].analyzedScripts.length >= 25) {
       return
     }
 
