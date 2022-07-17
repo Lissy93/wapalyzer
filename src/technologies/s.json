@@ -1741,6 +1741,23 @@
     "scriptSrc": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
     "website": "http://shinystat.com"
   },
+  "ShippyPro": {
+    "cats": [
+      102
+    ],
+    "description": "ShippyPro is the complete shipping software for ecommerce that helps worldwide merchants to ship, track, and manage returns for their orders.",
+    "icon": "ShippyPro.png",
+    "dom": "a[href*='.shippypro.com/return-form.html']",
+    "js": {
+      "ShippyProReturnForm": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.shippypro.com"
+  },
   "ShipTection": {
     "cats": [
       100
