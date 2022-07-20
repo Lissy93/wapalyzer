@@ -208,7 +208,11 @@
       "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
       "X-Rocket-Nginx-Bypass": ""
     },
-    "html": "<!--[^>]+WP Rocket",
+    "html": [
+    	"<!--[^>]+WP Rocket",
+    	"RocketLazyLoadScripts"
+    ],
+    "dom": "style#wpr-usedcss",
     "icon": "WP Rocket.png",
     "js": {
       "RocketPreloadLinksConfig": "",
@@ -221,7 +225,7 @@
     "requires": "WordPress",
     "saas": true,
     "scriptSrc": "/wp-content/plugins/wp-rocket/",
-    "website": "http://wp-rocket.me"
+    "website": "https://wp-rocket.me"
   },
   "WP-Optimize": {
     "cats": [
