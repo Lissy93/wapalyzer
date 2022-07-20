@@ -1057,6 +1057,7 @@ class Site {
         ({
           slug,
           name,
+          description,
           confidence,
           version,
           icon,
@@ -1066,6 +1067,7 @@ class Site {
         }) => ({
           slug,
           name,
+          description,
           confidence,
           version: version || null,
           icon,
