@@ -3798,6 +3798,40 @@
     "scriptSrc": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
   },
+  "Autoketing": {
+    "cats": [
+      32
+    ],
+    "description": "Autoketing is a marketing automation platform.",
+    "icon": "Autoketing.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://autoketing.com"
+  },
+  "Autoketing Product Reviews": {
+    "cats": [
+      100
+    ],
+    "description": "Autoketing Product Reviews is an application that allows shop owners to manage the product review section on their website.",
+    "icon": "Autoketing.png",
+    "implies": [
+      "Shopify",
+      "Autoketing"
+    ],
+    "js": {
+      "autoketingproduct_reivew": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://apps.shopify.com/product-reviews-autoketing"
+  },
   "Automizely": {
     "cats": [
       32
