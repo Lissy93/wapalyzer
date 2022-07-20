@@ -539,6 +539,21 @@
     "url": "https:?\\/\\/.+\\.web\\.ahdev\\.cloud",
     "website": "https://www.acquia.com/products/drupal-cloud/cloud-ide"
   },
+  "Acquia Cloud Next": {
+    "cats": [
+      88
+    ],
+    "description": "Acquia Cloud Next is a Kubernetes-native Drupal hosting platform.",
+    "headers": {
+      "X-AH-Environment": "next"
+    },
+    "icon": "acquia-cloud-platform.svg",
+    "implies": [
+      "Acquia Cloud Platform"
+    ],
+    "saas": true,
+    "website": "https://docs.acquia.com/cloud-platform/cloud-next/"
+  },
   "Acquia Cloud Platform": {
     "cats": [
       62
