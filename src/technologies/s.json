@@ -1688,25 +1688,6 @@
     "scriptSrc": "\\.marketingautomation\\.services.+(?:ver=)([\\d.]+)\\;version:\\1",
     "website": "https://sharpspring.com"
   },
-  "SheerID": {
-    "cats": [
-      19
-    ],
-    "description": "SheerID is a highly specialised solution offering online verification support for retailers, marketers and service providers.",
-    "icon": "SheerID.png",
-    "dom": "a[href*='.sheerid.com/'], img[src*='.sheerid.com/']",
-    "headers": {
-      "content-security-policy-report-only": "\\.sheerid\\.com",
-      "content-security-policy": "\\.sheerid\\.com"
-    },
-    "js": {
-      "SheerID": "",
-      "sheerid": ""
-    },
-    "saas": true,
-    "scripts": "\"sheerIdEndpoint\":",
-    "website": "https://www.sheerid.com/"
-  },
   "SharpSpring Ads": {
     "cats": [
       77
@@ -1722,6 +1703,25 @@
     "saas": true,
     "scriptSrc": "\\.perfectaudience\\.com",
     "website": "https://sharpspring.com/ads"
+  },
+  "SheerID": {
+    "cats": [
+      19
+    ],
+    "description": "SheerID is a highly specialised solution offering online verification support for retailers, marketers and service providers.",
+    "dom": "a[href*='.sheerid.com/'], img[src*='.sheerid.com/']",
+    "headers": {
+      "content-security-policy": "\\.sheerid\\.com",
+      "content-security-policy-report-only": "\\.sheerid\\.com"
+    },
+    "icon": "SheerID.png",
+    "js": {
+      "SheerID": "",
+      "sheerid": ""
+    },
+    "saas": true,
+    "scripts": "\"sheerIdEndpoint\":",
+    "website": "https://www.sheerid.com/"
   },
   "ShellInABox": {
     "cats": [
@@ -1760,23 +1760,6 @@
     "scriptSrc": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
     "website": "http://shinystat.com"
   },
-  "ShippyPro": {
-    "cats": [
-      102
-    ],
-    "description": "ShippyPro is the complete shipping software for ecommerce that helps worldwide merchants to ship, track, and manage returns for their orders.",
-    "icon": "ShippyPro.png",
-    "dom": "a[href*='.shippypro.com/return-form.html']",
-    "js": {
-      "ShippyProReturnForm": ""
-    },
-    "pricing": [
-      "payg",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.shippypro.com"
-  },
   "ShipTection": {
     "cats": [
       100
@@ -1791,6 +1774,23 @@
     "saas": true,
     "scriptSrc": "app\\.shiptection\\.com/",
     "website": "https://wamapps.io/pages/shiptection-protection"
+  },
+  "ShippyPro": {
+    "cats": [
+      102
+    ],
+    "description": "ShippyPro is the complete shipping software for ecommerce that helps worldwide merchants to ship, track, and manage returns for their orders.",
+    "dom": "a[href*='.shippypro.com/return-form.html']",
+    "icon": "ShippyPro.png",
+    "js": {
+      "ShippyProReturnForm": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.shippypro.com"
   },
   "Shogun": {
     "cats": [
@@ -1999,7 +1999,6 @@
       "x-shopid": "\\;confidence:50",
       "x-shopify-stage": ""
     },
-    "xhr": "\\.myshopify\\.com",
     "icon": "Shopify.svg",
     "js": {
       "Shopify": "\\;confidence:25",
@@ -2020,7 +2019,8 @@
       "cdn\\.shopify\\.com"
     ],
     "url": "^https?//.+\\.myshopify\\.com",
-    "website": "http://shopify.com"
+    "website": "http://shopify.com",
+    "xhr": "\\.myshopify\\.com"
   },
   "Shopify Buy Button": {
     "cats": [
@@ -2568,12 +2568,12 @@
     "description": "Simplio Upsells сreate more revenue with promotions and post purchase upsells.",
     "icon": "Simplio Upsells.png",
     "implies": "Shopify",
-    "scriptSrc": "//upsell\\.simplio\\.app/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "//upsell\\.simplio\\.app/",
     "website": "https://apps.shopify.com/simple-promotions-and-upsells"
   },
   "Simplo7": {
@@ -3128,25 +3128,25 @@
     "cats": [
       87
     ],
-    "description": "Slider Revolution is a WordPress plugin that allows you to create responsive sliders with many animation effects, text, image and video layers, and many other features.",   
+    "description": "Slider Revolution is a WordPress plugin that allows you to create responsive sliders with many animation effects, text, image and video layers, and many other features.",
     "icon": "Slider Revolution.svg",
-    "requires": "WordPress",
     "js": {
-      "revslider_showDoubleJqueryError": "",
+      "RS_MODULES.main.version": "^Slider Revolution\\s([\\d\\.]+)$\\;version:\\1",
       "revapi1": "",
       "revapi2": "",
       "revapi3": "",
       "revapi4": "",
       "revapi5": "",
-      "RS_MODULES.main.version": "^Slider Revolution\\s([\\d\\.]+)$\\;version:\\1"
+      "revslider_showDoubleJqueryError": ""
     },
-    "scriptSrc": "/wp-content/plugins/revslider/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring",
       "onetime"
     ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/revslider/",
     "website": "https://www.sliderrevolution.com"
   },
   "Slimbox": {
@@ -3797,16 +3797,16 @@
       102
     ],
     "description": "Sorted is a global SaaS company that provides data-driven software for checkouts, warehouses, and shipping.",
-    "icon": "Sorted.svg",
     "dom": "a[href*='return.clicksit.com/shop/']",
+    "icon": "Sorted.svg",
     "js": {
       "clicksit_window_on_load": ""
     },
-    "scriptSrc": "return\\.clicksit\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "return\\.clicksit\\.com/",
     "website": "https://sorted.com/give-your-customers-a-5-returns-experience/"
   },
   "SoteShop": {
@@ -4575,8 +4575,8 @@
       "payg",
       "recurring"
     ],
-    "scriptSrc": "\\.stagetry\\.io/",
     "saas": true,
+    "scriptSrc": "\\.stagetry\\.io/",
     "website": "https://stagetry.com"
   },
   "Stamped": {

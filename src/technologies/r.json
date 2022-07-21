@@ -1232,8 +1232,8 @@
       102
     ],
     "description": "Returnly is the provider of digital return experiences for direct-to-consumer brands.",
-    "icon": "Returnly.svg",
     "dom": "a[href*='.returnly.com/']",
+    "icon": "Returnly.svg",
     "js": {
       "Returnly.ContainerSwitcher": "",
       "Returnly.InternalEventTracker": ""
@@ -1327,24 +1327,6 @@
     "saas": true,
     "website": "https://www.revieve.com"
   },
-  "Reviews.io": {
-    "cats": [
-      90
-    ],
-    "description": "Reviews.io is a review collection tool for companies to collect merchant (company) & product reviews from genuine customers, then share these on Google.",
-    "icon": "Reviews.io.svg",
-    "dom": "a[href*='.reviews.io/company-reviews/']",
-    "js": {
-      "reviewsio_hasVoted": "",
-      "reviewsio_shareLink": ""
-    },
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.reviews.io"
-  },
   "ReviewSolicitors": {
     "cats": [
       90
@@ -1360,6 +1342,24 @@
     "saas": true,
     "scriptSrc": "\\.reviewsolicitors\\.co\\.uk/",
     "website": "https://www.reviewsolicitors.co.uk"
+  },
+  "Reviews.io": {
+    "cats": [
+      90
+    ],
+    "description": "Reviews.io is a review collection tool for companies to collect merchant (company) & product reviews from genuine customers, then share these on Google.",
+    "dom": "a[href*='.reviews.io/company-reviews/']",
+    "icon": "Reviews.io.svg",
+    "js": {
+      "reviewsio_hasVoted": "",
+      "reviewsio_shareLink": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.reviews.io"
   },
   "RevolverMaps": {
     "cats": [
@@ -1443,26 +1443,6 @@
     "saas": true,
     "website": "https://www.rezgo.com"
   },
-  "Richpanel": {
-    "cats": [
-      53
-    ],
-    "description": "Richpanel is a purpose-built CRM and customer support platform for ecommerce and DTC brands.",
-    "icon": "Richpanel.svg",
-    "js": {
-      "Richpanel.PLUGIN_API_URL": "",
-      "richpanel_messenger_url": "",
-      "RichpanelAppProxy": ""
-    },
-    "scriptSrc": "\\.richpanel\\.com/",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.richpanel.com"
-  },
   "RichRelevance": {
     "cats": [
       76
@@ -1479,6 +1459,26 @@
     "saas": true,
     "scriptSrc": "\\.richrelevance\\.com/",
     "website": "https://richrelevance.com"
+  },
+  "Richpanel": {
+    "cats": [
+      53
+    ],
+    "description": "Richpanel is a purpose-built CRM and customer support platform for ecommerce and DTC brands.",
+    "icon": "Richpanel.svg",
+    "js": {
+      "Richpanel.PLUGIN_API_URL": "",
+      "RichpanelAppProxy": "",
+      "richpanel_messenger_url": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.richpanel\\.com/",
+    "website": "https://www.richpanel.com"
   },
   "Rickshaw": {
     "cats": [

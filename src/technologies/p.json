@@ -112,6 +112,21 @@
     "url": ".+\\.pixijs\\.com",
     "website": "https://www.pixijs.com/"
   },
+  "POLi Payment": {
+    "cats": [
+      41
+    ],
+    "description": "POLi Payment(formerly known as Centricom) is an online payment service in Australia and New Zealand.",
+    "icon": "POLi Payment.svg",
+    "js": {
+      "wc_ga_pro.available_gateways.poli": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.polipayments.com"
+  },
   "POWR": {
     "cats": [
       5
@@ -1519,7 +1534,9 @@
       "TurnTo": "",
       "turnToConfig": ""
     },
-    "pricing": [ "poa" ],
+    "pricing": [
+      "poa"
+    ],
     "saas": true,
     "scriptSrc": "assets\\.pixlee\\.com",
     "website": "https://pixlee.com"
@@ -1791,21 +1808,6 @@
       "PojoA11yOptions": ""
     },
     "website": "https://pojo.me/plugins/accessibility/"
-  },
-  "POLi Payment": {
-    "cats": [
-      41
-    ],
-    "description": "POLi Payment(formerly known as Centricom) is an online payment service in Australia and New Zealand.",
-    "icon": "POLi Payment.svg",
-    "js": {
-      "wc_ga_pro.available_gateways.poli": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://www.polipayments.com"
   },
   "Poloriz": {
     "cats": [
@@ -2476,8 +2478,8 @@
       "promobuilding_session": ""
     },
     "description": "PromoBuilding is a subscription-based website builder for optimising budgets for creating promotional campaigns.",
-    "icon": "PromoBuilding.svg",
     "html": "<!-- made with https://promobuilding\\.ru",
+    "icon": "PromoBuilding.svg",
     "js": {
       "promoApi": "\\;confidence:25",
       "promoDomain": "\\;confidence:25",

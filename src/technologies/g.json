@@ -256,6 +256,26 @@
     },
     "website": "https://get.gaug.es"
   },
+  "GemPages": {
+    "cats": [
+      100,
+      51
+    ],
+    "description": "GemPages is a powerful Shopify landing page buidler that empowers SMEs, agency, and freelancers to build their brands and sell online.",
+    "icon": "GemPages.svg",
+    "implies": "Shopify",
+    "js": {
+      "GEMSTORE": "",
+      "GEMVENDOR": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "/files/gempagev\\d+\\.js",
+    "website": "https://gempages.net"
+  },
   "Gemius": {
     "cats": [
       10
@@ -274,26 +294,6 @@
       "xgemius\\.js\\;confidence:30"
     ],
     "website": "https://www.gemius.com"
-  },
-  "GemPages": {
-    "cats": [
-      100,
-      51
-    ],
-    "description": "GemPages is a powerful Shopify landing page buidler that empowers SMEs, agency, and freelancers to build their brands and sell online.",
-    "icon": "GemPages.svg",
-    "implies": "Shopify",
-    "js": {
-      "GEMSTORE": "",
-      "GEMVENDOR": ""
-    },
-    "scriptSrc": "/files/gempagev\\d+\\.js",
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://gempages.net"
   },
   "GeneXus": {
     "cats": [
@@ -767,23 +767,6 @@
     "scriptSrc": "cdn\\.gladly\\.com",
     "website": "https://www.gladly.com"
   },
-  "Glassbox": {
-    "cats": [
-      10
-    ],
-    "description": "Glassbox is an Israeli software company. It sells session-replay analytics software and services.",
-    "icon": "Glassbox.svg",
-    "js": {
-      "sessioncamConfiguration": "",
-      "SessionCamRecorder": ""
-    },
-    "saas": true,
-    "scriptSrc": "cdn\\.glassboxcdn\\.com/",
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.glassbox.com"
-  },
   "GlassFish": {
     "cats": [
       22
@@ -795,6 +778,23 @@
     "icon": "GlassFish.png",
     "implies": "Java",
     "website": "http://glassfish.java.net"
+  },
+  "Glassbox": {
+    "cats": [
+      10
+    ],
+    "description": "Glassbox is an Israeli software company. It sells session-replay analytics software and services.",
+    "icon": "Glassbox.svg",
+    "js": {
+      "SessionCamRecorder": "",
+      "sessioncamConfiguration": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.glassboxcdn\\.com/",
+    "website": "https://www.glassbox.com"
   },
   "Glider.js": {
     "cats": [
@@ -1002,6 +1002,26 @@
     "icon": "Go.svg",
     "website": "https://golang.org"
   },
+  "Go Instore": {
+    "cats": [
+      103
+    ],
+    "description": "Go Instore uses high-definition live video to connect online customers with in-store product experts.",
+    "headers": {
+      "content-security-policy": "\\.goinstore\\.com"
+    },
+    "icon": "Go Instore.svg",
+    "js": {
+      "GISAPP.videoJsCtrl": "",
+      "gisAppLib.postRobot": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "//gis\\.goinstore\\.com/",
+    "website": "https://goinstore.com"
+  },
   "GoAffPro": {
     "cats": [
       71
@@ -1190,26 +1210,6 @@
     "saas": true,
     "website": "https://www.godaddy.com/websites/website-builder"
   },
-  "Go Instore": {
-    "cats": [
-      103
-    ],
-    "description": "Go Instore uses high-definition live video to connect online customers with in-store product experts.",
-    "icon": "Go Instore.svg",
-    "headers": {
-      "content-security-policy": "\\.goinstore\\.com"
-    },
-    "js": {
-      "GISAPP.videoJsCtrl": "",
-      "gisAppLib.postRobot": ""
-    },
-    "scriptSrc": "//gis\\.goinstore\\.com/",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://goinstore.com"
-  },
   "GoJS": {
     "cats": [
       25
@@ -1227,17 +1227,16 @@
     ],
     "description": "GoKwik is a platform for solving shopping experience problems on ecommerce websites on the internet.",
     "icon": "GoKwik.svg",
-    "requiresCategory": 6,
     "js": {
-      "gokwikSdk": "",
+      "gokwikBuyNow": "",
       "gokwikCheckoutApp": "",
-      "gokwikBuyNow": ""
-
+      "gokwikSdk": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "requiresCategory": 6,
+    "saas": true,
     "website": "https://www.gokwik.co"
   },
   "GoStats": {

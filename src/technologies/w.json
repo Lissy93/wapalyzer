@@ -204,16 +204,16 @@
       87
     ],
     "description": "WP Rocket is a caching and performance optimisation plugin to improve the loading speed of WordPress websites.",
+    "dom": "style#wpr-usedcss",
     "headers": {
       "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
       "X-Rocket-Nginx-Bypass": ""
     },
     "html": "<!--[^>]+WP Rocket",
-    "dom": "style#wpr-usedcss",
     "icon": "WP Rocket.png",
     "js": {
-      "RocketPreloadLinksConfig": "",
       "RocketLazyLoadScripts": "",
+      "RocketPreloadLinksConfig": "",
       "rocket_lazy": ""
     },
     "pricing": [
@@ -1020,12 +1020,12 @@
     "description": "WideBundle is a Shopify application that allows a merchant to set up bundles on his store.",
     "icon": "WideBundle.png",
     "implies": "Shopify",
-    "scriptSrc": "//widebundle\\.com/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "//widebundle\\.com/",
     "website": "https://en.widebundle.com"
   },
   "Widen": {

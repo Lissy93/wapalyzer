@@ -352,6 +352,23 @@
     "scriptSrc": "/CMSPages/GetResource\\.ashx",
     "website": "http://www.kentico.com"
   },
+  "Keptify": {
+    "cats": [
+      98
+    ],
+    "description": "Keptify helps ecommerce sites of any size to increase sales and conversion rates by providing visitors with a personalised shopping experience.",
+    "icon": "Keptify.png",
+    "js": {
+      "KEPTIFY_BASE_URL": "",
+      "_keptify.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "app\\.keptify\\.com/",
+    "website": "https://keptify.com"
+  },
   "Kerberos": {
     "cats": [
       16
@@ -361,23 +378,6 @@
       "WWW-Authenticate": "^Kerberos"
     },
     "website": "https://tools.ietf.org/html/rfc4559"
-  },
-  "Keptify": {
-    "cats": [
-      98
-    ],
-    "description": "Keptify helps ecommerce sites of any size to increase sales and conversion rates by providing visitors with a personalised shopping experience.",
-    "icon": "Keptify.png",
-    "js": {
-      "_keptify.version": "^([\\d\\.]+)$\\;version:\\1",
-      "KEPTIFY_BASE_URL": ""
-    },
-    "scriptSrc": "app\\.keptify\\.com/",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://keptify.com"
   },
   "Kestrel": {
     "cats": [
