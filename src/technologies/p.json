@@ -1661,6 +1661,7 @@
     "cats": [
       9
     ],
+    "cpe": "cpe:/a:parallels:parallels_plesk_panel",
     "description": "Plesk is a web hosting and server data centre automation software with a control panel developed for Linux and Windows-based retail hosting service providers.",
     "headers": {
       "X-Powered-By": "^Plesk(?:L|W)in",
@@ -2640,6 +2641,7 @@
     "cookies": {
       "DSSIGNIN": ""
     },
+    "cpe": "cpe:/a:pulsesecure:pulse_connect_secure",
     "description": "Pulse Secure allows to deploy VPNs to securely to your internal resources.",
     "icon": "PulseSecure.png",
     "url": "/dana-na/auth/",
@@ -2864,6 +2866,7 @@
     "cookies": {
       "phpbb": ""
     },
+    "cpe": "cpe:/a:phpbb:phpbb",
     "description": "phpBB is a free open-source Internet forum package in the PHP scripting language.",
     "html": [
       "Powered by <a[^>]+phpBB",
@@ -2887,6 +2890,7 @@
     "cats": [
       1
     ],
+    "cpe": "cpe:/a:phpcms:phpcms",
     "icon": "PHP.svg",
     "implies": "PHP",
     "js": {
@@ -2908,6 +2912,7 @@
     "cats": [
       3
     ],
+    "cpe": "cpe:/a:phpmyadmin:phpmyadmin",
     "description": "PhpMyAdmin is a free and open-source administration tool for MySQL and MariaDB.",
     "html": [
       "!\\[CDATA\\[[^<]*PMA_VERSION:\\\"([\\d.]+)\\;version:\\1",
@@ -2927,6 +2932,7 @@
     "cats": [
       3
     ],
+    "cpe": "cpe:/a:phppgadmin_project:phppgadmin",
     "html": "(?:<title>phpPgAdmin</title>|<span class=\"appname\">phpPgAdmin)",
     "icon": "phpPgAdmin.png",
     "implies": "PHP",

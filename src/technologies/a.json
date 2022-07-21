@@ -1210,6 +1210,7 @@
     "cats": [
       3
     ],
+    "cpe": "cpe:/a:adminer:adminer",
     "html": [
       "Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
       "onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
@@ -2226,6 +2227,7 @@
     "cats": [
       28
     ],
+    "cpe": "cpe:/o:alpinelinux:alpine_linux",
     "description": "Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.",
     "headers": {
       "X-Powered-By": "Alpine"
@@ -2743,7 +2745,7 @@
     "cats": [
       12
     ],
-    "cpe": "cpe:/a:angularjs:angular.js",
+    "cpe": "cpe:/a:angularjs:angular",
     "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
     "dom": {
       "[ng-version]": {
@@ -2797,6 +2799,7 @@
     "cats": [
       12
     ],
+    "cpe": "cpe:/a:angularjs:angular.js",
     "description": "AngularJS is a JavaScript-based open-source web application framework led by the Angular Team at Google.",
     "excludes": [
       "Angular",
