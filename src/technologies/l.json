@@ -119,7 +119,8 @@
     "dom": "a[href*='latitudepay.com/'][target='_blank'], img[src='.latitudepayapps.com/']",
     "icon": "LatitudePay.svg",
     "js": {
-      "checkout.enabledpayments.latitudepay": "^true$"
+      "checkout.enabledpayments.latitudepay": "^true$",
+      "wc_ga_pro.available_gateways.latitudepay": ""
     },
     "pricing": [
       "freemium"
@@ -184,7 +185,8 @@
       "LaybuyHelper": "",
       "checkout.enabledpayments.laybuy": "^true$",
       "laybuyEnableCart": "",
-      "laybuyMoneyOverides": ""
+      "laybuyMoneyOverides": "",
+      "wc_ga_pro.available_gateways.laybuy": ""
     },
     "pricing": [
       "payg"
