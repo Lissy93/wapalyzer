@@ -3945,16 +3945,37 @@
     "scriptSrc": "\\.speedcurve\\.com",
     "website": "https://www.speedcurve.com"
   },
-  "SpeedKit": {
+  "Speed Kit": {
     "cats": [
       92
     ],
-    "description": "Baqend develops a performance add-on that uses caching algorithms to minimize loading times of e-commerce websites.",
-    "icon": "Speedkit.svg",
+    "description": "Speed Kit develops a performance add-on that uses caching algorithms to minimize loading times of ecommerce websites.",
+    "icon": "Speed Kit.svg",
     "js": {
       "speedKit": ""
     },
-    "website": "https://www.baqend.com/"
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.speedkit.com"
+  },
+  "SpeedSize": {
+    "cats": [
+      92
+    ],
+    "description": "SpeedSize is an AI-based media-compression technology that can auto-detect and compress all of a website's images and videos down to 99% of their original size without lowering the image quality.",
+    "icon": "SpeedSize.svg",
+    "scripts": "data-speedsize-(?:srcset|src|params)?",
+    "scriptSrc": [
+      "/speedsize(?:-sw)?\\.js\\;confidence:90",
+      "\\.speedsize\\.com/"
+    ],
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://speedsize.com"
   },
   "Speedimize": {
     "cats": [
