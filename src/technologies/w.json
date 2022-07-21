@@ -209,9 +209,11 @@
       "X-Rocket-Nginx-Bypass": ""
     },
     "html": "<!--[^>]+WP Rocket",
+    "dom": "style#wpr-usedcss",
     "icon": "WP Rocket.png",
     "js": {
       "RocketPreloadLinksConfig": "",
+      "RocketLazyLoadScripts": "",
       "rocket_lazy": ""
     },
     "pricing": [
@@ -221,7 +223,7 @@
     "requires": "WordPress",
     "saas": true,
     "scriptSrc": "/wp-content/plugins/wp-rocket/",
-    "website": "http://wp-rocket.me"
+    "website": "https://wp-rocket.me"
   },
   "WP-Optimize": {
     "cats": [
