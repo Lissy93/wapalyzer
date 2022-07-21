@@ -140,12 +140,22 @@ const Wappalyzer = {
       .sort((a, b) => (priority(a) > priority(b) ? 1 : -1))
       .map(
         ({
-          technology: { name, slug, categories, icon, website, pricing, cpe },
+          technology: {
+            name,
+            description,
+            slug,
+            categories,
+            icon,
+            website,
+            pricing,
+            cpe,
+          },
           confidence,
           version,
           lastUrl,
         }) => ({
           name,
+          description,
           slug,
           categories: categories.map((id) => Wappalyzer.getCategory(id)),
           confidence,
@@ -319,6 +329,7 @@ const Wappalyzer = {
     Wappalyzer.technologies = Object.keys(data).reduce((technologies, name) => {
       const {
         cats,
+        description,
         url,
         xhr,
         dom,
@@ -347,6 +358,7 @@ const Wappalyzer = {
 
       technologies.push({
         name,
+        description,
         categories: cats || [],
         slug: Wappalyzer.slugify(name),
         url: transform(url),
