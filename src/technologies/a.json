@@ -613,17 +613,16 @@
   },
   "Acquia Customer Data Platform": {
     "cats": [
-      10
+      97
     ],
     "description": "Acquia Customer Data Platform (formerly AgilOne) is a customer data platform for Drupal.",
     "dom": [
       "[data-function*='Agilone']"
     ],
     "icon": "acquia-cdp.png",
-    "implies": [
-      "Acquia Cloud Platform"
-    ],
     "js": {
+      "$A1Config": "",
+      "$A1": "",
       "agiloneObject": ""
     },
     "saas": true,
