@@ -1688,6 +1688,25 @@
     "scriptSrc": "\\.marketingautomation\\.services.+(?:ver=)([\\d.]+)\\;version:\\1",
     "website": "https://sharpspring.com"
   },
+  "SheerID": {
+    "cats": [
+      19
+    ],
+    "description": "SheerID is a highly specialised solution offering online verification support for retailers, marketers and service providers.",
+    "icon": "SheerID.png",
+    "dom": "a[href*='.sheerid.com/'], img[src*='.sheerid.com/']",
+    "headers": {
+      "content-security-policy-report-only": "\\.sheerid\\.com",
+      "content-security-policy": "\\.sheerid\\.com"
+    },
+    "js": {
+      "SheerID": "",
+      "sheerid": ""
+    },
+    "saas": true,
+    "scripts": "\"sheerIdEndpoint\":",
+    "website": "https://www.sheerid.com/"
+  },
   "SharpSpring Ads": {
     "cats": [
       77
