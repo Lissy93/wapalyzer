@@ -208,14 +208,12 @@
       "X-Powered-By": "WP Rocket(?:/([\\d.]+))?\\;version:\\1",
       "X-Rocket-Nginx-Bypass": ""
     },
-    "html": [
-    	"<!--[^>]+WP Rocket",
-    	"RocketLazyLoadScripts"
-    ],
+    "html": "<!--[^>]+WP Rocket",
     "dom": "style#wpr-usedcss",
     "icon": "WP Rocket.png",
     "js": {
       "RocketPreloadLinksConfig": "",
+      "RocketLazyLoadScripts": "",
       "rocket_lazy": ""
     },
     "pricing": [
