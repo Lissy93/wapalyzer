@@ -587,6 +587,23 @@
     "scriptSrc": "\\.limechat\\.ai/",
     "website": "https://www.limechat.ai"
   },
+  "Limepay": {
+    "cats": [
+      91
+    ],
+    "description": "Limepay is a buy now, pay later platform that's fully integrated with the merchant's payment platform.",
+    "icon": "Limepay.svg",
+    "js": {
+      "LimepayIdentity": "",
+      "wc_ga_pro.available_gateways.limepay": ""
+    },
+    "saas": true,
+    "scriptSrc": [
+      "/wp-content/plugins/Limepay-v\\d+/",
+      "/limepay-installment-show\\.js"
+    ],
+    "website": "https://www.limepay.com.au"
+  },
   "LimeSpot": {
     "cats": [
       76
