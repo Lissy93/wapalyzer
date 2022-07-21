@@ -281,17 +281,17 @@
       16
     ],
     "description": "AWS WAF Captcha helps block unwanted bot traffic by requiring users to successfully complete challenges before their web request are allowed to reach AWS WAF protected resources.",
-    "icon": "aws.svg",
-    "implies": "Amazon Web Services",
     "headers": {
       "x-amzn-waf-action": "^captcha$"
     },
-    "scriptSrc": "captcha\\.awswaf\\.com/",
-    "saas": true,
+    "icon": "aws.svg",
+    "implies": "Amazon Web Services",
     "pricing": [
       "recurring",
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "captcha\\.awswaf\\.com/",
     "website": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha.html"
   },
   "AWStats": {
@@ -523,6 +523,24 @@
     ],
     "website": "https://www.acquia.com/products/marketing-cloud/campaign-factory"
   },
+  "Acquia Cloud Classic": {
+    "cats": [
+      88
+    ],
+    "description": "Acquia Cloud Classic is a Amazon EC2 based Drupal hosting platform.",
+    "headers": {
+      "X-AH-Environment": "prod"
+    },
+    "icon": "acquia-cloud-platform.svg",
+    "implies": [
+      "Acquia Cloud Platform",
+      "Amazon EC2",
+      "Percona",
+      "Red Hat Gluster"
+    ],
+    "saas": true,
+    "website": "https://docs.acquia.com/cloud-platform/"
+  },
   "Acquia Cloud IDE": {
     "cats": [
       47
@@ -539,6 +557,24 @@
     "url": "https:?\\/\\/.+\\.web\\.ahdev\\.cloud",
     "website": "https://www.acquia.com/products/drupal-cloud/cloud-ide"
   },
+  "Acquia Cloud Next": {
+    "cats": [
+      88
+    ],
+    "description": "Acquia Cloud Next is a Kubernetes-native Drupal hosting platform.",
+    "headers": {
+      "X-AH-Environment": "next"
+    },
+    "icon": "acquia-cloud-platform.svg",
+    "implies": [
+      "Acquia Cloud Platform",
+      "Kubernetes Dashboard",
+      "Amazon EFS",
+      "Amazon Aurora"
+    ],
+    "saas": true,
+    "website": "https://docs.acquia.com/cloud-platform/cloud-next/"
+  },
   "Acquia Cloud Platform": {
     "cats": [
       62
@@ -549,9 +585,7 @@
     },
     "icon": "acquia-cloud.png",
     "implies": [
-      "Drupal",
-      "Apache",
-      "Percona"
+      "Amazon Web Services"
     ],
     "saas": true,
     "website": "https://www.acquia.com/"
@@ -674,23 +708,6 @@
     ],
     "website": "https://www.acquia.com/products/drupal-cloud/site-studio"
   },
-  "Acquire Live Chat": {
-    "cats": [
-      52
-    ],
-    "description": "Acquire is a multi-channel customer support platform designed to provide real-time customer support to customers.",
-    "icon": "Acquire.svg",
-    "js": {
-      "acquire": "",
-      "_acquire_init_config": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.acquire\\.io/(?!cobrowse)",
-    "website": "https://acquire.io"
-  },
   "Acquire Cobrowse": {
     "cats": [
       19,
@@ -699,8 +716,8 @@
     "description": "Acquire Cobrowse is a safe and secure method of interacting with a customer's browser without downloading any additional software.",
     "icon": "Acquire.svg",
     "js": {
-      "acquireCobrowseSettings": "",
       "acquireCobrowseRTC": "",
+      "acquireCobrowseSettings": "",
       "acquireConfigNodeServer": ""
     },
     "pricing": [
@@ -709,6 +726,23 @@
     "saas": true,
     "scriptSrc": "\\.acquire\\.io/cobrowse/",
     "website": "https://acquire.io/co-browsing"
+  },
+  "Acquire Live Chat": {
+    "cats": [
+      52
+    ],
+    "description": "Acquire is a multi-channel customer support platform designed to provide real-time customer support to customers.",
+    "icon": "Acquire.svg",
+    "js": {
+      "_acquire_init_config": "",
+      "acquire": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.acquire\\.io/(?!cobrowse)",
+    "website": "https://acquire.io"
   },
   "Act-On": {
     "cats": [
@@ -2287,6 +2321,15 @@
     "scriptSrc": "\\.associates-amazon\\.com",
     "website": "https://affiliate-program.amazon.com"
   },
+  "Amazon Aurora": {
+    "cats": [
+      34
+    ],
+    "description": "Amazon Aurora is a relational database service developed and offered by Amazon Web Services.",
+    "icon": "aws_aurora.png",
+    "implies": "Amazon Web Services",
+    "website": "https://aws.amazon.com/rds/aurora"
+  },
   "Amazon CloudWatch RUM": {
     "cats": [
       78
@@ -2361,7 +2404,19 @@
       "Docker"
     ],
     "saas": true,
-    "website": "https://aws.amazon.com/elasticloadbalancing/"
+    "website": "https://aws.amazon.com/ecs/"
+  },
+  "Amazon EFS": {
+    "cats": [
+      48
+    ],
+    "description": "Amazon Elastic File System is a cloud storage service provided by Amazon Web Services.",
+    "icon": "amazon-efs.png",
+    "implies": [
+      "Amazon Web Services"
+    ],
+    "saas": true,
+    "website": "https://aws.amazon.com/efs/"
   },
   "Amazon ELB": {
     "cats": [
