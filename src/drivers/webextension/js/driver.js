@@ -415,11 +415,16 @@ const Driver = {
    * @param {Object} request
    */
   async onScriptRequestComplete(request) {
-    if (await Driver.isDisabledDomain(request.url)) {
+    const initiatorUrl = request.initiator || request.documentUrl || request.url
+
+    if (
+      (await Driver.isDisabledDomain(initiatorUrl)) ||
+      (await Driver.isDisabledDomain(request.url))
+    ) {
       return
     }
 
-    const { hostname } = new URL(request.documentUrl)
+    const { hostname } = new URL(initiatorUrl)
 
     if (!Driver.cache.hostnames[hostname]) {
       Driver.cache.hostnames[hostname] = {}
@@ -439,9 +444,7 @@ const Driver = {
 
     const scripts = (await response.text()).slice(0, 500000)
 
-    Driver.onDetect(request.documentUrl, analyze({ scripts })).catch(
-      Driver.error
-    )
+    Driver.onDetect(initiatorUrl, analyze({ scripts })).catch(Driver.error)
   },
 
   /**
