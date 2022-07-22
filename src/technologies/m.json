@@ -493,10 +493,29 @@
     "scriptSrc": "mk-sense\\.com/aweb\\?license",
     "website": "https://mk-sense.com/"
   },
+  "MakeShop": {
+    "cats": [
+      6
+    ],
+    "description": "MakeShop is a Japanese ecommerce platform.",
+    "icon": "MakeShop.svg",
+    "dom": "link[href*='gigaplus.makeshop.jp'], img[src*='gigaplus.makeshop.jp']",
+    "js": {
+      "MakeShop_TopSearch": "",
+      "makeshop_ga_gtag": ""
+    },
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.makeshop.jp"
+  },
   "MakeShopKorea": {
     "cats": [
       6
     ],
+    "description": "MakeShopKorea is a Korean hosting brand that focuses on building ecommerce stores.",
     "icon": "MakeShopKorea.png",
     "js": {
       "Makeshop": "",
