@@ -315,5 +315,21 @@
     "icon": "Qwik.svg",
     "oss": true,
     "website": "https://qwik.builder.io"
+  },
+  "qiankun": {
+    "cats": [
+      59
+    ],
+    "description": "qiankun is a JS library who helps developers to build a micro frontends system.",
+    "dom": {
+      "div[id^=__qiankun_]": {
+        "attributes": {
+          "data-version": "([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "icon": "Qiankun.svg",
+    "oss": true,
+    "website": "https://qiankun.umijs.org"
   }
 }
