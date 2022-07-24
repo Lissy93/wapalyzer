@@ -91,8 +91,7 @@ Options:
   -N, --no-redirect        Disable cross-domain redirects
   -e, --extended           Output additional information
 `)
-
-  process.exit(1)
+  process.exit(options.help ? 0 : 1)
 }
 
 const headers = {}
