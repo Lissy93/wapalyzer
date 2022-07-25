@@ -54,6 +54,19 @@
     ],
     "website": "https://www.ukfast.co.uk"
   },
+  "UmiJs": {
+    "cats": [
+      12
+    ],
+    "description": "UmiJS is a scalable, enterprise-class frontend application framework that supports both configuration and conventional routing while maintaining functional completeness, such as dynamic routing, nested routing, and permission routing.",
+    "icon": "UmiJs.png",
+    "implies": "Node.js",
+    "js": {
+      "g_umi.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://umijs.org"
+  },
   "UMI.CMS": {
     "cats": [
       1
