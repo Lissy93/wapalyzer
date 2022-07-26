@@ -675,9 +675,30 @@
     "cats": [
       19
     ],
-    "description": "Next Generation Frontend Tooling",
+    "description": "Vite is a rapid development tool for modern web projects.",
     "icon": "vite.svg",
-    "website": "https://vitejs.dev/"
+    "oss": true,
+    "website": "https://vitejs.dev"
+  },
+  "Vitrin.me": {
+    "cats": [
+      51
+    ],
+    "description": "Vitrin.me is a no-code platform that lets anyone build web apps without writing any code.",
+    "icon": "Vitrin.me.svg",
+    "implies": [
+      "Python",
+      "Django",
+      "React",
+      "Next.js"
+    ],
+    "scriptSrc": "\\.vitrin\\.me/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://vitrin.me"
   },
   "Vizury": {
     "cats": [
