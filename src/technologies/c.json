@@ -291,6 +291,7 @@
     ],
     "description": "Calendly is an app for scheduling appointments, meetings, and events.",
     "icon": "Calendly.svg",
+    "dom": "a[href*='//calendly.com/'][target='_blank']",
     "js": {
       "Calendly": ""
     },
@@ -299,7 +300,7 @@
       "freemium"
     ],
     "saas": true,
-    "scriptSrc": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
+    "scriptSrc": "assets\\.calendly\\.com/",
     "website": "https://calendly.com/"
   },
   "CallRail": {
