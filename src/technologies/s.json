@@ -5467,12 +5467,13 @@
     "scriptSrc": "swiftype\\.com/embed\\.js$",
     "website": "http://swiftype.com"
   },
-  "Swiper Slider": {
+  "Swiper": {
     "cats": [
-      19
+      59
     ],
-    "html": "<[^>]+=swiper-container",
+    "description": "Swiper is a JavaScript library that creates modern touch sliders with hardware-accelerated transitions.",
     "icon": "swiper.svg",
+    "dom": "div[data-swiper-slide-index], [swiper-container]",
     "js": {
       "Swiper": ""
     },
