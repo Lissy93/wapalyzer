@@ -409,6 +409,24 @@
     "icon": "Vignette.png",
     "website": "http://www.vignette.com"
   },
+  "Vigil": {
+    "cats": [
+      13
+    ],
+    "description": "Vigil is a microservices status page. Monitors a distributed infrastructure and sends alerts (Slack, SMS, etc.).",
+    "icon": "default.svg",
+    "implies": [
+      "Rust",
+      "Docker"
+    ],
+    "dom": {
+      "p > a[href*='github.com/valeriansaliou/vigil']": {
+        "text": "^Vigil$"
+      }
+    },
+    "oss": true,
+    "website": "https://github.com/valeriansaliou/vigil"
+  },
   "Vimeo": {
     "cats": [
       14
