@@ -37,13 +37,15 @@
       59
     ],
     "cpe": "cpe:/a:yahoo:yui",
+    "description": "YUI is a JavaScript and CSS library with more than 30 unique components including low-level DOM utilities and high-level user-interface widgets.",
     "icon": "YUI.png",
     "js": {
       "YAHOO.VERSION": "^(.+)$\\;version:\\1",
       "YUI.version": "^(.+)$\\;version:\\1"
     },
     "scriptSrc": "(?:/yui/|yui\\.yahooapis\\.com)",
-    "website": "http://yuilibrary.com"
+    "oss": true,
+    "website": "https://clarle.github.io/yui3"
   },
   "YUI Doc": {
     "cats": [
