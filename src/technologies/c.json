@@ -291,6 +291,7 @@
     ],
     "description": "Calendly is an app for scheduling appointments, meetings, and events.",
     "icon": "Calendly.svg",
+    "dom": "a[href*='//calendly.com/'][target='_blank']",
     "js": {
       "Calendly": ""
     },
@@ -299,7 +300,7 @@
       "freemium"
     ],
     "saas": true,
-    "scriptSrc": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
+    "scriptSrc": "assets\\.calendly\\.com/",
     "website": "https://calendly.com/"
   },
   "CallRail": {
@@ -1217,6 +1218,23 @@
     "saas": true,
     "scriptSrc": "checkout-static\\.citruspay\\.com/",
     "website": "https://consumers.citruspay.com/"
+  },
+  "City Hive": {
+    "cats": [
+      6
+    ],
+    "description": "City Hive's all in one ecommerce platform for wine and spirit shops.",
+    "icon": "City Hive.png",
+    "js": {
+      "cityHiveSites": "",
+      "cityHiveWebsiteName": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.cityhive.net"
   },
   "CityMail": {
     "cats": [

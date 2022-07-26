@@ -367,6 +367,21 @@
     "scriptSrc": "\\.vidazoo\\.com",
     "website": "https://www.vidazoo.com"
   },
+  "Video Greet": {
+    "cats": [
+      100
+    ],
+    "description": "Video Greet lets your customers add a video message to gifts with QR codes.",
+    "icon": "Video Greet.png",
+    "requires": "Shopify",
+    "js": {
+      "__vg.video_greet_button_src": ""
+    },
+    "pricing": [
+      "freemium"
+    ],
+    "website": "https://apps.shopify.com/videogreet-gift-messages"
+  },
   "VideoJS": {
     "cats": [
       14
@@ -408,6 +423,24 @@
     "html": "<[^>]+=\"vgn-?ext",
     "icon": "Vignette.png",
     "website": "http://www.vignette.com"
+  },
+  "Vigil": {
+    "cats": [
+      13
+    ],
+    "description": "Vigil is a microservices status page. Monitors a distributed infrastructure and sends alerts (Slack, SMS, etc.).",
+    "icon": "default.svg",
+    "implies": [
+      "Rust",
+      "Docker"
+    ],
+    "dom": {
+      "p > a[href*='github.com/valeriansaliou/vigil']": {
+        "text": "^Vigil$"
+      }
+    },
+    "oss": true,
+    "website": "https://github.com/valeriansaliou/vigil"
   },
   "Vimeo": {
     "cats": [
@@ -642,9 +675,30 @@
     "cats": [
       19
     ],
-    "description": "Next Generation Frontend Tooling",
+    "description": "Vite is a rapid development tool for modern web projects.",
     "icon": "vite.svg",
-    "website": "https://vitejs.dev/"
+    "oss": true,
+    "website": "https://vitejs.dev"
+  },
+  "Vitrin.me": {
+    "cats": [
+      51
+    ],
+    "description": "Vitrin.me is a no-code platform that lets anyone build web apps without writing any code.",
+    "icon": "Vitrin.me.svg",
+    "implies": [
+      "Python",
+      "Django",
+      "React",
+      "Next.js"
+    ],
+    "scriptSrc": "\\.vitrin\\.me/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://vitrin.me"
   },
   "Vizury": {
     "cats": [

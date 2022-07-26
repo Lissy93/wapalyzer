@@ -713,18 +713,23 @@
       6
     ],
     "description": "Tebex specialises in providing gcommerce solutions for online games.",
-    "headers": {
-      "tb-cache-country": "\\;confidence:33",
-      "tb-cache-group": "\\;confidence:34",
-      "tb-node": "\\;confidence:33"
+    "dom": {
+      "a[href*='.tebex.io']": {
+        "attributes": {
+          "target": "_blank",
+          "text": "Tebex"
+        }
+      }
     },
     "icon": "Tebex.svg",
     "implies": [
       "MySQL",
-      "Sass"
+      "Sass",
+      "PHP"
     ],
     "requires": "Cart Functionality",
     "saas": true,
+    "scripts": "\\.tebexLogin",
     "website": "https://www.tebex.io"
   },
   "Telescope": {

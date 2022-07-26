@@ -759,6 +759,7 @@
     "scriptSrc": "\\bwebix\\.js",
     "website": "http://webix.com"
   },
+
   "Weblogic Server": {
     "cats": [
       22
@@ -770,6 +771,27 @@
       "Server": "^WebLogic\\sServer\\s([\\d\\.]+)?\\;version:\\1"
     },
     "website": "https://www.oracle.com/java/weblogic"
+  },
+  "Weblication": {
+    "cats": [
+      1
+    ],
+    "cpe": "cpe:2.3:a:weblication:cms_core_&_grid:*:*:*:*:*:*:*:*",
+    "description": "Weblication is an enterprise-class website content management system developed by Scholl Communications AG in Germany.",
+    "icon": "Weblication.svg",
+    "implies": [
+      "PHP",
+      "XSLT"
+    ],
+    "meta": {
+      "generator": "^Weblication® CMS$"
+    },
+    "pricing": [
+      "recurring",
+      "onetime",
+      "payg"
+    ],
+    "website": "https://weblication.de"
   },
   "Weblium": {
     "cats": [
@@ -913,7 +935,7 @@
     "cats": [
       1
     ],
-    "description": "Weebly is a website and eCommerce service.",
+    "description": "Weebly is a website and ecommerce service.",
     "icon": "Weebly.svg",
     "implies": [
       "PHP",
@@ -1775,6 +1797,31 @@
     ],
     "saas": true,
     "website": "https://www.wufoo.com"
+  },
+  "Wuilt": {
+    "cats": [
+      1,
+      51
+    ],
+    "description": "Wuilt is the first Arab platform of its kind to help individuals and businesses create ready-made websites and ecommerce stores.",
+    "icon": "Wuilt.png",
+    "implies": [
+      "React",
+      "Node.js"
+    ],
+    "dom": {
+      "img[src*='wuilt-assets-v']": {
+        "attributes": {
+          "src": "wuilt-assets-v\\d+-dev\\.s\\d+\\.amazonaws\\.com/"
+        }
+      }
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://wuilt.com"
   },
   "Wunderkind": {
     "cats": [

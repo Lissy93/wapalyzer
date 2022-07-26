@@ -1170,13 +1170,17 @@
       29
     ],
     "description": "Addsearch is a site search solution for small and large websites.",
-    "icon": "AddSearch.png",
+    "icon": "Addsearch.svg",
+    "js": {
+      "AddSearchUI": "",
+      "AddSearchClient": ""
+    },
     "pricing": [
       "mid",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "https://addsearch\\.com/js/",
+    "scriptSrc": "//addsearch\\.com/js/",
     "website": "https://www.addsearch.com/"
   },
   "Adform": {
@@ -1417,6 +1421,7 @@
       "poa"
     ],
     "saas": true,
+    "scripts": "aem-(?:GridColumn|apps/)",
     "scriptSrc": [
       "/etc/designs/",
       "/etc/clientlibs/",
@@ -2459,12 +2464,13 @@
   },
   "Amazon S3": {
     "cats": [
-      19
+      31
     ],
     "description": "Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services (AWS) that provides object storage through a web service interface.",
     "headers": {
-      "Content-Security-Policy": "s3\\.[^ ]*amazonaws\\.com",
-      "server": "^AmazonS3$"
+      "Content-Security-Policy": "s3[^ ]*amazonaws\\.com\\s",
+      "server": "^AmazonS3$",
+      "Content-Security-Policy-Report-Only": "s3[^ ]*\\.amazonaws\\.com\\s"
     },
     "icon": "aws-s3.svg",
     "implies": "Amazon Web Services",
@@ -3835,11 +3841,22 @@
     "cats": [
       69
     ],
+    "cpe": "cpe:2.3:a:auth0:auth0.js:*:*:*:*:*:node.js:*:*",
     "description": "Auth0 provides authentication and authorisation as a service.",
-    "icon": "Auth0.png",
+    "icon": "Auth0.svg",
+    "headers": {
+      "x-auth0-requestid": ""
+    },
+    "dom": "link[href*='cdn.auth0.com']",
     "scriptSrc": [
       "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
       "/auth0-js@([\\d.]+)/([a-z]+)/auth0\\.min\\.js\\;version:\\1"
+    ],
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
     ],
     "website": "https://auth0.github.io/auth0.js/index.html"
   },
@@ -3847,8 +3864,9 @@
     "cats": [
       69
     ],
-    "description": "Auth0's signin solution",
-    "icon": "Auth0.png",
+    "description": "Auth0 Lock enables you to easily add social identity providers, so that your users can log in seamlessly using any desired provider.",
+    "icon": "Auth0.svg",
+    "implies": "Auth0",
     "scriptSrc": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
   },

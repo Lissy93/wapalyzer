@@ -1740,6 +1740,26 @@
     ],
     "website": "https://gotipath.com"
   },
+  "Govalo": {
+    "cats": [
+      100
+    ],
+    "description": "Govalo is a software startup company that builds a Shopify app.",
+    "icon": "Govalo.svg",
+    "implies": "Shopify",
+    "js": {
+      "Govalo.meta": ""
+    },
+    "scriptSrc": "cdn\\.shopify\\.com/extensions/.+/([\\d\\.]+)/assets/govalo\\.min\\.js\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://govalo.com"
+  },
   "Grab Pay Later": {
     "cats": [
       41,

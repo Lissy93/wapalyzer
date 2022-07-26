@@ -1346,6 +1346,23 @@
     "scriptSrc": "cdn\\.gethypervisual\\.com/",
     "website": "https://gethypervisual.com"
   },
+  "Hypestyle CSS": {
+    "cats": [
+      66
+    ],
+    "description": "Hypestyle CSS is a small CSS library build on utility classes and components.",
+    "icon": "Hypestyle CSS.png",
+    "implies": "Sass",
+    "dom": {
+      "link[href*='hypestyle']": {
+        "attributes": {
+          "href": "/hypestyle@([\\d\\.]+)/dist/css/hypestyle\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://www.hypestylecss.xyz"
+  },
   "h5ai": {
     "cats": [
       19

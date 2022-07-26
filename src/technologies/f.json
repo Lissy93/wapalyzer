@@ -572,6 +572,22 @@
     "scriptSrc": "@findify/bundle@([\\d.]+)/dist/.+\\.js\\;version:\\1",
     "website": "https://www.findify.io"
   },
+  "Findmeashoe": {
+    "cats": [
+      76
+    ],
+    "description": "Findmeashoe is a footwear recommendation portal that aims to improve shopping efficiency and experience of footwear shoppers.",
+    "icon": "Findmeashoe.png",
+    "js": {
+      "FmasJavaScript": "",
+      "fmasUniversalWidgetJsFileName": "",
+      "fmasGenderSizeTextVariantIdCollection": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://findmeashoe.com"
+  },
   "Fing": {
     "cats": [
       62
@@ -778,6 +794,25 @@
     "implies": "Bootstrap",
     "website": "https://designmodo.github.io/Flat-UI/"
   },
+  "Fleksa": {
+    "cats": [
+      6,
+      93
+    ],
+    "description": "Fleksa is an online ordering system for restaurants and delivery.",
+    "icon": "Fleksa.svg",
+    "implies": [
+      "Node.js",
+      "Next.js"
+    ],
+    "dom":"link[href*='//fleksa-cdn']",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://fleksa.com"
+  },
   "FlexCMP": {
     "cats": [
       1
@@ -906,7 +941,9 @@
     "icon": "Flutter.svg",
     "implies": "Dart",
     "js": {
-      "flutterCanvasKit": ""
+      "flutterCanvasKit": "",
+      "_flutter_web_set_location_strategy": "",
+      "_flutter.loader": ""
     },
     "meta": {
       "id": "^flutterweb-theme$"
@@ -1555,6 +1592,26 @@
       "static\\.fbot\\.me/friendbuy\\.js"
     ],
     "website": "https://www.friendbuy.com"
+  },
+  "Frizbit": {
+    "cats": [
+      32
+    ],
+    "description": "Frizbit is a marketing tool that helps digital marketeers increase web traffic and revenue by combining web push notification.",
+    "icon": "Frizbit.png",
+    "dom":"link[href*='cdn.frizbit.com']",
+    "js": {
+      "frizbit.remoteConfigs": "",
+      "frizbit.configurationManager": ""
+    },
+    "scriptSrc":"cdn\\.frizbit\\.com/",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring",
+      "poa"
+    ],
+    "website": "https://frizbit.com"
   },
   "Froala Editor": {
     "cats": [
