@@ -1764,6 +1764,31 @@
     "saas": true,
     "website": "https://www.wufoo.com"
   },
+  "Wuilt": {
+    "cats": [
+      1,
+      51
+    ],
+    "description": "Wuilt is the first Arab platform of its kind to help individuals and businesses create ready-made websites and ecommerce stores.",
+    "icon": "Wuilt.png",
+    "implies": [
+      "React",
+      "Node.js"
+    ],
+    "dom": {
+      "img[src*='wuilt-assets-v']": {
+        "attributes": {
+          "src": "wuilt-assets-v\\d+-dev\\.s\\d+\\.amazonaws\\.com/"
+        }
+      }
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://wuilt.com"
+  },
   "Wunderkind": {
     "cats": [
       32
