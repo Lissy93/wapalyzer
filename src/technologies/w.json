@@ -759,6 +759,19 @@
     "scriptSrc": "\\bwebix\\.js",
     "website": "http://webix.com"
   },
+
+  "Weblogic Server": {
+    "cats": [
+      22
+    ],
+    "description": "WebLogic Server is an Application Server that runs on a middle tier, between back-end databases and related applications and browser-based thin clients.",
+    "icon": "Oracle.svg",
+    "implies": "JavaServer Pages",
+    "headers": {
+      "Server": "^WebLogic\\sServer\\s([\\d\\.]+)?\\;version:\\1"
+    },
+    "website": "https://www.oracle.com/java/weblogic"
+  },
   "Weblication": {
     "cats": [
       1
