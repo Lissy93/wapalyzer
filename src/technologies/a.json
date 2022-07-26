@@ -3836,10 +3836,20 @@
       69
     ],
     "description": "Auth0 provides authentication and authorisation as a service.",
-    "icon": "Auth0.png",
+    "icon": "Auth0.svg",
+    "headers": {
+      "x-auth0-requestid": ""
+    },
+    "dom": "link[href*='cdn.auth0.com']",
     "scriptSrc": [
       "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
       "/auth0-js@([\\d.]+)/([a-z]+)/auth0\\.min\\.js\\;version:\\1"
+    ],
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
     ],
     "website": "https://auth0.github.io/auth0.js/index.html"
   },
@@ -3847,8 +3857,9 @@
     "cats": [
       69
     ],
-    "description": "Auth0's signin solution",
-    "icon": "Auth0.png",
+    "description": "Auth0 Lock enables you to easily add social identity providers, so that your users can log in seamlessly using any desired provider.",
+    "icon": "Auth0.svg",
+    "implies": "Auth0",
     "scriptSrc": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
   },
