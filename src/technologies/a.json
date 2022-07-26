@@ -3220,6 +3220,18 @@
     "scriptSrc": "appleid\\.auth\\.js",
     "website": "https://developer.apple.com/sign-in-with-apple/"
   },
+  "Application Request Routing": {
+    "cats": [
+      65
+    ],
+    "description": "Application Request Routing (ARR) is an extension to Internet Information Server (IIS), which enables an IIS server to function as a load balancer.",
+    "icon": "Microsoft.svg",
+    "implies": "IIS",
+    "headers": {
+      "X-Powered-By": "^ARR/([\\d\\.]+)$\\;version:\\1"
+    },
+    "website": "https://www.iis.net/downloads/microsoft/application-request-routing"
+  },
   "ApplicantStack": {
     "cats": [
       101
