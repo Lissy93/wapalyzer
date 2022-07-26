@@ -20,6 +20,7 @@
     "cats": [
       53
     ],
+    "cpe": "cpe:/a:sap:netweaver_application_server",
     "headers": {
       "Server": "SAP NetWeaver Application Server"
     },
@@ -194,6 +195,7 @@
     "cats": [
       1
     ],
+    "cpe": "cpe:/a:spip:spip",
     "headers": {
       "Composed-By": "SPIP ([\\d.]+) @\\;version:\\1",
       "X-Spip-Cache": ""
@@ -229,6 +231,7 @@
     "cats": [
       34
     ],
+    "cpe": "cpe:/a:sqlite:sqlite",
     "icon": "SQLite.png",
     "website": "http://www.sqlite.org"
   },
@@ -531,6 +534,7 @@
     "cookies": {
       "com.salesforce": ""
     },
+    "cpe": "cpe:/a:salesforce",
     "description": "Salesforce is a cloud computing service software (SaaS) that specializes in customer relationship management (CRM).",
     "dns": {
       "TXT": [
@@ -2947,6 +2951,7 @@
       "SC_OS_SessionId": "",
       "sc_expview": ""
     },
+    "cpe": "cpe:/a:sitecore",
     "description": "Sitecore provides web content management, and multichannel marketing automation software.",
     "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
     "icon": "Sitecore.svg",
@@ -3725,6 +3730,7 @@
     "cats": [
       34
     ],
+    "cpe": "cpe:/a:apache:solr",
     "description": "Solr is an open-source enterprise-search platform, written in Java.",
     "icon": "Solr.png",
     "implies": "Lucene",
@@ -4553,6 +4559,7 @@
     "cats": [
       30
     ],
+    "cpe": "cpe:/a:squirrelmail:squirrelmail",
     "description": "SquirrelMail is an open-source web-mail package that is based on PHP language. It provides a web-based-email client and a proxy server for IMAP protocol.",
     "html": "<small>SquirrelMail version ([.\\d]+)[^<]*<br \\;version:\\1",
     "icon": "SquirrelMail.png",
@@ -5211,6 +5218,7 @@
     "cats": [
       28
     ],
+    "cpe": "cpe:/o:oracle:sunos",
     "description": "SunOS is a Unix-branded operating system developed by Sun Microsystems for their workstation and server computer systems.",
     "headers": {
       "Server": "SunOS( [\\d\\.]+)?\\;version:\\1",
@@ -5532,6 +5540,7 @@
     "cookies": {
       "sf_redirect": ""
     },
+    "cpe": "cpe:/a:sensiolabs:symfony",
     "description": "Symfony is a PHP web application framework and a set of reusable PHP components/libraries.",
     "dom": "div.sf-toolbar-block, div.sf-toolbar",
     "icon": "Symfony.svg",

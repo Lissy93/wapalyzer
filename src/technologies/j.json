@@ -36,6 +36,7 @@
     "cats": [
       22
     ],
+    "cpe": "cpe:/a:redhat:jboss_application_server",
     "headers": {
       "X-Powered-By": "JBoss(?:-([\\d.]+))?\\;version:\\1"
     },
@@ -46,6 +47,7 @@
     "cats": [
       22
     ],
+    "cpe": "cpe:/a:redhat:jbossweb",
     "excludes": "Apache Tomcat",
     "headers": {
       "X-Powered-By": "JBossWeb(?:-([\\d.]+))?\\;version:\\1"
@@ -175,6 +177,7 @@
     "cookies": {
       "JSESSIONID": ""
     },
+    "cpe": "cpe:/a:oracle:jre",
     "description": "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
     "icon": "Java.png",
     "website": "http://java.com"
@@ -255,6 +258,7 @@
     "cats": [
       44
     ],
+    "cpe": "cpe:/a:jenkins:jenkins",
     "description": "Jenkins is an open-source automation tool written in Java with plugins built for Continuous Integration (CI) purposes.",
     "headers": {
       "X-Jenkins": "([\\d.]+)\\;version:\\1"

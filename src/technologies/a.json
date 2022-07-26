@@ -160,7 +160,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:aol:aolserver",
+    "cpe": "cpe:2.3:a:aol:aolserver:*:*:*:*:*:*:*",
     "headers": {
       "Server": "AOLserver/?([\\d.]+)?\\;version:\\1"
     },
@@ -298,7 +298,7 @@
     "cats": [
       10
     ],
-    "cpe": "cpe:/a:laurent_destailleur:awstats",
+    "cpe": "cpe:2.3:a:laurent_destailleur:awstats:*:*:*:*:*:*:*",
     "icon": "AWStats.png",
     "implies": "Perl",
     "meta": {
@@ -1214,6 +1214,7 @@
     "cats": [
       3
     ],
+    "cpe": "cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*",
     "html": [
       "Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
       "onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
@@ -1365,7 +1366,7 @@
     "cats": [
       18
     ],
-    "cpe": "cpe:/a:adobe:coldfusion",
+    "cpe": "cpe:2.3:a:adobe:coldfusion:*:*:*:*:*:*:*",
     "headers": {
       "Cookie": "CFTOKEN="
     },
@@ -1408,7 +1409,7 @@
     "cats": [
       1
     ],
-    "cpe": "cpe:/a:adobe:experience_manager",
+    "cpe": "cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*",
     "description": "Adobe Experience Manager (AEM) is a content management solution for building websites, mobile apps and forms.",
     "html": [
       "<div class=\"[^\"]*parbase",
@@ -1460,7 +1461,7 @@
     "cats": [
       27
     ],
-    "cpe": "cpe:/a:adobe:flash",
+    "cpe": "cpe:2.3:a:adobe:flash:*:*:*:*:*:*:*",
     "description": "Adobe Flash is a multimedia software platform used for production of animations, rich web applications and embedded web browser video players.",
     "dom": [
       "object[type='application/x-shockwave-flash']",
@@ -1473,7 +1474,7 @@
     "cats": [
       20
     ],
-    "cpe": "cpe:/a:adobe:golive",
+    "cpe": "cpe:2.3:a:adobe:golive:*:*:*:*:*:*:*",
     "description": "Adobe GoLive is a WYSIWYG HTML editor and web site management application.",
     "icon": "Adobe GoLive.png",
     "meta": {
@@ -1485,7 +1486,7 @@
     "cats": [
       4
     ],
-    "cpe": "cpe:/a:adobe:robohelp",
+    "cpe": "cpe:2.3:a:adobe:robohelp:*:*:*:*:*:*:*",
     "description": "Adobe RoboHelp is a Help Authoring Tool (HAT) that allows you to create help systems, e-learning content and knowledge bases.",
     "icon": "Adobe RoboHelp.svg",
     "js": {
@@ -1777,7 +1778,7 @@
       41,
       91
     ],
-    "cpe": "cpe:/a:afterpay:afterpay",
+    "cpe": "cpe:2.3:a:afterpay:afterpay:*:*:*:*:*:*:*",
     "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
     "dom": "#afterpay, .afterpay, .AfterpayMessage, [aria-label='Afterpay'], link[href*='/wp-content/plugins/afterpay-gateway-for-woocommerce/']",
     "icon": "afterpay.png",
@@ -2040,7 +2041,7 @@
       18,
       22
     ],
-    "cpe": "cpe:/a:lightbend:akka_http",
+    "cpe": "cpe:2.3:a:lightbend:akka_http:*:*:*:*:*:*:*",
     "headers": {
       "Server": "akka-http(?:/([\\d.]+))?\\;version:\\1"
     },
@@ -2159,7 +2160,7 @@
       54,
       87
     ],
-    "cpe": "cpe:/a:semperfiwebdesign:all_in_one_seo_pack",
+    "cpe": "cpe:2.3:a:semperfiwebdesign:all_in_one_seo_pack:*:*:*:*:*:*:*",
     "description": "All in One SEO plugin optimizes WordPress website and its content for search engines.",
     "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
     "icon": "AIOSEO.svg",
@@ -2231,6 +2232,7 @@
     "cats": [
       28
     ],
+    "cpe": "cpe:/o:alpinelinux:alpine_linux",
     "description": "Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.",
     "headers": {
       "X-Powered-By": "Alpine"
@@ -2749,7 +2751,7 @@
     "cats": [
       12
     ],
-    "cpe": "cpe:/a:angularjs:angular.js",
+    "cpe": "cpe:2.3:a:angularjs:angular:*:*:*:*:*:*:*",
     "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
     "dom": {
       "[ng-version]": {
@@ -2803,6 +2805,7 @@
     "cats": [
       12
     ],
+    "cpe": "cpe:2.3:a:angularjs:angular.js:*:*:*:*:*:*:*",
     "description": "AngularJS is a JavaScript-based open-source web application framework led by the Angular Team at Google.",
     "excludes": [
       "Angular",
@@ -2931,7 +2934,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:apache:http_server",
+    "cpe": "cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*",
     "description": "Apache is a free and open-source cross-platform web server software.",
     "headers": {
       "Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)HTTPD)\\;version:\\1"
@@ -2943,7 +2946,7 @@
     "cats": [
       8
     ],
-    "cpe": "cpe:/a:apache:jspwiki",
+    "cpe": "cpe:2.3:a:apache:jspwiki:*:*:*:*:*:*:*",
     "description": "Apache JSPWiki is an open-source Wiki engine, built around standard JEE components (Java, servlets, JSP).",
     "html": "<html[^>]* xmlns:jspwiki=",
     "icon": "Apache JSPWiki.png",
@@ -2956,7 +2959,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:apache:tomcat",
+    "cpe": "cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*",
     "description": "Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages, Java Expression Language and WebSocket technologies.",
     "headers": {
       "Server": "^Apache-Coyote",
@@ -2970,7 +2973,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:apache:traffic_server",
+    "cpe": "cpe:2.3:a:apache:traffic_server:*:*:*:*:*:*:*",
     "headers": {
       "Server": "ATS/?([\\d.]+)?\\;version:\\1"
     },
@@ -2981,7 +2984,7 @@
     "cats": [
       18
     ],
-    "cpe": "cpe:/a:apache:wicket",
+    "cpe": "cpe:2.3:a:apache:wicket:*:*:*:*:*:*:*",
     "icon": "Apache Wicket.svg",
     "implies": "Java",
     "js": {
@@ -3332,7 +3335,7 @@
     "cats": [
       6
     ],
-    "cpe": "cpe:/a:arastta:ecommerce",
+    "cpe": "cpe:2.3:a:arastta:ecommerce:*:*:*:*:*:*:*",
     "description": "Arastta is a free and open-source project with contributors from all over the world.",
     "excludes": "OpenCart",
     "headers": {
@@ -3401,7 +3404,7 @@
     "cats": [
       47
     ],
-    "cpe": "cpe:/a:jfrog:artifactory",
+    "cpe": "cpe:2.3:a:jfrog:artifactory:*:*:*:*:*:*:*",
     "html": [
       "<span class=\"version\">Artifactory(?: Pro)?(?: Power Pack)?(?: ([\\d.]+))?\\;version:\\1"
     ],
@@ -3418,7 +3421,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:jfrog:artifactory",
+    "cpe": "cpe:2.3:a:jfrog:artifactory:*:*:*:*:*:*:*",
     "headers": {
       "Server": "Artifactory(?:/([\\d.]+))?\\;version:\\1"
     },
@@ -3644,7 +3647,7 @@
     "cats": [
       47
     ],
-    "cpe": "cpe:/a:atlassian:bitbucket",
+    "cpe": "cpe:2.3:a:atlassian:bitbucket:*:*:*:*:*:*:*",
     "description": "Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.",
     "html": "<li>Atlassian Bitbucket <span title=\"[a-z0-9]+\" id=\"product-version\" data-commitid=\"[a-z0-9]+\" data-system-build-number=\"[a-z0-9]+\"> v([\\d.]+)<\\;version:\\1",
     "icon": "Atlassian Bitbucket.svg",
@@ -3661,7 +3664,7 @@
     "cats": [
       8
     ],
-    "cpe": "cpe:/a:atlassian:confluence",
+    "cpe": "cpe:2.3:a:atlassian:confluence:*:*:*:*:*:*:*",
     "description": "Atlassian Confluence is a web-based collaboration wiki tool.",
     "dom": {
       "li.print-only": {
@@ -3685,7 +3688,7 @@
     "cookies": {
       "FESESSIONID": ""
     },
-    "cpe": "cpe:/a:atlassian:fisheye",
+    "cpe": "cpe:2.3:a:atlassian:fisheye:*:*:*:*:*:*:*",
     "html": "<title>(?:Log in to )?FishEye (?:and Crucible )?([\\d.]+)?</title>\\;version:\\1",
     "icon": "Atlassian FishEye.svg",
     "website": "http://www.atlassian.com/software/fisheye/overview/"
@@ -3694,7 +3697,7 @@
     "cats": [
       13
     ],
-    "cpe": "cpe:/a:atlassian:jira",
+    "cpe": "cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*",
     "dom": "#jira",
     "icon": "Atlassian Jira.svg",
     "implies": "Java",

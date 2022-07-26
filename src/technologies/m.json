@@ -2793,6 +2793,7 @@
     "cats": [
       33
     ],
+    "cpe": "cpe:/a:apache:mod_perl",
     "description": "Mod_perl is an optional module for the Apache HTTP server. It embeds a Perl interpreter into the Apache server. In addition to allowing Apache modules to be written in the Perl programming language, it allows the Apache web server to be dynamically configured by Perl programs.",
     "headers": {
       "Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1"
@@ -2808,6 +2809,7 @@
     "cats": [
       33
     ],
+    "cpe": "cpe:/a:apache:mod_python",
     "description": "Mod_python is an Apache HTTP Server module that integrates the Python programming language with the server. It is intended to provide a Python language binding for the Apache HTTP Server. ",
     "headers": {
       "Server": "mod_python(?:/([\\d.]+))?\\;version:\\1"
@@ -2855,6 +2857,7 @@
     "cats": [
       33
     ],
+    "cpe": "cpe:/a:modssl:mod_ssl",
     "description": "mod_ssl is an optional module for the Apache HTTP Server. It provides strong cryptography for the Apache web server via the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) cryptographic protocols by the help of the open-source SSL/TLS toolkit OpenSSL.",
     "headers": {
       "Server": "mod_ssl(?:/([\\d.]+))?\\;version:\\1"
@@ -2867,6 +2870,7 @@
     "cats": [
       33
     ],
+    "cpe": "cpe:/a:modwsgi:mod_wsgi",
     "description": "mod_wsgi is an Apache HTTP Server module that provides a WSGI compliant interface for hosting Python based web applications under Apache.",
     "headers": {
       "Server": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1",
