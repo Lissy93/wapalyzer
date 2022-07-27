@@ -179,13 +179,10 @@ Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer
       <td>String</td>
       <td>
         The
-        <a href="https://cpe.mitre.org/about/" target="_blank">CPE</a>
-        is a structured naming scheme for applications, see the
-        <a href="https://cpe.mitre.org/specification/" target="_blank"
-          >specification</a
-        >.
+        <a href="https://nvd.nist.gov/products/cpe" target="_blank">CPE</a>
+        CPE is a structured naming scheme for information technology systems, software, and packages. CPEs should be in the 2.3 naming format. To check if a CPE is valid and exists, use the [search](https://nvd.nist.gov/products/cpe/search).
       </td>
-      <td><code>"cpe:/a:apache:http_server"</code></td>
+      <td><code>"cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*"</code></td>
     </tr>
     <tr>
       <td><code>saas</code></td>
