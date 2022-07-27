@@ -3,7 +3,7 @@
     "cats": [
       1
     ],
-    "cpe": "cpe:/a:lepton-cms:lepton",
+    "cpe": "cpe:2.3:a:lepton-cms:lepton:*:*:*:*:*:*:*:*",
     "icon": "LEPTON.png",
     "implies": "PHP",
     "meta": {
@@ -89,7 +89,7 @@
     "cookies": {
       "laravel_session": ""
     },
-    "cpe": "cpe:/a:laravel:laravel",
+    "cpe": "cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*",
     "description": "Laravel is a free, open-source PHP web framework.",
     "icon": "Laravel.svg",
     "implies": "PHP",
@@ -491,7 +491,7 @@
     "cats": [
       1
     ],
-    "cpe": "cpe:/a:liferay:liferay_portal",
+    "cpe": "cpe:2.3:a:liferay:liferay_portal:*:*:*:*:*:*:*:*",
     "description": "Liferay is an open-source company that provides free documentation and paid professional service to users of its software.",
     "headers": {
       "Liferay-Portal": "[a-z\\s]+([\\d.]+)\\;version:\\1"
@@ -510,7 +510,7 @@
     "cats": [
       18
     ],
-    "cpe": "cpe:/a:liftweb:lift",
+    "cpe": "cpe:2.3:a:liftweb:lift:*:*:*:*:*:*:*:*",
     "headers": {
       "X-Lift-Version": "(.+)\\;version:\\1"
     },
@@ -537,7 +537,7 @@
     "cats": [
       59
     ],
-    "cpe": "cpe:/a:lightbox_photo_gallery_project:lightbox_photo_gallery",
+    "cpe": "cpe:2.3:a:lightbox_photo_gallery_project:lightbox_photo_gallery:*:*:*:*:*:*:*:*",
     "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
     "icon": "Lightbox.png",
     "scriptSrc": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
@@ -778,7 +778,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:litespeedtech:litespeed_web_server",
+    "cpe": "cpe:2.3:a:litespeedtech:litespeed_web_server:*:*:*:*:*:*:*:*",
     "description": "LiteSpeed is a high-scalability web server.",
     "headers": {
       "Server": "^LiteSpeed$"
@@ -1162,7 +1162,7 @@
     "cats": [
       59
     ],
-    "cpe": "cpe:/a:lodash:lodash",
+    "cpe": "cpe:2.3:a:lodash:lodash:*:*:*:*:*:*:*:*",
     "description": "Lodash is a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm.",
     "excludes": "Underscore.js",
     "icon": "Lo-dash.png",
@@ -1446,7 +1446,7 @@
     "cats": [
       22
     ],
-    "cpe": "cpe:/a:ibm:lotus_domino",
+    "cpe": "cpe:2.3:a:ibm:lotus_domino:*:*:*:*:*:*:*:*",
     "headers": {
       "Server": "Lotus-Domino"
     },
@@ -1489,7 +1489,7 @@
     "cats": [
       27
     ],
-    "cpe": "cpe:/a:lua:lua",
+    "cpe": "cpe:2.3:a:lua:lua:*:*:*:*:*:*:*:*",
     "description": "Lua is a multi-paradigm programming language designed primarily for embedded use in applications.",
     "headers": {
       "X-Powered-By": "\\bLua(?: ([\\d.]+))?\\;version:\\1"
@@ -1501,7 +1501,7 @@
     "cats": [
       34
     ],
-    "cpe": "cpe:/a:apache:lucene",
+    "cpe": "cpe:2.3:a:apache:lucene:*:*:*:*:*:*:*:*",
     "description": "Lucene is a free and open-source search engine software library.",
     "icon": "Lucene.png",
     "implies": "Java",

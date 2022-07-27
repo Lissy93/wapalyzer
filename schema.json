@@ -36,7 +36,8 @@
         "minItems": 1
       },
       "cpe": {
-        "$ref": "#/definitions/non-empty-non-blank-string"
+        "type": "string",
+        "pattern": "cpe:2.3:(a|h|o):[^*:]+:[^:]+:\\*:\\*:\\*:\\*:\\*:[^:]+:\\*:\\*"
       },
       "cookies": {
         "type": "object",

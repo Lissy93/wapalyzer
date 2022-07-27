@@ -147,7 +147,7 @@
     "cats": [
       12
     ],
-    "cpe": "cpe:/a:backbone_project:backbone",
+    "cpe": "cpe:2.3:a:backbone_project:backbone:*:*:*:*:*:*:*:*",
     "description": "BackboneJS is a JavaScript library that allows to develop and structure the client side applications that run in a web browser.",
     "icon": "Backbone.js.png",
     "implies": "Underscore.js",
@@ -571,7 +571,7 @@
       "bigWAdminID": "",
       "bigwareCsid": ""
     },
-    "cpe": "cpe:/a:bigware:bigware_shop",
+    "cpe": "cpe:2.3:a:bigware:bigware_shop:*:*:*:*:*:*:*:*",
     "html": "(?:Diese <a href=[^>]+bigware\\.de|<a href=[^>]+/main_bigware_\\d+\\.php)",
     "icon": "Bigware.png",
     "implies": "PHP",
@@ -1250,7 +1250,7 @@
     "cats": [
       1
     ],
-    "cpe": "cpe:/a:bolt:bolt",
+    "cpe": "cpe:2.3:a:bolt:bolt:*:*:*:*:*:*:*:*",
     "icon": "Bolt CMS.png",
     "implies": "PHP",
     "meta": {
@@ -1453,7 +1453,7 @@
     "cats": [
       66
     ],
-    "cpe": "cpe:/a:getbootstrap:bootstrap",
+    "cpe": "cpe:2.3:a:getbootstrap:bootstrap:*:*:*:*:*:*:*:*",
     "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
     "html": [
       "<style>\\s+/\\*!\\s+\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
@@ -2077,7 +2077,7 @@
     "cookies": {
       "Bugzilla_login_request_cookie": ""
     },
-    "cpe": "cpe:/a:mozilla:bugzilla",
+    "cpe": "cpe:2.3:a:mozilla:bugzilla:*:*:*:*:*:*:*:*",
     "html": [
       "href=\"enter_bug\\.cgi\">",
       "<main id=\"bugzilla-body\"",
