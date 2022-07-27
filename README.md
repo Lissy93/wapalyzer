@@ -178,9 +178,8 @@ Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer
       <td><code>cpe</code></td>
       <td>String</td>
       <td>
-        The
         <a href="https://nvd.nist.gov/products/cpe" target="_blank">CPE</a>
-        CPE is a structured naming scheme for information technologies. To check if a CPE is valid and exists, use the <a href="https://nvd.nist.gov/products/cpe/search" target="_blank">search</a>).
+        is a structured naming scheme for technologies. To check if a CPE is valid and exists (using v2.3), use the <a href="https://nvd.nist.gov/products/cpe/search" target="_blank">search</a>).
       </td>
       <td><code>"cpe:2.3:a:apache:http_server</code><br /><code>:*:*:*:*:*:*:*:*"</code></td>
     </tr>
