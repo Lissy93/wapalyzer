@@ -2436,6 +2436,23 @@
     ],
     "website": "https://www.myflyingbox.com/"
   },
+  "MyFonts": {
+    "cats": [
+      17
+    ],
+    "description": "MyFonts is a digital fonts distributor, based in Woburn, Massachusetts.",
+    "icon": "MyFonts.svg",
+    "dom": "link[href*='.myfonts.net']",
+    "headers": {
+      "content-security-policy": "\\.myfonts\\.net"
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "xhr": "\\.myfonts\\.net/",
+    "website": "https://www.myfonts.com"
+  },
   "My Food Link": {
     "cats": [
       6
