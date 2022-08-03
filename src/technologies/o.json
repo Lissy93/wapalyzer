@@ -323,8 +323,8 @@
     "cats": [
       69
     ],
-    "description": "Okta is a platform in the Identity-as-a-Service (IDaaS) category. Okta features include Provisioning, Single Sign-On (SSO), Active Directory (AD) and LDAP integration, the centralized de-provisioning of users, multi-factor authentication (MFA), mobile identity management.",
     "cpe": "cpe:2.3:a:okta:*:*:*:*:*:*:*:*:*",
+    "description": "Okta is a platform in the Identity-as-a-Service (IDaaS) category. Okta features include Provisioning, Single Sign-On (SSO), Active Directory (AD) and LDAP integration, the centralized de-provisioning of users, multi-factor authentication (MFA), mobile identity management.",
     "icon": "Okta.svg",
     "js": {
       "OktaAuth": "",
@@ -417,12 +417,12 @@
       1
     ],
     "description": "Omni CMS (formerly OU Campus) is a web content management system developed by Modern Campus. Modern Campus is a SaaS-based student lifecycle management software designed to manage continuing education and non-degree programs.",
+    "dom": "a[href*='a.cms.omniupdate.com/11/']",
     "icon": "Modern Campus.png",
-    "dom":"a[href*='a.cms.omniupdate.com/11/']",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://moderncampus.com/products/web-content-management.html"
   },
   "Omniconvert": {

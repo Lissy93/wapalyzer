@@ -759,19 +759,6 @@
     "scriptSrc": "\\bwebix\\.js",
     "website": "http://webix.com"
   },
-
-  "Weblogic Server": {
-    "cats": [
-      22
-    ],
-    "description": "WebLogic Server is an Application Server that runs on a middle tier, between back-end databases and related applications and browser-based thin clients.",
-    "icon": "Oracle.svg",
-    "implies": "JavaServer Pages",
-    "headers": {
-      "Server": "^WebLogic\\sServer\\s([\\d\\.]+)?\\;version:\\1"
-    },
-    "website": "https://www.oracle.com/java/weblogic"
-  },
   "Weblication": {
     "cats": [
       1
@@ -815,6 +802,18 @@
     "scriptSrc": "res2\\.weblium\\.site/common/core\\.min\\.js",
     "url": "\\.weblium\\.site",
     "website": "https://weblium.com"
+  },
+  "Weblogic Server": {
+    "cats": [
+      22
+    ],
+    "description": "WebLogic Server is an Application Server that runs on a middle tier, between back-end databases and related applications and browser-based thin clients.",
+    "headers": {
+      "Server": "^WebLogic\\sServer\\s([\\d\\.]+)?\\;version:\\1"
+    },
+    "icon": "Oracle.svg",
+    "implies": "JavaServer Pages",
+    "website": "https://www.oracle.com/java/weblogic"
   },
   "Webmin": {
     "cats": [
@@ -1804,11 +1803,6 @@
       51
     ],
     "description": "Wuilt is the first Arab platform of its kind to help individuals and businesses create ready-made websites and ecommerce stores.",
-    "icon": "Wuilt.png",
-    "implies": [
-      "React",
-      "Node.js"
-    ],
     "dom": {
       "img[src*='wuilt-assets-v']": {
         "attributes": {
@@ -1816,6 +1810,11 @@
         }
       }
     },
+    "icon": "Wuilt.png",
+    "implies": [
+      "React",
+      "Node.js"
+    ],
     "pricing": [
       "mid",
       "recurring"

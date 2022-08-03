@@ -498,17 +498,17 @@
       6
     ],
     "description": "MakeShop is a Japanese ecommerce platform.",
-    "icon": "MakeShop.svg",
     "dom": "link[href*='gigaplus.makeshop.jp'], img[src*='gigaplus.makeshop.jp']",
+    "icon": "MakeShop.svg",
     "js": {
       "MakeShop_TopSearch": "",
       "makeshop_ga_gtag": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.makeshop.jp"
   },
   "MakeShopKorea": {
@@ -999,6 +999,18 @@
     },
     "website": "http://max-3000.com"
   },
+  "Maxemail": {
+    "cats": [
+      32
+    ],
+    "icon": "Maxemail.svg",
+    "js": {
+      "Mxm.Basket": "",
+      "Mxm.FormHandler": "",
+      "Mxm.Tracker": ""
+    },
+    "website": "https://maxemail.xtremepush.com"
+  },
   "MaxenceDEVCMS": {
     "cats": [
       1
@@ -1014,18 +1026,6 @@
     },
     "oss": true,
     "website": "https://cms.maxencedev.fr"
-  },
-  "Maxemail": {
-    "cats": [
-      32
-    ],
-    "icon": "Maxemail.svg",
-    "js": {
-      "Mxm.Basket": "",
-      "Mxm.FormHandler": "",
-      "Mxm.Tracker": ""
-    },
-    "website": "https://maxemail.xtremepush.com"
   },
   "Measured": {
     "cats": [
@@ -1721,22 +1721,6 @@
     "scriptSrc": "mint/\\?js",
     "website": "https://haveamint.com"
   },
-  "mirrAR": {
-    "cats": [
-      105
-    ],
-    "description": "mirrAR is a real-time augmented reality platform for retail brands that enables consumers to virtually try on products and experience how it feels to own them before the actual purchase, both in-store and online.",
-    "icon": "mirrAR.png",
-    "js": {
-      "initMirrarUI": "",
-      "loadmirrAR": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.mirrar.com"
-  },
   "Misskey": {
     "cats": [
       2
@@ -2318,8 +2302,8 @@
       71
     ],
     "description": "Moshimo is a free affiliate service for individuals.",
-    "icon": "Moshimo.png",
     "dom": "link[href*='i.moshimo.com'], img[src*='i.moshimo.com']",
+    "icon": "Moshimo.png",
     "scriptSrc": "\\.moshimo\\.com/af/",
     "website": "https://af.moshimo.com"
   },
@@ -2453,23 +2437,6 @@
     ],
     "website": "https://www.myflyingbox.com/"
   },
-  "MyFonts": {
-    "cats": [
-      17
-    ],
-    "description": "MyFonts is a digital fonts distributor, based in Woburn, Massachusetts.",
-    "icon": "MyFonts.svg",
-    "dom": "link[href*='.myfonts.net']",
-    "headers": {
-      "content-security-policy": "\\.myfonts\\.net"
-    },
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "xhr": "\\.myfonts\\.net/",
-    "website": "https://www.myfonts.com"
-  },
   "My Food Link": {
     "cats": [
       6
@@ -2525,6 +2492,23 @@
     },
     "icon": "mycashflow.png",
     "website": "https://www.mycashflow.fi/"
+  },
+  "MyFonts": {
+    "cats": [
+      17
+    ],
+    "description": "MyFonts is a digital fonts distributor, based in Woburn, Massachusetts.",
+    "dom": "link[href*='.myfonts.net']",
+    "headers": {
+      "content-security-policy": "\\.myfonts\\.net"
+    },
+    "icon": "MyFonts.svg",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "website": "https://www.myfonts.com",
+    "xhr": "\\.myfonts\\.net/"
   },
   "MyLiveChat": {
     "cats": [
@@ -2771,6 +2755,22 @@
     },
     "icon": "mini_httpd.png",
     "website": "http://acme.com/software/mini_httpd"
+  },
+  "mirrAR": {
+    "cats": [
+      105
+    ],
+    "description": "mirrAR is a real-time augmented reality platform for retail brands that enables consumers to virtually try on products and experience how it feels to own them before the actual purchase, both in-store and online.",
+    "icon": "mirrAR.png",
+    "js": {
+      "initMirrarUI": "",
+      "loadmirrAR": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.mirrar.com"
   },
   "mobicred": {
     "cats": [

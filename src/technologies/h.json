@@ -71,11 +71,23 @@
     "description": "HTTP/2 (originally named HTTP/2.0) is a major revision of the HTTP network protocol used by the World Wide Web.",
     "excludes": "SPDY",
     "headers": {
-      "X-Firefox-Spdy": "h2",
-      "Alt-Svc": "h2"
+      "Alt-Svc": "h2",
+      "X-Firefox-Spdy": "h2"
     },
     "icon": "http2.png",
     "website": "https://http2.github.io"
+  },
+  "HTTP/3": {
+    "cats": [
+      19
+    ],
+    "description": "HTTP/3 is the third major version of the Hypertext Transfer Protocol used to exchange information on the World Wide Web.",
+    "excludes": "HTTP/2",
+    "headers": {
+      "Alt-Svc": "h3"
+    },
+    "icon": "HTTP3.svg",
+    "website": "https://httpwg.org/"
   },
   "Haddock": {
     "cats": [
@@ -158,15 +170,15 @@
     "description": "Hansel is a B2B enterprise software that deploys real-time Nudges to drive feature adoption and address user drop-offs, at scale.",
     "icon": "Hansel.png",
     "js": {
-      "HanselPX": "",
-      "Hansel": ""
+      "Hansel": "",
+      "HanselPX": ""
     },
-    "scriptSrc": "\\.hansel\\.io/web/([\\d\\.]+)/\\;version:\\1",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.hansel\\.io/web/([\\d\\.]+)/\\;version:\\1",
     "website": "https://hansel.io"
   },
   "Happy Returns": {
@@ -1371,8 +1383,6 @@
       66
     ],
     "description": "Hypestyle CSS is a small CSS library build on utility classes and components.",
-    "icon": "Hypestyle CSS.png",
-    "implies": "Sass",
     "dom": {
       "link[href*='hypestyle']": {
         "attributes": {
@@ -1380,6 +1390,8 @@
         }
       }
     },
+    "icon": "Hypestyle CSS.png",
+    "implies": "Sass",
     "oss": true,
     "website": "https://www.hypestylecss.xyz"
   },
@@ -1458,16 +1470,5 @@
       "onetime"
     ],
     "website": "https://hyva.io/"
-  },
-  "HTTP/3": {
-    "cats": [
-      19
-    ],
-    "description": "HTTP/3 is the third major version of the Hypertext Transfer Protocol used to exchange information on the World Wide Web.",
-    "excludes": "HTTP/2",
-    "headers": {
-      "Alt-Svc": "h3"
-    },
-    "website": "https://httpwg.org/"
   }
 }

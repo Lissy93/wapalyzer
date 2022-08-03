@@ -43,8 +43,8 @@
       "YAHOO.VERSION": "^(.+)$\\;version:\\1",
       "YUI.version": "^(.+)$\\;version:\\1"
     },
-    "scriptSrc": "(?:/yui/|yui\\.yahooapis\\.com)",
     "oss": true,
+    "scriptSrc": "(?:/yui/|yui\\.yahooapis\\.com)",
     "website": "https://clarle.github.io/yui3"
   },
   "YUI Doc": {
@@ -594,11 +594,11 @@
       "youpayReady": "",
       "youpayStatus": ""
     },
-    "scriptSrc": "app\\.youpay\\.ai/",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "app\\.youpay\\.ai/",
     "website": "https://youpay.co"
   },
   "YouTrack": {

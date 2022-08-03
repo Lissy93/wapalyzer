@@ -374,13 +374,13 @@
     ],
     "description": "Video Greet lets your customers add a video message to gifts with QR codes.",
     "icon": "Video Greet.png",
-    "requires": "Shopify",
     "js": {
       "__vg.video_greet_button_src": ""
     },
     "pricing": [
       "freemium"
     ],
+    "requires": "Shopify",
     "website": "https://apps.shopify.com/videogreet-gift-messages"
   },
   "VideoJS": {
@@ -417,6 +417,24 @@
     "scriptSrc": "(?:\\.vigbo\\.com|\\.gophotoweb\\.com)",
     "website": "https://vigbo.com"
   },
+  "Vigil": {
+    "cats": [
+      13
+    ],
+    "description": "Vigil is a microservices status page. Monitors a distributed infrastructure and sends alerts (Slack, SMS, etc.).",
+    "dom": {
+      "p > a[href*='github.com/valeriansaliou/vigil']": {
+        "text": "^Vigil$"
+      }
+    },
+    "icon": "default.svg",
+    "implies": [
+      "Rust",
+      "Docker"
+    ],
+    "oss": true,
+    "website": "https://github.com/valeriansaliou/vigil"
+  },
   "Vignette": {
     "cats": [
       1
@@ -424,24 +442,6 @@
     "html": "<[^>]+=\"vgn-?ext",
     "icon": "Vignette.png",
     "website": "http://www.vignette.com"
-  },
-  "Vigil": {
-    "cats": [
-      13
-    ],
-    "description": "Vigil is a microservices status page. Monitors a distributed infrastructure and sends alerts (Slack, SMS, etc.).",
-    "icon": "default.svg",
-    "implies": [
-      "Rust",
-      "Docker"
-    ],
-    "dom": {
-      "p > a[href*='github.com/valeriansaliou/vigil']": {
-        "text": "^Vigil$"
-      }
-    },
-    "oss": true,
-    "website": "https://github.com/valeriansaliou/vigil"
   },
   "Vimeo": {
     "cats": [
@@ -693,12 +693,12 @@
       "React",
       "Next.js"
     ],
-    "scriptSrc": "\\.vitrin\\.me/",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.vitrin\\.me/",
     "website": "https://vitrin.me"
   },
   "Vizury": {
