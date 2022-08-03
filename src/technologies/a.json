@@ -2492,7 +2492,7 @@
     "icon": "aws-s3.svg",
     "implies": "Amazon Web Services",
     "saas": true,
-    "scriptSrc": "s3\\.[^ ]*amazonaws\\.com",
+    "scriptSrc": "s3[^ ]*\\.amazonaws\\.com/",
     "website": "http://aws.amazon.com/s3/"
   },
   "Amazon SES": {
