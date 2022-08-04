@@ -1442,13 +1442,14 @@
     "website": "https://hyva.io/"
   },
   "HTTP/3": {
+    "description": "HTTP/3 is the third major version of the Hypertext Transfer Protocol used to exchange information on the World Wide Web.",
     "cats": [
       19
     ],
-    "description": "HTTP/3 is the third major version of the Hypertext Transfer Protocol used to exchange information on the World Wide Web.",
     "excludes": "HTTP/2",
     "headers": {
-      "Alt-Svc": "h3"
+      "Alt-Svc": "h3",
+      "X-Firefox-Http3": "h3"
     },
     "website": "https://httpwg.org/"
   }
