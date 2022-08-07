@@ -291,8 +291,8 @@
       72
     ],
     "description": "Calendly is an app for scheduling appointments, meetings, and events.",
-    "icon": "Calendly.svg",
     "dom": "a[href*='//calendly.com/'][target='_blank']",
+    "icon": "Calendly.svg",
     "js": {
       "Calendly": ""
     },
@@ -3520,5 +3520,23 @@
     "oss": true,
     "scriptSrc": "(?:/([\\d\\.-]+))?/crypto-js(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://github.com/brix/crypto-js"
+  },
+  "Cart.com": {
+    "cats": [
+      6
+    ],
+    "description": "Cart.com is an ecommerce platform built for high volume online stores and complex products with features such as multi-store management.",
+    "dom": "p.AmeriCommerce-powered-by-link > a[href*='.americommerce.com/'][target='_blank']",
+    "icon": "Cart.com.svg",
+    "js": {
+      "AC.storeDomain": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.americommerce\\.com/",
+    "website": "https://www.americommerce.com"
   }
 }

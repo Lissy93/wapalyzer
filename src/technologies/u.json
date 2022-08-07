@@ -54,19 +54,6 @@
     ],
     "website": "https://www.ukfast.co.uk"
   },
-  "UmiJs": {
-    "cats": [
-      12
-    ],
-    "description": "UmiJs is a scalable, enterprise-class frontend application framework that supports both configuration and conventional routing while maintaining functional completeness, such as dynamic routing, nested routing, and permission routing.",
-    "icon": "UmiJs.png",
-    "implies": "Node.js",
-    "js": {
-      "g_umi.version": "([\\d\\.]+)\\;version:\\1"
-    },
-    "oss": true,
-    "website": "https://umijs.org"
-  },
   "UMI.CMS": {
     "cats": [
       1
@@ -249,6 +236,19 @@
     "website": "http://umbraco.com",
     "xhr": "/umbraco/api/"
   },
+  "UmiJs": {
+    "cats": [
+      12
+    ],
+    "description": "UmiJs is a scalable, enterprise-class frontend application framework that supports both configuration and conventional routing while maintaining functional completeness, such as dynamic routing, nested routing, and permission routing.",
+    "icon": "UmiJs.png",
+    "implies": "Node.js",
+    "js": {
+      "g_umi.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://umijs.org"
+  },
   "Umso": {
     "cats": [
       51
@@ -347,12 +347,12 @@
     "js": {
       "unicornplatform": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://unicornplatform.com"
   },
   "Unpkg": {
@@ -418,6 +418,20 @@
     ],
     "website": "https://uploadcare.com"
   },
+  "Upptime": {
+    "cats": [
+      13
+    ],
+    "description": "Upptime is the open-source uptime monitor and status page, powered entirely by GitHub Actions, Issues, and Pages.",
+    "dom": {
+      "p > a[href*='upptime.js.org']": {
+        "text": "^Upptime$"
+      }
+    },
+    "icon": "Upptime.svg",
+    "oss": true,
+    "website": "https://upptime.js.org"
+  },
   "Upserve": {
     "cats": [
       93
@@ -450,20 +464,6 @@
     "saas": true,
     "scriptSrc": "stats\\.uptimerobot\\.com/",
     "website": "https://uptimerobot.com"
-  },
-  "Upptime": {
-    "cats": [
-      13
-    ],
-    "description": "Upptime is the open-source uptime monitor and status page, powered entirely by GitHub Actions, Issues, and Pages.",
-    "icon": "Upptime.svg",
-    "dom": {
-      "p > a[href*='upptime.js.org']": {
-        "text": "^Upptime$"
-      }
-    },
-    "oss": true,
-    "website": "https://upptime.js.org"
   },
   "Uptrends": {
     "cats": [

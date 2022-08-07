@@ -1172,8 +1172,8 @@
     "description": "Addsearch is a site search solution for small and large websites.",
     "icon": "Addsearch.svg",
     "js": {
-      "AddSearchUI": "",
-      "AddSearchClient": ""
+      "AddSearchClient": "",
+      "AddSearchUI": ""
     },
     "pricing": [
       "mid",
@@ -1422,12 +1422,12 @@
       "poa"
     ],
     "saas": true,
-    "scripts": "aem-(?:GridColumn|apps/)",
     "scriptSrc": [
       "/etc/designs/",
       "/etc/clientlibs/",
       "/etc\\.clientlibs/"
     ],
+    "scripts": "aem-(?:GridColumn|apps/)",
     "website": "https://www.adobe.com/marketing/experience-manager.html"
   },
   "Adobe Experience Platform Identity Service": {
@@ -1865,6 +1865,21 @@
     "saas": true,
     "website": "https://www.air360.io"
   },
+  "AirRobe": {
+    "cats": [
+      5
+    ],
+    "description": "AirRobe partners with brands and retailers to power the circular fashion economy.",
+    "icon": "AirRobe.png",
+    "js": {
+      "airrobe.app_id": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://airrobe.com"
+  },
   "Aircall": {
     "cats": [
       52
@@ -2129,6 +2144,7 @@
     },
     "icon": "Algolia.svg",
     "js": {
+      "ALGOLIA_INSIGHTS_SRC": "",
       "AlgoliaSearch": "",
       "__GLOBAL__.algolia": "",
       "__NEXT_DATA__.props.pageProps.appSettings.ALGOLIA_APP_ID": "",
@@ -2160,7 +2176,7 @@
       54,
       87
     ],
-    "cpe": "cpe:2.3:a:semperfiwebdesign:all_in_one_seo_pack:*:*:*:*:*:*:*:*",
+    "cpe": "cpe:2.3:a:aioseo:all_in_one_seo:*:*:*:*:*:wordpress:*:*",
     "description": "All in One SEO plugin optimizes WordPress website and its content for search engines.",
     "html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
     "icon": "AIOSEO.svg",
@@ -2471,13 +2487,13 @@
     "description": "Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services (AWS) that provides object storage through a web service interface.",
     "headers": {
       "Content-Security-Policy": "s3[^ ]*amazonaws\\.com\\s",
-      "server": "^AmazonS3$",
-      "Content-Security-Policy-Report-Only": "s3[^ ]*\\.amazonaws\\.com\\s"
+      "Content-Security-Policy-Report-Only": "s3[^ ]*\\.amazonaws\\.com\\s",
+      "server": "^AmazonS3$"
     },
     "icon": "aws-s3.svg",
     "implies": "Amazon Web Services",
     "saas": true,
-    "scriptSrc": "s3\\.[^ ]*amazonaws\\.com",
+    "scriptSrc": "s3[^ ]*\\.amazonaws\\.com/",
     "website": "http://aws.amazon.com/s3/"
   },
   "Amazon SES": {
@@ -2556,24 +2572,6 @@
     },
     "icon": "amber.png",
     "website": "https://amberframework.org"
-  },
-  "AmeriCommerce": {
-    "cats": [
-      6
-    ],
-    "description": "AmeriCommerce is an ecommerce platform built for high volume online stores and complex products with features such as multi-store management.",
-    "dom": "p.AmeriCommerce-powered-by-link > a[href*='.americommerce.com/'][target='_blank']",
-    "icon": "AmeriCommerce.png",
-    "js": {
-      "AC.storeDomain": ""
-    },
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.americommerce\\.com/",
-    "website": "https://www.americommerce.com"
   },
   "American Express": {
     "cats": [
@@ -3223,18 +3221,6 @@
     "scriptSrc": "appleid\\.auth\\.js",
     "website": "https://developer.apple.com/sign-in-with-apple/"
   },
-  "Application Request Routing": {
-    "cats": [
-      65
-    ],
-    "description": "Application Request Routing (ARR) is an extension to Internet Information Server (IIS), which enables an IIS server to function as a load balancer.",
-    "icon": "Microsoft.svg",
-    "implies": "IIS",
-    "headers": {
-      "X-Powered-By": "^ARR/([\\d\\.]+)$\\;version:\\1"
-    },
-    "website": "https://www.iis.net/downloads/microsoft/application-request-routing"
-  },
   "ApplicantStack": {
     "cats": [
       101
@@ -3249,6 +3235,18 @@
     "saas": true,
     "scriptSrc": "\\.applicantstack\\.com/",
     "website": "https://www.applicantstack.com"
+  },
+  "Application Request Routing": {
+    "cats": [
+      65
+    ],
+    "description": "Application Request Routing (ARR) is an extension to Internet Information Server (IIS), which enables an IIS server to function as a load balancer.",
+    "headers": {
+      "X-Powered-By": "^ARR/([\\d\\.]+)$\\;version:\\1"
+    },
+    "icon": "Microsoft.svg",
+    "implies": "IIS",
+    "website": "https://www.iis.net/downloads/microsoft/application-request-routing"
   },
   "Appointy": {
     "cats": [
@@ -3858,20 +3856,20 @@
     ],
     "cpe": "cpe:2.3:a:auth0:auth0.js:*:*:*:*:*:node.js:*:*",
     "description": "Auth0 provides authentication and authorisation as a service.",
-    "icon": "Auth0.svg",
+    "dom": "link[href*='cdn.auth0.com']",
     "headers": {
       "x-auth0-requestid": ""
     },
-    "dom": "link[href*='cdn.auth0.com']",
-    "scriptSrc": [
-      "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
-      "/auth0-js@([\\d.]+)/([a-z]+)/auth0\\.min\\.js\\;version:\\1"
-    ],
-    "saas": true,
+    "icon": "Auth0.svg",
     "pricing": [
       "freemium",
       "payg",
       "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": [
+      "/auth0(?:-js)?/([\\d.]+)/auth0(?:.min)?\\.js\\;version:\\1",
+      "/auth0-js@([\\d.]+)/([a-z]+)/auth0\\.min\\.js\\;version:\\1"
     ],
     "website": "https://auth0.github.io/auth0.js/index.html"
   },

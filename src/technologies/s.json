@@ -1736,9 +1736,9 @@
       "Server": "dart:io with Shelf",
       "x-powered-by": "Dart with package:shelf"
     },
-    "oss": true,
     "icon": "Dart.svg",
     "implies": "Dart",
+    "oss": true,
     "website": "https://pub.dev/packages/shelf"
   },
   "ShellInABox": {
@@ -1888,6 +1888,20 @@
     ],
     "website": "https://apps.shopify.com/custom-options"
   },
+  "ShopWired": {
+    "cats": [
+      6
+    ],
+    "description": "ShopWired is a UK based, fully hosted ecommerce platform that is focused on the UK market.",
+    "icon": "ShopWired.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.amazonaws\\.com/shopwired-theme-assets/",
+    "website": "https://www.shopwired.co.uk"
+  },
   "Shopaholic": {
     "cats": [
       6
@@ -2032,11 +2046,11 @@
       "recurring"
     ],
     "saas": true,
-    "scripts": "shopifyTag",
     "scriptSrc": [
       "sdks\\.shopifycdn\\.com",
       "cdn\\.shopify\\.com"
     ],
+    "scripts": "shopifyTag",
     "url": "^https?//.+\\.myshopify\\.com",
     "website": "http://shopify.com",
     "xhr": "\\.myshopify\\.com"
@@ -3751,25 +3765,6 @@
     },
     "website": "https://www.solusquare.com"
   },
-  "Solvemate": {
-    "cats": [
-      52
-    ],
-    "description": "Solvemate is a customer service automation platform that enables brands to deliver quality customer service through meaningful conversations via chatbots.",
-    "icon": "Solvemate.svg",
-    "dom": "link[href*='.solvemate.com']",
-    "js": {
-      "solvemateConfig": "",
-      "solvemateCli": "",
-      "solvemate.config.solvemateCDN": ""
-    },
-    "saas": true,
-    "pricing": [
-      "high",
-      "recurring"
-    ],
-    "website": "https://www.solvemate.com"
-  },
   "Solve Media": {
     "cats": [
       16,
@@ -3784,6 +3779,25 @@
     },
     "scriptSrc": "^https?://api\\.solvemedia\\.com/",
     "website": "http://solvemedia.com"
+  },
+  "Solvemate": {
+    "cats": [
+      52
+    ],
+    "description": "Solvemate is a customer service automation platform that enables brands to deliver quality customer service through meaningful conversations via chatbots.",
+    "dom": "link[href*='.solvemate.com']",
+    "icon": "Solvemate.svg",
+    "js": {
+      "solvemate.config.solvemateCDN": "",
+      "solvemateCli": "",
+      "solvemateConfig": ""
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.solvemate.com"
   },
   "Solvvy": {
     "cats": [
@@ -3983,6 +3997,21 @@
     "icon": "SparkPost.svg",
     "website": "https://www.sparkpost.com/"
   },
+  "Speed Kit": {
+    "cats": [
+      92
+    ],
+    "description": "Speed Kit develops a performance add-on that uses caching algorithms to minimize loading times of ecommerce websites.",
+    "icon": "Speed Kit.svg",
+    "js": {
+      "speedKit": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.speedkit.com"
+  },
   "SpeedCurve": {
     "cats": [
       78
@@ -4002,36 +4031,21 @@
     "scriptSrc": "\\.speedcurve\\.com",
     "website": "https://www.speedcurve.com"
   },
-  "Speed Kit": {
-    "cats": [
-      92
-    ],
-    "description": "Speed Kit develops a performance add-on that uses caching algorithms to minimize loading times of ecommerce websites.",
-    "icon": "Speed Kit.svg",
-    "js": {
-      "speedKit": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.speedkit.com"
-  },
   "SpeedSize": {
     "cats": [
       92
     ],
     "description": "SpeedSize is an AI-based media-compression technology that can auto-detect and compress all of a website's images and videos down to 99% of their original size without lowering the image quality.",
     "icon": "SpeedSize.svg",
-    "scripts": "data-speedsize-(?:srcset|src|params)?",
-    "scriptSrc": [
-      "/speedsize(?:-sw)?\\.js\\;confidence:90",
-      "\\.speedsize\\.com/"
-    ],
     "pricing": [
       "poa"
     ],
     "saas": true,
+    "scriptSrc": [
+      "/speedsize(?:-sw)?\\.js\\;confidence:90",
+      "\\.speedsize\\.com/"
+    ],
+    "scripts": "data-speedsize-(?:srcset|src|params)?",
     "website": "https://speedsize.com"
   },
   "Speedimize": {
@@ -4614,23 +4628,6 @@
     },
     "website": "https://www.stackcommerce.com/"
   },
-  "StackerHQ": {
-    "cats": [
-      51
-    ],
-    "description": "StackerHQ is a tool in the low code platforms and application builders categories.",
-    "icon": "StackerHQ.svg",
-    "dom": "link[href*='cdn.stackerhq.com/']",
-    "js": {
-      "stacker.install_feature": ""
-    },
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.stackerhq.com"
-  },
   "StackPath": {
     "cats": [
       31
@@ -4642,6 +4639,23 @@
     },
     "icon": "StackPath.svg",
     "website": "https://www.stackpath.com"
+  },
+  "StackerHQ": {
+    "cats": [
+      51
+    ],
+    "description": "StackerHQ is a tool in the low code platforms and application builders categories.",
+    "dom": "link[href*='cdn.stackerhq.com/']",
+    "icon": "StackerHQ.svg",
+    "js": {
+      "stacker.install_feature": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.stackerhq.com"
   },
   "Stackify": {
     "cats": [
@@ -4789,8 +4803,8 @@
       18
     ],
     "description": "Stencil is a compiler that generates Web Components developed by the Ionic team.",
-    "icon": "Stencil.svg",
     "dom": "html[data-stencil-build][class*='hydrated'], stencil-router, stencil-route-link",
+    "icon": "Stencil.svg",
     "oss": true,
     "website": "https://stenciljs.com"
   },
@@ -5016,10 +5030,10 @@
     "js": {
       "rerenderStrutfit": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.strut.fit"
   },
   "Stylitics": {
@@ -5481,8 +5495,8 @@
       59
     ],
     "description": "Swiper is a JavaScript library that creates modern touch sliders with hardware-accelerated transitions.",
-    "icon": "swiper.svg",
     "dom": "div[data-swiper-slide-index], [swiper-container]",
+    "icon": "swiper.svg",
     "js": {
       "Swiper": ""
     },
