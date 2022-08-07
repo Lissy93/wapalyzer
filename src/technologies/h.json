@@ -87,6 +87,7 @@
       "Alt-Svc": "h3",
       "X-Firefox-Http3": "h3"
     },
+    "icon": "HTTP3.svg",
     "website": "https://httpwg.org/"
   },
   "Haddock": {
@@ -1474,10 +1475,11 @@
   "HSTS": {
     "description": "HTTP Strict Transport Security (HSTS) informs browsers that the site should only be accessed using HTTPS.",
     "cats": [
-      19
+      16
     ],
     "headers": {
       "Strict-Transport-Security": ""
-    }
+    },
+    "website": "https://www.rfc-editor.org/rfc/rfc6797#section-6.1"
   }
 }
