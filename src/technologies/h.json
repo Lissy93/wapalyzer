@@ -1452,5 +1452,14 @@
       "X-Firefox-Http3": "h3"
     },
     "website": "https://httpwg.org/"
+  },
+  "HSTS": {
+    "description": "HTTP Strict Transport Security (HSTS) informs browsers that the site should only be accessed using HTTPS.",
+    "cats": [
+      19
+    ],
+    "headers": {
+      "Strict-Transport-Security": ""
+    }
   }
 }
