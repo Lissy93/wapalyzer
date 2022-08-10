@@ -3546,9 +3546,11 @@
     ],
     "description": "ASP.NET Boilerplate is a general purpose application framework especially designed for new modern web applications. It uses already familiar tools and implements best practices around them to provide you a SOLID development experience.",
     "icon": "aspnetboilerplate.png",
-    "text": "\\ASP.NET Boilerplate\\b",
     "website": "https://www.aspnetboilerplate.com",
-    "scripts" : "abp.appPath",
+    "js": {
+      "abp.toAbsAppPath": "",
+      "abp.localization": ""
+    },
     "oss": true,
     "implies":"Microsoft ASP.NET"
   },
