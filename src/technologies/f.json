@@ -1837,5 +1837,23 @@
     "oss": true,
     "scriptSrc": "/fullPage\\.js(?:/([\\d\\.]+)/)?\\;version:\\1",
     "website": "https://github.com/alvarotrigo/fullpage.js"
+  },
+  "Friendly Captcha": {
+    "description": "Friendly Captcha is a proof-of-work based solution in which the user’s device does all the work.",
+    "cats": [
+      16
+    ],
+    "dom": "div.frc-captcha",
+    "scripts": "x-frc-client\",\"js-(\\d+(\\.\\d+)+)\\;version:\\1",
+    "xhr": "api.friendlycaptcha.com",
+    "saas": true,
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring",
+      "poa"
+    ],
+    "icon": "FriendlyCaptcha.svg",
+    "website": "https://friendlycaptcha.com"
   }
 }
