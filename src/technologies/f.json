@@ -646,11 +646,15 @@
   },
   "Firebase": {
     "cats": [
-      34
+      34,
+      47
     ],
     "cpe": "cpe:2.3:a:google:firebase_cloud_messaging:*:*:*:*:*:*:*:*",
-    "description": "Firebase is a Backend-as-a-Service (Baas) for creating mobile and web applications.",
-    "icon": "Firebase.png",
+    "description": "Firebase is a Google-backed application development software that enables developers to develop iOS, Android and Web apps.",
+    "icon": "Firebase.svg",
+    "headers": {
+      "vary": "x-fh-requested-host"
+    },
     "js": {
       "firebase.SDK_VERSION": "([\\d.]+)$\\;version:\\1"
     },
@@ -658,7 +662,11 @@
       "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
       "/firebasejs/([\\d.]+)/firebase\\;version:\\1"
     ],
-    "website": "https://firebase.com"
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://firebase.google.com"
   },
   "Fireblade": {
     "cats": [
