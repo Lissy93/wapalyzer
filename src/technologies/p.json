@@ -2596,6 +2596,23 @@
     },
     "website": "https://www.proximis.com"
   },
+  "Pterodactyl Panel": {
+    "cats": [
+      9
+    ],
+    "description": "Pterodactyl Panel is a free, open-source game server management panel built with PHP, React, and Go.",
+    "icon": "Pterodactyl Panel.svg",
+    "implies": [
+      "Go",
+      "PHP",
+      "React"
+    ],
+    "cookies": {
+      "pterodactyl_session": ""
+    },
+    "oss": true,
+    "website": "https://pterodactyl.io"
+  },
   "PubGuru": {
     "cats": [
       36
