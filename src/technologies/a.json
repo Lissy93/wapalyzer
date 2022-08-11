@@ -4409,15 +4409,20 @@
     "scriptSrc": "\\.amocrm\\.(?:ru|com)",
     "website": "https://www.amocrm.com"
   },
-  "animate.css": {
+  "Animate.css": {
     "cats": [
       66
     ],
     "description": "Animate.css is a ready-to-use library collection of CSS3 animation effects.",
-    "html": [
-      "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
-    ],
-    "website": "https://daneden.github.io/animate.css/"
+    "dom": {
+      "link[href*='animate']": {
+        "attributes": {
+          "href": "([\\d\\.]+)?/animate\\.min\\.css\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://animate.style"
   },
   "anime.js": {
     "cats": [
