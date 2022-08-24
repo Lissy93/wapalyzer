@@ -5741,6 +5741,22 @@
     "scriptSrc": "scrollreveal(?:\\.min)(?:\\.js)",
     "website": "https://scrollrevealjs.org"
   },
+  "Scully": {
+    "cats": [
+      57
+    ],
+    "description": "Scully is a static site generator for Angular projects looking to embrace the Jamstack.",
+    "icon": "Scully.svg",
+    "implies": "Angular",
+    "meta": {
+      "generator": "^Scully\\s([\\d\\.]+)$\\;version:\\1"
+    },
+    "js": {
+      "ScullyIO": ""
+    },
+    "oss": true,
+    "website": "https://scully.io"
+  },
   "shine.js": {
     "cats": [
       25
