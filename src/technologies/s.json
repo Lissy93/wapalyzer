@@ -1016,6 +1016,24 @@
     },
     "website": "http://www.seamlesscms.com"
   },
+  "SearchFit": {
+    "cats": [
+      6
+    ],
+    "description": "Searchfit provides top ecommerce software, solutions and ecommerce website design for enterprise and mid-level retailers.",
+    "icon": "SearchFit.svg",
+    "js": {
+      "SFUI.Checkout": ""
+    },
+    "meta": {
+      "generation-copyright": "by\\sSearchFit\\sShopping\\sCart\\sv([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.searchfit.com"
+  },
   "Searchanise": {
     "cats": [
       29
@@ -1033,24 +1051,6 @@
     "saas": true,
     "scriptSrc": "searchanise(?:-.+\\.kxcdn)?\\.com/",
     "website": "https://start.searchanise.com"
-  },
-  "SearchFit": {
-    "cats": [
-      6
-    ],
-    "description": "Searchfit provides top ecommerce software, solutions and ecommerce website design for enterprise and mid-level retailers.",
-    "icon": "SearchFit.svg",
-    "meta": {
-      "generation-copyright": "by\\sSearchFit\\sShopping\\sCart\\sv([\\d\\.]+)\\;version:\\1"
-    },
-    "js": {
-      "SFUI.Checkout": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.searchfit.com"
   },
   "Searchspring": {
     "cats": [
@@ -3138,12 +3138,12 @@
     "description": "Skio helps brands on Shopify sell subscriptions without ripping their hair out.",
     "icon": "Skio.png",
     "implies": "Shopify",
-    "scriptSrc": "cdn\\.skio\\.com/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "cdn\\.skio\\.com/",
     "website": "https://skio.com"
   },
   "Sky-Shop": {
@@ -4927,7 +4927,6 @@
       66
     ],
     "description": "Storefront UI is an independent, Vue. js-based, library of UI components.",
-    "icon": "Storefront UI.svg",
     "dom": {
       "link[href*='/dist/sfui']": {
         "attributes": {
@@ -4935,6 +4934,7 @@
         }
       }
     },
+    "icon": "Storefront UI.svg",
     "implies": "Vue.js",
     "oss": true,
     "website": "https://vuestorefront.io/storefront-ui"

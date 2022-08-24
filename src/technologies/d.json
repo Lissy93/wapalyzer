@@ -12,6 +12,22 @@
     "scriptSrc": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
     "website": "http://d3js.org"
   },
+  "DDoS-Guard": {
+    "cats": [
+      16
+    ],
+    "description": "DDoS-Guard is a Russian Internet infrastructure company which provides DDoS protection, content delivery network services, and web hosting services.",
+    "headers": {
+      "server": "^ddos-guard$"
+    },
+    "icon": "DDoS-Guard.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://ddos-guard.net"
+  },
   "DERAK.CLOUD": {
     "cats": [
       31
@@ -1332,8 +1348,8 @@
       "payg",
       "recurring"
     ],
-    "scriptSrc": "\\.getdrip\\.com/",
     "saas": true,
+    "scriptSrc": "\\.getdrip\\.com/",
     "website": "https://www.drip.com"
   },
   "Drop A Hint": {
@@ -1662,22 +1678,6 @@
     "scriptSrc": "cdn\\.db-ip\\.com",
     "website": "https://db-ip.com/",
     "xhr": "api\\.db-ip\\.com"
-  },
-  "DDoS-Guard": {
-    "cats": [
-      16
-    ],
-    "description": "DDoS-Guard is a Russian Internet infrastructure company which provides DDoS protection, content delivery network services, and web hosting services.",
-    "icon": "DDoS-Guard.svg",
-    "headers": {
-      "server": "^ddos-guard$"
-    },
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://ddos-guard.net"
   },
   "decimal.js": {
     "cats": [

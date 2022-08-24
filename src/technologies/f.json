@@ -651,20 +651,20 @@
     ],
     "cpe": "cpe:2.3:a:google:firebase_cloud_messaging:*:*:*:*:*:*:*:*",
     "description": "Firebase is a Google-backed application development software that enables developers to develop iOS, Android and Web apps.",
-    "icon": "Firebase.svg",
     "headers": {
       "vary": "x-fh-requested-host"
     },
+    "icon": "Firebase.svg",
     "js": {
       "firebase.SDK_VERSION": "([\\d.]+)$\\;version:\\1"
     },
-    "scriptSrc": [
-      "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
-      "/firebasejs/([\\d.]+)/firebase\\;version:\\1"
-    ],
     "pricing": [
       "freemium",
       "payg"
+    ],
+    "scriptSrc": [
+      "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+      "/firebasejs/([\\d.]+)/firebase\\;version:\\1"
     ],
     "website": "https://firebase.google.com"
   },
@@ -879,8 +879,8 @@
     "js": {
       "Flickity": ""
     },
-    "scriptSrc": "flickity(?:/|@)([\\d\\.]+).+flickity(?:\\.pkgd)?(?:\\.min)?\\.js\\;version:\\1",
     "oss": true,
+    "scriptSrc": "flickity(?:/|@)([\\d\\.]+).+flickity(?:\\.pkgd)?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://flickity.metafizzy.co"
   },
   "Flits": {

@@ -472,12 +472,12 @@
       5
     ],
     "description": "Omny Studio is a podcast hosting solution, which enables radio stations and enterprises to manage, monetize, publish, share, edit and analyze audio episodes.",
-    "icon": "Omny Studio.svg",
     "dom": "iframe[src*='//omny.fm/shows/']",
-    "saas": true,
+    "icon": "Omny Studio.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://omnystudio.com"
   },
   "Omurga Sistemi": {
@@ -738,6 +738,16 @@
     },
     "website": "http://open-classifieds.com"
   },
+  "Open Graph": {
+    "cats": [
+      19
+    ],
+    "description": "Open Graph is a protocol that is used to integrate any web page into the social graph.",
+    "dom": "meta[property*='og:']",
+    "icon": "Open Graph.png",
+    "oss": true,
+    "website": "https://ogp.me"
+  },
   "Open Journal Systems": {
     "cats": [
       50
@@ -835,16 +845,6 @@
     },
     "oss": true,
     "website": "http://openelement.uk"
-  },
-  "Open Graph": {
-    "cats": [
-      19
-    ],
-    "description": "Open Graph is a protocol that is used to integrate any web page into the social graph.",
-    "icon": "Open Graph.png",
-    "dom": "meta[property*='og:']",
-    "oss": true,
-    "website": "https://ogp.me"
   },
   "OpenGSE": {
     "cats": [
