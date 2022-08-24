@@ -1015,6 +1015,24 @@
     ],
     "website": "http://openx.com"
   },
+  "Open-Xchange App Suite": {
+    "cats": [
+      30, 75
+    ],
+    "cpe": "cpe:2.3:a:open-xchange:app_suite:*:*:*:*:*:*:*:*",
+    "description": "Open-Xchange is a web-based communication, collaboration and office productivity software suite.",
+    "dom": "#io-ox-core",
+    "icon": "openxchange.svg",
+    "website": "https://www.open-xchange.com/",
+    "js": {
+      "ox.version": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "implies": "Java"
+  },
   "OpinionLab": {
     "cats": [
       73
