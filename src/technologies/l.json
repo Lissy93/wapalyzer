@@ -1499,6 +1499,22 @@
     "icon": "Lua.png",
     "website": "http://www.lua.org"
   },
+  "Luana": {
+    "cats": [
+      18
+    ],
+    "description": "Luana is a web framework that uses web browser APIs and features to make a cross-platform web app look like a Native one and bring the same experience.",
+    "icon": "default.svg",
+    "implies": "PWA",
+    "meta": {
+      "generator": "^Luana\\sFramework\\s([\\d\\.]+)$\\;version:\\1"
+    },
+    "js": {
+      "luanaframework": ""
+    },
+    "oss": true,
+    "website": "https://luanaframework.github.io"
+  },
   "Lucene": {
     "cats": [
       34
