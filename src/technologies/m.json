@@ -914,7 +914,7 @@
       "PIWIK_SESSID": ""
     },
     "cpe": "cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*",
-    "description": "Matomo Analytics is a free and open-source web analytics applicatio, that runs on a PHP/MySQL web-server.",
+    "description": "Matomo Analytics is a free and open-source web analytics application, that runs on a PHP/MySQL web-server.",
     "icon": "Matomo.png",
     "js": {
       "Matomo": "",
@@ -927,6 +927,11 @@
       "google-play-app": "app-id=org\\.piwik\\.mobile2"
     },
     "scriptSrc": "piwik\\.js|piwik\\.php",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "oss": true,
     "website": "https://matomo.org"
   },
   "Matomo Tag Manager": {
