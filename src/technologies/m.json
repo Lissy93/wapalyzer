@@ -1499,6 +1499,24 @@
     "scriptSrc": "www\\.clarity\\.ms/.+/([\\d.]+)/clarity\\.js\\;version:\\1",
     "website": "https://clarity.microsoft.com"
   },
+  "Microsoft Dynamics 365 Commerce": {
+    "cats": [
+      6
+    ],
+    "description": "Microsoft Dynamics 365 Commerce, an omnichannel ecommerce solution that allows you to build a website, connect physical and digital stores, track customer behaviours and requirements, deliver personalised experiences.",
+    "icon": "Microsoft.svg",
+    "requires": [
+      "React",
+      "Azure"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.dynamics365commerce\\.ms/",
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://dynamics.microsoft.com/commerce/overview"
+  },
   "Microsoft Excel": {
     "cats": [
       20
