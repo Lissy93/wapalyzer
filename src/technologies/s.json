@@ -2342,6 +2342,7 @@
     "cats": [
       6
     ],
+    "cpe": "cpe:2.3:a:shopware:shopware:*:*:*:*:*:*:*:*",
     "description": "Shopware is an enterprise-level ecommerce platform.",
     "headers": {
       "sw-context-token": "^[\\w]{32}$\\;version:6",
@@ -2359,6 +2360,9 @@
     ],
     "meta": {
       "application-name": "Shopware"
+    },
+    "js": {
+      "shopStudioGoogleTagManagerCloudGtagCallback": "\\;confidence:50"
     },
     "pricing": [
       "low",
