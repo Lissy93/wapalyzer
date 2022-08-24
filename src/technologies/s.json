@@ -158,22 +158,6 @@
     "scriptSrc": "/sim(?:site|core)/js",
     "website": "http://simgroep.nl/internet/portfolio-contentbeheer_41623/"
   },
-  "Simvoly": {
-    "cats": [
-      51
-    ],
-    "description": "Simvoly is a drag-and-drop website builder for small and medium-sized businesses, agencies, and freelancers.",
-    "icon": "Simvoly.png",
-    "js": {
-      "Simvoly": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://simvoly.com"
-  },
   "SMF": {
     "cats": [
       2
@@ -966,6 +950,22 @@
     },
     "oss": true,
     "website": "https://scrollmagic.io"
+  },
+  "Scully": {
+    "cats": [
+      57
+    ],
+    "description": "Scully is a static site generator for Angular projects looking to embrace the Jamstack.",
+    "icon": "Scully.svg",
+    "implies": "Angular",
+    "js": {
+      "ScullyIO": ""
+    },
+    "meta": {
+      "generator": "^Scully\\s([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://scully.io"
   },
   "SeQura": {
     "cats": [
@@ -2374,11 +2374,11 @@
       "jQuery",
       "Symfony"
     ],
-    "meta": {
-      "application-name": "Shopware"
-    },
     "js": {
       "shopStudioGoogleTagManagerCloudGtagCallback": "\\;confidence:50"
+    },
+    "meta": {
+      "application-name": "Shopware"
     },
     "pricing": [
       "low",
@@ -2687,6 +2687,22 @@
     },
     "icon": "Simplebo.png",
     "website": "https://www.simplebo.fr"
+  },
+  "Simvoly": {
+    "cats": [
+      51
+    ],
+    "description": "Simvoly is a drag-and-drop website builder for small and medium-sized businesses, agencies, and freelancers.",
+    "icon": "Simvoly.png",
+    "js": {
+      "Simvoly": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://simvoly.com"
   },
   "Sinatra": {
     "cats": [
@@ -5760,22 +5776,6 @@
     },
     "scriptSrc": "scrollreveal(?:\\.min)(?:\\.js)",
     "website": "https://scrollrevealjs.org"
-  },
-  "Scully": {
-    "cats": [
-      57
-    ],
-    "description": "Scully is a static site generator for Angular projects looking to embrace the Jamstack.",
-    "icon": "Scully.svg",
-    "implies": "Angular",
-    "meta": {
-      "generator": "^Scully\\s([\\d\\.]+)$\\;version:\\1"
-    },
-    "js": {
-      "ScullyIO": ""
-    },
-    "oss": true,
-    "website": "https://scully.io"
   },
   "shine.js": {
     "cats": [

@@ -815,13 +815,13 @@
       "_exaudiflazio": "",
       "flazio_global_conversion": ""
     },
-    "scriptSrc": "//flazio\\.org/",
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "//flazio\\.org/",
     "website": "https://flazio.com"
   },
   "Fleksa": {
@@ -1427,11 +1427,11 @@
       "Python",
       "MariaDB"
     ],
-    "meta": {
-      "generator": "^frappe$"
-    },
     "js": {
       "frappe.avatar": ""
+    },
+    "meta": {
+      "generator": "^frappe$"
     },
     "oss": true,
     "website": "https://frappeframework.com"
@@ -1644,6 +1644,24 @@
       "static\\.fbot\\.me/friendbuy\\.js"
     ],
     "website": "https://www.friendbuy.com"
+  },
+  "Friendly Captcha": {
+    "cats": [
+      16
+    ],
+    "description": "Friendly Captcha is a proof-of-work based solution in which the user’s device does all the work.",
+    "dom": "div.frc-captcha",
+    "icon": "FriendlyCaptcha.svg",
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring",
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "x-frc-client\",\"js-(\\d+(\\.\\d+)+)\\;version:\\1",
+    "website": "https://friendlycaptcha.com",
+    "xhr": "api.friendlycaptcha.com"
   },
   "Frizbit": {
     "cats": [
@@ -1876,23 +1894,5 @@
     "oss": true,
     "scriptSrc": "/fullPage\\.js(?:/([\\d\\.]+)/)?\\;version:\\1",
     "website": "https://github.com/alvarotrigo/fullpage.js"
-  },
-  "Friendly Captcha": {
-    "description": "Friendly Captcha is a proof-of-work based solution in which the user’s device does all the work.",
-    "cats": [
-      16
-    ],
-    "dom": "div.frc-captcha",
-    "scripts": "x-frc-client\",\"js-(\\d+(\\.\\d+)+)\\;version:\\1",
-    "xhr": "api.friendlycaptcha.com",
-    "saas": true,
-    "pricing": [
-      "low",
-      "freemium",
-      "recurring",
-      "poa"
-    ],
-    "icon": "FriendlyCaptcha.svg",
-    "website": "https://friendlycaptcha.com"
   }
 }

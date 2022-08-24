@@ -98,6 +98,25 @@
     },
     "website": "http://www.eprints.org"
   },
+  "ERPNext": {
+    "cats": [
+      1
+    ],
+    "cpe": "cpe:2.3:a:frappe:erpnext:*:*:*:*:*:*:*:*",
+    "description": "ERPNext is a free and open-source integrated Enterprise Resource Planning (ERP) software developed by Frappe Technologies.",
+    "icon": "ERPNext.png",
+    "implies": "Frappe",
+    "js": {
+      "erpnext.shopping_cart": "",
+      "erpnext.subscribe_to_newsletter": ""
+    },
+    "oss": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://erpnext.com"
+  },
   "ESW": {
     "cats": [
       106
@@ -1050,25 +1069,6 @@
     },
     "icon": "Erlang.png",
     "website": "http://www.erlang.org"
-  },
-  "ERPNext": {
-    "cats": [
-      1
-    ],
-    "cpe": "cpe:2.3:a:frappe:erpnext:*:*:*:*:*:*:*:*",
-    "description": "ERPNext is a free and open-source integrated Enterprise Resource Planning (ERP) software developed by Frappe Technologies.",
-    "icon": "ERPNext.png",
-    "implies": "Frappe",
-    "js": {
-      "erpnext.shopping_cart": "",
-      "erpnext.subscribe_to_newsletter": ""
-    },
-    "oss": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://erpnext.com"
   },
   "Errorception": {
     "cats": [
