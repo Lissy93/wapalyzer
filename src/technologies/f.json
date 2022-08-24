@@ -1417,6 +1417,25 @@
     ],
     "website": "https://www.france-express.com"
   },
+  "Frappe": {
+    "cats": [
+      18
+    ],
+    "description": "Frappe is a full stack, batteries-included, web framework written in Python and Javascript.",
+    "icon": "Frappe.png",
+    "implies": [
+      "Python",
+      "MariaDB"
+    ],
+    "meta": {
+      "generator": "^frappe$"
+    },
+    "js": {
+      "frappe.avatar": ""
+    },
+    "oss": true,
+    "website": "https://frappeframework.com"
+  },
   "FreakOut": {
     "cats": [
       36
