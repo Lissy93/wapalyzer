@@ -2500,8 +2500,8 @@
     ],
     "description": "Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services (AWS) that provides object storage through a web service interface.",
     "headers": {
-      "Content-Security-Policy": "s3[^ ]*amazonaws\\.com\\s",
-      "Content-Security-Policy-Report-Only": "s3[^ ]*\\.amazonaws\\.com\\s",
+      "Content-Security-Policy": "s3[^ ]*amazonaws\\.com",
+      "Content-Security-Policy-Report-Only": "s3[^ ]*\\.amazonaws\\.com",
       "server": "^AmazonS3$"
     },
     "icon": "aws-s3.svg",
