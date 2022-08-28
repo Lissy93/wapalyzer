@@ -1690,6 +1690,18 @@
     "icon": "CloudFlare.svg",
     "website": "https://developers.cloudflare.com/logs/reference/log-fields/zone/nel_reports"
   },
+  "Cloudflare Rocket Loader": {
+    "cats": [
+      92
+    ],
+    "description": "Cloudflare Rocket Loader is responsible for prioritising over website's content by delaying the loading of Javascript until rendering.",
+    "icon": "CloudFlare.svg",
+    "js": {
+      "__cfQR.done": "",
+      "__cfRLUnblockHandlers": ""
+    },
+    "website": "https://support.cloudflare.com/hc/en-us/articles/200168056-Understanding-Rocket-Loader"
+  },
   "Cloudimage": {
     "cats": [
       31,
