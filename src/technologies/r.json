@@ -710,6 +710,28 @@
     "saas": true,
     "website": "https://recruitee.com"
   },
+  "Recurate": {
+    "cats": [
+      19
+    ],
+    "description": "Recurate is a tech-enabled resale service that empowers brands & retailers to establish their own integrated resale platforms directly on their ecommerce sites.",
+    "icon": "Recurate.svg",
+    "require": "Shopify",
+    "dom": {
+      "link[href*='/recurate-site.css']": {
+        "attributes": {
+          "href": "cdn\\.shopify\\.com/.+/recurate-site\\.css"
+        }
+      },
+      "a[href*='support@recurate.com']": {
+        "attributes": {
+          "href": "mailto\\:support\\@recurate\\.com"
+        }
+      }
+    },
+    "scripts": "\"vendor\"\\:\"Recurate\"",
+    "website": "https://www.recurate.com"
+  },
   "Recurly": {
     "cats": [
       41
