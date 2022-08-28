@@ -1543,11 +1543,17 @@
     "cats": [
       18
     ],
+    "cpe": "cpe:2.3:a:thinkphp:thinkphp:-:*:*:*:*:*:*:*",
+    "description": "ThinkPHP is an open-source PHP framework with MVC structure developed and maintained by Shanghai Topthink Company.",
     "headers": {
       "X-Powered-By": "ThinkPHP"
     },
     "icon": "ThinkPHP.png",
+    "cookies": {
+      "thinkphp_show_page_trace": ""
+    },
     "implies": "PHP",
+    "oss": true,
     "website": "http://www.thinkphp.cn"
   },
   "Thinkific": {
