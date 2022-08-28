@@ -1175,6 +1175,29 @@
     "scriptSrc": "static\\.resmio\\.\\w+/static/",
     "website": "https://www.resmio.com"
   },
+  "Resova": {
+    "cats": [
+      72
+    ],
+    "description": "Resova is an online booking software.",
+    "icon": "Resova.svg",
+    "dom": {
+      "a[href*='.resova.']": {
+        "attributes": {
+          "href": "\\.resova\\.(?:us|eu|co\\.uk)"
+        }
+      }
+    },
+    "js": {
+      "initResova": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://resova.com"
+  },
   "Responsive Lightbox & Gallery": {
     "cats": [
       87,
