@@ -810,6 +810,24 @@
     "scriptSrc": "\\.k-analytix\\.com",
     "website": "https://www.konduto.com"
   },
+  "Kontent.ai": {
+    "cats": [
+      1
+    ],
+    "description": "Kontent.ai is a SaaS-based modular content platform.",
+    "icon": "Kontent.ai.svg",
+    "headers": {
+      "content-security-policy": "\\.kc-usercontent\\.com"
+    },
+    "dom": "img[src*='.kc-usercontent.com'], link[href*='.kc-usercontent.com']",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "high",
+      "recurring"
+    ],
+    "website": "https://kontent.ai"
+  },
   "Koobi": {
     "cats": [
       1
