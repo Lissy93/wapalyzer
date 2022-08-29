@@ -102,7 +102,7 @@
     "implies": "Microsoft ASP.NET",
     "js": {
       "DotNetNuke": "",
-      "dnn.apiversion": "^(.+)$\\;version:\\1"
+      "dnn.apiversion": "^([\\d\\.]+)$\\;version:\\1"
     },
     "meta": {
       "generator": "DotNetNuke"
