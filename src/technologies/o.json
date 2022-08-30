@@ -172,6 +172,17 @@
     "scriptSrc": "ocnk-min\\.js",
     "website": "https://www.ocnk.com"
   },
+  "ocStore": {
+    "cats": [
+      6
+    ],
+    "description": "ocStore is an online store based on Opencart and open-source.",
+    "icon": "ocStore.png",
+    "implies": "OpenCart",
+    "html": "<!--[^>]+ocStore(?:\\s([\\d\\.a-z]+))?\\;version:\\1",
+    "oss": true,
+    "website": "https://ocstore.com"
+  },
   "Oct8ne": {
     "cats": [
       52
