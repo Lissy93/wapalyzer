@@ -1099,6 +1099,21 @@
     "scriptSrc": "fontify\\.nitroapps\\.co/",
     "website": "https://apps.shopify.com/fontify-change-customize-font-for-your-store"
   },
+  "FontServer": {
+    "cats": [
+      17
+    ],
+    "description": "FontServer is a online font delivery network service-provider for websites.",
+    "icon": "FontServer.svg",
+    "dom": {
+      "link[href*='.font']": {
+        "attributes": {
+          "href": "\\.font(?:api|cdn)\\.ir"
+        }
+      }
+    },
+    "website": "https://fontserver.ir"
+  },
   "FooPlugins FooGallery": {
     "cats": [
       87,
