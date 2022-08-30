@@ -725,13 +725,19 @@
     "cats": [
       2
     ],
+    "description": "NodeBB forum software is powered by Node.js and built on either a Redis or MongoDB database.",
     "cpe": "cpe:2.3:a:nodebb:nodebb:*:*:*:*:*:*:*:*",
     "headers": {
       "X-Powered-By": "^NodeBB$"
     },
-    "icon": "NodeBB.png",
+    "icon": "NodeBB.svg",
     "implies": "Node.js",
-    "scriptSrc": "^/nodebb\\.min\\.js\\?",
+    "scriptSrc": "/nodebb\\.min\\.js\\?",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "website": "https://nodebb.org"
   },
   "Norton Shopping Guarantee": {
