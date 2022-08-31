@@ -863,6 +863,16 @@
     "scriptSrc": "kotisivukone(?:\\.min)?\\.js",
     "website": "http://www.kotisivukone.fi"
   },
+  "Kotlin": {
+    "cats": [
+      27
+    ],
+    "cpe": "cpe:2.3:a:jetbrains:kotlin:*:*:*:*:*:*:*:*",
+    "description": "Kotlin is a general purpose, free, open-source, statically typed “pragmatic” programming language initially designed for the JVM (Java Virtual Machine) and Android that combines object-oriented and functional programming features.",
+    "icon": "Kotlin.svg",
+    "oss": true,
+    "website": "https://kotlinlang.org"
+  },
   "Kount": {
     "cats": [
       10,
@@ -882,6 +892,20 @@
       "shopify\\.kount\\.net/js"
     ],
     "website": "https://kount.com"
+  },
+  "Ktor": {
+    "cats": [
+      18
+    ],
+    "cpe": "cpe:2.3:a:jetbrains:ktor:*:*:*:*:*:*:*:*",
+    "description": "Ktor is a Kotlin framework that allow developers to write asynchronous clients and servers applications, in Kotlin.",
+    "icon": "Ktor.svg",
+    "implies": "Kotlin",
+    "headers": {
+      "x-engine": "^Ktor$",
+      "server": "^Ktor/debug$"
+    },
+    "website": "https://ktor.io"
   },
   "Kubernetes Dashboard": {
     "cats": [
