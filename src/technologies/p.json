@@ -1618,6 +1618,26 @@
     ],
     "website": "https://www.pizzanetz.de"
   },
+  "Plaid": {
+    "cats": [
+      41,
+      19
+    ],
+    "description": "Plaid is a fintech company that facilitates communication between financial services apps and users' banks and credit card providers.",
+    "icon": "Plaid.svg",
+    "headers": {
+      "content-security-policy": "cdn\\.plaid\\.com/"
+    },
+    "js": {
+      "Plaid.version": "([\\.\\d]+)\\;version:\\1"
+    },
+    "scriptSrc": "\\.plaid\\.com/",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://plaid.com"
+  },
   "Planet": {
     "cats": [
       49
