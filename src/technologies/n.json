@@ -586,6 +586,20 @@
     "scriptSrc": "(?:api|sdk)\\.nextsale\\.io/",
     "website": "https://nextsale.io"
   },
+  "NextUI": {
+    "cats": [
+      66
+    ],
+    "description": "NextUI is beautiful, fast and modern React UI Library.",
+    "dom": "[class^='nextui-c-']",
+    "icon": "NextUI.png",
+    "implies": [
+      "React",
+      "Stitches"
+    ],
+    "oss": true,
+    "website": "https://nextui.org/"
+  },
   "Nginx": {
     "cats": [
       22,
