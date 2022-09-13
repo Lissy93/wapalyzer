@@ -777,8 +777,15 @@
     "cats": [
       66
     ],
-    "css": "--un-(?:rotate|translate|space-x|text-opacity|border-opacity)",
     "description": "UnoCSS is instant on-demand Atomic CSS engine.",
+    "css": "--un-(?:rotate|translate|space-x|text-opacity|border-opacity)",
+    "dom": {
+      "style[data-unocss]": {
+        "attributes": {
+          "data-unocss": "([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
     "oss": true,
     "icon": "UnoCSS.svg",
     "website": "https://uno.antfu.me/"
