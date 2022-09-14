@@ -216,8 +216,8 @@
     "icon": "aspnetboilerplate.png",
     "implies": "Microsoft ASP.NET",
     "js": {
-      "abp.localization": "",
-      "abp.toAbsAppPath": ""
+      "abp.timing.utcClockProvider": "",
+      "abp.aspnetboilerplate.version": "(.*)\\;version:\\1"
     },
     "oss": true,
     "website": "https://www.aspnetboilerplate.com"
