@@ -371,6 +371,27 @@
     "scriptSrc": "/wp-content/themes/fairy(?:-premium)?/.+custom\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.candidthemes.com/themes/fairy"
   },
+  "Canny": {
+    "cats": [
+      13
+    ],
+    "description": "Canny is a cloud-based solution that helps small to large businesses collect, analyse, prioritise and track user feedback to make informed product decisions.",
+    "icon": "Canny.svg",
+    "headers": {
+      "Content-Security-Policy": "//canny\\.io"
+    },
+    "dom": "a[href*='.canny.io/']",
+    "js": {
+      "Canny": ""
+    },
+    "pricing": [
+      "freemium",
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://canny.io"
+  },
   "Canto": {
     "cats": [
       95
