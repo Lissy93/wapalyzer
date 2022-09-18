@@ -4847,11 +4847,14 @@
     "cats": [
       31
     ],
+    "description": "Statically is a free, fast and modern CDN for open-source projects, WordPress, images, and any static assets.",
+    "icon": "Statically.svg",
     "headers": {
       "Server": "^statically$"
     },
-    "html": "<link [^>]*?href=\"?[a-z]*?:?//cdn\\.statically\\.io/",
-    "icon": "Statically.svg",
+    "dom": "link[href*='cdn.statically.io/'], a[href*='cdn.statically.io/']",
+    "scriptSrc": "cdn\\.statically\\.io/",
+    "oss": true,
     "website": "https://statically.io"
   },
   "SteelHouse": {
