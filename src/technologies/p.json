@@ -2454,6 +2454,26 @@
     "oss": true,
     "website": "https://processwire.com"
   },
+  "Product Hunt": {
+    "cats": [
+      19
+    ],
+    "description": "Product Hunt is a community-based website that allows makers and marketers to launch their products or services and get in touch with their first real users.",
+    "icon": "Product Hunt.svg",
+    "dom": {
+      "a[href*='.producthunt.com/']": {
+        "attributes": {
+          "href": "\\.producthunt\\.com/(?:post|tech|products)"
+        }
+      }
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.producthunt.com"
+  },
   "Product Personalizer": {
     "cats": [
       100,
