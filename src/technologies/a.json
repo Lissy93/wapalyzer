@@ -2685,7 +2685,7 @@
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "cdn\\.amplitude\\.com",
+    "scriptSrc": "cdn\\.(?:segment.+)?amplitude(?:\\.com|-plugins)",
     "website": "https://amplitude.com",
     "xhr": "\\.amplitude\\.com"
   },
