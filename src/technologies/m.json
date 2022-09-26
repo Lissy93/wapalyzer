@@ -2831,6 +2831,19 @@
     "scripts": "localStorage\\.getItem\\('mdbook-(?:sidebar|theme)'\\)",
     "website": "https://github.com/rust-lang/mdBook"
   },
+  "MDBootstrap": {
+    "cats": [
+      66
+    ],
+    "description": "MDBootstrap (Material Design for Bootstrap) is a complete UI package that can be integrated with other frameworks such as Angular, React, Vue, etc. It is used to design a fully responsive and mobile-friendly layout using various components, plugins, animation.",
+    "icon": "MDBootstrap.png",
+    "js": {
+      "mdb.ScrollSpy": ""
+    },
+    "scriptSrc": "(?:/mdbootstrap/([\\d\\.]+)/)?js/mdb\\.min\\.js\\;version:\\1",
+    "oss": true,
+    "website": "https://mdbootstrap.com"
+  },
   "metisMenu": {
     "cats": [
       59
