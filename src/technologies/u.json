@@ -779,6 +779,23 @@
     "saas": true,
     "website": "https://ulogin.ru"
   },
+  "UnoCSS": {
+    "cats": [
+      66
+    ],
+    "description": "UnoCSS is instant on-demand Atomic CSS engine.",
+    "css": "--un-(?:rotate|translate|space-x|text-opacity|border-opacity)",
+    "dom": {
+      "style[data-unocss]": {
+        "attributes": {
+          "data-unocss": "([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "icon": "UnoCSS.svg",
+    "website": "https://uno.antfu.me/"
+  },
   "uPortal": {
     "cats": [
       21
