@@ -920,6 +920,10 @@
     "meta": {
       "generator": "^VuePress(?: ([0-9.]+)(-[a-z]+.[0-9]+)?)?$\\;version:\\1"
     },
+    "js": {
+      "__VUEPRESS__.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
     "website": "https://vuepress.vuejs.org/"
   },
   "Vuetify": {
