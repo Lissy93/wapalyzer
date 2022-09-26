@@ -1,4 +1,15 @@
 {
+  "NexusPIPE": {
+    "cats": [
+      16
+    ],
+    "description": "NexusPIPE is a ADC and DDoS mitigation Company.",
+    "headers": {
+      "Server": "^Nexuspipe.com"
+    },
+    "icon": "NexusPIPE.png",
+    "website": "https://nexuspipe.com"
+  },
   "NACEX": {
     "cats": [
       99
@@ -558,6 +569,29 @@
     "scriptSrc": "/nextgen-gallery/js/",
     "website": "https://www.imagely.com/wordpress-gallery-plugin"
   },
+  "Nextcloud": {
+    "cats": [
+      95,
+      19
+    ],
+    "cpe": "cpe:2.3:a:nextcloud:nextcloud:*:*:*:*:*:*:*:*",
+    "description": "Nextcloud is a suite of client-server software for creating and using file hosting services.",
+    "icon": "Nextcloud.svg",
+    "implies": "PHP",
+    "cookies": {
+      "__Host-nc_sameSiteCookiestrict": "",
+      " __Host-nc_sameSiteCookielax": ""
+    },
+    "js": {
+      "oc_config.version": "^([\\.\\d]+)$\\;version:\\1\\;confidence:0"
+    },
+    "oss": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://nextcloud.com"
+  },
   "Nextdoor Ads": {
     "cats": [
       36
@@ -725,13 +759,19 @@
     "cats": [
       2
     ],
+    "description": "NodeBB forum software is powered by Node.js and built on either a Redis or MongoDB database.",
     "cpe": "cpe:2.3:a:nodebb:nodebb:*:*:*:*:*:*:*:*",
     "headers": {
       "X-Powered-By": "^NodeBB$"
     },
-    "icon": "NodeBB.png",
+    "icon": "NodeBB.svg",
     "implies": "Node.js",
-    "scriptSrc": "^/nodebb\\.min\\.js\\?",
+    "scriptSrc": "/nodebb\\.min\\.js\\?",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "website": "https://nodebb.org"
   },
   "Norton Shopping Guarantee": {

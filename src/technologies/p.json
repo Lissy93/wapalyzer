@@ -356,6 +356,24 @@
     "scriptSrc": "\\.getpaloma\\.com/",
     "website": "https://www.getpaloma.com"
   },
+  "Panelbear": {
+    "cats": [
+      10,
+      13
+    ],
+    "description": "Panelbear is a simple website performance and traffic analytics tool.",
+    "icon": "Panelbear.svg",
+    "js": {
+      "panelbear": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://panelbear.com"
+  },
   "Pantheon": {
     "cats": [
       62
@@ -1426,6 +1444,24 @@
     },
     "website": "https://www.pingoteam.ir/"
   },
+  "PinnacleCart": {
+    "cats": [
+      6
+    ],
+    "description": "PinnacleCart is an ecommerce platform.",
+    "icon": "PinnacleCart.png",
+    "js": {
+      "USER_DELETE_PAYMENT_PROFILE": "^DeletePaymentProfile$\\;confidence:49",
+      "USER_DELETE_ADDRESS": "^DeleteShippingAddress$\\;confidence:49"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.pinnaclecart.com"
+  },
   "Pinterest": {
     "cats": [
       5
@@ -1617,6 +1653,26 @@
       "recurring"
     ],
     "website": "https://www.pizzanetz.de"
+  },
+  "Plaid": {
+    "cats": [
+      41,
+      19
+    ],
+    "description": "Plaid is a fintech company that facilitates communication between financial services apps and users' banks and credit card providers.",
+    "icon": "Plaid.svg",
+    "headers": {
+      "content-security-policy": "cdn\\.plaid\\.com/"
+    },
+    "js": {
+      "Plaid.version": "([\\.\\d]+)\\;version:\\1"
+    },
+    "scriptSrc": "\\.plaid\\.com/",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://plaid.com"
   },
   "Planet": {
     "cats": [
@@ -2912,12 +2968,13 @@
       25
     ],
     "description": "Particles.js is a JavaScript library for creating particles.",
-    "html": "<div id=\"particles-js\">",
+    "dom": "div#particles-js",
     "js": {
       "particlesJS": ""
     },
     "scriptSrc": "/particles(?:\\.min)?\\.js",
-    "website": "https://vincentgarreau.com/particles.js/"
+    "oss": true,
+    "website": "https://github.com/VincentGarreau/particles.js"
   },
   "phpAlbum": {
     "cats": [
