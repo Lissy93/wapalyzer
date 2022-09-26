@@ -2451,11 +2451,17 @@
       1,
       11
     ],
-    "icon": "Mura CMS.png",
+    "cpe": "cpe:2.3:a:blueriver:muracms:*:*:*:*:*:*:*:*",
+    "description": "Mura CMS is the cloud-based, API driven, content management platform.",
+    "icon": "Mura CMS.svg",
     "implies": "Adobe ColdFusion",
     "meta": {
-      "generator": "Mura CMS ([\\d]+)\\;version:\\1"
+      "generator": "Mura\\sCMS\\s([\\d\\.]+)\\;version:\\1"
     },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "http://www.getmura.com"
   },
   "Mustache": {
