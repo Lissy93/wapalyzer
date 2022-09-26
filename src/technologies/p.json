@@ -2912,12 +2912,13 @@
       25
     ],
     "description": "Particles.js is a JavaScript library for creating particles.",
-    "html": "<div id=\"particles-js\">",
+    "dom": "div#particles-js",
     "js": {
       "particlesJS": ""
     },
     "scriptSrc": "/particles(?:\\.min)?\\.js",
-    "website": "https://vincentgarreau.com/particles.js/"
+    "oss": true,
+    "website": "https://github.com/VincentGarreau/particles.js"
   },
   "phpAlbum": {
     "cats": [
