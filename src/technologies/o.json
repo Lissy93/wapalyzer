@@ -847,7 +847,7 @@
     ],
     "cpe": "cpe:2.3:a:open-xchange:app_suite:*:*:*:*:*:*:*:*",
     "description": "Open-Xchange is a web-based communication, collaboration and office productivity software suite.",
-    "dom": "#io-ox-core",
+    "dom": "#io-ox-core, form > input[value='open-xchange-appsuite']",
     "icon": "openxchange.svg",
     "implies": "Java",
     "js": {
