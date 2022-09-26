@@ -558,6 +558,29 @@
     "scriptSrc": "/nextgen-gallery/js/",
     "website": "https://www.imagely.com/wordpress-gallery-plugin"
   },
+  "Nextcloud": {
+    "cats": [
+      95,
+      19
+    ],
+    "cpe": "cpe:2.3:a:nextcloud:nextcloud:*:*:*:*:*:*:*:*",
+    "description": "Nextcloud is a suite of client-server software for creating and using file hosting services.",
+    "icon": "Nextcloud.svg",
+    "implies": "PHP",
+    "cookies": {
+      "__Host-nc_sameSiteCookiestrict": "",
+      " __Host-nc_sameSiteCookielax": ""
+    },
+    "js": {
+      "oc_config.version": "^([\\.\\d]+)$\\;version:\\1\\;confidence:0"
+    },
+    "oss": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://nextcloud.com"
+  },
   "Nextdoor Ads": {
     "cats": [
       36
