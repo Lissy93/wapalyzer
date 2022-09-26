@@ -769,6 +769,18 @@
     "scriptSrc": "cdn\\.enable\\.co\\.il/",
     "website": "https://www.enable.co.il"
   },
+  "eNamad": {
+    "cats": [
+      19
+    ],
+    "description": "eNamad is an electronic trust symbol.",
+    "icon": "eNamad.png",
+    "meta": {
+      "enamad": "^\\d+$"
+    },
+    "dom":"a[href*='.enamad.ir/'][target='_blank'], div.e-namad-widget-wrapper, img[src*='.enamad.ir/']",
+    "website": "https://enamad.ir/"
+  },
   "Endurance Page Cache": {
     "cats": [
       87,
