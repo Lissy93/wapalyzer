@@ -169,7 +169,7 @@
       103
     ],
     "description": "Kaltura is a video content management platform that allows users to upload, manage, share, publish, and stream videos.",
-    "dom": "link[href*='.kaltura.com']",
+    "dom": "link[href*='.kaltura.com'], div.kaltura-zone",
     "icon": "Kaltura.svg",
     "js": {
       "Kplayer": "",
