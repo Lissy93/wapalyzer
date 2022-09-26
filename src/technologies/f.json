@@ -1805,6 +1805,24 @@
     "scriptSrc": "frosmo\\.easy\\.js",
     "website": "https://frosmo.com"
   },
+  "FUDforum": {
+    "cats": [
+      2
+    ],
+    "cpe": "cpe:2.3:a:fudforum:fudforum:*:*:*:*:*:*:*:*",
+    "description": "FUDforum is a discussion forum software with support for posts, topics, polls and attachments.",
+    "icon": "default.svg",
+    "implies": [
+      "Perl",
+      "PHP"
+    ],
+    "js": {
+      "fud_msg_focus": "",
+      "fud_tree_msg_focus": ""
+    },
+    "oss": true,
+    "website": "https://github.com/fudforum/FUDforum"
+  },
   "FullContact": {
     "cats": [
       10
