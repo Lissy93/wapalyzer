@@ -902,6 +902,23 @@
     "scriptSrc": "adinfinity\\.com\\.au",
     "website": "http://adinfinity.com.au"
   },
+  "Adjust": {
+    "cats": [
+      10
+    ],
+    "description": "Adjust is the mobile marketing analytics platform.",
+    "icon": "Adjust.svg",
+    "dom": "div[data-adjust*='app.adjust.com/'], a[href*='app.adjust.com/'], a[href*='.adj.st/'], form[action*='app.adjust.com/']",
+    "js": {
+      "Adjust.initSdk": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg",
+      "poa"
+    ],
+    "website": "https://www.adjust.com"
+  },
   "AdOcean": {
     "cats": [
       36
