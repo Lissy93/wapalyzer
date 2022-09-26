@@ -103,7 +103,7 @@
   },
   "USWDS": {
     "cats": [
-      18
+      66
     ],
     "description": "USWDS is a design system for the federal government.",
     "icon": "USWDS.svg",
@@ -451,7 +451,13 @@
       13
     ],
     "description": "UptimeRobot is a web-based software that is designed to monitor the sites frequently to check whether any site is down owing to server problem or any bug in coding.",
-    "dom": "a[href*='stats.uptimerobot.com/']",
+    "dom": {
+      "a[href*='uptimerobot.com']": {
+        "attributes": {
+          "href": "(?:\\.|//)uptimerobot\\.com/"
+        }
+      }
+    },
     "headers": {
       "content-security-policy": "\\.uptimerobot\\.com"
     },
@@ -462,7 +468,7 @@
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "stats\\.uptimerobot\\.com/",
+    "scriptSrc": "\\.uptimerobot\\.com/",
     "website": "https://uptimerobot.com"
   },
   "Uptrends": {
@@ -772,6 +778,23 @@
     ],
     "saas": true,
     "website": "https://ulogin.ru"
+  },
+  "UnoCSS": {
+    "cats": [
+      66
+    ],
+    "description": "UnoCSS is instant on-demand Atomic CSS engine.",
+    "css": "--un-(?:rotate|translate|space-x|text-opacity|border-opacity)",
+    "dom": {
+      "style[data-unocss]": {
+        "attributes": {
+          "data-unocss": "([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "icon": "UnoCSS.svg",
+    "website": "https://uno.antfu.me/"
   },
   "uPortal": {
     "cats": [

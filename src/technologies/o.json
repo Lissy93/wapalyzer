@@ -172,6 +172,17 @@
     "scriptSrc": "ocnk-min\\.js",
     "website": "https://www.ocnk.com"
   },
+  "ocStore": {
+    "cats": [
+      6
+    ],
+    "description": "ocStore is an online store based on Opencart and open-source.",
+    "icon": "ocStore.png",
+    "implies": "OpenCart",
+    "html": "<!--[^>]+ocStore(?:\\s([\\d\\.a-z]+))?\\;version:\\1",
+    "oss": true,
+    "website": "https://ocstore.com"
+  },
   "Oct8ne": {
     "cats": [
       52
@@ -697,6 +708,24 @@
     "saas": true,
     "website": "https://onfido.com"
   },
+  "onpublix": {
+    "cats": [
+      1
+    ],
+    "description": "onpublix is a web content management system (CMS) platform for eBusinesses.",
+    "icon": "onpublix.svg",
+    "meta": {
+      "generator": "^onpublix\\s([\\d\\.]+)$\\;version:\\1"
+    },
+    "saas": true,
+    "pricing": [
+      "onetime",
+      "mid",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.onpublix.de"
+  },
   "Ookla Speedtest Custom": {
     "cats": [
       5
@@ -715,6 +744,27 @@
     "saas": true,
     "scriptSrc": "\\.speedtestcustom\\.com/",
     "website": "https://www.ookla.com/speedtest-custom"
+  },
+  "Oopy": {
+    "cats": [
+      51
+    ],
+    "description": "Oopy provides you with a simple and easy way to turn your Notion page into a performant website.",
+    "icon": "Oopy.png",
+    "implies": [
+      "Notion",
+      "Next.js"
+    ],
+    "oss": false,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "js": {
+      "__OOPY__": ""
+    },
+    "saas": true,
+    "website": "https://oopy.us/"
   },
   "Open AdStream": {
     "cats": [
@@ -1307,16 +1357,24 @@
     "requires": "WordPress",
     "website": "https://themeisle.com/plugins/orbit-fox-companion"
   },
-  "Orchard CMS": {
+  "Orchard Core": {
     "cats": [
       1
     ],
-    "icon": "Orchard CMS.png",
+    "cpe": "cpe:2.3:a:orchardcore:orchard_core:*:*:*:*:*:*:*:*",
+    "description": "Orchard Core is an open-source modular and multi-tenant application framework built with ASP.NET Core, and a content management system (CMS).",
+    "icon": "Orchard Core.png",
     "implies": "Microsoft ASP.NET",
+    "headers": {
+      "x-powered-by": "OrchardCore",
+      "x-generator": "^Orchard$"
+    },
     "meta": {
       "generator": "Orchard"
     },
-    "website": "http://orchardproject.net"
+    "scriptSrc": "/OrchardCore\\.",
+    "oss": true,
+    "website": "https://orchardcore.net"
   },
   "Orckestra": {
     "cats": [

@@ -231,6 +231,23 @@
     "saas": true,
     "website": "https://www.magazord.com.br"
   },
+  "Magewire": {
+    "cats": [
+      19
+    ],
+    "description": "Magewire is a Laravel Livewire port for Magento 2.",
+    "icon": "default.svg",
+    "implies": [
+      "Laravel",
+      "Livewire"
+    ],
+    "js": {
+      "Magewire.connection-author": "",
+      "magewire": ""
+    },
+    "oss": true,
+    "website": "https://github.com/magewirephp/magewire"
+  },
   "MageWorx Search Autocomplete": {
     "cats": [
       29
@@ -1190,6 +1207,29 @@
     "saas": true,
     "website": "https://megagroup.ru/cms"
   },
+  "Meilisearch": {
+    "cats": [
+      29
+    ],
+    "description": "Meilisearch is a search engine created by Meili, a software development company based in France.",
+    "icon": "Meilisearch.svg",
+    "dom":"span.meilisearch-autocomplete",
+    "js": {
+      "MeiliSearch": "",
+      "MeiliSearchApiError": "",
+      "MeiliSearchTimeOutError": "",
+      "instantMeiliSearch": "",
+      "ac_apsulis_meilisearch": ""
+    },
+    "saas": true,
+    "oss": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.meilisearch.com"
+  },
   "Melis Platform": {
     "cats": [
       1,
@@ -2075,11 +2115,24 @@
       41,
       91
     ],
-    "description": "Mokka is a Buy Now Pay Later solution that connects target customer acquisition and settlement costs through marketing and promotion..",
+    "description": "Mokka is a Buy Now Pay Later solution that connects target customer acquisition and settlement costs through marketing and promotion.",
     "icon": "Mokka.svg",
     "saas": true,
     "scriptSrc": "revoiframe\\.js",
     "website": "https://mokka.ro"
+  },
+  "Mollie": {
+    "cats": [
+      41
+    ],
+    "description": "Mollie is a payment provider for Belgium and the Netherlands, offering payment methods such as credit card, iDEAL, Bancontact/Mister cash, PayPal, SCT, SDD, and others.",
+    "icon": "Mollie.svg",
+    "js": {
+      "Mollie": ""
+    },
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/mollie-payments-for-woocommerce/",
+    "website": "https://www.mollie.com"
   },
   "Mollom": {
     "cats": [
@@ -2451,11 +2504,17 @@
       1,
       11
     ],
-    "icon": "Mura CMS.png",
+    "cpe": "cpe:2.3:a:blueriver:muracms:*:*:*:*:*:*:*:*",
+    "description": "Mura CMS is the cloud-based, API driven, content management platform.",
+    "icon": "Mura CMS.svg",
     "implies": "Adobe ColdFusion",
     "meta": {
-      "generator": "Mura CMS ([\\d]+)\\;version:\\1"
+      "generator": "Mura\\sCMS\\s([\\d\\.]+)\\;version:\\1"
     },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
     "website": "http://www.getmura.com"
   },
   "Mustache": {
@@ -2828,6 +2887,22 @@
     ],
     "saas": true,
     "website": "https://www.mirrar.com"
+  },
+  "Miso": {
+    "cats": [
+      29,
+      76
+    ],
+    "description": "Miso is a real-time personalisation APIs for search, recommendation, and marketing.",
+    "icon": "Miso.svg",
+    "xhr": "\\.askmiso\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://miso.ai"
   },
   "mobicred": {
     "cats": [

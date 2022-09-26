@@ -371,6 +371,27 @@
     "scriptSrc": "/wp-content/themes/fairy(?:-premium)?/.+custom\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.candidthemes.com/themes/fairy"
   },
+  "Canny": {
+    "cats": [
+      13
+    ],
+    "description": "Canny is a cloud-based solution that helps small to large businesses collect, analyse, prioritise and track user feedback to make informed product decisions.",
+    "icon": "Canny.svg",
+    "headers": {
+      "Content-Security-Policy": "//canny\\.io"
+    },
+    "dom": "a[href*='.canny.io/']",
+    "js": {
+      "Canny": ""
+    },
+    "pricing": [
+      "freemium",
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://canny.io"
+  },
   "Canto": {
     "cats": [
       95
@@ -713,6 +734,19 @@
     ],
     "saas": true,
     "website": "https://www.celum.com"
+  },
+  "CEMax": {
+    "cats": [
+      52
+    ],
+    "description": "CEMax is a premium customer engagement platform.",
+    "icon": "CEMax.png",
+    "dom": "div[data-chat-url*='.cemaxai.com/']",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://cemax.ai"
   },
   "Cendyn": {
     "cats": [
@@ -1689,6 +1723,18 @@
     },
     "icon": "CloudFlare.svg",
     "website": "https://developers.cloudflare.com/logs/reference/log-fields/zone/nel_reports"
+  },
+  "Cloudflare Rocket Loader": {
+    "cats": [
+      92
+    ],
+    "description": "Cloudflare Rocket Loader is responsible for prioritising over website's content by delaying the loading of Javascript until rendering.",
+    "icon": "CloudFlare.svg",
+    "js": {
+      "__cfQR.done": "",
+      "__cfRLUnblockHandlers": ""
+    },
+    "website": "https://support.cloudflare.com/hc/en-us/articles/200168056-Understanding-Rocket-Loader"
   },
   "Cloudimage": {
     "cats": [

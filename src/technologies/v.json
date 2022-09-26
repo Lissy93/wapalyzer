@@ -134,6 +134,7 @@
     "cats": [
       18
     ],
+    "description": "Vaadin is an open-source framework for building user interfaces and single-page applications using Java and TypeScript.",
     "icon": "Vaadin.svg",
     "implies": "Java",
     "js": {
@@ -220,6 +221,17 @@
     },
     "icon": "Varnish.svg",
     "website": "http://www.varnish-cache.org"
+  },
+  "Ve Global": {
+    "cats": [
+      10
+    ],
+    "description": "Ve Global, formerly known as Ve Interactive, is a global technology company that provides ecommerce businesses with a managed-service of proprietary marketing software and digital advertising solutions.",
+    "icon": "Ve Global.png",
+    "js": {
+      "veTagData.appsServicesUrl": "\\.veinteractive\\.com"
+    },
+    "website": "https://ve.com"
   },
   "Venmo": {
     "cats": [
@@ -516,6 +528,24 @@
     "url": "^https?://(?:www\\.)?virgool\\.io",
     "website": "https://virgool.io"
   },
+  "Virtuagym": {
+    "cats": [
+      53
+    ],
+    "description": "Virtuagym is a cloud-based membership management and coaching platform designed for personal trainers and fitness businesses of all sizes.",
+    "icon": "Virtuagym.svg",
+    "dom": "a[href*='.virtuagym.com'][target='_blank'], iframe[src*='.virtuagym.com/]",
+    "js": {
+      "VGTutorial": "",
+      "open_vg_custom_modal": "",
+      "trigger_vg_neutral_message": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://business.virtuagym.com"
+  },
   "Virtooal": {
     "cats": [
       76
@@ -531,6 +561,24 @@
     "saas": true,
     "scriptSrc": "\\.virtooal\\.com/",
     "website": "https://try.virtooal.com"
+  },
+  "VirtualSpirits": {
+    "cats": [
+      52
+    ],
+    "description": "VirtualSpirits is a chatbot and live-chat service for websites.",
+    "icon": "VirtualSpirits.png",
+    "js": {
+      "vspiritbutton": "",
+      "vspirits_chat_client": "",
+      "vspiritsizeheight": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.virtualspirits.com"
   },
   "VirtueMart": {
     "cats": [
@@ -902,6 +950,10 @@
     "meta": {
       "generator": "^VuePress(?: ([0-9.]+)(-[a-z]+.[0-9]+)?)?$\\;version:\\1"
     },
+    "js": {
+      "__VUEPRESS__.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
     "website": "https://vuepress.vuejs.org/"
   },
   "Vuetify": {

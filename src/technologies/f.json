@@ -1069,6 +1069,13 @@
       "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
     ],
     "icon": "font-awesome.svg",
+    "dom": {
+      "link[href*='font-awesome']": {
+        "attributes": {
+          "href": "/font-awesome/([\\d\\.]+)/css/\\;version:\\1"
+        }
+      }
+    },
     "js": {
       "FontAwesomeCdnConfig": "",
       "___FONT_AWESOME___": ""
@@ -1098,6 +1105,21 @@
     "saas": true,
     "scriptSrc": "fontify\\.nitroapps\\.co/",
     "website": "https://apps.shopify.com/fontify-change-customize-font-for-your-store"
+  },
+  "FontServer": {
+    "cats": [
+      17
+    ],
+    "description": "FontServer is a online font delivery network service-provider for websites.",
+    "icon": "FontServer.svg",
+    "dom": {
+      "link[href*='.font']": {
+        "attributes": {
+          "href": "\\.font(?:api|cdn)\\.ir"
+        }
+      }
+    },
+    "website": "https://fontserver.ir"
   },
   "FooPlugins FooGallery": {
     "cats": [
@@ -1538,7 +1560,11 @@
       22
     ],
     "description": "Fresh is a full stack modern web framework for JavaScript and TypeScript developers, designed to make it trivial to create high-quality, performant, and personalized web applications.",
-    "dom": "style[id='__FRSH_STYLE']",
+    "dom": [
+      "style[id='__FRSH_TWIND']",
+      "style[id='__FRSH_STYLE']",
+      "script[id='__FRSH_STATE']"
+    ],
     "icon": "fresh.svg",
     "implies": [
       "Deno",
@@ -1778,6 +1804,24 @@
     "saas": true,
     "scriptSrc": "frosmo\\.easy\\.js",
     "website": "https://frosmo.com"
+  },
+  "FUDforum": {
+    "cats": [
+      2
+    ],
+    "cpe": "cpe:2.3:a:fudforum:fudforum:*:*:*:*:*:*:*:*",
+    "description": "FUDforum is a discussion forum software with support for posts, topics, polls and attachments.",
+    "icon": "default.svg",
+    "implies": [
+      "Perl",
+      "PHP"
+    ],
+    "js": {
+      "fud_msg_focus": "",
+      "fud_tree_msg_focus": ""
+    },
+    "oss": true,
+    "website": "https://github.com/fudforum/FUDforum"
   },
   "FullContact": {
     "cats": [

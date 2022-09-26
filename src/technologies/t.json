@@ -1543,11 +1543,17 @@
     "cats": [
       18
     ],
+    "cpe": "cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*",
+    "description": "ThinkPHP is an open-source PHP framework with MVC structure developed and maintained by Shanghai Topthink Company.",
     "headers": {
       "X-Powered-By": "ThinkPHP"
     },
     "icon": "ThinkPHP.png",
+    "cookies": {
+      "thinkphp_show_page_trace": ""
+    },
     "implies": "PHP",
+    "oss": true,
     "website": "http://www.thinkphp.cn"
   },
   "Thinkific": {
@@ -1791,6 +1797,16 @@
     ],
     "scriptSrc": "\\.timify\\.com/",
     "website": "https://www.timify.com"
+  },
+  "Tiny Slider": {
+    "cats": [
+      59
+    ],
+    "description": "Tiny Slider is a vanilla javascript slider for all purposes.",
+    "icon": "default.svg",
+    "oss": true,
+    "scriptSrc": "(?:/([\\d\\.]+)/min/)?tiny-slider(?:\\.min)?\\.js\\;version:\\1",
+    "website": "https://github.com/ganlanyuan/tiny-slider"
   },
   "TinyMCE": {
     "cats": [
