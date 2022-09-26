@@ -585,15 +585,15 @@
     "cpe": "cpe:2.3:a:bigtreecms:bigtree_cms:*:*:*:*:*:*:*:*",
     "description": "BigTree CMS is an extremely extensible open-source CMS built on PHP and MySQL.",
     "icon": "BigTree CMS.svg",
-    "js": {
-      "BigTree.Growling": "",
-      "BigTreeTagAdder": "",
-      "BigTreeMatrix": ""
-    },
     "implies": [
       "PHP",
       "MySQL"
     ],
+    "js": {
+      "BigTree.Growling": "",
+      "BigTreeMatrix": "",
+      "BigTreeTagAdder": ""
+    },
     "oss": true,
     "website": "https://www.bigtreecms.org"
   },
@@ -1056,11 +1056,11 @@
       1
     ],
     "description": "BoidCMS is a free and open-source flat file CMS for building simple websites and blogs in seconds, developed using PHP and uses JSON as a database.",
-    "icon": "BoidCMS.svg",
-    "implies": "PHP",
     "headers": {
       "X-Powered-By": "BoidCMS"
     },
+    "icon": "BoidCMS.svg",
+    "implies": "PHP",
     "oss": true,
     "website": "https://boidcms.github.io"
   },
@@ -1382,17 +1382,17 @@
       72
     ],
     "description": "Bookeo is a cloud-based booking and reservation solution that caters to tour operators, travel agencies, schools, therapists, photographers and event organizers.",
-    "icon": "Bookeo.svg",
     "dom": "a[href*='//bookeo.com/'], iframe[src*='//bookeo.com/']",
+    "icon": "Bookeo.svg",
     "js": {
       "bookeo_start": "",
       "bookeo_startMobileLabel": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.bookeo.com"
   },
   "Bookero": {

@@ -528,24 +528,6 @@
     "url": "^https?://(?:www\\.)?virgool\\.io",
     "website": "https://virgool.io"
   },
-  "Virtuagym": {
-    "cats": [
-      53
-    ],
-    "description": "Virtuagym is a cloud-based membership management and coaching platform designed for personal trainers and fitness businesses of all sizes.",
-    "icon": "Virtuagym.svg",
-    "dom": "a[href*='.virtuagym.com'][target='_blank'], iframe[src*='.virtuagym.com/]",
-    "js": {
-      "VGTutorial": "",
-      "open_vg_custom_modal": "",
-      "trigger_vg_neutral_message": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://business.virtuagym.com"
-  },
   "Virtooal": {
     "cats": [
       76
@@ -562,6 +544,24 @@
     "scriptSrc": "\\.virtooal\\.com/",
     "website": "https://try.virtooal.com"
   },
+  "Virtuagym": {
+    "cats": [
+      53
+    ],
+    "description": "Virtuagym is a cloud-based membership management and coaching platform designed for personal trainers and fitness businesses of all sizes.",
+    "dom": "a[href*='.virtuagym.com'][target='_blank'], iframe[src*='.virtuagym.com/]",
+    "icon": "Virtuagym.svg",
+    "js": {
+      "VGTutorial": "",
+      "open_vg_custom_modal": "",
+      "trigger_vg_neutral_message": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://business.virtuagym.com"
+  },
   "VirtualSpirits": {
     "cats": [
       52
@@ -573,11 +573,11 @@
       "vspirits_chat_client": "",
       "vspiritsizeheight": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.virtualspirits.com"
   },
   "VirtueMart": {
@@ -917,8 +917,8 @@
     "js": {
       "Vue.version": "^(.+)$\\;version:\\1",
       "__VUE_HOT_MAP__": "",
-      "vueDLL": "",
-      "__VUE__": ""
+      "__VUE__": "",
+      "vueDLL": ""
     },
     "scriptSrc": [
       "vue[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -948,11 +948,11 @@
     "description": "VuePress is a static site generator with a Vue-powered theming system, and a default theme for writing technical documentation.",
     "icon": "VuePress.svg",
     "implies": "Vue.js",
-    "meta": {
-      "generator": "^VuePress(?: ([0-9.]+)(-[a-z]+.[0-9]+)?)?$\\;version:\\1"
-    },
     "js": {
       "__VUEPRESS__.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "meta": {
+      "generator": "^VuePress(?: ([0-9.]+)(-[a-z]+.[0-9]+)?)?$\\;version:\\1"
     },
     "oss": true,
     "website": "https://vuepress.vuejs.org/"

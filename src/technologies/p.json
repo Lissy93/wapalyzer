@@ -366,12 +366,12 @@
     "js": {
       "panelbear": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://panelbear.com"
   },
   "Pantheon": {
@@ -1451,15 +1451,15 @@
     "description": "PinnacleCart is an ecommerce platform.",
     "icon": "PinnacleCart.png",
     "js": {
-      "USER_DELETE_PAYMENT_PROFILE": "^DeletePaymentProfile$\\;confidence:49",
-      "USER_DELETE_ADDRESS": "^DeleteShippingAddress$\\;confidence:49"
+      "USER_DELETE_ADDRESS": "^DeleteShippingAddress$\\;confidence:49",
+      "USER_DELETE_PAYMENT_PROFILE": "^DeletePaymentProfile$\\;confidence:49"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.pinnaclecart.com"
   },
   "Pinterest": {
@@ -1660,18 +1660,18 @@
       19
     ],
     "description": "Plaid is a fintech company that facilitates communication between financial services apps and users' banks and credit card providers.",
-    "icon": "Plaid.svg",
     "headers": {
       "content-security-policy": "cdn\\.plaid\\.com/"
     },
+    "icon": "Plaid.svg",
     "js": {
       "Plaid.version": "([\\.\\d]+)\\;version:\\1"
     },
-    "scriptSrc": "\\.plaid\\.com/",
     "pricing": [
       "payg",
       "recurring"
     ],
+    "scriptSrc": "\\.plaid\\.com/",
     "website": "https://plaid.com"
   },
   "Planet": {
@@ -1948,13 +1948,13 @@
       87,
       89
     ],
-    "description": "Polylang is a WordPress plugin which allows you to create multilingual WordPress site.",
-    "dom": "img[src*='/wp-content/plugins/polylang/']",
     "cookies": {
       "pll_language": ""
     },
+    "description": "Polylang is a WordPress plugin which allows you to create multilingual WordPress site.",
+    "dom": "img[src*='/wp-content/plugins/polylang/']",
     "headers": {
-      "x-redirected-by" : "Polylang(?:\\s[a-zA-Z]+)?"
+      "x-redirected-by": "Polylang(?:\\s[a-zA-Z]+)?"
     },
     "icon": "Polylang.svg",
     "oss": true,
@@ -2521,7 +2521,6 @@
       19
     ],
     "description": "Product Hunt is a community-based website that allows makers and marketers to launch their products or services and get in touch with their first real users.",
-    "icon": "Product Hunt.svg",
     "dom": {
       "a[href*='.producthunt.com/']": {
         "attributes": {
@@ -2529,6 +2528,7 @@
         }
       }
     },
+    "icon": "Product Hunt.svg",
     "pricing": [
       "freemium",
       "mid",
@@ -2981,12 +2981,12 @@
     },
     "icon": "PythonAnywhere.svg",
     "implies": "Python",
-    "saas": false,
     "oss": false,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": false,
     "website": "https://www.pythonanywhere.com"
   },
   "papaya CMS": {
@@ -3017,8 +3017,8 @@
     "js": {
       "particlesJS": ""
     },
-    "scriptSrc": "/particles(?:\\.min)?\\.js",
     "oss": true,
+    "scriptSrc": "/particles(?:\\.min)?\\.js",
     "website": "https://github.com/VincentGarreau/particles.js"
   },
   "phpAlbum": {

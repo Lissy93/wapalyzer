@@ -59,6 +59,24 @@
     "url": "Pages/SearchResults\\.aspx\\?k=",
     "website": "http://sharepoint.microsoft.com/en-us/product/capabilities/search/Pages/Fast-Search.aspx"
   },
+  "FUDforum": {
+    "cats": [
+      2
+    ],
+    "cpe": "cpe:2.3:a:fudforum:fudforum:*:*:*:*:*:*:*:*",
+    "description": "FUDforum is a discussion forum software with support for posts, topics, polls and attachments.",
+    "icon": "default.svg",
+    "implies": [
+      "Perl",
+      "PHP"
+    ],
+    "js": {
+      "fud_msg_focus": "",
+      "fud_tree_msg_focus": ""
+    },
+    "oss": true,
+    "website": "https://github.com/fudforum/FUDforum"
+  },
   "Fabric": {
     "cats": [
       6
@@ -1064,11 +1082,6 @@
       17
     ],
     "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
-    "html": [
-      "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-      "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
-    ],
-    "icon": "font-awesome.svg",
     "dom": {
       "link[href*='font-awesome']": {
         "attributes": {
@@ -1076,6 +1089,11 @@
         }
       }
     },
+    "html": [
+      "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
+      "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
+    ],
+    "icon": "font-awesome.svg",
     "js": {
       "FontAwesomeCdnConfig": "",
       "___FONT_AWESOME___": ""
@@ -1091,6 +1109,21 @@
     ],
     "website": "https://fontawesome.com/"
   },
+  "FontServer": {
+    "cats": [
+      17
+    ],
+    "description": "FontServer is a online font delivery network service-provider for websites.",
+    "dom": {
+      "link[href*='.font']": {
+        "attributes": {
+          "href": "\\.font(?:api|cdn)\\.ir"
+        }
+      }
+    },
+    "icon": "FontServer.svg",
+    "website": "https://fontserver.ir"
+  },
   "Fontify": {
     "cats": [
       100
@@ -1105,21 +1138,6 @@
     "saas": true,
     "scriptSrc": "fontify\\.nitroapps\\.co/",
     "website": "https://apps.shopify.com/fontify-change-customize-font-for-your-store"
-  },
-  "FontServer": {
-    "cats": [
-      17
-    ],
-    "description": "FontServer is a online font delivery network service-provider for websites.",
-    "icon": "FontServer.svg",
-    "dom": {
-      "link[href*='.font']": {
-        "attributes": {
-          "href": "\\.font(?:api|cdn)\\.ir"
-        }
-      }
-    },
-    "website": "https://fontserver.ir"
   },
   "FooPlugins FooGallery": {
     "cats": [
@@ -1804,24 +1822,6 @@
     "saas": true,
     "scriptSrc": "frosmo\\.easy\\.js",
     "website": "https://frosmo.com"
-  },
-  "FUDforum": {
-    "cats": [
-      2
-    ],
-    "cpe": "cpe:2.3:a:fudforum:fudforum:*:*:*:*:*:*:*:*",
-    "description": "FUDforum is a discussion forum software with support for posts, topics, polls and attachments.",
-    "icon": "default.svg",
-    "implies": [
-      "Perl",
-      "PHP"
-    ],
-    "js": {
-      "fud_msg_focus": "",
-      "fud_tree_msg_focus": ""
-    },
-    "oss": true,
-    "website": "https://github.com/fudforum/FUDforum"
   },
   "FullContact": {
     "cats": [

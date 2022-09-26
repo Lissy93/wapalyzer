@@ -355,6 +355,23 @@
     "saas": true,
     "website": "https://unicornplatform.com"
   },
+  "UnoCSS": {
+    "cats": [
+      66
+    ],
+    "css": "--un-(?:rotate|translate|space-x|text-opacity|border-opacity)",
+    "description": "UnoCSS is instant on-demand Atomic CSS engine.",
+    "dom": {
+      "style[data-unocss]": {
+        "attributes": {
+          "data-unocss": "([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "icon": "UnoCSS.svg",
+    "oss": true,
+    "website": "https://uno.antfu.me/"
+  },
   "Unpkg": {
     "cats": [
       31
@@ -778,23 +795,6 @@
     ],
     "saas": true,
     "website": "https://ulogin.ru"
-  },
-  "UnoCSS": {
-    "cats": [
-      66
-    ],
-    "description": "UnoCSS is instant on-demand Atomic CSS engine.",
-    "css": "--un-(?:rotate|translate|space-x|text-opacity|border-opacity)",
-    "dom": {
-      "style[data-unocss]": {
-        "attributes": {
-          "data-unocss": "([\\d\\.]+)\\;version:\\1"
-        }
-      }
-    },
-    "oss": true,
-    "icon": "UnoCSS.svg",
-    "website": "https://uno.antfu.me/"
   },
   "uPortal": {
     "cats": [

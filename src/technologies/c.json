@@ -26,6 +26,19 @@
     "icon": "CDN77.png",
     "website": "https://www.cdn77.com"
   },
+  "CEMax": {
+    "cats": [
+      52
+    ],
+    "description": "CEMax is a premium customer engagement platform.",
+    "dom": "div[data-chat-url*='.cemaxai.com/']",
+    "icon": "CEMax.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://cemax.ai"
+  },
   "CFML": {
     "cats": [
       27
@@ -376,11 +389,11 @@
       13
     ],
     "description": "Canny is a cloud-based solution that helps small to large businesses collect, analyse, prioritise and track user feedback to make informed product decisions.",
-    "icon": "Canny.svg",
+    "dom": "a[href*='.canny.io/']",
     "headers": {
       "Content-Security-Policy": "//canny\\.io"
     },
-    "dom": "a[href*='.canny.io/']",
+    "icon": "Canny.svg",
     "js": {
       "Canny": ""
     },
@@ -735,19 +748,6 @@
     "saas": true,
     "website": "https://www.celum.com"
   },
-  "CEMax": {
-    "cats": [
-      52
-    ],
-    "description": "CEMax is a premium customer engagement platform.",
-    "icon": "CEMax.png",
-    "dom": "div[data-chat-url*='.cemaxai.com/']",
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://cemax.ai"
-  },
   "Cendyn": {
     "cats": [
       1
@@ -992,6 +992,22 @@
     "scriptSrc": "chartbeat\\.js",
     "website": "http://chartbeat.com"
   },
+  "ChatStack": {
+    "cats": [
+      52
+    ],
+    "description": "ChatStack is a self-hosted live chat software for websites.",
+    "icon": "ChatStack.svg",
+    "js": {
+      "Chatstack.chatState": "",
+      "Chatstack.server": ""
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "saas": true,
+    "website": "https://www.chatstack.com"
+  },
   "Chatango": {
     "cats": [
       5
@@ -1025,22 +1041,6 @@
     "scriptSrc": "call\\.chatra\\.io/chatra\\.js",
     "website": "https://chatra.com",
     "xhr": "chat\\.chatra\\.io/"
-  },
-  "ChatStack": {
-    "cats": [
-      52
-    ],
-    "description": "ChatStack is a self-hosted live chat software for websites.",
-    "icon": "ChatStack.svg",
-    "js": {
-      "Chatstack.chatState": "",
-      "Chatstack.server": ""
-    },
-    "pricing": [
-      "onetime"
-    ],
-    "saas": true,
-    "website": "https://www.chatstack.com"
   },
   "Chatwoot": {
     "cats": [
@@ -1355,14 +1355,14 @@
     ],
     "description": "Claris FileMaker is a cross-platform relational database application from Claris International.",
     "icon": "Claris.svg",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
     "requires": [
       "Vaadin",
       "Application Request Routing",
       "Java"
-    ],
-    "pricing": [
-      "payg",
-      "recurring"
     ],
     "url": "\\.[\\w]+/fmi/webd/",
     "website": "https://www.claris.com/filemaker"

@@ -261,10 +261,10 @@
       10
     ],
     "description": "Leadfeeder is a B2B visitor identification software that tracks and identifies companies that visit your website.",
-    "icon": "Leadfeeder.png",
     "headers": {
       "Content-Security-Policy": "\\.(?:lfeeder|leadfeeder)\\.com"
     },
+    "icon": "Leadfeeder.png",
     "js": {
       "ldfdr.getTracker": ""
     },
@@ -302,16 +302,16 @@
     "description": "Leadster is a conversation marketing plataform based on chatbot.",
     "icon": "Leadster.svg",
     "js": {
+      "neurolead.convoScript": "",
       "neurolead.elChatbot": "",
-      "neuroleadLanguage": "",
-      "neurolead.convoScript": ""
+      "neuroleadLanguage": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://leadster.com.br"
   },
   "Leaflet": {
@@ -441,12 +441,12 @@
     ],
     "description": "Lengow is an ecommerce automation solution that enables brands and retailers to integrate, structure and optimise their product content across all distribution channels: marketplaces, comparison shopping engines, affiliate platforms, display and retargeting.",
     "icon": "Lengow.svg",
-    "scriptSrc": "\\.lengow\\.com/",
-    "saas": true,
     "pricing": [
       "payg",
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.lengow\\.com/",
     "website": "https://www.lengow.com"
   },
   "Less": {
@@ -516,6 +516,15 @@
     "saas": true,
     "website": "https://www.lever.co"
   },
+  "Lexity": {
+    "cats": [
+      10
+    ],
+    "description": "Lexity is the one-stop-shop of ecommerce services for SMBs.",
+    "icon": "Lexity.png",
+    "scriptSrc": "\\.lexity\\.com/",
+    "website": "http://lexity.com"
+  },
   "Liberapay": {
     "cats": [
       41
@@ -525,15 +534,6 @@
     "icon": "Liberapay.svg",
     "scriptSrc": "//liberapay\\.com/",
     "website": "https://liberapay.com/"
-  },
-  "Lexity": {
-    "cats": [
-      10
-    ],
-    "description": "Lexity is the one-stop-shop of ecommerce services for SMBs.",
-    "icon": "Lexity.png",
-    "scriptSrc": "\\.lexity\\.com/",
-    "website": "http://lexity.com"
   },
   "Libravatar": {
     "cats": [
@@ -731,11 +731,6 @@
       36
     ],
     "description": "Linkedin Ads is a paid marketing tool that offers access to Linkedin social networks through various sponsored posts and other methods.",
-    "icon": "Linkedin.svg",
-    "html": "<img [^>]*src=\"[^/]*//[^/]*px\\.ads\\.linkedin\\.com",
-    "headers": {
-      "Content-Security-Policy": "px\\.ads\\.linkedin\\.com"
-    },
     "dom": {
       "img[src*='dc.ads.linkedin.com']": {
         "attributes": {
@@ -748,6 +743,11 @@
         }
       }
     },
+    "headers": {
+      "Content-Security-Policy": "px\\.ads\\.linkedin\\.com"
+    },
+    "html": "<img [^>]*src=\"[^/]*//[^/]*px\\.ads\\.linkedin\\.com",
+    "icon": "Linkedin.svg",
     "website": "https://business.linkedin.com/marketing-solutions/ads"
   },
   "Linkedin Insight Tag": {

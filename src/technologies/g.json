@@ -261,15 +261,15 @@
       16
     ],
     "description": "GeeTest is a CAPTCHA and bot management provider, protects websites, mobile apps, and APIs from automated bot-driven attacks, like ATO, credential stuffing, web scalping, etc.",
-    "icon": "GeeTest.svg",
     "headers": {
       "content-security-policy": "\\.geetest\\.com"
     },
-    "scriptSrc": "\\.geetest\\.com/",
-    "saas": true,
+    "icon": "GeeTest.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.geetest\\.com/",
     "website": "https://www.geetest.com"
   },
   "GemPages": {
@@ -1847,7 +1847,7 @@
     "js": {
       "grapesjs.version": "^([\\d\\.]+)$\\;version:\\1"
     },
-    "oss": true, 
+    "oss": true,
     "website": "https://grapesjs.com"
   },
   "GraphCMS": {

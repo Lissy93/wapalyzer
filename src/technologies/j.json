@@ -538,22 +538,6 @@
     "scriptSrc": "(?:cdn)?\\.(?:jwwb|jouwweb)\\.nl/",
     "website": "https://www.jouwweb.nl"
   },
-  "jPlayer": {
-    "cats": [
-      14,
-      59
-    ],
-    "description": "jPlayer is a cross-browser JavaScript library developed as a jQuery plugin which facilitates the embedding of web based media, notably HTML5 audio and video in addition to Adobe Flash based media.",
-    "icon": "jPlayer.png",
-    "implies": "jQuery",
-    "js": {
-      "jPlayerPlaylist": ""
-    },
-    "scripts": "jquery\\.jplayer\\.min\\.js",
-    "scriptSrc": "/jquery\\.jplayer\\.min\\.js",
-    "oss": true, 
-    "website": "https://jplayer.org"
-  },
   "JsObservable": {
     "cats": [
       59
@@ -747,6 +731,22 @@
       "MAIN.version": ".*\\;version:\\1"
     },
     "website": "https://componentator.com"
+  },
+  "jPlayer": {
+    "cats": [
+      14,
+      59
+    ],
+    "description": "jPlayer is a cross-browser JavaScript library developed as a jQuery plugin which facilitates the embedding of web based media, notably HTML5 audio and video in addition to Adobe Flash based media.",
+    "icon": "jPlayer.png",
+    "implies": "jQuery",
+    "js": {
+      "jPlayerPlaylist": ""
+    },
+    "oss": true,
+    "scriptSrc": "/jquery\\.jplayer\\.min\\.js",
+    "scripts": "jquery\\.jplayer\\.min\\.js",
+    "website": "https://jplayer.org"
   },
   "jQTouch": {
     "cats": [

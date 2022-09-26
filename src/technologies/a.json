@@ -230,8 +230,8 @@
     "icon": "aspnetboilerplate.png",
     "implies": "Microsoft ASP.NET",
     "js": {
-      "abp.timing.utcClockProvider": "",
-      "abp.aspnetboilerplate.version": "(.*)\\;version:\\1"
+      "abp.aspnetboilerplate.version": "(.*)\\;version:\\1",
+      "abp.timing.utcClockProvider": ""
     },
     "oss": true,
     "website": "https://www.aspnetboilerplate.com"
@@ -916,23 +916,6 @@
     "scriptSrc": "adinfinity\\.com\\.au",
     "website": "http://adinfinity.com.au"
   },
-  "Adjust": {
-    "cats": [
-      10
-    ],
-    "description": "Adjust is the mobile marketing analytics platform.",
-    "icon": "Adjust.svg",
-    "dom": "div[data-adjust*='app.adjust.com/'], a[href*='app.adjust.com/'], a[href*='.adj.st/'], form[action*='app.adjust.com/']",
-    "js": {
-      "Adjust.initSdk": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg",
-      "poa"
-    ],
-    "website": "https://www.adjust.com"
-  },
   "AdOcean": {
     "cats": [
       36
@@ -1241,6 +1224,23 @@
     "saas": true,
     "scriptSrc": "\\.adform\\.net/",
     "website": "https://site.adform.com"
+  },
+  "Adjust": {
+    "cats": [
+      10
+    ],
+    "description": "Adjust is the mobile marketing analytics platform.",
+    "dom": "div[data-adjust*='app.adjust.com/'], a[href*='app.adjust.com/'], a[href*='.adj.st/'], form[action*='app.adjust.com/']",
+    "icon": "Adjust.svg",
+    "js": {
+      "Adjust.initSdk": ""
+    },
+    "pricing": [
+      "payg",
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.adjust.com"
   },
   "Adloox": {
     "cats": [
@@ -2925,23 +2925,6 @@
     "oss": true,
     "website": "https://ant.design"
   },
-  "Antee IPO": {
-    "cats": [
-      1
-    ],
-    "description": "Antee is a Czech company that will make a custom-made website for you, then you manage it in CMS IPO.",
-    "icon": "Antee.png",
-    "meta": {
-      "author": "Antee\\ss\\.r\\.o\\."
-    },
-    "js": {
-      "ipo.api.hideSpinner": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://ipo.antee.cz"
-  },
   "AntV G2": {
     "cats": [
       25
@@ -2974,6 +2957,23 @@
     ],
     "saas": true,
     "website": "https://g6.antv.vision"
+  },
+  "Antee IPO": {
+    "cats": [
+      1
+    ],
+    "description": "Antee is a Czech company that will make a custom-made website for you, then you manage it in CMS IPO.",
+    "icon": "Antee.png",
+    "js": {
+      "ipo.api.hideSpinner": ""
+    },
+    "meta": {
+      "author": "Antee\\ss\\.r\\.o\\."
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://ipo.antee.cz"
   },
   "Antsomi CDP 365": {
     "cats": [
@@ -3234,8 +3234,8 @@
     "js": {
       "APPIAN": "",
       "Appian": "",
-      "webpackJsonpAppian": "",
-      "_APPIAN_PROXIES_INITIALIZED": ""
+      "_APPIAN_PROXIES_INITIALIZED": "",
+      "webpackJsonpAppian": ""
     },
     "saas": true,
     "scriptSrc": "tempo/ui/sail-client/embeddedBootstrap\\.nocache\\.js",
@@ -3611,8 +3611,8 @@
       2
     ],
     "description": "Asgaros Forum is a lightweight and simple forum plugin for WordPress.",
+    "dom": "link[href*='/wp-content/plugins/asgaros-forum/']",
     "icon": "Asgaros Forum.png",
-    "dom":"link[href*='/wp-content/plugins/asgaros-forum/']",
     "oss": true,
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/asgaros-forum/",

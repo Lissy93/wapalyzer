@@ -172,17 +172,6 @@
     "scriptSrc": "ocnk-min\\.js",
     "website": "https://www.ocnk.com"
   },
-  "ocStore": {
-    "cats": [
-      6
-    ],
-    "description": "ocStore is an online store based on Opencart and open-source.",
-    "icon": "ocStore.png",
-    "implies": "OpenCart",
-    "html": "<!--[^>]+ocStore(?:\\s([\\d\\.a-z]+))?\\;version:\\1",
-    "oss": true,
-    "website": "https://ocstore.com"
-  },
   "Oct8ne": {
     "cats": [
       52
@@ -708,24 +697,6 @@
     "saas": true,
     "website": "https://onfido.com"
   },
-  "onpublix": {
-    "cats": [
-      1
-    ],
-    "description": "onpublix is a web content management system (CMS) platform for eBusinesses.",
-    "icon": "onpublix.svg",
-    "meta": {
-      "generator": "^onpublix\\s([\\d\\.]+)$\\;version:\\1"
-    },
-    "saas": true,
-    "pricing": [
-      "onetime",
-      "mid",
-      "payg",
-      "recurring"
-    ],
-    "website": "https://www.onpublix.de"
-  },
   "Ookla Speedtest Custom": {
     "cats": [
       5
@@ -755,14 +726,14 @@
       "Notion",
       "Next.js"
     ],
+    "js": {
+      "__OOPY__": ""
+    },
     "oss": false,
     "pricing": [
       "low",
       "recurring"
     ],
-    "js": {
-      "__OOPY__": ""
-    },
     "saas": true,
     "website": "https://oopy.us/"
   },
@@ -1363,17 +1334,17 @@
     ],
     "cpe": "cpe:2.3:a:orchardcore:orchard_core:*:*:*:*:*:*:*:*",
     "description": "Orchard Core is an open-source modular and multi-tenant application framework built with ASP.NET Core, and a content management system (CMS).",
+    "headers": {
+      "x-generator": "^Orchard$",
+      "x-powered-by": "OrchardCore"
+    },
     "icon": "Orchard Core.png",
     "implies": "Microsoft ASP.NET",
-    "headers": {
-      "x-powered-by": "OrchardCore",
-      "x-generator": "^Orchard$"
-    },
     "meta": {
       "generator": "Orchard"
     },
-    "scriptSrc": "/OrchardCore\\.",
     "oss": true,
+    "scriptSrc": "/OrchardCore\\.",
     "website": "https://orchardcore.net"
   },
   "Orckestra": {
@@ -1641,6 +1612,35 @@
       "wp-content/plugins/oxygen"
     ],
     "website": "https://oxygenbuilder.com"
+  },
+  "ocStore": {
+    "cats": [
+      6
+    ],
+    "description": "ocStore is an online store based on Opencart and open-source.",
+    "html": "<!--[^>]+ocStore(?:\\s([\\d\\.a-z]+))?\\;version:\\1",
+    "icon": "ocStore.png",
+    "implies": "OpenCart",
+    "oss": true,
+    "website": "https://ocstore.com"
+  },
+  "onpublix": {
+    "cats": [
+      1
+    ],
+    "description": "onpublix is a web content management system (CMS) platform for eBusinesses.",
+    "icon": "onpublix.svg",
+    "meta": {
+      "generator": "^onpublix\\s([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "onetime",
+      "mid",
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.onpublix.de"
   },
   "osCommerce": {
     "cats": [
