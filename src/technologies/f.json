@@ -1560,7 +1560,11 @@
       22
     ],
     "description": "Fresh is a full stack modern web framework for JavaScript and TypeScript developers, designed to make it trivial to create high-quality, performant, and personalized web applications.",
-    "dom": "style[id='__FRSH_STYLE']",
+    "dom": [
+      "style[id='__FRSH_TWIND']",
+      "style[id='__FRSH_STYLE']",
+      "script[id='__FRSH_STATE']"
+    ],
     "icon": "fresh.svg",
     "implies": [
       "Deno",
