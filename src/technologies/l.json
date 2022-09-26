@@ -693,11 +693,35 @@
     "scriptSrc": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
     "website": "http://linksmart.com"
   },
+  "Linkedin Ads": {
+    "cats": [
+      36
+    ],
+    "description": "Linkedin Ads is a paid marketing tool that offers access to Linkedin social networks through various sponsored posts and other methods.",
+    "icon": "Linkedin.svg",
+    "html": "<img [^>]*src=\"[^/]*//[^/]*px\\.ads\\.linkedin\\.com",
+    "headers": {
+      "Content-Security-Policy": "px\\.ads\\.linkedin\\.com"
+    },
+    "dom": {
+      "img[src*='dc.ads.linkedin.com']": {
+        "attributes": {
+          "src": "dc\\.ads\\.linkedin\\.com"
+        }
+      },
+      "link[href*='px.ads.linkedin.com']": {
+        "attributes": {
+          "href": "px\\.ads\\.linkedin\\.com"
+        }
+      }
+    },
+    "website": "https://business.linkedin.com/marketing-solutions/ads"
+  },
   "Linkedin Insight Tag": {
     "cats": [
       10
     ],
-    "dom": "noscript > img[src*='dc.ads.linkedin.com']",
+    "description": "LinkedIn Insight Tag is a lightweight JavaScript tag that powers conversion tracking, website audiences, and website demographics.",
     "icon": "Linkedin.svg",
     "js": {
       "ORIBI": "",
