@@ -1948,12 +1948,18 @@
       87,
       89
     ],
-    "description": "Polylang is a WordPress plugin which allows you to create a bilingual or multilingual WordPress site.",
+    "description": "Polylang is a WordPress plugin which allows you to create multilingual WordPress site.",
     "dom": "img[src*='/wp-content/plugins/polylang/']",
+    "cookies": {
+      "pll_language": ""
+    },
+    "headers": {
+      "x-redirected-by" : "(Polylang)(\\s[a-zA-Z]*)*"
+    },
     "icon": "Polylang.svg",
     "oss": true,
     "requires": "WordPress",
-    "website": "https://github.com/polylang/polylang"
+    "website": "https://polylang.pro"
   },
   "Polymer": {
     "cats": [
