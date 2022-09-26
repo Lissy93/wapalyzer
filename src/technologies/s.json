@@ -1456,6 +1456,23 @@
     "scriptSrc": "sib(?:automation|forms)\\.com/",
     "website": "https://www.sendinblue.com"
   },
+  "SendPulse": {
+    "cats": [
+      32,
+      75
+    ],
+    "description": "SendPulse is an email marketing platform with additional channels: SMS, web push notifications, Facebook and WhatsApp chatbots.",
+    "icon": "SendPulse.svg",
+    "dom": "link[href*='.sendpulse.com']",
+    "scriptSrc": "\\.sendpulse\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://sendpulse.com"
+  },
   "Sensors Data": {
     "cats": [
       10
