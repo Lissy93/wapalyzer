@@ -58,6 +58,20 @@
     "saas": true,
     "website": "https://commercesuite.aboutyou.com"
   },
+  "ABP Framework": {
+    "cats": [
+      18
+    ],
+    "description": "ABP Framework is a complete infrastructure to create modern web applications by following the best practices and conventions of software development.",
+    "icon": "abp.svg",
+    "implies": "Microsoft ASP.NET",
+    "js": {
+      "abp.timing.timeZone": "",
+      "abp.version": "(.*)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://abp.io/"
+  },
   "AD EBiS": {
     "cats": [
       36,
@@ -216,8 +230,8 @@
     "icon": "aspnetboilerplate.png",
     "implies": "Microsoft ASP.NET",
     "js": {
-      "abp.localization": "",
-      "abp.toAbsAppPath": ""
+      "abp.timing.utcClockProvider": "",
+      "abp.aspnetboilerplate.version": "(.*)\\;version:\\1"
     },
     "oss": true,
     "website": "https://www.aspnetboilerplate.com"
