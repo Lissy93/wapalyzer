@@ -1357,16 +1357,24 @@
     "requires": "WordPress",
     "website": "https://themeisle.com/plugins/orbit-fox-companion"
   },
-  "Orchard CMS": {
+  "Orchard Core": {
     "cats": [
       1
     ],
-    "icon": "Orchard CMS.png",
+    "cpe": "cpe:2.3:a:orchardcore:orchard_core:*:*:*:*:*:*:*:*",
+    "description": "Orchard Core is an open-source modular and multi-tenant application framework built with ASP.NET Core, and a content management system (CMS).",
+    "icon": "Orchard Core.png",
     "implies": "Microsoft ASP.NET",
+    "headers": {
+      "x-powered-by": "OrchardCore",
+      "x-generator": "^Orchard$"
+    },
     "meta": {
       "generator": "Orchard"
     },
-    "website": "http://orchardproject.net"
+    "scriptSrc": "/OrchardCore\\.",
+    "oss": true,
+    "website": "https://orchardcore.net"
   },
   "Orckestra": {
     "cats": [
