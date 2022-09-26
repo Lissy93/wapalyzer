@@ -1069,6 +1069,13 @@
       "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
     ],
     "icon": "font-awesome.svg",
+    "dom": {
+      "link[href*='font-awesome']": {
+        "attributes": {
+          "href": "/font-awesome/([\\d\\.]+)/css/\\;version:\\1"
+        }
+      }
+    },
     "js": {
       "FontAwesomeCdnConfig": "",
       "___FONT_AWESOME___": ""
