@@ -3184,6 +3184,25 @@
     "scriptSrc": "plugin\\.skedify\\.io",
     "website": "https://calendly.com/"
   },
+  "Skilldo": {
+    "cats": [
+      1
+    ],
+    "description": "Skilldo is a content management system written in PHP and paired with a MySQL or MariaDB database. ",
+    "icon": "Skilldo.png",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "headers": {
+      "cms-name": "^Skilldo$",
+      "cms-version": "([\\d\\.]+)\\;version:\\1\\;confidence:0"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://developers.sikido.vn/docs/cms/"
+  },
   "Skimlinks": {
     "cats": [
       71
