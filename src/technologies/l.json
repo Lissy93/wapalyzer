@@ -256,6 +256,27 @@
     "scriptSrc": "ls\\.unveilhooks(?:\\.min)?\\.js",
     "website": "https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks"
   },
+  "Leadfeeder": {
+    "cats": [
+      10
+    ],
+    "description": "Leadfeeder is a B2B visitor identification software that tracks and identifies companies that visit your website.",
+    "icon": "Leadfeeder.png",
+    "headers": {
+      "Content-Security-Policy": "\\.(?:lfeeder|leadfeeder)\\.com"
+    },
+    "js": {
+      "ldfdr.getTracker": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.leadfeeder\\.com/",
+    "website": "https://www.leadfeeder.com"
+  },
   "Leadinfo": {
     "cats": [
       10
