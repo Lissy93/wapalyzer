@@ -55,7 +55,7 @@ const Utils = {
    */
   async getOption(name, defaultValue = null) {
     try {
-      const option = await Utils.promisify(chrome.storage.sync, 'get', name)
+      const option = await chrome.storage.sync.get(name)
 
       if (option[name] !== undefined) {
         return option[name]
@@ -75,7 +75,7 @@ const Utils = {
    */
   async setOption(name, value) {
     try {
-      await Utils.promisify(chrome.storage.sync, 'set', {
+      await chrome.storage.sync.set({
         [name]: value,
       })
     } catch (error) {
