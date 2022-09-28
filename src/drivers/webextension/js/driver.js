@@ -71,7 +71,7 @@ const Driver = {
       ads: [],
     }
 
-    chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
+    chrome.action.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
 
     chrome.webRequest.onCompleted.addListener(
       Driver.onWebRequestComplete,
@@ -742,7 +742,7 @@ const Driver = {
     }
 
     tabs.forEach(({ id: tabId }) => {
-      chrome.browserAction.setBadgeText(
+      chrome.action.setBadgeText(
         {
           tabId,
           text:
@@ -753,7 +753,7 @@ const Driver = {
         () => {}
       )
 
-      chrome.browserAction.setIcon(
+      chrome.action.setIcon(
         {
           tabId,
           path: chrome.runtime.getURL(
@@ -823,11 +823,7 @@ const Driver = {
         // eslint-disable-next-line no-async-promise-executor
         new Promise(async (resolve) => {
           const response = await fetch(
-            `http${secure ? 's' : ''}://${hostname}/robots.txt`,
-            {
-              redirect: 'follow',
-              mode: 'no-cors',
-            }
+            `http${secure ? 's' : ''}://${hostname}/robots.txt`
           )
 
           if (!response.ok) {

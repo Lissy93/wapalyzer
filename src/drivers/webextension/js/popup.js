@@ -170,11 +170,12 @@ function getCsv() {
 }
 
 function csvEscape(value = '') {
+  console.log(value)
   if (Array.isArray(value)) {
     value = value
       .flat()
       .slice(0, 10)
-      .map((value) => csvEscape(value.replace(/ ; /g, ' : ')))
+      .map((value) => csvEscape(String(value).replace(/ ; /g, ' : ')))
       .join(' ; ')
   }
 

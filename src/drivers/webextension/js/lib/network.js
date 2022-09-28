@@ -148,9 +148,13 @@
   }
 
   function parseHostnameFromUrl(url) {
-    const parser = document.createElement('a')
-    parser.href = url
-    return parser.hostname
+    try {
+      const { hostname } = new URL(url)
+
+      return hostname
+    } catch {
+      return ''
+    }
   }
 
   function hasDomain(url, domain) {

@@ -2,6 +2,18 @@
 /* eslint-env browser */
 /* globals chrome */
 
+// Manifest v2 polyfill
+if (chrome.runtime.getManifest().manifest_version === 2) {
+  chrome.action = chrome.browserAction
+
+  chrome.storage.sync = {
+    get: (...args) =>
+      new Promise((resolve) => chrome.storage.local.get(...args, resolve)),
+    set: (...args) =>
+      new Promise((resolve) => chrome.storage.local.set(...args, resolve)),
+  }
+}
+
 const Utils = {
   agent: chrome.runtime.getURL('/').startsWith('moz-')
     ? 'firefox'
@@ -43,7 +55,7 @@ const Utils = {
    */
   async getOption(name, defaultValue = null) {
     try {
-      const option = await Utils.promisify(chrome.storage.local, 'get', name)
+      const option = await Utils.promisify(chrome.storage.sync, 'get', name)
 
       if (option[name] !== undefined) {
         return option[name]
@@ -63,7 +75,7 @@ const Utils = {
    */
   async setOption(name, value) {
     try {
-      await Utils.promisify(chrome.storage.local, 'set', {
+      await Utils.promisify(chrome.storage.sync, 'set', {
         [name]: value,
       })
     } catch (error) {
