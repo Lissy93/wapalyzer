@@ -74,11 +74,11 @@
   "options_page": "html/options.html",
   "permissions": [
     "cookies",
-    "storage",
     "scripting",
+    "storage",
     "tabs",
-    "webRequest",
-    "webNavigation"
+    "webNavigation",
+    "webRequest"
   ],
   "host_permissions": [
     "http://*/*",
