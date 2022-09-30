@@ -1342,6 +1342,23 @@
     "scriptSrc": "\\.hushly\\.com/",
     "website": "https://www.hushly.com"
   },
+  "Hydrogen": {
+    "cats": [
+      12
+    ],
+    "description": "Hydrogen is a front-end web development framework used for building Shopify custom storefronts.",
+    "icon": "Hydrogen.svg",
+    "implies": [
+      "Shopify",
+      "React",
+      "Vite"
+    ],
+    "headers": {
+      "powered-by": "^Shopify-Hydrogen$"
+    },
+    "oss": true,
+    "website": "https://hydrogen.shopify.dev"
+  },
   "Hypercorn": {
     "cats": [
       22
