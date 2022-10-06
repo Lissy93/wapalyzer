@@ -14,6 +14,7 @@ if (chrome.runtime.getManifest().manifest_version === 2) {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 const Utils = {
   agent: chrome.runtime.getURL('/').startsWith('moz-')
     ? 'firefox'
