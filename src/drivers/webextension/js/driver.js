@@ -10,7 +10,7 @@ const {
   resolve,
   getTechnology,
 } = Wappalyzer
-const { agent, promisify, getOption, setOption, open, globEscape } = Utils
+const { agent, getOption, setOption, open, globEscape } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
@@ -93,7 +93,7 @@ const Driver = {
 
     chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
       if (status === 'complete') {
-        ;({ url } = await promisify(chrome.tabs, 'get', id))
+        ;({ url } = await chrome.tabs.get(id))
       }
 
       if (url) {
@@ -335,7 +335,7 @@ const Driver = {
   },
 
   async content(url, func, args) {
-    const [tab] = await promisify(chrome.tabs, 'query', {
+    const [tab] = await chrome.tabs.query({
       url: globEscape(url),
     })
 
@@ -347,29 +347,23 @@ const Driver = {
       throw new Error(`Tab ${tab.id} not ready for sendMessage: ${tab.status}`)
     }
 
-    return new Promise((resolve, reject) => {
-      chrome.tabs.sendMessage(
-        tab.id,
-        {
-          source: 'driver.js',
-          func,
-          args: args ? (Array.isArray(args) ? args : [args]) : [],
-        },
-        (response) => {
-          chrome.runtime.lastError
-            ? func === 'error'
-              ? resolve()
-              : Driver.error(
-                  new Error(
-                    `${
-                      chrome.runtime.lastError.message
-                    }: Driver.${func}(${JSON.stringify(args)})`
-                  )
-                )
-            : resolve(response)
-        }
-      )
+    const response = await chrome.tabs.sendMessage(tab.id, {
+      source: 'driver.js',
+      func,
+      args: args ? (Array.isArray(args) ? args : [args]) : [],
     })
+
+    if (chrome.runtime.lastError && func !== 'error') {
+      Driver.error(
+        new Error(
+          `${chrome.runtime.lastError.message}: Driver.${func}(${JSON.stringify(
+            args
+          )})`
+        )
+      )
+    } else {
+      return response
+    }
   },
 
   /**
@@ -387,7 +381,7 @@ const Driver = {
       try {
         await new Promise((resolve) => setTimeout(resolve, 500))
 
-        const [tab] = await promisify(chrome.tabs, 'query', {
+        const [tab] = await chrome.tabs.query({
           url: globEscape(request.url),
         })
 
@@ -502,7 +496,7 @@ const Driver = {
 
       //
       ;(
-        await promisify(chrome.cookies, 'getAll', {
+        await chrome.cookies.getAll({
           url,
         })
       ).forEach(
@@ -673,7 +667,7 @@ const Driver = {
       let tabs = []
 
       try {
-        tabs = await promisify(chrome.tabs, 'query', {
+        tabs = await chrome.tabs.query({
           url: globEscape(url),
         })
       } catch (error) {
@@ -734,7 +728,7 @@ const Driver = {
     let tabs = []
 
     try {
-      tabs = await promisify(chrome.tabs, 'query', {
+      tabs = await chrome.tabs.query({
         url: globEscape(url),
       })
     } catch (error) {
@@ -773,7 +767,7 @@ const Driver = {
    * Get the detected technologies for the current tab
    */
   async getDetections() {
-    const tab = await promisify(chrome.tabs, 'query', {
+    const tab = await chrome.tabs.query({
       active: true,
       currentWindow: true,
     })
