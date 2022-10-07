@@ -180,20 +180,6 @@
     "implies": "Joomla",
     "website": "http://www.sigsiu.net/sobi2.html"
   },
-  "Spatie Support Bubble": {
-    "cats": [
-      52
-    ],
-    "description": "Spatie Support Bubble is a non-intrusive support form.",
-    "icon": "Spatie.png",
-    "implies": [
-      "Laravel",
-      "Tailwind CSS"
-    ],
-    "dom": "div.spatie-support-bubble",
-    "oss": true,
-    "website": "https://github.com/spatie/laravel-support-bubble"
-  },
   "SPDY": {
     "cats": [
       19
@@ -1338,14 +1324,14 @@
       "PHP",
       "Vue.js"
     ],
-    "meta": {
-      "selldone-iframe": "",
-      "selldone-capi": "",
-      "selldone-cdn-images": "",
-      "selldone-cdn-id": ""
-    },
     "js": {
       "webpackChunkselldone": ""
+    },
+    "meta": {
+      "selldone-capi": "",
+      "selldone-cdn-id": "",
+      "selldone-cdn-images": "",
+      "selldone-iframe": ""
     },
     "pricing": [
       "payg"
@@ -1904,22 +1890,22 @@
       1,
       6
     ],
-    "description": "Shift4Shop, formerly known as 3Dcart, is an ecommerce software provider for online businesses.",
-    "icon": "Shift4Shop.svg",
     "cookies": {
       "3dvisit": ""
     },
+    "description": "Shift4Shop, formerly known as 3Dcart, is an ecommerce software provider for online businesses.",
     "headers": {
       "X-Powered-By": "3DCART"
     },
+    "icon": "Shift4Shop.svg",
     "js": {
       "_3d_cart.subtotal": ""
     },
-    "scriptSrc": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
+    "scriptSrc": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
     "website": "https://www.shift4shop.com"
   },
   "Shiny": {
@@ -4268,6 +4254,20 @@
     },
     "icon": "SparkPost.svg",
     "website": "https://www.sparkpost.com/"
+  },
+  "Spatie Support Bubble": {
+    "cats": [
+      52
+    ],
+    "description": "Spatie Support Bubble is a non-intrusive support form.",
+    "dom": "div.spatie-support-bubble",
+    "icon": "Spatie.png",
+    "implies": [
+      "Laravel",
+      "Tailwind CSS"
+    ],
+    "oss": true,
+    "website": "https://github.com/spatie/laravel-support-bubble"
   },
   "Speed Kit": {
     "cats": [

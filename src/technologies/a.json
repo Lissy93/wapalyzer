@@ -91,6 +91,23 @@
     "scriptSrc": "\\.ebis\\.ne\\.jp/",
     "website": "http://www.ebis.ne.jp"
   },
+  "ADAPT": {
+    "cats": [
+      6
+    ],
+    "description": "ADAPT is a subscription-based app that allows anyone to create video focused online store in minutes on their phone.",
+    "icon": "ADAPT.svg",
+    "meta": {
+      "image": "assets\\.adapt\\.ws/"
+    },
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://adapt.ws"
+  },
   "ADFOX": {
     "cats": [
       36
@@ -1115,23 +1132,6 @@
     },
     "scriptSrc": "c5\\.adalyser\\.com",
     "website": "https://adalyser.com/"
-  },
-  "ADAPT": {
-    "cats": [
-      6
-    ],
-    "description": "ADAPT is a subscription-based app that allows anyone to create video focused online store in minutes on their phone.",
-    "icon": "ADAPT.svg",
-    "meta": {
-      "image": "assets\\.adapt\\.ws/"
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "freemium",
-      "recurring"
-    ],
-    "website": "https://adapt.ws"
   },
   "Adcash": {
     "cats": [
@@ -4308,20 +4308,20 @@
       106
     ],
     "description": "Azoya helps international brands and retailers sell directly to Chinese consumers through cross-border ecommerce.",
-    "icon": "Azoya.svg",
     "excludes": "Magento",
     "headers": {
       "x-azoya-webisteid": ""
     },
+    "icon": "Azoya.svg",
     "js": {
       "IMAGE_CDN_HOST": "\\.azoyacdn\\.com"
     },
-    "saas": true,
     "pricing": [
       "high",
       "recurring",
       "poa"
     ],
+    "saas": true,
     "website": "https://www.azoyagroup.com"
   },
   "Azure": {

@@ -2,7 +2,8 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const { agent, open, i18n, getOption, setOption, sendMessage } = Utils
+const { agent, open, i18n, getOption, setOption, promisify, sendMessage } =
+  Utils
 
 const baseUrl = 'https://www.wappalyzer.com'
 const utm = '?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer'
@@ -344,7 +345,7 @@ const Popup = {
 
     let url
 
-    const tabs = await chrome.tabs.query({
+    const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
     })
@@ -961,7 +962,7 @@ const Popup = {
       new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8' })
     )
 
-    const granted = await chrome.permissions.request({
+    const granted = await promisify(chrome.permissions, 'request', {
       permissions: ['downloads'],
     })
 

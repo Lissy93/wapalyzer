@@ -1097,17 +1097,6 @@
     "scriptSrc": "cdn\\.perzonalization\\.com",
     "website": "https://www.perzonalization.com/"
   },
-  "petite-vue": {
-    "cats": [
-      19
-    ],
-    "description": "petite-vue is an alternative distribution of Vue optimised for progressive enhancement.",
-    "icon": "vue.svg",
-    "oss": true,
-    "scripts": "/petite-vue@([\\d\\.]+)/\\;version:\\1",
-    "scriptSrc": "/petite-vue",
-    "website": "https://github.com/vuejs/petite-vue"
-  },
   "Phabricator": {
     "cats": [
       13,
@@ -2946,6 +2935,16 @@
     "scriptSrc": "api\\.pushnami\\.com",
     "website": "https://pushnami.com"
   },
+  "PyScript": {
+    "cats": [
+      19
+    ],
+    "description": "PyScript is a python script that can be run in the browser using a mix of Python and standard HTML.",
+    "dom": "py-script",
+    "icon": "PyScript.svg",
+    "oss": true,
+    "website": "https://pyscript.net"
+  },
   "Pygments": {
     "cats": [
       19
@@ -2968,16 +2967,6 @@
     "icon": "PyroCMS.png",
     "implies": "Laravel",
     "website": "http://pyrocms.com"
-  },
-  "PyScript": {
-    "cats": [
-      19
-    ],
-    "description": "PyScript is a python script that can be run in the browser using a mix of Python and standard HTML.",
-    "icon": "PyScript.svg",
-    "dom": "py-script",
-    "oss": true,
-    "website": "https://pyscript.net"
   },
   "Python": {
     "cats": [
@@ -3041,6 +3030,17 @@
     "oss": true,
     "scriptSrc": "/particles(?:\\.min)?\\.js",
     "website": "https://github.com/VincentGarreau/particles.js"
+  },
+  "petite-vue": {
+    "cats": [
+      19
+    ],
+    "description": "petite-vue is an alternative distribution of Vue optimised for progressive enhancement.",
+    "icon": "vue.svg",
+    "oss": true,
+    "scriptSrc": "/petite-vue",
+    "scripts": "/petite-vue@([\\d\\.]+)/\\;version:\\1",
+    "website": "https://github.com/vuejs/petite-vue"
   },
   "phpAlbum": {
     "cats": [

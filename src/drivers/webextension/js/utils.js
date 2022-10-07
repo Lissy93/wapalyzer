@@ -5,6 +5,13 @@
 // Manifest v2 polyfill
 if (chrome.runtime.getManifest().manifest_version === 2) {
   chrome.action = chrome.browserAction
+
+  chrome.storage.sync = {
+    get: (...args) =>
+      new Promise((resolve) => chrome.storage.local.get(...args, resolve)),
+    set: (...args) =>
+      new Promise((resolve) => chrome.storage.local.set(...args, resolve)),
+  }
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -14,6 +21,24 @@ const Utils = {
     : chrome.runtime.getURL('/').startsWith('safari-')
     ? 'safari'
     : 'chrome',
+
+  /**
+   * Use promises instead of callbacks
+   * @param {Object} context
+   * @param {String} method
+   * @param  {...any} args
+   */
+  promisify(context, method, ...args) {
+    return new Promise((resolve, reject) => {
+      context[method](...args, (...args) => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError)
+        }
+
+        resolve(...args)
+      })
+    })
+  },
 
   /**
    * Open a browser tab
@@ -31,7 +56,7 @@ const Utils = {
    */
   async getOption(name, defaultValue = null) {
     try {
-      const option = await chrome.storage.local.get(name)
+      const option = await chrome.storage.sync.get(name)
 
       if (option[name] !== undefined) {
         return option[name]
@@ -51,7 +76,7 @@ const Utils = {
    */
   async setOption(name, value) {
     try {
-      await chrome.storage.local.set({
+      await chrome.storage.sync.set({
         [name]: value,
       })
     } catch (error) {
