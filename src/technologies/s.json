@@ -180,6 +180,20 @@
     "implies": "Joomla",
     "website": "http://www.sigsiu.net/sobi2.html"
   },
+  "Spatie Support Bubble": {
+    "cats": [
+      52
+    ],
+    "description": "Spatie Support Bubble is a non-intrusive support form.",
+    "icon": "Spatie.png",
+    "implies": [
+      "Laravel",
+      "Tailwind CSS"
+    ],
+    "dom": "div.spatie-support-bubble",
+    "oss": true,
+    "website": "https://github.com/spatie/laravel-support-bubble"
+  },
   "SPDY": {
     "cats": [
       19
@@ -1860,6 +1874,29 @@
     },
     "website": "http://shellinabox.com"
   },
+  "Shift4Shop": {
+    "cats": [
+      1,
+      6
+    ],
+    "description": "Shift4Shop, formerly known as 3Dcart, is an ecommerce software provider for online businesses.",
+    "icon": "Shift4Shop.svg",
+    "cookies": {
+      "3dvisit": ""
+    },
+    "headers": {
+      "X-Powered-By": "3DCART"
+    },
+    "js": {
+      "_3d_cart.subtotal": ""
+    },
+    "scriptSrc": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.shift4shop.com"
+  },
   "Shiny": {
     "cats": [
       18
@@ -2276,6 +2313,23 @@
     "saas": true,
     "scriptSrc": "cdn\\.shoplo\\.\\w+/",
     "website": "https://www.shoplo.com"
+  },
+  "Shopmatic": {
+    "cats": [
+      6
+    ],
+    "description": "Shopmatic is an ecommerce website builder.",
+    "icon": "Shopmatic.svg",
+    "meta": {
+      "shopmatic-facebook-pixels-id": ""
+    },
+    "pricing": [
+      "payg",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://goshopmatic.com"
   },
   "Shoporama": {
     "cats": [

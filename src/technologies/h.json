@@ -777,6 +777,22 @@
     },
     "website": "http://hinzaco.com"
   },
+  "Hi Platform": {
+    "cats": [
+      53
+    ],
+    "description": "Hi Platform provider of an online customer relationship platform.",
+    "icon": "Hi Platform.svg",
+    "dom": "link[href*='.hiplatform.com']",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring",
+      "poa"
+    ],
+    "scriptSrc": "\\.hiplatform\\.com/",
+    "website": "https://www.hiplatform.com"
+  },
   "Hireology": {
     "cats": [
       101
@@ -1341,6 +1357,23 @@
     "saas": true,
     "scriptSrc": "\\.hushly\\.com/",
     "website": "https://www.hushly.com"
+  },
+  "Hydrogen": {
+    "cats": [
+      12
+    ],
+    "description": "Hydrogen is a front-end web development framework used for building Shopify custom storefronts.",
+    "icon": "Hydrogen.svg",
+    "implies": [
+      "Shopify",
+      "React",
+      "Vite"
+    ],
+    "headers": {
+      "powered-by": "^Shopify-Hydrogen$"
+    },
+    "oss": true,
+    "website": "https://hydrogen.shopify.dev"
   },
   "Hypercorn": {
     "cats": [

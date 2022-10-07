@@ -214,6 +214,19 @@
     "icon": "CacheFly.svg",
     "website": "http://www.cachefly.com"
   },
+  "Cachet": {
+    "cats": [
+      13
+    ],
+    "description": "Cachet is the free and open-source status page for your API, service or company.",
+    "icon": "Cachet.svg",
+    "implies": "PHP",
+    "js": {
+      "Cachet.Notifier": ""
+    },
+    "oss": true,
+    "website": "https://cachethq.io"
+  },
   "Caddy": {
     "cats": [
       22
@@ -2731,6 +2744,28 @@
     ],
     "saas": true,
     "website": "https://convertr.com.br"
+  },
+  "Convertri": {
+    "cats": [
+      51
+    ],
+    "description": "Convertri is a sales funnel building solution.",
+    "icon": "Convertri.svg",
+    "js": {
+      "CONVERTRI_CONSTANTS": "",
+      "convertriParameters": "",
+      "ConvertriAnalytics": ""
+    },
+    "pricing": [
+      "low",
+      "onetime",
+      "recurring",
+      "payg",
+      "freemium"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.convertri\\.com/",
+    "website": "https://www.convertri.com"
   },
   "ConveyThis": {
     "cats": [

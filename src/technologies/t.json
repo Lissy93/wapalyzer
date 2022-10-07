@@ -822,6 +822,19 @@
     "scriptSrc": "app\\.termly\\.io/embed\\.min\\.js",
     "website": "https://termly.io/"
   },
+  "Tern": {
+    "cats": [
+      100
+    ],
+    "description": "Tern is a plug and play ecommerce app, built for Shopify, that offers merchants the ability to provide a seamless trade-in service.",
+    "icon": "Tern.png",
+    "requires": "Shopify",
+    "scriptSrc": "live\\.tern-returns\\.eastsideapps\\.io/",
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://www.tern.eco"
+  },
   "TerriaJS": {
     "cats": [
       35
@@ -2330,6 +2343,23 @@
       "ci-mpsnare\\.iovation\\.com"
     ],
     "website": "https://www.transunion.com/solution/truvalidate"
+  },
+  "TryNow": {
+    "cats": [
+      91
+    ],
+    "description": "TryNow is an ecommerce platform designed to offer a try before you buy experience for shoppers.",
+    "icon": "TryNow.svg",
+    "js": {
+      "TryNowConfig": "",
+      "tryNowCheckout": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.trynow\\.net/shopify/([\\d\\.]+)/\\;version:\\1",
+    "website": "https://www.trynow.io"
   },
   "True Fit": {
     "cats": [
