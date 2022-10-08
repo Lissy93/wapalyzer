@@ -1952,39 +1952,15 @@
       "pll_language": "([a-z]{2})"
     },
     "description": "Polylang is a WordPress plugin which allows you to create multilingual WordPress site.",
-    "dom": {
-      "#pll_switcher": {
-        "exists": ""
-      }
-    },
+    "dom": "#pll_switcher",
     "headers": {
-      "x-redirected-by": "Polylang"
+      "x-redirected-by": "Polylang(?: (Pro))?\\;version:\\1"
     },
     "icon": "Polylang.svg",
     "oss": true,
     "requires": "WordPress",
     "pricing": "freemium",
     "website": "https://wordpress.org/plugins/polylang"
-  },
-  "Polylang Pro": {
-    "cats": [
-      87,
-      89
-    ],
-    "description": "Polylang is a WordPress plugin which allows you to create multilingual WordPress site.",
-    "dom": {
-      "#pll_switcher": {
-        "exists": ""
-      }
-    },
-    "headers": {
-      "x-redirected-by": "Polylang Pro"
-    },
-    "icon": "Polylang.svg",
-    "oss": true,
-    "pricing": "low",
-    "requires": "WordPress",
-    "website": "https://polylang.pro"
   },
   "Polymer": {
     "cats": [
