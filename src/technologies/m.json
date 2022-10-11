@@ -119,12 +119,13 @@
       1
     ],
     "cpe": "cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:*",
-    "description": "MODX is an open source content management system and web application framework for publishing content on the world wide web and intranets.",
+    "description": "MODX (originally MODx) is an open source content management system and web application framework for publishing content on the World Wide Web and intranets.",
     "headers": {
       "X-Powered-By": "^MODX"
     },
     "html": [
       "<a[^>]+>Powered by MODX</a>",
+      "<!-- Modx process time debug info -->",
       "<(?:link|script)[^>]+assets/snippets/\\;confidence:20",
       "<form[^>]+id=\"ajaxSearch_form\\;confidence:20",
       "<input[^>]+id=\"ajaxSearch_input\\;confidence:20"
@@ -143,7 +144,7 @@
       "low"
     ],
     "saas": true,
-    "website": "http://modx.com"
+    "website": "https://modx.com/content-management-framework"
   },
   "MRW": {
     "cats": [
