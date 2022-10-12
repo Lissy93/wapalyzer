@@ -1,6 +1,6 @@
 # Wappalyzer core
 
-[Wappalyzer](https://www.wappalyzer.com/) indentifies technologies on websites. 
+[Wappalyzer](https://www.wappalyzer.com/) identifies technologies on websites.
 
 ## Installation
 
