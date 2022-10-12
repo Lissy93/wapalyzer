@@ -210,6 +210,7 @@
       1
     ],
     "description": "Umbraco is an open-source Microsoft ASP.NET based content management system.",
+    "dom": "script[src*='/UmbracoForms/']",
     "headers": {
       "X-Umbraco-Version": "^(.+)$\\;version:\\1"
     },
@@ -233,7 +234,7 @@
     "saas": true,
     "scripts": "/Umbraco/Api/",
     "url": "/umbraco/login\\.aspx(?:$|\\?)",
-    "website": "http://umbraco.com",
+    "website": "https://umbraco.com/",
     "xhr": "/umbraco/api/"
   },
   "UmiJs": {
