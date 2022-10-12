@@ -1326,7 +1326,10 @@
     ],
     "cpe": "cpe:2.3:a:adobe:dreamweaver:*:*:*:*:*:*:*:*",
     "description": "Dreamweaver is a development tool for creating, publishing, and managing websites and mobile content.",
-    "html": "<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)\\;version:\\1",
+    "html": [
+      "<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)\\;version:\\1",
+      "<!-- #BeginDate format:"
+    ],
     "icon": "DreamWeaver.png",
     "js": {
       "MM_preloadImages": "",
