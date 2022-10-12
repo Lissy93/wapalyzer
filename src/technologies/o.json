@@ -1135,6 +1135,23 @@
     "scriptSrc": "optimizely\\.com.*\\.js",
     "website": "https://www.optimizely.com"
   },
+  "Optimizely CMS": {
+    "cats": [
+      1
+    ],
+    "cookies": {
+      "EPiServer": "",
+      "EPiSessionId": "",
+      "EPiTrace": ""
+    },
+    "cpe": "cpe:2.3:a:episerver:episerver:*:*:*:*:*:*:*:*",
+    "icon": "optimizely-cms.svg",
+    "implies": "Microsoft ASP.NET",
+    "meta": {
+      "generator": "EPiServer"
+    },
+    "website": "https://www.optimizely.com/"
+  },
   "Optimove": {
     "cats": [
       97
