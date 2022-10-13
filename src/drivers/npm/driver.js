@@ -10,18 +10,21 @@ const Wappalyzer = require('./wappalyzer')
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
 
-const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET } = process.env
+const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET, CHROMIUM_ARGS } =
+  process.env
 
-const chromiumArgs = [
-  '--single-process',
-  '--no-sandbox',
-  '--no-zygote',
-  '--disable-gpu',
-  '--ignore-certificate-errors',
-  '--allow-running-insecure-content',
-  '--disable-web-security',
-  `--user-data-dir=${CHROMIUM_DATA_DIR || '/tmp/chromium'}`,
-]
+const chromiumArgs = CHROMIUM_ARGS
+  ? CHROMIUM_ARGS.split(' ')
+  : [
+      '--single-process',
+      '--no-sandbox',
+      '--no-zygote',
+      '--disable-gpu',
+      '--ignore-certificate-errors',
+      '--allow-running-insecure-content',
+      '--disable-web-security',
+      `--user-data-dir=${CHROMIUM_DATA_DIR || '/tmp/chromium'}`,
+    ]
 
 const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/
 
