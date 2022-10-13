@@ -79,6 +79,20 @@
     },
     "website": "https://www.rfc-editor.org/rfc/rfc6797#section-6.1"
   },
+  "Htmx": {
+    "cats": [
+      59
+    ],
+    "description": "Htmx is a JavaScript library for performing AJAX requests, triggering CSS transitions, and invoking WebSocket and server-sent events directly from HTML elements.",
+    "icon": "Htmx.svg",
+    "dom": "script[data-src*='/dist/htmx.min.js']",
+    "js": {
+      "htmx": ""
+    },
+    "scriptSrc": "/htmx.org@([\\d\\.]+)\\;version:\\1",
+    "oss": true,
+    "website": "https://htmx.org"
+  },
   "HTTP/2": {
     "cats": [
       19
