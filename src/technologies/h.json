@@ -34,6 +34,23 @@
     "url": "/wps/wcm/",
     "website": "https://www.hcltechsw.com/dx"
   },
+  "HCL Domino": {
+    "cats": [
+      22
+    ],
+    "cpe": "cpe:2.3:a:ibm:lotus_domino:*:*:*:*:*:*:*:*",
+    "headers": {
+      "Server": "^Lotus-Domino$"
+    },
+    "description": "HCL Domino, formerly called IBM Domino (1995) and Lotus Domino (1989), is an enterprise server application development platform.",
+    "icon": "HCL Domino.svg",
+    "implies": "Java",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.hcltechsw.com/domino"
+  },
   "HHVM": {
     "cats": [
       22
