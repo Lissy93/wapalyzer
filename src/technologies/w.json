@@ -36,15 +36,34 @@
     },
     "website": "https://www.windev.com/webdev/index.html"
   },
-  "WEBXPAY": {
+  "Webx": {
     "cats": [
       6
     ],
-    "html": "Powered by <a href=\"https://www\\.webxpay\\.com\">WEBXPAY<",
+    "description": "Webx is a hosted ecommerce solution from Pakistan.",
+    "icon": "Webx.svg",
+    "saas": true,
+    "dom": "div#divPowered > div > p > a[href*='.webx.pk']",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.webx.pk"
+  },
+  "WEBXPAY": {
+    "cats": [
+      41
+    ],
+    "description": "WEBXPAY is a specialised online payment gateway that expedites buying and selling in a highly secured environment.",
     "icon": "WEBXPAY.png",
     "js": {
       "WEBXPAY": ""
     },
+    "saas": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
     "website": "https://webxpay.com"
   },
   "WEN Themes Education Hub": {
