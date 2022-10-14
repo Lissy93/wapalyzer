@@ -105,6 +105,25 @@
     "icon": "HTTP3.svg",
     "website": "https://httpwg.org/"
   },
+  "H2O": {
+    "cats": [
+      22
+    ],
+    "description": "H2O is a fast and secure HTTP/2 server written in C by Kazuho Oku.",
+    "icon": "default.svg",
+    "implies": [
+      "C",
+      "HTTP/2"
+    ],
+    "headers": {
+      "Server": "^h2o(?:/)?([\\d\\.]+)?\\;version:\\1"
+    },
+    "cookies": {
+      "h2o_casper": ""
+    },
+    "oss": true,
+    "website": "https://github.com/h2o/h2o"
+  },
   "Haddock": {
     "cats": [
       4
