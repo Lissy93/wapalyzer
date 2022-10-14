@@ -1520,10 +1520,18 @@
       17
     ],
     "description": "Google Font API is a web service that supports open-source font files that can be used on your web designs.",
-    "html": [
-      "<link[^>]* href=[^>]+fonts\\.(?:googleapis|google|gstatic)\\.com",
-      "<style data-href=\"https://fonts.googleapis.com/css*\""
-    ],
+    "dom": {
+      "link[href*='fonts.g']": {
+        "attributes": {
+          "href": "fonts\\.(?:googleapis|google|gstatic)\\.com"
+        }
+      },
+      "style[data-href*='fonts.g']": {
+        "attributes": {
+          "data-href": "fonts\\.(?:googleapis|google|gstatic)\\.com"
+        }
+      }      
+    },
     "icon": "Google Font API.png",
     "js": {
       "WebFonts": ""
