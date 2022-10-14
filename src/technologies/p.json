@@ -3132,6 +3132,26 @@
     "implies": "PHP",
     "website": "http://phppgadmin.sourceforge.net"
   },
+  "phpRS": {
+    "cats": [
+      1
+    ],
+    "description": "phpRS is a content management software written in PHP.",
+    "icon": "default.svg",
+    "implies": "PHP",
+    "meta": {
+      "generator": "^phpRS$"
+    },
+    "dom": {
+      "a[href*='.php']": {
+        "attributes": {
+          "href": "search\\.php\\?.+all-phpRS-all"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://phprs.net"
+  },
   "phpSQLiteCMS": {
     "cats": [
       1
