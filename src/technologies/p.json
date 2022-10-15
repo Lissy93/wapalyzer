@@ -2461,7 +2461,8 @@
     "description": "Prism is an extensible syntax highlighter.",
     "icon": "Prism.svg",
     "js": {
-      "Prism": ""
+      "Prism": "",
+      "apex.libVersions.prismJs": "^([\\d\\.]+)$\\;version:\\1"
     },
     "scriptSrc": "prism\\.js",
     "website": "http://prismjs.com"

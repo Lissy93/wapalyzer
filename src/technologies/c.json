@@ -79,8 +79,9 @@
     "icon": "CKEditor.png",
     "js": {
       "CKEDITOR": "",
-      "CKEDITOR.version": "^(.+)$\\;version:\\1",
-      "CKEDITOR_BASEPATH": ""
+      "CKEDITOR.version": "^([\\d\\.])$\\;version:\\1",
+      "CKEDITOR_BASEPATH": "",
+      "apex.libVersions.ckeditor5": "^([\\d\\.])$\\;version:\\1"
     },
     "website": "http://ckeditor.com"
   },
