@@ -663,6 +663,21 @@
     "scriptSrc": "mapbox-gl\\.js",
     "website": "https://github.com/mapbox/mapbox-gl-js"
   },
+  "MapLibre GL JS": {
+    "cats": [
+      35
+    ],
+    "description": "MapLibre GL JS is an open-source library for publishing maps on your websites.",
+    "icon": "MapLibre.svg",
+    "js": {
+      "maplibregl": "",
+      "rmap2.maplibreglCompare": "",
+      "apex.libVersions.maplibre": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "scriptSrc": "maplibre-gl@([\\d\\.]+)/dist/maplibre-gl\\.js\\;version:\\1",
+    "website": "https://github.com/maplibre/maplibre-gl-js"
+  },
   "Mapp": {
     "cats": [
       10,
