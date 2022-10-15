@@ -196,15 +196,18 @@
       1
     ],
     "cpe": "cpe:2.3:a:spip:spip:*:*:*:*:*:*:*:*",
+    "description": "SPIP is a content management system written in PHP that uses one or more databases like SQL, SQLite or PostgreSQL.",
     "headers": {
       "Composed-By": "SPIP ([\\d.]+) @\\;version:\\1",
       "X-Spip-Cache": ""
     },
     "icon": "spip.svg",
     "implies": "PHP",
+    "dom": "div.formulaire_spip",
     "meta": {
       "generator": "(?:^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1"
     },
+    "oss": true,
     "website": "http://www.spip.net"
   },
   "SPNEGO": {
