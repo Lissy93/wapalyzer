@@ -1462,6 +1462,24 @@
     "saas": true,
     "website": "https://bookingkit.net/"
   },
+  "BookStack": {
+    "cats": [
+      4
+    ],
+    "cpe": "cpe:2.3:a:bookstackapp:bookstack:*:*:*:*:*:*:*:*",
+    "description": "BookStack is a simple, open-source, self-hosted, easy-to-use platform for organising and storing information.",
+    "icon": "BookStack.svg",
+    "implies": [
+      "PHP",
+      "MySQL",
+      "Laravel"
+    ],
+    "cookies": {
+      "bookstack_session": ""
+    },
+    "oss": true,
+    "website": "https://www.bookstackapp.com"
+  },
   "Booksy": {
     "cats": [
       5,
