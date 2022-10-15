@@ -36,20 +36,6 @@
     },
     "website": "https://www.windev.com/webdev/index.html"
   },
-  "Webx": {
-    "cats": [
-      6
-    ],
-    "description": "Webx is a hosted ecommerce solution from Pakistan.",
-    "icon": "Webx.svg",
-    "saas": true,
-    "dom": "div#divPowered > div > p > a[href*='.webx.pk']",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.webx.pk"
-  },
   "WEBXPAY": {
     "cats": [
       41
@@ -59,11 +45,11 @@
     "js": {
       "WEBXPAY": ""
     },
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
     "website": "https://webxpay.com"
   },
   "WEN Themes Education Hub": {
@@ -931,6 +917,20 @@
     },
     "website": "http://worldwide.webtrends.com"
   },
+  "Webx": {
+    "cats": [
+      6
+    ],
+    "description": "Webx is a hosted ecommerce solution from Pakistan.",
+    "dom": "div#divPowered > div > p > a[href*='.webx.pk']",
+    "icon": "Webx.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.webx.pk"
+  },
   "Webzie": {
     "cats": [
       1,
@@ -1009,8 +1009,8 @@
       19
     ],
     "description": "Pearl Theme for Magento 2 by WeltPixel. Pearl Theme is following the Magento architecture, layouts and best practice in order to assure highest compatibility with 3rd party extensions.",
-    "icon": "WeltPixel.svg",
     "dom": "body.theme-pearl",
+    "icon": "WeltPixel.svg",
     "js": {
       "Pearl": ""
     },

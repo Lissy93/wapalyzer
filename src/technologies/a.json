@@ -3720,11 +3720,11 @@
       }
     },
     "icon": "Astro.svg",
-    "meta": {
-      "generator": "^Astro\\sv([\\d\\.]+)$\\;version:\\1"
-    },
     "js": {
       "Astro": ""
+    },
+    "meta": {
+      "generator": "^Astro\\sv([\\d\\.]+)$\\;version:\\1"
     },
     "oss": true,
     "website": "https://astro.build"
@@ -4027,16 +4027,6 @@
     "implies": "Auth0",
     "scriptSrc": "/lock/([\\d.]+)/lock(?:.min)?\\.js\\;version:\\1",
     "website": "https://auth0.com/docs/libraries/lock"
-  },
-  "autoComplete.js": {
-    "cats": [
-      59
-    ],
-    "description": "autoComplete.js is a simple, pure vanilla Javascript library.",
-    "icon": "autoComplete.js.svg",
-    "scriptSrc": "@tarekraafat/autocomplete\\.js@([\\d\\.]+)/\\;version:\\1",
-    "oss": true,
-    "website": "https://tarekraafat.github.io/autoComplete.js"
   },
   "Autoketing": {
     "cats": [
@@ -4607,5 +4597,15 @@
     "icon": "augmented-ui.png",
     "oss": true,
     "website": "http://augmented-ui.com"
+  },
+  "autoComplete.js": {
+    "cats": [
+      59
+    ],
+    "description": "autoComplete.js is a simple, pure vanilla Javascript library.",
+    "icon": "autoComplete.js.svg",
+    "oss": true,
+    "scriptSrc": "@tarekraafat/autocomplete\\.js@([\\d\\.]+)/\\;version:\\1",
+    "website": "https://tarekraafat.github.io/autoComplete.js"
   }
 }

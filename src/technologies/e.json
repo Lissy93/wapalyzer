@@ -14,27 +14,6 @@
     ],
     "website": "http://www.ec-cube.net"
   },
-  "EcForce": {
-    "cats": [
-      6
-    ],
-    "description": "EcForce is an all-in-one ecommerce platform with all the functions necessary for ecommerce, from landing-page creation to order and customer data management analysis.",
-    "icon": "EcForce.png",
-    "implies": [
-      "Ruby",
-      "Ruby on Rails",
-      "Nginx"
-    ],
-    "js": {
-      "EcForce.Models": "",
-      "EcForce.Models.Shop": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://ec-force.com"
-  },
   "ECharts": {
     "cats": [
       25
@@ -68,23 +47,6 @@
     ],
     "saas": true,
     "website": "https://www.ekm.com"
-  },
-  "Elcom": {
-    "cats": [
-      1
-    ],
-    "description": "The Elcom Platform is a web content management and intranet portal software written in Microsoft ASP.NET and SQL Server by Elcom Technology.",
-    "icon": "elcom.png",
-    "implies": "Microsoft ASP.NET",
-    "meta": {
-      "generator": "^elcomCMS"
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "text": "Web CMS by Elcom",
-    "website": "https://www.elcom.com.au/"
   },
   "ELOG": {
     "cats": [
@@ -301,6 +263,27 @@
     "scriptSrc": "cdnebasnet\\.com/",
     "website": "https://ebasnet.com"
   },
+  "EcForce": {
+    "cats": [
+      6
+    ],
+    "description": "EcForce is an all-in-one ecommerce platform with all the functions necessary for ecommerce, from landing-page creation to order and customer data management analysis.",
+    "icon": "EcForce.png",
+    "implies": [
+      "Ruby",
+      "Ruby on Rails",
+      "Nginx"
+    ],
+    "js": {
+      "EcForce.Models": "",
+      "EcForce.Models.Shop": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://ec-force.com"
+  },
   "Ecovium": {
     "cats": [
       99
@@ -476,8 +459,8 @@
     ],
     "cpe": "cpe:2.3:a:elastic:elasticsearch:*:*:*:*:*:*:*:*",
     "description": "Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.",
-    "icon": "Elasticsearch.svg",
     "dom": "div#topsearchelastic_widget",
+    "icon": "Elasticsearch.svg",
     "pricing": [
       "mid",
       "recurring"
@@ -497,6 +480,23 @@
       "Symfony"
     ],
     "website": "http://elcodi.io"
+  },
+  "Elcom": {
+    "cats": [
+      1
+    ],
+    "description": "The Elcom Platform is a web content management and intranet portal software written in Microsoft ASP.NET and SQL Server by Elcom Technology.",
+    "icon": "elcom.png",
+    "implies": "Microsoft ASP.NET",
+    "meta": {
+      "generator": "^elcomCMS"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "text": "Web CMS by Elcom",
+    "website": "https://www.elcom.com.au/"
   },
   "Eleanor CMS": {
     "cats": [

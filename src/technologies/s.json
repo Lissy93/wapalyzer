@@ -171,16 +171,6 @@
     },
     "website": "http://www.simplemachines.org"
   },
-  "SmtpJS": {
-    "cats": [
-      75
-    ],
-    "description": "SmtpJS is a free library you can use for sending emails from JavaScript.",
-    "icon": "default.svg",
-    "scriptSrc": "/smtpjs\\.com/(?:v([\\d\\.]+)/)?smtp\\.js\\;version:\\1",
-    "oss": true,
-    "website": "https://smtpjs.com"
-  },
   "SOBI 2": {
     "cats": [
       19
@@ -1308,8 +1298,8 @@
     "icon": "Selectize.svg",
     "implies": "jQuery",
     "js": {
-      "selectize": "",
-      "Selectize": ""
+      "Selectize": "",
+      "selectize": ""
     },
     "oss": true,
     "website": "https://selectize.dev"
@@ -2319,14 +2309,14 @@
     "cats": [
       6
     ],
-    "description": "Shoplazza is a SaaS ecommerce platform.",
-    "icon": "Shoplazza.svg",
     "cookies": {
       "shoplazza_source": ""
     },
+    "description": "Shoplazza is a SaaS ecommerce platform.",
+    "icon": "Shoplazza.svg",
     "js": {
-      "Shoplazza": "",
-      "SHOPLAZZA": ""
+      "SHOPLAZZA": "",
+      "Shoplazza": ""
     },
     "pricing": [
       "low",
@@ -3739,6 +3729,16 @@
     "saas": true,
     "scriptSrc": "js\\.smile\\.io/v([\\d.]+)/\\;version:\\1",
     "website": "https://smile.io"
+  },
+  "SmtpJS": {
+    "cats": [
+      75
+    ],
+    "description": "SmtpJS is a free library you can use for sending emails from JavaScript.",
+    "icon": "default.svg",
+    "oss": true,
+    "scriptSrc": "/smtpjs\\.com/(?:v([\\d\\.]+)/)?smtp\\.js\\;version:\\1",
+    "website": "https://smtpjs.com"
   },
   "SmugMug": {
     "cats": [

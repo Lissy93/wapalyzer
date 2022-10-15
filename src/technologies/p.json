@@ -1949,7 +1949,7 @@
       89
     ],
     "cookies": {
-      "pll_language": "([a-z]{2})"
+      "pll_language": "[a-z]{2}"
     },
     "description": "Polylang is a WordPress plugin which allows you to create multilingual WordPress site.",
     "dom": "#pll_switcher",
@@ -1958,8 +1958,10 @@
     },
     "icon": "Polylang.svg",
     "oss": true,
+    "pricing": [
+      "freemium"
+    ],
     "requires": "WordPress",
-    "pricing": "freemium",
     "website": "https://wordpress.org/plugins/polylang"
   },
   "Polymer": {
@@ -3138,17 +3140,17 @@
       1
     ],
     "description": "phpRS is a content management software written in PHP.",
-    "icon": "default.svg",
-    "implies": "PHP",
-    "meta": {
-      "generator": "^phpRS$"
-    },
     "dom": {
       "a[href*='.php']": {
         "attributes": {
           "href": "search\\.php\\?.+all-phpRS-all"
         }
       }
+    },
+    "icon": "default.svg",
+    "implies": "PHP",
+    "meta": {
+      "generator": "^phpRS$"
     },
     "oss": true,
     "website": "https://phprs.net"
