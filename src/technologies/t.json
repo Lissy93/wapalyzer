@@ -185,6 +185,19 @@
     "scriptSrc": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
     "website": "http://twiki.org"
   },
+  "Twikoo": {
+    "cats": [
+      15
+    ],  
+    "description": "Twikoo is a simple, safe, free comment system.",
+    "icon": "Twikoo.png",
+    "js": {
+      "twikoo.version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "scriptSrc": "/twikoo/dist/twikoo\\.all\\.min\\.js",
+    "oss": true,
+    "website": "https://twikoo.js.org"
+  },
   "TYPO3 CMS": {
     "cats": [
       1
