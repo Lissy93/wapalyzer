@@ -153,6 +153,23 @@
     "scriptSrc": "cdn\\.iamport\\.kr/js/iamport\\.payment-([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://www.iamport.kr"
   },
+  "Ibexa DXP ": {
+    "cats": [
+      1
+    ],
+    "description": "Ibexa DXP is an open-source enterprise PHP content management system (CMS) and Digital Experience Platform (DXP) developed by the company Ibexa (known previously as eZ Systems).",
+    "icon": "Ibexa.svg",
+    "implies": "PHP",
+    "headers": {
+      "x-powered-by": "^Ibexa\\sExperience\\sv([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.ibexa.co"
+  },
   "Ideasoft": {
     "cats": [
       6
