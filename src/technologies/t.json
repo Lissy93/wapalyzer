@@ -1622,6 +1622,104 @@
     "saas": true,
     "website": "https://www.threekit.com"
   },
+  "Thrive Apprentice": {
+    "cats": [
+      87,
+      21
+    ],
+    "description": "Thrive Apprentice is a WordPress plugin for creating online courses and also a membership plugin.",
+    "dom": "link[href*='/wp-content/plugins/thrive-apprentice/']",
+    "icon": "Thrive.svg",
+    "scriptSrc": "/wp-content/plugins/thrive-apprentice/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://thrivethemes.com/apprentice/"
+  },
+  "Thrive Architect": {
+    "cats": [
+      87,
+      51
+    ],
+    "description": "Thrive Architect is the visual page builder for WordPress.",
+    "dom": "link[href*='/wp-content/plugins/thrive-visual-editor/']",
+    "icon": "Thrive.svg",
+    "scriptSrc": "/wp-content/plugins/thrive-visual-editor/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://thrivethemes.com/architect/"
+  },
+  "Thrive Comments": {
+    "cats": [
+      87
+    ],
+    "description": "Thrive Comments plugin replaces the standard WordPress comments from your website.",
+    "dom": "link[href*='/wp-content/plugins/thrive-comments/']",
+    "icon": "Thrive.svg",
+    "scriptSrc": "/wp-content/plugins/thrive-comments/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://thrivethemes.com/comments/"
+  },
+  "Thrive Leads": {
+    "cats": [
+      87
+    ],
+    "description": "Thrive Leads is an all-in-one email list building plugin for WordPress.",
+    "dom": "link[href*='/wp-content/plugins/thrive-leads/']",
+    "icon": "Thrive.svg",
+    "scriptSrc": "/wp-content/plugins/thrive-leads/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://thrivethemes.com/leads/"
+  },
+  "Thrive Quiz Builder": {
+    "cats": [
+      87
+    ],
+    "description": "Thrive Quiz Builder is a powerful WordPress plugin that can help you to create quizzes for your website or blog.",
+    "dom": "link[href*='/wp-content/plugins/thrive-quiz-builder/']",
+    "icon": "Thrive.svg",
+    "scriptSrc": "/wp-content/plugins/thrive-quiz-builder/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://thrivethemes.com/quizbuilder"
+  },
+  "Thrive Ultimatum": {
+    "cats": [
+      87
+    ],
+    "description": "Thrive Ultimatum is a WordPress scarcity marketing plugin with built-in templates and campaign tracking tools from developer Thrive Themes.",
+    "dom": "link[href*='/wp-content/plugins/thrive-ultimatum/']",
+    "icon": "Thrive.svg",
+    "scriptSrc": "/wp-content/plugins/thrive-ultimatum/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://thrivethemes.com/ultimatum/"
+  },
   "ThriveCart": {
     "cats": [
       6
