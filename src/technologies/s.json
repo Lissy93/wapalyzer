@@ -5587,11 +5587,16 @@
     "cats": [
       1
     ],
+    "description": "Sulu is the go-to CMS for back-end projects written within the PHP Symfony framework.",
     "headers": {
       "X-Generator": "Sulu/?(.+)?$\\;version:\\1"
     },
     "icon": "Sulu.svg",
     "implies": "Symfony",
+    "js": {
+      "SULU_CONFIG.suluVersion": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
     "website": "http://sulu.io"
   },
   "SummerCart": {
