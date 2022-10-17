@@ -49,7 +49,7 @@ const Utils = {
    */
   async getOption(name, defaultValue = null) {
     try {
-      const option = await chrome.storage.local.get(name)
+      const option = await Utils.promisify(chrome.storage.local, 'get', name)
 
       if (option[name] !== undefined) {
         return option[name]
@@ -69,7 +69,7 @@ const Utils = {
    */
   async setOption(name, value) {
     try {
-      await chrome.storage.local.set({
+      await Utils.promisify(chrome.storage.local, 'set', {
         [name]: value,
       })
     } catch (error) {

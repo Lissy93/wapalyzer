@@ -952,9 +952,11 @@
     "css": "\\.vue-notification-group",
     "description": "Vue.js is an open-source model–view–viewmodel JavaScript framework for building user interfaces and single-page applications.",
     "html": "<[^>]+\\sdata-v(?:ue)?-",
+    "dom": ".vue-app",
     "icon": "vue.svg",
     "js": {
       "Vue.version": "^(.+)$\\;version:\\1",
+      "VueRoot": "",
       "__VUE_HOT_MAP__": "",
       "__VUE__": "",
       "vueDLL": ""
