@@ -1759,12 +1759,23 @@
     "cats": [
       6
     ],
-    "description": "Workarea is a SaaS commerce platform for medium to large businesses.",
-    "icon": "Workarea.png",
+    "description": "Workarea is a SaaS ecommerce platform for medium to large businesses.",
+    "icon": "Workarea.svg",
+    "implies": [
+      "Ruby on Rails",
+      "MongoDB",
+      "Elasticsearch"
+    ],
     "js": {
-      "workarea": ""
+      "workarea": "",
+      "WEBLINC.cartCount": ""
     },
-    "website": "https://www.workarea.com/"
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.workarea.com"
   },
   "World4You": {
     "cats": [
