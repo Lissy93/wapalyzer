@@ -4024,6 +4024,27 @@
     "scriptSrc": "socket\\.io.*\\.js",
     "website": "https://socket.io"
   },
+  "Softr": {
+    "cats": [
+      51
+    ],
+    "description": "Softr is a tool designed to help users build custom websites, web apps, clients portals, or internal tools using Airtable or Google Sheets data.",
+    "icon": "Softr.svg",
+    "dom": {
+      "link[href*='softr']": {
+        "attributes": {
+          "href": "softr-(?:files\\.com/|prod.imgix.net/)"
+        }
+      }
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.softr.io"
+  },
   "SoftTr": {
     "cats": [
       6
