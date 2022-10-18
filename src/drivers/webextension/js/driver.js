@@ -666,7 +666,7 @@ const Driver = {
     ]
 
     try {
-      Driver.content(url, 'analyzeRequires', [url, requires])
+      await Driver.content(url, 'analyzeRequires', [url, requires])
     } catch (error) {
       // Continue
     }
@@ -787,8 +787,6 @@ const Driver = {
 
       return
     }
-
-    console.log({ tab })
 
     const { id, url } = tab
 

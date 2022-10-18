@@ -1,4 +1,6 @@
 'use strict'
+/* eslint-env browser */
+/* globals chrome */
 ;(function (win) {
   const exports = {}
 
@@ -163,15 +165,19 @@
        * @param {String} responseMessage
        */
       sendToBackground(message, event, responseMessage) {
-        chrome.runtime.sendMessage(message, (message) => {
-          if (message && typeof message.tracking_enabled !== 'undefined') {
-            if (message.tracking_enabled) {
-              utilCallback()
-            } else {
-              utilElseCallback()
+        try {
+          chrome.runtime.sendMessage(message, (message) => {
+            if (message && typeof message.tracking_enabled !== 'undefined') {
+              if (message.tracking_enabled) {
+                utilCallback()
+              } else {
+                utilElseCallback()
+              }
             }
-          }
-        })
+          })
+        } catch (error) {
+          // Continue
+        }
       },
 
       /**
