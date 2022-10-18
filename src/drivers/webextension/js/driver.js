@@ -665,7 +665,11 @@ const Driver = {
       ),
     ]
 
-    Driver.content(url, 'analyzeRequires', [url, requires])
+    try {
+      Driver.content(url, 'analyzeRequires', [url, requires])
+    } catch (error) {
+      // Continue
+    }
 
     await Driver.setIcon(url, resolved)
 
@@ -773,16 +777,20 @@ const Driver = {
    * Get the detected technologies for the current tab
    */
   async getDetections() {
-    const tab = await promisify(chrome.tabs, 'query', {
+    const [tab] = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
     })
 
     if (!tab) {
+      Driver.error(new Error('getDetections: no active tab found'))
+
       return
     }
 
-    const [{ id, url }] = tab
+    console.log({ tab })
+
+    const { id, url } = tab
 
     if (await Driver.isDisabledDomain(url)) {
       await Driver.setIcon(url, [])
