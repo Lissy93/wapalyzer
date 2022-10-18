@@ -486,7 +486,15 @@
       6
     ],
     "description": "Saleor is a headless, GraphQL ecommerce platform.",
-    "dom": "img[src*='saleor.imgix.net']",
+    "dom": {
+      "img[src*='saleor'], img[srcset*='saleor'], link[imagesrcset*='saleor']": {
+        "attributes": {
+          "src": "saleor\\.imgix\\.net",
+          "srcset": "/_next.+-saleor-",
+          "imagesrcset": "/_next.+-saleor-"
+        }
+      }
+    },
     "icon": "Saleor.svg",
     "implies": "GraphQL",
     "js": {
