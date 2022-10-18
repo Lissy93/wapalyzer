@@ -293,11 +293,11 @@
     ],
     "description": "Barilliance is an ecommerce personalisation tools including cart abandonment emails, personalised product recommendations, onsite personalisation, and live notifications.",
     "icon": "Barilliance.png",
-    "scriptSrc": "\\.barilliance\\.net/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.barilliance\\.net/",
     "website": "https://www.barilliance.com"
   },
   "Base": {
@@ -387,20 +387,6 @@
       "apps\\.bazaarvoice\\.com"
     ],
     "website": "https://www.bazaarvoice.com/products/ratings-and-reviews/"
-  },
-  "bdok": {
-    "cats": [
-      6
-    ],
-    "description": "bdok is a cloud-based platform which provides the capability to create and manage online stores with no technical knowledge.",
-    "icon": "bdok.svg",
-    "scriptSrc": "cdn\\.ibdok\\.ir/",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://bdok.ir"
   },
   "Beam AfterSell": {
     "cats": [
@@ -1391,6 +1377,24 @@
     "scriptSrc": "bookdinners\\.nl/widget\\.js",
     "website": "https://www.bookdinners.nl"
   },
+  "BookStack": {
+    "cats": [
+      4
+    ],
+    "cookies": {
+      "bookstack_session": ""
+    },
+    "cpe": "cpe:2.3:a:bookstackapp:bookstack:*:*:*:*:*:*:*:*",
+    "description": "BookStack is a simple, open-source, self-hosted, easy-to-use platform for organising and storing information.",
+    "icon": "BookStack.svg",
+    "implies": [
+      "PHP",
+      "MySQL",
+      "Laravel"
+    ],
+    "oss": true,
+    "website": "https://www.bookstackapp.com"
+  },
   "BookThatApp": {
     "cats": [
       100,
@@ -1489,24 +1493,6 @@
     ],
     "saas": true,
     "website": "https://bookingkit.net/"
-  },
-  "BookStack": {
-    "cats": [
-      4
-    ],
-    "cpe": "cpe:2.3:a:bookstackapp:bookstack:*:*:*:*:*:*:*:*",
-    "description": "BookStack is a simple, open-source, self-hosted, easy-to-use platform for organising and storing information.",
-    "icon": "BookStack.svg",
-    "implies": [
-      "PHP",
-      "MySQL",
-      "Laravel"
-    ],
-    "cookies": {
-      "bookstack_session": ""
-    },
-    "oss": true,
-    "website": "https://www.bookstackapp.com"
   },
   "Booksy": {
     "cats": [
@@ -2432,5 +2418,19 @@
       "basket.isValidItem": ""
     },
     "website": "https://addyosmani.github.io/basket.js/"
+  },
+  "bdok": {
+    "cats": [
+      6
+    ],
+    "description": "bdok is a cloud-based platform which provides the capability to create and manage online stores with no technical knowledge.",
+    "icon": "bdok.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.ibdok\\.ir/",
+    "website": "https://bdok.ir"
   }
 }

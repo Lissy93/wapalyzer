@@ -76,25 +76,6 @@
     "scriptSrc": "vs350\\.js",
     "website": "http://www.vpasp.com"
   },
-  "Vtiger": {
-    "cats": [
-      53
-    ],
-    "cpe": "cpe:2.3:a:vtiger:vtiger_crm:*:*:*:*:*:*:*:*",
-    "description": "Vtiger is a cloud-based suite of marketing, sales and help desk offerings, which can be deployed separately or as an integrated, all-in-one ecosystem.",
-    "icon": "Vtiger.svg",
-    "js": {
-      "Vtiger_Helper_Js": "",
-      "Vtiger": "",
-      "Vtiger_Base_Js": ""
-    },
-    "saas": true,
-    "pricing": [
-      "payg",
-      "recurring"
-    ],
-    "website": "https://www.vtiger.com"
-  },
   "VTEX": {
     "cats": [
       6
@@ -897,6 +878,25 @@
     "saas": true,
     "website": "https://www.voracio.co.uk"
   },
+  "Vtiger": {
+    "cats": [
+      53
+    ],
+    "cpe": "cpe:2.3:a:vtiger:vtiger_crm:*:*:*:*:*:*:*:*",
+    "description": "Vtiger is a cloud-based suite of marketing, sales and help desk offerings, which can be deployed separately or as an integrated, all-in-one ecosystem.",
+    "icon": "Vtiger.svg",
+    "js": {
+      "Vtiger": "",
+      "Vtiger_Base_Js": "",
+      "Vtiger_Helper_Js": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.vtiger.com"
+  },
   "VuFind": {
     "cats": [
       29
@@ -951,8 +951,8 @@
     ],
     "css": "\\.vue-notification-group",
     "description": "Vue.js is an open-source model–view–viewmodel JavaScript framework for building user interfaces and single-page applications.",
-    "html": "<[^>]+\\sdata-v(?:ue)?-",
     "dom": ".vue-app",
+    "html": "<[^>]+\\sdata-v(?:ue)?-",
     "icon": "vue.svg",
     "js": {
       "Vue.version": "^(.+)$\\;version:\\1",

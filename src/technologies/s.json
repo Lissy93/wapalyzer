@@ -46,11 +46,11 @@
       "ACC.config.commonResourcePath": "/_ui/responsive/common\\;confidence:25",
       "ACC.config.rootPath": "/_ui/responsive\\;confidence:25",
       "ACC.config.themeResourcePath": "/_ui/responsive/theme-\\;confidence:50",
-      "smartedit": "",
+      "getProductAttrFromHybris": "",
+      "getProductAvailabilityHybris": "",
       "hybrisId": "",
       "passLgDataToHybris": "",
-      "getProductAttrFromHybris": "",
-      "getProductAvailabilityHybris": ""
+      "smartedit": ""
     },
     "pricing": [
       "poa"
@@ -201,13 +201,13 @@
     ],
     "cpe": "cpe:2.3:a:spip:spip:*:*:*:*:*:*:*:*",
     "description": "SPIP is a content management system written in PHP that uses one or more databases like SQL, SQLite or PostgreSQL.",
+    "dom": "div.formulaire_spip",
     "headers": {
       "Composed-By": "SPIP ([\\d.]+) @\\;version:\\1",
       "X-Spip-Cache": ""
     },
     "icon": "spip.svg",
     "implies": "PHP",
-    "dom": "div.formulaire_spip",
     "meta": {
       "generator": "(?:^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1"
     },
@@ -439,16 +439,16 @@
     "cats": [
       21
     ],
-    "cpe": "cpe:2.3:a:sakailms:sakai:*:*:*:*:*:*:*:*:*",
-    "description": "Sakai is a robust open-source learning management system created by higher ed for higher ed.",
-    "icon": "Sakai.png",
     "cookies": {
       "SAKAIID": ""
     },
+    "cpe": "cpe:2.3:a:sakailms:sakai:*:*:*:*:*:*:*:*:*",
+    "description": "Sakai is a robust open-source learning management system created by higher ed for higher ed.",
+    "icon": "Sakai.png",
     "js": {
       "sakai": "",
-      "sakaiTutorialSkin": "",
-      "sakaiPortalWindow": ""
+      "sakaiPortalWindow": "",
+      "sakaiTutorialSkin": ""
     },
     "oss": true,
     "website": "https://www.sakailms.org"
@@ -4282,20 +4282,20 @@
     "cats": [
       67
     ],
-    "description": "Sourcepoint is the data privacy software company for the digital marketing ecosystem.",
-    "icon": "Sourcepoint.svg",
-    "dom": "body.f_sourcepoint_ccpa_on",
     "cookies": {
       "_sp_enable_dfp_personalized_ads": ""
     },
+    "description": "Sourcepoint is the data privacy software company for the digital marketing ecosystem.",
+    "dom": "body.f_sourcepoint_ccpa_on",
+    "icon": "Sourcepoint.svg",
     "js": {
       "tealium_sourcepoint": ""
     },
-    "scripts": "SOURCEPOINT_MMS_DOMAIN",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scripts": "SOURCEPOINT_MMS_DOMAIN",
     "website": "https://sourcepoint.com"
   },
   "Sovrn": {

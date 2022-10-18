@@ -44,24 +44,6 @@
     "implies": "Windows Server",
     "website": "http://www.iis.net"
   },
-  "Imgix": {
-    "cats": [
-      31,
-      95
-    ],
-    "description": "Imgix is a visual media platform for managing, processing, rendering, optimising and delivering your existing images.",
-    "dns": {
-      "SOA": "\\.imgix\\.net"
-    },
-    "dom": "img[src*='.imgix.net/'], img[data-src*='.imgix.net/'], img[srcset*='.imgix.net/'], source[src*='.imgix.net/'], source[data-src*='.imgix.net/']",
-    "icon": "Imgix.svg",
-    "pricing": [
-      "freemium",
-      "mid",
-      "recurring"
-    ],
-    "website": "https://imgix.com/"
-  },
   "INFOnline": {
     "cats": [
       10
@@ -176,14 +158,14 @@
       1
     ],
     "description": "Ibexa DXP is an open-source enterprise PHP content management system (CMS) and Digital Experience Platform (DXP) developed by the company Ibexa (known previously as eZ Systems).",
+    "headers": {
+      "x-powered-by": "^Ibexa\\sExperience\\sv([\\d\\.]+)$\\;version:\\1"
+    },
     "icon": "Ibexa.svg",
     "implies": [
       "PHP",
       "Symfony"
     ],
-    "headers": {
-      "x-powered-by": "^Ibexa\\sExperience\\sv([\\d\\.]+)$\\;version:\\1"
-    },
     "pricing": [
       "high",
       "recurring"
@@ -313,6 +295,24 @@
     ],
     "saas": true,
     "website": "https://imber.live"
+  },
+  "Imgix": {
+    "cats": [
+      31,
+      95
+    ],
+    "description": "Imgix is a visual media platform for managing, processing, rendering, optimising and delivering your existing images.",
+    "dns": {
+      "SOA": "\\.imgix\\.net"
+    },
+    "dom": "img[src*='.imgix.net/'], img[data-src*='.imgix.net/'], img[srcset*='.imgix.net/'], source[src*='.imgix.net/'], source[data-src*='.imgix.net/']",
+    "icon": "Imgix.svg",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://imgix.com/"
   },
   "Immutable.js": {
     "cats": [
@@ -959,8 +959,8 @@
     "pricing": [
       "poa"
     ],
-    "scriptSrc": "\\.dialogtech\\.com/",
     "saas": true,
+    "scriptSrc": "\\.dialogtech\\.com/",
     "website": "https://www.invoca.com"
   },
   "Ionic": {
