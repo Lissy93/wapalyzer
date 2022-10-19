@@ -1206,6 +1206,31 @@
     "saas": true,
     "website": "https://www.chinesemenuonline.com"
   },
+  "Chimpmatic": {
+    "cats": [
+      87
+    ],
+    "description": "Chimpmatic is a premium Contact Form 7 and Mailchimp integration plugin.",
+    "icon": "default.svg",
+    "implies": [
+      "Contact Form 7",
+      "MailChimp"
+    ],
+    "dom": {
+      "form[class*='chimpmatic']": {
+        "attributes": {
+          "class": "chimpmatic-([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://chimpmatic.com"
+  },
   "Chitika": {
     "cats": [
       36
