@@ -301,6 +301,7 @@ const Driver = {
       return
     }
 
+    // eslint-disable-next-line no-async-promise-executor
     new Promise(async (resolve) => {
       await initPromise
 

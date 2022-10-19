@@ -489,9 +489,9 @@
     "dom": {
       "img[src*='saleor'], img[srcset*='saleor'], link[imagesrcset*='saleor']": {
         "attributes": {
+          "imagesrcset": "/_next.+-saleor-",
           "src": "saleor\\.imgix\\.net",
-          "srcset": "/_next.+-saleor-",
-          "imagesrcset": "/_next.+-saleor-"
+          "srcset": "/_next.+-saleor-"
         }
       }
     },
@@ -4024,27 +4024,6 @@
     "scriptSrc": "socket\\.io.*\\.js",
     "website": "https://socket.io"
   },
-  "Softr": {
-    "cats": [
-      51
-    ],
-    "description": "Softr is a tool designed to help users build custom websites, web apps, clients portals, or internal tools using Airtable or Google Sheets data.",
-    "icon": "Softr.svg",
-    "dom": {
-      "link[href*='softr']": {
-        "attributes": {
-          "href": "softr-(?:files\\.com/|prod.imgix.net/)"
-        }
-      }
-    },
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.softr.io"
-  },
   "SoftTr": {
     "cats": [
       6
@@ -4054,6 +4033,27 @@
       "author": "SoftTr E-Ticaret Sitesi Yazılımı"
     },
     "website": "http://www.softtr.com"
+  },
+  "Softr": {
+    "cats": [
+      51
+    ],
+    "description": "Softr is a tool designed to help users build custom websites, web apps, clients portals, or internal tools using Airtable or Google Sheets data.",
+    "dom": {
+      "link[href*='softr']": {
+        "attributes": {
+          "href": "softr-(?:files\\.com/|prod.imgix.net/)"
+        }
+      }
+    },
+    "icon": "Softr.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.softr.io"
   },
   "Soisy": {
     "cats": [

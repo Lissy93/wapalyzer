@@ -541,7 +541,6 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
-    console.log(detections, 'xxx')
     Popup.cache.detections = detections
 
     const el = {
