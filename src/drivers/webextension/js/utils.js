@@ -97,7 +97,7 @@ const Utils = {
         },
         (response) => {
           chrome.runtime.lastError
-            ? reject(new Error(chrome.runtime.lastError.message))
+            ? reject(chrome.runtime.lastError)
             : resolve(response)
         }
       )

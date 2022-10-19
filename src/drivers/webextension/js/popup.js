@@ -286,6 +286,8 @@ const Popup = {
       return templates
     }, {})
 
+    Popup.onGetDetections()
+
     // Disabled domains
     const dynamicIcon = await getOption('dynamicIcon', false)
 
@@ -315,6 +317,7 @@ const Popup = {
       Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
     } else {
       el.terms.classList.remove('terms--hidden')
+      el.empty.classList.add('empty--hidden')
       el.detections.classList.add('detections--hidden')
       el.issue.classList.add('issue--hidden')
       el.footer.classList.add('footer--hidden')
@@ -538,6 +541,7 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
+    console.log(detections, 'xxx')
     Popup.cache.detections = detections
 
     const el = {

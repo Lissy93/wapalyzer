@@ -21,6 +21,12 @@ const xhrDebounce = []
 
 let xhrAnalyzed = {}
 
+let initDone
+
+const initPromise = new Promise((resolve) => {
+  initDone = resolve
+})
+
 function getRequiredTechnologies(name, categoryId) {
   return name
     ? Wappalyzer.requires.find(({ name: _name }) => _name === name).technologies
@@ -66,66 +72,34 @@ const Driver = {
         }),
         {}
       ),
-      tabs: {},
       robots: await getOption('robots', {}),
       ads: [],
     }
-
-    chrome.action.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
-
-    chrome.webRequest.onCompleted.addListener(
-      Driver.onWebRequestComplete,
-      { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-      ['responseHeaders']
-    )
-
-    chrome.webRequest.onCompleted.addListener(Driver.onScriptRequestComplete, {
-      urls: ['http://*/*', 'https://*/*'],
-      types: ['script'],
-    })
-
-    chrome.webRequest.onCompleted.addListener(Driver.onXhrRequestComplete, {
-      urls: ['http://*/*', 'https://*/*'],
-      types: ['xmlhttprequest'],
-    })
-
-    chrome.tabs.onRemoved.addListener((id) => delete Driver.cache.tabs[id])
-
-    chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
-      if (status === 'complete') {
-        ;({ url } = await promisify(chrome.tabs, 'get', id))
-      }
-
-      if (url) {
-        const { hostname } = new URL(url)
-
-        const cache = Driver.cache.hostnames[hostname]
-
-        Driver.cache.tabs[id] = cache ? resolve(cache.detections) : []
-
-        await Driver.setIcon(url, Driver.cache.tabs[id])
-      }
-    })
-
-    // Enable messaging between scripts
-    chrome.runtime.onMessage.addListener(Driver.onMessage)
 
     const { version } = chrome.runtime.getManifest()
     const previous = await getOption('version')
     const upgradeMessage = await getOption('upgradeMessage', true)
 
-    if (previous === null) {
-      open(
-        'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
-      )
+    await setOption('version', version)
+
+    const current = await getOption('version')
+
+    if (!previous) {
+      await Driver.clearCache()
+
+      if (current) {
+        open(
+          'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
+        )
+      }
     } else if (version !== previous && upgradeMessage) {
-      // open(
-      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-      //   false
-      // )
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
-    await setOption('version', version)
+    initDone()
   },
 
   /**
@@ -327,7 +301,11 @@ const Driver = {
       return
     }
 
-    Promise.resolve(Driver[func].call(Driver[func], ...(args || [])))
+    new Promise(async (resolve) => {
+      await initPromise
+
+      resolve(Driver[func].call(Driver[func], ...(args || [])))
+    })
       .then(callback)
       .catch(Driver.error)
 
@@ -673,6 +651,7 @@ const Driver = {
 
     await Driver.setIcon(url, resolved)
 
+    /*
     if (url) {
       let tabs = []
 
@@ -686,6 +665,7 @@ const Driver = {
 
       tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
     }
+    */
 
     Driver.log({ hostname, technologies: resolved })
 
@@ -788,7 +768,7 @@ const Driver = {
       return
     }
 
-    const { id, url } = tab
+    const { url } = tab
 
     if (await Driver.isDisabledDomain(url)) {
       await Driver.setIcon(url, [])
@@ -798,7 +778,11 @@ const Driver = {
 
     const showCached = await getOption('showCached', true)
 
-    const resolved = (Driver.cache.tabs[id] || []).filter(
+    const { hostname } = new URL(url)
+
+    const cache = Driver.cache.hostnames[hostname]
+
+    const resolved = (cache ? resolve(cache.detections) : []).filter(
       ({ cached }) => showCached || cached === false
     )
 
@@ -905,7 +889,6 @@ const Driver = {
    */
   async clearCache() {
     Driver.cache.hostnames = {}
-    Driver.cache.tabs = {}
 
     xhrAnalyzed = {}
 
@@ -977,5 +960,26 @@ const Driver = {
     }
   },
 }
+
+chrome.action.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
+
+chrome.webRequest.onCompleted.addListener(
+  Driver.onWebRequestComplete,
+  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
+  ['responseHeaders']
+)
+
+chrome.webRequest.onCompleted.addListener(Driver.onScriptRequestComplete, {
+  urls: ['http://*/*', 'https://*/*'],
+  types: ['script'],
+})
+
+chrome.webRequest.onCompleted.addListener(Driver.onXhrRequestComplete, {
+  urls: ['http://*/*', 'https://*/*'],
+  types: ['xmlhttprequest'],
+})
+
+// Enable messaging between scripts
+chrome.runtime.onMessage.addListener(Driver.onMessage)
 
 Driver.init()
