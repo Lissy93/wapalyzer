@@ -568,24 +568,6 @@
     ],
     "website": "https://www.acquia.com/products/marketing-cloud/campaign-factory"
   },
-  "Acquia Cloud Classic": {
-    "cats": [
-      88
-    ],
-    "description": "Acquia Cloud Classic is a Amazon EC2 based Drupal hosting platform.",
-    "headers": {
-      "X-AH-Environment": "prod"
-    },
-    "icon": "acquia-cloud-platform.svg",
-    "implies": [
-      "Acquia Cloud Platform",
-      "Amazon EC2",
-      "Percona",
-      "Red Hat Gluster"
-    ],
-    "saas": true,
-    "website": "https://docs.acquia.com/cloud-platform/"
-  },
   "Acquia Cloud IDE": {
     "cats": [
       47
@@ -602,38 +584,20 @@
     "url": "https:?\\/\\/.+\\.web\\.ahdev\\.cloud",
     "website": "https://www.acquia.com/products/drupal-cloud/cloud-ide"
   },
-  "Acquia Cloud Next": {
-    "cats": [
-      88
-    ],
-    "description": "Acquia Cloud Next is a Kubernetes-native Drupal hosting platform.",
-    "headers": {
-      "X-AH-Environment": "next"
-    },
-    "icon": "acquia-cloud-platform.svg",
-    "implies": [
-      "Acquia Cloud Platform",
-      "Kubernetes Dashboard",
-      "Amazon EFS",
-      "Amazon Aurora"
-    ],
-    "saas": true,
-    "website": "https://docs.acquia.com/cloud-platform/cloud-next/"
-  },
   "Acquia Cloud Platform": {
     "cats": [
       62
     ],
     "description": "Acquia Cloud Platform is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
     "headers": {
-      "X-AH-Environment": "^\\w+$"
+      "X-AH-Environment": "^(next)?.*$\\;version:\\1?Next:"
     },
     "icon": "acquia-cloud.png",
     "implies": [
       "Amazon Web Services"
     ],
     "saas": true,
-    "website": "https://www.acquia.com/"
+    "website": "https://www.acquia.com/products/drupal-cloud/cloud-platform"
   },
   "Acquia Cloud Platform CDN": {
     "cats": [
@@ -642,6 +606,7 @@
     "headers": {
       "via": "Acquia Platform CDN (.+)\\;version:\\1"
     },
+    "implies": "Acquia Cloud Platform",
     "icon": "acquia-cloud-platform.svg",
     "saas": true,
     "website": "https://docs.acquia.com/cloud-platform/platformcdn/"
