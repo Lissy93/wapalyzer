@@ -3224,7 +3224,11 @@
     },
     "cpe": "cpe:2.3:a:sitecore:*:*:*:*:*:*:*:*:*",
     "description": "Sitecore provides web content management, and multichannel marketing automation software.",
-    "html": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
+    "dom": [
+      "link[href*='/_sitecore/']",
+      "img[src^='/-/media/']",
+      "img[src*='/~/media/.+\\.ashx']"
+    ],
     "icon": "Sitecore.svg",
     "pricing": [
       "poa",
