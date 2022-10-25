@@ -972,8 +972,6 @@ chrome.webRequest.onCompleted.addListener(Driver.onXhrRequestComplete, {
 })
 
 chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
-  console.log({ id, status, url })
-
   if (status === 'complete') {
     ;({ url } = await promisify(chrome.tabs, 'get', id))
   }
