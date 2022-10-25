@@ -1383,6 +1383,7 @@
     ],
     "description": "Google Ads Conversion Tracking is a free tool that shows you what happens after a customer interacts with your ads.",
     "icon": "Google.svg",
+    "implies": "Google Ads",
     "js": {
       "google_trackConversion": ""
     },
@@ -1391,6 +1392,7 @@
     ],
     "saas": true,
     "scriptSrc": "\\.googleadservices\\.com/pagead/conversion_async\\.js",
+    "scripts": "gtag\\([^)]+'(AW-)",
     "website": "https://support.google.com/google-ads/answer/1722022"
   },
   "Google Analytics": {
@@ -1403,7 +1405,7 @@
       "_gat": ""
     },
     "description": "Google Analytics is a free web analytics service that tracks and reports website traffic.",
-    "html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
+    "dom": "amp-analytics[type*=googleanalytics]",
     "icon": "Google Analytics.svg",
     "js": {
       "GoogleAnalyticsObject": "",
@@ -1412,6 +1414,10 @@
     "scriptSrc": [
       "google-analytics\\.com/(?:ga|urchin|analytics)\\.js",
       "googletagmanager\\.com/gtag/js"
+    ],
+    "scripts": [
+      "gtag\\([^)]+'(UA-)\\;version:\\1?UA:",
+      "gtag\\([^)]+'(G-)\\;version:\\1?GA4:"
     ],
     "website": "http://google.com/analytics"
   },

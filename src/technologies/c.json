@@ -1192,6 +1192,31 @@
     "scriptSrc": "js\\.chilipiper\\.com/marketing\\.js",
     "website": "https://www.chilipiper.com/"
   },
+  "Chimpmatic": {
+    "cats": [
+      87
+    ],
+    "description": "Chimpmatic is a premium Contact Form 7 and Mailchimp integration plugin.",
+    "dom": {
+      "form[class*='chimpmatic']": {
+        "attributes": {
+          "class": "chimpmatic-([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "icon": "default.svg",
+    "implies": [
+      "Contact Form 7",
+      "MailChimp"
+    ],
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "website": "https://chimpmatic.com"
+  },
   "Chinese Menu Online": {
     "cats": [
       51,
@@ -1205,31 +1230,6 @@
     ],
     "saas": true,
     "website": "https://www.chinesemenuonline.com"
-  },
-  "Chimpmatic": {
-    "cats": [
-      87
-    ],
-    "description": "Chimpmatic is a premium Contact Form 7 and Mailchimp integration plugin.",
-    "icon": "default.svg",
-    "implies": [
-      "Contact Form 7",
-      "MailChimp"
-    ],
-    "dom": {
-      "form[class*='chimpmatic']": {
-        "attributes": {
-          "class": "chimpmatic-([\\d\\.]+)\\;version:\\1"
-        }
-      }
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "website": "https://chimpmatic.com"
   },
   "Chitika": {
     "cats": [
@@ -1407,15 +1407,15 @@
     "description": "Clarip is an enterprise data privacy and risk management platform.",
     "icon": "Clarip.png",
     "js": {
-      "pageData.claripConsentJSUrl": "",
       "claripCdnHost": "",
-      "claripHost": ""
+      "claripHost": "",
+      "pageData.claripConsentJSUrl": ""
     },
-    "scriptSrc": "//cdn\\.clarip\\.com/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "//cdn\\.clarip\\.com/",
     "website": "https://www.clarip.com"
   },
   "Claris FileMaker": {
@@ -1946,23 +1946,6 @@
     "saas": true,
     "website": "https://www.coconstruct.com"
   },
-  "CoreUI": {
-    "cats": [
-      66
-    ],
-    "description": "CoreUI provides cloud hosting, web and mobile design, animations, wireframes, and UX testing services.",
-    "icon": "CoreUI.svg",
-    "js": {
-      "coreui": ""
-    },
-    "scripts": "webpackJsonp@coreui/coreui",
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://coreui.io"
-  },
   "CoRover": {
     "cats": [
       52
@@ -2484,6 +2467,26 @@
     "scriptSrc": "\\.conferwith\\.io/",
     "website": "https://conferwith.io"
   },
+  "Congressus": {
+    "cats": [
+      1
+    ],
+    "cookies": {
+      "_gat_congressus_analytics": "",
+      "congressus_session": ""
+    },
+    "description": "Congressus is a Dutch-language online application for member administration, financial management, communication and a linked website with webshop.",
+    "icon": "Congressus.svg",
+    "meta": {
+      "generator": "^Congressus\\s-\\s.+$"
+    },
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://congressus.nl"
+  },
   "Conjured": {
     "cats": [
       100
@@ -2497,26 +2500,6 @@
     "saas": true,
     "scriptSrc": "app\\.conjured\\.co/",
     "website": "https://conjured.co"
-  },
-  "Congressus": {
-    "cats": [
-      1
-    ],
-    "description": "Congressus is a Dutch-language online application for member administration, financial management, communication and a linked website with webshop.",
-    "icon": "Congressus.svg",
-    "meta": {
-      "generator": "^Congressus\\s-\\s.+$"
-    },
-    "cookies": {
-      "congressus_session": "",
-      "_gat_congressus_analytics": ""
-    },
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "saas": true,
-    "website": "https://congressus.nl"
   },
   "Connectif": {
     "cats": [
@@ -3032,6 +3015,23 @@
     "icon": "Copypoison.png",
     "scriptSrc": "copypoison\\.com/cp\\.js",
     "website": "https://copypoison.com/"
+  },
+  "CoreUI": {
+    "cats": [
+      66
+    ],
+    "description": "CoreUI provides cloud hosting, web and mobile design, animations, wireframes, and UX testing services.",
+    "icon": "CoreUI.svg",
+    "js": {
+      "coreui": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scripts": "webpackJsonp@coreui/coreui",
+    "website": "https://coreui.io"
   },
   "Corebine": {
     "cats": [

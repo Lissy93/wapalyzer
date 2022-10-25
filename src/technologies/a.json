@@ -606,8 +606,8 @@
     "headers": {
       "via": "Acquia Platform CDN (.+)\\;version:\\1"
     },
-    "implies": "Acquia Cloud Platform",
     "icon": "acquia-cloud-platform.svg",
+    "implies": "Acquia Cloud Platform",
     "saas": true,
     "website": "https://docs.acquia.com/cloud-platform/platformcdn/"
   },
@@ -2858,14 +2858,14 @@
     ],
     "description": "Animate.css is a ready-to-use library collection of CSS3 animation effects.",
     "dom": {
-      "link[href*='animate']": {
-        "attributes": {
-          "href": "([\\d\\.]+)?/animate\\.min\\.css\\;version:\\1"
-        }
-      },
       ".animate__animated": {
         "attributes": {
           "class": "\\;confidence:99"
+        }
+      },
+      "link[href*='animate']": {
+        "attributes": {
+          "href": "([\\d\\.]+)?/animate\\.min\\.css\\;version:\\1"
         }
       }
     },
