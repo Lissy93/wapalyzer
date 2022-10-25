@@ -244,28 +244,30 @@ const Wappalyzer = {
       done = true
 
       resolved.forEach(({ technology, confidence, lastUrl }) => {
-        technology.implies.forEach(({ name, confidence: _confidence }) => {
-          const implied = Wappalyzer.getTechnology(name)
+        technology.implies.forEach(
+          ({ name, confidence: _confidence, version }) => {
+            const implied = Wappalyzer.getTechnology(name)
 
-          if (!implied) {
-            throw new Error(`Implied technology does not exist: ${name}`)
+            if (!implied) {
+              throw new Error(`Implied technology does not exist: ${name}`)
+            }
+
+            if (
+              resolved.findIndex(
+                ({ technology: { name } }) => name === implied.name
+              ) === -1
+            ) {
+              resolved.push({
+                technology: implied,
+                confidence: Math.min(confidence, _confidence),
+                version: version || '',
+                lastUrl,
+              })
+
+              done = false
+            }
           }
-
-          if (
-            resolved.findIndex(
-              ({ technology: { name } }) => name === implied.name
-            ) === -1
-          ) {
-            resolved.push({
-              technology: implied,
-              confidence: Math.min(confidence, _confidence),
-              version: '',
-              lastUrl,
-            })
-
-            done = false
-          }
-        })
+        )
       })
     } while (resolved.length && !done)
   },
@@ -389,9 +391,10 @@ const Wappalyzer = {
         meta: transform(meta),
         scriptSrc: transform(scriptSrc),
         js: transform(js, true),
-        implies: transform(implies).map(({ value, confidence }) => ({
+        implies: transform(implies).map(({ value, confidence, version }) => ({
           name: value,
           confidence,
+          version,
         })),
         excludes: transform(excludes).map(({ value }) => ({
           name: value,

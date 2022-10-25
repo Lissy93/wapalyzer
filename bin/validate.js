@@ -157,6 +157,10 @@ Object.keys(technologies).forEach((name) => {
       flags.forEach((flag) => {
         const [key, value] = flag.split(':')
 
+        if (key === 'version') {
+          return
+        }
+
         if (key === 'confidence') {
           if (
             !/^\d+$/.test(value) ||
