@@ -37,6 +37,12 @@ function getRequiredTechnologies(name, categoryId) {
     : undefined
 }
 
+function isSimilarUrl(a, b) {
+  const normalise = (url) => String(url || '').replace(/(\/|\/?#.+)$/, '')
+
+  return normalise(a) === normalise(b)
+}
+
 const Driver = {
   lastPing: Date.now(),
 
@@ -198,11 +204,13 @@ const Driver = {
       url,
       js
         .map(({ name, chain, value }) => {
-          return analyzeManyToMany(
-            technologies.find(({ name: _name }) => name === _name),
-            'js',
-            { [chain]: [value] }
+          const technology = technologies.find(
+            ({ name: _name }) => name === _name
           )
+
+          return technology
+            ? analyzeManyToMany(technology, 'js', { [chain]: [value] })
+            : []
         })
         .flat()
     )
@@ -229,6 +237,10 @@ const Driver = {
             const technology = technologies.find(
               ({ name: _name }) => name === _name
             )
+
+            if (!technology) {
+              return []
+            }
 
             if (typeof exists !== 'undefined') {
               return analyzeManyToMany(technology, 'dom.exists', {
@@ -625,13 +637,7 @@ const Driver = {
       )
     )
 
-    const resolved = resolve(cache.detections).map((detection) => {
-      detection.cached = detection.lastUrl !== url
-
-      delete detection.lastUrl
-
-      return detection
-    })
+    const resolved = resolve(cache.detections).map((detection) => detection)
 
     const requires = [
       ...Wappalyzer.requires.filter(({ name }) =>
@@ -651,22 +657,6 @@ const Driver = {
     }
 
     await Driver.setIcon(url, resolved)
-
-    /*
-    if (url) {
-      let tabs = []
-
-      try {
-        tabs = await promisify(chrome.tabs, 'query', {
-          url: globEscape(url),
-        })
-      } catch (error) {
-        // Continue
-      }
-
-      tabs.forEach(({ id }) => (Driver.cache.tabs[id] = resolved))
-    }
-    */
 
     Driver.log({ hostname, technologies: resolved })
 
@@ -698,8 +688,9 @@ const Driver = {
     let icon = 'default.svg'
 
     const _technologies = technologies.filter(
-      ({ slug, cached }) =>
-        slug !== 'cart-functionality' && (showCached || cached === false)
+      ({ slug, lastUrl }) =>
+        slug !== 'cart-functionality' &&
+        (showCached || isSimilarUrl(url, lastUrl))
     )
 
     if (dynamicIcon) {
@@ -784,7 +775,7 @@ const Driver = {
     const cache = Driver.cache.hostnames[hostname]
 
     const resolved = (cache ? resolve(cache.detections) : []).filter(
-      ({ cached }) => showCached || cached === false
+      ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)
     )
 
     await Driver.setIcon(url, resolved)
@@ -978,6 +969,28 @@ chrome.webRequest.onCompleted.addListener(Driver.onScriptRequestComplete, {
 chrome.webRequest.onCompleted.addListener(Driver.onXhrRequestComplete, {
   urls: ['http://*/*', 'https://*/*'],
   types: ['xmlhttprequest'],
+})
+
+chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
+  console.log({ id, status, url })
+
+  if (status === 'complete') {
+    ;({ url } = await promisify(chrome.tabs, 'get', id))
+  }
+
+  if (url) {
+    const { hostname } = new URL(url)
+
+    const showCached = await getOption('showCached', true)
+
+    const cache = Driver.cache.hostnames[hostname]
+
+    const resolved = (cache ? resolve(cache.detections) : []).filter(
+      ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)
+    )
+
+    await Driver.setIcon(url, resolved)
+  }
 })
 
 // Enable messaging between scripts
