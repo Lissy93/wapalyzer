@@ -130,6 +130,26 @@
     ],
     "website": "https://www.nagish.li"
   },
+  "Naive UI": {
+    "cats": [
+      66
+    ],
+    "description": "Naive UI is a Vue.js UI library written in TypeScript, offering more than 80 treeshakable components.",
+    "icon": "Naive UI.svg",
+    "implies": [
+      "Vue.js",
+      "TypeScript"
+    ],
+    "dom": {
+      "style[cssr-id*='n-']": {
+        "attributes": {
+          "cssr-id": "^n-[a-z-]+$\\;confidence:99"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://www.naiveui.com"
+  },
   "Najva": {
     "cats": [
       32
