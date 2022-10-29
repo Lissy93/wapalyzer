@@ -12,7 +12,9 @@ const {
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 
-const expiry = 1000 * 60 * 60 * 24
+const expiry = 1000 * 60 * 60 * 12
+
+const maxHostnames = 100
 
 const hostnameIgnoreList =
   /\b((local|dev(elop(ment)?)?|sandbox|stag(e|ing)?|preprod|production|preview|test(ing)?|[^a-z]demo(shop)?|cache)[.-]|dev\d|localhost|((wappalyzer|google|bing|baidu|microsoft|duckduckgo|facebook|adobe|twitter|reddit|yahoo|wikipedia|amazon|amazonaws|youtube|stackoverflow|github|stackexchange|w3schools|twitch)\.)|(live|office|herokuapp|shopifypreview)\.com|\.local|\.test|\.netlify\.app|web\.archive\.org|zoom\.us|^([0-9.]+|[\d.]+)$|^([a-f0-9:]+:+)+[a-f0-9]+$)/
@@ -593,18 +595,24 @@ const Driver = {
     cache.language = cache.language || language
 
     // Expire cache
-    Driver.cache.hostnames = Object.keys(Driver.cache.hostnames).reduce(
-      (hostnames, hostname) => {
+    Driver.cache.hostnames = Object.keys(Driver.cache.hostnames)
+      .sort((a, b) =>
+        Driver.cache.hostnames[a].dateTime > Driver.cache.hostnames[b].dateTime
+          ? -1
+          : 1
+      )
+      .reduce((hostnames, hostname) => {
         const cache = Driver.cache.hostnames[hostname]
 
-        if (cache.dateTime > Date.now() - expiry) {
+        if (
+          cache.dateTime > Date.now() - expiry &&
+          Object.keys(hostnames).length < maxHostnames
+        ) {
           hostnames[hostname] = cache
         }
 
         return hostnames
-      },
-      {}
-    )
+      }, {})
 
     await setOption(
       'hostnames',
@@ -905,7 +913,7 @@ const Driver = {
 
           const url = `http${https ? 's' : ''}://${hostname}`
 
-          if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
+          if (!hostnameIgnoreList.test(hostname) && hits) {
             urls[url] = urls[url] || {
               technologies: resolve(detections).reduce(
                 (technologies, { name, confidence, version }) => {
@@ -939,7 +947,9 @@ const Driver = {
           urls,
         })
 
-        await setOption('hostnames', (Driver.cache.hostnames = {}))
+        Object.keys(Driver.cache.hostnames).forEach((hostname) => {
+          Driver.cache.hostnames[hostname].hits = 0
+        })
 
         Driver.lastPing = Date.now()
       }

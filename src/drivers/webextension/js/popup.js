@@ -565,6 +565,7 @@ const Popup = {
 
     el.empty.classList.add('empty--hidden')
     el.detections.classList.remove('detections--hidden')
+    el.issue.classList.remove('issue--hidden')
     el.plusDownload.classList.remove('plus-download--hidden')
 
     while (el.detections.firstChild) {
