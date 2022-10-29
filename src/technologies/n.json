@@ -141,7 +141,7 @@
       "TypeScript"
     ],
     "dom": {
-      "style[cssr-id*='n-']": {
+      "style[cssr-id^='n-']": {
         "attributes": {
           "cssr-id": "^n-[a-z-]+$\\;confidence:99"
         }
