@@ -487,6 +487,35 @@
     "scriptSrc": "\\.getbento\\.com/",
     "website": "https://getbento.com"
   },
+  "BetterDocs": {
+    "cats": [
+      4
+    ],
+    "description": "BetterDocs is an advanced documentation and knowledge base plugin for WordPress and Shopify.",
+    "icon": "BetterDocs.png",
+    "js": {
+      "betterdocs.FEEDBACK": "",
+      "betterdocspublic.post_id": "",
+      "betterdocs_pro.FEEDBACK": ""
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "website": "https://betterdocs.co"
+  },
+  "BetterDocs plugin": {
+    "cats": [
+      87
+    ],
+    "description": "BetterDocs plugin is an advanced documentation and knowledge base plugin for WordPress.",
+    "icon": "BetterDocs.png",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/betterdocs(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "pricing": [
+      "onetime"
+    ],
+    "website": "https://betterdocs.co/docs/wordpress"
+  },
   "Better Price": {
     "cats": [
       100
