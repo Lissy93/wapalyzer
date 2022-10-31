@@ -509,6 +509,7 @@
     ],
     "description": "BetterDocs plugin is an advanced documentation and knowledge base plugin for WordPress.",
     "icon": "BetterDocs.png",
+    "implies": "BetterDocs",
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/betterdocs(?:-pro)?/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "pricing": [
