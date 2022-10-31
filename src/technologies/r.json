@@ -1899,7 +1899,11 @@
     "cats": [
       19
     ],
-    "description": "A web feed that allows users and applications to access updates to websites in a standardized, computer-readable format.",
+    "description": "RSS is a family of web feed formats used to publish frequently updated works—such as blog entries, news headlines, audio, and video—in a standardized format.",
+    "dom": [
+      "link[type=\"application/rss+xml\"]",
+      "link[type=\"application/atom+xml\"]"
+    ],
     "icon": "RSS.png",
     "website": "https://www.rssboard.org/rss-specification"
   },
