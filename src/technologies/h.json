@@ -1234,6 +1234,22 @@
     "icon": "HubSpot.svg",
     "website": "https://knowledge.hubspot.com/reports/customize-your-cookie-tracking-settings-and-privacy-policy-alert"
   },
+  "HubSpot WordPress plugin": {
+    "cats": [
+      87
+    ],
+    "description": "HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service. HubSpot WordPress plugin allows you to manage contacts (CRM), engage visitors with live chat and chatbots, add beautiful forms to pages, create engaging email marketing campaigns, and more.",
+    "icon": "HubSpot.svg",
+    "implies": [
+      "HubSpot",
+      "HubSpot Analytics"
+    ],
+    "requires": "WordPress",
+    "js": {
+      "leadin_wordpress.leadinPluginVersion": "^([\\d.]+)$\\;version:\\1"
+    },
+    "website": "https://wordpress.org/plugins/leadin/"
+  },
   "Huberway": {
     "cats": [
       1
