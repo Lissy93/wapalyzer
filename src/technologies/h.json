@@ -353,6 +353,21 @@
     "icon": "Haskell.png",
     "website": "http://wiki.haskell.org/Haskell"
   },
+  "Hatena Blog": {
+    "cats": [
+      1,
+      11
+    ],
+    "description": "Hatena Blog is one of the traditional blog platforms in Japan.",
+    "icon": "Hatena.svg",
+    "scriptSrc": "cdn\\.blog\\.st-hatena\\.com/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://hatenablog.com"
+  },
   "HeadJS": {
     "cats": [
       59
@@ -1563,19 +1578,23 @@
     "scriptSrc": "merchant\\.cdn\\.hoolah\\.co/",
     "website": "https://www.hoolah.co"
   },
-  "hyva": {
+  "Hyva Themes": {
     "cats": [
       19
     ],
-    "description": "Hyvä themes is a frontend for Magento 2.",
+    "description": "Hyva Themes is an optimised theme for Magento 2 which eliminated the third-party libraries and having only two dependencies Alpine.js and Tailwind CSS.",
     "headers": {
       "X-Built-With": "^Hyva Themes$"
     },
-    "icon": "Hyva.svg",
-    "implies": "Magento\\;version:2",
+    "icon": "Hyva Themes.svg",
+    "implies": [
+      "Magento\\;version:2",
+      "Tailwind CSS",
+      "Alpine.js"
+    ],
     "pricing": [
       "onetime"
     ],
-    "website": "https://hyva.io/"
+    "website": "https://hyva.io"
   }
 }

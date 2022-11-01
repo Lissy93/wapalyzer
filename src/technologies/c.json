@@ -360,6 +360,23 @@
     "saas": true,
     "website": "https://www.callrail.com"
   },
+  "CallTrackingMetrics": {
+    "cats": [
+      10
+    ],
+    "description": "CallTrackingMetrics is a call tracking and marketing attribution solution for contact centers and agencies.",
+    "icon": "CallTrackingMetrics.svg",
+    "js": {
+      "__ctm_tracked_numbers": "",
+      "__ctm.numbers": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.calltrackingmetrics.com"
+  },
   "Callbell": {
     "cats": [
       52
@@ -1595,11 +1612,13 @@
       32,
       51
     ],
-    "description": "Clickfunnels is an online sales funnel builder that helps businesses market, sell, and deliver their products online.",
+    "description": "ClickFunnels is an online sales funnel builder that helps businesses market, sell, and deliver their products online.",
     "icon": "ClickFunnels.svg",
     "js": {
       "CFAppDomain": "app\\.clickfunnels\\.com",
-      "CFSurveyParticipantID": ""
+      "CFSurveyParticipantID": "",
+      "cfAddPolyfill": "",
+      "ClickFunnels": ""
     },
     "meta": {
       "cf:app_domain:": "app\\.clickfunnels\\.com"
