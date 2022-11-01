@@ -540,8 +540,10 @@ const Wappalyzer = {
                     // Escape slashes
                     .replace(/\//g, '\\/')
                     // Optimise quantifiers for long strings
+                    .replace(/\\\+/g, '__escapedPlus__')
                     .replace(/\+/g, '{1,250}')
                     .replace(/\*/g, '{0,250}')
+                    .replace(/__escapedPlus__/g, '\\+')
                 : '',
               'i'
             )

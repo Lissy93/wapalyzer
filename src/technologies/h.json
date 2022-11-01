@@ -360,12 +360,12 @@
     ],
     "description": "Hatena Blog is one of the traditional blog platforms in Japan.",
     "icon": "Hatena.svg",
-    "scriptSrc": "cdn\\.blog\\.st-hatena\\.com/",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "scriptSrc": "cdn\\.blog\\.st-hatena\\.com/",
     "website": "https://hatenablog.com"
   },
   "HeadJS": {
@@ -1244,10 +1244,10 @@
       "HubSpot",
       "HubSpot Analytics"
     ],
-    "requires": "WordPress",
     "js": {
       "leadin_wordpress.leadinPluginVersion": "^([\\d.]+)$\\;version:\\1"
     },
+    "requires": "WordPress",
     "website": "https://wordpress.org/plugins/leadin/"
   },
   "Huberway": {
@@ -1532,6 +1532,25 @@
     "oss": true,
     "website": "https://www.hypestylecss.xyz"
   },
+  "Hyva Themes": {
+    "cats": [
+      19
+    ],
+    "description": "Hyva Themes is an optimised theme for Magento 2 which eliminated the third-party libraries and having only two dependencies Alpine.js and Tailwind CSS.",
+    "headers": {
+      "X-Built-With": "^Hyva Themes$"
+    },
+    "icon": "Hyva Themes.svg",
+    "implies": [
+      "Magento\\;version:2",
+      "Tailwind CSS",
+      "Alpine.js"
+    ],
+    "pricing": [
+      "onetime"
+    ],
+    "website": "https://hyva.io"
+  },
   "h5ai": {
     "cats": [
       19
@@ -1593,24 +1612,5 @@
     "saas": true,
     "scriptSrc": "merchant\\.cdn\\.hoolah\\.co/",
     "website": "https://www.hoolah.co"
-  },
-  "Hyva Themes": {
-    "cats": [
-      19
-    ],
-    "description": "Hyva Themes is an optimised theme for Magento 2 which eliminated the third-party libraries and having only two dependencies Alpine.js and Tailwind CSS.",
-    "headers": {
-      "X-Built-With": "^Hyva Themes$"
-    },
-    "icon": "Hyva Themes.svg",
-    "implies": [
-      "Magento\\;version:2",
-      "Tailwind CSS",
-      "Alpine.js"
-    ],
-    "pricing": [
-      "onetime"
-    ],
-    "website": "https://hyva.io"
   }
 }

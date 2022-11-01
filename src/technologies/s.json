@@ -307,6 +307,16 @@
     "scriptSrc": "/wp-content/plugins/svg-support/",
     "website": "https://github.com/wp-plugins/svg-support"
   },
+  "SWC": {
+    "cats": [
+      19
+    ],
+    "description": "SWC is an extensible Rust-based platform for the next generation of fast developer tools.",
+    "icon": "swc.svg",
+    "implies": "Rust",
+    "oss": true,
+    "website": "https://swc.rs"
+  },
   "SWFObject": {
     "cats": [
       19
@@ -2014,14 +2024,14 @@
       76
     ],
     "description": "Shoefitr.io is data-based shoe size advice service where we measure the length, width, ball, and instep.",
+    "dom": "a[href*='api.shoefitr.io/']",
     "icon": "Shoefitr.io.svg",
-    "dom":"a[href*='api.shoefitr.io/']",
-    "saas": true,
     "pricing": [
       "payg",
       "high",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.shoefitr.io"
   },
   "Shogun": {
@@ -5849,13 +5859,7 @@
       12
     ],
     "description": "Svelte is a free and open-source front end compiler created by Rich Harris and maintained by the Svelte core team members.",
-    "dom": {
-      "*": {
-        "attributes": {
-          "class": "svelte-\\w+"
-        }
-      }
-    },
+    "dom": "[class*='svelte-']",
     "icon": "Svelte.svg",
     "oss": true,
     "website": "https://svelte.dev"
@@ -5911,16 +5915,6 @@
     "saas": true,
     "scriptSrc": "api\\.swagifyapp\\.com/",
     "website": "https://swagifyapp.com"
-  },
-  "SWC": {
-    "cats": [
-      19
-    ],
-    "description": "SWC is an extensible Rust-based platform for the next generation of fast developer tools.",
-    "icon": "swc.svg",
-    "implies": "Rust",
-    "oss": true,
-    "website": "https://swc.rs"
   },
   "SweetAlert": {
     "cats": [

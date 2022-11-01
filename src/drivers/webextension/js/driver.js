@@ -172,17 +172,13 @@ const Driver = {
    * @param {String} body
    */
   post(url, body) {
-    try {
-      return fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-    } catch (error) {
-      throw new Error(error.message || error.toString())
-    }
+    return fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
   },
 
   /**
@@ -267,6 +263,16 @@ const Driver = {
             }
 
             if (typeof attribute !== 'undefined') {
+              if (technology.name === 'RSS') {
+                console.log(
+                  selector,
+                  value,
+                  analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
+                    [selector]: [value],
+                  })
+                )
+              }
+
               return analyzeManyToMany(
                 technology,
                 `dom.attributes.${attribute}`,
@@ -942,10 +948,15 @@ const Driver = {
       const count = Object.keys(urls).length
 
       if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/v2/ping/', {
-          version: chrome.runtime.getManifest().version,
-          urls,
-        })
+        try {
+          await Driver.post('https://api.wappalyzer.com/v2/ping/', {
+            version: chrome.runtime.getManifest().version,
+            urls,
+          })
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error(error)
+        }
 
         Object.keys(Driver.cache.hostnames).forEach((hostname) => {
           Driver.cache.hostnames[hostname].hits = 0
@@ -955,7 +966,15 @@ const Driver = {
       }
 
       if (Driver.cache.ads.length > 25) {
-        await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+        try {
+          await Driver.post(
+            'https://ad.wappalyzer.com/log/wp/',
+            Driver.cache.ads
+          )
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error(error)
+        }
 
         Driver.cache.ads = []
       }

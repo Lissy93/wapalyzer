@@ -135,11 +135,6 @@
       66
     ],
     "description": "Naive UI is a Vue.js UI library written in TypeScript, offering more than 80 treeshakable components.",
-    "icon": "Naive UI.svg",
-    "implies": [
-      "Vue.js",
-      "TypeScript"
-    ],
     "dom": {
       "style[cssr-id^='n-']": {
         "attributes": {
@@ -147,6 +142,11 @@
         }
       }
     },
+    "icon": "Naive UI.svg",
+    "implies": [
+      "Vue.js",
+      "TypeScript"
+    ],
     "oss": true,
     "website": "https://www.naiveui.com"
   },
