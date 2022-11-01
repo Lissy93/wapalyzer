@@ -263,16 +263,6 @@ const Driver = {
             }
 
             if (typeof attribute !== 'undefined') {
-              if (technology.name === 'RSS') {
-                console.log(
-                  selector,
-                  value,
-                  analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
-                    [selector]: [value],
-                  })
-                )
-              }
-
               return analyzeManyToMany(
                 technology,
                 `dom.attributes.${attribute}`,
