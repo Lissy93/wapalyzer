@@ -3366,6 +3366,35 @@
     ],
     "website": "http://criteo.com"
   },
+  "CRM+": {
+    "cats": [
+      53
+    ],
+    "description": "CRM+ is a German CRM software product building on Vtiger with GDPR-compliant extensions and improvements.",
+    "dom": {
+      "div.footer > div.floatRight ": {
+          "text": "Powered by Brainformatik GmbH"
+      }
+    },
+    "icon": "CRM+.png",
+    "implies": [
+      "MariaDB",
+      "amCharts",
+      "Sentry",
+      "Vtiger"
+    ],
+    "requires": [
+      "Apache",
+      "PHP"
+    ],
+    "pricing": [
+      "mid",
+      "recurring",
+      "poa",
+      "freemium"
+    ],
+    "website": "https://www.brainformatik.com"
+  },
   "Crobox": {
     "cats": [
       5
