@@ -751,9 +751,13 @@
       25
     ],
     "description": "Visx is a collection of React-based data visualisation tools developed by Airbnb.",
-    "dom": [
-      "g[class='visx-group']"
-    ],
+    "dom": {
+      "g.visx-group,g.vx-group": {
+        "attributes": {
+          "class": "(?:v(?:is)?x)-group"
+        }
+      }
+    },
     "icon": "Visx.svg",
     "requires": "React",
     "oss": true,
