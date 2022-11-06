@@ -693,6 +693,15 @@ class Site {
           }),
           {}
         )
+
+        // Change Google Analytics 4 cookie from _ga_XXXXXXXXXX to _ga_*
+        Object.keys(cookies).forEach((name) => {
+          if (/_ga_[A-Z0-9]+/.test(name)) {
+            cookies['_ga_*'] = cookies[name]
+
+            delete cookies[name]
+          }
+        })
       } catch (error) {
         error.message += ` (${url})`
 
@@ -1196,10 +1205,19 @@ class Site {
     this.detections = this.detections
       .concat(detections)
       .filter(
-        ({ technology: { name }, pattern: { regex } }, index, detections) =>
+        (
+          { technology: { name }, pattern: { regex }, version },
+          index,
+          detections
+        ) =>
           detections.findIndex(
-            ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            ({
+              technology: { name: _name },
+              pattern: { regex: _regex },
+              version: _version,
+            }) =>
               name === _name &&
+              version === _version &&
               (!regex || regex.toString() === _regex.toString())
           ) === index
       )
