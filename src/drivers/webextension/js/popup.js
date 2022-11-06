@@ -286,8 +286,6 @@ const Popup = {
       return templates
     }, {})
 
-    Popup.onGetDetections()
-
     // Disabled domains
     const dynamicIcon = await getOption('dynamicIcon', false)
 

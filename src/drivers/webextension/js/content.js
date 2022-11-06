@@ -71,9 +71,22 @@ async function getDom(technologies) {
           return
         }
 
-        dom[selector].forEach(({ exists, text, attributes }) => {
+        dom[selector].forEach(({ exists, text, properties, attributes }) => {
           nodes.forEach((node) => {
-            if (exists) {
+            if (
+              technologies.filter(({ name: _name }) => _name === name).length >=
+              50
+            ) {
+              return
+            }
+
+            if (
+              exists &&
+              technologies.findIndex(
+                ({ name: _name, selector: _selector, exists }) =>
+                  name === _name && selector === _selector && exists === ''
+              ) === -1
+            ) {
               technologies.push({
                 name,
                 selector,
@@ -83,9 +96,18 @@ async function getDom(technologies) {
 
             if (text) {
               // eslint-disable-next-line unicorn/prefer-text-content
-              const value = node.innerText ? node.innerText.trim() : ''
+              const value = (node.innerText ? node.innerText.trim() : '').slice(
+                0,
+                1000000
+              )
 
-              if (value) {
+              if (
+                value &&
+                technologies.findIndex(
+                  ({ name: _name, selector: _selector, text }) =>
+                    name === _name && selector === _selector && text === value
+                ) === -1
+              ) {
                 technologies.push({
                   name,
                   selector,
@@ -94,9 +116,54 @@ async function getDom(technologies) {
               }
             }
 
+            if (properties) {
+              Object.keys(properties).forEach((property) => {
+                if (
+                  Object.prototype.hasOwnProperty.call(node, property) &&
+                  technologies.findIndex(
+                    ({
+                      name: _name,
+                      selector: _selector,
+                      property: _property,
+                      value,
+                    }) =>
+                      name === _name &&
+                      selector === _selector &&
+                      property === _property &&
+                      value === toScalar(value)
+                  ) === -1
+                ) {
+                  const value = node[property]
+
+                  if (typeof value !== 'undefined') {
+                    technologies.push({
+                      name,
+                      selector,
+                      property,
+                      value: toScalar(value),
+                    })
+                  }
+                }
+              })
+            }
+
             if (attributes) {
               Object.keys(attributes).forEach((attribute) => {
-                if (node.hasAttribute(attribute)) {
+                if (
+                  node.hasAttribute(attribute) &&
+                  technologies.findIndex(
+                    ({
+                      name: _name,
+                      selector: _selector,
+                      attribute: _atrribute,
+                      value,
+                    }) =>
+                      name === _name &&
+                      selector === _selector &&
+                      attribute === _atrribute &&
+                      value === toScalar(value)
+                  ) === -1
+                ) {
                   const value = node.getAttribute(attribute)
 
                   technologies.push({

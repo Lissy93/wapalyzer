@@ -131,7 +131,20 @@ function getDom(page, technologies = Wappalyzer.technologies) {
 
           dom[selector].forEach(({ exists, text, properties, attributes }) => {
             nodes.forEach((node) => {
-              if (exists) {
+              if (
+                technologies.filter(({ name: _name }) => _name === name)
+                  .length >= 50
+              ) {
+                return
+              }
+
+              if (
+                exists &&
+                technologies.findIndex(
+                  ({ name: _name, selector: _selector, exists }) =>
+                    name === _name && selector === _selector && exists === ''
+                ) === -1
+              ) {
                 technologies.push({
                   name,
                   selector,
@@ -140,9 +153,18 @@ function getDom(page, technologies = Wappalyzer.technologies) {
               }
 
               if (text) {
-                const value = node.textContent.trim()
+                // eslint-disable-next-line unicorn/prefer-text-content
+                const value = (
+                  node.textContent ? node.textContent.trim() : ''
+                ).slice(0, 1000000)
 
-                if (value) {
+                if (
+                  value &&
+                  technologies.findIndex(
+                    ({ name: _name, selector: _selector, text }) =>
+                      name === _name && selector === _selector && text === value
+                  ) === -1
+                ) {
                   technologies.push({
                     name,
                     selector,
@@ -153,7 +175,21 @@ function getDom(page, technologies = Wappalyzer.technologies) {
 
               if (properties) {
                 Object.keys(properties).forEach((property) => {
-                  if (Object.prototype.hasOwnProperty.call(node, property)) {
+                  if (
+                    Object.prototype.hasOwnProperty.call(node, property) &&
+                    technologies.findIndex(
+                      ({
+                        name: _name,
+                        selector: _selector,
+                        property: _property,
+                        value,
+                      }) =>
+                        name === _name &&
+                        selector === _selector &&
+                        property === _property &&
+                        value === toScalar(value)
+                    ) === -1
+                  ) {
                     const value = node[property]
 
                     if (typeof value !== 'undefined') {
@@ -170,7 +206,21 @@ function getDom(page, technologies = Wappalyzer.technologies) {
 
               if (attributes) {
                 Object.keys(attributes).forEach((attribute) => {
-                  if (node.hasAttribute(attribute)) {
+                  if (
+                    node.hasAttribute(attribute) &&
+                    technologies.findIndex(
+                      ({
+                        name: _name,
+                        selector: _selector,
+                        attribute: _atrribute,
+                        value,
+                      }) =>
+                        name === _name &&
+                        selector === _selector &&
+                        attribute === _atrribute &&
+                        value === toScalar(value)
+                    ) === -1
+                  ) {
                     const value = node.getAttribute(attribute)
 
                     technologies.push({
