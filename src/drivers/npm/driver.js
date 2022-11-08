@@ -1126,6 +1126,7 @@ class Site {
           website,
           cpe,
           categories,
+          rootPath,
         }) => ({
           slug,
           name,
@@ -1140,6 +1141,7 @@ class Site {
             slug,
             name,
           })),
+          rootPath,
         })
       ),
       patterns,
@@ -1271,6 +1273,15 @@ class Site {
               (!regex || regex.toString() === _regex.toString())
           ) === index
       )
+
+    // Track if technology was identified on website's root path
+    detections.forEach(({ technology: { name } }) => {
+      const detection = this.detections.find(
+        ({ technology: { name: _name } }) => name === _name
+      )
+
+      detection.rootPath = detection.rootPath || url.pathname === '/'
+    })
 
     if (this.cache[url.href]) {
       const resolved = resolve(this.detections)

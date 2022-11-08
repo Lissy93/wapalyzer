@@ -101,10 +101,12 @@ const Driver = {
         )
       }
     } else if (version !== previous && upgradeMessage) {
+      /*
       open(
         `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
         false
       )
+      */
     }
 
     initDone()
@@ -151,6 +153,13 @@ const Driver = {
           ).json()),
         }
       }
+
+      Object.keys(technologies).forEach((name) => {
+        delete technologies[name].description
+        delete technologies[name].cpe
+        delete technologies[name].pricing
+        delete technologies[name].website
+      })
 
       setTechnologies(technologies)
       setCategories(categories)
@@ -560,7 +569,7 @@ const Driver = {
 
     url = url.split('#')[0]
 
-    const { hostname } = new URL(url)
+    const { hostname, pathname } = new URL(url)
 
     // Cache detections
     const cache = (Driver.cache.hostnames[hostname] = {
@@ -605,6 +614,39 @@ const Driver = {
         return detection
       })
 
+    // Track if technology was identified on website's root path
+    detections.forEach(({ technology: { name } }) => {
+      const detection = cache.detections.find(
+        ({ technology: { name: _name } }) => name === _name
+      )
+
+      detection.rootPath = detection.rootPath || pathname === '/'
+    })
+
+    const resolved = resolve(cache.detections).map((detection) => detection)
+
+    // Look for technologies that require other technologies to be present on the page
+    const requires = [
+      ...Wappalyzer.requires.filter(({ name }) =>
+        resolved.some(({ name: _name }) => _name === name)
+      ),
+      ...Wappalyzer.categoryRequires.filter(({ categoryId }) =>
+        resolved.some(({ categories }) =>
+          categories.some(({ id }) => id === categoryId)
+        )
+      ),
+    ]
+
+    try {
+      await Driver.content(url, 'analyzeRequires', [url, requires])
+    } catch (error) {
+      // Continue
+    }
+
+    await Driver.setIcon(url, resolved)
+
+    await Driver.ping()
+
     cache.hits += incrementHits ? 1 : 0
     cache.language = cache.language || language
 
@@ -628,6 +670,7 @@ const Driver = {
         return hostnames
       }, {})
 
+    // Save cache
     await setOption(
       'hostnames',
       Object.keys(Driver.cache.hostnames).reduce(
@@ -642,6 +685,7 @@ const Driver = {
                   technology: { name: technology },
                   pattern: { regex, confidence },
                   version,
+                  rootPath,
                   lastUrl,
                 }) => ({
                   technology,
@@ -650,6 +694,7 @@ const Driver = {
                     confidence,
                   },
                   version,
+                  rootPath,
                   lastUrl,
                 })
               ),
@@ -659,30 +704,7 @@ const Driver = {
       )
     )
 
-    const resolved = resolve(cache.detections).map((detection) => detection)
-
-    const requires = [
-      ...Wappalyzer.requires.filter(({ name }) =>
-        resolved.some(({ name: _name }) => _name === name)
-      ),
-      ...Wappalyzer.categoryRequires.filter(({ categoryId }) =>
-        resolved.some(({ categories }) =>
-          categories.some(({ id }) => id === categoryId)
-        )
-      ),
-    ]
-
-    try {
-      await Driver.content(url, 'analyzeRequires', [url, requires])
-    } catch (error) {
-      // Continue
-    }
-
-    await Driver.setIcon(url, resolved)
-
     Driver.log({ hostname, technologies: resolved })
-
-    await Driver.ping()
   },
 
   /**
@@ -930,11 +952,12 @@ const Driver = {
           if (!hostnameIgnoreList.test(hostname) && hits) {
             urls[url] = urls[url] || {
               technologies: resolve(detections).reduce(
-                (technologies, { name, confidence, version }) => {
+                (technologies, { name, confidence, version, rootPath }) => {
                   if (confidence === 100) {
                     technologies[name] = {
                       version,
                       hits,
+                      rootPath,
                     }
                   }
 

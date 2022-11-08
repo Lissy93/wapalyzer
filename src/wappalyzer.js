@@ -104,24 +104,32 @@ const Wappalyzer = {
       ) {
         let version = ''
         let confidence = 0
+        let rootPath
 
         detections
-          .filter(({ technology }) => technology)
+          .filter(
+            ({ technology: _technology }) =>
+              _technology && _technology.name === technology.name
+          )
           .forEach(
-            ({ technology: { name }, pattern, version: _version = '' }) => {
-              if (name === technology.name) {
-                confidence = Math.min(100, confidence + pattern.confidence)
-                version =
-                  _version.length > version.length &&
-                  _version.length <= 15 &&
-                  (parseInt(_version, 10) || 0) < 10000 // Ignore long numeric strings like timestamps
-                    ? _version
-                    : version
-              }
+            ({
+              technology: { name },
+              pattern,
+              version: _version = '',
+              rootPath: _rootPath,
+            }) => {
+              confidence = Math.min(100, confidence + pattern.confidence)
+              version =
+                _version.length > version.length &&
+                _version.length <= 15 &&
+                (parseInt(_version, 10) || 0) < 10000 // Ignore long numeric strings like timestamps
+                  ? _version
+                  : version
+              rootPath = rootPath || _rootPath || undefined
             }
           )
 
-        resolved.push({ technology, confidence, version, lastUrl })
+        resolved.push({ technology, confidence, version, rootPath, lastUrl })
       }
 
       return resolved
@@ -152,6 +160,7 @@ const Wappalyzer = {
           },
           confidence,
           version,
+          rootPath,
           lastUrl,
         }) => ({
           name,
@@ -164,6 +173,7 @@ const Wappalyzer = {
           website,
           pricing,
           cpe,
+          rootPath,
           lastUrl,
         })
       )
@@ -360,7 +370,7 @@ const Wappalyzer = {
 
       technologies.push({
         name,
-        description,
+        description: description || null,
         categories: cats || [],
         slug: Wappalyzer.slugify(name),
         url: transform(url),
