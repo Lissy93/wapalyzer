@@ -711,9 +711,13 @@
     ],
     "description": "Recharts is a component-based charting library, which is exclusively built for React applications.",
     "icon": "Recharts.svg",
-    "dom": [
-      "[class^=recharts-]"
-    ],
+    "dom": {
+      "div > div > svg.recharts-surface": {
+        "attributes": {
+          "class": ""
+        }
+      }
+    },
     "implies": "React",
     "oss": true,
     "website": "https://recharts.org/"
