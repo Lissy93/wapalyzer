@@ -5438,8 +5438,13 @@
     ],
     "description": "Storyblok is a headless CMS with a visual editor for developers, marketers and content editors. Storyblok helps your team to manage content and digital experiences for every use-case from corporate websites, ecommerce, helpdesks, mobile apps, screen displays, and more.",
     "icon": "Storyblok.svg",
-    "meta": {
-      "generator": "storyblok"
+    "headers": {
+      "content-security-policy": "app\\.storyblok\\.com",
+      "x-frame-options": "app\\.storyblok\\.com"
+    },
+    "js": {
+      "StoryblokBridge": "",
+      "storyblokRegisterEvent": ""
     },
     "pricing": [
       "recurring",
