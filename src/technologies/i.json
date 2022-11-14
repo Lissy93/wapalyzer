@@ -1271,15 +1271,19 @@
     "cats": [
       1
     ],
-    "html": "<imp:live-info sysid=\"[0-9a-f-]+\"(?: node_id=\"[0-9/]*\")? *\\/>",
+    "description": "imperia CMS is a headless content management for large editorial.",
     "icon": "imperiaCMS.svg",
     "implies": "Perl",
     "meta": {
-      "GENERATOR": "^IMPERIA ([0-9.]{2,3})\\;version:\\1",
-      "X-Imperia-Live-Info": ""
+      "generator": "^IMPERIA\\s([\\d\\.\\_]+)\\;version:\\1",
+      "x-imperia-live-info": ""
     },
-    "url": "imperia/md/",
-    "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
+    "dom":"source[srcset*='.de/imperia/md/images/]",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.pirobase-imperia.com/de/solutions/imperia-cms"
   },
   "inSales": {
     "cats": [
