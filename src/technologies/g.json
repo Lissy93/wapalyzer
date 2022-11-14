@@ -25,6 +25,37 @@
     "saas": true,
     "website": "https://www.geovendas.com"
   },
+  "GLPI": {
+    "cats": [
+      18,
+      53
+    ],
+    "cpe": "cpe:2.3:a:glpi-project:glpi:*:*:*:*:*:*:*:* ",
+    "description": "GLPI is an open-source IT Asset Management, issue tracking and service desk system.",
+    "dom": {
+      "input[name='_glpi_csrf_token']": {
+        "exists": ""
+      },
+      "div[id*='footer-login'] > a": {
+        "text": "GLPI\\s+version\\s+([\\d\\.]+)\\;version:\\1"
+      }
+    },
+    "scriptSrc": "//.*glpi.+common\\.min\\.js\\?v=(\\d+\\.\\d+\\.\\d+)\\;version:\\1",
+    "js": {
+      "glpiUnsavedFormChanges": ""
+    },
+    "meta": {
+      "glpi:csrf_token": ""
+    },
+    "oss": true,
+    "icon": "GLPI.png",
+    "implies": "PHP",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://glpi-project.org"   
+  },
   "GLS": {
     "cats": [
       99
