@@ -46,8 +46,6 @@ function isSimilarUrl(a, b) {
 }
 
 const Driver = {
-  lastPing: Date.now(),
-
   /**
    * Initialise driver
    */
@@ -853,7 +851,7 @@ const Driver = {
           )
 
           if (!response.ok) {
-            Driver.error(new Error(response.statusText))
+            Driver.log(`getRobots: ${response.statusText} (${hostname})`)
 
             resolve('')
           }
@@ -978,7 +976,14 @@ const Driver = {
 
       const count = Object.keys(urls).length
 
-      if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
+      const lastPing = await getOption('lastPing', Date.now())
+
+      if (
+        count &&
+        (count >= 25 || (count >= 5 && lastPing < Date.now() - expiry))
+      ) {
+        await setOption('lastPing', Date.now())
+
         try {
           await Driver.post('https://api.wappalyzer.com/v2/ping/', {
             version: chrome.runtime.getManifest().version,
@@ -992,8 +997,6 @@ const Driver = {
         Object.keys(Driver.cache.hostnames).forEach((hostname) => {
           Driver.cache.hostnames[hostname].hits = 0
         })
-
-        Driver.lastPing = Date.now()
       }
 
       if (Driver.cache.ads.length > 25) {
