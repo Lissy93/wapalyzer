@@ -103,6 +103,28 @@
     "scriptSrc": "cdn\\.shopify\\.com/extensions/.+/([\\.\\d]{3,})/assets/upsell\\.min\\.js\\;version:\\1",
     "website": "https://obsidianapps.co"
   },
+  "Obsidian Publish": {
+    "cats": [
+      4
+    ],
+    "description": "Obsidian Publish is an official, paid plugin for Obsidian that allows users to post selected notes to a directory on the publish.obsidian.md domain.",
+    "icon": "Obsidian Publish.svg",
+    "implies": [
+      "Prism",
+      "PIXIjs"
+    ],
+    "js": {
+      "siteInfo.host": "\\.obsidian\\.md"
+    },
+    "pricing": [
+      "freemium",
+      "onetime",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://obsidian.md/publish"
+  },
   "Obviyo": {
     "cats": [
       100,
