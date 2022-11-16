@@ -1261,6 +1261,11 @@
     ],
     "description": "Ikas is a new generation ecommerce platform designed for small businesses.",
     "icon": "Ikas.svg",
+    "implies": [
+      "Next.js",
+      "GraphQL",
+      "MongoDB"
+    ],
     "headers": {
       "server": "^ikas$",
       "x-powered-by": "^ikas$"
