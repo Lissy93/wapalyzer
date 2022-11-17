@@ -457,8 +457,11 @@
         }
       }
     },
+    "js": {
+      "tailwind": ""
+    },
     "icon": "tailwindcss.svg",
-    "scriptSrc": "\\.tailwindcss\\.com",
+    "scriptSrc": "\\.tailwindcss(?:tailwind-config-cdn)?\\.(?:com|js)",
     "website": "https://tailwindcss.com/"
   },
   "TakeDrop": {
