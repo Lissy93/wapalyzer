@@ -494,22 +494,22 @@
       21
     ],
     "description": "Canvas LMS is a web-based learning management system, or LMS.",
+    "headers": {
+      "x-canvas-meta": "login/canvas"
+    },
     "icon": "Canvas LMS.svg",
     "implies": [
       "Ruby on Rails",
       "React"
     ],
-    "headers": {
-      "x-canvas-meta": "login/canvas"
-    },
     "js": {
-    "webpackChunkcanvas_lms": ""
+      "webpackChunkcanvas_lms": ""
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
-   "website": "https://www.instructure.com/canvas"
+    "saas": true,
+    "website": "https://www.instructure.com/canvas"
   },
   "Captch Me": {
     "cats": [

@@ -711,7 +711,6 @@
       25
     ],
     "description": "Recharts is a component-based charting library, which is exclusively built for React applications.",
-    "icon": "Recharts.svg",
     "dom": {
       "div > div > svg.recharts-surface": {
         "attributes": {
@@ -719,6 +718,7 @@
         }
       }
     },
+    "icon": "Recharts.svg",
     "implies": "React",
     "oss": true,
     "website": "https://recharts.org/"
@@ -1797,27 +1797,6 @@
     },
     "website": "http://www.robinhq.com"
   },
-  "Rocketfy": {
-    "cats": [
-      6,
-      51
-    ],
-    "description": "Rocketfy is a platform that allows users to build an online store and allows dropshipping at the same time.",
-    "icon": "Rocketfy.svg",
-    "implies": [
-      "React",
-      "Next.js"
-    ],
-    "meta": {
-      "generator": "^Rocketfy\\sMaker\\s-\\sv([\\d\\.]+)$\\;version:\\1"
-    },
-    "scriptSrc": "\\.rocketfy\\.mx/",
-    "saas": true,
-    "pricing": [
-      "payg"
-    ],
-    "website": "https://rocketfy.mx"
-  },
   "RockRMS": {
     "cats": [
       1,
@@ -1868,6 +1847,27 @@
     ],
     "saas": true,
     "website": "https://rocket.chat"
+  },
+  "Rocketfy": {
+    "cats": [
+      6,
+      51
+    ],
+    "description": "Rocketfy is a platform that allows users to build an online store and allows dropshipping at the same time.",
+    "icon": "Rocketfy.svg",
+    "implies": [
+      "React",
+      "Next.js"
+    ],
+    "meta": {
+      "generator": "^Rocketfy\\sMaker\\s-\\sv([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.rocketfy\\.mx/",
+    "website": "https://rocketfy.mx"
   },
   "Rokt": {
     "cats": [

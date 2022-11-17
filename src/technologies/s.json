@@ -538,19 +538,6 @@
     "scriptSrc": "cdn\\.salesfire\\.co\\.uk/",
     "website": "https://www.salesfire.co.uk"
   },
-  "Salesnauts": {
-    "cats": [
-      6
-    ],
-    "description": "Salesnauts is a fashion ecommerce platform.",
-    "icon": "Salesnauts.png",
-    "dom": "link[href*='//image.salesnauts.com/']",
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "website": "https://salesnauts.com"
-  },
   "SalesReps.io": {
     "cats": [
       10
@@ -722,6 +709,19 @@
     ],
     "saas": true,
     "website": "https://salesloft.com"
+  },
+  "Salesnauts": {
+    "cats": [
+      6
+    ],
+    "description": "Salesnauts is a fashion ecommerce platform.",
+    "dom": "link[href*='//image.salesnauts.com/']",
+    "icon": "Salesnauts.png",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://salesnauts.com"
   },
   "Salla": {
     "cats": [
@@ -2845,6 +2845,20 @@
     },
     "website": "http://example.com"
   },
+  "SimpleSAMLphp": {
+    "cats": [
+      69
+    ],
+    "cookies": {
+      "SimpleSAML": "",
+      "SimpleSAMLSessionID": ""
+    },
+    "description": "SimpleSAMLphp is an open-source PHP authentication application that provides support for SAML 2.0 as a Service Provider (SP) or Identity Provider (IdP).",
+    "icon": "default.svg",
+    "implies": "PHP",
+    "oss": true,
+    "website": "https://simplesamlphp.org"
+  },
   "Simplero": {
     "cats": [
       32
@@ -2862,20 +2876,6 @@
     "saas": true,
     "scriptSrc": "\\.simplero\\.com/",
     "website": "https://simplero.com"
-  },
-  "SimpleSAMLphp": {
-    "cats": [
-      69
-    ],
-    "description": "SimpleSAMLphp is an open-source PHP authentication application that provides support for SAML 2.0 as a Service Provider (SP) or Identity Provider (IdP).",
-    "icon": "default.svg",
-    "implies": "PHP",
-    "cookies": {
-      "SimpleSAML": "",
-      "SimpleSAMLSessionID": ""
-    },
-    "oss": true,
-    "website": "https://simplesamlphp.org"
   },
   "Simplero Websites": {
     "cats": [
@@ -5437,11 +5437,11 @@
       1
     ],
     "description": "Storyblok is a headless CMS with a visual editor for developers, marketers and content editors. Storyblok helps your team to manage content and digital experiences for every use-case from corporate websites, ecommerce, helpdesks, mobile apps, screen displays, and more.",
-    "icon": "Storyblok.svg",
     "headers": {
       "content-security-policy": "app\\.storyblok\\.com",
       "x-frame-options": "app\\.storyblok\\.com"
     },
+    "icon": "Storyblok.svg",
     "js": {
       "StoryblokBridge": "",
       "storyblokRegisterEvent": ""

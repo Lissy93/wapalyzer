@@ -33,14 +33,15 @@
     "cpe": "cpe:2.3:a:glpi-project:glpi:*:*:*:*:*:*:*:* ",
     "description": "GLPI is an open-source IT Asset Management, issue tracking and service desk system.",
     "dom": {
-      "input[name='_glpi_csrf_token']": {
-        "exists": ""
-      },
       "div[id*='footer-login'] > a": {
         "text": "GLPI\\s+version\\s+([\\d\\.]+)\\;version:\\1"
+      },
+      "input[name='_glpi_csrf_token']": {
+        "exists": ""
       }
     },
-    "scriptSrc": "//.*glpi.+common\\.min\\.js\\?v=(\\d+\\.\\d+\\.\\d+)\\;version:\\1",
+    "icon": "GLPI.png",
+    "implies": "PHP",
     "js": {
       "glpiUnsavedFormChanges": ""
     },
@@ -48,13 +49,12 @@
       "glpi:csrf_token": ""
     },
     "oss": true,
-    "icon": "GLPI.png",
-    "implies": "PHP",
     "pricing": [
       "mid",
       "recurring"
     ],
-    "website": "https://glpi-project.org"   
+    "scriptSrc": "//.*glpi.+common\\.min\\.js\\?v=(\\d+\\.\\d+\\.\\d+)\\;version:\\1",
+    "website": "https://glpi-project.org"
   },
   "GLS": {
     "cats": [
@@ -1158,15 +1158,6 @@
     ],
     "website": "https://www.godaddy.com"
   },
-  "GoDaddy Domain Parking": {
-    "cats": [
-      109
-    ],
-    "description": "GoDaddy is used as a web host and domain registrar.",
-    "scripts": "wsimg\\.com/parking-lander",
-    "icon": "GoDaddy.svg",
-    "website": "https://www.godaddy.com"
-  },
   "GoDaddy CoBlocks": {
     "cats": [
       87,
@@ -1179,6 +1170,15 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/coblocks/",
     "website": "https://github.com/godaddy-wordpress/coblocks"
+  },
+  "GoDaddy Domain Parking": {
+    "cats": [
+      109
+    ],
+    "description": "GoDaddy is used as a web host and domain registrar.",
+    "icon": "GoDaddy.svg",
+    "scripts": "wsimg\\.com/parking-lander",
+    "website": "https://www.godaddy.com"
   },
   "GoDaddy Escapade": {
     "cats": [

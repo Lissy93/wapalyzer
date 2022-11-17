@@ -56,24 +56,6 @@
     "scriptSrc": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
     "website": "https://www.infonline.de"
   },
-  "Infoset": {
-    "cats": [
-      52,
-      53
-    ],
-    "description": "Infoset is an advanced communication and support solutions.",
-    "icon": "Infoset.svg",
-    "saas": true,
-    "js": {
-      "InfosetChat": "",
-      "InfosetRoot": ""
-    },
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "website": "https://infoset.app"
-  },
   "IONOS": {
     "cats": [
       88
@@ -226,6 +208,31 @@
       "IAI_Ajax": ""
     },
     "website": "https://www.idosell.com"
+  },
+  "Ikas": {
+    "cats": [
+      6
+    ],
+    "description": "Ikas is a new generation ecommerce platform designed for small businesses.",
+    "headers": {
+      "server": "^ikas$",
+      "x-powered-by": "^ikas$"
+    },
+    "icon": "Ikas.svg",
+    "implies": [
+      "Next.js",
+      "GraphQL",
+      "MongoDB"
+    ],
+    "js": {
+      "IkasEvents.subscribe": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://ikas.com"
   },
   "Iluria": {
     "cats": [
@@ -621,6 +628,24 @@
       "recurring"
     ],
     "website": "https://www.infomaniak.com"
+  },
+  "Infoset": {
+    "cats": [
+      52,
+      53
+    ],
+    "description": "Infoset is an advanced communication and support solutions.",
+    "icon": "Infoset.svg",
+    "js": {
+      "InfosetChat": "",
+      "InfosetRoot": ""
+    },
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://infoset.app"
   },
   "Insider": {
     "cats": [
@@ -1255,31 +1280,6 @@
     "icon": "idCloudHost.png",
     "website": "https://idcloudhost.com"
   },
-  "Ikas": {
-    "cats": [
-      6
-    ],
-    "description": "Ikas is a new generation ecommerce platform designed for small businesses.",
-    "icon": "Ikas.svg",
-    "implies": [
-      "Next.js",
-      "GraphQL",
-      "MongoDB"
-    ],
-    "headers": {
-      "server": "^ikas$",
-      "x-powered-by": "^ikas$"
-    },
-    "js": {
-      "IkasEvents.subscribe": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://ikas.com"
-  },
   "ikiwiki": {
     "cats": [
       8
@@ -1297,17 +1297,17 @@
       1
     ],
     "description": "imperia CMS is a headless content management for large editorial.",
+    "dom": "source[srcset*='.de/imperia/md/images/]",
     "icon": "imperiaCMS.svg",
     "implies": "Perl",
     "meta": {
       "generator": "^IMPERIA\\s([\\d\\.\\_]+)\\;version:\\1",
       "x-imperia-live-info": ""
     },
-    "dom":"source[srcset*='.de/imperia/md/images/]",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.pirobase-imperia.com/de/solutions/imperia-cms"
   },
   "inSales": {

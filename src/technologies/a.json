@@ -239,15 +239,6 @@
     "scriptSrc": "\\.ari-secure\\.com/",
     "website": "https://arinet.com"
   },
-  "Arsys Domain Parking": {
-    "cats": [
-      109
-    ],
-    "description": "Arsys is a Spanish domain registrar.",
-    "dom": "link[rel='stylesheet'][href*='arsys.es/css/parking2.css']",
-    "icon": "arsys.png",
-    "website": "https://www.arsys.es"
-  },
   "ASP.NET Boilerplate": {
     "cats": [
       18
@@ -3491,6 +3482,15 @@
     ],
     "website": "https://developers.arcgis.com/javascript/"
   },
+  "Arsys Domain Parking": {
+    "cats": [
+      109
+    ],
+    "description": "Arsys is a Spanish domain registrar.",
+    "dom": "link[rel='stylesheet'][href*='arsys.es/css/parking2.css']",
+    "icon": "arsys.png",
+    "website": "https://www.arsys.es"
+  },
   "Artifactory": {
     "cats": [
       47
@@ -3924,14 +3924,14 @@
       98
     ],
     "description": "Aument is an ecommerce toolbox with easy to use marketing actions and workflows.",
-    "icon": "Aument.svg",
-    "requiresCategory": 6,
-    "saas": true,
     "dom": "div#aumentDiscountCode",
+    "icon": "Aument.svg",
     "pricing": [
       "low",
       "recurring"
     ],
+    "requiresCategory": 6,
+    "saas": true,
     "website": "https://aument.io"
   },
   "Aura": {
