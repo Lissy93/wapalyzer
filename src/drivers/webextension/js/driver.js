@@ -99,12 +99,10 @@ const Driver = {
         )
       }
     } else if (version !== previous && upgradeMessage) {
-      /*
       open(
         `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
         false
       )
-      */
     }
 
     initDone()
@@ -939,8 +937,8 @@ const Driver = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (tracking && termsAccepted) {
-      const urls = Object.keys(Driver.cache.hostnames).reduce(
-        (urls, hostname) => {
+      const urls = Object.keys(Driver.cache.hostnames)
+        .reduce((urls, hostname) => {
           // eslint-disable-next-line standard/computed-property-even-spacing
           const { language, detections, hits, https } =
             Driver.cache.hostnames[hostname]
@@ -970,9 +968,8 @@ const Driver = {
           }
 
           return urls
-        },
-        {}
-      )
+        }, {})
+        .slice(0, 25)
 
       const count = Object.keys(urls).length
 
@@ -980,7 +977,8 @@ const Driver = {
 
       if (
         count &&
-        (count >= 25 || (count >= 5 && lastPing < Date.now() - expiry))
+        ((count >= 25 && lastPing < Date.now() - 1000 * 60 * 60) ||
+          (count >= 5 && lastPing < Date.now() - expiry))
       ) {
         await setOption('lastPing', Date.now())
 
