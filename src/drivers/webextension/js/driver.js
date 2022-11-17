@@ -985,7 +985,7 @@ const Driver = {
         await setOption('lastPing', Date.now())
 
         try {
-          await Driver.post('https://api.wappalyzer.com/v2/ping/', {
+          await Driver.post('https://ping.wappalyzer.com/v2/', {
             version: chrome.runtime.getManifest().version,
             urls,
           })
