@@ -937,8 +937,12 @@ const Driver = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (tracking && termsAccepted) {
-      const urls = Object.keys(Driver.cache.hostnames)
-        .reduce((urls, hostname) => {
+      const urls = Object.keys(Driver.cache.hostnames).reduce(
+        (urls, hostname) => {
+          if (Object.keys(urls).length >= 25) {
+            return urls
+          }
+
           // eslint-disable-next-line standard/computed-property-even-spacing
           const { language, detections, hits, https } =
             Driver.cache.hostnames[hostname]
@@ -968,8 +972,9 @@ const Driver = {
           }
 
           return urls
-        }, {})
-        .slice(0, 25)
+        },
+        {}
+      )
 
       const count = Object.keys(urls).length
 
