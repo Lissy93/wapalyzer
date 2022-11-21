@@ -562,7 +562,7 @@
       "x-powered-by": "Elementor Cloud"
     },
     "pricing": [ "recurring", "low" ],
-    "requires": "WordPress",
+    "implies": ["WordPress", "Elementor"],
     "icon": "Elementor.png",
     "website": "https://elementor.com"
   },
