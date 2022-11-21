@@ -1905,6 +1905,22 @@
     "saas": true,
     "website": "https://fundiin.vn"
   },
+  "Funding Choices": {
+    "cats": [
+      67
+    ],
+    "description": "Funding Choices is a messaging tool that can help you comply with the EU General Data Protection Regulation (GDPR), and recover lost revenue from ad blocking users.",
+    "dns": {
+      "SOA": "fundingchoicesmessages"
+    },
+    "dom": ".fc-consent-root, iframe[name='googlefcLoaded'], iframe[name='googlefcPresent'], .fc-dialog, .fc-choice-dialog",
+    "icon": "Google.svg",
+    "js": {
+      "__googlefc": ""
+    },
+    "scriptSrc": "fundingchoicesmessages\\.google\\.com",
+    "website": "https://developers.google.com/funding-choices"
+  },
   "FunnelCockpit": {
     "cats": [
       32
