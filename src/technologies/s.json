@@ -676,6 +676,54 @@
     "scriptSrc": "cdn\\.evgnet\\.com",
     "website": "https://www.salesforce.com/products/marketing-cloud/customer-interaction"
   },
+  "Salesforce Marketing Cloud Account Engagement": {
+    "cats": [
+      32
+    ],
+    "description": "Salesforce Marketing Cloud Account Engagement (formerly known as Pardot) is an application specifically designed for B2B marketing automation.",
+    "dns": {
+      "TXT": [
+        "pardot"
+      ]
+    },
+    "dom": "iframe[scr*='.pardot.com/']",
+    "headers": {
+      "X-Pardot-LB": "",
+      "X-Pardot-Route": "",
+      "X-Pardot-Rsp": ""
+    },
+    "icon": "Salesforce.svg",
+    "js": {
+      "piAId": "",
+      "piCId": "",
+      "piHostname": "",
+      "piProtocol": "",
+      "piTracker": ""
+    },
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.salesforce.com/products/marketing-cloud/marketing-automation"
+  },
+  "Salesforce Marketing Cloud Email Studio": {
+    "cats": [
+      75
+    ],
+    "description": "Salesforce Marketing Cloud Email Studio is a powerful tool that allows you to build and send personalised emails.",
+    "icon": "Salesforce.svg",
+    "headers": {
+      "content-security-policy": "\\.exacttarget\\.com/"
+    },
+    "dom": "a[href*='.exacttarget.com/'][target='_blank']",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.salesforce.com/products/marketing-cloud/email-marketing"
+  },
   "Salesforce Service Cloud": {
     "cats": [
       52,
