@@ -546,11 +546,30 @@
       "<link [^>]*href=(?:\"|')[^\"']*elementor/assets",
       "<link [^>]*href=(?:\"|')[^\"']*uploads/elementor/css"
     ],
-    "icon": "Elementor.png",
+    "icon": "Elementor.svg",
     "js": {
       "elementorFrontend.getElements": ""
     },
     "scriptSrc": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
+    "website": "https://elementor.com"
+  },
+  "Elementor Cloud": {
+    "cats": [
+      88
+    ],
+    "description": "Elementor Cloud is a platform for creating and hosting WordPress websites with Elementor.",
+    "headers": {
+      "x-powered-by": "Elementor Cloud"
+    },
+    "icon": "Elementor.svg",
+    "implies": [
+      "WordPress",
+      "Elementor"
+    ],
+    "pricing": [
+      "recurring",
+      "low"
+    ],
     "website": "https://elementor.com"
   },
   "Elementor Header & Footer Builder": {
