@@ -748,6 +748,10 @@
         }
       }
     },
+    "headers": {
+      "tb-cache-group": "^webstore$\\;confidence:50",
+      "tb-cache-country": "^\\w+$\\;confidence:50"
+    },
     "icon": "Tebex.svg",
     "implies": [
       "MySQL",
