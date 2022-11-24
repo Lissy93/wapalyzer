@@ -882,6 +882,28 @@
     "icon": "CentOS.png",
     "website": "http://centos.org"
   },
+  "Centra": {
+    "cats": [
+      6
+    ],
+    "description": "Centra is the headless ecommerce platform.",
+    "dom":"img[src*='.centracdn.net/']",
+    "excludes": "Magento",
+    "headers": {
+      "Content-Security-Policy": "\\.centra(?:cdn)?\\.(?:com|net)"
+    },
+    "icon": "Centra.svg",
+    "js": {
+      "CENTRA_IMAGE_SIZES": ""
+    },
+    "scripts": "centraCheckoutScript",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "poa"
+    ],
+    "website": "https://centra.com"
+  },
   "Centminmod": {
     "cats": [
       22
