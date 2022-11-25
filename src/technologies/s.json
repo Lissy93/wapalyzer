@@ -5893,6 +5893,25 @@
     "scriptSrc": "\\.sumo(?:me)?\\.com/",
     "website": "http://sumo.com"
   },
+  "Suncel": {
+    "cats": [
+      1
+    ],
+    "icon": "Suncel.svg",
+    "description": "Suncel is a powerful and versatile content platform with a simple visual builder for marketers and publishers.",
+    "requires": "Next.js",
+    "dom": "img[srcset*='assets.suncel.io']",
+    "js": {
+      "__NEXT_DATA__.props.pageProps.suncel": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://suncel.io"
+  },
   "SunOS": {
     "cats": [
       28
