@@ -844,17 +844,17 @@
   },
   "Fleksa": {
     "cats": [
-      6,
       93
     ],
     "description": "Fleksa is an online ordering system for restaurants and delivery.",
-    "dom": "link[href*='//fleksa-cdn']",
     "icon": "Fleksa.svg",
+    "dom": "a[href*='play.google.com/store/apps/details?id=com.fleksa.'][target='_blank']",
     "implies": [
       "Node.js",
       "Next.js"
     ],
     "pricing": [
+      "payg",
       "mid",
       "recurring"
     ],
