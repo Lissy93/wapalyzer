@@ -3267,6 +3267,40 @@
     ],
     "website": "https://sitepad.com"
   },
+  "Sitepark IES": {
+    "cats": [
+      1
+    ],
+    "cpe": "cpe:2.3:a:sitepark:information_enterprise_server:*:*:*:*:*:*:*:*",
+    "description": "Sitepark IES is a content management system written in PHP and paired with a MySQL database.",
+    "icon": "Sitepark.png",
+    "implies": [
+      "MySQL",
+      "Lucene"
+    ],
+    "meta": {
+      "generator": "^Sitepark\\sInformation\\sEnterprise\\sServer\\s-\\sIES\\sGenerator\\sv([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.sitepark.com/oeffentlicher-sektor/produkte/cms-technologie.php"
+  },
+  "Sitepark InfoSite": {
+    "cats": [
+      1
+    ],
+    "description": "Sitepark InfoSite is a content management system and complete application of Sitepark IES which written in PHP and paired with a MySQL database.",
+    "icon": "Sitepark.png",
+    "implies": "Sitepark IES",
+    "meta": {
+      "generator": "^InfoSite\\s([\\d\\.]+)\\s-\\sSitepark\\sInformation\\sEnterprise\\sServer$\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.sitepark.com/mittelstand/content-management-system/index.php"
+  },
   "SiteSpect": {
     "cats": [
       74
@@ -3457,7 +3491,7 @@
     "cats": [
       1
     ],
-    "description": "Skilldo is a content management system written in PHP and paired with a MySQL or MariaDB database. ",
+    "description": "Skilldo is a content management system written in PHP and paired with a MySQL or MariaDB database.",
     "headers": {
       "cms-name": "^Skilldo$",
       "cms-version": "([\\d\\.]+)\\;version:\\1\\;confidence:0"
