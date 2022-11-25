@@ -1166,6 +1166,45 @@
     "scriptSrc": "cdn\\.doofinder\\.com/",
     "website": "https://www.doofinder.com"
   },
+  "Doppler": {
+    "cats": [
+      75
+    ],
+    "description": "Doppler is an email marketing and transactional email service.",
+    "icon": "Doppler.svg",
+    "scriptSrc": "//(?:hub|cdn)\\.fromdoppler\\.com/",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.fromdoppler.com"
+  },
+  "Doppler Forms": {
+    "cats": [
+      87
+    ],
+    "description": "The Doppler Forms plugin allows you to create fully customised subscription forms that you can add to your website or blog.",
+    "icon": "Doppler.svg",
+    "implies": "Doppler",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/doppler-form/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/doppler-form/"
+  },
+  "Doppler for WooCommerce": {
+    "cats": [
+      87
+    ],
+    "description": "The Doppler for WooCommerce plugin adds submit your WooCommerce customers and buyers to a Doppler List.",
+    "icon": "Doppler.svg",
+    "implies": "Doppler",
+    "requires": [
+      "WordPress",
+      "WooCommerce"
+    ],
+    "scriptSrc": "/wp-content/plugins/doppler-for-woocommerce/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/doppler-for-woocommerce/"
+  },
   "Dotclear": {
     "cats": [
       1
