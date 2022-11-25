@@ -251,7 +251,7 @@
     },
     "icon": "Danneo CMS.png",
     "implies": [
-      "Apache",
+      "Apache HTTP Server",
       "PHP"
     ],
     "meta": {
@@ -323,7 +323,7 @@
     "icon": "DataLife Engine.svg",
     "implies": [
       "PHP",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "js": {
       "dle_root": ""
@@ -782,7 +782,7 @@
     "icon": "DirectAdmin.png",
     "implies": [
       "PHP",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "https://www.directadmin.com"
   },
@@ -1367,7 +1367,7 @@
       "X-Powered-By": "Dragon Native ([\\d.]+)\\;version:\\1"
     },
     "icon": "Dragon.png",
-    "implies": "Apache",
+    "implies": "Apache HTTP Server",
     "url": "^.*(?:\\.dgn)$",
     "website": "https://dragon-lang.org"
   },
