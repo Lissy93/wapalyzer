@@ -1301,7 +1301,7 @@
     ],
     "icon": "melis-platform.svg",
     "implies": [
-      "Apache",
+      "Apache HTTP Server",
       "PHP",
       "MySQL",
       "Symfony",
@@ -3011,7 +3011,7 @@
       "Server": "mod_auth_pam(?:/([\\d\\.]+))?\\;version:\\1"
     },
     "icon": "Apache.svg",
-    "implies": "Apache",
+    "implies": "Apache HTTP Server",
     "website": "http://pam.sourceforge.net/mod_auth_pam"
   },
   "mod_dav": {
@@ -3023,7 +3023,7 @@
       "Server": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?\\;version:\\1"
     },
     "icon": "Apache.svg",
-    "implies": "Apache",
+    "implies": "Apache HTTP Server",
     "website": "http://webdav.org/mod_dav"
   },
   "mod_fastcgi": {
@@ -3035,7 +3035,7 @@
       "Server": "mod_fastcgi(?:/([\\d.]+))?\\;version:\\1"
     },
     "icon": "Apache.svg",
-    "implies": "Apache",
+    "implies": "Apache HTTP Server",
     "website": "http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html"
   },
   "mod_jk": {
@@ -3049,7 +3049,7 @@
     "icon": "Apache.svg",
     "implies": [
       "Apache Tomcat",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "http://tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html"
   },
@@ -3065,7 +3065,7 @@
     "icon": "mod_perl.png",
     "implies": [
       "Perl",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "http://perl.apache.org"
   },
@@ -3081,7 +3081,7 @@
     "icon": "mod_python.png",
     "implies": [
       "Python",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "http://www.modpython.org"
   },
@@ -3097,7 +3097,7 @@
     "icon": "Phusion Passenger.png",
     "implies": [
       "Ruby on Rails\\;confidence:50",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "http://phusionpassenger.com"
   },
@@ -3113,7 +3113,7 @@
     "icon": "Phusion Passenger.png",
     "implies": [
       "Ruby on Rails\\;confidence:50",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "http://phusionpassenger.com"
   },
@@ -3127,7 +3127,7 @@
       "Server": "mod_ssl(?:/([\\d.]+))?\\;version:\\1"
     },
     "icon": "mod_ssl.png",
-    "implies": "Apache",
+    "implies": "Apache HTTP Server",
     "website": "http://modssl.org"
   },
   "mod_wsgi": {
@@ -3143,7 +3143,7 @@
     "icon": "mod_wsgi.png",
     "implies": [
       "Python\\;confidence:50",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "https://code.google.com/p/modwsgi"
   }
