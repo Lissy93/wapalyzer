@@ -209,6 +209,7 @@
       "AOS.refresh": "",
       "AOS.refreshHard": ""
     },
+    "dom": ["[class*='aos-init']", "[class*='aos-animate']"],
     "oss": true,
     "scriptSrc": [
       "unpkg\\.com/aos@([\\d\\.]+)/dist/aos\\.js\\;version:\\1",
