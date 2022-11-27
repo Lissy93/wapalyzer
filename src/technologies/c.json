@@ -56,6 +56,27 @@
     "scriptSrc": "cc\\.cdn\\.civiccomputing\\.com",
     "website": "https://www.civicuk.com/cookie-control"
   },
+  "CiviCRM": {
+    "cats": [
+      53
+    ],
+    "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
+    "icon": "CiviCRM.png",
+    "dom": "a[href*='/civicrm/contribute/transact']",
+    "oss": true,
+    "website": "https://civicrm.org"
+  },
+  "CiviCRM plugins": {
+    "cats": [
+      87
+    ],
+    "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
+    "icon": "CiviCRM.png",
+    "implies": "CiviCRM",
+    "requires": "WordPress",
+    "scriptSrc": "wp-content/plugins/(?:[\\w\\-]+)?civicrm(?:[\\w\\-]+)?/",
+    "website": "https://wordpress.org/plugins/search/civicrm/"
+  },
   "CJDropshipping app": {
     "cats": [
       100
