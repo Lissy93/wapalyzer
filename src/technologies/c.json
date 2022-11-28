@@ -171,7 +171,7 @@
       "freemium"
     ],
     "requires": [
-      "Apache",
+      "Apache HTTP Server",
       "PHP"
     ],
     "website": "https://www.brainformatik.com"
@@ -531,7 +531,7 @@
     ],
     "description": "Carbon Ads is an ad tech company, that connects advertisers to users through targeted verticals called Circles.",
     "dom": "div#carbonads-container",
-    "icon": "Carbon Ads.png",
+    "icon": "Carbon Ads.svg",
     "js": {
       "_carbonads": "",
       "_carbonads_go": ""
@@ -602,7 +602,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Apache",
+    "requires": "Apache HTTP Server",
     "saas": true,
     "scripts": "\\(\\!section\\s\\|\\|\\ssection\\.tagName\\s\\!\\=\\s\\'SECTION\\'\\)",
     "website": "https://carrd.co"
@@ -881,6 +881,28 @@
     },
     "icon": "CentOS.png",
     "website": "http://centos.org"
+  },
+  "Centra": {
+    "cats": [
+      6
+    ],
+    "description": "Centra is the headless ecommerce platform.",
+    "dom":"img[src*='.centracdn.net/']",
+    "excludes": "Magento",
+    "headers": {
+      "Content-Security-Policy": "\\.centra(?:cdn)?\\.(?:com|net)"
+    },
+    "icon": "Centra.svg",
+    "js": {
+      "CENTRA_IMAGE_SIZES": ""
+    },
+    "scripts": "centraCheckoutScript",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "poa"
+    ],
+    "website": "https://centra.com"
   },
   "Centminmod": {
     "cats": [
@@ -3431,6 +3453,22 @@
     "saas": true,
     "scriptSrc": "client\\.crisp\\.chat/",
     "website": "https://crisp.chat/"
+  },
+  "Crikle": {
+    "cats": [
+      52
+    ],
+    "description": "Crikle is a multichannel customer engagement software.",
+    "icon": "Crikle.svg",
+    "js": {
+      "crikle.contactId": "",
+      "crikle.openConvertWidget": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.crikle.com"
   },
   "Criteo": {
     "cats": [

@@ -256,6 +256,9 @@
     "meta": {
       "generator": "OctoberCMS"
     },
+    "js": {
+      "ocJSON": ""
+    },
     "oss": true,
     "website": "http://octobercms.com"
   },
@@ -885,7 +888,7 @@
       22
     ],
     "cpe": "cpe:2.3:a:openbsd:openbsd:*:*:*:*:*:*:*:*",
-    "excludes": "Apache",
+    "excludes": "Apache HTTP Server",
     "headers": {
       "Server": "^OpenBSD httpd"
     },

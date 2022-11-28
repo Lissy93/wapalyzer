@@ -1961,7 +1961,7 @@
       "X-EdgeConnect-MidMile-RTT": "",
       "X-EdgeConnect-Origin-MEX-Latency": ""
     },
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "pricing": [
       "poa"
     ],
@@ -1978,7 +1978,7 @@
       "bm_sz": ""
     },
     "description": "Akamai Bot Manager detect bots using device fingerprinting bot signatures.",
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "implies": "Akamai",
     "pricing": [
       "poa"
@@ -1991,7 +1991,7 @@
       16
     ],
     "description": "Akamai Web Application Protector is designed for companies looking for a more automated approach to web application firewall (WAF) and distributed denial-of-service (DDoS) security.",
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "implies": "Akamai",
     "js": {
       "AKSB": "\\;confidence:50"
@@ -2017,7 +2017,7 @@
     "html": [
       "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>"
     ],
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "implies": [
       "Boomerang"
     ],
@@ -2533,7 +2533,7 @@
         "amazonses\\.com"
       ]
     },
-    "icon": "aws.svg",
+    "icon": "Amazon SES.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "website": "https://aws.amazon.com/ses/"
@@ -2992,7 +2992,7 @@
     "scriptSrc": "\\.anyclip\\.com",
     "website": "https://www.anyclip.com"
   },
-  "Apache": {
+  "Apache HTTP Server": {
     "cats": [
       22
     ],
@@ -3002,7 +3002,7 @@
       "Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)HTTPD)\\;version:\\1"
     },
     "icon": "Apache.svg",
-    "website": "http://apache.org"
+    "website": "https://httpd.apache.org/"
   },
   "Apache JSPWiki": {
     "cats": [
@@ -3039,7 +3039,7 @@
     "headers": {
       "Server": "ATS/?([\\d.]+)?\\;version:\\1"
     },
-    "icon": "Apache Traffic Server.png",
+    "icon": "Apache Traffic Server.svg",
     "website": "http://trafficserver.apache.org/"
   },
   "Apache Wicket": {
@@ -4294,6 +4294,7 @@
     "scriptSrc": [
       "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
     ],
+    "icon": "Axios.svg",
     "website": "https://github.com/axios/axios"
   },
   "Azion": {
