@@ -4196,14 +4196,18 @@
     "cats": [
       10
     ],
-    "description": "Maximise Your Call Value With Call Tracking, Insights Solutions. Track Every Call, Enable Your Business to Make Better-informed Decisions. Avanser is a mediocre call tracking provider.",
-    "icon": "Avanser.png",
+    "description": "Avanser allow you to track every call and enable your business to make better-informed decisions based on your phone calls.",
+    "icon": "Avanser.svg",
     "pricing": [
       "payg",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "avanser\\.com/(aa|static)",
+    "js": {
+      "AvanserCore": "",
+      "AVANSERjs": "",
+      "AvanserOptions": ""
+    },
     "website": "https://www.avanser.com"
   },
   "Avasize": {
