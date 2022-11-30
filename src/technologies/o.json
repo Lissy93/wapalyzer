@@ -1169,7 +1169,8 @@
   },
   "Optimizely": {
     "cats": [
-      74
+      74,
+      76
     ],
     "cookies": {
       "optimizelyEndUserId": ""
@@ -1189,22 +1190,48 @@
     "scriptSrc": "optimizely\\.com.*\\.js",
     "website": "https://www.optimizely.com"
   },
-  "Optimizely CMS": {
+  "Optimizely Content Management": {
     "cats": [
       1
     ],
     "cookies": {
       "EPiServer": "",
       "EPiSessionId": "",
-      "EPiTrace": ""
+      "EPiTrace": "",
+      "EPi:StateMarker": ""
     },
     "cpe": "cpe:2.3:a:episerver:episerver:*:*:*:*:*:*:*:*",
-    "icon": "optimizely-cms.svg",
+    "description": "Optimizely Content Management (formerly EPiServer) is digital content, ecommerce, and marketing management solution designed for editors and marketers.",
+    "icon": "Optimizely.svg",
     "implies": "Microsoft ASP.NET",
     "meta": {
       "generator": "EPiServer"
     },
-    "website": "https://www.optimizely.com/"
+    "headers": {
+      "content-security-policy": "\\.episerver\\.net"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.optimizely.com/products/content/"
+  },
+  "Optimizely Commerce": {
+    "cats": [
+      6
+    ],
+    "cookies": {
+      "EPi:StateMarker": ""
+    },
+    "description": "Optimizely Commerce is a complete suite for digital ecommerce and content management that uses artificial intelligence to deliver personalised experiences, individualised search rankings and product recommendations.",
+    "icon": "Optimizely.svg",
+    "requiresCategory": 6,
+    "meta": {
+      "generator": "EPiServer"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.optimizely.com/products/commerce/b2c/"
   },
   "Optimove": {
     "cats": [
