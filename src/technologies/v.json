@@ -286,6 +286,9 @@
       62
     ],
     "description": "Vercel is a cloud platform for static frontends and serverless functions.",
+    "dns": {
+      "SOA": "\\.vercel-dns\\.com"
+    },
     "headers": {
       "server": "^now|Vercel$",
       "x-now-trace": "",
