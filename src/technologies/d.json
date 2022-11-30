@@ -225,6 +225,23 @@
     },
     "website": "https://www.dailymotion.com"
   },
+  "daisyUI": {
+    "cats": [
+      66
+    ],
+    "description": "daisyUI is a customisable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customising and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML.",
+    "icon": "daisyUI.png",
+    "implies": "Tailwind CSS",
+    "dom": {
+      "link[href*='npm/daisyui']": {
+        "attributes": {
+          "href": "/npm/daisyui@([\\d\\.]+)/dist/\\;version:\\1"
+        }
+      }
+    },
+    "oss": true,
+    "website": "https://daisyui.com"
+  },
   "Dancer": {
     "cats": [
       18
