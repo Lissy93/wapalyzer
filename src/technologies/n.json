@@ -663,14 +663,19 @@
       57
     ],
     "description": "Nextra is Next.js based static site generator.",
-    "dom": "div.nextra-container",
+    "dom": [
+      "div.nextra-container",
+      "div.nextra-nav-container",
+      "div.nextra-sidebar-container"
+    ],
     "js": {
-      "__nextra_internal__": ""
+      "__nextra_internal__": "",
+      "__nextra_pageContext__": ""
     },
-    "icon": "Next.js.svg",
+    "icon": "Nextra.svg",
     "requires": "Next.js",
     "oss": true,
-    "website": "https://nextra.vercel.app/"
+    "website": "https://nextra.site/"
   },
   "NexusPIPE": {
     "cats": [
