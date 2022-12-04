@@ -162,17 +162,25 @@
     "scriptSrc": "/sim(?:site|core)/js",
     "website": "http://simgroep.nl/internet/portfolio-contentbeheer_41623/"
   },
-  "SMF": {
+  "Simple Machines Forum": {
     "cats": [
       2
     ],
-    "description": "SMF is a free open-source software, used for community forums and is written in PHP.",
-    "html": "credits/?\" title=\"Simple Machines Forum\" target=\"_blank\" class=\"new_win\">SMF ([0-9.]+)</a>\\;version:\\1",
-    "icon": "SMF.png",
+    "cpe": "cpe:2.3:a:simplemachines:simple_machine_forum:*:*:*:*:*:*:*:*",
+    "description": "Simple Machines Forum is a free open-source software, used for community forums and is written in PHP.",
+    "icon": "Simple Machines Forum.png",
     "implies": "PHP",
-    "js": {
-      "smf_": ""
+    "dom": {
+      "li > span > a[title='Simple Machines Forum']": {
+        "text": "^SMF\\s([\\d\\.]+)\\;version:\\1"
+      }
     },
+    "js": {
+      "smf_theme_url": "",
+      "smf_default_theme_url": "",
+      "smf_avatarResize": ""
+    },
+    "oss": true,
     "website": "http://www.simplemachines.org"
   },
   "SOBI 2": {
