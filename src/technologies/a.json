@@ -3617,9 +3617,14 @@
     ],
     "description": "Asciinema is a free and open-source solution for recording terminal sessions and sharing them on the web.",
     "html": "<asciinema-player",
-    "icon": "asciinema.png",
+    "dom": [
+      "div.asciinema-player-wrapper",
+      "div.asciinema-player"
+    ],
+    "icon": "Asciinema.svg",
     "js": {
-      "asciinema": ""
+      "asciinema": "",
+      "AsciinemaPlayer": ""
     },
     "scriptSrc": "asciinema\\.org/",
     "website": "https://asciinema.org/"
