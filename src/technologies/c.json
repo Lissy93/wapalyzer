@@ -3808,6 +3808,22 @@
     "scriptSrc": "(?:cdn|app)\\.customily\\.com/",
     "website": "https://www.customily.com"
   },
+  "Cwicly": {
+    "cats": [
+      87
+    ],
+    "description": "Cwicly is an advanced professional design and block toolkit that integrates directly with the WordPress editor.",
+    "dom": "link[href*='/wp-content/uploads/cwicly/']",
+    "icon": "Cwicly.png",
+    "implies": "Gutenberg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/cwicly/",
+    "website": "https://cwicly.com"
+  },
   "Cxense": {
     "cats": [
       76,
