@@ -3377,11 +3377,14 @@
     "cats": [
       22
     ],
+    "description": "Cowboy is a small, fast, modular HTTP server written in Erlang.",
     "headers": {
       "Server": "^Cowboy$"
     },
     "icon": "Cowboy.png",
-    "website": "http://ninenines.eu"
+    "implies": "Erlang",
+    "oss": true,
+    "website": "https://github.com/ninenines/cowboy"
   },
   "Cozy AntiTheft": {
     "cats": [
