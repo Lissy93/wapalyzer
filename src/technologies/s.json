@@ -1665,6 +1665,12 @@
     "description": "Sendinblue is an email marketing solution for small and medium-sized businesses that want to send and automate email marketing campaigns.",
     "dom": "iframe[src*='sibautomation.com/']",
     "icon": "Sendinblue.svg",
+    "dns": {
+      "TXT": [
+        "\\.sendinblue\\.com",
+        "Sendinblue-code"
+      ]
+    },
     "js": {
       "sendinblue": ""
     },
