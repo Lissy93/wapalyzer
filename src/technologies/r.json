@@ -1216,6 +1216,25 @@
     "scriptSrc": "www\\.resengo\\.\\w+",
     "website": "https://wwc.resengo.com"
   },
+  "Reserve In-Store": {
+    "cats": [
+      100,
+      93
+    ],
+    "description": "Reserve In-Store app will allow customers to reserve an item in your store online to come to pick it up or view the item before making the purchase.",
+    "icon": "Reserve In-Store.svg",
+    "implies": "Shopify",
+    "js": {
+      "reserveInStore.version": "([\\d\\.]+)\\;version:\\1",
+      "reserveInStoreJsUrl": "/reserveinstore\\.js.+\\.myshopify\\.com"
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.reserveinstore.com"
+  },
   "Reservio": {
     "cats": [
       93,

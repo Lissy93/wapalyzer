@@ -2534,6 +2534,23 @@
     "scriptSrc": "\\.privy\\.com/",
     "website": "https://www.privy.com"
   },
+  "Privy App": {
+    "cats": [
+      100
+    ],
+    "description": "Privy App helps you improve your website conversion rate, grow your email list, automate your email marketing, drive repeat purchases and much more.",
+    "icon": "Privy.svg",
+    "requires": "Shopify",
+    "implies": "Privy",
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "//shopify\\.privy\\.com/",
+    "website": "https://apps.shopify.com/privy"
+  },
   "ProcessWire": {
     "cats": [
       1
@@ -2953,6 +2970,9 @@
     ],
     "description": "PushOwl is a push notification platform for ecommerce stores.",
     "icon": "PushOwl.svg",
+    "js": {
+      "pushowl": ""
+    },
     "pricing": [
       "low",
       "freemium",
@@ -2961,6 +2981,24 @@
     "saas": true,
     "scriptSrc": "cdn\\.pushowl\\.com",
     "website": "https://pushowl.com"
+  },
+  "PushOwl Web Push Notifications": {
+    "cats": [
+      98,
+      100
+    ],
+    "description": "PushOwl Web Push Notifications are a Shopify app which helps recover abandoned carts and market better with web push.",
+    "icon": "PushOwl.svg",
+    "implies": "PushOwl",
+    "requires": "Shopify",
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "/sdks/pushowl-shopify\\.js",
+    "website": "https://apps.shopify.com/pushowl"
   },
   "PushPushGo": {
     "cats": [
