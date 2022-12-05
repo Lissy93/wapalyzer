@@ -363,11 +363,12 @@
     "cats": [
       1
     ],
+    "cpe": "cpe:2.3:a:torchbox:wagtail:*:*:*:*:*django*:*:*",
     "description": "Wagtail is a Django content management system (CMS) focused on flexibility and user experience.",
     "dom": {
       "[data-block-key]": {
         "attributes": {
-          "data-block-key": "[a-z0-9]{5}"
+          "data-block-key": "^[a-z0-9]{5}$"
         }
       },
       "[style*='images/']": {
@@ -405,7 +406,7 @@
       "Python"
     ],
     "oss": true,
-    "website": "https://wagtail.org/"
+    "website": "https://wagtail.org"
   },
   "Wair": {
     "cats": [
