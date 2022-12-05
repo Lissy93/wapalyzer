@@ -2654,9 +2654,7 @@
     "cpe": "cpe:2.3:a:mybb:mybb:*:*:*:*:*:*:*:*",
     "description": "MyBB is a free and open-source forum software written in PHP.",
     "icon": "MyBB.png",
-    "implies": [
-      "PHP"
-    ],
+    "implies": "PHP",
     "js": {
       "MyBB": "",
       "MyBBEditor": ""
