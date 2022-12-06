@@ -2635,12 +2635,22 @@
     "cats": [
       1
     ],
+    "description": "Amiro.CMS is a commercial content management system developed and distributed by the Russian company Amiro. Written in PHP and uses MySQL as a database.",
     "icon": "Amiro.CMS.png",
-    "implies": "PHP",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
     "meta": {
       "generator": "Amiro"
     },
-    "website": "http://amirocms.com"
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "onetime",
+      "recurring"
+    ],
+    "website": "https://www.amiro.ru"
   },
   "Amobee": {
     "cats": [
@@ -3013,7 +3023,7 @@
     "cpe": "cpe:2.3:a:apache:jspwiki:*:*:*:*:*:*:*:*",
     "description": "Apache JSPWiki is an open-source Wiki engine, built around standard JEE components (Java, servlets, JSP).",
     "html": "<html[^>]* xmlns:jspwiki=",
-    "icon": "Apache JSPWiki.png",
+    "icon": "Apache.svg",
     "implies": "Apache Tomcat",
     "scriptSrc": "jspwiki",
     "url": "wiki\\.jsp",
@@ -3063,18 +3073,23 @@
     "headers": {
       "X-Powered-By": "Salesforce\\.com ApexPages"
     },
-    "icon": "ApexPages.png",
+    "icon": "CloudFlare.svg",
     "implies": "Salesforce",
     "website": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro.htm"
   },
   "Apigee": {
     "cats": [
-      4
+      4,
+      19
     ],
     "description": "Apigee is an API gateway management tool to exchange data across cloud services and applications",
-    "html": "<script>[^>]{0,50}script src=[^>]/profiles/apigee",
-    "icon": "apigee.svg",
+    "icon": "Apigee.svg",
     "scriptSrc": "/profiles/apigee",
+    "saas": true,
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
     "website": "https://cloud.google.com/apigee/"
   },
   "Apisearch": {
@@ -4589,7 +4604,7 @@
     ],
     "description": "amCharts is a JavaScript-based interactive charts and maps programming library and tool.",
     "html": "<svg[^>]*><desc>JavaScript chart by amCharts ([\\d.]*)\\;version:\\1",
-    "icon": "amCharts.png",
+    "icon": "amCharts.svg",
     "js": {
       "AmCharts": ""
     },
