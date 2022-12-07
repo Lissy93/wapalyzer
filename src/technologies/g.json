@@ -1296,15 +1296,36 @@
     "saas": true,
     "website": "https://www.gokwik.co"
   },
+  "Gomag": {
+    "cats": [
+      6
+    ],
+    "description": "Gomag is a B2B and B2C ecommerce platform from Romania.",
+    "icon": "Gomag.svg",
+    "headers": {
+      "author": "^Gomag$"
+    },
+    "js": {
+      "$GomagConfig": "",
+      "GomagForm": ""
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring",
+      "poa"
+    ],
+    "website": "https://www.gomag.ro"
+  },
   "GoMage": {
     "cats": [
-      19
+      108
     ],
     "description": "GoMage is a Magento development company with 10 years of experience.",
     "icon": "GoMage.svg",
     "implies": [
       "PWA",
-      "Magento"
+      "Magento\\;version:2"
     ],
     "js": {
       "GomageNavigation": "",
