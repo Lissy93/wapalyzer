@@ -1014,6 +1014,21 @@
     "scriptSrc": "cdn-prod\\.scalefast\\.com/(?:.+\\.js\\?version=([\\d\\.]+))?\\;version:\\1",
     "website": "https://www.scalefast.com"
   },
+  "ScandiPWA": {
+    "cats": [
+      108
+    ],
+    "description": "ScandiPWA is the next generation Magento 2 PWA theme developed in React.",
+    "icon": "ScandiPWA.png",
+    "implies": [
+      "Magento\\;version:2",
+      "React",
+      "PWA"
+    ],
+    "dom": "link[href^='/static/frontend/scandipwa/']",
+    "oss": true,
+    "website": "https://scandipwa.com"
+  },
   "Schedule Engine": {
     "cats": [
       52
