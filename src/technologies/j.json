@@ -702,10 +702,11 @@
   },
   "Justuno": {
     "cats": [
-      76
+      76,
+      98
     ],
-    "description": "Justuno is a visitor conversion optimization platform.",
-    "icon": "Justuno.png",
+    "description": "Justuno is a visitor conversion optimisation platform.",
+    "icon": "Justuno.svg",
     "js": {
       "JustunoApp": ""
     },
@@ -718,7 +719,24 @@
       "my\\.jst\\.ai",
       "cdn\\.justuno\\.com"
     ],
-    "website": "https://www.justuno.com/"
+    "website": "https://www.justuno.com"
+  },
+  "Justuno App": {
+    "cats": [
+      100
+    ],
+    "description": "Justuno is a premium conversion marketing and analytics platform that provides retailers with powerful tools to increase conversions.",
+    "icon": "Justuno.svg",
+    "implies": "Justuno",
+    "requires": "Shopify",
+    "pricing": [
+      "freemium",
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "scriptSrc": "//scripttags\\.justuno\\.com/shopify_justuno",
+    "website": "https://apps.shopify.com/justuno-pop-ups-email-conversion"
   },
   "jComponent": {
     "cats": [
