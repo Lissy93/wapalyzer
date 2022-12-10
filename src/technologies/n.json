@@ -590,12 +590,11 @@
       "Cookie": "__Host-next-auth.csrf-token="
     },
     "icon": "Next-Auth.svg",
-    "implies": [
-      "Next.js"
-    ],
+    "oss": "true",
     "pricing": [
       "freemium"
     ],
+    "requires": "Next.js",
     "scripts": "localStorage\\.getItem\\('nextauth.message'\\)",
     "website": "https://next-auth.js.org"
   },
