@@ -5491,6 +5491,11 @@
     ],
     "description": "Storeino is an ecommerce platform that enables businesses and physical store owners to open a professional online store and sell products online regardless of their geographical location.",
     "icon": "Storeino.png",
+    "implies": [
+      "Express",
+      "MongoDB",
+      "Node.js"
+    ],
     "meta": {
       "platform": "^Storeino$"
     },
