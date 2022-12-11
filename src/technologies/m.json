@@ -881,7 +881,10 @@
     ],
     "description": "Marketpath CMS is a hosted website content management system used by businesses, churches and schools.",
     "icon": "Marketpath CMS.png",
-    "implies": "Azure",
+    "implies": [
+      "Azure",
+      "ZURB Foundation"
+    ],
     "cookies": {
       "_mp_permissions": "^session\\^"
     },
