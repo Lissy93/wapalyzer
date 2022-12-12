@@ -583,12 +583,10 @@
       69
     ],
     "cookies": {
-      "__Host-next-auth.csrf-token": ""
+      "__Host-next-auth.csrf-token": "",
+      "__Secure-next-auth.callback-url": ""
     },
     "description": "NextAuth.js is a complete open-source authentication solution for Next.js applications.",
-    "headers": {
-      "Cookie": "__Host-next-auth.csrf-token="
-    },
     "icon": "Next-Auth.png",
     "oss": true,
     "requires": "Next.js",
