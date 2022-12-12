@@ -576,6 +576,25 @@
     "url": "^https?//.+\\.reactiveonline\\.io",
     "website": "https://reactiveonline.io"
   },
+  "ReadSpeaker": {
+    "cats": [
+      5
+    ],
+    "description": "ReadSpeaker is an intuitive text-to-speech API that converts text into natural-sounding audio files for websites and applications.",
+    "icon": "ReadSpeaker.svg",
+    "js": {
+      "ReadSpeaker": "",
+      "ReadSpeaker.meta.version": "^([\\d\\.]+)_.+$\\;version:\\1"
+    },
+    "scriptSrc": "\\.readspeaker\\.com/",
+    "pricing": [
+      "poa",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.readspeaker.com"
+  },
   "Readymag": {
     "cats": [
       51
