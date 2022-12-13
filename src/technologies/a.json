@@ -3056,6 +3056,24 @@
     },
     "website": "http://wicket.apache.org"
   },
+  "Apereo CAS": {
+    "cats": [
+      69
+    ],
+    "description": "Apereo CAS is an open and well-documented authentication protocol. The primary implementation of the protocol is an open-source Java server component by the same name hosted here, with support for a plethora of additional authentication protocols and features.",
+    "icon": "Apereo CAS.png",
+    "implies": [
+      "Java",
+      "PHP"
+    ],
+    "dom": {
+      "head > title": {
+        "text": "CAS – (?:Central Authentication Service|Service Central d'Authentification)"
+      }
+    },
+    "oss": true,
+    "website": "https://www.apereo.org/projects/cas"
+  },
   "ApexPages": {
     "cats": [
       51
