@@ -203,13 +203,13 @@
       59
     ],
     "description": "JavaScript library to animate elements on your page as you scroll.",
+    "dom": " body[data-aos-easing]",
     "icon": "AOS.svg",
     "js": {
       "AOS.init": "",
       "AOS.refresh": "",
       "AOS.refreshHard": ""
     },
-   "dom": " body[data-aos-easing]",
     "oss": true,
     "scriptSrc": [
       "unpkg\\.com/aos@([\\d\\.]+)/dist/aos\\.js\\;version:\\1",
@@ -2644,12 +2644,12 @@
     "meta": {
       "generator": "Amiro"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "onetime",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.amiro.ru"
   },
   "Amobee": {
@@ -2880,8 +2880,8 @@
         }
       }
     },
-    "oss": true,
     "icon": "Animate.css.svg",
+    "oss": true,
     "website": "https://animate.style"
   },
   "AnswerDash": {
@@ -3071,16 +3071,16 @@
       69
     ],
     "description": "Apereo CAS is an open and well-documented authentication protocol. The primary implementation of the protocol is an open-source Java server component by the same name hosted here, with support for a plethora of additional authentication protocols and features.",
-    "icon": "Apereo CAS.png",
-    "implies": [
-      "Java",
-      "PHP"
-    ],
     "dom": {
       "head > title": {
         "text": "CAS – (?:Central Authentication Service|Service Central d'Authentification)"
       }
     },
+    "icon": "Apereo CAS.png",
+    "implies": [
+      "Java",
+      "PHP"
+    ],
     "oss": true,
     "website": "https://www.apereo.org/projects/cas"
   },
@@ -3102,12 +3102,12 @@
     ],
     "description": "Apigee is an API gateway management tool to exchange data across cloud services and applications",
     "icon": "Apigee.svg",
-    "scriptSrc": "/profiles/apigee",
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "/profiles/apigee",
     "website": "https://cloud.google.com/apigee/"
   },
   "Apisearch": {
@@ -3281,23 +3281,6 @@
     "scriptSrc": "/apple_business_chat_commerce/.+/apple_message_button_v([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://developer.apple.com/documentation/businesschat"
   },
-  "Apple iCloud Mail": {
-    "cats": [
-      30
-    ],
-    "description": "Apple iCloud Mail is a webmail service provided by Apple, Inc.",
-    "dns": {
-      "MX": [
-        "mail\\.icloud\\.com"
-      ],
-      "TXT": [
-        "apple-domain",
-        "v=spf1 redirect=icloud.com"
-      ]
-    },
-    "icon": "Apple.svg",
-    "website": "https://www.apple.com/icloud/"
-  },
   "Apple Pay": {
     "cats": [
       41
@@ -3342,6 +3325,23 @@
     },
     "scriptSrc": "appleid\\.auth\\.js",
     "website": "https://developer.apple.com/sign-in-with-apple/"
+  },
+  "Apple iCloud Mail": {
+    "cats": [
+      30
+    ],
+    "description": "Apple iCloud Mail is a webmail service provided by Apple, Inc.",
+    "dns": {
+      "MX": [
+        "mail\\.icloud\\.com"
+      ],
+      "TXT": [
+        "apple-domain",
+        "v=spf1 redirect=icloud.com"
+      ]
+    },
+    "icon": "Apple.svg",
+    "website": "https://www.apple.com/icloud/"
   },
   "ApplicantStack": {
     "cats": [
@@ -3649,15 +3649,15 @@
       14
     ],
     "description": "Asciinema is a free and open-source solution for recording terminal sessions and sharing them on the web.",
-    "html": "<asciinema-player",
     "dom": [
       "div.asciinema-player-wrapper",
       "div.asciinema-player"
     ],
+    "html": "<asciinema-player",
     "icon": "Asciinema.svg",
     "js": {
-      "asciinema": "",
-      "AsciinemaPlayer": ""
+      "AsciinemaPlayer": "",
+      "asciinema": ""
     },
     "scriptSrc": "asciinema\\.org/",
     "website": "https://asciinema.org/"
@@ -4258,16 +4258,16 @@
     ],
     "description": "Avanser allow you to track every call and enable your business to make better-informed decisions based on your phone calls.",
     "icon": "Avanser.svg",
+    "js": {
+      "AVANSERjs": "",
+      "AvanserCore": "",
+      "AvanserOptions": ""
+    },
     "pricing": [
       "payg",
       "recurring"
     ],
     "saas": true,
-    "js": {
-      "AvanserCore": "",
-      "AVANSERjs": "",
-      "AvanserOptions": ""
-    },
     "website": "https://www.avanser.com"
   },
   "Avasize": {
@@ -4352,13 +4352,13 @@
       59
     ],
     "description": "Promise based HTTP client for the browser and node.js",
+    "icon": "Axios.svg",
     "js": {
       "axios.get": ""
     },
     "scriptSrc": [
       "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
     ],
-    "icon": "Axios.svg",
     "website": "https://github.com/axios/axios"
   },
   "Azion": {

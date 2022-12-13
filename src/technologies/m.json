@@ -300,10 +300,10 @@
       "Mage": "",
       "VarienForm": ""
     },
+    "oss": true,
     "probe": {
       "/magento_version": "Magento/([0-9.]+)\\;version:\\1"
     },
-    "oss": true,
     "scriptSrc": [
       "js/mage",
       "skin/frontend/(?:default|(enterprise))\\;version:\\1?1 (Enterprise):1 (Community)",
@@ -879,21 +879,21 @@
     "cats": [
       1
     ],
+    "cookies": {
+      "_mp_permissions": "^session\\^"
+    },
     "description": "Marketpath CMS is a hosted website content management system used by businesses, churches and schools.",
     "icon": "Marketpath CMS.png",
     "implies": [
       "Azure",
       "ZURB Foundation"
     ],
-    "cookies": {
-      "_mp_permissions": "^session\\^"
-    },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.marketpath.com"
   },
   "Marko": {

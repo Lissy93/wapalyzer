@@ -541,20 +541,20 @@
       87
     ],
     "description": "Elementor is a website builder platform for professionals on WordPress.",
-    "icon": "Elementor.svg",
     "dom": "link[href*='/wp-content/plugins/elementor/']",
+    "icon": "Elementor.svg",
     "js": {
       "elementorFrontend.getElements": "",
       "elementorFrontendConfig.version": "([\\d\\.]+)\\;version:\\1"
     },
-    "scriptSrc": "/wp-content/plugins/elementor(?:-pro)?/.+frontend-modules\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-    "requires": "WordPress",
-    "saas": true,
     "pricing": [
       "freemium",
       "onetime",
       "recurring"
     ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/elementor(?:-pro)?/.+frontend-modules\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://elementor.com"
   },
   "Elementor Cloud": {
@@ -1287,11 +1287,11 @@
       "React",
       "PHP"
     ],
-    "saas": true,
     "pricing": [
       "recurring",
       "mid"
     ],
+    "saas": true,
     "scriptSrc": "cdn\\.eticex\\.com/",
     "website": "https://www.eticex.com"
   },

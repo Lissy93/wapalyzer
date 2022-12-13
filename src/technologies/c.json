@@ -56,27 +56,6 @@
     "scriptSrc": "cc\\.cdn\\.civiccomputing\\.com",
     "website": "https://www.civicuk.com/cookie-control"
   },
-  "CiviCRM": {
-    "cats": [
-      53
-    ],
-    "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
-    "icon": "CiviCRM.png",
-    "dom": "a[href*='/civicrm/contribute/transact'], link[href*='/com_civicrm/civicrm/']",
-    "oss": true,
-    "website": "https://civicrm.org"
-  },
-  "CiviCRM plugins": {
-    "cats": [
-      87
-    ],
-    "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
-    "icon": "CiviCRM.png",
-    "implies": "CiviCRM",
-    "requires": "WordPress",
-    "scriptSrc": "wp-content/plugins/(?:[\\w\\-]+)?civicrm(?:[\\w\\-]+)?/",
-    "website": "https://wordpress.org/plugins/search/civicrm/"
-  },
   "CJDropshipping app": {
     "cats": [
       100
@@ -294,10 +273,10 @@
       22
     ],
     "description": "CactiveCloud is a freemium based cloud provider and web server for static deployments of websites with HTML builds and serverless functions.",
-    "icon": "CactiveCloud.svg",
     "headers": {
       "server": "^Cactive$"
     },
+    "icon": "CactiveCloud.svg",
     "pricing": [
       "freemium",
       "low",
@@ -338,11 +317,11 @@
     "cats": [
       18
     ],
-    "description": "CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP.",
     "cookies": {
       "cakephp": ""
     },
     "cpe": "cpe:2.3:a:cakephp:cakephp:*:*:*:*:*:*:*:*",
+    "description": "CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP.",
     "icon": "CakePHP.svg",
     "implies": "PHP",
     "meta": {
@@ -919,28 +898,6 @@
     "icon": "CentOS.svg",
     "website": "http://centos.org"
   },
-  "Centra": {
-    "cats": [
-      6
-    ],
-    "description": "Centra is the headless ecommerce platform.",
-    "dom":"img[src*='.centracdn.net/']",
-    "excludes": "Magento",
-    "headers": {
-      "Content-Security-Policy": "\\.centra(?:cdn)?\\.(?:com|net)"
-    },
-    "icon": "Centra.svg",
-    "js": {
-      "CENTRA_IMAGE_SIZES": ""
-    },
-    "scripts": "centraCheckoutScript",
-    "saas": true,
-    "pricing": [
-      "recurring",
-      "poa"
-    ],
-    "website": "https://centra.com"
-  },
   "Centminmod": {
     "cats": [
       22
@@ -955,6 +912,28 @@
       "PHP"
     ],
     "website": "https://centminmod.com"
+  },
+  "Centra": {
+    "cats": [
+      6
+    ],
+    "description": "Centra is the headless ecommerce platform.",
+    "dom": "img[src*='.centracdn.net/']",
+    "excludes": "Magento",
+    "headers": {
+      "Content-Security-Policy": "\\.centra(?:cdn)?\\.(?:com|net)"
+    },
+    "icon": "Centra.svg",
+    "js": {
+      "CENTRA_IMAGE_SIZES": ""
+    },
+    "pricing": [
+      "recurring",
+      "poa"
+    ],
+    "saas": true,
+    "scripts": "centraCheckoutScript",
+    "website": "https://centra.com"
   },
   "Chabokan": {
     "cats": [
@@ -1044,12 +1023,12 @@
     "js": {
       "ChannelIO": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://channel.io"
   },
   "ChannelAdvisor": {
@@ -1396,10 +1375,10 @@
     ],
     "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
     "icon": "Choices.png",
-    "oss": true,
     "js": {
       "Choices": ""
     },
+    "oss": true,
     "scriptSrc": [
       "choices\\.js(?:@|/)?([\\d\\.]+)?.+choices\\.min\\.js\\;version:\\1",
       "/modules/choices/js/choices\\.js"
@@ -1529,6 +1508,27 @@
       "\\bCitymail\\b"
     ],
     "website": "https://www.citymail.se"
+  },
+  "CiviCRM": {
+    "cats": [
+      53
+    ],
+    "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
+    "dom": "a[href*='/civicrm/contribute/transact'], link[href*='/com_civicrm/civicrm/']",
+    "icon": "CiviCRM.png",
+    "oss": true,
+    "website": "https://civicrm.org"
+  },
+  "CiviCRM plugins": {
+    "cats": [
+      87
+    ],
+    "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
+    "icon": "CiviCRM.png",
+    "implies": "CiviCRM",
+    "requires": "WordPress",
+    "scriptSrc": "wp-content/plugins/(?:[\\w\\-]+)?civicrm(?:[\\w\\-]+)?/",
+    "website": "https://wordpress.org/plugins/search/civicrm/"
   },
   "CivicTheme": {
     "cats": [
@@ -1680,9 +1680,9 @@
     "description": "Clerk is a user management platform.",
     "icon": "Clerk.svg",
     "js": {
-      "Clerk.version": "([\\d\\.]+)\\;version:\\1",
       "Clerk.authenticateWithMetamask": "",
-      "Clerk.openSignIn": ""
+      "Clerk.openSignIn": "",
+      "Clerk.version": "([\\d\\.]+)\\;version:\\1"
     },
     "pricing": [
       "mid",
@@ -1962,11 +1962,11 @@
     "cookies": {
       "__cfduid": ""
     },
+    "description": "Cloudflare is a web-infrastructure and website-security company, providing content-delivery-network services, DDoS mitigation, Internet security, and distributed domain-name-server services.",
     "dns": {
       "NS": "\\.cloudflare\\.com",
       "SOA": "\\.cloudflare\\.com"
     },
-    "description": "Cloudflare is a web-infrastructure and website-security company, providing content-delivery-network services, DDoS mitigation, Internet security, and distributed domain-name-server services.",
     "headers": {
       "Server": "^cloudflare$",
       "cf-cache-status": "",
@@ -2968,10 +2968,10 @@
     "description": "Conversio App is an optimisation and analytics app for Shopify stores.",
     "icon": "Conversio.svg",
     "implies": "Conversio",
-    "requires": "Shopify",
     "pricing": [
       "poa"
     ],
+    "requires": "Shopify",
     "saas": true,
     "scriptSrc": "\\.conversio\\.com/.+\\.myshopify\\.com",
     "website": "https://apps.shopify.com/conversio"
@@ -3264,10 +3264,10 @@
       "coremedia_content_id": "",
       "generator": "^CoreMedia C(?:ontent Cloud|MS)$"
     },
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://www.coremedia.com"
   },
   "CoreUI": {
@@ -3561,6 +3561,22 @@
     "scriptSrc": "/wp-content/plugins/creative-mail-by-constant-contact/",
     "website": "https://www.creativemail.com"
   },
+  "Crikle": {
+    "cats": [
+      52
+    ],
+    "description": "Crikle is a multichannel customer engagement software.",
+    "icon": "Crikle.svg",
+    "js": {
+      "crikle.contactId": "",
+      "crikle.openConvertWidget": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.crikle.com"
+  },
   "Crisp Live Chat": {
     "cats": [
       52
@@ -3580,22 +3596,6 @@
     "saas": true,
     "scriptSrc": "client\\.crisp\\.chat/",
     "website": "https://crisp.chat/"
-  },
-  "Crikle": {
-    "cats": [
-      52
-    ],
-    "description": "Crikle is a multichannel customer engagement software.",
-    "icon": "Crikle.svg",
-    "js": {
-      "crikle.contactId": "",
-      "crikle.openConvertWidget": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.crikle.com"
   },
   "Criteo": {
     "cats": [

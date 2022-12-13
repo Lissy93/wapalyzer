@@ -87,7 +87,7 @@
       "vtex_session": ""
     },
     "description": "VTEX is an ecommerce software that manages multiple online stores.",
-    "dom":"link[href*='.vteximg.com.br'], source[srcset*='.vteximg.com.br']",
+    "dom": "link[href*='.vteximg.com.br'], source[srcset*='.vteximg.com.br']",
     "headers": {
       "Server": "^VTEX IO$",
       "powered": "vtex"
@@ -996,8 +996,8 @@
     "html": "<[^>]+\\sdata-v(?:ue)?-",
     "icon": "vue.svg",
     "js": {
-      "Vue.version": "^(.+)$\\;version:\\1",
       "Vue": "",
+      "Vue.version": "^(.+)$\\;version:\\1",
       "VueRoot": "",
       "__VUE_HOT_MAP__": "",
       "__VUE__": "",

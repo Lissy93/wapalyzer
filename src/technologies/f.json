@@ -691,14 +691,14 @@
     ],
     "description": "FireApps Ali Reviews is an all-in-one solution that helps to collect, showcase, and manage impactful reviews.",
     "icon": "FireApps.svg",
-    "requires": "Shopify",
-    "scriptSrc": "//alireviews\\.fireapps\\.io/",
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "//alireviews\\.fireapps\\.io/",
     "website": "https://apps.shopify.com/ali-reviews"
   },
   "Firebase": {
@@ -886,8 +886,8 @@
       93
     ],
     "description": "Fleksa is an online ordering system for restaurants and delivery.",
-    "icon": "Fleksa.svg",
     "dom": "a[href*='play.google.com/store/apps/details?id=com.fleksa.'][target='_blank']",
+    "icon": "Fleksa.svg",
     "implies": [
       "Node.js",
       "Next.js"
@@ -1906,12 +1906,12 @@
     "js": {
       "FullCalendar.version": "^([\\d\\.\\-\\w]+)$\\;version:\\1"
     },
+    "oss": true,
     "pricing": [
       "freemium",
       "mid",
       "poa"
     ],
-    "oss": true,
     "scriptSrc": "/fullcalendar\\.min\\.js",
     "website": "https://fullcalendar.io"
   },

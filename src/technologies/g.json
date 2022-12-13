@@ -1296,27 +1296,6 @@
     "saas": true,
     "website": "https://www.gokwik.co"
   },
-  "Gomag": {
-    "cats": [
-      6
-    ],
-    "description": "Gomag is a B2B and B2C ecommerce platform from Romania.",
-    "icon": "Gomag.svg",
-    "headers": {
-      "author": "^Gomag$"
-    },
-    "js": {
-      "$GomagConfig": "",
-      "GomagForm": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring",
-      "poa"
-    ],
-    "website": "https://www.gomag.ro"
-  },
   "GoMage": {
     "cats": [
       108
@@ -1403,6 +1382,27 @@
     "oss": true,
     "scriptSrc": "js/gogs\\.js",
     "website": "http://gogs.io"
+  },
+  "Gomag": {
+    "cats": [
+      6
+    ],
+    "description": "Gomag is a B2B and B2C ecommerce platform from Romania.",
+    "headers": {
+      "author": "^Gomag$"
+    },
+    "icon": "Gomag.svg",
+    "js": {
+      "$GomagConfig": "",
+      "GomagForm": ""
+    },
+    "pricing": [
+      "low",
+      "recurring",
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.gomag.ro"
   },
   "Google AdSense": {
     "cats": [
@@ -1641,8 +1641,8 @@
       35
     ],
     "description": "Google Maps is a web mapping service. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation.",
-    "icon": "Google Maps.svg",
     "dom": "iframe[src*='google.com/maps']",
+    "icon": "Google Maps.svg",
     "scriptSrc": [
       "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",
       "//maps\\.google(?:apis)?\\.com/maps/api/js"
@@ -2252,18 +2252,18 @@
     "cats": [
       6
     ],
+    "cookies": {
+      "_gumroad_app_session": "",
+      "_gumroad_guid": ""
+    },
     "description": "Gumroad is a self-publishing digital marketplace platform to sell digital services such as books, memberships, courses and other digital services.",
-    "icon": "Gumroad.svg",
     "dns": {
       "CNAME": "\\.gumroad\\.com"
     },
     "dom": [
       "iframe[src^='https://gumroad.com/l/']"
     ],
-    "cookies": {
-      "_gumroad_app_session": "",
-      "_gumroad_guid": ""
-    },
+    "icon": "Gumroad.svg",
     "js": {
       "GumroadOverlay": "",
       "createGumroadOverlay": ""

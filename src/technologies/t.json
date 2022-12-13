@@ -457,10 +457,10 @@
         }
       }
     },
+    "icon": "tailwindcss.svg",
     "js": {
       "tailwind": ""
     },
-    "icon": "tailwindcss.svg",
     "scriptSrc": "\\.tailwindcss(?:tailwind-config-cdn)?\\.(?:com|js)",
     "website": "https://tailwindcss.com/"
   },
@@ -774,8 +774,8 @@
       }
     },
     "headers": {
-      "tb-cache-group": "^webstore$\\;confidence:50",
-      "tb-cache-country": "^\\w+$\\;confidence:50"
+      "tb-cache-country": "^\\w+$\\;confidence:50",
+      "tb-cache-group": "^webstore$\\;confidence:50"
     },
     "icon": "Tebex.svg",
     "implies": [
@@ -2251,6 +2251,7 @@
     ],
     "description": "Transcy is a Shopify translation app. Transcy allows you to translate your whole store content into target languages to reach different nation shoppers.",
     "icon": "Transcy.png",
+    "implies": "Shopify",
     "js": {
       "_transcy": "",
       "transcy_apiURI": "",
@@ -2261,7 +2262,6 @@
       "low",
       "recurring"
     ],
-    "implies": "Shopify",
     "saas": true,
     "website": "https://transcy.io"
   },
