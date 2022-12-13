@@ -2246,9 +2246,10 @@
   },
   "Transcy": {
     "cats": [
-      89
+      89,
+      100
     ],
-    "description": "Transcy allows you to translate your whole store content into target languages to reach different nation shoppers.",
+    "description": "Transcy is a Shopify translation app. Transcy allows you to translate your whole store content into target languages to reach different nation shoppers.",
     "icon": "Transcy.png",
     "js": {
       "_transcy": "",
@@ -2260,7 +2261,7 @@
       "low",
       "recurring"
     ],
-    "requires": "Shopify",
+    "implies": "Shopify",
     "saas": true,
     "website": "https://transcy.io"
   },

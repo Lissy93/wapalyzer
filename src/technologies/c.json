@@ -2945,6 +2945,37 @@
     "scriptSrc": "cdn\\.conversant\\.mgr\\.consensu\\.org/",
     "website": "https://www.conversantmedia.eu/consent-tool"
   },
+  "Conversio": {
+    "cats": [
+      10
+    ],
+    "description": "Conversio is an optimisation and analytics agency.",
+    "icon": "Conversio.svg",
+    "js": {
+      "Conversio.settings": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.conversio\\.com/",
+    "website": "https://conversio.com"
+  },
+  "Conversio App": {
+    "cats": [
+      100
+    ],
+    "description": "Conversio App is an optimisation and analytics app for Shopify stores.",
+    "icon": "Conversio.svg",
+    "implies": "Conversio",
+    "requires": "Shopify",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.conversio\\.com/.+\\.myshopify\\.com",
+    "website": "https://apps.shopify.com/conversio"
+  },
   "Convert": {
     "cats": [
       74

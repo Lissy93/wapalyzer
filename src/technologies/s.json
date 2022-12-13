@@ -2131,17 +2131,52 @@
     "saas": true,
     "website": "https://www.shoefitr.io"
   },
-  "Shogun": {
+  "Shogun Frontend": {
+    "cats": [
+      108
+    ],
+    "description": "Shogun Frontend is an all-in-one ecommerce frontend platform. Shogun Frontend pairs with leading backends: Shopify, BigCommerce, Magento (Adobe Commerce), and more.",
+    "icon": "Shogun Frontend.svg",
+    "dom": "img[src*='.shgcdn.com/']",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://getshogun.com/frontend"
+  },
+  "Shogun Page Builder": {
     "cats": [
       51
     ],
     "description": "Shogun is a page builder commonly used with headless implementations.",
-    "icon": "Shogun.svg",
+    "icon": "Shogun Page Builder.svg",
     "js": {
       "shogunAnalytics": ""
     },
     "saas": true,
-    "website": "https://getshogun.com/"
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://getshogun.com/page-builder"
+  },
+  "Shogun Landing Page Builder": {
+    "cats": [
+      100
+    ],
+    "description": "Shogun Landing Page Builder is a drag and drop Shopify page builder for creating high-converting store pages.",
+    "icon": "Shogun Page Builder.svg",
+    "implies": "Shogun Page Builder",
+    "requires": "Shopify",
+    "scriptSrc": "\\.getshogun\\.com/.+\\.myshopify\\.com",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://apps.shopify.com/shogun"
   },
   "Shop Pay": {
     "cats": [
@@ -3936,8 +3971,25 @@
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "js\\.smile\\.io/v([\\d.]+)/\\;version:\\1",
+    "scriptSrc": "\\.(?:smile|sweettooth)\\.io/",
     "website": "https://smile.io"
+  },
+  "Smile App": {
+    "cats": [
+      100
+    ],
+    "description": "Smile App offers a loyalty program for Shopify stores.",
+    "icon": "Smile.svg",
+    "implies": "Smile",
+    "requires": "Shopify",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "js\\.smile\\.io/.+smile-shopify\\.js",
+    "website": "https://apps.shopify.com/smile-io"
   },
   "SmtpJS": {
     "cats": [
