@@ -1015,6 +1015,9 @@
       88
     ],
     "description": "Hostinger is an employee-owned Web hosting provider and internet domain registrar.",
+    "dns": {
+      "SOA": "\\.(?:dns-parking|hostinger)\\.com"
+    },
     "headers": {
       "Server": "hcdn",
       "Platform": "hostinger"
