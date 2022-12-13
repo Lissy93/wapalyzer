@@ -1155,7 +1155,6 @@ class Site {
   async probe(url) {
     const files = {
       robots: '/robots.txt',
-      magento: '/magento_version',
     }
 
     // DNS

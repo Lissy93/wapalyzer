@@ -9,8 +9,6 @@
 
       const { technologies } = data.wappalyzer
 
-      removeEventListener('message', onMessage)
-
       postMessage({
         wappalyzer: {
           js: technologies.reduce((technologies, { name, chains }) => {
@@ -46,7 +44,7 @@
       })
     }
 
-    addEventListener('message', onMessage)
+    addEventListener('message', onMessage, { once: true })
   } catch (e) {
     // Fail quietly
   }

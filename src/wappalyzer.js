@@ -192,6 +192,10 @@ const Wappalyzer = {
 
       if (matches) {
         matches.forEach((match, index) => {
+          if (String(match).length > 10) {
+            return
+          }
+
           // Parse ternary operator
           const ternary = new RegExp(`\\\\${index}\\?([^:]+):(.*)$`).exec(
             version
@@ -301,7 +305,6 @@ const Wappalyzer = {
       scripts: oo,
       css: oo,
       robots: oo,
-      magento: oo,
       certIssuer: oo,
       scriptSrc: om,
       cookies: mm,
@@ -350,7 +353,6 @@ const Wappalyzer = {
         scripts,
         css,
         robots,
-        magento,
         meta,
         headers,
         dns,
@@ -397,7 +399,6 @@ const Wappalyzer = {
         css: transform(css),
         certIssuer: transform(certIssuer),
         robots: transform(robots),
-        magento: transform(magento),
         meta: transform(meta),
         scriptSrc: transform(scriptSrc),
         js: transform(js, true),

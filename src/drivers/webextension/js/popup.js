@@ -245,7 +245,8 @@ const Popup = {
       body: document.body,
       terms: document.querySelector('.terms'),
       detections: document.querySelector('.detections'),
-      empty: document.querySelector('.empty'),
+      playGame: document.querySelector('.empty__play-game'),
+      game: document.querySelector('.ttt-game'),
       footer: document.querySelector('.footer'),
       tabPlus: document.querySelector('.tab--plus'),
       termsButtonAccept: document.querySelector('.terms__button--accept'),
@@ -480,7 +481,7 @@ const Popup = {
       await setOption('collapseFooter', !collapsed)
     })
 
-    Array.from(document.querySelectorAll('a')).forEach((a) =>
+    Array.from(document.querySelectorAll('a[href^="http"]')).forEach((a) => {
       a.addEventListener('click', (event) => {
         event.preventDefault()
         event.stopImmediatePropagation()
@@ -491,7 +492,16 @@ const Popup = {
 
         return false
       })
-    )
+    })
+
+    // Game
+    el.playGame.addEventListener('click', (event) => {
+      event.preventDefault()
+      event.stopImmediatePropagation()
+
+      el.playGame.classList.add('empty__play-game--hidden')
+      el.game.classList.remove('ttt-game--hidden')
+    })
 
     // Apply internationalization
     i18n()
@@ -543,6 +553,8 @@ const Popup = {
 
     const el = {
       empty: document.querySelector('.empty'),
+      playGame: document.querySelector('.empty__play-game'),
+      game: document.querySelector('.ttt-game'),
       detections: document.querySelector('.detections'),
       issue: document.querySelector('.issue'),
       plusDownload: document.querySelector('.plus-download'),
@@ -554,6 +566,8 @@ const Popup = {
 
     if (!detections || !detections.length) {
       el.empty.classList.remove('empty--hidden')
+      el.playGame.classList.remove('empty__play-game--hidden')
+      el.game.classList.add('ttt-game--hidden')
       el.detections.classList.add('detections--hidden')
       el.issue.classList.add('issue--hidden')
       el.plusDownload.classList.add('plus-download--hidden')

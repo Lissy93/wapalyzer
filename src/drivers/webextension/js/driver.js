@@ -12,7 +12,7 @@ const {
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 
-const expiry = 1000 * 60 * 60 * 12
+const expiry = 1000 * 60 * 60 * 48
 
 const maxHostnames = 100
 
