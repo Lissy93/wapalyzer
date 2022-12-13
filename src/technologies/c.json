@@ -1381,8 +1381,12 @@
     "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
     "icon": "Choices.png",
     "oss": true,
+    "js": {
+      "Choices": ""
+    },
     "scriptSrc": [
-      "choices\\.js/|@([\\d.]+)(?:/assets)?(?:/scripts)?(?:/styles)?(?:/dist)?/choices(?:\\.min)?\\.js|css\\;version:\\1"
+      "choices\\.js(?:@|/)?([\\d\\.]+)?.+choices\\.min\\.js\\;version:\\1",
+      "/modules/choices/js/choices\\.js"
     ],
     "website": "https://github.com/Choices-js/Choices"
   },
