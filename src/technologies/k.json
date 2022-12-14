@@ -1001,7 +1001,7 @@
     ],
     "description": "KPHP (kPHP or KittenPHP) is a free PHP-to- C++ source-to-source translator, developed by VKontakte.",
     "headers": {
-      "x-powered-by": "^KPHP/[\\d\\.]+$"
+      "x-powered-by": "^KPHP/([\\d\\.]+)$\\;version:\\1"
     },
     "icon": "default.svg",
     "implies": "PHP",
