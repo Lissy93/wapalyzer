@@ -2307,6 +2307,26 @@
     "scriptSrc": "mediacdn\\.shopatron\\.com",
     "website": "http://ecommerce.shopatron.com"
   },
+  "ShopBase": {
+    "cats": [
+      6,
+      106
+    ],
+    "description": " ShopBase is a cross-border ecommerce platform for all Dropshipping/Print-on-Demand novices and experienced merchants.",
+    "icon": "ShopBase.svg",
+    "headers": {
+      "content-security-policy": "(?:accounts|templates)\\.shopbase\\.com"
+    },
+    "js": {
+      "sbsdk.checkout.setEnableABTestCustomer": ""
+    },
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "website": "https://www.shopbase.com"
+  },
   "Shopcada": {
     "cats": [
       6
