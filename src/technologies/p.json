@@ -181,7 +181,10 @@
       "pacePay": ""
     },
     "saas": true,
-    "scriptSrc": "pay\\.pacenow\\.co",
+    "scriptSrc": [
+      "pay\\.pacenow\\.co",
+      "/rely-shopify.min.js"
+    ],
     "website": "https://pacenow.co/"
   },
   "Packlink PRO": {
