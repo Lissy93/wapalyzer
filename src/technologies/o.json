@@ -1533,24 +1533,6 @@
     "saas": true,
     "website": "https://apps.shopify.com/order-deadline"
   },
-  "OrderGroove": {
-    "cats": [
-      41
-    ],
-    "description": "Ordergroove's eCommerce subscription management software delivers frictionless consumer experiences for brands through promotions & retention rewards.",
-    "dom": {
-      "script[data-src*='ordergroove']": {
-        "attributes": {
-          "data-src": "//static\\.ordergroove\\.com/"
-        }
-      }
-    },
-    "icon": "ordergroove.png",
-    "pricing": [
-      "recurring"
-    ],
-    "website": "https://www.ordergroove.com/"
-  },
   "OrderLogic app": {
     "cats": [
       100
@@ -1586,6 +1568,22 @@
     ],
     "saas": true,
     "website": "https://orderyoyo.com"
+  },
+  "Ordergroove": {
+    "cats": [
+      41
+    ],
+    "description": "Ordergroove provides a SaaS (Software as a Service) based subscription and membership commerce platform.",
+    "headers": {
+      "content-security-policy": "\\.ordergroove\\.com"
+    },
+    "icon": "ordergroove.svg",
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "scriptSrc": "\\.ordergroove\\.com/",
+    "website": "https://www.ordergroove.com/"
   },
   "Ordersify Product Alerts": {
     "cats": [
