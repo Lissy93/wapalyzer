@@ -1925,6 +1925,23 @@
     "scriptSrc": "\\.sharethis\\.com/",
     "website": "http://sharethis.com"
   },
+  "Shareaholic": {
+    "cats": [
+      10
+    ],
+    "description": "Shareaholic is a comprehensive set of marketing tools to engage with your audience, get found across search and social, and grow your following",
+    "dom": [
+      "meta[name*='shareaholic:site_id']",
+      "link[href*='\\*.shareaholic\\?:\\.net|\\.com']"
+    ],
+    "icon": "shareaholic.png",
+    "pricing": [
+      "low",
+      "poa"
+    ],
+    "scriptSrc": "\\*/shareaholic\\.js",
+    "website": "https://www.shareaholic.com/"
+  },
   "Sharethrough": {
     "cats": [
       36
