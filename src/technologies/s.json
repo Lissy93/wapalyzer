@@ -2210,6 +2210,26 @@
     "requires": "Shopify",
     "website": "https://shoppay.affirm.com"
   },
+  "ShopBase": {
+    "cats": [
+      6,
+      106
+    ],
+    "description": " ShopBase is a cross-border ecommerce platform for all Dropshipping/Print-on-Demand novices and experienced merchants.",
+    "headers": {
+      "content-security-policy": "(?:accounts|templates)\\.shopbase\\.com"
+    },
+    "icon": "ShopBase.svg",
+    "js": {
+      "sbsdk.checkout.setEnableABTestCustomer": ""
+    },
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "saas": true,
+    "website": "https://www.shopbase.com"
+  },
   "ShopGold": {
     "cats": [
       6
@@ -2306,26 +2326,6 @@
     },
     "scriptSrc": "mediacdn\\.shopatron\\.com",
     "website": "http://ecommerce.shopatron.com"
-  },
-  "ShopBase": {
-    "cats": [
-      6,
-      106
-    ],
-    "description": " ShopBase is a cross-border ecommerce platform for all Dropshipping/Print-on-Demand novices and experienced merchants.",
-    "icon": "ShopBase.svg",
-    "headers": {
-      "content-security-policy": "(?:accounts|templates)\\.shopbase\\.com"
-    },
-    "js": {
-      "sbsdk.checkout.setEnableABTestCustomer": ""
-    },
-    "saas": true,
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "website": "https://www.shopbase.com"
   },
   "Shopcada": {
     "cats": [

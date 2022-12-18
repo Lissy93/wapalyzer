@@ -39,6 +39,19 @@
     "saas": true,
     "website": "https://www.kmk.net.tr"
   },
+  "KPHP": {
+    "cats": [
+      27
+    ],
+    "description": "KPHP (kPHP or KittenPHP) is a free PHP-to- C++ source-to-source translator, developed by VKontakte.",
+    "headers": {
+      "x-powered-by": "^KPHP/([\\d\\.]+)$\\;version:\\1"
+    },
+    "icon": "default.svg",
+    "implies": "PHP",
+    "oss": true,
+    "website": "https://vkcom.github.io/kphp"
+  },
   "KQS.store": {
     "cats": [
       6
@@ -994,19 +1007,6 @@
       "shopify\\.kount\\.net/js"
     ],
     "website": "https://kount.com"
-  },
-  "KPHP": {
-    "cats": [
-      27
-    ],
-    "description": "KPHP (kPHP or KittenPHP) is a free PHP-to- C++ source-to-source translator, developed by VKontakte.",
-    "headers": {
-      "x-powered-by": "^KPHP/([\\d\\.]+)$\\;version:\\1"
-    },
-    "icon": "default.svg",
-    "implies": "PHP",
-    "oss": true,
-    "website": "https://vkcom.github.io/kphp"
   },
   "Ktor": {
     "cats": [
