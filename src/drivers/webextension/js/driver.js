@@ -99,12 +99,10 @@ const Driver = {
         )
       }
     } else if (version !== previous && upgradeMessage) {
-      /*
       open(
         `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
         false
       )
-      */
     }
 
     initDone()
@@ -814,7 +812,7 @@ const Driver = {
 
     const { hostname } = new URL(url)
 
-    const cache = Driver.cache.hostnames[hostname]
+    const cache = Driver.cache.hostnames?.[hostname]
 
     const resolved = (cache ? resolve(cache.detections) : []).filter(
       ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)
@@ -1049,7 +1047,7 @@ chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
 
     const showCached = await getOption('showCached', true)
 
-    const cache = Driver.cache.hostnames[hostname]
+    const cache = Driver.cache.hostnames?.[hostname]
 
     const resolved = (cache ? resolve(cache.detections) : []).filter(
       ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)
