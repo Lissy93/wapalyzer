@@ -178,13 +178,13 @@
     "description": "PacePay offers a BNPL (Buy now pay later) solution for merchants.",
     "icon": "Pace.svg",
     "js": {
-      "pacePay": ""
+      "pacePay": "",
+      "rely_month_installment": "",
+      "rely_shop_currency": "",
+      "rely_shop_money_format": ""
     },
     "saas": true,
-    "scriptSrc": [
-      "pay\\.pacenow\\.co",
-      "/rely-shopify.min.js"
-    ],
+    "scriptSrc": "pay\\.pacenow\\.co",
     "website": "https://pacenow.co/"
   },
   "Packlink PRO": {
