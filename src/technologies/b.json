@@ -1225,6 +1225,33 @@
     "scriptSrc": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
     "website": "https://www.boldchat.com/"
   },
+  "Bold Page Builder": {
+    "cats": [
+      87,
+      51
+    ],
+    "description": "Bold Page Builder is a plugin or a theme component that allows users to structure and design responsive pages.",
+    "icon": "Bold Page Builder.png",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/bold-page-builder/",
+    "website": "https://wordpress.org/plugins/bold-page-builder"
+  },
+  "Bold Themes": {
+    "cats": [
+      80
+    ],
+    "description": "Bold Themes is a powerful and easy to use premium WordPress themes.",
+    "icon": "Bold Themes.png",
+    "implies": "WordPress",
+    "js": {
+      "BoldThemesURI": "",
+      "boldthemes_theme_loaded": "^true$"
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "website": "https://bold-themes.com/wordpress-themes-plugins/"
+  },
   "Bold Commerce": {
     "cats": [
       76
