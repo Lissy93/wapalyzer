@@ -106,10 +106,11 @@
     "icon": "PIXIjs.svg",
     "js": {
       "PIXI": "",
-      "PIXI.VERSION": "^(.+)$\\;version:\\1"
+      "PIXI.VERSION": "^(.+)$\\;version:\\1",
+      "PIXI_WEBWORKER_URL": ""
     },
     "oss": true,
-    "scriptSrc": "pixi\\.(min\\.)?js$",
+    "scriptSrc": "pixi(?:\\.min|-legacy)?\\.js$",
     "url": ".+\\.pixijs\\.com",
     "website": "https://www.pixijs.com"
   },
