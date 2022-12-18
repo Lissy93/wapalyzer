@@ -2051,10 +2051,16 @@
   },
   "Cloudify.store": {
     "cats": [
+      6,
       93
     ],
     "description": "Cloudify.store is a subscription-based platform that allows anyone to set up a hyperlocal quick commerce business.",
     "icon": "Cloudify.store.png",
+    "implies": [
+      "PHP",
+      "MySQL",
+      "React"
+    ],
     "cookies": {
       "cloudify_session": ""
     },
