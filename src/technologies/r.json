@@ -1408,6 +1408,22 @@
     "scriptSrc": "cdn\\.retailrocket\\.net",
     "website": "https://retailrocket.net"
   },
+  "Return Prime": {
+    "cats": [
+      100,
+      102
+    ],
+    "description": "Return Prime is an application to manage returns for Shopify stores.",
+    "icon": "return-prime.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "scriptSrc": "//return-prime-proxy-prod\\.s3[^ ]*\\.amazonaws\\.com/",
+    "website": "https://www.returnprime.com/"
+  },
   "ReturnGO": {
     "cats": [
       102
@@ -1425,19 +1441,6 @@
     "saas": true,
     "scriptSrc": "\\.returngo\\.ai/",
     "website": "https://returngo.ai"
-  },
-  "ReturnPrime": {
-    "cats": [
-      102
-    ],
-    "description": "Most loved and only 5 star rated RMA app to manage returns, exchanges and refunds for your shopify store.",
-    "icon": "return-prime.png",
-    "pricing": [
-      "freemium",
-      "recurring"
-    ],
-    "scriptSrc": "//return-prime-proxy-prod\\.s3[^ ]*\\.amazonaws.com/",
-    "website": "https://www.returnprime.com/"
   },
   "Returnly": {
     "cats": [
