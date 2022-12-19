@@ -1927,17 +1927,17 @@
   },
   "Shareaholic": {
     "cats": [
-      10
+      5
     ],
     "description": "Shareaholic is a comprehensive set of marketing tools to engage with your audience, get found across search and social, and grow your following",
-    "dom": [
-      "meta[name*='shareaholic:site_id']",
-      "link[href*='\\*.shareaholic\\?:\\.net|\\.com']"
-    ],
-    "icon": "shareaholic.png",
+    "icon": "shareaholic.svg",
+    "js": {
+      "Shareaholic": ""
+    },
     "pricing": [
+      "freemium",
       "low",
-      "poa"
+      "recurring"
     ],
     "scriptSrc": "\\*/shareaholic\\.js",
     "website": "https://www.shareaholic.com/"
