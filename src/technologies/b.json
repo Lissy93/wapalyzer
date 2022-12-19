@@ -2355,20 +2355,15 @@
     "cats": [
       1
     ],
-    "dom": [
-      "a[href*='//cdn\\.buttercms\\.com/']",
-      "link[href*='//cdn\\.buttercms\\.com']",
-      "div[data-bg*='//cdn\\.buttercms\\.com/']",
-      "img[src*='//cdn\\.buttercms\\.com/']"
-    ],
-    "icon": "butter-cms.png",
+    "description": "ButterCMS is a cloud-based headless content management system.",
+    "dom": "div[data-bg*='cdn.buttercms.com/'], img[src*='cdn.buttercms.com/'], link[href*='cdn.buttercms.com'], a[href*='cdn.buttercms.com/']",
+    "icon": "butter-cms.svg",
     "pricing": [
-      "low",
       "mid",
       "recurring",
       "poa"
     ],
-    "website": "https://buttercms.com/"
+    "website": "https://buttercms.com"
   },
   "Buy me a coffee": {
     "cats": [
