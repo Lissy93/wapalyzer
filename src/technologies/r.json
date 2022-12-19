@@ -1913,12 +1913,16 @@
       74
     ],
     "description": "Roistat is a cross-cutting analytics system, collects data from CRM-system, advertising platforms.",
-    "icon": "roistat.png",
+    "icon": "roistat.svg",
+    "js": {
+      "roistatHost": "",
+      "roistatProjectId": ""
+    },
     "pricing": [
-      "low",
+      "mid",
+      "recurring",
       "poa"
     ],
-    "scripts": "cloud\\.roistat\\.com",
     "website": "https://roistat.com/"
   },
   "Rokt": {
