@@ -848,9 +848,10 @@
       32
     ],
     "description": "Webpushr is the new standard for Web Push Notifications.",
-    "dom": "script[id*='webpushr-script']",
     "icon": "webpushr.svg",
-    "scripts": "cdn\\.webpushr\\.com/app\\.min\\.js",
+    "js": {
+      "webpushr": ""
+    },
     "website": "https://www.webpushr.com"
   },
   "Webriti Busiprof": {
