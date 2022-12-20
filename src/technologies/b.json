@@ -1541,19 +1541,21 @@
   },
   "Bookly": {
     "cats": [
-      72
+      72,
+      87
     ],
-    "description": "Booking and Scheduling plugin for Wordpress.",
-    "dom": "link[href*='/plugins/bookly-responsive-appointment-booking-tool/'] link[href*='/css/bookly-main\\.css']",
+    "description": "Bookly is a WordPress scheduling plugin that allows you to accept on-line reservations on your website and automate your booking system.",
     "icon": "bookly.png",
+    "js": {
+      "bookly": "",
+      "booklyCustomerProfile": ""
+    },
     "pricing": [
-      "low"
+      "low",
+      "onetime"
     ],
     "requires": "WordPress",
-    "scriptSrc": [
-      "/plugins/bookly-responsive-appointment-booking-tool/",
-      "/bookly\\.js"
-    ],
+    "scriptSrc": "/plugins/bookly-responsive-appointment-booking-tool/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.booking-wp-plugin.com"
   },
   "Booksy": {
