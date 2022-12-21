@@ -847,11 +847,18 @@
     "cats": [
       32
     ],
-    "description": "Webpushr is the new standard for Web Push Notifications.",
+    "description": "Webpushr is Push Notification which supports both Mobile & Desktop devices.",
     "icon": "webpushr.svg",
     "js": {
-      "webpushr": ""
+      "WebPushr.notificationCard": "",
+      "webpushr": "",
+      "webpushr_display_button": ""
     },
+    "pricing": [
+      "recurring",
+      "freemium",
+      "low"
+    ],
     "scripts": "cdn\\.webpushr\\.com/app\\.min\\.js",
     "website": "https://www.webpushr.com"
   },
