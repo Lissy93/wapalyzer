@@ -94,6 +94,19 @@ Options:
   process.exit(options.help ? 0 : 1)
 }
 
+try {
+  const { hostname } = new URL(url)
+
+  if (!hostname) {
+    throw new Error('Invalid URL')
+  }
+} catch (error) {
+  // eslint-disable-next-line no-console
+  console.log(error.message || error.toString())
+
+  process.exit(1)
+}
+
 const headers = {}
 
 if (options.header) {
@@ -124,15 +137,23 @@ if (options.header) {
 
     process.exit(0)
   } catch (error) {
+    try {
+      await Promise.race([
+        wappalyzer.destroy(),
+        new Promise((resolve, reject) =>
+          setTimeout(
+            () => reject(new Error('Attempt to close the browser timed out')),
+            3000
+          )
+        ),
+      ])
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error.message || String(error))
+    }
+
     // eslint-disable-next-line no-console
     console.error(error.message || String(error))
-
-    await Promise.race([
-      wappalyzer.destroy(),
-      new Promise((resolve, reject) =>
-        setTimeout(reject(new Error('Failed to close the browser')), 3000)
-      ),
-    ])
 
     process.exit(1)
   }
