@@ -1547,6 +1547,7 @@
     "description": "Bookly is a WordPress scheduling plugin that allows you to accept on-line reservations on your website and automate your booking system.",
     "icon": "bookly.png",
     "js": {
+      "BooklyL10n.daysShort": "",
       "bookly": "",
       "booklyCustomerProfile": ""
     },
@@ -1555,7 +1556,7 @@
       "onetime"
     ],
     "requires": "WordPress",
-    "scriptSrc": "/.+\\/bookly/.\\*.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "scriptSrc": "/wp-content/plugins/bookly-responsive-appointment-booking-tool/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://www.booking-wp-plugin.com"
   },
   "Booksy": {
