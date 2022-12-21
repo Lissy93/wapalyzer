@@ -125,9 +125,12 @@ if (options.header) {
     process.exit(0)
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error(error)
+    console.error(error.message || String(error))
 
-    await wappalyzer.destroy()
+    await Promise.race([
+      wappalyzer.destroy(),
+      new Promise((resolve, reject) => setTimeout(resolve, 3000)),
+    ])
 
     process.exit(1)
   }
