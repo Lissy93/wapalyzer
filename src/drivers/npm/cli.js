@@ -129,7 +129,9 @@ if (options.header) {
 
     await Promise.race([
       wappalyzer.destroy(),
-      new Promise((resolve, reject) => setTimeout(resolve, 3000)),
+      new Promise((resolve, reject) =>
+        setTimeout(reject(new Error('Failed to close the browser')), 3000)
+      ),
     ])
 
     process.exit(1)
