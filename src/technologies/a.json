@@ -936,12 +936,13 @@
   },
   "AdRecover": {
     "cats": [
-      67
+      36
     ],
-    "description": "AdRecover makes reaching adblock users easy and Monetize Your Adblocked Impressions",
-    "dom": "link[href*='//delivery\\.adrecover\\.com/']",
+    "description": "AdRecover is a tool that helps online publishers monetise their Adblock inventory.",
     "icon": "adrecover.png",
-    "scriptSrc": "//delivery\\.adrecover\\.com/",
+    "js": {
+      "adRecover.ap": ""
+    },
     "website": "https://www.adrecover.com"
   },
   "AdRiver": {
