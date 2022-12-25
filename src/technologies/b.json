@@ -1566,6 +1566,26 @@
     "saas": true,
     "website": "https://bookingkit.net/"
   },
+  "Bookly": {
+    "cats": [
+      72,
+      87
+    ],
+    "description": "Bookly is a WordPress scheduling plugin that allows you to accept online reservations on your website and automate your booking system.",
+    "icon": "bookly.png",
+    "js": {
+      "BooklyL10n.daysShort": "",
+      "bookly": "",
+      "booklyCustomerProfile": ""
+    },
+    "pricing": [
+      "low",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/bookly-responsive-appointment-booking-tool/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://www.booking-wp-plugin.com"
+  },
   "Booksy": {
     "cats": [
       5,
