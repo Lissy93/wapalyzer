@@ -742,8 +742,8 @@
     "cats": [
       51
     ],
-    "description": "Webflow is Software-as-a-Service (Saas) for website building and hosting.",
-    "html": "<html[^>]+data-wf-site",
+    "description": "Webflow is Software-as-a-Service (SaaS) for website building and hosting.",
+    "dom": "html[data-wf-site]",
     "icon": "webflow.svg",
     "js": {
       "Webflow": ""
@@ -751,7 +751,30 @@
     "meta": {
       "generator": "Webflow"
     },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
     "website": "https://webflow.com"
+  },
+  "Webflow Ecommerce": {
+    "cats": [
+      6
+    ],
+    "description": "Webflow is a zero-code visual website builder, with Webflow Ecommerce, you can build and design online stores.",
+    "icon": "webflow.svg",
+    "js": {
+      "__WEBFLOW_CURRENCY_SETTINGS": ""
+    },
+    "requires": "Webflow",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://webflow.com/ecommerce"
   },
   "Webgains": {
     "cats": [
