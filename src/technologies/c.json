@@ -529,17 +529,18 @@
     "saas": true,
     "website": "https://www.instructure.com/canvas"
   },
-  "CanvasJs": {
+  "CanvasJS": {
     "cats": [
       25
     ],
     "description": "CanvasJS charts is a data visualisation library that runs across multiple devices and browsers.",
-    "icon": "canvasjs.png",
+    "icon": "canvasjs.svg",
     "js": {
       "CanvasJS": "",
-      "CanvasJS.Chart": ""
+      "CanvasJS.Chart": "",
+      "CanvasJS.Chart.version": ""
     },
-    "scriptSrc": "/.+\\.canvasjs/.+\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "scriptSrc": "/canvasjs/.+\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://canvasjs.com"
   },
   "Captch Me": {
