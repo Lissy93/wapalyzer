@@ -579,11 +579,14 @@
   "ReadMe": {
     "cats": [
       4,
-      57
+      1
     ],
-    "description": "ReadMe is used to Build interactive API docs that make your APIs easy to use.",
-    "dom": "link[href*='/cdn\\.readme\\.io/hub/web/*']",
+    "description": "ReadMe is a content management system that businesses use to create and manage technical or API documentation.",
     "icon": "readme.svg",
+    "meta": {
+      "readme-deploy": "^[\\d\\.]+$",
+      "readme-version": "^[\\d\\.]+$"
+    },
     "pricing": [
       "freemium",
       "mid",
