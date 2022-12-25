@@ -536,9 +536,8 @@
     "description": "CanvasJS charts is a data visualisation library that runs across multiple devices and browsers.",
     "icon": "canvasjs.svg",
     "js": {
-      "CanvasJS": "",
       "CanvasJS.Chart": "",
-      "CanvasJS.Chart.version": ""
+      "CanvasJS.Chart.version": "^v(.+)$\\;version:\\1"
     },
     "scriptSrc": "/canvasjs/.+\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://canvasjs.com"
