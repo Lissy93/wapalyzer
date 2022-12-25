@@ -1359,6 +1359,27 @@
     },
     "website": "http://www.doxygen.nl/"
   },
+  "Download Monitor": {
+    "cats": [
+      87
+    ],
+    "description": "Download Monitor is a plugin for selling, uploading and managing downloads, tracking downloads and displaying links.",
+    "dom": "link[href*='/wp-content/plugins/download-monitor/']",
+    "icon": "Download Monitor.png",
+    "meta": {
+      "dlm-version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "js": {
+      "DLM_XHR_Download": "",
+      "dlmXHR.prevent_duplicates": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "website": "https://www.download-monitor.com"
+  },
   "Draft.js": {
     "cats": [
       20
