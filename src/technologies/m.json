@@ -130,12 +130,13 @@
       "<form[^>]+id=\"ajaxSearch_form\\;confidence:20",
       "<input[^>]+id=\"ajaxSearch_input\\;confidence:20"
     ],
-    "icon": "MODX.png",
+    "icon": "MODX.svg",
     "implies": "PHP",
     "js": {
       "MODX": "",
       "MODX_MEDIA_PATH": ""
     },
+    "scriptSrc": "/assets/components/templates/\\;confidence:50",
     "meta": {
       "generator": "MODX[^\\d.]*([\\d.]+)?\\;version:\\1"
     },
