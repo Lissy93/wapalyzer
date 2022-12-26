@@ -583,18 +583,26 @@ const Driver = {
       .filter(({ technology }) => technology)
       .filter(
         (
-          { technology: { name }, pattern: { regex }, version },
+          {
+            technology: { name },
+            pattern: { regex, value },
+            confidence,
+            version,
+          },
           index,
           detections
         ) =>
           detections.findIndex(
             ({
               technology: { name: _name },
-              pattern: { regex: _regex },
+              pattern: { regex: _regex, value: _value },
+              confidence: _confidence,
               version: _version,
             }) =>
               name === _name &&
               version === _version &&
+              confidence === _confidence &&
+              value === _value &&
               (!regex || regex.toString() === _regex.toString())
           ) === index
       )
