@@ -99,12 +99,10 @@ const Driver = {
         )
       }
     } else if (version !== previous && upgradeMessage) {
-      /*
       open(
         `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
         false
       )
-      */
     }
 
     initDone()
