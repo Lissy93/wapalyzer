@@ -374,7 +374,7 @@ Plus any of:
       <td><code>probe</code></td>
       <td>Object</td>
       <td>
-        Request a URL to test for its existance or match text content (NPM driver only).
+        Request a URL to test for its existence or match text content (NPM driver only).
       </td>
       <td><code>{ "/path": "Example text" }</code></td>
     </tr>
