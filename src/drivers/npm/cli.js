@@ -72,24 +72,24 @@ Examples:
   docker wappalyzer/cli https://www.example.com --pretty
 
 Options:
-  -b, --batch-size=...     Process links in batches
-  -d, --debug              Output debug messages
-  -t, --delay=ms           Wait for ms milliseconds between requests
-  -h, --help               This text
-  -H, --header             Extra header to send with requests
-  --html-max-cols=...      Limit the number of HTML characters per line processed
-  --html-max-rows=...      Limit the number of HTML lines processed
-  -D, --max-depth=...      Don't analyse pages more than num levels deep
-  -m, --max-urls=...       Exit when num URLs have been analysed
-  -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
-  -p, --probe              Perform a deeper scan by performing additional requests and inspecting DNS records
-  -P, --pretty             Pretty-print JSON output
-  --proxy=...              Proxy URL, e.g. 'http://user:pass@proxy:8080'
-  -r, --recursive          Follow links on pages (crawler)
-  -a, --user-agent=...     Set the user agent string
-  -n, --no-scripts         Disabled JavaScript on web pages
-  -N, --no-redirect        Disable cross-domain redirects
-  -e, --extended           Output additional information
+  -b, --batch-size=...       Process links in batches
+  -d, --debug                Output debug messages
+  -t, --delay=ms             Wait for ms milliseconds between requests
+  -h, --help                 This text
+  -H, --header               Extra header to send with requests
+  --html-max-cols=...        Limit the number of HTML characters per line processed
+  --html-max-rows=...        Limit the number of HTML lines processed
+  -D, --max-depth=...        Don't analyse pages more than num levels deep
+  -m, --max-urls=...         Exit when num URLs have been analysed
+  -w, --max-wait=...         Wait no more than ms milliseconds for page resources to load
+  -p, --probe=[basic|full]   Perform a deeper scan by performing additional requests and inspecting DNS records
+  -P, --pretty               Pretty-print JSON output
+  --proxy=...                Proxy URL, e.g. 'http://user:pass@proxy:8080'
+  -r, --recursive            Follow links on pages (crawler)
+  -a, --user-agent=...       Set the user agent string
+  -n, --no-scripts           Disabled JavaScript on web pages
+  -N, --no-redirect          Disable cross-domain redirects
+  -e, --extended             Output additional information
 `)
   process.exit(options.help ? 0 : 1)
 }

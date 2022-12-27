@@ -289,7 +289,7 @@ function get(url, options = {}) {
           },
         },
         (response) => {
-          if (response.statusCode >= 400) {
+          if (response.statusCode >= 300) {
             return reject(
               new Error(`${response.statusCode} ${response.statusMessage}`)
             )
@@ -337,7 +337,12 @@ class Driver {
 
     this.options.debug = Boolean(+this.options.debug)
     this.options.recursive = Boolean(+this.options.recursive)
-    this.options.probe = Boolean(+this.options.probe)
+    this.options.probe =
+      String(this.options.probe || '').toLowerCase() === 'basic'
+        ? 'basic'
+        : String(this.options.probe || '').toLowerCase() === 'full'
+        ? 'full'
+        : Boolean(+this.options.probe) && 'full'
     this.options.delay = parseInt(this.options.delay, 10)
     this.options.maxDepth = parseInt(this.options.maxDepth, 10)
     this.options.maxUrls = parseInt(this.options.maxUrls, 10)
@@ -1153,8 +1158,25 @@ class Site {
   }
 
   async probe(url) {
-    const files = {
-      robots: '/robots.txt',
+    const paths = [
+      {
+        type: 'robots',
+        path: '/robots.txt',
+      },
+    ]
+
+    if (this.options.probe === 'full') {
+      Wappalyzer.technologies
+        .filter(({ probe }) => Object.keys(probe).length)
+        .forEach((technology) => {
+          paths.push(
+            ...Object.keys(technology.probe).map((path) => ({
+              type: 'probe',
+              path,
+              technology,
+            }))
+          )
+        })
     }
 
     // DNS
@@ -1180,9 +1202,7 @@ class Site {
 
     await Promise.allSettled([
       // Static files
-      ...Object.keys(files).map(async (file, index) => {
-        const path = files[file]
-
+      ...paths.map(async ({ type, path, technology }, index) => {
         try {
           await sleep(this.options.delay * index)
 
@@ -1193,7 +1213,17 @@ class Site {
 
           this.log(`Probe ok (${path})`)
 
-          await this.onDetect(url, analyze({ [file]: body.slice(0, 100000) }))
+          const text = body.slice(0, 100000)
+
+          await this.onDetect(
+            url,
+            analyze(
+              {
+                [type]: path ? { [path]: [text] } : text,
+              },
+              technology && [technology]
+            )
+          )
         } catch (error) {
           this.error(`Probe failed (${path}): ${error.message || error}`)
         }

@@ -100,6 +100,9 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
   "meta": {
     "generator": "(?:Example|Another Example)"
   },
+  "probe": {
+    "/path": ""
+  },
   "scriptSrc": "example-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
   "scripts": "function webpackJsonpCallback\\(data\\) {",
   "url": "example\\.com",
@@ -366,6 +369,14 @@ Plus any of:
         CSS rules are used to find matches.
       </td>
       <td><code>"\\.example-class"</code></td>
+    </tr>
+    <tr>
+      <td><code>probe</code></td>
+      <td>Object</td>
+      <td>
+        Request a URL to test for its existance or match text content (NPM driver only).
+      </td>
+      <td><code>{ "/path": "Example text" }</code></td>
     </tr>
     <tr>
       <td><code>robots</code></td>

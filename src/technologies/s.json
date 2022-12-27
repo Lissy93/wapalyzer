@@ -3470,13 +3470,16 @@
       "img[src^='/-/media/']",
       "img[src*='/~/media/.+\\.ashx']"
     ],
+    "probe": {
+      "/layouts/System/VisitorIdentification.aspx": ""
+    },
     "icon": "Sitecore.svg",
     "pricing": [
       "poa",
       "recurring",
       "high"
     ],
-    "requires": "Microsoft ASP.NET",
+    "implies": "Microsoft ASP.NET",
     "saas": true,
     "website": "https://www.sitecore.com/"
   },
