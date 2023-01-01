@@ -90,6 +90,8 @@ Options:
   -n, --no-scripts           Disabled JavaScript on web pages
   -N, --no-redirect          Disable cross-domain redirects
   -e, --extended             Output additional information
+  --local-storage=...        JSON object to use as local storage
+  --session-storage=...      JSON object to use as session storage
 `)
   process.exit(options.help ? 0 : 1)
 }
@@ -119,13 +121,38 @@ if (options.header) {
   )
 }
 
+const storage = {
+  local: {},
+  session: {},
+}
+
+for (const type of Object.keys(storage)) {
+  if (options[`${type}Storage`]) {
+    try {
+      storage[type] = JSON.parse(options[`${type}Storage`])
+
+      if (
+        !options[`${type}Storage`] ||
+        !Object.keys(options[`${type}Storage`]).length
+      ) {
+        throw new Error('Object has no properties')
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(`${type}Storage error: ${error.message || error}`)
+
+      process.exit(1)
+    }
+  }
+}
+
 ;(async function () {
   const wappalyzer = new Wappalyzer(options)
 
   try {
     await wappalyzer.init()
 
-    const site = await wappalyzer.open(url, headers)
+    const site = await wappalyzer.open(url, headers, storage)
 
     const results = await site.analyze()
 
