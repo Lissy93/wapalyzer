@@ -213,6 +213,9 @@ const Wappalyzer = {
             .trim()
             .replace(new RegExp(`\\\\${index}`, 'g'), match || '')
         })
+
+        // Remove unmatched back references
+        resolved = resolved.replace(/\\\d/, '')
       }
     }
 
