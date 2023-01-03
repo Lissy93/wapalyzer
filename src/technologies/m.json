@@ -919,11 +919,12 @@
     "cats": [
       59
     ],
-    "description": "Master Slider is a stunning, super smooth, responsive, and touch friendly slider",
-    "dom": "body._masterslider, link[href*='/masterslider\\.(?:main.css|css)(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1']",
+    "description": "Master Slider is an SEO friendly, responsive image and video slider.",
+    "dom": "body._masterslider, link[href*='/masterslider.(?:main.css|css)(?:?ver=(d+(?:.d+)+))?;version:\\1']",
     "icon": "master_slider.png",
     "js": {
-      "MasterSlider": ""
+      "MasterSlider": "",
+      "MasterSlider.version": "^([0-9\\.]+)$\\;version:\\1"
     },
     "website": "https://www.masterslider.com/"
   },
