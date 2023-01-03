@@ -1316,11 +1316,12 @@
   },
   "FormAssembly": {
     "cats": [
-      108
+      110
     ],
     "description": "FormAssembly is a platform that enables to collection of data and processing via workflow.",
     "html": [
-      "<form [^>]*action=(?:\"|')[^>]*tfaforms.net"
+      "<form [^>]*action=(?:\"|')[^>]*tfaforms.net",
+      "<iframe [^>]*src=(?:\"|')[^>]*tfaforms.net"
     ],
     "icon": "FormAssembly.png",
     "scriptSrc": [
