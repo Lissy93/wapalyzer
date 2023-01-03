@@ -3144,14 +3144,15 @@
   },
   "Conviva": {
     "cats": [
-      14
+      14,
+      103
     ],
-    "description": "Conviva is a streaming partner & a single source of truth of streaming analytics for your entire team.",
-    "icon": "conviva.png",
+    "description": "Conviva is a census, continuous measurement and engagement platform for streaming media.",
+    "icon": "conviva.svg",
     "js": {
       "Conviva": "",
       "Conviva.Client": "",
-      "Conviva.Client.version": "^([0-9.]+)?\\;version:\\1"
+      "Conviva.Client.version": "^([0-9\\.]+)$\\;version:\\1"
     },
     "website": "https://www.conviva.com"
   },
