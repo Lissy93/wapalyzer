@@ -243,38 +243,40 @@ const Popup = {
 
     const el = {
       body: document.body,
-      terms: document.querySelector('.terms'),
       detections: document.querySelector('.detections'),
       empty: document.querySelector('.empty'),
       footer: document.querySelector('.footer'),
-      tabPlus: document.querySelector('.tab--plus'),
-      termsButtonAccept: document.querySelector('.terms__button--accept'),
-      termsButtonDecline: document.querySelector('.terms__button--decline'),
-      headerSwitches: document.querySelectorAll('.header__switch'),
-      headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
+      game: document.querySelector('.ttt-game'),
       headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
-      plusConfigureApiKey: document.querySelector('.plus-configure__apikey'),
-      plusConfigureSave: document.querySelector('.plus-configure__save'),
-      plusDownload: document.querySelector('.plus-download'),
+      headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
+      headerSwitches: document.querySelectorAll('.header__switch'),
       plusDownloadLink: document.querySelector(
         '.plus-download__button .button__link'
       ),
-      headerSettings: document.querySelector('.header__settings'),
-      headerThemes: document.querySelectorAll('.header__theme'),
-      headerThemeLight: document.querySelector('.header__theme--light'),
-      headerThemeDark: document.querySelector('.header__theme--dark'),
-      templates: document.querySelectorAll('[data-template]'),
-      tabs: document.querySelectorAll('.tab'),
-      tabItems: document.querySelectorAll('.tab-item'),
+      playGame: document.querySelector('.empty__play-game'),
+      plusConfigureApiKey: document.querySelector('.plus-configure__apikey'),
+      plusConfigureSave: document.querySelector('.plus-configure__save'),
+      plusDownload: document.querySelector('.plus-download'),
+      tabPlus: document.querySelector('.tab--plus'),
+      terms: document.querySelector('.terms'),
+      termsButtonAccept: document.querySelector('.terms__button--accept'),
+      termsButtonDecline: document.querySelector('.terms__button--decline'),
       credits: document.querySelector('.credits'),
-      issue: document.querySelector('.issue'),
-      footerHeadingText: document.querySelector('.footer__heading-text'),
-      footerContentBody: document.querySelector('.footer__content-body'),
-      footerButtonText: document.querySelector('.footer .button__text'),
       footerButtonLink: document.querySelector('.footer .button__link'),
+      footerButtonText: document.querySelector('.footer .button__text'),
+      footerContentBody: document.querySelector('.footer__content-body'),
+      footerHeading: document.querySelector('.footer__heading'),
+      footerHeadingText: document.querySelector('.footer__heading-text'),
       footerToggleClose: document.querySelector('.footer__toggle--close'),
       footerToggleOpen: document.querySelector('.footer__toggle--open'),
-      footerHeading: document.querySelector('.footer__heading'),
+      headerSettings: document.querySelector('.header__settings'),
+      headerThemeDark: document.querySelector('.header__theme--dark'),
+      headerThemeLight: document.querySelector('.header__theme--light'),
+      headerThemes: document.querySelectorAll('.header__theme'),
+      issue: document.querySelector('.issue'),
+      tabItems: document.querySelectorAll('.tab-item'),
+      tabs: document.querySelectorAll('.tab'),
+      templates: document.querySelectorAll('[data-template]'),
     }
 
     // Templates
@@ -285,8 +287,6 @@ const Popup = {
 
       return templates
     }, {})
-
-    Popup.onGetDetections()
 
     // Disabled domains
     const dynamicIcon = await getOption('dynamicIcon', false)
@@ -482,7 +482,7 @@ const Popup = {
       await setOption('collapseFooter', !collapsed)
     })
 
-    Array.from(document.querySelectorAll('a')).forEach((a) =>
+    Array.from(document.querySelectorAll('a[href^="http"]')).forEach((a) => {
       a.addEventListener('click', (event) => {
         event.preventDefault()
         event.stopImmediatePropagation()
@@ -493,7 +493,16 @@ const Popup = {
 
         return false
       })
-    )
+    })
+
+    // Game
+    el.playGame.addEventListener('click', (event) => {
+      event.preventDefault()
+      event.stopImmediatePropagation()
+
+      el.playGame.classList.add('empty__play-game--hidden')
+      el.game.classList.remove('ttt-game--hidden')
+    })
 
     // Apply internationalization
     i18n()
@@ -545,6 +554,8 @@ const Popup = {
 
     const el = {
       empty: document.querySelector('.empty'),
+      playGame: document.querySelector('.empty__play-game'),
+      game: document.querySelector('.ttt-game'),
       detections: document.querySelector('.detections'),
       issue: document.querySelector('.issue'),
       plusDownload: document.querySelector('.plus-download'),
@@ -556,6 +567,8 @@ const Popup = {
 
     if (!detections || !detections.length) {
       el.empty.classList.remove('empty--hidden')
+      el.playGame.classList.remove('empty__play-game--hidden')
+      el.game.classList.add('ttt-game--hidden')
       el.detections.classList.add('detections--hidden')
       el.issue.classList.add('issue--hidden')
       el.plusDownload.classList.add('plus-download--hidden')
@@ -565,6 +578,7 @@ const Popup = {
 
     el.empty.classList.add('empty--hidden')
     el.detections.classList.remove('detections--hidden')
+    el.issue.classList.remove('issue--hidden')
     el.plusDownload.classList.remove('plus-download--hidden')
 
     while (el.detections.firstChild) {

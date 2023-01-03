@@ -104,24 +104,32 @@ const Wappalyzer = {
       ) {
         let version = ''
         let confidence = 0
+        let rootPath
 
         detections
-          .filter(({ technology }) => technology)
+          .filter(
+            ({ technology: _technology }) =>
+              _technology && _technology.name === technology.name
+          )
           .forEach(
-            ({ technology: { name }, pattern, version: _version = '' }) => {
-              if (name === technology.name) {
-                confidence = Math.min(100, confidence + pattern.confidence)
-                version =
-                  _version.length > version.length &&
-                  _version.length <= 15 &&
-                  (parseInt(_version, 10) || 0) < 10000 // Ignore long numeric strings like timestamps
-                    ? _version
-                    : version
-              }
+            ({
+              technology: { name },
+              pattern,
+              version: _version = '',
+              rootPath: _rootPath,
+            }) => {
+              confidence = Math.min(100, confidence + pattern.confidence)
+              version =
+                _version.length > version.length &&
+                _version.length <= 15 &&
+                (parseInt(_version, 10) || 0) < 10000 // Ignore long numeric strings like timestamps
+                  ? _version
+                  : version
+              rootPath = rootPath || _rootPath || undefined
             }
           )
 
-        resolved.push({ technology, confidence, version, lastUrl })
+        resolved.push({ technology, confidence, version, rootPath, lastUrl })
       }
 
       return resolved
@@ -152,6 +160,7 @@ const Wappalyzer = {
           },
           confidence,
           version,
+          rootPath,
           lastUrl,
         }) => ({
           name,
@@ -164,6 +173,7 @@ const Wappalyzer = {
           website,
           pricing,
           cpe,
+          rootPath,
           lastUrl,
         })
       )
@@ -182,6 +192,10 @@ const Wappalyzer = {
 
       if (matches) {
         matches.forEach((match, index) => {
+          if (String(match).length > 10) {
+            return
+          }
+
           // Parse ternary operator
           const ternary = new RegExp(`\\\\${index}\\?([^:]+):(.*)$`).exec(
             version
@@ -199,6 +213,9 @@ const Wappalyzer = {
             .trim()
             .replace(new RegExp(`\\\\${index}`, 'g'), match || '')
         })
+
+        // Remove unmatched back references
+        resolved = resolved.replace(/\\\d/, '')
       }
     }
 
@@ -284,20 +301,20 @@ const Wappalyzer = {
     const mm = Wappalyzer.analyzeManyToMany
 
     const relations = {
+      certIssuer: oo,
+      cookies: mm,
+      css: oo,
+      dns: mm,
+      headers: mm,
+      html: oo,
+      meta: mm,
+      probe: mm,
+      robots: oo,
+      scriptSrc: om,
+      scripts: oo,
+      text: oo,
       url: oo,
       xhr: oo,
-      html: oo,
-      text: oo,
-      scripts: oo,
-      css: oo,
-      robots: oo,
-      magento: oo,
-      certIssuer: oo,
-      scriptSrc: om,
-      cookies: mm,
-      meta: mm,
-      headers: mm,
-      dns: mm,
     }
 
     try {
@@ -331,84 +348,77 @@ const Wappalyzer = {
     Wappalyzer.technologies = Object.keys(data).reduce((technologies, name) => {
       const {
         cats,
-        description,
-        url,
-        xhr,
-        dom,
-        html,
-        text,
-        scripts,
-        css,
-        robots,
-        magento,
-        meta,
-        headers,
-        dns,
         certIssuer,
         cookies,
-        scriptSrc,
-        js,
-        implies,
+        cpe,
+        css,
+        description,
+        dns,
+        dom,
         excludes,
+        headers,
+        html,
+        icon,
+        implies,
+        js,
+        meta,
+        pricing,
+        probe,
         requires,
         requiresCategory,
-        icon,
+        robots,
+        scriptSrc,
+        scripts,
+        text,
+        url,
         website,
-        pricing,
-        cpe,
+        xhr,
       } = data[name]
 
       technologies.push({
-        name,
-        description,
         categories: cats || [],
-        slug: Wappalyzer.slugify(name),
-        url: transform(url),
-        xhr: transform(xhr),
-        headers: transform(headers),
-        dns: transform(dns),
+        certIssuer: transform(certIssuer),
         cookies: transform(cookies),
+        cpe: cpe || null,
+        css: transform(css),
+        description: description || null,
+        dns: transform(dns),
         dom: transform(
           typeof dom === 'string' || Array.isArray(dom)
             ? toArray(dom).reduce(
-                (dom, selector) => ({
-                  ...dom,
-                  [selector]: { exists: '' },
-                }),
+                (dom, selector) => ({ ...dom, [selector]: { exists: '' } }),
                 {}
               )
             : dom,
           true,
           false
         ),
+        excludes: transform(excludes).map(({ value }) => ({ name: value })),
+        headers: transform(headers),
         html: transform(html),
-        text: transform(text),
-        scripts: transform(scripts),
-        css: transform(css),
-        certIssuer: transform(certIssuer),
-        robots: transform(robots),
-        magento: transform(magento),
-        meta: transform(meta),
-        scriptSrc: transform(scriptSrc),
-        js: transform(js, true),
+        icon: icon || 'default.svg',
         implies: transform(implies).map(({ value, confidence, version }) => ({
           name: value,
           confidence,
           version,
         })),
-        excludes: transform(excludes).map(({ value }) => ({
-          name: value,
-        })),
-        requires: transform(requires).map(({ value }) => ({
-          name: value,
-        })),
+        js: transform(js, true),
+        meta: transform(meta),
+        name,
+        pricing: pricing || [],
+        probe: transform(probe, true),
+        requires: transform(requires).map(({ value }) => ({ name: value })),
         requiresCategory: transform(requiresCategory).map(({ value }) => ({
           id: value,
         })),
-        icon: icon || 'default.svg',
+        robots: transform(robots),
+        scriptSrc: transform(scriptSrc),
+        scripts: transform(scripts),
+        slug: Wappalyzer.slugify(name),
+        text: transform(text),
+        url: transform(url),
         website: website || null,
-        pricing: pricing || [],
-        cpe: cpe || null,
+        xhr: transform(xhr),
       })
 
       return technologies
@@ -540,8 +550,10 @@ const Wappalyzer = {
                     // Escape slashes
                     .replace(/\//g, '\\/')
                     // Optimise quantifiers for long strings
+                    .replace(/\\\+/g, '__escapedPlus__')
                     .replace(/\+/g, '{1,250}')
                     .replace(/\*/g, '{0,250}')
+                    .replace(/__escapedPlus__/g, '\\+')
                 : '',
               'i'
             )

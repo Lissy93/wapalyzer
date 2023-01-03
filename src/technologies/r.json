@@ -81,6 +81,21 @@
     ],
     "website": "https://www.reg.ru"
   },
+  "RSS": {
+    "cats": [
+      19
+    ],
+    "description": "RSS is a family of web feed formats used to publish frequently updated works—such as blog entries, news headlines, audio, and video—in a standardized format.",
+    "dom": {
+      "link[type*='application']": {
+        "attributes": {
+          "type": "application/(?:rss|atom)\\+xml"
+        }
+      }
+    },
+    "icon": "RSS.svg",
+    "website": "https://www.rssboard.org/rss-specification"
+  },
   "RTB House": {
     "cats": [
       77
@@ -222,9 +237,10 @@
       87,
       54
     ],
-    "description": "RankMath SEO is a search engine optimization plugin for WordPress.",
+    "description": "RankMath SEO is a search engine optimisation plugin for WordPress.",
     "dom": "link[href*='/wp-content/plugins/seo-by-rank-math/'], script.rank-math-schema-pro, script.rank-math-schema",
     "icon": "RankMath SEO.svg",
+    "implies": "Google Analytics\\;version:4",
     "pricing": [
       "freemium",
       "low",
@@ -560,6 +576,44 @@
     "url": "^https?//.+\\.reactiveonline\\.io",
     "website": "https://reactiveonline.io"
   },
+  "ReadMe": {
+    "cats": [
+      4,
+      1
+    ],
+    "description": "ReadMe is a content management system that businesses use to create and manage technical or API documentation.",
+    "icon": "readme.svg",
+    "meta": {
+      "readme-deploy": "^[\\d\\.]+$",
+      "readme-version": "^[\\d\\.]+$"
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "scriptSrc": "/cdn\\.readme\\.io/js/",
+    "website": "https://readme.com"
+  },
+  "ReadSpeaker": {
+    "cats": [
+      5
+    ],
+    "description": "ReadSpeaker is an intuitive text-to-speech API that converts text into natural-sounding audio files for websites and applications.",
+    "icon": "ReadSpeaker.svg",
+    "js": {
+      "ReadSpeaker": "",
+      "ReadSpeaker.meta.version": "^([\\d\\.]+)_.+$\\;version:\\1"
+    },
+    "pricing": [
+      "poa",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.readspeaker\\.com/",
+    "website": "https://www.readspeaker.com"
+  },
   "Readymag": {
     "cats": [
       51
@@ -689,6 +743,23 @@
       "\\.rechargecdn\\.com/"
     ],
     "website": "https://rechargepayments.com"
+  },
+  "Recharts": {
+    "cats": [
+      25
+    ],
+    "description": "Recharts is a component-based charting library, which is exclusively built for React applications.",
+    "dom": {
+      "div > div > svg.recharts-surface": {
+        "attributes": {
+          "class": ""
+        }
+      }
+    },
+    "icon": "Recharts.svg",
+    "implies": "React",
+    "oss": true,
+    "website": "https://recharts.org/"
   },
   "Recite Me": {
     "cats": [
@@ -841,7 +912,7 @@
       2
     ],
     "html": "(?:<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
-    "icon": "Reddit.png",
+    "icon": "Reddit.svg",
     "implies": "Python",
     "js": {
       "reddit": ""
@@ -854,7 +925,7 @@
       36
     ],
     "description": "Reddit Ads is an online advertising offering from Reddit.",
-    "icon": "Reddit.png",
+    "icon": "Reddit.svg",
     "scriptSrc": "www\\.redditstatic\\.com",
     "website": "https://advertising.reddithelp.com/"
   },
@@ -1136,7 +1207,7 @@
       12
     ],
     "description": "RequireJS is a JavaScript library and file loader which manages the dependencies between JavaScript files and in modular programming.",
-    "icon": "RequireJS.png",
+    "icon": "RequireJS.svg",
     "js": {
       "requirejs.version": "^(.+)$\\;version:\\1"
     },
@@ -1182,6 +1253,25 @@
     },
     "scriptSrc": "www\\.resengo\\.\\w+",
     "website": "https://wwc.resengo.com"
+  },
+  "Reserve In-Store": {
+    "cats": [
+      100,
+      93
+    ],
+    "description": "Reserve In-Store app will allow customers to reserve an item in your store online to come to pick it up or view the item before making the purchase.",
+    "icon": "Reserve In-Store.svg",
+    "implies": "Shopify",
+    "js": {
+      "reserveInStore.version": "([\\d\\.]+)\\;version:\\1",
+      "reserveInStoreJsUrl": "/reserveinstore\\.js.+\\.myshopify\\.com"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.reserveinstore.com"
   },
   "Reservio": {
     "cats": [
@@ -1336,6 +1426,22 @@
     "saas": true,
     "scriptSrc": "cdn\\.retailrocket\\.net",
     "website": "https://retailrocket.net"
+  },
+  "Return Prime": {
+    "cats": [
+      100,
+      102
+    ],
+    "description": "Return Prime is an application to manage returns for Shopify stores.",
+    "icon": "return-prime.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "scriptSrc": "//return-prime-proxy-prod\\.s3[^ ]*\\.amazonaws\\.com/",
+    "website": "https://www.returnprime.com/"
   },
   "ReturnGO": {
     "cats": [
@@ -1623,12 +1729,13 @@
     "cats": [
       12
     ],
+    "description": "RightJS is a modular JavaScript framework.",
     "icon": "RightJS.png",
     "js": {
       "RightJS": ""
     },
-    "scriptSrc": "right\\.js",
-    "website": "http://rightjs.org"
+    "oss": true,
+    "website": "https://github.com/rightjs"
   },
   "Riot": {
     "cats": [
@@ -1814,6 +1921,45 @@
     "saas": true,
     "website": "https://rocket.chat"
   },
+  "Rocketfy": {
+    "cats": [
+      6,
+      51
+    ],
+    "description": "Rocketfy is a platform that allows users to build an online store and allows dropshipping at the same time.",
+    "icon": "Rocketfy.svg",
+    "implies": [
+      "React",
+      "Next.js"
+    ],
+    "meta": {
+      "generator": "^Rocketfy\\sMaker\\s-\\sv([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.rocketfy\\.mx/",
+    "website": "https://rocketfy.mx"
+  },
+  "Roistat": {
+    "cats": [
+      10,
+      74
+    ],
+    "description": "Roistat is a marketing analytics system.",
+    "icon": "roistat.svg",
+    "js": {
+      "roistatHost": "",
+      "roistatProjectId": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring",
+      "poa"
+    ],
+    "website": "https://roistat.com/"
+  },
   "Rokt": {
     "cats": [
       76
@@ -1854,7 +2000,7 @@
       "recurring"
     ],
     "saas": true,
-    "website": "https://rotic.ir"
+    "website": "https://rotic.io"
   },
   "RoundCube": {
     "cats": [

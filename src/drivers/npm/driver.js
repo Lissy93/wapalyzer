@@ -131,7 +131,20 @@ function getDom(page, technologies = Wappalyzer.technologies) {
 
           dom[selector].forEach(({ exists, text, properties, attributes }) => {
             nodes.forEach((node) => {
-              if (exists) {
+              if (
+                technologies.filter(({ name: _name }) => _name === name)
+                  .length >= 50
+              ) {
+                return
+              }
+
+              if (
+                exists &&
+                technologies.findIndex(
+                  ({ name: _name, selector: _selector, exists }) =>
+                    name === _name && selector === _selector && exists === ''
+                ) === -1
+              ) {
                 technologies.push({
                   name,
                   selector,
@@ -140,9 +153,18 @@ function getDom(page, technologies = Wappalyzer.technologies) {
               }
 
               if (text) {
-                const value = node.textContent.trim()
+                // eslint-disable-next-line unicorn/prefer-text-content
+                const value = (
+                  node.textContent ? node.textContent.trim() : ''
+                ).slice(0, 1000000)
 
-                if (value) {
+                if (
+                  value &&
+                  technologies.findIndex(
+                    ({ name: _name, selector: _selector, text }) =>
+                      name === _name && selector === _selector && text === value
+                  ) === -1
+                ) {
                   technologies.push({
                     name,
                     selector,
@@ -153,7 +175,21 @@ function getDom(page, technologies = Wappalyzer.technologies) {
 
               if (properties) {
                 Object.keys(properties).forEach((property) => {
-                  if (Object.prototype.hasOwnProperty.call(node, property)) {
+                  if (
+                    Object.prototype.hasOwnProperty.call(node, property) &&
+                    technologies.findIndex(
+                      ({
+                        name: _name,
+                        selector: _selector,
+                        property: _property,
+                        value,
+                      }) =>
+                        name === _name &&
+                        selector === _selector &&
+                        property === _property &&
+                        value === toScalar(value)
+                    ) === -1
+                  ) {
                     const value = node[property]
 
                     if (typeof value !== 'undefined') {
@@ -170,7 +206,21 @@ function getDom(page, technologies = Wappalyzer.technologies) {
 
               if (attributes) {
                 Object.keys(attributes).forEach((attribute) => {
-                  if (node.hasAttribute(attribute)) {
+                  if (
+                    node.hasAttribute(attribute) &&
+                    technologies.findIndex(
+                      ({
+                        name: _name,
+                        selector: _selector,
+                        attribute: _atrribute,
+                        value,
+                      }) =>
+                        name === _name &&
+                        selector === _selector &&
+                        attribute === _atrribute &&
+                        value === toScalar(value)
+                    ) === -1
+                  ) {
                     const value = node.getAttribute(attribute)
 
                     technologies.push({
@@ -239,7 +289,7 @@ function get(url, options = {}) {
           },
         },
         (response) => {
-          if (response.statusCode >= 400) {
+          if (response.statusCode >= 300) {
             return reject(
               new Error(`${response.statusCode} ${response.statusMessage}`)
             )
@@ -287,7 +337,12 @@ class Driver {
 
     this.options.debug = Boolean(+this.options.debug)
     this.options.recursive = Boolean(+this.options.recursive)
-    this.options.probe = Boolean(+this.options.probe)
+    this.options.probe =
+      String(this.options.probe || '').toLowerCase() === 'basic'
+        ? 'basic'
+        : String(this.options.probe || '').toLowerCase() === 'full'
+        ? 'full'
+        : Boolean(+this.options.probe) && 'full'
     this.options.delay = parseInt(this.options.delay, 10)
     this.options.maxDepth = parseInt(this.options.maxDepth, 10)
     this.options.maxUrls = parseInt(this.options.maxUrls, 10)
@@ -355,8 +410,42 @@ class Driver {
     }
   }
 
-  open(url, headers = {}) {
-    return new Site(url.split('#')[0], headers, this)
+  async open(url, headers = {}, storage = {}) {
+    const site = new Site(url.split('#')[0], headers, this)
+
+    if (storage.local || storage.session) {
+      this.log('Setting storage...')
+
+      const page = await site.newPage(site.originalUrl)
+
+      await page.setRequestInterception(true)
+
+      page.on('request', (request) =>
+        request.respond({
+          status: 200,
+          contentType: 'text/plain',
+          body: 'ok',
+        })
+      )
+
+      await page.goto(url)
+
+      await page.evaluate((storage) => {
+        ;['local', 'session'].forEach((type) => {
+          Object.keys(storage[type] || {}).forEach((key) => {
+            window[`${type}Storage`].setItem(key, storage[type][key])
+          })
+        })
+      }, storage)
+
+      try {
+        await page.close()
+      } catch {
+        // Continue
+      }
+    }
+
+    return site
   }
 
   log(message, source = 'driver') {
@@ -487,49 +576,9 @@ class Site {
       status: 0,
     }
 
-    if (!this.browser) {
-      await this.initDriver()
-
-      if (!this.browser) {
-        throw new Error('Browser closed')
-      }
-    }
-
-    let page
-
-    try {
-      page = await this.browser.newPage()
-
-      if (!page || page.isClosed()) {
-        throw new Error('Page did not open')
-      }
-    } catch (error) {
-      error.message += ` (${url})`
-
-      this.error(error)
-
-      await this.initDriver()
-
-      page = await this.browser.newPage()
-    }
-
-    this.pages.push(page)
-
-    page.setJavaScriptEnabled(!this.options.noScripts)
-
-    page.setDefaultTimeout(this.options.maxWait)
+    const page = await this.newPage(url)
 
     await page.setRequestInterception(true)
-
-    await page.setUserAgent(this.options.userAgent)
-
-    page.on('dialog', (dialog) => dialog.dismiss())
-
-    page.on('error', (error) => {
-      error.message += ` (${url})`
-
-      this.error(error)
-    })
 
     let responseReceived = false
 
@@ -693,6 +742,15 @@ class Site {
           }),
           {}
         )
+
+        // Change Google Analytics 4 cookie from _ga_XXXXXXXXXX to _ga_*
+        Object.keys(cookies).forEach((name) => {
+          if (/_ga_[A-Z0-9]+/.test(name)) {
+            cookies['_ga_*'] = cookies[name]
+
+            delete cookies[name]
+          }
+        })
       } catch (error) {
         error.message += ` (${url})`
 
@@ -980,6 +1038,52 @@ class Site {
     }
   }
 
+  async newPage(url) {
+    if (!this.browser) {
+      await this.initDriver()
+
+      if (!this.browser) {
+        throw new Error('Browser closed')
+      }
+    }
+
+    let page
+
+    try {
+      page = await this.browser.newPage()
+
+      if (!page || page.isClosed()) {
+        throw new Error('Page did not open')
+      }
+    } catch (error) {
+      error.message += ` (${url})`
+
+      this.error(error)
+
+      await this.initDriver()
+
+      page = await this.browser.newPage()
+    }
+
+    this.pages.push(page)
+
+    page.setJavaScriptEnabled(!this.options.noScripts)
+
+    page.setDefaultTimeout(this.options.maxWait)
+
+    await page.setUserAgent(this.options.userAgent)
+
+    page.on('dialog', (dialog) => dialog.dismiss())
+
+    page.on('error', (error) => {
+      error.message += ` (${url})`
+
+      this.error(error)
+    })
+
+    return page
+  }
+
   async analyze(url = this.originalUrl, index = 1, depth = 1) {
     if (this.options.recursive) {
       await sleep(this.options.delay * index)
@@ -1067,6 +1171,7 @@ class Site {
           website,
           cpe,
           categories,
+          rootPath,
         }) => ({
           slug,
           name,
@@ -1081,6 +1186,7 @@ class Site {
             slug,
             name,
           })),
+          rootPath,
         })
       ),
       patterns,
@@ -1092,9 +1198,25 @@ class Site {
   }
 
   async probe(url) {
-    const files = {
-      robots: '/robots.txt',
-      magento: '/magento_version',
+    const paths = [
+      {
+        type: 'robots',
+        path: '/robots.txt',
+      },
+    ]
+
+    if (this.options.probe === 'full') {
+      Wappalyzer.technologies
+        .filter(({ probe }) => Object.keys(probe).length)
+        .forEach((technology) => {
+          paths.push(
+            ...Object.keys(technology.probe).map((path) => ({
+              type: 'probe',
+              path,
+              technology,
+            }))
+          )
+        })
     }
 
     // DNS
@@ -1120,9 +1242,7 @@ class Site {
 
     await Promise.allSettled([
       // Static files
-      ...Object.keys(files).map(async (file, index) => {
-        const path = files[file]
-
+      ...paths.map(async ({ type, path, technology }, index) => {
         try {
           await sleep(this.options.delay * index)
 
@@ -1133,7 +1253,17 @@ class Site {
 
           this.log(`Probe ok (${path})`)
 
-          await this.onDetect(url, analyze({ [file]: body.slice(0, 100000) }))
+          const text = body.slice(0, 100000)
+
+          await this.onDetect(
+            url,
+            analyze(
+              {
+                [type]: path ? { [path]: [text] } : text,
+              },
+              technology && [technology]
+            )
+          )
         } catch (error) {
           this.error(`Probe failed (${path}): ${error.message || error}`)
         }
@@ -1196,13 +1326,31 @@ class Site {
     this.detections = this.detections
       .concat(detections)
       .filter(
-        ({ technology: { name }, pattern: { regex } }, index, detections) =>
+        (
+          { technology: { name }, pattern: { regex }, version },
+          index,
+          detections
+        ) =>
           detections.findIndex(
-            ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            ({
+              technology: { name: _name },
+              pattern: { regex: _regex },
+              version: _version,
+            }) =>
               name === _name &&
+              version === _version &&
               (!regex || regex.toString() === _regex.toString())
           ) === index
       )
+
+    // Track if technology was identified on website's root path
+    detections.forEach(({ technology: { name } }) => {
+      const detection = this.detections.find(
+        ({ technology: { name: _name } }) => name === _name
+      )
+
+      detection.rootPath = detection.rootPath || url.pathname === '/'
+    })
 
     if (this.cache[url.href]) {
       const resolved = resolve(this.detections)

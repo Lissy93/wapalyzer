@@ -203,6 +203,7 @@
       59
     ],
     "description": "JavaScript library to animate elements on your page as you scroll.",
+    "dom": " body[data-aos-easing]",
     "icon": "AOS.svg",
     "js": {
       "AOS.init": "",
@@ -316,7 +317,7 @@
     ],
     "certIssuer": "Amazon",
     "description": "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.",
-    "icon": "aws.svg",
+    "icon": "AWS Certificate Manager.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "website": "https://aws.amazon.com/certificate-manager/"
@@ -329,7 +330,7 @@
     "headers": {
       "x-amzn-waf-action": "^captcha$"
     },
-    "icon": "aws.svg",
+    "icon": "AWS WAF Captcha.svg",
     "implies": "Amazon Web Services",
     "pricing": [
       "recurring",
@@ -933,6 +934,17 @@
     "saas": true,
     "website": "https://goadopt.io"
   },
+  "AdRecover": {
+    "cats": [
+      36
+    ],
+    "description": "AdRecover is a tool that helps online publishers monetise their Adblock inventory.",
+    "icon": "adrecover.png",
+    "js": {
+      "adRecover.ap": ""
+    },
+    "website": "https://www.adrecover.com"
+  },
   "AdRiver": {
     "cats": [
       36
@@ -1115,6 +1127,20 @@
     "scriptSrc": "^[^\\/]*//(?:[^\\/]+\\.)?adcash\\.com/(?:script|ad)/",
     "url": "^https?://(?:[^\\/]+\\.)?adcash\\.com/script/pop_",
     "website": "http://adcash.com"
+  },
+  "AddEvent": {
+    "cats": [
+      72
+    ],
+    "description": "AddEvent is used to Add to Calendar and event tools for websites and newsletters.",
+    "icon": "addevent.png",
+    "pricing": [
+      "mid",
+      "recurring",
+      "poa"
+    ],
+    "scriptSrc": "//addevent\\.com/",
+    "website": "https://www.addevent.com"
   },
   "AddShoppers": {
     "cats": [
@@ -1962,7 +1988,7 @@
       "X-EdgeConnect-MidMile-RTT": "",
       "X-EdgeConnect-Origin-MEX-Latency": ""
     },
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "pricing": [
       "poa"
     ],
@@ -1979,7 +2005,7 @@
       "bm_sz": ""
     },
     "description": "Akamai Bot Manager detect bots using device fingerprinting bot signatures.",
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "implies": "Akamai",
     "pricing": [
       "poa"
@@ -1992,7 +2018,7 @@
       16
     ],
     "description": "Akamai Web Application Protector is designed for companies looking for a more automated approach to web application firewall (WAF) and distributed denial-of-service (DDoS) security.",
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "implies": "Akamai",
     "js": {
       "AKSB": "\\;confidence:50"
@@ -2018,7 +2044,7 @@
     "html": [
       "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>"
     ],
-    "icon": "akamai.svg",
+    "icon": "Akamai.svg",
     "implies": [
       "Boomerang"
     ],
@@ -2331,7 +2357,7 @@
       "AWSALBCORS": ""
     },
     "description": "Amazon Application Load Balancer (ALB) distributes incoming application traffic to increase availability and support content-based routing.",
-    "icon": "aws-elb.png",
+    "icon": "Amazon ELB.svg",
     "implies": "Amazon Web Services",
     "website": "https://aws.amazon.com/elasticloadbalancing/"
   },
@@ -2377,7 +2403,7 @@
       34
     ],
     "description": "Amazon Aurora is a relational database service developed and offered by Amazon Web Services.",
-    "icon": "aws_aurora.png",
+    "icon": "Amazon Aurora.svg",
     "implies": "Amazon Web Services",
     "website": "https://aws.amazon.com/rds/aurora"
   },
@@ -2386,7 +2412,7 @@
       78
     ],
     "description": "Amazon CloudWatch RUM is a real-user monitoring capability that helps you identify and debug issues in the client-side on web applications and enhance end user's digital experience.",
-    "icon": "aws.svg",
+    "icon": "Amazon CloudWatch.svg",
     "js": {
       "AwsRum": "",
       "AwsRumClient": "",
@@ -2411,7 +2437,7 @@
       "Via": "\\(CloudFront\\)$",
       "X-Amz-Cf-Id": ""
     },
-    "icon": "Amazon-Cloudfront.svg",
+    "icon": "Amazon Cloudfront.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "website": "http://aws.amazon.com/cloudfront/"
@@ -2421,7 +2447,7 @@
       69
     ],
     "description": "Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps. Amazon Cognito supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.",
-    "icon": "aws.svg",
+    "icon": "Amazon Cognito.svg",
     "implies": "Amazon Web Services",
     "pricing": [
       "payg"
@@ -2437,7 +2463,7 @@
     "headers": {
       "Server": "\\(Amazon\\)"
     },
-    "icon": "aws-ec2.svg",
+    "icon": "Amazon EC2.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "website": "http://aws.amazon.com/ec2/"
@@ -2449,7 +2475,7 @@
     "headers": {
       "Server": "^ECS"
     },
-    "icon": "aws.svg",
+    "icon": "Amazon ECS.svg",
     "implies": [
       "Amazon Web Services",
       "Docker"
@@ -2462,7 +2488,7 @@
       48
     ],
     "description": "Amazon Elastic File System is a cloud storage service provided by Amazon Web Services.",
-    "icon": "amazon-efs.png",
+    "icon": "Amazon EFS.svg",
     "implies": [
       "Amazon Web Services"
     ],
@@ -2476,7 +2502,7 @@
     "cookies": {
       "AWSELB": ""
     },
-    "icon": "aws-elb.png",
+    "icon": "Amazon ELB.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "website": "https://aws.amazon.com/elasticloadbalancing/"
@@ -2518,7 +2544,7 @@
       "Content-Security-Policy-Report-Only": "s3[^ ]*\\.amazonaws\\.com",
       "server": "^AmazonS3$"
     },
-    "icon": "aws-s3.svg",
+    "icon": "Amazon S3.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "scriptSrc": "s3[^ ]*\\.amazonaws\\.com/",
@@ -2534,7 +2560,7 @@
         "amazonses\\.com"
       ]
     },
-    "icon": "aws.svg",
+    "icon": "Amazon SES.svg",
     "implies": "Amazon Web Services",
     "saas": true,
     "website": "https://aws.amazon.com/ses/"
@@ -2557,7 +2583,7 @@
       "x-amz-rid": "",
       "x-amz-version-id": ""
     },
-    "icon": "aws.svg",
+    "icon": "Amazon Web Services.svg",
     "saas": true,
     "website": "https://aws.amazon.com/"
   },
@@ -2635,12 +2661,22 @@
     "cats": [
       1
     ],
+    "description": "Amiro.CMS is a commercial content management system developed and distributed by the Russian company Amiro. Written in PHP and uses MySQL as a database.",
     "icon": "Amiro.CMS.png",
-    "implies": "PHP",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
     "meta": {
       "generator": "Amiro"
     },
-    "website": "http://amirocms.com"
+    "pricing": [
+      "freemium",
+      "onetime",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.amiro.ru"
   },
   "Amobee": {
     "cats": [
@@ -2870,6 +2906,7 @@
         }
       }
     },
+    "icon": "Animate.css.svg",
     "oss": true,
     "website": "https://animate.style"
   },
@@ -2993,7 +3030,7 @@
     "scriptSrc": "\\.anyclip\\.com",
     "website": "https://www.anyclip.com"
   },
-  "Apache": {
+  "Apache HTTP Server": {
     "cats": [
       22
     ],
@@ -3003,7 +3040,7 @@
       "Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)HTTPD)\\;version:\\1"
     },
     "icon": "Apache.svg",
-    "website": "http://apache.org"
+    "website": "https://httpd.apache.org/"
   },
   "Apache JSPWiki": {
     "cats": [
@@ -3012,7 +3049,7 @@
     "cpe": "cpe:2.3:a:apache:jspwiki:*:*:*:*:*:*:*:*",
     "description": "Apache JSPWiki is an open-source Wiki engine, built around standard JEE components (Java, servlets, JSP).",
     "html": "<html[^>]* xmlns:jspwiki=",
-    "icon": "Apache JSPWiki.png",
+    "icon": "Apache.svg",
     "implies": "Apache Tomcat",
     "scriptSrc": "jspwiki",
     "url": "wiki\\.jsp",
@@ -3040,7 +3077,7 @@
     "headers": {
       "Server": "ATS/?([\\d.]+)?\\;version:\\1"
     },
-    "icon": "Apache Traffic Server.png",
+    "icon": "Apache Traffic Server.svg",
     "website": "http://trafficserver.apache.org/"
   },
   "Apache Wicket": {
@@ -3055,6 +3092,24 @@
     },
     "website": "http://wicket.apache.org"
   },
+  "Apereo CAS": {
+    "cats": [
+      69
+    ],
+    "description": "Apereo CAS is an open and well-documented authentication protocol. The primary implementation of the protocol is an open-source Java server component by the same name hosted here, with support for a plethora of additional authentication protocols and features.",
+    "dom": {
+      "head > title": {
+        "text": "CAS – (?:Central Authentication Service|Service Central d'Authentification)"
+      }
+    },
+    "icon": "Apereo CAS.png",
+    "implies": [
+      "Java",
+      "PHP"
+    ],
+    "oss": true,
+    "website": "https://www.apereo.org/projects/cas"
+  },
   "ApexPages": {
     "cats": [
       51
@@ -3062,17 +3117,22 @@
     "headers": {
       "X-Powered-By": "Salesforce\\.com ApexPages"
     },
-    "icon": "ApexPages.png",
+    "icon": "CloudFlare.svg",
     "implies": "Salesforce",
     "website": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro.htm"
   },
   "Apigee": {
     "cats": [
-      4
+      4,
+      19
     ],
     "description": "Apigee is an API gateway management tool to exchange data across cloud services and applications",
-    "html": "<script>[^>]{0,50}script src=[^>]/profiles/apigee",
-    "icon": "apigee.svg",
+    "icon": "Apigee.svg",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
     "scriptSrc": "/profiles/apigee",
     "website": "https://cloud.google.com/apigee/"
   },
@@ -3292,6 +3352,23 @@
     "scriptSrc": "appleid\\.auth\\.js",
     "website": "https://developer.apple.com/sign-in-with-apple/"
   },
+  "Apple iCloud Mail": {
+    "cats": [
+      30
+    ],
+    "description": "Apple iCloud Mail is a webmail service provided by Apple, Inc.",
+    "dns": {
+      "MX": [
+        "mail\\.icloud\\.com"
+      ],
+      "TXT": [
+        "apple-domain",
+        "v=spf1 redirect=icloud.com"
+      ]
+    },
+    "icon": "Apple.svg",
+    "website": "https://www.apple.com/icloud/"
+  },
   "ApplicantStack": {
     "cats": [
       101
@@ -3483,6 +3560,15 @@
     ],
     "website": "https://developers.arcgis.com/javascript/"
   },
+  "Arsys Domain Parking": {
+    "cats": [
+      109
+    ],
+    "description": "Arsys is a Spanish domain registrar.",
+    "dom": "link[rel='stylesheet'][href*='arsys.es/css/parking2.css']",
+    "icon": "arsys.png",
+    "website": "https://www.arsys.es"
+  },
   "Artifactory": {
     "cats": [
       47
@@ -3589,9 +3675,14 @@
       14
     ],
     "description": "Asciinema is a free and open-source solution for recording terminal sessions and sharing them on the web.",
+    "dom": [
+      "div.asciinema-player-wrapper",
+      "div.asciinema-player"
+    ],
     "html": "<asciinema-player",
-    "icon": "asciinema.png",
+    "icon": "Asciinema.svg",
     "js": {
+      "AsciinemaPlayer": "",
       "asciinema": ""
     },
     "scriptSrc": "asciinema\\.org/",
@@ -3831,13 +3922,16 @@
       62
     ],
     "description": "Statuspage is a status and incident communication tool.",
+    "dns": {
+      "TXT": "status-page-domain-verification="
+    },
     "headers": {
       "X-StatusPage-Skip-Logging": "",
       "X-StatusPage-Version": ""
     },
     "html": "<a[^>]*href=\"https?://(?:www\\.)?statuspage\\.io/powered-by[^>]+>",
     "icon": "Atlassian Statuspage.svg",
-    "website": "https://www.statuspage.io/"
+    "website": "https://www.atlassian.com/software/statuspage"
   },
   "Atome": {
     "cats": [
@@ -3909,6 +4003,22 @@
     "dom": "img[src*='listen.audiohook.com/']",
     "icon": "Audiohook.svg",
     "website": "https://www.audiohook.com"
+  },
+  "Aument": {
+    "cats": [
+      75,
+      98
+    ],
+    "description": "Aument is an ecommerce toolbox with easy to use marketing actions and workflows.",
+    "dom": "div#aumentDiscountCode",
+    "icon": "Aument.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "website": "https://aument.io"
   },
   "Aura": {
     "cats": [
@@ -4033,6 +4143,15 @@
       "recurring"
     ],
     "website": "https://apps.shopify.com/product-reviews-autoketing"
+  },
+  "Automatad": {
+    "cats": [
+      36
+    ],
+    "description": "Automatad is a digital media products company that provides a suite of programmatic monetisation solutions.",
+    "icon": "automatad.png",
+    "scriptSrc": "//go\\.automatad\\.com/",
+    "website": "https://automatad.com/"
   },
   "Automizely": {
     "cats": [
@@ -4168,6 +4287,24 @@
     "scriptSrc": "^https?://edge\\.avangate\\.net/",
     "website": "https://www.2checkout.com"
   },
+  "Avanser": {
+    "cats": [
+      10
+    ],
+    "description": "Avanser allow you to track every call and enable your business to make better-informed decisions based on your phone calls.",
+    "icon": "Avanser.svg",
+    "js": {
+      "AVANSERjs": "",
+      "AvanserCore": "",
+      "AvanserOptions": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.avanser.com"
+  },
   "Avasize": {
     "cats": [
       5
@@ -4250,6 +4387,7 @@
       59
     ],
     "description": "Promise based HTTP client for the browser and node.js",
+    "icon": "Axios.svg",
     "js": {
       "axios.get": ""
     },
@@ -4325,7 +4463,7 @@
       "x-ms-correlation-request-id": "",
       "x-ms-gateway-requestid": ""
     },
-    "icon": "azure.svg",
+    "icon": "Azure.svg",
     "website": "https://azure.microsoft.com"
   },
   "Azure AD B2C": {
@@ -4347,7 +4485,7 @@
       "X-EC-Debug": "",
       "server": "^(?:ECAcc|ECS|ECD)"
     },
-    "icon": "azure.svg",
+    "icon": "Azure.svg",
     "implies": "Azure",
     "website": "https://azure.microsoft.com/en-us/services/cdn/"
   },
@@ -4363,7 +4501,7 @@
     "headers": {
       "X-Azure-Ref": ""
     },
-    "icon": "azure.svg",
+    "icon": "Azure.svg",
     "implies": "Azure",
     "website": "https://docs.microsoft.com/en-us/azure/frontdoor/"
   },
@@ -4377,7 +4515,7 @@
     "headers": {
       "Content-Security-Policy": "js\\.monitor\\.azure\\.com"
     },
-    "icon": "azure.svg",
+    "icon": "Azure.svg",
     "implies": "Azure",
     "pricing": [
       "payg"
@@ -4519,7 +4657,7 @@
     ],
     "description": "amCharts is a JavaScript-based interactive charts and maps programming library and tool.",
     "html": "<svg[^>]*><desc>JavaScript chart by amCharts ([\\d.]*)\\;version:\\1",
-    "icon": "amCharts.png",
+    "icon": "amCharts.svg",
     "js": {
       "AmCharts": ""
     },

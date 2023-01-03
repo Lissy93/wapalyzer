@@ -46,6 +46,9 @@
     },
     "icon": "hcl-dx.png",
     "implies": "Java",
+    "js": {
+      "ibmCfg.themeConfig.modulesWebAppBaseURI": "/wps/themeModules"
+    },
     "pricing": [
       "high",
       "poa"
@@ -353,6 +356,21 @@
     "icon": "Haskell.png",
     "website": "http://wiki.haskell.org/Haskell"
   },
+  "Hatena Blog": {
+    "cats": [
+      1,
+      11
+    ],
+    "description": "Hatena Blog is one of the traditional blog platforms in Japan.",
+    "icon": "Hatena.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "scriptSrc": "cdn\\.blog\\.st-hatena\\.com/",
+    "website": "https://hatenablog.com"
+  },
   "HeadJS": {
     "cats": [
       59
@@ -581,6 +599,25 @@
     "scriptSrc": "cdn\\.helpdocs\\.io",
     "website": "https://www.helpdocs.io"
   },
+  "Here": {
+    "cats": [
+      35
+    ],
+    "description": "HERE is a PaaS for creating custom maps, visualize location datasets, gather insights and buy and sell location assets.",
+    "dom": "link[href*='//js\\.api\\.here\\.com/']",
+    "icon": "here.svg",
+    "js": {
+      "H.buildInfo": "",
+      "H.geo": "\\;confidence:50",
+      "H.util": "\\;confidence:50"
+    },
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://www.here.com"
+  },
   "Hermes": {
     "cats": [
       99
@@ -785,7 +822,7 @@
     ],
     "description": "Highcharts is a charting library written in pure JavaScript, for adding interactive charts to a website or web application.",
     "html": "<svg[^>]*><desc>Created with Highcharts ([\\d.]*)\\;version:\\1",
-    "icon": "Highcharts.png",
+    "icon": "Highcharts.svg",
     "js": {
       "Highcharts": "",
       "Highcharts.version": "^(.+)$\\;version:\\1"
@@ -810,7 +847,7 @@
       25
     ],
     "html": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)\\;version:\\1",
-    "icon": "Highcharts.png",
+    "icon": "Highcharts.svg",
     "scriptSrc": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
     "website": "http://highcharts.com/products/highstock"
   },
@@ -932,6 +969,23 @@
     "saas": true,
     "website": "https://www.homestead.com"
   },
+  "Honeybadger": {
+    "cats": [
+      13
+    ],
+    "description": "Honeybadger provides exception and uptime monitoring to keep your web apps error-free.",
+    "icon": "honey-badger.svg",
+    "js": {
+      "Honeybadger": "",
+      "initHoneyBadger": ""
+    },
+    "pricing": [
+      "payg",
+      "freemium",
+      "recurring"
+    ],
+    "website": "https://www.honeybadger.io"
+  },
   "HostEurope": {
     "cats": [
       88
@@ -999,6 +1053,10 @@
     "description": "Hostinger is an employee-owned Web hosting provider and internet domain registrar.",
     "dns": {
       "SOA": "\\.(?:dns-parking|hostinger)\\.com"
+    },
+    "headers": {
+      "Platform": "hostinger",
+      "Server": "hcdn"
     },
     "icon": "Hostinger.svg",
     "pricing": [
@@ -1148,7 +1206,9 @@
     "description": "HubSpot is a marketing and sales software that helps companies attract visitors, convert leads, and close customers.",
     "dns": {
       "TXT": [
-        "hubspotemail\\.net"
+        "hubspotemail\\.net",
+        "hubspot-developer-verification",
+        "hubspot-domain-verification"
       ]
     },
     "html": "<!-- Start of Async HubSpot",
@@ -1218,6 +1278,22 @@
     "dom": "#hs-eu-cookie-confirmation",
     "icon": "HubSpot.svg",
     "website": "https://knowledge.hubspot.com/reports/customize-your-cookie-tracking-settings-and-privacy-policy-alert"
+  },
+  "HubSpot WordPress plugin": {
+    "cats": [
+      87
+    ],
+    "description": "HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service. HubSpot WordPress plugin allows you to manage contacts (CRM), engage visitors with live chat and chatbots, add beautiful forms to pages, create engaging email marketing campaigns, and more.",
+    "icon": "HubSpot.svg",
+    "implies": [
+      "HubSpot",
+      "HubSpot Analytics"
+    ],
+    "js": {
+      "leadin_wordpress.leadinPluginVersion": "^([\\d.]+)$\\;version:\\1"
+    },
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/leadin/"
   },
   "Huberway": {
     "cats": [
@@ -1364,6 +1440,20 @@
     "saas": true,
     "website": "https://www.hulkapps.com/products/product-reviews-shopify"
   },
+  "Human Presence": {
+    "cats": [
+      16
+    ],
+    "description": "Human Presence is a bot detection and spam protection software for WordPress and Shopify.",
+    "icon": "human_presence.svg",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "scriptSrc": "/.*\\.humanpresence\\.(?:io|app)/",
+    "website": "https://www.humanpresence.io"
+  },
   "Humm": {
     "cats": [
       91
@@ -1502,6 +1592,25 @@
     "oss": true,
     "website": "https://www.hypestylecss.xyz"
   },
+  "Hyva Themes": {
+    "cats": [
+      108
+    ],
+    "description": "Hyva Themes is a performance-optimised theme for Magento 2 which eliminated the third-party libraries and having only two dependencies Alpine.js and Tailwind CSS.",
+    "headers": {
+      "X-Built-With": "^Hyva Themes$"
+    },
+    "icon": "Hyva Themes.svg",
+    "implies": [
+      "Magento\\;version:2",
+      "Tailwind CSS",
+      "Alpine.js"
+    ],
+    "pricing": [
+      "onetime"
+    ],
+    "website": "https://hyva.io"
+  },
   "h5ai": {
     "cats": [
       19
@@ -1563,20 +1672,5 @@
     "saas": true,
     "scriptSrc": "merchant\\.cdn\\.hoolah\\.co/",
     "website": "https://www.hoolah.co"
-  },
-  "hyva": {
-    "cats": [
-      19
-    ],
-    "description": "Hyvä themes is a frontend for Magento 2.",
-    "headers": {
-      "X-Built-With": "^Hyva Themes$"
-    },
-    "icon": "Hyva.svg",
-    "implies": "Magento\\;version:2",
-    "pricing": [
-      "onetime"
-    ],
-    "website": "https://hyva.io/"
   }
 }

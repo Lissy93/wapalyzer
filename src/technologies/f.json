@@ -234,7 +234,7 @@
       59
     ],
     "description": "FancyBox is a tool for displaying images, html content and multi-media in a Mac-style 'lightbox' that floats overtop of web page.",
-    "icon": "FancyBox.png",
+    "icon": "FancyBox.svg",
     "implies": "jQuery",
     "js": {
       "$.fancybox.version": "^(.+)$\\;version:\\1",
@@ -522,7 +522,8 @@
     },
     "pricing": [
       "mid",
-      "recurring"
+      "recurring",
+      "payg"
     ],
     "saas": true,
     "website": "https://fenicio.io"
@@ -543,6 +544,27 @@
     "saas": true,
     "scriptSrc": "cdn\\.fera\\.ai",
     "website": "https://fera.ai/"
+  },
+  "Fera Product Reviews App": {
+    "cats": [
+      100
+    ],
+    "description": "Fera Product Reviews App is a product review and social proof app for Shopify.",
+    "icon": "Fera.svg",
+    "implies": [
+      "Shopify",
+      "Fera"
+    ],
+    "js": {
+      "feraJsUrl": "cdn\\.fera\\.ai/js/fera\\.js.+\\.myshopify\\.com"
+    },
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://apps.shopify.com/fera"
   },
   "FilePond": {
     "cats": [
@@ -661,6 +683,23 @@
       "poa"
     ],
     "website": "https://fintechos.com"
+  },
+  "FireApps Ali Reviews": {
+    "cats": [
+      100,
+      90
+    ],
+    "description": "FireApps Ali Reviews is an all-in-one solution that helps to collect, showcase, and manage impactful reviews.",
+    "icon": "FireApps.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "//alireviews\\.fireapps\\.io/",
+    "website": "https://apps.shopify.com/ali-reviews"
   },
   "Firebase": {
     "cats": [
@@ -844,17 +883,17 @@
   },
   "Fleksa": {
     "cats": [
-      6,
       93
     ],
     "description": "Fleksa is an online ordering system for restaurants and delivery.",
-    "dom": "link[href*='//fleksa-cdn']",
+    "dom": "a[href*='play.google.com/store/apps/details?id=com.fleksa.'][target='_blank']",
     "icon": "Fleksa.svg",
     "implies": [
       "Node.js",
       "Next.js"
     ],
     "pricing": [
+      "payg",
       "mid",
       "recurring"
     ],
@@ -1093,7 +1132,7 @@
       "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
       "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
     ],
-    "icon": "font-awesome.svg",
+    "icon": "Font Awesome.svg",
     "js": {
       "FontAwesomeCdnConfig": "",
       "___FONT_AWESOME___": ""
@@ -1615,7 +1654,7 @@
       "style[id='__FRSH_STYLE']",
       "script[id='__FRSH_STATE']"
     ],
-    "icon": "fresh.svg",
+    "icon": "Fresh.svg",
     "implies": [
       "Deno",
       "Preact"
@@ -1846,7 +1885,7 @@
     "icon": "frontity.png",
     "implies": [
       "React",
-      "webpack",
+      "Webpack",
       "WordPress"
     ],
     "meta": {
@@ -1871,6 +1910,25 @@
     "saas": true,
     "scriptSrc": "frosmo\\.easy\\.js",
     "website": "https://frosmo.com"
+  },
+  "FullCalendar": {
+    "cats": [
+      5
+    ],
+    "description": "FullCalendar is a full-sized drag and drop JavaScript event calendar.",
+    "icon": "FullCalendar.png",
+    "implies": "TypeScript",
+    "js": {
+      "FullCalendar.version": "^([\\d\\.\\-\\w]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "poa"
+    ],
+    "scriptSrc": "/fullcalendar\\.min\\.js",
+    "website": "https://fullcalendar.io"
   },
   "FullContact": {
     "cats": [
@@ -1920,6 +1978,37 @@
     "saas": true,
     "website": "https://fundiin.vn"
   },
+  "Funding Choices": {
+    "cats": [
+      67
+    ],
+    "description": "Funding Choices is a messaging tool that can help you comply with the EU General Data Protection Regulation (GDPR), and recover lost revenue from ad blocking users.",
+    "dns": {
+      "SOA": "fundingchoicesmessages"
+    },
+    "dom": ".fc-consent-root, iframe[name='googlefcLoaded'], iframe[name='googlefcPresent'], .fc-dialog, .fc-choice-dialog",
+    "icon": "Google.svg",
+    "js": {
+      "__googlefc": ""
+    },
+    "scriptSrc": "fundingchoicesmessages\\.google\\.com",
+    "website": "https://developers.google.com/funding-choices"
+  },
+  "Fundraise Up": {
+    "cats": [
+      41
+    ],
+    "description": "Fundraise Up is a platform for online donations.",
+    "icon": "fundraise_up.png",
+    "js": {
+      "FundraiseUp": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://fundraiseup.com"
+  },
   "FunnelCockpit": {
     "cats": [
       32
@@ -1957,6 +2046,24 @@
     },
     "scriptSrc": "^[^\\/]*//[ac]dn\\.fusionads\\.net/(?:api/([\\d.]+)/)?\\;version:\\1",
     "website": "http://fusionads.net"
+  },
+  "FusionCharts": {
+    "cats": [
+      25
+    ],
+    "description": "FusionCharts is a comprehensive charting solution for websites.",
+    "icon": "fusion_charts.png",
+    "js": {
+      "FusionCharts": "",
+      "FusionChartsDataFormats": "",
+      "FusionMaps": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring",
+      "poa"
+    ],
+    "website": "https://www.fusioncharts.com/charts"
   },
   "Future Shop": {
     "cats": [

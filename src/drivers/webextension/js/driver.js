@@ -12,7 +12,9 @@ const {
 } = Wappalyzer
 const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 
-const expiry = 1000 * 60 * 60 * 24
+const expiry = 1000 * 60 * 60 * 48
+
+const maxHostnames = 100
 
 const hostnameIgnoreList =
   /\b((local|dev(elop(ment)?)?|sandbox|stag(e|ing)?|preprod|production|preview|test(ing)?|[^a-z]demo(shop)?|cache)[.-]|dev\d|localhost|((wappalyzer|google|bing|baidu|microsoft|duckduckgo|facebook|adobe|twitter|reddit|yahoo|wikipedia|amazon|amazonaws|youtube|stackoverflow|github|stackexchange|w3schools|twitch)\.)|(live|office|herokuapp|shopifypreview)\.com|\.local|\.test|\.netlify\.app|web\.archive\.org|zoom\.us|^([0-9.]+|[\d.]+)$|^([a-f0-9:]+:+)+[a-f0-9]+$)/
@@ -44,8 +46,6 @@ function isSimilarUrl(a, b) {
 }
 
 const Driver = {
-  lastPing: Date.now(),
-
   /**
    * Initialise driver
    */
@@ -150,6 +150,13 @@ const Driver = {
         }
       }
 
+      Object.keys(technologies).forEach((name) => {
+        delete technologies[name].description
+        delete technologies[name].cpe
+        delete technologies[name].pricing
+        delete technologies[name].website
+      })
+
       setTechnologies(technologies)
       setCategories(categories)
     } catch (error) {
@@ -170,17 +177,13 @@ const Driver = {
    * @param {String} body
    */
   post(url, body) {
-    try {
-      return fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-    } catch (error) {
-      throw new Error(error.message || error.toString())
-    }
+    return fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
   },
 
   /**
@@ -500,6 +503,15 @@ const Driver = {
         ({ name, value }) => (items.cookies[name.toLowerCase()] = [value])
       )
 
+      // Change Google Analytics 4 cookie from _ga_XXXXXXXXXX to _ga_*
+      Object.keys(items.cookies).forEach((name) => {
+        if (/_ga_[A-Z0-9]+/.test(name)) {
+          items.cookies['_ga_*'] = items.cookies[name]
+
+          delete items.cookies[name]
+        }
+      })
+
       const technologies = getRequiredTechnologies(requires, categoryRequires)
 
       await Driver.onDetect(
@@ -553,7 +565,7 @@ const Driver = {
 
     url = url.split('#')[0]
 
-    const { hostname } = new URL(url)
+    const { hostname, pathname } = new URL(url)
 
     // Cache detections
     const cache = (Driver.cache.hostnames[hostname] = {
@@ -570,10 +582,27 @@ const Driver = {
       .concat(detections)
       .filter(({ technology }) => technology)
       .filter(
-        ({ technology: { name }, pattern: { regex } }, index, detections) =>
+        (
+          {
+            technology: { name },
+            pattern: { regex, value },
+            confidence,
+            version,
+          },
+          index,
+          detections
+        ) =>
           detections.findIndex(
-            ({ technology: { name: _name }, pattern: { regex: _regex } }) =>
+            ({
+              technology: { name: _name },
+              pattern: { regex: _regex, value: _value },
+              confidence: _confidence,
+              version: _version,
+            }) =>
               name === _name &&
+              version === _version &&
+              confidence === _confidence &&
+              value === _value &&
               (!regex || regex.toString() === _regex.toString())
           ) === index
       )
@@ -589,56 +618,18 @@ const Driver = {
         return detection
       })
 
-    cache.hits += incrementHits ? 1 : 0
-    cache.language = cache.language || language
-
-    // Expire cache
-    Driver.cache.hostnames = Object.keys(Driver.cache.hostnames).reduce(
-      (hostnames, hostname) => {
-        const cache = Driver.cache.hostnames[hostname]
-
-        if (cache.dateTime > Date.now() - expiry) {
-          hostnames[hostname] = cache
-        }
-
-        return hostnames
-      },
-      {}
-    )
-
-    await setOption(
-      'hostnames',
-      Object.keys(Driver.cache.hostnames).reduce(
-        (hostnames, hostname) => ({
-          ...hostnames,
-          [hostname]: {
-            ...cache,
-            detections: Driver.cache.hostnames[hostname].detections
-              .filter(({ technology }) => technology)
-              .map(
-                ({
-                  technology: { name: technology },
-                  pattern: { regex, confidence },
-                  version,
-                  lastUrl,
-                }) => ({
-                  technology,
-                  pattern: {
-                    regex: regex.source,
-                    confidence,
-                  },
-                  version,
-                  lastUrl,
-                })
-              ),
-          },
-        }),
-        {}
+    // Track if technology was identified on website's root path
+    detections.forEach(({ technology: { name } }) => {
+      const detection = cache.detections.find(
+        ({ technology: { name: _name } }) => name === _name
       )
-    )
+
+      detection.rootPath = detection.rootPath || pathname === '/'
+    })
 
     const resolved = resolve(cache.detections).map((detection) => detection)
 
+    // Look for technologies that require other technologies to be present on the page
     const requires = [
       ...Wappalyzer.requires.filter(({ name }) =>
         resolved.some(({ name: _name }) => _name === name)
@@ -658,9 +649,66 @@ const Driver = {
 
     await Driver.setIcon(url, resolved)
 
-    Driver.log({ hostname, technologies: resolved })
-
     await Driver.ping()
+
+    cache.hits += incrementHits ? 1 : 0
+    cache.language = cache.language || language
+
+    // Expire cache
+    Driver.cache.hostnames = Object.keys(Driver.cache.hostnames)
+      .sort((a, b) =>
+        Driver.cache.hostnames[a].dateTime > Driver.cache.hostnames[b].dateTime
+          ? -1
+          : 1
+      )
+      .reduce((hostnames, hostname) => {
+        const cache = Driver.cache.hostnames[hostname]
+
+        if (
+          cache.dateTime > Date.now() - expiry &&
+          Object.keys(hostnames).length < maxHostnames
+        ) {
+          hostnames[hostname] = cache
+        }
+
+        return hostnames
+      }, {})
+
+    // Save cache
+    await setOption(
+      'hostnames',
+      Object.keys(Driver.cache.hostnames).reduce(
+        (hostnames, hostname) => ({
+          ...hostnames,
+          [hostname]: {
+            ...cache,
+            detections: Driver.cache.hostnames[hostname].detections
+              .filter(({ technology }) => technology)
+              .map(
+                ({
+                  technology: { name: technology },
+                  pattern: { regex, confidence },
+                  version,
+                  rootPath,
+                  lastUrl,
+                }) => ({
+                  technology,
+                  pattern: {
+                    regex: regex.source,
+                    confidence,
+                  },
+                  version,
+                  rootPath,
+                  lastUrl,
+                })
+              ),
+          },
+        }),
+        {}
+      )
+    )
+
+    Driver.log({ hostname, technologies: resolved })
   },
 
   /**
@@ -772,7 +820,7 @@ const Driver = {
 
     const { hostname } = new URL(url)
 
-    const cache = Driver.cache.hostnames[hostname]
+    const cache = Driver.cache.hostnames?.[hostname]
 
     const resolved = (cache ? resolve(cache.detections) : []).filter(
       ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)
@@ -809,7 +857,7 @@ const Driver = {
           )
 
           if (!response.ok) {
-            Driver.error(new Error(response.statusText))
+            Driver.log(`getRobots: ${response.statusText} (${hostname})`)
 
             resolve('')
           }
@@ -899,20 +947,25 @@ const Driver = {
     if (tracking && termsAccepted) {
       const urls = Object.keys(Driver.cache.hostnames).reduce(
         (urls, hostname) => {
+          if (Object.keys(urls).length >= 25) {
+            return urls
+          }
+
           // eslint-disable-next-line standard/computed-property-even-spacing
           const { language, detections, hits, https } =
             Driver.cache.hostnames[hostname]
 
           const url = `http${https ? 's' : ''}://${hostname}`
 
-          if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
+          if (!hostnameIgnoreList.test(hostname) && hits) {
             urls[url] = urls[url] || {
               technologies: resolve(detections).reduce(
-                (technologies, { name, confidence, version }) => {
+                (technologies, { name, confidence, version, rootPath }) => {
                   if (confidence === 100) {
                     technologies[name] = {
                       version,
                       hits,
+                      rootPath,
                     }
                   }
 
@@ -933,19 +986,40 @@ const Driver = {
 
       const count = Object.keys(urls).length
 
-      if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/v2/ping/', {
-          version: chrome.runtime.getManifest().version,
-          urls,
+      const lastPing = await getOption('lastPing', Date.now())
+
+      if (
+        count &&
+        ((count >= 25 && lastPing < Date.now() - 1000 * 60 * 60) ||
+          (count >= 5 && lastPing < Date.now() - expiry))
+      ) {
+        await setOption('lastPing', Date.now())
+
+        try {
+          await Driver.post('https://ping.wappalyzer.com/v2/', {
+            version: chrome.runtime.getManifest().version,
+            urls,
+          })
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error(error)
+        }
+
+        Object.keys(Driver.cache.hostnames).forEach((hostname) => {
+          Driver.cache.hostnames[hostname].hits = 0
         })
-
-        await setOption('hostnames', (Driver.cache.hostnames = {}))
-
-        Driver.lastPing = Date.now()
       }
 
       if (Driver.cache.ads.length > 25) {
-        await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+        try {
+          await Driver.post(
+            'https://ad.wappalyzer.com/log/wp/',
+            Driver.cache.ads
+          )
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error(error)
+        }
 
         Driver.cache.ads = []
       }
@@ -981,7 +1055,7 @@ chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
 
     const showCached = await getOption('showCached', true)
 
-    const cache = Driver.cache.hostnames[hostname]
+    const cache = Driver.cache.hostnames?.[hostname]
 
     const resolved = (cache ? resolve(cache.detections) : []).filter(
       ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)

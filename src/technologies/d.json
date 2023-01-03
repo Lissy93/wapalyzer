@@ -67,8 +67,16 @@
     "cats": [
       59
     ],
+    "description": "DHTMLX specialises in building JavaScript UI libraries for project management, event planning, big data visualisation, and reporting.",
     "icon": "DHTMLX.png",
-    "scriptSrc": "dhtmlxcommon\\.js",
+    "js": {
+      "dhtmlDragAndDropObject": "",
+      "dhtmlXTreeItemObject": ""
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "scriptSrc": "/dhtmlxcommon\\.js",
     "website": "http://dhtmlx.com"
   },
   "DM Polopoly": {
@@ -251,7 +259,7 @@
     },
     "icon": "Danneo CMS.png",
     "implies": [
-      "Apache",
+      "Apache HTTP Server",
       "PHP"
     ],
     "meta": {
@@ -323,7 +331,7 @@
     "icon": "DataLife Engine.svg",
     "implies": [
       "PHP",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "js": {
       "dle_root": ""
@@ -490,6 +498,23 @@
     },
     "scriptSrc": "dedeajax",
     "website": "http://dedecms.com"
+  },
+  "Delacon": {
+    "cats": [
+      10
+    ],
+    "description": "Delacon provides Australian businesses with Call Tracking, Call Management and Speech Analytics solutions.",
+    "icon": "Delacon.png",
+    "js": {
+      "dela_247_call": "",
+      "delaconphonenums": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.delacon.com.au"
   },
   "Delivengo": {
     "cats": [
@@ -782,7 +807,7 @@
     "icon": "DirectAdmin.png",
     "implies": [
       "PHP",
-      "Apache"
+      "Apache HTTP Server"
     ],
     "website": "https://www.directadmin.com"
   },
@@ -911,7 +936,7 @@
       87
     ],
     "description": "Divi is a WordPress Theme and standalone WordPress plugin from Elegant themes that allows users to build websites using the visual drag-and-drop Divi page builder.",
-    "icon": "Divi.png",
+    "icon": "Divi.svg",
     "js": {
       "DIVI": ""
     },
@@ -1039,7 +1064,7 @@
     "icon": "docusaurus.svg",
     "implies": [
       "React",
-      "webpack"
+      "Webpack"
     ],
     "js": {
       "search.indexName": ""
@@ -1165,6 +1190,45 @@
     "saas": true,
     "scriptSrc": "cdn\\.doofinder\\.com/",
     "website": "https://www.doofinder.com"
+  },
+  "Doppler": {
+    "cats": [
+      75
+    ],
+    "description": "Doppler is an email marketing and transactional email service.",
+    "icon": "Doppler.svg",
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "//(?:hub|cdn)\\.fromdoppler\\.com/",
+    "website": "https://www.fromdoppler.com"
+  },
+  "Doppler Forms": {
+    "cats": [
+      87
+    ],
+    "description": "The Doppler Forms plugin allows you to create fully customised subscription forms that you can add to your website or blog.",
+    "icon": "Doppler.svg",
+    "implies": "Doppler",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/doppler-form/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/doppler-form/"
+  },
+  "Doppler for WooCommerce": {
+    "cats": [
+      87
+    ],
+    "description": "The Doppler for WooCommerce plugin adds submit your WooCommerce customers and buyers to a Doppler List.",
+    "icon": "Doppler.svg",
+    "implies": "Doppler",
+    "requires": [
+      "WordPress",
+      "WooCommerce"
+    ],
+    "scriptSrc": "/wp-content/plugins/doppler-for-woocommerce/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/doppler-for-woocommerce/"
   },
   "Dotclear": {
     "cats": [
@@ -1295,6 +1359,27 @@
     },
     "website": "http://www.doxygen.nl/"
   },
+  "Download Monitor": {
+    "cats": [
+      87
+    ],
+    "description": "Download Monitor is a plugin for selling, uploading and managing downloads, tracking downloads and displaying links.",
+    "dom": "link[href*='/wp-content/plugins/download-monitor/']",
+    "icon": "Download Monitor.png",
+    "meta": {
+      "dlm-version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "js": {
+      "DLM_XHR_Download": "",
+      "dlmXHR.prevent_duplicates": ""
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "website": "https://www.download-monitor.com"
+  },
   "Draft.js": {
     "cats": [
       20
@@ -1328,7 +1413,7 @@
       "X-Powered-By": "Dragon Native ([\\d.]+)\\;version:\\1"
     },
     "icon": "Dragon.png",
-    "implies": "Apache",
+    "implies": "Apache HTTP Server",
     "url": "^.*(?:\\.dgn)$",
     "website": "https://dragon-lang.org"
   },
@@ -1345,6 +1430,25 @@
     "requiresCategory": 6,
     "scriptSrc": "draprpubsubtest\\.firebaseapp\\.com/",
     "website": "https://www.drapr.com"
+  },
+  "DreamApply": {
+    "cats": [
+      101,
+      19
+    ],
+    "description": "DreamApply is a specialised student application management system designed with and for education institutions.",
+    "icon": "DreamApply.png",
+    "implies": [
+      "Linkedin Sign-in",
+      "Facebook Login",
+      "Google Sign-in"
+    ],
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "app\\.cdn\\.dreamapply\\.com/",
+    "website": "https://dreamapply.com"
   },
   "DreamHost": {
     "cats": [
@@ -1387,7 +1491,7 @@
     ],
     "description": "Dreamdata is a B2B revenue attribution platform.",
     "dom": "link[href*='.bizible.com']",
-    "icon": "Dreamdata.png",
+    "icon": "Dreamdata.svg",
     "js": {
       "BizTrackingA": "",
       "Bizible": ""
@@ -1741,6 +1845,23 @@
     "saas": true,
     "website": "https://dyte.io",
     "xhr": "cdn\\.dyte\\.in/"
+  },
+  "daisyUI": {
+    "cats": [
+      66
+    ],
+    "description": "daisyUI is a customisable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customising and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML.",
+    "dom": {
+      "link[href*='npm/daisyui']": {
+        "attributes": {
+          "href": "/npm/daisyui@([\\d\\.]+)/dist/\\;version:\\1"
+        }
+      }
+    },
+    "icon": "daisyUI.png",
+    "implies": "Tailwind CSS",
+    "oss": true,
+    "website": "https://daisyui.com"
   },
   "db-ip": {
     "cats": [

@@ -544,14 +544,23 @@ small {
 .empty {
   height: calc(100% - 4.5rem);
   text-align: center;
-  margin: 2.5rem 0 3.5rem 0;
+  margin: 2.5rem 0;
 }
 
 .empty__text {
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .empty--hidden {
+  display: none;
+}
+
+.empty__play-game {
+  color: var(--color-text-lighten);
+}
+
+.empty__play-game--hidden {
   display: none;
 }
 
@@ -792,6 +801,10 @@ body.dynamic-icon .category__heading:hover .category__pin {
   align-items: center;
   margin: auto;
   width: 13rem;
+}
+
+.ttt-game--hidden {
+  display: none;
 }
 
 .ttt-player-icon {
