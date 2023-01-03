@@ -1261,7 +1261,8 @@
   "Formidable Form": {
     "cats": [
       87,
-      73
+      73,
+      108
     ],
     "description": "Formidable Forms is a WordPress plugin that enables you to create quizzes, surveys, calculators, timesheets, multi-page application forms.",
     "dom": "link[href*='/wp-content/plugins/formidable/']",
@@ -1273,6 +1274,20 @@
     ],
     "requires": "WordPress",
     "website": "https://formidableforms.com"
+  },
+  "FormAssembly": {
+    "cats": [
+      108
+    ],
+    "description": "FormAssembly is a platform that enables to collection of data and processing via workflow.",
+    "html": [
+      "<form [^>]*action=(?:\"|')[^>]*tfaforms.net"
+    ],
+    "icon": "FormAssembly.png",
+    "scriptSrc": [
+      "wforms.js"
+    ],
+    "website": "https://www.formassembly.com/"
   },
   "Formitable": {
     "cats": [
