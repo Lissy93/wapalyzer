@@ -1055,7 +1055,7 @@ chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
 
     const showCached = await getOption('showCached', true)
 
-    const cache = Driver.cache.hostnames?.[hostname]
+    const cache = Driver.cache?.hostnames?.[hostname]
 
     const resolved = (cache ? resolve(cache.detections) : []).filter(
       ({ lastUrl }) => showCached || isSimilarUrl(url, lastUrl)
