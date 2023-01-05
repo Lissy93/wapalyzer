@@ -917,16 +917,32 @@
   },
   "Master Slider": {
     "cats": [
-      59
+      7
     ],
     "description": "Master Slider is an SEO friendly, responsive image and video slider.",
-    "dom": "body._masterslider, link[href*='/masterslider.(?:main.css|css)(?:?ver=(d+(?:.d+)+))?;version:\\1']",
     "icon": "master_slider.png",
     "js": {
       "MasterSlider": "",
       "MasterSlider.version": "^([0-9\\.]+)$\\;version:\\1"
     },
-    "website": "https://www.masterslider.com/"
+    "website": "https://www.masterslider.com"
+  },
+  "Master Slider Plugin": {
+    "cats": [
+      87
+    ],
+    "description": "Master Slider Plugin is an SEO friendly, responsive image and video slider plugin for WordPress.",
+    "dom": {
+      "link#ms-main-css": {
+        "attributes": {
+          "href": "/wp-content/plugins/masterslider/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "icon": "master_slider.png",
+    "implies": "Master Slider",
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/master-slider"
   },
   "Mastercard": {
     "cats": [
