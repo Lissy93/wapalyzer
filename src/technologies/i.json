@@ -1113,20 +1113,24 @@
     ],
     "website": "https://iterable.com/"
   },
-  "Ivory Searc": {
+  "Ivory Search": {
     "cats": [
       87
     ],
-    "description": "Ivory Search is a WordPress search plugin that improves WordPress Search by providing advanced options to extend search or exclude specific content from search.",
-    "dom": "link[href*='/ivory-search\\.(?:min.css|css)\\;version:\\1']",
+    "description": "Ivory Search is a WordPress search plugin that improves WordPress search by providing advanced options to extend search or exclude specific content from search.",
     "icon": "ivory_searc.png",
+    "js": {
+      "IvorySearchVars": "",
+      "ivory_search_analytics": ""
+    },
     "pricing": [
       "freemium",
       "recurring",
       "onetime"
     ],
-    "scriptSrc": "/ivory-search\\.(?:min.js|js)\\?ver=([\\d\\.]+)\\;version:\\1",
-    "website": "https://ivorysearch.com/"
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/add-search-to-menu/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://ivorysearch.com"
   },
   "Izooto": {
     "cats": [
