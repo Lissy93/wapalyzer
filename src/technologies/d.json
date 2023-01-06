@@ -937,6 +937,11 @@
     ],
     "description": "Divi is a WordPress Theme and standalone WordPress plugin from Elegant themes that allows users to build websites using the visual drag-and-drop Divi page builder.",
     "icon": "Divi.svg",
+    "dom": {
+      "style#divi-style-parent-inline-inline-css": {
+        "text": "Version\\:\\s([\\d\\.]+)\\;version:\\1"
+      }
+    },
     "js": {
       "DIVI": ""
     },
