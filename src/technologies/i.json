@@ -906,6 +906,11 @@
     ],
     "description": "Intercom is an American software company that produces a messaging platform which allows businesses to communicate with prospective and existing customers within their app, on their website, through social media, or via email.",
     "icon": "Intercom.svg",
+    "dom": [
+      "link[href^='https://widget.intercom.io']",
+      "div.live-chat-loader-placeholder",
+      "iframe#intercom-frame"
+    ],
     "js": {
       "Intercom": ""
     },
