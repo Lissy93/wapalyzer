@@ -1995,7 +1995,7 @@
   },
   "Fundraise Up": {
     "cats": [
-      41
+      111
     ],
     "description": "Fundraise Up is a platform for online donations.",
     "icon": "fundraise_up.png",
@@ -2022,6 +2022,24 @@
     "saas": true,
     "scriptSrc": "\\.funnelcockpit\\.com/",
     "website": "https://funnelcockpit.com"
+  },
+  "Funraise": {
+    "cats": [
+      111
+    ],
+    "description": "Funraise is a nonprofit fundraising platform that enables organisations to build fundraising websites as well as manage donations and campaigns.",
+    "dom": "a[href*='.funraise.org/']",
+    "icon": "Funraise.svg",
+    "js": {
+      "FR.IMAGE_BASE_URL": "\\.funraise\\.io"
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://funraise.org"
   },
   "FurnitureDealer": {
     "cats": [
