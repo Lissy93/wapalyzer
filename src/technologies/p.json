@@ -521,8 +521,9 @@
     ],
     "description": "Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread.",
     "icon": "Partytown.svg",
+    "dom": "script[type*='text/partytown']"
     "js": {
-      "partytown.lib": ""
+      "partytown": ""
     },
     "oss": true,
     "website": "https://partytown.builder.io/"
