@@ -1854,8 +1854,16 @@
       5
     ],
     "description": "Pocket is a social bookmarking service that can be integrated into a website with the use of a web widget.",
-    "dom": "li.share-pocket, a[data-pocket-count], meta[name*='pocket-site-verification']",
+    "dom": "iframe[src*='widgets.getpocket.com/']",
     "icon": "pocket.svg",
+    "meta": {
+      "pocket-site-verification'": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
     "scriptSrc": "widgets\\.getpocket\\.com/",
     "website": "https://getpocket.com"
   },
