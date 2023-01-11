@@ -2219,8 +2219,13 @@
       25
     ],
     "description": "TradingView is used to show world chart, chats and trades markets.",
+    "dom": "iframe[src*='.tradingview.com/']",
     "icon": "trading_view.svg",
-    "scriptSrc": "s3\\.tradingview\\.com/",
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
+    ],
     "website": "https://www.tradingview.com"
   },
   "Traek": {
