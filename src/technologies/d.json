@@ -1173,6 +1173,27 @@
     "scriptSrc": "/wp-content/plugins/iwd-checkout-connector/",
     "website": "https://www.dominate.co/woocommerce"
   },
+  "DonorPerfect": {
+    "cats": [
+      111
+    ],
+    "description": "DonorPerfect is a fundraising management software.",
+    "icon": "DonorPerfect.svg",
+    "dom": {
+      "a[href*='.donorperfect.']": {
+        "attributes": {
+          "href": "\\.donorperfect\\.(?:com|net)"
+        }
+      }
+    },
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.donorperfect\\.net/",
+    "website": "https://www.donorperfect.com"
+  },
   "Doofinder": {
     "cats": [
       29
