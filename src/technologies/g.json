@@ -793,7 +793,7 @@
   },
   "GiveWP": {
     "cats": [
-      41,
+      111,
       87
     ],
     "description": "GiveWP is a donation plugin for WordPress.",
@@ -809,6 +809,21 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/give/.+give\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://givewp.com"
+  },
+  "GivingFuel": {
+    "cats": [
+      111
+    ],
+    "description": "GivingFuel is a fundraising software solution.",
+    "icon": "GivingFuel.png",
+    "dom": "a[href*='.givingfuel.com/']",
+    "scriptSrc": "\\.givingfuel\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low"
+    ],
+    "website": "https://www.givingfuel.com"
   },
   "Gladly": {
     "cats": [
