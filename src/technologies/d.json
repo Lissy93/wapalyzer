@@ -106,7 +106,7 @@
       "<!-- by DotNetNuke Corporation",
       "<!-- DNN Platform"
     ],
-    "icon": "DNN.png",
+    "icon": "DNN.svg",
     "implies": "Microsoft ASP.NET",
     "js": {
       "DotNetNuke": "",
@@ -172,6 +172,24 @@
       "\\bDX\\b"
     ],
     "website": "https://www.dxdelivery.com"
+  },
+  "DX1": {
+    "cats": [
+      53
+    ],
+    "description": "DX1 is an entirely cloud-based dealership management system for the motorcycle and powersports industry. Offering DMS, website, CRM and marketing tools.",
+    "icon": "DX1.png",
+    "requires": "DNN",
+    "js": {
+      "Dx1.Dnn": ""
+    },
+    "scriptSrc": "\\.dx1app\\.com/",
+    "saas": true,
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "website": "https://www.dx1app.com"
   },
   "Dachser": {
     "cats": [
