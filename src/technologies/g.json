@@ -791,9 +791,40 @@
     ],
     "website": "http://gerrit.googlesource.com/gitiles/"
   },
+  "GiveCampus": {
+    "cats": [
+      111
+    ],
+    "description": "GiveCampus is a fundraising platform for nonprofit educational institutions.",
+    "icon": "GiveCampus.png",
+    "dom": "a[href*='.givecampus.com/']",
+    "meta": {
+      "author": "^GiveCampus$"
+    },
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "website": "https://go.givecampus.com"
+  },
+  "GiveSmart": {
+    "cats": [
+      111
+    ],
+    "description": "GiveSmart is an event fund gathering technology that offers customisable event size, mobile bidding, text-to-donate, enhanced dashboard and reporting, seating arrangement, and more.",
+    "icon": "GiveSmart.svg",
+    "dom": "a[href*='.givesmart.com/']",
+    "scriptSrc": "\\.givesmart\\.com/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.givesmart.com"
+  },
   "GiveWP": {
     "cats": [
-      41,
+      111,
       87
     ],
     "description": "GiveWP is a donation plugin for WordPress.",
@@ -809,6 +840,21 @@
     "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/give/.+give\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://givewp.com"
+  },
+  "GivingFuel": {
+    "cats": [
+      111
+    ],
+    "description": "GivingFuel is a fundraising software solution.",
+    "icon": "GivingFuel.png",
+    "dom": "a[href*='.givingfuel.com/']",
+    "scriptSrc": "\\.givingfuel\\.com/",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low"
+    ],
+    "website": "https://www.givingfuel.com"
   },
   "Gladly": {
     "cats": [

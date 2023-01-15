@@ -536,6 +536,26 @@
     "url": "/modules/kiliba/logo\\.png",
     "website": "https://en.kiliba.com"
   },
+  "Kindful": {
+    "cats": [
+      111
+    ],
+    "description": "Kindful is a cloud-based donor management and fundraising software and database designed for nonprofit organisations.",
+    "icon": "Kindful.svg",
+    "dom": "a[href*='.kindful.com/']",
+    "js": {
+      "kindful_gtag": "",
+      "KindfulPaymentsConnect": "",
+      "Bloomerang.version": "([\\d\\.]+)\\;version:\\1",
+      "bloomerangLoadStarted": ""
+    },
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "saas": true,
+    "website": "https://kindful.com"
+  },
   "KineticJS": {
     "cats": [
       25

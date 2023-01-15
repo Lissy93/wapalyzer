@@ -25,6 +25,38 @@
     "scriptSrc": "widgets\\.q4app\\.com/widgets/q4\\.cookiemonster\\.([\\d\\.]+)\\.min\\.js\\;version:\\1",
     "website": "https://q4mobile.github.io/q4widgets-jquery-ui/doc_html/q4.cookieMonster.html"
   },
+  "Qgiv": {
+    "cats": [
+      111
+    ],
+    "description": "Qgiv is an online fundraising platform helping nonprofit, faith-based, healthcare, and education organisations raise funds.",
+    "icon": "Qgiv.svg",
+    "dom":"a[href*='//secure.qgiv.com/']",
+    "scriptSrc": "//secure\\.qgiv\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.qgiv.com"
+  },
+  "qiankun": {
+    "cats": [
+      59
+    ],
+    "description": "qiankun is a JS library who helps developers to build a micro frontends system.",
+    "dom": {
+      "div[id^='__qiankun_']": {
+        "attributes": {
+          "data-version": "([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "icon": "qiankun.svg",
+    "oss": true,
+    "scripts": "__POWERED_BY_QIANKUN__",
+    "website": "https://qiankun.umijs.org"
+  },
   "Qikify": {
     "cats": [
       100
@@ -347,22 +379,5 @@
     "icon": "Qwik.svg",
     "oss": true,
     "website": "https://qwik.builder.io"
-  },
-  "qiankun": {
-    "cats": [
-      59
-    ],
-    "description": "qiankun is a JS library who helps developers to build a micro frontends system.",
-    "dom": {
-      "div[id^='__qiankun_']": {
-        "attributes": {
-          "data-version": "([\\d\\.]+)\\;version:\\1"
-        }
-      }
-    },
-    "icon": "qiankun.svg",
-    "oss": true,
-    "scripts": "__POWERED_BY_QIANKUN__",
-    "website": "https://qiankun.umijs.org"
   }
 }
