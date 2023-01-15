@@ -136,7 +136,6 @@
       "MODX": "",
       "MODX_MEDIA_PATH": ""
     },
-    "scriptSrc": "/assets/components/templates/\\;confidence:50",
     "meta": {
       "generator": "MODX[^\\d.]*([\\d.]+)?\\;version:\\1"
     },
@@ -145,6 +144,7 @@
       "low"
     ],
     "saas": true,
+    "scriptSrc": "/assets/components/templates/\\;confidence:50",
     "website": "https://modx.com/content-management-framework"
   },
   "MRW": {
@@ -915,6 +915,35 @@
     "oss": true,
     "scripts": "\\.marko(\\.js)?",
     "website": "https://markojs.com"
+  },
+  "Master Slider": {
+    "cats": [
+      7
+    ],
+    "description": "Master Slider is an SEO friendly, responsive image and video slider.",
+    "icon": "master_slider.png",
+    "js": {
+      "MasterSlider": "",
+      "MasterSlider.version": "^([0-9\\.]+)$\\;version:\\1"
+    },
+    "website": "https://www.masterslider.com"
+  },
+  "Master Slider Plugin": {
+    "cats": [
+      87
+    ],
+    "description": "Master Slider Plugin is an SEO friendly, responsive image and video slider plugin for WordPress.",
+    "dom": {
+      "link#ms-main-css": {
+        "attributes": {
+          "href": "/wp-content/plugins/masterslider/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "icon": "master_slider.png",
+    "implies": "Master Slider",
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/master-slider"
   },
   "Mastercard": {
     "cats": [
