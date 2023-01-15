@@ -54,6 +54,22 @@
     "scriptSrc": "(?:/mdbootstrap/([\\d\\.]+)/)?js/mdb\\.min\\.js\\;version:\\1",
     "website": "https://mdbootstrap.com"
   },
+  "MDS Brand": {
+    "cats": [
+      53
+    ],
+    "description": "MDS Brand is a provider of website, CRM, vrtual BDC, SEO, PPC, and live chat solutions for Marine, RV, Powersports, and automotive industries.",
+    "dom": "a[href*='mdsbrand.com/']",
+    "icon": "MDS Brand.png",
+    "pricing": [
+      "poa"
+    ],
+    "requires": [
+      "Nginx",
+      "UserWay"
+    ],
+    "website": "https://mdsbrand.com"
+  },
   "MDUI": {
     "cats": [
       66
@@ -2995,22 +3011,6 @@
     "oss": true,
     "scripts": "localStorage\\.getItem\\('mdbook-(?:sidebar|theme)'\\)",
     "website": "https://github.com/rust-lang/mdBook"
-  },
-  "MDS Brand": {
-    "cats": [
-      53
-    ],
-    "description": "MDS Brand is a provider of website, CRM, vrtual BDC, SEO, PPC, and live chat solutions for Marine, RV, Powersports, and automotive industries.",
-    "icon": "MDS Brand.png",
-    "requires": [
-      "Nginx",
-      "UserWay"
-    ],
-    "dom": "a[href*='mdsbrand.com/']",
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://mdsbrand.com"
   },
   "metisMenu": {
     "cats": [

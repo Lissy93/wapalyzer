@@ -380,18 +380,18 @@
       }
     },
     "icon": "generatepress.png",
-    "requires": "WordPress",
     "js": {
       "generatepressMenu": "",
       "generatepressNavSearch": ""
     },
-    "scriptSrc": [
-      "themes/generatepress\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
-    ],
     "pricing": [
       "low",
       "recurring",
       "onetime"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": [
+      "themes/generatepress\\S*\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
     ],
     "website": "https://generatepress.com"
   },
@@ -796,16 +796,16 @@
       111
     ],
     "description": "GiveCampus is a fundraising platform for nonprofit educational institutions.",
-    "icon": "GiveCampus.png",
     "dom": "a[href*='.givecampus.com/']",
+    "icon": "GiveCampus.png",
     "meta": {
       "author": "^GiveCampus$"
     },
-    "saas": true,
     "pricing": [
       "poa",
       "recurring"
     ],
+    "saas": true,
     "website": "https://go.givecampus.com"
   },
   "GiveSmart": {
@@ -813,13 +813,13 @@
       111
     ],
     "description": "GiveSmart is an event fund gathering technology that offers customisable event size, mobile bidding, text-to-donate, enhanced dashboard and reporting, seating arrangement, and more.",
-    "icon": "GiveSmart.svg",
     "dom": "a[href*='.givesmart.com/']",
-    "scriptSrc": "\\.givesmart\\.com/",
-    "saas": true,
+    "icon": "GiveSmart.svg",
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "\\.givesmart\\.com/",
     "website": "https://www.givesmart.com"
   },
   "GiveWP": {
@@ -846,14 +846,14 @@
       111
     ],
     "description": "GivingFuel is a fundraising software solution.",
-    "icon": "GivingFuel.png",
     "dom": "a[href*='.givingfuel.com/']",
-    "scriptSrc": "\\.givingfuel\\.com/",
-    "saas": true,
+    "icon": "GivingFuel.png",
     "pricing": [
       "freemium",
       "low"
     ],
+    "saas": true,
+    "scriptSrc": "\\.givingfuel\\.com/",
     "website": "https://www.givingfuel.com"
   },
   "Gladly": {
@@ -904,8 +904,8 @@
       59
     ],
     "description": "Glide.js is a dependency-free JavaScript ES6 slider and carousel.",
-    "icon": "Glide.js.svg",
     "dom": "div[data-glide-el]",
+    "icon": "Glide.js.svg",
     "js": {
       "Glide": ""
     },
@@ -2295,10 +2295,10 @@
       88
     ],
     "description": "GuideIT is a cloud hosting provider.",
-    "icon": "GuideIT.png",
     "headers": {
       "platform": "^GuideIT$"
     },
+    "icon": "GuideIT.png",
     "pricing": [
       "mid",
       "recurring"

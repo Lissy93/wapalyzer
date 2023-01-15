@@ -1982,8 +1982,8 @@
       5
     ],
     "description": "Airtable is a low-code platform for building collaborative apps.",
-    "icon": "Airtable.svg",
     "dom": "iframe[scr*='//airtable.com/'], a[href*='//airtable.com/][target='_blank']",
+    "icon": "Airtable.svg",
     "pricing": [
       "freemium",
       "low",
@@ -2829,14 +2829,14 @@
       22
     ],
     "description": "Angie is a drop-in replacement for the Nginx web server aiming to extend the functionality of the original version.",
+    "headers": {
+      "server": "^Angie/([\\d\\.]+)$\\;version:\\1"
+    },
     "icon": "default.svg",
     "implies": [
       "Perl",
       "C"
     ],
-    "headers": {
-      "server": "^Angie/([\\d\\.]+)$\\;version:\\1"
-    },
     "oss": true,
     "website": "https://angie.software/en/"
   },
@@ -3608,6 +3608,21 @@
     ],
     "website": "https://developers.arcgis.com/javascript/"
   },
+  "Arreva": {
+    "cats": [
+      111
+    ],
+    "description": "Arreva is a fundraising software that provides the ability to mobilise constituents using the donor tracking system.",
+    "dom": "a[href*='=ArrevaOnlineDonationsPortlet_WA']",
+    "icon": "Arreva.png",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "/Arreva-OnlineDonations-Portlet/",
+    "website": "https://www.arreva.com"
+  },
   "Arsys Domain Parking": {
     "cats": [
       109
@@ -3616,21 +3631,6 @@
     "dom": "link[rel='stylesheet'][href*='arsys.es/css/parking2.css']",
     "icon": "arsys.png",
     "website": "https://www.arsys.es"
-  },
-  "Arreva": {
-    "cats": [
-      111
-    ],
-    "description": "Arreva is a fundraising software that provides the ability to mobilise constituents using the donor tracking system.",
-    "dom": "a[href*='=ArrevaOnlineDonationsPortlet_WA']",
-    "icon": "Arreva.png",
-    "saas": true,
-    "scriptSrc": "/Arreva-OnlineDonations-Portlet/",
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.arreva.com"
   },
   "Artifactory": {
     "cats": [

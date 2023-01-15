@@ -1755,17 +1755,19 @@
     ],
     "website": "https://www.cleverbridge.com"
   },
-  "Clickbank": {
+  "Click & Pledge": {
     "cats": [
-      71
+      111
     ],
-    "dom": "a[href*='pay.clickbank.net?cbfid'], img[width='1'][src*='hop.clickbank.net?affiliate']",
-    "icon": "Clickbank.svg",
-    "js": {
-      "cbtb": ""
-    },
-    "scriptSrc": "r\\.wdfl\\.co",
-    "website": "https://www.clickbank.com/"
+    "description": "Click & Pledge is an all-in-one digital fundraising platform.",
+    "dom": "a[href*='.clickandpledge.com/']",
+    "icon": "Click & Pledge.png",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.clickandpledge\\.com/",
+    "website": "https://clickandpledge.com"
   },
   "ClickCease": {
     "cats": [
@@ -1833,20 +1835,6 @@
     "scriptSrc": "clickheat.*\\.js",
     "website": "http://www.labsmedia.com/clickheat/index.html"
   },
-  "Click & Pledge": {
-    "cats": [
-      111
-    ],
-    "description": "Click & Pledge is an all-in-one digital fundraising platform.",
-    "icon": "Click & Pledge.png",
-    "dom": "a[href*='.clickandpledge.com/']",
-    "scriptSrc": "\\.clickandpledge\\.com/",
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "website": "https://clickandpledge.com"
-  },
   "ClickTale": {
     "cats": [
       10
@@ -1866,6 +1854,18 @@
     "saas": true,
     "scriptSrc": "\\.clicktale\\.net",
     "website": "http://www.clicktale.com"
+  },
+  "Clickbank": {
+    "cats": [
+      71
+    ],
+    "dom": "a[href*='pay.clickbank.net?cbfid'], img[width='1'][src*='hop.clickbank.net?affiliate']",
+    "icon": "Clickbank.svg",
+    "js": {
+      "cbtb": ""
+    },
+    "scriptSrc": "r\\.wdfl\\.co",
+    "website": "https://www.clickbank.com/"
   },
   "Clicky": {
     "cats": [

@@ -179,16 +179,16 @@
     ],
     "description": "DX1 is an entirely cloud-based dealership management system for the motorcycle and powersports industry. Offering DMS, website, CRM and marketing tools.",
     "icon": "DX1.png",
-    "requires": "DNN",
     "js": {
       "Dx1.Dnn": ""
     },
-    "scriptSrc": "\\.dx1app\\.com/",
-    "saas": true,
     "pricing": [
       "high",
       "recurring"
     ],
+    "requires": "DNN",
+    "saas": true,
+    "scriptSrc": "\\.dx1app\\.com/",
     "website": "https://www.dx1app.com"
   },
   "Dachser": {
@@ -617,12 +617,12 @@
       76
     ],
     "description": "Depict is am ecommerce personalisation solutionfor fashion.",
+    "dom": "link[href*='.depict.ai/']",
     "icon": "Depict.svg",
-    "dom":"link[href*='.depict.ai/']",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
     "website": "https://depict.ai"
   },
   "DeskPro": {
@@ -967,12 +967,12 @@
       87
     ],
     "description": "Divi is a WordPress Theme and standalone WordPress plugin from Elegant themes that allows users to build websites using the visual drag-and-drop Divi page builder.",
-    "icon": "Divi.svg",
     "dom": {
       "style#divi-style-parent-inline-inline-css": {
         "text": "Version\\:\\s([\\d\\.]+)\\;version:\\1"
       }
     },
+    "icon": "Divi.svg",
     "js": {
       "DIVI": ""
     },
@@ -1209,13 +1209,34 @@
     "scriptSrc": "/wp-content/plugins/iwd-checkout-connector/",
     "website": "https://www.dominate.co/woocommerce"
   },
+  "DonorPerfect": {
+    "cats": [
+      111
+    ],
+    "description": "DonorPerfect is a fundraising management software.",
+    "dom": {
+      "a[href*='.donorperfect.']": {
+        "attributes": {
+          "href": "\\.donorperfect\\.(?:com|net)"
+        }
+      }
+    },
+    "icon": "DonorPerfect.svg",
+    "pricing": [
+      "recurring",
+      "mid"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.donorperfect\\.net/",
+    "website": "https://www.donorperfect.com"
+  },
   "Donorbox": {
     "cats": [
       111
     ],
     "description": "Donorbox is a US-based technology company. It offers an online fundraising software that allows individuals and nonprofit organisations to receive donations over the Internet.",
-    "icon": "Donorbox.svg",
     "dom": "a[href*='//donorbox.org/'], iframe[src*='//donorbox.org/']",
+    "icon": "Donorbox.svg",
     "js": {
       "DONORBOX": "",
       "DonorBox": "",
@@ -1226,27 +1247,6 @@
     ],
     "saas": true,
     "website": "https://donorbox.org"
-  },
-  "DonorPerfect": {
-    "cats": [
-      111
-    ],
-    "description": "DonorPerfect is a fundraising management software.",
-    "icon": "DonorPerfect.svg",
-    "dom": {
-      "a[href*='.donorperfect.']": {
-        "attributes": {
-          "href": "\\.donorperfect\\.(?:com|net)"
-        }
-      }
-    },
-    "pricing": [
-      "recurring",
-      "mid"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.donorperfect\\.net/",
-    "website": "https://www.donorperfect.com"
   },
   "Doofinder": {
     "cats": [
@@ -1421,6 +1421,27 @@
     "scriptSrc": "dttrk\\.com",
     "website": "https://dovetale.com/"
   },
+  "Download Monitor": {
+    "cats": [
+      87
+    ],
+    "description": "Download Monitor is a plugin for selling, uploading and managing downloads, tracking downloads and displaying links.",
+    "dom": "link[href*='/wp-content/plugins/download-monitor/']",
+    "icon": "Download Monitor.png",
+    "js": {
+      "DLM_XHR_Download": "",
+      "dlmXHR.prevent_duplicates": ""
+    },
+    "meta": {
+      "dlm-version": "^([\\d\\.]+)$\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "website": "https://www.download-monitor.com"
+  },
   "Doxygen": {
     "cats": [
       4
@@ -1433,27 +1454,6 @@
       "generator": "Doxygen ([\\d.]+)\\;version:\\1"
     },
     "website": "http://www.doxygen.nl/"
-  },
-  "Download Monitor": {
-    "cats": [
-      87
-    ],
-    "description": "Download Monitor is a plugin for selling, uploading and managing downloads, tracking downloads and displaying links.",
-    "dom": "link[href*='/wp-content/plugins/download-monitor/']",
-    "icon": "Download Monitor.png",
-    "meta": {
-      "dlm-version": "^([\\d\\.]+)$\\;version:\\1"
-    },
-    "js": {
-      "DLM_XHR_Download": "",
-      "dlmXHR.prevent_duplicates": ""
-    },
-    "pricing": [
-      "freemium",
-      "onetime"
-    ],
-    "requires": "WordPress",
-    "website": "https://www.download-monitor.com"
   },
   "Draft.js": {
     "cats": [
