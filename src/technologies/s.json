@@ -3492,7 +3492,10 @@
     "icon": "Sitefinity.svg",
     "implies": "Microsoft ASP.NET",
     "meta": {
-      "generator": "^Sitefinity (.+)$\\;version:\\1"
+      "generator": "^Sitefinity\\s([\\S]{3,9})\\;version:\\1"
+    },
+    "js": {
+      "sfDataIntell": ""
     },
     "pricing": [
       "poa"
