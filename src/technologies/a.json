@@ -2823,6 +2823,22 @@
     "scriptSrc": "static-cdn\\.anetwork\\.ir/",
     "website": "https://www.anetwork.ir"
   },
+  "Angie": {
+    "cats": [
+      22
+    ],
+    "description": "Angie is a drop-in replacement for the Nginx web server aiming to extend the functionality of the original version.",
+    "icon": "default.svg",
+    "implies": [
+      "Perl",
+      "C"
+    ],
+    "headers": {
+      "server": "^Angie/([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://angie.software/en/"
+  },
   "Angular": {
     "cats": [
       12
