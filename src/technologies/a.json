@@ -1977,6 +1977,21 @@
     "scriptSrc": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
     "website": "https://www.airship.com"
   },
+  "Airtable": {
+    "cats": [
+      5
+    ],
+    "description": "Airtable is a low-code platform for building collaborative apps.",
+    "icon": "Airtable.svg",
+    "dom": "iframe[scr*='//airtable.com/'], a[href*='//airtable.com/][target='_blank']",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.airtable.com"
+  },
   "Akamai": {
     "cats": [
       31
@@ -3185,7 +3200,8 @@
     ],
     "js": {
       "__APOLLO_CLIENT__": "",
-      "__APOLLO_CLIENT__.version": "^(.+)$\\;version:\\1"
+      "__APOLLO_CLIENT__.version": "^(.+)$\\;version:\\1",
+      "__NEXT_DATA__.props.pageProps.__APOLLO_STATE__": ""
     },
     "website": "https://www.apollographql.com"
   },
@@ -3567,6 +3583,21 @@
     "dom": "link[rel='stylesheet'][href*='arsys.es/css/parking2.css']",
     "icon": "arsys.png",
     "website": "https://www.arsys.es"
+  },
+  "Arreva": {
+    "cats": [
+      111
+    ],
+    "description": "Arreva is a fundraising software that provides the ability to mobilise constituents using the donor tracking system.",
+    "dom": "a[href*='=ArrevaOnlineDonationsPortlet_WA']",
+    "icon": "Arreva.png",
+    "saas": true,
+    "scriptSrc": "/Arreva-OnlineDonations-Portlet/",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.arreva.com"
   },
   "Artifactory": {
     "cats": [
