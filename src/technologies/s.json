@@ -3521,11 +3521,15 @@
     "cats": [
       1
     ],
+    "cpe": "cpe:2.3:a:progress:sitefinity:*:*:*:*:*:*:*:*",
     "description": "Sitefinity is a content management system (CMS) that you use to create, store, manage, and present content on your website.",
     "icon": "Sitefinity.svg",
     "implies": "Microsoft ASP.NET",
     "meta": {
-      "generator": "^Sitefinity (.+)$\\;version:\\1"
+      "generator": "^Sitefinity\\s([\\S]{3,9})\\;version:\\1"
+    },
+    "js": {
+      "sfDataIntell": ""
     },
     "pricing": [
       "poa"
