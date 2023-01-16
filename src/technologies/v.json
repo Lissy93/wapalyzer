@@ -335,7 +335,10 @@
     "requires": [
       "Vercel"
     ],
-    "scriptSrc": "/va/script\\.js",
+    "scriptSrc": [
+      "/va/script\\.js",
+      "/_vercel/insights/script\\.js"
+    ],
     "website": "https://vercel.com/analytics"
   },
   "Verifone 2Checkout": {
