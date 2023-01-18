@@ -347,7 +347,8 @@
       1
     ],
     "cookies": {
-      "CMSPreferredCulture": ""
+      "CMSPreferredCulture": "",
+      "CMSCookieLevel": ""
     },
     "cpe": "cpe:2.3:a:kentico:kentico_cms:*:*:*:*:*:*:*:*",
     "description": "Kentico CMS is a web content management system for building websites, online stores, intranets, and Web 2.0 community sites.",
@@ -362,7 +363,12 @@
       "poa"
     ],
     "saas": true,
-    "scriptSrc": "/CMSPages/GetResource\\.ashx",
+    "scriptSrc": [
+      "/CMSPages/GetResource\\.ashx",
+      "/kentico\\.resource/activities/kenticoactivitylogger/logger\\.js",
+      "/kentico\\.resource/webanalytics/logger\\.js",
+      "/kentico\\.resource/abtest/kenticoabtestlogger/nl-nl/conversionlogger\\.js"
+    ],
     "website": "http://www.kentico.com"
   },
   "Keptify": {
