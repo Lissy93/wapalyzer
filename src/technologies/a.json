@@ -2830,7 +2830,7 @@
     ],
     "description": "Angie is a drop-in replacement for the Nginx web server aiming to extend the functionality of the original version.",
     "headers": {
-      "server": "^Angie/([\\d\\.]+)$\\;version:\\1"
+      "server": "^Angie(?:/([\\d.]+))?\\;version:\\1"
     },
     "icon": "default.svg",
     "implies": [
