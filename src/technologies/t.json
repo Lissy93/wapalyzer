@@ -2579,10 +2579,11 @@
     "cats": [
       32
     ],
-    "description": "Truepush is web-based push notification service available for PWA, AMP, WordPress, and Shopify",
+    "description": "Truepush is web-based push notification service available for PWA, AMP, WordPress, and Shopify.",
     "icon": "truepush.svg",
     "js": {
-      "truepush": ""
+      "truepush": "",
+      "truepushVersionInfo.key": "v([\\d\\.]+)\\;version:\\1"
     },
     "scriptSrc": "\\.truepush\\.com/sdk/([\\d\\.]+)\\;version:\\1",
     "website": "https://www.truepush.com"
