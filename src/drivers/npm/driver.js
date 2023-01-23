@@ -684,11 +684,12 @@ class Site {
             if (headers.location) {
               const _url = new URL(headers.location.slice(-1), url)
 
+              const redirects = Object.keys(this.analyzedUrls).length - 1
+
               if (
                 _url.hostname.replace(/^www\./, '') ===
                   this.originalUrl.hostname.replace(/^www\./, '') ||
-                (Object.keys(this.analyzedUrls).length === 1 &&
-                  !this.options.noRedirect)
+                (redirects < 3 && !this.options.noRedirect)
               ) {
                 url = _url
 
