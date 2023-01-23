@@ -2222,8 +2222,7 @@
     ],
     "scripts": [
       "data-webpack\\;confidence:50",
-      "Container missing\\;confidence:50",
-      "Initialization of sharing external failed\\;confidence:50"
+      "Container initialization failed as it has already been initialized with a different share scope"
     ],
     "website": "https://webpack.js.org/concepts/module-federation/"
   },
