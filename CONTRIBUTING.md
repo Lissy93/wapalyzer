@@ -1,6 +1,6 @@
 # Contributing
 
-Wappalyzer is an [MIT-licensed](https://github.com/wappalyzer/wappalyzer/blob/master/LICENSE), open source project written in JavaScript. Anyone is welcome to contribute.
+Wappalyzer is an [GPLv3 licensed](https://github.com/wappalyzer/wappalyzer/blob/master/LICENSE), open source project written in JavaScript. Anyone is welcome to contribute.
 
 ## Getting started
 
