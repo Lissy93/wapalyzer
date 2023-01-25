@@ -1226,7 +1226,6 @@
   "Checkfront": {
     "cats": [
       5,
-      6,
       72
     ],
     "description": "Checkfront is a cloud-based booking management application and ecommerce platform.",
@@ -1239,6 +1238,25 @@
     "saas": true,
     "scriptSrc": "\\.checkfront\\.com/",
     "website": "https://www.checkfront.com"
+  },
+  "Checkly": {
+    "cats": [
+      13
+    ],
+    "description": "Checkly is the API and E2E monitoring platform for the modern stack: programmable, flexible and loving JavaScript.",
+    "icon": "Checkly.svg",
+    "requires": "Nuxt.js",
+    "js": {
+      "__NUXT__.config.public.apiUrl": "api\\.checklyhq\\.com"
+    },
+    "pricing": [
+      "freemium",
+      "recurring",
+      "mid"
+    ],
+    "saas": true,
+    "xhr": "api\\.checklyhq\\.com/",
+    "website": "https://www.checklyhq.com"
   },
   "Checkout.com": {
     "cats": [
