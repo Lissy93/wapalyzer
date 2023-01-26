@@ -3355,6 +3355,25 @@
     "scriptSrc": "/apple_business_chat_commerce/.+/apple_message_button_v([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://developer.apple.com/documentation/businesschat"
   },
+  "Apple MapKit JS": {
+    "cats": [
+      35
+    ],
+    "description": "Apple MapKit JS lets you embed interactive maps directly into your websites across platforms and operating systems, including iOS and Android.",
+    "headers": {
+      "content-security-policy": "\\.apple-mapkit\\.com"
+    },
+    "icon": "Apple.svg",
+    "js": {
+      "mapkit._tileProvider": ""
+    },
+    "scriptSrc": "//cdn\\.apple-mapkit\\.com/mk/([\\d\\.\\w]+)\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://developer.apple.com/maps/web/"
+  },
   "Apple Pay": {
     "cats": [
       41
