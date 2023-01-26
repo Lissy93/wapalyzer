@@ -100,7 +100,6 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "io\\.vtex\\.com\\.br",
     "website": "https://vtex.com/"
   },
   "VWO": {
@@ -264,6 +263,23 @@
     },
     "website": "https://ve.com"
   },
+  "Vendre": {
+    "cats": [
+      6
+    ],
+    "description": "Vendre is a module-based ecommerce system where you choose which functions your organisation needs.",
+    "icon": "Vendre.png",
+    "js": {
+      "vendre_config": "",
+      "VendreMap.maps_loaded": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "website": "https://vendre.io"
+  },
   "Venmo": {
     "cats": [
       41
@@ -288,6 +304,21 @@
       "payg"
     ],
     "website": "https://ventraip.com.au"
+  },
+  "VentryShield": {
+    "cats": [
+      16
+    ],
+    "cookies": {
+      "ventryshield_pre": ""
+    },
+    "description": "VentryShield offers DDoS Protected VPS and Web Hosting.",
+    "headers": {
+      "x-ventryshield-cache-status": "no-cache",
+      "x-ventryshield-sid": ""
+    },
+    "icon": "ventry_shield.png",
+    "website": "https://ventryshield.net"
   },
   "Veoxa": {
     "cats": [
@@ -335,7 +366,10 @@
     "requires": [
       "Vercel"
     ],
-    "scriptSrc": "/va/script\\.js",
+    "scriptSrc": [
+      "/va/script\\.js",
+      "/_vercel/insights/script\\.js"
+    ],
     "website": "https://vercel.com/analytics"
   },
   "Verifone 2Checkout": {
@@ -850,6 +884,10 @@
       19
     ],
     "description": "Vite is a rapid development tool for modern web projects.",
+    "dom": "script#vite-legacy-polyfill, script#vite-legacy-entry",
+    "js": {
+      "__vite_is_modern_browser": ""
+    },
     "icon": "vite.svg",
     "oss": true,
     "website": "https://vitejs.dev"
@@ -1116,6 +1154,17 @@
     "implies": "Vue.js",
     "oss": true,
     "website": "https://vuetifyjs.com"
+  },
+  "Vultr": {
+    "cats": [
+      62
+    ],
+    "description": "Vultr is a cloud computing service provider.",
+    "dns": {
+      "NS": "\\.vultr\\.com"
+    },
+    "icon": "Vultr.svg",
+    "website": "https://www.vultr.com"
   },
   "Vuukle": {
     "cats": [

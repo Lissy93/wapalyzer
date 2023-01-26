@@ -524,6 +524,21 @@
     },
     "website": "http://eleanor-cms.ru"
   },
+  "Element": {
+    "cats": [
+      52
+    ],
+    "description": "Element is a Matrix-based end-to-end encrypted messenger and secure collaboration app.",
+    "icon": "elementio.svg",
+    "meta": {
+      "application-name": "^Element$"
+    },
+    "pricing": [
+      "payg",
+      "low"
+    ],
+    "website": "https://element.io"
+  },
   "Element UI": {
     "cats": [
       12
@@ -1541,6 +1556,25 @@
     "saas": true,
     "scriptSrc": "expertrec\\.com/api/js/ci_common\\.js\\?id=.*",
     "website": "https://www.expertrec.com/"
+  },
+  "Expivi": {
+    "cats": [
+      105
+    ],
+    "description": "Expivi specialises in 3D visualisation technology for ecommerce stores.",
+    "icon": "Expivi.svg",
+    "dom": "iframe[src*='.expivi.net/']",
+    "js": {
+      "ExpiviComponent": "",
+      "expivi": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.expivi\\.(?:com|net)/",
+    "website": "https://www.expivi.com"
   },
   "Exponea": {
     "cats": [

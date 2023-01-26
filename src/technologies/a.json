@@ -5,7 +5,7 @@
     ],
     "html": "<a-scene[^<>]*>",
     "icon": "A-Frame.svg",
-    "implies": "three.js",
+    "implies": "Three.js",
     "js": {
       "AFRAME.version": "^(.+)$\\;version:\\1"
     },
@@ -1535,6 +1535,22 @@
     },
     "website": "http://www.adobe.com/products/golive"
   },
+  "Adobe Portfolio": {
+    "cats": [
+      51
+    ],
+    "description": "Adobe Portfolio is an Adobe platform that allows you to create a web page where you can show your projects, creations, and the services you offer.",
+    "icon": "Adobe Portfolio.svg",
+    "meta": {
+      "twitter:site": "@AdobePortfolio"
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://portfolio.adobe.com"
+  },
   "Adobe RoboHelp": {
     "cats": [
       4
@@ -2725,7 +2741,8 @@
     "icon": "Amplitude.svg",
     "js": {
       "AMPLITUDE_KEY": "",
-      "amplitudeClient": ""
+      "amplitudeClient": "",
+      "__AMPLITUDE__": ""
     },
     "pricing": [
       "freemium",
@@ -2830,7 +2847,7 @@
     ],
     "description": "Angie is a drop-in replacement for the Nginx web server aiming to extend the functionality of the original version.",
     "headers": {
-      "server": "^Angie/([\\d\\.]+)$\\;version:\\1"
+      "server": "^Angie(?:/([\\d\\.]+))?$\\;version:\\1"
     },
     "icon": "default.svg",
     "implies": [
@@ -3031,9 +3048,23 @@
     ],
     "website": "https://ipo.antee.cz"
   },
+  "Anthology Encompass": {
+    "cats": [
+      53
+    ],
+    "description": "Anthology Encompass is a constituent engagement management provider or educational institutions that provides modules to help you manage events, websites and content, data, and more.",
+    "icon": "Anthology.svg",
+    "dom": "a[href*='.imodules.com/s/']",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "url": "https.+\\.imodules\\.com/s/",
+    "website": "https://www.anthology.com/products/lifecycle-engagement/alumni-and-advancement/anthology-encompass"
+  },
   "AntiBot.Cloud": {
     "cats": [
-      13
+      16
     ],
     "description": "AntiBot.Cloud is a PHP script and cloud service to protect websites from bots and junk traffic.",
     "meta": {
@@ -3354,6 +3385,25 @@
     "saas": true,
     "scriptSrc": "/apple_business_chat_commerce/.+/apple_message_button_v([\\d\\.]+)\\.js\\;version:\\1",
     "website": "https://developer.apple.com/documentation/businesschat"
+  },
+  "Apple MapKit JS": {
+    "cats": [
+      35
+    ],
+    "description": "Apple MapKit JS lets you embed interactive maps directly into your websites across platforms and operating systems, including iOS and Android.",
+    "headers": {
+      "content-security-policy": "\\.apple-mapkit\\.com"
+    },
+    "icon": "Apple.svg",
+    "js": {
+      "mapkit._tileProvider": ""
+    },
+    "scriptSrc": "//cdn\\.apple-mapkit\\.com/mk/([\\d\\.\\w]+)\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://developer.apple.com/maps/web/"
   },
   "Apple Pay": {
     "cats": [
@@ -3685,6 +3735,7 @@
       31
     ],
     "description": "ArvanCloud is a cloud services provider, offering a wide range of incorporated cloud services including CDN, DDoS mitigation, Cloud Managed DNS, Cloud Security, VoD/AoD Streaming, Live Streaming, Cloud Compute, Cloud Object Storage, and PaaS.",
+    "dom":"img[src*='.arvanstorage.com/']",
     "headers": {
       "server": "ArvanCloud"
     },

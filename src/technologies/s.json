@@ -2904,7 +2904,7 @@
       16
     ],
     "description": "Sift is a CA-based fraud prevention company.",
-    "icon": "Sift.png",
+    "icon": "Sift.svg",
     "js": {
       "__siftFlashCB": "",
       "_sift": ""
@@ -5280,18 +5280,37 @@
       16,
       19
     ],
+    "description": "Sqreen is the application security platform for the modern enterprise. Acquired by Datadog in Apr 2021.",
     "headers": {
       "X-Protected-By": "^Sqreen$"
     },
-    "icon": "Sqreen.png",
+    "icon": "Sqreen.svg",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
     "website": "https://sqreen.io"
+  },
+  "Squadata": {
+    "cats": [
+      77
+    ],
+    "description": "Squadata provides data based marketing and advertising solutions including email retargeting, CRM onboarding, data monetisation, data management platform.",
+    "icon": "Squadata.png",
+    "scriptSrc": "//asset\\.easydmp\\.net/",
+    "saas": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.squadata.net"
   },
   "Squadded": {
     "cats": [
-      6
+      5
     ],
-    "description": "Hero is a virtual shopping platform for ecommerce and retail stores.",
-    "icon": "Squadded.png",
+    "description": "Squadded is a social ecommerce solution that allows visitors to shop together with their friends and with other members of the brands online community.",
+    "icon": "Squadded.svg",
     "implies": [
       "Cart Functionality"
     ],
@@ -5299,7 +5318,7 @@
       "poa"
     ],
     "scriptSrc": "static\\.squadded\\.co",
-    "website": "https://www.squadded.co/"
+    "website": "https://www.squadded.co"
   },
   "Square": {
     "cats": [
@@ -5855,6 +5874,19 @@
     ],
     "saas": true,
     "website": "https://www.storyblok.com"
+  },
+  "Storybook": {
+    "cats": [
+      47,
+      66
+    ],
+    "description": "Storybook is a frontend workshop for building UI components and pages in isolation.",
+    "icon": "storybook.svg",
+    "js": {
+      "__STORYBOOK_ADDONS": ""
+    },
+    "oss": true,
+    "website": "https://storybook.js.org"
   },
   "Strapdown.js": {
     "cats": [

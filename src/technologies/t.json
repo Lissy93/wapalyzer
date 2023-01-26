@@ -395,6 +395,26 @@
     "scriptSrc": "\\.tagboard\\.com/",
     "website": "https://tagboard.com"
   },
+  "Tagembed": {
+    "cats": [
+      96,
+      5
+    ],
+    "description": "Tagembed is a social media aggregator that collects and displays engaging user-generated content from any social media network such as Instagram, Facebook, Twitter, Youtube, Tiktok, Google Reviews, Airbnb, and 18+ networks.",
+    "icon": "Tagembed.svg",
+    "dom": "script[data-src*='widget.tagembed.com/']",
+    "js": {
+      "TagembedWidget": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "scriptSrc": "//widget\\.tagembed\\.com/",
+    "website": "https://tagembed.com"
+  },
   "Taggbox": {
     "cats": [
       5
@@ -2575,6 +2595,18 @@
     "scriptSrc": "cdn\\.nexternal\\.com/",
     "website": "https://www.truecommerce.com"
   },
+  "Truepush": {
+    "cats": [
+      32
+    ],
+    "description": "Truepush is web-based push notification service available for PWA, AMP, WordPress, and Shopify.",
+    "icon": "truepush.svg",
+    "js": {
+      "truepush": "",
+      "truepushVersionInfo.key": "v([\\d\\.]+)\\;version:\\1"
+    },
+    "website": "https://www.truepush.com"
+  },
   "Trumba": {
     "cats": [
       72
@@ -3061,6 +3093,17 @@
     "icon": "Twilight CMS.png",
     "website": "http://www.twilightcms.com"
   },
+  "Twilio Authy": {
+    "cats": [
+      69
+    ],
+    "description": "Twilio Authy provides Two-factor authentication (2FA) adds an additional layer of protection beyond passwords.",
+    "icon": "twilio_authy.svg",
+    "js": {
+      "Authy": ""
+    },
+    "website": "https://authy.com"
+  },
   "TwistPHP": {
     "cats": [
       18
@@ -3317,13 +3360,13 @@
     "website": "https://www.thetradedesk.com",
     "xhr": "adsvr\\.org"
   },
-  "three.js": {
+  "Three.js": {
     "cats": [
       25
     ],
     "description": "Three.js is a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL.",
-    "icon": "three.js.png",
     "dom": "canvas[data-engine*='three.js']",
+    "icon": "Three.js.svg",
     "js": {
       "THREE.REVISION": "^(.+)$\\;version:\\1",
       "__THREE__": "^(.+)$\\;version:\\1"
