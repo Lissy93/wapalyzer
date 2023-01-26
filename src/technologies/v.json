@@ -100,7 +100,6 @@
       "payg"
     ],
     "saas": true,
-    "scriptSrc": "io\\.vtex\\.com\\.br",
     "website": "https://vtex.com/"
   },
   "VWO": {
@@ -853,6 +852,10 @@
       19
     ],
     "description": "Vite is a rapid development tool for modern web projects.",
+    "dom": "script#vite-legacy-polyfill, script#vite-legacy-entry",
+    "js": {
+      "__vite_is_modern_browser": ""
+    },
     "icon": "vite.svg",
     "oss": true,
     "website": "https://vitejs.dev"
