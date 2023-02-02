@@ -2367,6 +2367,21 @@
     "scriptSrc": "js/alternc\\.js",
     "website": "https://alternc.com"
   },
+  "AlumnIQ": {
+    "cats": [
+      111
+    ],
+    "description": "AlumnIQ is a set of services to manage events, giving, email, volunteers, class agents, and more, all designed to work with your database of record.",
+    "icon": "AlumnIQ.svg",
+    "dom": "a[href*='.alumniq.com/giving/to/']",
+    "cookies": {
+      "alumniq-online-giving": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.alumniq.com/platform/"
+  },
   "Amaya": {
     "cats": [
       20
@@ -2376,6 +2391,7 @@
     "meta": {
       "generator": "Amaya(?: V?([\\d.]+[a-z]))?\\;version:\\1"
     },
+    "oss": true,
     "website": "http://www.w3.org/Amaya"
   },
   "Amazon ALB": {
