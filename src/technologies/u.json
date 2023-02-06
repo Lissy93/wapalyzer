@@ -65,6 +65,18 @@
     "implies": "PHP",
     "website": "https://www.umi-cms.ru"
   },
+  "UniFi OS": {
+    "cats": [
+      28
+    ],
+    "description": "UniFi OS is the operating system for UniFi products, which provides a user interface.",
+    "requires": "AngularJS",
+    "js": {
+      "unifiConstant.VERSION": "^([\\d+\\.]+)$\\;version:\\1"
+    },
+    "icon": "UniFi_OS.png",
+    "website": "https://www.ui.com/"
+  },
   "UNIX": {
     "cats": [
       28
