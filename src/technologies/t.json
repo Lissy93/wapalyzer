@@ -1602,6 +1602,22 @@
     "scriptSrc": "thimatic-apps\\.com/product_review/.*?v=([\\d.]+)\\;version:\\1",
     "website": "https://thimatic-apps.com/"
   },
+  "ThimPress LearnPress": {
+    "cats": [
+      87,
+      21
+    ],
+    "description": "LearnPress is an open-source WordPress LMS plugin that you can use to create and sell online lessons and courses.",
+    "icon": "ThimPress.svg",
+    "dom": "link[href*='/wp-content/plugins/learnpress/']",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/learnpress/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "onetime"
+    ],
+    "website": "https://wordpress.org/plugins/learnpress/"
+  },
   "Think Up Themes Consulting": {
     "cats": [
       80
