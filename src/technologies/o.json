@@ -968,6 +968,19 @@
     "scriptSrc": "opencms",
     "website": "http://www.opencms.org"
   },
+  "OpenCV": {
+    "cats": [
+      59
+    ],
+    "description": "OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library.",
+    "icon": "OpenCV.svg",
+    "implies": "WebAssembly",
+    "js": {
+      "opencvIsReady": ""
+    },
+    "oss": true,
+    "website": "https://opencv.org"
+  },
   "OpenElement": {
     "cats": [
       1
