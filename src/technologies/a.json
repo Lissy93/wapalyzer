@@ -1787,7 +1787,7 @@
       6
     ],
     "headers": {
-      "X-Powered-By": "Afosto SaaS BV"
+      "X-Powered-By": "Afosto SaaS BV\\;version:2.0"
     },
     "icon": "Afosto.svg",
     "website": "http://afosto.com"
@@ -1998,7 +1998,7 @@
       5
     ],
     "description": "Airtable is a low-code platform for building collaborative apps.",
-    "dom": "iframe[scr*='//airtable.com/'], a[href*='//airtable.com/][target='_blank']",
+    "dom": "iframe[scr*='//airtable.com/'], a[href*='//airtable.com/'][target='_blank']",
     "icon": "Airtable.svg",
     "pricing": [
       "freemium",
@@ -2164,6 +2164,24 @@
     ],
     "oss": true,
     "website": "https://aksaracms.com"
+  },
+  "Aklamio": {
+    "cats": [
+      94
+    ],
+    "description": "Aklamio is a solution for enterprise level referral marketing and customer incentivisation.",
+    "icon": "Aklamio.svg",
+    "headers": {
+      "content-security-policy": "\\.aklamio\\.com"
+    },
+    "dom": "a[href*='.aklamio.com/']",
+    "saas": true,
+    "scriptSrc": "\\.aklamio\\.com/",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.aklamio.com"
   },
   "Albacross": {
     "cats": [
@@ -2367,6 +2385,21 @@
     "scriptSrc": "js/alternc\\.js",
     "website": "https://alternc.com"
   },
+  "AlumnIQ": {
+    "cats": [
+      111
+    ],
+    "description": "AlumnIQ is a set of services to manage events, giving, email, volunteers, class agents, and more, all designed to work with your database of record.",
+    "icon": "AlumnIQ.svg",
+    "dom": "a[href*='.alumniq.com/giving/to/']",
+    "cookies": {
+      "alumniq-online-giving": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.alumniq.com/platform/"
+  },
   "Amaya": {
     "cats": [
       20
@@ -2376,6 +2409,7 @@
     "meta": {
       "generator": "Amaya(?: V?([\\d.]+[a-z]))?\\;version:\\1"
     },
+    "oss": true,
     "website": "http://www.w3.org/Amaya"
   },
   "Amazon ALB": {
@@ -3891,7 +3925,7 @@
       },
       "link[href*='/_astro/']": {
         "attributes": {
-          "href": "/_astro/(?:common|index)-[\\d\\w]+\\.css"
+          "href": "/_astro/(?:common|index)(?:-|\\.)[\\d\\w]+\\.css"
         }
       }
     },

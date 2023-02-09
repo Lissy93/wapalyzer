@@ -2225,6 +2225,23 @@
     "scriptSrc": "sdk\\.postscript\\.io/",
     "website": "https://www.postscript.io"
   },
+  "Potions": {
+    "cats": [
+      76
+    ],
+    "description": "Potions is a personalisation technology for customising the ecommerce experience for site visitors without the use of cookies.",
+    "icon": "Potions.svg",
+    "js": {
+      "potions.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "recurring",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.get-potions\\.com/",
+    "website": "https://get-potions.com"
+  },
   "PowerReviews": {
     "cats": [
       90
@@ -3080,6 +3097,20 @@
     "saas": true,
     "scriptSrc": "/sdks/pushowl-shopify\\.js",
     "website": "https://apps.shopify.com/pushowl"
+  },
+  "Pushpay": {
+    "cats": [
+      111
+    ],
+    "description": "Pushpay is a digital giving and engagement platform designed to help churches manage processes related to donations and fundraising.",
+    "icon": "Pushpay.svg",
+    "dom": "a[href*='//ppay.co/'][target='_blank']",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "//pushpay\\.com/",
+    "website": "https://pushpay.com"
   },
   "PushPushGo": {
     "cats": [

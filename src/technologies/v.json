@@ -66,6 +66,30 @@
     "oss": true,
     "website": "https://vkcom.github.io/VKUI"
   },
+  "Vnda": {
+    "cats": [
+      6
+    ],
+    "description": "Vnda is a omnichannel ecommerce platform.",
+    "icon": "Vnda.svg",
+    "implies": [
+      "Node.js",
+      "Amazon Web Services"
+    ],
+    "meta": {
+      "image": "cdn\\.vnda\\.com\\.br/"
+    },
+    "js": {
+      "vnda.checkout": "",
+      "Vnda.loadCartPopup": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "website": "https://www.vnda.com.br"
+  },
   "VP-ASP": {
     "cats": [
       6
@@ -607,6 +631,23 @@
     "website": "https://vimeo.com/ott",
     "xhr": "api\\.vhx\\.tv"
   },
+  "Viqeo": {
+    "cats": [
+      14
+    ],
+    "description": "Viqeo is a short video platform to make media and ecommerce more visual and interesting.",
+    "icon": "Viqeo.svg",
+    "js": {
+      "VIQEO": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://viqeo.tv"
+  },
   "Viral Loops": {
     "cats": [
       94
@@ -762,7 +803,7 @@
       41
     ],
     "description": "Visa facilitates electronic funds transfers throughout the world, most commonly through Visa-branded credit cards, debit cards and prepaid cards.",
-    "icon": "visa.png",
+    "icon": "Visa.svg",
     "scriptSrc": "secure\\.checkout\\.visa\\.com",
     "website": "https://checkout.visa.com"
   },

@@ -588,6 +588,27 @@
     "oss": true,
     "website": "https://webassembly.org/"
   },
+  "Webasyst Shop-Script": {
+    "cats": [
+      6
+    ],
+    "description": "Webasyst Shop-Script is a feature-rich PHP ecommerce framework and shopping cart solution.",
+    "icon": "Webasyst Shop-Script.svg",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "js": {
+      "shop_cityselect.lib": "/wa-apps/",
+      "shopOrdercallConfigStaticUrl": "/wa-apps/"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.shop-script.com"
+  },
   "WebEngage": {
     "cats": [
       32,
@@ -1928,6 +1949,28 @@
       "payg"
     ],
     "website": "https://www.wowza.com/video/player"
+  },
+  "WPML": {
+    "cats": [
+      87,
+      89
+    ],
+    "description": "WPML plugin makes it possible to build and run fully multilingual WordPress sites.",
+    "icon": "WPML.svg",
+    "oss": true,
+    "meta": {
+      "generator": "^WPML\\sver\\:([\\d\\.]+)\\;version:\\1"
+    },
+    "scriptSrc": "/wp-content/plugins/sitepress-multilingual-cms/",
+    "cookies": {
+      "wp-wpml_current_language": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://wpml.org/"
   },
   "Wufoo": {
     "cats": [
