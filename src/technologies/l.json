@@ -11,6 +11,20 @@
     },
     "website": "http://www.lepton-cms.org"
   },
+  "LGC": {
+    "cats": [
+      1
+    ],
+    "description": "LGC is a modern CMS designed to improve the management of your website.",
+    "icon": "LGC.png",
+    "meta": {
+      "generator": "^LGC$"
+    },
+    "pricing": [
+      "onetime"
+    ],
+    "website": "https://luigigabrieleconti.com"
+  },
   "LINE Login": {
     "cats": [
       69
@@ -568,20 +582,6 @@
     "icon": "Lexity.png",
     "scriptSrc": "\\.lexity\\.com/",
     "website": "http://lexity.com"
-  },
-  "LGC": {
-    "cats": [
-      1
-    ],
-    "description": "LGC is a modern CMS designed to improve the management of your website.",
-    "icon": "LGC.png",
-    "meta": {
-      "generator": "^LGC$"
-    },
-    "pricing": [
-      "onetime"
-    ],
-    "website": "https://luigigabrieleconti.com"
   },
   "Liberapay": {
     "cats": [
@@ -1524,17 +1524,17 @@
       "TXT": "loom-verification"
     },
     "icon": "Loom.svg",
-    "saas": true,
     "pricing": [
       "freemium",
       "recurring",
       "payg"
     ],
+    "saas": true,
+    "website": "https://www.loom.com",
     "xhr": [
       "loom\\.com/api",
       "luna\\.loom\\.com"
-    ],
-    "website": "https://www.loom.com"
+    ]
   },
   "Loop Returns": {
     "cats": [

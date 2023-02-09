@@ -2413,6 +2413,23 @@
     },
     "website": "https://shopfa.com"
   },
+  "ShopiMind": {
+    "cats": [
+      32
+    ],
+    "description": "ShopiMind is a multi-channel marketing automation solution for all ecommerce activities.",
+    "icon": "ShopiMind.svg",
+    "js": {
+      "_spmq.id_cart": "",
+      "_spmq.spm_ident": ""
+    },
+    "pricing": [
+      "payg",
+      "freemium"
+    ],
+    "saas": true,
+    "website": "https://www.shopimind.com"
+  },
   "Shopify": {
     "cats": [
       6
@@ -2527,23 +2544,6 @@
       "productreviews\\.shopifycdn\\.com"
     ],
     "website": "https://apps.shopify.com/product-reviews"
-  },
-  "ShopiMind": {
-    "cats": [
-      32
-    ],
-    "description": "ShopiMind is a multi-channel marketing automation solution for all ecommerce activities.",
-    "icon": "ShopiMind.svg",
-    "js": {
-      "_spmq.id_cart": "",
-      "_spmq.spm_ident": ""
-    },
-    "pricing": [
-      "payg",
-      "freemium"
-    ],
-    "saas": true,
-    "website": "https://www.shopimind.com"
   },
   "Shopistry": {
     "cats": [
@@ -5301,11 +5301,11 @@
       "X-Protected-By": "^Sqreen$"
     },
     "icon": "Sqreen.svg",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://sqreen.io"
   },
   "Squadata": {
@@ -5314,11 +5314,11 @@
     ],
     "description": "Squadata provides data based marketing and advertising solutions including email retargeting, CRM onboarding, data monetisation, data management platform.",
     "icon": "Squadata.png",
-    "scriptSrc": "//asset\\.easydmp\\.net/",
-    "saas": true,
     "pricing": [
       "poa"
     ],
+    "saas": true,
+    "scriptSrc": "//asset\\.easydmp\\.net/",
     "website": "https://www.squadata.net"
   },
   "Squadded": {
@@ -5651,18 +5651,18 @@
       85
     ],
     "description": "Statsig is a modern product experimentation platform that helps product teams continuously measure impact of every single feature they launch.",
-    "icon": "Statsig.svg",
     "headers": {
       "x-statsig-region": ""
     },
+    "icon": "Statsig.svg",
     "js": {
       "statsig": "",
-      "statsigWWW": "",
-      "statsigInitialized": ""
+      "statsigInitialized": "",
+      "statsigWWW": ""
     },
-    "xhr":"\\.statsigapi\\.net",
     "saas": true,
-    "website": "https://statsig.com/"
+    "website": "https://statsig.com/",
+    "xhr": "\\.statsigapi\\.net"
   },
   "Status.io": {
     "cats": [

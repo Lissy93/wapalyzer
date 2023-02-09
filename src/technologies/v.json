@@ -66,30 +66,6 @@
     "oss": true,
     "website": "https://vkcom.github.io/VKUI"
   },
-  "Vnda": {
-    "cats": [
-      6
-    ],
-    "description": "Vnda is a omnichannel ecommerce platform.",
-    "icon": "Vnda.svg",
-    "implies": [
-      "Node.js",
-      "Amazon Web Services"
-    ],
-    "meta": {
-      "image": "cdn\\.vnda\\.com\\.br/"
-    },
-    "js": {
-      "vnda.checkout": "",
-      "Vnda.loadCartPopup": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa",
-      "recurring"
-    ],
-    "website": "https://www.vnda.com.br"
-  },
   "VP-ASP": {
     "cats": [
       6
@@ -294,14 +270,14 @@
     "description": "Vendre is a module-based ecommerce system where you choose which functions your organisation needs.",
     "icon": "Vendre.png",
     "js": {
-      "vendre_config": "",
-      "VendreMap.maps_loaded": ""
+      "VendreMap.maps_loaded": "",
+      "vendre_config": ""
     },
-    "saas": true,
     "pricing": [
       "poa",
       "recurring"
     ],
+    "saas": true,
     "website": "https://vendre.io"
   },
   "Venmo": {
@@ -640,12 +616,12 @@
     "js": {
       "VIQEO": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://viqeo.tv"
   },
   "Viral Loops": {
@@ -926,10 +902,10 @@
     ],
     "description": "Vite is a rapid development tool for modern web projects.",
     "dom": "script#vite-legacy-polyfill, script#vite-legacy-entry",
+    "icon": "vite.svg",
     "js": {
       "__vite_is_modern_browser": ""
     },
-    "icon": "vite.svg",
     "oss": true,
     "website": "https://vitejs.dev"
   },
@@ -985,6 +961,30 @@
     "saas": true,
     "scriptSrc": "\\.vizury\\.com",
     "website": "https://www.vizury.com"
+  },
+  "Vnda": {
+    "cats": [
+      6
+    ],
+    "description": "Vnda is a omnichannel ecommerce platform.",
+    "icon": "Vnda.svg",
+    "implies": [
+      "Node.js",
+      "Amazon Web Services"
+    ],
+    "js": {
+      "Vnda.loadCartPopup": "",
+      "vnda.checkout": ""
+    },
+    "meta": {
+      "image": "cdn\\.vnda\\.com\\.br/"
+    },
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.vnda.com.br"
   },
   "Vntana": {
     "cats": [

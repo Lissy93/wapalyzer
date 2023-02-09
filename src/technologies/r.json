@@ -365,13 +365,13 @@
     "cats": [
       51
     ],
+    "cookies": {
+      "rawabit_session": ""
+    },
     "description": "Rawabit is a website builder that lets small businesses design landing pages, modify sections, and embed content links using a drag and drop editor.",
     "icon": "Rawabit.svg",
     "meta": {
       "powered-by": "^Rawabit$"
-    },
-    "cookies": {
-      "rawabit_session": ""
     },
     "pricing": [
       "freemium",
@@ -1236,23 +1236,6 @@
     "requires": "Shopify",
     "website": "https://www.renderbetter.com"
   },
-  "Replit": {
-    "cats": [
-      47
-    ],
-    "description": "Replit is a platform for creating and sharing software.",
-    "icon": "Replit.svg",
-    "headers": {
-      "replit-cluster": "",
-      "expect-ct": "\\.repl\\.it/"
-    },
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://replit.com"
-  },
   "Replicache": {
     "cats": [
       12,
@@ -1270,6 +1253,23 @@
     ],
     "saas": true,
     "website": "https://replicache.dev/"
+  },
+  "Replit": {
+    "cats": [
+      47
+    ],
+    "description": "Replit is a platform for creating and sharing software.",
+    "headers": {
+      "expect-ct": "\\.repl\\.it/",
+      "replit-cluster": ""
+    },
+    "icon": "Replit.svg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://replit.com"
   },
   "Reputon": {
     "cats": [
@@ -1699,12 +1699,12 @@
     "meta": {
       "revv-api-domain": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://revv.com"
   },
   "Revy": {

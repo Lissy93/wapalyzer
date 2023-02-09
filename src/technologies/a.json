@@ -1544,11 +1544,11 @@
     "meta": {
       "twitter:site": "@AdobePortfolio"
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://portfolio.adobe.com"
   },
   "Adobe RoboHelp": {
@@ -2147,6 +2147,24 @@
     "icon": "akka-http.png",
     "website": "http://akka.io"
   },
+  "Aklamio": {
+    "cats": [
+      94
+    ],
+    "description": "Aklamio is a solution for enterprise level referral marketing and customer incentivisation.",
+    "dom": "a[href*='.aklamio.com/']",
+    "headers": {
+      "content-security-policy": "\\.aklamio\\.com"
+    },
+    "icon": "Aklamio.svg",
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.aklamio\\.com/",
+    "website": "https://www.aklamio.com"
+  },
   "Aksara CMS": {
     "cats": [
       1
@@ -2164,24 +2182,6 @@
     ],
     "oss": true,
     "website": "https://aksaracms.com"
-  },
-  "Aklamio": {
-    "cats": [
-      94
-    ],
-    "description": "Aklamio is a solution for enterprise level referral marketing and customer incentivisation.",
-    "icon": "Aklamio.svg",
-    "headers": {
-      "content-security-policy": "\\.aklamio\\.com"
-    },
-    "dom": "a[href*='.aklamio.com/']",
-    "saas": true,
-    "scriptSrc": "\\.aklamio\\.com/",
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.aklamio.com"
   },
   "Albacross": {
     "cats": [
@@ -2389,12 +2389,12 @@
     "cats": [
       111
     ],
-    "description": "AlumnIQ is a set of services to manage events, giving, email, volunteers, class agents, and more, all designed to work with your database of record.",
-    "icon": "AlumnIQ.svg",
-    "dom": "a[href*='.alumniq.com/giving/to/']",
     "cookies": {
       "alumniq-online-giving": ""
     },
+    "description": "AlumnIQ is a set of services to manage events, giving, email, volunteers, class agents, and more, all designed to work with your database of record.",
+    "dom": "a[href*='.alumniq.com/giving/to/']",
+    "icon": "AlumnIQ.svg",
     "pricing": [
       "poa"
     ],
@@ -2775,8 +2775,8 @@
     "icon": "Amplitude.svg",
     "js": {
       "AMPLITUDE_KEY": "",
-      "amplitudeClient": "",
-      "__AMPLITUDE__": ""
+      "__AMPLITUDE__": "",
+      "amplitudeClient": ""
     },
     "pricing": [
       "freemium",
@@ -3087,8 +3087,8 @@
       53
     ],
     "description": "Anthology Encompass is a constituent engagement management provider or educational institutions that provides modules to help you manage events, websites and content, data, and more.",
-    "icon": "Anthology.svg",
     "dom": "a[href*='.imodules.com/s/']",
+    "icon": "Anthology.svg",
     "pricing": [
       "poa"
     ],
@@ -3432,11 +3432,11 @@
     "js": {
       "mapkit._tileProvider": ""
     },
-    "scriptSrc": "//cdn\\.apple-mapkit\\.com/mk/([\\d\\.\\w]+)\\;version:\\1",
     "pricing": [
       "freemium",
       "payg"
     ],
+    "scriptSrc": "//cdn\\.apple-mapkit\\.com/mk/([\\d\\.\\w]+)\\;version:\\1",
     "website": "https://developer.apple.com/maps/web/"
   },
   "Apple Pay": {
@@ -3769,7 +3769,7 @@
       31
     ],
     "description": "ArvanCloud is a cloud services provider, offering a wide range of incorporated cloud services including CDN, DDoS mitigation, Cloud Managed DNS, Cloud Security, VoD/AoD Streaming, Live Streaming, Cloud Compute, Cloud Object Storage, and PaaS.",
-    "dom":"img[src*='.arvanstorage.com/']",
+    "dom": "img[src*='.arvanstorage.com/']",
     "headers": {
       "server": "ArvanCloud"
     },

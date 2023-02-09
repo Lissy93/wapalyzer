@@ -442,10 +442,10 @@
       63
     ],
     "description": "Parmin Cloud operates in the field of cloud services.",
-    "icon": "Parmin Cloud.svg",
     "headers": {
       "x-powered-by": "^ParminCloud$"
     },
+    "icon": "Parmin Cloud.svg",
     "pricing": [
       "poa",
       "payg"
@@ -1371,8 +1371,8 @@
       66
     ],
     "description": "Pico CSS is a minimal CSS framework for semantic HTML, without using classes.",
-    "icon": "Pico CSS.svg",
     "dom": "link[href*='/pico.min.css']",
+    "icon": "Pico CSS.svg",
     "oss": true,
     "website": "https://picocss.com"
   },
@@ -2135,12 +2135,12 @@
     "js": {
       "posthog": ""
     },
+    "oss": true,
     "pricing": [
       "freemium",
       "payg"
     ],
     "saas": true,
-    "oss": true,
     "scriptSrc": "app\\.posthog\\.com/",
     "website": "https://posthog.com"
   },
@@ -3098,20 +3098,6 @@
     "scriptSrc": "/sdks/pushowl-shopify\\.js",
     "website": "https://apps.shopify.com/pushowl"
   },
-  "Pushpay": {
-    "cats": [
-      111
-    ],
-    "description": "Pushpay is a digital giving and engagement platform designed to help churches manage processes related to donations and fundraising.",
-    "icon": "Pushpay.svg",
-    "dom": "a[href*='//ppay.co/'][target='_blank']",
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "scriptSrc": "//pushpay\\.com/",
-    "website": "https://pushpay.com"
-  },
   "PushPushGo": {
     "cats": [
       32
@@ -3135,6 +3121,20 @@
     "icon": "Pushnami.svg",
     "scriptSrc": "api\\.pushnami\\.com",
     "website": "https://pushnami.com"
+  },
+  "Pushpay": {
+    "cats": [
+      111
+    ],
+    "description": "Pushpay is a digital giving and engagement platform designed to help churches manage processes related to donations and fundraising.",
+    "dom": "a[href*='//ppay.co/'][target='_blank']",
+    "icon": "Pushpay.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "//pushpay\\.com/",
+    "website": "https://pushpay.com"
   },
   "PyScript": {
     "cats": [

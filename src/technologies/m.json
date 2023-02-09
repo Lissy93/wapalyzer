@@ -1559,7 +1559,6 @@
       66
     ],
     "description": "MetroUI is an open-source frontend toolkit inspired by Microsoft Fluent (former Metro) design principles.",
-    "icon": "default.svg",
     "dom": {
       "link[href*='//cdn.metroui.org.ua/']": {
         "attributes": {
@@ -1567,6 +1566,7 @@
         }
       }
     },
+    "icon": "default.svg",
     "js": {
       "Metro.version": "^([\\d\\.]+)$\\;version:\\1"
     },

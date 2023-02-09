@@ -887,25 +887,25 @@
     "url": "sites\\.hireology\\.com/",
     "website": "https://hireology.com"
   },
-  "Hirschmann HiOS" : {
+  "Hirschmann HiOS": {
     "cats": [
       28
     ],
+    "cpe": "cpe:2.3:o:belden:hirschmann_hios:*:*:*:*:*:*:*:*",
     "description": "Hirschmann HiOS is an operating system for industrial network equipment.",
     "dom": {
-      "h2": {
+      "div": {
         "text": "(HiSecOS-|HiOS-.+-)(\\d+\\.\\d+\\.\\d+)\\;version:\\2"
       },
-      "div": {
+      "h2": {
         "text": "(HiSecOS-|HiOS-.+-)(\\d+\\.\\d+\\.\\d+)\\;version:\\2"
       }
     },
+    "icon": "hirschmann_OS.png",
     "requires": [
       "Java",
       "Google Web Toolkit"
     ],
-    "cpe": "cpe:2.3:o:belden:hirschmann_hios:*:*:*:*:*:*:*:*",
-    "icon": "hirschmann_OS.png",
     "website": "https://hirschmann.com/"
   },
   "Histats": {
