@@ -66,6 +66,30 @@
     "oss": true,
     "website": "https://vkcom.github.io/VKUI"
   },
+  "Vnda": {
+    "cats": [
+      6
+    ],
+    "description": "Vnda is a omnichannel ecommerce platform.",
+    "icon": "Vnda.svg",
+    "implies": [
+      "Node.js",
+      "Amazon Web Services"
+    ],
+    "meta": {
+      "image": "cdn\\.vnda\\.com\\.br/"
+    },
+    "js": {
+      "vnda.checkout": "",
+      "Vnda.loadCartPopup": ""
+    },
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "website": "https://www.vnda.com.br"
+  },
   "VP-ASP": {
     "cats": [
       6
