@@ -3027,10 +3027,6 @@
     ],
     "description": "mdBook is a utility to create modern online books from Markdown files.",
     "icon": "mdBook.svg",
-    "implies": [
-      "Rust",
-      "Handlebars"
-    ],
     "oss": true,
     "scripts": "localStorage\\.getItem\\('mdbook-(?:sidebar|theme)'\\)",
     "website": "https://github.com/rust-lang/mdBook"
