@@ -92,6 +92,7 @@ Options:
   -e, --extended             Output additional information
   --local-storage=...        JSON object to use as local storage
   --session-storage=...      JSON object to use as session storage
+  --defer=ms                 Defer scan for ms milliseconds after page load
 `)
   process.exit(options.help ? 0 : 1)
 }
@@ -153,6 +154,10 @@ for (const type of Object.keys(storage)) {
     await wappalyzer.init()
 
     const site = await wappalyzer.open(url, headers, storage)
+
+    await new Promise((resolve) =>
+      setTimeout(resolve, parseInt(options.defer || 0, 10))
+    )
 
     const results = await site.analyze()
 

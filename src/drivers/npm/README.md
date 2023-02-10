@@ -41,6 +41,7 @@ wappalyzer <url> [options]
 -e, --extended             Output additional information
 --local-storage=...        JSON object to use as local storage
 --session-storage=...      JSON object to use as session storage
+--defer=ms                 Defer scan for ms milliseconds after page load
 
 ```
 
