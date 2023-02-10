@@ -1785,6 +1785,28 @@
     "scriptSrc": "\\.ezo(?:js|ic|dn)\\.(?:com|net)",
     "website": "https://www.ezoic.com"
   },
+  "EZproxy": {
+    "cats": [
+      22,
+      64
+    ],
+    "description": "EZproxy is a web server and a reverse proxy that is usually used by libraries as a reverse proxy in front of electronic educational resources databases (e.g.: Scopus, PubMed, or Web of Science) in order to provide authentication and protect privacy.",
+    "excludes": [
+      "Apache HTTP Server",
+      "Nginx"
+    ],
+    "headers": {
+      "server": "^EZproxy$"
+    },
+    "icon": "default.svg",
+    "pricing": [
+      "low",
+      "recurring",
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.oclc.org/en/ezproxy.html"
+  },
   "e-Shop Commerce": {
     "cats": [
       6
