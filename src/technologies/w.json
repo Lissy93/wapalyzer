@@ -2146,5 +2146,15 @@
     "requires": "WordPress",
     "url": "^https?://[^/]+\\.wpcache\\.co",
     "website": "https://wpcache.co"
+  },
+  "WP Featherlight": {
+    "cats": [
+      87
+    ],
+    "description": "WP Featherlight is a WordPress lightbox plugin for adding a minimal, high-performance, responsive jQuery lightbox to your WordPress website.",
+    "icon": "WP_Featherlight.png",
+    "dom": "link[href*='/wp-featherlight\\.min\\.css(?:\\?ver=([0-9.]+))?\\;version:\\1",
+    "scriptSrc": "/wpFeatherlight\\.pkgd\\.min\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+    "website": "https://wordpress.org/plugins/wp-featherlight"
   }
 }
