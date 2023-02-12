@@ -141,13 +141,6 @@
       87
     ],
     "description": "WP Featherlight is a WordPress lightbox plugin for adding a minimal, high-performance, responsive jQuery lightbox to your WordPress website.",
-    "dom": {
-      "style[cssr-id^='n-']": {
-        "attributes": {
-          "cssr-id": "^n-[a-z-]+$\\;confidence:99"
-        }
-      }
-    },
     "icon": "WP_Featherlight.png",
     "requires": "WordPress",
     "scriptSrc": "/wpFeatherlight\\.pkgd\\.min\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
