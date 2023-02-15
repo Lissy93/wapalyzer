@@ -1029,10 +1029,11 @@
     "cats": [
       66
     ],
-    "description": "Materialize CSS is a css framework which is used to create responsive websites.",
-    "html": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
-    "icon": "Materialize CSS.png",
-    "scriptSrc": "materialize(?:\\.min)?\\.js",
+    "description": "Materialize CSS is a front-end framework that helps developers create responsive and mobile-first web applications. It is based on Google's Material Design guidelines.",
+    "icon": "Materialize CSS.svg",
+    "dom": "link[href*='/materialize.min.css']",
+    "scriptSrc": "([\\d\\.]+)/.*/materialize\\.min\\.js\\;version:\\1",
+    "oss": true,
     "website": "http://materializecss.com"
   },
   "MathJax": {
