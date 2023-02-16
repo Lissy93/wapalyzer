@@ -2011,6 +2011,7 @@
       "NS": "\\.cloudflare\\.com",
       "SOA": "\\.cloudflare\\.com"
     },
+    "dom": "img[src*='//cdn.cloudflare']",
     "headers": {
       "Server": "^cloudflare$",
       "cf-cache-status": "",
@@ -2019,6 +2020,9 @@
     "icon": "CloudFlare.svg",
     "js": {
       "CloudFlare": ""
+    },
+    "meta": {
+      "image": "//cdn.cloudflare"
     },
     "website": "http://www.cloudflare.com"
   },
