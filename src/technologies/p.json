@@ -1180,6 +1180,27 @@
     },
     "website": "https://github.com/Sazito/phoenix/"
   },
+  "Phoenix Framework": {
+    "cats": [
+      18
+    ],
+    "description": "Phoenix is a productive web framework that does not compromise speed and maintainability.",
+    "icon": "Phoenix Framework.png",
+    "implies": "Elixir",
+    "website": "https://www.phoenixframework.org"
+  },
+  "Phoenix LiveView": {
+    "cats": [
+      18
+    ],
+    "description": "Phoenix LiveView is a library that brings live, interactive, real-time user experiences to your Phoenix applications.",
+    "icon": "Phoenix Framework.png",
+    "implies": "Phoenix Framework",
+    "js": {
+      "liveSocket.socket": ""
+    },
+    "website": "https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html"
+  },
   "Phoenix Site": {
     "cats": [
       1
