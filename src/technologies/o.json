@@ -1415,10 +1415,12 @@
     "cats": [
       19
     ],
+    "description": "Oracle Dynamic Monitoring Service is a feature of Oracle WebLogic Server that provides real-time monitoring and diagnostic capabilities for Java applications running on the WebLogic Server.",
     "headers": {
       "x-oracle-dms-ecid": ""
     },
     "icon": "Oracle.svg",
+    "implies": "Oracle WebLogic Server",
     "website": "http://oracle.com"
   },
   "Oracle HTTP Server": {
@@ -1482,6 +1484,19 @@
     },
     "icon": "Oracle.svg",
     "website": "http://oracle.com"
+  },
+  "Oracle WebLogic Server": {
+    "cats": [
+      22
+    ],
+    "cpe": "cpe:2.3:a:bea:weblogic_server:*:*:*:*:*:*:*:*",
+    "description": "Oracle WebLogic Server is a Java-based application server that provides a platform for developing, deploying, and running enterprise-level Java applications.",
+    "icon": "Oracle.svg",
+    "implies": "Java",
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.oracle.com/java/weblogic/"
   },
   "Orankl": {
     "cats": [
