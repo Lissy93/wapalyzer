@@ -1079,7 +1079,7 @@
     "dom": "link[href*='/wp-content/plugins/flying-analytics/']",
     "icon": "default.svg",
     "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/flying-analytics/.+\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "scriptSrc": "/wp-content/plugins/flying-analytics/",
     "website": "https://wordpress.org/plugins/flying-analytics/"
   },
   "Flying Pages": {
@@ -1102,13 +1102,11 @@
       87
     ],
     "description": "Flying Images is a performance optimisation plugin for WordPress websites designed to reduce page load times and improve the user experience.",
-    "dom": "link[href*='/wp-content/plugins/nazy-load/']",
     "icon": "default.svg",
     "requires": "WordPress",
     "js": {
       "flyingImages": ""
     },
-    "scriptSrc": "/wp-content/plugins/nazy-load/.+\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
     "website": "https://wordpress.org/plugins/nazy-load/"
   },
   "Flyspray": {
