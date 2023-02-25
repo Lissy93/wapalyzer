@@ -94,6 +94,23 @@
     "scriptSrc": "katex(@|/)[0-9.]+(?:/dist)?/katex(?:\\.min)?\\.(mjs|js|css)\\;version:\\1",
     "website": "https://katex.org/"
   },
+  "Kadence WP Blocks": {
+    "cats": [
+      87
+    ],
+    "description": "Kadence WP Blocks is a plugin for WordPress that provides a collection of custom blocks for the Gutenberg editor, allowing users to create custom layouts and designs for their website without needing to know how to code.",
+    "dom": "link[href*='/wp-content/plugins/kadence-blocks/']",
+    "icon": "Kadence WP.svg",
+    "implies": "Gutenberg",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/kadence-blocks/dist/.+/kb-form-block\\.min\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
+    "website": "https://www.kadencewp.com/kadence-blocks/"
+  },
   "Kadence WP Kadence": {
     "cats": [
       80
