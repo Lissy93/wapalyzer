@@ -566,8 +566,8 @@
     "cats": [
       12
     ],
-    "description": "Official React bindings for Redux",
-    "icon": "Redux.png",
+    "description": "React Redux is the official React binding for Redux.",
+    "icon": "Redux.svg",
     "implies": [
       "React",
       "Redux"
@@ -1011,16 +1011,37 @@
     "scriptSrc": "\\.redonner\\.fr/",
     "website": "https://www.redonner.fr"
   },
+  "RedShop": {
+    "cats": [
+      6
+    ],
+    "description": "RedShop provides a platform for SMEs to manage their ecommerce business.",
+    "icon": "RedShop.png",
+    "implies": [
+      "Amazon S3",
+      "TypeScript",
+      "Next.js",
+      "React"
+    ],
+    "dom": "link[href*='//redshop.s3.amazonaws.com/']",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.redshop.io"
+  },
   "Redux": {
     "cats": [
       12
     ],
     "description": "Redux is a predictable state container for JavaScript applications.",
-    "icon": "Redux.png",
+    "icon": "Redux.svg",
     "scriptSrc": [
       "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
     ],
-    "website": "https://redux.js.org/"
+    "website": "https://redux.js.org"
   },
   "RedwoodJS": {
     "cats": [
