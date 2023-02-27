@@ -1145,7 +1145,7 @@ class Site {
             patterns[name].push({
               type,
               regex: regex.source,
-              value: value.length <= 250 ? value : null,
+              value: String(value).length <= 250 ? value : null,
               match: match.length <= 250 ? match : null,
               confidence,
               version,
