@@ -4863,6 +4863,23 @@
     "oss": true,
     "website": "https://github.com/spatie/laravel-cookie-consent"
   },
+  "Spectra": {
+    "cats": [
+      87
+    ],
+    "description": "Spectra is a WordPress plugin that provides a collection of new and enhanced blocks for the Gutenberg editor.",
+    "dom": "link[href*='/wp-content/plugins/ultimate-addons-for-gutenberg/']",
+    "icon": "Gutenberg Blocks.png",
+    "implies": "Gutenberg",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/ultimate-addons-for-gutenberg/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://wpspectra.com"
+  },
   "Speed Kit": {
     "cats": [
       92
