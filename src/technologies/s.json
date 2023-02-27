@@ -5470,6 +5470,34 @@
     ],
     "website": "https://www.squiz.net/matrix"
   },
+  "Stackable": {
+    "cats": [
+      87,
+      51
+    ],
+    "description": "Stackable is a plugin for WordPress that offers a collection of blocks, templates, and other design tools to help users create custom, professional-looking websites.",
+    "icon": "Stackable.svg",
+    "implies": "Gutenberg",
+    "requires": "WordPress",
+    "dom": {
+      "link[href*='/wp-content/plugins/stackable-ultimate-gutenberg-blocks/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/stackable-ultimate-gutenberg-blocks/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "stackable.restUrl": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "saas": true,
+    "website": "https://wpstackable.com"
+  },
   "Stack Analytix": {
     "cats": [
       10
