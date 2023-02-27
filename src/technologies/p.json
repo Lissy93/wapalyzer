@@ -1197,6 +1197,30 @@
     },
     "website": "https://github.com/Sazito/phoenix/"
   },
+  "Phoenix Framework": {
+    "cats": [
+      18
+    ],
+    "description": "Phoenix Framework is an open-source web application framework built using the Elixir programming language.",
+    "icon": "Phoenix Framework.svg",
+    "implies": "Elixir",
+    "oss": true,
+    "website": "https://www.phoenixframework.org"
+  },
+  "Phoenix LiveView": {
+    "cats": [
+      18
+    ],
+    "description": "Phoenix LiveView is a library that brings live, interactive, real-time user experiences to your Phoenix applications.",
+    "dom": "div[data-phx-session]",
+    "icon": "Phoenix Framework.svg",
+    "implies": "Phoenix Framework",
+    "js": {
+      "liveSocket.socket": ""
+    },
+    "oss": true,
+    "website": "https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html"
+  },
   "Phoenix Site": {
     "cats": [
       1
