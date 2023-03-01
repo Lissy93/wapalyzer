@@ -19,8 +19,7 @@
                   (value, method) =>
                     value &&
                     value instanceof Object &&
-                    Object.prototype.hasOwnProperty.call(value, method) &&
-                    !(Object.getOwnPropertyDescriptor(value, method) || {}).get
+                    Object.prototype.hasOwnProperty.call(value, method)
                       ? value[method]
                       : '__UNDEFINED__',
                   window
