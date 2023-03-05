@@ -223,6 +223,10 @@
     ],
     "description": "SpiritShop is an ecommerce plataform.",
     "icon": "SpiritShop.png",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
     "cookies": {
       "SPIRITSHOP_ID": ""
     },
