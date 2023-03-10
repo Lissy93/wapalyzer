@@ -2260,6 +2260,25 @@
     "saas": true,
     "website": "http://www.algolia.com"
   },
+  "Alibaba Cloud CDN": {
+    "cats": [
+      31
+    ],
+    "description": "Alibaba Cloud CDN is a global network of servers designed to deliver high-performance, low-latency content to users around the world. It is a cloud-based service provided by Alibaba Cloud, a subsidiary of the Alibaba Group, that enables businesses to accelerate the delivery of their web content, including images, videos, and static files, to end-users.",
+    "icon": "Alibaba Cloud.svg",
+    "dom": "img[src*='.alicdn.com/']",
+    "scriptSrc": "\\.alicdn\\.com/",
+    "website": "https://www.alibabacloud.com/product/content-delivery-network"
+  },
+  "Alibaba Cloud Verification Code": {
+    "cats": [
+      16
+    ],
+    "description": "Alibaba Cloud Verification Code is a security feature provided by Alibaba Cloud to help protect user accounts from unauthorised access.",
+    "icon": "Alibaba Cloud.svg",
+    "scriptSrc": "cf\\.aliyun\\.com/",
+    "website": "https://help.aliyun.com/document_detail/193141.html"
+  },
   "Ali Reviews": {
     "cats": [
       90,
