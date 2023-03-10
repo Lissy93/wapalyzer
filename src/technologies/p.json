@@ -1898,6 +1898,9 @@
     ],
     "description": "Plug and Pay is a payment processor that provides payment solutions for ecommerce businesses.",
     "icon": "Plug and Pay.png",
+    "implies": [
+      "Laravel"
+    ],
     "cookies": {
       "plug_pay_session": ""
     },
