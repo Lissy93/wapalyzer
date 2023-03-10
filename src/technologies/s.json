@@ -5753,6 +5753,24 @@
     "scriptSrc": "cdn\\.statically\\.io/",
     "website": "https://statically.io"
   },
+  "Statping": {
+    "cats": [
+      13
+    ],
+    "description": "Statping is an open-source status monitoring tool that helps you to monitor and analyse the performance of your websites, applications, and services. It can monitor multiple endpoints such as HTTP, HTTPS, TCP, DNS, and more.",
+    "icon": "Statping.png",
+    "requires": [
+      "Vue.js",
+      "core-js"
+    ],
+    "dom": {
+      "noscript": {
+        "text": "We're\\ssorry\\sbut\\sStatping"
+      }
+    },
+    "oss": true,
+    "website": "https://github.com/statping/statping"
+  },
   "Statsig": {
     "cats": [
       10,
