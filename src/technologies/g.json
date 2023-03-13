@@ -411,6 +411,22 @@
     ],
     "website": "https://generatepress.com"
   },
+  "GeneratePress GP Premium": {
+    "cats": [
+      87
+    ],
+    "description": "GP Premium is a premium add-on plugin for the GeneratePress WordPress theme.",
+    "icon": "generatepress.png",
+    "implies": "GeneratePress",
+    "pricing": [
+      "onetime",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "scriptSrc": "/wp-content/plugins/gp-premium/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://docs.generatepress.com/article/installing-gp-premium/"
+  },
   "Genesis theme": {
     "cats": [
       80
