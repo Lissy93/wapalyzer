@@ -3042,8 +3042,14 @@
       1
     ],
     "description": "Contentstack is a headless CMS software designed to help businesses deliver personalised content experiences to audiences via multiple channels.",
-    "dom": "img[src*='images.contentstack.io']",
-    "icon": "Contentstack.png",
+    "dom": {
+      "img[src*='contentstack']": {
+        "attributes": {
+          "src": "\\.contentstack\\.(?:io|com)/"
+        }
+      }
+    },
+    "icon": "Contentstack.svg",
     "pricing": [
       "high",
       "recurring"
