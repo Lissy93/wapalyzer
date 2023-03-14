@@ -5523,14 +5523,15 @@
     "implies": "Gutenberg",
     "requires": "WordPress",
     "dom": {
-      "link[href*='/wp-content/plugins/stackable-ultimate-gutenberg-blocks/']": {
+      "link[href*='/wp-content/plugins/stackable-ultimate-gutenberg-blocks']": {
         "attributes": {
-          "href": "/wp-content/plugins/stackable-ultimate-gutenberg-blocks/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+          "href": "/wp-content/plugins/stackable-ultimate-gutenberg-blocks(?:-premium)?/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
         }
       }
     },
     "js": {
-      "stackable.restUrl": ""
+      "stackable.restUrl": "",
+      "stackableAnimations": ""
     },
     "pricing": [
       "freemium",
