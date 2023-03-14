@@ -254,6 +254,28 @@
     "scriptSrc": "cdn\\.mykamva\\.ir",
     "website": "https://kamva.ir"
   },
+  "Kapix Studio": {
+    "cats": [
+      51
+    ],
+    "description": "Kapix Studio is a no-code platform that lets anyone build web apps without writing any code.",
+    "icon": "Kapix.svg",
+    "implies": [
+      "Vite",
+      "TypeScript"
+    ],
+    "js": {
+      "kapixVersion": "([\\d\\.]+)\\;version:\\1",
+      "__INITIAL_STATE__": "KapixNoCode"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://studio.kapix.fr"
+  },
   "Kapture CRM": {
     "cats": [
       52,
