@@ -2843,11 +2843,11 @@
       "Analyzee._sessionExtend": "",
       "analyzee._session": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://analyzee.io"
   },
   "AndersNoren Baskerville": {
@@ -2970,9 +2970,9 @@
       66
     ],
     "description": "Angular Material is a UI component library for Angular JS developers. Angular Material components assist in constructing attractive, consistent, and functional web pages and web applications.",
+    "excludes": "Material Design Lite",
     "icon": "AngularJS.svg",
     "implies": "AngularJS",
-    "excludes": "Material Design Lite",
     "js": {
       "ngMaterial": ""
     },
@@ -3270,6 +3270,18 @@
     ],
     "oss": true,
     "website": "https://www.apereo.org/projects/cas"
+  },
+  "ApexCharts.js": {
+    "cats": [
+      25
+    ],
+    "description": "ApexCharts is a modern JavaScript charting library that empowers developers to build interactive data visualizations for commercial and non-commercial projects.",
+    "icon": "apexcharts.svg",
+    "js": {
+      "ApexCharts": ""
+    },
+    "oss": true,
+    "website": "https://apexcharts.com"
   },
   "ApexPages": {
     "cats": [
@@ -4617,12 +4629,12 @@
     ],
     "description": "Azko CMS is a content management system developed by Azko (Septeo Group) specifically launched for lawyers in France.",
     "icon": "Azko CMS.svg",
+    "pricing": [
+      "poa"
+    ],
     "requires": [
       "Bootstrap",
       "Slick"
-    ],
-    "pricing": [
-      "poa"
     ],
     "saas": true,
     "scriptSrc": "//js\\.fw\\.azko\\.fr/",
