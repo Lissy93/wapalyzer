@@ -69,6 +69,24 @@
     ],
     "website": "https://eloomi.com"
   },
+  "EmailJS": {
+    "cats": [
+      75
+    ],
+    "description": "EmailJS is a cloud-based email delivery service that allows you to send emails directly from your client-side JavaScript code without the need for a server-side implementation.",
+    "icon": "EmailJS.svg",
+    "js": {
+      "emailjs.sendForm": ""
+    },
+    "saas": true,
+    "scriptSrc": "([\\d\\.]+)?(?:/dist)?/email\\.min\\.js\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.emailjs.com"
+  },
   "ELOG HTTP": {
     "cats": [
       22
