@@ -610,6 +610,16 @@
     "url": "^https?//.+\\.reactiveonline\\.io",
     "website": "https://reactiveonline.io"
   },
+  "ReadAloud": {
+    "cats": [
+      5
+    ],
+    "description": "This widget will work for all users, regardless of their operating system (desktop or mobile), regardless of the browser they're using, or whether they have the Read Aloud extension installed.",
+    "dom": "div#ra-player, div[data-skin*='assets\\.sitespeaker\\.link/embed/skins']",
+    "icon": "default.svg",
+    "website": "https://www.readaloudwidget.com",
+    "xhr": "assets\\.sitespeaker\\.link"
+  },
   "ReadMe": {
     "cats": [
       4,
@@ -941,6 +951,27 @@
     "saas": true,
     "website": "https://redcart.pl"
   },
+  "RedShop": {
+    "cats": [
+      6
+    ],
+    "description": "RedShop provides a platform for SMEs to manage their ecommerce business.",
+    "dom": "link[href*='//redshop.s3.amazonaws.com/']",
+    "icon": "RedShop.png",
+    "implies": [
+      "Amazon S3",
+      "TypeScript",
+      "Next.js",
+      "React"
+    ],
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.redshop.io"
+  },
   "Reddit": {
     "cats": [
       2
@@ -1009,27 +1040,6 @@
     "icon": "Redonner.svg",
     "scriptSrc": "\\.redonner\\.fr/",
     "website": "https://www.redonner.fr"
-  },
-  "RedShop": {
-    "cats": [
-      6
-    ],
-    "description": "RedShop provides a platform for SMEs to manage their ecommerce business.",
-    "icon": "RedShop.png",
-    "implies": [
-      "Amazon S3",
-      "TypeScript",
-      "Next.js",
-      "React"
-    ],
-    "dom": "link[href*='//redshop.s3.amazonaws.com/']",
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.redshop.io"
   },
   "Redux": {
     "cats": [
