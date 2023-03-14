@@ -927,25 +927,6 @@
     ],
     "website": "https://woocommerce.com/flexslider/"
   },
-  "FlippingBook": {
-    "cats": [
-      5
-    ],
-    "description": "FlippingBook is a web-based software platform that enables users to create, publish, and share digital publications such as magazines, brochures, catalogs, and presentations.",
-    "icon": "FlippingBook.svg",
-    "dom": "a[href*='flippingbook.com/'][target='_blank']",
-    "scriptSrc": "online\\.flippingbook\\.com/",
-    "js": {
-      "__flippingbook_csrf__": ""
-    },
-    "saas": true,
-    "pricing": [
-      "low",
-      "recurring",
-      "poa"
-    ],
-    "website": "https://flippingbook.com"
-  },
   "Flickity": {
     "cats": [
       59
@@ -958,6 +939,25 @@
     "oss": true,
     "scriptSrc": "flickity(?:/|@)([\\d\\.]+).+flickity(?:\\.pkgd)?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://flickity.metafizzy.co"
+  },
+  "FlippingBook": {
+    "cats": [
+      5
+    ],
+    "description": "FlippingBook is a web-based software platform that enables users to create, publish, and share digital publications such as magazines, brochures, catalogs, and presentations.",
+    "dom": "a[href*='flippingbook.com/'][target='_blank']",
+    "icon": "FlippingBook.svg",
+    "js": {
+      "__flippingbook_csrf__": ""
+    },
+    "pricing": [
+      "low",
+      "recurring",
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "online\\.flippingbook\\.com/",
+    "website": "https://flippingbook.com"
   },
   "Flits": {
     "cats": [
@@ -1101,6 +1101,18 @@
     "scriptSrc": "/wp-content/plugins/flying-analytics/",
     "website": "https://wordpress.org/plugins/flying-analytics/"
   },
+  "Flying Images": {
+    "cats": [
+      87
+    ],
+    "description": "Flying Images is a performance optimisation plugin for WordPress websites designed to reduce page load times and improve the user experience.",
+    "icon": "default.svg",
+    "js": {
+      "flyingImages": ""
+    },
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/nazy-load/"
+  },
   "Flying Pages": {
     "cats": [
       87,
@@ -1109,24 +1121,12 @@
     "description": "Flying Pages is a performance optimisation plugin for WordPress websites designed to reduce page load times and improve the user experience.",
     "dom": "link[href*='/wp-content/plugins/flying-pages/']",
     "icon": "Flying Pages.svg",
-    "requires": "WordPress",
     "js": {
       "flyingPages": ""
     },
+    "requires": "WordPress",
     "scriptSrc": "/wp-content/plugins/flying-pages/.+\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
     "website": "https://wordpress.org/plugins/flying-pages/"
-  },
-  "Flying Images": {
-    "cats": [
-      87
-    ],
-    "description": "Flying Images is a performance optimisation plugin for WordPress websites designed to reduce page load times and improve the user experience.",
-    "icon": "default.svg",
-    "requires": "WordPress",
-    "js": {
-      "flyingImages": ""
-    },
-    "website": "https://wordpress.org/plugins/nazy-load/"
   },
   "Flyspray": {
     "cats": [
@@ -2072,6 +2072,15 @@
     "saas": true,
     "scriptSrc": "\\.fullstory\\.com/",
     "website": "https://www.fullstory.com"
+  },
+  "FunCaptcha": {
+    "cats": [
+      16
+    ],
+    "description": "FunCaptcha is a type of CAPTCHA, which is a security measure used to protect websites and online services from spam, bots, and other forms of automated abuse.",
+    "icon": "fun_captcha.svg",
+    "website": "https://www.arkoselabs.com/arkose-matchkey/",
+    "xhr": "api\\.funcaptcha\\.com"
   },
   "Fundiin": {
     "cats": [
