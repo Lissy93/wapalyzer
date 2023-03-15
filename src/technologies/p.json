@@ -1207,9 +1207,6 @@
       "Webpack",
       "Node.js"
     ],
-    "js": {
-      "Phoenix": ""
-    },
     "meta": {
       "generator": "^phoenix"
     },
@@ -1222,6 +1219,9 @@
     "description": "Phoenix Framework is an open-source web application framework built using the Elixir programming language.",
     "icon": "Phoenix Framework.svg",
     "implies": "Elixir",
+    "js": {
+      "Phoenix.Channel": ""
+    },
     "oss": true,
     "website": "https://www.phoenixframework.org"
   },
