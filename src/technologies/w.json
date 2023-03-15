@@ -552,6 +552,35 @@
     "implies": "Haskell",
     "website": "http://www.stackage.org/package/warp"
   },
+  "Waveme": {
+    "cats": [
+      80
+    ],
+    "description": "Waveme is a WordPress theme that is suitable for individuals or businesses involved in the music industry, such as music producers, record labels, artist managers, or independent artists.",
+    "dom": "link[href*='/wp-content/themes/waveme/']",
+    "icon": "Waveme.svg",
+    "implies": [
+      "Gutenberg",
+      "Waveform"
+    ],
+    "pricing": [
+      "onetime"
+    ],
+    "requires": "WordPress",
+    "website": "http://music.flatfull.com/waveme/about/"
+  },
+  "Waveform": {
+    "cats": [
+      5
+    ],
+    "description": "Waveform is a media player that supports various media formats, including audio, video, Youtube, and Vimeo, and includes a waveform visualisation feature, utilising Web Audio API and HTML5 Canvas technologies.",
+    "icon": "Waveme.svg",
+    "js": {
+      "Waveform": ""
+    },
+    "requires": "WordPress",
+    "website": "http://music.flatfull.com/waveme/about/"
+  },
   "Wazimo": {
     "cats": [
       36
