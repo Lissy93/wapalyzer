@@ -2117,6 +2117,7 @@
     ],
     "description": "MkDocs is a static site generator, used for building project documentation.",
     "icon": "mkdocs.png",
+    "implies": "Python",
     "meta": {
       "generator": "^mkdocs-([\\d.]+)\\;version:\\1"
     },
