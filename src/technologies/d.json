@@ -1356,6 +1356,35 @@
     "saas": true,
     "website": "https://dotdigital.com"
   },
+  "Doteasy": {
+    "cats": [
+      88
+    ],
+    "description": "Doteasy is a web hosting company that provides web hosting services, domain registration, and other related services for businesses and individuals. The company was founded in 2000 and is based in Vancouver, Canada.",
+    "icon": "Doteasy.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.doteasy.com"
+  },
+  "Doteasy Website Builder": {
+    "cats": [
+      51
+    ],
+    "description": "Doteasy Website Builder is a tool provided by Doteasy, a web hosting company that enables users to create and personalise their own websites without necessitating any technical knowledge or expertise in website design.",
+    "icon": "Doteasy.svg",
+    "implies": "Doteasy",
+    "js": {
+      "fsData.fs": "\\.dotezcdn\\.com"
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.doteasy.com/website-builder/"
+  },
   "DoubleClick Ad Exchange (AdX)": {
     "cats": [
       36
