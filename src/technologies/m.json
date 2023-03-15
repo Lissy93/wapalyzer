@@ -352,7 +352,6 @@
       19
     ],
     "description": "Magewire is a Laravel Livewire port for Magento 2.",
-    "icon": "default.svg",
     "implies": [
       "Laravel",
       "Livewire"
@@ -1137,6 +1136,19 @@
     },
     "scriptSrc": "[^a-z]mtc.*\\.js",
     "website": "https://www.mautic.org/"
+  },
+  "Mavo": {
+    "cats": [
+      59
+    ],
+    "description": "Mavo is a JavaScript library that enables web developers to turn regular HTML into reactive web applications without the need for writing custom JavaScript.",
+    "icon": "default.svg",
+    "js": {
+      "Mavo.version": "v([\\d\\.]+)\\;version:\\1",
+      "Mavo": ""
+    },
+    "oss": true,
+    "website": "https://mavo.io"
   },
   "MaxCDN": {
     "cats": [
