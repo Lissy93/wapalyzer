@@ -170,6 +170,31 @@
     "saas": true,
     "website": "https://www.ueeshop.com"
   },
+  "Ultimate Addons for Elementor": {
+    "cats": [
+      87
+    ],
+    "description": "Ultimate Addons for Elementor is a plugin that adds new widgets and modules to the Elementor page builder for WordPress, providing additional design options and functionality.",
+    "dom": {
+      "link[href*='/wp-content/plugins/ultimate-elementor/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/ultimate-elementor/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "icon": "Ultimate Addons for Elementor.svg",
+    "implies": "Elementor",
+    "js": {
+      "uael_particles_script.particles_url": "/wp-content/plugins/ultimate-elementor/"
+    },
+    "pricing": [
+      "onetime",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://ultimateelementor.com"
+  },
   "Ultimate GDPR & CCPA": {
     "cats": [
       67,
@@ -857,31 +882,6 @@
     ],
     "saas": true,
     "website": "https://ulogin.ru"
-  },
-  "Ultimate Addons for Elementor": {
-    "cats": [
-      87
-    ],
-    "description": "Ultimate Addons for Elementor is a plugin that adds new widgets and modules to the Elementor page builder for WordPress, providing additional design options and functionality.",
-    "icon": "Ultimate Addons for Elementor.svg",
-    "implies": "Elementor",
-    "dom": {
-      "link[href*='/wp-content/plugins/ultimate-elementor/']": {
-        "attributes": {
-          "href": "/wp-content/plugins/ultimate-elementor/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
-        }
-      }
-    },
-    "js": {
-      "uael_particles_script.particles_url": "/wp-content/plugins/ultimate-elementor/"
-    },
-    "pricing": [
-      "onetime",
-      "low",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "website": "https://ultimateelementor.com"
   },
   "uMarketingSuite": {
     "cats": [

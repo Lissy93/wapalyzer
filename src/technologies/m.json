@@ -269,12 +269,12 @@
       "MadCap.Accessibility": "",
       "MadCap.DEBUG": ""
     },
-    "saas": true,
     "pricing": [
       "poa",
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.madcapsoftware.com"
   },
   "Magazord": {
@@ -1047,10 +1047,10 @@
       66
     ],
     "description": "Materialize CSS is a front-end framework that helps developers create responsive and mobile-first web applications. It is based on Google's Material Design guidelines.",
-    "icon": "Materialize CSS.svg",
     "dom": "link[href*='/materialize.min.css']",
-    "scriptSrc": "([\\d\\.]+)/.*/materialize\\.min\\.js\\;version:\\1",
+    "icon": "Materialize CSS.svg",
     "oss": true,
+    "scriptSrc": "([\\d\\.]+)/.*/materialize\\.min\\.js\\;version:\\1",
     "website": "http://materializecss.com"
   },
   "MathJax": {
@@ -1144,8 +1144,8 @@
     "description": "Mavo is a JavaScript library that enables web developers to turn regular HTML into reactive web applications without the need for writing custom JavaScript.",
     "icon": "default.svg",
     "js": {
-      "Mavo.version": "v([\\d\\.]+)\\;version:\\1",
-      "Mavo": ""
+      "Mavo": "",
+      "Mavo.version": "v([\\d\\.]+)\\;version:\\1"
     },
     "oss": true,
     "website": "https://mavo.io"

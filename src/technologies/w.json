@@ -185,6 +185,17 @@
     "scriptSrc": "/wp-content/plugins/wp-job-openings/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wpjobopenings.com"
   },
+  "WP Live Visitor Counter": {
+    "cats": [
+      87,
+      5
+    ],
+    "description": "WP Live Visitor Counter is a WordPress plugin that displays the number of online visitors on a website in real-time.",
+    "dom": "link[href*='/wp-content/plugins/wp-visitors-widget/']",
+    "icon": "default.svg",
+    "requires": "WordPress",
+    "website": "https://wordpress.org/plugins/wp-visitors-widget/"
+  },
   "WP Maintenance Mode": {
     "cats": [
       87
@@ -239,17 +250,6 @@
     "saas": true,
     "scriptSrc": "/wp-content/plugins/wp-rocket/",
     "website": "https://wp-rocket.me"
-  },
-  "WP Live Visitor Counter": {
-    "cats": [
-      87,
-      5
-    ],
-    "description": "WP Live Visitor Counter is a WordPress plugin that displays the number of online visitors on a website in real-time.",
-    "dom": "link[href*='/wp-content/plugins/wp-visitors-widget/']",
-    "icon": "default.svg",
-    "requires": "WordPress",
-    "website": "https://wordpress.org/plugins/wp-visitors-widget/"
   },
   "WP-Optimize": {
     "cats": [
@@ -526,22 +526,6 @@
     },
     "website": "https://en.wangsu.com"
   },
-  "wap.store": {
-    "cats": [
-      6
-    ],
-    "description": "The wap.store provides a range of services for ecommerce businesses, including a platform, a marketplace hub, and a digital agency.",
-    "icon": "wap.store.svg",
-    "implies": "MySQL",
-    "js": {
-      "WapStore.categoria": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.wapstore.com.br"
-  },
   "Warp": {
     "cats": [
       22
@@ -552,6 +536,18 @@
     "icon": "Warp.png",
     "implies": "Haskell",
     "website": "http://www.stackage.org/package/warp"
+  },
+  "Waveform": {
+    "cats": [
+      5
+    ],
+    "description": "Waveform is a media player that supports various media formats, including audio, video, Youtube, and Vimeo, and includes a waveform visualisation feature, utilising Web Audio API and HTML5 Canvas technologies.",
+    "icon": "Waveme.svg",
+    "js": {
+      "Waveform": ""
+    },
+    "requires": "WordPress",
+    "website": "http://music.flatfull.com/waveme/about/"
   },
   "Waveme": {
     "cats": [
@@ -567,18 +563,6 @@
     "pricing": [
       "onetime"
     ],
-    "requires": "WordPress",
-    "website": "http://music.flatfull.com/waveme/about/"
-  },
-  "Waveform": {
-    "cats": [
-      5
-    ],
-    "description": "Waveform is a media player that supports various media formats, including audio, video, Youtube, and Vimeo, and includes a waveform visualisation feature, utilising Web Audio API and HTML5 Canvas technologies.",
-    "icon": "Waveme.svg",
-    "js": {
-      "Waveform": ""
-    },
     "requires": "WordPress",
     "website": "http://music.flatfull.com/waveme/about/"
   },
@@ -776,23 +760,6 @@
     "scriptSrc": "cdn\\.webmetric\\.ir",
     "website": "https://webmetric.ir/"
   },
-  "Webolytics": {
-    "cats": [
-      10,
-      71
-    ],
-    "description": "Webolytics is an open API platform designed to track return on advertising spend.",
-    "icon": "Webolytics.svg",
-    "js": {
-      "webolytics_site_tag": "",
-      "webolytics_webhook_call": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.webolytics.com"
-  },
   "WebNode": {
     "cats": [
       1,
@@ -835,6 +802,25 @@
       "generator": "Incomedia WebSite X5 (\\w+ [\\d.]+)\\;version:\\1"
     },
     "website": "http://websitex5.com"
+  },
+  "WebToffee Stripe Payment Plugin for WooCommerce": {
+    "cats": [
+      87
+    ],
+    "description": "WebToffee Stripe Payment Plugin for WooCommerce is a software add-on that allows online retailers using the WooCommerce ecommerce platform to accept payments through the Stripe payment gateway.",
+    "dom": "link[href*='/wp-content/plugins/payment-gateway-stripe-and-woocommerce-integration/']",
+    "icon": "WebToffee.svg",
+    "implies": [
+      "Stripe",
+      "WooCommerce"
+    ],
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "requires": "WordPress",
+    "saas": true,
+    "website": "https://www.webtoffee.com/product/woocommerce-stripe-payment-gateway/"
   },
   "WebZi": {
     "cats": [
@@ -1005,6 +991,23 @@
     "oss": true,
     "website": "https://www.webmin.com"
   },
+  "Webolytics": {
+    "cats": [
+      10,
+      71
+    ],
+    "description": "Webolytics is an open API platform designed to track return on advertising spend.",
+    "icon": "Webolytics.svg",
+    "js": {
+      "webolytics_site_tag": "",
+      "webolytics_webhook_call": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.webolytics.com"
+  },
   "Webpack": {
     "cats": [
       19
@@ -1125,25 +1128,6 @@
     ],
     "icon": "websocket.png",
     "website": "https://en.wikipedia.org/wiki/WebSocket"
-  },
-  "WebToffee Stripe Payment Plugin for WooCommerce": {
-    "cats": [
-      87
-    ],
-    "description": "WebToffee Stripe Payment Plugin for WooCommerce is a software add-on that allows online retailers using the WooCommerce ecommerce platform to accept payments through the Stripe payment gateway.",
-    "dom": "link[href*='/wp-content/plugins/payment-gateway-stripe-and-woocommerce-integration/']",
-    "icon": "WebToffee.svg",
-    "implies": [
-      "Stripe",
-      "WooCommerce"
-    ],
-    "pricing": [
-      "recurring",
-      "low"
-    ],
-    "requires": "WordPress",
-    "saas": true,
-    "website": "https://www.webtoffee.com/product/woocommerce-stripe-payment-gateway/"
   },
   "Webtrends": {
     "cats": [
@@ -1465,17 +1449,17 @@
     ],
     "description": "WineDirect is an all-in-one ecommerce and POS (Point of Sale) platform that is specifically designed for wineries and wine retailers.",
     "icon": "WineDirect.svg",
+    "js": {
+      "vin65.checkout": "",
+      "vin65remote": ""
+    },
     "meta": {
       "generator": "^WineDirect\\sEcommerce"
     },
-    "js": {
-      "vin65remote": "",
-      "vin65.checkout": ""
-    },
-    "saas": true,
     "pricing": [
       "payg"
     ],
+    "saas": true,
     "website": "https://www.winedirect.com"
   },
   "Wink": {
@@ -2205,6 +2189,22 @@
     "saas": true,
     "scriptSrc": "\\.sistemawbuy\\.com\\.br/",
     "website": "https://www.wbuy.com.br"
+  },
+  "wap.store": {
+    "cats": [
+      6
+    ],
+    "description": "The wap.store provides a range of services for ecommerce businesses, including a platform, a marketplace hub, and a digital agency.",
+    "icon": "wap.store.svg",
+    "implies": "MySQL",
+    "js": {
+      "WapStore.categoria": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.wapstore.com.br"
   },
   "web-vitals": {
     "cats": [

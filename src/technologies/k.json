@@ -265,15 +265,15 @@
       "TypeScript"
     ],
     "js": {
-      "kapixVersion": "([\\d\\.]+)\\;version:\\1",
-      "__INITIAL_STATE__": "KapixNoCode"
+      "__INITIAL_STATE__": "KapixNoCode",
+      "kapixVersion": "([\\d\\.]+)\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://studio.kapix.fr"
   },
   "Kapture CRM": {
@@ -363,7 +363,7 @@
     "description": "Keen-Slider is a free library agnostic touch slider with native touch/swipe behavior.",
     "dom": "div.keen-slider, div.keen-slider__slide",
     "icon": "keen-slider.svg",
-     "js": {
+    "js": {
       "KeenSlider": ""
     },
     "oss": true,

@@ -251,20 +251,20 @@
       111
     ],
     "description": "Yapla is a web-based software platform that provides event management and fundraising solutions for non-profit organisations, associations, and event planners.",
-    "icon": "Yapla.png",
     "dom": "a[href*='\\.yapla\\.com/'][target='_blank']",
-    "meta": {
-      "generator": "^Yapla\\sv([\\d\\.]+)\\;version:\\1"
-    },
+    "icon": "Yapla.png",
     "js": {
       "yaplaConsent.cookieName": "yapla-consent"
     },
-    "saas": true,
+    "meta": {
+      "generator": "^Yapla\\sv([\\d\\.]+)\\;version:\\1"
+    },
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.yapla.com"
   },
   "Yaws": {
