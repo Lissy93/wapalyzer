@@ -947,12 +947,18 @@
     "cats": [
       6
     ],
+    "description": "OpenCart is a free and open-source ecommerce platform used for creating and managing online stores. It is written in PHP and uses a MySQL database to store information.",
+    "dom": "link[href*='catalog/view/theme/rgen-opencart/']",
     "cookies": {
       "OCSESSID": ""
     },
     "cpe": "cpe:2.3:a:opencart:opencart:*:*:*:*:*:*:*:*",
-    "icon": "OpenCart.png",
-    "implies": "PHP",
+    "icon": "OpenCart.svg",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "oss": true,
     "website": "http://www.opencart.com"
   },
   "OpenCities": {
