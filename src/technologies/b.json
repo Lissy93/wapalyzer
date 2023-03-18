@@ -2402,9 +2402,9 @@
     ],
     "description": "Bulma is a free class-based framework for CSS.",
     "dom": {
-      "link[href*='bulma.min.css']": {
+      "link[href*='bulma']": {
         "attributes": {
-          "href": "(?:([\\d\\.]+)/css/)?bulma\\.min\\.css\\;version:\\1"
+          "href": "(?:([\\d\\.]+)/css/)?bulma(?:-docs)?\\.min\\.css\\;version:\\1"
         }
       }
     },
