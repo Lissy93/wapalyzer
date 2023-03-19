@@ -2402,8 +2402,19 @@
     "headers": {
       "Server": "^BunnyCDN"
     },
-    "icon": "Bunny.png",
+    "icon": "Bunny.svg",
     "website": "https://bunny.net"
+  },
+  "Bunny Fonts": {
+    "cats": [
+      17
+    ],
+    "description": "Bunny Fonts is an open-source, privacy-first web font platform designed to put privacy back into the internet.",
+    "dom": "link[href*='fonts.bunny.net']",
+    "icon": "Bunny.svg",
+    "implies": "Bunny",
+    "oss": true,
+    "website": "https://fonts.bunny.net"
   },
   "Business Catalyst": {
     "cats": [
