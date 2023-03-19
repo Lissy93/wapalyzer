@@ -697,6 +697,18 @@
     "scriptSrc": "\\.youtube\\.com/",
     "website": "http://www.youtube.com"
   },
+  "YunoHost": {
+    "cats": [
+      28
+    ],
+    "cpe": "cpe:2.3:o:yunohost:yunohost:*:*:*:*:*:*:*:*",
+    "description": "YunoHost is a server operating system that is free and open-source, allowing users to host their own web applications, email services, and other online tools. It is based on Debian GNU/Linux.",
+    "icon": "YunoHost.svg",
+    "implies": "Debian",
+    "scriptSrc": "/ynh_portal\\.js",
+    "oss": true,
+    "website": "https://yunohost.org"
+  },
   "yellow.ai": {
     "cats": [
       52
