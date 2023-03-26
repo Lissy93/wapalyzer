@@ -123,10 +123,13 @@ const wappalyzer = new Wappalyzer()
     await wappalyzer.init()
 
     const results = await Promise.all(
-      urls.map(async (url) => ({
-        url,
-        results: await wappalyzer.open(url).analyze()
-      }))
+      urls.map(async (url) => {
+        const site = await wappalyzer.open(url)
+
+        const results = await site.analyze()
+
+        return { url, results }
+      })
     )
 
     console.log(JSON.stringify(results, null, 2))
