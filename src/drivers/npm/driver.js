@@ -65,17 +65,26 @@ function getJs(page, technologies = Wappalyzer.technologies) {
         chains.forEach((chain) => {
           chain = chain.replace(/\[([^\]]+)\]/g, '.$1')
 
-          const value = chain
-            .split('.')
-            .reduce(
-              (value, method) =>
-                value &&
-                value instanceof Object &&
-                Object.prototype.hasOwnProperty.call(value, method)
-                  ? value[method]
-                  : '__UNDEFINED__',
-              window
-            )
+          const parts = chain.split('.')
+
+          const root = /^[a-z_$][a-z0-9_$]*$/i.test(parts[0])
+            ? // eslint-disable-next-line no-new-func
+              new Function(
+                `return typeof ${
+                  parts[0]
+                } === 'undefined' ? undefined : ${parts.shift()}`
+              )()
+            : window
+
+          const value = parts.reduce(
+            (value, method) =>
+              value &&
+              value instanceof Object &&
+              Object.prototype.hasOwnProperty.call(value, method)
+                ? value[method]
+                : '__UNDEFINED__',
+            root || '__UNDEFINED__'
+          )
 
           if (value !== '__UNDEFINED__') {
             technologies.push({
