@@ -2594,8 +2594,12 @@
     "cats": [
       65
     ],
+    "description": "AWS ELB is a network load balancer service provided by Amazon Web Services for distributing traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions.",
     "cookies": {
       "AWSELB": ""
+    },
+    "headers": {
+      "Server": "awselb"
     },
     "icon": "Amazon ELB.svg",
     "implies": "Amazon Web Services",
