@@ -394,7 +394,7 @@ class Driver {
           try {
             await this.init()
           } catch (error) {
-            this.log(error.toString())
+            this.log(error)
           }
         }
       })
