@@ -557,9 +557,17 @@
     "cats": [
       5
     ],
-    "description": "Host unlimited podcasts with the world's only growth-oriented podcast host. Start your podcast within minutes, try for free now and launch today.",
-    "dom": "iframe[src*='//player\\.captivate\\.fm/episode']",
-    "icon": "captivate.png",
+     "description": "Captivate.fm is a podcast hosting and analytics platform that provides tools for creating, hosting, and distributing podcasts.",
+    "dom": "iframe[src*='player.captivate.fm/']",
+    "js": {
+      "CAPTIVATE_PLAYER_APP_URL": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "icon": "Captivate.fm.svg",
     "website": "https://www.captivate.fm"
   },
   "Carbon Ads": {
