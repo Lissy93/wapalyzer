@@ -1599,13 +1599,19 @@
     "cats": [
       57
     ],
-    "description": "Retype is an ultra-high-performance generator that builds a website based on simple text files. Focus on your writing while Retype builds the rest.",
-    "dom": "link[href*='/resources/css/retype\\.css']",
+    "description": "Retype is an open-source static site generator built with Node.js that allows users to create and manage websites with ease using Markdown as the primary content format.",
     "icon": "retype.svg",
     "meta": {
-      "generator": "Retype"
+      "generator": "Retype\\s([\\d\\.]+)?\\;version:\\1"
     },
-    "scriptSrc": "/resources/js/retype\\.js(?:\\?v=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "oss": true,
+    "implies": "Node.js",
     "website": "https://retype.com"
   },
   "RevJet": {
