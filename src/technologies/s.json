@@ -6760,7 +6760,7 @@
     "cats": [
       6
     ],
-    "description": "Sylius is an open source ecommerce framework based on Symfony full stack.",
+    "description": "Sylius is an open-source ecommerce framework based on Symfony full stack.",
     "dom": {
       "body.sylius_homepage": {
         "attributes": {
@@ -6770,6 +6770,11 @@
       "div#sylius-cart-button": {
         "attributes": {
           "id": ""
+        }
+      },
+      "img[src*='sylius_shop_product_tiny_thumbnail']": {
+        "attributes": {
+          "src": "/sylius_shop_product_tiny_thumbnail/"
         }
       }
     },
