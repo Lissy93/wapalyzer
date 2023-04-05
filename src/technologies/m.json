@@ -47,12 +47,30 @@
     ],
     "description": "MDBootstrap (Material Design for Bootstrap) is a complete UI package that can be integrated with other frameworks such as Angular, React, Vue, etc. It is used to design a fully responsive and mobile-friendly layout using various components, plugins, animation.",
     "icon": "MDBootstrap.png",
+    "implies": "Bootstrap",
     "js": {
       "mdb.ScrollSpy": ""
     },
     "oss": true,
     "scriptSrc": "(?:/mdbootstrap/([\\d\\.]+)/)?js/mdb\\.min\\.js\\;version:\\1",
     "website": "https://mdbootstrap.com"
+  },
+  "MDBootstrap WP theme": {
+    "cats": [
+      80
+    ],
+    "description": "MDBootstrap WP theme is a WordPress theme built on top of the MDBootstrap front-end UI library. It provides a set of pre-designed layouts, widgets, and components that can be easily customised and integrated into WordPress websites.",
+    "icon": "MDBootstrap.png",
+    "implies": "MDBootstrap",
+    "dom": {
+      "link[href*='/wp-content/themes/mdbootstrap']":{
+        "attributes": {
+          "href": "/wp-content/themes/mdbootstrap(?:\\d+)?/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "requires": "WordPress",
+    "website": "https://mdbgo.com/docs/projects/wordpress/"
   },
   "MDS Brand": {
     "cats": [
