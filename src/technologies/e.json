@@ -580,6 +580,9 @@
     "description": "Elementor is a website builder platform for professionals on WordPress.",
     "dom": "link[href*='/wp-content/plugins/elementor/']",
     "icon": "Elementor.svg",
+    "meta": {
+      "generator": "^Elementor\\s([\\d\\.]+)\\;version:\\1"
+    },
     "js": {
       "elementorFrontend.getElements": "",
       "elementorFrontendConfig.version": "([\\d\\.]+)\\;version:\\1"
