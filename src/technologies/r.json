@@ -1250,6 +1250,17 @@
     "oss": true,
     "website": "https://remix.run/"
   },
+  "Render": {
+    "cats": [
+      88
+    ],
+    "description": "Render is a unified cloud to build and run all your apps and websites with free TLS certificates, global CDN, private networks and auto deploys from Git.",
+    "headers": {
+      "x-render-origin-server": "Render"
+    },
+    "icon": "render.svg",
+    "website": "https://render.com"
+  },
   "Render Better": {
     "cats": [
       92,
@@ -1973,6 +1984,19 @@
     "saas": true,
     "website": "https://rive.app"
   },
+  "RoadRunner": {
+    "cats": [
+      22
+    ],
+    "description": "RoadRunner is a high-performance PHP application server, load balancer, and process manager written in Golang.",
+    "headers": {
+      "Server": "RoadRunner"
+    },
+    "icon": "RoadRunner.svg",
+    "implies": "PHP",
+    "oss": true,
+    "website": "https://roadrunner.dev"
+  },
   "Roadiz CMS": {
     "cats": [
       1,
@@ -1990,19 +2014,6 @@
       "generator": "^Roadiz ?(?:master|develop)? v?([0-9\\.]+)\\;version:\\1"
     },
     "website": "https://www.roadiz.io"
-  },
-  "RoadRunner": {
-    "cats": [
-      22
-    ],
-    "description": "RoadRunner is a high-performance PHP application server, load balancer, and process manager written in Golang.",
-    "headers": {
-      "Server": "RoadRunner"
-    },
-    "icon": "RoadRunner.svg",
-    "implies": "PHP",
-    "oss": true,
-    "website": "https://roadrunner.dev"
   },
   "Robin": {
     "cats": [
