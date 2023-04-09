@@ -71,15 +71,18 @@
       }
     },
     "icon": "Nacelle.svg",
+    "implies": "GraphQL",
     "js": {
-      "nacelleEventData": ""
+      "nacelleEventData": "",
+      "__NEXT_DATA__.props.pageProps.page.nacelleEntryId": ""
     },
     "pricing": [
       "high",
       "recurring"
     ],
     "saas": true,
-    "website": "https://nacelle.com"
+    "website": "https://nacelle.com",
+    "xhr": "storefront\\.api\\.nacelle\\.com"
   },
   "NagaCommerce": {
     "cats": [
