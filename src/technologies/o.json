@@ -293,13 +293,12 @@
   },
   "Odoo": {
     "cats": [
-      1,
-      6
+      1
     ],
     "cpe": "cpe:2.3:a:odoo:odoo:*:*:*:*:*:*:*:*",
     "description": "Odoo is business management software which includes CRM, ecommerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
     "html": "<link[^>]* href=[^>]+/web/css/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
-    "icon": "Odoo.png",
+    "icon": "Odoo.svg",
     "implies": [
       "Python",
       "PostgreSQL",
@@ -308,6 +307,9 @@
     ],
     "meta": {
       "generator": "Odoo"
+    },
+    "js": {
+      "odoo.session_info": ""
     },
     "oss": true,
     "scriptSrc": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
