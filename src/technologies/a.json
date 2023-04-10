@@ -3780,6 +3780,26 @@
     "saas": true,
     "website": "https://www.arcxp.com"
   },
+  "Arena": {
+    "cats": [
+      5
+    ],
+    "description": "Arena widget is an embeddable widget provided by the Arena platform, which allows users to embed live blogs directly on their website.",
+    "icon": "Arena.svg",
+    "dom": "iframe[scr*='//go.arena.im/']",
+    "js": {
+      "arenaHub.arenaIdentify": "",
+      "arenaim.initializeLiveblog": "",
+      "arenaLiveblog": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://arena.im"
+  },
   "ArcGIS API for JavaScript": {
     "cats": [
       35
