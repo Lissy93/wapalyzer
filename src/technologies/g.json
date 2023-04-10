@@ -1983,6 +1983,21 @@
     "scriptSrc": "cdn\\.shopify\\.com/extensions/.+/([\\d\\.]+)/assets/govalo\\.min\\.js\\;version:\\1",
     "website": "https://govalo.com"
   },
+  "GPT AI Power": {
+    "cats": [
+      87
+    ],
+    "description": "GPT AI Power is a WordPress plugin that offers a comprehensive AI package.",
+    "icon": "GPT AI Power.png",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/gpt3-ai-content-generator/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "website": "https://gptaipower.com"
+  },
   "Grab Pay Later": {
     "cats": [
       41,
