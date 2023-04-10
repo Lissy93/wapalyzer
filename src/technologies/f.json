@@ -1203,12 +1203,23 @@
         "attributes": {
           "href": "/font-awesome/([\\d\\.]+)/css/\\;version:\\1"
         }
+      },
+      "link[href*='kit-pro.fontawesome.com']": {
+        "attributes": {
+          "href": "/kit-pro\\.fontawesome\\.com/releases/v([\\d\\.]+)/\\;version:\\1"
+        }
+      },
+      "link[href*='awesome']": {
+        "attributes": {
+          "href": "(?:([\\d\\.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1"
+        }
+      },
+      "link[href*='fontawesome-free']": {
+        "attributes": {
+          "href": "/fontawesome-free(?:/|-)([\\d\\.]+)?\\;version:\\1"
+        }
       }
     },
-    "html": [
-      "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-      "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
-    ],
     "icon": "Font Awesome.svg",
     "js": {
       "FontAwesomeCdnConfig": "",
