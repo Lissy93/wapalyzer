@@ -187,6 +187,26 @@
     "scriptSrc": "easyhide\\.herculesapps\\.com/",
     "website": "https://apps.shopify.com/easyhide"
   },
+  "Easy Orders": {
+    "cats": [
+      6
+    ],
+    "description": "Easy Orders is an ecommerce platform that offers a pricing plan where users can create their online store and pay a fee of 0.5 EGP per order.",
+    "icon": "Easy Orders.png",
+    "requires": "Next.js",
+    "dom": "img[src*='easyorders.fra1.digitaloceanspaces.com/'], link[href*='easyorders.fra1.digitaloceanspaces.com/']",
+    "implies": [
+      "PostgreSQL",
+      "Go",
+      "Node.js"
+    ],
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.easy-orders.net",
+    "xhr": "api\\.easy-orders\\.net/"
+  },
   "Easy Redirects": {
     "cats": [
       100
