@@ -1209,6 +1209,24 @@
     "saas": true,
     "website": "https://www.searchfit.com"
   },
+  "SearchiQ": {
+    "cats": [
+      29
+    ],
+    "description": "SearchiQ is a cloud-based search engine solution that can be integrated into a website.",
+    "icon": "SearchiQ.svg",
+    "js": {
+      "siq_version": "([\\d\\.]+)\\;version:\\1",
+      "siqConfig.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.searchiq.co"
+  },
   "Searchanise": {
     "cats": [
       29
