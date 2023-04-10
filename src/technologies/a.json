@@ -2272,6 +2272,24 @@
     "saas": true,
     "website": "http://www.algolia.com"
   },
+  "Algolia DocSearch": {
+    "cats": [
+      5
+    ],
+    "description": "Algolia DocSearch is a search widget specifically designed for documentation websites.",
+    "icon": "DocSearch.svg",
+    "implies": "Algolia",
+    "js": {
+      "docsearch.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://docsearch.algolia.com"
+  },
   "Ali Reviews": {
     "cats": [
       90,
