@@ -4453,6 +4453,22 @@
     "scriptSrc": "socialladder\\.rkiapps\\.com/",
     "website": "https://socialladderapp.com"
   },
+  "Société des Avis Garantis": {
+    "cats": [
+      87,
+      90
+    ],
+    "description": "Société des Avis Garantis is a French company that provides customer review and rating services for businesses through its online platform.",
+    "icon": "Société des Avis Garantis.svg",
+    "scriptSrc": "/wp-content/plugins/ag-core/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+    "requires": "WordPress",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.societe-des-avis-garantis.fr"
+  },
   "Socket.io": {
     "cats": [
       12
