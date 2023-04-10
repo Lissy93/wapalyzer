@@ -746,17 +746,20 @@
       27,
       12
     ],
+    "description": "Elm is a statically typed functional programming language created by Evan Czaplicki in 2012 for building web applications.",
     "icon": "elm.svg",
     "js": {
       "Elm.Main.embed": "\\;version:0.18",
       "Elm.Main.init": "\\;version:0.19"
     },
+    "oss": true,
     "website": "https://elm-lang.org/"
   },
   "Elm-ui": {
     "cats": [
       66
     ],
+    "description": "Elm-UI is a library for creating user interfaces in Elm programming language. It provides a set of functions and abstractions for building responsive and reusable UI components, such as buttons, forms, and layouts, in a declarative and type-safe way.",
     "html": "<style>[\\s\\S]*\\.explain > \\.s[\\s\\S]*\\.explain > \\.ctr > \\.s",
     "icon": "elm.svg",
     "implies": "Elm",
