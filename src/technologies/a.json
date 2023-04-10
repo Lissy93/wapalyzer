@@ -2272,6 +2272,24 @@
     "saas": true,
     "website": "http://www.algolia.com"
   },
+  "Algolia DocSearch": {
+    "cats": [
+      5
+    ],
+    "description": "Algolia DocSearch is a search widget specifically designed for documentation websites.",
+    "icon": "DocSearch.svg",
+    "implies": "Algolia",
+    "js": {
+      "docsearch.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://docsearch.algolia.com"
+  },
   "Ali Reviews": {
     "cats": [
       90,
@@ -2303,6 +2321,23 @@
     "icon": "Alibaba Cloud.svg",
     "scriptSrc": "cf\\.aliyun\\.com/",
     "website": "https://help.aliyun.com/document_detail/193141.html"
+  },
+  "Alibaba Cloud Object Storage Service": {
+    "cats": [
+      63
+    ],
+    "description": "Alibaba Cloud Object Storage Service (OSS) is a cloud-based object storage service provided by Alibaba Cloud, which allows users to store and access large amounts of data in the cloud.",
+    "icon": "Alibaba Cloud.svg",
+    "headers": {
+      "x-oss-object-type": "",
+      "x-oss-storage-class": "",
+      "x-oss-request-id": ""
+    },
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://www.alibabacloud.com/product/object-storage-service"
   },
   "All in One SEO Pack": {
     "cats": [
@@ -3744,6 +3779,26 @@
     ],
     "saas": true,
     "website": "https://www.arcxp.com"
+  },
+  "Arena": {
+    "cats": [
+      5
+    ],
+    "description": "Arena widget is an embeddable widget provided by the Arena platform, which allows users to embed live blogs directly on their website.",
+    "icon": "Arena.svg",
+    "dom": "iframe[scr*='//go.arena.im/']",
+    "js": {
+      "arenaHub.arenaIdentify": "",
+      "arenaim.initializeLiveblog": "",
+      "arenaLiveblog": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://arena.im"
   },
   "ArcGIS API for JavaScript": {
     "cats": [

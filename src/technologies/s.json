@@ -1209,6 +1209,24 @@
     "saas": true,
     "website": "https://www.searchfit.com"
   },
+  "SearchiQ": {
+    "cats": [
+      29
+    ],
+    "description": "SearchiQ is a cloud-based search engine solution that can be integrated into a website.",
+    "icon": "SearchiQ.svg",
+    "js": {
+      "siq_version": "([\\d\\.]+)\\;version:\\1",
+      "siqConfig.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.searchiq.co"
+  },
   "Searchanise": {
     "cats": [
       29
@@ -2141,6 +2159,21 @@
     ],
     "saas": true,
     "website": "https://www.shippypro.com"
+  },
+  "ShipStation": {
+    "cats": [
+      99
+    ],
+    "description": "ShipStation is a web-based shipping software designed to help ecommerce businesses streamline their shipping processes. It allows businesses to import, manage, and ship their orders from multiple sales channels, including marketplaces, shopping carts, and ecommerce platforms.",
+    "dom": "a[href*='//track.shipstation.com/']",
+    "icon": "ShipStation.svg",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "url": "track\\.shipstation\\.com",
+    "website": "https://www.shipstation.com"
   },
   "Shoefitr.io": {
     "cats": [
@@ -3505,6 +3538,9 @@
     ],
     "icon": "Sitecore.svg",
     "implies": "Microsoft ASP.NET",
+    "js": {
+      "SitecoreUtilities": ""
+    },
     "pricing": [
       "poa",
       "recurring",
@@ -5914,9 +5950,12 @@
     "cats": [
       18
     ],
-    "description": "Stencil is a compiler that generates Web Components developed by the Ionic team.",
+    "description": "Stenciljs is an open-source web component compiler that enables developers to create reusable, interoperable UI components that can work across different frameworks and platforms.",
     "dom": "html[data-stencil-build][class*='hydrated'], stencil-router, stencil-route-link",
     "icon": "Stencil.svg",
+    "js": {
+      "stencil.inspect": ""
+    },
     "oss": true,
     "website": "https://stenciljs.com"
   },
@@ -6457,7 +6496,7 @@
       51
     ],
     "description": "Super Builder is a new tool for creating sleek landing pages right in Notion.",
-    "dom": "link[href*='super-static-assets.'], img[srcset*='super-static-assets.']",
+    "dom": "link[href*='super-static-assets.'], link[href*='super.so'], img[srcset*='super-static-assets.']",
     "icon": "Super Builder.svg",
     "implies": [
       "Notion",
@@ -6760,7 +6799,7 @@
     "cats": [
       6
     ],
-    "description": "Sylius is an open source ecommerce framework based on Symfony full stack.",
+    "description": "Sylius is an open-source ecommerce framework based on Symfony full stack.",
     "dom": {
       "body.sylius_homepage": {
         "attributes": {
@@ -6770,6 +6809,11 @@
       "div#sylius-cart-button": {
         "attributes": {
           "id": ""
+        }
+      },
+      "img[src*='sylius_shop_product_tiny_thumbnail']": {
+        "attributes": {
+          "src": "/sylius_shop_product_tiny_thumbnail/"
         }
       }
     },

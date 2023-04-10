@@ -187,6 +187,26 @@
     "scriptSrc": "easyhide\\.herculesapps\\.com/",
     "website": "https://apps.shopify.com/easyhide"
   },
+  "Easy Orders": {
+    "cats": [
+      6
+    ],
+    "description": "Easy Orders is an ecommerce platform that offers a pricing plan where users can create their online store and pay a fee of 0.5 EGP per order.",
+    "icon": "Easy Orders.png",
+    "requires": "Next.js",
+    "dom": "img[src*='easyorders.fra1.digitaloceanspaces.com/'], link[href*='easyorders.fra1.digitaloceanspaces.com/']",
+    "implies": [
+      "PostgreSQL",
+      "Go",
+      "Node.js"
+    ],
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://www.easy-orders.net",
+    "xhr": "api\\.easy-orders\\.net/"
+  },
   "Easy Redirects": {
     "cats": [
       100
@@ -580,6 +600,9 @@
     "description": "Elementor is a website builder platform for professionals on WordPress.",
     "dom": "link[href*='/wp-content/plugins/elementor/']",
     "icon": "Elementor.svg",
+    "meta": {
+      "generator": "^Elementor\\s([\\d\\.]+)\\;version:\\1"
+    },
     "js": {
       "elementorFrontend.getElements": "",
       "elementorFrontendConfig.version": "([\\d\\.]+)\\;version:\\1"
@@ -726,17 +749,20 @@
       27,
       12
     ],
+    "description": "Elm is a statically typed functional programming language created by Evan Czaplicki in 2012 for building web applications.",
     "icon": "elm.svg",
     "js": {
       "Elm.Main.embed": "\\;version:0.18",
       "Elm.Main.init": "\\;version:0.19"
     },
+    "oss": true,
     "website": "https://elm-lang.org/"
   },
   "Elm-ui": {
     "cats": [
       66
     ],
+    "description": "Elm-UI is a library for creating user interfaces in Elm programming language. It provides a set of functions and abstractions for building responsive and reusable UI components, such as buttons, forms, and layouts, in a declarative and type-safe way.",
     "html": "<style>[\\s\\S]*\\.explain > \\.s[\\s\\S]*\\.explain > \\.ctr > \\.s",
     "icon": "elm.svg",
     "implies": "Elm",
@@ -901,6 +927,27 @@
     },
     "scripts": "@overview\\s+Ember -[\\s\\S]+@version\\s+(.+)\\;version:\\1",
     "website": "http://emberjs.com"
+  },
+  "E-monsite": {
+    "cats": [
+      1
+    ],
+    "description": "E-monsite is a web-based platform that allows users to create and customise their own websites using a range of templates and features, without requiring coding or technical skills.",
+    "icon": "E-monsite.svg",
+    "implies": [
+      "Symfony",
+      "MySQL"
+    ],
+    "meta": {
+      "generator": "^e-monsite\\s\\(e-monsite\\.com\\)$"
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.e-monsite.com"
   },
   "Emotion": {
     "cats": [

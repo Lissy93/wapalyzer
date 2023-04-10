@@ -947,12 +947,18 @@
     "cats": [
       6
     ],
+    "description": "OpenCart is a free and open-source ecommerce platform used for creating and managing online stores. It is written in PHP and uses a MySQL database to store information.",
+    "dom": "link[href*='catalog/view/theme/rgen-opencart/']",
     "cookies": {
       "OCSESSID": ""
     },
     "cpe": "cpe:2.3:a:opencart:opencart:*:*:*:*:*:*:*:*",
-    "icon": "OpenCart.png",
-    "implies": "PHP",
+    "icon": "OpenCart.svg",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "oss": true,
     "website": "http://www.opencart.com"
   },
   "OpenCities": {
@@ -1918,6 +1924,21 @@
     "implies": "Perl",
     "scriptSrc": "^/otrs-web/js/",
     "website": "https://www.otrs.com"
+  },
+  "OTYS": {
+    "cats": [
+      101
+    ],
+    "description": "OTYS is a Dutch company that specialises in providing recruitment and staffing agencies with software solutions to manage their workflows, including applicant tracking systems, job board integrations, and candidate sourcing tools.",
+    "icon": "OTYS.svg",
+    "js": {
+      "OTYS.siteId": "",
+      "otysSelect": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.otys.nl"
   },
   "ownCloud": {
     "cats": [

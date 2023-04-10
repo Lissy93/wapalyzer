@@ -553,6 +553,23 @@
     "scriptSrc": "^https?://api\\.captchme\\.net/",
     "website": "http://captchme.com"
   },
+  "Captivate.fm": {
+    "cats": [
+      5
+    ],
+     "description": "Captivate.fm is a podcast hosting and analytics platform that provides tools for creating, hosting, and distributing podcasts.",
+    "dom": "iframe[src*='player.captivate.fm/']",
+    "js": {
+      "CAPTIVATE_PLAYER_APP_URL": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "icon": "Captivate.fm.svg",
+    "website": "https://www.captivate.fm"
+  },
   "Carbon Ads": {
     "cats": [
       36
@@ -2639,6 +2656,27 @@
     "saas": true,
     "website": "https://www.combeenation.com"
   },
+  "Combodo iTop": {
+    "cats": [
+      13,
+      19
+    ],
+    "description": "Combodo iTop is an open-source IT service management (ITSM) and IT operations management (ITOM) platform developed by Combodo, a software company based in France.",
+    "dom": {
+      "a[href*='combodo.com/itop'] > img": {
+        "attributes": {
+          "title": "iTop\\sVersion\\s([\\d\\.]+)\\;version:\\1"
+        }
+      }
+    },
+    "icon": "Combodo iTop.svg",
+    "saas": true,
+    "oss": true,
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://www.combodo.com/itop-193"
+  },
   "Comeet": {
     "cats": [
       5,
@@ -4245,10 +4283,11 @@
     "scriptSrc": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
     "website": "http://comscore.com"
   },
-  "commercelayer": {
+  "Commercelayer": {
     "cats": [
       6
     ],
+    "description": "Commercelayer is a headless ecommerce platform that permits businesses to create customisable and scalable online shopping experiences via an API-first architecture that allows developers to use any programming language or framework for building ecommerce sites and applications.",
     "icon": "commercelayer.svg",
     "pricing": [
       "mid",
