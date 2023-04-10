@@ -347,10 +347,7 @@
     ],
     "description": "Quill is a free open-source WYSIWYG editor.",
     "dom": {
-      "div[class*='ql-editor']": {
-        "exists": ""
-      },
-      "div[class*='quill']": {
+      "div[class*='ql-editor'], div[class*='quill']": {
         "exists": ""
       },
       "link[href*='cdn.quilljs.com/']": {
