@@ -1148,6 +1148,22 @@
     "scriptSrc": "/wp-content/plugins/flying-pages/.+\\.js(?:\\?ver=([\\d\\.]+))?\\;version:\\1",
     "website": "https://wordpress.org/plugins/flying-pages/"
   },
+  "FlyingPress": {
+    "cats": [
+      87,
+      92
+    ],
+    "description": "FlyingPress is a WordPress plugin that helps to improve website performance by optimising various aspects of a WordPress site. The plugin offers a range of features, including caching, image optimisation, lazy loading, database optimisation, and more.",
+    "dom": "link[href*='/wp-content/plugins/flying-press/']",
+    "icon": "FlyingPress.svg",
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/flying-press/",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://flying-press.com"
+  },
   "Flyspray": {
     "cats": [
       13
