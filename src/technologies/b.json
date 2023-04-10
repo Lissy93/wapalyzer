@@ -668,6 +668,27 @@
     "website": "https://www.bigdatacloud.com/packages/ip-geolocation",
     "xhr": "api\\.bigdatacloud\\.net"
   },
+  "Bigin": {
+    "cats": [
+      53
+    ],
+    "description": "Bigin is a cloud-based customer relationship management (CRM) software.",
+    "icon": "Bigin.png",
+    "js": {
+      "bigin._checkDataSize": "",
+      "bigin_search": "",
+      "biginCafe24DisableOptions": "",
+      "BIGIN_SDK_API": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "high",
+      "recurring"
+    ],
+    "scriptSrc": "sdk\\.bigin\\.io/",
+    "website": "https://en.bigin.io"
+  },
   "BigTree CMS": {
     "cats": [
       1
@@ -1042,6 +1063,19 @@
     "saas": true,
     "scriptSrc": "\\.getblue\\.io",
     "website": "https://web.getblue.io/en/"
+  },
+  "Bluestone PIM": {
+    "cats": [
+      95
+    ],
+    "description": "Bluestone PIM is primarily a product information management (PIM) solution, which is focused on managing and distributing product data across multiple channels. However, it also includes some features that are typically associated with digital asset management (DAM), such as the ability to manage and store product images, videos, and other digital assets.",
+    "dom": "img[src*='media.bluestonepim.com/'], img[data-srcset*='media.bluestonepim.com/']",
+    "icon": "Bluestone PIM.svg",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.bluestonepim.com"
   },
   "Blue Triangle": {
     "cats": [
@@ -2024,6 +2058,25 @@
     "requires": "WordPress",
     "website": "https://github.com/mtekk/Breadcrumb-NavXT"
   },
+  "Breakdance": {
+    "cats": [
+      51
+    ],
+    "description": "Breakdance is a page builder that features a drag-and-drop interface for users to create pages using full site editing functionality.",
+    "icon": "Breakdance.svg",
+    "js": {
+      "BreakdanceSwiper": "",
+      "BreakdanceHeaderBuilder": "",
+      "BreakdanceFrontend": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://breakdance.com"
+  },
   "Breinify": {
     "cats": [
       76
@@ -2402,9 +2455,9 @@
     ],
     "description": "Bulma is a free class-based framework for CSS.",
     "dom": {
-      "link[href*='bulma.min.css']": {
+      "link[href*='bulma']": {
         "attributes": {
-          "href": "(?:([\\d\\.]+)/css/)?bulma\\.min\\.css\\;version:\\1"
+          "href": "(?:([\\d\\.]+)/css/)?bulma(?:-docs)?\\.min\\.css\\;version:\\1"
         }
       }
     },

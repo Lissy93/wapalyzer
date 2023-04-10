@@ -1207,6 +1207,23 @@
     },
     "website": "http://www.reinvigorate.net"
   },
+  "Relewise": {
+    "cats": [
+      76
+    ],
+    "description": "Relewise is a platform that uses personalisation technology to provide customised online experiences through personalised search and recommendations.",
+    "icon": "Relewise.svg",
+    "dom": "link[href*='api.relewise.com/']",
+    "js": {
+      "relewiseTracking": "",
+      "relewiseConfig": ""
+    },
+    "saas": true,
+    "pricing": [
+      "payg"
+    ],
+    "website": "https://relewise.com"
+  },
   "Relais Colis": {
     "cats": [
       99
@@ -1260,6 +1277,15 @@
     },
     "icon": "render.svg",
     "website": "https://render.com"
+  },
+  "Remixd": {
+    "cats": [
+      5
+    ],
+    "description": "Remixd is a platform that enables podcast creators to efficiently produce and share their podcasts with a worldwide audience. The platform provides various tools and features to support podcast creation, hosting, and distribution, such as podcast hosting, analytics, monetisation, and social media integration.",
+    "icon": "remixd.svg",
+    "scriptSrc": "tags\\.remixd\\.com/player",
+    "website": "https://www.remixd.com"
   },
   "Render Better": {
     "cats": [
@@ -1605,6 +1631,25 @@
     ],
     "saas": true,
     "website": "https://returnly.com"
+  },
+  "Retype": {
+    "cats": [
+      57
+    ],
+    "description": "Retype is an open-source static site generator built with Node.js that allows users to create and manage websites with ease using Markdown as the primary content format.",
+    "icon": "retype.svg",
+    "meta": {
+      "generator": "Retype\\s([\\d\\.]+)?\\;version:\\1"
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring",
+      "onetime"
+    ],
+    "oss": true,
+    "implies": "Node.js",
+    "website": "https://retype.com"
   },
   "RevJet": {
     "cats": [

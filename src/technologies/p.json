@@ -1053,6 +1053,20 @@
     "scriptSrc": "/integrations/embed/periodic-embed-resize\\.js",
     "website": "https://periodic.is"
   },
+  "Peripl": {
+    "cats": [
+      10
+    ],
+    "description": "Peripl is a French software company that provides cloud-based software solutions for business management, including accounting, invoicing, payroll, and project management.",
+    "icon": "Peripl.png",
+    "dom": "script#peripl-script",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "low"
+    ],
+    "website": "https://www.peripl.fr"
+  },
   "Perl": {
     "cats": [
       27
@@ -1792,6 +1806,24 @@
     },
     "website": "http://planetplanet.org"
   },
+  "Plasmic": {
+    "cats": [
+      51
+    ],
+    "description": "Plasmic is a visual, no-code headless page/content builder for any website or codebase.",
+    "icon": "Plasmic.svg",
+    "dom": "div.plasmic_default__all",
+    "js": {
+      "__NEXT_DATA__.props.pageProps.plasmicData": ""
+    },
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.plasmic.app"
+  },
   "Platform.sh": {
     "cats": [
       62
@@ -2365,6 +2397,25 @@
     "saas": true,
     "scriptSrc": "ui\\.powerreviews\\.com",
     "website": "https://www.powerreviews.com/"
+  },
+  "PowerSchool": {
+    "cats": [
+      21
+    ],
+    "description": "PowerSchool is a widely used student information system (SIS) used by K-12 schools, districts, and other educational institutions to manage student data and information. The software is developed and marketed by PowerSchool Group LLC, which is based in California, USA.",
+    "icon": "PowerSchool.svg",
+    "headers": {
+      "content-security-policy": "\\.powerschool\\.com"
+    },
+    "meta": {
+      "application-name": "^PowerSchool$"
+    },
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring"
+    ],
+    "website": "https://www.powerschool.com"
   },
   "Powerboutique": {
     "cats": [
