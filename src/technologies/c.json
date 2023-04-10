@@ -553,6 +553,23 @@
     "scriptSrc": "^https?://api\\.captchme\\.net/",
     "website": "http://captchme.com"
   },
+  "Captivate.fm": {
+    "cats": [
+      5
+    ],
+     "description": "Captivate.fm is a podcast hosting and analytics platform that provides tools for creating, hosting, and distributing podcasts.",
+    "dom": "iframe[src*='player.captivate.fm/']",
+    "js": {
+      "CAPTIVATE_PLAYER_APP_URL": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "icon": "Captivate.fm.svg",
+    "website": "https://www.captivate.fm"
+  },
   "Carbon Ads": {
     "cats": [
       36
