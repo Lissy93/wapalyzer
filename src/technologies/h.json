@@ -714,8 +714,8 @@
       "SOA": "\\.hetzner\\.com"
     },
     "headers": {
-      "X-Powered-By": "Hetzner",
-      "Server": "HeRay"
+      "Server": "HeRay",
+      "X-Powered-By": "Hetzner"
     },
     "icon": "Hetzner.svg",
     "pricing": [
@@ -991,18 +991,6 @@
     "saas": true,
     "website": "https://www.homestead.com"
   },
-  "Hono": {
-    "cats": [
-        18
-    ],
-    "description": "Hono is a small, simple, and ultrafast web framework for the Edge.",
-    "headers": {
-      "X-Powered-By": "Hono"
-    },
-    "icon": "Hono.png",
-    "oss": true,
-    "website": "https://hono.dev"
-  },
   "Honeybadger": {
     "cats": [
       13
@@ -1019,6 +1007,18 @@
       "recurring"
     ],
     "website": "https://www.honeybadger.io"
+  },
+  "Hono": {
+    "cats": [
+      18
+    ],
+    "description": "Hono is a small, simple, and ultrafast web framework for the Edge.",
+    "headers": {
+      "X-Powered-By": "Hono"
+    },
+    "icon": "Hono.png",
+    "oss": true,
+    "website": "https://hono.dev"
   },
   "HostEurope": {
     "cats": [
@@ -1361,24 +1361,6 @@
     "requires": "WordPress",
     "website": "https://wordpress.org/plugins/leadin/"
   },
-  "Huddle": {
-    "cats": [
-      21
-    ],
-    "description": "Huddle is a digital product agency based in Amsterdam, Netherlands, specialising in developing and designing custom software solutions for startups and enterprises, including e-learning products, community platforms, and mobile applications.",
-    "icon": "Huddle.svg",
-    "dom": "link[href*='.thehuddle.nl/']",
-    "js": {
-      "HuddleUser": "",
-      "HuddleEvent": ""
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.thehuddle.nl"
-  },
   "Huberway": {
     "cats": [
       1
@@ -1411,6 +1393,24 @@
     "saas": true,
     "scriptSrc": "analytics\\.huberway\\.com/pixel/",
     "website": "https://www.huberway.com/analytics-software"
+  },
+  "Huddle": {
+    "cats": [
+      21
+    ],
+    "description": "Huddle is a digital product agency based in Amsterdam, Netherlands, specialising in developing and designing custom software solutions for startups and enterprises, including e-learning products, community platforms, and mobile applications.",
+    "dom": "link[href*='.thehuddle.nl/']",
+    "icon": "Huddle.svg",
+    "js": {
+      "HuddleEvent": "",
+      "HuddleUser": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.thehuddle.nl"
   },
   "Hugo": {
     "cats": [

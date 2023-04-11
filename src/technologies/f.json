@@ -420,8 +420,8 @@
       6
     ],
     "description": "FatherShops is an ecommerce platform.",
-    "icon": "FatherShops.png",
     "excludes": "OpenCart",
+    "icon": "FatherShops.png",
     "pricing": [
       "poa"
     ],
@@ -1170,12 +1170,12 @@
     "description": "FlyingPress is a WordPress plugin that helps to improve website performance by optimising various aspects of a WordPress site. The plugin offers a range of features, including caching, image optimisation, lazy loading, database optimisation, and more.",
     "dom": "link[href*='/wp-content/plugins/flying-press/']",
     "icon": "FlyingPress.svg",
-    "requires": "WordPress",
-    "scriptSrc": "/wp-content/plugins/flying-press/",
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "WordPress",
+    "scriptSrc": "/wp-content/plugins/flying-press/",
     "website": "https://flying-press.com"
   },
   "Flyspray": {
@@ -1229,24 +1229,24 @@
     ],
     "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
     "dom": {
-      "link[href*='font-awesome']": {
-        "attributes": {
-          "href": "/font-awesome/([\\d\\.]+)/css/\\;version:\\1"
-        }
-      },
-      "link[href*='kit-pro.fontawesome.com']": {
-        "attributes": {
-          "href": "/kit-pro\\.fontawesome\\.com/releases/v([\\d\\.]+)/\\;version:\\1"
-        }
-      },
       "link[href*='awesome']": {
         "attributes": {
           "href": "(?:([\\d\\.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1"
         }
       },
+      "link[href*='font-awesome']": {
+        "attributes": {
+          "href": "/font-awesome/([\\d\\.]+)/css/\\;version:\\1"
+        }
+      },
       "link[href*='fontawesome-free']": {
         "attributes": {
           "href": "/fontawesome-free(?:/|-)([\\d\\.]+)?\\;version:\\1"
+        }
+      },
+      "link[href*='kit-pro.fontawesome.com']": {
+        "attributes": {
+          "href": "/kit-pro\\.fontawesome\\.com/releases/v([\\d\\.]+)/\\;version:\\1"
         }
       }
     },

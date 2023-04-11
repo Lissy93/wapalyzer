@@ -2282,12 +2282,12 @@
     "js": {
       "docsearch.version": "([\\d\\.]+)\\;version:\\1"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://docsearch.algolia.com"
   },
   "Ali Reviews": {
@@ -2313,6 +2313,23 @@
     "scriptSrc": "\\.alicdn\\.com/",
     "website": "https://www.alibabacloud.com/product/content-delivery-network"
   },
+  "Alibaba Cloud Object Storage Service": {
+    "cats": [
+      63
+    ],
+    "description": "Alibaba Cloud Object Storage Service (OSS) is a cloud-based object storage service provided by Alibaba Cloud, which allows users to store and access large amounts of data in the cloud.",
+    "headers": {
+      "x-oss-object-type": "",
+      "x-oss-request-id": "",
+      "x-oss-storage-class": ""
+    },
+    "icon": "Alibaba Cloud.svg",
+    "pricing": [
+      "freemium",
+      "payg"
+    ],
+    "website": "https://www.alibabacloud.com/product/object-storage-service"
+  },
   "Alibaba Cloud Verification Code": {
     "cats": [
       16
@@ -2321,23 +2338,6 @@
     "icon": "Alibaba Cloud.svg",
     "scriptSrc": "cf\\.aliyun\\.com/",
     "website": "https://help.aliyun.com/document_detail/193141.html"
-  },
-  "Alibaba Cloud Object Storage Service": {
-    "cats": [
-      63
-    ],
-    "description": "Alibaba Cloud Object Storage Service (OSS) is a cloud-based object storage service provided by Alibaba Cloud, which allows users to store and access large amounts of data in the cloud.",
-    "icon": "Alibaba Cloud.svg",
-    "headers": {
-      "x-oss-object-type": "",
-      "x-oss-storage-class": "",
-      "x-oss-request-id": ""
-    },
-    "pricing": [
-      "freemium",
-      "payg"
-    ],
-    "website": "https://www.alibabacloud.com/product/object-storage-service"
   },
   "All in One SEO Pack": {
     "cats": [
@@ -2537,6 +2537,23 @@
     "implies": "Amazon Web Services",
     "website": "https://aws.amazon.com/rds/aurora"
   },
+  "Amazon CloudFront": {
+    "cats": [
+      31
+    ],
+    "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds.",
+    "dns": {
+      "CNAME": "^[a-z0-9]+\\.cloudfront.net\\.?$"
+    },
+    "headers": {
+      "Via": "\\(CloudFront\\)$",
+      "X-Amz-Cf-Id": ""
+    },
+    "icon": "Amazon Cloudfront.svg",
+    "implies": "Amazon Web Services",
+    "saas": true,
+    "website": "http://aws.amazon.com/cloudfront/"
+  },
   "Amazon CloudWatch RUM": {
     "cats": [
       78
@@ -2554,23 +2571,6 @@
     ],
     "saas": true,
     "website": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM.html"
-  },
-  "Amazon CloudFront": {
-    "cats": [
-      31
-    ],
-    "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds.",
-    "dns": {
-      "CNAME": "^[a-z0-9]+\\.cloudfront.net\\.?$"
-    },
-    "headers": {
-      "Via": "\\(CloudFront\\)$",
-      "X-Amz-Cf-Id": ""
-    },
-    "icon": "Amazon Cloudfront.svg",
-    "implies": "Amazon Web Services",
-    "saas": true,
-    "website": "http://aws.amazon.com/cloudfront/"
   },
   "Amazon Cognito": {
     "cats": [
@@ -2629,10 +2629,10 @@
     "cats": [
       65
     ],
-    "description": "AWS ELB is a network load balancer service provided by Amazon Web Services for distributing traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions.",
     "cookies": {
       "AWSELB": ""
     },
+    "description": "AWS ELB is a network load balancer service provided by Amazon Web Services for distributing traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions.",
     "headers": {
       "Server": "awselb"
     },
@@ -3780,26 +3780,6 @@
     "saas": true,
     "website": "https://www.arcxp.com"
   },
-  "Arena": {
-    "cats": [
-      5
-    ],
-    "description": "Arena widget is an embeddable widget provided by the Arena platform, which allows users to embed live blogs directly on their website.",
-    "icon": "Arena.svg",
-    "dom": "iframe[scr*='//go.arena.im/']",
-    "js": {
-      "arenaHub.arenaIdentify": "",
-      "arenaim.initializeLiveblog": "",
-      "arenaLiveblog": ""
-    },
-    "saas": true,
-    "pricing": [
-      "freemium",
-      "mid",
-      "recurring"
-    ],
-    "website": "https://arena.im"
-  },
   "ArcGIS API for JavaScript": {
     "cats": [
       35
@@ -3811,6 +3791,26 @@
       "basemaps\\.arcgis\\.com"
     ],
     "website": "https://developers.arcgis.com/javascript/"
+  },
+  "Arena": {
+    "cats": [
+      5
+    ],
+    "description": "Arena widget is an embeddable widget provided by the Arena platform, which allows users to embed live blogs directly on their website.",
+    "dom": "iframe[scr*='//go.arena.im/']",
+    "icon": "Arena.svg",
+    "js": {
+      "arenaHub.arenaIdentify": "",
+      "arenaLiveblog": "",
+      "arenaim.initializeLiveblog": ""
+    },
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://arena.im"
   },
   "Arreva": {
     "cats": [

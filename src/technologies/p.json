@@ -270,21 +270,6 @@
     "scriptSrc": "/wp-content/themes/page-builder-framework/.+site-min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://wp-pagebuilderframework.com"
   },
-  "Pagefai CMS": {
-    "cats": [
-      1
-    ],
-    "description": "Pagefai is a cloud-based platform that offers software-as-a-service solutions to businesses, including the Pagefai CMS which provides ecommerce functionality and other business tools.",
-    "icon": "Pagefai.png",
-    "headers": {
-      "x-powered-by": "PAGEFAI CMS"
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.pagefai.com"
-  },
   "PageFly": {
     "cats": [
       51
@@ -300,6 +285,21 @@
     "saas": true,
     "scriptSrc": "cdn\\.pagefly\\.io",
     "website": "https://pagefly.io"
+  },
+  "Pagefai CMS": {
+    "cats": [
+      1
+    ],
+    "description": "Pagefai is a cloud-based platform that offers software-as-a-service solutions to businesses, including the Pagefai CMS which provides ecommerce functionality and other business tools.",
+    "headers": {
+      "x-powered-by": "PAGEFAI CMS"
+    },
+    "icon": "Pagefai.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.pagefai.com"
   },
   "Pagekit": {
     "cats": [
@@ -1073,13 +1073,13 @@
       10
     ],
     "description": "Peripl is a French software company that provides cloud-based software solutions for business management, including accounting, invoicing, payroll, and project management.",
-    "icon": "Peripl.png",
     "dom": "script#peripl-script",
-    "saas": true,
+    "icon": "Peripl.png",
     "pricing": [
       "recurring",
       "low"
     ],
+    "saas": true,
     "website": "https://www.peripl.fr"
   },
   "Perl": {
@@ -1826,17 +1826,17 @@
       51
     ],
     "description": "Plasmic is a visual, no-code headless page/content builder for any website or codebase.",
-    "icon": "Plasmic.svg",
     "dom": "div.plasmic_default__all",
+    "icon": "Plasmic.svg",
     "js": {
       "__NEXT_DATA__.props.pageProps.plasmicData": ""
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.plasmic.app"
   },
   "Platform.sh": {
@@ -2418,18 +2418,18 @@
       21
     ],
     "description": "PowerSchool is a widely used student information system (SIS) used by K-12 schools, districts, and other educational institutions to manage student data and information. The software is developed and marketed by PowerSchool Group LLC, which is based in California, USA.",
-    "icon": "PowerSchool.svg",
     "headers": {
       "content-security-policy": "\\.powerschool\\.com"
     },
+    "icon": "PowerSchool.svg",
     "meta": {
       "application-name": "^PowerSchool$"
     },
-    "saas": true,
     "pricing": [
       "poa",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.powerschool.com"
   },
   "Powerboutique": {

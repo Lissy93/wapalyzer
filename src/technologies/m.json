@@ -60,15 +60,15 @@
       80
     ],
     "description": "MDBootstrap WP theme is a WordPress theme built on top of the MDBootstrap front-end UI library. It provides a set of pre-designed layouts, widgets, and components that can be easily customised and integrated into WordPress websites.",
-    "icon": "MDBootstrap.png",
-    "implies": "MDBootstrap",
     "dom": {
-      "link[href*='/wp-content/themes/mdbootstrap']":{
+      "link[href*='/wp-content/themes/mdbootstrap']": {
         "attributes": {
           "href": "/wp-content/themes/mdbootstrap(?:\\d+)?/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
         }
       }
     },
+    "icon": "MDBootstrap.png",
+    "implies": "MDBootstrap",
     "requires": "WordPress",
     "website": "https://mdbgo.com/docs/projects/wordpress/"
   },
@@ -2024,12 +2024,12 @@
     "js": {
       "__NEXT_DATA__.props.pageProps.favicons.browserconfig": "mintlify\\..+\\.amazonaws\\.com"
     },
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://mintlify.com"
   },
   "Miso": {
@@ -2669,10 +2669,10 @@
       88
     ],
     "description": "Motherhost is a web hosting company based in India that offers a range of hosting services, including shared hosting, VPS hosting, dedicated servers, and cloud hosting.",
-    "icon": "Motherhost.svg",
     "headers": {
       "platform": "^motherhost$"
     },
+    "icon": "Motherhost.svg",
     "pricing": [
       "recurring"
     ],

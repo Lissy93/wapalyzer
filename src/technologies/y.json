@@ -284,14 +284,14 @@
       51
     ],
     "description": "Ycode is a no-code development platform that allows users to create web and mobile applications without any coding skills.",
-    "icon": "Ycode.svg",
     "dom": "link[href*='.ycodeapp.com/']",
-    "saas": true,
+    "icon": "Ycode.svg",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.ycode.com"
   },
   "Yektanet": {
@@ -720,8 +720,8 @@
     "description": "YunoHost is a server operating system that is free and open-source, allowing users to host their own web applications, email services, and other online tools. It is based on Debian GNU/Linux.",
     "icon": "YunoHost.svg",
     "implies": "Debian",
-    "scriptSrc": "/ynh_portal\\.js",
     "oss": true,
+    "scriptSrc": "/ynh_portal\\.js",
     "website": "https://yunohost.org"
   },
   "yellow.ai": {

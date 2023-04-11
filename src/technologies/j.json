@@ -130,6 +130,19 @@
     "icon": "JTL Shop.svg",
     "website": "https://www.jtl-software.de/online-shopsystem"
   },
+  "JUST": {
+    "cats": [
+      41
+    ],
+    "description": "JUST is a one-click payment solution for online business and online shoppers.",
+    "icon": "JUST.svg",
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "scriptSrc": "checkout-button-.+/just-pay-button\\.js",
+    "website": "https://www.getjusto.com"
+  },
   "JW Player": {
     "cats": [
       14
@@ -682,11 +695,11 @@
       10,
       97
     ],
-    "description": "June is a product analytics for subscription businesses. It automatically generates graphs of the metrics users should track by connecting their segment account.",
-    "icon": "June.svg",
     "cookies": {
       "_june_session": ""
     },
+    "description": "June is a product analytics for subscription businesses. It automatically generates graphs of the metrics users should track by connecting their segment account.",
+    "icon": "June.svg",
     "pricing": [
       "mid",
       "freemium",
@@ -696,8 +709,8 @@
     "scriptSrc": [
       "static\\.june\\.so/analytics\\.js/"
     ],
-    "xhr": "a\\.june\\.so",
-    "website": "https://june.so"
+    "website": "https://june.so",
+    "xhr": "a\\.june\\.so"
   },
   "Junip": {
     "cats": [
@@ -755,19 +768,6 @@
     ],
     "saas": true,
     "scriptSrc": "\\.getjusto\\.com/",
-    "website": "https://www.getjusto.com"
-  },
-  "JUST": {
-    "cats": [
-      41
-    ],
-    "description": "JUST is a one-click payment solution for online business and online shoppers.",
-    "icon": "JUST.svg",
-    "pricing": [
-      "payg"
-    ],
-    "saas": true,
-    "scriptSrc": "checkout-button-.+/just-pay-button\\.js",
     "website": "https://www.getjusto.com"
   },
   "Justuno": {
