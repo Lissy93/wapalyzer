@@ -1,4 +1,3 @@
-// const os = require('os')
 const fs = require('fs')
 const dns = require('dns').promises
 const path = require('path')
@@ -16,6 +15,7 @@ const { CHROMIUM_BIN, CHROMIUM_DATA_DIR, CHROMIUM_WEBSOCKET, CHROMIUM_ARGS } =
 const chromiumArgs = CHROMIUM_ARGS
   ? CHROMIUM_ARGS.split(' ')
   : [
+      '--headless',
       '--single-process',
       '--no-sandbox',
       '--no-zygote',
@@ -399,7 +399,9 @@ class Driver {
         }
       })
     } catch (error) {
-      throw new Error(error.toString())
+      this.log(error)
+
+      throw new Error(error.message || error.toString())
     }
   }
 
