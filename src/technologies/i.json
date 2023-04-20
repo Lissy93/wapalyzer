@@ -894,7 +894,14 @@
       13
     ],
     "description": "Instatus is a status and incident communication tool.",
-    "dom": "a[href*='instatus.com'][target='_blank'], iframe[src*='.instatus.com']",
+    "dom": {
+      "a[href*='instatus.com'][target='_blank'], iframe[src*='.instatus.com']": {
+        "exists": ""
+      },
+      "a.footer__link": {
+        "text": "Powered by Instatus"
+      }
+    },
     "icon": "Instatus.svg",
     "pricing": [
       "freemium",
