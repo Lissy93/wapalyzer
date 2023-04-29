@@ -1666,6 +1666,9 @@
     "description": "LottieFiles is an open-source animation file format that's tiny, high quality, interactive, and can be manipulated at runtime.",
     "dom": "lottie-player, div[data-animation-type='lottie'], div[data-testid='lottie-player'], clipPath[id*='__lottie_element_']",
     "icon": "LottieFiles.svg",
+    "js": {
+      "lottie.version": "^(.+)$\\;version:\\1"
+    },
     "oss": true,
     "scriptSrc": [
       "/dist/lottie-player\\.js",
