@@ -3792,11 +3792,8 @@
   },
   "Skolengo": {
     "cats": [
-      1
+      21
     ],
-    "cookies": {
-      "KDE-EXT": ""
-    },
     "description": "Skolengo is an Education Management Software developed by Kosmos Education.",
     "icon": "Skolengo.svg",
     "implies": [
@@ -3806,7 +3803,7 @@
     ],
     "meta": {
       "generator": "Skolengo",
-      "version": "^([\\d.]+)$\\;version:\\1"
+      "version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:0"
     },
     "oss": false,
     "pricing": [
