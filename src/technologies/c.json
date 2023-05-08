@@ -3617,9 +3617,8 @@
     "cats": [
       1
     ],
-    "description": "Cosmic is a Headless CMS that empowers you to create, edit, and manage content across limitless websites and applications, from one convenient interface.",
-    "dom": "img[src*='.cosmicjs.com/'], img[data-src*='.cosmicjs.com/']",
-    "html": "<link [^>]*content=\"[^>]*\\.cosmicjs\\.com",
+    "description": "Cosmic is a cloud-based CMS that provides developers with an API and web interface for content management, enabling the creation of custom content types, relationship definitions, and webhooks for actions based on content changes.",
+    "dom": "link[href*='.cosmicjs.com/'], img[src*='.cosmicjs.com/'], img[data-src*='.cosmicjs.com/']",
     "icon": "cosmicjs.svg",
     "meta": {
       "twitter:site": "@CosmicJS"
