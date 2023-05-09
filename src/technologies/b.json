@@ -2553,7 +2553,7 @@
     ],
     "description": "Buttonizer is a WordPress plugin that allows website owners to add custom and eye-catching call-to-action (CTA) buttons to their websites.",
     "icon": "Buttonizer.svg",
-    "implies": "WordPress",
+    "requires": "WordPress",
     "js": {
       "Buttonizer": ""
     },
@@ -2561,6 +2561,10 @@
       "freemium",
       "recurring",
       "low"
+    ],
+    "scriptSrc": [
+      "wp-content/plugins/buttonizer-multifunctional-button/",
+      "cdn\\.buttonizer\\.io/"
     ],
     "website": "https://buttonizer.pro"
   },
