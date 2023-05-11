@@ -6697,6 +6697,10 @@
     ],
     "description": "Swagger UI is a collection of HTML, JavaScript, and CSS assets that dynamically generate documentation from a Swagger-compliant API.",
     "icon": "Swagger UI.svg",
+    "js": {
+      "SwaggerUIBundle": "",
+      "SwaggerUIStandalonePreset": ""
+    },
     "oss": true,
     "scriptSrc": "(?:/([\\d.]+))?/swagger-ui-bundle\\.js\\;version:\\1",
     "website": "https://swagger.io/tools/swagger-ui"
