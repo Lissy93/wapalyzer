@@ -3497,6 +3497,9 @@
     ],
     "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
     "icon": "Cookiebot.svg",
+    "js": {
+      "Cookiebot.version": "^(.+)$\\;version:\\1"
+    },
     "scriptSrc": "consent\\.cookiebot\\.com",
     "website": "http://www.cookiebot.com"
   },
