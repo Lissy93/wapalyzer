@@ -1056,6 +1056,26 @@
     "icon": "Kubernetes.svg",
     "website": "https://kubernetes.io/"
   },
+  "Kudobuzz": {
+    "cats": [
+      5
+    ],
+    "description": "Kudobuzz is a tool for collecting and managing customer reviews.",
+    "dom": {
+      "div[id*='kudobuzz_']": {
+        "exists": ""
+      }
+    },
+    "icon": "Kudobuzz.png",
+    "implies": [
+      "Svelte"
+    ],
+    "js": {
+      "Kudos": ""
+    },
+    "scriptSrc": "\\.kudobuzz\\.com/",
+    "website": "https://kudobuzz.com/"
+  },
   "KueskiPay": {
     "cats": [
       41,
