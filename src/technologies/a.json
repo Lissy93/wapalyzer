@@ -2253,6 +2253,7 @@
       "_ALGOLIA": ""
     },
     "description": "Algolia offers a hosted web search product delivering real-time results.",
+    "dom": "a[href*='algolia\\.com']",
     "headers": {
       "Content-Security-Policy": "\\.algolia"
     },
@@ -2263,6 +2264,7 @@
       "__GLOBAL__.algolia": "",
       "__NEXT_DATA__.props.pageProps.appSettings.ALGOLIA_APP_ID": "",
       "__algolia": "",
+      "__algolia.algoliasearch.version": "^(.+)$\\;version:\\1",
       "algoliasearch.version": "^(.+)$\\;version:\\1"
     },
     "pricing": [
@@ -3080,6 +3082,41 @@
     "icon": "Animate.css.svg",
     "oss": true,
     "website": "https://animate.style"
+  },
+  "Aniview Ad Server": {
+    "cats": [
+      36
+    ],
+    "description": "Aniview Ad Server is a technology developed by Aniview, a company that specialises in providing video advertising solutions. The Aniview Ad Server is a platform designed to manage and serve video ads to publishers, advertisers, and agencies.",
+    "dom": {
+      "link[href*='aniview.com']": {
+        "attributes": {
+          "href": "^(?!.*player).*aniview\\.com/"
+        }
+      }
+    },
+    "icon": "Aniview.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "^(?!.*player).*aniview\\.com/",
+    "website": "https://aniview.com/video-ad-servers/"
+  },
+  "Aniview Video Ad Player": {
+    "cats": [
+      14
+    ],
+    "description": "Aniview Video Ad Player is a video player technology developed by Aniview, a company that specialises in providing video advertising solutions.",
+    "dom": "link[href*='player.aniview.com']",
+    "icon": "Aniview.png",
+    "implies": "Aniview Ad Server",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "player\\.aniview\\.com/script/([\\d\\.]+)/\\;version:\\1",
+    "website": "https://aniview.com/video-ad-player/"
   },
   "AnswerDash": {
     "cats": [
@@ -4996,41 +5033,6 @@
     },
     "oss": true,
     "website": "https://animejs.com/"
-  },
-  "Aniview Ad Server": {
-    "cats": [
-      36
-    ],
-    "description": "Aniview Ad Server is a technology developed by Aniview, a company that specialises in providing video advertising solutions. The Aniview Ad Server is a platform designed to manage and serve video ads to publishers, advertisers, and agencies.",
-    "icon": "Aniview.png",
-    "dom": {
-      "link[href*='aniview.com']": {
-        "attributes": {
-          "href": "^(?!.*player).*aniview\\.com/"
-        }
-      }
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "^(?!.*player).*aniview\\.com/",
-    "website": "https://aniview.com/video-ad-servers/"
-  },
-  "Aniview Video Ad Player": {
-    "cats": [
-      14
-    ],
-    "description": "Aniview Video Ad Player is a video player technology developed by Aniview, a company that specialises in providing video advertising solutions.",
-    "icon": "Aniview.png",
-    "implies": "Aniview Ad Server",
-    "dom": "link[href*='player.aniview.com']",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "player\\.aniview\\.com/script/([\\d\\.]+)/\\;version:\\1",
-    "website": "https://aniview.com/video-ad-player/"
   },
   "augmented-ui": {
     "cats": [
