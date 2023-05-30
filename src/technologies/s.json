@@ -3790,6 +3790,30 @@
     "scriptSrc": "cdn\\.skio\\.com/",
     "website": "https://skio.com"
   },
+  "Skolengo": {
+    "cats": [
+      1,
+      21
+    ],
+    "description": "Skolengo is an Education Management Software developed by Kosmos Education.",
+    "icon": "Skolengo.svg",
+    "implies": [
+      "Java",
+      "MariaDB",
+      "Apache Tomcat"
+    ],
+    "meta": {
+      "generator": "Skolengo",
+      "version": "^([\\d\\.]+)$\\;version:\\1\\;confidence:0"
+    },
+    "oss": false,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.skolengo.com"
+  },
   "Sky-Shop": {
     "cats": [
       6
