@@ -410,10 +410,8 @@
         "spf\\.mandrillapp\\.com"
       ]
     },
+    "dom": "form#mc-embedded-subscribe-form, form[name*='mc-embedded-subscribe-form']",
     "html": [
-      "<form [^>]*data-mailchimp-url",
-      "<form [^>]*id=\"mc-embedded-subscribe-form\"",
-      "<form [^>]*name=\"mc-embedded-subscribe-form\"",
       "<input [^>]*id=\"mc-email\"\\;confidence:20",
       "<!-- Begin MailChimp Signup Form -->"
     ],
@@ -429,6 +427,7 @@
       "cdn-images\\.mailchimp\\.com/[^>]*\\.css",
       "chimpstatic\\.com/mcjs-connected"
     ],
+    "url": "^https?://(?:www\\.)?mailchi\\.mp",
     "website": "http://mailchimp.com"
   },
   "MailChimp for WooCommerce": {
