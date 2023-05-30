@@ -941,6 +941,23 @@
     ],
     "website": "https://putyourlightson.com/plugins/blitz"
   },
+  "Blitz.js": {
+    "cats": [
+      18
+    ],
+    "description": "Blitz.js is a web development framework that uses Next.js and React and includes features for authentication, authorization, and database integration to simplify the creation of high-performance and scalable web applications.",
+    "headers": {
+      "X-Powered-By": "^Blitz\\.js?([0-9.]+)?\\;version:\\1"
+    },
+    "icon": "blitzjs.svg",
+    "implies": "Next.js",
+    "js": {
+      "__BLITZ_MIDDLEWARE_HOOKS": "",
+      "__BLITZ_SUSPENSE_ENABLED": ""
+    },
+    "oss": true,
+    "website": "https://blitzjs.com"
+  },
   "Blocksy": {
     "cats": [
       80
@@ -2387,17 +2404,17 @@
     ],
     "description": "Bugsnag is a cross-platform error monitoring, reporting, and resolution software.",
     "icon": "BugSnag.svg",
+    "js": {
+      "Bugsnag": "",
+      "bugsnag": "",
+      "bugsnagClient": ""
+    },
     "pricing": [
       "payg",
       "freemium",
       "recurring"
     ],
     "saas": true,
-    "js": {
-      "Bugsnag": "",
-      "bugsnag": "",
-      "bugsnagClient": ""
-    },
     "scriptSrc": "/bugsnag.*\\.js",
     "website": "https://bugsnag.com"
   },
