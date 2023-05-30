@@ -922,6 +922,7 @@
     ],
     "description": "AdOpt is a consent tool that prioritises privacy and usability towards the LGPD.",
     "icon": "AdOpt.svg",
+    "implies": "Svelte",
     "js": {
       "adoptApp.domain": "",
       "adopt_website_code": ""
@@ -932,6 +933,7 @@
       "recurring"
     ],
     "saas": true,
+    "scriptSrc": "tag\\.goadopt\\.io/",
     "website": "https://goadopt.io"
   },
   "AdRecover": {
