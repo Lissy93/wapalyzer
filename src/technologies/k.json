@@ -1058,22 +1058,16 @@
   },
   "Kudobuzz": {
     "cats": [
-      5
+      90
     ],
     "description": "Kudobuzz is a tool for collecting and managing customer reviews.",
-    "dom": {
-      "div[id*='kudobuzz_']": {
-        "exists": ""
-      }
-    },
-    "icon": "Kudobuzz.png",
+    "icon": "Kudobuzz.svg",
     "implies": [
       "Svelte"
     ],
     "js": {
-      "Kudos": ""
+      "Kudos.apiServer": "api\\.kudobuzz\\.com"
     },
-    "scriptSrc": "\\.kudobuzz\\.com/",
     "website": "https://kudobuzz.com/"
   },
   "KueskiPay": {
