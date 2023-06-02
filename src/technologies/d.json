@@ -1795,10 +1795,26 @@
     ],
     "description": "Drupal Multisite enables separate, independent sites to be served from a single codebase.",
     "icon": "Drupal.svg",
-    "implies": "Drupal",
+    "requires": "Drupal",
     "oss": true,
+    "dom": {
+      "figure[style*='/sites/']": {
+        "attributes": {
+          "style": "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/"
+        }
+      },
+      "img[src*='/sites/'], img[srcset*='/sites/'], source[srcset*='/sites/']": {
+        "attributes": {
+          "src": "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/",
+          "srcset": "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/"
+        }
+      },
+      "style": {
+        "text": "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/"
+      }
+    },
     "scriptSrc": [
-      "/sites/(?!.*(default|all)).*/(?:files|themes|modules)/"
+      "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/"
     ],
     "website": "https://www.drupal.org/docs/multisite-drupal"
   },
