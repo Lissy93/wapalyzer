@@ -482,12 +482,32 @@
     "scriptSrc": "\\.vev\\.design/",
     "website": "https://www.vev.design"
   },
+  "Very Good Security": {
+    "cats": [
+      16
+    ],
+    "description": "Very Good Security (VGS) is a data security and compliance platform that enables developers to securely handle sensitive data by encrypting, tokenising, and transmitting it through an intermediary service.",
+    "icon": "Very Good Security.svg",
+    "headers": {
+      "Content-Security-Policy": "\\.verygoodvault\\.com"
+    },
+    "js": {
+      "VGSCollect": ""
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "js\\.verygoodvault\\.com/",
+    "website": "https://www.verygoodsecurity.com"
+  },
   "ViaBill": {
     "cats": [
       91
     ],
     "description": "ViaBill is a cloud-based payment management solution designed to help small to midsize retailers and webshops.",
-    "icon": "ViaBill.png",
+    "icon": "ViaBill.svg",
     "js": {
       "viabillOptions.state.subscriptions": "",
       "viabillPricetagInternal.conf.productsByLocale": ""
