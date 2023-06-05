@@ -1552,19 +1552,38 @@
     "scriptSrc": "api\\.pinpayments\\.com",
     "website": "https://www.pinpayments.com/"
   },
-  "Pingdom": {
+  "Pingdom RUM": {
     "cats": [
       78
     ],
-    "description": "Pingdom is a Swedish website monitoring software as a service company.",
+    "description": "Pingdom RUM(Real User Monitoring) is a feature of the Pingdom website monitoring and performance testing service. RUM enables you to collect and analyse data on how real users are experiencing your website.",
     "icon": "Pingdom.svg",
+    "js": {
+      "_prum": ""
+    },
     "pricing": [
       "payg",
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": "\\.pingdom\\.net",
-    "website": "https://www.pingdom.com"
+    "scriptSrc": "rum-static\\.pingdom\\.net",
+    "website": "https://www.pingdom.com/real-user-monitoring/"
+  },
+  "Pingdom Uptime Monitoring": {
+    "cats": [
+      13
+    ],
+    "description": "Pingdom Uptime Monitoring is a feature provided by the Pingdom website monitoring and performance testing service. It allows you to monitor the uptime and availability of your website.",
+    "icon": "Pingdom.svg",
+    "meta": {
+      "title": "^Pingdom Public Reports Overview$"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.pingdom.com/product/uptime-monitoring/"
   },
   "Pingoteam": {
     "cats": [
