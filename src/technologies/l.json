@@ -716,9 +716,21 @@
       59
     ],
     "cpe": "cpe:2.3:a:lightbox_photo_gallery_project:lightbox_photo_gallery:*:*:*:*:*:*:*:*",
-    "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
+    "description": "Lightbox is small javascript library used to overlay images on top of the current page.",
+    "dom": {
+      "link[href*='lightbox]": {
+        "attributes": {
+          "href": "/lightbox(?:\\.min)?\\.css"
+        }
+      }
+    },
     "icon": "Lightbox.png",
+    "js": {
+      "lightbox.$lightbox": "",
+      "Lightbox.activeImage": ""
+    },
     "scriptSrc": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
+    "oss": true,
     "website": "http://lokeshdhakar.com/projects/lightbox2/"
   },
   "Lightning": {
