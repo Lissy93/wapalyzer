@@ -175,7 +175,10 @@
     "cats": [
       1
     ],
-    "excludes": "Drupal",
+    "excludes": [
+      "Drupal",
+      "Drupal Multisite"
+    ],
     "headers": {
       "X-Backdrop-Cache": "",
       "X-Generator": "^Backdrop CMS(?:\\s([\\d.]+))?\\;version:\\1"
