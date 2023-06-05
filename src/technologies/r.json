@@ -2049,6 +2049,24 @@
     "saas": true,
     "website": "https://rive.app"
   },
+  "RND": {
+    "cats": [
+      6
+    ],
+    "description": "RND is a software technology used for companies to set up ecommerce infrastructure.",
+    "icon": "RND.png",
+    "requires": [
+      "Microsoft ASP.NET",
+      "New Relic"
+    ],
+    "dom": "div#rnd-mobile-menu, a[href*='www.rnd.com.tr/?utm_source='][target='_blank']",
+    "saas": true,
+    "scriptSrc": "/Scripts/plugins/rnd-mobilemenu/",
+    "pricing": [
+      "recurring"
+    ],
+    "website": "https://www.rnd.com.tr/en/"
+  },
   "RoadRunner": {
     "cats": [
       22
