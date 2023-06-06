@@ -577,9 +577,7 @@
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": [
-      "cdn\\.swellrewards\\.com/"
-    ],
+    "scriptSrc": "cdn(?:-loyalty)?\\.(?:swellrewards|yotpo)\\.com/",
     "website": "https://www.yotpo.com/platform/loyalty/"
   },
   "Yotpo Reviews": {
@@ -597,9 +595,7 @@
       "recurring"
     ],
     "saas": true,
-    "scriptSrc": [
-      "\\.yotpo\\.com/"
-    ],
+    "scriptSrc": "^(?!cdn-loyalty).*\\.yotpo\\.com/",
     "website": "https://www.yotpo.com/platform/reviews/"
   },
   "Yotpo SMSBump": {
