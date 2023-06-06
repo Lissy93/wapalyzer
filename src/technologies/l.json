@@ -818,6 +818,22 @@
     "requires": "WordPress",
     "website": "https://www.limitloginattempts.com"
   },
+  "Linen": {
+    "cats": [
+      2
+    ],
+    "description": "Linen is a real-time chat platform built for communities.",
+    "icon": "Linen.svg",
+    "implies": [
+      "TypeScript",
+      "Elixir"
+    ],
+    "js": {
+      "__NEXT_DATA__.props.pageProps.currentCommunity.logoUrl": "static\\.main\\.linendev\\.com/"
+    },
+   "oss": true,
+   "website": "https://www.linen.dev"
+  },
   "LinkSmart": {
     "cats": [
       36
