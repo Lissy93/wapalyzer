@@ -1761,8 +1761,7 @@
     "description": "Microsoft's Clarity is a analytics tool which provides website usage statistics, session recording, and heatmaps.",
     "icon": "Microsoft Clarity.svg",
     "js": {
-      "clarity": "",
-      "partytown.resolveUrl": ""
+      "clarity": ""
     },
     "pricing": [
       "freemium"
@@ -1921,6 +1920,10 @@
     ],
     "description": "Mighty Networks is a platform that facilitates the creation and management of online communities, offering customisable websites, discussion forums, member profiles, events, courses, and multimedia content sharing for individuals and organisations.",
     "icon": "Mighty Network.svg",
+    "implies": [
+      "Ruby on Rails",
+      "Ruby"
+    ],
     "js": {
       "Mighty.BroadcastBotApp": ""
     },
