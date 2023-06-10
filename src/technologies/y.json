@@ -365,13 +365,19 @@
   },
   "Yext": {
     "cats": [
-      29
+      29,
+      19
     ],
-    "description": "Yext is a hosted search-as-a-service platform.",
+    "description": "Yext is a technology company that provides a cloud-based platform for managing digital knowledge and online reputation.",
     "dom": "form.yxt-SearchBar-form",
     "icon": "Yext.svg",
     "js": {
-      "ANSWERS._analyticsReporterService._baseUrl": "\\.yext-pixel\\.com"
+      "ANSWERS._analyticsReporterService._baseUrl": "\\.yext-pixel\\.com",
+      "yextAnalyticsEnabled": "",
+      "Yext.BaseUrl": "",
+      "YextAnalyticsObject": "",
+      "yext_analytics": "",
+      "yext.analytics": ""
     },
     "pricing": [
       "high",
