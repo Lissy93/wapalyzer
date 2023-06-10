@@ -4100,7 +4100,7 @@
       },
       "link[href*='/_astro/']": {
         "attributes": {
-          "href": "/_astro/(?:common|index)(?:-|\\.)[\\d\\w]+\\.css"
+          "href": "/_astro/(?:[\\W\\w]+)(?:-|\\.)[\\d\\w]+\\.css"
         }
       }
     },
