@@ -207,6 +207,27 @@
     "implies": "PHP",
     "website": "http://vanillaforums.org"
   },
+  "Vant": {
+    "cats": [
+      66
+    ],
+    "description": "Vant is a lightweight, customisable Vue UI library for mobile web apps.",
+    "icon": "Vant.png",
+    "implies": "TypeScript",
+    "requires": "Vue.js",
+    "dom": {
+      "link[href*='/npm/vant']": {
+        "attributes": {
+          "href": "cdn\\.jsdelivr\\.net/npm/vant@([\\d\\.]+)/\\;version:\\1"
+        }
+      }
+    },
+    "js": {
+      "vant.version": "([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://github.com/youzan/vant"
+  },
   "Varbase": {
     "cats": [
       1
