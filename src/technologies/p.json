@@ -1893,11 +1893,28 @@
     "scriptSrc": "\\.lpcdn\\.site/",
     "website": "https://platformalp.ru"
   },
+  "PlatinMarket": {
+    "cats": [
+      6
+    ],
+    "description": "PlatinMarket is an ecommerce platform that provides solutions for online businesses to create and manage their online stores.",
+    "icon": "PlatinMarket.png",
+    "requires":"Microsoft ASP.NET",
+    "js": {
+      "PlatinMarket": ""
+    },
+    "scriptSrc": "//platincdn\\.com/",
+    "saas": true,
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.platinmarket.com"
+  },
   "Plausible": {
     "cats": [
       10
     ],
-    "cookies": {},
     "description": "Plausible is an open-source alternative to Google Analytics.",
     "icon": "Plausible.svg",
     "js": {
