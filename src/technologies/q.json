@@ -300,6 +300,23 @@
     },
     "website": "https://opensolution.org"
   },
+  "Quickbutik": {
+    "cats": [
+      6
+    ],
+    "description": "Quickbutik is an all-in-one ecommerce platform from Sweden.",
+    "icon": "Quickbutik.svg",
+    "meta": {
+      "author": "^Quickbutik$"
+    },
+    "saas": true,
+    "scriptSrc": "\\.quickbutik\\.com/",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://quickbutik.com"
+  },
   "QuickSell": {
     "cats": [
       6
@@ -319,7 +336,7 @@
       59,
       92
     ],
-    "description": "Quicklink is a JS library which aims to be a drop-in solution for sites to prefetch links based on what is in the user's viewport",
+    "description": "Quicklink is a JS library which aims to be a drop-in solution for sites to prefetch links based on what is in the user's viewport.",
     "icon": "Quicklink.svg",
     "js": {
       "drupalSettings.quicklink": "",
