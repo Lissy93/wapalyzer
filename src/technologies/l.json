@@ -1414,13 +1414,19 @@
     "cats": [
       10
     ],
-    "description": "LogRocket records videos of user sessions with logs and network data.",
+    "description": "LogRocket is a logging and session replay platform that helps developers identify and troubleshoot issues in web applications by recording and replaying user sessions, along with capturing logs and user interactions in real-time.",
     "icon": "LogRocket.svg",
-    "scriptSrc": [
-      "cdn\\.logrocket\\.(com|io)",
-      "cdn\\.lr-ingest\\.io"
+    "js": {
+      "LogRocket._buffer": ""
+    },
+    "scriptSrc": "cdn\\.(?:lr-ingest|logrocket)\\.(?:com|io)",
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
     ],
-    "website": "https://logrocket.com/"
+    "website": "https://logrocket.com"
   },
   "Loggly": {
     "cats": [
