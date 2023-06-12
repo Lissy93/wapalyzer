@@ -175,12 +175,17 @@
     "cats": [
       1
     ],
-    "excludes": "Drupal",
+    "cpe": "cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:*",
+    "description": "Backdrop is an open-source content management system (CMS) derived from Drupal 7, offering a user-friendly interface, customisable content types, taxonomies, views, theming capabilities, extensibility through modules, and regular security updates.",
+    "excludes": [
+      "Drupal",
+      "Drupal Multisite"
+    ],
     "headers": {
       "X-Backdrop-Cache": "",
       "X-Generator": "^Backdrop CMS(?:\\s([\\d.]+))?\\;version:\\1"
     },
-    "icon": "Backdrop.png",
+    "icon": "Backdrop.svg",
     "implies": "PHP",
     "js": {
       "Backdrop": ""
@@ -188,6 +193,7 @@
     "meta": {
       "generator": "^Backdrop CMS(?:\\s([\\d.]+))?\\;version:\\1"
     },
+    "oss": true,
     "website": "https://backdropcms.org"
   },
   "Baidu Analytics (百度统计)": {
