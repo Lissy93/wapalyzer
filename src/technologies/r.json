@@ -10,7 +10,7 @@
     "meta": {
       "generator": "RBS Change"
     },
-    "website": "http://www.rbschange.fr"
+    "website": "https://www.rbschange.fr"
   },
   "RCMS": {
     "cats": [
@@ -20,7 +20,7 @@
     "meta": {
       "generator": "^(?:RCMS|ReallyCMS)"
     },
-    "website": "http://www.rcms.fi"
+    "website": "https://www.rcms.fi"
   },
   "RD Station": {
     "cats": [
@@ -32,7 +32,7 @@
       "RDStation": ""
     },
     "scriptSrc": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/.*-loader\\.js",
-    "website": "http://rdstation.com.br"
+    "website": "https://rdstation.com.br"
   },
   "RDoc": {
     "cats": [
@@ -117,7 +117,7 @@
       "X-Powered-By": "RX-WEB"
     },
     "icon": "RXWeb.svg",
-    "website": "http://developers.rokitax.co.uk/projects/rxweb"
+    "website": "https://developers.rokitax.co.uk/projects/rxweb"
   },
   "RackCache": {
     "cats": [
@@ -130,6 +130,17 @@
     "icon": "RackCache.png",
     "implies": "Ruby",
     "website": "https://github.com/rtomayko/rack-cache"
+  },
+  "Radix UI": {
+    "cats": [
+      66
+    ],
+    "description": "Radix UI is a React-based user interface component library that offers accessible, responsive, and customisable components for building web applications.",
+    "icon": "Radix UI.svg",
+    "requires": "React",
+    "dom": "a[data-radix-collection-item], button[data-radix-collection-item]",
+    "oss": true,
+    "website": "https://www.radix-ui.com"
   },
   "Rain": {
     "cats": [
@@ -245,7 +256,7 @@
     ],
     "icon": "Ramda.png",
     "scriptSrc": "ramda.*\\.js",
-    "website": "http://ramdajs.com"
+    "website": "https://ramdajs.com"
   },
   "RankMath SEO": {
     "cats": [
@@ -427,7 +438,7 @@
     "meta": {
       "generator": "^Rayo"
     },
-    "website": "http://www.rayo.ir"
+    "website": "https://www.rayo.ir"
   },
   "Razorpay": {
     "cats": [
@@ -983,7 +994,7 @@
       "reddit": ""
     },
     "url": "^https?://(?:www\\.)?reddit\\.com",
-    "website": "http://code.reddit.com"
+    "website": "https://code.reddit.com"
   },
   "Reddit Ads": {
     "cats": [
@@ -1030,7 +1041,7 @@
     "meta": {
       "description": "Redmine"
     },
-    "website": "http://www.redmine.org"
+    "website": "https://www.redmine.org"
   },
   "Redonner": {
     "cats": [
@@ -1160,7 +1171,7 @@
     ],
     "saas": true,
     "scriptSrc": "\\.refersion\\.com",
-    "website": "http://refersion.com"
+    "website": "https://refersion.com"
   },
   "Reflektion": {
     "cats": [
@@ -1219,7 +1230,7 @@
     "js": {
       "reinvigorate": ""
     },
-    "website": "http://www.reinvigorate.net"
+    "website": "https://www.reinvigorate.net"
   },
   "Relais Colis": {
     "cats": [
@@ -1385,7 +1396,7 @@
       "requirejs.version": "^(.+)$\\;version:\\1"
     },
     "scriptSrc": "require.*\\.js",
-    "website": "http://requirejs.org"
+    "website": "https://requirejs.org"
   },
   "ResDiary": {
     "cats": [
@@ -1477,7 +1488,7 @@
     },
     "icon": "Resin.png",
     "implies": "Java",
-    "website": "http://caucho.com"
+    "website": "https://caucho.com"
   },
   "Resmio": {
     "cats": [
@@ -1714,7 +1725,7 @@
       "Reveal.VERSION": "^(.+)$\\;version:\\1"
     },
     "scriptSrc": "(?:^|/)reveal(?:\\.min)?\\.js",
-    "website": "http://lab.hakim.se/reveal-js"
+    "website": "https://lab.hakim.se/reveal-js"
   },
   "Revel": {
     "cats": [
@@ -1932,7 +1943,7 @@
       "Rickshaw": ""
     },
     "scriptSrc": "rickshaw(?:\\.min)?\\.js",
-    "website": "http://code.shutterstock.com/rickshaw/"
+    "website": "https://code.shutterstock.com/rickshaw/"
   },
   "RightJS": {
     "cats": [
@@ -2030,7 +2041,7 @@
     "meta": {
       "generator": "^RiteCMS(?: (.+))?\\;version:\\1"
     },
-    "website": "http://ritecms.com"
+    "website": "https://ritecms.com"
   },
   "Rive": {
     "cats": [
@@ -2048,6 +2059,24 @@
     ],
     "saas": true,
     "website": "https://rive.app"
+  },
+  "RND": {
+    "cats": [
+      6
+    ],
+    "description": "RND is a software technology used for companies to set up ecommerce infrastructure.",
+    "icon": "RND.png",
+    "requires": [
+      "Microsoft ASP.NET",
+      "New Relic"
+    ],
+    "dom": "div#rnd-mobile-menu, a[href*='www.rnd.com.tr/?utm_source='][target='_blank']",
+    "saas": true,
+    "scriptSrc": "/Scripts/plugins/rnd-mobilemenu/",
+    "pricing": [
+      "recurring"
+    ],
+    "website": "https://www.rnd.com.tr/en/"
   },
   "RoadRunner": {
     "cats": [
@@ -2090,7 +2119,7 @@
       "robin_settings": "",
       "robin_storage_settings": ""
     },
-    "website": "http://www.robinhq.com"
+    "website": "https://www.robinhq.com"
   },
   "RockRMS": {
     "cats": [
@@ -2108,7 +2137,7 @@
     "meta": {
       "generator": "^Rock v([0-9.]+)\\;version:\\1"
     },
-    "website": "http://www.rockrms.com"
+    "website": "https://www.rockrms.com"
   },
   "Rockerbox": {
     "cats": [
@@ -2237,7 +2266,7 @@
       "rcmail": "",
       "roundcube": ""
     },
-    "website": "http://roundcube.net"
+    "website": "https://roundcube.net"
   },
   "Route": {
     "cats": [
@@ -2283,7 +2312,7 @@
     "icon": "Rubicon Project.svg",
     "saas": true,
     "scriptSrc": "https?://[^/]*\\.rubiconproject\\.com",
-    "website": "http://rubiconproject.com/",
+    "website": "https://rubiconproject.com/",
     "xhr": "\\.rubiconproject\\.com"
   },
   "Ruby": {
@@ -2296,7 +2325,7 @@
       "Server": "(?:Mongrel|WEBrick|Ruby)"
     },
     "icon": "Ruby.png",
-    "website": "http://ruby-lang.org"
+    "website": "https://ruby-lang.org"
   },
   "Ruby Receptionists": {
     "cats": [
@@ -2389,7 +2418,7 @@
     },
     "oss": true,
     "scriptSrc": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
-    "website": "http://reactivex.io"
+    "website": "https://reactivex.io"
   },
   "Ryviu": {
     "cats": [
