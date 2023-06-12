@@ -2322,7 +2322,7 @@
     "cpe": "cpe:2.3:a:ruby-lang:ruby:*:*:*:*:*:*:*:*",
     "description": "Ruby is an open-source object-oriented programming language.",
     "headers": {
-      "Server": "(?:Mongrel|WEBrick|Ruby)"
+      "Server": "(?:Mongrel|Ruby(?:/([\\d\\.]+))?)\\;version:\\1"
     },
     "icon": "Ruby.png",
     "website": "https://ruby-lang.org"
@@ -2357,7 +2357,7 @@
       "Server": "mod_(?:rails|rack)",
       "X-Powered-By": "mod_(?:rails|rack)"
     },
-    "icon": "Ruby on Rails.png",
+    "icon": "Ruby on Rails.svg",
     "implies": "Ruby",
     "js": {
       "ReactOnRails": "",

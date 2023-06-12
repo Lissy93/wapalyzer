@@ -835,6 +835,19 @@
     "saas": true,
     "website": "https://www.webnode.com"
   },
+  "WEBrick": {
+    "cats": [
+      22
+    ],
+    "cpe": "cpe:2.3:a:ruby-lang:webrick:*:*:*:*:*:*:*:*",
+    "description": "WEBrick is a lightweight HTTP server library in Ruby, included in the standard library, primarily used for local development and testing of Ruby web applications.",
+    "icon": "Ruby.png",
+    "headers": {
+      "Server": "^WEBrick/([\\d\\.]+)\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://docs.ruby-lang.org/en/2.4.0/WEBrick.html"
+  },
   "WebRTC": {
     "cats": [
       19
