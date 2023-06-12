@@ -218,6 +218,21 @@
     "scripts": "kalturaPlayer",
     "website": "https://corp.kaltura.com"
   },
+  "KAMAR": {
+    "cats": [
+      21
+    ],
+    "description": "KAMAR is a Student Management System utilised by secondary schools.",
+    "icon": "KAMAR.svg",
+    "js": {
+     "KAMAR.has_address_ben_found": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://kamar.nz"
+  },
   "Kameleoon": {
     "cats": [
       74
@@ -378,7 +393,7 @@
       "X-Powered-By": "Kemal"
     },
     "icon": "kemalcr.png",
-    "website": "http://kemalcr.com"
+    "website": "https://kemalcr.com"
   },
   "Kendo UI": {
     "cats": [
@@ -419,7 +434,7 @@
       "/CMSPages/GetResource\\.ashx",
       "/kentico\\.resource"
     ],
-    "website": "http://www.kentico.com"
+    "website": "https://www.kentico.com"
   },
   "Keptify": {
     "cats": [
@@ -499,7 +514,7 @@
       "Server": "^keycdn-engine$"
     },
     "icon": "KeyCDN.png",
-    "website": "http://www.keycdn.com"
+    "website": "https://www.keycdn.com"
   },
   "Keybase": {
     "cats": [
@@ -537,7 +552,7 @@
       "Elasticsearch"
     ],
     "url": "kibana#/dashboard/",
-    "website": "http://www.elastic.co/products/kibana"
+    "website": "https://www.elastic.co/products/kibana"
   },
   "Kibo Commerce": {
     "cats": [
@@ -823,7 +838,7 @@
       "ko.version": "^(.+)$\\;version:\\1"
     },
     "oss": true,
-    "website": "http://knockoutjs.com"
+    "website": "https://knockoutjs.com"
   },
   "Ko-fi": {
     "cats": [
@@ -855,7 +870,7 @@
     },
     "icon": "Koa.png",
     "implies": "Node.js",
-    "website": "http://koajs.com"
+    "website": "https://koajs.com"
   },
   "Koala": {
     "cats": [
@@ -888,7 +903,7 @@
     "meta": {
       "generator": "^Koala Web Framework CMS"
     },
-    "website": "http://koala-framework.org"
+    "website": "https://koala-framework.org"
   },
   "KobiMaster": {
     "cats": [
@@ -935,7 +950,7 @@
     },
     "icon": "Kohana.png",
     "implies": "PHP",
-    "website": "http://kohanaframework.org"
+    "website": "https://kohanaframework.org"
   },
   "Koken": {
     "cats": [
@@ -957,7 +972,7 @@
       "generator": "Koken ([\\d.]+)\\;version:\\1"
     },
     "scriptSrc": "koken(?:\\.js\\?([\\d.]+)|/storage)\\;version:\\1",
-    "website": "http://koken.me"
+    "website": "https://koken.me"
   },
   "Komodo CMS": {
     "cats": [
@@ -968,7 +983,7 @@
     "meta": {
       "generator": "^Komodo CMS"
     },
-    "website": "http://www.komodocms.com"
+    "website": "https://www.komodocms.com"
   },
   "Konduto": {
     "cats": [
@@ -1031,7 +1046,7 @@
     "meta": {
       "generator": "Koobi"
     },
-    "website": "http://dream4.de/cms"
+    "website": "https://dream4.de/cms"
   },
   "Kooboo CMS": {
     "cats": [
@@ -1043,7 +1058,7 @@
     "icon": "Kooboo CMS.png",
     "implies": "Microsoft ASP.NET",
     "scriptSrc": "/Kooboo",
-    "website": "http://kooboo.com"
+    "website": "https://kooboo.com"
   },
   "Kooomo": {
     "cats": [
@@ -1073,7 +1088,7 @@
     ],
     "icon": "Kotisivukone.png",
     "scriptSrc": "kotisivukone(?:\\.min)?\\.js",
-    "website": "http://www.kotisivukone.fi"
+    "website": "https://www.kotisivukone.fi"
   },
   "Kotlin": {
     "cats": [
@@ -1141,6 +1156,20 @@
     "dom": "[ng-app='kubernetesDashboard']",
     "icon": "Kubernetes.svg",
     "website": "https://kubernetes.io/"
+  },
+  "Kudobuzz": {
+    "cats": [
+      90
+    ],
+    "description": "Kudobuzz is a tool for collecting and managing customer reviews.",
+    "icon": "Kudobuzz.svg",
+    "implies": [
+      "Svelte"
+    ],
+    "js": {
+      "Kudos.apiServer": "api\\.kudobuzz\\.com"
+    },
+    "website": "https://kudobuzz.com/"
   },
   "KueskiPay": {
     "cats": [
