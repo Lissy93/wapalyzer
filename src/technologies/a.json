@@ -4837,7 +4837,8 @@
   },
   "Azure CDN": {
     "cats": [
-      31
+      31,
+      23
     ],
     "description": "Azure Content Delivery Network (CDN) reduces load times, save bandwidth and speed responsiveness.",
     "headers": {
@@ -4847,6 +4848,19 @@
     "icon": "Azure.svg",
     "implies": "Azure",
     "website": "https://azure.microsoft.com/en-us/services/cdn/"
+  },
+  "Azure Edge Network": {
+    "cats": [
+      19
+    ],
+    "description": "Azure Edge Network is a global network infrastructure provided by Microsoft Azure. It is designed to deliver content, applications, and services to end-users with low latency and high performance. The Azure Edge Network consists of a combination of Azure Content Delivery Network (CDN), Azure Front Door, and Azure Traffic Manager.",
+    "dom": "link[href*='.azureedge.net/']",
+    "headers": {
+      "content-security-policy": "\\.azureedge\\.net"
+    },
+    "icon": "Azure.svg",
+    "scriptSrc": "\\.azureedge\\.net/",
+    "website": "https://learn.microsoft.com/en-us/azure/cdn/cdn-overview"
   },
   "Azure Front Door": {
     "cats": [
