@@ -1946,6 +1946,32 @@
     "scriptSrc": "/wp-content/themes/default/",
     "website": "https://wordpress.org/themes/default"
   },
+  "WordPress Multisite": {
+    "cats": [
+      88
+    ],
+    "description": "A multisite network is a collection of sites that all share the same WordPress installation core files. ",
+    "dom": {
+      "figure[style*='wp-content/uploads']": {
+        "attributes": {
+          "style": "wp-content/uploads/sites/\\d+"
+        }
+      },
+      "img[src*='wp-content/uploads'], img[srcset*='wp-content/uploads'], source[srcset*='wp-content/uploads']": {
+        "attributes": {
+          "src": "wp-content/uploads/sites/\\d+",
+          "srcset": "wp-content/uploads/sites/\\d+"
+        }
+      },
+      "style": {
+        "text": "wp-content/uploads/sites/\\d+"
+      }
+    },
+    "icon": "WordPress.svg",
+    "requires": "WordPress",
+    "oss": true,
+    "website": "https://wordpress.org/documentation/article/create-a-network/"
+  },
   "WordPress Super Cache": {
     "cats": [
       23,
