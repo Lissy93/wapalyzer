@@ -2876,20 +2876,21 @@
     "scriptSrc": "widgets\\.trustedshops\\.com/",
     "website": "https://www.trustedshops.co.uk"
   },
-  "Trustindex Google Reviews": {
+  "Trustindex": {
     "cats": [
-      87,
       90
     ],
-    "description": "Google Reviews s a premium plugin that can help you to embed reviews on your site by Trustindex.",
-    "dom": "link[href*='/wp-content/plugins/widget-google-reviews/']",
+    "description": "Trustindex is a review management tool that helps businesses effectively manage and monitor customer reviews.",
+    "dom": "link[href*='.trustindex.io/']",
     "icon": "Trustindex.svg",
+    "js": {
+      "Trustindex": ""
+    },
     "pricing": [
-      "onetime"
+      "low",
+      "recurring"
     ],
-    "requires": "WordPress",
     "saas": true,
-    "scriptSrc": "/wp-content/plugins/widget-google-reviews/",
     "website": "https://www.trustindex.io"
   },
   "Trustpilot": {
