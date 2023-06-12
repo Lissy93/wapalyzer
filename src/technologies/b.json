@@ -2616,6 +2616,22 @@
     "scriptSrc": "cdnjs\\.buymeacoffee\\.com/([\\d.]+)\\;version:\\1",
     "website": "https://www.buymeacoffee.com"
   },
+  "Buy with Prime": {
+    "cats": [
+      19
+    ],
+    "description": "Buy with Prime is a feature offered by Amazon that allows Amazon Prime members to make purchases with the benefits associated with their Prime membership.",
+    "implies": "Amazon Pay",
+    "js": {
+      "bwp.sku": ""
+    },
+    "pricing": [
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "code\\.buywithprime\\.amazon\\.com/",
+    "website": "https://buywithprime.amazon.com"
+  },
   "BuySellAds": {
     "cats": [
       36
