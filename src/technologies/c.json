@@ -4383,16 +4383,19 @@
     "description": "commercetools is a headless commerce platform.",
     "dom": "link[href*='.commercetools.com/'], body[data-commerce-tools-host*='.commercetools.com']",
     "icon": "commercetools.svg",
+    "implies": "GraphQL",
     "js": {
       "COMMERCE_TOOLS_HOST_ATT": "",
-      "COMMERCE_TOOLS_PROJECT_KEY_ATT": ""
+      "COMMERCE_TOOLS_PROJECT_KEY_ATT": "",
+      "__NEXT_DATA__.props.pageProps.commercetoolsEntity": ""
     },
     "pricing": [
       "poa",
       "recurring"
     ],
     "saas": true,
-    "website": "https://commercetools.com"
+    "website": "https://commercetools.com",
+    "xhr": "\\.commercetools\\.com/"
   },
   "core-js": {
     "cats": [
