@@ -862,18 +862,23 @@
    "oss": true,
    "website": "https://www.linen.dev"
   },
-  "LinkSmart": {
+  "LinkMink": {
     "cats": [
-      36
+      10,
+      71
     ],
-    "icon": "LinkSmart.png",
+    "description": "LinkMink is an affiliate tracking and management for SaaS companies.",
+    "icon": "LinkMink.svg",
     "js": {
-      "LS_JSON": "",
-      "LinkSmart": "",
-      "_mb_site_guid": ""
+      "LinkMink": ""
     },
-    "scriptSrc": "^https?://cdn\\.linksmart\\.com/linksmart_([\\d.]+?)(?:\\.min)?\\.js\\;version:\\1",
-    "website": "https://linksmart.com"
+    "scriptSrc": "cdn\\.linkmink\\.com/lm-js/([\\d\\.]+)/\\;version:\\1",
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://linkmink.com"
   },
   "Linkedin Ads": {
     "cats": [
