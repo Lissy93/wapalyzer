@@ -75,11 +75,11 @@
     "cats": [
       79
     ],
-    "description": "IP2Location.io is a web service that provides geolocation data based on IP addresses through its API, allowing developers to integrate accurate physical location information into their applications.",
-    "icon": "IP2Location.io.svg",
     "cookies": {
       "ip2location_redirection_first_visit": ""
     },
+    "description": "IP2Location.io is a web service that provides geolocation data based on IP addresses through its API, allowing developers to integrate accurate physical location information into their applications.",
+    "icon": "IP2Location.io.svg",
     "pricing": [
       "mid",
       "freemium",
@@ -895,11 +895,11 @@
     ],
     "description": "Instatus is a status and incident communication tool.",
     "dom": {
-      "a[href*='instatus.com'][target='_blank'], iframe[src*='.instatus.com']": {
-        "exists": ""
-      },
       "a.footer__link": {
         "text": "Powered by Instatus"
+      },
+      "a[href*='instatus.com'][target='_blank'], iframe[src*='.instatus.com']": {
+        "exists": ""
       }
     },
     "icon": "Instatus.svg",

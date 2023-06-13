@@ -81,6 +81,24 @@
     ],
     "website": "https://www.reg.ru"
   },
+  "RND": {
+    "cats": [
+      6
+    ],
+    "description": "RND is a software technology used for companies to set up ecommerce infrastructure.",
+    "dom": "div#rnd-mobile-menu, a[href*='www.rnd.com.tr/?utm_source='][target='_blank']",
+    "icon": "RND.png",
+    "pricing": [
+      "recurring"
+    ],
+    "requires": [
+      "Microsoft ASP.NET",
+      "New Relic"
+    ],
+    "saas": true,
+    "scriptSrc": "/Scripts/plugins/rnd-mobilemenu/",
+    "website": "https://www.rnd.com.tr/en/"
+  },
   "RSS": {
     "cats": [
       19
@@ -136,10 +154,10 @@
       66
     ],
     "description": "Radix UI is a React-based user interface component library that offers accessible, responsive, and customisable components for building web applications.",
-    "icon": "Radix UI.svg",
-    "requires": "React",
     "dom": "a[data-radix-collection-item], button[data-radix-collection-item]",
+    "icon": "Radix UI.svg",
     "oss": true,
+    "requires": "React",
     "website": "https://www.radix-ui.com"
   },
   "Rain": {
@@ -1897,23 +1915,6 @@
     "saas": true,
     "website": "https://www.rezgo.com"
   },
-  "RichRelevance": {
-    "cats": [
-      76
-    ],
-    "description": "RichRelevance is a cloud-based omnichannel personalisation platform built to help Retailers, B2B, financial services, travel and hospitality, and branded manufacturers personalise their customer experiences.",
-    "icon": "RichRelevance.png",
-    "js": {
-      "RR.U": "\\;confidence:50",
-      "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50"
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.richrelevance\\.com/",
-    "website": "https://richrelevance.com"
-  },
   "Rich Plugins Reviews": {
     "cats": [
       87,
@@ -1931,6 +1932,23 @@
     "saas": true,
     "scriptSrc": "/wp-content/plugins/widget-google-reviews/",
     "website": "https://richplugins.com/business-reviews-bundle-wordpress-plugin"
+  },
+  "RichRelevance": {
+    "cats": [
+      76
+    ],
+    "description": "RichRelevance is a cloud-based omnichannel personalisation platform built to help Retailers, B2B, financial services, travel and hospitality, and branded manufacturers personalise their customer experiences.",
+    "icon": "RichRelevance.png",
+    "js": {
+      "RR.U": "\\;confidence:50",
+      "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.richrelevance\\.com/",
+    "website": "https://richrelevance.com"
   },
   "Richpanel": {
     "cats": [
@@ -2077,24 +2095,6 @@
     ],
     "saas": true,
     "website": "https://rive.app"
-  },
-  "RND": {
-    "cats": [
-      6
-    ],
-    "description": "RND is a software technology used for companies to set up ecommerce infrastructure.",
-    "icon": "RND.png",
-    "requires": [
-      "Microsoft ASP.NET",
-      "New Relic"
-    ],
-    "dom": "div#rnd-mobile-menu, a[href*='www.rnd.com.tr/?utm_source='][target='_blank']",
-    "saas": true,
-    "scriptSrc": "/Scripts/plugins/rnd-mobilemenu/",
-    "pricing": [
-      "recurring"
-    ],
-    "website": "https://www.rnd.com.tr/en/"
   },
   "RoadRunner": {
     "cats": [

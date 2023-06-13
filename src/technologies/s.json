@@ -178,6 +178,22 @@
     "scriptSrc": "/sim(?:site|core)/js",
     "website": "https://simgroep.nl/internet/portfolio-contentbeheer_41623/"
   },
+  "SNO Flex": {
+    "cats": [
+      80
+    ],
+    "description": "SNO Flex is a WordPress theme developed by SNO Sites. SNO Sites is a company that specialises in providing website solutions for schools and educational institutions.",
+    "icon": "SNO.svg",
+    "js": {
+      "sno_infographics_ajax_object": ""
+    },
+    "pricing": [
+      "onetime",
+      "recurring"
+    ],
+    "requires": "WordPress",
+    "website": "https://snosites.com"
+  },
   "SOBI 2": {
     "cats": [
       19
@@ -3248,22 +3264,6 @@
     "url": "^https?//.+\\.sirclo\\.me",
     "website": "https://sirclo.com/"
   },
-  "Sirge": {
-    "cats": [
-      10,
-      100
-    ],
-    "description": "Sirge is an analytics platform that tracks website visits, customer behavior, and provides insights to optimise return on ad spend (ROAS) and conversions.",
-    "icon": "Sirge.svg",
-    "requires": "Shopify",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "scriptSrc": "cdn\\.app\\.sirge\\.com/",
-    "website": "https://www.sirge.com"
-  },
   "Sirdata": {
     "cats": [
       97,
@@ -3285,6 +3285,22 @@
       "js\\.sddan\\.com/"
     ],
     "website": "https://www.sirdata.com"
+  },
+  "Sirge": {
+    "cats": [
+      10,
+      100
+    ],
+    "description": "Sirge is an analytics platform that tracks website visits, customer behavior, and provides insights to optimise return on ad spend (ROAS) and conversions.",
+    "icon": "Sirge.svg",
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "requires": "Shopify",
+    "saas": true,
+    "scriptSrc": "cdn\\.app\\.sirge\\.com/",
+    "website": "https://www.sirge.com"
   },
   "Site Kit": {
     "cats": [
@@ -3912,12 +3928,12 @@
     ],
     "description": "Sleekplan is a customer feedback and product management platform that enables businesses to collect, analyse, and act upon user feedback, prioritise feature requests, track bugs, and collaborate on product development.",
     "icon": "Sleekplan.svg",
-    "requires": "Vue.js",
     "pricing": [
       "freemium",
       "low",
       "recurring"
     ],
+    "requires": "Vue.js",
     "saas": true,
     "scriptSrc": "\\.sleekplan\\.com/",
     "website": "https://sleekplan.com"
@@ -4409,22 +4425,6 @@
     "saas": true,
     "scriptSrc": "\\.sniperfast\\.com",
     "website": "https://www.sniperfast.com"
-  },
-  "SNO Flex": {
-    "cats": [
-      80
-    ],
-    "description": "SNO Flex is a WordPress theme developed by SNO Sites. SNO Sites is a company that specialises in providing website solutions for schools and educational institutions.",
-    "icon": "SNO.svg",
-    "js": {
-      "sno_infographics_ajax_object": ""
-    },
-    "pricing": [
-      "onetime",
-      "recurring"
-    ],
-    "requires": "WordPress",
-    "website": "https://snosites.com"
   },
   "Sniply": {
     "cats": [
@@ -5368,9 +5368,9 @@
       19
     ],
     "description": "Sprig is a free plugin for Craft CMS that allows you to create reactive components from Twig templates ​or PHP classes.",
+    "dom": "form[sprig], button[sprig], input[sprig], div.sprig-component",
     "icon": "Sprig plugin.svg",
     "requires": "Craft CMS",
-    "dom": "form[sprig], button[sprig], input[sprig], div.sprig-component",
     "website": "https://putyourlightson.com/plugins/sprig"
   },
   "Spring": {
@@ -5676,8 +5676,8 @@
     "description": "Squeezely is a customer data platform (CDP) that provides technical capabilities for data collection, segmentation, audience targeting, campaign orchestration, and analytics, empowering businesses to personalise customer experiences and optimise marketing efforts.",
     "icon": "Squeezely.svg",
     "js": {
-      "sqzlPersonalization": "",
-      "sqzlCommon.getVariantName": ""
+      "sqzlCommon.getVariantName": "",
+      "sqzlPersonalization": ""
     },
     "pricing": [
       "high",
@@ -5802,9 +5802,6 @@
     ],
     "description": "Stackbit is a visual experience platform for building decoupled websites.",
     "dom": {
-      "script#__NEXT_DATA__": {
-        "text": "stackbit"
-      },
       "[data-sb-object-id]": {
         "exists": ""
       },
@@ -5812,6 +5809,9 @@
         "attributes": {
           "data-sb-field-path": ""
         }
+      },
+      "script#__NEXT_DATA__": {
+        "text": "stackbit"
       }
     },
     "icon": "stackbit.svg",
@@ -6369,8 +6369,8 @@
     "dns": {
       "TXT": "stripe-verification="
     },
-    "html": "<input[^>]+data-stripe",
     "dom": "a[href*='billing.stripe.com'][target='_blank']",
+    "html": "<input[^>]+data-stripe",
     "icon": "Stripe.svg",
     "js": {
       "Stripe.version": "^(.+)$\\;version:\\1",

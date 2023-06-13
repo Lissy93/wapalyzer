@@ -62,6 +62,19 @@
     "saas": true,
     "website": "https://webxpay.com"
   },
+  "WEBrick": {
+    "cats": [
+      22
+    ],
+    "cpe": "cpe:2.3:a:ruby-lang:webrick:*:*:*:*:*:*:*:*",
+    "description": "WEBrick is a lightweight HTTP server library in Ruby, included in the standard library, primarily used for local development and testing of Ruby web applications.",
+    "headers": {
+      "Server": "^WEBrick/([\\d\\.]+)\\;version:\\1"
+    },
+    "icon": "Ruby.png",
+    "oss": true,
+    "website": "https://docs.ruby-lang.org/en/2.4.0/WEBrick.html"
+  },
   "WEN Themes Education Hub": {
     "cats": [
       80
@@ -638,17 +651,6 @@
     "scriptSrc": "/wp-content/themes/weaver-xtreme/.+weaverxjslib-end\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
     "website": "https://weavertheme.com"
   },
-  "Web Wiz Forums": {
-    "cats": [
-      2
-    ],
-    "description": "Web Wiz Forums is a web-based forum software that enables developers to create and manage online discussion boards or forums for engaging user interactions and community building.",
-    "meta": {
-      "generator": "^Web\\sWiz\\sForums(?:\\s([\\d\\.]+))?$\\;version:\\1"
-    },
-    "implies": "Microsoft ASP.NET",
-    "website": "https://www.webwizforums.com"
-  },
   "Web Shop Manager": {
     "cats": [
       6
@@ -694,6 +696,17 @@
     "oss": true,
     "requires": "WordPress",
     "website": "https://wp.stories.google"
+  },
+  "Web Wiz Forums": {
+    "cats": [
+      2
+    ],
+    "description": "Web Wiz Forums is a web-based forum software that enables developers to create and manage online discussion boards or forums for engaging user interactions and community building.",
+    "implies": "Microsoft ASP.NET",
+    "meta": {
+      "generator": "^Web\\sWiz\\sForums(?:\\s([\\d\\.]+))?$\\;version:\\1"
+    },
+    "website": "https://www.webwizforums.com"
   },
   "Web2py": {
     "cats": [
@@ -743,25 +756,6 @@
     "saas": true,
     "scriptSrc": "\\.webengage\\.co(?:m)?/",
     "website": "https://webengage.com"
-  },
-  "Webeyez": {
-    "cats": [
-      10
-    ],
-    "description": "Webeyez is an ecommerce monitoring and analytics solution designed to assist teams in identifying, alerting, prioritising, and resolving operational and technical issues for revenue recovery.",
-    "icon": "Webeyez.png",
-    "requiresCategory": 6,
-    "js": {
-      "webeyezstartAll": "",
-      "webeyez_wzPageEntryKey": "",
-      "___WEBEYEZ_CACHE": "",
-      "___WEBEYEZ_REGISTER_ERROR": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://www.webeyez.com"
   },
   "WebFactory Maintenance": {
     "cats": [
@@ -855,19 +849,6 @@
     "saas": true,
     "website": "https://www.webnode.com"
   },
-  "WEBrick": {
-    "cats": [
-      22
-    ],
-    "cpe": "cpe:2.3:a:ruby-lang:webrick:*:*:*:*:*:*:*:*",
-    "description": "WEBrick is a lightweight HTTP server library in Ruby, included in the standard library, primarily used for local development and testing of Ruby web applications.",
-    "icon": "Ruby.png",
-    "headers": {
-      "Server": "^WEBrick/([\\d\\.]+)\\;version:\\1"
-    },
-    "oss": true,
-    "website": "https://docs.ruby-lang.org/en/2.4.0/WEBrick.html"
-  },
   "WebRTC": {
     "cats": [
       19
@@ -948,6 +929,25 @@
     ],
     "saas": true,
     "website": "https://www.shop-script.com"
+  },
+  "Webeyez": {
+    "cats": [
+      10
+    ],
+    "description": "Webeyez is an ecommerce monitoring and analytics solution designed to assist teams in identifying, alerting, prioritising, and resolving operational and technical issues for revenue recovery.",
+    "icon": "Webeyez.png",
+    "js": {
+      "___WEBEYEZ_CACHE": "",
+      "___WEBEYEZ_REGISTER_ERROR": "",
+      "webeyez_wzPageEntryKey": "",
+      "webeyezstartAll": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "requiresCategory": 6,
+    "saas": true,
+    "website": "https://www.webeyez.com"
   },
   "Webflow": {
     "cats": [
@@ -2012,8 +2012,8 @@
       }
     },
     "icon": "WordPress.svg",
-    "requires": "WordPress",
     "oss": true,
+    "requires": "WordPress",
     "website": "https://wordpress.org/documentation/article/create-a-network/"
   },
   "WordPress Super Cache": {

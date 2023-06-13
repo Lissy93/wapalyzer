@@ -1,4 +1,17 @@
 {
+  "K-Sup": {
+    "cats": [
+      1
+    ],
+    "description": "K-Sup is an open-source CMS/portal solution dedicated to higher education and research created by Kosmos Education.",
+    "icon": "Kosmos.svg",
+    "implies": "Java",
+    "meta": {
+      "generator": "^K-Sup \\(([\\d.R]+)\\)$\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://www.ksup.org/"
+  },
   "K2": {
     "cats": [
       19
@@ -10,6 +23,21 @@
       "K2RatingURL": ""
     },
     "website": "https://getk2.org"
+  },
+  "KAMAR": {
+    "cats": [
+      21
+    ],
+    "description": "KAMAR is a Student Management System utilised by secondary schools.",
+    "icon": "KAMAR.svg",
+    "js": {
+      "KAMAR.has_address_ben_found": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://kamar.nz"
   },
   "KISSmetrics": {
     "cats": [
@@ -217,21 +245,6 @@
     "scriptSrc": "api\\.kaltura\\.(?:nordu\\.net|com)/",
     "scripts": "kalturaPlayer",
     "website": "https://corp.kaltura.com"
-  },
-  "KAMAR": {
-    "cats": [
-      21
-    ],
-    "description": "KAMAR is a Student Management System utilised by secondary schools.",
-    "icon": "KAMAR.svg",
-    "js": {
-     "KAMAR.has_address_ben_found": ""
-    },
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "website": "https://kamar.nz"
   },
   "Kameleoon": {
     "cats": [
@@ -1120,19 +1133,6 @@
     ],
     "website": "https://kount.com"
   },
-  "K-Sup": {
-    "description": "K-Sup is an open-source CMS/portal solution dedicated to higher education and research created by Kosmos Education.",
-    "cats": [
-      1
-    ],
-    "icon": "Kosmos.svg",
-    "implies": "Java",
-    "oss": true,
-    "meta": {
-      "generator": "^K-Sup \\(([\\d.R]+)\\)$\\;version:\\1"
-    },
-    "website": "https://www.ksup.org/"
-  },
   "Ktor": {
     "cats": [
       18
@@ -1162,7 +1162,7 @@
       90
     ],
     "description": "Kudobuzz is a tool for collecting and managing customer reviews.",
-    "icon": "Kudobuzz.svg",
+    "icon": "kudobuzz.svg",
     "implies": [
       "Svelte"
     ],

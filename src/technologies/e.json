@@ -281,16 +281,16 @@
     ],
     "description": "EasyGift is a tool that automates the addition of free gifts or products to the cart based on custom rules, allowing for upsells, BOGO (Buy 1 Get 1) offers, and the creation of rules based on cart value or specific products, with the ability to schedule start times for offer activation.",
     "icon": "EasyGift.png",
-    "requires": "Shopify",
     "js": {
-      "EasyGiftScriptLoaded": "",
-      "EasyGift.nonTargetingRules": ""
+      "EasyGift.nonTargetingRules": "",
+      "EasyGiftScriptLoaded": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "requires": "Shopify",
+    "saas": true,
     "website": "https://apps.shopify.com/gifter-cart-auto-include"
   },
   "EasyStore": {
@@ -643,7 +643,6 @@
       66
     ],
     "description": "Element UI is an open-source component library specifically designed for Vue.js, offering a collection of pre-designed UI components such as buttons, forms, tables, and modals.",
-    "icon": "ElementUI.svg",
     "dom": {
       "[class*='el-']": {
         "attributes": {
@@ -651,8 +650,9 @@
         }
       }
     },
-    "requires": "Vue.js",
+    "icon": "ElementUI.svg",
     "oss": true,
+    "requires": "Vue.js",
     "website": "https://element.eleme.io/"
   },
   "Elementor": {

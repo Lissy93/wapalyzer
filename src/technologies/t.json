@@ -114,6 +114,23 @@
     ],
     "website": "https://www.thgingenuity.com"
   },
+  "THRON": {
+    "cats": [
+      95
+    ],
+    "description": "THRON is a digital asset management platform that provides a centralised hub for storing, organising, and distributing digital assets like images, videos, and documents.",
+    "dom": "link[href*='.thron.com/'], img[src*='.thron.com/']",
+    "icon": "THRON.png",
+    "js": {
+      "THRONPlayer": "",
+      "thronHlsJs": ""
+    },
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "website": "https://www.thron.com"
+  },
   "TN Express Web": {
     "cats": [
       1
@@ -781,16 +798,16 @@
       5
     ],
     "description": "TeamBrain is a knowledge management solution which allows to use a self-learning dynamic FAQ on a website or widget on the bottom right of any page.",
-    "icon": "TeamBrain.png",
     "dom": "link[href*='//teambrain.app/']",
+    "icon": "TeamBrain.png",
     "js": {
       "TeamBrainExternalApp": ""
     },
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "saas": true,
     "website": "https://www.teambrain.io"
   },
   "TeamCity": {
@@ -1943,23 +1960,6 @@
     "scriptSrc": "thrivecart\\.js",
     "website": "https://thrivecart.com"
   },
-  "THRON": {
-    "cats": [
-      95
-    ],
-    "description": "THRON is a digital asset management platform that provides a centralised hub for storing, organising, and distributing digital assets like images, videos, and documents.",
-    "icon": "THRON.png",
-    "dom": "link[href*='.thron.com/'], img[src*='.thron.com/']",
-    "js": {
-      "thronHlsJs": "",
-      "THRONPlayer": ""
-    },
-    "saas": true,
-    "pricing": [
-      "poa"
-    ],
-    "website": "https://www.thron.com"
-  },
   "Ticimax": {
     "cats": [
       6
@@ -2033,22 +2033,6 @@
     "saas": true,
     "website": "https://www.tiendanube.com"
   },
-  "Tiktak Pro": {
-    "cats": [
-      6
-    ],
-    "description": "Tiktak Pro is an all-in-one ecommerce platform from Tunisia.",
-    "icon": "Tiktak Pro.svg",
-    "meta": {
-      "author": "^tiktak-themes$"
-    },
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://tiktakpro.tn"
-  },
   "TikTok Pixel": {
     "cats": [
       10
@@ -2082,6 +2066,22 @@
     },
     "scriptSrc": "(?:/|_)tiki",
     "website": "https://tiki.org"
+  },
+  "Tiktak Pro": {
+    "cats": [
+      6
+    ],
+    "description": "Tiktak Pro is an all-in-one ecommerce platform from Tunisia.",
+    "icon": "Tiktak Pro.svg",
+    "meta": {
+      "author": "^tiktak-themes$"
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://tiktakpro.tn"
   },
   "Tilda": {
     "cats": [
@@ -2245,6 +2245,25 @@
     },
     "website": "https://titan360.com"
   },
+  "Tolt": {
+    "cats": [
+      71
+    ],
+    "description": "Tolt is an affiliate marketing software designed for SaaS startups.",
+    "icon": "Tolt.svg",
+    "js": {
+      "toltAPI": "\\.tolt\\.io/",
+      "tolt_referral": "",
+      "toltio": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.tolt\\.io/",
+    "website": "https://tolt.io"
+  },
   "TomTom Maps": {
     "cats": [
       35
@@ -2258,25 +2277,6 @@
     "scriptSrc": "api\\.tomtom\\.com",
     "website": "https://www.tomtom.com",
     "xhr": "api\\.tomtom\\.com"
-  },
-  "Tolt": {
-    "cats": [
-      71
-    ],
-    "description": "Tolt is an affiliate marketing software designed for SaaS startups.",
-    "icon": "Tolt.svg",
-    "js": {
-      "tolt_referral": "",
-      "toltio": "",
-      "toltAPI": "\\.tolt\\.io/"
-    },
-    "saas": true,
-    "scriptSrc": "\\.tolt\\.io/",
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://tolt.io"
   },
   "TomatoCart": {
     "cats": [

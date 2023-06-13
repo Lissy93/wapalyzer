@@ -1793,9 +1793,6 @@
       88
     ],
     "description": "Drupal Multisite enables separate, independent sites to be served from a single codebase.",
-    "icon": "Drupal.svg",
-    "requires": "Drupal",
-    "oss": true,
     "dom": {
       "figure[style*='/sites/']": {
         "attributes": {
@@ -1812,6 +1809,9 @@
         "text": "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/"
       }
     },
+    "icon": "Drupal.svg",
+    "oss": true,
+    "requires": "Drupal",
     "scriptSrc": [
       "/sites/(?!(?:default|all)/).*/(?:files|themes|modules)/"
     ],

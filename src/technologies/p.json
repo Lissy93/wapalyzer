@@ -563,12 +563,12 @@
     ],
     "description": "Passage, a feature provided by 1Password, enables easy implementation of passwordless authentication methods on websites and apps.",
     "icon": "Passage.svg",
-    "scriptSrc": "\\.1password\\.com/",
-    "saas": true,
     "pricing": [
       "payg",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "\\.1password\\.com/",
     "website": "https://passage.1password.com"
   },
   "Paths.js": {
@@ -1229,13 +1229,13 @@
     ],
     "description": "Philomena is an imageboard software.",
     "icon": "Philomena.svg",
-    "meta": {
-      "generator": "^philomena$"
-    },
     "implies": [
       "Elixir",
       "Erlang"
     ],
+    "meta": {
+      "generator": "^philomena$"
+    },
     "oss": true,
     "website": "https://github.com/derpibooru/philomena"
   },
@@ -1551,11 +1551,11 @@
     },
     "icon": "pimcore.svg",
     "implies": "PHP",
-    "scriptSrc": "/pimcorecore/js/targeting\\.js",
     "oss": true,
     "pricing": [
       "poa"
     ],
+    "scriptSrc": "/pimcorecore/js/targeting\\.js",
     "website": "https://pimcore.com/en/digital-experience-platform"
   },
   "Pin Payments": {
@@ -1933,16 +1933,16 @@
     ],
     "description": "PlatinMarket is an ecommerce platform that provides solutions for online businesses to create and manage their online stores.",
     "icon": "PlatinMarket.png",
-    "requires":"Microsoft ASP.NET",
     "js": {
       "PlatinMarket": ""
     },
-    "scriptSrc": "//platincdn\\.com/",
-    "saas": true,
     "pricing": [
       "mid",
       "recurring"
     ],
+    "requires": "Microsoft ASP.NET",
+    "saas": true,
+    "scriptSrc": "//platincdn\\.com/",
     "website": "https://www.platinmarket.com"
   },
   "Plausible": {
@@ -2589,8 +2589,8 @@
     "description": "Preline UI is an open-source set of prebuilt UI components based on the utility-first Tailwind CSS framework.",
     "icon": "Preline UI.svg",
     "implies": "Tailwind CSS",
-    "scriptSrc": "/preline\\.js",
     "oss": true,
+    "scriptSrc": "/preline\\.js",
     "website": "https://preline.co"
   },
   "Premio Chaty": {
@@ -2616,13 +2616,12 @@
     "cats": [
       1
     ],
-    "description": "Prepr is a headless CMS with data-driven capabilities.",
-    "icon": "Prepr.svg",
-    "dom": "img[src*='.prepr.io/']",
-    "requiresCategory": 12,
     "cookies": {
       "__prepr_uid": ""
     },
+    "description": "Prepr is a headless CMS with data-driven capabilities.",
+    "dom": "img[src*='.prepr.io/']",
+    "icon": "Prepr.svg",
     "meta": {
       "prepr:id": ""
     },
@@ -2631,6 +2630,7 @@
       "mid",
       "recurring"
     ],
+    "requiresCategory": 12,
     "saas": true,
     "website": "https://prepr.io"
   },
@@ -3192,8 +3192,8 @@
       1
     ],
     "description": "PubLive is a headless CMS for online publishers.",
+    "dom": "link[href*='.thepublive.com/'], img[src*='.thepublive.com/']",
     "icon": "PubLive.svg",
-    "dom":"link[href*='.thepublive.com/'], img[src*='.thepublive.com/']",
     "pricing": [
       "poa"
     ],

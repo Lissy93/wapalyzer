@@ -1784,8 +1784,8 @@
     "dom": "iframe[src*='google.com/maps']",
     "icon": "Google Maps.svg",
     "js": {
-      "googleMapsConfig": "",
-      "GoogleMap": ""
+      "GoogleMap": "",
+      "googleMapsConfig": ""
     },
     "scriptSrc": [
       "(?:maps\\.google\\.com/maps\\?file=api(?:&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\1",

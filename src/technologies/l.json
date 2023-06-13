@@ -612,8 +612,8 @@
     "icon": "Levar.png",
     "js": {
       "levARActivationHelper": "",
-      "levar_onload_variant_id": "",
-      "levar.session_info": ""
+      "levar.session_info": "",
+      "levar_onload_variant_id": ""
     },
     "pricing": [
       "mid",
@@ -761,11 +761,11 @@
     },
     "icon": "Lightbox.png",
     "js": {
-      "lightbox.$lightbox": "",
-      "Lightbox.activeImage": ""
+      "Lightbox.activeImage": "",
+      "lightbox.$lightbox": ""
     },
-    "scriptSrc": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
     "oss": true,
+    "scriptSrc": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
     "website": "https://lokeshdhakar.com/projects/lightbox2/"
   },
   "Lightning": {
@@ -878,8 +878,8 @@
     "js": {
       "__NEXT_DATA__.props.pageProps.currentCommunity.logoUrl": "static\\.main\\.linendev\\.com/"
     },
-   "oss": true,
-   "website": "https://www.linen.dev"
+    "oss": true,
+    "website": "https://www.linen.dev"
   },
   "LinkMink": {
     "cats": [
@@ -891,12 +891,12 @@
     "js": {
       "LinkMink": ""
     },
-    "scriptSrc": "cdn\\.linkmink\\.com/lm-js/([\\d\\.]+)/\\;version:\\1",
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "cdn\\.linkmink\\.com/lm-js/([\\d\\.]+)/\\;version:\\1",
     "website": "https://linkmink.com"
   },
   "Linkedin Ads": {
@@ -1475,13 +1475,13 @@
     "js": {
       "LogRocket._buffer": ""
     },
-    "scriptSrc": "cdn\\.(?:lr-ingest|logrocket)\\.(?:com|io)",
-    "saas": true,
     "pricing": [
       "freemium",
       "mid",
       "recurring"
     ],
+    "saas": true,
+    "scriptSrc": "cdn\\.(?:lr-ingest|logrocket)\\.(?:com|io)",
     "website": "https://logrocket.com"
   },
   "Loggly": {

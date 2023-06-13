@@ -1280,23 +1280,6 @@
     "scriptSrc": "/htmx\\.org@([\\d\\.]+)\\;version:\\1",
     "website": "https://htmx.org"
   },
-  "Hubalz": {
-    "cats": [
-      10
-    ],
-    "description": "Hubalz is an all-in-one analytics and marketing tool.",
-    "icon": "Hubalz.png",
-    "js": {
-      "Hubalz.getClickDetails": "",
-      "hubalz_script.noInputTracking": ""
-    },
-    "sass": true,
-    "pricing": [
-      "low",
-      "recurring"
-    ],
-    "website": "https://www.hubalz.com"
-  },
   "HubSpot": {
     "cats": [
       32
@@ -1392,6 +1375,23 @@
     },
     "requires": "WordPress",
     "website": "https://wordpress.org/plugins/leadin/"
+  },
+  "Hubalz": {
+    "cats": [
+      10
+    ],
+    "description": "Hubalz is an all-in-one analytics and marketing tool.",
+    "icon": "Hubalz.png",
+    "js": {
+      "Hubalz.getClickDetails": "",
+      "hubalz_script.noInputTracking": ""
+    },
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.hubalz.com"
   },
   "Huberway": {
     "cats": [
@@ -1626,10 +1626,10 @@
       64
     ],
     "description": "Hydra-Shield is an anti-DDoS protection reverse proxy that filters and mitigates malicious traffic to safeguard servers from distributed denial-of-service attacks.",
-    "icon": "Hydra-Shield.png",
     "headers": {
       "server": "^Hydra-Shield\\sV([\\d\\.]+)$\\;version:\\1"
     },
+    "icon": "Hydra-Shield.png",
     "pricing": [
       "freemium",
       "low",
@@ -1730,12 +1730,12 @@
     ],
     "description": "Hyros is a marketing analytics and optimisation platform.",
     "icon": "Hyros.svg",
-    "scriptSrc": "/v1/lst/universal-script\\?ph\\=",
-    "saas": true,
     "pricing": [
       "recurring",
       "low"
     ],
+    "saas": true,
+    "scriptSrc": "/v1/lst/universal-script\\?ph\\=",
     "website": "https://hyros.com"
   },
   "Hyva Themes": {
