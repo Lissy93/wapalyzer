@@ -371,6 +371,23 @@
     "saas": true,
     "website": "https://abicart.com/"
   },
+  "AbhiCMS": {
+    "cats": [
+      1
+    ],
+    "description": "AbhiCMS is a lesser-known content management system that may not have a significant user base or active development community.",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "meta": {
+      "generator": "AbhiCMS\\s([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://website999.org"
+  },
   "Absorb": {
     "cats": [
       21
