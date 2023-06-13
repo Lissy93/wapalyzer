@@ -668,12 +668,13 @@
   },
   "Mantine": {
     "cats": [
-      59
+      66
     ],
-    "description": "Mantine is a React components library.",
+    "description": "Mantine is an open-source UI framework and component library for React.",
     "dom": "style[data-emotion='mantine-global'], style[data-emotion='mantine']",
     "icon": "Mantine.svg",
     "implies": "TypeScript",
+    "requires": "React",
     "oss": true,
     "website": "https://mantine.dev"
   },
