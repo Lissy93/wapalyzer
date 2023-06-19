@@ -17,7 +17,7 @@ const fs = require('fs')
 const Wappalyzer = require('./wappalyzer')
 
 // See https://www.wappalyzer.com/docs/dev/specification or use
-// https://raw.githubusercontent.com/wappalyzer/wappalyzer/master/src/technologies
+// https://raw.githubusercontent.com/wappalyzer/wappalyzer/master/src/categories.json
 const categories = JSON.parse(
   fs.readFileSync(path.resolve(`./categories.json`))
 )
