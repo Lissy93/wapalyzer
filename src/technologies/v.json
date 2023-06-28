@@ -286,14 +286,15 @@
   },
   "Vectary": {
     "cats": [
-      5
+      105
     ],
     "description": "Vectary is fully-featured 3D modeling tool with photorealistic real-time rendering, augmented reality, interactions and animations.",
-    "dom": "iframe[src*='app\\.vectary\\.com/viewer/v1/']",
+    "dom": "iframe[src*='app.vectary.com/']",
     "icon": "vectary.svg",
     "pricing": [
       "low",
-      "poa"
+      "freemium",
+      "recurring"
     ],
     "website": "https://www.vectary.com"
   },
