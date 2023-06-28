@@ -2521,10 +2521,14 @@
       5
     ],
     "description": "Colbass is AI System that transforms text into real-human voiceovers.",
-    "dom": "audio#colbass-tts-audio",
     "icon": "colbass.png",
+    "js": {
+      "colbassRunning": ""
+    },
     "pricing": [
-      "low"
+      "low",
+      "onetime",
+      "recurring"
     ],
     "website": "https://colbass.com"
   },
