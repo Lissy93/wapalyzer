@@ -2005,6 +2005,30 @@
     },
     "website": "https://www.eclass.com.hk"
   },
+  "E-Com Plus": {
+    "cats": [
+      108
+    ],
+    "description": "E-Com Plus is an open fair-code ecommerce platform designed to be used with headless commerce APIs.",
+    "icon": "E-Com Plus.svg",
+    "implies": [
+      "Vue.js",
+      "TypeScript"
+    ],
+    "meta": {
+      "generator": "^E-Com\\sPlus\\sStorefront$"
+    },
+    "js": {
+      "ecomPassport.storageKey": "ecomPassportClient"
+    },
+    "saas": true,
+    "pricing": [
+      "poa",
+      "recurring",
+      "payg"
+    ],
+    "website": "https://www.ecomplus.io"
+  },
   "eDokan": {
     "cats": [
       6
