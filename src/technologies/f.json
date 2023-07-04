@@ -722,6 +722,7 @@
     ],
     "cpe": "cpe:2.3:a:google:firebase_cloud_messaging:*:*:*:*:*:*:*:*",
     "description": "Firebase is a Google-backed application development software that enables developers to develop iOS, Android and Web apps.",
+    "dom": "iframe[src*='.firebaseapp.com/']",
     "headers": {
       "vary": "x-fh-requested-host"
     },
@@ -737,7 +738,10 @@
       "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
       "/firebasejs/([\\d.]+)/firebase\\;version:\\1"
     ],
-    "scripts": "\\.gstatic\\.com/firebasejs/([\\d\\.]+)/\\;version:\\1",
+    "scripts": [
+      "\\.gstatic\\.com/firebasejs/([\\d\\.]+)/\\;version:\\1",
+      "firebase(?:Config|io\\.com)"
+    ],
     "website": "https://firebase.google.com"
   },
   "Fireblade": {
