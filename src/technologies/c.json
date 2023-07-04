@@ -4440,5 +4440,19 @@
     "oss": true,
     "scriptSrc": "(?:/([\\d\\.-]+))?/crypto-js(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://github.com/brix/crypto-js"
+  },
+  "ClickOnce": {
+    "cats": [
+      47
+    ],
+    "description": "ClickOnce is a Microsoft .NET deployment technology that enables the creation of self-updating Windows-based applications that can be installed and run with minimal user interaction.",
+    "icon": "default.svg",
+    "dom": {
+      "a[href='https://go.microsoft.com/fwlink/?LinkId=154571']": {
+        "text": "ClickOnce and .NET Framework Resources"
+      }
+    },
+    "css": "\\.ClickOnceInfoText",
+    "website": "https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment"
   }
 }
