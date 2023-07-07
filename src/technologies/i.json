@@ -31,6 +31,28 @@
     "icon": "IBM.svg",
     "website": "https://ibm.com/software/webservers/httpservers"
   },
+  "ID5": {
+    "cats": [
+      36,
+      77
+    ],
+    "description": "ID5 is the leading identity provider powering addressable advertising for brands, publishers, and their technology partners.",
+    "saas": true,
+    "icon": "ID5.png",
+    "website": "https://id5.io/",
+    "scriptSrc": [
+      "^https://(?:cdn\\.)?id5-sync\\.com",
+      "id5-api\\.js"
+    ],
+    "xhr": ".*id5-sync\\.com",
+    "cookies": {
+      "id5": ""
+    },
+    "js": {
+      "ID5": "",
+      "__id5_instances": ""
+    }
+  },
   "IIS": {
     "cats": [
       22
