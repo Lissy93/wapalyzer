@@ -35,7 +35,7 @@ const footers = [
   },
   {
     heading: 'Wappalyzer for businesses',
-    body: 'Sign up for a plan to get monthly credits to spend on any product, including lead lists and technology lookups.',
+    body: 'Sign up to use our tools for lead generation, market research and competitor analysis.',
     buttonText: 'Compare plans',
     buttonLink: `${baseUrl}/pricing/${utm}`,
   },
@@ -245,6 +245,7 @@ const Popup = {
       body: document.body,
       detections: document.querySelector('.detections'),
       empty: document.querySelector('.empty'),
+      emptyReload: document.querySelector('.empty__reload'),
       footer: document.querySelector('.footer'),
       game: document.querySelector('.ttt-game'),
       headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
@@ -261,7 +262,6 @@ const Popup = {
       terms: document.querySelector('.terms'),
       termsButtonAccept: document.querySelector('.terms__button--accept'),
       termsButtonDecline: document.querySelector('.terms__button--decline'),
-      credits: document.querySelector('.credits'),
       footerButtonLink: document.querySelector('.footer .button__link'),
       footerButtonText: document.querySelector('.footer .button__text'),
       footerContentBody: document.querySelector('.footer__content-body'),
@@ -434,7 +434,6 @@ const Popup = {
         tab.classList.add('tab--active')
         el.tabItems[index].classList.remove('tab-item--hidden')
 
-        el.credits.classList.add('credits--hidden')
         el.plusDownload.classList.remove('plus-download--hidden')
         el.footer.classList.remove('footer--hidden')
 
@@ -493,6 +492,11 @@ const Popup = {
 
         return false
       })
+    })
+
+    // Reload
+    el.emptyReload.addEventListener('click', (event) => {
+      chrome.tabs.reload({ bypassCache: true })
     })
 
     // Game
@@ -695,8 +699,6 @@ const Popup = {
       download: document.querySelector('.plus-download'),
       errorMessage: document.querySelector('.plus-error__message'),
       configure: document.querySelector('.plus-configure'),
-      credits: document.querySelector('.credits'),
-      creditsRemaining: document.querySelector('.credits__remaining'),
       footer: document.querySelector('.footer'),
     }
 
@@ -746,7 +748,7 @@ const Popup = {
         throw error
       }
 
-      const { attributes, creditsRemaining, crawl } = data
+      const { attributes, crawl } = data
 
       if (Popup.cache.detections.length) {
         attributes.signals = attributes.signals || []
@@ -755,14 +757,6 @@ const Popup = {
           Popup.cache.detections
         )
       }
-
-      el.creditsRemaining.textContent = parseInt(
-        creditsRemaining || 0,
-        10
-      ).toLocaleString()
-
-      el.loading.classList.add('loading--hidden')
-      el.credits.classList.remove('credits--hidden')
 
       if (crawl) {
         document

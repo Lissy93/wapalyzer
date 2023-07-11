@@ -16,8 +16,12 @@ $ npm i wappalyzer-core
 const fs = require('fs')
 const Wappalyzer = require('./wappalyzer')
 
+<<<<<<< HEAD
 // See https://www.wappalyzer.com/docs/dev/specification or use
 // https://raw.githubusercontent.com/wappalyzer/wappalyzer/master/src/categories.json
+=======
+// See https://github.com/wappalyzer/wappalyzer/blob/master/README.md#specification
+>>>>>>> c546747ce (Updated locales)
 const categories = JSON.parse(
   fs.readFileSync(path.resolve(`./categories.json`))
 )
