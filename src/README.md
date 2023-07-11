@@ -16,12 +16,7 @@ $ npm i wappalyzer-core
 const fs = require('fs')
 const Wappalyzer = require('./wappalyzer')
 
-<<<<<<< HEAD
-// See https://www.wappalyzer.com/docs/dev/specification or use
-// https://raw.githubusercontent.com/wappalyzer/wappalyzer/master/src/categories.json
-=======
 // See https://github.com/wappalyzer/wappalyzer/blob/master/README.md#specification
->>>>>>> c546747ce (Updated locales)
 const categories = JSON.parse(
   fs.readFileSync(path.resolve(`./categories.json`))
 )
@@ -34,9 +29,7 @@ for (const index of Array(27).keys()) {
   technologies = {
     ...technologies,
     ...JSON.parse(
-      fs.readFileSync(
-        path.resolve(`./technologies/${character}.json`)
-      )
+      fs.readFileSync(path.resolve(`./technologies/${character}.json`))
     ),
   }
 }
@@ -50,7 +43,7 @@ Wappalyzer.analyze({
   headers: { server: ['Nginx'] },
   scriptSrc: ['jquery-3.0.0.js'],
   cookies: { awselb: [''] },
-  html: '<div ng-app="">'
+  html: '<div ng-app="">',
 }).then((detections) => {
   const results = Wappalyzer.resolve(detections)
 
