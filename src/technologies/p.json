@@ -3030,25 +3030,11 @@
       19
     ],
     "description": "Progress MOVEit is a managed file transfer solution that enables secure and compliant transfer of sensitive files while providing automation, central management, and auditing capabilities.",
-    "icon": "Progress.svg",
-    
+    "icon": "Progress.svg",  
     "meta": {
       "apple-itunes-app": "app-id=1500056420",
-      "google-play-app": "app-id=com\\.progress\\.moveit\\.transfer\\.dev\\.appid",
-      "smartbanner:title": "MOVEit\\sMobile",
-      "smartbanner:author": "Progress\\sSoftware\\sCorporation",
-      "smartbanner:button-url-google": "com\\.progress\\.moveit\\.transfer\\.dev\\.appid"
+      "google-play-app": "app-id=com\\.progress\\.moveit\\.transfer\\.dev\\.appid"
     },
-    "dom": {
-      "style[type='text/css']": {
-        "text": "templates/stylesheet_MOVEit"
-      }
-    },
-    "scripts": [
-        "MOVEit Mobile",
-        "Progress Software Corporation",
-        "MOVEitPopUp"
-    ],
     "headers": {
       "X-Moveitisapi-Version": "^(.+)$\\;version:\\1"
     },
