@@ -2542,6 +2542,24 @@
     ],
     "website": "https://www.alumniq.com/platform/"
   },
+  "AlvandCMS": {
+    "cats": [
+      1
+    ],
+    "description": "AlvandCMS is a PHP-based content management system that is commonly used in Iran.",
+    "icon": "AlvandCMS.png",
+    "implies": [
+      "PHP",
+      "MySQL"
+    ],
+    "meta": {
+      "generator": "AlvandCMS\\s([\\d\\.]+)\\;version:\\1"
+    },
+    "pricing": [
+      "poa"
+    ],
+    "website": "https://alvandcms.ir"
+  },
   "Amaya": {
     "cats": [
       20
