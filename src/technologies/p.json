@@ -3025,6 +3025,35 @@
     ],
     "website": "https://www.profitwell.com/"
   },
+  "Progress MOVEit": {
+    "cats": [
+      19
+    ],
+    "description": "MOVEit is a Secure File Transfer and Automation Software for the Enterprise",
+    "icon": "Progress.svg",
+    
+    "meta": {
+      "apple-itunes-app": "app-id=1500056420",
+      "google-play-app": "app-id=com\\.progress\\.moveit\\.transfer\\.dev\\.appid",
+      "smartbanner:title": "MOVEit\\sMobile",
+      "smartbanner:author": "Progress\\sSoftware\\sCorporation",
+      "smartbanner:button-url-google": "com\\.progress\\.moveit\\.transfer\\.dev\\.appid"
+    },
+    "dom": {
+      "style[type='text/css']": {
+        "text": "templates/stylesheet_MOVEit"
+      }
+    },
+    "scripts": [
+        "MOVEit Mobile",
+        "Progress Software Corporation",
+        "MOVEitPopUp"
+    ],
+    "headers": {
+      "X-Moveitisapi-Version": "^(.+)$\\;version:\\1"
+    },
+    "website": "https://www.progress.com/moveit"
+  },
   "Project Wonderful": {
     "cats": [
       36
