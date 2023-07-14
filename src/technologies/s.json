@@ -793,12 +793,21 @@
     "cats": [
       6
     ],
-    "description": "Salla is an ecommerce platform.",
+    "description": "Salla is an ecommerce platform specifically tailored to serve businesses and customers in Saudi Arabia.",
     "headers": {
       "x-powered-by": "^Salla$"
     },
     "icon": "Salla.svg",
-    "scriptSrc": "cdn\\.salla\\.sa/",
+    "js": {
+      "Salla.shop": "",
+      "SallaApplePay": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
     "website": "https://salla.sa"
   },
   "Salonist": {
