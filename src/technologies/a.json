@@ -4518,7 +4518,7 @@
     "cats": [
       41
     ],
-    "description": "Authorize.net is a secure online payment gateway service that enables businesses to accept payments through various channels, such as e-commerce websites, mobile devices, and retail stores, providing a trusted platform for processing credit card and electronic cheque payments.",
+    "description": "Authorize.net is a secure online payment gateway service that enables businesses to accept payments through various channels, such as ecommerce websites, mobile devices, and retail stores, providing a trusted platform for processing credit card and electronic cheque payments.",
     "icon": "authorize.net.svg",
     "headers": {
       "Content-Security-Policy": "\\.authorize\\.net\\s"
@@ -4527,6 +4527,11 @@
       "config.authorizenet_public_client_key": ""
     },
     "scriptSrc": "\\.authorize\\.net/",
+    "saas": true,
+    "pricing": [
+      "recurring",
+      "payg"
+    ],
     "website": "https://www.authorize.net"
   },
   "Auth0 Lock": {
