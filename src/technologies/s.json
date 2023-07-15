@@ -6629,6 +6629,26 @@
     "saas": true,
     "website": "https://suncel.io"
   },
+  "Supabase": {
+    "cats": [
+      47
+    ],
+    "description": "Supabase is an open-source platform that offers a Postgres database, Authentication, APIs, Edge Functions, Realtime subscriptions, Storage, and Vector embeddings for project development.",
+    "icon": "Supabase.svg",
+    "implies": "PostgreSQL",
+    "js": {
+      "__NUXT__.config.public.SUPABASE_URL": "",
+      "__NUXT__.config.public.supabase": ""
+    },
+    "oss": true,
+    "saas": true,
+    "pricing": [
+      "freemium",
+      "payg",
+      "recurring"
+    ],
+    "website": "https://supabase.com"
+  },
   "Super Builder": {
     "cats": [
       51
