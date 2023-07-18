@@ -274,7 +274,10 @@
     "headers": {
       "X-Umbraco-Version": "^(.+)$\\;version:\\1"
     },
-    "icon": "Umbraco.png",
+    "cookies": {
+      "merchello": "\\;version:7"
+    }, 
+    "icon": "Umbraco.svg",
     "implies": "Microsoft ASP.NET",
     "js": {
       "ITEM_INFO_SERVICE": "",
