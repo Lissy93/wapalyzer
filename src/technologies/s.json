@@ -3584,6 +3584,22 @@
     "saas": true,
     "website": "https://www.sitecore.com/"
   },
+  "Sitecore Engagement Cloud": {
+    "cats": [
+      97
+    ],
+    "description": "Sitecore Engagement Cloud is a cloud-based customer experience management platform offering content management, personalisation, marketing automation, analytics, and omni-channel delivery for enhancing digital marketing efforts and improving customer experiences.",
+    "icon": "Sitecore.svg",
+    "implies": "Sitecore",
+    "pricing": [
+      "poa",
+      "recurring",
+      "high"
+    ],
+    "saas": true,
+    "scriptSrc": "/sitecore-engage-v\\.([\\d\\.]+)\\.min\\.js\\;version:\\1",
+    "website": "https://www.sitecore.com/products/engagement-cloud"
+  },
   "Sitefinity": {
     "cats": [
       1
