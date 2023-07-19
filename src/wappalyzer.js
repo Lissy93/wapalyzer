@@ -99,7 +99,7 @@ const Wappalyzer = {
     const resolved = detections.reduce((resolved, { technology, lastUrl }) => {
       if (
         resolved.findIndex(
-          ({ technology: { name } }) => name === technology.name
+          ({ technology: { name } }) => name === technology?.name
         ) === -1
       ) {
         let version = ''

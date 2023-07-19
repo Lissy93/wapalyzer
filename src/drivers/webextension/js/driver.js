@@ -79,7 +79,6 @@ const Driver = {
         {}
       ),
       robots: await getOption('robots', {}),
-      ads: [],
     }
 
     const { version } = chrome.runtime.getManifest()
@@ -712,14 +711,6 @@ const Driver = {
   },
 
   /**
-   * Callback for onAd listener
-   * @param {Object} ad
-   */
-  onAd(ad) {
-    Driver.cache.ads.push(ad)
-  },
-
-  /**
    * Update the extension icon
    * @param {String} url
    * @param {Object} technologies
@@ -1008,20 +999,6 @@ const Driver = {
         Object.keys(Driver.cache.hostnames).forEach((hostname) => {
           Driver.cache.hostnames[hostname].hits = 0
         })
-      }
-
-      if (Driver.cache.ads.length > 25) {
-        try {
-          await Driver.post(
-            'https://ad.wappalyzer.com/log/wp/',
-            Driver.cache.ads
-          )
-        } catch (error) {
-          // eslint-disable-next-line no-console
-          console.error(error)
-        }
-
-        Driver.cache.ads = []
       }
     }
   },

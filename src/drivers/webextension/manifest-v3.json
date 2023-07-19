@@ -46,17 +46,6 @@
         "js/content.js"
       ],
       "run_at": "document_idle"
-    },
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-        "js/lib/iframe.js"
-      ],
-      "run_at": "document_start",
-      "all_frames": true
     }
   ],
   "web_accessible_resources": [
