@@ -2051,12 +2051,14 @@
     ],
     "cpe": "cpe:2.3:a:plone:plone:*:*:*:*:*:*:*:*",
     "description": "Plone is a free and open source content management system (CMS) built on top of the Zope application server.",
+    "dom": "link[href^='/++resource++']",
     "icon": "Plone.svg",
     "implies": "Python",
     "meta": {
       "generator": "Plone"
     },
     "oss": true,
+    "scriptSrc": "^/\\+\\+resource\\+\\+",
     "website": "https://plone.org/"
   },
   "Plotly": {
