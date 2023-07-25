@@ -227,7 +227,7 @@
     "html": [
       "<link[^>]+ href=\"/?typo3(?:conf|temp)/",
       "<img[^>]+ src=\"/?typo3(?:conf|temp)/",
-      "<!--\n\tThis website is powered by TYPO3"
+      "This website is powered by TYPO3"
     ],
     "icon": "TYPO3.svg",
     "implies": "PHP",
@@ -235,6 +235,9 @@
       "generator": "TYPO3\\s+(?:CMS\\s+)?(?:[\\d.]+)?(?:\\s+CMS)?"
     },
     "oss": true,
+    "probe": {
+      "/typo3/sysext/core/Resources/Public/Images/typo3_orange.svg": ""
+    },
     "scriptSrc": "^/?typo3(?:conf|temp)/",
     "url": "/typo3/",
     "website": "https://typo3.org/"
