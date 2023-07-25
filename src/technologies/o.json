@@ -1315,11 +1315,15 @@
     },
     "cpe": "cpe:2.3:a:episerver:episerver:*:*:*:*:*:*:*:*",
     "description": "Optimizely Content Management (formerly EPiServer) is digital content, ecommerce, and marketing management solution designed for editors and marketers.",
+    "dom": "link[href*='/EPiServer.Forms/']",
     "headers": {
       "content-security-policy": "\\.episerver\\.net"
     },
     "icon": "Optimizely.svg",
     "implies": "Microsoft ASP.NET",
+    "js": {
+      "epi.EPiServer": ""
+    },
     "meta": {
       "generator": "EPiServer"
     },
