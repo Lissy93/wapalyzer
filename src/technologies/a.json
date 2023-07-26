@@ -791,6 +791,22 @@
     "scriptSrc": "\\.acquire\\.io/(?!cobrowse)",
     "website": "https://acquire.io"
   },
+  "ActBlue": {
+    "cats": [
+      111
+    ],
+    "description": "ActBlue is an online fundraising platform that facilitates secure donations to Democratic candidates and progressive causes, streamlining the process of processing and distributing campaign contributions.",
+    "icon": "ActBlue.svg",
+    "dom": "a[href*='//secure.actblue.com/donate/']",
+    "js": {
+      "actblue.__configuration": ""
+    },
+    "pricing": [
+      "payg"
+    ],
+    "saas": true,
+    "website": "https://secure.actblue.com"
+  },
   "Act-On": {
     "cats": [
       32
