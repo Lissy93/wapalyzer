@@ -54,6 +54,22 @@
     "website": "https://wiki.lkqd.com",
     "xhr": "\\.lkqd\\.net"
   },
+  "LlamaLink Cloud Server": {
+    "cats": [
+      22
+    ],
+    "description": "LlamaLink Cloud Server is a custom dynamic web server based on Nginx Web server that load balance user traffic between hosting nodes and allows fast and cached expiriance to website users.",
+    "icon": "LlamaLink.png",
+    "implies": "Nginx",
+    "headers": {
+      "Server": "^LlamaLink\\sCloud$"
+    },
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://llamalink.net"
+  },
   "LOU": {
     "cats": [
       58
