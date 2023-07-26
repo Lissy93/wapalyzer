@@ -698,9 +698,12 @@
       13
     ],
     "cpe": "cpe:2.3:a:mantisbt:mantisbt:*:*:*:*:*:*:*:*",
-    "html": "<img[^>]+ alt=\"Powered by Mantis Bugtracker",
     "icon": "MantisBT.png",
-    "implies": "PHP",
+    "description": "MantisBT is an open-source, web-based issue tracking system written in PHP with a MySQL database backend, designed to facilitate bug tracking and project management for software development teams.",
+    "dom": "link[rel='stylesheet'][href*='/css/ace-mantis.css']",
+    "requires": "PHP",
+    "implies": "MySQL",
+    "oss": true,
     "website": "https://www.mantisbt.org"
   },
   "ManyChat": {
