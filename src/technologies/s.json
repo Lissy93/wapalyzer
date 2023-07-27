@@ -6888,13 +6888,17 @@
       66
     ],
     "description": "SvelteKit is the official Svelte framework for building web applications with a flexible filesystem-based routing.",
+    "meta": {
+      "generator": "SvelteKit"
+    },
     "dom": {
       "#svelte-announcer": {
         "exists": ""
       },
       "a": {
         "attributes": {
-          "sveltekit:prefetch": ""
+          "sveltekit:prefetch": "",
+          "data-sveltekit-preload-data": ""
         }
       }
     },
