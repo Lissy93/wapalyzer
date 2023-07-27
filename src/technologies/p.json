@@ -3264,6 +3264,37 @@
     },
     "website": "https://www.proximis.com"
   },
+  "Proxmox VE": {
+    "cats": [
+      60
+    ],
+    "description": "Proxmox VE is an open-source virtualisation and containerisation platform that provides a web-based management interface to manage virtual machines, containers, storage, and networking.",
+    "icon": "Proxmox.svg",
+    "headers": {
+      "Server": "pve-api-daemon/[\\d\\.]+"
+    },
+    "oss": true,
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://proxmox.com/en/proxmox-ve"
+  },
+  "Proxmox Mail Gateway": {
+    "cats": [
+      16
+    ],
+    "description": "Proxmox Mail Gateway is a mail security and anti-spam solution designed to protect email servers and ensure secure and reliable email communication.",
+    "icon": "Proxmox.svg",
+    "requires": "Proxmox VE",
+    "js": {
+      "pmg-mail-tracker": "",
+      "pmg-spam-archive": ""
+    },
+    "oss": true,
+    "website": "https://proxmox.com/en/proxmox-mail-gateway"
+  },
   "Pterodactyl Panel": {
     "cats": [
       9
