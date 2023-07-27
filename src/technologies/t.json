@@ -224,11 +224,7 @@
     ],
     "cpe": "cpe:2.3:a:typo3:typo3:*:*:*:*:*:*:*:*",
     "description": "TYPO3 is a free and open-source Web content management system written in PHP.",
-    "html": [
-      "<link[^>]+ href=\"/?typo3(?:conf|temp)/",
-      "<img[^>]+ src=\"/?typo3(?:conf|temp)/",
-      "This website is powered by TYPO3"
-    ],
+    "dom": "link[href*='typo3conf'], link[href*='typo3temp'], img[src*='typo3conf'], img[src*='typo3temp']"
     "icon": "TYPO3.svg",
     "implies": "PHP",
     "meta": {
