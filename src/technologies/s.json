@@ -793,12 +793,21 @@
     "cats": [
       6
     ],
-    "description": "Salla is an ecommerce platform.",
+    "description": "Salla is an ecommerce platform specifically tailored to serve businesses and customers in Saudi Arabia.",
     "headers": {
       "x-powered-by": "^Salla$"
     },
     "icon": "Salla.svg",
-    "scriptSrc": "cdn\\.salla\\.sa/",
+    "js": {
+      "Salla.shop": "",
+      "SallaApplePay": ""
+    },
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "saas": true,
     "website": "https://salla.sa"
   },
   "Salonist": {
@@ -1530,6 +1539,20 @@
     ],
     "saas": true,
     "website": "https://selldone.com"
+  },
+  "SellersCommerce": {
+    "cats": [
+      6
+    ],
+    "description": "SellersCommerce is a medium ecommerce software company that provides b2b ecommerce platform to retail companies.",
+    "icon": "SellersCommerce.png",
+    "pricing": [
+      "poa"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.sellerscommerce\\.com/",
+    "requires": "Microsoft ASP.NET",
+    "website": "https://www.sellerscommerce.com"
   },
   "Sellfy": {
     "cats": [
@@ -2752,6 +2775,25 @@
     "scriptSrc": "cdn\\.shoppinggives\\.com/",
     "website": "https://shoppinggives.com"
   },
+  "Shoppub": {
+    "cats": [
+      6
+    ],
+    "description": "Shoppub is an ecommerce platform that focuses on implementing advanced business rules.",
+    "icon": "Shoppub.svg",
+    "meta": {
+      "author": "^Shoppub$"
+    },
+    "js": {
+      "Shoppub.store": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.shoppub.com.br"
+  },
   "Shoppy": {
     "cats": [
       6
@@ -3826,6 +3868,23 @@
     "saas": true,
     "website": "https://www.skolengo.com"
   },
+  "Skyflow": {
+    "cats": [
+      16
+    ],
+    "description": "Skyflow is a company that provides a secure data privacy platform and API.",
+    "icon": "Skyflow.svg",
+    "js": {
+      "Skyflow.ElementType.CARD_NUMBER": "",
+      "Skyflow.ValidationRuleType": ""
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.skyflow.com"
+  },
   "Sky-Shop": {
     "cats": [
       6
@@ -4631,7 +4690,7 @@
       "SolidJS"
     ],
     "js": {
-      "_$HY": ""
+      "_$HY.init": ""
     },
     "oss": true,
     "website": "https://start.solidjs.com"
@@ -4929,7 +4988,7 @@
       67
     ],
     "description": "Spatie Laravel Cookie Consent is a banner that is displayed on websites to ask visitors for consent for the use of cookies.",
-    "icon": "Spatie.png",
+    "icon": "Spatie.svg",
     "implies": "Laravel",
     "js": {
       "laravelCookieConsent": ""
@@ -4959,7 +5018,7 @@
     ],
     "description": "Spatie Support Bubble is a non-intrusive support form.",
     "dom": "div.spatie-support-bubble",
-    "icon": "Spatie.png",
+    "icon": "Spatie.svg",
     "implies": [
       "Laravel",
       "Tailwind CSS"
@@ -6227,7 +6286,7 @@
       1
     ],
     "description": "Storyblok is a headless CMS with a visual editor for developers, marketers and content editors. Storyblok helps your team to manage content and digital experiences for every use-case from corporate websites, ecommerce, helpdesks, mobile apps, screen displays, and more.",
-    "dom": "img[src*='//a.storyblok.com/']",
+    "dom": "img[src*='//a.storyblok.com/'], img[srcset*='a.storyblok.com']",
     "headers": {
       "content-security-policy": "app\\.storyblok\\.com",
       "x-frame-options": "app\\.storyblok\\.com"

@@ -2739,10 +2739,10 @@
       "MySQL"
     ],
     "js": {
-      "freeProductTranslation": "\\;confidence:25",
+      "freeProductTranslation": "\\;confidence:40",
       "prestashop": "",
-      "priceDisplayMethod": "\\;confidence:25",
-      "priceDisplayPrecision": "\\;confidence:25",
+      "priceDisplayMethod": "\\;confidence:40",
+      "priceDisplayPrecision": "\\;confidence:40",
       "rcAnalyticsEvents.eventPrestashopCheckout": ""
     },
     "meta": {
@@ -3044,6 +3044,33 @@
     ],
     "saas": true,
     "website": "https://www.sitefinity.com"
+  },
+  "Progress WS_FTP": {
+    "cats": [
+      19
+    ],
+    "cpe":"cpe:2.3:a:progress:ws_ftp_server:*:*:*:*:*:*:*:*",
+    "description": "Progress WS_FTP is a file transfer client software developed by Progress Software Corporation, supporting FTP, FTPS, SFTP, and HTTPS protocols with features like drag-and-drop support, file synchronization, and encrypted data transmission.",
+    "dom": "form[name='formLogin'][action='login.aspx' i][id='formLogin']\\;confidence:40",
+    "scriptSrc": "/ThinClient/(?:WTM|WebResource)(?:\\.axd|/public)\\;confidence:60",
+    "requires": "Microsoft ASP.NET",
+    "icon": "Progress.svg",
+    "website": "https://www.progress.com/ws_ftp"
+  },
+  "Progress MOVEit": {
+    "cats": [
+      19
+    ],
+    "description": "Progress MOVEit is a managed file transfer solution that enables secure and compliant transfer of sensitive files while providing automation, central management, and auditing capabilities.",
+    "headers": {
+      "X-Moveitisapi-Version": "^(.+)$\\;version:\\1"
+    },  
+    "meta": {
+      "apple-itunes-app": "app-id=1500056420",
+      "google-play-app": "app-id=com\\.progress\\.moveit\\.transfer\\.dev\\.appid"
+    },
+    "icon": "Progress.svg",
+    "website": "https://www.progress.com/moveit"
   },
   "Project Wonderful": {
     "cats": [
