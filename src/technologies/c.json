@@ -313,6 +313,21 @@
     "saas": true,
     "website": "https://www.cafe24.com/en/"
   },
+  "Caisy": {
+    "cats": [
+      1
+    ],
+    "description": "Caisy is a headless CMS platform providing flexible content management, seamless integration with various devices and channels, and API access for structured content delivery.",
+    "icon": "Caisy.svg",
+    "dom": "img[src*='assets.caisy.io/']",
+    "pricing": [
+      "freemium",
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://caisy.io"
+  },
   "CakePHP": {
     "cats": [
       18
@@ -634,7 +649,7 @@
     "meta": {
       "cargo_title": ""
     },
-    "scriptSrc": "/cargo\\.",
+    "scriptSrc": "(?<!elo\\.io)/cargo\\.",
     "website": "https://cargo.site"
   },
   "Carrd": {
@@ -1996,6 +2011,20 @@
     "implies": "PHP",
     "oss": true,
     "website": "https://github.com/underground-works/clockwork-app"
+  },
+  "Closure Library": {
+    "cats": [
+      59
+    ],
+    "description": "Closure Library is a JavaScript library developed by Google for building robust web applications, offering utilities for DOM manipulation, event handling, data structures, and more.",
+    "icon": "Google.svg",
+    "dom": {
+      "script": {
+        "text": "Copyright\\sThe\\sClosure\\sLibrary\\sAuthors"
+      }
+    },
+    "oss": true,
+    "website": "https://github.com/google/closure-library"
   },
   "CloudCart": {
     "cats": [
@@ -3901,6 +3930,22 @@
     "saas": true,
     "scriptSrc": "code\\.createjs\\.com/",
     "website": "https://code.createjs.com"
+  },
+  "Creatium": {
+    "cats": [
+      51
+    ],
+    "description": "Creatium is a website builder developed in Russia that provides a user-friendly drag-and-drop interface and a variety of customisation options for creating websites without coding knowledge.",
+    "icon": "Creatium.svg",
+    "meta": {
+      "generator": "^Creatium$"
+    },
+    "saas": true,
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://creatium.io"
   },
   "Creativ.eMail": {
     "cats": [
