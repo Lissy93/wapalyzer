@@ -3025,6 +3025,18 @@
     ],
     "website": "https://www.profitwell.com/"
   },
+  "Progress WS_FTP": {
+    "cats": [
+      19
+    ],
+    "cpe":"cpe:2.3:a:progress:ws_ftp_server:*:*:*:*:*:*:*:*",
+    "description": "Progress WS_FTP is a file transfer client software developed by Progress Software Corporation, supporting FTP, FTPS, SFTP, and HTTPS protocols with features like drag-and-drop support, file synchronization, and encrypted data transmission.",
+    "dom": "form[name='formLogin'][action='login.aspx' i][id='formLogin']\\;confidence:40",
+    "scriptSrc": "/ThinClient/(?:WTM|WebResource)(?:\\.axd|/public)\\;confidence:60",
+    "requires": "Microsoft ASP.NET",
+    "icon": "Progress.svg",
+    "website": "https://www.progress.com/ws_ftp"
+  },
   "Progress MOVEit": {
     "cats": [
       19
