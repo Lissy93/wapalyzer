@@ -17,7 +17,7 @@ const expiry = 1000 * 60 * 60 * 48
 const maxHostnames = 100
 
 const hostnameIgnoreList =
-  /\b((local|dev(elop(ment)?)?|sandbox|stag(e|ing)?|preprod|production|preview|test(ing)?|[^a-z]demo(shop)?|cache)[.-]|dev\d|localhost|((wappalyzer|google|bing|baidu|microsoft|duckduckgo|facebook|adobe|twitter|reddit|yahoo|wikipedia|amazon|amazonaws|youtube|stackoverflow|github|stackexchange|w3schools|twitch)\.)|(live|office|herokuapp|shopifypreview)\.com|\.local|\.test|\.netlify\.app|web\.archive\.org|zoom\.us|^([0-9.]+|[\d.]+)$|^([a-f0-9:]+:+)+[a-f0-9]+$)/
+  /\b((local|dev(elop(ment)?)?|sandbox|stag(e|ing)?|preprod|production|preview|test(ing)?|[^a-z]demo(shop)?|cache)[.-]|dev\d|localhost|((wappalyzer|google|bing|baidu|microsoft|duckduckgo|facebook|adobe|twitter|reddit|yahoo|wikipedia|amazon|amazonaws|youtube|stackoverflow|github|stackexchange|w3schools|twitch)\.)|(live|office|herokuapp|shopifypreview)\.com|\.local|\.test|\.netlify\.app|ngrok|web\.archive\.org|zoom\.us|^([0-9.]+|[\d.]+)$|^([a-f0-9:]+:+)+[a-f0-9]+$)/
 
 const xhrDebounce = []
 
@@ -79,7 +79,6 @@ const Driver = {
         {}
       ),
       robots: await getOption('robots', {}),
-      ads: [],
     }
 
     const { version } = chrome.runtime.getManifest()
@@ -712,14 +711,6 @@ const Driver = {
   },
 
   /**
-   * Callback for onAd listener
-   * @param {Object} ad
-   */
-  onAd(ad) {
-    Driver.cache.ads.push(ad)
-  },
-
-  /**
    * Update the extension icon
    * @param {String} url
    * @param {Object} technologies
@@ -1008,20 +999,6 @@ const Driver = {
         Object.keys(Driver.cache.hostnames).forEach((hostname) => {
           Driver.cache.hostnames[hostname].hits = 0
         })
-      }
-
-      if (Driver.cache.ads.length > 25) {
-        try {
-          await Driver.post(
-            'https://ad.wappalyzer.com/log/wp/',
-            Driver.cache.ads
-          )
-        } catch (error) {
-          // eslint-disable-next-line no-console
-          console.error(error)
-        }
-
-        Driver.cache.ads = []
       }
     }
   },

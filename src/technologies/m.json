@@ -398,6 +398,21 @@
     "scriptSrc": "\\.magisto\\.com/",
     "website": "https://www.magisto.com"
   },
+  "Magixite": {
+    "cats": [
+      68
+    ],
+    "description": "Magixite offers the Web Content Accessibility Guidelines (WCAG), a set of guidelines and requirements designed to help designers and developers improve the accessibility of web content, ensuring it can be effectively used by individuals with disabilities.",
+    "icon": "Magixite.png",
+    "saas": true,
+    "scriptSrc": "acc\\.magixite\\.com/",
+    "pricing": [
+      "freemium",
+      "low",
+      "recurring"
+    ],
+    "website": "https://acc.magixite.com"
+  },
   "MailChimp": {
     "cats": [
       32,
@@ -683,9 +698,12 @@
       13
     ],
     "cpe": "cpe:2.3:a:mantisbt:mantisbt:*:*:*:*:*:*:*:*",
-    "html": "<img[^>]+ alt=\"Powered by Mantis Bugtracker",
     "icon": "MantisBT.png",
-    "implies": "PHP",
+    "description": "MantisBT is an open-source, web-based issue tracking system written in PHP with a MySQL database backend, designed to facilitate bug tracking and project management for software development teams.",
+    "dom": "link[rel='stylesheet'][href*='/css/ace-mantis.css']",
+    "requires": "PHP",
+    "implies": "MySQL",
+    "oss": true,
     "website": "https://www.mantisbt.org"
   },
   "ManyChat": {
@@ -2230,17 +2248,6 @@
     "saas": true,
     "scriptSrc": "cdn\\.moengage\\.\\w+",
     "website": "https://www.moengage.com"
-  },
-  "Moat": {
-    "cats": [
-      10
-    ],
-    "description": "Moat is a digital ad analytics tool.",
-    "icon": "Moat.svg",
-    "scriptSrc": [
-      "moatads\\.com"
-    ],
-    "website": "https://moat.com/"
   },
   "MobX": {
     "cats": [

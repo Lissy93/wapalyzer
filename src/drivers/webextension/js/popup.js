@@ -585,8 +585,12 @@ const Popup = {
     el.issue.classList.remove('issue--hidden')
     el.plusDownload.classList.remove('plus-download--hidden')
 
-    while (el.detections.firstChild) {
-      el.detections.removeChild(detections.firstChild)
+    let firstChild
+
+    while ((firstChild = el.detections.firstChild)) {
+      if (firstChild instanceof Node) {
+        el.detections.removeChild(firstChild)
+      }
     }
 
     const pinnedCategory = await getOption('pinnedCategory')
@@ -722,8 +726,12 @@ const Popup = {
     el.crawl.classList.add('plus-crawl--hidden')
     el.error.classList.add('plus-error--hidden')
 
-    while (el.panels.lastElementChild) {
-      el.panels.removeChild(el.panels.lastElementChild)
+    let lastChild
+
+    while ((lastChild = el.panels.lastElementChild)) {
+      if (lastChild instanceof Node) {
+        el.panels.removeChild(lastChild)
+      }
     }
 
     try {
