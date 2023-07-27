@@ -688,6 +688,26 @@
     "url": "mybigcommerce\\.com",
     "website": "https://www.bigcommerce.com"
   },
+  "BigCommerce B2B Edition": {
+    "cats": [
+      6
+    ],
+    "description": "BigCommerce B2B Edition is a specialised version of the BigCommerce ecommerce platform tailored for B2B companies, offering features such as custom pricing, catalogues, bulk ordering, quote requests, multi-user accounts, PO processing, and advanced reporting.",
+    "icon": "BigCommerce B2B Edition.svg",
+    "requires": "BigCommerce",
+    "excludes": "BigCommerce",
+    "js": {
+      "bundleB2BFeatureFlags": "",
+      "bundleb2b.text.tpa": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "cdn\\.bundleb2b\\.net/",
+    "website": "https://www.bundleb2b.com"
+  },
   "BigDataCloud IP Geolocation": {
     "cats": [
       79
