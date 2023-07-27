@@ -2462,6 +2462,23 @@
     "scriptSrc": "\\.alliai\\.com/",
     "website": "https://www.alliai.com"
   },
+  "Alliance Auth": {
+    "cats": [
+      69
+    ],
+    "description": "Alliance Auth is an access management platform designed for Eve Online groups. It controls access to applications and services based on in-game memberships.",
+    "icon": "Alliance Auth.svg",
+    "dom": "link[rel='stylesheet'][href*='/static/allianceauth/css']",
+    "implies": [
+      "Django",
+      "Python",
+      "Font Awesome",
+      "Bootstrap",
+      "jQuery"
+    ],
+    "oss": true,
+    "website": "https://gitlab.com/allianceauth/allianceauth"
+  },
   "AlloyUI": {
     "cats": [
       12
