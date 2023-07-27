@@ -2042,9 +2042,19 @@
       "X-Powered-By": "^Plesk(?:L|W)in",
       "X-Powered-By-Plesk": "^Plesk"
     },
-    "icon": "Plesk.png",
+    "icon": "Plesk.svg",
+    "meta": {
+      "plesk-build": ""
+    },
+    "js": {
+      "Plesk.Form": ""
+    },
     "scriptSrc": "common\\.js\\?plesk",
-    "website": "https://www.plesk.com/"
+    "pricing": [
+      "low",
+      "recurring"
+    ],
+    "website": "https://www.plesk.com"
   },
   "Pligg": {
     "cats": [
