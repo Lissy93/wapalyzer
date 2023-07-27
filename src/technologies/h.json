@@ -198,13 +198,14 @@
     ],
     "cpe": "cpe:2.3:a:handlebars.js_project:handlebars.js:*:*:*:*:*:*:*:*",
     "description": "Handlebars is a JavaScript library used to create reusable webpage templates.",
-    "html": "<[^>]*type=[^>]text\\/x-handlebars-template",
-    "icon": "Handlebars.png",
+    "dom": "script[type='text/x-handlebars-template']",
+    "icon": "Handlebars.svg",
     "js": {
       "Handlebars": "",
       "Handlebars.VERSION": "^(.+)$\\;version:\\1"
     },
     "scriptSrc": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
+    "oss": true,
     "website": "https://handlebarsjs.com"
   },
   "Handtalk": {
