@@ -2739,10 +2739,10 @@
       "MySQL"
     ],
     "js": {
-      "freeProductTranslation": "\\;confidence:25",
+      "freeProductTranslation": "\\;confidence:40",
       "prestashop": "",
-      "priceDisplayMethod": "\\;confidence:25",
-      "priceDisplayPrecision": "\\;confidence:25",
+      "priceDisplayMethod": "\\;confidence:40",
+      "priceDisplayPrecision": "\\;confidence:40",
       "rcAnalyticsEvents.eventPrestashopCheckout": ""
     },
     "meta": {
@@ -3036,6 +3036,21 @@
     "requires": "Microsoft ASP.NET",
     "icon": "Progress.svg",
     "website": "https://www.progress.com/ws_ftp"
+  },
+  "Progress MOVEit": {
+    "cats": [
+      19
+    ],
+    "description": "Progress MOVEit is a managed file transfer solution that enables secure and compliant transfer of sensitive files while providing automation, central management, and auditing capabilities.",
+    "headers": {
+      "X-Moveitisapi-Version": "^(.+)$\\;version:\\1"
+    },  
+    "meta": {
+      "apple-itunes-app": "app-id=1500056420",
+      "google-play-app": "app-id=com\\.progress\\.moveit\\.transfer\\.dev\\.appid"
+    },
+    "icon": "Progress.svg",
+    "website": "https://www.progress.com/moveit"
   },
   "Project Wonderful": {
     "cats": [
