@@ -1895,6 +1895,19 @@
     },
     "website": "https://www.luigisbox.com"
   },
+  "Lume": {
+    "cats": [
+      57
+    ],
+    "description": "Lume is a static site generator based on Deno.",
+    "icon": "Lume.svg",
+    "implies": "Deno",
+    "meta": {
+      "generator": "^Lume\\sv([\\d\\.]+)$\\;version:\\1"
+    },
+    "oss": true,
+    "website": "https://lume.land"
+  },
   "Luna": {
     "cats": [
       105
