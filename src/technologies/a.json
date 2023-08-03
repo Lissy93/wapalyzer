@@ -1731,13 +1731,19 @@
     "cats": [
       11
     ],
+    "description": "Aegea is a blog engine created by Ilya Birman.",
     "headers": {
-      "X-Powered-By": "^E2 Aegea v(\\d+)$\\;version:\\1"
+      "X-Powered-By": "^(?:E2\\s)?Aegea\\s(?:v)?([\\d\\.]+)\\;version:\\1"
     },
     "icon": "Aegea.png",
     "implies": [
       "PHP",
       "jQuery"
+    ],
+    "pricing": [
+      "low",
+      "freemium",
+      "recurring"
     ],
     "website": "https://blogengine.ru"
   },
