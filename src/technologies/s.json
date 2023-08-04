@@ -6947,8 +6947,14 @@
     "cats": [
       59
     ],
-    "description": "SweetAlert is a beautiful replacement for JavaScript's alert.",
-    "html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
+    "description": "SweetAlert is a JavaScript library that provides alternative alert and modal dialog boxes for web applications, with customisable features, aiming to improve the user interface of the default browser dialogs.",
+    "dom": {
+      "link[href*='sweet-alert']": {
+        "attributes": {
+          "href": "sweet-alert(?:\\.min)?\\.css"
+        }
+      }
+    },
     "icon": "SweetAlert.png",
     "oss": true,
     "scriptSrc": "sweet(?:-)?alert(?:\\.min)?\\.js",
@@ -6958,9 +6964,14 @@
     "cats": [
       59
     ],
-    "description": "SweetAlert2 is a beautiful, responsive, customizable, accessible replacement for JavaScript's popup boxes.",
-    "excludes": "SweetAlert",
-    "html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
+    "description": "SweetAlert2 is a JavaScript library that provides customisable, visually appealing, and responsive alert and modal dialog boxes for web applications.",
+    "dom": {
+      "link[href*='sweetalert2']": {
+        "attributes": {
+          "href": "sweetalert2(?:\\.min)?\\.css"
+        }
+      }
+    },
     "icon": "SweetAlert2.svg",
     "js": {
       "Sweetalert2": ""
@@ -6982,16 +6993,17 @@
       "swell-session": ""
     },
     "description": "Swell is a headless ecommerce platform for modern brands, startups, and agencies.",
-    "html": [
-      "<[^>]*swell\\.is",
-      "<[^>]*swell\\.store",
-      "<[^>]*schema\\.io"
-    ],
+    "excludes": "Shopify",
+    "dom": "img[srcset*='.swell.is'], img[srcset*='.swell.store'], img[srcset*='.schema.io']",
     "icon": "Swell.svg",
     "js": {
-      "swell.version": "^(.+)$\\;version:\\1"
+      "swell.version": ""
     },
-    "website": "https://www.swell.is/"
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "website": "https://www.swell.is"
   },
   "Swiffy Slider": {
     "cats": [
