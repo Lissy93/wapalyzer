@@ -50,3 +50,10 @@ Wappalyzer.analyze({
   console.log(results)
 })
 ```
+
+Here's a shell script to download all of the necessary files referenced in the above example:
+
+```shell
+http --follow https://raw.githubusercontent.com/wappalyzer/wappalyzer/master/src/categories.json > categories.json
+http --follow https://github.com/wappalyzer/wappalyzer/archive/refs/heads/master.tar.gz | tar -xz --strip-components=2 'wappalyzer-master/src/technologies'
+```
