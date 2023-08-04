@@ -1863,19 +1863,22 @@
   },
   "Duda": {
     "cats": [
-      1
+      1,
+      51
     ],
-    "description": "Duda is a web design platform for companies that offer web design services.",
-    "icon": "duda.png",
+    "description": "Duda is a user-friendly website builder and CMS platform that enables businesses and individuals to create responsive, mobile-friendly websites without extensive coding knowledge.",
+    "icon": "Duda.svg",
     "js": {
       "SystemID": "^.*DIRECT.*$",
       "d_version": "^(.*)$\\;version:\\1\\;confidence:0"
     },
     "pricing": [
-      "low"
+      "low",
+      "recurring"
     ],
     "saas": true,
-    "website": "https://www.duda.co/website-builder"
+    "scriptSrc": "dd-cdn\\.multiscreensite\\.com/",
+    "website": "https://www.duda.co"
   },
   "Duel": {
     "cats": [
