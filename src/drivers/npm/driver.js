@@ -369,40 +369,47 @@ class Driver {
   }
 
   async init() {
-    this.log('Launching browser...')
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      this.log(`Launching browser (attempt ${attempt})...`)
 
-    try {
-      if (CHROMIUM_WEBSOCKET) {
-        this.browser = await puppeteer.connect({
-          ignoreHTTPSErrors: true,
-          acceptInsecureCerts: true,
-          browserWSEndpoint: CHROMIUM_WEBSOCKET,
-        })
-      } else {
-        this.browser = await puppeteer.launch({
-          ignoreHTTPSErrors: true,
-          acceptInsecureCerts: true,
-          args: chromiumArgs,
-          executablePath: CHROMIUM_BIN,
-        })
-      }
-
-      this.browser.on('disconnected', async () => {
-        this.log('Browser disconnected')
-
-        if (!this.destroyed) {
-          try {
-            await this.init()
-          } catch (error) {
-            this.log(error)
-          }
+      try {
+        if (CHROMIUM_WEBSOCKET) {
+          this.browser = await puppeteer.connect({
+            ignoreHTTPSErrors: true,
+            acceptInsecureCerts: true,
+            browserWSEndpoint: CHROMIUM_WEBSOCKET,
+          })
+        } else {
+          this.browser = await puppeteer.launch({
+            ignoreHTTPSErrors: true,
+            acceptInsecureCerts: true,
+            args: chromiumArgs,
+            executablePath: CHROMIUM_BIN,
+            timeout: 5000,
+          })
         }
-      })
-    } catch (error) {
-      this.log(error)
 
-      throw new Error(error.message || error.toString())
+        break
+      } catch (error) {
+        this.log(error)
+
+        if (attempt >= 3) {
+          throw new Error(error.message || error.toString())
+        }
+      }
     }
+
+    this.browser.on('disconnected', async () => {
+      this.log('Browser disconnected')
+
+      if (!this.destroyed) {
+        try {
+          await this.init()
+        } catch (error) {
+          this.log(error)
+        }
+      }
+    })
   }
 
   async destroy() {
@@ -537,7 +544,7 @@ class Site {
     promise,
     fallback,
     errorMessage = 'Operation took too long to complete',
-    maxWait = Math.min(this.options.maxWait, 1000)
+    maxWait = Math.min(this.options.maxWait, 3000)
   ) {
     let timeout = null
 
@@ -1260,7 +1267,7 @@ class Site {
 
           const body = await get(new URL(path, url.href), {
             userAgent: this.options.userAgent,
-            timeout: Math.min(this.options.maxWait, 1000),
+            timeout: Math.min(this.options.maxWait, 3000),
           })
 
           this.log(`Probe ok (${path})`)
