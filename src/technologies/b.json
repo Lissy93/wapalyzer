@@ -333,6 +333,18 @@
     },
     "website": "https://tools.ietf.org/html/rfc7617"
   },
+  "Basil.css": {
+    "cats": [66],
+    "description": "Basil.css is a responsive and customizable UI framework.",
+    "html": [
+      "<link[^>]* href=[^>]*?basil\\.css[^>]*?>",
+      "<style>[^<]*?\\.big\\\\:col-1\\s*?{\\s*?grid-column:\\s*?span 1;[^<]*?</style>",
+      "<link[^>]* href=\"https://unpkg\\.com/basilcss",
+      "<link[^>]* href=\"https://cdn\\.jsdelivr\\.net/npm/basilcss"
+    ],
+    "icon": "basilcss.svg",
+    "website": "https://basilcss.com"
+  },
   "Basis Technologies": {
     "cats": [
       36
