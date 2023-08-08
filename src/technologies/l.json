@@ -54,22 +54,6 @@
     "website": "https://wiki.lkqd.com",
     "xhr": "\\.lkqd\\.net"
   },
-  "LlamaLink Cloud Server": {
-    "cats": [
-      22
-    ],
-    "description": "LlamaLink Cloud Server is a custom dynamic web server based on Nginx Web server that load balance user traffic between hosting nodes and allows fast and cached expiriance to website users.",
-    "icon": "LlamaLink.png",
-    "implies": "Nginx",
-    "headers": {
-      "Server": "^LlamaLink\\sCloud$"
-    },
-    "pricing": [
-      "payg",
-      "recurring"
-    ],
-    "website": "https://llamalink.net"
-  },
   "LOU": {
     "cats": [
       58
@@ -353,13 +337,13 @@
     ],
     "description": "LeadChat offers live-operators and CRM solutions that utilise LiveChat chat software to facilitate real-time engagement with website visitors for businesses.",
     "icon": "LeadChat.svg",
-    "requires": "LiveChat",
-    "scriptSrc": "(?://|\\.)chatsystem\\.io/",
     "pricing": [
       "recurring",
       "payg",
       "poa"
     ],
+    "requires": "LiveChat",
+    "scriptSrc": "(?://|\\.)chatsystem\\.io/",
     "website": "https://www.leadchat.com"
   },
   "Leadfeeder": {
@@ -1390,6 +1374,22 @@
     "oss": true,
     "scriptSrc": "livewire(?:\\.min)?\\.js",
     "website": "https://laravel-livewire.com"
+  },
+  "LlamaLink Cloud Server": {
+    "cats": [
+      22
+    ],
+    "description": "LlamaLink Cloud Server is a custom dynamic web server based on Nginx Web server that load balance user traffic between hosting nodes and allows fast and cached expiriance to website users.",
+    "headers": {
+      "Server": "^LlamaLink\\sCloud$"
+    },
+    "icon": "LlamaLink.png",
+    "implies": "Nginx",
+    "pricing": [
+      "payg",
+      "recurring"
+    ],
+    "website": "https://llamalink.net"
   },
   "Loadable-Components": {
     "cats": [

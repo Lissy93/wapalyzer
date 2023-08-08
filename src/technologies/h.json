@@ -204,8 +204,8 @@
       "Handlebars": "",
       "Handlebars.VERSION": "^(.+)$\\;version:\\1"
     },
-    "scriptSrc": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
     "oss": true,
+    "scriptSrc": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
     "website": "https://handlebarsjs.com"
   },
   "Handtalk": {
@@ -802,6 +802,24 @@
     "icon": "Hiawatha.png",
     "website": "https://hiawatha-webserver.org"
   },
+  "HighLevel": {
+    "cats": [
+      32,
+      53
+    ],
+    "description": "HighLevel is an all-in-one marketing and automation platform designed for marketing agencies and small businesses to manage CRM, marketing campaigns, sales funnels, appointment scheduling, and more.",
+    "icon": "HighLevel.svg",
+    "js": {
+      "leadConnector.chatWidget": ""
+    },
+    "pricing": [
+      "mid",
+      "recurring"
+    ],
+    "saas": true,
+    "scriptSrc": "\\.leadconnectorhq\\.com/",
+    "website": "https://www.gohighlevel.com"
+  },
   "HighStore": {
     "cats": [
       6
@@ -831,24 +849,6 @@
     },
     "scriptSrc": "highcharts.*\\.js",
     "website": "https://www.highcharts.com"
-  },
-  "HighLevel": {
-    "cats": [
-      32,
-      53
-    ],
-    "description": "HighLevel is an all-in-one marketing and automation platform designed for marketing agencies and small businesses to manage CRM, marketing campaigns, sales funnels, appointment scheduling, and more.",
-    "icon": "HighLevel.svg",
-    "js": {
-      "leadConnector.chatWidget": ""
-    },
-    "scriptSrc": "\\.leadconnectorhq\\.com/",
-    "saas": true,
-    "pricing": [
-      "mid",
-      "recurring"
-    ],
-    "website": "https://www.gohighlevel.com"
   },
   "Highlight.js": {
     "cats": [

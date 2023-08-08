@@ -323,6 +323,9 @@
     "cats": [
       36
     ],
+    "cookies": {
+      "taboola_session_id": ""
+    },
     "description": "Taboola is a content discovery & native advertising platform for publishers and advertisers.",
     "dom": {
       "link[href*='.taboola.com']": {
@@ -333,12 +336,9 @@
     },
     "icon": "Taboola.svg",
     "js": {
-      "_taboola": "",
       "TRCImpl.global": "",
+      "_taboola": "",
       "taboola_view_id": ""
-    },
-    "cookies": {
-      "taboola_session_id": ""
     },
     "pricing": [
       "payg"

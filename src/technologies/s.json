@@ -1540,6 +1540,20 @@
     "saas": true,
     "website": "https://selldone.com"
   },
+  "SellersCommerce": {
+    "cats": [
+      6
+    ],
+    "description": "SellersCommerce is a medium ecommerce software company that provides b2b ecommerce platform to retail companies.",
+    "icon": "SellersCommerce.png",
+    "pricing": [
+      "poa"
+    ],
+    "requires": "Microsoft ASP.NET",
+    "saas": true,
+    "scriptSrc": "\\.sellerscommerce\\.com/",
+    "website": "https://www.sellerscommerce.com"
+  },
   "Selless": {
     "cats": [
       6
@@ -1555,20 +1569,6 @@
     ],
     "saas": true,
     "website": "https://selless.com"
-  },
-  "SellersCommerce": {
-    "cats": [
-      6
-    ],
-    "description": "SellersCommerce is a medium ecommerce software company that provides b2b ecommerce platform to retail companies.",
-    "icon": "SellersCommerce.png",
-    "pricing": [
-      "poa"
-    ],
-    "saas": true,
-    "scriptSrc": "\\.sellerscommerce\\.com/",
-    "requires": "Microsoft ASP.NET",
-    "website": "https://www.sellerscommerce.com"
   },
   "Sellfy": {
     "cats": [
@@ -2797,11 +2797,11 @@
     ],
     "description": "Shoppub is an ecommerce platform that focuses on implementing advanced business rules.",
     "icon": "Shoppub.svg",
-    "meta": {
-      "author": "^Shoppub$"
-    },
     "js": {
       "Shoppub.store": ""
+    },
+    "meta": {
+      "author": "^Shoppub$"
     },
     "pricing": [
       "mid",
@@ -3369,11 +3369,11 @@
     "js": {
       "SirvoyBookingWidget": ""
     },
-    "saas": true,
     "pricing": [
       "low",
       "recurring"
     ],
+    "saas": true,
     "website": "https://sirvoy.com"
   },
   "Site Kit": {
@@ -3916,23 +3916,6 @@
     "saas": true,
     "website": "https://www.skolengo.com"
   },
-  "Skyflow": {
-    "cats": [
-      16
-    ],
-    "description": "Skyflow is a company that provides a secure data privacy platform and API.",
-    "icon": "Skyflow.svg",
-    "js": {
-      "Skyflow.ElementType.CARD_NUMBER": "",
-      "Skyflow.ValidationRuleType": ""
-    },
-    "pricing": [
-      "high",
-      "recurring"
-    ],
-    "saas": true,
-    "website": "https://www.skyflow.com"
-  },
   "Sky-Shop": {
     "cats": [
       6
@@ -3975,6 +3958,23 @@
     "saas": true,
     "scriptSrc": "sv-wc-payment-gateway-payment-form\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
     "website": "https://www.skyverge.com"
+  },
+  "Skyflow": {
+    "cats": [
+      16
+    ],
+    "description": "Skyflow is a company that provides a secure data privacy platform and API.",
+    "icon": "Skyflow.svg",
+    "js": {
+      "Skyflow.ElementType.CARD_NUMBER": "",
+      "Skyflow.ValidationRuleType": ""
+    },
+    "pricing": [
+      "high",
+      "recurring"
+    ],
+    "saas": true,
+    "website": "https://www.skyflow.com"
   },
   "Slate": {
     "cats": [
@@ -6728,12 +6728,12 @@
       "__NUXT__.config.public.supabase": ""
     },
     "oss": true,
-    "saas": true,
     "pricing": [
       "freemium",
       "payg",
       "recurring"
     ],
+    "saas": true,
     "website": "https://supabase.com"
   },
   "Super Builder": {
@@ -6888,17 +6888,14 @@
       66
     ],
     "description": "SvelteKit is the official Svelte framework for building web applications with a flexible filesystem-based routing.",
-    "meta": {
-      "generator": "SvelteKit"
-    },
     "dom": {
       "#svelte-announcer": {
         "exists": ""
       },
       "a": {
         "attributes": {
-          "sveltekit:prefetch": "",
-          "data-sveltekit-preload-data": ""
+          "data-sveltekit-preload-data": "",
+          "sveltekit:prefetch": ""
         }
       }
     },
@@ -6908,6 +6905,9 @@
       "Node.js",
       "Vite"
     ],
+    "meta": {
+      "generator": "SvelteKit"
+    },
     "oss": true,
     "website": "https://kit.svelte.dev"
   },
@@ -6993,8 +6993,8 @@
       "swell-session": ""
     },
     "description": "Swell is a headless ecommerce platform for modern brands, startups, and agencies.",
-    "excludes": "Shopify",
     "dom": "img[srcset*='.swell.is'], img[srcset*='.swell.store'], img[srcset*='.schema.io']",
+    "excludes": "Shopify",
     "icon": "Swell.svg",
     "js": {
       "swell.version": ""
