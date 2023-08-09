@@ -90,7 +90,6 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
   "headers": {
     "X-Powered-By": "Example"
   },
-  "html": "<link[^>]example\\.css",
   "text": "\bexample\b",
   "css": "\\.example-class",
   "robots": "Disallow: /unique-path/",
@@ -342,17 +341,6 @@ Plus any of:
       <td><code>{ "X-Powered-By": "^WordPress$" }</code></td>
     </tr>
     <tr>
-      <td><code>html</code></td>
-      <td>String | Array</td>
-      <td>
-        HTML source code. Patterns must include an HTML opening tag to
-        avoid matching plain text. For performance reasons, avoid
-        <code>html</code> where possible and use
-        <code>dom</code> instead.
-      </td>
-      <td><code>"&lt;a [^&gt;]*href=\"index.html"</code></td>
-    </tr>
-    <tr>
       <td><code>text</code></td>
       <td>String | Array</td>
       <td>
@@ -421,6 +409,17 @@ Plus any of:
         <code>js</code> instead.
       </td>
       <td><code>"function webpackJsonpCallback\\(data\\) {"</code></td>
+    </tr>
+    <tr>
+      <td><code>html</code> (deprecated)</td>
+      <td>String | Array</td>
+      <td>
+        HTML source code. Patterns must include an HTML opening tag to
+        avoid matching plain text. <strong>For performance reasons, avoid
+        <code>html</code> where possible and use
+        <code>dom</code> instead.</strong>
+      </td>
+      <td><code>"&lt;a [^&gt;]*href=\"index.html"</code></td>
     </tr>
   </tbody>
 </table>
