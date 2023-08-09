@@ -3679,18 +3679,18 @@
       23
     ],
     "description": "Sitecore Experience Edge is a product that optimises content delivery by utilising edge computing and caching technologies to enhance website performance and user experience.",
+    "dom": "img[src*='edge.sitecorecloud.io']",
     "icon": "Sitecore.svg",
-    "requiresCategory": 12,
     "implies": [
       "GraphQL",
       "Sitecore Experience Platform"
     ],
-    "dom": "img[src*='edge.sitecorecloud.io']",
     "pricing": [
       "poa",
       "recurring",
       "high"
     ],
+    "requiresCategory": 12,
     "saas": false,
     "website": "https://doc.sitecore.com/xp/en/developers/101/developer-tools/experience-edge-for-xm-apis.html"
   },
