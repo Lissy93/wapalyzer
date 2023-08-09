@@ -49,6 +49,20 @@ const Utils = {
    */
   async getOption(name, defaultValue = null) {
     try {
+      try {
+        const managed = await Utils.promisify(
+          chrome.storage.managed,
+          'get',
+          name
+        )
+
+        if (managed[name] !== undefined) {
+          return managed[name]
+        }
+      } catch {
+        // Continue
+      }
+
       const option = await Utils.promisify(chrome.storage.local, 'get', name)
 
       if (option[name] !== undefined) {
