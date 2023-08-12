@@ -450,6 +450,28 @@
     "scriptSrc": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
     "website": "https://www.leanplum.com"
   },
+  "LearnDash": {
+    "cats": [
+      21,
+      87
+    ],
+    "description": "LearnDash is a WordPress plugin that enables the creation and management of online courses, quizzes, and educational content within a website.",
+    "icon": "LearnDash.svg",
+    "dom": {
+      "link[href*='/wp-content/plugins/sfwd-lms/']": {
+        "attributes": {
+          "href": "/wp-content/plugins/sfwd-lms/.+\\.css(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+        }
+      }
+    },
+    "requires": "WordPress",
+    "pricing": [
+      "low",
+      "onetime",
+      "recurring"
+    ],
+    "website": "https://www.learndash.com"
+  },
   "LearnWorlds": {
     "cats": [
       21
