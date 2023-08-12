@@ -1150,11 +1150,13 @@
     "cats": [
       18
     ],
-    "icon": "ionic.png",
+    "description": "Ionic is an open-source framework that enables developers to create cross-platform mobile, web, and desktop applications using web technologies like HTML, CSS, and JavaScript.",
+    "icon": "Ionic.svg",
     "js": {
       "Ionic.config": "",
       "Ionic.version": "^(.+)$\\;version:\\1"
     },
+    "oss": true,
     "website": "https://ionicframework.com"
   },
   "Ionicons": {
@@ -1162,8 +1164,9 @@
       17
     ],
     "description": "Ionicons is an open-source icon set crafted for web, iOS, Android, and desktop apps.",
-    "html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
-    "icon": "Ionicons.png",
+    "dom": "link[href*='/ionicons.min.css'], link[href*='/ionicons.css']",
+    "icon": "Ionicons.svg",
+    "oss": true,
     "website": "https://ionicons.com"
   },
   "IrisLMS": {
