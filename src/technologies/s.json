@@ -795,7 +795,8 @@
     ],
     "description": "Salla is an ecommerce platform specifically tailored to serve businesses and customers in Saudi Arabia.",
     "headers": {
-      "x-powered-by": "^Salla$"
+      "x-powered-by": "^Salla$",
+      "X-Frame-Options": "\\.salla\\.sa"
     },
     "icon": "Salla.svg",
     "js": {
