@@ -338,13 +338,7 @@
       66
     ],
     "description": "Basil.css is a responsive and customizable UI framework.",
-    "dom": [
-      "link[href*='basil.css']",
-      "style: .big\\:col-1 { grid-column: span 1;",
-      "link[href*='https://unpkg.com/basilcss']",
-      "link[href*='https://cdn.jsdelivr.net/npm/basilcss']",
-      "text: basil\\.css"
-  ],
+    "dom": "link[href*='/basil.css'], link[href*='/basilcss']",
     "icon": "basilcss.svg",
     "website": "https://basilcss.com"
   },
