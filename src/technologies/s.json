@@ -3656,7 +3656,8 @@
     "dom": [
       "link[href*='/_sitecore/']",
       "img[src^='/-/media/']",
-      "img[src*='/~/media/.+\\.ashx']"
+      "img[src*='/~/media/.+\\.ashx']",
+      "input[value*='sitecore/media']"
     ],
     "icon": "Sitecore.svg",
     "implies": "Microsoft ASP.NET",
