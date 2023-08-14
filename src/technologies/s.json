@@ -1955,22 +1955,6 @@
     "scriptSrc": "widget\\.sezzle\\.(?:in|com)",
     "website": "https://sezzle.com/"
   },
-  "shadcn/ui": {
-    "cats": [
-      66
-    ],
-    "css": [
-      "--destructive-foreground"
-    ],
-    "description": "shadcn/ui is a component system built with Radix UI and Tailwind CSS.",
-    "icon": "shadcn-ui.svg",
-    "oss": true,
-    "implies": [
-      "Radix UI",
-      "Tailwind CSS"
-    ],
-    "website": "https://ui.shadcn.com"
-  },
   "Shaka Player": {
     "cats": [
       14
@@ -6720,11 +6704,11 @@
     ],
     "description": "Summernote is an open-source JavaScript library that offers a feature-rich WYSIWYG editor for web applications, allowing users to create and edit formatted content in a familiar word processor-like interface.",
     "icon": "Summernote.svg",
+    "oss": true,
     "scriptSrc": [
       "/(?:S|s)ummernote(?:\\.min)?\\.js",
       "/summernote(?:@|-)([\\d\\.]+)/\\;version:\\1"
     ],
-    "oss": true,
     "website": "https://summernote.org"
   },
   "Sumo": {
@@ -7309,6 +7293,22 @@
     "icon": "scrollreveal.svg",
     "scriptSrc": "scrollreveal(?:\\.min)(?:\\.js)",
     "website": "https://scrollrevealjs.org"
+  },
+  "shadcn/ui": {
+    "cats": [
+      66
+    ],
+    "css": [
+      "--destructive-foreground"
+    ],
+    "description": "shadcn/ui is a component system built with Radix UI and Tailwind CSS.",
+    "icon": "shadcn-ui.svg",
+    "implies": [
+      "Radix UI",
+      "Tailwind CSS"
+    ],
+    "oss": true,
+    "website": "https://ui.shadcn.com"
   },
   "shine.js": {
     "cats": [

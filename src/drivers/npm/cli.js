@@ -13,6 +13,7 @@ const aliases = {
   a: 'userAgent',
   b: 'batchSize',
   d: 'debug',
+  f: 'fast',
   t: 'delay',
   h: 'help',
   H: 'header',
@@ -74,6 +75,7 @@ Examples:
 Options:
   -b, --batch-size=...       Process links in batches
   -d, --debug                Output debug messages
+  -f, --fast                 Prioritise speed over accuracy
   -t, --delay=ms             Wait for ms milliseconds between requests
   -h, --help                 This text
   -H, --header               Extra header to send with requests

@@ -283,7 +283,11 @@ function analyzeDom(dom, technologies = Wappalyzer.technologies) {
 }
 
 function get(url, options = {}) {
-  const timeout = options.timeout || 10000
+  const timeout =
+    options.timeout ||
+    (this.options.fast
+      ? this.Math.min(this.options.maxWait, 3000)
+      : this.options.maxWait)
 
   if (['http:', 'https:'].includes(url.protocol)) {
     const { get } = url.protocol === 'http:' ? http : https
@@ -314,7 +318,7 @@ function get(url, options = {}) {
         }
       )
         .setTimeout(timeout, () =>
-          reject(new Error(`Timeout (${url.href}, ${timeout}ms)`))
+          reject(new Error(`Timeout (${url}, ${timeout}ms)`))
         )
         .on('error', (error) => reject(new Error(error.message)))
     )
@@ -345,6 +349,7 @@ class Driver {
     }
 
     this.options.debug = Boolean(+this.options.debug)
+    this.options.fast = Boolean(+this.options.fast)
     this.options.recursive = Boolean(+this.options.recursive)
     this.options.probe =
       String(this.options.probe || '').toLowerCase() === 'basic'
@@ -369,7 +374,7 @@ class Driver {
   }
 
   async init() {
-    for (let attempt = 1; attempt <= 3; attempt++) {
+    for (let attempt = 1; attempt <= 2; attempt++) {
       this.log(`Launching browser (attempt ${attempt})...`)
 
       try {
@@ -385,7 +390,9 @@ class Driver {
             acceptInsecureCerts: true,
             args: chromiumArgs,
             executablePath: CHROMIUM_BIN,
-            timeout: 5000,
+            timeout: this.options.fast
+              ? Math.min(this.options.maxWait, 10000)
+              : this.options.maxWait,
           })
         }
 
@@ -393,28 +400,20 @@ class Driver {
       } catch (error) {
         this.log(error)
 
-        if (attempt >= 3) {
+        if (attempt >= 2) {
           throw new Error(error.message || error.toString())
         }
       }
     }
 
-    this.browser.on('disconnected', async () => {
-      this.log('Browser disconnected')
+    this.browser.on('disconnected', () => {
+      this.browser = undefined
 
-      if (!this.destroyed) {
-        try {
-          await this.init()
-        } catch (error) {
-          this.log(error)
-        }
-      }
+      this.log('Browser disconnected')
     })
   }
 
   async destroy() {
-    this.destroyed = true
-
     if (this.browser) {
       try {
         await sleep(1)
@@ -507,8 +506,6 @@ class Site {
     this.cache = {}
 
     this.probed = false
-
-    this.destroyed = false
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -544,7 +541,9 @@ class Site {
     promise,
     fallback,
     errorMessage = 'Operation took too long to complete',
-    maxWait = Math.min(this.options.maxWait, 3000)
+    maxWait = this.options.fast
+      ? Math.min(this.options.maxWait, 2000)
+      : this.options.maxWait
   ) {
     let timeout = null
 
@@ -579,10 +578,6 @@ class Site {
   }
 
   async goto(url) {
-    if (this.destroyed) {
-      return
-    }
-
     // Return when the URL is a duplicate or maxUrls has been reached
     if (this.analyzedUrls[url.href]) {
       return []
@@ -640,14 +635,18 @@ class Site {
         ) {
           request.abort('blockedbyclient')
         } else {
-          const headers = {
-            ...request.headers(),
-            ...this.options.headers,
-          }
-
           await this.emit('request', { page, request })
 
-          request.continue({ headers })
+          if (Object.keys(this.options.headers).length) {
+            const headers = {
+              ...request.headers(),
+              ...this.options.headers,
+            }
+
+            request.continue({ headers })
+          } else {
+            request.continue()
+          }
         }
       } catch (error) {
         error.message += ` (${url})`
@@ -657,7 +656,7 @@ class Site {
     })
 
     page.on('response', async (response) => {
-      if (this.destroyed || !page || page.__closed || page.isClosed()) {
+      if (!page || page.__closed || page.isClosed()) {
         return
       }
 
@@ -745,7 +744,7 @@ class Site {
       }
 
       if (!this.options.noScripts) {
-        await sleep(1000)
+        await sleep(this.options.fast ? 1000 : 3000)
       }
 
       // page.on('console', (message) => this.log(message.text()))
@@ -810,151 +809,170 @@ class Site {
       let dom = []
 
       if (html) {
-        // Links
-        links = !this.options.recursive
-          ? []
-          : await this.promiseTimeout(
+        await Promise.all([
+          (async () => {
+            // Links
+            links = !this.options.recursive
+              ? []
+              : await this.promiseTimeout(
+                  (
+                    await this.promiseTimeout(
+                      page.evaluateHandle(() =>
+                        Array.from(document.getElementsByTagName('a')).map(
+                          ({
+                            hash,
+                            hostname,
+                            href,
+                            pathname,
+                            protocol,
+                            rel,
+                          }) => ({
+                            hash,
+                            hostname,
+                            href,
+                            pathname,
+                            protocol,
+                            rel,
+                          })
+                        )
+                      ),
+                      { jsonValue: () => [] },
+                      'Timeout (links)'
+                    )
+                  ).jsonValue(),
+                  [],
+                  'Timeout (links)'
+                )
+          })(),
+          (async () => {
+            // Text
+            text = await this.promiseTimeout(
               (
                 await this.promiseTimeout(
-                  page.evaluateHandle(() =>
-                    Array.from(document.getElementsByTagName('a')).map(
-                      ({ hash, hostname, href, pathname, protocol, rel }) => ({
-                        hash,
-                        hostname,
-                        href,
-                        pathname,
-                        protocol,
-                        rel,
-                      })
-                    )
+                  page.evaluateHandle(
+                    () =>
+                      // eslint-disable-next-line unicorn/prefer-text-content
+                      document.body && document.body.innerText
                   ),
+                  { jsonValue: () => '' },
+                  'Timeout (text)'
+                )
+              ).jsonValue(),
+              '',
+              'Timeout (text)'
+            )
+          })(),
+          (async () => {
+            // CSS
+            css = await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  page.evaluateHandle((maxRows) => {
+                    const css = []
+
+                    try {
+                      if (!document.styleSheets.length) {
+                        return ''
+                      }
+
+                      for (const sheet of Array.from(document.styleSheets)) {
+                        for (const rules of Array.from(sheet.cssRules)) {
+                          css.push(rules.cssText)
+
+                          if (css.length >= maxRows) {
+                            break
+                          }
+                        }
+                      }
+                    } catch (error) {
+                      return ''
+                    }
+
+                    return css.join('\n')
+                  }, this.options.htmlMaxRows),
+                  { jsonValue: () => '' },
+                  'Timeout (css)'
+                )
+              ).jsonValue(),
+              '',
+              'Timeout (css)'
+            )
+          })(),
+          (async () => {
+            // Script tags
+            ;[scriptSrc, scripts] = await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  page.evaluateHandle(() => {
+                    const nodes = Array.from(
+                      document.getElementsByTagName('script')
+                    )
+
+                    return [
+                      nodes
+                        .filter(
+                          ({ src }) =>
+                            src && !src.startsWith('data:text/javascript;')
+                        )
+                        .map(({ src }) => src),
+                      nodes
+                        .map((node) => node.textContent)
+                        .filter((script) => script),
+                    ]
+                  }),
                   { jsonValue: () => [] },
-                  'Timeout (links)'
+                  'Timeout (scripts)'
                 )
               ).jsonValue(),
               [],
-              'Timeout (links)'
-            )
-
-        // Text
-        text = await this.promiseTimeout(
-          (
-            await this.promiseTimeout(
-              page.evaluateHandle(
-                () =>
-                  // eslint-disable-next-line unicorn/prefer-text-content
-                  document.body && document.body.innerText
-              ),
-              { jsonValue: () => '' },
-              'Timeout (text)'
-            )
-          ).jsonValue(),
-          '',
-          'Timeout (text)'
-        )
-
-        // CSS
-        css = await this.promiseTimeout(
-          (
-            await this.promiseTimeout(
-              page.evaluateHandle((maxRows) => {
-                const css = []
-
-                try {
-                  if (!document.styleSheets.length) {
-                    return ''
-                  }
-
-                  for (const sheet of Array.from(document.styleSheets)) {
-                    for (const rules of Array.from(sheet.cssRules)) {
-                      css.push(rules.cssText)
-
-                      if (css.length >= maxRows) {
-                        break
-                      }
-                    }
-                  }
-                } catch (error) {
-                  return ''
-                }
-
-                return css.join('\n')
-              }, this.options.htmlMaxRows),
-              { jsonValue: () => '' },
-              'Timeout (css)'
-            )
-          ).jsonValue(),
-          '',
-          'Timeout (css)'
-        )
-
-        // Script tags
-        ;[scriptSrc, scripts] = await this.promiseTimeout(
-          (
-            await this.promiseTimeout(
-              page.evaluateHandle(() => {
-                const nodes = Array.from(
-                  document.getElementsByTagName('script')
-                )
-
-                return [
-                  nodes
-                    .filter(
-                      ({ src }) =>
-                        src && !src.startsWith('data:text/javascript;')
-                    )
-                    .map(({ src }) => src),
-                  nodes
-                    .map((node) => node.textContent)
-                    .filter((script) => script),
-                ]
-              }),
-              { jsonValue: () => [] },
               'Timeout (scripts)'
             )
-          ).jsonValue(),
-          [],
-          'Timeout (scripts)'
-        )
+          })(),
+          (async () => {
+            // Meta tags
+            meta = await this.promiseTimeout(
+              (
+                await this.promiseTimeout(
+                  page.evaluateHandle(() =>
+                    Array.from(document.querySelectorAll('meta')).reduce(
+                      (metas, meta) => {
+                        const key =
+                          meta.getAttribute('name') ||
+                          meta.getAttribute('property')
 
-        // Meta tags
-        meta = await this.promiseTimeout(
-          (
-            await this.promiseTimeout(
-              page.evaluateHandle(() =>
-                Array.from(document.querySelectorAll('meta')).reduce(
-                  (metas, meta) => {
-                    const key =
-                      meta.getAttribute('name') || meta.getAttribute('property')
+                        if (key) {
+                          metas[key.toLowerCase()] =
+                            metas[key.toLowerCase()] || []
 
-                    if (key) {
-                      metas[key.toLowerCase()] = metas[key.toLowerCase()] || []
+                          metas[key.toLowerCase()].push(
+                            meta.getAttribute('content')
+                          )
+                        }
 
-                      metas[key.toLowerCase()].push(
-                        meta.getAttribute('content')
-                      )
-                    }
-
-                    return metas
-                  },
-                  {}
+                        return metas
+                      },
+                      {}
+                    )
+                  ),
+                  { jsonValue: () => [] },
+                  'Timeout (meta)'
                 )
-              ),
-              { jsonValue: () => [] },
+              ).jsonValue(),
+              [],
               'Timeout (meta)'
             )
-          ).jsonValue(),
-          [],
-          'Timeout (meta)'
-        )
-
-        // JavaScript
-        js = this.options.noScripts
-          ? []
-          : await this.promiseTimeout(getJs(page), [], 'Timeout (js)')
-
-        // DOM
-        dom = await this.promiseTimeout(getDom(page), [], 'Timeout (dom)')
+          })(),
+          (async () => {
+            // JavaScript
+            js = this.options.noScripts
+              ? []
+              : await this.promiseTimeout(getJs(page), [], 'Timeout (js)')
+          })(),
+          (async () => {
+            // DOM
+            dom = await this.promiseTimeout(getDom(page), [], 'Timeout (dom)')
+          })(),
+        ])
       }
 
       this.cache[url.href] = {
@@ -1037,7 +1055,9 @@ class Site {
       }
 
       if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
-        const newError = new Error(`Hostname could not be resolved (${url})`)
+        const newError = new Error(
+          `Hostname could not be resolved (${url.hostname})`
+        )
 
         newError.code = 'WAPPALYZER_DNS_ERROR'
 
@@ -1253,7 +1273,9 @@ class Site {
         }),
         [],
         'Timeout (dns)',
-        Math.min(this.options.maxWait, 15000)
+        this.options.fast
+          ? Math.min(this.options.maxWait, 15000)
+          : this.options.maxWait
       )
     }
 
@@ -1451,8 +1473,6 @@ class Site {
         }
       })
     )
-
-    this.destroyed = true
 
     this.log('Site closed')
   }
