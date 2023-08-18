@@ -1537,6 +1537,17 @@
     "scripts": "aem-(?:GridColumn|apps/)",
     "website": "https://www.adobe.com/marketing/experience-manager.html"
   },
+  "Adobe Experience Manager Franklin": {
+    "cats": [
+      1
+    ],
+    "cpe": "cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*",
+    "description": "Adobe Experience Manager Franklin, also known as Project Helix or Composability, is a new way to publish AEM pages using Google Drive or Microsoft Office via Sharepoint. Instead of components, Franklin uses blocks to build pages. Blocks are pieces of a document that will be transformed into web page content.",
+    "icon": "Adobe Experience Manager Franklin.svg",
+    "excludes": "Adobe Experience Manager",
+    "scriptSrc": "^.+/scripts/lib-franklin\\.js$",
+    "website": "https://www.hlx.live"
+  },
   "Adobe Experience Platform Identity Service": {
     "cats": [
       97
