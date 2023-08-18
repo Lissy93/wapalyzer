@@ -16,8 +16,8 @@ const appPaths = () => {
   return {
     basePath: fileDir,
     appPath: appDir,
-    iconPath: appDir + '/src/drivers/webextension/images/icons',
-    convertPath: appDir + '/src/drivers/webextension/images/icons/converted',
+    iconPath: appDir + '/src/images/icons',
+    convertPath: appDir + '/src/images/icons/converted',
   }
 }
 

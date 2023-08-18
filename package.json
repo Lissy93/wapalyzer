@@ -17,14 +17,13 @@
     "terminal-overwrite": "^2.0.1"
   },
   "scripts": {
-    "link": "node ./bin/link.js; node ./bin/manifest.js v3",
     "lint": "eslint src/**/*.{js,json}",
     "lint:fix": "eslint --fix src/**/*.{js,json}",
     "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/technologies/ && node ./bin/validate.js",
     "convert": "node --no-warnings ./bin/convert.js",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/categories.json ./src/technologies/*.json",
-    "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
-    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension",
+    "build": "yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
+    "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src",
     "manifest": "node ./bin/manifest.js"
   }
 }

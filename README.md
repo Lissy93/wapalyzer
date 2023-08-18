@@ -1,6 +1,4 @@
 [![Validate](https://github.com/wappalyzer/wappalyzer/actions/workflows/validate.yml/badge.svg)](https://github.com/wappalyzer/wappalyzer/actions/workflows/validate.yml)
-[![wappalyzer NPM](https://img.shields.io/badge/npm-wappalyzer-blue)](https://www.npmjs.com/package/wappalyzer)
-[![wappalyzer-core NPM](https://img.shields.io/badge/npm-wappalyzer--core-blue)](https://www.npmjs.com/package/wappalyzer-core)
 [![Github Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/AliasIO)](https://github.com/sponsors/AliasIO)
 
 <a href="https://www.wappalyzer.com/?utm_source=readme&utm_medium=github&utm_campaign=wappalyzer"><img src="https://www.wappalyzer.com/images/logo/icon_192.png" height="72" alt="Wappalyzer" align="left" /></a>
@@ -11,13 +9,11 @@
 
 **[Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites, such as CMS, web frameworks, ecommerce platforms, JavaScript libraries, analytics tools and [more](https://www.wappalyzer.com/technologies).**
 
-If you don't have time to configure, host, debug and maintain your own infrastructure to analyse websites at scale, we offer a SaaS solution that has all the same capabilities and a lot more. Our [apps](https://www.wappalyzer.com/apps/) and [APIs](https://www.wappalyzer.com/api/) not only reveal the technology stack a website uses but also company and contact details, social media profiles, keywords and metadata.
-
 ## Prerequisites
 
--   [Git](https://git-scm.com)
--   [Node.js](https://nodejs.org) version 14 or higher
--   [Yarn](https://yarnpkg.com)
+- [Git](https://git-scm.com)
+- [Node.js](https://nodejs.org) version 14 or higher
+- [Yarn](https://yarnpkg.com)
 
 ## Quick start
 
@@ -25,29 +21,22 @@ If you don't have time to configure, host, debug and maintain your own infrastru
 git clone https://github.com/wappalyzer/wappalyzer.git
 cd wappalyzer
 yarn install
-yarn run link
 ```
 
 ## Usage
 
-### Command line
-
-```sh
-node src/drivers/npm/cli.js https://example.com
-```
-
 ### Chrome extension
 
-* Go to `about:extensions`
-* Enable 'Developer mode'
-* Click 'Load unpacked'
-* Select `src/drivers/webextension`
+- Go to `about:extensions`
+- Enable 'Developer mode'
+- Click 'Load unpacked'
+- Select `src`
 
 ### Firefox extension
 
-* Go to `about:debugging#/runtime/this-firefox`
-* Click 'Load Temporary Add-on'
-* Select `src/drivers/webextension/manifest.json`
+- Go to `about:debugging#/runtime/this-firefox`
+- Click 'Load Temporary Add-on'
+- Select `src/manifest.json`
 
 ## Specification
 
@@ -208,6 +197,7 @@ Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer
 Cost indicator (based on a typical plan or average monthly price) and available pricing models. For paid products only.
 
 One of:
+
 <ul>
   <li><code>low</code>Less than US $100 / mo</li>
   <li><code>mid</code>Between US $100 - $1,000 / mo</li>
@@ -215,6 +205,7 @@ One of:
 </ul>
 
 Plus any of:
+
 <ul>
   <li><code>freemium</code> Free plan available</li>
   <li><code>onetime</code> One-time payments accepted</li>
@@ -319,7 +310,7 @@ Plus any of:
       <td><code>dns</code></td>
       <td>Object</td>
       <td>
-        DNS records: supports MX, TXT, SOA and NS (NPM driver only).
+        DNS records: supports MX, TXT, SOA and NS.
       </td>
       <td>
         <code>{ "MX": "example\\.com" }</code>
@@ -362,7 +353,7 @@ Plus any of:
       <td><code>probe</code></td>
       <td>Object</td>
       <td>
-        Request a URL to test for its existence or match text content (NPM driver only).
+        Request a URL to test for its existence or match text content.
       </td>
       <td><code>{ "/path": "Example text" }</code></td>
     </tr>
@@ -430,11 +421,11 @@ Patterns are essentially JavaScript regular expressions written as strings, but 
 
 ### Quirks and pitfalls
 
--   Because of the string format, the escape character itself must be escaped when using special characters such as the dot (`\\.`). Double quotes must be escaped only once (`\"`). Slashes do not need to be escaped (`/`).
--   Flags are not supported. Regular expressions are treated as case-insensitive.
--   Capture groups (`()`) are used for version detection. In other cases, use non-capturing groups (`(?:)`).
--   Use start and end of string anchors (`^` and `$`) where possible for optimal performance.
--   Short or generic patterns can cause applications to be identified incorrectly. Try to find unique strings to match.
+- Because of the string format, the escape character itself must be escaped when using special characters such as the dot (`\\.`). Double quotes must be escaped only once (`\"`). Slashes do not need to be escaped (`/`).
+- Flags are not supported. Regular expressions are treated as case-insensitive.
+- Capture groups (`()`) are used for version detection. In other cases, use non-capturing groups (`(?:)`).
+- Use start and end of string anchors (`^` and `$`) where possible for optimal performance.
+- Short or generic patterns can cause applications to be identified incorrectly. Try to find unique strings to match.
 
 ### Tags
 
