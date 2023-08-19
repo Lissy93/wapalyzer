@@ -7081,11 +7081,19 @@
       59
     ],
     "description": "Swiper is a JavaScript library that creates modern touch sliders with hardware-accelerated transitions.",
-    "dom": "div[data-swiper-slide-index], [swiper-container]",
+    "dom": [
+      "div[data-swiper-slide-index]", 
+      "swiper-container",
+      "swiper-slide",
+      "div.swiper-wrapper",
+      "div.swiper-initialized",
+      "div.swiper-vertical"
+    ],
     "icon": "Swiper.svg",
     "js": {
       "Swiper": ""
     },
+    "oss": true,
     "scriptSrc": "swiper(?:\\.min)?\\.js",
     "website": "https://swiperjs.com"
   },
