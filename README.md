@@ -1,48 +1,60 @@
-[![Validate](https://github.com/wappalyzer/wappalyzer/actions/workflows/validate.yml/badge.svg)](https://github.com/wappalyzer/wappalyzer/actions/workflows/validate.yml)
-[![Github Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/AliasIO)](https://github.com/sponsors/AliasIO)
 
-<a href="https://www.wappalyzer.com/?utm_source=readme&utm_medium=github&utm_campaign=wappalyzer"><img src="https://www.wappalyzer.com/images/logo/icon_192.png" height="72" alt="Wappalyzer" align="left" /></a>
+<h1 align="center">Wapalyzer</h1>
 
-# Wappalyzer
 
-<br>
+<p align="center">
+<img src="https://i.ibb.co/DRQSqXp/wapalyzer.png" width="96" /><br />
+<b><i>Identify the technologies powering any website</i></b>
+<br />
+</p>
 
-**[Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites, such as CMS, web frameworks, ecommerce platforms, JavaScript libraries, analytics tools and [more](https://www.wappalyzer.com/technologies).**
+---
+
+> This is a community fork of the now removed [wappalyzer](https://web.archive.org/web/20230821034415/https://20230821034415/github.com/wappalyzer/wappalyzer) project, initially developed by [@AliasIO](https://github.com/AliasIO).
+> <br />
+> The original author maintains a hosted instanced, availible at [wappalyzer.com](https://www.wappalyzer.com/).
 
 ## Prerequisites
 
-- [Git](https://git-scm.com)
-- [Node.js](https://nodejs.org) version 14 or higher
-- [Yarn](https://yarnpkg.com)
+-   [Git](https://git-scm.com)
+-   [Node.js](https://nodejs.org) version 14 or higher
+-   [Yarn](https://yarnpkg.com)
 
 ## Quick start
 
 ```sh
-git clone https://github.com/wappalyzer/wappalyzer.git
+git clone https://github.com/lissy93/wapalyzer.git
 cd wappalyzer
 yarn install
+yarn run link
 ```
 
 ## Usage
 
+### Command line
+
+```sh
+node src/drivers/npm/cli.js https://example.com
+```
+
 ### Chrome extension
 
-- Go to `about:extensions`
-- Enable 'Developer mode'
-- Click 'Load unpacked'
-- Select `src`
+* Go to `about:extensions`
+* Enable 'Developer mode'
+* Click 'Load unpacked'
+* Select `src/drivers/webextension`
 
 ### Firefox extension
 
-- Go to `about:debugging#/runtime/this-firefox`
-- Click 'Load Temporary Add-on'
-- Select `src/manifest.json`
+* Go to `about:debugging#/runtime/this-firefox`
+* Click 'Load Temporary Add-on'
+* Select `src/drivers/webextension/manifest.json`
 
 ## Specification
 
-A long list of [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) is used to identify technologies on web pages. Wappalyzer inspects HTML code, as well as JavaScript variables, response headers and more.
+A long list of [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) is used to identify technologies on web pages. wapalyzer inspects HTML code, as well as JavaScript variables, response headers and more.
 
-Patterns (regular expressions) are kept in [`src/technologies/`](https://github.com/wappalyzer/wappalyzer/blob/master/src/technologies). The following is an example of an application fingerprint.
+Patterns (regular expressions) are kept in [`src/technologies/`](https://github.com/lissy93/wapalyzer/blob/master/src/technologies). The following is an example of an application fingerprint.
 
 #### Example
 
@@ -79,6 +91,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
   "headers": {
     "X-Powered-By": "Example"
   },
+  "html": "<link[^>]example\\.css",
   "text": "\bexample\b",
   "css": "\\.example-class",
   "robots": "Disallow: /unique-path/",
@@ -104,7 +117,7 @@ Patterns (regular expressions) are kept in [`src/technologies/`](https://github.
 
 ## JSON fields
 
-Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer/blob/master/schema.json).
+Find the JSON schema at [`schema.json`](https://github.com/lissy93/wapalyzer/blob/master/schema.json).
 
 ### Required properties
 
@@ -197,7 +210,6 @@ Find the JSON schema at [`schema.json`](https://github.com/wappalyzer/wappalyzer
 Cost indicator (based on a typical plan or average monthly price) and available pricing models. For paid products only.
 
 One of:
-
 <ul>
   <li><code>low</code>Less than US $100 / mo</li>
   <li><code>mid</code>Between US $100 - $1,000 / mo</li>
@@ -205,7 +217,6 @@ One of:
 </ul>
 
 Plus any of:
-
 <ul>
   <li><code>freemium</code> Free plan available</li>
   <li><code>onetime</code> One-time payments accepted</li>
@@ -310,7 +321,7 @@ Plus any of:
       <td><code>dns</code></td>
       <td>Object</td>
       <td>
-        DNS records: supports MX, TXT, SOA and NS.
+        DNS records: supports MX, TXT, SOA and NS (NPM driver only).
       </td>
       <td>
         <code>{ "MX": "example\\.com" }</code>
@@ -330,6 +341,17 @@ Plus any of:
       <td>Object</td>
       <td>HTTP response headers.</td>
       <td><code>{ "X-Powered-By": "^WordPress$" }</code></td>
+    </tr>
+    <tr>
+      <td><code>html</code></td>
+      <td>String | Array</td>
+      <td>
+        HTML source code. Patterns must include an HTML opening tag to
+        avoid matching plain text. For performance reasons, avoid
+        <code>html</code> where possible and use
+        <code>dom</code> instead.
+      </td>
+      <td><code>"&lt;a [^&gt;]*href=\"index.html"</code></td>
     </tr>
     <tr>
       <td><code>text</code></td>
@@ -353,7 +375,7 @@ Plus any of:
       <td><code>probe</code></td>
       <td>Object</td>
       <td>
-        Request a URL to test for its existence or match text content.
+        Request a URL to test for its existence or match text content (NPM driver only).
       </td>
       <td><code>{ "/path": "Example text" }</code></td>
     </tr>
@@ -401,17 +423,6 @@ Plus any of:
       </td>
       <td><code>"function webpackJsonpCallback\\(data\\) {"</code></td>
     </tr>
-    <tr>
-      <td><code>html</code> (deprecated)</td>
-      <td>String | Array</td>
-      <td>
-        HTML source code. Patterns must include an HTML opening tag to
-        avoid matching plain text. <strong>For performance reasons, avoid
-        <code>html</code> where possible and use
-        <code>dom</code> instead.</strong>
-      </td>
-      <td><code>"&lt;a [^&gt;]*href=\"index.html"</code></td>
-    </tr>
   </tbody>
 </table>
 
@@ -421,11 +432,11 @@ Patterns are essentially JavaScript regular expressions written as strings, but 
 
 ### Quirks and pitfalls
 
-- Because of the string format, the escape character itself must be escaped when using special characters such as the dot (`\\.`). Double quotes must be escaped only once (`\"`). Slashes do not need to be escaped (`/`).
-- Flags are not supported. Regular expressions are treated as case-insensitive.
-- Capture groups (`()`) are used for version detection. In other cases, use non-capturing groups (`(?:)`).
-- Use start and end of string anchors (`^` and `$`) where possible for optimal performance.
-- Short or generic patterns can cause applications to be identified incorrectly. Try to find unique strings to match.
+-   Because of the string format, the escape character itself must be escaped when using special characters such as the dot (`\\.`). Double quotes must be escaped only once (`\"`). Slashes do not need to be escaped (`/`).
+-   Flags are not supported. Regular expressions are treated as case-insensitive.
+-   Capture groups (`()`) are used for version detection. In other cases, use non-capturing groups (`(?:)`).
+-   Use start and end of string anchors (`^` and `$`) where possible for optimal performance.
+-   Short or generic patterns can cause applications to be identified incorrectly. Try to find unique strings to match.
 
 ### Tags
 
