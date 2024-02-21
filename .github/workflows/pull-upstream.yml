@@ -36,9 +36,9 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: Merge in new official signatures
-          title: Merge in new official signatures
+          title: New Official Signatures
           body: |
-            This is an automated update of fingerprints.
+            This is an automated update of fingerprints from the official Wappalyzer.
           branch: ${{ env.BRANCH_NAME }}
           delete-branch: true
           signoff: true
