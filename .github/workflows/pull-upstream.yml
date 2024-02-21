@@ -1,0 +1,44 @@
+name: Merge Upstream
+
+on:
+  schedule:
+    # Runs at 23:39 every Sunday
+    - cron: '39 23 * * 0'
+  workflow_dispatch: # Adds the ability to manually trigger the workflow
+
+jobs:
+  update-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Update Fingerprints
+        run: |
+          python scripts/pull_upstream.py
+
+      - name: Generate branch name
+        id: set_branch_name
+        run: echo "BRANCH_NAME=update-fingerprints-$(date +'%Y%m%d')" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: Merge in new official signatures
+          title: New Official Signatures
+          body: |
+            This is an automated update of fingerprints from the official Wappalyzer.
+          branch: ${{ env.BRANCH_NAME }}
+          delete-branch: true
+          signoff: true
