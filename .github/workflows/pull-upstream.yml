@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs at 23:39 every Sunday
     - cron: '39 23 * * 0'
+  workflow_dispatch: # Adds the ability to manually trigger the workflow
 
 jobs:
   update-and-commit:
