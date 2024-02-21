@@ -28,6 +28,10 @@ jobs:
         run: |
           python scripts/pull_upstream.py
 
+      - name: Generate branch name
+        id: set_branch_name
+        run: echo "BRANCH_NAME=update-fingerprints-$(date +'%Y%m%d')" >> $GITHUB_ENV
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -35,6 +39,6 @@ jobs:
           title: Merge in new official signatures
           body: |
             This is an automated update of fingerprints.
-          branch: update-fingerprints-$(date +'%Y%m%d')
+          branch: ${{ env.BRANCH_NAME }}
           delete-branch: true
           signoff: true
