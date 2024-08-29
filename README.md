@@ -24,7 +24,7 @@
 
 ```sh
 git clone https://github.com/lissy93/wapalyzer.git
-cd wappalyzer
+cd wapalyzer
 yarn install
 yarn run link
 ```
